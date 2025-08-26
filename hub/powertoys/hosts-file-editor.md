@@ -45,8 +45,8 @@ From the Settings menu, the following options can be configured:
 | :--- | :--- |
 | Open as administrator | Open as administrator to be able edit the hosts file. If disabled, the editor is run in read-only mode. Hosts File Editor is started as administrator by default. |
 | Show a warning at startup | Warns that editing hosts can change DNS names resolution. Enabled by default. |
-| Placement of additional content | Default value is **Top**. If **Bottom** is selected, the file header is moved below hosts settings to the bottom. |
-| Consider loopback addresses as duplicates | Loopback addresses (like 127.0.0.1 and ::1) are considered as duplicates. |
+| Placement of additional content | Determines where new host entries are added in the hosts file. Default value is **Top** (new entries are added near the top of the file after the default Windows header comments). If **Bottom** is selected, new entries are added at the end of the file. This affects the organization of your hosts file and can impact which entries take precedence if there are conflicts. |
+| Consider loopback addresses as duplicates | When enabled, multiple loopback addresses (127.0.0.1, ::1) pointing to the same hostname are treated as duplicates. This prevents adding redundant entries and helps avoid conflicts. When disabled, you can add multiple loopback entries for the same hostname, which may be useful for testing different network configurations but could lead to unexpected behavior. |
 | Encoding | Default value is **UTF-8**. If **UTF-8 with BOM** is selected, a Byte Order Mark (BOM) is included at the start of the file. |
 
 ## Troubleshooting
