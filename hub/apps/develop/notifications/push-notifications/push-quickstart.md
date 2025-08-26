@@ -89,7 +89,7 @@ Once you have your Azure AppId, ObjectId, and secret, you can add those credenti
 
 ### Step 1: Add Windows App SDK and required NuGet packages
 
-Next, right click on the Solution Explorer and select **Manage NuGet Packages**.
+Next, right-click on the solution in the Solution Explorer and select **Manage NuGet Packages**.
 
 In the Package Manager, add the following packages:
 * Microsoft.WindowsAppSDK (minimum version 1.1.0)
@@ -122,7 +122,7 @@ Next, add the namespace for Windows App SDK push notifications `Microsoft.Window
 using namespace winrt::Microsoft::Windows::PushNotifications;
 ```
 
-If you get a "Can't find Microsoft.Windows.PushNotifications" error, that likely means the header files haven't been generated. Build the app without the namespaces first (keep the includes without an error), then try adding them in again.
+If you get a "Can't find Microsoft.Windows.PushNotifications" error, that likely means the header files have not been generated. To resolve, ensure you have the packages above installed, comment out the include and using statements causing the error, and rebuild the application to generate the header files. Once the build succeeds, uncomment the include and using statements and rebuild the project. This should resolve the error.
 
 ### Step 3: Add your COM activator to your app's manifest
 
