@@ -2,7 +2,7 @@
 title: How to Install PowerToys on Windows 11 and Windows 10
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
 ms.custom: copilot-scenario-highlight
-ms.date: 07/02/2025
+ms.date: 08/20/2025
 ms.topic: how-to
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -150,6 +150,10 @@ If you have issues when installing/updating, file an issue in the [Scoop repo on
 ## After installation
 
 After successfully installing PowerToys, an overview window will display with introductory guidance for each of the available utilities.
+
+If you view the Home view of the PowerToys settings, you can get quick access to some of the utilities, see an overview of the available shortcuts, and enable or disable individual utilities.
+
+:::image type="content" source="../images/powertoys-settings-home.png" alt-text="A screenshot of the Home page of the PowerToys settings.":::
 
 ## Updates
 

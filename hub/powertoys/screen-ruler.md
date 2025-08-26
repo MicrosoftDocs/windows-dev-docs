@@ -1,17 +1,17 @@
 ---
-title: PowerToys Screen ruler utility for Windows
-description: Screen ruler allows you to quickly measure pixels on your screen based on image edge detection.
-ms.date: 11/19/2024
-ms.topic: article
+title: PowerToys Screen Ruler Utility for Windows
+description: Learn how to use PowerToys Screen ruler to quickly measure pixels on your screen with image edge detection. Get started with activation shortcuts and measurement tools.
+ms.date: 08/20/2025
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Screen ruler, Win]
 # Customer intent: Learn about the Screen ruler utility in PowerToys for Windows.
 ---
 
 # Screen ruler utility
 
-![Screen ruler utility](../images/pt-screen-ruler.png)
+PowerToys Screen ruler allows you to quickly measure pixels on your screen using advanced image edge detection technology. This utility helps developers and designers accurately measure distances, spacing, and dimensions directly on their Windows desktop. The tool was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
 
-Screen ruler allows you to quickly measure pixels on your screen, based on image edge detection. This was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+:::image type="content" source="../images/pt-screen-ruler.png" alt-text="Screenshot of PowerToys Screen ruler utility interface showing measurement tools and toolbar options.":::
 
 ## How to activate
 
@@ -37,11 +37,12 @@ From the Settings menu, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn the toolbar on or off. |
+| Default mode | The measuring mode that's used when the utility is activated. Default is **None**. |
 | Capture screen continuously during measuring | When off, the utility takes a single snapshot of your screen. When this is turned on, the utility will attempt real-time detection. Continuous mode will consume more resources when in use. |
 | Per color channel edge detection | Test if all color channels are within a tolerance distance from each other. Otherwise, check that the sum of all color channels differences is smaller than the tolerance. |
 | Pixel tolerance for edge detection | A value between 0-255. A higher value will provide a higher variation so it will be more forgiving with things like gradients and shadows. |
 | Extra units of measurement | Choose an alternate unit of measure to display in addition to pixels. Available values are pixels, inches, centimeters, and millimeters. |
-| Draw feet on the cross | Adds small, serif-like "feet" for additional visual recognition. |
+| Draw feet on cross | Adds small, serif-like "feet" for additional visual recognition. |
 | Line color | The color for the line that does the measuring. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

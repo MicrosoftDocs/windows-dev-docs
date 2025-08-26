@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Upload MSIX app packages
 
-## Upload your app's packages
+## Upload your app
 
 The **Packages** page of the [app submission process](./create-app-submission.md) is where you upload all of the package files (.msix, .msixupload, .msixbundle, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload all your packages for the same app on this page, and when a customer downloads your app, the Store will automatically provide each customer with the package that works best for their device. After you upload your packages, you’ll see a table indicating [which packages will be offered to specific Windows 10 or Windows 11 device families](#device-family-availability) (and earlier OS versions, if applicable) in ranked order.
 
@@ -27,29 +27,7 @@ If you have created any [package flights](../../package-flights.md) for your app
 
 If we detect errors with a package while validating it, we'll display a message to let you know what's wrong. You'll need to remove the package, fix the issue, and then try uploading it again. You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
 
-### Package details
-
-Your uploaded packages are listed here, grouped by target operating system. The name, version, and architecture of the package will be displayed. For more info such as the supported languages, app capabilities, and file size for each package, click **Show details**.
-
-If you need to remove a package from your submission, click the **Remove** link at the bottom of each package's **Details** section.
-
-### Removing redundant packages
-
-If we detect that one or more of your packages is redundant, we'll display a warning suggesting that you remove the redundant packages from this submission. Often this happens when you have previously uploaded packages, and now you are providing higher-versioned packages that support the same set of customers. In this case, no customers would ever get the redundant package, because you now have a better (higher-versioned) package to support these customers.
-
-When we detect that you have redundant packages, we'll provide an option to remove all of the redundant packages from this submission automatically. You can also remove packages from the submission individually if you prefer.
-
-### Gradual package rollout
-
-If your submission is an update to a previously published app, you'll see a checkbox that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. This allows you to choose a percentage of customers who will get the packages from the submission so that you can monitor feedback and analytic data to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission.
-
-For more info, see [Gradual package rollout](../../gradual-package-rollout.md).
-
-### Mandatory update
-
-If your submission is an update to a previously published app, you'll see a checkbox that says **Make this update mandatory**. This allows you to set the date and time for a mandatory update, assuming you have used the Windows.Services.Store APIs to allow your app to programmatically check for package updates and download and install the updated packages. Your app must target Windows 10, version 1607 or later in order to use this option.
-
-For more info, see [Download and install package updates for your app](/windows/uwp/packaging/self-install-package-updates).
+:::image type="content" source="images/uploaded-package-msix.png" lightbox="images/uploaded-package-msix.png" alt-text="A screenshot showing the overview of packages already uploaded page for MSIX/PWA app.":::
 
 ## Device family availability
 
@@ -69,6 +47,30 @@ Packages targeting the Windows.Universal device family can run on any Windows 10
 You can uncheck the box for any Windows 10 or Windows 11 device family if you don’t want to offer your submission to customers on that type of device. If a device family’s box is unchecked, new customers on that type of device won’t be able to acquire the app (though customers who already have the app can still use it, and will get any updates you submit).
 
 If your app supports them, we recommend keeping all of the boxes checked, unless you have a specific reason to limit the types of Windows 10 or Windows 11 devices which can acquire your app. For instance, if you know that your app doesn't offer a good experience on [Surface Hub](https://developer.microsoft.com/windows/surfacehub) and/or [Microsoft HoloLens](https://developer.microsoft.com/mixed-reality), you can uncheck the **Windows 10 Team** and/or **Windows 10 Holographic** box. This prevents any new customers from acquiring the app on those devices. If you later decide you're ready to offer it to those customers, you can create a new submission with the boxes checked.
+
+### Package details
+
+Your uploaded packages are listed here, grouped by target operating system. The name, version, and architecture of the package will be displayed. For more info such as the supported languages, app capabilities, and file size for each package, click **Show details**.
+
+If you need to remove a package from your submission, click the **Remove** link at the bottom of each package's **Details** section.
+
+### Gradual package rollout
+
+If your submission is an update to a previously published app, you'll see a checkbox that says **Roll out update gradually after this submission is published (to Windows 10 or Windows 11 customers only)**. This allows you to choose a percentage of customers who will get the packages from the submission so that you can monitor feedback and analytic data to make sure you’re confident about the update before rolling it out more broadly. You can increase the percentage (or halt the update) any time without having to create a new submission.
+
+For more info, see [Gradual package rollout](../../gradual-package-rollout.md).
+
+### Mandatory update
+
+If your submission is an update to a previously published app, you'll see a checkbox that says **Make this update mandatory**. This allows you to set the date and time for a mandatory update, assuming you have used the Windows.Services.Store APIs to allow your app to programmatically check for package updates and download and install the updated packages. Your app must target Windows 10, version 1607 or later in order to use this option.
+
+For more info, see [Download and install package updates for your app](/windows/uwp/packaging/self-install-package-updates).
+
+### Removing redundant packages
+
+If we detect that one or more of your packages is redundant, we'll display a warning suggesting that you remove the redundant packages from this submission. Often this happens when you have previously uploaded packages, and now you are providing higher-versioned packages that support the same set of customers. In this case, no customers would ever get the redundant package, because you now have a better (higher-versioned) package to support these customers.
+
+When we detect that you have redundant packages, we'll provide an option to remove all of the redundant packages from this submission automatically. You can also remove packages from the submission individually if you prefer.
 
 #### Xbox devices
 

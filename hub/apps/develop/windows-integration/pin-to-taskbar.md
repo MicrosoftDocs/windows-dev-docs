@@ -2,7 +2,7 @@
 description: You can programmatically pin your app to the taskbar, and you can check if it's currently pinned.
 title: Pin your app to the taskbar
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/28/2025
 ms.topic: how-to
 keywords: windows 10, uwp, win32, taskbar, taskbar manager, pin to taskbar, primary tile
 ms.localizationpriority: medium
@@ -85,6 +85,7 @@ bool isPinningAllowed = TaskbarManager.GetDefault().IsPinningAllowed;
 >
 > * App is in foreground
 > * App has a Start menu entry
+> * For notifications to be displayed, the user must have system notifications enabled. We recommend that you surface this requirement to users within the app's UX.
 >
 > These requirements won't result in an exception if not met, the pin request will just be denied. `IsPinningAllowed` can be called to determine if a pin request (prompt) will be allowed.
 

@@ -10,59 +10,76 @@ ms.localizationpriority: medium
 
 Once your app is in the Microsoft Store, it's time to get it in front of as many customers as possible. [Partner Center](https://partner.microsoft.com/dashboard) offers many features that help you promote your products and grow your customer base, including ad campaigns, promo codes, sale pricing, and more.
 
-## App promotion campaigns
+## Generate promotional codes
+Promotional codes in Partner Center allow developers and publishers to offer free access to apps or add-ons published in the Microsoft Store. These codes can be used for marketing, customer support, beta testing, or transitioning users from legacy desktop apps to Microsoft Store apps.
 
-:::row:::
-    :::column:::
-        ![Paid campaigns](images/ads-paid-campaign.png)
-    :::column-end:::
-	:::column span="2":::
-**Paid campaigns**
+Each code is associated with a unique redeemable URL that enables customers to install your app or add-on at no charge. Developers can choose between single-use or multiple-use codes, configure activation and expiration dates, and track code usage directly from the Partner Center dashboard.
 
-These campaigns will run ads in any other app that matches your app’s device and category. You can also choose a universal campaign, where the ads will also appear within MSN.com, Outlook.com, Skype, and other Microsoft premium properties.
+### Key capabilities
 
-[EXPLORE MORE >](/windows/uwp/monetize/index)
-    :::column-end:::
-:::row-end:::
+- Generate single-use or multiple-use promotional codes.
 
-:::row:::
-    :::column:::
-        ![Free house campaigns](images/ads-house-campaign.png)
-    :::column-end:::
-	:::column span="2":::
-**Free house campaigns**
+- Customize code activation and expiration windows.
 
-These campaigns will run ads only in your other apps, free of charge.
+- Download and manage code orders in TSV format.
 
-[EXPLORE MORE >](/windows/uwp/monetize/index)
-    :::column-end:::
-:::row-end:::
+- Distribute codes using your preferred communication method.
 
-:::row:::
-    :::column:::
-        ![Free community campaigns](images/ads-community-campaign.png)
-    :::column-end:::
-	:::column span="2":::
-    
-**Free community campaigns**
+- Review redemption metrics and availability for each order.
 
-These campaigns will run ads in apps published by other developers who also participate in community ad campaigns, free of charge.
+### Ideal use cases
 
-[EXPLORE MORE >](/windows/uwp/monetize/index)
-    :::column-end:::
-:::row-end:::
+- Rewarding early adopters or influencers.
 
-## Learn more about app promotion campaigns
+- Resolving customer service issues with free access.
 
-![Learn more about app promotion campaigns](images/app-promotion-campaigns.png)
+- Running beta programs for apps or add-ons.
 
-[Create an ad campaign in the dashboard](/windows/uwp/monetize/index)
+- Encouraging migration to MSIX-packaged apps.
 
-[Create an ad campaign using our REST API](/windows/uwp/monetize/run-ad-campaigns-using-windows-store-services)
+> [!NOTE]
+> Your app must be fully published to the Microsoft Store before customers can redeem promotional codes.
 
-[Review campaign performance data in the dashboard](advertising-performance-report.md)
+For more info, see [Generate promotional codes](generate-promotional-codes.md).
 
-[Get campaign performance data using our REST API](/windows/uwp/monetize/index)
+## Custom app promotion campaign
+
+Custom app promotion campaigns in Partner Center allow you to track user engagement and conversions by adding unique campaign identifiers (CIDs) to your app’s Microsoft Store URLs. These identifiers help measure the effectiveness of different marketing efforts, such as social media posts, ads, newsletters, or other outreach channels.
+
+By appending a CID to your app’s web or protocol-based Store link, you can see how many users viewed the page and how many installed the app as a result of each campaign. Campaign data is available in acquisition reports within Partner Center.
+
+### Key capabilities
+
+- Append unique campaign IDs (CIDs) to your app’s Store URL.
+
+- Track page views and conversions per campaign.
+
+- Use HTML or protocol-style URLs for different platforms.
+
+- Access campaign performance in Partner Center reports.
+
+- Retrieve CID programmatically in your UWP app (Windows SDK support).
+
+### Ideal use cases
+
+- Measuring social media campaign effectiveness.
+
+- Tracking installs from email newsletters or blog posts.
+
+- Evaluating results of paid ad placements.
+
+- Identifying high-performing marketing sources.
+
+- Monitoring cross-platform promotion impact.
+
+For more info, see [Custom app promotion campaing](create-a-custom-app-promotion-campaign.md).
+
+## Put apps and add ons on sale
+You can promote your app or add-on in the Microsoft Store by offering it at a reduced price for a limited time. Sales can be configured with either a lower price tier or a percentage-based discount and targeted to specific customer groups or markets. Sale pricing appears with strikethrough formatting in the Store to highlight the promotional offer.
+
+All sale settings are managed through the Pricing and availability section during an app submission and require a new submission to edit or cancel.
+
+For more info, see [Put apps and add ons on sale](put-apps-and-add-ons-on-sale.md).
 
 ## Promotion analytics
 
@@ -71,19 +88,3 @@ These campaigns will run ads in apps published by other developers who also part
 [Acquisitions report](acquisitions-report.md)
 
 [Get analytics data using our REST API](/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
-
-## Other ways to promote your app
-
-[Promotional codes](generate-promotional-codes.md)
-
-[Sale pricing](put-apps-and-add-ons-on-sale.md)
-
-[Microsoft store badges](https://developer.microsoft.com/store/badges)
-
-[Custom promotion campaigns](create-a-custom-app-promotion-campaign.md)
-
-[Microsoft Store marketing guidelines for apps](app-marketing-guidelines.md)
-
-[Link to your app](link-to-your-app.md)
-
-[Make your app easier to promote](make-your-app-easier-to-promote.md)

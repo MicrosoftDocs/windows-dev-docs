@@ -1,7 +1,7 @@
 ---
 title: Assign product level custom permissions to account users
 description: Learn how to assign custom permissions at product level when adding users to your Partner Center account.
-ms.date: 10/30/2022
+ms.date: 07/27/2025
 ms.topic: article
 ms.localizationpriority: high
 ---
@@ -33,7 +33,7 @@ Note that some permissions cannot be set for add-ons. This is either because the
 | **Acquisitions** (including Near Real Time data) | Can view the <a href="..\acquisitions-report.md">Acquisitions</a> and <a href="..\acquisitions-report.md">Add-on acquisitions</a> reports for the product.   | N/A | N/A (settings for parent product include the **Add-on acquisitions** report) | N/A |
 | **Usage**  | Can view the <a href="..\usage-report.md">Usage report</a> for the product. | N/A | N/A  | N/A |
 | **Health** (including Near Real Time data) | Can view the <a href="..\health-report.md">Health report</a> for the product. |N/A | N/A | N/A |
-| **Customer feedback** | Can view the <a href="..\reviews-report.md">Reviews</a> and <a href="..\feedback-report.md">Feedback</a> reports for the product. | N/A (to respond to feedback or reviews, the **Contact customer** permission must be granted) | N/A | N/A |
+| **Reviews** | Can view the <a href="..\reviews-report.md">Reviews</a> report for the product. | N/A (to respond to reviews, the **Contact customer** permission must be granted) | N/A | N/A |
 | **Xbox analytics** | Can view the <a href="..\xbox-analytics-report.md">Xbox analytics report</a> for the product. | N/A | N/A | N/A |
 
 ## Monetization
@@ -41,10 +41,8 @@ Note that some permissions cannot be set for add-ons. This is either because the
 | **Permission name** | **Read only** | **Read/write** | **Read only (Add‑on)** | **Read‑write (Add‑on)** |
 | ---------- | ---------- | ---------- |----------|----------|
 | **Promotional codes** | Can view <a href="..\generate-promotional-codes.md">promotional code</a> orders and usage info for the product and its add-ons, and can view usage info. | Can view, manage, and create <a href="..\generate-promotional-codes.md">promotional code</a> orders for the product and its add-ons, and can view usage info. | N/A (settings for parent product apply to all add-ons) | N/A (settings for parent product apply to all add-ons) |
-| **Targeted offers** | Can view <a href="..\use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product. | Can view, manage and create <a href="..\use-targeted-offers-to-maximize-engagement-and-conversions.md">targeted offers</a> for the product. | N/A | N/A |
-| **Contact customer** | Can view <a href="..\respond-to-customer-feedback.md">responses to customer feedback</a> and <a href="..\respond-to-customer-reviews.md">responses to customer reviews</a>, as long as the **Customer feedback** permission has been granted as well. Can also view <a href="..\send-push-notifications-to-your-apps-customers.md">targeted notifications</a> that have been created for the product. | Can <a href="..\respond-to-customer-feedback.md">respond to customer feedback</a> and <a href="..\respond-to-customer-reviews.md">respond to customer reviews</a>, as long as the **Customer feedback** permission has been granted as well. Can also <a href="..\send-push-notifications-to-your-apps-customers.md">create and send targeted notifications</a> for the product. | N/A | N/A |
-| **Experimentation** | Can view <a href="\windows\uwp\monetize\run-app-experiments-with-a-b-testing">experiments (A/B testing)</a> and view experimentation data for the product. | Can create, manage, and view <a href="\windows\uwp\monetize\run-app-experiments-with-a-b-testing">experiments (A/B testing)</a> for the product, and view experimentation data. | N/A | N/A |
 | **Store sale events** *| Can view sale event status for the product. | Can add the product to sale events and configure discounts. | Can view sale event status for the product. |Can add the product to sale events and configure discounts.  |
+
 
 ## Publishing
 
@@ -55,13 +53,13 @@ Note that some permissions cannot be set for add-ons. This is either because the
 | **Properties** | Can view the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of products. | Can view and edit the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of products. | Can view the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of add-ons. | Can view and edit the <a href="../publish-your-app/msix/enter-app-properties.md">Properties</a> page of add-ons. |
 | **Age ratings** | Can view the <a href="../publish-your-app/msix/age-ratings.md">Age ratings</a> page of products. | Can view and edit the <a href="../publish-your-app/msix/age-ratings.md">Age ratings</a> page of products. | Can view the Age ratings page of add-ons. | Can view and edit the Age ratings page of add-ons. |
 | **Packages** | Can view the <a href="../publish-your-app/msix/upload-app-packages.md">Packages</a> page of products. | Can view and edit the <a href="../publish-your-app/msix/upload-app-packages.md">Packages</a> page of products, including uploading packages. | Can view the <a href="../publish-your-app/msix/upload-app-packages.md">Packages</a> page of addons (if applicable). | Can view and edit <a href="../publish-your-app/msix/upload-app-packages.md">Packages</a> page of addons (if applicable). |
-| **Store listings** | Can view the <a href="../publish-your-app/msix/create-app-store-listing.md">Store listing page(s)</a> of products.| Can view and edit the <a href="../publish-your-app/msix/create-app-store-listing.md">Store listing page(s)</a> of products, and can add new Store listings for different languages.| Can view the <a href="../publish-your-app/msix/create-app-store-listing.md">Store listing page(s)</a> of add-ons.| Can view and edit the <a href="../publish-your-app/msix/create-app-store-listing.md">Store listing page(s)</a> of add-ons, and can add Store listings for different languages.|
+| **Store listings** | Can view the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.md">Store listing page(s)</a> of products.| Can view and edit the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.md">Store listing page(s)</a> of products, and can add new Store listings for different languages.| Can view the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.md">Store listing page(s)</a> of add-ons.| Can view and edit the <a href="../publish-your-app/msix/add-and-edit-store-listing-info.md">Store listing page(s)</a> of add-ons, and can add Store listings for different languages.|
 | **Store submission** | No access is granted if this permission is set to read-only. | Can submit the product to the Store and view certification reports. Includes both new and updated submissions. | No access is granted if this permission is set to read-only. | Can submit the add-on to the Store and view certification reports. Includes both new and updated submissions. |
 | **New submission creation** | No access is granted if this permission is set to read-only.| Can create new <a href="../publish-your-app/msix/create-app-submission.md">submissions</a> for the product.| No access is granted if this permission is set to read-only. | Can create new <a href="../publish-your-app/msix/create-app-submission.md">submissions</a> for the add-on. |
 | **New add-ons** | No access is granted if this permission is set to read-only. | Can <a href="../publish-your-app/msix/overview.md">create new add-ons</a> for the product. | N/A | N/A |
 | **Name reservations** | Can view the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product. | Can view and edit the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product, including reserving additional names and deleting reserved names. | Can view reserved names for the add-on. | Can view and edit reserved names for the add-on. |
-| **Disc request** | Can view disc the request page. | Can create disc requests. | N/A | N/A |
-| **Disc royalties** | Can view disc the royalties page. | Can create disc royalties. | N/A | N/A |
+| **Name reservations** | Can view the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product. | Can view and edit the <a href="manage-app-name-reservations.md">Manage app names</a> page for the product, including reserving additional names and deleting reserved names. | Can view reserved names for the add-on. | Can view and edit reserved names for the add-on. |
+| **Royalty program publishing** | TBD | TBD | TBD | TBD |
 
 ## Xbox Live \*
 

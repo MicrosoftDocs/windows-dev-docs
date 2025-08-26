@@ -1,13 +1,33 @@
 ---
-title: Creating an extension
-description: The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Learn how to create an extension
-ms.date: 3/23/2025
-ms.topic: concept-article
+title: How to Create Command Palette Extensions in C# - Step by Step Guide
+description: Learn how to build custom Command Palette extensions for PowerToys using C#. Complete tutorial with templates, deployment, and best practices for Windows developers.
+ms.date: 08/04/2025
+ms.topic: how-to
+ms.keywords: command palette extension, powertoys extension, windows development, c# extension development, visual studio deployment, windows productivity tools
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
 ---
 
-# Creating an extension
+# How to create Command Palette extensions
+
+Learn how to build custom extensions for the Command Palette using C#. This comprehensive guide covers everything from project setup to deployment, helping you enhance this powerful productivity tool for Windows.
+
+## Overview
+
+The Command Palette extension system allows developers to create custom commands and workflows that integrate seamlessly with PowerToys Command Palette. Extensions are written in C# and can be developed using the built-in template generator.
+
+**What you'll learn:**
+
+- How to create a new Command Palette extension project
+- Understanding the extension project structure
+- Deploying and testing your extension
+- Best practices for extension development
+
+**Prerequisites:**
+
+- Visual Studio with C# development workload
+- Windows 11 with PowerToys installed
+- Basic knowledge of C# programming
 
 Extensions are written in C#. The fastest way to get started writing extensions is from the Command Palette itself.
 
@@ -26,6 +46,8 @@ The form will ask you for the following information:
   - If this path doesn't exist, it will be created for you.
 
 ![The "Create a new extension" page of the Windows Command Palette](../../images/command-palette/create-extension-page.png)
+
+## Understanding the extension project structure
 
 Once you submit the form, Command Palette will automatically generate the project for you. At this point, your projects structure should look like the following:
 

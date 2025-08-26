@@ -25,15 +25,17 @@ items:
             href: publish-your-app/msix/market-selection.md
           - name: Choose visibility options
             href: publish-your-app/msix/visibility-options.md
-          - name: Set and schedule app pricing
+          - name: Set app pricing
             href: publish-your-app/msix/schedule-pricing-changes.md
+          - name: Configure precise release scheduling
+            href: publish-your-app/msix/configure-release-schedule.md
       - name: Add app properties
         items:
           - name: Overview
             href: publish-your-app/msix/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/msix/categories-and-subcategories.md
-          - name: Provide privacy policy and support info
+          - name: Provide support info
             href: publish-your-app/msix/support-info.md
           - name: Product declarations
             href: publish-your-app/msix/product-declarations.md
@@ -50,7 +52,7 @@ items:
       - name: Create Store listings
         items:
           - name: Create Store listings
-            href: publish-your-app/msix/create-app-store-listing.md
+            href: publish-your-app/msix/add-and-edit-store-listing-info.md
           - name: Add and edit Store listing info
             href: publish-your-app/msix/add-and-edit-store-listing-info.md
           - name: Add app screenshots, images, and trailers
@@ -59,10 +61,6 @@ items:
             href: publish-your-app/msix/add-additional-information.md
           - name: Import and export Store listings
             href: publish-your-app/msix/import-and-export-store-listings.md
-          - name: Write a great app description
-            href: publish-your-app/msix/write-great-app-description.md
-          - name: Responsible AI FAQ for AI-generated keywords
-            href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
       - name: Manage Submission options
         href: publish-your-app/msix/manage-submission-options.md                  
   - name: MSI/EXE
@@ -70,7 +68,7 @@ items:
       - name: Reserve app name
         href: publish-your-app/msi/reserve-your-apps-name.md
       - name: Create app submission
-        href: publish-your-app/msi/create-app-submission.md
+        href: publish-your-app/msix/create-app-submission.md
       - name: Set pricing and availability
         items:
           - name: Overview
@@ -105,8 +103,6 @@ items:
             href: publish-your-app/msi/package-validation-pre-check.md
       - name: Create Store listings
         items:
-          - name: Create Store listings
-            href: publish-your-app/msi/create-app-store-listing.md
           - name: Add and edit Store listing info
             href: publish-your-app/msi/add-and-edit-store-listing-info.md
           - name: Add app screenshots and images
@@ -115,10 +111,6 @@ items:
             href: publish-your-app/msi/add-additional-information.md
           - name: Import and export Store listings
             href: publish-your-app/msi/import-and-export-store-listings.md
-          - name: Write a great app description
-            href: publish-your-app/msi/write-great-app-description.md
-          - name: Responsible AI FAQ for AI-Generated keywords
-            href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
       - name: App submission controls
         href: publish-your-app/msi/app-submission-control.md              
   - name: PWA
@@ -139,26 +131,26 @@ items:
             href: publish-your-app/pwa/visibility-options.md
           - name: Set and schedule app pricing
             href: publish-your-app/pwa/schedule-pricing-changes.md
-      - name: Add app properties
+          - name: Configure precise release scheduling
+            href: publish-your-app/pwa/configure-release-schedule.md
+      - name: Enter app properties
         items:
           - name: Overview
             href: publish-your-app/pwa/enter-app-properties.md
           - name: Set category and subcategory
             href: publish-your-app/pwa/categories-and-subcategories.md
-          - name: Provide privacy policy and support info
+          - name: Provide support info
             href: publish-your-app/pwa/support-info.md
           - name: Product declarations
             href: publish-your-app/pwa/product-declarations.md
-          - name: Provide system requirements
+          - name: System requirements
             href: publish-your-app/pwa/system-requirements.md
       - name: Generate age ratings
         href: publish-your-app/pwa/age-ratings.md
-      - name: Upload package
+      - name: Upload app packages
         href: publish-your-app/pwa/upload-app-packages.md
       - name: Create Store listings
         items:
-          - name: Create Store listings
-            href: publish-your-app/pwa/create-app-store-listing.md
           - name: Add and edit Store listing info
             href: publish-your-app/pwa/add-and-edit-store-listing-info.md
           - name: Add app screenshots, images, and trailers
@@ -167,18 +159,12 @@ items:
             href: publish-your-app/pwa/add-additional-information.md
           - name: Import and export Store listings
             href: publish-your-app/pwa/import-and-export-store-listings.md
-          - name: Write a great app description
-            href: publish-your-app/pwa/write-great-app-description.md
-          - name: Responsible AI FAQ for AI-Generated keywords
-            href: publish-your-app/responsible-ai-faq-ai-generated-keywords.md
       - name: Manage submission options
-        href: publish-your-app/pwa/manage-submission-options.md                        
+        href: publish-your-app/pwa/manage-submission-options.md                      
   - name: Add-ons
     items:
           - name: What are add-ons
             href: publish-your-app/add-on/what-are-add-ons.md
-          - name: Overview
-            href: publish-your-app/add-on/overview.md
           - name: Create add-ons
             href: publish-your-app/add-on/create-app-submission.md
           - name: Set pricing and availability
@@ -187,26 +173,20 @@ items:
                     href: publish-your-app/add-on/price-and-availability.md
                   - name: Define markets
                     href: publish-your-app/add-on/market-selection.md
-                  - name: Set Visibility options
+                  - name: Set visibility options
                     href: publish-your-app/add-on/visibility-options.md
                   - name: Set and schedule pricing
                     href: publish-your-app/add-on/schedule-pricing-changes.md
-          - name: Add properties
-            items:
-                  - name: Overview
-                    href: publish-your-app/add-on/enter-app-properties.md
-                  - name: Provide support info
-                    href: publish-your-app/add-on/support-info.md
-          - name: Create Store Listings
-            items:
-                  - name: Overview
-                    href: publish-your-app/add-on/create-app-store-listing.md
-                  - name: Add and edit Store listing info
-                    href: publish-your-app/add-on/add-and-edit-store-listing-info.md
-          - name: Manage Submission options
+                  - name: Configure release schedule
+                    href: publish-your-app/add-on/configure-release-schedule.md
+          - name: Enter add-on properties
+            href: publish-your-app/add-on/enter-app-properties.md
+          - name: Create store listings
+            href: publish-your-app/add-on/create-app-store-listing.md
+          - name: Manage submission options
             href: publish-your-app/add-on/manage-submission-options.md  
           - name: Update existing add-on
-            href: publish-your-app/add-on/publish-update-to-your-app-on-store.md  
+            href: publish-your-app/add-on/publish-update-to-your-app-on-store.md
 - name: Get your app certified
   items: 
     - name: MSIX
@@ -243,141 +223,118 @@ items:
           href: analyze-msi-exe/analyze-app-performance.md
         - name: Ratings, Reviews, and Responses
           href: analyze-msi-exe/ratings-reviews-performance.md
-    - name: GDK or Xbox games
-      href: analyze-app-performance/gdk-xbox.md
 - name: Leverage developer tools
   items:
-    - name: Tools for MSI and EXE apps
-      items: 
-          - name: Microsoft Store Submission API for MSI or EXE app
-            href: store-submission-api.md
-    - name: Tools for MSIX apps
+    - name: MSIX
       items: 
           - name: Product page experiments
             href: product-page-experiments.md
-          - name: Use Microsoft Store Web Installer to distribute apps
-            href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md  
-          - name: App management and services
-            href: app-management-and-services.md
+          - name: Product management and services
             items: 
+              - name: Overview
+                href: product-management-and-services.md
               - name: View product identity details
                 href: view-app-identity-details.md
-              - name: Generate preinstall packages for OEMs
-                href: generate-preinstall-packages-for-oems.md
-              - name: Organizational Licensing options
-                href: organizational-licensing.md
-              - name: Package Flights
-                href: package-flights.md
-              - name: Gradual Package Rollout
-                href: gradual-package-rollout.md
-              - name: Beta testing and targeted distribution
-                href: beta-testing-and-targeted-distribution.md
-              - name: Distribute LOB apps to enterprises
-                href: distribute-lob-apps-to-enterprises.md
+              - name: Manage app names
+                href: partner-center/msix/manage-app-name-reservations.md
           - name: Attract and promote
-            href: attract-customers-and-promote-your-apps.md
             items: 
+              - name: Overview
+                href: attract-customers-and-promote-your-apps.md
               - name: Generate promotional codes
                 href: generate-promotional-codes.md
               - name: Create a custom app promotion campaign
                 href: create-a-custom-app-promotion-campaign.md
               - name: Put apps and add-ons on sale
                 href: put-apps-and-add-ons-on-sale.md
-              - name: App marketing guidelines
-                href: app-marketing-guidelines.md
-              - name: Link to your app
-                href: link-to-your-app.md
-              - name: Get the updated Microsoft Store Badge
-                href: microsoft-store-app-badge.md
-              - name: Make your app easier to promote
-                href: make-your-app-easier-to-promote.md
           - name: Engage with your customers
-            href: engage-with-your-customers.md
             items: 
+              - name: Overview
+                href: engage-with-your-customers.md
               - name: Create customer groups
                 href: create-customer-groups.md
-                items: 
-                  - name: Create customer segments
-                    href: create-customer-segments.md
-                  - name: Create known user groups
-                    href: create-known-user-groups.md
               - name: Respond to customer reviews
                 href: respond-to-customer-reviews.md
-              - name: Respond to customer feedback
-                href: respond-to-customer-feedback.md
-              - name: Send notifications to your app's customers
-                href: send-push-notifications-to-your-apps-customers.md
               - name: Use targeted offers
                 href: use-targeted-offers-to-maximize-engagement-and-conversions.md
-    - name: Microsoft Store Developer CLI (preview)
-      items:
-        - name: Overview
-          href: msstore-dev-cli/overview.md
-        - name: Commands
-          href: msstore-dev-cli/commands.md
+          - name: Targeted distribution
+            items:
+              - name: Beta testing and targeted distribution
+                href: beta-testing-and-targeted-distribution.md
+              - name: Package flights
+                href: package-flights.md
+              - name: Gradual package rollout
+                href: gradual-package-rollout.md
+              - name: Distribute LOB apps to enterprises
+                href: distribute-lob-apps-to-enterprises.md
+          - name: Microsoft Store Developer CLI
+            items:
+              - name: Overview
+                href: msstore-dev-cli/overview.md
+              - name: Commands
+                href: msstore-dev-cli/commands.md
+    - name: MSI/EXE
+      items: 
+          - name: Microsoft Store Submission API for MSI or EXE app
+            href: store-submission-api.md
+    - name: Use Microsoft Store Web Installer to distribute apps
+      href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md
 - name: Manage and update your app
   items:
         - name: MSIX
           items:
               - name: Publish update to your app
                 href: publish-your-app/msix/publish-update-to-your-app-on-store.md
-              - name: Manage app names
-                href: partner-center/msix/manage-app-name-reservations.md
               - name: Guidance for app package management
                 href: publish-your-app/msix/app-package-management.md
         - name: MSI/EXE
           items:
               - name: Publish update to your app
                 href: publish-your-app/msi/publish-update-to-your-app-on-store.md  
-              - name: Manage app names
-                href: partner-center/msi/manage-app-name-reservations.md
               - name: Guidance for app package management
                 href: publish-your-app/msi/app-package-management.md                     
         - name: PWA
           items:
               - name: Publish update to your app
                 href: publish-your-app/pwa/publish-update-to-your-app-on-store.md
-              - name: Manage app names
-                href: partner-center/pwa/manage-app-name-reservations.md
               - name: Guidance for app package management
-                href: publish-your-app/pwa/app-package-management.md                
+                href: publish-your-app/pwa/app-package-management.md        
+        - name: Add-ons
+          items:
+              - name: Publish update to your add-on
+                href: publish-your-app/add-on/publish-update-to-your-app-on-store.md  
 - name: Manage your account
   items:
       - name: Manage account users
-        href: partner-center/manage-account-users.md
+        href: partner-center/manage-account-users.md  
+      - name: Manage Microsoft Entra ID with your Partner Center account
         items: 
-          - name: Manage Azure AD with your Partner Center account
-            items: 
-              - name: Associate an existing Azure AD in Partner Center
-                href: partner-center/associate-existing-azure-ad-tenant-with-partner-center-account.md
-              - name: Create a new Azure AD in Partner Center
-                href: partner-center/create-new-azure-ad-tenant.md
-              - name: Remove Azure AD tenant from Partner Center
-                href: partner-center/remove-azure-ad-tenant-associations.md
-          - name: Manage users, groups, and Azure AD applications
-            items: 
-              - name: Users, groups, and applications in Azure Active Directory
-                href: partner-center/overview-users-groups-azure-ad-applications.md
-              - name: Manage users in Partner Center account
-                href: partner-center/manage-users-in-partner-center.md
-              - name: Manage groups in Partner Center account
-                href: partner-center/manage-groups-in-partner-center.md
-              - name: Manage Azure AD applications in Partner Center account
-                href: partner-center/manage-azure-ad-applications-in-partner-center.md
-          - name: Manage roles and permissions for account users
-            items: 
-              - name: Overview of roles and permissions for account users
-                href: partner-center/overview-of-roles-and-permissions-for-account-users.md
-              - name: Assign roles to account users
-                href: partner-center/assign-roles-to-account-users.md
-              - name: Overview of custom permissions to account users
-                href: partner-center/overview-of-custom-permissions-for-account-users.md
-              - name: Assign account level custom permissions to account users
-                href: partner-center/assign-account-level-custom-permissions-to-account-users.md
-              - name: Assign product level custom permissions to account users
-                href: partner-center/assign-product-level-custom-permissions-to-account-users.md
-              - name: Troubleshoot App Creation in Partner Center
-                href: partner-center/troubleshoot-app-creation.md
+          - name: Associate an existing Microsoft Entra ID in Partner Center
+            href: partner-center/associate-existing-azure-ad-tenant-with-partner-center-account.md
+          - name: Create a new Microsoft Entra ID in Partner Center
+            href: partner-center/create-new-azure-ad-tenant.md
+          - name: Remove Microsoft Entra ID tenant from Partner Center
+            href: partner-center/remove-azure-ad-tenant-associations.md
+      - name: Manage users, groups, and Microsoft Entra ID applications
+        items: 
+          - name: Users, groups, and applications in Microsoft Entra ID
+            href: partner-center/overview-users-groups-azure-ad-applications.md
+          - name: Manage users in your Partner Center account
+            href: partner-center/manage-users-in-partner-center.md
+          - name: Manage groups in your Partner Center account
+            href: partner-center/manage-groups-in-partner-center.md
+          - name: Manage Microsoft Entra ID applications in your Partner Center account
+            href: partner-center/manage-azure-ad-applications-in-partner-center.md
+      - name: Manage roles and permissions for account users
+        items: 
+          - name: Overview of roles and custom permissions for account users
+            href: partner-center/overview-of-roles-and-permissions-for-account-users.md
+          - name: Assign roles to account users
+            href: partner-center/assign-roles-to-account-users.md
+          - name: Assign account level custom permissions to account users
+            href: partner-center/assign-account-level-custom-permissions-to-account-users.md
+          - name: Assign product level custom permissions to account users
+            href: partner-center/assign-product-level-custom-permissions-to-account-users.md
       - name: Partner Center workspaces
         href: partner-center/partner-center-workspaces.md
       - name: Manage account settings and profile info
@@ -388,7 +345,7 @@ items:
         href: partner-center/trademark-and-copyright-protection.md  
 - name: What's new
   items:
-      - name: New onboarding flow for individual developers
+      - name: Free developer registration for individual developers
         href: whats-new-individual-developer.md  
       - name: Revamped Health report in Partner Center
         href: improved-health-report.md 
@@ -418,3 +375,21 @@ items:
             href: store-policies.md#microsoft-store-complaint-and-appeal-statistics
           - name: Raise a support ticket
             href: contact-us.md
+- name: FAQs
+  items:
+    - name: Get Started with the Microsoft Store
+      href: faq/get-started-with-the-microsoft-store.md
+    - name: Submit your app
+      href: faq/submit-your-app.md
+    - name: Get your app certified
+      href: faq/get-your-app-certified.md
+    - name: Monitor your app performance
+      href: faq/monitor-your-app-performance.md
+    - name: Leverage developer tools
+      href: faq/leverage-developer-tools.md
+    - name: Manage and update your app
+      href: faq/manage-and-update-your-app.md
+    - name: Manage your account
+      href: faq/manage-your-account.md
+    - name: Responsible AI FAQ 
+      href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md

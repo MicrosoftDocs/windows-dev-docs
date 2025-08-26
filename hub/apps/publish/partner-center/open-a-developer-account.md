@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Steps to open a developer account
 
-There are 2 types of developer accounts available in Partner Center: **Individual and Company**. Select a developer account below to understand the account creation process:
+There are 2 types of developer accounts available in Partner Center: **Individual and Company**. Depending on your Microsoft account and other factors, you may be able to choose between these account types, or the system may pre-determine the appropriate type for you. Select a developer account below to understand the account creation process:
 
 ## [Open individual developer account](#tab/individual)
 
@@ -29,13 +29,13 @@ For more details, you can refer to the steps below:
 
 1. Navigate to the [registration page](https://aka.ms/partnercenterregistration).
 
-1. Now, sign in with your Microsoft account. If you do not have a Microsoft account, click on **Create One**. The Microsoft account you use here is what you'll use to sign in to your developer account. If you want to know what is a Microsoft account, [click here.](https://aka.ms/microsoftaccount)
+1. Now, sign in with your Microsoft account. If you do not have a Microsoft account, click on **Create an account**. The Microsoft account you use here is what you'll use to sign in to your developer account. If you want to know what is a Microsoft account, [click here.](https://aka.ms/microsoftaccount)
 
 1. Next step is to join a partner program. Partner Center is home to partner programs for multiple marketplaces including Windows. For submitting apps to Microsoft Store, join the **Windows and Xbox** program.
 
 1. Select the [country or region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) where you live or where your business is located. You won't be able to change this later.
 
-1. Select your developer account type as **Individual**.
+1. Select your developer account type. If account type selection is available, choose **Individual**. If the options are grayed out, the system has pre-determined your account type (commonly defaulting to Individual) based on your Microsoft account and other factors.
 
 1. Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. 
 
@@ -74,15 +74,15 @@ For more details, you can refer to the steps below:
 ### Steps to open company account
 
 1. Navigate to the [registration page](https://aka.ms/partnercenterregistration).
-1. Now, sign in with your Microsoft account. If you do not have a Microsoft account, click on **Create One**. The Microsoft account you use here is what you'll use to sign in to your developer account. If you want to know what is a Microsoft account, [click here.](https://aka.ms/microsoftaccount)
+1. Now, sign in with your Microsoft account. If you do not have a Microsoft account, click on **Create an account**. The Microsoft account you use here is what you'll use to sign in to your developer account. If you want to know what is a Microsoft account, [click here.](https://aka.ms/microsoftaccount)
 
-   **Note:** If you have an AAD, you can link it to the developer account in Partner Center after **successful developer account creation**, and then use the AAD for future sign-ins. Here are the steps to [associate an existing Azure AD tenant with your developer account in Partner Center](./associate-existing-azure-ad-tenant-with-partner-center-account.md).
+   **Note:** If you have an Microsoft Entra ID, you can link it to the developer account in Partner Center after **successful developer account creation**, and then use the Microsoft Entra ID for future sign-ins. Here are the steps to [associate an existing Microsoft Entra ID tenant with your developer account in Partner Center](./associate-existing-azure-ad-tenant-with-partner-center-account.md).
 
 1. Next step is to join a partner program. Partner Center is home to partner programs for multiple marketplaces including Windows. For submitting apps to Microsoft Store, join the **Windows and Xbox** program.
 
 1. Select the [country or region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) where your business is located. You won't be able to change this later.
 
-1. Select your developer account type as **Company**.
+1. Select your developer account type. If account type selection is available, choose **Company**. If the options are grayed out or only Individual is available, see the [Account type availability](account-types-locations-and-fees.md#account-type-availability) section for guidance on proceeding with a company account setup.
 
 1. Next, if your company is registered with [Dun & Bradstreet](https://partner.microsoft.com/marketing/usisvshowcase/dunandbrad), use the **DUNS number** to access company information. Otherwise select **I don't have a DUNS number** to manually provide details like company name, address, company registration number etc.
 
@@ -117,3 +117,6 @@ You can check your verification status on the [Account settings](https://aka.ms/
 
 > [!NOTE]
 > There is a known issue where users in some locales might be unable to finish completing their registration. Until we can confirm that it is resolved, we recommend that you manually change your browser's locale tag to **en-us** once you begin the sign-up process on partner.microsoft.com.
+
+> [!TIP]
+> If you're unsure which account type is appropriate for your situation, look for the "Learn More" link during registration for additional guidance on account types, or refer to our [account types documentation](account-types-locations-and-fees.md) to understand the differences between Individual and Company accounts.

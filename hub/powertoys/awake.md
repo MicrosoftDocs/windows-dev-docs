@@ -1,7 +1,7 @@
 ---
-title: PowerToys Awake utility for Windows
-description: A tool for a Windows computer to stay awake.
-ms.date: 11/19/2024
+title: PowerToys Awake - Keep Windows Computer Awake Tool
+description: Learn how to use PowerToys Awake to keep your Windows computer awake without changing power settings. Configure timed, indefinite, or scheduled awake modes with CLI support.
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 # Customer intent: As a Windows power user, I want to learn how to configure and use the PowerToys Awake utility.
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # PowerToys Awake utility
 
-PowerToys Awake is a tool for Windows designed to keep a computer awake without having to manage its [power and sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+PowerToys Awake is a Windows utility that keeps your computer awake without modifying [power and sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This tool helps prevent your computer from sleeping during long-running tasks, presentations, or downloads, ensuring your work continues uninterrupted.
 
 ## Getting started
 
@@ -22,7 +22,7 @@ You can use PowerToys Awake directly from PowerToys Settings or as a standalone 
 
 In the PowerToys Settings, start PowerToys Awake by toggling **Enable Awake** on. Once enabled, the application will manage the power and screen state of the computer.
 
-![A screenshot of the Awake settings](../images/powertoys-awake/pt-awake-settings-menu.png)
+:::image type="content" source="../images/powertoys-awake/pt-awake-settings-menu.png" alt-text="Screenshot of PowerToys Awake settings menu showing enable toggle and power mode options.":::
 
 PowerToys Awake supports a variety of modes that can be used to control computer and screen power behaviors:
 

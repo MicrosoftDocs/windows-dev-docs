@@ -126,6 +126,10 @@ To learn more about configuring languages in your apps, see [Globalization and l
 
 These are the languages that the Microsoft Store supports. Your app must support at least one of these languages.
 
+<details>
+
+<summary>View table</summary>
+
 Language codes that are not included here are not supported by the Store. We recommend that you don't include packages targeting language codes other than those listed below; such packages will not be distributed to customers, and may cause delays or failures in certification.
 
 | Language name         | Supported language codes                                                                                                                                                                              |
@@ -233,3 +237,4 @@ Language codes that are not included here are not supported by the Store. We rec
 | Welsh                 | cy, cy-gb                                                                                                                                                                                             |
 | Wolof                 | wo, wo-sn                                                                                                                                                                                             |
 | Yoruba                | yo-latn, yo-ng                                                                                                                                                                                        |
+</details>

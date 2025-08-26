@@ -26,7 +26,7 @@ Apps are single-instanced if there can be only one main process running at a tim
 
 WinUI apps are multi-instanced by default but have the ability to become single-instanced by deciding at launch-time whether to create a new instance or activate an existing instance instead.
 
-The [Microsoft Photos](https://www.microsoft.com/store/productId/9WZDNCRFJBH4) app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.
+The [Microsoft Photos](https://apps.microsoft.com/detail/9WZDNCRFJBH4) app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.
 
 For an example of how to implement single instancing in a WinUI 3 app with C#, see [Create a single-instanced WinUI app](applifecycle-single-instance.md).
 
@@ -336,56 +336,47 @@ Unlike the UWP version of `RedirectActivationTo`, the Windows App SDK's implemen
 
 ### Redirection without blocking
 
-Most apps will want to redirect as early as possible, before doing unnecessary initialization work. For some app types, initialization logic runs on an STA thread, which must not be blocked. AppInstance.RedirectActivationToAsync method is asynchronous, and the calling app must wait for the method to complete, otherwise the redirection will fail. However, waiting on an async call will block the STA. In these situations, call RedirectActivationToAsync in another thread, and set an event when the call completes. Then wait on that event using non-blocking APIs such as CoWaitForMultipleObjects. Here’s a C# sample for a WPF app.
+Most apps will want to redirect as early as possible, before doing unnecessary initialization work. For some app types, initialization logic runs on an STA thread, which must not be blocked. **AppInstance.RedirectActivationToAsync** method is asynchronous, and the calling app must wait for the method to complete, otherwise the redirection will fail. However, waiting on an async call will block the STA. In these situations, call **RedirectActivationToAsync** in another thread, and set an event when the call completes. Then wait on that event using non-blocking APIs.
+
+The following is a C# sample for a WPF app:
 
 ```csharp
-private static bool DecideRedirection()
+private static bool DecideRedirection(string key)
 {
     bool isRedirect = false;
 
     // Find out what kind of activation this is.
     AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
     ExtendedActivationKind kind = args.Kind;
-    if (kind == ExtendedActivationKind.File)
+
+    if (kind == ExtendedActivationKind.Launch)
     {
         try
         {
-            // This is a file activation: here we'll get the file information,
-            // and register the file name as our instance key.
-            if (args.Data is IFileActivatedEventArgs fileArgs)
+            AppInstance keyInstance = AppInstance.FindOrRegisterForKey(key);
+
+            // If we successfully registered the key, we must be the
+            // only instance running that was activated for this key.
+            if (keyInstance.IsCurrent)
             {
-                IStorageItem file = fileArgs.Files[0];
-                AppInstance keyInstance = AppInstance.FindOrRegisterForKey(file.Name);
+                // Hook up the Activated event, to allow for this instance of the app
+                // getting reactivated as a result of multi-instance redirection.
+                keyInstance.Activated += OnKeyInstanceActivated;
+            }
+            else
+            {
+                isRedirect = true;
 
-                // If we successfully registered the file name, we must be the
-                // only instance running that was activated for this file.
-                if (keyInstance.IsCurrent)
+                // Ensure we don't block the STA, by doing the redirect operation
+                // in another thread, and using an event to signal when it has completed.
+                var redirectSemaphore = new Semaphore(0, 1);
+                Task.Run(() =>
                 {
-                    // Hook up the Activated event, to allow for this instance of the app
-                    // getting reactivated as a result of multi-instance redirection.
-                    keyInstance.Activated += OnActivated;
-                }
-                else
-                {
-                    isRedirect = true;
+                    keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
+                    redirectSemaphore.Release();
+                });
+                redirectSemaphore.WaitOne();
 
-                    // Ensure we don't block the STA, by doing the redirect operation
-                    // in another thread, and using an event to signal when it has completed.
-                    redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
-                    if (redirectEventHandle != IntPtr.Zero)
-                    {
-                        Task.Run(() =>
-                        {
-                            keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
-                            SetEvent(redirectEventHandle);
-                        });
-                        uint CWMO_DEFAULT = 0;
-                        uint INFINITE = 0xFFFFFFFF;
-                        _ = CoWaitForMultipleObjects(
-                            CWMO_DEFAULT, INFINITE, 1, 
-                            new IntPtr[] { redirectEventHandle }, out uint handleIndex);
-                    }
-                }
             }
         }
         catch (Exception ex)

@@ -1,19 +1,16 @@
 ---
 description: This page describes what's new in test markets for invividual developers
-title: What’s New in Onboarding for Individual Developers
-ms.date: 07/22/2025
+title: Free developer registration for individual developers
+ms.date: 08/07/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# What’s new in onboarding for individual developers
+# Free developer registration for individual developers
 
-A new onboarding process will soon allow individual developers to publish apps to the Microsoft Store without incurring any registration fees. We plan to roll out this improved experience gradually across markets.
+A new onboarding process is now being rolled out that allows individual developers to publish apps to the Microsoft Store without incurring any registration fees. The flow is currently live in six flighted markets: **United States, India, United Kingdom, Ireland, New Zealand, and Australia**.
  
-This documentation will be updated as the new onboarding process becomes available.
-
-> [!NOTE]  
-> The new onboarding process was initially launched in India. However, due to an unexpected issue, we have temporarily rolled back this experience and it is not currently available in any market. We will update this page once the rollout resumes and becomes available in other regions.
+This documentation will be updated as the new onboarding process becomes available in additional markets in coming weeks.
 
 
 ## What’s New
@@ -66,7 +63,11 @@ You’ll be redirected to Partner Center to finish setup and publish your first 
 
 ## Need help? Contact us
 
-- Click on “Get Support” link embedded in the onboarding flow, or email us at:  **<storesupport@service.microsoft.com>**
+If you need assistance with the new account onboarding process for individual developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process in **flighted markets**.
+
+For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
+You can also explore guidance in our [publishing documentation](/windows/apps/publish).
+
 
 ## Frequently Asked Questions (FAQs)
 

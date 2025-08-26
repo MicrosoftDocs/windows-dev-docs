@@ -1,14 +1,18 @@
 ---
-title: PowerToys Text Extractor utility for Windows
-description: Text Extractor is a convenient way to copy text from anywhere on your screen.
-ms.date: 07/16/2024
-ms.topic: article
+title: PowerToys Text Extractor Utility for Windows
+description: Learn how to use PowerToys Text Extractor to copy text from anywhere on your Windows screen, including images and videos. Extract text with OCR technology using simple keyboard shortcuts.
+ms.date: 08/20/2025
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Text Extractor, Win]
+# customer intent: As a Windows power user, I want to learn how to use the Text Extractor utility for Windows.
 ---
 
 # Text Extractor utility
 
-Text Extractor enables you to copy text from anywhere on your screen, including inside images or videos. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+PowerToys Text Extractor enables you to copy text from anywhere on your Windows screen, including inside images or videos. This powerful OCR utility helps you extract text quickly using keyboard shortcuts, making it easier to capture and use text content from any application or media file. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+
+> [!NOTE]
+> It's recommended to use the [Snipping Tool](https://support.microsoft.com/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b) instead of the Text Extractor for capturing screenshots.
 
 ## How to activate
 
@@ -25,8 +29,8 @@ By holding <kbd>Shift</kbd>, you change from adjusting the capture region's size
 > [!IMPORTANT]
 >
 > 1. The produced text may not be perfect, so you have to do a quick proof read of the output.
-> 2. This tool uses OCR (Optical Character Recognition) to read text on the screen.
-> 3. The default language used will be based on your [Windows system language > Keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2). OCR language packs are available for installation.
+> 1. This tool uses OCR (Optical Character Recognition) to read text on the screen.
+> 1. The default language used will be based on your [Windows system language > Keyboard settings](https://support.microsoft.com/windows/manage-the-input-and-display-language-settings-in-windows-12a10cb4-8626-9b77-0ccb-5013e0c7c7a2). OCR language packs are available for installation.
 
 ## Settings
 
@@ -51,7 +55,7 @@ The list can be obtained via PowerShell by running the following commands:
 [Windows.Media.Ocr.OcrEngine]::AvailableRecognizerLanguages
 ```
 
-### How to query for OCR language packs
+## Query for OCR language packs
 
 To return the list of all supported language packs, open PowerShell as an Administrator (right-click, then select "Run as Administrator") and enter the following command:
 
@@ -80,7 +84,7 @@ State : NotPresent
 
 The language and location is abbreviated, so "en-US" would be "English-United States" and "en-GB" would be "English-Great Britain". If a language is not available in the output, then it's not supported by OCR. `State: NotPresent` languages must be installed first.
 
-### How to install an OCR language pack
+## Install an OCR language pack
 
 The following commands install the OCR pack for "en-US":
 
@@ -92,7 +96,7 @@ $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Lang
 $Capability | Add-WindowsCapability -Online
 ```
 
-### How to remove an OCR language pack
+## Remove an OCR language pack
 
 The following commands remove the OCR pack for "en-US":
 

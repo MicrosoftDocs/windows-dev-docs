@@ -31,6 +31,241 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "uwp/porting/desktop-to-uwp-migrate.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/desktop-to-uwp-migrate",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/index.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-bookstore1.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-bookstore1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-bookstore2.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-bookstore2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-quizgame.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-quizgame",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-input-and-sensors.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-input-and-sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-porting-to-a-uwp-project.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-porting-xaml-and-ui.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-porting-xaml-and-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-root.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-root",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-troubleshooting.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-business-and-data.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-business-and-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-case-study-bookstore1.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-case-study-bookstore1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-case-study-bookstore2.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-case-study-bookstore2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-form-factors-and-ux.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-form-factors-and-ux",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-input-and-sensors.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-input-and-sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-namespace-and-class-mappings.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-namespace-and-class-mappings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-porting-to-a-uwp-project.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-porting-to-a-uwp-project",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-porting-xaml-and-ui.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-porting-xaml-and-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-root.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-root",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-troubleshooting.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/ad-mediation-service.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/ad-mediation-service",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/adcontrol-in-html-5-and-javascript.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/adcontrol-in-html-5-and-javascript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/adcontrol-in-xaml-and--net.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/adcontrol-in-xaml-and--net",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/add-advertisements-to-video-content.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/add-advertisements-to-video-content",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/banner-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/banner-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/best-practices-for-ads-in-apps.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/best-practices-for-ads-in-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/developer-walkthroughs.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/developer-walkthroughs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/display-ads-in-your-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/display-ads-in-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/error-handling-in-javascript-walkthrough.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/error-handling-in-javascript-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/error-handling-in-xamlc-walkthrough.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/error-handling-in-xamlc-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/error-handling-with-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/error-handling-with-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/html-and-javascript-troubleshooting-guide.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/html-and-javascript-troubleshooting-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/install-the-microsoft-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/install-the-microsoft-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/interstitial-ad-sample-code-in-c.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/interstitial-ad-sample-code-in-c",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/interstitial-ad-sample-code-in-javascript.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/interstitial-ad-sample-code-in-javascript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/interstitial-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/interstitial-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/known-issues-for-the-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/known-issues-for-the-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/native-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/native-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/optimize-ad-unit-viewability.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/optimize-ad-unit-viewability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/release-notes-for-the-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/release-notes-for-the-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/set-up-ad-units-in-your-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/set-up-ad-units-in-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/supported-ad-sizes-for-banner-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/supported-ad-sizes-for-banner-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/ui-and-user-experience-guidelines.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/ui-and-user-experience-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/update-your-app-to-the-latest-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/update-your-app-to-the-latest-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/windows-premium-ads-publishers-program.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/windows-premium-ads-publishers-program",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/xaml-and-c-troubleshooting-guide.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/xaml-and-c-troubleshooting-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/video-conference-mute.md",
+      "redirect_url": "/previous-versions/windows/powertoys/video-conference-mute",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/android/wsa/index.md",
       "redirect_url": "/previous-versions/windows/android/wsa/index",
       "redirect_document_id": false
@@ -7761,8 +7996,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/publish/app-management-and-services.md",
-      "redirect_url": "/windows/apps/publish/app-management-and-services",
+      "source_path": "uwp/publish/product-management.md",
+      "redirect_url": "/windows/apps/publish/product-management",
       "redirect_document_id": false
     },
     {
@@ -7858,11 +8093,6 @@
     {
       "source_path": "uwp/publish/make-your-app-easier-to-promote.md",
       "redirect_url": "/windows/apps/publish/make-your-app-easier-to-promote",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "uwp/publish/organizational-licensing.md",
-      "redirect_url": "/windows/apps/publish/organizational-licensing",
       "redirect_document_id": false
     },
     {
@@ -9153,6 +9383,11 @@
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-ux-guidance.md",
       "redirect_url": "../../../develop/notifications/app-notifications/toast-ux-guidance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
+      "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
       "redirect_document_id": false
     }
   ]
