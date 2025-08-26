@@ -84,6 +84,64 @@ Once [RequestVirtualSmartCardCreationAsync](/uwp/api/windows.devices.smartcards.
 
 To authenticate with smart cards or virtual smart cards, your app must provide the behavior to complete challenges between the admin key data stored on the card, and the admin key data maintained by the authentication server or management tool.
 
+### Obtaining the admin key
+
+Before you can perform authentication, you need to obtain the admin key. The source of the admin key depends on your scenario:
+
+- **For virtual smart cards you created**: Use the same admin key that was generated during card creation (as shown in the "Create a virtual smart card" section above). You should store this key securely for later authentication use.
+- **For existing physical or virtual smart cards**: The admin key is typically provided by your organization's IT department, card management system, or the service that issued the card.
+- **For development/testing**: You can generate a test admin key using `CryptographicBuffer.GenerateRandom(24)` as shown in the virtual card creation example.
+
+```cs
+// Example: Store the admin key from virtual card creation for later use
+IBuffer adminkey = CryptographicBuffer.GenerateRandom(24);
+
+// Store this key securely in your app (e.g., in app settings, secure storage, etc.)
+// You'll need this same key for authentication operations
+
+SmartCardProvisioning provisioning = await
+     SmartCardProvisioning.RequestVirtualSmartCardCreationAsync(
+          "Card friendly name",
+          adminkey,
+          pinPolicy);
+
+// Save the adminkey for future authentication
+SaveAdminKeySecurely(adminkey);
+```
+
+### Example admin key management methods
+
+Here are example methods you might implement to securely store and retrieve admin keys:
+
+```cs
+// Example implementation for storing admin key securely
+private void SaveAdminKeySecurely(IBuffer adminKey)
+{
+    // Convert to string for storage (consider encryption for production)
+    string adminKeyString = CryptographicBuffer.EncodeToBase64String(adminKey);
+    
+    // Store in app settings (consider using Windows Credential Manager for production)
+    ApplicationData.Current.LocalSettings.Values["SmartCardAdminKey"] = adminKeyString;
+}
+
+// Example implementation for retrieving stored admin key
+private IBuffer GetStoredAdminKey()
+{
+    // Retrieve from app settings
+    string adminKeyString = ApplicationData.Current.LocalSettings.Values["SmartCardAdminKey"] as string;
+    
+    if (string.IsNullOrEmpty(adminKeyString))
+    {
+        throw new InvalidOperationException("Admin key not found. Ensure the smart card was created by this app or the admin key was provided by your IT department.");
+    }
+    
+    // Convert back to IBuffer
+    return CryptographicBuffer.DecodeFromBase64String(adminKeyString);
+}
+```
+
+### Authentication algorithm
+
 The following code shows how to support smart card authentication for services or modification of physical or virtual card details. If the data generated using the admin key on the card ("challenge") is the same as the admin key data provided by the server or management tool ("adminkey"), authentication is successful.
 
 ```cs
@@ -123,9 +181,14 @@ SmartCardProvisioning provisioning =
 SmartCardChallengeContext context =
     await provisioning.GetChallengeContextAsync();
 
+// Use the admin key that was either:
+// 1. Generated during virtual card creation, or
+// 2. Provided by your IT department/card management system
+IBuffer adminKey = GetStoredAdminKey(); // Your method to retrieve the stored admin key
+
 IBuffer response = ChallengeResponseAlgorithm.CalculateResponse(
     context.Challenge,
-    rootPage.AdminKey);
+    adminKey);
 
 verifyResult = await context.VerifyResponseAsync(response);
 ```
@@ -163,10 +226,13 @@ bool result = await provisioning.RequestPinResetAsync(
 
         try
         {
+            // Use the same admin key from card creation or your secure storage
+            IBuffer adminKey = GetStoredAdminKey(); // Your method to retrieve the stored admin key
+            
             IBuffer response =
                 ChallengeResponseAlgorithm.CalculateResponse(
                     request.Challenge,
-                    rootPage.AdminKey);
+                    adminKey);
             request.SetResponse(response);
         }
         finally
