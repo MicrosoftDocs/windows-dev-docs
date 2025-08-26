@@ -63,6 +63,21 @@ Create a JSON file (without the .json file extension) named **windows-app-web-li
 
 Windows will make an https connection to your website and will look for the corresponding JSON file on your web server.
 
+### Subdomain support
+
+If your app manifest includes both a main domain (for example, `example.com`) and wildcard subdomains (for example, `*.example.com`), you need to add the `allowSubdomains` field to your JSON file to enable subdomain linking. Without this field, links to subdomains will open in the browser instead of your app.
+
+``` JSON
+[{
+  "packageFamilyName" : "Your app's package family name, e.g MyApp_9jmtgj1pbbz6e",
+  "paths" : [ "*" ],
+  "excludePaths" : [ "/news/*", "/blog/*" ],
+  "allowSubdomains" : true
+ }]
+```
+
+When `allowSubdomains` is set to `true`, links to subdomains like `subdomain.example.com/path` will correctly open in your app instead of the browser.
+
 ### Wildcards
 
 The JSON file example above demonstrates the use of wildcards. Wildcards allow you to support a wide variety of links with fewer lines of code. Web-to-app linking supports two types of wildcards in the JSON file:
@@ -89,6 +104,9 @@ If you have two apps that you would like to link to your website, list both of t
   "paths": [ "/example/*", "/links/*" ]
  }]
 ```
+
+> [!NOTE]
+> If your apps need to support subdomains, add `"allowSubdomains": true` to each app entry in the JSON file.
 
 To provide the best experience for your users, use exclude paths to make sure that online-only content is excluded from the supported paths in your JSON file.
 
