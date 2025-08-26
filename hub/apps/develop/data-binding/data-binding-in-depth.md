@@ -162,6 +162,11 @@ In the two examples below, the `Button.Content` property is the binding target, 
 <Button Content="{Binding ...}" ... />
 ```
 
+If you're using C++/WinRT, then you'll need to add the [**BindableAttribute**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute to any runtime class that you want to use the [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) markup extension with.
+
+> [!IMPORTANT]
+> If you're using C++/WinRT, then the [**BindableAttribute**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute is available with Windows App SDK. Without that attribute, you'll need to implement the [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) markup extension.
+
 ### Binding object declared using {x:Bind}
 
 There's one step we need to do before we author our [{x:Bind}](/windows/uwp/xaml-platform/x-bind-markup-extension) markup. We need to expose our binding source class from the class that represents our page of markup. We do that by adding a property (of type `HostViewModel` in this case) to our `MainWindow` window class.
@@ -233,6 +238,22 @@ Code to support `{x:Bind}` is generated at compile-time in the partial classes f
 > `{x:Bind}` is not suited to late-bound scenarios, such as navigating the dictionary structure of a JSON object, nor duck typing. "Duck typing" is a weak form of typing based on lexical matches on property names (as in, "if it walks, swims, and quacks like a duck, then it's a duck"). With duck typing, a binding to the `Age` property would be equally satisfied with a `Person` or a `Wine` object (assuming that those types each had an `Age` property). For these scenarios, use the `{Binding}` markup extension.
 
 ### Binding object declared using {Binding}
+
+If you're using C++/WinRT then, to use the [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) markup extension, you'll need to add the [**BindableAttribute**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute to any runtime class that you want to bind to. To use [{x:Bind}](/windows/uwp/xaml-platform/x-bind-markup-extension), you don't need that attribute.
+
+```cppwinrt
+// HostViewModel.idl
+// Add this attribute:
+[Microsoft.UI.Xaml.Data.Bindable]
+runtimeclass HostViewModel : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
+{
+    HostViewModel();
+    String NextButtonText;
+}
+```
+
+> [!IMPORTANT]
+> If you're using C++/WinRT, then the [**BindableAttribute**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute is available with Windows App SDK. Without that attribute, you'll need to implement the [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) markup extension.
 
 [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension) assumes, by default, that you're binding to the [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) of your markup window. So we'll set the `DataContext` of our window to be an instance of our binding source class (of type `HostViewModel` in this case). The example below shows the markup that declares the binding object. We use the same `Button.Content` binding target we used in the "Binding target" section earlier, and we bind to the `HostViewModel.NextButtonText` property.
 
