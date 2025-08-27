@@ -60,7 +60,8 @@ There is one final step that you need to do. **But only if you deleted the `Lang
    </default>
 ```
 
-**Note** Make sure to include all qualifier values in your `priconfig.default.xml` file to preserve the built-in defaults for qualifiers you're not customizing. For the complete list of default values, see [Specify the default resources that your app uses](specify-default-resources-installed.md).
+> [!NOTE]
+> Make sure to include all qualifier values in your `priconfig.default.xml` file to preserve the built-in defaults for qualifiers you're not customizing. For the complete list of default values, see [Specify the default resources that your app uses](specify-default-resources-installed.md).
 
 ### How does this work?
 
@@ -96,7 +97,8 @@ Save and close, and rebuild your project.
 
 There is one final step that you need to do. **But only if you deleted the `Language` qualifier name**. You need to specify the union of all of your app's supported languages as your app's default language. For details, see [Specify the default resources that your app uses](specify-default-resources-installed.md).
 
-**Important** When you specify `<AppxDefaultResourceQualifiers>`, you must include all qualifier values that you want to preserve from the built-in defaults. If you only specify some qualifiers (like Language), you will lose the built-in defaults for all other qualifiers (such as Scale, Contrast, etc.). For example, if you don't include `Scale=200`, your app may be missing scaled images.
+> [!IMPORTANT]
+> When you specify `<AppxDefaultResourceQualifiers>`, you must include all qualifier values that you want to preserve from the built-in defaults. If you only specify some qualifiers (like Language), you will lose the built-in defaults for all other qualifiers (such as Scale, Contrast, etc.). For example, if you don't include `Scale=200`, your app may be missing scaled images.
 
 Here's what your project file should contain if you included resources for English, Spanish, and French in your app package, while preserving the built-in defaults for other qualifiers:
 
