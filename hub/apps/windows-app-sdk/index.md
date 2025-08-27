@@ -25,6 +25,20 @@ If you've already installed the required developer tools, then you're ready to [
 
 For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
 
+### Developer account for publishing apps
+
+If you plan to publish your Windows App SDK apps to the Microsoft Store, you'll need a developer account. **Individual developers can now register for free** in select markets including the United States, India, United Kingdom, Ireland, New Zealand, and Australia. 
+
+To get started with free developer registration:
+1. Visit [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com)
+2. Select "Individual developer" (free registration)
+3. Complete the identity verification process
+
+For more information, see [Free developer registration for individual developers](../publish/whats-new-individual-developer.md).
+
+> [!NOTE]
+> If you need assistance with developer account registration, you can contact support at **storesupport@service.microsoft.com** for issues related to the new onboarding process, or visit [Windows developer support](https://aka.ms/windowsdevelopersupport) for other account-related questions.
+
 ### Windows App SDK features
 
 The following table highlights the development features that are provided by the current releases of the Windows App SDK. For more details about the release channels of the Windows App SDK that include each of these features, see [Features available by release channel](release-channels.md#features-available-by-release-channel).
@@ -85,3 +99,4 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 - [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
 - [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
+- [Free developer registration for individual developers](../publish/whats-new-individual-developer.md)

@@ -12,6 +12,9 @@ A new onboarding process is now being rolled out that allows individual develope
  
 This documentation will be updated as the new onboarding process becomes available in additional markets in coming weeks.
 
+> [!TIP]
+> **Windows App SDK developers:** If you're developing apps with the Windows App SDK and plan to publish to the Microsoft Store, this free registration is perfect for individual developers. Learn more about [Windows App SDK](../windows-app-sdk/index.md) and how to get started building modern Windows apps.
+
 
 ## What’s New
 
