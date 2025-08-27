@@ -86,6 +86,7 @@ You can submit apps to the Microsoft Store in over 100 languages. Your app must 
 | Danish                | da, da-dk                                                                                                                                             |
 | Dari                  | prs, prs-af, prs-arab                                                                                                                                 |
 | Dutch                 | nl, nl-nl, nl-be                                                                                                                                      |
+<!-- In German localization, "English" should be translated as "Englisch" (the English language), not "Deutsch" (the German language) -->
 | English               | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw |
 | Estonian              | et, et-ee                                                                                                                                             |
 | Filipino              | fil, fil-latn, fil-ph                                                                                                                                 |
