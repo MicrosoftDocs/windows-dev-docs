@@ -70,6 +70,29 @@ Instead of setting **Width** from a Resources File, you'll probably want to allo
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
+### Direct property assignment using ms-resource
+
+As an alternative to using **x:Uid**, you can directly assign a resource string to a property using the `ms-resource` URI scheme. This is useful when you want to explicitly set a specific property to a resource string without using the implicit property binding that **x:Uid** provides.
+
+```xaml
+<TextBlock Text="ms-resource:///Resources/Farewell"/>
+```
+
+For the "Farewell" string resource identifier from our earlier example, the above markup would directly set the **Text** property of the **TextBlock** to the localized string value.
+
+When using **ms-resource** for direct property assignment:
+- Use the format `ms-resource:///Resources/ResourceIdentifier` for simple string resource identifiers
+- The path `/Resources/` refers to the default `Resources.resw` file
+- If you're using a different resource file name, replace `Resources` with your file name: `ms-resource:///YourFileName/ResourceIdentifier`
+
+For example, if you had an "ErrorMessages.resw" file with a string resource identifier "PasswordTooWeak", you would reference it like this:
+
+```xaml
+<TextBlock Text="ms-resource:///ErrorMessages/PasswordTooWeak"/>
+```
+
+This approach is particularly useful when you want to assign resource strings to properties that don't follow the standard naming convention used by **x:Uid**, or when you need more explicit control over which resource is assigned to which property.
+
 ## Refer to a string resource identifier from code
 
 You can explicitly load a string resource based on a simple string resource identifier.
