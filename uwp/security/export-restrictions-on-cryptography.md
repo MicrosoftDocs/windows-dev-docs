@@ -87,6 +87,7 @@ When submitting your app to the Microsoft Store through [Partner Center](https:/
 ### Certification process
 
 During the certification process, Microsoft's review team will:
+
 - Verify that appropriate ECCN information has been provided
 - Ensure the ECCN classification appears consistent with the app's functionality
 - May request additional documentation if needed
