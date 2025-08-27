@@ -16,7 +16,7 @@ Many enterprises use firewalls to block unwanted network traffic and ports; unfo
 ## Proxy Support
 
 > [!Note]
-> WNS Push Notifications *may not* support proxies. There are many different proxy setups and environments, and not all configurations are guaranteed work with WNS. For best results, the connection to WNS must be a direct connection, however, VPN interfaces can be used. 
+> WNS Push Notifications *may not* support proxies. There are many different proxy setups and environments, and not all configurations are guaranteed work with WNS. For best results, the connection to WNS must be a direct connection, however, VPN interfaces can be used. When using VPN interfaces, ensure that the VPN maintains reliable connectivity and does not introduce significant latency, as this may impact notification delivery performance. The VPN must also allow traffic to the required WNS endpoints listed in this document. 
 
 We welcome any feedback about proxy support. Please direct your feedback to [https://aka.ms/windowsappsdk](https://aka.ms/windowsappsdk) and file an issue for tracking interest in proxy support for WNS. Feel free to add the "area-Notifications" label to your issue for quicker visibility with the notifications team.
 
