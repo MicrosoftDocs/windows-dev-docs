@@ -49,9 +49,18 @@ There is one final step that you need to do. **But only if you deleted the `Lang
 ```xml
    <default>
       <qualifier name="Language" value="en;es;fr" />
-      ...
+      <qualifier name="Contrast" value="standard" />
+      <qualifier name="Scale" value="200" />
+      <qualifier name="HomeRegion" value="001" />
+      <qualifier name="TargetSize" value="256" />
+      <qualifier name="LayoutDirection" value="LTR" />
+      <qualifier name="DXFeatureLevel" value="DX9" />
+      <qualifier name="Configuration" value="" />
+      <qualifier name="AlternateForm" value="" />
    </default>
 ```
+
+**Note** Make sure to include all qualifier values in your `priconfig.default.xml` file to preserve the built-in defaults for qualifiers you're not customizing. For the complete list of default values, see [Specify the default resources that your app uses](specify-default-resources-installed.md).
 
 ### How does this work?
 
@@ -85,7 +94,17 @@ Here's how that looks after you've deleted the first qualifier name.
 
 Save and close, and rebuild your project.
 
-There is one final step that you need to do. **But only if you deleted the `Language` qualifier name**. You need to specify the union of all of your app's supported languages as your app's default language. For details, see [Specify the default resources that your app uses](specify-default-resources-installed.md). This is what your project file would contain if you included resources for English, Spanish, and French in your app package.
+There is one final step that you need to do. **But only if you deleted the `Language` qualifier name**. You need to specify the union of all of your app's supported languages as your app's default language. For details, see [Specify the default resources that your app uses](specify-default-resources-installed.md).
+
+**Important** When you specify `<AppxDefaultResourceQualifiers>`, you must include all qualifier values that you want to preserve from the built-in defaults. If you only specify some qualifiers (like Language), you will lose the built-in defaults for all other qualifiers (such as Scale, Contrast, etc.). For example, if you don't include `Scale=200`, your app may be missing scaled images.
+
+Here's what your project file should contain if you included resources for English, Spanish, and French in your app package, while preserving the built-in defaults for other qualifiers:
+
+```xml
+<AppxDefaultResourceQualifiers>Language=en;es;fr|Contrast=standard|Scale=200|HomeRegion=001|TargetSize=256|LayoutDirection=LTR|DXFeatureLevel=DX9|Configuration=|AlternateForm=</AppxDefaultResourceQualifiers>
+```
+
+If you only need to specify the language and want to keep all other defaults unchanged, you can use the shorter version, but be aware it will override all defaults:
 
 ```xml
 <AppxDefaultResourceQualifiers>Language=en;es;fr</AppxDefaultResourceQualifiers>
