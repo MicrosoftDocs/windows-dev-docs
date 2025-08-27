@@ -182,16 +182,19 @@ The Fiddler web debugger can be used with apps. For more information, see [Fiddl
     You can create the firewall rule using either the command line or the Windows Defender Firewall GUI:
 
     **Option A: Using netsh command (run as administrator):**
+
     ```cmd
     netsh advfirewall firewall add rule name="Fiddler for AuthHost Debugging" dir=in action=allow program="C:\Program Files\Fiddler\Fiddler.exe" enable=yes
     ```
     
     If Fiddler is installed in a different location, adjust the path accordingly. Alternatively, you can create a port-based rule:
+
     ```cmd
     netsh advfirewall firewall add rule name="Fiddler Port for AuthHost" dir=in action=allow protocol=TCP localport=8888
     ```
 
     **Option B: Using Windows Defender Firewall with Advanced Security:**
+
     1. Open Windows Defender Firewall with Advanced Security (run `wf.msc`)
     1. Click "Inbound Rules" in the left pane
     1. Click "New Rule..." in the right pane
