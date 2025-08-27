@@ -199,7 +199,7 @@ The Fiddler web debugger can be used with apps. For more information, see [Fiddl
     1. Click "Inbound Rules" in the left pane
     1. Click "New Rule..." in the right pane
     1. Select "Program" and click Next
-    1. Browse to your Fiddler executable (typically `C:\Program Files\Fiddler\Fiddler.exe`) and click Next
+    1. Browse to your Fiddler executable (typically `C:\Program Files\Fiddler\Fiddler.exe` in a per-machine installation) and click Next
     1. Select "Allow the connection" and click Next
     1. Check all network types (Domain, Private, Public) and click Next
     1. Give the rule a name like "Fiddler for AuthHost Debugging" and click Finish
