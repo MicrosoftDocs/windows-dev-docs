@@ -81,7 +81,8 @@ When submitting your app to the Microsoft Store through [Partner Center](https:/
 - Ensuring apps in the Microsoft Store meet basic export control requirements
 - Microsoft handles distribution reporting related to the Microsoft Store platform itself
 
-> **Important** It remains your responsibility as the app developer to understand and comply with all export control obligations associated with your specific ECCN classification, including any required annual or semi-annual reporting to government authorities.
+> [!IMPORTANT]
+> It remains your responsibility as the app developer to understand and comply with all export control obligations associated with your specific ECCN classification, including any required annual or semi-annual reporting to government authorities.
 
 ### Certification process
 
