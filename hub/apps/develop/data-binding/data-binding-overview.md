@@ -1,8 +1,8 @@
 ---
 ms.assetid: 02a08657-285d-4804-a006-168c22aa4904
-title: Windows data binding overview for developers
-description: This topic shows you how to bind a control (or other UI element) to a single item or bind an item's control to a collection of items in a WinUI app with Windows App SDK.
-ms.date: 01/10/2025
+title: Windows Data Binding Overview for Developers
+description: Learn how to bind controls to data in WinUI apps with Windows App SDK. Bind controls to single items or collections, implement details views, and convert data for display.
+ms.date: 08/26/2025
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -13,17 +13,17 @@ dev_langs:
 
 # Windows data binding overview
 
-This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Windows App SDK app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see [Data binding in depth](data-binding-in-depth.md).
+Data binding in WinUI apps with Windows App SDK allows you to connect controls to data sources efficiently. This article shows you how to bind a control to a single item or bind an items control to a collection of items. You'll also learn how to control item rendering, implement details views based on selections, and convert data for display. For more detailed info, see [Data binding in depth](data-binding-in-depth.md).
 
 ## Prerequisites
 
-This topic assumes that you know how to create a basic Windows App SDK app. For instructions on creating your first Windows App SDK app, see [Create your first WinUI 3 (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+This topic assumes that you know how to create a basic WinUI app with Windows App SDK. For instructions on creating your first WinUI app, see [Create a WinUI app](/windows/apps/tutorials/winui-notes/).
 
 ## Create the project
 
-Create a new **Blank App, Packaged (WinUI 3 in Desktop)** C# project. Name it "Quickstart".
+Create a new **WinUI Blank App, Packaged** C# project. Name it "Quickstart".
 
-## Binding to a single item
+## Bind to a single item
 
 Every binding consists of a binding target and a binding source. Typically, the target is a property of a control or other UI element, and the source is a property of a class instance (a data model, or a view model). This example shows how to bind a control to a single item. The target is the `Text` property of a `TextBlock`. The source is an instance of a simple class named `Recording` that represents an audio recording. Let's look at the class first.
 
@@ -54,7 +54,7 @@ namespace Quickstart
     }
     public class RecordingViewModel
     {
-        private Recording defaultRecording = new Recording();
+        private Recording defaultRecording = new();
         public Recording DefaultRecording { get { return defaultRecording; } }
     }
 }
@@ -70,9 +70,8 @@ namespace Quickstart
         public MainWindow()
         {
             this.InitializeComponent();
-            ViewModel = new RecordingViewModel();
         }
-        public RecordingViewModel ViewModel{ get; set; }
+        public RecordingViewModel ViewModel{ get; } = new RecordingViewModel();
     }
 }
 ```
@@ -83,8 +82,8 @@ The last piece is to bind a `TextBlock` to the `ViewModel.DefaultRecording.OneLi
 <Window x:Class="Quickstart.MainWindow" ... >
     <Grid>
         <TextBlock Text="{x:Bind ViewModel.DefaultRecording.OneLineSummary}"
-    HorizontalAlignment="Center"
-    VerticalAlignment="Center"/>
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
     </Grid>
 </Window>
 ```
@@ -93,9 +92,12 @@ Here's the result.
 
 ![Binding a textblock](images/xaml-databinding0.png)
 
-## Binding to a collection of items
+## Bind to a collection of items
 
-A common scenario is to bind to a collection of business objects. In C#, the generic [ObservableCollection&lt;T&gt;](/dotnet/api/system.collections.objectmodel.observablecollection-1) class is a good collection choice for data binding, because it implements the [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) and [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement `INotifyPropertyChanged`. For more info, see [Data binding in depth](data-binding-in-depth.md).
+A common scenario is to bind to a collection of business objects. In C#, the generic [ObservableCollection&lt;T&gt;](/dotnet/api/system.collections.objectmodel.observablecollection-1) class is typically recommended for data binding, because it implements the [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged) interface, which provides change notification to bindings when items are added or removed. However, due to a known WinUI Release mode bug with .NET 8 and later, you may need to use a [List&lt;T&gt;](/dotnet/api/system.collections.generic.list-1) in some scenarios, especially if your collection is static and does not change after initialization. If your UI needs to update when the collection changes at runtime, use `ObservableCollection<T>`. If you only need to display a fixed set of items, `List<T>` is sufficient. Additionally, if you want your bound controls to update with changes to properties of objects in the collection, those objects should implement [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged). For more info, see [Data binding in depth](data-binding-in-depth.md).
+
+> [!NOTE]
+> By using `List<T>`, you may not receive change notifications for collection changes. If you need to respond to changes, consider using `ObservableCollection<T>`. In our example, we don't need to respond to collection changes, so `List<T>` is sufficient.
 
 This next example binds a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the `RecordingViewModel` class.
 
@@ -103,8 +105,8 @@ This next example binds a [ListView](/windows/windows-app-sdk/api/winrt/microsof
 public class RecordingViewModel
 {
     ...
-    private ObservableCollection<Recording> recordings = new ObservableCollection<Recording>();
-    public ObservableCollection<Recording> Recordings{ get{ return recordings; } }
+    private List<Recording> recordings = new();
+    public List<Recording> Recordings{ get{ return recordings; } }
     public RecordingViewModel()
     {
         recordings.Add(new Recording(){ ArtistName = "Johann Sebastian Bach",
@@ -123,7 +125,8 @@ And then bind a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.
 <Window x:Class="Quickstart.MainWindow" ... >
     <Grid>
         <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
-        HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center"/>
     </Grid>
 </Window>
 ```
@@ -168,7 +171,7 @@ HorizontalAlignment="Center" VerticalAlignment="Center">
 
 For more information about XAML syntax, see [Create a UI with XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio). For more information about control layout, see [Define layouts with XAML](/windows/apps/design/layout/layouts-with-xaml).
 
-## Adding a details view
+## Add a details view
 
 You can choose to display all the details of `Recording` objects in [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
 
@@ -231,7 +234,7 @@ And here's the identical result in each case.
 
 ![Binding a list view 4](images/xaml-databinding4.png)
 
-## Formatting or converting data values for display
+## Format or convert data values for display
 
 There is an issue with the rendering above. The `ReleaseDateTime` property is not just a date, it's a [DateTime](/uwp/api/windows.foundation.datetime). So, it's being displayed with more precision than we need. One solution is to add a string property to the `Recording` class that returns the equivalent of `ReleaseDateTime.ToString("d")`. Naming that property `ReleaseDate` would indicate that it returns a date, and not a date-and-time. Naming it `ReleaseDateAsString` would further indicate that it returns a string.
 
