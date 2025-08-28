@@ -21,6 +21,9 @@ See the [Title bar](../design/basics/titlebar-design.md) design article for guid
 > [!IMPORTANT]
 > This article shows how to customize the title bar for apps that use the Windows App SDK, either with or without WinUI 3. For apps that use UWP and WinUI 2, see [Title bar customization](/windows/uwp/ui-input/title-bar) for UWP.
 
+> [!IMPORTANT]
+> The Windows App SDK has introduced a new [title bar](https://learn.microsoft.com/en-us/windows/apps/design/controls/title-bar) control in version 1.7. It simplifies the process of title bar customization.
+
 > [!div class="checklist"]
 >
 > - **Applies to**: Windows App SDK, WinUI 3 desktop apps
@@ -888,3 +891,4 @@ public sealed partial class MainWindow : Window
 - [Acrylic](../design/style/acrylic.md)
 - [Mica](../design/style/mica.md)
 - [Color](../design/style/color.md)
+
