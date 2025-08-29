@@ -96,6 +96,9 @@ $Capability = Get-WindowsCapability -Online | Where-Object { $_.Name -Like 'Lang
 $Capability | Add-WindowsCapability -Online
 ```
 
+> [!NOTE]
+> Executing the commands to install an OCR language pack may take several minutes to complete.
+
 ## Remove an OCR language pack
 
 The following commands remove the OCR pack for "en-US":
