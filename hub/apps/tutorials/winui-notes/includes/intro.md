@@ -1,8 +1,11 @@
 ---
+title: WinUI Notes
+description: WinUI Notes
 author: jwmsft
 ms.author: jimwalk
 ms.date: 03/26/2025
-ms.topic: include
+ms.topic: tutorial
+ms.localizationpriority: medium
 ---
 
 This tutorial series demonstrates how to create a WinUI 3 app using XAML and C#. The app you'll create is a note app, where the user can create, save, and load multiple notes. You can download or view the code for this tutorial from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes).

@@ -1,8 +1,10 @@
 ---
+title: WinUI Notes 5
+description: WinUI Notes 5
 author: jwmsft
 ms.author: jimwalk
-ms.date: 03/25/2025
-ms.topic: include
+ms.date: 09/02/2025
+ms.topic: tutorial
 ---
 
 This portion of the tutorial adds the final piece to the app, navigation between the _all notes_ page and the individual _note_ page.

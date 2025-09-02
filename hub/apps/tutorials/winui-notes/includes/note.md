@@ -1,8 +1,10 @@
 ---
+title: WinUI Notes 2
+description: WinUI Notes 2
 author: jwmsft
 ms.author: jimwalk
 ms.date: 03/26/2025
-ms.topic: include
+ms.topic: tutorial
 no-loc: ["App.xaml", "App.xaml.cs", "MainWindow.xaml", "MainWindow.xaml.cs", "NotePage.xaml", "NotePage.xaml.cs"]
 ---
 
