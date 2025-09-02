@@ -10,21 +10,21 @@ ms.localizationpriority: medium
 
 This article provides information for Windows app developers about how to integrate with the default apps platform on Windows and how to direct users to change the default app settings in Windows 11.
 
-The app defaults platform on Windows supports two main scenarios:
+The app defaults platform enables developers to register their apps for supporting file and link types on Windows in support of two main scenarios:
 
 * Allow users to specify which apps Windows uses to open specific file types or link types using the **Default apps** UX in **Settings**.
-* Allow apps to the default apps for files and link types in order to perform app-to-app launches.
+* Allow developers to specify specific behavior in their apps to facilitate app-to-app launches.
 
 ## Default app experience for end users
 
 Windows 11 allows users to change default apps via the Settings app and other system UI.
 
-* Windows will automatically prompt the user when they open a file or link type when a new app is installed that registered for that link type.
+* Windows will automatically prompt the user when they open a file or link type when a new app is installed that registered for that file or link type.
 * Apps can also direct the user to Settings to change default app settings, guiding users through this process using in-app prompts or documentation.
 
 ## Default app settings for app developers
 
-Your app can register to become the default handler for a file and link types. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default handler. If the user chooses your app as the default handler, your app will be activated when that type of file is launched.
+Your app can register to become the default handler for a file and link types. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default handler. If the user chooses your app as the default handler, Windows will activate your app when that type of file or link is invoked.
 
 ## Default apps platform best practices for developers
 
@@ -46,7 +46,7 @@ URI schemes may be an official standard, documented publicly, or proprietary. Fo
 
 * `https:` is documented as a Permanent scheme by the Internet Assigned Numbers Authority as RFC8615.
 * Spotify publicly documents a `spotify:` scheme, see [Spotify URIs and IDs](https://developer.spotify.com/documentation/web-api/concepts/spotify-uris-ids).
-* Other schemes may be proprietary and would create a broken end-to-end experience for the user if an app registers and is set for the default for a URI scheme it doesn’t know how to implement
+* Other schemes may be proprietary and would create a broken end-to-end experience for the user if an app registers and is set for the default for a URI scheme it doesn’t know how to implement.
 
 ## Register for file and link types
 
@@ -58,14 +58,16 @@ When a Windows app is launched, Windows provides information to the app that all
 
 ## Security considerations for the app defaults platform
 
-To help protect users, Windows requires that app default settings must be manually performed by the user through the Windows system UI. Features of this system include the following:
+To help protect users' default app choices from malware changing settings without the user being aware, Windows requires that app default settings must be set through the Windows system UI.
 
-* Windows 11 does not allow programmatic changes to default apps without user interaction.
-* Apps can query which app is the default for a given type. For more information, see [IApplicationAssociationRegistration::QueryCurrentDefault](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationassociationregistration-querycurrentdefault).
+* Windows does not allow programmatic changes to default apps without user interaction in system UI.
+     * Also see [App defaults in managed environments](#App_defaults_in_managed_environments)
 * User setting data for app defaults is obfuscated in registry data stores. Registry-based changes are not supported for apps.
 * User setting data for app defaults are protected by a Windows filter driver (UCPD.sys) that blocks apps from writing app defaults data.
-* Apps that are distributed by the Microsoft Store must abide by Microsoft Store policy, specifically [Section 10.2.8](/windows/apps/publish/store-policies#102-security) which requires that apps only use supported methods for updating Windows settings.
+* Apps can query which app is the default for a given type. For more information, see [IApplicationAssociationRegistration::QueryCurrentDefault](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationassociationregistration-querycurrentdefault).
+* Apps that are distributed by the Microsoft Store must abide by Microsoft Store policy, specifically [Section 10.2.8](/windows/apps/publish/store-policies#102-security) which requires that apps only use supported methods for updating Windows settings, including app default settings.
 
 ## App defaults in managed environments
 
-The app defaults platform provides Group Policy and Mobile Device Management (MDM) policies to facilitate management scenarios. These policies also work with roaming user profiles to support more complex environments. Solutions that don’t use these policies may not work correctly because of the security considerations noted above. For more information, see [ApplicationDefaults Policy CSP](/windows/client-management/mdm/policy-csp-applicationdefaults) and [Deploy roaming user profiles](/windows-server/storage/folder-redirection/deploy-roaming-user-profiles)
+On a managed PC, IT admins can control app defaults through policy. The app defaults platform provides Group Policy and Mobile Device Management (MDM) policies to facilitate these management scenarios. These policies also work with roaming user profiles to support more complex environments. Solutions that don’t use these policies may not work correctly because of the security considerations noted above. For more information, see [ApplicationDefaults Policy CSP](/windows/client-management/mdm/policy-csp-applicationdefaults) and [Deploy roaming user profiles](/windows-server/storage/folder-redirection/deploy-roaming-user-profiles)
+
