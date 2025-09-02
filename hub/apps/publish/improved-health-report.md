@@ -49,9 +49,9 @@ Together, crash rate and hang rate metrics will help you understand the severity
 To help you investigate and resolve issues more efficiently, we’ve added several new tools to the Health report:
 
 #### New visualization for comparison by app version
-You can now compare failure metrics across different versions of your app to track if there are any performance improvements or regressions between releases. You can also compare your failure metrics across different architecture and operating system to detect patterns and identify the root causes of issues faster.
+You can now compare failure metrics across different versions of your app to track if there are any performance improvements or regressions between releases. You can also compare your failure metrics across different architectures and operating systems to detect patterns and identify the root causes of issues faster.
 
 :::image type="content" source="images/failure-distribution.png" lightbox="images/failure-distribution.png" alt-text="A screenshot showing new visualization for comparing metrics by different dimensions like app version, OS version, architecture.":::
 
 #### Multi-filter support
-The simultaneous use of multiple filters is now supported, including multiple app version, OS versions, device types and more, allowing for more precise and targeted analysis.
+The simultaneous use of multiple filters is now supported, including multiple app versions, OS versions, device types and more, allowing for more precise and targeted analysis.
