@@ -1,8 +1,10 @@
 ---
+title: WinUI Notes 3
+description: WinUI Notes 3
 author: jwmsft
 ms.author: jimwalk
 ms.date: 03/26/2025
-ms.topic: include
+ms.topic: tutorial
 no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage.xaml", "AllNotes.cs", "WinUI 3 Gallery"]
 ---
 
