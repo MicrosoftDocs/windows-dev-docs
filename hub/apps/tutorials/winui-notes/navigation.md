@@ -1,11 +1,12 @@
 ---
-title: WinUI Notes 5
-description: WinUI Notes 5
+title: WinUI Notes -Step 5 - Navigation
+description: WinUI Notes - Step 5 - Add navigation between pages
 author: jwmsft
 ms.author: jimwalk
 ms.date: 09/02/2025
 ms.topic: tutorial
 ---
+# Navigate between pages
 
 This portion of the tutorial adds the final piece to the app, navigation between the _all notes_ page and the individual _note_ page.
 
@@ -189,10 +190,19 @@ Next, you need to update the code in `NotePage` to navigate back after the note 
 
 Now you can run your app. Try adding new notes, navigating back and forth between notes, and deleting notes.
 
-:::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+:::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Implement navigation between two pages](../../../design/basics/navigate-between-two-pages.md)
-- [Navigation history and backwards navigation](../../../design/basics/navigation-history-and-backwards-navigation.md)
+- [Implement navigation between two pages](../../design/basics/navigate-between-two-pages.md)
+- [Navigation history and backwards navigation](../../design/basics/navigation-history-and-backwards-navigation.md)
 - [Frame class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame), [Page class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page)
 
+## Next steps
 
+Congratulations! You've completed the _Create a WinUI app_ tutorial!
+
+The following links provide more information about creating apps with WinUI and the Windows App SDK:
+
+- [Samples and resources](/windows/apps/get-started/samples)
+- [Design for Windows apps](/windows/apps/design/)
+- [Develop Windows desktop apps](/windows/apps/develop/)
+- [Controls for Windows apps](/windows/apps/design/controls/)

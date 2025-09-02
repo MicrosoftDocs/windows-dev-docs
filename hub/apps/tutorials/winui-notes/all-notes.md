@@ -1,12 +1,13 @@
 ---
-title: WinUI Notes 3
-description: WinUI Notes 3
+title: WinUI Notes tutorial - Step 4 - All notes
+description: WinUI Notes - Step 4 - Add a view and model for all notes.
 author: jwmsft
 ms.author: jimwalk
-ms.date: 03/26/2025
+ms.date: 09/02/2025
 ms.topic: tutorial
 no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage.xaml", "AllNotes.cs", "WinUI 3 Gallery"]
 ---
+# Add a view and model for all notes
 
 This portion of the tutorial adds a new page to the app, a view that displays all of the notes previously created.
 
@@ -88,12 +89,12 @@ The new data model represents the data required to display multiple notes. Here,
 
 The previous code declares a collection of `Note` items, named `Notes`, and uses the `LoadNotes` method to load notes from the app's local storage.
 
-The `Notes` collection uses an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1), which is a specialized collection that works well with data binding. When a control that lists multiple items, such as an [ItemsView](../../../design/controls/itemsview.md), is bound to an `ObservableCollection`, the two work together to automatically keep the list of items in sync with the collection. If an item is added to the collection, the control is automatically updated with the new item. If an item is added to the list, the collection is updated.
+The `Notes` collection uses an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1), which is a specialized collection that works well with data binding. When a control that lists multiple items, such as an [ItemsView](../../design/controls/itemsview.md), is bound to an `ObservableCollection`, the two work together to automatically keep the list of items in sync with the collection. If an item is added to the collection, the control is automatically updated with the new item. If an item is added to the list, the collection is updated.
 
- :::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+ :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
 - [StorageFolder class](/uwp/api/windows.storage.storagefolder), [StorageFile class](/uwp/api/windows.storage.storagefile), [IStorageItem.IsOfType method](/uwp/api/windows.storage.istorageitem.isoftype)
-- [Access files and folders with Windows App SDK and WinRT APIs](../../../develop/files/winrt-files.md)
+- [Access files and folders with Windows App SDK and WinRT APIs](../../develop/files/winrt-files.md)
 
 Now that the `AllNotes` model is ready to provide data for the view, you need to create an instance of the model in `AllNotesPage` so the view can access the model.
 
@@ -165,7 +166,7 @@ Now that you've created `AllNotesPage`, you need to update `MainWindow.xaml` one
 
 If you run the app now, you'll see that the note you created previously is loaded into the `ItemsView` control. However, it's just shown as the string representation of the object. The `ItemsView` doesn't know how this item should be displayed. You'll correct this in the next section.
 
-:::image type="content" source="../media/all-notes/itemsview-no-template.png" alt-text="The notes app UI with the note list showing the Note class name instead of the note content.":::
+:::image type="content" source="media/all-notes/itemsview-no-template.png" alt-text="The notes app UI with the note list showing the Note class name instead of the note content.":::
 
 ### Add a data template
 
@@ -233,11 +234,11 @@ When you use the `x:Bind` markup extension in a `DataTemplate`, you have to spec
 
 When you run the app, the data template is applied to your `Note` items and looks like this if your Windows Personalization > Colors settings use the Light mode:
 
-:::image type="content" source="../media/all-notes/itemsview-with-template.png" alt-text="The notes app UI with the note list showing the note content and date formatted by a data template.":::
+:::image type="content" source="media/all-notes/itemsview-with-template.png" alt-text="The notes app UI with the note list showing the note content and date formatted by a data template.":::
 
 However, if your Windows Personalization > Colors settings use the Dark mode, it will look like this:
 
-:::image type="content" source="../media/all-notes/itemsview-with-template-dark.png" alt-text="The notes app UI with a dark background but light gray note template.":::
+:::image type="content" source="media/all-notes/itemsview-with-template-dark.png" alt-text="The notes app UI with a dark background but light gray note template.":::
 
 This is not the intended look for the app. It happened because there are hard-coded color values in the data template for the note. By default, WinUI elements adapt to the user's Dark or Light color preference. When you define you own elements, like a data template, you need to be careful to do the same.
 
@@ -286,20 +287,23 @@ WinUI includes a variety of built-in resources that you can use to make your app
 
 Now when you run the app with a Light color setting, it will look like this:
 
-:::image type="content" source="../media/all-notes/itemsview-themed-template.png" alt-text="The notes app UI with a light background and light note template.":::
+:::image type="content" source="media/all-notes/itemsview-themed-template.png" alt-text="The notes app UI with a light background and light note template.":::
 
 And when you run the app with a Dark color setting, it will look like this:
 
-:::image type="content" source="../media/all-notes/itemsview-themed-template-dark.png" alt-text="The notes app UI with a dark background and dark note template.":::
+:::image type="content" source="media/all-notes/itemsview-themed-template-dark.png" alt-text="The notes app UI with a dark background and dark note template.":::
 
-:::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+:::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Item containers and templates](../../../design/controls/item-containers-templates.md)
-- [ResourceDictionary and XAML resource references](../../../develop/platform/xaml/xaml-resource-dictionary.md)
+- [Item containers and templates](../../design/controls/item-containers-templates.md)
+- [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md)
 
 > [!TIP]
 > The WinUI 3 Gallery app is a great way to learn about different WinUI controls and design guidelines. To see the theme resources used in the data template, [open the WinUI 3 Gallery app to the Color guidance](winui3gallery://item/Color). From there, you can see what the resources look like and copy the values you need directly from the app.
 >
 > You can also open the [Typography page](winui3gallery://item/Typography) and [Geometry page](winui3gallery://item/Geometry) to see other built-in resources used in this data template.
 
-[!INCLUDE [winui-3-gallery](../../../../../hub/includes/winui-3-gallery.md)]
+[!INCLUDE [winui-3-gallery](../../../../hub/includes/winui-3-gallery.md)]
+
+> [!div class="nextstepaction"]
+> [Continue to step 5 - Add navigation between pages](navigation.md)
