@@ -1,16 +1,17 @@
 ---
-title: WinUI Notes 1
-description: WinUI Notes 1
+title: WinUI Notes tutorial - Step 1 - Project setup
+description: WinUI Notes tutorial - Step 1 - Project setup.
 author: jwmsft
 ms.author: jimwalk
-ms.date: 03/26/2025
+ms.date: 09/02/2025
 ms.topic: tutorial
 no-loc: ["App.xaml", "App.xaml.cs", "MainWindow.xaml", "MainWindow.xaml.cs", "Package.appxmanifest"]
 ---
+# Project setup
 
 Before you get into coding the app, we'll take a quick look at the Visual Studio project and take care of some project setup. When Visual Studio creates a WinUI 3 project, several important folders and code files are generated. These can be seen in the **Solution Explorer** pane of Visual Studio:
 
-:::image type="content" source="../media/project/vs-solution-explorer.png" alt-text="Solution Explorer showing the files for a WinUI 3 project in Visual Studio.":::
+:::image type="content" source="media/project/vs-solution-explorer.png" alt-text="Solution Explorer showing the files for a WinUI 3 project in Visual Studio.":::
 
 The items listed here are the ones you'll primarily interact with. These files help get the WinUI 3 app configured and running. Each file serves a different purpose, described below:
 
@@ -41,7 +42,7 @@ There are generally two files with any XAML file, the `.xaml` file itself, and a
 
 When you build your project, the `InitializeComponent` method is called to parse the `.xaml` file and generate code that's joined with the code `partial class` to create the complete class.
 
-:::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+:::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
 - [XAML Overview](/windows/uwp/xaml-platform/xaml-overview)
 - [Partial Classes and Methods (C# Programming Guide)](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
@@ -118,13 +119,13 @@ Don't worry if you don't understand what all this XAML markup does right now. As
 >
 > In `MainWindow.xaml`, `<Window.SystemBackdrop>`, `<Grid.RowDefinitions>`, and `<TitleBar.IconSource>` contain complex values that must be set with property element syntax.
 >
-> :::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+> :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 >
 > - [XAML syntax guide](/windows/uwp/xaml-platform/xaml-syntax-guide)
 
 If you run the app now, you'll see the XAML `TitleBar` element you added, but it will be below the system title bar, which is still showing.
 
-:::image type="content" source="../media/project/title-bars.png" alt-text="The empty WinUI Notes app window with both the system title bar and custom title bar showing.":::
+:::image type="content" source="media/project/title-bars.png" alt-text="The empty WinUI Notes app window with both the system title bar and custom title bar showing.":::
 
 You need to write a bit of code to finish replacing the system title bar.
 
@@ -156,4 +157,7 @@ You need to write a bit of code to finish replacing the system title bar.
 
 When you run the app now, you'll see an empty window with a mica background and the XAML title bar that's replaced the system title bar.
 
-:::image type="content" source="../media/project/empty-window.png" alt-text="The empty WinUI Notes app window with the icon and app name in the title bar.":::
+:::image type="content" source="media/project/empty-window.png" alt-text="The empty WinUI Notes app window with the icon and app name in the title bar.":::
+
+> [!div class="nextstepaction"]
+> [Continue to step 2 - Add a note page](note.md)

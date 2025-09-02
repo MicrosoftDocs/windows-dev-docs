@@ -16,6 +16,17 @@ items:
             href: get-started/start-here.md
           - name: Build your first app
             href: tutorials/winui-notes/intro.md
+            items:
+              - name: 1 - Project setup
+                href: tutorials/winui-notes/project.md
+              - name: 2 - Note page
+                href: tutorials/winui-notes/note.md
+              - name: 3 - View and model
+                href: tutorials/winui-notes/view-model.md
+              - name: 4 - All notes
+                href: tutorials/winui-notes/all-notes.md
+              - name: 5 - Navigation
+                href: tutorials/winui-notes/navigation.md
           - name: Samples and resources
             href: get-started/samples.md
           - name: Best practices
