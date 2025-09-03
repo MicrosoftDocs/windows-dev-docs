@@ -13,7 +13,7 @@ This article provides information for Windows app developers about how to integr
 The app defaults platform on Windows supports two main scenarios:
 
 * Allow users to specify which apps Windows uses to open specific file types or link types using the **Default apps** UX in **Settings**.
-* Allow apps to the default apps for files and link types in order to perform app-to-app launches.
+* Allow apps to the use the default apps for files and link types in order to perform app-to-app launches.
 
 ## Default app experience for end users
 
@@ -63,7 +63,7 @@ To help protect users, Windows requires that app default settings must be manual
 * Windows 11 does not allow programmatic changes to default apps without user interaction.
 * Apps can query which app is the default for a given type. For more information, see [IApplicationAssociationRegistration::QueryCurrentDefault](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationassociationregistration-querycurrentdefault).
 * User setting data for app defaults is obfuscated in registry data stores. Registry-based changes are not supported for apps.
-* User setting data for app defaults are protected by a Windows filter driver (UCPD.sys) that blocks apps from writing app defaults data.
+* User setting data for app defaults is protected by a Windows filter driver (UCPD.sys) that blocks apps from writing app defaults data.
 * Apps that are distributed by the Microsoft Store must abide by Microsoft Store policy, specifically [Section 10.2.8](/windows/apps/publish/store-policies#102-security) which requires that apps only use supported methods for updating Windows settings.
 
 ## App defaults in managed environments
