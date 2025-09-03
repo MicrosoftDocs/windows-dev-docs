@@ -60,7 +60,7 @@ When a Windows app is launched, Windows provides information to the app that all
 
 To help protect users' default app choices from malware changing settings without the user being aware, Windows requires that app default settings must be set through the Windows system UI.
 
-* Windows does not allow programmatic changes to default apps without user interaction in system UI. For more information, see [App defaults in managed environments](#App_defaults_in_managed_environments)
+* Windows does not allow programmatic changes to default apps without user interaction in system UI. For more information, see [App defaults in managed environments](#app-defaults-in-managed-environments)
 * User setting data for app defaults is obfuscated in registry data stores. Registry-based changes are not supported for apps.
 * User setting data for app defaults are protected by a Windows filter driver (UCPD.sys) that blocks apps from writing app defaults data.
 * Apps can query which app is the default for a given type. For more information, see [IApplicationAssociationRegistration::QueryCurrentDefault](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationassociationregistration-querycurrentdefault).
