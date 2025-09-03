@@ -13,7 +13,7 @@ This article provides information for Windows app developers about how to integr
 The app defaults platform enables developers to register their apps for supporting file and link types on Windows in support of two main scenarios:
 
 * Allow users to specify which apps Windows uses to open specific file types or link types using the **Default apps** UX in **Settings**.
-* Allow developers to specify specific behavior in their apps to facilitate app-to-app launches.
+* Allow developers to facilitate app-to-app launches by invoking a file or link type.
 
 ## Default app experience for end users
 
