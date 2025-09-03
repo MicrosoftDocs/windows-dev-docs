@@ -345,6 +345,8 @@ items:
                 href: develop/windows-integration/cross-device-people-api.md
               - name: Cross Device Resume
                 href: develop/windows-integration/cross-device-resume.md
+              - name: Default apps platform
+                href: develop/windows-integration/default-apps-platform.md
               - name: Smart App Control
                 items:
                   - name: Overview
