@@ -9359,6 +9359,11 @@
       "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
       "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_filters.md",
+      "redirect_url": "/windows/powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_getfilters",
+      "redirect_document_id": false
     }
   ]
 }
