@@ -1,10 +1,13 @@
 ---
+title: WinUI Notes tutorial - Step 2 - Note page
+description: WinUI Notes tutorial - Step 2 - Create a page for a note.
 author: jwmsft
 ms.author: jimwalk
-ms.date: 03/26/2025
-ms.topic: include
+ms.date: 09/02/2025
+ms.topic: tutorial
 no-loc: ["App.xaml", "App.xaml.cs", "MainWindow.xaml", "MainWindow.xaml.cs", "NotePage.xaml", "NotePage.xaml.cs"]
 ---
+# Create a page for a note
 
 Now you'll create a page that allows a user to edit a note, and then you'll write the code to save or delete the note.
 
@@ -66,7 +69,7 @@ First, add the new page to the project:
 
 Let's break down the key parts of the XAML controls placed on the page:
 
-:::image type="content" source="../media/note/app-layout.png" alt-text="The new note page UI with the grid highlighted by Visual Studio.":::
+:::image type="content" source="media/note/app-layout.png" alt-text="The new note page UI with the grid highlighted by Visual Studio.":::
 
 - The [Grid.RowDefinitions](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.grid.rowdefinitions) and [Grid.ColumnDefinitions](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.grid.columndefinitions) define a grid with 2 rows and 3 columns (placed below the title bar).
   - The bottom row is automatically (`Auto`) sized to fit its content, the two buttons. The top row uses all the remaining vertical space (`*`).
@@ -84,10 +87,10 @@ Let's break down the key parts of the XAML controls placed on the page:
 
 - Two `<Button>` controls are inside the `<StackPanel>` and arranged horizontally. You'll add the code to handle the buttons' [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) events in the next section.
 
- :::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+ :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Responsive layouts with XAML](../../../design/layout/layouts-with-xaml.md)
-- [Layout panels](../../../design/layout/layout-panels.md)
+- [Responsive layouts with XAML](../../design/layout/layouts-with-xaml.md)
+- [Layout panels](../../design/layout/layout-panels.md)
 - [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)
 
 ## Load and save a note
@@ -151,7 +154,7 @@ Now you're going to add code to the **NotePage.xaml.cs** code-behind file to han
     > [!IMPORTANT]
     > You need to mark this method with the `async` keyword because the file access calls are asynchronous. In short, if you call a method that ends in `...Async` (like `TryGetItemAsync`), you can add the [await](/dotnet/csharp/language-reference/operators/await) operator to the call. This keeps subsequent code from executing until the awaited call completes and keeps your UI responsive. When you use `await`, the method that you're calling from needs to be marked with the [async](/dotnet/csharp/language-reference/keywords/async) keyword. For more info, see [Call asynchronous APIs in C#](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).
 
- :::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+ :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
 - [Access files and folders with WinRT APIs](/windows/apps/develop/files/winrt-files)
 - [Call asynchronous APIs in C#](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic)
@@ -162,7 +165,7 @@ Next, add the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
 
 1. In the **NotePage.xaml** file, place your cursor after the `Content` attribute in the **Save** `Button` control. Type `Click=`. At this point, Visual Studio should pop up an auto-complete UI that looks like this:
 
-    :::image type="content" source="../media/note/new-event-xaml.png" alt-text="A screenshot of the Visual Studio new event handler auto complete UI in the XAML editor":::
+    :::image type="content" source="media/note/new-event-xaml.png" alt-text="A screenshot of the Visual Studio new event handler auto complete UI in the XAML editor":::
 
     - Press the down-arrow key to select **\<New Event Handler>**, then press <kbd>Tab</kbd>. Visual Studio will complete the attribute with `Click="Button_Click"` and add an event handler method named `Button_Click` in the **NotePage.xaml.cs** code-behind file.
 
@@ -180,12 +183,12 @@ Next, add the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
     > [!TIP]
     > To locate code in your app, click **Search** in the Visual  Studio title bar and use the **Code Search** option. Double-click the search result to open the code in the code editor.
     >
-    > :::image type="content" source="../media/note/vs-code-search.png" alt-text="Search feature in Visual Studio":::
+    > :::image type="content" source="media/note/vs-code-search.png" alt-text="Search feature in Visual Studio":::
 
 1. Place your cursor before the "B" in `Button` and type `Save`. Wait a moment, and the method name will be highlighted in green.
 1. When you hover over the method name, Visual Studio will show a tooltip with a screwdriver or lightbulb icon. Click the down-arrow button next to the icon, then click **Rename 'Button_Click' to 'SaveButton_Click**'.
 
-    :::image type="content" source="../media/note/method-rename.png" alt-text="The Visual Studio method rename popup UI.":::
+    :::image type="content" source="media/note/method-rename.png" alt-text="The Visual Studio method rename popup UI.":::
 
     Visual Studio will rename the method everywhere in your app, including in the XAML file where you first added it to the `Button`.
 1. Repeat these steps for the **Delete** button, and rename the method to `DeleteButton_Click`.
@@ -292,3 +295,6 @@ With this code in place, you can test the app to make sure the note saves and lo
 
 > [!IMPORTANT]
 > After you've confirmed that saving and deleting a note works correctly, create and save a new note again. You'll want to have a saved note to test the app in later steps.
+
+> [!div class="nextstepaction"]
+> [Continue to step 3 - Add a view and model for the note](view-model.md)

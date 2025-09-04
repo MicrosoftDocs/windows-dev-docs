@@ -155,7 +155,7 @@ Now your project is using the latest WinUI features that are available, and it's
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Complete a tutorial to create a note app with WinUI](../tutorials/winui-notes/index.yml)
+> [Complete a tutorial to create a note app with WinUI](../tutorials/winui-notes/intro.md)
 
 * To get an idea of what WinUI has to offer, check out the WinUI Gallery app.
   [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]

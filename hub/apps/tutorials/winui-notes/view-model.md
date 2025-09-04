@@ -1,10 +1,13 @@
 ---
+title: WinUI Notes - Step 3 - View-model
+description: WinUI Notes - Step 3 - Add a view and model for the note
 author: jwmsft
 ms.author: jimwalk
-ms.date: 03/26/2025
-ms.topic: include
+ms.date: 09/02/2025
+ms.topic: tutorial
 no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage", "WinUINotes"]
 ---
+# Add a view and model for the note
 
 This portion of the tutorial introduces the concepts of data views and models.
 
@@ -262,9 +265,9 @@ In WinUI, there are two kinds of binding you can choose from:
 - The `{x:Bind}` markup extension is processed at compile-time. Some of its benefits are improved performance and compile-time validation of your binding expressions. It's recommended for binding in WinUI apps.
 - The `{Binding}` markup extension is processed at run-time and uses general-purpose runtime object inspection.
 
- :::image type="icon" source="../media/doc-icon-sm.png" border="false"::: Learn more in the docs:
+ :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Data binding in Windows apps](../../../develop/data-binding/index.md)
+- [Data binding in Windows apps](../../develop/data-binding/index.md)
 - [{x:Bind}](/windows/uwp/xaml-platform/x-bind-markup-extension), [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension)
 
 ## Data binding and MVVM
@@ -276,6 +279,9 @@ _Model-View-ViewModel_ (MVVM) is a UI architectural design pattern for decouplin
 
 To learn more about MVVM, see these resources:
 
-- [Windows data binding and MVVM](../../../develop/data-binding/data-binding-and-mvvm.md)
+- [Windows data binding and MVVM](../../develop/data-binding/data-binding-and-mvvm.md)
 - [Introduction to the MVVM Toolkit](/dotnet/communitytoolkit/mvvm/)
 - [MVVM Building Blocks for WinUI and WPF Development](https://www.youtube.com/watch?v=83UVWrfYreU) on YouTube.
+
+> [!div class="nextstepaction"]
+> [Continue to step 4 - Add a view and model for all notes](all-notes.md)
