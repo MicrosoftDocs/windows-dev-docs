@@ -184,8 +184,8 @@ items:
                         href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters.md
                       - name: Methods
                         items:
-                          - name: Filters
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_filters.md
+                          - name: GetFilters
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_getfilters.md
                   - name: IFilterItem
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilteritem.md
                   - name: IForm
@@ -492,6 +492,8 @@ items:
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_updatequery.md
                   - name: Filter
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filter.md
+                  - name: Filters
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filters.md
                   - name: FormContent
                     items:
                       - name: FormContent
