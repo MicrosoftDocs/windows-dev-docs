@@ -9364,6 +9364,11 @@
       "source_path": "hub/powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_filters.md",
       "redirect_url": "/windows/powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_getfilters",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/tutorials/winui-notes/index.yml",
+      "redirect_url": "/windows/apps/tutorials/winui-notes/intro",
+      "redirect_document_id": false
     }
   ]
 }
