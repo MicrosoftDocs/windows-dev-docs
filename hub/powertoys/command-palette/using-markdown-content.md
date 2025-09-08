@@ -100,7 +100,6 @@ public class <ExtensionName>Page : ContentPage
         Icon = new("\uE8A5"); // Document icon
         Title = "Markdown page";
         Name = "Preview file";
-        path = 
 
 +       Commands = [
 +           new CommandContextItem(new OpenUrlCommand(doc_path)) { Title = "Open in File Explorer" },
