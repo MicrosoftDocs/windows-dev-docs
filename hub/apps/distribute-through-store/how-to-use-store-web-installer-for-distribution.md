@@ -34,7 +34,7 @@ This functionality isn't currently available for the following content types:
 
 - MSIXVC apps published on the Microsoft Store
 - Paid content published on the Microsoft Store
-- Content rated above Everyone/ESRB (or equivalent) while signed in to Windows using an Enterprise account 
+- Content rated above Everyone/ESRB (or equivalent) while signed in to Windows using a School account
 
 ## Enable this feature for your app
 
