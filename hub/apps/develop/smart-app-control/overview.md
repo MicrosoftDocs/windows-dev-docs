@@ -46,6 +46,10 @@ Go to **Settings** > **Windows Security** > **App and Browser Control**.
 - If **Evaluation** is selected, Smart App Control is running in evaluation mode.
 - If **Off** is selected, Smart App Control is not running on this device.
 
+### What makes somebody a good candidate for Smart App Control?
+
+Essentially, we're looking to see if Smart App Control is a good fit for your device or if it's going to get in your way too often. **In most cases Smart App Control automatically turns on** to protect against untrusted or malicious apps. However, there are some legitimate tasks that corporate users, developers, or others do regularly that might not be a great experience with Smart App Control running. **If we detect that you're one of those users, we automatically turn Smart App Control off** so you can work with fewer interruptions.
+
 ### Will I be notified when Smart App Control enters enforcement mode?
 
 Yes. You will receive a [Toast Notification](/windows/apps/design/shell/tiles-and-notifications/toast-notifications-overview) when Smart App Control enters enforcement mode.
