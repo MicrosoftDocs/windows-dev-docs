@@ -160,7 +160,7 @@ Microsoft.Windows.Foundation
 
 <details>
 
-<summary>Expand for links to archived experimental channel release notes</summary>
+<summary>Expand for links to archived stable channel release notes</summary>
 
 - [Stable channel release notes for the Windows App SDK 1.7](release-notes-archive/stable-channel-1-7.md)
 - [Stable channel release notes for the Windows App SDK 1.6](release-notes-archive/stable-channel-1.6.md)
