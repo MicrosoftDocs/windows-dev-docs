@@ -74,6 +74,8 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 | Block mouse at screen corners | Avoid accidentally switching machines when the mouse pointer is at screen corners. |
 | Show clipboard and network status messages | Show clipboard activities and network status in system tray notifications. |
 | Easy Mouse | Use the mouse pointer to switch between machines at screen edges. Can also be configured to need to select **Shift** or **Control** to switch between machines. |
+| Disable easy mouse when an application is in fullscreen | Prevents easy mouse from switching machines when an application is running in fullscreen mode on the host machine. |
+| Ignored fullscreen applications | A list of ignored executables that will allow easy mouse to switch machines even if they are running in fullscreen mode. |
 | Shortcut to toggle Easy Mouse | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to toggle Easy Mouse. |
 | Shortcut to lock all machines | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to press twice to lock all machines. Only works in the machines that have the same setting. |
 | Shortcut to try reconnecting | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to try reconnecting. |
