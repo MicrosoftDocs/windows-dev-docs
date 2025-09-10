@@ -174,7 +174,7 @@ In the following code snippet, we show a Grid element declared with a background
 <Grid Background="#E6E6E6">
 ```
 
-Instead, we recommend using the [**{ThemeResource} markup extension**](/windows/uwp/xaml-platform/themeresource-markup-extension) to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). This enables the automatic substitution of colors and brushes based on the user's current theme.
+Instead, we recommend using the [**{ThemeResource} markup extension**](/windows/apps/develop/platform/xaml/themeresource-markup-extension) to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). This enables the automatic substitution of colors and brushes based on the user's current theme.
 
 ```xaml
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">

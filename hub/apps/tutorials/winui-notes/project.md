@@ -44,9 +44,9 @@ When you build your project, the `InitializeComponent` method is called to parse
 
 :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [XAML Overview](/windows/uwp/xaml-platform/xaml-overview)
+- [XAML Overview](/windows/apps/develop/platform/xaml/xaml-overview)
 - [Partial Classes and Methods (C# Programming Guide)](/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
-- [x:Class attribute](/windows/uwp/xaml-platform/x-class-attribute), [x:Class Directive](/dotnet/desktop/xaml-services/xclass-directive)
+- [x:Class attribute](/windows/apps/develop/platform/xaml/x-class-attribute), [x:Class Directive](/dotnet/desktop/xaml-services/xclass-directive)
 
 ## Update MainWindow
 
@@ -121,7 +121,7 @@ Don't worry if you don't understand what all this XAML markup does right now. As
 >
 > :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 >
-> - [XAML syntax guide](/windows/uwp/xaml-platform/xaml-syntax-guide)
+> - [XAML syntax guide](/windows/apps/develop/platform/xaml/xaml-syntax-guide)
 
 If you run the app now, you'll see the XAML `TitleBar` element you added, but it will be below the system title bar, which is still showing.
 

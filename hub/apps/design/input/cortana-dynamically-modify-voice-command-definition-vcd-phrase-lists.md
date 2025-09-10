@@ -41,7 +41,7 @@ For more info about **PhraseList** and other VCD elements, see the [**VCD elemen
 > If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 >
 > - [Create your first app](/windows/uwp/get-started/your-first-app)
-> - Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
+> - Learn about events with [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview)
 >
 > **User experience guidelines**
 >

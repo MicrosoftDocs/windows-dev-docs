@@ -178,7 +178,7 @@ You can choose to display all the details of `Recording` objects in [ListView](/
 There are two ways to go about this. You can bind the details view to the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) property of the [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). Or you can use a [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource), in which case you bind both the `ListView` and the details view to the `CollectionViewSource` (doing so takes care of the currently-selected item for you). Both techniques are shown below, and they both give the same results (shown in the illustration).
 
 > [!NOTE]
-> So far in this topic we've only used the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension).
+> So far in this topic we've only used the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension).
 
 First, here's the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) technique. For a C# application, the only change necessary is to the markup.
 

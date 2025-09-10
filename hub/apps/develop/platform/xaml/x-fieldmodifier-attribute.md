@@ -9,7 +9,6 @@ ms.localizationpriority: medium
 ---
 # x:FieldModifier attribute
 
-
 Modifies XAML compilation behavior, such that fields for named object references are defined with **public** access rather than the **private** default behavior.
 
 ## XAML attribute usage
@@ -30,5 +29,5 @@ The value for the **x:FieldModifier** attribute will vary by programming languag
 
 **x:FieldModifier** is only relevant for elements with an [x:Name attribute](x-name-attribute.md), because that name is used to reference the field once it is public.
 
-**Note**  Windows Runtime XAML doesn't support **x:ClassModifier** or **x:Subclass**.
-
+> [!NOTE]
+> Windows Runtime XAML doesn't support **x:ClassModifier** or **x:Subclass**.

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # {x:Bind} markup extension
 
-**Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](../data-binding/data-binding-in-depth.md).
+**Note**  For general info about using data binding in your app with **{x:Bind}** (and for an all-up comparison between **{x:Bind}** and **{Binding}**), see [Data binding in depth](../../data-binding/data-binding-in-depth.md).
 
 The **{x:Bind}** markup extension—new for Windows 10—is an alternative to **{Binding}**. **{x:Bind}** runs in less time and less memory than **{Binding}** and supports better debugging.
 
@@ -19,12 +19,6 @@ The binding objects created by **{x:Bind}** and **{Binding}** are largely functi
 
 > [!TIP]
 > **{x:Bind}** has a default mode of **OneTime**, unlike **{Binding}**, which has a default mode of **OneWay**. This was chosen for performance reasons, as using **OneWay** causes more code to be generated to hookup and handle change detection. You can explicitly specify a mode to use OneWay or TwoWay binding. You can also use [x:DefaultBindMode](x-defaultbindmode-attribute.md) to change the default mode for **{x:Bind}** for a specific segment of the markup tree. The specified mode applies to any **{x:Bind}** expressions on that element and its children, that do not explicitly specify a mode as part of the binding.
-
-**Sample apps that demonstrate {x:Bind}**
-
--   [{x:Bind} sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind)
--   [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper)
--   [XAML Controls Gallery](https://github.com/Microsoft/Xaml-Controls-Gallery)
 
 ## XAML attribute usage
 
@@ -93,7 +87,7 @@ To use a string indexer, the model needs to implement **IDictionary&lt;string, T
 
 ### Attached Properties
 
-To bind to [attached properties](./attached-properties-overview.md), you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with an xml namespace, which you should map to a code namespace at the head of the document.
+To bind to [attached properties](attached-properties-overview.md), you need to put the class and property name into parentheses after the dot. For example **Text="{x:Bind Button22.(Grid.Row)}"**. If the property is not declared in a Xaml namespace, then you will need to prefix it with an xml namespace, which you should map to a code namespace at the head of the document.
 
 ### Casting
 
@@ -174,7 +168,7 @@ namespace AppSample
 
 ## Functions in binding paths
 
-Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as the leaf step of the binding path. This is a powerful feature for databinding that enables several scenarios in markup. See [function bindings](../data-binding/function-bindings.md) for details.
+Starting in Windows 10, version 1607, **{x:Bind}** supports using a function as the leaf step of the binding path. This is a powerful feature for databinding that enables several scenarios in markup. See [function bindings](../../data-binding/function-bindings.md) for details.
 
 ## Event Binding
 
@@ -194,14 +188,14 @@ For more info about the string syntax for a property path, see [Property-path sy
 
 **{x:Bind}** is illustrated with the *bindingProperties* placeholder syntax because there are multiple read/write properties that can be set in the markup extension. The properties can be set in any order with comma-separated *propName*=*value* pairs. Note that you cannot include line breaks in the binding expression. Some of the properties require types that don't have a type conversion, so these require markup extensions of their own nested within the **{x:Bind}**.
 
-These properties work in much the same way as the properties of the [**Binding**](/uwp/api/Windows.UI.Xaml.Data.Binding) class.
+These properties work in much the same way as the properties of the [**Binding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Data.Binding) class.
 
 | Property | Description |
 |----------|-------------|
 | **Path** | See the [Property path](#property-path) section above. |
 | **Converter** | Specifies the converter object that is called by the binding engine. The converter can be set in XAML, but only if you refer to an object instance that you've assigned in a [{StaticResource} markup extension](staticresource-markup-extension.md) reference to that object in the resource dictionary. |
-| **ConverterLanguage** | Specifies the culture to be used by the converter. (If you're setting **ConverterLanguage** you should also be setting **Converter**.) The culture is set as a standards-based identifier. For more info, see [**ConverterLanguage**](/uwp/api/windows.ui.xaml.data.binding.converterlanguage). |
-| **ConverterParameter** | Specifies the converter parameter that can be used in converter logic. (If you're setting **ConverterParameter** you should also be setting **Converter**.) Most converters use simple logic that get all the info they need from the passed value to convert, and don't need a **ConverterParameter** value. The **ConverterParameter** parameter is for moderately advanced converter implementations that have more than one logic that keys off what's passed in **ConverterParameter**. You can write a converter that uses values other than strings but this is uncommon, see Remarks in [**ConverterParameter**](/uwp/api/windows.ui.xaml.data.binding.converterparameter) for more info. |
+| **ConverterLanguage** | Specifies the culture to be used by the converter. (If you're setting **ConverterLanguage** you should also be setting **Converter**.) The culture is set as a standards-based identifier. For more info, see [**ConverterLanguage**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converterlanguage). |
+| **ConverterParameter** | Specifies the converter parameter that can be used in converter logic. (If you're setting **ConverterParameter** you should also be setting **Converter**.) Most converters use simple logic that get all the info they need from the passed value to convert, and don't need a **ConverterParameter** value. The **ConverterParameter** parameter is for moderately advanced converter implementations that have more than one logic that keys off what's passed in **ConverterParameter**. You can write a converter that uses values other than strings but this is uncommon, see Remarks in [**ConverterParameter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converterparameter) for more info. |
 | **FallbackValue** | Specifies a value to display when the source or path cannot be resolved. |
 | **Mode** | Specifies the binding mode, as one of these strings: "OneTime", "OneWay", or "TwoWay". The default is "OneTime". Note that this differs from the default for **{Binding}**, which is "OneWay" in most cases. |
 | **TargetNullValue** | Specifies a value to display when the source value resolves but is explicitly **null**. |
@@ -210,7 +204,7 @@ These properties work in much the same way as the properties of the [**Binding**
 
 > [!NOTE]
 > If you're converting markup from **{Binding}** to **{x:Bind}**, then be aware of the differences in default values for the **Mode** property.
-> [**x:DefaultBindMode**](./x-defaultbindmode-attribute.md) can be used to change the default mode for x:Bind for a specific segment of the markup tree. The mode selected will apply any x:Bind expressions on that element and its children, that do not explicitly specify a mode as part of the binding. OneTime is more performant than OneWay as using OneWay will cause more code to be generated to hookup and handle the change detection.
+> [**x:DefaultBindMode**](x-defaultbindmode-attribute.md) can be used to change the default mode for x:Bind for a specific segment of the markup tree. The mode selected will apply any x:Bind expressions on that element and its children, that do not explicitly specify a mode as part of the binding. OneTime is more performant than OneWay as using OneWay will cause more code to be generated to hookup and handle the change detection.
 
 ## Remarks
 
@@ -218,7 +212,7 @@ Because **{x:Bind}** uses generated code to achieve its benefits, it requires ty
 
 When using **{x:Bind}** with data templates, you must indicate the type being bound to by setting an **x:DataType** value, as shown in the [Examples](#examples) section. You can also set the type to an interface or base class type, and then use casts if necessary to formulate a full expression.
 
-Compiled bindings depend on code generation. So if you use **{x:Bind}** in a resource dictionary then the resource dictionary needs to have a code-behind class. See [Resource dictionaries with {x:Bind}](../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) for a code example.
+Compiled bindings depend on code generation. So if you use **{x:Bind}** in a resource dictionary then the resource dictionary needs to have a code-behind class. See [Resource dictionaries with {x:Bind}](../../data-binding/data-binding-in-depth.md#resource-dictionaries-with-x-bind) for a code example.
 
 Pages and user controls that include Compiled bindings will have a "Bindings" property in the generated code. This includes the following methods:
 
@@ -227,10 +221,11 @@ Pages and user controls that include Compiled bindings will have a "Bindings" pr
 - **StopTracking()** - This will unhook all listeners created for one-way and two-way bindings. They can be re-initialized using the Update() method.
 
 > [!NOTE]
-> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. Note that this is not a feature of function binding, only property binding. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](../debug-test-perf/version-adaptive-code.md).
+> Starting in Windows 10, version 1607, the XAML framework provides a built in Boolean to Visibility converter. The converter maps **true** to the **Visible** enumeration value and **false** to **Collapsed** so you can bind a Visibility property to a Boolean without creating a converter. Note that this is not a feature of function binding, only property binding. To use the built in converter, your app's minimum target SDK version must be 14393 or later. You can't use it when your app targets earlier versions of Windows 10. For more info about target versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code).
 
-**Tip**   If you need to specify a single curly brace for a value, such as in [**Path**](/uwp/api/windows.ui.xaml.data.binding.path) or [**ConverterParameter**](/uwp/api/windows.ui.xaml.data.binding.converterparameter), precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
+> [!TIP]
+> If you need to specify a single curly brace for a value, such as in [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.path) or [**ConverterParameter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converterparameter), precede it with a backslash: `\{`. Alternatively, enclose the entire string that contains the braces that need escaping in a secondary quotation set, for example `ConverterParameter='{Mix}'`.
 
-[**Converter**](/uwp/api/windows.ui.xaml.data.binding.converter), [**ConverterLanguage**](/uwp/api/windows.ui.xaml.data.binding.converterlanguage) and **ConverterLanguage** are all related to the scenario of converting a value or type from the binding source into a type or value that is compatible with the binding target property. For more info and examples, see the "Data conversions" section of [Data binding in depth](../data-binding/data-binding-in-depth.md).
+[**Converter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converter), [**ConverterLanguage**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.converterlanguage) and **ConverterLanguage** are all related to the scenario of converting a value or type from the binding source into a type or value that is compatible with the binding target property. For more info and examples, see the "Data conversions" section of [Data binding in depth](../../data-binding/data-binding-in-depth.md).
 
 **{x:Bind}** is a markup extension only, with no way to create or manipulate such bindings programmatically. For more info about markup extensions, see [XAML overview](xaml-overview.md).

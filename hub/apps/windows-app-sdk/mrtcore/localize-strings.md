@@ -44,7 +44,7 @@ Unlike image resources, where only one image resource is contained in an image r
 
 ## Refer to a string resource identifier from XAML
 
-You use an [x:Uid directive](/windows/uwp/xaml-platform/x-uid-directive) to associate a control or other element in your markup with a string resource identifier.
+You use an [x:Uid directive](/windows/apps/develop/platform/xaml/x-uid-directive) to associate a control or other element in your markup with a string resource identifier.
 
 ```xaml
 <TextBlock x:Uid="Greeting"/>
@@ -57,7 +57,7 @@ When assigning a string resource identifier to a XAML element, be certain that *
 Instead of setting **Width** from a Resources File, you'll probably want to allow controls to dynamically size to content.
 
 > [!NOTE]
-> For [attached properties](/windows/uwp/xaml-platform/attached-properties-overview), you need a special syntax in the **Name** column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty) attached property for the "Greeting" identifier, this is what you would enter in the **Name** column.
+> For [attached properties](/windows/apps/develop/platform/xaml/attached-properties-overview), you need a special syntax in the **Name** column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty) attached property for the "Greeting" identifier, this is what you would enter in the **Name** column.
 
 ```xml
 Greeting.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name

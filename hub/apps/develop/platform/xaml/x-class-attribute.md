@@ -9,11 +9,9 @@ ms.localizationpriority: medium
 ---
 # x:Class attribute
 
-
 Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
 
 ## XAML attribute usage
-
 
 ``` syntax
 <object x:Class="namespace.classname"...>
@@ -30,7 +28,7 @@ Configures XAML compilation to join partial classes between markup and code-behi
 
 ## Remarks
 
-**x:Class** can be declared as an attribute for any element that is the root of a XAML file/object tree and is being compiled by build actions, or for the [**Application**](/uwp/api/Windows.UI.Xaml.Application) root in the application definition of a compiled application. Declaring **x:Class** on any element other than a root node, and under any circumstances for a XAML file that is not compiled with the **Page** build action, results in a compile-time error.
+**x:Class** can be declared as an attribute for any element that is the root of a XAML file/object tree and is being compiled by build actions, or for the [**Application**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Application) root in the application definition of a compiled application. Declaring **x:Class** on any element other than a root node, and under any circumstances for a XAML file that is not compiled with the **Page** build action, results in a compile-time error.
 
 The class used as **x:Class** cannot be a nested class.
 

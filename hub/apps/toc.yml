@@ -883,17 +883,85 @@ items:
                         href: develop/platform/csharp-winrt/authoring-diagnostics.md
               - name: XAML
                 items:
-                  - name: XAML brushes
-                    href: develop/platform/xaml/brushes.md
-                  - name: XAML styles
+                  - name: XAML platform
+                    href: develop/platform/xaml/index.md
+                  - name: XAML overview
+                    href: develop/platform/xaml/xaml-overview.md
+                  - name: Dependency properties overview
+                    href: develop/platform/xaml/dependency-properties-overview.md
+                  - name: Custom dependency properties
+                    href: develop/platform/xaml/custom-dependency-properties.md
+                  - name: Attached properties overview
+                    href: develop/platform/xaml/attached-properties-overview.md
+                  - name: Custom attached properties
+                    href: develop/platform/xaml/custom-attached-properties.md
+                  - name: Events and routed events overview
+                    href: develop/platform/xaml/events-and-routed-events-overview.md
+                  - name: Styles, templates, and resources
                     href: develop/platform/xaml/xaml-styles.md
                     items:
+                      - name: XAML brushes
+                        href: develop/platform/xaml/brushes.md
                       - name: XAML Control templates
                         href: develop/platform/xaml/xaml-control-templates.md
+                      - name: Template settings classes
+                        href: develop/platform/xaml/template-settings-classes.md
                       - name: ResourceDictionary and XAML resource references
                         href: develop/platform/xaml/xaml-resource-dictionary.md
                       - name: XAML theme resources
                         href: develop/platform/xaml/xaml-theme-resources.md
+                  - name: Syntax guide
+                    items:
+                      - name: XAML syntax guide
+                        href: develop/platform/xaml/xaml-syntax-guide.md
+                      - name: XAML and whitespace
+                        href: develop/platform/xaml/xaml-and-whitespace.md
+                      - name: Namescopes
+                        href: develop/platform/xaml/xaml-namescopes.md
+                      - name: Namespaces and namespace mapping
+                        href: develop/platform/xaml/xaml-namespaces-and-namespace-mapping.md
+                      - name: Property-path syntax
+                        href: develop/platform/xaml/property-path-syntax.md
+                      - name: Move and draw commands syntax
+                        href: develop/platform/xaml/move-draw-commands-syntax.md
+                  - name: Reference
+                    items:
+                      - name: XAML intrinsic data types
+                        href: develop/platform/xaml/xaml-intrinsic-data-types.md
+                      - name: x:Class attribute
+                        href: develop/platform/xaml/x-class-attribute.md
+                      - name: x:DefaultBindMode attribute
+                        href: develop/platform/xaml/x-defaultbindmode-attribute.md
+                      - name: x:DeferLoadStrategy attribute
+                        href: develop/platform/xaml/x-deferloadstrategy-attribute.md
+                      - name: x:FieldModifier attribute
+                        href: develop/platform/xaml/x-fieldmodifier-attribute.md
+                      - name: x:Key attribute
+                        href: develop/platform/xaml/x-key-attribute.md
+                      - name: x:Load attribute
+                        href: develop/platform/xaml/x-load-attribute.md
+                      - name: x:Name attribute
+                        href: develop/platform/xaml/x-name-attribute.md
+                      - name: x:Phase attribute
+                        href: develop/platform/xaml/x-phase-attribute.md
+                      - name: x:Uid directive
+                        href: develop/platform/xaml/x-uid-directive.md
+                      - name: "{x:Bind} markup extension"
+                        href: develop/platform/xaml/x-bind-markup-extension.md
+                      - name: "{Binding} markup extension"
+                        href: develop/platform/xaml/binding-markup-extension.md
+                      - name: "{x:Null} markup extension"
+                        href: develop/platform/xaml/x-null-markup-extension.md
+                      - name: "{CustomResource} markup extension"
+                        href: develop/platform/xaml/customresource-markup-extension.md
+                      - name: "{RelativeSource} markup extension"
+                        href: develop/platform/xaml/relativesource-markup-extension.md
+                      - name: "{StaticResource} markup extension"
+                        href: develop/platform/xaml/staticresource-markup-extension.md
+                      - name: "{TemplateBinding} markup extension"
+                        href: develop/platform/xaml/templatebinding-markup-extension.md
+                      - name: "{ThemeResource} markup extension"
+                        href: develop/platform/xaml/themeresource-markup-extension.md
       - name: API reference
         href: api-reference/index.md
         items:

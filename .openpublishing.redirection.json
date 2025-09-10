@@ -9369,6 +9369,166 @@
       "source_path": "hub/apps/tutorials/winui-notes/index.yml",
       "redirect_url": "/windows/apps/tutorials/winui-notes/intro",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/attached-properties-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/attached-properties-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/binding-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/binding-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/custom-attached-properties.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/custom-attached-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/custom-dependency-properties.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/custom-dependency-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/customresource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/customresource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/dependency-properties-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/dependency-properties-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/events-and-routed-events-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/events-and-routed-events-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/index.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/move-draw-commands-syntax.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/move-draw-commands-syntax",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/property-path-syntax.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/property-path-syntax",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/relativesource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/relativesource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/staticresource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/staticresource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/templatebinding-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/templatebinding-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/template-settings-classes.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/template-settings-classes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/themeresource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/themeresource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-and-whitespace.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-and-whitespace",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-intrinsic-data-types.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-intrinsic-data-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-namescopes.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-namescopes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-namespaces-and-namespace-mapping.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-syntax-guide.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-syntax-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-bind-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-bind-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-class-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-class-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-defaultbindmode-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-defaultbindmode-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-deferloadstrategy-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-deferloadstrategy-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-fieldmodifier-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-fieldmodifier-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-key-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-key-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-load-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-load-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-name-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-name-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-null-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-null-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-phase-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-phase-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-uid-directive.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-uid-directive",
+      "redirect_document_id": false
     }
   ]
 }

@@ -31,7 +31,7 @@ The WinUI project templates in Visual Studio contain everything you need to buil
 
 :::image type="content" source="images/hello-world/click-me.png" alt-text="A screenshot of the templated project built and running.":::
 
-Click the `Click Me` button for a demonstration of [event handling](/windows/uwp/xaml-platform/events-and-routed-events-overview):
+Click the `Click Me` button for a demonstration of [event handling](/windows/apps/develop/platform/xaml/events-and-routed-events-overview):
 
 :::image type="content" source="images/hello-world/clicked-me.png" alt-text="A screenshot of the 'Click Me' button.":::
 

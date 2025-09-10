@@ -317,7 +317,7 @@ XAML is an easy-to-use declarative UI language with convenient features like ani
     </colgroup>
     <tr>
         <td>XAML platform overview</td>
-        <td><a href="/windows/uwp/xaml-platform/index">XAML platform</a></td>
+        <td><a href="/windows/apps/develop/platform/xaml/index">XAML platform</a></td>
     </tr>
     <tr>
         <td>XAML UI and controls</td>

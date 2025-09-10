@@ -9,21 +9,20 @@ ms.localizationpriority: medium
 ---
 # XAML namespaces and namespace mapping
 
-
 This topic explains the XML/XAML namespace (**xmlns**) mappings as found in the root element of most XAML files. It also describes how to produce similar mappings for custom types and assemblies.
 
 ## How XAML namespaces relate to code definition and type libraries
 
 Both in its general purpose and for its application to Windows Runtime app programming, XAML is used to declare objects, properties of those objects, and object-property relationships expressed as hierarchies. The objects you declare in XAML are backed by type libraries or other representations that are defined by other programming techniques and languages. These libraries might be:
 
--   The built-in set of objects for the Windows Runtime. This is a fixed set of objects, and accessing these objects from XAML uses internal type-mapping and activation logic.
--   Distributed libraries that are provided either by Microsoft or by third parties.
--   Libraries that represent the definition of a third-party control that your app incorporates and your package redistributes.
--   Your own library, which is part of your project and which holds some or all of your user code definitions.
+- The built-in set of objects for the Windows Runtime. This is a fixed set of objects, and accessing these objects from XAML uses internal type-mapping and activation logic.
+- Distributed libraries that are provided either by Microsoft or by third parties.
+- Libraries that represent the definition of a third-party control that your app incorporates and your package redistributes.
+- Your own library, which is part of your project and which holds some or all of your user code definitions.
 
 Backing type info is associated with particular XAML namespace definitions. XAML frameworks such as the Windows Runtime can aggregate multiple assemblies and multiple code namespaces to map to a single XAML namespace. This enables the concept of a XAML vocabulary that covers a larger programming framework or technology. A XAML vocabulary can be quite extensive—for example, most of the XAML documented for Windows Runtime apps in this reference constitutes a single XAML vocabulary. A XAML vocabulary is also extensible: you extend it by adding types to the backing code definitions, making sure to include the types in code namespaces that are already used as mapped namespace sources for the XAML vocabulary.
 
-A XAML processor can look up types and members from the backing assemblies associated with that XAML namespace when it creates a run-time object representation. This is why XAML is useful as a way to formalize and exchange definitions of object-construction behavior, and why XAML is used as a UI definition technique for a UWP app.
+A XAML processor can look up types and members from the backing assemblies associated with that XAML namespace when it creates a run-time object representation. This is why XAML is useful as a way to formalize and exchange definitions of object-construction behavior, and why XAML is used as a UI definition technique for a Windows Runtime app.
 
 ## XAML namespaces in typical XAML markup usage
 
@@ -41,7 +40,7 @@ This **xmlns** value, and the "x:" prefix it is mapped to, is also identical to 
 
 The relationship between these declarations is that XAML is a language definition, and the Windows Runtime is one implementation that uses XAML as a language and defines a specific vocabulary where its types are referenced in XAML.
 
-The XAML language specifies certain language elements, and each of these should be accessible through XAML processor implementations working against the XAML namespace. The "x:" mapping convention for the XAML language XAML namespace is followed by project templates, sample code, and the documentation for language features. The XAML language namespace defines several commonly used features that are necessary even for basic Windows Runtime apps using C++, C#, or Visual Basic. For example, to join any code-behind to a XAML file through a partial class, you must name that class as the [x:Class attribute](x-class-attribute.md) in the root element of the relevant XAML file. Or, any element as defined in a XAML page as a keyed resource in a [ResourceDictionary and XAML resource references](/windows/apps/design/style/xaml-resource-dictionary) must have the [x:Key attribute](x-key-attribute.md) set on the object element in question.
+The XAML language specifies certain language elements, and each of these should be accessible through XAML processor implementations working against the XAML namespace. The "x:" mapping convention for the XAML language XAML namespace is followed by project templates, sample code, and the documentation for language features. The XAML language namespace defines several commonly used features that are necessary even for basic Windows Runtime apps. For example, to join any code-behind to a XAML file through a partial class, you must name that class as the [x:Class attribute](x-class-attribute.md) in the root element of the relevant XAML file. Or, any element as defined in a XAML page as a keyed resource in a [ResourceDictionary and XAML resource references](xaml-resource-dictionary.md) must have the [x:Key attribute](x-key-attribute.md) set on the object element in question.
 
 ## Code namespaces that map to the default XAML namespace
 
@@ -80,13 +79,13 @@ In addition to the default namespace and the XAML language XAML namespace "x:", 
 
 The "d:" XAML namespace is intended for designer support, specifically designer support in the XAML design surfaces of Microsoft Visual Studio. The" d:" XAML namespace enables designer or design-time attributes on XAML elements. These designer attributes affect only the design aspects of how XAML behaves. The designer attributes are ignored when the same XAML is loaded by the Windows Runtime XAML parser when an app runs. Generally, the designer attributes are valid on any XAML element, but in practice there are only certain scenarios where applying a designer attribute yourself is appropriate. In particular, many of the designer attributes are intended to provide a better experience for interacting with data contexts and data sources while you are developing XAML and code that use data binding.
 
--   **d:DesignHeight and d:DesignWidth attributes:** These attributes are sometimes applied to the root of a XAML file that Visual Studio or another XAML designer surface creates for you. For example, these attributes are set on the [**UserControl**](/uwp/api/Windows.UI.Xaml.Controls.UserControl) root of the XAML that is created if you add a new **UserControl** to your app project. These attributes make it easier to design the composition of the XAML content, so that you have some anticipation of the layout constraints that might exist once that XAML content is used for a control instance or other part of a larger UI page.
+- **d:DesignHeight and d:DesignWidth attributes:** These attributes are sometimes applied to the root of a XAML file that Visual Studio or another XAML designer surface creates for you. For example, these attributes are set on the [**UserControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.UserControl) root of the XAML that is created if you add a new **UserControl** to your app project. These attributes make it easier to design the composition of the XAML content, so that you have some anticipation of the layout constraints that might exist once that XAML content is used for a control instance or other part of a larger UI page.
 
    **Note**  If you are migrating XAML from Microsoft Silverlight you might have these attributes on root elements that represent an entire UI page. You might want to remove the attributes in this case. Other features of the XAML designers such as the simulator are probably more useful for designing page layouts that handle scaling and view states well than is a fixed size page layout using **d:DesignHeight** and **d:DesignWidth**.
 
--   **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) that object otherwise has.
--   **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource), overriding [**Source**](/uwp/api/windows.ui.xaml.data.collectionviewsource.source).
--   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95)). For some usage examples, see [Sample data on the design surface, and for prototyping](../data-binding/displaying-data-in-the-designer.md).
+- **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) that object otherwise has.
+- **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Data.CollectionViewSource), overriding [**Source**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource.source).
+- **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95)). For some usage examples, see [Sample data on the design surface, and for prototyping](/windows/uwp/data-binding/displaying-data-in-the-designer).
 
 ### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
@@ -98,7 +97,7 @@ The "d:" XAML namespace is intended for designer support, specifically designer 
 
 ### **vsm:**
 
-Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates imported from other Microsoft technologies. The namespace originally addressed a legacy namespace tooling issue. You should delete XAML namespace definitions for "vsm:" in any XAML you use for the Windows Runtime, and change any prefix usages for [**VisualState**](/uwp/api/Windows.UI.Xaml.VisualState), [**VisualStateGroup**](/uwp/api/Windows.UI.Xaml.VisualStateGroup) and related objects to use the default XAML namespace instead. For more info on XAML migration, see [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](/previous-versions/windows/apps/br229571(v=win.10)).
+Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates imported from other Microsoft technologies. The namespace originally addressed a legacy namespace tooling issue. You should delete XAML namespace definitions for "vsm:" in any XAML you use for the Windows Runtime, and change any prefix usages for [**VisualState**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualState), [**VisualStateGroup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualStateGroup) and related objects to use the default XAML namespace instead. For more info on XAML migration, see [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](/previous-versions/windows/apps/br229571(v=win.10)).
 
 ## Mapping custom types to XAML namespaces and prefixes
 
@@ -108,7 +107,7 @@ An **xmlns** definition includes a value as well as the prefix naming. The value
 
 For example, to map a "custom1" prefix that enables you to reference a "CustomClasses" namespace, and use classes from that namespace or assembly as object elements in XAML, your XAML page should include the following mapping on the root element: `xmlns:custom1="using:CustomClasses"`
 
-Partial classes of the same page scope do not need to be mapped. For example, you don't need prefixes to reference any event handlers that you defined for handling events from the XAML UI definition of your page. Also, many of the starting XAML pages from Visual Studio generated projects for a Windows Runtime app using C++, C#, or Visual Basic already map a "local:" prefix, which references the project-specified default namespace and the namespace used by partial class definitions.
+Partial classes of the same page scope do not need to be mapped. For example, you don't need prefixes to reference any event handlers that you defined for handling events from the XAML UI definition of your page. Also, many of the starting XAML pages from Visual Studio generated projects for a Windows Runtime app already map a "local:" prefix, which references the project-specified default namespace and the namespace used by partial class definitions.
 
 ### CLR language rules
 
@@ -135,4 +134,3 @@ If you are referencing attached properties, the owner-type portion of the attach
 * [Creating Windows Runtime components in C# and Visual Basic](/previous-versions/windows/apps/hh441572(v=vs.140))
 * [C#, VB, and C++ project templates for Windows Runtime apps](/previous-versions/windows/apps/hh768232(v=win.10))
 * [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](/previous-versions/windows/apps/br229571(v=win.10))
- 

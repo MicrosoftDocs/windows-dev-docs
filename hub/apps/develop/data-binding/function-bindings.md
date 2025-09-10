@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 # Functions in x:Bind with WinUI
 
 > [!NOTE]
-> For general info about using data binding in your app with `{x:Bind}` (and for an all-up comparison between `{x:Bind}` and `{Binding}`), see [Data binding in depth](data-binding-in-depth.md) and [{x:Bind} Markup Extension](/windows/uwp/xaml-platform/x-bind-markup-extension).
+> For general info about using data binding in your app with `{x:Bind}` (and for an all-up comparison between `{x:Bind}` and `{Binding}`), see [Data binding in depth](data-binding-in-depth.md) and [{x:Bind} Markup Extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension).
 
 In WinUI apps, **{x:Bind}** supports using a function as the leaf step of the binding path. This enables:
 
@@ -54,7 +54,7 @@ public class ColorEntry
 
 ## Path to the function
 
-The [path to the function](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) is specified like other property paths and can include [dots](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path-resolution) (.), [indexers](/windows/uwp/xaml-platform/x-bind-markup-extension#collections) or [casts](/windows/uwp/xaml-platform/x-bind-markup-extension#casting) to locate the function.
+The [path to the function](/windows/apps/develop/platform/xaml/x-bind-markup-extension#property-path) is specified like other property paths and can include [dots](/windows/apps/develop/platform/xaml/x-bind-markup-extension#property-path-resolution) (.), [indexers](/windows/apps/develop/platform/xaml/x-bind-markup-extension#collections) or [casts](/windows/apps/develop/platform/xaml/x-bind-markup-extension#casting) to locate the function.
 
 Static functions can be specified using `XMLNamespace:ClassName.MethodName` syntax. For example, use the below syntax for binding to static functions in code-behind.
 
@@ -170,7 +170,7 @@ Multiple function arguments can be specified, separated by comma's (,)
 - Boolean – specified as "x:True" or "x:False"
 
 > [!TIP]
-> [TargetNullValue](/windows/uwp/xaml-platform/x-bind-markup-extension#properties-that-you-can-set-with-xbind) will apply to the result of the function call, not to any bound arguments.
+> [TargetNullValue](/windows/apps/develop/platform/xaml/x-bind-markup-extension#properties-that-you-can-set-with-xbind) will apply to the result of the function call, not to any bound arguments.
 
 ### Two way function bindings
 
@@ -182,4 +182,4 @@ In a two-way binding scenario, a second function must be specified for the rever
 
 ## See also
 
-- [{x:Bind} Markup Extension](/windows/uwp/xaml-platform/x-bind-markup-extension)
+- [{x:Bind} Markup Extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
