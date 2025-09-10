@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 09/17/2024
+ms.date: 09/10/2025
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -25,6 +25,32 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </thead>
 <tbody>
 </tr>
+
+
+<tr class="even">
+<td>October 14, 2025</td>
+<td><a href="store-policy-archive/store-policy-7-19.md">7.19</a></td>
+<td>
+
+Updated all references of "Xbox Live" to "Xbox network" to align with updated branding.
+
+Updated 10.1.3 to clarify that developers cannot use pricing terms in their search terms.
+
+Updated 10.2.4 to remove the “link here” copy.
+
+Updated 10.4.4 to state apps must not have unreasonably low installation rates to ensure a better customer install experience.
+
+Updated 10.8.1 to disallow any real-world value exchange for in-product digital goods or currencies on external marketplaces.
+
+Updated 10.8.2.7 to note that in cases where developers are allowed to use a third-party purchase API under policy, and have chosen to do so, they must indicate this usage via the check box in Partner Center.
+
+Updated 10.13.5 to clarify that in-game advertising on Xbox must adhere to the same guidelines as those for the [Xbox Console Dashboard](https://help.ads.microsoft.com/#apex/ads/en/60181/0).
+
+New 10.13.12 Policy clarification that [XR-007](/gaming/gdk/docs/store/policies/xr/xr007)  Cross-Network Gameplay applies for any store content that roams across networks and platforms.
+
+New 11.15 New child safety policy requires that products that target children provide robust protections, including safeguards against exploitation, bullying, and access to inappropriate or adult-themed content.
+
+New 11.16 New policy aims to ensure transparency in how live generative AI technologies are deployed in-app and the nature of their output.
 
 
 <tr class="odd">
