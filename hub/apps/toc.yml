@@ -198,6 +198,10 @@ items:
                     href: develop/files/winrt-files.md
                   - name: Access files and folders with .NET
                     href: develop/files/dotnet-files.md
+                  - name: Open files and folders with a picker
+                    href: develop/files/using-file-folder-pickers.md
+                  - name: Save a file with a picker
+                    href: develop/files/pickers-save-file.md
               - name: Windows Settings access
                 items:
                   - name: Reference for Windows 11 settings

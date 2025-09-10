@@ -20,7 +20,9 @@ Use [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to let
 > For a complete sample, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
 
 > [!NOTE]
-> In a desktop app (which includes WinUI 3 apps), you can use file and folder pickers from [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers). However, if the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see [FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation).
+> In a desktop app (which includes WinUI apps), you can use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace to access the file and folder pickers. This namespace is available in Windows App SDK version 1.8 and later. The APIs in this namespace are designed to work seamlessly with WinUI apps, providing a consistent experience across different app types.
+>
+> If necessary, you can still use file and folder pickers from [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers). However, if the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see [FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation).
 
 ## Prerequisites
 
