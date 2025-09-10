@@ -18,7 +18,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </colgroup>
 <thead>
 <tr class="header">
-<th>Date</th>
+<th>Published Date</th>
 <th>Document version</th>
 <th>Change description</th>
 </tr>
@@ -28,7 +28,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 
 <tr class="even">
-<td>October 14, 2025</td>
+<td>September 10, 2025</td>
 <td><a href="store-policies.md">7.19</a></td>
 <td>
 
