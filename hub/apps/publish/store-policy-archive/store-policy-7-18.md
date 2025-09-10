@@ -8,7 +8,7 @@ ms.localizationpriority: high
 ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 ---
 
-# Microsoft Store Policies
+# Microsoft Store Policies (7.18)
 
 **Document version: 7.18**
 

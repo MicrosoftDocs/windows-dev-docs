@@ -29,7 +29,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 
 <tr class="even">
 <td>October 14, 2025</td>
-<td><a href="store-policy-archive/store-policy-7-19.md">7.19</a></td>
+<td><a href="store-policies.md">7.19</a></td>
 <td>
 
 Updated all references of "Xbox Live" to "Xbox network" to align with updated branding.
@@ -55,7 +55,7 @@ New 11.16 New policy aims to ensure transparency in how live generative AI techn
 
 <tr class="odd">
 <td>October 19, 2024</td>
-<td><a href="store-policies.md">7.18</a></td>
+<td><a href="./store-policy-archive/store-policy-7-18.md">7.18</a></td>
 <td>
 
 
