@@ -72,7 +72,7 @@ Here, the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.con
 You can also bind the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource) property to a collection in XAML. For more info, see [Data binding with XAML](/windows/uwp/data-binding/data-binding-quickstart).
 
 > [!IMPORTANT]
-> When you use the [x:Bind markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) in a DataTemplate, you have to specify the data type (`x:DataType`) on the data template.
+> When you use the [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) in a DataTemplate, you have to specify the data type (`x:DataType`) on the data template.
 
 Here, the ItemsSource is bound to a collection of custom data objects (of type `Photo`).
 

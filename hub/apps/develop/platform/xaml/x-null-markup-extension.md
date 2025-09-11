@@ -9,7 +9,6 @@ ms.localizationpriority: medium
 ---
 # {x:Null} markup extension
 
-
 In XAML markup, specifies a **null** value for a property.
 
 ## XAML attribute usage

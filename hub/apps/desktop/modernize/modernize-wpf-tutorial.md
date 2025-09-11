@@ -102,7 +102,7 @@ For more information, see these articles:
 
 Starting in Windows 10, version 1903, you can host UWP controls in non-UWP desktop apps using a feature called *XAML Islands*. This feature enables you to enhance the look, feel, and functionality of your existing desktop apps with the latest Windows UI features that are only available via UWP controls. This means that you can use UWP features such as Windows Ink and controls that support the Fluent Design System in your existing WPF, Windows Forms, and C++ Win32 apps.
 
-For more information, see [UWP controls in desktop applications (XAML Islands)](/windows/uwp/xaml-platform/xaml-host-controls). This tutorial guides you through the process of using two different types of XAML Island controls:
+For more information, see [UWP controls in desktop applications (XAML Islands)](/windows/apps/develop/platform/xaml/xaml-host-controls). This tutorial guides you through the process of using two different types of XAML Island controls:
 
 * The [InkCanvas](/windows/communitytoolkit/controls/wpf-winforms/inkcanvas) and [MapControl](/windows/communitytoolkit/controls/wpf-winforms/mapcontrol) in the Windows Community Toolkit. These WPF controls wrap the interface and functionality of the corresponding UWP controls and can be used like any other WPF control in the Visual Studio designer.
 

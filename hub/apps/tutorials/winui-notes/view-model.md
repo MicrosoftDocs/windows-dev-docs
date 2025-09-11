@@ -268,7 +268,7 @@ In WinUI, there are two kinds of binding you can choose from:
  :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
 - [Data binding in Windows apps](../../develop/data-binding/index.md)
-- [{x:Bind}](/windows/uwp/xaml-platform/x-bind-markup-extension), [{Binding}](/windows/uwp/xaml-platform/binding-markup-extension)
+- [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension), [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension)
 
 ## Data binding and MVVM
 

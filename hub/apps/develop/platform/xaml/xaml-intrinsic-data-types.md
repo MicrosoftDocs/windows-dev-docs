@@ -9,10 +9,9 @@ ms.localizationpriority: medium
 ---
 # XAML intrinsic data types
 
-
 XAML for the Windows Runtime provides language-level support for several data types that are frequently used primitives in the common language runtime (CLR) and in other programming languages such as C++.
 
-The most common place you'll see XAML intrinsic data type usages is when resources are defined in a XAML resource dictionary. You might define constants there, for example numbers that you use for multiple values. Or you might use a storyboarded animation that animates using a string or Boolean value, and you'll then need a XAML object element representing the string or Boolean to fill the keyframe of your [**ObjectAnimationUsingKeyFrames**](/uwp/api/Windows.UI.Xaml.Media.Animation.ObjectAnimationUsingKeyFrames) definition. The Windows Runtime default XAML templates use both these techniques.
+The most common place you'll see XAML intrinsic data type usages is when resources are defined in a XAML resource dictionary. You might define constants there, for example numbers that you use for multiple values. Or you might use a storyboarded animation that animates using a string or Boolean value, and you'll then need a XAML object element representing the string or Boolean to fill the keyframe of your [**ObjectAnimationUsingKeyFrames**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.ObjectAnimationUsingKeyFrames) definition. The Windows Runtime default XAML templates use both these techniques.
 
 XAML for the Windows Runtime provides language-level support for these types.
 
@@ -25,13 +24,15 @@ XAML for the Windows Runtime provides language-level support for these types.
 
 These XAML language primitives are generally the only cases in which you define an object element that uses the **x:** prefix in your XAML. All other XAML language features are typically used in attribute form, or as a markup extension.
 
-**Note**  By convention, the language primitives for XAML and all other XAML language elements are shown with the "x:" prefix. This is how XAML language elements are typically used in real-world markup. This convention is followed in the documentation for XAML and also in the XAML specification.
+> [!NOTE]
+> By convention, the language primitives for XAML and all other XAML language elements are shown with the "x:" prefix. This is how XAML language elements are typically used in real-world markup. This convention is followed in the documentation for XAML and also in the XAML specification.
 
 ## Other XAML primitives
 
 The XAML 2009 specification notes other XAML language-level primitives such as **x:Uri** and **x:Single**. Unless listed in the table in this topic, other XAML language primitives as defined by other XAML vocabularies or by the XAML 2009 specification are not currently supported in XAML for the Windows Runtime.
 
-**Note**  Dates and times (properties that use [**DateTime**](/uwp/api/Windows.Foundation.DateTime) or [**DateTimeOffset**](/dotnet/api/system.datetimeoffset), [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) or [**System.TimeSpan**](/dotnet/api/system.timespan)) aren't settable with a XAML primitive. These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times. For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.
+> [!NOTE]
+> Dates and times (properties that use [**DateTime**](/uwp/api/Windows.Foundation.DateTime) or [**DateTimeOffset**](/dotnet/api/system.datetimeoffset), [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) or [**System.TimeSpan**](/dotnet/api/system.timespan)) aren't settable with a XAML primitive. These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times. For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.
 
 ## Related topics
 

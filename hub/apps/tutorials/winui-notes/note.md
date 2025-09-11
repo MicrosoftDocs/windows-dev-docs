@@ -65,7 +65,7 @@ First, add the new page to the project:
     Now when you run the app, the `Frame` will load an instance of `NotePage` and show it to the user.
 
 > [!IMPORTANT]
-> [XAML namespace (xmlns) mappings](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping) are the XAML counterpart to the C# `using` statement. `local:` is a prefix that is mapped for you within the XAML pages for your app project (`xmlns:local="using:WinUINotes"`). It's mapped to refer to the same namespace that's created to contain the `x:Class` attribute and code for all the XAML files including **App.xaml**. As long as you define any custom classes you want to use in XAML in this same namespace, you can use the `local:` prefix to refer to your custom types in XAML.
+> [XAML namespace (xmlns) mappings](/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping) are the XAML counterpart to the C# `using` statement. `local:` is a prefix that is mapped for you within the XAML pages for your app project (`xmlns:local="using:WinUINotes"`). It's mapped to refer to the same namespace that's created to contain the `x:Class` attribute and code for all the XAML files including **App.xaml**. As long as you define any custom classes you want to use in XAML in this same namespace, you can use the `local:` prefix to refer to your custom types in XAML.
 
 Let's break down the key parts of the XAML controls placed on the page:
 
@@ -83,7 +83,7 @@ Let's break down the key parts of the XAML controls placed on the page:
 - `<StackPanel Orientation="Horizontal" ... > ... </StackPanel>` defines a layout control ([StackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel)) that stacks its children either vertically (default) or horizontally. It's placed in the bottom center cell of the `Grid` (`Grid.Row="1" Grid.Column="1"`).
 
   > [!NOTE]
-  > `Grid.Row="1" Grid.Column="1"` is an example of XAML [attached properties](/windows/uwp/xaml-platform/attached-properties-overview). Attached properties let one XAML object set a property that belongs to a different XAML object. Often, as in this case, child elements can use attached properties to inform their parent element of how they are to be presented in the UI.
+  > `Grid.Row="1" Grid.Column="1"` is an example of XAML [attached properties](/windows/apps/develop/platform/xaml/attached-properties-overview). Attached properties let one XAML object set a property that belongs to a different XAML object. Often, as in this case, child elements can use attached properties to inform their parent element of how they are to be presented in the UI.
 
 - Two `<Button>` controls are inside the `<StackPanel>` and arranged horizontally. You'll add the code to handle the buttons' [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) events in the next section.
 
@@ -91,7 +91,7 @@ Let's break down the key parts of the XAML controls placed on the page:
 
 - [Responsive layouts with XAML](../../design/layout/layouts-with-xaml.md)
 - [Layout panels](../../design/layout/layout-panels.md)
-- [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping)
+- [XAML namespaces and namespace mapping](/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping)
 
 ## Load and save a note
 
