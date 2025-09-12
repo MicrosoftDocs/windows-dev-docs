@@ -597,6 +597,8 @@ items:
                     items:
                       - name: Stable channel release notes
                         items:
+                          - name: Windows App SDK 1.7
+                            href: windows-app-sdk/release-notes-archive/stable-channel-1-7.md
                           - name: Windows App SDK 1.6
                             href: windows-app-sdk/release-notes-archive/stable-channel-1.6.md
                           - name: Windows App SDK 1.5
@@ -617,6 +619,10 @@ items:
                             href: windows-app-sdk/release-notes-archive/stable-channel-0.5.md
                       - name: Preview channel release notes
                         items:
+                          - name: Windows App SDK 1.7
+                            href: windows-app-sdk/release-notes-archive/preview-channel-1-7.md
+                          - name: Windows App SDK 1.6
+                            href: windows-app-sdk/release-notes-archive/preview-channel-1.6.md
                           - name: Windows App SDK 1.5
                             href: windows-app-sdk/release-notes-archive/preview-channel-1.5.md
                           - name: Windows App SDK 1.4
