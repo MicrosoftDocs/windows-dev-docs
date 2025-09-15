@@ -86,7 +86,7 @@ Copilot is powered by AI, so surprises and mistakes are possible. For more infor
 
 ### Extracting the MSI from the bundle for 0.94 and later
 
-Make sure to have [.NET SDK](https://dotnet.microsoft.com/download/) installed.
+Make sure to have the [.NET SDK](https://dotnet.microsoft.com/download/) installed.
 
 In PowerShell, run `dotnet tool install wix --global` to install the latest version of WiX Toolset.
 
@@ -98,7 +98,7 @@ wix burn extract ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.94.0-x64.exe" -ou
 
 ### Extracting the MSI from the bundle for 0.93 and earlier
 
-Make sure to have the [WiX Toolset v3](https://docs.firegiant.com/wix/wix3/) installed. The command doesn't work with WiX Toolset v4 and later versions.
+Make sure to have [WiX Toolset v3](https://docs.firegiant.com/wix/wix3/) installed. The command doesn't work with WiX Toolset v4 and later versions.
 
 This PowerShell example assumes the default install location for WiX Toolset and that the PowerToys installer has been downloaded to the Windows desktop.
 
