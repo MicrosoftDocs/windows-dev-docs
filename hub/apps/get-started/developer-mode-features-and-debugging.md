@@ -117,7 +117,7 @@ To fix this issue:
 
 ## Use group policies or registry keys to enable a device
 
-For most developers, you'll want to use the settings app to enable your device for debugging. In certain scenarios (such as automated tests) you can use other ways to enable your Windows desktop device for development.
+For most developers, you'll want to use Windows Settings to enable your device for debugging. In certain scenarios (such as automated tests) you can use other ways to enable your Windows desktop device for development.
 
 > [!NOTE]
 > These steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.

@@ -17,7 +17,7 @@ The app defaults platform enables developers to register their apps for supporti
 
 ## Default app experience for end users
 
-Windows 11 allows users to change default apps via the Settings app and other system UI.
+Windows 11 allows users to change default apps via Windows Settings and other system UI.
 
 * Windows will automatically prompt the user when they open a file or link type when a new app is installed that registered for that file or link type.
 * Apps can also direct the user to Settings to change default app settings, guiding users through this process using in-app prompts or documentation.

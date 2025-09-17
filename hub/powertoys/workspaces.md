@@ -80,7 +80,7 @@ Different apps may behave differently on launch if there is already an existing 
 For example, VS Code will launch a new window by default, but should a user prefer to move the existing window, the `--reuse-window` CLI argument can be added to VS Code's CLI arguments.
 
 > [!NOTE]
-> Some apps are "single-instance" applications, meaning that there may only be one active instance of the app open at a time. One example of this is the Windows Settings app. These apps, if already active, will be repositioned by default, and new instances cannot be launched.
+> Some apps are "single-instance" applications, meaning that there may only be one active instance of the app open at a time. One example of this is Windows Settings. These apps, if already active, will be repositioned by default, and new instances cannot be launched.
 
 ## Frequently Asked Questions
 

@@ -15,7 +15,7 @@ Background task behavior is arguably the most important factor in the total ener
 
 ## Background activity permissions
 
-On desktop and mobile devices running Windows 10, version 1607 or later, users can view their "Battery usage by app" in the Battery section of the Settings app. Here they will see a list of apps and the percentage of battery life that each app has consumed (out of the amount of battery life that has been used since the last charge). For UWP apps on this list, users can select the app to open up controls related to background activity.
+On desktop and mobile devices running Windows 10, version 1607 or later, users can view their "Battery usage by app" in the Battery section of Windows Settings. Here they will see a list of apps and the percentage of battery life that each app has consumed (out of the amount of battery life that has been used since the last charge). For UWP apps on this list, users can select the app to open up controls related to background activity.
 
 ![battery usage by app](images/battery-usage-by-app.png)
 
@@ -35,7 +35,7 @@ On desktop devices, the "Managed by Windows" setting is presented as a toggle sw
 
 In your app, you can use the [**BackgroundAccessStatus**](/uwp/api/windows.applicationmodel.background.backgroundaccessstatus) enum value returned by a call to the [**BackgroundExecutionManager.RequestAccessAsync()**](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) method to determine its current background activity permission setting.
 
-All this is to say that if your app doesn't implement responsible background activity management, the user may deny background permissions to your app altogether, which is not desirable for either party. If your app has been denied permission to run in the background but requires background activity to complete an action for the user, you can notify the user and point them to the Settings app. This can be accomplished by [Launching the Settings App](/windows/apps/develop/launch/launch-settings-app) to the Background Apps or Battery Usage Details page.
+All this is to say that if your app doesn't implement responsible background activity management, the user may deny background permissions to your app altogether, which is not desirable for either party. If your app has been denied permission to run in the background but requires background activity to complete an action for the user, you can notify the user and point them to Windows Settings. This can be accomplished by [Launch Windows Settings](/windows/apps/develop/launch/launch-settings) to the Background Apps or Battery Usage Details page.
 
 ## Work with the Battery Saver feature
 

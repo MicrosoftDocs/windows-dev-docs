@@ -18,7 +18,7 @@ For more general information about React, see the [React overview](./react-overv
 
 ## Prerequisites
 
-The setup requirements for using React Native for Desktop can be found on the [System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies) page. Ensure Developer Mode is turned ON in Windows Settings App.
+The setup requirements for using React Native for Desktop can be found on the [System Requirements](https://microsoft.github.io/react-native-windows/docs/rnw-dependencies) page. Ensure Developer Mode is turned ON in Windows Settings.
 
 ## Install React Native for Desktop
 

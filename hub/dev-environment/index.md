@@ -80,10 +80,10 @@ Windows invites you to code as you are. Use whatever coding language or framewor
         [Develop for Copilot+ PCs](/windows/ai/npu-devices)
     :::column-end:::
     :::column:::
-       [![Direct ML icon](../images/directml.png)](/windows/ai/directml/dml)<br>
-        **[DirectML](/windows/ai/directml/dml)**<br>
-        Pairing DirectML with the ONNX Runtime is often the most straightforward way for many developers to bring hardware-accelerated AI to their users at scale.<br>
-        [Get Started with DirectML](/windows/ai/directml/dml-get-started)
+       [![Windows ML icon](../images/windows-ml-diagram.png)](/windows/ai/new-windows-ml/overview)<br>
+        **[Windows ML](/windows/ai/new-windows-ml/overview)**<br>
+        Pairing Windows ML with the ONNX Runtime is often the most straightforward way for C#, C++, and Python developers to bring hardware-accelerated AI to their users.<br>
+        [Get Started with Windows ML](/windows/ai/new-windows-ml/get-started)
     :::column-end:::
     :::column:::
        [![RAI icon](../images/rai.png)](/windows/ai/rai)<br>
