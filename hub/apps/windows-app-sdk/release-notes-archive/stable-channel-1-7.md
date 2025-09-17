@@ -2,9 +2,8 @@
 title: Stable channel release notes for the Windows App SDK 1.7
 description: Provides information about the stable release channel for the Windows App SDK 1.7.
 ms.topic: release-notes
-ms.date: 09/09/2025
+ms.date: 09/16/2025
 keywords: windows win32, windows app development, Windows App SDK 
-ms.localizationpriority: medium
 ---
 
 # Stable channel release notes for the Windows App SDK 1.7
@@ -30,9 +29,23 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.7.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../downloads.md).
 
-### Version 1.7.3 (1.7.250606001)
+### Version 1.7.4 (1.7.250909003)
 
 This is the latest service release for Version 1.7 of the Windows App SDK.
+
+### Bug Fixes
+
+- Fixed an issue where the hover effects of other windows for the app could flicker when at least one window had ExtendsContentIntoTitleBar set to true. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlIsland_ExitNonClientArea). For more information, see GitHub issue [#10572](https://github.com/microsoft/microsoft-ui-xaml/issues/10572).
+- Fixed an issue where UnhandledExceptions were not being propagated to managed code. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DispatcherQueue_PropagateException). For more information, see GitHub issue [#10447](https://github.com/microsoft/microsoft-ui-xaml/issues/10447).
+- Fixed an occasional crash in `DirectUI::PointerRoutedEventArgs::GetCurrentPointImpl`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): GetIntermediatePointsImpl_Crash)
+- Apps with an incorrect activation manifest no longer crash in certain situations but instead return an error. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DesktopSiteBridge_ActivationErrorCrash)
+- Fixed an issue where setting `NavigationView.SelectedItem` as null did not correctly clear the selection state in collapsed mode. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): NavigationView_ClearSelectedItem)
+- Fixed certain corrupted upgrade scenarios from 1.6 to 1.7 by ensuring version numbers on certain binaries are consistently increasing. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, file version change)
+- Fixed an issue where resizing the window would fire an AppWindow.Changed event with `AppWindowChangedEventArgs.DidPresenterChange` set to true. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppWindow_NoDidPresenterChangeOnRestore)
+- Fixed a potential crash on window close if an InputPointerSource is disposed during certain reentrant scenarios. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_ReentrantDisposedCrash)
+- Fixed an issue where the installer failed to update the Singleton package if an older version was running in the background. The fix ensures AddPackage is always called with ForceTargetAppShutdown for the Singleton and restarts the NotificationLongRunningPlatform to complete the update. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, installer change)
+
+### Version 1.7.3 (1.7.250606001)
 
 #### Windows AI APIs
 
@@ -208,9 +221,9 @@ Microsoft.Windows.Workloads
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.7 release.
 
-- Improved the telemetry for failure scenarios in WindowsAppRuntimeInstall-&lt;arch&gt;.exe. For more info, see GitHub issue [#5289](https://github.com/microsoft/WindowsAppSDK/pull/5289). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, installer change)
-- Fixed an issue where pointer input would stop working when using arrow keys at the same time. For more info, see GitHub issue [#10126](https://github.com/microsoft/microsoft-ui-xaml/issues/10126). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue)
-- Fixed an issue where apps in remote desktop stop responding to pointer input. For more info, see GitHub issue [#10009](https://github.com/microsoft/microsoft-ui-xaml/issues/10009). (This is the same fix as the pointer input plus arrow keys fix, due to remote desktop automatically sending some key input during the switch away and back.)  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue)
+- Improved the telemetry for failure scenarios in WindowsAppRuntimeInstall-&lt;arch&gt;.exe. For more info, see GitHub issue [#5289](https://github.com/microsoft/WindowsAppSDK/pull/5289). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, installer change).
+- Fixed an issue where pointer input would stop working when using arrow keys at the same time. For more info, see GitHub issue [#10126](https://github.com/microsoft/microsoft-ui-xaml/issues/10126). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue).
+- Fixed an issue where apps in remote desktop stop responding to pointer input. For more info, see GitHub issue [#10009](https://github.com/microsoft/microsoft-ui-xaml/issues/10009). (This is the same fix as the pointer input plus arrow keys fix, due to remote desktop automatically sending some key input during the switch away and back.)  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue).
 - Fixed a potential crash trying to restore focus if a window activation event is delivered for a window which is closing. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixWindowCloseFocusCrash)
 - Fixed a performance regression introduced in WinAppSDK 1.6 due to WinUI binaries missing some linker optimizations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, changed linker options)
 - Fixed a potential crash if ProgressBar::SetProgressBarIndicatorWidth is called on a ProgressBar which is not in the tree. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixSetProgressBarIndicatorWidthCrash)
