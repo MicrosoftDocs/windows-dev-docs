@@ -9047,7 +9047,7 @@
     },
     {
       "source_path": "uwp/launch-resume/launch-settings-app.md",
-      "redirect_url": "/windows/apps/develop/launch/launch-settings-app",
+      "redirect_url": "/windows/apps/develop/launch/launch-settings",
       "redirect_document_id": false
     },
     {
@@ -9528,6 +9528,11 @@
     {
       "source_path": "uwp/xaml-platform/x-uid-directive.md",
       "redirect_url": "/windows/apps/develop/platform/xaml/x-uid-directive",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/launch/launch-settings-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-settings",
       "redirect_document_id": false
     }
   ]

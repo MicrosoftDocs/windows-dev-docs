@@ -41,7 +41,7 @@ You can declare general capabilities by using the [Manifest Designer](/windows/m
 
 A *sensitive resource* is a resource that can access the user's personal data, or cost the user money. In this topic, capabilities that provide apps with access to a *sensitive resource* are annotated by an asterisk (\*) in the **Capability scenario** column.
 
-Privacy-sensitive capabilities signal to the operating system (OS)&mdash;and to the user&mdash;what the app intends to do. Since it's good to send this signal to the users of your app, we recommend that you declare privacy-sensitive capabilities *even for Medium IL apps* (where the application identity is used to provide individual privacy toggles). Doing so allows those apps to be managed in the privacy settings pages (managed by the Windows **Settings** app) as soon as they're installed; as opposed to later, when they access privacy-sensitive resources.
+Privacy-sensitive capabilities signal to the operating system (OS)&mdash;and to the user&mdash;what the app intends to do. Since it's good to send this signal to the users of your app, we recommend that you declare privacy-sensitive capabilities *even for Medium IL apps* (where the application identity is used to provide individual privacy toggles). Doing so allows those apps to be managed in the privacy settings pages (managed by Windows **Settings**) as soon as they're installed; as opposed to later, when they access privacy-sensitive resources.
 
 Those privacy settings let the user dynamically control access to sensitive resources. Thus, it's important that your app doesn't assume that a sensitive resource is always available. For more info about accessing sensitive resources, see [Security](../security/index.md). 
 

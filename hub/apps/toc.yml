@@ -81,8 +81,8 @@ items:
                         href: develop/launch/handle-uri-activation.md
                       - name: Launch the default app for a URI
                         href: develop/launch/launch-default-app.md
-                      - name: Launch the Windows Settings app
-                        href: develop/launch/launch-settings-app.md
+                      - name: Launch Windows Settings
+                        href: develop/launch/launch-settings.md
                       - name: Launch the Default Apps settings page
                         href: develop/launch/launch-default-apps-settings.md
                       - name: Launch the Microsoft Store app

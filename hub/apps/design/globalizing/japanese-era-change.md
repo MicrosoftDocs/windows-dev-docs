@@ -62,14 +62,14 @@ Your device should now be configured to use the Japanese calendar, and it will r
 
 1. Right-click the date and time area in the lower-right corner of the screen.
 2. Select **Adjust date/time**.
-3. In the Settings app, under **Change date and time**, select **Change**.
+3. In Settings, under **Change date and time**, select **Change**.
 4. Change the date to on or after May 1, 2019.
 
 ### On Windows 11
 
 1. Right-click the date and time area in the lower-right corner of the screen.
 2. Select **Adjust date/time**.
-3. In the Settings app, under **Set the date and time manually**, select **Change**.
+3. In Settings, under **Set the date and time manually**, select **Change**.
 4. Change the date to on or after May 1, 2019.
 
 > [!NOTE]

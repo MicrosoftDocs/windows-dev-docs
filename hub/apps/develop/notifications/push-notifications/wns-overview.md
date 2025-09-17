@@ -144,19 +144,19 @@ For example, during a stock market's active trading day, you can set the expirat
 
 ## Push notifications and battery saver
 
-Battery saver extends battery life by limiting background activity on the device. Windows 10 lets the user set battery saver to turn on automatically when the battery drops below a specified threshold. When battery saver is on, the receipt of push notifications is disabled to save energy. But there are a couple exceptions to this. The following Windows 10 battery saver settings (found in the **Settings** app) allow your app to receive push notifications even when battery saver is on.
+Battery saver extends battery life by limiting background activity on the device. Windows 10 lets the user set battery saver to turn on automatically when the battery drops below a specified threshold. When battery saver is on, the receipt of push notifications is disabled to save energy. But there are a couple exceptions to this. The following Windows 10 battery saver settings (found in Windows Settings) allow your app to receive push notifications even when battery saver is on.
 
 -   **Allow push notifications from any app while in battery saver**: This setting lets all apps receive push notifications while battery saver is on. Note that this setting applies only to Windows 10 for desktop editions (Home, Pro, Enterprise, and Education).
 -   **Always allowed**: This setting lets specific apps run in the background while battery saver is on - including receiving push notifications. This list is maintained manually by the user.
 
 There is no way to check the state of these two settings, but you can check the state of battery saver. In Windows 10, use the [**EnergySaverStatus**](/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatus) property to check battery saver state. Your app can also use the [**EnergySaverStatusChanged**](/uwp/api/Windows.System.Power.PowerManager.EnergySaverStatusChanged) event to listen for changes to battery saver.
 
-If your app depends heavily on push notifications, we recommend notifying users that they may not receive notifications while battery saver is on and to make it easy for them to adjust **battery saver settings**. Using the battery saver settings URI scheme in Windows 10, `ms-settings:batterysaver-settings`, you can provide a convenient link to the Settings app.
+If your app depends heavily on push notifications, we recommend notifying users that they may not receive notifications while battery saver is on and to make it easy for them to adjust **battery saver settings**. Using the battery saver settings URI scheme in Windows, `ms-settings:batterysaver-settings`, you can provide a convenient link to Windows Settings.
 
 > [!TIP]
 > When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. For example, the `dontAskMeAgainBox` checkbox in the following example persists the user's preference in [**LocalSettings**](/uwp/api/Windows.Storage.ApplicationData.LocalSettings).
 
-Here's an example of how to check whether battery saver is turned on in Windows 10. This example notifies the user and launches the Settings app to **battery saver settings**. The `dontAskAgainSetting` lets the user suppress the message if they don't want to be notified again.
+Here's an example of how to check whether battery saver is turned on in Windows 10. This example notifies the user and launches Settings to **battery saver settings**. The `dontAskAgainSetting` lets the user suppress the message if they don't want to be notified again.
 
 ```csharp
 using System;

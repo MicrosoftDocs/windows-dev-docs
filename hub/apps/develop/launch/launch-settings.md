@@ -1,6 +1,6 @@
 ---
-title: Launch the Windows Settings app
-description: Learn how to launch the Windows Settings app from your own Windows apps using the ms-settings URI scheme.
+title: Launch Windows Settings
+description: Learn how to launch Windows Settings from your Windows apps using the ms-settings URI scheme.
 ms.date: 01/11/2025
 ms.topic: concept-article
 keywords: windows 10, windows, settings, windows 11, uwp, uri
@@ -8,14 +8,14 @@ ms.localizationpriority: medium
 dev_langs:
   - csharp
   - cppwinrt
-# Customer intent: As a Windows developer, I want to learn how to launch the Windows Settings app from my app using the ms-settings URI scheme.
+# Customer intent: As a Windows developer, I want to learn how to launch Windows Settings from my app using the ms-settings URI scheme.
 ---
 
-# Launch the Windows Settings app
+# Launch Windows Settings
 
-Learn how to launch the Windows Settings app. This topic describes the `ms-settings:` URI scheme. Use this URI scheme to launch the Windows Settings app to specific settings pages.
+Learn how to launch Windows Settings. This topic describes the `ms-settings:` URI scheme. Use this URI scheme to launch Windows Settings to specific settings pages.
 
-Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more information, see [Security and identity](../security/index.md).
+Launching to Settings is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource. For more information, see [Security and identity](../security/index.md).
 
 ## Important APIs
 
@@ -27,9 +27,9 @@ The following Windows Runtime (WinRT) APIs are used in this topic:
 
 Note that the WinRT APIs used in this topic can be used in both UWP apps, WinUI apps, and other desktop apps. To read more about enabling your desktop app to work with WinRT APIs, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
-## How to launch the Settings app
+## How to launch Settings
 
-To launch the **Settings** app, use the `ms-settings:` URI scheme as shown in the following examples.
+To launch **Settings**, use the `ms-settings:` URI scheme as shown in the following examples.
 
 ### XAML hyperlink control
 
@@ -49,7 +49,7 @@ In this example, a Hyperlink XAML control is used to launch the privacy settings
 
 ### Calling LaunchUriAsync
 
-Alternatively, your app can call the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method to launch the **Settings** app. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
+Alternatively, your app can call the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method to launch **Settings**. This example shows how to launch to the privacy settings page for the camera using the `ms-settings:privacy-webcam` URI.
 
 ```cs
 bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
@@ -67,7 +67,7 @@ For more info about launching URIs, see [Launch the default app for a URI](launc
 
 ## ms-settings: URI scheme reference
 
-The following sections describe different categories of ms-settings URIs used to open various pages of the Settings app:
+The following sections describe different categories of ms-settings URIs used to open various pages of Settings:
 
 - [Accounts](#accounts)
 - [Apps](#apps)
@@ -189,7 +189,7 @@ The following sections describe different categories of ms-settings URIs used to
 
 |Settings page| URI |
 |-------------|-----|
-| Extras | ms-settings:extras (only available if "settings apps" have been installed, for example, by a 3rd party) |
+| Extras | ms-settings:extras (only available if apps with these settings have been installed, for example, by a 3rd party) |
 
 ### Family Group
 
