@@ -617,7 +617,7 @@ The following tables show the audio codec and format support for each device fam
 
  
 
-### WIndows 10 IoT
+### Windows 10 IoT
 
 <table>
 <colgroup>
