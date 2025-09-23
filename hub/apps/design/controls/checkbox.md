@@ -95,7 +95,7 @@ In this example, the **IsChecked** property of the check box to agree to terms o
 #### Using x:Bind
 
 > [!NOTE]
-> We only show the relevant code here. For more info about data binding see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). Specific {x:Bind} info (such as casting) is detailed in [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension).
+> We only show the relevant code here. For more info about data binding see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). Specific {x:Bind} info (such as casting) is detailed in [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension).
 
 ```xaml
 <StackPanel Grid.Column="2" Margin="40">

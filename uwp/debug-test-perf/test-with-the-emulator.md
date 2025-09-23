@@ -84,7 +84,7 @@ In addition to the new features mentioned in the previous section, you can test 
 
 - **Language and region settings**. Prepare your app for an international market by changing the display language and region settings in Windows Phone Emulator.
 
-    On the running emulator, go to the **Settings** app, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
+    On the running emulator, go to **Settings**, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
 
 - **Application lifecycle and tombstoning**. Test the behavior or your app when it's deactivated or tombstoned by changing the value of the option **Tombstone upon deactivation while debugging** on the **Debug** page of project properties.
 

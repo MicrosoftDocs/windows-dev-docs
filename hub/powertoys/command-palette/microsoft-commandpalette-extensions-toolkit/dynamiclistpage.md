@@ -29,3 +29,36 @@ The **DynamicListPage** class is a specialized version of the [ListPage](listpag
 | Method | Description |
 | :--- | :--- |
 | [UpdateSearchText(String, String)](dynamiclistpage_updatesearchtext.md) | Updates the search text for the dynamic list page. |
+
+## Example
+
+The following example demonstrates how to create a custom dynamic list page by inheriting from the **DynamicListPage** class.
+
+```csharp
+internal sealed partial class ServicesListPage : DynamicListPage
+{
+    public ServicesListPage()
+    {
+        Icon = Icons.ServicesIcon;
+        Name = "Windows Services";
+
+        var filters = new ServiceFilters();
+        filters.PropChanged += Filters_PropChanged;
+        Filters = filters;
+    }
+
+    private void Filters_PropChanged(object sender, IPropChangedEventArgs args) => RaiseItemsChanged();
+
+    public override void UpdateSearchText(string oldSearch, string newSearch) => RaiseItemsChanged();
+
+    public override IListItem[] GetItems()
+    {
+       // ServiceHelper.Search knows how to filter based on the CurrentFilterIds provided
+        var items = ServiceHelper.Search(SearchText, Filters.CurrentFilterIds).ToArray();
+
+        return items;
+    }
+}
+```
+
+The ServicesListPage utilizes a custom filter class **ServiceFilters** that inherits from the [Filters](filters.md) class to provide filtering capabilities for the list of services displayed in the command palette.

@@ -48,7 +48,7 @@ Here is an example of how you can set the [**Canvas.Left**](/dotnet/api/system.w
 </Canvas>
 ```
 
-For more info about attached properties, see [Attached properties overview](/windows/uwp/xaml-platform/attached-properties-overview).
+For more info about attached properties, see [Attached properties overview](/windows/apps/develop/platform/xaml/attached-properties-overview).
 
 ### Panel borders
 

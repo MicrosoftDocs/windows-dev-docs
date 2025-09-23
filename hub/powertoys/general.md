@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys General Settings for Windows
 description: Configure PowerToys general settings including updates, admin mode, themes, and startup behavior. Learn how to customize your Windows PowerToys experience with our step-by-step guide.
-ms.date: 08/20/2025
+ms.date: 08/28/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows power user, I want to learn how to configure the general settings for PowerToys.
@@ -16,6 +16,22 @@ The General settings section of Microsoft PowerToys allows you to configure esse
 ## Version & updates
 
 Here you can check for new updates, and if one is available, you can download and install it. You can also indicate whether updates should be downloaded automatically, if you want to be notified about new releases, and if the release notes should be displayed after an update.
+
+## Settings search
+
+Use the search bar at the top of the settings window to quickly find specific settings or features within PowerToys. You can type keywords related to the setting you're looking for, and the results will filter in real-time as you type.
+
+:::image type="content" source="../images/pt-settings-search.png" alt-text="A screenshot of the PowerToys Settings search feature.":::
+
+Select the desired setting from the filtered results to jump directly to it, or you can press **Enter** or select **Show all results** to see all results for the current search.
+
+:::image type="content" source="../images/pt-settings-search-results.png" alt-text="A screenshot of the PowerToys Settings Search Results page.":::
+
+## Shortcut conflict detection
+
+PowerToys includes a feature to detect shortcut conflicts. If you have multiple PowerToys modules that use the same keyboard shortcut, the conflict detection feature will alert you so you can resolve the issue. When the **PowerToys shortcut conflicts** window appears, you can view all conflicting shortcuts and reassign them as needed.
+
+:::image type="content" source="../images/pt-shortcut-conflicts.png" alt-text="A screenshot of the PowerToys shortcut conflicts window.":::
 
 ## Administrator mode
 

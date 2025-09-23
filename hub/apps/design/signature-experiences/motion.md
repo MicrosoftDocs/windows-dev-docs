@@ -106,7 +106,7 @@ Use [page transitions](../motion/page-transitions.md) to transition smoothly fro
 
 Page transitions guide your user's eyes to incoming and outgoing content, lowering cognitive load.
 
-:::image type="content" source="images/motion-page-transitions.png" lightbox="images/motion-page-transitions.gif" alt-text="An animated image that shows navigation between several pages in the Windows Settings app. Top-level pages slide up from the bottom. When navigating between top-level and sub-pages, pages slide left and right.":::
+:::image type="content" source="images/motion-page-transitions.png" lightbox="images/motion-page-transitions.gif" alt-text="An animated image that shows navigation between several pages in Windows Settings. Top-level pages slide up from the bottom. When navigating between top-level and sub-pages, pages slide left and right.":::
 
 _Click the image to see it animated._
 

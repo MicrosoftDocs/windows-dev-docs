@@ -15,7 +15,18 @@ items:
           - name: Setup and tooling
             href: get-started/start-here.md
           - name: Build your first app
-            href: tutorials/winui-notes/index.yml
+            href: tutorials/winui-notes/intro.md
+            items:
+              - name: 1 - Project setup
+                href: tutorials/winui-notes/project.md
+              - name: 2 - Note page
+                href: tutorials/winui-notes/note.md
+              - name: 3 - View and model
+                href: tutorials/winui-notes/view-model.md
+              - name: 4 - All notes
+                href: tutorials/winui-notes/all-notes.md
+              - name: 5 - Navigation
+                href: tutorials/winui-notes/navigation.md
           - name: Samples and resources
             href: get-started/samples.md
           - name: Best practices
@@ -70,8 +81,8 @@ items:
                         href: develop/launch/handle-uri-activation.md
                       - name: Launch the default app for a URI
                         href: develop/launch/launch-default-app.md
-                      - name: Launch the Windows Settings app
-                        href: develop/launch/launch-settings-app.md
+                      - name: Launch Windows Settings
+                        href: develop/launch/launch-settings.md
                       - name: Launch the Default Apps settings page
                         href: develop/launch/launch-default-apps-settings.md
                       - name: Launch the Microsoft Store app
@@ -187,6 +198,10 @@ items:
                     href: develop/files/winrt-files.md
                   - name: Access files and folders with .NET
                     href: develop/files/dotnet-files.md
+                  - name: Open files and folders with a picker
+                    href: develop/files/using-file-folder-pickers.md
+                  - name: Save a file with a picker
+                    href: develop/files/pickers-save-file.md
               - name: Windows Settings access
                 items:
                   - name: Reference for Windows 11 settings
@@ -334,6 +349,8 @@ items:
                 href: develop/windows-integration/cross-device-people-api.md
               - name: Cross Device Resume
                 href: develop/windows-integration/cross-device-resume.md
+              - name: Default apps platform
+                href: develop/windows-integration/default-apps-platform.md
               - name: Smart App Control
                 items:
                   - name: Overview
@@ -580,6 +597,8 @@ items:
                     items:
                       - name: Stable channel release notes
                         items:
+                          - name: Windows App SDK 1.7
+                            href: windows-app-sdk/release-notes-archive/stable-channel-1-7.md
                           - name: Windows App SDK 1.6
                             href: windows-app-sdk/release-notes-archive/stable-channel-1.6.md
                           - name: Windows App SDK 1.5
@@ -600,6 +619,10 @@ items:
                             href: windows-app-sdk/release-notes-archive/stable-channel-0.5.md
                       - name: Preview channel release notes
                         items:
+                          - name: Windows App SDK 1.7
+                            href: windows-app-sdk/release-notes-archive/preview-channel-1-7.md
+                          - name: Windows App SDK 1.6
+                            href: windows-app-sdk/release-notes-archive/preview-channel-1.6.md
                           - name: Windows App SDK 1.5
                             href: windows-app-sdk/release-notes-archive/preview-channel-1.5.md
                           - name: Windows App SDK 1.4
@@ -866,17 +889,85 @@ items:
                         href: develop/platform/csharp-winrt/authoring-diagnostics.md
               - name: XAML
                 items:
-                  - name: XAML brushes
-                    href: develop/platform/xaml/brushes.md
-                  - name: XAML styles
+                  - name: XAML platform
+                    href: develop/platform/xaml/index.md
+                  - name: XAML overview
+                    href: develop/platform/xaml/xaml-overview.md
+                  - name: Dependency properties overview
+                    href: develop/platform/xaml/dependency-properties-overview.md
+                  - name: Custom dependency properties
+                    href: develop/platform/xaml/custom-dependency-properties.md
+                  - name: Attached properties overview
+                    href: develop/platform/xaml/attached-properties-overview.md
+                  - name: Custom attached properties
+                    href: develop/platform/xaml/custom-attached-properties.md
+                  - name: Events and routed events overview
+                    href: develop/platform/xaml/events-and-routed-events-overview.md
+                  - name: Styles, templates, and resources
                     href: develop/platform/xaml/xaml-styles.md
                     items:
+                      - name: XAML brushes
+                        href: develop/platform/xaml/brushes.md
                       - name: XAML Control templates
                         href: develop/platform/xaml/xaml-control-templates.md
+                      - name: Template settings classes
+                        href: develop/platform/xaml/template-settings-classes.md
                       - name: ResourceDictionary and XAML resource references
                         href: develop/platform/xaml/xaml-resource-dictionary.md
                       - name: XAML theme resources
                         href: develop/platform/xaml/xaml-theme-resources.md
+                  - name: Syntax guide
+                    items:
+                      - name: XAML syntax guide
+                        href: develop/platform/xaml/xaml-syntax-guide.md
+                      - name: XAML and whitespace
+                        href: develop/platform/xaml/xaml-and-whitespace.md
+                      - name: Namescopes
+                        href: develop/platform/xaml/xaml-namescopes.md
+                      - name: Namespaces and namespace mapping
+                        href: develop/platform/xaml/xaml-namespaces-and-namespace-mapping.md
+                      - name: Property-path syntax
+                        href: develop/platform/xaml/property-path-syntax.md
+                      - name: Move and draw commands syntax
+                        href: develop/platform/xaml/move-draw-commands-syntax.md
+                  - name: Reference
+                    items:
+                      - name: XAML intrinsic data types
+                        href: develop/platform/xaml/xaml-intrinsic-data-types.md
+                      - name: x:Class attribute
+                        href: develop/platform/xaml/x-class-attribute.md
+                      - name: x:DefaultBindMode attribute
+                        href: develop/platform/xaml/x-defaultbindmode-attribute.md
+                      - name: x:DeferLoadStrategy attribute
+                        href: develop/platform/xaml/x-deferloadstrategy-attribute.md
+                      - name: x:FieldModifier attribute
+                        href: develop/platform/xaml/x-fieldmodifier-attribute.md
+                      - name: x:Key attribute
+                        href: develop/platform/xaml/x-key-attribute.md
+                      - name: x:Load attribute
+                        href: develop/platform/xaml/x-load-attribute.md
+                      - name: x:Name attribute
+                        href: develop/platform/xaml/x-name-attribute.md
+                      - name: x:Phase attribute
+                        href: develop/platform/xaml/x-phase-attribute.md
+                      - name: x:Uid directive
+                        href: develop/platform/xaml/x-uid-directive.md
+                      - name: "{x:Bind} markup extension"
+                        href: develop/platform/xaml/x-bind-markup-extension.md
+                      - name: "{Binding} markup extension"
+                        href: develop/platform/xaml/binding-markup-extension.md
+                      - name: "{x:Null} markup extension"
+                        href: develop/platform/xaml/x-null-markup-extension.md
+                      - name: "{CustomResource} markup extension"
+                        href: develop/platform/xaml/customresource-markup-extension.md
+                      - name: "{RelativeSource} markup extension"
+                        href: develop/platform/xaml/relativesource-markup-extension.md
+                      - name: "{StaticResource} markup extension"
+                        href: develop/platform/xaml/staticresource-markup-extension.md
+                      - name: "{TemplateBinding} markup extension"
+                        href: develop/platform/xaml/templatebinding-markup-extension.md
+                      - name: "{ThemeResource} markup extension"
+                        href: develop/platform/xaml/themeresource-markup-extension.md
       - name: API reference
         href: api-reference/index.md
         items:

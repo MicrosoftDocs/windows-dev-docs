@@ -18,7 +18,7 @@ Microsoft PowerToys is a set of free Microsoft Windows utilities for power users
 
 ## System requirements
 
-PowerToys requires Windows 10 version 2004 (build 19041) or later, or any version of Windows 11. It isn't supported on earlier versions of Windows. For a complete list of system requirements, see [Installing PowerToys \| Requirements](/windows/powertoys/install#requirements).
+PowerToys requires Windows 10 version 2004 (build 19041) or later, or any version of Windows 11. It isn't supported on earlier versions of Windows. For a complete list of system requirements, see [Installing PowerToys \| Requirements](/windows/powertoys/install#system-requirements).
 
 ### Processor architecture support
 
@@ -58,7 +58,7 @@ The currently available utilities include:
         [![A screenshot of the PowerToys Awake utility for Windows.](../images/powertoys-awake/pt-awake-menu.png)](awake.md)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer doesn't go to sleep or turns off its displays.
+        [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer doesn't go to sleep or turn off its displays.
     :::column-end:::
 :::row-end:::
 
@@ -192,7 +192,7 @@ The currently available utilities include:
     :::column-end:::
     :::column span="2":::
         [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor.
-        - **Find My Mouse**: Quickly locate your mouse's position with a spotlight that focuses on your cursor. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
+        - **Find My Mouse**: Quickly locate your mouse pointer with a spotlight that focuses on its current position. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
         - **Mouse Highlighter**: Displays visual indicators when basic mouse buttons are clicked.
         - **Mouse Jump**: Allows a quick jump on large displays.
         - **Mouse Pointer Crosshairs**: Draws crosshairs centered on the mouse pointer.

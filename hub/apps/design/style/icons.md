@@ -150,7 +150,7 @@ The most common way to add icons to your app is to use the system icons provided
 
 Many common glyphs from the `SymbolThemeFontFamily` are included in the [Symbol](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbol) enumeration. If the glyph you need is available as a Symbol, you can use a [SymbolIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon) anywhere you would use a FontIcon with the default font family.
 
-You also use Symbol names to set an _`icon`_ property in XAML using [attribute syntax](/windows/uwp/xaml-platform/xaml-syntax-guide#setting-a-property-by-using-attribute-syntax), like this
+You also use Symbol names to set an _`icon`_ property in XAML using [attribute syntax](/windows/apps/develop/platform/xaml/xaml-syntax-guide#setting-a-property-by-using-attribute-syntax), like this
 
 ```xaml
 <AppBarButton Icon="Send" Label="Send"/>
@@ -159,7 +159,7 @@ You also use Symbol names to set an _`icon`_ property in XAML using [attribute s
 :::image type="content" source="iconography/images/icon-send.png" alt-text="A button with the send icon, an outline of an arrow head pointing to the right":::
 
 > [!TIP]
-> You can only use Symbol names to set an _`icon`_ property using the shortened [attribute syntax](/windows/uwp/xaml-platform/xaml-syntax-guide#setting-a-property-by-using-attribute-syntax). All other icon types must be set using the longer [property element syntax](/windows/uwp/xaml-platform/xaml-syntax-guide#setting-a-property-by-using-property-element-syntax), as shown in other examples on this page.
+> You can only use Symbol names to set an _`icon`_ property using the shortened [attribute syntax](/windows/apps/develop/platform/xaml/xaml-syntax-guide#setting-a-property-by-using-attribute-syntax). All other icon types must be set using the longer [property element syntax](/windows/apps/develop/platform/xaml/xaml-syntax-guide#setting-a-property-by-using-property-element-syntax), as shown in other examples on this page.
 
 ### Font icons
 
@@ -242,7 +242,7 @@ This example shows two different ways to define the Geometry used in a PathIcon.
 :::image type="content" source="iconography/images/icon-abstract-path.png" alt-text="A button with a custom path icon":::
 :::image type="content" source="iconography/images/icon-circles-path.png" alt-text="A button with a custom path icon, two circles around a center point":::
 
-To learn more about using [Geometry](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.geometry) classes to create custom shapes, see the class documentation and [Move and draw commands for geometries](/windows/uwp/xaml-platform/move-draw-commands-syntax). Also see the [WPF Geometry documentation](/dotnet/desktop/wpf/graphics-multimedia/geometry-overview). The WinUI Geometry class doesn't have all the same features as the WPF class, but creating shapes is the same for both.
+To learn more about using [Geometry](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.geometry) classes to create custom shapes, see the class documentation and [Move and draw commands for geometries](/windows/apps/develop/platform/xaml/move-draw-commands-syntax). Also see the [WPF Geometry documentation](/dotnet/desktop/wpf/graphics-multimedia/geometry-overview). The WinUI Geometry class doesn't have all the same features as the WPF class, but creating shapes is the same for both.
 
 For more information and examples, see the [PathIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pathicon) class documentation.
 

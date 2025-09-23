@@ -184,8 +184,8 @@ items:
                         href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters.md
                       - name: Methods
                         items:
-                          - name: Filters
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_filters.md
+                          - name: GetFilters
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_getfilters.md
                   - name: IFilterItem
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilteritem.md
                   - name: IForm
@@ -492,6 +492,8 @@ items:
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_updatequery.md
                   - name: Filter
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filter.md
+                  - name: Filters
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filters.md
                   - name: FormContent
                     items:
                       - name: FormContent
@@ -872,8 +874,6 @@ items:
           href: ../powertoys/hosts-file-editor.md
         - name: Registry Preview
           href: ../powertoys/registry-preview.md
-  - name: Sudo for Windows
-    href: ../sudo/index.md
   - name: Edit command line tool
     href: ../edit/index.md
   - name: Windows Package Manager
