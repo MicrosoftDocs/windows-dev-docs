@@ -8,20 +8,9 @@
         - name: Take a Test API
           href: ../apps-for-education/take-a-test-api.md
     - name: Enterprise apps
-      href: ../enterprise/index.md
       items:
         - name: Windows Information Protection (WIP)
-          href: ../enterprise/wip-hub.md
-          items:
-            - name: WIP developer guide
-              href: ../enterprise/wip-dev-guide.md
-        - name: Enterprise shared storage
-          href: ../enterprise/enterprise-shared-storage.md
         - name: "Tutorial: Create a customer database application"
-          href: ../enterprise/customer-database-tutorial.md
-          items:
-            - name: Customer database tutorial app structure
-              href: ../enterprise/customer-database-app-structure.md
     - name: Progressive Web Apps
       href: /microsoft-edge/progressive-web-apps
 - name: Audio, video, and camera

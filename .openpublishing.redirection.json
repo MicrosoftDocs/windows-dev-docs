@@ -1,6 +1,36 @@
 {
   "redirections": [
     {
+      "source_path": "uwp/enterprise/customer-database-app-structure.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-app-structure",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/customer-database-tutorial.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/enterprise-shared-storage.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/enterprise-shared-storage",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/index.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/wip-dev-guide.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/wip-dev-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/wip-hub.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/wip-hub",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/porting/desktop-to-uwp-migrate.md",
       "redirect_url": "/previous-versions/windows/uwp/porting/desktop-to-uwp-migrate",
       "redirect_document_id": false
