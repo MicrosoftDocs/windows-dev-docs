@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: release-notes
-ms.date: 09/09/2025
+ms.date: 09/22/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -26,9 +26,66 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.8.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
-### Version 1.8.0 (1.8.250907003)
+### Version 1.8.1 (1.8.250916003)
 
 This is the latest service release for Version 1.8 of the Windows App SDK.
+
+#### LanguageModel text generation
+ 
+LanguageModel is now available using [**Phi Silica**](/windows/ai/apis/phi-silica) to generate text responses to broad user prompts with built in content moderation. Phi Silica, Microsoft's most powerful NPU-tuned local language model, is optimized for efficiency and performance on Windows Copilot+ PCs devices while still offering many of the capabilities found in Large Language Models (LLMs).
+ 
+See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica) and [API ref for Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica-api-ref) for more information.
+
+#### Microsoft Windows ML
+
+[Windows ML](/windows/ai/new-windows-ml/overview) enables developers to run ONNX AI models locally on Windows PCs on a shared system-wide copy of the ONNX Runtime using dynamically-installed hardware-specific execution providers.
+
+**Key benefits:**
+
+- **Dynamically get latest EPs** - Automatically downloads and manages the latest hardware-specific execution providers
+- **Shared ONNX Runtime** - Uses system-wide runtime instead of bundling your own, reducing app size
+- **Smaller downloads/installs** - No need to carry large EPs and the ONNX Runtime in your app
+- **Broad hardware support** - Runs on all Windows 11 PCs (x64 and ARM64) with any hardware configuration
+
+### New APIs for 1.8.1
+
+This release includes the following new APIs compared to the previous 1.8 release:
+
+```
+Microsoft.Windows.AI.MachineLearning
+
+    ExecutionProvider
+    ExecutionProviderCatalog
+    ExecutionProviderCertification
+    ExecutionProviderReadyResult
+    ExecutionProviderReadyResultState
+    ExecutionProviderReadyState
+    MachineLearningContract
+```
+```
+Microsoft.Windows.AI.Text
+
+    LanguageModel
+        CreateContext
+        CreateContext
+        CreateContext
+        GenerateEmbeddingVectors
+        GenerateEmbeddingVectors
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GenerateResponseFromEmbeddingsAsync
+        GetUsablePromptLength
+        GetUsablePromptLength
+        GetVectorSpaceId
+```
+
+#### Known Issues
+- C# developers must manually reference the  [System.Numerics.Tensors]() version 9.0.0 or greater NuGet package in order to use the `Microsoft.ML.OnnxRuntime.Tensors`. Without this NuGet package reference, you will experience the following runtime error when calling the `Microsoft.ML.OnnxRuntime.Tensors` APIs: `Could not load file or assembly 'System.Numerics.Tensors, Version=9.0.0.0`.
+
+### Version 1.8.0 (1.8.250907003)
 
 #### Windows AI APIs
 

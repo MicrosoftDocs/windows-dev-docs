@@ -2,7 +2,7 @@
 title: Latest Windows App SDK downloads
 description: This page provides links to the latest downloads of the Windows App SDK (WASDK) for all three release channels (stable, preview, and experimental).
 ms.topic: article
-ms.date: 09/09/2025
+ms.date: 09/22/2025
 keywords: windows, winrt, win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -23,6 +23,7 @@ This page provides links to the *latest* downloads of the [Windows App SDK](inde
 
 | Version                                                                                                                                                                                                                         | Runtime downloads                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [1.8.1 (1.8.250916003)](stable-channel.md#version-18) <br/> 09/22/2025 <br/> [Release notes](stable-channel.md#version-18) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.8.1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.8/1.8.250916003/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.8/1.8.250916003/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.8/1.8.250916003/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.8/1.8.250916003/Microsoft.WindowsAppRuntime.Redist.1.8.zip) |
 | [1.8.0 (1.8.250907003)](stable-channel.md#version-18) <br/> 09/09/2025 <br/> [Release notes](stable-channel.md#version-18) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.8.0) | [Installer (x64)](https://aka.ms/windowsappsdk/1.8/1.8.250907003/windowsappruntimeinstall-x64.exe) <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.8/1.8.250907003/windowsappruntimeinstall-x86.exe) <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.8/1.8.250907003/windowsappruntimeinstall-arm64.exe) <br/> [Redistributable](https://aka.ms/windowsappsdk/1.8/1.8.250907003/Microsoft.WindowsAppRuntime.Redist.1.8.zip) |
 
 > [!NOTE]
