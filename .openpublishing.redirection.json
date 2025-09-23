@@ -9534,11 +9534,6 @@
       "source_path": "hub/apps/develop/launch/launch-settings-app.md",
       "redirect_url": "/windows/apps/develop/launch/launch-settings",
       "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
-      "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
-      "redirect_document_id": false
     }
   ]
 }
