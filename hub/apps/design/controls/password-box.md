@@ -9,6 +9,7 @@ ms.date: 02/26/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 # Password box
 

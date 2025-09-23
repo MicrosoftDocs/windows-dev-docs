@@ -1,6 +1,6 @@
 ---
-title: PowerToys PowerRename utility for Windows
-description: A windows shell extension for bulk renaming of files
+title: PowerRename Utility for Windows - Bulk File Renaming Tool
+description: PowerRename is a Windows utility that enables bulk file renaming with regex support. Rename multiple files at once, preview changes, and undo operations easily.
 ms.custom: copilot-scenario-highlight
 ms.date: 01/23/2025
 ms.topic: concept-article
@@ -9,9 +9,9 @@ no-loc: [PowerRename, Windows, File Explorer, regex, Boost]
 # Customer intent: As a Windows power user, I want to learn how to use the PowerToys PowerRename utility to rename multiple files at once.
 ---
 
-# PowerRename utility
+# PowerRename utility for Windows
 
-PowerRename is a bulk renaming tool that enables you to:
+PowerRename is a Windows bulk renaming tool that enables you to quickly rename multiple files at once. This PowerToys utility helps you:
 
 - Modify the file names of a large number of files, without giving all of the files the same name.
 - Perform a search and replace on a targeted section of file names.

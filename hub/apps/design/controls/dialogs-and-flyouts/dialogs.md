@@ -3,7 +3,7 @@ description: Dialogs display transient UI elements that appear when the user req
 title: Dialog controls
 label: Dialogs
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 08/05/2025
 ms.topic: article
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 doc-status: Published
@@ -39,20 +39,20 @@ For recommendations on when to use a dialog vs. when to use a flyout (a similar 
   - The "do it" action button(s) should appear as the leftmost buttons. The safe, nondestructive action should appear as the rightmost button.
   - You may optionally choose to differentiate one of the three buttons as the dialog's default button. Use the DefaultButton API to differentiate one of the buttons.
 - Don't use dialogs for errors that are contextual to a specific place on the page, such as validation errors (in password fields, for example), use the app's canvas itself to show inline errors.
-- Use the [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog) to build your dialog experience. Don't use the deprecated MessageDialog API.
+- Use the [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) to build your dialog experience. Don't use the deprecated MessageDialog API.
 
 ## Create a dialog
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog)
+> - **Important APIs**: [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the ContentDialog in action](winui3gallery:/item/ContentDialog)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
-To create a dialog, you use the [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it's actually easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog.ShowAsync) method to display it.
+To create a dialog, you use the [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog). You can create a dialog in code or markup. Although its usually easier to define UI elements in XAML, in the case of a simple dialog, it can be easier to just use code. This example creates a dialog to notify the user that there's no WiFi connection, and then uses the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog.showasync) method to display it.
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -68,9 +68,96 @@ private async void DisplayNoWifiDialog()
 }
 ```
 
-When the user clicks a dialog button, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog.ShowAsync) method returns a [ContentDialogResult](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialogResult) to let you know which button the user clicks.
+If your content dialog is more complex, it can be easier to create it with XAML. You can either create it in the XAML file for your page, or you can create a subclass of ContentDialog with it's own .xaml and code-behind file. For complete examples of both, see the [ContentDialog] class reference.
 
-The dialog in this example asks a question and uses the returned [ContentDialogResult](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialogResult) to determine the user's response.
+There is no item template in Visual Studio to create a new content dialog file, but you can use the Blank Page template and modify the resulting files to create a dialog.
+
+**To create a new content dialog with XAML and code-behind**
+
+1. In the **Solution Explorer** pane, right-click on the project name and select **Add > New Item...**
+1. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window.
+1. Select the **Blank Page** template.
+1. Name the file. (In this example, the file is named `XamlContentDialog`).
+1. Press **Add**.
+
+In the new .xaml file, change the opening and closing Page tags to Content Dialog.
+
+```xaml
+<!--
+<Page
+    x:Class="ContentDialog_WinUI3.XamlContentDialog"
+    ...>
+
+</Page>
+-->
+
+<ContentDialog
+    x:Class="ContentDialog_WinUI3.XamlContentDialog"
+    ...>
+
+</ContentDialog>
+```
+
+In the .xaml.cs file, make your class inherit from ContentDialog instead of Page.
+
+```csharp
+// public sealed partial class XamlContentDialog : Page
+
+public sealed partial class XamlContentDialog : ContentDialog
+```
+
+### Show the dialog
+
+To show a dialog, call the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog.showasync) method.
+
+```csharp
+XamlContentDialog xamlDialog = new XamlContentDialog()
+{
+    XamlRoot = this.XamlRoot
+};
+await xamlDialog.ShowAsync();
+```
+
+> [!WARNING]
+> There can only be one ContentDialog open per window at a time. Attempting to open two content dialogs will throw an exception.
+
+#### Set the XamlRoot
+
+When you show a ContentDialog, you need to manually set the [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot) of the dialog to the root of the XAML host. To do so, set the ContentDialog's XamlRoot property to the same XamlRoot as an element already in the  XAML tree.
+
+If the ContentDialog is shown from a [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page), you can set the ContentDialog's XamlRoot property to the XamlRoot of the Page as shown in the previous example.
+
+[Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) doesn't have a XamlRoot property, so if the dialog is shown from a Window, set the dialog's XamlRoot property to that of the Window's root content element, as shown here.
+
+```xaml
+<Window
+    ... >
+    <Grid x:Name="rootPanel">
+    
+    </Grid>
+</Window>
+``````
+
+```csharp
+private async void DisplayNoWifiDialog()
+{
+    ContentDialog noWifiDialog = new ContentDialog
+    {
+        XamlRoot = rootPanel.XamlRoot,
+        Title = "No wifi connection",
+        Content = "Check your connection and try again.",
+        CloseButtonText = "Ok"
+    };
+
+    ContentDialogResult result = await noWifiDialog.ShowAsync();
+}
+```
+
+## Respond to dialog buttons
+
+When the user clicks a dialog button, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog.ShowAsync) method returns a [ContentDialogResult](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialogResult) to let you know which button the user clicks.
+
+The dialog in this example asks a question and uses the returned [ContentDialogResult](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialogResult) to determine the user's response.
 
 ```csharp
 private async void DisplayDeleteFileDialog()
@@ -101,7 +188,9 @@ private async void DisplayDeleteFileDialog()
 
 ## Provide a safe action
 
-Because dialogs block user interaction, and because buttons are the primary mechanism for users to dismiss the dialog, ensure that your dialog contains at least one "safe" and nondestructive button such as "Close" or "Got it!". **All dialogs should contain at least one safe action button to close the dialog.** This ensures that the user can confidently close the dialog without performing an action.<br>![An one button dialog](../images/dialogs/dialog_RS2_one_button.png)
+Because dialogs block user interaction, and because buttons are the primary mechanism for users to dismiss the dialog, ensure that your dialog contains at least one "safe" and nondestructive button such as "Close" or "Got it!". **All dialogs should contain at least one safe action button to close the dialog.** This ensures that the user can confidently close the dialog without performing an action.
+
+![A one button dialog](../images/dialogs/dialog_RS2_one_button.png)
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -177,7 +266,7 @@ Use the ContentDialog.CloseButton API to create this button. This allows you to 
 - The user presses the ESC button on the keyboard.
 - The user presses Gamepad B.
 
-When the user clicks a dialog button, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog.ShowAsync) method returns a [ContentDialogResult](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialogResult) to let you know which button the user clicks. Pressing on the CloseButton returns ContentDialogResult.None.
+When the user clicks a dialog button, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog.ShowAsync) method returns a [ContentDialogResult](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialogResult) to let you know which button the user clicks. Pressing on the CloseButton returns ContentDialogResult.None.
 
 ### PrimaryButton and SecondaryButton
 
@@ -185,8 +274,8 @@ In addition to the CloseButton, you may optionally present the user with one or 
 Leverage PrimaryButton for the first "do it" action, and SecondaryButton for the second "do it" action. In three-button dialogs, the PrimaryButton generally represents the affirmative "do it" action, while the SecondaryButton generally represents a neutral or secondary "do it" action.
 For example, an app may prompt the user to subscribe to a service. The PrimaryButton as the affirmative "do it" action would host the Subscribe text, while the SecondaryButton as the neutral "do it" action would host the Try it text. The CloseButton would allow the user to cancel without performing either action.
 
-When the user clicks on the PrimaryButton, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog.ShowAsync) method returns ContentDialogResult.Primary.
-When the user clicks on the SecondaryButton, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog.ShowAsync) method returns ContentDialogResult.Secondary.
+When the user clicks on the PrimaryButton, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog.ShowAsync) method returns ContentDialogResult.Primary.
+When the user clicks on the SecondaryButton, the [ShowAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog.ShowAsync) method returns ContentDialogResult.Secondary.
 
 ![A three button dialog](../images/dialogs/dialog_RS2_three_button.png)
 
@@ -235,13 +324,27 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
     </li>
 </ul>
 
-> Some platforms put the affirmation button on the right instead of the left. So why do we recommend putting it on the left?  If you assume that the majority of users are right-handed and they hold their phone with that hand, it's actually more comfortable to press the affirmation button when it's on the left, because the button is more likely to be within the user's thumb-arc. Buttons on the right-side of the screen require the user to pull their thumb inward into a less-comfortable position.
 
-## ContentDialog in AppWindow or Xaml Islands
+
+## UWP and WinUI 2
+
+[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
+
+APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
+
+> [!div class="checklist"]
+>
+> - **UWP APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
+> - [Open the WinUI 2 Gallery app and see the ContentDialog in action](winui2gallery:/item/ContentDialog). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
+
+
+### ContentDialog in AppWindow or Xaml Islands
 
 > NOTE: This section applies only to apps that target Windows 10, version 1903 or later. AppWindow and XAML Islands are not available in earlier versions. For more info about versioning, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
 
-By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](../../../desktop/modernize/xaml-islands/xaml-islands.md), you need to manually set the [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.
+By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](../../../desktop/modernize/xaml-islands/xaml-islands.md), you need to manually set the [XamlRoot](/uwp/api/windows.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.
 
 To do so, set the ContentDialog's XamlRoot property to the same XamlRoot as an element already in the AppWindow or XAML Island, as shown here.
 
@@ -267,24 +370,11 @@ private async void DisplayNoWifiDialog()
 ```
 
 > [!WARNING]
-> There can only be one ContentDialog open per thread at a time. Attempting to open two ContentDialogs will throw an exception, even if they are attempting to open in separate AppWindows.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
-> - [Open the WinUI 2 Gallery app and see the ContentDialog in action](winui2gallery:/item/ContentDialog). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../style/rounded-corner.md).
+> There can only be one ContentDialog open per thread at a time. Attempting to open two ContentDialogs will throw an exception, even if they are attempting to open in separate instances of AppWindow.
 
 ## Related articles
 
 - [Tooltips](../tooltips.md)
 - [Menus and context menu](../menus.md)
 - [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
-- [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog)
+- [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog)

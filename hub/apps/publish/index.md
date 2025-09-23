@@ -1,9 +1,9 @@
 ---
 description: Learn how to publish your Windows apps and games to the Microsoft Store.
 title: Publish Windows apps and games to Microsoft Store
-ms.date: 12/4/2024
+ms.date: 07/27/2025
 ms.topic: get-started
-keywords: windows 10, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard
+keywords: windows 10, windows 11, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard, windows app, Microsoft Store, AI apps, desktop apps, Win32 apps, 
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ---
@@ -64,7 +64,8 @@ For more details, refer [steps to create company developer account](/windows/app
 
 For packaging your Win32 app as MSIX, follow these [steps](https://aka.ms/packagewin32asmsix).
 
-**Note:** If you distribute your application as a web download (EXE /MSI) and you are planning to distribute it as a packaged application (MSIX) in the Store, you might want to prevent users from installing both versions or migrate users from the unpackaged web version to the Store version. Learn more about [transitioning users from web unpackaged to Store packaged app](../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md).
+> [!NOTE]
+> If you distribute your application as a web download (EXE /MSI) and you are planning to distribute it as a packaged application (MSIX) in the Store, you might want to prevent users from installing both versions or migrate users from the unpackaged web version to the Store version. Learn more about [transitioning users from web unpackaged to Store packaged app](../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md).
 
 ## Choice of commerce platform
 
@@ -114,7 +115,7 @@ For more information, please visit [Reserve your app's name - Windows apps | Mic
 
    - **Packages**: Upload the app packages for your app which will be downloaded by the Store user. [Upload app packages - Windows apps | Microsoft Learn](./publish-your-app/msix/upload-app-packages.md)
 
-   - **Store Listings**: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. [Create app store listings - Windows apps | Microsoft Learn](./publish-your-app/msix/create-app-store-listing.md)
+   - **Store Listings**: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. [Create app store listings - Windows apps | Microsoft Learn](./publish-your-app/msix/add-and-edit-store-listing-info.md)
 
    - **Submission options (optional)**: Enter notes for certification or decide when your app should publish to the Store using submission options. [Manage submission options - Windows apps | Microsoft Learn](./publish-your-app/msix/manage-submission-options.md)
 
@@ -122,7 +123,7 @@ For more information, please visit [Reserve your app's name - Windows apps | Mic
 
 If your draft is missing any necessary information, it will be marked as **Incomplete.**
 
-For more information, please visit [Create an app submission - Windows apps | Microsoft Learn.](./publish-your-app/msix/create-app-submission.md)
+For more information, please visit [Create an app submission - Windows apps | Microsoft Learn.](./publish-your-app/msix/add-and-edit-store-listing-info.md)
 
 ## App certification process [MSIX/PWA]
 
@@ -165,11 +166,36 @@ For more details, you can refer to the following reports.
 | [Reviews report](/partner-center/reviews-report)                                         | See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.                         |
 | [Insights report](/partner-center/insights-report)                                       | See meaningful insights about your app like significant (changes increases or decreases that we detected over the last 30 days in your acquisitions and health data).     |
 
+## Leverage developer tools [MSIX/PWA]
+
+The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to run product page experiments, distribute your app using the web installer or CLI, beta test new features using package flighting, and connect with your customers through promotions and engagement tools. These resources are designed to support your app’s success at every stage.
+
+To learn how to run product page experiments, you can watch the following video:
+
+</br>
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=b2c661f6-cd9a-49d6-a195-9bf627b599a8]
+
+For guidance on beta testing using package flighting, see the video below:
+
+</br>
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=1df7ae2b-c586-4e83-bf93-5459bdb85066]
+
+To understand how to use the Store web installer to distribute your app on web, check out the following video:
+
+</br>
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3]
+
+For more information, please visit [Leverage Developer Tools](../publish/product-page-experiments.md) section.
+
 ## Appendix [MSIX/PWA]
 
 ### Useful links
 
 - [Microsoft Store Developer CLI documentation](../publish/msstore-dev-cli/overview.md)
+- [Frequently Asked Questions](../publish/faq/get-started-with-the-microsoft-store.md)
 - [Store Policies and Code of Conduct](../publish/store-policies-and-code-of-conduct.md)
 
 ### Troubleshooting
@@ -238,7 +264,7 @@ Once you reserve your app name, you'll be automatically directed to the availabi
 
    - **Packages**: Upload the app packages for your app which will be downloaded by the Store user. [Upload app packages - Windows apps | Microsoft Learn.](./publish-your-app/msi/upload-app-packages.md)
 
-   - **Store Listings**: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. [Create app store listings - Windows apps | Microsoft Learn.](./publish-your-app/msi/create-app-store-listing.md)
+   - **Store Listings**: Enter the app description, screenshots, and logos that will be displayed on your app’s Product Details Page (PDP) in the Store, by creating a Store listing. [Create app store listings - Windows apps | Microsoft Learn.](./publish-your-app/msi/add-and-edit-store-listing-info.md)
 
 2. After you complete a section, click on **Save**. Once all sections are complete and you are ready to submit, click on **Submit**.
 
@@ -286,11 +312,23 @@ There are different reports available for your apps, check the descriptions to f
 | [Health report](../publish/analyze-msi-exe/analyze-app-performance.md#health-report)     | Shows data related to the performance and quality of your app, including crashes and unresponsive events.                                                                      |
 | [Ratings & Reviews report](../publish/analyze-msi-exe/ratings-reviews-performance.md)    | See the rating and reviews your customers have left for your app and provide responses to let customers know you are listening to their feedback.                              |
 
+## Leverage developer tools
+
+The Leverage Developer Tools section helps you make the most of the resources Microsoft provides to build, test, and grow your app. Learn how to distribute your app using the web installer, update your app through submission API and connect with your customers through engagement tools. These resources are designed to support your app’s success at every stage.
+
+To understand how to use the Store web installer, check out the following video:
+
+</br>
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=3fc3492e-c0b9-4760-a25b-7a424f69e8f3]
+
+For more information, please visit [Leverage Developer Tools](../../apps/distribute-through-store/how-to-use-store-web-installer-for-distribution.md) section.
+
 ## Appendix [MSI/EXE]
 
 ### Useful links
 
-- [Microsoft Store Developer CLI documentation](../publish/msstore-dev-cli/overview.md)
+- [Frequently Asked Questions](../publish/faq/get-started-with-the-microsoft-store.md)
 - [Store Policies and Code of Conduct](../publish/store-policies-and-code-of-conduct.md)
 
 ### Full app submission documentation

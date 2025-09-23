@@ -10,7 +10,7 @@ ms.collection: windows11
 
 # Start developing Windows apps
 
-Welcome to Windows app development. This guide will take you through the steps needed to begin creating apps using the latest Windows development frameworks: the Windows App SDK and WinUI. It will also point you to resources that will help you learn more about Windows development. If you are already comfortable developing apps for Windows, but want to know more about the latest tools, please see [Develop Windows desktop apps](/windows/apps/develop/).
+Welcome to Windows app development. This guide will take you through the steps needed to begin creating apps using the latest Windows development frameworks: the Windows App SDK and WinUI. It will also point you to resources that will help you learn more about Windows development. If you want a step-by-step guide to setting up your developer environment and building your first WinUI app with the latest tools, please see [WinUI 101](/training/modules/winui-101/). If you are already comfortable developing apps for Windows, but want to know more about the latest tools, please see [Develop Windows desktop apps](/windows/apps/develop/).
 
 > [!TIP]
 > [Microsoft Copilot](https://copilot.microsoft.com) is a great resource if you have questions about getting started writing Windows apps.
@@ -155,7 +155,7 @@ Now your project is using the latest WinUI features that are available, and it's
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Complete a tutorial to create a note app with WinUI](../tutorials/winui-notes/index.yml)
+> [Complete a tutorial to create a note app with WinUI](../tutorials/winui-notes/intro.md)
 
 * To get an idea of what WinUI has to offer, check out the WinUI Gallery app.
   [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]

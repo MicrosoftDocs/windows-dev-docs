@@ -1,9 +1,8 @@
 ---
 title: configure Command
 description: Uses a winget configuration file to begin setting up your Windows machine to a desired development environment state.
-ms.date: 05/23/2023
+ms.date: 07/16/2025
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # configure command (winget)
@@ -27,9 +26,11 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget configure -f <C:/Users/<username>/winget-configs/config-file-name.dsc.yaml>`
+`winget configure -f <C:/Users/<username>/winget-configs/config-file-name.dsc.winget>`
 
-Once you have identified the winget configuration file that you are interested in using, confirmed the safety and trustworthiness of that file, and downloaded the file to your local machine, you can use the `winget configure` command to initiate the set up of your configuration.
+Once you have identified the WinGet configuration file that you are interested in using, confirmed the safety and trustworthiness of that file, and downloaded the file to your local machine, you can use the `winget configure` command to initiate the set up of your configuration.
+
+:::image type="content" source="./images/configure.png" alt-text="Screenshot listing winget configure command options." lightbox="./images/configure.png":::
 
 ## Arguments and options
 
@@ -59,10 +60,10 @@ The following arguments are available:
 The `winget configure` command includes a number of subcommands, including:
 
 - **`winget configure show`**: Displays the details of a configuration file. Usage: `winget configure show -f <file>`. Running the command: `winget configuration show configuration.dsc.yaml` will display the details of the configuration in the current working directory.
-- `winget configure list`: Shows the high level details for configurations that have been applied to the system. This data can then be used with other `configure` commands to get more details. Usage: `winget configure list [<options>]`
-- `winget configure test`: Checks the system against the desired state, displaying whether the current system state conforms with the desired state defined in the associated configuration file. Usage: `winget configure test -f <file>`.
-- `winget configure validate`: Validates a configuration file. Usage: `winget configure validate [-f] <file> [<options>]`.
-- `winget configure export`: Exports configuration resources to a configuration file. When used with `--all`, exports all package configurations. When used with `--packageId`, exports a WinGetPackage resource of the given package identifier. When used with `--module` and `--resource`, exports the settings of the specified resource. If the output configuration file already exists, appends the exported configuration resources. Usage: `winget configure export -o <output file> [<options>]`
+- **`winget configure list`**: Shows the high level details for configurations that have been applied to the system. This data can then be used with other `configure` commands to get more details. Usage: `winget configure list [<options>]`
+- **`winget configure test`**: Checks the system against the desired state, displaying whether the current system state conforms with the desired state defined in the associated configuration file. Usage: `winget configure test -f <file>`.
+- **`winget configure validate`**: Validates a configuration file. Usage: `winget configure validate [-f] <file> [<options>]`.
+- **`winget configure export`**: Exports configuration resources to a configuration file. When used with `--all`, exports all package configurations. When used with `--packageId`, exports a WinGetPackage resource of the given package identifier. When used with `--module` and `--resource`, exports the settings of the specified resource. If the output configuration file already exists, appends the exported configuration resources. Usage: `winget configure export -o <output file> [<options>]`
 
 ## Related topics
 

@@ -2,7 +2,7 @@
 title: Enhance UI with the Visual layer (Windows App SDK/WinUI 3)
 description: The Windows App SDK implementation of the UWP Visual layer.
 ms.topic: how-to
-ms.date: 08/19/2024
+ms.date: 07/14/2025
 ms.localizationpriority: medium
 ---
 

@@ -2,7 +2,7 @@
 title: Latest experimental channel release notes for the Windows App SDK
 description: Learn about the latest experimental releases of the Windows App SDK.
 ms.topic: release-notes
-ms.date: 04/25/2024
+ms.date: 09/08/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -18,17 +18,6 @@ The experimental channel includes releases of the Windows App SDK with [experime
 
 - If you'd like to upgrade an existing app from an older version of the Windows App SDK to a newer version, see [Update existing projects to the latest release of the Windows App SDK](update-existing-projects-to-the-latest-release.md).
 - For documentation on experimental releases, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md).
-
-**Experimental channel release note archive:**
-
-- [Experimental channel release notes for the Windows App SDK 1.7](release-notes-archive/experimental-channel-1.7.md)
-- [Experimental channel release notes for the Windows App SDK 1.6](release-notes-archive/experimental-channel-1.6.md)
-- [Experimental channel release notes for the Windows App SDK 1.5](release-notes-archive/experimental-channel-1.5.md)
-- [Experimental channel release notes for the Windows App SDK 1.4](release-notes-archive/experimental-channel-1.4.md)
-- [Experimental channel release notes for the Windows App SDK 1.3](release-notes-archive/experimental-channel-1.3.md)
-- [Experimental channel release notes for the Windows App SDK 1.2](release-notes-archive/experimental-channel-1.2.md)
-- [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
-- [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
 
 ## Version 1.8 Experimental (1.8.0-Experimental4)
 
@@ -74,13 +63,12 @@ Enables developers to specify the desired output language for conversation summa
 ### Bug Fixes
 
 - Removed duplicate .winmd files for AI components. For more information see [Windows App SDK GitHub Issue #5439](https://github.com/microsoft/WindowsAppSDK/issues/5439)
-- Addressed a potential crash in `ApplicationDataProvider::GetStateFolderUris` caused by reentrancy. For more information see [Windows App SDK GitHub Issue #10513](https://github.com/microsoft/WindowsAppSDK/issues/10513)
-- Addressed a UI bug where the `TitleBar` displayed incorrect spacing when a short title was used. For more information see [Windows App SDK GitHub Issue #10492](https://github.com/microsoft/WindowsAppSDK/issues/10492)
-- Addressed a UI bug where the `CalendarDatePicker` control displayed incorrect icon margins when a long header was set. For more information see [Windows App SDK GitHub Issue #10469](https://github.com/microsoft/WindowsAppSDK/issues/10469)
-- Resolved an issue related to versioning mismatches between WIndowsAppSDK and Windows SDK NuGet packages, which can cause new projects to fail to build out of the box. For more information see [Windows App SDK GitHub Issue #10467](https://github.com/microsoft/WindowsAppSDK/issues/10467)
-- Addressed a regression where the mouse wheel input was ignored if the "Scroll inactive windows when hovering over them" setting was disabled, making windows appear perpetually inactive. For more information see [Windows App SDK GitHub Issue #10091](https://github.com/microsoft/WindowsAppSDK/issues/10091)
-
-- Addressed a deployment bug where failing to set `$(WindowsPackageType)=MSIX` in the project file prevents the Deployment Manager from being added, causing apps to require admin privileges unexpectedly. For more information see [Windows App SDK GitHub Issue #8182](https://github.com/microsoft/WindowsAppSDK/issues/8182)
+- Addressed a potential crash in `ApplicationDataProvider::GetStateFolderUris` caused by reentrancy. For more information see [Windows App SDK GitHub Issue #10513](https://github.com/microsoft/Microsoft-UI-XAML/issues/10513)
+- Addressed a UI bug where the `TitleBar` displayed incorrect spacing when a short title was used. For more information see [Windows App SDK GitHub Issue #10492](https://github.com/microsoft/Microsoft-UI-XAML/issues/10492)
+- Addressed a UI bug where the `CalendarDatePicker` control displayed incorrect icon margins when a long header was set. For more information see [Windows App SDK GitHub Issue #10469](https://github.com/microsoft/Microsoft-UI-XAML/issues/10469)
+- Resolved an issue related to versioning mismatches between WIndowsAppSDK and Windows SDK NuGet packages, which can cause new projects to fail to build out of the box. For more information see [Windows App SDK GitHub Issue #10467](https://github.com/microsoft/Microsoft-UI-XAML/issues/10467)
+- Addressed a regression where the mouse wheel input was ignored if the "Scroll inactive windows when hovering over them" setting was disabled, making windows appear perpetually inactive. For more information see [Windows App SDK GitHub Issue #10091](https://github.com/microsoft/Microsoft-UI-XAML/issues/10091)
+- Addressed a deployment bug where failing to set `$(WindowsPackageType)=MSIX` in the project file prevents the Deployment Manager from being added, causing apps to require admin privileges unexpectedly. For more information see [Windows App SDK GitHub Issue #8182](https://github.com/microsoft/Microsoft-UI-XAML/issues/8182)
 
 ### New APIs for 1.8-experimental4
 
@@ -467,6 +455,10 @@ Microsoft.Windows.Widgets.Feeds.Providers
 
 ## Version 1.8 Experimental (1.8.0-experimental3)
 
+<details>
+
+<summary>Expand to see details for the Windows App SDK 1.8 Experimental (1.8.0-experimental3) release</summary>
+
 ### Use on-device AI with Windows AI APIs
 
 > [!IMPORTANT]
@@ -821,7 +813,13 @@ Microsoft.Windows.Widgets.Feeds.Providers
     IFeedManager3
 ```
 
+</details>
+
 ## Version 1.8 Experimental (1.8.0-experimental2)
+
+<details>
+
+<summary>Expand to see details for the Windows App SDK 1.8 Experimental (1.8.0-experimental2) release</summary>
 
 ### Use on-device AI with Windows AI APIs
 
@@ -1197,7 +1195,13 @@ Microsoft.Windows.Widgets.Providers
 * If you're using the Microsoft.WindowsAppSDK.WinUI component package in its default self-contained mode, make sure to set the WebView2EnableCsWinRTProjection property to true when utilizing WebView2 APIs. This helps prevent version conflicts and avoids related warnings.
 * When using the WindowsAppSDK component packages, you may notice a warning `NU1603` indicating the specified version of a dependent component package was not found, but another was resolved instead.  This is expected with the experimental2 build and NuGet will correctly resolve a newer version of the package which will allow your project to build.  If you treat warnings as errors, you can temporarily treat this specific warning as not an error by specifying the property `<WarningsNotAsErrors>NU1603</WarningsNotAsErrors>`.
 
+</details>
+
 ## Version 1.8 Experimental (1.8.0-experimental1)
+
+<details>
+
+<summary>Expand to see details for the Windows App SDK 1.8 Experimental (1.8.0-experimental1) release</summary>
 
 ### Use on-device AI with Windows AI APIs
 
@@ -1568,8 +1572,24 @@ This release includes the following bug fixes:
 
 - Fixed an issue where mouse wheel input is ignored if the "Scroll inactive windows when hovering over them" option in Windows Settings is disabled. For more info, see GitHub issue [#10091](https://github.com/microsoft/microsoft-ui-xaml/issues/10091).
 
+</details>
 
+## Archive of experimental channel release notes
 
+<details>
+
+<summary>Expand for links to archived experimental channel release notes</summary>
+
+- [Experimental channel release notes for the Windows App SDK 1.7](release-notes-archive/experimental-channel-1.7.md)
+- [Experimental channel release notes for the Windows App SDK 1.6](release-notes-archive/experimental-channel-1.6.md)
+- [Experimental channel release notes for the Windows App SDK 1.5](release-notes-archive/experimental-channel-1.5.md)
+- [Experimental channel release notes for the Windows App SDK 1.4](release-notes-archive/experimental-channel-1.4.md)
+- [Experimental channel release notes for the Windows App SDK 1.3](release-notes-archive/experimental-channel-1.3.md)
+- [Experimental channel release notes for the Windows App SDK 1.2](release-notes-archive/experimental-channel-1.2.md)
+- [Experimental channel release notes for the Windows App SDK 1.0](release-notes-archive/experimental-channel-1.0.md)
+- [Experimental channel release notes for the Windows App SDK 0.8](release-notes-archive/experimental-channel-0.8.md)
+
+</details>
 
 ## Related topics
 

@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 0.5
 description: Provides information about the stable release channel for the Windows App SDK 0.5.
 ms.topic: release-notes
-ms.date: 04/25/2024
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -27,9 +27,6 @@ The stable channel provides releases of the Windows App SDK that are supported f
 ## Version 0.5
 
 The latest available release of the 0.5.x lineage of the stable channel of the Windows App SDK is version [0.5.9](https://github.com/microsoft/WindowsAppSDK/discussions/1214).
-
-> [!div class="button"]
-> [Download](https://aka.ms/projectreunion/vsixdownload)
 
 ### New features and updates
 

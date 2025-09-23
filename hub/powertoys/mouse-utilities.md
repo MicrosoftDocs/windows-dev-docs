@@ -1,22 +1,28 @@
 ---
-title: PowerToys Mouse utilities for Windows
-description: A collection of utilities to expand the range of usage for the mouse and cursor.
-ms.date: 12/13/2024
+title: Mouse Utilities in PowerToys for Windows
+description: Mouse utilities in PowerToys enhance cursor functionality with Find my mouse, Mouse Highlighter, Mouse jump, and Crosshairs features for Windows users.
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
-# Customer intent: Learn how to configure and use the Mouse utilities in PowerToys.
+# Customer intent: As a Windows power user, I want to learn how to configure and use the Mouse utilities in PowerToys.
 ---
 
 # Mouse utilities
 
-Mouse utilities is a collection of features that enhance mouse and cursor functionality on Windows.
+Mouse utilities in PowerToys is a collection of features that enhance mouse and cursor functionality on Windows. These utilities help you locate your cursor, highlight mouse clicks, jump across screens, and display crosshairs for improved precision and productivity.
 
 ## Find my mouse
 
 Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
 
-![Screenshot of Find my mouse](../images/pt-mouse-utilities-find-my-mouse.gif)
+:::image type="content" source="../images/pt-mouse-utilities-find-my-mouse.gif" alt-text="An animated gif of the PowerToys Find my mouse feature of its Mouse Utilities.":::
+
+## Gliding cursor
+
+The gliding cursor is an accessibility feature that lets you control the mouse with a single button using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.<kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position.
+
+:::image type="content" source="../images/pt-mouse-utilities-gliding-cursor.png" lightbox="../images/pt-mouse-utilities-gliding-cursor.gif" alt-text="An animated gif of the PowerToys gliding cursor feature of its Mouse Utilities.":::
 
 ### Settings
 
@@ -49,10 +55,10 @@ From the settings page, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn mouse highlighting on or off. |
-| Left button highlight color | The highlighter color for the left mouse button. |
-| Right button highlight color | The highlighter color for the right mouse button. |
-| Always on highlight color | The highlighter color for the mouse pointer. |
-| Overlay opacity | The opacity of the highlighter. |
+| Primary button highlight color | The highlighter color for the user's primary mouse button. |
+| Secondary button highlight color | The highlighter color for the user's secondary mouse button. |
+| Always highlight color | The highlighter color for the mouse pointer. |
+| Highlight mode | Determines how the cursor is highlighted. **Spotlight** dims the screen to spotlight the cursor. **Circle highlight** highlights the cursor with a circle, while keeping the rest of the screen unaffected. |
 | Radius | The radius of the highlighter - Measured in pixels. |
 | Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds. |
 | Fade duration | Duration of the disappear animation - Measured in milliseconds. |
@@ -73,7 +79,7 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 
 ![Screenshot of Crosshairs](../images/pt-mouseutilities-crosshairs.png)
 
-Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
+Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer. This feature is particularly useful for users with visual impairments or those who need enhanced cursor visibility for precision tasks.
 
 | Setting | Description |
 | :--- | :--- |
@@ -87,5 +93,8 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer.
 | Automatically hide crosshairs when the mouse pointer is hidden | |
 | Fix crosshairs length | |
 | Crosshairs fixed length (px) | |
+| Gliding cursor | This activation shortcut is the customizable keyboard command to turn the gliding cursor on or off. |
+| Gliding cursor: Travel speed | Provides a slider to adjust the speed at which the gliding cursor moves across the screen. |
+| Gliding cursor: Delay speed | Provides a slider to adjust the delay before the gliding cursor starts moving. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

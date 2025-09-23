@@ -2,7 +2,7 @@
 title: How to Install PowerToys on Windows 11 and Windows 10
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
 ms.custom: copilot-scenario-highlight
-ms.date: 07/02/2025
+ms.date: 08/20/2025
 ms.topic: how-to
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -84,9 +84,21 @@ Generate a `winget` command to install Microsoft PowerToys with arguments to ins
 
 Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://www.microsoft.com/microsoft-copilot/learn/).
 
-### Extracting the MSI from the bundle
+### Extracting the MSI from the bundle for 0.94 and later
 
-Make sure to have [WiX Toolset v3](https://wixtoolset.org/docs/wix3) installed. The command doesn't work with WiX Toolset v4.
+Make sure to have the [.NET SDK](https://dotnet.microsoft.com/download/) installed.
+
+In PowerShell, run `dotnet tool install wix --global` to install the latest version of WiX Toolset.
+
+This PowerShell example assumes that the PowerToys installer has been downloaded to the Windows desktop.
+
+```powershell
+wix burn extract ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.94.0-x64.exe" -out ${Env:\USERPROFILE}"\Desktop\extractedPath" -oba ${Env:\USERPROFILE}"\Desktop\extractedPath"
+```
+
+### Extracting the MSI from the bundle for 0.93 and earlier
+
+Make sure to have [WiX Toolset v3](https://docs.firegiant.com/wix/wix3/) installed. The command doesn't work with WiX Toolset v4 and later versions.
 
 This PowerShell example assumes the default install location for WiX Toolset and that the PowerToys installer has been downloaded to the Windows desktop.
 
@@ -150,6 +162,10 @@ If you have issues when installing/updating, file an issue in the [Scoop repo on
 ## After installation
 
 After successfully installing PowerToys, an overview window will display with introductory guidance for each of the available utilities.
+
+If you view the Home view of the PowerToys settings, you can get quick access to some of the utilities, see an overview of the available shortcuts, and enable or disable individual utilities.
+
+:::image type="content" source="../images/powertoys-settings-home.png" alt-text="A screenshot of the Home page of the PowerToys settings.":::
 
 ## Updates
 

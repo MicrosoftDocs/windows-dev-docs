@@ -2,7 +2,7 @@
 title: Threading functionality migration
 description: This topic describes how to migrate the threading code in a Universal Windows Platform (UWP) application to the Windows App SDK.
 ms.topic: concept-article
-ms.date: 03/29/2023
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing, reentrancy
 ms.localizationpriority: medium
 dev_langs:

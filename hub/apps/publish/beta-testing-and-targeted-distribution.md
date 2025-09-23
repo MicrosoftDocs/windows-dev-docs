@@ -16,7 +16,6 @@ Partner Center gives you several options to let testers try out your app before 
 Whichever method you choose, here are some things to keep in mind as you beta test your app.
 
 - You can’t revoke access to the app after a tester has downloaded it. Once they have downloaded the app, they can continue to use it, and they’ll get any updates that you subsequently publish.
-- You will need to determine how you’d like to collect feedback from your testers. Consider providing a link that lets your testers easily give feedback via email (or via [Feedback Hub](/windows/uwp/monetize/launch-feedback-hub-from-your-app), if confidentiality is not a concern). 
 - You can review [analytic reports](analytics.md) for your app, including usage and health reports and any ratings or reviews left by your testers.
 - You can include add-ons when you distribute your app to testers. Since you probably don’t want to charge them money for an add-on, you can [generate promotional codes](generate-promotional-codes.md) and distribute them to your testers to let them get the add-on for free, or you can set the price for the add-on to **Free** during  testing (then before you make the app available to other customers, create a new submission for the add-on to change its price). Note that each add-on can only be purchased once per Microsoft account, so the same tester won't be able to test the add-on acquisition process more than one time. 
 - You can give your testers an updated version of your app at any time by creating a new submission with new packages. Your testers will get the update after it goes through the certification process, just like they got the original package, but no one else will be able to get it (unless you make additional changes, such as moving an app from **Private audience** to **Public audience** or changing the membership of groups who can get it).
@@ -57,6 +56,6 @@ With this, no customers will be able to find the app by searching or browsing th
 
 To use this option:
 - In the **Visibility** section of the **Pricing and availability** page, under [Discoverability](publish-your-app/msix/visibility-options.md#discoverability), select **Make this product available but not discoverable in the Store**. Choose the option for **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.**.
-- After your product has been published, distribute the link (the **URL** on the [App identity page](view-app-identity-details.md)) to your testers so they can try it out.
+- After your product has been published, distribute the link (the **URL** on the [Product identity page](view-app-identity-details.md)) to your testers so they can try it out.
 - When you're ready to make your app available to the public, create a new submission and change the **Visibility** option to **Make this product available and discoverable in the Store** (along with any other changes you'd like).
 

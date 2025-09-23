@@ -312,7 +312,7 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
     BackgroundAccessStatus backgroundAccessStatus = await BackgroundExecutionManager.RequestAccessAsync();
 
     // Regardless of the answer, register the background task. Note that the user can use
-    // the Settings app to prevent your app from running background tasks.
+    // Windows Settings to prevent your app from running background tasks.
     // Create a new background task builder.
     BackgroundTaskBuilder geofenceTaskBuilder = new BackgroundTaskBuilder();
 
@@ -397,7 +397,7 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 
 ## Change the privacy settings
 
-If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in the **Settings** app. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
+If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in **Settings**. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
 
 ```xaml
 <!--Set Visibility to Visible when access to the user's location is denied. -->  
@@ -411,7 +411,7 @@ If the location privacy settings don't allow your app to access the user's locat
 </TextBlock>
 ```
 
-Alternatively, your app can call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch the **Settings** app from code. For more info, see [Launch the Windows Settings app](/windows/apps/develop/launch/launch-settings-app).
+Alternatively, your app can call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch **Settings** from code. For more info, see [Launch Windows Settings](/windows/apps/develop/launch/launch-settings).
 
 ```csharp
 using Windows.System;
@@ -451,7 +451,7 @@ Testing and debugging geofencing apps can be a challenge because they depend on 
 
 ## Troubleshoot your app
 
-Before your app can access location, **Location** must be enabled on the device. In the **Settings** app, check that the following **location privacy settings** are turned on:
+Before your app can access location, **Location** must be enabled on the device. In **Settings**, check that the following **location privacy settings** are turned on:
 
 -   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
 -   The location services setting, **Location**, is turned **on**

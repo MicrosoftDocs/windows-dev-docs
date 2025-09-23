@@ -45,7 +45,7 @@ Here are the available C# interop classes, mapped from their underlying interop 
 
 ### Available as part of the Windows App SDK
 
-The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md#code-example).
+The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](../../develop/ui-input/manage-app-windows.md).
 
 |Interop function|C# interop method|
 |-|-|
@@ -121,6 +121,6 @@ There are currently no known issues for the C# interop classes. To provide feedb
 ## Related topics
 
 * [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)
-* [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md)
+* [Manage app windows](../../develop/ui-input/manage-app-windows.md)
 * [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)
 * [Display WinRT UI objects that depend on CoreWindow](../../develop/ui-input/display-ui-objects.md)

@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 1.4
 description: Provides information about the stable release channel for the Windows App SDK 1.4.
 ms.topic: release-notes
-ms.date: 04/25/2024
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -189,7 +189,7 @@ We're introducing a new list control called the `ItemsView` and a corresponding 
 - Fixed some crash and memory leak issues in `TreeView`.
 - Fixed an app hang issue that could happen when using keyboard to navigate in `RadioButtons`.
 - Fixed a crash when using the keyboard to navigate in a `PipsPager`.
-- Fixed WebView2 content to scale with the "Text size" Accessibility setting in the Settings app.
+- Fixed WebView2 content to scale with the "Text size" Accessibility setting in Windows Settings.
 - Fixed a crash that could occur when animations were running when the display turned off.
 - Fixed a performance issue introduced in 1.3 that added a ~10% overhead to first layout/render.
 

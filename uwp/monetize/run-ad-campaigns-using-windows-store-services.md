@@ -6,6 +6,7 @@ ms.date: 06/04/2018
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 # Run ad campaigns using Store services
 

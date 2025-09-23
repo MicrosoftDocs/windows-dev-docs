@@ -2,7 +2,7 @@
 title: Build and deploy an unpackaged app that uses the Preview and Experimental versions of the Windows App SDK 
 description: This article provides a walkthrough for building and deploying an unpackaged app that uses the Preview and Experimental versions of Windows App SDK.
 ms.topic: tutorial
-ms.date: 05/24/2021
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---

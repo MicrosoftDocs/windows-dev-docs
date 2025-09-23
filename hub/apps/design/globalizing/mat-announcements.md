@@ -3,6 +3,7 @@ title: Announcements
 description: Recent announcements for the Multilingual App Toolkit (MAT).
 ms.topic: article
 ms.date: 04/14/2025
+ms.custom: sfi-image-nochange
 ---
 
 # Announcements

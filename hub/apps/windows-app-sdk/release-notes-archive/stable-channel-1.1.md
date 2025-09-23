@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 1.1
 description: Provides information about the stable release channel for the Windows App SDK 1.1.
 ms.topic: release-notes
-ms.date: 04/25/2024
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -110,7 +110,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. This r
 **New features:**
 
 - Mica and Background Acrylic are now available for WinUI 3 applications.
-  - For more information about these materials, check out [Materials in Windows 11](../../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Apply Mica or Acrylic materials in desktop apps for Windows 11](../system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the [WinUI 3 Gallery](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+  - For more information about these materials, check out [Materials in Windows 11](../../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Apply Mica or Acrylic materials in desktop apps for Windows 11](../system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 - First introduced in 1.0.1, we have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
 
 **Fixed bugs:**

@@ -48,9 +48,9 @@ Sales are scheduled as part of the submission for an app or add-on. If you want 
    - **Owners of**: The sale will be offered to customers who already own one of your apps. You can select from your published apps from the drop-down that appears. You must have one or more published apps in order for this option to be available.
 
   > [!IMPORTANT]
-  > If you select **Owners of**, the sale will only be visible to customers on Windows 10, version 1607 or later.
+  > If you select **Owners of**, the sale will only be visible to customers on Windows 10, version 1607 or later, and Windows 11.
 
-   - **Known user group**: The sale will be offered to the people in the [known user group](create-known-user-groups.md) you select. You must already have created the known user group in order for this option to be available.
+   - **Known user group**: The sale will be offered to the people in the [known user group](create-customer-groups.md#known-user-groups) you select. You must already have created the known user group in order for this option to be available.
 6. Enter the date and time for the start and end of the sale period. Choose one of the following time zone options:
    - **UTC**: The time you select will be Universal Coordinated Time (UTC) time, so that the sale occurs at the same time everywhere.
    - **Local**: The time you select will be the used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.)

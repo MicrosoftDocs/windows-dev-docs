@@ -6,6 +6,7 @@ ms.topic: how-to
 keywords: windows 10, uwp, targeted notifications, push notifications, toast, tile
 ms.assetid: 16386c81-702d-47cd-9f91-67659f5dca73
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 # Send notifications to your app's customers
 
@@ -13,8 +14,6 @@ ms.localizationpriority: medium
 > Push Notifications in Partner Center were formally deprecated at the end of December 2024. For an alternative notification experience, see [Microsoft Azure Notification Hubs](/azure/notification-hubs).
 
 Engaging with your customers at the right time and with the right message is key to your success as an app developer. Notifications can encourage your customers to take an action, such as rating an app, buying an add-on, trying a new feature, or downloading another app (perhaps for free with a [promotional code](generate-promotional-codes.md) that you provide).
-
-[Partner Center](https://partner.microsoft.com/dashboard) provides a data-driven customer engagement platform you can use to send notifications to all of your app's customers, or only targeted to a subset of your app's Windows 10 or Windows 11 customers who meet the criteria you’ve defined in a [customer segment](create-customer-segments.md). You can also create a notification to be sent to customers of more than one of your apps.
 
 > [!IMPORTANT]
 > These notifications can only be used with UWP apps.
@@ -33,7 +32,6 @@ When considering the content of your notifications, keep in mind:
 At a high-level, you need to do three things to use notifications to engage with your customers.
 
 1. **Register your app to receive push notifications.** You do this by adding a reference to the Microsoft Store Services SDK in your app and then adding a few lines of code that registers a notification channel between Partner Center and your app. We’ll use that channel to deliver your notifications to your customers. For details, see [Configure your app for targeted push notifications](/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications).
-2. **Decide which customers to target.** You can send your notification to all of your app's customers, or (for notifications created for a single app) to a group of customers called a *segment*, which you can define based on demographic or revenue criteria. For more info, see [Create customer segments](create-customer-segments.md).
 3. **Create your notification content and send it out.** For example, you might create a notification that encourages new customers to rate your app, or send a notification promoting a special deal to purchase an add-on.
 
 
@@ -48,7 +46,7 @@ Follow these steps to create a notification in Partner Center and send it to a p
 2. On the **Notifications** page, select **New notification**.
 3. In the **Select a template** section, choose the [type of notification](#notification-template-types) you want to send and then click **OK**.
 4. On the next page, use the drop-down menu to choose either a **Single app** or **Multiple apps** for which you want to generate a notification. You can only select apps that have been [configured to receive notifications using the Microsoft Store Services SDK](/windows/uwp/monetize/configure-your-app-to-receive-dev-center-notifications).
-5. In the **Notification settings** section, choose a **Name** for your notification and, if applicable, choose the **Customer group** to which you want to send the notification. (Notifications sent to multiple apps can only be sent to all customers of those apps.) If you wish to use a segment that you haven't created already, select **Create new customer group**. Note that it takes 24 hours before you can use a new segment for notifications. For more info, see [Create customer segments](create-customer-segments.md).
+5. In the **Notification settings** section, choose a **Name** for your notification and, if applicable, choose the **Customer group** to which you want to send the notification. (Notifications sent to multiple apps can only be sent to all customers of those apps.) If you wish to use a segment that you haven't created already, select **Create new customer group**.
 6. If you want to specify when to send the notification, clear the **Send notification immediately** checkbox and choose a specific date and time (in UTC for all customers, unless you specify to use each customer's local time zone).
 7. If you want the notification to expire at some point, clear the **Notification never expires** checkbox and choose a specific expiration date and time (in UTC).
 8. **For notifications to a single app:** If you want to filter the recipients so that your notification is only delivered to people who use certain languages or are in specific time zones, check the **Use filters** checkbox. You can then specify the language and/or time zone options you want to use.

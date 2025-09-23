@@ -24,3 +24,6 @@ In this section you'll find details about the info presented in each of the foll
 | [Usage report](../../../apps/publish/analyze-msi-exe/analyze-app-performance.md#usage-report)          | Shows details about how your customers are using your app over the selected period of time. |
 | [Health report](../../../apps/publish/analyze-msi-exe/analyze-app-performance.md#health-report)        | Shows data related to the performance and quality of your app, including crashes and unresponsive events. |
 | [Ratings & Reviews report](../../../apps/publish/analyze-msi-exe/ratings-reviews-performance.md)       | See the rating and reviews your customers have left for your app and provide responses to let customers know you’re listening to their feedback. |
+
+>[!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../faq/monitor-your-app-performance.md) section.

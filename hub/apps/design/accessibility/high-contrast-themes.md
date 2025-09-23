@@ -160,7 +160,7 @@ Here are some recommendations for customizing the contrast theme colors in your 
 > [!TIP]
 > It's often helpful to look at the WinUI Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:) or [**WinUI 2 Gallery**](winui2gallery:).
 >
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
 >
 > You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
@@ -174,7 +174,7 @@ In the following code snippet, we show a Grid element declared with a background
 <Grid Background="#E6E6E6">
 ```
 
-Instead, we recommend using the [**{ThemeResource} markup extension**](/windows/uwp/xaml-platform/themeresource-markup-extension) to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). This enables the automatic substitution of colors and brushes based on the user's current theme.
+Instead, we recommend using the [**{ThemeResource} markup extension**](/windows/apps/develop/platform/xaml/themeresource-markup-extension) to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). This enables the automatic substitution of colors and brushes based on the user's current theme.
 
 ```xaml
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">

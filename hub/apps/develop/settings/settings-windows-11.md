@@ -251,7 +251,7 @@ This setting contains toggles and other settings related to touch keyboard, text
 
 ## VPN
 
-VPN settings that apply to all VPN connections configured in the Settings app.
+VPN settings that apply to all VPN connections configured in Windows Settings.
 
 ### Registry values under HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\RasMan\Parameters\Config\VpnCostedNetworkSettings
 

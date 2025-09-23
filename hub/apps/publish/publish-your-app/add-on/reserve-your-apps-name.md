@@ -15,7 +15,7 @@ Follow the following steps to reserve your app's name:
 
 1. Navigate to the [Partner Center apps and games page](https://partner.microsoft.com/dashboard/apps-and-games/overview).
 2. Click **New product**.
-3. Click on **MSIX or PWA app**. If you want to submit MSIX or PWA game, click on **Game**.
+3. Click on **MSIX or PWA app**. If you want to submit an MSIX or PWA game, click on **Game**.
 
 :::image type="content" source="../msix/images/msix-new-product.png" lightbox="../msix/images/msix-new-product.png" alt-text="A screenshot showing how to create a MSIX/PWA app.":::
 

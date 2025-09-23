@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Product declarations for MSIX app
+# Product declarations
 
 The **Product declarations** section of the [Properties](./enter-app-properties.md) page of the [submission process](./create-app-submission.md) helps make sure your app is displayed appropriately and offered to the right set of customers, and helps them understand how they can use your app.
 

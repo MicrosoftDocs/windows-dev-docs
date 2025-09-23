@@ -6,11 +6,9 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# System requirements for PWA
+# System requirements
 
 In this section, you have the option to indicate if certain hardware features are required or recommended to run and interact with your app properly. You can check the box (or indicate the appropriate option) for each hardware item where you would like to specify **Minimum hardware** and/or **Recommended hardware**.
-
-:::image type="content" source="../msix/images/msix-system-requirements.png" lightbox="../msix/images/msix-system-requirements.png" alt-text="A screenshot showing the system requirements table section for MSIX/PWA app.":::
 
 If you make selections for **Recommended hardware**, those items will be displayed in your product's Store listing as recommended hardware for customers on Windows 10, version 1607 or later. Customers on earlier OS versions will not see this info.
 
@@ -27,5 +25,3 @@ The behavior for customers will vary depending on the specific requirements and 
 
 We also recommend adding runtime checks for the specified hardware into your app, since the Store may not always be able to detect that a customer's device is missing the selected feature(s) and they could still be able to download your app even if a warning is displayed. If you want to completely prevent your UWP app from being downloaded on a device which doesn't meet minimum requirements for memory or DirectX level, you can designate the minimum requirements in a [StoreManifest XML file](/uwp/schemas/storemanifest/storemanifestschema2015/schema-root).
 
-> [!TIP]
-> If your product requires additional items that aren't listed in this section in order to run properly, such as 3D printers or USB devices, you can also enter [additional system requirements](./add-and-edit-store-listing-info.md#additional-system-requirements) when you create your Store listing.

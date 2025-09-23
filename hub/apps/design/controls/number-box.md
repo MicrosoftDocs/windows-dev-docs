@@ -34,7 +34,7 @@ You can use a NumberBox control to capture and display mathematic input. If you 
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app.
+Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/apps/develop/platform/xaml/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app.
 
 ```xaml
 <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
