@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="Frames_Win10.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Frames_Win10"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical"  Grid.Row="0" Grid.Column="0">
+            
+            
+            
+            <Button x:Name="ActionButton" Click="ActionButton_Click" Content="RGB/Front Panel/1920 (no xbox)"/>
+            <Button x:Name="ActionButton2" Click="ActionButton2_Click" Content="RGB/1920/FrameRenderer (xbox)"/>
+            <Button x:Name="MultiframeButton" Click="MultiFrameButton_Click" Content="MultiFrame"/>
+            <Button x:Name="OpenCV" Click="OpenCV_Click" Content="OpenCV"/>
+            <Button x:Name="MediaSourceFromFrameSource" Click="MediaSourceFromFrameSource_Click" Content="MediaSourceFromFrameSource"/>
+            <Button x:Name="AudioFrame1Button" Click="AudioFrame1Button_Click" Content="AudioFrame1"/>
+            <Button x:Name="StartDeviceWatcherButton" Click="StartDeviceWatcherButton_Click" Content="Start DeviceWatcher"/>
+
+        </StackPanel>
+        <Border Grid.Row="0" Grid.Column="1">
+        <!--<SnippetImageElementXAML>-->
+        <Image x:Name="imageElement" Width="320" Height="240" />
+        <!--</SnippetImageElementXAML>-->
+        </Border>
+        <Border Grid.Row="1" Grid.Column="0">
+            <!--<SnippetMediaPlayerElement1XAML>-->
+            <MediaPlayerElement x:Name="mediaPlayerElement1" Width="320" Height="240"/>
+            <!--</SnippetMediaPlayerElement1XAML>-->
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1">
+            <!--<SnippetMediaPlayerElement2XAML>-->
+            <MediaPlayerElement x:Name="mediaPlayerElement2" Width="320" Height="240"/>
+            <!--</SnippetMediaPlayerElement2XAML>-->
+        </Border>
+        
+    </Grid>
+</Page>

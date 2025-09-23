@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="InAppPurchasesAndLicenses_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:InAppPurchasesAndLicenses_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:Name="launchGetAppInfoPageButton" Content="Launch app info page" HorizontalAlignment="Left" Margin="41,35,0,0" VerticalAlignment="Top" Click="launchGetAppInfoPageButton_Click"/>
+        <Button x:Name="launchGetAddOnInfoPageButton" Content="Launch get add-on info page" HorizontalAlignment="Left" Margin="41,109,0,0" VerticalAlignment="Top" Click="launchGetAddOnInfoPageButton_Click"/>
+        <Button x:Name="launchGetProductInfoPageButton" Content="Launch get product info page" HorizontalAlignment="Left" Margin="41,72,0,0" VerticalAlignment="Top" Click="launchGetProductInfoPageButton_Click"/>
+        <Button x:Name="launchGetUserCollectionPageButton" Content="Launch get user collection page" HorizontalAlignment="Left" Margin="41,146,0,0" VerticalAlignment="Top" Click="launchGetUserCollectionPageButton_Click"/>
+        <Button x:Name="launchGetLicenseInfoPageButton" Content="Launch get license info page" HorizontalAlignment="Left" Margin="41,183,0,0" VerticalAlignment="Top" Click="launchGetLicenseInfoPageButton_Click"/>
+        <Button x:Name="launchPurchaseAddOnPageButton" Content="Launch purchase add-on page" HorizontalAlignment="Left" Margin="41,220,0,0" VerticalAlignment="Top" Click="launchPurchaseAddOnPageButton_Click"/>
+        <Button x:Name="launchConsumeAddOnPageButton" Content="Launch consume add-on page" HorizontalAlignment="Left" Margin="41,257,0,0" VerticalAlignment="Top" Click="launchConsumeAddOnPageButton_Click"/>
+        <Button x:Name="launchGetRemainingAddOnBalancePageButton" Content="Launch get remaining add-on balance page" HorizontalAlignment="Left" Margin="41,294,0,0" VerticalAlignment="Top" Click="launchGetRemainingAddOnBalancePageButton_Click"/>
+        <Button x:Name="launchImplementTrialPageButton" Content="Launch implement trial page" HorizontalAlignment="Left" Margin="41,331,0,0" VerticalAlignment="Top" Click="launchImplementTrialPageButton_Click"/>
+   </Grid>
+</Page>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="../../BuildX/Script2/preview.xslt"?>
+<art xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../BuildX/Schema/xsd/ArtMetadata.xsd">
+<artMetadata id="m_ca_resources.language_matching_2" msdnID="5824757a-cce0-469c-8f55-1bce63ed6eba">
+  <title></title>
+  <author></author>
+  <tech value="m_ca_resources"/>
+</artMetadata>
+<!-- For the LocStatus attribute, use one of the following values: ready_to_localize, do_not_localize, localization_completed.For the GeopolStatus attribute, use one of the following values: needs_geopol_review, geopol_review_completed, geopol_review_failed.-->
+<artInfo ArtType="diagram" ArtStatus="in_review" SourceLanguage="1033" TextToLoc="false" ColorsImagesToLoc="false" GeopolStatus="needs_geopol_review" LocStatus="do_not_localize">
+  <ReproSteps>
+   <Step>Visio diagram received from feature team (anglass and rhawkins).</Step>
+  </ReproSteps>
+</artInfo>
+</art>

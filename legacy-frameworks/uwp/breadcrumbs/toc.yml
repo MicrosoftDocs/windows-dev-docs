@@ -1,0 +1,7 @@
+- name: Windows
+  tocHref: /windows/
+  topicHref: /windows/index
+  items:
+    - name: Universal Windows Platform
+      tocHref: /windows/uwp/
+      topicHref: /windows/uwp/index

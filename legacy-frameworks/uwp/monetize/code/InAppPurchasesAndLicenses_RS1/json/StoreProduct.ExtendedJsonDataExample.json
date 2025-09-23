@@ -1,0 +1,268 @@
+{
+  "LocalizedProperties": [
+    {
+      "DeveloperName": "Contoso developer",
+      "PublisherName": "Contoso",
+      "PublisherWebsiteUri": "http://www.contoso.com",
+      "SupportUri": "mailto:support@contoso.com",
+      "EligibilityProperties": null,
+      "Images": [
+        {
+          "BackgroundColor": "transparent",
+          "Caption": "",
+          "ForegroundColor": "",
+          "Height": 300,
+          "ImagePurpose": "tile",
+          "Uri": "//store-images.s-contoso.com/image/apps.40735.14525693010133175.0aff34d4-9b25-4671-b5fc-0d13efd28147.c23ea293-a138-42a0-a615-d03c41409169",
+          "Width": 300
+        },
+        {
+          "BackgroundColor": "transparent",
+          "Caption": "",
+          "ForegroundColor": "",
+          "Height": 88,
+          "ImagePurpose": "tile",
+          "Uri": "//store-images.s-contoso.com/image/apps.25013.14525693010133175.40f2a63d-463b-49f6-8953-b2d9cc4abeba.baa4030d-5d37-4965-8039-72158df22c42",
+          "Width": 88
+        },
+        {
+          "BackgroundColor": "transparent",
+          "Caption": "",
+          "ForegroundColor": "",
+          "Height": 300,
+          "ImagePurpose": "tile",
+          "Uri": "//store-images.s-contoso.com/image/apps.61404.14525693010133175.b9fde0dd-bab8-49a1-acfb-35d897b02bda.c0a07eff-ce1b-47c8-a4b5-5c83337911f9",
+          "Width": 620
+        },
+        {
+          "BackgroundColor": "transparent",
+          "Caption": "",
+          "ForegroundColor": "",
+          "Height": 50,
+          "ImagePurpose": "logo",
+          "Uri": "//store-images.s-contoso.com/image/apps.53845.14525693010133175.f907b7fa-6bd3-4d9e-af7d-33f19e170d33.07b372ce-4514-4f71-832f-745cad63c78e",
+          "Width": 50
+        },
+        {
+          "BackgroundColor": "transparent",
+          "Caption": "",
+          "ForegroundColor": "",
+          "Height": 300,
+          "ImagePurpose": "Logo",
+          "Uri": "//store-images.s-contoso.com/image/apps.27529.14525693010133175.f7574c79-bdda-4684-9929-25f7e1d370b7.a16a54ee-c3b1-4311-9d36-5fee7ac23639",
+          "Width": 300
+        },
+        {
+          "BackgroundColor": "transparent",
+          "Caption": "",
+          "ForegroundColor": "",
+          "Height": 768,
+          "ImagePurpose": "Screenshot",
+          "Uri": "//store-images.s-contoso.com/image/apps.39690.14525693010133175.47a548ec-c651-4b73-b937-7953a8714ddd.b2724431-1470-419e-aa4b-74830aba9e1b",
+          "Width": 1366
+        }
+      ],
+      "Videos": [],
+      "ProductDescription": "This is a sample app for developement tasks",
+      "ProductTitle": "Contoso Sample App",
+      "SearchTitles": [],
+      "Language": "en-us"
+    }
+  ],
+  "MarketProperties": [
+    {
+      "RelatedProducts": []
+    }
+  ],
+  "ProductId": "9NBLGGH4R315",
+  "Properties": {
+    "PackageFamilyName": "30321Contoso.ContosoSampleApp_sv9ybgxvtektj"
+  },
+  "ProductKind": "Application",
+  "DisplaySkuAvailabilities": [
+    {
+      "Sku": {
+        "LocalizedProperties": [
+          {
+            "LegalText": {
+              "Copyright": "",
+              "CopyrightUri": "",
+              "PrivacyPolicy": "",
+              "PrivacyPolicyUri": "",
+              "Tou": "",
+              "TouUri": ""
+            },
+            "SkuDescription": "This is a sample app for developement tasks",
+            "SkuTitle": "Contoso Sample App",
+            "SkuDisplayRank": [],
+            "Language": "en-us"
+          }
+        ],
+        "Properties": {
+          "FulfillmentType": "WindowsUpdate",
+          "BundledSkus": [],
+          "IsRepurchasable": false,
+          "IsTrial": false
+        },
+        "SkuId": "0010",
+        "RecurrencePolicy": null,
+        "CollectionData": {
+          "acquiredDate": "2017-02-27T13:34:57.6680551-08:00",
+          "additionalIds": [],
+          "beneficiary": {
+            "identityType": "msa",
+            "identityValue": "949157616400113"
+          },
+          "endDate": "9999-12-31T15:59:59.9999999-08:00",
+          "fulfillmentData": [],
+          "isCacheable": true,
+          "itemId": "0ae08fb4326a413a890c957b52aeda88",
+          "localTicketReference": "0",
+          "modifiedDate": "2017-02-27T13:34:57.6616413-08:00",
+          "musicTracksInfo": [],
+          "orderId": "9c54da93-5b1d-4afe-ac45-dd0c19bb3e8f",
+          "orderLineItemId": "88043dae-9cca-4497-aaac-e85f6cf018aa",
+          "ownershipType": "OwnedByBeneficiary",
+          "productFamily": "Apps",
+          "productId": "9NBLGGH4R315",
+          "productKind": "Application",
+          "productTitleId": "-129071",
+          "purchasedCountry": "US",
+          "purchaser": {
+            "identityType": "msa",
+            "identityValue": "985157600400620"
+          },
+          "quantity": 1,
+          "skuId": "0010",
+          "skuType": "Full",
+          "startDate": "2017-02-27T13:19:57.6680551-08:00",
+          "status": "Active",
+          "tags": [],
+          "transactionId": "9c54da93-5b1d-4afe-ac45-dd0c19bb3e8f"
+        }
+      },
+      "Availabilities": [
+        {
+          "Actions": [
+            "Details",
+            "Fulfill",
+            "License",
+            "Purchase",
+            "Redeem"
+          ],
+          "AvailabilityId": "9XJKQMZ5M9NX",
+          "Conditions": {
+            "EndDate": "9998-12-30T00:00:00Z"
+          },
+          "OrderManagementData": {
+            "Price": {
+              "CurrencyCode": "USD",
+              "ListPrice": 0,
+              "MSRP": 0
+            }
+          },
+          "DisplayRank": 0,
+          "RemediationRequired": false
+        }
+      ]
+    },
+    {
+      "Sku": {
+        "LocalizedProperties": [
+          {
+            "LegalText": {
+              "Copyright": "",
+              "CopyrightUri": "",
+              "PrivacyPolicy": "",
+              "PrivacyPolicyUri": "",
+              "Tou": "",
+              "TouUri": ""
+            },
+            "SkuDescription": "This is a sample app for developement tasks",
+            "SkuTitle": "Contoso Sample App",
+            "SkuDisplayRank": [],
+            "Language": "en-us"
+          }
+        ],
+        "Properties": {
+          "FulfillmentType": "WindowsUpdate",
+          "BundledSkus": [],
+          "IsRepurchasable": false,
+          "IsTrial": false
+        },
+        "SkuId": "0017",
+        "RecurrencePolicy": null
+      },
+      "Availabilities": [
+        {
+          "Actions": [
+            "Details"
+          ],
+          "AvailabilityId": "9ZFNZ00M33HF",
+          "Conditions": {
+            "EndDate": "9998-12-30T00:00:00Z"
+          },
+          "OrderManagementData": {
+            "Price": {
+              "CurrencyCode": "USD",
+              "ListPrice": 0,
+              "MSRP": 0
+            }
+          },
+          "DisplayRank": 0,
+          "RemediationRequired": false
+        }
+      ]
+    },
+    {
+      "Sku": {
+        "LocalizedProperties": [
+          {
+            "LegalText": {
+              "Copyright": "",
+              "CopyrightUri": "",
+              "PrivacyPolicy": "",
+              "PrivacyPolicyUri": "",
+              "Tou": "",
+              "TouUri": ""
+            },
+            "SkuDescription": "This is a sample app for developement tasks",
+            "SkuTitle": "Contoso Sample App",
+            "SkuDisplayRank": [],
+            "Language": "en-us"
+          }
+        ],
+        "Properties": {
+          "FulfillmentType": "WindowsUpdate",
+          "BundledSkus": [],
+          "IsRepurchasable": false,
+          "IsTrial": true
+        },
+        "SkuId": "0011",
+        "RecurrencePolicy": null
+      },
+      "Availabilities": [
+        {
+          "Actions": [
+            "Details",
+            "License",
+            "Fulfill"
+          ],
+          "AvailabilityId": "9QVHW1D0B4QB",
+          "Conditions": {
+            "EndDate": "9998-12-30T00:00:00Z"
+          },
+          "OrderManagementData": {
+            "Price": {
+              "CurrencyCode": "USD",
+              "ListPrice": 0,
+              "MSRP": 0
+            }
+          },
+          "DisplayRank": 0,
+          "RemediationRequired": false
+        }
+      ]
+    }
+  ]
+}
