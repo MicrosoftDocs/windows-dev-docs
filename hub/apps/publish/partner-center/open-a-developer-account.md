@@ -139,14 +139,44 @@ For more details, you can refer to the steps below:
 
 1. Select **Accept and Continue** to move on to the **Payment** section.
 
+   > [!NOTE]
+   > If the **Accept and Continue** button appears disabled or unclickable, ensure all required fields are completed and allow a few seconds for form validation to complete. See the troubleshooting section below if issues persist.
+
 1. Enter your payment info for the one-time registration fee. The company account costs approximately **$99 USD**. (The fees varies depending on your [country or region](./account-types-locations-and-fees.md#developer-account-and-app-submission-markets)). If you have a promo code that covers the cost of registration, you can enter that here. Otherwise, provide your credit card info (or PayPal info in supported markets). Note that prepaid credit cards can't be used for this purchase. When you're finished, select **Pay and Register** to complete the registration.
 
 After you've completed the signup process, your account will go through the verification process. For company accounts, we check to make sure another individual or company isn't already using your publisher display name. Our verification process also needs to confirm whether you’re associated with the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](/windows/apps/publish/?tabs=msix-pwa-getting-started#get-started-with-app-submission) continue building and testing apps, and work on getting your submissions ready.
 
 You can check your verification status on the [Account settings](https://aka.ms/windowsdevaccountverification) page.
 
-> [!NOTE]
+> [!IMPORTANT]
 > There is a known issue where users in some locales might be unable to finish completing their registration. Until we can confirm that it is resolved, we recommend that you manually change your browser's locale tag to **en-us** once you begin the sign-up process on partner.microsoft.com.
+
+### Troubleshooting: "Accept and Continue" Button Issues
+
+If you're unable to click the **Accept and Continue** button during company account registration, try these solutions:
+
+> [!TIP]
+> **Common Solutions**
+> 1. **Change browser locale**: Set your browser's language to **English (United States)** before starting registration
+> 2. **Clear browser data**: Clear cookies, cache, and browsing data, then restart your browser
+> 3. **Try different browsers**: Test with Chrome, Edge, Firefox, or Safari
+> 4. **Disable browser extensions**: Temporarily disable ad blockers and other extensions
+> 5. **Check all required fields**: Ensure all mandatory fields are completed and show no validation errors
+> 6. **Wait for form validation**: Allow 2-3 seconds after filling the last field before attempting to click the button
+
+> [!NOTE]
+> **Form Validation Requirements**
+> The **Accept and Continue** button will remain disabled until:
+> - All required fields contain valid information
+> - The legal document is successfully uploaded
+> - You've accepted the App Developer Agreement checkbox
+> - All form validation checks have passed (this may take a few seconds)
+
+> [!CAUTION]
+> If the issue persists after trying the above solutions, contact [Partner Center support](https://aka.ms/windowsdevelopersupport) with:
+> - Your browser type and version
+> - Screenshots of the registration page
+> - Any error messages displayed in your browser's developer console
 
 ---
 
