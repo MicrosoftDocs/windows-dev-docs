@@ -139,6 +139,24 @@ You may be contacted by Microsoft or a partner during this period. Once verified
 ---
 
 <details>
+<summary><strong>The "Accept and Continue" button appears disabled during company registration. What should I do?</strong></summary>
+
+This is a common issue during Partner Center company account registration. Try these solutions:
+
+1. **Change browser locale:** Set your browser to English (United States) before starting registration.
+2. **Clear browser data:** Clear cookies, cache, and browsing data, then restart your browser.
+3. **Try different browsers:** Test with Chrome, Edge, Firefox, or Safari.
+4. **Disable browser extensions:** Temporarily disable ad blockers and other extensions.
+5. **Verify all fields:** Ensure all required fields are completed with no validation errors.
+6. **Wait for validation:** Allow 2-3 seconds after completing the last field for form validation to finish.
+
+The button remains disabled until all required fields are valid, the legal document is uploaded, and you've accepted the App Developer Agreement. If issues persist, contact [Partner Center support](https://aka.ms/windowsdevelopersupport).
+
+</details>
+
+---
+
+<details>
 <summary><strong>What should I do if my developer account registration fails or is not approved?</strong></summary>
 
 - Contact your Microsoft onboarding manager or Partner Center support.
