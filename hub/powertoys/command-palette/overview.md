@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 PowerToys Command Palette is a quick launcher utility that allows you to easily access all of your most frequently used commands, apps, and development tools from a single, fast solution. This customizable and extensible tool is designed for Windows power users and serves as the successor to [PowerToys Run](../run.md).
 
-To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
+Command Palette, and all other PowerToys, can be enabled or disabled on the PowerToys settings Home page. To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
 
 > [!IMPORTANT]
 > For this utility to work, the Command Palette must be enabled and running in the background.

@@ -49,6 +49,8 @@ From the Settings menu, the following options can be configured:
 | Consider loopback addresses as duplicates | When enabled, multiple loopback addresses (127.0.0.1, ::1) pointing to the same hostname are treated as duplicates. This prevents adding redundant entries and helps avoid conflicts. When disabled, you can add multiple loopback entries for the same hostname, which may be useful for testing different network configurations but could lead to unexpected behavior. |
 | Encoding | Default value is **UTF-8**. If **UTF-8 with BOM** is selected, a Byte Order Mark (BOM) is included at the start of the file. |
 
+**Note:** The Hosts File Editor can't be launched with a shortcut key. To open the Hosts File Editor, select the PowerToys icon in the system tray and select **Hosts File Editor**.
+
 ## Troubleshooting
 
 A "Failed to save hosts file" message appears if a change is made without administrator permissions:
