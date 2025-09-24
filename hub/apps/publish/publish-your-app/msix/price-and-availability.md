@@ -62,6 +62,10 @@ There are two types of trial you can choose, and you have the option to configur
 
 Choose **Time-limited** to allow customers to try your app for free for a certain number of days: **1 day**, **7 days**, **15 days**, or **30 days**. You can limit features by adding code to exclude or limit features in the trial version, or you can let customers access the full functionality during that period of time.
 
+**What happens when the trial expires:**
+- **If you don't implement trial-limiting code in your app:** The app will continue to function normally, but the Store licensing system will prevent the app from launching once the trial period expires. Users will see a dialog prompting them to purchase the app.
+- **If you implement trial-limiting code:** Your app can detect the license state and take custom actions such as displaying purchase prompts, disabling features, or closing the app gracefully.
+
 > [!NOTE]
 > Time-limited trials are not shown to customers on Windows 10 build 10.0.10586 or earlier.
 
@@ -69,11 +73,19 @@ Choose **Time-limited** to allow customers to try your app for free for a certai
 
 Choose **Unlimited** to let customers access your app for free indefinitely. You'll want to encourage them to purchase the full version, so make sure to add code to exclude or limit features in the trial version.
 
+**What happens with unlimited trials:**
+- **If you don't implement trial-limiting code:** The app will continue to function normally with full features indefinitely, making it effectively a free app.
+- **If you implement trial-limiting code:** Your app can detect the trial license state and limit functionality, display ads, or show purchase prompts to encourage users to buy the full version.
+
 ### Start and end dates
 
 By default, your trial will be available as soon as your app is published, and it will never stop being offered. If you’d like, you can specify the date and time that your trial should start to be offered and when it should stop being offered.
 
 To set dates for when your trial should be offered to customers on Windows 10 or Windows 11, change the **Starts on** and/or **Ends on** dropdown to **at**, then choose the date and time. If you do so, you can either choose **UTC** so that the time you select will be Universal Coordinated Time (UTC) time, or choose **Local** so that these times will be used in each time zone associated with a market. (Note that for markets that include more than one time zone, only one time zone in that market will be used. For the United States, the Eastern time zone is used.) You can select **Customize for specific markets** if you want to set different dates for any market(s).
+
+### Implementation guidance
+
+For detailed information on how to implement custom trial behavior in your app code, including handling license expiration events and limiting functionality, see [Implement a trial version of your app](/windows/uwp/monetize/implement-a-trial-version-of-your-app).
 
 ## Sale pricing
 
