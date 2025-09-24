@@ -93,15 +93,13 @@ Traditionally, "native" refers to applications built without using the .NET runt
 
 A dedicated on‑device AI accelerator optimized for transformer operations and other ML workloads. Windows apps can target NPUs via APIs like [DirectML](/windows/ai/directml/dml-intro).
 
-
 #### OCR
 
-Text recognition, also known as optical character recognition (OCR), is supported in Windows AI Foundry through a set of artificial intelligence (AI)-backed APIs that can detect and extract text within images and convert it into machine readable character streams. See [Get started with AI Text Recognition](/windows/ai/apis/ocr).
+Text recognition, also known as optical character recognition (OCR), is supported in Windows AI Foundry through a set of artificial intelligence (AI)-backed APIs that can detect and extract text within images and convert it into machine readable character streams. See [Get started with AI Text Recognition](/windows/ai/apis/text-recognition).
 
 #### ONNX Runtime (ORT)
 
 A high‑performance, cross‑platform inference engine for models in the ONNX format. On Windows, ORT commonly uses the DirectML execution provider for GPU/NPU acceleration. See [ONNX Runtime documentation](https://onnxruntime.ai/docs/). WindowsML uses ONNX Runtime under the hood.
-
 
 #### Packaged app
 
@@ -113,7 +111,7 @@ For definitions of apps that are packaged, unpackaged, and packaged with externa
 
 #### PowerToys
 
-A set of utilities for power users to tune and streamline their Windows experience for greater productivity. See [PowerToys documentation](https://docs.microsoft.com/windows/powertoys/).
+A set of utilities for power users to tune and streamline their Windows experience for greater productivity. See [PowerToys documentation](/windows/powertoys/).
 
 #### Progressive web app (PWA)
 
@@ -137,7 +135,7 @@ A set of recommended responsible development practices to use as you create appl
 
 #### Small language model (SLM)
 
-A compact model (for example, Microsoft Phi‑3) designed to run efficiently on client devices (CPU/GPU/NPU) with lower latency and cost, suitable for many on‑device AI scenarios. See [Small language models on Azure](/azure/ai-services/small-language-models/) and [Get started with Phi Silica](/windows/ai/apis/phi-silica).
+A compact model (for example, Microsoft Phi‑3) designed to run efficiently on client devices (CPU/GPU/NPU) with lower latency and cost, suitable for many on‑device AI scenarios. See [Get started with Phi Silica](/windows/ai/apis/phi-silica).
 
 #### Universal Windows Platform (UWP)
 
@@ -164,7 +162,7 @@ A control that allows app developers to embed web content (HTML/CSS/JS) in their
 
 #### Windows AI Foundry
 
-Windows AI Foundry offers AI-backed features and APIs on Windows 11 PCs. These features are in active development. See [What is Windows AI Foundry?](/windows/ai/windows-ai-foundry/).
+Windows AI Foundry offers AI-backed features and APIs on Windows 11 PCs. These features are in active development. See [What is Windows AI Foundry?](/windows/ai/overview).
 
 #### Windows API
 
