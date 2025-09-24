@@ -40,14 +40,14 @@ Use files to store binary data or to enable your own, customized serialized type
 ## Storing app data in the app data stores
 
 
-When an app is installed, the system gives it its own per-user data stores for settings and files. You don't need to know where or how this data exists, because the system is responsible for managing the physical storage, ensuring that the data is kept isolated from other apps and other users. The system also preserves the contents of these data stores when the user installs an update to your app and removes the contents of these data stores completely and cleanly when your app is uninstalled.
+When an app is installed, the system gives it its own per-user data stores for settings and files. You don't need to know where or how this data exists, because the system is responsible for managing the physical storage, ensuring that the data is kept isolated from other apps and other users. The system generally preserves the contents of these data stores when the user installs an update to your app, though [RoamingSettings may not persist through Microsoft Store updates](#roaming-data). For reliable data persistence through app updates, use LocalSettings instead. The system removes the contents of these data stores completely and cleanly when your app is uninstalled.
 
 Within its app data store, each app has system-defined root directories: one for local files, one for roaming files, and one for temporary files. Your app can add new files and new containers to each of these root directories.
 
 ## Local app data
 
 
-Local app data should be used for any information that needs to be preserved between app sessions and is not suitable for roaming app data. Data that is not applicable on other devices should be stored here as well. There is no general size restriction on local data stored. Use the local app data store for data that it does not make sense to roam and for large data sets.
+Local app data should be used for any information that needs to be preserved between app sessions and is not suitable for roaming app data. Data that is not applicable on other devices should be stored here as well. There is no general size restriction on local data stored. Use the local app data store for data that it does not make sense to roam and for large data sets. Local app data reliably persists through app updates, making LocalSettings the recommended choice for storing user preferences and app state that must survive Microsoft Store updates.
 
 ### Retrieve the local app data store
 
@@ -151,6 +151,9 @@ async void ReadTimestamp()
 > The recommended replacement is [Azure App Service](/azure/app-service/). Azure App Service is widely supported, well documented, reliable, and supports cross-platform/cross-ecosystem scenarios such as iOS, Android and web.
 >
 > The following documentation applies to Windows 10 versions 1909 and lower.
+
+> [!IMPORTANT]
+> RoamingSettings data may not persist through Microsoft Store app updates. For settings that must survive app updates, use [LocalSettings](/uwp/api/windows.storage.applicationdata.localsettings) instead of RoamingSettings.
 
 If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
 
