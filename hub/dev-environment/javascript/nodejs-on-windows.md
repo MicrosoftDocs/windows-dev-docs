@@ -66,9 +66,6 @@ While NVM for Windows (nvm-windows) is currently the most popular version manage
 
 To install Volta as your version manager, go to the **Windows Installation** section of their [Getting Started guide](https://docs.volta.sh/guide/getting-started), then download and run their Windows installer, following the setup instructions.
 
-> [!IMPORTANT]
-> You must ensure that [Developer Mode](/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) is enabled on your Windows machine before installing Volta.
-
 To learn more about using Volta to install multiple versions of Node.js on Windows, see the [Volta Docs](https://docs.volta.sh/guide/understanding#managing-your-toolchain).
 
 ## Install Visual Studio Code
