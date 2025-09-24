@@ -822,6 +822,8 @@
           href: ../launch-resume/add-a-splash-screen.md
         - name: Display a splash screen for more time
           href: ../launch-resume/create-a-customized-splash-screen.md
+        - name: Troubleshoot Microsoft Store app color and appearance issues
+          href: ../launch-resume/microsoft-store-color-appearance-issues.md
     - name: Auto-launching with AutoPlay
       href: ../launch-resume/auto-launching-with-autoplay.md
     - name: Launch an app for results
