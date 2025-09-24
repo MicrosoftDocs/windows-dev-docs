@@ -17,6 +17,8 @@ If your app appears differently in the Microsoft Store app compared to the web v
 ### Problem description
 Your app's background color appears correctly in the web version of the Microsoft Store (showing your custom color from the manifest), but displays as a light gray color (#464646) in the Microsoft Store app on Windows.
 
+**Example scenario**: Your app manifest specifies `BackgroundColor="#0ab68e"` (a teal/green color), which displays correctly on the Microsoft Store website, but appears as gray in the Microsoft Store app.
+
 ### Why this happens
 The Microsoft Store app and web version may render app visuals differently based on several factors:
 
