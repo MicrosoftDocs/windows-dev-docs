@@ -1,0 +1,92 @@
+<svg width="612" height="615" viewBox="0 0 612 615" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="thumbnail-calendar" clip-path="url(#clip0)">
+<rect width="612" height="615" fill="#243A5E"/>
+<g id="Rectangle" filter="url(#filter0_d)">
+<rect width="480" height="530" transform="translate(66 42)" fill="white"/>
+</g>
+<g id="Rectangle_2">
+<path d="M 0 0L 0 20L 20 20" stroke-width="4" transform="matrix(-0.707107 0.707107 -0.707107 -0.707107 472.473 94.2363)" stroke="#A6A6A6"/>
+</g>
+<g id="Rectangle_3">
+<path d="M 0 0L 0 20L 20 20" stroke-width="4" transform="matrix(0.707107 -0.707107 0.707107 0.707107 496 78.2363)" stroke="#A6A6A6"/>
+</g>
+<g id="Rectangle 2">
+<rect width="278" height="32" transform="translate(96 70)" fill="#A6A6A6"/>
+</g>
+<g id="Rectangle 3">
+<rect width="65" height="65" transform="translate(205 299)" fill="#50E6FF"/>
+</g>
+<g id="Rectangle 3.1">
+<rect width="69" height="65" transform="translate(66 162)" fill="#E9EBEF"/>
+<rect width="69" height="65" transform="translate(66 162)" fill="url(#paint0_linear)" fill-opacity="0.5" style="mix-blend-mode:overlay"/>
+</g>
+<g id="Union">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 480 0L 204 0L 204 68L 0 68L 0 137L 204 137L 207 137L 480 137L 480 0Z" transform="translate(66 435)" fill="#C8CDD7" fill-opacity="0.8" style="mix-blend-mode:multiply"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 480 0L 204 0L 204 68L 0 68L 0 137L 204 137L 207 137L 480 137L 480 0Z" transform="translate(66 435)" fill="url(#paint1_radial)" fill-opacity="0.8" style="mix-blend-mode:overlay"/>
+</g>
+<g id="Line">
+<line y1="-1.5" x2="480" y2="-1.5" stroke-width="3" transform="translate(66 162)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_2">
+<line y1="-1.5" x2="480" y2="-1.5" stroke-width="3" transform="translate(66 504)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_3">
+<line y1="-1.5" x2="480" y2="-1.5" stroke-width="3" transform="translate(66 435)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_4">
+<line y1="-1.5" x2="480" y2="-1.5" stroke-width="3" transform="translate(66 367)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_5">
+<line y1="-1.5" x2="480" y2="-1.5" stroke-width="3" transform="translate(66 299)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_6">
+<line y1="-1.5" x2="480" y2="-1.5" stroke-width="3" transform="translate(66 230)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_7">
+<line y1="-1.5" x2="410" y2="-1.5" stroke-width="3" transform="matrix(0 -1 1 0 137 572)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_8">
+<line y1="-1.5" x2="410" y2="-1.5" stroke-width="3" transform="matrix(0 -1 1 0 205 572)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_9">
+<line y1="-1.5" x2="410" y2="-1.5" stroke-width="3" transform="matrix(0 -1 1 0 273 572)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_10">
+<line y1="-1.5" x2="410" y2="-1.5" stroke-width="3" transform="matrix(0 -1 1 0 341 572)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_11">
+<line y1="-1.5" x2="410" y2="-1.5" stroke-width="3" transform="matrix(0 -1 1 0 409 572)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+<g id="Line_12">
+<line y1="-1.5" x2="410" y2="-1.5" stroke-width="3" transform="matrix(0 -1 1 0 477 572)" stroke="#EAEAEA" style="mix-blend-mode:multiply"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" x="56" y="42" width="500" height="550" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dy="10"/>
+<feGaussianBlur stdDeviation="5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-3.23125 114.182 -128.985 -118.133 99.4924 25.0663)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="paint1_radial" cx="0.5" cy="0.5" r="0.5" gradientUnits="userSpaceOnUse" gradientTransform="matrix(6.76385e-06 334 -1170.22 2.96411e-05 802.11 -167)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</radialGradient>
+
+<clipPath id="clip0">
+<rect width="612" height="615" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

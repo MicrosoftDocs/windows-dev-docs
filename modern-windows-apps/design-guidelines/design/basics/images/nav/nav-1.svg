@@ -1,0 +1,39 @@
+<svg width="614" height="344" viewBox="0 0 614 344" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="nav-1" clip-path="url(#clip0)">
+<rect width="614" height="344" fill="white"/>
+<g id="Group">
+<g id="Rectangle">
+<rect width="242.12" height="150" transform="translate(404 46) scale(-1 1)" fill="#2E99AB"/>
+</g>
+<g id="Rectangle_2">
+<rect width="274.402" height="170" transform="translate(420 67) scale(-1 1)" fill="#3CB9CD"/>
+</g>
+<g id="Rectangle_3" filter="url(#filter0_b)">
+<rect width="297" height="184" transform="translate(432 93) scale(-1 1)" fill="#50E6FF" fill-opacity="0.8"/>
+<rect width="297" height="184" transform="translate(432 93) scale(-1 1)" fill="url(#paint0_linear)" fill-opacity="0.8" style="mix-blend-mode:overlay"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_b" x="125" y="83" width="317" height="204" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="5"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+</filter>
+
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(168 142 -229.207 271.174 154.603 -93.587)">
+<stop offset="0.038674" stop-color="white" stop-opacity="0.64"/>
+<stop offset="0.348066" stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+
+<clipPath id="clip0">
+<rect width="614" height="344" fill="white"/>
+</clipPath>
+
+</defs>
+</svg>
+

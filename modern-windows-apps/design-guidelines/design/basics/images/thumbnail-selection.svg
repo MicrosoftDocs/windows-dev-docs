@@ -1,0 +1,56 @@
+<svg width="612" height="360" viewBox="0 0 612 360" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="Canvas" fill="none">
+<g id="thumbnail-selection" clip-path="url(#clip0)">
+<rect width="612" height="360" fill="#243A5E"/>
+<g id="Rectangle">
+<rect width="480" height="275.574" transform="translate(66 42)" fill="white"/>
+</g>
+<g id="Group">
+<g id="Ellipse">
+<g mask="url(#path1_ins)" transform="translate(158 157.5)">
+<ellipse cx="22.4242" cy="22.5" rx="22.4242" ry="22.5" stroke-width="10" stroke="#50E6FF"/>
+</g>
+</g>
+<g id="Ellipse_2">
+<g mask="url(#path2_ins)" transform="translate(158 225)">
+<ellipse cx="22.4242" cy="22.5" rx="22.4242" ry="22.5" stroke-width="10" stroke="#A6A6A6"/>
+</g>
+</g>
+<g id="Ellipse_3">
+<g mask="url(#path3_ins)" transform="translate(158 90)">
+<ellipse cx="22.4242" cy="22.5" rx="22.4242" ry="22.5" stroke-width="10" stroke="#A6A6A6"/>
+</g>
+</g>
+<g id="Ellipse 2">
+<ellipse cx="11.2121" cy="11.25" rx="11.2121" ry="11.25" transform="translate(169.212 168.75)" fill="#A6A6A6"/>
+</g>
+<g id="Rectangle 2.7">
+<rect width="233.212" height="18" transform="translate(220.788 103.5)" fill="#A6A6A6"/>
+</g>
+<g id="Rectangle 2.9">
+<rect width="233.212" height="18" transform="translate(220.788 238.5)" fill="#A6A6A6"/>
+</g>
+<g id="Rectangle 2.8">
+<rect width="233.212" height="18" transform="translate(220.788 171)" fill="#50E6FF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+
+<clipPath id="clip0">
+<rect width="612" height="360" fill="white"/>
+</clipPath>
+<mask id="path1_ins" fill="white">
+<ellipse cx="22.4242" cy="22.5" rx="22.4242" ry="22.5"/>
+</mask>
+<mask id="path2_ins" fill="white">
+<ellipse cx="22.4242" cy="22.5" rx="22.4242" ry="22.5"/>
+</mask>
+<mask id="path3_ins" fill="white">
+<ellipse cx="22.4242" cy="22.5" rx="22.4242" ry="22.5"/>
+</mask>
+
+</defs>
+</svg>
+

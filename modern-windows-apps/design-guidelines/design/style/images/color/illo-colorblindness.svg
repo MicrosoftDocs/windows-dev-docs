@@ -1,0 +1,49 @@
+<svg width="191" height="191" viewBox="0 0 191 191" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>illo-colorblindness</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(21568 -6688)">
+<clipPath id="clip-0" clip-rule="evenodd">
+<path d="M -21568 6688L -21377 6688L -21377 6879L -21568 6879L -21568 6688Z" fill="#FFFFFF"/>
+</clipPath>
+<g id="illo-colorblindness" clip-path="url(#clip-0)">
+<path d="M -21568 6688L -21377 6688L -21377 6879L -21568 6879L -21568 6688Z" fill="#FFFFFF"/>
+<g id="Group 17.1">
+<g id="Rectangle 15 Copy 3.1">
+<use xlink:href="#path0_fill" transform="translate(-21568 6688)" fill="#D83230"/>
+<use xlink:href="#path0_fill" transform="translate(-21568 6688)" fill="url(#paint1_linear)" fill-opacity="0.3" style="mix-blend-mode:screen"/>
+</g>
+<g id="Group 16">
+<g id="Vector" filter="url(#filter0_d)">
+<use xlink:href="#path1_fill" transform="translate(-21532 6750.75)" fill="#FF6E6E"/>
+<use xlink:href="#path1_fill" transform="translate(-21532 6750.75)" fill="url(#paint3_linear)" fill-opacity="0.3"/>
+</g>
+</g>
+</g>
+<g id="Line">
+<use xlink:href="#path2_stroke" transform="matrix(0.707107 -0.707107 0.707107 0.707107 -21528.4 6839.59)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="-21542" y="6744" width="140" height="88" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="0" dy="4"/>
+<feGaussianBlur stdDeviation="5"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint1_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1.16954e-14 191 -191 1.16954e-14 191 -1.16954e-14)">
+<stop offset="0" stop-color="#FFFFFF"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+<linearGradient id="paint3_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(14 71.0334 -77.4912 15.2728 84.7456 -43.3859)">
+<stop offset="0" stop-color="#FFFFFF"/>
+<stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+</linearGradient>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 0L 191 0L 191 191L 0 191L 0 0Z"/>
+<path id="path1_fill" d="M 92.258 9.26781C 95.6989 11.0331 99.1397 13.2397 102.15 15.8876C 106.882 19.4182 111.183 22.9488 114.624 26.9207C 115.914 28.2447 118.925 31.7753 119.355 31.7753C 120.215 32.6579 120.215 33.9818 119.355 34.8645C 118.925 35.3058 115.914 38.3951 114.624 39.7191C 110.753 43.2496 106.452 47.2215 102.15 50.7521C 88.8171 60.4612 74.1935 66.6398 59.9999 66.6398C 53.5483 66.6398 46.6666 65.3157 40.215 63.1091L 48.387 54.724C 51.8279 56.4893 55.6989 57.8133 59.9999 57.8133C 72.9032 57.8133 83.6559 46.7802 83.6559 33.5406C 83.6559 29.1273 82.3655 25.1554 80.6451 21.6248L 92.258 9.26781ZM 79.7849 3.53053C 73.3333 1.32391 66.8817 0 59.9999 0C 45.3763 0 31.1828 6.17855 17.8495 15.8876C 13.1183 19.4182 8.8171 22.9488 5.37624 26.9207C 4.08592 28.2447 1.07527 31.7753 0.645161 31.7753C -0.215054 32.6579 -0.215054 33.9818 0.645161 34.8645C 1.07527 35.3058 4.08592 38.3951 5.37624 39.7191C 9.24721 43.2496 13.5484 47.2215 17.8495 50.7521C 21.2903 52.9587 24.301 55.1654 27.7419 57.372L 39.3548 45.4562C 37.6344 41.9256 36.344 37.9538 36.344 33.5406C 36.344 20.3009 47.0967 9.26781 59.9999 9.26781C 64.301 9.26781 68.172 10.5917 71.6129 12.357L 79.7849 3.53053Z"/>
+<path id="path2_stroke" d="M 0.0185177 3.41413L 152.754 1.99991L 152.717 -1.99991L -0.0185177 -0.585701L 0.0185177 3.41413Z"/>
+</defs>
+</svg>

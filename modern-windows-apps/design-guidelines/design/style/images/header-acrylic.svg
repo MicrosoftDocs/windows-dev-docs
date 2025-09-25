@@ -1,0 +1,44 @@
+<svg width="1920" height="918" viewBox="0 0 1920 918" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g fill="none">
+<g clip-path="url(#clip0)">
+<rect width="1920" height="918" fill="#6B2929"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M 0 0L 1918.33 0L 1918.33 949.655L 0 949.655L 0 0Z" transform="translate(-1406 -554)" fill="#6B2929"/>
+<g opacity="0.6" transform="translate(225 142.354)">
+<rect width="728.165" height="493.857" fill="#D83B01"/>
+<rect width="728.165" height="493.857" fill="url(#paint0_linear)" style="mix-blend-mode:overlay"/>
+</g>
+<g filter="url(#filter0_b)">
+<rect width="565.817" height="601.468" transform="translate(700.737 221.532)" fill="#F29136" fill-opacity="0.75"/>
+</g>
+<g filter="url(#filter1_b)">
+<rect width="589.833" height="585.134" transform="translate(1105.17 94)" fill="#DEDEDE" fill-opacity="0.75"/>
+<rect width="589.833" height="585.134" transform="translate(1105.17 94)" fill="url(#paint1_linear)"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_b" x="645.737" y="166.532" width="675.817" height="711.468" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="27.5"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+</filter>
+<filter id="filter1_b" x="1050.17" y="39" width="699.833" height="695.134" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feGaussianBlur in="BackgroundImage" stdDeviation="27.5"/>
+<feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(669.769 -699.903 1031.97 464.841 -515.985 303.954)">
+<stop stop-color="#D83B01" stop-opacity="0.72"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+<linearGradient id="paint1_linear" x2="1" gradientUnits="userSpaceOnUse" gradientTransform="matrix(-228.307 585.134 -589.833 -231.768 818.14 115.884)">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0">
+<rect width="1920" height="918" fill="white"/>
+</clipPath>
+</defs>
+</svg>
