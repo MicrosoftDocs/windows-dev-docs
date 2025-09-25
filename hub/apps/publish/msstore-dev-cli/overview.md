@@ -12,7 +12,7 @@ The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, 
 
 To understand how to use the Store Developer CLI, check out the following video:
 
-[!VIDEO https://learn-video.azurefd.net/vod/player?id=cbc4aad9-e79b-4ff6-a30b-c2399c2624a3]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=cbc4aad9-e79b-4ff6-a30b-c2399c2624a3]
 
 ## Prerequisites
 

@@ -57,6 +57,9 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 
 ![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
 
+> [!NOTE]
+> Some of the keys in the drop-down list may not be present on your keyboard. For example, the <kbd>Start App 1</kbd> key is only available on keyboards that physically have a <kbd>Start App 1</kbd> key, and the <kbd>IME Mode Change</kbd> key is only available on keyboards that support Input Method Editors (IME).
+
 ### Remapping a key to a shortcut
 
 To remap a key to a shortcut (combination of keys), enter the shortcut key combination in the "To send" column.
