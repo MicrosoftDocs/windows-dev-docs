@@ -28,7 +28,7 @@ In this tutorial, you'll learn how to:
 
 To complete this tutorial, you need:
 
-- Visual Studio with Windows App SDK development workload
+- Visual Studio 2022 or later with **WinUI application development** workload
 - Basic familiarity with C# and XAML
 - Understanding of fundamental database concepts
 
@@ -64,7 +64,7 @@ We recommend that you use either [Entity Framework Core](/ef/core/) or the open-
 
 ### Entity Framework Core
 
-Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can use the same code in your Windows App SDK app and it will work with appropriate changes to the connection string.
+Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can use the same code in your WinUI app and it will work with appropriate changes to the connection string.
 
 To try it out, see [Getting Started with EF Core](/ef/core/get-started/overview/first-app).
 
@@ -76,7 +76,7 @@ The rest of this guide helps you to use this library.
 
 ## Set up your solution to use the Microsoft.Data.SQLite library
 
-We'll start with a basic Windows App SDK project, and then install the SQLite NuGet package.
+We'll start with a basic WinUI project, and then install the SQLite NuGet package. See [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) for instructions on how to create your first WinUI project.
 
 All supported versions of Windows support SQLite, so your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 
