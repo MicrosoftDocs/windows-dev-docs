@@ -1,4 +1,0 @@
-﻿LoadImage
-SendMessage
-SetWindowText
-WM_SETICON

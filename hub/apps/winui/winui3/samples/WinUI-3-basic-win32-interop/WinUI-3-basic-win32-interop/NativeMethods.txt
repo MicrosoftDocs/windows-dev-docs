@@ -1,6 +1,0 @@
-﻿GetDpiForWindow
-GetWindowLong
-SetWindowPos
-SetWindowLong
-HWND_TOP
-WINDOW_STYLE
