@@ -30,11 +30,7 @@ Who should select an individual account:
 - Individuals creating digital content as a **hobbyist, amateur, school, or personal project**
 </br>
 
-The individual account costs approximately **$19 USD**. It is a one-time registration fee. (The fees varies depending on your [country or region](./partner-center/account-types-locations-and-fees.md#developer-account-and-app-submission-markets))
-
-</br>
-
->[!VIDEO https://learn-video.azurefd.net/vod/player?id=663fa063-4205-4b88-a473-4a2782d49197]
+The registration for Individual accounts is free. 
 
 For more details, refer [steps to create individual developer account](../publish/partner-center/open-a-developer-account.md).
 
@@ -46,7 +42,7 @@ Who should select a company account:
 - **Teams or Groups** within a company or organization
 </br>
 
-The company account costs approximately **$99 USD**. It is a one-time registration fee. (The fees varies depending on your [country or region](./partner-center/account-types-locations-and-fees.md#developer-account-and-app-submission-markets))
+The company account requires a one-time registration fee of approximately **$99 USD**. (The fees varies depending on your [country or region](./partner-center/account-types-locations-and-fees.md#developer-account-and-app-submission-markets))
 
 </br>
 
