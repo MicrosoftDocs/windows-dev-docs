@@ -4,7 +4,7 @@ title: Support the Surface Dial (and other wheel devices) in your Windows app
 description: A step-by-step tutorial for adding support for the Surface Dial (and other wheel devices) to your Windows app.
 keywords: dial, radial, tutorial
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: tutorial
 
 
 ms.localizationpriority: medium

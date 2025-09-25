@@ -2,7 +2,7 @@
 description: Use this method in the Microsoft Store analytics API to download the CAB file for an error in your desktop application.
 title: Download the CAB file for an error in your desktop application
 ms.date: 03/06/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store analytics API, download CAB, desktop application
 ms.localizationpriority: medium
 ---

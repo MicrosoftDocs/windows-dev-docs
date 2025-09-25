@@ -2,7 +2,7 @@
 description: This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 title: Move to C++/WinRT from C#
 ms.date: 07/15/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#
 ms.localizationpriority: medium
 ---

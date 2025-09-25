@@ -5,7 +5,7 @@ label: Input injection
 template: detail.hbs
 keywords: device, digitizer, input, interaction, injection
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 # Simulate user input through input injection

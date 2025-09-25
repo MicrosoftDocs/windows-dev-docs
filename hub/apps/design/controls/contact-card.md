@@ -2,7 +2,7 @@
 description: Learn how to use contact cards to let users display and edit contact information, such as names, phone numbers, and addresses.
 title: Contact card
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 pm-contact: kele
 design-contact: tbd
@@ -48,7 +48,7 @@ Use the contact card when you want to display contact info for a contact. If you
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Button">open the app and see the Button in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>

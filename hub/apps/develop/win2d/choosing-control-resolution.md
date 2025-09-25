@@ -2,7 +2,7 @@
 title: Choosing control resolution
 description: An explanation of how to configure the resolution used by Win2D's XAML controls.
 ms.date: 05/26/2023
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -41,7 +41,7 @@ This scenario may arise, for instance, on a 2D sprite game that should always re
 
 Solving this doesn't strictly require writing any new Win2D code at all.
 
-The [`Viewbox`](/uwp/api/Windows.UI.Xaml.Controls.Viewbox) XAML object lets you constrain the sizes of its child visual elements, automatically adding scaling, with letterboxing or pillarboxing to preseve aspect ratios as necessary.
+The [`Viewbox`](/uwp/api/Windows.UI.Xaml.Controls.Viewbox) XAML object lets you constrain the sizes of its child visual elements, automatically adding scaling, with letterboxing or pillarboxing to preserve aspect ratios as necessary.
 
 Simply ensure your `CanvasControl`, `CanvasVirtualControl` or `CanvasAnimatedControl` is a child element of a `ViewBox`, and restrict the size of that control.
 
@@ -96,6 +96,6 @@ if(control.Dpi > dpiLimit)
 
 To ensure this setting works across DPI changes, the application should subscribe to [`DisplayInformation.DpiChanged`](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.dpichanged) and use this logic in the handler to set the DPI scale against the new DPI.
 
-This saves the app some perf overhead, exploiting the fact that users may not be able to easily percieve the reduced resolution on a high-DPI display.
+This saves the app some perf overhead, exploiting the fact that users may not be able to easily perceive the reduced resolution on a high-DPI display.
 
 The scaling performed in having a lower-than-native resolution control resource cannot guarantee control over the interpolation mode, similar to `ViewBox` mentioned above. If your app needs a particular interpolation mode, use an intermediate instead.

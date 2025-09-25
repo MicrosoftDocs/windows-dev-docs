@@ -3,7 +3,7 @@ title: Display routes and directions on a map
 description: Learn how to retrieve routes and directions using the MapRouteFinder class and display them on a MapControl in a Universal Windows Platform (UWP) app.
 ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ms.date: 06/21/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, route, map, location, directions
 ms.localizationpriority: medium
 ---
@@ -23,9 +23,6 @@ ms.localizationpriority: medium
 > [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
 Request routes and directions, and display them in your app.
-
-> [!NOTE]
-> If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app).
 
 ## An intro to MapRouteFinder results
 

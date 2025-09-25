@@ -2,7 +2,7 @@
 title: XAML property animations
 description: Learn how to animate properties on a XAML UIElement directly by using Universal Windows Platform (UWP) composition animations.
 ms.date: 09/13/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: jeffarn
@@ -34,7 +34,7 @@ Starting in Windows 10, version 1809, you can animate properties on a UIElement 
 <td>
     <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/XamlCompInterop">open the app and see Animation interop in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>

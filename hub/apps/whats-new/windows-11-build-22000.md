@@ -3,7 +3,7 @@ title: What's New for developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk
 ms.date: 5/06/2025
-ms.topic: article
+ms.topic: whats-new
 ms.localizationpriority: medium
 ---
 

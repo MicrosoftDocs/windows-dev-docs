@@ -1,7 +1,7 @@
 ---
 title: Overview of developing on Windows with Rust
 description: An overview for beginners interested in developing on Windows with Rust.
-ms.topic: article
+ms.topic: concept-article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code
 ms.localizationpriority: medium
 ms.date: 03/04/2021

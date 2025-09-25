@@ -1,7 +1,7 @@
 ---
 title: Test your app's signature with Smart App Control
 description: Enable Smart App Control and verify your app is signed correctly
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/20/2022
 ---
 
@@ -11,7 +11,7 @@ Before distributing your signed app to users, you should test your app's signatu
 
 ## Configure Smart App Control for Testing
 
-You can configure Smart App Control in the Windows Settings app, or by manually editing the Windows Registry.
+You can configure Smart App Control in Windows Settings, or by manually editing the Windows Registry.
 
 ### Configure Smart App Control using Windows Settings
 

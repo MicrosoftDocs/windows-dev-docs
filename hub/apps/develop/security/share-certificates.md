@@ -4,6 +4,7 @@ description: Learn how to authenticate multiple Windows apps using the same cert
 ms.date: 09/05/2024
 ms.topic: how-to
 keywords: windows, winui, winrt, dotnet, security
+ms.custom: sfi-image-nochange
 #customer intent: As a Windows native app developer, I want to learn how to authenticate multiple Windows apps using shared certificates, and how to import a certificate provided for access to secured services.
 ---
 

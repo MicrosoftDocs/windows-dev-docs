@@ -1,7 +1,7 @@
 ---
 title: Native Android development on Windows
 description: A step-by-step guide on how to get started developing Android native apps on Windows.
-ms.topic: article
+ms.topic: get-started
 ms.date: 11/21/2024
 ---
 

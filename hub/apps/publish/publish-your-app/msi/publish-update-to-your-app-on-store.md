@@ -16,13 +16,15 @@ You can make changes to a published app at any time. To submit updates, go to th
 
 :::image type="content" source="images/msiexe-update-app.png" lightbox="images/msiexe-update-app.png" alt-text="A screenshot showing how to submit an update for EXE/MSI app.":::
 
-Go to the required sections like [Pricing and availability](./price-and-availability.md), [Properties](./enter-app-properties.md), [Age ratings](./age-ratings.md), [Packages](./upload-app-packages.md) and [Store listing](./create-app-store-listing.md) to make the changes you'd like and save them. Then click  **Publish** on Manage Store listing page.
+Go to the required sections like [Pricing and availability](./price-and-availability.md), [Properties](./enter-app-properties.md), [Age ratings](./age-ratings.md), [Packages](./upload-app-packages.md) and [Store listing](./add-and-edit-store-listing-info.md) to make the changes you'd like and save them. Then click  **Publish** on Manage Store listing page.
 
-> [!NOTE]
->
-> ## Update package details
->
-> After updating/adding the new package details, click on Save draft. You will be back on Manage Packages page. In the list of packages, you will see your existing package or the new package has been added. Now, click on **Save All**. You will see a message that your package is uploading and after a successful upload, you will get a message as Saved Successfully.
+
+## Update package details
+
+After updating/adding the new package details, click on Save draft. You will be back on Manage Packages page. In the list of packages, you will see your existing package or the new package has been added. Now, click on **Save All**. You will see a message that your package is uploading and after a successful upload, you will get a message as Saved Successfully.
+
+>[!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/manage-and-update-your-app.md) section.
 
 > [!NOTE]
 > Any updates to EXE or MSI apps are subject to [Application Developer Agreement](/legal/windows/agreements/app-developer-agreement) and the [Microsoft Store Policies](../../store-policies.md), which may be updated from time to time. To add new functionalities that require written customer consent via your app update, you must provide notice to customers and get their written consent as required by law in the markets where you choose to distribute your app.

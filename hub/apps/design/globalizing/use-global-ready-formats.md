@@ -4,7 +4,7 @@ title: Globalize your date/time/number formats
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
 ms.date: 11/07/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---

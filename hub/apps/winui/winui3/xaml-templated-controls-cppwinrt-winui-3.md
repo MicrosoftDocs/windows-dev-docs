@@ -2,7 +2,7 @@
 description: This article walks you through creating a XAML templated control for WinUI 3 with C++/WinRT.
 title: Build XAML controls with C++/WinRT
 ms.date: 07/09/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, custom control, templated control
 ms.localizationpriority: high
 ms.custom: 19H1
@@ -48,7 +48,7 @@ namespace BgLabelControlApp
 }
 ```
 
-The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in [Custom attached properties](/windows/uwp/xaml-platform/custom-attached-properties).
+The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in [Custom attached properties](/windows/apps/develop/platform/xaml/custom-attached-properties).
 
 Note that the XAML classes referenced in the code above are in Microsoft.UI.Xaml namespaces. This is what distinguishes them as WinUI controls as opposed to UWP XAML controls, which are defined in Windows.UI.XAML namespaces.
 

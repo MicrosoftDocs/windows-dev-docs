@@ -3,7 +3,7 @@ description: Tips for creating consistent, usable apps that also demonstrate ori
 title: Balancing style and consistency (Windows app design)
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

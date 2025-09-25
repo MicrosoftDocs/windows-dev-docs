@@ -4,7 +4,7 @@ description: How to design a beautiful app icon that perfectly and clearly repre
 keywords: windows 10, uwp
 design-contact: judysa
 ms.date: 10/29/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

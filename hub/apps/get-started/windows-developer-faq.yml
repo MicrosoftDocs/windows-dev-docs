@@ -147,7 +147,7 @@ sections:
 
           - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets. 
           - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): This branch contains a WinUI note sample project that is used in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/) tutorial.
-          - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. You can also get the [WinUI Gallery in the Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC).
+          - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. You can also get the [WinUI Gallery in the Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
       - question: If I have already invested heavily in WPF, should I continue to use WPF or should I consider migrating to WinUI?
         answer: |
           If you have already invested heavily in WPF, you can continue to use WPF for your existing apps. WPF is a mature and stable framework that is widely used by developers to build Windows desktop apps.
@@ -158,7 +158,7 @@ sections:
           When developing a WPF application with .NET 9 or later, you can ensure your app matches the sleek, modern look of Windows 11. The new Fluent theme for WPF introduces a contemporary Windows 11 aesthetic to WPF applications, complete with integrated Light/Dark mode and system accent color support. This update not only modernizes the appearance of your app but also enhances user engagement by providing a polished and cohesive user experience.
       - question: My team is comfortable building WinForms apps, and it suits our needs. Should we consider migrating to WinUI or another framework?
         answer: |
-          If your team is comfortable building WinForms apps and WindForms meets your needs, you can continue to use WinForms for your existing apps. WinForms is a mature and stable framework that is widely used by developers to build Windows desktop apps.
+          If your team is comfortable building WinForms apps and WinForms meets your needs, you can continue to use WinForms for your existing apps. WinForms is a mature and stable framework that is widely used by developers to build Windows desktop apps.
 
           The WinForms team is investing across features and has an active community of contributors. Some current areas of investment include:
 

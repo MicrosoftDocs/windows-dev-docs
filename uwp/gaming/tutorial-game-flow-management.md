@@ -3,7 +3,7 @@ title: Game flow management
 description: Learn how initialize game states, handle events, and set up the game update loop.
 ms.assetid: 6c33bf09-b46a-4bb5-8a59-ca83ce257eb3
 ms.date: 06/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
 ---

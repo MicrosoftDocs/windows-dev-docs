@@ -4,7 +4,7 @@ title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5

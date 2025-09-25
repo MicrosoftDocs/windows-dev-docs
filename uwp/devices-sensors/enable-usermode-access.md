@@ -2,7 +2,7 @@
 title: Enable user mode access to GPIO, I2C, and SPI
 description: This tutorial describes how to enable user mode access to GPIO, I2C, SPI, and UART on Windows 10 and later.
 ms.date: 11/15/2023
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -803,7 +803,7 @@ Use the following samples to validate that devices work from UWP.
 
 ### Run the HLK Tests
 
-Download the [Hardware Lab Kit (HLK)](/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are availble:
+Download the [Hardware Lab Kit (HLK)](/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are available:
 
 - [GPIO WinRT Functional and Stress Tests](/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
 - [I2C WinRT Write Tests (EEPROM Required)](/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)

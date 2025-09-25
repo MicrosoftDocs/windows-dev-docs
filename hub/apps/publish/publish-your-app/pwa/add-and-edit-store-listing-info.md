@@ -6,7 +6,35 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Add and edit Store listing info for PWA
+# Add and edit Store listing info
+
+## Create store listings
+
+The **Store listings** section of the [app submission process](./create-app-submission.md) is where you provide the text and [images](./screenshots-and-images.md) that customers will see when viewing your app's listing in the Microsoft Store.
+
+Many of the fields in a **Store listing** are optional, but we suggest providing multiple images and as much info as possible to make your listing stand out. The minimum required for the **Store listings** step to be considered complete is a text description and at least one [screenshot](./screenshots-and-images.md).
+
+> [!TIP]
+> You can optionally [import and export Store listings](./import-and-export-store-listings.md) if you'd prefer to enter your listing info offline in a .csv file, rather than providing info and uploading files directly in Partner Center. Using the import and export option can be especially convenient if you have listings in many languages, since it lets you make multiple updates at once.
+
+## Manage Store listing languages
+
+You must complete the **Store listing** page for at least one language. We recommend providing a Store listing in each language that your packages support, but you have flexibility to remove languages for which you don’t wish to provide a Store listing. You can also create Store listings in additional languages which aren’t supported by your packages.
+
+> [!NOTE]
+> If your submission includes packages already, we’ll show the [languages](./app-package-requirements.md#supported-languages) supported in your packages on the app overview page (unless you remove any of them).
+
+To add or remove languages for your Store listings, click **Add/remove languages** from the app overview page. If you‘ve already uploaded packages, you’ll see their languages listed in the **Languages supported by your packages** section. To remove one or more of these languages, click **Remove**. If you later decide to include a language that you previously removed from this section, you can click **Add**.
+
+:::image type="content" source="../msix/images/msix-manage-store-listing.png" lightbox="../msix/images/msix-manage-store-listing.png" alt-text="A screenshot showing the manage store listing page for MSIX/PWA app.":::
+
+In the **Additional Store listing languages** section, you can click **Manage additional languages** to add or remove languages that are _not_ included in your packages. Check the boxes for the languages that you’d like to add, then click **Update**. The languages you’ve selected will be displayed in the **Additional Store listing languages** section. To remove one or more of these languages, click **Remove** (or click **Manage additional languages** and uncheck the box for languages you’d like to remove).
+
+:::image type="content" source="../msix/images/msix-listing-languages-pop-up.png" lightbox="../msix/images/msix-listing-languages-pop-up.png" alt-text="A screenshot showing the list of languages available for listing a MSIX/PWA app.":::
+
+:::image type="content" source="../msix/images/msix-listing-language-added.png" lightbox="../msix/images/msix-listing-language-added.png" alt-text="A screenshot showing a listing language has ben added for MSIX/PWA app.":::
+
+When you have finished making your selections, click **Save** to return to the app overview page.
 
 To edit a Store listing, select the language name from the app overview page. You must edit each language separately, unless you choose to export your Store listings and work offline, then import all of the listing data at once. For more about how that works, see [Import and export Store listings](./import-and-export-store-listings.md).
 
@@ -14,7 +42,7 @@ To edit a Store listing, select the language name from the app overview page. Yo
 
 The available fields are described below.
 
-## Product name
+### Product name
 
 This drop-down box lets you specify which name should be used in the Store listing (if you have reserved more than one name for the app).
 
@@ -25,30 +53,30 @@ If you haven't uploaded packages for the language you're working on, and you've 
 > [!NOTE]
 > The **Product name** you select only applies to the Store listing in the language you're working in. It does not impact the name displayed when a customer installs the app; that name comes from the manifest of the package that gets installed. To avoid confusion, we recommend that each language's package(s) and Store listing use the same name.
 
-## Description
+### Description
 
 The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
 
-For some tips on making your description stand out, see [Write a great app description](./write-great-app-description.md).
+For some tips on making your description stand out, see [How can I write an effective app description for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.
 
-## What's new in this version
+### What's new in this version
 
 If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customers know what's changed in the latest release. This field has a 1500 character limit. (Previously, this field was called **Release notes**).
 
-## Product features
+### Product features
 
 These are short summaries of your app's key features. They are displayed to the customer as a bulleted list in the **Features** section of your app's Store listing, in addition to the **Description**. Keep these brief, with just a few words (and no more than 200 characters) per feature. You may include up to 20 features.
 
 > [!NOTE]
 > These features will appear bulleted in your Store listing, so don't add your own bullets.
 
-## Screenshots
+### Screenshots
 
 One screenshot is required in order to submit your app. We recommend providing at least four screenshots for each device type that your app supports so that people can see how the app will look on their device type.
 
 For more info, see [App screenshots and images](./screenshots-and-images.md).
 
-## Store logos
+### Store logos
 
 Store logos are optional images that you can upload to enhance the way your app is displayed to customers. You can also optionally specify that only images you upload here should be used in your app’s Store listing for customers on Windows 10 or Windows 11 (including Xbox), rather than allowing the Store to use logo images from your app’s packages.
 
@@ -57,7 +85,7 @@ Store logos are optional images that you can upload to enhance the way your app 
 
 For more info, see [Store logos](./screenshots-and-images.md#store-logos).
 
-## Trailers and additional assets
+### Trailers and additional assets
 
 You can submit additional assets for your product, including video trailers and promotional images. These are all optional, but we recommend that you consider uploading as many of them as possible. These images can help give customers a better idea of what your product is and make a more enticing listing.
 
@@ -73,12 +101,6 @@ A shorter version of your product’s name. If provided, this shorter name may a
 
 This field has a 50 character limit.
 
-### Sort title
-
-If your product could be alphabetized or spelled in different ways, you can enter another version here. This allows customers to find your product more quickly if they type that version in while searching.
-
-This field has a 255 character limit.
-
 ### Voice title
 
 An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset.
@@ -93,11 +115,36 @@ For games, the short description may also appear in the Information section of t
 
 For best results, keep your short description under 270 characters. The field has a 1000 character limit, but in some views, only the first 270 characters will be shown (with a link available to view the rest of the short description).
 
-### Additional system requirements
+## Additional information
 
-If needed, you can describe the hardware configurations that your app requires to work properly (beyond the info you provided in the **System requirements** section in [App properties](./enter-app-properties.md#system-requirements)). This is especially important if your app requires hardware that might not be available on every computer. For instance, if your app will only work properly with external USB hardware such as a 3D printer or microcontroller, we suggest entering those here. The info you enter will be shown to customers viewing your app's Store listing on Windows 10, version 1607 or later (including Xbox), along with the requirements you indicated on the product's properties page.
+The items described below help customers discover and understand your product.
 
-You can enter up to 11 items for both **Minimum hardware** and **Recommended hardware**. These are displayed to the customer as a bulleted list in your Store listing. Keep these brief, with just a few words (and no more than 200 characters) per item.
+:::image type="content" source="../msix/images/msix-additional-info.png" lightbox="../msix/images/msix-additional-info.png" alt-text="A screenshot showing additional information requirements for listing of a MSIX/PWA app.":::
 
-> [!NOTE]
-> Your additional system requirements will appear bulleted in your Store listing, so don't add your own bullets.
+## Keywords
+
+Keywords (formerly called Search terms) are single words or short phrases that are not displayed to customers, but can help your make your app discoverable in the Store when customers search using those keywords. You can include up to 7 keywords with a maximum of 40 characters each, and can use no more than 21 separate words across all keywords.
+
+When adding keywords, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Be sure not to use any keywords that are not actually relevant to your app.
+
+You can also use AI-Generated keywords for your app. You just need to enter the app description and AI will recommend you keywords for your app. You will see the recommended keywords in the keyword field dropdown. You can click on any recommended keyword to add it to your app submission.
+
+## Copyright and trademark info
+
+If you'd like to provide additional copyright and/or trademark info, enter it here. This field has a 200 character limit.
+
+## Additional license terms
+
+Leave this field blank if you want your app to be licensed to customers under the terms of the **Standard Application License Terms** (which are linked to from the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)).
+
+If your license terms are different from the **Standard Application License Terms**, enter them here.
+
+If you enter a single URL into this field, it will be displayed to customers as a link that they can click to read your additional license terms. This is useful if your additional license terms are very long, or if you want to include clickable links or formatting in your additional license terms.
+
+You can also enter up to 10,000 characters of text in this field. If you do that, customers will see these additional license terms displayed as plain text.
+
+## Developed by
+
+Enter text here if you want to include a **Developed by** field in your app's Store listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a value for the **Developed by** field.)
+
+This field has a 255 character limit.

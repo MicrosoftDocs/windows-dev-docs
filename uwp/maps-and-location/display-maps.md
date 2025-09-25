@@ -3,7 +3,7 @@ title: Display maps with 2D, 3D, and Streetside views
 description: You can show a map in light dismissable window called a map *place card* or in a full featured map control.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
 ms.date: 05/27/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, map, location, map control, map views
 ms.localizationpriority: medium
 ---
@@ -89,9 +89,6 @@ private void SpaceNeedle_Click(object sender, RoutedEventArgs e)
 Use a map control to show rich and customizable map data in your app. A map control can display road maps, aerial, 3D, views, directions, search results, and traffic. On a map, you can display the user's location, directions, and points of interest. A map can also show aerial 3D views, Streetside views, traffic, transit, and local businesses.
 
 Use a map control when you want a map within your app that allows users to view app-specific or general geographic information. Having a map control in your app means that users don't have to go outside your app to get that information.
-
-> [!NOTE]
-> If you don't mind users going outside your app, consider using the Windows Maps app to provide that information. Your app can launch the Windows Maps app to display specific maps, directions, and search results. For more info, see [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app).
 
 ### Add a map control to your app
 

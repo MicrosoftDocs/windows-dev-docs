@@ -3,7 +3,7 @@ description: Your tiles and toasts can load strings and images tailored for disp
 title: Tile and toast notification support for language, scale, and high contrast
 template: detail.hbs
 ms.date: 08/08/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---

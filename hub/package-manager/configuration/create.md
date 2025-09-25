@@ -62,16 +62,18 @@ properties:
       settings:
         MinVersion: '10.0.22000'
   resources:
-    - resource: Microsoft.Windows.Developer/DeveloperMode
+    - resource: Microsoft.Windows.Settings/WindowsSettings
       directives:
         description: Enable Developer Mode
         allowPrerelease: true
+        securityContext: elevated
       settings:
-        Ensure: Present
+        DeveloperMode: true
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vsPackage
       directives:
         description: Install Visual Studio 2022 Community
+        securityContext: elevated
       settings:
         id: Microsoft.VisualStudio.2022.Community
         source: winget
@@ -81,6 +83,7 @@ properties:
       directives:
         description: Install required VS workloads from vsconfig file
         allowPrerelease: true
+        securityContext: elevated
       settings:
         productId: Microsoft.VisualStudio.Product.Community
         channelId: VisualStudio.17.Release
@@ -99,7 +102,7 @@ The components of this file consist of:
 
 4. **Resources**: Both the `assertions` and `resources` list sections consist of individual `resource` nodes to represent the set up task. The `resource` should be given the name of the PowerShell module followed by the name of the module's DSC resource that will be invoked to apply your desired state: `{ModuleName}/{DscResource}`. Each resource must include `directives` and `settings`. Optionally, it can also include an `id` value. When applying a configuration, WinGet will know to install the module from the [PowerShell Gallery](https://www.powershellgallery.com/packages) and invoke the specified [DSC resource](/powershell/dsc/concepts/resources).
 
-5. **Directives**: The `directives` section provides information about the module and the resource. This section should include a `description` value to describe the configuration task being accomplished by the module. The `allowPrerelease` value enables you to choose whether or not the configuration will be allowed (`true`) to use "Prerelease" modules from the [PowerShell Gallery](https://www.powershellgallery.com/packages).
+5. **Directives**: The `directives` section provides information about the module and the resource. This section should include a `description` value to describe the configuration task being accomplished by the module. The `allowPrerelease` value enables you to choose whether or not the configuration will be allowed (`true`) to use "Prerelease" modules from the [PowerShell Gallery](https://www.powershellgallery.com/packages). Some DSC resources may need to run with administrator privileges. The `securityContext: elevated` field under the directives section of a resource indicates this requirement. When set to `elevated`, WinGet will prompt for one UAC approval at the start of the configuration. WinGet will then launch two processes: one that runs resources with elevated privileges and another that runs resources with the current user's privileges.
 
 6. **Settings**: The `settings` value of a resource represents the collection of name-value pairs being passed to the PowerShell DSC Resource. Settings could represent anything from whether Developer Mode is enabled, to applying a reg key, or to establishing a particular network setting.
 

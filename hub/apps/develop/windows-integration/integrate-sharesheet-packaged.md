@@ -1,7 +1,7 @@
 ---
 description: Discover how to integrate packaged apps with the Windows Share.
 title: Integrate packaged apps with Windows Share
-ms.topic: article
+ms.topic: how-to
 ms.date: 04/16/2024
 ms.localizationpriority: medium
 ---

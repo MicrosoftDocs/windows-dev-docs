@@ -1,7 +1,7 @@
 ---
 title: 'Tutorial: Node.js on Windows for beginners'
 description: A guide to help beginners get started with Node.js development on Windows.
-ms.topic: article
+ms.topic: tutorial
 keywords: NodeJS beginners tutorial, Node.js for beginners, windows 10, microsoft, learning nodejs, node on windows, node on windows for beginners, develop with node on windows, developer with nodejs on windows
 ms.localizationpriority: medium
 ms.date: 03/30/2021

@@ -1,8 +1,8 @@
 ---
 title: Package your app using single-project MSIX
 description: This article provides instructions for how to generate an MSIX desktop app via a single project in Visual Studio.
-ms.topic: article
-ms.date: 01/10/2023
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: windows, win32, desktop development, Windows App SDK, msix, packaging project, single project, single project msix, winui 3
 ms.localizationpriority: medium
 ---
@@ -44,9 +44,7 @@ The single-project MSIX packaging tools include Visual Studio project templates 
 
   - **Visual Studio 2022 prior to version 17.1:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17).
 
-  - **Visual Studio 2019:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2019 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools). The extension requires Visual Studio 2019 version 16.10.x or later.
-
-You can then, in Visual Studio, confirm that you have the extension installed. Click **Extensions** > **Manage Extensions** > **Installed** > **All**, and confirm that *Single-project MSIX Packaging Tools* is listed.
+To confirm that you have the extension installed, click **Extensions** > **Manage Extensions** > **Installed** > **All** and check that *Single-project MSIX Packaging Tools* is listed.
 
 ## Create a new project
 
@@ -122,16 +120,6 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
         ```
 
     4. Save and close the **launchSettings.json** file.
-
-    **For Visual Studio 2019**:
-
-    1. In **Solution Explorer**, right-click the project node for your application, and select **Properties**.
-
-    2. Select the **Debug** tab and set the **Launch** property to **MsixPackage**. You might have to select this twice if it reverts back on the first attempt.
-
-        [![Enabling MsixProject option](images/single-project-msixpackageoption.png) ](images/single-project-msixpackageoption.png#lightbox)
-
-    3. Save your changes.
 
 #### [C++](#tab/cpp)
 

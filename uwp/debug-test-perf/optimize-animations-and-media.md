@@ -2,8 +2,8 @@
 ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
 title: Optimize animations, media, and images
 description: Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
-ms.date: 02/08/2017
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

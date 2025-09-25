@@ -6,7 +6,7 @@ label: Identify input devices
 template: detail.hbs
 keywords: device, digitizer, input, interaction
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

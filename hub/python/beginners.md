@@ -1,8 +1,9 @@
 ---
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
-ms.topic: article
-ms.date: 03/25/2025
+ms.topic: get-started
+ms.date: 07/03/2025
+ms.custom: copilot-scenario-highlight
 ---
 
 # Get started using Python on Windows for beginners
@@ -206,6 +207,23 @@ Try adjusting some of the numbers to see what effect they have on your bouncing 
 
 Read more about writing games with pygame at [pygame.org](http://www.pygame.org).
 
+### Use AI to enhance the game with additional features
+
+You can use AI tools, such as GitHub Copilot, to generate code that updates the bouncing ball game with new interactive features, improved behaviors, and smoother animations. You can customize the prompt to suit your requirements.
+
+The following text shows an example prompt for Copilot Chat:
+
+```copilot-prompt
+Update the pygame bouncing ball code to:
+- Add a vertical wall in the center that the ball bounces off
+- Ensure the ball can bounce off the center wall and continue moving, not get stuck next to it
+- Cycle through different colors each time the ball bounces
+- Reduce movement speed from 1 to 0.5 pixels per frame
+- Add frame rate control for 60 FPS
+```
+
+GitHub Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://aka.ms/copilot-general-use-faqs).
+
 ## Resources for continued learning
 
 We recommend the following resources to support you in continuing to learn about Python development on Windows.
@@ -221,3 +239,8 @@ We recommend the following resources to support you in continuing to learn about
 - [Debugging Python](https://code.visualstudio.com/docs/python/debugging): Debugging is the process of identifying and removing errors from a computer program. This article covers how to initialize and configure debugging for Python with VS Code, how to set and validate breakpoints, attach a local script, perform debugging for different app types or on a remote computer, and some basic troubleshooting.
 
 - [Unit testing Python](https://code.visualstudio.com/docs/python/unit-testing): Covers some background explaining what unit testing means, an example walkthrough, enabling a test framework, creating and running your tests, debugging tests, and test configuration settings.
+
+## Related content
+
+- [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
+- [GitHub Copilot in Visual Studio](/visualstudio/ide/visual-studio-github-copilot-install-and-states)

@@ -6,7 +6,7 @@ label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
 ms.date: 04/03/2025
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 dev_langs:
 - csharp

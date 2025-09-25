@@ -2,10 +2,11 @@
 title: Quickstart - Create a Windows on Arm VM in the Azure portal
 description: In this quickstart, you learn how to use the Azure portal to create a Windows on Arm virtual machine
 ms.date: 11/13/2024
-ms.topic: article
+ms.topic: quickstart
 ms.service: windows
 ms.subservice: arm
 ms.reviewer: jcoliz
+ms.custom: sfi-image-nochange
 ---
 
 # Quickstart: Create a Windows on Arm virtual machine in the Azure portal (Preview)

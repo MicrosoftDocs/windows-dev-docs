@@ -1,9 +1,9 @@
-﻿---
+---
 title: Get response info for reviews
 description: Use this method in the Microsoft Store reviews API to determine whether you can respond to a particular review, or whether you can respond to any review for a given app.
 ms.assetid: fb6bb856-7a1b-4312-a602-f500646a3119
 ms.date: 07/14/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store reviews API, response info
 ms.localizationpriority: medium
 ---

@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
-ms.date: 04/10/2025
+ms.date: 09/22/2025
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.localizationpriority: medium
 ---
@@ -16,9 +16,9 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 
 |           | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                        |
 | --------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- |
-| **✅**    | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                            | Yes        | [1.7.2 (1.7.250513003)](stable-channel.md#version-172-17250513003) (05/19/2025)                       |
-| **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                            | No         | [1.7.0-preview1](preview-channel.md#version-17-preview-1-17-preview1) (02/11/2025)                    |
-| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.8.0-experimental2](experimental-channel.md#version-18-experimental-180-experimental2) (05/19/2025) |
+| **✅**    | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                            | Yes        | [1.8.1 (1.8.250916003)](stable-channel.md#version-181-18250916003) (09/22/2025)                       |
+| **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                            | No         | [Version 1.8 Preview (1.8-preview)](preview-channel.md#version-18-preview-18-preview) (08/19/2025)                    |
+| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.8.0-experimental4](experimental-channel.md#version-18-experimental-180-experimental4) (07/08/2025) |
 
 For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
 
@@ -51,8 +51,9 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
 | ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
-| 1.7                     | 03/18/2025            | 1.7.250513003        | 05/19/2025         | Current        | 03/18/2026       |
-| 1.6                     | 09/04/2024            | 1.6.250430001        | 05/13/2025         | Maintenance    | 09/04/2025       |
+| 1.8                     | 09/09/2025            | 1.8.250916003        | 09/22/2025         | Current        | 09/09/2026       |
+| 1.7                     | 03/18/2025            | 1.7.250909003        | 09/16/2025         | Maintenance    | 03/18/2026       |
+| 1.6                     | 09/04/2024            | 1.6.250602001        | 06/10/2025         | Out of Support | 09/04/2025       |
 | 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |
 | 1.4                     | 08/29/2023            | 1.4.240802001        | 08/13/2024         | Out of Support | 08/29/2024       |
 | 1.3                     | 04/12/2023            | 1.3.230724000        | 07/25/2023         | Out of Support | 04/12/2024       |

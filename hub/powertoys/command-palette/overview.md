@@ -1,7 +1,7 @@
 ---
-title: PowerToys Command Palette utility for Windows
-description: Command Palette is a quick launcher for power users that contains additional features without sacrificing performance.
-ms.date: 2/4/2025
+title: PowerToys Command Palette Utility for Windows
+description: Learn how to use PowerToys Command Palette, a quick launcher for Windows power users. Access apps, commands, and tools instantly with customizable shortcuts and extensions.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: Learn about the PowerToys Command Palette utility and how to use it.
@@ -9,14 +9,14 @@ no-loc: [PowerToys, Windows, Insider]
 
 # PowerToys Command Palette utility
 
-PowerToys Command Palette allows you to easily access all of your most frequently used commands, apps, and development tools - all from a single solution that is fast, customizable to your unique preferences, and extensible to include your favorite apps. The Command Palette is intended to be the successor of [PowerToys Run](../run.md).
+PowerToys Command Palette is a quick launcher utility that allows you to easily access all of your most frequently used commands, apps, and development tools from a single, fast solution. This customizable and extensible tool is designed for Windows power users and serves as the successor to [PowerToys Run](../run.md).
 
-To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
+Command Palette, and all other PowerToys, can be enabled or disabled on the PowerToys settings Home page. To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
 
 > [!IMPORTANT]
 > For this utility to work, the Command Palette must be enabled and running in the background.
 
-![PowerToys Command Palette demo opening web searches and git information](../../images/pt-cmdpal-overview1.gif)
+:::image type="content" source="../../images/pt-cmdpal-overview1.gif" alt-text="An animated GIF of PowerToys Command Palette interface showing web search and git information features in action.":::
 
 ## Features
 
@@ -35,7 +35,7 @@ Command Palette features include:
 
 You can open the settings page by using the **Settings** button in the Command Palette:
 
-![A screenshot of Command Palette with the Settings button highlighted with a red border](../../images/command-palette/cmdpal-settings.png)
+:::image type="content" source="../../images/command-palette/cmdpal-settings.png" alt-text="An animated GIF of Command Palette interface with the Settings button highlighted in red.":::
 
 The following general options are available on the Command Palette settings page.
 

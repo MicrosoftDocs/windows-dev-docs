@@ -28,17 +28,17 @@ For example, when using a tab panel, consider making it a *navigation* landmark.
 
 Whether within a landmark or even outside a landmark, consider annotating sub-elements as headings with logical heading levels.
 
-## The Windows Settings app
+## Windows Settings
 
-The following image shows the **Ease of Access** page in a previous version of the Windows Settings app.
+The following image shows the **Ease of Access** page in a previous version of Windows Settings.
 
-![Ease of Access page in the Windows settings app](images/ease-of-access-settings.png)  
+![Ease of Access page in Windows settings](images/ease-of-access-settings.png)  
 
 For this page, the search edit box is wrapped within a search landmark, the navigation elements on the left are wrapped within a navigation landmark, and the main content on the right is wrapped within a main content landmark.
 
 Within the navigation landmark there is a main group heading called **Ease of Access** (heading level 1) with sub-options of **Vision**, **Hearing**, and so on (heading level 2). Within the main content, **Display** is set to heading level 1 with sub-groups such as **Make everything bigger** set to heading level 2.
 
-The Settings app would be accessible without landmarks and headings, but it becomes much more usable with them. In this case, a user with a screen reader can quickly get to the group (landmark) they're interested in, and from there they can then quickly get to the sub-group (heading).
+Windows Settings would be accessible without landmarks and headings, but it becomes much more usable with them. In this case, a user with a screen reader can quickly get to the group (landmark) they're interested in, and from there they can then quickly get to the sub-group (heading).
 
 ## Usage
 

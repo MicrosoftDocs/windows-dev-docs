@@ -114,7 +114,7 @@ WinUI 3 is the latest generation of WinUI. WinUI 2 and 3 share many of the same 
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 3 Gallery app](https://www.microsoft.com/store/productId/9P3JFPWWDZRC)
+- Samples: [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
 
 ### [WinUI 2 for UWP](#tab/winui-2)
 
@@ -141,7 +141,7 @@ WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
+- Samples: [WinUI 2 Gallery app](https://apps.microsoft.com/detail/9MSVH128X2ZT)
 
 ### [WPF](#tab/wpf)
 
@@ -216,7 +216,7 @@ For more information on these UI frameworks, see the following documentation:
 
 For information about the fundamentals of building user interfaces for Windows apps, see the following articles.
 
-* WinRT APIs: [Layout](/windows/uwp/design/layout/), [Style](/windows/uwp/design/style/), [Motion](/windows/uwp/design/motion/), [Visual layer](/windows/uwp/composition/visual-layer), [XAML platform](/windows/uwp/xaml-platform/)
+* WinRT APIs: [Layout](/windows/uwp/design/layout/), [Style](/windows/uwp/design/style/), [Motion](/windows/uwp/design/motion/), [Visual layer](/windows/uwp/composition/visual-layer), [XAML platform](/windows/apps/develop/platform/xaml/)
 * Win32 APIs: [Desktop user interface](/windows/win32/windows-application-ui-development), [Desktop environment and shell](/windows/win32/user-interface), [UWP Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md), [Windows and messages](/windows/win32/winmsg/windowing), [Menus and other resources](/windows/win32/menurc/resources), [High DPI](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows)
 * .NET APIs: [Windows in WPF](/dotnet/framework/wpf/app-development/windows-in-wpf-applications), [Create a Windows Form](/dotnet/framework/winforms/creating-a-new-windows-form), [Navigation overview](/dotnet/framework/wpf/app-development/navigation-overview), [XAML in WPF](/dotnet/framework/wpf/advanced/xaml-in-wpf), [Visual layer programming](/dotnet/framework/wpf/graphics-multimedia/visual-layer-programming)
 

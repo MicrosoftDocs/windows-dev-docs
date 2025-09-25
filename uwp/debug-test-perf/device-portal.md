@@ -1,9 +1,10 @@
 ---
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 01/15/2025
+ms.date: 07/14/2025
 ms.topic: article
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Windows Device Portal overview

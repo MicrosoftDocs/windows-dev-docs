@@ -1,16 +1,17 @@
 ---
-title: PowerToys Group Policy
-description: Group policy documentation for PowerToys
-ms.date: 07/06/2024
-ms.topic: article
+title: Configure PowerToys with Group Policy Settings
+description: Learn how to configure and manage PowerToys utilities using Group Policy settings, administrative templates, and registry configurations for enterprise environments.
+ms.date: 08/20/2025
+ms.topic: how-to
 no-loc: [PowerToys, Windows, Group Policy, Win]
+# customer intent: As a Windows power user, I want to learn how to configure PowerToys using Group Policy settings.
 ---
 
-# Group Policies
+# PowerToys Group Policy configuration
 
-Since version 0.64, PowerToys is released on GitHub with Administrative Templates that allows you to configure PowerToys using Group Policies.
+PowerToys Group Policy configuration allows administrators to manage PowerToys utilities across enterprise environments using administrative templates. Since version 0.64, PowerToys includes ADMX files that enable centralized configuration of all PowerToys features through Group Policy settings.
 
-## How to install
+## Install PowerToys administrative templates
 
 ### Download
 

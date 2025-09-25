@@ -3,7 +3,7 @@ description: How surfaces are arranged to create depth and hierarchy in Windows
 title: Layering and elevation in Windows
 ms.assetid: E00B6D9A-C8AA-4E6E-ADC4-13303AC290D9
 ms.date: 06/24/2021
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 11, design, ui, uiux, layering, elevation, shadows
 ms.localizationpriority: medium
 ---

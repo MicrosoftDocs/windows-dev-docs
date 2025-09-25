@@ -1,7 +1,7 @@
 ---
 title: Tutorial--Create a simple photo viewer with WinUI 3
 description: In this topic we walk through the process of building a simple WinUI 3 app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
-ms.topic: article
+ms.topic: tutorial
 ms.date: 08/19/2024
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
 ms.localizationpriority: medium
@@ -903,7 +903,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
         ...
     ```
 
-    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
+    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping).
 
     Now that we've set an `x:DataType`, we can use `x:Bind` data-binding expressions in the data template to bind to properties of the data type we specified (**ImageFileInfo**, in this case).
 
@@ -919,7 +919,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 
     An `x:Bind` expression links the value of a UI property with the value of a **data-object** property. Of course, that depends on first setting `x:DataType` to the type of that **data-object** so that the tooling and the runtime know what properties are available to bind to.
 
-    For more info, see [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
+    For more info, see [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
 
 1. In the same way, replace the values of the other **TextBlock**s and the **RatingControl**. Here's the result:
 

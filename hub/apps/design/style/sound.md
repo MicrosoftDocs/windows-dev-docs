@@ -5,7 +5,7 @@ title: Sound
 template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 ms.date: 05/19/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: mattben
@@ -28,7 +28,7 @@ There are many ways to use sound to enhance your app. You can use to sound to su
 <td>
     <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Sound">open the app and see Sound in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>

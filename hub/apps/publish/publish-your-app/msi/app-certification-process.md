@@ -79,7 +79,7 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 - Provide any necessary info required to use your app, such as the username and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
 - Configure your app's installer to provide your app’s information such as ProductName, Publisher Name, Default Language, Version info (as applicable) in places where customers expect to find such information such as ‘Add/Remove Programs’ in Windows. This information is part of your app’s installer package. See [setting installer properties](/windows/win32/msi/property-reference#product-information-properties) for more details on how to set properties for your Windows installer
 - Include a privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md#105-personal-information).
-- Make sure that your app's description clearly represents what it does. For help, see our guidance on [writing a great app description](./write-great-app-description.md).
+- Make sure that your app's description clearly represents what it does. For help, see our guidance on [writing a great app description](../../faq/submit-your-app.md)
 - Do not declare your app as accessible unless you have specifically engineered and tested it for accessibility scenarios.
 - Review the [Microsoft Store Policies](../../store-policies.md) to ensure your app meets all the requirements listed there.
 
@@ -97,3 +97,7 @@ When the certification process is complete, if it did not pass, you'll receive a
 Your app will be published after it is certified. When this phase has begun, you can no longer cancel your submission.
 
 We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all the [Microsoft Store Policies](../../store-policies.md). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Microsoft Store.
+
+
+>[!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/get-your-app-certified.md) section.

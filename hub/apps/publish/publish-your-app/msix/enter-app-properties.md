@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Enter app properties for MSIX app
+# Enter app properties
 
 The **Properties** page of the [app submission process](./create-app-submission.md) is where you define your app's category and enter other info and declarations. Be sure to provide complete and accurate details about your app on this page.
 
@@ -18,7 +18,12 @@ You must indicate the category (and subcategory/genre, if applicable) which the 
 
 For more info, see [Category and subcategory table](./categories-and-subcategories.md).
 
-## Support info
+## Privacy policy
+You must indicate whether your app accesses, collects, or transmits personal information. If it does, providing a valid privacy policy URL is required. If it doesn’t, the URL is optional—however, Microsoft may still require one based on the capabilities declared in your app package. Failure to include a required privacy policy may result in certification failure.
+
+For more details, see [Privacy policy for your MSIX app](./support-info.md).
+
+### Support info
 
 This section lets you provide info such as Privacy policy URL, website and support contact info to help customers understand more about your app and how to get support. You are responsible for ensuring your app complies with applicable privacy laws and regulations, and for providing a valid privacy policy URL here if required.
 

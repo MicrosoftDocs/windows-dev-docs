@@ -5,7 +5,7 @@ label: Surface Dial interactions
 template: detail.hbs
 keywords: Surface Dial, Windows wheel, RadialController, Radial controller, user interaction, input
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 
 
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
@@ -326,7 +326,7 @@ The Surface Dial cannot detect which hand is being used, but the user can set th
 
 **Locale should be considered for all rotation interactions**
 
-Maximize customer satisfaction by accomodating and adapting your interactions to locale and right-to-left layouts.
+Maximize customer satisfaction by accommodating and adapting your interactions to locale and right-to-left layouts.
 
 The built-in tools and commands on the Dial menu follow these guidelines for rotation-based interactions:
 

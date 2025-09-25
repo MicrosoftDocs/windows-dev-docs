@@ -24,4 +24,4 @@ The **IFilters** interface is used to manage the filters in the Command Palette.
 
 | Method | Description |
 | :--- | :--- |
-| [Filters()](ifilters_filters.md) | Retrieves a list of available filters in the Command Palette. This method is used to get the filters that can be applied to the items displayed in the Command Palette. |
+| [GetFilters()](ifilters_getfilters.md) | Retrieves a list of available filters in the Command Palette. This method is used to get the filters that can be applied to the items displayed in the Command Palette. |

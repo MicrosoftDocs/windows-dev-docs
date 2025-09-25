@@ -1,7 +1,7 @@
 ---
 title: Handle Microsoft Copilot hardware key state changes
 description: Learn how to register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed. 
-ms.topic: article
+ms.topic: how-to
 ms.date: 10/25/2024
 ms.localizationpriority: medium
 ---
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 This article describes how apps can register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed, pressed and held, and released. This feature enables apps to perform different actions depending on which key state change is detected. For example, an app may perform normal activation when the key is single-pressed, but take a screenshot when the key is pressed and held. Or, an app may begin recording audio and show a status indicator that audio is being recorded when the key is pressed and held, and then stop recording audio when the key is released. The key must be pressed and held for at least 300 ms to move into the held state.
 
-This feature extends the features of a basic Microsoft Copilot hardware key provider, which simply registers to be launched when the hardware key is pressed. For more information, see [Microsoft Copilot hardware key providers](microsoft-copliot-key-provider.md).
+This feature extends the features of a basic Microsoft Copilot hardware key provider, which simply registers to be launched when the hardware key is pressed. For more information, see [Microsoft Copilot hardware key providers](microsoft-copilot-key-provider.md).
 
 The rest of this article will walk through creating a simple C# WinUI 3 app that responds to activation initiated by a single press or a press and hold and release of the Microsoft Copilot button.
 
@@ -101,7 +101,7 @@ The following example shows the **uap:Extension** registering the URI scheme "my
 
 An app must be packaged in order to register as a Microsoft Copilot hardware key provider. For information on app packaging, see [An overview of Package Identity in Windows app](/windows/apps/desktop/modernize/package-identity-overview). Microsoft Copilot hardware key providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.copilotkeyprovider". To support the key state changes, apps must provide some additional entries to their **uap3:AppExtension** declaration.
 
-Inside of the **uap3:AppExtension** element, add a [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual) element with child elements **PressAndHoldStart** and **PressAndHoldStop**. The contents of these elements should be the URI of the protocol scheme registered in the manifest in the previous step. The query string arguments specify whether the URI is being launched because the user pressed and held the hot key or because the user released the hot key. The app uses these query string values during app activation to determine the correct action to take.
+Inside of the **uap3:AppExtension** element, add a [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual) element with child elements **PressAndHoldStart** and **PressAndHoldStop**. The contents of these elements should be the URI of the protocol scheme registered in the manifest in the previous step. The query string arguments specify whether the URI is being launched because the user pressed and held the hot key or because the user released the hot key. The app uses these query string values during app activation to determine the correct action to take. Specifying the **SingleTap** element is optional but can be useful to determine if the app was launched from the Copilot hardware key.
 
 ```xml
 <!-- Package.appxmanifest -->
@@ -115,8 +115,9 @@ Inside of the **uap3:AppExtension** element, add a [uap3:Properties](/uwp/schema
       Description="App description" 
       PublicFolder="Public"> 
       <uap3:Properties> 
-        <PressAndHoldStart>myapp-copilothotkey:?state=Down</PressAndHoldStart> 
-        <PressAndHoldStop>myapp-copilothotkey:?state=Up</PressAndHoldStop> 
+        <SingleTap>myapp-copilothotkey://?state=Tap</SingleTap>
+        <PressAndHoldStart>myapp-copilothotkey://?state=Down</PressAndHoldStart> 
+        <PressAndHoldStop>myapp-copilothotkey:?//state=Up</PressAndHoldStop> 
       </uap3:Properties> 
     </ uap3:AppExtension> 
   </uap3:Extension> 
@@ -168,7 +169,7 @@ To add support for fast path invocation, update the "com.microsoft.windows.copil
     Description="App description"
     PublicFolder="Public">
     <uap3:Properties>
-      <SingleTap MessageWParam="0"/>
+      <SingleTap MessageWParam="0">myapp-copilothotkey://?state=Tap</SingleTap>
       <PressAndHoldStart MessageWParam="1">myapp-copilothotkey://?state=Down</PressAndHoldStart>
       <PressAndHoldStop MessageWParam="2">myapp-copilothotkey://?state=Up</PressAndHoldStop>
     </uap3:Properties>

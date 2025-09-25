@@ -3,7 +3,7 @@
 title: Build a device selector
 description: A device selector lets you limit the devices to search through when enumerating devices, which helps you get more relevant results and improve the performance of the system.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

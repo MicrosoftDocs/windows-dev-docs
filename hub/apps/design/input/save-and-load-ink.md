@@ -6,7 +6,7 @@ label: Store and retrieve Windows Ink stroke data
 template: detail.hbs
 keywords: Windows Ink, Windows Inking, DirectInk, InkPresenter, InkCanvas, ISF, Ink Serialized Format, user interaction, input
 ms.date: 07/19/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

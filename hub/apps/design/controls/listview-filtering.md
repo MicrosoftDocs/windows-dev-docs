@@ -4,7 +4,7 @@ title: Filtering collections
 label: Filtering collections
 template: detail.hbs
 ms.date: 3/29/2024
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 pm-contact: anawish
 ---

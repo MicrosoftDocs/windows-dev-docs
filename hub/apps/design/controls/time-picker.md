@@ -5,7 +5,7 @@ ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
 label: Time picker
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 pm-contact: kisai
 design-contact: ksulliv

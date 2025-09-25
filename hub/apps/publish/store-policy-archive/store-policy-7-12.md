@@ -209,7 +209,7 @@ If your product supports Microsoft identity authentication it must do so only by
 
 **10.5.7**
 
-Products that receive device location must provide settings that allow the user to enable and disable the product's access to and use of location from the Location Service API. For Windows Phone 8 and Windows Phone 8.1 products, these settings must be provided in-product. For Windows Mobile 10 products, these settings are provided automatically by Windows within the Settings App (on the **Settings > Privacy > Location** page). You must respect such settings, and if you choose to collect device location data in another way, such data is Personal Information and collection is subject to the other requirements of section 10.5. You must gain legally sufficient consent for your data practices, and such practices must generally comply with applicable laws and regulations.
+Products that receive device location must provide settings that allow the user to enable and disable the product's access to and use of location from the Location Service API. For Windows Phone 8 and Windows Phone 8.1 products, these settings must be provided in-product. For Windows Mobile 10 products, these settings are provided automatically by Windows within Settings (on the **Settings > Privacy > Location** page). You must respect such settings, and if you choose to collect device location data in another way, such data is Personal Information and collection is subject to the other requirements of section 10.5. You must gain legally sufficient consent for your data practices, and such practices must generally comply with applicable laws and regulations.
 
 
 ### 10.6 Capabilities

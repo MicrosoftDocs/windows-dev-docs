@@ -4,7 +4,7 @@ description: Extend Cortana with more flexible and natural voice commands that l
 label: Conceptual
 ms.assetid: c2959c1b-c2f2-4a8d-8f3e-79585f69afcf
 ms.date: 01/28/2021
-ms.topic: article
+ms.topic: how-to
 keywords: cortana
 ---
 
@@ -39,7 +39,7 @@ You can set up your voice commands to support the app name as a:
 > If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 >
 > - [Create your first app](/windows/uwp/get-started/your-first-app)
-> - Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
+> - Learn about events with [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview)
 >
 > **User experience guidelines**
 >

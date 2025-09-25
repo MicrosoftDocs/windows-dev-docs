@@ -1,8 +1,8 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
-ms.date: 09/10/2024
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: upgrade-and-migration-article
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.localizationpriority: medium
 ---
@@ -33,7 +33,8 @@ As a further step in assisting you to migrate your UWP apps to the Windows App S
 
 ## Containerization benefits
 
-When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation&mdash;a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, see [Win32 app isolation overview](/windows/win32/secauthz/app-isolation-overview).
+When transitioning to the Windows App SDK, UWP applications might lose the inherent containerization benefits of their original platform. However, those benefits can be restored by using Win32 App Isolation&mdash;a new security feature that enhances protection by isolating applications within a sandbox environment. This approach offers additional security against potential threats with minimal changes to your existing code. For more info, and to begin using Win32 App Isolation, see [Win32 app isolation overview](/windows/win32/secauthz/app-isolation-overview).
+
 ## Topics in this section
 
 | Topic | Description |

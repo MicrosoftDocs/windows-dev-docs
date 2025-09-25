@@ -5,7 +5,7 @@ label: Touch interactions developer guide
 template: detail.hbs
 keywords: touch, pointer, input, user interaction
 ms.date: 11/11/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -173,7 +173,7 @@ If you implement your own interaction support, keep in mind that users expect an
 >
 > When set to "Off", three- and four-finger interactions can be supported by apps (they will not be handled by the system).
 >
-> If your application must support these interactions, we recommend that you inform users of this setting and provide a link that launches the Settings app to the relevant page (ms-settings:devices-touch). For more details, see [Launch the Windows Settings app](/windows/uwp/launch-resume/launch-settings-app).
+> If your application must support these interactions, we recommend that you inform users of this setting and provide a link that launches Windows Settings to the relevant page (ms-settings:devices-touch). For more details, see [Launch Windows Settings](/windows/apps/develop/launch/launch-settings).
 
 To provide customized touch support, you can handle various [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) events. These events are grouped into three levels of abstraction.
 

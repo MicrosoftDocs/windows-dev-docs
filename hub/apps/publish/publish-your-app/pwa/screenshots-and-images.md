@@ -1,12 +1,12 @@
 ---
 description: You can select the screenshots, logos, and other art assets (such as trailers and promotional images) to include in your PWA app's Store listing.
 title: App screenshots, images, and trailers for PWA
-ms.date: 10/30/2022
+ms.date: 8/21/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# App screenshots, images, and trailers for PWA
+# Add app screenshots, images, and trailers
 
 Well-designed images are one of the main ways for you to represent your app to potential customers in the Store.
 
@@ -34,9 +34,7 @@ The size requirements vary depending on the device family:
 
 - **Desktop** 1366 x 768 pixels or larger. Supports 4K images (3840 x 2160). (Will also be shown to customers on Surface Hub devices.)
 
-- **Xbox** 3480 x 2160 pixels or smaller and 1920 x 1080 pixels or larger. Supports 4K images (3840 x 2160).
-
-- **Holographic** 1268 x 720 pixels or larger. Supports 4K images (3840 x 2160).
+- **Xbox** 3840 x 2160 pixels or smaller and 1920 x 1080 pixels or larger. Supports 4K images (3840 x 2160).
 
 For the best display, keep the following guidelines in mind when creating your screenshots:
 
@@ -56,7 +54,7 @@ You can upload Store logos to create a more customized display in the Store. We 
 
 You can provide these images as .png files (no greater than 50 MB), each of which should follow the guidelines below.
 
-#### 2:3 Poster art (720 x 1080 or 1440 x 2160 pixels)
+#### 9:16 Poster art (720 x 1080 or 1440 x 2160 pixels)
 
 For games, this is used as the main logo image for customers on Windows 10, Windows 11, and Xbox devices, so we **strongly recommend** providing this image to ensure proper display. This does not apply to apps. For information related to app icons, please refer to the section below on [1:1 App tile icon (300 x 300 pixels)](#11-app-tile-icon-300-x-300-pixels).
 
@@ -112,10 +110,12 @@ For each trailer you provide, you must upload a video file (.mp4 or .mov), a thu
 
 Follow these recommendations to make your trailers effective:
 
-- Trailers should be of good quality and minimal length (60 seconds or less and less than 2 GB recommended).
-- Use a different thumbnail for each trailer so that customers know they are unique.
-- Because some Store layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
-- Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60.
+- Must provide 16:9 Super hero art above in order for a trailer to appear at the top of your Store listing
+- Trailers are only shown to customers on Windows 10, version 1607 or later (including Xbox)
+- Max upload 30 trailers.
+- Each trailer must include one video, a title and a thumbnail
+- Do not include IARC age rating info
+- Videos are only available for Retail submissions. Dev sandbox submissions do not support videos currently
 
 You must also follow the requirements listed below.
 
@@ -198,7 +198,7 @@ Here are some tips to keep in mind when designing this image:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](../../make-your-app-easier-to-promote.md) for more information.
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](../../faq/leverage-developer-tools.md) for more information.
 
 #### Xbox images
 
@@ -211,9 +211,5 @@ There are 3 different sizes that you can upload:
 - **Featured Promotional Square art, 1080 x 1080 pixels**: Must _not_ include the product’s title.
 
 > [!NOTE]
-> For the best display on Xbox, you must also provide a **9:16 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
-
-#### Holographic image
-
-The **2:1 (2400 x 1200)** image is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
+> For the best display on Xbox, you must also provide a **2:3 (720 x 1080 or 1440 x 2160 pixels)** image in the [Store logos](#store-logos) section.
 

@@ -1,8 +1,8 @@
 ---
 title: Stable channel release notes for the Windows App SDK 1.5
 description: Provides information about the stable release channel for the Windows App SDK 1.5.
-ms.topic: article
-ms.date: 09/04/2024
+ms.topic: release-notes
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---

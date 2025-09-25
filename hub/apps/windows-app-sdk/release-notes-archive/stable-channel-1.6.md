@@ -1,8 +1,8 @@
 ---
 title: Stable channel release notes for the Windows App SDK 1.6
 description: Provides information about the stable release channel for the Windows App SDK 1.6.
-ms.topic: article
-ms.date: 03/18/2025
+ms.topic: release-notes
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -23,6 +23,14 @@ The stable channel provides releases of the Windows App SDK that are supported f
 
 > [!NOTE]
 > The Windows App SDK Visual Studio Extensions (VSIX) are no longer distributed as a separate download. They are available in the Visual Studio Marketplace inside Visual Studio.
+
+### Version 1.6.9 (1.6.250602001)
+
+This is a servicing release of the Windows App SDK that includes critical bug fixes for the 1.6 release.
+
+#### Bug Fixes
+
+- Fixed a potential crash in WindowChrome::SetTitleBar when closing a window. For more info, see GitHub issue [#9203](https://github.com/microsoft/microsoft-ui-xaml/issues/9203).
 
 ### Version 1.6.8 (1.6.250430001)
 

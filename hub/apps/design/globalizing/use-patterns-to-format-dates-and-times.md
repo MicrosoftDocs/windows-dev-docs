@@ -5,7 +5,7 @@ ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
 ms.date: 11/09/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---

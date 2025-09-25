@@ -2,7 +2,7 @@
 description: This topic describes the technical details involved in porting the source code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
 title: Move to C++/WinRT from C++/CX
 ms.date: 01/17/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C++/CX
 ms.localizationpriority: medium
 ---

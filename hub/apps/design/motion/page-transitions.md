@@ -3,7 +3,7 @@ title: Page transitions
 description: Learn how to use Universal Windows Platform (UWP) page transitions to give users feedback about the relationship between pages in your app.
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 pm-contact: stmoy
 ms.localizationpriority: medium
@@ -24,7 +24,7 @@ Two different animations are provided for navigation between pages in an app, *P
 <td>
     <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/PageTransition">open the app and see Page Transitions in action</a>.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>

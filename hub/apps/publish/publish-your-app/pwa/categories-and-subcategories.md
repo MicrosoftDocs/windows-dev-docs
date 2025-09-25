@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Categories and subcategories for PWA
+# Set category and subcategory
 
 Listing your app in the right primary category, subcategory and an optional secondary category helps customers find your app and understand more about it. Secondary category has the same list of categories as the Primary category.
 
@@ -14,17 +14,16 @@ You must choose the categories that best describe your app. You can optionally c
 
 :::image type="content" source="../msix/images/msix-set-app-category-subcategory.png" lightbox="../msix/images/msix-set-app-category-subcategory.png" alt-text="A screenshot of the Properties section where you can provide category and sub-category for your app.":::
 
-If you choose **Games** for your category, you are required to select at least one subcategory (called _genre_ for games). You can choose up to 3 genres as appropriate for your game. Note that in order to publish a game to customers on Xbox, you must enable the [Xbox Live Creators Program](/gaming/xbox-live/get-started-with-creators/get-started-with-xbox-live-creators) or go through the [concept approval](/windows/uwp/gaming/concept-approval) process.
-
 > [!IMPORTANT]
-> If you publish the app in the Games category, you won't be able to pick a different category in a new submission; it must continue to be published in the Games category (although you can change the genre selections in a new submission). Likewise, you can't choose the Games category when updating an app that you previously published in a different category.
-> For apps which are not games, you must choose one category, optionally choose from any subcategories that are available and can optionally choose a secondary category. You can't select more than one subcategory or secondary category for apps which are not in the Games category. Only some categories have subcategories, and you can only use a subcategory if it belongs to the category you selected.
-
-To change the category or subcategory of an app that's already in the Store (except for changing from **Games** to another category or vice versa), [create a new submission](./create-app-submission.md) and select the new category or subcategory.
+> For apps you must choose one category, optionally choose from any subcategories that are available and can optionally choose a secondary category. You can't select more than one subcategory or secondary category. Only some categories have subcategories, and you can only use a subcategory if it belongs to the category you selected.
 
 ## Categories and subcategories
 
 **The Microsoft Store organizes apps into the following categories and subcategories.**
+
+<details>
+
+<summary>View table</summary>
 
 | Category              | Subcategory                                                                                                                                                                                                | Description                                                                                                                                                          | Examples                                                                                                                          |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
@@ -54,28 +53,4 @@ To change the category or subcategory of an app that's already in the Store (exc
 | Travel                | City guides<br>Hotels                                                                                                                                                                                      | Apps which help user in planning their travel, stay and exploration at a particular location                                                                         | vacation planning, flight booking, taxi/cab booking, hotel booking, city guides                                                   |
 | Utilities + tools     | Backup + manage<br>File managers                                                                                                                                                                           | Apps which assist user in solving problems or completing specific tasks                                                                                              | file manager, calculators, barcode scanner, measurement, remote controls, file backup, cloud storage, file conversion, PDF editor |
 
-
-**Following are the available genres for Games category:**
-
-| Genre                            | Description                                                                                    |
-| -------------------------------- | ---------------------------------------------------------------------------------------------- |
-| Action + adventure               | Games with story-driven plot and combat gameplay mechanics                                     |
-| Card + board                     | Games which are played with standardized rules involving cards or boards as the primary items  |
-| Casino                           | Games which allow players to play gambling games online                                        |
-| Classics                         | Games based on the famous old classic games like brick blocks, fruit snake etc.                |
-| Educational                      | Games that are related to learning new skill or a topic in an interactive way                  |
-| Family + kids                    | Games which are more interactive in nature and focused on kids                                 |
-| Fighting                         | Games which allow user to experience combat battles                                            |
-| Multi-Player Online Battle Arena | Games where the players use weapons with defined range to fight against each other             |
-| Music                            | Games related to guessing music, interaction-based music                                       |
-| Other                            | Games which do not fall into any of the here mentioned genres                                  |
-| Platformer                       | Games which are 2-dimensional where player can control character's walk, jump                  |
-| Puzzle + trivia                  | Games which challenge the problem-solving capabilities of the user                             |
-| Racing + flying                  | Games which allow user to compete against other opponents in a similar machinery               |
-| Role playing                     | Games which allow the user to cast themselves as a character which evolves throughout the game |
-| Shooter                          | Games with a focus on defeating enemies using gun-like weapons                                 |
-| Simulation                       | Games which let user imitate a real-world process                                              |
-| Sports                           | Games which imitate the traditional physical sports                                            |
-| Strategy                         | Games which require thorough planning and thinking to achieve victory                          |
-| Tools                            | Apps which allow users to interact with the game without launching the actual game software    |
-| Word                             | Games related to guessing words based on puzzles/riddles                                       |
+</details>

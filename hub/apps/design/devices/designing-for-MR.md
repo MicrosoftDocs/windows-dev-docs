@@ -7,7 +7,7 @@ template: detail.hbs
 isNew: true
 keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
 ms.date: 02/26/2021
-ms.topic: article
+ms.topic: concept-article
 
 
 pm-contact: chigy

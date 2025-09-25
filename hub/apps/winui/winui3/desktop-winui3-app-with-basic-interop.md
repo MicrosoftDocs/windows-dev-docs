@@ -2,7 +2,7 @@
 title: Build a C# .NET app with WinUI 3 and Win32 interop
 description: Build a C# .NET application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
 ms.date: 03/05/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 11, windows 10, uwp, COM, win32, winui, interop
 ms.localizationpriority: high
 ms.custom: 19H1
@@ -216,5 +216,5 @@ void MainWindow::customButton_Click(IInspectable const&, RoutedEventArgs const&)
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
 - [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
-- [Manage app windows](../../windows-app-sdk/windowing/windowing-overview.md)
+- [Manage app windows](../../develop/ui-input/manage-app-windows.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

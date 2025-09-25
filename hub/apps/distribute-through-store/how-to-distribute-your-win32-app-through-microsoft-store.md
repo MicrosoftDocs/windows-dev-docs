@@ -2,7 +2,7 @@
 description: This section will guide you on how to distribute your Win32 application through Microsoft Store.
 title: How to distribute your Win32 application through Microsoft Store.
 ms.date: 02/15/2024
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

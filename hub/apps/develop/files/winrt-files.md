@@ -1,15 +1,25 @@
 ---
 ms.assetid: 385ede76-fb55-4ef4-a16b-3d9ccfc7367a
-title: Access files and folders with Windows App SDK and WinRT APIs
-description: Packaged Windows App SDK apps can leverage WinRT APIs for reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library.
-ms.date: 06/16/2023
-ms.topic: article
+title: Access Files and Folders with WinUI and WinRT APIs
+description: Learn how to access files and folders in WinUI apps using WinRT APIs. Query system libraries, retrieve file properties, and work with sandboxed locations like Pictures and Documents.
+ms.date: 08/21/2025
+ms.topic: how-to
 keywords: windows 10, windows 11, windows, winui, windows app sdk, winrt
 ms.localizationpriority: medium
+# customer intent: As a Windows app developer, I want to learn how to use WinRT APIs for file management in my app.
 ---
-# Access files and folders with Windows App SDK and WinRT APIs
 
-Packaged Windows App SDK apps can leverage [WinRT APIs](/uwp/api/) for reading and writing app settings, file and folder pickers, and special sand-boxed locations such as the Video/Music library. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the [WinRT storage APIs](/uwp/api/windows.storage) to query files and folders, retrieve file properties, and work with the **Pictures** library.
+# Access files and folders with WinUI and WinRT APIs
+
+WinUI apps can access files and folders using Windows Runtime (WinRT) APIs for common file operations. This article shows you how to access files and folders, query system libraries, retrieve file properties, and work with locations like Pictures and Documents.
+
+When you build packaged WinUI apps, you can use [WinRT APIs](/uwp/api/) to access files and folders in specific locations. These APIs let you read and write app settings, open file and folder pickers, and work with sandboxed locations like the Video and Music libraries. You can also combine WinRT APIs with Win32 APIs from the Windows SDK and APIs from the .NET SDK.
+
+This article focuses on the [WinRT storage APIs](/uwp/api/windows.storage) and demonstrates how to:
+
+- Query files and folders in system libraries
+- Retrieve basic file properties like size and modification date
+- Monitor changes to the Pictures library
 
 ## Query files and folders
 

@@ -2,7 +2,7 @@
 description: Use PWA Builder to create a high quality PWA from your existing website
 title: Turn your website into a high quality PWA
 ms.date: 10/30/2022
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -16,17 +16,17 @@ First, you'll want to check if your website has the features and metadata that g
 
 1. Navigate to [PWA Builder](https://www.pwabuilder.com/)
 2. Enter the URL of the website you'd like to convert to a PWA and click **Start**
-3. PWA builder will display a PWA Report Card that indicates the features your website has and does not have.
+3. PWA builder will display a PWA Report Card that indicates the features and app capabilities your website has and does not have.
 
 ## Step 2: Review your PWA Report Card
 
 ![An example PWA Report Card](../../images/pwa-report-card.png)
 
-Your PWA Report Card contains your website's score, out of a maximum score of 100. Scores are based off of three categories of features.
+Your PWA Report Card shows your website’s validation results and overall score. It also provides a summary of action items you need to address before you can package your app.
 
 ### Manifest
 
-PWA evaluates your website's [Web Application Manifest](https://www.w3.org/TR/appmanifest/) if one is available, and identifies fields or values that are required, recommended, and optional. You can improve your score by adding missing values, either by editing and re-publishing your manifest file, or by using the online manifest editor.
+PWA evaluates your website's [Web Application Manifest](https://www.w3.org/TR/appmanifest/) if one is available, and identifies fields or values that are required, recommended, and optional. You can improve the PWA by adding missing values, either by editing and re-publishing your manifest file, or by using the online manifest editor.
 
 > [!WARNING]
 > Changes made in the online manifest editor will not be published to your website. The changes you make will only be used by PWA Builder when creating your PWA.
@@ -40,11 +40,12 @@ PWA evaluates your website's [Web Application Manifest](https://www.w3.org/TR/ap
 ### Service Worker
 
 ![Some of the prebuilt service workers offered by PWA Builder](../../images/pwa-builder-service-workers.png)
-A service worker runs in the background to enable rich web app features where there would otherwise be 404 errors. PWA Builder requires a service worker to create your PWA, but if you do not have one you can use one of several prebuilt service workers provided by PWA Builder. To use a prebuilt service worker:
 
-1. Choose the **Service Worker Options** tab in the menu.
-2. Select the appropriate service worker from the curated list. Note that there are many prebuilt options; make sure to pick the service worker most appropriate for your specific use case.
-3. Once you've selected the service worker you'd like to use, you'll be returned to your PWA Report Card.
+Service workers are a specific type of web worker that serve as a proxy between your application and the network. All requests that go to or from your PWA will pass through the service worker first. This allows your service worker to handle requests in situations where the network may be unavailable. To use a prebuilt service worker:
+
+1. Navigate to the **Service Worker** section.
+2. Click on **Generate Service Worker** and choose the service worker you'd like to use.
+3. Download the prebuilt service worker package by clicking on **Download Service Worker**.
 
 ### Security
 
@@ -77,7 +78,7 @@ You now have everything you need to create your PWA on PWA Builder. Return to th
 
 ![PWA Builder prompting the user for information from Partner Center](../../images/pwa-builder-pc-info.png)
 
-PWA builder will prompt you for the information you obtained from Partner Center in step 3. Fill in the values and click **Generate**.
+PWA Builder will prompt you for the information you obtained from Partner Center in step 3. Fill in the values and click **Generate**.
 
 ![PWA files in file explorer](../../images/pwa-files.png)
 
@@ -89,4 +90,4 @@ The **appx** file is a classic app package. It is used to install your PWA on ol
 
 ## Step 5: Submit your app packages to the Microsoft Store
 
-These packages can be submitted to the Microsoft Store in the same way any other app packaged as an MSIX file can be. For further instructions submitting your PWA packages to the store, see [App submissions](./create-app-submission.md).
+These packages can be submitted to the Microsoft Store in the same way as any other app packaged as an MSIX file. For further instructions on submitting your PWA packages to the store, see [App submissions](./create-app-submission.md).

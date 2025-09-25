@@ -1,8 +1,8 @@
 ---
 title: Use the Windows App SDK in an existing project
 description: This article provides instructions for using the Windows App SDK in an existing project.
-ms.topic: article
-ms.date: 02/03/2023
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ If you have a desktop project in which you want to use the Windows App SDK, then
 
 ## Prerequisites
 
-* Visual Studio 2019 or later.
+* Visual Studio 2022 version 17.1 and later.
 * The workloads and components for Windows app development. For more info, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ## Instructions

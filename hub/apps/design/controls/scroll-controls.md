@@ -5,7 +5,7 @@ ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -88,7 +88,7 @@ It's typical for a scroll viewer control to exist as a composite part of other c
 
 [ItemsView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview) includes a `ScrollView` control in its template. You can access the `ScrollView` though the [ItemsView.ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.scrollview) property.
 
-[ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) and [GridView](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView) templates always include a `ScrollViewer`. [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox) and [RichEditBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox) also include a `ScrollViewer` in their templates. To influence some of the behavior and properties of the built in `ScrollViewer` part, `ScrollViewer` defines a number of XAML attached properties that can be set in styles and used in template bindings. For more info about attached properties, see [Attached properties overview](/windows/uwp/xaml-platform/attached-properties-overview).
+[ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) and [GridView](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView) templates always include a `ScrollViewer`. [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox) and [RichEditBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox) also include a `ScrollViewer` in their templates. To influence some of the behavior and properties of the built in `ScrollViewer` part, `ScrollViewer` defines a number of XAML attached properties that can be set in styles and used in template bindings. For more info about attached properties, see [Attached properties overview](/windows/apps/develop/platform/xaml/attached-properties-overview).
 
 ### Set scrollable content
 
