@@ -41,196 +41,196 @@ If you need a company account but only see the individual option available (gray
 
 You can register for your developer account and submit apps if you live or operate a business in a country or region listed below.
 
-In the following table, the **Registration fee** is the current cost to register for your developer account. This is a one-time fee and there is no renewal charge. Note that the prices below are subject to change.
+**Individual accounts are free** worldwide, with no registration fees. The following table shows the **Company registration fee**, which is the current cost to register for a Company developer account. This is a one-time fee and there is no renewal charge. Note that the prices below are subject to change.
 
-| Country/region                    | Individual reg. fee | Company reg. fee |
-|-----------------------------------|---------------------|------------------|
-| Afghanistan                       | 19 USD              | 99 USD           |
-| Albania                           | 19 USD              | 99 USD           |
-| Algeria                           | 1535 DZD            | 7000 DZD         |  
-| Andorra                           | 14 EUR              | 75 EUR           |  
-| Angola                            | 19 USD              | 99 USD           |  
-| Antigua and Barbuda               | 19 USD              | 99 USD           |  
-| Argentina                         | 106 ARS             | 420 ARS          |  
-| Armenia                           | 19 USD              | 99 USD           |  
-| Australia                         | 21 AUD              | 110 AUD          |  
-| Austria                           | 14 EUR              | 75 EUR           |  
-| Azerbaijan                        | 19 USD              | 99 USD           |  
-| The Bahamas                       | 19 USD              | 99 USD           |  
-| Bahrain                           | 7 BHD               | 38 BHD           |  
-| Bangladesh                        | 1468 BDT            | 7600 BDT         |  
-| Barbados                          | 19 USD              | 99 USD           |  
-| Belarus                           | 19 USD              | 99 USD           |  
-| Belgium                           | 14 EUR              | 75 EUR           |  
-| Belize                            | 19 USD              | 99 USD           |  
-| Benin                             | 19 USD              | 99 USD           |  
-| Bhutan                            | 19 USD              | 99 USD           |  
-| Bolivia                           | 19 USD              | 99 USD           |  
-| Bosnia and Herzegovina            | 19 USD              | 99 USD           |  
-| Botswana                          | 19 USD              | 99 USD           |  
-| Brazil                            | 46 BRL              | 160 BRL          |  
-| Brunei                            | 19 USD              | 99 USD           |  
-| Bulgaria                          | 28 BGN              | 160 BGN          |  
-| Burkina Faso                      | 19 USD              | 99 USD           |  
-| Burundi                           | 19 USD              | 99 USD           |  
-| Cabo Verde                        | 19 USD              | 99 USD           |  
-| Cambodia                          | 19 USD              | 99 USD           |  
-| Cameroon                          | 19 USD              | 99 USD           |  
-| Canada                            | 20 CAD              | 99 CAD           |  
-| Central African Republic          | 19 USD              | 99 USD           |  
-| Chad                              | 19 USD              | 99 USD           |  
-| Chile                             | 9776 CLP            | 46000 CLP        |  
-| China                             | 116 CNY             | 600 CNY          |  
-| Colombia                          | 36543 COP           | 180000 COP       |  
-| Comoros                           | 19 USD              | 99 USD           |  
-| Congo                             | 19 USD              | 99 USD           |  
-| Congo (DRC)                       | 19 USD              | 99 USD           |  
-| Costa Rica                        | 9578 CRC            | 49725 CRC        |  
-| Côte d'Ivoire                     | 19 USD              | 99 USD           |  
-| Croatia                           | 107 HRK             | 500 HRK          |  
-| Cyprus                            | 14 EUR              | 75 EUR           |  
-| Czechia                           | 365 CZK             | 1720 CZK         |  
-| Denmark                           | 106 DKK             | 530 DKK          |  
-| Djibouti                          | 19 USD              | 99 USD           |
-| Dominica                          | 19 USD              | 99 USD           |
-| Dominican Republic                | 19 USD              | 99 USD           |  
-| Ecuador                           | 19 USD              | 99 USD           |  
-| Egypt                             | 133 EGP             | 600 EGP          |  
-| El Salvador                       | 19 USD              | 99 USD           |  
-| Equatorial Guinea                 | 19 USD              | 99 USD           |  
-| Eritrea                           | 19 USD              | 99 USD           |  
-| Estonia                           | 14 EUR              | 75 EUR           |  
-| Ethiopia                          | 19 USD              | 99 USD           |  
-| Faroe Islands                     | 19 USD              | 99 USD           |  
-| Fiji                              | 19 USD              | 99 USD           |  
-| Finland                           | 14 EUR              | 75 EUR           |  
-| France                            | 14 EUR              | 75 EUR           |  
-| Gabon                             | 19 USD              | 99 USD           |  
-| The Gambia                        | 19 USD              | 99 USD           |  
-| Georgia                           | 19 USD              | 99 USD           |  
-| Germany                           | 14 EUR              | 75 EUR           |  
-| Ghana                             | 19 USD              | 99 USD           |  
-| Greece                            | 14 EUR              | 75 EUR           |  
-| Greenland                         | 19 USD              | 99 USD           |  
-| Grenada                           | 19 USD              | 99 USD           |  
-| Guatemala                         | 145 GTQ             | 750 GTQ          |  
-| Guinea                            | 19 USD              | 99 USD           |  
-| Guinea-Bissau                     | 19 USD              | 99 USD           |  
-| Guyana                            | 19 USD              | 99 USD           |  
-| Haiti                             | 19 USD              | 99 USD           |  
-| Honduras                          | 19 USD              | 99 USD           |  
-| Hong Kong SAR                     | 147 HKD             | 760 HKD          |  
-| Hungary                           | 4237 HUF            | 18800 HUF        |  
-| Iceland                           | 2319 ISK            | 11929 ISK        |
-| India                             | 1201 INR            | 4500 INR         |  
-| Indonesia                         | 203015 IDR          | 1000000 IDR      |
-| Iraq                              | 22078 IQD           | 120000 IQD       |  
-| Ireland                           | 14 EUR              | 75 EUR           |  
-| Israel                            | 67 ILS              | 350 ILS          |  
-| Italy                             | 14 EUR              | 75 EUR           |  
-| Jamaica                           | 19 USD              | 99 USD           |  
-| Japan                             | 1847 JPY            | 9800 JPY         |  
-| Jordan                            | 13 JOD              | 70 JOD           |  
-| Kazakhstan                        | 2897 KZT            | 15038 KZT        |  
-| Kenya                             | 1900 KES            | 9999 KES         |  
-| Kiribati                          | 19 USD              | 99 USD           |  
-| Korea                             | 21216 KRW           | 108000 KRW       |  
-| Kuwait                            | 5 KWD               | 28 KWD           |  
-| Kyrgyzstan                        | 19 USD              | 99 USD           |  
-| Laos                              | 19 USD              | 99 USD           |  
-| Latvia                            | 14 EUR              | 75 EUR           |  
-| Lesotho                           | 19 USD              | 99 USD           |  
-| Liberia                           | 19 USD              | 99 USD           |  
-| Libya                             | 19 USD              | 99 USD           |  
-| Liechtenstein                     | 17 CHF              | 93 CHF           |  
-| Lithuania                         | 14 EUR              | 75 EUR           |  
-| Luxembourg                        | 14 EUR              | 75 EUR           |  
-| Macao SAR                         | 19 USD              | 99 USD           |  
-| Madagascar                        | 19 USD              | 99 USD           |  
-| Malawi                            | 19 USD              | 99 USD           |  
-| Malaysia                          | 62 MYR              | 300 MYR          |  
-| Maldives                          | 19 USD              | 99 USD           |  
-| Mali                              | 19 USD              | 99 USD           |  
-| Malta                             | 14 EUR              | 75 EUR           |  
-| Marshall Islands                  | 19 USD              | 99 USD           |  
-| Mauritania                        | 5681 MRO            | 30046 MRO        |  
-| Mauritius                         | 19 USD              | 99 USD           |  
-| Mexico                            | 247 MXN             | 1140 MXN         |  
-| Micronesia                        | 19 USD              | 99 USD           |  
-| Monaco                            | 14 EUR              | 75 EUR           |  
-| Mongolia                          | 19 USD              | 99 USD           |  
-| Montenegro                        | 14 EUR              | 75 EUR           |  
-| Morocco                           | 158 MAD             | 800 MAD          |  
-| Mozambique                        | 19 USD              | 99 USD           |  
-| Myanmar                           | 19 USD              | 99 USD           |  
-| Namibia                           | 19 USD              | 99 USD           |  
-| Nauru                             | 19 USD              | 99 USD           |  
-| Nepal                             | 19 USD              | 99 USD           |  
-| Netherlands                       | 14 EUR              | 75 EUR           |  
-| New Zealand                       | 24 NZD              | 140 NZD          |  
-| Nicaragua                         | 19 USD              | 99 USD           |  
-| Niger                             | 19 USD              | 99 USD           |  
-| Nigeria                           | 3700 NGN            | 19500 NGN        |
-| North Macedonia                   | 19 USD              | 99 USD           |
-| Norway                            | 113 NOK             | 580 NOK          |  
-| Oman                              | 7 OMR               | 40 OMR           |  
-| Pakistan                          | 1959 PKR            | 9000 PKR         |  
-| Palau                             | 19 USD              | 99 USD           |  
-| Panama                            | 19 USD              | 99 USD           |  
-| Papua New Guinea                  | 19 USD              | 99 USD           |  
-| Paraguay                          | 19 USD              | 99 USD           |  
-| Peru                              | 54 PEN              | 280 PEN          |  
-| Philippines                       | 832 PHP             | 4400 PHP         |  
-| Poland                            | 59 PLN              | 280 PLN          |    
-| Qatar                             | 69 QAR              | 360 QAR          |  
-| Romania                           | 14 EUR              | 75 EUR           |  
-| Russia                            | 626 RUB             | 3000 RUB         |  
-| Rwanda                            | 19 USD              | 99 USD           |  
-| Saint Kitts and Nevis             | 19 USD              | 99 USD           |  
-| Saint Lucia                       | 19 USD              | 99 USD           |  
-| Saint Vincent and the Grenadines  | 19 USD              | 99 USD           |  
-| Samoa                             | 19 USD              | 99 USD           |  
-| San Marino                        | 14 EUR              | 75 EUR           |  
-| São Tomé and Príncipe             | 19 USD              | 99 USD           |  
-| Saudi Arabia                      | 71 SAR              | 380 SAR          |  
-| Senegal                           | 19 USD              | 99 USD           |  
-| Serbia                            | 1619 RSD            | 7000 RSD         |  
-| Seychelles                        | 19 USD              | 99 USD           |  
-| Sierra Leone                      | 19 USD              | 99 USD           |  
-| Singapore                         | 24 SGD              | 120 SGD          |  
-| Slovakia                          | 14 EUR              | 75 EUR           |  
-| Slovenia                          | 14 EUR              | 75 EUR           |  
-| Solomon Islands                   | 19 USD              | 99 USD           |  
-| Somalia                           | 19 USD              | 99 USD           |  
-| South Africa                      | 193 ZAR             | 700 ZAR          |  
-| Spain                             | 14 EUR              | 75 EUR           |  
-| Sri Lanka                         | 19 USD              | 99 USD           |  
-| Suriname                          | 19 USD              | 99 USD           |  
-| Swaziland                         | 19 USD              | 99 USD           |  
-| Sweden                            | 123 SEK             | 700 SEK          |  
-| Switzerland                       | 17 CHF              | 90 CHF           |  
-| Taiwan                            | 568 TWD             | 2840 TWD         |  
-| Tajikistan                        | 19 USD              | 99 USD           |  
-| Tanzania                          | 19 USD              | 99 USD           |  
-| Thailand                          | 601 THB             | 3000 THB         |  
-| Timor-Leste                       | 19 USD              | 99 USD           |  
-| Togo                              | 19 USD              | 99 USD           |  
-| Tonga                             | 19 USD              | 99 USD           |  
-| Trinidad and Tobago               | 122 TTD             | 636 TTD          |  
-| Tunisia                           | 31 TND              | 140 TND          |  
-| Türkiye                           | 37 TRY              | 160 TRY          |  
-| Turkmenistan                      | 19 USD              | 99 USD           |  
-| Tuvalu                            | 19 USD              | 99 USD           |  
-| Uganda                            | 19 USD              | 99 USD           |  
-| Ukraine                           | 156 UAH             | 800 UAH          |  
-| United Arab Emirates              | 19 USD              | 99 USD           |  
-| United Kingdom                    | 12 GBP              | 65 GBP           |  
-| United States                     | 19 USD              | 99 USD           |  
-| Uruguay                           | 19 USD              | 99 USD           |  
-| Uzbekistan                        | 19 USD              | 99 USD           |  
-| Vanuatu                           | 19 USD              | 99 USD           |  
-| Venezuela                         | 119 VEF             | 420 VEF          |  
-| Vietnam                           | 400425 VND          | 2000000 VND      |  
-| Yemen                             | 4080 YER            | 21245 YER        |  
-| Zambia                            | 19 USD              | 99 USD           |  
-| Zimbabwe                          | 19 USD              | 99 USD           |
+| Country/region                   | Company reg. fee |
+|----------------------------------|------------------|
+| Afghanistan                      | 99 USD           |
+| Albania                          | 99 USD           |
+| Algeria                          | 7000 DZD         |
+| Andorra                          | 75 EUR           |
+| Angola                           | 99 USD           |
+| Antigua and Barbuda              | 99 USD           |
+| Argentina                        | 420 ARS          |
+| Armenia                          | 99 USD           |
+| Australia                        | 110 AUD          |
+| Austria                          | 75 EUR           |
+| Azerbaijan                       | 99 USD           |
+| The Bahamas                      | 99 USD           |
+| Bahrain                          | 38 BHD           |
+| Bangladesh                       | 7600 BDT         |
+| Barbados                         | 99 USD           |
+| Belarus                          | 99 USD           |
+| Belgium                          | 75 EUR           |
+| Belize                           | 99 USD           |
+| Benin                            | 99 USD           |
+| Bhutan                           | 99 USD           |
+| Bolivia                          | 99 USD           |
+| Bosnia and Herzegovina           | 99 USD           |
+| Botswana                         | 99 USD           |
+| Brazil                           | 160 BRL          |
+| Brunei                           | 99 USD           |
+| Bulgaria                         | 160 BGN          |
+| Burkina Faso                     | 99 USD           |
+| Burundi                          | 99 USD           |
+| Cabo Verde                       | 99 USD           |
+| Cambodia                         | 99 USD           |
+| Cameroon                         | 99 USD           |
+| Canada                           | 99 CAD           |
+| Central African Republic         | 99 USD           |
+| Chad                             | 99 USD           |
+| Chile                            | 46000 CLP        |
+| China                            | 600 CNY          |
+| Colombia                         | 180000 COP       |
+| Comoros                          | 99 USD           |
+| Congo                            | 99 USD           |
+| Congo (DRC)                      | 99 USD           |
+| Costa Rica                       | 49725 CRC        |
+| Côte d'Ivoire                    | 99 USD           |
+| Croatia                          | 500 HRK          |
+| Cyprus                           | 75 EUR           |
+| Czechia                          | 1720 CZK         |
+| Denmark                          | 530 DKK          |
+| Djibouti                         | 99 USD           |
+| Dominica                         | 99 USD           |
+| Dominican Republic               | 99 USD           |
+| Ecuador                          | 99 USD           |
+| Egypt                            | 600 EGP          |
+| El Salvador                      | 99 USD           |
+| Equatorial Guinea                | 99 USD           |
+| Eritrea                          | 99 USD           |
+| Estonia                          | 75 EUR           |
+| Ethiopia                         | 99 USD           |
+| Faroe Islands                    | 99 USD           |
+| Fiji                             | 99 USD           |
+| Finland                          | 75 EUR           |
+| France                           | 75 EUR           |
+| Gabon                            | 99 USD           |
+| The Gambia                       | 99 USD           |
+| Georgia                          | 99 USD           |
+| Germany                          | 75 EUR           |
+| Ghana                            | 99 USD           |
+| Greece                           | 75 EUR           |
+| Greenland                        | 99 USD           |
+| Grenada                          | 99 USD           |
+| Guatemala                        | 750 GTQ          |
+| Guinea                           | 99 USD           |
+| Guinea-Bissau                    | 99 USD           |
+| Guyana                           | 99 USD           |
+| Haiti                            | 99 USD           |
+| Honduras                         | 99 USD           |
+| Hong Kong SAR                    | 760 HKD          |
+| Hungary                          | 18800 HUF        |
+| Iceland                          | 11929 ISK        |
+| India                            | 4500 INR         |
+| Indonesia                        | 1000000 IDR      |
+| Iraq                             | 120000 IQD       |
+| Ireland                          | 75 EUR           |
+| Israel                           | 350 ILS          |
+| Italy                            | 75 EUR           |
+| Jamaica                          | 99 USD           |
+| Japan                            | 9800 JPY         |
+| Jordan                           | 70 JOD           |
+| Kazakhstan                       | 15038 KZT        |
+| Kenya                            | 9999 KES         |
+| Kiribati                         | 99 USD           |
+| Korea                            | 108000 KRW       |
+| Kuwait                           | 28 KWD           |
+| Kyrgyzstan                       | 99 USD           |
+| Laos                             | 99 USD           |
+| Latvia                           | 75 EUR           |
+| Lesotho                          | 99 USD           |
+| Liberia                          | 99 USD           |
+| Libya                            | 99 USD           |
+| Liechtenstein                    | 93 CHF           |
+| Lithuania                        | 75 EUR           |
+| Luxembourg                       | 75 EUR           |
+| Macao SAR                        | 99 USD           |
+| Madagascar                       | 99 USD           |
+| Malawi                           | 99 USD           |
+| Malaysia                         | 300 MYR          |
+| Maldives                         | 99 USD           |
+| Mali                             | 99 USD           |
+| Malta                            | 75 EUR           |
+| Marshall Islands                 | 99 USD           |
+| Mauritania                       | 30046 MRO        |
+| Mauritius                        | 99 USD           |
+| Mexico                           | 1140 MXN         |
+| Micronesia                       | 99 USD           |
+| Monaco                           | 75 EUR           |
+| Mongolia                         | 99 USD           |
+| Montenegro                       | 75 EUR           |
+| Morocco                          | 800 MAD          |
+| Mozambique                       | 99 USD           |
+| Myanmar                          | 99 USD           |
+| Namibia                          | 99 USD           |
+| Nauru                            | 99 USD           |
+| Nepal                            | 99 USD           |
+| Netherlands                      | 75 EUR           |
+| New Zealand                      | 140 NZD          |
+| Nicaragua                        | 99 USD           |
+| Niger                            | 99 USD           |
+| Nigeria                          | 19500 NGN        |
+| North Macedonia                  | 99 USD           |
+| Norway                           | 580 NOK          |
+| Oman                             | 40 OMR           |
+| Pakistan                         | 9000 PKR         |
+| Palau                            | 99 USD           |
+| Panama                           | 99 USD           |
+| Papua New Guinea                 | 99 USD           |
+| Paraguay                         | 99 USD           |
+| Peru                             | 280 PEN          |
+| Philippines                      | 4400 PHP         |
+| Poland                           | 280 PLN          |
+| Qatar                            | 360 QAR          |
+| Romania                          | 75 EUR           |
+| Russia                           | 3000 RUB         |
+| Rwanda                           | 99 USD           |
+| Saint Kitts and Nevis            | 99 USD           |
+| Saint Lucia                      | 99 USD           |
+| Saint Vincent and the Grenadines | 99 USD           |
+| Samoa                            | 99 USD           |
+| San Marino                       | 75 EUR           |
+| São Tomé and Príncipe            | 99 USD           |
+| Saudi Arabia                     | 380 SAR          |
+| Senegal                          | 99 USD           |
+| Serbia                           | 7000 RSD         |
+| Seychelles                       | 99 USD           |
+| Sierra Leone                     | 99 USD           |
+| Singapore                        | 120 SGD          |
+| Slovakia                         | 75 EUR           |
+| Slovenia                         | 75 EUR           |
+| Solomon Islands                  | 99 USD           |
+| Somalia                          | 99 USD           |
+| South Africa                     | 700 ZAR          |
+| Spain                            | 75 EUR           |
+| Sri Lanka                        | 99 USD           |
+| Suriname                         | 99 USD           |
+| Swaziland                        | 99 USD           |
+| Sweden                           | 700 SEK          |
+| Switzerland                      | 90 CHF           |
+| Taiwan                           | 2840 TWD         |
+| Tajikistan                       | 99 USD           |
+| Tanzania                         | 99 USD           |
+| Thailand                         | 3000 THB         |
+| Timor-Leste                      | 99 USD           |
+| Togo                             | 99 USD           |
+| Tonga                            | 99 USD           |
+| Trinidad and Tobago              | 636 TTD          |
+| Tunisia                          | 140 TND          |
+| Türkiye                          | 160 TRY          |
+| Turkmenistan                     | 99 USD           |
+| Tuvalu                           | 99 USD           |
+| Uganda                           | 99 USD           |
+| Ukraine                          | 800 UAH          |
+| United Arab Emirates             | 99 USD           |
+| United Kingdom                   | 65 GBP           |
+| United States                    | 99 USD           |
+| Uruguay                          | 99 USD           |
+| Uzbekistan                       | 99 USD           |
+| Vanuatu                          | 99 USD           |
+| Venezuela                        | 420 VEF          |
+| Vietnam                          | 2000000 VND      |
+| Yemen                            | 21245 YER        |
+| Zambia                           | 99 USD           |
+| Zimbabwe                         | 99 USD           |
