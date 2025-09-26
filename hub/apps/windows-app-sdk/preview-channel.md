@@ -69,17 +69,9 @@ Microsoft.Windows.AI.Text
     InputKind
     LanguageModel
         CreateContext
-        CreateContext
-        CreateContext
-        GenerateEmbeddingVectors
         GenerateEmbeddingVectors
         GenerateResponseAsync
-        GenerateResponseAsync
-        GenerateResponseAsync
         GenerateResponseFromEmbeddingsAsync
-        GenerateResponseFromEmbeddingsAsync
-        GenerateResponseFromEmbeddingsAsync
-        GetUsablePromptLength
         GetUsablePromptLength
         GetVectorSpaceId
 
@@ -89,7 +81,6 @@ Microsoft.Windows.AI.Text
  
     TextRewriteTone
     TextSummarizer
-        IsPromptLargerThanContext
         IsPromptLargerThanContext
         SummarizeConversationAsync
 ```

@@ -413,8 +413,6 @@ Microsoft.UI.Windowing
 
     AppWindow
         SetTaskbarIcon
-        SetTaskbarIcon
-        SetTitleBarIcon
         SetTitleBarIcon
 
     AppWindowTitleBar
