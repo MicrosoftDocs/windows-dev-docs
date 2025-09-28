@@ -46,7 +46,7 @@ This rich edit box has a rich text document open in it. The formatting and file 
 > - **Important APIs:** [RichEditBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox), [Document property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox)
+> [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery://item/RichEditBox)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

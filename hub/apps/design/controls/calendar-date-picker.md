@@ -34,7 +34,7 @@ The entry point displays placeholder text if a date has not been set; otherwise,
 > - **Important APIs:** [CalendarDatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarDatePicker), [Date property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.date), [DateChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.datechanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CalendarDatePicker in action](winui3gallery:/item/CalendarDatePicker)
+> [Open the WinUI 3 Gallery app and see the CalendarDatePicker in action](winui3gallery://item/CalendarDatePicker)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

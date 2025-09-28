@@ -196,7 +196,7 @@ For more information and examples, see the [FontIcon](/windows/windows-app-sdk/a
 > Use the Iconography page in the WinUI 3 Gallery app to view, search, and copy code for all the icons available in Segoe Fluent Icons.
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app to the Iconography page](winui3gallery:/item/Iconography)
+> [Open the WinUI 3 Gallery app to the Iconography page](winui3gallery://item/Iconography)
 
 ## AnimatedIcon
 
@@ -207,7 +207,7 @@ You can use animated icons to implement lightweight, vector-based icons with mot
 For more information and examples, see [Animated icons](../controls/animated-icon.md) and the [AnimatedIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon) class documentation.
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
+> [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery://item/AnimatedIcon)
 
 ## PathIcon
 
