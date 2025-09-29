@@ -8,9 +8,10 @@
         - name: Take a Test API
           href: ../apps-for-education/take-a-test-api.md
     - name: Enterprise apps
+      href: ../apps-for-enterprise/index.md
       items:
         - name: Windows Information Protection (WIP)
-        - name: "Tutorial: Create a customer database application"
+          href: https://techcommunity.microsoft.com/blog/windows-itpro-blog/announcing-the-sunset-of-windows-information-protection-wip/3579282
     - name: Progressive Web Apps
       href: /microsoft-edge/progressive-web-apps
 - name: Audio, video, and camera
