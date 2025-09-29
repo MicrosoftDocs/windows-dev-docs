@@ -10,7 +10,7 @@
     - name: Enterprise apps
       items:
         - name: Windows Information Protection (WIP)
-        - name: "Tutorial: Create a customer database application"
+          href: https://techcommunity.microsoft.com/blog/windows-itpro-blog/announcing-the-sunset-of-windows-information-protection-wip/3579282
     - name: Progressive Web Apps
       href: /microsoft-edge/progressive-web-apps
 - name: Audio, video, and camera
