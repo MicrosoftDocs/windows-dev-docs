@@ -146,7 +146,9 @@ $wingetPath = (Get-Command winget).Source
 # Get the directory containing WinGet
 $wingetDir = Split-Path $wingetPath -Parent
 # The MCP server executable is in the same directory
-$mcpServerPath = Join-Path $wingetDir "WindowsPackageManagerMCPServer.exe"
+$mcpServerPath = Join-Path -Path $wingetDir `
+    -ChildPath "Microsoft.DesktopAppInstaller_8wekyb3d8bbwe" `
+    -AdditionalChildPath "WindowsPackageManagerMCPServer.exe"
 Write-Host "WinGet MCP Server path: $mcpServerPath"
 ```
 
