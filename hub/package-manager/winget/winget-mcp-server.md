@@ -23,11 +23,6 @@ with installation workflows. This enhances the overall authoring experience by
 providing contextual information about available packages directly to AI-powered
 tools.
 
-> [!IMPORTANT]
-> The Windows Package Manager MCP server is currently in preview. To use this
-> feature, download the [WinGet preview version][00]. Features and functionality
-> may change as development continues.
-
 ## What is Model Context Protocol (MCP)?
 
 Model Context Protocol (MCP) is an open protocol that enables AI systems to
@@ -291,8 +286,6 @@ If package installation fails or behaves unexpectedly:
 
 Current limitations of the WinGet MCP server integration include:
 
-- **Preview status**: The MCP server is currently in preview and features may
-  change
 - **Agent behavior**: There is no guarantee that AI agents will use WinGet MCP
   tools for any particular query, though specific prompting can help guide tool
   usage
@@ -310,7 +303,6 @@ Current limitations of the WinGet MCP server integration include:
 - [Windows Package Manager GitHub repository][10]
 
 <!-- Link reference definitions -->
-[00]: https://aka.ms/getwingetpreview
 [01]: https://code.visualstudio.com/docs/copilot/chat/mcp-servers
 [02]: https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
 [03]: https://code.visualstudio.com/docs/copilot/overview
