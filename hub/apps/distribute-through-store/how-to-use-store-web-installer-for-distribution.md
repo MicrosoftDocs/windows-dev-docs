@@ -40,13 +40,13 @@ This functionality isn't currently available for the following content types:
 
 To enable the Store Web Installer for your app, you need to ensure that the following parameters are set in the calling URL:
 
-- **On [apps.microsoft.com](https://apps.microsoft.com)**: You don't need to make any changes to enable the Store Web Installer for your app, as long as they're covered within the [Feature availability section](#feature-availability) and you are not overriding this using the **launch mode=full** or **launch mode=mini/pop-up** URL parameters.
-  - The Store Web Installer is the default installer on apps.microsoft.com, and these parameters help you override the default installation system.
+- **On [apps.microsoft.com](https://apps.microsoft.com)**: You don't need to make any changes to enable the Store Web Installer for your app, as long as they're covered within the [Feature availability section](#feature-availability) and you are not overriding this using the **mode=full** URL parameter.
+  - The Store Web Installer is the default installer on apps.microsoft.com, and this mode paramter helps you launch the Store PDP instead for that user.
 
 - **On your website**: Follow these steps to switch to the Web installer on your website badge:
   1. Navigate to [apps.microsoft.com/badge](https://apps.microsoft.com/badge).
   1. Enter the right data for your app.
-  1. Set **Launch mode=Direct** to ensure the required code is generated for your app.
+  1. Set **Launch mode as Direct** to ensure the required code is generated for your app.
   1. Copy the code, and insert the new badge within your website.
 
 ## Key notes for enterprise administrators
