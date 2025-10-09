@@ -29,9 +29,15 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.7.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../downloads.md).
 
-### Version 1.7.4 (1.7.250909003)
+### Version 1.7.5 (1.7.xxxxxx)
 
 This is the latest service release for Version 1.7 of the Windows App SDK.
+
+#### Bug Fixes
+* Fix scrolling when the setting "Scroll inactive windows when hovering over them" is off. Visit [GitHub Issue #10091](https://github.com/microsoft/microsoft-ui-xaml/issues/10091) for more information.
+* Fixed an issue that caused a false positive warning about a missing mspdbcmf.exe.
+
+### Version 1.7.4 (1.7.250909003)
 
 ### Bug Fixes
 
