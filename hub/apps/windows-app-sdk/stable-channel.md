@@ -26,9 +26,28 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.8.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
-### Version 1.8.1 (1.8.250916003)
+### Version 1.8.2 (1.8.251003001)
 
 This is the latest service release for Version 1.8 of the Windows App SDK.
+
+#### Updated ONNX Runtime
+Updated the `onnxruntime.dll` to 1.23.1 introducing several enhancements to ONNX Runtime's Python and C++ APIs, focusing on improved device and memory information handling, synchronization stream support, and tensor copy functionality. It adds new Python bindings for device/memory types, exposes more detailed session input/output metadata, and provides a Python-accessible tensor copy API. The changes also refactor and extend the C++ API for better stream and memory info management.
+
+**Key enhancements include:**
+* Python bindings for `OrtMemoryInfoDeviceType`, `OrtDeviceMemoryType`, and expanded `OrtDevice` to expose the memory type via a new `mem_type` method. The `OrtMemoryInfo` Python class now supports both legacy and new V2 constructors and exposes additional properties such as device memory type and Vendor ID.
+* Extended the Python `InferenceSession` object to provide access to imput/output `OrtMemoryInfo` and `OrtEpDevice` objects through new properties and methods
+* Introduced Python bindings for `OrtSyncStream`, including creation via `OrtEpDevice.create_sync_stream()` and retrieval of device-specific `OrtMemoryInfo` via `OrtEpDevice.memory_info()`.
+* Refactored the C++ API to generalize `SyncStream` handling, allowing for unowned streams and improved type safety.
+* Added a new Python-level `copy_tensors` function and corresponding C++ binding, enabling efficient copying of tensor data between OrtValue objects, optionally using a synchronization stream.
+* Changed the return type of the `OrtValue.data_ptr` method in the Python binding from `int64_t` to `uintptr_t` for better cross-platform compatibility.
+* Minor improvements to error messages and device type handling in the Python API (e.g., for OrtDevice).
+* Addressed edge cases in memory information handling
+* Resolved minor issues to improve stability and reliability
+
+#### Bug fixes
+* Fixed deployment handler code to report the actual failure HRESULT for increased clarity when troubleshooting.
+
+### Version 1.8.1 (1.8.250916003)
 
 #### LanguageModel text generation
  
@@ -46,6 +65,7 @@ See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-si
 - **Shared ONNX Runtime** - Uses system-wide runtime instead of bundling your own, reducing app size
 - **Smaller downloads/installs** - No need to carry large EPs and the ONNX Runtime in your app
 - **Broad hardware support** - Runs on all Windows 11 PCs (x64 and ARM64) with any hardware configuration
+
 
 ### New APIs for 1.8.1
 
