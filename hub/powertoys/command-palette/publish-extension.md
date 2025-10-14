@@ -31,10 +31,10 @@ You can run this command from the "Run commands" command in Command Palette, fro
 
 ## Guide to Microsoft Store publishing
 
+Publishing to the Microsoft Store provides your extension with wide reach across Windows devices and automatic update delivery to users. This guide walks you through the complete process from setting up your Partner Center account to building MSIX packages and submitting your extension for certification. You'll learn how to prepare your extension's manifest files, create the required bundle packages, and navigate the Partner Center submission workflow to get your extension published successfully.
+
 > [!NOTE]
 > This guide provides basic Microsoft Store publishing steps specific to Command Palette extensions. For comprehensive Microsoft Store publishing guidance, including detailed submission requirements, certification processes, and best practices, see [Publish Windows apps and games](https://learn.microsoft.com/windows/apps/publish/).
-
-Publishing to the Microsoft Store provides your extension with wide reach across Windows devices and automatic update delivery to users. This guide walks you through the complete process from setting up your Partner Center account to building MSIX packages and submitting your extension for certification. You'll learn how to prepare your extension's manifest files, create the required bundle packages, and navigate the Partner Center submission workflow to get your extension published successfully.
 
 ### Prerequisites
 
@@ -85,7 +85,7 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 
 ### Build MSIX
 
-1. In the terminal, change to the `<ExtensionName>\<ExtensionName>` directory.
+1. In the terminal, move to the `<ExtensionName>\<ExtensionName>` directory.
 1. Create an x64 build MSIX with the following command:
 
    ```powershell
@@ -154,30 +154,28 @@ Verify your MSIX build is ready by checking:
 
 If any items are missing or failed, review the build commands and check for error messages before continuing.
 
-
 ### Microsoft Store submission
 
 1. Navigate to the [Microsoft Partner Center](https://partner.microsoft.com/dashboard/home) and open your newly created extension project.
 1. In **Packages**, upload the created MSIX bundle.
 1. Complete the rest of the submission. The following suggestions can help you:
    1. In **Languages supported in packages**, under your supported language (for example, English (United States)), in **Description**, make sure to include `<ExtensionName> integrates with the Windows Command Palette to...`
-   1. **Tip**: Add additional testing information.
-      - In the left navigation, locate **Supplemental info** and select **Additional Testing Information**. Here's an [example](https://github.com/chatasweetie/CmdPalExtensions/blob/main/microsoftStoreResources/TesterInstructions.txt).
+   1. In the left navigation, locate **Supplemental info** and select **Additional Testing Information**. Add instructions about needing Powertoys and Command Palette. Here's an [example](https://github.com/chatasweetie/CmdPalExtensions/blob/main/microsoftStoreResources/TesterInstructions.txt).
 1. Submit your extension to the store.
 
 After submission, Microsoft will review your extension for certification. Monitor your submission status in Partner Center and check for email notifications about approval. Once approved, your extension will be available in the Microsoft Store within a few hours.
 
 ## WinGet
 
+Publishing packages to WinGet is the recommended way to share your extensions with users. Extension packages that are listed on WinGet can be discovered and installed directly from Command Palette.
+
 > [!TIP]
 > **What is WinGet?**
 > WinGet is Microsoft's open-source command-line package manager for Windows. It's similar to package managers like npm or pip, but for Windows applications. Publishing to WinGet allows users to install your extension with a simple `winget install` command and enables automatic discovery within Command Palette.
 
-Publishing packages to WinGet is the recommended way to share your extensions with users. Extension packages that are listed on WinGet can be discovered and installed directly from Command Palette.
-
 Before submitting your manifest to WinGet, check the following two requirements:
 
-### Add the `windows-commandpalette-extension` tag
+**Add the `windows-commandpalette-extension` tag**
 
 Command Palette uses the special `windows-commandpalette-extension` tag to discover extensions. Make sure that your manifest includes this tag so that Command Palette can discover your extension. Add the following code to each `.locale.*.yaml` file in your manifest:
 
@@ -186,7 +184,7 @@ Tags:
 - windows-commandpalette-extension
 ```
 
-### Ensure WindowsAppSdk is listed as a dependency
+**Ensure WindowsAppSdk is listed as a dependency**
 
 If you're using Windows App SDK, make sure that it's listed as a dependency of your package. Add the following code to your `.installer.yaml` manifest:
 
@@ -213,16 +211,11 @@ Publishing to WinGet is the recommended distribution method for Command Palette 
     wingetcreate --version
     ```
 
-
-
 ### Prepare the project
 
 1. In `<ExtensionName>.csproj`, from the `<PropertyGroup>`:
    - Remove `<PublishProfile>win-$(Platform).pubxml</PublishProfile>`
    - Add `<WindowsPackageType>None</WindowsPackageType>`
-1. `cd` into `CmdPalRandomRiddleExtension\CmdPalRandomRiddleExtension\Properties\`
-
-
 1. `cd` into the directory that contains your `<ExtensionName>.cs`
 1. Create a `build-exe.ps1` file, for a simple extension you can copy and customize the following:
 
@@ -317,7 +310,7 @@ Write-Host "🎉 Build completed successfully!" -ForegroundColor Green
 1. Locate `CLSID`
     1. Open the extension's main `.cs` file (for example, `<ExtensionName>.cs`).
     1. Look for the `[Guid("...")]` attribute above the class declaration.
-    1. This GUID is your CLSID - copy it exactly as shown.
+    1. This GUID is your CLSID - Keep note of this because it will be used in th next step
 
        ```csharp
        // Example from <ExtensionName>.cs
@@ -550,12 +543,8 @@ Verify your GitHub Actions setup by checking:
 ### WinGet submission
 
 > [!IMPORTANT]
-> The first submission must be manual. A GitHub Action template will be linked at the end for post-first submission updates.
+> The first submission must be manual. `wingetcreate new` requires interactive input for package details
 
-**Why manual first?**
-
-- `wingetcreate new` requires interactive input for package details
-- GitHub Actions can't provide interactive console input
 
 #### Manual first submission
 
