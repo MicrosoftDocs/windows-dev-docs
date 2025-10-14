@@ -633,24 +633,21 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 ### Microsoft Store complaint and appeal statistics
 
-Numbers reported on numbers reported on 7/2/2024 (from 7/1/2023 – 6/30/2024)
+Numbers reported from 7/1/2024 - 7/1/2025:
 
-
-| Statistic (FY2024) | Count    |
+| Statistic          | Count    |
 |--------------------|----------|
-| App and/or Account Enforcement Action Appeals |      829 |
-| Complaints about Technological Issues  | 36 |
-| Regulatory Compliance Complaints    | 0 |
-| Questions about certification, policy, submission, and technical help | 2,554 |
-| Miscellaneous | 663 |
-| Total Issues | 4,542 |
-| Overturned decisions | 587 |
-| Average Processing Time | 2.10 days |
-
+| App and/or Account Enforcement Action Appeals | 1,326 |
+| Complaints about Technological Issues  | 51 |
+| Regulatory Compliance Complaints | 0 |
+| Questions about certification, policy, submission, and technical help | 4,040 |
+| Miscellaneous | 3,670 |
+| Total Issues | 10,126 |
+| Overturned decisions | 702 |
+| Average Processing Time | 2.85 |
 
 ### See also
 
 - [Change history for Microsoft Store Policies](store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
 - [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)
-
