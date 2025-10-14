@@ -34,6 +34,8 @@ You can run this command from the "Run commands" command in Command Palette, fro
 > [!NOTE]
 > This guide provides basic Microsoft Store publishing steps specific to Command Palette extensions. For comprehensive Microsoft Store publishing guidance, including detailed submission requirements, certification processes, and best practices, see [Publish Windows apps and games](https://learn.microsoft.com/windows/apps/publish/).
 
+Publishing to the Microsoft Store provides your extension with wide reach across Windows devices and automatic update delivery to users. This guide walks you through the complete process from setting up your Partner Center account to building MSIX packages and submitting your extension for certification. You'll learn how to prepare your extension's manifest files, create the required bundle packages, and navigate the Partner Center submission workflow to get your extension published successfully.
+
 ### Prerequisites
 
 > [!IMPORTANT]
@@ -120,16 +122,16 @@ You can run this command from the "Run commands" command in Command Palette, fro
 
    > [!NOTE]
    > If `makeappx` isn't recognized, check which version of Windows SDK you have installed:
-   > 
-   >    ```powershell
-   >    Get-ChildItem "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v*" | Select-Object PSChildName
-   >    ```
-   > 
-   >    Then update the following script with the version number:
-   > 
-   >    ```powershell
-   >    & "C:\Program Files (x86)\Windows Kits\<VersionNumber>\bin\[version]\x64\makeappx.exe" bundle /f bundle_mapping.txt /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
-   >    ```
+   >
+   > ```powershell
+   > Get-ChildItem "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v*" | Select-Object PSChildName
+   > ```
+   >
+   > Then update the following script with the version number:
+   >
+   > ```powershell
+   > & "C:\Program Files (x86)\Windows Kits\<VersionNumber>\bin\[version]\x64\makeappx.exe" bundle /f bundle_mapping.txt /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
+   > ```
 
 1. Locate the bundle:
 
@@ -196,10 +198,13 @@ Dependencies:
 
 ## Guide to WinGet publishing
 
+Publishing to WinGet is the recommended distribution method for Command Palette extensions as it enables automatic discovery and installation directly within Command Palette. This guide covers the majority of the WinGet publication process, from preparing your project and creating build scripts to setting up GitHub Actions automation and submitting your first package manifest. You'll learn how to create installer packages, configure automated builds, and navigate the WinGet submission workflow to make your extension easily discoverable and installable for users.
+
 ### Requirements
 
 - [GitHub CLI](https://cli.github.com/)
 - WingetCreate
+
     ```powershell
     # Install wingetcreate if not already installed
     winget install Microsoft.WingetCreate
@@ -208,9 +213,7 @@ Dependencies:
     wingetcreate --version
     ```
 
-### Prepare Github Repo
 
-TODO: add instructions on adding secreats 
 
 ### Prepare the project
 
@@ -224,6 +227,7 @@ TODO: add instructions on adding secreats
 1. Create a `build-exe.ps1` file, for a simple extension you can copy and customize the following:
 
 **Template: `build-exe.ps1`**
+
 ```powershell
 # TEMPLATE: PowerShell Build Script for Command Palette Extensions
 #
@@ -328,6 +332,7 @@ Write-Host "🎉 Build completed successfully!" -ForegroundColor Green
 1. Create a `setup-template.iss` file, for a simple extension you can copy and customize the following:
 
 **Template: `setup-template.iss`**
+
 ```ini
 ; TEMPLATE: Inno Setup Script for Command Palette Extensions
 ;
@@ -336,7 +341,7 @@ Write-Host "🎉 Build completed successfully!" -ForegroundColor Green
 ; 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
 ; 3. Replace DISPLAY_NAME with your extension's display name (e.g., My Extension)
 ; 4. Replace DEVELOPER_NAME with your name (e.g., Your Name Here)
-; 5. Replace CLSID-HERE with a new CLSID for COM registration
+; 5. Replace CLSID-HERE with extensions CLSID
 ; 6. Update the default version to match your project file
 
 #define AppVersion "0.0.1.0"
@@ -367,23 +372,30 @@ Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}"; ValueData: "EXTENSI
 Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; ValueData: "{app}\EXTENSION_NAME.exe -RegisterProcessAsComServer"
 ```
 
-Note: you can test this locally by having .NET 9 `dotnet` and Inno Setup (todo add links)
+> [!TIP]
+> You can test this locally by having [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0) and [Inno Setup](https://jrsoftware.org/isdl.php) installed.
+>
+> ```powershell
+> # verify .Net 9 is installed
+> dotnet --version
+> 
+> # verify Inno Setup is installed
+> Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
+>
+> # build installer, this will take a while
+> .\build-exe.ps1 -Version "0.0.1.0"
+>
+> # verify that <ExtensionName>-Setup-0.0.1.0.exe is listed
+> Get-ChildItem "bin\Release\installer\" -File
+> ```
 
-```powershell
-# verify .Net 9 is installed
-dotnet --version
+### Automate with GitHub Actions
 
-# verify Inno Setup is installed
-Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
+> [!NOTE]
+> **What are GitHub Actions?**
+> GitHub Actions is a CI/CD platform that automates software workflows directly in your GitHub repository. For Command Palette extensions, GitHub Actions can automatically build your installer whenever you push code changes, create releases, and even submit updates to WinGet - eliminating manual build steps and ensuring consistent, reproducible builds.
 
-# build installer, this will take a while
-.\build-exe.ps1 -Version "0.0.1.0"
-
-# verify that <ExtensionName>-Setup-0.0.1.0.exe is listed
-Get-ChildItem "bin\Release\installer\" -File
-```
-
-TODO: Explain Github Actions briefly
+Now we'll set up GitHub Actions to automate the build and release process:
 
 1. `cd ..` up a directory, you should be in the directory that contains `<ExtensionName>.sln`
 1. create a new repo:
@@ -405,7 +417,6 @@ mkdir .github/workflows
 # 4. Replace all instances of DISPLAY_NAME with your display name (e.g., My Extension)
 # 5. Replace all instances of EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
 # 6. Replace all instances of FOLDER_NAME with your project folder name (e.g., CmdPalMyExtension)
-# 7. Replace all instances of GENERATE-NEW-GUID-HERE with your project's CLSID
 # 8. Update the default version in the build script to match your project file
 
 name: DISPLAY_NAME - Build EXE Installer
@@ -505,11 +516,12 @@ jobs:
 
 This file is a Github Action scrip that does the following:
 
-    - Setup (.NET, Inno Setup)
-    - Get Version (simple version detection)
-    - Build App (straightforward dotnet publish)
-    - Create Installer (simple Inno Setup call)
-    - Upload Results (clear artifact + release steps)
+- Setup (.NET, Inno Setup)
+- Get Version (simple version detection)
+- Build App (straightforward dotnet publish)
+- Create Installer (simple Inno Setup call)
+- Upload Results (clear artifact + release steps)
+
 1. Update the placeholders in `release-extension.yml`:
    - DEVELOPER_NAME
    - GITHUB_REPO_URL
@@ -525,6 +537,15 @@ This file is a Github Action scrip that does the following:
    gh workflow run release-extension.yml --ref main -f create_release=true -f "release_notes= **First Release of <ExtensionName> Extension for Command Palette**
    The inaugural release of the <ExtensionName> for Command Palette..."
    ```
+
+#### GitHub Actions validation
+
+Verify your GitHub Actions setup by checking:
+
+- ✅ GitHub Action workflow runs successfully without errors
+- ✅ Installer EXE is created and uploaded to GitHub Release
+
+**Typical build time**: 5-10 minutes for the GitHub Action to complete.
 
 ### WinGet submission
 
@@ -544,7 +565,9 @@ This file is a Github Action scrip that does the following:
    # Use your actual GitHub release URL (example with version 0.0.1 for first release)
    wingetcreate new "https://github.com/<yourusername>/<ExtensionName>/releases/download/<ExtensionName>-v0.0.1/<ExtensionName>-Setup-0.0.1.exe"
    ```
-    Note: FOr the Github Release URL, you can go to the release page, under **Assets** you can right click the .exe file and
+
+   > [!TIP]
+   > To get the GitHub Release URL: Go to your release page, under **Assets**, right-click the `.exe` file and select "Copy link address".
 
 1. When `wingetcreate` prompts you, press **Enter** if the suggested response is pulled from the EXE file, for example: `PackageIdentifier`, `PackageVersion`, `Publisher`, etc.
    - **For optional modification questions**, answer **No**:
