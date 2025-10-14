@@ -208,6 +208,10 @@ Dependencies:
     wingetcreate --version
     ```
 
+### Prepare Github Repo
+
+TODO: add instructions on adding secreats 
+
 ### Prepare the project
 
 1. In `<ExtensionName>.csproj`, from the `<PropertyGroup>`:
@@ -217,36 +221,32 @@ Dependencies:
 
 
 1. `cd` into the directory that contains your `<ExtensionName>.cs`
-1. Locate `CLSID`
-    1. Open the extension's main `.cs` file (for example, `<ExtensionName>.cs`).
-    1. Look for the `[Guid("...")]` attribute above the class declaration.
-    1. This GUID is your CLSID - copy it exactly as shown.
-
-       ```csharp
-       // Example from <ExtensionName>.cs
-       [Guid("0ab5d8ab-b206-4023-99f0-97dde26e14f2")]  // This is the CLSID
-       public sealed partial class <ExtensionName> : IExtension
-       ```
-
-    > [!NOTE]
-    > **What is a CLSID?**
-    > A CLSID (Class Identifier) is a unique identifier that Windows uses to identify COM (Component Object Model) components. Each Command Palette extension needs a unique CLSID so Windows can properly register and load your extension. This GUID is automatically generated when you create your extension project.
-
 1. Create a `build-exe.ps1` file, for a simple extension you can copy and customize the following:
 
 **Template: `build-exe.ps1`**
 ```powershell
-# Replace <ExtensionName> with actual extension name (e.g., CmdPalCatFunExtension)
-# Replace <VERSION> with version number (e.g., 0.0.1.0)
+# TEMPLATE: PowerShell Build Script for Command Palette Extensions
+#
+# To use this template for a new extension:
+# 1. Copy this file to your extension's project folder as "build-exe.ps1"
+# 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
+# 2. Replace <VERSION> with your extension version (e.g., 0.0.1.0)
+# 3. Update the default version to match your project file's AppxPackageVersion
+# 4. Ensure you have a setup-template.iss file in the same directory
+
 param(
     [string]$Configuration = "Release",
-    [string]$Version = "<VERSION>",  # Update version
+    [string]$Version = "<VERSION>",  # UPDATE: Change this to match your project's default version
     [string]$Platform = "x64"
 )
 
-# Build and publish self-contained EXE
+$ErrorActionPreference = "Stop"
+
+Write-Host "Building EXTENSION_NAME EXE installer..." -ForegroundColor Green
+Write-Host "Version: $Version" -ForegroundColor Yellow
+
 $ProjectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$ProjectPath = "<ExtensionName>.csproj"  # Replace with actual .csproj name
+$ProjectFile = "$ProjectDir\EXTENSION_NAME.csproj"
 
 # Clean previous builds
 Write-Host "Cleaning previous builds..." -ForegroundColor Yellow
@@ -310,27 +310,48 @@ if (Test-Path $InnoSetupPath) {
 Write-Host "🎉 Build completed successfully!" -ForegroundColor Green
 ```
 
+1. Locate `CLSID`
+    1. Open the extension's main `.cs` file (for example, `<ExtensionName>.cs`).
+    1. Look for the `[Guid("...")]` attribute above the class declaration.
+    1. This GUID is your CLSID - copy it exactly as shown.
+
+       ```csharp
+       // Example from <ExtensionName>.cs
+       [Guid("0ab5d8ab-b206-4023-99f0-97dde26e14f2")]  // This is the CLSID
+       public sealed partial class <ExtensionName> : IExtension
+       ```
+
+    > [!NOTE]
+    > **What is a CLSID?**
+    > A CLSID (Class Identifier) is a unique identifier that Windows uses to identify COM (Component Object Model) components. Each Command Palette extension needs a unique CLSID so Windows can properly register and load your extension. This GUID is automatically generated when you create your extension project.
+
 1. Create a `setup-template.iss` file, for a simple extension you can copy and customize the following:
 
 **Template: `setup-template.iss`**
 ```ini
-; Replace <CLSID> with unique GUID 
-; Replace <ExtensionName> with actual extension name 
-; Replace <YourName> with your name
-; Replace <ExtensionFolderName> with actual extension name 
+; TEMPLATE: Inno Setup Script for Command Palette Extensions
+;
+; To use this template for a new extension:
+; 1. Copy this file to your extension's project folder as "setup-template.iss"
+; 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
+; 3. Replace DISPLAY_NAME with your extension's display name (e.g., My Extension)
+; 4. Replace DEVELOPER_NAME with your name (e.g., Your Name Here)
+; 5. Replace CLSID-HERE with a new CLSID for COM registration
+; 6. Update the default version to match your project file
+
+#define AppVersion "0.0.1.0"
 
 [Setup]
-AppId={{<CLSID>}} ; Replace 
-AppName=<ExtensionName>  ; Replace 
+AppId={{GUID-HERE}}
+AppName=DISPLAY_NAME
 AppVersion={#AppVersion}
-AppPublisher=<YourName> ; Replace 
-DefaultDirName={autopf}\<ExtensionFolderName>  ; Replace 
+AppPublisher=DEVELOPER_NAME
+DefaultDirName={autopf}\EXTENSION_NAME
 OutputDir=bin\Release\installer
-OutputBaseFilename=<ExtensionFolderName>-Setup-{#AppVersion} ; Replace 
+OutputBaseFilename=EXTENSION_NAME-Setup-{#AppVersion}
 Compression=lzma
 SolidCompression=yes
 MinVersion=10.0.19041
-
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -339,12 +360,11 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Source: "bin\Release\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
 
 [Icons]
-Name: "{group}\<ExtensionName>"; Filename: "{app}\<ExtensionName>.exe"
+Name: "{group}\DISPLAY_NAME"; Filename: "{app}\EXTENSION_NAME.exe"
 
 [Registry]
-Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{<CLSID>}}"; ValueData: "<ExtensionName>" ; Replace , note: do not replace SOFTWARE\Classes\CLSID\ portion
-Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{<CLSID>}}\LocalServer32"; ValueData: "{app}\<ExtensionName>.exe -RegisterProcessAsComServer" ; Replace , note: do not replace SOFTWARE\Classes\CLSID\ portion
-
+Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}"; ValueData: "EXTENSION_NAME"
+Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; ValueData: "{app}\EXTENSION_NAME.exe -RegisterProcessAsComServer"
 ```
 
 Note: you can test this locally by having .NET 9 `dotnet` and Inno Setup (todo add links)
@@ -373,7 +393,117 @@ mkdir .github/workflows
 ```
 
 1. In the `workflows` directory, create a new file called `release-extension.yml`.
-1. Copy the contents of [release-extension-template.yml](https://github.com/chatasweetie/CmdPalExtensions/blob/main/.github/workflows/release-extension-template.yml) to your local file. This file is a Github Action scrip that does the following:
+1. Add the following content to the new file:
+
+```yml
+# TEMPLATE: Extension EXE Installer Build and Release Workflow
+# 
+# To use this template for a new extension:
+# 1. Copy this file to a new workflow file (e.g., release-myextension-exe.yml)
+# 2. Replace all instances of DEVELOPER_NAME with your developer name (e.g., Your Name Here)
+# 3. Replace all instances of GITHUB_REPO_URL with your GitHub repository URL (e.g., https://github.com/yourusername/YourRepository)
+# 4. Replace all instances of DISPLAY_NAME with your display name (e.g., My Extension)
+# 5. Replace all instances of EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
+# 6. Replace all instances of FOLDER_NAME with your project folder name (e.g., CmdPalMyExtension)
+# 7. Replace all instances of GENERATE-NEW-GUID-HERE with your project's CLSID
+# 8. Update the default version in the build script to match your project file
+
+name: DISPLAY_NAME - Build EXE Installer
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (leave empty to auto-detect)'
+        required: false
+        type: string
+      release_notes:
+        description: 'What is new in this version'
+        required: false
+        default: 'New release with latest updates and improvements.'
+        type: string
+
+jobs:
+  build:
+    runs-on: windows-2022
+    permissions:
+      contents: write
+      actions: read
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+    
+    - name: Install Inno Setup
+      run: choco install innosetup -y --no-progress
+      shell: pwsh
+    
+    - name: Get version from project
+      id: version
+      run: |
+        if ("${{ github.event.inputs.version }}" -ne "") {
+          $version = "${{ github.event.inputs.version }}"
+        } else {
+          $projectFile = "FOLDER_NAME/FOLDER_NAME/EXTENSION_NAME.csproj"
+          $xml = [xml](Get-Content $projectFile)
+          $version = $xml.Project.PropertyGroup.AppxPackageVersion | Select-Object -First 1
+          if (-not $version) { throw "Version not found in project file" }
+        }
+        echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+        Write-Host "Using version: $version"
+      shell: pwsh
+    
+    - name: Build EXE installer using PowerShell script
+      run: |
+        Set-Location "FOLDER_NAME/FOLDER_NAME"
+        .\build-exe.ps1 -Version "${{ steps.version.outputs.VERSION }}"
+      shell: pwsh
+    
+    - name: Upload installer artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: EXTENSION_NAME-installer
+        path: FOLDER_NAME/FOLDER_NAME/bin/Release/installer/*.exe
+    
+    - name: Create GitHub Release
+      uses: softprops/action-gh-release@v1
+      with:
+        tag_name: EXTENSION_NAME-v${{ steps.version.outputs.VERSION }}
+        name: "DISPLAY_NAME v${{ steps.version.outputs.VERSION }}"
+        body: |
+          ## 🎯 DISPLAY_NAME
+          
+          ${{ github.event.inputs.release_notes }}
+          
+          ## 📦 Installation
+          
+          1. Download `EXTENSION_NAME-Setup-${{ steps.version.outputs.VERSION }}.exe`
+          2. Run as Administrator
+          3. Extension will be available in Command Palette
+          
+          ## 🔗 More Information
+          
+          Repository: GITHUB_REPO_URL
+        files: FOLDER_NAME/FOLDER_NAME/bin/Release/installer/*.exe
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Build summary
+      run: |
+        Write-Host "🎉 DISPLAY_NAME Release Complete!" -ForegroundColor Green
+        Write-Host "Version: ${{ steps.version.outputs.VERSION }}" -ForegroundColor Yellow
+        Write-Host "📁 Installer uploaded to GitHub Release" -ForegroundColor Green
+      shell: pwsh
+```
+
+This file is a Github Action scrip that does the following:
 
     - Setup (.NET, Inno Setup)
     - Get Version (simple version detection)
@@ -384,7 +514,7 @@ mkdir .github/workflows
    - DEVELOPER_NAME
    - GITHUB_REPO_URL
    - EXTENSION_NAME
-   - DISPLAY_NAME
+   - EXTENSION_NAME
    - FOLDER_NAME
    - GENERATE-NEW-GUID-HERE
 1. git commit the 3 new files: `build-exe.ps1`, `setup.iss`,`release-extension.yml`
