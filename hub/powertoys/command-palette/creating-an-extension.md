@@ -29,7 +29,7 @@ The Command Palette extension system allows developers to create custom commands
   - C# development workload
   - WinUI application development workload
 - Windows 11 with PowerToys installed
-- Enable (Developer mode on Windows)[https://learn.microsoft.com/windows/apps/get-started/developer-mode-features-and-debugging]
+- Enable [Developer mode on Windows](/windows/apps/get-started/developer-mode-features-and-debugging)
 - Basic knowledge of C# programming
 
 Extensions are written in C#. The fastest way to get started writing extensions is from the Command Palette itself.
