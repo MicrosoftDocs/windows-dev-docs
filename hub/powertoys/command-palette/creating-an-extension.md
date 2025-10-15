@@ -25,9 +25,12 @@ The Command Palette extension system allows developers to create custom commands
 
 **Prerequisites:**
 
-- Visual Studio with C# development workload
+- Visual Studio with the following workloads
+  - C# development workload
+  - WinUI application development workload
 - Windows 11 with PowerToys installed
-- Basic knowledge of C# programming
+- Enable (Developer mode on Windows)[https://learn.microsoft.com/windows/apps/get-started/developer-mode-features-and-debugging]
+- - Basic knowledge of C# programming
 
 Extensions are written in C#. The fastest way to get started writing extensions is from the Command Palette itself.
 
