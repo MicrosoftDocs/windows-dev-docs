@@ -1,15 +1,24 @@
 ---
-title: Display markdown content
-description: Learn how to display markdown in your Command Palette extension.
-ms.date: 3/23/2025
+title: Display markdown content in Command Palette extensions
+description: Learn how to display markdown content in your Command Palette extension. Create rich documentation, file previews, and interactive tutorials with formatted text and embedded commands.
+ms.date: 09/30/2025
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
-# Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
+# Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette that displays markdown content, so that I can provide rich documentation or previews within the Command Palette.
 ---
 
 # Display markdown content
 
 **Previous**: [Command Results](command-results.md)
+
+The Command Palette supports rich content display beyond simple command lists. You can create extensions that show formatted text, documentation, and interactive content using markdown. This capability is particularly useful for:
+
+- Displaying help documentation or user guides
+- Showing file previews or summaries
+- Providing formatted instructions or tutorials
+- Creating interactive content with embedded commands
+
+This article shows you how to create pages that display markdown content in your Command Palette extension.
 
 So far, we've only shown how to display a list of commands in a **ListPage**. However, you can also display rich content in your extension, such as markdown. This can be useful for showing documentation, or a preview of a document.
 
@@ -63,7 +72,7 @@ public <ExtensionName>CommandsProvider()
 
 In this example, a new `ContentPage` that displays a simple markdown string is created. The 'MarkdownContent' class takes a string of markdown content and renders it in the Command Palette.
 
-![Screenshot of extension using ContentPage for markdown](../../images/command-palette/markdown.png)
+:::image type="content" source="../../images/command-palette/markdown.png" alt-text="Screenshot of Command Palette extension displaying markdown content with formatted text and document icon.":::
 
 You can also add multiple blocks of content to a page. For example, you can add two blocks of markdown content.
 
@@ -122,9 +131,39 @@ public class <ExtensionName>Page : ContentPage
 1. Select \<ExtensionName\>
 1. Press `Enter` key, the docs should open
 
-![Screenshot of extension using CommandContextItem](../../images/command-palette/command-context-item.png)
+:::image type="content" source="../../images/command-palette/command-context-item.png" alt-text="Screenshot of Command Palette extension showing CommandContextItem with Open in File Explorer option.":::
 
-### Next up: [Get user input with forms](using-form-pages.md)
+## Add images to markdown content
+
+With Command Palette in PowerToys 0.95 and later, you can add images to your markdown content from additional sources using one of the following schemes:
+
+- File scheme: Enables loading images using the `file:` scheme.
+  - This scheme intentionally restricts file URIs to absolute paths to ensure correct resolution when passed through the Command Palette extension/host boundary. In most cases, 3rd-party extensions provide the paths. However, the Command Palette host performs the actual loading and would otherwise resolve paths relative to itself.
+- Data scheme: Enables loading images from URIs with the `data:` scheme (both Base64 and URL-encoded forms).
+  - **Note**: Before the changes introduced in PowerToys 0.95 and later, the markdown control could hang or become unresponsive when processing very large input, such as images larger than 5 MB or with dimensions exceeding 4000×4000 pixels, or markdown files exceeding 1 MB in size. Even with the changes, it is recommended to keep image file sizes below 5 MB and resize images to reasonable dimensions before embedding. For best results, compress images and split very large markdown content into smaller sections where possible.
+- `ms-appx` scheme: This scheme is now supported for loading images.
+  - **Note**: Since the Command Palette host performs the loading, `ms-appx:` resolution applies to the host and not the extensions, which limits its usefulness.
+- `ms-appdata` scheme: This scheme is now supported for loading images.
+  - Similar to `ms-appx:`, `ms-appdata:` resolution applies to the host, not the extensions. This limits its usefulness for 3rd-party extensions.
+
+Additionally, Command Palette in PowerToys 0.95 and later introduces the concept of image source hints, implemented as query string parameters piggy-backed on the original URI.
+
+These hints allow extension developers to influence the behavior of images within the markdown content.
+
+- `--x-cmdpal-fit`
+  - `none`: No automatic scaling, provides image as is (default)
+  - `fit`: Scale to fit the available space
+- `--x-cmdpal-upscale`
+  - `true`: Allow upscaling
+  - `false`: Downscale only (default)
+- `--x-cmdpal-width`: Desired width in pixels
+- `--x-cmdpal-height`: Desired height in pixels
+- `--x-cmdpal-maxwidth`: Max width in pixels
+- `--x-cmdpal-maxheight`: Max height in pixels
+
+See the [SampleMarkdownImages](https://github.com/microsoft/PowerToys/blob/main/src/modules/cmdpal/ext/SamplePagesExtension/Pages/SampleMarkdownImagesPage.cs) page in the [SamplePagesExtension](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal/ext/SamplePagesExtension) generic sample project in the PowerToys GitHub repository for examples of using images in your extension's markdown content.
+
+## Next up: [Get user input with forms](using-form-pages.md)
 
 ## Related content
 

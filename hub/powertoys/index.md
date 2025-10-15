@@ -184,6 +184,17 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
+### Light Switch
+
+:::row:::
+    :::column:::
+        [![A screenshot of the Light Switch PowerToys utility for Windows.](../images/pt-light-switch.png)](light-switch.md)
+    :::column-end:::
+    :::column span="2":::
+        [Light Switch](light-switch.md) allows you to automatically switch between light and dark themes in Windows based on the time of day.
+    :::column-end:::
+:::row-end:::
+
 ### Mouse utilities
 
 :::row:::
