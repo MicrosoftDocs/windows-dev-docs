@@ -8,7 +8,7 @@
         - name: Take a Test API
           href: ../apps-for-education/take-a-test-api.md
     - name: Enterprise apps
-      href: ../apps-for-enterprise/index.md
+      href: /previous-versions/windows/uwp/enterprise/
       items:
         - name: Windows Information Protection (WIP)
           href: https://techcommunity.microsoft.com/blog/windows-itpro-blog/announcing-the-sunset-of-windows-information-protection-wip/3579282
@@ -129,8 +129,6 @@
           href: ../app-to-app/share-data.md
         - name: Receive data
           href: ../app-to-app/receive-data.md
-        - name: Copy and paste
-          href: ../app-to-app/copy-and-paste.md
     - name: Interprocess communication (IPC)
       href: ../communication/interprocess-communication.md
     - name: Networking and web services

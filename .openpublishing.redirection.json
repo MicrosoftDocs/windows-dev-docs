@@ -9564,6 +9564,16 @@
       "source_path": "hub/apps/develop/launch/launch-settings-app.md",
       "redirect_url": "/windows/apps/develop/launch/launch-settings",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/app-to-app/copy-and-paste.md",
+      "redirect_url": "/windows/apps/develop/communication/copy-and-paste",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/communication.md",
+      "redirect_url": "/windows/apps/develop/communication/",
+      "redirect_document_id": false
     }
   ]
 }

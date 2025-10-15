@@ -147,7 +147,11 @@ items:
                   - name: Connect to remote cameras
                     href: develop\camera\connect-to-remote-cameras.md
           - name: Communication
-            href: develop/communication.md
+            items:
+              - name: Overview
+                href: develop/communication/index.md
+              - name: Copy and paste
+                href: develop/communication/copy-and-paste.md
           - name: Data and files
             items:
               - name: Overview
