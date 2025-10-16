@@ -14,13 +14,13 @@ Mouse utilities in PowerToys is a collection of features that enhance mouse and 
 
 ## Find my mouse
 
-Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving.
+Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving. It has an option to use a transparent spotlight with independent backdrop and spotlight opacities, boosting focus and accessibility.
 
 :::image type="content" source="../images/pt-mouse-utilities-find-my-mouse.gif" alt-text="An animated gif of the PowerToys Find my mouse feature of its Mouse Utilities.":::
 
 ## Gliding cursor
 
-The gliding cursor is an accessibility feature that lets you control the mouse with a single button using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.<kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position.
+The gliding cursor is an accessibility feature that lets you control the mouse with a single button using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.<kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position. Cancel the gliding cursor with the <kbd>Esc</kbd> key or by clicking the mouse.
 
 :::image type="content" source="../images/pt-mouse-utilities-gliding-cursor.png" lightbox="../images/pt-mouse-utilities-gliding-cursor.gif" alt-text="An animated gif of the PowerToys gliding cursor feature of its Mouse Utilities.":::
 
@@ -35,8 +35,8 @@ From the settings page, the following options can be configured:
 | Activation shortcut | The custom shortcut used to activate the spotlight. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
 | Overlay opacity | The opacity of the spotlight backdrop. (default: 50%) |
-| Background color | The color of the spotlight backdrop. (default: #000000) |
-| Spotlight color | The color of the circle that centers on the cursor. (default: #FFFFFF) |
+| Background color | The color of the spotlight backdrop. (default: #000000) Support for transparency is available. |
+| Spotlight color | The color of the circle that centers on the cursor. (default: #FFFFFF) Support for transparency is available. |
 | Spotlight radius | The radius of the circle that centers on the cursor. (default: 100px) |
 | Spotlight initial zoom | The spotlight animation's zoom factor. Higher values result in more pronounced zoom animation as the spotlight closes in on the cursor position. |
 | Animation duration | Time for the spotlight animation. (default: 500ms) |
@@ -90,6 +90,7 @@ Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer. This fe
 | Crosshairs thickness | (default: 5px) |
 | Border color | The color for the crosshair borders. |
 | Border size | Size of the border, in pixels. |
+| Orientation | Choose between **Horizontal**, **Vertical**, or **Vertical and Horizontal** (default). |
 | Automatically hide crosshairs when the mouse pointer is hidden | |
 | Fix crosshairs length | |
 | Crosshairs fixed length (px) | |
