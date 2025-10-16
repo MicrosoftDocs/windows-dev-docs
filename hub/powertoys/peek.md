@@ -15,7 +15,7 @@ PowerToys Peek utility is a system-wide tool for Windows that lets you preview f
 
 ## Preview a file
 
-Select a file in File Explorer and open the Peek preview using the activation / deactivation shortcut (default: <kbd>Ctrl</kbd>+<kbd>Space</kbd>).
+Select a file in File Explorer and open the Peek preview using the activation / deactivation shortcut (default: <kbd>Space</kbd>).
 
 Using <kbd>Left</kbd> and <kbd>Right</kbd> or <kbd>Up</kbd> and <kbd>Down</kbd>, you can scroll between all files in the current folder. Select multiple files in File Explorer for previewing to scroll only between selected ones.
 
@@ -55,7 +55,7 @@ From the settings page, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). |
+| Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). New starting in PowerToys 0.95 - <kbd>Space</kbd> is now the default keyboard command. |
 | Always run without elevation, even when PowerToys is elevated | Tries to run Peek without elevated permissions, to fix access to network shares. |
 | Automatically close the Peek window after it loses focus |  |
 | Confirm before deleting files | When enabled, Peek shows a confirmation dialog before deleting files. |

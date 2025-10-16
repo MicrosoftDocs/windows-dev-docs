@@ -27,7 +27,7 @@ In this comprehensive guide, you'll learn how to add the share feature to your p
 
 ## See also
 
-- [Communication - Windows apps](/windows/apps/develop/communication)
+- [Communication - Windows apps](/windows/apps/develop/communication/)
 - [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
 - [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)

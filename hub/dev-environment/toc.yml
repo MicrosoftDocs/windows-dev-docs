@@ -820,6 +820,8 @@ items:
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities_ispackaged.md
         - name: Color Picker
           href: ../powertoys/color-picker.md
+        - name: Light Switch
+          href: ../powertoys/light-switch.md
         - name: PowerToys Run
           href: ../powertoys/run.md
         - name: Screen Ruler

@@ -178,7 +178,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![Azure icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](/azure/guides/developer/azure-developer-guide)**<br>
         A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
-        [Set up an Azure account](https://azure.microsoft.com/free/)
+        [Set up an Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
     :::column-end:::
     :::column:::
        [![.NET icon](../images/net.png)](https://dotnet.microsoft.com/)<br>

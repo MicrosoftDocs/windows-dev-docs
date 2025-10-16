@@ -29,7 +29,7 @@ Select the desired setting from the filtered results to jump directly to it, or 
 
 ## Shortcut conflict detection
 
-PowerToys includes a feature to detect shortcut conflicts. If you have multiple PowerToys modules that use the same keyboard shortcut, the conflict detection feature will alert you so you can resolve the issue. When the **PowerToys shortcut conflicts** window appears, you can view all conflicting shortcuts and reassign them as needed.
+PowerToys includes a feature to detect shortcut conflicts. If you have multiple PowerToys modules that use the same keyboard shortcut, the conflict detection feature will alert you so you can resolve the issue. When the **PowerToys shortcut conflicts** window appears, you can view all conflicting shortcuts. From this window, you can reassign shortcuts to resolve conflicts, choose to ignore specific conflicts, or remove shortcuts entirely.
 
 :::image type="content" source="../images/pt-shortcut-conflicts.png" alt-text="A screenshot of the PowerToys shortcut conflicts window.":::
 

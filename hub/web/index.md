@@ -201,7 +201,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
        [![Azure icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](/azure/guides/developer/azure-developer-guide)**<br>
         A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
-        [Set up an Azure account](https://azure.microsoft.com/free/)
+        [Set up an Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
     :::column-end:::
     :::column:::
        [![Azure cognitive services icon](../images/azure-cognitive-services.png)](/azure/cognitive-services/what-are-cognitive-services)<br>
@@ -213,7 +213,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
        [![Azure dev guide icon](../images/Azure.png)](/azure/)<br>
         **[Browse Azure products](/azure/)**<br>
         Azure offers a huge variety of products and services - take a look at through the documentation or see the [Azure product descriptions and pricing](https://azure.microsoft.com/products/).<br>
-        [Set up an Azure account](https://azure.microsoft.com/free/)
+        [Set up an Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
     :::column-end:::
 :::row-end:::
 
