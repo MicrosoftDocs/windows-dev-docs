@@ -29,7 +29,7 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.7.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../downloads.md).
 
-### Version 1.7.5 (1.7.xxxxxx)
+### Version 1.7.5 (1.7.251014001 )
 
 This is the latest service release for Version 1.7 of the Windows App SDK.
 
