@@ -35,7 +35,7 @@ This is the latest service release for Version 1.7 of the Windows App SDK.
 
 #### Bug Fixes
 * Fix scrolling when the setting "Scroll inactive windows when hovering over them" is off. Visit [GitHub Issue #10091](https://github.com/microsoft/microsoft-ui-xaml/issues/10091) for more information.
-* Fixed an issue that caused a false positive warning about a missing mspdbcmf.exe.
+* Fixed an issue that caused a false positive warning about a missing mspdbcmf.exe. Visit [GitHub Issue #5262](https://github.com/microsoft/WindowsAppSDK/issues/5262)
 
 ### Version 1.7.4 (1.7.250909003)
 
