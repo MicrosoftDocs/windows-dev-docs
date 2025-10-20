@@ -262,6 +262,22 @@ When this is set to `true`, the terminal will move focus to the pane on mouse ho
 
 ___
 
+## Adjust terminal opacity by scrolling while holding the Ctrl and Shift keys
+
+When this is set to `true`, holding the <kbd>Ctrl</kbd> and <kbd>Shift</kbd> keys while scrolling will change the window opacity. This is an experimental feature and its continued existence is not guaranteed.
+
+**Property name:** `experimental.scrollToChangeOpacity`
+
+**Necessity:** Optional
+
+**Accepts:** `true`, `false`
+
+**Default value:** `true`
+
+<br />
+
+___
+
 ## Automatically detect URLs and make them clickable
 
 When this is set to `true`, URLs will be detected by the terminal. This will cause URLs to underline on hover and be clickable by pressing <kbd>Ctrl</kbd>. This is an experimental feature and its continued existence is not guaranteed.
