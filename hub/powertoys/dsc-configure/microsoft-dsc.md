@@ -411,11 +411,11 @@ If you're migrating from the PowerShell DSC module
 - [WinGet configuration documentation][06]
 
 <!-- Link reference definitions -->
-[01]: ../../../dsc/overview.md
+[01]: https://github.com/microsoft/PowerToys/tree/main/doc/dsc/overview.md
 [02]: overview.md
 [03]: psdsc.md
 [04]: ../install.md
-[05]: https://learn.microsoft.com/powershell/dsc/overview
-[06]: https://learn.microsoft.com/windows/package-manager/configuration/
+[05]: /powershell/dsc/overview
+[06]: /windows/package-manager/configuration/
 [07]: https://github.com/microsoft/winget-cli/releases
 [08]: https://github.com/PowerShell/DSC/releases

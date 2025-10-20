@@ -124,5 +124,5 @@ Choose your DSC approach and get started:
 [01]: psdsc.md
 [02]: microsoft-dsc.md
 [03]: ../install.md
-[04]: https://learn.microsoft.com/windows/package-manager/configuration/
-[05]: https://learn.microsoft.com/powershell/dsc/overview
+[04]: /windows/package-manager/configuration/
+[05]: /powershell/dsc/overview

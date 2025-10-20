@@ -636,11 +636,11 @@ The Microsoft DSC approach offers:
 - [PowerToys DSC examples][04]
 
 <!-- Link reference definitions -->
-[01]: https://learn.microsoft.com/powershell/dsc/overview
+[01]: /powershell/dsc/overview
 [02]: https://github.com/microsoft/winget-cli/releases
 [03]: ../install.md
 [04]: https://github.com/microsoft/PowerToys/tree/main/src/dsc/Microsoft.PowerToys.Configure/examples
 [06]: microsoft-dsc.md
-[07]: index.md
-[08]: https://learn.microsoft.com/windows/package-manager/configuration/
+[07]: overview.md
+[08]: /windows/package-manager/configuration/
 [09]: https://github.com/microsoft/PowerToys/blob/main/src/dsc/Microsoft.PowerToys.Configure/examples/configureLauncherPlugins.winget
