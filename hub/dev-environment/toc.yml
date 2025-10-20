@@ -31,7 +31,13 @@ items:
           - name: Run in admin mode
             href: ../powertoys/administrator.md
           - name: DSC configuration
-            href: ../powertoys/dsc-configure.md
+            items:
+              - name: Overview
+                href: ../powertoys/dsc-configure/overview.md
+              - name: Configure with PowerShell DSC
+                href: ../powertoys/dsc-configure/psdsc.md
+              - name: Configure with Microsoft DSC
+                href: ../powertoys/dsc-configure/microsoft-dsc.md
           - name: Group Policy
             href: ../powertoys/grouppolicy.md
           - name: Report a bug
