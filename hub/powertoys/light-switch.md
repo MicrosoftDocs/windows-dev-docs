@@ -20,7 +20,7 @@ Benefits of using Light Switch include:
 
 ## How to activate and use Light Switch
 
-Light Switch is enabled by default, but you can activate or deactivate it by opening PowerToys Settings and changing the **Enable Light Switch** toggle. You can then configure the settings to specify the times for switching between light and dark themes based on your local sunrise and sunset times or manually set times.
+Light Switch can be activated or deactivated by opening PowerToys Settings and changing the **Enable Light Switch** toggle. You can then configure the settings to specify the times for switching between light and dark themes based on your local sunrise and sunset times or manually set times.
 
 :::image type="content" source="../images/pt-light-switch-settings.gif" alt-text="An animated GIF of the Light Switch settings.":::
 
