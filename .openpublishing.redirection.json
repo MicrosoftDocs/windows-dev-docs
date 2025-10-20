@@ -9574,6 +9574,21 @@
       "source_path": "hub/apps/develop/communication.md",
       "redirect_url": "/windows/apps/develop/communication/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/mat-faq-troubleshooting.yml",
+      "redirect_url": "/windows/apps/design/globalizing/mat-announcements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/multilingual-app-toolkit-editor-downloads.md",
+      "redirect_url": "/windows/apps/design/globalizing/mat-announcements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/use-mat.md",
+      "redirect_url": "/windows/apps/design/globalizing/mat-announcements",
+      "redirect_document_id": false
     }
   ]
 }

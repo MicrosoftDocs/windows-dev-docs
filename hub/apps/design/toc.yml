@@ -489,12 +489,6 @@
           items:
           - name: Announcements
             href: globalizing/mat-announcements.md
-          - name: Use the Multilingual App Toolkit
-            href: globalizing/use-mat.md
-          - name: Multilingual App Toolkit Editor
-            href: globalizing/multilingual-app-toolkit-editor-downloads.md
-          - name: Multilingual App Toolkit FAQ & troubleshooting
-            href: globalizing/mat-faq-troubleshooting.yml
     - name: In-app help
       items:
         - name: Guidelines for app help
