@@ -34,7 +34,7 @@ You can run this command from the "Run commands" command in Command Palette, fro
 Publishing to the Microsoft Store provides your extension with wide reach across Windows devices and automatic update delivery to users. This guide walks you through the complete process from setting up your Partner Center account to building MSIX packages and submitting your extension for certification. You'll learn how to prepare your extension's manifest files, create the required bundle packages, and navigate the Partner Center submission workflow to get your extension published successfully.
 
 > [!NOTE]
-> This guide provides basic Microsoft Store publishing steps specific to Command Palette extensions. For comprehensive Microsoft Store publishing guidance, including detailed submission requirements, certification processes, and best practices, see [Publish Windows apps and games](https://learn.microsoft.com/windows/apps/publish/).
+> This guide provides basic Microsoft Store publishing steps specific to Command Palette extensions. For comprehensive Microsoft Store publishing guidance, including detailed submission requirements, certification processes, and best practices, see [Publish Windows apps and games](/windows/apps/publish/).
 
 ### Prerequisites
 
@@ -42,8 +42,26 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 > **What is Partner Center?**
 > Partner Center is Microsoft's portal for app developers to manage Microsoft Store submissions, track analytics, and handle app certification.
 
-- [Register as a Windows app developer in Partner Center](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/partner-center-developer-account)
-- Create all required app icons and ensure they're properly sized ([Create icons using Visual Studio's asset generation tool](https://learn.microsoft.com/en-us/windows/apps/design/style/iconography/visual-studio-asset-generation))
+- [Register as a Windows app developer in Partner Center](../../apps/publish/partner-center/partner-center-developer-account)
+- Create all required app icons and ensure they're properly sized ([Create icons using Visual Studio's asset generation tool](../../apps/design/style/iconography/visual-studio-asset-generation))
+
+> [!TIP]
+> - Before using the tool, delete all the default images that were provided via the template. 
+> - Make sure you generate the following files:
+> 
+> | File Name                | Size       |
+> |--------------------------|------------|
+> | Square44x44Logo          | 44×44      |
+> | Square71x71Logo          | 71×71      |
+> | SmallTile.png            | 71×71      |
+> | Square150x150Logo        | 150×150    |
+> | Square310x310Logo        | 310×310    |
+> | LargeTile.png            | 310×310    |
+> | Wide310x150Logo          | 310×150    |
+> | SplashScreen             | 620×300    |
+> | BadgeLogo                | 24×24      |
+> | StoreLogo                | 50×50      |
+> | Screenshot (Desktop)     | ≥1366×768  |
 
 ### Set up Microsoft Store
 
@@ -54,32 +72,41 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 1. Create a name or reserve a product name.
 1. Start the submission and complete as much as you can until you reach the **Packages** section.
 1. In the left navigation, under **Product Management**, select **Product identity**.
-1. Note the `Package/Identity/Name`, `Package/Identity/Publisher`, and `Package/Properties/PublisherDisplayName` for the following steps.
+1. Copy the following values for use in the next steps:
+
+> [!IMPORTANT]
+> **Copy these values from Partner Center:**
+>
+> - **Package/Identity/Name**: `_________________`
+> - **Package/Identity/Publisher**: `_________________`
+> - **Package/Properties/PublisherDisplayName**: `_________________`
+>
+> You'll use these exact values in the code examples below.
 
 ### Prepare the extension
 
 1. In your IDE, open `<ExtensionName>\Package.appxmanifest`.
-1. Update the publisher and publisher display name:
+1. Replace the values with the information you copied from Partner Center:
 
 ```xml
 <Identity
-    Name="TemplateCmdPalExtension" <!-- Replace with Package/Identity/Name -->
-    Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" <!-- Replace with Package/Identity/Publisher -->
+    Name="YOUR_PACKAGE_IDENTITY_NAME_HERE" <!-- Replace with your Package/Identity/Name -->
+    Publisher="YOUR_PACKAGE_IDENTITY_PUBLISHER_HERE" <!-- Replace with your Package/Identity/Publisher -->
     Version="0.0.1.0" />
 
   <Properties>
-    <DisplayName>TemplateDisplayName</DisplayName> <!-- Replace with the reserved name -->
-    <PublisherDisplayName>A Lone Developer</PublisherDisplayName> <!-- Replace with Package/Properties/PublisherDisplayName -->
+    <DisplayName>YourExtensionDisplayName</DisplayName> <!-- Replace with the reserved name from Partner Center -->
+    <PublisherDisplayName>YOUR_PUBLISHER_DISPLAY_NAME_HERE</PublisherDisplayName> <!-- Replace with your Package/Properties/PublisherDisplayName -->
     <Logo>Assets\StoreLogo.png</Logo> <!-- Update -->
   </Properties>
 ```
 
 1. In your IDE, open `<ExtensionName>.csproj`.
-1. Locate the `PropertyGroup` element and add the following properties:
+1. Locate the `PropertyGroup` element and add the following properties using your Partner Center values:
 
 ```xml
-    <AppxPackageIdentityName>Package/Identity/Name</AppxPackageIdentityName>
-    <AppxPackagePublisher>CN=########-####-####-####-############</AppxPackagePublisher>
+    <AppxPackageIdentityName>YOUR_PACKAGE_IDENTITY_NAME_HERE</AppxPackageIdentityName>
+    <AppxPackagePublisher>YOUR_PACKAGE_IDENTITY_PUBLISHER_HERE</AppxPackagePublisher>
     <AppxPackageVersion>0.0.1.0</AppxPackageVersion>
 ```
 
