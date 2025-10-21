@@ -32,7 +32,6 @@ Customized command prompts often use glyphs (a graphic symbol) to style the prom
 Customized command prompts often use glyphs (a graphic symbol) to style the prompt. If your font does not include the appropriate glyphs, you may see several Unicode replacement characters '&#x25AF;' in your prompt. 
 
 To see all of the glyphs in your terminal, we recommend installing a [Nerd Font](https://www.nerdfonts.com/font-downloads) like Cascadia Code NF, which can be downloaded from the [Cascadia Code release page](https://github.com/microsoft/cascadia-code/releases).
-To see all of the glyphs in your terminal, we recommend installing a [Nerd Font](https://www.nerdfonts.com/font-downloads) like Cascadia Code NF, which can be downloaded from the [Cascadia Code release page](https://github.com/microsoft/cascadia-code/releases).
 
 After downloading, you will need to unzip and install the font on your system. ([How to add a new font to Windows](https://support.microsoft.com/en-us/office/add-a-font-b7c5f17c-4426-4b53-967f-455339c564c1)).
 
