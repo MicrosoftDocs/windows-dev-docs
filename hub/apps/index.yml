@@ -22,7 +22,7 @@ highlightedContent:
    - title: Enhance your Windows apps with AI
      itemType: overview
      url: /windows/ai/
-   - title: Set up your environment with Dev Home, WinGet, Terminal, WSL, and more
+   - title: Set up your environment with WinGet, Terminal, WSL, and more
      itemType: overview
      url: ../dev-environment/index.md
    - title: Windows APIs
