@@ -6,9 +6,6 @@ contact_links:
   - name: Report issues, bugs, or file feature requests for PowerToys.
     url: https://github.com/Microsoft/powertoys/issues
     about: Windows PowerToys product repo on GitHub (for reporting issues, bugs, or feature requests)
-  - name: Report issues, bugs, or file feature requests for Windows Dev Home.
-    url: https://github.com/Microsoft/devhome/issues
-    about: Windows Dev Home product repo on GitHub (for reporting issues, bugs, or feature requests)
   - name: Report issues, bugs, or file feature requests for Windows Package Manager.
     url: https://github.com/microsoft/winget-cli/issues
     about: Windows Package Manager product repo on GitHub (for reporting issues, bugs, or feature requests)
