@@ -50,7 +50,7 @@ PowerToys offers two distinct DSC implementations:
 - You're adopting Microsoft DSC standards and tooling.
 - You want direct command-line configuration with `PowerToys.DSC.exe`.
 - You need JSON schema validation and manifest generation.
-- You're building automation with the latest Microsft DSC ecosystem.
+- You're building automation with the latest Microsoft DSC ecosystem.
 
 **Available since:** PowerToys v0.95.0
 
