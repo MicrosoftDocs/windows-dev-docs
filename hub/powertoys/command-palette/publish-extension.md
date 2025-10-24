@@ -46,22 +46,18 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 - Create all required app icons and ensure they're properly sized ([Create icons using Visual Studio's asset generation tool](../../apps/design/style/iconography/visual-studio-asset-generation))
 
 > [!TIP]
-> - Before using the tool, delete all the default images that were provided via the template. 
+> - [List of icons and variations](/windows/apps/design/style/iconography/app-icon-construction#complete-list-of-icons-and-variations)
 > - Make sure you generate the following files:
-> 
+>
 > | File Name                | Size       |
 > |--------------------------|------------|
 > | Square44x44Logo          | 44×44      |
-> | Square71x71Logo          | 71×71      |
-> | SmallTile.png            | 71×71      |
+> | SmallTile                | 71×71      |
 > | Square150x150Logo        | 150×150    |
-> | Square310x310Logo        | 310×310    |
-> | LargeTile.png            | 310×310    |
+> | LargeTile                | 310×310    |
 > | Wide310x150Logo          | 310×150    |
 > | SplashScreen             | 620×300    |
-> | BadgeLogo                | 24×24      |
 > | StoreLogo                | 50×50      |
-> | Screenshot (Desktop)     | ≥1366×768  |
 
 ### Set up Microsoft Store
 
@@ -95,19 +91,66 @@ Publishing to the Microsoft Store provides your extension with wide reach across
     Version="0.0.1.0" />
 
   <Properties>
-    <DisplayName>YourExtensionDisplayName</DisplayName> <!-- Replace with the reserved name from Partner Center -->
+    <DisplayName>YOUR_EXTENSION_DISPLAY_NAME</DisplayName> <!-- Replace with the reserved name from Partner Center -->
     <PublisherDisplayName>YOUR_PUBLISHER_DISPLAY_NAME_HERE</PublisherDisplayName> <!-- Replace with your Package/Properties/PublisherDisplayName -->
-    <Logo>Assets\StoreLogo.png</Logo> <!-- Update -->
+    <Logo>Assets\StoreLogo.png</Logo> <!-- Confirm that this image exist -->
   </Properties>
 ```
 
 1. In your IDE, open `<ExtensionName>.csproj`.
-1. Locate the `PropertyGroup` element and add the following properties using your Partner Center values:
+1. Locate a `PropertyGroup` element (with no conditions) and add the following properties using your Partner Center values:
 
 ```xml
     <AppxPackageIdentityName>YOUR_PACKAGE_IDENTITY_NAME_HERE</AppxPackageIdentityName>
     <AppxPackagePublisher>YOUR_PACKAGE_IDENTITY_PUBLISHER_HERE</AppxPackagePublisher>
     <AppxPackageVersion>0.0.1.0</AppxPackageVersion>
+```
+
+1. Update the ItemGroup for images to get all of them by removing:
+
+```xml
+  <ItemGroup>
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+```
+
+with
+
+```xml
+  <ItemGroup>
+    <Content Include="Assets\**\*.png" />
+  </ItemGroup>
+```
+
+1. Under the `<ItemGroup>` you just updated, add:
+
+```xml
+  <Target Name="PrepareAssets" BeforeTargets="BeforeBuild">
+    <!-- Copy scale-specific assets to base filenames expected by store validations -->
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Square150x150Logo.scale-200.png"
+          DestinationFiles="$(MSBuildProjectDirectory)\Assets\Square150x150Logo.png"
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Square44x44Logo.scale-200.png"
+          DestinationFiles="$(MSBuildProjectDirectory)\Assets\SmallTile.png"
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Wide310x150Logo.scale-200.png"
+          DestinationFiles="$(MSBuildProjectDirectory)\Assets\Wide310x150Logo.png"
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\SplashScreen.scale-200.png"
+          DestinationFiles="$(MSBuildProjectDirectory)\Assets\SplashScreen.png"
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Square150x150Logo.scale-200.png"
+          DestinationFiles="$(MSBuildProjectDirectory)\Assets\LargeTile.png"
+          SkipUnchangedFiles="true" />
+    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\StoreLogo.scale-100.png"
+          DestinationFiles="$(MSBuildProjectDirectory)\Assets\StoreLogo.png"
+          SkipUnchangedFiles="true" />
+  </Target>
 ```
 
 ### Build MSIX
@@ -116,29 +159,36 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 1. Create an x64 build MSIX with the following command:
 
    ```powershell
-   dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=x64
+   dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=x64 -p:AppxPackageDir="AppPackages\x64\"
+
    ```
 
 1. Create an ARM64 build MSIX with the following command:
 
    ```powershell
-   dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=ARM64
+   dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=ARM64 -p:AppxPackageDir="AppPackages\ARM64\"
    ```
+
+> [!NOTE]
+> The `AppxPackageDir="AppPackages\x64\"` is needed so that the ARM64 build doesn't overwrite the x64 build
 
 1. Locate the MSIX files:
 
    ```powershell
-   cd <ExtensionName>; dir bin -Recurse -Filter "*.msix"
+   dir AppPackages -Recurse -Filter "*.msix"
    ```
+
+> [!TIP]
+> If you do not see your MSIX files, try `dir bin\ -Recurse -Filter "*.msix"`
 
 1. Note the locations of the `<ExtensionName>_<VersionNumber>_x64.msix` and `<ExtensionName>_<VersionNumber>_arm64.msix` files.
 
-1. Create a new `bundle_mapping.txt` file and include the following content, updating the paths to your MSIX files:
+1. In your current location in the directory, create a new `bundle_mapping.txt` file and include the following content, updating the paths to your MSIX files:
 
    ```text
    [Files]
-   "bin\x64\Release\PATH\<ExtensionName>_<VersionNumber>_x64.msix" "<ExtensionName>_<VersionNumber>_x64.msix"
-   "bin\ARM64\Release\PATH\<ExtensionName>_<VersionNumber>_arm64.msix" "<ExtensionName>_<VersionNumber>_arm64.msix"
+   "AppPackages\<ExtensionName>_<VersionNumber>_x64_Test\<ExtensionName>_<VersionNumber>_x64.msix" "<ExtensionName>_<VersionNumber>_x64.msix"
+   "AppPackages\t<ExtensionName>_<VersionNumber>_arm64_Test\<ExtensionName>_<VersionNumber>_arm64.msix" "<ExtensionName>_<VersionNumber>_arm64.msix"
    ```
 
 1. Create a bundle that combines both architectures into a single package for Microsoft Store submission. Update the `<ExtensionName>` and `<VersionNumber>`:
@@ -157,7 +207,7 @@ Publishing to the Microsoft Store provides your extension with wide reach across
    > Then update the following script with the version number:
    >
    > ```powershell
-   > & "C:\Program Files (x86)\Windows Kits\<VersionNumber>\bin\[version]\x64\makeappx.exe" bundle /f bundle_mapping.txt /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
+   > & "C:\Program Files (x86)\Windows Kits\<VersionNumber>\App Certification Kit\makeappx.exe" bundle /f bundle_mapping.txt /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
    > ```
 
 1. Locate the bundle:
@@ -480,7 +530,7 @@ jobs:
         if ("${{ github.event.inputs.version }}" -ne "") {
           $version = "${{ github.event.inputs.version }}"
         } else {
-          $projectFile = "FOLDER_NAME/FOLDER_NAME/EXTENSION_NAME.csproj"
+          $projectFile = "FOLDER_NAME/EXTENSION_NAME.csproj"
           $xml = [xml](Get-Content $projectFile)
           $version = $xml.Project.PropertyGroup.AppxPackageVersion | Select-Object -First 1
           if (-not $version) { throw "Version not found in project file" }
