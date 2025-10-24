@@ -30,9 +30,7 @@ PowerToys offers two distinct DSC implementations:
 2. **Microsoft DSC** - A modern, cross-platform implementation using DSC v3
 
 > [!NOTE]
-> These are two separate implementations with different capabilities,
-> syntaxes, and use cases. Choose the approach that best fits your
-> infrastructure and requirements.
+> These are two separate implementations with different capabilities, syntaxes, and use cases. Choose the approach that best fits your infrastructure and requirements.
 
 ## Choosing the right approach
 
