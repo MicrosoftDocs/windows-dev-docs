@@ -69,11 +69,7 @@ PowerToys offers two distinct DSC implementations:
 | **Manifest generation**  | No                                                  | Yes                                                              |
 
 > [!IMPORTANT]
-> While Microsoft DSC is cross-platform ready and can run on Windows, Linux,
-> and macOS, PowerToys itself is a Windows-only application. The Microsoft DSC
-> implementation provides a modern, cross-platform architecture that aligns
-> with the broader DSC v3 ecosystem, but PowerToys configuration can only be
-> applied on Windows systems where PowerToys is installed.
+> While Microsoft DSC is cross-platform ready and can run on Windows, Linux, and macOS, PowerToys itself is a Windows-only application. The Microsoft DSC implementation provides a modern, cross-platform architecture that aligns with the broader DSC v3 ecosystem, but PowerToys configuration can only be applied on Windows systems where PowerToys is installed.
 
 ## Configuration scope
 
@@ -109,8 +105,7 @@ Both approaches support configuring all PowerToys utilities:
 
 Choose your DSC approach and get started:
 
-- **[Configure with PowerShell DSC][01]** - Learn about the PowerShell-based
-  DSC module and WinGet configuration integration
+- **[Configure with PowerShell DSC][01]** - Learn about the PowerShell-based DSC module and WinGet configuration integration
 - **[Configure with Microsoft DSC][02]** - Explore the modern Microsoft DSC
   implementation with PowerToys.DSC.exe
 
