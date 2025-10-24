@@ -104,8 +104,7 @@ Both approaches support configuring all PowerToys utilities:
 Choose your DSC approach and get started:
 
 - **[Configure with PowerShell DSC][01]** - Learn about the PowerShell-based DSC module and WinGet configuration integration
-- **[Configure with Microsoft DSC][02]** - Explore the modern Microsoft DSC
-  implementation with PowerToys.DSC.exe
+- **[Configure with Microsoft DSC][02]** - Explore the modern Microsoft DSC implementation with PowerToys.DSC.exe
 
 ## See also
 
