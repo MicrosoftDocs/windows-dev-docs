@@ -198,16 +198,16 @@ with
    ```
 
    > [!NOTE]
-   > If `makeappx` isn't recognized, check which version of Windows SDK you have installed:
+   > If `makeappx` isn't recognized, find it on your machine:
    >
    > ```powershell
-   > Get-ChildItem "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v*" | Select-Object PSChildName
+   > $arch = switch ($env:PROCESSOR_ARCHITECTURE) { "AMD64" { "x64" } "x86" { "x86" } "ARM64" { "arm64" } default { "x64" } }; Write-Host "Detected: $arch"; $found = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin\*\$arch\makeappx.exe" -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1; if ($found) { Write-Host "SUCCESS: $($found.FullName)" -ForegroundColor Green; $found.FullName } else { Write-Host "Not found for $arch" -ForegroundColor Red }
    > ```
    >
-   > Then update the following script with the version number:
+   > Then update the following script your machine's path:
    >
    > ```powershell
-   > & "C:\Program Files (x86)\Windows Kits\<VersionNumber>\App Certification Kit\makeappx.exe" bundle /f bundle_mapping.txt /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
+   > & "<PATH>\makeappx.exe" bundle /f bundle_mapping.txt /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
    > ```
 
 1. Locate the bundle:
@@ -293,7 +293,65 @@ Publishing to WinGet is the recommended distribution method for Command Palette 
 1. In `<ExtensionName>.csproj`, from the `<PropertyGroup>`:
    - Remove `<PublishProfile>win-$(Platform).pubxml</PublishProfile>`
    - Add `<WindowsPackageType>None</WindowsPackageType>`
-1. `cd` into the directory that contains your `<ExtensionName>.cs`
+1. Locate `CLSID`
+    1. Open the extension's main `.cs` file (for example, `<ExtensionName>.cs`).
+    1. Look for the `[Guid("...")]` attribute above the class declaration.
+    1. This GUID is your CLSID - Keep note of this because it will be used in th next step
+
+       ```csharp
+       // Example from <ExtensionName>.cs
+       [Guid("0ab5d8ab-b206-4023-99f0-97dde26e14f2")]  // This is the CLSID
+       public sealed partial class <ExtensionName> : IExtension
+       ```
+
+    > [!NOTE]
+    > **What is a CLSID?**
+    > A CLSID (Class Identifier) is a unique identifier that Windows uses to identify COM (Component Object Model) components. Each Command Palette extension needs a unique CLSID so Windows can properly register and load your extension. This GUID is automatically generated when you create your extension project.
+
+1. Make sure that your in the directory that contains your `<ExtensionName>.cs` for the next two files being created.
+1. Create a `setup-template.iss` file, for a simple extension you can copy and customize the following:
+
+**Template: `setup-template.iss`**
+
+```ini
+; TEMPLATE: Inno Setup Script for Command Palette Extensions
+;
+; To use this template for a new extension:
+; 1. Copy this file to your extension's project folder as "setup-template.iss"
+; 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
+; 3. Replace DISPLAY_NAME with your extension's display name (e.g., My Extension)
+; 4. Replace DEVELOPER_NAME with your name (e.g., Your Name Here)
+; 5. Replace CLSID-HERE with extensions CLSID
+; 6. Update the default version to match your project file
+
+#define AppVersion "0.0.1.0"
+
+[Setup]
+AppId={{GUID-HERE}}
+AppName=DISPLAY_NAME
+AppVersion={#AppVersion}
+AppPublisher=DEVELOPER_NAME
+DefaultDirName={autopf}\EXTENSION_NAME
+OutputDir=bin\Release\installer
+OutputBaseFilename=EXTENSION_NAME-Setup-{#AppVersion}
+Compression=lzma
+SolidCompression=yes
+MinVersion=10.0.19041
+
+[Languages]
+Name: "english"; MessagesFile: "compiler:Default.isl"
+
+[Files]
+Source: "bin\Release\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
+
+[Icons]
+Name: "{group}\DISPLAY_NAME"; Filename: "{app}\EXTENSION_NAME.exe"
+
+[Registry]
+Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}"; ValueData: "EXTENSION_NAME"
+Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; ValueData: "{app}\EXTENSION_NAME.exe -RegisterProcessAsComServer"
+```
+
 1. Create a `build-exe.ps1` file, for a simple extension you can copy and customize the following:
 
 **Template: `build-exe.ps1`**
@@ -304,19 +362,18 @@ Publishing to WinGet is the recommended distribution method for Command Palette 
 # To use this template for a new extension:
 # 1. Copy this file to your extension's project folder as "build-exe.ps1"
 # 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
-# 2. Replace <VERSION> with your extension version (e.g., 0.0.1.0)
-# 3. Update the default version to match your project file's AppxPackageVersion
-# 4. Ensure you have a setup-template.iss file in the same directory
+# 3. Replace <VERSION> with your extension version (e.g., 0.0.1.0)
+# 4. Update the default version to match your project file's AppxPackageVersion
 
 param(
     [string]$Configuration = "Release",
-    [string]$Version = "<VERSION>",  # UPDATE: Change this to match your project's default version
+    [string]$Version = "<VERSION>",
     [string]$Platform = "x64"
 )
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "Building EXTENSION_NAME EXE installer..." -ForegroundColor Green
+Write-Host "Building EXTENSION_NAME EXE installer..." -ForegroundColor Green 
 Write-Host "Version: $Version" -ForegroundColor Yellow
 
 $ProjectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -384,64 +441,6 @@ if (Test-Path $InnoSetupPath) {
 Write-Host "🎉 Build completed successfully!" -ForegroundColor Green
 ```
 
-1. Locate `CLSID`
-    1. Open the extension's main `.cs` file (for example, `<ExtensionName>.cs`).
-    1. Look for the `[Guid("...")]` attribute above the class declaration.
-    1. This GUID is your CLSID - Keep note of this because it will be used in th next step
-
-       ```csharp
-       // Example from <ExtensionName>.cs
-       [Guid("0ab5d8ab-b206-4023-99f0-97dde26e14f2")]  // This is the CLSID
-       public sealed partial class <ExtensionName> : IExtension
-       ```
-
-    > [!NOTE]
-    > **What is a CLSID?**
-    > A CLSID (Class Identifier) is a unique identifier that Windows uses to identify COM (Component Object Model) components. Each Command Palette extension needs a unique CLSID so Windows can properly register and load your extension. This GUID is automatically generated when you create your extension project.
-
-1. Create a `setup-template.iss` file, for a simple extension you can copy and customize the following:
-
-**Template: `setup-template.iss`**
-
-```ini
-; TEMPLATE: Inno Setup Script for Command Palette Extensions
-;
-; To use this template for a new extension:
-; 1. Copy this file to your extension's project folder as "setup-template.iss"
-; 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
-; 3. Replace DISPLAY_NAME with your extension's display name (e.g., My Extension)
-; 4. Replace DEVELOPER_NAME with your name (e.g., Your Name Here)
-; 5. Replace CLSID-HERE with extensions CLSID
-; 6. Update the default version to match your project file
-
-#define AppVersion "0.0.1.0"
-
-[Setup]
-AppId={{GUID-HERE}}
-AppName=DISPLAY_NAME
-AppVersion={#AppVersion}
-AppPublisher=DEVELOPER_NAME
-DefaultDirName={autopf}\EXTENSION_NAME
-OutputDir=bin\Release\installer
-OutputBaseFilename=EXTENSION_NAME-Setup-{#AppVersion}
-Compression=lzma
-SolidCompression=yes
-MinVersion=10.0.19041
-
-[Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
-
-[Files]
-Source: "bin\Release\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
-
-[Icons]
-Name: "{group}\DISPLAY_NAME"; Filename: "{app}\EXTENSION_NAME.exe"
-
-[Registry]
-Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}"; ValueData: "EXTENSION_NAME"
-Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; ValueData: "{app}\EXTENSION_NAME.exe -RegisterProcessAsComServer"
-```
-
 > [!TIP]
 > You can test this locally by having [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0) and [Inno Setup](https://jrsoftware.org/isdl.php) installed.
 >
@@ -482,12 +481,11 @@ mkdir .github/workflows
 # 
 # To use this template for a new extension:
 # 1. Copy this file to a new workflow file (e.g., release-myextension-exe.yml)
-# 2. Replace all instances of DEVELOPER_NAME with your developer name (e.g., Your Name Here)
-# 3. Replace all instances of GITHUB_REPO_URL with your GitHub repository URL (e.g., https://github.com/yourusername/YourRepository)
-# 4. Replace all instances of DISPLAY_NAME with your display name (e.g., My Extension)
-# 5. Replace all instances of EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
-# 6. Replace all instances of FOLDER_NAME with your project folder name (e.g., CmdPalMyExtension)
-# 8. Update the default version in the build script to match your project file
+# 2. Replace all instances of GITHUB_REPO_URL with your GitHub repository URL (e.g., https://github.com/yourusername/YourRepository)
+# 3. Replace all instances of DISPLAY_NAME with your display name (e.g., My Extension)
+# 4. Replace all instances of EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
+# 5. Replace all instances of FOLDER_NAME with your project folder name (e.g., CmdPalMyExtension)
+# 6. Update the default version in the build script to match your project file
 
 name: DISPLAY_NAME - Build EXE Installer
 
