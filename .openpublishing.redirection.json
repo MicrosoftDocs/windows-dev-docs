@@ -9589,6 +9589,11 @@
       "source_path": "hub/apps/design/globalizing/use-mat.md",
       "redirect_url": "/windows/apps/design/globalizing/mat-announcements",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/dsc-configure.md",
+      "redirect_url": "/windows/powertoys/dsc-configure/overview",
+      "redirect_document_id": false
     }
   ]
 }
