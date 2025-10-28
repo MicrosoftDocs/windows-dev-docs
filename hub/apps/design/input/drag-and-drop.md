@@ -102,7 +102,7 @@ See [**ListViewBase.CanReorderItems**](/uwp/api/windows.ui.xaml.controls.listvie
 
 The [UIElement](/uwp/api/windows.ui.xaml.uielement) class does most of the work of implementing drag-and-drop for you. But if you want, you can implement your own version by using the APIs below.
 
-| Functionality | WinAppSDK API </br> Microsoft.UI.Input.DragDrop namespace | UWP API <br/> Windows.Applicationmodel.DataTransfer.DragDrop.Core namespace |
+| Functionality | Windows App SDK</br> Microsoft.UI.Input.DragDrop namespace | UWP<br/> Windows.Applicationmodel.DataTransfer.DragDrop.Core namespace |
 | --- | --- | --- |
 | DragPrimitive | [DragOperation](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation) | [CoreDragOperation](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
 | Create a data package | [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)  | same |

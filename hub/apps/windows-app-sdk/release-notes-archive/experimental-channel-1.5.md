@@ -2,7 +2,7 @@
 title: Experimental channel release notes for the Windows App SDK 1.5
 description: Learn about the experimental channel release notes for the Windows App SDK 1.5
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -30,7 +30,7 @@ The experimental channel provides releases of the Windows App SDK that include [
 ## Version 1.5 Experimental (1.5.0-experimental2)
 
 This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.5.240124002-experimental2`.
+To download, retarget your Windows App SDK NuGet version to `1.5.240124002-experimental2`.
 
 ### Bug fixes
 
@@ -43,7 +43,7 @@ This release includes the following bug fixes:
 
 ### New APIs for 1.5-experimental2
 
-1.5-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
+1.5-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the Windows App SDKpp SDK.
 
 ```C#
 Microsoft.Graphics.DirectX
@@ -185,11 +185,11 @@ Microsoft.Windows.System.Workloads
 ## Version 1.5 Experimental (1.5.0-experimental1)
 
 This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.5.231202003-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.5.231202003-experimental1`.
 
 ### New APIs for 1.5-experimental1
 
-1.5-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
+1.5-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the Windows App SDK.
 
 ```C#
 Microsoft.Windows.Widgets.Feeds.Providers

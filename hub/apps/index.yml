@@ -91,7 +91,7 @@ productDirectory:
 tools:
   title: More development options
   items:
-    - title: Windows Application SDK
+    - title: Windows App SDK
       imageSrc: /media/hubs/windows/win_developer-4.svg
       url: /windows/apps/windows-app-sdk
     - title: .NET

@@ -2,7 +2,7 @@
 title: Experimental channel release notes for the Windows App SDK 1.6
 description: Learn about the experimental channel release notes for the Windows App SDK 1.6
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -31,14 +31,14 @@ The experimental channel provides releases of the Windows App SDK that include [
 
 This is the latest release of the experimental channel.
 
-To download, retarget your WinAppSDK NuGet version to `1.6.240701003-experimental2`.
+To download, retarget your Windows App SDK NuGet version to `1.6.240701003-experimental2`.
 
 > [!NOTE]
 > Phi Silica and OCR APIs are not included in this release. These will be coming in a future 1.6 release.
 
 ### Native AOT support updates
 
-In 1.6-experimental1, the XAML compiler was generating `XamlTypeInfo.g.cs` with code that wasn’t safe for AOT/Trimming. This relates to GitHub issue [#9675](https://github.com/microsoft/microsoft-ui-xaml/issues/9675), though it does not fully fix that issue.
+In 1.6-experimental1, the XAML compiler was generating `XamlTypeInfo.g.cs` with code that wasn't safe for AOT/Trimming. This relates to GitHub issue [#9675](https://github.com/microsoft/microsoft-ui-xaml/issues/9675), though it does not fully fix that issue.
 
 ### Changed Edge WebView2 SDK Integration
 
@@ -58,7 +58,7 @@ The Package Management API has received several enhancements including Is\*Ready
 
 ### New APIs for 1.6-experimental2
 
-1.6-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
+1.6-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the Windows App SDK.
 
 ```C#
 Microsoft.UI.Xaml.Controls
@@ -434,7 +434,7 @@ Microsoft.Windows.Widgets.Providers
 
 This is the latest release of the experimental channel.
 
-To download, retarget your WinAppSDK NuGet version to `1.6.240531000-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.6.240531000-experimental1`.
 
 ### Required C# project changes for 1.6-experimental1
 
@@ -569,7 +569,7 @@ This issue will be fixed in the next 1.6 release.
 
 ### New APIs for 1.6-experimental1
 
-1.6-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the WinAppSDK.
+1.6-experimental1 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the Windows App SDK.
 
 ```C#
 Microsoft.UI.Xaml.Controls
@@ -697,7 +697,7 @@ This release includes the following bug fixes:
 - Fixed an issue where `MediaPlayerElement` would not properly display captions with `None` or `DropShadow` edge effects. For more info, see GitHub issue [#7981](https://github.com/microsoft/microsoft-ui-xaml/issues/7981).
 - Fixed an issue where the `Flyout.ShowMode` property was not used when showing the flyout. For more info, see GitHub issue [#7987](https://github.com/microsoft/microsoft-ui-xaml/issues/7987).
 - Fixed an issue where `NumberBox` would sometimes have rounding errors. For more info, see GitHub issue [#8780](https://github.com/microsoft/microsoft-ui-xaml/issues/8780).
-- Fixed an issue where using a library compiled against an older version of WinAppSDK can hit a trying to find a type or property. 
+- Fixed an issue where using a library compiled against an older version of Windows App SDK can hit a trying to find a type or property. 
 For more info, see GitHub issue [#8810](https://github.com/microsoft/microsoft-ui-xaml/issues/8810).
 - Fixed an issue where initial keyboard focus is not set when launching a window. For more info, see GitHub issue [#8816](https://github.com/microsoft/microsoft-ui-xaml/issues/8816).
 - Fixed an issue where `FlyoutShowMode.TransientWithDismissOnPointerMoveAway` didn't work after the first time it is shown. 

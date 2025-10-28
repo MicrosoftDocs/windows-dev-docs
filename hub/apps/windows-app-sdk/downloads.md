@@ -1,15 +1,15 @@
 ---
 title: Latest Windows App SDK downloads
-description: This page provides links to the latest downloads of the Windows App SDK (WASDK) for all three release channels (stable, preview, and experimental).
+description: This page provides links to the latest downloads of the Windows App SDK for all three release channels (stable, preview, and experimental).
 ms.topic: article
-ms.date: 09/22/2025
+ms.date: 10/28/2025
 keywords: windows, winrt, win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
 
 # Latest Windows App SDK downloads
 
-This page provides links to the *latest* downloads of the [Windows App SDK](index.md) (WASDK) for all three release channels (stable, preview, and experimental). See [Windows App SDK release channels](release-channels.md) for more details on the WASDK release channels.
+This page provides links to the *latest* downloads of the [Windows App SDK](index.md) for all three release channels (stable, preview, and experimental). See [Windows App SDK release channels](release-channels.md) for more details on the Windows App SDK release channels.
 
 > [!div class="button" style="text-align: left;" width="150px;"] 
 > [Download the latest x64 stable installer (1.8.0)](https://aka.ms/windowsappsdk/1.8/latest/windowsappruntimeinstall-x64.exe)

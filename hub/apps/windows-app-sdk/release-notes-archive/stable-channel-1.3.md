@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 1.3
 description: Provides information about the stable release channel for the Windows App SDK 1.3.
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -53,7 +53,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 - Fixed issue causing apps to crash when setting the SystemBackdrop if the Content was null. For more information, see GitHub issue [#8416](https://github.com/microsoft/microsoft-ui-xaml/issues/8416).
 - Fixed issue causing apps to crash when setting the Window Title in XAML, a new capability added in 1.3.0. For more information, see GitHub issue [#3689](https://github.com/microsoft/microsoft-ui-xaml/issues/3689).
 - Fixed issue where a window incorrectly took focus when its content changed.
-- Fixed an issue with creating C++ projects with the WinAppSDK 1.3 project templates.
+- Fixed an issue with creating C++ projects with the Windows App SDK 1.3 project templates.
 - Updated templates on Visual Studio Marketplace
 
 ### New and updated features and known issues for version 1.3
@@ -82,7 +82,7 @@ public MainWindow()
 
 By replacing several lines of boilerplate code, you're now able to use AppWindow APIs directly from a **Window** through [`Window.AppWindow`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow).
 
-### New features from across WinAppSDK
+### New features from across Windows App SDK
 
 - `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
 - Environment Manager: [`EnvironmentManager.AreChangesTracked`](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.environmentmanager.arechangestracked) to inform you whether changes to the environment manager are able to be tracked in your application.
@@ -90,8 +90,8 @@ By replacing several lines of boilerplate code, you're now able to use AppWindow
 
 ### Other updates
 
-- See our [WinAppSDK 1.3 milestone](https://github.com/microsoft/WindowsAppSDK/milestone/14?closed=1) on the [WinAppSDK GitHub](https://github.com/microsoft/WindowsAppSDK) for additional issues addressed in this release.
-- See our [WinUI 3 in WinAppSDK 1.3 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/18?closed=1) on the [microsoft-ui-xaml GitHub](https://github.com/microsoft/microsoft-ui-xaml) for additional issues addressed in this release.
+- See our [Windows App SDK 1.3 milestone](https://github.com/microsoft/WindowsAppSDK/milestone/14?closed=1) on the [Windows App SDK GitHub](https://github.com/microsoft/WindowsAppSDK) for additional issues addressed in this release.
+- See our [WinUI 3 in Windows App SDK 1.3 milestone](https://github.com/microsoft/microsoft-ui-xaml/milestone/18?closed=1) on the [microsoft-ui-xaml GitHub](https://github.com/microsoft/microsoft-ui-xaml) for additional issues addressed in this release.
 - With the latest experimental VSIX, you're now able to convert your app between unpackaged and packaged through the Visual Studio menu instead of in your project file.
 
 ### Known issue

@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 
 description: Provides info about the preview release channel for the Windows App SDK.
 ms.topic: article
-ms.date: 08/19/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -43,7 +43,7 @@ Enables developers to specify the desired output language for conversation summa
 
 #### Other notable changes
  
-* Prior to WinAppSDK 1.8, packaged apps running in the AppContainer did not require the packageManagement capability, due to a DeploymentManager auto-initialization issue.  That issue has now been resolved, and in turn, the packageManagement capability is now required for AppContainer-based apps.
+* Prior to Windows App SDK 1.8, packaged apps running in the AppContainer did not require the packageManagement capability, due to a DeploymentManager auto-initialization issue.  That issue has now been resolved, and in turn, the packageManagement capability is now required for AppContainer-based apps.
  
 ### New APIs
  

@@ -1,7 +1,7 @@
 ---
 title: Implementing custom effects
 description: An in-depth guide on implementing custom D2D effects with Win2D.
-ms.date: 05/26/2023
+ms.date: 10/28/2025
 ms.topic: concept-article
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
@@ -267,11 +267,11 @@ Let's go over how they can be used:
 As we mentioned, if you're using C# and want to implement a custom effect, the recommended approach is to use the [ComputeSharp](https://github.com/Sergio0694/ComputeSharp) library. It enables you to both implement custom D2D1 pixel shaders entirely in C#, as well as to easily define custom effects graphs that are compatible with Win2D. The same library is also used in the Microsoft Store to power several graphics components in the application.
 
 You can add a reference to ComputeSharp in your project through NuGet:
-  * On UWP, select the [**ComputeSharp.D2D1.Uwp**](https://www.nuget.org/packages/ComputeSharp.D2D1.Uwp/) package.
-  * On WinAppSDK, select the [**ComputeSharp.D2D1.WinUI**](https://www.nuget.org/packages/ComputeSharp.D2D1.WinUI/) package.
+  * For UWP, select the [**ComputeSharp.D2D1.Uwp**](https://www.nuget.org/packages/ComputeSharp.D2D1.Uwp/) package.
+  * For WinUI, select the [**ComputeSharp.D2D1.WinUI**](https://www.nuget.org/packages/ComputeSharp.D2D1.WinUI/) package.
 
 > [!NOTE]
-> Many APIs in ComputeSharp.D2D1.\* are identical across the UWP and WinAppSDK targets, the only difference being the namespace (ending in either `.Uwp` or `.WinUI`). However, the UWP target is in sustained maintenance and not receiving new features. As such, some code changes might be needed compared to the samples shown here for WinUI. The snippets in this document reflect the API surface as of ComputeSharp.D2D1.WinUI 3.0.0 (the last release for the UWP target is instead 2.1.0).
+> Many APIs in ComputeSharp.D2D1.\* are identical across the UWP and WinUI targets, the only difference being the namespace (ending in either `.Uwp` or `.WinUI`). However, the UWP target is in sustained maintenance and not receiving new features. As such, some code changes might be needed compared to the samples shown here for WinUI. The snippets in this document reflect the API surface as of ComputeSharp.D2D1.WinUI 3.0.0 (the last release for the UWP target is 2.1.0).
 
 There are two main components in ComputeSharp to interop with Win2D:
 - `PixelShaderEffect<T>`: a Win2D effect that is powered by a D2D1 pixel shader. The shader itself is written in C# using the APIs provided by ComputeSharp. This class also provides properties to set effect sources, constant values, and more.
@@ -443,7 +443,7 @@ You can see there are four sections in this class:
 > The `PremultiplyEffect` node after the noise effect is very important: this is because Win2D effects assume that the output is premultiplied, whereas pixel shaders generally work with unpremultiplied pixels. As such, remember to manually insert premultiply/unpremultiply nodes before and after custom shaders, to ensure colors are correctly preserved.
 
 > [!NOTE]
-> This sample effect is using WinUI 3 namespaces, but the same code can be used on UWP as well. In that case, the namespace for ComputeSharp will be `ComputeSharp.Uwp`, matching the package name.
+> This sample effect is using WinUI namespaces, but the same code can be used on UWP as well. In that case, the namespace for ComputeSharp will be `ComputeSharp.Uwp`, matching the package name.
 
 ### Ready to draw!
 
