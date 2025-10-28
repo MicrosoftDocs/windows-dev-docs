@@ -28,7 +28,7 @@ Currently the following applications are supported out-of-box:
 
 Invoking the Shortcut Guide is as simple as pressing the shortcut (by default: Win + Shift + / (on U.S. Keyboards)). This brings up a window with the Shortcuts for the currently focused window. If Shortcut Guide doesn't know of any shortcuts for the currently focused window, it defaults to the shortcuts defined in Windows.
 
-The Overview page shows some recommended shortcuts, your pinned shortcuts and if it is the overview page of the Windows operating system, also Taskbar shortcuts (described below).
+The Overview page shows some recommended shortcuts, your pinned shortcuts, and if it's the Windows overview page, then Taskbar shortcuts (described below) are also shown.
 
 :::image type="content" source="../images/pt-shortcut-guide-main-window.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the overview page with pinned shortcuts.":::
 
