@@ -41,7 +41,7 @@ To close Shortcut Guide either press the close button in the top right corner, p
 
 ### Taskbar shortcuts
 
-If the overview page of the Windows operating system is shown, the Taskbar shortcuts are also displayed at the bottom of the window. These shortcuts allow quick access to the pinned applications on the Taskbar by pressing a shortcut (for instance <kbd>Win + [Number]</kbd>), where <kbd>[Number]</kbd> corresponds to the position of the application on the Taskbar (from left to right, starting with 1). These numbers are displayed on top of the application icons.
+If the overview page of Windows is shown, the Taskbar shortcuts are also displayed at the bottom of the window. These shortcuts allow quick access to the pinned applications on the Taskbar by pressing a shortcut (for instance <kbd>Win + [Number]</kbd>), where <kbd>[Number]</kbd> corresponds to the position of the application on the Taskbar (from left to right, starting with 1). These numbers are displayed on top of the application icons.
 
 :::image type="content" source="../images/pt-shortcut-guide-taskbar-numbers.png" alt-text="Screenshot of PowerToys Shortcut Guide showing taskbar shortcuts at the bottom of the window.":::
 
