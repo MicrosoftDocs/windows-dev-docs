@@ -96,6 +96,8 @@ items:
                         href: develop/launch/launch-people-app.md
                       - name: Support web-to-app linking with app URI handlers
                         href: develop/launch/web-to-app-linking.md
+                      - name: Support accelerated URI activations
+                        href: develop/launch/accelerated-launch.md
                   - name: Reserved file and URI scheme names
                     href: develop/launch/reserved-uri-scheme-names.md
               - name: Background tasks
