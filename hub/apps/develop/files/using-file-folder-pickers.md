@@ -1,7 +1,7 @@
 ---
-title: Open Files and Folders With Windows App SDK Pickers
+title: Open files and folders with Windows App SDK pickers
 description: Learn how to use Windows App SDK file and folder pickers in your WinUI app. Implement FileOpenPicker and FolderPicker classes with step-by-step code examples and best practices.
-ms.date: 09/10/2025
+ms.date: 10/28/2025
 ms.topic: how-to
 keywords: windows 11, winui, windows app sdk
 # Customer intent: As a Windows app developer, I want to use the file picker APIs in Windows App SDK to allow users to open files and folders in my WinUI app, so that they can specify the name and location of the file or folder.
@@ -17,7 +17,7 @@ To learn about using a picker to save files, see [Save a file with a Windows App
 
 ## Important APIs
 
-The following APIs are used in this topic:
+This article uses the following APIs:
 
 - [FileOpenPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker)
 - [FolderPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.folderpicker)
@@ -30,24 +30,24 @@ A file picker displays information to orient users and provide a consistent expe
 That information includes:
 
 - The current location
-- The item or items that the user picked
+- The item or items that the user picks
 - A tree of locations that the user can browse to. These locations include file system locations—such as the Music or Downloads folder—as well as apps that implement the file picker contract (such as Camera, Photos, and Microsoft OneDrive).
 
-You may have an app that lets users open or save files. When the user initiates that action, your app calls the file picker, which displays the file picker UI:
+You might have an app that lets users open or save files. When the user initiates that action, your app calls the file picker, which displays the file picker UI:
 
-![A screenshot of an open file picker with a filter selected to show .txt, .pdf, .doc, and .docx files.](images/picker-open-file.png)
+:::image type="content" source="images/picker-open-file.png" alt-text="Screenshot of an open file picker with a filter selected to show .txt, .pdf, .doc, and .docx files.":::
 
 ## How pickers work with your app
 
-With a picker your app can access, browse, and save files and folders on the user's system. Your app receives those picks as lightweight [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult) and [PickFolderResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfolderresult) objects, which provide the path to the selected file or folder.
+With a picker, your app can access, browse, and save files and folders on the user's system. Your app receives those picks as lightweight [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult) and [PickFolderResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfolderresult) objects, which provide the path to the selected file or folder.
 
 The picker uses a single, unified interface to let the user pick files and folders from the file system or from other apps. Files picked from other apps are like files from the file system. In general, your app can operate on them in the same ways as other objects. Other apps make files available by participating in file picker contracts.
 
-For example, you might call the file picker in your app so that your user can open a file. This makes your app the calling app. The file picker interacts with the system and/or other apps to let the user navigate and pick the file. When your user chooses a file, the file picker returns that file's path to your app.
+For example, you might call the file picker in your app so that your user can open a file. This action makes your app the calling app. The file picker interacts with the system and other apps to let the user navigate and pick the file. When your user chooses a file, the file picker returns that file's path to your app.
 
 ## Pick a file to open example
 
-The following code shows how to use the [FileOpenPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker) class to let the user pick a single file, such as a photo. The code sets properties on the picker to customize its appearance and behavior, and then shows the picker to the user using the [PickSingleFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker.picksinglefileasync) method. If the user picks a file, the app reads the file's content and stores it in a variable.
+The following code shows how to use the [FileOpenPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker) class to let the user pick a single file, such as a photo. The code sets properties on the picker to customize its appearance and behavior, and then shows the picker to the user by using the [PickSingleFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker.picksinglefileasync) method. If the user picks a file, the app reads the file's content and stores it in a variable.
 
 ```csharp
 using Microsoft.Windows.Storage.Pickers;
@@ -87,9 +87,10 @@ This is the same example in C++:
 #include <winrt/Microsoft.Windows.Storage.Pickers.h>
 #include <fstream>
 #include <string>
+
 using namespace winrt::Microsoft::Windows::Storage::Pickers;
 
-FileOpenPicker openPicker(AppWindow().Id());
+FileOpenPicker openPicker(this->AppWindow().Id());
 
 // (Optional) Specify the initial location for the picker. 
 //     If the specified location doesn't exist on the user's machine, it falls back to the DocumentsLibrary.
@@ -106,7 +107,7 @@ openPicker.FileTypeFilter().ReplaceAll({ L".txt", L".pdf", L".doc", L".docx" });
 // (Optional) specify the view mode of the picker dialog. If not specified, defaults to List.
 openPicker.ViewMode(PickerViewMode::List);
 
-auto& result{ co_await openPicker.PickSingleFileAsync() };
+auto result{ co_await openPicker.PickSingleFileAsync() };
 if (result)
 {
     std::ifstream fileReader(result.Path().c_str());
@@ -143,16 +144,17 @@ else
 }
 ```
 
-To perform the same operation in C++, you can use the following code:
+To perform the same operation in C++, use the following code:
 
 ```cpp
 #include <winrt/Microsoft.Windows.Storage.Pickers.h>
 #include <fstream>
 #include <string>
+
 using namespace winrt::Microsoft::Windows::Storage::Pickers;
 
-FileOpenPicker openPicker(AppWindow().Id());
-auto& results{ co_await openPicker.PickMultipleFilesAsync() };
+FileOpenPicker openPicker(this->AppWindow().Id());
+auto results{ co_await openPicker.PickMultipleFilesAsync() };
 if (results.Size() > 0)
 {
     for (auto const& result : results)
@@ -170,7 +172,7 @@ else
 
 ## Pick a folder example
 
-To pick a folder using the [FolderPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.folderpicker) class, you can use the following code. This code creates a folder picker, shows it to the user using the [PickSingleFolderAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.folderpicker.picksinglefolderasync) method, and retrieves the selected folder's path in a [PickFolderResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfolderresult) object. If the user picks a folder, the app retrieves the folder's path and stores it in a variable which can be used later.
+To pick a folder by using the [FolderPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.folderpicker) class, use the following code. This code creates a folder picker, shows it to the user by using the [PickSingleFolderAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.folderpicker.picksinglefolderasync) method, and retrieves the selected folder's path in a [PickFolderResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfolderresult) object. If the user picks a folder, the app retrieves the folder's path and stores it in a variable for later use.
 
 ```csharp
 using Microsoft.Windows.Storage.Pickers;
@@ -202,13 +204,14 @@ else
 }
 ```
 
-To perform the same operation in C++, you can use the following code:
+To perform the same operation in C++, use the following code:
 
 ```cpp
 #include <winrt/Microsoft.Windows.Storage.Pickers.h>
+
 using namespace winrt::Microsoft::Windows::Storage::Pickers;
 
-FolderPicker folderPicker(AppWindow().Id());
+FolderPicker folderPicker(this->AppWindow().Id());
 
 // (Optional) Specify the initial location for the picker. 
 //     If the specified location doesn't exist on the user's machine, it falls back to the DocumentsLibrary.
@@ -222,7 +225,7 @@ folderPicker.CommitButtonText(L"Select Folder");
 // (Optional) specify the view mode of the picker dialog. If not specified, default to List.
 folderPicker.ViewMode(PickerViewMode::List);
 
-auto& result{ co_await folderPicker.PickSingleFolderAsync() };
+auto result{ co_await folderPicker.PickSingleFolderAsync() };
 if (result)
 {
     auto path{ result.Path() };
@@ -234,11 +237,11 @@ else
 ```
 
 > [!TIP]
-> Whenever your app accesses a file or folder through a picker, you can add it to your app's [FutureAccessList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [MostRecentlyUsedList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it using the Windows Runtime (WinRT) APIs. You can learn more about using these lists in [How to track recently-used files and folders](/windows/uwp/files/how-to-track-recently-used-files-and-folders).
+> Whenever your app accesses a file or folder through a picker, add it to your app's [FutureAccessList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [MostRecentlyUsedList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it by using the Windows Runtime (WinRT) APIs. For more information, see [How to track recently-used files and folders](/windows/uwp/files/how-to-track-recently-used-files-and-folders).
 
 The folder picker UI looks like this:
 
-![A screenshot of a folder picker viewing the C drive.](images/picker-folder.png)
+:::image type="content" source="images/picker-folder.png" alt-text="Screenshot of a folder picker viewing the C drive.":::
 
 ## Related content
 
