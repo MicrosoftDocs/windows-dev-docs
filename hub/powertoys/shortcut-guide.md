@@ -26,7 +26,7 @@ Currently the following applications are supported out-of-box:
 
 ## Get started
 
-Invoking the Shortcut Guide is as simple as pressing the shortcut (by default: Win + Shift + / (On US Keyboards)). This will bring up a window with the Shortcuts for the currently focused window. If Shortcut Guide does not know of any shortcuts of the currently focused window it will default to the shortcuts of the Windows operating system.
+Invoking the Shortcut Guide is as simple as pressing the shortcut (by default: Win + Shift + / (on U.S. Keyboards)). This brings up a window with the Shortcuts for the currently focused window. If Shortcut Guide doesn't know of any shortcuts for the currently focused window, it defaults to the shortcuts defined in Windows.
 
 The Overview page shows some recommended shortcuts, your pinned shortcuts and if it is the overview page of the Windows operating system, also Taskbar shortcuts (described below).
 
