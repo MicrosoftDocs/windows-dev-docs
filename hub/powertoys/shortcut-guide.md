@@ -47,7 +47,7 @@ If the overview page of the Windows operating system is shown, the Taskbar short
 
 ### Pinning/Unpinning shortcuts
 
-You can right-click on any shortcut and select "Pin" to pin it to the overview page of the currently selected application"or "Unpin" to remove it from the overview page.
+You can right-click on any shortcut and select "Pin" to pin it to the overview page of the currently selected application or "Unpin" to remove it from the overview page.
 
 :::image type="content" source="../images/pt-shortcut-guide-pin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to pin a shortcut.":::
 :::image type="content" source="../images/pt-shortcut-guide-unpin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to unpin a shortcut.":::
