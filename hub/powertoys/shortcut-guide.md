@@ -1,34 +1,56 @@
 ---
 title: PowerToys Shortcut Guide Utility for Windows
-description: Learn how to use PowerToys Shortcut Guide to display Windows key shortcuts. View common keyboard shortcuts, window positioning, and taskbar shortcuts with this Windows utility.
-ms.date: 08/20/2025
+description: Learn how to use PowerToys Shortcut Guide to display shortcuts of Windows an other applications. View common keyboard shortcuts, window positioning, and taskbar shortcuts with this Windows utility.
+ms.date: 10/28/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, File Explorer]
 # customer intent: As a Windows power user, I want to learn how to use the Shortcut Guide utility for Windows.
 ---
 
-# Windows key shortcut guide
+# Shortcut Guide V2
 
-The PowerToys Shortcut Guide displays common keyboard shortcuts that use the Windows key. This utility helps Windows power users quickly access keyboard shortcuts for window management, taskbar navigation, and system commands by holding the Windows key.
+The PowerToys Shortcut Guide displays shortcuts for Windows and other apps.
+
+:::image type="content" source="../images/pt-shortcut-guide.png" alt-text="Screenshot of PowerToys Shortcut Guide showing shortcuts for window management and virtual desktops.":::
+
+## Currently supported applications
+
+Currently the following applications are supported out-of-box:
+- Windows Explorer
+- Windows Shell (Desktop)
+- Microsoft PowerToys
+- Notepad
+
+> [!NOTE]
+> Applications can add their own manifests containing the to be displayed shortcuts according to the [manifest specification](https://aka.ms/powertoys-sg-manifest).
 
 ## Get started
 
-To open the shortcut guide, hold down the <kbd>⊞</kbd> Windows key for the time as set in the PowerToys Settings (900ms by default). An overlay will appear showing keyboard shortcuts that use the Windows key, including:
+Invoking the Shortcut Guide is as simple as pressing the shortcut (by default: Win + Shift + / (On US Keyboards)). This will bring up a window with the Shortcuts for the currently focused window. If Shortcut Guide does not know of any shortcuts of the currently focused window it will default to the shortcuts of the Windows operating system.
 
-- common Windows shortcuts
-- shortcuts for changing the position of the active window
-- taskbar shortcuts
+The Overview page shows some recommended shortcuts, your pinned shortcuts and if it is the overview page of the Windows operating system, also Taskbar shortcuts (described below).
 
-:::image type="content" source="../images/pt-shortcut-guide-large.png" alt-text="Screenshot of PowerToys Shortcut Guide overlay displaying Windows key keyboard shortcuts on desktop.":::
+:::image type="content" source="../images/pt-shortcut-guide-main-window.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the overview page with pinned shortcuts.":::
 
-Keyboard shortcuts using the Windows key <kbd>⊞ Win</kbd> can be used while the guide is displayed. The result of those shortcuts (active window moved, arrow shortcut behavior changes etc.) will be displayed in the guide.
+On the left-hand side you can choose between all the currently supported applications that are running and view their shortcuts. On the top you can choose between different categories of shortcuts (like Window Management, Virtual Desktops, etc.) of the currently selected application.
 
-Pressing the shortcut key combination again will dismiss the overlay.
-
-Tapping the Windows key will display the Windows Start menu.
+To close Shortcut Guide either press the close button in the top right corner, press the Escape key, or click outside of the Shortcut Guide window.
 
 > [!IMPORTANT]
 > The PowerToys app must be running and Shortcut Guide must be enabled in the PowerToys settings for this feature to be used.
+
+### Taskbar shortcuts
+
+If the overview page of the Windows operating system is shown, the Taskbar shortcuts are also displayed at the bottom of the window. These shortcuts allow quick access to the pinned applications on the Taskbar by pressing a shortcut (for instance <kbd>Win + [Number]</kbd>), where <kbd>[Number]</kbd> corresponds to the position of the application on the Taskbar (from left to right, starting with 1). These numbers are displayed on top of the application icons.
+
+:::image type="content" source="../images/pt-shortcut-guide-taskbar-numbers.png" alt-text="Screenshot of PowerToys Shortcut Guide showing taskbar shortcuts at the bottom of the window.":::
+
+### Pinning/Unpinning shortcuts
+
+You can right-click on any shortcut and select "Pin" to pin it to the overview page of the currently selected application"or "Unpin" to remove it from the overview page.
+
+:::image type="content" source="../images/pt-shortcut-guide-pin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to pin a shortcut.":::
+:::image type="content" source="../images/pt-shortcut-guide-unpin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to unpin a shortcut.":::
 
 ## Settings
 
@@ -36,11 +58,8 @@ These configurations can be edited from the PowerToys Settings:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation method | Choose your own shortcut or use the <kbd>⊞ Win</kbd> key |
-| Press duration | The duration (in milliseconds) to hold down the <kbd>⊞ Win</kbd> key in order to open the shortcut guide |
 | Activation shortcut | The custom shortcut used to open the shortcut guide |
 | App theme | **Light**, **Dark** or **Windows default** |
-| Background opacity | Opacity of the Shortcut Guide overlay |
 | Excluded apps | Ignores Shortcut Guide when these apps are in focus. Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
 :::image type="content" source="../images/pt-shortcut-guide-settings.png" alt-text="Screenshot of PowerToys Shortcut Guide settings page showing activation method and customization options.":::

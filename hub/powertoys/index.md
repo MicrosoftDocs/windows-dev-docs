@@ -298,14 +298,14 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Shortcut Guide
+### Shortcut Guide V2
 
 :::row:::
     :::column:::
         [![A screenshot of the Shortcut Guide PowerToys utility for Windows.](../images/pt-shortcut-guide.png)](shortcut-guide.md)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use it by pressing and holding <kbd>⊞ Win</kbd>.
+        [Shgortcut Guiide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) (On US Keyboards) and shows the available shortcuts for the current state of the desktop.
     :::column-end:::
 :::row-end:::
 
