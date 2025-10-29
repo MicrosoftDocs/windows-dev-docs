@@ -2,8 +2,8 @@
 title: How to add DALL-E image generation to your WinUI app
 description: Get started with WinUI 3 / Windows App SDK by integrating DALL-E image capabilities into your desktop app. 
 ms.topic: how-to
-ms.date: 07/24/2025
-keywords: windows app sdk, winappsdk, winui3
+ms.date: 10/28/2025
+keywords: windows app sdk, winappsdk, winui
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers

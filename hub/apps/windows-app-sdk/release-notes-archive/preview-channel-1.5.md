@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 1.5
 description: Provides info about the preview release channel for the Windows App SDK 1.5.
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -37,16 +37,16 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../dow
 
 ### XAML Islands runtime and shutdown updates
 
-- There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for Xaml Islands-based apps when the last Xaml Window on any thread is closed.
-    - In WinAppSDK 1.4, the Xaml runtime always exits the thread's event loop when the last Xaml window on a thread is closed.
-    - In WinAppSDK 1.5:
-        - If your app is a WinUI Desktop app, the default behavior is still the same as in WinAppSDK 1.4.
+- There is a behavioral difference between Windows App SDK 1.4 and Windows App SDK 1.5 for Xaml Islands-based apps when the last Xaml Window on any thread is closed.
+    - In Windows App SDK 1.4, the Xaml runtime always exits the thread's event loop when the last Xaml window on a thread is closed.
+    - In Windows App SDK 1.5:
+        - If your app is a WinUI Desktop app, the default behavior is still the same as in Windows App SDK 1.4.
         - If you're using Xaml for the DesktopWindowXamlSource ("Xaml Islands") API, the default behavior is now that Xaml does not automatically exit the thread's event loop.
         - In both modes, you can change this behavior by setting the `Application.DispatcherShutdownMode` property.
     - For more information, see the documentation for the `Application.DispatcherShutdownMode` property when available.
-- There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for Xaml Islands-based apps in the lifetime of the Xaml runtime:
-    - In WinAppSDK 1.4, the Xaml runtime shuts down on a thread if either all `WindowsXamlManager` and `DesktopWindowXamlSource` objects on a given thread are closed or shut down, or the `DispatcherQueue` running on that thread is shut down (the Xaml runtime shuts down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
-    - In WinAppSDK 1.5, the Xaml runtime shuts down on a thread only when the DispatcherQueue running on that thread is shut down (the Xaml runtime shuts   down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
+- There is a behavioral difference between Windows App SDK 1.4 and Windows App SDK 1.5 for Xaml Islands-based apps in the lifetime of the Xaml runtime:
+    - In Windows App SDK 1.4, the Xaml runtime shuts down on a thread if either all `WindowsXamlManager` and `DesktopWindowXamlSource` objects on a given thread are closed or shut down, or the `DispatcherQueue` running on that thread is shut down (the Xaml runtime shuts down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
+    - In Windows App SDK 1.5, the Xaml runtime shuts down on a thread only when the DispatcherQueue running on that thread is shut down (the Xaml runtime shuts   down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
     - For more information, see the documentation for the `WindowsXamlManager` class when available.
 
 ### WinUI Maps control
@@ -64,7 +64,7 @@ The initial release of the WinUI `Maps` control is now available! This control i
 
 The `Maps` control is entirely new and we welcome your feedback to evaluate its future direction!
 
-### Other new features from across the WinAppSDK
+### Other new features from across the Windows App SDK
 
 - Added support for the PublishSingleFile deployment model. For more info about PublishSingleFile, see the [Single-file deployment documentation](/dotnet/core/deploying/single-file/overview).
 

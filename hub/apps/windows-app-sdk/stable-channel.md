@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: release-notes
-ms.date: 09/22/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -135,18 +135,20 @@ The MSIX publishing support has been factored into a standalone nuget package, w
 
 #### Storage Pickers
 
-The Microsoft.Windows.Storage.Pickers API in the Windows App SDK provides a modernized file and folder picker experience for desktop applications. This API is based on the existing Windows.Storage.Pickers API design, but with key improvements for desktop scenarios. The new Microsoft.Windows.Storage.Pickers API addresses two critical limitations of the UWP file and folder pickers on Apps developed with WinAppSDK/WinUI 3:
+The Microsoft.Windows.Storage.Pickers API in the Windows App SDK provides a modernized file and folder picker experience for desktop applications. This API is based on the existing Windows.Storage.Pickers API design, but with key improvements for desktop scenarios. The new Microsoft.Windows.Storage.Pickers API addresses two critical limitations of the UWP file and folder pickers on Apps developed with Windows App SDK/WinUI:
+
 - Elevated Process Support: The existing Windows.Storage.Pickers APIs do not work when the application is running as an administrator. The new API enables file and folder selection in elevated mode.
 - Simplified Usage in WinUI 3: Using the existing UWP pickers in WinUI 3 requires initializing a window handle for window association. The new pickers eliminate this requirement by accepting a WindowId directly in the constructor, making them easier to use.
 
 #### Other notable changes
-- Prior to WinAppSDK 1.8, packaged apps running in the AppContainer did not require the packageManagement capability, due to a DeploymentManager auto-initialization issue.  That issue has now been resolved, and in turn, the packageManagement capability is now required for AppContainer-based apps.
+
+- Prior to Windows App SDK 1.8, packaged apps running in the AppContainer did not require the packageManagement capability, due to a DeploymentManager auto-initialization issue.  That issue has now been resolved, and in turn, the packageManagement capability is now required for AppContainer-based apps.
 - The experimental WinML APIs have been removed from this release and will be included in a future release.
 
 #### Bug Fixes
 - Fixed an issue where the hover effects of other windows for the app could flicker when at least one window had ExtendsContentIntoTitleBar set to true.
 - NavigationView: Fixed a bug where setting SelectedItem as null did not correctly clear the selection state in collapsed mode.
-- TabView: Fixed an issue where closing a tab would move keyboard focus to the “Add tab” button instead of the newly selected tab.
+- TabView: Fixed an issue where closing a tab would move keyboard focus to the "Add tab" button instead of the newly selected tab.
 - SplitButton: Fixed UI inconsistency where the SplitButton control appeared shorter than standard Button controls
 - TabView: Fixed issue TabView spacing in WinUI, When setting the TabWidthMode property of a TabView to SizeToContent, the padding between the header text and the left/right edges of the tab becomes uneven
 

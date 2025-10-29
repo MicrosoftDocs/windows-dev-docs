@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 1.2
 description: Provides information about the stable release channel for the Windows App SDK 1.2.
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -72,7 +72,7 @@ Fixed issue that caused a crash on startup in C++ WinUI 3 apps when adding a Web
 The following sections describe new and updated features and known issues for 1.2.
 
 > [!NOTE]
-> Visual Studio 2019 and .NET 5 is no longer supported for building C# apps (see [Windows App SDK 1.2 moving to C# WinRT 2.0](https://github.com/microsoft/WindowsAppSDK/discussions/2879)). You will need Visual Studio 2022 and one of the following .NET SDK versions: 6.0.401 (or later), 6.0.304, 6.0.109. When released, WinAppSDK 1.2 will support .NET 7 as well.
+> Visual Studio 2019 and .NET 5 is no longer supported for building C# apps (see [Windows App SDK 1.2 moving to C# WinRT 2.0](https://github.com/microsoft/WindowsAppSDK/discussions/2879)). You will need Visual Studio 2022 and one of the following .NET SDK versions: 6.0.401 (or later), 6.0.304, 6.0.109. When released, Windows App SDK 1.2 will support .NET 7 as well.
 >
 > To update your .NET SDK version, install the latest version of Visual Studio 2022 or visit [.NET Downloads](https://dotnet.microsoft.com/download). When updating your NuGet package without the required .NET SDK version, you will see an error like: *"This version of WindowsAppSDK requires .NET 6+ and WinRT.Runtime.dll version 2.0 or greater."*. To update the project from .NET 5.0 to .NET 6.0, open the project file and change "TargetFramework" to `net6.0` and "Target OS version" to the appropriate value (such as `net6.0-windows10.0.19041.0`).
 
@@ -96,7 +96,7 @@ Prerequisites for this release include:
 
 #### DisplayInformation
 
-Windows desktop apps  can now support High Dynamic Range (HDR) and [Auto Color Management](https://devblogs.microsoft.com/directx/auto-color-management/) (ACM) through the DisplayInformation class in WinAppSDK. The DisplayInformation class enables you to monitor display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
+Windows desktop apps  can now support High Dynamic Range (HDR) and [Auto Color Management](https://devblogs.microsoft.com/directx/auto-color-management/) (ACM) through the DisplayInformation class in Windows App SDK. The DisplayInformation class enables you to monitor display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
 
 #### WinUI 3
 
@@ -110,23 +110,23 @@ WinUI 3 has been updated with the latest controls, styles, and behaviors from Wi
 - Fixed various issues that caused routing of App.UnhandledException to fail. For more information, check out issue [5221](https://github.com/microsoft/microsoft-ui-xaml/issues/5221) on GitHub. Regarding the remaining issues, workarounds are documented at the following GitHub issues and will be resolved in a future 1.2 release:
   - [App_UnhandledException's UnhandledExceptionEventArgs.Exception can only be fetched once - should be cached](https://github.com/microsoft/CsWinRT/issues/1258)
   - [Do_Abi_* event/callback handlers should wrap invocations with RoReportUnhandledError](https://github.com/microsoft/CsWinRT/issues/1259)
-- Fixed issue causing ListView styles to regress and change from WinAppSDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub.
+- Fixed issue causing ListView styles to regress and change from Windows App SDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub.
 - Fixed issue causing the incorrect Mica fallback background color to appear when the app is inactive. For more information, check out issue [7801](https://github.com/microsoft/microsoft-ui-xaml/issues/7801) on GitHub.
 
 **Known limitations:**
 
-- When creating a new WinUI 3 project with Visual Studio 2022 17.4.0, it will reference a preview version of the WinAppSDK. Use NuGet Package Manager to update the reference to this release.
+- When creating a new WinUI 3 project with Visual Studio 2022 17.4.0, it will reference a preview version of the Windows App SDK. Use NuGet Package Manager to update the reference to this release.
 - Setting MediaPlayerElement.Source to relative URI (ms-appx/ms-resource) fails in unpackaged apps. The recommended workaround is to convert the relative ms-appx:/// URI to a fully resolved file:/// URI.
 
 #### Trimming for apps developed with .NET
 
-.NET developers can now publish trimmed WinAppSDK apps. With CsWinRT 2.0, the C#/WinRT projections distributed in WinAppSDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.
+.NET developers can now publish trimmed Windows App SDK apps. With CsWinRT 2.0, the C#/WinRT projections distributed in Windows App SDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.
 
 For more details on how to enable trimming, trimming limitations (such as reflection against trimmable types), and trim warnings, see [Trim self-contained deployments and executables](/dotnet/core/deploying/trimming/trim-self-contained). Developers should thoroughly test their apps after trimming to ensure everything works as expected. For more information, check out issue [2478](https://github.com/microsoft/WindowsAppSDK/issues/2478) on GitHub.
 
 #### Support for Visual Studio Arm64
 
-As early as Project Reunion (now WinAppSDK) 0.5, apps developed with WinAppSDK were able to run on Arm64. Starting with Visual Studio 17.3 Preview 2, you can develop native applications with WinAppSDK on Arm64 devices.
+As early as Project Reunion (now Windows App SDK) 0.5, apps developed with Windows App SDK were able to run on Arm64. Starting with Visual Studio 17.3 Preview 2, you can develop native applications with Windows App SDKpp SDK on Arm64 devices.
 
 To get started developing on an Arm64 device, see [Windows on Arm](/windows/arm/overview) and [Arm64 Visual Studio](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/).
 
@@ -169,7 +169,7 @@ Introduced [security.accesscontrol.h](/windows/windows-app-sdk/api/win32/securit
 #### Other limitations and known issues
 
 > [!Important]
-> When you reference WinAppSDK 1.2 from a project you might see an error similar to: "*Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194.*", which is caused by incompatible references to the package from the app project and the WinAppSDK package. To resolve this you can update the reference in the project to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools.
+> When you reference Windows App SDK 1.2 from a project you might see an error similar to: "*Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194.*", which is caused by incompatible references to the package from the app project and the Windows App SDK package. To resolve this you can update the reference in the project to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools.
 
 - Unit tests may fail with a `REGDB_E_CLASSNOTREG` error in the Tests output pane in Visual Studio. As a workaround, you can add `<WindowsAppContainer>true</WindowsAppContainer>` to your project file.
 - .NET PublishSingleFile isn't supported.

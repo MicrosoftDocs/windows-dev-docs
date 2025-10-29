@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 1.1
 description: Provides information about the stable release channel for the Windows App SDK 1.1.
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -105,7 +105,7 @@ Apps are now able to initiate an explicit restart with specific arguments & stat
 
 #### WinUI 3
 
-WinUI 3 is the native user experience (UX) framework for Windows App SDK. This release includes new features from WinAppSDK 1.0 as well as several stability improvements from 1.0 & 1.1 preview releases.
+WinUI 3 is the native user experience (UX) framework for Windows App SDK. This release includes new features from Windows App SDK 1.0 as well as several stability improvements from 1.0 & 1.1 preview releases.
 
 **New features:**
 
@@ -255,8 +255,8 @@ C# Windows Runtime Components, including WinUI custom controls, are now supporte
 #### Other limitations and known issues
 
 - Apps that reference a package that depends on WebView2 (like Microsoft.Identity.Client) fail to build. This is caused by conflicting binaries at build time. See [issue 2492](https://github.com/microsoft/WindowsAppSDK/issues/2492) on GitHub for more information.
-- Using `dotnet build` with a WinAppSDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
-- The default WinAppSDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
+- Using `dotnet build` with a Windows App SDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
+- The default Windows App SDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
 
 ## Related topics
 

@@ -2,7 +2,7 @@
 title: Latest experimental channel release notes for the Windows App SDK 1.7
 description: Learn about the latest experimental releases of the Windows App SDK 1.7.
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -585,19 +585,19 @@ Microsoft.Windows.Storage
 
 This is the latest release of the experimental channel.
 
-To download, retarget your WinAppSDK NuGet version to `1.7.241114004-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.7.241114004-experimental1`.
 
 ### New CameraCaptureUI API
 
-A new CameraCaptureUI API makes it easier to capture photos and videos in your WinAppSDK app. For more info, see GitHub issue [#4721](https://github.com/microsoft/WindowsAppSDK/issues/4721).
+A new CameraCaptureUI API makes it easier to capture photos and videos in your Windows App SDK app. For more info, see GitHub issue [#4721](https://github.com/microsoft/WindowsAppSDK/issues/4721).
 
 ### New Authentication API
 
-A new `OAuth2Manager` API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by WinAppSDK. For more info, see GitHub issue [#4772](https://github.com/microsoft/WindowsAppSDK/issues/4772).
+A new `OAuth2Manager` API provides a streamlined solution for web authentication, offering OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. For more info, see GitHub issue [#4772](https://github.com/microsoft/WindowsAppSDK/issues/4772).
 
 ### New Background Task support
 
-A new `BackgroundTaskBuilder` API brings integrated support for background task registration to your WinAppSDK apps. For more info, see GitHub issue [#4822](https://github.com/microsoft/WindowsAppSDK/issues/4822).
+A new `BackgroundTaskBuilder` API brings integrated support for background task registration to your Windows App SDK apps. For more info, see GitHub issue [#4822](https://github.com/microsoft/WindowsAppSDK/issues/4822).
 
 ### New APIs for 1.7-experimental1
 
