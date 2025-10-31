@@ -196,6 +196,18 @@ items:
                     href: develop/data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
                   - name: Data binding and MVVM
                     href: develop/data-binding/data-binding-and-mvvm.md
+                  - name: Data binding with the MVVM Toolkit
+                    items:
+                    - name: Introduction
+                      href: tutorials/winui-mvvm-toolkit/intro.md
+                    - name: 1 - Create class library project
+                      href: tutorials/winui-mvvm-toolkit/class-library.md
+                    - name: 2 - Implement MVVM
+                      href: tutorials/winui-mvvm-toolkit/mvvm-implementation.md
+                    - name: 3 - Add dependency injection
+                      href: tutorials/winui-mvvm-toolkit/dependency-injection.md
+                    - name: 4 - Add unit tests
+                      href: tutorials/winui-mvvm-toolkit/unit-testing.md
               - name: Files, folders, and libraries
                 items:
                   - name: Files, folders, and libraries
