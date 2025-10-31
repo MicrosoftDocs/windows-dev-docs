@@ -65,6 +65,11 @@ sections:
 
           * `C:\Program Files (Arm)`: This directory was used for 32-bit Arm applications, which are [no longer being supported in future versions of Windows](./arm32-to-arm64.md).
 
+      - question: |
+          Will an x64 shell extension DLL work in Windows Explorer on Windows 11 Arm64 devices?
+        answer: |
+          An x64 shell extension DLL will only load in x64 processes on Windows 11 Arm64 devices. 64-bit shell extension DLLs installed on Windows 11 Arm64 devices should be built for Arm64X to support both Arm64 and x64 processes. See [Build Arm64X binaries](./arm64x-build.md). 
+
   - name: Windows on Arm Virtual Machine FAQ
     questions:
       - question: |
