@@ -892,6 +892,8 @@ items:
         items:
           - name: Overview
             href: ../package-manager/winget/index.md
+          - name: WinGet MCP Server
+            href: ../package-manager/winget/mcp-server.md
           - name: configure command
             href: ../package-manager/winget/configure.md
           - name: download command
