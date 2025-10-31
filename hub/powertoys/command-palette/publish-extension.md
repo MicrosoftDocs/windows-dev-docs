@@ -368,13 +368,15 @@ Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; Value
 param(
     [string]$Configuration = "Release",
     [string]$Version = "<VERSION>",
-    [string]$Platform = "x64"
+    [string]$Platform = @("x64", "arm64")
 )
 
 $ErrorActionPreference = "Stop"
 
 Write-Host "Building EXTENSION_NAME EXE installer..." -ForegroundColor Green 
 Write-Host "Version: $Version" -ForegroundColor Yellow
+Write-Host "Platforms: $($Platforms -join ', ')" -ForegroundColor Yellow
+
 
 $ProjectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $ProjectFile = "$ProjectDir\EXTENSION_NAME.csproj"
@@ -392,53 +394,76 @@ if (Test-Path "$ProjectDir\obj") {
 Write-Host "Restoring NuGet packages..." -ForegroundColor Yellow
 dotnet restore $ProjectFile
 
-# Build and publish
-Write-Host "Building and publishing application..." -ForegroundColor Yellow
-dotnet publish $ProjectFile `
-    --configuration $Configuration `
-    --runtime "win-$Platform" `
-    --self-contained true `
-    --output "$ProjectDir\bin\$Configuration\win-$Platform\publish"
-
-if ($LASTEXITCODE -ne 0) { 
-    throw "Build failed with exit code: $LASTEXITCODE" 
-}
-
-# Check if files were published
-$publishDir = "$ProjectDir\bin\$Configuration\win-$Platform\publish"
-$fileCount = (Get-ChildItem -Path $publishDir -Recurse -File).Count
-Write-Host "✅ Published $fileCount files to $publishDir" -ForegroundColor Green
-
-# Update version in setup.iss
-Write-Host "Updating installer script version..." -ForegroundColor Yellow
-$setupTemplate = Get-Content "$ProjectDir\setup-template.iss" -Raw
-$setupScript = $setupTemplate -replace '#define AppVersion ".*"', "#define AppVersion `"$Version`""
-$setupScript | Out-File -FilePath "$ProjectDir\setup.iss" -Encoding UTF8
-
-# Create installer with Inno Setup
-Write-Host "Creating installer with Inno Setup..." -ForegroundColor Yellow
-$InnoSetupPath = "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
-if (-not (Test-Path $InnoSetupPath)) { 
-    $InnoSetupPath = "${env:ProgramFiles}\Inno Setup 6\iscc.exe" 
-}
-
-if (Test-Path $InnoSetupPath) {
-    & $InnoSetupPath "$ProjectDir\setup.iss"
+# Build for each platform
+foreach ($Platform in $Platforms) {
+    Write-Host "`n=== Building $Platform ===" -ForegroundColor Cyan
     
-    if ($LASTEXITCODE -eq 0) {
-        $installer = Get-ChildItem "$ProjectDir\bin\$Configuration\installer\*.exe" | Select-Object -First 1
-        if ($installer) {
-            $sizeMB = [math]::Round($installer.Length / 1MB, 2)
-            Write-Host "✅ Created installer: $($installer.Name) ($sizeMB MB)" -ForegroundColor Green
+    # Build and publish
+    Write-Host "Building and publishing $Platform application..." -ForegroundColor Yellow
+    dotnet publish $ProjectFile `
+        --configuration $Configuration `
+        --runtime "win-$Platform" `
+        --self-contained true `
+        --output "$ProjectDir\bin\$Configuration\win-$Platform\publish"
+
+    if ($LASTEXITCODE -ne 0) { 
+        Write-Warning "Build failed for $Platform with exit code: $LASTEXITCODE"
+        continue
+    }
+# Check if files were published
+    $publishDir = "$ProjectDir\bin\$Configuration\win-$Platform\publish"
+    $fileCount = (Get-ChildItem -Path $publishDir -Recurse -File).Count
+    Write-Host "✅ Published $fileCount files to $publishDir" -ForegroundColor Green
+
+    # Create platform-specific setup script
+    Write-Host "Creating installer script for $Platform..." -ForegroundColor Yellow
+    $setupTemplate = Get-Content "$ProjectDir\setup-template.iss" -Raw
+    
+    # Update version
+    $setupScript = $setupTemplate -replace '#define AppVersion ".*"', "#define AppVersion `"$Version`""
+    
+    # Update output filename to include platform suffix
+    $setupScript = $setupScript -replace 'OutputBaseFilename=(.*?)\{#AppVersion\}', "OutputBaseFilename=`$1{#AppVersion}-$Platform"
+    
+    # Update source path for the platform
+    $setupScript = $setupScript -replace 'Source: "bin\\Release\\win-x64\\publish', "Source: `"bin\Release\win-$Platform\publish"
+    
+    # Add architecture settings after [Setup] section
+    if ($Platform -eq "arm64") {
+        $setupScript = $setupScript -replace '(\[Setup\][^\[]*)(MinVersion=)', "`$1ArchitecturesAllowed=arm64`r`nArchitecturesInstallIn64BitMode=arm64`r`n`$2"
+    } else {
+        $setupScript = $setupScript -replace '(\[Setup\][^\[]*)(MinVersion=)', "`$1ArchitecturesAllowed=x64compatible`r`nArchitecturesInstallIn64BitMode=x64compatible`r`n`$2"
+    }
+    
+    $setupScript | Out-File -FilePath "$ProjectDir\setup-$Platform.iss" -Encoding UTF8
+
+    # Create installer with Inno Setup
+    Write-Host "Creating $Platform installer with Inno Setup..." -ForegroundColor Yellow
+    $InnoSetupPath = "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
+    if (-not (Test-Path $InnoSetupPath)) { 
+        $InnoSetupPath = "${env:ProgramFiles}\Inno Setup 6\iscc.exe" 
+    }
+
+    if (Test-Path $InnoSetupPath) {
+        & $InnoSetupPath "$ProjectDir\setup-$Platform.iss"
+        
+        if ($LASTEXITCODE -eq 0) {
+            $installer = Get-ChildItem "$ProjectDir\bin\$Configuration\installer\*-$Platform.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+            if ($installer) {
+                $sizeMB = [math]::Round($installer.Length / 1MB, 2)
+                Write-Host "✅ Created $Platform installer: $($installer.Name) ($sizeMB MB)" -ForegroundColor Green
+            } else {
+                Write-Warning "Installer file not found for $Platform"
+            }
+        } else {
+            Write-Warning "Inno Setup failed for $Platform with exit code: $LASTEXITCODE"
         }
     } else {
-        throw "Inno Setup failed with exit code: $LASTEXITCODE"
+        Write-Warning "Inno Setup not found at expected locations"
     }
-} else {
-    Write-Warning "Inno Setup not found at expected locations"
 }
 
-Write-Host "🎉 Build completed successfully!" -ForegroundColor Green
+Write-Host "`n🎉 Build completed successfully!" -ForegroundColor Green
 ```
 
 > [!TIP]
@@ -537,17 +562,25 @@ jobs:
         Write-Host "Using version: $version"
       shell: pwsh
     
-    - name: Build EXE installer using PowerShell script
+    - name: Build EXE installers (x64 and ARM64)
       run: |
         Set-Location "FOLDER_NAME/FOLDER_NAME"
-        .\build-exe.ps1 -Version "${{ steps.version.outputs.VERSION }}"
+        .\build-exe.ps1 -Version "${{ steps.version.outputs.VERSION }}" -Platforms @("x64", "arm64")
       shell: pwsh
     
-    - name: Upload installer artifact
+    - name: Upload x64 installer artifact
       uses: actions/upload-artifact@v4
       with:
-        name: EXTENSION_NAME-installer
-        path: FOLDER_NAME/FOLDER_NAME/bin/Release/installer/*.exe
+        name: EXTENSION_NAME-x64-installer
+        path: FOLDER_NAME/bin/Release/installer/*-x64.exe
+        if-no-files-found: error
+
+    - name: Upload ARM64 installer artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: EXTENSION_NAME-arm64-installer
+        path: FOLDER_NAME/bin/Release/installer/*-arm64.exe
+        if-no-files-found: warn
     
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
@@ -555,20 +588,27 @@ jobs:
         tag_name: EXTENSION_NAME-v${{ steps.version.outputs.VERSION }}
         name: "DISPLAY_NAME v${{ steps.version.outputs.VERSION }}"
         body: |
-          ## 🎯 DISPLAY_NAME
+          ## 🎯 DISPLAY_NAME ${{ steps.version.outputs.VERSION }}
           
+          ## What's New
           ${{ github.event.inputs.release_notes }}
           
           ## 📦 Installation
           
-          1. Download `EXTENSION_NAME-Setup-${{ steps.version.outputs.VERSION }}.exe`
-          2. Run as Administrator
-          3. Extension will be available in Command Palette
+          Download the installer for your system architecture:
+          
+          - **x64 (Intel/AMD)**: `DISPLAY_NAME-Setup-${{ steps.version.outputs.VERSION }}-x64.exe`
+          - **ARM64 (Windows on ARM)**: `DISPLAY_NAME-Setup-${{ steps.version.outputs.VERSION }}-arm64.exe`
+          
+          1. Download the appropriate installer from the Assets section below
+          2. Run the installer with administrator privileges
+          3. The extension will be registered and available in Command Palette
+          
           
           ## 🔗 More Information
           
           Repository: GITHUB_REPO_URL
-        files: FOLDER_NAME/FOLDER_NAME/bin/Release/installer/*.exe
+        files: FOLDER_NAME/bin/Release/installer/*.exe
         draft: false
         prerelease: false
       env:
@@ -593,7 +633,6 @@ This file is a Github Action scrip that does the following:
 1. Update the placeholders in `release-extension.yml`:
    - DEVELOPER_NAME
    - GITHUB_REPO_URL
-   - EXTENSION_NAME
    - EXTENSION_NAME
    - FOLDER_NAME
    - GENERATE-NEW-GUID-HERE
@@ -626,8 +665,8 @@ Verify your GitHub Actions setup by checking:
 1. Activate interactive wingetcreate:
 
    ```powershell
-   # Use your actual GitHub release URL (example with version 0.0.1 for first release)
-   wingetcreate new "https://github.com/<yourusername>/<ExtensionName>/releases/download/<ExtensionName>-v0.0.1/<ExtensionName>-Setup-0.0.1.exe"
+   # Use your actual GitHub release URLs 
+   wingetcreate new "<PATH TO x64 .exe file>" "<PATH TO arm64 .exe file>"
    ```
 
    > [!TIP]
@@ -655,6 +694,92 @@ After submitting your pull request, the WinGet team will review your manifest fo
 You can use GitHub Actions to update your already submitted projects to WinGet.
 
 Check out how [PowerToys](https://github.com/microsoft/PowerToys/blob/main/.github/workflows/package-submissions.yml) does this.
+
+You can also use the following `.github\workflows\update-winget-randomriddle.yml`:
+
+```
+# Replace EXTENSION_NAME
+# Replace GITHUB_USER_NAME
+# Replace GITHUB_REPO
+# Repalce YOUR_PACKAGE_IDENTITY_NAME_HERE with the AppxPackageIdentityName located in the <ExtensionName>.csproj
+
+
+name: Update WinGet - EXTENSION_NAME Extension
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number (e.g., 0.0.2.0)'
+        required: false
+        type: string
+      release_tag:
+        description: 'Release tag (e.g., EXTENSION_NAME-v0.0.2.0)'
+        required: false
+        type: string
+
+jobs:
+  update-winget:
+    # Only run if this is a EXTENSION_NAME release
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.name, 'EXTENSION_NAME Extension')
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Get release info
+        id: release
+        run: |
+          if ("${{ github.event_name }}" -eq "workflow_dispatch" -and "${{ inputs.version }}" -ne "") {
+            # Use provided inputs for manual trigger
+            echo "VERSION=${{ inputs.version }}" >> $env:GITHUB_OUTPUT
+            echo "TAG=${{ inputs.release_tag }}" >> $env:GITHUB_OUTPUT
+          } elseif ("${{ github.event_name }}" -eq "release") {
+            # Extract from release event
+            $version = "${{ github.event.release.tag_name }}" -replace "EXTENSION_NAME-v", ""
+            echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+            echo "TAG=${{ github.event.release.tag_name }}" >> $env:GITHUB_OUTPUT
+          } else {
+            # Get latest release
+            $latestRelease = gh release list --limit 1 --json tagName,name | ConvertFrom-Json | Where-Object { $_.name -like "EXTENSION_NAME Extension*" }
+            $version = $latestRelease.tagName -replace "EXTENSION_NAME-v", ""
+            echo "VERSION=$version" >> $env:GITHUB_OUTPUT
+            echo "TAG=$($latestRelease.tagName)" >> $env:GITHUB_OUTPUT
+          }
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install wingetcreate
+        run: |
+          iwr https://aka.ms/wingetcreate/latest -OutFile wingetcreate.exe
+
+      - name: Update WinGet manifest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $version = "${{ steps.release.outputs.VERSION }}"
+          $tag = "${{ steps.release.outputs.TAG }}"
+          
+          # URLs for both installers
+          $x64Url = "https://github.com/GITHUB_USER_NAME/GITHUB_REPO/releases/download/$tag/EXTENSION_NAME-Setup-$version-x64.exe"
+          $arm64Url = "https://github.com/GITHUB_USER_NAME/GITHUB_REPO/releases/download/$tag/EXTENSION_NAME-Setup-$version-arm64.exe"
+          
+          Write-Host "Updating WinGet manifest for version $version"
+          Write-Host "x64 URL: $x64Url"
+          Write-Host "ARM64 URL: $arm64Url"
+          
+          # Update the manifest with both architecture installers
+          .\wingetcreate.exe update YOUR_PACKAGE_IDENTITY_NAME_HERE `
+            --version $version `
+            --urls "$x64Url|x64" "$arm64Url|arm64" `
+            --token $env:GITHUB_TOKEN `
+            --submit
+
+```
+
+
 
 ## Related content
 
