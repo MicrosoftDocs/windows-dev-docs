@@ -506,13 +506,13 @@ mkdir .github/workflows
 # 
 # To use this template for a new extension:
 # 1. Copy this file to a new workflow file (e.g., release-myextension-exe.yml)
-# 2. Replace all instances of GITHUB_REPO_URL with your GitHub repository URL (e.g., https://github.com/yourusername/YourRepository)
-# 3. Replace all instances of DISPLAY_NAME with your display name (e.g., My Extension)
-# 4. Replace all instances of EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
-# 5. Replace all instances of FOLDER_NAME with your project folder name (e.g., CmdPalMyExtension)
-# 6. Update the default version in the build script to match your project file
+# 2. Update Global constants with your data:
+# - GITHUB_REPO_URL with your GitHub repository URL (e.g., https://github.com/yourusername/YourRepository)
+# - DISPLAY_NAME with your display name (e.g., My Extension)
+# - EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
+# - FOLDER_NAME with your project folder name (e.g., CmdPalMyExtension)
 
-name: DISPLAY_NAME - Build EXE Installer
+name: CmdPal Extension - Build EXE Installer
 
 on:
   workflow_dispatch:
@@ -526,6 +526,15 @@ on:
         required: false
         default: 'New release with latest updates and improvements.'
         type: string
+
+
+# Global constants: UPDATE THESE, example; DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'CmdPal Name' }}
+env:
+  DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'DISPLAY_NAME' }}
+  EXTENSION_NAME: ${{ vars.EXTENSION_NAME || 'EXTENSION_NAME' }}
+  FOLDER_NAME: ${{ vars.FOLDER_NAME || 'FOLDER_NAME' }}
+  GITHUB_REPO_URL: ${{ vars.GITHUB_REPO_URL || 'GITHUB_REPO_URL' }}
+
 
 jobs:
   build:
@@ -631,11 +640,6 @@ This file is a Github Action scrip that does the following:
 - Upload Results (clear artifact + release steps)
 
 1. Update the placeholders in `release-extension.yml`:
-   - DEVELOPER_NAME
-   - GITHUB_REPO_URL
-   - EXTENSION_NAME
-   - FOLDER_NAME
-   - GENERATE-NEW-GUID-HERE
 1. git commit the 3 new files: `build-exe.ps1`, `setup.iss`,`release-extension.yml`
 1. Push changes to Github.
 1. Trigger the GitHub Action:
@@ -697,7 +701,7 @@ Check out how [PowerToys](https://github.com/microsoft/PowerToys/blob/main/.gith
 
 You can also use the following `.github\workflows\update-winget-randomriddle.yml`:
 
-```
+```yml
 # Replace EXTENSION_NAME
 # Replace GITHUB_USER_NAME
 # Replace GITHUB_REPO
@@ -719,6 +723,13 @@ on:
         description: 'Release tag (e.g., EXTENSION_NAME-v0.0.2.0)'
         required: false
         type: string
+
+# Global constants: UPDATE THESE, example; DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'CmdPal Name' }}
+env:
+  DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'DISPLAY_NAME' }}
+  EXTENSION_NAME: ${{ vars.GITHUB_USER_NAME || 'GITHUB_USER_NAME' }}
+  FOLDER_NAME: ${{ vars.GITHUB_REPO || 'GITHUB_REPO' }}
+  GITHUB_REPO_URL: ${{ vars.YOUR_PACKAGE_IDENTITY_NAME_HERE || 'YOUR_PACKAGE_IDENTITY_NAME_HERE' }}
 
 jobs:
   update-winget:
