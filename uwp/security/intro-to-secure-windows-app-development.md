@@ -6,6 +6,7 @@ ms.date: 07/08/2024
 ms.topic: article
 keywords: windows 10, windows 11, uwp, security
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Intro to secure Windows app development
@@ -272,7 +273,7 @@ The app model also manages the app lifecycle. It limits the background execution
 
 When memory resources on the device are running low, Windows frees memory space by terminating apps. This lifecycle model forces apps to persist data whenever they’re suspended, because there is no additional time available between suspension and termination.
 
-For more information, see [It's Universal: Understanding the Lifecycle of a Windows 10/11 Application](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
+For more information, see [It's Universal: Understanding the Lifecycle of a Windows 10 Application](https://visualstudiomagazine.com/articles/2015/09/01/its-universal.aspx).
 
 ## 4.2 Stored credential protection
 
@@ -357,7 +358,7 @@ When you are dealing with stored data, commonly referred to as data-at-rest, enc
 
 With symmetric encryption, both the sender and recipient have the same key and use it to both encrypt and decrypt the data. The challenge with this approach is securely sharing the key so both parties are aware of it.
 
-One answer to this is asymmetric encryption, in which a public/private key pair is used. The public key is shared freely with anyone who wants to encrypt a message. The private key is always kept secret so that only you can use it to decrypt the data. A common technique to allow for discovery of the public key is by using digital certificates, also simply referred to as certificates. The certificate holds information about the public key, in addition to information about the user or server such as the name, issuer, email address and country.
+One answer to this is asymmetric encryption, in which a public/private key pair is used. The public key is shared freely with anyone who wants to encrypt a message. The private key is always kept secret so that only you can use it to decrypt the data. A common technique to allow for discovery of the public key is by using digital certificates, also simply referred to as certificates. The certificate holds information about the public key, in addition to information about the user or server such as the name, issuer, email address and country/region.
 
 Windows app developers can use the [**SymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.SymmetricKeyAlgorithmProvider) and [**AsymmetricKeyAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.AsymmetricKeyAlgorithmProvider) classes to implement symmetric and asymmetric encryption in their UWP apps. Additionally, the [**CryptographicEngine**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicEngine) class can be used to encrypt and decrypt data, sign content and verify digital signatures. Apps can also use the [**DataProtectionProvider**](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) class in the [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection) namespace to encrypt and decrypt stored local data.
 

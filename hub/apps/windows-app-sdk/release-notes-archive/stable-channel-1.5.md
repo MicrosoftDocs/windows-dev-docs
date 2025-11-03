@@ -1,8 +1,8 @@
 ---
 title: Stable channel release notes for the Windows App SDK 1.5
 description: Provides information about the stable release channel for the Windows App SDK 1.5.
-ms.topic: article
-ms.date: 09/04/2024
+ms.topic: release-notes
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -161,27 +161,27 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../dow
 
 ### XAML Islands runtime and shutdown updates
 
-There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for XAML Islands-based apps when the last XAML Window on any thread is closed.
+There is a behavioral difference between Windows App SDK 1.4 and Windows App SDK 1.5 for XAML Islands-based apps when the last XAML Window on any thread is closed.
 
-  - In WinAppSDK 1.4, the XAML runtime always exits the thread's event loop when the last XAML window on a thread is closed.
-  - In WinAppSDK 1.5:
-      - If your app is a WinUI Desktop app, the default behavior is still the same as in WinAppSDK 1.4.
+  - In Windows App SDK 1.4, the XAML runtime always exits the thread's event loop when the last XAML window on a thread is closed.
+  - In Windows App SDK 1.5:
+      - If your app is a WinUI Desktop app, the default behavior is still the same as in Windows App SDK 1.4.
       - If you're using XAML for the DesktopWindowXamlSource ("XAML Islands") API, the default behavior is now that XAML does not automatically exit the thread's event loop.
       - In both modes, you can change this behavior by setting the `Application.DispatcherShutdownMode` property.
   
 For more information, see the documentation for the `Application.DispatcherShutdownMode` property when available. This completes GitHub proposal [#8492](https://github.com/microsoft/microsoft-ui-xaml/issues/8492).
 
-There is a behavioral difference between WinAppSDK 1.4 and WinAppSDK 1.5 for XAML Islands-based apps in the lifetime of the XAML runtime:
+There is a behavioral difference between Windows App SDK 1.4 and Windows App SDK 1.5 for XAML Islands-based apps in the lifetime of the XAML runtime:
 
-  - In WinAppSDK 1.4, the XAML runtime shuts down on a thread if either all `WindowsXamlManager` and `DesktopWindowXamlSource` objects on a given thread are closed or shut down, or the `DispatcherQueue` running on that thread is shut down (in this case, the XAML runtime shuts down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
-  - In WinAppSDK 1.5, the XAML runtime shuts down on a thread only when the DispatcherQueue running on that thread is shut down (the Xaml runtime always shuts down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
+  - In Windows App SDK 1.4, the XAML runtime shuts down on a thread if either all `WindowsXamlManager` and `DesktopWindowXamlSource` objects on a given thread are closed or shut down, or the `DispatcherQueue` running on that thread is shut down (in this case, the XAML runtime shuts down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
+  - In Windows App SDK 1.5, the XAML runtime shuts down on a thread only when the DispatcherQueue running on that thread is shut down (the Xaml runtime always shuts down during the `DispatcherQueue.FrameworkShutdownStarting` stage).
 
 For more information, see the documentation for the `WindowsXamlManager` class when available.
 
 There is a behavioral difference in `WindowsXamlManager.InitializeForCurrentThread()`:
 
-  - In WinAppSDK 1.4, `WindowsXamlManager.InitializeForCurrentThread()` returns a unique instance of a `WindowsXamlManager` object with each call.
-  - In WinAppSDK 1.5, `WindowsXamlManager.InitializeForCurrentThread()` returns an existing instance if one already exists on the thread. `Close/Dispose()` is now ignored.
+  - In Windows App SDK 1.4, `WindowsXamlManager.InitializeForCurrentThread()` returns a unique instance of a `WindowsXamlManager` object with each call.
+  - In Windows App SDK 1.5, `WindowsXamlManager.InitializeForCurrentThread()` returns an existing instance if one already exists on the thread. `Close/Dispose()` is now ignored.
 
 ### WinUI Maps control
 
@@ -222,13 +222,13 @@ We added support for .NET 8 in a recent 1.4 servicing release, but that still ke
 
 ### Improved debugging and source availability
 
-We now inject Github source server information for code in the microsoft-ui-xaml repo into our public symbols, allowing debuggers to automatically download source code. We also made other fixes and improvements to our symbols across the entire WinAppSDK to improve the debugging experience.
+We now inject Github source server information for code in the microsoft-ui-xaml repo into our public symbols, allowing debuggers to automatically download source code. We also made other fixes and improvements to our symbols across the entire Windows App SDK to improve the debugging experience.
 
 ### Improved functionality for debugging layout cycles
 
 Debugging layout cycles in a WinUI app can be a challenge, so in 1.5 the `DebugSettings` object now exposes options to enable improved logging and breakpoints for the layout process to make it easier to debug and fix layout cycles in the app.
 
-### Other new features from across the WinAppSDK
+### Other new features from across the Windows App SDK
 
 - Added support for the PublishSingleFile deployment model. For more info about PublishSingleFile, see the [Single-file deployment documentation](/dotnet/core/deploying/single-file/overview). 
 - Added improvements to screen reader support, text scaling support, and other accessibility features.
@@ -236,7 +236,7 @@ Debugging layout cycles in a WinUI app can be a challenge, so in 1.5 the `DebugS
 
 ### New features being released separately
 
-New versions of the WinAppSDK Visual Studio Templates for C# and C++ are being released through the Visual Studio Marketplace and they will appear a few weeks after the release of 1.5. With the new version, the templates may now be released independently of WinAppSDK releases, giving us much more flexibility in getting updates to customers.
+New versions of the Windows App SDK Visual Studio Templates for C# and C++ are being released through the Visual Studio Marketplace and they will appear a few weeks after the release of 1.5. With the new version, the templates may now be released independently of Windows App SDK releases, giving us much more flexibility in getting updates to customers.
 
 ### Other previously planned features
 

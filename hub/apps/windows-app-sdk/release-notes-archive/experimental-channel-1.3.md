@@ -1,8 +1,8 @@
 ---
 title: Experimental channel release notes for the Windows App SDK 1.3
 description: Learn about the experimental channel release notes for the Windows App SDK 1.3
-ms.topic: article
-ms.date: 04/19/2024
+ms.topic: release-notes
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -30,7 +30,7 @@ The experimental channel provides releases of the Windows App SDK that include [
 ## Version 1.3 Experimental (1.3.0-experimental1)
 
 This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.3.230202101-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.3.230202101-experimental1`.
 
 ### XAML Backdrop APIs
 
@@ -55,7 +55,7 @@ public MainWindow()
 
 Replacing several lines of boilerplate code, you're now able to use AppWindow APIs directly from a **Window** through `Window.AppWindow`. See the [Window.AppWindow API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/appwindow-spec.md) on GitHub for additional background and usage information.
 
-### New features from across WinAppSDK
+### New features from across Windows App SDK
 
 - `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
 - Environment Manager: `EnvironmentManager.AreChangesTracked` to inform you whether changes to the environment manager are able to be tracked in your application. See the [Environment Manager API spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppLifecycle/EnvironmentVariables/AppLifecycle%20-%20Environment%20Variables%20(EV).md) on GitHub for more information.

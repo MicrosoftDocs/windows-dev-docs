@@ -1,7 +1,7 @@
 ---
 title: info Command
 description: Displays metadata about the system, including version numbers, system architecture, log location, links to legal agreements, and Group Policy state.
-ms.date: 08/03/2022
+ms.date: 07/17/2025
 ms.topic: article
 ---
 
@@ -15,16 +15,17 @@ When submitting an issue to the [winget repository](https://github.com/microsoft
 
 `winget --info`
 
-![Screenshot of winget info command results](./images/info.png)
+:::image type="content" source="./images/info.png" alt-text="Screenshot listing winget info command options." lightbox="./images/info.png":::
 
 Result fields include:
 
 - Windows Package Manager version number installed
 - System architecture type
-- MSIX package version number (winget is delivered as a part of the "App Installer" package)
-- Log file location
+- MSIX package version number (WinGet is delivered as a part of the "App Installer" package)
+- WinGet Directories (Paths to directories used by WinGet)
 - Links to privacy statement, license agreement, third party notices, homepage, and store terms
 - Group policy and state - this will only appear if a policy has been manually configured. (Learn more about how to [configure Group Policies for Windows Package Manager](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/manage-windows-package-manager-with-group-policy/ba-p/2346322)).
+- Admin Settings
 
 ## Related topics
 

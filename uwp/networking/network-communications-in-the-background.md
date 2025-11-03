@@ -3,7 +3,7 @@ description: To continue network communication while it's not in the background,
 title: Network communications in the background
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.date: 06/14/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

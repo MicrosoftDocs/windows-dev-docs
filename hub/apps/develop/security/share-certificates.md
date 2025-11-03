@@ -4,6 +4,7 @@ description: Learn how to authenticate multiple Windows apps using the same cert
 ms.date: 09/05/2024
 ms.topic: how-to
 keywords: windows, winui, winrt, dotnet, security
+ms.custom: sfi-image-nochange
 #customer intent: As a Windows native app developer, I want to learn how to authenticate multiple Windows apps using shared certificates, and how to import a certificate provided for access to secured services.
 ---
 
@@ -18,7 +19,7 @@ Apps can authenticate to a web service using a certificate, and multiple apps ca
 
 ## Prerequisites
 
-- [Visual Studio](https://visualstudio.microsoft.com/) with the **ASP.NET and web development** and **Windows application development** workloads installed.
+- [Visual Studio](https://visualstudio.microsoft.com/) with the **ASP.NET and web development** and **WinUI application development** workloads installed.
 - The latest [Windows Software Development Kit (SDK)](https://developer.microsoft.com/windows/downloads/windows-sdk/) to use the Windows Runtime (WinRT) APIs in your WinUI app.
 - [PowerShell](/powershell/scripting/install/installing-powershell-on-windows) for working with self-signed certificates.
 

@@ -4,7 +4,7 @@ description: Extend Cortana with features from your app (as a background task) u
 
 ms.assetid: e2c7eae3-6beb-4156-92a5-474bba53451e
 ms.date: 09/24/2019
-ms.topic: article
+ms.topic: how-to
 
 keywords: cortana
 ---
@@ -57,7 +57,7 @@ The following basic steps add voice-command functionality and extend **Cortana**
 > If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 >
 > - [Create your first app](/windows/uwp/get-started/your-first-app)
-> - Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
+> - Learn about events with [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview)
 >
 > **User experience guidelines**
 >

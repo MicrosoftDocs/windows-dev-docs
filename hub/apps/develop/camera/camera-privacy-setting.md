@@ -2,7 +2,7 @@
 description: Learn how apps should handle the Windows camera privacy setting.
 title: Handle the Windows camera privacy setting
 ms.date: 10/23/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, winui 3
 dev_langs:
 - csharp
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 # Handle the Windows camera privacy setting
 
-Windows allows users to grant or deny access to the device's camera in the Windows Settings app, under **Privacy & Security -> Camera**. Camera access can be disabled for the entire device, for all unpackaged apps, or for individual packaged apps. This article describes the best practices for checking whether your app has access to the camera and handling the case where access is denied by the user.
+Windows allows users to grant or deny access to the device's camera in Windows Settings, under **Privacy & Security -> Camera**. Camera access can be disabled for the entire device, for all unpackaged apps, or for individual packaged apps. This article describes the best practices for checking whether your app has access to the camera and handling the case where access is denied by the user.
 
 ## Check for access before initializing the camera
 

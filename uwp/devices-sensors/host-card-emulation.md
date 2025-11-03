@@ -2,7 +2,7 @@
 title: Create an NFC Smart Card app
 description: This topic describes how to use Host Card Emulation (HCE) to communicate directly with a near-field communication (NFC) card reader and let your customers access your services through their phone (instead of a physical card) without a mobile-network operator (MNO).
 ms.date: 06/13/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 title: PowerToys Crop And Lock for Windows
 description: Crop And Lock to crop a current application into a smaller window or just create a thumbnail.
-ms.date: 11/19/2024
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Crop And Lock, Win]
@@ -10,13 +10,15 @@ no-loc: [PowerToys, Windows, Crop And Lock, Win]
 
 # Crop And Lock
 
-PowerToys **Crop And Lock** allows you to crop a current application into a smaller window or just create a thumbnail. Focus the target window and press the shortcut to start cropping.
+**Crop And Lock** is a PowerToys utility that helps you focus on specific parts of your applications by creating smaller, cropped windows. You can create live thumbnails that mirror changes from the original window, or extract portions of applications into standalone windows for better multitasking and screen real estate management.
 
-![Crop And Lock screenshot](../images/powertoys-crop-and-lock.gif)
+This feature is particularly useful when you need to monitor specific areas of applications while working with other programs, or when you want to create custom window layouts that better suit your workflow.
 
-## Getting started
+:::image type="content" source="../images/powertoys-crop-and-lock.gif" alt-text="Animation of the PowerToys Crop And Lock utility demonstrating window cropping and thumbnail features.":::
 
-### How to use
+## Get started with Crop And Lock
+
+### How to use the utility
 
 To start using Crop And Lock, enable it in PowerToys Settings.
 
@@ -48,5 +50,14 @@ Crop And Lock currently has the following known issues:
 - Cropping maximized or full-screen windows in "Reparent" mode might not work. It's recommended to resize the window to fill the screen corners instead.
 - Some UWP apps won't react well to being cropped in "Reparent" mode. Windows Calculator is a notable example of this.
 - Applications that use sub-windows or tabs can react poorly to being cropped in "Reparent" mode. Notepad and OneNote are notable examples of applications that react poorly.
+
+## Settings
+
+The following settings are available for the Crop And Lock utility:
+
+| Setting | Description |
+| :--- | :--- |
+| **Thumbnail shortcut** | The customizable keyboard command to activate the thumbnail mode for cropping and creating a thumbnail view. |
+| **Reparent shortcut** | The customizable keyboard command to activate the reparent mode for cropping and reparenting to a new window. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

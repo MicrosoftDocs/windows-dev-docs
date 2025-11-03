@@ -4,7 +4,7 @@ description: Learn how to implement a pull-to-refresh control that lets a user p
 label: Pull-to-refresh
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 ms.assetid: aaeb1e74-b795-4015-bf41-02cb1d6f467e
 doc-status: Published
 ms.localizationpriority: medium
@@ -333,7 +333,7 @@ public class ListItemData
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The refresh controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+The refresh controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
 
 > [!div class="checklist"]
 >
@@ -341,7 +341,7 @@ The refresh controls for UWP apps are included as part of WinUI 2. For more info
 > - **WinUI 2 Apis:** [RefreshContainer](/windows/winui/api/microsoft.ui.xaml.controls.refreshcontainer), [RefreshVisualizer](/windows/winui/api/microsoft.ui.xaml.controls.refreshvisualizer)
 > - [Open the WinUI 2 Gallery app and see PullToRefresh in action](winui2gallery:/item/PullToRefresh). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles, templates, and features for all controls.
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 

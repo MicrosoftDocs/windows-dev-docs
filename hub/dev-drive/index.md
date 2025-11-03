@@ -1,7 +1,7 @@
 ---
 title: Set up a Dev Drive on Windows 11
 description: Learn about the new Dev Drive storage available to improve file system performance for development scenarios using the ReFS volume format, including how to set it up, designate trust to use performance mode for Microsoft Defender Antivirus, customized filters, and FAQs.
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/27/2024
 ---
 
@@ -17,15 +17,15 @@ See the blog post: [Dev Drive for Performance Improvements in Visual Studio and 
 
 To set up a new Dev Drive, open Windows **Settings** and navigate to **System** > **Storage** > **Advanced Storage Settings** > **Disks & volumes**. Select **Create dev drive**. Existing storage volumes cannot be converted to be a Dev Drive. The Dev Drive designation happens only at the original format time.
 
-Before setting up a Dev Drive, **ensure that the prerequisites are met.** You can also set up a Dev Drive using **[Dev Home's Machine configuration](../dev-home/setup.md)**.
+Before setting up a Dev Drive, **ensure that the prerequisites are met.**
 
 ![Screenshot of System > Storage > Disks & volumes](../images/dev-drive-create.png)
 
 ### Prerequisites
 
 - Windows 11, Build #10.0.22621.2338 or later ([Check for Windows updates](ms-settings:windowsupdate))
-- Recommend 16gb memory (minimum of 8gb)
-- Minimum 50gb free disk space
+- Recommend 16 GB memory (minimum of 8 GB)
+- Minimum 50 GB free disk space
 - Dev Drives are available on all Windows SKU versions.
 - Local administrator permissions.
 
@@ -57,10 +57,10 @@ There are advantages and trade-offs to consider when choosing whether to [create
 When choosing the **Create new VHD** option to set up a Dev Drive, you will then need to determine the following:
 
 - **Virtual hard disk name**: Give a name to your VHD (Dev Drive).
-- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. The default location is `C:\`, unless creating a Dev Drive using [Dev Home](../dev-home/index.md), in which case the default location is `%userprofile%\DevDrives`. We recommend using a per-user directory path location to store your Dev Drive to avoid any unintentional sharing.
-- **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50GB.
+- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. The default location is `C:\`. We recommend using a per-user directory path location to store your Dev Drive to avoid any unintentional sharing.
+- **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50 GB.
 - **Virtual hard disk format**:
-  - **VHD**: Supports virtual disks up to 2040 GB in size.
+  - **VHD**: Supports virtual disks up to 2040 GB in size.
   - **VHDX** (Recommended): Supports a maximum of 64 TB and offers more resilient protection against unexpected IO failure caused by issues like power outage. [Learn more about Managing VHDs](/windows-server/storage/disk-management/manage-virtual-hard-disks).
 - **Disk type**:
   - **Fixed size** - This virtual hard disk file is allocated to the maximum size when created.
@@ -78,11 +78,11 @@ To **Resize an existing volume**:
 
     ![Screenshot of Dev Drive choose volume to resize in Settings.](../images/dev-drive-choose-volume-to-resize.png)
 
-2. Choose a new size for the volume. You will need to have at least 50GB of unallocated space available, the minimum size needed for a Dev Drive. Once the size is set, select **Next**.
+2. Choose a new size for the volume. You will need to have at least 50 GB of unallocated space available, the minimum size needed for a Dev Drive. Once the size is set, select **Next**.
 
     ![Screenshot of Dev Drive size change setting.](../images/dev-drive-change-size.png)
 
-3. To format a Dev Drive on the new free space, specify the **Label** (drive name), **Drive Letter**, and **Size** allocation. The maximum size will be the amount of free space you allocated in the previous step, the minimum size for a Dev Drive is 50GB.
+3. To format a Dev Drive on the new free space, specify the **Label** (drive name), **Drive Letter**, and **Size** allocation. The maximum size will be the amount of free space you allocated in the previous step, the minimum size for a Dev Drive is 50 GB.
 
     ![Screenshot of Dev Drive label, drive letter, and size settings](../images/dev-drive-new.png)
 
@@ -350,11 +350,11 @@ No, applications or tools installed on your machine’s C: drive can utilize fil
 
 ### Does ReFS use more memory than NTFS does?
 
-Yes, ReFS uses slightly more memory than NTFS. We recommend a machine with at least 8gb of memory, ideally 16gb.
+Yes, ReFS uses slightly more memory than NTFS. We recommend a machine with at least 8 GB of memory, ideally 16 GB.
 
 ### Can I have more than one Dev Drive on my machine?
 
-Yes. If you have the space, you can create as many Dev Drives as you would like. Using a separate Dev Drive for each software development project would allow you to simply delete the drive at the end of development, rather than repartitioning your disk again. However, keep in mind that the minimum size for a Dev Drive is 50GB.
+Yes. If you have the space, you can create as many Dev Drives as you would like. Using a separate Dev Drive for each software development project would allow you to simply delete the drive at the end of development, rather than repartitioning your disk again. However, keep in mind that the minimum size for a Dev Drive is 50 GB.
 
 ### What do I need to know about using Dev Drive with Visual Studio?
 
@@ -393,8 +393,6 @@ Yes, using a Dev Drive can enhance efficiency and reduce build times when workin
 ### How can I find a Dev Drive that I created and lost track of?
 
 When a dev drive is mounted but you forgot where its located, the following methods can be used to find it:
-
-- Use [**Dev Drive Insights** in the Windows Customization](/windows/dev-home/windows-customization#dev-drive-insights) feature of Dev Home.
 
 - Use [DiskPart](/windows-server/administration/windows-commands/diskpart) and the ["list vdisk" command](/windows-server/administration/windows-commands/list) to show the full path to the vhdx: 1) Open a command line and enter `diskpart`, 2) Once DiskPart opens, enter `list vdisk`.
 

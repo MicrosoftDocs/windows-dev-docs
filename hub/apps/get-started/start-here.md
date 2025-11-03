@@ -2,7 +2,7 @@
 title: Get started with Windows development using WinUI
 description: List of steps to get started developing Windows apps with WinUI and the Windows App SDK.
 ms.topic: how-to
-ms.date: 08/19/2024
+ms.date: 04/18/2025
 keywords: windows, desktop development
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -10,7 +10,7 @@ ms.collection: windows11
 
 # Start developing Windows apps
 
-Welcome to Windows app development. This guide will take you through the steps needed to begin creating apps using the latest Windows development frameworks: the Windows App SDK and WinUI. It will also point you to resources that will help you learn more about Windows development. If you are already comfortable developing apps for Windows, but want to know more about the latest tools, please see [Develop Windows desktop apps](/windows/apps/develop/).
+Welcome to Windows app development. This guide will take you through the steps needed to begin creating apps using the latest Windows development frameworks: the Windows App SDK and WinUI. It will also point you to resources that will help you learn more about Windows development. If you want a step-by-step guide to setting up your developer environment and building your first WinUI app with the latest tools, please see [WinUI 101](/training/modules/winui-101/). If you are already comfortable developing apps for Windows, but want to know more about the latest tools, please see [Develop Windows desktop apps](/windows/apps/develop/).
 
 > [!TIP]
 > [Microsoft Copilot](https://copilot.microsoft.com) is a great resource if you have questions about getting started writing Windows apps.
@@ -53,14 +53,17 @@ On the **Workloads** tab of the Visual Studio Installer app, select the followin
 
 #### [Visual Studio 2022 version 17.10 and later](#tab/vs-2022-17-10)
 
-* For **C#** app development using the Windows App SDK, select **Windows application development**.
+* For **C#** app development using the Windows App SDK, select **WinUI application development**.
 
-:::image type="content" source="images/hello-world/vs-workload-winui.png" alt-text="A screenshot of the Visual Studio installer UI with the Windows application development workload selected.":::
+:::image type="content" source="images/hello-world/vs-workload-winui.png" alt-text="A screenshot of the Visual Studio installer UI with the WinUI application development workload selected.":::
 
-* For **C++** app development using the Windows App SDK, select **Windows application development**.
-  * Then in the **Installation details** pane, under the **Windows application development** node, select **C++ WinUI app development tools**. (This will also select any additional required components.)
+* For **C++** app development using the Windows App SDK, select **WinUI application development**.
+  * Then in the **Installation details** pane, under the **WinUI application development** node, select **C++ WinUI app development tools**. (This will also select any additional required components.)
 
 :::image type="content" source="images/hello-world/vs-workload-winui-cpp.png" alt-text="A screenshot of the Visual Studio installer UI with the C++ WinUI app development tools selected.":::
+
+> [!NOTE]
+> _In Visual Studio 17.10 - 17.12, this workload is called **Windows application development**._
 
 #### [Visual Studio 2022 version 17.1 - 17.9](#tab/vs-2022-17-1)
 
@@ -72,7 +75,6 @@ On the **Workloads** tab of the Visual Studio Installer app, select the followin
 
 ---
 
-
 ## 3. Create and launch your first WinUI app
 
 Visual Studio project templates include all the files you need to quickly create your app. In fact, after you create your project from a WinUI app template, you'll already have an app that you can run, and then add your code to.
@@ -82,19 +84,61 @@ To create a new project using the WinUI C# Blank App project template:
 1. Open Visual Studio and select **Create a new project** from the launch page. (If Visual Studio is already open to the editor, select **File** > **New** > **Project**):
   :::image type="content" source="images/hello-world/start-project.png" alt-text="Create a new project":::
 
-1. Search for `WinUI` and select the `Blank App, Packaged (WinUI 3 in Desktop)` C# project template, then click **Next**:
+1. Search for `WinUI` and select the `WinUI Blank App (Packaged)` C# project template, then click **Next**:
   :::image type="content" source="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI 3 C# desktop app":::
 
 1. Specify a project name, then click **Create**. You can optionally specify a solution name and directory, or leave the defaults. In this image, the `Hello World` project belongs to a `Hello World` solution, which will live in `C:\Projects\`:
   :::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
+
+    > [!NOTE]
+    > If you want to use this project to build the complete app in the Next steps section, name the project `WinUINotes`.
+
 1. Click the Debug "Start" button to build and run your project:<br/>
   :::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::<br/>
-  Your `Hello World` project will build, be deployed to your local machine, and run in debug mode:<br/>
+  Your project will build, be deployed to your local machine, and run in debug mode:<br/>
   :::image type="content" source="images/hello-world/click-me.png" alt-text="Hello World project built and running":::
 
 1. To stop debugging, close the app window, or click the debug "Stop" button in Visual Studio.
 
-## 4. Update to the latest WinUI/Windows App SDK
+## 4. Delete sample code
+
+The `MainWindow` class included with the project template includes some sample code that needs to be removed to make room for your content.
+
+1. Double-click `MainWindow.xaml` in **Solution Explorer** to open it. You should see XAML markup for a `StackPanel` control.
+1. Delete the XAML for the `StackPanel`. (You'll add your own content in its place as you create your app.)
+
+    ```xaml
+    <!-- ↓ Delete this. ↓ -->
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+    </StackPanel>
+    ```
+
+    If you try to run your app now, Visual Studio will throw an error along the lines of `The name 'myButton' does not exist in the current context`. This is because you deleted the `Button` control named `myButton`, but it's still referenced in the `MainPage.xaml.cs` code-behind file. Delete the reference in the code file, too.
+
+1. Double-click `MainWindow.xaml.cs` in **Solution Explorer** to open it.
+1. Delete the `myButton_Click` event handler.
+
+    ```csharp
+    public sealed partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            this.InitializeComponent();
+        }
+
+        // ↓ Delete this. ↓
+        private void myButton_Click(object sender, RoutedEventArgs e)
+        {
+            myButton.Content = "Clicked";
+        }
+        // End delete.
+    }
+    ```
+
+1. Save the file by pressing <kbd>CTRL + SHIFT + S</kbd>, clicking the Save All icon in the tool bar, or by selecting the menu **File** > **Save All**.
+
+## 5. Update to the latest WinUI/Windows App SDK
 
 The Windows App SDK (and WinUI, which is part of it) is distributed as a [NuGet](/nuget/what-is-nuget) package. This means updates can be released out-of-sync with Windows and Visual Studio. As a result, the Visual Studio template you used to create your project might not reference the latest Windows App SDK NuGet package. To ensure you have the latest features and fixes, you should update your NuGet packages every time you create a new project in Visual Studio.
 
@@ -110,7 +154,9 @@ Now your project is using the latest WinUI features that are available, and it's
 
 ## Next steps
 
-* Complete a tutorial to [add more code to your Hello World app](../how-tos/hello-world-winui3.md).
+> [!div class="nextstepaction"]
+> [Complete a tutorial to create a note app with WinUI](../tutorials/winui-notes/intro.md)
+
 * To get an idea of what WinUI has to offer, check out the WinUI Gallery app.
   [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
 * Learn more about [WinUI fundamentals](../develop/index.md).

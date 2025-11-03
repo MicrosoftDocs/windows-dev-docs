@@ -1,7 +1,7 @@
 ---
 description: If you encounter errors after submitting your MSIX app to the Store, you must resolve them in order to continue the certification process.
 title: Resolve submission errors for MSIX app
-ms.date: 10/30/2022
+ms.date: 08/21/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -47,9 +47,9 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 - [Provide any necessary info](./manage-submission-options.md#notes-for-certification) required to use your app, such as the user name and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
 
-- Include a [privacy policy URL](./support-info.md#privacy-policy-url) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md).
+- Include a [privacy policy URL](./support-info.md) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md).
 
-- Make sure that your app's description clearly represents what your app does. For help, see our guidance on [writing a great app description](./write-great-app-description.md).
+- Make sure that your app's description clearly represents what your app does. For help, see [How can I write an effective app description for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section..
 
 - Provide complete and accurate responses to all of the questions in the [Age ratings](./age-ratings.md) section.
 

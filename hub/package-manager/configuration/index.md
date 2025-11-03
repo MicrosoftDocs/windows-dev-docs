@@ -3,6 +3,7 @@ title: WinGet Configuration
 description: WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable.
 ms.date: 11/21/2024
 ms.topic: overview
+ms.custom: sfi-image-nochange
 ---
 
 # WinGet Configuration
@@ -26,11 +27,7 @@ The benefits of using a WinGet Configuration file include:
 
 ## Use a WinGet Configuration file to configure your machine
 
-To set up your machine using a WinGet Configuration file, you can:
-
-1. [Install Dev Home](../../dev-home/index.md), go to **Machine configuration**, select **Configuration file**, and choose the WinGet configuration file that you would like to use. (To create a configuration file, see [How to author a WinGet Configuration file](create.md)).
-
-2. Use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
+To set up your machine using a WinGet Configuration file, download the configuration file and double-click to invoke the configuration. Alternatively, use [winget configure](../winget/configure.md) in the command line. To use the `winget configure` command, you must be running WinGet version [v1.6.2631 or later](https://github.com/microsoft/winget-cli/releases).
 
 ## WinGet Configuration FAQs
 
@@ -65,7 +62,7 @@ A benefit to the declarative (non-sequential) nature of WinGet configuration fil
 
 ### How do I use a WinGet Configuration file?
 
-To run a WinGet Configuration file, use the [`winget configure` command](../winget/configure.md).
+To run a WinGet Configuration file, you can simply double-click to run the file in file explorer. Alternatively, you can use the [`winget configure` command](../winget/configure.md).
 
 ### How do I author a WinGet Configuration?
 

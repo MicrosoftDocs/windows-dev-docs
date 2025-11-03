@@ -31,8 +31,10 @@ Note that your selections here apply only to new acquisitions; if someone alread
 You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future. If you leave this box checked, and we later add new markets, the pricing model from your submission will be used for your app in those markets. If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).
 
 ## Microsoft Store consumer markets
+You can choose to list your app (or add-on) in one or more of the following markets. The markets with an asterisk support the Microsoft Store on Xbox One; you'll see **Xbox** next to their names in the **Market selection** popup window.
 
-You can choose to list your app in one or more of the following markets.
+<details>
+<summary>View Microsoft Store consumer markets table</summary>
 
 <table>
 
@@ -110,7 +112,7 @@ You can choose to list your app in one or more of the following markets.
   </tr>
   <tr>
     <td>Cocos (Keeling) Islands</td>
-    <td>Colombia</td>
+    <td>Colombia *</td>
     <td>Comoros</td>
     <td>Congo</td>
   </tr>
@@ -124,10 +126,10 @@ You can choose to list your app in one or more of the following markets.
     <td>Croatia</td>
     <td>Curaçao</td>
     <td>Cyprus</td>
-    <td>Czechia</td>
+    <td>Czechia *</td>
   </tr>
   <tr>
-    <td>Denmark</td>
+    <td>Denmark *</td>
     <td>Djibouti</td>
     <td>Dominica</td>
     <td>Dominican Republic</td>
@@ -147,8 +149,8 @@ You can choose to list your app in one or more of the following markets.
   <tr>
     <td>Faroe Islands</td>
     <td>Fiji</td>
-    <td>Finland</td>
-    <td>France</td>
+    <td>Finland *</td>
+    <td>France *</td>
   </tr>
   <tr>
     <td>French Guiana</td>
@@ -159,12 +161,12 @@ You can choose to list your app in one or more of the following markets.
   <tr>
     <td>Gambia</td>
     <td>Georgia</td>
-    <td>Germany</td>
+    <td>Germany *</td>
     <td>Ghana</td>
   </tr>
   <tr>
     <td>Gibraltar</td>
-    <td>Greece</td>
+    <td>Greece *</td>
     <td>Greenland</td>
     <td>Grenada</td>
   </tr>
@@ -183,24 +185,24 @@ You can choose to list your app in one or more of the following markets.
   <tr>
     <td>Heard Island and McDonald Islands</td>
     <td>Honduras</td>
-    <td>Hong Kong SAR</td>
-    <td>Hungary</td>
+    <td>Hong Kong Special Administrative Region *</td>
+    <td>Hungary *</td>
   </tr>
   <tr>
     <td>Iceland</td>
-    <td>India</td>
+    <td>India *</td>
     <td>Indonesia</td>
     <td>Iraq</td>
   </tr>
   <tr>
-    <td>Ireland</td>
+    <td>Ireland *</td>
     <td>Isle of Man</td>
-    <td>Israel</td>
-    <td>Italy</td>
+    <td>Israel *</td>
+    <td>Italy *</td>
   </tr>
   <tr>
     <td>Jamaica</td>
-    <td>Japan</td>
+    <td>Japan *</td>
     <td>Jersey</td>
     <td>Jordan</td>
   </tr>
@@ -208,7 +210,7 @@ You can choose to list your app in one or more of the following markets.
     <td>Kazakhstan</td>
     <td>Kenya</td>
     <td>Kiribati</td>
-    <td>Korea</td>
+    <td>Korea *</td>
   </tr>
   <tr>
     <td>Kuwait</td>
@@ -244,7 +246,7 @@ You can choose to list your app in one or more of the following markets.
     <td>Mauritania</td>
     <td>Mauritius</td>
     <td>Mayotte</td>
-    <td>Mexico</td>
+    <td>Mexico *</td>
   </tr>
   <tr>
     <td>Micronesia</td>
@@ -265,9 +267,9 @@ You can choose to list your app in one or more of the following markets.
     <td>Nepal</td>
   </tr>
   <tr>
-    <td>Netherlands</td>
+    <td>Netherlands *</td>
     <td>New Caledonia</td>
-    <td>New Zealand</td>
+    <td>New Zealand *</td>
     <td>Nicaragua</td>
   </tr>
   <tr>
@@ -278,7 +280,7 @@ You can choose to list your app in one or more of the following markets.
   </tr>
   <tr>
     <td>Northern Mariana Islands</td>
-    <td>Norway</td>
+    <td>Norway *</td>
     <td>Oman</td>
     <td>Pakistan</td>
   </tr>
@@ -295,14 +297,14 @@ You can choose to list your app in one or more of the following markets.
     <td>Pitcairn Islands</td>
   </tr>
   <tr>
-    <td>Poland</td>
-    <td>Portugal</td>
+    <td>Poland *</td>
+    <td>Portugal *</td>
     <td>Qatar</td>
     <td>Réunion</td>
   </tr>
   <tr>
     <td>Romania</td>
-    <td>Russia</td>
+    <td>Russia *</td>
     <td>Rwanda</td>
     <td>Saint Barthélemy</td>
   </tr>
@@ -320,37 +322,37 @@ You can choose to list your app in one or more of the following markets.
   </tr>
   <tr>
     <td>São Tomé and Príncipe</td>
-    <td>Saudi Arabia</td>
+    <td>Saudi Arabia *</td>
     <td>Senegal</td>
     <td>Serbia</td>
   </tr>
   <tr>
     <td>Seychelles</td>
     <td>Sierra Leone</td>
-    <td>Singapore</td>
+    <td>Singapore *</td>
     <td>Sint Maarten (Dutch Part)</td>
   </tr>
   <tr>
-    <td>Slovakia</td>
+    <td>Slovakia *</td>
     <td>Slovenia</td>
     <td>Solomon Islands</td>
     <td>Somalia</td>
   </tr>
   <tr>
-    <td>South Africa</td>
+    <td>South Africa *</td>
     <td>South Georgia and the South Sandwich Islands</td>
-    <td>Spain</td>
+    <td>Spain *</td>
     <td>Sri Lanka</td>
   </tr>
   <tr>
     <td>Suriname</td>
     <td>Svalbard and Jan Mayen</td>
     <td>Swaziland</td>
-    <td>Sweden</td>
+    <td>Sweden *</td>
   </tr>
   <tr>
-    <td>Switzerland</td>
-    <td>Taiwan</td>
+    <td>Switzerland *</td>
+    <td>Taiwan *</td>
     <td>Tajikistan</td>
     <td>Tanzania</td>
   </tr>
@@ -364,7 +366,7 @@ You can choose to list your app in one or more of the following markets.
     <td>Tonga</td>
     <td>Trinidad and Tobago</td>
     <td>Tunisia</td>
-    <td>Türkiye</td>
+    <td>Türkiye *</td>
   </tr>
   <tr>
     <td>Turkmenistan</td>
@@ -376,11 +378,11 @@ You can choose to list your app in one or more of the following markets.
     <td>U.S. Virgin Islands</td>
     <td>Uganda</td>
     <td>Ukraine</td>
-    <td>United Arab Emirates</td>
+    <td>United Arab Emirates *</td>
   </tr>
   <tr>
-    <td>United Kingdom</td>
-    <td>United States</td>
+    <td>United Kingdom *</td>
+    <td>United States *</td>
     <td>Uruguay</td>
     <td>Uzbekistan</td>
   </tr>
@@ -398,5 +400,6 @@ You can choose to list your app in one or more of the following markets.
   </tr>
 </table>
 
-> [!NOTE]
-> For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](../../partner-center/account-types-locations-and-fees.md).
+</details>
+
+

@@ -1,7 +1,7 @@
 ---
 title: Android development on Windows
 description: A guide to help you get started developing for Android on Windows.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/21/2024
 ---
 

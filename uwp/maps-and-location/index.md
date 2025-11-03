@@ -1,22 +1,31 @@
 ---
 title: Maps and location overview
-description: This section explains how you can display maps, use map services, find the location, and set up a geofence in your app. This section also shows you how to launch the Windows Maps app to a specific map, route, or a set of turn-by-turn directions.
+description: This section explains how you can display maps, use map services, find the location, and set up a geofence in your app.
 ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
-ms.date: 06/21/2024
-ms.topic: article
+ms.date: 05/27/2025
+ms.topic: concept-article
 keywords: windows 10, uwp, map, location, map services
 ms.localizationpriority: medium
 ---
+
 # Maps and location overview
+
+> [!IMPORTANT]
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and Windows Maps platform APIs ([Windows.Services.Maps.*](/uwp/api/windows.services.maps)) are deprecated and may not be available in future versions of Windows. For more information, see [Resources for deprecated features](/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis).
 
 > [!IMPORTANT]
 > **Bing Maps for Enterprise service retirement**
 >
-> The UWP [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services from the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and map services from the [Windows.Services.Maps](/uwp/api/windows.services.maps) namespaces rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
 >
 > For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
 
-This section explains how you can display maps, use map services, find the location, and set up a geofence in your app. This section also shows you how to launch the Windows Maps app to a specific map, route, or a set of turn-by-turn directions.
+> [!IMPORTANT]
+> The Windows Maps app is deprecated and will be removed from the Microsoft Store by July 2025. At this time, there will also be a final update to the app from the Store that makes it nonfunctional. If you remove the app before July 2025, you can still reinstall it from the Store, but past July 2025 you won't be able to reinstall it.
+>
+> For more information, see [Resources for deprecated features - Maps app](/windows/whats-new/deprecated-features-resources#maps-app).
+
+This section explains how you can display maps, use map services, find the location, and set up a geofence in your app.
 
 [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
 
@@ -41,7 +50,7 @@ Add routes, directions, and geocoding capabilities to your app by using APIs fro
 | [Display points of interest (POI) on a map](display-poi.md) | Add points of interest (POI) to a map by using pushpins, images, shapes, and XAML UI elements. |
 | [Display routes and directions](routes-and-directions.md) | Request routes and directions, and display them in your app. |
 | [Perform geocoding and reverse geocoding](geocoding.md) | Convert addresses to geographic locations (geocoding) and convert geographic locations to addresses (reverse geocoding) by calling the methods of the [**MapLocationFinder**](/uwp/api/Windows.Services.Maps.MapLocationFinder) class in the [**Windows.Services.Maps**](/uwp/api/Windows.Services.Maps) namespace. |
-| [Find and download map packages for offline use](/uwp/api/windows.services.maps.offlinemaps)| In the past, your app had to direct users to the Settings app to download offline Maps. Now, you can use classes in the [Windows.Services.Maps.OfflineMaps](/uwp/api/windows.services.maps.offlinemaps) namespace to find downloaded packages in a given area (based on a [Geopoint](/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](/uwp/api/windows.devices.geolocation.geoboundingbox), etc.). <br> You can also check and listen for the downloaded status of map packages as well as start a download without requiring the user to leave your app. <br> You'll find examples of how to do this in both the reference content and the [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
+| [Find and download map packages for offline use](/uwp/api/windows.services.maps.offlinemaps)| In the past, your app had to direct users to Windows Settings to download offline Maps. Now, you can use classes in the [Windows.Services.Maps.OfflineMaps](/uwp/api/windows.services.maps.offlinemaps) namespace to find downloaded packages in a given area (based on a [Geopoint](/uwp/api/Windows.Devices.Geolocation.Geopoint), [GeoboundingBox](/uwp/api/windows.devices.geolocation.geoboundingbox), etc.). <br> You can also check and listen for the downloaded status of map packages as well as start a download without requiring the user to leave your app. <br> You'll find examples of how to do this in both the reference content and the [Universal Windows Platform (UWP) map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl).
 
 ## Get the user's location
 
@@ -55,12 +64,6 @@ Get the user's current location and be notified when the location changes in you
 | [Guidelines for using Visits tracking](guidelines-for-visits.md) | Learn how to use the powerful Visits Tracking feature for more practical location tracking. |
 | [Design guidance for geofencing](guidelines-for-geofencing.md) | Performance guidelines for apps that utilize the geofencing feature. |
 | [Set up a geofence](set-up-a-geofence.md) | Set up a geofence in your app, and learn how to handle notifications in the foreground and background. |
-
-## Launch the Windows Maps app
-
-Your app can launch the Windows Maps app as shown here to display specific maps and turn-by-turn directions. Rather than provide map functionality directly in your own app, consider using the Windows Maps app to provide that functionality. For more info, see [Launch the Windows Maps app](/windows/apps/develop/launch/launch-maps-app).
-
-![an example of the windows maps app.](images/mapnyc.png)
 
 ## Related topics
 

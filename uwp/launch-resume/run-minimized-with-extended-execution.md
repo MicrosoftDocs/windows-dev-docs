@@ -2,7 +2,7 @@
 description: Learn how to use extended execution to keep your app running while it is minimized
 title: Postpone app suspension with extended execution
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle, lock screen
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
 ms.localizationpriority: medium

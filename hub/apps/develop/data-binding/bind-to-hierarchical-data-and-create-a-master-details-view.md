@@ -3,7 +3,7 @@ ms.assetid: 6c563dd4-3dd0-4175-a1ab-7a1103fc9559
 title: Bind hierarchical data and create a master/details view with Windows App SDK
 description: You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to CollectionViewSource instances that are bound together in a chain.
 ms.date: 12/13/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, windows ui, xBind
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 > [!NOTE]
 > Also see the [Master/detail UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
 
-You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances that are bound together in a chain. In this topic we use the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) where possible, and the more flexible (but less performant) [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension) where necessary.
+You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances that are bound together in a chain. In this topic we use the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) where possible, and the more flexible (but less performant) [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension) where necessary.
 
 One common structure for Windows App SDK apps is to navigate to different details pages when a user makes a selection in a master list. This is useful when you want to provide a rich visual representation of each item at every level in a hierarchy. Another option is to display multiple levels of data on a single page. This is useful when you want to display a few simple lists that let the user quickly drill down to an item of interest. This topic describes how to implement this interaction. The [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances keep track of the current selection at each hierarchical level.
 

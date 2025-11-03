@@ -1,7 +1,7 @@
 ---
 title: Windows app performance and fundamentals overview
 description: Learn about ways to optimize the performance of your Windows apps.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/27/2025
 ms.reviewer: adityar
 ms.localizationpriority: medium

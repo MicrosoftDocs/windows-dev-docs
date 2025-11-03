@@ -3,8 +3,8 @@ title: Motion in practice - animation in Windows apps
 description: Learn how Fluent motion fundamentals like timing, easing, directionality, and gravity come together in your app.
 label: Motion in practice
 template: detail.hbs
-ms.date: 09/18/2024
-ms.topic: article
+ms.date: 10/29/2025
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
@@ -56,39 +56,41 @@ Grow: 150ms; Easing: Default Accelerate
     :::column-end:::
 :::row-end:::
 
-### Examples
+## Implicit Animations
+
+Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.
+
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-## Implicit Animations
-
-Implicit animations are a simple way to achieve Fluent motion by automatically interpolating between the old and new values during a parameter change.
-
 You can implicitly animate changes to the following properties:
 
-- [UIElement](/uwp/api/windows.ui.xaml.uielement)
+- [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement)
   - **Opacity**
   - **Rotation**
   - **Scale**
   - **Translation**
 
-- [Border](/uwp/api/windows.ui.xaml.controls.border), [ContentPresenter](/uwp/api/windows.ui.xaml.controls.contentpresenter), or [Panel](/uwp/api/windows.ui.xaml.controls.panel)
+- [Border](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border), [ContentPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentpresenter), or [Panel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.panel)
   - **Background**
 
 Each property that can have changes implicitly animated has a corresponding _transition_ property. To animate the property, you assign a transition type to the corresponding _transition_ property. This table shows the _transition_ properties and the transition type to use for each one.
 
 | Animated property | Transition property | Implicit transition type |
 | -- | -- | -- |
-| [UIElement.Opacity](/uwp/api/windows.ui.xaml.uielement.opacity) | [OpacityTransition](/uwp/api/windows.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
-| [UIElement.Rotation](/uwp/api/windows.ui.xaml.uielement.rotation) | [RotationTransition](/uwp/api/windows.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/uwp/api/windows.ui.xaml.scalartransition) |
-| [UIElement.Scale](/uwp/api/windows.ui.xaml.uielement.scale) | [ScaleTransition](/uwp/api/windows.ui.xaml.uielement.scaletransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
-| [UIElement.Translation](/uwp/api/windows.ui.xaml.uielement.translation) | [TranslationTransition](/uwp/api/windows.ui.xaml.uielement.translationtransition) | [Vector3Transition](/uwp/api/windows.ui.xaml.vector3transition) |
-| [Border.Background](/uwp/api/windows.ui.xaml.controls.border.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](/uwp/api/windows.ui.xaml.brushtransition) |
-| [ContentPresenter.Background](/uwp/api/windows.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](/uwp/api/windows.ui.xaml.brushtransition) |
-| [Panel.Background](/uwp/api/windows.ui.xaml.controls.panel.background) | [BackgroundTransition](/uwp/api/windows.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](/uwp/api/windows.ui.xaml.brushtransition) |
+| [UIElement.Opacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.opacity) | [OpacityTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.opacitytransition) | [ScalarTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.scalartransition) |
+| [UIElement.Rotation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.rotation) | [RotationTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.rotationtransition) | [ScalarTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.scalartransition) |
+| [UIElement.Scale](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.scale) | [ScaleTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.scaletransition) | [Vector3Transition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.vector3transition) |
+| [UIElement.Translation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.translation) | [TranslationTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.translationtransition) | [Vector3Transition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.vector3transition) |
+| [Border.Background](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border.background) | [BackgroundTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border.backgroundtransition) | [BrushTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.brushtransition) |
+| [ContentPresenter.Background](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentpresenter.background) | [BackgroundTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentpresenter.backgroundtransition) | [BrushTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.brushtransition) |
+| [Panel.Background](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.panel.background) | [BackgroundTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.panel.backgroundtransition)  | [BrushTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.brushtransition) |
 
 This example shows how to use the Opacity property and transition to make a button fade in when the control is enabled and fade out when it's disabled.
 
@@ -115,7 +117,7 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 > [!div class="checklist"]
 >
-> - **UWP APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/uwp/api/windows.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls.ratingcontrol)
+> - **UWP APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/uwp/api/windows.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls)
 > - **WinUI 2 Apis:** [Microsoft.UI.Xaml.Controls namespace](/windows/winui/api/microsoft.ui.xaml.controls)
 > - [Open the WinUI 2 Gallery app and see Implicit Transitions in action](winui2gallery://item/ImplicitTransition). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 

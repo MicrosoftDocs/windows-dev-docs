@@ -1,7 +1,7 @@
 ---
 description: This tutorial demonstrates how to add Activity and Notification features to the app.
 title: Add Windows 10 user activities and notifications
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/27/2019
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium

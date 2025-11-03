@@ -589,6 +589,192 @@ MainPage.xaml
 </Page>
 ```
 
+### Mixing {x\:Bind} and {Binding} in a reusable Style
+
+While the previous example showed using {x:Bind} in DataTemplates, you can also create reusable Styles that combine both {x:Bind} and {Binding} markup extensions. This is useful when you want to bind some properties to compile-time known values using {x:Bind} and other properties to runtime DataContext values using {Binding}.
+
+Here's an example that shows how to create a reusable Button style that uses both binding approaches:
+
+TemplatesResourceDictionary.xaml
+
+``` xaml
+<ResourceDictionary
+    x:Class="ExampleNamespace.TemplatesResourceDictionary"
+    .....
+    xmlns:examplenamespace="using:ExampleNamespace">
+    
+    <!-- DataTemplate using x:Bind -->
+    <DataTemplate x:Key="EmployeeTemplate" x:DataType="examplenamespace:IEmployee">
+        <Grid>
+            <TextBlock Text="{x:Bind Name}"/>
+        </Grid>
+    </DataTemplate>
+    
+    <!-- Style that mixes x:Bind and Binding -->
+    <Style x:Key="CustomButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="{Binding ButtonBackgroundBrush}"/>
+        <Setter Property="Foreground" Value="{Binding ButtonForegroundBrush}"/>
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="Margin" Value="4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="RootBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                        <StackPanel Orientation="Horizontal" 
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center">
+                            <!-- x:Bind to a static property or page-level property -->
+                            <Ellipse Width="8" Height="8" 
+                                     Fill="{x:Bind DefaultIndicatorBrush}" 
+                                     Margin="0,0,8,0"/>
+                            <!-- Binding to DataContext -->
+                            <ContentPresenter x:Name="ContentPresenter"
+                                              Content="{TemplateBinding Content}"
+                                              Foreground="{TemplateBinding Foreground}"
+                                              FontSize="{TemplateBinding FontSize}"/>
+                        </StackPanel>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="PointerOver">
+                                    <VisualState.Setters>
+                                        <!-- Binding to DataContext for hover color -->
+                                        <Setter Target="RootBorder.Background" 
+                                                Value="{Binding ButtonHoverBrush}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                        <!-- x:Bind to a compile-time known resource -->
+                                        <Setter Target="RootBorder.Background" 
+                                                Value="{x:Bind DefaultPressedBrush}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
+```
+
+TemplatesResourceDictionary.xaml.cs
+
+``` csharp
+using Windows.UI;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Media;
+ 
+namespace ExampleNamespace
+{
+    public partial class TemplatesResourceDictionary
+    {
+        public TemplatesResourceDictionary()
+        {
+            InitializeComponent();
+        }
+        
+        // Properties for x:Bind - these are compile-time bound
+        public SolidColorBrush DefaultIndicatorBrush { get; } = 
+            new SolidColorBrush(Colors.Green);
+            
+        public SolidColorBrush DefaultPressedBrush { get; } = 
+            new SolidColorBrush(Colors.DarkGray);
+    }
+}
+```
+
+Usage in MainPage.xaml with a ViewModel that provides runtime values:
+
+``` xaml
+<Page x:Class="ExampleNamespace.MainPage"
+    ....
+    xmlns:examplenamespace="using:ExampleNamespace">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <examplenamespace:TemplatesResourceDictionary/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
+    <Page.DataContext>
+        <examplenamespace:ButtonThemeViewModel/>
+    </Page.DataContext>
+
+    <StackPanel Margin="20">
+        <!-- This button uses the mixed binding style -->
+        <Button Content="Save" Style="{StaticResource CustomButtonStyle}"/>
+        <Button Content="Cancel" Style="{StaticResource CustomButtonStyle}"/>
+    </StackPanel>
+</Page>
+```
+
+ButtonThemeViewModel.cs (the DataContext that provides runtime binding values):
+
+``` csharp
+using System.ComponentModel;
+using Windows.UI;
+using Windows.UI.Xaml.Media;
+
+namespace ExampleNamespace
+{
+    public class ButtonThemeViewModel : INotifyPropertyChanged
+    {
+        private SolidColorBrush _buttonBackgroundBrush = new SolidColorBrush(Colors.LightBlue);
+        private SolidColorBrush _buttonForegroundBrush = new SolidColorBrush(Colors.DarkBlue);
+        private SolidColorBrush _buttonHoverBrush = new SolidColorBrush(Colors.LightCyan);
+
+        public SolidColorBrush ButtonBackgroundBrush
+        {
+            get => _buttonBackgroundBrush;
+            set
+            {
+                _buttonBackgroundBrush = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ButtonBackgroundBrush)));
+            }
+        }
+
+        public SolidColorBrush ButtonForegroundBrush
+        {
+            get => _buttonForegroundBrush;
+            set
+            {
+                _buttonForegroundBrush = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ButtonForegroundBrush)));
+            }
+        }
+
+        public SolidColorBrush ButtonHoverBrush
+        {
+            get => _buttonHoverBrush;
+            set
+            {
+                _buttonHoverBrush = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ButtonHoverBrush)));
+            }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+    }
+}
+```
+
+In this example:
+
+- **{Binding}** is used for properties that depend on the DataContext (ButtonBackgroundBrush, ButtonForegroundBrush, ButtonHoverBrush)
+- **{x:Bind}** is used for properties that are compile-time known and belong to the ResourceDictionary itself (DefaultIndicatorBrush, DefaultPressedBrush)
+- The style is reusable and can be applied to any Button
+- Runtime theming is possible through the DataContext while still benefiting from the performance of {x:Bind} for static elements
+
 ## Event binding and ICommand
 
 [{x:Bind}](../xaml-platform/x-bind-markup-extension.md) supports a feature called event binding. With this feature, you can specify the handler for an event using a binding, which is an additional option on top of handling events with a method on the code-behind file. Let's say you have a **RootFrame** property on your **MainPage** class.

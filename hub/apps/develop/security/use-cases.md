@@ -1,8 +1,9 @@
 ---
 title: Use cases for passkeys
 description: This topic describes some use cases for passkeys.
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/06/2024
+ms.custom: sfi-image-nochange
 ---
 
 # Use cases for passkeys
@@ -261,7 +262,7 @@ If the user instead clicks on "Try another way", then you should offer them othe
 
 ### 2.2: Expired sessions and logout
 
-Now we'll examine the case where the reauthentication is triggered because the user logged themself out, or the relying party (RP) expired the user's session. To facilitate that, the RP would have to keep some form of user session state reminding them of the account that was formerly signed in, even when they consider the user signed-out (that could be achieved using browser artifacts such as cookies or local storage).
+Now we'll examine the case where the reauthentication is triggered because the user logged themselves out, or the relying party (RP) expired the user's session. To facilitate that, the RP would have to keep some form of user session state reminding them of the account that was formerly signed in, even when they consider the user signed-out (that could be achieved using browser artifacts such as cookies or local storage).
 
 > [!NOTE]
 > A relying party (RP) might choose to treat signing out as a comprehensive action, and thus delete all references to the user's identity. Such an RP should treat a subsequent sign-in like an account bootstrap, and repeat the steps explained previously.

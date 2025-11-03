@@ -3,7 +3,7 @@ title: Flight stick
 description: Use the Windows.Gaming.Input flight stick APIs to read input from flight sticks.
 ms.assetid: DC633F6B-FDC9-4D6E-8401-305861F31192
 ms.date: 03/06/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, input, flight stick
 ms.localizationpriority: medium
 ---

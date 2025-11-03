@@ -2,10 +2,8 @@
 title: Page transitions
 description: Learn how to use Universal Windows Platform (UWP) page transitions to give users feedback about the relationship between pages in your app.
 template: detail.hbs
-ms.date: 09/24/2020
-ms.topic: article
-keywords: windows 10, uwp
-pm-contact: stmoy
+ms.date: 10/29/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -13,23 +11,16 @@ ms.custom: RS5
 
 Page transitions navigate users between pages in an app, providing feedback as the relationship between pages. Page transitions help users understand if they are at the top of a navigation hierarchy, moving between sibling pages, or navigating deeper into the page hierarchy.
 
-Two different animations are provided for navigation between pages in an app, *Page refresh* and *Drill*, and are represented by subclasses of [**NavigationTransitionInfo**](/uwp/api/windows.ui.xaml.media.animation.navigationtransitioninfo).
+Two different animations are provided for navigation between pages in an app, *Page refresh* and *Drill*, and are represented by subclasses of [**NavigationTransitionInfo**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationtransitioninfo).
 
-## Examples
+> [!div class="checklist"]
+>
+> - **Important APIs**: [NavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationtransitioninfo), [EntranceNavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.entrancenavigationtransitioninfo), [DrillInNavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.drillinnavigationtransitioninfo), [SuppressNavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.suppressnavigationtransitioninfo)
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon.png" alt="WinUI Gallery" width="168"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/PageTransition">open the app and see Page Transitions in action</a>.</p>
-    <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/PageTransition)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Page refresh
 
@@ -39,15 +30,16 @@ The desired feeling is that the user has started over.
 
 ![page refresh animation](images/page-refresh.gif)
 
-The page refresh animation is represented by the [**EntranceNavigationTransitionInfoClass**](/uwp/api/windows.ui.xaml.media.animation.entrancenavigationtransitioninfo).
+The page refresh animation is represented by the [**EntranceNavigationTransitionInfo**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.entrancenavigationtransitioninfo) class.
 
 ```csharp
-// Explicitly play the page refresh animation
+// Explicitly play the page refresh animation.
 myFrame.Navigate(typeof(Page2), null, new EntranceNavigationTransitionInfo());
 
 ```
 
-**Note**: A [**Frame**](/uwp/api/windows.ui.xaml.controls.frame) automatically uses [**NavigationThemeTransition**](/uwp/api/windows.ui.xaml.media.animation.navigationthemetransition) to animate navigation between two pages. By default, the animation is page refresh.
+> [!NOTE]
+> A [**Frame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame) automatically uses [**NavigationThemeTransition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationthemetransition) to animate navigation between two pages. By default, the animation is page refresh.
 
 ## Drill
 
@@ -57,10 +49,10 @@ The desired feeling is that the user has gone deeper into the app.
 
 ![drill animation](images/drill.gif)
 
-The drill animation is represented by the [**DrillInNavigationTransitionInfo**](/uwp/api/windows.ui.xaml.media.animation.drillinnavigationtransitioninfo) class.
+The drill animation is represented by the [**DrillInNavigationTransitionInfo**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.drillinnavigationtransitioninfo) class.
 
 ```csharp
-// Play the drill in animation
+// Play the drill in animation.
 myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 ```
 
@@ -71,19 +63,19 @@ Use horizontal slide to show that sibling pages appear next to each other. The [
 The desired feeling is that the user is navigating between pages that are next to each other. 
 
 ```csharp
-// Navigate to the right, ie. from LeftPage to RightPage
+// Navigate to the right, ie. from LeftPage to RightPage.
 myFrame.Navigate(typeof(RightPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromRight } );
 
-// Navigate to the left, ie. from RightPage to LeftPage
+// Navigate to the left, ie. from RightPage to LeftPage.
 myFrame.Navigate(typeof(LeftPage), null, new SlideNavigationTransitionInfo() { Effect = SlideNavigationTransitionEffect.FromLeft } );
 ```
 
 ## Suppress
 
-To avoid playing any animation during navigation, use [**SuppressNavigationTransitionInfo**](/uwp/api/windows.ui.xaml.media.animation.suppressnavigationtransitioninfo) in the place of other **NavigationTransitionInfo** subtypes.
+To avoid playing any animation during navigation, use [**SuppressNavigationTransitionInfo**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.suppressnavigationtransitioninfo) in the place of other **NavigationTransitionInfo** subtypes.
 
 ```csharp
-// Suppress the default animation
+// Suppress the default animation.
 myFrame.Navigate(typeof(Page2), null, new SuppressNavigationTransitionInfo());
 ```
 
@@ -98,4 +90,4 @@ This can be useful when you modify navigation behavior dynamically based on scre
 ## Related topics
 
 - [Navigate between two pages](../basics/navigate-between-two-pages.md)
-- [Motion in UWP apps](index.md)
+- [Motion in Windows](index.md)

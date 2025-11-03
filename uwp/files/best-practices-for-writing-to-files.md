@@ -2,7 +2,7 @@
 title: Best practices for writing to files
 description: Learn best practices for using various file writing methods of the FileIO and PathIO classes.
 ms.date: 02/06/2019
-ms.topic: article
+ms.topic: best-practice
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

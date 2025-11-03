@@ -6,7 +6,7 @@ isNew: true
 label: Date picker
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -98,7 +98,7 @@ The date properties can't be set as a XAML attribute string, because the Windows
 - [DateTime](/uwp/api/windows.foundation.datetime): Instantiate a [Windows.Globalization.Calendar](/uwp/api/windows.globalization.calendar) object (it is initialized to the current date). Set [Year](/uwp/api/windows.globalization.calendar.year), or call [AddYears](/uwp/api/windows.globalization.calendar.addyears), to adjust the date. Then, call [Calendar.GetDateTime](/uwp/api/windows.globalization.calendar.getdatetime) and use the returned `DateTime` to set the date property.
 - [DateTimeOffset](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0&preserve-view=true): Call the  constructor. For the inner [System.DateTime](/dotnet/api/system.datetime?view=dotnet-uwp-10.0&preserve-view=true), use the  constructor signature. Or, construct a default [DateTimeOffset](/dotnet/api/system.datetimeoffset?view=dotnet-uwp-10.0&preserve-view=true) (it is initialized to the current date) and call [AddYears](/dotnet/api/system.datetimeoffset.addyears?view=dotnet-uwp-10.0&preserve-view=true).
 
-Another possible technique is to define a date that's available as a data object or in the data context, then set the date property as a XAML attribute that references a [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension) that can access the date as data.
+Another possible technique is to define a date that's available as a data object or in the data context, then set the date property as a XAML attribute that references a [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension) that can access the date as data.
 
 > [!NOTE]
 > For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
@@ -187,7 +187,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [DatePicker class](/uwp/api/Windows.UI.Xaml.Controls.DatePicker), [SelectedDate property](/uwp/api/windows.ui.xaml.controls.datepicker.selecteddate)
 > - [Open the WinUI 2 Gallery app and see the DatePicker in action](winui2gallery:/item/DatePicker). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

@@ -2,7 +2,7 @@
 title: Build desktop Windows apps with the Windows App SDK 
 description: Learn about the Windows App SDK, benefits it provides to developers, what is ready for developers now, and how to give feedback.
 ms.topic: article
-ms.date: 07/15/2024
+ms.date: 07/14/2025
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -17,7 +17,7 @@ The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows 
 
 ## Get started with the Windows App SDK
 
-The Windows App SDK provides extensions for Visual Studio 2022 and Visual Studio 2019. Those extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
+The Windows App SDK provides extensions for Visual Studio 2022 that include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
 
 To learn about configuring Visual Studio for creating new Windows App SDK projects, including the required workloads and components, see [Getting Started with WinUI](../get-started/start-here.md).
 

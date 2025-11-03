@@ -4,7 +4,7 @@ title: Pin secondary tiles to Start
 label: Pin secondary tiles to Start
 template: detail.hbs
 ms.date: 08/08/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile
 ms.localizationpriority: medium
 ---

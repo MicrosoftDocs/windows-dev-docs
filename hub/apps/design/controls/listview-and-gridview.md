@@ -4,7 +4,7 @@ description: Use ListView and GridView controls to display and manipulate sets o
 label: List view and grid view
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 doc-status: Published
@@ -197,7 +197,7 @@ By using a data template in a ListView or GridView control, you can define how t
 However, you might ordinarily want to show a richer presentation of your data. To specify how items in the list view or grid view are to be displayed, you create a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.DataTemplate) class. The XAML in DataTemplate defines the layout and appearance of the controls that are used to display an individual item. The controls in the layout can be bound to the properties of a data object, or they can have static content that's defined inline.
 
 > [!IMPORTANT]
-> When you use the [x:Bind markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) in DataTemplate, you have to specify the data type (`x:DataType`) on the data template.
+> When you use the [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) in DataTemplate, you have to specify the data type (`x:DataType`) on the data template.
 
 #### A simple ListView data template
 
@@ -268,7 +268,7 @@ Here's how the data items are displayed when you apply a ListView data template 
 
 Data templates are the primary way you define the look of your ListView. They can also significantly affect performance if your list holds a large number of items.
 
-You can define your data template inline within the ListView or GridView definition, as shown in the preceding code, or separately in a Resources section. If you define it outside the ListView or GridView definition, you must give the data template an [x:Key](/windows/uwp/xaml-platform/x-key-attribute) attribute and assign it to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView by using that key.
+You can define your data template inline within the ListView or GridView definition, as shown in the preceding code, or separately in a Resources section. If you define it outside the ListView or GridView definition, you must give the data template an [x:Key](/windows/apps/develop/platform/xaml/x-key-attribute) attribute and assign it to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView by using that key.
 
 For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [Item containers and templates](item-containers-templates.md).
 
@@ -609,7 +609,7 @@ APIs for these controls exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows
 - [XAML ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView): Demonstrates the ListView and GridView controls.
 - [XAML drag and drop sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop): Demonstrates drag and drop with the ListView control.
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
 
 ## Related articles
 

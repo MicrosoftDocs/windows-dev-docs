@@ -1,37 +1,45 @@
 ---
-title: PowerToys Color Picker utility for Windows
-description: A system-wide color picking utility for Windows to pick colors from any screen and copy it to the clipboard in a configurable format.
-ms.date: 11/19/2024
-ms.topic: article
+title: Color Picker Utility in PowerToys for Windows
+description: Use Color Picker in PowerToys to pick colors from any Windows screen and copy them to clipboard in multiple formats. Start designing faster today.
+ms.date: 08/20/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Color Picker, Color, Picker]
+# Customer intent: As a Windows user, I want to use the Color Picker utility in PowerToys to select colors from my screen and copy them in various formats, so that I can easily use them in my design projects.
 ---
 
 # Color Picker utility
 
-A system-wide color picking utility for Windows to pick colors from any screen and copy it to the clipboard in a configurable format.
+Color Picker is a PowerToys utility for Windows that lets you pick colors from any screen and copy them to the clipboard in configurable formats. This tool helps designers and developers quickly capture exact colors for their projects.
 
-![Color Picker screenshot](../images/pt-colorpicker-hex-editor.png)
+![A screenshot of the Color Picker utility.](../images/pt-colorpicker-hex-editor.png)
 
-## Getting started
+## Get started with Color Picker
 
-### Enabling Color Picker
+Getting started with Color Picker is easy. You can activate it using a keyboard shortcut, select a color from your screen, and copy it to the clipboard in the format of your choice.
+
+### Enable Color Picker
 
 You can enable the Color Picker in PowerToys Settings.
 
-### Activating Color Picker
+### Activate Color Picker
 
 Choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
 
-:::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="Color Picker behaviors.":::
+:::image type="content" source="../images/pt-colorpicker-activation.gif" alt-text="Screenshot of Color Picker activation behaviors showing different options for when the utility is activated.":::
 
 - **Open editor** opens an editor that lets you choose a color from the colors history, fine-tune a selected color, or pick a new color.
-- **Pick a color and open editor** activates Color Picker, then opens an editor and copies the selected color to the clipboard after you've picked a color.
-- **Only pick a color** activates Color Picker and copies the selected color to the clipboard.
+- **Pick a color first** activates Color Picker. You can then take action on the selected color using the options described in the **Pick colors from your screen** section below.
 
-### Picking colors
+### Pick colors from your screen
 
-After activating Color Picker, select a color on your screen to pick that color. If you want to see the area under your cursor in more detail, scroll up to zoom in.
+After activating Color Picker, select a color on your screen to pick that color. If you want to see the area under your cursor in more detail, scroll up to zoom in. You can assign different actions to each of the mouse buttons in Color Picker's settings. The default actions for each button are:
+
+| Mouse button | Default action | Description |
+| :--- | :--- | :--- |
+| **Left click** | Pick a color and open editor | Copies the selected color to the clipboard, saves it to the color history, and opens the editor. |
+| **Scroll wheel click** | Pick a color and close | Copies the selected color to the clipboard, saves it to the color history, and exits. |
+| **Right click** | Close | Closes the Color Picker without copying the color. |
 
 Color Picker copies the selected color to the clipboard in the **Default color format** you've chosen in Color Picker's settings (default: HEX).
 
@@ -44,7 +52,7 @@ Color Picker copies the selected color to the clipboard in the **Default color f
 > 2. Zoom in by scrolling the mouse wheel up. Image will be frozen.
 > 3. In the enlarged area, you can pick the color of the element.
 
-## Using the Color Picker editor
+## Use the Color Picker editor
 
 The Color Picker editor stores a history of up to 20 picked colors and lets you copy them to the clipboard. You can choose which color formats are visible in the editor in **Color formats** in PowerToys Settings.
 
@@ -70,14 +78,15 @@ Color Picker has the following settings:
 | Setting | Description |
 | :--- | :--- |
 | **Activation shortcut** | The shortcut that activates Color Picker. |
-| **Activation behavior** | Select what happens when you activate Color Picker. Read more about this setting in [Activating Color Picker](#activating-color-picker). |
+| **Activation behavior** | Select what happens when you activate Color Picker. Read more about this setting in [Activate Color Picker](#activate-color-picker). |
+| **Mouse actions** | Select what happens when you click each of the mouse buttons while Color Picker is active. The default actions for each button are:<br/><br/>**Left click**: Pick a color and open editor<br/>**Scroll wheel click**: Pick a color and close<br/>**Right click**: Close |
 | **Default color format** | The color format that Color Picker uses when copying colors to the clipboard. |
 | **Show color name** | Displays a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
-| **Color formats** | Enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about color formats in [Managing color formats](#managing-color-formats). |
+| **Color formats** | Enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about color formats in [Manage color formats](#manage-color-formats). |
 
 ![Color Picker Settings screenshot](../images/pt-colorpicker-settings.png)
 
-### Managing color formats
+### Manage color formats
 
 You can add, edit, delete, disable, and change the order of color formats in **Color formats**.
 
@@ -135,11 +144,13 @@ Format the red, green, blue, and alpha values to the following formats:
 | f   | float with leading zero    |
 | F   | float without leading zero |
 
-For example, `%ReX` means the red value in hex uppercase two digits format.
+For example, `%ReX` means the red value in hex uppercase two-digit format.
 
 Color formats can contain any words or characters you prefer. For example, the default color format that's displayed upon color format creation is: `_'new Color (R = %Re, G = %Gr, B = %Bl)'_`.
 
 ## Limitations
+
+The Color Picker utility has the following limitations:
 
 - Color Picker can't display on top of the Start menu or Action Center, but you can still pick a color.
 - If you started the currently focused application with an administrator elevation (**Run as administrator**), the Color Picker activation shortcut won't work unless you also started PowerToys with administrator elevation.

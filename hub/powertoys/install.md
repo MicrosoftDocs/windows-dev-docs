@@ -1,35 +1,38 @@
 ---
-title: Install PowerToys
+title: How to Install PowerToys on Windows 11 and Windows 10
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
-ms.collection: ce-skilling-ai-copilot
 ms.custom: copilot-scenario-highlight
-ms.date: 02/26/2025
-ms.topic: quickstart
+ms.date: 08/20/2025
+ms.topic: how-to
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
-# Customer intent: Learn how to install PowerToys on Windows using an executable file or package manager.
+# Customer intent: As a Windows power user, I want to learn how to install PowerToys on Windows using an executable file or package manager.
 ---
 
-# Installing PowerToys
+# Install PowerToys on Windows
+
+PowerToys is a set of utilities for customizing Windows that you can install using multiple methods. This article explains how to install PowerToys on Windows 11 and Windows 10 using an executable file, Microsoft Store, or package managers like WinGet, Chocolatey, and Scoop.
 
 We recommend installing PowerToys via [GitHub](https://aka.ms/installpowertoys) or [Microsoft Store](https://aka.ms/getPowertoys), but alternative install methods are also listed if you prefer using a package manager.
 
-## Requirements
+## System requirements
+
+The following are the minimum requirements to install and run PowerToys:
 
 - Supported Operating Systems:
   - Windows 11 (all versions)
   - Windows 10 v2004 (19041) or newer
 - System architecture
   - x64 and Arm64 architectures are currently supported.
-- Our installer will install the following runtimes:
+- The PowerToys installer will install the following runtimes:
   - [Microsoft Edge WebView2 Runtime](https://go.microsoft.com/fwlink/p/?LinkId=2124703) bootstrapper (this will always install the latest version available)
 
-To see if your machine meets these requirements, check your Windows version and build number by opening a Run dialog (Win+R), then type `winver` and select <kbd>OK</kbd> or <kbd>Enter</kbd>. Alternatively, enter the `ver` command in Windows Command Prompt. You may be able to [update to the latest Windows version](ms-settings:windowsupdate) in **Windows Update**.
+To see if your machine meets these requirements, check your Windows version and build number by opening a Run dialog (Win+R), then type `winver` and select <kbd>OK</kbd> or <kbd>Enter</kbd>. Alternatively, enter the `ver` command in Windows Command Prompt or [Windows Terminal](/windows/terminal/). You may be able to [update to the latest Windows version](ms-settings:windowsupdate) in **Windows Update**.
 
 > [!TIP]
 > You can use AI assistance to [create Windows Package Manager install commands for PowerToys with Copilot](#ask-copilot-for-help-with-command-line-arguments).
 
-## Installing with Windows executable file from GitHub
+## Install with Windows executable file from GitHub
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](https://aka.ms/installpowertoys)
@@ -37,15 +40,15 @@ To see if your machine meets these requirements, check your Windows version and 
 To install PowerToys using a Windows executable file:
 
 1. Visit the [Microsoft PowerToys GitHub releases page](https://aka.ms/installpowertoys).
-2. Select the **Assets** drop-down menu to display the files for the release.
-3. Select the `PowerToysSetup-0.##.#-x64.exe` or `PowerToysSetup-0.##.#-arm64.exe` file to download the PowerToys executable installer.
-4. Once downloaded, open the executable file and follow the installation prompts.
+1. Select the **Assets** drop-down menu to display the files for the release.
+1. Select the `PowerToysSetup-0.##.#-x64.exe` or `PowerToysSetup-0.##.#-arm64.exe` file to download the PowerToys executable installer.
+1. Once downloaded, open the executable file and follow the installation prompts.
 
-## Installing with Microsoft Store
+## Install with Microsoft Store
 
-Install from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys).
+You can install PowerToys from the [Microsoft Store's PowerToys page](https://aka.ms/getPowertoys).
 
-## Installing with Windows Package Manager
+## Install with Windows Package Manager
 
 To install PowerToys using the [Windows Package Manager](../package-manager/winget/index.md), it's as simple as running the following command from the command line / PowerShell:
 
@@ -53,21 +56,21 @@ To install PowerToys using the [Windows Package Manager](../package-manager/wing
 winget install --id Microsoft.PowerToys --source winget
 ```
 
-PowerToys supports configuring through `winget configure` using [Desired State Configuration](dsc-configure.md).
+PowerToys supports configuring through `winget configure` using [Desired State Configuration](dsc-configure/overview.md).
 
-## Installer arguments
+## Command-line installer arguments
 
 The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options).
 
 Here are some common commands you may want to use:
 
-| Command  | Abbreviation | Function     |
-|----------|--------------| ------------ |
-| /quiet   | /q           | Silent install |
-| /silent  | /s           | Silent install |
-| /passive |              | progress bar only install |
+| Command  | Abbreviation | Function                                 |
+|----------|--------------|------------------------------------------|
+| /quiet   | /q           | Silent install                           |
+| /silent  | /s           | Silent install                           |
+| /passive |              | progress bar only install                |
 | /layout  |              | create a local image of the bootstrapper |
-| /log     | /l           | log to a specific file |
+| /log     | /l           | log to a specific file                   |
 
 ### Ask Copilot for help with command-line arguments
 
@@ -81,9 +84,21 @@ Generate a `winget` command to install Microsoft PowerToys with arguments to ins
 
 Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://www.microsoft.com/microsoft-copilot/learn/).
 
-### Extracting the MSI from the bundle
+### Extracting the MSI from the bundle for 0.94 and later
 
-Make sure to have [WiX Toolset v3](https://wixtoolset.org/docs/wix3) installed. The command doesn't work with WiX Toolset v4.
+Make sure to have the [.NET SDK](https://dotnet.microsoft.com/download/) installed.
+
+In PowerShell, run `dotnet tool install wix --global` to install the latest version of WiX Toolset.
+
+This PowerShell example assumes that the PowerToys installer has been downloaded to the Windows desktop.
+
+```powershell
+wix burn extract ${Env:\USERPROFILE}"\Desktop\PowerToysSetup-0.94.0-x64.exe" -out ${Env:\USERPROFILE}"\Desktop\extractedPath" -oba ${Env:\USERPROFILE}"\Desktop\extractedPath"
+```
+
+### Extracting the MSI from the bundle for 0.93 and earlier
+
+Make sure to have [WiX Toolset v3](https://docs.firegiant.com/wix/wix3/) installed. The command doesn't work with WiX Toolset v4 and later versions.
 
 This PowerShell example assumes the default install location for WiX Toolset and that the PowerToys installer has been downloaded to the Windows desktop.
 
@@ -111,7 +126,7 @@ If there are problems while uninstalling a version, there are cleanup scripts av
 
 These community-driven alternative install methods aren't officially supported, and the PowerToys team doesn't update or manage these packages.
 
-### Installing with Chocolatey
+### Install with Chocolatey
 
 To install [PowerToys](https://community.chocolatey.org/packages/powertoys) using [Chocolatey](https://chocolatey.org/), run the following command from your command line / PowerShell:
 
@@ -127,7 +142,7 @@ choco upgrade powertoys
 
 If you have issues when installing/upgrading, create an issue at the [maintainers GitHub repository](https://github.com/mkevenaar/chocolatey-packages/issues) or follow the [Chocolatey triage process](https://docs.chocolatey.org/en-us/community-repository/users/package-triage-process).
 
-### Installing with Scoop
+### Install with Scoop
 
 To install PowerToys using [Scoop](https://scoop.sh/), run the following command from the command line / PowerShell:
 
@@ -147,6 +162,10 @@ If you have issues when installing/updating, file an issue in the [Scoop repo on
 ## After installation
 
 After successfully installing PowerToys, an overview window will display with introductory guidance for each of the available utilities.
+
+If you view the Home view of the PowerToys settings, you can get quick access to some of the utilities, see an overview of the available shortcuts, and enable or disable individual utilities.
+
+:::image type="content" source="../images/powertoys-settings-home.png" alt-text="A screenshot of the Home page of the PowerToys settings.":::
 
 ## Updates
 

@@ -3,7 +3,7 @@ title: Define the main game object
 description: Now, we look at the details of the sample game's main object and how the rules it implements translate into interactions with the game world.
 ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ms.date: 06/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, main object
 ms.localizationpriority: medium
 ---

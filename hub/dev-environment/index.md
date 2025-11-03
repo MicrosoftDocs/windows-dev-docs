@@ -1,7 +1,7 @@
 ---
 title: Setup a development environment on Windows
 description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
-ms.topic: article
+ms.topic: install-set-up-deploy
 ms.subservice: windows-nodejs
 ms.date: 01/07/2025
 ---
@@ -80,10 +80,10 @@ Windows invites you to code as you are. Use whatever coding language or framewor
         [Develop for Copilot+ PCs](/windows/ai/npu-devices)
     :::column-end:::
     :::column:::
-       [![Direct ML icon](../images/directml.png)](/windows/ai/directml/dml)<br>
-        **[DirectML](/windows/ai/directml/dml)**<br>
-        Pairing DirectML with the ONNX Runtime is often the most straightforward way for many developers to bring hardware-accelerated AI to their users at scale.<br>
-        [Get Started with DirectML](/windows/ai/directml/dml-get-started)
+       [![Windows ML icon](../images/windows-ml-diagram.png)](/windows/ai/new-windows-ml/overview)<br>
+        **[Windows ML](/windows/ai/new-windows-ml/overview)**<br>
+        Pairing Windows ML with the ONNX Runtime is often the most straightforward way for C#, C++, and Python developers to bring hardware-accelerated AI to their users.<br>
+        [Get Started with Windows ML](/windows/ai/new-windows-ml/get-started)
     :::column-end:::
     :::column:::
        [![RAI icon](../images/rai.png)](/windows/ai/rai)<br>
@@ -178,7 +178,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
        [![Azure icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
         **[Azure](/azure/guides/developer/azure-developer-guide)**<br>
         A complete cloud platform to host your existing apps and streamline new development. Azure services integrate everything you need to develop, test, deploy, and manage your apps.<br>
-        [Set up an Azure account](https://azure.microsoft.com/free/)
+        [Set up an Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn)
     :::column-end:::
     :::column:::
        [![.NET icon](../images/net.png)](https://dotnet.microsoft.com/)<br>

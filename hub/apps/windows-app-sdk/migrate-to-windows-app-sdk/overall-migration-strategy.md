@@ -2,7 +2,7 @@
 title: Overall migration strategy
 description: Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating.
 ms.topic: article
-ms.date: 10/01/2021
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---

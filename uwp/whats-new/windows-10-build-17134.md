@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 17134
 description: Windows 10 build 17134 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: Windows 10, 17134, 1803
 ms.date: 04/10/2018
-ms.topic: article
+ms.topic: whats-new
 
 
 ms.localizationpriority: medium
@@ -44,7 +44,7 @@ Graphics adapters | The following DXGI APIs have been added, which are related t
 
 Feature | Description
  :------ | :------
-Adaptive Cards | [Adaptive cards](/adaptive-cards/) are an open card exchange format enbling developers to exchange UI content in a common and consistent way. They describe their content as a JSON object that can be rendered to automatically adapt to the look and feel of the host application.
+Adaptive Cards | [Adaptive cards](/adaptive-cards/) are an open card exchange format enabling developers to exchange UI content in a common and consistent way. They describe their content as a JSON object that can be rendered to automatically adapt to the look and feel of the host application.
 App Resource Group | The [AppResourceGroupInfo](/uwp/api/windows.system.appresourcegroupinfo) class has new methods that you can use to initiate the transition to the app suspended, active (resumed), and terminated states.
 Broad file-system access | The **broadFileSystemAccess** capability grants apps the same access to the file system as the user who is currently running the app without file-picker style prompts. For more info, see [File access permissions](../files/file-access-permissions.md) and the **broadFileSystemAccess** entry in [App capability declarations](../packaging/app-capability-declarations.md).
 C++/WinRT | [C++/WinRT](../cpp-and-winrt-apis/index.md) is a new, entirely standard, modern C++17 language projection for Windows Runtime (WinRT) APIs. It's implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume WinRT APIs using any standards-compliant C++17 compiler. For your C++ applications — from Win32 to UWP — use C++/WinRT to keep your code standard, modern, and clean, and your application lightweight and fast.
@@ -108,9 +108,9 @@ It's easier than ever to bring your desktop app to the Universal Windows Platfor
 
 The Xbox Live Creators Program allows developers to quickly publish their UWP games to Xbox One and Windows 10. [Watch the video](https://www.youtube.com/watch?v=zpFfHHBkVq4) to learn about the program, then [check out this page](https://www.xbox.com/developers/creators-program) to get started.
 
-### One Dev Question - Why was Docments and Settings renamed Users?
+### One Dev Question - Why was Documents and Settings renamed Users?
 
-Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more developement details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
+Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more development details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
 
 
 ## Samples

@@ -5,7 +5,7 @@ ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
 ms.date: 11/14/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

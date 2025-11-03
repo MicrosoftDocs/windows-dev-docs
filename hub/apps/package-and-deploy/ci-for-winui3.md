@@ -3,7 +3,7 @@ title: Set up continuous integration for your WinUI 3 app
 description: How to automate WinUI 3 builds with continuous integration to produce sideload and/or Store packages.
 ms.date: 12/13/2021
 zone_pivot_groups: winui3-version-c#-only
-ms.topic: article
+ms.topic: how-to
 keywords: ci, continuous integration, automated builds, github actions, pipelines, winui 3, winui3, windows app sdk
 ms.localizationpriority: medium
 ---

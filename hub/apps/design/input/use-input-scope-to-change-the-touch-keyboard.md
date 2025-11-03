@@ -8,7 +8,7 @@ ms.assetid: 6E5F55D7-24D6-47CC-B457-B6231EDE2A71
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interaction
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ---
@@ -56,7 +56,7 @@ Here, you change the input scope of several text boxes to match the expected dat
 
 **To change the input scope in code**
 
-1.  In the XAML file for your page, locate the tag for the text control that you want to change. If it's not set, set the [x:Name attribute](/windows/uwp/xaml-platform/x-name-attribute) so you can reference the control in your code.
+1.  In the XAML file for your page, locate the tag for the text control that you want to change. If it's not set, set the [x:Name attribute](/windows/apps/develop/platform/xaml/x-name-attribute) so you can reference the control in your code.
 
     ```csharp
     <TextBox Header="Telephone Number" x:Name="phoneNumberTextBox"/>

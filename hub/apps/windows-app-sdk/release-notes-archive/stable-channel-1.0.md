@@ -1,8 +1,8 @@
 ---
 title: Stable channel release notes for the Windows App SDK  1.0
 description: Provides information about the stable release channel for the Windows App SDK 1.0.
-ms.topic: article
-ms.date: 04/25/2024
+ms.topic: release-notes
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -94,7 +94,7 @@ WinUI 3 is the native user experience (UX) framework for Windows App SDK. In thi
 
 **New features and updates:**
 
-- We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from [WinUI 2.6](../../winui/winui2/release-notes/winui-2.6.md#visual-style-updates).
+- We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from [WinUI 2.6](/windows/uwp/get-started/winui2/release-notes/winui-2.6#visual-style-updates).
 - Single-project MSIX packaging is supported in WinUI by creating a new application using the "Blank App, Packaged…" template.
 - We now support deploying WinUI 3 apps that aren't packaged on Windows versions 1809 and above. Please view [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md) for additional information.
 - WinUI 3 projects can now set their target version down to Windows 10, version 1809. Previously, they could only be set as low as version 1903.

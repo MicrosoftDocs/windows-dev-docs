@@ -88,7 +88,7 @@ However, you typically want to show a more rich presentation of your data by usi
 In this example, the data object is a simple string. The **DataTemplate** includes an image to the left of the text, and styles the **TextBlock** to display the string in a teal color.
 
 > [!NOTE]
-> When you use the [x:Bind markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) in a **DataTemplate**, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> When you use the [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) in a **DataTemplate**, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 ```xaml
 <DataTemplate x:DataType="x:String">
@@ -814,7 +814,7 @@ internal sealed class CardControl : CardControlBase
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The ItemsRepeater for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The ItemsRepeater for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >

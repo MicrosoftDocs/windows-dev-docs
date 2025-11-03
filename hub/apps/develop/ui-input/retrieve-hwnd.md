@@ -1,7 +1,7 @@
 ---
 title: Retrieve a window handle (HWND)
 description: This topic shows you how, in a desktop app, to retrieve the window handle for a window.
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/28/2024
 keywords: Windows, App, SDK, desktop, C#, C++, cpp, window, handle, HWND, WinUI
 ms.localizationpriority: medium

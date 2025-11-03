@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 The **Product declarations** section of the [Properties](./enter-app-properties.md) page of the [submission process](./create-app-submission.md) helps make sure your app is displayed appropriately and offered to the right set of customers, and helps them understand how they can use your app.
 
-The following sections describe some of the declarations and what you need to consider when determining whether each declaration applies to your app. Note that two of these declarations are checked by default (as described below.) Depending on your product's category, you may also see additional declarations. Be sure to review all of the declarations and ensure they accurately reflect your submission.
+The following sections describe some of the declarations and what you need to consider when determining whether each declaration applies to your app. Note that two of these declarations are checked by default (as described below). Depending on your product's category, you may also see additional declarations. Be sure to review all of the declarations and ensure they accurately reflect your submission.
 
 ## This app allows users to make purchases, but does not use the Microsoft Store commerce system
 

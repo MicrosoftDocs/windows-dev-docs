@@ -2,7 +2,7 @@
 title: Handle URI activation with a Windows app
 description: Learn how to register a Windows app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
 ms.date: 02/11/2025
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, windows 11
 ms.localizationpriority: medium
 # customer-intent: As a Windows developer, I want to learn how to register a Windows app to become the default handler for a Uniform Resource Identifier (URI) scheme name.

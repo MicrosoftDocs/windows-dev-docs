@@ -3,7 +3,7 @@ title: Define the game's UWP app framework
 description: The first step in coding a Universal Windows Platform (UWP) game is building the framework that lets the app object interact with Windows.
 ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ms.date: 06/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, directx
 ms.localizationpriority: medium
 ---

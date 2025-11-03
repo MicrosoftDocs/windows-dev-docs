@@ -2,7 +2,7 @@
 title: Enumerating PointOfService devices
 description: Learn four methods for using a device selector to query and enumerate the PointOfService devices available to your system.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: concept-article
 
 ms.localizationpriority: medium
 ---

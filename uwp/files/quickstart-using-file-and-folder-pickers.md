@@ -3,7 +3,7 @@ ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
 title: Open files and folders with a picker
 description: Access files and folders by letting the user interact with a picker. You can use the FileOpenPicker and FileSavePicker classes to gain access to files, and the FolderPicker to gain access to a folder.
 ms.date: 02/08/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,9 @@ Access files and folders by letting the user interact with a picker. You can use
 > For a complete sample, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
 
 > [!NOTE]
-> In a desktop app (which includes WinUI 3 apps), you can use file and folder pickers from [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers). However, if the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see [FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation).
+> In a desktop app (which includes WinUI apps), you can use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace to access the file and folder pickers. This namespace is available in Windows App SDK version 1.8 and later. The APIs in this namespace are designed to work seamlessly with WinUI apps, providing a consistent experience across different app types.
+>
+> However, if necessary, you can still use the WinRT file and folder pickers from [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers). If the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see [FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation).
 
 ## Prerequisites
 

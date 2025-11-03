@@ -1,25 +1,18 @@
 ---
-title: Windows Search providers
+title: Windows Search web search providers
 description: Learn how to integrate into the Windows Search experience. 
 ms.topic: article
 ms.date: 09/07/2023
 ms.localizationpriority: medium
 ---
 
+# Windows Search web search providers
 
-
-# Windows Search providers
-
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-> [!IMPORTANT]
-> The feature described in this topic is available in preview builds of Windows starting with build 22631.2787 for Windows 11 and build 19045.3758 for Windows 10, although newer builds are recommended because they contain stability improvements. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
-
-Windows Search currently uses the Web Search from Microsoft Bing app to return web content and search results. In the European Economic Area (EEA), you can enable installed apps that implement a web search provider to return web content and search results in Windows Search through Settings.
+Windows Search currently uses the Web Search from Microsoft Bing app to return web content and search results. In the European Economic Area (EEA), you can install apps that implement a web search provider to return web content and search results in Windows Search.
 
 :::image type="content" source="images/search-integration.png" alt-text="Screenshot of the Windows Search UI with 3rd party search provider integration.":::
 
-Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. Users can add a search provider to Windows by installing the associated app package and can remove the search provider through the **Add or remove programs** page in Windows Settings app.
+Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. After installation, the search provider is enabled by default in Windows Search experiences. In Windows Settings, users can enable and disable installed search providers and manage the order of providers in search results. Users can remove a search provider through the **Settings > Apps > Installed apps** page in Windows Settings.
 
 For development and testing, when Developer Mode is enabled and the search provider app has been sideloaded on the device, it will appear in the list of available search providers. For more information, see [Developer Mode features and debugging](/windows/apps/get-started/developer-mode-features-and-debugging).
 
@@ -66,7 +59,7 @@ The protocol schema that will be used when launching the provided web search res
 
 #### DynamicContentEndpoint
 
-The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). This feature is supported starting with Windows 10 build 19045.4233 and Windows 11 build 22621.3371. 
+This feature is no longer supported. For more information see [Implement a gleam icon endpoint](#implement-a-gleam-icon-endpoint). The URL of the HTTPS endpoint to which the OS will send a request for the gleam icon to be displayed in the search box.  
 
 
 ### Example package manifest file
@@ -173,6 +166,9 @@ The query string parameters passed to the suggestion endpoint are the following.
 Search providers must support the OPTIONS request method and respond to this request with HTTP OK. If the search provider endpoint is using CORS, the Windows search client will send out a HTTP OPTIONS request before each GET request.
 
 ## Implement a gleam icon endpoint
+
+> [!NOTE]
+> This gleam feature is no longer enabled. Gleam icons are no longer displayed for all web providers in the EEA. The content in this section of the documentation is obsolete.
 
 Search providers can optionally provide light and dark mode gleam icons that are displayed in the search bar when the search provider is currently enabled. When the **DynamicContentEndpoint** element is provided in the app manifest, a request will be sent to the specified URL and the search provider responds with a json file in the format defined below that includes the URLs of the icon image files and other metadata. The gleam icon request will be sent periodically while the search provider is the most recent provider active in Windows Search. The cadence for this request is every 6 hours. A request will also be sent upon each Search launch and on device unlock.
 

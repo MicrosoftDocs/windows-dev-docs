@@ -16,7 +16,7 @@ A button gives the user a way to trigger an immediate action. Some buttons are s
 
 ![Example of buttons](images/button.png)
 
-The [Extensible Application Markup Language (XAML)](/windows/uwp/xaml-platform/xaml-overview) framework provides a standard button control as well as several specialized button controls.
+The [Extensible Application Markup Language (XAML)](/windows/apps/develop/platform/xaml/xaml-overview) framework provides a standard button control as well as several specialized button controls.
 
 Control | Description
 ------- | -----------
@@ -166,7 +166,7 @@ private async void SubscribeButton_Click(object sender, RoutedEventArgs e)
 
 When you tap a **Button** control with a finger or stylus, or press a left mouse button while the pointer is over it, the button raises the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event. If a button has keyboard focus, pressing the Enter key or the Spacebar also raises the **Click** event.
 
-You generally can't handle low-level [PointerPressed](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more info, see [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview).
+You generally can't handle low-level [PointerPressed](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) events on a **Button** object because it has the **Click** behavior instead. For more info, see [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview).
 
 You can change how a button raises the **Click** event by changing the [ClickMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.clickmode) property. The default value of **ClickMode** is **Release**, but you also can set a button's **ClickMode** value to **Hover** or **Press**. If **ClickMode** is **Hover**, the **Click** event can't be raised by using the keyboard or touch.
 
@@ -552,7 +552,7 @@ private void ApplyListStyle(string listStyle)
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
@@ -560,7 +560,7 @@ The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are
 > - **WinUI 2 Apis:** [DropDownButton](/windows/winui/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton)
 > - [Open the WinUI 2 Gallery app and see the Button in action](winui2gallery:/item/Button). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 

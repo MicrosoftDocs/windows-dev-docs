@@ -6,13 +6,13 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# App screenshots, images, and trailers for MSIX app
+# Add app screenshots, images, and trailers
 
 Well-designed images are one of the main ways for you to represent your app to potential customers in the Store.
 
 You can provide [screenshots](#screenshots), [logos](#store-logos), [trailers](#trailers), and other art assets to include in your app's Store listing. Some of these are required, and some are optional (although some of the optional images are important to include for the best Store display).
 
-During the [app submission process](./create-app-submission.md), you provide these art assets in the [Store listings](./create-app-store-listing.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
+During the [app submission process](./create-app-submission.md), you provide these art assets in the [Store listings](./add-and-edit-store-listing-info.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
 
 The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](../../../design/style/iconography/overview.md).
 
@@ -116,15 +116,20 @@ Follow these recommendations to make your trailers effective:
 - Use a different thumbnail for each trailer so that customers know they are unique.
 - Because some Store layouts may slightly crop the top and bottom of your trailer, make sure key info appears in the center of the screen.
 - Frame rate and resolution should match the source material. For example, content shot at 720p60 should be encoded and uploaded at 720p60.
+- To make trailers more accessible for users with disabilities, you can upload closed captions and audio descriptions:
+  - Closed captions provide text alternatives for audio for individuals who are deaf or hard of hearing.
+  - Audio descriptions help provide audio alternatives for visual elements for individuals who are blind or have low vision.
 
 You must also follow the requirements listed below.
 
 **To add trailers to your listing:**
 
-1. Upload your trailer **video file** in the indicated box. A drop-down box is also shown in case you want to reuse a trailer you have already uploaded (perhaps for a Store listing in a different language).
+1. Click on **Upload** and upload your trailer **video file** in the indicated section. A drop-down box is also shown in case you want to reuse a trailer you have already uploaded (perhaps for a Store listing in a different language).
 2. After you have uploaded the trailer, you'll need to upload a **thumbnail image** to go along with it. This must be a .png file that is 1920 x 1080 pixels, and is typically a still image taken from the trailer.
 3. Click the pencil icon to add a **title** for your trailer (255 characters or fewer).
-4. If you want to add more trailers to the listing, click **Add trailer** and repeat the steps listed above.
+4. To add a closed caption file, click the "Upload" button in the closed captions section and select a Web VTT (.vtt) file. The file size must be less than 50 MB.
+5. To add an audio description file, click the "Upload" button in the audio descriptions section and select an MP3 (.mp3) file. The file size must be less than 500 MB.
+6. If you want to add more trailers to the listing, close the panel, click **Upload** and repeat the steps listed above.
 
 > [!TIP]
 > If you have created Store listings in multiple languages, you can select **Choose from existing trailers** to reuse the trailers you've already uploaded. You don't have to upload them individually for each language.
@@ -140,6 +145,8 @@ When providing your trailers, be sure to follow these requirements:
 - The thumbnail must be a PNG file with a resolution of 1920 x 1080 pixels.
 - The title can’t exceed 255 characters.
 - Do not include age ratings in your trailers.
+- The closed caption file must be in Web VTT (.vtt) format and the file size must be less than 50 MB
+- The audio description file must be in MP3 (.mp3) format and the file size must be less than 500 MB  
 
 > [!WARNING]
 > The exception to the requirement to include age ratings in your trailers applies **only** to trailers in the **Microsoft Store** that are shown **on the product page**. Any trailer posted outside of Partner Center, that is not intended for display exclusively on the Microsoft Store's product page **must** display embedded rating information, where required, in accordance with the appropriate rating authority’s guidelines.  
@@ -198,7 +205,7 @@ Here are some tips to keep in mind when designing this image:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [Making your app easy to promote](../../make-your-app-easier-to-promote.md) for more information.
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [How can I make my app easier to promote in the Microsoft Store](../../faq/leverage-developer-tools.md) in the FAQ section for more information.
 
 #### Xbox images
 
@@ -216,5 +223,4 @@ There are 3 different sizes that you can upload:
 #### Holographic image
 
 The **2:1 (2400 x 1200)** image is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
-
 

@@ -1,7 +1,7 @@
 ---
 title: Set up Node.js on native Windows
 description: A guide to help you get your Node.js development environment set up directly on Windows.
-ms.topic: article
+ms.topic: install-set-up-deploy
 ms.date: 12/12/2024
 ---
 
@@ -65,9 +65,6 @@ While NVM for Windows (nvm-windows) is currently the most popular version manage
 - [Volta](https://github.com/volta-cli/volta#installing-volta) is a new version manager from the LinkedIn team that claims improved speed and cross-platform support.
 
 To install Volta as your version manager, go to the **Windows Installation** section of their [Getting Started guide](https://docs.volta.sh/guide/getting-started), then download and run their Windows installer, following the setup instructions.
-
-> [!IMPORTANT]
-> You must ensure that [Developer Mode](/windows/uwp/get-started/enable-your-device-for-development#accessing-settings-for-developers) is enabled on your Windows machine before installing Volta.
 
 To learn more about using Volta to install multiple versions of Node.js on Windows, see the [Volta Docs](https://docs.volta.sh/guide/understanding#managing-your-toolchain).
 

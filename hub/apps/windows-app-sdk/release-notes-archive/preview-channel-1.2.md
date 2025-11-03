@@ -1,8 +1,8 @@
 ---
 title: Preview release channel for the Windows App SDK 1.2
 description: Provides info about the preview release channel for the Windows App SDK 1.2.
-ms.topic: article
-ms.date: 04/25/2024
+ms.topic: release-notes
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -60,24 +60,24 @@ Prerequisites for this release include:
 
 ### Trimming for apps developed with .NET
 
-.NET developers are now able to publish their WinAppSDK apps trimmed. With CsWinRT 2.0, the C#/WinRT projections distributed in WinAppSDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.
+.NET developers are now able to publish their Windows App SDK apps trimmed. With CsWinRT 2.0, the C#/WinRT projections distributed in Windows App SDK are now trimmable. Publishing your app trimmed can reduce the disk footprint of your app by removing any unused code from trimmable binaries.  Apps may also see a startup performance improvement. With a basic Hello World app, we have seen a ~80% disk footprint improvement and a ~7% startup performance improvement when published trimmed. With WinUI gallery, we have seen a ~45% disk footprint improvement.
 
 For more details on how to enable trimming, trimming limitations (such as reflection against trimmable types), and trim warnings, see [Trim self-contained deployments and executables](/dotnet/core/deploying/trimming/trim-self-contained). Developers should thoroughly test their apps after trimming to ensure everything works as expected. For more information, check out issue [2478](https://github.com/microsoft/WindowsAppSDK/issues/2478) on GitHub.
 
 ### DisplayInformation
 
-Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformation class in WinAppSDK. The DisplayInformation class enables you to monitor display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
+Win32 apps can now support High Dynamic Range (HDR) through the DisplayInformation class in Windows App SDK. The DisplayInformation class enables you to monitor display-related information for an application view. This includes events to allow clients to monitor for changes in the application view affecting which display(s) the view resides on, as well as changes in displays that can affect the application view.
 
 ### Fixed issues in WinUI 3
 
 - Acrylic backdrop material via [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/Microsoft.UI.Composition.SystemBackdrops.DesktopAcrylicController) is now supported in Windows 10 apps. For more information, check out issue [7112](https://github.com/microsoft/microsoft-ui-xaml/issues/7112) on GitHub.
 - Fixed issue causing App.UnhandledException to fail to be routed to the application. For more information, check out issue [5221](https://github.com/microsoft/microsoft-ui-xaml/issues/5221) on GitHub.
-- Fixed issue causing ListView styles to regress and change from WinAppSDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub.
+- Fixed issue causing ListView styles to regress and change from Windows App SDK 1.1. For more information, check out issue [7666](https://github.com/microsoft/microsoft-ui-xaml/issues/7666) on GitHub.
 
 ### Other limitations and known issues (1.2.0-preview2)
 
 > [!Important]
-> When you reference WinAppSDK 1.2 from a project you might see an error similar to: "*Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194.*", which is caused by incompatible references to the package from the app project and the WinAppSDK package. To resolve this you can update the reference in the project to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools, or simply remove the reference from your project. If you remove it from your project, a compatible version will be implicitly referenced by the WinAppSDK package.
+> When you reference Windows App SDK 1.2 from a project you might see an error similar to: "*Detected package downgrade: Microsoft.Windows.SDK.BuildTools from 10.0.22621.1 to 10.0.22000.194.*", which is caused by incompatible references to the package from the app project and the Windows App SDK package. To resolve this you can update the reference in the project to a more recent and compatible version of Microsoft.Windows.SDK.BuildTools, or simply remove the reference from your project. If you remove it from your project, a compatible version will be implicitly referenced by the Windows App SDK package.
 
 - Building with [Arm64 Visual Studio](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/) is not currently supported.
 - Bootstrapper and Undocked RegFree WinRT auto-initializer defaults is (now) only set for projects that produce an executable (OutputType=Exe or WinExe). This prevents adding auto-initializers into class library DLLs and other non-executables by default.
@@ -94,11 +94,11 @@ For the updated runtime and MSIX, see [Latest Windows App SDK downloads](../down
 
 WinUI 3 apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](../../design/controls/media-playback.md).
 
-WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](../../winui/winui2/release-notes/winui-2.7.md) and [WinUI 2.8](../../winui/winui2/release-notes/winui-2.8.md).
+WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](/windows/uwp/get-started/winui2/release-notes/winui-2.7) and [WinUI 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8).
 
 #### Known issue
 
-[**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) styles regressed and changed from WinAppSDK 1.1.
+[**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) styles regressed and changed from Windows App SDK 1.1.
 
 ### Notifications
 

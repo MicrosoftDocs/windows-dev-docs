@@ -1,8 +1,8 @@
 ---
 title: Stable channel release notes for the Windows App SDK 1.4
 description: Provides information about the stable release channel for the Windows App SDK 1.4.
-ms.topic: article
-ms.date: 04/25/2024
+ms.topic: release-notes
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -85,12 +85,12 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 - Fixed a DWriteCore issue affecting proper rendering of Indic text in certain fonts.
 - Fixed an issue in a List View that prevented proper keyboard navigation to and from nested selected items with *Tab/Shift + Tab*.
 - Fixed an issue that broke scrolling ComboBox items by touch after expanding the ComboBox a second time. For more info, see GitHub issue [#8831](https://github.com/microsoft/microsoft-ui-xaml/issues/8831).
-- Fixed an issue where WinAppSDK packages did not include WinUI's localized resources for some languages.
+- Fixed an issue where Windows App SDK packages did not include WinUI's localized resources for some languages.
 - Fixed an inconsistency between how File Explorer and XAML display a user's preferred language.
 - Fixed a craftsmanship issue in File Explorer causing a thin line to show under the active tab.
 - Fixed an issue where some framework-provided keyboard accelerators were not properly localized. For more info, see GitHub issue [#2023](https://github.com/microsoft/microsoft-ui-xaml/issues/2023).
 - Fixed an issue with RepeatButton controls that were repeatedly scrolling when tapped.
-- Fixed the WinAppSDK installer .exe to have proper resource version info.
+- Fixed the Windows App SDK installer .exe to have proper resource version info.
 
 ### Version 1.4.1 (1.4.230913002)
 
@@ -146,7 +146,7 @@ We're introducing a new list control called the `ItemsView` and a corresponding 
   - A new `VisibleRect` property on `VirtualizingLayoutContext` gets the visible viewport rectangle within the `FrameworkElement` associated with the `Layout`. The protected virtual `VirtualizingLayoutContext.VisibleRectCore` method can be overridden to provide the value that will be returned from the `VisibleRect` property.
 - The new `LinedFlowLayout` class is typically used to lay out the items of the `ItemsView` collection control. It is particularly useful for displaying collection of pictures. It does so by laying them out from left to right, and top to bottom, in lines of equal height. The pictures fill a horizontal line and then wrap to a next line. Pictures may be cropped at the left and right edges to fit into a line. They may also be expanded horizontally and cropped at the top and bottom edges to fill a line when the stretching mode is employed.
 
-### New features from across the WinAppSDK
+### New features from across the Windows App SDK
 
 - A new `ThemeSettings` class that allows Win32 WinRT apps to detect when the system's High Contrast setting has changed, similar to UWP's [AccessibilitySettings](/uwp/api/windows.ui.viewmanagement.accessibilitysettings) class. See the [ThemeSettings API spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/themes/ThemeSettings.md) on GitHub for more information.
 - `AccessKeyManager.EnterDisplayMode` is a new method to display access keys for the current focused element of a provided root. Access keys are in "display mode" when showing a key tip to invoke a command, such as pressing the Alt key in Paint to show what keys correspond to what controls. This method allows for programmatically entering display mode.
@@ -189,7 +189,7 @@ We're introducing a new list control called the `ItemsView` and a corresponding 
 - Fixed some crash and memory leak issues in `TreeView`.
 - Fixed an app hang issue that could happen when using keyboard to navigate in `RadioButtons`.
 - Fixed a crash when using the keyboard to navigate in a `PipsPager`.
-- Fixed WebView2 content to scale with the "Text size" Accessibility setting in the Settings app.
+- Fixed WebView2 content to scale with the "Text size" Accessibility setting in Windows Settings.
 - Fixed a crash that could occur when animations were running when the display turned off.
 - Fixed a performance issue introduced in 1.3 that added a ~10% overhead to first layout/render.
 

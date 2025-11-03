@@ -2,7 +2,7 @@
 description: Use this method in the Microsoft Store analytics API to get aggregate add-on acquisition data in JSON format for UWP apps and Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard.  
 title: Get add-on acquisitions data for your games and apps 
 ms.date: 03/06/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, advertising network, app metadata
 ms.localizationpriority: medium
 ---
@@ -92,7 +92,7 @@ Elements in the Value array contain the following values.
 | paymentInstrumentType | string | Payment instrument type used for the acquisition.  |
 | sandboxId | string | The Sandbox ID created for the game. This can be the value **RETAIL** or a private sandbox ID.  |
 | xboxTitleId | string | Xbox Title ID of the product from XDP, if applicable.  |
-| localCurrencyCode | string | Local Currency code based on the country of the Partner Center account.  |
+| localCurrencyCode | string | Local Currency code based on the country/region of the Partner Center account.  |
 | xboxProductId | string | Xbox Product ID of the product from XDP, if applicable.  |
 | availabilityId | string | Availability ID of the product from XDP, if applicable.  |
 | skuId | string | SKU ID of the product from XDP, if applicable.  |

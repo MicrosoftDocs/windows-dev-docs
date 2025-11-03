@@ -1,7 +1,7 @@
 ---
 title: Customize the widget header area
 description: Learn how to customize the header area of a Windows widget. 
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/12/2024
 ms.localizationpriority: medium
 ---

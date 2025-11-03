@@ -1,7 +1,7 @@
 ---
 title: Publish your app add-on in the Microsoft Store
 description: How to publish your app add-on in the Microsoft Store
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 10/30/2022
 ---
 

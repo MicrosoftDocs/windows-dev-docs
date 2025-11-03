@@ -18,15 +18,14 @@ This topic describes the following URI schemes built into Windows:
 
 | URI Scheme | Launches |
 | ----------:|----------|
-| [bingmaps:, ms-drive-to:, and ms-walk-to:](#maps-app-uri-schemes) | Maps app |
 | [http: and https:](#http-uri-scheme) | Default web browser |
 | [mailto:](#email-uri-scheme) | Default email app |
 | [microsoft-edge:](#microsoft-edge-uri-scheme) | Microsoft Edge browser |
 | [ms-chat:](#messaging-app-uri-scheme) | Messaging app |
 | [ms-people:](#people-app-uri-scheme) | People app |
 | [ms-photos:](#photos-app-uri-scheme) | Photos app |
-| [ms-recall:](/windows/ai/apis/recall#launch-click-to-do) | Click to do (part of [Recall](/windows/ai/apis/recall)) |
-| [ms-settings:](#settings-app-uri-scheme) | Settings app |
+| [ms-clicktodo:](/windows/ai/apis/recall#launch-click-to-do) | Click to Do feature (part of [Recall](/windows/ai/apis/recall)) |
+| [ms-settings:](#settings-uri-scheme) | Windows Settings |
 | [ms-store:](#store-app-uri-scheme)  | Store app |
 | [msnweather:](#weather-app-uri-scheme) | Weather app |
 
@@ -160,13 +159,18 @@ Use the **http:** URI scheme to launch the default web browser.
 
 ### Maps app URI schemes
 
-Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to [launch the Windows Maps app](launch-maps-app.md) to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
+> [!IMPORTANT]
+> The Windows Maps app is deprecated and will be removed from the Microsoft Store by July 2025. At this time, there will also be a final update to the app from the Store that makes it nonfunctional. If you remove the app before July 2025, you can still reinstall it from the Store, but past July 2025 you won't be able to reinstall it.
+>
+> For more information, see [Resources for deprecated features - Maps app](/windows/whats-new/deprecated-features-resources#maps-app).
+
+Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to launch the Windows Maps app to specific maps, directions, and search results. For example, the following URI opens the Windows Maps app and displays a map centered over New York City.
 
 `bingmaps:?cp=40.726966~-74.006076`
 
 :::image type="content" source="images/mapnyc.png" alt-text="A screenshot of the Windows Maps app.":::
 
-For more info, see [Launch the Windows Maps app](launch-maps-app.md). To use the map control in your UWP app, see [Display maps with 2D, 3D, and Streetside views](/windows/uwp/maps-and-location/display-maps). If you're using Windows App SDK 1.5 or later in a WinUI app or other desktop app, you can use the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
+To use the map control in your UWP app, see [Display maps with 2D, 3D, and Streetside views](/windows/uwp/maps-and-location/display-maps). If you're using Windows App SDK 1.5 or later in a WinUI app or other desktop app, you can use the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
 
 ### Messaging app URI scheme
 
@@ -209,17 +213,17 @@ The following table lists additional supported URI schemes for the Photos app:
 | `ms-photos:videoedit?Action={action}` | A parameter that indicates which video editing mode to open the Photos app in, where {action} is one of: **SlowMotion**, **FrameExtraction**, **Trim**, **View**, **Ink**. **Action** is required. |
 | `ms-photos:videoedit?StartTime={timespan}` | An optional parameter that specifies where to start playing the video. `{timespan}` must be in the format `"hh:mm:ss.ffff"`. If not specified, defaults to `00:00:00.0000` |
 
-### Settings app URI scheme
+### Settings URI scheme
 
-Use the **ms-settings:** URI scheme to [launch the Windows Settings app](launch-settings-app.md). Launching to the Settings app is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource.
+Use the **ms-settings:** URI scheme to [Launch Windows Settings](launch-settings.md). Launching Windows Settings is an important part of writing a privacy-aware app. If your app can't access a sensitive resource, we recommend providing the user a convenient link to the privacy settings for that resource.
 
-For example, the following URI opens the Settings app and displays the camera privacy settings:
+For example, the following URI opens Settings and displays the camera privacy settings:
 
 `ms-settings:privacy-webcam`
 
 :::image type="content" source="images/privacyawarenesssettingsapp.png" alt-text="A screenshot of the Windows camera privacy settings.":::
 
-For more info, see [Launch the Windows Settings app](launch-settings-app.md) and [Security and identity](../security/index.md).
+For more info, see [Launch Windows Settings](launch-settings.md) and [Security and identity](../security/index.md).
 
 ### Store app URI scheme
 
@@ -251,4 +255,4 @@ You can use this URI scheme to launch the Microsoft Edge browser, regardless of 
 
 [Handle URI activation](handle-uri-activation.md)
 
-[Launch the Settings app](launch-settings-app.md)
+[Launch Windows Settings](launch-settings.md)

@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Upload app packages for PWA
+# Upload app packages
 
 ## Upload your app's packages
 

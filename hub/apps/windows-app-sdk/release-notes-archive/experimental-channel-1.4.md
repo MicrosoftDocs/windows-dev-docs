@@ -1,8 +1,8 @@
 ---
 title: Experimental channel release notes for the Windows App SDK 1.4
 description: Learn about the experimental channel release notes for the Windows App SDK 1.4
-ms.topic: article
-ms.date: 04/19/2024
+ms.topic: release-notes
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -30,7 +30,7 @@ The experimental channel provides releases of the Windows App SDK that include [
 ## Version 1.4 Experimental (1.4.0-experimental1)
 
 This is the latest release of the experimental channel.
-To download, retarget your WinAppSDK NuGet version to `1.4.230518007-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.4.230518007-experimental1`.
 
 ### Bug fixes
 

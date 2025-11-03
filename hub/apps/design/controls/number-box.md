@@ -3,7 +3,7 @@ description: Number box is a control that can be used to display and edit number
 title: Number box
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -34,7 +34,7 @@ You can use a NumberBox control to capture and display mathematic input. If you 
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app.
+Here's the XAML for a basic NumberBox that demonstrates the default look. Use [x:Bind](/windows/apps/develop/platform/xaml/x-bind-markup-extension#property-path) to ensure the data displayed to the user remains in sync with the data stored in your app.
 
 ```xaml
 <NumberBox Value="{x:Bind Path=ViewModel.NumberBoxValue, Mode=TwoWay}" />
@@ -175,7 +175,7 @@ Note that parentheses can be used to override precedence rules.
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The NumberBox for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The NumberBox for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >

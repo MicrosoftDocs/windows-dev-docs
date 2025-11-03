@@ -3,7 +3,7 @@ description: A teaching tip is a semi-persistent and content-rich flyout that pr
 title: Teaching tips
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.custom: 19H1
 ms.localizationpriority: medium
@@ -343,7 +343,7 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The TeachingTip for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI](../../../winui/winui2/index.md). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The TeachingTip for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >

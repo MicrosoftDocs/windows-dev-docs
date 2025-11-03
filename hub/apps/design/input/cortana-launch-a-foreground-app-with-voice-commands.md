@@ -3,7 +3,7 @@ title: Activate a foreground app with voice commands through Cortana - Cortana U
 description: Use voice commands to activate your app to the foreground and execute an action or command within the app.
 ms.assetid: e4bf3714-6f62-466f-9e7c-3b03ee86a117
 ms.date: 01/28/2021
-ms.topic: article
+ms.topic: how-to
 keywords: cortana
 ---
 
@@ -53,7 +53,7 @@ These are the basic steps to add voice-command functionality and integrate Corta
 > If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 >
 > - [Create your first app](/windows/uwp/get-started/your-first-app)
-> - Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
+> - Learn about events with [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview)
 >
 > **User experience guidelines**
 >

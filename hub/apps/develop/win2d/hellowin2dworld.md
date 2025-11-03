@@ -1,8 +1,8 @@
 ---
 title: Win2D "Hello, World!" quickstart
 description: "This topic shows you how to create a very simple \"Hello, World!\" project for Win2D."
-ms.date: 10/25/2023
-ms.topic: article
+ms.date: 10/28/2025
+ms.topic: quickstart
 keywords: windows 11, windows 10, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, win2d
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ In this topic you'll create a very simple "Hello, World!" project for Win2D.
 
 In Visual Studio, create a new project from one of the following project templates:
 
-* **WinUI 3 (Windows App SDK)**. To create a new WinUI 3 project, use the **Blank App, Packaged (WinUI 3 in Desktop)** project template. You can find that project template by choosing language: either *C#* or *C++*; platform: *Windows*; project type: *Desktop*.
+* **WinUI (Windows App SDK)**. To create a new WinUI project, use the **WinUI Blank App (Packaged)** project template. You can find that project template by choosing language: either *C#* or *C++*; platform: *Windows*; project type: *Desktop*.
 * **Universal Windows Platform (UWP)**. To create a new UWP project, use the **Blank App (Universal Windows)** or **Blank App (C++/WinRT)** or **Blank App (Universal Windows - C++/CX)** project template. For language, choose: either *C#* or *C++*; platform: *Windows*; project type: *UWP*.
 
 > [!IMPORTANT]
@@ -37,7 +37,7 @@ And then add a **CanvasControl**, prefixed with that xml namespace. For example,
 
 The project won't build at the moment, due to the referenced-but-not-implemented **Draw** event handler. So we'll remedy that next, while we add some drawing code to interact with the **CanvasControl**.
 
-## For a WinUI 3 (Windows App SDK) project
+## For a WinUI (Windows App SDK) project
 
 For a C# project, add the following event handler to `MainWindow.xaml.cs`:
 
@@ -87,7 +87,7 @@ You can now build and run the project. You'll see some Win2D content&mdash;a bla
 
 ## For a UWP project
 
-For a C# project, you can use the same C# code as for a WinUI 3 project (see the [For a WinUI 3 project](#for-a-winui-3-windows-app-sdk-project) section above). The only differences are that you'll be editing `MainPage.xaml.cs` instead of `MainWindow.xaml.cs`. And you'll need to change `Microsoft.UI.Colors` to `Windows.UI.Colors`.
+For a C# project, you can use the same C# code as for a WinUI project (see the [For a WinUI project](#for-a-winui-windows-app-sdk-project) section above). The only differences are that you'll be editing `MainPage.xaml.cs` instead of `MainWindow.xaml.cs`. And you'll need to change `Microsoft.UI.Colors` to `Windows.UI.Colors`.
 
 For a C++/WinRT project, add the following code to `pch.h`, `MainPage.h`, and `MainPage.cpp`:
 
@@ -124,8 +124,8 @@ For a C++/CX project, add the following event handler to `MainPage.xaml.h` and `
 // MainPage.xaml.h
 ...
 void CanvasControl_Draw(
-	Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ sender,
-	Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args);
+    Microsoft::Graphics::Canvas::UI::Xaml::CanvasControl^ sender,
+    Microsoft::Graphics::Canvas::UI::Xaml::CanvasDrawEventArgs^ args);
 ...
 
 // MainWindow.xaml.cpp

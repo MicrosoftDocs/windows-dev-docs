@@ -3,7 +3,7 @@ ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: Packaging apps
 description: This section contains or links to articles about packaging for Universal Windows Platform (UWP) apps.
 ms.date: 07/22/2019
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
 ---

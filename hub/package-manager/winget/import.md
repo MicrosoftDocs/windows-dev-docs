@@ -1,9 +1,8 @@
 ---
 title: import Command
 description: imports the list of installed applications.
-ms.date: 07/11/2024
+ms.date: 07/07/2025
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # import command (winget)
@@ -16,7 +15,7 @@ The **import** command is often used to share your developer environment or buil
 
 `winget import [-i] <import-file> [<options>]`
 
-![Image of import command options](./images/import-help.png)
+:::image type="content" source="./images/import-help.png" alt-text="Screenshot listing winget import command help options." lightbox="./images/import-help.png":::
 
 ## Arguments
 
@@ -63,6 +62,4 @@ The JSON file includes the following hierarchy.
 
 When the Windows Package Manager imports the JSON file, it attempts to install the specified applications in a serial fashion. If the application is not available or the application is already installed, it will notify the user of that case.
 
-![Image of importing files command](./images/import-command.png)
-
-In the previous example, the **Microsoft.WindowsTerminal** was already installed. Therefore the **import** command skipped the installation.
+:::image type="content" source="./images/import-command.png" alt-text="Screenshot of entering the winget import command in a command line of Windows Terminal." lightbox="./images/import-command.png":::

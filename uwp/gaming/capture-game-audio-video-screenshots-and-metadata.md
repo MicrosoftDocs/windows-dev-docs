@@ -3,7 +3,7 @@ ms.assetid:
 description: Learn how to capture game video, audio, and screenshots, and how to submit metadata that the system embeds in captured and broadcast media.
 title: Capture game audio, video, screenshots, and metadata
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, game, capture, audio, video, metadata
 ms.localizationpriority: medium
 ---

@@ -1,7 +1,7 @@
 ---
 description: This section describes how you can use the Microsoft Store Web installer to improve distribution of your app on the web
 title: How to use the Microsoft Store Web Installer to distribute your apps on the web.
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/07/2024
 keywords: uwp, microsoft store installer, store installer, web installer
 ms.localizationpriority: medium
@@ -28,29 +28,29 @@ Once installation is done, the installer will automatically launch the applicati
 This functionality is available for the following web-hosted content types:
 
 - Free packaged MSIX content published on the Microsoft Store
+- Win32 apps published on the Microsoft Store
 
 This functionality isn't currently available for the following content types:
 
 - MSIXVC apps published on the Microsoft Store
-- Win32 apps published on the Microsoft Store
 - Paid content published on the Microsoft Store
-- Content rated above Everyone/ESRB (or equivalent) while signed in to Windows using an Enterprise account 
+- Content rated above Everyone/ESRB (or equivalent) while signed in to Windows using a School account
 
 ## Enable this feature for your app
 
 To enable the Store Web Installer for your app, you need to ensure that the following parameters are set in the calling URL:
 
-- **On [apps.microsoft.com](https://apps.microsoft.com)**: You don't need to make any changes to enable the Store Web Installer for your app, as long as they're covered within the [Feature availability section](#feature-availability) and you are not overriding this using the **launch mode=full** or **launch mode=mini/pop-up** URL parameters.
-  - The Store Web Installer is the default installer on apps.microsoft.com, and these parameters help you override the default installation system.
+- **On [apps.microsoft.com](https://apps.microsoft.com)**: You don't need to make any changes to enable the Store Web Installer for your app, as long as they're covered within the [Feature availability section](#feature-availability) and you are not overriding this using the **mode=full** URL parameter.
+  - The Store Web Installer is the default installer on apps.microsoft.com, and this mode paramter helps you launch the Store PDP instead for that user.
 
 - **On your website**: Follow these steps to switch to the Web installer on your website badge:
   1. Navigate to [apps.microsoft.com/badge](https://apps.microsoft.com/badge).
   1. Enter the right data for your app.
-  1. Set **Launch mode=Direct** to ensure the required code is generated for your app.
+  1. Set **Launch mode as Direct** to ensure the required code is generated for your app.
   1. Copy the code, and insert the new badge within your website.
 
 ## Key notes for enterprise administrators
 
 - If you've been using the *[ApplicationManagement/RequirePrivateStoreOnly](/microsoft-store/manage-access-to-private-store)* MDM policy, the *Only display the private store within the Microsoft Store* app group policy, or setting the *RemoveWindowsStore* DWORD value in the registry to 1 to block local or domain joined devices from accessing the Store, remember that these settings are for disabling the Store application. This policy doesn't block installation or updates of apps available on the Store.
 - If you'd like to better control the types of apps that can be installed by domain-joined PCs, including apps from the Store and from the Microsoft Store Web Installer, visit [AppLocker - Windows Security](/windows/security/application-security/application-control/windows-defender-application-control/applocker/applocker-overview). This policy can be used in combination with *RequirePrivateStoreOnly*, *RemoveWindowsStore*, or independently.
-- If you'd like to specifically block installations from the Microsoft Store, including installations from the Microsoft Store Web Installer, use the [DisableStoreOriginatedApps policy](/windows/client-management/mdm/policy-csp-applicationmanagement#disablestoreoriginatedapps). This also blocks launch of preinstalled Store apps.
+- If you’d like to specifically block installations from the Microsoft Store Web Installer, you can domain block the following URL - `get.microsoft.com` . This will block the installer from being downloaded and executed from either the Microsoft Store website, or from various developer websites distributing apps through this mechanism. Blocking this will not have any impact on the Microsoft Store app on Windows or already installed apps. These will continue to operate, unless combined with the above policies.

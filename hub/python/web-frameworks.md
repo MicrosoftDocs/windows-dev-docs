@@ -1,7 +1,7 @@
 ---
 title: Web development with Python on Windows
 description: A step-by-step guide to get started using Python for web development on Windows, including set up for frameworks like Flask and Django.
-ms.topic: article
+ms.topic: get-started
 ms.localizationpriority: medium
 ms.date: 11/20/2024
 ---
@@ -44,7 +44,7 @@ Take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intel
 
 Let's create a new project directory on our Linux (Ubuntu) file system that we will then work on with Linux apps and tools using VS Code.
 
-1. Close VS Code and open Ubuntu 18.04 (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu 18.04".
+1. Close VS Code and open Ubuntu (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu".
 
 2. In your Ubuntu command line, navigate to where you want to put your project, and create a directory for it: `mkdir HelloWorld`.
 
@@ -55,7 +55,7 @@ Let's create a new project directory on our Linux (Ubuntu) file system that we w
 
 ## Install Python, pip, and venv
 
-Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install **pip**, the standard package manager for Python, and **venv**, the standard module used to create and manage lightweight virtual environments. *Remember that you may need to update your Linux distribution so that it has the latest version using the command: `sudo apt update && sudo apt upgrade`.*
+Ubuntu comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install **pip**, the standard package manager for Python, and **venv**, the standard module used to create and manage lightweight virtual environments. *Remember that you may need to update your Linux distribution so that it has the latest version using the command: `sudo apt update && sudo apt upgrade`.*
 
 1. Confirm that Python3 is already installed by opening your Ubuntu terminal and entering: `python3 --version`. This should return your Python version number. If you need to update your version of Python, first update your Ubuntu version by entering: `sudo apt update && sudo apt upgrade`, then update Python using `sudo apt upgrade python3`.
 
@@ -82,13 +82,9 @@ VS Code uses the WSL Extension (installed previously) to treat your Linux subsys
 
 1. Open your project folder in VS Code from your Ubuntu terminal by entering: `code .` (the "." tells VS Code to open the current folder).
 
-2. A Security Alert will pop-up from Windows Defender, select "Allow access". Once VS Code opens, you should see the Remote Connection Host indicator, in the bottom-left corner, letting you know that you are editing on **WSL: Ubuntu-18.04**.
+2. Close your Ubuntu terminal. Moving forward we will use the WSL terminal integrated into VS Code.
 
-    ![VS Code Remote Connection Host indicator](../images/wsl-remote-extension.png)
-
-3. Close your Ubuntu terminal. Moving forward we will use the WSL terminal integrated into VS Code.
-
-4. Open the WSL terminal in VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. This will open a bash (WSL) command-line opened to the project folder path that you created in your Ubuntu terminal.
+3. Open the WSL terminal in VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. This will open a bash (WSL) command-line opened to the project folder path that you created in your Ubuntu terminal.
 
     ![VS Code with WSL terminal](../images/vscode-bash-remote.png)
 
@@ -126,7 +122,7 @@ Let's create and run a simple Python program as a test and ensure that we have t
     print("Hello World")
     ```
 
-6. To run the Python "Hello World" program that we just created, select the **test.py** file in the VS Code Explorer window, then right-click the file to display a menu of options. Select **Run Python File in Terminal**. Alternatively, in your integrated WSL terminal window, enter: `python test.py` to run your "Hello World" program. The Python interpreter will print "Hello World" in your terminal window.
+6. To run the Python "Hello World" program that we just created, select the **test.py** file in the VS Code Explorer window, then right-click the file to display a menu of options. Select **Run Python File in Terminal**. Alternatively, in your integrated WSL terminal window, enter: `python3 test.py` to run your "Hello World" program. The Python interpreter will print "Hello World" in your terminal window.
 
 Congratulations. You're all set up to create and run Python programs! Now let's try creating a Hello World app with two of the most popular Python web frameworks: Flask and Django.
 
@@ -136,7 +132,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 
 Following the steps below, you can create a small "Hello World" Flask app using VS Code and WSL.
 
-1. Open Ubuntu 18.04 (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu 18.04".
+1. Open Ubuntu (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu".
 
 2. Create a directory for your project: `mkdir HelloWorld-Flask`, then `cd HelloWorld-Flask` to enter the directory.
 
@@ -214,7 +210,7 @@ Congratulations, you've created a Flask web application using Visual Studio Code
 
 [Django](https://www.djangoproject.com) is a web application framework for Python. In this brief tutorial, you'll create a small "Hello World" Django app using VS Code and WSL.
 
-1. Open Ubuntu 18.04 (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu 18.04".
+1. Open Ubuntu (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu".
 
 2. Create a directory for your project: `mkdir HelloWorld-Django`, then `cd HelloWorld-Django` to enter the directory.
 

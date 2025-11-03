@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 15063
 description: Windows 10 build 15063 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: Windows 10, 1703, 15063
 ms.date: 11/02/2017
-ms.topic: article
+ms.topic: whats-new
 
 
 ms.assetid: ea855480-874d-431f-94bf-13d81eacc010

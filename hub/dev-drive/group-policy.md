@@ -1,7 +1,7 @@
 ---
 title: Configure Dev Drive policy for enterprise business devices
 description: Group Policy managers will need to make policy updates in order to enable Dev Drive on Windows 11 devices. Find guidance for using Microsoft InTune, Configuration Manager, or Local Group Policy Editor to update policy, enable Dev Drive, and set security filter permissions.
-ms.topic: article
+ms.topic: how-to
 ms.date: 09/26/2023
 ---
 
@@ -180,7 +180,7 @@ To update this filter attach policy, select **Dev Drive filter attach policy** f
 FSUtil can be used to query the Group Policy configured for Dev Drive. Here is the output from an FsUtil query for a Dev Drive Group Policy configured to:
 
 - Enable Dev Drive
-- Let antivirus filters protect Dev Drives (`MsSecFlt`)
+- Let Microsoft Defender Antivirus filters protect Dev Drives (`WdFilter`)
 - `FileInfo` minifilter has been added to the **Filter list** as an allowed filter
 
 Enter the FSUtil command:

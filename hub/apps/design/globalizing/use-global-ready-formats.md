@@ -4,7 +4,7 @@ title: Globalize your date/time/number formats
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
 ms.date: 11/07/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
@@ -108,7 +108,7 @@ To ensure that the preferred calendar format is used, you can use the standard [
 
 ## Format phone numbers appropriately
 
-Phone numbers are formatted differently across regions. The number of digits, how the digits are grouped, and the significance of certain parts of the phone number vary between countries. Starting in Windows 10, version 1607, you can use classes in the [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) namespace to format phone numbers appropriately for the current region.
+Phone numbers are formatted differently across regions. The number of digits, how the digits are grouped, and the significance of certain parts of the phone number vary between countries/regions. Starting in Windows 10, version 1607, you can use classes in the [**PhoneNumberFormatting**](/uwp/api/windows.globalization.phonenumberformatting?branch=live) namespace to format phone numbers appropriately for the current region.
 
 [**PhoneNumberInfo**](/uwp/api/windows.globalization.phonenumberformatting.phonenumberinfo?branch=live) parses a string of digits and allows you to: determine whether the digits are a valid phone number in the current region; compare two numbers for equality; and to extract the different functional parts of the phone number, such as country code or geographical area code.
 

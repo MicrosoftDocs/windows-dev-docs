@@ -1,8 +1,8 @@
 ---
 title: Preview release channel for the Windows App SDK 1.6
 description: Provides info about the preview release channel for the Windows App SDK 1.6.
-ms.topic: article
-ms.date: 02/11/2025
+ms.topic: release-notes
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -152,7 +152,7 @@ The Package Management API has received several enhancements including Is\*Ready
 - Fixed an issue where `MediaPlayerElement` would not properly display captions with `None` or `DropShadow` edge effects. For more info, see GitHub issue [#7981](https://github.com/microsoft/microsoft-ui-xaml/issues/7981).
 - Fixed an issue where the `Flyout.ShowMode` property was not used when showing the flyout. For more info, see GitHub issue [#7987](https://github.com/microsoft/microsoft-ui-xaml/issues/7987).
 - Fixed an issue where `NumberBox` would sometimes have rounding errors. For more info, see GitHub issue [#8780](https://github.com/microsoft/microsoft-ui-xaml/issues/8780).
-- Fixed an issue where using a library compiled against an older version of WinAppSDK could hit an error trying to find a type or property. 
+- Fixed an issue where using a library compiled against an older version of Windows App SDK could hit an error trying to find a type or property. 
 For more info, see GitHub issue [#8810](https://github.com/microsoft/microsoft-ui-xaml/issues/8810).
 - Fixed an issue where initial keyboard focus was not set when launching a window. For more info, see GitHub issue [#8816](https://github.com/microsoft/microsoft-ui-xaml/issues/8816).
 - Fixed an issue where `FlyoutShowMode.TransientWithDismissOnPointerMoveAway` didn't work after the first time it was shown. 

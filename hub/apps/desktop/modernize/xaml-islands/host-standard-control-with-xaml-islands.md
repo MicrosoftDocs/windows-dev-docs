@@ -2,7 +2,7 @@
 title: Use XAML Islands to host a UWP XAML control in a C# WPF app
 description: This topic demonstrates two ways to use XAML Islands to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK) in a Windows Presentation Foundation (WPF) app that targets .NET Core 3.1.
 ms.date: 02/24/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 11, windows 10, uwp, wpf, windows forms, xaml islands, wrapped controls, standard controls, InkCanvas, InkToolbar
 ms.localizationpriority: medium
 ---

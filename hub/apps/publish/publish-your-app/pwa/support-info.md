@@ -6,13 +6,11 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Support info for PWA
+# Privacy policy and support info for PWA
 
 This section lets you provide info to help customers understand more about your app and how to get support.
 
-:::image type="content" source="../msix/images/msix-support-info.png" lightbox="../msix/images/msix-support-info.png" alt-text="A screenshot showing the overview of Properties section showing support info.":::
-
-## Privacy policy URL
+## Privacy policy
 
 You are responsible for ensuring your app complies with privacy laws and regulations, and for providing a valid privacy policy URL here if required.
 
@@ -26,11 +24,13 @@ To help you determine if your app requires a privacy policy, review the [App Dev
 > [!NOTE]
 > Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy.
 
-## Website
+## Support info
+
+### Website
 
 Enter the URL of the web page for your app. This URL must point to a page on your own website, not your app's web listing in the Store. This field is optional, but recommended.
 
-## Support contact info
+### Support contact info
 
 Enter the URL of the web page where your customers can go for support with your app, or an email address that customers can contact for support. We recommend including this info for all submissions, so that your customers know how to get support if they need it. Note that Microsoft does not provide your customers with support for your app.
 

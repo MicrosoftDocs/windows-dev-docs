@@ -1,7 +1,7 @@
 ---
-title: PowerToys Keyboard Manager utility for Windows
-description: A utility that enables you to redefine keys on the keyboard
-ms.date: 11/19/2024
+title: Remap Keys and Shortcuts with PowerToys Keyboard Manager
+description: Learn how to remap keyboard keys and shortcuts using PowerToys Keyboard Manager. Customize your Windows keyboard layout and create custom shortcuts for improved productivity.
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
 
 # Keyboard Manager utility
 
-The PowerToys Keyboard Manager enables you to redefine keys on your keyboard.
+The PowerToys Keyboard Manager enables you to remap keys and shortcuts on your keyboard for enhanced productivity. This powerful utility allows you to customize your keyboard layout by reassigning keys, creating custom shortcuts, and even mapping keys to text sequences.
 
 For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd> on your keyboard. When you press the <kbd>A</kbd> key, a `B` will be inserted.
 
@@ -56,6 +56,9 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 | `B` | `A` |
 
 ![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
+
+> [!NOTE]
+> Some of the keys in the drop-down list may not be present on your keyboard. For example, the <kbd>Start App 1</kbd> key is only available on keyboards that physically have a <kbd>Start App 1</kbd> key, and the <kbd>IME Mode Change</kbd> key is only available on keyboards that support Input Method Editors (IME).
 
 ### Remapping a key to a shortcut
 
@@ -182,7 +185,7 @@ Keyboard Manager uses process names, not application names, to target apps. For 
 > [!NOTE]
 > If you use `tasklist` from the Command Prompt to get the list of processes, the process name will be listed in the **Image Name** column. The process names in `Get-Process` will not include the `.exe` file extensions. These process names do not match the process names in Windows **Task Manager** window.
 
-## How to select a key
+## How to select a key for remapping
 
 To select a key or shortcut to remap:
 
@@ -193,13 +196,13 @@ Once you select **Select**, a dialog window will open in which you can enter the
 
 Using the drop-down menu, you can search with the key name and additional drop-down values will appear as you progress. However, you can't use the type-key feature while the drop-down menu is open.
 
-## Orphaning Keys
+## Orphaning keys and how to fix them
 
 Orphaning a key means that you mapped it to another key and no longer have anything mapped to it. For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To remind you of this, a warning will display for any orphaned keys. To fix this, create another remapped key that is mapped to result in `A`.
 
 ![PowerToys Keyboard Manager orphaned key](../images/powertoys-keyboard-remap-orphaned.png)
 
-## Frequently asked questions
+## Frequently asked questions about keyboard remapping
 
 ### I remapped the wrong keys, how can I stop it quickly?
 
@@ -235,7 +238,7 @@ Keyboard Manager lists mappings for all known physical keyboard keys. Some of th
 
 ![PowerToys Keyboard Manager List of Keys](../images/pt-key-remap-drop-down.png)
 
-## Troubleshooting
+## Troubleshooting keyboard remapping issues
 
 If you have tried to remap a key or shortcut and are having trouble, it could be one of the following issues:
 

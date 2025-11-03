@@ -1,6 +1,6 @@
 ---
-title: PowerToys administrator mode for Windows
-description: For PowerToys to work with an app running in elevated admin mode, PowerToys must be running in administrator mode as well.
+title: Run PowerToys in Administrator Mode on Windows
+description: Learn how to run PowerToys in administrator mode to ensure compatibility with elevated apps on Windows. Fix FancyZones and other utilities when they don't work with admin applications.
 ms.date: 11/19/2024
 ms.topic: concept-article
 ms.localizationpriority: medium
@@ -10,14 +10,17 @@ no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
 
 # PowerToys running with administrator permissions
 
-When running any application as an administrator (also referred to as elevated permissions), PowerToys may not work correctly when the elevated applications are in focus or trying to interact with a PowerToys feature like FancyZones. This can be addressed by also running PowerToys as administrator.
+PowerToys administrator mode is required when you need PowerToys utilities to work with elevated applications on Windows. When running any application as an administrator (also referred to as elevated permissions), PowerToys may not work correctly when the elevated applications are in focus or trying to interact with a PowerToys feature like FancyZones. This can be addressed by also running PowerToys as administrator.
 
 ## Options
 
 There are two options for PowerToys to support applications running as administrator (with elevated permissions):
 
-1. **Recommended**: PowerToys will display a notification when an elevated process is detected. Open PowerToys Settings. On the General tab, select **Restart as administrator**.
-2. Enable **Always run as administrator** in the PowerToys Settings.
+- **Recommended**: PowerToys will display a notification when an elevated process is detected. Open PowerToys Settings. On the General tab, select **Restart as administrator**.
+- Enable **Always run as administrator** in the PowerToys Settings.
+
+> [!NOTE]
+> It's not recommended to always run an application as administrator unless absolutely necessary. Running apps as administrator may expose your system to security risks. One of our principles at Microsoft is to be **secure by default**. Read more about our **Secure Future Initiative (SFI)** [here](https://www.microsoft.com/trust-center/security/secure-future-initiative).
 
 ## Support for admin mode with PowerToys
 
@@ -54,6 +57,9 @@ Admin mode permissions may be required in the following scenarios:
   - Display shortcut
 - Video Conference Mute
 
+> [!NOTE]
+> Each PowerToys utility has information in its Settings page about whether it requires admin mode and when it's required.
+
 ## Run as administrator: elevated processes explained
 
 Windows applications run in _User mode_ by default. To run an application in _Administrative mode_ or as an _elevated process_ means that app will run with additional access to the operating system. Most apps don't need to run with elevated permission. However, a common scenario for requiring administrator permission would be to run certain PowerShell commands or edit the registry.
@@ -62,8 +68,10 @@ The simplest way to run an app or program in administrative mode is to right-cli
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-![Windows UAC elevated permission prompt screenshot](../images/pt-admin-prompt.png)
+:::image type="content" source="../images/pt-admin-prompt.png" alt-text="Screenshot of Windows User Account Control prompt requesting administrator permissions for PowerToys.":::
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-![Windows Powershell and Command Line with elevated permissions screenshot](../images/pt-admin-terminal.png)
+:::image type="content" source="../images/pt-admin-terminal.png" alt-text="Screenshot of Windows PowerShell and Command Prompt running with administrator permissions showing elevated status in title bar.":::
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

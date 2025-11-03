@@ -32,8 +32,10 @@ Note that your selections here apply only to new acquisitions; if someone alread
 > You will also see a checkbox that lets you indicate whether to offer your app in any market that the Store may add in the future. If you leave this box checked, and we later add new markets, the base price and general availability date for your submission will be used for your app in those markets. If you don't want this to happen, you can uncheck this box, in which case we will not list your app in any future markets (though you can always add them later).
 
 ## Microsoft Store consumer markets
-
 You can choose to list your app (or add-on) in one or more of the following markets. The markets with an asterisk support the Microsoft Store on Xbox One; you'll see **Xbox** next to their names in the **Market selection** popup window.
+
+<details>
+<summary>View Microsoft Store consumer markets table</summary>
 
 <table>
 
@@ -398,6 +400,8 @@ You can choose to list your app (or add-on) in one or more of the following mark
     <td>Zimbabwe</td>
   </tr>
 </table>
+
+</details>
 
 ## Price considerations for specific markets
 

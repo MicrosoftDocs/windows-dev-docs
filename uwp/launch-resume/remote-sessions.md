@@ -3,7 +3,7 @@ title: Connect devices through remote sessions
 description: Create shared experiences across multiple devices by joining them in a remote session.
 ms.assetid: 1c8dba9f-c933-4e85-829e-13ad784dd3e2
 ms.date: 06/28/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.localizationpriority: medium
 ---
@@ -36,7 +36,7 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 }
 ```
 
-To change this setting, the user must open the **Settings** app. In the **System** > **Shared experiences** > **Share across devices** menu, there is a drop-down box where the user can specify which devices their system can share with.
+To change this setting, the user must open **Settings**. In the **System** > **Shared experiences** > **Share across devices** menu, there is a drop-down box where the user can specify which devices their system can share with.
 
 ![shared experiences settings page](images/shared-experiences-settings.png)
 

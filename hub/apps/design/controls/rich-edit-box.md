@@ -1,21 +1,22 @@
 ---
-description: You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to true.
+description: You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, images, and math equations. You can make a RichEditBox read-only by setting its IsReadOnly property to true.
 title: RichEditBox
 ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
 label: Rich edit box
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 04/17/2025
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
 ---
+
 # Rich edit box
 
-You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to **true**.
+You can use a **RichEditBox** control to enter and edit rich text documents that contain formatted text, hyperlinks, images, math equations, and other rich content. You can make a RichEditBox read-only by setting its IsReadOnly property to **true**.
 
 ## Is this the right control?
 
-Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
+Use a RichEditBox to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
 
 - If the primary purpose of the multi-line text box is for creating read-only documents (such as blog entries or the contents of an email message), and those documents require rich text, use a [rich text block](./rich-text-block.md) instead.
 - When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
@@ -38,7 +39,7 @@ This rich edit box has a rich text document open in it. The formatting and file 
 
 ![A rich text box with an open document](images/rich-edit-box.png)
 
-## Create a rich edit box
+### Create a rich edit box
 
 > [!div class="checklist"]
 >
@@ -191,6 +192,26 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
+### Use a rich edit box for math equations
+
+The RichEditBox can display and edit math equations using [UnicodeMath](https://www.unicode.org/notes/tn28/UTN28-PlainTextMath-v3.1.pdf). The equations are stored and retrieved in [MathML 3.0](https://www.w3.org/Math/) format.
+
+By default, the RichEditBox control does not interpret input as math. To enable math mode, call [SetMathMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richedittextdocument.setmathmode) on the [TextDocument](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.textdocument) property, passing the value [RichEditMathMode.MathOnly](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richeditmathmode) (to disable math mode, call [SetMathMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richedittextdocument.setmathmode) but pass in the value [NoMath](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richeditmathmode)).
+
+```csharp
+richEditBox.TextDocument.SetMathMode(Microsoft.UI.Text.RichEditMathMode.MathOnly);
+```
+
+This enables UnicodeMath input to be automatically recognized and converted to MathML in real time. For example, entering 4^2 converts to 4<sup>2</sup>, and 1/2 converts to ½. See the [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) for more examples.
+
+To save the math content of a rich edit box as a MathML string, call [GetMathML](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richedittextdocument.getmathml).
+
+``` csharp
+richEditBox.TextDocument.GetMathML(out String mathML);
+```
+
+To set the math content of a rich edit box, call [SetMathML](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richedittextdocument.setmathml), passing in a MathML string.
+
 ## Choose the right keyboard for your text control
 
 To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. The default keyboard layout is usually appropriate for working with rich text documents.
@@ -208,7 +229,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [Document property](/uwp/api/windows.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
 > - [Open the WinUI 2 Gallery app and see the RichEditBox in action](winui2gallery:/item/RichEditBox). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

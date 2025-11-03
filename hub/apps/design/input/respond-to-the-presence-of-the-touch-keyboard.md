@@ -6,7 +6,7 @@ label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 
 
 ---
@@ -38,7 +38,7 @@ You should have a basic understanding of standard keyboard interactions, handlin
 If you're new to developing Windows apps, have a look through these topics to get familiar with the technologies discussed here.
 
 - [Create your first app](/windows/uwp/get-started/your-first-app)
-- Learn about events with [Events and routed events overview](/windows/uwp/xaml-platform/events-and-routed-events-overview)
+- Learn about events with [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview)
 
 **User experience guidelines:**
 

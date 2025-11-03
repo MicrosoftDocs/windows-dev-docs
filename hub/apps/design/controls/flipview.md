@@ -5,7 +5,7 @@ ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
 label: Flip view
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -235,7 +235,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [FlipView class](/uwp/api/windows.ui.xaml.controls.flipview), [ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemtemplate)
 > - [Open the WinUI 2 Gallery app and see the FlipView in action](winui2gallery:/item/FlipView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related articles
 

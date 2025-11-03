@@ -1,8 +1,8 @@
 ---
 title: Test apps built with the Windows App SDK and WinUI
 description: In this topic we recommend some approaches for testing and validating functionality in apps created with the Windows App SDK and Windows UI Library (WinUI) user interface (UI) features.
-ms.topic: article
-ms.date: 05/28/2024
+ms.topic: how-to
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 ---
 
@@ -48,7 +48,7 @@ When creating a new MSTest, NUnit or xUnit project that references a WinUI proje
 
    `<RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>`
 
-3. Add the following property to the `PropertyGroup` in .csproj file of your test project to ensure that the test loads the WinAppSDK runtime:
+3. Add the following property to the `PropertyGroup` in .csproj file of your test project to ensure that the test loads the Windows App SDK runtime:
    `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>`
 
 4. Ensure that the Windows App SDK runtime is installed on the machine running the test. For more information on Windows App SDK deployment, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location (or unpackaged)](../../../windows-app-sdk/deploy-unpackaged-apps.md).

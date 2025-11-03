@@ -5,7 +5,7 @@ ms.assetid: 41E3F928-AA55-42A2-9281-EC3907C4F898
 label: Radio buttons
 template: detail.hbs
 ms.date: 02/26/2025
-ms.topic: article
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -554,7 +554,7 @@ The following images show the preferred spacing of radio buttons in a group.
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
-The RadioButtons control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](../../winui/winui2/index.md). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+The RadioButtons control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
@@ -567,7 +567,7 @@ There are two ways to create radio button groups.
 - Starting with WinUI 2.3, we recommend the **[RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
 - You can use groups of individual **[RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
 
 [!INCLUDE [muxc-alias-note](../../../includes/muxc-alias-note.md)]
 

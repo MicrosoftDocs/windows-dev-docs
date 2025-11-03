@@ -5,7 +5,7 @@ title: Developing inclusive Windows apps
 label: Developing inclusive Windows apps
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

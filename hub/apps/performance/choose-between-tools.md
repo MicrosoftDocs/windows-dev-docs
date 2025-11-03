@@ -1,7 +1,7 @@
 ---
 title: Choosing between Visual Studio Performance Profiler and Windows Performance Toolkit
 description: Learn how to select between Visual Studio Performance Profiler and Windows Performance Toolkit for general purpose performance analysis activities on Windows
-ms.topic: article
+ms.topic: concept-article
 ms.date: 02/27/2025
 ms.localizationpriority: medium
 ---
@@ -28,7 +28,7 @@ The Visual Studio Performance Profiler is a component of Visual Studio itself an
 
 The Windows Performance Toolkit is downloadable separately as a part of the [Windows Assessment and Deployment Kit](/windows-hardware/get-started/adk-install). However, the command-line Performance Recorder tool is pre-installed with Windows 10 and Windows 11 as `wpr.exe` available on the default path variable from shells like PowerShell and the Command Prompt.
 
-The Performance Analyzer is available as an [application in the Microsoft Store](https://www.microsoft.com/store/productId/9N0W1B2BXGNZ).
+The Performance Analyzer is available as an [application in the Microsoft Store](https://apps.microsoft.com/detail/9N0W1B2BXGNZ).
 
 PerfView is available as a standalone download in the [PerfView GitHub Releases](https://github.com/microsoft/perfview/releases) page. No installation is required.
 

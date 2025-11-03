@@ -3,7 +3,7 @@ description: Learn how to use color effectively in your Windows app
 title: Color in Windows
 ms.assetid: 139F3A69-8C33-40A8-9FF0-76D62953339E
 ms.date: 09/19/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 11, design, ui, uiux, color, light mode, dark mode
 ms.localizationpriority: medium
 ---

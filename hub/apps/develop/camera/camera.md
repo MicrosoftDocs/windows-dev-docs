@@ -15,6 +15,7 @@ This section provides guidance for creating WinUI 3 apps that use the camera or 
 
 | Topic | Description |
 |---------------------------|-----------------------------|
+| [Capture photos and video in a desktop app with the Windows built-in camera UI](cameracaptureui.md) | Describes how to use the [CameraCaptureUI](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture) class to capture photos or videos by using the camera UI built into Windows. This feature allows your app to get a user-captured photo or video with just a few lines of code. |
 | [Show the camera preview in a WinUI 3 app](camera-quickstart-winui3.md) | Shows how to quickly display the camera preview stream within a XAML page in a WinUI 3 app. |
 | [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md) | Shows the simplest way to capture photos and video using the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. |
 
@@ -33,7 +34,7 @@ This section provides guidance for creating WinUI 3 apps that use the camera or 
 | [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md) | Learn how to use a [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames. This feature is designed to be used by apps that perform real-time processing of media frames, such as augmented reality and depth-aware camera apps.  |
 | [Process audio frames with MediaFrameReader](process-media-frames-with-mediaframereader.md) | Learn how to use a [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) to get audio data from a media frame source.  |
 | [Detect and respond to audio level changes by the system](detect-audio-level-changes.md) | Learn how to detect and respond to audio level changes by the system. |
-| [Launch the camera settings page](launch-camera-settings.md) | Learn how to launch the Windows Settings app directly to the camera settings page. |
+| [Launch the camera settings page](launch-camera-settings.md) | Learn how to launch Windows Settings directly to the camera settings page. |
 | [Handle the Windows camera privacy setting](camera-privacy-setting.md) | Learn how apps should handle the Windows camera privacy setting. |
 | [Connect to remote cameras](connect-to-remote-cameras.md) | Learn how to connect to remote cameras and get a **MediaFrameSourceGroup** to retrieve frames from each camera. |
 

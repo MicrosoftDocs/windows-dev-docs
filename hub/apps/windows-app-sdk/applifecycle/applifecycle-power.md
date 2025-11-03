@@ -1,8 +1,8 @@
 ---
 description: Describes how to use power management and notification features with the app lifecycle API (Windows App SDK).
 title: Power management with the app lifecycle API (Windows App SDK)
-ms.topic: article
-ms.date: 03/07/2024
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, ApplicationModel, power, battery,
 ms.localizationpriority: medium
 ---

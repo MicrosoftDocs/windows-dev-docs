@@ -2,7 +2,7 @@
 title: Responsive interactions and Windows Application Performance
 description: This guide will help you to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions.
 ms.reviewer: prrapa
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/16/2022
 #Customer intent: As a Windows application developer, I want to improve the responsiveness of your Windows application by optimizing latency for launch and key interactions.
 ---

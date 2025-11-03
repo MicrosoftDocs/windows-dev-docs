@@ -4,8 +4,8 @@ title: Scroll viewer controls
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
-ms.date: 02/26/2025
-ms.topic: article
+ms.date: 10/31/2025
+ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
 ---
@@ -28,6 +28,8 @@ Depending on the situation, the scroll viewer's scrollbar uses two different vis
 
 > [!IMPORTANT]
 > WinUI 3 has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
+>
+> The `ScrollView` control is similar in behavior and usage to the `ScrollViewer` control, but is based on [InteractionTracker](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.interactions.interactiontracker), has new features such as animation-driven view changes, and is designed to ensure full functionality with [ItemsRepeater](items-repeater.md).
 
 ## Scrolling, panning, and zooming
 
@@ -41,8 +43,8 @@ Use a scroll viewer control to allow _scrolling_, _panning_, and _zooming_ of yo
 
 The scrollbar is conscious of the user's input method and uses it to determine which visualization to display.
 
-* When the region is scrolled without manipulating the scrollbar directly, for example, by touch, the panning indicator appears, displaying the current scroll position.
-* When the mouse or pen cursor moves over the panning indicator, it morphs into the traditional scrollbar.  Dragging the scrollbar thumb manipulates the scrolling region.
+- When the region is scrolled without manipulating the scrollbar directly, for example, by touch, the panning indicator appears, displaying the current scroll position.
+- When the mouse or pen cursor moves over the panning indicator, it morphs into the traditional scrollbar.  Dragging the scrollbar thumb manipulates the scrolling region.
 
 :::image type="content" source="images/conscious-scroll.gif" alt-text="An animation that shows the scroll bar transform from the narrow panning indicator to the traditional thumb when the cursor moves over it.":::
 
@@ -88,7 +90,7 @@ It's typical for a scroll viewer control to exist as a composite part of other c
 
 [ItemsView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview) includes a `ScrollView` control in its template. You can access the `ScrollView` though the [ItemsView.ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.scrollview) property.
 
-[ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) and [GridView](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView) templates always include a `ScrollViewer`. [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox) and [RichEditBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox) also include a `ScrollViewer` in their templates. To influence some of the behavior and properties of the built in `ScrollViewer` part, `ScrollViewer` defines a number of XAML attached properties that can be set in styles and used in template bindings. For more info about attached properties, see [Attached properties overview](/windows/uwp/xaml-platform/attached-properties-overview).
+[ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) and [GridView](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView) templates always include a `ScrollViewer`. [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox) and [RichEditBox](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox) also include a `ScrollViewer` in their templates. To influence some of the behavior and properties of the built in `ScrollViewer` part, `ScrollViewer` defines a number of XAML attached properties that can be set in styles and used in template bindings. For more info about attached properties, see [Attached properties overview](/windows/apps/develop/platform/xaml/attached-properties-overview).
 
 ### Set scrollable content
 
@@ -542,7 +544,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer), [ScrollBar class](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
 > - [Open the WinUI 2 Gallery app and see the ScrollViewer in action](winui2gallery:/item/ScrollViewer). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](../../winui/winui2/index.md) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
+We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../style/rounded-corner.md).
 
 ## Related topics
 
