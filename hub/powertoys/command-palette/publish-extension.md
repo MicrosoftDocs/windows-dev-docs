@@ -361,25 +361,27 @@ Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; Value
 #
 # To use this template for a new extension:
 # 1. Copy this file to your extension's project folder as "build-exe.ps1"
-# 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
-# 3. Replace <VERSION> with your extension version (e.g., 0.0.1.0)
-# 4. Update the default version to match your project file's AppxPackageVersion
+# 2. Update in param():
+#   - EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension) 
+#   - VERSION with your extension version (e.g., 0.0.1.0)
+
+
 
 param(
+    [string]$ExtensionName = "UPDATE",  # Change to your extension name
     [string]$Configuration = "Release",
-    [string]$Version = "<VERSION>",
+    [string]$Version = "UPDATE",  # Change to your version
     [string]$Platform = @("x64", "arm64")
 )
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "Building EXTENSION_NAME EXE installer..." -ForegroundColor Green 
-Write-Host "Version: $Version" -ForegroundColor Yellow
+Write-Host "Building $ExtensionName EXE installer..." -ForegroundColor GreenWrite-Host "Version: $Version" -ForegroundColor Yellow
 Write-Host "Platforms: $($Platforms -join ', ')" -ForegroundColor Yellow
 
 
 $ProjectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$ProjectFile = "$ProjectDir\EXTENSION_NAME.csproj"
+$ProjectFile = "$ProjectDir\$ExtensionName.csproj"
 
 # Clean previous builds
 Write-Host "Cleaning previous builds..." -ForegroundColor Yellow
@@ -562,7 +564,7 @@ jobs:
         if ("${{ github.event.inputs.version }}" -ne "") {
           $version = "${{ github.event.inputs.version }}"
         } else {
-          $projectFile = "FOLDER_NAME/EXTENSION_NAME.csproj"
+          $projectFile = "${{ env.FOLDER_NAME }}/${{ env.EXTENSION_NAME }}.csproj"
           $xml = [xml](Get-Content $projectFile)
           $version = $xml.Project.PropertyGroup.AppxPackageVersion | Select-Object -First 1
           if (-not $version) { throw "Version not found in project file" }
@@ -573,31 +575,31 @@ jobs:
     
     - name: Build EXE installers (x64 and ARM64)
       run: |
-        Set-Location "FOLDER_NAME/FOLDER_NAME"
+        Set-Location "${{ env.FOLDER_NAME }}/${{ env.FOLDER_NAME }}"
         .\build-exe.ps1 -Version "${{ steps.version.outputs.VERSION }}" -Platforms @("x64", "arm64")
       shell: pwsh
     
     - name: Upload x64 installer artifact
       uses: actions/upload-artifact@v4
       with:
-        name: EXTENSION_NAME-x64-installer
-        path: FOLDER_NAME/bin/Release/installer/*-x64.exe
+        name: ${{ env.EXTENSION_NAME }}-x64-installer
+        path: ${{ env.FOLDER_NAME }}/bin/Release/installer/*-x64.exe
         if-no-files-found: error
 
     - name: Upload ARM64 installer artifact
       uses: actions/upload-artifact@v4
       with:
-        name: EXTENSION_NAME-arm64-installer
-        path: FOLDER_NAME/bin/Release/installer/*-arm64.exe
+        name: ${{ env.EXTENSION_NAME }}-arm64-installer
+        path: ${{ env.FOLDER_NAME }}/bin/Release/installer/*-arm64.exe
         if-no-files-found: warn
     
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: EXTENSION_NAME-v${{ steps.version.outputs.VERSION }}
-        name: "DISPLAY_NAME v${{ steps.version.outputs.VERSION }}"
+        tag_name: ${{ env.EXTENSION_NAME }}-v${{ steps.version.outputs.VERSION }}
+        name: "${{ env.DISPLAY_NAME }} v${{ steps.version.outputs.VERSION }}"
         body: |
-          ## 🎯 DISPLAY_NAME ${{ steps.version.outputs.VERSION }}
+          ## 🎯 ${{ env.DISPLAY_NAME }} ${{ steps.version.outputs.VERSION }}
           
           ## What's New
           ${{ github.event.inputs.release_notes }}
@@ -606,8 +608,8 @@ jobs:
           
           Download the installer for your system architecture:
           
-          - **x64 (Intel/AMD)**: `DISPLAY_NAME-Setup-${{ steps.version.outputs.VERSION }}-x64.exe`
-          - **ARM64 (Windows on ARM)**: `DISPLAY_NAME-Setup-${{ steps.version.outputs.VERSION }}-arm64.exe`
+          - **x64 (Intel/AMD)**: `${{ env.DISPLAY_NAME }}-Setup-${{ steps.version.outputs.VERSION }}-x64.exe`
+          - **ARM64 (Windows on ARM)**: `${{ env.DISPLAY_NAME }}-Setup-${{ steps.version.outputs.VERSION }}-arm64.exe`
           
           1. Download the appropriate installer from the Assets section below
           2. Run the installer with administrator privileges
@@ -616,8 +618,8 @@ jobs:
           
           ## 🔗 More Information
           
-          Repository: GITHUB_REPO_URL
-        files: FOLDER_NAME/bin/Release/installer/*.exe
+          Repository: ${{ env.GITHUB_REPO_URL }}
+        files: ${{ env.FOLDER_NAME }}/bin/Release/installer/*.exe
         draft: false
         prerelease: false
       env:
@@ -625,7 +627,7 @@ jobs:
     
     - name: Build summary
       run: |
-        Write-Host "🎉 DISPLAY_NAME Release Complete!" -ForegroundColor Green
+        Write-Host "🎉 ${{ env.DISPLAY_NAME }} Release Complete!" -ForegroundColor Green
         Write-Host "Version: ${{ steps.version.outputs.VERSION }}" -ForegroundColor Yellow
         Write-Host "📁 Installer uploaded to GitHub Release" -ForegroundColor Green
       shell: pwsh
@@ -699,13 +701,16 @@ You can use GitHub Actions to update your already submitted projects to WinGet.
 
 Check out how [PowerToys](https://github.com/microsoft/PowerToys/blob/main/.github/workflows/package-submissions.yml) does this.
 
-You can also use the following `.github\workflows\update-winget-randomriddle.yml`:
+You can also use the following `.github\workflows\update-winget.yml`:
 
 ```yml
-# Replace EXTENSION_NAME
-# Replace GITHUB_USER_NAME
-# Replace GITHUB_REPO
-# Repalce YOUR_PACKAGE_IDENTITY_NAME_HERE with the AppxPackageIdentityName located in the <ExtensionName>.csproj
+# To use this template for a new extension:
+# 1. Copy this file to a new workflow file (e.g., update-winget.yml)
+# 2. Update Environmental variables with your data:
+# - GITHUB_REPO with your GitHub repo name
+# - GITHUB_REPO with your github user name (e.g., chatasweetie)
+# - EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
+# - YOUR_PACKAGE_IDENTITY_NAME_HERE with the AppxPackageIdentityName located in the <ExtensionName>.csproj
 
 
 name: Update WinGet - EXTENSION_NAME Extension
@@ -724,17 +729,17 @@ on:
         required: false
         type: string
 
-# Global constants: UPDATE THESE, example; DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'CmdPal Name' }}
+# Global constants: UPDATE THESE, example; EXTENSION_NAME: ${{ vars.EXTENSION_NAME || 'CmdPalMyExtension' }}
 env:
-  DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'DISPLAY_NAME' }}
-  EXTENSION_NAME: ${{ vars.GITHUB_USER_NAME || 'GITHUB_USER_NAME' }}
-  FOLDER_NAME: ${{ vars.GITHUB_REPO || 'GITHUB_REPO' }}
-  GITHUB_REPO_URL: ${{ vars.YOUR_PACKAGE_IDENTITY_NAME_HERE || 'YOUR_PACKAGE_IDENTITY_NAME_HERE' }}
+  EXTENSION_NAME: ${{ vars.EXTENSION_NAME || 'EXTENSION_NAME' }}
+  GITHUB_USER_NAME: ${{ vars.GITHUB_USER_NAME || 'GITHUB_USER_NAME' }}
+  GITHUB_REPO: ${{ vars.GITHUB_REPO || 'GITHUB_REPO' }}
+  YOUR_PACKAGE_IDENTITY_NAME_HERE: ${{ vars.YOUR_PACKAGE_IDENTITY_NAME_HERE || 'YOUR_PACKAGE_IDENTITY_NAME_HERE' }}
 
 jobs:
   update-winget:
-    # Only run if this is a EXTENSION_NAME release
-    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.name, 'EXTENSION_NAME Extension')
+    # Only run if this is a matching extension release
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.release.name, '${{ env.EXTENSION_NAME }} Extension')
     runs-on: windows-latest
     steps:
       - name: Checkout code
@@ -749,13 +754,13 @@ jobs:
             echo "TAG=${{ inputs.release_tag }}" >> $env:GITHUB_OUTPUT
           } elseif ("${{ github.event_name }}" -eq "release") {
             # Extract from release event
-            $version = "${{ github.event.release.tag_name }}" -replace "EXTENSION_NAME-v", ""
+            $version = "${{ github.event.release.tag_name }}" -replace "${{ env.EXTENSION_NAME }}-v", ""
             echo "VERSION=$version" >> $env:GITHUB_OUTPUT
             echo "TAG=${{ github.event.release.tag_name }}" >> $env:GITHUB_OUTPUT
           } else {
             # Get latest release
-            $latestRelease = gh release list --limit 1 --json tagName,name | ConvertFrom-Json | Where-Object { $_.name -like "EXTENSION_NAME Extension*" }
-            $version = $latestRelease.tagName -replace "EXTENSION_NAME-v", ""
+            $latestRelease = gh release list --limit 1 --json tagName,name | ConvertFrom-Json | Where-Object { $_.name -like "${{ env.EXTENSION_NAME }} Extension*" }
+            $version = $latestRelease.tagName -replace "${{ env.EXTENSION_NAME }}-v", ""
             echo "VERSION=$version" >> $env:GITHUB_OUTPUT
             echo "TAG=$($latestRelease.tagName)" >> $env:GITHUB_OUTPUT
           }
@@ -774,20 +779,19 @@ jobs:
           $tag = "${{ steps.release.outputs.TAG }}"
           
           # URLs for both installers
-          $x64Url = "https://github.com/GITHUB_USER_NAME/GITHUB_REPO/releases/download/$tag/EXTENSION_NAME-Setup-$version-x64.exe"
-          $arm64Url = "https://github.com/GITHUB_USER_NAME/GITHUB_REPO/releases/download/$tag/EXTENSION_NAME-Setup-$version-arm64.exe"
+          $x64Url = "https://github.com/${{ env.GITHUB_USER_NAME }}/${{ env.GITHUB_REPO }}/releases/download/$tag/${{ env.EXTENSION_NAME }}-Setup-$version-x64.exe"
+          $arm64Url = "https://github.com/${{ env.GITHUB_USER_NAME }}/${{ env.GITHUB_REPO }}/releases/download/$tag/${{ env.EXTENSION_NAME }}-Setup-$version-arm64.exe"
           
           Write-Host "Updating WinGet manifest for version $version"
           Write-Host "x64 URL: $x64Url"
           Write-Host "ARM64 URL: $arm64Url"
           
           # Update the manifest with both architecture installers
-          .\wingetcreate.exe update YOUR_PACKAGE_IDENTITY_NAME_HERE `
+          .\wingetcreate.exe update ${{ env.YOUR_PACKAGE_IDENTITY_NAME_HERE }} `
             --version $version `
             --urls "$x64Url|x64" "$arm64Url|arm64" `
             --token $env:GITHUB_TOKEN `
             --submit
-
 ```
 
 
