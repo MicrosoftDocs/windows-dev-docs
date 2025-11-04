@@ -36,7 +36,7 @@ Stay current with platform, SDK, AI, and tooling updates for building Windows ap
 
 ## Release notes and resources
 
-- Windows App SDK: [Stable channel](../windows-app-sdk/stable-channel.md) • [Archive](../windows-app-sdk/release-notes-archive/stable-channel-1.7.md)
+- Windows App SDK: [Stable channel](../windows-app-sdk/stable-channel.md) • [Archive](../windows-app-sdk/release-notes-archive/stable-channel-1-7.md)
 - Windows SDK: [Download archive and latest](https://developer.microsoft.com/windows/downloads/sdk-archive)
 - Insider builds: [Windows Insider for Developers](https://www.microsoft.com/windowsinsider/for-developers-getting-started).
 - Modernizing guidance: [Start developing Windows apps](/windows/apps/get-started/start-here)
