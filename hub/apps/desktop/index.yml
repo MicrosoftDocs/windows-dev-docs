@@ -1,14 +1,14 @@
 ### YamlMime:Landing
 
 title: Build desktop apps for Windows
-summary: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
+summary: This documentation provides the latest guidance about building desktop apps for Windows 11.
 
 metadata:
   title: Build desktop apps for Windows | Microsoft Docs
-  description: This documentation provides the latest guidance about building desktop apps for Windows 11 and Windows 10.
+  description: This documentation provides the latest guidance about building desktop apps for Windows 11.
   ms.topic: landing-page
   ms.collection: collection
-  ms.date: 12/13/2024
+  ms.date: 11/4/2025
   keywords: windows win32, desktop development
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -18,6 +18,8 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
+          - text: What's new in Windows development
+            url: /windows/whats-new/
           - text: Start here!
             url: ../get-started/start-here.md
           - text: An overview of Windows development options
