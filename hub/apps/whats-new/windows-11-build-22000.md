@@ -15,7 +15,7 @@ Stay current with platform, SDK, AI, and tooling updates for building Windows ap
 
 | Component | Latest release notes |
 | :-- | :-- |
-| Windows App SDK | [Stable channel release notes](../windows-app-sdk/stable-channel.md) • [Preview channel](../windows-app-sdk/release-notes-archive/preview-channel-1-7.md) |
+| Windows App SDK | [Stable channel release notes](../windows-app-sdk/stable-channel.md) • [Preview channel](../windows-app-sdk/preview-channel.md) |
 | Windows SDK | [Windows SDK downloads & archive](https://developer.microsoft.com/windows/downloads/sdk-archive) (includes links to latest and Insider preview SDK release notes) |
 
 ## Recent documentation highlights
@@ -38,7 +38,7 @@ Stay current with platform, SDK, AI, and tooling updates for building Windows ap
 
 - Windows App SDK: [Stable channel](../windows-app-sdk/stable-channel.md) • [Archive](../windows-app-sdk/release-notes-archive/stable-channel-1.7.md)
 - Windows SDK: [Download archive and latest](https://developer.microsoft.com/windows/downloads/sdk-archive)
-- Insider builds: [Windows Insider for Developers](https://insider.windows.com/for-developers/)
+- Insider builds: [Windows Insider for Developers](https://www.microsoft.com/windowsinsider/for-developers-getting-started).
 - Modernizing guidance: [Start developing Windows apps](/windows/apps/get-started/start-here)
 - Windows dev community: [Windows Dev Center](https://developer.microsoft.com/windows/community/)
 
@@ -46,15 +46,15 @@ Stay current with platform, SDK, AI, and tooling updates for building Windows ap
 
 ## Windows and AI
 
-Feature | Description
-:------ | :------
-[Windows AI](/windows/ai/) | Enhance your Windows apps with AI through local APIs and Machine Learning models.
-[Windows AI Foundry Overview](/windows/ai/overview) | Windows AI Foundry introduces new ways of interacting with the operating system that utilize AI, such as Phi Silica, the Small Language Model (SLM) created by Microsoft Research that offers many of the same capabilities found in Large Language Models (LLMs), but is more compact and efficient so that it can run locally on Windows.
+Feature | Description |
+:------ | :------ |
+[Windows AI](/windows/ai/) | Enhance your Windows apps with AI through local APIs and Machine Learning models. |
+[Windows AI Foundry Overview](/windows/ai/overview) | Windows AI Foundry introduces new ways of interacting with the operating system that utilize AI, such as Phi Silica, the Small Language Model (SLM) created by Microsoft Research that offers many of the same capabilities found in Large Language Models (LLMs), but is more compact and efficient so that it can run locally on Windows. |
 
 ## Developer tools
 Feature | Description
-:------ | :------
+:------ | :------ |
 [PowerToys](/windows/powertoys/) | Power user productivity utilities to streamline your Windows experience.|
-[Edit](/Windows/Edit) | Edit is a lightweight command-line text editor in Windows 11. |
+[Edit](/windows/edit) | Edit is a lightweight command-line text editor in Windows 11. |
 [WSL (Windows Subsystem for Linux)](/windows/wsl/) | Windows Subsystem for Linux (WSL) is a feature of Windows that lets you run a Linux environment on your Windows machine without the need for a separate virtual machine or dual booting.|
 
