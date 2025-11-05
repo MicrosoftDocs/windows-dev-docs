@@ -6,7 +6,9 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Microsoft Store Developer CLI
+# Microsoft Store Developer CLI (MSI/EXE)
+
+Note: This page covers MSI/EXE app publishing using Microsoft Store Developer CLI. For information on MSIX app publishing using Microsoft Store Developer CLI, click [here.](./overview.md)
 
 The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, Linux) CLI that helps developers publish their applications to the Microsoft Store. It allows developers to locally configure their applications projects to publish to the Microsoft Store, as well as actually publish their applications' packages to the Microsoft Store, automatically calling the right [Partner Center APIs](/partner-center/develop/partner-center-rest-api-reference) to upload its packages.
 
@@ -50,9 +52,6 @@ These are the Microsoft Store Developer CLI available commands:
 | [reconfigure](./commands.md#reconfigure-command) | Re-configure the Microsoft Store Developer CLI.                                                                                    |
 | [settings](./commands.md#settings-command)       | Change settings of the Microsoft Store Developer CLI.                                                                              |
 | [apps](./commands.md#apps-command)               | Application related commands, such as listing the applications in your account and retrieving the application's details.           |
-| [submission](./commands.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish', 'delete'. |
-| [init](./commands.md#init-command)               | Helps you setup your application to publish to the Microsoft Store.                                                                |
-| [package](./commands.md#package-command)         | Helps you package your Microsoft Store Application as an MSIX.                                                                     |
-| [publish](./commands.md#publish-command)         | Publishes your application to the Microsoft Store.                                                                                 |
+| [submission](./commands.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish'. |
 
 For more info, see: [Commands](commands.md).
