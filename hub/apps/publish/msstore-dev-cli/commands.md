@@ -261,7 +261,7 @@ msstore submission getListingAssets <productId>
 
 | Argument    | Description     |
 | ----------- | --------------- |
-| `productId` | The product ID. |
+| `productId` | The Store product ID. |
 
 #### Submission - GetListingAssets - Options
 
