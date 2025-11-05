@@ -6,7 +6,7 @@ ms.topic: article
 zone_pivot_groups: msstoredevcli-installer-packaging
 ---
 
-# Commands
+# Commands (MSI/EXE)
 
 ## Installation
 
