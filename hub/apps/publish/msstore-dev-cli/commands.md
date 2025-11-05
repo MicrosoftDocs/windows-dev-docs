@@ -1,12 +1,12 @@
 ---
-description: How to run the Microsoft Store Developer CLI (preview) commands.
-title: Microsoft Store Developer CLI (preview) Commands
+description: How to run the Microsoft Store Developer CLI (preview) commands for MSIX apps.
+title: Microsoft Store Developer CLI (preview) Commands (MSIX)
 ms.date: 11/08/2024
 ms.topic: article
 zone_pivot_groups: msstoredevcli-installer-packaging
 ---
 
-# Commands
+# Commands (MSIX)
 
 ## Installation
 
@@ -92,9 +92,10 @@ msstore info
 
 ### Info Command - Options
 
-| Option        | Description           |
-| ------------- | --------------------- |
-| -v, --verbose | Print verbose output. |
+| Option         | Description                      |
+| -------------  | -------------------------------- |
+| -v, --verbose  | Print verbose output.            |
+| -?, -h, --help | Show help and usage information. |
 
 ## Reconfigure Command
 
@@ -118,6 +119,8 @@ msstore reconfigure
 | -cfp, --certificateFilePath  | Specify the certificate file path that should be used.  |
 | -cp, --certificatePassword   | Specify the certificate password that should be used.   |
 | --reset                      | Only reset the credentials, without starting over.      |
+| -v, --verbose                | Print verbose output.                                   |
+| -?, -h, --help               | Show help and usage information.                        |
 
 ## Settings Command
 
@@ -129,261 +132,222 @@ Change settings of the Microsoft Store Developer CLI.
 msstore settings
 ```
 
-| Sub-Command | Description                                                               |
-| ----------- | ------------------------------------------------------------------------- |
-| setpdn      | Set the Publisher Display Name property that is used by the init command. |
-
 ### Settings - Options
 
 | Option                | Description                                       |
 | --------------------- | ------------------------------------------------- |
 | -t, --enableTelemetry | Enable (empty/true) or Disable (false) telemetry. |
 | -v, --verbose         | Print verbose output.                             |
+| -?, -h, --help        | Show help and usage information.                  |
 
-### Settings - SetPDN Command Usage
+### SetPDN Sub-Command
+
+Set the Publisher Display Name property that is used by the init command.
+
+### SetPDN - Usage
 
 ```console
 msstore settings setpdn <publisherDisplayName>
 ```
 
-#### Arguments
+#### SetPDN - Arguments
 
 | Argument               | Description                                                    |
 | ---------------------- | -------------------------------------------------------------- |
 | `publisherDisplayName` | The Publisher Display Name property that will be set globally. |
 
-#### Help
+#### SetPDN - Options
 
-```console
-msstore settings setpdn --help
-```
+| Option                | Description                     |
+| --------------------- | ------------------------------- |
+| -?, -h, --help        | Show help and usage information.|
 
 ## Apps Command
 
-| Sub-Command                        | Description                                 |
-| ---------------------------------- | ------------------------------------------- |
-| [list](#apps---list-command-usage) | Lists all the applications in your account. |
-| [get](#apps---get-command-usage)   | Gets the details of a specific application. |
+| Sub-Command                  | Description                                 |
+| -----------------------------| --------------------------------------------|
+| [list](#apps---list---usage) | Lists all the applications in your account. |
+| [get](#apps---get---usage)   | Gets the details of a specific application. |
 
-### Apps - List Command Usage
+### Apps - List - Usage
 
 ```console
 msstore apps list
 ```
 
-#### List Command - Help
+#### Apps - List - Options
 
-```console
-msstore apps list --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-### Apps - Get Command Usage
+### Apps - Get - Usage
 
 ```console
 msstore apps get <productId>
 ```
 
-#### Apps - Get Command Arguments
+#### Apps - Get - Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Apps - Get Command Help
+#### Apps Get - Options
 
-```console
-msstore apps get --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
 ## Submission Command
 
-| Sub-Command                                                      | Description                                       |
-| ---------------------------------------------------------------- | ------------------------------------------------- |
-| [status](#submission---status-command-usage)                     | Gets the status of a submission.                  |
-| [get](#submission---get-command-usage)                           | Gets the details of a specific submission.        |
-| [getListingAssets](#submission---getlistingassets-command-usage) | Gets the listing assets of a specific submission. |
-| [updateMetadata](#submission---updatemetadata-command-usage)     | Updates the metadata of a specific submission.    |
-| [update](#submission---update-command-usage)                     | Updates the details of a specific submission.     |
-| [poll](#submission---poll-command-usage)                         | Polls the status of a submission.                 |
-| [publish](#submission---publish-command-usage)                   | Publishes a specific submission.                  |
-| [delete](#submission---delete-command-usage)                     | Deletes a specific submission.                    |
+| Sub-Command                                                | Description                                                 |
+| -----------------------------------------------------------| ----------------------------------------------------------- |
+| [status](#submission---status---usage)                     | Gets the status of a submission.                            |
+| [get](#submission---get---usage)                           | Gets the metadata and package info of a specific submission.|
+| [getListingAssets](#submission---getlistingassets---usage) | Gets the listing assets of a specific submission.           |
+| [updateMetadata](#submission---updatemetadata---usage)     | Updates the metadata of a specific submission.              |
+| [poll](#submission---poll---usage)                         | Polls the status of a submission.                           |
+| [publish](#submission---publish---usage)                   | Publishes a specific submission.                            |
+| [delete](#submission---delete---usage)                     | Deletes a specific submission.                              |
 
-### Submission - Status Command Usage
+### Submission - Status - Usage
 
 ```console
 msstore submission status <productId>
 ```
 
-#### Submission - Status Command Arguments
+#### Submission - Status - Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Submission - Status Command Help
+#### Submission - Status - Options
 
-```console
-msstore submission status --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-### Submission - Get Command Usage
+### Submission - Get - Usage
 
 ```console
 msstore submission get <productId>
 ```
 
-#### Submission - Get Command Arguments
+#### Submission - Get - Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Submission - Get Command Options
+#### Submission - Get - Options
 
-| Option         | Description                                                                            |
-| -------------- | -------------------------------------------------------------------------------------- |
-| -m, --module   | Select which module you want to retrieve ('availability', 'listings' or 'properties'). |
-| -l, --language | Select which language you want to retrieve. [default: en]                              |
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-#### Submission - Get Command Help
-
-```console
-msstore submission get --help
-```
-
-### Submission - GetListingAssets Command Usage
-
-Retrieves the existing draft listing assets from the store submission.
+### Submission - GetListingAssets - Usage
 
 ```console
 msstore submission getListingAssets <productId>
 ```
 
-#### Submission - GetListingAssets Command Arguments
+#### Submission - GetListingAssets - Arguments
 
 | Argument    | Description     |
 | ----------- | --------------- |
 | `productId` | The product ID. |
 
-#### Submission - GetListingAssets Command Options
+#### Submission - GetListingAssets - Options
 
-| Option         | Description                                               |
-| -------------- | --------------------------------------------------------- |
-| -l, --language | Select which language you want to retrieve. [default: en] |
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-#### Submission - GetListingAssets Command Help
-
-```console
-msstore submission getListingAssets --help
-```
-
-### Submission - UpdateMetadata Command Usage
+### Submission - UpdateMetadata - Usage
 
 ```console
 msstore submission updateMetadata <productId> <metadata>
 ```
 
-#### Submission - UpdateMetadata Command Arguments
+#### Submission - UpdateMetadata - Arguments
 
 | Argument    | Description                               |
 | ----------- | ----------------------------------------- |
-| `productId` | The product ID.                           |
+| `productId` | The Store product ID.                     |
 | `metadata`  | The updated JSON metadata representation. |
 
-#### Submission - UpdateMetadata Command Options
+#### Submission - UpdateMetadata - Options
 
 | Option                   | Description                                                            |
 | ------------------------ | ---------------------------------------------------------------------- |
 | -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
+| -v, --verbose            | Print verbose output.                                                  |
+| -?, -h, --help           | Show help and usage information.                                       |
 
-#### Submission - UpdateMetadata Command Help
-
-```console
-msstore submission updateMetadata --help
-```
-
-### Submission - Update Command Usage
-
-```console
-msstore submission update <productId> <product>
-```
-
-#### Submission - Update Command Arguments
-
-| Argument    | Description                              |
-| ----------- | ---------------------------------------- |
-| `productId` | The product ID.                          |
-| `product`   | The updated JSON product representation. |
-
-#### Submission - Update Command Options
-
-| Option                   | Description                                                            |
-| ------------------------ | ---------------------------------------------------------------------- |
-| -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
-
-#### Submission - Update Command Help
-
-```console
-msstore submission update --help
-```
-
-### Submission - Poll Command Usage
+### Submission - Poll - Usage
 
 ```console
 msstore submission poll <productId>
 ```
 
-#### Submission - Poll Command Arguments
+#### Submission - Poll - Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Submission - Poll Command Help
+#### Submission - Poll - Options
 
-```console
-msstore submission poll --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-### Submission - Publish Command Usage
+### Submission - Publish - Usage
 
 ```console
 msstore submission publish <productId>
 ```
 
-#### Submission - Publish Command Arguments
+#### Submission - Publish - Arguments
+
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
+
+#### Submission - Publish - Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+### Submission - Delete - Usage
+
+```console
+msstore submission delete <productId>
+```
+
+#### Submission - Delete - Arguments
 
 | Argument    | Description     |
 | ----------- | --------------- |
-| `productId` | The product ID. |
+| `productId` | The Store product ID. |
 
-#### Submission - Publish Command Help
+#### Submission - Delete - Options
 
-```console
-msstore submission publish --help
-```
-
-### Submission - Delete Command Usage
-
-Deletes the pending submission from the store.
-
-#### Submission - Delete Command Arguments
-
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
-
-#### Submission - Delete Command Options
-
-| Option       | Description                                      |
-| ------------ | ------------------------------------------------ |
-| --no-confirm | Do not prompt for confirmation. [default: False] |
-
-#### Submission - Delete Command Help
-
-```console
-msstore submission delete --help
-```
+| Option                | Description                                      |
+| --------------------- | ------------------------------------------------ |
+| --no-confirm          | Do not prompt for confirmation. [default: False] |
+| -v, --verbose         | Print verbose output.                            |
+| -?, -h, --help        | Show help and usage information.                 |
 
 ## Init Command
 
@@ -583,7 +547,7 @@ msstore publish "C:\path\to\pwa_app"
 
 | Option               | Description                                                                                                                                                                                  |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| -i, --inputDirectory | The directory where the '.msix' or '.msixupload' file to be used for the publishing command. If not provided, the cli will try to find the best candidate based on the 'pathOrUrl' argument. |
+| -i, --inputFile | The path to the '.msix' or '.msixupload' file to be used for the publishing command. If not provided, the cli will try to find the best candidate based on the 'pathOrUrl' argument.              |
 | -id, --appId         | Specifies the Application Id. Only needed if the project has not been initialized before with the 'init' command.                                                                            |
 | -nc, --noCommit | Disables committing the submission, keeping it in draft state. |
 | -f, --flightId | Specifies the Flight Id where the package will be published. |
