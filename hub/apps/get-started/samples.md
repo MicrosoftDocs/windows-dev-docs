@@ -2,7 +2,7 @@
 title: Samples and tools for Windows development
 description: Use these GitHub repositories to learn about Windows development. Sample apps demonstrate Windows features, API usage patterns, and end-to-end scenarios.
 ms.topic: how-to
-ms.date: 03/10/2025
+ms.date: 11/4/2025
 keywords: windows, win32, desktop development
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -17,7 +17,7 @@ This page contains links to resources that can make you more efficient as you de
 
 :::image type="content" source="./images/WASDK.png" alt-text="Header image for Windows App SDK" border="false":::
 
-The [**WindowsAppSDK-Samples repository**](https://github.com/microsoft/WindowsAppSDK-Samples) provides a collection of code samples that demonstrate how to use the Windows App SDK to build modern Windows applications. These samples cover key features such as WinUI 3, App Lifecycle, Windowing, and Push Notifications, offering practical, hands-on guidance for developers. Whether you're new to the Windows App SDK or looking for specific implementation details, this repository serves as a valuable resource to accelerate development and explore best practices. Other samples can be found in our [Samples Browser](/samples/browse/).
+The [**WindowsAppSDK-Samples repository**](https://github.com/microsoft/WindowsAppSDK-Samples) provides a collection of code samples that demonstrate how to use the Windows App SDK to build modern Windows applications. These samples cover key features such as WinUI 3, app lifecycle, windowing, and push notifications, offering practical, hands-on guidance for developers. Whether you're new to the Windows App SDK or looking for specific implementation details, this repository serves as a valuable resource to accelerate development and explore best practices. You can find other samples in our [Samples Browser](/samples/browse/).
 
 
 > [!div class="nextstepaction"]
@@ -50,7 +50,7 @@ You can get the  [**Windows Community Toolkit Gallery app from the Microsoft Sto
 
 This training module steps through how to set up your developer environment and use WinUI, the Windows App SDK, and the Windows Community ToolKit to build a Windows app called SnowPal.
 
-SnowPal is a word game in which the app selects a word for the user to guess and presents that word as a series of blank spaces, with each blank space representing a letter from the word in spelling order. The player takes turns guessing a single letter that they believe is in the word. If the letter is not in the word, a missing piece of the SnowPal character is added; otherwise, the letter replaces the corresponding blank(s) in the word. The player wins by guessing the word or loses when all pieces of the SnowPal character have been added.
+SnowPal is a word game in which the app selects a word for the user to guess and presents that word as a series of blank spaces, with each blank space representing a letter from the word in spelling order. The player takes turns guessing a single letter that they believe is in the word. If the letter isn't in the word, a missing piece of the SnowPal character is added; otherwise, the letter replaces the corresponding blanks in the word. The player wins by guessing the word or loses when all pieces of the SnowPal character are added.
 
 By building this app step by step, you gain hands-on experience with core development concepts while creating something fun and functional.
 

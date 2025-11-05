@@ -6,16 +6,16 @@ metadata:
    title: Windows app development documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
    ms.topic: hub-page
-   ms.date: 10/10/2024
+   ms.date: 11/4/2025
    ms.localizationpriority: medium
    uhfHeaderId: "MSDocsHeader-Windows"
    
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: Start developing Windows apps
+   - title: What's new for Windows developers
      itemType: quickstart
-     url: ./get-started/start-here.md
+     url: /windows/apps/whats-new/windows-11-build-22000
    - title: App framework options
      itemType: overview
      url: ./get-started/index.md
