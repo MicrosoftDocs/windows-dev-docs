@@ -27,7 +27,7 @@ To use the Microsoft Store Developer CLI, you'll need to:
 
 The Microsoft Store Developer CLI supports Windows 10+, Linux, and macOS:
 
-[Install the Microsoft Store Developer CLI (preview) now!](./commands.md#installation)
+[Install the Microsoft Store Developer CLI (preview) now!](./commands-win32.md#installation)
 
 ## Getting Started
 
@@ -46,12 +46,12 @@ Running in CI environments is also supported, and the Microsoft Store Developer 
 
 These are the Microsoft Store Developer CLI available commands:
 
-| Command                                          | Description                                                                                                                        |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| [info](./commands.md#info-command)               | Print existing configuration.                                                                                                      |
-| [reconfigure](./commands.md#reconfigure-command) | Re-configure the Microsoft Store Developer CLI.                                                                                    |
-| [settings](./commands.md#settings-command)       | Change settings of the Microsoft Store Developer CLI.                                                                              |
-| [apps](./commands.md#apps-command)               | Application related commands, such as listing the applications in your account and retrieving the application's details.           |
-| [submission](./commands.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish'. |
+| Command                                                | Description                                                                                                                        |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
+| [info](./commands-win32.md#info-command)               | Print existing configuration.                                                                                                      |
+| [reconfigure](./commands-win32.md#reconfigure-command) | Re-configure the Microsoft Store Developer CLI.                                                                                    |
+| [settings](./commands-win32.md#settings-command)       | Change settings of the Microsoft Store Developer CLI.                                                                              |
+| [apps](./commands-win32.md#apps-command)               | Application related commands, such as listing the applications in your account and retrieving the application's details.           |
+| [submission](./commands-win32.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish'. |
 
-For more info, see: [Commands](commands.md).
+For more info, see: [Commands](commands-win32.md).
