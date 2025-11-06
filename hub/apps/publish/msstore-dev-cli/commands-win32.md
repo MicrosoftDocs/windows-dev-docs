@@ -1,7 +1,7 @@
 ---
 description: How to run the Microsoft Store Developer CLI (preview) commands for MSI/EXE apps.
 title: Microsoft Store Developer CLI (preview) Commands (MSI/EXE)
-ms.date: 11/08/2024
+ms.date: 11/06/2025
 ms.topic: article
 zone_pivot_groups: msstoredevcli-installer-packaging
 ---
