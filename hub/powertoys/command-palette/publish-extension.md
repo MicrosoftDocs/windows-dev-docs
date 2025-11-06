@@ -21,7 +21,7 @@ You can publish Command Palette extensions to the Microsoft Store. The publishin
 > **MSIX packages explained**
 > MSIX is Microsoft's modern app packaging format that provides secure installation, automatic updates, and clean uninstallation. It replaces older formats like MSI and ensures your extension integrates properly with Windows security and deployment features.
 
-Command Palette can't search for or install extensions that are only listed in the store. You can find those extensions by running the following command:
+Command Palette can't search for or install extensions that are only listed in the Store. You can find those extensions by running the following command:
 
 ```cmd
 ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette
