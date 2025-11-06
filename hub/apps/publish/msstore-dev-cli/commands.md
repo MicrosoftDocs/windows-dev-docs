@@ -578,7 +578,7 @@ For example:
 
 ```yaml
 - name: Setup Microsoft Store Developer CLI
-  uses: microsoft/setup-msstore-cli@v1
+  uses: microsoft/microsoft-store-apppublisher@v1.1
 - name: Configure Microsoft Store Developer CLI
   run: msstore reconfigure --tenantId ${{ secrets.PARTNER_CENTER_TENANT_ID }} --sellerId ${{ secrets.PARTNER_CENTER_SELLER_ID }} --clientId ${{ secrets.PARTNER_CENTER_CLIENT_ID }} --clientSecret ${{ secrets.PARTNER_CENTER_CLIENT_SECRET }}
 ```
