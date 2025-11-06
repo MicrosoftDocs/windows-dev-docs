@@ -84,13 +84,13 @@ brew install microsoft/msstore-cli/msstore-cli
 
 Print existing configuration.
 
-### Info Command - Usage
+#### Usage
 
 ```console
 msstore info
 ```
 
-### Info Command - Options
+#### Options
 
 | Option         | Description                      |
 | -------------  | -------------------------------- |
@@ -101,13 +101,13 @@ msstore info
 
 Re-configure the Microsoft Store Developer CLI. You can provide either a Client Secret or a Certificate. Certificates can be provided either through its Thumbprint or by providing a file path (with or without a password).
 
-### Reconfigure - Usage
+#### Usage
 
 ```console
 msstore reconfigure
 ```
 
-### Reconfigure - Options
+#### Options
 
 | Option                       | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
@@ -126,13 +126,13 @@ msstore reconfigure
 
 Change settings of the Microsoft Store Developer CLI.
 
-### Settings - Usage
+#### Usage
 
 ```console
 msstore settings
 ```
 
-### Settings - Options
+#### Options
 
 | Option                | Description                                       |
 | --------------------- | ------------------------------------------------- |
@@ -144,19 +144,19 @@ msstore settings
 
 Set the Publisher Display Name property.
 
-### SetPDN - Usage
+#### Usage
 
 ```console
 msstore settings setpdn <publisherDisplayName>
 ```
 
-#### SetPDN - Arguments
+#### Arguments
 
 | Argument               | Description                                                    |
 | ---------------------- | -------------------------------------------------------------- |
 | `publisherDisplayName` | The Publisher Display Name property that will be set globally. |
 
-#### SetPDN - Options
+#### Options
 
 | Option                | Description                     |
 | --------------------- | ------------------------------- |
@@ -174,38 +174,38 @@ msstore settings setpdn <publisherDisplayName>
 | [poll](#submission---poll---usage)                         | Polls the status of a submission.                           |
 | [publish](#submission---publish---usage)                   | Publishes a specific submission.                            |
 
-### Submission - Status - Usage
+#### Submission - Status - Usage
 
 ```console
 msstore submission status <productId>
 ```
 
-#### Submission - Status - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Partner center ID.|
 
-#### Submission - Status - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Submission - Get - Usage
+#### Submission - Get - Usage
 
 ```console
 msstore submission get <productId>
 ```
 
-#### Submission - Get - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Partner center ID.|
 
-#### Submission - Get - Options
+#### Options
 
 | Option                | Description                                              |
 | --------------------- | -------------------------------------------------------- |
@@ -213,19 +213,19 @@ msstore submission get <productId>
 | -v, --verbose         | Print verbose output.                                    |
 | -?, -h, --help        | Show help and usage information.                         |
 
-### Submission - GetListingAssets - Usage
+#### Submission - GetListingAssets - Usage
 
 ```console
 msstore submission getListingAssets <productId>
 ```
 
-#### Submission - GetListingAssets - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Partner center ID.|
 
-#### Submission - GetListingAssets - Options
+#### Options
 
 | Option                | Description                                              |
 | --------------------- | -------------------------------------------------------- |
@@ -233,20 +233,20 @@ msstore submission getListingAssets <productId>
 | -v, --verbose         | Print verbose output.                                    |
 | -?, -h, --help        | Show help and usage information.                         |
 
-### Submission - UpdateMetadata - Usage
+#### Submission - UpdateMetadata - Usage
 
 ```console
 msstore submission updateMetadata <productId> <metadata>
 ```
 
-#### Submission - UpdateMetadata - Arguments
+#### Arguments
 
 | Argument    | Description                               |
 | ----------- | ----------------------------------------- |
 | `productId` | The Partner center ID.                    |
 | `metadata`  | The updated JSON metadata representation. |
 
-#### Submission - UpdateMetadata - Options
+#### Options
 
 | Option                   | Description                                                            |
 | ------------------------ | ---------------------------------------------------------------------- |
@@ -254,20 +254,20 @@ msstore submission updateMetadata <productId> <metadata>
 | -v, --verbose            | Print verbose output.                                                  |
 | -?, -h, --help           | Show help and usage information.                                       |
 
-### Submission - Update - Usage
+#### Submission - Update - Usage
 
 ```console
 msstore submission poll <productId><package>
 ```
 
-#### Submission - Update - Arguments
+#### Arguments
 
 | Argument    | Description                                        |
 | ----------- | -------------------------------------------------- |
 | `productId` | The Partner center ID.                             |
 | `package`   | The updated JSON representation of the app package.|
 
-#### Submission - Update - Options
+#### Options
 
 | Option                   | Description                                                            |
 | ------------------------ | ---------------------------------------------------------------------- |
@@ -275,38 +275,38 @@ msstore submission poll <productId><package>
 | -v, --verbose            | Print verbose output.                                                  |
 | -?, -h, --help           | Show help and usage information.                                       |
 
-### Submission - Poll - Usage
+#### Submission - Poll - Usage
 
 ```console
 msstore submission poll <productId>
 ```
 
-#### Submission - Poll - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Partner center ID.|
 
-#### Submission - Poll - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Submission - Publish - Usage
+#### Submission - Publish - Usage
 
 ```console
 msstore submission publish <productId>
 ```
 
-#### Submission - Publish - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Partner center ID.|
 
-#### Submission - Publish - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
