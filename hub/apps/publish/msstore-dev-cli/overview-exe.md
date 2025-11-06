@@ -27,7 +27,7 @@ To use the Microsoft Store Developer CLI, you'll need to:
 
 The Microsoft Store Developer CLI supports Windows 10+, Linux, and macOS:
 
-[Install the Microsoft Store Developer CLI (preview) now!](./commands-win32.md#installation)
+[Install the Microsoft Store Developer CLI (preview) now!](./commands-exe.md#installation)
 
 ## Getting Started
 
@@ -48,9 +48,9 @@ These are the Microsoft Store Developer CLI available commands:
 
 | Command                                                | Description                                                                                                                        |
 | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| [info](./commands-win32.md#info-command)               | Print existing configuration.                                                                                                      |
-| [reconfigure](./commands-win32.md#reconfigure-command) | Re-configure the Microsoft Store Developer CLI.                                                                                    |
-| [settings](./commands-win32.md#settings-command)       | Change settings of the Microsoft Store Developer CLI.                                                                              |
-| [submission](./commands-win32.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish'. |
+| [info](./commands-exe.md#info-command)               | Print existing configuration.                                                                                                      |
+| [reconfigure](./commands-exe.md#reconfigure-command) | Re-configure the Microsoft Store Developer CLI.                                                                                    |
+| [settings](./commands-exe.md#settings-command)       | Change settings of the Microsoft Store Developer CLI.                                                                              |
+| [submission](./commands-exe.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish'. |
 
 For more info, see: [Commands](commands-exe.md).
