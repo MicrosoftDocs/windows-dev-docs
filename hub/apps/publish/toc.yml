@@ -280,9 +280,9 @@ items:
           - name: Microsoft Store Developer CLI for MSI/EXE
             items:
               - name: Overview
-                href: msstore-dev-cli/overview-win32.md
+                href: msstore-dev-cli/overview-exe.md
               - name: Commands
-                href: msstore-dev-cli/commands-win32.md
+                href: msstore-dev-cli/commands-exe.md
     - name: Use Microsoft Store Web Installer to distribute apps
       href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md
 - name: Manage and update your app
