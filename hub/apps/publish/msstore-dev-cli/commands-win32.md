@@ -142,7 +142,7 @@ msstore settings
 
 ### SetPDN Sub-Command
 
-Set the Publisher Display Name property that is used by the init command.
+Set the Publisher Display Name property.
 
 ### SetPDN - Usage
 
