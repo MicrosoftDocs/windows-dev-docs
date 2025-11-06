@@ -1,5 +1,5 @@
 ---
-description: The Microsoft Store Command Line Interface is a cross-platform CLI that helps developers access the Microsoft Store APIs, for both managed, as well as unmanaged applications.
+description: The Microsoft Store Command Line Interface for MSI/EXE apps is a cross-platform CLI that helps developers access the Microsoft Store APIs, for both managed, as well as unmanaged applications.
 title: Microsoft Store Developer CLI (MSI/EXE)
 ms.date: 11/06/2025
 ms.topic: article
