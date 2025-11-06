@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Microsoft Store Developer CLI (MSIX)
 
-Note: Note: This page covers MSIX app publishing using Microsoft Store Developer CLI. For information on MSI/EXE app publishing using Microsoft Store Developer CLI, click [here.](./overview-exe.md)
+Note: This page covers MSIX app publishing using Microsoft Store Developer CLI. For information on MSI/EXE app publishing using Microsoft Store Developer CLI, click [here.](./overview-exe.md)
 
 The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, Linux) CLI that helps developers publish their applications to the Microsoft Store. It allows developers to locally configure their applications projects to publish to the Microsoft Store, as well as actually publish their applications' packages to the Microsoft Store, automatically calling the right [Partner Center APIs](/partner-center/develop/partner-center-rest-api-reference) to upload its packages.
 
