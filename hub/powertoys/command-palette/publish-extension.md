@@ -46,6 +46,7 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 - Create all required app icons and ensure they're properly sized ([Create icons using Visual Studio's asset generation tool](../../apps/design/style/iconography/visual-studio-asset-generation))
 
 > [!TIP]
+>
 > - [List of icons and variations](/windows/apps/design/style/iconography/app-icon-construction#complete-list-of-icons-and-variations)
 > - Make sure you generate the following files:
 >
@@ -86,8 +87,8 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 
 ```xml
 <Identity
-    Name="YOUR_PACKAGE_IDENTITY_NAME_HERE" <!-- Replace with your Package/Identity/Name -->
-    Publisher="YOUR_PACKAGE_IDENTITY_PUBLISHER_HERE" <!-- Replace with your Package/Identity/Publisher -->
+    Name="YOUR_PACKAGE_IDENTITY_NAME_HERE" 
+    Publisher="YOUR_PACKAGE_IDENTITY_PUBLISHER_HERE" 
     Version="0.0.1.0" />
 
   <Properties>
@@ -213,7 +214,7 @@ with
 1. Locate the bundle:
 
    ```powershell
-   ls *.msixbundle
+   dir *.msixbundle
    ```
 
 1. You should find the file: `<ExtensionName>_<VersionNumber>_Bundle.msixbundle`.
