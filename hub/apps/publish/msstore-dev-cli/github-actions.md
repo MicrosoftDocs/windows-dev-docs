@@ -12,8 +12,8 @@ GitHub Actions lets you automate the process of updating your Microsoft Store ap
 ## Pre-requisite
 
 1. Register as a Windows app developer in [Partner Center](https://storedeveloper.microsoft.com/). 
-2. Have a tenant associated with your Partner Center account. You can achieve that by either [associating an existing Microsoft Entra ID in Partner Center](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account) or by [creating a new Microsoft Entra ID in Partner Center](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/create-new-azure-ad-tenant). 
-3. [Register](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) an application in Microsoft Entra ID 
+2. Have a tenant associated with your Partner Center account. You can achieve that by either [associating an existing Microsoft Entra ID in Partner Center](https://learn.microsoft.com/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account) or by [creating a new Microsoft Entra ID in Partner Center](https://learn.microsoft.com/windows/apps/publish/partner-center/create-new-azure-ad-tenant). 
+3. [Register](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app) an application in Microsoft Entra ID 
 4. Next, from the Microsoft Entra applications tab under User management page in the Account settings section of Partner Center, add the Microsoft Entra ID application that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. 
 5. The app you want to update must already be published and live in Microsoft Store. 
 6. Required IDs and Secrets:  
@@ -32,7 +32,7 @@ If your project already has a GitHub repository, you can use it directly for aut
 
 * In your GitHub repo, go to **Settings** > **Secrets and variables** > **Actions** > **New Repository Secret**. 
 
-:::image type="content" source="images/github-actions-repo-secret.png" lightbox="images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
+:::image type="content" source="publish/images/github-actions-repo-secret.png" lightbox="publish/images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
 
 * Add the following secrets:
   * TENANT_ID
