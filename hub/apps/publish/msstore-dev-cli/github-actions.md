@@ -11,16 +11,16 @@ GitHub Actions lets you automate the process of updating your Microsoft Store ap
 
 ## Pre-requisite
 
-1. Register as a Windows app developer in Partner Center 
-2. Have a tenant associated with your Partner Center account. You can achieve that by either associating an existing Microsoft Entra ID in Partner Center or by creating a new Microsoft Entra ID in Partner Center. 
-3. Register an application in Microsoft Entra ID 
+1. Register as a Windows app developer in [Partner Center](https://storedeveloper.microsoft.com/). 
+2. Have a tenant associated with your Partner Center account. You can achieve that by either [associating an existing Microsoft Entra ID in Partner Center](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account) or by [creating a new Microsoft Entra ID in Partner Center](https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/create-new-azure-ad-tenant). 
+3. [Register](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) an application in Microsoft Entra ID 
 4. Next, from the Microsoft Entra applications tab under User management page in the Account settings section of Partner Center, add the Microsoft Entra ID application that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. 
 5. The app you want to update must already be published and live in Microsoft Store. 
 6. Required IDs and Secrets:  
-      * Tenant ID (This is the unique identifier for your Microsoft Entra tenant. Go to the https://entra.microsoft.com/. Navigate to Azure Active Directory > Overview. Copy the “Tenant ID” value.) 
+      * Tenant ID (This is the unique identifier for your Microsoft Entra tenant. Go to https://entra.microsoft.com/. Navigate to Azure Active Directory > Overview. Copy the “Tenant ID” value.) 
       * Client ID (This is the Application ID of the app registration you created. In the Entra admin center, go to Azure Active Directory > App registrations. Select your registered app. Copy the “Application ID”.) for API access. In the Entra admin center, go to Azure Active Directory > App registrations. Select your registered app. Copy the “Application ID”.) 
       * Client Secret (This is a password-like value generated for your app registration, used for secure authentication. In the Entra admin center, go to Azure Active Directory > App registrations. Select your registered app, go to Certificates & secrets. Under “Client secrets”, create a new secret if you haven’t already. Copy the value immediately as it will not be shown again) 
-      * Seller ID (This is your unique publisher/seller identifier in Microsoft Partner Center. Sign in to Partner Center. Go to Account settings > Developer settings or Identifiers. Look for “Publisher ID” or “Seller ID”.) 
+      * Seller ID (This is your unique publisher/seller identifier in Microsoft Partner Center. Sign in to [Partner Center](https://partner.microsoft.com/). Go to Account settings > Developer settings or Identifiers. Look for “Publisher ID” or “Seller ID”.) 
 
      These will be used as secrets in your GitHub repository. 
 
@@ -32,8 +32,23 @@ If your project already has a GitHub repository, you can use it directly for aut
 
 * In your GitHub repo, go to **Settings** > **Secrets and variables** > **Actions** > **New Repository Secret**. 
 
+:::image type="content" source="images/github-actions-repo-secret.png" lightbox="images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
 
+* Add the following secrets:
+  * TENANT_ID
+  * CLIENT_ID
+  * CLIENT_SECRET
+  * SELLER_ID 
 
+### Step 2
+
+Before publishing updates, you need the base metadata JSON from Partner Center for your app submission. This ensures you start with the correct structure for MSIX or Win32 apps. Create a GitHub Actions workflow under .github/workflows/ (e.g., GetBaseMetadata.yml) with the following snippets:
+
+For MSIX
+:::image type="content" source="images/github-actions-base-metadata-msix.png" lightbox="images/github-actions-base-metadata-msix.png" alt-text="A screenshot showing command line to obtain nase metadata for msix apps.":::
+
+For EXE
+:::image type="content" source="images/github-actions-base-metadata-exe.png" lightbox="images/github-actions-base-metadata-exe.png" alt-text="A screenshot showing command line to obtain nase metadata for exe apps.":::
 
 
 1. Navigate to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
