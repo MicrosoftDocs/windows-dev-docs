@@ -84,13 +84,13 @@ brew install microsoft/msstore-cli/msstore-cli
 
 Print existing configuration.
 
-### Info Command - Usage
+#### Usage
 
 ```console
 msstore info
 ```
 
-### Info Command - Options
+#### Options
 
 | Option         | Description                      |
 | -------------  | -------------------------------- |
@@ -101,13 +101,13 @@ msstore info
 
 Re-configure the Microsoft Store Developer CLI. You can provide either a Client Secret or a Certificate. Certificates can be provided either through its Thumbprint or by providing a file path (with or without a password).
 
-### Reconfigure - Usage
+#### Usage
 
 ```console
 msstore reconfigure
 ```
 
-### Reconfigure - Options
+#### Options
 
 | Option                       | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
@@ -126,13 +126,13 @@ msstore reconfigure
 
 Change settings of the Microsoft Store Developer CLI.
 
-### Settings - Usage
+#### Usage
 
 ```console
 msstore settings
 ```
 
-### Settings - Options
+#### Options
 
 | Option                | Description                                       |
 | --------------------- | ------------------------------------------------- |
@@ -144,19 +144,19 @@ msstore settings
 
 Set the Publisher Display Name property that is used by the init command.
 
-### SetPDN - Usage
+#### Usage
 
 ```console
 msstore settings setpdn <publisherDisplayName>
 ```
 
-#### SetPDN - Arguments
+#### Arguments
 
 | Argument               | Description                                                    |
 | ---------------------- | -------------------------------------------------------------- |
 | `publisherDisplayName` | The Publisher Display Name property that will be set globally. |
 
-#### SetPDN - Options
+#### Options
 
 | Option                | Description                     |
 | --------------------- | ------------------------------- |
@@ -169,32 +169,32 @@ msstore settings setpdn <publisherDisplayName>
 | [list](#apps---list---usage) | Lists all the applications in your account. |
 | [get](#apps---get---usage)   | Gets the details of a specific application. |
 
-### Apps - List - Usage
+#### Apps - List - Usage
 
 ```console
 msstore apps list
 ```
 
-#### Apps - List - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Apps - Get - Usage
+#### Apps - Get - Usage
 
 ```console
 msstore apps get <productId>
 ```
 
-#### Apps - Get - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Store product ID. |
 
-#### Apps Get - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
@@ -213,77 +213,77 @@ msstore apps get <productId>
 | [publish](#submission---publish---usage)                   | Publishes a specific submission.                            |
 | [delete](#submission---delete---usage)                     | Deletes a specific submission.                              |
 
-### Submission - Status - Usage
+#### Submission - Status - Usage
 
 ```console
 msstore submission status <productId>
 ```
 
-#### Submission - Status - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Store product ID. |
 
-#### Submission - Status - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Submission - Get - Usage
+#### Submission - Get - Usage
 
 ```console
 msstore submission get <productId>
 ```
 
-#### Submission - Get - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Store product ID. |
 
-#### Submission - Get - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Submission - GetListingAssets - Usage
+#### Submission - GetListingAssets - Usage
 
 ```console
 msstore submission getListingAssets <productId>
 ```
 
-#### Submission - GetListingAssets - Arguments
+#### Arguments
 
 | Argument    | Description     |
 | ----------- | --------------- |
 | `productId` | The Store product ID. |
 
-#### Submission - GetListingAssets - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Submission - UpdateMetadata - Usage
+#### Submission - UpdateMetadata - Usage
 
 ```console
 msstore submission updateMetadata <productId> <metadata>
 ```
 
-#### Submission - UpdateMetadata - Arguments
+#### Arguments
 
 | Argument    | Description                               |
 | ----------- | ----------------------------------------- |
 | `productId` | The Store product ID.                     |
 | `metadata`  | The updated JSON metadata representation. |
 
-#### Submission - UpdateMetadata - Options
+#### Options
 
 | Option                   | Description                                                            |
 | ------------------------ | ---------------------------------------------------------------------- |
@@ -291,57 +291,57 @@ msstore submission updateMetadata <productId> <metadata>
 | -v, --verbose            | Print verbose output.                                                  |
 | -?, -h, --help           | Show help and usage information.                                       |
 
-### Submission - Poll - Usage
+#### Submission - Poll - Usage
 
 ```console
 msstore submission poll <productId>
 ```
 
-#### Submission - Poll - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Store product ID. |
 
-#### Submission - Poll - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Submission - Publish - Usage
+#### Submission - Publish - Usage
 
 ```console
 msstore submission publish <productId>
 ```
 
-#### Submission - Publish - Arguments
+#### Arguments
 
 | Argument    | Description           |
 | ----------- | --------------------- |
 | `productId` | The Store product ID. |
 
-#### Submission - Publish - Options
+#### Options
 
 | Option                | Description                      |
 | --------------------- | -------------------------------- |
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-### Submission - Delete - Usage
+#### Submission - Delete - Usage
 
 ```console
 msstore submission delete <productId>
 ```
 
-#### Submission - Delete - Arguments
+#### Arguments
 
 | Argument    | Description     |
 | ----------- | --------------- |
 | `productId` | The Store product ID. |
 
-#### Submission - Delete - Options
+#### Options
 
 | Option                | Description                                      |
 | --------------------- | ------------------------------------------------ |
@@ -361,39 +361,39 @@ The `init` command helps you setup your application to publish to the Microsoft 
 - React Native for Desktop
 - PWA
 
-### Init Command - Usage Examples
+### Usage Examples
 
-#### Init Command - Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI 3
 
 ```console
 msstore init "C:\path\to\winui3_app"
 ```
 
-#### Init Command - UWP
+#### UWP
 
 ```console
 msstore init "C:\path\to\uwp_app"
 ```
 
-#### Init Command - .NET MAUI
+#### .NET MAUI
 
 ```console
 msstore init "C:\path\to\maui_app"
 ```
 
-#### Init Command - Flutter
+#### Flutter
 
 ```console
 msstore init "C:\path\to\flutter_app"
 ```
 
-#### Init Command - Electron
+#### Electron
 
 ```console
 msstore init "C:\path\to\electron_app"
 ```
 
-#### Init Command - React Native for Desktop
+#### React Native for Desktop
 
 ```console
 msstore init "C:\path\to\react_native_app"
@@ -402,19 +402,19 @@ msstore init "C:\path\to\react_native_app"
 > [!Note]
 > For Electron, as well as React Native for Desktop projects, both `Npm` and `Yarn` are supported. The presence of the `Yarn` lock file (`yarn.lock`) will be used to determine which package manager to use, so make sure that you check in your lock file into your source control system.
 
-#### Init Command - PWA
+#### PWA
 
 ```console
 msstore init https://contoso.com --output .
 ```
 
-### Init Command - Arguments
+#### Arguments
 
 | Argument    | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `pathOrUrl` | The root directory path where the project file is, or a public URL that points to a PWA. |
 
-### Init Command - Options
+#### Options
 
 | Option                     | Description                                                                                                                                                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -431,57 +431,57 @@ msstore init https://contoso.com --output .
 
 Helps you package your Microsoft Store Application as an MSIX.
 
-### Package Command - Usage Examples
+### Usage Examples
 
-#### Package Command - Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI 3
 
 ```console
 msstore package "C:\path\to\winui3_app"
 ```
 
-#### Package Command - UWP
+#### UWP
 
 ```console
 msstore package "C:\path\to\uwp_app"
 ```
 
-#### Package Command - .NET MAUI
+#### .NET MAUI
 
 ```console
 msstore package "C:\path\to\maui_app"
 ```
 
-#### Package Command - Flutter
+#### Flutter
 
 ```console
 msstore package "C:\path\to\flutter_app"
 ```
 
-#### Package Command - Electron
+#### Electron
 
 ```console
 msstore package "C:\path\to\electron_app"
 ```
 
-#### Package Command - React Native for Desktop
+#### React Native for Desktop
 
 ```console
 msstore package "C:\path\to\react_native_app"
 ```
 
-#### Package Command - PWA
+#### PWA
 
 ```console
 msstore package "C:\path\to\pwa_app"
 ```
 
-### Package Command - Arguments
+#### Arguments
 
 | Option      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `pathOrUrl` | The root directory path where the project file is, or a public URL that points to a PWA. |
 
-### Package Command - Options
+#### Options
 
 | Option          | Description                                                                                                                                                            |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -493,57 +493,57 @@ msstore package "C:\path\to\pwa_app"
 
 Publishes your Application to the Microsoft Store.
 
-### Publish Command - Usage Examples
+### Usage Examples
 
-#### Publish Command - Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI 3
 
 ```console
 msstore publish "C:\path\to\winui3_app"
 ```
 
-#### Publish Command - UWP
+#### UWP
 
 ```console
 msstore publish "C:\path\to\uwp_app"
 ```
 
-#### Publish Command - .NET MAUI
+#### .NET MAUI
 
 ```console
 msstore publish "C:\path\to\maui_app"
 ```
 
-#### Publish Command - Flutter
+#### Flutter
 
 ```console
 msstore publish "C:\path\to\flutter_app"
 ```
 
-#### Publish Command - Electron
+#### Electron
 
 ```console
 msstore publish "C:\path\to\electron_app"
 ```
 
-#### Publish Command - React Native for Desktop
+#### React Native for Desktop
 
 ```console
 msstore publish "C:\path\to\react_native_app"
 ```
 
-#### Publish Command - PWA
+#### PWA
 
 ```console
 msstore publish "C:\path\to\pwa_app"
 ```
 
-### Publish Command - Arguments
+#### Arguments
 
 | Option      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `pathOrUrl` | The root directory path where the project file is, or a public URL that points to a PWA. |
 
-### Publish Command - Options
+#### Options
 
 | Option               | Description                                                                                                                                                                                  |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
