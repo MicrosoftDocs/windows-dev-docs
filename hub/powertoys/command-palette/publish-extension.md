@@ -9,13 +9,13 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Publish Command Palette extensions
 
-This article provides instructions for Command Palette extensions that were created using the Command Palette template.
+This article provides instructions for Command Palette extensions that you create with the Command Palette template.
 
 You can publish your Command Palette extension through the Microsoft Store, WinGet, or both. This article includes instructions for preparing and publishing your extension to both distribution platforms.
 
 ## Microsoft Store
 
-Command Palette extensions can be published to the Microsoft Store. The publishing process is similar to other apps or extensions. You create a new submission in Partner Center and upload your `.msix` package. Command Palette automatically discovers your extension when users install it from the Microsoft Store.
+You can publish Command Palette extensions to the Microsoft Store. The publishing process is similar to other apps or extensions. You create a new submission in Partner Center and upload your `.msix` package. Command Palette automatically discovers your extension when users install it from the Microsoft Store.
 
 > [!NOTE]
 > **MSIX packages explained**
@@ -61,11 +61,11 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 
 ### Set up Microsoft Store
 
-1. Navigate to the [Microsoft Partner Center](https://partner.microsoft.com/dashboard/home).
+1. Go to the [Microsoft Partner Center](https://partner.microsoft.com/dashboard/home).
 1. Under **Workspaces**, select **Apps and games**.
 1. Select **+ New Product**.
 1. Select **MSIX or PWA app**.
-1. Create a name or reserve a product name.
+1. Create or reserve a product name.
 1. Start the submission and complete as much as you can until you reach the **Packages** section.
 1. In the left navigation, under **Product Management**, select **Product identity**.
 1. Copy the following values for use in the next steps:
@@ -77,12 +77,12 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 > - **Package/Identity/Publisher**: `_________________`
 > - **Package/Properties/PublisherDisplayName**: `_________________`
 >
-> You'll use these exact values in the code examples below.
+> Use these exact values in the code examples below.
 
 ### Prepare the extension
 
 1. In your IDE, open `<ExtensionName>\Package.appxmanifest`.
-1. Replace the values with the information you copied from Partner Center:
+1. Replace the values with the information you copied from Partner Center.
 
 ```xml
 <Identity
@@ -98,7 +98,7 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 ```
 
 1. In your IDE, open `<ExtensionName>.csproj`.
-1. Locate a `PropertyGroup` element (with no conditions) and add the following properties using your Partner Center values:
+1. Locate a `PropertyGroup` element (with no conditions) and add the following properties by using your Partner Center values:
 
 ```xml
     <AppxPackageIdentityName>YOUR_PACKAGE_IDENTITY_NAME_HERE</AppxPackageIdentityName>
@@ -106,7 +106,7 @@ Publishing to the Microsoft Store provides your extension with wide reach across
     <AppxPackageVersion>0.0.1.0</AppxPackageVersion>
 ```
 
-1. Update the ItemGroup for images to get all of them by removing:
+1. Update the `ItemGroup` for images to get all of them by removing:
 
 ```xml
   <ItemGroup>
@@ -170,7 +170,7 @@ with
    ```
 
 > [!NOTE]
-> The `AppxPackageDir="AppPackages\x64\"` is needed so that the ARM64 build doesn't overwrite the x64 build
+> You need the `AppxPackageDir="AppPackages\x64\"` setting so that the ARM64 build doesn't overwrite the x64 build.
 
 1. Locate the MSIX files:
 
@@ -179,7 +179,7 @@ with
    ```
 
 > [!TIP]
-> If you do not see your MSIX files, try `dir bin\ -Recurse -Filter "*.msix"`
+> If you don't see your MSIX files, try `dir bin\ -Recurse -Filter "*.msix"`.
 
 1. Note the locations of the `<ExtensionName>_<VersionNumber>_x64.msix` and `<ExtensionName>_<VersionNumber>_arm64.msix` files.
 
@@ -222,8 +222,8 @@ with
 
 Verify your MSIX build is ready by checking:
 
-- ✅ You've updated `Package.appxmanifest` with correct Identity and Properties
-- ✅ You've updated `<ExtensionName>.csproj` with AppxPackage properties
+- ✅ You updated `Package.appxmanifest` with correct Identity and Properties
+- ✅ You updated `<ExtensionName>.csproj` with AppxPackage properties
 - ✅ Both x64 and ARM64 MSIX files were built successfully
 - ✅ The `bundle_mapping.txt` file contains correct paths to both MSIX files
 - ✅ The `.msixbundle` file was created without errors
@@ -233,22 +233,22 @@ If any items are missing or failed, review the build commands and check for erro
 
 ### Microsoft Store submission
 
-1. Navigate to the [Microsoft Partner Center](https://partner.microsoft.com/dashboard/home) and open your newly created extension project.
+1. Go to the [Microsoft Partner Center](https://partner.microsoft.com/dashboard/home) and open your newly created extension project.
 1. In **Packages**, upload the created MSIX bundle.
 1. Complete the rest of the submission. The following suggestions can help you:
    1. In **Languages supported in packages**, under your supported language (for example, English (United States)), in **Description**, make sure to include `<ExtensionName> integrates with the Windows Command Palette to...`
-   1. In the left navigation, locate **Supplemental info** and select **Additional Testing Information**. Add instructions about needing Powertoys and Command Palette. Here's an [example](https://github.com/chatasweetie/CmdPalExtensions/blob/main/microsoftStoreResources/TesterInstructions.txt).
+   1. In the left navigation, locate **Supplemental info** and select **Additional Testing Information**. Add instructions about needing PowerToys and Command Palette. Here's an [example](https://github.com/chatasweetie/CmdPalExtensions/blob/main/microsoftStoreResources/TesterInstructions.txt).
 1. Submit your extension to the store.
 
-After submission, Microsoft will review your extension for certification. Monitor your submission status in Partner Center and check for email notifications about approval. Once approved, your extension will be available in the Microsoft Store within a few hours.
+After submission, Microsoft reviews your extension for certification. Monitor your submission status in Partner Center and check for email notifications about approval. Once approved, your extension is available in the Microsoft Store within a few hours.
 
 ## WinGet
 
-Publishing packages to WinGet is the recommended way to share your extensions with users. Extension packages that are listed on WinGet can be discovered and installed directly from Command Palette.
+To share your extensions with users, publish your packages to WinGet. Users can discover and install extension packages listed on WinGet directly from Command Palette.
 
 > [!TIP]
 > **What is WinGet?**
-> WinGet is Microsoft's open-source command-line package manager for Windows. It's similar to package managers like npm or pip, but for Windows applications. Publishing to WinGet allows users to install your extension with a simple `winget install` command and enables automatic discovery within Command Palette.
+> WinGet is Microsoft's open-source command-line package manager for Windows. It's similar to package managers like npm or pip, but for Windows applications. When you publish to WinGet, users can install your extension with a simple `winget install` command. It also enables automatic discovery within Command Palette.
 
 Before submitting your manifest to WinGet, check the following two requirements:
 
@@ -273,7 +273,7 @@ Dependencies:
 
 ## Guide to WinGet publishing
 
-Publishing to WinGet is the recommended distribution method for Command Palette extensions as it enables automatic discovery and installation directly within Command Palette. This guide covers the majority of the WinGet publication process, from preparing your project and creating build scripts to setting up GitHub Actions automation and submitting your first package manifest. You'll learn how to create installer packages, configure automated builds, and navigate the WinGet submission workflow to make your extension easily discoverable and installable for users.
+Publishing to WinGet is the recommended distribution method for Command Palette extensions. It enables automatic discovery and installation directly within Command Palette. This guide covers most of the WinGet publication process, from preparing your project and creating build scripts to setting up GitHub Actions automation and submitting your first package manifest. You'll learn how to create installer packages, configure automated builds, and navigate the WinGet submission workflow to make your extension easily discoverable and installable for users.
 
 ### Requirements
 
@@ -296,7 +296,7 @@ Publishing to WinGet is the recommended distribution method for Command Palette 
 1. Locate `CLSID`
     1. Open the extension's main `.cs` file (for example, `<ExtensionName>.cs`).
     1. Look for the `[Guid("...")]` attribute above the class declaration.
-    1. This GUID is your CLSID - Keep note of this because it will be used in th next step
+    1. This GUID is your CLSID - Keep note of this because it will be used in the next step
 
        ```csharp
        // Example from <ExtensionName>.cs
@@ -308,8 +308,8 @@ Publishing to WinGet is the recommended distribution method for Command Palette 
     > **What is a CLSID?**
     > A CLSID (Class Identifier) is a unique identifier that Windows uses to identify COM (Component Object Model) components. Each Command Palette extension needs a unique CLSID so Windows can properly register and load your extension. This GUID is automatically generated when you create your extension project.
 
-1. Make sure that your in the directory that contains your `<ExtensionName>.cs` for the next two files being created.
-1. Create a `setup-template.iss` file, for a simple extension you can copy and customize the following:
+1. Make sure that you're in the directory that contains your `<ExtensionName>.cs` for the next two files being created.
+1. Create a `setup-template.iss` file. For a simple extension, you can copy and customize the following template:
 
 **Template: `setup-template.iss`**
 
@@ -352,7 +352,7 @@ Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}"; ValueData: "EXTENSI
 Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; ValueData: "{app}\EXTENSION_NAME.exe -RegisterProcessAsComServer"
 ```
 
-1. Create a `build-exe.ps1` file, for a simple extension you can copy and customize the following:
+1. Create a `build-exe.ps1` file. For a simple extension, you can copy and customize the following template:
 
 **Template: `build-exe.ps1`**
 
@@ -469,7 +469,7 @@ Write-Host "`n🎉 Build completed successfully!" -ForegroundColor Green
 ```
 
 > [!TIP]
-> You can test this locally by having [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0) and [Inno Setup](https://jrsoftware.org/isdl.php) installed.
+> You can test this process locally by installing [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0) and [Inno Setup](https://jrsoftware.org/isdl.php) installed.
 >
 > ```powershell
 > # verify .Net 9 is installed
@@ -478,7 +478,7 @@ Write-Host "`n🎉 Build completed successfully!" -ForegroundColor Green
 > # verify Inno Setup is installed
 > Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
 >
-> # build installer, this will take a while
+> # build installer, this step takes a while
 > .\build-exe.ps1 -Version "0.0.1.0"
 >
 > # verify that <ExtensionName>-Setup-0.0.1.0.exe is listed
@@ -491,10 +491,10 @@ Write-Host "`n🎉 Build completed successfully!" -ForegroundColor Green
 > **What are GitHub Actions?**
 > GitHub Actions is a CI/CD platform that automates software workflows directly in your GitHub repository. For Command Palette extensions, GitHub Actions can automatically build your installer whenever you push code changes, create releases, and even submit updates to WinGet - eliminating manual build steps and ensuring consistent, reproducible builds.
 
-Now we'll set up GitHub Actions to automate the build and release process:
+Now set up GitHub Actions to automate the build and release process:
 
-1. `cd ..` up a directory, you should be in the directory that contains `<ExtensionName>.sln`
-1. create a new repo:
+1. Run `cd ..` to go up a directory. You should be in the directory that contains `<ExtensionName>.sln`.
+1. Create a new repo.
 
 ```powershell
 mkdir .github/workflows
@@ -633,7 +633,7 @@ jobs:
       shell: pwsh
 ```
 
-This file is a Github Action scrip that does the following:
+This file is a GitHub Action script that does the following tasks:
 
 - Setup (.NET, Inno Setup)
 - Get Version (simple version detection)
@@ -641,9 +641,9 @@ This file is a Github Action scrip that does the following:
 - Create Installer (simple Inno Setup call)
 - Upload Results (clear artifact + release steps)
 
-1. Update the placeholders in `release-extension.yml`:
-1. git commit the 3 new files: `build-exe.ps1`, `setup.iss`,`release-extension.yml`
-1. Push changes to Github.
+1. Update the placeholders in `release-extension.yml`.
+1. Commit the three new files: `build-exe.ps1`, `setup.iss`, and `release-extension.yml`.
+1. Push changes to GitHub.
 1. Trigger the GitHub Action:
 
    ```powershell
@@ -663,8 +663,7 @@ Verify your GitHub Actions setup by checking:
 ### WinGet submission
 
 > [!IMPORTANT]
-> The first submission must be manual. `wingetcreate new` requires interactive input for package details
-
+> You must manually submit the first version. `wingetcreate new` requires interactive input for package details
 
 #### Manual first submission
 
@@ -678,7 +677,7 @@ Verify your GitHub Actions setup by checking:
    > [!TIP]
    > To get the GitHub Release URL: Go to your release page, under **Assets**, right-click the `.exe` file and select "Copy link address".
 
-1. When `wingetcreate` prompts you, press **Enter** if the suggested response is pulled from the EXE file, for example: `PackageIdentifier`, `PackageVersion`, `Publisher`, etc.
+1. When `wingetcreate` prompts you, press **Enter** if the suggested response is pulled from the EXE file, for example: `PackageIdentifier`, `PackageVersion`, `Publisher`, and so on.
    - **For optional modification questions**, answer **No**:
      - "Would you like to modify the optional default locale fields?" → **No**
      - "Would you like to modify the optional installer fields?" → **No**
@@ -686,14 +685,14 @@ Verify your GitHub Actions setup by checking:
    - **Final submission question**:
      - "Would you like to submit your manifest to the Windows Package Manager repository?" → **Yes**
 
-After answering "Yes" to submit:
+After you answer "Yes" to submit:
 
 - `wingetcreate` forks the microsoft/winget-pkgs repository to your GitHub account
 - Creates a new branch with your package manifests
 - Opens a pull request automatically
 - Provides the PR URL for tracking
 
-After submitting your pull request, the WinGet team will review your manifest for compliance and accuracy. You can monitor the PR status on GitHub and respond to any feedback from reviewers. Once approved and merged, your extension will be available through WinGet within a few hours.
+After you submit your pull request, the WinGet team reviews your manifest for compliance and accuracy. You can monitor the PR status on GitHub and respond to any feedback from reviewers. Once approved and merged, your extension will be available through WinGet within a few hours.
 
 #### WinGet updates via GitHub Actions
 
