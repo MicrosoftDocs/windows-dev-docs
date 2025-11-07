@@ -32,7 +32,7 @@ If your project already has a GitHub repository, you can use it directly for aut
 
 * In your GitHub repo, go to **Settings** > **Secrets and variables** > **Actions** > **New Repository Secret**. 
 
-:::image type="content" source="./images/github-actions-repo-secret.png" lightbox="./images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
+:::image type="content" source="../images/github-actions-repo-secret.png" lightbox="../images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
 
 * Add the following secrets:
   * TENANT_ID
