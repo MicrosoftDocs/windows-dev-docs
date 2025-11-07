@@ -9,6 +9,10 @@ ms.date: 11/07/2025
 
 GitHub Actions lets you automate the process of updating your Microsoft Store apps directly from your code repository. By integrating updates into your workflow, you save time, reduce manual errors, and ensure every change is securely tracked and delivered to the Store. 
 
+To understand how to update your Microsoft Store apps directly from your code repository using GitHub Actions, check out the following video:
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=71516e30-3dd4-44f7-8428-c31211cb4be7]
+
 ## Pre-requisite
 
 1. Register as a Windows app developer in [Partner Center](https://storedeveloper.microsoft.com/). 
@@ -45,10 +49,10 @@ If your project already has a GitHub repository, you can use it directly for aut
 Before publishing updates, you need the base metadata JSON from Partner Center for your app submission. This ensures you start with the correct structure for MSIX or Win32 apps. Create a GitHub Actions workflow under .github/workflows/ (e.g., GetBaseMetadata.yml) with the following snippets:
 
 For MSIX
-:::image type="content" source="images/github-actions-base-metadata-msix.png" lightbox="images/github-actions-base-metadata-msix.png" alt-text="A screenshot showing command line to obtain nase metadata for msix apps.":::
+:::image type="content" source="../images/github-actions-base-metadata-msix.png" lightbox="../images/github-actions-base-metadata-msix.png" alt-text="A screenshot showing command line to obtain nase metadata for msix apps.":::
 
 For EXE
-:::image type="content" source="./images/github-actions-base-metadata-exe.png" lightbox="./images/github-actions-base-metadata-exe.png" alt-text="A screenshot showing command line to obtain nase metadata for exe apps.":::
+:::image type="content" source="../images/github-actions-base-metadata-exe.png" lightbox="../images/github-actions-base-metadata-exe.png" alt-text="A screenshot showing command line to obtain nase metadata for exe apps.":::
 
 ### Step 3
 
@@ -56,7 +60,7 @@ For EXE
 * Under .github/workflows/, create a YAML file (e.g., AppMetadataUpdate.yml or AppPackageUpdate.yml). 
 * Here’s an example workflow snippet: 
 
-:::image type="content" source="./images/github-actions-workflow.png" lightbox="./images/github-actions-workflow.png" alt-text="A screenshot showing metadata update YAML file.":::
+:::image type="content" source="../images/github-actions-workflow.png" lightbox="../images/github-actions-workflow.png" alt-text="A screenshot showing metadata update YAML file.":::
 
 ### Step 4
 
@@ -67,7 +71,7 @@ For EXE
 
 * Run the workflow by going to the Actions tab in your GitHub repository, selecting the relevant workflow, and clicking Run workflow. 
 
-:::image type="content" source="./images/github-actions-run-workflow.png" lightbox="./images/github-actions-run-workflow.png" alt-text="A screenshot showing the process of running a workflow.":::
+:::image type="content" source="../images/github-actions-run-workflow.png" lightbox="../images/github-actions-run-workflow.png" alt-text="A screenshot showing the process of running a workflow.":::
 
 * The workflow will do the following in the background:  
   * Invoke the GitHub Action (microsoft-store-apppublisher) 
