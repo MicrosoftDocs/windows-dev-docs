@@ -1,7 +1,7 @@
 ---
 title: Program Compatibility Troubleshooter on Arm
 description: Guidance for adjusting compatibility settings if your app isn't working correctly on Arm
-ms.date: 02/23/2024
+ms.date: 11/06/2025
 ms.topic: troubleshooting-general
 ms.service: windows
 ms.subservice: arm
@@ -10,7 +10,7 @@ ms.reviewer: marcs
 
 # Program Compatibility Troubleshooter on Arm
 
-PCs powered by Arm provide great application compatibility and allow you to run your existing unmodified x86 win32 applications. Arm apps run natively without any emulation, while x86 and x64 apps run under emulation on Arm devices.
+PCs powered by Arm provide great application compatibility and allow you to run your existing unmodified x86 Win32 applications. Arm apps run natively without any emulation, while x86 and x64 apps run under emulation on Arm devices.
 
 However, sometimes the emulation performs optimizations that don't result in the best user experience. You can use the **Program Compatibility Troubleshooter** to toggle emulation settings for your x86 or x64 app, reducing the default optimizations and potentially increasing compatibility.
 
@@ -38,7 +38,7 @@ All options enable the settings that are applicable and applied on Windows Deskt
 
 You can toggle emulation settings by right-clicking the executable and selecting **Properties**.
 
-On ARM, a section titled **Windows 10 on ARM** or **Windows 11 on ARM** will be available in the **Compatibility** tab. Select **Change emulation settings** to launch an Emulations Properties window.
+On Arm, a section titled **Windows 10 on Arm** or **Windows 11 on Arm** will be available in the **Compatibility** tab. Select **Change emulation settings** to launch an Emulations Properties window.
 
 ![Change emulation settings screenshot](images/Capture.png)
 
