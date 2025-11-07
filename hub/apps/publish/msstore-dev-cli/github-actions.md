@@ -2,7 +2,7 @@
 description: Steps to use GitHub Actions to publish app updates to Microsoft Store.
 title: Publish app updates to Microsoft Store with GitHub Actions 
 ms.topic: how-to
-ms.date: 11/06/2025
+ms.date: 11/07/2025
 ---
 
 # Publishing app updates to Microsoft Store with GitHub Actions 
@@ -32,7 +32,7 @@ If your project already has a GitHub repository, you can use it directly for aut
 
 * In your GitHub repo, go to **Settings** > **Secrets and variables** > **Actions** > **New Repository Secret**. 
 
-:::image type="content" source="publish/images/github-actions-repo-secret.png" lightbox="publish/images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
+:::image type="content" source="./images/github-actions-repo-secret.png" lightbox="./images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
 
 * Add the following secrets:
   * TENANT_ID
@@ -48,23 +48,32 @@ For MSIX
 :::image type="content" source="images/github-actions-base-metadata-msix.png" lightbox="images/github-actions-base-metadata-msix.png" alt-text="A screenshot showing command line to obtain nase metadata for msix apps.":::
 
 For EXE
-:::image type="content" source="images/github-actions-base-metadata-exe.png" lightbox="images/github-actions-base-metadata-exe.png" alt-text="A screenshot showing command line to obtain nase metadata for exe apps.":::
+:::image type="content" source="./images/github-actions-base-metadata-exe.png" lightbox="./images/github-actions-base-metadata-exe.png" alt-text="A screenshot showing command line to obtain nase metadata for exe apps.":::
 
+### Step 3
 
-1. Navigate to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
-2. Click **New product**.
-3. Click on **MSIX or PWA app**. If you want to submit MSIX or PWA game, click on **Game**.
+* [Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing app metadata and package updates to store. 
+* Under .github/workflows/, create a YAML file (e.g., AppMetadataUpdate.yml or AppPackageUpdate.yml). 
+* Here’s an example workflow snippet: 
 
-:::image type="content" source="images/msix-new-product.png" lightbox="images/msix-new-product.png" alt-text="A screenshot showing how to create a MSIX/PWA app.":::
+:::image type="content" source="./images/github-actions-workflow.png" lightbox="./images/github-actions-workflow.png" alt-text="A screenshot showing metadata update YAML file.":::
 
-4. Enter the name you'd like to use and click **Check availability**. If the name is available, you'll see a green check mark. If the name is already in use, you'll see a message indicating so.
+### Step 4
 
-:::image type="content" source="images/msix-app-name-reservation.png" lightbox="images/msix-app-name-reservation.png" alt-text="A screenshot showing how to reserve a name for MSIX/PWA app.":::
+* For metadata updates: Execute the workflow by providing the path to updated metadata which will get published to the Microsoft Store. 
+* For package updates: Execute the workflows by pointing to the location of your newly published package (e.g., PackageName.msix for MSIX apps or PackageName.json for EXE apps)
 
-5. Once you've selected an available name that you'd like to reserve, click **Reserve product name**.
+### Step 5
 
-> [!NOTE]
-> You might find that you cannot reserve a name, even though you do not see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but has not submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
+* Run the workflow by going to the Actions tab in your GitHub repository, selecting the relevant workflow, and clicking Run workflow. 
 
-> [!TIP]
-> For guidance on selecting an effective app name, see [How do I choose a great app name for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.
+:::image type="content" source="./images/github-actions-run-workflow.png" lightbox="./images/github-actions-run-workflow.png" alt-text="A screenshot showing the process of running a workflow.":::
+
+* The workflow will do the following in the background:  
+  * Invoke the GitHub Action (microsoft-store-apppublisher) 
+  * Authenticate your Microsoft Store Partner Center account using the secrets you configured (Tenant ID, Client ID, Client Secret, Seller ID). 
+  * Use the Microsoft Store Developer CLI (msstore) to publish the updated metadata or package to the Microsoft Store. 
+
+### Step 6
+
+Once the workflow is executed successfully, check the Microsoft Store to confirm your changes are live after certification.
