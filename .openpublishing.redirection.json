@@ -10,6 +10,11 @@
       "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-tutorial",
       "redirect_document_id": false
     },
+	{
+      "source_path": "hub/apps/get-started/sign-up.md",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
+      "redirect_document_id": false
+    },
     {
       "source_path": "uwp/enterprise/enterprise-shared-storage.md",
       "redirect_url": "/previous-versions/windows/uwp/enterprise/enterprise-shared-storage",
