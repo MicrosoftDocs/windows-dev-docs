@@ -29,9 +29,29 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.7.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../downloads.md).
 
-### Version 1.7.5 (1.7.251014001)
+### Version 1.7.6 (1.7.251107005)
 
 This is the latest service release for Version 1.7 of the Windows App SDK.
+
+#### Bug Fixes
+- Fixed a potential crash if OrientedVirtualizingPanel hits an overflow when computing bounds. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): OrientedVirtualizingPanel_FixBoundsOverflow).
+- Fixed a potential crash on app launch if the computer has not been rebooted in a long time. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ContentIsland_StartupCrashWhenLongRunning).
+
+#### Windows AI Object Erase
+
+Object Erase can be used to remove objects from images. The model takes both an image and a greyscale mask indicating the object to be removed, erases the masked area from the image, and replaces the erased area with the image background.
+
+#### New APIs for 1.7.6
+
+This release includes the following new APIs compared to the 1.7.5 release:
+```
+Microsoft.Windows.AI.Imaging
+
+    ImageObjectRemover
+    ImageObjectRemoverContract
+```
+
+### Version 1.7.5 (1.7.251014001)
 
 #### Bug Fixes
 * Fixed issue where mouse wheel scrolling doesn't work when the Windows setting "Scroll inactive windows when hovering over them" is off. For more info, see GitHub issue [#10091](https://github.com/microsoft/microsoft-ui-xaml/issues/10091). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_FixScrollForInactiveWindowSetting)
