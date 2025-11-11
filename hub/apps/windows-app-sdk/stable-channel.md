@@ -26,9 +26,43 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.8.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
-### Version 1.8.2 (1.8.251003001)
+### Version 1.8.3 (1.8.251106002)
 
 This is the latest service release for Version 1.8 of the Windows App SDK.
+
+#### Bug fixes
+
+* Fixed a potential crash if OrientedVirtualizingPanel hits an overflow when computing bounds. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): OrientedVirtualizingPanel_FixBoundsOverflow).
+
+#### Windows ML Updates
+
+##### Expanded OS Support
+Windows ML now supports Windows 10 (version 1809 and later) and Windows Server 2019 and later for CPU and GPU workloads with select execution providers.
+Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supported-execution-providers)
+
+##### AMD MiGraphX Execution Provider
+Added support for the AMD MiGraphX execution provider, enabling ML workloads on AMD GPUs for the latest Ryzen AI 300-series processors.
+This provider is currently being flighted in Windows Insider Program channels and is targeted for retail availability by the end of the month.
+Learn more: [Supported Execution Providers](/windows/ai/new-windows-ml/supported-execution-providers)
+
+#### Windows ML Model Catalog APIs
+
+These APIs enable your app or library to dynamically discover and download large AI model files from your own online model catalogs, and share them across apps on the PC—without bundling those large files directly with your app or library. [See the docs](/windows/ai/new-windows-ml/model-catalog/overview) to learn how to use these APIs!
+
+#### New APIs for 1.8.3:
+```
+Microsoft.Windows.AI.MachineLearning
+
+    CatalogModelInfo
+    CatalogModelInstance
+    CatalogModelInstanceResult
+    CatalogModelInstanceStatus
+    CatalogModelStatus
+    ModelCatalog
+    ModelCatalogSource
+```
+
+### Version 1.8.2 (1.8.251003001)
 
 #### Updated ONNX Runtime
 Updated the `onnxruntime.dll` to 1.23.1 introducing several enhancements to ONNX Runtime's Python and C++ APIs, focusing on improved device and memory information handling, synchronization stream support, and tensor copy functionality. It adds new Python bindings for device/memory types, exposes more detailed session input/output metadata, and provides a Python-accessible tensor copy API. The changes also refactor and extend the C++ API for better stream and memory info management.
@@ -67,7 +101,7 @@ See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-si
 - **Broad hardware support** - Runs on all Windows 11 PCs (x64 and ARM64) with any hardware configuration
 
 
-### New APIs for 1.8.1
+#### New APIs for 1.8.1
 
 This release includes the following new APIs compared to the previous 1.8 release:
 
