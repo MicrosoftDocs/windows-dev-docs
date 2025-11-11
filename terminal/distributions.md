@@ -1,29 +1,29 @@
 ---
 title: Windows Terminal Distribution Types
 description: Learn how to use the different distributions of Windows Terminal.
-ms.date: 02/03/2025
+ms.date: 11/10/2025
 ms.topic: how-to 
 ---
 
-# Windows Terminal Distribution Types
+# Windows Terminal distribution types
 
-Windows Terminal is distributed via [GitHub releases] in a variety of formats:
+Windows Terminal is available through [GitHub releases] in several formats:
 
 - Packaged, or "MSIX bundle"
-    - This is the oldest and best-supported distribution of Windows Terminal.
-    - The packaged distribution can be installed via the `.msixbundle` file provided on the [GitHub releases] page or
+    - This distribution is the oldest and best-supported version of Windows Terminal.
+    - You can install the packaged distribution by using the `.msixbundle` file on the [GitHub releases] page or
       through the Microsoft Store ([Stable](https://aka.ms/terminal), [Preview](https://aka.ms/terminal-preview)).
-    - Installation via MSIX bundle may require network connectivity to download dependency packages from the Store.
-    - When installed via MSIX bundle, Terminal will receive automatic updates through the Store.
+    - Installation through the MSIX bundle might need network access to download dependency packages from the Store.
+    - When you install Windows Terminal through the MSIX bundle, it automatically updates through the Store.
 - Preinstallation Kit
-    - A [preinstallation kit] is available for system integrators and OEMs interested in preinstalling Windows Terminal
+    - A [preinstallation kit] is available for system integrators and OEMs who want to preinstall Windows Terminal
       on a Windows image.
-    - More information is available in the [DISM documentation on preinstallation]. Users who do not intend to
-      preinstall Windows Terminal should continue using the Packaged distribution.
-    - When installed via preinstallation kit, Terminal will receive automatic updates through the Store.
+    - For more information, see the [DISM documentation on preinstallation]. If you don't plan to
+      preinstall Windows Terminal, use the Packaged distribution.
+    - When you install Windows Terminal through the preinstallation kit, it automatically updates through the Store.
 - Unpackaged, or "ZIP" (new in 1.17 stable)
-    - This distribution method was not officially supported until stable channel version 1.17.
-    - The unpackaged distribution does not receive automatic updates, which puts you in control of exactly when new
+    - This distribution method wasn't officially supported until stable channel version 1.17.
+    - The unpackaged distribution doesn't receive automatic updates, so you control when new
       versions are installed.
 - Portable
     - A variant of the unpackaged distribution, where Terminal stores its settings in a nearby directory.
@@ -37,7 +37,7 @@ Windows Terminal is distributed via [GitHub releases] in a variety of formats:
 | **Automatic architecture selection**       | ✅                       | ✅                  | ❌               | ❌                            |
 | **Can be set as your default terminal**    | ✅                       | ✅                  | ❌               | ❌                            |
 | **"Open in Terminal" context menu**        | ✅                       | ✅                  | ❌               | ❌                            |
-| **Automatic start on login option**        | ✅                       | ✅                  | _manual_         | _manual_                      |
+| **Automatic start on sign-in option**      | ✅                       | ✅                  | _manual_         | _manual_                      |
 | **Double-click installation**              | ✅                       | ❌                  | ❌               | ❌                            |
 | **Installation on non-networked machines** | ❌                       | ✅                  | ✅               | ✅                            |
 | **Preinstallation in a Windows image**     | ❌                       | ✅                  | _as plain files_ | _as plain files_              |
@@ -47,61 +47,61 @@ Windows Terminal is distributed via [GitHub releases] in a variety of formats:
 
 ## Windows Terminal Portable
 
-Windows Terminal supports being deployed in ["Portable mode"]. Portable mode ensures
-that all data created and maintained by Windows Terminal is saved next to the application so that it can be more easily
-moved across different environments.
+Windows Terminal supports deployment in ["Portable mode"]. Portable mode ensures
+that Windows Terminal saves all data it creates and maintains next to the application, so you can more easily
+move it across different environments.
 
-Portable mode is supported by the unpackaged "ZIP" distribution.
+The unpackaged "ZIP" distribution supports portable mode.
 
-This is an officially-supported mode of execution where Windows Terminal stores its settings in a `settings` folder next
+This officially supported mode of execution stores Windows Terminal settings in a `settings` folder next
 to `WindowsTerminal.exe`.
 
-Portable mode is not supported in the packaged or preinstallation kit distributions of Windows Terminal.
+The packaged or preinstallation kit distributions of Windows Terminal don't support portable mode.
 
-Portable mode will only run on Windows 10 version 2004 (10.019041) or higher. 
+Portable mode runs only on Windows 10 version 2004 (10.019041) or higher. 
 
 ### Why use Portable mode?
 
-The unpackaged and portable mode distributions of Windows Terminal allow you to use Terminal without installing it
-globally, e.g. on systems where you may not have permission to install MSIX packages or download software from the
+The unpackaged and portable mode distributions of Windows Terminal let you use Terminal without installing it
+globally. For example, use portable mode on systems where you don't have permission to install MSIX packages or download software from the
 Microsoft Store.
 
-Portable mode allows you to carry around or archive a preconfigured installation of Windows Terminal and run it from
-a network share, cloud drive or USB flash drive. Any such installation is self-contained and will not interfere with
+Portable mode lets you carry around or archive a preconfigured installation of Windows Terminal and run it from
+a network share, cloud drive, or USB flash drive. This self-contained installation doesn't interfere with
 other installed distributions of Windows Terminal.
 
-### Enabling Portable mode
+### Enabling portable mode
 
-Portable mode needs to be enabled manually. After unzipping the Windows Terminal download, create a file named `.portable` next to `WindowsTerminal.exe`.
+You need to enable portable mode manually. After you unzip the Windows Terminal download, create a file named `.portable` next to `WindowsTerminal.exe`.
 
 > [!NOTE]
-> Windows Terminal will not automatically reload its settings when you create the portable mode marker file.
-> This change will only apply after you relaunch Terminal.
+> Windows Terminal doesn't automatically reload its settings when you create the portable mode marker file.
+> This change takes effect only after you relaunch Terminal.
 
-Windows Terminal will automatically create a directory named `settings` in which it will store both settings and runtime
+Windows Terminal automatically creates a directory named `settings` where it stores both settings and runtime
 state such as window layouts.
 
 ![Windows Terminal portable mode disclaimer example](./images/portable-mode.png)
 
-### Disabling Portable mode
+### Disabling portable mode
 
-You can restore Portable mode unpackaged installation to its original configuration, where settings are stored in
+You can restore the portable mode unpackaged installation to its original configuration, where settings are stored in
 `%LOCALAPPDATA%\Microsoft\Windows Terminal`, by removing the `.portable` marker file from the directory containing
 `WindowsTerminal.exe`.
 
-If you wish to reenable portable mode, you can create a new `.portable` marker file next to `WindowsTerminal.exe`.
+If you want to reenable portable mode, create a new `.portable` marker file next to `WindowsTerminal.exe`.
 
-### Upgrading a Portable mode Install
+### Upgrading a portable mode installation
 
 You can upgrade a portable mode installation of Windows Terminal by moving the `.portable` marker file and the
-`settings` directory to a newly-extracted unpackaged version of Windows Terminal.
+`settings` directory to a newly extracted unpackaged version of Windows Terminal.
 
 ### Portable mode FAQs
 
 #### Why don't ms-appdata URLs work in Portable mode?
-Prior to portable mode, a common practice to reference images in `settings.json` would be to use `ms-appdata:///Local`. 
+Before portable mode, a common practice to reference images in `settings.json` was to use `ms-appdata:///Local`. 
 
-Portable mode offers a self-contained Terminal installation, where user data and application data are stored in the same place. As there is no separate user data folder, references to such folder (e.g. with `ms-appdata`) will not work.
+Portable mode offers a self-contained Terminal installation, where user data and application data are stored in the same place. Because there's no separate user data folder, references to such folder (for example, with `ms-appdata`) don't work.
 
 To refer to paths relative to the application install directory, use an `ms-appx:` URL.
 

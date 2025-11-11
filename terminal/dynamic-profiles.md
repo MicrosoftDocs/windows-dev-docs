@@ -1,22 +1,22 @@
 ---
 title: Windows Terminal Dynamic Profiles
 description: Learn about dynamic profiles in Windows Terminal.
-ms.date: 01/06/2022
+ms.date: 11/10/2025
 ms.topic: conceptual
 ---
 
 # Dynamic profiles in Windows Terminal
 
-Windows Terminal will automatically create Windows Subsystem for Linux (WSL) and PowerShell profiles for you if you have these shells installed on your machine. This makes it easier for you to have all of your shells included in the terminal without having to locate their executable files. These profiles are generated with the `source` property, which tells the terminal where to locate the proper executable.
+Windows Terminal automatically creates Windows Subsystem for Linux (WSL) and PowerShell profiles if you install these shells on your machine. This feature makes it easier for you to include all of your shells in the terminal without having to locate their executable files. The terminal generates these profiles with the `source` property, which tells the terminal where to find the proper executable.
 
-Upon installing the terminal, it will set PowerShell as your default profile. To learn how to change your default profile, visit the [Startup page](./customize-settings/startup.md).
+When you install the terminal, it sets PowerShell as your default profile. To learn how to change your default profile, visit the [Startup page](./customize-settings/startup.md).
 
 ![Windows Terminal dynamic profiles](./images/dynamic-profiles.png)
 _Configuration: [Light Theme](./custom-terminal-gallery/frosted-glass-theme.md)_
 
-## Installing a new shell after installing Windows Terminal
+## Install a new shell after installing Windows Terminal
 
-Regardless of whether a new shell is installed before or after your terminal installation, the terminal will create a new profile for the newly installed shell.
+Regardless of whether you install a new shell before or after your terminal installation, the terminal creates a new profile for the newly installed shell.
 
 ## Hide a profile
 
@@ -28,7 +28,7 @@ To hide a profile from your terminal dropdown menu, add the `hidden` property to
 
 ## Prevent a profile from being generated
 
-To prevent a dynamic profile from being generated, you can add the profile generator to the `disabledProfileSources` array in your global settings. More information on this setting can be found on the [Global settings page](./customize-settings/startup.md#disable-dynamic-profiles).
+To prevent the terminal from generating a dynamic profile, add the profile generator to the `disabledProfileSources` array in your global settings. For more information, see the [Global settings page](./customize-settings/startup.md#disable-dynamic-profiles).
 
 ```json
 "disabledProfileSources": ["Windows.Terminal.Wsl", "Windows.Terminal.Azure", "Windows.Terminal.PowershellCore", "Windows.Terminal.SSH"]
@@ -36,7 +36,7 @@ To prevent a dynamic profile from being generated, you can add the profile gener
 
 ## Add a third party profile
 
-If a 3rd party command line tool does not have a profile auto-generated into your [settings.json file](./install.md#settings-json-file), you can add it manually. Below are profiles for a few common 3rd party tools for your reference.
+If a third party command line tool doesn't have a profile auto-generated in your [settings.json file](./install.md#settings-json-file), you can add it manually. The following profiles are for a few common third party tools for your reference.
 
 ### Anaconda
 
@@ -110,7 +110,7 @@ Assuming that you've installed Git Bash into `C:\\Program Files\\Git`:
 
 ### Git Bash (WOW64)
 
-Assuming that you've installed Git Bash into `C:\\Program Files (x86)\\Git`:
+Assuming that you installed Git Bash into `C:\\Program Files (x86)\\Git`:
 
 ```json
 {
@@ -123,7 +123,7 @@ Assuming that you've installed Git Bash into `C:\\Program Files (x86)\\Git`:
 
 ### MSYS2
 
-Assuming that you've installed MSYS2 into `C:\\msys64`:
+Assuming that you installed MSYS2 into `C:\\msys64`:
 
 ```json
 {

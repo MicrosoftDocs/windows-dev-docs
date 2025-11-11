@@ -1,19 +1,17 @@
 ---
 title: Windows Terminal Command Palette
 description: Learn how to use the command palette in Windows Terminal.
-
-
-ms.date: 02/25/2021
+ms.date: 11/10/2025
 ms.topic: how-to 
 ---
 
 # How to use the command palette in Windows Terminal
 
-The command palette lets you see which actions you can run inside Windows Terminal. More information on how actions are defined can be found on the [Actions page](./customize-settings/actions.md).
+The command palette shows you which actions you can run inside Windows Terminal. For more information on how actions are defined, see the [Actions page](./customize-settings/actions.md).
 
 ## Invoking the command palette
 
-You can invoke the command palette by typing <kbd>Ctrl+Shift+P</kbd>. This can be customized by adding the `commandPalette` command to your key bindings.
+Type <kbd>Ctrl+Shift+P</kbd> to open the command palette. You can customize this shortcut by adding the `commandPalette` command to your key bindings.
 
 ```json
 { "command": "commandPalette", "keys": "ctrl+shift+p" }
@@ -21,7 +19,7 @@ You can invoke the command palette by typing <kbd>Ctrl+Shift+P</kbd>. This can b
 
 ## Command line mode
 
-If you'd like to enter a `wt` command into the command palette, you can do so by deleting the `>` character in the text box. This will run the `wt` command in the current window. More information on `wt` commands can be found on the [Command line arguments page](./command-line-arguments.md).
+If you want to enter a `wt` command into the command palette, delete the `>` character in the text box. This action runs the `wt` command in the current window. For more information on `wt` commands, see the [Command line arguments page](./command-line-arguments.md).
 
 ![Windows Terminal command line mode](./images/command-palette-command-line-mode.gif)
 
@@ -33,7 +31,7 @@ You can add a custom key binding for invoking the command palette in the command
 
 ## Adding an icon to a command
 
-You can optionally add an icon to a command defined in your [settings.json](./install.md#settings-json-file) that appears in the command palette. This can be done by adding the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
+You can add an icon to a command defined in your [settings.json](./install.md#settings-json-file) that appears in the command palette. Add the `icon` property to the action. Icons can be a path to an image, a symbol from [Segoe MDL2 Assets](/windows/uwp/design/style/segoe-ui-symbol-font), or any character, including emojis.
 
 ```json
 { "icon": "C:\\Images\\my-icon.png", "name": "New tab", "command": "newTab", "keys": "ctrl+shift+t" },
@@ -46,7 +44,7 @@ You can optionally add an icon to a command defined in your [settings.json](./in
 
 ## Nested commands
 
-Nested commands let you group multiple commands under one item in the command palette. The example below groups the font resize commands under one command palette item called "Change font size...".
+Nested commands let you group multiple commands under one item in the command palette. The following example groups the font resize commands under one command palette item called **Change font size...**.
 
 ```json
 {
@@ -63,7 +61,7 @@ Nested commands let you group multiple commands under one item in the command pa
 
 ## Iterable commands
 
-Iterable commands let you create multiple commands at the same time, generated from other objects defined in your settings. Currently, you can create iterable commands for your profiles and color schemes. At runtime, these commands will be expanded to one command for each of the objects of the given type.
+Iterable commands let you create multiple commands at the same time, generated from other objects defined in your settings. Currently, you can create iterable commands for your profiles and color schemes. At runtime, these commands expand to one command for each of the objects of the given type.
 
 You can currently iterate over the following properties:
 
@@ -86,12 +84,12 @@ Create a new tab command for each profile.
 }
 ```
 
-In the above example:
+In the preceding example:
 
-- `"iterateOn": "profiles"` will generate a command for each profile.
-- At runtime, the terminal will replace `${profile.icon}` with each profile's icon and `${profile.name}` with each profile's name.
+- `"iterateOn": "profiles"` generates a command for each profile.
+- At runtime, the terminal replaces `${profile.icon}` with each profile's icon and `${profile.name}` with each profile's name.
 
-If you had three profiles:
+If you have three profiles:
 
 ```json
 "profiles": [
@@ -101,7 +99,7 @@ If you had three profiles:
 ]
 ```
 
-The above command would behave like the following three commands:
+The preceding command behaves like the following three commands:
 
 ```json
 {
@@ -121,7 +119,7 @@ The above command would behave like the following three commands:
 }
 ```
 
-It's also possible to combine nested and iterable commands. For example, you can combine the three "new tab" commands above under a single "New tab" entry in the command palette, as shown in the image above, in the following way:
+You can also combine nested and iterable commands. For example, you can combine the three "new tab" commands in the preceding example under a single "New tab" entry in the command palette, as shown in the preceding image:
 
 ```json
 {
@@ -141,7 +139,7 @@ It's also possible to combine nested and iterable commands. For example, you can
 
 ## Hiding a command
 
-If you would like to keep a command in your key bindings list but not have it appear in the command palette, you can hide it by setting its `name` to `null`. The example below hides the "New tab" action from the command palette.
+If you want to keep a command in your key bindings list but don't want it to appear in the command palette, set its `name` to `null`. The following example hides the "New tab" action from the command palette.
 
 ```json
 { "name": null, "command": "newTab", "keys": "ctrl+shift+t" }

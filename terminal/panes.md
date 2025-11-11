@@ -1,7 +1,7 @@
 ---
 title: Windows Terminal Panes
 description: Learn how to split panes in Windows Terminal.
-ms.date: 10/15/2021
+ms.date: 11/10/2025
 ms.topic: how-to
 ---
 

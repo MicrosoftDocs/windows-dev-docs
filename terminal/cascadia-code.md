@@ -2,17 +2,17 @@
 title: Windows Terminal Cascadia Code
 description: Learn about the different Cascadia Code fonts and how they work with Windows Terminal.
 
-ms.date: 08/30/2021
+ms.date: 11/10/2025
 ms.topic: overview
 ---
 
 # Cascadia Code
 
-Cascadia Code is a new monospaced font from Microsoft that provides a fresh experience for command-line applications and text editors. Cascadia Code was developed alongside Windows Terminal. This font is most recommended to be used with terminal applications and text editors such as Visual Studio and Visual Studio Code.
+Cascadia Code is a new monospaced font from Microsoft that provides a fresh experience for command-line applications and text editors. Microsoft developed Cascadia Code alongside Windows Terminal. Use this font with terminal applications and text editors such as Visual Studio and Visual Studio Code.
 
 ## Cascadia Code versions
 
-There are multiple versions of Cascadia Code available that include ligatures and glyphs. All versions of Cascadia Code can be downloaded from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases). Windows Terminal ships Cascadia Code and Cascadia Mono in its package and uses Cascadia Mono by default.
+You can choose from multiple versions of Cascadia Code that include ligatures and glyphs. Download all versions of Cascadia Code from the [Cascadia Code GitHub releases page](https://github.com/microsoft/cascadia-code/releases). Windows Terminal ships with Cascadia Code and Cascadia Mono in its package and uses Cascadia Mono by default.
 
 | Font Name | Includes Ligatures | Includes Powerline Glyphs |
 | --------- | ------------------ | ------------------------- |
@@ -23,9 +23,9 @@ There are multiple versions of Cascadia Code available that include ligatures an
 
 ## Powerline and programming ligatures
 
-Powerline is a common command-line plugin that allows you to display additional information in your prompt. It uses a few additional glyphs to display this information properly.
+Powerline is a common command-line plugin that allows you to display extra information in your prompt. It uses a few additional glyphs to display this information properly.
 
-Programming ligatures are glyphs that are created by combining characters. They are most useful when writing code. The "Code" variants include ligatures, whereas the "Mono" variants exclude them.
+Programming ligatures are glyphs that are created by combining characters. They're most useful when writing code. The "Code" variants include ligatures, whereas the "Mono" variants exclude them.
 
 ![Cascadia Code programming ligatures](./images/programming-ligatures.gif)
 

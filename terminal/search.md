@@ -1,35 +1,35 @@
 ---
 title: Windows Terminal Search
 description: Learn how to search in Windows Terminal.
-ms.date: 09/22/2020
+ms.date: 11/10/2025
 ms.topic: how-to 
 ---
 
 # How to search in Windows Terminal
 
-Windows Terminal comes with a search feature that allows you to look through the text buffer for a specific keyword. This is useful when trying to find a command you had run before or for a specific file name.
+Windows Terminal includes a search feature that lets you look through the text buffer for a specific keyword. This feature is useful when you want to find a command you ran earlier or a specific file name.
 
 ## Using search
 
-By default, you can open the search dialog by typing <kbd>Ctrl+Shift+F</kbd>. Once opened, you can type the keyword you're looking for into the text box and hit <kbd>Enter</kbd> to search.
+By default, you can open the search dialog by typing <kbd>Ctrl+Shift+F</kbd>. When the dialog opens, type the keyword you're looking for into the text box and press <kbd>Enter</kbd> to start the search.
 
 ![Windows Terminal search screenshot](./images/search.png)
 
 ## Directional search
 
-The terminal will default to searching from the bottom to the top of the text buffer. You can change the search direction by selecting one of the arrows in the search dialog.
+The terminal searches from the bottom to the top of the text buffer by default. You can change the search direction by selecting one of the arrows in the search dialog.
 
 ![Windows Terminal directional search screenshot](./images/search-direction.gif)
 
 ## Case match search
 
-If you'd like to narrow down your search results, you can add case matching as an option in your search. You can toggle case matching by selecting the case match button, and the results that appear will only match the keyword entered with its specific letter casing.
+To narrow down your search results, add case matching as an option in your search. You can toggle case matching by selecting the case match button. The results that appear only match the keyword entered with its specific letter casing.
 
 ![Windows Terminal case matching search screenshot](./images/search-case-match.gif)
 
 ## Searching within panes
 
-The search dialog works with [panes](./panes.md) as well. When focused on a pane, you can open the search dialog and it will appear on the upper-right of that pane. Then any keyword you enter will only show results found within that pane.
+The search dialog works with [panes](./panes.md) as well. When you focus on a pane, you can open the search dialog, and it appears on the upper-right of that pane. Then, any keyword you enter only shows results found within that pane.
 
 ![Windows Terminal panes search screenshot](./images/search-panes.gif)
 

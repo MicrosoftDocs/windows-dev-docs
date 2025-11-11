@@ -1,17 +1,17 @@
 ---
 title: Windows Terminal JSON Fragment Extensions
 description: Learn how to use JSON fragment extensions in Windows Terminal.
-ms.date: 10/04/2021
+ms.date: 11/10/2025
 ms.topic: how-to
 ---
 
 # JSON fragment extensions in Windows Terminal
 
-JSON fragment extensions are snippets of JSON that application developers can write to add new profiles to users' settings, or even modify certain existing profiles. They can also be used to add new color schemes to users' settings.
+JSON fragment extensions are snippets of JSON that application developers can write to add new profiles to users' settings or even modify certain existing profiles. Use them to add new color schemes to users' settings.
 
 ## Structure of the JSON files
 
-The JSON file should be split up into 2 lists, one for profiles and one for schemes. Here is an example of a json file that adds a new profile, modifies an existing profile, and creates a new color scheme:
+Split the JSON file into two lists: one for profiles and one for schemes. Here's an example of a JSON file that adds a new profile, modifies an existing profile, and creates a new color scheme:
 
 ```JSON
 {
@@ -56,44 +56,44 @@ The JSON file should be split up into 2 lists, one for profiles and one for sche
 }
 ```
 
-The first item in the `"profiles"` list updates an existing profile, identifying the profile it wishes to update via the GUID provided to the `"updates"` field (details on how to obtain the GUID are in the next section). The second item in that list creates a new profile called "Cool Profile".
+The first item in the `"profiles"` list updates an existing profile. It identifies the profile it wants to update through the GUID provided to the `"updates"` field (see the next section for details on how to obtain the GUID). The second item in that list creates a new profile called "Cool Profile".
 
-In the `"schemes"` list, a new color scheme called "Postmodern Tango Light" is defined, and can be subsequently referenced by the user in their settings file or in this JSON file itself (notice that "Cool Profile" uses this newly defined color scheme).
+In the `"schemes"` list, a new color scheme called "Postmodern Tango Light" is defined. You can reference this color scheme in your settings file or in this JSON file itself (notice that "Cool Profile" uses this newly defined color scheme).
 
-Of course, if the developer only wishes to add/modify profiles without adding color schemes (and vice-versa), only the relevant list needs to be present and the other list can be omitted.
+If you only want to add or modify profiles without adding color schemes, or vice versa, include only the relevant list and omit the other list.
 
 > [!NOTE]
-> If you plan to use PowerShell to generate fragments, you must use `-Encoding Utf8`:
+> If you plan to use PowerShell to generate fragments, use `-Encoding Utf8`:
 > ```powershell
 > # BAD: PowerShell uses UTF16LE by default
 > Write-Output $fragmentJson > $fragmentPath
 > ```
 > 
 > ```powershell
-> # GOOD: Uses UTF8, so Terminal will read this
+> # GOOD: Uses UTF8, so Terminal can read this
 > Write-Output $fragmentJson | Out-File $fragmentPath -Encoding Utf8
 > ```
-> If you are using VS Code to edit the JSON, UTF8 is the default, but you can confirm in the bottom status bar.
+> If you use VS Code to edit the JSON, UTF8 is the default, but you can confirm it in the bottom status bar.
 
 ## Profile GUIDs
 
-As previously stated profile GUIDs are a way to reference profiles and let users update and extend them without worrying about location or name changes. The only profiles that can be modified through fragments are the default profiles, Command Prompt and PowerShell, as well as [dynamic profiles](./dynamic-profiles.md). Providing a GUID is optional, however, strongly encouraged.
+As previously stated, profile GUIDs are a way to reference profiles and let users update and extend them without worrying about location or name changes. You can modify only the default profiles, Command Prompt and PowerShell, as well as [dynamic profiles](./dynamic-profiles.md) through fragments. Providing a GUID is optional, but strongly encouraged.
 
-The GUIDs are generated using a Version 5 UUID generator which supports BOM-less UTF-16LE encoding.
+The Version 5 UUID generator creates the GUIDs and supports BOM-less UTF-16LE encoding.
 
-The namespace GUID for Windows Terminal in case of profiles created by plugins and fragments is `{f65ddb7e-706b-4499-8a50-40313caf510a}`. Profiles created by the Windows Terminal Team use a separate GUID (`{2bde4a90-d05f-401c-9492-e40884ead1d8}`). This is done to disambiguate profiles created by the Windows Terminal Team from profiles created by plugins or fragments so they can never accidentally collide.
+The namespace GUID for Windows Terminal in case of profiles created by plugins and fragments is `{f65ddb7e-706b-4499-8a50-40313caf510a}`. Profiles created by the Windows Terminal Team use a separate GUID (`{2bde4a90-d05f-401c-9492-e40884ead1d8}`). This separation disambiguates profiles created by the Windows Terminal Team from profiles created by plugins or fragments so they never accidentally collide.
 
 ### How to determine the GUID of an existing profile
 
-To determine the GUID of a profile to be updated it depends on what kind of profile it is:
+To determine the GUID of a profile to update, consider what kind of profile it is:
 
-A profile shipped by a third party stored in a standard Windows Terminal Fragment location requires the profile & fragment namespace GUID `{f65ddb7e-706b-4499-8a50-40313caf510a}`, the application namespace GUID, and the profile name. For a profile fragment named 'Git Bash' supplied by the application 'Git' the generated GUID is: `{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}`.
+A profile shipped by a third party and stored in a standard Windows Terminal Fragment location requires the profile and fragment namespace GUID `{f65ddb7e-706b-4499-8a50-40313caf510a}`, the application namespace GUID, and the profile name. For a profile fragment named 'Git Bash' supplied by the application 'Git', the generated GUID is `{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}`.
 
-A profile automatically generated by Windows Terminal requires the Windows Terminal internal GUID `{2bde4a90-d05f-401c-9492-e40884ead1d8}` and the profile name. For a profile named 'Ubuntu' automatically generated during WSL installation, the resulting GUID is: `{2c4de342-38b7-51cf-b940-2309a097f518}`. In contrast to the previous fragment example there is no 'application name' involved.
+A profile automatically generated by Windows Terminal requires the Windows Terminal internal GUID `{2bde4a90-d05f-401c-9492-e40884ead1d8}` and the profile name. For a profile named 'Ubuntu' automatically generated during WSL installation, the resulting GUID is `{2c4de342-38b7-51cf-b940-2309a097f518}`. In contrast to the previous fragment example, there's no application name involved.
 
 ### Generating a new profile GUID
 
-To generate a GUID for a completely new profile prior to distributing it you can use the following Python 3 example. It generates a GUID based on the profile & fragment namespace GUID for a profile called 'Git Bash' stored in a standard Windows Terminal Fragments folder under the 'Git' application name, conveniently matching the sanity check.
+To generate a GUID for a completely new profile before distributing it, use the following Python 3 example. It generates a GUID based on the profile and fragment namespace GUID for a profile called 'Git Bash' stored in a standard Windows Terminal Fragments folder under the 'Git' application name, conveniently matching the sanity check.
 
 ```python
 import uuid
@@ -112,9 +112,9 @@ print(f"{{{profileGUID}}}")
 
 ```
 
-### Calculating a GUID for a built in profile
+### Calculating a GUID for a built-in profile
 
-To calculate a GUID for a built in profile, such as the automatically generated WSL profiles, you can use the following Python 3 example. It calculates a GUID based on the Windows Terminal namespace GUID for a profile called 'Ubuntu' that was automatically generated for the WSL distribution, conveniently matching the sanity check.
+To calculate a GUID for a built-in profile, such as the automatically generated WSL profiles, use the following Python 3 example. It calculates a GUID based on the Windows Terminal namespace GUID for a profile called 'Ubuntu' that was automatically generated for the WSL distribution, conveniently matching the sanity check.
 
 ```python
 import uuid
@@ -132,14 +132,14 @@ print(f"{{{profileGUID}}}")
 
 ## Minimum requirements for settings added with fragments
 
-There are some minimal restrictions on what can be added to user settings using JSON fragments:
+Some minimal restrictions apply to what you can add to user settings by using JSON fragments:
 
-- For new profiles added via fragments, the new profile must, at a minimum, define a name for itself.
-- For new color schemes added via fragments, the new color scheme must define a name for itself, as well as define every color in the color table (i.e. the colors "black" through "brightWhite" in the example image above).
+- For new profiles added through fragments, the new profile must define a name for itself.
+- For new color schemes added through fragments, the new color scheme must define a name for itself and define every color in the color table (that is, the colors "black" through "brightWhite" in the preceding example image).
 
 ## Where to place the JSON fragment files
 
-The location to place the JSON fragment files varies depending on the installation method of the application that wishes to place them.
+The location to place the JSON fragment files varies depending on the installation method of the application that adds them.
 
 ### Microsoft Store applications
 
@@ -171,24 +171,24 @@ For applications installed through the Microsoft Store (or similar), the applica
 
 Key things to note:
 
-- The `"Name"` field must be `com.microsoft.windows.terminal.settings` for Windows Terminal to be able to detect the extension.
-- The `"Id"` field can be filled out as the developer wishes.
-- The `"PublicFolder"` field should have the name of the folder, relative to the package root, where the JSON files are stored (this folder is typically called "Public" but can be named something else if the developer wishes).
-- Inside the public folder, a subdirectory called "Fragments" should be created, and the JSON files should be stored in that subdirectory.
+- The `"Name"` field must be `com.microsoft.windows.terminal.settings` for Windows Terminal to detect the extension.
+- The `"Id"` field can be filled out as you wish.
+- The `"PublicFolder"` field should have the name of the folder, relative to the package root, where you store the JSON files (this folder is typically called "Public" but can be named something else).
+- Inside the public folder, create a subdirectory called "Fragments" and store the JSON files in that subdirectory.
 
 ### Applications installed from the web
 
-For applications installed from the web, there are 2 cases.
+For applications installed from the web, consider two cases.
 
-The first is that the installation is for all the users on the system. In this case, the JSON files should be added to the folder:
+The first case is that the installation is for all users on the system. In this case, add the JSON files to the folder:
 
 `C:\ProgramData\Microsoft\Windows Terminal\Fragments\{app-name}\{file-name}.json`
 
-In the second case, the installation is only for the current user. In this case, the JSON files should be added to the folder:
+The second case is that the installation is only for the current user. In this case, add the JSON files to the folder:
 
 `C:\Users\<user>\AppData\Local\Microsoft\Windows Terminal\Fragments\{app-name}\{file-name}.json`
 
-Note that both the `ProgramData` and `LocalAppData` folders are known folders that the installer should be able to access. If in either case, if the `Windows Terminal\Fragments` directory does not exist, the installer should create it. The `{app-name}` should be unique to your application and the `{file-name}.json` can be anything - the terminal will read all .json files in that directory.
+Note that both the `ProgramData` and `LocalAppData` folders are known folders that the installer should access. If the `Windows Terminal\Fragments` directory doesn't exist, the installer should create it. The `{app-name}` should be unique to your application and the `{file-name}.json` can be anything - the terminal reads all .json files in that directory.
 
 ## Distributing media resources with your fragment extension
 

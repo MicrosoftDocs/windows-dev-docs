@@ -1,26 +1,26 @@
 ---
 title: Selection
 description: Learn how to select text in Windows Terminal.
-ms.date: 07/06/2022
+ms.date: 11/10/2025
 ms.topic: how-to
 ---
 
 # Selecting text in Windows Terminal
 
-Selecting text is straightforward in Windows Terminal, but there are a lot of additional features in this space that make it even better.
+Selecting text is straightforward in Windows Terminal, but the terminal offers many additional features that make text selection even better.
 
 ## Mouse support
 
 Left-click and drag your mouse to create a selection. Double-click expands the selection by word, whereas triple-click expands by line.
 
-If you are holding the <kbd>Alt</kbd> key, you will create a block selection (as opposed to a line selection). Block selections create a rectangular region that do not wrap to the end of the line.
+If you hold the <kbd>Alt</kbd> key, you create a block selection (as opposed to a line selection). Block selections create a rectangular region that doesn't wrap to the end of the line.
 
-If you are holding the <kbd>Shift</kbd> key, you can explicitly expand the selection to a specific point on the terminal without the need to click and drag.
+If you hold the <kbd>Shift</kbd> key, you can explicitly expand the selection to a specific point on the terminal without the need to click and drag.
 
-Once you have a selection present, you have a few options. A single left-click will clear your selection. If you actually want to use it, you can right-click to copy the selected text to your clipboard and clear the selection. If you right-click again, the contents of your clipboard will then be pasted into the terminal.
+Once you have a selection, you have a few options. A single left-click clears your selection. If you want to use the selection, you can right-click to copy the selected text to your clipboard and clear the selection. If you right-click again, the contents of your clipboard are pasted into the terminal.
 
 > [!NOTE]
-> Windows Terminal supports mouse input in Windows Subsystem for Linux (WSL) applications as well as Windows applications that use virtual terminal (VT) input. This means applications such as [tmux](https://github.com/tmux/tmux/wiki) and [Midnight Commander](https://www.linuxhelp.com/how-to-install-midnight-commander-in-linux) will recognize when you select items in the terminal window. If an application is in mouse mode, you can hold down <kbd>Shift</kbd> to make a selection instead of sending VT input.
+> Windows Terminal supports mouse input in Windows Subsystem for Linux (WSL) applications as well as Windows applications that use virtual terminal (VT) input. This support means applications such as [tmux](https://github.com/tmux/tmux/wiki) and [Midnight Commander](https://www.linuxhelp.com/how-to-install-midnight-commander-in-linux) recognize when you select items in the terminal window. If an application is in mouse mode, you can hold down <kbd>Shift</kbd> to make a selection instead of sending VT input.
 
 ## Keyboard support
 
@@ -57,34 +57,34 @@ Regardless of being in mark mode, you can expand an existing selection using the
 
 Use the `toggleBlockSelection` action to transform the existing selection into a block selection.
 
-Any selection created or modified by the keyboard also displays selection markers to indicate which end of the selection is actively being moved. You can use the `switchSelectionEndpoint` action to begin moving the other end of the selection.
+Any selection you create or modify by using the keyboard also displays selection markers to indicate which end of the selection is actively being moved. You can use the `switchSelectionEndpoint` action to begin moving the other end of the selection.
 
-Once you have a selection present, you have a few options. You can use the <kbd>ESC</kbd> key to clear the selection. Alternatively, most key input clears the selection and passes the key event directly to the underlying shell. If you actually want to use the selected text, you can use the `copy` action to copy it to your clipboard.
+Once you have a selection, you have a few options. You can use the <kbd>ESC</kbd> key to clear the selection. Alternatively, most key input clears the selection and passes the key event directly to the underlying shell. If you want to use the selected text, you can use the `copy` action to copy it to your clipboard.
 
 ## Copying selected text
 
-As mentioned above, selected text can be copied with a right-click or the `copy` action. However, there are a number of settings regarding copying text that you can customize:
+As mentioned earlier, you can copy selected text with a right-click or the `copy` action. However, you can customize several settings for copying text:
 - Copying formatted text
-    - You can use the `copyFormatting` global setting to also copy the formatting of the selected text itself to the clipboard. This allows you to copy the terminal's font information such as foreground color, background color, and font.
-    - If you want to limit copying the formatting to certain key bindings (or commands), you can modify the `copyFormatting` parameter on a `copy` action.
+    - Use the `copyFormatting` global setting to also copy the formatting of the selected text itself to the clipboard. This setting lets you copy the terminal's font information, such as foreground color, background color, and font.
+    - If you want to limit copying the formatting to certain key bindings or commands, modify the `copyFormatting` parameter on a `copy` action.
 - Copying without dismissing text selection
-    - You can copy text without dismissing the text selection by setting the `dismissSelection` parameter in the `copy` action to `false`.
+    - Set the `dismissSelection` parameter in the `copy` action to `false` to copy text without dismissing the text selection.
 - Copying as a single line
-    - You can copy text as a single line using the `singleLine` parameter in the `copy` action.
+    - Use the `singleLine` parameter in the `copy` action to copy text as a single line.
 - Copying with control sequences
-    - You can include [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) control sequences in the copied text using the `withControlSequences` parameter in the `copy` action.
+    - Use the `withControlSequences` parameter in the `copy` action to include [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) control sequences in the copied text.
 - Removing trailing whitespace from block selections
-    - You can remove the trailing whitespace from a block selection using the `trimBlockSelection` global setting.
+    - Use the `trimBlockSelection` global setting to remove the trailing whitespace from a block selection.
 
-You can also use the `copyOnSelect` global setting to have newly selected text automatically copied to your clipboard. With this setting enabled, if a selection is present, right-clicking the terminal copies and pastes the selected text to your terminal.
+Use the `copyOnSelect` global setting to automatically copy newly selected text to your clipboard. With this setting enabled, if a selection is present, right-clicking the terminal copies and pastes the selected text to your terminal.
 
 > [!NOTE]
-> If `copyOnSelect` is enabled, modifying the selection using the keyboard does not automatically copy the newly selected text. You will need to manually copy the text using the `copy` action or by right-clicking the terminal.
+> If you enable `copyOnSelect`, modifying the selection by using the keyboard doesn't automatically copy the newly selected text. You need to manually copy the text by using the `copy` action or by right-clicking the terminal.
 
 ## Customizing the appearance of selections
 
-Color schemes let you customize the selection color using the `selectionBackground` property in a color scheme. Alternatively, you can override the selection color for a specific profile using the `selectionBackground` profile setting.
+Color schemes let you customize the selection color by using the `selectionBackground` property in a color scheme. Alternatively, you can override the selection color for a specific profile by using the `selectionBackground` profile setting.
 
 ## Customizing word delimiters
 
-As mentioned above, double-clicking and using <kbd>Ctrl+Shift</kbd> + Arrow keys (or <kbd>Ctrl</kbd> + Arrow keys when in mark mode) allow you to navigate by word. However, words can be separated by more than just whitespace. You can customize these word boundaries using the `wordDelimiters` global setting.
+As mentioned earlier, double-clicking and using <kbd>Ctrl+Shift</kbd> + Arrow keys (or <kbd>Ctrl</kbd> + Arrow keys when in mark mode) allow you to navigate by word. However, words can be separated by more than just whitespace. You can customize these word boundaries by using the `wordDelimiters` global setting.
