@@ -16,7 +16,7 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 
 |           | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                        |
 | --------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- |
-| **✅**    | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                            | Yes        | [1.8.2 (1.8.251003001)](stable-channel.md#version-182-18251003001) (10/14/2025)                       |
+| **✅**    | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                            | Yes        | [1.8.3 (1.8.251106002)](stable-channel.md#version-183-18251106002) (11/11/2025)                       |
 | **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                            | No         | [Version 1.8 Preview (1.8-preview)](preview-channel.md#version-18-preview-18-preview) (08/19/2025)                    |
 | **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [2.0.0-experimental3](experimental-channel.md#version-20-experimental-200-experimental3) (11/11/2025) |
 
@@ -51,7 +51,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
 | ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
-| 1.8                     | 10/14/2025            | 1.8.251003001        | 10/14/2025         | Current        | 09/09/2026       |
+| 1.8                     | 09/09/2025            | 1.8.251106002        | 11/11/2025         | Current        | 09/09/2026       |
 | 1.7                     | 03/18/2025            | 1.7.251107005        | 11/11/2025         | Maintenance    | 03/18/2026       |
 | 1.6                     | 09/04/2024            | 1.6.250602001        | 06/10/2025         | Out of Support | 09/04/2025       |
 | 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |
@@ -60,8 +60,8 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | 1.2                     | 11/10/2022            | 1.2.230313.1         | 03/15/2023         | Out of Support | 11/10/2023       |
 | 1.1                     | 05/24/2022            | 1.1.5                | 09/14/2022         | Out of Support | 05/24/2023       |
 | 1.0                     | 11/16/2021            | 1.0.4                | 06/14/2022         | Out of Support | 11/16/2022       |
-| 0.8                     | 6/24/2021             | 0.8.12               | 08/03/2022         | Out of Support | 6/24/2022        |
-| 0.5                     | 3/29/2021             | 0.5.9                | 8/10/2021          | Out of Support | 11/1/2021        |
+| 0.8                     | 06/24/2021            | 0.8.12               | 08/03/2022         | Out of Support | 06/24/2022       |
+| 0.5                     | 03/29/2021            | 0.5.9                | 08/10/2021         | Out of Support | 11/01/2021       |
 
 ### Servicing  
 
