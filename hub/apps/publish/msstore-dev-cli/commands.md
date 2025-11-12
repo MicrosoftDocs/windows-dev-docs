@@ -1,12 +1,12 @@
 ---
-description: How to run the Microsoft Store Developer CLI (preview) commands.
-title: Microsoft Store Developer CLI (preview) Commands
+description: How to run the Microsoft Store Developer CLI (preview) commands for MSIX apps.
+title: Microsoft Store Developer CLI (preview) Commands (MSIX)
 ms.date: 11/08/2024
 ms.topic: article
 zone_pivot_groups: msstoredevcli-installer-packaging
 ---
 
-# Commands
+# Commands (MSIX)
 
 ## Installation
 
@@ -84,29 +84,30 @@ brew install microsoft/msstore-cli/msstore-cli
 
 Print existing configuration.
 
-### Info Command - Usage
+#### Usage
 
 ```console
 msstore info
 ```
 
-### Info Command - Options
+#### Options
 
-| Option        | Description           |
-| ------------- | --------------------- |
-| -v, --verbose | Print verbose output. |
+| Option         | Description                      |
+| -------------  | -------------------------------- |
+| -v, --verbose  | Print verbose output.            |
+| -?, -h, --help | Show help and usage information. |
 
 ## Reconfigure Command
 
 Re-configure the Microsoft Store Developer CLI. You can provide either a Client Secret or a Certificate. Certificates can be provided either through its Thumbprint or by providing a file path (with or without a password).
 
-### Reconfigure - Usage
+#### Usage
 
 ```console
 msstore reconfigure
 ```
 
-### Reconfigure - Options
+#### Options
 
 | Option                       | Description                                             |
 | ---------------------------- | ------------------------------------------------------- |
@@ -118,29 +119,32 @@ msstore reconfigure
 | -cfp, --certificateFilePath  | Specify the certificate file path that should be used.  |
 | -cp, --certificatePassword   | Specify the certificate password that should be used.   |
 | --reset                      | Only reset the credentials, without starting over.      |
+| -v, --verbose                | Print verbose output.                                   |
+| -?, -h, --help               | Show help and usage information.                        |
 
 ## Settings Command
 
 Change settings of the Microsoft Store Developer CLI.
 
-### Settings - Usage
+#### Usage
 
 ```console
 msstore settings
 ```
 
-| Sub-Command | Description                                                               |
-| ----------- | ------------------------------------------------------------------------- |
-| setpdn      | Set the Publisher Display Name property that is used by the init command. |
-
-### Settings - Options
+#### Options
 
 | Option                | Description                                       |
 | --------------------- | ------------------------------------------------- |
 | -t, --enableTelemetry | Enable (empty/true) or Disable (false) telemetry. |
 | -v, --verbose         | Print verbose output.                             |
+| -?, -h, --help        | Show help and usage information.                  |
 
-### Settings - SetPDN Command Usage
+### SetPDN Sub-Command
+
+Set the Publisher Display Name property that is used by the init command.
+
+#### Usage
 
 ```console
 msstore settings setpdn <publisherDisplayName>
@@ -152,238 +156,198 @@ msstore settings setpdn <publisherDisplayName>
 | ---------------------- | -------------------------------------------------------------- |
 | `publisherDisplayName` | The Publisher Display Name property that will be set globally. |
 
-#### Help
+#### Options
 
-```console
-msstore settings setpdn --help
-```
+| Option                | Description                     |
+| --------------------- | ------------------------------- |
+| -?, -h, --help        | Show help and usage information.|
 
 ## Apps Command
 
-| Sub-Command                        | Description                                 |
-| ---------------------------------- | ------------------------------------------- |
-| [list](#apps---list-command-usage) | Lists all the applications in your account. |
-| [get](#apps---get-command-usage)   | Gets the details of a specific application. |
+| Sub-Command                  | Description                                 |
+| -----------------------------| --------------------------------------------|
+| [list](#apps---list---usage) | Lists all the applications in your account. |
+| [get](#apps---get---usage)   | Gets the details of a specific application. |
 
-### Apps - List Command Usage
+#### Apps - List - Usage
 
 ```console
 msstore apps list
 ```
 
-#### List Command - Help
+#### Options
 
-```console
-msstore apps list --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-### Apps - Get Command Usage
+#### Apps - Get - Usage
 
 ```console
 msstore apps get <productId>
 ```
 
-#### Apps - Get Command Arguments
+#### Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Apps - Get Command Help
+#### Options
 
-```console
-msstore apps get --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
 ## Submission Command
 
-| Sub-Command                                                      | Description                                       |
-| ---------------------------------------------------------------- | ------------------------------------------------- |
-| [status](#submission---status-command-usage)                     | Gets the status of a submission.                  |
-| [get](#submission---get-command-usage)                           | Gets the details of a specific submission.        |
-| [getListingAssets](#submission---getlistingassets-command-usage) | Gets the listing assets of a specific submission. |
-| [updateMetadata](#submission---updatemetadata-command-usage)     | Updates the metadata of a specific submission.    |
-| [update](#submission---update-command-usage)                     | Updates the details of a specific submission.     |
-| [poll](#submission---poll-command-usage)                         | Polls the status of a submission.                 |
-| [publish](#submission---publish-command-usage)                   | Publishes a specific submission.                  |
-| [delete](#submission---delete-command-usage)                     | Deletes a specific submission.                    |
+| Sub-Command                                                | Description                                                 |
+| -----------------------------------------------------------| ----------------------------------------------------------- |
+| [status](#submission---status---usage)                     | Gets the status of a submission.                            |
+| [get](#submission---get---usage)                           | Gets the metadata and package info of a specific submission.|
+| [getListingAssets](#submission---getlistingassets---usage) | Gets the listing assets of a specific submission.           |
+| [updateMetadata](#submission---updatemetadata---usage)     | Updates the metadata of a specific submission.              |
+| [poll](#submission---poll---usage)                         | Polls the status of a submission.                           |
+| [publish](#submission---publish---usage)                   | Publishes a specific submission.                            |
+| [delete](#submission---delete---usage)                     | Deletes a specific submission.                              |
 
-### Submission - Status Command Usage
+#### Submission - Status - Usage
 
 ```console
 msstore submission status <productId>
 ```
 
-#### Submission - Status Command Arguments
+#### Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Submission - Status Command Help
+#### Options
 
-```console
-msstore submission status --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-### Submission - Get Command Usage
+#### Submission - Get - Usage
 
 ```console
 msstore submission get <productId>
 ```
 
-#### Submission - Get Command Arguments
+#### Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Submission - Get Command Options
+#### Options
 
-| Option         | Description                                                                            |
-| -------------- | -------------------------------------------------------------------------------------- |
-| -m, --module   | Select which module you want to retrieve ('availability', 'listings' or 'properties'). |
-| -l, --language | Select which language you want to retrieve. [default: en]                              |
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-#### Submission - Get Command Help
-
-```console
-msstore submission get --help
-```
-
-### Submission - GetListingAssets Command Usage
-
-Retrieves the existing draft listing assets from the store submission.
+#### Submission - GetListingAssets - Usage
 
 ```console
 msstore submission getListingAssets <productId>
 ```
 
-#### Submission - GetListingAssets Command Arguments
+#### Arguments
 
 | Argument    | Description     |
 | ----------- | --------------- |
-| `productId` | The product ID. |
+| `productId` | The Store product ID. |
 
-#### Submission - GetListingAssets Command Options
+#### Options
 
-| Option         | Description                                               |
-| -------------- | --------------------------------------------------------- |
-| -l, --language | Select which language you want to retrieve. [default: en] |
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-#### Submission - GetListingAssets Command Help
-
-```console
-msstore submission getListingAssets --help
-```
-
-### Submission - UpdateMetadata Command Usage
+#### Submission - UpdateMetadata - Usage
 
 ```console
 msstore submission updateMetadata <productId> <metadata>
 ```
 
-#### Submission - UpdateMetadata Command Arguments
+#### Arguments
 
 | Argument    | Description                               |
 | ----------- | ----------------------------------------- |
-| `productId` | The product ID.                           |
+| `productId` | The Store product ID.                     |
 | `metadata`  | The updated JSON metadata representation. |
 
-#### Submission - UpdateMetadata Command Options
+#### Options
 
 | Option                   | Description                                                            |
 | ------------------------ | ---------------------------------------------------------------------- |
 | -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
+| -v, --verbose            | Print verbose output.                                                  |
+| -?, -h, --help           | Show help and usage information.                                       |
 
-#### Submission - UpdateMetadata Command Help
-
-```console
-msstore submission updateMetadata --help
-```
-
-### Submission - Update Command Usage
-
-```console
-msstore submission update <productId> <product>
-```
-
-#### Submission - Update Command Arguments
-
-| Argument    | Description                              |
-| ----------- | ---------------------------------------- |
-| `productId` | The product ID.                          |
-| `product`   | The updated JSON product representation. |
-
-#### Submission - Update Command Options
-
-| Option                   | Description                                                            |
-| ------------------------ | ---------------------------------------------------------------------- |
-| -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
-
-#### Submission - Update Command Help
-
-```console
-msstore submission update --help
-```
-
-### Submission - Poll Command Usage
+#### Submission - Poll - Usage
 
 ```console
 msstore submission poll <productId>
 ```
 
-#### Submission - Poll Command Arguments
+#### Arguments
 
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
 
-#### Submission - Poll Command Help
+#### Options
 
-```console
-msstore submission poll --help
-```
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
 
-### Submission - Publish Command Usage
+#### Submission - Publish - Usage
 
 ```console
 msstore submission publish <productId>
 ```
 
-#### Submission - Publish Command Arguments
+#### Arguments
+
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Submission - Delete - Usage
+
+```console
+msstore submission delete <productId>
+```
+
+#### Arguments
 
 | Argument    | Description     |
 | ----------- | --------------- |
-| `productId` | The product ID. |
+| `productId` | The Store product ID. |
 
-#### Submission - Publish Command Help
+#### Options
 
-```console
-msstore submission publish --help
-```
-
-### Submission - Delete Command Usage
-
-Deletes the pending submission from the store.
-
-#### Submission - Delete Command Arguments
-
-| Argument    | Description     |
-| ----------- | --------------- |
-| `productId` | The product ID. |
-
-#### Submission - Delete Command Options
-
-| Option       | Description                                      |
-| ------------ | ------------------------------------------------ |
-| --no-confirm | Do not prompt for confirmation. [default: False] |
-
-#### Submission - Delete Command Help
-
-```console
-msstore submission delete --help
-```
+| Option                | Description                                      |
+| --------------------- | ------------------------------------------------ |
+| --no-confirm          | Do not prompt for confirmation. [default: False] |
+| -v, --verbose         | Print verbose output.                            |
+| -?, -h, --help        | Show help and usage information.                 |
 
 ## Init Command
 
@@ -397,39 +361,39 @@ The `init` command helps you setup your application to publish to the Microsoft 
 - React Native for Desktop
 - PWA
 
-### Init Command - Usage Examples
+### Usage Examples
 
-#### Init Command - Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI 3
 
 ```console
 msstore init "C:\path\to\winui3_app"
 ```
 
-#### Init Command - UWP
+#### UWP
 
 ```console
 msstore init "C:\path\to\uwp_app"
 ```
 
-#### Init Command - .NET MAUI
+#### .NET MAUI
 
 ```console
 msstore init "C:\path\to\maui_app"
 ```
 
-#### Init Command - Flutter
+#### Flutter
 
 ```console
 msstore init "C:\path\to\flutter_app"
 ```
 
-#### Init Command - Electron
+#### Electron
 
 ```console
 msstore init "C:\path\to\electron_app"
 ```
 
-#### Init Command - React Native for Desktop
+#### React Native for Desktop
 
 ```console
 msstore init "C:\path\to\react_native_app"
@@ -438,19 +402,19 @@ msstore init "C:\path\to\react_native_app"
 > [!Note]
 > For Electron, as well as React Native for Desktop projects, both `Npm` and `Yarn` are supported. The presence of the `Yarn` lock file (`yarn.lock`) will be used to determine which package manager to use, so make sure that you check in your lock file into your source control system.
 
-#### Init Command - PWA
+#### PWA
 
 ```console
 msstore init https://contoso.com --output .
 ```
 
-### Init Command - Arguments
+#### Arguments
 
 | Argument    | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `pathOrUrl` | The root directory path where the project file is, or a public URL that points to a PWA. |
 
-### Init Command - Options
+#### Options
 
 | Option                     | Description                                                                                                                                                                                                                    |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -467,57 +431,57 @@ msstore init https://contoso.com --output .
 
 Helps you package your Microsoft Store Application as an MSIX.
 
-### Package Command - Usage Examples
+### Usage Examples
 
-#### Package Command - Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI 3
 
 ```console
 msstore package "C:\path\to\winui3_app"
 ```
 
-#### Package Command - UWP
+#### UWP
 
 ```console
 msstore package "C:\path\to\uwp_app"
 ```
 
-#### Package Command - .NET MAUI
+#### .NET MAUI
 
 ```console
 msstore package "C:\path\to\maui_app"
 ```
 
-#### Package Command - Flutter
+#### Flutter
 
 ```console
 msstore package "C:\path\to\flutter_app"
 ```
 
-#### Package Command - Electron
+#### Electron
 
 ```console
 msstore package "C:\path\to\electron_app"
 ```
 
-#### Package Command - React Native for Desktop
+#### React Native for Desktop
 
 ```console
 msstore package "C:\path\to\react_native_app"
 ```
 
-#### Package Command - PWA
+#### PWA
 
 ```console
 msstore package "C:\path\to\pwa_app"
 ```
 
-### Package Command - Arguments
+#### Arguments
 
 | Option      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `pathOrUrl` | The root directory path where the project file is, or a public URL that points to a PWA. |
 
-### Package Command - Options
+#### Options
 
 | Option          | Description                                                                                                                                                            |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -529,61 +493,61 @@ msstore package "C:\path\to\pwa_app"
 
 Publishes your Application to the Microsoft Store.
 
-### Publish Command - Usage Examples
+### Usage Examples
 
-#### Publish Command - Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI 3
 
 ```console
 msstore publish "C:\path\to\winui3_app"
 ```
 
-#### Publish Command - UWP
+#### UWP
 
 ```console
 msstore publish "C:\path\to\uwp_app"
 ```
 
-#### Publish Command - .NET MAUI
+#### .NET MAUI
 
 ```console
 msstore publish "C:\path\to\maui_app"
 ```
 
-#### Publish Command - Flutter
+#### Flutter
 
 ```console
 msstore publish "C:\path\to\flutter_app"
 ```
 
-#### Publish Command - Electron
+#### Electron
 
 ```console
 msstore publish "C:\path\to\electron_app"
 ```
 
-#### Publish Command - React Native for Desktop
+#### React Native for Desktop
 
 ```console
 msstore publish "C:\path\to\react_native_app"
 ```
 
-#### Publish Command - PWA
+#### PWA
 
 ```console
 msstore publish "C:\path\to\pwa_app"
 ```
 
-### Publish Command - Arguments
+#### Arguments
 
 | Option      | Description                                                                              |
 | ----------- | ---------------------------------------------------------------------------------------- |
 | `pathOrUrl` | The root directory path where the project file is, or a public URL that points to a PWA. |
 
-### Publish Command - Options
+#### Options
 
 | Option               | Description                                                                                                                                                                                  |
 | -------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| -i, --inputDirectory | The directory where the '.msix' or '.msixupload' file to be used for the publishing command. If not provided, the cli will try to find the best candidate based on the 'pathOrUrl' argument. |
+| -i, --inputFile | The path to the '.msix' or '.msixupload' file to be used for the publishing command. If not provided, the cli will try to find the best candidate based on the 'pathOrUrl' argument.              |
 | -id, --appId         | Specifies the Application Id. Only needed if the project has not been initialized before with the 'init' command.                                                                            |
 | -nc, --noCommit | Disables committing the submission, keeping it in draft state. |
 | -f, --flightId | Specifies the Flight Id where the package will be published. |
@@ -614,7 +578,7 @@ For example:
 
 ```yaml
 - name: Setup Microsoft Store Developer CLI
-  uses: microsoft/setup-msstore-cli@v1
+  uses: microsoft/microsoft-store-apppublisher@v1.1
 - name: Configure Microsoft Store Developer CLI
   run: msstore reconfigure --tenantId ${{ secrets.PARTNER_CENTER_TENANT_ID }} --sellerId ${{ secrets.PARTNER_CENTER_SELLER_ID }} --clientId ${{ secrets.PARTNER_CENTER_CLIENT_ID }} --clientSecret ${{ secrets.PARTNER_CENTER_CLIENT_SECRET }}
 ```

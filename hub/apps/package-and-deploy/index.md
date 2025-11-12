@@ -1,14 +1,14 @@
 ---
-title: Deployment overview
-description: The topics in this section introduce options and guidance around deploying different types of Windows apps. Your first decision will be whether or not to package your app.
+title: Packaging and deployment overview
+description: The topics in this section introduce options and guidance for deploying different types of Windows apps. Your first decision will be whether or not to package your app.
 ms.topic: concept-article
 ms.date: 10/05/2023
 ms.localizationpriority: medium
 ---
 
-# Deployment overview
+# Packaging and deployment overview
 
-The topics in this section introduce options and guidance around deploying different types of Windows apps.
+The topics in this section introduce options and guidance for deploying different types of Windows apps.
 
 ## Advantages and disadvantages of packaging your app
 

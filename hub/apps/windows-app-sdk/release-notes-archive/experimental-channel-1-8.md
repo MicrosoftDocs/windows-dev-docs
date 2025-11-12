@@ -2,7 +2,7 @@
 title: Experimental channel release notes for the Windows App SDK 1.8
 description: Learn about the experimental releases of the Windows App SDK 1.8.
 ms.topic: release-notes
-ms.date: 09/08/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -1221,7 +1221,7 @@ Learn more about responsible development practices used during Windows AI API de
 
 This is the latest release of the experimental channel.
 
-To download, retarget your WinAppSDK NuGet version to `1.8.250515001-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.8.250515001-experimental1`.
 
 #### Object Erase
 

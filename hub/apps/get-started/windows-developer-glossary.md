@@ -2,7 +2,7 @@
 title: Windows developer glossary
 description:  A glossary of terms related to Windows application development.
 ms.topic: glossary
-ms.date: 9/24/2025
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -166,7 +166,7 @@ Windows AI Foundry offers AI-backed features and APIs on Windows 11 PCs. These f
 
 #### Windows API
 
-Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of WinAppSDK and WinUI 3.
+Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of the Windows App SDK and WinUI.
 
 #### Windows App SDK
 

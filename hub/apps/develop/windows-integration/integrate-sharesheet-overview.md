@@ -2,7 +2,7 @@
 description: Learn how to integrate apps with the Windows Share Sheet, a system-provided UI that enables users to share content from your app with other Windows apps.
 title: Integrate Share options in your Windows app - A comprehensive guide
 ms.topic: concept-article
-ms.date: 11/01/2024
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 keywords: windows, windows share, share sheet, share charm, file sharing, sharesheet, share button, share option, pwa, packaged apps, windows 11, c++
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
@@ -33,5 +33,5 @@ In this comprehensive guide, you'll learn how to add the share feature to your p
 - [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)
 - [Advantages and Disadvantages of packaging an application - Deployment overview](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app)
 - [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/)
-- [Share Contract Implementation for WinAppSDK App](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
+- [Share Contract Implementation for Windows App SDK](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
 - [Share Contract Implementation for Apps Packaged with External Location](https://github.com/microsoft/AppModelSamples/blob/master/Samples/PackageWithExternalLocation/cs/PhotoStoreDemo/StartUp.cs)

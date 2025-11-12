@@ -2,7 +2,7 @@
 title: Experimental channel release notes for the Windows App SDK 1.2
 description: Learn about the experimental channel release notes for the Windows App SDK 1.2
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -31,7 +31,7 @@ The experimental channel provides releases of the Windows App SDK that include [
 
 This is the latest release of the experimental channel. It supports all [experimental channel features](../release-channels.md#features-available-by-release-channel) and features from [Version 1.2 Preview 1 (1.2.0-preview1)](preview-channel-1.2.md#version-12-preview-1-120-preview1).
 
-To download, retarget your WinAppSDK NuGet version to `1.2.220909.2-experimental2`.
+To download, retarget your Windows App SDK NuGet version to `1.2.220909.2-experimental2`.
 
 ### Fixed issue
 
@@ -41,7 +41,7 @@ In upcoming Windows Insider Preview builds, applications using Windows App SDK w
 
 This is the latest release of the experimental channel. It supports all [experimental channel features](../release-channels.md#features-available-by-release-channel).
 
-To download, retarget your WinAppSDK NuGet version to `1.2.220727.1-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.2.220727.1-experimental1`.
 
 ### Input & Composition
 
@@ -80,8 +80,8 @@ Registering app display name and icon for app notification is now supported. Che
 
 - Apps need to be rebuilt after updating to Windows App SDK 1.2-experimental1 due to a breaking change introduced in the ABI.
 - Apps that reference a package that depends on WebView2 (like Microsoft.Identity.Client) fail to build. This is caused by conflicting binaries at build time. See [issue 2492](https://github.com/microsoft/WindowsAppSDK/issues/2492) on GitHub for more information.
-- Using `dotnet build` with a WinAppSDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
-- The default WinAppSDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
+- Using `dotnet build` with a Windows App SDK C# class library project may see a build error "Microsoft.Build.Packaging.Pri.Tasks.ExpandPriContent task could not be loaded". To resolve this issue set `<EnableMsixTooling>true</EnableMsixTooling>` in your project file.
+- The default Windows App SDK templates note that the MaxVersionTested="10.0.19041.0" when it should be "10.0.22000.0". For full support of some features, notably UnlockedDEHs, update the MaxVersionTested to "10.0.22000.0" in your project file.
 
 ## Related topics
 

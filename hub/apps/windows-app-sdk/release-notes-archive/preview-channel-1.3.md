@@ -2,7 +2,7 @@
 title: Preview release channel for the Windows App SDK 1.3
 description: Provides info about the preview release channel for the Windows App SDK 1.3.
 ms.topic: release-notes
-ms.date: 07/14/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ The preview channel includes releases of the Windows App SDK with [preview chann
 
 ## Version 1.3 Preview 1 (1.3.0-preview1)
 
-This is the latest release of the preview channel for version 1.3. This release includes previews for new features across WinAppSDK and several performance, security, accessibility and reliability bug fixes.
+This is the latest release of the preview channel for version 1.3. This release includes previews for new features across Windows App SDK and several performance, security, accessibility and reliability bug fixes.
 
 In an existing Windows App SDK 1.2 (from the stable channel) app, you can update your Nuget package to 1.3.0-preview1 (see the **Update a package** section in [Install and manage packages in Visual Studio using the NuGet Package Manager](/nuget/consume-packages/install-use-packages-visual-studio#update-a-package)).
 
@@ -54,7 +54,7 @@ public MainWindow()
 
 Replacing several lines of boilerplate code, you're now able to use AppWindow APIs directly from a **Window** through `Window.AppWindow`. See the [Window.AppWindow API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/main/specs/appwindow-spec.md) on GitHub for additional background and usage information.
 
-### New features from across WinAppSDK
+### New features from across Windows App SDK
 
 - `ApplicationModel.DynamicDependency`: `PackageDependency.PackageGraphRevisionId` that replaces the deprecated MddGetGenerationId.
 - Environment Manager: `EnvironmentManager.AreChangesTracked` to inform you whether changes to the environment manager are able to be tracked in your application. See the [Environment Manager API spec](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/AppLifecycle/EnvironmentVariables/AppLifecycle%20-%20Environment%20Variables%20(EV).md) on GitHub for more information.

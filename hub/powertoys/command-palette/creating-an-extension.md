@@ -1,7 +1,7 @@
 ---
 title: How to Create Command Palette Extensions in C# - Step by Step Guide
 description: Learn how to build custom Command Palette extensions for PowerToys using C#. Complete tutorial with templates, deployment, and best practices for Windows developers.
-ms.date: 08/04/2025
+ms.date: 10/28/2025
 ms.topic: how-to
 ms.keywords: command palette extension, powertoys extension, windows development, c# extension development, visual studio deployment, windows productivity tools
 no-loc: [PowerToys, Windows, Insider]
@@ -104,7 +104,7 @@ Once your package is deployed and running, Command Palette will automatically di
 > **/Properties/launchSettings.json
 > *.pubxml
 > ```
-> These files are used by WinAppSdk to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
+> These files are used by Windows App SDK to deploy your app as a package. Without it, anyone who clones your repo won't be able to deploy your extension.
 
 1. In the Command Palette, type `Reload` and press `Enter`
     1. Make sure to select the `Reload` that has a subtitle of: `Reload Command Palette Extension`

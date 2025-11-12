@@ -2,7 +2,7 @@
 title: Stable channel release notes for the Windows App SDK 
 description: Provides information about the stable release channel for the Windows App SDK.
 ms.topic: release-notes
-ms.date: 09/22/2025
+ms.date: 10/28/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -26,9 +26,43 @@ In an existing Windows App SDK app, you can update your Nuget package to 1.8.250
 
 For the updated runtime and MSIX, see [Downloads for the Windows App SDK](./downloads.md).
 
-### Version 1.8.2 (1.8.251003001)
+### Version 1.8.3 (1.8.251106002)
 
 This is the latest service release for Version 1.8 of the Windows App SDK.
+
+#### Bug fixes
+
+* Fixed a potential crash if OrientedVirtualizingPanel hits an overflow when computing bounds. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): OrientedVirtualizingPanel_FixBoundsOverflow).
+
+#### Windows ML Updates
+
+##### Expanded OS Support
+Windows ML now supports Windows 10 (version 1809 and later) and Windows Server 2019 and later for CPU and GPU workloads with select execution providers.
+Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supported-execution-providers)
+
+##### AMD MiGraphX Execution Provider
+Added support for the AMD MiGraphX execution provider, enabling ML workloads on AMD GPUs for the latest Ryzen AI 300-series processors.
+This provider is currently being flighted in Windows Insider Program channels and is targeted for retail availability by the end of the month.
+Learn more: [Supported Execution Providers](/windows/ai/new-windows-ml/supported-execution-providers)
+
+#### Windows ML Model Catalog APIs
+
+These APIs enable your app or library to dynamically discover and download large AI model files from your own online model catalogs, and share them across apps on the PC—without bundling those large files directly with your app or library. [See the docs](/windows/ai/new-windows-ml/model-catalog/overview) to learn how to use these APIs!
+
+#### New APIs for 1.8.3:
+```
+Microsoft.Windows.AI.MachineLearning
+
+    CatalogModelInfo
+    CatalogModelInstance
+    CatalogModelInstanceResult
+    CatalogModelInstanceStatus
+    CatalogModelStatus
+    ModelCatalog
+    ModelCatalogSource
+```
+
+### Version 1.8.2 (1.8.251003001)
 
 #### Updated ONNX Runtime
 Updated the `onnxruntime.dll` to 1.23.1 introducing several enhancements to ONNX Runtime's Python and C++ APIs, focusing on improved device and memory information handling, synchronization stream support, and tensor copy functionality. It adds new Python bindings for device/memory types, exposes more detailed session input/output metadata, and provides a Python-accessible tensor copy API. The changes also refactor and extend the C++ API for better stream and memory info management.
@@ -67,7 +101,7 @@ See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-si
 - **Broad hardware support** - Runs on all Windows 11 PCs (x64 and ARM64) with any hardware configuration
 
 
-### New APIs for 1.8.1
+#### New APIs for 1.8.1
 
 This release includes the following new APIs compared to the previous 1.8 release:
 
@@ -135,18 +169,20 @@ The MSIX publishing support has been factored into a standalone nuget package, w
 
 #### Storage Pickers
 
-The Microsoft.Windows.Storage.Pickers API in the Windows App SDK provides a modernized file and folder picker experience for desktop applications. This API is based on the existing Windows.Storage.Pickers API design, but with key improvements for desktop scenarios. The new Microsoft.Windows.Storage.Pickers API addresses two critical limitations of the UWP file and folder pickers on Apps developed with WinAppSDK/WinUI 3:
+The Microsoft.Windows.Storage.Pickers API in the Windows App SDK provides a modernized file and folder picker experience for desktop applications. This API is based on the existing Windows.Storage.Pickers API design, but with key improvements for desktop scenarios. The new Microsoft.Windows.Storage.Pickers API addresses two critical limitations of the UWP file and folder pickers on Apps developed with Windows App SDK/WinUI:
+
 - Elevated Process Support: The existing Windows.Storage.Pickers APIs do not work when the application is running as an administrator. The new API enables file and folder selection in elevated mode.
 - Simplified Usage in WinUI 3: Using the existing UWP pickers in WinUI 3 requires initializing a window handle for window association. The new pickers eliminate this requirement by accepting a WindowId directly in the constructor, making them easier to use.
 
 #### Other notable changes
-- Prior to WinAppSDK 1.8, packaged apps running in the AppContainer did not require the packageManagement capability, due to a DeploymentManager auto-initialization issue.  That issue has now been resolved, and in turn, the packageManagement capability is now required for AppContainer-based apps.
+
+- Prior to Windows App SDK 1.8, packaged apps running in the AppContainer did not require the packageManagement capability, due to a DeploymentManager auto-initialization issue.  That issue has now been resolved, and in turn, the packageManagement capability is now required for AppContainer-based apps.
 - The experimental WinML APIs have been removed from this release and will be included in a future release.
 
 #### Bug Fixes
 - Fixed an issue where the hover effects of other windows for the app could flicker when at least one window had ExtendsContentIntoTitleBar set to true.
 - NavigationView: Fixed a bug where setting SelectedItem as null did not correctly clear the selection state in collapsed mode.
-- TabView: Fixed an issue where closing a tab would move keyboard focus to the “Add tab” button instead of the newly selected tab.
+- TabView: Fixed an issue where closing a tab would move keyboard focus to the "Add tab" button instead of the newly selected tab.
 - SplitButton: Fixed UI inconsistency where the SplitButton control appeared shorter than standard Button controls
 - TabView: Fixed issue TabView spacing in WinUI, When setting the TabWidthMode property of a TabView to SizeToContent, the padding between the header text and the left/right edges of the tab becomes uneven
 
