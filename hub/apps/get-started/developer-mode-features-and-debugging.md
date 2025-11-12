@@ -101,7 +101,8 @@ To fix this issue:
     - 3197985
 
 3. Check for Windows updates in **Settings &rarr; Updates and Security &rarr; Windows Updates**.
-4. Verify that the Windows Developer Mode package is present in **Settings &rarr; System &rarr; Apps & Features &rarr; Manage optional features &rarr; Add a feature**. If it's missing, Windows can't find the correct package for your computer.
+1. Verify that the Windows Developer Mode package is present in **Settings &rarr; System &rarr; Optional features &rarr; Add a feature** (on versions older than Windows 10 22H2, look under **Settings** **→** **Apps** **→** **Apps & features** **→ Optional features** **→** **Add a feature**). If it's missing, Windows can't find the correct package for your computer.
+
 5. After performing the above steps, *disable* and then *re-enable* Developer Mode to verify the fix.
 
 ### Failed to install the package
