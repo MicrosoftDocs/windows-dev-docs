@@ -58,7 +58,7 @@ These configurations can be edited from the PowerToys Settings:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation shortcut | The custom shortcut used to open the shortcut guide |
+| Activation shortcut | The custom shortcut used to open Shortcut Guide |
 | App theme | **Light**, **Dark** or **Windows default** |
 | Excluded apps | Ignores Shortcut Guide when these apps are in focus. Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
