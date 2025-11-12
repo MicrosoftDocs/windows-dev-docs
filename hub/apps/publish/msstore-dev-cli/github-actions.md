@@ -46,7 +46,7 @@ You can automate app updates using GitHub Actions for both types of apps, **MSIX
 
 ## [MSIX](#tab/msix)
 
-[Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store. 
+[Add the GitHub Action Workflow](https://docs.github.com/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store. 
 
 To understand how to automate package and metadata updates using GitHub Actions, check out the following video:
 
@@ -172,7 +172,7 @@ The above workflows will do the following in the background:
   * Authenticate your Microsoft Store Partner Center account using the secrets you configured (Tenant ID, Client ID, Client Secret, Seller ID). 
   * Use the Microsoft Store Developer CLI (msstore) to obtain base metadata and publish the updated package or metadata to the Microsoft Store.
 
-For more information on commands, refer [Microsoft Store Developer CLI (MSIX)](https://learn.microsoft.com/en-us/windows/apps/publish/msstore-dev-cli/overview).
+For more information on commands, refer [Microsoft Store Developer CLI (MSIX)](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview).
 
 ### Step 3
 
@@ -180,7 +180,7 @@ After your GitHub Actions workflow completes successfully, check the Microsoft S
 
 ## [MSI/EXE](#tab/msiexe)
 
-[Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store.
+[Add the GitHub Action Workflow](https://docs.github.com/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store.
 
 ### Step 1
 
@@ -349,7 +349,7 @@ The above workflows will do the following in the background:
   * Authenticate your Microsoft Store Partner Center account using the secrets you configured (Tenant ID, Client ID, Client Secret, Seller ID). 
   * Use the Microsoft Store Developer CLI (msstore) to obtain base package info and metadata and publish the updated package or metadata to the Microsoft Store.
 
-For more information on commands, refer  [Microsoft Store Developer CLI (MSI/EXE)](https://learn.microsoft.com/en-us/windows/apps/publish/msstore-dev-cli/overview-exe).
+For more information on commands, refer  [Microsoft Store Developer CLI (MSI/EXE)](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview-exe).
 
 ### Step 3
 
