@@ -2,16 +2,16 @@
 description: Steps to use GitHub Actions to publish app updates to Microsoft Store.
 title: Publish app updates to Microsoft Store with GitHub Actions 
 ms.topic: how-to
-ms.date: 11/07/2025
+ms.date: 11/12/2025
 ---
 
 # Publishing app updates to Microsoft Store with GitHub Actions 
 
-GitHub Actions lets you automate the process of updating your Microsoft Store apps directly from your code repository. By integrating updates into your workflow, you save time, reduce manual errors, and ensure every change is securely tracked and delivered to the Store. 
+GitHub Actions enables you to implement a robust CI/CD pipeline for your Microsoft Store apps. By automating build, test, and deployment steps directly from your code repository, you ensure that every change, whether it’s a bug fix, feature update, or metadata change, is validated and securely published to the Microsoft Store. 
 
-To understand how to update your Microsoft Store apps directly from your code repository using GitHub Actions, check out the following video:
+To understand how to set up pre-requisites for the app update process, check out the following video:
 
->[!VIDEO https://learn-video.azurefd.net/vod/player?id=71516e30-3dd4-44f7-8428-c31211cb4be7]
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=ed5bcd84-0989-4295-8902-549a43fec54b]
 
 ## Pre-requisite
 
@@ -32,52 +32,151 @@ To understand how to update your Microsoft Store apps directly from your code re
 
 If your project already has a GitHub repository, you can use it directly for automating Microsoft Store app updates.
 
-### Step 1
-
 * In your GitHub repo, go to **Settings** > **Secrets and variables** > **Actions** > **New Repository Secret**. 
 
 :::image type="content" source="../images/github-actions-repo-secret.png" lightbox="../images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
 
 * Add the following secrets:
-  * TENANT_ID
-  * CLIENT_ID
-  * CLIENT_SECRET
+  * AZURE_AD_APPLICATION_CLIENT_ID 
+  * AZURE_AD_APPLICATION_SECRET 
+  * AZURE_AD_TENANT_ID   
   * SELLER_ID 
+
+You can automate app updates using GitHub Actions for both types of apps, **MSIX and MSI/EXE**. Select the app type that you want to update below:
+
+## [MSIX](#tab/msix)
+
+[Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store. 
+
+To understand how to automate package and metadata updates using GitHub Actions, check out the following video:
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=71516e30-3dd4-44f7-8428-c31211cb4be7]
+
+### Step 1
+
+#### For package updates
+* Under .github/workflows/, create AppPackageAutoUpdate.yml using the provided workflow snippet:
+
+```console
+name: AppPackageAutoUpdate 
+ 
+on: 
+  push: 
+    paths: 
+      - 'release/package.msix' 
+ 
+jobs: 
+  build: 
+    runs-on: windows-latest 
+ 
+    steps: 
+      - name: Checkout repository 
+        uses: actions/checkout@v4 
+ 
+      - name: Configure Microsoft Store CLI 
+        uses: microsoft/microsoft-store-apppublisher@v1.1 
+ 
+      - name: Reconfigure store credentials 
+        run: msstore reconfigure ` 
+              --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} ` 
+              --sellerId ${{ secrets.SELLER_ID }} ` 
+              --clientId ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }} ` 
+              --clientSecret ${{ secrets.AZURE_AD_APPLICATION_SECRET }} 
+ 
+      - name: Publish App package 
+        run: msstore publish '${{ github.workspace }}/release/package.msix' -id <Store product Id>
+```
+
+* When the package.msix is updated as part of the CI/CD flow in the release folder, the AppPackageAutoUpdate.yml workflow is triggered automatically.  
 
 ### Step 2
 
-Before publishing updates, you need the base metadata JSON from Partner Center for your app submission. This ensures you start with the correct structure for MSIX or Win32 apps. Create a GitHub Actions workflow under .github/workflows/ (e.g., GetBaseMetadata.yml) with the following snippets:
+#### For metadata updates
+* Before publishing metadata updates for the first time, obtain the base metadata JSON from Partner Center for your app submission. This ensures you start with the correct structure for your app. Create a GitHub Actions workflow under .github/workflows/GetBaseMetadata.yml using the provided snippet:
 
-For MSIX
-:::image type="content" source="../images/github-actions-base-metadata-msix.png" lightbox="../images/github-actions-base-metadata-msix.png" alt-text="A screenshot showing command line to obtain nase metadata for msix apps.":::
+```console
+name: GetBaseMetadata 
+ 
+on: 
+  workflow_dispatch: 
+ 
+jobs: 
+  build: 
+    runs-on: windows-latest 
+ 
+    steps: 
+    - uses: actions/checkout@v3 
+ 
+    - uses: microsoft/microsoft-store-apppublisher@v1.1 
+ 
+    - name: Configure MSStore CLI 
+      run: | 
+        msstore reconfigure ` 
+          --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} ` 
+          --sellerId ${{ secrets.SELLER_ID }} ` 
+          --clientId ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }} ` 
+          --clientSecret ${{ secrets.AZURE_AD_APPLICATION_SECRET }} 
+ 
+    - name: Get base metadata  
+      shell: pwsh 
+      run: | 
+        msstore submission get <Store product Id>
+```
 
-For EXE
-:::image type="content" source="../images/github-actions-base-metadata-exe.png" lightbox="../images/github-actions-base-metadata-exe.png" alt-text="A screenshot showing command line to obtain nase metadata for exe apps.":::
+* Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
+
+:::image type="content" source="../images/github-actions-repo-secret.png" lightbox="../images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
+
+* Now, under .github/workflows/, create AppMetadataAutoUpdate.yml using the provided workflow snippet: 
+
+```console
+name: AppMetadataAutoUpdate 
+ 
+on: 
+  push: 
+    paths: 
+      - 'metadata/metadata.json' 
+ 
+jobs: 
+  build: 
+    runs-on: windows-latest 
+ 
+    steps: 
+      - name: Checkout repository 
+        uses: actions/checkout@v4 
+ 
+      - name: Configure Microsoft Store CLI 
+        uses: microsoft/microsoft-store-apppublisher@v1.1 
+ 
+      - name: Reconfigure store credentials 
+        run: msstore reconfigure ` 
+              --tenantId ${{ secrets.AZURE_AD_TENANT_ID }} ` 
+              --sellerId ${{ secrets.SELLER_ID }} ` 
+              --clientId ${{ secrets.AZURE_AD_APPLICATION_CLIENT_ID }} ` 
+              --clientSecret ${{ secrets.AZURE_AD_APPLICATION_SECRET }} 
+ 
+      - name: Update metadata 
+        run: msstore submission updateMetadata <Store product Id> '${{ github.workspace }}/metadata/metadata.json'  
+      - name: Publish to Store 
+        run: msstore submission publish <Store product Id>
+```
+
+* When metadata.json gets updated as part of the CI/CD flow in the metadata folder, it will automatically trigger the AppMetadataAutoUpdate.yml workflow.
+
+The workflow will do the following in the background:  
+  * Invoke the GitHub Action (microsoft-store-apppublisher) 
+  * Authenticate your Microsoft Store Partner Center account using the secrets you configured (Tenant ID, Client ID, Client Secret, Seller ID). 
+  * Use the Microsoft Store Developer CLI (msstore) to publish the updated metadata or package to the Microsoft Store.
+
+For more information on commands, refer [Microsoft Store Developer CLI (MSIX)](https://learn.microsoft.com/en-us/windows/apps/publish/msstore-dev-cli/overview). 
 
 ### Step 3
 
-* [Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing app metadata and package updates to store. 
-* Under .github/workflows/, create a YAML file (e.g., AppMetadataUpdate.yml or AppPackageUpdate.yml). 
-* Here’s an example workflow snippet: 
+After your GitHub Actions workflow completes successfully, check the Microsoft Store to confirm that your changes are live. Updates will appear after the certification process in Partner Center is complete.
 
-:::image type="content" source="../images/github-actions-workflow.png" lightbox="../images/github-actions-workflow.png" alt-text="A screenshot showing metadata update YAML file.":::
+## [MSI/EXE](#tab/msiexe)
 
-### Step 4
+[Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store.
 
-* For metadata updates: Execute the workflow by providing the path to updated metadata which will get published to the Microsoft Store. 
-* For package updates: Execute the workflows by pointing to the location of your newly published package (e.g., PackageName.msix for MSIX apps or PackageName.json for EXE apps)
 
-### Step 5
 
-* Run the workflow by going to the Actions tab in your GitHub repository, selecting the relevant workflow, and clicking Run workflow. 
-
-:::image type="content" source="../images/github-actions-run-workflow.png" lightbox="../images/github-actions-run-workflow.png" alt-text="A screenshot showing the process of running a workflow.":::
-
-* The workflow will do the following in the background:  
-  * Invoke the GitHub Action (microsoft-store-apppublisher) 
-  * Authenticate your Microsoft Store Partner Center account using the secrets you configured (Tenant ID, Client ID, Client Secret, Seller ID). 
-  * Use the Microsoft Store Developer CLI (msstore) to publish the updated metadata or package to the Microsoft Store. 
-
-### Step 6
-
-Once the workflow is executed successfully, check the Microsoft Store to confirm your changes are live after certification.
