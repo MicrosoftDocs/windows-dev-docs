@@ -32,15 +32,15 @@ To understand how to set up pre-requisites for the app update process, check out
 
 If your project already has a GitHub repository, you can use it directly for automating Microsoft Store app updates.
 
-* In your GitHub repo, go to **Settings** > **Secrets and variables** > **Actions** > **New Repository Secret**. 
+In your GitHub repo, go to **Settings** > **Secrets and variables** > **Actions** > **New Repository Secret**. 
 
 :::image type="content" source="../images/github-actions-repo-secret.png" lightbox="../images/github-actions-repo-secret.png" alt-text="A screenshot showing how to add secrets to your repository.":::
 
-* Add the following secrets:
-  * AZURE_AD_APPLICATION_CLIENT_ID 
-  * AZURE_AD_APPLICATION_SECRET 
-  * AZURE_AD_TENANT_ID   
-  * SELLER_ID 
+Add the following secrets:
+* AZURE_AD_APPLICATION_CLIENT_ID 
+* AZURE_AD_APPLICATION_SECRET 
+* AZURE_AD_TENANT_ID   
+* SELLER_ID 
 
 You can automate app updates using GitHub Actions for both types of apps, **MSIX and MSI/EXE**. Select the app type that you want to update below:
 
