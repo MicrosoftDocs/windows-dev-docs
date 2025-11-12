@@ -302,7 +302,7 @@ jobs:
 * Upon completion, the workflow will obtain the metadata for the specified module for your app in the build logs.
 * Copy this and create a metadata.json file in the metadata folder.  
 
-*Now, under .github/workflows/, create AppMetadataAutoUpdate.yml using the provided workflow snippet: 
+* Now, under .github/workflows/, create AppMetadataAutoUpdate.yml using the provided workflow snippet: 
 
 ```console
 name: AppMetadataAutoUpdate 
