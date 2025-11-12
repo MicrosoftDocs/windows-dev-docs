@@ -125,8 +125,7 @@ jobs:
 
 * Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
 
-:::image type="content" source="../images/github-actions-get-base-metadata-workflow-msix.png" lightbox="../images/github-actions-get-base-metadata-workflow-msix.png" alt-text="A screenshot showing 
-workflow run process for obtaining base metadata for MSIX app.":::
+:::image type="content" source="../images/github-actions-get-base-metadata-workflow-msix.png" lightbox="../images/github-actions-get-base-metadata-workflow-msix.png" alt-text="A screenshot showing workflow run process for obtaining base metadata for MSIX app.":::
 
 * Upon completion, the workflow will obtain the metadata for your app in the build logs.
 * Copy this and create a metadata.json file in the metadata folder. 
@@ -218,8 +217,7 @@ jobs:
 
 * Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
 
-:::image type="content" source="../images/github-actions-get-base-package-workflow-exe.png" lightbox="../images/github-actions-get-base-package-workflow-exe.png" alt-text="A screenshot showing 
-workflow run process for obtaining base package info for EXE app.":::
+:::image type="content" source="../images/github-actions-get-base-package-workflow-exe.png" lightbox="../images/github-actions-get-base-package-workflow-exe.png" alt-text="A screenshot showing workflow run process for obtaining base package info for EXE app.":::
 
 * Upon completion, the workflow will obtain the package info for your app in the build logs.
 * Copy this and create a package.json file in the release folder. 
@@ -299,8 +297,7 @@ jobs:
 
 * Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
 
-:::image type="content" source="../images/github-actions-get-base-metadata-workflow-exe.png" lightbox="../images/github-actions-get-base-metadata-workflow-exe.png" alt-text="A screenshot showing 
-workflow run process for obtaining base metadata for EXE app.":::
+:::image type="content" source="../images/github-actions-get-base-metadata-workflow-exe.png" lightbox="../images/github-actions-get-base-metadata-workflow-exe.png" alt-text="A screenshot showing workflow run process for obtaining base metadata for EXE app.":::
 
 * Upon completion, the workflow will obtain the metadata for the specified module for your app in the build logs.
 * Copy this and create a metadata.json file in the metadata folder.  
