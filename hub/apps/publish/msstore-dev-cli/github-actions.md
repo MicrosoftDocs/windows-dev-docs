@@ -52,10 +52,9 @@ To understand how to automate package and metadata updates using GitHub Actions,
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=71516e30-3dd4-44f7-8428-c31211cb4be7]
 
-### Step 1
+### For package updates
 
-#### For package updates
-* Under .github/workflows/, create AppPackageAutoUpdate.yml using the provided workflow snippet:
+Under .github/workflows/, create AppPackageAutoUpdate.yml using the provided workflow snippet:
 
 ```console
 name: AppPackageAutoUpdate 
@@ -87,12 +86,11 @@ jobs:
         run: msstore publish '${{ github.workspace }}/release/package.msix' -id <Store product Id>
 ```
 
-* When the package.msix is updated as part of the CI/CD flow in the release folder, the AppPackageAutoUpdate.yml workflow is triggered automatically.  
+When the package.msix is updated as part of the CI/CD flow in the release folder, the AppPackageAutoUpdate.yml workflow is triggered automatically.  
 
-### Step 2
+### For metadata updates
 
-#### For metadata updates
-* Before publishing metadata updates for the first time, obtain the base metadata JSON from Partner Center for your app submission. This ensures you start with the correct structure for your app. So, create a GitHub Actions workflow under .github/workflows/GetBaseMetadata.yml using the provided snippet:
+Before publishing metadata updates for the first time, obtain the base metadata JSON from Partner Center for your app submission. This ensures you start with the correct structure for your app. So, create a GitHub Actions workflow under .github/workflows/GetBaseMetadata.yml using the provided snippet:
 
 ```console
 name: GetBaseMetadata 
@@ -123,14 +121,13 @@ jobs:
         msstore submission get <Store product Id>
 ```
 
-* Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
+Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
 
 :::image type="content" source="../images/github-actions-get-base-metadata-workflow-msix.png" lightbox="../images/github-actions-get-base-metadata-workflow-msix.png" alt-text="A screenshot showing workflow run process for obtaining base metadata for MSIX app.":::
 
-* Upon completion, the workflow will obtain the metadata for your app in the build logs.
-* Copy this and create a metadata.json file in the metadata folder. 
+Upon completion, the workflow will obtain the metadata for your app in the build logs. Copy this and create a metadata.json file in the metadata folder. 
 
-* Now, under .github/workflows/, create AppMetadataAutoUpdate.yml using the provided workflow snippet: 
+Now, under .github/workflows/, create AppMetadataAutoUpdate.yml using the provided workflow snippet: 
 
 ```console
 name: AppMetadataAutoUpdate 
@@ -159,12 +156,14 @@ jobs:
               --clientSecret ${{ secrets.AZURE_AD_APPLICATION_SECRET }} 
  
       - name: Update metadata 
-        run: msstore submission updateMetadata <Store product Id> '${{ github.workspace }}/metadata/metadata.json'  
+        run: | 
+          $metadata = Get-Content -Raw "${{ github.workspace }}/metadata/metadata.json" 
+          msstore submission updateMetadata <Store product Id> $metadata
       - name: Publish to Store 
         run: msstore submission publish <Store product Id>
 ```
 
-* When metadata.json gets updated as part of the CI/CD flow in the metadata folder, it will automatically trigger the AppMetadataAutoUpdate.yml workflow.
+When metadata.json gets updated as part of the CI/CD flow in the metadata folder, it will automatically trigger the AppMetadataAutoUpdate.yml workflow.
 
 The above workflows will do the following in the background:  
   * Invoke the GitHub Action (microsoft-store-apppublisher) 
@@ -173,18 +172,13 @@ The above workflows will do the following in the background:
 
 For more information on commands, refer [Microsoft Store Developer CLI (MSIX)](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview).
 
-### Step 3
-
-After your GitHub Actions workflow completes successfully, check the Microsoft Store to confirm that your changes are live. Updates will appear after the certification process in Partner Center is complete.
-
 ## [MSI/EXE](#tab/msiexe)
 
 [Add the GitHub Action Workflow](https://docs.github.com/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store.
 
-### Step 1
+### For package updates
 
-#### For package updates
-* Before publishing updates for the first time, obtain the base package JSON from Partner Center for your app submission. This ensures you start with the correct structure for your app. So, create a GitHub Actions workflow under .github/workflows/GetBasePackage.yml using the provided snippet:
+Before publishing updates for the first time, obtain the base package JSON from Partner Center for your app submission. This ensures you start with the correct structure for your app. So, create a GitHub Actions workflow under .github/workflows/GetBasePackage.yml using the provided snippet:
 
 ```console
 name: GetBasePackage 
@@ -215,14 +209,13 @@ jobs:
         msstore submission get <Partner center Id>
 ```
 
-* Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
+Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
 
 :::image type="content" source="../images/github-actions-get-base-package-workflow-exe.png" lightbox="../images/github-actions-get-base-package-workflow-exe.png" alt-text="A screenshot showing workflow run process for obtaining base package info for EXE app.":::
 
-* Upon completion, the workflow will obtain the package info for your app in the build logs.
-* Copy this and create a package.json file in the release folder. 
+Upon completion, the workflow will obtain the package info for your app in the build logs. Copy this and create a package.json file in the release folder. 
 
-* Now, under .github/workflows/, create AppPackageAutoUpdate.yml using the provided workflow snippet:
+Now, under .github/workflows/, create AppPackageAutoUpdate.yml using the provided workflow snippet:
 
 ```console
 name: AppPackageAutoUpdate 
@@ -259,12 +252,11 @@ jobs:
             msstore submission publish <Partner center Id>
 ```
 
-* When the package.json is updated as part of the CI/CD flow in the release folder, the AppPackageAutoUpdate.yml workflow is triggered automatically. 
+When the package.json is updated as part of the CI/CD flow in the release folder, the AppPackageAutoUpdate.yml workflow is triggered automatically. 
 
-### Step 2
+### For metadata updates
 
-#### For metadata updates
-* Next, for metadata, obtain the base metadata JSON from Partner Center for your app submission by creating a GitHub Actions workflow under .github/workflows/GetBaseMetadata.yml using the provided snippet: 
+Next, for metadata, obtain the base metadata JSON from Partner Center for your app submission by creating a GitHub Actions workflow under .github/workflows/GetBaseMetadata.yml using the provided snippet: 
 
 ```console
 name: GetBaseMetadata 
@@ -295,14 +287,13 @@ jobs:
         msstore submission get <Partner center Id> -m <module name>
 ``` 
 
-* Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
+Run this workflow from the Actions tab in your GitHub repository. Select the relevant workflow and click Run workflow.
 
 :::image type="content" source="../images/github-actions-get-base-metadata-workflow-exe.png" lightbox="../images/github-actions-get-base-metadata-workflow-exe.png" alt-text="A screenshot showing workflow run process for obtaining base metadata for EXE app.":::
 
-* Upon completion, the workflow will obtain the metadata for the specified module for your app in the build logs.
-* Copy this and create a metadata.json file in the metadata folder.  
+Upon completion, the workflow will obtain the metadata for the specified module for your app in the build logs. Copy this and create a metadata.json file in the metadata folder.  
 
-* Now, under .github/workflows/, create AppMetadataAutoUpdate.yml using the provided workflow snippet: 
+Now, under .github/workflows/, create AppMetadataAutoUpdate.yml using the provided workflow snippet: 
 
 ```console
 name: AppMetadataAutoUpdate 
@@ -339,7 +330,7 @@ jobs:
           msstore submission publish <Partner center Id>
 ```
 
-* When metadata.json gets updated as part of the CI/CD flow in the metadata folder, it will automatically trigger the AppMetadataAutoUpdate.yml workflow.
+When metadata.json gets updated as part of the CI/CD flow in the metadata folder, it will automatically trigger the AppMetadataAutoUpdate.yml workflow.
 
 The above workflows will do the following in the background:  
   * Invoke the GitHub Action (microsoft-store-apppublisher) 
@@ -348,10 +339,8 @@ The above workflows will do the following in the background:
 
 For more information on commands, refer  [Microsoft Store Developer CLI (MSI/EXE)](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview-exe).
 
-### Step 3
+---
 
 After your GitHub Actions workflow completes successfully, check the Microsoft Store to confirm that your changes are live. Updates will appear after the certification process in Partner Center is complete. 
-
----
 
 We trust that this document will help significantly enhance the efficiency and reliability of your Microsoft Store update process. By following these best practices, you can streamline app publishing and ensure a consistent, high-quality release experience.
