@@ -283,6 +283,8 @@ items:
                 href: msstore-dev-cli/overview-exe.md
               - name: Commands
                 href: msstore-dev-cli/commands-exe.md
+    - name: Publishing app updates to Microsoft Store with GitHub Actions
+      href: msstore-dev-cli/github-actions.md
     - name: Use Microsoft Store Web Installer to distribute apps
       href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md
 - name: Manage and update your app
