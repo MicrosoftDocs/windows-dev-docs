@@ -1,7 +1,7 @@
 ---
 title: PowerToys Command Palette Utility for Windows
 description: Learn how to use PowerToys Command Palette, a quick launcher for Windows power users. Access apps, commands, and tools instantly with customizable shortcuts and extensions.
-ms.date: 08/20/2025
+ms.date: 11/13/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: Learn about the PowerToys Command Palette utility and how to use it.
@@ -9,9 +9,9 @@ no-loc: [PowerToys, Windows, Insider]
 
 # PowerToys Command Palette utility
 
-PowerToys Command Palette is a quick launcher utility that allows you to easily access all of your most frequently used commands, apps, and development tools from a single, fast solution. This customizable and extensible tool is designed for Windows power users and serves as the successor to [PowerToys Run](../run.md).
+PowerToys Command Palette is a quick launcher utility that you can use to access all of your most frequently used commands, apps, and development tools from a single, fast solution. This customizable and extensible tool is designed for Windows power users and serves as the successor to [PowerToys Run](../run.md).
 
-Command Palette, and all other PowerToys, can be enabled or disabled on the PowerToys settings Home page. To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
+You can enable or disable Command Palette and all other PowerToys on the PowerToys settings Home page. To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(You can change the keyboard shortcut in the settings window.)*
 
 > [!IMPORTANT]
 > For this utility to work, the Command Palette must be enabled and running in the background.
@@ -22,32 +22,78 @@ Command Palette, and all other PowerToys, can be enabled or disabled on the Powe
 
 Command Palette features include:
 
-- Search for applications, folders or files
-- Run commands using `>` (for example, `> cmd` will launch Command prompt, or `> Shell:startup` will open the Windows startup folder)
+- Search for applications, folders, or files
+- Run commands by using `>` (for example, `> cmd` launches Command prompt, or `> Shell:startup` opens the Windows startup folder)
 - Switch between open windows (previously known as [Window Walker](https://github.com/betsegaw/windowwalker/))
-- Do a simple calculation using calculator
+- Do a simple calculation by using calculator
 - Add bookmarks for frequently visited webpages
 - Execute system commands
 - Open web pages or start a web search
-- Rich extensions to add additional commands and features easily
+- Use rich extensions to add additional commands and features easily
+
+## Using Command Palette
+
+Command Palette is designed to be intuitive and easy to use for quick access to apps, commands, and tools with mouse or keyboard navigation support.
+
+Here are some common tasks you can perform with Command Palette.
+
+### Launching apps
+
+To launch an app, open Command Palette and start typing the name of the app you want to launch. Use the arrow keys to navigate to the desired app and press <kbd>Enter</kbd> to launch it.
+
+### Searching the web
+
+To search the web, open Command Palette, type `??` to start a web search, enter your search query, and press <kbd>Enter</kbd>. By default, Command Palette uses your default web browser and search engine to perform the search.
+
+### Running commands
+
+To run a command, open Command Palette and type `>` followed by the command you want to run. For example, typing `> cmd` launches Command Prompt, while typing `> notepad` opens Notepad.
+
+### Search files and folders
+
+To search for files and folders on your computer, open Command Palette and use the arrow keys to navigate to the `Search files` option or type `file` followed by a space. Type your search query, and Command Palette displays a list of matching files and folders.
+
+### Use the calculator
+
+To perform a calculation, open Command Palette and type your mathematical expression directly (for example, `23*47` or `sqrt(256)`). Command Palette displays the result of the calculation. You can also start by typing `=` followed by a space to enter calculator mode.
+
+### Navigate to Windows Settings pages
+
+To open a specific Windows Settings page, open Command Palette and type `$` followed by the name of the settings page you want to open (for example, `$` and `display` to open Display settings). Use the arrow keys to navigate to the desired settings page and press <kbd>Enter</kbd> to open it.
+
+### Find an app in WinGet
+
+To find an app available in WinGet, open Command Palette, use the arrow keys to navigate to the `Search WinGet` option, type the name of the app you want to find, and press <kbd>Enter</kbd>. Command Palette displays a list of matching apps available for installation via WinGet.
+
+### Usage tips
+
+Once you enter one of the preceding modes (for example, by typing `>` for commands or `??` for web search), you can exit that mode with the <kbd>Escape</kbd> key to return to the home screen.
+
+You can enable or disable extensions and assign or change the alias for any command or extension in Command Palette settings. You can also assign global hotkeys to specific commands or extensions to launch them directly when Command Palette is activated.
+
+## Extensibility
+
+Command Palette supports building extensions that you can use to add new functionality and commands. You can create extensions by using .NET. PowerToys provides a [sample extension project](samples.md) to help you get started.
 
 ## Settings
 
-You can open the settings page by using the **Settings** button in the Command Palette:
+Use the **Settings** button in the Command Palette to open the settings page:
 
 :::image type="content" source="../../images/command-palette/cmdpal-settings.png" alt-text="An animated GIF of Command Palette interface with the Settings button highlighted in red.":::
 
-The following general options are available on the Command Palette settings page.
+The Command Palette settings page provides the following general options.
 
 | Setting | Description |
 | :--- | :--- |
-| Activation key | Define the keyboard shortcut to show/hide the Command Palette. |
-| Go home when activated | When the Command Palette is activated it will return to the home page. |
-| Highlight search on activate | The previous search text will be selected when the Command Palette is opened. |
+| Activation key | Define the keyboard shortcut to show or hide the Command Palette. |
+| Go home when activated | When you activate the Command Palette, it returns to the home page. |
+| Highlight search on activate | The previous search text is selected when you open the Command Palette. |
 | Preferred monitor position | Choose the preferred monitor for the Command Palette to open on. The default setting is **Monitor with mouse cursor**. |
-| Show app details | App details are automatically expanded when displaying an app as a result. |
-| Backspace goes back | Typing <kbd>Backspace</kbd> will take you back to the previous page. |
+| Show app details | App details automatically expand when displaying an app as a result. |
+| Backspace goes back | Typing <kbd>Backspace</kbd> takes you back to the previous page. |
 | Single-click activation | Activate list items with a single click. When disabled, single clicking selects the item and double clicking activates it. |
+
+[!INCLUDE [install-powertoys.md](../../includes/install-powertoys.md)]
 
 ## Related content
 
