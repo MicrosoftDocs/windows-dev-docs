@@ -25,7 +25,7 @@ To enable Developer Mode:
 * Open Windows Settings and navigate to the **[System > Advanced](ms-settings:developers)** page.
 * Toggle the **Developer Mode** switch to **On** and confirm your choice in the confirmation dialog.
 
-For more information about Developer Mode, see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
+For more information about Developer Mode, see [Settings for developers](/windows/advanced-settings/developer-mode).
 
 
 ## 2. Install Visual Studio and required workloads

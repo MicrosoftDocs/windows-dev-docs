@@ -20,7 +20,7 @@ The code in this walkthrough is adapted from the [MediaCapture WinUI 3 sample on
 
 ## Prerequisites
 
-- Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
+- Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2022 or later with the **WinUI application development** workload.
 
 ## Create a new WinUI 3 app

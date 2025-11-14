@@ -80,7 +80,7 @@ To get started with .NET MAUI on Windows, install Visual Studio 2022 version 17.
 
 When installing or modifying Visual Studio, select the **.NET Multi-platform App UI development** workload with the default optional installation options selected. For more information about managing workloads in Visual Studio, see [Modify Visual Studio workloads, components, and language packs](/visualstudio/install/modify-visual-studio). If you are using Visual Studio Code and the .NET CLI, you will use the [dotnet workload command](/dotnet/core/tools/dotnet-workload) for workload management.
 
-If you haven't enabled development mode on your PC, see [Enable your device for development](../get-started/enable-your-device-for-development.md). If it isn't enabled, Visual Studio will prompt you to enable development mode when you try to run your first .NET MAUI project on Windows.
+If you haven't enabled Developer Mode on your PC, see [Settings for developers](/windows/advanced-settings/developer-mode). If it isn't enabled, Visual Studio will prompt you to enable Developer Mode when you try to run your first .NET MAUI project on Windows.
 
 ## Next steps
 

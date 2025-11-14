@@ -12,6 +12,8 @@ items:
         href: ../advanced-settings/fe-version-control.md
       - name: Sudo for Windows
         href: ../advanced-settings/sudo/index.md
+      - name: Settings for developers
+        href: ../advanced-settings/developer-mode.md
   - name: Dev Drive
     items:
       - name: Overview

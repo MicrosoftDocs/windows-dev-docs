@@ -787,12 +787,12 @@
     },
     {
       "source_path": "uwp/get-started/enable-your-device-for-development.md",
-      "redirect_url": "/windows/apps/get-started/enable-your-device-for-development",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/get-started/sign-up.md",
-      "redirect_url": "/windows/apps/get-started/sign-up",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
       "redirect_document_id": false
     },
     {
@@ -5857,12 +5857,12 @@
     },
     {
       "source_path": "uwp/get-started/get-set-up.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_url": "/windows/uwp/get-started/winui2/getting-started",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/get-started/get-set-up.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": false
     },
     {
@@ -5887,7 +5887,7 @@
     },
     {
       "source_path": "hub/apps/project-reunion/set-up-your-development-environment.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": false
     },
     {
@@ -5982,7 +5982,7 @@
     },
     {
       "source_path": "hub/apps/windows-app-sdk/preview-experimental-install.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": true
     },
     {
@@ -9598,6 +9598,11 @@
     {
       "source_path": "hub/powertoys/dsc-configure.md",
       "redirect_url": "/windows/powertoys/dsc-configure/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/enable-your-device-for-development.md",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
       "redirect_document_id": false
     }
   ]
