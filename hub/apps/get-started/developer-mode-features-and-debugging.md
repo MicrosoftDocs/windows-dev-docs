@@ -2,14 +2,14 @@
 title: Developer Mode features and debugging
 description: Learn about Developer Mode features and installation errors in Windows.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.date: 02/19/2024
+ms.date: 11/13/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Developer Mode features and debugging
 
-If you're only interested in the basics of installing Developer Mode on your app, follow the instructions outlined in [enable your device for development](./enable-your-device-for-development.md) to get started. This article covers advanced features of Developer Mode, Developer Mode in previous versions of Windows 10, and debugging failures related to Developer Mode installations.
+To enable Developer Mode on you device, see [Settings for developers](/windows/advanced-settings/developer-mode). This article covers advanced features of Developer Mode, Developer Mode in previous versions of Windows 10, and debugging failures related to Developer Mode installations.
 
 ## Additional Developer Mode features
 
@@ -191,6 +191,6 @@ When you create or sideload apps on your Windows 8.1 device, you have to install
     unregister-windowsdeveloperlicense
     ```
 
-After you unregister your license, you'll need to enable your device for development (as described in [this topic](./enable-your-device-for-development.md)) so that you can continue to develop on this device. If you don't, you may get an error when you debug your app (or if you try to create a package for it). Here's an example of this error:
+After you unregister your license, you'll need to enable your device for development (as described in [Settings for developers](/windows/advanced-settings/developer-mode)) so that you can continue to develop on this device. If you don't, you may get an error when you debug your app (or if you try to create a package for it). Here's an example of this error:
 
 > Error : DEP0700 : Registration of the app failed.

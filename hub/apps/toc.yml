@@ -621,14 +621,6 @@ items:
                             href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
               - name: Setup guides and resources
                 items:
-                  - name: System requirements
-                    href: windows-app-sdk/system-requirements.md
-                  - name: Enable your device for development
-                    href: get-started/enable-your-device-for-development.md
-                  - name: Developer mode features and debugging
-                    href: get-started/developer-mode-features-and-debugging.md
-                  - name: Create a developer account
-                    href: get-started/sign-up.md
                   - name: Install tools for the Windows App SDK
                     href: windows-app-sdk/set-up-your-development-environment.md
                   - name: Latest Windows App SDK downloads
