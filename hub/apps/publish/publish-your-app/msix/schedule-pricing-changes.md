@@ -32,6 +32,19 @@ Keep in mind that the price tier you select may include sales or value-added tax
 > [!NOTE]
 > If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](./visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they use a promotional code to get the app for free).
 
+### Currency conversion rates
+
+The Store automatically converts your retail base price for all markets for you. When customers browse your app, they will see the base price converted into their local currency. 
+
+Exchange rates used to convert base prices (in US dollars) to local prices (in foreign currencies) are adjusted at times based on market conditions: 
+* When you configure the base price for a product that previously had none, the latest currency conversion rates in Partner Center will be applied automatically.
+* For existing products, updates to exchange rates do not change current wholesale or suggested retail prices. Any adjustments to those prices must be made by you.
+* When you edit wholesale or suggested retail pricing, any newly selected price tiers will use the most recent conversion tables. After updating the base price, select **Review price per market** to confirm local prices. 
+
+Before publishing, review pricing conversions to ensure each market aligns with your intended end-user price. 
+
+To override the base price for any specific market, select **Create new market group** and then select the markets for price override. 
+
 ### Override base price for specific markets
 
 By default, the options you select above will apply to all markets in which your app is offered. You can optionally change the price for one or more markets, either by choosing a different price tier or entering a free-form price in the market’s local currency. This way, you can maintain your regional pricing strategy and respond more effectively to the changes in the currency exchange rates in each market.
