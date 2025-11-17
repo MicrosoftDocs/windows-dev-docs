@@ -42,8 +42,8 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 > **What is Partner Center?**
 > Partner Center is Microsoft's portal for app developers to manage Microsoft Store submissions, track analytics, and handle app certification.
 
-- [Register as a Windows app developer in Partner Center](../../apps/publish/partner-center/partner-center-developer-account)
-- Create all required app icons and ensure they're properly sized ([Create icons using Visual Studio's asset generation tool](../../apps/design/style/iconography/visual-studio-asset-generation))
+- [Register as a Windows app developer in Partner Center](/windows/apps/publish/partner-center/partner-center-developer-account)
+- Create all required app icons and ensure they're properly sized ([Create icons using Visual Studio's asset generation tool](/windows/apps/design/style/iconography/visual-studio-asset-generation))
 
 > [!TIP]
 >
