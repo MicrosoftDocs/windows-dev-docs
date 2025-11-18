@@ -9,25 +9,22 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Publish Command Palette extensions
 
-This article provides instructions for Command Palette extensions that you create with the Command Palette template.
+After creating your Command Palette extension with the Command Palette template, you can share it with other users by publishing it to the Microsoft Store, WinGet, or both platforms.
 
-You can publish your Command Palette extension through the Microsoft Store, WinGet, or both. This article includes instructions for preparing and publishing your extension to both distribution platforms.
+This guide walks you through the complete publishing process for both distribution methods. Each platform offers different benefits:
+
+- **Microsoft Store**: Provides wider reach to general Windows users, automatic updates, and professional certification. Best for consumer-facing extensions.
+- **WinGet**: Enables automatic discovery within Command Palette and simple command-line installation. Best for developer audiences and quick distribution.
+- **Both**: Maximizes your extension's visibility and gives users installation flexibility.
+
+> [!NOTE]
+> The Command Palette template includes publication scripts in the `Publication` folder to simplify the build and submission process for both platforms.
 
 ## Microsoft Store
 
-You can publish Command Palette extensions to the Microsoft Store. The publishing process is similar to other apps or extensions. You create a new submission in Partner Center and upload your `.msix` package. Command Palette automatically discovers your extension when users install it from the Microsoft Store.
+Publishing to the Microsoft Store gives your extension professional certification and wide distribution to Windows users. The Store handles automatic updates, secure installation, and provides analytics for your extension's performance.
 
-> [!NOTE]
-> **MSIX packages explained**
-> MSIX is Microsoft's modern app packaging format that provides secure installation, automatic updates, and clean uninstallation. It replaces older formats like MSI and ensures your extension integrates properly with Windows security and deployment features.
-
-Command Palette can't search for or install extensions that are only listed in the Store. You can find those extensions by running the following command:
-
-```cmd
-ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette
-```
-
-You can run this command from the "Run commands" command in Command Palette, from the command line, or from the Run dialog.
+Command Palette automatically discovers extensions when users install them from the Microsoft Store. However, extensions published to the Store aren't searchable or installable directly from within Command Palette - users must visit the Store to install them.
 
 ## Guide to Microsoft Store publishing
 
@@ -154,32 +151,41 @@ After submission, Microsoft reviews your extension for certification. Monitor yo
 
 ## WinGet
 
-To share your extensions with users, publish your packages to WinGet. Users can discover and install extension packages listed on WinGet directly from Command Palette.
+Publishing to WinGet is the recommended distribution method for Command Palette extensions. WinGet provides the best user experience because extensions published to WinGet are:
+
+- **Automatically discoverable**: Users can find and install your extension directly from within Command Palette
+- **Easy to install**: Simple `winget install` command-line installation
+- **Easy to update**: Users can update extensions with `winget upgrade`
+- **Open source**: The WinGet package repository is transparent and community-driven
 
 > [!TIP]
 > **What is WinGet?**
-> WinGet is Microsoft's open-source command-line package manager for Windows. It's similar to package managers like npm or pip, but for Windows applications. When you publish to WinGet, users can install your extension with a simple `winget install` command. It also enables automatic discovery within Command Palette.
+> WinGet is Microsoft's open-source command-line package manager for Windows. It's similar to package managers like npm (Node.js) or pip (Python), but for Windows applications. Publishing to WinGet makes your extension accessible to both command-line users and Command Palette users.
 
-Before submitting your manifest to WinGet, check the following two requirements:
+**WinGet manifest requirements**
 
-**Add the `windows-commandpalette-extension` tag**
+Before submitting your extension to WinGet, ensure your manifest meets these two requirements:
 
-Command Palette uses the special `windows-commandpalette-extension` tag to discover extensions. Make sure that your manifest includes this tag so that Command Palette can discover your extension. Add the following code to each `.locale.*.yaml` file in your manifest:
+- Add the `windows-commandpalette-extension` tag
+
+Command Palette uses the special `windows-commandpalette-extension` tag to discover extensions. Add this tag to each `.locale.*.yaml` file in your WinGet manifest:
 
 ```yaml
 Tags:
 - windows-commandpalette-extension
 ```
 
-**Ensure WindowsAppSdk is listed as a dependency**
+- Ensure WindowsAppSdk is listed as a dependency
 
-If you're using Windows App SDK, make sure that it's listed as a dependency of your package. Add the following code to your `.installer.yaml` manifest:
+If you're using Windows App SDK, list it as a dependency in your `.installer.yaml` manifest:
 
 ```yaml
 Dependencies:
   PackageDependencies:
   - PackageIdentifier: Microsoft.WindowsAppRuntime.#.#
 ```
+
+Replace `#.#` with the specific version of Windows App SDK your extension requires (for example, `1.6`).
 
 ## Guide to WinGet publishing
 
@@ -275,7 +281,6 @@ flowchart LR
    ```
 
    Or create a release manually through the GitHub web interface.
-
 
 #### GitHub Actions validation
 
