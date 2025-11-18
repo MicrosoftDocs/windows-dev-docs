@@ -90,18 +90,13 @@ flowchart LR
 1. Create or reserve a product name.
 1. Start the submission and complete as much as you can until you reach the **Packages** section.
 1. In the left navigation, under **Product Management**, select **Product identity**.
-1. Copy the following values for use in the next steps:
-
-> [!IMPORTANT]
-> **Copy these values from Partner Center:**
->
-> - Package/Identity/Name
-> - Package/Identity/Publisher
-> - Package/Properties/PublisherDisplayName
->
-> Use these exact values in the code examples below.
+1. Copy the following values for use in the following steps. 
 
 ### Prepare the extension
+
+> [!IMPORTANT]
+> If your project does not have a `Publication` directory, you can copy it from [Template's Publication](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal/ExtensionTemplate/TemplateCmdPalExtension/TemplateCmdPalExtension/Publication)
+>
 
 1. Open PowerShell and navigate to the Publication folder:
 
@@ -237,6 +232,10 @@ flowchart LR
     ```
 
 ### Prepare the project
+
+> [!IMPORTANT]
+> If your project does not have a `Publication` directory, you can copy it from [Template's Publication](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal/ExtensionTemplate/TemplateCmdPalExtension/TemplateCmdPalExtension/Publication)
+>
 
 1. Open PowerShell and navigate to the Publication folder:
 
