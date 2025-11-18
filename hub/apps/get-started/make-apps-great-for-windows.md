@@ -2,7 +2,7 @@
 description: The top 11 things you can do to make your app great on Windows 11.
 title: Top 11 things you can do to make your app great on Windows 11
 ms.topic: concept-article
-ms.date: 03/06/2025
+ms.date: 11/17/2025
 keywords: windows win32, desktop development
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -177,7 +177,8 @@ We have updated icons and a new UI font called "Segoe UI Variable". We recommend
 People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics and neural processing chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
-- Use AI models that power Windows AI Foundry on Copilot+ PCs and run locally - [Windows AI Foundry overview](/windows/ai/apis/).
+- Use AI models that run locally and power Microsoft Foundry on Windows features on Copilot+ PCs - [What is Windows ML?](/windows/ai/apis/).
+- Use a variety of AI-powered features supported by Windows AI APIs in the Windows App SDK and machine learning (ML) models that run locally on Copilot+ PCs - [What are Windows AI APIs?](/windows/ai/apis/).
 - Utilize best practices for Notifications and content sharing - [Notifications (Design basics)](/windows/win32/uxguide/mess-notif).
 
 ### Enhanced security features in Windows

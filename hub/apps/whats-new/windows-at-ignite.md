@@ -2,7 +2,7 @@
 title: Windows at Ignite
 description: Key Windows app development announcements, resources, and sessions from Microsoft Ignite.
 keywords: Ignite, Windows, announcements, WinUI, Windows App SDK, Windows AI, developer tools
-ms.date: 11/07/2025
+ms.date: 11/17/2025
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -47,7 +47,7 @@ Windows empowers local AI experiences through efficient small language models an
 | Resource | Description |
 | :-- | :-- |
 | [Windows AI overview](/windows/ai/) | Platform overview for incorporating AI into Windows apps. |
-| [Windows AI Foundry overview](/windows/ai/overview) | Introduces Phi Silica and approaches for local inference, enabling low-latency AI features. |
+| [Microsoft Foundry on Windows overview](/windows/ai/overview) | Introduces Phi Silica and approaches for local inference, enabling low-latency AI features. |
 | [Get started using Windows AI APIs](/windows/ai/apis/get-started) | Quickstart to integrate Windows AI APIs into your app. |
 
 ### Developer tools
@@ -82,7 +82,7 @@ Improve app reliability and trustworthiness.
 
 | Component | Links |
 | :-- | :-- |
-| Windows App SDK | [Stable release notes](../windows-app-sdk/stable-channel.md) • [Preview release notes](../windows-app-sdk/preview-channel.md) • [Archive](../windows-app-sdk/release-notes-archive/stable-channel-1-7.md) |
+| Windows App SDK | [Stable release notes](../windows-app-sdk/stable-channel.md) * [Preview release notes](../windows-app-sdk/preview-channel.md) * [Archive](../windows-app-sdk/release-notes-archive/stable-channel-1-7.md) |
 | Windows SDK | [Downloads & archive](https://developer.microsoft.com/windows/downloads/sdk-archive) (includes latest and Insider preview SDK release notes) |
 | Windows Insider | [Windows Insider for Developers](https://www.microsoft.com/windowsinsider/for-developers-getting-started) |
 | Modernization | [Start developing Windows apps](/windows/apps/get-started/start-here) |

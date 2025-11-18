@@ -2,7 +2,7 @@
 title: Latest experimental channel release notes for the Windows App SDK 1.7
 description: Learn about the latest experimental releases of the Windows App SDK 1.7.
 ms.topic: release-notes
-ms.date: 10/28/2025
+ms.date: 11/17/2025
 keywords: windows win32, windows app development, project reunion, experimental, windows app sdk
 ms.localizationpriority: medium
 ---
@@ -32,7 +32,7 @@ The experimental channel includes releases of the Windows App SDK with [experime
 > [!IMPORTANT]
 > The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
 
-Windows AI Foundry offers several AI-powered features and APIs for you to easily, efficiently, and responsibly use on-device AI models in your Windows apps. In this release we are making available several scenario focused APIs for you to leverage powerful capabilities without the need to find, run, or optimize your own Machine Learning (ML) models. 
+Microsoft Foundry on Windows offers several AI-powered features and APIs for you to easily, efficiently, and responsibly use on-device AI models in your Windows apps. In this release we are making available several scenario focused APIs for you to leverage powerful capabilities without the need to find, run, or optimize your own Machine Learning (ML) models. 
 
 Learn more about responsible development practices used during Windows AI APIs development that you can also apply as you create AI-assisted features in the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
 
@@ -44,7 +44,7 @@ See [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-si
 
 #### Text Recognition (OCR)
 
-Text recognition, also known as optical character recognition (OCR), APIs in Windows AI Foundry can detect and extract text within images and convert it into machine readable character streams. These APIs can identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. The set of AI-assisted APIs in Windows AI Foundry benefit from NPU-assisted acceleration to perform faster and more accurately than the legacy [Windows.Media.Ocr.OcrEngine](/uwp/api/windows.media.ocr.ocrengine) APIs.
+Windows AI APIs that support text recognition, also known as optical character recognition (OCR),can detect and extract text within images and convert it into machine readable character streams. These APIs can identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. They also benefit from NPU-assisted acceleration to perform faster and more accurately than legacy [Windows.Media.Ocr.OcrEngine](/uwp/api/windows.media.ocr.ocrengine) APIs.
 
 See [Get Started with Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition) and [API ref for AI-backed Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition-api-ref) for more information.
 
