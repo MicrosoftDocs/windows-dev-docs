@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Develop Windows desktop apps
 
-This section of the documentation provides information about APIs and features you can use while developing Windows desktop apps. Some of these features are available by using APIs in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET, and don't require use of the Windows App SDK.
+This section of the documentation provides information about APIs and features you can use while developing Windows desktop apps. Some of these features are available by using APIs in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET and don't require use of the Windows App SDK.
 
 [!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
@@ -60,3 +60,4 @@ For information about setting up your development environment and getting starte
 * [Windows App SDK](../windows-app-sdk/index.md)
 * [WinUI](../winui/index.md)
 * [Deployment overview](../package-and-deploy/index.md)
+
