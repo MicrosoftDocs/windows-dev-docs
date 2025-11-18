@@ -6,7 +6,7 @@ metadata:
    title: Windows app development documentation
    description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
    ms.topic: hub-page
-   ms.date: 11/4/2025
+   ms.date: 11/17/2025
    ms.localizationpriority: medium
    uhfHeaderId: "MSDocsHeader-Windows"
    
@@ -74,7 +74,7 @@ productDirectory:
       - url: ./winui/index.md
         text: WinUI
       - url: /windows/ai/overview
-        text: Windows AI Foundry
+        text: Microsoft Foundry on Windows
   - title: Deploy
     imageSrc: /media/common/i_deploy.svg
     links:

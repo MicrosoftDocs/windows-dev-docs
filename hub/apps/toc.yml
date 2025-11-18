@@ -424,7 +424,7 @@ items:
                         href: develop/widgets/widget-provider-manifest.md
                       - name: ActivateApplication protocol
                         href: develop/widgets/widget-provider-activateapplication-protocol.md
-              - name: Windows AI Foundry Actions
+              - name: Actions with Microsoft Foundry on Windows
                 items:
                   - name: Overview
                     href: develop/actions/index.md

@@ -2,7 +2,7 @@
 title: Windows developer glossary
 description:  A glossary of terms related to Windows application development.
 ms.topic: glossary
-ms.date: 10/28/2025
+ms.date: 11/17/2025
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -93,9 +93,9 @@ Traditionally, "native" refers to applications built without using the .NET runt
 
 A dedicated on‑device AI accelerator optimized for transformer operations and other ML workloads. Windows apps can target NPUs via APIs like [DirectML](/windows/ai/directml/dml-intro).
 
-#### OCR
+#### Text recognition
 
-Text recognition, also known as optical character recognition (OCR), is supported in Windows AI Foundry through a set of artificial intelligence (AI)-backed APIs that can detect and extract text within images and convert it into machine readable character streams. See [Get started with AI Text Recognition](/windows/ai/apis/text-recognition).
+Text recognition, also known as optical character recognition (OCR), is supported by a set of Windows AI APIs that can detect and extract text within images and convert it into machine readable character streams. See [Get started with AI Text Recognition](/windows/ai/apis/text-recognition).
 
 #### ONNX Runtime (ORT)
 
@@ -160,9 +160,9 @@ Lets you create, package, and deploy Visual Studio extensions. [Get started with
 
 A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI 3, Win32 C++, WPF, and WinForms, and it offers a developer preview for WinUI 2 / UWP support. See [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/).
 
-#### Windows AI Foundry
+#### Microsoft Foundry on Windows
 
-Windows AI Foundry offers AI-backed features and APIs on Windows 11 PCs. These features are in active development. See [What is Windows AI Foundry?](/windows/ai/overview).
+Microsoft Foundry on Windows offers AI-backed features and APIs on Windows 11 PCs. These features are in active development. See [What are Windows AI APIs?](/windows/ai/overview).
 
 #### Windows API
 
