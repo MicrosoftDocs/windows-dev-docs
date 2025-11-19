@@ -11,21 +11,16 @@ adobe-target: true
 
 # Microsoft PowerToys: Utilities to customize Windows
 
-Microsoft PowerToys is a set of free Microsoft Windows utilities for power users to tune and streamline their Windows experience for greater productivity. These utilities and shell enhancement tools are designed to help you customize Windows 10 and Windows 11 to suit your needs.
+:::image type="content" border="false" source="../images/pt-header.png" alt-text="Hero image of PowerToys with app icons of all its utilities":::
+
+Microsoft PowerToys is a set of utilities to tune and streamline your Windows experience for greater productivity. These utilities and shell enhancement tools are designed to help you customize Windows to suit your needs.
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
 
-## System requirements
+PowerToys is an open-source project, to learn more check out the [repository on GitHub](https://aka.ms/powertoys)
 
-PowerToys requires Windows 10 version 2004 (build 19041) or later, or any version of Windows 11. It isn't supported on earlier versions of Windows. For a complete list of system requirements, see [Installing PowerToys \| Requirements](/windows/powertoys/install#system-requirements).
-
-### Processor architecture support
-
-- **x64**: Supported
-- **ARM64**: Supported
-
-## PowerToys Utilities for Windows 10 and 11
+## Utilities
 
 The currently available utilities include:
 
