@@ -1,7 +1,7 @@
 ---
 title: Publish Command Palette extensions
 description: Learn how to publish Command Palette extensions to Microsoft Store and WinGet to share your custom experiences with users.
-ms.date: 02/28/2025
+ms.date: 11/17/2025
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to publish an extension for the Command Palette.
