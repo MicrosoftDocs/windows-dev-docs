@@ -107,7 +107,7 @@ flowchart LR
 2. Run the one-time setup script:
 
    ```powershell
-   .\one-time-store-pubishing-setup.ps1
+   .\one-time-store-publishing-setup.ps1
    ```
 
 3. Follow the prompts to enter your Microsoft Store information from Partner Center:
