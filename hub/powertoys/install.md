@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Chocolatey, Scoop]
 # Customer intent: As a Windows power user, I want to learn how to install PowerToys on Windows using an executable file or package manager.
 ---
 
-## Install PowerToys
+# Install PowerToys
 
 PowerToys is a set of utilities for customizing Windows that you can install using multiple methods. This article explains how to install PowerToys on Windows 11 and Windows 10 using an executable file, Microsoft Store, or package managers like WinGet, Chocolatey, and Scoop.
 
@@ -24,6 +24,7 @@ The following are the minimum requirements to install and run PowerToys:
 - Latest stable version of Microsoft Edge WebView2 Runtime is installed via the bootstrapper during setup
 
 ### Installation methods
+
 #### [GitHub](#tab/gh)
 
 To install PowerToys using a Windows executable file:
