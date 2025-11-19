@@ -30,8 +30,8 @@ The following settings are available for Light Switch:
 | :-- | :-- |
 | Enable Light Switch | Turn the Light Switch utility on or off. |
 | Theme toggle shortcut | Set a keyboard shortcut to manually toggle between light and dark themes. |
-| Schedule Mode | Choose between using dark mode from **Sunset to Sunrise** (automatic based on your location) or **Fixed hours** (set specific times). Note that you must have location services enabled and synced for automatic mode to work. You can also disable the schedule by using the **Off** mode while still having access to the shortcut to toggle your theme. |
-| Location | Sync your location to enable automatic switching based on local sunrise and sunset times. |
+| Schedule Mode | Choose between using dark mode from **Sunset to Sunrise** (based on your location) or **Fixed hours** (set specific times). Note that you must have location services enabled and synced for automatic mode to work. You can also disable the schedule by using the **Off** mode while still having access to the shortcut to toggle your theme. |
+| Location | Enter your coordinates manually or use location services to automatically switch between light and dark mode based on local sunrise and sunset times. |
 | Offset in minutes | Adjust the time for switching themes by a specified number of minutes before or after sunrise and sunset. |
 | Turn on dark mode | Set the time to switch to dark mode when using manual mode. |
 | Turn on light mode | Set the time to switch to light mode when using manual mode. |

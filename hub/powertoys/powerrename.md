@@ -172,6 +172,42 @@ The value of the renamed file would result in:
 - `Nov-02-20-powertoys.png`
 - `Nov-03-20-powertoys-menu.png`
 
+## Replace using photo metadata (EXIF or XMP)
+
+When renaming photos, EXIF or XMP metadata can be used in the *Replace with* field. After selecting the EXIF/MDF option in the combobox, the variable patterns shown in the table below become available. The tooltip provides access to all supported patterns for quick insertion.
+
+| Variable pattern       | Explanation                                   |
+| :---                   | :---                                          |
+| `$CAMERA_MAKE`         | Camera manufacturer name                      |
+| `$CAMERA_MODEL`        | Camera model name                             |
+| `$LENS`                | Lens model name                               |
+| `$ISO`                 | ISO sensitivity value                         |
+| `$APERTURE`            | F-number aperture value                       |
+| `$SHUTTER`             | Shutter speed value                           |
+| `$FOCAL`               | Focal length in millimeters                   |
+| `$FLASH`               | Flash status (On/Off)                         |
+| `$WIDTH`               | Image width in pixels                         |
+| `$HEIGHT`              | Image height in pixels                        |
+| `$AUTHOR`              | Image author/artist                           |
+| `$COPYRIGHT`           | Copyright information                         |
+| `$LATITUDE`            | GPS latitude coordinate                       |
+| `$LONGITUDE`           | GPS longitude coordinate                      |
+| `$ALTITUDE`            | GPS altitude in meters                        |
+| `$DATE_TAKEN_YYYY`     | Year photo was taken (4 digits)               |
+| `$DATE_TAKEN_YY`       | Year photo was taken (2 digits)               |
+| `$DATE_TAKEN_MM`       | Month photo was taken (01–12)                 |
+| `$DATE_TAKEN_DD`       | Day photo was taken (01–31)                   |
+| `$DATE_TAKEN_HH`       | Hour photo was taken (00–23)                  |
+| `$DATE_TAKEN_mm`       | Minute photo was taken (00–59)                |
+| `$DATE_TAKEN_SS`       | Second photo was taken (00–59)                |
+| `$EXPOSURE_BIAS`       | Exposure compensation value                   |
+| `$ORIENTATION`         | Image orientation                             |
+| `$COLOR_SPACE`         | Color space information                       |
+| `$ALTITUDE`            | GPS altitude in meters                        |
+
+
+
+
 ## Regular expressions
 
 For most use cases, a simple search and replace is sufficient. However, there may be occasions in which complicated renaming tasks require more control. [Regular Expressions](https://wikipedia.org/wiki/Regular_expression) can help in this scenario.

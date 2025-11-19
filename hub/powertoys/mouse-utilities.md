@@ -14,23 +14,23 @@ Mouse utilities in PowerToys is a collection of features that enhance mouse and 
 
 ## Find my mouse
 
-Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight will dismiss on its own shortly after the mouse stops moving. It has an option to use a transparent spotlight with independent backdrop and spotlight opacities, boosting focus and accessibility.
+Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight dismisses on its own shortly after the mouse stops moving. It has an option to use a transparent spotlight with independent backdrop and spotlight opacities, boosting focus and accessibility.
 
 :::image type="content" source="../images/pt-mouse-utilities-find-my-mouse.gif" alt-text="An animated gif of the PowerToys Find my mouse feature of its Mouse Utilities.":::
 
 ## Gliding cursor
 
-The gliding cursor is an accessibility feature that lets you control the mouse with a single button using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.<kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position. Cancel the gliding cursor with the <kbd>Esc</kbd> key or by clicking the mouse.
+The gliding cursor is an accessibility feature that lets you control the mouse with a single button by using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.</kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position. Cancel the gliding cursor with the <kbd>Esc</kbd> key or by clicking the mouse.
 
 :::image type="content" source="../images/pt-mouse-utilities-gliding-cursor.png" lightbox="../images/pt-mouse-utilities-gliding-cursor.gif" alt-text="An animated gif of the PowerToys gliding cursor feature of its Mouse Utilities.":::
 
 ### Settings
 
-From the settings page, the following options can be configured:
+From the settings page, you can configure the following options:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation method | Choose between **Press Left Ctrl twice**, **Press Right Ctrl twice**, **Shake mouse** or **Custom shortcut**. |
+| Activation method | Choose between **Press Left Ctrl twice**, **Press Right Ctrl twice**, **Shake mouse**, or **Custom shortcut**. |
 | Minimum distance to shake | Adjust sensitivity. |
 | Activation shortcut | The custom shortcut used to activate the spotlight. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
@@ -40,28 +40,28 @@ From the settings page, the following options can be configured:
 | Spotlight radius | The radius of the circle that centers on the cursor. (default: 100px) |
 | Spotlight initial zoom | The spotlight animation's zoom factor. Higher values result in more pronounced zoom animation as the spotlight closes in on the cursor position. |
 | Animation duration | Time for the spotlight animation. (default: 500ms) |
-| Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
+| Excluded apps | Add an application's name, or part of the name, one per line (for example, adding `Notepad` matches both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
 ## Mouse Highlighter
 
-Display visual indicators when the left or right mouse buttons are clicked. By default, mouse highlighting can be turned on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.
+Display visual indicators when the left or right mouse buttons are clicked. By default, you can turn mouse highlighting on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.
 
 ### Settings
 
 ![Screenshot of Mouse highlighter](../images/pt-mouse-highlighter.gif)
 
-From the settings page, the following options can be configured:
+From the settings page, you can configure the following options:
 
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn mouse highlighting on or off. |
-| Primary button highlight color | The highlighter color for the user's primary mouse button. |
-| Secondary button highlight color | The highlighter color for the user's secondary mouse button. |
+| Primary button highlight color | The highlighter color for the primary mouse button. |
+| Secondary button highlight color | The highlighter color for the secondary mouse button. |
 | Always highlight color | The highlighter color for the mouse pointer. |
 | Highlight mode | Determines how the cursor is highlighted. **Spotlight** dims the screen to spotlight the cursor. **Circle highlight** highlights the cursor with a circle, while keeping the rest of the screen unaffected. |
-| Radius | The radius of the highlighter - Measured in pixels. |
-| Fade delay | How long it takes before a highlight starts to disappear - Measured in milliseconds. |
-| Fade duration | Duration of the disappear animation - Measured in milliseconds. |
+| Radius | The radius of the highlighter, measured in pixels. |
+| Fade delay | How long it takes before a highlight starts to disappear, measured in milliseconds. |
+| Fade duration | Duration of the disappear animation, measured in milliseconds. |
 
 ## Mouse jump
 
@@ -75,7 +75,7 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 | Thumbnail Size | Constrains the thumbnail image to a maximum size. The default size is 1600x1200 pixels. |
 | Appearance | Expand this section to adjust the popup appearance by customizing the colors, borders, spacing, and more. |
 
-## Mouse pointer Crosshairs
+## Mouse pointer crosshairs
 
 ![Screenshot of Crosshairs](../images/pt-mouseutilities-crosshairs.png)
 

@@ -49,6 +49,13 @@ After deleting the file, Peek will automatically preview the next file. If there
 > [!TIP]
 > Only files may be deleted. Folders may not be deleted, even if they are empty.
 
+## Use Peek from the command line
+
+Peek can also be launched from the command line to preview a file. Run: `PowerToys.Peek.UI.exe <filepath>`.
+
+> [!TIP]
+> The per-user executable is located in `%LOCALAPPDATA%\PowerToys\WinUI3Apps` by default, while the machine-wide executable is located in `C:\Program Files\PowerToys\WinUI3Apps`.
+
 ## Settings
 
 From the settings page, the following options can be configured:
