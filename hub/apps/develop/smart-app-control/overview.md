@@ -2,7 +2,7 @@
 title: Smart App Control
 description: Overview of Smart App Control, a Windows feature that protects users from untrusted or potentially dangerous code.
 ms.topic: concept-article
-ms.date: 07/15/2025
+ms.date: 11/18/2025
 # customer intent: As a Windows developer, I want to understand how Smart App Control works so that I can ensure my apps are compatible and secure.
 ---
 
@@ -17,13 +17,11 @@ Malware, Potentially Unwanted Apps (PUA), and unknown, unsigned code are blocked
 Smart App Control is designed to protect a device for its entire lifetime. As such, it can only be enabled on a clean install of a version of Windows that contains the Smart App Control feature. Additionally, Smart App Control is only enabled in certain regions. This feature is expected to roll out to additional regions soon.
 
 - Windows 11, version 22572 or higher,
-- A clean Windows install,
+- A clean Windows install
 
   > [!NOTE]
   > [Resetting your device](/windows-hardware/service/desktop/resetting-the-pc) counts as a clean Windows install.
-
-- North America or Europe
-
+  
 ## Smart App Control stages
 
 Smart App Control can either run in *evaluation mode* or *enforcement mode*.
@@ -62,4 +60,5 @@ Note that some older Microsoft binaries are considered unsafe because attackers 
 
 ## Related content
 
-- [What is Smart App Control?](https://support.microsoft.com/topic/what-is-smart-app-control-285ea03d-fa88-4d56-882e-6698afdb7003)
+- [Smart App Control FAQs](https://support.microsoft.com/topic/what-is-smart-app-control-285ea03d-fa88-4d56-882e-6698afdb7003)
+
