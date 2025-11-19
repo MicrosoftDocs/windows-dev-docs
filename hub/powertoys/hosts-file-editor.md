@@ -35,7 +35,9 @@ To filter host file entries, select the filter icon and enter data in either the
 
 ## Back up Hosts file
 
-Hosts File Editor creates a backup of the hosts file before editing session. The backup files are located near the hosts file in `%SystemRoot%\System32\drivers\etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS` and are deleted after 15 days.
+Hosts File Editor creates a backup of the hosts file before editing session. By default backup files are located near the hosts file in `%SystemRoot%\System32\drivers\etc` named `hosts_PowerToysBackup_YYYYMMDDHHMMSS`.
+
+Backups are deleted after 15 days, but the most recent 5 are always kept. This behavior can be configured in the PowerToys Settings.
 
 ## Settings
 
@@ -48,6 +50,11 @@ From the Settings menu, the following options can be configured:
 | Placement of additional content | Determines where new host entries are added in the hosts file. Default value is **Top** (new entries are added near the top of the file after the default Windows header comments). If **Bottom** is selected, new entries are added at the end of the file. This affects the organization of your hosts file and can impact which entries take precedence if there are conflicts. |
 | Consider loopback addresses as duplicates | When enabled, multiple loopback addresses (127.0.0.1, ::1) pointing to the same hostname are treated as duplicates. This prevents adding redundant entries and helps avoid conflicts. When disabled, you can add multiple loopback entries for the same hostname, which may be useful for testing different network configurations but could lead to unexpected behavior. |
 | Encoding | Default value is **UTF-8**. If **UTF-8 with BOM** is selected, a Byte Order Mark (BOM) is included at the start of the file. |
+| Backups hosts file | If enabled, a backup of the hosts file is created when you save for the first time in a session. |
+| Location | Specify where backups are created. Default `%SystemRoot%\System32\drivers\etc`. |
+| Automatically delete backups | Choose **Never**, **Based on count** or **Based on age and count**. |
+| Backup count | When **Automatically delete backups** is **Based on count**, determine the number of backups to keep. Older backups will be deleted once the limit is reached. |
+| Days | When **Automatically delete backups** is **Based on age and count**, determine the number of days to keep backups. Older backups will be deleted once the limit is reached. An optional count of backups can be configured to always keep a fixed number of backups despite their age. |
 
 **Note:** The Hosts File Editor can't be launched with a shortcut key. To open the Hosts File Editor, select the PowerToys icon in the system tray and select **Hosts File Editor**.
 
