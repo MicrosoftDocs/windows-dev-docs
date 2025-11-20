@@ -59,7 +59,7 @@ productDirectory:
   - title: Develop
     imageSrc: /media/common/i_code-samples.svg
     links:
-      - url: ./windows/dev-environment/
+      - url: ../dev-environment/index.md
         text: Set up your environment with WinGet, Terminal, and WSL
       - url: ./get-started/start-here.md
         text: Get started with WinUI
