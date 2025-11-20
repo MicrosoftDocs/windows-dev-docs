@@ -28,7 +28,6 @@ highlightedContent:
       itemType: download
       url: ./get-started/samples.md
 
-
 productDirectory:
   title: Dive into developing apps for Windows
   items:
