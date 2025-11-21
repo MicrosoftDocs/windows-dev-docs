@@ -37,7 +37,7 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 :::row:::
   :::column:::
-    ![The Power Toys icon](./images/powertoys-626.png)
+    ![The PowerToys icon](./images/powertoys-626.png)
     :::column-end:::
   :::column span="2":::
     **Power Toys**
