@@ -7,16 +7,57 @@ ms.topic: whats-new
 ms.localizationpriority: medium
 ---
 
-# What's new for developers
+## What's new for developers
 
 Build faster and ship more polished Windows apps. This section curates the latest platform capabilities, SDK and API additions, AI integration options, performance and diagnostics improvements, design guidance updates, and productivity tooling enhancements. Bookmark it and check back regularly. We refresh the highlights so you can focus on what moves your app forward.
 
 ## Highlights – November 2025
 
-- Microsoft Ignite 2025: Explore sessions, workshops, and resources for Windows developers at [Microsoft Ignite](/windows/apps/whats-new/windows-at-ignite) (November 18–21, 2025).
-- Image generation with Microsoft Foundry on Windows: create images from text prompts using the new [Image Generation API](/windows/ai/apis/image-generation).
-- Model Context Protocol (MCP) on Windows: integrate with local and cloud AI models using a standardized protocol ([MCP for Windows overview](/windows/ai/mcp/overview)).
-- PowerToys Advanced Paste now supports multiple online and on-device AI model providers. ([Advanced Paste](../../powertoys/advanced-paste.md)).
+:::row:::
+  :::column:::
+    ![Microsoft Ignite title card, white text on purple blue background](./images/ignite_626.png)
+    :::column-end:::
+  :::column span="2":::
+    **Ignite**
+
+    Explore sessions, workshops, and resources for Windows developers at [Microsoft Ignite](/windows/apps/whats-new/windows-at-ignite) (November 18–21, 2025)
+  :::column-end:::
+:::row-end:::
+
+:::row:::
+  :::column:::
+    ![Part of a diagram illustrating the Model Context Protocol](./images/mcp_626.png)
+    :::column-end:::
+  :::column span="2":::
+    **MCP on Windows**
+
+    Model Context Protocol (MCP) on Windows: integrate with local and cloud AI models using a standardized protocol ([MCP for Windows overview](/windows/ai/mcp/overview)).
+  :::column-end:::
+:::row-end:::
+
+:::row:::
+  :::column:::
+    ![The Power Toys icon](./images/powertoys_626.png)
+    :::column-end:::
+  :::column span="2":::
+    **Power Toys**
+
+   PowerToys Advanced Paste now supports multiple online and on-device AI model providers. ([Advanced Paste](../../powertoys/advanced-paste.md)).
+  :::column-end:::
+:::row-end:::
+
+:::row:::
+  :::column:::
+    ![Blue icons with stars scattered around a rectangle](./images/imagegen_626.png)
+    :::column-end:::
+  :::column span="2":::
+    **Image generation**
+
+    Image generation with Microsoft Foundry on Windows: create images from text prompts using the new [Image Generation API](/windows/ai/apis/image-generation).
+  :::column-end:::
+:::row-end:::
+
+
 - Windows App SDK: Phi Silica local language model available via LanguageModel APIs – generate text with built-in moderation ([release notes stable](../windows-app-sdk/stable-channel.md)).
 - Phi Silica enhancements: Summarize Conversation and LoRA fine-tuning support for scenario‑specific adaptation ([experimental channel 1.8](../windows-app-sdk/release-notes-archive/experimental-channel-1-8.md)).
 - AppWindow.SetIcon API: refined guidance for setting window and taskbar icons (branding improvement) ([API ref](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon)).
