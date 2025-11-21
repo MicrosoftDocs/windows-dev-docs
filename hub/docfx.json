@@ -22,7 +22,7 @@
       "author": "GrantMeStrength",
       "ms.author": "jken",
       "Search.Product": "eADQiWindows 10XVcnh",
-      "uhfHeaderId": "MSDocsHeader-WinDevCenter",
+      "uhfHeaderId": "MSDocsHeader-Windows",
       "breadcrumb_path":  "/windows/breadcrumbs/toc.json",
       "feedback_product_url": "https://support.microsoft.com/help/4021566/windows-10-send-feedback-to-microsoft-with-feedback-hub-app",
       "feedback_system": "OpenSource",
@@ -133,7 +133,8 @@
       },
       "uhfHeaderId": {
         "advanced-settings/**": "MSDocsHeader-Windows-DevTools",
-        "android/**": "MSDocsHeader-Windows-DevTools",
+        "android/**": "MSDocsHeader-Windows-DevTools",        
+        "apps/**": "MSDocsHeader-WinDevCenter",
         "dev-drive/**": "MSDocsHeader-Windows-DevTools",
         "dev-environment/**": "MSDocsHeader-Windows-DevTools",
         "dev-home/**": "MSDocsHeader-Windows-DevTools",
