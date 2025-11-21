@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 11/17/2025
+ms.date: 11/20/2025
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -14,11 +14,13 @@ Build faster and ship more polished Windows apps. This section curates the lates
 ## Highlights – November 2025
 
 - Microsoft Ignite 2025: Explore sessions, workshops, and resources for Windows developers at [Microsoft Ignite](/windows/apps/whats-new/windows-at-ignite) (November 18–21, 2025).
+- Image generation with Microsoft Foundry on Windows: create images from text prompts using the new [Image Generation API](/windows/ai/apis/image-generation).
+- Model Context Protocol (MCP) on Windows: integrate with local and cloud AI models using a standardized protocol ([MCP for Windows overview](/windows/ai/mcp/overview)).
+- PowerToys Advanced Paste now supports multiple online and on-device AI model providers. ([Advanced Paste](../../powertoys/advanced-paste.md)).
 - Windows App SDK: Phi Silica local language model available via LanguageModel APIs – generate text with built-in moderation ([release notes stable](../windows-app-sdk/stable-channel.md)).
 - Phi Silica enhancements: Summarize Conversation and LoRA fine-tuning support for scenario‑specific adaptation ([experimental channel 1.8](../windows-app-sdk/release-notes-archive/experimental-channel-1-8.md)).
 - AppWindow.SetIcon API: refined guidance for setting window and taskbar icons (branding improvement) ([API ref](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon)).
 - Win32 app isolation overview: updated security guidance for packaging decisions ([overview](/windows/win32/secauthz/app-isolation-overview)).
-- PowerToys Advanced Paste: new local transformations + optional AI prompt actions ([feature doc](../../powertoys/advanced-paste.md)).
 
 ## Latest releases
 
