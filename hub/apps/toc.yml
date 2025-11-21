@@ -369,6 +369,8 @@ items:
                 href: develop/windows-integration/cross-device-resume.md
               - name: Default apps platform
                 href: develop/windows-integration/default-apps-platform.md
+              - name: Windows Settings MCP server
+                href: develop/windows-integration/settings-mcp.md
               - name: Smart App Control
                 items:
                   - name: Overview
