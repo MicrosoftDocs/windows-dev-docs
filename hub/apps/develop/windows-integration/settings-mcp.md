@@ -10,283 +10,26 @@ ms.localizationpriority: medium
 
 #  Windows Settings MCP server
 
-This article provides information about the Settings Model Context Protocol (MCP) server, which allows apps to manage the settings on a Windows device through MCP interactions. For more information about MCP servers, see [MCP on Windows](/windows/ai/mcp/overview).
+This article provides information about the Windows Settings connector, which allows apps to manage the settings on a Copilot PC device* through MCP interactions. For more information about MCP servers, see [MCP on Windows](/windows/ai/mcp/overview).
+
+This connector is designed for user‑consented and reversible interactions. It simplifies natural‑language settings changes (for example, “turn on Bluetooth”, “increase text size”), ensures changes are applicable to the current device state before executing, and provides a rollback path when supported.
+
+* In the current release, this feature only supports English and French.
+
+This article provides information about the Settings Model Context Protocol (MCP) server, which allows apps to manage the settings on a Windows device through MCP interactions. For more information about MCP servers, see .
 
 ## Settings MCP server tools
 
 The Settings MCP server provides the following tools.
 
-### initialize
 
-The `initialize` tool sends a handshake request to the Settings MCP server to establish context. The tool returns metadata about the server, such as its name, version, and capabilities, and may include session-specific configuration that informs the caller what resources and tools are available.
+| Tool                      | Purpose                                                                 | Input schema (JSON)                                                                                                                                         | Output (structured)                                                      | Notes                                                    |
+|---------------------------|-------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|----------------------------------------------------------|
+| is_settings_change_applicable | Queries whether a natural language settings change is applicable in the current device context. | `{ "type":"object", "properties": { "SettingsChangeRequest": { "type":"string" } }, "required":["SettingsChangeRequest"] }` | ActionDescription (string), IsRollbackSupported (bool), IsApplicable (bool). Standard CallToolResult wrapping. | Always call this tool before calling the other settings tools to avoid invalid operations.           |
+| make_settings_change      | Executes a settings change. | `{ "type":"object", "properties": { "SettingsChangeRequest": { "type":"string" } }, "required":["SettingsChangeRequest"] }` | ActionDescription (string), IsRollbackSupported (bool), UndoId (string) when applicable; wrapped in `CallToolResult`. | An `UndoId` that can be passed into `undo_settings_change` is returned when `IsRollbackSupprted` is true.  |
+| undo_settings_change      | Reverts a prior change that was made using `make_settings_change`.  | `{ "type":"object", "properties": { "UndoId": { "type":"string", "format":"uuid" } }, "required":["UndoId"] }`         | ActionDescription (string), IsRollbackSupported (always false for undo). |  The `UndoId` value is returned in the response to a call to `make_settings_change` . Undo operations are one-way and can't be rolled back.                      |
+| open_settings_page        | Open Windows Settings to the page containing the targeted setting. | `{ "type":"object", "properties": { "SettingsChangeRequest": { "type":"string" } }, "required":["SettingsChangeRequest"] }` | No structured content; returns success text and `isError` flag.            | This tool is a utility for guided manual adjustment and is not used for automated changes. |
 
-The following is an example `initialize` request: 
-
-```json
-{ 
-  "method": "initialize" 
-} 
-```
- 
-
-The following is an example `initialize` response: 
-
-```json
-{ 
-  "capabilities": { 
-    "logging": {}, 
-    "tools": { 
-      "listChanged": true 
-    } 
-  }, 
-  "serverInfo": { 
-    "name": "ModelContextProtocol.Core", 
-    "version": "0.3.0.0" 
-  } 
-}
-```
-
-### tools/list
-
-The `tools/list` tool queries the MCP server for all registered tools. The response includes a list of tools supported by the server and provides identifiers, descriptions, and metadata, such as input and output schemas, for each tool to inform the caller of th operations it can invoke.
-
-The following is an example `tools/list` request:
-
-```json
-{ 
-  "method": "tools/list", 
-  "params": {} 
-}
-```
-
-The following is an example `tools/list` response from the Settings MCP server:
-
-```json
-{
-  "tools": [ 
-    { 
-      "name": "is_settings_change_applicable", 
-      "description": "If considering a change to a well-known Windows Setting to a provided value this tool can be called first to determine if that change is both possible and relevant right now", 
-      "inputSchema": { 
-        "type": "object", 
-        "properties": { 
-          "SettingsChangeRequest": { 
-            "description": "A concise natural language statement of intent to change a particular setting to a particular value. This statement should contain no extraneous information about the reason for the change. This statement should be self-sufficient without any additional information needed for updating the corresponding settings action to the correct value, for example enable/disable or increase/decrease or connect/disconnect, and other similar options.", 
-            "type": "string" 
-          } 
-        }, 
-        "required": [ 
-          "SettingsChangeRequest" 
-        ] 
-      } 
-    }, 
-    { 
-      "name": "make_settings_change", 
-      "description": "Change a well-known Windows Setting to the provided value", 
-      "inputSchema": { 
-        "type": "object", 
-        "properties": { 
-          "SettingsChangeRequest": { 
-            "description": "A concise natural language statement of intent to change a particular setting to a particular value. This statement should contain no extraneous information about the reason for the change. This statement should be self-sufficient without any additional information needed for updating the corresponding settings action to the correct value, for example enable/disable or increase/decrease or connect/disconnect, and other similar options.", 
-            "type": "string" 
-          } 
-        }, 
-        "required": [ 
-          "SettingsChangeRequest" 
-        ] 
-      } 
-    }, 
-    { 
-      "name": "undo_settings_change", 
-      "description": "Undo the recent change to a well-known Windows Setting back to the original value", 
-      "inputSchema": { 
-        "type": "object", 
-        "properties": { 
-          "UndoId": { 
-            "description": "The ID returned by the make_settings_change tool in the structured content.", 
-            "type": "string", 
-            "format": "uuid" 
-          } 
-        }, 
-        "required": [ 
-          "UndoId" 
-        ] 
-      } 
-    }, 
-    { 
-      "name": "open_settings_page", 
-      "description": "Open the Windows Settings app to the page containing a well-known Windows Setting", 
-      "inputSchema": { 
-        "type": "object", 
-        "properties": { 
-          "SettingsChangeRequest": { 
-            "description": "A concise natural language statement of intent to change a particular setting to a particular value. This statement should contain no extraneous information about the reason for the change. This statement should be self-sufficient without any additional information needed for updating the corresponding settings action to the correct value, for example enable/disable or increase/decrease or connect/disconnect, and other similar options.", 
-            "type": "string" 
-          } 
-        }, 
-        "required": [ 
-          "SettingsChangeRequest" 
-        ] 
-      } 
-    } 
-  ] 
-}
-```
-
-### is_settings_change_applicable
-
-The `is_settings_change_applicable` tool queries the Settings MCP server to see whether changing a particular setting is possible or relevant in the current environment, considering the local device state. This tool supports the scenario where a user requests to change a well-known setting. The operation may or may not be allowed depending on the device state. This tool should be called before calling the `make_settings_change` tool.
-
-The following is an example `is_settings_change_applicable` request:
-
-```json
-{ 
-  "method": "tools/call", 
-  "params": { 
-    "name": "is_settings_change_applicable", 
-    "arguments": { 
-      "SettingsChangeRequest": "change theme to light mode" 
-    }, 
-    "_meta": { 
-      "progressToken": 0 
-    }
-  } 
-} 
-```
-
-The following is an example `is_settings_change_applicable` response:
-
-```json
-{ 
-  "content": [ 
-    {
-      "type": "text", 
-      "text": "Settings change is applicable" 
-    } 
-  ], 
-  "structuredContent": { 
-    "ActionDescription": "Change current theme to Light", 
-    "IsRollbackSupported": true, 
-    "IsApplicable": true 
-  }, 
-  "isError": false 
-}
-```
-
-### make_settings_change
-
-The `make_settings_change` tool changes a well-known Windows setting to a specified value. The `UndoId` value in the response can be passed into `undo_settings_change` to revert the associated change.
-
-The following is an example `make_settings_change` request:
-
-```json
-{ 
-  "method": "tools/call", 
-  "params": { 
-    "name": "make_settings_change", 
-    "arguments": { 
-      "SettingsChangeRequest": "change theme to light mode" 
-    }, 
-    "_meta": { 
-      "progressToken": 1 
-    } 
-  } 
-} 
-```
-
-The following is an example `make_settings_change` response. 
-
-```json
-{ 
-  "content": [ 
-    { 
-      "type": "text", 
-      "text": "Settings change has been offered to the user" 
-    } 
-  ], 
-  "structuredContent": { 
-    "ActionDescription": "Changed current theme to Light", 
-    "IsRollbackSupported": true, 
-    "UndoId": "445b7e72-6085-4bb9-a285-d4af2b5ebd05" 
-  }, 
-  "isError": false 
-} 
-```
-
-### undo_settings_change
-
-The `undo_settings_change` operation reverts a recent change to a well-known Windows setting. The `UndoId` value is provided in the response to a call to `make_settings_change`.
-
-The following is an example `undo_settings_change` request:
-
-```json
-{ 
-  "method": "tools/call", 
-  "params": { 
-    "name": "undo_settings_change", 
-    "arguments": { 
-      "UndoId": "445b7e72-6085-4bb9-a285-d4af2b5ebd05" 
-    }, 
-    "_meta": { 
-      "progressToken": 2 
-    } 
-  } 
-} 
-```
-
-The following is an example `undo_settings_change` response:
-
-```json
-{ 
-  "content": [ 
-    {
-      "type": "text", 
-      "text": "Settings change has been undone" 
-    } 
-  ], 
-  "structuredContent": { 
-    "ActionDescription": "Changed current theme to Light", 
-    "IsRollbackSupported": false 
-  }, 
-  "isError": false 
-} 
-```
-
-### open_settings_page
-
-The `open_settings_page` tool opens the Windows Settings app to the page corresponding a well-known Windows setting.
-
-The following is an example `### open_settings_page
-` request:
-
-```json
-{ 
-  "method": "tools/call", 
-  "params": { 
-    "name": "open_settings_page", 
-    "arguments": { 
-      "SettingsChangeRequest": "change theme to light mode" 
-    }, 
-    "_meta": { 
-      "progressToken": 3 
-    } 
-  } 
-}
-```
-
-The following is an example `open_settings_page` response:
-
-```json
-{ 
-  "content": [ 
-    { 
-      "type": "text", 
-      "text": "Settings page has been opened" 
-    } 
-  ], 
-  "isError": false 
-}
-```
 
 ## Important calling conventions for the Windows Settings MCP server
 
@@ -296,6 +39,10 @@ Undo operations performed with a call to `undo_settings_change` can't be reverte
 
 
  
+## Microsoft’s commitment to responsible AI and Privacy
+
+Microsoft has been working to advance AI responsibly since 2017, when we first defined our AI principles and later operationalized our approach through our Responsible AI Standard. Privacy and security are core principles as we develop and deploy AI systems. We work to help our customers use our AI products responsibly, sharing our learnings, and building trust-based partnerships. For more information about our responsible AI efforts, the principles that guide us, and the tools and capabilities developed to ensure responsible AI technology, see Responsible AI.
+To ensure that Windows Settings experiences are trustworthy, secure, and built responsibly, we evaluate models and flows with fairness and safety testing throughout development. We design with user consent, least privilege access, and actionable rollback.
 
 
 
