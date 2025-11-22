@@ -1,6 +1,6 @@
 ---
-title: Windows Settings MCP server
-description: Learn how to use the Settings MCP server to manage settings on a Windows device. 
+title: Windows Settings connector
+description: Learn how to use the Windows Settings connector to manage settings on a Windows device. 
 ms.topic: article
 ms.date: 11/21/2025
 ms.localizationpriority: medium
@@ -8,15 +8,14 @@ ms.localizationpriority: medium
 
 
 
-#  Windows Settings MCP server
+#  Windows Settings connector
 
-This article provides information about the Windows Settings connector, which allows apps to manage the settings on a Copilot PC device* through MCP interactions. For more information about MCP servers, see [MCP on Windows](/windows/ai/mcp/overview).
+This article provides information about the Windows Settings connector, which allows apps to manage the settings on a Copilot PC device through MCP interactions. For more information about MCP servers, see [MCP on Windows](/windows/ai/mcp/overview).
 
 This connector is designed for user‑consented and reversible interactions. It simplifies natural‑language settings changes (for example, “turn on Bluetooth”, “increase text size”), ensures changes are applicable to the current device state before executing, and provides a rollback path when supported.
 
-* In the current release, this feature only supports English and French.
-
-This article provides information about the Settings Model Context Protocol (MCP) server, which allows apps to manage the settings on a Windows device through MCP interactions. For more information about MCP servers, see .
+> [!NOTE]
+> In the current release, this feature only supports English and French.
 
 ## Settings MCP server tools
 
@@ -31,12 +30,16 @@ The Settings MCP server provides the following tools.
 | open_settings_page        | Open Windows Settings to the page containing the targeted setting. | `{ "type":"object", "properties": { "SettingsChangeRequest": { "type":"string" } }, "required":["SettingsChangeRequest"] }` | No structured content; returns success text and `isError` flag.            | This tool is a utility for guided manual adjustment and is not used for automated changes. |
 
 
-## Important calling conventions for the Windows Settings MCP server
+## Important calling conventions for the Windows Settings connector
 
 A caller may or may not be able to modify the value of a particular Windows setting through the Settings MCP server, depending on the current device state. In order to ensure that a setting can be modified successfully, callers should always call `is_settings_change_applicable` before calling `make_settings_change`.
 
 Undo operations performed with a call to `undo_settings_change` can't be reverted.
 
+## How it works
+	
+The Windows Settings connector uses a lightweight language model called Settings Mu, which is fine-tuned using Windows Settings data to help users quickly find and adjust settings. The model runs locally on the device, analyzing a user's query to match with relevant settings already available in Settings.
+The Settings Mu model has undergone fairness evaluations, and comprehensive Responsible AI, security, and privacy assessments. These steps ensure the technology is effective, equitable, and aligned with Microsoft's Responsible AI principles.
 
  
 ## Microsoft’s commitment to responsible AI and Privacy
