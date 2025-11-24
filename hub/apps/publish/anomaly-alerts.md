@@ -16,11 +16,11 @@ To help you stay ahead of app quality issues, Partner Center now includes Anomal
 Anomaly Alerts use advanced statistical models to analyze your app’s recent health data and flag unusual behavior. When an anomaly is detected, you’ll receive an email alert with key details about the issue and a direct link to your Partner Center Health dashboard for quick investigation.
 
 
-
+:::image type="content" source="images/anomaly-alerts-warning.png" lightbox="images/anomaly-alerts-warning.png" alt-text="A screenshot showing warning for anomaly in health report in Partner Center.":::
 A warning banner will also appear at the top of the Health tab under Insights in Partner Center to ensure visibility.
 
 
-
+:::image type="content" source="images/anomaly-alerts-chart.png" lightbox="images/anomaly-alerts-chart.png" alt-text="A screenshot showing hang rate and crash rate for apps in Partner Center.":::
 Alerts are initially focused on two essential health metrics: crash rate and hang rate. The feature will expand to cover more metrics in future releases. Alerts are sent regardless of recent app updates, recognizing that issues can arise from factors like OS changes or new device configurations.
 
 ### Why it matters
