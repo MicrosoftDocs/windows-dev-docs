@@ -1285,6 +1285,8 @@
       href: ../ui-input/mica-uwp.md
     - name: Reveal focus
       href: ../ui-input/reveal-focus.md
+    - name: Web view
+      href: ../ui-input/web-view.md
     - name: Show multiple views
       items:
         - name: Show multiple views
