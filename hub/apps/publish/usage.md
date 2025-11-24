@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # What’s new: Usage
 
-The new Usage page in Partner Center provides developers with a detailed view of how users engage with their apps over time. This page separates core usage data into distinct, easy-to-read charts for better clarity and actionable insights. Unlike before, the data is no longer merged into a single chart but presented in multiple focused visualizations.
+The new Usage page in Partner Center (_Insights -> Apps and Games -> Usage_) provides developers with a detailed view of how users engage with their apps over time. This page separates core usage data into distinct, easy-to-read charts for better clarity and actionable insights. Unlike before, the data is no longer merged into a single chart but presented in multiple focused visualizations.
 
 ### Key Usage Metrics
 
