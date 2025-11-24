@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 The new Partner Center Summary page offers developers a powerful, consolidated overview of app health and performance metrics across all apps. This intuitive dashboard lets you instantly understand key indicators over the last 30 days, helping you stay on top of your app ecosystem without sifting through multiple reports. 
 
-### Redesigned dashboard focused on key metrics
+### Instantly Track Core App Metrics
 
 :::image type="content" source="images/summary.png" lightbox="images/summary.png" alt-text="A screenshot showing revamped summary page in Partner Center.":::
 
@@ -22,30 +22,19 @@ The new Partner Center Summary page offers developers a powerful, consolidated o
 * **Crash Rate & Hang Rate**: View app stability briefly with real-time monitoring of crash and hang anomalies. Proactively address issues to improve user experience and reduce frustration.
 * **Rating Score & Total Ratings**: Access real user feedback to track satisfaction, monitor rating trends, and manage your app’s reputation in the marketplace.
 
-### New quality metrics
+:::image type="content" source="images/summary-distribution.png" lightbox="images/summary-distribution.png" alt-text="A screenshot showing revamped summary page in Partner Center.":::
 
-To provide better visibility into customer impact, we’re introducing following new metrics:
+* **Distribution by App Version**: The dashboard provides a clear breakdown of installs, engagement duration, stability, and usage by app version. Instantly identify which release is driving success, discover versions causing issues, and focus your improvements where they’ll have the most impact. 
 
-#### Devices affected
-This metric will show the number of unique devices per day experiencing crashes, hangs, or other failures like memory failures. If multiple failures occur on the same device in a single day, it will be counted as one device—helping you gauge the breadth of the issue across your user base.
+### Why These Features Matter
 
-#### Crash rate
-The crash rate metric will represent the percentage of daily unique devices that experienced at least one crash. It is calculated by taking the number of unique devices affected by crash divided by the total number of active devices that day. This metric is calculated based on the data collected from devices who have opted in to share optional diagnostic data.
+Stay ahead of app quality by monitoring the health signals that matter most. This update empowers you to: 
+* Rapidly respond to fluctuations in stability or engagement.
+* Optimize releases using real user data.
+* Understand the direct impact of your updates and app versions.
 
-:::image type="content" source="images/failure-rate.png" lightbox="images/failure-rate.png" alt-text="A screenshot showing new Crash Rate and Hang Rate metric in revamped Health report.":::
+### Who Gets Access 
+The Summary dashboard is live for all eligible Partner Center apps. These enhancements serve developers managing multiple versions and teams needing broad yet detailed visibility into key health and performance metrics. 
 
-#### Hang rate
-Similar to crash rate, the hang rate metric will indicate the percentage of daily unique devices that experienced at least one hang (when app or game is unresponsiveness). This is also calculated using data from devices that have opted in to share optional diagnostic data.
-
-Together, crash rate and hang rate metrics will help you understand the severity of failures affecting your customers.
-
-### New tools for deeper analysis
-To help you investigate and resolve issues more efficiently, we’ve added several new tools to the Health report:
-
-#### New visualization for comparison by app version
-You can now compare failure metrics across different versions of your app to track if there are any performance improvements or regressions between releases. You can also compare your failure metrics across different architectures and operating systems to detect patterns and identify the root causes of issues faster.
-
-:::image type="content" source="images/failure-distribution.png" lightbox="images/failure-distribution.png" alt-text="A screenshot showing new visualization for comparing metrics by different dimensions like app version, OS version, architecture.":::
-
-#### Multi-filter support
-The simultaneous use of multiple filters is now supported, including multiple app versions, OS versions, device types and more, allowing for more precise and targeted analysis.
+### Getting Started 
+No setup required, just log in to Partner Center, select an app, and explore your metrics under the Summary tab. Use interactive filters to focus on versions or trends and download data for deeper analysis when needed. 
