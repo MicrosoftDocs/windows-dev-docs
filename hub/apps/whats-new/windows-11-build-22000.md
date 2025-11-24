@@ -59,7 +59,7 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 :::row:::
   :::column:::
-    ![Blue icons with stars scattered around a rectangle](./images/store-626.png)
+    ![Stylized shopping bag, the Microsoft Store logo](./images/store-626.png)
     :::column-end:::
   :::column span="2":::
     **Microsoft Store**
