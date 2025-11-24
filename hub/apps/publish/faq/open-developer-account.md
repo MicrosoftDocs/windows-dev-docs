@@ -11,8 +11,8 @@ ms.localizationpriority: medium
 <details>
 <summary><strong>How much does it cost to open a developer account?</strong></summary>
 
-Opening a developer account involves a one-time registration fee:
-- **Individual account:** Approximately $19 USD
+Opening a developer account is free for Individual accounts and involves a one-time registration fee for Company accounts.
+- **Individual account:** Free
 - **Company account:** Approximately $99 USD
 
 The fee amount may vary by region. You only pay this once — there are no recurring annual charges.
@@ -26,7 +26,7 @@ The fee amount may vary by region. You only pay this once — there are no recur
 
 Microsoft offers two types of developer accounts:
 
-- **Individual Account:** Intended for solo developers, hobbyists, or small-scale creators. It requires no business verification and has a one-time fee of about $19 USD.
+- **Individual Account:** Intended for solo developers, hobbyists, or small-scale creators. It requires no business verification and is free to register.
 - **Company Account:** Designed for businesses, organizations (LLCs, corporations, etc.), or professional developers. It requires additional information and verification, and costs about $99 USD.
 
 A Company account allows publishing under your business name and managing the account with multiple users. Choose Individual if you’re publishing personal or non-commercial apps, and Company if representing an organization.
