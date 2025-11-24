@@ -353,6 +353,14 @@ items:
         href: partner-center/trademark-and-copyright-protection.md  
 - name: What's new
   items:
+      - name: Near Real Time Insights in Analytics for Win32 Apps
+        href: nrt-in-analytics.md
+      - name: Usage
+        href: usage.md
+      - name: Anomaly Alerts for Health Metrics
+        href: anomaly-alerts.md
+      - name: Summary
+        href: summary.md
       - name: Free developer registration for individual developers
         href: whats-new-individual-developer.md  
       - name: Revamped Health report in Partner Center
