@@ -14,7 +14,6 @@ The new Partner Center Summary page offers developers a powerful, consolidated o
 ### Instantly Track Core App Metrics
 
 :::image type="content" source="images/summary.png" lightbox="images/summary.png" alt-text="A screenshot showing revamped summary page in Partner Center.":::
-
 * **Installs**: See exactly how many new installs your app has received in the past 30 days, helping you identify surges or dips in user interest. Understand adoption and retention with evolving trends over time. 
 * **Monthly Active Devices (MAD)**: Get a transparent count of engaged users to measure ongoing app adoption and reach. This helps you gauge both the popularity and sustained usage of your app.
 * **Sessions**: Monitor session volume to uncover how often users interact with your app. Visual trends help you pinpoint engagement peaks and seasonal usage patterns.
@@ -22,8 +21,8 @@ The new Partner Center Summary page offers developers a powerful, consolidated o
 * **Crash Rate & Hang Rate**: View app stability briefly with real-time monitoring of crash and hang anomalies. Proactively address issues to improve user experience and reduce frustration.
 * **Rating Score & Total Ratings**: Access real user feedback to track satisfaction, monitor rating trends, and manage your app’s reputation in the marketplace.
 
-:::image type="content" source="images/summary-distribution.png" lightbox="images/summary-distribution.png" alt-text="A screenshot showing distribution by app version in Summary page in Partner Center.":::
 
+:::image type="content" source="images/summary-distribution.png" lightbox="images/summary-distribution.png" alt-text="A screenshot showing distribution by app version in Summary page in Partner Center.":::
 * **Distribution by App Version**: The dashboard provides a clear breakdown of installs, engagement duration, stability, and usage by app version. Instantly identify which release is driving success, discover versions causing issues, and focus your improvements where they’ll have the most impact. 
 
 ### Why These Features Matter
