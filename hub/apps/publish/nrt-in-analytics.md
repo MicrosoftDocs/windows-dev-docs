@@ -11,7 +11,8 @@ ms.localizationpriority: medium
 
 Developers have consistently requested lower data latency for analytics reports in Partner Center. With the launch of Near Real-Time Insights in Partner Center Analytics, acquisitions data is now refreshed in about 3 hours instead of 30, delivering a faster and more responsive experience. We’ve also added a new ‘Recent Data’ view that updates hourly. 
 
-Note: These capabilities are currently available for Win32 apps and will be extended to MSIX apps soon. 
+> [!NOTE]
+> These capabilities are currently available for Win32 apps and will be extended to MSIX apps soon. 
 
 ### Overview
 
