@@ -11,21 +11,16 @@ ms.localizationpriority: medium
 
 The new Partner Center Summary page offers developers a powerful, consolidated overview of app health and performance metrics across all apps. This intuitive dashboard lets you instantly understand key indicators over the last 30 days, helping you stay on top of your app ecosystem without sifting through multiple reports. 
 
-To understand about the improvements in health report for MSIX apps, you can watch the following video.
-
-</br>
-
->[!VIDEO https://learn-video.azurefd.net/vod/player?id=f0541d1e-8db1-4885-afd0-6a6117b06d72]
-
-For more details, refer to the details below.
-
-
 ### Redesigned dashboard focused on key metrics
 
-:::image type="content" source="images/revamped-health-report.png" lightbox="images/revamped-health-report.png" alt-text="A screenshot showing revamped health report in Partner Center.":::
+:::image type="content" source="images/summary.png" lightbox="images/summary.png" alt-text="A screenshot showing revamped summary page in Partner Center.":::
 
-The updated dashboard will bring the most important information to the forefront with key metrics being displayed at the top of the page, making it easier to track quality at a glance.
-In the sections below the main dashboard, you’ll find additional metrics and trends over time. You will also be able to compare how your quality metrics evolve with each app update, helping you identify performance improvements or regressions.
+* **Installs**: See exactly how many new installs your app has received in the past 30 days, helping you identify surges or dips in user interest. Understand adoption and retention with evolving trends over time. 
+* **Monthly Active Devices (MAD)**: Get a transparent count of engaged users to measure ongoing app adoption and reach. This helps you gauge both the popularity and sustained usage of your app.
+* **Sessions**: Monitor session volume to uncover how often users interact with your app. Visual trends help you pinpoint engagement peaks and seasonal usage patterns.
+* **Average Engagement Duration**: Discover how much time users spend in your app, allowing you to evaluate feature stickiness and overall satisfaction.
+* **Crash Rate & Hang Rate**: View app stability briefly with real-time monitoring of crash and hang anomalies. Proactively address issues to improve user experience and reduce frustration.
+* **Rating Score & Total Ratings**: Access real user feedback to track satisfaction, monitor rating trends, and manage your app’s reputation in the marketplace.
 
 ### New quality metrics
 
