@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # What’s new: Anomaly Alerts for Health Metrics
 
-To help you stay ahead of app quality issues, Partner Center now includes Anomaly Alerts for Health Metrics (_Insights -> Health_). This new feature proactively notifies you when critical health signals in your app, such as crash rate or hang rate, experience unexpected spikes or changes. By catching potential problems early, you can improve app stability, reduce customer impact, and maintain a great user experience. 
+To help you stay ahead of app quality issues, Partner Center now includes Anomaly Alerts for Health Metrics (_Insights -> Apps and Games -> Health_). This new feature proactively notifies you when critical health signals in your app, such as crash rate or hang rate, experience unexpected spikes or changes. By catching potential problems early, you can improve app stability, reduce customer impact, and maintain a great user experience. 
 
 ### How It Works
 
