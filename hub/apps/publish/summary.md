@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # What’s new: Summary
 
-The new Partner Center Summary page (_Insights -> Apps and Games -> Summary_) offers developers a powerful, consolidated overview of app health and performance metrics across all apps. This intuitive dashboard lets you instantly understand key indicators over the last 30 days, helping you stay on top of your app ecosystem without sifting through multiple reports. 
+The new Partner Center Summary page (_Apps and Games -> Select Your App -> View Analytics -> Summary_) offers developers a powerful, consolidated overview of app health and performance metrics across all apps. This intuitive dashboard lets you instantly understand key indicators over the last 30 days, helping you stay on top of your app ecosystem without sifting through multiple reports. 
 
 ### Instantly Track Core App Metrics
 
