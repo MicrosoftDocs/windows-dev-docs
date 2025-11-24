@@ -355,11 +355,11 @@ items:
   items:
       - name: Near Real Time Insights in Analytics for Win32 Apps
         href: nrt-in-analytics.md
-      - name: Usage
+      - name: [Analytics] Usage reports
         href: usage.md
       - name: Anomaly Alerts for Health Metrics
         href: anomaly-alerts.md
-      - name: Summary
+      - name: [Analytics] Summary reports
         href: summary.md
       - name: Free developer registration for individual developers
         href: whats-new-individual-developer.md  
