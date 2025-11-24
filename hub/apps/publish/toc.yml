@@ -353,19 +353,19 @@ items:
         href: partner-center/trademark-and-copyright-protection.md  
 - name: What's new
   items:
-      - name: Near Real Time Insights in Analytics for Win32 Apps
+      - name: Near real time insights in analytics for Win32 apps
         href: nrt-in-analytics.md
       - name: Usage reports in analytics
         href: usage.md
-      - name: Anomaly Alerts for Health Metrics
+      - name: Anomaly alerts for health metrics
         href: anomaly-alerts.md
       - name: Summary reports in analytics
         href: summary.md
       - name: Free developer registration for individual developers
         href: whats-new-individual-developer.md  
-      - name: Revamped Health report in Partner Center
+      - name: Revamped health report in partner center
         href: improved-health-report.md 
-      - name: Last Updated Date in Microsoft Store
+      - name: Last updated date in Microsoft Store
         href: last-update-date.md
 - name: Microsoft Store policies and resources
   items: 
