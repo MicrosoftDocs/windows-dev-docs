@@ -27,7 +27,7 @@ Win32 acquisition data now flows through a near real time pipeline, cutting typi
 
 :::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
 
-A new Recent data section in the Acquisitions report (_Analytics > Installs_) surfaces Last 24 hours and Last 48 hours views that refresh using hourly telemetry streams.
+A new Recent data section in the Acquisitions report (_Apps and Games -> Select Your App -> View Analytics -> Installs_) surfaces Last 24 hours and Last 48 hours views that refresh using hourly telemetry streams.
 
 :::image type="content" source="images/nrt-filter.png" lightbox="images/nrt-filter.png" alt-text="A screenshot showing duation filter for analytics in Partner Center.":::
 
