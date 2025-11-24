@@ -10,12 +10,15 @@ ms.localizationpriority: medium
 
 #  Windows Settings connector
 
-This article provides information about the Windows Settings connector, which allows apps to manage the settings on a Copilot PC device through MCP interactions. For more information about MCP servers, see [MCP on Windows](/windows/ai/mcp/overview).
+This article provides information about the Windows Settings connector, which allows apps to manage the settings on a Copilot+ PC device through MCP interactions. For more information about MCP servers, see [MCP on Windows](/windows/ai/mcp/overview).
 
 This connector is designed for user‑consented and reversible interactions. It simplifies natural‑language settings changes (for example, “turn on Bluetooth”, “increase text size”), ensures changes are applicable to the current device state before executing, and provides a rollback path when supported.
 
 > [!NOTE]
-> In the current release, this feature only supports English and French.
+> This feature requires a Copilot+ PC device.
+
+> [!NOTE]
+> In the current release, this feature only supports English and French languages. Other languages are unsupported.
 
 ## Settings MCP server tools
 
