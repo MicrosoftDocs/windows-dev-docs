@@ -15,6 +15,8 @@ The articles in this section provide in-depth guidance and code examples for usi
 
 > [!IMPORTANT]
 > The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features. If your project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (that is, you are targeting Windows 10, version 1607, or later), we recommend that you use the [Windows.Services.Store](/uwp/api/windows.services.store) namespace instead. For more information, see [In-app purchases and trials](./in-app-purchases-and-trials.md). The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](/windows/msix/desktop/source-code-overview) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live). These products must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
+> [!Note]
+> In-app purchase and in-app ratings functionality provided in the **Windows.ApplicationModel.Store** namespace is not supported in evelated processes.
 
 ## Get started with the CurrentApp and CurrentAppSimulator classes
 
