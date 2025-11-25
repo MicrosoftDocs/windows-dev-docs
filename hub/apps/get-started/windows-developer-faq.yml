@@ -84,9 +84,12 @@ sections:
       - question: What is the difference between WinUI, WinUI 2 and WinUI 3?
         answer: |
           **WinUI** is the latest native UI framework for Windows app development. It provides a modern and flexible UI framework that enables you to create visually appealing and interactive Windows apps. WinUI is part of the Windows App SDK and is designed to work best with the latest versions of Windows.
+          
           **WinUI 2** is a set of UI controls and styles that are built on top of the Universal Windows Platform (UWP). WinUI 2 provides a modern look and feel for UWP apps and is designed to work best with Windows 10.
+          
           **WinUI 3** is the previous name for WinUI when it was first released as part of the Windows App SDK.
-          In summary, WinUI is the latest and most advanced version of the WinUI framework, while WinUI 2 is a set of UI controls and styles for UWP apps. WinUI 3 was an earlier way of referring to WinUI. Use WinUI going forward, unless you specially mean WinUI 2.
+          
+          In summary, WinUI is the latest and most advanced version of the WinUI framework, while WinUI 2 is a set of UI controls and styles for UWP apps. WinUI 3 was an earlier way of referring to WinUI. Use the name "WinUI" going forward, unless you specially mean WinUI 2.
       - question: When I build an app using Windows App SDK and WinUI, am I building a "WinUI app"?
         answer: |
           Yes - "WinUI app” is the term that we recommend you use. WinUI apps are generally referred to as "WinUI apps", as WinUI 2 is not a type of app but a set of components that can be used in UWP apps.
