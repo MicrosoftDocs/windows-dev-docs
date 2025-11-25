@@ -42,13 +42,13 @@ Undo operations performed with a call to `undo_settings_change` can't be reverte
 ## How it works
 	
 The Windows Settings connector uses a lightweight language model called Settings Mu, which is fine-tuned using Windows Settings data to help users quickly find and adjust settings. The model runs locally on the device, analyzing a user's query to match with relevant settings already available in Settings.
+
 The Settings Mu model has undergone fairness evaluations, and comprehensive Responsible AI, security, and privacy assessments. These steps ensure the technology is effective, equitable, and aligned with Microsoft's Responsible AI principles.
 
  
 ## Microsoft’s commitment to responsible AI and Privacy
 
-Microsoft has been working to advance AI responsibly since 2017, when we first defined our AI principles and later operationalized our approach through our Responsible AI Standard. Privacy and security are core principles as we develop and deploy AI systems. We work to help our customers use our AI products responsibly, sharing our learnings, and building trust-based partnerships. For more information about our responsible AI efforts, the principles that guide us, and the tools and capabilities developed to ensure responsible AI technology, see Responsible AI.
-To ensure that Windows Settings experiences are trustworthy, secure, and built responsibly, we evaluate models and flows with fairness and safety testing throughout development. We design with user consent, least privilege access, and actionable rollback.
+Microsoft has been working to advance AI responsibly since 2017, when we first defined our AI principles and later operationalized our approach through our Responsible AI Standard. Privacy and security are core principles as we develop and deploy AI systems. We work to help our customers use our AI products responsibly, sharing our learnings, and building trust-based partnerships. For more information about our responsible AI efforts, the principles that guide us, and the tools and capabilities developed to ensure responsible AI technology, see [Responsible AI](/windows/ai/rai).
 
 
 
