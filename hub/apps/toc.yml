@@ -496,6 +496,194 @@ items:
             items:
               - name: Overview
                 href: develop/user-interface.md
+              - name: Controls
+                items:
+                  - name: Overview
+                    href: develop/ui/controls/index.md
+                  - name: Intro to controls and events
+                    href: develop/ui/controls/controls-and-events-intro.md
+                  - name: Commanding using StandardUICommand, XamlUICommand, and ICommand
+                    href: develop/ui/controls/commanding.md
+                  - name: Basic input
+                    items:
+                      - name: Buttons
+                        href: develop/ui/controls/buttons.md
+                      - name: Check boxes
+                        href: develop/ui/controls/checkbox.md
+                      - name: Combo boxes and list boxes
+                        href: develop/ui/controls/combo-box.md
+                      - name: Hyperlinks
+                        href: develop/ui/controls/hyperlinks.md
+                      - name: Radio buttons
+                        href: develop/ui/controls/radio-button.md
+                      - name: Rating control
+                        href: develop/ui/controls/rating.md
+                      - name: Sliders
+                        href: develop/ui/controls/slider.md
+                      - name: Toggle switches
+                        href: develop/ui/controls/toggles.md
+                  - name: Collections
+                    items:
+                      - name: Overview
+                        href: develop/ui/controls/lists.md
+                      - name: Items view
+                        href: develop/ui/controls/itemsview.md
+                      - name: List view and grid view
+                        href: develop/ui/controls/listview-and-gridview.md
+                      - name: Flip view
+                        href: develop/ui/controls/flipview.md
+                      - name: PipsPager
+                        href: develop/ui/controls/pipspager.md
+                      - name: Tree view
+                        href: develop/ui/controls/tree-view.md
+                      - name: ItemsRepeater
+                        href: develop/ui/controls/items-repeater.md
+                      - name: Item containers and templates
+                        items:
+                          - name: Item containers and templates
+                            href: develop/ui/controls/item-containers-templates.md
+                          - name: Data template selection
+                            href: develop/ui/controls/data-template-selector.md
+                          - name: Item templates for list view
+                            href: develop/ui/controls/item-templates-listview.md
+                          - name: Item templates for grid view
+                            href: develop/ui/controls/item-templates-gridview.md
+                      - name: Selection and interaction
+                        items:
+                          - name: Collection commanding
+                            href: develop/ui/controls/collection-commanding.md
+                          - name: Selection mode overview
+                            href: develop/ui/controls/selection-modes.md
+                          - name: Swipe
+                            href: develop/ui/controls/swipe.md
+                          - name: Pull-to-refresh
+                            href: develop/ui/controls/pull-to-refresh.md
+                          - name: Filtering collections
+                            href: develop/ui/controls/listview-filtering.md
+                      - name: Additional collection options and customizations
+                        items:
+                          - name: Inverted lists
+                            href: develop/ui/controls/inverted-lists.md
+                          - name: Nested UI
+                            href: develop/ui/controls/nested-ui.md
+                  - name: Dialogs and flyouts
+                    items:
+                      - name: Overview
+                        href: develop/ui/controls/dialogs-and-flyouts/index.md
+                      - name: Dialogs
+                        href: develop/ui/controls/dialogs-and-flyouts/dialogs.md
+                      - name: Flyouts
+                        href: develop/ui/controls/dialogs-and-flyouts/flyouts.md
+                      - name: Teaching tip
+                        href: develop/ui/controls/dialogs-and-flyouts/teaching-tip.md
+                  - name: Forms
+                    href: develop/ui/controls/forms.md
+                  - name: Media, graphics, and shapes
+                    items:
+                      - name: Icons
+                        href: develop/ui/controls/icons.md
+                      - name: Animated icons
+                        href: develop/ui/controls/animated-icon.md
+                      - name: Images and image brushes
+                        href: develop/ui/controls/images-imagebrushes.md
+                      - name: Ink
+                        href: develop/ui/controls/inking-controls.md
+                      - name: Media playback
+                        href: develop/ui/controls/media-playback.md
+                      - name: Custom transport controls
+                        href: develop/ui/controls/custom-transport-controls.md
+                      - name: Shapes
+                        href: develop/ui/controls/shapes.md
+                  - name: Menus and toolbars
+                    items:
+                      - name: Menus and context menus
+                        href: develop/ui/controls/menus-and-context-menus.md
+                      - name: Command bar
+                        href: develop/ui/controls/command-bar.md
+                      - name: Command bar flyout
+                        href: develop/ui/controls/command-bar-flyout.md
+                      - name: Menu flyout and menu bar
+                        href: develop/ui/controls/menus.md
+                  - name: Navigation
+                    items:
+                      - name: Breadcrumb bar
+                        href: develop/ui/controls/breadcrumbbar.md
+                      - name: List/details
+                        href: develop/ui/controls/list-details.md
+                      - name: Navigation view
+                        href: develop/ui/controls/navigationview.md
+                      - name: Pivot
+                        href: develop/ui/controls/pivot.md
+                      - name: Selector bar
+                        href: develop/ui/controls/selector-bar.md
+                      - name: Tab view
+                        href: develop/ui/controls/tab-view.md
+                  - name: People
+                    items:
+                      - name: Contact card
+                        href: develop/ui/controls/contact-card.md
+                      - name: Person picture
+                        href: develop/ui/controls/person-picture.md
+                  - name: Pickers
+                    items:
+                      - name: Color picker
+                        href: develop/ui/controls/color-picker.md
+                      - name: Date and time controls
+                        href: develop/ui/controls/date-and-time.md
+                      - name: Calendar date picker
+                        href: develop/ui/controls/calendar-date-picker.md
+                      - name: Calendar view
+                        href: develop/ui/controls/calendar-view.md
+                      - name: Date picker
+                        href: develop/ui/controls/date-picker.md
+                      - name: Time picker
+                        href: develop/ui/controls/time-picker.md
+                  - name: Scrolling and layout
+                    items:
+                      - name: Expander
+                        href: develop/ui/controls/expander.md
+                      - name: Scrolling and panning controls
+                        href: develop/ui/controls/scroll-controls.md
+                      - name: Annotated scrollbar
+                        href: develop/ui/controls/annotated-scrollbar.md
+                      - name: Semantic zoom
+                        href: develop/ui/controls/semantic-zoom.md
+                      - name: Split view
+                        href: develop/ui/controls/split-view.md
+                      - name: Two-pane view
+                        href: develop/ui/controls/two-pane-view.md
+                  - name: Status and information
+                    items:
+                      - name: Progress
+                        href: develop/ui/controls/progress-controls.md
+                      - name: Tooltip
+                        href: develop/ui/controls/tooltips.md
+                      - name: Info bar
+                        href: develop/ui/controls/infobar.md
+                      - name: Info badge
+                        href: develop/ui/controls/info-badge.md
+                  - name: Text
+                    items:
+                      - name: Overview
+                        href: develop/ui/controls/text-controls.md
+                      - name: Auto-suggest box
+                        href: develop/ui/controls/auto-suggest-box.md
+                      - name: Text block
+                        href: develop/ui/controls/text-block.md
+                      - name: Rich text block
+                        href: develop/ui/controls/rich-text-block.md
+                      - name: Text box
+                        href: develop/ui/controls/text-box.md
+                      - name: Rich edit box
+                        href: develop/ui/controls/rich-edit-box.md
+                      - name: Password box
+                        href: develop/ui/controls/password-box.md
+                      - name: Number box
+                        href: develop/ui/controls/number-box.md
+                      - name: Labels
+                        href: develop/ui/controls/labels.md
+                  - name: Title bar
+                    href: develop/ui/controls/title-bar.md
               - name: Materials (Acrylic / Mica)
                 href: windows-app-sdk/system-backdrop-controller.md
               - name: Layout
@@ -513,19 +701,19 @@ items:
               - name: Windowing
                 items:
                   - name: Overview
-                    href: develop/ui-input/windowing-overview.md
+                    href: develop/ui/windowing-overview.md
                   - name: Manage app windows
-                    href: develop/ui-input/manage-app-windows.md
+                    href: develop/ui/manage-app-windows.md
                   - name: Title bar
                     href: develop/title-bar.md
                   - name: Multiple windows
-                    href: develop/ui-input/multiple-windows.md
+                    href: develop/ui/multiple-windows.md
                   - name: Retrieve a window handle (HWND)
-                    href: develop/ui-input/retrieve-hwnd.md
+                    href: develop/ui/retrieve-hwnd.md
               - name: CoreWindow interop
-                href: develop/ui-input/display-ui-objects.md
+                href: develop/ui/display-ui-objects.md
               - name: Choose the right visual tree viewer
-                href: develop/ui-input/visual-tree.md
+                href: develop/ui/visual-tree.md
       - name: Package and deploy >>
         href: package-and-deploy/index.md
       - name: Distribute >>

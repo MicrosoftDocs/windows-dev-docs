@@ -35,7 +35,7 @@ productDirectory:
   - title: Get started
     imageSrc: /media/common/i_get-started.svg
     links:
-      - url: https://developer.microsoft.com/windows/downloads
+      - url: https://visualstudio.microsoft.com/downloads/
         text: Download Visual Studio
       - url: ./get-started/index.md
         text: Overview of framework options

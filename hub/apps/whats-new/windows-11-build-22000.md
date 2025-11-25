@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 11/21/2025
+ms.date: 11/24/2025
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -54,6 +54,17 @@ This section curates the latest platform capabilities, SDK and API additions, AI
     **Image generation**
 
     Image generation with Microsoft Foundry on Windows: create images from text prompts using the new [Image Generation API](/windows/ai/apis/image-generation).
+  :::column-end:::
+:::row-end:::
+
+:::row:::
+  :::column:::
+    ![Stylized shopping bag, the Microsoft Store logo](./images/store-626.png)
+    :::column-end:::
+  :::column span="2":::
+    **Microsoft Store**
+
+    The latest news from the [Microsoft Store](/windows/apps/publish/whats-new-individual-developer) including waived fees and updated analytics.
   :::column-end:::
 :::row-end:::
 

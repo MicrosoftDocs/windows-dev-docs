@@ -37,15 +37,15 @@ Command Palette is designed to be intuitive and easy to use for quick access to 
 
 Here are some common tasks you can perform with Command Palette.
 
-### Launching apps
+### Launch apps
 
 To launch an app, open Command Palette and start typing the name of the app you want to launch. Use the arrow keys to navigate to the desired app and press <kbd>Enter</kbd> to launch it.
 
-### Searching the web
+### Search the web
 
 To search the web, open Command Palette, type `??` to start a web search, enter your search query, and press <kbd>Enter</kbd>. By default, Command Palette uses your default web browser and search engine to perform the search.
 
-### Running commands
+### Run commands
 
 To run a command, open Command Palette and type `>` followed by the command you want to run. For example, typing `> cmd` launches Command Prompt, while typing `> notepad` opens Notepad.
 
@@ -67,7 +67,7 @@ To find an app available in WinGet, open Command Palette, use the arrow keys to 
 
 ### Usage tips
 
-Once you enter one of the preceding modes (for example, by typing `>` for commands or `??` for web search), you can exit that mode with the <kbd>Escape</kbd> key to return to the home screen.
+When you enter one of the preceding modes (for example, by typing `>` for commands or `??` for web search), you can press the <kbd>Escape</kbd> key to exit that mode and return to the home screen.
 
 You can enable or disable extensions and assign or change the alias for any command or extension in Command Palette settings. You can also assign global hotkeys to specific commands or extensions to launch them directly when Command Palette is activated.
 
@@ -86,12 +86,17 @@ The Command Palette settings page provides the following general options.
 | Setting | Description |
 | :--- | :--- |
 | Activation key | Define the keyboard shortcut to show or hide the Command Palette. |
+| Use low-level keyboard hook | Enable this option to use a low-level keyboard hook for activation key detection. This setting can help improve responsiveness but might cause compatibility issues with some software. |
+| Ignore shortcut in fullscreen mode | When enabled, the Command Palette activation shortcut is ignored when an application is in fullscreen mode. |
 | Go home when activated | When you activate the Command Palette, it returns to the home page. |
 | Highlight search on activate | The previous search text is selected when you open the Command Palette. |
 | Preferred monitor position | Choose the preferred monitor for the Command Palette to open on. The default setting is **Monitor with mouse cursor**. |
 | Show app details | App details automatically expand when displaying an app as a result. |
 | Backspace goes back | Typing <kbd>Backspace</kbd> takes you back to the previous page. |
 | Single-click activation | Activate list items with a single click. When disabled, single clicking selects the item and double clicking activates it. |
+| Show system tray icon | Show or hide the Command Palette icon in the system tray. |
+| Disable animations | Disable animations in the Command Palette interface. |
+| Enable external reload | Allow external processes to request a reload of Command Palette with the `x-cmdpal://reload` command. |
 
 [!INCLUDE [install-powertoys.md](../../includes/install-powertoys.md)]
 
