@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 11/24/2025
+ms.date: 11/25/2025
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -93,7 +93,7 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 | Feature | Description |
 | :------ | :------ |
-| [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) | Reference implementation and control samples; install from Store for offline exploration. |
+| [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery) | Reference implementation and control samples; install from Store for offline exploration. |
 | [Sample code browser](/samples/browse/?products=windows) | Filterable catalog of official Windows samples. |
 
 ## Release notes and resources

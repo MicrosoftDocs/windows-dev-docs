@@ -2,7 +2,7 @@
 title: Windows developer glossary
 description:  A glossary of terms related to Windows application development.
 ms.topic: glossary
-ms.date: 11/17/2025
+ms.date: 11/25/2025
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -188,9 +188,9 @@ The Windows SDK is a collection of headers, libraries, metadata, and tools that 
 
 WinUI 2 is tightly integrated with Windows SDKs, and provides official native Windows UI controls and other user interface elements for UWP applications (and desktop applications using XAML Islands). See [WinUI 2](/windows/uwp/get-started/winui2/).
 
-#### WinUI (aka WinUI 3)
+#### WinUI (previously referred to as WinUI 3)
 
-The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI 3 uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. Note that WinUI 3 apps are commonly referred to as "WinUI apps". See [WinUI 3](../winui/winui3/index.md).
+The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI 2. Note that WinUI apps are commonly referred to as "WinUI apps". See [WinUI](../winui/winui3/index.md).
 
 #### XAML Islands
 
