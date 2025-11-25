@@ -1,6 +1,36 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/how-tos/uno-multiplatform.md",
+      "redirect_url": "/previous-versions/windows/apps/how-tos/uno-multiplatform",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/uno-simple-photo-viewer.md",
+      "redirect_url": "/previous-versions/windows/apps/get-started/uno-simple-photo-viewer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/index.md",
+      "redirect_url": "/previous-versions/windows/apps/windows-dotnet-maui/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit.md",
+      "redirect_url": "/previous-versions/windows/apps/windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-graph-api.md",
+      "redirect_url": "/previous-versions/windows/apps/windows-dotnet-maui/tutorial-graph-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/walkthrough-first-app.md",
+      "redirect_url": "/previous-versions/windows/apps/windows-dotnet-maui/walkthrough-first-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/enterprise/customer-database-app-structure.md",
       "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-app-structure",
       "redirect_document_id": false
