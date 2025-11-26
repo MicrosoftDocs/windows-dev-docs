@@ -5,7 +5,7 @@ items:
   - name: What's new?
     items:
     - name: What's new for developers in Windows 11
-      href: whats-new/windows-11-build-22000.md
+      href: whats-new/whats-new-for-developers.md
     - name: Windows developer community
       href: whats-new/community.md
   - name: Get started
