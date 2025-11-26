@@ -18,7 +18,7 @@ The Windows SDK provides APIs you can use to implement the following features to
 
 This article provides an overview of how in-app purchases and trials work in UWP apps.
 
-> [!NOTE]
+> [!IMPORTANT]
 > In-app purchase functionality is not currently supported in elevated applications.
 
 <span id="choose-namespace"></span>
