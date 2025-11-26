@@ -8,7 +8,7 @@ metadata:
   description: This documentation provides the latest guidance about building desktop apps for Windows 11.
   ms.topic: landing-page
   ms.collection: collection
-  ms.date: 11/24/2025
+  ms.date: 11/25/2025
   keywords: windows win32, desktop development
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -19,7 +19,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: What's new in Windows development
-            url: /windows/apps/whats-new/windows-11-build-22000
+            url: /windows/apps/whats-new/whats-new-for-developers.md
           - text: Start here!
             url: ../get-started/start-here.md
           - text: An overview of Windows development options
