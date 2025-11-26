@@ -19,7 +19,7 @@ landingContent:
       - linkListType: get-started
         links:
           - text: What's new in Windows development
-            url: /windows/apps/whats-new/whats-new-for-developers.md
+            url: /windows/apps/whats-new/whats-new-for-developers
           - text: Start here!
             url: ../get-started/start-here.md
           - text: An overview of Windows development options
