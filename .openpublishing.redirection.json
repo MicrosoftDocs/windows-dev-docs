@@ -5,6 +5,11 @@
       "redirect_url": "/previous-versions/windows/apps/how-tos/uno-multiplatform",
       "redirect_document_id": false
     },
+	{
+      "source_path": "hub/apps/whats-new/windows-11-build-22000.md",
+      "redirect_url": "/hub/apps/whats-new/whats-new-for-developers",
+      "redirect_document_id": false
+    },
     {
       "source_path": "hub/apps/get-started/uno-simple-photo-viewer.md",
       "redirect_url": "/previous-versions/windows/apps/get-started/uno-simple-photo-viewer",
