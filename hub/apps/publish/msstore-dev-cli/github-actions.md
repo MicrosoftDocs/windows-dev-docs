@@ -7,14 +7,14 @@ ms.date: 11/12/2025
 
 # Publishing app updates to Microsoft Store with GitHub Actions 
 
+> [!NOTE]
+> App update operations through GitHub actions is currently supported for free products only. Paid products will be supported in a future release.
+
 GitHub Actions enables you to implement a robust CI/CD pipeline for your Microsoft Store apps. By automating build, test, and deployment steps directly from your code repository, you ensure that every change, whether it’s a bug fix, feature update, or metadata change, is validated and securely published to the Microsoft Store. 
 
 To understand how to set up pre-requisites for the app update process, check out the following video:
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=ed5bcd84-0989-4295-8902-549a43fec54b]
-
-> [!NOTE]
-> App update operations through GitHub actions is currently supported for free products only. Paid products will be supported in a future release.
 
 ## Pre-requisite
 
