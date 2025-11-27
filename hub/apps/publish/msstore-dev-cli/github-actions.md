@@ -13,6 +13,9 @@ To understand how to set up pre-requisites for the app update process, check out
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=ed5bcd84-0989-4295-8902-549a43fec54b]
 
+> [!NOTE]
+> App update operations through GitHub actions is currently supported for free products only. Paid products will be supported in a future release.
+
 ## Pre-requisite
 
 1. Register as a Windows app developer in [Partner Center](https://storedeveloper.microsoft.com/). 
