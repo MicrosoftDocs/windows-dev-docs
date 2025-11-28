@@ -44,7 +44,7 @@ msstore
 Running in CI environments is also supported, and the Microsoft Store Developer CLI (preview) can be used in your CI/CD pipelines to, for example, automatically publish your applications to the Microsoft Store. More instructions on how to do this can be found [here](./commands.md#cicd-environments).
 
 > [!NOTE]
-> App update operations through GitHub actions is currently supported for free products only. Paid products will be supported in a future release.
+> App update operations through Microsoft Store Developer CLI is currently supported for free products only. Paid products will be supported in a future release.
 
 ## Commands
 
