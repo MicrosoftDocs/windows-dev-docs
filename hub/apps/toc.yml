@@ -462,10 +462,6 @@ items:
       items:
       - name: Overview
         href: develop/windows-integration/index.md
-      - name: Click to do
-        href: develop/windows-integration/click-to-do.md
-      - name: Recall
-        href: develop/windows-integration/recall/index.md
       - name: Copilot hardware key
         href: develop/windows-integration/microsoft-copilot-key-provider.md
         items:
