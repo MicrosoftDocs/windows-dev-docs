@@ -22,6 +22,11 @@ The following table lists the Windows system components that support integration
 | [Search providers](../search/search-providers.md) | Learn how to integrate into the Windows Search experience. |
 | [Widget providers](../widgets/widget-providers.md) | Learn how to implement a Windows widget service provider to support your app. |
 
+## Windows feartures using AI
+
+| [Recall](./recall/index.md) | Learn how to use the AI-assisted Recall feature with the User Activity API in Windows. |
+| [Click to Do](./click-to-do.md) | Learn how to use the AI-assisted Click to Do feature in Windows. |
+
 ## Other Windows integration features
 
 The following table lists other Windows integration features that support 3rd party developers.
