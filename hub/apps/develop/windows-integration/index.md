@@ -22,7 +22,7 @@ The following table lists the Windows system components that support integration
 | [Search providers](../search/search-providers.md) | Learn how to integrate into the Windows Search experience. |
 | [Widget providers](../widgets/widget-providers.md) | Learn how to implement a Windows widget service provider to support your app. |
 
-## Windows feartures using AI
+## Windows features using AI
 
 | Feature | Description |
 |--|--|
