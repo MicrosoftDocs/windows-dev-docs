@@ -538,6 +538,8 @@ items:
           href: develop/actions/action-json.md
         - name: Action provider package manifest XML format
           href: develop/actions/action-provider-manifest.md
+      - name: Studio Effects
+        href: develop/windows-integration/studio-effects.md
       - name: Click to Do
         href: develop/windows-integration/click-to-do.md
       - name: Recall
