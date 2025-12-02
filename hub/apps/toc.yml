@@ -106,6 +106,8 @@ items:
           href: develop/launch/create-and-register-a-background-task.md
         - name: BackgroundTaskBuilder in the Windows App SDK
           href: windows-app-sdk/applifecycle/background-tasks.md
+      - name: DispatcherQueue
+        href: develop/dispatcherqueue.md
     - name: Audio, video, and camera
       items:
       - name: Overview
@@ -554,8 +556,6 @@ items:
           href: develop/windows-integration/recall/decrypt-exported-snapshots.md 
       - name: Pin your app to the taskbar
         href: develop/windows-integration/pin-to-taskbar.md
-      - name: DispatcherQueue
-        href: develop/dispatcherqueue.md
     - name: Performance
       items:
       - name: Overview
@@ -983,8 +983,6 @@ items:
           items:
           - name: Unit tests for Windows UI Library (WinUI) apps in Visual Studio
             href: winui/winui3/testing/create-winui-unit-test-project.md
-      - name: .NET MAUI for Windows
-        items:
     - name: Migrate from UWP to Windows App SDK
       items:
       - name: Migrate from UWP to Windows App SDK
