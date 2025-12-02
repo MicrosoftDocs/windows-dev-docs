@@ -27,3 +27,4 @@ Additionally, you can use the [**SplashScreen**](/uwp/api/Windows.ApplicationMod
 |-------|-------------|
 | [Add a splash screen](add-a-splash-screen.md) | Set your app's splash screen image and background color. |
 | [Display a splash screen for more time](create-a-customized-splash-screen.md) | Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, and can be customized. |
+| [Troubleshoot Microsoft Store app color and appearance issues](microsoft-store-color-appearance-issues.md) | Understand why your app may appear differently in the Microsoft Store app versus the web version, and resolve common visual appearance issues. |
