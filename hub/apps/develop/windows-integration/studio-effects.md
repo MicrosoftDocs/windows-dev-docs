@@ -18,14 +18,14 @@ Windows Studio Effects utilizes AI on select Windows devices with compatible Neu
 - Creative filters
 - Eye contact Teleprompter
 
-[Windows Studio Effects list of AI enhancements](https://support.microsoft.com/en-us/windows/windows-studio-effects-273c1fa8-2b3f-41b1-a587-7cc7a24b62d8).
+[Windows Studio Effects list of AI enhancements](https://support.microsoft.com/windows/windows-studio-effects-273c1fa8-2b3f-41b1-a587-7cc7a24b62d8).
 
 ![Animation showing Windows Studio Effects opening from the Windows 11 taskbar](./images/windows-studio-effects-open.gif)
 
 ## Prerequisites
 
 - Windows 11, version 22H2 or newer (Build 22623.885+).
-- Device must have a supported NPU and the hardware manufacturer must have opted in and installed the Windows Studio Effect driver on the system. ([See the Copilot+ PCs supported by NPUs](./npu-devices/index.md)).
+- Device must have a supported NPU and the hardware manufacturer must have opted in and installed the Windows Studio Effect driver on the system. ([See the Copilot+ PCs supported by NPUs](/windows/ai/npu-devices/index.md)).
 
 You will see "Studio effects" in your bottom-right "quick settings" if your device supports these AI features. You can also check by visiting **Settings** > **Bluetooth & devices** > **Cameras**, then select from the list of **Connected cameras** and open the settings for that camera. You will see a section under the video preview titled "Windows Studio Effects." If you only see "Basic settings," then Studio Effects are not likely supported.
 
