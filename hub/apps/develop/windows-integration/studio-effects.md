@@ -20,12 +20,12 @@ Windows Studio Effects utilizes AI on select Windows devices with compatible Neu
 
 [Windows Studio Effects list of AI enhancements](https://support.microsoft.com/en-us/windows/windows-studio-effects-273c1fa8-2b3f-41b1-a587-7cc7a24b62d8).
 
-![Animation showing Windows Studio Effects opening from the Windows 11 taskbar](../images/windows-studio-effects-open.gif)
+![Animation showing Windows Studio Effects opening from the Windows 11 taskbar](./images/windows-studio-effects-open.gif)
 
 ## Prerequisites
 
 - Windows 11, version 22H2 or newer (Build 22623.885+).
-- Device must have a supported NPU and the hardware manufacturer must have opted in and installed the Windows Studio Effect driver on the system. ([See the Copilot+ PCs supported by NPUs](../npu-devices/index.md)).
+- Device must have a supported NPU and the hardware manufacturer must have opted in and installed the Windows Studio Effect driver on the system. ([See the Copilot+ PCs supported by NPUs](./npu-devices/index.md)).
 
 You will see "Studio effects" in your bottom-right "quick settings" if your device supports these AI features. You can also check by visiting **Settings** > **Bluetooth & devices** > **Cameras**, then select from the list of **Connected cameras** and open the settings for that camera. You will see a section under the video preview titled "Windows Studio Effects." If you only see "Basic settings," then Studio Effects are not likely supported.
 
@@ -50,7 +50,7 @@ Windows Studio Effects can be opened from the taskbar (as displayed in the image
 - Open **Settings** > **Bluetooth & devices** > **Cameras**, then select from the list of **Connected cameras** and open the settings for that camera.
 - You will see a preview of your front-facing camera display and the **Camera Effects** listed under it.
 
-![Windows Studio Effects Camera Settings screenshot](../images/windows-studio-effects-settings.png)
+![Windows Studio Effects Camera Settings screenshot](./images/windows-studio-effects-settings.png)
 
 **Camera Settings** is a new feature in Windows 11 that allows customers to view all of the cameras on their system, selecting preferred "default" values from a set of controls on a per-camera, per-user, per-machine basis.
 
@@ -82,7 +82,7 @@ Supported Windows Studio Effects for the integrated microphone, include:
 
 When a camera is opted into using Windows Studio Effects, the Windows Studio Effects package gets chained on to the end of the camera. This happens transparently so that the "real" camera is replaced with a "composite" camera consisting of the features of the camera plus the Windows Studio AI effects. The end customer still sees only the "real" camera, but Windows Studio Effects are now available on behalf of that camera.
 
-![Diagram showing the "composite" camera surrounding the "real" camera and OEM driver with properties listed including brightness, contrast, other Microsoft properties, and customer OEM properties. The "real" camera connects to the Windows Studio effects including AI blur and AI eye contact, resulting in a list of the combined properties from the "real" camera and Windows Studio.](../images/windows-studio-architecture-diagram.png)
+![Diagram showing the "composite" camera surrounding the "real" camera and OEM driver with properties listed including brightness, contrast, other Microsoft properties, and customer OEM properties. The "real" camera connects to the Windows Studio effects including AI blur and AI eye contact, resulting in a list of the combined properties from the "real" camera and Windows Studio.](./images/windows-studio-architecture-diagram.png)
 
 The "Real" camera includes [Kernel Streaming (KS)](/windows-hardware/drivers/stream/ks-properties) properties, such as Brightness, Contrast, and other Microsoft-implemented properties, as well as any customer properties implemented by the device manufacturer (OEM) driver.
 
@@ -180,6 +180,5 @@ In addition, the data set used by Creative filters include 3,000 hand-drawn port
 
 ## Additional resources
 
-- [Developing Responsible Generative AI Applications and Features on Windows](../rai.md)
 - [Manage cameras with Camera settings in Windows 11: Windows Studio Effects Support](https://support.microsoft.com/windows/manage-cameras-with-camera-settings-in-windows-11-97997ed5-bb98-47b6-a13d-964106997757)
 - [The benefits of devices with AI experiences](https://www.microsoft.com/surface/do-more-with-surface/ai-experiences-with-pcs)
