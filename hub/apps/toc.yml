@@ -158,6 +158,8 @@ items:
       items:
       - name: Overview
         href: develop/data-and-files.md
+      - name: Drag and drop
+        href: develop/data/drag-and-drop.md
       - name: App resources
         items:
         - name: Manage resources with MRT Core
@@ -289,6 +291,108 @@ items:
             href: develop/win2d/avoiding-memory-leaks.md
           - name: Custom effects
             href: develop/win2d/custom-effects.md
+    - name: Input and interactions
+      items:
+        - name: Overview
+          href: develop/input/index.md
+        - name: Input primer
+          href: develop/input/input-primer.md
+        - name: Pointer input
+          href: develop/input/handle-pointer-input.md
+        - name: Gaze
+          href: develop/input/gaze-interactions.md
+        - name: Pen and Windows Ink
+          href: develop/input/pen-and-stylus-interactions.md
+          items:
+            - name: "Pen interactions and haptic (tactile) feedback"
+              href: develop/input/pen-haptics.md
+            - name: "Tutorial: Add Inking support to your app"
+              href: develop/input/ink-walkthrough.md
+            - name: Recognize ink strokes
+              href: develop/input/convert-ink-to-text.md
+            - name: Store and retrieve ink strokes
+              href: develop/input/save-and-load-ink.md
+            - name: Add an InkToolbar
+              href: develop/input/ink-toolbar.md
+            - name: Handwriting view
+              href: develop/input/text-handwriting-view.md
+        - name: Touch
+          items:
+            - name: Touch design guidelines
+              href: develop/input/touch-interactions.md
+            - name: Touch developer guidelines
+              href: develop/input/touch-developer-guide.md
+            - name: Panning
+              href: develop/input/guidelines-for-panning.md
+            - name: Rotation
+              href: develop/input/guidelines-for-rotation.md
+            - name: Targeting
+              href: develop/input/guidelines-for-targeting.md
+        - name: Mouse
+          href: develop/input/mouse-interactions.md
+        - name: Keyboard
+          href: develop/input/keyboard-interactions.md
+          items:
+            - name: Access keys
+              href: develop/input/access-keys.md
+            - name: Keyboard Accelerators
+              href: develop/input/keyboard-accelerators.md
+            - name: Keyboard events
+              href: develop/input/keyboard-events.md
+            - name: Focus navigation with keyboard, gamepad, remote control, and accessibility tools
+              href: develop/input/focus-navigation.md
+            - name: Programmatic focus navigation
+              href: develop/input/focus-navigation-programmatic.md
+            - name: Respond to the presence of the touch keyboard
+              href: develop/input/respond-to-the-presence-of-the-touch-keyboard.md
+            - name: Use input scope to change the touch keyboard
+              href: develop/input/use-input-scope-to-change-the-touch-keyboard.md
+        - name: Text input
+          items:
+            - name: Custom text input
+              href: develop/input/custom-text-input.md
+            - name: Text scaling
+              href: develop/input/text-scaling.md
+            - name: Selecting text and images
+              href: develop/input/guidelines-for-textselection.md
+            - name: Input Method Editors
+              href: develop/input/input-method-editors.md
+            - name: Input Method Editor requirements
+              href: develop/input/input-method-editor-requirements.md
+        - name: Gamepad and remote control
+          href: develop/input/gamepad-and-remote-interactions.md
+        - name: Touchpad
+          href: develop/input/touchpad-interactions.md
+        - name: Surface Dial
+          href: develop/input/windows-wheel-interactions.md
+          items:
+            - name: "Tutorial: Add Surface Dial support to your app"
+              href: develop/input/radialcontroller-walkthrough.md
+        - name: Speech interactions
+          href: develop/input/speech-interactions.md
+          items:
+            - name: Speech recognition
+              href: develop/input/speech-recognition.md
+            - name: Specify the speech recognizer language
+              href: develop/input/specify-the-speech-recognizer-language.md
+            - name: Define custom recognition constraints
+              href: develop/input/define-custom-recognition-constraints.md
+            - name: Continuous dictation
+              href: develop/input/enable-continuous-dictation.md
+            - name: Audio input issues
+              href: develop/input/manage-issues-with-audio-input.md
+            - name: Speech recognition timeouts
+              href: develop/input/set-speech-recognition-timeouts.md
+        - name: Multiple inputs
+          href: develop/input/multiple-input-design-guidelines.md
+        - name: Input injection
+          href: develop/input/input-injection.md
+        - name: Identify input devices
+          href: develop/input/identify-input-devices.md
+        - name: Optical zoom and resizing
+          href: develop/input/guidelines-for-optical-zoom.md
+        - name: Visual feedback
+          href: develop/input/guidelines-for-visualfeedback.md    
     - name: Notifications
       items:
       - name: Push notifications
@@ -358,6 +462,10 @@ items:
       items:
       - name: Overview
         href: develop/windows-integration/index.md
+      - name: Click to do
+        href: develop/windows-integration/click-to-do.md
+      - name: Recall
+        href: develop/windows-integration/recall/index.md
       - name: Copilot hardware key
         href: develop/windows-integration/microsoft-copilot-key-provider.md
         items:
@@ -432,6 +540,22 @@ items:
           href: develop/actions/action-json.md
         - name: Action provider package manifest XML format
           href: develop/actions/action-provider-manifest.md
+      - name: Click to Do
+        href: develop/windows-integration/click-to-do.md
+      - name: Recall
+        items:
+        - name: Overview
+          href: develop/windows-integration/recall/index.md
+        - name: Enabling relaunch
+          href: develop/windows-integration/recall/recall-relaunch.md
+        - name: Web browsers
+          href: develop/windows-integration/recall/recall-web-browsers.md
+        - name: Apply sensitivity labels
+          href: develop/windows-integration/recall/recall-content-info-labels.md
+        - name: DLP Provider API
+          href: develop/windows-integration/recall/dlp-provider-api.md
+        - name: (EEA-only) Decrypt exported snapshots
+          href: develop/windows-integration/recall/decrypt-exported-snapshots.md 
       - name: Pin your app to the taskbar
         href: develop/windows-integration/pin-to-taskbar.md
       - name: DispatcherQueue
