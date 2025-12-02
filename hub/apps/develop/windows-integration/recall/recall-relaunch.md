@@ -1,7 +1,7 @@
 ---
 title: Enable relaunching your content from Recall
 description: Learn how to enable your users to relaunch back to your content from Windows Recall.
-ms.date: 05/21/2025
+ms.date: 12/01/2025
 ms.topic: how-to
 no-loc: [Recall, useractivity]
 ---
@@ -91,5 +91,5 @@ private async void UserActivityRequested(
 ## Related content
 
 - [UserActivity class](/uwp/api/windows.applicationmodel.useractivities.useractivity)
-- [Provide sensitivity labels to Recall with UserActivity ContentInfo](recall-contentinfo-labels.md) - Learn how to supply sensitivity label metadata through `UserActivity.ContentInfo` for enterprise DLP policy enforcement
+- [Provide sensitivity labels to Recall with UserActivity ContentInfo](recall-content-info-labels.md) - Learn how to supply sensitivity label metadata through `UserActivity.ContentInfo` for enterprise DLP policy enforcement
 - [Guidance for developers of web browsers](./recall-web-browsers.md)

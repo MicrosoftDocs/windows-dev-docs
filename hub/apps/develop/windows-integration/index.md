@@ -24,6 +24,8 @@ The following table lists the Windows system components that support integration
 
 ## Windows feartures using AI
 
+| Feature | Description |
+|--|--|
 | [Recall](./recall/index.md) | Learn how to use the AI-assisted Recall feature with the User Activity API in Windows. |
 | [Click to Do](./click-to-do.md) | Learn how to use the AI-assisted Click to Do feature in Windows. |
 

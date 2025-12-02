@@ -551,7 +551,7 @@ items:
         - name: Web browsers
           href: develop/windows-integration/recall/recall-web-browsers.md
         - name: Apply sensitivity labels
-          href: develop/windows-integration/recall-contentinfo-labels.md
+          href: develop/windows-integration/recall/recall-content-info-labels.md
         - name: DLP Provider API
           href: develop/windows-integration/recall/dlp-provider-api.md
         - name: (EEA-only) Decrypt exported snapshots

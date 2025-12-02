@@ -1,7 +1,7 @@
 ---
 title: Recall DLP Provider API
 description: Learn how to build a Data Loss Prevention (DLP) provider that integrates with Windows Recall to control content capture based on organizational policies.
-ms.date: 11/18/2025
+ms.date: 12/01/2025
 ms.topic: reference
 no-loc: [Recall, DLP, EnterpriseContextProvider]
 ---
@@ -135,7 +135,7 @@ struct EnterpriseContextQuery
 - **Restrictions**: Capture restrictions to be enforced (populated by provider).
 
 > [!NOTE]
-> Applications can provide sensitivity label information through the `UserActivity.ContentInfo` API. For details on how applications should format and supply this information, see [Provide sensitivity labels to Recall with UserActivity ContentInfo](recall-contentinfo-labels.md).
+> Applications can provide sensitivity label information through the `UserActivity.ContentInfo` API. For details on how applications should format and supply this information, see [Provide sensitivity labels to Recall with UserActivity ContentInfo](recall-content-info-labels.md).
 
 ### Required DLL exports
 
