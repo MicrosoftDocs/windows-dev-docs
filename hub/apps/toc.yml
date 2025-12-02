@@ -540,7 +540,7 @@ items:
           href: develop/actions/action-json.md
         - name: Action provider package manifest XML format
           href: develop/actions/action-provider-manifest.md
-      - name: Click-to-do
+      - name: Click to Do
         href: develop/windows-integration/click-to-do.md
       - name: Recall
         items:
