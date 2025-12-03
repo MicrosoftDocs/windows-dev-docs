@@ -1315,3 +1315,19 @@ items:
         href: ../ui-input/cortana-support-natural-language-voice-commands.md
     - name: Content links
       href: ../ui-input/content-links.md
+    - name: XAML animations
+      items:
+      - name: Drag and drop
+        href: ../ui-input/motion-dragdrop.md
+      - name: Edge based
+        href: ../ui-input/motion-edgebased.md
+      - name: Fade
+        href: ../ui-input/motion-fade.md
+      - name: List
+        href: ../ui-input/motion-list.md
+      - name: Pointer click
+        href: ../ui-input/motion-pointer.md
+      - name: Popup
+        href: ../ui-input/motion-popup-animations.md
+      - name: Reposition
+        href: ../ui-input/motion-reposition.md

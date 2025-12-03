@@ -10359,6 +10359,41 @@
       "source_path": "hub/apps/design/input/cortana-support-natural-language-voice-commands.md",
       "redirect_url": "/windows/uwp/ui-input/cortana-support-natural-language-voice-commands",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-dragdrop.md",
+      "redirect_url": "/windows/uwp/ui-input/motion-dragdrop",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-edgebased.md",
+      "redirect_url": "/windows/uwp/ui-input/motion-edgebased",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-fade.md",
+      "redirect_url": "/windows/uwp/ui-input/motion-fade",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-list.md",
+      "redirect_url": "/windows/uwp/ui-input/motion-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-pointer.md",
+      "redirect_url": "/windows/uwp/ui-input/motion-pointer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-popup-animations.md",
+      "redirect_url": "/windows/uwp/ui-input/motion-popup-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-reposition.md",
+      "redirect_url": "/windows/uwp/ui-input/motion-reposition",
+      "redirect_document_id": false
     }
   ]
 }
