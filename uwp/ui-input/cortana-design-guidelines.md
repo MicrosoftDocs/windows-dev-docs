@@ -111,7 +111,7 @@ You should localize the voice commands your app responds to and all TTS and GUI 
 
 You should avoid lengthy GUI strings. The **Cortana** canvas provides three lines for responses and will truncate strings longer than that.
 
-For more info, see the [Globalization and localization section](../globalizing/guidelines-and-checklist-for-globalizing-your-app.md).
+For more info, see the [Globalization and localization section](/windows/apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app).
 
 ## Image resources and scaling
 
@@ -121,7 +121,7 @@ For more detail on image resources for high contrast and scale factors, see [Gui
 
 You name resources using qualifiers. Resource qualifiers are folder and filename modifiers that identify the context in which a particular version of a resource should be used.
 
-The standard naming convention is "foldername/qualifiername-value\[\_qualifiername-value\]/filename.qualifiername-value\[\_qualifiername-value\].ext". For example: images/logo.scale-100\_contrast-white.png is simply referred to in code using the root folder and the filename: images/logo.png. See [Manage language and region](../globalizing/manage-language-and-region.md) and [How to name resources using qualifiers](/previous-versions/windows/apps/hh965324(v=win.10)).
+The standard naming convention is "foldername/qualifiername-value\[\_qualifiername-value\]/filename.qualifiername-value\[\_qualifiername-value\].ext". For example: images/logo.scale-100\_contrast-white.png is simply referred to in code using the root folder and the filename: images/logo.png. See [Manage language and region](/windows/apps/design/globalizing/manage-language-and-region) and [How to name resources using qualifiers](/previous-versions/windows/apps/hh965324(v=win.10)).
 
 We recommend that you mark the default language on string resource files (such as "en-US\\resources.resw") and the default scale factor on images (such as "logo.scale-100.png"), even if you do not currently plan to provide localized or multiple resolution resources. However, at a minimum, we recommend that you provide assets for 100, 200, and 400 scale factors.
 

@@ -10319,6 +10319,46 @@
       "source_path": "hub/apps/design/input/drag-and-drop.md",
       "redirect_url": "/windows/apps/develop/data/drag-and-drop",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-deep-link-into-your-app.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-deep-link-into-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-design-guidelines.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-design-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-interact-with-a-background-app.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-interact-with-a-background-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-launch-a-background-app-with-voice-commands.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-launch-a-background-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-launch-a-foreground-app-with-voice-commands.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-launch-a-foreground-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-support-natural-language-voice-commands.md",
+      "redirect_url": "/windows/uwp/ui-input/cortana-support-natural-language-voice-commands",
+      "redirect_document_id": false
     }
   ]
 }

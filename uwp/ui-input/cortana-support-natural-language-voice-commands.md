@@ -43,7 +43,7 @@ You can set up your voice commands to support the app name as a:
 >
 > **User experience guidelines**
 >
-> See [Cortana design guidelines](cortana-design-guidelines.md)  for info about how to integrate your app with **Cortana** and [Speech interactions](speech-interactions.md) for helpful tips on designing a useful and engaging speech-enabled app.
+> See [Cortana design guidelines](cortana-design-guidelines.md)  for info about how to integrate your app with **Cortana** and [Speech interactions](/windows/apps/develop/input/speech-interactions) for helpful tips on designing a useful and engaging speech-enabled app.
 
 ## Specify an **AppName** element in the VCD
 

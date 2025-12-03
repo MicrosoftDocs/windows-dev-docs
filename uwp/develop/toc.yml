@@ -1,3 +1,4 @@
+items:
 - name: Overview
   href: index.md
 - name: App types
@@ -1295,3 +1296,22 @@
           href: ../ui-input/app-window.md
         - name: Use ApplicationView
           href: ../ui-input/application-view.md
+    - name: Cortana
+      href: ../ui-input/cortana-interactions.md
+      items:
+      - name: Design guidelines
+        href: ../ui-input/cortana-design-guidelines.md
+      - name: Activate a foreground app
+        href: ../ui-input/cortana-launch-a-foreground-app-with-voice-commands.md
+      - name: Modify VCD phrase lists
+        href: ../ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md
+      - name: Launch a background app
+        href: ../ui-input/cortana-launch-a-background-app-with-voice-commands.md
+      - name: Interact with a background app
+        href: ../ui-input/cortana-interact-with-a-background-app.md
+      - name: Deep link from a background app
+        href: ../ui-input/cortana-deep-link-into-your-app.md
+      - name: Support natural-language voice commands
+        href: ../ui-input/cortana-support-natural-language-voice-commands.md
+    - name: Content links
+      href: ../ui-input/content-links.md

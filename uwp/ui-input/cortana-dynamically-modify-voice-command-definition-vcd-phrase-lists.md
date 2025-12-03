@@ -45,7 +45,7 @@ For more info about **PhraseList** and other VCD elements, see the [**VCD elemen
 >
 > **User experience guidelines**
 >
-> See [Cortana design guidelines](cortana-design-guidelines.md)  for info about how to integrate your app with **Cortana** and [Speech interactions](speech-interactions.md) for helpful tips on designing a useful and engaging speech-enabled app.
+> See [Cortana design guidelines](cortana-design-guidelines.md)  for info about how to integrate your app with **Cortana** and [Speech interactions](/windows/apps/develop/input/speech-interactions) for helpful tips on designing a useful and engaging speech-enabled app.
 
 ## Identify the command and update the phrase list
 
