@@ -61,7 +61,7 @@ The following basic steps add voice-command functionality and extend **Cortana**
 >
 > **User experience guidelines**
 >
-> See [Cortana design guidelines](cortana-design-guidelines.md)  for info about how to integrate your app with **Cortana** and [Speech interactions](speech-interactions.md) for helpful tips on designing a useful and engaging speech-enabled app.
+> See [Cortana design guidelines](cortana-design-guidelines.md)  for info about how to integrate your app with **Cortana** and [Speech interactions](/windows/apps/develop/input/speech-interactions) for helpful tips on designing a useful and engaging speech-enabled app.
 
 ## Create a New Solution with a Primary Project in Visual Studio  
 
