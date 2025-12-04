@@ -14,7 +14,7 @@ highlightedContent:
    items:
     - title: What's new for Windows developers
       itemType: whats-new
-      url: /windows/apps/whats-new/windows-11-build-22000
+      url: /windows/apps/whats-new/whats-new-for-developers
  
     - title: Enhance your Windows apps with AI
       itemType: overview
@@ -35,7 +35,7 @@ productDirectory:
   - title: Get started
     imageSrc: /media/common/i_get-started.svg
     links:
-      - url: https://developer.microsoft.com/windows/downloads
+      - url: https://visualstudio.microsoft.com/downloads/
         text: Download Visual Studio
       - url: ./get-started/index.md
         text: Overview of framework options

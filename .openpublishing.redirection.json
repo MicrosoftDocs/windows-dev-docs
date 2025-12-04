@@ -1,6 +1,41 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/how-tos/uno-multiplatform.md",
+      "redirect_url": "/previous-versions/windows/app-dev/how-tos/uno-multiplatform",
+      "redirect_document_id": false
+    },
+	{
+      "source_path": "hub/apps/whats-new/windows-11-build-22000.md",
+      "redirect_url": "/hub/apps/whats-new/whats-new-for-developers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/uno-simple-photo-viewer.md",
+      "redirect_url": "/previous-versions/windows/app-dev/get-started/uno-simple-photo-viewer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/index.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-graph-api.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/tutorial-graph-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/walkthrough-first-app.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/walkthrough-first-app",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/enterprise/customer-database-app-structure.md",
       "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-app-structure",
       "redirect_document_id": false
@@ -2167,38 +2202,38 @@
     },
     {
       "source_path": "uwp/style/motion-dragdrop.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-dragdrop",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-dragdrop",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-edgebased.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-edgebased",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-edgebased",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-fade.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-fade",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-fade",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-list.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-list",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-list",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-pointer.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-pointer",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-pointer",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-popup-animations.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-popup-animations",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-popup-animations",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-reposition.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-reposition",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion.md",
@@ -6277,7 +6312,7 @@
     },
     {
       "source_path": "uwp/design/controls-and-patterns/content-links.md",
-      "redirect_url": "/windows/apps/design/controls/content-links",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/content-links",
       "redirect_document_id": false
     },
     {
@@ -6712,42 +6747,42 @@
     },
     {
       "source_path": "uwp/design/input/cortana-deep-link-into-your-app.md",
-      "redirect_url": "/windows/apps/design/input/cortana-deep-link-into-your-app",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-deep-link-into-your-app",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-design-guidelines.md",
-      "redirect_url": "/windows/apps/design/input/cortana-design-guidelines",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-design-guidelines",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
-      "redirect_url": "/windows/apps/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-interact-with-a-background-app.md",
-      "redirect_url": "/windows/apps/design/input/cortana-interact-with-a-background-app",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interact-with-a-background-app",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-interactions.md",
-      "redirect_url": "/windows/apps/design/input/cortana-interactions",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interactions",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-launch-a-background-app-with-voice-commands.md",
-      "redirect_url": "/windows/apps/design/input/cortana-launch-a-background-app-with-voice-commands",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-background-app-with-voice-commands",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-launch-a-foreground-app-with-voice-commands.md",
-      "redirect_url": "/windows/apps/design/input/cortana-launch-a-foreground-app-with-voice-commands",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-foreground-app-with-voice-commands",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-support-natural-language-voice-commands.md",
-      "redirect_url": "/windows/apps/design/input/cortana-support-natural-language-voice-commands",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-support-natural-language-voice-commands",
       "redirect_document_id": false
     },
     {
@@ -6762,7 +6797,7 @@
     },
     {
       "source_path": "uwp/design/input/drag-and-drop.md",
-      "redirect_url": "/windows/apps/design/input/drag-and-drop",
+      "redirect_url": "/windows/apps/develop/data/drag-and-drop",
       "redirect_document_id": false
     },
     {
@@ -7077,17 +7112,17 @@
     },
     {
       "source_path": "uwp/design/motion/motion-dragdrop.md",
-      "redirect_url": "/windows/apps/design/motion/motion-dragdrop",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-dragdrop",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-edgebased.md",
-      "redirect_url": "/windows/apps/design/motion/motion-edgebased",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-edgebased",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-fade.md",
-      "redirect_url": "/windows/apps/design/motion/motion-fade",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-fade",
       "redirect_document_id": false
     },
     {
@@ -7097,22 +7132,22 @@
     },
     {
       "source_path": "uwp/design/motion/motion-list.md",
-      "redirect_url": "/windows/apps/design/motion/motion-list",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-list",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-pointer.md",
-      "redirect_url": "/windows/apps/design/motion/motion-pointer",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-pointer",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-popup-animations.md",
-      "redirect_url": "/windows/apps/design/motion/motion-popup-animations",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-popup-animations",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-reposition.md",
-      "redirect_url": "/windows/apps/design/motion/motion-reposition",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
       "redirect_document_id": false
     },
     {
@@ -9603,6 +9638,761 @@
     {
       "source_path": "hub/apps/get-started/enable-your-device-for-development.md",
       "redirect_url": "/windows/advanced-settings/developer-mode",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/icons.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/icons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/animated-icon.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/animated-icon",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/annotated-scrollbar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/annotated-scrollbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/auto-suggest-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/auto-suggest-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/breadcrumbbar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/breadcrumbbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/buttons.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/buttons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/calendar-date-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/calendar-date-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/calendar-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/calendar-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/checkbox.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/checkbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/collection-commanding.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/collection-commanding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/color-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/color-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/combo-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/combo-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/command-bar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/command-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/command-bar-flyout.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/command-bar-flyout",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/commanding.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/commanding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/contact-card.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/contact-card",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/content-links.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/content-links",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/controls-and-events-intro.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/controls-and-events-intro",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/custom-transport-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/custom-transport-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/data-template-selector.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/data-template-selector",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/date-and-time.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/date-and-time",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/date-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/date-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/expander.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/expander",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/flipview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/flipview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/forms.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/forms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/hyperlinks.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/hyperlinks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/images-imagebrushes.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/images-imagebrushes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/index.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/info-badge.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/info-badge",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/infobar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/infobar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/inking-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/inking-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/inverted-lists.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/inverted-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/item-containers-templates.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/item-containers-templates",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/items-repeater.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/items-repeater",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/itemsview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/itemsview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/item-templates-gridview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/item-templates-gridview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/item-templates-listview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/item-templates-listview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/labels.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/labels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/list-details.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/list-details",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/lists.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/listview-and-gridview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/listview-and-gridview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/listview-filtering.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/listview-filtering",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/media-playback.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/media-playback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/menus.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/menus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/menus-and-context-menus.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/menus-and-context-menus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/navigationview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/navigationview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/nested-ui.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/nested-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/number-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/number-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/password-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/password-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/person-picture.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/person-picture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/pipspager.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/pipspager",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/pivot.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/pivot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/progress-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/progress-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/pull-to-refresh.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/pull-to-refresh",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/radio-button.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/radio-button",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/rating.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/rating",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/rich-edit-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/rich-edit-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/rich-text-block.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/rich-text-block",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/scroll-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/scroll-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/selection-modes.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/selection-modes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/selector-bar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/selector-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/semantic-zoom.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/semantic-zoom",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/shapes.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/shapes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/slider.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/slider",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/split-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/split-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/swipe.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/swipe",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/tab-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/tab-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-block.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/text-block",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/text-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/text-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-handwriting-view.md",
+      "redirect_url": "/windows/apps/design/input/text-handwriting-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/time-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/time-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/title-bar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/title-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/toggles.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/toggles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/tooltips.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/tooltips",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/tree-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/tree-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/two-pane-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/two-pane-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/web-view.md",
+      "redirect_url": "/windows/uwp/ui-input/web-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/dialogs.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/dialogs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/flyouts.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/flyouts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/index.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/teaching-tip.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/teaching-tip",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/display-ui-objects.md",
+      "redirect_url": "/windows/apps/develop/ui/display-ui-objects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/manage-app-windows.md",
+      "redirect_url": "/windows/apps/develop/ui/manage-app-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/multiple-windows.md",
+      "redirect_url": "/windows/apps/develop/ui/multiple-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/retrieve-hwnd.md",
+      "redirect_url": "/windows/apps/develop/ui/retrieve-hwnd",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/visual-tree.md",
+      "redirect_url": "/windows/apps/develop/ui/visual-tree",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/windowing-overview.md",
+      "redirect_url": "/windows/apps/develop/ui/windowing-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/access-keys.md",
+      "redirect_url": "/windows/apps/develop/input/access-keys",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/convert-ink-to-text.md",
+      "redirect_url": "/windows/apps/develop/input/convert-ink-to-text",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/custom-text-input.md",
+      "redirect_url": "/windows/apps/develop/input/custom-text-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/define-custom-recognition-constraints.md",
+      "redirect_url": "/windows/apps/develop/input/define-custom-recognition-constraints",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/enable-continuous-dictation.md",
+      "redirect_url": "/windows/apps/develop/input/enable-continuous-dictation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/focus-navigation.md",
+      "redirect_url": "/windows/apps/develop/input/focus-navigation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/focus-navigation-programmatic.md",
+      "redirect_url": "/windows/apps/develop/input/focus-navigation-programmatic",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/gamepad-and-remote-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/gamepad-and-remote-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/gaze-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/gaze-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-cross-slide.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-cross-slide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-optical-zoom.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-optical-zoom",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-panning.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-panning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-rotation.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-rotation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-targeting.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-targeting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-textselection.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-textselection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-visualfeedback.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-visualfeedback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/handle-pointer-input.md",
+      "redirect_url": "/windows/apps/develop/input/handle-pointer-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/identify-input-devices.md",
+      "redirect_url": "/windows/apps/develop/input/identify-input-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/index.md",
+      "redirect_url": "/windows/apps/develop/input/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/ink-toolbar.md",
+      "redirect_url": "/windows/apps/develop/input/ink-toolbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/ink-walkthrough.md",
+      "redirect_url": "/windows/apps/develop/input/ink-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-injection.md",
+      "redirect_url": "/windows/apps/develop/input/input-injection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-method-editor-requirements.md",
+      "redirect_url": "/windows/apps/develop/input/input-method-editor-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-method-editors.md",
+      "redirect_url": "/windows/apps/develop/input/input-method-editors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-primer.md",
+      "redirect_url": "/windows/apps/develop/input/input-primer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/keyboard-accelerators.md",
+      "redirect_url": "/windows/apps/develop/input/keyboard-accelerators",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/keyboard-events.md",
+      "redirect_url": "/windows/apps/develop/input/keyboard-events",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/keyboard-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/keyboard-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/manage-issues-with-audio-input.md",
+      "redirect_url": "/windows/apps/develop/input/manage-issues-with-audio-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/mouse-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/mouse-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/multiple-input-design-guidelines.md",
+      "redirect_url": "/windows/apps/develop/input/multiple-input-design-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/pen-and-stylus-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/pen-and-stylus-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/pen-haptics.md",
+      "redirect_url": "/windows/apps/develop/input/pen-haptics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/radialcontroller-walkthrough.md",
+      "redirect_url": "/windows/apps/develop/input/radialcontroller-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/respond-to-the-presence-of-the-touch-keyboard.md",
+      "redirect_url": "/windows/apps/develop/input/respond-to-the-presence-of-the-touch-keyboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/save-and-load-ink.md",
+      "redirect_url": "/windows/apps/develop/input/save-and-load-ink",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/set-speech-recognition-timeouts.md",
+      "redirect_url": "/windows/apps/develop/input/set-speech-recognition-timeouts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/specify-the-speech-recognizer-language.md",
+      "redirect_url": "/windows/apps/develop/input/specify-the-speech-recognizer-language",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/speech-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/speech-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/speech-recognition.md",
+      "redirect_url": "/windows/apps/develop/input/speech-recognition",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/text-handwriting-view.md",
+      "redirect_url": "/windows/apps/develop/input/text-handwriting-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/text-scaling.md",
+      "redirect_url": "/windows/apps/develop/input/text-scaling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/touch-developer-guide.md",
+      "redirect_url": "/windows/apps/develop/input/touch-developer-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/touch-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/touch-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/touchpad-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/touchpad-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/use-input-scope-to-change-the-touch-keyboard.md",
+      "redirect_url": "/windows/apps/develop/input/use-input-scope-to-change-the-touch-keyboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/windows-wheel-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/windows-wheel-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/drag-and-drop.md",
+      "redirect_url": "/windows/apps/develop/data/drag-and-drop",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-deep-link-into-your-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-deep-link-into-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-design-guidelines.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-design-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-interactions.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-interact-with-a-background-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interact-with-a-background-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-launch-a-background-app-with-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-background-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-launch-a-foreground-app-with-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-foreground-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-support-natural-language-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-support-natural-language-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-dragdrop.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-dragdrop",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-edgebased.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-edgebased",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-fade.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-fade",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-list.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-pointer.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-popup-animations.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-popup-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-reposition.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
       "redirect_document_id": false
     }
   ]
