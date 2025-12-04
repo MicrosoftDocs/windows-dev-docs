@@ -1,6 +1,86 @@
 {
   "redirections": [
     {
+      "source_path": "uwp/ui-input/content-links.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/content-links",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-deep-link-into-your-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-deep-link-into-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-design-guidelines.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-design-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-interact-with-a-background-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interact-with-a-background-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-interactions.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-launch-a-background-app-with-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-background-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-launch-a-foreground-app-with-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-foreground-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/cortana-support-natural-language-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-support-natural-language-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/motion-dragdrop.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-dragdrop",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/motion-edgebased.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-edgebased",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/motion-fade.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-fade",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/motion-list.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/motion-pointer.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-pointer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/motion-popup-animations.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-popup-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/ui-input/motion-reposition.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/how-tos/uno-multiplatform.md",
       "redirect_url": "/previous-versions/windows/app-dev/how-tos/uno-multiplatform",
       "redirect_document_id": false
