@@ -464,6 +464,16 @@ items:
       items:
       - name: Overview
         href: develop/windows-integration/index.md
+      - name: Actions with Microsoft Foundry on Windows
+        items:
+        - name: Overview
+          href: develop/actions/index.md
+        - name: Action definition JSON schema
+          href: develop/actions/action-json.md
+        - name: Action provider package manifest XML format
+          href: develop/actions/action-provider-manifest.md
+      - name: Click to Do
+        href: develop/windows-integration/click-to-do.md 
       - name: Copilot hardware key
         href: develop/windows-integration/microsoft-copilot-key-provider.md
         items:
@@ -475,6 +485,24 @@ items:
         href: develop/windows-integration/cross-device-resume.md
       - name: Default apps platform
         href: develop/windows-integration/default-apps-platform.md
+      - name: Pin your app to the taskbar
+        href: develop/windows-integration/pin-to-taskbar.md
+      - name: Recall
+        items:
+        - name: Overview
+          href: develop/windows-integration/recall/index.md
+        - name: Enabling relaunch
+          href: develop/windows-integration/recall/recall-relaunch.md
+        - name: Web browsers
+          href: develop/windows-integration/recall/recall-web-browsers.md
+        - name: Apply sensitivity labels
+          href: develop/windows-integration/recall/recall-content-info-labels.md
+        - name: DLP Provider API
+          href: develop/windows-integration/recall/dlp-provider-api.md
+        - name: (EEA-only) Decrypt exported snapshots
+          href: develop/windows-integration/recall/decrypt-exported-snapshots.md 
+      - name: Studio Effects
+        href: develop/windows-integration/studio-effects.md
       - name: Smart App Control
         items:
         - name: Overview
@@ -483,25 +511,6 @@ items:
           href: develop/smart-app-control/code-signing-for-smart-app-control.md
         - name: Test your app's signature with Smart App Control
           href: develop/smart-app-control/test-your-app-with-smart-app-control.md
-      - name: Windows Search
-        href: develop/search/index.md
-        items:
-        - name: Windows Search web search providers
-          href: develop/search/search-providers.md
-        - name: Cloud files provider integration with Windows Search
-          href: develop/search/cloud-search-integration.md
-      - name: Windows Share
-        items:
-        - name: Overview
-          href: develop/windows-integration/integrate-sharesheet-overview.md
-        - name: Integrate packaged apps
-          href: develop/windows-integration/integrate-sharesheet-packaged.md
-        - name: Integrate PWAs
-          href: develop/windows-integration/integrate-sharesheet-pwa.md
-        - name: Integrate UWP apps >>
-          href: /windows/uwp/app-to-app/share-data
-        - name: Integrate unpackaged apps
-          href: develop/windows-integration/integrate-sharesheet-unpackaged.md
       - name: Widgets
         items:
         - name: Feed providers
@@ -530,34 +539,27 @@ items:
             href: develop/widgets/widget-provider-manifest.md
           - name: ActivateApplication protocol
             href: develop/widgets/widget-provider-activateapplication-protocol.md
-      - name: Actions with Microsoft Foundry on Windows
+      - name: Windows Settings connector
+        href: develop/windows-integration/settings-mcp.md
+      - name: Windows Search
+        href: develop/search/index.md
+        items:
+        - name: Windows Search web search providers
+          href: develop/search/search-providers.md
+        - name: Cloud files provider integration with Windows Search
+          href: develop/search/cloud-search-integration.md
+      - name: Windows Share
         items:
         - name: Overview
-          href: develop/actions/index.md
-        - name: Action definition JSON schema
-          href: develop/actions/action-json.md
-        - name: Action provider package manifest XML format
-          href: develop/actions/action-provider-manifest.md
-      - name: Studio Effects
-        href: develop/windows-integration/studio-effects.md
-      - name: Click to Do
-        href: develop/windows-integration/click-to-do.md
-      - name: Recall
-        items:
-        - name: Overview
-          href: develop/windows-integration/recall/index.md
-        - name: Enabling relaunch
-          href: develop/windows-integration/recall/recall-relaunch.md
-        - name: Web browsers
-          href: develop/windows-integration/recall/recall-web-browsers.md
-        - name: Apply sensitivity labels
-          href: develop/windows-integration/recall/recall-content-info-labels.md
-        - name: DLP Provider API
-          href: develop/windows-integration/recall/dlp-provider-api.md
-        - name: (EEA-only) Decrypt exported snapshots
-          href: develop/windows-integration/recall/decrypt-exported-snapshots.md 
-      - name: Pin your app to the taskbar
-        href: develop/windows-integration/pin-to-taskbar.md
+          href: develop/windows-integration/integrate-sharesheet-overview.md
+        - name: Integrate packaged apps
+          href: develop/windows-integration/integrate-sharesheet-packaged.md
+        - name: Integrate PWAs
+          href: develop/windows-integration/integrate-sharesheet-pwa.md
+        - name: Integrate UWP apps >>
+          href: /windows/uwp/app-to-app/share-data
+        - name: Integrate unpackaged apps
+          href: develop/windows-integration/integrate-sharesheet-unpackaged.md
     - name: Performance
       items:
       - name: Overview
