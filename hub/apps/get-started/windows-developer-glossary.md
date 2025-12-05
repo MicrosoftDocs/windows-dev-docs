@@ -70,13 +70,17 @@ A transformer-based model trained on large corpora to understand and generate na
 
 "Managed" refers to the "managed runtime" of .NET, which provides managed services such as garbage collection and security assurances. If you're building an app with .NET, you're building a managed app.
 
+#### MCP Servers
+
+MCP is an open protocol designed to standardize integrations between AI apps and external tools and data sources. [Model Context Protocol (MCP) Servers](/windows/ai/mcp/overview).
+
 #### Microsoft Foundation Classes (MFC)
 
 You can use Microsoft Foundation Classes (MFC) to create complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces. See: [MFC desktop applications](/cpp/mfc/mfc-desktop-applications).
 
 #### Microsoft Foundry
 
-A managed platform for building, evaluating, and deploying generative AI applications with foundation models. Formerly Azure AI Foundry. See [Azure AI Foundry documentation](/azure/ai-foundry/).
+A managed platform for building, evaluating, and deploying generative AI applications with foundation models. Formerly Azure AI Foundry. See [Microsoft Foundry documentation](/azure/ai-foundry/).
 
 #### MSIX (Microsoft Installer package format)
 
@@ -92,11 +96,11 @@ Traditionally, "native" refers to applications built without using the .NET runt
 
 #### Neural Processing Unit (NPU)
 
-A dedicated on‑device AI accelerator optimized for transformer operations and other ML workloads. Windows apps can target NPUs via APIs like [DirectML](/windows/ai/directml/dml-intro).
+A dedicated on‑device AI accelerator optimized for transformer operations and other ML workloads. Windows apps can target NPUs via APIs included as part of [Foundry Local](/windows/ai/foundry-local/get-started).
 
 #### ONNX Runtime (ORT)
 
-A high‑performance, cross‑platform inference engine for models in the ONNX format. On Windows, ORT commonly uses the DirectML execution provider for GPU/NPU acceleration. See [ONNX Runtime documentation](https://onnxruntime.ai/docs/). WindowsML uses ONNX Runtime under the hood.
+A high‑performance, cross‑platform inference engine for models in the ONNX format. See [Run ONNX models](/windows/ai/new-windows-ml/run-onnx-models).
 
 #### Packaged app
 
@@ -199,7 +203,7 @@ XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinFor
 
 #### Windows ML
 
-Windows APIs for running ONNX models locally in Windows apps, with hardware acceleration via DirectML where it's available. See [Windows ML](/windows/ai/windows-ml/).
+Windows APIs for running ONNX models locally in Windows apps, with hardware acceleration via DirectML where it's available. See [Windows ML](/windows/ai/new-windows-ml/).
 
 ## Related content
 
