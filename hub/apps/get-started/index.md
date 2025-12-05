@@ -64,7 +64,7 @@ WPF is a well-established framework for Windows desktop applications with access
 Additionally, you can now integrate a sandbox environment into your packaged WPF applications, providing an extra layer of security. This enhancement requires little to no change to your code, thanks to the new [Win32 App Isolation](https://github.com/microsoft/win32-app-isolation) security feature.
 
 > [!TIP]
-> If you already invested in WPF, you can continue to use it and take advantage of the modernization options in .NET 9. You can build your apps knowing that Microsoft is continuing to invest in WPF. See the [Windows developer FAQ](windows-developer-faq.yml) for more information.
+> If you already invested in WPF, you can continue to use it and take advantage of the modernization options in .NET 9. You can build your apps knowing that Microsoft is continuing to invest in WPF. See the [Windows developer FAQ](windows-developer-faq.md) for more information.
 
 > [!div class="button"]
 > [Get started with WPF](/dotnet/desktop/wpf/overview/)
@@ -229,7 +229,7 @@ You have many options for developing applications for Windows. The best option f
 
 Learn more about each of these options:
 
-- [Windows developer FAQ](windows-developer-faq.yml)
+- [Windows developer FAQ](windows-developer-faq.md)
 - [.NET Multi-platform App UI (.NET MAUI)](/dotnet/maui/)
 - [ASP.NET Core Blazor Hybrid](/aspnet/core/blazor/hybrid)
 - [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows)

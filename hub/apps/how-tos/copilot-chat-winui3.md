@@ -254,5 +254,5 @@ In this how-to, we:
 ## Related content
 
 - [Sample applications for Windows development](../get-started/samples.md)
-- [Windows developer FAQ](../get-started/windows-developer-faq.yml)
+- [Windows developer FAQ](../get-started/windows-developer-faq.md)
 - [Windows development best practices](../get-started/best-practices.md)

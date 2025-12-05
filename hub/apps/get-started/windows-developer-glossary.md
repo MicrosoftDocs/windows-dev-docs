@@ -202,5 +202,5 @@ Windows APIs for running ONNX models locally in Windows apps, with hardware acce
 
 ## Related content
 
-- [Windows developer FAQ](windows-developer-faq.yml)
+- [Windows developer FAQ](windows-developer-faq.md)
 - [Overview of app development options](./index.md)
