@@ -1,10 +1,12 @@
 ---
 description: Bulgarian currency conversion information for Microsoft Store submissions
-title: Bulgarian currency conversion: Developer Update
+title: Bulgarian currency conversion - Developer Update
 ms.date: 12/05/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
+
+# Bulgarian currency conversion - Developer Update
 
 ## Overview
 
