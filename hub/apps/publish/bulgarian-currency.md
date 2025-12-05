@@ -36,7 +36,7 @@ Third-party partners will need to make changes in Partner Center before republis
 
 ## Restoration timeline
 
-Microsoft will start republishing products with euro currency in early January 2026, with completion expected by late February or early March. To have your product available sooner, you can republish it yourself after December 15, 2026.
+Microsoft will start republishing products with euro currency in early January 2026, with completion expected by late February or early March. To have your product available sooner, you can republish it yourself after December 15, 2025.
 
 ## Consumer experience on January 1, 2026
 
@@ -46,7 +46,7 @@ Engineering teams are developing messaging that will be displayed to consumers v
 
 * Monitor Partner Center communications for updates on the restoration timeline and consumer messaging.
 
-* After December 15, 2026, you can either republish your product with the correct euro currency or wait for Microsoft to automatically republish by early March 2026.
+* After December 15, 2025, you can either republish your product with the correct euro currency or wait for Microsoft to automatically republish by early March 2026.
 
 * Review your offerings to ensure compliance with eurozone currency requirements.
 
