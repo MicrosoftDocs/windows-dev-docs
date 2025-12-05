@@ -203,7 +203,7 @@ XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinFor
 
 #### Windows ML
 
-Windows APIs for running ONNX models locally in Windows apps, with hardware acceleration via DirectML where it's available. See [Windows ML](/windows/ai/new-windows-ml/).
+Windows APIs for running ONNX models locally in Windows apps, with hardware acceleration via DirectML where it's available. See [Windows ML](/windows/ai/new-windows-ml/overview.md).
 
 ## Related content
 
