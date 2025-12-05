@@ -41,7 +41,7 @@ landingContent:
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
           - text: Windows developer FAQ
-            url: ../get-started/windows-developer-faq.yml
+            url: ../get-started/windows-developer-faq.md
 
   - title: Deploy and publish
     linkLists:

@@ -271,7 +271,7 @@ Windows apps can be delivered to end-users using a variety of application packag
 
 **Q: Can I use VS Code to build WinUI apps?**
 
-Although technically possible, we strongly recommend using Visual Studio 2022 to build desktop apps with WinUI and Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.yml#do-i-need-to-use-visual-studio-to-build-winui-apps) for more information.
+Although technically possible, we strongly recommend using Visual Studio 2022 to build desktop apps with WinUI and Windows App SDK. See [the Windows developer FAQ](../get-started/windows-developer-faq.md) for more information.
 
 **Q: Can I use C++ to build WinUI apps?**
 
@@ -284,6 +284,6 @@ No, Visual Basic (VB) is not supported for building WinUI apps. The supported la
 ## Related content
 
 - [Sample applications for Windows development](../get-started/samples.md)
-- [Windows developer FAQ](../get-started/windows-developer-faq.yml)
+- [Windows developer FAQ](../get-started/windows-developer-faq.md)
 - [Windows developer glossary](../get-started/windows-developer-glossary.md)
 - [Windows development best practices](../get-started/best-practices.md)

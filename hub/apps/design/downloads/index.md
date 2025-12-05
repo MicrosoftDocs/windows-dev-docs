@@ -44,6 +44,17 @@ The Design Guidance section of the WinUI Gallery offers best practices and tools
 > [!div class="button"]
 > [Design Guidance in WinUI Gallery](winui3gallery://item/Color)
 
+## Microsoft Store Asset Guidance Kit
+
+:::image type="content" source="images/store-asset-kit.png" alt-text="A cover image of the Microsoft Store Asset Guidance Kit":::
+
+The Microsoft Store Asset Guidance Kit for Figma provides templates and tools to help create high-quality screenshots, app icons, and other assets for publishing on the Microsoft Store.
+
+This kit supports the full process of creating, testing, and submitting app and game assets. It includes guidance for logo and icon sizing, along with previews that show how your icon will appear in the Store after submission to Partner Center. It also offers customizable templates to help produce consistent, polished screenshots for your app or game.
+
+> [!div class="button"]
+> [Microsoft Store Asset Guidance Kit for Figma](https://www.figma.com/community/file/1568793421368412416)
+
 ## Samples
 
 Check out the [Samples and resources page](https://developer.microsoft.com/windows/samples) for complete list of all our Windows app samples.
