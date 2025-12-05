@@ -540,7 +540,7 @@ items:
           - name: ActivateApplication protocol
             href: develop/widgets/widget-provider-activateapplication-protocol.md
       - name: Windows Settings connector
-        href: develop/windows-integration/windows-settings-connector.md
+        href: develop/windows-integration/settings-mcp.md
       - name: Windows Search
         href: develop/search/index.md
         items:
