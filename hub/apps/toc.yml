@@ -846,7 +846,7 @@ items:
     items:
     - name: Windows App SDK
       items:
-      - name: Overview of Windows App SDK
+      - name: Overview
         href: windows-app-sdk/index.md
       - name: Windows App SDK and supported Windows releases
         href: windows-app-sdk/support.md
