@@ -5,6 +5,15 @@ ms.date: 10/28/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
+
+<div class="buttons margin-top-xs">
+	<a href="../desktop/index.yml" class="button button-sm"><span>Start</span></a>
+	<a href="" class="button button-sm button-primary button-filled"><span>Design</span></a>
+	<a href="../develop/index.md" class="button button-sm"><span>Develop</span></a>
+	<a href="../package-and-deploy/index.md" class="button button-sm"><span>Deploy</span></a>
+	<a href="../publish/index.md" class="button button-sm"><span>Distribute</span></a>
+</div>
+
 # Design for Windows apps
 
 Here, you'll find design guidelines and examples for creating Windows app experiences. Windows 11 incorporates Fluent's design language and principles for a cohesive look and feel that's uniquely Microsoft.

@@ -1,4 +1,6 @@
 items:
+    - name: Build Windows apps
+      href: ../desktop/index.yml
     - name: Overview
       href: ../package-and-deploy/index.md
     - name: App packaging
@@ -61,3 +63,11 @@ items:
           href: ../package-and-deploy/ci-for-winui3.md
     - name: Windows app restore
       href: ../develop/windows-app-restore.md
+    - name: Get started >>
+      href: ../get-started/index.md
+    - name: Design >>
+      href: ../design/index.md
+    - name: Develop >>
+      href: ../develop/index.md
+    - name: Distribute >>
+      href: ../publish/index.md

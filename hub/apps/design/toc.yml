@@ -1,4 +1,6 @@
 items:
+  - name: Build Windows apps
+    href: ../desktop/index.yml
   - name: Overview
     href: index.md
   - name: Color
@@ -203,3 +205,11 @@ items:
         href: widgets/widgets-picker-integration.md
   - name: Design resources
     href: downloads/index.md
+  - name: Get started >>
+    href: ../get-started/index.md
+  - name: Develop >>
+    href: ../develop/index.md
+  - name: Package and deploy >>
+    href: ../package-and-deploy/index.md
+  - name: Distribute >>
+    href: ../publish/index.md

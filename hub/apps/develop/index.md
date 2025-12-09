@@ -6,6 +6,14 @@ ms.date: 06/28/2024
 ms.localizationpriority: medium
 ---
 
+<div class="buttons margin-top-xs">
+    <a href="../desktop/index.yml" class="button button-sm"><span>Start</span></a>
+    <a href="../design/index.md" class="button button-sm"><span>Design</span></a>
+    <a href="" class="button button-sm button-primary button-filled"><span>Develop</span></a>
+    <a href="../package-and-deploy/index.md" class="button button-sm"><span>Deploy</span></a>
+    <a href="../publish/index.md" class="button button-sm"><span>Distribute</span></a>
+</div>
+
 # Develop Windows desktop apps
 
 This section of the documentation provides information about APIs and features you can use while developing Windows desktop apps. Some of these features are available by using APIs in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET, and don't require use of the Windows App SDK.

@@ -8,6 +8,14 @@ ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ---
 
+<div class="buttons margin-top-xs">
+   <a href="../desktop/index.yml" class="button button-sm"><span>Start</span></a>
+   <a href="../design/index.md" class="button button-sm"><span>Design</span></a>
+   <a href="../develop/index.md" class="button button-sm"><span>Develop</span></a>
+   <a href="../package-and-deploy/index.md" class="button button-sm"><span>Deploy</span></a>
+   <a href="" class="button button-sm button-primary button-filled"><span>Distribute</span></a>
+</div>
+
 # Get started: Publish your first app in the Microsoft Store
 
 ## Introduction
