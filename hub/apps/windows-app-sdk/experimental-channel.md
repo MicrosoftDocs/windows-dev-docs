@@ -121,7 +121,7 @@ Along with the capabilities of MenuFlyoutItem and MenuFlyoutSubItem, the control
                 <SplitMenuFlyoutItem Text="Open with Notepad">
                     <MenuFlyoutItem Text="Visual Studio" />
                     <MenuFlyoutItem Text="VS Code" />
-                    <MenuFlyoutItem Text="Wordpad" />
+                    <MenuFlyoutItem Text="Word" />
                 </SplitMenuFlyoutItem>
             </MenuFlyout>
         </Button.Flyout>
