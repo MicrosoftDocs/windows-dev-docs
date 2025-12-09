@@ -115,7 +115,7 @@ The new experimental SplitMenuFlyoutItem control is designed to provide a split 
 Along with the capabilities of MenuFlyoutItem and MenuFlyoutSubItem, the control comes with two other properties : `SubMenuPresenterStyle` and `SubMenuItemStyle`, which allows the customization of the submenu, like using GridView for the submenu presenter.
 
 ```
-    <Button Text="Open File Button">
+    <Button Content="Open with">
         <Button.Flyout>
             <MenuFlyout>
                 <SplitMenuFlyoutItem Text="Open with Notepad">
