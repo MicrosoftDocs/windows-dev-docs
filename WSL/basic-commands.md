@@ -1,7 +1,7 @@
 ---
 title: Basic commands for WSL
 description: Reference for the basic commands included with Windows Subsystem for Linux (WSL).
-ms.date: 07/31/2025
+ms.date: 12/01/2025
 ms.topic: article
 ---
 
@@ -22,6 +22,7 @@ Options include:
 - `--distribution`: Specify the Linux distribution to install. You can find available distributions by running `wsl --list --online`.
 - `--no-launch`: Install the Linux distribution but do not launch it automatically.
 - `--web-download`: Install from an online source rather than using the Microsoft Store.
+- `--location`: Specify which folder you would like to install the WSL distribution to.
 
 When WSL is not installed options include:
 
@@ -75,7 +76,7 @@ wsl --set-default <Distribution Name>
 
 To set the default Linux distribution that WSL commands will use to run, replace `<Distribution Name>` with the name of your preferred Linux distribution.
 
-## Start WSL in user's home
+## Start WSL in user home directory
 
 ```powershell
 wsl ~
@@ -203,8 +204,6 @@ wsl --import-in-place <Distribution Name> <FileName>
 Imports the specified .vhdx file as a new distribution. The virtual hard disk must be formatted in the ext4 filesystem type.
 
 ## Unregister or uninstall a Linux distribution
-
-While Linux distributions can be installed through the Microsoft Store, they can't be uninstalled through the store.
 
 To unregister and uninstall a WSL distribution:
 
