@@ -6,6 +6,14 @@ ms.date: 10/05/2023
 ms.localizationpriority: medium
 ---
 
+<div class="buttons margin-top-xs">
+  <a href="../desktop/index.yml" class="button button-sm"><span>Start</span></a>
+  <a href="../design/index.md" class="button button-sm"><span>Design</span></a>
+  <a href="../develop/index.md" class="button button-sm"><span>Develop</span></a>
+  <a href="" class="button button-sm button-primary button-filled"><span>Deploy</span></a>
+  <a href="../publish/index.md" class="button button-sm"><span>Distribute</span></a>
+</div>
+
 # Packaging and deployment overview
 
 The topics in this section introduce options and guidance for deploying different types of Windows apps.

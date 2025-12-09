@@ -1,4 +1,6 @@
 items:
+- name: Build Windows apps
+  href: ../desktop/index.yml
 - name: Get started with the Microsoft Store
   href: index.md
 - name: Open a developer account
@@ -409,3 +411,11 @@ items:
       href: faq/manage-your-account.md
     - name: Responsible AI FAQ 
       href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
+- name: Get started >>
+  href: ../get-started/index.md
+- name: Design >>
+  href: ../design/index.md
+- name: Develop >>
+  href: ../develop/index.md
+- name: Package and deploy >>
+  href: ../package-and-deploy/index.md
