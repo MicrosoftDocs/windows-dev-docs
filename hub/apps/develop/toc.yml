@@ -424,7 +424,7 @@ items:
       items:
       - name: Overview
         href: windows-integration/index.md
-      - name: Actions with Microsoft Foundry on Windows
+      - name: App Actions
         items:
         - name: Overview
           href: actions/index.md
