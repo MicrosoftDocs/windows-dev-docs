@@ -16,6 +16,10 @@ ms.localizationpriority: medium
 
 # Design for Windows apps
 
+:::image type="content" source="images/header-design.png" alt-text="A stylized blue brush and shapes representing design tools against a light gradient background" border="false":::
+
+---
+
 Here, you'll find design guidelines and examples for creating Windows app experiences. Windows 11 incorporates Fluent's design language and principles for a cohesive look and feel that's uniquely Microsoft.
 
 To get the building blocks for crafting Windows experiences, use WinUI. These components incorporate Fluent's design language, so you can be confident you're building great experiences within the Fluent ecosystem.

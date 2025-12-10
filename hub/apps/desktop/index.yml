@@ -20,41 +20,64 @@ landingContent:
         links:
           - text: What's new in Windows development
             url: /windows/apps/whats-new/whats-new-for-developers
-          - text: Start here!
+          - text: Setup and tools
             url: ../get-started/start-here.md
-          - text: An overview of Windows development options
+          - text: An overview of UI frameworks
             url: ../get-started/index.md
-          - text: Learning paths and modules
-            url: /training/browse/?products=windows
-          - text: Code samples
-            url: /samples/browse/?products=windows
-
+          - text: Window App SDK
+            url: ../windows-app-sdk/index.md
 
   - title: Design and UI
     linkLists:
       - linkListType: overview
         links:
-          - text: Design and code your app UI
+          - text: Design your app
             url: ../design/index.md
-          - text: Windows 11 design principles
-            url: ../design/signature-experiences/design-principles.md
+          - text: Design resources and tools
+            url: ../design/downloads/index.md
+          - text: Design for accessibility
+            url: ../design/accessibility/accessibility.md
+          - text: Design basics
+            url: ../design/basics/index.md
+
+  - title: Develop
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Develop apps
+            url: ../develop/index.md
           - text: Make your apps great on Windows 11
             url: ../get-started/make-apps-great-for-windows.md
           - text: Windows developer FAQ
             url: ../get-started/windows-developer-faq.md
+          - text: Other development tools
+            url: /windows/dev-environment/
 
-  - title: Deploy and publish
+  - title: Deploy
     linkLists:
       - linkListType: overview
         links:
-          - text: Deployment overview
+          - text: Packaging and deployment overview
             url: ../package-and-deploy/index.md
-          - text: Deploy apps
-            url: ../package-and-deploy/index.md
+          - text: Learn about packaged and unpackaged apps
+            url: ../desktop/modernize/package-identity-overview.md
+          - text: Windows App SDK deployment guide
+            url: ../package-and-deploy/deploy-overview.md
           - text: The MSIX app package format
             url: /windows/msix
-          - text: Publish Windows apps and games
+
+  - title: Distribute
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Microsoft Store overview
             url: ../publish/index.md
+          - text: Open a developer account
+            url: ../publish/partner-center/open-a-developer-account.md
+          - text: Microsoft Store FAQ
+            url: ../publish/faq/get-started-with-the-microsoft-store.md    
+          - text: Microsoft Store Policies
+            url: ../publish/store-policies.md            
 
   - title: Artificial intelligence and machine learning
     linkLists:
@@ -64,25 +87,25 @@ landingContent:
             url: /windows/ai/
           - text: GitHub Copilot extension for Visual Studio
             url: /visualstudio/ide/visual-studio-github-copilot-extension
-          - text: Windows Machine Learning
-            url: /windows/ai/windows-ml/
-          - text: Windows Machine Learning samples
-            url: /windows/ai/windows-ml/samples
+          - text: App Actions on Windows
+            url: /windows/ai/app-actions/
+          - text: Windows ML
+            url: /windows/ai/new-windows-ml/overview
 
-  
-  - title: Community and support
+  - title: API Reference
     linkLists:
-      - linkListType: overview
+      - linkListType: reference
         links:
-          - text: Microsoft Q&A Forum
-            url: /answers/questions/
-          - text: "@WindowsDocs"
-            url: https://twitter.com/WindowsDocs
-          - text: OneDevMinute on YouTube
-            url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
-          - text: Windows developer support
-            url: https://developer.microsoft.com/windows/support
-
+          - text: WinRT API for the Windows SDK
+            url: /uwp/api/
+          - text: Win32 API for the Windows SDK
+            url: /windows/win32/api/
+          - text: WinRT API for the Windows App SDK
+            url: /windows/windows-app-sdk/api/winrt/
+          - text: Win32 API for the Windows App SDK
+            url: /windows/windows-app-sdk/api/win32/
+          - text: WinUI 2 for UWP API reference
+            url: /windows/winui/api/
 
   - title: Platforms
     linkLists:
@@ -98,20 +121,16 @@ landingContent:
             url: /dotnet/desktop/wpf/overview/?view=netdesktop-7.0
           - text: Windows Forms
             url: /dotnet/desktop/winforms/overview/?view=netdesktop-7.0
-          - text: Other development technologies
-            url: /windows/dev-environment/
-
-  - title: API Reference
+  
+  - title: Community and support
     linkLists:
-      - linkListType: reference
+      - linkListType: overview
         links:
-          - text: WinRT API for the Windows SDK
-            url: /uwp/api/
-          - text: Win32 API for the Windows SDK
-            url: /windows/win32/api/
-          - text: WinRT API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/winrt/
-          - text: Win32 API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/win32/
-          - text: WinUI 3 API reference
-            url: /windows/winui/api/
+          - text: Microsoft Q&A Forum
+            url: /answers/questions/
+          - text: "@WindowsDocs"
+            url: https://twitter.com/WindowsDocs
+          - text: OneDevMinute on YouTube
+            url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
+          - text: Windows developer support
+            url: https://developer.microsoft.com/windows/support
