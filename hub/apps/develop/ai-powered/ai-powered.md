@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 
 
-## AI-powered features
+# AI-powered features
 
 This section provides guidance for creating WinUI 3 apps that use AI-powered features in Windows.
 
@@ -16,10 +16,10 @@ This section provides guidance for creating WinUI 3 apps that use AI-powered fea
 
 | Topic | Description |
 |---------------------------|-----------------------------|
-| [Click to Do](/windows-integration/click-to-do) | Describes how to use the Click to Do feature to help users take actions based on content they see in apps. |
-| [Copilot hardware key](/windows-integration/microsoft-copilot-key-provider) | Describes how to use the Copilot hardware key feature to help users quickly access Copilot from their device. |
+| [Click to Do](/windows/apps/develop/windows-integration/click-to-do) | Describes how to use the Click to Do feature to help users take actions based on content they see in apps. |
+| [Copilot hardware key](/windows/apps/develop//windows-integration/microsoft-copilot-key-provider) | Describes how to use the Copilot hardware key feature to help users quickly access Copilot from their device. |
 | [Recall](/windows-integration/recall/index) | Describes how to use the Recall feature to help users find and manage content across their devices. |
-| [Windows Settings connector](/windows-integration/settings-mcp) | Describes how to use the Windows Settings connector via MCP to manage settings on a Windows device. |
+| [Windows Settings connector](/windows/apps/develop/windows-integration/settings-mcp) | Describes how to use the Windows Settings connector via MCP to manage settings on a Windows device. |
 
 ## Other AI features
 
@@ -35,7 +35,7 @@ This section provides guidance for creating WinUI 3 apps that use AI-powered fea
 ## Related topics
 
 * [Windows AI](/windows/ai)
-* [Microsoft Foundry on Windows](/windows/ai/microsoft-foundry/overview)
+* [Microsoft Foundry on Windows](/windows/ai/overview)
 * [Windows ML](/windows/ai/new-windows-ml/overview)
 * [MCP on Windows](/windows/ai/mcp/overview)
 * [Responsible AI](/windows/ai/rai)
