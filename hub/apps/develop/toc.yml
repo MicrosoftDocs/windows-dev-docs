@@ -9,33 +9,33 @@ items:
       href: accessibility.md
     - name: AI-powered features
       items:
+        - name: Overview
+          href: ai-powered/ai-powered.md
+        - name: Click to Do
+          href: windows-integration/click-to-do.md 
+        - name: Copilot hardware key
+          href: windows-integration/microsoft-copilot-key-provider.md
+          items:
+          - name: Handle Microsoft Copilot hardware key state changes
+            href: windows-integration/copilot-key-state.md
+        - name: Recall
+          items:
           - name: Overview
-            href: ai-powered/ai-powered.md
-          - name: Click to Do
-            href: windows-integration/click-to-do.md
-          - name: Copilot hardware key
-            href: windows-integration/microsoft-copilot-key-provider.md
-            items:
-            - name: Handle Microsoft Copilot hardware key state changes
-              href: windows-integration/copilot-key-state.md
-          - name: Recall
-            items:
-            - name: Overview
-              href: windows-integration/recall/index.md
-            - name: Enabling relaunch
-              href: windows-integration/recall/recall-relaunch.md
-            - name: Web browsers
-              href: windows-integration/recall/recall-web-browsers.md
-            - name: Apply sensitivity labels
-              href: windows-integration/recall/recall-content-info-labels.md
-            - name: DLP Provider API
-              href: windows-integration/recall/dlp-provider-api.md
-            - name: (EEA-only) Decrypt exported snapshots
-              href: windows-integration/recall/decrypt-exported-snapshots.md
-          - name: Studio Effects
-            href: windows-integration/studio-effects.md
-          - name: Windows Settings connector
-            href: windows-integration/settings-mcp.md
+            href: windows-integration/recall/index.md
+          - name: Enabling relaunch
+            href: windows-integration/recall/recall-relaunch.md
+          - name: Web browsers
+            href: windows-integration/recall/recall-web-browsers.md
+          - name: Apply sensitivity labels
+            href: windows-integration/recall/recall-content-info-labels.md
+          - name: DLP Provider API
+            href: windows-integration/recall/dlp-provider-api.md
+          - name: (EEA-only) Decrypt exported snapshots
+            href: windows-integration/recall/decrypt-exported-snapshots.md 
+        - name: Studio Effects
+          href: windows-integration/studio-effects.md
+        - name: Windows Settings connector
+          href: windows-integration/settings-mcp.md
     - name: App lifecycle and system services
       items:
       - name: App lifecycle
