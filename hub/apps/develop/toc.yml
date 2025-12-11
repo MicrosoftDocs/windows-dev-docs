@@ -4,6 +4,7 @@ items:
   - name: Development overview
     href: index.md
   - name: Features
+    expanded: true
     items:
     - name: Accessibility
       href: accessibility.md
