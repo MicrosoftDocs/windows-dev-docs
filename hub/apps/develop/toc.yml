@@ -31,7 +31,7 @@ items:
             - name: DLP Provider API
               href: windows-integration/recall/dlp-provider-api.md
             - name: (EEA-only) Decrypt exported snapshots
-              href: windows-integration/recall/decrypt-exported-snapshots.md 
+              href: windows-integration/recall/decrypt-exported-snapshots.md
           - name: Studio Effects
             href: windows-integration/studio-effects.md
           - name: Windows Settings connector
