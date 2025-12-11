@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # AI-powered features
 
-This section provides guidance for creating WinUI 3 apps that use AI-powered features in Windows.
+This section provides guidance for using the Windows App SDK to create apps that leverage AI-powered features in Windows.
 
 ## AI-powered Windows features
 
