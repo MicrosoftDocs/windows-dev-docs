@@ -12,7 +12,7 @@ items:
           - name: Overview
             href: ai-powered/ai-powered.md
           - name: Click to Do
-            href: windows-integration/click-to-do.md 
+            href: windows-integration/click-to-do.md
           - name: Copilot hardware key
             href: windows-integration/microsoft-copilot-key-provider.md
             items:
