@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ---
 
 
-# AI-powered features
+## AI-powered features
 
 This section provides guidance for creating WinUI 3 apps that use AI-powered features in Windows.
 
@@ -16,10 +16,10 @@ This section provides guidance for creating WinUI 3 apps that use AI-powered fea
 
 | Topic | Description |
 |---------------------------|-----------------------------|
-| [Click to Do](./windows-integration/click-to-do) | Describes how to use the Click to Do feature to help users take actions based on content they see in apps. |
-| [Copilot hardware key](./windows-integration/microsoft-copilot-key-provider) | Describes how to use the Copilot hardware key feature to help users quickly access Copilot from their device. |
-| [Recall](./windows-integration/recall/index) | Describes how to use the Recall feature to help users find and manage content across their devices. |
-| [Windows Settings connector](./windows-integration/settings-mcp) | Describes how to use the Windows Settings connector via MCP to manage settings on a Windows device. |
+| [Click to Do](/windows-integration/click-to-do) | Describes how to use the Click to Do feature to help users take actions based on content they see in apps. |
+| [Copilot hardware key](/windows-integration/microsoft-copilot-key-provider) | Describes how to use the Copilot hardware key feature to help users quickly access Copilot from their device. |
+| [Recall](/windows-integration/recall/index) | Describes how to use the Recall feature to help users find and manage content across their devices. |
+| [Windows Settings connector](/windows-integration/settings-mcp) | Describes how to use the Windows Settings connector via MCP to manage settings on a Windows device. |
 
 ## Other AI features
 
