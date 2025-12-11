@@ -14,9 +14,23 @@ ms.localizationpriority: medium
   <a href="../publish/index.md" class="button button-sm"><span>Distribute</span></a>
 </div>
 
-# Packaging and deployment overview
+# Packaging and deployment for Windows apps
 
-The topics in this section introduce options and guidance for deploying different types of Windows apps.
+:::image type="content" source="images/header-tools.png" alt-text="Blue wrench and screwdriver icons on a light gray banner background representing tools for app packaging and deployment." border="false":::
+
+---
+
+The topics in this section introduce options and guidance around deploying different types of Windows apps.
+
+:::row:::
+   :::column span="":::
+      **App packaging**<br>WinUI apps are packaged by default, but many other types of apps aren't. Package identity is needed for many Windows extensibility features—including background tasks, notifications, live tiles, custom context menu extensions, and share targets.
+   :::column-end:::
+   :::column span="":::
+      **Deployment**<br> Your app can be _Framework-dependent_, which means it depends on the Windows App SDK runtime and/or Framework package being present on the target machine. Or it can be _Self-contained_, which means it carries the Windows App SDK dependencies with it.
+   :::column-end:::
+:::row-end:::
+
 
 ## Advantages and disadvantages of packaging your app
 

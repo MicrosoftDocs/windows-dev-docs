@@ -1,7 +1,7 @@
 items:
   - name: Build Windows apps
     href: ../desktop/index.yml
-  - name: Overview
+  - name: Design overview
     href: index.md
   - name: Color
     href: signature-experiences/color.md

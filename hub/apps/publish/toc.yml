@@ -1,7 +1,7 @@
 items:
 - name: Build Windows apps
   href: ../desktop/index.yml
-- name: Get started with the Microsoft Store
+- name: Microsoft Store overview
   href: index.md
 - name: Open a developer account
   items: 

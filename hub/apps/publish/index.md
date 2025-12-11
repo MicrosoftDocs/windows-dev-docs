@@ -3,7 +3,7 @@ description: Learn how to publish your Windows apps and games to the Microsoft S
 title: Publish Windows apps and games to Microsoft Store
 ms.date: 07/27/2025
 ms.topic: get-started
-keywords: windows 10, windows 11, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard, windows app, Microsoft Store, AI apps, desktop apps, Win32 apps, 
+keywords: windows 10, windows 11, uwp, publishing, publish, selling, sell, distribute, distributing, store, dashboard, windows app, Microsoft Store, AI apps, desktop apps, Win32 apps,
 ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ---
@@ -16,35 +16,37 @@ ms.localizationpriority: medium
    <a href="" class="button button-sm button-primary button-filled"><span>Distribute</span></a>
 </div>
 
-# Get started: Publish your first app in the Microsoft Store
+# Publish your app in the Microsoft Store
 
-## Introduction
+:::image type="content" source="images/header-store.png" alt-text="A briefcase icon with a grid pattern representing an app package, displayed against a soft blue gradient background. This header image symbolizes the Microsoft Store publishing process for Windows applications." border="false":::
 
-Distributing apps via Microsoft Store is a good choice for developers of any app type and size. The Microsoft Store is a centralized hub for Windows users to discover and install a wide range of apps, providing developers access to a vast audience of over a billion users across Windows 10 and Windows 11. Microsoft Store also offers you various ways to make money from your apps, and lets you choose your own commerce platform and revenue sharing model. Microsoft Store also supports a wide range of app types and technologies, and allows you to bring your traditional desktop apps to the Store without changing your code or installer. 
+---
+
+Distributing apps via Microsoft Store is a good choice for apps of any type and size. The Microsoft Store is a centralized hub for Windows users to discover and install a wide range of apps, providing developers access to a vast audience of over a billion users across Windows 10 and Windows 11. Microsoft Store also offers you various ways to make money from your apps, and lets you choose your own commerce platform and revenue sharing model. Microsoft Store also supports a wide range of app types and technologies, and allows you to bring your traditional desktop apps to the Store without changing your code or installer.
 
 For the full benefits of publishing your app into the Microsoft Store, please visit [benefits of distributing your apps via Microsoft Store.](https://go.microsoft.com/fwlink/?linkid=2278501)
 
 ## Prerequisite
 
-A Windows app developer account in Partner Center is needed before you start the app submission process. There are 2 types of developer accounts available in Partner Center: **Individual and Company**. 
-
-To understand how to open developer account, you can watch the following video:
+A Windows app developer account in Partner Center is needed before you start the app submission process. There are 2 types of developer accounts available in Partner Center: **Individual and Company**.
 
 ### [Open individual developer account](#tab/individual)
 
 Who should select an individual account:
+
 - **Independent developers** whose distribution of apps through the Store is **not in relation to their business, trade, or profession**
-- **Small scale creators** producing content for non-commercial purposes 
+- **Small scale creators** producing content for non-commercial purposes
 - Individuals creating digital content as a **hobbyist, amateur, school, or personal project**
 </br>
 
-The registration for Individual accounts is free. 
+The registration for Individual accounts is free.
 
 For more details, refer [steps to create individual developer account](../publish/partner-center/open-a-developer-account.md).
 
 ### [Open company developer account](#tab/company)
 
 Who should select a company account:
+
 - **Independent developers and freelancers** whose distribution of apps through the Store is **in relation to their business, trade, or profession**
 - **Businesses and Organizations** such as corporations, LLCs, partnerships, non-profits, or government organizations
 - **Teams or Groups** within a company or organization
@@ -53,6 +55,8 @@ Who should select a company account:
 The company account requires a one-time registration fee of approximately **$99 USD**. (The fees varies depending on your [country or region](./partner-center/account-types-locations-and-fees.md#developer-account-and-app-submission-markets))
 
 </br>
+
+To understand how to open developer account, you can watch the following video:
 
 >[!VIDEO https://learn-video.azurefd.net/vod/player?id=2125b1c6-20d4-47da-ba76-d1ff17b89cc2]
 
@@ -131,11 +135,11 @@ For more information, please visit [Create an app submission - Windows apps | Mi
 
 ## App certification process [MSIX/PWA]
 
-When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step. This process can take up to three business days. During certification, we will perform security tests, technical compliance tests and also a content compliance check on you app submission. You will be notified if your submission fails any of these tests. 
+When you finish creating your app's submission and click Submit to the Store, the submission enters the certification step. This process can take up to three business days. During certification, we will perform security tests, technical compliance tests and also a content compliance check on you app submission. You will be notified if your submission fails any of these tests.
 
 After your submission passes certification, on an average, customers will be able to see the app’s listing within 15 minutes depending on their location. You will be notified when your submission is published to the Store, and the app's status in the dashboard change to 'In Microsoft Store'.
 
-To understand the certification process of MSIX apps, you can watch the following video. 
+To understand the certification process of MSIX apps, you can watch the following video.
 
 </br>
 
@@ -149,7 +153,7 @@ For more information, please visit [The app certification process - Windows apps
 
 View detailed analytics for your apps and games in Partner Center. Statistics and charts let you know how your apps are performing in the Store; from how many customers you have reached to how they are using your app and what they have to say about it. You can also find metrics on app install, app health, app usage, and more. You can view analytic reports right in Partner Center or download the reports you need to analyze your data offline. We also provide several ways for you to access your analytics data outside of Partner Center.
 
-To understand how to analyze your MSIX app's performance, you can watch the following video. 
+To understand how to analyze your MSIX app's performance, you can watch the following video.
 
 </br>
 
@@ -228,7 +232,7 @@ For your installer to be accepted, it must adhere to the following recommendatio
 
 ## App submission [MSI/EXE]
 
-To understand the submission process of MSI/EXE (which is to be submitted in its original unpackaged form), you can watch the following video. 
+To understand the submission process of MSI/EXE (which is to be submitted in its original unpackaged form), you can watch the following video.
 
 </br>
 
@@ -276,11 +280,11 @@ For more information, please visit [Create an app submission - Windows apps | Mi
 
 ## App certification process [MSI/EXE]
 
-When you finish creating your app's submission and submit it to the Microsoft Store, the submission enters the certification step. This process can take up to three business days.During certification, we will perform security and content compliance tests on your app submission. We will also follow any instructions that you had mentioned in 'Notes for certification'. You will be notified if your submission fails any of these tests. 
+When you finish creating your app's submission and submit it to the Microsoft Store, the submission enters the certification step. This process can take up to three business days.During certification, we will perform security and content compliance tests on your app submission. We will also follow any instructions that you had mentioned in 'Notes for certification'. You will be notified if your submission fails any of these tests.
 
 After your submission passes certification, on an average, customers will be able to see the app’s listing within 15 minutes depending on their location. When your submission is published to the Store, you will be notified and the app's status in the dashboard will change to 'In Microsoft Store'.
 
-To understand the certification process of MSI/EXE apps, you can watch the following video. 
+To understand the certification process of MSI/EXE apps, you can watch the following video.
 
 </br>
 
@@ -296,7 +300,7 @@ In Partner Center, you have access to detailed analytics for your MSI or EXE app
 
 You can view analytic reports right in Partner Center or download the reports you need, to analyze your data offline. When viewing your analytic reports, you will see an arrow icon within each chart for which you can download data. Click the arrow to generate a downloadable .tsv file, which you can open in Microsoft Excel or another program that supports tab-separated values (TSV) files.
 
-To understand how to analyze your MSI/EXE app's performance, you can watch the following video. 
+To understand how to analyze your MSI/EXE app's performance, you can watch the following video.
 
 </br>
 

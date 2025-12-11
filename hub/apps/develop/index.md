@@ -14,11 +14,22 @@ ms.localizationpriority: medium
     <a href="../publish/index.md" class="button button-sm"><span>Distribute</span></a>
 </div>
 
-# Develop Windows desktop apps
+# Windows app development
 
-This section of the documentation provides information about APIs and features you can use while developing Windows desktop apps. Some of these features are available by using APIs in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET, and don't require use of the Windows App SDK.
+:::image type="content" source="images/header-coding.png" alt-text="Blue code brackets icon centered on a gradient background transitioning from light blue to purple, representing Windows application development" border="false":::
 
-[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
+---
+
+This section of the documentation provides information about APIs and features you can use to develop Windows desktop apps. Some of these features are available by using APIs in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET.
+
+:::row:::
+    :::column span="2":::
+        **Build apps with the Windows App SDK and WinUI**<br>WinUI is Microsoft's modern native user interface framework for building Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
+    :::column-end:::
+    :::column span="2":::
+        **Use Windows App SDK and WinRT APIs with other UI frameworks**<br>The [Windows App SDK](../windows-app-sdk/index.md) provides a unified set of APIs and tools for building modern Windows applications. It brings the latest Windows features and capabilities to both new and existing apps — all through a consistent developer experience that works across multiple UI frameworks.
+    :::column-end:::
+:::row-end:::
 
 ## Windows App SDK features
 

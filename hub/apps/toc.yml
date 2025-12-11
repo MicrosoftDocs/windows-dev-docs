@@ -36,20 +36,22 @@ items:
     - name: Glossary
       href: get-started/windows-developer-glossary.md
   - name: Windows App SDK
-    href: windows-app-sdk/index.md
     items:
+    - name: Overview
+      href: windows-app-sdk/index.md
     - name: WinUI in Windows App SDK
       href: winui/winui3/index.md
-    - name: Windows App SDK and supported Windows releases
-      href: windows-app-sdk/support.md
-    - name: Windows App SDK release notes
+    - name: Release channels
       href: windows-app-sdk/release-channels.md
+    - name: Supported versions of Windows
+      href: windows-app-sdk/support.md
+    - name: Release notes
       items:
-      - name: Stable channel release notes
+      - name: Stable channel
         href: windows-app-sdk/stable-channel.md
-      - name: Preview channel release notes
+      - name: Preview channel
         href: windows-app-sdk/preview-channel.md
-      - name: Experimental channel release notes
+      - name: Experimental channel
         href: windows-app-sdk/experimental-channel.md
       - name: Release notes archive
         items:
@@ -123,10 +125,11 @@ items:
             href: winui/winui3/release-notes/winui3-project-reunion-0.5.md
           - name: WinUI 3 - Project Reunion 0.5 Preview
             href: winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md
-    - name: Latest Windows App SDK downloads
+    - name: Windows App SDK downloads
       href: windows-app-sdk/downloads.md
-    - name: Archive of Windows App SDK downloads
-      href: windows-app-sdk/downloads-archive.md
+      items:
+      - name: Archive of Windows App SDK downloads
+        href: windows-app-sdk/downloads-archive.md
   - name: Design >>
     href: design/index.md
   - name: Develop >>

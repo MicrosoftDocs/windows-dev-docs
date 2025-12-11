@@ -1,12 +1,10 @@
 items:
   - name: Build Windows apps
     href: ../desktop/index.yml
-  - name: Overview
+  - name: Development overview
     href: index.md
   - name: Features
     items:
-    - name: Use Win32 interop APIs in a C# WinUI app
-      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
     - name: Accessibility
       href: accessibility.md
     - name: AI and machine learning >>
@@ -445,7 +443,7 @@ items:
         href: windows-integration/cross-device-resume.md
       - name: Default apps platform
         href: windows-integration/default-apps-platform.md
-      - name: Pin your app to the taskbar
+      - name: Pin to taskbar
         href: windows-integration/pin-to-taskbar.md
       - name: Recall
         items:
@@ -477,9 +475,9 @@ items:
           items:
           - name: Overview
             href: feeds/feed-providers.md
-          - name: Implement a feed provider in a win32 app (C#)
+          - name: Implement a feed provider in a Win32 app (C#)
             href: feeds/implement-feed-provider-cs.md
-          - name: Implement a feed provider in a win32 app (C++/WinRT)
+          - name: Implement a feed provider in a Win32 app (C++/WinRT)
             href: feeds/implement-feed-provider-win32.md
           - name: Feed provider package manifest XML format
             href: feeds/feed-provider-manifest.md
@@ -487,9 +485,9 @@ items:
           items:
           - name: Overview
             href: widgets/widget-providers.md
-          - name: Implement a widget provider in a win32 app (C#)
+          - name: Implement a widget provider in a Win32 app (C#)
             href: widgets/implement-widget-provider-cs.md
-          - name: Implement a widget provider in a win32 app (C++/WinRT)
+          - name: Implement a widget provider in a Win32 app (C++/WinRT)
             href: widgets/implement-widget-provider-win32.md
           - name: Web widget providers
             href: widgets/web-widget-providers.md
@@ -576,7 +574,7 @@ items:
           href: security/windows-hello-auth-service.md
     - name: Speech
       href: speech.md
-    - name: Test apps built with the Windows App SDK and WinUI
+    - name: Testing
       href: ../winui/winui3/testing/index.md
       items:
           - name: Unit tests for Windows UI Library (WinUI) apps in Visual Studio
@@ -807,7 +805,7 @@ items:
         href: ui/display-ui-objects.md
       - name: Choose the right visual tree viewer
         href: ui/visual-tree.md
-  - name: Use WASDK and WinRT with other UI frameworks
+  - name: WASDK and WinRT in other UI frameworks
     items:
     - name: APIs not supported in desktop apps
       href: ../desktop/modernize/desktop-to-uwp-supported-api.md
@@ -933,6 +931,8 @@ items:
               href: ../windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
   - name: Tutorials
     items:
+    - name: Use Win32 interop APIs (PInvoke) in a C# WinUI app
+      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
     - name: Build a C# .NET app with WinUI 3 and Win32 interop
       href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
     - name: Use Github Copilot to build WinUI 3 apps in Visual Studio
@@ -1050,12 +1050,8 @@ items:
         href: settings/settings-common.md
       - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
         href: settings/readclouddatasettings-exe.md
-    - name: Visual Studio project templates
-      items:
-      - name: All templates for Windows apps
-        href: ../desktop/visual-studio-templates.md
-      - name: WinUI 3 templates in Visual Studio
-        href: ../winui/winui3/winui-project-templates-in-visual-studio.md
+    - name: WinUI templates in Visual Studio
+      href: ../winui/winui3/winui-project-templates-in-visual-studio.md    
   - name: API reference
     href: ../api-reference/index.md
     items:
