@@ -16,21 +16,21 @@ This section provides guidance for using the Windows App SDK to create apps that
 
 | Topic | Description |
 |---------------------------|-----------------------------|
-| [Click to Do](/windows/apps/develop/windows-integration/click-to-do) | Describes how to use the Click to Do feature to help users take actions based on content they see in apps. |
-| [Copilot hardware key](/windows/apps/develop/windows-integration/microsoft-copilot-key-provider) | Describes how to use the Copilot hardware key feature to help users quickly access Copilot from their device. |
-| [Recall](/windows/apps/develop/windows-integration/recall/index) | Describes how to use the Recall feature to help users find and manage content across their devices. |
-| [Windows Settings connector](/windows/apps/develop/windows-integration/settings-mcp) | Describes how to use the Windows Settings connector via MCP to manage settings on a Windows device. |
+| [Click to Do](/windows/apps/develop/windows-integration/click-to-do) | Learn how to use the Click to Do feature to take action based on content seen in apps. |
+| [Copilot hardware key](/windows/apps/develop/windows-integration/microsoft-copilot-key-provider) | Learn how to use the Copilot hardware key feature to quickly access Copilot. |
+| [Recall](/windows/apps/develop/windows-integration/recall/index) | Learn how to use the Recall feature to help find content. |
+| [Windows Settings connector](/windows/apps/develop/windows-integration/settings-mcp) | Learn how to use the Windows Settings connector via MCP to manage settings on a Windows device. |
 
 ## Other AI features
 
 | Topic | Description |
 |---------------------------|-----------------------------|
-| [App Content Search](/windows/ai/apis/app-content-search) | Describes how to use App Content Search to enable AI-powered search capabilities in your app. |
-| [Phi Silica](/windows/ai/apis/phi-silica) | Describes how to use Phi Silica to enhance app performance with AI acceleration. |
-| [Imaging SDK](/windows/ai/apis/imaging) | Describes how to use the Imaging SDK to add AI-powered image processing capabilities to your apps. |
-| [Image generation API](/windows/ai/apis/image-generation) | Describes how to use the Image Generation API to create images from text prompts in your apps. |
-| [Text Recognition API](/windows/ai/apis/text-recognition) | Describes how to use the Text Recognition API to extract text from images in your apps. |
-| [Video super resolution](/windows/ai/apis/video-super-resolution) | Describes how to use AI to enhance video playback quality in apps. |
+| [App Content Search](/windows/ai/apis/app-content-search) | Learn how to use App Content Search to enable AI-powered search capabilities in your app. |
+| [Phi Silica](/windows/ai/apis/phi-silica) | Learn how to use Phi Silica to enhance app performance with AI acceleration. |
+| [Imaging SDK](/windows/ai/apis/imaging) | Learn how to use the Imaging SDK to add AI-powered image processing capabilities to your apps. |
+| [Image generation API](/windows/ai/apis/image-generation) | Learn how to use the Image Generation API to create images from text prompts in your apps. |
+| [Text Recognition API](/windows/ai/apis/text-recognition) | Learn how to use the Text Recognition API to extract text from images in your apps. |
+| [Video super resolution](/windows/ai/apis/video-super-resolution) | Learn how to use AI to enhance video playback quality in apps. |
 
 ## Related topics
 
