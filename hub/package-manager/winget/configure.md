@@ -1,7 +1,7 @@
 ---
 title: configure Command
 description: Uses a winget configuration file to begin setting up your Windows machine to a desired development environment state.
-ms.date: 07/16/2025
+ms.date: 12/11/2025
 ms.topic: overview
 ---
 
@@ -63,7 +63,7 @@ The `winget configure` command includes a number of subcommands, including:
 - **`winget configure list`**: Shows the high level details for configurations that have been applied to the system. This data can then be used with other `configure` commands to get more details. Usage: `winget configure list [<options>]`
 - **`winget configure test`**: Checks the system against the desired state, displaying whether the current system state conforms with the desired state defined in the associated configuration file. Usage: `winget configure test -f <file>`.
 - **`winget configure validate`**: Validates a configuration file. Usage: `winget configure validate [-f] <file> [<options>]`.
-- **`winget configure export`**: Exports configuration resources to a configuration file. When used with `--all`, exports all package configurations. When used with `--packageId`, exports a WinGetPackage resource of the given package identifier. When used with `--module` and `--resource`, exports the settings of the specified resource. If the output configuration file already exists, appends the exported configuration resources. Usage: `winget configure export -o <output file> [<options>]`
+- **`winget configure export`**: Exports configuration resources to a configuration file. When used with `--all`, exports all package configurations. When used with `--package-id`, exports a WinGetPackage resource of the given package identifier. When used with `--module` and `--resource`, exports the settings of the specified resource. If the output configuration file already exists, appends the exported configuration resources. Usage: `winget configure export -o <output file> [<options>]`
 
 ## Related topics
 
