@@ -7,8 +7,35 @@ items:
     items:
     - name: Accessibility
       href: accessibility.md
-    - name: AI and machine learning >>
-      href: /windows/ai/
+    - name: AI-powered features
+      items:
+          - name: Overview
+            href: ai-powered/ai-powered.md
+          - name: Click to Do
+            href: windows-integration/click-to-do.md 
+          - name: Copilot hardware key
+            href: windows-integration/microsoft-copilot-key-provider.md
+            items:
+            - name: Handle Microsoft Copilot hardware key state changes
+              href: windows-integration/copilot-key-state.md
+          - name: Recall
+            items:
+            - name: Overview
+              href: windows-integration/recall/index.md
+            - name: Enabling relaunch
+              href: windows-integration/recall/recall-relaunch.md
+            - name: Web browsers
+              href: windows-integration/recall/recall-web-browsers.md
+            - name: Apply sensitivity labels
+              href: windows-integration/recall/recall-content-info-labels.md
+            - name: DLP Provider API
+              href: windows-integration/recall/dlp-provider-api.md
+            - name: (EEA-only) Decrypt exported snapshots
+              href: windows-integration/recall/decrypt-exported-snapshots.md 
+          - name: Studio Effects
+            href: windows-integration/studio-effects.md
+          - name: Windows Settings connector
+            href: windows-integration/settings-mcp.md
     - name: App lifecycle and system services
       items:
       - name: App lifecycle
@@ -430,13 +457,6 @@ items:
           href: actions/action-json.md
         - name: Action provider package manifest XML format
           href: actions/action-provider-manifest.md
-      - name: Click to Do
-        href: windows-integration/click-to-do.md 
-      - name: Copilot hardware key
-        href: windows-integration/microsoft-copilot-key-provider.md
-        items:
-        - name: Handle Microsoft Copilot hardware key state changes
-          href: windows-integration/copilot-key-state.md
       - name: Cross Device People API
         href: windows-integration/cross-device-people-api.md
       - name: Cross Device Resume
@@ -445,22 +465,6 @@ items:
         href: windows-integration/default-apps-platform.md
       - name: Pin to taskbar
         href: windows-integration/pin-to-taskbar.md
-      - name: Recall
-        items:
-        - name: Overview
-          href: windows-integration/recall/index.md
-        - name: Enabling relaunch
-          href: windows-integration/recall/recall-relaunch.md
-        - name: Web browsers
-          href: windows-integration/recall/recall-web-browsers.md
-        - name: Apply sensitivity labels
-          href: windows-integration/recall/recall-content-info-labels.md
-        - name: DLP Provider API
-          href: windows-integration/recall/dlp-provider-api.md
-        - name: (EEA-only) Decrypt exported snapshots
-          href: windows-integration/recall/decrypt-exported-snapshots.md 
-      - name: Studio Effects
-        href: windows-integration/studio-effects.md
       - name: Smart App Control
         items:
         - name: Overview
@@ -497,8 +501,6 @@ items:
             href: widgets/widget-provider-manifest.md
           - name: ActivateApplication protocol
             href: widgets/widget-provider-activateapplication-protocol.md
-      - name: Windows Settings connector
-        href: windows-integration/settings-mcp.md
       - name: Windows Search
         href: search/index.md
         items:
