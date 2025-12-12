@@ -30,9 +30,9 @@ Only transactions paid in Bulgarian lev will be turned off on December 15, 2025.
 
 ## Subscriptions
 
-All Microsoft (first-party) subscriptions will be queued for republishing to EUR on the transition day, aiming for renewals and purchases to occur in EUR immediately after the block. Subscription owners are asked to coordinate closely.
+All subscriptions will be queued for republishing to EUR on the transition day, aiming for renewals and purchases to occur in EUR immediately after the block.
 
-Third-party partners will need to make changes in Partner Center before republishing in EUR. A playbook will be provided to enable these changes as soon as possible after the currency block.
+Subscription owners are asked to coordinate closely.
 
 ## Restoration timeline
 
