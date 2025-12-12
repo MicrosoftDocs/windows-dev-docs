@@ -30,9 +30,7 @@ Only transactions paid in Bulgarian lev will be turned off on December 15, 2025.
 
 ## Subscriptions
 
-All subscriptions will be queued for republishing to EUR on the transition day, aiming for renewals and purchases to occur in EUR immediately after the block.
-
-Subscription owners are asked to coordinate closely.
+All subscriptions will be queued for republishing to EUR on the transition day, ensuring that renewals and new purchases can proceed in EUR as soon as the suspension ends.
 
 ## Restoration timeline
 
