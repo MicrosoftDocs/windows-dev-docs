@@ -1,9 +1,9 @@
 ---
 description: Bulgarian currency conversion information for Microsoft Store submissions
 title: Bulgarian currency conversion - Developer Update
-ms.date: 12/05/2025
+ms.date: 12/12/2025
 ms.topic: article
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ---
 
 # Bulgarian currency conversion - Developer Update
@@ -26,7 +26,7 @@ Due to the compressed timing, we will be temporarily suspending paid transaction
 
 ## Paid transactions update
 
-Paid transactions will be temporarily disabled in affected Bulgarian storefronts starting December 15, 2025.
+Only transactions paid in Bulgarian lev will be turned off on December 15, 2025. If the product has already been converted to payments in euro, the transaction will not receive an error message.
 
 ## Subscriptions
 
