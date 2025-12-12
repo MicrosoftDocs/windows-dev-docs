@@ -22,15 +22,6 @@ The following table lists the Windows system components that support integration
 | [Search providers](../search/search-providers.md) | Learn how to integrate into the Windows Search experience. |
 | [Widget providers](../widgets/widget-providers.md) | Learn how to implement a Windows widget service provider to support your app. |
 
-## Windows features using AI
-
-| Feature | Description |
-|--|--|
-| [Recall](./recall/index.md) | Learn how to use the AI-assisted Recall feature with the User Activity API in Windows. |
-| [Click to Do](./click-to-do.md) | Learn how to use the AI-assisted Click to Do feature in Windows. |
-| [Windows Settings connector](./settings-mcp.md) | Learn how to enable apps to manage the settings on a Copilot+ PC device. |
-
-
 ## Other Windows integration features
 
 The following table lists other Windows integration features that support 3rd party developers.
