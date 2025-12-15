@@ -49,15 +49,26 @@ Update `<configuration_option>` to either `forceNewWindow`, `disableInput`, or `
 
 To use Sudo for Windows, simply prepend `sudo` to the command you want to run as an administrator. For example, to run `netstat -ab` as an administrator, you would run `sudo netstat -ab` in your console window.
 
+### Common developer scenarios
+
+Here are some common scenarios where developers might use sudo:
+
+- **Editing system files**: `sudo notepad C:\Windows\System32\drivers\etc\hosts`
+- **Installing packages globally**: `sudo npm install -g package-name`
+- **Running administrative tools**: `sudo diskpart`
+
+> [!NOTE]
+> For development work involving system directories like `C:\Windows\`, consider using development environments or alternative approaches when possible. Sudo should be used judiciously and only when elevated permissions are truly necessary.
+
 Because `sudo` elevates the targeted process to run with administrator-level permission, a prompt will open asking you to verify that you want to continue.
 
 ## Security Considerations
 
-There are risks associated with running sudo in the **Input closed** (`inputClosed`) or **Inline** (`normal`) configurations. It is possible for malicious processes to attempt to drive the elevated process using the connection established by the unelevated sudo.exe and the elevated sudo.exe process.
+There are risks associated with running sudo in the **Input closed** (`disableInput`) or **Inline** (`normal`) configurations. It is possible for malicious processes to attempt to drive the elevated process using the connection established by the unelevated sudo.exe and the elevated sudo.exe process.
 
-The `inputClosed` configuration option mitigates risk by closing the input handle. Disconnecting the input handle from the current console window means that unelevated processes cannot send input to the elevated process.
+The `disableInput` configuration option mitigates risk by closing the input handle. Disconnecting the input handle from the current console window means that unelevated processes cannot send input to the elevated process.
 
-The `inline` configuration option runs the elevated process in the current window and the process is able to receive input from the current console session. An unelevated process can send input to the elevated process within the same console windows or get information from the output in the current windows in this configuration.
+The `inline` configuration option runs the elevated process in the current window and the process is able to receive input from the current console session. An unelevated process can send input to the elevated process within the same console window or get information from the output in the current window in this configuration.
 
 ## FAQ
 
@@ -75,7 +86,7 @@ The `inline` configuration option runs the elevated process in the current windo
   
 - `sudo` can only be elevated via the User Account Control (UAC) security feature designed to protect the operating system from unauthorized changes using verification prompt.
   
-You should consider your particular use-case and plan to use the command that best meets your needs. You should also consider the security implications of running sudo in the `inputClosed` and `normal` modes. The default `forceNewWindow` configuration option is recommended unless you are familiar and comfortable with the risks associated with the other `sudo` configurations.
+You should consider your particular use-case and plan to use the command that best meets your needs. You should also consider the security implications of running sudo in the `disableInput` and `normal` modes. The default `forceNewWindow` configuration option is recommended unless you are familiar and comfortable with the risks associated with the other `sudo` configurations.
 
 ## Sudo for Windows open source repository
 
