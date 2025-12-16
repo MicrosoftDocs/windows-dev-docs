@@ -10,10 +10,9 @@ ms.collection: windows11
 
 # Setup and tooling for WinUI
 
-Welcome to Windows app development. This guide will take you through the steps needed to begin creating your first app with WinUI. It will also point you to resources that will help you learn more about Windows development.
+This guide walks you through setting up your WinUI and Windows App SDK development environment in Visual Studio and creating your first app.
 
-
-## 1. Enable Developer Mode
+### 1. Enable Developer Mode
 
 Windows has a special mode for developers that adjusts security settings so you can run the apps you're working on. You need to enable Developer Mode before you can build, deploy, and test your app by using Visual Studio.
 
@@ -28,7 +27,7 @@ To enable Developer Mode:
 For more information about Developer Mode, see [Settings for developers](/windows/advanced-settings/developer-mode).
 
 
-## 2. Install Visual Studio and required workloads
+### 2. Install Visual Studio and required workloads
 
 Use [Visual Studio](/visualstudio/ide/), Microsoft’s powerful IDE, to build, debug, and deploy your WinUI app. It offers ready-to-use project templates for Windows and other platforms to help you get started quickly.
 
@@ -75,7 +74,7 @@ On the **Workloads** tab of the Visual Studio Installer app, select the followin
 
 ---
 
-## 3. Create and launch your first WinUI app
+### 3. Create and launch your first WinUI app
 
 Visual Studio project templates include all the files you need to quickly create your app. In fact, after you create your project from a WinUI app template, you already have an app that you can run, and then add your code to.
 
@@ -105,7 +104,7 @@ Congratulations, you've just built your first WinUI app! Continue with the next 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Build your first notetaking app with WinUI](../tutorials/winui-notes/intro.md)
+> [Build your first app with WinUI](../tutorials/winui-notes/intro.md)
 
 * To get an idea of what WinUI offers, check out the WinUI Gallery app.
   [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
