@@ -7,7 +7,7 @@
     },
 	{
       "source_path": "hub/apps/whats-new/windows-11-build-22000.md",
-      "redirect_url": "/hub/apps/whats-new/whats-new-for-developers",
+      "redirect_url": "/windows/apps/whats-new/whats-new-for-developers",
       "redirect_document_id": false
     },
     {
@@ -347,7 +347,7 @@
     },
     {
       "source_path": "hub/apps/whats-new/latest-docs-updates.md",
-      "redirect_url": "https://learn.microsoft.com/windows/apps/whats-new/windows-11-build-22000",
+      "redirect_url": "/windows/apps/whats-new/whats-new-for-developers",
       "redirect_document_id": false
     },
     {
@@ -1317,7 +1317,7 @@
     },
     {
       "source_path": "hub/apps/whats-new/windows-11-build-22000-apis.md",
-      "redirect_url": "/windows/apps/whats-new/windows-11-build-22000",
+      "redirect_url": "/windows/apps/whats-new/whats-new-for-developers",
       "redirect_document_id": false
     },
     {
@@ -10397,22 +10397,22 @@
     },
     {
       "source_path": "hub/apps/winui/winui3/create-your-first-winui3-app.md",
-      "redirect_url": "/hub/apps/get-started/start-here.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/windows-app-sdk/set-up-your-development-environment.md",
-      "redirect_url": "/hub/apps/get-started/start-here.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/how-tos/hello-world-winui3.md",
-      "redirect_url": "/hub/apps/get-started/start-here.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": false
     }, 
     {
       "source_path": "hub/apps/winui/index.md",
-      "redirect_url": "/hub/apps/winui3/index.md",
+      "redirect_url": "/windows/apps/winui/winui3/",
       "redirect_document_id": false
     }
   ]
