@@ -10394,6 +10394,26 @@
       "source_path": "hub/apps/design/motion/motion-reposition.md",
       "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/create-your-first-winui3-app.md",
+      "redirect_url": "/hub/apps/get-started/start-here.md",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/set-up-your-development-environment.md",
+      "redirect_url": "/hub/apps/get-started/start-here.md",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/hello-world-winui3.md",
+      "redirect_url": "/hub/apps/get-started/start-here.md",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path": "hub/apps/winui/index.md",
+      "redirect_url": "/hub/apps/winui3/index.md",
+      "redirect_document_id": false
     }
   ]
 }

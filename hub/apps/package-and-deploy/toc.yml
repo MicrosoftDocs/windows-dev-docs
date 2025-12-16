@@ -33,6 +33,8 @@ items:
               href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
             - name: Grant package identity by packaging with external location manually
               href: ../desktop/modernize/grant-identity-to-nonpackaged-apps.md
+        - name: "Unpackage a WinUI app"
+          href: unpackage-winui-app.md
     - name: Windows App SDK deployment guide
       items:
         - name: Windows App SDK deployment overview
