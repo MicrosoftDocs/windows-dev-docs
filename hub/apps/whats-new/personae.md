@@ -59,7 +59,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## Carlos - Web app developer
 
-:::image type="content" source="./images/portait3.jpg" alt-text="Illustration of a web app developer.":::
+:::image type="content" source="./images/portrait3.jpg" alt-text="Illustration of a web app developer.":::
 
 **Bio:** Carlos builds responsive, performant web applications that integrate with Windows services or run in hybrid environments.
 
@@ -90,7 +90,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## Aisha - Game developer
 
-:::image type="content" source="./images/portait1.jpg" alt-text="Illustration of a game developer.":::
+:::image type="content" source="./images/portrait1.jpg" alt-text="Illustration of a game developer.":::
 
 **Bio:** Aisha builds immersive gaming experiences for Windows using powerful graphics APIs and engines. She prioritizes performance and rendering quality.
 
@@ -121,7 +121,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## David - Enterprise/line-of-business developer
 
-:::image type="content" source="./images/portait4.jpg" alt-text="Illustration of an Enterprise developer.":::
+:::image type="content" source="./images/portrait4.jpg" alt-text="Illustration of an Enterprise developer.":::
 
 **Bio:** David develops secure, scalable enterprise applications for internal business processes and workflows.
 
@@ -156,7 +156,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## Pradeep - Cross-platform mobile developer 
 
-:::image type="content" source="./images/portait5.jpg" alt-text="Illustration of a game developer.":::
+:::image type="content" source="./images/portrait5.jpg" alt-text="Illustration of a game developer.":::
 
 **Bio:** Pradeep creates apps that run seamlessly across Windows, Android, and iOS using modern cross-platform frameworks.
 
@@ -186,7 +186,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## Open source/community developer (Liam)
 
-:::image type="content" source="./images/portait2.jpg" alt-text="Illustration of an OSS developer.":::
+:::image type="content" source="./images/portrait2.jpg" alt-text="Illustration of an OSS developer.":::
 
 **Bio:** Liam contributes to open-source projects and builds tools that empower the developer community.
 
