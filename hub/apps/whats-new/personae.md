@@ -1,8 +1,11 @@
 ---
 title: Choose the Right Tools and Frameworks for Your Windows App
-description: Learn how different tools and frameworks can help you build Windows apps that meet your needs.
+description: Discover the best tools and frameworks for building Windows apps tailored to your needs. Learn how to optimize for performance, accessibility, and user experience.
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 ms.date: 12/17/2025
+author: GrantMeStrength
+ms.author: jken
+ms.reviewer: jken
 ms.topic: personae
 ms.localizationpriority: medium
 ---
@@ -25,7 +28,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 **Go-to tech:**
 
 - [WinUI 3](/windows/apps/winui/winui3/)
-- [WPF](/dotnet/desktop/wpf/get-started/)
+- [WPF](/dotnet/desktop/wpf/overview/)
 - [Windows App SDK](/windows/apps/windows-app-sdk/)
 - [.NET MAUI](/dotnet/maui/)
 
@@ -59,8 +62,8 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 **Go-to tech:**
 
-- [React](/training/paths/build-web-apps-with-react/)
-- [Angular](/training/paths/build-web-apps-with-angular/)
+- [React](https://react.dev)
+- [Angular](https://angular.dev)
 - [Blazor](/aspnet/core/blazor/?view=aspnetcore-8.0)
 - [ASP.NET Core](/aspnet/core/?view=aspnetcore-8.0)
 
@@ -91,8 +94,8 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 **Go-to tech:**
 
 - [DirectX 12](/windows/win32/direct3d12/directx-12-programming-guide)
-- [Unity on Windows](/windows/gaming/unity/)
-- [Unreal on Windows](/windows/gaming/unreal/)
+- [Unity](https://unity.com)
+- [Unreal](https://www.unrealengine.com)
 - [Gaming GDK](/gaming/gdk/)
 
 **Favorite tools:**
@@ -123,7 +126,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 - [.NET](/dotnet/)
 - [WinForms](/dotnet/desktop/winforms/overview/?view=netdesktop-8.0)
-- [WPF](/dotnet/desktop/wpf/get-started/?view=netdesktop-8.0)
+- [WPF](/dotnet/desktop/wpf/overview/)
 - [Entity Framework Core](/ef/core/)
 
 **Favorite tools:**
@@ -174,7 +177,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## Liam - Open source/community developer
 
-:::image type="content" source="./images/oss-developer-working-laptop.jpg" alt-text="Illustration of an OSS developer.":::
+:::image type="content" source="./images/open-source-developer-working-laptop.jpg" alt-text="Illustration of an open source developer.":::
 
 **Bio:** Liam contributes to open-source projects and builds tools that empower the developer community.
 
@@ -186,9 +189,9 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 **Go-to tech:**
 
-- [Visual Studio Code extensions](/training/modules/visual-studio-code-extension/)
-- [GitHub Actions](/training/paths/automate-workflows-github-actions/)
-- [Node.js (training path)](/training/paths/build-nodejs-web-apps/)
+- [Visual Studio Code extensions](https://marketplace.visualstudio.com/vscode)
+- [GitHub Actions](https://github.com/features/actions)
+- [Node.js](https://nodejs.org)
 
 **Favorite tools:**
 
