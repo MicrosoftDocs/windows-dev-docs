@@ -63,7 +63,7 @@ The following personas represent typical Windows developers. Each profile outlin
 
 **Go-to tech:**
 
-- [WebView2](/windows/apps/webview2/)
+- [WebView2](/Microsoft-edge/webview2/)
 - [React](https://react.dev)
 - [Angular](https://angular.dev)
 - [Blazor](/aspnet/core/blazor/?view=aspnetcore-8.0)
@@ -206,3 +206,56 @@ The following personas represent typical Windows developers. Each profile outlin
 
 > [!TIP]
 > Write clear documentation. Engage with the community for feedback. Automate workflows by using CI/CD.
+
+
+## Choose technologies by application type
+
+Different application types have different goals, architectures, and platform requirements. The following examples highlight typical Windows application scenarios and suggest appropriate technologies for each.
+
+### Enterprise applications
+
+**Use case:** Internal line-of-business systems, data-driven dashboards, workflow tools.
+
+**Recommended technologies:**
+- UI: [WPF](/dotnet/desktop/wpf/overview), [WinForms](/dotnet/desktop/winforms/overview), [.NET MAUI](/dotnet/maui/)
+- Backend: [.NET](/dotnet/), [Entity Framework Core](/ef/core/)
+- Packaging: [MSIX](/windows/msix/)
+- Deployment: [Azure DevOps](/azure/devops/)
+
+### Utility applications
+
+**Use case:** Lightweight, focused tools that run quickly and feel modern.
+
+**Recommended technologies:**
+- UI: [WinUI 3](/windows/apps/winui/winui3/), [.NET MAUI](/dotnet/maui/)
+- Framework: [Windows App SDK](/windows/apps/windows-app-sdk/)
+- Packaging: [MSIX](/windows/msix/)
+- Design: [Fluent Design System](/windows/apps/design/)
+
+### Games and immersive applications
+
+**Use case:** Games, simulations, or XR/VR applications requiring performance and advanced graphics.
+
+**Recommended technologies:**
+- Graphics: [DirectX 12](/windows/win32/direct3d12/)
+- Gaming: [Gaming GDK](/gaming/gdk/)
+- Engines: [Unity](https://unity.com), [Unreal Engine](https://www.unrealengine.com)
+- [Visual Studio](/visualstudio/)
+
+### Headless or background applications
+
+**Use case:** Services, agents, or CLI tools that run without a user interface.
+
+**Recommended technologies:**
+- Language: [.NET](/dotnet/), [C++](/cpp/)
+- Packaging: [Windows Services](/windows/win32/services/)
+- Automation: [PowerShell](/powershell/), [Task Scheduler](/windows/win32/taskschd/task-scheduler-start-page)
+
+### Web or hybrid applications
+
+**Use case:** Cross-platform web-based applications that may integrate with Windows features.
+
+**Recommended technologies:**
+- Front end: [React](https://react.dev), [Blazor](/aspnet/core/blazor/)
+- Hosting: [ASP.NET Core](/aspnet/core/), [Azure App Service](/azure/app-service/)
+- Hybrid: [WebView2](/microsoft-edge/webview2/)
