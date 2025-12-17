@@ -38,7 +38,6 @@ The following personas represent typical Windows developers. Each profile outlin
 
 - Visual Studio
 - Visual Studio Code
-- XAML Designer
 
 **Top-of-mind:**
 
@@ -64,6 +63,7 @@ The following personas represent typical Windows developers. Each profile outlin
 
 **Go-to tech:**
 
+- [WebView2](/windows/apps/webview2/)
 - [React](https://react.dev)
 - [Angular](https://angular.dev)
 - [Blazor](/aspnet/core/blazor/?view=aspnetcore-8.0)
@@ -165,7 +165,6 @@ The following personas represent typical Windows developers. Each profile outlin
 
 - [.NET MAUI](/dotnet/maui/)
 - [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows)
-- [Xamarin](/xamarin/)
 
 **Favorite tools:**
 
