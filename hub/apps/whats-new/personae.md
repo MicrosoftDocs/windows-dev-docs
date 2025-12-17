@@ -6,12 +6,13 @@ ms.date: 12/17/2025
 author: GrantMeStrength
 ms.author: jken
 ms.reviewer: jken
-ms.topic: personae
+ms.topic: overview
 ms.localizationpriority: medium
 ---
 
-Building applications for Windows offers a variety of tools and frameworks tailored to different development needs. The following table lists common developer personas and the technologies they typically use to create Windows applications.
+Windows supports a wide range of application types and development workflows. Whether you're building desktop apps, web experiences, games, or cross-platform solutions, the platform offers tools and frameworks to match your goals.
 
+The following personas represent typical Windows developers. Each profile outlines the kinds of apps they build, the technologies they rely on, and the tools they prefer—helping you identify the right starting point for your own development journey.
 
 ## Emily - Desktop app developer
 
@@ -31,6 +32,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 - [WPF](/dotnet/desktop/wpf/overview/)
 - [Windows App SDK](/windows/apps/windows-app-sdk/)
 - [.NET MAUI](/dotnet/maui/)
+- [.NET](/dotnet/)
 
 **Favorite tools:**
 
@@ -40,7 +42,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 **Top-of-mind:**
 
-- Using AI features to improve an application.
+- Integrating AI capabilities while maintaining performance and responsiveness.
 
 > [!TIP]
 > Optimize for high DPI and accessibility. Use Fluent Design principles. Package apps with MSIX for secure deployment.
@@ -69,6 +71,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 **Favorite tools:**
 
+- WSL
 - Visual Studio Code
 - Node.js
 - Azure DevOps
@@ -100,6 +103,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 **Favorite tools:**
 
+- C++
 - Visual Studio
 - Unity Editor
 - PIX for Windows
@@ -137,7 +141,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 **Top-of-mind:**
 
-- Making use of WinAppSDK features in a WPF application.
+- Leveraging Windows App SDK capabilities in existing WPF applications.
 
 > [!TIP]
 > Focus on security and compliance. Ensure maintainability and scalability. Use MVVM for clean architecture.
@@ -147,7 +151,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## Pradeep - Cross-platform mobile developer
 
-:::image type="content" source="./images/cross-platform-dev-workstation.jpg" alt-text="Illustration of a game developer.":::
+:::image type="content" source="./images/cross-platform-dev-workstation.jpg" alt-text="Illustration of a mobile developer.":::
 
 **Bio:** Pradeep creates apps that run seamlessly across Windows, Android, and iOS using modern cross-platform frameworks.
 
@@ -195,6 +199,8 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 **Favorite tools:**
 
+- WSL
+- Windows Terminal and PowerShell
 - Visual Studio Code
 - GitHub
 - Docker
