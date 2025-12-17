@@ -7,24 +7,12 @@ ms.topic: personae
 ms.localizationpriority: medium
 ---
 
-Building applications for Windows offers a variety of tools and frameworks tailored to different development needs. Below are some common developer personas and the technologies they typically use to create Windows applications.
-
-
-## At a glance
-
-| Persona | Typical apps | Go-to tech |
-| :------ | :----------- | :--------- |
-| Desktop (Emily) | Productivity tools, utilities | WinUI 3, Windows App SDK |
-| Web (Carlos) | PWAs, dashboards | React, ASP.NET Core |
-| Game (Aisha) | AAA/indie, simulation | DirectX 12, Gaming GDK |
-| Enterprise (David) | Line-of-business apps | .NET, WPF, WinForms |
-| Mobile (Pradeep) | Cross-platform apps | .NET MAUI, React Native |
-| Open source (Liam) | Tools, libraries | VS Code extensions, GitHub Actions |
+Building applications for Windows offers a variety of tools and frameworks tailored to different development needs. The following table lists common developer personas and the technologies they typically use to create Windows applications.
 
 
 ## Emily - Desktop app developer
 
-:::image type="content" source="./images/portait6.jpg" alt-text="Illustration of a desktop app developer.":::
+:::image type="content" source="./images/developers-collaborating-workspace.jpg" alt-text="'Two developers collaborating at a desk with dual monitors displaying code and project details in a workspace setting.'.":::
 
 **Bio:** Emily builds rich, performant desktop applications for Windows. She focuses on delivering intuitive user experiences and leveraging native Windows capabilities.
 
@@ -59,9 +47,9 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## Carlos - Web app developer
 
-:::image type="content" source="./images/portrait3.jpg" alt-text="Illustration of a web app developer.":::
+:::image type="content" source="./images/web-app-developer-presentation.jpg" alt-text="Illustration of a web app developer.":::
 
-**Bio:** Carlos builds responsive, performant web applications that integrate with Windows services or run in hybrid environments.
+**Bio:** Carlos builds responsive, high-performance web applications that integrate with Windows services or run in hybrid environments.
 
 **What they build:**
 
@@ -83,16 +71,16 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 - Azure DevOps
 
 > [!TIP]
-> Optimize for performance and accessibility. Use responsive design for multiple screen sizes. Secure apps with HTTPS and OAuth.
+> Optimize for performance and accessibility. Use responsive design for multiple screen sizes. Secure apps by using HTTPS and OAuth.
 
 ---
 
 
 ## Aisha - Game developer
 
-:::image type="content" source="./images/portrait1.jpg" alt-text="Illustration of a game developer.":::
+:::image type="content" source="./images/game-developer-workstation.jpg" alt-text="Illustration of a game developer.":::
 
-**Bio:** Aisha builds immersive gaming experiences for Windows using powerful graphics APIs and engines. She prioritizes performance and rendering quality.
+**Bio:** Aisha builds immersive gaming experiences for Windows by using powerful graphics APIs and engines. She prioritizes performance and rendering quality.
 
 **What they build:**
 
@@ -121,7 +109,7 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 
 ## David - Enterprise/line-of-business developer
 
-:::image type="content" source="./images/portrait4.jpg" alt-text="Illustration of an Enterprise developer.":::
+:::image type="content" source="./images/enterprise-developer-tablet.jpg" alt-text="Illustration of an Enterprise developer.":::
 
 **Bio:** David develops secure, scalable enterprise applications for internal business processes and workflows.
 
@@ -154,9 +142,9 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 ---
 
 
-## Pradeep - Cross-platform mobile developer 
+## Pradeep - Cross-platform mobile developer
 
-:::image type="content" source="./images/portrait5.jpg" alt-text="Illustration of a game developer.":::
+:::image type="content" source="./images/cross-platform-dev-workstation.jpg" alt-text="Illustration of a game developer.":::
 
 **Bio:** Pradeep creates apps that run seamlessly across Windows, Android, and iOS using modern cross-platform frameworks.
 
@@ -184,9 +172,9 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 ---
 
 
-## Open source/community developer (Liam)
+## Liam - Open source/community developer
 
-:::image type="content" source="./images/portrait2.jpg" alt-text="Illustration of an OSS developer.":::
+:::image type="content" source="./images/oss-developer-working-laptop.jpg" alt-text="Illustration of an OSS developer.":::
 
 **Bio:** Liam contributes to open-source projects and builds tools that empower the developer community.
 
@@ -209,4 +197,4 @@ Building applications for Windows offers a variety of tools and frameworks tailo
 - Docker
 
 > [!TIP]
-> Write clear documentation. Engage with the community for feedback. Automate workflows with CI/CD.
+> Write clear documentation. Engage with the community for feedback. Automate workflows by using CI/CD.
