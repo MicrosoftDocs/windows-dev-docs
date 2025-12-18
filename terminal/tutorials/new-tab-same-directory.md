@@ -78,7 +78,7 @@ function prompt
 
   $prompt = & $GitPromptScriptBlock
 
-  $prompt += "$([char]27)]9;12$([char]7)"
+  $prompt += "$([char]27)]133;A$([char]7)"
   if ($loc.Provider.Name -eq "FileSystem")
   {
     $prompt += "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
@@ -95,7 +95,7 @@ If you're using [Starship](http://starship.rs/), then that will already modify y
 ```powershell
 function Invoke-Starship-PreCommand {
   $loc = $executionContext.SessionState.Path.CurrentLocation;
-  $prompt = "$([char]27)]9;12$([char]7)"
+  $prompt = "$([char]27)]133;A$([char]7)"
   if ($loc.Provider.Name -eq "FileSystem")
   {
     $prompt += "$([char]27)]9;9;`"$($loc.ProviderPath)`"$([char]27)\"
