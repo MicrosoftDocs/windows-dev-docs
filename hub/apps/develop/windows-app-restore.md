@@ -7,7 +7,7 @@ keywords: Windows, App, SDK, Windows app restore
 ms.localizationpriority: medium
 ---
 
-# Windows app restore: maximize the value of your app
+# App restore: maximize the value of your app
 
 To maximize retention of your users as they move to a new device, your app (in conjunction with Windows app restore) should offer the best possible restore experience. This topic defines the tenets of Windows app restore that will enable your app to deliver that experience and keep as many of your customers engaged as possible.
 
