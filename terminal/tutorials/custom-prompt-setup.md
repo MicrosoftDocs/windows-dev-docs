@@ -54,18 +54,11 @@ To customize your PowerShell prompt, install Oh My Posh using [winget](/windows/
 - `themes`: The latest [Oh My Posh themes](https://ohmyposh.dev/docs/themes)
 
 To start the installation, enter the command:
-To customize your PowerShell prompt, install Oh My Posh using [winget](/windows/package-manager/winget), which will install:
-
-- `oh-my-posh.exe`: The Windows executable
-- `themes`: The latest [Oh My Posh themes](https://ohmyposh.dev/docs/themes)
-
-To start the installation, enter the command:
 
 ```powershell
 winget install JanDeDobbeleer.OhMyPosh
 ```
 
-You will need to agree to the source terms and may run into the instance that more than one package is available. In this case, select the package ID that you want to use and re-enter the command: `winget install <package ID>`.
 You will need to agree to the source terms and may run into the instance that more than one package is available. In this case, select the package ID that you want to use and re-enter the command: `winget install <package ID>`.
 
 ![Screenshot of winget install oh my posh packages.](../images/oh-my-posh-winget.png)
