@@ -46,6 +46,7 @@ For the following sequences:
 
 The relevant supported shell integration sequences as of Terminal v1.18 are:
 
+* `OSC 9 ; 9 ; <CWD> ST` ("_ConEmu Set working directory_") - Tell the Terminal what the current working directory is. `CWD` needs to be a **Windows** filesystem path for this to work. If using this in WSL or cygwin, you'll need to use `wslpath` or `cygpath`.
 * `OSC 133 ; A ST` ("_FTCS_PROMPT_") - The start of a prompt.
 * `OSC 133 ; B ST` ("_FTCS_COMMAND_START_") - The start of a commandline (READ: the end of the prompt).
 * `OSC 133 ; C ST` ("_FTCS_COMMAND_EXECUTED_") - The start of the command output / the end of the commandline.
