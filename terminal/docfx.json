@@ -56,8 +56,8 @@
       "ms.service": "dev-environment",
       "ms.subservice": "windows-terminal",
       "searchScope": ["terminal"],
-      "ms.author": "mattwoj",
-      "author": "mattwojo",
+      "ms.author": "duhowett",
+      "author": "dhowett",
       "adobe-target": true
     },
     "fileMetadata": {},
