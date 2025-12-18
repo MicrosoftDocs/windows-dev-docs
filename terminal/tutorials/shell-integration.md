@@ -3,7 +3,7 @@ title: Shell integration in the Windows Terminal
 description: In this tutorial, you learn how to configure your shell to enable shell integration features in the Windows Terminal
 author: zadjii-msft
 ms.author: migrie
-ms.date: 05/23/2023
+ms.date: 12/18/2025
 ms.topic: tutorial
 #Customer intent: As a developer or IT admin, I want to enable shell integration
 ---
@@ -16,6 +16,7 @@ ms.topic: tutorial
     - [PowerShell (`pwsh.exe`)](#powershell-pwshexe)
     - [Command Prompt](#command-prompt)
     - [Bash](#bash)
+    - [Fish](#fish)
   - [Shell integration features](#shell-integration-features)
     - [Open new tabs in the same working directory](#open-new-tabs-in-the-same-working-directory)
     - [Show marks for each command in the scrollbar](#show-marks-for-each-command-in-the-scrollbar)
@@ -318,8 +319,86 @@ bash-5.2$ echo "|${PS1}|"
 bash-5.2$ echo "|${PS2}|"
 ||
 ```
+### Fish
 
-> **Note**:
+For the fish shell, you can enable shell integration by creating a new file, for example ~/.config/fish/conf.d/wt_integration.fish, and adding the following script.
+
+This script leverages fish's event system to automatically send the necessary shell integration sequences. It is designed to be robust, only activating when in an interactive session within Windows Terminal (by checking for the $WT_SESSION variable). It also includes a specific function to correctly report the current working directory when running under WSL by using wslpath.
+
+Add the following to your `~/.config/fish/conf.d/wt_integration.fish` file:
+
+```fish
+# Only activate in an interactive session running inside Windows Terminal
+if status --is-interactive; and set -q WT_SESSION
+
+    # Define the FTCS (Final Term Command Sequences) for shell integration
+    set -g __fish_wt_prompt_start (printf "\e]133;A\e\\")
+    set -g __fish_wt_prompt_end (printf "\e]133;B\e\\")
+    set -g __fish_wt_cmd_executed (printf "\e]133;C\e\\")
+    set -g __fish_wt_cmd_finished_pre (printf "\e]133;D;")
+    set -g __fish_wt_cmd_finished_post (printf "\e\\")
+
+    # Event handler: Fired before a command is executed.
+    # Sends the "Command Executed" sequence.
+    function __fish_wt_preexec --on-event fish_preexec
+        printf '%s' $__fish_wt_cmd_executed
+    end
+
+    # Event handler: Fired after a command has finished.
+    # Sends the "Command Finished" sequence with the command's exit status.
+    function __fish_wt_postexec --on-event fish_postexec
+        printf '%s%s%s' $__fish_wt_cmd_finished_pre $status $__fish_wt_cmd_finished_post
+    end
+
+    # Event handler: Fired before the prompt is displayed.
+    # Updates the terminal's current working directory (CWD).
+    # Uses wslpath to translate WSL paths to Windows paths for compatibility.
+    function __fish_wt_update_cwd --on-event fish_prompt
+        printf "\e]9;9;\"%s\"\e\\" (wslpath -w (pwd))
+    end
+
+    # Overrides the default fish_prompt function to wrap it with FTCS sequences.
+    # This example shows a simple prompt. See below for a Starship example.
+    function fish_prompt
+        # Send "Prompt Start" sequence
+        printf '%s' $__fish_wt_prompt_start
+
+        # --- YOUR PROMPT GENERATION LOGIC GOES HERE ---
+        # A basic example:
+        printf '%s@%s %s> ' (whoami) (hostname|cut -d . -f 1) (prompt_pwd)
+
+        # Send "Prompt End" (or "Command Start") sequence
+        printf '%s' $__fish_wt_prompt_end
+    end
+
+end
+```
+
+#### Starship Setup
+
+If you are using Starship as your prompt, you will need to modify the fish_prompt function to wrap the starship command. This ensures Starship's output is correctly placed between the start and end prompt markers.
+
+Replace the fish_prompt function from the script above with the following:
+
+```fish
+function fish_prompt
+    set -l last_status $status
+    # Get the number of background jobs
+    set -l job_count (count (jobs -p))
+
+    # Send "Prompt Start" sequence
+    printf '%s' $__fish_wt_prompt_start
+
+    # Render the Starship prompt and remove any trailing newlines
+    starship prompt --status=$last_status --jobs=$job_count | tr -d "\n"
+    
+    # Send "Prompt End" (or "Command Start") sequence
+    printf '%s' $__fish_wt_prompt_end
+end
+```
+
+
+> [!NOTE]
 > Don't see your favorite shell here? If you figure it out, feel free to [contribute a solution for your preferred shell!](https://github.com/MicrosoftDocs/terminal/compare)
 
 ## Shell integration features
