@@ -43,4 +43,4 @@ The direct link to your app's page can be shared to help your customers find the
 
 Your app's **Store ID** is also shown in this section. This Store ID can be used to [generate Store badges](https://developer.microsoft.com/store/badges) or otherwise identify your app.
 
-The **Store protocol link** can be used to link directly to your app in the Store without opening a browser, such as when you are linking from within an app. For more info, see [Link to your app](leverage-developer-tools-faqs/link-to-your-app-and-microsoft-store-badge.md#link-to-your-app).
+The **Store protocol link** can be used to link directly to your app in the Store without opening a browser, such as when you are linking from within an app. For more info, see, "How do I link to my app in the Microsoft Store?" in the [Leverage developer tools FAQ](faq/leverage-developer-tools.md).

@@ -12,9 +12,6 @@ Windows 11 and Windows 10 offer many features you can use to deliver a modern ex
 
 This topic describes the features that you can use in your desktop apps today. For a tutorial that demonstrates how to modernize an existing app to use many of the features described in this topic, see the [Modernize a WPF app](modernize-wpf-tutorial.md) tutorial.
 
-> [!NOTE]
-> Do you need assistance migrating desktop apps to Windows 10 or later? The [App Assure](/fasttrack/products-and-capabilities#app-assure) service provides direct, no-cost support to developers who are porting their apps to Windows 10 and later versions. This program is available to all ISVs and eligible enterprises. For more details on eligibility and about the program itself, visit [/fasttrack/win-10-app-assure-assistance-offered](/fasttrack/win-10-app-assure-assistance-offered). To get started now, [submit your request](https://fasttrack.microsoft.com/dl/daa).
-
 ## Apply Windows 11 features
 
 Windows 11 marks a visual evolution of the Windows operating system, and introduces new features that improve app fundamentals and user experience. Many of these features are enabled by default for apps, but desktop apps may require updates to integrate with some new features. These features include rounded corners of top-level windows, snap layouts, and the updated context menu in File Explorer.

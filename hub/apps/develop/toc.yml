@@ -1,7 +1,7 @@
 items:
   - name: Build Windows apps
     href: ../desktop/index.yml
-  - name: Development overview
+  - name: Develop overview
     href: index.md
   - name: Features
     expanded: true
@@ -100,6 +100,8 @@ items:
           href: ../windows-app-sdk/applifecycle/background-tasks.md
       - name: DispatcherQueue
         href: dispatcherqueue.md
+    - name: App restore
+      href: ../develop/windows-app-restore.md 
     - name: Audio, video, and camera
       items:
       - name: Overview
@@ -143,9 +145,7 @@ items:
         - name: Connect to remote cameras
           href: camera/connect-to-remote-cameras.md
     - name: Communication
-      items:
-      - name: Overview
-        href: communication/index.md
+      href: communication/index.md
     - name: Data and files
       items:
       - name: Overview
@@ -774,9 +774,9 @@ items:
             href: ui/controls/labels.md
         - name: Title bar
           href: ui/controls/title-bar.md
-        - name: Build XAML controls with C++/WinRT
+        - name: "Tutorial: Build XAML controls with C++/WinRT"
           href: ../winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
-        - name: Build XAML controls with C#
+        - name: "Tutorial: Build XAML controls with C#"
           href: ../winui/winui3/xaml-templated-controls-csharp-winui-3.md
       - name: Materials (Acrylic / Mica)
         href: ../windows-app-sdk/system-backdrop-controller.md
@@ -796,6 +796,8 @@ items:
         items:
         - name: Overview
           href: ui/windowing-overview.md
+        - name: CoreWindow interop
+          href: ui/display-ui-objects.md  
         - name: Manage app windows
           href: ui/manage-app-windows.md
         - name: Title bar
@@ -804,144 +806,112 @@ items:
           href: ui/multiple-windows.md
         - name: Retrieve a window handle (HWND)
           href: ui/retrieve-hwnd.md
-      - name: CoreWindow interop
-        href: ui/display-ui-objects.md
       - name: Choose the right visual tree viewer
         href: ui/visual-tree.md
-  - name: WASDK and WinRT in other UI frameworks
+  - name: Use features with other UI frameworks
     items:
-    - name: APIs not supported in desktop apps
-      href: ../desktop/modernize/desktop-to-uwp-supported-api.md
-    - name: Use MSIX framework packages from your desktop app
+    - name: Overview
+      href: ../desktop/modernize/index.md
+    - name: Win32
+      items:
+      - name: Integrate Windows App SDK
+        href: ../windows-app-sdk/use-windows-app-sdk-in-existing-project.md
+      - name: Modern user interface
+        items:
+          - name: Dark and light app modes
+            href: ../desktop/modernize/ui/apply-windows-themes.md  
+          - name: Mica background material
+            href: ../desktop/modernize/ui/apply-mica-win32.md
+          - name: Snap layouts
+            href: ../desktop/modernize/ui/apply-snap-layout-menu.md
+          - name: Rounded window corners
+            href: ../desktop/modernize/ui/apply-rounded-corners.md
+      - name: Visual layer
+        items:
+          - name: Overview
+            href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
+          - name: "Tutorial: Using Composition APIs in Win32"
+            href: ../desktop/modernize/ui/using-the-visual-layer-with-win32.md
+    - name: WPF
+      items:
+       - name: Integrate Windows App SDK
+         href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md
+       - name: Visual layer
+         items:
+            - name: Overview
+              href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
+            - name: "Tutorial: Using Composition APIs in WPF"
+              href: ../desktop/modernize/ui/using-the-visual-layer-with-wpf.md
+    - name: WinForms  
+      items:
+       - name: Integrate Windows App SDK
+         href: ../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md
+       - name: Visual layer
+         items:
+            - name: Overview
+              href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
+            - name: "Tutorial: Using Composition APIs in WinForms"
+              href: ../desktop/modernize/ui/using-the-visual-layer-with-windows-forms.md
+    - name: Migrate from UWP to Windows App SDK
+      items:
+          - name: Overview
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
+          - name: Overall migration strategy
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
+          - name: Mapping UWP features to Windows App SDK
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md
+          - name: What's supported
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
+          - name: Mapping UWP APIs to Windows App SDK
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md
+          - name: Feature area guides
+            items:
+              - name: Overview of feature area guides
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
+              - name: User interface migration (including WinUI 3)
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
+              - name: Keyboard API and events parity between UWP and WinUI 3
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/keyboard-events.md
+              - name: Windowing functionality migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
+              - name: Application lifecycle functionality migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
+              - name: Toast notifications
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/toast-notifications.md
+              - name: Push notifications
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
+              - name: DirectWrite to DWriteCore migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
+              - name: MRT to MRTCore migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
+              - name: Background task migration strategy
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md
+              - name: Threading functionality migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
+              - name: Case study 1—PhotoLab (C#)
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md
+              - name: Case study 2—Photo Editor (C++/WinRT)
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
+              - name: Additional migration guidance
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+              - name: Migrate UWP to Windows App SDK with the .NET Upgrade Assistant
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
+    - name: Use MSIX framework packages
       items:
         - name: Overview
           href: ../desktop/modernize/framework-packages/index.md
         - name: MSIX framework packages and dynamic dependencies
           href: ../desktop/modernize/framework-packages/framework-packages-overview.md
         - name: Reference MSIX packages at run time
-          href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
-    - name: Use the Windows App SDK in a Win32 app
-      href: ../windows-app-sdk/use-windows-app-sdk-in-existing-project.md
-    - name: Use the Windows App SDK in a WPF app
-      href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md
-    - name: Use the Windows App SDK in a WinForms app
-      href: ../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md
-    - name: Modernize your desktop apps
+          href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md     
+    - name: Call Windows Runtime APIs
       items:
-      - name: Overview
-        href: ../desktop/modernize/index.md
-      - name: Apply Windows 11 features
-        items:
-        - name: Overview
-          href: ../get-started/make-apps-great-for-windows.md
-        - name: Apply rounded corners on Windows 11
-          href: ../desktop/modernize/ui/apply-rounded-corners.md
-        - name: Apply Mica on Windows 11
-          href: ../desktop/modernize/ui/apply-mica-win32.md
-        - name: Support snap layouts on Windows 11
-          href: ../desktop/modernize/ui/apply-snap-layout-menu.md
-        - name: Support Dark and Light themes
-          href: ../desktop/modernize/ui/apply-windows-themes.md
-      - name: Call Windows Runtime APIs
-        items:
         - name: Overview
           href: ../desktop/modernize/desktop-to-uwp-enhance.md
         - name: APIs not supported in desktop apps
           href: ../desktop/modernize/desktop-to-uwp-supported-api.md
         - name: Call interop APIs from a .NET app
-          href: ../desktop/modernize/winrt-com-interop-csharp.md
-      - name: Use MSIX framework packages from your desktop app
-        items:
-        - name: Overview
-          href: ../desktop/modernize/framework-packages/index.md
-        - name: MSIX framework packages and dynamic dependencies
-          href: ../desktop/modernize/framework-packages/framework-packages-overview.md
-        - name: Reference MSIX packages at run time
-          href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
-      - name: Host WinRT XAML controls (XAML Islands)
-        items:
-        - name: Overview
-          href: ../desktop/modernize/xaml-islands/xaml-islands.md
-        - name: XAML Islands in WPF and Windows Forms apps
-          items:
-          - name: Use XAML Islands to host a UWP XAML control in a C# WPF app
-            href: ../desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands.md
-          - name: Host a custom WinRT XAML control
-            href: ../desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands.md
-        - name: XAML Islands in C++ desktop apps
-          items:
-          - name: Using the WinRT XAML hosting API
-            href: ../desktop/modernize/xaml-islands/using-the-xaml-hosting-api.md
-          - name: Host a standard WinRT XAML control
-            href: ../desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp.md
-          - name: Host a custom WinRT XAML control
-            href: ../desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp.md
-          - name: Advanced scenarios
-            href: ../desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp.md
-    - name: Using the Visual layer (Windows.UI.Composition)
-      items:
-      - name: Overview
-        href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
-      - name: WPF
-        href: ../desktop/modernize/ui/using-the-visual-layer-with-wpf.md
-      - name: Windows Forms
-        href: ../desktop/modernize/ui/using-the-visual-layer-with-windows-forms.md
-      - name: C++ desktop (Win32)
-        href: ../desktop/modernize/ui/using-the-visual-layer-with-win32.md
-    - name: Migrate from UWP to Windows App SDK
-      items:
-        - name: Migrate from UWP to Windows App SDK
-          href: ../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
-        - name: Overall migration strategy
-          href: ../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
-        - name: Mapping UWP features to Windows App SDK
-          href: ../windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md
-        - name: What's supported
-          href: ../windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
-        - name: Mapping UWP APIs to Windows App SDK
-          href: ../windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md
-        - name: Feature area guides
-          items:
-            - name: Overview of feature area guides
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
-            - name: User interface migration (including WinUI 3)
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
-            - name: Keyboard API and events parity between UWP and WinUI 3
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/keyboard-events.md
-            - name: Windowing functionality migration
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
-            - name: Application lifecycle functionality migration
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
-            - name: Toast notifications
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/toast-notifications.md
-            - name: Push notifications
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
-            - name: DirectWrite to DWriteCore migration
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
-            - name: MRT to MRTCore migration
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
-            - name: Background task migration strategy
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md
-            - name: Threading functionality migration
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
-            - name: Case study 1—PhotoLab (C#)
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md
-            - name: Case study 2—Photo Editor (C++/WinRT)
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
-            - name: Additional migration guidance
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
-            - name: Migrate UWP to Windows App SDK with the .NET Upgrade Assistant
-              href: ../windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
-  - name: Tutorials
-    items:
-    - name: Use Win32 interop APIs (PInvoke) in a C# WinUI app
-      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
-    - name: Build a C# .NET app with WinUI 3 and Win32 interop
-      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
-    - name: Use Github Copilot to build WinUI 3 apps in Visual Studio
-      href: ../how-tos/github-copilot-winui-vs.md
-    - name: "Tutorial: Create a simple photo viewer with WinUI 3"
-      href: ../get-started/simple-photo-viewer-winui3.md
+          href: ../desktop/modernize/winrt-com-interop-csharp.md              
   - name: Platform
     items:
     - name: C#/WinRT
@@ -1056,8 +1026,9 @@ items:
     - name: WinUI templates in Visual Studio
       href: ../winui/winui3/winui-project-templates-in-visual-studio.md    
   - name: API reference
-    href: ../api-reference/index.md
     items:
+    - name: Overview
+      href: ../api-reference/index.md
     - name: Windows SDK API reference
       items:
         - name: WinRT API reference >>
@@ -1136,11 +1107,21 @@ items:
       href: /dotnet/api/
     - name: Schema specs for Windows apps >>
       href: /uwp/schemas/
+  - name: Tutorials
+    items:
+    - name: Win32 interop APIs (PInvoke) in a C# WinUI app
+      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
+    - name: Build a C# .NET app with WinUI 3 and Win32 interop
+      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
+    - name: Use GitHub Copilot to build WinUI 3 apps in Visual Studio
+      href: ../how-tos/github-copilot-winui-vs.md
+    - name: Create a photo viewer with WinUI 3
+      href: ../get-started/simple-photo-viewer-winui3.md
   - name: Get started >>
     href: ../get-started/index.md
   - name: Design >>
     href: ../design/index.md
-  - name: Package and deploy >>
+  - name: Package >>
     href: ../package-and-deploy/index.md
-  - name: Distribute >>
+  - name: Publish >>
     href: ../publish/index.md
