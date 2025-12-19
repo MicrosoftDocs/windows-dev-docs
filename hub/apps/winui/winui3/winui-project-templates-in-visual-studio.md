@@ -57,6 +57,4 @@ The following item templates are available for use in a WinUI 3 project. To acce
 
 * [Windows App SDK](../../windows-app-sdk/index.md)
 * [Start developing Windows apps](../../get-started/start-here.md)
-* [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 * [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
-* [Windows App SDK Sample Templates](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Templates)

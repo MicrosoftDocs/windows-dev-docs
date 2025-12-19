@@ -56,7 +56,7 @@ For more info, see [Windows App SDK](../index.md).
 
 ## Install the Windows App SDK VSIX
 
-Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stable release channel for the Windows App SDK](../stable-channel.md), and run to install it.
+Download the latest Windows App SDK version from [Windows App SDK downloads](../downloads.md), and run to install it.
 
 ## Create a new project
 
@@ -112,7 +112,6 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 * [Windows App SDK and supported Windows releases](../support.md)
 * [Windows Runtime (WinRT)](/uwp/api/) APIs
 * [WinUI](../../winui/index.md)
-* [Stable release channel for the Windows App SDK](../stable-channel.md)
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)
 * [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md)

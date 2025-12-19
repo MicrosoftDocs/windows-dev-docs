@@ -29,7 +29,7 @@ Packaged with external location and unpackaged apps also have extra runtime requ
 
 ### Additional prerequisites 
 
-* [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
+* Experimental and preview versions of the Windows App SDK require that sideloading is enabled to install the runtime.
   - Sideloading is automatically enabled on Windows 10 version 2004 and later.
   - If your development computer or the deployment computer is running **Windows 11**, confirm whether sideloading is enabled:
     - **Settings** > **Privacy & security** > **For developers**. Make sure the **Developer mode** setting is turned on.

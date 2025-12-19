@@ -31,7 +31,7 @@ The Windows App SDK framework package contains the Windows App SDK binaries used
 
 ### Stable version
 
-When you install a stable release version (see [Stable channel release notes](stable-channel.md)) of the Windows App SDK NuGet package on your development computer, and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
+When you install a stable release version of the Windows App SDK NuGet package on your development computer, and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
 
 However, if you build your app package manually using a separate Windows Application Packaging Project, then you must declare a **PackageReference** in your `Application (package).wapproj` file, like the following:
 
@@ -47,7 +47,7 @@ That package dependency ensures that the Framework package is installed when you
 
 ### Preview version
 
-When you install a preview release version (see [Preview channel release notes](preview-channel.md)) of the Windows App SDK NuGet package on your development computer, a preview version of the Windows App SDK framework package is deployed during build time as a NuGet package dependency.
+When you install a preview release version of the Windows App SDK NuGet package on your development computer, a preview version of the Windows App SDK framework package is deployed during build time as a NuGet package dependency.
 
 ## Call the Deployment API
 

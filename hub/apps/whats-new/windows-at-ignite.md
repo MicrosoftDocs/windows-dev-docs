@@ -15,7 +15,7 @@ Stay up to date with Windows app platform innovations announced or highlighted a
 
 | Area | Highlight |
 | :-- | :-- |
-| Windows App SDK | Latest stable and preview releases with new APIs and performance improvements. See [Stable channel release notes](../windows-app-sdk/stable-channel.md) and [Preview channel release notes](../windows-app-sdk/preview-channel.md). |
+| Windows App SDK | Latest stable and preview releases with new APIs and performance improvements. See [Release notes](../windows-app-sdk/release-channels.md) |
 | WinUI | New controls and performance guidance reinforced through the WinUI 3 Gallery. Explore the [WinUI 3 Gallery on GitHub](https://github.com/microsoft/WinUI-Gallery). |
 | Windows AI | Local AI capabilities including small language models (SLMs) like Phi Silica and updated guidance to integrate AI features responsibly. Start with [Get started using Windows AI APIs](/windows/ai/apis/get-started). |
 | Developer productivity | Updates to PowerToys and command-line tooling elevate daily workflows. Install and explore [PowerToys](/windows/powertoys/). |
@@ -25,11 +25,7 @@ Stay up to date with Windows app platform innovations announced or highlighted a
 
 ### Windows App SDK
 
-The Windows App SDK continues to unify and evolve the Windows app platform. Review:
-
-- [Stable channel release notes](../windows-app-sdk/stable-channel.md)
-- [Preview channel release notes](../windows-app-sdk/preview-channel.md)
-- [Release notes archive](../windows-app-sdk/release-notes-archive/stable-channel-1-7.md)
+The Windows App SDK continues to unify and evolve the Windows app platform. To learn more, see [Windows App SDK](../windows-app-sdk/index.md)
 
 ### WinUI
 
@@ -82,7 +78,6 @@ Improve app reliability and trustworthiness.
 
 | Component | Links |
 | :-- | :-- |
-| Windows App SDK | [Stable release notes](../windows-app-sdk/stable-channel.md) * [Preview release notes](../windows-app-sdk/preview-channel.md) * [Archive](../windows-app-sdk/release-notes-archive/stable-channel-1-7.md) |
 | Windows SDK | [Downloads & archive](https://developer.microsoft.com/windows/downloads/sdk-archive) (includes latest and Insider preview SDK release notes) |
 | Windows Insider | [Windows Insider for Developers](https://www.microsoft.com/windowsinsider/for-developers-getting-started) |
 | Modernization | [Start developing Windows apps](/windows/apps/get-started/start-here) |

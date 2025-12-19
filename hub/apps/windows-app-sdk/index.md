@@ -67,9 +67,9 @@ The Windows App SDK is available through multiple release channels that let you 
 
 | Release channel | Description |
 |-----------------|-------------|
-| [Stable](stable-channel.md) | Intended for production apps and includes only stable, supported APIs. This is the default channel used throughout the Windows App SDK documentation. |
-| [Preview](preview-channel.md) | Offers an early look at what’s coming in the next stable release. API changes can occur between a preview release and its corresponding stable version. For setup guidance, see [Iet up preview and experimental channels](preview-experimental-install.md). |
-| [Experimental](experimental-channel.md) | Contains features that are early in development and may change or be removed before future releases. For setup guidance, see [Set up preview and experimental channels](preview-experimental-install.md). |
+| **Stable** | Intended for production apps and includes only stable, supported APIs. This is the default channel used throughout the Windows App SDK documentation. |
+| **Preview** | Offers an early look at what’s coming in the next stable release. API changes can occur between a preview release and its corresponding stable version. |
+| **Experimental** | Contains features that are early in development and may change or be removed before future releases. |
 
 
  For more details about the release channels of the Windows App SDK, see [Windows App SDK release channels](release-channels.md).
@@ -80,7 +80,6 @@ The Windows App SDK is available through multiple release channels that let you 
 
 - To integrate the Windows App SDK into an existing WPF, Windows Forms, Win32, or cross-platform project, see [use the Windows App SDK in an existing app](use-windows-app-sdk-in-existing-project.md)  guidance.
 - For version-specific details, visit [Release channels](release-channels.md) and [Downloads](downloads.md).
-- To see what’s new, check the latest [release notes](stable-channel.md).
 
 [!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
@@ -93,6 +92,3 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 
 - [Release channels and release notes](release-channels.md)
 - [Create your first WinUI 3 project](../get-started/start-here.md)
-- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
-
