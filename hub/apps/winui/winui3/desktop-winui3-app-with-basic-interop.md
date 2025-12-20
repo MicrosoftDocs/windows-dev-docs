@@ -215,6 +215,5 @@ void MainWindow::customButton_Click(IInspectable const&, RoutedEventArgs const&)
 ## See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Manage app windows](../../develop/ui-input/manage-app-windows.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

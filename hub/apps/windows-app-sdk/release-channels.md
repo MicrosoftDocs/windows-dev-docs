@@ -13,9 +13,9 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |--:|--|--|--|:--:|--|
-| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.3 (1.8.251106002)** <br/> Released: 11/11/2025 <br/> [Release notes](stable-channel.md#version-183-18251106002) |
-| **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **1.8 Preview (1.8-preview)** <br/> Released: 08/19/2025 <br/> [Release notes](preview-channel.md#version-18-preview-18-preview) ** |
-| **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.0 Experimental 3 (2.0.0-experimental3)** <br/> Released: 11/11/2025 <br/> [Release notes](experimental-channel.md#version-20-experimental-200-experimental3) |
+| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.3 (1.8.251106002)** <br/> Released: 11/11/2025 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-183-18251106002) |
+| **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **1.8 Preview (1.8-preview)** <br/> Released: 08/19/2025 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=preview#version-18-preview-18-preview) ** |
+| **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.0 Experimental 4 (2.0.0-experimental4)** <br/> Released: 11/11/2025 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-3-200-experimental3) |
 
 
 For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
@@ -24,7 +24,7 @@ For a comprehensive list of all current and previous releases of the Windows App
 
 The following table shows which features are currently available in each release channel.
 
-| Feature                                                                                                                  | ✅&nbsp;&nbsp;[Stable](stable-channel.md) | ❇️&nbsp;&nbsp;[Preview](preview-channel.md) | 🔄️&nbsp;&nbsp;[Experimental](experimental-channel.md) |
+| Feature                                                                                                                  | ✅ Stable | ❇️ Preview | 🔄️ Experimental |
 | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | --------------------------------------------- | -------------------------------------------------------- |
 | [Deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)                                        | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
@@ -113,9 +113,6 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 
 ## Related topics
 
-- [Stable channel](stable-channel.md)
-- [Preview channel](preview-channel.md)
-- [Experimental channel](experimental-channel.md)
 - [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
 - [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)

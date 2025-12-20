@@ -13,7 +13,13 @@ WinUI 3 is Microsoft's modern native user interface framework for building Windo
 
 Delivered as part of the [Windows App SDK](../../windows-app-sdk/index.md), WinUI 3 enables you to create modern, polished, and responsive desktop experiences that run on Windows 10, version 1809 (build 17763) and later, including Windows 11.
 
-To stay up to date with what's new with WinUI, check out the [latest Windows App SDK release notes](../../windows-app-sdk/stable-channel.md).
+WinUI is built in the open, and contributions or discussions are welcome. Visit the repository for details:
+
+<div class="buttons margin-top-xs">
+	<a href="https://github.com/microsoft/microsoft-ui-xaml" class="button button-sm"><span class="icon docon docon-brand-github" role="img"></span><span>View on GitHub</span></a>
+</div>
+
+To stay up to date with what's new with WinUI, check out the [latest Windows App SDK release notes](../../windows-app-sdk/release-notes/windows-app-sdk-1-8.md).
 
 :::image type="content" source="images/hero-controlset.png" alt-text="Diagram of the Windows App SDK architecture" border="false":::
 
@@ -109,7 +115,6 @@ To get started with WinUI, you can try out these resources to get you started:
 ### See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
 - [Design guidelines](../../design/index.md)

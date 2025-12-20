@@ -552,7 +552,7 @@ Topics covered include:
 
 <details><summary>Where can I find release notes for Windows App SDK?</summary>
 
-> See [Stable channel release notes](../windows-app-sdk/stable-channel.md) and [Preview channel release notes](../windows-app-sdk/preview-channel.md).
+> The latest release notes can be found on the [What's new](../whats-new/whats-new-for-developers.md) page.
 
 </details>
 

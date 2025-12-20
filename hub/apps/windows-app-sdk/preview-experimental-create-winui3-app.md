@@ -282,7 +282,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 ## Instructions for WinUI 3 unpackaged desktop apps
 
 > [!NOTE]
-> WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the [Windows App SDK Preview Extension for Visual Studio](preview-channel.md) to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](preview-channel.md).
+> WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the Windows App SDK Preview Extension for Visual Studio to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](./release-notes/windows-app-sdk-1-0.md?pivots=preview).
 
 To create a WinUI 3 application without MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
 
