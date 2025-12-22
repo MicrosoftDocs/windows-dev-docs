@@ -2,13 +2,15 @@
 title: Choose the Right Tools and Frameworks for Your Windows App
 description: Discover the best tools and frameworks for building Windows apps tailored to your needs. Learn how to optimize for performance, accessibility, and user experience.
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 12/17/2025
+ms.date: 12/22/2025
 author: GrantMeStrength
 ms.author: jken
 ms.reviewer: jken
 ms.topic: overview
 ms.localizationpriority: medium
 ---
+
+# Windows developers and their tools
 
 Windows supports a wide range of application types and development workflows. Whether you're building desktop apps, web experiences, games, or cross-platform solutions, the platform offers tools and frameworks to match your goals.
 

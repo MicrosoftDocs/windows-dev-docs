@@ -2,14 +2,14 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: best-practice
-ms.date: 11/4/2025
+ms.date: 12/22/2025
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
 # Windows application development - Best practices
 
-The best practices in this document help you build great Windows apps that reach and delight about 1.5 billion diverse PC users around the world. This document is divided into the following sections:
+The best practices in this article help you build great Windows apps that reach and delight about 1.5 billion diverse PC users around the world. This article is divided into the following sections:
 
 1. **[User experience](#user-experience-ux)**: Guidance in this section helps you improve the look, feel, and usability of your apps.
 1. **[Performance and fundamentals](#performance-and-fundamentals)**: Guidance in this section helps you improve your app's performance and resource utilization.
@@ -20,7 +20,7 @@ The best practices in this document help you build great Windows apps that reach
 
 ## User experience (UX)
 
-Windows 11 offers a visual evolution of the Windows operating system that improves the look, feel, and usability of Windows. Our studies show that users have high expectations for Windows apps:
+Windows 11 offers a visual evolution of the Windows operating system that improves the look, feel, and usability of Windows. Studies show that users have high expectations for Windows apps:
 
 - They expect Windows apps to work with a complete range of inputs.
 - They expect design and interaction patterns that look and feel native on current and future devices.
@@ -60,15 +60,15 @@ Use [on-object commanding](../design/controls/collection-commanding.md#creating-
 
 #### Text interaction
 
-Whenever there's text in an application, users expect that they can select and copy it. If the text is editable, they expect that they can cut and paste, as well. By providing consistent shortcuts to users, you let them complete their tasks more efficiently. Ensure that these actions can be performed using keyboard, mouse or trackpad, touch, and pen.
+Whenever there's text in an application, users expect that they can select and copy it. If the text is editable, they expect that they can cut and paste, as well. By providing consistent shortcuts to users, you let them complete their tasks more efficiently. Ensure that users can perform these actions by using keyboard, mouse or trackpad, touch, and pen.
 
 #### Panning and scrolling
 
-It's uncommon for an application's UI to fit entirely inside a single page that doesn't need to scroll. Even if there are only a few UI elements, users can freely resize the app window and cause some UI elements to be hidden. Ensure that your application's UI properly supports scrolling and panning (using keyboard, mouse or trackpad, touch, and pen) to let users access any UI elements that might have moved out of the visible window area.
+It's uncommon for an application's UI to fit entirely inside a single page that doesn't need to scroll. Even if there are only a few UI elements, users can freely resize the app window and cause some UI elements to be hidden. Ensure that your application's UI properly supports scrolling and panning (using keyboard, mouse or trackpad, touch, and pen) to let users access any UI elements that might move out of the visible window area.
 
 ### Visual style
 
-Windows 11 is built on the [Windows 11 design principles](../design/signature-experiences/design-principles.md): Effortless, Calm, Personal, Familiar, and Complete + Coherent. We believe experiences that follow these principles bring great user experiences on Windows.
+Windows 11 is built on the [Windows 11 design principles](../design/signature-experiences/design-principles.md): Effortless, Calm, Personal, Familiar, and Complete + Coherent. Experiences that follow these principles bring great user experiences on Windows.
 
 #### Materials: Acrylic and Mica
 
@@ -84,7 +84,7 @@ For more information about Acrylic and Mica materials, see [Things you can do to
 
 [Windows 11 geometry](../design/signature-experiences/geometry.md) supports modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
 
-The visual and behavioral changes are built in to [WinUI 3](../winui/index.md). Use WinUI 3 where you can to take advantage of the work that has already been done. If you can't use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+The visual and behavioral changes are built in to [WinUI 3](../winui/index.md). Use WinUI 3 where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI 3, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 #### Context menu
 
@@ -98,17 +98,17 @@ For more information about iconography and typography on Windows, see [Things yo
 
 ### Window behavior and style
 
-Applications run in a frame provided by Windows, and users expect the built-in Windows look and behaviors to be consistent across app windows. To ensure that your app looks and functions as users expect on Windows 11, consider supporting the features listed here.
+Applications run in a frame that Windows provides. Users expect the built-in Windows look and behaviors to be consistent across app windows. To ensure that your app looks and functions as users expect on Windows 11, consider supporting the features listed here.
 
 #### Snap Layout
   
-Window snapping is greatly enhanced in Windows 11, and the Snap Layout menu is a new feature to help users discover and use the power of window snapping. Use the Snap Layout menu to test your app in different Snap Layouts and ensure your app supports different snap sizes, like 1/2, 1/3, and 1/4 screen.
+Window snapping is greatly enhanced in Windows 11, and the Snap Layout menu is a new feature that helps users discover and use the power of window snapping. Use the Snap Layout menu to test your app in different Snap Layouts and ensure your app supports different snap sizes, like 1/2, 1/3, and 1/4 screen.
   
 If the Snap Layout menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/ui/apply-snap-layout-menu.md) for some steps you can take to enable it.
 
 #### Title bar and caption buttons
 
-The title bar and caption buttons (minimize, maximize, close) are how users interact with Windows to resize, move, and close app windows. Having a consistent experience helps people use your application smoothly. See [Windows app title bar](../design/basics/titlebar-design.md) to learn about title bar and caption button design for Windows.  
+Users interact with the title bar and caption buttons (minimize, maximize, close) to resize, move, and close app windows. A consistent experience helps people use your application smoothly. See [Windows app title bar](../design/basics/titlebar-design.md) to learn about title bar and caption button design for Windows.  
 
 You can use the Windows App SDK APIs to [integrate app content with the title bar](../develop/title-bar.md) in WinUI 3, .NET, WinForms, and WPF apps.
 
@@ -152,7 +152,7 @@ Following the best practices in this section helps you meet your customers' expe
 - [Improve power consumption and battery life by minimizing background work](../performance/power.md):
   - Don't wake the CPU or use system resources while in the background.
 
-- [Improve the responsiveness of your app's launch and key interactions](../performance/responsive.md)
+- [Improve the responsiveness of your app's launch and key interactions](../performance/responsive.md):
   - Define your key interaction scenarios and add ETW events to measure.
   - Set goals based on the interaction class associated with user expectations.
 
@@ -172,7 +172,7 @@ To make your app run best in an enterprise environment, add support for MSIX app
 
 Windows can run on Arm devices. Arm PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified.
 
-For best performance, enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that would benefit most from native performance. For more information on these techniques, see [Windows on Arm](/windows/uwp/porting/apps-on-arm) and [Arm64EC for Windows 11 apps on Arm](/windows/uwp/porting/arm64ec).
+For best performance, enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that benefit most from native performance. For more information on these techniques, see [Windows on Arm](/windows/uwp/porting/apps-on-arm) and [Arm64EC for Windows 11 apps on Arm](/windows/uwp/porting/arm64ec).
 
 ### Push notifications
 
@@ -193,7 +193,7 @@ Reliable installation, update, and uninstallation experiences are important part
 ### Application discovery
 
   - Listing your app on the [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) makes your app more discoverable for users.
-  - If you host your app across multiple channels (for example, on a website and on the Microsoft Store), your application should have a consistent application identity and update mechanism across all channels.
+  - If you host your app across multiple channels (for example, on a website and on the Microsoft Store), use a consistent application identity and update mechanism across all channels.
   - [Distribute your app through the Microsoft Store](../desktop/modernize/desktop-to-uwp-distribute.md) to make it more discoverable for users. Note that Windows users access Store apps through the Windows Package Manager [WinGet](../../package-manager/winget/index.md). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in WinGet via the [WinGet repository](../../package-manager/package/index.md).
 
 <!--todo: unpackaged app distribution best practices -->
@@ -225,7 +225,7 @@ Reliable installation, update, and uninstallation experiences are important part
 
 ## Accessibility
 
-Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible, including those with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on).
+Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible. This inclusivity extends to people with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on).
 
 In fact, the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, but rather as a mismatched interaction between a person and the physical and digital world around them.
 
@@ -233,11 +233,11 @@ In fact, the [World Health Organization](https://www.who.int/news-room/fact-shee
 >
 > **Accessibility is a responsibility**
 >
-> More than 1 billion people worldwide experience some form of disability. However, only one in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities—whether situational, temporary, or permanent—can affect any of us at any time.
+> More than 1 billion people worldwide experience some form of disability. However, only one in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities - whether situational, temporary, or permanent - can affect any of us at any time.
 >
 > **Accessibility is an opportunity**
 >
-> According to the [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4): Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who will be 75% of the global workforce by 2020, typically choose employers who reflect their values. Diversity and inclusion top that list.
+> According to the [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4): Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who are 75% of the global workforce, typically choose employers who reflect their values. Diversity and inclusion top that list.
 
 ### Incorporating accessibility
 
@@ -247,9 +247,9 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 
 ### Accessibility testing
 
-**Accessibility Insights** is a powerful suite of tools for developers to test the accessibility of their apps and services. Here are some tools to leverage in testing accessibility:
+**Accessibility Insights** is a powerful suite of tools for developers to test the accessibility of their apps and services. Use the following tools to test accessibility:
 
-1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/). Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, and other issues.
+1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/). Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, and other problems.
 1. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/). See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
 1. Run Accessibility Insights automated checks in your PRs or CI/CD. For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
 1. Fix all bugs you find, as they all have a direct impact on accessibility.
@@ -263,7 +263,7 @@ An insecure application can be an entry point that allows an attacker to perform
 - Follow the [Security Development Lifecycle](https://www.microsoft.com/securityengineering/sdl/) for all development.
   - Threat modeling can help you avoid security flaws.
   - Using secure libraries, languages, and tools minimizes implementation flaws.
-  - Secure defaults can prevent security issues caused by user error.
+  - Secure defaults can prevent security problems caused by user error.
 - Don't require administrative privileges to _install_ your app.
   - Ideally, your app should support both administrative installs and per-user installs.
   - Using [MSIX packaging](/windows/msix/packaging-tool/tool-overview) is one way to achieve this goal.
@@ -283,15 +283,15 @@ Most modern apps collect and use a large amount of data – including personal d
 
 ### Privacy guidelines
 
-- Ensure that your app provides an accurate Privacy Policy. Ideally, provide both a summary document written for a casual audience (your users) in addition to a long-form legal policy (written for your lawyers).
-- Familiarize yourself with privacy regulations in the markets where your app is available, and ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, and other privacy concerns.
+- Ensure that your app provides an accurate Privacy Policy. Ideally, provide both a summary document written for a casual audience (your users) and a long-form legal policy (written for your lawyers).
+- Familiarize yourself with privacy regulations in the markets where your app is available. Ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, and other privacy concerns.
 - Collect the least amount of personal data needed to complete your app's experiences.
-  - Don't collect data "just in case" – there should be a valid reason for collecting all data, such as to improve the customer's experience or to facilitate monetization.
+  - Don't collect data "just in case." Have a valid reason for collecting all data, such as to improve the customer's experience or to facilitate monetization.
 - Always get the user's consent before collecting and storing personal data. Provide the user with an easy way to revert their decision in the future. Avoid "[dark patterns](https://www.reuters.com/legal/legalindustry/dark-patterns-new-frontier-privacy-regulation-2021-07-29/#:~:text=Some%20examples%20of%20dark%20pattern%20usage%20include)" such as making the "Yes" button larger or more prominent than the "No" button in a consent dialog.
-  - Consult with applicable regulations to determine what specific disclosures and consent is required for specified kinds of data. For example, some regions may allow users to view, change, or delete the data you have stored about them.
+  - Consult with applicable regulations to determine what specific disclosures and consent are required for specified kinds of data. For example, some regions may allow users to view, change, or delete the data you have stored about them.
 - If you must transmit data over the network, always use secured connections, such as connections over TLS.
 - Avoid storing personal data in a centralized location, such as a website. If you must store personal data, minimize the amount of data you store, store it only for as long as strictly necessary, and ensure it is securely encrypted.
-- Verify that any third-party libraries or SDKs you use also have good privacy practices. Note this concern isn't limited to just advertising SDKs – any library that connects to the internet might impact the privacy of your app's users.
+- Verify that any third-party libraries or SDKs you use also have good privacy practices. This concern isn't limited to just advertising SDKs – any library that connects to the internet might impact the privacy of your app's users.
 
 
 ## Related articles
