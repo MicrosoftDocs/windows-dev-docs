@@ -40,9 +40,7 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 ## Highlights – December 2025
 
 
-
-
-- **Windows App SDK release notes**: Refactored and consolidated history from 0.5 through 2.0 — find the latest fixes and APIs in one place ([release notes hub](/windows/apps/windows-app-sdk/release-notes)).
+- **Windows App SDK release notes**: Refactored and consolidated history from 0.5 through 2.0 — find the latest fixes and APIs in one place ([release notes hub](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)).
 - **Windows SDK updates**: New overview and detailed release notes to track SDK changes ([overview](/windows/apps/windows-sdk/) · [release notes](/windows/apps/windows-sdk/release-notes)).
 - **AI on Windows**: Fresh overview for building AI‑powered experiences on Windows, with entry points to APIs and tooling ([Windows AI overview](/windows/ai/)).
 - **Packaged vs. unpackaged guidance**: Updated guidance for choosing and configuring packaged or unpackaged apps, including WinUI 3 scenarios ([decision guide](../get-started/intro-pack-dep-proc.md)).
@@ -53,8 +51,6 @@ Previous highlights:
 - **MCP on Windows**: [Model Context Protocol](/windows/ai/mcp/overview) (MCP) on Windows: integrate with local and cloud AI models using a standardized protocol.
 - **Image generation**:Image generation with Microsoft Foundry on Windows: create images from text prompts using the new [Image Generation API](/windows/ai/apis/image-generation).
 - **Microsoft Store**: The latest news from the [Microsoft Store](/windows/apps/publish/whats-new-individual-developer) including waived fees and updated analytics.
-- **Windows App SDK**: Phi Silica local language model available via LanguageModel APIs – generate text with built-in moderation ([release notes stable](../windows-app-sdk/release-notes/windows-app-sdk-1-8.md?pivots=stable)).
--**Phi Silica enhancements**: Summarize Conversation and LoRA fine-tuning support for scenario‑specific adaptation ([experimental channel 1.8](../windows-app-sdk/release-notes/windows-app-sdk-1-8.md?pivots=experimental)).
 - **AppWindow.SetIcon API**: refined guidance for setting window and taskbar icons (branding improvement) ([API ref](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon)).
 - **Win32 app isolation overview**: updated security guidance for packaging decisions ([overview](/windows/win32/secauthz/app-isolation-overview)).
 - **Ignite**: Explore sessions, workshops, and resources for Windows developers at [Microsoft Ignite](/windows/apps/whats-new/windows-at-ignite) (November 18–21, 2025)
