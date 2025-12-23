@@ -602,7 +602,7 @@ msstore flights get <productId> <flightId>
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-# Flights - Delete - Usage
+#### Flights - Delete - Usage
 
 ```console
 msstore flights delete <productId> <flightId>
@@ -622,7 +622,7 @@ msstore flights delete <productId> <flightId>
 | -v, --verbose         | Print verbose output.            |
 | -?, -h, --help        | Show help and usage information. |
 
-# Flights - Create - Usage
+#### Flights - Create - Usage
 
 ```console
 msstore flights create <productId> <friendlyName> --group-ids <group-ids>
