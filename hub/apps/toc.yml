@@ -92,6 +92,8 @@ items:
       href: whats-new/community.md              
   - name: Help and guidance
     items:
+    - name: Windows developers and their tools
+      href: whats-new/personae.md
     - name: Best practices
       href: get-started/best-practices.md
     - name: Glossary
