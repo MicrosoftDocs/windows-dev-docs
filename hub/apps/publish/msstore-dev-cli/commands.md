@@ -553,6 +553,326 @@ msstore publish "C:\path\to\pwa_app"
 | -f, --flightId | Specifies the Flight Id where the package will be published. |
 | -prp, --packageRolloutPercentage | Specifies the rollout percentage of the package. The value must be between 0 and 100. |
 
+## Flights Command
+
+| Sub-Command                                                                                                     | Description          |
+|-----------------------------------------------------------------------------------------------------------|----------------------|
+| [list](#flights---list---usage) | Retrieves all the Flights for the specified Application. |
+| [get](#flights---get---usage) | Retrieves a flight for the specified Application and flight. |
+| [delete](#flights---delete---usage) | Deletes a flight for the specified Application and flight. |
+| [create](#flights---create---usage) | Creates a flight for the specified Application and flight. |
+| [submission](#flights---submission) | Execute flight submissions related tasks. |
+
+#### Flights - List - Usage
+
+```console
+msstore flights list <productId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Get - Usage
+
+```console
+msstore flights get <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Delete - Usage
+
+```console
+msstore flights delete <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Create - Usage
+
+```console
+msstore flights create <productId> <friendlyName> --group-ids <group-ids>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `friendlyName` | The friendly name of the flight. |
+
+#### Options
+
+| Option | Description |
+|--------|-------------|
+| -g, --group-ids | The group IDs to associate with the flight. |
+| -r, --rank-higher-than | The flight ID to rank higher than. |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+### Flights - Submission
+
+| Sub-Command                                                                                                     | Description          |
+|-----------------------------------------------------------------------------------------------------------|----------------------|
+| [get](#flights---submission---get---usage) | Retrieves the existing package flight submission, either the existing draft or the last published one. |
+| [delete](#flights---submission---delete---usage) | Deletes the pending package flight submission from the store. |
+| [update](#flights---submission---update---usage) | Updates the existing flight draft with the provided JSON. |
+| [publish](#flights---submission---publish---usage) | Starts the flight submission process for the existing Draft. |
+| [poll](#flights---submission---poll---usage) | Polls until the existing flight submission is PUBLISHED or FAILED. |
+| [status](#flights---submission---status---usage) | Retrieves the current status of the store flight submission. |
+| [rollout](#flights---submission---rollout) | Execute flight rollout related operations. |
+
+#### Flights - Submission - Get - Usage
+
+```console
+msstore flights submission get <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Delete - Usage
+
+```console
+msstore flights submission delete <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| --no-confirm          | Do not prompt for confirmation.  |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Update - Usage
+
+```console
+msstore flights submission update <productId> <flightId> <product>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+| `product`   | The updated JSON product representation. |
+
+#### Options
+
+| Option | Description |
+|--------|-------------|
+| -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Publish - Usage
+
+```console
+msstore flights publish <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Poll - Usage
+
+```console
+msstore flights poll <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Status - Usage
+
+```console
+msstore flights status <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option                | Description                      |
+| --------------------- | -------------------------------- |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+### Flights - Submission - Rollout
+
+| Sub-Command                                                                                                     | Description          |
+|-----------------------------------------------------------------------------------------------------------|----------------------|
+| [get](#flights---submission---rollout---get---usage) | Retrieves the flight rollout status of a submission. |
+| [update](#flights---submission---rollout---update---usage) | Update the flight rollout percentage of a submission. |
+| [halt](#flights---submission---rollout---halt---usage) | Halts the flight rollout of a submission. |
+| [finalize](#flights---submission---rollout---finalize---usage) | Finalizes the flight rollout of a submission. |
+
+#### Flights - Submission - Rollout - Get - Usage
+
+```console
+msstore flights submission rollout get <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option | Description |
+|--------|-------------|
+| -s, --submissionId | The submission ID. |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Rollout - Update - Usage
+
+```console
+msstore flights submission rollout update <productId> <flightId> <percentage>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+| `percentage` | The percentage of users that will receive the submission rollout. |
+
+#### Options
+
+| Option | Description |
+|--------|-------------|
+| -s, --submissionId | The submission ID. |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Rollout - Halt - Usage
+
+```console
+msstore flights submission rollout halt <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option | Description |
+|--------|-------------|
+| -s, --submissionId | The submission ID. |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
+#### Flights - Submission - Rollout - Finalize - Usage
+
+```console
+msstore flights submission rollout finalize <productId> <flightId>
+```
+
+#### Arguments
+
+| Argument    | Description |
+|-------------|-------------|
+| `productId` | The product ID. |
+| `flightId` | The flight ID. |
+
+#### Options
+
+| Option | Description |
+|--------|-------------|
+| -s, --submissionId | The submission ID. |
+| -v, --verbose         | Print verbose output.            |
+| -?, -h, --help        | Show help and usage information. |
+
 ## CI/CD Environments
 
 The Microsoft Store Developer CLI (preview) supports running in CI/CD environments. This means that you can use the Microsoft Store Developer CLI (preview) in your CI/CD pipelines to, for example, automatically publish your applications to the Microsoft Store.
