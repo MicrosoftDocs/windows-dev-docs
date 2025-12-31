@@ -103,6 +103,19 @@ WinRT namespaces updated (new or modified APIs/types):
 
 </details>
 
+<details>
+<summary><strong>Known issues</strong></summary>
+
+**BinSkim Warning 4146 Triggered by Windows SDK 10.0.26100.7175 in Visual Studio**
+
+ - We are aware of an issue where builds may fail with BinSkim rule BA2007 due to warning C4146 being explicitly disabled in a small number of Windows SDK libraries included in the Windows SDK version 10.0.26100.7175, which shipped with Visual Studio 17.14.22.
+- Developers may see build breaks or security‑tool validation failures when using this SDK version, depending on project configuration and toolchain settings.
+- A fix has been identified and is currently being prepared for a Visual Studio update. This will update the affected SDK content to restore expected behavior. Until the fix is available, you may use one of the following mitigations:
+  - Retarget your project to another supported Windows SDK version, or
+  - Suppress the specific BinSkim warning in your build configuration (not recommended long‑term)
+
+</details>
+
 --- 
 
 #### Build 10.0.26100.6901
