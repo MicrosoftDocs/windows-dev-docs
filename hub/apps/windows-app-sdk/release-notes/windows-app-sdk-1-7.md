@@ -16,7 +16,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 1.7.6 (1.7.251107005)
 
-Released: **November 11, 2025**<br><br>
+Released: **November 11, 2025** <br><br>
 
 <details><summary>Bug fixes</summary>
 
