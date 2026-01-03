@@ -16,7 +16,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 1.8.3 (1.8.251106002)
 
-Released: **December 8, 2025**
+Released: **December 8, 2025**<br><br>
 
 <details><summary>Windows ML Updates</summary>
 
@@ -62,7 +62,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8.2 (1.8.251003001)
 
-Released: **October 14, 2025**
+Released: **October 14, 2025**<br><br>
 
 <details><summary>Updated ONNX Runtime</summary>
 
@@ -93,7 +93,7 @@ Released: **October 14, 2025**
 
 ## Version 1.8.1 (1.8.250916003)
 
-Released: **September 23, 2025**
+Released: **September 23, 2025**<br><br>
 
 <details><summary>LanguageModel text generation</summary>
 
@@ -160,7 +160,7 @@ Released: **September 23, 2025**
 
 ## Version 1.8.0 (1.8.250907003)
 
-Released: **September 9, 2025**
+Released: **September 9, 2025**<br><br>
 
 <details><summary>Windows AI APIs</summary>
 
@@ -341,7 +341,7 @@ Released: **September 9, 2025**
 
 ## Version 1.8 Preview (1.8-preview)
 
-Released: **August 19, 2025**
+Released: **August 19, 2025**<br><br>
 
 <details><summary>Prompt Size Limit Reporting</summary>
 
@@ -477,7 +477,7 @@ Released: **August 19, 2025**
 
 ## Version 1.8 Experimental 4 (1.8.0-Experimental4)
 
-Released: **July 8, 2025**
+Released: **July 8, 2025**<br><br>
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
@@ -957,7 +957,7 @@ Released: **July 8, 2025**
 
 ## Version 1.8 Experimental 3 (1.8.0-experimental3)
 
-Released: **June 12, 2025**
+Released: **June 12, 2025**<br><br>
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
@@ -1327,7 +1327,7 @@ Released: **June 12, 2025**
 
 ## Version 1.8 Experimental 2 (1.8.0-experimental2)
 
-Released: **May 16, 2025**
+Released: **May 16, 2025**<br><br>
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
@@ -1745,7 +1745,7 @@ Released: **May 16, 2025**
 
 ## Version 1.8 Experimental 1 (1.8.0-experimental1)
 
-Released: **April 16, 2025**
+Released: **April 16, 2025**<br><br>
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
