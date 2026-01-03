@@ -144,9 +144,9 @@ Released: **October, 2025** <br><br>
 
 ## Build 10.0.26100.6584
 
-Released: **September, 2025** <br><br>
+Released: **September, 2025**
 
-Release to correspond with the Windows 11, version 25h2 public release.
+Release to correspond with the Windows 11, version 25h2 public release. <br><br>
 
 <details>
 <summary>Updated APIs</summary>
@@ -548,7 +548,7 @@ Servicing update 10.0.22621.2428.
 
 Released: **May, 2023**
 
-Servicing update 10.0.22621.1778.
+Servicing update 10.0.22621.1778. <br><br>
 
 <details>
 <summary>Highlighted features</summary>
