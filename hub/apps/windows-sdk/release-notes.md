@@ -15,7 +15,7 @@ You can update the SDK by manually installing the new build, updating in Visual 
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
-#### Build 10.0.26100.7463
+## Build 10.0.26100.7463
 
 Released: **December, 2025**
 
@@ -72,7 +72,7 @@ Released: **December, 2025**
 
 --- 
 
-#### Build 10.0.26100.7175
+## Build 10.0.26100.7175
 
 Released: **November, 2025**
 
@@ -114,7 +114,7 @@ Released: **November, 2025**
 
 --- 
 
-#### Build 10.0.26100.6901
+## Build 10.0.26100.6901
 
 Released: **October, 2025**
 
@@ -142,7 +142,7 @@ Released: **October, 2025**
 
 --- 
 
-#### Build 10.0.26100.6584
+## Build 10.0.26100.6584
 
 Released: **September, 2025**
 
@@ -187,7 +187,7 @@ Release to correspond with the Windows 11, version 25h2 public release.
 
 --- 
 
-##### Build 10.0.26100.4948
+### Build 10.0.26100.4948
 
 Released: **August, 2025**
 
@@ -220,7 +220,7 @@ Released: **August, 2025**
 
 --- 
 
-#### Build 10.0.26100.4654
+## Build 10.0.26100.4654
 
 Released: **July, 2025**
 
@@ -278,7 +278,7 @@ Released: **July, 2025**
 
 --- 
 
-#### Build 10.0.26100.4188
+## Build 10.0.26100.4188
 
 Released: **May, 2025**
 
@@ -355,7 +355,7 @@ Released: **May, 2025**
 
 --- 
 
-#### Build 10.0.26100.3916
+## Build 10.0.26100.3916
 
 Released: **April, 2025**
 
@@ -379,7 +379,7 @@ Released: **April, 2025**
 
 --- 
 
-#### Build 10.0.26100.3624
+## Build 10.0.26100.3624
 
 Released: **March, 2025**
 
@@ -403,7 +403,7 @@ Released: **March, 2025**
 
 --- 
 
-#### Build 10.0.26100.3323
+## Build 10.0.26100.3323
 
 Released: **February, 2025**
 
@@ -416,7 +416,7 @@ Released: **February, 2025**
 
 --- 
 
-#### Build 10.0.26100.3037
+## Build 10.0.26100.3037
 
 Released: **January, 2025**
 
@@ -443,7 +443,7 @@ Released: **January, 2025**
 
 --- 
 
-#### Build 10.0.26100.2454
+## Build 10.0.26100.2454
 
 Released: **January, 2025**
 
@@ -512,7 +512,7 @@ Released: **January, 2025**
 
 --- 
 
-#### Build 10.0.26100.1742
+## Build 10.0.26100.1742
 
 Released: **September 24, 2024**
 
@@ -520,7 +520,7 @@ Release to correspond with the Windows 11, version 24H2 public release.
 
 ---
 
-#### Build 10.0.26100
+## Build 10.0.26100
 
 Released: **May 5, 2024**
 
@@ -528,7 +528,7 @@ Initial release of the 10.0.26100 series, to correspond with the Windows 11, ver
 
 ---
 
-#### Build 10.0.22621.3235
+## Build 10.0.22621.3235
 
 Released: **February 29, 2024**
 
@@ -536,7 +536,7 @@ Servicing update 10.0.22621.3235.
 
 ---
 
-#### Build 10.0.22621.2428
+## Build 10.0.22621.2428
 
 Released: **October 24, 2023**
 
@@ -544,7 +544,7 @@ Servicing update 10.0.22621.2428.
 
 ---
 
-#### Build 10.0.22621.1778
+## Build 10.0.22621.1778
 
 Released: **May, 2023**
 
@@ -561,13 +561,13 @@ Servicing update 10.0.22621.1778.
 
 --- 
 
-#### Windows SDK for Windows 11, version 22H2
+## Windows SDK for Windows 11, version 22H2
 
 Servicing update 10.0.22621.755. Includes ARM64 support for the VS 17.4 release
 
 ---
 
-#### Windows 10 SDK, Version 2104
+## Windows 10 SDK, Version 2104
 
 <details>
 <summary>Updated APIs</summary>
@@ -641,7 +641,7 @@ Servicing update 10.0.22621.755. Includes ARM64 support for the VS 17.4 release
 
 --- 
 
-#### Windows 10 SDK, Version 2004 servicing update
+## Windows 10 SDK, Version 2004 servicing update
 
 Released: **December 16, 2020**
 
