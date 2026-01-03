@@ -24,6 +24,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.1.4
 
 <details><summary>Bug fixes</summary>
@@ -40,6 +42,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.1.3
 
 <details><summary>Bug fixes</summary>
@@ -49,6 +53,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed issue causing the WindowsAppRuntime to fail to install if a higher version of the runtime is installed. For more information see [discussion 2708](https://github.com/microsoft/WindowsAppSDK/discussions/2708) on GitHub.
 
 </details>
+
+---
 
 ## Version 1.1.2
 
@@ -62,6 +68,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.1.1
 
 <details><summary>Bug fixes</summary>
@@ -72,6 +80,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed issue causing app freeze when maximizing application with pen input.
 
 </details>
+
+---
 
 ## Version 1.1
 
@@ -345,6 +355,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.1 Preview 2 (1.1.0-preview2)
 
 <details><summary>Notifications (1.1.0-preview2)</summary>
@@ -421,6 +433,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.1 Preview 1 (1.1.0-preview1)
 

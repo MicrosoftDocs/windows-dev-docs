@@ -27,6 +27,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.3.2 (1.3.230602002)
 
 <details><summary>Bug fixes</summary>
@@ -40,6 +42,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.3.1 (1.3.230502000)
 
 <details><summary>Bug fixes</summary>
@@ -51,6 +55,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Updated templates on Visual Studio Marketplace
 
 </details>
+
+---
 
 ## Version 1.3
 

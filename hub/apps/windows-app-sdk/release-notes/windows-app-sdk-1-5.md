@@ -26,6 +26,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.5.8 (1.5.241107002)
 
 <details><summary>Bugfixes</summary>
@@ -37,6 +39,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.5.7 (1.5.241001000)
 
@@ -52,6 +56,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.5.6 (1.5.240802000)
 
 <details><summary>Bugfixes</summary>
@@ -64,6 +70,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.5.5 (1.5.240627000)
 
@@ -78,6 +86,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.5.4 (1.5.240607001)
 
@@ -95,6 +105,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.5.3 (1.5.240428000)
 
 <details><summary>Bugfixes</summary>
@@ -107,6 +119,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.5.2 (1.5.240404000)
 
@@ -167,6 +181,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.5.1 (1.5.240311000)
 
 <details><summary>Bugfixes</summary>
@@ -188,6 +204,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.5
 
@@ -769,6 +787,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.5 Experimental (1.5.0-experimental1)
 

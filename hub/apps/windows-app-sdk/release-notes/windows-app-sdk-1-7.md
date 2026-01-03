@@ -50,6 +50,8 @@ Released on **November 11, 2025**.
 
 </details>
 
+---
+
 ## Version 1.7.5 (1.7.251014001)
 
 <details><summary>Bug fixes</summary>
@@ -59,6 +61,8 @@ Released on **November 11, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.7.4 (1.7.250909003)
 
@@ -77,6 +81,8 @@ Released on **November 11, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.7.3 (1.7.250606001)
 
@@ -129,6 +135,8 @@ Released on **November 11, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.7.2 (1.7.250513003)
 
@@ -271,6 +279,8 @@ Released on **November 11, 2025**.
 
 </details>
 
+---
+
 ## Version 1.7.1 (1.7.250401001)
 
 <details><summary>Bugfixes</summary>
@@ -290,6 +300,8 @@ Released on **November 11, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.7.0 (1.7.250310001)
 
@@ -985,6 +997,8 @@ Released on **November 11, 2025**.
 
 </details>
 
+---
+
 ## Version 1.7 Experimental (1.7.0-experimental2)
 
 <details>
@@ -1384,6 +1398,8 @@ Released on **November 11, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.7 Experimental (1.7.0-experimental1)
 

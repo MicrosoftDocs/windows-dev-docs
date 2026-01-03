@@ -58,6 +58,8 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 </details>
 
+---
+
 ## Version 1.8.2 (1.8.251003001)
 
 Released on **October 14, 2025**. 
@@ -85,6 +87,8 @@ Released on **October 14, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.8.1 (1.8.250916003)
 
@@ -150,6 +154,8 @@ Released on **September 23, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.8.0 (1.8.250907003)
 
@@ -946,6 +952,8 @@ Released on **July 8, 2025**.
 
 </details>
 
+---
+
 ## Version 1.8 Experimental 3 (1.8.0-experimental3)
 
 Released on **June 12, 2025**.
@@ -1313,6 +1321,8 @@ Released on **June 12, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.8 Experimental 2 (1.8.0-experimental2)
 
@@ -1729,6 +1739,8 @@ Released on **May 16, 2025**.
 >
 
 </details>
+
+---
 
 ## Version 1.8 Experimental 1 (1.8.0-experimental1)
 

@@ -284,6 +284,8 @@ Released on **November 17, 2025**.
 
 </details>
 
+---
+
 ## Version 2.0 Experimental 2 (2.0.0-Experimental2)
 
 Released on **November 6, 2025**.
@@ -453,6 +455,8 @@ Released on **November 6, 2025**.
 > - An Empty query from `AppContentIndex.CreateQuery` can throw an exception.
 > 
 </details>
+
+---
 
 ## Version 2.0 Experimental 1 (2.0.0-Experimental1)
 

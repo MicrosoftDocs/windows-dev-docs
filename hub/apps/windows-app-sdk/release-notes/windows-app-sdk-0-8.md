@@ -24,6 +24,8 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 
 </details>
 
+---
+
 ## Version 0.8.11
 
 <details><summary>Bug fixes</summary>
@@ -31,6 +33,8 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 > - Fixed regression causing the lost focus event to fire when selecting text using mouse.
 
 </details>
+
+---
 
 ## Version 0.8.10
 
@@ -42,6 +46,8 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 > Windows App SDK 0.8.9 was not released. The version released directly after 0.8.8 is 0.8.10.
 
 </details>
+---
+---
 
 ## Version 0.8.8
 
@@ -59,6 +65,8 @@ For C# developers, one of the following .NET SDK versions (or later) is required
 > - Fixed issue where the render of png icons in a Menu are dramatically delayed because of UIA.
 
 </details>
+
+---
 
 ## Version 0.8.7
 
@@ -79,6 +87,8 @@ This version of the Windows SDK projection will be available in an upcoming .NET
 
 If you don't set this property, then you'll see an error like: `"Error: This version of Project Reunion requires WinRT.Runtime.dll version 1.6 or greater."`
 
+---
+
 ## Version 0.8.6
 
 This is a servicing release of the Windows App SDK that includes several performance improvements for C#/.NET applications for the 0.8.0 release.
@@ -90,6 +100,8 @@ To update to this version of Windows App SDK, you will need to have the latest .
 > For a detailed list of the performance improvements, see the [C#/WinRT 1.4.1 release notes](https://github.com/microsoft/CsWinRT/releases/tag/1.4.1.211117.1).
 
 </details>
+
+---
 
 ## Version 0.8.5
 
@@ -105,6 +117,8 @@ This is a servicing release of the Windows App SDK that includes more critical b
 
 </details>
 
+---
+
 ## Version 0.8.4
 
 This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release.
@@ -118,6 +132,8 @@ This is a servicing release of the Windows App SDK that includes more critical b
 
 </details>
 
+---
+
 ## Version 0.8.3
 
 This is a servicing release of the Windows App SDK that includes more critical bug fixes for the 0.8.0 release.
@@ -128,6 +144,8 @@ This is a servicing release of the Windows App SDK that includes more critical b
 >
 
 </details>
+
+---
 
 ## Version 0.8.2
 
@@ -146,6 +164,8 @@ This is a servicing release of the Windows App SDK that includes more critical b
 
 </details>
 
+---
+
 ## Version 0.8.1
 
 This is a servicing release of the Windows App SDK that includes a few critical bug fixes for the 0.8.0 release.
@@ -161,6 +181,8 @@ This is a servicing release of the Windows App SDK that includes a few critical 
 >
 
 </details>
+
+---
 
 ## Version 0.8.0 Stable
 

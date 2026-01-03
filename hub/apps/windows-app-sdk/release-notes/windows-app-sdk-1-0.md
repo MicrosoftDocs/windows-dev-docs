@@ -26,6 +26,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.0.3
 
 <details><summary>Bug fixes</summary>
@@ -36,6 +38,8 @@ zone_pivot_groups: wasdk-release-channels
 > **Note**: We don't usually add functionality in a servicing release, but this release's WebView2 fix required us to update to the latest version of the WebView2 SDK (1020.46 to 1185.39). See [Release Notes for the WebView2 SDK](/microsoft-edge/webview2/release-notes#10118539) for additional information on WebView2 1.0.1185.39 and [Distribute your app and the WebView2 Runtime](/microsoft-edge/webview2/concepts/distribution) for additional information on the WebView2 Runtime.
 
 </details>
+
+---
 
 ## Version 1.0.2
 
@@ -49,6 +53,8 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 > - Fixed issue where WinUI applications did not support .NET 6 `dotnet build`.
 
 </details>
+
+---
 
 ## Version 1.0.1
 
@@ -79,6 +85,8 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 > We have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
 
 </details>
+
+---
 
 ## Version 1.0
 
@@ -467,6 +475,8 @@ To get your machine back into a good state, take the following steps:
 
 The feature causing the **PATH** environment variable to be corrupted will be removed in the upcoming Windows App SDK 1.0 Preview 3 release. It might be reintroduced at a later date, when all bugs have been fixed and thoroughly tested.
 
+---
+
 ## Version 1.0 Preview 2 (1.0.0-preview2)
 
 > [!IMPORTANT]
@@ -609,6 +619,8 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
     2. Add `#include <wil/cppwinrt_helpers.h>` to your `pch.h`.
     3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
     4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
+
+---
 
 ## Version 1.0 Preview 1 (1.0.0-preview1)
 
