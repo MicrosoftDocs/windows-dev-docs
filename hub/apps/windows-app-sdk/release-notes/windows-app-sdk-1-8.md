@@ -16,9 +16,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 1.8.3 (1.8.251106002)
 
->
-> Released on **December 8, 2025**.
->
+Released on **December 8, 2025**.
 
 <details><summary>Windows ML Updates</summary>
 
@@ -62,9 +60,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8.2 (1.8.251003001)
 
->
-> Released on **October 14, 2025**.
-> 
+Released on **October 14, 2025**. 
 <details><summary>Updated ONNX Runtime</summary>
 
 > Updated the `onnxruntime.dll` to 1.23.1 introducing several enhancements to ONNX Runtime's Python and C++ APIs, focusing on improved device and memory information handling, synchronization stream support, and tensor copy functionality. It adds new Python bindings for device/memory types, exposes more detailed session input/output metadata, and provides a Python-accessible tensor copy API. The changes also refactor and extend the C++ API for better stream and memory info management.
@@ -92,9 +88,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8.1 (1.8.250916003)
 
->
-> Released on **September 23, 2025**.
->
+Released on **September 23, 2025**.
 
 <details><summary>LanguageModel text generation</summary>
 
@@ -159,9 +153,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8.0 (1.8.250907003)
 
->
-> Released on **September 9, 2025**.
->
+Released on **September 9, 2025**.
 
 <details><summary>Windows AI APIs</summary>
 
@@ -342,9 +334,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8 Preview (1.8-preview)
 
->
-> Released on **August 19, 2025**.
->
+Released on **August 19, 2025**.
 
 <details><summary>Prompt Size Limit Reporting</summary>
 
@@ -480,9 +470,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8 Experimental 4 (1.8.0-Experimental4)
 
->
-> Released on **July 8, 2025**.
->
+Released on **July 8, 2025**.
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
@@ -960,9 +948,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8 Experimental 3 (1.8.0-experimental3)
 
->
-> Released on **June 12, 2025**.
->
+Released on **June 12, 2025**.
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
@@ -1330,9 +1316,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8 Experimental 2 (1.8.0-experimental2)
 
->
-> Released on **May 16, 2025**.
->
+Released on **May 16, 2025**.
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
@@ -1748,9 +1732,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 ## Version 1.8 Experimental 1 (1.8.0-experimental1)
 
->
-> Released on **April 16, 2025**.
->
+Released on **April 16, 2025**.
 
 <details>
 <summary>Use on-device AI with Windows AI APIs</summary>
