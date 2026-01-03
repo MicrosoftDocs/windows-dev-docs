@@ -1405,7 +1405,7 @@ Released: **November 11, 2025** <br><br>
 
 This is the latest release of the experimental channel.
 
-To download, retarget your Windows App SDK NuGet version to `1.7.241114004-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.7.241114004-experimental1`. <br><br>
 
 <details>
 <summary>New CameraCaptureUI API</summary>
