@@ -74,7 +74,7 @@ Released: **December, 2025** <br><br>
 
 ## Build 10.0.26100.7175
 
-Released: **November, 2025** <br>
+Released: **November, 2025** <br><br>
 
 <details>
 <summary>Updated APIs</summary>
@@ -116,7 +116,7 @@ Released: **November, 2025** <br>
 
 ## Build 10.0.26100.6901
 
-Released: **October, 2025**
+Released: **October, 2025** <br><br>
 
 <details>
 <summary>Updated APIs</summary>
@@ -144,7 +144,7 @@ Released: **October, 2025**
 
 ## Build 10.0.26100.6584
 
-Released: **September, 2025**
+Released: **September, 2025** <br><br>
 
 Release to correspond with the Windows 11, version 25h2 public release.
 
@@ -222,7 +222,7 @@ Released: **August, 2025**
 
 ## Build 10.0.26100.4654
 
-Released: **July, 2025**
+Released: **July, 2025** <br><br>
 
 <details>
 <summary>Updated APIs</summary>
@@ -280,7 +280,7 @@ Released: **July, 2025**
 
 ## Build 10.0.26100.4188
 
-Released: **May, 2025**
+Released: **May, 2025** <br><br>
 
 <details>
 <summary>New APIs</summary>
@@ -357,7 +357,7 @@ Released: **May, 2025**
 
 ## Build 10.0.26100.3916
 
-Released: **April, 2025**
+Released: **April, 2025** <br><br>
 
 <details>
 <summary>New APIs</summary>
@@ -381,7 +381,7 @@ Released: **April, 2025**
 
 ## Build 10.0.26100.3624
 
-Released: **March, 2025**
+Released: **March, 2025** <br><br>
 
 <details>
 <summary>New APIs</summary>
@@ -405,7 +405,7 @@ Released: **March, 2025**
 
 ## Build 10.0.26100.3323
 
-Released: **February, 2025**
+Released: **February, 2025** <br><br>
 
 <details>
 <summary>Updated APIs</summary>
@@ -418,7 +418,7 @@ Released: **February, 2025**
 
 ## Build 10.0.26100.3037
 
-Released: **January, 2025**
+Released: **January, 2025** <br><br>
 
 <details>
 <summary>New APIs</summary>
@@ -445,7 +445,7 @@ Released: **January, 2025**
 
 ## Build 10.0.26100.2454
 
-Released: **January, 2025**
+Released: **January, 2025** <br><br>
 
 <details>
 <summary>Updated APIs</summary>
@@ -524,7 +524,7 @@ Release to correspond with the Windows 11, version 24H2 public release.
 
 Released: **May 5, 2024**
 
-Initial release of the 10.0.26100 series, to correspond with the Windows 11, version 24H2 preview
+Initial release of the 10.0.26100 series, to correspond with the Windows 11, version 24H2 preview.
 
 ---
 
