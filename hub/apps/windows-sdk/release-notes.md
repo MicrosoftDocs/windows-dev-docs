@@ -17,7 +17,7 @@ For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## Build 10.0.26100.7463
 
-Released: **December, 2025**
+Released: **December, 2025** <br><br>
 
 <details>
 <summary>WinRT API additions and updates</summary>
@@ -74,7 +74,7 @@ Released: **December, 2025**
 
 ## Build 10.0.26100.7175
 
-Released: **November, 2025**
+Released: **November, 2025** <br>
 
 <details>
 <summary>Updated APIs</summary>
