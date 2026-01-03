@@ -39,4 +39,4 @@ For older versions, see the [Windows SDK download archive](downloads-archive.md)
 
 
 ### Preview releases
-Preview releases can be downloaded from the [Insider Preview Download Center](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK). To add a preview release to your app through [NuGet](https://www.nuget.org/profiles/WindowsSDK), ensure the `PreviewuGet packages include the `-preview` suffix in the version list.
+Preview releases are available from the [Windows Insider Preview Download Center](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK). To use a preview SDK via [NuGet](https://www.nuget.org/profiles/WindowsSDK), ensure the **Preview** checkbox is enabled and select package versions with the `-preview` suffix.
