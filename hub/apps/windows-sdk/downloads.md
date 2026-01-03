@@ -13,7 +13,7 @@ This page provides links to the **.ISO** and **Installer** files for all support
 
 For older versions, see the [Windows SDK download archive](downloads-archive.md).
  
-### Windows 11
+## Windows 11
 
 | Release  | Downloads |
 | ----- | -------------------------------------- |
@@ -30,7 +30,7 @@ For older versions, see the [Windows SDK download archive](downloads-archive.md)
 | **Windows SDK for Windows 11 (10.0.22621.5040)** <br/> April 2025 | [Installer](//go.microsoft.com/fwlink/?linkid=2311806) <br/> [ISO](//go.microsoft.com/fwlink/?linkid=2312900) |
 | **Windows SDK for Windows 11 (10.0.20348.3330)** <br/> August 2025 (Includes servicing update for [CVE-2024-29187](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-29187)) | [Installer](//go.microsoft.com/fwlink/?linkid=2331862) |
 
-### Windows 10
+## Windows 10
 
 | Release  | Downloads |
 | ----- | ---------------------------------------------------------------- |
@@ -38,5 +38,5 @@ For older versions, see the [Windows SDK download archive](downloads-archive.md)
 | **Windows SDK for Windows 10 (10.0.17763.7010)** <br/>  August 2025 (Includes servicing update for [CVE-2024-29187](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-29187)) | [Installer](https://go.microsoft.com/fwlink/?linkid=2331960) <br/> |
 
 
-### Preview releases
+## Preview releases
 Preview releases are available from the [Windows Insider Preview Download Center](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewSDK). To use a preview SDK via [NuGet](https://www.nuget.org/profiles/WindowsSDK), ensure the **Preview** checkbox is enabled and select package versions with the `-preview` suffix.
