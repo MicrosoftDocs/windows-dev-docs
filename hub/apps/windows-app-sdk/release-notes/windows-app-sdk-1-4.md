@@ -23,6 +23,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.4.6 (1.4.240512000)
 
 <details><summary>Bug fixes</summary>
@@ -34,6 +36,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.4.5 (1.4.240211001)
 
 <details><summary>Bug fixes</summary>
@@ -44,6 +48,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed a potential crash on shutdown when releasing graphics resources.
 
 </details>
+
+---
 
 ## Version 1.4.4 (1.4.231219000)
 
@@ -57,6 +63,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed an issue causing some swapchains to be positioned or stretched incorrectly.
 
 </details>
+
+---
 
 ## Version 1.4.3 (1.4.231115000)
 
@@ -72,6 +80,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Various performance fixes.
 
 </details>
+
+---
 
 ## Version 1.4.2 (1.4.231008000)
 
@@ -94,6 +104,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.4.1 (1.4.230913002)
 
 <details><summary>Bug fixes</summary>
@@ -106,6 +118,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed some noisy exceptions when dismissing a tooltip. For more info, see GitHub issue [#8699](https://github.com/microsoft/microsoft-ui-xaml/issues/8699).
 
 </details>
+
+---
 
 ## Version 1.4
 
@@ -509,6 +523,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.4 Preview 1 (1.4.0-preview1)
 

@@ -16,9 +16,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 1.7.6 (1.7.251107005)
 
->
-> Released on **November 11, 2025**.
->
+Released: **November 11, 2025** <br><br>
 
 <details><summary>Bug fixes</summary>
 
@@ -52,6 +50,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.7.5 (1.7.251014001)
 
 <details><summary>Bug fixes</summary>
@@ -61,6 +61,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.7.4 (1.7.250909003)
 
@@ -79,6 +81,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.7.3 (1.7.250606001)
 
@@ -131,6 +135,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.7.2 (1.7.250513003)
 
@@ -273,6 +279,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.7.1 (1.7.250401001)
 
 <details><summary>Bugfixes</summary>
@@ -292,6 +300,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.7.0 (1.7.250310001)
 
@@ -987,6 +997,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.7 Experimental (1.7.0-experimental2)
 
 <details>
@@ -1387,11 +1399,13 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.7 Experimental (1.7.0-experimental1)
 
 This is the latest release of the experimental channel.
 
-To download, retarget your Windows App SDK NuGet version to `1.7.241114004-experimental1`.
+To download, retarget your Windows App SDK NuGet version to `1.7.241114004-experimental1`. <br><br>
 
 <details>
 <summary>New CameraCaptureUI API</summary>

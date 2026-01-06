@@ -28,7 +28,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 2.0 Experimental 3 (2.0.0-Experimental3)
 
-Released on **November 17, 2025**.
+Released: **November 17, 2025** <br><br>
 
 <details><summary>New SplitMenuFlyoutItem control</summary>
 
@@ -284,12 +284,14 @@ Released on **November 17, 2025**.
 
 </details>
 
+---
+
 ## Version 2.0 Experimental 2 (2.0.0-Experimental2)
 
-Released on **November 6, 2025**.
+Released: **November 6, 2025** <br><br>
 
-> [!IMPORTANT]
-> If you previously installed Windows App SDK 2.0 Experimental 1, follow the [NuGet Uninstall](/nuget/consume-packages/install-use-packages-visual-studio#uninstall-a-package) guide to remove the `Microsoft.WindowsAppSDK` NuGet Metapackage with version `2.0.250930001-experimental1` from your project and the associated WinAppSDK component packages from that release before trying this new version, since the previously released Experimental package has a higher version number than the current one.
+[!IMPORTANT]
+If you previously installed Windows App SDK 2.0 Experimental 1, follow the [NuGet Uninstall](/nuget/consume-packages/install-use-packages-visual-studio#uninstall-a-package) guide to remove the `Microsoft.WindowsAppSDK` NuGet Metapackage with version `2.0.250930001-experimental1` from your project and the associated WinAppSDK component packages from that release before trying this new version, since the previously released Experimental package has a higher version number than the current one.
 
 <details><summary>App Content Search</summary>
 
@@ -454,9 +456,11 @@ Released on **November 6, 2025**.
 > 
 </details>
 
+---
+
 ## Version 2.0 Experimental 1 (2.0.0-Experimental1)
 
-Released on **October 2, 2025**.
+Released: **October 2, 2025** <br><br>
 
 <details><summary>Use on-device AI with Windows AI APIs</summary>
 

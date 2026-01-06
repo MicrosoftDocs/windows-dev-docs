@@ -24,6 +24,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.2.4 (1.2.230217.4)
 
 <details><summary>Bug fixes</summary>
@@ -35,6 +37,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.2.3 (1.2.230118.102)
 
 <details><summary>Bug fixes</summary>
@@ -44,6 +48,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed issue causing all Single-project MSIX apps to run as full trust. For more information, see GitHub issue [#7766](https://github.com/microsoft/microsoft-ui-xaml/issues/7766).
 
 </details>
+
+---
 
 ## Version 1.2.2 (1.2.221209.1)
 
@@ -59,6 +65,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.2.1 (1.2.221116.1)
 
 <details><summary>Bug fixes</summary>
@@ -66,6 +74,8 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed issue that caused a crash on startup in C++ WinUI 3 apps when adding a WebView2 or TextBox control. For more information see GitHub issues [#7911](https://github.com/microsoft/microsoft-ui-xaml/issues/7911) & [#3117](https://github.com/microsoft/WindowsAppSDK/issues/3117).
 
 </details>
+
+---
 
 ## Version 1.2
 
@@ -260,6 +270,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.2 Preview 1 (1.2.0-preview1)
 
 <details><summary>WinUI 3</summary>
@@ -346,6 +358,8 @@ zone_pivot_groups: wasdk-release-channels
 >
 
 </details>
+
+---
 
 ## Version 1.2 Experimental (1.2.0-experimental1)
 
