@@ -65,11 +65,3 @@ items:
           href: ../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
         - name: "Tutorial: Set up CI for WinUI"
           href: ../package-and-deploy/ci-for-winui3.md
-    - name: Get started >>
-      href: ../get-started/index.md
-    - name: Design >>
-      href: ../design/index.md
-    - name: Develop >>
-      href: ../develop/index.md
-    - name: Publish >>
-      href: ../publish/index.md

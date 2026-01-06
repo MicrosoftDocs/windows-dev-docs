@@ -6,14 +6,6 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-<div class="buttons margin-top-xs">
-	<a href="../introduction.md" class="button button-sm"><span>Start</span></a>
-	<a href="" class="button button-sm button-primary button-filled"><span>Design</span></a>
-	<a href="../develop/index.md" class="button button-sm"><span>Develop</span></a>
-	<a href="../package-and-deploy/index.md" class="button button-sm"><span>Package</span></a>
-	<a href="../publish/index.md" class="button button-sm"><span>Publish</span></a>
-</div>
-
 # Design Windows apps overview
 
 :::image type="content" source="images/header-design.png" alt-text="A stylized blue brush and shapes representing design tools against a light gradient background" border="false":::

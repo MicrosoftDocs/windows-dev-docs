@@ -1119,11 +1119,3 @@ items:
       href: ../how-tos/github-copilot-winui-vs.md
     - name: Create a photo viewer with WinUI 3
       href: ../get-started/simple-photo-viewer-winui3.md
-  - name: Get started >>
-    href: ../get-started/index.md
-  - name: Design >>
-    href: ../design/index.md
-  - name: Package >>
-    href: ../package-and-deploy/index.md
-  - name: Publish >>
-    href: ../publish/index.md

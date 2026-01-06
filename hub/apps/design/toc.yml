@@ -213,11 +213,3 @@ items:
       href: style/writing-style.md       
   - name: Tools and resources
     href: downloads/index.md
-  - name: Get started >>
-    href: ../get-started/index.md
-  - name: Develop >>
-    href: ../develop/index.md
-  - name: Package >>
-    href: ../package-and-deploy/index.md
-  - name: Publish >>
-    href: ../publish/index.md

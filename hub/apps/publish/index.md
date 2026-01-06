@@ -8,14 +8,6 @@ ms.assetid: 631d1e2d-e4da-4740-ace0-4c0ad78653fe
 ms.localizationpriority: medium
 ---
 
-<div class="buttons margin-top-xs">
-   <a href="../introduction.md" class="button button-sm"><span>Start</span></a>
-   <a href="../design/index.md" class="button button-sm"><span>Design</span></a>
-   <a href="../develop/index.md" class="button button-sm"><span>Develop</span></a>
-   <a href="../package-and-deploy/index.md" class="button button-sm"><span>Package</span></a>
-   <a href="" class="button button-sm button-primary button-filled"><span>Publish</span></a>
-</div>
-
 # Publish your app in the Microsoft Store
 
 :::image type="content" source="images/header-store.png" alt-text="A briefcase icon with a grid pattern representing an app package, displayed against a soft blue gradient background. This header image symbolizes the Microsoft Store publishing process for Windows applications." border="false":::
