@@ -8,6 +8,8 @@ items:
     items:
     - name: Accessibility
       href: accessibility.md
+    - name: AI and Machine Learning
+      href: /windows/ai/
     - name: AI-powered features
       items:
         - name: Overview
