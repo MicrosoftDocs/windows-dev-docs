@@ -1,8 +1,6 @@
 ---
 title: Decrypt exported snapshots from Recall
 description: Learn how to decrypt exported snapshot data from Windows Recall. This feature is only available to users located in the European Economic Area (EEA).
-ms.author: mattwoj
-author: mattwojo
 ms.date: 12/01/2025
 ms.topic: article
 no-loc: [Recall]
