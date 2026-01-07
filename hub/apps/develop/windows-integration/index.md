@@ -2,7 +2,7 @@
 description: This section of the documentation provides developer guidance for integrating with Windows system components and other Windows features.
 title: Integrate with Windows
 ms.topic: concept-article
-ms.date: 12/05/2025
+ms.date: 04/10/2025
 ms.localizationpriority: medium
 # customer intent: As a Windows developer, I want to learn how to integrate my app with Windows so that I can provide a seamless experience for my users.
 ---
@@ -22,13 +22,21 @@ The following table lists the Windows system components that support integration
 | [Search providers](../search/search-providers.md) | Learn how to integrate into the Windows Search experience. |
 | [Widget providers](../widgets/widget-providers.md) | Learn how to implement a Windows widget service provider to support your app. |
 
+## Windows features using AI
+
+| Feature | Description |
+|--|--|
+| [Recall](./recall/index.md) | Learn how to use the AI-assisted Recall feature with the User Activity API in Windows. |
+| [Click to Do](./click-to-do.md) | Learn how to use the AI-assisted Click to Do feature in Windows. |
+
 ## Other Windows integration features
 
 The following table lists other Windows integration features that support 3rd party developers.
 
 | Feature | Description |
 |--|--|
-| [Cross Device Resume (XDR) using Continuity SDK](cross-device-resume.md) | Guidelines for first & third party developers to integrate with Windows XDR experiences using the Continuity SDK. |
+| [Cross Device Resume (XDR)](cross-device-resume-overview.md) | Developer guidance for integrating with the Windows Cross Device Resume (XDR) feature. |
+| [Integrate with application continuity and WNS notifications](integrate-app-continuity.md) | A step-by-step guide for first and third parties to integrate application continuity (resume) with Windows Push Notification Service (WNS) raw notifications. |
 | [Smart App Control](../smart-app-control/overview.md) | Smart App Control is a new app execution control feature that combines Microsoft’s app intelligence services and Windows' code integrity features to protect users from untrusted or potentially dangerous code. |
 | [Windows Share integration](integrate-sharesheet-overview.md) | The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other apps. |
 | [Windows People experiences](cross-device-people-api.md) | Learn how third party apps can integrate with Windows People experiences using APIs to store their contacts. |
