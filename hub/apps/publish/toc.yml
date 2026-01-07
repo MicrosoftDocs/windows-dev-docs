@@ -413,11 +413,3 @@ items:
         href: improved-health-report.md 
       - name: Last updated date in Microsoft Store
         href: last-update-date.md
-- name: Get started >>
-  href: ../get-started/index.md
-- name: Design >>
-  href: ../design/index.md
-- name: Develop >>
-  href: ../develop/index.md
-- name: Package >>
-  href: ../package-and-deploy/index.md

@@ -6,14 +6,6 @@ ms.date: 12/16/2025
 ms.localizationpriority: medium
 ---
 
-<div class="buttons margin-top-xs">
-    <a href="../introduction.md" class="button button-sm"><span>Start</span></a>
-    <a href="../design/index.md" class="button button-sm"><span>Design</span></a>
-    <a href="" class="button button-sm button-primary button-filled"><span>Develop</span></a>
-    <a href="../package-and-deploy/index.md" class="button button-sm"><span>Package</span></a>
-    <a href="../publish/index.md" class="button button-sm"><span>Publish</span></a>
-</div>
-
 # Develop Windows apps overview
 
 :::image type="content" source="images/header-coding.png" alt-text="Blue code brackets icon centered on a gradient background transitioning from light blue to purple, representing Windows application development" border="false":::

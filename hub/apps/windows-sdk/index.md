@@ -26,8 +26,8 @@ To see what's new, check out the [release notes](./release-notes.md).
 
 | Release channel | Description | Includes experimental APIs |
 |--|--|--|
-| **Stable** | Default SDK release intended for production use. Includes all current stable APIs and a limited set of experimental APIs. | ✅ |
-| **Preview** | Preview SDK built on Windows Insider Preview releases. Provides access to newer and upcoming APIs, including experimental ones. | ✅ |
+| [**Stable**](./downloads.md) | Default SDK release intended for production use. Includes all current stable APIs and a limited set of experimental APIs. | ✅ |
+| [**Preview**](./downloads.md#preview-releases) | Preview SDK built on Windows Insider Preview releases. Provides access to newer and upcoming APIs, including experimental ones. | ✅ |
 
  ### Support and servicing
 

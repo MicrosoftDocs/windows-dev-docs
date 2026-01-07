@@ -1,8 +1,6 @@
 ---
 title: Click to Do overview
 description: Learn how to use the AI-assisted Click to Do feature in Windows.
-ms.author: mattwoj
-author: mattwojo
 ms.date: 12/01/2025
 ms.topic: overview
 no-loc: [Click to Do, Windows Copilot Runtime, Phi Silica]

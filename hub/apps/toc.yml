@@ -101,12 +101,4 @@ items:
     - name: FAQ
       href: get-started/windows-developer-faq.md  
   - name: What's new?
-    href: whats-new/whats-new-for-developers.md    
-  - name: Design >>
-    href: design/index.md
-  - name: Develop >>
-    href: develop/index.md
-  - name: Package >>
-    href: package-and-deploy/index.md
-  - name: Publish >>
-    href: publish/index.md
+    href: whats-new/whats-new-for-developers.md

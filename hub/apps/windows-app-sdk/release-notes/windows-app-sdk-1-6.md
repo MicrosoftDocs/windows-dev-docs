@@ -23,6 +23,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.6.8 (1.6.250430001)
 
 <details><summary>ApplicationData.MachinePath folder creation support</summary>
@@ -42,6 +44,8 @@ zone_pivot_groups: wasdk-release-channels
 
 </details>
 
+---
+
 ## Version 1.6.7 (1.6.250402001)
 
 <details><summary>Bug Fixes</summary>
@@ -58,6 +62,8 @@ zone_pivot_groups: wasdk-release-channels
 - Fixed `PackageDeploymentManager.EnsurePackage*Ready` to ensure version supersedence. For more info, see GitHub issue [#5225](https://github.com/microsoft/WindowsAppSDK/pull/5225).
 
 </details>
+
+---
 
 ## Version 1.6.6 (1.6.250228001)
 
@@ -85,11 +91,15 @@ Microsoft.Windows.Widgets.Providers
 ```
 </details>
 
+---
+
 ## Version 1.6.5 (1.6.250205002)
 
 <details><summary>Bug Fixes</summary>
 - Fixed several memory leak issues.
 </details>
+
+---
 
 ## Version 1.6.4 (1.6.250108002)
 
@@ -106,6 +116,8 @@ Microsoft.Windows.Widgets.Providers
 - Fixed `PackageDeploymentManager.EnsurePackage*Async()` handling of `options.RegisterNewerIfAvailable`. For more info, see GitHub issue [#4864](https://github.com/microsoft/WindowsAppSDK/issues/4864).
 
 </details>
+
+---
 
 ## Version 1.6.3 (1.6.241114003)
 
@@ -136,6 +148,8 @@ Microsoft.Windows.Widgets.Providers
 ```
 </details>
 
+---
+
 ## Version 1.6.1 (1.6.240923002)
 
 <details><summary>Bugfixes</summary>
@@ -148,6 +162,8 @@ Microsoft.Windows.Widgets.Providers
 > - Fixed the compile-time check for the Windows SDK framework version to handle the slightly different framework name used for .NET 9.
 
 </details>
+
+---
 
 ## Version 1.6
 
@@ -531,6 +547,8 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 >
 
 </details>
+
+---
 
 ## Version 1.6 Preview 1 (1.6.0-preview1)
 
@@ -1228,6 +1246,8 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 >
 
 </details>
+
+---
 
 ## Version 1.6 Experimental (1.6.0-experimental1)
 
