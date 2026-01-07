@@ -2,7 +2,7 @@
 description: This section of the documentation provides developer guidance for integrating with Windows system components and other Windows features.
 title: Integrate with Windows
 ms.topic: concept-article
-ms.date: 04/10/2025
+ms.date: 01/07/2025
 ms.localizationpriority: medium
 # customer intent: As a Windows developer, I want to learn how to integrate my app with Windows so that I can provide a seamless experience for my users.
 ---
