@@ -465,11 +465,11 @@ items:
       - name: Cross Device Resume (XDR)
         items:
         - name: Overview
-          href: develop/windows-integration/cross-device-resume-overview.md
+          href: windows-integration/cross-device-resume-overview.md
         - name: Cross Device Resume with Android Apps
-          href: develop/windows-integration/cross-device-resume.md
+          href: windows-integration/cross-device-resume.md
         - name: WNS for Cross Device Resume
-          href: develop/windows-integration/integrate-app-continuity.md
+          href: windows-integration/integrate-app-continuity.md
       - name: Default apps platform
         href: windows-integration/default-apps-platform.md
       - name: Pin to taskbar
