@@ -122,7 +122,7 @@ The "**X-WNS-ResumeMetadata**" header provides metadata about the resume notific
 
 - **title**: A descriptive title for the notification (for example, "Continue call from...").
 - **expiry**: The lifespan of the notification in seconds (for example, "300" for 5 minutes).
-- **type**: Notification type - 1 for new resume request, 2 for update (creates new if absent), 3 for delete (no action if missing).
+- **type**: Notification type - 1 for new resume request, 2 for delete (no action if missing).
 
 The following JavaScript code snippet demonstrates how to send a WNS raw notification with the necessary headers for updating a resume notification:
 
