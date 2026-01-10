@@ -43,6 +43,7 @@ Before using the WinGet MCP server integration, ensure you have:
 - VS Code v1.104 or later with [GitHub Copilot extension](https://marketplace.visualstudio.com/items?itemName=GitHub.copilot) enabled
 - Access to [Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview)
 - [WinGet with MCP server support installed on your system](#set-up-winget-mcp-server)
+- Enable Extended Features (winget configure --enable)
 
 ## Set up WinGet MCP Server
 
