@@ -61,6 +61,10 @@ To set up the WinGet MCP server, you must first locate the path to the executabl
     winget mcp
     ```
 
+    If the following error occurs: **Unrecognized command: 'mcp'**
+
+    Verify that the App Installer application is up to date on the device. This can be verified in the Store application.
+
 1. Open PowerShell and use the following script to locate the MCP server executable:
 
     ```powershell
