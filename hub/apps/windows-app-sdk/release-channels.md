@@ -13,7 +13,7 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |--:|--|--|--|:--:|--|
-| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.3 (1.8.251106002)** <br/> Released: 11/11/2025 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-183-18251106002) |
+| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.4 (1.8.260101001)** <br/> Released: 01/13/2026 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-184-18260101001) |
 | **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **1.8 Preview (1.8-preview)** <br/> Released: 08/19/2025 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=preview#version-18-preview-18-preview) ** |
 | **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.0 Experimental 4 (2.0.0-experimental4)** <br/> Released: 11/11/2025 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-3-200-experimental3) |
 
@@ -49,7 +49,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
 | ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
-| 1.8                     | 09/09/2025            | 1.8.251106002        | 11/11/2025         | Current        | 09/09/2026       |
+| 1.8                     | 09/09/2025            | 1.8.260101001        | 01/13/2026         | Current        | 09/09/2026       |
 | 1.7                     | 03/18/2025            | 1.7.251107005        | 11/11/2025         | Maintenance    | 03/18/2026       |
 | 1.6                     | 09/04/2024            | 1.6.250602001        | 06/10/2025         | Out of Support | 09/04/2025       |
 | 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |

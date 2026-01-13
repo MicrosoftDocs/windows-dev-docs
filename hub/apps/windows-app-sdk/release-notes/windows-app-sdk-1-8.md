@@ -14,6 +14,55 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="stable"
 
+
+
+## Version 1.8.4 (1.8.260101001)
+
+Released: **January 13, 2026** <br><br>
+
+<details><summary>Windows AI Text Rewriter: New Custom tones</summary>
+
+>
+> The **TextRewriter** supports new custom tones based on user-provided instructions. The new **RewriteCustomAsync** API lets you provide an input string that guides Phi Silica in rewriting selected text. You can experiment with new custom tones based on user-provided instructions to transform your content as desired. Try out changes like "Rewrite as Shakespeare" or "Rewrite in Sci fi".
+>
+</details>
+
+<details><summary>Windows ML size reduction</summary>
+
+>
+> Reduced the size of `Microsoft.Windows.AI.MachineLearning.dll` by approximately 160 KB.
+>
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed "Class not registered" errors when using Windows ML in self-contained deployments. Developers using self-contained deployment no longer need to register all the Foundation package activatable classes that were used internally.
+> * Fixed a crash  that occurs during process shutdown after using Windows ML.
+> * Improved `FileOpenPicker`/`FileSavePicker` behavior:
+>     * Filter names display correctly when extensions are hidden. For more info, see GitHub issue [#5837](https://github.com/microsoft/WindowsAppSDK/issues/5837). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_DisplayFileTypeFilterNames)
+>     * Existing files are not truncated on save unless overwritten. For more info, see GitHub issue [#5976](https://github.com/microsoft/WindowsAppSDK/issues/5976). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_DoNotTruncateExistingFileOnSave)
+>     * File type choices preserve insertion order. For more info, see GitHub issue [#5827](https://github.com/microsoft/WindowsAppSDK/issues/5827). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_PreserveFileTypeChoicesInsertionOrder)
+> * Fixed an issue that prevented Image Super Resolution from being available for some applications.
+> * Fixed problem with apps not launching when using `PublishSingleFile` support with component packages. For more info, see GitHub issue [#5969](https://github.com/microsoft/WindowsAppSDK/issues/5969#issuecomment-3551259519). [RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
+> * Fixed an issue where IconElements created using IconSource.CreateIconElement were not rendered on the screen. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixCreateIconElementRendering)
+> * Fixed issue with incremental builds rebuilding too much when using WinAppSDKSelfContained. [RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
+> * Fixed build failure when referencing DWrite component package with WinAppSDKSelfContained. [RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 1.8.3 release:
+> ```
+> Microsoft.Windows.AI.Text
+> 
+>     TextRewriter
+>         RewriteCustomAsync
+> ```
+</details>
+
+
 ## Version 1.8.3 (1.8.251106002)
 
 Released: **December 8, 2025** <br><br>
