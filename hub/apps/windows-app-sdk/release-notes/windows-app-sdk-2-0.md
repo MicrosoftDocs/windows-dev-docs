@@ -26,6 +26,201 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="experimental"
 
+## Version 2.0 Experimental 4 (2.0.0-Experimental4)
+
+Released: **Jan 13, 2026** <br><br>
+
+<details><summary>ONNX Runtime Alignment and Execution Provider Stability</summary>
+
+>
+> * Windows ML experimental builds align with ONNX Runtime mainline version 1.24 to improve compatibility and stability.
+> * Stable Application Binary Interface (ABI) execution providers are enforced to ensure predictable behavior across devices, with non‑stable execution providers excluded from acquisition.
+>   * Only the OpenVINO execution provider is supported, with additional execution providers to be added over time as they meet stability requirements.
+> * The size of Microsoft.Windows.AI.MachineLearning.dll was reduced by approximately 160 KB.
+>
+</details>
+
+<details><summary>App Content Search</summary>
+
+> 
+> *  New experimental APIs to lookup statistics of items being indexed. This provides visibility into what is happening in the index.
+>  * Support for Query cancellation to allow apps to run a query and update it if there is a new query before the current one completes. This allows responding faster to the query as a user types in the query string.
+> * Prefix matching support for short strings to improve results as user is typing.
+> 
+</details>
+
+<details><summary>Video Super Resolution Improvements</summary>
+
+>
+> * VideoScaler is now disposable, improving resource management and lifecycle control.
+> * The VSR model is now compiled and cached to improve performance and reduce repeated initialization costs.
+> * A capability check has been added to validate VSR support before use.
+> * Explicit WinML initialization is no longer required when using Video Super Resolution.
+</details>
+
+
+<details><summary>WinUI FlowLayout Spacing improvements</summary>
+
+>
+> * The `FlowLayout` control now uses ItemSpacing and LineSpacing terminology instead of horizontal and vertical spacing properties. The aligned naming improves clarity and consistency with modern layout patterns across UI frameworks.
+</details>
+
+
+<details><summary>WinUI WrapPanel improvements</summary>
+
+>
+> * The `WrapPanel` control now uses ItemSpacing and LineSpacing nomenclature instead of the previous horizontal and vertical spacing properties.
+</details>
+
+<details><summary>Custom XAML Predicates and IXamlPredicate Integration</summary>
+
+>
+> * Implemented the `IXamlPredicate` interface to define custom predicates that integrate seamlessly with XAML's conditional namespace syntax and are evaluated at XAML parse time.
+> * Custom predicates enable conditional XAML scenarios based on application-specific factors such as: 
+>   * Feature flags
+>   * Device capabilities
+>   * Business logic
+>   * Configuration settings
+>   * Other runtime conditions
+</details>
+
+<details><summary>WinUI Open-Source Enhancements</summary>
+
+>
+> * Updated packages to enable external usability, which includes changes to:
+>   * Microsoft.UI.DCPP.Dependencies.Minimal
+>   * Microsoft.UI.DCPP.Dependencies.Edge
+>   * ExpPointerPointStatics
+> * Added build support for Visual Studio 2026
+> * Introduced tools and scripts for use by external developers to build and test WinUI.
+>
+</details>
+
+<details><summary>WinUI API deprecation and rename</summary>
+
+>
+> - [deprecated] DependencyObject.Dispatcher 
+> - [deprecated] Window.Current 
+> - [deprecated] FocusManager.GetFocusedElement 
+> - [renamed] SystemBackdropHost to SystemBackdropElement
+</details>
+
+
+<details><summary>WinAI API Namespace rename</summary>
+
+>
+> - [renamed] `Microsoft.Windows.AI.Search.Experimental.AppContentIndex` to `Microsoft.Windows.Search.AppContentIndex`
+</details>
+
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed “Class not registered” errors when using self-contained deployment with Windows ML. Developers using self-contained deployment no longer need to register all the Foundation package activatable classes that were used internally.
+> * Fixed a potential crash occurring on process shutdown when using Windows ML.
+> * Fixed the `ImageForegroundExtractor` API routing path so calls reach the correct endpoint.
+> * Ensured execution provider install and download progress is correctly forwarded to apps during package deployment.
+> * Fixed a crash in `SystemBackdrop` when the target disconnects by guarding invalid disconnection paths.
+> * Fixed an issue that prevented Windows AI APIs from being available for some applications.
+</details>
+
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new and modified experimental APIs compared to 2.0.0-experimental3:
+> 
+> ```
+> Microsoft.UI.Content
+> 
+>     ChildSiteLink
+>         IsHitTestVisible
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls
+>
+>     FlowLayout
+>         LineSpacing
+>         LineSpacingProperty
+>         MinItemSpacing
+>         MinItemSpacingProperty
+>
+>     SystemBackdropElement
+>     WrapPanel
+>         ItemSpacing
+>         ItemSpacingProperty
+>         ItemsStretch
+>         ItemsStretchProperty
+>         LineSpacing
+>         LineSpacingProperty
+>
+>     WrapPanelItemsStretch
+> ```
+> ```
+> Microsoft.UI.Xaml.Markup
+> 
+>     IXamlPredicate
+> ```
+> ```
+> Microsoft.Windows.AI.Video
+>
+>     VideoScaler
+>         Dispose
+> ```
+> ```
+> Microsoft.Windows.Search.AppContentIndex
+> 
+>     AppContentIndexContract
+>     AppContentIndexer
+>     AppContentIndexListener
+>     AppIndexContentRegion
+>     AppIndexImageQuery
+>     AppIndexImageQuerySession
+>     AppIndexQueryMatch
+>     AppIndexTextQuery
+>     AppIndexTextQuerySession
+>     AppIndexTextStreamEncoding
+>     AppManagedImageQueryMatch
+>     AppManagedIndexableAppContent
+>     AppManagedTextQueryMatch
+>     ContentItemErrorDetail
+>     ContentItemReader
+>     ContentItemReindexingStatus
+>     ContentItemStatus
+>     ContentItemStatusResult
+>     ContentRegionTextOptions
+>     DeleteIndexResult
+>     DeleteIndexStatus
+>     DeleteIndexWhileInUseBehavior
+>     GetOrCreateIndexOptions
+>     GetOrCreateIndexResult
+>     GetOrCreateIndexStatus
+>     ImageQueryMatch
+>     ImageQueryOptions
+>     ImageQuerySessionResult
+>     IndexableAppContent
+>     IndexCapabilities
+>     IndexCapabilitiesOfCurrentSystem
+>     IndexCapability
+>     IndexCapabilityInitializationStatus
+>     IndexCapabilityLanguageStatus
+>     IndexCapabilityOfCurrentSystemStatus
+>     IndexCapabilityRequirement
+>     IndexCapabilityState
+>     IndexStatistics
+>     QueryMatchContentKind
+>     QueryMatchScope
+>     RegionContentKind
+>     TextLexicalMatchType
+>     TextQueryMatch
+>     TextQueryOptions
+>     TextQuerySessionResult
+> ```
+
+>
+</details>
+
+
 ## Version 2.0 Experimental 3 (2.0.0-Experimental3)
 
 Released: **November 17, 2025** <br><br>
@@ -276,7 +471,7 @@ Released: **November 17, 2025** <br><br>
 
 </details>
 
-<details><summary>Bugfixes</summary>
+<details><summary>Bug fixes</summary>
 
 > 
 > * Fixed bounding box calculation when text is rotated. In some circumstances, the OCR text matching within images reported inaccurate or empty region bounds when the text was rotated.
@@ -290,8 +485,8 @@ Released: **November 17, 2025** <br><br>
 
 Released: **November 6, 2025** <br><br>
 
-[!IMPORTANT]
-If you previously installed Windows App SDK 2.0 Experimental 1, follow the [NuGet Uninstall](/nuget/consume-packages/install-use-packages-visual-studio#uninstall-a-package) guide to remove the `Microsoft.WindowsAppSDK` NuGet Metapackage with version `2.0.250930001-experimental1` from your project and the associated WinAppSDK component packages from that release before trying this new version, since the previously released Experimental package has a higher version number than the current one.
+> [!IMPORTANT]
+> If you previously installed Windows App SDK 2.0 Experimental 1, follow the [NuGet Uninstall](/nuget/consume-packages/install-use-packages-visual-studio#uninstall-a-package) guide to remove the `Microsoft.WindowsAppSDK` NuGet Metapackage with version `2.0.250930001-experimental1` from your project and the associated WinAppSDK component packages from that release before trying this new version, since the previously released Experimental package has a higher version number than the current one.
 
 <details><summary>App Content Search</summary>
 
