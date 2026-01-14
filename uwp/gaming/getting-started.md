@@ -2,7 +2,7 @@
 title: Getting started
 description: Learn how to get started right away developing games for Windows or Xbox by following this quick start guide.
 ms.assetid: 40490837-6c7f-4f82-96b5-14f6858982b3
-ms.date: 08/21/2024
+ms.date: 01/14/2026
 ms.topic: get-started
 keywords: windows 10, uwp, games, getting started
 localizationpriority: medium
@@ -12,7 +12,7 @@ localizationpriority: medium
 This article is a getting started guide for creators who want to develop games on Windows or Xbox.
 
 > [!NOTE]
-> Before investing time developing a game based on the UWP framework, please note that UWP is no longer under active development. Further, UWP based games are no longer accepted in the Xbox Store.
+> Before investing time developing a game based on the UWP framework, please note that UWP based games are no longer accepted in the Xbox Store. Please use the [ID@XBOX program](https://www.xbox.com/games/id).
 
 Here are some questions to help you find the info you need:
 * Are you an experienced game developer and want all the details? See the [Windows game development guide](e2e.md).
