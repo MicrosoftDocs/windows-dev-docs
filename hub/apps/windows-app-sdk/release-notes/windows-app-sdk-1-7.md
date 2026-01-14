@@ -14,6 +14,18 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="stable"
 
+## Version 1.7.7 (1.7.251220001)
+
+Released: **January 13, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed an issue that prevented Image Super Resolution from being available for some applications. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
+> 
+
+</details>
+
 ## Version 1.7.6 (1.7.251107005)
 
 Released: **November 11, 2025** <br><br>
