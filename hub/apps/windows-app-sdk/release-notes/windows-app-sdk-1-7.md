@@ -14,7 +14,7 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="stable"
 
-## Version 1.7.7 (1.7.251220001)
+## Version 1.7.7 (1.7.260114001)
 
 Released: **January 13, 2026** <br><br>
 
