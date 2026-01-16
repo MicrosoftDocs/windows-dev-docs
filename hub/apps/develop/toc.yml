@@ -8,12 +8,12 @@ items:
     items:
     - name: Accessibility
       href: accessibility.md
-    - name: AI and Machine Learning
-      href: /windows/ai/
     - name: AI-powered features
       items:
         - name: Overview
           href: ai-powered/ai-powered.md
+        - name: Microsoft Foundry on Windows >>
+          href: /windows/ai/
         - name: Click to Do
           href: windows-integration/click-to-do.md 
         - name: Copilot hardware key
