@@ -12,8 +12,7 @@ ms.localizationpriority: medium
 In Partner Center, you have access to detailed analytics for your MSI or EXE applications that are published through the Microsoft Store. Use statistics and charts to monitor how these Microsoft Store–published apps are performing, including insights into customer reach, app health, usage, and customer feedback. You can view analytic reports directly in Partner Center, or [download the reports](https://learn.microsoft.com/partner-center/insights/download-analytic-reports) you need to analyze your data offline.
 
 To access analytics for MSI or EXE apps:
-1. Sign in to Partner Center.
-2. Select Apps & games.
+1. Go to [Apps & games](https://partner.microsoft.com/dashboard/apps-and-games/overview) in Partner Center.
 3. Choose the MSI or EXE app you want to analyze.
 4. Select View Analytics to view the reports.
 
@@ -34,4 +33,5 @@ In this section you'll find details about the info presented in each of the foll
 
 >[!TIP]
 > To refer to common questions, please refer to [Frequently Asked Questions](../faq/monitor-your-app-performance.md) section.
+
 
