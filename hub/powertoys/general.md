@@ -55,6 +55,8 @@ If activated, PowerToys will start automatically when you log in to Windows.
 
 When activated, PowerToys shows an icon in the system tray area of the taskbar. You can use this icon to open the PowerToys settings app or the PowerToys flyout.
 
+In addition, you can control whether the Quick Access flyout is enabled, assign a hotkey, and choose a theme-aware monochrome system tray icon.
+
 ## Back up & restore
 
 Set a location where you want to save your PowerToys settings. You can also restore your settings from an existing backup.
