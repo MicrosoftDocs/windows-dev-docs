@@ -65,4 +65,45 @@ You can specify a directory in the filename format to group resized images into 
 
 You can choose to retain the original *last modified* date on the resized image or reset it at the time of the resizing action.
 
+## Command-line reference
+
+The Image Resizer CLI lets you resize one or more images from the command line.
+
+| Command | Aliases | Description |
+| :--- | :--- | :--- |
+| `--help` |  | Show help |
+| `--show-config` |  | Print current effective configuration |
+| `--destination` | `-d` | Output directory (optional) |
+| `--width` | `-w` | Width |
+| `--height` | `-h` | Height |
+| `--unit` | `-u` | Unit (Pixel / Percent / Inch / Centimeter) |
+| `--fit` | `-f` | Fit mode (Fill / Fit / Stretch) |
+| `--size` | `-s` | Preset size index (supports `0` for Custom) |
+| `--shrink-only` |  | Only shrink (do not enlarge) |
+| `--replace` |  | Replace original |
+| `--ignore-orientation` |  | Ignore EXIF orientation |
+| `--remove-metadata` |  | Strip metadata |
+| `--quality` | `-q` | JPEG quality (1–100) |
+| `--keep-date-modified` |  | Preserve source last-write time |
+| `--file-name` |  | Output filename format |
+
+
+**Usage example**
+```powershell
+# Show help
+PowerToys.ImageResizerCLI.exe --help
+
+# Show current config
+PowerToys.ImageResizerCLI.exe --show-config
+
+# Resize with explicit dimensions
+PowerToys.ImageResizerCLI.exe --width 800 --height 600 .\image.png
+
+# Use preset size 0 (Custom) and output to a folder
+PowerToys.ImageResizerCLI.exe --size 0 -d "C:\Output" .\photo.png
+
+# Preserve source LastWriteTime
+PowerToys.ImageResizerCLI.exe --width 800 --height 600 --keep-date-modified -d "C:\Output" .\image.png
+```
+
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
