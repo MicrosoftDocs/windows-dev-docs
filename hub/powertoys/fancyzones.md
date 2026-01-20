@@ -177,4 +177,44 @@ In the demo below, we start with a default template applied to the screen and tw
 
 ![FancyZones Settings bottom screenshot](../images/pt-fancyzones-settings2.png)
 
+## Manage FancyZones from the Command Line
+
+The FancyZones CLI lets you apply and manage window layouts directly from the command line.
+
+**Key capabilities:**
+- ASCII art visualization of layouts (grid, focus, priority-grid, canvas)
+- Support for both template layouts and custom layouts
+- Monitor-specific layout targeting (`--monitor N` or `--all`)
+- Real-time notification to FancyZones via Windows messages
+- Native AOT compilation support for fast startup
+
+**Commands:**
+| Command | Aliases | Description |
+|---------|---------|-------------|
+| `help` | | Displays general help information for all commands |
+| `open-editor` | `editor`, `e` | Launch FancyZones layout editor |
+| `get-monitors` | `monitors`, `m` | List all monitors and their properties |
+| `get-layouts` | `layouts`, `ls` | List all available layouts with ASCII art preview |
+| `get-active-layout` | `active`, `a` | Show currently active layout |
+| `set-layout <uuid>` | `set`, `s` | Apply layout by UUID or template name |
+| `open-settings` | `settings` | Open FancyZones settings page |
+| `get-hotkeys` | `hotkeys`, `hk` | List all layout hotkeys |
+| `set-hotkey <key> <uuid>` | `shk` | Assign hotkey (0-9) to custom layout |
+| `remove-hotkey <key>` | `rhk` | Remove hotkey assignment |
+
+**Usage example**
+```bash
+# List all layouts with visual previews
+FancyZonesCLI.exe ls
+
+# Apply "columns" template to all monitors
+FancyZonesCLI.exe s columns --all
+
+# Set custom layout on monitor 2
+FancyZonesCLI.exe s {uuid} --monitor 2
+
+# Assign hotkey Win+Ctrl+Alt+3 to a layout
+FancyZonesCLI.exe shk 3 {uuid}
+```
+
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
