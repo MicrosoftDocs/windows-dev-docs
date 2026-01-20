@@ -177,18 +177,11 @@ In the demo below, we start with a default template applied to the screen and tw
 
 ![FancyZones Settings bottom screenshot](../images/pt-fancyzones-settings2.png)
 
-## Manage FancyZones from the Command Line
+## Manage FancyZones from the command line
 
 The FancyZones CLI lets you apply and manage window layouts directly from the command line.
 
-**Key capabilities:**
-- ASCII art visualization of layouts (grid, focus, priority-grid, canvas)
-- Support for both template layouts and custom layouts
-- Monitor-specific layout targeting (`--monitor N` or `--all`)
-- Real-time notification to FancyZones via Windows messages
-- Native AOT compilation support for fast startup
-
-**Commands:**
+**Commands**
 | Command | Aliases | Description |
 |---------|---------|-------------|
 | `help` | | Displays general help information for all commands |
@@ -203,7 +196,7 @@ The FancyZones CLI lets you apply and manage window layouts directly from the co
 | `remove-hotkey <key>` | `rhk` | Remove hotkey assignment |
 
 **Usage example**
-```bash
+```powershell
 # List all layouts with visual previews
 FancyZonesCLI.exe ls
 
