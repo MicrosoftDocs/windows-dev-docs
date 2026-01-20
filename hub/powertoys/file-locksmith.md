@@ -25,13 +25,12 @@ When File Locksmith is opened, it will scan all of the running processes that it
 
 After scanning, a list of processes will be displayed. Select **End task** to terminate the process, or select the expander to show more information. File Locksmith will automatically remove terminated processes from the list, whether or not this action was done via File Locksmith. To manually refresh the list of processes, select **Reload**.
 
-## Manage File Locksmith from the command line
+## Command-line reference
 
 The File Locksmith CLI lets you identify and manage processes that are locking files from the command line.
 
-**Commands**
 | Command | Description |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | `<path>` | **Required**. One or more file or directory paths to check. You can specify multiple paths separated by spaces. |
 | `--kill` | Terminates (kills) all processes that are currently locking the specified files. |
 | `--json` | Outputs the results in structured **JSON** format instead of human-readable text. Useful for automation and scripts. |

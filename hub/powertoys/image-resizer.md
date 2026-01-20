@@ -65,13 +65,12 @@ You can specify a directory in the filename format to group resized images into 
 
 You can choose to retain the original *last modified* date on the resized image or reset it at the time of the resizing action.
 
-## Manage Image Resizer from the command line
+## Command-line reference
 
 The Image Resizer CLI lets you resize one or more images from the command line.
 
-**Commands:**
 | Command | Aliases | Description |
-|--------|---------|-------------|
+| :--- | :--- | :--- |
 | `--help` |  | Show help |
 | `--show-config` |  | Print current effective configuration |
 | `--destination` | `-d` | Output directory (optional) |

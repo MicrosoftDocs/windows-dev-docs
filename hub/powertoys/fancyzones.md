@@ -177,13 +177,12 @@ In the demo below, we start with a default template applied to the screen and tw
 
 ![FancyZones Settings bottom screenshot](../images/pt-fancyzones-settings2.png)
 
-## Manage FancyZones from the command line
+## Command-line reference
 
 The FancyZones CLI lets you apply and manage window layouts directly from the command line.
 
-**Commands**
 | Command | Aliases | Description |
-|---------|---------|-------------|
+| :-- | :-- | :-- |
 | `help` | | Displays general help information for all commands |
 | `open-editor` | `editor`, `e` | Launch FancyZones layout editor |
 | `get-monitors` | `monitors`, `m` | List all monitors and their properties |
