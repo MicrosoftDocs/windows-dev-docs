@@ -151,7 +151,7 @@ items:
         - name: Overview
           href: media/media-playback-overview.md
         - name: Play media with MediaPlayer and MediaPlayerElement
-          href: media/play-audio-and-video-with-mediaplayer.md.md
+          href: media/play-audio-and-video-with-mediaplayer.md
     - name: Communication
       href: communication/index.md
     - name: Data and files
