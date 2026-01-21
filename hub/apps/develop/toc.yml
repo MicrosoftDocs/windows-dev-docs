@@ -452,14 +452,6 @@ items:
       items:
       - name: Overview
         href: windows-integration/index.md
-      - name: App Actions
-        items:
-        - name: Overview
-          href: actions/index.md
-        - name: Action definition JSON schema
-          href: actions/action-json.md
-        - name: Action provider package manifest XML format
-          href: actions/action-provider-manifest.md
       - name: Cross Device People API
         href: windows-integration/cross-device-people-api.md
       - name: Cross Device Resume (XDR)
