@@ -148,8 +148,6 @@ items:
           href: camera/connect-to-remote-cameras.md
       - name: Media playback
         items:
-        - name: Overview
-          href: media/media-playback-overview.md
         - name: Play media with MediaPlayer and MediaPlayerElement
           href: media/play-audio-and-video-with-mediaplayer.md
     - name: Communication
