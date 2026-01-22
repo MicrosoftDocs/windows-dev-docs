@@ -1,18 +1,42 @@
 ---
-title: Advanced Windows Settings (PREVIEW)
+title: Advanced Windows Settings
 description: Learn about the settings provided in the Advanced page of Windows settings.
 ms.reviewer: cinnamon
 ms.topic: article
-ms.date: 04/10/2025
+ms.date: 01/22/2026
 ---
 
-# Advanced Windows Settings (PREVIEW)
+# Advanced Windows Settings
 
 **Advanced Windows settings** is a redesign of the original **For Developers** page in Windows settings with additional settings to help you be more productive.
 
-## Prerequisites
+## What's included
 
-Advanced settings is available in the [Windows Beta channel](https://aka.ms/BetaLatest). See [Get started with the Windows Insider Program](/windows-insider/get-started) for more information about joining the program and selecting a channel. After you've joined the Beta channel, you can ([check for Windows updates](ms-settings:windowsupdate)).
+- **Developer Mode**: Unlock tools and features for building, deploying, and testing apps on Windows. See [Settings for developers](developer-mode.md).
+- **Sudo for Windows**: Run elevated commands from an unelevated console session. Available on Windows 11, version 24H2 and later. See [Sudo for Windows](sudo/index.md).
+- **File Explorer version control integration (PREVIEW)**: View branch, commit, and author details directly in File Explorer. See [File Explorer version control integration](fe-version-control.md).
+
+## Find Advanced settings
+
+- Open Settings and navigate to **System > Advanced**.
+
+## Availability notes
+
+- In Windows 11, version 25H2 and later, the former **For developers** settings are now surfaced under the **Advanced** page.
+- Sudo for Windows is available in Windows 11, version 24H2 and later. See [Sudo for Windows](sudo/index.md).
+- File Explorer version control integration is currently available via the Windows Insider Beta Channel. See [File Explorer version control integration (PREVIEW)](fe-version-control.md) for enrollment and setup details.
+
+## Troubleshooting
+
+- **Options missing or disabled**: Devices managed by an organization may apply policies that disable Advanced settings toggles. See related [Group Policy guidance](../dev-drive/group-policy.md).
+- **Administrator required**: Enabling Developer Mode requires local administrator privileges.
+- **Feature not found**: Ensure your device is updated to a supported Windows version. Preview features may require joining a Windows Insider channel.
+
+## Feedback and contributions
+
+- The Windows Advanced Settings system component is open source. Share feedback or feature requests by opening an issue on [GitHub Issues](https://github.com/microsoft/windowsAdvancedSettings/issues).
+
+
 
 ## FAQ
 

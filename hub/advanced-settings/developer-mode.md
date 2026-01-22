@@ -1,6 +1,6 @@
 ---
 ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
-title: Enable Developer Mode
+title: Settings for developers
 description: Activate Developer Mode on your PC to develop apps.
 keywords: Developer mode, Visual Studio, enable device
 ms.date: 11/12/2025
