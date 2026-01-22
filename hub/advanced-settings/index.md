@@ -12,7 +12,7 @@ ms.date: 01/22/2026
 
 ## What's included
 
-- **Developer Mode**: Unlock tools and features for building, deploying, and testing apps on Windows. See [Enable Developer Mode](developer-mode.md).
+- **Developer Mode**: Unlock tools and features for building, deploying, and testing apps on Windows. See [Settings for developers](developer-mode.md).
 - **Sudo for Windows**: Run elevated commands from an unelevated console session. Available on Windows 11, version 24H2 and later. See [Sudo for Windows](sudo/index.md).
 - **File Explorer version control integration (PREVIEW)**: View branch, commit, and author details directly in File Explorer. See [File Explorer version control integration](fe-version-control.md).
 
