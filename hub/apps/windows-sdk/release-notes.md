@@ -15,6 +15,71 @@ You can update the SDK by manually installing the new build, updating in Visual 
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
+## Build 10.0.26100.7627
+
+Released: **January, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Security.Credentials**:
+> <br/>
+> New interfaces:
+>
+> - `IKeyCredentialManagerCreateWithWindowStatics` - Provides methods for creating key credentials with an associated window handle
+> - `IKeyCredentialWithWindow` - Extends key credential functionality with window association support
+>
+> New methods:
+>
+> - `KeyCredentialManager.RequestCreateForWindowAsync` - Creates a key credential associated with a specific window
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **SQLite (winsqlite3.h / winsqlite3ext.h)**
+> <br/>
+> SQLite version update:
+>
+> - Updated SQLite from version 3.43.2 to 3.51.1
+>
+> New error codes:
+>
+> - `SQLITE_ERROR_RESERVESIZE`
+> - `SQLITE_ERROR_KEY`
+> - `SQLITE_ERROR_UNABLE`
+>
+> New IO error codes:
+>
+> - `SQLITE_IOERR_BADKEY`
+> - `SQLITE_IOERR_CODEC`
+>
+> New capabilities:
+>
+> - `SQLITE_IOCAP_SUBPAGE_READ`
+>
+> New file control codes:
+>
+> - `SQLITE_FCNTL_NULL_IO`
+> - `SQLITE_FCNTL_BLOCK_ON_CONNECT`
+>
+> New source control management constants:
+>
+> - `SQLITE_SCM_BRANCH`
+> - `SQLITE_SCM_TAGS`
+> - `SQLITE_SCM_DATETIME`
+>     
+> **winnt.h**
+> <br/>
+> New definitions:
+>
+> - `SECURITY_MANDATORY_MEDIUM_PLUS_CREDUI_RID` - New security mandatory integrity level RID for Credential UI contexts
+
+</details>
+
+---
+
 ## Build 10.0.26100.7463
 
 Released: **December, 2025** <br><br>
