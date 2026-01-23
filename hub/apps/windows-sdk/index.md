@@ -33,11 +33,11 @@ To see what's new, check out the [release notes](./release-notes.md).
 
  | SDK Version | Status | EOS Date | Notes |
  |-------------|--------|----------|-------|
- | 26100 |Supported | | |
+ | 26100+ |Supported | | |
  | 22621 | Out of support | 2025-11-12 | Aligned with 22621 Enterprise OS EOS |
  | 22000 | Out of support | | |
  | 20348 | Out of support |  | Patched version shipped |
- | 19041 | End of support | 2025-10-14 | |
+ | 19041 | Out of support | 2025-10-14 | |
  | 18362 and before | Out of support | | |
 
 > [!NOTE]
