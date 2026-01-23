@@ -56,7 +56,7 @@ Previous highlights:
 - **Microsoft Store**: The latest news from the [Microsoft Store](/windows/apps/publish/whats-new-individual-developer) including waived fees and updated analytics.
 - **AppWindow.SetIcon API**: refined guidance for setting window and taskbar icons (branding improvement) ([API ref](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon)).
 - **Win32 app isolation overview**: updated security guidance for packaging decisions ([overview](/windows/win32/secauthz/app-isolation-overview)).
-- **Ignite**: Explore sessions, workshops, and resources for Windows developers at [Microsoft Ignite](/windows/apps/whats-new/windows-at-ignite) (November 18–21, 2025)
+
 
 ### Documentation
 
