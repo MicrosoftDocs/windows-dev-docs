@@ -38,7 +38,7 @@ Released: **January, 2026** <br><br>
 <details>
 <summary>Win32 API additions and updates</summary>
 
-> **SQLite (winsqlite3.h / winsqlite3ext.h)**
+> **WinSQLite (winsqlite3.h / winsqlite3ext.h)**
 > <br/>
 > SQLite version update:
 >
