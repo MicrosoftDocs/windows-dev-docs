@@ -42,7 +42,6 @@ Released: **January, 2026** <br><br>
 > <br/>
 > SQLite version update:
 >
-> - Updated SQLite from version 3.43.2 to 3.51.1
 >
 > New error codes:
 >
