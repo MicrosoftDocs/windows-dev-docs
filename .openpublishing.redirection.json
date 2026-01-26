@@ -1,6 +1,26 @@
 {
   "redirections": [
     {
+      "source_path": "hub/android/emulator.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/native-android.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/overview.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/pwa.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/how-tos/uno-multiplatform.md",
       "redirect_url": "/previous-versions/windows/app-dev/how-tos/uno-multiplatform",
       "redirect_document_id": false

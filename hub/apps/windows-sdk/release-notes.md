@@ -15,6 +15,70 @@ You can update the SDK by manually installing the new build, updating in Visual 
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
+## Build 10.0.26100.7627
+
+Released: **January, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Security.Credentials**:
+> <br/>
+> New interfaces:
+>
+> - `IKeyCredentialManagerCreateWithWindowStatics` - Provides methods for creating key credentials with an associated window handle
+> - `IKeyCredentialWithWindow` - Extends key credential functionality with window association support
+>
+> New methods:
+>
+> - `KeyCredentialManager.RequestCreateForWindowAsync` - Creates a key credential associated with a specific window
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **WinSQLite (winsqlite3.h / winsqlite3ext.h)**
+> <br/>
+> SQLite version update:
+>
+>
+> New error codes:
+>
+> - `SQLITE_ERROR_RESERVESIZE`
+> - `SQLITE_ERROR_KEY`
+> - `SQLITE_ERROR_UNABLE`
+>
+> New IO error codes:
+>
+> - `SQLITE_IOERR_BADKEY`
+> - `SQLITE_IOERR_CODEC`
+>
+> New capabilities:
+>
+> - `SQLITE_IOCAP_SUBPAGE_READ`
+>
+> New file control codes:
+>
+> - `SQLITE_FCNTL_NULL_IO`
+> - `SQLITE_FCNTL_BLOCK_ON_CONNECT`
+>
+> New source control management constants:
+>
+> - `SQLITE_SCM_BRANCH`
+> - `SQLITE_SCM_TAGS`
+> - `SQLITE_SCM_DATETIME`
+>     
+> **winnt.h**
+> <br/>
+> New definitions:
+>
+> - `SECURITY_MANDATORY_MEDIUM_PLUS_CREDUI_RID` - New security mandatory integrity level RID for Credential UI contexts
+
+</details>
+
+---
+
 ## Build 10.0.26100.7463
 
 Released: **December, 2025** <br><br>
@@ -576,8 +640,8 @@ Servicing update 10.0.22621.755. Includes ARM64 support for the VS 17.4 release
 > - Removed irprops.lib. Apps that were linking against irprops.lib can switch to bthprops.lib as a drop-in replacement.
 > - Moved ENUM tagServerSelection from wuapicommon.h to wupai.h and removed the header. If you would like to use the ENUM tagServerSelection, you will need to include wuapi.h or wuapi.idl.
 > - The Windows 10 WinRT API Pack lets you add the latest Windows Runtime APIs support to your .NET Framework 4.5+ and .NET Core 3.0+ libraries and apps. To access the Windows 10 WinRT API Pack, see the [Microsoft.Windows.SDK.Contracts nuget package](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts).
-> - The printf family of functions now [conforms with the IEEE 754 rounding rules](https://learn.microsoft.com/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l#requirements) when printing exactly representable floating-point numbers and will honor the rounding mode requested via calls to [fesetround](https://learn.microsoft.com/cpp/c-runtime-library/reference/fegetround-fesetround2). Legacy behavior is available when linking with [legacy_stdio_float_rounding.obj](https://learn.microsoft.com/cpp/c-runtime-library/link-options).
-> - Windows App Certification Kit. Several new APIs were added to the Supported APIs list in the App Certification Kit and Windows Store. If there are APIs in the supported list that appear greyed out or disabled in Visual Studio, you can make a small change to your source file, to access them. For more details, see this [known issue](https://social.msdn.microsoft.com/Forums/86ae092f-a9df-4d2d-8d09-8bf1e93c029c/known-issue-in-visual-studio-a-windows-api-is-greyed-out-and-i-cannot-access-it-even-though-it-is?forum=Win10SDKToolsIssues). [Find more updates to tests](https://learn.microsoft.com/windows/uwp/debug-test-perf/windows-app-certification-kit).
+> - The printf family of functions now [conforms with the IEEE 754 rounding rules](/cpp/c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l#requirements) when printing exactly representable floating-point numbers and will honor the rounding mode requested via calls to [fesetround](/cpp/c-runtime-library/reference/fegetround-fesetround2). Legacy behavior is available when linking with [legacy_stdio_float_rounding.obj](/cpp/c-runtime-library/link-options).
+> - Windows App Certification Kit. Several new APIs were added to the Supported APIs list in the App Certification Kit and Windows Store. If there are APIs in the supported list that appear greyed out or disabled in Visual Studio, you can make a small change to your source file, to access them. For more details, see this [known issue](https://social.msdn.microsoft.com/Forums/86ae092f-a9df-4d2d-8d09-8bf1e93c029c/known-issue-in-visual-studio-a-windows-api-is-greyed-out-and-i-cannot-access-it-even-though-it-is?forum=Win10SDKToolsIssues). [Find more updates to tests](/windows/uwp/debug-test-perf/windows-app-certification-kit).
 
 </details>
 
@@ -600,7 +664,7 @@ Servicing update 10.0.22621.755. Includes ARM64 support for the VS 17.4 release
 > - Avoids one-definition-rule (ODR) problems caused by conflicting configuration macros (e.g. when two .cpp files with conflicting definitions of TLG_EVENT_WRITE_TRANSFER are linked into the same binary, the TraceLoggingProvider.h helpers will now respect the definition of TLG_EVENT_WRITE_TRANSFER in each .cpp file instead of arbitrarily picking one or the other).
 > - In C++ code, the TraceLoggingWrite macro has been updated to enable better code sharing between similar events using variadic templates.
 >
-> Signing your apps. Device Guard signing is a Device Guard feature that is available in Microsoft Store for Business and Education, which allows enterprises to guarantee every app comes from a trusted source. See the [documentation about Device Guard Signing](https://learn.microsoft.com/windows/msix/package/signing-package-device-guard-signing).
+> Signing your apps. Device Guard signing is a Device Guard feature that is available in Microsoft Store for Business and Education, which allows enterprises to guarantee every app comes from a trusted source. See the [documentation about Device Guard Signing](/windows/msix/package/signing-package-device-guard-signing).
 
 </details>
 
