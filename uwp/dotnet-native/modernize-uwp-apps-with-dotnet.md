@@ -11,24 +11,27 @@ ms.localizationpriority: high
 
 UWP support for modern .NET is now generally available, providing a path for existing UWP developers to modernize their apps with the latest .NET and Native AOT compilation. Visual Studio 2026 includes built-in project templates to create new UWP applications, class libraries, and Windows Runtime components using .NET 10.
 
+> [!NOTE]
+> This article refers to [.NET Native](index.md), the legacy precompilation technology for UWP apps that is limited to .NET Core 2.0 feature level and only receives security updates. If you're currently using .NET Native, this guide will help you understand the benefits of migrating to modern .NET with Native AOT.
+
 ## Why modernize to modern .NET?
 
-Upgrading your UWP app from .NET Native to .NET 10 with Native AOT provides several key benefits:
+Upgrading your UWP app from [.NET Native](index.md) to .NET 10 with Native AOT provides several key benefits:
 
 ### Access to Modern .NET Features
 - **Latest .NET and C# features**: Use .NET 10 with all modern language features and APIs
-- **Active development**: Unlike .NET Native which only receives security updates and is limited to .NET Core 2.0 feature level, .NET 10 is actively developed
+- **Active development**: Unlike [.NET Native](index.md) which only receives security updates and is limited to .NET Core 2.0 feature level, .NET 10 is actively developed
 - **Better library compatibility**: Reference newer versions of NuGet packages that only support .NET 6 and above
 
 ### Improved Developer Experience
-- **Faster build times**: Significantly faster compilation compared to .NET Native
+- **Faster build times**: Significantly faster compilation compared to [.NET Native](index.md)
 - **Better debugging support**: Enhanced debugging tools and diagnostic capabilities for AOT and trimming issues
 - **SDK-style project files**: Modern, clean .csproj files without verbose legacy-style configurations
 - **XAML Hot Reload**: Full support for XAML and C# Hot Reload during development
 - **Better tooling**: IntelliSense, Live Preview, and XAML Diagnostics work seamlessly
 
 ### Performance Benefits
-- **Native AOT compilation**: Similar or better startup performance compared to .NET Native
+- **Native AOT compilation**: Similar or better startup performance compared to [.NET Native](index.md)
 - **Optimized runtime**: Performance improvements through inter-procedural optimizations
 - **Static validation**: Catch AOT compatibility issues at build time with analyzers and annotations
 
@@ -63,6 +66,9 @@ Visual Studio includes several project templates for UWP with .NET 10:
 - **Blank UWP CoreApplication App**: For advanced scenarios with Composition/DirectX content (no XAML)
 - **UWP Windows Runtime Component**: Managed WinRT component using latest .NET and CsWinRT
 - **UWP Class Library**: Class library with XAML support
+
+> [!TIP]
+> Legacy .NET Native templates (marked as ".NET Native") are still available for compatibility, but the modern .NET 10 templates are recommended for all new development.
 
 ### Create a New Project
 
@@ -104,13 +110,16 @@ UWP .NET 10 projects use modern SDK-style .csproj files with key properties:
 
 ## Migrating Existing UWP Apps to .NET 10
 
-To migrate an existing UWP app from .NET Native to .NET 10:
+To migrate an existing UWP app from [.NET Native](index.md) to .NET 10:
 
 ### Step 1: Update Project File
 
 1. Convert your existing .csproj to SDK-style format
 2. Add the required properties (`UseUwp`, `UseUwpTools`, `EnableMsixTooling`, `PublishAot`)
 3. Update NuGet package references to versions compatible with .NET 10
+
+> [!TIP]
+> If your existing app uses a [runtime directives (rd.xml) file](runtime-directives-rd-xml-configuration-file-reference.md) for .NET Native, you'll need to address reflection and trimming requirements differently with Native AOT using attributes and analyzers instead.
 
 ### Step 2: Address Native AOT Compatibility
 
@@ -140,11 +149,11 @@ For more information on Native AOT compatibility, see [Introduction to AOT warni
 
 ## Native AOT vs .NET Native
 
-While both compile your app to native code, Native AOT differs from .NET Native in important ways:
+While both compile your app to native code, Native AOT differs from [.NET Native](index.md) in important ways:
 
 ### Static Validation
 - **Native AOT**: Uses static analysis with code annotations and analyzers to validate AOT compatibility at build time
-- **.NET Native**: Uses heuristics and fallback logic that can lead to runtime crashes difficult to debug
+- **[.NET Native](index.md)**: Uses heuristics and fallback logic that can lead to runtime crashes difficult to debug
 
 ### Performance & Size
 - **Startup Performance**: Native AOT provides similar or better startup performance (~5% improvement in benchmarks)
@@ -153,7 +162,13 @@ While both compile your app to native code, Native AOT differs from .NET Native 
 
 ### Developer Experience
 - **Native AOT**: Problems surface during development with clear error messages and debugging support
-- **.NET Native**: Slow build times, differences between Debug/Release, and difficult-to-diagnose runtime issues
+- **[.NET Native](index.md)**: Slow build times, differences between Debug/Release, and difficult-to-diagnose runtime issues
+
+### Reflection and Metadata
+- **Native AOT**: Uses compile-time attributes like `[DynamicallyAccessedMembers]` and source generators to handle reflection
+- **[.NET Native](index.md)**: Uses [runtime directives (rd.xml) files](runtime-directives-rd-xml-configuration-file-reference.md) to specify metadata requirements at build time
+
+For more information on .NET Native limitations, see [Getting Started with .NET Native](getting-started-with-net-native.md) and [.NET Native and Compilation](net-native-and-compilation.md).
 
 ## Publishing to Microsoft Store
 
@@ -179,7 +194,7 @@ With modern .NET, you can host UWP XAML controls inside Win32 apps (WinForms, WP
 
 ### Using Latest NuGet Packages
 
-Modern .NET support enables you to reference modern NuGet packages that require .NET 6+, removing the limitations of .NET Native's .NET Standard 2.0 constraint.
+Modern .NET support enables you to reference modern NuGet packages that require .NET 6+, removing the limitations of [.NET Native's .NET Standard 2.0 constraint](net-native-and-compilation.md).
 
 ## Additional Resources
 
@@ -190,6 +205,12 @@ Modern .NET support enables you to reference modern NuGet packages that require 
 
 ## See Also
 
-- [.NET Native (legacy documentation)](index.md)
+### .NET Native Documentation (Legacy)
+- [Compiling Apps with .NET Native](index.md) - Overview of .NET Native technology
+- [Getting Started with .NET Native](getting-started-with-net-native.md) - How to use .NET Native
+- [.NET Native and Compilation](net-native-and-compilation.md) - Understanding .NET Native compilation
+- [Runtime Directives (rd.xml) Configuration File Reference](runtime-directives-rd-xml-configuration-file-reference.md) - .NET Native metadata configuration
+
+### Migration Resources
 - [Windows App SDK migration guidance](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy)
 - [MSIX packaging](/windows/msix/)
