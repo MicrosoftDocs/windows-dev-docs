@@ -164,26 +164,6 @@ items:
     href: ../apps/index.yml
   - name: Get started with Windows AI development
     href: /windows/ai
-  - name: Get started with Android
-    items:
-        - name: Overview
-          href: ../android/overview.md
-        - name: Windows Subsystem for Android™️
-          items:
-            - name: Overview
-              href: ../android/wsa/index.md
-            - name: Release notes
-              href:  ../android/wsa/release-notes.md
-        - name: Native Android
-          href: ../android/native-android.md
-        - name: Cross-platform
-          items:
-            - name: React Native
-              href: ../dev-environment/javascript/react-native-for-android.md
-            - name: PWA (Ionic, PhoneGap, Cordova)
-              href: ../android/pwa.md
-        - name: Test on device or emulator
-          href: ../android/emulator.md
   - name: Get started with C and C++
     href: /cpp/
   - name: Get started with C#
