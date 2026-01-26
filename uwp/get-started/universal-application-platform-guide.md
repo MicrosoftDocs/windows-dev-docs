@@ -148,7 +148,8 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 - For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)) and [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)).
 - See [Universal Windows apps in .NET](https://devblogs.microsoft.com/dotnet/universal-windows-apps-in-net/) for an overview of writing .NET UWP apps.
 - For a list of .NET types that you can use in a UWP app, see [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)
-- [Compiling apps with .NET Native](/dotnet/framework/net-native/)
+- [Modernize your UWP app with .NET and Native AOT](../dotnet-native/modernize-uwp-apps-with-dotnet.md) - Recommended for new and existing UWP apps to access the latest .NET features
+- [Compiling apps with .NET Native](/dotnet/framework/net-native/) - Legacy toolchain (security updates only)
 - Learn how to add modern experiences for Windows users to your existing desktop app, and distribute it in the Microsoft Store with the [Desktop Bridge](/windows/msix/desktop/source-code-overview).
 
 ## How the Universal Windows Platform relates to Windows Runtime APIs

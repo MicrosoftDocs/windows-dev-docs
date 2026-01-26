@@ -7,6 +7,9 @@ ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 ---
 # Getting Started with .NET Native
 
+> [!IMPORTANT]
+> **Modernize your UWP app with .NET and Native AOT**: If you are developing a new UWP app or want to modernize an existing UWP app, we recommend using [UWP support for .NET 10 with Native AOT](modernize-uwp-apps-with-dotnet.md) instead of .NET Native. UWP support for modern .NET is now generally available in Visual Studio 2026, with built-in project templates. This provides access to the latest .NET and C# features, improved tooling and debugging support, and faster build times. .NET Native (documented below) is limited to the .NET Core 2.0 feature level and only receives security updates.
+
 Whether you're writing a new UWP app or migrating an existing Windows 8.x app (previously also called a Microsoft Store app), you can follow the same set of procedures. To create a .NET Native app, follow these steps:
 
 1. [Develop a Universal Windows Platform (UWP) app](#Step1), and test the debug builds of your app to ensure that it works properly.
