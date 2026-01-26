@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 01/20/2026
+ms.date: 01/26/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -39,6 +39,7 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ## Highlights – January 2026
 
+- **WinAppCLI public preview**: The Windows App Development CLI is  command-line interface for managing Windows SDKs, packaging, generating app identity, manifests, certificates, and using build tools with any app framework. This tool bridges the gap between cross-platform development and Windows-native capabilities.
 - **PowerToys**. 0.97 release with new features and improvements to existing tools: ([Microsoft PowerToys: Utilities to customize Windows](/windows/powertoys/)
 - **Windows App SDK release notes**: Refactored and consolidated history from 0.5 through 2.0 — find the latest fixes and APIs in one place ([release notes hub](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)).
 - **Windows SDK updates**: New overview and detailed release notes to track SDK changes ([overview](/windows/apps/windows-sdk/) · [release notes](/windows/apps/windows-sdk/release-notes)).
