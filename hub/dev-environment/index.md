@@ -12,6 +12,8 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 
 ## Developer tools
 
+New! The [Windows App Development CLI](https://github.com/microsoft/WinAppCli) (winapp CLI) is a single command-line interface for managing Windows SDKs, packaging, generating app identity, manifests, certificates, and using build tools with any app framework. This tool bridges the gap between cross-platform development and Windows-native capabilities. WinAppCLI is in public preview now.
+
 :::row:::
     :::column:::
        [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
@@ -189,4 +191,4 @@ Check out our [guide to transitioning between a Mac and Windows](./mac-to-window
 
 - [Microsoft's Game Dev documentation](/gaming/)
 
-![Office image](../images/flashy-office3.png)
+
