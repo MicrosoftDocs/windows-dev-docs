@@ -36,7 +36,7 @@ Windows 11 is built on the [Windows 11 design principles](../design/signature-ex
 - Window behavior
 - Shell integration points
 
-[WinUI 3](../winui/index.md) provides built-in support for many of these experiences and styles through its **[common controls](./make-apps-great-for-windows.md#4-use-the-latest-common-controls)**. If you can't use WinUI 3, consider emulating the styles demonstrated in our [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+[WinUI](../winui/index.md) provides built-in support for many of these experiences and styles through its common controls. If you can't use WinUI, consider emulating the styles demonstrated in our [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 ### Layout
 
@@ -56,7 +56,7 @@ Windows users can choose from a wide variety of input devices to interact with y
 
 #### On-object commanding
 
-Use [on-object commanding](../design/controls/collection-commanding.md#creating-context-menus) such as [context menus](../design/controls/menus-and-context-menus.md), [swipe commands](../design/controls/swipe.md), and [keyboard shortcuts](../design/input/keyboard-accelerators.md). Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest [context menu integration](./make-apps-great-for-windows.md#context-menus) guidance. WinUI text controls automatically expose cut, copy, and paste commands, but other controls might need extra work to support these commands.
+Use [on-object commanding](../design/controls/collection-commanding.md#creating-context-menus) such as [context menus](../design/controls/menus-and-context-menus.md), [swipe commands](../design/controls/swipe.md), and [keyboard shortcuts](../design/input/keyboard-accelerators.md). Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest [context menu](#context-menus) integration guidance. WinUI text controls automatically expose cut, copy, and paste commands, but other controls might need extra work to support these commands.
 
 #### Text interaction
 
@@ -72,39 +72,93 @@ Windows 11 is built on the [Windows 11 design principles](../design/signature-
 
 #### Materials: Acrylic and Mica
 
-[Acrylic](../design/style/acrylic.md) and [Mica](../design/style/mica.md) are visual [materials](../design/signature-experiences/materials.md) that give interactive UI controls a distinct "occluded" visual style. Use [Acrylic](../design/style/acrylic.md) to apply a semi-transparent style to transient surfaces like context menus, flyouts, and other elements that users can light-dismiss. Use [Mica](../design/style/mica.md) to add a subtle adaptive tint to long-lived UI surfaces like the title bar.
+[Acrylic](../design/style/acrylic.md) and [Mica](../design/style/mica.md) are visual [materials](../design/signature-experiences/materials.md) that give interactive UI controls a distinct "occluded" visual style. 
 
-For more information about Acrylic and Mica materials, see [Things you can do to make your app great on Windows 11](./make-apps-great-for-windows.md#5-use-the-latest-design-materials-acrylic-and-mica).
+- Use [Acrylic](../design/style/acrylic.md) to apply a semi-transparent style to transient surfaces like context menus, flyouts, and other elements that users can light-dismiss.
+- Use [Mica](../design/style/mica.md) to add a subtle adaptive tint to long-lived UI surfaces.
+
+Mica is a very performant material that is meant to be used on long-lived UI surfaces like TitleBar to communicate the active or inactive state of the app. Mica is a texture that creates visual delight while saving battery life.
+
+![An image of two app windows using design materials.](images/great-apps/materials.png)
+
+- Mica is to be used on the base layer of the app's UI to communicate the active state of the app; it falls back to a solid color when the app does not have focus. Thus, we recommend use of Mica on the TitleBar's background.
+- Some controls, like NavigationView, already come built with the default behavior.
+- When an app that uses Mica runs in Windows 10 or down-level, it will degrade gracefully (Mica will fallback to a solid color).
+- Mica is to be used on long-lived surfaces, unlike Acrylic, which is to be used on transient surfaces.
+- If you are using Acrylic material, follow the existing [Acrylic guidance](../design/style/acrylic.md) as we have updated the colors to be more vibrant.
+
+[Mica guidance](../design/style/mica.md), [Acrylic guidance](../design/style/acrylic.md)
 
 #### Dark and Light themes
 
-[Dark and Light themes](./make-apps-great-for-windows.md#7-support-dark-and-light-themes) give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful. WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](../develop/platform/xaml/xaml-theme-resources.md)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/ui/apply-windows-themes.md). (The title bar in Win32 apps doesn't automatically adapt to the Dark theme. Be sure to follow the [title bar guidance](../desktop/modernize/ui/apply-windows-themes.md#enable-a-dark-mode-title-bar-for-win32-applications) in the article).
+Dark and Light themes give users a way to adapt your app to their visual preferences. Windows 11 updates the color tones to be softer on the eyes by avoiding pure white and black, which makes the colors much more delightful.
+
+![A split image of an app in light theme on the left, and dark theme on the right.](images/great-apps/themes.png)
+
+WinUI supports switching between Dark and Light themes by default (see [XAML theme resources](../develop/platform/xaml/xaml-theme-resources.md)). For Win32 apps, see [Support Dark and Light themes in Win32 apps](../desktop/modernize/ui/apply-windows-themes.md). (The title bar in Win32 apps doesn't automatically adapt to the Dark theme. Be sure to follow the [title bar guidance](../desktop/modernize/ui/apply-windows-themes.md#enable-a-dark-mode-title-bar-for-win32-applications) in the article).
 
 #### Refreshed UI elements
 
-[Windows 11 geometry](../design/signature-experiences/geometry.md) supports modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
+Windows 11 brings beautiful UI innovations to the Windows operating system that you can leverage in your apps. [Windows 11 geometry](../design/signature-experiences/geometry.md) supports modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
 
-The visual and behavioral changes are built in to [WinUI 3](../winui/index.md). Use WinUI 3 where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI 3, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+The visual and behavioral changes are built in to [WinUI](../winui/index.md). Use WinUI where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
-#### Context menu
+[Common controls](../develop/ui/controls/index.md) are one way that you can utilize these updates immediately. Use the latest common controls whenever possible to get the benefits of compatibility and accessibility for free. And these common controls are more cost effective than building your own custom controls when you factor in maintenance and testing costs.
+
+![An image of common UI controls](images/great-apps/controls.png)
+
+#### Context menu extensions and Share targets
 
 A context menu is a shortcut menu that the user invokes with a right-click or tap and hold action to reveal a menu of commands relevant to the context of the control the user is interacting with. Users expect the appearance and behavior of context menus to be coherent across Windows. Use platform-provided context menus whenever possible to keep them consistent with the rest of the system.
+
+Windows 11 refines the behavior of the contextual file operations in the right-click context menu of File Explorer and the Share dialog. If your app creates context menus or defines share targets, you may need to make some changes to ensure that these work well with Windows 11.
+
+##### Context menus
+
+For Windows 11, we improved the behavior of the context menu in File Explorer in several ways:
+
+- Common commands, such as **Cut**, **Copy**, **Paste**, and **Delete**, have been moved to the top of the menu.
+- **Open** and **Open with** are now grouped together.
+- App extensions are grouped together below Shell verbs. Apps with more than one verb are grouped into a flyout with app attribution.
+- [Cloud files provider apps](/windows/win32/cfapi/build-a-cloud-file-sync-engine) are placed next to the Shell commands to hydrate or dehydrate files.
+- The older context menu from Windows 10 (along with lesser-used commands from the older context menu) is still available via the **Show more options** item at the bottom of the menu. **Shift** + **F10** or the keyboard menu key will also load the Windows 10 context menu.
+
+![An image of the context menu in Windows 11](images/great-apps/context-menu.png)
+
+If your app defines a context menu extension, the following requirements must be met for the extension to appear in the new Windows 11 context menu. Otherwise, your app's context menu extension will appear in the older context menu available via the **Show more options** item.
+
+- Your context menu extension must be implemented by using the [**IExplorerCommand**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [**IContextMenu**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
+- Your app must be a *packaged app* so that it has package identity at runtime. See [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md) for some options for packaging your app.
+
+##### Share dialog
+
+For Windows 11, we improved the behavior of the Share dialog in several ways.  
+
+- Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
+- All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
+  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
+  - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
+
+![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)
 
 #### Iconography and typography
 
 Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/signature-experiences/iconography.md), improved support for [animated icons](../design/controls/animated-icon.md), and a [new UI font ("Segoe UI Variable")](../design/signature-experiences/typography.md). Use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.
 
-For more information about iconography and typography on Windows, see [Things you can do to make your app great on Windows 11](./make-apps-great-for-windows.md#9-use-beautiful-iconography--typography).
+![An image of a selection of windows icons.](images/great-apps/icons.png)
+
+- New icons called "Segoe Fluent Icons" are introduced for monoline icons. Controls in WinUI 2.6 and greater use the new icons and typography automatically.
+- File type icons are updated. If your app is using icons in `imageres.dll` or `shell32.dll`, then icons will be updated automatically. Otherwise, a manual style update might be needed.
+- App icons - Follow the latest guidance for [Icons in Windows apps](../develop/ui/controls/icons.md) used in places like launchers on Start and TaskBar.
+- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](../develop/ui/controls/animated-icon.md) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI 2.6 or greater.
+- Custom experiences written in XAML that specify `Segoe UI` in code, should instead specify `Segoe UI Variable`.
+
+> [!NOTE]
+> When an app that uses the new font runs in Windows 10 or down-level, it will fallback to use the old font and degrade gracefully.
 
 ### Window behavior and style
 
 Applications run in a frame that Windows provides. Users expect the built-in Windows look and behaviors to be consistent across app windows. To ensure that your app looks and functions as users expect on Windows 11, consider supporting the features listed here.
-
-#### Snap Layout
-  
-Window snapping is greatly enhanced in Windows 11, and the Snap Layout menu is a new feature that helps users discover and use the power of window snapping. Use the Snap Layout menu to test your app in different Snap Layouts and ensure your app supports different snap sizes, like 1/2, 1/3, and 1/4 screen.
-  
-If the Snap Layout menu doesn't appear for your app by default, see [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/ui/apply-snap-layout-menu.md) for some steps you can take to enable it.
 
 #### Title bar and caption buttons
 
@@ -112,7 +166,28 @@ Users interact with the title bar and caption buttons (minimize, maximize, close
 
 You can use the Windows App SDK APIs to [integrate app content with the title bar](../develop/title-bar.md) in WinUI 3, .NET, WinForms, and WPF apps.
 
+#### Snap Layout
+  
+Window snapping is greatly enhanced in Windows 11, and the Snap Layout menu is a new feature that helps users discover and use the power of window snapping. Use the Snap Layout menu to test your app in different Snap Layouts and ensure your app supports different snap sizes, like 1/2, 1/3, and 1/4 screen.
+
+Snap layouts are easily accessible by hovering the mouse over a window's maximize button or pressing Win + Z. After invoking the menu that shows the available layouts, users can click on a zone in a layout to snap a window to that particular zone and then use Snap Assist to finish building an entire layout of windows. Snap layouts are tailored to the current screen size and orientation, including support for three side-by-side windows on large landscape screens and top/bottom stacked windows on portrait screens.
+
+Most apps will automatically support the menu with snap layouts, but in some cases you might need to do a little work to get them:
+
+- Allow the system to draw your border and shadow.
+- If you need to draw your own border and shadow:
+  - Use our APIs to have the platform draw and implement the caption buttons. See [Support snap layouts for desktop apps on Windows 11](../desktop/modernize/ui/apply-snap-layout-menu.md).
+
+You will get these features automatically if you use Windows App SDK windowing to:
+
+  - Configure the style of your window using the pre-defined templates.
+  - Customize the title bar of your windows.
+
 #### Rounded corners
+
+We rounded the corners of window borders in Windows 11. Our user research team found that rounded geometry psychologically provides a feeling of safety and makes the app's UI much easier to scan. This makes users feel less intimidated and the app feel more engaging. The amount of rounding was also carefully chosen. We worked across the company and user research to balance between feeling professional and being softer and more inviting.
+
+![An image of an app window with rounded corners.](images/great-apps/rounded-corners.png)
 
 In most cases, your app's window has rounded corners by default on Windows 11. If you customize your app window and don't have rounded corners, see [Apply rounded corners in desktop apps for Windows 11](../desktop/modernize/ui/apply-rounded-corners.md) for some things you can do. You should also avoid customizing window borders and shadows, which can prevent the system from rounding the window corners.
 
@@ -161,6 +236,13 @@ For more information, see the [Performance and fundamentals overview](../perform
 ## Operating system and hardware optimization
 
 You can build, package, and deliver Windows apps in many ways. The best practices in this section help you optimize these aspects of your application across hardware configurations.
+
+People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics and neural processing chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
+
+- Support a variety of inputs and interactions - [Input and interactions overview](../develop/input/index.md)
+- Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
+- Use AI models that run locally and power Microsoft Foundry on Windows features on Copilot+ PCs - [What is Windows ML?](/windows/ai/apis/).
+- Use a variety of AI-powered features supported by Windows AI APIs in the Windows App SDK and machine learning (ML) models that run locally on Copilot+ PCs - [What are Windows AI APIs?](/windows/ai/apis/).
 
 ### MSIX app attach and Azure Virtual Desktop
 
@@ -225,7 +307,12 @@ Reliable installation, update, and uninstallation experiences are important part
 
 ## Accessibility
 
-Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible. This inclusivity extends to people with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on).
+Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible. Inclusive design creates better products for everyone. To make sure your app is accessible and inclusive, consider what improved functionality and usability means in relation to:
+
+- People with disabilities (both temporary and permanent).
+- Personal preferences.
+- Specific work styles.
+- Situational constraints (such as shared work spaces, driving, cooking, glare, and so on).
 
 In fact, the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, but rather as a mismatched interaction between a person and the physical and digital world around them.
 
@@ -243,7 +330,11 @@ In fact, the [World Health Organization](https://www.who.int/news-room/fact-shee
 
 Incorporating accessibility into your Windows apps maximizes user engagement, increases product satisfaction, and encourages product loyalty. Proactively designing and implementing accessible experiences typically reduces development and maintenance costs over the long term.
 
-For detailed guidance on building accessible Windows apps, see [Accessibility in Windows 11 and Windows 10](../develop/accessibility.md).
+Some common solutions include providing information in alternative formats (such as captions on a video) or enabling the use of assistive technologies (such as screen readers).
+
+Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibility can reduce the cost of maintaining your app.
+
+For detailed guidance on building accessible Windows apps, see [Accessibility in Windows](../develop/accessibility.md).
 
 ### Accessibility testing
 
@@ -257,6 +348,14 @@ For detailed guidance on building accessible Windows apps, see [Accessibility in
 ## Security and privacy
 
 An insecure application can be an entry point that allows an attacker to perform malicious activities. Even if your app doesn't have security bugs, bad actors can use your app to initiate their attacks through phishing and other forms of social engineering that violate security and privacy boundaries. The best practices in this section help you mitigate risks related to security and user privacy.
+
+### Enhanced security features in Windows
+
+Windows is built on a foundation of security and privacy, and Windows 11 is designed to be the most secure version of Windows yet, and we're committed to helping you build secure apps that take advantage of the latest security features in Windows.
+
+- Protect your Windows apps and backend services with Windows Hello biometric sign-in - [Windows Hello overview](/windows/apps/develop/security/windows-hello).
+- Implement passkey sign-ins across online, enterprise, and government applications, and for payments - [Intro to passkeys](/windows/apps/develop/security/intro).
+- Sign your apps with a digital certificate to ensure that [Smart App Control](https://support.microsoft.com/windows/app-browser-control-in-the-windows-security-app-8f68fb65-ebb4-3cfb-4bd7-ef0f376f3dc3#bkmk_smart-app-control) can verify the integrity of your app - [Introduction to code signing](/windows/win32/seccrypto/cryptography-tools#introduction-to-code-signing) and [Microsoft Trusted Root Program requirements](/security/trusted-root/program-requirements).
 
 ### Security guidelines
 
@@ -283,8 +382,23 @@ Most modern apps collect and use a large amount of data – including personal d
 
 ### Privacy guidelines
 
-- Ensure that your app provides an accurate Privacy Policy. Ideally, provide both a summary document written for a casual audience (your users) and a long-form legal policy (written for your lawyers).
-- Familiarize yourself with privacy regulations in the markets where your app is available. Ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, and other privacy concerns.
+#### Privacy Policy
+
+An easily discoverable and understandable privacy notice increases user trust and confidence in your application. Ensure that your app provides an accurate Privacy Policy. Ideally, provide both a summary document written for a casual audience (your users) and a long-form legal policy (written for your lawyers).
+
+Your privacy policy must:
+
+- Inform users of the personal information accessed, collected, or transmitted by your product.
+  - How that information is used, stored, and secured.
+  - Indicate the types of parties to whom that information is disclosed.
+- Describe the controls that users have over the use and sharing of their information and how they may access their information.
+- Comply with applicable laws and regulations. Familiarize yourself with privacy regulations in the markets where your app is available. Ensure your app meets or exceeds any requirements for disclosure, usage rights, deletion requests, and other privacy concerns.
+- Be kept up-to-date as you add new features and functionality to your product.
+
+[Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement)
+
+#### Data collection
+
 - Collect the least amount of personal data needed to complete your app's experiences.
   - Don't collect data "just in case." Have a valid reason for collecting all data, such as to improve the customer's experience or to facilitate monetization.
 - Always get the user's consent before collecting and storing personal data. Provide the user with an easy way to revert their decision in the future. Avoid "[dark patterns](https://www.reuters.com/legal/legalindustry/dark-patterns-new-frontier-privacy-regulation-2021-07-29/#:~:text=Some%20examples%20of%20dark%20pattern%20usage%20include)" such as making the "Yes" button larger or more prominent than the "No" button in a consent dialog.
@@ -298,4 +412,3 @@ Most modern apps collect and use a large amount of data – including personal d
 
 - [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
 - [Windows Developer FAQ](./windows-developer-faq.md)
-- [Things you can do to make your app great on Windows 11](./make-apps-great-for-windows.md)
