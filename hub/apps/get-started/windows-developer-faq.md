@@ -480,7 +480,7 @@ Topics covered include:
 
 <details><summary>What can I do to make my Windows app feel great to end-users?</summary>
 
-> See [Make apps great for Windows](./make-apps-great-for-windows.md).
+> See [Windows application development - Best practices](./best-practices.md) and [Windows app performance and fundamentals overview](../performance/index.md).
 
 </details>
 

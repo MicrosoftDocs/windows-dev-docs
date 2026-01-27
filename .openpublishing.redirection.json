@@ -10584,6 +10584,11 @@
       "source_path": "hub/apps/windows-app-sdk/stable-channel.md",
       "redirect_url": "/windows/apps/windows-app-sdk/release-channels",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/make-apps-great-for-windows.md",
+      "redirect_url": "/windows/apps/get-started/best-practices",
+      "redirect_document_id": false
     }
   ]
 }

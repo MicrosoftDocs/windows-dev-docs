@@ -46,8 +46,8 @@ landingContent:
         links:
           - text: Develop apps
             url: ../develop/index.md
-          - text: Make your apps great on Windows 11
-            url: ../get-started/make-apps-great-for-windows.md
+          - text: Best practices for Windows apps
+            url: ../get-started/best-practices.md
           - text: Windows developer FAQ
             url: ../get-started/windows-developer-faq.md
           - text: Other development tools
