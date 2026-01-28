@@ -1,6 +1,6 @@
 ---
 ms.topic: include
-ms.date: 07/12/2024
+ms.date: 01/27/2026
 ---
 
 :::row:::
@@ -32,5 +32,8 @@ ms.date: 07/12/2024
        Follow step-by-step guides to learn by building.
     :::column-end:::
     :::column:::
+        [![Tools icon](../apps/develop/images/tile-tools.png)](/windows/dev-environment/)<br>
+        **[Development environment](/windows/dev-environment/)**<br>
+       Set up your development environment with the right tools.
     :::column-end:::
 :::row-end:::
