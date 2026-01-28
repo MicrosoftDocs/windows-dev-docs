@@ -2,7 +2,7 @@
 description: Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.
 title: Modernize your desktop apps for Windows
 ms.topic: article
-ms.date: 09/21/2021
+ms.date: 01/28/2026
 ms.localizationpriority: medium
 ---
 
@@ -59,11 +59,11 @@ For more information, see [Use MSIX framework packages dynamically from your des
 
 .NET (previously known as .NET Core) supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). .NET also supports [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.
 
-For more information, see [What's new in .NET 6](/dotnet/core/whats-new/dotnet-6).
+For more information, see [What's new in .NET 10](/dotnet/core/whats-new/dotnet-10/overview).
 
 ## Host WinRT XAML controls (XAML Islands)
 
-Starting with the Windows 10, version 1903, you can add [UWP XAML controls](/windows/uwp/design/controls-and-patterns/controls-by-function) directly to any UI element in a WPF, Windows Forms, or C++ desktop app that is associated with a window handle (HWND). This means that you can fully integrate the latest UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called *XAML islands*.
+Starting with Windows 10, version 1903, you can add [UWP XAML controls](/windows/uwp/design/controls-and-patterns/controls-by-function) directly to any UI element in a WPF, Windows Forms, or C++ desktop app that is associated with a window handle (HWND). This means that you can fully integrate the latest UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called *XAML islands*.
 
 For more information, see [WinRT XAML controls in desktop apps](xaml-islands/xaml-islands.md)
 
