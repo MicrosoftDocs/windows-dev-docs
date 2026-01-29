@@ -271,6 +271,5 @@ When this code is run, the app title bar should be dark:
 
 ## See also
 
-- [Make your app great on Windows 11](../../../get-started/make-apps-great-for-windows.md)
 - [Accessible text requirements](../../../design/accessibility/accessible-text-requirements.md)
 - [Desktop Windows Manager (DWM)](/windows/win32/dwm/dwm-overview)
