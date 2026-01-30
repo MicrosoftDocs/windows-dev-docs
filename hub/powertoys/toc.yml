@@ -835,12 +835,14 @@ items:
         href: ../powertoys/workspaces.md
       - name: ZoomIt
         href: ../powertoys/zoomit.md
-  - name: General settings
-    href: ../powertoys/general.md
-  - name: Group Policy
-    href: ../powertoys/grouppolicy.md
-  - name: Run as admin
-    href: ../powertoys/administrator.md
+  - name: Settings
+    items:
+    - name: General settings
+      href: ../powertoys/general.md
+    - name: Group Policy
+      href: ../powertoys/grouppolicy.md
+    - name: Running as administrator
+      href: ../powertoys/administrator.md
   - name: DSC configuration
     items:
       - name: Overview

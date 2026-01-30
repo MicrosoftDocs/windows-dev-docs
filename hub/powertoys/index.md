@@ -9,7 +9,7 @@ adobe-target: true
 # Customer intent: As a Windows power user, I want to learn about PowerToys, a set of utilities, shell enhancements, and productivity tools for Windows.
 ---
 
-# Microsoft PowerToys: Utilities to customize Windows
+# PowerToys: Utilities to customize Windows
 
 :::image type="content" border="false" source="../images/pt-header.png" alt-text="Hero image of PowerToys with app icons of all its utilities":::
 
@@ -18,7 +18,19 @@ Microsoft PowerToys is a set of utilities to tune and streamline your Windows ex
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
 
-PowerToys is an open-source project, to learn more check out the [repository on GitHub](https://aka.ms/powertoys)
+PowerToys is an open-source project. Learn more about the codebase, report issues, or contribute on GitHub.
+
+<div class="buttons margin-top-xs">
+    <a href="https://github.com/microsoft/PowerToys"
+       class="button button-sm">
+        <span class="icon docon docon-brand-github" role="img"></span>
+        <span>View on GitHub</span>
+    </a>
+    <a href="https://learn.microsoft.com/windows/powertoys/"
+       class="button button-sm">
+        <span>Learn more</span>
+    </a>
+</div>
 
 ## Utilities
 
@@ -372,25 +384,3 @@ PowerToys [release notes](https://github.com/microsoft/PowerToys/releases/) are 
 ## PowerToys history
 
 Inspired by the [Windows 95 era PowerToys project](https://wikipedia.org/wiki/Microsoft_PowerToys), this reboot provides power users with ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. An overview of the original PowerToys can be found here: [Using Windows 95 PowerToys](https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/).
-
-## PowerToys roadmap
-
-PowerToys is a rapid-incubation, open source team aimed at providing power users ways to squeeze more efficiency out of the Windows shell and customize it for individual workflows. Work priorities will consistently be examined, reassessed, and adjusted with the aim of improving our users productivity.
-
-- [New specs for possible PowerToys](https://github.com/microsoft/PowerToys/wiki/Specs)
-- [Backlog priority list](https://github.com/microsoft/PowerToys/wiki/Roadmap#backlog-priority-list-in-order)
-
-## Deprecated PowerToy utilities
-
-These utilities have been deprecated and removed from PowerToys:
-
-### Video Conference Mute (Deprecated and removed starting in PowerToys 0.88)
-
-:::row:::
-    :::column:::
-        [![Video Conference Mute screenshot](../images/pt-video-conference-mute.png)](/previous-versions/windows/powertoys/video-conference-mute)
-    :::column-end:::
-    :::column span="2":::
-        [Video Conference Mute](/previous-versions/windows/powertoys/video-conference-mute) is a quick way to globally "mute" both your microphone and camera using <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>Q</kbd> while on a conference call, regardless of the application that currently has focus.
-    :::column-end:::
-:::row-end:::
