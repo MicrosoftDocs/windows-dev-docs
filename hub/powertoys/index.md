@@ -36,180 +36,163 @@ PowerToys is an open-source project. Visit GitHub to explore the codebase, repor
 
 The currently available utilities include:
 
-### Advanced Paste
-
 :::row:::
     :::column:::
-        [![A screenshot of the Advanced Paste PowerToys utility for Windows.](../images/pt-advanced-paste.png)](advanced-paste.md)
+        ![A screenshot of the Advanced Paste PowerToys utility for Windows.](../images/pt-advanced-paste.png)
     :::column-end:::
     :::column span="2":::
-        [Advanced Paste](advanced-paste.md) is a tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI-powered option that is 100% opt-in and requires an OpenAI key.
+        **[Advanced Paste](advanced-paste.md)**<br><br>
+        A tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI-powered option that is 100% opt-in and requires an OpenAI key.
     :::column-end:::
 :::row-end:::
 
-### Always On Top
-
 :::row:::
     :::column:::
-        [![A screenshot of the Always On Top PowerToys utility for Windows.](../images/pt-always-on-top-menu.png)](always-on-top.md)
+        ![A screenshot of the Always On Top PowerToys utility for Windows.](../images/pt-always-on-top-menu.png)
     :::column-end:::
     :::column span="2":::
-        [Always On Top](always-on-top.md) enables you to pin windows above other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+        **[Always On Top](always-on-top.md)**<br><br>
+        Enables you to pin windows above other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
     :::column-end:::
 :::row-end:::
 
-### PowerToys Awake
-
 :::row:::
     :::column:::
-        [![A screenshot of the PowerToys Awake utility for Windows.](../images/powertoys-awake/pt-awake-menu.png)](awake.md)
+        ![A screenshot of the PowerToys Awake utility for Windows.](../images/powertoys-awake/pt-awake-menu.png)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Awake](awake.md) is designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer doesn't go to sleep or turn off its displays.
+        **[PowerToys Awake](awake.md)**<br><br>
+        Designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer doesn't go to sleep or turn off its displays.
     :::column-end:::
 :::row-end:::
 
-### Color Picker
-
 :::row:::
     :::column:::
-        [![A screenshot of the Color Picker PowerToys utility for Windows.](../images/pt-color-picker.png)](color-picker.md)
+        ![A screenshot of the Color Picker PowerToys utility for Windows.](../images/pt-color-picker.png)
     :::column-end:::
     :::column span="2":::
-        [Color Picker](color-picker.md) is a system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. It allows you to pick colors from anywhere on the screen, and the picker automatically copies the color to your clipboard in a specified format.
-        Color Picker contains an editor that shows a history of previously picked colors and allows you to fine-tune the selected color and to copy different string representations. The code for this utility is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
-            :::column-end:::
-:::row-end:::
-
-### Command Not Found
-
-:::row:::
-    :::column:::
-        [![A screenshot of the Command Not Found PowerToys utility for Windows.](../images/pt-cmd-not-found.png)](cmd-not-found.md)
-    :::column-end:::
-    :::column span="2":::
-        [Command Not Found](cmd-not-found.md) is a PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if one is available.
-            :::column-end:::
-:::row-end:::
-
-### Command Palette
-
-:::row:::
-    :::column:::
-        [![A screenshot of the Command Palette PowerToys utility for Windows.](../images/pt-cmdpal.png)](command-palette/overview.md)
-    :::column-end:::
-    :::column span="2":::
-        [Command Palette](command-palette/overview.md) allows you to easily access all of your most frequently used commands, apps, and development tools - all from a single solution that is fast, customizable to your unique preferences, and extensible to include your favorite apps. The Command Palette is intended to be the successor of [PowerToys Run](run.md).
-            :::column-end:::
-:::row-end:::
-
-### Crop And Lock
-
-:::row:::
-    :::column:::
-        [![A screenshot of the Crop And Lock PowerToys utility for Windows.](../images/powertoys-crop-and-lock.png)](crop-and-lock.md)
-    :::column-end:::
-    :::column span="2":::
-        [Crop And Lock](crop-and-lock.md) is a utility that creates a new, fully-interactive window that's a crop or a thumbnail of another window.
+        **[Color Picker](color-picker.md)**<br><br>
+        A system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. It allows you to pick colors from anywhere on the screen, and the picker automatically copies the color to your clipboard in a specified format. Color Picker contains an editor that shows a history of previously picked colors and allows you to fine-tune the selected color and to copy different string representations. The code for this utility is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
     :::column-end:::
 :::row-end:::
 
-### Environment Variables
-
 :::row:::
     :::column:::
-        [![A screenshot of the Environment Variables PowerToys utility for Windows.](../images/powertoys-environment-variables.png)](environment-variables.md)
+        ![A screenshot of the Command Not Found PowerToys utility for Windows.](../images/pt-cmd-not-found.png)
     :::column-end:::
     :::column span="2":::
-        [Environment Variables](environment-variables.md) offers an easy and convenient way to manage environment variables. You can create profiles to manage a set of variables together.
+        **[Command Not Found](cmd-not-found.md)**<br><br>
+        A PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if one is available.
     :::column-end:::
 :::row-end:::
 
-### FancyZones
-
 :::row:::
     :::column:::
-        [![A screenshot of the FancyZones PowerToys utility for Windows.](../images/pt-fancy-zones.png)](fancyzones.md)
+        ![A screenshot of the Command Palette PowerToys utility for Windows.](../images/pt-cmdpal.png)
     :::column-end:::
     :::column span="2":::
-        [FancyZones](fancyzones.md) is a window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
+        **[Command Palette](command-palette/overview.md)**<br><br>
+        Allows you to easily access all of your most frequently used commands, apps, and development tools - all from a single solution that is fast, customizable to your unique preferences, and extensible to include your favorite apps. The Command Palette is intended to be the successor of [PowerToys Run](run.md).
     :::column-end:::
 :::row-end:::
 
-### File Explorer add-ons
-
 :::row:::
     :::column:::
-        [![A screenshot of the PowerToys File Explorer add-ons for Windows.](../images/pt-file-explorer.png)](file-explorer.md)
+        ![A screenshot of the Crop And Lock PowerToys utility for Windows.](../images/powertoys-crop-and-lock.png)
     :::column-end:::
     :::column span="2":::
-        [File Explorer add-ons](file-explorer.md) enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To open the Preview pane, go to **View** in File Explorer and select **Preview Pane**.
+        **[Crop And Lock](crop-and-lock.md)**<br><br>
+        A utility that creates a new, fully-interactive window that's a crop or a thumbnail of another window.
     :::column-end:::
 :::row-end:::
 
-### File Locksmith
-
 :::row:::
     :::column:::
-        [![A screenshot of the File Locksmith PowerToys shell extension for Windows.](../images/powertoys-file-locksmith.png)](file-locksmith.md)
+        ![A screenshot of the Environment Variables PowerToys utility for Windows.](../images/powertoys-environment-variables.png)
     :::column-end:::
     :::column span="2":::
-        [File Locksmith](file-locksmith.md) is a Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer and select **Unlock with File Locksmith**.
+        **[Environment Variables](environment-variables.md)**<br><br>
+        Offers an easy and convenient way to manage environment variables. You can create profiles to manage a set of variables together.
     :::column-end:::
 :::row-end:::
 
-### Hosts File Editor
-
 :::row:::
     :::column:::
-        [![A screenshot of the Hosts File Editor PowerToys utility for Windows.](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)
+        ![A screenshot of the FancyZones PowerToys utility for Windows.](../images/pt-fancy-zones.png)
     :::column-end:::
     :::column span="2":::
-        [Hosts File Editor](hosts-file-editor.md) is a utility that provides a convenient way to edit the 'Hosts' file in Windows that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks.
+        **[FancyZones](fancyzones.md)**<br><br>
+        A window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
     :::column-end:::
 :::row-end:::
 
-### Image Resizer
-
 :::row:::
     :::column:::
-        [![A screenshot of the PowerToys Image Resizer shell extension for Windows.](../images/pt-image-resizer.png)](image-resizer.md)
+        ![A screenshot of the PowerToys File Explorer add-ons for Windows.](../images/pt-file-explorer.png)
     :::column-end:::
     :::column span="2":::
-        [Image Resizer](image-resizer.md) is a Windows Shell extension for quickly resizing images. With a right-click in File Explorer, instantly resize one or many images. The code in this extension is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
+        **[File Explorer add-ons](file-explorer.md)**<br><br>
+        Enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To open the Preview pane, go to **View** in File Explorer and select **Preview Pane**.
     :::column-end:::
 :::row-end:::
 
-### Keyboard Manager
-
 :::row:::
     :::column:::
-        [![A screenshot of the Keyboard Manager PowerToys utility for Windows.](../images/pt-keyboard-manager.png)](keyboard-manager.md)
+        ![A screenshot of the File Locksmith PowerToys shell extension for Windows.](../images/powertoys-file-locksmith.png)
     :::column-end:::
     :::column span="2":::
-        [Keyboard Manager](keyboard-manager.md) allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts.
+        **[File Locksmith](file-locksmith.md)**<br><br>
+        A Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer and select **Unlock with File Locksmith**.
     :::column-end:::
 :::row-end:::
 
-### Light Switch
-
 :::row:::
     :::column:::
-        [![A screenshot of the Light Switch PowerToys utility for Windows.](../images/pt-light-switch.png)](light-switch.md)
+        ![A screenshot of the Hosts File Editor PowerToys utility for Windows.](../images/pt-hosts-file-editor-facade.png)
     :::column-end:::
     :::column span="2":::
-        [Light Switch](light-switch.md) allows you to automatically switch between light and dark themes in Windows based on the time of day.
+        **[Hosts File Editor](hosts-file-editor.md)**<br><br>
+        A utility that provides a convenient way to edit the 'Hosts' file in Windows that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks.
     :::column-end:::
 :::row-end:::
 
-### Mouse utilities
+:::row:::
+    :::column:::
+        ![A screenshot of the PowerToys Image Resizer shell extension for Windows.](../images/pt-image-resizer.png)
+    :::column-end:::
+    :::column span="2":::
+        **[Image Resizer](image-resizer.md)**<br><br>
+        A Windows Shell extension for quickly resizing images. With a right-click in File Explorer, instantly resize one or many images. The code in this extension is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
+    :::column-end:::
+:::row-end:::
 
 :::row:::
     :::column:::
-        [![A screenshot of the PowerToys Mouse utilities for Windows.](../images/pt-mouse-utils.png)](mouse-utilities.md)
+        ![A screenshot of the Keyboard Manager PowerToys utility for Windows.](../images/pt-keyboard-manager.png)
     :::column-end:::
     :::column span="2":::
-        [Mouse utilities](mouse-utilities.md) add functionality to enhance your mouse and cursor.
+        **[Keyboard Manager](keyboard-manager.md)**<br><br>
+        Allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![A screenshot of the Light Switch PowerToys utility for Windows.](../images/pt-light-switch.png)
+    :::column-end:::
+    :::column span="2":::
+        **[Light Switch](light-switch.md)**<br><br>
+        Allows you to automatically switch between light and dark themes in Windows based on the time of day.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![A screenshot of the PowerToys Mouse utilities for Windows.](../images/pt-mouse-utils.png)
+    :::column-end:::
+    :::column span="2":::
+        **[Mouse utilities](mouse-utilities.md)**<br><br>
+        Add functionality to enhance your mouse and cursor.
         - **Find My Mouse**: Quickly locate your mouse pointer with a spotlight that focuses on its current position. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing).
         - **Mouse Highlighter**: Displays visual indicators when basic mouse buttons are clicked.
         - **Mouse Jump**: Allows a quick jump on large displays.
@@ -217,36 +200,33 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### Mouse Without Borders
-
 :::row:::
     :::column:::
-        [![A screenshot of the Mouse without Borders PowerToys utility for Windows.](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)
+        ![A screenshot of the Mouse without Borders PowerToys utility for Windows.](../images/pt-mouse-without-borders.png)
     :::column-end:::
     :::column span="2":::
-        Use [Mouse Without Borders](mouse-without-borders.md) to interact with multiple computers from the same keyboard and mouse, while seamlessly sharing clipboard contents and files between the machines.
+        **[Mouse Without Borders](mouse-without-borders.md)**<br><br>
+        Interact with multiple computers from the same keyboard and mouse, while seamlessly sharing clipboard contents and files between the machines.
     :::column-end:::
 :::row-end:::
 
-### New+
-
 :::row:::
     :::column:::
-        [![A screenshot of the New+ PowerToys utility for Windows.](../images/pt-newplus.png)](newplus.md)
+        ![A screenshot of the New+ PowerToys utility for Windows.](../images/pt-newplus.png)
     :::column-end:::
     :::column span="2":::
-        [New+](newplus.md) enables you to create files and folders from a personalized set of templates in File Explorer.
+        **[New+](newplus.md)**<br><br>
+        Enables you to create files and folders from a personalized set of templates in File Explorer.
     :::column-end:::
 :::row-end:::
 
-### Peek
-
 :::row:::
     :::column:::
-        [![A screenshot of the Peek PowerToys utility for Windows.](../images/powertoys-peek.png)](peek.md)
+        ![A screenshot of the Peek PowerToys utility for Windows.](../images/powertoys-peek.png)
     :::column-end:::
     :::column span="2":::
-        [Peek](peek.md) allows you to preview file content without the need to open multiple applications or interrupt your workflow. You can simply select a file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>).
+        **[Peek](peek.md)**<br><br>
+        Allows you to preview file content without the need to open multiple applications or interrupt your workflow. You can simply select a file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>).
     :::column-end:::
 :::row-end:::
 
