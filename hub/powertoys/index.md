@@ -18,7 +18,7 @@ Microsoft PowerToys is a set of utilities to tune and streamline your Windows ex
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
 
-PowerToys is an open-source project. Learn more about the codebase, report issues, or contribute on GitHub.
+PowerToys is an open-source project. Visit GitHub to explore the codebase, report issues, contribute, and stay up to date with what’s new in each release.
 
 <div class="buttons margin-top-xs">
     <a href="https://github.com/microsoft/PowerToys"
@@ -26,9 +26,9 @@ PowerToys is an open-source project. Learn more about the codebase, report issue
         <span class="icon docon docon-brand-github" role="img"></span>
         <span>View on GitHub</span>
     </a>
-    <a href="https://learn.microsoft.com/windows/powertoys/"
+    <a href="https://github.com/microsoft/PowerToys/releases"
        class="button button-sm">
-        <span>Learn more</span>
+        <span>What's new</span>
     </a>
 </div>
 
