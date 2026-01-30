@@ -230,102 +230,93 @@ The currently available utilities include:
     :::column-end:::
 :::row-end:::
 
-### PowerRename
-
 :::row:::
     :::column:::
-        [![A screenshot of the PowerRename PowerToys utility for Windows.](../images/pt-rename.png)](powerrename.md)
+        ![A screenshot of the PowerRename PowerToys utility for Windows.](../images/pt-rename.png)
     :::column-end:::
     :::column span="2":::
-        Use [PowerRename](powerrename.md) to perform bulk renaming; searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. The code in this utility is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
+        **[PowerRename](powerrename.md)**<br><br>
+        Perform bulk renaming; searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. The code in this utility is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
     :::column-end:::
 :::row-end:::
 
-### PowerToys Run
-
 :::row:::
     :::column:::
-        [![A screenshot of the PowerToys Run utility for Windows.](../images/pt-run.png)](run.md)
+        ![A screenshot of the PowerToys Run utility for Windows.](../images/pt-run.png)
     :::column-end:::
     :::column span="2":::
-        [PowerToys Run](run.md) can help you search and open your apps instantly. To open Run, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It's open source and modular, and it supports additional plugins.
+        **[PowerToys Run](run.md)**<br><br>
+        Search and open your apps instantly. To open Run, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It's open source and modular, and it supports additional plugins.
     :::column-end:::
 :::row-end:::
 
-### Quick Accent
-
 :::row:::
     :::column:::
-        [![A screenshot of the Quick Accent PowerToys utility for Windows.](../images/pt-keyboard-accent.png)](Quick-accent.md)
+        ![A screenshot of the Quick Accent PowerToys utility for Windows.](../images/pt-keyboard-accent.png)
     :::column-end:::
     :::column span="2":::
-        [Quick Accent](Quick-accent.md) provides an alternative way to type accented characters. It's useful when a keyboard doesn't support a specific character with a quick key combo.
+        **[Quick Accent](Quick-accent.md)**<br><br>
+        Provides an alternative way to type accented characters. It's useful when a keyboard doesn't support a specific character with a quick key combo.
     :::column-end:::
 :::row-end:::
 
-### Registry Preview
-
 :::row:::
     :::column:::
-        [![A screenshot of the Registry Preview PowerToys utility for Windows.](../images/pt-registrypreview.png)](registry-preview.md)
+        ![A screenshot of the Registry Preview PowerToys utility for Windows.](../images/pt-registrypreview.png)
     :::column-end:::
     :::column span="2":::
-        [Registry Preview](registry-preview.md) is a utility to visualize and edit Windows Registry files.
+        **[Registry Preview](registry-preview.md)**<br><br>
+        A utility to visualize and edit Windows Registry files.
     :::column-end:::
 :::row-end:::
 
-### Screen Ruler
-
 :::row:::
     :::column:::
-        [![A screenshot of the Screen Ruler PowerToys utility for Windows.](../images/pt-screen-ruler.png)](screen-ruler.md)
+        ![A screenshot of the Screen Ruler PowerToys utility for Windows.](../images/pt-screen-ruler.png)
     :::column-end:::
     :::column span="2":::
-        Use [Screen Ruler](screen-ruler.md) to quickly measure pixels on your screen based on image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This tool was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
+        **[Screen Ruler](screen-ruler.md)**<br><br>
+        Quickly measure pixels on your screen based on image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This tool was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
     :::column-end:::
 :::row-end:::
 
-### Shortcut Guide
-
 :::row:::
     :::column:::
-        [![A screenshot of the Shortcut Guide PowerToys utility for Windows.](../images/pt-shortcut-guide.png)](shortcut-guide.md)
+        ![A screenshot of the Shortcut Guide PowerToys utility for Windows.](../images/pt-shortcut-guide.png)
     :::column-end:::
     :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use it by pressing and holding <kbd>⊞ Win</kbd>.
+        **[Shortcut Guide](shortcut-guide.md)**<br><br>
+        Appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use it by pressing and holding <kbd>⊞ Win</kbd>.
     :::column-end:::
 :::row-end:::
 
-### Text Extractor
-
 :::row:::
     :::column:::
-        [![A screenshot of the Text Extractor PowerToys utility for Windows.](../images/pt-image-to-text.png)](text-extractor.md)
+        ![A screenshot of the Text Extractor PowerToys utility for Windows.](../images/pt-image-to-text.png)
     :::column-end:::
     :::column span="2":::
-        [Text Extractor](text-extractor.md) is a convenient way to copy text from anywhere on your screen. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
+        **[Text Extractor](text-extractor.md)**<br><br>
+        A convenient way to copy text from anywhere on your screen. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
     :::column-end:::
 :::row-end:::
 
-### Workspaces
-
 :::row:::
     :::column:::
-        [![A screenshot of the Workspaces PowerToys utility for Windows.](../images/powertoys-workspaces/workspaces_editor.png)](workspaces.md)
+        ![A screenshot of the Workspaces PowerToys utility for Windows.](../images/powertoys-workspaces/workspaces_editor.png)
     :::column-end:::
     :::column span="2":::
-        [Workspaces](workspaces.md) is a desktop manager utility for launching a set of applications to custom positions and configurations with a single click. Open the editor by selecting "Launch editor" from settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
+        **[Workspaces](workspaces.md)**<br><br>
+        A desktop manager utility for launching a set of applications to custom positions and configurations with a single click. Open the editor by selecting "Launch editor" from settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
     :::column-end:::
 :::row-end:::
 
-### ZoomIt
-
 :::row:::
     :::column:::
-        [![A screenshot of the ZoomIt by Sysinternals utility for Windows, now available with PowerToys.](../images/powertoys-zoomit.png)](zoomit.md)
+        ![A screenshot of the ZoomIt by Sysinternals utility for Windows, now available with PowerToys.](../images/powertoys-zoomit.png)
     :::column-end:::
     :::column span="2":::
-        [ZoomIt](zoomit.md) is a screen zoom, annotation, and recording tool for technical presentations and demos. It's one of the most popular [Sysinternals](/sysinternals/) utilities, and it's now available in PowerToys.
+        **[ZoomIt](zoomit.md)**<br><br>
+        A screen zoom, annotation, and recording tool for technical presentations and demos. It's one of the most popular [Sysinternals](/sysinternals/) utilities, and it's now available in PowerToys.
     :::column-end:::
 :::row-end:::
 
