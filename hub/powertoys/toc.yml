@@ -36,9 +36,9 @@ items:
         items:
           - name: Overview
             href: ../powertoys/command-palette/overview.md
-          - name: Developer docs
+          - name: Extension development guide
             items:
-              - name: Extensibility overview
+              - name: Overview
                 href: ../powertoys/command-palette/extensibility-overview.md
               - name: Authoring extensions
                 items:

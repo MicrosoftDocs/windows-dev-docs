@@ -41,7 +41,7 @@ Read more about the administrator mode in the [PowerToys running with administra
 
 ### Application language
 
-PowerToys will use the language of your Windows installation. If you want to change the language, you can select a different one from the dropdown menu. The change will take effect after you restart PowerToys.
+PowerToys will use the language of your Windows installation. If you want to change the language, you can select a different one from the dropdown menu. The change will take effect after you restart PowerToys. Supported languages: Arabic (Saudi Arabia), Chinese (simplified), Chinese (traditional), Czech, Dutch, English, French, German, Hebrew, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese, Portuguese (Brazil), Russian, Spanish, Swedish Turkish, Ukrainian.
 
 ### App theme
 
