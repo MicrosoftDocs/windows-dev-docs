@@ -3,7 +3,24 @@ items:
     href: ../powertoys/index.md
   - name: Installation
     href: ../powertoys/install.md
+  - name: Settings and configuration
+    items:
+    - name: General settings
+      href: ../powertoys/general.md
+    - name: Group Policy
+      href: ../powertoys/grouppolicy.md
+    - name: Running as administrator
+      href: ../powertoys/administrator.md
+    - name: DSC configuration
+      items:
+        - name: Overview
+          href: ../powertoys/dsc-configure/overview.md
+        - name: Configure with PowerShell DSC
+          href: ../powertoys/dsc-configure/psdsc.md
+        - name: Configure with Microsoft DSC
+          href: ../powertoys/dsc-configure/microsoft-dsc.md
   - name: Utilities
+    isExpanded: true
     items:
       - name: Advanced Paste
         href: ../powertoys/advanced-paste.md
@@ -835,23 +852,7 @@ items:
         href: ../powertoys/workspaces.md
       - name: ZoomIt
         href: ../powertoys/zoomit.md
-  - name: Settings
-    items:
-    - name: General settings
-      href: ../powertoys/general.md
-    - name: Group Policy
-      href: ../powertoys/grouppolicy.md
-    - name: Running as administrator
-      href: ../powertoys/administrator.md
-  - name: DSC configuration
-    items:
-      - name: Overview
-        href: ../powertoys/dsc-configure/overview.md
-      - name: Configure with PowerShell DSC
-        href: ../powertoys/dsc-configure/psdsc.md
-      - name: Configure with Microsoft DSC
-        href: ../powertoys/dsc-configure/microsoft-dsc.md
-  - name: PowerToys on GitHub
+  - name: GitHub repository
     href: https://github.com/microsoft/PowerToys
   - name: What's new
-    href: https://github.com/microsoft/PowerToys?tab=readme-ov-file#-whats-new
+    href: https://github.com/microsoft/PowerToys/releases
