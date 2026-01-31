@@ -1,7 +1,7 @@
 ---
 title: Mouse Utilities in PowerToys for Windows
 description: Mouse utilities in PowerToys enhance cursor functionality with Find my mouse, Mouse Highlighter, Mouse jump, and Crosshairs features for Windows users.
-ms.date: 08/20/2025
+ms.date: 01/31/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
@@ -17,6 +17,29 @@ Mouse utilities in PowerToys is a collection of features that enhance mouse and 
 
 ## CursorWrap
 CursorWrap helps you move your mouse faster by allowing the cursor to seamlessly wrap around the edges of the screen. When enabled, moving past the top, bottom, left, or right edge instantly brings the cursor back on the opposite side, reducing long mouse travel and making navigation smoother on both single- and multi-monitor setups.
+
+## CursorBrake
+CursorBrake adds configurable friction when moving your cursor between monitors. This helps prevent accidental monitor transitions during precise cursor movements near screen edges, while still allowing intentional crossings.
+
+### Friction modes
+
+CursorBrake offers three friction modes to suit different preferences:
+
+| Mode | Description |
+| :--- | :--- |
+| Dwell Time | Push against the monitor edge for a configurable duration before the cursor crosses to the next monitor. Creates a "sticky" feeling at boundaries. |
+| Virtual Distance | The cursor must travel extra distance at the edge before crossing. Feels like pushing through gentle resistance. |
+| Velocity Threshold | Only allows crossing if the cursor is moving fast enough. Prevents slow accidental crossings while allowing quick intentional movements. |
+
+### Settings
+
+| Setting | Description |
+| :--- | :--- |
+| Enable CursorBrake | Enables or disables the CursorBrake utility. |
+| Friction mode | Select from **Dwell Time**, **Virtual Distance**, or **Velocity Threshold**. Default is **Dwell Time**. |
+| Friction strength | Adjust the intensity of the friction effect. Higher values require more effort to cross monitor boundaries. |
+| Bypass key | Hold a modifier key (**Ctrl**, **Alt**, **Shift**, or **Win**) to temporarily disable friction and cross monitors freely. |
+| Per-edge configuration | Configure friction settings for individual monitor edges using the visual monitor layout editor. |
 
 ## Find My Mouse
 
