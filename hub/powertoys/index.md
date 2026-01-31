@@ -38,337 +38,171 @@ The currently available utilities include:
 
 :::row:::
     :::column:::
-        ![A screenshot of the Advanced Paste PowerToys utility for Windows.](../images/pt-advanced-paste.png)
+       [![Advanced Paste icon](../images/pt-advanced-paste.png)](advanced-paste.md)<br>
+        **[Advanced Paste](advanced-paste.md)**<br>
+        Paste text from your clipboard into any format needed. Includes an optional AI-powered feature.
     :::column-end:::
     :::column:::
-        **[Advanced Paste](advanced-paste.md)**
+       [![Always On Top icon](../images/pt-always-on-top-menu.png)](always-on-top.md)<br>
+        **[Always On Top](always-on-top.md)**<br>
+        Pin windows above other windows with a quick key shortcut.
     :::column-end:::
     :::column:::
-        A tool that enables you to paste the text from your clipboard into any format needed. It can be enhanced with an AI-powered option that is 100% opt-in and requires an OpenAI key.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Always On Top PowerToys utility for Windows.](../images/pt-always-on-top-menu.png)
-    :::column-end:::
-    :::column:::
-        **[Always On Top](always-on-top.md)**
-    :::column-end:::
-    :::column:::
-        Enables you to pin windows above other windows with a quick key shortcut (<kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>).
+       [![Awake icon](../images/powertoys-awake/pt-awake-menu.png)](awake.md)<br>
+        **[Awake](awake.md)**<br>
+        Keep a computer awake without managing power & sleep settings.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the PowerToys Awake utility for Windows.](../images/powertoys-awake/pt-awake-menu.png)
+       [![Color Picker icon](../images/pt-color-picker.png)](color-picker.md)<br>
+        **[Color Picker](color-picker.md)**<br>
+        A system-wide color picking utility to pick colors from anywhere on the screen.
     :::column-end:::
     :::column:::
-        **[PowerToys Awake](awake.md)**
+       [![Command Not Found icon](../images/pt-cmd-not-found.png)](cmd-not-found.md)<br>
+        **[Command Not Found](cmd-not-found.md)**<br>
+        A PowerShell 7 module that suggests WinGet packages when a command fails.
     :::column-end:::
     :::column:::
-        Designed to keep a computer awake without having to manage its power & sleep settings. This behavior can be helpful when running time-consuming tasks, ensuring that the computer doesn't go to sleep or turn off its displays.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Color Picker PowerToys utility for Windows.](../images/pt-color-picker.png)
-    :::column-end:::
-    :::column:::
-        **[Color Picker](color-picker.md)**
-    :::column-end:::
-    :::column:::
-        A system-wide color picking utility activated with <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>. It allows you to pick colors from anywhere on the screen, and the picker automatically copies the color to your clipboard in a specified format. Color Picker contains an editor that shows a history of previously picked colors and allows you to fine-tune the selected color and to copy different string representations. The code for this utility is based on [Martin Chrzan's Color Picker](https://github.com/martinchrzan/ColorPicker).
+       [![Command Palette icon](../images/pt-cmdpal.png)](command-palette/overview.md)<br>
+        **[Command Palette](command-palette/overview.md)**<br>
+        Access frequently used commands, apps, and tools from a single, fast, customizable interface.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the Command Not Found PowerToys utility for Windows.](../images/pt-cmd-not-found.png)
+       [![Crop And Lock icon](../images/powertoys-crop-and-lock.png)](crop-and-lock.md)<br>
+        **[Crop And Lock](crop-and-lock.md)**<br>
+        Create a cropped or thumbnail window of another window that stays interactive.
     :::column-end:::
     :::column:::
-        **[Command Not Found](cmd-not-found.md)**
+       [![Environment Variables icon](../images/powertoys-environment-variables.png)](environment-variables.md)<br>
+        **[Environment Variables](environment-variables.md)**<br>
+        Manage environment variables with profiles to group variables together.
     :::column-end:::
     :::column:::
-        A PowerShell 7 module that detects an error thrown by a command and suggests a relevant WinGet package to install, if one is available.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Command Palette PowerToys utility for Windows.](../images/pt-cmdpal.png)
-    :::column-end:::
-    :::column:::
-        **[Command Palette](command-palette/overview.md)**
-    :::column-end:::
-    :::column:::
-        Allows you to easily access all of your most frequently used commands, apps, and development tools - all from a single solution that is fast, customizable to your unique preferences, and extensible to include your favorite apps. The Command Palette is intended to be the successor of [PowerToys Run](run.md).
+       [![FancyZones icon](../images/pt-fancy-zones.png)](fancyzones.md)<br>
+        **[FancyZones](fancyzones.md)**<br>
+        A window manager for creating complex window layouts and positioning windows quickly.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the Crop And Lock PowerToys utility for Windows.](../images/powertoys-crop-and-lock.png)
+       [![File Explorer add-ons icon](../images/pt-file-explorer.png)](file-explorer.md)<br>
+        **[File Explorer add-ons](file-explorer.md)**<br>
+        Enable Preview pane and thumbnail rendering for various file types in File Explorer.
     :::column-end:::
     :::column:::
-        **[Crop And Lock](crop-and-lock.md)**
+       [![File Locksmith icon](../images/powertoys-file-locksmith.png)](file-locksmith.md)<br>
+        **[File Locksmith](file-locksmith.md)**<br>
+        Check which files are in use and by which processes from the File Explorer context menu.
     :::column-end:::
     :::column:::
-        A utility that creates a new, fully-interactive window that's a crop or a thumbnail of another window.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Environment Variables PowerToys utility for Windows.](../images/powertoys-environment-variables.png)
-    :::column-end:::
-    :::column:::
-        **[Environment Variables](environment-variables.md)**
-    :::column-end:::
-    :::column:::
-        Offers an easy and convenient way to manage environment variables. You can create profiles to manage a set of variables together.
+       [![Hosts File Editor icon](../images/pt-hosts-file-editor-facade.png)](hosts-file-editor.md)<br>
+        **[Hosts File Editor](hosts-file-editor.md)**<br>
+        Edit the Windows Hosts file containing domain names and IP addresses.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the FancyZones PowerToys utility for Windows.](../images/pt-fancy-zones.png)
+       [![Image Resizer icon](../images/pt-image-resizer.png)](image-resizer.md)<br>
+        **[Image Resizer](image-resizer.md)**<br>
+        Quickly resize images with a right-click in File Explorer.
     :::column-end:::
     :::column:::
-        **[FancyZones](fancyzones.md)**
+       [![Keyboard Manager icon](../images/pt-keyboard-manager.png)](keyboard-manager.md)<br>
+        **[Keyboard Manager](keyboard-manager.md)**<br>
+        Customize the keyboard by remapping keys and creating custom shortcuts.
     :::column-end:::
     :::column:::
-        A window manager that makes it easy to create complex window layouts and quickly position windows into those layouts.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the PowerToys File Explorer add-ons for Windows.](../images/pt-file-explorer.png)
-    :::column-end:::
-    :::column:::
-        **[File Explorer add-ons](file-explorer.md)**
-    :::column-end:::
-    :::column:::
-        Enable Preview pane and thumbnail rendering in File Explorer to display a variety of file types. To open the Preview pane, go to **View** in File Explorer and select **Preview Pane**.
+       [![Light Switch icon](../images/pt-light-switch.png)](light-switch.md)<br>
+        **[Light Switch](light-switch.md)**<br>
+        Automatically switch between light and dark themes based on time of day.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the File Locksmith PowerToys shell extension for Windows.](../images/powertoys-file-locksmith.png)
+       [![Mouse utilities icon](../images/pt-mouse-utils.png)](mouse-utilities.md)<br>
+        **[Mouse utilities](mouse-utilities.md)**<br>
+        Add functionality to enhance your mouse and cursor with Find My Mouse, Highlighter, Jump, and Crosshairs.
     :::column-end:::
     :::column:::
-        **[File Locksmith](file-locksmith.md)**
+       [![Mouse Without Borders icon](../images/pt-mouse-without-borders.png)](mouse-without-borders.md)<br>
+        **[Mouse Without Borders](mouse-without-borders.md)**<br>
+        Control multiple computers with a single keyboard and mouse.
     :::column-end:::
     :::column:::
-        A Windows shell extension to check which files are in use and by which processes. Right-click on one or more selected files in File Explorer and select **Unlock with File Locksmith**.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Hosts File Editor PowerToys utility for Windows.](../images/pt-hosts-file-editor-facade.png)
-    :::column-end:::
-    :::column:::
-        **[Hosts File Editor](hosts-file-editor.md)**
-    :::column-end:::
-    :::column:::
-        A utility that provides a convenient way to edit the 'Hosts' file in Windows that contains domain names and matching IP addresses, acting as a map to identify and locate hosts on IP networks.
+       [![New+ icon](../images/pt-newplus.png)](newplus.md)<br>
+        **[New+](newplus.md)**<br>
+        Create files and folders from a personalized set of templates in File Explorer.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the PowerToys Image Resizer shell extension for Windows.](../images/pt-image-resizer.png)
+       [![Peek icon](../images/powertoys-peek.png)](peek.md)<br>
+        **[Peek](peek.md)**<br>
+        Preview file content without opening applications or interrupting your workflow.
     :::column-end:::
     :::column:::
-        **[Image Resizer](image-resizer.md)**
+       [![PowerRename icon](../images/pt-rename.png)](powerrename.md)<br>
+        **[PowerRename](powerrename.md)**<br>
+        Perform bulk renaming with search/replace, regex, and undo support.
     :::column-end:::
     :::column:::
-        A Windows Shell extension for quickly resizing images. With a right-click in File Explorer, instantly resize one or many images. The code in this extension is based on [Brice Lambson's Image Resizer](https://github.com/bricelam/ImageResizer).
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Keyboard Manager PowerToys utility for Windows.](../images/pt-keyboard-manager.png)
-    :::column-end:::
-    :::column:::
-        **[Keyboard Manager](keyboard-manager.md)**
-    :::column-end:::
-    :::column:::
-        Allows you to customize the keyboard to be more productive by remapping keys and creating your own keyboard shortcuts.
+       [![PowerToys Run icon](../images/pt-run.png)](run.md)<br>
+        **[PowerToys Run](run.md)**<br>
+        Search and open apps instantly with a quick launcher that supports plugins.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the Light Switch PowerToys utility for Windows.](../images/pt-light-switch.png)
+       [![Quick Accent icon](../images/pt-keyboard-accent.png)](Quick-accent.md)<br>
+        **[Quick Accent](Quick-accent.md)**<br>
+        An alternative way to type accented characters when your keyboard doesn't support them.
     :::column-end:::
     :::column:::
-        **[Light Switch](light-switch.md)**
+       [![Registry Preview icon](../images/pt-registrypreview.png)](registry-preview.md)<br>
+        **[Registry Preview](registry-preview.md)**<br>
+        Visualize and edit Windows Registry files.
     :::column-end:::
     :::column:::
-        Allows you to automatically switch between light and dark themes in Windows based on the time of day.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the PowerToys Mouse utilities for Windows.](../images/pt-mouse-utils.png)
-    :::column-end:::
-    :::column:::
-        **[Mouse utilities](mouse-utilities.md)**
-    :::column-end:::
-    :::column:::
-        Add functionality to enhance your mouse and cursor. **Find My Mouse**: Quickly locate your mouse pointer with a spotlight that focuses on its current position. This feature is based on source code developed by [Raymond Chen](https://github.com/oldnewthing). **Mouse Highlighter**: Displays visual indicators when basic mouse buttons are clicked. **Mouse Jump**: Allows a quick jump on large displays. **Mouse Pointer Crosshairs**: Draws crosshairs centered on the mouse pointer.
+       [![Screen Ruler icon](../images/pt-screen-ruler.png)](screen-ruler.md)<br>
+        **[Screen Ruler](screen-ruler.md)**<br>
+        Quickly measure pixels on your screen based on image edge detection.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the Mouse without Borders PowerToys utility for Windows.](../images/pt-mouse-without-borders.png)
+       [![Shortcut Guide icon](../images/pt-shortcut-guide.png)](shortcut-guide.md)<br>
+        **[Shortcut Guide](shortcut-guide.md)**<br>
+        Display available Windows key shortcuts for the current desktop state.
     :::column-end:::
     :::column:::
-        **[Mouse Without Borders](mouse-without-borders.md)**
+       [![Text Extractor icon](../images/pt-image-to-text.png)](text-extractor.md)<br>
+        **[Text Extractor](text-extractor.md)**<br>
+        Copy text from anywhere on your screen using OCR.
     :::column-end:::
     :::column:::
-        Interact with multiple computers from the same keyboard and mouse, while seamlessly sharing clipboard contents and files between the machines.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the New+ PowerToys utility for Windows.](../images/pt-newplus.png)
-    :::column-end:::
-    :::column:::
-        **[New+](newplus.md)**
-    :::column-end:::
-    :::column:::
-        Enables you to create files and folders from a personalized set of templates in File Explorer.
+       [![Workspaces icon](../images/powertoys-workspaces/workspaces_editor.png)](workspaces.md)<br>
+        **[Workspaces](workspaces.md)**<br>
+        Launch a set of applications to custom positions with a single click.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-        ![A screenshot of the Peek PowerToys utility for Windows.](../images/powertoys-peek.png)
-    :::column-end:::
-    :::column:::
-        **[Peek](peek.md)**
-    :::column-end:::
-    :::column:::
-        Allows you to preview file content without the need to open multiple applications or interrupt your workflow. You can simply select a file and use the shortcut (<kbd>Ctrl</kbd>+<kbd>Space</kbd>).
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the PowerRename PowerToys utility for Windows.](../images/pt-rename.png)
-    :::column-end:::
-    :::column:::
-        **[PowerRename](powerrename.md)**
-    :::column-end:::
-    :::column:::
-        Perform bulk renaming; searching and replacing file names. It includes advanced features, such as using regular expressions, targeting specific file types, previewing expected results, and the ability to undo changes. The code in this utility is based on [Chris Davis's SmartRename](https://github.com/chrdavis/SmartRename).
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the PowerToys Run utility for Windows.](../images/pt-run.png)
-    :::column-end:::
-    :::column:::
-        **[PowerToys Run](run.md)**
-    :::column-end:::
-    :::column:::
-        Search and open your apps instantly. To open Run, use the shortcut <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. It's open source and modular, and it supports additional plugins.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Quick Accent PowerToys utility for Windows.](../images/pt-keyboard-accent.png)
-    :::column-end:::
-    :::column:::
-        **[Quick Accent](Quick-accent.md)**
-    :::column-end:::
-    :::column:::
-        Provides an alternative way to type accented characters. It's useful when a keyboard doesn't support a specific character with a quick key combo.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Registry Preview PowerToys utility for Windows.](../images/pt-registrypreview.png)
-    :::column-end:::
-    :::column:::
-        **[Registry Preview](registry-preview.md)**
-    :::column-end:::
-    :::column:::
-        A utility to visualize and edit Windows Registry files.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Screen Ruler PowerToys utility for Windows.](../images/pt-screen-ruler.png)
-    :::column-end:::
-    :::column:::
-        **[Screen Ruler](screen-ruler.md)**
-    :::column-end:::
-    :::column:::
-        Quickly measure pixels on your screen based on image edge detection. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>M</kbd>. This tool was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Shortcut Guide PowerToys utility for Windows.](../images/pt-shortcut-guide.png)
-    :::column-end:::
-    :::column:::
-        **[Shortcut Guide](shortcut-guide.md)**
-    :::column-end:::
-    :::column:::
-        Appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use it by pressing and holding <kbd>⊞ Win</kbd>.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Text Extractor PowerToys utility for Windows.](../images/pt-image-to-text.png)
-    :::column-end:::
-    :::column:::
-        **[Text Extractor](text-extractor.md)**
-    :::column-end:::
-    :::column:::
-        A convenient way to copy text from anywhere on your screen. To activate, use the shortcut <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>T</kbd>. This code is based on [Joe Finney's Text Grab](https://github.com/TheJoeFin/Text-Grab).
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the Workspaces PowerToys utility for Windows.](../images/powertoys-workspaces/workspaces_editor.png)
-    :::column-end:::
-    :::column:::
-        **[Workspaces](workspaces.md)**
-    :::column-end:::
-    :::column:::
-        A desktop manager utility for launching a set of applications to custom positions and configurations with a single click. Open the editor by selecting "Launch editor" from settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![A screenshot of the ZoomIt by Sysinternals utility for Windows, now available with PowerToys.](../images/powertoys-zoomit.png)
-    :::column-end:::
-    :::column:::
-        **[ZoomIt](zoomit.md)**
-    :::column-end:::
-    :::column:::
-        A screen zoom, annotation, and recording tool for technical presentations and demos. It's one of the most popular [Sysinternals](/sysinternals/) utilities, and it's now available in PowerToys.
+       [![ZoomIt icon](../images/powertoys-zoomit.png)](zoomit.md)<br>
+        **[ZoomIt](zoomit.md)**<br>
+        A screen zoom, annotation, and recording tool for technical presentations.
     :::column-end:::
 :::row-end:::
 
