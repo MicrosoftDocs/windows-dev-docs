@@ -204,6 +204,10 @@ The currently available utilities include:
         **[ZoomIt](zoomit.md)**<br>
         A screen zoom, annotation, and recording tool for technical presentations.
     :::column-end:::
+    :::column:::
+    :::column-end:::
+    :::column:::
+    :::column-end:::
 :::row-end:::
 
 
