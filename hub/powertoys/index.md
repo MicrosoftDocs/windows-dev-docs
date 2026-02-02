@@ -13,7 +13,7 @@ adobe-target: true
 
 :::image type="content" border="false" source="../images/pt-header.png" alt-text="Hero image of PowerToys with app icons of all its utilities":::
 
-Microsoft PowerToys is a set of utilities to tune and streamline your Windows experience for greater productivity. These utilities and shell enhancement tools are designed to help you customize Windows to suit your needs.
+Microsoft PowerToys is a set of free, open-source utilities designed to help power users and developers get more out of Windows. It builds on familiar Windows experiences and adds thoughtful tools that boost productivity, streamline workflows, and unlock customization options that don’t exist out of the box. From managing window layouts and remapping keys to launching commands instantly and automating everyday tasks, PowerToys is all about removing friction and letting you focus on what you want to get done—faster, smarter, and with more control.
 
 > [!div class="nextstepaction"]
 > [Install PowerToys](install.md)
