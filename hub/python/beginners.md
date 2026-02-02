@@ -8,31 +8,29 @@ ms.custom: copilot-scenario-highlight
 
 # Set up your Python development environment on Windows
 
-For beginners interested in learning Python using Windows, we recommend choosing between these two setup paths:
-
-1. [Set up your Python development environment using a winget configuration file](#set-up-your-python-development-environment-using-a-winget-configuration-file)
-2. [Manually set up your Python development environment](#manually-set-up-your-python-development-environment)
+Get your Python environment ready on Windows in minutes — set it up manually or automate everything with winget.
 
 #### [WinGet Configuration](#tab/winget)
 
-[Winget Configuration files](../package-manager/configuration/index.md) include all of the instructions needed to install requirements and setup your machine for a specific project. To use Microsoft's Beginner Python project WinGet Configuration setup file, follow the steps below:
+This [WinGet configuration file](../package-manager/configuration/index.md) installs a ready-to-use Python development environment on Windows:
 
-1. Download the configuration file by opening this link and selecting "Raw file content > Download" (three dots menu on top-right):  [Winget Configuration: learn_python.winget](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/Python%203.13/learn_python.winget).
-2. To run the file, double-click the downloaded configuration file (the first time you will need to select the "Windows Package Manager Client" app to open and run the file) or you can open Powershell in Windows Terminal and enter the following command:
+- **Python 3.13** – The latest Python runtime, installed from the Microsoft Store
+- **Visual Studio Code** – A lightweight, powerful code editor
+- **Python extension for Visual Studio Code** – Adds Python language support, debugging, linting, and more
+
+To get started:
+
+1. Open PowerShell in Windows Terminal and run the following command:
 
     ```powershell
-    winget configure -f <path to learn_python.winget file>
+    winget configure -f python-config
     ```
+2. When the configuration starts, a terminal window shows the setup steps and required installs. Review them, then confirm by selecting [Y] Yes or [N] No to continue.
 
-    The file path will look something like `winget configure -f C:\Users\<your-name>\Downloads\learn_python.winget`.
+3. The required workloads are installed. Verify your setup by running `python --version`.
 
-3. Once the configuration file begins running, you will see the setup steps listed in a terminal window, including the project requirements that will be installed. You will then need to confirm that you have reviewed these configuration updates and confirm that you would like to proceed by selecting [Y] Yes or [N] No.
+You're now ready for Python development.
 
-4. Once you proceed, the project requirements will be installed and report whether the configuration has been successfully applied.
-
-**Your machine is now setup to Learn Python!**
-
-To confirm, check what version of Python is installed on your machine now by entering the command: `python --version`.
 
 #### [Manual installtion](#tab/manual)
 
