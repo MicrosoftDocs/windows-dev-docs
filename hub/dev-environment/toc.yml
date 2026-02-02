@@ -152,14 +152,8 @@ items:
               href: ./javascript/vue-beginners-tutorial.md
   - name: Get started with Python
     items:
-        - name: Overview
-          href: ../python/index.yml
-        - name: Get started for beginners
+        - name: Set up your development environment
           href: ../python/beginners.md
-        - name: Get started with web dev
-          href: ../python/web-frameworks.md
-        - name: Get started with automation
-          href: ../python/scripting.md
         - name: FAQs
           href: ../python/faqs.yml
   - name: Get started with Windows app development
