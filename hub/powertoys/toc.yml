@@ -20,7 +20,7 @@ items:
         - name: Configure with Microsoft DSC
           href: ../powertoys/dsc-configure/microsoft-dsc.md
   - name: Utilities
-    isExpanded: true
+    expanded: true
     items:
       - name: Advanced Paste
         href: ../powertoys/advanced-paste.md
