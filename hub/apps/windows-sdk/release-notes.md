@@ -100,6 +100,8 @@ Released: **February, 2026** <br><br>
 
 </details>
 
+> The following issue is fixed in this SDK version: **BinSkim Warning 4146 Triggered by Windows SDK 10.0.26100.7175 in Visual Studio**
+
 ---
 
 ## Build 10.0.26100.7627
