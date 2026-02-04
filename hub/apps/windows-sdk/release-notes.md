@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 03/11/2025
+ms.date: 02/02/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -10,10 +10,97 @@ ms.localizationpriority: medium
 # What's new in the Windows SDK
 
 In a new or existing Windows app, you can get the Windows SDK in several ways: install it from the installer or ISO, in the Visual Studio 2022 Installer, or by downloading the NuGet package.
-
 You can update the SDK by manually installing the new build, updating in Visual Studio or update the Nuget package
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
+
+## Build 10.0.26100.7705
+
+Released: **February, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.UI.Shell.Tasks**:
+> <br/>
+> New namespace for managing app tasks:
+>
+> - `AppTaskContract` - API contract for the task APIs
+> - `AppTaskState` - Enumeration for task states
+> - `IAppTaskContent`, `IAppTaskContentStatics` - Interfaces for task content
+> - `IAppTaskInfo`, `IAppTaskInfo2`, `IAppTaskInfoStatics` - Interfaces for task information
+> - `IAppTaskResultAsset`, `IAppTaskResultAssetFactory` - Interfaces for task result assets
+> - `AppTaskContent` - Runtime class for task content
+> - `AppTaskInfo` - Runtime class for task information
+> - `AppTaskResultAsset` - Runtime class for task result assets
+>
+> **Windows.UI.Shell.CompanionWindows**:
+> <br/>
+> New namespace for companion window management:
+>
+> - `CompanionWindowsContract` - API contract for companion windows
+> - `CompanionWindowRequestResultStatus` - Enumeration for request result status
+> - `ICompanionWindowCoordinator`, `ICompanionWindowCoordinatorStatics` - Coordinator interfaces
+> - `ICompanionWindowRequest`, `ICompanionWindowRequestResult` - Request interfaces
+> - `CompanionWindowCoordinator` - Runtime class for coordinating companion windows
+> - `CompanionWindowRequest`, `CompanionWindowRequestResult` - Runtime classes for requests
+>
+> **Windows.Devices.Haptics**:
+> <br/>
+> New types and enhancements for haptic feedback:
+>
+> - `HapticDeviceType` - New enum for haptic device types (UniversalApiContract 19.0)
+> - `HapticsControllerOverrideToken` - New struct for controller override tokens
+> - `IInputHapticsManager`, `IInputHapticsManagerStatics` - New interfaces for input haptics management
+> - `InputHapticsManager` - New runtime class for managing input haptics
+>
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Windows Hypervisor Emulation (WinHvEmulation.h)**
+> <br/>
+> Added new emulator management functions for AMD64:
+>
+> - `WHvEmulatorCreateEmulator` - Creates a new emulator instance with specified callbacks
+> - `WHvEmulatorDestroyEmulator` - Destroys an emulator instance
+> - Additional emulator management APIs for memory access, I/O port handling, and virtual processor register operations
+>
+> **WebAuthn Plugin (webauthnplugin.h)**
+> <br/>
+> Updated documentation:
+>
+> - Plugin RPID is now required (previously optional) for nested WebAuthN calls originating from a plugin
+>
+> **Windows Error Codes (winerror.h)**
+> <br/>
+> Updated error definitions and codes
+>
+> **Graphics Driver Model (d3dukmdt.h, d3dkmdt.h)**
+> <br/>
+> Updates to graphics driver display mode definitions and user mode types
+>
+> **Windows User Interface (WinUser.h)**
+> <br/>
+> Updates to user interface definitions
+>
+> **Cryptography (wincrypt.h)**
+> <br/>
+> Updates to cryptographic function definitions
+>
+> **Property Keys (propkey.h)**
+> <br/>
+> Updated property key definitions
+>
+> **HTTP API (http.h)**
+> <br/>
+> Updates to HTTP server API definitions
+
+</details>
+
+---
 
 ## Build 10.0.26100.7627
 
