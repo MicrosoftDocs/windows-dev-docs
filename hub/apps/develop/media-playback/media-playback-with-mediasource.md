@@ -3,7 +3,7 @@ description: This article shows you how to use MediaSource in a WinUI app. This 
 title: Media items, playlists, and tracks
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
 # Media items, playlists, and tracks
@@ -202,9 +202,9 @@ The [**ItemFailed**](/uwp/api/windows.media.playback.mediaplaybacklist.itemfaile
 
 ### Disable playback of items in a playback list
 
-Starting with Windows 10, version 1703, you can disable playback of one or more items in a **MediaPlaybackItemList** by setting the [IsDisabledInPlaybackList](/uwp/api/Windows.Media.Playback.MediaPlaybackItem.IsDisabledInPlaybackList) property of a [MediaPlaybackItem](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) to false. 
+You can disable playback of one or more items in a **MediaPlaybackItemList** by setting the [IsDisabledInPlaybackList](/uwp/api/Windows.Media.Playback.MediaPlaybackItem.IsDisabledInPlaybackList) property of a [MediaPlaybackItem](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) to false.
 
-A typical scenario for this feature is for apps that play music streamed from the internet. The app can listen for changes in the network connection status of the device and disable playback of items that are not fully downloaded. In the following example, a handler is registered for the [NetworkInformation.NetworkStatusChanged](/uwp/api/Windows.Networking.Connectivity.NetworkInformation.NetworkStatusChanged) event.
+A typical scenario for this feature is for apps that play streaming music. The app can listen for changes in the network connection status of the device and disable playback of items that are not fully downloaded. In the following example, a handler is registered for the [NetworkInformation.NetworkStatusChanged](/uwp/api/Windows.Networking.Connectivity.NetworkInformation.NetworkStatusChanged) event.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetRegisterNetworkStatusChanged":::
 
@@ -213,6 +213,7 @@ In the handler for **NetworkStatusChanged**, check to see if [GetInternetConnect
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetNetworkStatusChanged":::
 
 ### Defer binding of media content for items in a playback list by using MediaBinder
+
 In the previous examples, a **MediaSource** is created from a file, URL, or stream, after which a **MediaPlaybackItem** is created and added to a **MediaPlaybackList**. For some scenarios, such as if the user is being charged for viewing content, you may want to defer the retrieval of the content of a **MediaSource** until the item in the playback list is ready to actually be played. To implement this scenario, create an instance of the [**MediaBinder**](/uwp/api/Windows.Media.Core.MediaBinder) class. Set the [**Token**](/uwp/api/Windows.Media.Core.MediaBinder.Token) property to an app-defined string that identifies the content for which you want to defer retrieval and then register a handler for the [**Binding**](/uwp/api/Windows.Media.Core.MediaBinder.Binding) event. Next, create a **MediaSource** from the **Binder** by calling [**MediaSource.CreateFromMediaBinder**](/uwp/api/windows.media.core.mediasource.createfrommediabinder). Then, create a **MediaPlaybackItem** from the **MediaSource** and add it to the playback list as usual.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetInitMediaBinder":::
