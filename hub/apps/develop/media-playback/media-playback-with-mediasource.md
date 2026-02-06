@@ -1,11 +1,12 @@
 ---
 description: This article shows you how to use MediaSource in a WinUI app. This class provides a common way to reference and play back media from different sources such as local or remote files, and exposes a common model for accessing media data, regardless of the underlying media format.
 title: Media items, playlists, and tracks
-ms.date: 02/08/2017
+ms.date: 02/05/2026
 ms.topic: article
 keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
+
 # Media items, playlists, and tracks
 
 This article shows you how to use the [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) class, which provides a common way to reference and play back media from different sources such as local or remote files and exposes a common model for accessing media data, regardless of the underlying media format. The [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) class extends the functionality of **MediaSource**, allowing you to manage and select from multiple audio, video, and metadata tracks contained in a media item. [**MediaPlaybackList**](/uwp/api/Windows.Media.Playback.MediaPlaybackList) allows you to create playback lists from one or more media playback items.
