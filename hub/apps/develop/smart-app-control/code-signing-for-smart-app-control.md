@@ -8,10 +8,10 @@ ms.date: 09/20/2022
 
 # Sign your app for Smart App Control compliance
 
-Code signing is a cryptographic operation that can be performed on an app in order to verify its contents and publisher. Smart App Control considers apps signed with a trusted digital certificate to be safe, and allows them to run on a protected computer.
+Code signing is a cryptographic operation that can be performed on an app in order to verify its contents and publisher.Smart App Control allows applications signed with RSA-based digital certificates to run on protected devices. It does not currently support elliptic-curve cryptography (ECC).
 
 > [!NOTE]
-> Smart App Control's signature check does not currently support Elliptic-curve cryptography (ECC) signatures.
+> Smart App Control's signature check does not currently support Elliptic-curve cryptography (ECC) signatures. Please use ensure all applications are signed with RSA-based digital certificates.
 
 There are several ways to sign your app.
 
