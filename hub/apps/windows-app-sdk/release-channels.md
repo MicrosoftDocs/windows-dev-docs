@@ -13,7 +13,7 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |--:|--|--|--|:--:|--|
-| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.4 (1.8.260101001)** <br/> Released: 01/13/2026 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-184-18260101001) |
+| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.5 (1.8.260204001)** <br/> Released: 02/10/2026 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-185-18260209005) |
 | **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **1.8 Preview (1.8-preview)** <br/> Released: 08/19/2025 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=preview#version-18-preview-18-preview) ** |
 | **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.0 Experimental 4 (2.0.0-experimental4)** <br/> Released: 01/13/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-4-200-experimental4) |
 
