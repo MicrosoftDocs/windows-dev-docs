@@ -22,6 +22,7 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 - [Open Copilot support](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
 - [Create a support incident](https://support.microsoft.com/supportforbusiness/productselection)
 - [Application compatibility (App Assure)](https://aka.ms/desktopappassure)
+- [Partner Center](https://partner.microsoft.com/dashboard)
 
 <br/>
 <br/>
