@@ -43,8 +43,7 @@ productDirectory:
         text: Get started
       - url: /windows/apps/get-started/samples
         text: Samples and resources
-      - url: /windows/apps/get-started/best-practices
-        text: Help and guidance
+
 
   - title: Design
     imageSrc: /windows/apps/images/hub-design.svg
@@ -97,6 +96,19 @@ productDirectory:
         text: App management
       - url: /windows/apps/publish/analyze-app-performance/msix
         text: App performance
+
+  - title: Support
+    imageSrc: /windows/apps/images/hub-support.svg
+    links:
+      - url: /windows/apps/develop/support
+        text: Get support
+      - url: /windows/apps/get-started/best-practices
+        text: Help and guidance
+      - url: https://devblogs.microsoft.com/ifdef-windows/
+        text: Windows developer blog
+      - url: https://discord.gg/eBHZSKG
+        text: Windows App Community Discord
+
 
 tools:
   title: Platforms and SDKs
