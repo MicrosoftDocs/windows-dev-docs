@@ -1,0 +1,149 @@
+---
+title: Windows Developer Support
+description: Find help fast from community channels and Microsoft experts for developing Windows applications.
+ms.topic: overview
+ms.date: 02/10/2026
+ms.collection: collection
+ms.localizationpriority: medium
+---
+
+# Windows Developer Support
+
+:::image type="content" source="https://developer.microsoft.com/windows/develop/images/pagehero.png" alt-text="Windows developer support hero graphic" border="false":::
+
+Get answers quickly, connect with experts, and resolve problems across registration, submissions, certification, and development. Use the following quick links to reach the right help fast.
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-essentials.svg" alt-text="Quick help actions icon" border="false":::
+
+### Quick help actions
+
+- [Open Copilot support](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
+- [Create a support incident](https://support.microsoft.com/supportforbusiness/productselection)
+- [Application compatibility (App Assure)](https://aka.ms/desktopappassure)
+
+<br/>
+<br/>
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-design.svg" alt-text="Community help icon" border="false":::
+
+### Get help from the community
+
+- [Microsoft Q&A](https://learn.microsoft.com/answers/questions/)
+- [Windows App SDK discussions](https://github.com/microsoft/windowsappsdk/discussions)
+- [WinUI discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)
+- [Stack Overflow (Windows App SDK)](https://stackoverflow.com/questions/tagged/windows-app-sdk)
+
+<br/>
+<br/>
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-publish.svg" alt-text="Microsoft support icon" border="false":::
+
+### Contact Microsoft support
+
+- [Dev Center dashboard support (Copilot)](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
+- [App certification failures (Report App)](mailto:reportapp@microsoft.com)
+- [Technical support incidents](https://support.microsoft.com/supportforbusiness/productselection)
+- [Application compatibility (App Assure)](https://aka.ms/desktopappassure)
+
+<br/>
+<br/>
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-essentials.svg" alt-text="Popular topics icon" border="false":::
+
+### Popular help topics
+
+:::row:::
+	:::column:::
+	#### Account management
+
+	- [Open a developer account](/windows/uwp/publish/opening-a-developer-account)
+	- [Account types, costs, locations](/windows/uwp/publish/account-types-locations-and-fees)
+	- [Manage account users](/windows/uwp/publish/manage-account-users)
+	:::column-end:::
+
+	:::column:::
+	#### Payment & monetization
+
+	- [Payment thresholds, methods, timeframes](/azure/marketplace/partner-center-portal/payment-thresholds-methods-timeframes)
+	- [Monetization options](/windows/uwp/monetize/)
+	- [Set up payout account & tax forms](/azure/marketplace/partner-center-portal/set-up-your-payout-account-tax-forms)
+	:::column-end:::
+
+	:::column:::
+	#### Submissions
+
+	- [Package management & requirements](/windows/uwp/publish/upload-app-packages)
+	- [Certification process & timelines](/windows/uwp/publish/the-app-certification-process)
+	- [MSIX submission process](/windows/uwp/publish/app-submissions)
+	:::column-end:::
+
+	:::column:::
+	#### Development
+
+	- [Set up your environment](/windows/apps/windows-app-sdk/set-up-your-development-environment)
+	- [Debugging, testing, and performance](/windows/uwp/debug-test-perf/)
+	- [Porting apps to Windows](/windows/uwp/porting/)
+	:::column-end:::
+:::row-end:::
+
+<br/>
+<br/>
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-develop.svg" alt-text="Troubleshooting guides icon" border="false":::
+
+### Troubleshooting guides
+
+- [Resolve app certification failures](/windows/uwp/publish/the-app-certification-process)
+- [Fix submission errors (MSIX)](/windows/uwp/publish/app-submissions)
+- [Diagnose performance issues](/windows/uwp/debug-test-perf/)
+
+<br/>
+<br/>
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-package.svg" alt-text="Policies and FAQs icon" border="false":::
+
+### Policies and FAQs
+
+- [Microsoft Store policies](/windows/apps/publish/store-policies)
+- [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq)
+- [Best practices for Windows apps](/windows/apps/get-started/best-practices)
+
+<br/>
+<br/>
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-design.svg" alt-text="More resources icon" border="false":::
+
+### More resources
+
+- [Tutorials](/windows/apps/get-started/start-here?tabs=winget)
+- [Windows Insider for Developers](https://www.microsoft.com/windowsinsider/)
+- [Windows App SDK docs](/windows/apps/windows-app-sdk)
+- [WinUI Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc)
+
+<br/>
+<br/>
+
+---
+
+:::image type="content" source="/windows/apps/images/hub-winui.svg" alt-text="Follow us icon" border="false":::
+
+### Follow us
+
+- [YouTube](https://www.youtube.com/@WindowsDevelopers)
+- [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/)
+- [BlueSky](https://bsky.app/profile/microsoftdevdocs.bsky.social)
+- [Mastodon](https://dotnet.social/@windowsdocs)
