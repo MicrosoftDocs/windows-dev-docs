@@ -98,12 +98,12 @@ productDirectory:
         text: App performance
 
   - title: Support
-    imageSrc: /windows/apps/images/hub-support.svg
+    imageSrc: /windows/apps/images/hub-essentials.svg
     links:
       - url: /windows/apps/develop/support
         text: Get support
       - url: /windows/apps/get-started/best-practices
-        text: Help and guidance
+        text: Best practices
       - url: https://devblogs.microsoft.com/ifdef-windows/
         text: Windows developer blog
       - url: https://discord.gg/eBHZSKG
