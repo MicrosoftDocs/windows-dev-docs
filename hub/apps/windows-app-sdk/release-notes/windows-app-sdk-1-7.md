@@ -14,6 +14,19 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="stable"
 
+## Version 1.7.8 (1.7.260208005)
+
+Released: **February 10, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed a package downgrade init failure and added 1.7.8 runtime support—ensuring reliable deployment and correct app recognition across configurations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DeploymentManager_PackageDowngradeFix).
+> 
+
+</details>
+
+
 ## Version 1.7.7 (1.7.260114001)
 
 Released: **January 13, 2026** <br><br>
