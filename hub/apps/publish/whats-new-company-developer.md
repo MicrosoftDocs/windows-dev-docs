@@ -1,12 +1,12 @@
 ---
 description: This page describes what's new in test markets for company account onboarding
-title: Free developer registration for company developers
+title: Revamped company onboarding experience with zero registration fees
 ms.date: 02/11/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Free developer registration for company developers
+# Revamped company onboarding experience with zero registration fees
 
 The new onboarding process allows company developers to publish apps to the Microsoft Store without any onboarding fees.  
 
