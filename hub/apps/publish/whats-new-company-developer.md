@@ -38,7 +38,7 @@ Before you begin, make sure you have the following:
 
 **Option 1: DUNS number (recommended)** 
 
-* A valid 9digit DUNS number
+* A valid 9-digit DUNS number
 * Enables faster, automated retrieval of business details 
 
 **Option 2: Official business documents** 
@@ -64,7 +64,7 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 1. **Go to** [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com)
 
-   > **Note for existing developers:** If you already have a developer account and sign in with an existing MSA, you will skip Steps 5–10 and be taken directly to Step 9. Alternatively, you can go straight to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
+   > **Note for existing developers:** If you already have a developer account and sign in with an existing MSA, you will skip Steps 5–10 and be taken directly to Step 11. Alternatively, you can go straight to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
 ![Store developer website](images/new-company-account-1.png)
 
