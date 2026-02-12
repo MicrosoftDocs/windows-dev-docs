@@ -311,7 +311,7 @@ You can package the app in an [MSIX package](/windows/msix) for deployment. MSIX
 3. For info about distributing/deploying the package, see [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview). 
 
 > [!NOTE]
-> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, then computers that run your app must have the [Visual C++ Runtime](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist?view=msvc-170) installed.
+> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, then computers that run your app must have the [Visual C++ Runtime](/cpp/windows/latest-supported-vc-redist) installed.
 
 ### Option 2: Create an application manifest
 

@@ -284,7 +284,7 @@ You can optionally package your WPF app in an [MSIX package](/windows/msix) for 
 The following instructions show you how to package all the components in the solution into an MSIX package by using the **Windows Application Packaging Project** in Visual Studio (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). These steps are necessary only if you want to package the WPF app in an MSIX package.
 
 > [!NOTE]
-> If you choose not to package your application in an [MSIX package](/windows/msix) for deployment, then computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) installed.
+> If you choose not to package your application in an [MSIX package](/windows/msix) for deployment, then computers that run your app must have the [Visual C++ Runtime](/cpp/windows/latest-supported-vc-redist) installed.
 
 1. Add a new project to your solution created from the **Windows Application Packaging Project** project template. As you create the project, select the same **Target version** and **Minimum version** as you selected for the UWP project.
 

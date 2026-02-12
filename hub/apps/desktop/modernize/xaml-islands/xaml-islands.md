@@ -32,7 +32,7 @@ The way you use XAML Islands depends on your application type and the types of W
 XAML Islands have these run time requirements:
 
 * Windows 10, version 1903, or a later release.
-* If your application is not packaged in an [MSIX package](/windows/msix) for deployment, the computer must have the [Visual C++ Runtime](https://learn.microsoft.com/cpp/windows/latest-supported-vc-redist?view=msvc-170) installed.
+* If your application is not packaged in an [MSIX package](/windows/msix) for deployment, the computer must have the [Visual C++ Runtime](/cpp/windows/latest-supported-vc-redist) installed.
 
 ## WPF and Windows Forms applications
 
