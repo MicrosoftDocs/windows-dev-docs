@@ -15,6 +15,29 @@ zone_pivot_groups: wasdk-release-channels
 :::zone pivot="stable"
 
 
+## Version 1.8.5 (1.8.260209005)
+
+Released: **February 10, 2026** <br><br>
+
+<details><summary>Enhanced Windows ML reliability and deployment flexibility</summary>
+
+>
+> * The version of ONNX Runtime in Windows ML has been updated to ~1.23.3. Benefits from the latest bug fixes, security updates, and performance improvements across all execution providers (CPU, DirectML, OpenVINO, TensorRT)
+> * Updated Windows ML License agreement to clarify legal complexities.
+>
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed a package downgrade init failure and added 1.8.5 runtime support—ensuring reliable deployment and correct app recognition across configurations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DeploymentManager_PackageDowngradeFix).
+> * Fixed an issue where `CompositionIsland.StateChanged` event handlers were not triggered when the user modified the size of a window by dragging it to the top of the screen or using the edges of the screen and the window has a non-default `TitleBar` with an `IconSource` set. Closing #[#10374](https://github.com/microsoft/microsoft-ui-xaml/issues/10374) ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputNonClientPointerSource_PropagateWindowPosChangedMessage).
+> * Fixed a crash during app shutdown for certain custom input handling scenarios inside of a ScrollViewer. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DwmCoreI_ShutdownManipulationCrash).
+> * Improved diagnosability for Windows AI model initialization and Text Intelligence APIs. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_Insights).
+> * Fixed an issue in the Windows AI API `GetReadyState` which erroneously returns `AIFeatureReadyState::NotReady` on unsupported Windows OS versions. The API now returns `AIFeatureReadyState::NotSupportedOnCurrentSystem`  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_KnownExceptions).
+> * Fixed a critical issue where WebView2 crashes in nested or windowless Xaml Islands, blocking React Native for Windows scenarios. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlRoot_FixGetHostWindowInNestedIslands).
+>
+</details>
 
 ## Version 1.8.4 (1.8.260101001)
 
