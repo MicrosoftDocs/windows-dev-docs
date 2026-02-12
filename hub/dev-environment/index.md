@@ -6,7 +6,7 @@ ms.subservice: windows-nodejs
 ms.date: 01/07/2025
 ---
 
-# Set up your development environment on Windows
+# Development environment on Windows
 
 Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.
 
