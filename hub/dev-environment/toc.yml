@@ -4,8 +4,6 @@ items:
 - name: Developer tools
   expanded: true
   items:
-  - name: Windows App Development CLI
-    href: https://github.com/microsoft/WinAppCli
   - name: Advanced Windows settings
     items:
       - name: Overview
@@ -26,7 +24,7 @@ items:
     href: /windows/powertoys/
   - name: Edit command line tool
     href: ../edit/index.md
-  - name: Windows Package Manager
+  - name: WinGet and package management
     items:
       - name: Overview
         href: ../package-manager/index.md
