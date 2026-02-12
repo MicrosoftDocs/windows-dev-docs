@@ -131,9 +131,9 @@ To use Mica in a WinUI XAML app, see [Apply Mica or Acrylic materials in desktop
 
 To use Mica in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md).
 
-### Use Mica with WinUI for UWP for UWP
+### Use Mica with WinUI for UWP
 
-To use Mica in a UWP app with WinUI for UWP, see [Apply Mica with WinUI for UWP for UWP](/windows/uwp/ui-input/mica-uwp).
+To use Mica in a UWP app with WinUI for UWP, see [Apply Mica with WinUI for UWP](/windows/uwp/ui-input/mica-uwp).
 
 ## Related articles
 

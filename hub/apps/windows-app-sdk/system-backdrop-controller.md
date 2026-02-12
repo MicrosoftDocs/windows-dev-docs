@@ -24,7 +24,7 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 >
 > - To use an in-app AcrylicBrush, see [Acrylic material](../design/style/acrylic.md).
 > - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md).
-> - To use backdrop materials in a UWP/WinUI for UWP app, see [Apply Mica with WinUI for UWP for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
+> - To use backdrop materials in a UWP/WinUI for UWP app, see [Apply Mica with WinUI for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
 
 ## How to use a backdrop material
 

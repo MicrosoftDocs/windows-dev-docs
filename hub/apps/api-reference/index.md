@@ -17,7 +17,7 @@ The [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/
 The following API frameworks ship with the Windows SDK:
 
 - [WinRT API reference](/uwp/api/)
-- [WinUI for UWP for UWP API reference](/windows/winui/api/)
+- [WinUI for UWP API reference](/windows/winui/api/)
 - [Win32 API reference](/windows/win32/api/)
 
 ## Windows App SDK

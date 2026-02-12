@@ -1049,7 +1049,7 @@ items:
       items:
         - name: WinRT API reference >>
           href: /uwp/api/
-        - name: WinUI for UWP for UWP API reference >>
+        - name: WinUI for UWP API reference >>
           href: /windows/winui/api/
         - name: Win32 API reference >>
           href: /windows/win32/api/

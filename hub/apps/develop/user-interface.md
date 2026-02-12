@@ -75,7 +75,7 @@ Each UI framework released by Microsoft has unique capabilities, follows differe
 
 The table below shows a brief summary of a few main capabilities between these UI frameworks. For more details on each framework, navigate through the tabs further below.
 
-| Capability   | Windows App SDK (WinUI) | WinUI for UWP for UWP      | WPF    | WinForms      |
+| Capability   | Windows App SDK (WinUI) | WinUI for UWP      | WPF    | WinForms      |
 |--------------|-----------|------------------|--------|---------------|
 | Languages supported   | C#/.NET 6 and later, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
 | Devices supported   | PCs (incl. laptops and tablets), support for all Windows 10 devices coming soon | All Windows 10 devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
@@ -116,9 +116,9 @@ WinUI is the latest generation of WinUI. WinUI for UWP and 3 share many of the s
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
 - Samples: [WinUI Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
 
-### [WinUI for UWP for UWP](#tab/winui-2)
+### [WinUI for UWP](#tab/winui-2)
 
-### WinUI for UWP for UWP
+### WinUI for UWP
 
 For most UWP apps, we recommend using WinUI for UWP to build your user interface. WinUI for UWP is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.
 
@@ -134,7 +134,7 @@ WinUI for UWP and 3 share many of the same controls, styles, and other UI fundam
 #### Helpful documentation for WinUI for UWP
 
 - Overview: [WinUI for UWP](/windows/uwp/get-started/winui2/)
-- Get started: [Get started with WinUI for UWP for UWP](/windows/uwp/get-started/winui2/getting-started)
+- Get started: [Get started with WinUI for UWP](/windows/uwp/get-started/winui2/getting-started)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)
 - Controls: [Controls overview](../design/controls/index.md)

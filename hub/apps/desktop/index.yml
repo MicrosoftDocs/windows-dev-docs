@@ -104,7 +104,7 @@ landingContent:
             url: /windows/windows-app-sdk/api/winrt/
           - text: Win32 API for the Windows App SDK
             url: /windows/windows-app-sdk/api/win32/
-          - text: WinUI for UWP for UWP API reference
+          - text: WinUI for UWP API reference
             url: /windows/winui/api/
 
   - title: Platforms
