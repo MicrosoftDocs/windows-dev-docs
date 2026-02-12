@@ -51,7 +51,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 
 Watch the Windows developer tools overview from Microsoft Ignite to see these tools in action.
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;"><iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<iframe width="600" height="338" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Development paths
 
@@ -120,10 +120,5 @@ Follow these guides to set up your Windows development environment for your pref
 
 ## Transitioning between Mac and Windows
 
-Check out our [guide to transitioning between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment. It can help you map the difference between:
-
-- [Keyboard shortcuts](./mac-to-windows.md#keyboard-shortcuts)
-- [Trackpad shortcuts](./mac-to-windows.md#trackpad-shortcuts)
-- [Terminal and shell tools](./mac-to-windows.md#command-line-shells-and-terminals)
-- [Apps and utilities](./mac-to-windows.md#apps-and-utilities)
+Check out our [guide to transitioning between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment.
 
