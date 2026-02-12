@@ -51,7 +51,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 
 Watch the Windows developer tools overview from Microsoft Ignite to see these tools in action.
 
-<iframe width="600" height="338" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="600" height="338" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Development paths
 
@@ -87,14 +87,6 @@ Follow these guides to set up your Windows development environment for your pref
         Build apps using C# and .NET.
     :::column-end:::
     :::column:::
-       [![Game Dev icon](../images/windows-logo.png)](/gaming/)<br>
-        **[Get started with Game Development](/gaming/)**<br>
-        Build games for Windows using Microsoft's game development tools and services.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
        [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
         **[Get started with Rust](./rust/index.yml)**<br>
         Get started programming with Rust, including how to set up Rust for Windows.
@@ -109,10 +101,22 @@ Follow these guides to set up your Windows development environment for your pref
         **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
         Create remote development containers with support from VS, VS Code, .NET, and WSL.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Blazor icon](../images/blazor-icon.png)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)<br>
         **[Get started with Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)**<br>
         Build web UI components and single page applications with C# instead of JavaScript.
+    :::column-end:::
+    :::column:::
+       [![Game Dev icon](../images/windows-logo.png)](/gaming/)<br>
+        **[Get started with Game Development](/gaming/)**<br>
+        Build games for Windows using Microsoft's game development tools and services.
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+    :::column:::
     :::column-end:::
 :::row-end:::
 

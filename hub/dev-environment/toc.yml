@@ -149,7 +149,7 @@ items:
             - name: Tutorial for beginners
               href: ./javascript/vue-beginners-tutorial.md
   - name: Get started with Python
-    href: ../python/python.md
+    href: ./python.md
   - name: Get started with C and C++
     href: /cpp/
   - name: Get started with C#

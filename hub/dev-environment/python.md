@@ -40,13 +40,6 @@ You're now ready for Python development.
 
 3. **Install the Python extension**: Install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) from the VS Code Marketplace.
 
-> [!TIP]
-> For **web development**, consider using Python via the Windows Subsystem for Linux instead. See [Get started using Python for web development on Windows](./web-frameworks.md).
->
-> For **scripting and automation**, see [Get started using Python on Windows for scripting and automation](./scripting.md).
->
-> For **advanced scenarios** (accessing Python's installed files, using Python DLLs directly, etc.), consider downloading a release directly from [python.org](https://www.python.org/downloads/).
-
 ---
 
 > [!div class="nextstepaction"]
@@ -58,7 +51,7 @@ You're now ready for Python development.
 
 > There are a number of reasons why an installation will fail--in many cases the right solution is to contact the package developer.
 >
-> A common cause for trouble is trying to install into a location that you do not have permission to modify. For example, the default install location might require Administrative privileges, but by default Python will not have them. The best solution is to create a [virtual environment](./web-frameworks.md#create-a-virtual-environment) and install there.
+> A common cause for trouble is trying to install into a location that you do not have permission to modify. For example, the default install location might require Administrative privileges, but by default Python will not have them. The best solution is to create a [virtual environment](https://docs.python.org/3/tutorial/venv.html) and install there.
 >
 > Some packages include native code that requires a C or C++ compiler to install. In general, package developers should publish pre-compiled versions, but often do not. Some of these packages might work if you [install Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) and select the C++ option, however in most cases you will need to contact the package developer.
 >
