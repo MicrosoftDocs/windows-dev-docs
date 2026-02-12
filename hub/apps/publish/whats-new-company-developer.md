@@ -53,10 +53,10 @@ If you don’t use a DUNS number, your account will go through **manual review**
 
 #### _For contact and employment verification_ 
 
-* A work email address associated with your organization’s domain
-* If your email domain doesn’t match your organization’s domain, we may request additional documentation to verify your association with the company, such as:
-   * An official domain ownership record showing the domain purchase date and expiration or renewal dates
-   * An official domain purchase invoice or registry confirmation showing the domain’s purchase date and expiration or renewal dates 
+* A **work email address** associated with your organization’s domain
+* If your email domain doesn’t match your organization’s domain, we may request **additional documentation** to verify your association with the company, such as:
+   * An **official domain ownership record** showing the domain purchase date and expiration or renewal dates
+   * An **official domain purchase invoice or registry confirmation** showing the domain’s purchase date and expiration or renewal dates 
 
 ### Steps to create your company developer account 
 
@@ -68,7 +68,7 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 ![Store developer website](images/new-company-account-1.png)
 
-2. **Click “Get started”** to begin.
+2. Click **“Get started”** to begin.
 
 3. Select **Company account** (free). If you’re an Individual developer, select **Individual developer**.
 
@@ -92,7 +92,7 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 7. Review and accept the **agreement**.
 
-8. Complete account **verification** 
+8. Complete account **verification**
 
    After you submit your details, your account enters account verification. All verification progress is shown on the Verification summary page, including the status of mandatory due diligence, business verification, and employment verification.  
 
@@ -116,7 +116,7 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 10. Create your company developer account 
 
-   After your account is created, complete your account setup and select “Go to Partner Center dashboard.” 
+   After your account is created, complete your account setup and select **“Go to Partner Center dashboard”**. 
 
    You’ll first be prompted to choose a Microsoft account (MSA). Make sure to select the same account you used to create your Store developer account. Once signed in, you’ll land on the “Apps & Games overview” page in Partner Center. 
 
