@@ -25,7 +25,7 @@ To set up your development computer, see [Install tools for the Windows App SDK]
 
 ## Create a new project
 
-* In Visual Studio, create a new C++/WinRT project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *PhotoEditor*, uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
+* In Visual Studio, create a new C++/WinRT project from the **Blank App, Packaged (WinUI in Desktop)** project template. Name the project *PhotoEditor*, uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 > [!NOTE]
 > We'll be referring to the UWP version of the sample project (the one that you cloned from its [repo](https://github.com/microsoft/windows-appsample-photo-editor/tree/master/)) as the *source* solution/project. We'll be referring to the Windows App SDK version as the *target* solution/project.

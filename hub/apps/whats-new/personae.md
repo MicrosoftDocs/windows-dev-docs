@@ -30,7 +30,7 @@ The following personas represent typical Windows developers. Each profile outlin
 
 **Go-to tech:**
 
-- [WinUI 3](/windows/apps/winui/winui3/)
+- [WinUI](/windows/apps/winui/winui3/)
 - [WPF](/dotnet/desktop/wpf/overview/)
 - [Windows App SDK](/windows/apps/windows-app-sdk/)
 - [.NET MAUI](/dotnet/maui/)
@@ -229,7 +229,7 @@ Different application types have different goals, architectures, and platform re
 **Use case:** Lightweight, focused tools that run quickly and feel modern.
 
 **Recommended technologies:**
-- UI: [WinUI 3](/windows/apps/winui/winui3/), [.NET MAUI](/dotnet/maui/)
+- UI: [WinUI](/windows/apps/winui/winui3/), [.NET MAUI](/dotnet/maui/)
 - Framework: [Windows App SDK](/windows/apps/windows-app-sdk/)
 - Packaging: [MSIX](/windows/msix/)
 - Design: [Fluent Design System](/windows/apps/design/)

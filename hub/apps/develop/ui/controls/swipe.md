@@ -77,7 +77,7 @@ For example, you cannot have two [LeftItems](/windows/windows-app-sdk/api/winrt/
 > - **Important APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see SwipeControl in action](winui3gallery:/item/SwipeControl)
+> [Open the WinUI Gallery app and see SwipeControl in action](winui3gallery:/item/SwipeControl)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -212,19 +212,19 @@ Here, a _reply_ swipe item is set to close after its invoked.
            BehaviorOnInvoked = "Close"/>
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The SwipeControl for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+The SwipeControl for UWP apps is included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [SwipeControl](/uwp/api/windows.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/windows.ui.xaml.controls.swipeitem), [ListView class](/uwp/api/windows.UI.Xaml.Controls.ListView)
-> - **WinUI 2 Apis:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
-> - [Open the WinUI 2 Gallery app and see SwipeControl in action](winui2gallery:/item/SwipeControl). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - **WinUI for UWP Apis:** [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem)
+> - [Open the WinUI for UWP Gallery app and see SwipeControl in action](winui2gallery:/item/SwipeControl). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

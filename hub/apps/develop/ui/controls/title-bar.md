@@ -49,7 +49,7 @@ The layout is reversed when the [FlowDirection](/windows/windows-app-sdk/api/win
 > - **Important APIs:** [TitleBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar), [Title property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.title)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TitleBar in action](winui3gallery:/item/TitleBar)
+> [Open the WinUI Gallery app and see the TitleBar in action](winui3gallery:/item/TitleBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -139,9 +139,9 @@ private void TitleBar_PaneToggleRequested(TitleBar sender, object args)
 
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
-The TitleBar control is not available for UWP and WinUI 2. Instead, see [Title bar customization (UWP apps)](/windows/uwp/ui-input/title-bar).
+The TitleBar control is not available for UWP and WinUI for UWP. Instead, see [Title bar customization (UWP apps)](/windows/uwp/ui-input/title-bar).
 
 ## Related articles
 

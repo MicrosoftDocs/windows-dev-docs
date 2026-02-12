@@ -28,7 +28,7 @@ The following table shows which features are currently available in each release
 | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | --------------------------------------------- | -------------------------------------------------------- |
 | [Deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)                                        | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
-| [WinUI 3](../winui/winui3/index.md)                                                                                      | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [WinUI](../winui/winui3/index.md)                                                                                      | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Text rendering](dwritecore.md)                                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Manage resources](mrtcore/mrtcore-overview.md)                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md)                                                 | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
@@ -115,4 +115,4 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 
 - [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)

@@ -250,14 +250,14 @@ If you already have a custom control, you can use it instead of the control show
 
 6. Build and run your app and confirm that the UWP user control displays as expected.
 
-## Add a control from the WinUI 2 library to the custom control
+## Add a control from the WinUI for UWP library to the custom control
 
 Traditionally, WinRT XAML controls have been released as part of the Windows OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform.
 
-This section demonstrates how to add a WinRT XAML control from the WinUI 2 library to your user control.
+This section demonstrates how to add a WinRT XAML control from the WinUI for UWP library to your user control.
 
 > [!NOTE]
-> Currently, XAML Islands only supports hosting controls from the WinUI 2 library. Support for hosting controls from the WinUI 3 library is coming in a later release.
+> Currently, XAML Islands only supports hosting controls from the WinUI for UWP library. Support for hosting controls from the WinUI library is coming in a later release.
 
 1. In the UWP app project, install the latest release or prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
@@ -315,7 +315,7 @@ You can optionally package the WPF app in an [MSIX package](/windows/msix) for d
 The following instructions show you how to package the all the components in the solution in an MSIX package by using the [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) in Visual Studio 2019. These steps are necessary only if you want to package the WPF app in an MSIX package. 
 
 > [!NOTE]
-> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, then computers that run your app must have the [Visual C++ Runtime](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) installed.
+> If you choose to not package your application in an [MSIX package](/windows/msix) for deployment, then computers that run your app must have the [Visual C++ Runtime](/cpp/windows/latest-supported-vc-redist) installed.
 
 1. Add a new [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to your solution. As you create the project, select the same **Target version** and **Minimum version** as you selected for the UWP project.
 

@@ -22,7 +22,7 @@ Windows App SDK is built in the open, and contributions or discussions are welco
 
 ### What you can do with the Windows App SDK
 
-Whether you are building a new app with WinUI 3 or enhancing an existing one with modern capabilities, the Windows App SDK helps you take advantage of the latest Windows APIs.
+Whether you are building a new app with WinUI or enhancing an existing one with modern capabilities, the Windows App SDK helps you take advantage of the latest Windows APIs.
 
 :::image type="content" source="images/windows-app-sdk-overview.png" alt-text="Diagram of the Windows App SDK architecture" border="false":::
 
@@ -91,4 +91,4 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 ## Related topics
 
 - [Release channels and release notes](release-channels.md)
-- [Create your first WinUI 3 project](../get-started/start-here.md)
+- [Create your first WinUI project](../get-started/start-here.md)

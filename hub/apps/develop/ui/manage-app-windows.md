@@ -10,7 +10,7 @@ dev_langs:
   - csharp
   - cppwinrt
 appliesto:
-  - ✅ <a href="/windows/apps/winui/winui3/" target="_blank">WinUI 3</a>
+  - ✅ <a href="/windows/apps/winui/winui3/" target="_blank">WinUI</a>
   - ✅ <a href="h/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 
@@ -26,11 +26,11 @@ The Windows App SDK provides the [Microsoft.UI.Windowing.AppWindow](/windows/win
 > - **Important APIs**: [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow), [OverlappedPresenter class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see AppWindow in action](winui3gallery:/item/AppWindow)
+> [Open the WinUI Gallery app and see AppWindow in action](winui3gallery:/item/AppWindow)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-You can use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs with any UI framework that the Windows App SDK supports - WinUI 3, WPF, WinForms, or Win32. AppWindow APIs work alongside the framework-specific windowing APIs:
+You can use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs with any UI framework that the Windows App SDK supports - WinUI, WPF, WinForms, or Win32. AppWindow APIs work alongside the framework-specific windowing APIs:
 
 - [XAML Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)
 - [WPF Window](/dotnet/api/system.windows.window)
@@ -273,7 +273,7 @@ private void FullScreenButton_Click(object sender, RoutedEventArgs e)
 
 ## UI framework and HWND interop
 
-The [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class is available for *any* top-level HWND in your app. That means that when you're working with a desktop UI framework (including WinUI 3), you can continue to use that framework's entry point for creating a window, and attaching its content. And once you've created a window with that UI framework, you can use the windowing interop functions (see below) provided in the Windows App SDK to access the corresponding AppWindow and its methods, properties, and events.
+The [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class is available for *any* top-level HWND in your app. That means that when you're working with a desktop UI framework (including WinUI), you can continue to use that framework's entry point for creating a window, and attaching its content. And once you've created a window with that UI framework, you can use the windowing interop functions (see below) provided in the Windows App SDK to access the corresponding AppWindow and its methods, properties, and events.
 
 Some of the benefits of using [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) (even when working with a UI framework) are:
 
@@ -299,7 +299,7 @@ The code example section below shows actual source code; but here's the recipe f
 // MainWindow.xaml.cs
 private void myButton_Click(object sender, RoutedEventArgs e)
 {
-    // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
+    // Retrieve the window handle (HWND) of the current (XAML) WinUI window.
     var hWnd =
         WinRT.Interop.WindowNative.GetWindowHandle(this);
 
@@ -307,7 +307,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
     Microsoft.UI.WindowId windowId =
         Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd);
 
-    // Lastly, retrieve the AppWindow for the current (XAML) WinUI 3 window.
+    // Lastly, retrieve the AppWindow for the current (XAML) WinUI window.
     Microsoft.UI.Windowing.AppWindow appWindow =
         Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
 
@@ -329,7 +329,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 // mainwindow.xaml.cpp
 void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 {
-    // Retrieve the window handle (HWND) of the current (XAML) WinUI 3 window.
+    // Retrieve the window handle (HWND) of the current (XAML) WinUI window.
     auto windowNative{ this->m_inner.as<::IWindowNative>() };
     HWND hWnd{ 0 };
     windowNative->get_WindowHandle(&hWnd);
@@ -338,7 +338,7 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
     Microsoft::UI::WindowId windowId = 
         Microsoft::UI::GetWindowIdFromWindow(hWnd);
 
-    // Lastly, retrieve the AppWindow for the current (XAML) WinUI 3 window.
+    // Lastly, retrieve the AppWindow for the current (XAML) WinUI window.
     Microsoft::UI::Windowing::AppWindow appWindow = 
         Microsoft::UI::Windowing::AppWindow::GetFromWindowId(windowId);
 

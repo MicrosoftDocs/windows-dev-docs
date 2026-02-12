@@ -46,7 +46,7 @@ There are some scenarios where another control may be more appropriate to use.
 > - **Important APIs**: [SelectorBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar), [Items property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.items), [SelectionChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged),  [SelectorBarItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the SelectorBar in action](winui3gallery:/item/SelectorBar)
+> [Open the WinUI Gallery app and see the SelectorBar in action](winui3gallery:/item/SelectorBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -226,10 +226,10 @@ private void SelectorBar3_SelectionChanged
 }
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 > [!IMPORTANT]
-> The SelectorBar control is not available for UWP and WinUI 2. For alternatives, see [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md).
+> The SelectorBar control is not available for UWP and WinUI for UWP. For alternatives, see [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md).
 
 ## Related topics
 

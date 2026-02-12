@@ -18,7 +18,7 @@ The following steps describe how to use Visual Studio to test code that depends 
 
 1. Create a unit test project in the same solution as the app you want to test. (This uses [MSTest](/visualstudio/test/using-microsoft-visualstudio-testtools-unittesting-members-in-unit-tests) to execute the test code and will initialize a Xaml Window and a Xaml UI Thread.)
 
-   Right click your solution in Solution Explorer, select **Add -> New Project** from the context menu, and choose **Unit Test App (WinUI 3 in Desktop)** for C# or **Unit Test App (WinUI 3)** for C++.
+   Right click your solution in Solution Explorer, select **Add -> New Project** from the context menu, and choose **Unit Test App (WinUI in Desktop)** for C# or **Unit Test App (WinUI)** for C++.
 
    :::image type="content" source="media/visual-studio-new-project-window.png" alt-text="Screenshot of the Visual Studio 'Create a new project' window.":::
 

@@ -17,7 +17,7 @@ Starting in Windows 10, version 1903, you can host WinRT XAML controls in non-UW
 
 You can host any WinRT XAML control that derives from [Windows.UI.Xaml.UIElement](/uwp/api/windows.ui.xaml.uielement), including:
 
-* Most first-party WinRT XAML control provided by the Windows SDK or the WinUI 2 library (see [exceptions](#limitations-and-workarounds)).
+* Most first-party WinRT XAML control provided by the Windows SDK or the WinUI for UWP library (see [exceptions](#limitations-and-workarounds)).
 * Any custom WinRT XAML control (for example, a user control that consists of several WinRT XAML controls that work together). You must have the source code for the custom control so you can compile it with your application.
 
 Fundamentally, XAML Islands are created by using the *WinRT XAML hosting API*. This API consists of several Windows Runtime classes and COM interfaces that were introduced in the Windows 10, version 1903 SDK. We also provide a set of XAML Island .NET controls in the [Windows Community Toolkit](/windows/uwpcommunitytoolkit/) that use the WinRT XAML hosting API internally and provide a more convenient development experience for WPF and Windows Forms apps.
@@ -32,7 +32,7 @@ The way you use XAML Islands depends on your application type and the types of W
 XAML Islands have these run time requirements:
 
 * Windows 10, version 1903, or a later release.
-* If your application is not packaged in an [MSIX package](/windows/msix) for deployment, the computer must have the [Visual C++ Runtime](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) installed.
+* If your application is not packaged in an [MSIX package](/windows/msix) for deployment, the computer must have the [Visual C++ Runtime](/cpp/windows/latest-supported-vc-redist) installed.
 
 ## WPF and Windows Forms applications
 
@@ -125,7 +125,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 ### Supported only with workarounds
 
-:heavy_check_mark: Hosting controls from the [WinUI 2 Library](../../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package, or if you use the [Dynamic Dependencies API](../framework-packages/framework-packages-overview.md). Support for hosting controls from the [WinUI 3.0 Library](../../../winui/winui3/index.md) is coming in a later release.
+:heavy_check_mark: Hosting controls from the [WinUI for UWP Library](../../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package, or if you use the [Dynamic Dependencies API](../framework-packages/framework-packages-overview.md). Support for hosting controls from the [WinUI.0 Library](../../../winui/winui3/index.md) is coming in a later release.
 
 :heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
 

@@ -18,7 +18,7 @@ Windows 11 supports a plugin model for passkeys. Contoso Passkey Manager is a de
 
 ### Step 1: Installation
 
-1. Set up your development environment for WinUI 3 development (see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment)).
+1. Set up your development environment for WinUI development (see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment)).
 2. Clone the Windows-classic-samples GitHub repo for the [Contoso Passkey Manager sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/PasskeyManager) app.
 3. In Visual Studio, open the Contoso Passkey Manager solution that you just cloned, carefully follow the instructions at the link above, build the sample, and then run it to confirm installation.
 

@@ -128,7 +128,7 @@ When you are done reading frames, be sure to stop the media frame reader by call
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetCleanupFrameReader":::
 
-For more information about cleaning up media capture objects when your application is suspended, see [**Show the camera preview in a WinUI 3 app**](camera-quickstart-winui3.md).
+For more information about cleaning up media capture objects when your application is suspended, see [**Show the camera preview in a WinUI app**](camera-quickstart-winui3.md).
 
 ## The FrameRenderer helper class
 

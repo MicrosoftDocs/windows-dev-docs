@@ -41,9 +41,9 @@ The Windows App SDK has the following minimum system requirements:
 - Windows SDK, version 2004 (build 19041) or later (included with Visual Studio 2022 by default).
 - If you plan to build .NET apps, you'll also need .NET 6 or later (see [Download .NET](https://dotnet.microsoft.com/en-us/download)).
 
-## Visual Studio support for WinUI 3 tools
+## Visual Studio support for WinUI tools
 
-You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2022 *17.0 Preview 2 and later* to take advantage of the latest WinUI 3 tooling features such as *hot reload*, *live visual tree*, and *live property explorer*.
+You can build, run, and deploy apps built with stable versions of the Windows App SDK on Visual Studio 2022 *17.0 Preview 2 and later* to take advantage of the latest WinUI tooling features such as *hot reload*, *live visual tree*, and *live property explorer*.
 
 ## See Also
 

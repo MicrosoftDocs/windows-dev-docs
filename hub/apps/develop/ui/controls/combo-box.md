@@ -75,7 +75,7 @@ A list box allows the user to choose either a single item or multiple items from
 > - **Important APIs**: [ComboBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [IsEditable property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.iseditable), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [ListBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListBox)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ComboBox in action](winui3gallery:/item/ComboBox)
+> [Open the WinUI Gallery app and see the ComboBox in action](winui3gallery:/item/ComboBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -296,7 +296,7 @@ bool IsValid(string Text)
 }
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -305,7 +305,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ComboBox class](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [IsEditable property](/uwp/api/windows.ui.xaml.controls.combobox.iseditable), [Text property](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/uwp/api/Windows.UI.Xaml.Controls.ComboBox), [ListBox class](/uwp/api/Windows.UI.Xaml.Controls.ListBox)
-> - [Open the WinUI 2 Gallery app and see the ComboBox in action](winui2gallery:/item/ComboBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the ComboBox in action](winui2gallery:/item/ComboBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 > [!NOTE]
 > The [IsEditable](/uwp/api/windows.ui.xaml.controls.combobox.iseditable) property requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.

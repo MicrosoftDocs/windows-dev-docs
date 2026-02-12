@@ -63,7 +63,7 @@ zone_pivot_groups: wasdk-release-channels
 <details><summary>XAML Backdrop APIs</summary>
 
 >
-> With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app.
+> With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI app.
 > See the [System Backdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop) and [Mica Backdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop) API docs for more information about the Xaml Backdrop properties.
 >
 > ```csharp
@@ -128,7 +128,7 @@ zone_pivot_groups: wasdk-release-channels
 <details><summary>XAML Backdrop APIs</summary>
 
 >
-> With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app.
+> With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI app.
 >
 > See the [Xaml Backdrop API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/xaml-backdrop-api.md?plain=1#L39) on GitHub for more information about the **Window.SystemBackdrop** property.
 >
@@ -185,7 +185,7 @@ zone_pivot_groups: wasdk-release-channels
 <summary>XAML Backdrop APIs</summary>
 
 >
-> With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI 3 app.
+> With properties built in to the XAML Window, Mica & Background Acrylic backdrops are now easier to use in your WinUI app.
 >
 > See the [Xaml Backdrop API spec](https://github.com/microsoft/microsoft-ui-xaml/blob/33541da536673fa360212e94e4a6ac896b8b49fb/specs/xaml-backdrop-api.md?plain=1#L39) on GitHub for more information about the **Window.SystemBackdrop** property.
 >
