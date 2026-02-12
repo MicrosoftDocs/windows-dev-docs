@@ -63,41 +63,37 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 
 :::row:::
 	:::column:::
-	#### Account management
+	**Account management**
 
-	- [Open a developer account](/windows/uwp/publish/opening-a-developer-account)
-	- [Account types, costs, locations](/windows/uwp/publish/account-types-locations-and-fees)
-	- [Manage account users](/windows/uwp/publish/manage-account-users)
+	[Open a developer account](/windows/uwp/publish/opening-a-developer-account)<br/>
+	[Account types, costs, locations](/windows/uwp/publish/account-types-locations-and-fees)<br/>
+	[Manage account users](/windows/uwp/publish/manage-account-users)
 	:::column-end:::
 
 	:::column:::
-	#### Payment & monetization
+	**Payment & monetization**
 
-	- [Payment thresholds, methods, timeframes](/azure/marketplace/partner-center-portal/payment-thresholds-methods-timeframes)
-	- [Monetization options](/windows/uwp/monetize/)
-	- [Set up payout account & tax forms](/azure/marketplace/partner-center-portal/set-up-your-payout-account-tax-forms)
+	[Payment thresholds, methods, timeframes](/azure/marketplace/partner-center-portal/payment-thresholds-methods-timeframes)<br/>
+	[Monetization options](/windows/uwp/monetize/)<br/>
+	[Set up payout account & tax forms](/azure/marketplace/partner-center-portal/set-up-your-payout-account-tax-forms)
 	:::column-end:::
 
 	:::column:::
-	#### Submissions
+	**Submissions**
 
-	- [Package management & requirements](/windows/uwp/publish/upload-app-packages)
-	- [Certification process & timelines](/windows/uwp/publish/the-app-certification-process)
-	- [MSIX submission process](/windows/uwp/publish/app-submissions)
+	[Package management & requirements](/windows/uwp/publish/upload-app-packages)<br/>
+	[Certification process & timelines](/windows/uwp/publish/the-app-certification-process)<br/>
+	[MSIX submission process](/windows/uwp/publish/app-submissions)
 	:::column-end:::
 
 	:::column:::
-	#### Development
+	**Development**
 
-	- [Set up your environment](/windows/apps/windows-app-sdk/set-up-your-development-environment)
-	- [Debugging, testing, and performance](/windows/uwp/debug-test-perf/)
-	- [Porting apps to Windows](/windows/uwp/porting/)
+	[Set up your environment](/windows/apps/windows-app-sdk/set-up-your-development-environment)<br/>
+	[Debugging, testing, and performance](/windows/uwp/debug-test-perf/)<br/>
+	[Porting apps to Windows](/windows/uwp/porting/)
 	:::column-end:::
 :::row-end:::
-
-<br/>
-<br/>
-
 ---
 
 :::image type="content" source="/windows/apps/images/hub-develop.svg" alt-text="Troubleshooting guides icon" border="false":::
