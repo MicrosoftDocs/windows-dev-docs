@@ -49,7 +49,7 @@ You can verify your business by uploading an official business document, such as
 * Official company registry record from a government website
 * Tax filings or stock exchange filings 
 
-If you don’t use a DUNS number, your account will go through manual review, which can take longer.UNS number, your account will go through  
+If you don’t use a DUNS number, your account will go through **manual review**, which can take longer.  
 
 #### _For contact and employment verification_ 
 
