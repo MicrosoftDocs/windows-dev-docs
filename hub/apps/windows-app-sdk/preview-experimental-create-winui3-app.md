@@ -296,7 +296,7 @@ To create a WinUI desktop app with C# using Windows App SDK 1.0 Preview 3:
 
 3. Install the [Windows App SDK runtime and MSIX packages](downloads.md). These are required to run and deploy your app.
 
-4. Create a new app using the ["Blank App, Packaged (WinUI in Desktop)"](#instructions-for-winui-3-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
+4. Create a new app using the ["Blank App, Packaged (WinUI in Desktop)"](#instructions-for-winui-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
 
 5. Add the following property to your project file&mdash;either your `.csproj` (C#) or `.vcxproj` (C++) file:
 
@@ -361,7 +361,7 @@ To create a WinUI desktop app with C++ using Windows App SDK 1.0 Preview 3:
 
 3. Install the [Windows App SDK runtime and MSIX packages](downloads.md). These are required to run and deploy your app.
 
-4. Create a new app using the ["Blank App, Packaged (WinUI in Desktop)"](#instructions-for-winui-3-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
+4. Create a new app using the ["Blank App, Packaged (WinUI in Desktop)"](#instructions-for-winui-packaged-desktop-apps) project template. Starting with a packaged app is required to use XAML diagnostics.
 
 5. Install the [Microsoft Visual C++ Redistributable (VCRedist)](/cpp/windows/latest-supported-vc-redist) for the appropriate architecture
 
@@ -372,7 +372,7 @@ To create a WinUI desktop app with C++ using Windows App SDK 1.0 Preview 3:
     > [!NOTE]
     > If you do not have the VCRedist installed on a target device, then dynamic links to c:\windows\system32\vcruntime140.dll will fail, which can manifest to end users in many ways.
 
-6. [Create a new app](#instructions-for-winui-3-packaged-desktop-apps) using the "Blank App, Packaged (WinUI in Desktop)" project template. Starting with a packaged app is required to use XAML diagnostics.
+6. [Create a new app](#instructions-for-winui-packaged-desktop-apps) using the "Blank App, Packaged (WinUI in Desktop)" project template. Starting with a packaged app is required to use XAML diagnostics.
 
 7. Add this property to the project file:
 

@@ -349,7 +349,7 @@ msstore submission delete <productId>
 | -v, --verbose         | Print verbose output.                            |
 | -?, -h, --help        | Show help and usage information.                 |
 
-## Flights Command
+## Flights Commands
 
 | Sub-Command                                 | Description                                                  |
 | ------------------------------------------- | ------------------------------------------------------------ |
