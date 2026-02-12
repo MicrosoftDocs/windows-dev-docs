@@ -147,10 +147,10 @@ Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/signature-experi
 
 ![An image of a selection of windows icons.](images/great-apps/icons.png)
 
-- New icons called "Segoe Fluent Icons" are introduced for monoline icons. Controls in WinUI 2.6 and greater use the new icons and typography automatically.
+- New icons called "Segoe Fluent Icons" are introduced for monoline icons. Controls in WinUI for UWP.6 and greater use the new icons and typography automatically.
 - File type icons are updated. If your app is using icons in `imageres.dll` or `shell32.dll`, then icons will be updated automatically. Otherwise, a manual style update might be needed.
 - App icons - Follow the latest guidance for [Icons in Windows apps](../develop/ui/controls/icons.md) used in places like launchers on Start and TaskBar.
-- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](../develop/ui/controls/animated-icon.md) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI 2.6 or greater.
+- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](../develop/ui/controls/animated-icon.md) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI for UWP.6 or greater.
 - Custom experiences written in XAML that specify `Segoe UI` in code, should instead specify `Segoe UI Variable`.
 
 > [!NOTE]
@@ -164,7 +164,7 @@ Applications run in a frame that Windows provides. Users expect the built-in Win
 
 Users interact with the title bar and caption buttons (minimize, maximize, close) to resize, move, and close app windows. A consistent experience helps people use your application smoothly. See [Windows app title bar](../design/basics/titlebar-design.md) to learn about title bar and caption button design for Windows.  
 
-You can use the Windows App SDK APIs to [integrate app content with the title bar](../develop/title-bar.md) in WinUI 3, .NET, WinForms, and WPF apps.
+You can use the Windows App SDK APIs to [integrate app content with the title bar](../develop/title-bar.md) in WinUI, .NET, WinForms, and WPF apps.
 
 #### Snap Layout
   
@@ -295,7 +295,7 @@ Reliable installation, update, and uninstallation experiences are important part
 
 ### Updates
 
-  - Support an update mechanism that allows your app to restart when it's convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior for WinUI 3 apps. 
+  - Support an update mechanism that allows your app to restart when it's convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior for WinUI apps. 
   - Ensure that your update mechanism downloads only the essential changed components that need to be updated. This approach minimizes the required network bandwidth.  
   - Provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
   - Consider push notification-based updates or checking for available updates at app startup or at restart.
@@ -410,5 +410,5 @@ Your privacy policy must:
 
 ## Related articles
 
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)
 - [Windows Developer FAQ](./windows-developer-faq.md)

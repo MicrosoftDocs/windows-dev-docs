@@ -52,7 +52,7 @@ Previous highlights:
 - **Cross Device Resume (XDR) overview**: Introduces Windows app continuity across devices and technologies available to enable XDR scenarios ([overview](../develop/windows-integration/cross-device-resume-overview.md)).
 - **Implement XDR using WNS raw notifications**: Step-by-step guide to integrate app continuity via WNS, including prerequisites and Python/JavaScript examples ([how-to](../develop/windows-integration/integrate-app-continuity.md)).
 - **AI on Windows**: Fresh overview for building AI‑powered experiences on Windows, with entry points to APIs and tooling ([Windows AI overview](/windows/ai/)).
-- **Packaged vs. unpackaged guidance**: Updated guidance for choosing and configuring packaged or unpackaged apps, including WinUI 3 scenarios ([decision guide](../get-started/intro-pack-dep-proc.md)).
+- **Packaged vs. unpackaged guidance**: Updated guidance for choosing and configuring packaged or unpackaged apps, including WinUI scenarios ([decision guide](../get-started/intro-pack-dep-proc.md)).
 - **UWP capability declarations**: Revised topic clarifying capability types, privacy‑sensitive capabilities, and Store submission considerations ([declare capabilities](/windows/uwp/packaging/app-capability-declarations)).
 - **Microsoft Store**: The latest news from the [Microsoft Store](/windows/apps/publish/whats-new-individual-developer) including waived fees and updated analytics.
 

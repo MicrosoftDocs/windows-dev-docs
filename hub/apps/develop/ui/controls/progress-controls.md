@@ -127,7 +127,7 @@ When the duration of the operation is known and the ring visual is desired, when
 > - **Important APIs:** [ProgressBar class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressring.isactive)
 
 > [!div class="nextstepaction"]
-> Open the WinUI 3 Gallery app and see the [ProgressBar](winui3gallery:/item/ProgressBar) or [ProgressRing](winui3gallery:/item/ProgressRing).
+> Open the WinUI Gallery app and see the [ProgressBar](winui3gallery:/item/ProgressBar) or [ProgressRing](winui3gallery:/item/ProgressRing).
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -171,19 +171,19 @@ Sometimes it's best to just show a brief wait cursor, when the app or operation 
 Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The progress controls for UWP apps are included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+The progress controls for UWP apps are included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ProgressBar class](/uwp/api/Windows.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/uwp/api/windows.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/uwp/api/Windows.UI.Xaml.Controls.ProgressRing), [IsActive property](/uwp/api/windows.ui.xaml.controls.progressring.isactive)
-> - **WinUI 2 Apis:** [ProgressBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/winui/api/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/winui/api/microsoft.ui.xaml.controls.progressring.isactive)
-> - Open the WinUI 2 Gallery app and see the [ProgressBar](winui2gallery:/item/ProgressBar) or [ProgressRing](winui2gallery:/item/ProgressRing). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - **WinUI for UWP Apis:** [ProgressBar class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/winui/api/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/winui/api/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/winui/api/microsoft.ui.xaml.controls.progressring.isactive)
+> - Open the WinUI for UWP Gallery app and see the [ProgressBar](winui2gallery:/item/ProgressBar) or [ProgressRing](winui2gallery:/item/ProgressRing). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls. WinUI for UWP.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

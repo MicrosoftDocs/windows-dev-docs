@@ -104,9 +104,9 @@ zone_pivot_groups: wasdk-release-channels
 >
 > **New features:**
 >
-> - Mica and Background Acrylic are now available for WinUI 3 applications.
+> - Mica and Background Acrylic are now available for WinUI applications.
 >   - For more information about these materials, check out [Materials in Windows 11](../../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
-> - First introduced in 1.0.1, we have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI 3 applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
+> - First introduced in 1.0.1, we have stabilized and enabled the creation of **multiple windows on the same thread** in WinUI applications. See [issue 5918](https://github.com/microsoft/microsoft-ui-xaml/issues/5918) for more information.
 >
 > **Fixed bugs:**
 >
@@ -153,7 +153,7 @@ zone_pivot_groups: wasdk-release-channels
 >   - Win11 - [May 10, 2022—KB5013943 (OS Build 22000.675)](https://support.microsoft.com/topic/may-10-2022-kb5013943-os-build-22000-675-14aa767a-aa87-414e-8491-b6e845541755)
 >   - Win10 - [May 10, 2022—KB5013942 (OS Builds 19042.1706, 19043.1706, and 19044.1706)](https://support.microsoft.com/topic/may-10-2022-kb5013942-os-builds-19042-1706-19043-1706-and-19044-1706-60b51119-85be-4a34-9e21-8954f6749504)
 > - App and Push Notifications for an elevated unpackaged app is not supported.
-> - Elevated WinUI 3 apps crash when dragging an element during a drag-and-drop interaction.
+> - Elevated WinUI apps crash when dragging an element during a drag-and-drop interaction.
 
 </details>
 
@@ -184,7 +184,7 @@ zone_pivot_groups: wasdk-release-channels
 > **Fixed issues:**
 >
 > - An issue causing resources not to be indexed by default when a resource file is added using the VS UI is fixed in .NET SDK 6.0.300. If using an older .NET SDK version, please continue to use the workaround documented in 1.0's release notes. See [issue 1786](https://github.com/microsoft/WindowsAppSDK/issues/1786) on GitHub for additional information.
-> - An issue causing the resource URI to not be built correctly in unpackaged C++ WinUI 3 apps was fixed in Visual Studio 2022 17.2. If using an older Visual Studio version, please update Visual Studio to 17.2 to receive this fix.
+> - An issue causing the resource URI to not be built correctly in unpackaged C++ WinUI apps was fixed in Visual Studio 2022 17.2. If using an older Visual Studio version, please update Visual Studio to 17.2 to receive this fix.
 >
 > **Known limitations:**
 >
@@ -286,7 +286,7 @@ zone_pivot_groups: wasdk-release-channels
 <details><summary>WinUI 3 (1.1.0-preview3)</summary>
 
 >
-> Mica and Background Acrylic are now available for WinUI 3 applications.
+> Mica and Background Acrylic are now available for WinUI applications.
 >
 > For more information about these materials, check out [Materials in Windows 11](../../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the WinUI Controls Gallery.
 >
@@ -365,7 +365,7 @@ zone_pivot_groups: wasdk-release-channels
 > **Fixed issues:**
 >
 > - An app without package identity sending notifications will now see its app icon in the notification if the icon is a part of the app's resource. If the app resource has no icon, the Windows default app icon is used.
-> - A WinUI 3 app that's not running can now be background-activated via a notification.
+> - A WinUI app that's not running can now be background-activated via a notification.
 >
 > **Regression from 1.1 Preview 1:** Push notifications support for unpackaged apps. Expected to be restored in the next release.
 >
@@ -457,7 +457,7 @@ zone_pivot_groups: wasdk-release-channels
 >
 > **Known issues:**
 >
-> - WinUI 3 apps crash when dragging an element during a drag-and-drop interaction.
+> - WinUI apps crash when dragging an element during a drag-and-drop interaction.
 >
 
 </details>
@@ -506,7 +506,7 @@ zone_pivot_groups: wasdk-release-channels
 > - Apps published as self-contained may not have push notifications support. Keep an eye out in the next preview release for an **IsSupported** API to check for push notifications support.
 > - Apps that are unpackaged sending app notifications will not see their app icon in the app notification unless they are console applications. Console apps that are unpackaged should follow the patterns shown in the [ToastNotificationsDemoApp](https://github.com/microsoft/WindowsAppSDK/blob/main/test/TestApps/ToastNotificationsDemoApp/main.cpp) sample.
 > - Windows App SDK runtime must be installed to support push notifications, see [Latest Windows App SDK downloads](../../windows-app-sdk/downloads.md) for the installer.
-> - A WinUI 3 app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
+> - A WinUI app that's not running can't be background-activated via a notification. But we're working on supporting that in a future release.
 >
 
 </details>

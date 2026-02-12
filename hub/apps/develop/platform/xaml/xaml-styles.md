@@ -17,9 +17,9 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 
 ## WinUI and styles
 
-Starting with WinUI 2.2, we have used WinUI to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
+Starting with WinUI for UWP.2, we have used WinUI to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
 
-Starting with WinUI 2.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
+Starting with WinUI for UWP.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
 
 You can change the style version by setting the `ControlsResourcesVersion` property on the `XamlControlsResources` that you include in your `Application.Resources` when you use WinUI version 2. `ControlsResourcesVersion` defaults to the enum value `Version2`.
 
@@ -265,7 +265,7 @@ Its required that you use a `ThemeDictionary` that is duplicated three times in 
 
 The [WinUI](/windows/uwp/get-started/winui2/) 2.2 or later includes new styles and templates for both WinUI and system controls.
 
-The best way to stay current with our latest visual styles is to use the latest WinUI 2 package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
+The best way to stay current with our latest visual styles is to use the latest WinUI for UWP package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 
 For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
 
@@ -275,11 +275,11 @@ For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace)
 </Style>
 ```
 
-For WinUI 2 controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
+For WinUI for UWP controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
 
 ### Derived controls
 
-If you derive a custom control from an existing XAML control, it will not get the WinUI 2 styles by default. To apply the WinUI 2 styles:
+If you derive a custom control from an existing XAML control, it will not get the WinUI for UWP styles by default. To apply the WinUI for UWP styles:
 
 - Create a new [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style) with its [TargetType](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) set to your custom control.
 - Base the Style on the default style of the control you derived from.

@@ -25,7 +25,7 @@ Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrus
 > - **Important APIs:** [Image class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Image), [Source property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image.source), [ImageBrush class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.ImageBrush), [ImageSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesource)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery:/item/Image)
+> [Open the WinUI Gallery app and see ImageBrushes in action](winui3gallery:/item/Image)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -141,7 +141,7 @@ If you define an Image or ImageBrush using code, use the default constructors, t
 > [!NOTE]
 > If you establish images using code, you can use automatic handling for accessing unqualified resources with current scale and culture qualifiers, or you can use [ResourceManager](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) and [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) with qualifiers for culture and scale to obtain the resources directly. For more info see [Resource management system](/windows/uwp/app-resources/resource-management-system).
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -150,9 +150,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image), [Source property](/uwp/api/windows.ui.xaml.controls.image.source), [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [ImageSource property](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
-> - [Open the WinUI 2 Gallery app and see ImageBrushes in action](winui2gallery:/item/Image). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see ImageBrushes in action](winui2gallery:/item/Image). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
 
 Starting in Windows 10, version 1607, the **Image** element supports animated GIF images. When you use a **BitmapImage** as the image **Source**, you can access BitmapImage APIs to control playback of the animated GIF image. For more info, see the Remarks on the [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.Imaging.BitmapImage) class page.
 

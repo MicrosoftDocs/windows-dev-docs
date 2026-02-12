@@ -250,14 +250,14 @@ If you already have a custom control, you can use it instead of the control show
 
 6. Build and run your app and confirm that the UWP user control displays as expected.
 
-## Add a control from the WinUI 2 library to the custom control
+## Add a control from the WinUI for UWP library to the custom control
 
 Traditionally, WinRT XAML controls have been released as part of the Windows OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform.
 
-This section demonstrates how to add a WinRT XAML control from the WinUI 2 library to your user control.
+This section demonstrates how to add a WinRT XAML control from the WinUI for UWP library to your user control.
 
 > [!NOTE]
-> Currently, XAML Islands only supports hosting controls from the WinUI 2 library. Support for hosting controls from the WinUI 3 library is coming in a later release.
+> Currently, XAML Islands only supports hosting controls from the WinUI for UWP library. Support for hosting controls from the WinUI library is coming in a later release.
 
 1. In the UWP app project, install the latest release or prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 

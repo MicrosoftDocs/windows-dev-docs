@@ -38,7 +38,7 @@ For more details about packaged versus unpackaged, see [Deployment overview](/wi
 
 For info about how to configure your app as packaged or unpackaged:
 
-* **WinUI 3 apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](/windows/apps/package-and-deploy/project-properties); and see [Create your first WinUI 3 (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+* **WinUI apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](/windows/apps/package-and-deploy/project-properties); and see [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
 * **Desktop apps**. See [Set up your desktop app for MSIX packaging](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 * **Universal Windows Platform (UWP) apps**. UWP apps are already configured as packaged; and that configuration can't be changed.
 
@@ -70,7 +70,7 @@ For more info, see [AppContainer for legacy apps](/windows/win32/secauthz/appcon
 
 For info about how to configure your app to run in an AppContainer or Medium IL:
 
-* **WinUI 3 apps (Windows App SDK)**. See the `uap10:TrustLevel` app package manifest attribute in [Configure a WinUI 3 project for AppContainer](/windows/msix/msix-container#configure-a-winui-3-project-for-appcontainer).
+* **WinUI apps (Windows App SDK)**. See the `uap10:TrustLevel` app package manifest attribute in [Configure a WinUI project for AppContainer](/windows/msix/msix-container#configure-a-winui-3-project-for-appcontainer).
 * **Desktop apps**. See the `TrustLevel` Visual Studio project property in [MSIX AppContainer apps](/windows/msix/msix-container) (in the section that's appropriate for your kind of app).
 * **Universal Windows Platform (UWP) apps**. UWP apps are already configured to run in an AppContainer; and that configuration can't be changed.
 
@@ -93,7 +93,7 @@ For more details about app capabilities, what kinds of apps they apply to, and h
 
 ## Kinds of apps
 
-Desktop apps and Universal Windows Platform (UWP) apps are the two main kinds of apps&mdash;although, there are several kinds of apps in the *desktop apps* family. Choosing a user interface (UI) framework&mdash;WinForms, WPF, Win32, Direct 2D/3D, UWP, or WinUI 3&mdash;is one option that's to some degree independent of the configurations described in this topic.
+Desktop apps and Universal Windows Platform (UWP) apps are the two main kinds of apps&mdash;although, there are several kinds of apps in the *desktop apps* family. Choosing a user interface (UI) framework&mdash;WinForms, WPF, Win32, Direct 2D/3D, UWP, or WinUI&mdash;is one option that's to some degree independent of the configurations described in this topic.
 
 But let's take a look at how those app kinds can differ from one another in terms of packaging, deployment, and process.
 
@@ -107,7 +107,7 @@ First off, all UWP apps are packaged, and run in an AppContainer. But for deskto
 For packaged apps, to configure the kind of app you want, you use the `uap10:RuntimeBehavior` attribute in your app package manifest (see [Application (Windows 10)](/uwp/schemas/appxpackage/uapmanifestschema/element-application)).
 
 * **Desktop apps** are Windows `.exe`s, typically with a **main** or **WinMain** entry-point function. To configure your app as a desktop app, set `uap10:RuntimeBehavior` to either "packagedClassicApp" or "win32App".
-  * The value "packagedClassicApp" indicates either a WinUI 3 app (Windows App SDK) or a Desktop Bridge app (Centennial). The difference is that a Centennial app runs in an AppContainer.
+  * The value "packagedClassicApp" indicates either a WinUI app (Windows App SDK) or a Desktop Bridge app (Centennial). The difference is that a Centennial app runs in an AppContainer.
   * And "win32App" indicates any other kind of Win32 app (including an app packaged with external location).
 * Lastly, setting `uap10:RuntimeBehavior` to  "windowsApp" gives you a UWP app.
 

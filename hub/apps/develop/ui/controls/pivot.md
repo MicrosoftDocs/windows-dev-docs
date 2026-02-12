@@ -19,10 +19,10 @@ The Pivot control enables touch-swiping between a small set of content sections.
 > [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../../../design/basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
-> - **WinUI 3** - Use the [SelectorBar](../../../design/controls/selector-bar.md) control.
-> - **WinUI 2/UWP** - Use a [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
+> - **WinUI** - Use the [SelectorBar](../../../design/controls/selector-bar.md) control.
+> - **WinUI for UWP/UWP** - Use a [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
 
-To create a Pivot-like UI when using WinUI 3 and the Windows App SDK, use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
+To create a Pivot-like UI when using WinUI and the Windows App SDK, use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.
 
 To create a tabbed UI, use a [TabView](../../../design/controls/tab-view.md) control.
 
@@ -100,8 +100,8 @@ This code mimics the Pivot control's built-in navigation experience, minus the t
 > [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../../../design/basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
-> - **WinUI 3** - Use the [SelectorBar](../../../design/controls/selector-bar.md) control.
-> - **WinUI 2/UWP** - Use a [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
+> - **WinUI** - Use the [SelectorBar](../../../design/controls/selector-bar.md) control.
+> - **WinUI for UWP/UWP** - Use a [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
 
 This XAML creates a basic Pivot control with 3 sections of content.
 
@@ -175,7 +175,7 @@ The control comes in two modes:
 > - Avoid using more than 5 headers when using carousel mode, as looping more than 5 can become confusing.
 > - Pivot headers should not carousel in a [10ft environment](../../../design/devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.IsHeaderItemsCarouselEnabled) property to `false` if your app will run on Xbox.
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -184,9 +184,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/windows.u
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [Pivot class](/uwp/api/windows.ui.xaml.controls.pivot)
-> - [Open the WinUI 2 Gallery app and see the Pivot in action](winui2gallery:/item/Pivot). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the Pivot in action](winui2gallery:/item/Pivot). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
 
 ## Related topics
 

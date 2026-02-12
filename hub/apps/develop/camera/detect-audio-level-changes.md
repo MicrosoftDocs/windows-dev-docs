@@ -6,7 +6,7 @@ ms.date: 08/07/2024
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
-#customer intent: As a developer, I want to detect and respond to audio level changes by the system in a Windows app using WinUI 3.
+#customer intent: As a developer, I want to detect and respond to audio level changes by the system in a Windows app using WinUI.
 ---
 
 # Detect and respond to audio level changes by the system

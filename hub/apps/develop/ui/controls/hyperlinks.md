@@ -63,7 +63,7 @@ The hyperlink appears inline and flows with the surrounding text:
 > - **Important APIs**: [HyperlinkButton control](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Hyperlinks in action](winui3gallery:/item/HyperlinkButton)
+> [Open the WinUI Gallery app and see the Hyperlinks in action](winui3gallery:/item/HyperlinkButton)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -157,7 +157,7 @@ Hyperlink doesn't inherit from [Control](/windows/windows-app-sdk/api/winrt/micr
 
 The default color of the hyperlink is the accent color of the system. You can set the [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.foreground) property to override this.
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -166,7 +166,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [Hyperlink text element](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton control](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
-> - [Open the WinUI 2 Gallery app and see Hyperlinks in action](winui2gallery:/item/HyperlinkButton). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see Hyperlinks in action](winui2gallery:/item/HyperlinkButton). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 ## Related articles
 

@@ -21,7 +21,7 @@ In order to build this project, you'll need some experience with C#, and XAML. Y
 
 - In Visual Studio, select **File** > **New** > **Project**.
 - In the **New Project** dialog's drop-down filters, select **C#/C++**, **Windows**, and **WinUI**, respectively.
-- Choose **Blank App, Packaged (WinUI 3 in Desktop)** and name your application "WindowsHelloLogin".
+- Choose **Blank App, Packaged (WinUI in Desktop)** and name your application "WindowsHelloLogin".
 - Build and Run the new application (F5), you should see a blank window shown on the screen. Close the application.
 
 ![A screenshot of the new Windows Hello Login app running for the first time](images/windows-hello-login-1.png)

@@ -136,7 +136,7 @@ The resource is then assigned to the background of an element.
 We use `{ThemeResource}` twice in the preceding example, once to reference **SystemColorWindowColor** and again to reference **BrandedPageBackgroundBrush**. Both are required for your app to theme correctly at run time. This is a good time to test out the functionality in your app. The **Grid** background will automatically update as you switch to a high contrast theme. It will also update when switching between different high contrast themes.
 
 > [!NOTE]
->**WinUI 2.6 and newer**
+>**WinUI for UWP.6 and newer**
 >
 > There are eight high contrast system brushes available for referencing through a **ResourceKey** (see the following example for **SystemColorWindowTextColorBrush**).
 >
@@ -158,11 +158,11 @@ Here are some recommendations for customizing the contrast theme colors in your 
 - **Do not** use `SystemColorHotlightColor` and corresponding brush as both are reserved for hyperlinks.
 
 > [!TIP]
-> It's often helpful to look at the WinUI Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:) or [**WinUI 2 Gallery**](winui2gallery:).
+> It's often helpful to look at the WinUI Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open them by clicking the following links: [**WinUI Gallery**](winui3gallery:) or [**WinUI for UWP Gallery**](winui2gallery:).
 >
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
+> If they are not installed, you can download the [**WinUI Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI for UWP Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
 >
-> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
+> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI and the *winui2* branch for WinUI for UWP).
 
 ### Hard-coded colors
 
@@ -250,7 +250,7 @@ The following code snippet (from an App.xaml file) shows an example [**ThemeDict
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see color contrast accessibility support in action](winui3gallery://item/AccessibilityColorContrast)
+> [Open the WinUI Gallery app and see color contrast accessibility support in action](winui3gallery://item/AccessibilityColorContrast)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

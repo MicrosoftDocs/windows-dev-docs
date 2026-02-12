@@ -95,7 +95,7 @@ Press <kbd>Ctrl + F4</kbd> to raise  the [TabCloseRequested](/windows/windows-ap
 > - **Important APIs**: [TabView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TabView in action](winui3gallery:/item/TabView)
+> [Open the WinUI Gallery app and see the TabView in action](winui3gallery:/item/TabView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -654,20 +654,20 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 }
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The TabView control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The TabView control for UWP apps is included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
-Tab tear-out APIs are not included in the WinUI 2 version of TabView.
+Tab tear-out APIs are not included in the WinUI for UWP version of TabView.
 
 > [!div class="checklist"]
 >
-> - **WinUI 2 Apis:** [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
-> - [Open the WinUI 2 Gallery app and see the TabView in action](winui2gallery:/item/TabView). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - **WinUI for UWP Apis:** [TabView class](/uwp/api/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/uwp/api/microsoft.ui.xaml.controls.tabviewitem)
+> - [Open the WinUI for UWP Gallery app and see the TabView in action](winui2gallery:/item/TabView). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls. WinUI for UWP.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

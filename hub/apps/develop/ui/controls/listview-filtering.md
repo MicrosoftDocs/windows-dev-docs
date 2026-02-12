@@ -153,7 +153,7 @@ Now, as the user types in their filtering string in the `FilterByLastName` TextB
 ## Get the sample code
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ListView in action](winui3gallery:/item/ItemsView)
+> [Open the WinUI Gallery app and see the ListView in action](winui3gallery:/item/ItemsView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

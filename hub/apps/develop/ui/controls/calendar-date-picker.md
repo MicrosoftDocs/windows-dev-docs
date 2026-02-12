@@ -34,7 +34,7 @@ The entry point displays placeholder text if a date has not been set; otherwise,
 > - **Important APIs:** [CalendarDatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarDatePicker), [Date property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.date), [DateChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.datechanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CalendarDatePicker in action](winui3gallery:/item/CalendarDatePicker)
+> [Open the WinUI Gallery app and see the CalendarDatePicker in action](winui3gallery:/item/CalendarDatePicker)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -86,7 +86,7 @@ The default placeholder text is "select a date". You can remove this by setting 
                     PlaceholderText="Choose your arrival date"/>
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -95,9 +95,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [CalendarDatePicker class](/uwp/api/Windows.UI.Xaml.Controls.CalendarDatePicker), [Date property](/uwp/api/windows.ui.xaml.controls.calendardatepicker.date), [DateChanged event](/uwp/api/windows.ui.xaml.controls.calendardatepicker.datechanged)
-> - [Open the WinUI 2 Gallery app and see the CalendarDatePicker in action](winui2gallery:/item/CalendarDatePicker). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the CalendarDatePicker in action](winui2gallery:/item/CalendarDatePicker). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI for UWP.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 ## Related articles
 

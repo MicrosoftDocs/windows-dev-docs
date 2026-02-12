@@ -1,6 +1,6 @@
 ---
 title: How to add OpenAI chat completions to a WinUI desktop app
-description: Get started with WinUI 3 / Windows App SDK desktop apps by integrating OpenAI's text generation and prompting APIs into the app. 
+description: Get started with WinUI / Windows App SDK desktop apps by integrating OpenAI's text generation and prompting APIs into the app. 
 ms.topic: how-to
 ms.date: 07/24/2025
 keywords: windows app sdk, winappsdk, winui3, openai, chatgpt
@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
 content-type: how-to
-#Customer intent: As a Windows developer, I want to learn how to integrate OpenAI's text generation and prompting APIs into my WinUI 3 / Windows App SDK desktop app so that I can build a chat-like interface that generates responses to messages.
+#Customer intent: As a Windows developer, I want to learn how to integrate OpenAI's text generation and prompting APIs into my WinUI / Windows App SDK desktop app so that I can build a chat-like interface that generates responses to messages.
 ---
 
-# Add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app
+# Add OpenAI chat completions to your WinUI / Windows App SDK desktop app
 
-In this how-to, you'll learn how to integrate OpenAI's API into your WinUI 3 / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [text generation and prompting APIs](https://platform.openai.com/docs/guides/text):
+In this how-to, you'll learn how to integrate OpenAI's API into your WinUI / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [text generation and prompting APIs](https://platform.openai.com/docs/guides/text):
 
 :::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A screenshot of a less minimal WinUI chat app.":::
 
@@ -379,13 +379,13 @@ Then, add the `InputTextBox_KeyDown` event handler to handle the `Enter` key:
 
 Your new-and-improved chat interface should look something like this:
 
-:::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A screenshot of a less minimal WinUI 3 chat app.":::
+:::image type="content" source="images/chatgpt-openai/long-story.png" alt-text="A screenshot of a less minimal WinUI chat app.":::
 
 ## Recap
 
 Here's what you accomplished in this how-to:
 
- 1. You added OpenAI's API capabilities to your WinUI 3 / Windows App SDK desktop app by installing the official OpenAI library and initializing it with your API key.
+ 1. You added OpenAI's API capabilities to your WinUI / Windows App SDK desktop app by installing the official OpenAI library and initializing it with your API key.
  1. You built a chat-like interface that lets you generate responses to messages using OpenAI's [text generation and prompting APIs](https://platform.openai.com/docs/guides/text).
  1. You improved the chat interface by:
     1. adding a `ScrollViewer`,
@@ -540,4 +540,4 @@ namespace ChatGPT_WinUI3
 
 - [Sample applications for Windows development](../get-started/samples.md)
 - [Windows development best practices](../get-started/best-practices.md)
-- [How to target multiple platforms with your WinUI 3 app](uno-multiplatform.md)
+- [How to target multiple platforms with your WinUI app](uno-multiplatform.md)

@@ -27,7 +27,7 @@ Depending on the situation, the scroll viewer's scrollbar uses two different vis
 :::row-end:::
 
 > [!IMPORTANT]
-> WinUI 3 has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
+> WinUI has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
 >
 > The `ScrollView` control is similar in behavior and usage to the `ScrollViewer` control, but is based on [InteractionTracker](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.interactions.interactiontracker), has new features such as animation-driven view changes, and is designed to ensure full functionality with [ItemsRepeater](../../../design/controls/items-repeater.md).
 
@@ -76,9 +76,9 @@ Various APIs are available that let you get the height and width of these region
 > - **Important APIs:** [ScrollView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer), [ScrollBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollbar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
+> [Open the WinUI Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
 >
-> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
+> [Open the WinUI Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -464,7 +464,7 @@ Use the `MinZoomFactor` and `MaxZoomFactor` properties to control the amount the
 
 ### Programmatic zoom
 
-The `ZoomFactor` property is read-only, but methods are provided to let you zoom programmatically. A typical use for this is to connect the scroll viewer to a Slider that controls the zoom amount, or a button to reset the zoom level. (See ScrollViewer in the WinUI 3 Gallery app to see an example of a zoom slider.)
+The `ZoomFactor` property is read-only, but methods are provided to let you zoom programmatically. A typical use for this is to connect the scroll viewer to a Slider that controls the zoom amount, or a button to reset the zoom level. (See ScrollViewer in the WinUI Gallery app to see an example of a zoom slider.)
 
 ### [ScrollView](#tab/scrollview)
 
@@ -530,10 +530,10 @@ private void ZoomSlider_ValueChanged(object sender, RangeBaseValueChangedEventAr
 
 ---
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 > [!NOTE]
-> The `ScrollView` control is available only in WinUI 3. For UWP and WinUI 2, use the `ScrollViewer` control.
+> The `ScrollView` control is available only in WinUI. For UWP and WinUI for UWP, use the `ScrollViewer` control.
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -542,9 +542,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer), [ScrollBar class](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
-> - [Open the WinUI 2 Gallery app and see the ScrollViewer in action](winui2gallery:/item/ScrollViewer). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the ScrollViewer in action](winui2gallery:/item/ScrollViewer). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI for UWP.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 ## Related topics
 

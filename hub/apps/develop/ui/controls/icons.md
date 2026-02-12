@@ -117,7 +117,7 @@ This example shows how you can define a FontIconSource in a ResourceDictionary, 
 :::image type="content" source="images/icon-shared-resource.png" alt-text="A certificate icon with the text certificate is expired, and a button with the certificate icon and the text view certificate":::
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app to see IconElement in action](winui3gallery:/item/IconElement)
+> [Open the WinUI Gallery app to see IconElement in action](winui3gallery:/item/IconElement)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -132,7 +132,7 @@ This list shows some common elements that have an _`icon`_ property.
 |[AppBarButton.Icon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton.icon) [AppBarToggleButton.Icon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton.icon) [AutoSuggestBox.QueryIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.queryicon) [MenuFlyoutItem.Icon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem.icon) [MenuFlyoutSubItem.Icon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutsubitem.icon) [SwipeItem.IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem.iconsource) [XamlUICommand.IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand.iconsource) | [NavigationViewItem.Icon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem.icon) [SelectorBarItem.Icon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem.icon) [TabViewItem.IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.iconsource)       | [AnimatedIcon.FallbackIconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon.fallbackiconsource) [AnimatedIconSource.FallbackIconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatediconsource.fallbackiconsource) [IconSourceElement.IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsourceelement.iconsource) [InfoBadge.IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource) [InfoBar.IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar.iconsource) [TeachingTip.IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip.iconsource)      |
 
 > [!TIP]
-> You can view these controls in the WinUI 3 Gallery app to see examples of how icons are used with them.
+> You can view these controls in the WinUI Gallery app to see examples of how icons are used with them.
 
 The remaining examples on this page show how to assign an icon to the _`icon`_ property of a control.
 
@@ -192,10 +192,10 @@ You can also specify an icon using a Glyph value from any available font. This e
 For more information and examples, see the [FontIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon) and [SymbolIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.symbolicon) class documentation.
 
 > [!TIP]
-> Use the Iconography page in the WinUI 3 Gallery app to view, search, and copy code for all the icons available in Segoe Fluent Icons.
+> Use the Iconography page in the WinUI Gallery app to view, search, and copy code for all the icons available in Segoe Fluent Icons.
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app to the Iconography page](winui3gallery:/item/Iconography)
+> [Open the WinUI Gallery app to the Iconography page](winui3gallery:/item/Iconography)
 
 ## AnimatedIcon
 
@@ -206,7 +206,7 @@ You can use animated icons to implement lightweight, vector-based icons with mot
 For more information and examples, see [Animated icons](../../../design/controls/animated-icon.md) and the [AnimatedIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon) class documentation.
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
+> [Open the WinUI Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
 
 ## PathIcon
 

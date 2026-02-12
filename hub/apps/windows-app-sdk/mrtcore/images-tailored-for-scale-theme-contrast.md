@@ -99,7 +99,7 @@ Also see [Tile and toast support for language, scale, and high contrast](/window
 
 ## Reference an image or other asset from a class library
 
-You can load images and other resources from a referenced **Class library (WinUI 3 in Desktop)** project by referencing the resource in a URI that uses the `ms-appx` scheme. The URI should include the name of the class library project and the path to the resource within the class library project. For example, if you have a class library project named `MyClassLibrary` that contains an image named `logo.png` in a folder named `Assets`, you can reference the image in your app project like this:
+You can load images and other resources from a referenced **Class library (WinUI in Desktop)** project by referencing the resource in a URI that uses the `ms-appx` scheme. The URI should include the name of the class library project and the path to the resource within the class library project. For example, if you have a class library project named `MyClassLibrary` that contains an image named `logo.png` in a folder named `Assets`, you can reference the image in your app project like this:
 
 ```xaml
 <Image Source="ms-appx:///MyClassLibrary/Assets/logo.png"/>

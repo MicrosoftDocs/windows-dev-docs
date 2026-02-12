@@ -17,7 +17,7 @@ Now you'll create a page that allows a user to edit a note, and then you'll writ
 First, add the new page to the project:
 
 1. In the **Solution Explorer** pane of Visual Studio, right-click on the **WinUINotes** project > **Add** > **New Item...**.
-1. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI 3)** template. Name the file _NotePage.xaml_, and then select **Add**.
+1. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI)** template. Name the file _NotePage.xaml_, and then select **Add**.
 1. The **NotePage.xaml** file will open in a new tab, displaying all of the XAML markup that represents the UI of the page. Replace the `<Grid> ... </Grid>` element in the XAML with the following markup:
 
     ```xaml

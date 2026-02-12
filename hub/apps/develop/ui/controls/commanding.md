@@ -96,7 +96,7 @@ A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input
 In this example, we show how to enhance a basic [ListView](../../../design/controls/listview-and-gridview.md) with a Delete item command implemented through the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, while optimizing the user experience for a variety of input types using a [MenuBar](../../../design/controls/menus.md), [Swipe](../../../design/controls/swipe.md) control, hover buttons, and [context menu](../../../design/controls/menus.md).
 
 > [!NOTE]
-> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of [WinUI 2](/windows/uwp/get-started/winui2/).
+> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of [WinUI for UWP](/windows/uwp/get-started/winui2/).
 
 **Xaml:**
 
@@ -381,7 +381,7 @@ This example shares the Delete functionality of the previous [StandardUICommand]
 Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section. 
 
 > [!NOTE]
-> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of [WinUI 2](/windows/uwp/get-started/winui2/).
+> This sample requires the Microsoft.UI.Xaml.Controls NuGet package, a part of [WinUI for UWP](/windows/uwp/get-started/winui2/).
 
 **Xaml:**
 
@@ -1092,7 +1092,7 @@ Use the following approaches when building commands for your Windows apps:
 
 ## Next steps
 
-For a complete example that demonstrates a [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) and [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) implementation, see the [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery) sample.
+For a complete example that demonstrates a [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) and [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) implementation, see the [WinUI for UWP Gallery](https://github.com/Microsoft/WinUI-Gallery) sample.
 
 ## See also
 
@@ -1109,4 +1109,4 @@ For a complete example that demonstrates a [XamlUICommand](/windows/windows-app-
 #### Other samples
 
 - [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
-- [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery)
+- [WinUI for UWP Gallery](https://github.com/Microsoft/WinUI-Gallery)
