@@ -70,7 +70,7 @@ Command bars can be placed in the following screen regions on single-view screen
 > - **Important APIs:** [CommandBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar), [AppBarButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the CommandBar in action](winui3gallery:/item/CommandBar)
+> [Open the WinUI Gallery app and see the CommandBar in action](winui3gallery:/item/CommandBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 This example creates the command bar shown previously.
@@ -288,7 +288,7 @@ Although the Minimal and Hidden modes are useful in some situations, keep in min
 
 Changing the ClosedDisplayMode to provide more or less of a hint to the user affects the layout of surrounding elements. In contrast, when the CommandBar transitions between closed and open, it does not affect the layout of other elements.
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -297,9 +297,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [CommandBar class](/uwp/api/windows.ui.xaml.controls.commandbar), [AppBarButton class](/uwp/api/windows.ui.xaml.controls.appbarbutton), [AppBarToggleButton class](/uwp/api/windows.ui.xaml.controls.appbartogglebutton), [AppBarSeparator class](/uwp/api/windows.ui.xaml.controls.appbarseparator)
-> - [Open the WinUI 2 Gallery app and see the CommandBar in action](winui2gallery:/item/CommandBar). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the CommandBar in action](winui2gallery:/item/CommandBar). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 [Automatic styling of a SplitButton](#splitbutton) in a CommandBar requires that you use the SplitButton control from WinUI 2.6 or later.
 

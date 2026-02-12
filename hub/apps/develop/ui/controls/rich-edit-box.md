@@ -46,7 +46,7 @@ This rich edit box has a rich text document open in it. The formatting and file 
 > - **Important APIs:** [RichEditBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox), [Document property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox)
+> [Open the WinUI Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -202,7 +202,7 @@ By default, the RichEditBox control does not interpret input as math. To enable 
 richEditBox.TextDocument.SetMathMode(Microsoft.UI.Text.RichEditMathMode.MathOnly);
 ```
 
-This enables UnicodeMath input to be automatically recognized and converted to MathML in real time. For example, entering 4^2 converts to 4<sup>2</sup>, and 1/2 converts to ½. See the [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) for more examples.
+This enables UnicodeMath input to be automatically recognized and converted to MathML in real time. For example, entering 4^2 converts to 4<sup>2</sup>, and 1/2 converts to ½. See the [WinUI Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) for more examples.
 
 To save the math content of a rich edit box as a MathML string, call [GetMathML](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richedittextdocument.getmathml).
 
@@ -218,7 +218,7 @@ To help users to enter data using the touch keyboard, or Soft Input Panel (SIP),
 
 For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md).
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -227,9 +227,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [Document property](/uwp/api/windows.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
-> - [Open the WinUI 2 Gallery app and see the RichEditBox in action](winui2gallery:/item/RichEditBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the RichEditBox in action](winui2gallery:/item/RichEditBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 ## Related articles
 

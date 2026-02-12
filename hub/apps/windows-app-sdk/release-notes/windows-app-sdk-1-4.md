@@ -128,7 +128,7 @@ zone_pivot_groups: wasdk-release-channels
 >
 > The WinUI 3 custom titlebar uses the AppWindow titlebar implementation, along with the [NonClientInputPointerSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputnonclientpointersource) APIs, under the hood in the Windows App SDK 1.4. As a result, both titlebar implementations now behave the same way with the same features and limitations. This is fully backwards compatible in all supported cases - any app with a custom-defined titlebar will behave as before. But, it's now easier for WinUI 3 developers who might be new to custom titlebars to understand and use them by taking advantage of these new features:
 >
-> - A better default scenario where the developer doesn't define a titlebar element specifically (replacing the fallback titlebar from WinUI 2)
+> - A better default scenario where the developer doesn't define a titlebar element specifically (replacing the fallback titlebar from WinUI for UWP)
 > - Distinct drag regions in the titlebar, enabling you to create multiple drag regions and place clickable controls on any part of the non-client area (titlebar area)
 > - App-wide draggable regions that can be put anywhere in the app or make the whole app draggable
 > - Better theming support that replaces resource-based theming
@@ -221,7 +221,7 @@ zone_pivot_groups: wasdk-release-channels
 > - Fixed a runtime AccessViolation issue in WinUI Desktop apps caused by setting `DebugSettings.EnableFrameRateCounter = true`. For more info, see GitHub issue [#2835](https://github.com/microsoft/microsoft-ui-xaml/issues/2835).
 > - Fixed an issue where `XamlTypeInfo.g.cpp` did not include needed headers. For more info, see GitHub issue [#4907](https://github.com/microsoft/microsoft-ui-xaml/issues/4907).
 > - Fixed a crashing issue caused by simultaneous multi-touch and mouse input. For more info, see GitHub issue [#7622](https://github.com/microsoft/microsoft-ui-xaml/issues/7622).
-> - Fixed an issue that prevented an active WinUI 3 app window from scrolling when the system setting to disable scrolling of inactive windows on mouse over was in effect. For more info, see GitHub issue [#8764](https://github.com/microsoft/microsoft-ui-xaml/issues/8764).
+> - Fixed an issue that prevented an active WinUI app window from scrolling when the system setting to disable scrolling of inactive windows on mouse over was in effect. For more info, see GitHub issue [#8764](https://github.com/microsoft/microsoft-ui-xaml/issues/8764).
 > - Fixed a crash when trying to subclass `MediaPlayerElement`.
 > - Fixed some crash and memory leak issues in `TreeView`.
 > - Fixed an app hang issue that could happen when using keyboard to navigate in `RadioButtons`.

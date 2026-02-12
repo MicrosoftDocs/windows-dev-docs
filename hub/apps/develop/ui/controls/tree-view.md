@@ -48,7 +48,7 @@ To create a tree view, you use a [TreeView](/windows/windows-app-sdk/api/winrt/m
 You can bind a hierarchical data source to the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) that renders the item.
 
 > [!IMPORTANT]
-> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-sdk)) or later, or [WinUI 2](/windows/uwp/get-started/winui2/).
+> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-sdk)) or later, or [WinUI for UWP](/windows/uwp/get-started/winui2/).
 >
 > **ItemsSource** is an alternative mechanism to **TreeView.RootNodes** for putting content into the **TreeView** control. You cannot set both **ItemsSource** and **RootNodes** at the same time. When you use **ItemsSource**, nodes are created for you, and you can access them from the **TreeView.RootNodes** property.
 
@@ -1330,19 +1330,19 @@ namespace TreeViewTest
 }
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The TreeView for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
+The TreeView for UWP apps is included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) (UWP) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) (WinUI) namespaces.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [TreeView class](/uwp/api/windows.ui.xaml.controls.treeview), [TreeViewNode class](/uwp/api/windows.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/uwp/api/windows.ui.xaml.controls.treeview.itemssource)
-> - **WinUI 2 Apis:** [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource)
-> - [Open the WinUI 2 Gallery app and see the TreeView in action](winui2gallery:/item/TreeView). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - **WinUI for UWP Apis:** [TreeView class](/windows/winui/api/microsoft.ui.xaml.controls.treeview), [TreeViewNode class](/windows/winui/api/microsoft.ui.xaml.controls.treeviewnode), [TreeView.ItemsSource property](/windows/winui/api/microsoft.ui.xaml.controls.treeview.itemssource)
+> - [Open the WinUI for UWP Gallery app and see the TreeView in action](winui2gallery:/item/TreeView). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

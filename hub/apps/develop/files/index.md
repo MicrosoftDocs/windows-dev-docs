@@ -43,7 +43,7 @@ Packaged apps have access to all the WinRT storage APIs available to UWP apps. W
 
 ## Use .NET file APIs for data access
 
-In addition to the WinRT APIs, packaged desktop apps can use the .NET APIs in the [System.IO](/dotnet/api/system.io) namespace to read and write data. When a new WinUI 3 project is created, its `Package.appxmanifest` file contains the following setting:
+In addition to the WinRT APIs, packaged desktop apps can use the .NET APIs in the [System.IO](/dotnet/api/system.io) namespace to read and write data. When a new WinUI project is created, its `Package.appxmanifest` file contains the following setting:
 
 ``` xml
 <Capabilities>

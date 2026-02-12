@@ -220,6 +220,12 @@ Released: **Jan 13, 2026** <br><br>
 >
 </details>
 
+<details><summary>Known issues</summary>
+
+> 
+> - An ONNX Runtime regression causes Video Super Resolution to fail on Qualcomm devices. A pending update to the Qualcomm NPU execution provider resolves this issue.
+> 
+</details>
 
 ## Version 2.0 Experimental 3 (2.0.0-Experimental3)
 

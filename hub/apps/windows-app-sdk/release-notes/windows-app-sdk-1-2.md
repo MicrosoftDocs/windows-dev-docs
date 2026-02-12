@@ -43,7 +43,7 @@ zone_pivot_groups: wasdk-release-channels
 
 <details><summary>Bug fixes</summary>
 
-> - Fixed issue causing WinUI 3 apps to crash when multiple windows are closed.
+> - Fixed issue causing WinUI apps to crash when multiple windows are closed.
 > - Fixed issue causing a crash on app close when two or more references to the ThreadPoolTimer interface are called. For more information, see GitHub issues [#7260](https://github.com/microsoft/microsoft-ui-xaml/issues/7260) and [#7239](https://github.com/microsoft/microsoft-ui-xaml/issues/7239).
 > - Fixed issue causing all Single-project MSIX apps to run as full trust. For more information, see GitHub issue [#7766](https://github.com/microsoft/microsoft-ui-xaml/issues/7766).
 
@@ -71,7 +71,7 @@ zone_pivot_groups: wasdk-release-channels
 
 <details><summary>Bug fixes</summary>
 
-> - Fixed issue that caused a crash on startup in C++ WinUI 3 apps when adding a WebView2 or TextBox control. For more information see GitHub issues [#7911](https://github.com/microsoft/microsoft-ui-xaml/issues/7911) & [#3117](https://github.com/microsoft/WindowsAppSDK/issues/3117).
+> - Fixed issue that caused a crash on startup in C++ WinUI apps when adding a WebView2 or TextBox control. For more information see GitHub issues [#7911](https://github.com/microsoft/microsoft-ui-xaml/issues/7911) & [#3117](https://github.com/microsoft/WindowsAppSDK/issues/3117).
 
 </details>
 
@@ -107,9 +107,9 @@ zone_pivot_groups: wasdk-release-channels
 
 <details><summary>WinUI 3</summary>
 
-> WinUI 3 apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](/windows/apps/design/controls/media-playback).
+> WinUI apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](/windows/apps/design/controls/media-playback).
 >
-> WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](/windows/uwp/get-started/winui2/release-notes/winui-2.7) and [WinUI 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8).
+> WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI for UWP 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI for UWP 2.7](/windows/uwp/get-started/winui2/release-notes/winui-2.7) and [WinUI for UWP 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8).
 >
 > **Fixed issues:**
 >
@@ -277,9 +277,9 @@ zone_pivot_groups: wasdk-release-channels
 <details><summary>WinUI 3</summary>
 
 >
-> WinUI 3 apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](../../design/controls/media-playback.md).
+> WinUI apps can play audio and video with the [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) and [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) media playback controls. For more info on how and when to use media controls, see [Media players](../../design/controls/media-playback.md).
 >
-> WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI 2.7](/windows/uwp/get-started/winui2/release-notes/winui-2.7) and [WinUI 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8).
+> WinUI 3 has been updated with the latest controls, styles, and behaviors from WinUI for UWP 2.8. These updates include the addition of the [**InfoBadge**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge) control, improvements to accessibility and high contrast mode, as well as bug fixes across controls. For more details, see the release notes for [WinUI for UWP 2.7](/windows/uwp/get-started/winui2/release-notes/winui-2.7) and [WinUI for UWP 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8).
 >
 > #### Known issue
 >
@@ -415,7 +415,7 @@ zone_pivot_groups: wasdk-release-channels
 <summary>WinUI 3</summary>
 
 >
-> - Controls and styles are up to date with the [WinUI 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8) release.
+> - Controls and styles are up to date with the [WinUI for UWP 2.8](/windows/uwp/get-started/winui2/release-notes/winui-2.8) release.
 > - UWP is no longer supported in the experimental releases.
 >
 

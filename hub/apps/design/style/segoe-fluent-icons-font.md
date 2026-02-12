@@ -73,7 +73,7 @@ You can also use the static resource `SymbolThemeFontFamily` to access `Segoe Fl
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Iconography principles in action](winui3gallery:/item/Iconography)
+> [Open the WinUI Gallery app and see Iconography principles in action](winui3gallery:/item/Iconography)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

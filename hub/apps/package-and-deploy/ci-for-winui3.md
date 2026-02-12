@@ -1,26 +1,26 @@
 ---
-title: Set up continuous integration for your WinUI 3 app
-description: How to automate WinUI 3 builds with continuous integration to produce sideload and/or Store packages.
+title: Set up continuous integration for your WinUI app
+description: How to automate WinUI builds with continuous integration to produce sideload and/or Store packages.
 ms.date: 12/13/2021
 zone_pivot_groups: winui3-version-c#-only
 ms.topic: how-to
 keywords: ci, continuous integration, automated builds, github actions, pipelines, winui 3, winui3, windows app sdk
 ms.localizationpriority: medium
 ---
-# Set up continuous integration for your WinUI 3 app
+# Set up continuous integration for your WinUI app
 
-You can use GitHub Actions to set up continuous integration builds for WinUI 3 projects. In this article, we'll look at different ways to do this. We'll also show you how to perform these tasks by using the command line so that you can integrate with any other build system.
+You can use GitHub Actions to set up continuous integration builds for WinUI projects. In this article, we'll look at different ways to do this. We'll also show you how to perform these tasks by using the command line so that you can integrate with any other build system.
 
 ## Prerequisites
 
-* Start with a single-project MSIX WinUI 3 app or migrate your project to [use single-project MSIX](../windows-app-sdk/single-project-msix.md).
+* Start with a single-project MSIX WinUI app or migrate your project to [use single-project MSIX](../windows-app-sdk/single-project-msix.md).
 * [Sign up for GitHub](https://github.com/join) and [create a repository](https://github.com/new) if you haven't done so already.
 
 ::: zone pivot="winui3-packaged-csharp"
 
 ## Step 1: Set up your certificate
 
-MSIX apps must be signed in order to be installed. If you already have a certificate, you can skip this step. You can easily create a test certificate by opening your app in Visual Studio, right clicking your WinUI 3 project, and selecting **Package and Publish** -> **Create App Packages**.
+MSIX apps must be signed in order to be installed. If you already have a certificate, you can skip this step. You can easily create a test certificate by opening your app in Visual Studio, right clicking your WinUI project, and selecting **Package and Publish** -> **Create App Packages**.
 
 Then select **Next** to move to the **Select signing method** page, and click the **Create...** button to create a new certificate. Choose the publisher name and **leave the password field blank**, and create the certificate.
 
@@ -56,10 +56,10 @@ Copy/paste the following into your workflow file, and then update...
 > For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace `env.Solution_Name` with `github.workspace` (the GitHub actions Workspace folder).
 
 ```yml
-# This workflow will build, sign, and package a WinUI 3 MSIX desktop application
+# This workflow will build, sign, and package a WinUI MSIX desktop application
 # built on .NET.
 
-name: WinUI 3 MSIX app
+name: WinUI MSIX app
 
 on:
   push:
@@ -165,10 +165,10 @@ Copy/paste the following into your workflow file, and then update...
 > For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace `env.Solution_Name` with `github.workspace` (the GitHub actions Workspace folder).
 
 ```yml
-# This workflow will build and publish a WinUI 3 unpackaged desktop application
+# This workflow will build and publish a WinUI unpackaged desktop application
 # built on .NET.
 
-name: WinUI 3 unpackaged app
+name: WinUI unpackaged app
 
 on:
   push:

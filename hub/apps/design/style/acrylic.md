@@ -91,15 +91,15 @@ It's important to ensure that any text your app presents to users meets contrast
 ## Apply acrylic in your app
 
 > [!IMPORTANT]
-> How you apply background acrylic differs between WinUI 3 and WinUI 2/UWP.
+> How you apply background acrylic differs between WinUI and WinUI for UWP/UWP.
 >
-> **WinUI 2/UWP**: The AcrylicBrush class has a [BackgroundSource](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush.backgroundsource) property that specifies whether you want background or in-app acrylic. You use an AcrylicBrush to apply both types of acrylic. See the AcrylicBrush classes for specific information and examples: [Microsoft.UI.Xaml.Media.AcrylicBrush (WinUI 2)](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush), [Windows.UI.Xaml.Media.AcrylicBrush (UWP)](/uwp/api/windows.ui.xaml.media.acrylicbrush).
+> **WinUI for UWP/UWP**: The AcrylicBrush class has a [BackgroundSource](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush.backgroundsource) property that specifies whether you want background or in-app acrylic. You use an AcrylicBrush to apply both types of acrylic. See the AcrylicBrush classes for specific information and examples: [Microsoft.UI.Xaml.Media.AcrylicBrush (WinUI for UWP)](/windows/winui/api/microsoft.ui.xaml.media.acrylicbrush), [Windows.UI.Xaml.Media.AcrylicBrush (UWP)](/uwp/api/windows.ui.xaml.media.acrylicbrush).
 >
-> **WinUI 3**: The [AcrylicBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) class only supports in-app acrylic. You use the [DesktopAcrylicBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop) class to apply background acrylic.
+> **WinUI**: The [AcrylicBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) class only supports in-app acrylic. You use the [DesktopAcrylicBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop) class to apply background acrylic.
 
 ### Background acrylic
 
-To apply background acrylic in a WinUI 3 app, set the element's `SystemBackdrop` property to an instance of [DesktopAcrylicBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop). For more info, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](/windows/apps/windows-app-sdk/system-backdrop-controller).
+To apply background acrylic in a WinUI app, set the element's `SystemBackdrop` property to an instance of [DesktopAcrylicBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop). For more info, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](/windows/apps/windows-app-sdk/system-backdrop-controller).
 
 These elements have a `SystemBackdrop` property:
 
@@ -124,9 +124,9 @@ WinUI includes a collection of brush theme resources that respect the app's them
 > [!NOTE]
 >You can view these resources in the [AcrylicBrush theme resources file, in the microsoft-ui-xaml GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/blob/6aed8d97fdecfe9b19d70c36bd1dacd9c6add7c1/dev/Materials/Acrylic/AcrylicBrush_19h1_themeresources.xaml#L11).
 >
-> For WinUI 2, resources that include _Background_ in their names represent background acrylic, while _InApp_ refers to in-app acrylic.
+> For WinUI for UWP, resources that include _Background_ in their names represent background acrylic, while _InApp_ refers to in-app acrylic.
 >
-> WinUI 3 includes the _Background_ resources for compatibility, but they behave the same as _InApp_ resources.
+> WinUI includes the _Background_ resources for compatibility, but they behave the same as _InApp_ resources.
 
 #### Custom acrylic brush
 
@@ -135,7 +135,7 @@ You may choose to add a color tint to your app's acrylic to show branding or pro
 - **TintColor**: the color/tint overlay layer.
 - **TintOpacity**: the opacity of the tint layer.
 - **TintLuminosityOpacity**: controls the amount of saturation that is allowed through the acrylic surface from the background.
-- **BackgroundSource**: (WinUI 2/UWP only) the flag to specify whether you want background or in-app acrylic.
+- **BackgroundSource**: (WinUI for UWP/UWP only) the flag to specify whether you want background or in-app acrylic.
 - **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn't in the active desktop window.
 
 ![Light theme acrylic swatches](images/custom-acrylic-swatches-light-theme.png)
@@ -205,9 +205,9 @@ We fine-tuned acrylic's key components to arrive at its unique appearance and pr
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see background Acrylic in action](winui3gallery://item/SystemBackdrops)
+> [Open the WinUI Gallery app and see background Acrylic in action](winui3gallery://item/SystemBackdrops)
 >
-> [Open the WinUI 3 Gallery app and see the in-app AcrylicBrush in action](winui3gallery://item/Acrylic)
+> [Open the WinUI Gallery app and see the in-app AcrylicBrush in action](winui3gallery://item/Acrylic)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

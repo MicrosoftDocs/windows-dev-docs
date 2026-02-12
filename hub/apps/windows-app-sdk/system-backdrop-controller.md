@@ -1,6 +1,6 @@
 ---
-title: Using a SystemBackdropController with WinUI 3 XAML 
-description: Sample code for applying Mica in a WinUI 3 application.
+title: Using a SystemBackdropController with WinUI XAML 
+description: Sample code for applying Mica in a WinUI application.
 ms.topic: how-to
 ms.date: 07/14/2025
 keywords: windows, windows app development, Windows App SDK, Mica
@@ -18,13 +18,13 @@ dev_langs:
 
 [Acrylic](../design/style/acrylic.md) is a semi-transparent material that replicates the effect of frosted glass. It's used only for transient, light-dismiss surfaces such as flyouts and context menus.
 
-This article describes how to apply Mica or Acrylic as the base layer of your Windows App SDK/WinUI 3 XAML app.
+This article describes how to apply Mica or Acrylic as the base layer of your Windows App SDK/WinUI XAML app.
 
 > [!NOTE]
 >
 > - To use an in-app AcrylicBrush, see [Acrylic material](../design/style/acrylic.md).
 > - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md).
-> - To use backdrop materials in a UWP/WinUI 2 app, see [Apply Mica with WinUI 2 for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
+> - To use backdrop materials in a UWP/WinUI for UWP app, see [Apply Mica with WinUI for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
 
 ## How to use a backdrop material
 
@@ -33,7 +33,7 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 > - **Important APIs**: [Window.SystemBackdrop property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), [MicaBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop), [DesktopAcrylicBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop), [SystemBackdropConfiguration class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops)
+> [Open the WinUI Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops)
 
 [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
 
@@ -235,9 +235,9 @@ In order to use the backdrop material in your app, the following items are requi
 
 - **A DispatcherQueue object**.
 
-   You need an available [Windows.System.DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) on the main XAML thread. See the `WindowsSystemDispatcherQueueHelper` class in the example code, or in the [WinUI 3 Gallery sample](https://github.com/microsoft/WinUI-Gallery/blob/8cb9da922c48c5ea2e3190c579ebb77c75a2ca20/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs#L11).
+   You need an available [Windows.System.DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) on the main XAML thread. See the `WindowsSystemDispatcherQueueHelper` class in the example code, or in the [WinUI Gallery sample](https://github.com/microsoft/WinUI-Gallery/blob/8cb9da922c48c5ea2e3190c579ebb77c75a2ca20/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs#L11).
 
-## Example: Use Mica in a Windows AppSDK/WinUI 3 app
+## Example: Use Mica in a Windows AppSDK/WinUI app
 
 This example shows how to set up the Mica backdrop material in a XAML app.
 

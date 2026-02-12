@@ -39,7 +39,7 @@ The Windows Design Kit is a Figma library that includes:
 ## WinUI Gallery
 The Design Guidance section of the WinUI Gallery offers best practices and tools to help you choose and apply the right colors, typography, and icons for your app. The Accessibility section includes code snippets and tips to make your app more inclusive and accessible to all users.
 
-:::image type="content" source="images/winui-gallery.png" alt-text="A screenshot of the Design Guidance section of the WinUI 3 Gallery":::
+:::image type="content" source="images/winui-gallery.png" alt-text="A screenshot of the Design Guidance section of the WinUI Gallery":::
 
 > [!div class="button"]
 > [Design Guidance in WinUI Gallery](winui3gallery://item/Color)

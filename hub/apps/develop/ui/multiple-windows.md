@@ -6,19 +6,19 @@ ms.topic: article
 ms.localizationpriority: medium
 no-loc: [Window, Page, AppWindow, Frame, Dictionary, WindowId]
 appliesto:
-  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI 3</a>
+  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI</a>
   - ✅ <a href="hhttps://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 # Show multiple windows for your app
 
-In your WinUI 3 app, you can show your app content in secondary windows while still working on the same UI thread across each window.
+In your WinUI app, you can show your app content in secondary windows while still working on the same UI thread across each window.
 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [Microsoft.UI.Windowing namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing), [Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see multiple windows in action](winui3gallery:/item/CreateMultipleWindows)
+> [Open the WinUI Gallery app and see multiple windows in action](winui3gallery:/item/CreateMultipleWindows)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

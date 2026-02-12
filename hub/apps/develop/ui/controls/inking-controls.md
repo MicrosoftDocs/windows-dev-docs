@@ -126,7 +126,7 @@ The InkCanvas and InkToolbar are also used for **Snip & Sketch** in the **Window
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [InkCanvas class](/uwp/api/windows.ui.xaml.controls.inkcanvas), [InkToolbar class](/uwp/api/windows.ui.xaml.controls.inktoolbar), [InkPresenter class](/uwp/api/windows.ui.input.inking.inkpresenter), [Windows.UI.Input.Inking](/uwp/api/Windows.UI.Input.Inking)
-> - [Open the WinUI 2 Gallery app and see the InkingControls in action](winui2gallery:/item/InkCanvas). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the InkingControls in action](winui2gallery:/item/InkCanvas). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 Adding an InkCanvas to your app requires just one line of markup:
 
@@ -151,7 +151,7 @@ This displays the following InkToolbar:
 
 - [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) - Demonstrates 8 scenarios around the customization and extensibility capabilities of the InkCanvas and InkToolbar controls. Each scenario provides basic guidance on common inking situations and control implementations.
 - [ComplexInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk) - Demonstrates more advanced inking scenarios.
-- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI for UWP Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

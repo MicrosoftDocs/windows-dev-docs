@@ -37,7 +37,7 @@ For other navigation patterns, see [Navigation design basics](../../../design/ba
 > - **Important APIs:** [NavigationView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the NavigationView in action](winui3gallery:/item/NavigationView)
+> [Open the WinUI Gallery app and see the NavigationView in action](winui3gallery:/item/NavigationView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -1473,7 +1473,7 @@ This table shows which theme resource is used in each display mode.
 This example shows how to override the theme resources in App.xaml. When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed. For more info, see [ResourceDictionary.ThemeDictionaries](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries).
 
 > [!IMPORTANT]
-> This code shows how to use the [WinUI 2](/windows/uwp/get-started/winui2/) version of AcrylicBrush. If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater. To use the platform version, remove all references to `muxm:`.
+> This code shows how to use the [WinUI for UWP](/windows/uwp/get-started/winui2/) version of AcrylicBrush. If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater. To use the platform version, remove all references to `muxm:`.
 
 ```xaml
 <Application ... xmlns:muxm="using:Microsoft.UI.Xaml.Media" ...>
@@ -1545,19 +1545,19 @@ To further adjust the position of NavigationView's header area, override the *Na
 
 This theme resource modifies the margin around [NavigationView.Header](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.header).
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The NavigationView control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
+The NavigationView control for UWP apps is included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in both the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [Windows.UI.Xaml.Controls.NavigationView class](/uwp/api/windows.ui.xaml.controls.navigationview)
-> - **WinUI 2 Apis:** [Microsoft.UI.Xaml.Controls.NavigationView class](/windows/winui/api/microsoft.ui.xaml.controls.navigationview)
-> - [Open the WinUI 2 Gallery app and see the NavigationView in action](winui2gallery:/item/NavigationView). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - **WinUI for UWP Apis:** [Microsoft.UI.Xaml.Controls.NavigationView class](/windows/winui/api/microsoft.ui.xaml.controls.navigationview)
+> - [Open the WinUI for UWP Gallery app and see the NavigationView in action](winui2gallery:/item/NavigationView). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls. Some features of NavigationView, such as _top_ and _hierarchical_ navigation, require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or [WinUI 2](/windows/uwp/get-started/winui2/).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls. Some features of NavigationView, such as _top_ and _hierarchical_ navigation, require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or [WinUI for UWP](/windows/uwp/get-started/winui2/).
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

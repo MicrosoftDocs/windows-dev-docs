@@ -349,7 +349,7 @@ msstore submission delete <productId>
 | -v, --verbose         | Print verbose output.                            |
 | -?, -h, --help        | Show help and usage information.                 |
 
-## Flights Command
+## Flights Commands
 
 | Sub-Command                                 | Description                                                  |
 | ------------------------------------------- | ------------------------------------------------------------ |
@@ -687,7 +687,7 @@ msstore flights submission rollout finalize --help
 
 The `init` command helps you setup your application to publish to the Microsoft Store. It currently supports the following application types:
 
-- Windows App SDK/WinUI 3
+- Windows App SDK/WinUI
 - UWP
 - .NET MAUI
 - Flutter
@@ -697,7 +697,7 @@ The `init` command helps you setup your application to publish to the Microsoft 
 
 ### Usage Examples
 
-#### Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI
 
 ```console
 msstore init "C:\path\to\winui3_app"
@@ -767,7 +767,7 @@ Helps you package your Microsoft Store Application as an MSIX.
 
 ### Usage Examples
 
-#### Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI
 
 ```console
 msstore package "C:\path\to\winui3_app"
@@ -829,7 +829,7 @@ Publishes your Application to the Microsoft Store.
 
 ### Usage Examples
 
-#### Windows App SDK/WinUI 3
+#### Windows App SDK/WinUI
 
 ```console
 msstore publish "C:\path\to\winui3_app"

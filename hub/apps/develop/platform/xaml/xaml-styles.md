@@ -265,7 +265,7 @@ Its required that you use a `ThemeDictionary` that is duplicated three times in 
 
 The [WinUI](/windows/uwp/get-started/winui2/) 2.2 or later includes new styles and templates for both WinUI and system controls.
 
-The best way to stay current with our latest visual styles is to use the latest WinUI 2 package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
+The best way to stay current with our latest visual styles is to use the latest WinUI for UWP package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 
 For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
 
@@ -275,11 +275,11 @@ For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace)
 </Style>
 ```
 
-For WinUI 2 controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
+For WinUI for UWP controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
 
 ### Derived controls
 
-If you derive a custom control from an existing XAML control, it will not get the WinUI 2 styles by default. To apply the WinUI 2 styles:
+If you derive a custom control from an existing XAML control, it will not get the WinUI for UWP styles by default. To apply the WinUI for UWP styles:
 
 - Create a new [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style) with its [TargetType](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) set to your custom control.
 - Base the Style on the default style of the control you derived from.

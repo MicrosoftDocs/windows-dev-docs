@@ -67,13 +67,13 @@ There are many ways you can get user input in your app. These questions will hel
 ## Examples
 
 <table>
-<th align="left">WinUI 2 Gallery<th>
+<th align="left">WinUI for UWP Gallery<th>
 <tr>
 <td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
 <td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/category/Text">open the app and see the text controls in action</a>.</p>
+    <p>If you have the <strong>WinUI for UWP Gallery</strong> app installed, click here to <a href="winui2gallery:/category/Text">open the app and see the text controls in action</a>.</p>
     <ul>
-    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI for UWP Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>

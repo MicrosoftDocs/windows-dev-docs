@@ -39,7 +39,7 @@ Accent color is used to emphasize important elements in the user interface and t
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Color principles in action](winui3gallery:/item/Color)
+> [Open the WinUI Gallery app and see Color principles in action](winui3gallery:/item/Color)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -315,4 +315,4 @@ Be aware of how colorblindness could affect the usability of your application. F
 
 - [XAML Styles](../../develop/platform/xaml/xaml-styles.md)
 - [XAML Theme Resources](../../develop/platform/xaml/xaml-theme-resources.md)
-- [WinUI 3 Gallery - Colors](winui3gallery://item/Colors)
+- [WinUI Gallery - Colors](winui3gallery://item/Colors)
