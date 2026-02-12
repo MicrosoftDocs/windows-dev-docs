@@ -5667,17 +5667,17 @@
     },
     {
       "source_path": "hub/python/get-started/python-for-education.md",
-      "redirect_url": "/windows/python/beginners",
+      "redirect_url": "/windows/python/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-web.md",
-      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_url": "/windows/python/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-scripting.md",
-      "redirect_url": "/windows/python/scripting",
+      "redirect_url": "/windows/python/python",
       "redirect_document_id": false
     },
     {
@@ -8267,7 +8267,7 @@
     },
     {
       "source_path": "hub/python/resources.md",
-      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_url": "/windows/python/python",
       "redirect_document_id": false
     },
     {
@@ -10608,6 +10608,31 @@
     {
       "source_path": "hub/apps/get-started/make-apps-great-for-windows.md",
       "redirect_url": "/windows/apps/get-started/best-practices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/beginners.md",
+      "redirect_url": "/windows/python/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/faqs.yml",
+      "redirect_url": "/windows/python/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/index.yml",
+      "redirect_url": "/windows/python/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/scripting.md",
+      "redirect_url": "/windows/python/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/web-frameworks.md",
+      "redirect_url": "/windows/python/python",
       "redirect_document_id": false
     }
   ]
