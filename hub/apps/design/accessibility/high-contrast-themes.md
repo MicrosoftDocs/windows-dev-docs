@@ -136,7 +136,7 @@ The resource is then assigned to the background of an element.
 We use `{ThemeResource}` twice in the preceding example, once to reference **SystemColorWindowColor** and again to reference **BrandedPageBackgroundBrush**. Both are required for your app to theme correctly at run time. This is a good time to test out the functionality in your app. The **Grid** background will automatically update as you switch to a high contrast theme. It will also update when switching between different high contrast themes.
 
 > [!NOTE]
->**WinUI for UWP.6 and newer**
+>**WinUI 2.6 and newer**
 >
 > There are eight high contrast system brushes available for referencing through a **ResourceKey** (see the following example for **SystemColorWindowTextColorBrush**).
 >

@@ -17,9 +17,9 @@ You can customize the appearance of your apps in many ways by using the XAML fra
 
 ## WinUI and styles
 
-Starting with WinUI for UWP.2, we have used WinUI to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
+Starting with WinUI 2.2, we have used WinUI to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
 
-Starting with WinUI for UWP.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
+Starting with WinUI 2.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
 
 You can change the style version by setting the `ControlsResourcesVersion` property on the `XamlControlsResources` that you include in your `Application.Resources` when you use WinUI version 2. `ControlsResourcesVersion` defaults to the enum value `Version2`.
 

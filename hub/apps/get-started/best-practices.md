@@ -147,10 +147,10 @@ Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/signature-experi
 
 ![An image of a selection of windows icons.](images/great-apps/icons.png)
 
-- New icons called "Segoe Fluent Icons" are introduced for monoline icons. Controls in WinUI for UWP.6 and greater use the new icons and typography automatically.
+- New icons called "Segoe Fluent Icons" are introduced for monoline icons. Controls in WinUI 2.6 and greater use the new icons and typography automatically.
 - File type icons are updated. If your app is using icons in `imageres.dll` or `shell32.dll`, then icons will be updated automatically. Otherwise, a manual style update might be needed.
 - App icons - Follow the latest guidance for [Icons in Windows apps](../develop/ui/controls/icons.md) used in places like launchers on Start and TaskBar.
-- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](../develop/ui/controls/animated-icon.md) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI for UWP.6 or greater.
+- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](../develop/ui/controls/animated-icon.md) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI 2.6 or greater.
 - Custom experiences written in XAML that specify `Segoe UI` in code, should instead specify `Segoe UI Variable`.
 
 > [!NOTE]

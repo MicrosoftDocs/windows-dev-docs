@@ -222,7 +222,7 @@ The MenuFlyout and MenuBar controls for UWP apps are included as part of WinUI f
 > - **WinUI for UWP Apis:** [MenuBar class](/windows/winui/api/microsoft.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
 > - [Open the WinUI for UWP Gallery app and see MenuBar in action](winui2gallery:/item/MenuBar). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI for UWP.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

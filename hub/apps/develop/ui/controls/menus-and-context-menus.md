@@ -65,7 +65,7 @@ The CommandBarFlyout and MenuBar controls for UWP apps are included as part of W
 > - **WinUI for UWP Apis:** [CommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout), [MenuBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar), [TextCommandBarFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout)
 > - Open the WinUI for UWP Gallery app and see the [MenuBar](winui2gallery:/item/MenuBar) or [CommandBarFlyout](winui2gallery:/item/CommandBarFlyout) in action. [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI for UWP.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

@@ -564,8 +564,8 @@ The RadioButtons control for UWP apps is included as part of WinUI for UWP. For 
 
 There are two ways to create radio button groups.
 
-- Starting with WinUI for UWP.3, we recommend the **[RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
-- You can use groups of individual **[RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton)** controls. If your app does not use WinUI for UWP.3 or later, this is the only option.
+- Starting with WinUI 2.3, we recommend the **[RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
+- You can use groups of individual **[RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
 
 We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
 

@@ -154,7 +154,7 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > - **UWP APIs:** [TimePicker class](/uwp/api/Windows.UI.Xaml.Controls.TimePicker), [SelectedTime property](/uwp/api/windows.ui.xaml.controls.timepicker.selectedtime)
 > - [Open the WinUI for UWP Gallery app and see the TimePicker in action](winui2gallery:/item/TimePicker). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI for UWP.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 ## Related topics
 
