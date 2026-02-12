@@ -98,13 +98,15 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
    > **Note:** Mandatory due diligence is required and is a blocking step. You can’t proceed further until this step is successfully completed. Only after mandatory due diligence passes can business and employment verification continue. 
 
+![Complete verification](images/new-company-account-5.png)
+
    For each verification step, one of the following will occur: 
    * Verification completes automatically, typically within a few seconds to a minute, or
    * Verification doesn’t complete automatically, and will move to manual review 
 
    Manual reviews typically take 2–5 business days. During this time, you can leave the page and wait for an email notification. Once notified, return to the Verification summary page to check the updated status or take any required action. 
 
-![Complete verification](images/new-company-account-5.png)
+![Account verification status](images/new-company-account-6.png)
 
 9. Take action if verification requires it 
 
@@ -128,7 +130,7 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
    > **Note:** After account creation, it may take up to 30 minutes for your verification status to fully reflect across Partner Center. If app submission isn’t available immediately, wait a few minutes and try again. 
 
-![Apps and games overview](images/new-company-account-6.png)
+![Apps and games overview](images/new-company-account-7.png)
 
 ## Need help? Contact us
 
