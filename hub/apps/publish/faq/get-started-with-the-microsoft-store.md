@@ -162,6 +162,25 @@ For general questions, you can also use Microsoft Q&A forums or check the Learn 
 
 </details>
 
+---
+
+<details>
+<summary><strong>Does the Microsoft Store provide code signing for my app? Do I need my own code signing certificate?</strong></summary>
+
+Yes, the Microsoft Store provides **automatic code signing** for all apps submitted for Store distribution. You do not need to purchase or provide your own code signing certificate, .pfx file, .cer file, or use a USB token/hardware security module (HSM) to submit apps to the Microsoft Store.
+
+Here's how it works:
+
+- **For Store submissions:** When you submit your MSIX package to the Microsoft Store, you can upload an unsigned package (or a package signed with any certificate). After your app passes certification, the Microsoft Store automatically signs your package with a Microsoft certificate during the publishing process. This ensures customers can trust and install your app without security warnings.
+  
+- **What you need:** Only the package files (.msix, .msixupload, .msixbundle, .appx, .appxupload, or .appxbundle) are required for submission. No code signing certificate is needed.
+
+- **For non-Store distribution:** If you plan to distribute your MSIX package outside the Microsoft Store (for example, for enterprise deployment, sideloading, or direct downloads), you will need to sign the package yourself with a valid code signing certificate before distribution. For more information, see [Sign an app package using SignTool](/windows/win32/appxpkg/how-to-sign-a-package-using-signtool).
+
+This automatic signing is one of the key benefits of publishing through the Microsoft Store, as it eliminates the need to purchase and manage your own code signing infrastructure for Store distribution.
+
+</details>
+
 <br>
 
 > [!TIP]
