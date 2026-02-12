@@ -151,13 +151,7 @@ items:
             - name: Tutorial for beginners
               href: ./javascript/vue-beginners-tutorial.md
   - name: Get started with Python
-    items:
-        - name: Set up your development environment
-          href: ../python/python.md
-  - name: Get started with Windows app development
-    href: ../apps/index.yml
-  - name: Get started with Windows AI development
-    href: /windows/ai
+    href: ../python/python.md
   - name: Get started with C and C++
     href: /cpp/
   - name: Get started with C#
@@ -182,5 +176,7 @@ items:
           href: ./rust/rss-reader-rust-for-windows.md
         - name: Rust in Visual Studio Code
           href: https://code.visualstudio.com/docs/languages/rust
+  - name: Get started with Windows app development
+    href: ../apps/index.yml
   - name: Mac to Windows guide
     href: mac-to-windows.md

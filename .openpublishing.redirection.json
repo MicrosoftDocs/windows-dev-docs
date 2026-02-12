@@ -5667,17 +5667,17 @@
     },
     {
       "source_path": "hub/python/get-started/python-for-education.md",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-web.md",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-scripting.md",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
@@ -8267,7 +8267,7 @@
     },
     {
       "source_path": "hub/python/resources.md",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
@@ -10612,27 +10612,27 @@
     },
     {
       "source_path": "hub/python/beginners.md",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/faqs.yml",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/index.yml",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/scripting.md",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/web-frameworks.md",
-      "redirect_url": "/windows/python/python",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     }
   ]
