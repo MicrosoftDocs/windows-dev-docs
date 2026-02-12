@@ -74,23 +74,13 @@ Follow these guides to set up your Windows development environment for your pref
         Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
     :::column:::
-       [![AI Foundry icon](../images/aifoundry-icon.png)](/windows/ai)<br>
-        **[Get started with Windows AI](/windows/ai)**<br>
-        Build next-generation applications with local AI running on NPU-powered devices.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-       [![Android icon](../images/android-logo.png)](/windows/android)<br>
-        **[Get started with Android](/windows/android)**<br>
-        Build Android apps on Windows with Android Studio, .NET MAUI, React, or PWAs.
-    :::column-end:::
-    :::column:::
        [![C / C++](../images/c-logo.png)](/cpp/)<br>
         **[Get started with C++ and C](/cpp/)**<br>
         Develop apps, services, and tools with C++, C, and assembly.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
         **[Get started with C#](/dotnet/csharp/)**<br>
