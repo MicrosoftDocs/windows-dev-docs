@@ -16,6 +16,8 @@ Background tasks are app components that run in the background without a user in
 
 The implementation of background tasks is different for UWP and WinUI apps. For information about migrating your UWP apps with background tasks to WinUI, see the Windows App SDK [Background task migration strategy](../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md).
 
+[Task Scheduler](/windows/win32/api/_taskschd/) helps desktop apps achieve the same functionality that is provided by [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) in UWP apps. More details on implementations using **TaskScheduler** are available [here](/windows/win32/api/taskschd/).
+
 ## Register a background task
 
 Use the [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) class included with the Windows App SDK to register a background task that uses full trust COM component.
@@ -23,6 +25,8 @@ Use the [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.win
 The following example shows how to register a background task using C++. In the Windows App SDK github sample, you can see this registration code in [MainWindow.Xaml.cpp](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/BackgroundTask/InProc%20BackgroundTask/cpp-winui/BackgroundTaskBuilder/MainWindow.xaml.cpp#L82)
 
 ```cpp
+auto access = co_await BackgroundExecutionManager::RequestAccessAsync();
+
 // Unregister all existing background task registrations
 auto allRegistrations = BackgroundTaskRegistration::AllTasks();
 for (const auto& taskPair : allRegistrations)
@@ -33,17 +37,28 @@ for (const auto& taskPair : allRegistrations)
 
 //Using the Windows App SDK API for BackgroundTaskBuilder
 winrt::Microsoft::Windows::ApplicationModel::Background::BackgroundTaskBuilder builder;
+builder.Name(L"TimeZoneChangeTask");
 SystemTrigger trigger = SystemTrigger(SystemTriggerType::TimeZoneChange, false);
 auto backgroundTrigger = trigger.as<IBackgroundTrigger>();
 builder.SetTrigger(backgroundTrigger);
 builder.AddCondition(SystemCondition(SystemConditionType::InternetAvailable));
-builder.SetTaskEntryPointClsid(__uuidof(winrt::BackgroundTaskBuilder::BackgroundTask));
-builder.Register(); 
+builder.SetTaskEntryPointClsid(__uuidof(winrt::BackgroundTaskInProcCPP::BackgroundTask));
+
+try
+{
+    builder.Register();
+}
+catch (...)
+{
+    // Indicate an error was encountered.
+}
 ```
 
 The following example shows how to register a background task using C#. In the Windows App SDK github sample, you can see this registration code in [MainWindow.Xaml.cpp](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/BackgroundTask/InProc%20BackgroundTask/cs-winui/BackgroundTaskBuilder/MainWindow.xaml.cs#L79).
 
 ```csharp
+await BackgroundExecutionManager.RequestAccessAsync();
+
 // Unregister all existing background task registrations
 var allRegistrations = BackgroundTaskRegistration.AllTasks;
 foreach (var taskPair in allRegistrations)
@@ -54,6 +69,7 @@ foreach (var taskPair in allRegistrations)
 
 //Using the Windows App SDK API for BackgroundTaskBuilder
 var builder = new Microsoft.Windows.ApplicationModel.Background.BackgroundTaskBuilder();
+builder.Name = "TimeZoneChangeTask";
 var trigger = new SystemTrigger(SystemTriggerType.TimeZoneChange, false);
 var backgroundTrigger = trigger as IBackgroundTrigger;
 builder.SetTrigger(backgroundTrigger);
@@ -68,7 +84,11 @@ Note that the call to [SetEntryPointClsid](/windows/windows-app-sdk/api/winrt/mi
 
 Use the following best practices when registering background tasks.
 
+* Call [BackgroundExecutionManager.RequestAccessAsync](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) before registering background tasks.
+
 * Don't register a background task multiple times. Either verify that a background task isn't already registered before registering or, as in the Windows App SDK sample, unregister all background tasks and then reregister the tasks. Use the [BackgroundTaskRegistration](/uwp/api/windows.applicationmodel.background.backgroundtaskregistration) class to query for existing background tasks.
+
+* Use the [BackgroundTaskBuilder.Name](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder.name) property to specify a meaningful name for the background task to simplify debugging and maintenance.
 
 
 
