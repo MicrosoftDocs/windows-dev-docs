@@ -51,7 +51,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 
 Watch the Windows developer tools overview from Microsoft Ignite to see these tools in action.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Development paths
 
