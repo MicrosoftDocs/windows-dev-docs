@@ -153,9 +153,7 @@ items:
   - name: Get started with Python
     items:
         - name: Set up your development environment
-          href: ../python/beginners.md
-        - name: FAQs
-          href: ../python/faqs.yml
+          href: ../python/python.md
   - name: Get started with Windows app development
     href: ../apps/index.yml
   - name: Get started with Windows AI development
