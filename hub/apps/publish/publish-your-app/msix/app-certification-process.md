@@ -35,7 +35,9 @@ When your app passes certification, it's ready to move to the **Publishing** pro
 
 ## Publishing
 
-Your app's packages are digitally signed by Microsoft to protect them against tampering after they have been released. The Microsoft Store automatically signs all packages with a Microsoft certificate, which ensures that customers can trust and install your app without security warnings. This automatic signing process means you don't need to provide your own code signing certificate for Store distribution. Once this phase has begun, you can no longer cancel your submission or change its release date.
+Your app's packages are digitally signed by Microsoft to protect them against tampering after they have been released. The Microsoft Store automatically signs all packages with a Microsoft certificate, which ensures that customers can trust and install your app without security warnings. 
+
+You don't need to provide your own code signing certificate for Store distribution—the Store handles this automatically. Once this phase has begun, you can no longer cancel your submission or change its release date.
 
 The publishing process takes a few minutes and on average, customers will be able to see the app’s listing within 15 minutes depending on their location.
 
