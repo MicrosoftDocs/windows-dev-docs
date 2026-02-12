@@ -24,7 +24,7 @@ items:
     href: /windows/powertoys/
   - name: Edit command line tool
     href: ../edit/index.md
-  - name: WinGet and package management
+  - name: WinGet
     items:
       - name: Overview
         href: ../package-manager/index.md
