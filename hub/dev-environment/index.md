@@ -126,32 +126,6 @@ Follow these guides to set up your Windows development environment for your pref
     :::column-end:::
 :::row-end:::
 
-## More for developers
-
-:::row:::
-    :::column:::
-       [![VS Code icon](../images/Vscode.png)](https://code.visualstudio.com/docs)<br>
-        **[VS Code](https://code.visualstudio.com/docs)**<br>
-        A lightweight source code editor with built-in support for JavaScript, TypeScript, Node.js, and a rich extension ecosystem.
-    :::column-end:::
-    :::column:::
-       [![Visual Studio icon](../images/visualstudio.png)](/visualstudio/windows/)<br>
-        **[Visual Studio](/visualstudio/windows/)**<br>
-        A full-featured IDE for editing, debugging, building, and publishing apps.
-    :::column-end:::
-    :::column:::
-       [![Azure icon](../images/Azure.png)](/azure/guides/developer/azure-developer-guide)<br>
-        **[Azure](/azure/guides/developer/azure-developer-guide)**<br>
-        A complete cloud platform to host your apps and streamline new development.
-    :::column-end:::
-    :::column:::
-       [![.NET icon](../images/net.png)](https://dotnet.microsoft.com/)<br>
-        **[.NET](/dotnet/standard/get-started/)**<br>
-        An open source platform with tools and libraries for building any type of app.
-    :::column-end:::
-:::row-end:::
-
-<br>
 
 
 ## Transitioning between Mac and Windows
