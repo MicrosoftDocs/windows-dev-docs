@@ -768,7 +768,6 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/ea91.png" alt-text="Screenshot of ThoughtBubble."::: | ea91 | :::no-loc text="ThoughtBubble"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/ea92.png" alt-text="Screenshot of HeartBroken."::: | ea92 | :::no-loc text="HeartBroken"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/ea93.png" alt-text="Screenshot of BatteryCharging10."::: | ea93 | :::no-loc text="BatteryCharging10"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/ea93.png" alt-text="Screenshot of BatteryCharging10."::: | ea93 | :::no-loc text="BatteryCharging10"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/ea94.png" alt-text="Screenshot of BatterySaver9."::: | ea94 | :::no-loc text="BatterySaver9"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/ea95.png" alt-text="Screenshot of BatterySaver10."::: | ea95 | :::no-loc text="BatterySaver10"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/ea97.png" alt-text="Screenshot of CallForwardingMirrored."::: | ea97 | :::no-loc text="CallForwardingMirrored"::: |
@@ -1350,9 +1349,7 @@ The following table of glyphs displays unicode points prefixed from F3- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f112.png" alt-text="Screenshot of ReadOutLoud."::: | f112 | :::no-loc text="ReadOutLoud"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f117.png" alt-text="Screenshot of ProjectToDevice."::: | f117 | :::no-loc text="ProjectToDevice"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f120.png" alt-text="Screenshot of TaskManagerApp."::: | f120 | :::no-loc text="TaskManagerApp"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f191.png" alt-text="Screenshot of HeadlessDevice."::: | f191 | :::no-loc text="HeadlessDevice"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f196.png" alt-text="Screenshot of Beaker."::: | f196 | :::no-loc text="Beaker"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1ad.png" alt-text="Screenshot of WindowsInsider."::: | f1ad | :::no-loc text="WindowsInsider"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1b1.png" alt-text="Screenshot of PowerButtonUpdate2."::: | f1b1 | :::no-loc text="PowerButtonUpdate2"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1e8.png" alt-text="Screenshot of LeafTwo."::: | f1e8 | :::no-loc text="LeafTwo"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f232.png" alt-text="Screenshot of GridViewSmall."::: | f232 | :::no-loc text="GridViewSmall"::: |
