@@ -26,9 +26,23 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="experimental"
 
+## Version 2.0 Experimental 5 (2.0.0-Experimental5)
+
+Released: **February 13, 2026** <br><br>
+
+<details><summary>Windows ML Licensing Simplification</summary>
+
+>
+> * Simplified license agreement with clearer terms for ISVs building applications with Windows ML.
+> * Restructured sections covering Installation, Data, and Distributable Code with enhanced clarity.
+> * New Execution Provider (EP) Compliance Notice section clarifies developer responsibilities regarding hardware-accelerated execution providers.
+> * Direct links to vendor license agreements for NVIDIA TensorRT, Intel OpenVINO, and Qualcomm QNN (Qualcomm Neural Network SDK).
+>
+</details>
+
 ## Version 2.0 Experimental 4 (2.0.0-Experimental4)
 
-Released: **Jan 13, 2026** <br><br>
+Released: **January 13, 2026** <br><br>
 
 <details><summary>ONNX Runtime Alignment and Execution Provider Stability</summary>
 
