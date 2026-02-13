@@ -29,34 +29,36 @@ items:
           href: windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental
         - name: Windows App SDK 1.8
           href: windows-app-sdk/release-notes/windows-app-sdk-1-8.md
-        - name: Windows App SDK 1.7
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-7.md
-        - name: Windows App SDK 1.6
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-6.md
-        - name: Windows App SDK 1.5
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-5.md
-        - name: Windows App SDK 1.4
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-4.md
-        - name: Windows App SDK 1.3
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-3.md
-        - name: Windows App SDK 1.2
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-2.md
-        - name: Windows App SDK 1.1
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-1.md
-        - name: Windows App SDK 1.0
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-0.md
-        - name: Windows App SDK 0.8
-          href: windows-app-sdk/release-notes/windows-app-sdk-0-8.md
-        - name: Windows App SDK 0.5
-          href: windows-app-sdk/release-notes/windows-app-sdk-0-5.md
-        - name: Project Reunion
+        - name: Older versions
           items:
-           - name: Project Reunion 0.8 Preview
-             href: windows-app-sdk/release-notes/project-reunion-0-8-preview.md
-           - name: Project Reunion 0.5 Preview
-             href: windows-app-sdk/release-notes/project-reunion-0-5-preview.md
-           - name: Project Reunion 0.5
-             href: windows-app-sdk/release-notes/project-reunion-0-5.md
+          - name: Windows App SDK 1.7
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-7.md
+          - name: Windows App SDK 1.6
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-6.md
+          - name: Windows App SDK 1.5
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-5.md
+          - name: Windows App SDK 1.4
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-4.md
+          - name: Windows App SDK 1.3
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-3.md
+          - name: Windows App SDK 1.2
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-2.md
+          - name: Windows App SDK 1.1
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-1.md
+          - name: Windows App SDK 1.0
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-0.md
+          - name: Windows App SDK 0.8
+            href: windows-app-sdk/release-notes/windows-app-sdk-0-8.md
+          - name: Windows App SDK 0.5
+            href: windows-app-sdk/release-notes/windows-app-sdk-0-5.md
+          - name: Project Reunion
+            items:
+             - name: Project Reunion 0.8 Preview
+               href: windows-app-sdk/release-notes/project-reunion-0-8-preview.md
+             - name: Project Reunion 0.5 Preview
+               href: windows-app-sdk/release-notes/project-reunion-0-5-preview.md
+             - name: Project Reunion 0.5
+               href: windows-app-sdk/release-notes/project-reunion-0-5.md
       - name: Downloads
         items:
           - name: Latest
@@ -65,10 +67,10 @@ items:
             href: windows-app-sdk/downloads-archive.md
     - name: WinUI
       href: winui/winui3/index.md
-  - name: App frameworks
-    href: get-started/index.md    
   - name: Get started
     items:
+    - name: App frameworks
+      href: get-started/index.md
     - name: Setup and tooling
       href: get-started/start-here.md
     - name: Create your first WinUI app
