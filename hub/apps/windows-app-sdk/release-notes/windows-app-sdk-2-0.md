@@ -28,7 +28,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 2.0 Experimental 5 (2.0.0-Experimental5)
 
-Released: **February 12, 2026** <br><br>
+Released: **February 13, 2026** <br><br>
 
 <details><summary>Windows ML Licensing Simplification</summary>
 
