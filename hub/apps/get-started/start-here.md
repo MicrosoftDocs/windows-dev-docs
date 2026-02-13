@@ -68,7 +68,6 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 ## 2. Create and launch your first WinUI app
 
 1. Open Visual Studio and select **Create a new project**.
-:::image type="content" source="images/hello-world/start-project.png" alt-text="Create a new project":::
 
 1. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
 :::image type="content" source="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
