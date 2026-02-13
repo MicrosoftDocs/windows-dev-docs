@@ -119,6 +119,13 @@ To learn more, see the [Windows App SDK release channels](release-channels.md) a
 
 ## Preview releases
 
+### Windows App SDK 1.8 Preview
+
+| Version | Runtime downloads |
+|--|--|
+| **1.8 Preview (1.8-preview)**  <br/> 08/19/2025  <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=preview) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F1.8-preview1) | [Installer (x64)](https://aka.ms/windowsappsdk/1.8/1.8.250814004-preview1/windowsappruntimeinstall-x64.exe)  <br/> [Installer (x86)](https://aka.ms/windowsappsdk/1.8/1.8.250814004-preview1/windowsappruntimeinstall-x86.exe)  <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/1.8/1.8.250814004-preview1/windowsappruntimeinstall-arm64.exe)  <br/> [Redistributable (ZIP)](https://aka.ms/windowsappsdk/1.8/1.8.250814004-preview1/Microsoft.WindowsAppRuntime.Redist.1.8.zip) |
+
+
 ### Windows App SDK 1.6 Preview
 
 | Version | Runtime downloads |
