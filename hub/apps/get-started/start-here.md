@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Quickstart for WinUI and Windows App SDK
+# Install and setup WinUI and Windows App SDK developer environment
 
 This Hello World guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To develop WinUI apps, you need:
 

@@ -1,18 +1,40 @@
 ---
-description: An overview of Windows app development frameworks
-title: Overview of framework options
+description: An overview of the Windows developer platform, SDKs, and app frameworks
+title: Choosing your app framework
 ms.topic: overview
-ms.date: 11/4/2025
-keywords: windows, desktop development
+ms.date: 02/13/2026
+keywords: windows, desktop development, windows sdk, windows app sdk, winui
 ms.localizationpriority: medium
-#customer intent: To understand the client app development framework choices available for Windows developers and how to choose the right one for their project.
+#customer intent: To understand the Windows developer platform, how the SDKs fit together, and how to choose the right app framework.
 ---
 
-# Choose your app framework
+# Windows developer platform
 
-Windows supports a wide range of frameworks for building apps. This page helps you choose the right one for your project and skillset.
+The Windows developer platform provides SDKs, frameworks, and tools for building apps that run on Windows. Whether you're creating a brand-new app or modernizing an existing one, Windows gives you the flexibility to choose the right approach for your project.
 
-## WinUI
+At the core of the platform are two SDKs that work together: the **Windows SDK** and the **Windows App SDK**. The Windows SDK gives you access to the full breadth of OS-level APIs, while the Windows App SDK provides a modern, decoupled layer of APIs and tools on top — including WinUI, the recommended UI framework for new Windows apps.
+
+Once you understand how the SDKs fit together, the next step is choosing an app framework. Windows supports a wide range of options — from native frameworks like WinUI, WPF, and Win32 to cross-platform solutions like .NET MAUI and React Native. The right choice depends on your project requirements, your team's skillset, and whether you need to target platforms beyond Windows.
+
+## Windows SDK
+
+The [Windows SDK](../windows-sdk/index.md) is the foundational SDK for building Windows applications. It contains the platform headers, libraries, WinRT metadata, and build tools that give you direct access to the full set of Windows OS APIs. Every Windows app — whether it uses Win32, UWP, or a higher-level framework — ultimately relies on the capabilities the Windows SDK provides.
+
+The Windows SDK is tied to Windows OS releases and is the right choice when you need access to the latest OS-level features, low-level system APIs, or hardware capabilities like DirectX graphics and driver interfaces.
+
+[Learn more about the Windows SDK →](../windows-sdk/index.md)
+
+## Windows App SDK
+
+The [Windows App SDK](../windows-app-sdk/index.md) is a modern SDK that builds on top of the Windows SDK. It provides a unified set of APIs and tools — delivered as NuGet packages — that you can use across WinUI, WPF, Windows Forms, and Win32 apps. Because it's decoupled from the OS, you get access to new features on a faster release cycle without requiring your users to update Windows.
+
+The Windows App SDK includes [WinUI](../winui/winui3/index.md) (the native UI framework), along with APIs for app lifecycle management, windowing, notifications, resource management, and more. If you're building a new app or modernizing an existing one, the Windows App SDK gives you a consistent, modern foundation that works across Windows 10 (version 1809) and later.
+
+[Learn more about the Windows App SDK →](../windows-app-sdk/index.md)
+
+## Choose your app framework
+
+### WinUI
 
 :::image type="content" source="images/winui-header.png" alt-text="WinUI logo.":::
 
@@ -28,8 +50,6 @@ Windows supports a wide range of frameworks for building apps. This page helps y
         > [Get started with WinUI](start-here.md)
     :::column-end:::
 :::row-end:::
-
-## Other frameworks
 
 ### [Native frameworks](#tab/native)
 
