@@ -15,9 +15,9 @@ This Hello World guide walks you through setting up your WinUI and Windows App S
 - [Visual Studio 2026](/visualstudio/ide/) with the required workloads for WinUI and Windows App SDK
 - [Developer Mode](/windows/advanced-settings/developer-mode) enabled on your device
 
-## 1. Set up your development environment
+### Seting up your development environment
 
-### [WinGet Configuration](#tab/wingetconfig)
+#### [WinGet Configuration](#tab/wingetconfig)
 
 [WinGet Configuration files](../../package-manager/configuration/index.md) automate the process of setting up your development environment.
 
@@ -27,23 +27,18 @@ Run the following command in PowerShell to set up your environment:
 winget configure -f http://aka.ms/winui-config
 ```
 
-### [Manual installation](#tab/manual)
+#### [Manual installation](#tab/manual)
 
 #### Enable Developer Mode
 
-Windows includes a Developer Mode that adjusts security settings to let you run and test apps you're building. Enable Developer Mode before building, deploying, and testing your app with Visual Studio.
-
-> [!TIP]
-> If you don't enable Developer Mode now, Visual Studio prompts you to enable it when you try to build your app.
+Windows includes a [Developer Mode](/windows/advanced-settings/developer-mode) that adjusts security settings to let you run and test apps you're building. Enable Developer Mode before building, deploying, and testing your app with Visual Studio.
 
 To enable Developer Mode:
 
 * Open Windows Settings and navigate to the **[System > Advanced](ms-settings:developers)** page.
 * Toggle the **Developer Mode** switch to **On** and confirm your choice in the confirmation dialog.
 
-For more information about Developer Mode, see [Settings for developers](/windows/advanced-settings/developer-mode).
-
-#### Install Visual Studio and the required workloads for WinUI and Windows App SDK
+#### Install Visual Studio and the required WinUI and Windows App SDK workloads
 
 Download and install the latest Visual Studio using the link below. For details, see [Install Visual Studio](/visualstudio/install/install-visual-studio).
 
@@ -65,22 +60,23 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 ---
 
-## 2. Create and launch your first WinUI app
+### Create and launch your first WinUI app
 
 1. Open Visual Studio and select **Create a new project**.
 
-1. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
+2. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
 :::image type="content" source="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
 
-1. Enter a project name and select **Create**.
+3. Enter a project name and select **Create**.
 :::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
-1. Press **Start** (**F5**) to build and run your app.
+4. Press **Start** (**F5**) to build and run your app.
+
 :::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::
 
-   Your app builds, deploys, and launches in debug mode:
+Your app builds, deploys, and launches in debug mode:
 
-   :::image type="content" source="images/hello-world/click-me.png" border="false" alt-text="Hello World project built and running":::
+:::image type="content" source="images/hello-world/click-me.png" border="false" alt-text="Hello World project built and running":::
 
 You've built and launched your first WinUI app! 🎉
 
