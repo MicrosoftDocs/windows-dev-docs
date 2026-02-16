@@ -68,3 +68,5 @@ There are instances where the corner of a control should not be rounded, and we 
 
 The default corner radii are controlled by two global resources: `ControlCornerRadius` (default 4px) and `OverlayCornerRadius` (default 8px). You can override these values in your App.xaml to change the rounding across all controls in your app.
 
+If you're building a Win32 desktop app, you can opt in to rounded corners for your app windows using the DWM API. For details, see [Apply rounded corners in desktop apps](../../desktop/modernize/ui/apply-rounded-corners.md).
+
