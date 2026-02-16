@@ -10,7 +10,7 @@ ms.collection: windows11
 
 # Install and setup WinUI and Windows App SDK developer environment
 
-This Hello World guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To develop WinUI apps, you need:
+This quick start guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To develop WinUI apps, you need:
 
 - [Visual Studio 2026](/visualstudio/ide/) with the required workloads for WinUI and Windows App SDK
 - [Developer Mode](/windows/advanced-settings/developer-mode) enabled on your device
@@ -19,9 +19,10 @@ This Hello World guide walks you through setting up your WinUI and Windows App S
 
 #### [WinGet Configuration](#tab/wingetconfig)
 
-[WinGet Configuration files](../../package-manager/configuration/index.md) automate the process of setting up your development environment.
+Download the [WinGet Configuration file](http://aka.ms/winui-config) and run it using the command below. This configuration file will:
 
-Run the following command in PowerShell to set up your environment:
+- Install Visual Studio 2026 with the required workloads
+- Enable Developer Mode
 
 ```powershell
 winget configure -f http://aka.ms/winui-config
