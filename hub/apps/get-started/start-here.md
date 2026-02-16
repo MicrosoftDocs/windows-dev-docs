@@ -85,11 +85,40 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 ## Next steps
 
-> [!div class="nextstepaction"]
-> [Build your first app with WinUI](../tutorials/winui-notes/intro.md)
+:::row:::
+    :::column:::
+        ![An image that says Hello, WinUI](../winui/winui3/images/hero-hello-winui.png)
+    :::column-end:::
+    :::column span="2":::
+        **Build your first WinUI app**<br>
+         Ready to go further? Follow the step-by-step tutorial to build a full WinUI app.
+         <br>
+         > [!div class="nextstepaction"]
+         > [Build your first app with WinUI](../tutorials/winui-notes/intro.md)
+    :::column-end:::    
+:::row-end:::
 
-* **[WinUI Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc)** — Explore WinUI controls and features in action.
-  [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
-* **[WinUI fundamentals](../develop/index.md)** — Learn the building blocks of WinUI apps.
-* **[Fluent Design](../design/index.md)** — Design beautiful, accessible Windows apps.
-* **[Samples and tools](samples.md)** — Find code samples to accelerate your development.
+:::row:::
+    :::column:::
+        ![A screenshot of the WinUI Gallery](../winui/winui3/images/winui-gallery.png)
+    :::column-end:::
+    :::column span="2":::
+        **WinUI Gallery**<br>
+         Explore interactive examples of WinUI controls, features, and functionality with code snippets and design guidance.
+         <br><br>
+         [Explore WinUI Gallery](samples.md#winui-gallery)
+         [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
+    :::column-end:::    
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![Code samples icon](../winui/winui3/images/hero-control.png)
+    :::column-end:::
+    :::column span="2":::
+        **Samples and tools**<br>
+         Find code samples, starter projects, and tools to accelerate your development.
+         <br><br>
+         [Browse samples and tools](samples.md)
+    :::column-end:::    
+:::row-end:::
