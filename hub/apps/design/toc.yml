@@ -69,13 +69,7 @@ items:
         - name: Directionality and gravity
           href: motion/directionality-and-gravity.md
     - name: Navigation
-      items:
-      - name: Overview
-        href: basics/navigation-basics.md
-      - name: Implement basic navigation
-        href: basics/navigate-between-two-pages.md
-      - name: Navigation history and backwards navigation
-        href: basics/navigation-history-and-backwards-navigation.md  
+      href: basics/navigation-basics.md
     - name: Sound
       href: style/sound.md
     - name: Typography

@@ -816,6 +816,12 @@ items:
           href: platform/xaml/transforms.md
         - name: 3-D perspective effects
           href: platform/xaml/3-d-perspective-effects.md
+      - name: Navigation
+        items:
+        - name: Basic page navigation
+          href: ui/navigation/navigate-between-two-pages.md
+        - name: Navigation history and backwards navigation
+          href: ui/navigation/navigation-history-and-backwards-navigation.md
       - name: Motion
         items:
         - name: Motion in practice

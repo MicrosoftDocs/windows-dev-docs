@@ -10679,6 +10679,16 @@
       "source_path": "hub/apps/design/motion/key-frame-and-easing-function-animations.md",
       "redirect_url": "/windows/apps/develop/motion/key-frame-and-easing-function-animations",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/basics/navigate-between-two-pages.md",
+      "redirect_url": "/windows/apps/develop/ui/navigation/navigate-between-two-pages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/basics/navigation-history-and-backwards-navigation.md",
+      "redirect_url": "/windows/apps/develop/ui/navigation/navigation-history-and-backwards-navigation",
+      "redirect_document_id": false
     }
   ]
 }
