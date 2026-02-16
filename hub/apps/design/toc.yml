@@ -68,23 +68,6 @@ items:
           href: motion/timing-and-easing.md
         - name: Directionality and gravity
           href: motion/directionality-and-gravity.md
-        - name: Motion in practice
-          href: motion/motion-in-practice.md
-        - name: Page transitions
-          href: motion/page-transitions.md
-        - name: Connected animation
-          href: motion/connected-animation.md
-        - name: Parallax
-          href: motion/parallax.md
-        - name: Animations in XAML
-          href: motion/xaml-animation.md
-          items:
-            - name: Property animations
-              href: motion/xaml-property-animations.md
-            - name: Storyboarded animations
-              href: motion/storyboarded-animations.md
-            - name: Key-frame and easing function animations
-              href: motion/key-frame-and-easing-function-animations.md
     - name: Navigation
       items:
       - name: Overview

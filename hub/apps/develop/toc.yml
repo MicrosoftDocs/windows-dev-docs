@@ -816,6 +816,25 @@ items:
           href: platform/xaml/transforms.md
         - name: 3-D perspective effects
           href: platform/xaml/3-d-perspective-effects.md
+      - name: Motion
+        items:
+        - name: Motion in practice
+          href: motion/motion-in-practice.md
+        - name: Page transitions
+          href: motion/page-transitions.md
+        - name: Connected animation
+          href: motion/connected-animation.md
+        - name: Parallax
+          href: motion/parallax.md
+        - name: XAML animations
+          href: motion/xaml-animation.md
+          items:
+            - name: Property animations
+              href: motion/xaml-property-animations.md
+            - name: Storyboarded animations
+              href: motion/storyboarded-animations.md
+            - name: Key-frame and easing function animations
+              href: motion/key-frame-and-easing-function-animations.md
       - name: Windowing
         items:
         - name: Overview

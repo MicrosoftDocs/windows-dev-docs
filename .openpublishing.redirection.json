@@ -10639,6 +10639,46 @@
       "source_path": "hub/apps/design/layout/layouts-with-xaml.md",
       "redirect_url": "/windows/apps/develop/ui/layouts-with-xaml",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-in-practice.md",
+      "redirect_url": "/windows/apps/develop/motion/motion-in-practice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/page-transitions.md",
+      "redirect_url": "/windows/apps/develop/motion/page-transitions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/connected-animation.md",
+      "redirect_url": "/windows/apps/develop/motion/connected-animation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/parallax.md",
+      "redirect_url": "/windows/apps/develop/motion/parallax",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/xaml-animation.md",
+      "redirect_url": "/windows/apps/develop/motion/xaml-animation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/xaml-property-animations.md",
+      "redirect_url": "/windows/apps/develop/motion/xaml-property-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/storyboarded-animations.md",
+      "redirect_url": "/windows/apps/develop/motion/storyboarded-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/key-frame-and-easing-function-animations.md",
+      "redirect_url": "/windows/apps/develop/motion/key-frame-and-easing-function-animations",
+      "redirect_document_id": false
     }
   ]
 }
