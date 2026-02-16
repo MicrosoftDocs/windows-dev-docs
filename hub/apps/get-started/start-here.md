@@ -87,38 +87,19 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 :::row:::
     :::column:::
-        ![An image that says Hello, WinUI](../winui/winui3/images/hero-hello-winui.png)
+        [![Hello WinUI](../winui/winui3/images/hero-hello-winui.png)](../tutorials/winui-notes/intro.md)<br>
+        **[Build your first WinUI app](../tutorials/winui-notes/intro.md)**<br>
+        Ready to go further? Follow the step-by-step tutorial to build a full WinUI app.
     :::column-end:::
-    :::column span="2":::
-        **Build your first WinUI app**<br>
-         Ready to go further? Follow the step-by-step tutorial to build a full WinUI app.
-         <br>
-         > [!div class="nextstepaction"]
-         > [Build your first app with WinUI](../tutorials/winui-notes/intro.md)
-    :::column-end:::    
-:::row-end:::
-
-:::row:::
     :::column:::
-        ![A screenshot of the WinUI Gallery](../winui/winui3/images/winui-gallery.png)
+        [![WinUI Gallery](../winui/winui3/images/winui-gallery.png)](samples.md#winui-gallery)<br>
+        **[WinUI Gallery](samples.md#winui-gallery)**<br>
+        Explore interactive examples of WinUI controls, features, and functionality.
+        [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
     :::column-end:::
-    :::column span="2":::
-        **WinUI Gallery**<br>
-         Explore interactive examples of WinUI controls, features, and functionality with code snippets and design guidance.
-         <br><br>
-         [Explore WinUI Gallery](samples.md#winui-gallery)
-         [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
-    :::column-end:::    
-:::row-end:::
-
-:::row:::
     :::column:::
-        ![Code samples icon](../winui/winui3/images/hero-control.png)
+        [![Samples icon](../images/tile-samples.png)](samples.md)<br>
+        **[Samples and resources](samples.md)**<br>
+        Browse code samples, starter projects, and tools to accelerate your development.
     :::column-end:::
-    :::column span="2":::
-        **Samples and tools**<br>
-         Find code samples, starter projects, and tools to accelerate your development.
-         <br><br>
-         [Browse samples and tools](samples.md)
-    :::column-end:::    
 :::row-end:::

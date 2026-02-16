@@ -74,7 +74,7 @@ items:
     items:
     - name: Quick start
       href: get-started/start-here.md
-    - name: Create your first WinUI app
+    - name: "Tutorial: Create your first WinUI app"
       items:
       - name: Introduction
         href: tutorials/winui-notes/intro.md
