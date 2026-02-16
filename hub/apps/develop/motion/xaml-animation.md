@@ -15,7 +15,7 @@ Animations can enhance your app by adding movement and interactivity. By using t
 
 Animations from the Windows Runtime animation library provide these benefits:
 
-- Motions that align to the [Guidelines for animations](./index.md)
+- Motions that align to the [Guidelines for animations](../../design/signature-experiences/motion.md)
 - Fast, fluid transitions between UI states that inform but do not distract the user
 - Visual behavior that indicates transitions within an app to the user
 
@@ -200,7 +200,7 @@ The child rectangles of the [**Grid**](/windows/windows-app-sdk/api/winrt/micros
 
 Here's a demonstration of this animation:
 
-![Animation showing child rectangle transitioning into view](./images/animation-child-rectangles.gif)
+![Animation showing child rectangle transitioning into view](../../design/motion/images/animation-child-rectangles.gif)
 
 Child objects of a container can also re-flow when one or more of those children change position. In the following example, we apply a [**RepositionThemeTransition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.RepositionThemeTransition) to a grid of rectangles. When you remove one of the rectangles, all the other rectangles re-flow into their new position.
 

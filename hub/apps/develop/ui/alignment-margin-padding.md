@@ -15,9 +15,9 @@ In XAML apps, most user interface (UI) elements inherit from the [**FrameworkEle
 
 Proper sizing ensures all content is clear and legible. Users shouldn’t have to scroll or zoom to decipher primary content.
 
-![diagram showing dimensions](images/dimensions.svg)
+![diagram showing dimensions](../../design/layout/images/dimensions.svg)
 
-- [**Height**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.height) and [**Width**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.width) specify the size of an element. The default values are mathematically `NaN` (Not A Number). You can set fixed values measured in [effective pixels](screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), or you can use **Auto** or [proportional sizing](layout-panels.md#grid) for fluid behavior.
+- [**Height**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.height) and [**Width**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.width) specify the size of an element. The default values are mathematically `NaN` (Not A Number). You can set fixed values measured in [effective pixels](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), or you can use **Auto** or [proportional sizing](layout-panels.md#grid) for fluid behavior.
 
 - [**ActualHeight**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.actualheight) and [**ActualWidth**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.actualwidth) are read-only properties that provide the size of an element at runtime. If fluid layouts grow or shrink, then the values change in a [**SizeChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.sizechanged) event. Note that a [**RenderTransform**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.rendertransform) will not change the ActualHeight and ActualWidth values.
 
@@ -29,7 +29,7 @@ Proper sizing ensures all content is clear and legible. Users shouldn’t have t
 
 Alignment makes your UI look neat, organized, and balanced and can also be used to establish visual hierarchy and relationships.
 
-![diagram showing alignment](images/alignment.svg)
+![diagram showing alignment](../../design/layout/images/alignment.svg)
 
 - [**HorizontalAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.horizontalalignment) and [**VerticalAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.verticalalignment) specify how an element should be positioned within its parent container.
 
@@ -38,13 +38,13 @@ Alignment makes your UI look neat, organized, and balanced and can also be used 
 - **Stretch** is the default for both properties, and elements fill all of the space they're provided in the parent container. Real-number Height and Width cancel a Stretch value, which will instead act as a Center value. Some controls, like Button, override the default Stretch value in their default style.
 - [**HorizontalContentAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.horizontalcontentalignment) and [**VerticalContentAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.verticalcontentalignment) specify how child elements are positioned within a container.
 - Alignment can affect clipping within a layout panel. For example, with `HorizontalAlignment="Left"`, the right side of the element gets clipped if the content is larger than the ActualWidth.
-- Text elements use the [**TextAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.textalignment) property. Generally, we recommend using left-alignment, the default value. For more information about styling text, see [Typography](../style/typography.md).
+- Text elements use the [**TextAlignment**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.textalignment) property. Generally, we recommend using left-alignment, the default value. For more information about styling text, see [Typography](../../design/signature-experiences/typography.md).
 
 ## Margin and padding
 
 Margin and padding properties keep UI from looking too cluttered or too sparse, and they can also make it easier to use certain inputs like pen and touch. Here's an illustration displaying margins and padding for a container and its content.
 
-![xaml margins and padding diagram](images/xaml-layout-margins-padding.svg)
+![xaml margins and padding diagram](../../design/layout/images/xaml-layout-margins-padding.svg)
 
 ### Margin
 
@@ -72,7 +72,7 @@ In each of these cases, elements also have a Margin property. If both Margin and
 
 Let's look at the effects of Margin and Padding on real controls. Here’s a TextBox inside of a Grid with the default Margin and Padding values of 0.
 
-![TextBox with margin and padding of 0](images/xaml-layout-textbox-no-margins-padding.svg)
+![TextBox with margin and padding of 0](../../design/layout/images/xaml-layout-textbox-no-margins-padding.svg)
 
 Here’s the same TextBox and Grid with Margin and Padding values on the TextBox as shown in this XAML.
 
@@ -82,7 +82,7 @@ Here’s the same TextBox and Grid with Margin and Padding values on the TextBox
 </Grid>
 ```
 
-![TextBox with positive margin and padding values](images/xaml-layout-textbox-with-margins-padding.svg)
+![TextBox with positive margin and padding values](../../design/layout/images/xaml-layout-textbox-with-margins-padding.svg)
 
 ## Style resources
 
@@ -90,11 +90,11 @@ You don't have to set each property value individually on a control. It's typica
 
 ## General recommendations
 
-- Only apply measurement values to certain key elements and use fluid layout behavior for the other elements. This provides for [responsive UI](responsive-design.md) when the window width changes.
-- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When XAML uses [effective pixels and scaling](screen-sizes-and-breakpoints-for-responsive-design.md) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
+- Only apply measurement values to certain key elements and use fluid layout behavior for the other elements. This provides for [responsive UI](../../design/layout/responsive-design.md) when the window width changes.
+- If you do use measurement values, **all dimensions, margins, and padding should be in increments of 4 epx**. When XAML uses [effective pixels and scaling](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md) to make your app legible on all devices and screen sizes, it scales UI elements by multiples of 4. Using values in increments of 4 results in the best rendering by aligning with whole pixels.
 - For small window widths (less than 640 pixels), we recommend 12 epx gutters, and for larger window widths, we recommend 24 epx gutters.
 
-![recommended gutters](images/12-gutter.svg)
+![recommended gutters](../../design/layout/images/12-gutter.svg)
 
 ## Related topics
 

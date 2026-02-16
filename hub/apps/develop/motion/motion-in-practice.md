@@ -24,7 +24,7 @@ There may be times when the system does not yet provide an exact motion solution
 
 **_Transition example_**
 
-![functional animation](../design/motion/images/page-refresh.gif)
+![functional animation](../../design/motion/images/page-refresh.gif)
 
 :::row:::
     :::column:::
@@ -43,7 +43,7 @@ Fade in: 300ms; Easing: Default Decelerate
 
 **_Object example_**
 
- ![300ms motion](../design/motion/images/control.gif)
+ ![300ms motion](../../design/motion/images/control.gif)
 
 :::row:::
     :::column:::
@@ -113,6 +113,6 @@ public double OpaqueIfEnabled(bool IsEnabled)
 
 ## Related articles
 
-- [Motion overview](../design/signature-experiences/motion.md)
-- [Timing and easing](../design/motion/timing-and-easing.md)
-- [Directionality and gravity](../design/motion/directionality-and-gravity.md)
+- [Motion overview](../../design/signature-experiences/motion.md)
+- [Timing and easing](../../design/motion/timing-and-easing.md)
+- [Directionality and gravity](../../design/motion/directionality-and-gravity.md)
