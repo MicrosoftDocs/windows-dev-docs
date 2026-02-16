@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Install and setup WinUI and Windows App SDK developer environment
+# Quick start: Set up your environment and create a WinUI project
 
 This quick start guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To develop WinUI apps, you need:
 
@@ -19,7 +19,7 @@ This quick start guide walks you through setting up your WinUI and Windows App S
 
 #### [WinGet Configuration](#tab/wingetconfig)
 
-Download the [WinGet Configuration file](http://aka.ms/winui-config) and run it using the command below. This configuration file will:
+Run the following command in PowerShell to set up your environment using a [WinGet Configuration file](../../package-manager/configuration/index.md). This will:
 
 - Install Visual Studio 2026 with the required workloads
 - Enable Developer Mode
@@ -66,20 +66,22 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 1. Open Visual Studio and select **Create a new project**.
 
 2. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
-:::image type="content" source="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
+
+   :::image type="content" source="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
 
 3. Enter a project name and select **Create**.
-:::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
+
+   :::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
 4. Press **Start** (**F5**) to build and run your app.
 
-:::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::
+   :::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::
 
-Your app builds, deploys, and launches in debug mode:
+   Your app builds, deploys, and launches in debug mode:
 
-:::image type="content" source="images/hello-world/click-me.png" border="false" alt-text="Hello World project built and running":::
+   :::image type="content" source="images/hello-world/click-me.png" border="false" alt-text="Hello World project built and running":::
 
-You've built and launched your first WinUI app! 🎉
+   You've built and launched your first WinUI app! 🎉
 
 ## Next steps
 
