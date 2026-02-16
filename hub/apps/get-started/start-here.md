@@ -15,7 +15,7 @@ This quick start guide walks you through setting up your WinUI and Windows App S
 - [Visual Studio 2026](/visualstudio/ide/) with the required workloads for WinUI and Windows App SDK
 - [Developer Mode](/windows/advanced-settings/developer-mode) enabled on your device
 
-### Seting up your development environment
+## Seting up your development environment
 
 #### [WinGet Configuration](#tab/wingetconfig)
 
@@ -61,7 +61,7 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 ---
 
-### Create and launch your first WinUI app
+## Create and launch your first WinUI app
 
 1. Open Visual Studio and select **Create a new project**.
 
