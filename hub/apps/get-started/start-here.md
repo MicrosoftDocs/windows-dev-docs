@@ -19,7 +19,7 @@ This quick start guide walks you through setting up your WinUI and Windows App S
 
 #### [WinGet Configuration](#tab/wingetconfig)
 
-Run the following command in PowerShell to set up your environment using a [WinGet Configuration file](../../package-manager/configuration/index.md). This will:
+Open [Windows Terminal](/windows/terminal/) and run the following command in PowerShell to automatically set up your environment using a [WinGet Configuration file](../../package-manager/configuration/index.md). This will:
 
 - Install Visual Studio 2026 with the required workloads
 - Enable Developer Mode
