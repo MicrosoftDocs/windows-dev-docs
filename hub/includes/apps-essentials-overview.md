@@ -10,7 +10,7 @@ ms.date: 12/17/2025
        Learn the fundamental building blocks of the Windows platform, including the Windows SDK, Windows App SDK, and how to choose the right app framework.
     :::column-end:::
     :::column:::
-       [![Get started icon](../apps/images/tile-getstarted.png)](../apps/get-started/start-here.md)<br>
+       [![Get started with WinUI icon](../apps/images/tile-getstarted.png)](../apps/get-started/start-here.md)<br>
         **[Get started with WinUI](../apps/get-started/start-here.md)**<br>
         Build your first WinUI app and get familiar with the basics of the platform and tooling.
     :::column-end:::
