@@ -15,11 +15,7 @@ items:
     - name: Commanding
       href: basics/commanding-basics.md
     - name: Elevation
-      items:
-        - name: Overview
-          href: signature-experiences/layering.md
-        - name: Z-depth and shadow
-          href: layout/depth-shadow.md
+      href: signature-experiences/layering.md
     - name: Geometry
       items:
         - name: Overview

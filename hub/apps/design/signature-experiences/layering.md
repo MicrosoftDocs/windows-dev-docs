@@ -4,7 +4,7 @@ title: Layering and elevation in Windows
 ms.assetid: E00B6D9A-C8AA-4E6E-ADC4-13303AC290D9
 ms.date: 06/24/2021
 ms.topic: concept-article
-keywords: windows 11, design, ui, uiux, layering, elevation, shadows
+keywords: windows 11, design, ui, uiux, layering, elevation, shadows, z-depth, shadow, ThemeShadow, DropShadow
 ms.localizationpriority: medium
 ---
 
@@ -137,3 +137,6 @@ Windows 11 uses a two-layer system for applications. These two layers create hie
 
 - The **base** layer is an app's foundation. It is the bottommost layer of every app, and contains controls related to app menus, commands, and navigation.
 - The **content** layer focuses the user on the app's central experience. The content layer may be on contiguous element, or separated into cards that segment content.
+
+> [!TIP]
+> To learn how to implement shadows using ThemeShadow and DropShadow in your app, see [Shadows in Windows apps](../../develop/ui/shadows.md).
