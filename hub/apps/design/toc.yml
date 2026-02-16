@@ -17,11 +17,7 @@ items:
     - name: Elevation
       href: signature-experiences/layering.md
     - name: Geometry
-      items:
-        - name: Overview
-          href: signature-experiences/geometry.md
-        - name: Corner radius
-          href: style/rounded-corner.md
+      href: signature-experiences/geometry.md
     - name: Iconography
       items:
         - name: Overview

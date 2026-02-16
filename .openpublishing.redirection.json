@@ -10609,6 +10609,16 @@
       "source_path": "hub/apps/get-started/make-apps-great-for-windows.md",
       "redirect_url": "/windows/apps/get-started/best-practices",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/depth-shadow.md",
+      "redirect_url": "/windows/apps/develop/ui/shadows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/rounded-corner.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/geometry",
+      "redirect_document_id": false
     }
   ]
 }
