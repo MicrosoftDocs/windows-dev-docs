@@ -28,7 +28,7 @@ To implement backwards navigation in your app, place a back button at the top le
 
 We recommend that you place the back button in the upper left corner of your app. If you [customize the title bar](../../title-bar.md), place the back button in the title bar. See [Title bar design > Back button](/windows/apps/design/basics/titlebar-design#back-button) for more info.
 
-If you use the [TitleBar](../../controls/title-bar.md)control to create a custom title bar, use the built-in back button. Set [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible) to `true`, set [IsBackButtonEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled) as needed, and handle the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested) event to navigate.
+If you use the [TitleBar](../controls/title-bar.md) control to create a custom title bar, use the built-in back button. Set [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible) to `true`, set [IsBackButtonEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled) as needed, and handle the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested) event to navigate.
 
 To create a stand-alone back button, use the [Button](../controls/buttons.md) control with the `TitleBarBackButtonStyle` resource, and place the button at the top left hand corner of your app's UI (for details, see the XAML code examples below).
 
