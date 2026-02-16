@@ -67,11 +67,11 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 2. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
 
-   :::image type="content" source="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
+   :::image type="content" source="images/hello-world/create-project.png" lightbox="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
 
 3. Enter a project name and select **Create**.
 
-   :::image type="content" source="images/hello-world/configure-project.png" alt-text="Specify project details":::
+   :::image type="content" source="images/hello-world/configure-project.png" lightbox="images/hello-world/configure-project.png" alt-text="Specify project details":::
 
 4. Press **Start** (**F5**) to build and run your app.
 
