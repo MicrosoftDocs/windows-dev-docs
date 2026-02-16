@@ -10619,6 +10619,26 @@
       "source_path": "hub/apps/design/style/rounded-corner.md",
       "redirect_url": "/windows/apps/design/signature-experiences/geometry",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/spacing.md",
+      "redirect_url": "/windows/apps/design/basics/content-basics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/alignment-margin-padding.md",
+      "redirect_url": "/windows/apps/develop/ui/alignment-margin-padding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/layout-panels.md",
+      "redirect_url": "/windows/apps/develop/ui/layout-panels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/layouts-with-xaml.md",
+      "redirect_url": "/windows/apps/develop/ui/layouts-with-xaml",
+      "redirect_document_id": false
     }
   ]
 }

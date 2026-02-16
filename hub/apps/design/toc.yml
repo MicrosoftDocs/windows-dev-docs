@@ -42,24 +42,16 @@ items:
       items:
         - name: Overview
           href: layout/index.md
-        - name: App Silhouette
+        - name: App silhouette
           href: basics/app-silhouette.md
         - name: App title bar
           href: basics/titlebar-design.md
-        - name: Hierarchy
+        - name: Content layout and spacing
           href: basics/content-basics.md  
-        - name: Spacing
-          href: style/spacing.md
         - name: Screen sizes and breakpoints
           href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
         - name: Responsive design techniques
           href: layout/responsive-design.md
-        - name: Alignment, margin, and padding
-          href: layout/alignment-margin-padding.md
-        - name: Layouts with XAML
-          href: layout/layouts-with-xaml.md
-        - name: Layout panels
-          href: layout/layout-panels.md
     - name: Materials
       items:
         - name: Overview
