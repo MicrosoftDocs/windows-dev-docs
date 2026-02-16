@@ -33,7 +33,7 @@ Almost every app requires navigation between pages. Even a simple app with a sin
 
 To create a blank app in Visual Studio:
 
-1. To set up your development computer, see [Start developing Windows apps](../../get-started/start-here.md).
+1. To set up your development computer, see [Start developing Windows apps](../../../get-started/start-here.md).
 1. From the Microsoft Visual Studio start window, select **Create a new project**, OR, on the Visual Studio menu, choose **File** > **New** > **Project**.
 1. In the **Create a new project** dialog's drop-down filters, select **C#** or **C++**, **Windows**, and **WinUI**, respectively.
 1. Select the **Blank App, Packaged (WinUI in Desktop)** project template, and click **Next**. That template creates a desktop app with a WinUI-based user interface.
@@ -369,7 +369,7 @@ Now, when you click back to main page, the name you entered in the text box is s
 
 ## 6. Customize page transition animations
 
-By default, each page is animated into the frame when navigation occurs. The default animation is an "entrance" animation that causes the page to slide up from the bottom of the window. However, you can choose different animation options that better suit the navigation of your app. For example, you can use a "drill in" animation to give the feeling that the user is going deeper into your app, or a horizontal slide animation to give the feeling that two pages are peers. For more info, see [Page transitions](../motion/page-transitions.md).
+By default, each page is animated into the frame when navigation occurs. The default animation is an "entrance" animation that causes the page to slide up from the bottom of the window. However, you can choose different animation options that better suit the navigation of your app. For example, you can use a "drill in" animation to give the feeling that the user is going deeper into your app, or a horizontal slide animation to give the feeling that two pages are peers. For more info, see [Page transitions](../../motion/page-transitions.md).
 
 These animations are represented by sub-classes of [NavigationTransitionInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationtransitioninfo). To specify the animation to use for a page transition, you'll use the third overload of the `Navigate` method and pass a `NavigationTransitionInfo` sub-class as the third parameter (`infoOverride`). Here's the signature of this `Navigate` overload:
 
@@ -460,6 +460,6 @@ Now, when you navigate between pages, the pages slide left and right, which prov
 
 ## Related articles
 
-- [Navigation design basics for Windows apps](./navigation-basics.md)
+- [Navigation design basics for Windows apps](../../../design/basics/navigation-basics.md)
 - [Navigation view](../controls/navigationview.md)
 - [Navigation history and backwards navigation](navigation-history-and-backwards-navigation.md)

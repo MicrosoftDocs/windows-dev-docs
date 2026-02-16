@@ -11,7 +11,7 @@ dev_langs:
 ---
 # Responsive layouts
 
-The XAML layout system provides automatic sizing of elements, layout panels, and visual states to help you create a responsive UI. With a responsive layout, you can make your app look great on screens with different app window sizes, resolutions, pixel densities, and orientations. You can also use XAML to reposition, resize, reflow, show/hide, replace, or re-architect your app's UI, as discussed in [Responsive design techniques](responsive-design.md). Here, we discuss how to implement responsive layouts with XAML.
+The XAML layout system provides automatic sizing of elements, layout panels, and visual states to help you create a responsive UI. With a responsive layout, you can make your app look great on screens with different app window sizes, resolutions, pixel densities, and orientations. You can also use XAML to reposition, resize, reflow, show/hide, replace, or re-architect your app's UI, as discussed in [Responsive design techniques](../../design/layout/responsive-design.md). Here, we discuss how to implement responsive layouts with XAML.
 
 ## Fluid layouts with properties and panels
 
@@ -135,7 +135,7 @@ To apply a visual state from code, you call the [**VisualStateManager.GoToState*
 Here, a [**VisualStateGroup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstategroup) contains two VisualState definitions. The first, `DefaultState`, is empty. When it's applied, the values defined in the XAML page are applied. The second, `WideState`, changes the [**DisplayMode**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview.displaymode) property of the [**SplitView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview) to **Inline** and opens the pane. This state is applied in the SizeChanged event handler if the window width is greater than 640 effective pixels.
 
 > [!NOTE]
-> Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window). We recommend defining visual states for [screen sizes and break points](screen-sizes-and-breakpoints-for-responsive-design.md).
+> Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window). We recommend defining visual states for [screen sizes and break points](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 ```xaml
 <Page ...

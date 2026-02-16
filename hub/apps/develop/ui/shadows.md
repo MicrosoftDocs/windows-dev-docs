@@ -32,18 +32,18 @@ Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a b
 
 The following common controls will automatically use ThemeShadow to cast shadows from 32px depth unless otherwise specified:
 
-- [Context menu](ui/controls/menus.md), [Command bar](ui/controls/command-bar.md), [Command bar flyout](ui/controls/command-bar-flyout.md), [MenuBar](ui/controls/menus.md#create-a-menu-bar)
-- [Dialogs and flyouts](ui/controls/dialogs-and-flyouts/index.md) (Dialog at 128px)
-- [NavigationView](ui/controls/navigationview.md)
-- [ComboBox](ui/controls/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](ui/controls/buttons.md)
-- [TeachingTip](ui/controls/dialogs-and-flyouts/teaching-tip.md)
-- [AutoSuggestBox](ui/controls/auto-suggest-box.md)
-- [Calendar/Date/Time pickers](ui/controls/date-and-time.md)
-- [Tooltip](ui/controls/tooltips.md) (16px)
-- [Number Box](ui/controls/number-box.md)
-- [TabView](ui/controls/tab-view.md)
-- [Media transport control](ui/controls/media-playback.md#media-transport-controls), [InkToolbar](ui/controls/inking-controls.md)
-- [BreadcrumbBar](ui/controls/breadcrumbbar.md)
+- [Context menu](controls/menus.md), [Command bar](controls/command-bar.md), [Command bar flyout](controls/command-bar-flyout.md), [MenuBar](controls/menus.md#create-a-menu-bar)
+- [Dialogs and flyouts](controls/dialogs-and-flyouts/index.md) (Dialog at 128px)
+- [NavigationView](controls/navigationview.md)
+- [ComboBox](controls/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](controls/buttons.md)
+- [TeachingTip](controls/dialogs-and-flyouts/teaching-tip.md)
+- [AutoSuggestBox](controls/auto-suggest-box.md)
+- [Calendar/Date/Time pickers](controls/date-and-time.md)
+- [Tooltip](controls/tooltips.md) (16px)
+- [Number Box](controls/number-box.md)
+- [TabView](controls/tab-view.md)
+- [Media transport control](controls/media-playback.md#media-transport-controls), [InkToolbar](controls/inking-controls.md)
+- [BreadcrumbBar](controls/breadcrumbbar.md)
 - [Connected animation](../../design/motion/connected-animation.md)
 
 > [!NOTE]
