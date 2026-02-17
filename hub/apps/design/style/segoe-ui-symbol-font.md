@@ -39,7 +39,7 @@ Many of the icons also have mirrored forms available for use in languages that u
 
 ## Using the icons
 
-To use a glyph from the `Segoe MDL2 Assets` font, then use a [**FontIcon**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon).
+To use a glyph from the `Segoe MDL2 Assets` font, use a [**FontIcon**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon).
 
 ```xaml
 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;"/>
