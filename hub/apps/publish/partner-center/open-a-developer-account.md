@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 
 There are 2 types of developer accounts available in Partner Center: **Individual and Company**. Depending on your Microsoft account and other factors, you may be able to choose between these account types, or the system may pre-determine the appropriate type for you. Select a developer account below to understand the account creation process:
 
+> [!NOTE]
+> Changing a developer account from Individual to Company is not supported in Partner Center. To publish as a company, you’ll need to create a new Company developer account.
+
 ## [Open individual developer account](#tab/individual)
 
 ### Who should select an individual account:
