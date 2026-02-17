@@ -2,7 +2,7 @@
 title: Windows Developer Support
 description: Find help fast from community channels and Microsoft experts for developing Windows applications.
 ms.topic: overview
-ms.date: 02/10/2026
+ms.date: 02/17/2026
 ms.collection: collection
 ms.localizationpriority: medium
 ---
@@ -13,53 +13,67 @@ ms.localizationpriority: medium
 
 Get answers quickly, connect with experts, and resolve problems across registration, submissions, certification, and development. Use the following quick links to reach the right help fast.
 
----
+## Quick help actions
 
-:::image type="content" source="/windows/apps/images/hub-essentials.svg" alt-text="Quick help actions icon" border="false":::
+:::row:::
+:::column span="2":::
+[Open Copilot support](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
+:::column-end:::
+:::column span="2":::
+[Create a support incident](https://support.microsoft.com/supportforbusiness/productselection)
+:::column-end:::
+:::row-end:::
 
-### Quick help actions
+:::row:::
+:::column span="2":::
+[Application compatibility (App Assure)](https://aka.ms/desktopappassure)
+:::column-end:::
+:::column span="2":::
+[Partner Center](https://partner.microsoft.com/dashboard)
+:::column-end:::
+:::row-end:::
 
-- [Open Copilot support](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
-- [Create a support incident](https://support.microsoft.com/supportforbusiness/productselection)
-- [Application compatibility (App Assure)](https://aka.ms/desktopappassure)
-- [Partner Center](https://partner.microsoft.com/dashboard)
+## Get help from the community
 
-<br/>
-<br/>
+:::row:::
+:::column span="2":::
+[Microsoft Q&A](https://learn.microsoft.com/answers/questions/)
+:::column-end:::
+:::column span="2":::
+[Windows App SDK discussions](https://github.com/microsoft/windowsappsdk/discussions)
+:::column-end:::
+:::row-end:::
 
----
+:::row:::
+:::column span="2":::
+[WinUI discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)
+:::column-end:::
+:::column span="2":::
+[Stack Overflow (Windows App SDK)](https://stackoverflow.com/questions/tagged/windows-app-sdk)
+:::column-end:::
+:::row-end:::
 
-:::image type="content" source="/windows/apps/images/hub-design.svg" alt-text="Community help icon" border="false":::
+## Contact Microsoft support
 
-### Get help from the community
+:::row:::
+:::column span="2":::
+[Dev Center dashboard support (Copilot)](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
+:::column-end:::
+:::column span="2":::
+[App certification failures (Report App)](mailto:reportapp@microsoft.com)
+:::column-end:::
+:::row-end:::
 
-- [Microsoft Q&A](https://learn.microsoft.com/answers/questions/)
-- [Windows App SDK discussions](https://github.com/microsoft/windowsappsdk/discussions)
-- [WinUI discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)
-- [Stack Overflow (Windows App SDK)](https://stackoverflow.com/questions/tagged/windows-app-sdk)
+:::row:::
+:::column span="2":::
+[Technical support incidents](https://support.microsoft.com/supportforbusiness/productselection)
+:::column-end:::
+:::column span="2":::
+[Application compatibility (App Assure)](https://aka.ms/desktopappassure)
+:::column-end:::
+:::row-end:::
 
-<br/>
-<br/>
-
----
-
-:::image type="content" source="/windows/apps/images/hub-publish.svg" alt-text="Microsoft support icon" border="false":::
-
-### Contact Microsoft support
-
-- [Dev Center dashboard support (Copilot)](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
-- [App certification failures (Report App)](mailto:reportapp@microsoft.com)
-- [Technical support incidents](https://support.microsoft.com/supportforbusiness/productselection)
-- [Application compatibility (App Assure)](https://aka.ms/desktopappassure)
-
-<br/>
-<br/>
-
----
-
-:::image type="content" source="/windows/apps/images/hub-essentials.svg" alt-text="Popular topics icon" border="false":::
-
-### Popular help topics
+## Popular help topics
 
 :::row:::
 	:::column:::
@@ -94,53 +108,71 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 	[Porting apps to Windows](/windows/uwp/porting/)
 	:::column-end:::
 :::row-end:::
----
 
-:::image type="content" source="/windows/apps/images/hub-develop.svg" alt-text="Troubleshooting guides icon" border="false":::
+## Troubleshooting guides
 
-### Troubleshooting guides
+:::row:::
+:::column:::
+[Resolve app certification failures](/windows/uwp/publish/the-app-certification-process)
+:::column-end:::
+:::column:::
+[Fix submission errors (MSIX)](/windows/uwp/publish/app-submissions)
+:::column-end:::
+:::column:::
+[Diagnose performance issues](/windows/uwp/debug-test-perf/)
+:::column-end:::
+:::row-end:::
 
-- [Resolve app certification failures](/windows/uwp/publish/the-app-certification-process)
-- [Fix submission errors (MSIX)](/windows/uwp/publish/app-submissions)
-- [Diagnose performance issues](/windows/uwp/debug-test-perf/)
+## Policies and FAQs
 
-<br/>
-<br/>
+:::row:::
+:::column:::
+[Microsoft Store policies](/windows/apps/publish/store-policies)
+:::column-end:::
+:::column:::
+[Windows developer FAQ](/windows/apps/get-started/windows-developer-faq)
+:::column-end:::
+:::column:::
+[Best practices for Windows apps](/windows/apps/get-started/best-practices)
+:::column-end:::
+:::row-end:::
 
----
+## More resources
 
-:::image type="content" source="/windows/apps/images/hub-package.svg" alt-text="Policies and FAQs icon" border="false":::
+:::row:::
+:::column span="2":::
+[Tutorials](/windows/apps/get-started/start-here?tabs=winget)
+:::column-end:::
+:::column span="2":::
+[Windows Insider for Developers](https://www.microsoft.com/windowsinsider/)
+:::column-end:::
+:::row-end:::
 
-### Policies and FAQs
+:::row:::
+:::column span="2":::
+[Windows App SDK docs](/windows/apps/windows-app-sdk)
+:::column-end:::
+:::column span="2":::
+[WinUI Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc)
+:::column-end:::
+:::row-end:::
 
-- [Microsoft Store policies](/windows/apps/publish/store-policies)
-- [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq)
-- [Best practices for Windows apps](/windows/apps/get-started/best-practices)
+## Follow us
 
-<br/>
-<br/>
+:::row:::
+:::column span="2":::
+[YouTube](https://www.youtube.com/@WindowsDevelopers)
+:::column-end:::
+:::column span="2":::
+[Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/)
+:::column-end:::
+:::row-end:::
 
----
-
-:::image type="content" source="/windows/apps/images/hub-design.svg" alt-text="More resources icon" border="false":::
-
-### More resources
-
-- [Tutorials](/windows/apps/get-started/start-here?tabs=winget)
-- [Windows Insider for Developers](https://www.microsoft.com/windowsinsider/)
-- [Windows App SDK docs](/windows/apps/windows-app-sdk)
-- [WinUI Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc)
-
-<br/>
-<br/>
-
----
-
-:::image type="content" source="/windows/apps/images/hub-winui.svg" alt-text="Follow us icon" border="false":::
-
-### Follow us
-
-- [YouTube](https://www.youtube.com/@WindowsDevelopers)
-- [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/)
-- [BlueSky](https://bsky.app/profile/microsoftdevdocs.bsky.social)
-- [Mastodon](https://dotnet.social/@windowsdocs)
+:::row:::
+:::column span="2":::
+[BlueSky](https://bsky.app/profile/microsoftdevdocs.bsky.social)
+:::column-end:::
+:::column span="2":::
+[Mastodon](https://dotnet.social/@windowsdocs)
+:::column-end:::
+:::row-end:::
