@@ -19,9 +19,9 @@ While functionality and behavior has not changed and remains consistent across t
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Spacing examples](winui3gallery://item/Spacing)
+> [Open the WinUI Gallery app and see Spacing examples](winui3gallery://item/Spacing)
 >
-> [Open the WinUI 3 Gallery app and see Compact Sizing in action](winui3gallery://item/CompactSizing)
+> [Open the WinUI Gallery app and see Compact Sizing in action](winui3gallery://item/CompactSizing)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -21,14 +21,14 @@ This new version of WinUI 3 is available as part of Project Reunion 0.5. To inst
 
 **[Install tools for preview and experimental channels of the Windows App SDK](../../windows-app-sdk/preview-experimental-install.md)**
 
-Now that WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see Deploy apps that use the Windows App SDK. The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. 
+Now that WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see Deploy apps that use the Windows App SDK. The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI app. 
 
 > [!NOTE]
 > To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 version of the [XAML Controls Gallery](#winui-3-controls-gallery) from GitHub.
 
 Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates.
 
-For more information about getting started with building a WinUI 3 app, see the following articles:
+For more information about getting started with building a WinUI app, see the following articles:
 
 - [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)
 - [Build a C# .NET app with WinUI 3 and Win32 interop](../../winui/winui3/desktop-winui3-app-with-basic-interop.md)
@@ -47,7 +47,7 @@ If you're using the Windows Community Toolkit, [download the latest version](htt
 
 ### Visual Studio Support
 
-In order to take advantage of the latest tooling features added into WinUI 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use a preview version of Visual Studio 2019 16.10. Please note that Visual Studio preview releases are pre-release products, so you may run into bugs and limitations when using preview versions of Visual Studio to build WinUI 3 apps.  
+In order to take advantage of the latest tooling features added into WinUI 3 like Hot Reload, Live Visual Tree, and Live Property Explorer, you must use a preview version of Visual Studio 2019 16.10. Please note that Visual Studio preview releases are pre-release products, so you may run into bugs and limitations when using preview versions of Visual Studio to build WinUI apps.  
 
 The table below shows the compatibility of Visual Studio 2019 versions with WinUI 3 - Project Reunion 0.5. 
 
@@ -58,7 +58,7 @@ The table below shows the compatibility of Visual Studio 2019 versions with WinU
 | 16.10 Previews  | Yes, with all WinUI 3 tooling (in preview)  |
 
 
-## Update your existing WinUI 3 app
+## Update your existing WinUI app
 
 If you created an app with an earlier preview or release version of WinUI 3, you can update the project to use the latest release of WinUI 3 - Project Reunion 0.5. For instructions, see [Update existing projects to the latest release of the Windows App SDK](../../windows-app-sdk/update-existing-projects-to-the-latest-release.md).
 

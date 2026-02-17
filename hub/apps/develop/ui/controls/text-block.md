@@ -30,7 +30,7 @@ For more info about choosing the right text control, see the [Text controls](../
 > - **Important APIs:** [TextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text), [Inlines property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.inlines)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TextBlock in action](winui3gallery:/item/TextBlock)
+> [Open the WinUI Gallery app and see the TextBlock in action](winui3gallery:/item/TextBlock)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -170,7 +170,7 @@ Typography.SetStylisticSet4(textBlock1, true);
 <TextBlock>12 x <Run Typography.Fraction="Slashed">1/3</Run> = 4.</TextBlock>
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -179,9 +179,9 @@ APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.U
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](/uwp/api/windows.ui.xaml.controls.textblock.inlines)
-> - [Open the WinUI 2 Gallery app and see the TextBlock in action](winui2gallery:/item/TextBlock). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see the TextBlock in action](winui2gallery:/item/TextBlock). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
 
 ## Related articles
 

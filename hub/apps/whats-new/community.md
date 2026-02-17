@@ -15,17 +15,6 @@ Stay updated with news, blogs, tutorials, and social channels relevant to Window
 
 ## 📣 Social media channels
 
-### X (formerly Twitter)
-
-| Account | Link |
-|--------|------|
-| Windows Developer | [@windowsdev](https://x.com/windowsdev) |
-| Windows Developer Docs | [@windowsdocs](https://x.com/windowsdocs) |
-| Windows | [@Windows](https://x.com/Windows) |
-| Microsoft Developer | [@msdev](https://x.com/msdev) |
-| Microsoft Docs | [@docsmsft](https://x.com/docsmsft) |
-| XAML Llama | [@XAMLLlama](https://x.com/XAMLLlama) |
-| .NET | [@dotnet](https://x.com/dotnet) |
 
 ### Bluesky
 

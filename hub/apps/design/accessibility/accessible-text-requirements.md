@@ -176,7 +176,7 @@ These types have an **IsTextScaleFactorEnabled** property:
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see text accessibility support in action](winui3gallery://item/AccessibilityScreenReader)
+> [Open the WinUI Gallery app and see text accessibility support in action](winui3gallery://item/AccessibilityScreenReader)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

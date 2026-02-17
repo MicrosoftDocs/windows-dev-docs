@@ -15,7 +15,7 @@ no-loc: [Recall, Click to Do, Microsoft Foundry on Windows, Phi Silica]
 - System Requirements
 - How to use Recall
 - How to search with Recall
-- How content interaction (with ["Screenray"](https://support.microsoft.com/windows/retrace-your-steps-with-recall-aa03f8a0-a78b-4b3e-b0a1-2eb8ac48701c#:~:text=Recall%20opens%20the%20snapshot%20and,cursor%20is%20blue%20and%20white.)) works
+- How content interaction (with ["Click to Do"](https://support.microsoft.com/windows/retrace-your-steps-with-recall-aa03f8a0-a78b-4b3e-b0a1-2eb8ac48701c#:~:text=Recall%20opens%20the%20snapshot%20and,cursor%20is%20blue%20and%20white.)) works
 - How to pause or resume snapshots
 - How to filter certain websites or apps from being saved by Recall
 - How to manage Recall snapshots and disk space

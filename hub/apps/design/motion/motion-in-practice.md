@@ -65,7 +65,7 @@ Implicit animations are a simple way to achieve Fluent motion by automatically i
 > - **Important APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
+> [Open the WinUI Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -111,15 +111,15 @@ public double OpaqueIfEnabled(bool IsEnabled)
 }
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 > [!div class="checklist"]
 >
 > - **UWP APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/uwp/api/windows.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls)
-> - **WinUI 2 Apis:** [Microsoft.UI.Xaml.Controls namespace](/windows/winui/api/microsoft.ui.xaml.controls)
-> - [Open the WinUI 2 Gallery app and see Implicit Transitions in action](winui2gallery://item/ImplicitTransition). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+> - **WinUI for UWP Apis:** [Microsoft.UI.Xaml.Controls namespace](/windows/winui/api/microsoft.ui.xaml.controls)
+> - [Open the WinUI for UWP Gallery app and see Implicit Transitions in action](winui2gallery://item/ImplicitTransition). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
 

@@ -20,18 +20,18 @@ For more information, see [Windows application development - Best practices](../
 
 ## Windows App SDK
 
-The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and many versions of Windows 10. You can use project templates to create new desktop apps that use the Windows App SDK with a WinUI 3-based UI, or you can use the Windows App SDK in existing desktop apps.
+The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and many versions of Windows 10. You can use project templates to create new desktop apps that use the Windows App SDK with a WinUI-based UI, or you can use the Windows App SDK in existing desktop apps.
 
 For more information, see [Windows App SDK](../../windows-app-sdk/index.md).
 
 ## WinUI
 
-WinUI is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI 3, has grown in scope and is now the modern native UI platform for Windows desktop apps.
+WinUI is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI, has grown in scope and is now the modern native UI platform for Windows desktop apps.
 
 You can use WinUI in the following ways in desktop apps:
 
-* Use [WinUI 3](../../winui/index.md) to create desktop apps (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)) with an entirely WinUI 3-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
-* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands/xaml-islands.md) and host WinUI 2 controls.
+* Use [WinUI](../../winui/index.md) to create desktop apps (see [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)) with an entirely WinUI-based user interface. WinUI is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
+* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands/xaml-islands.md) and host WinUI for UWP controls.
 
 For more information, see [WinUI](../../winui/index.md).
 
@@ -57,7 +57,7 @@ For more information, see [Use MSIX framework packages dynamically from your des
 
 ## .NET
 
-.NET (previously known as .NET Core) supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). .NET also supports [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.
+.NET (previously known as .NET Core) supports Windows desktop apps, including WinUI apps created with the Windows App SDK (see [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)). .NET also supports [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.
 
 For more information, see [What's new in .NET 10](/dotnet/core/whats-new/dotnet-10/overview).
 

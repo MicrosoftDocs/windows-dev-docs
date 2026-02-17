@@ -15,7 +15,7 @@ Use [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Brush
 > - **Important APIs**: [Brush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Brush), [SolidColorBrush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.SolidColorBrush), [RadialGradientBrush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush), [ImageBrush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.ImageBrush)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the RadialGradientBrush in action](winui3gallery://item/RadialGradientBrush)
+> [Open the WinUI Gallery app and see the RadialGradientBrush in action](winui3gallery://item/RadialGradientBrush)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -214,7 +214,7 @@ For [**ImageBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.
 
 For code examples, see [**ImageBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.ImageBrush) and [**XamlCompositionBrushBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase).
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
@@ -223,9 +223,9 @@ Brush APIs exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.medi
 > [!div class="checklist"]
 >
 > - **Platform APIs:** [Brush class](/uwp/api/windows.ui.xaml.media.brush)
-> - [Open the WinUI 2 Gallery app and see RadialGradientBrush in action](winui2gallery:/item/RadialGradientBrush). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see RadialGradientBrush in action](winui2gallery:/item/RadialGradientBrush). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
+We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
 
 ### WebViewBrush (UWP only)
 

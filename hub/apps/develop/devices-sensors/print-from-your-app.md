@@ -170,7 +170,7 @@ private void PrintTask_Requested(PrintManager sender, PrintTaskRequestedEventArg
 {
     // Create the PrintTask.
     // Defines the title and delegate for PrintTaskSourceRequested.
-    PrintTask printTask = args.Request.CreatePrintTask("WinUI 3 Printing example", PrintTaskSourceRequested);
+    PrintTask printTask = args.Request.CreatePrintTask("WinUI Printing example", PrintTaskSourceRequested);
 
     // Handle PrintTask.Completed to catch failed print jobs.
     printTask.Completed += PrintTask_Completed;

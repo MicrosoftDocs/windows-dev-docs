@@ -500,7 +500,7 @@ For UWP apps, the protocol URI can be registered in the project's app manifest. 
 
 For more information on handling URI launch in UWP apps, see step 3 in [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation#step-3-handle-the-activated-event).
 
-### WinUI 3 example
+### WinUI example
 
 The following code snippet demonstrates how to handle protocol activation in a C++ WinUI app with Windows App SDK:
 

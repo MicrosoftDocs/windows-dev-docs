@@ -59,7 +59,7 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 > - **Important APIs:** [AnimatedIcon class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
+> [Open the WinUI Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -215,16 +215,16 @@ private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 }
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 
-The AnimatedIcon for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
+The AnimatedIcon for UWP apps requires WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
 
 > [!div class="checklist"]
 >
-> - **WinUI 2 Apis:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
-> - [Open the WinUI 2 Gallery app and see the AnimatedIcon in action](winui2gallery:/item/AnimatedIcon). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
+> - **WinUI for UWP Apis:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
+> - [Open the WinUI for UWP Gallery app and see the AnimatedIcon in action](winui2gallery:/item/AnimatedIcon). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 [!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
 

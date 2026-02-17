@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # XAML platform
 
-This section includes topics that explain programming concepts that are generally applicable to any app that you write using the Windows Runtime and XAML for your UI definition. This section applies to UWP, WinUI 2 for UWP, and WinUI 3 for the Windows App SDK.
+This section includes topics that explain programming concepts that are generally applicable to any app that you write using the Windows Runtime and XAML for your UI definition. This section applies to UWP, WinUI for UWP, and WinUI for the Windows App SDK.
 
 | Topic | Description |
 |-------|-------------|

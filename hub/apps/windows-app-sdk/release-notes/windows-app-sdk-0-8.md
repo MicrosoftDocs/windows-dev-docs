@@ -192,7 +192,7 @@ This release supports all [stable channel features](../../windows-app-sdk/releas
 >
 > This release includes many bug fixes and improved stabilization across WinUI 3. These are all of the new changes in WinUI 3 since the release of WinUI 3 - Project Reunion 0.5:
 >
-> - The Pivot control has been added back in and can now be used in any WinUI 3 app.
+> - The Pivot control has been added back in and can now be used in any WinUI app.
 > - All bug fixes from Project Reunion v0.5.5, v0.5.6, and v0.5.7 are included with this release.
 > - New bug fixes, including:
 >   - Mouse right-click in TextBox crashes the application
@@ -263,7 +263,7 @@ This release supports all [stable channel features](../../windows-app-sdk/releas
 
 >
 > - WinUI 3 tooling such as Live Visual Tree, Live Property Explorer, and Hot Reload in version 0.8 and later requires Visual Studio 2019 16.11 Preview 3 and later.
-> - Apps currently using WinUI 3 and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.
+> - Apps currently using WinUI and the Windows App SDK 0.8 cannot use class libraries that use Project Reunion 0.5. Update the class libraries to use the Windows App SDK 0.8.
 > - .NET apps must target build 18362 or later: Your TFM must be set to net6.0-windows10.0.18362 or later, and your packaging project's must be set to 18362 or later. For more info, see [GitHub issue #921](https://github.com/microsoft/WindowsAppSDK/issues/921).
 > - You may encounter a crash when switching frequently between light and dark mode.
 > - For .NET apps, you may receive the following error when passing in an array of enums: `Object contains non-primitive or non-blittable data.` **This is fixed in version 0.8.2**.

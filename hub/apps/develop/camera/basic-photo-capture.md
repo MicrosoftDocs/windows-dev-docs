@@ -6,16 +6,16 @@ ms.date: 07/23/2024
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
-#customer intent: As a developer, I want to access the camera in a Windows app using WinUI 3.
+#customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
 
-# Basic photo, video, and audio capture with MediaCapture in a WinUI 3 app
+# Basic photo, video, and audio capture with MediaCapture in a WinUI app
 
 This article shows the simplest way to capture photos and video using the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. To learn about more of the features that  **MediaCapture** provides, see [**Camera**](camera.md).
 
 ## Initialize the MediaCapture object
 
-All of the capture methods described in this article require the first step of initializing the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) object. This includes instantiating the object, selecting a capture device, setting initialization parameters, and then calling [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync). Typically camera apps will display the camera preview while capturing photos or video in their UI using the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement). For a walkthrough of initializing **MediaCapture** and showing the preview in a XAML UI, see [Show the camera preview in a WinUI 3 app](camera-quickstart-winui3.md). The code examples in this article will assume that an initialized instance of **MediaCapture** has already been created.
+All of the capture methods described in this article require the first step of initializing the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) object. This includes instantiating the object, selecting a capture device, setting initialization parameters, and then calling [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync). Typically camera apps will display the camera preview while capturing photos or video in their UI using the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement). For a walkthrough of initializing **MediaCapture** and showing the preview in a XAML UI, see [Show the camera preview in a WinUI app](camera-quickstart-winui3.md). The code examples in this article will assume that an initialized instance of **MediaCapture** has already been created.
 
 ## Capture a photo to a SoftwareBitmap
 

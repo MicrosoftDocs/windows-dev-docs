@@ -26,7 +26,7 @@ This version of WinUI 3 is available as part of the Project Reunion 0.5 Preview.
 
 To install, follow the directions found in [Install tools for preview and experimental channels of the Windows App SDK](../../windows-app-sdk/preview-experimental-install.md).
 
-In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI 3 app. Once you've completed your installation, the experience of developing a WinUI 3 app should not change.
+In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI app. Once you've completed your installation, the experience of developing a WinUI app should not change.
 
 > [!NOTE]
 > You can also clone and build the WinUI 3 Preview version of the [XAML Controls Gallery](#xaml-controls-gallery-winui-3-preview-branch).
@@ -44,7 +44,7 @@ Aside from the [limitations and known issues](#limitations-and-known-issues), bu
 
 WinUI 3 API reference documentation is available here: [WinUI 3 API Reference](/windows/winui/api)
 
-If you created a project using WinUI 3 Preview 4, you can upgrade your project to use Project Reunion 0.5 Preview.
+If you created a project using WinUI Preview 4, you can upgrade your project to use Project Reunion 0.5 Preview.
 
 ### WebView2
 To use WebView2 with this WinUI 3 preview, please download the Evergreen Bootstrapper or Evergreen Standalone Installer found on [this page](https://developer.microsoft.com/microsoft-edge/webview2/) if you don't already have the WebView2 Runtime installed. 
@@ -76,7 +76,7 @@ In order to take advantage of the latest tooling features added into WinUI 3 lik
 
 - Preview features are now marked as experimental. 
   - A preview feature is anything that will continue to be a part of WinUI 3 previews, but will not be a part of the next WinUI 3 supported release. 
-  - Preview features also include any experimental APIs that are a part of the WinUI 2.6 preview.
+  - Preview features also include any experimental APIs that are a part of the WinUI for UWP 2.6 preview.
   - When building an app that uses a preview feature, your app will throw a warning. 
 
 
@@ -206,9 +206,9 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 - For C# UWP apps:
 
-  The WinUI 3 framework is a set of WinRT components which can be used from C++ (using C++/WinRT) or C#. When using C#, there are two versions of .NET, depending on the app model: when using WinUI 3 in a UWP app, you're using .NET Native; when using in a desktop app, you're using .NET 6 or later (and C#/WinRT).
+  The WinUI 3 framework is a set of WinRT components which can be used from C++ (using C++/WinRT) or C#. When using C#, there are two versions of .NET, depending on the app model: when using WinUI in a UWP app, you're using .NET Native; when using in a desktop app, you're using .NET 6 or later (and C#/WinRT).
 
-  When using C# for a WinUI 3 app in UWP, there are a few API namespace differences compared to C# in a WinUI 3 desktop app or a C# WinUI 2 app: some types are in a `Microsoft` namespace rather than a `System` namespace. For example, rather than the `INotifyPropertyChanged` interface being in the `System.ComponentModel`  namespace, it’s in the `Microsoft.UI.Xaml.Data` namespace. 
+  When using C# for a WinUI app in UWP, there are a few API namespace differences compared to C# in a WinUI desktop app or a C# WinUI for UWP app: some types are in a `Microsoft` namespace rather than a `System` namespace. For example, rather than the `INotifyPropertyChanged` interface being in the `System.ComponentModel`  namespace, it’s in the `Microsoft.UI.Xaml.Data` namespace. 
 
   This applies to:
     - `INotifyPropertyChanged` (and related types)
