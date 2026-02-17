@@ -33,7 +33,7 @@ For older releases, see the [Archive of Windows App SDK downloads](downloads-arc
 
 | Version | Runtime downloads |
 |--|--|
-| **2.0 Preview (2.0-preview)**  <br/> 02/13/2026  <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=preview) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F2.0-preview1) | [Installer (x64)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/windowsappruntimeinstall-x64.exe)  <br/> [Installer (x86)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/windowsappruntimeinstall-x86.exe)  <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/windowsappruntimeinstall-arm64.exe)  <br/> [Redistributable (ZIP)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/Microsoft.WindowsAppRuntime.Redist.2.0.zip) |
+| **2.0 Preview (2.0-preview)**  <br/> 02/13/2026  <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=preview) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F2.0-preview1) | [Installer (x64)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/windowsappruntimeinstall-x64.exe)  <br/> [Installer (x86)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/windowsappruntimeinstall-x86.exe)  <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/windowsappruntimeinstall-arm64.exe)  <br/> [Redistributable (ZIP)](https://aka.ms/windowsappsdk/2.0/2.0-preview1/Microsoft.WindowsAppRuntime.Redist.2.0-preview1.zip) |
 
 For older releases, see the [Archive of Windows App SDK downloads](downloads-archive.md).
 
