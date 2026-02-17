@@ -15,8 +15,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 
 ## Quick help actions
 
-:::image type="content" source="/windows/apps/images/hub-essentials.svg" alt-text="Quick help actions icon" border="false":::
-
 :::row:::
 :::column span="2":::
 [Open Copilot support](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
@@ -36,8 +34,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 :::row-end:::
 
 ## Get help from the community
-
-:::image type="content" source="/windows/apps/images/hub-design.svg" alt-text="Community help icon" border="false":::
 
 :::row:::
 :::column span="2":::
@@ -59,8 +55,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 
 ## Contact Microsoft support
 
-:::image type="content" source="/windows/apps/images/hub-publish.svg" alt-text="Microsoft support icon" border="false":::
-
 :::row:::
 :::column span="2":::
 [Dev Center dashboard support (Copilot)](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
@@ -80,8 +74,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 :::row-end:::
 
 ## Popular help topics
-
-:::image type="content" source="/windows/apps/images/hub-essentials.svg" alt-text="Popular topics icon" border="false":::
 
 :::row:::
 	:::column:::
@@ -119,8 +111,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 
 ## Troubleshooting guides
 
-:::image type="content" source="/windows/apps/images/hub-develop.svg" alt-text="Troubleshooting guides icon" border="false":::
-
 :::row:::
 :::column:::
 [Resolve app certification failures](/windows/uwp/publish/the-app-certification-process)
@@ -135,8 +125,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 
 ## Policies and FAQs
 
-:::image type="content" source="/windows/apps/images/hub-package.svg" alt-text="Policies and FAQs icon" border="false":::
-
 :::row:::
 :::column:::
 [Microsoft Store policies](/windows/apps/publish/store-policies)
@@ -150,8 +138,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 :::row-end:::
 
 ## More resources
-
-:::image type="content" source="/windows/apps/images/hub-design.svg" alt-text="More resources icon" border="false":::
 
 :::row:::
 :::column span="2":::
@@ -172,8 +158,6 @@ Get answers quickly, connect with experts, and resolve problems across registrat
 :::row-end:::
 
 ## Follow us
-
-:::image type="content" source="/windows/apps/images/hub-winui.svg" alt-text="Follow us icon" border="false":::
 
 :::row:::
 :::column span="2":::
