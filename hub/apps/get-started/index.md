@@ -110,7 +110,7 @@ The [Universal Windows Platform (UWP)](/windows/uwp/) provides a common API surf
 | **Language** | C#, C++ | C#, Visual Basic | C#, Visual Basic | C# | JavaScript, TypeScript | C#, C++, Visual Basic | C++, Rust |
 | **UI language** | XAML | XAML | Code | XAML/Code | JSX | XAML | Code |
 | **UI designer** (drag & drop) | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
-| **Modern UI** | ✅ | ✅ ([Fluent theme](/dotnet/desktop/wpf/whats-new/net10)) | ❌ | ✅ | ✅ | ✅ ([WinUI 2](/windows/apps/winui/winui2)) | ❌ |
+| **Modern UI** | ✅ | ✅ ([Fluent theme](/dotnet/desktop/wpf/whats-new/net100)) | ❌ | ✅ | ✅ | ✅ ([WinUI 2](/windows/apps/winui/winui2)) | ❌ |
 | **Cross-platform** | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
 | **Sandboxing (AppContainer)** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
 | **Actively maintained** | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ Security & bug fixes only | ✅ |

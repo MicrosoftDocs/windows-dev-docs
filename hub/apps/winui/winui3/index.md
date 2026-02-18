@@ -89,18 +89,18 @@ To get started with WinUI, you can try out these resources to get you started:
 
 :::row:::
     :::column:::
-        [![Hello WinUI](../winui/winui3/images/hero-hello-winui.png)](../../get-started/start-here.md)<br>
+        [![Hello WinUI](images/hero-hello-winui.png)](../../get-started/start-here.md)<br>
         **[Hello, WinUI](../../get-started/start-here.md))**<br>
         Setup your development environment and build your first WinUI app.
     :::column-end:::
     :::column:::
-        [![WinUI Gallery](../winui/winui3/images/winui-gallery.png)](samples.md#winui-gallery)<br>
-        **[WinUI Gallery](samples.md#winui-gallery)**<br>
+        [![WinUI Gallery](images/winui-gallery.png)](../../get-started/samples.md#winui-gallery)<br>
+        **[WinUI Gallery](../../get-started/samples.md#winui-gallery)**<br>
         Explore interactive examples of WinUI controls, features, and functionality.
     :::column-end:::
     :::column:::
-        [![Samples icon](../images/tile-samples.png)](samples.md)<br>
-        **[Samples and resources](samples.md)**<br>
+        [![Samples icon](../../images/tile-samples.png)](../../get-started/samples.md)<br>
+        **[Samples and resources](../../get-started/samples.md)**<br>
         Browse code samples, starter projects, and tools to accelerate your development.
     :::column-end:::
 :::row-end:::
