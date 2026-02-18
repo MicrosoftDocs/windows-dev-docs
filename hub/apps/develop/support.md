@@ -1,178 +1,109 @@
 ---
 title: Windows Developer Support
-description: Find help fast from community channels and Microsoft experts for developing Windows applications.
+description: Find help and resources for developing Windows applications, from community channels to Microsoft support options.
 ms.topic: overview
-ms.date: 02/17/2026
+ms.date: 02/18/2026
 ms.collection: collection
 ms.localizationpriority: medium
 ---
 
 # Windows Developer Support
 
-:::image type="content" source="https://developer.microsoft.com/windows/develop/images/pagehero.png" alt-text="Windows developer support hero graphic" border="false":::
+Whether you're just getting started or troubleshooting a tricky issue, you're not alone. Connect with the Windows developer community, access expert resources, and find solutions to help you build great apps.
 
-Get answers quickly, connect with experts, and resolve problems across registration, submissions, certification, and development. Use the following quick links to reach the right help fast.
+---
 
-## Quick help actions
+## Development support
 
-:::row:::
-:::column span="2":::
-[Open Copilot support](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
-:::column-end:::
-:::column span="2":::
-[Create a support incident](https://support.microsoft.com/supportforbusiness/productselection)
-:::column-end:::
-:::row-end:::
+Get help with coding, APIs, and building Windows apps.
 
-:::row:::
-:::column span="2":::
-[Application compatibility (App Assure)](https://aka.ms/desktopappassure)
-:::column-end:::
-:::column span="2":::
-[Partner Center](https://partner.microsoft.com/dashboard)
-:::column-end:::
-:::row-end:::
+### Community resources
 
-## Get help from the community
+The Windows developer community is an incredible resource for learning and problem-solving:
 
-:::row:::
-:::column span="2":::
-[Microsoft Q&A](https://learn.microsoft.com/answers/questions/)
-:::column-end:::
-:::column span="2":::
-[Windows App SDK discussions](https://github.com/microsoft/windowsappsdk/discussions)
-:::column-end:::
-:::row-end:::
+- **[Microsoft Q&A](https://learn.microsoft.com/answers/questions/)** - Ask technical questions and get answers from Microsoft experts and the community
+- **[Windows App SDK discussions](https://github.com/microsoft/windowsappsdk/discussions)** - Connect with other developers and the Windows App SDK team
+- **[WinUI discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)** - Get help and share feedback about WinUI
+- **[Stack Overflow](https://stackoverflow.com/questions/tagged/windows-app-sdk)** - Browse thousands of answered questions tagged with Windows App SDK
 
-:::row:::
-:::column span="2":::
-[WinUI discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)
-:::column-end:::
-:::column span="2":::
-[Stack Overflow (Windows App SDK)](https://stackoverflow.com/questions/tagged/windows-app-sdk)
-:::column-end:::
-:::row-end:::
+### Application compatibility
 
-## Contact Microsoft support
+If your app isn't working correctly on Windows or you need help modernizing an existing application:
 
-:::row:::
-:::column span="2":::
-[Dev Center dashboard support (Copilot)](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)
-:::column-end:::
-:::column span="2":::
-[App certification failures (Report App)](mailto:reportapp@microsoft.com)
-:::column-end:::
-:::row-end:::
+- **[App Assure](https://aka.ms/desktopappassure)** - Free Microsoft engineering support to help your apps work on Windows 10, Windows 11, and Microsoft Edge
 
-:::row:::
-:::column span="2":::
-[Technical support incidents](https://support.microsoft.com/supportforbusiness/productselection)
-:::column-end:::
-:::column span="2":::
-[Application compatibility (App Assure)](https://aka.ms/desktopappassure)
-:::column-end:::
-:::row-end:::
+## Partner Center and Store support
 
-## Popular help topics
+If you're publishing apps to the Microsoft Store or need help with Partner Center account, submissions, or certification:
 
-:::row:::
-	:::column:::
-	**Account management**
+### Store publishers
 
-	[Open a developer account](/windows/uwp/publish/opening-a-developer-account)<br/>
-	[Account types, costs, locations](/windows/uwp/publish/account-types-locations-and-fees)<br/>
-	[Manage account users](/windows/uwp/publish/manage-account-users)
-	:::column-end:::
+- **[Partner Center dashboard](https://partner.microsoft.com/dashboard)** - Manage your apps and submissions
+- **[Partner Center support (Copilot)](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)** - Get help with Partner Center accounts and Store submissions *(requires Partner Center account)*
+- **[Report app certification issues](mailto:reportapp@microsoft.com)** - Contact the certification team about specific app failures
 
-	:::column:::
-	**Payment & monetization**
+### Enterprise support
 
-	[Payment thresholds, methods, timeframes](/azure/marketplace/partner-center-portal/payment-thresholds-methods-timeframes)<br/>
-	[Monetization options](/windows/uwp/monetize/)<br/>
-	[Set up payout account & tax forms](/azure/marketplace/partner-center-portal/set-up-your-payout-account-tax-forms)
-	:::column-end:::
+For organizations with support contracts:
 
-	:::column:::
-	**Submissions**
+- **[Create a support incident](https://support.microsoft.com/supportforbusiness/productselection)** - *(requires Microsoft support contract)*
 
-	[Package management & requirements](/windows/uwp/publish/upload-app-packages)<br/>
-	[Certification process & timelines](/windows/uwp/publish/the-app-certification-process)<br/>
-	[MSIX submission process](/windows/uwp/publish/app-submissions)
-	:::column-end:::
+## Common development topics
 
-	:::column:::
-	**Development**
+### Get started
 
-	[Set up your environment](/windows/apps/windows-app-sdk/set-up-your-development-environment)<br/>
-	[Debugging, testing, and performance](/windows/uwp/debug-test-perf/)<br/>
-	[Porting apps to Windows](/windows/uwp/porting/)
-	:::column-end:::
-:::row-end:::
+New to Windows app development? These resources will help you get up and running:
 
-## Troubleshooting guides
+- [Set up your development environment](/windows/apps/windows-app-sdk/set-up-your-development-environment) - Install the tools you need
+- [Choose your app framework](/windows/apps/get-started/) - Select the right technology for your project
+- [Create your first WinUI app](/windows/apps/get-started/start-here) - Build a simple app from scratch
 
-:::row:::
-:::column:::
-[Resolve app certification failures](/windows/uwp/publish/the-app-certification-process)
-:::column-end:::
-:::column:::
-[Fix submission errors (MSIX)](/windows/uwp/publish/app-submissions)
-:::column-end:::
-:::column:::
-[Diagnose performance issues](/windows/uwp/debug-test-perf/)
-:::column-end:::
-:::row-end:::
+### Building and debugging
 
-## Policies and FAQs
+- [Debugging, testing, and performance](/windows/uwp/debug-test-perf/) - Tools and techniques for finding and fixing issues
+- [Windows App SDK samples](https://github.com/microsoft/WindowsAppSDK-Samples) - Example code to learn from
+- [WinUI Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Interactive examples of WinUI controls
 
-:::row:::
-:::column:::
-[Microsoft Store policies](/windows/apps/publish/store-policies)
-:::column-end:::
-:::column:::
-[Windows developer FAQ](/windows/apps/get-started/windows-developer-faq)
-:::column-end:::
-:::column:::
-[Best practices for Windows apps](/windows/apps/get-started/best-practices)
-:::column-end:::
-:::row-end:::
+### Publishing to the Store
 
-## More resources
+- [Open a developer account](/windows/uwp/publish/opening-a-developer-account) - Register to publish apps
+- [App submission process](/windows/uwp/publish/app-submissions) - Learn how to submit your app
+- [App certification process](/windows/uwp/publish/the-app-certification-process) - Understand what's required to pass certification
+- [Microsoft Store policies](/windows/apps/publish/store-policies) - Review the rules your app needs to follow
 
-:::row:::
-:::column span="2":::
-[Tutorials](/windows/apps/get-started/start-here?tabs=winget)
-:::column-end:::
-:::column span="2":::
-[Windows Insider for Developers](https://www.microsoft.com/windowsinsider/)
-:::column-end:::
-:::row-end:::
+### Modernizing existing apps
 
-:::row:::
-:::column span="2":::
-[Windows App SDK docs](/windows/apps/windows-app-sdk)
-:::column-end:::
-:::column span="2":::
-[WinUI Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc)
-:::column-end:::
-:::row-end:::
+- [Porting apps to Windows](/windows/uwp/porting/) - Bring your app from another platform
+- [Modernize desktop apps](/windows/apps/desktop/modernize/) - Add modern Windows features to Win32, WPF, or WinForms apps
+- [Use Windows App SDK in existing projects](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project) - Integrate the latest APIs
 
-## Follow us
+### Monetization and payments
 
-:::row:::
-:::column span="2":::
-[YouTube](https://www.youtube.com/@WindowsDevelopers)
-:::column-end:::
-:::column span="2":::
-[Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/)
-:::column-end:::
-:::row-end:::
+- [Monetization options](/windows/uwp/monetize/) - Ways to earn revenue from your app
+- [Payment thresholds and methods](/azure/marketplace/partner-center-portal/payment-thresholds-methods-timeframes) - *(for Store publishers)*
+- [Set up payout account](/azure/marketplace/partner-center-portal/set-up-your-payout-account-tax-forms) - *(for Store publishers)*
 
-:::row:::
-:::column span="2":::
-[BlueSky](https://bsky.app/profile/microsoftdevdocs.bsky.social)
-:::column-end:::
-:::column span="2":::
-[Mastodon](https://dotnet.social/@windowsdocs)
-:::column-end:::
-:::row-end:::
+## Additional resources
+
+### Learning and tutorials
+
+- [Windows App SDK documentation](/windows/apps/windows-app-sdk) - Complete API reference and guides
+- [Start here tutorials](/windows/apps/get-started/start-here?tabs=winget) - Step-by-step learning paths
+- [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq) - Answers to common questions
+- [Best practices](/windows/apps/get-started/best-practices) - Guidelines for building quality apps
+
+### Tools and downloads
+
+- [Visual Studio](https://visualstudio.microsoft.com/) - The primary IDE for Windows development
+- [Windows App SDK downloads](/windows/apps/windows-app-sdk/downloads) - Latest releases and tools
+- [WinUI Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Explore controls and design patterns
+
+### Stay connected
+
+Follow along with the latest news, updates, and tips from the Windows developer team:
+
+- [Windows Developer Blog](https://blogs.windows.com/windowsdeveloper/) - Official announcements and deep dives
+- [Windows Insider Program](https://www.microsoft.com/windowsinsider/) - Preview upcoming Windows features
+- [YouTube](https://www.youtube.com/@WindowsDevelopers) - Video tutorials and conference sessions
+- [BlueSky](https://bsky.app/profile/microsoftdevdocs.bsky.social) - Quick updates and community engagement
+- [Mastodon](https://dotnet.social/@windowsdocs) - Developer news and tips
