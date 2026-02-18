@@ -1,30 +1,15 @@
 ---
-description: Z-depth, or relative depth, and shadow are two ways to incorporate depth into your app to help users focus naturally and efficiently.
-title: Z-depth and shadow for Windows apps
-template: detail.hbs
-ms.date: 09/26/2024
+description: Learn how to use ThemeShadow and DropShadow to create depth and visual hierarchy in your Windows app UI.
+title: Shadows in Windows apps
+ms.date: 02/16/2026
 ms.topic: article
-ms.custom: 19H1
-keywords: windows 10, uwp
-pm-contact: chigy
+keywords: windows 11, shadow, ThemeShadow, DropShadow, z-depth, elevation
 ms.localizationpriority: medium
 ---
 
-# Z-depth and shadow
+# Shadows in Windows apps
 
-![A gif showing four gray rectangles that are stacked diagonally, one on top of the other. The gif is animated so that shadows appear and disappear.](images/elevation-shadow/shadow.gif)
-
-Creating a visual hierarchy of elements in your UI makes the UI easy to scan and conveys what is important to focus on. Elevation, the act of bringing select elements of your UI forward, is often used to achieve such a hierarchy in software. This article discusses how to create elevation in a Windows app by using z-depth and shadow.
-
-Z-depth is a term used amongst 3D app creators to denote the distance between two surfaces along the z-axis. It illustrates how close an object is to the viewer. Think of it as a similar concept to x/y coordinates, but in the z direction.
-
-Windows apps use shadows to express depth and add visual hierarchy. To achieve this, the z-axis provides an easy coding path. However, the shadows are emulated; they are not displayed in the true 3D sense. This is so that we can achieve the feeling of depth without sacrificing the performance of your app's UI.
-
-## Why use z-depth?
-
-In the physical world, we tend to focus on objects that are closer to us. We can apply this spatial instinct to digital UI as well. For example, if you bring an element closer to the user, then the user will instinctively focus on the element. By moving UI elements closer on the z-axis, you can establish visual hierarchy between objects, helping users complete tasks naturally and efficiently in your app.
-
-## What is shadow?
+Windows apps use shadows to express depth and add visual hierarchy. Shadows help create the appearance of [elevation](../../design/signature-experiences/layering.md), guiding the user's focus to the most important elements in your UI.
 
 Shadow is one way a user perceives elevation. Light above an elevated object creates a shadow on the surface below. The higher the object, the larger and softer the shadow becomes. Elevated objects in your UI don't need to have shadows, but they help create the appearance of elevation.
 
@@ -41,25 +26,25 @@ The [ThemeShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.the
 
 Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a built in shadow with a depth of 32px applied to the main menu and all nested menus.
 
-![A screen shot of ThemeShadow applied to a MenuFlyout with three open, nested menus.](images/elevation-shadow/themeshadow-menuflyout.png)
+![A screen shot of ThemeShadow applied to a MenuFlyout with three open, nested menus.](../../design/layout/images/elevation-shadow/themeshadow-menuflyout.png)
 
 ### ThemeShadow in common controls
 
 The following common controls will automatically use ThemeShadow to cast shadows from 32px depth unless otherwise specified:
 
-- [Context menu](../controls/menus.md), [Command bar](../controls/command-bar.md), [Command bar flyout](../controls/command-bar-flyout.md), [MenuBar](../controls/menus.md#create-a-menu-bar)
-- [Dialogs and flyouts](../controls/dialogs-and-flyouts/index.md) (Dialog at 128px)
-- [NavigationView](../controls/navigationview.md)
-- [ComboBox](../controls/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](../controls/buttons.md)
-- [TeachingTip](../controls/dialogs-and-flyouts/teaching-tip.md)
-- [AutoSuggestBox](../controls/auto-suggest-box.md)
-- [Calendar/Date/Time pickers](../controls/date-and-time.md)
-- [Tooltip](../controls/tooltips.md) (16px)
-- [Number Box](../controls/number-box.md)
-- [TabView](../controls/tab-view.md)
-- [Media transport control](../controls/media-playback.md#media-transport-controls), [InkToolbar](../controls/inking-controls.md)
-- [BreadcrumbBar](../controls/breadcrumbbar.md)
-- [Connected animation](../motion/connected-animation.md)
+- [Context menu](controls/menus.md), [Command bar](controls/command-bar.md), [Command bar flyout](controls/command-bar-flyout.md), [MenuBar](controls/menus.md#create-a-menu-bar)
+- [Dialogs and flyouts](controls/dialogs-and-flyouts/index.md) (Dialog at 128px)
+- [NavigationView](controls/navigationview.md)
+- [ComboBox](controls/combo-box.md), [DropDownButton, SplitButton, ToggleSplitButton](controls/buttons.md)
+- [TeachingTip](controls/dialogs-and-flyouts/teaching-tip.md)
+- [AutoSuggestBox](controls/auto-suggest-box.md)
+- [Calendar/Date/Time pickers](controls/date-and-time.md)
+- [Tooltip](controls/tooltips.md) (16px)
+- [Number Box](controls/number-box.md)
+- [TabView](controls/tab-view.md)
+- [Media transport control](controls/media-playback.md#media-transport-controls), [InkToolbar](controls/inking-controls.md)
+- [BreadcrumbBar](controls/breadcrumbbar.md)
+- [Connected animation](../../design/motion/connected-animation.md)
 
 > [!NOTE]
 > ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows 11 to use ninegrid shadow instead of projected shadow for better performance.
@@ -90,7 +75,7 @@ This example shows a Rectangle in a Popup casting a shadow onto the app backgrou
 PopupRectangle.Translation += new Vector3(0, 0, 32);
 ```
 
-![A single rectangular popup with a shadow.](images/elevation-shadow/PopupRectangle.png)
+![A single rectangular popup with a shadow.](../../design/layout/images/elevation-shadow/PopupRectangle.png)
 
 ### Disabling default ThemeShadow on custom Flyout controls
 
@@ -141,7 +126,7 @@ Rectangle1.Translation += new Vector3(0, 0, 16);
 Rectangle2.Translation += new Vector3(120, 0, 32);
 ```
 
-![Two turquoise rectangles next to each other, both with shadows.](images/elevation-shadow/SharedShadow.png)
+![Two turquoise rectangles next to each other, both with shadows.](../../design/layout/images/elevation-shadow/SharedShadow.png)
 
 ## Drop shadow
 
@@ -164,3 +149,8 @@ DropShadow does not provide built in shadow values and you need to specify them 
 - Generally, we recommend using ThemeShadow, which provides consistent shadow values.
 - For concerns about performance, limit the number of shadows, use other visual treatment, or use DropShadow.
 - If you have more advanced scenarios to achieve visual hierarchy, consider using other visual treatment (for example, color). If shadow is needed, then use DropShadow.
+
+## Related articles
+
+- [Elevation and layering in Windows](../../design/signature-experiences/layering.md)
+- [Materials (Acrylic / Mica)](../../windows-app-sdk/system-backdrop-controller.md)

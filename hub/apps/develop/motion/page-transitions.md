@@ -28,7 +28,7 @@ Page refresh is a combination of a slide up animation and a fade in animation fo
 
 The desired feeling is that the user has started over.
 
-![page refresh animation](images/page-refresh.gif)
+![page refresh animation](../../design/motion/images/page-refresh.gif)
 
 The page refresh animation is represented by the [**EntranceNavigationTransitionInfo**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.entrancenavigationtransitioninfo) class.
 
@@ -47,7 +47,7 @@ Use drill when users navigate deeper into an app, such as displaying more inform
 
 The desired feeling is that the user has gone deeper into the app.
 
-![drill animation](images/drill.gif)
+![drill animation](../../design/motion/images/drill.gif)
 
 The drill animation is represented by the [**DrillInNavigationTransitionInfo**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.drillinnavigationtransitioninfo) class.
 
@@ -58,7 +58,7 @@ myFrame.Navigate(typeof(Page2), null, new DrillInNavigationTransitionInfo());
 
 ## Horizontal slide
 
-Use horizontal slide to show that sibling pages appear next to each other. The [NavigationView](../controls/navigationview.md) control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizontal slide with SlideNavigationTransitionInfo.
+Use horizontal slide to show that sibling pages appear next to each other. The [NavigationView](../ui/controls/navigationview.md) control automatically uses this animation for top nav, but if you are building your own horizontal navigation experience, then you can implement horizontal slide with SlideNavigationTransitionInfo.
 
 The desired feeling is that the user is navigating between pages that are next to each other. 
 
@@ -89,5 +89,5 @@ This can be useful when you modify navigation behavior dynamically based on scre
 
 ## Related topics
 
-- [Navigate between two pages](../basics/navigate-between-two-pages.md)
-- [Motion in Windows](index.md)
+- [Navigate between two pages](../ui/navigation/navigate-between-two-pages.md)
+- [Motion in Windows](../../design/signature-experiences/motion.md)

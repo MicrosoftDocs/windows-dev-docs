@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Mica material
 
-_Mica_ is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization. Mica is available for UWP apps that use WinUI for UWP and apps that use Windows App SDK 1.1 or later, while running on Windows 11 version 22000 or later.
+_Mica_ is an opaque, dynamic material that incorporates theme and desktop wallpaper to paint the background of long-lived windows such as apps and settings. You can apply Mica to your application backdrop to delight users and create visual hierarchy, aiding productivity, by increasing clarity about which window is in focus. Mica is specifically designed for app performance as it only samples the desktop wallpaper once to create its visualization.
 
 ![hero image](images/materials/mica-header.png)
 
@@ -49,7 +49,6 @@ In High Contrast mode, users continue to see the familiar background color of th
 * Battery Saver mode is activated.
 * The app runs on low-end hardware.
 * An app window on desktop deactivates.
-* The Windows app is running on Xbox or HoloLens.
 * The Windows version is below 22000.
 
 ## App layering with Mica
@@ -130,10 +129,6 @@ You can use Mica in UWP apps that use WinUI for UWP, or in apps that use Windows
 To use Mica in a WinUI XAML app, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../windows-app-sdk/system-backdrop-controller.md).
 
 To use Mica in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md).
-
-### Use Mica with WinUI for UWP
-
-To use Mica in a UWP app with WinUI for UWP, see [Apply Mica with WinUI for UWP](/windows/uwp/ui-input/mica-uwp).
 
 ## Related articles
 

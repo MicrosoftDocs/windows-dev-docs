@@ -18,19 +18,10 @@ There are several things to consider when choosing a layout panel:
 
 ## Examples
 
-<table>
-<th align="left">WinUI for UWP Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI for UWP Gallery</strong> app installed, see the <a href="winui2gallery:/item/RelativePanel">RelativePanel</a>, <a href="winui2gallery:/item/StackPanel">StackPanel</a>, <a href="winui2gallery:/item/Grid">Grid</a>, <a href="winui2gallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a>, and <a href="winui2gallery:/item/Canvas">Canvas</a> in action.</p>
-    <ul>
-    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI for UWP Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+> [!div class="nextstepaction"]
+> [Open the WinUI Gallery app and see layout panels in action](winui3gallery:/category/Layout)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Panel properties
 
@@ -62,7 +53,7 @@ Here’s an example of how to set border properties on a Grid.
 </Grid>
 ```
 
-![A Grid with borders](images/layout-panel-grid-border.png)
+![A Grid with borders](../../design/layout/images/layout-panel-grid-border.png)
 
 Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see [Optimize your XAML layout](/windows/uwp/debug-test-perf/optimize-your-xaml-layout).
 
@@ -106,7 +97,7 @@ This XAML shows how to arrange elements in a RelativePanel.
 
 The result looks like this. 
 
-![Relative panel](images/layout-panel-relative-panel.png)
+![Relative panel](../../design/layout/images/layout-panel-relative-panel.png)
 
 Here are a few things to note about the sizing of the rectangles:
 - The red rectangle is given an explicit size of 44x44. It's placed in the upper left corner of the panel, which is the default position.
@@ -133,7 +124,7 @@ The following XAML shows how to create a vertical StackPanel of items.
 
 The result looks like this.
 
-![Stack panel](images/layout-panel-stack-panel.png)
+![Stack panel](../../design/layout/images/layout-panel-stack-panel.png)
 
 In a StackPanel, if a child element's size is not set explicitly, it stretches to fill the available width (or height if the Orientation is **Horizontal**). In this example, the width of the rectangles is not set. The rectangles expand to fill the entire width of the StackPanel.
 
@@ -167,7 +158,7 @@ This XAML example shows how to create a Grid with two rows and two columns.
 
 The result looks like this.
 
-![Grid](images/layout-panel-grid.png)
+![Grid](../../design/layout/images/layout-panel-grid.png)
 
 In this example, the sizing works like this: 
 - The second row has an explicit height of 44 effective pixels. By default, the height of the first row fills whatever space is left over.
@@ -203,7 +194,7 @@ The default column width is "*", so you don't need to explicitly set this value 
 
 In the Visual Studio XAML designer, the result looks like this.
 
-![A 4 column grid in the Visual Studio designer](images/xaml-layout-grid-in-designer.png)
+![A 4 column grid in the Visual Studio designer](../../design/layout/images/xaml-layout-grid-in-designer.png)
 
 ## VariableSizedWrapGrid
 
@@ -233,7 +224,7 @@ Here's how to use a VariableSizedWrapGrid in XAML.
 
 The result looks like this.
 
-![Variable size wrap grid](images/layout-panel-variable-size-wrap-grid.png)
+![Variable size wrap grid](../../design/layout/images/layout-panel-variable-size-wrap-grid.png)
 
 In this example, the maximum number of rows in each column is 3. The first column contains only 2 items (the red and blue rectangles) because the blue rectangle spans 2 rows. The green rectangle then wraps to the top of the next column.
 
@@ -258,7 +249,7 @@ Here's an example of a Canvas in XAML.
 
 The result looks like this.
 
-![Canvas](images/layout-panel-canvas.png)
+![Canvas](../../design/layout/images/layout-panel-canvas.png)
 
 Use the Canvas panel with discretion. While it's convenient to be able to precisely control positions of elements in UI for some scenarios, a fixed positioned layout panel causes that area of your UI to be less adaptive to overall app window size changes. App window resize might come from device orientation changes, split app windows, changing monitors, and a number of other user scenarios.
 
@@ -268,4 +259,4 @@ There are several special-purpose panels that can be used only as an [**ItemsPan
 
 ## Get the sample code
 
-- [WinUI for UWP Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
