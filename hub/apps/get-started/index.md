@@ -1,6 +1,6 @@
 ---
 description: An overview of the Windows developer platform, SDKs, and app frameworks
-title: Choosing your app framework
+title: Windows developer platform overview
 ms.topic: overview
 ms.date: 02/13/2026
 keywords: windows, desktop development, windows sdk, windows app sdk, winui
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 #customer intent: To understand the Windows developer platform, how the SDKs fit together, and how to choose the right app framework.
 ---
 
-# Windows developer platform
+# Windows developer platform overview
 
 The Windows developer platform provides everything you need to build apps for Windows — from system-level access to modern UI frameworks. At the core are two SDKs: the **Windows SDK**, which gives you access to OS-level APIs, and the **Windows App SDK**, which provides a modern, decoupled set of APIs and tools — including WinUI, the recommended UI framework for new Windows apps.
 

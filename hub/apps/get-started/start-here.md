@@ -1,8 +1,8 @@
 ---
-title: Setup for WinUI
+title: Set up your environment and create your first WinUI project
 description: List of steps to get started developing Windows apps with WinUI and the Windows App SDK.
 ms.topic: how-to
-ms.date: 12/18/2025
+ms.date: 02/18/2026
 keywords: windows, desktop development
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -95,7 +95,6 @@ In the Visual Studio Installer, select the following workloads on the **Workload
         [![WinUI Gallery](../winui/winui3/images/winui-gallery.png)](samples.md#winui-gallery)<br>
         **[WinUI Gallery](samples.md#winui-gallery)**<br>
         Explore interactive examples of WinUI controls, features, and functionality.
-        [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
     :::column-end:::
     :::column:::
         [![Samples icon](../images/tile-samples.png)](samples.md)<br>

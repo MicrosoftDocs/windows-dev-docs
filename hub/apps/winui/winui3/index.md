@@ -34,7 +34,7 @@ WinUI combines the flexibility of the Win32 app model with the richness of moder
     :::column span="2":::
         **Modern UI**<br>
          WinUI includes a comprehensive set of modern UI controls and styles, designed for usability, adaptability, and a polished, Fluent look and feel.
-        <br><br>
+        <br>
          [Explore Fluent Design](../../design/index.md)
     :::column-end:::    
 :::row-end:::
@@ -66,7 +66,7 @@ WinUI combines the flexibility of the Win32 app model with the richness of moder
     :::column span="2":::
         **Built on the Windows App SDK**<br>
          WinUI is part of the Windows App SDK, giving you access to modern Windows APIs, consistent app behaviors, and tools that simplify development and deployment.
-         <br><br>
+         <br>
          [Learn more about the Windows App SDK](../../windows-app-sdk/index.md)
     :::column-end:::    
 :::row-end:::
@@ -89,32 +89,18 @@ To get started with WinUI, you can try out these resources to get you started:
 
 :::row:::
     :::column:::
-        ![An image that says Hello, WinUI](images/hero-hello-winui.png)
+        [![Hello WinUI](../winui/winui3/images/hero-hello-winui.png)](../../get-started/start-here.md)<br>
+        **[Hello, WinUI](../../get-started/start-here.md))**<br>
+        Setup your development environment and build your first WinUI app.
     :::column-end:::
-    :::column span="2":::
-        **Hello, WinUI**<br>
-         Setup your development environment and build your first WinUI app.
-         <br>
-         > [!div class="nextstepaction"]
-         > [Create your first WinUI app](../../get-started/start-here.md)
-    :::column-end:::    
-:::row-end:::
-
-:::row:::
     :::column:::
-        ![A screenshot of the WinUI Gallery](images/winui-gallery.png)
+        [![WinUI Gallery](../winui/winui3/images/winui-gallery.png)](samples.md#winui-gallery)<br>
+        **[WinUI Gallery](samples.md#winui-gallery)**<br>
+        Explore interactive examples of WinUI controls, features, and functionality.
     :::column-end:::
-    :::column span="2":::
-        **Explore the WinUI Gallery**<br>
-         The WinUI Gallery is an open-source app that showcases interactive examples of WinUI controls, features, and functionality. It includes code snippets and design guidance to help you get started quickly.
-         <br><br>
-         [Explore WinUI Gallery](../../get-started/samples.md#winui-gallery)
-    :::column-end:::    
+    :::column:::
+        [![Samples icon](../images/tile-samples.png)](samples.md)<br>
+        **[Samples and resources](samples.md)**<br>
+        Browse code samples, starter projects, and tools to accelerate your development.
+    :::column-end:::
 :::row-end:::
-
-### See also
-
-- [Windows App SDK](../../windows-app-sdk/index.md)
-- [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
-- [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
-- [Design guidelines](../../design/index.md)
