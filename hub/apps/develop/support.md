@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Whether you're just getting started or troubleshooting a tricky issue, you're not alone. Connect with the Windows developer community, access expert resources, and find solutions to help you build great apps.
 
----
+:::image type="content" source="images/help-request-sticky-note.png" alt-text="Sticky note with the word HELP written on it.":::
 
 ## Development support
 
