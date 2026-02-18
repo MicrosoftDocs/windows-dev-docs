@@ -15,7 +15,7 @@ To publish your app in the Microsoft Store, you'll need to register as a Windows
 There are 2 types of developer accounts available in Partner Center: **Individual and Company**
 
 > [!NOTE]
-> Changing a developer account from Individual to Company is **not** supported in Partner Center. To publish as a company, you’ll need to create a new Company developer account.
+> Changing a developer account from Individual to Company is **not** supported in Partner Center. To publish as a company, you'll need to create a new Company developer account.
 
 | Who should choose individual account | Who should choose company account |
 |--------------------------------------|-----------------------------------|
