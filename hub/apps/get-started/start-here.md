@@ -15,7 +15,7 @@ This quick start guide walks you through setting up your WinUI and Windows App S
 - [Visual Studio 2026](/visualstudio/ide/) with the required workloads for WinUI and Windows App SDK
 - [Developer Mode](/windows/advanced-settings/developer-mode) enabled on your device
 
-## Seting up your development environment
+## Set up your development environment
 
 #### [WinGet Configuration](#tab/wingetconfig)
 
@@ -25,7 +25,7 @@ Open [Windows Terminal](/windows/terminal/) and run the following command in Pow
 - Enable Developer Mode
 
 ```powershell
-winget configure -f http://aka.ms/winui-config
+winget configure -f https://aka.ms/winui-config
 ```
 
 #### [Manual installation](#tab/manual)
