@@ -1275,8 +1275,11 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f10e.png" alt-text="Screenshot of Dpad."::: | f10e | :::no-loc text="Dpad"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f110.png" alt-text="Screenshot of EnglishPunctuation."::: | f110 | :::no-loc text="EnglishPunctuation"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f111.png" alt-text="Screenshot of ChinesePunctuation."::: | f111 | :::no-loc text="ChinesePunctuation"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f112.png" alt-text="Screenshot of ReadOutLoud."::: | f112 | :::no-loc text="ReadOutLoud"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f117.png" alt-text="Screenshot of ProjectToDevice."::: | f117 | :::no-loc text="ProjectToDevice"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f119.png" alt-text="Screenshot of HMD."::: | f119 | :::no-loc text="HMD"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f11b.png" alt-text="Screenshot of CtrlSpatialRight."::: | f11b | :::no-loc text="CtrlSpatialRight"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f120.png" alt-text="Screenshot of TaskManagerApp."::: | f120 | :::no-loc text="TaskManagerApp"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f126.png" alt-text="Screenshot of PaginationDotOutline10."::: | f126 | :::no-loc text="PaginationDotOutline10"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f127.png" alt-text="Screenshot of PaginationDotSolid10."::: | f127 | :::no-loc text="PaginationDotSolid10"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f128.png" alt-text="Screenshot of StrokeErase2."::: | f128 | :::no-loc text="StrokeErase2"::: |
@@ -1343,10 +1346,12 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f182.png" alt-text="Screenshot of ScreenTime."::: | f182 | :::no-loc text="ScreenTime"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f191.png" alt-text="Screenshot of HeadlessDevice."::: | f191 | :::no-loc text="HeadlessDevice"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f193.png" alt-text="Screenshot of NetworkSharing."::: | f193 | :::no-loc text="NetworkSharing"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f196.png" alt-text="Screenshot of Beaker."::: | f196 | :::no-loc text="Beaker"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f19d.png" alt-text="Screenshot of EyeGaze."::: | f19d | :::no-loc text="EyeGaze"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f19e.png" alt-text="Screenshot of ToggleLeft."::: | f19e | :::no-loc text="ToggleLeft"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f19f.png" alt-text="Screenshot of ToggleRight."::: | f19f | :::no-loc text="ToggleRight"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1ad.png" alt-text="Screenshot of WindowsInsider."::: | f1ad | :::no-loc text="WindowsInsider"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1b1.png" alt-text="Screenshot of PowerButtonUpdate2."::: | f1b1 | :::no-loc text="PowerButtonUpdate2"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1b9.png" alt-text="Screenshot of LassoSparkle.":::  | f1b9 | :::no-loc text="LassoSparkle"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1ba.png" alt-text="Screenshot of SquareSparkle.":::  | f1ba | :::no-loc text="SquareSparkle"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1bb.png" alt-text="Screenshot of TextCursor2.":::  | f1bb | :::no-loc text="TextCursor2"::: |
@@ -1358,6 +1363,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1d6.png" alt-text="Screenshot of ReformatSparkle.":::  | f1d6 | :::no-loc text="ReformatSparkle"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1d8.png" alt-text="Screenshot of StatusCheckmark."::: | f1d8 | :::no-loc text="StatusCheckmark"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1d9.png" alt-text="Screenshot of StatusCheckmarkLeft."::: | f1d9 | :::no-loc text="StatusCheckmarkLeft"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1e8.png" alt-text="Screenshot of LeafTwo."::: | f1e8 | :::no-loc text="LeafTwo"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f207.png" alt-text="Screenshot of GridviewGroup.":::  | f207 | :::no-loc text="GridviewGroup"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f20c.png" alt-text="Screenshot of KeyboardLeftAligned."::: | f20c | :::no-loc text="KeyboardLeftAligned"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f20d.png" alt-text="Screenshot of KeyboardRightAligned."::: | f20d | :::no-loc text="KeyboardRightAligned"::: |
@@ -1365,6 +1371,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f211.png" alt-text="Screenshot of NetworkPhysical."::: | f211 | :::no-loc text="NetworkPhysical"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f22c.png" alt-text="Screenshot of IOT."::: | f22c | :::no-loc text="IOT"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f22e.png" alt-text="Screenshot of UnknownMirrored."::: | f22e | :::no-loc text="UnknownMirrored"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f232.png" alt-text="Screenshot of GridViewSmall."::: | f232 | :::no-loc text="GridViewSmall"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f246.png" alt-text="Screenshot of ViewDashboard."::: | f246 | :::no-loc text="ViewDashboard"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f259.png" alt-text="Screenshot of ExploitProtectionSettings."::: | f259 | :::no-loc text="ExploitProtectionSettings"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f260.png" alt-text="Screenshot of KeyboardNarrow."::: | f260 | :::no-loc text="KeyboardNarrow"::: |
@@ -1377,23 +1384,14 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f271.png" alt-text="Screenshot of PointerHand."::: | f271 | :::no-loc text="PointerHand"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f272.png" alt-text="Screenshot of Bullseye."::: | f272 | :::no-loc text="Bullseye"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f277.png" alt-text="Screenshot of ActionFramework.":::  | f277 | :::no-loc text="ActionFramework"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f28b.png" alt-text="Screenshot of DocumentApproval."::: | f28b | :::no-loc text="DocumentApproval"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2b7.png" alt-text="Screenshot of LocaleLanguage."::: | f2b7 | :::no-loc text="LocaleLanguage"::: |
-  
-
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f112.png" alt-text="Screenshot of ReadOutLoud."::: | f112 | :::no-loc text="ReadOutLoud"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f117.png" alt-text="Screenshot of ProjectToDevice."::: | f117 | :::no-loc text="ProjectToDevice"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f120.png" alt-text="Screenshot of TaskManagerApp."::: | f120 | :::no-loc text="TaskManagerApp"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f196.png" alt-text="Screenshot of Beaker."::: | f196 | :::no-loc text="Beaker"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1b1.png" alt-text="Screenshot of PowerButtonUpdate2."::: | f1b1 | :::no-loc text="PowerButtonUpdate2"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f1e8.png" alt-text="Screenshot of LeafTwo."::: | f1e8 | :::no-loc text="LeafTwo"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f232.png" alt-text="Screenshot of GridViewSmall."::: | f232 | :::no-loc text="GridViewSmall"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f27c.png" alt-text="Screenshot of Earbudsingle."::: | f27c | :::no-loc text="Earbudsingle"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f27f.png" alt-text="Screenshot of HearingAid."::: | f27f | :::no-loc text="HearingAid"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f285.png" alt-text="Screenshot of MobSnooze."::: | f285 | :::no-loc text="MobSnooze"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f28b.png" alt-text="Screenshot of DocumentApproval."::: | f28b | :::no-loc text="DocumentApproval"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2a3.png" alt-text="Screenshot of MobNotificationBell."::: | f2a3 | :::no-loc text="MobNotificationBell"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2a5.png" alt-text="Screenshot of MobNotificationBellFilled."::: | f2a5 | :::no-loc text="MobNotificationBellFilled"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2a8.png" alt-text="Screenshot of MobSnoozeFilled."::: | f2a8 | :::no-loc text="MobSnoozeFilled"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2b7.png" alt-text="Screenshot of LocaleLanguage."::: | f2b7 | :::no-loc text="LocaleLanguage"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2c7.png" alt-text="Screenshot of BulletedList2."::: | f2c7 | :::no-loc text="BulletedList2"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2c8.png" alt-text="Screenshot of BulletedList2Mirrored."::: | f2c8 | :::no-loc text="BulletedList2Mirrored"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2d9.png" alt-text="Screenshot of CirclePause."::: | f2d9 | :::no-loc text="CirclePause"::: |
@@ -1536,7 +1534,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f5fd.png" alt-text="Screenshot of VerticalBatteryCharging0."::: | f5fd | :::no-loc text="VerticalBatteryCharging0"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f5fe.png" alt-text="Screenshot of VerticalBatteryCharging1."::: | f5fe | :::no-loc text="VerticalBatteryCharging1"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f5ff.png" alt-text="Screenshot of VerticalBatteryCharging2."::: | f5ff | :::no-loc text="VerticalBatteryCharging2"::: |
-
+  
 ### PUA F600-F8CC
 
 The following table of glyphs displays unicode points prefixed from F6- to F8-.
