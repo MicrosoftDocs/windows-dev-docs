@@ -89,8 +89,7 @@ The following tables display all `Segoe Fluent Icons` glyphs and their respectiv
 * [PUA E700-E9F9](#pua-e700-e9f9)
 * [PUA EA0C-ECF3](#pua-ea0c-ecf3)
 * [PUA ED0C-EFFF](#pua-ed0c-efff)
-* [PUA F000-F2B7](#pua-f000-f2b7)
-* [PUA F112-F5FF](#pua-f112-f5ff)
+* [PUA F000-F5FF](#pua-f000-f5ff)
 * [PUA F600-F8CC](#pua-f600-f8cc)
 
 ### PUA E700-E9F9
@@ -1194,9 +1193,9 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/efda.png" alt-text="Screenshot of AppIconDefaultAdd."::: | efda | :::no-loc text="AppIconDefaultAdd"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/efff.png" alt-text="Screenshot of CRMScheduleReports."::: | efff | :::no-loc text="CRMScheduleReports"::: |
 
-### PUA F000-F2B7
+### PUA F000-F5FF
 
-The following table of glyphs displays unicode points prefixed from F0- to F2-.
+The following table of glyphs displays unicode points prefixed from F0- to F5-.
 
 [Back to top](#icon-list)
 
@@ -1381,14 +1380,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F2-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f28b.png" alt-text="Screenshot of DocumentApproval."::: | f28b | :::no-loc text="DocumentApproval"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2b7.png" alt-text="Screenshot of LocaleLanguage."::: | f2b7 | :::no-loc text="LocaleLanguage"::: |
   
-### PUA F112-F5FF
 
-The following table of glyphs displays unicode points prefixed from F3- to F5-.
-
-[Back to top](#icon-list)
-
-| Glyph | Unicode point | Description |
-|-------|---------------|-------------|
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f112.png" alt-text="Screenshot of ReadOutLoud."::: | f112 | :::no-loc text="ReadOutLoud"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f117.png" alt-text="Screenshot of ProjectToDevice."::: | f117 | :::no-loc text="ProjectToDevice"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f120.png" alt-text="Screenshot of TaskManagerApp."::: | f120 | :::no-loc text="TaskManagerApp"::: |
