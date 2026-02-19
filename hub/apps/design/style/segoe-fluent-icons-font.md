@@ -148,7 +148,6 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/e72c.png" alt-text="Screenshot of Refresh."::: | e72c | :::no-loc text="Refresh"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/e72d.png" alt-text="Screenshot of Share."::: | e72d | :::no-loc text="Share"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/e72e.png" alt-text="Screenshot of Lock."::: | e72e | :::no-loc text="Lock"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/e72f.png" alt-text="Screenshot of BlockedSite."::: | e72f | :::no-loc text="BlockedSite"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/e730.png" alt-text="Screenshot of ReportHacked."::: | e730 | :::no-loc text="ReportHacked"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/e731.png" alt-text="Screenshot of EMI."::: | e731 | :::no-loc text="EMI"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/e733.png" alt-text="Screenshot of Blocked."::: | e733 | :::no-loc text="Blocked"::: |
