@@ -7,7 +7,7 @@ ms.date: 09/02/2025
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
-# Creating your first WinUI app
+# Create your first WinUI app
 
 This tutorial series demonstrates how to create a WinUI app using XAML and C#. The app you'll create is a note app, where the user can create, save, and load multiple notes. You can download or view the code for this tutorial from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes).
 
