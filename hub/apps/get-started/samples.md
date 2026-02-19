@@ -47,9 +47,3 @@ You can get the  [**Windows Community Toolkit Gallery app from the Microsoft Sto
 [**.NET Community Toolkit**](https://github.com/CommunityToolkit/dotnet)
 
 The .NET Community Toolkit is a collection of NuGet packages with high-performance helpers, extensions, and APIs designed to enhance .NET development across WinUI, WPF, MAUI, and other .NET applications. A key component is the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/), a lightweight and modern Model-View-ViewModel (MVVM) library that simplifies app architecture with features like observable properties, commands, and dependency injection. Built for performance and flexibility, the MVVM Toolkit helps you implement MVVM patterns efficiently while keeping your code clean and maintainable.
-
-
-
-[**Template Studio**](https://github.com/microsoft/TemplateStudio)
-
-Template Studio provides a powerful scaffolding tool for quickly generating modern Windows applications using WinUI or WPF. The Visual Studio extension guides developers through a wizard-based experience to create project templates with best practices, including MVVM architecture, navigation patterns, dependency injection, and predefined app features. By automating boilerplate setup, Template Studio helps developers focus on building great experiences while ensuring consistency and maintainability in their applications.
