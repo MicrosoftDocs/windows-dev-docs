@@ -26,7 +26,6 @@ Open [Windows Terminal](/windows/terminal/) and run the following command in Pow
 
 ```powershell
 winget configure -f https://aka.ms/winui-config
-```
 
 #### [Manual installation](#tab/manual)
 
