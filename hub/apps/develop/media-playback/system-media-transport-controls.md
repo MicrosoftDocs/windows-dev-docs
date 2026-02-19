@@ -1,30 +1,26 @@
 ---
-ms.assetid: EFCF84D0-2F4C-454D-97DA-249E9EAA806C
 description: The SystemMediaTransportControls class enables your app to use the system media transport controls that are built into Windows and to update the metadata that the controls display about the media your app is currently playing.
 title: Manual control of the System Media Transport Controls
 ms.date: 02/08/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, WinUI
 ms.localizationpriority: medium
 ---
+
 # Manual control of the System Media Transport Controls
 
+WinUI apps that use the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) class to play media are automatically integrated with the System Media Transport Controls (SMTC) by default. This is the recommended way of interacting with the SMTC for most scenarios. For more information on customizing the SMTC's default integration with **MediaPlayer**, see [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md).
 
-Starting with Windows 10, version 1607, UWP apps that use the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) class to play media are automatically integrated with the System Media Transport Controls (SMTC) by default. This is the recommended way of interacting with the SMTC for most scenarios. For more information on customizing the SMTC's default integration with **MediaPlayer**, see [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md).
-
-There are a few scenarios where you may need to implement manual control of the SMTC. These include if you are using a [**MediaTimelineController**](/uwp/api/Windows.Media.MediaTimelineController) to control playback of one or more media players. Or if you are using multiple media players and only want to have one instance of SMTC for your app. You must manually control the SMTC if you are using [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) to play media.
+There are a few scenarios where you may need to implement manual control of the SMTC. These include if you are using a [**MediaTimelineController**](/uwp/api/Windows.Media.MediaTimelineController) to control playback of one or more media players. Or if you are using multiple media players and only want to have one instance of SMTC for your app.
 
 ## Set up transport controls
+
 If you are using **MediaPlayer** to play media, you can get an instance of the [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) class by accessing the [**MediaPlayer.SystemMediaTransportControls**](/uwp/api/windows.media.playback.mediaplayer.systemmediatransportcontrols) property. If you are going to manually control the SMTC, you should disable the automatic integration provided by **MediaPlayer** by setting the [**CommandManager.IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) property to false.
 
 > [!NOTE] 
 > If you disable the [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) of the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) by setting [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) to false, it will break the link between the **MediaPlayer** the [**TransportControls**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) provided by the **MediaPlayerElement**, so the built-in transport controls will no longer automatically control the playback of the player. Instead, you must implement your own controls to control the **MediaPlayer**.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetInitSMTCMediaPlayer":::
-
-You can also get an instance of the [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) by calling [**GetForCurrentView**](/uwp/api/windows.media.systemmediatransportcontrols.getforcurrentview). You must get the object with this method if you are using **MediaElement** to play media.
-
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/SMTCWin10/cs/MainPage.xaml.cs" id="SnippetInitSMTCMediaElement":::
 
 Enable the buttons that your app will use by setting the corresponding "is enabled" property of the **SystemMediaTransportControls** object, such as [**IsPlayEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.isplayenabled), [**IsPauseEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.ispauseenabled), [**IsNextEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.isnextenabled), and [**IsPreviousEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.ispreviousenabled). See the **SystemMediaTransportControls** reference documentation for a complete list of available controls.
 
