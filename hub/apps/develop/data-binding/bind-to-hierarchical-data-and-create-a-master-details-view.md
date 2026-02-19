@@ -28,7 +28,7 @@ This article assumes that you know how to create a basic WinUI app. For instruct
 
 ## Create the project
 
-Create a new **Blank App, Packaged (WinUI 3 in Desktop)** project. Name it "MasterDetailsBinding".
+Create a new **Blank App, Packaged (WinUI in Desktop)** project. Name it "MasterDetailsBinding".
 
 ## Create the data model
 

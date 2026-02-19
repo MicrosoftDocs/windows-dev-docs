@@ -24,7 +24,7 @@ There may be times when the system does not yet provide an exact motion solution
 
 **_Transition example_**
 
-![functional animation](images/page-refresh.gif)
+![functional animation](../../design/motion/images/page-refresh.gif)
 
 :::row:::
     :::column:::
@@ -43,7 +43,7 @@ Fade in: 300ms; Easing: Default Decelerate
 
 **_Object example_**
 
- ![300ms motion](images/control.gif)
+ ![300ms motion](../../design/motion/images/control.gif)
 
 :::row:::
     :::column:::
@@ -65,7 +65,7 @@ Implicit animations are a simple way to achieve Fluent motion by automatically i
 > - **Important APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
+> [Open the WinUI Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -111,20 +111,8 @@ public double OpaqueIfEnabled(bool IsEnabled)
 }
 ```
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/uwp/api/windows.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/uwp/api/windows.ui.xaml.controls)
-> - **WinUI 2 Apis:** [Microsoft.UI.Xaml.Controls namespace](/windows/winui/api/microsoft.ui.xaml.controls)
-> - [Open the WinUI 2 Gallery app and see Implicit Transitions in action](winui2gallery://item/ImplicitTransition). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-Implicit animations require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later.
-
 ## Related articles
 
-- [Motion overview](index.md)
-- [Timing and easing](timing-and-easing.md)
-- [Directionality and gravity](directionality-and-gravity.md)
+- [Motion overview](../../design/signature-experiences/motion.md)
+- [Timing and easing](../../design/motion/timing-and-easing.md)
+- [Directionality and gravity](../../design/motion/directionality-and-gravity.md)

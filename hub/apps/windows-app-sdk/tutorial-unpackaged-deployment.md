@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This article shows how to configure an app that's not installed by using MSIX (that is, it's packaged with external location or unpackaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Apps that are not installed via MSIX include apps packaged with external location, and unpackaged apps.
 
 > [!IMPORTANT]
-> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a packaged with external location or unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). Or, if have an existing project that's not WinUI 3, then see [Use the Windows App SDK in an existing project](./use-windows-app-sdk-in-existing-project.md).
+> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a packaged with external location or unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI project, see [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md). Or, if have an existing project that's not WinUI, then see [Use the Windows App SDK in an existing project](./use-windows-app-sdk-in-existing-project.md).
 >
 > If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. And that's the approach that this topic demonstrates. Also, for more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](./use-windows-app-sdk-run-time.md).
 
@@ -34,7 +34,7 @@ You can follow this tutorial using a C# or a C++ project.
 
 ### [C#](#tab/csharp)
 
-Follow these instructions to configure a C# WinUI 3 project that's either packaged with external location, or unpackaged.
+Follow these instructions to configure a C# WinUI project that's either packaged with external location, or unpackaged.
 
 1. In Visual Studio, create a new C# **Console App** project. Name the project **DynamicDependenciesTest**. After you create the project, you should have a "Hello, World!" C# console app.
 
@@ -49,7 +49,7 @@ Follow these instructions to configure a C# WinUI 3 project that's either packag
 
     1. Save and close the project file.
 
-1. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 doesn't support that platform.
+1. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI doesn't support that platform.
 
     1. Select **Build** > **Configuration Manager**.
     1. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
@@ -115,7 +115,7 @@ Follow these instructions to configure a C# WinUI 3 project that's either packag
 
 ### [C++](#tab/cpp)
 
-Follow these instructions to configure a C++ WinUI 3 project that's either packaged with external location, or unpackaged.
+Follow these instructions to configure a C++ WinUI project that's either packaged with external location, or unpackaged.
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)

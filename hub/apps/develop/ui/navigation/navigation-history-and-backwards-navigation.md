@@ -26,13 +26,13 @@ To implement backwards navigation in your app, place a back button at the top le
 
 ## Back button
 
-We recommend that you place the back button in the upper left corner of your app. If you [customize the title bar](../../develop/title-bar.md), place the back button in the title bar. See [Title bar design > Back button](/windows/apps/design/basics/titlebar-design#back-button) for more info.
+We recommend that you place the back button in the upper left corner of your app. If you [customize the title bar](../../title-bar.md), place the back button in the title bar. See [Title bar design > Back button](/windows/apps/design/basics/titlebar-design#back-button) for more info.
 
 If you use the [TitleBar](../controls/title-bar.md) control to create a custom title bar, use the built-in back button. Set [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible) to `true`, set [IsBackButtonEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled) as needed, and handle the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested) event to navigate.
 
 To create a stand-alone back button, use the [Button](../controls/buttons.md) control with the `TitleBarBackButtonStyle` resource, and place the button at the top left hand corner of your app's UI (for details, see the XAML code examples below).
 
-![Back button in the top left of the app's UI](images/back-nav/back-enabled.png)
+![Back button in the top left of the app's UI](../../../design/basics/images/back-nav/back-enabled.png)
 
 ```xaml
 <Page>
@@ -80,7 +80,7 @@ If your app has a top [CommandBar](../controls/command-bar.md), place the `Butto
 
 In order to minimize UI elements moving around in your app, show a disabled back button when there is nothing in the backstack (`IsEnabled="{x:Bind Frame.CanGoBack, Mode=OneWay}"`). However, if you expect your app will never have a backstack, you don't need to display the back button at all.
 
-![Back button states](images/back-nav/back-disabled.png)
+![Back button states](../../../design/basics/images/back-nav/back-disabled.png)
 
 ## Back navigation
 
@@ -174,5 +174,5 @@ winrt::Microsoft::UI::Xaml::Window App::window{ nullptr };
 
 ## Related articles
 
-- [Navigation basics](navigation-basics.md)
+- [Navigation basics](../../../design/basics/navigation-basics.md)
 - [Implement basic navigation](navigate-between-two-pages.md)

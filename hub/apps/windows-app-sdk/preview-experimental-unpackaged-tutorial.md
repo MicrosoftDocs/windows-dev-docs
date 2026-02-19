@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Build and deploy an unpackaged app using Preview and Experimental channels of the Windows App SDK 
 
-**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also follow a tutorial ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) in which you configure a packaged with external location or unpackaged app to load the Windows App SDK runtime, and call Windows App SDK APIs.
+**Using the Windows App SDK Stable version**: You can auto-initialize the Windows App SDK through the `WindowsPackageType` project property when you [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md). You can also follow a tutorial ([Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) in which you configure a packaged with external location or unpackaged app to load the Windows App SDK runtime, and call Windows App SDK APIs.
 
 This article provides a step-by-step tutorial for configuring a packaged with external location or unpackaged app so that it can load the Windows App SDK runtime and call Windows App SDK APIs. This tutorial demonstrates this scenario using a basic Console app project, but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
@@ -29,7 +29,7 @@ You can choose to follow this tutorial using a C++ project or a C# project.
 
 ### [C++](#tab/cpp)
 
-Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI unpackaged support.  
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)
@@ -123,7 +123,7 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
 
 ### [C# with 1.0 Preview 3 and later](#tab/csharp-dotnet-preview3)
 
-Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI unpackaged support.  
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 
@@ -138,7 +138,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 doesn't support that platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI doesn't support that platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
@@ -222,7 +222,7 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 doesn't support that platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI doesn't support that platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.

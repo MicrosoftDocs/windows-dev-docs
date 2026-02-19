@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 The Windows App SDK provides a broad set of Windows APIs&mdash;with implementations that are decoupled from the OS, and released to developers via [NuGet](https://www.nuget.org/) packages. As a developer with a Universal Windows Platform (UWP) application, you can make great use of your existing skill set, and your source code, by moving your app to the Windows App SDK.
 
-With the Windows App SDK you can incorporate the latest runtime, language, and platform features into your app. Since each application is different, and so are your requirements and preferences, there are many different ways to approach the process of migrating your app's source code. But the high-level approach, and code changes needed for various feature areas, are similar. So in this topic we'll review strategies on how you can approach migrating your app, as well as more info (and limitations) about certain feature areas. So also see [What's supported when porting from UWP to WinUI 3](what-is-supported.md).
+With the Windows App SDK you can incorporate the latest runtime, language, and platform features into your app. Since each application is different, and so are your requirements and preferences, there are many different ways to approach the process of migrating your app's source code. But the high-level approach, and code changes needed for various feature areas, are similar. So in this topic we'll review strategies on how you can approach migrating your app, as well as more info (and limitations) about certain feature areas. So also see [What's supported when porting from UWP to WinUI](what-is-supported.md).
 
 Most [Windows Runtime (WinRT)](/uwp/api/) APIs can be used by Windows App SDK apps. But there are some that aren't supported in desktop apps, or have restrictions.
 
@@ -33,7 +33,7 @@ We'd love to hear your feedback about this migration guide, and about your own m
 
 ## Why migrate to the Windows App SDK?
 
-The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI 3)](../../winui/index.md), which is developed and designed to delight your users.
+The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI)](../../winui/index.md), which is developed and designed to delight your users.
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
@@ -60,7 +60,7 @@ Download the latest Windows App SDK version from [Windows App SDK downloads](../
 
 ## Create a new project
 
-In Visual Studio, [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged (WinUI in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 

@@ -6,7 +6,7 @@ ms.date: 07/23/2024
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
-#customer intent: As a developer, I want to access the camera in a Windows app using WinUI 3.
+#customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
 
 # Capture photos and video in a desktop app with the Windows built-in camera UI

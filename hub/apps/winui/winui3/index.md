@@ -1,17 +1,17 @@
 ---
-title: WinUI 3
-description: Provides info for WinUI 3 and Windows app development with the Windows App SDK. 
+title: WinUI
+description: Provides info for WinUI and Windows app development with the Windows App SDK. 
 ms.topic: article
 ms.date: 07/15/2024
 ---
 
-# WinUI 3
+# WinUI
 
 :::image type="icon" source="images/winui-hero.png":::
 
-WinUI 3 is Microsoft's modern native user interface framework for building Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
+WinUI is Microsoft's modern native user interface framework for building Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
 
-Delivered as part of the [Windows App SDK](../../windows-app-sdk/index.md), WinUI 3 enables you to create modern, polished, and responsive desktop experiences that run on Windows 10, version 1809 (build 17763) and later, including Windows 11.
+Delivered as part of the [Windows App SDK](../../windows-app-sdk/index.md), WinUI enables you to create modern, polished, and responsive desktop experiences that run on Windows 10, version 1809 (build 17763) and later, including Windows 11.
 
 WinUI is built in the open, and contributions or discussions are welcome. Visit the repository for details:
 
@@ -23,9 +23,9 @@ To stay up to date with what's new with WinUI, check out the [latest Windows App
 
 :::image type="content" source="images/hero-controlset.png" alt-text="Diagram of the Windows App SDK architecture" border="false":::
 
-### Key benefits of WinUI 3
+### Key benefits of WinUI
 
-WinUI 3 combines the flexibility of the Win32 app model with the richness of modern Windows UX. It's designed for developers who want to build production-grade desktop apps using the same design language and system features as built-in Windows experiences.
+WinUI combines the flexibility of the Win32 app model with the richness of modern Windows UX. It's designed for developers who want to build production-grade desktop apps using the same design language and system features as built-in Windows experiences.
 
 :::row:::
     :::column:::
@@ -65,7 +65,7 @@ WinUI 3 combines the flexibility of the Win32 app model with the richness of mod
     :::column-end:::
     :::column span="2":::
         **Built on the Windows App SDK**<br>
-         WinUI 3 is part of the Windows App SDK, giving you access to modern Windows APIs, consistent app behaviors, and tools that simplify development and deployment.
+         WinUI is part of the Windows App SDK, giving you access to modern Windows APIs, consistent app behaviors, and tools that simplify development and deployment.
          <br><br>
          [Learn more about the Windows App SDK](../../windows-app-sdk/index.md)
     :::column-end:::    

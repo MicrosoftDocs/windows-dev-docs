@@ -1,6 +1,6 @@
 ---
-title: Using a SystemBackdropController with WinUI 3 XAML 
-description: Sample code for applying Mica in a WinUI 3 application.
+title: Using a SystemBackdropController with WinUI XAML 
+description: Sample code for applying Mica in a WinUI application.
 ms.topic: how-to
 ms.date: 07/14/2025
 keywords: windows, windows app development, Windows App SDK, Mica
@@ -18,13 +18,11 @@ dev_langs:
 
 [Acrylic](../design/style/acrylic.md) is a semi-transparent material that replicates the effect of frosted glass. It's used only for transient, light-dismiss surfaces such as flyouts and context menus.
 
-This article describes how to apply Mica or Acrylic as the base layer of your Windows App SDK/WinUI 3 XAML app.
+This article describes how to apply Mica or Acrylic as the base layer of your Windows App SDK/WinUI XAML app.
 
 > [!NOTE]
 >
-> - To use an in-app AcrylicBrush, see [Acrylic material](../design/style/acrylic.md).
 > - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md).
-> - To use backdrop materials in a UWP/WinUI 2 app, see [Apply Mica with WinUI 2 for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
 
 ## How to use a backdrop material
 
@@ -33,7 +31,7 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 > - **Important APIs**: [Window.SystemBackdrop property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), [MicaBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop), [DesktopAcrylicBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop), [SystemBackdropConfiguration class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops)
+> [Open the WinUI Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops)
 
 [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
 
@@ -95,6 +93,75 @@ Flyout flyout = new Flyout()
 {
     SystemBackdrop = new DesktopAcrylicBackdrop()
 };
+```
+
+## In-app acrylic
+
+You can apply in-app acrylic to your app's surfaces using a XAML [AcrylicBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) or predefined `AcrylicBrush` theme resources.
+
+WinUI includes a collection of brush theme resources that respect the app's theme and fall back to solid colors as needed. To paint a specific surface, apply one of the theme resources to element backgrounds just as you would apply any other brush resource.
+
+```xaml
+<Grid Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
+```
+
+> [!NOTE]
+> You can view these resources in the [AcrylicBrush theme resources file, in the microsoft-ui-xaml GitHub repo](https://github.com/microsoft/microsoft-ui-xaml/blob/6aed8d97fdecfe9b19d70c36bd1dacd9c6add7c1/dev/Materials/Acrylic/AcrylicBrush_19h1_themeresources.xaml#L11).
+
+### Custom acrylic brush
+
+You may choose to add a color tint to your app's acrylic to show branding or provide visual balance with other elements on the page. To show color rather than grayscale, you need to define your own acrylic brushes using the following properties.
+
+- **TintColor**: the color/tint overlay layer.
+- **TintOpacity**: the opacity of the tint layer.
+- **TintLuminosityOpacity**: controls the amount of saturation that is allowed through the acrylic surface from the background.
+- **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn't in the active desktop window.
+
+![Light theme acrylic swatches](../design/style/images/custom-acrylic-swatches-light-theme.png)
+
+![Dark theme acrylic swatches](../design/style/images/custom-acrylic-swatches-dark-theme.png)
+
+![Luminosity opacity compared to tint opacity](../design/style/images/luminosity-vs-tint.png)
+
+To add an acrylic brush, define the three resources for dark, light, and high contrast themes. In high contrast, we recommend that you use a [SolidColorBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.solidcolorbrush) with the same `x:Key` as the dark/light AcrylicBrush.
+
+> [!NOTE]
+> If you don't specify a `TintLuminosityOpacity` value, the system will automatically adjust its value based on your TintColor and TintOpacity.
+
+```xaml
+<ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Default">
+        <AcrylicBrush x:Key="MyAcrylicBrush"
+            TintColor="#FFFF0000"
+            TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
+            FallbackColor="#FF7F0000"/>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="HighContrast">
+        <SolidColorBrush x:Key="MyAcrylicBrush"
+            Color="{ThemeResource SystemColorWindowColor}"/>
+    </ResourceDictionary>
+
+    <ResourceDictionary x:Key="Light">
+        <AcrylicBrush x:Key="MyAcrylicBrush"
+            TintColor="#FFFF0000"
+            TintOpacity="0.8"
+            TintLuminosityOpacity="0.5"
+            FallbackColor="#FFFF7F7F"/>
+    </ResourceDictionary>
+</ResourceDictionary.ThemeDictionaries>
+```
+
+The following sample shows how to declare an AcrylicBrush in code.
+
+```csharp
+AcrylicBrush myBrush = new AcrylicBrush();
+myBrush.TintColor = Color.FromArgb(255, 202, 24, 37);
+myBrush.FallbackColor = Color.FromArgb(255, 202, 24, 37);
+myBrush.TintOpacity = 0.6;
+
+grid.Fill = myBrush;
 ```
 
 ## How to use a system backdrop controller
@@ -235,9 +302,9 @@ In order to use the backdrop material in your app, the following items are requi
 
 - **A DispatcherQueue object**.
 
-   You need an available [Windows.System.DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) on the main XAML thread. See the `WindowsSystemDispatcherQueueHelper` class in the example code, or in the [WinUI 3 Gallery sample](https://github.com/microsoft/WinUI-Gallery/blob/8cb9da922c48c5ea2e3190c579ebb77c75a2ca20/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs#L11).
+   You need an available [Windows.System.DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) on the main XAML thread. See the `WindowsSystemDispatcherQueueHelper` class in the example code, or in the [WinUI Gallery sample](https://github.com/microsoft/WinUI-Gallery/blob/8cb9da922c48c5ea2e3190c579ebb77c75a2ca20/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs#L11).
 
-## Example: Use Mica in a Windows AppSDK/WinUI 3 app
+## Example: Use Mica in a Windows AppSDK/WinUI app
 
 This example shows how to set up the Mica backdrop material in a XAML app.
 

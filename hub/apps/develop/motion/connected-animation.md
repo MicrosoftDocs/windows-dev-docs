@@ -18,17 +18,17 @@ In a connected animation, an element appears to "continue" between two views dur
 > - **Important APIs**: [ConnectedAnimation class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.connectedanimationservice)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ConnectedAnimation)
+> [Open the WinUI Gallery app and see Implicit Transitions in action](winui3gallery://item/ConnectedAnimation)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 In this short video, an app uses a connected animation to animate an item image as it "continues" to become part of the header of the next page. The effect helps maintain user context across the transition.
 
-![Connected Animation](images/connected-animations/example.gif)
+![Connected Animation](../../design/motion/images/connected-animations/example.gif)
 
 ## Connected animation and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. To learn more, see [Design for Windows apps](../index.md).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. To learn more, see [Design for Windows apps](../../design/index.md).
 
 ## Why connected animation?
 
@@ -44,7 +44,7 @@ Connected animations further embody Fluent design by providing animation configu
 
 You specify an animation configuration by setting the Configuration property on the ConnectedAnimation. (We'll show examples of this in the next section.)
 
-This table describes the available configurations. For more information about the motion principles applied in these animations, see [Directionality and gravity](index.md).
+This table describes the available configurations. For more information about the motion principles applied in these animations, see [Directionality and gravity](../../design/motion/directionality-and-gravity.md).
 
 | [GravityConnectedAnimationConfiguration](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.gravityconnectedanimationconfiguration) |
 | - |
@@ -259,7 +259,7 @@ private async void ContactsListView_Loaded(object sender, RoutedEventArgs e)
 
 ## Coordinated animation
 
-![Coordinated Animation](images/connected-animations/coordinated_example.gif)
+![Coordinated Animation](../../design/motion/images/connected-animations/coordinated_example.gif)
 
 A *coordinated animation* is a special type of entrance animation where an element appears along with the connected animation target, animating in tandem with the connected animation element as it moves across the screen. Coordinated animations can add more visual interest to a transition and further draw the user's attention to the context that is shared between the source and destination views. In these images, the caption UI for the item is animating using a coordinated animation.
 
@@ -299,14 +299,14 @@ void OnNavigatedTo(NavigationEventArgs e)
 - Don't wait on network requests or other long-running asynchronous operations in between preparing and starting a connected animation. You may need to pre-load the necessary information to run the transition ahead of time, or use a low-resolution placeholder image while a high-resolution image loads in the destination view.
 - Use [SuppressNavigationTransitionInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.suppressnavigationtransitioninfo) to prevent a transition animation in a **Frame** if you are using **ConnectedAnimationService**, since connected animations aren't meant to be used simultaneously with the default navigation transitions. See [NavigationThemeTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationthemetransition) for more info on how to use navigation transitions.
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 > [!div class="checklist"]
 >
 > - **Platform APIs**: [ConnectedAnimation class](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService class](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
-> - [Open the WinUI 2 Gallery app and see Implicit Transitions in action](winui2gallery://item/ConnectedAnimation). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see Implicit Transitions in action](winui2gallery://item/ConnectedAnimation). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 ## Related articles
 

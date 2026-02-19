@@ -10,7 +10,7 @@ dev_langs:
   - csharp
   - cppwinrt
 appliesto:
-  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI 3</a>
+  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI</a>
   - ✅ <a href="hhttps://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 
@@ -23,7 +23,7 @@ Windowing functionality in a WinUI app is provided by a combination of the XAML 
 > - **Important APIs**: [Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Windowing samples in action](winui3gallery:/category/MultipleWindows)
+> [Open the WinUI Gallery app and see Windowing samples in action](winui3gallery:/category/MultipleWindows)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -52,7 +52,7 @@ This diagram shows the relationship between the classes and APIs that you use to
 :::image type="content" source="images/winui-windowing-diagram.png" lightbox="images/winui-windowing-diagram.png" alt-text="win u i windowing diagram":::
 
 > [!NOTE]
-> You can use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI 3. For frameworks other than WinUI 3, the functionality shown in the _XAML Window_ box of the diagram would be replaced by the appropriate framework-specific windowing APIs:
+> You can use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI. For frameworks other than WinUI, the functionality shown in the _XAML Window_ box of the diagram would be replaced by the appropriate framework-specific windowing APIs:
 >
 > - [WPF Window](/dotnet/api/system.windows.window)
 > - [Windows Forms Form](/dotnet/api/system.windows.forms.form)
@@ -60,10 +60,10 @@ This diagram shows the relationship between the classes and APIs that you use to
 
 ## Window/AppWindow API comparison
 
-If you use WinUI 3 XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, you can use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the additional window management APIs.
+If you use WinUI XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, you can use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the additional window management APIs.
 
 > [!IMPORTANT]
-> If you're not using WinUI 3 1.3 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](manage-app-windows.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
+> If you're not using WinUI 1.3 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](manage-app-windows.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
 ### Lifetime management
 

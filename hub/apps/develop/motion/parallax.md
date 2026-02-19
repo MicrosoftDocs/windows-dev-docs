@@ -18,19 +18,19 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 > - **Important APIs**: [ParallaxView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.parallaxview), [VerticalShift property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.parallaxview.verticalshift), [HorizontalShift property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.parallaxview.horizontalshift)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see ParallaxView in action](winui3gallery://item/ParallaxView)
+> [Open the WinUI Gallery app and see ParallaxView in action](winui3gallery://item/ParallaxView)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Parallax and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design overview](../index.md).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design overview](../../design/index.md).
 
 ## How it works in a user interface
 
 In a UI, you can create a parallax effect by moving different objects at different rates when the UI scrolls or pans. To demonstrate, let's look at two layers of content, a list and a background image.  The list is placed on top of the background image which already gives the illusion that the list might be closer to the viewer.  Now, to achieve the parallax effect, we want the object closest to us to travel "faster" than the object that is farther away.  As the user scrolls the interface, the list moves at a faster rate than the background image, which creates the illusion of depth.
 
- ![An example of parallax with a list and background image](images/parallax-v2.gif)
+ ![An example of parallax with a list and background image](../../design/motion/images/parallax-v2.gif)
 
 ## Using the ParallaxView control to create a parallax effect
 
@@ -99,7 +99,7 @@ For the complete list of ways to customize parallax, see the ParallaxView class.
 - Consider using parallax in ListViewItems when ListViewItems contain an image
 - Don't use it everywhere, overuse can diminish its impact
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
@@ -107,7 +107,7 @@ For the complete list of ways to customize parallax, see the ParallaxView class.
 >
 > - **WinUI APIs:** [ParallaxView class](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview), [VerticalShift property](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift property](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
 > - **Platform APIs**: [ParallaxView class](/uwp/api/windows.ui.xaml.Controls.Parallaxview), [VerticalShift property](/uwp/api/windows.ui.xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift property](/uwp/api/windows.ui.xaml.Controls.Parallaxview.HorizontalShift)
-> - [Open the WinUI 2 Gallery app and see ParallaxView in action](winui2gallery://item/ParallaxView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see ParallaxView in action](winui2gallery://item/ParallaxView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 ## Related articles
 

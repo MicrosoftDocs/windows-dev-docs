@@ -5,7 +5,7 @@ author: jwmsft
 ms.author: jimwalk
 ms.date: 09/02/2025
 ms.topic: tutorial
-no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage.xaml", "AllNotes.cs", "WinUI 3 Gallery"]
+no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage.xaml", "AllNotes.cs", "WinUI Gallery"]
 ---
 # Add a view and model for all notes
 
@@ -16,7 +16,7 @@ This portion of the tutorial adds a new page to the app, a view that displays al
 Currently the **note** view displays a single note. To display all your saved notes, create a new view and model: **AllNotes**.
 
 01. In the **Solution Explorer** pane, right-click on the **:::no-loc text="Views":::** folder and select **Add** > **New Item...**
-01. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI 3)** template. Name the file _AllNotesPage.xaml_ and press **Add**.
+01. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI)** template. Name the file _AllNotesPage.xaml_ and press **Add**.
 01. In the **Solution Explorer** pane, right-click on the **:::no-loc text="Models":::** folder and select **Add** > **Class...**
 01. Name the class _AllNotes.cs_ and press **Add**.
 
@@ -299,7 +299,7 @@ And when you run the app with a Dark color setting, it will look like this:
 - [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md)
 
 > [!TIP]
-> The WinUI 3 Gallery app is a great way to learn about different WinUI controls and design guidelines. To see the theme resources used in the data template, [open the WinUI 3 Gallery app to the Color guidance](winui3gallery://item/Color). From there, you can see what the resources look like and copy the values you need directly from the app.
+> The WinUI Gallery app is a great way to learn about different WinUI controls and design guidelines. To see the theme resources used in the data template, [open the WinUI Gallery app to the Color guidance](winui3gallery://item/Color). From there, you can see what the resources look like and copy the values you need directly from the app.
 >
 > You can also open the [Typography page](winui3gallery://item/Typography) and [Geometry page](winui3gallery://item/Geometry) to see other built-in resources used in this data template.
 

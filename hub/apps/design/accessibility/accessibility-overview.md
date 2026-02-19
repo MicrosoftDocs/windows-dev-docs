@@ -151,12 +151,12 @@ Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**]
 
 > [!TIP]
 > [!div class="nextstepaction"]
-> Open the WinUI 3 Gallery app and see the following Accessibility principles in action:
+> Open the WinUI Gallery app and see the following Accessibility principles in action:
 > - [Screen reader support](winui3gallery://item/AccessibilityScreenReader)
 > - [Keyboard support](winui3gallery://item/AccessibilityKeyboard)
 > - [Color contrast](winui3gallery://item/AccessibilityColorContrast)
 
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> The **WinUI Gallery** app includes interactive examples of most WinUI controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ## Related topics
 

@@ -1,6 +1,6 @@
 --- 
 title: Update existing projects to a different release of the Windows App SDK
-description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI 3 to the latest version.
+description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI to the latest version.
 ms.topic: how-to
 ms.date: 07/14/2025
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Update existing projects to a different release of the Windows App SDK
 
-If you created a project with an earlier version of the Windows App SDK (previously called Project Reunion) or WinUI 3, then you can update the project to use a more recent release. To learn more about what's currently available in each release channel, see [Windows App SDK release channels](release-channels.md).
+If you created a project with an earlier version of the Windows App SDK (previously called Project Reunion) or WinUI, then you can update the project to use a more recent release. To learn more about what's currently available in each release channel, see [Windows App SDK release channels](release-channels.md).
 
 > [!NOTE]
 > These instructions might have issues due to the uniqueness of each app's individual scenario. Please carefully follow them, and if you find an issue then please file a bug against the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose) GitHub repo.
@@ -489,9 +489,9 @@ Next, make these changes to your project:
         </ItemGroup>
         ```
 
-## Update from WinUI 3 Preview 4 to 0.5
+## Update from WinUI Preview 4 to 0.5
 
-If you created a desktop app using WinUI 3 Preview 4, you can follow these instructions to update your project to Project Reunion 0.5.
+If you created a desktop app using WinUI Preview 4, you can follow these instructions to update your project to Project Reunion 0.5.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 

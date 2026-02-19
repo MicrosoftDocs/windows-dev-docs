@@ -316,7 +316,7 @@ Here's the rendered [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.x
 
 Using [**PathGeometry**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.PathGeometry) may be more readable than populating a [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data) string. On the other hand, [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data) uses a syntax compatible with Scalable Vector Graphics (SVG) image path definitions so it may be useful for porting graphics from SVG, or as output from a tool like Blend.
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
 

@@ -38,7 +38,7 @@ In practice, this means that in Dark mode, most of the UI will be dark, and in L
 
 ## Enable support for switching color modes
 
-There are many approaches to implementing Dark mode support in an application. Some apps contain two sets of UIs (one with a light color and one with a dark color). Some Windows UI frameworks, such as [WinUI 3](../../../winui/winui3/index.md), automatically detect a system's theme and adjust the UI to follow the system theme. To fully support Dark mode, the entirety of an app's surface must follow the dark theme.
+There are many approaches to implementing Dark mode support in an application. Some apps contain two sets of UIs (one with a light color and one with a dark color). Some Windows UI frameworks, such as [WinUI](../../../winui/winui3/index.md), automatically detect a system's theme and adjust the UI to follow the system theme. To fully support Dark mode, the entirety of an app's surface must follow the dark theme.
 
 There are two main things you can do in your Win32 app to support both Light and Dark themes.
 

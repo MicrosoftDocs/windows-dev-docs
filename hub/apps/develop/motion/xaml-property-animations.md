@@ -24,7 +24,7 @@ However, some properties on a UIElement let you animate them directly using comp
 > - **Important APIs**: [UIElement class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement), [CompositionAnimation class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionanimation)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Animation interop in action](winui3gallery://item/XamlCompInterop)
+> [Open the WinUI Gallery app and see Animation interop in action](winui3gallery://item/XamlCompInterop)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -129,14 +129,14 @@ animation.Target = "Scale";
 destinationButton.StartAnimation(animation);
 ```
 
-## UWP and WinUI 2
+## UWP and WinUI for UWP
 
 [!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
 
 > [!div class="checklist"]
 >
 > - **Platform APIs**: [CompositionAnimation class](/uwp/api/windows.ui.composition.compositionanimation), [UIElement class](/uwp/api/windows.ui.xaml.uielement)
-> - [Open the WinUI 2 Gallery app and see Animation interop in action](winui2gallery://item/XamlCompInterop). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
+> - [Open the WinUI for UWP Gallery app and see Animation interop in action](winui2gallery://item/XamlCompInterop). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
 
 > [!NOTE]
 > To use these properties on UIElement, your UWP project target version must be 1809 or later. For more info about configuring your project version, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).

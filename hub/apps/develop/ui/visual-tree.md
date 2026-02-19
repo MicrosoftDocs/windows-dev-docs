@@ -25,7 +25,7 @@ The following table identifies several UI visualization tools and the UI framewo
 |[React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows)     | **Supported**      | Not supported           | **Supported**            | **Supported**         |
 |[.NET MAUI](/dotnet/maui/)                | **Supported**      | Not supported           | **Supported**            | Not supported                   |
 |[WinForms](/dotnet/desktop/winforms/)                 | **Supported**      | **Supported** | **Supported**            | Not supported                   |
-|[WinUI 2](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/)               | **Supported**      | Not supported           | **Supported**            | Not supported                   |
+|[WinUI for UWP](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/)               | **Supported**      | Not supported           | **Supported**            | Not supported                   |
 |[Classic Visual Basic apps](/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation) | Not supported                | **Supported** | Not supported                      | Not supported                   |
 |[Classic Win32 apps](/windows/win32/)        | Not supported                | **Supported** | Not supported                      | Not supported                   |
 |[Chromium-based apps](https://developer.chrome.com/docs/chromium)      | Not supported                | Not supported           | Not supported                      | **Supported**         |
@@ -36,9 +36,9 @@ The Live Visual Tree and Live Property Explorer features ship with Visual Studio
 
 #### When to use Live Visual Tree
 
-Use these tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
+Use these tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI for UWP](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
 
-- For more information on WinUI in the Windows App SDK, WinUI 2 for UWP, and WPF, see [Inspect XAML properties while debugging](/visualstudio/xaml-tools/inspect-xaml-properties-while-debugging).
+- For more information on WinUI in the Windows App SDK, WinUI for UWP, and WPF, see [Inspect XAML properties while debugging](/visualstudio/xaml-tools/inspect-xaml-properties-while-debugging).
 - For more information on .NET MAUI, see [Inspect the visual tree of a .NET MAUI app](/dotnet/maui/user-interface/live-visual-tree).
 
 > [!NOTE]
@@ -131,7 +131,7 @@ For Spy++ documentation, see [Spy++ Help](/visualstudio/debugger/spy-increment-h
 
 #### When to use Accessibility Insights - Live Inspect
 
-Live Inspect is typically used in conjunction with Live Visual Tree, Spy++, and other tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI 2](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
+Live Inspect is typically used in conjunction with Live Visual Tree, Spy++, and other tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI for UWP](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
 
 #### How to use Accessibility Insights - Live Inspect
 

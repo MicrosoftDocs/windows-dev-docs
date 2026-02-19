@@ -116,7 +116,7 @@ If you have a [Windows Forms .NET](/dotnet/desktop/winforms/overview/) app, you 
 The Universal Windows Platform (UWP) provides a common type system, APIs, and application model for all devices in the Universal Windows Platform. You can use UWP to create desktop applications for Windows PCs. UWP is also the only supported platform to write a single native universal app that runs across Xbox, HoloLens, and Surface Hub. UWP apps can be native or managed.
 
 > [!NOTE]
-> Your existing UWP app continues to function as expected. However, to take advantage of modern features in [WinUI 3](../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) consider migrating your app.
+> Your existing UWP app continues to function as expected. However, to take advantage of modern features in [WinUI](../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) consider migrating your app.
 
 > [!div class="button"]
 > [Get started with UWP](/windows/uwp/get-started/)
@@ -210,13 +210,13 @@ For more information about building PWAs, see the following links:
 
 You have many options for developing applications for Windows. The best option for you depends on your application requirements, your existing code, and your familiarity with the technology. The following table lists the most popular app development frameworks available on Windows and the features supported by each framework.
 
-| Feature | .NET MAUI | Blazor Hybrid | React Native for Desktop | UWP XAML (Windows.UI.Xaml) | Win32 (MFC or ATL) | Windows Forms | WinUI 3 | WPF |
+| Feature | .NET MAUI | Blazor Hybrid | React Native for Desktop | UWP XAML (Windows.UI.Xaml) | Win32 (MFC or ATL) | Windows Forms | WinUI | WPF |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Language** | C# | C# | JavaScript, TypeScript | C#, C++, Visual Basic | C++, Rust | C#, Visual Basic | C#, C++ | C#, Visual Basic |
 | **UI language** | XAML/Code | Razor | JSX | XAML | Code | Code | XAML | XAML |
 | **UI designer**<br/>(drag & drop) | Not supported | Not supported | Not supported | **Supported** | Not supported | **Supported** | Not supported | **Supported** |
 | **UI debugging** | [Hot Reload](/dotnet/maui/xaml/hot-reload) | [Hot Reload](/aspnet/core/test/hot-reload) | [Fast Refresh](https://reactnative.dev/docs/fast-refresh) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) | - | [Hot Reload](/visualstudio/debugger/hot-reload) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) | [Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) |
-| **Fluent Design** | **Supported** | **Supported** | **Supported** | **Supported** (via [WinUI 2](/windows/apps/winui/winui2)) | Not supported | Not supported | **Supported** | Not supported |
+| **Fluent Design** | **Supported** | **Supported** | **Supported** | **Supported** (via [WinUI for UWP](/windows/apps/winui/winui2)) | Not supported | Not supported | **Supported** | Not supported |
 | **.NET** | .NET | .NET | N/A | .NET Core & .NET Native | N/A | .NET & .NET Framework | .NET | .NET & .NET Framework |
 | **Windows App SDK** | **Supported** ([more info](/dotnet/maui/platform-integration/invoke-platform-code)) | **Supported** [via MAUI](/dotnet/maui/platform-integration/invoke-platform-code) | **Supported** ([more info](https://techcommunity.microsoft.com/t5/modern-work-app-consult-blog/getting-started-with-react-native-for-windows/ba-p/912093)) | Not supported | **Supported** | **Supported** ([more info](../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md)) | **Supported** | **Supported** ([more info](../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md)) |
 | **Great for touch** | **Supported** | **Supported** | **Supported** | **Supported** | Not supported | Not supported | **Supported** | Not supported |
@@ -237,7 +237,7 @@ Learn more about each of these options:
 - [Recommendations for Choosing Between ATL and MFC](/cpp/atl/recommendations-for-choosing-between-atl-and-mfc)
 - [Windows Forms](/dotnet/desktop/winforms/)
 - [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
-- [WinUI in the Windows App SDK (WinUI 3)](/windows/apps/winui/winui3/)
+- [WinUI in the Windows App SDK (WinUI)](/windows/apps/winui/winui3/)
 
 ## Next steps
 

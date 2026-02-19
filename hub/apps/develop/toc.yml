@@ -114,7 +114,7 @@ items:
           href: camera/camera.md
         - name: Capture photos and video with Windows built-in camera UI
           href: camera/cameracaptureui.md
-        - name: Show the camera preview in a WinUI 3 app
+        - name: Show the camera preview in a WinUI app
           href: camera/camera-quickstart-winui3.md
         - name: Basic photo, video, and audio capture with MediaCapture
           href: camera/basic-photo-capture.md
@@ -794,6 +794,16 @@ items:
           href: ../winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
         - name: "Tutorial: Build XAML controls with C#"
           href: ../winui/winui3/xaml-templated-controls-csharp-winui-3.md
+      - name: Shadows
+        href: ui/shadows.md
+      - name: Colors and themes
+        href: ui/theming.md
+      - name: Alignment, margin, and padding
+        href: ui/alignment-margin-padding.md
+      - name: Layout panels
+        href: ui/layout-panels.md
+      - name: Responsive layouts
+        href: ui/layouts-with-xaml.md
       - name: Materials (Acrylic / Mica)
         href: ../windows-app-sdk/system-backdrop-controller.md
       - name: Layout
@@ -808,6 +818,31 @@ items:
           href: platform/xaml/transforms.md
         - name: 3-D perspective effects
           href: platform/xaml/3-d-perspective-effects.md
+      - name: Navigation
+        items:
+        - name: Basic page navigation
+          href: ui/navigation/navigate-between-two-pages.md
+        - name: Navigation history and backwards navigation
+          href: ui/navigation/navigation-history-and-backwards-navigation.md
+      - name: Motion
+        items:
+        - name: Motion in practice
+          href: motion/motion-in-practice.md
+        - name: Page transitions
+          href: motion/page-transitions.md
+        - name: Connected animation
+          href: motion/connected-animation.md
+        - name: Parallax
+          href: motion/parallax.md
+        - name: XAML animations
+          href: motion/xaml-animation.md
+          items:
+            - name: Property animations
+              href: motion/xaml-property-animations.md
+            - name: Storyboarded animations
+              href: motion/storyboarded-animations.md
+            - name: Key-frame and easing function animations
+              href: motion/key-frame-and-easing-function-animations.md
       - name: Windowing
         items:
         - name: Overview
@@ -884,9 +919,9 @@ items:
             items:
               - name: Overview of feature area guides
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
-              - name: User interface migration (including WinUI 3)
+              - name: User interface migration (including WinUI)
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
-              - name: Keyboard API and events parity between UWP and WinUI 3
+              - name: Keyboard API and events parity between UWP and WinUI
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/keyboard-events.md
               - name: Windowing functionality migration
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
@@ -946,7 +981,7 @@ items:
               href: platform/csharp-winrt/authoring.md
             - name: "Walkthrough: Create a C#/WinRT component, and consume it from C++/WinRT"
               href: platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
-            - name: "Walkthrough: Create a C# component with WinUI 3 controls, and consume it from a C++ Windows App SDK app"
+            - name: "Walkthrough: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK app"
               href: platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
             - name: Diagnose component errors
               href: platform/csharp-winrt/authoring-diagnostics.md
@@ -1049,7 +1084,7 @@ items:
       items:
         - name: WinRT API reference >>
           href: /uwp/api/
-        - name: WinUI 2 for UWP API reference >>
+        - name: WinUI for UWP API reference >>
           href: /windows/winui/api/
         - name: Win32 API reference >>
           href: /windows/win32/api/
@@ -1127,9 +1162,9 @@ items:
     items:
     - name: Win32 interop APIs (PInvoke) in a C# WinUI app
       href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
-    - name: Build a C# .NET app with WinUI 3 and Win32 interop
+    - name: Build a C# .NET app with WinUI and Win32 interop
       href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
-    - name: Use GitHub Copilot to build WinUI 3 apps in Visual Studio
+    - name: Use GitHub Copilot to build WinUI apps in Visual Studio
       href: ../how-tos/github-copilot-winui-vs.md
-    - name: Create a photo viewer with WinUI 3
+    - name: Create a photo viewer with WinUI
       href: ../get-started/simple-photo-viewer-winui3.md

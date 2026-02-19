@@ -202,7 +202,7 @@ This next example shows how the previous example [**Storyboard**](/windows/windo
 </Page>
 ```
 
-Defining resources at the XAML root of a XAML file such as page.xaml or app.xaml is a common practice for how to organize keyed resources in your XAML. You also can factor resources into separate files and merge them into apps or pages. For more info, see [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md).
+Defining resources at the XAML root of a XAML file such as page.xaml or app.xaml is a common practice for how to organize keyed resources in your XAML. You also can factor resources into separate files and merge them into apps or pages. For more info, see [ResourceDictionary and XAML resource references](../platform/xaml/xaml-resource-dictionary.md).
 
 > [!NOTE]
 > Windows Runtime XAML supports identifying resources either using the [x:Key attribute](/windows/apps/develop/platform/xaml/x-key-attribute) or the [x:Name attribute](/windows/apps/develop/platform/xaml/x-name-attribute). Using x:Name attribute is more common for a [**Storyboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.Storyboard), because you'll want to reference it by variable name eventually, so that you can call its [**Begin**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.storyboard.begin) method and run the animations. If you do use [x:Key attribute](/windows/apps/develop/platform/xaml/x-key-attribute), you'll need to use [**ResourceDictionary**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) methods such as the [**Item**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary) indexer to retrieve it as a keyed resource and then cast the retrieved object to **Storyboard** to use the **Storyboard** methods.
@@ -321,6 +321,6 @@ In general, creating storyboarded animations in a Windows Runtime app is like WP
 - [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview)
 - [Key-frame and easing function animations](key-frame-and-easing-function-animations.md)
 - [Storyboarded animations for visual states](/previous-versions/windows/apps/jj819808(v=win.10))
-- [Control templates](../../develop/platform/xaml/xaml-control-templates.md)
+- [Control templates](../platform/xaml/xaml-control-templates.md)
 - [**Storyboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.Storyboard)
 - [**Storyboard.TargetProperty**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.storyboard.targetproperty)
