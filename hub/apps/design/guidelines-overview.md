@@ -96,4 +96,6 @@ Use these fundamentals as a guide throughout your design process—whether you'r
         **[Writing](./style/writing-style.md )**<br>
         Use clear, concise, and helpful language to improve understanding and reduce cognitive load.
     :::column-end:::
+    :::column:::
+    :::column-end:::
 :::row-end:::

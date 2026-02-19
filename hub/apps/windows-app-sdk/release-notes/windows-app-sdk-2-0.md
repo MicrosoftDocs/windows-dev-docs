@@ -20,7 +20,238 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="preview"
 
-**There are no preview releases yet.**
+## Version 2.0 Preview 1 (2.0.0-Preview1)
+
+Released: **February 13, 2026** <br><br>
+
+### Windows App SDK 2.0.0-Preview1 Release Notes
+ 
+---
+
+<details><summary>Windows ML</summary>
+
+> * The version of ONNX Runtime in Windows ML has been updated to 1.24 RC
+> * Fixed a bug where if RegisterCertifiedAsync is called again in the same process, it incorrectly returns 0 execution providers (EP)
+>
+</details>
+
+<details><summary>Microsoft.UI.Content</summary>
+
+> * New `InputFocusController.ShouldShowKeyboardCues` property to guide developers on whether to show keyboard cues right after the creation of a `ContentIsland`.
+> * New convenience API `PointerPoint.GetCurrentPoint`, to allow developers to get the active `PointerPoint` data from the provided `pointerId`.
+>
+</details>
+
+<details><summary>App Content Search</summary>
+
+> * Improved `DeleteIndex` reliability. Sometimes `DeleteIndex` would fail with ERROR_SHARING_VIOLATION.
+> * Fix for OCR Bounding boxes returning negative values in some edge cases.
+> * App Content Search are part of a separate `Microsoft.Windows.Search` package instead of being part of `Microsoft.Windows.AI package`.
+> * Fix for prefix search not working with short query strings.
+> 
+> * New APIs and renames based on official API review.
+>   * AppContentIndexer
+>     * GetContentItemsRequiringReindexing
+>     * Remove -> RemoveContentItem
+>     * RemoveMultiple -> RemoveContentItems
+>     * RemoveAllContentItems
+>     * GetContentIndexingStatus -> GetContentItemStatus
+>     * GetMultipleContentIndexingStatus -> GetContentItemStatuses
+>     * GetContentItems    
+>   * AppCOntentIndexListener
+>     * IndexingStatusChanged -> ContentItemStatusChanged                
+>   * AppIndexTextQuerySession
+>     * UpdateQuery -> UpdateQueryPhrase
+>     * MostRecentResult -> GetResult
+>     * MostRecentResultChanged -> ResultChanged
+>   * AppIndexImageQuerySession
+>     * UpdateQuery -> UpdateQueryPhrase
+>     * MostRecentResult -> GetResult
+>     * MostRecentResultChanged -> ResultChanged
+>   * AppManagedImageQueryMatch
+>     * Subregion -> RegionOfInterest      
+>   * ContentItemStatusResult
+>     * ReindexingStatus   * ContentItemReindexingStatus
+>   * TextQuerySessionResult
+>     * IsValid
+>   * ImageQuerySessionResult
+>     * IsValid  
+>   * QueryContentItemsFilterFlags   
+>
+</details>
+
+<details><summary>Bug Fixes</summary>
+
+> * Fixed an issue where the WindowsAppSDK installer showed no progress during installation, making it appear stalled. The installer now provides clearer progress feedback.
+> * Improved error handling of scenarios where WindowsAppSDKSelfContained is enabled for class libraries.
+>
+</details>
+ 
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new and modified experimental APIs compared to 1.8.5:
+> 
+> ---
+> ```
+> Microsoft.Graphics.Imaging
+> 
+>     ImageBufferPixelFormat
+>         Bgr8
+> ```
+> ```
+> Microsoft.UI.Content
+> 
+>     DesktopPopupSiteBridge
+>         AnchoringBehavior
+>         AnchoringPixelAlignment
+> 
+>     PopupAnchor
+> ```
+> ```
+> Microsoft.UI.Input
+> 
+>     InputFocusController
+>         ShouldShowKeyboardCues
+> 
+>     PointerPoint
+>         GetCurrentPoint
+> ```
+> ```
+> Microsoft.UI.Xaml.Automation.Peers
+> 
+>     SplitMenuFlyoutItemAutomationPeer
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls
+> 
+>     SplitMenuFlyoutItem
+>     SystemBackdropElement
+> ```
+> ```
+> Microsoft.Windows.Management.Deployment
+> 
+>     AddPackageOptions
+>         GetValidationEventSourceForUri
+>         IsPackageValidationSupported
+>         PackageValidators
+> 
+>     IPackageValidator
+>     PackageCertificateEkuValidator
+>     PackageFamilyNameValidator
+>     PackageMinimumVersionValidator
+>     PackageValidationEventArgs
+>     PackageValidationEventSource
+>     PackageValidationHandler
+>     PackageVolume
+>         AddAsync
+>         GetAvailableSpaceAsync
+>         GetDefault
+>         GetPackageVolumeByName
+>         GetPackageVolumeByPath
+>         IsFeatureSupported
+>         IsOffline
+>         RemoveAsync
+>         SetDefault
+>         SetOfflineAsync
+>         SetOnlineAsync
+> 
+>     PackageVolumeFeature
+>     StagePackageOptions
+>         GetValidationEventSourceForUri
+>         IsPackageValidationSupported
+>         PackageValidators
+> ```
+> ```
+> Microsoft.Windows.Search.AppContentIndex
+> 
+>     AppContentIndexContract
+>     AppContentIndexer
+>     AppContentIndexListener
+>     AppIndexContentRegion
+>     AppIndexImageQuery
+>     AppIndexImageQuerySession
+>     AppIndexQueryMatch
+>     AppIndexTextQuery
+>     AppIndexTextQuerySession
+>     AppIndexTextStreamEncoding
+>     AppManagedImageQueryMatch
+>     AppManagedIndexableAppContent
+>     AppManagedTextQueryMatch
+>     ContentItemErrorDetail
+>     ContentItemReader
+>     ContentItemReindexingStatus
+>     ContentItemStatus
+>     ContentItemStatusResult
+>     ContentRegionTextOptions
+>     DeleteIndexResult
+>     DeleteIndexStatus
+>     DeleteIndexWhileInUseBehavior
+>     GetOrCreateIndexOptions
+>     GetOrCreateIndexResult
+>     GetOrCreateIndexStatus
+>     ImageQueryMatch
+>     ImageQueryOptions
+>     ImageQuerySessionResult
+>     IndexableAppContent
+>     IndexCapabilities
+>     IndexCapabilitiesOfCurrentSystem
+>     IndexCapability
+>     IndexCapabilityInitializationStatus
+>     IndexCapabilityLanguageStatus
+>     IndexCapabilityOfCurrentSystemStatus
+>     IndexCapabilityRequirement
+>     IndexCapabilityState
+>     IndexStatistics
+>     QueryContentItemsFilterFlags
+>     QueryMatchContentKind
+>     QueryMatchScope
+>     RegionContentKind
+>     TextLexicalMatchType
+>     TextQueryMatch
+>     TextQueryOptions
+>     TextQuerySessionResult
+> ```
+> ```
+> Microsoft.Windows.SemanticSearch
+> 
+>     EmbeddingVector
+>     SemanticSearchContract
+> ```
+> ```
+> Microsoft.Windows.Storage.Pickers
+> 
+>     FileOpenPicker
+>         FileTypeChoices
+>         InitialFileTypeIndex
+>         SettingsIdentifier
+>         SuggestedFolder
+>         SuggestedStartFolder
+>         Title
+> 
+>     FileSavePicker
+>         InitialFileTypeIndex
+>         SettingsIdentifier
+>         ShowOverwritePrompt
+>         SuggestedStartFolder
+>         Title
+> 
+>     FolderPicker
+>         PickMultipleFoldersAsync
+>         SettingsIdentifier
+>         SuggestedFolder
+>         SuggestedStartFolder
+>         Title
+> ```
+> ```
+> Microsoft.Windows.Vision
+> 
+>     ScreenRegionBoundingBox
+>     ScreenRegionDetectionContract
+>     ScreenRegionLabel
+> ```
+>
+</details>
 
 :::zone-end
 
@@ -28,7 +259,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 2.0 Experimental 5 (2.0.0-Experimental5)
 
-Released: **February 12, 2026** <br><br>
+Released: **February 13, 2026** <br><br>
 
 <details><summary>Windows ML Licensing Simplification</summary>
 
@@ -130,7 +361,7 @@ Released: **January 13, 2026** <br><br>
 <details><summary>Bug fixes</summary>
 
 >
-> * Fixed “Class not registered” errors when using self-contained deployment with Windows ML. Developers using self-contained deployment no longer need to register all the Foundation package activatable classes that were used internally.
+> * Fixed "Class not registered" errors when using self-contained deployment with Windows ML. Developers using self-contained deployment no longer need to register all the Foundation package activatable classes that were used internally.
 > * Fixed a potential crash occurring on process shutdown when using Windows ML.
 > * Fixed the `ImageForegroundExtractor` API routing path so calls reach the correct endpoint.
 > * Ensured execution provider install and download progress is correctly forwarded to apps during package deployment.
@@ -517,7 +748,7 @@ Released: **November 6, 2025** <br><br>
 > 
 > - **Semantic Search**  
 >   Apps can return results based on intent and meaning rather than exact keyword matches.  
->   *Example:* A query for **“project timeline”** can surface content that mentions **“schedule”** or **“delivery dates,”** even if those exact words weren’t used.
+>   *Example:* A query for **"project timeline"** can surface content that mentions **"schedule"** or **"delivery dates,"** even if those exact words weren't used.
 > - **Retrieval-Augmented Generation (RAG)**  
 >   Indexed content can serve as a knowledge base for generative AI models. When a user asks a question, the app retrieves the most relevant documents or snippets from its index and feeds them into the model, enabling accurate, context-aware responses grounded in real data.
 > 
