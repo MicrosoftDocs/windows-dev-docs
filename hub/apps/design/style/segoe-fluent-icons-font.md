@@ -2,7 +2,7 @@
 description: This article lists and provides usage guidance for the glyphs that come with the Segoe Fluent Icons font.
 title: Segoe Fluent Icons font
 label: Segoe Fluent Icons font
-ms.date: 02/18/2026
+ms.date: 02/19/2026
 ms.topic: article
 keywords: windows 10, windows 11
 ms.localizationpriority: medium
@@ -1395,7 +1395,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2c7.png" alt-text="Screenshot of BulletedList2."::: | f2c7 | :::no-loc text="BulletedList2"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2c8.png" alt-text="Screenshot of BulletedList2Mirrored."::: | f2c8 | :::no-loc text="BulletedList2Mirrored"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f2d9.png" alt-text="Screenshot of CirclePause."::: | f2d9 | :::no-loc text="CirclePause"::: |
-| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f305.png" alt-text="Screenshot of Restart3.":::  | f305 | :::no-loc text="Restart3"::: |
+| :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f305.png" alt-text="Screenshot of Restart3."::: | f305 | :::no-loc text="Restart3"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f32a.png" alt-text="Screenshot of PassiveAuthentication."::: | f32a | :::no-loc text="PassiveAuthentication"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f353.png" alt-text="Screenshot of Emoji4.":::  | f353 | :::no-loc text="Emoji4"::: |
 | :::image type="content" border="false" source="images/glyphs/segoe-fluent-icons/f354.png" alt-text="Screenshot of ColorSolid."::: | f354 | :::no-loc text="ColorSolid"::: |
