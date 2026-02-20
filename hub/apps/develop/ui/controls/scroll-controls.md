@@ -530,22 +530,6 @@ private void ZoomSlider_ValueChanged(object sender, RangeBaseValueChangedEventAr
 
 ---
 
-## UWP and WinUI for UWP
-
-> [!NOTE]
-> The `ScrollView` control is available only in WinUI. For UWP and WinUI for UWP, use the `ScrollViewer` control.
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer), [ScrollBar class](/uwp/api/windows.ui.xaml.controls.primitives.scrollbar)
-> - [Open the WinUI for UWP Gallery app and see the ScrollViewer in action](winui2gallery:/item/ScrollViewer). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
-
 ## Related topics
 
 - [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ScrollViewer)

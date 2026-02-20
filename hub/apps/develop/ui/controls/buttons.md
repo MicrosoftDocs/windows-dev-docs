@@ -548,30 +548,6 @@ private void ApplyListStyle(string listStyle)
 }
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The DropDownButton, SplitButton, and ToggleSplitButton controls for UWP apps are included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Button class](/uwp/api/windows.ui.xaml.controls.button), [RepeatButton class](/uwp/api/windows.ui.xaml.controls.primitives.repeatbutton), [HyperlinkButton class](/uwp/api/windows.ui.xaml.controls.hyperlinkbutton), [DropDownButton](/uwp/api/windows.ui.xaml.controls.dropdownbutton), [SplitButton](/uwp/api/windows.ui.xaml.controls.splitbutton), [ToggleSplitButton](/uwp/api/windows.ui.xaml.controls.togglesplitbutton), [ToggleButton](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton), [Click event](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click), [Command property](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.command), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
-> - **WinUI for UWP Apis:** [DropDownButton](/windows/winui/api/microsoft.ui.xaml.controls.dropdownbutton), [SplitButton](/windows/winui/api/microsoft.ui.xaml.controls.splitbutton), [ToggleSplitButton](/windows/winui/api/microsoft.ui.xaml.controls.togglesplitbutton)
-> - [Open the WinUI for UWP Gallery app and see the Button in action](winui2gallery:/item/Button). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:DropDownButton />
-<muxc:SplitButton />
-<muxc:ToggleSplitButton />
-```
-
 ## Related articles
 
 - [Button class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button)

@@ -215,25 +215,6 @@ private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 }
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The AnimatedIcon for UWP apps requires WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI for UWP Apis:** [AnimatedIcon class](/windows/winui/api/microsoft.ui.xaml.controls.animatedicon)
-> - [Open the WinUI for UWP Gallery app and see the AnimatedIcon in action](winui2gallery:/item/AnimatedIcon). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:AnimatedIcon />
-```
-
 ## Related articles
 
 - [Icons in Windows apps](../../../design/style/icons.md)
