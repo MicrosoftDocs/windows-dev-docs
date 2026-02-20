@@ -18,7 +18,6 @@ ms.localizationpriority: medium
 This topic describes the **ms-people:** URI scheme. Your WinUI, UWP, and other Windows desktop apps can use this URI scheme to launch the People app for specific actions.
 
 ## ms-people: URI scheme reference
-## ms-people: URI scheme reference
 
 <table>
 <colgroup>
