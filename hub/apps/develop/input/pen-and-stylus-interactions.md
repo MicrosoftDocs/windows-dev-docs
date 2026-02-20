@@ -22,14 +22,6 @@ Optimize your Windows app for pen input to provide both standard [**pointer devi
 > [!NOTE]
 > This topic focuses on the Windows Ink platform. For general pointer input handling (similar to mouse, touch, and touchpad), see [Handle pointer input](../../design/input/handle-pointer-input.md).
 
-:::row:::
-   :::column:::
-      *Using ink in your Windows app*
-   :::column-end:::
-   :::column:::
-      *Use Windows Pen and Ink to build more engaging enterprise apps*
-   :::column-end:::
-:::row-end:::
 
 The Windows Ink platform, together with a pen device, provides a natural way to create digital handwritten notes, drawings, and annotations. The platform supports capturing digitizer input as ink data, generating ink data, managing ink data, rendering ink data as ink strokes on the output device, and converting ink to text through handwriting recognition.
 
