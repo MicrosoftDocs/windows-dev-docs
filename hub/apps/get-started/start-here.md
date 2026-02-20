@@ -28,8 +28,7 @@ Open [Windows Terminal](/windows/terminal/) and run the following command in Pow
 winget configure -f https://aka.ms/winui-config
 ```
 
-> [!TIP]
-> To review the config file and learn more, see its [README](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/WinUI/README.md] on GitHub.
+To review the config file and learn more, see its [README](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/WinUI/README.md) on GitHub.
 
 #### [Manual installation](#tab/manual)
 
