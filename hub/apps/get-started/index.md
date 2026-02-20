@@ -112,5 +112,5 @@ The [Universal Windows Platform (UWP)](/windows/uwp/) provides a common API surf
 | **UI designer** (drag & drop) | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
 | **Modern UI** | ✅ | ✅ ([Fluent theme](/dotnet/desktop/wpf/whats-new/net100)) | ❌ | ✅ | ✅ | ✅ ([WinUI 2](/windows/apps/winui/winui2)) | ❌ |
 | **Cross-platform** | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
-| **Sandboxing (AppContainer)** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
+| **Sandboxing (AppContainer)** | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
 | **Actively maintained** | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ Security & bug fixes only | ✅ |
