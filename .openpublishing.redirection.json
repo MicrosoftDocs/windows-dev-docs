@@ -10635,6 +10635,7 @@
       "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
+    {
       "source_path": "hub/apps/design/layout/depth-shadow.md",
       "redirect_url": "/windows/apps/develop/ui/shadows",
       "redirect_document_id": false
