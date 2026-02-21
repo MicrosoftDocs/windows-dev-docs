@@ -70,6 +70,24 @@ items:
             href: windows-app-sdk/downloads-archive.md
     - name: WinUI
       href: winui/winui3/index.md
+  - name: Get started with WinUI
+    items:
+    - name: Quick start
+      href: get-started/start-here.md
+    - name: "Tutorial: Create your first WinUI app"
+      items:
+      - name: Introduction
+        href: tutorials/winui-notes/intro.md
+      - name: 1. Project setup
+        href: tutorials/winui-notes/project.md
+      - name: 2. Note page
+        href: tutorials/winui-notes/note.md
+      - name: 3. View and model
+        href: tutorials/winui-notes/view-model.md
+      - name: 4. All notes
+        href: tutorials/winui-notes/all-notes.md
+      - name: 5. Navigation
+        href: tutorials/winui-notes/navigation.md
   - name: Windows App Development CLI
     items:
     - name: Overview
@@ -104,24 +122,6 @@ items:
         href: winapp-cli/guides/tauri.md
       - name: Packaging a CLI executable
         href: winapp-cli/guides/packaging-cli.md
-  - name: Get started with WinUI
-    items:
-    - name: Quick start
-      href: get-started/start-here.md
-    - name: "Tutorial: Create your first WinUI app"
-      items:
-      - name: Introduction
-        href: tutorials/winui-notes/intro.md
-      - name: 1. Project setup
-        href: tutorials/winui-notes/project.md
-      - name: 2. Note page
-        href: tutorials/winui-notes/note.md
-      - name: 3. View and model
-        href: tutorials/winui-notes/view-model.md
-      - name: 4. All notes
-        href: tutorials/winui-notes/all-notes.md
-      - name: 5. Navigation
-        href: tutorials/winui-notes/navigation.md
   - name: Samples and resources
     items:
     - name: Samples
