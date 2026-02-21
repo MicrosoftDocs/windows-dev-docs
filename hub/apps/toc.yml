@@ -70,6 +70,40 @@ items:
             href: windows-app-sdk/downloads-archive.md
     - name: WinUI
       href: winui/winui3/index.md
+  - name: Windows App Development CLI
+    items:
+    - name: Overview
+      href: winapp-cli/index.md
+    - name: CLI reference
+      href: winapp-cli/usage.md
+    - name: Framework guides
+      items:
+      - name: Overview
+        href: winapp-cli/guides/index.md
+      - name: C++
+        href: winapp-cli/guides/cpp.md
+      - name: .NET
+        href: winapp-cli/guides/dotnet.md
+      - name: Electron
+        items:
+        - name: Setup
+          href: winapp-cli/guides/electron-setup.md
+        - name: Packaging
+          href: winapp-cli/guides/electron-packaging.md
+        - name: C++ notification addon
+          href: winapp-cli/guides/electron-cpp-notification-addon.md
+        - name: Phi Silica addon
+          href: winapp-cli/guides/electron-phi-silica-addon.md
+        - name: WinML addon
+          href: winapp-cli/guides/electron-winml-addon.md
+      - name: Flutter
+        href: winapp-cli/guides/flutter.md
+      - name: Rust
+        href: winapp-cli/guides/rust.md
+      - name: Tauri
+        href: winapp-cli/guides/tauri.md
+      - name: Packaging a CLI executable
+        href: winapp-cli/guides/packaging-cli.md
   - name: Get started with WinUI
     items:
     - name: Quick start

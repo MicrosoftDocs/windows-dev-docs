@@ -5,7 +5,7 @@ items:
   expanded: true
   items:
   - name: Windows App Development CLI
-    href: https://github.com/microsoft/WinAppCli
+    href: ../apps/winapp-cli/index.md
   - name: Advanced Windows settings
     items:
       - name: Overview
