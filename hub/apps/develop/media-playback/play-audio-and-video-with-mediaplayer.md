@@ -166,7 +166,7 @@ The next example shows how to use a **Slider** control to show the current playb
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetCreateSourceWithOpenCompleted":::
 
-The **OpenOperationCompleted** handler is used as an opportunity to discover the duration of the media source content. Once the duration is determined, the maximum value of the **Slider** control is set to the total number of seconds of the media item. The value is set inside a call to [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) to make sure it is run on the UI thread.
+The **OpenOperationCompleted** handler is used as an opportunity to discover the duration of the media source content. Once the duration is determined, the maximum value of the **Slider** control is set to the total number of seconds of the media item. The value is set inside a call to [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) to make sure it is run on the UI thread.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetDeclareDuration":::
 
