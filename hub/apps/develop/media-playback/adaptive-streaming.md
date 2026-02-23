@@ -24,9 +24,9 @@ For a list of supported DASH profiles, see [DASH profile support](dash-profile-s
 
 To play adaptive streaming media in a WinUI app, create a **Uri** object pointing to a DASH or HLS manifest file. Create an instance of the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) class. Call [**MediaSource.CreateFromUri**](/uwp/api/windows.media.core.mediasource.createfromuri) to create a new **MediaSource** object and then set that to the [**Source**](/uwp/api/windows.media.playback.mediaplayer.source) property of the **MediaPlayer**. Call [**Play**](/uwp/api/windows.media.playback.mediaplayer.play) to start playback of the media content.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetDeclareMediaPlayer":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetDeclareMediaPlayer":::
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetManifestSourceNoUI":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetManifestSourceNoUI":::
 
 The above example will play the audio of the media content but it doesn't automatically render the content in your UI. Most apps that play video content will want to render the content in a XAML page.  To do this, add a [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control to your XAML page.
 
@@ -34,7 +34,7 @@ The above example will play the audio of the media content but it doesn't automa
 
 Call [**MediaSource.CreateFromUri**](/uwp/api/windows.media.core.mediasource.createfromuri) to create a **MediaSource** from the URI of a DASH or HLS manifest file. Then set the [**Source**](/uwp/api/windows.ui.xaml.controls.mediaelement.sourceproperty) property of the **MediaPlayerElement**. The **MediaPlayerElement** will automatically create a new **MediaPlayer** object for the content. You can call **Play** on the **MediaPlayer** to start playback of the content.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetManifestSource":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetManifestSource":::
 
 ## Adaptive streaming with AdaptiveMediaSource
 
@@ -42,19 +42,19 @@ If your app requires more advanced adaptive streaming features, such as providin
 
 The adaptive streaming APIs are found in the [**Windows.Media.Streaming.Adaptive**](/uwp/api/Windows.Media.Streaming.Adaptive) namespace. The examples in this article use APIs from the following namespaces.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetAdaptiveStreamingUsing":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetAdaptiveStreamingUsing":::
 
 ## Initialize an AdaptiveMediaSource from a URI.
 
 Initialize the **AdaptiveMediaSource** with the URI of an adaptive streaming manifest file by calling [**CreateFromUriAsync**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync). The [**AdaptiveMediaSourceCreationStatus**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationStatus) value returned from this method lets you know if the media source was created successfully. If so, you can set the object as the stream source for your **MediaPlayer** by creating a **MediaSource** object by calling  [**MediaSource.CreateFromAdaptiveMediaSource**](/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource), and then assigning it to the media player's [**Source**](/uwp/api/windows.media.playback.mediaplayer.Source) property. In this example, the [**AvailableBitrates**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.availablebitrates) property is queried to determine the maximum supported bitrate for this stream, and then that value is set as the initial bitrate. This example also registers handlers for the several **AdaptiveMediaSource** events that are discussed later in this article.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetInitializeAMS":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetInitializeAMS":::
 
 ## Initialize an AdaptiveMediaSource using HttpClient
 
 If you need to set custom HTTP headers for getting the manifest file, you can create an [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) object, set the desired headers, and then pass the object into the overload of **CreateFromUriAsync**.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetInitializeAMSWithHttpClient":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetInitializeAMSWithHttpClient":::
 
 The [**DownloadRequested**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.downloadrequested) event is raised when the system is about to retrieve a resource from the server. The [**AdaptiveMediaSourceDownloadRequestedEventArgs**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadRequestedEventArgs) passed into the event handler exposes properties that provide information about the resource being requested such as the type and URI of the resource.
 
@@ -64,13 +64,13 @@ You can use the **DownloadRequested** event handler to modify the resource reque
 
 You can override the content of the requested resource by setting the [**Buffer**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.buffer) or [**InputStream**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadresult.inputstream) properties of the result object. In the example below, the contents of the manifest resource are replaced by setting the **Buffer** property. Note that if you are updating the resource request with data that is obtained asynchronously, such as retrieving data from a remote server or asynchronous user authentication, you must call [**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadrequestedeventargs.getdeferral) to get a deferral and then call [**Complete**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadrequesteddeferral.complete) when the operation is complete to signal the system that the download request operation can continue.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetAMSDownloadRequested":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetAMSDownloadRequested":::
 
 ## Use bitrate events to manage and respond to bitrate changes
 
 The **AdaptiveMediaSource** object provides events that allow you to react when the download or playback bitrates change. In this example, the current bitrates are simply updated in the UI. Note that you can modify the ratios that determine when the system switches bitrates of the adaptive stream. For more information, see the [**AdvancedSettings**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.advancedsettings) property.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetAMSBitrateEvents":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetAMSBitrateEvents":::
 
 ## Handle download completion and failure events
 
@@ -80,19 +80,19 @@ The [**AdaptiveMediaSourceDownloadFailedEventArgs**](/uwp/api/Windows.Media.Stre
 
 The [**Statistics**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceDownloadFailedEventArgs.Statistics) property returns a [**AdaptiveMediaSourceDownloadStatistics**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcedownloadstatistics) object which provides detailed information about the number of bytes received at the time of the event and the timing of various milestones in the download operation. You can log this information in order identify performance issues in your adaptive streaming implementation.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetAMSDownloadFailed":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetAMSDownloadFailed":::
 
 
 The  [**DownloadCompleted**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource.DownloadCompleted) event occurs when a resource download completes and provides similar data to the **DownloadFailed** event. Once again, a **RequestId** is provided for correlating events for a single request. Also, an **AdaptiveMediaSourceDownloadStatistics** object is provided to enable logging of download stats.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetAMSDownloadCompleted":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetAMSDownloadCompleted":::
 
 ## Gather adaptive streaming telemetry data with AdaptiveMediaSourceDiagnostics
 
 The **AdaptiveMediaSource** exposes a [**Diagnostics**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource) property which returns an 
 [**AdaptiveMediaSourceDiagnostics**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics) object. Use this object to register for the [**DiagnosticAvailable**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostics.DiagnosticAvailable) event. This event is intended to be used for telemetry collection and should not be used to modify app behavior at runtime. This diagnostic event is raised for many different reasons. Check the [**DiagnosticType**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs.DiagnosticType) property of the [**AdaptiveMediaSourceDiagnosticAvailableEventArgs**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnosticavailableeventargs) object passed into the event to determine the reason that the event was raised. Potential reasons include errors accessing the requested resource and errors parsing the streaming manifest file. For a list of situations that can trigger a diagnostic event, see [**AdaptiveMediaSourceDiagnosticType**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasourcediagnostictype). Like the arguments for other adaptive streaming events, the **AdaptiveMediaSourceDiagnosticAvailableEventArgs** provides a **RequestId** property for correlating request information between different events.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml.cs" id="SnippetAMSDiagnosticAvailable":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetAMSDiagnosticAvailable":::
 
 ## Defer binding of adaptive streaming content for items in a playback list by using MediaBinder
 
@@ -104,11 +104,11 @@ Create a **MediaBinder** instance, set an app-defined [**Token**](/uwp/api/Windo
 
 In the **Binding** event handler, use the token string to identify the content to be bound and then create the adaptive media source by calling one of the overloads of **[CreateFromStreamAsync](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromstreamasync)** or **[CreateFromUriAsync](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync)**. Because these are asynchronous methods, you should first call the [**MediaBindingEventArgs.GetDeferral**](/uwp/api/windows.media.core.mediabindingeventargs.GetDeferral) method to instruct the system to wait for your operation to complete before continuing.  Set the adaptive media source as the bound content by calling **[SetAdaptiveMediaSource](/uwp/api/windows.media.core.mediabindingeventargs.setadaptivemediasource)**. Finally, call [**Deferral.Complete**](/uwp/api/windows.foundation.deferral.Complete) after your operation is complete to instruct the system to continue.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetBinderBindingAMS":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetBinderBindingAMS":::
 
 If you want to register event handlers for the bound adaptive media source, you can do this in the handler for the [**CurrentItemChanged**](/uwp/api/windows.media.playback.mediaplaybacklist.CurrentItemChanged) event of the **MediaPlaybackList**. The [**CurrentMediaPlaybackItemChangedEventArgs.NewItem**](/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.NewItem) property contains the new currently playing **MediaPlaybackItem** in the list. Get an instance of the **AdaptiveMediaSource** representing the new item by accessing the [**Source**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem.Source) property of the **MediaPlaybackItem** and then the [**AdaptiveMediaSource**](/uwp/api/windows.media.core.mediasource.AdaptiveMediaSource) property of the media source. This property will be null if the new playback item is not an **AdaptiveMediaSource**, so you should test for null before attempting to register handlers for any of the object's events.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetAMSBindingCurrentItemChanged":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetAMSBindingCurrentItemChanged":::
 
 ## Related topics
 
