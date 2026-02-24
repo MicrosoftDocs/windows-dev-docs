@@ -1,7 +1,7 @@
 ---
 description: This article describes how to add playback of adaptive streaming multimedia content to a WinUI app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content.
 title: Adaptive streaming
-ms.date: 02/23/2026
+ms.date: 02/24/2026
 ms.topic: article
 keywords: windows, winui, adaptive, streaming
 ms.localizationpriority: medium
