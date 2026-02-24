@@ -381,25 +381,6 @@ You can also change the InfoBadge's type while it is being shown. To change the 
 
 Depending on how you've positioned your InfoBadge, be aware that this may cause items to shift as the size and shape of the InfoBadge may change.
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The InfoBadge for UWP apps requires WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI for UWP Apis:** [InfoBadge class](/windows/winui/api/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.value)
-> - [Open the WinUI for UWP Gallery app and see InfoBadge in action](winui2gallery:/item/InfoBadge). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:InfoBadge/>
-```
-
 ## Related articles
 
 - [NavigationView](../../../design/controls/navigationview.md)

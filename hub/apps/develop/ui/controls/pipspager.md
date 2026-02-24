@@ -172,25 +172,6 @@ If you set visibility through the PreviousButtonStyle or NextButtonStyle propert
     NextButtonVisibility="VisibleOnPointerOver" />
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The PipsPager for UWP apps requires WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI for UWP Apis:** [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
-> - [Open the WinUI for UWP Gallery app and see the PipsPager in action](winui2gallery:/item/PipsPager). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:PipsPager />
-```
-
 ## Related articles
 
 - [ScrollViewer](../../../design/controls/dialogs-and-flyouts/index.md)

@@ -34,22 +34,6 @@ Each of these controls (with the exception of ItemsRepeater) also have built-in 
 
 One of the scenarios not covered in this article is displaying collections in a table or across multiple columns. If you're looking to display a collection in this format, consider using the [DataGrid control](/windows/communitytoolkit/controls/datagrid) from the [Windows Community Toolkit](/dotnet/communitytoolkit/windows/).
 
-## Examples
-
-<table>
-<th align="left">WinUI for UWP Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI for UWP Gallery</strong> app installed, see the <a href="winui2gallery:/item/ListView">ListView</a>, <a href="winui2gallery:/item/GridView">GridView</a>, <a href="winui2gallery:/item/FlipView">FlipView</a>, <a href="winui2gallery:/item/TreeView">TreeView</a>, and <a href="winui2gallery:/item/ItemsRepeater">ItemsRepeater</a> in action.</p>
-    <ul>
-    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI for UWP Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
 ## Items view
 
 You can use an items view to display text- or image-heavy data items in a variety of flexible layouts that can be swapped at run-time.

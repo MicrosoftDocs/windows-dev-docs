@@ -550,33 +550,6 @@ The following images show the preferred spacing of radio buttons in a group.
 > [!NOTE]
 > If you're using a WinUI RadioButtons control, the spacing, margins, and orientation are already optimized.
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The RadioButtons control for UWP apps is included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs**: [RadioButton class](/uwp/api/windows.ui.xaml.controls.radiobutton), [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-> - **WinUI for UWP Apis**: [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged)
-> - [Open the WinUI for UWP Gallery app and see the RadioButton in action](winui2gallery:/item/RadioButton). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-There are two ways to create radio button groups.
-
-- Starting with WinUI 2.3, we recommend the **[RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
-- You can use groups of individual **[RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:RadioButtons />
-```
-
 ## Related topics
 
 - [Buttons](../../../design/controls/buttons.md)

@@ -157,17 +157,6 @@ Hyperlink doesn't inherit from [Control](/windows/windows-app-sdk/api/winrt/micr
 
 The default color of the hyperlink is the accent color of the system. You can set the [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.foreground) property to override this.
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Hyperlink text element](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton control](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
-> - [Open the WinUI for UWP Gallery app and see Hyperlinks in action](winui2gallery:/item/HyperlinkButton). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
 ## Related articles
 
 - [Text controls](../../../design/controls/text-controls.md)

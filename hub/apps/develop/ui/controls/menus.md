@@ -208,31 +208,6 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
 </muxc:MenuBar>
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-MenuBar requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, or [WinUI for UWP](/windows/uwp/get-started/winui2/).
-
-The MenuFlyout and MenuBar controls for UWP apps are included as part of WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [MenuFlyout class](/uwp/api/windows.ui.xaml.controls.menuflyout), [MenuBar class](/uwp/api/windows.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
-> - **WinUI for UWP Apis:** [MenuBar class](/windows/winui/api/microsoft.ui.xaml.controls.menubar), [ContextFlyout property](/uwp/api/windows.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/uwp/api/windows.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
-> - [Open the WinUI for UWP Gallery app and see MenuBar in action](winui2gallery:/item/MenuBar). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for these controls that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:MenuFlyout />
-<muxc:MenuBar />
-```
-
 ## Related articles
 
 - [Command design basics for Windows apps](../../../design/basics/commanding-basics.md)
