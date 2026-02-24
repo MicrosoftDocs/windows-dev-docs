@@ -40,10 +40,6 @@ Call [**MediaSource.CreateFromUri**](/uwp/api/windows.media.core.mediasource.cre
 
 If your app requires more advanced adaptive streaming features, such as providing custom HTTP headers, monitoring the current download and playback bitrates, or adjusting the ratios that determine when the system switches bitrates of the adaptive stream, use the **[AdaptiveMediaSource](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource)** object.
 
-The adaptive streaming APIs are found in the [**Windows.Media.Streaming.Adaptive**](/uwp/api/Windows.Media.Streaming.Adaptive) namespace. The examples in this article use APIs from the following namespaces.
-
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetAdaptiveStreamingUsing":::
-
 ## Initialize an AdaptiveMediaSource from a URI.
 
 Initialize the **AdaptiveMediaSource** with the URI of an adaptive streaming manifest file by calling [**CreateFromUriAsync**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync). The [**AdaptiveMediaSourceCreationStatus**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSourceCreationStatus) value returned from this method lets you know if the media source was created successfully. If so, you can set the object as the stream source for your **MediaPlayer** by creating a **MediaSource** object by calling  [**MediaSource.CreateFromAdaptiveMediaSource**](/uwp/api/Windows.Media.Core.MediaSource.AdaptiveMediaSource), and then assigning it to the media player's [**Source**](/uwp/api/windows.media.playback.mediaplayer.Source) property. In this example, the [**AvailableBitrates**](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.availablebitrates) property is queried to determine the maximum supported bitrate for this stream, and then that value is set as the initial bitrate. This example also registers handlers for the several **AdaptiveMediaSource** events that are discussed later in this article.
