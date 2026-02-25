@@ -99,16 +99,6 @@ For the complete list of ways to customize parallax, see the ParallaxView class.
 - Consider using parallax in ListViewItems when ListViewItems contain an image
 - Don't use it everywhere, overuse can diminish its impact
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-> [!div class="checklist"]
->
-> - **WinUI APIs:** [ParallaxView class](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview), [VerticalShift property](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift property](/uwp/api/Microsoft.UI.Xaml.Controls.Parallaxview.HorizontalShift)
-> - **Platform APIs**: [ParallaxView class](/uwp/api/windows.ui.xaml.Controls.Parallaxview), [VerticalShift property](/uwp/api/windows.ui.xaml.Controls.Parallaxview.VerticalShift), [HorizontalShift property](/uwp/api/windows.ui.xaml.Controls.Parallaxview.HorizontalShift)
-> - [Open the WinUI for UWP Gallery app and see ParallaxView in action](winui2gallery://item/ParallaxView). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
 ## Related articles
 
 - [ParallaxView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Parallaxview)
