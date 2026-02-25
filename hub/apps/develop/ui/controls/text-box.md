@@ -243,7 +243,7 @@ Paste | the clipboard contains text.
 Select all | the TextBox contains text.
 Undo | text has been changed.
 
-To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui2gallery:/item/RichEditBox">WinUI for UWP Gallery</a>. For design info, see Guidelines for [context menus](../../../design/controls/menus.md).
+To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui3gallery:/item/RichEditBox">WinUI Gallery</a>. For design info, see Guidelines for [context menus](../../../design/controls/menus.md).
 
 ### Select, copy, and paste
 
@@ -292,19 +292,6 @@ For example, if a text box is used only to enter a 4-digit PIN, set the [InputSc
 Other properties that affect the touch keyboard are [IsSpellCheckEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.isspellcheckenabled), [IsTextPredictionEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.istextpredictionenabled), and [PreventKeyboardDisplayOnProgrammaticFocus](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
 
 For more info and examples, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md) and the property documentation.
-
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [TextBox class](/uwp/api/Windows.UI.Xaml.Controls.TextBox), [Text property](/uwp/api/windows.ui.xaml.controls.textbox.text)
-> - [Open the WinUI for UWP Gallery app and see the TextBox in action](winui2gallery:/item/TextBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 ## Related articles
 

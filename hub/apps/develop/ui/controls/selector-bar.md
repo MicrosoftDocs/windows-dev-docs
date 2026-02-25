@@ -226,11 +226,6 @@ private void SelectorBar3_SelectionChanged
 }
 ```
 
-## UWP and WinUI for UWP
-
-> [!IMPORTANT]
-> The SelectorBar control is not available for UWP and WinUI for UWP. For alternatives, see [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md).
-
 ## Related topics
 
 - [SelectorBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar)

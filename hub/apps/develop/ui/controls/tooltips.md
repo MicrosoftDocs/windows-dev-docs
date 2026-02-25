@@ -128,19 +128,6 @@ If a ToolTip obscures the content it is referring to, you can adjust its placeme
 </Image>
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ToolTip class](/uwp/api/Windows.UI.Xaml.Controls.ToolTip), [ToolTipService class](/uwp/api/windows.ui.xaml.controls.tooltipservice)
-> - [Open the WinUI for UWP Gallery app and see the ToolTip in action](winui2gallery:/item/ToolTip). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
-
 ## Related articles
 
 - [ToolTip class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ToolTip)

@@ -810,26 +810,6 @@ internal sealed class CardControl : CardControlBase
 }
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The ItemsRepeater for UWP apps requires WinUI for UWP. For more info, including installation instructions, see [WinUI for UWP](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ScrollViewer class](/uwp/api/windows.ui.xaml.controls.scrollviewer)
-> - **WinUI for UWP Apis:** [ItemsRepeater class](/windows/winui/api/microsoft.ui.xaml.controls.itemsrepeater)
-> - [Open the WinUI for UWP Gallery app and see the ItemsRepeater in action](winui2gallery:/item/ItemsRepeater). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:ItemsRepeater />
-```
-
 ## Related articles
 
 - [Lists](../../../design/controls/lists.md)

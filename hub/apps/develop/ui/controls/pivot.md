@@ -175,19 +175,6 @@ The control comes in two modes:
 > - Avoid using more than 5 headers when using carousel mode, as looping more than 5 can become confusing.
 > - Pivot headers should not carousel in a [10ft environment](../../../design/devices/designing-for-tv.md). Set the [IsHeaderItemsCarouselEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.IsHeaderItemsCarouselEnabled) property to `false` if your app will run on Xbox.
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Pivot class](/uwp/api/windows.ui.xaml.controls.pivot)
-> - [Open the WinUI for UWP Gallery app and see the Pivot in action](winui2gallery:/item/Pivot). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
-
 ## Related topics
 
 - [Pivot class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot)

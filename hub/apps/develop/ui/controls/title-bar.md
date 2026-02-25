@@ -139,10 +139,6 @@ private void TitleBar_PaneToggleRequested(TitleBar sender, object args)
 
 ```
 
-## UWP and WinUI for UWP
-
-The TitleBar control is not available for UWP and WinUI for UWP. Instead, see [Title bar customization (UWP apps)](/windows/uwp/ui-input/title-bar).
-
 ## Related articles
 
 - [Title bar (design)](../../../design/basics/titlebar-design.md)

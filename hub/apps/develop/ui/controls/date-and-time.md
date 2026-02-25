@@ -13,10 +13,6 @@ ms.localizationpriority: medium
 
 Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
 
-> [!div class="checklist"]
->
-> - [Open the WinUI for UWP Gallery app and see Date and Time controls in action](winui2gallery:/category/DateAndTime). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
 > [!div class="nextstepaction"]
 > [Open the WinUI Gallery app and see Date and Time controls in action](winui3gallery:/category/DateAndTime)
 
