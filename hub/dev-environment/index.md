@@ -120,7 +120,7 @@ Follow these guides to set up your Windows development environment for your pref
        [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
         **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
     :::column-end:::    
-    :::column span="3":::
+    :::column span="5":::
        [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
         **[Get started building Windows apps](../apps/index.yml)**<br>
         Build desktop apps with WinUI and the Windows App SDK.
@@ -138,6 +138,44 @@ Follow these guides to set up your Windows development environment for your pref
           :::column-end:::
 :::row-end:::
 
+:::row:::
+    :::column:::
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+    :::column-end:::    
+    :::column span="3":::
+        Build desktop apps with WinUI and the Windows App SDK.
+    :::column-end:::
+    :::column:::
+  
+    :::column-end:::
+       :::column:::
+          :::column-end:::
+                 :::column:::
+          :::column-end:::
+                 :::column:::
+          :::column-end:::
+                 :::column:::
+          :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+    :::column-end:::    
+    :::column span="5":::
+        Build desktop apps with WinUI and the Windows App SDK.
+    :::column-end:::
+    :::column:::  
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+    :::column:::
+    :::column-end:::
+:::row-end:::
 
 
 ## Transitioning between Mac and Windows
