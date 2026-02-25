@@ -202,12 +202,10 @@ Follow these guides to set up your Windows development environment for your pref
 :::row:::
                  :::column:::
           :::column-end:::
-                 :::column:::
-          :::column-end:::
     :::column:::
        [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
     :::column-end:::    
-    :::column span="3":::
+    :::column span="5":::
         5Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
     :::column:::
@@ -216,6 +214,12 @@ Follow these guides to set up your Windows development environment for your pref
        :::column:::
           :::column-end:::
 
+                 :::column:::
+          :::column-end:::
+                           :::column:::
+          :::column-end:::
+                 :::column:::
+          :::column-end:::
                  :::column:::
           :::column-end:::
 :::row-end:::
