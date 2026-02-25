@@ -113,10 +113,32 @@ Follow these guides to set up your Windows development environment for your pref
         **[Get started with Game Development](/gaming/)**<br>
         Build games for Windows using Microsoft's game development tools and services.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
+        Create remote development containers with support from VS, VS Code, .NET, and WSL.
+    :::column-end:::    
+    :::column:::
+       [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
+        **[Get started building Windows apps](../apps/index.yml)**<br>
+        Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
     :::column:::
+       [![Game Dev icon](../images/game-icon.png)](/gaming/)<br>
+        **[Get started with Game Development](/gaming/)**<br>
+        Build games for Windows using Microsoft's game development tools and services.
     :::column-end:::
+       :::column:::
+          :::column-end:::
+                 :::column:::
+          :::column-end:::
+                 :::column:::
+          :::column-end:::
+                 :::column:::
+          :::column-end:::
 :::row-end:::
 
 
