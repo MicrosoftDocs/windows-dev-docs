@@ -69,6 +69,8 @@ The code snippet below shows an example of what your settings file might look li
 }
 ```
 
+In particular, the `"$schema": "https://aka.ms/winget-settings.schema.json",` line is required in order for any of the file's settings to be applied.
+
 We have also defined a schema for the settings file. This allows you to use TAB to discover settings and syntax if your JSON editor supports JSON schemas.
 
 ## Updating settings
@@ -191,7 +193,11 @@ The `architectures` behavior controls what architectures will be selected when i
 
 #### installerTypes
 
-The `installerTypes` behavior controls what installer types will be selected when installing a package. The matching parameter is `--installer-type`.
+The `installerTypes` behavior affects what installer types will be selected when installing a package. It can also determine which type to install by default if a manifest has multiple types: The list is in priority order, with the first listed type being preferred over the others, and so on.  This is convenient for users who for instance prefer portable packages or MSIX/AppX installations. The matching parameter is `--installer-type`, which will override the settings.
+
+Allowed values as of version 1.12.470 include: `appx`, `burn`, `exe`, `font`, `inno`, `msi`, `msix`, `msstore`, `nullsoft`, `portable`, `wix`, `zip`
+
+By default, and with all other properties being equal, WinGet defaults to the installer type that is listed first in the manifest's installer YAML if the package has not been installed yet.  If it is already installed, the same installer type will be required to ensure a proper upgrade.
 
 ```json
     "installBehavior": {
