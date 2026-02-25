@@ -10,7 +10,7 @@ ms.date: 01/07/2025
 
 Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.
 
-## Developer tools
+## Tools to get you started
 
 :::row:::
     :::column:::
@@ -52,6 +52,7 @@ Windows invites you to code as you are. Use whatever coding language or framewor
 ---
 
 Watch the Windows developer tools overview from Microsoft Ignite to see these tools in action.
+<br><br>
 
 <iframe width="600" height="338" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
