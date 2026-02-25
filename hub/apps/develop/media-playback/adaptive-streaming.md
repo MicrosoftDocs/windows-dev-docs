@@ -28,11 +28,11 @@ To play adaptive streaming media in a WinUI app, create a **Uri** object pointin
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetManifestSourceNoUI":::
 
-The above example will play the audio of the media content but it doesn't automatically render the content in your UI. Most apps that play video content will want to render the content in a XAML page.  To do this, add a [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control to your XAML page.
+The above example will play the audio of the media content but it doesn't automatically render the content in your UI. Most apps that play video content will want to render the content in a XAML page.  To do this, add a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control to your XAML page.
 
 :::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml" id="SnippetMediaPlayerElementXAML":::
 
-Call [**MediaSource.CreateFromUri**](/uwp/api/windows.media.core.mediasource.createfromuri) to create a **MediaSource** from the URI of a DASH or HLS manifest file. Then set the [**Source**](/uwp/api/windows.ui.xaml.controls.mediaelement.sourceproperty) property of the **MediaPlayerElement**. The **MediaPlayerElement** will automatically create a new **MediaPlayer** object for the content. You can call **Play** on the **MediaPlayer** to start playback of the content.
+Call [**MediaSource.CreateFromUri**](/uwp/api/windows.media.core.mediasource.createfromuri) to create a **MediaSource** from the URI of a DASH or HLS manifest file. Then set the [**Source**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property of the **MediaPlayerElement**. The **MediaPlayerElement** will automatically create a new **MediaPlayer** object for the content. You can call **Play** on the **MediaPlayer** to start playback of the content.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml.cs" id="SnippetManifestSource":::
 

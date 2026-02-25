@@ -62,7 +62,7 @@ In the previous step, an audio playback connection was created, but sound does n
 
 ## Monitor audio playback connection state
 
-The [AudioPlaybackConnection.ConnectionStateChanged](/uwp/api/windows.media.audio.audioplaybackconnection.statechanged) event is raised whenever the state of the connection changes. In this example, the handler for this event updates the status text box. Remember to update the UI inside a call to [Dispatcher.RunAsync](/uwp/api/windows.ui.core.coredispatcher.runasync) to make sure the update is made on the UI thread.
+The [AudioPlaybackConnection.ConnectionStateChanged](/uwp/api/windows.media.audio.audioplaybackconnection.statechanged) event is raised whenever the state of the connection changes. In this example, the handler for this event updates the status text box. Remember to update the UI inside a call to [DispatcherQueue.TryEnqueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) to make sure the update is made on the UI thread.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/audio-playback-connection/cs/AudioPlaybackConnectionExample/MainWindow.xaml.cs.cs" id="snippet_ConnectionStateChanged":::
 

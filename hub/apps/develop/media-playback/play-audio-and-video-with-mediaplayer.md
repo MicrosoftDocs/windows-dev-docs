@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Play audio and video with MediaPlayer
 
-This article shows you how to play media in a WinUI app using the  [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) class lightweight XAML control, [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement). 
+This article shows you how to play media in a WinUI app using the  [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) class lightweight XAML control, [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement). 
 
 This article will walk you through the **MediaPlayer** features that a typical media playback app will use. Note that **MediaPlayer** uses the [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) class as a container for all media items. This class allows you to load and play media from many different sources, including local files, memory streams, and network sources, all using the same interface. There are also higher-level classes that work with **MediaSource**, such as [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) and [**MediaPlaybackList**](/uwp/api/Windows.Media.Playback.MediaPlaybackList), that provide more advanced features like playlists and the ability to manage media sources with multiple audio, video, and metadata tracks. For more information on **MediaSource** and related APIs, see [Media items, playlists, and tracks](media-playback-with-mediasource.md).
 
@@ -27,25 +27,25 @@ When your app is done using a **MediaPlayer**, you should call the [**Close**](/
 
 ## Use MediaPlayerElement to render video in XAML
 
-You can play media in a **MediaPlayer** without displaying it in XAML, but many media playback apps will want to render the media in a XAML page. To do this, use the lightweight [**MediaPlayerElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement) control. Like **MediaElement**, **MediaPlayerElement** allows you to specify whether the built-in transport controls should be shown.
+You can play media in a **MediaPlayer** without displaying it in XAML, but many media playback apps will want to render the media in a XAML page. To do this, use the lightweight [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control. Like **MediaElement**, **MediaPlayerElement** allows you to specify whether the built-in transport controls should be shown.
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml" id="SnippetMediaPlayerElementXAML":::
 
-You can set the **MediaPlayer** instance that the element is bound to by calling [**SetMediaPlayer**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.setmediaplayer).
+You can set the **MediaPlayer** instance that the element is bound to by calling [**SetMediaPlayer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.setmediaplayer).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetMediaPlayer":::
 
-You can also set the playback source on the **MediaPlayerElement** and the element will automatically create a new **MediaPlayer** instance that you can access using the [**MediaPlayer**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.mediaplayer) property.
+You can also set the playback source on the **MediaPlayerElement** and the element will automatically create a new **MediaPlayer** instance that you can access using the [**MediaPlayer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.mediaplayer) property.
 
 > [!NOTE]
-> Setting MediaPlayerElement properties will set the corresponding properties on its underlying **MediaPlayer**. You have the option to use the underlying **MediaPlayer** directly instead of using MediaPlayerElement properties. Be aware that using **MediaPlayer** directly where an equivalent **MediaPlayerElement** property could otherwise be used can cause unexpected behavior. This is because the MediaPlayerElement is not aware of everything happening to its underlying **MediaPlayer**. For example, if you set the source directly on **MediaPlayer**, then **MediaPlayerElement** [Source](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.source) property will not reflect the change. For this reason, you must be consistent in using **MediaPlayerElement** properties or directly using the underlying **MediaPlayer**.
+> Setting MediaPlayerElement properties will set the corresponding properties on its underlying **MediaPlayer**. You have the option to use the underlying **MediaPlayer** directly instead of using MediaPlayerElement properties. Be aware that using **MediaPlayer** directly where an equivalent **MediaPlayerElement** property could otherwise be used can cause unexpected behavior. This is because the MediaPlayerElement is not aware of everything happening to its underlying **MediaPlayer**. For example, if you set the source directly on **MediaPlayer**, then **MediaPlayerElement** [Source](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property will not reflect the change. For this reason, you must be consistent in using **MediaPlayerElement** properties or directly using the underlying **MediaPlayer**.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetGetPlayerFromElement":::
 
 > [!NOTE]
-> If you disable the [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) of the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) by setting [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) to false, it will break the link between the **MediaPlayer** the [**TransportControls**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.transportcontrols) provided by the **MediaPlayerElement**, so the built-in transport controls will no longer automatically control the playback of the player. Instead, you must implement your own controls to control the **MediaPlayer**.
+> If you disable the [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) of the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) by setting [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) to false, it will break the link between the **MediaPlayer** the [**TransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.transportcontrols) provided by the **MediaPlayerElement**, so the built-in transport controls will no longer automatically control the playback of the player. Instead, you must implement your own controls to control the **MediaPlayer**.
 
-The **MediaPlayer** is detached from **MediaPlayerElement** when the **MediaPlayerElement** is destroyed or when a new **MediaPlayer** is set using [SetMediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.setmediaplayer). When detached, **MediaPlayerElement** treats the underlying **MediaPlayer** differently depending on whether it was created by **MediaPlayerElement** or set using **SetMediaPlayer**.
+The **MediaPlayer** is detached from **MediaPlayerElement** when the **MediaPlayerElement** is destroyed or when a new **MediaPlayer** is set using [SetMediaPlayer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.setmediaplayer). When detached, **MediaPlayerElement** treats the underlying **MediaPlayer** differently depending on whether it was created by **MediaPlayerElement** or set using **SetMediaPlayer**.
 
 If the **MediaPlayer** was created by **MediaPlayerElement**, it will properly [Close](/uwp/api/windows.media.playback.mediaplayer.close) the **MediaPlayer** for you. If the **MediaPlayer** was set on **MediaPlayerElement** using **SetMediaPlayer**, you are responsible for ensuring the **MediaPlayer** is properly closed. Failing to do so may result in fatal playback errors in **MediaPlayer**. The following code snippet shows how to properly detach and close in code.
 
@@ -63,11 +63,11 @@ Set the [**AudioCategory**](/uwp/api/windows.media.playback.mediaplayer.audiocat
 
 ### Output to a specific audio endpoint
 
-By default, the audio output from a **MediaPlayer** is routed to the default audio endpoint for the system, but you can specify a specific audio endpoint that the **MediaPlayer** should use for output. In the example below, [**MediaDevice.GetAudioRenderSelector**](/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) returns a string that uniquely identifies the audio render category of devices. Next, the [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) method [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) is called to get a list of all available devices of the selected type. You may programmatically determine which device you want to use or add the returned devices to a [**ComboBox**](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) to allow the user to select a device.
+By default, the audio output from a **MediaPlayer** is routed to the default audio endpoint for the system, but you can specify a specific audio endpoint that the **MediaPlayer** should use for output. In the example below, [**MediaDevice.GetAudioRenderSelector**](/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) returns a string that uniquely identifies the audio render category of devices. Next, the [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) method [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) is called to get a list of all available devices of the selected type. You may programmatically determine which device you want to use or add the returned devices to a [**ComboBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox) to allow the user to select a device.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetAudioEndpointEnumerate":::
 
-In the [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) event for the devices combo box, the [**AudioDevice**](/uwp/api/windows.media.playback.mediaplayer.audiodevice) property of the **MediaPlayer** is set to the selected device, which was stored in the [**Tag**](/uwp/api/windows.ui.xaml.frameworkelement.tag) property of the **ComboBoxItem**.
+In the [**SelectionChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) event for the devices combo box, the [**AudioDevice**](/uwp/api/windows.media.playback.mediaplayer.audiodevice) property of the **MediaPlayer** is set to the selected device, which was stored in the [**Tag**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.tag) property of the **ComboBoxItem**.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetAudioEndpontSelectionChanged":::
 
@@ -104,7 +104,7 @@ In the **BufferingStarted** event handler, cast the event args passed into the e
 
 **MediaPlayer** allows you to specify the source rectangle within video content that should be rendered, effectively allowing you to zoom into video. The rectangle you specify is relative to a normalized rectangle (0,0,1,1) where 0,0 is the upper left hand of the frame and 1,1 specifies the full width and height of the frame. So, for example, to set the zoom rectangle so that the top-right quadrant of the video is rendered, you would specify the rectangle (.5,0,.5,.5).  It is important that you check your values to make sure that your source rectangle is within the (0,0,1,1) normalized rectangle. Attempting to set a value outside of this range will cause an exception to be thrown.
 
-To implement pinch and zoom using multi-touch gestures, you must first specify which gestures you want to support. In this example, scale and translate gestures are requested. The [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) event is raised when one of the subscribed gestures occurs. The [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped) event will be used to reset the zoom to the full frame. 
+To implement pinch and zoom using multi-touch gestures, you must first specify which gestures you want to support. In this example, scale and translate gestures are requested. The [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) event is raised when one of the subscribed gestures occurs. The [**DoubleTapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.doubletapped) event will be used to reset the zoom to the full frame. 
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetRegisterPinchZoomEvents":::
 
@@ -120,7 +120,7 @@ Finally, the [**NormalizedSourceRect**](/uwp/api/windows.media.playback.mediapla
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetManipulationDelta":::
 
-In the [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped) event handler, the source rectangle is set back to (0,0,1,1) to cause the entire video frame to be rendered.
+In the [**DoubleTapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.doubletapped) event handler, the source rectangle is set back to (0,0,1,1) to cause the entire video frame to be rendered.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetDoubleTapped":::
 
@@ -186,7 +186,7 @@ In some cases you may want the playback position of one or more media players as
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetOffsetSliders":::
 
-In the [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event for each slider, the **TimelineControllerPositionOffset** for each player is set to the corresponding value.
+In the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event for each slider, the **TimelineControllerPositionOffset** for each player is set to the corresponding value.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetTimelineOffset":::
 
@@ -220,13 +220,13 @@ In the **VideoTracksChanged** event handler, get the encoding properties for any
 
 ## Use MediaPlayer in frame server mode
 
-In frame server mode, the **MediaPlayer** does not automatically render frames to an associated **MediaPlayerElement**. Instead, your app copies the current frame from the **MediaPlayer** to an object that implements [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). The primary scenario this feature enables is using pixel shaders to process video frames provided by the **MediaPlayer**. Your app is responsible for displaying each frame after processing, such as by showing the frame in a XAML [**Image**](/uwp/api/windows.ui.xaml.controls.image) control.
+In frame server mode, the **MediaPlayer** does not automatically render frames to an associated **MediaPlayerElement**. Instead, your app copies the current frame from the **MediaPlayer** to an object that implements [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). The primary scenario this feature enables is using pixel shaders to process video frames provided by the **MediaPlayer**. Your app is responsible for displaying each frame after processing, such as by showing the frame in a XAML [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control.
 
 In the following example, a new **MediaPlayer** is initialized and video content is loaded. Next, a handler for [**VideoFrameAvailable**](/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable) is registered. Frame server mode is enabled by setting the **MediaPlayer** object's [**IsVideoFrameServerEnabled**](/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) property to **true**. Finally, media playback is started with a call to [**Play**](/uwp/api/windows.media.playback.mediaplayer.Play).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetFrameServerInit":::
 
-The next example shows a handler for **VideoFrameAvailable** that uses the Win2D library to add a simple blur effect to each frame of a video and then displays the processed frames in a XAML [Image](/uwp/api/windows.ui.xaml.controls.image) control. For more information about Win2D, see [Overview of Win2D](/windows/apps/develop/win2d/).
+The next example shows a handler for **VideoFrameAvailable** that uses the Win2D library to add a simple blur effect to each frame of a video and then displays the processed frames in a XAML [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control. For more information about Win2D, see [Overview of Win2D](/windows/apps/develop/win2d/).
 
 Whenever the **VideoFrameAvailable** handler is called, the [**CopyFrameToVideoSurface**](/uwp/api/windows.media.playback.mediaplayer.copyframetovideosurface) method is used to copy the contents of the frame to an [**IDirect3DSurface**](/uwp/api/windows.graphics.directx.direct3d11.idirect3dsurface). You can also use [**CopyFrameToStereoscopicVideoSurfaces**](/uwp/api/windows.media.playback.mediaplayer.copyframetostereoscopicvideosurfaces) to copy 3D content into two surfaces, for processing the left eye and right eye content separately. To get an object that implements **IDirect3DSurface**  this example creates a [**SoftwareBitmap**](/uwp/api/windows.graphics.imaging.softwarebitmap) and then uses that object to create a Win2D **CanvasBitmap**, which implements the necessary interface. A **CanvasImageSource** is a Win2D object that can be used as the source for an **Image** control, so a new one is created and set as the source for the **Image** in which the content will be displayed. Next, a **CanvasDrawingSession** is created. This is used by Win2D to render the blur effect.
 

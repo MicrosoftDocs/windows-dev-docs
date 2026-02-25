@@ -40,7 +40,7 @@ Register for the image subtitle metadata events using the **MediaPlaybackItem** 
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetImageSubtitleTracksChanged":::
 
-After registering for the image subtitle metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement).
+After registering for the image subtitle metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetImageSubtitlePlay":::
 
@@ -48,7 +48,7 @@ In the **RegisterMetadataHandlerForImageSubtitles** helper method, get an instan
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetRegisterMetadataHandlerForImageSubtitles":::
 
-In the handler for the **CueEntered** event, you can check the [**TimedMetadataKind**](/uwp/api/windows.media.core.timedmetadatatrack.TimedMetadataKind) property of the [**TimedMetadataTrack**](/uwp/api/windows.media.core.timedmetadatatrack) object passed into the handler to see if the metadata is for image subtitles. This is necessary if you are using the same data cue event handler for multiple types of metadata. If the associated metadata track is of type **TimedMetadataKind.ImageSubtitle**, cast the data cue contained in the **Cue** property of the [**MediaCueEventArgs**](/uwp/api/windows.media.core.mediacueeventargs) to an [**ImageCue**](/uwp/api/windows.media.core.imagecue). The [**SoftwareBitmap**](/uwp/api/windows.media.core.imagecue.SoftwareBitmap) property of the **ImageCue** contains a [**SoftwareBitmap**](/uwp/api/windows.graphics.imaging.softwarebitmap) representation of the subtitle image. Create a [**SoftwareBitmapSource**](/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource) and call [**SetBitmapAsync**](/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.SetBitmapAsync) to assign the image to a XAML [**Image**](/uwp/api/windows.ui.xaml.controls.image) control. The [**Extent**](/uwp/api/windows.media.core.imagecue.Extent) and [**Position**](/uwp/api/windows.media.core.imagecue.Position) properties of the **ImageCue** provide information about the size and position of the subtitle image.
+In the handler for the **CueEntered** event, you can check the [**TimedMetadataKind**](/uwp/api/windows.media.core.timedmetadatatrack.TimedMetadataKind) property of the [**TimedMetadataTrack**](/uwp/api/windows.media.core.timedmetadatatrack) object passed into the handler to see if the metadata is for image subtitles. This is necessary if you are using the same data cue event handler for multiple types of metadata. If the associated metadata track is of type **TimedMetadataKind.ImageSubtitle**, cast the data cue contained in the **Cue** property of the [**MediaCueEventArgs**](/uwp/api/windows.media.core.mediacueeventargs) to an [**ImageCue**](/uwp/api/windows.media.core.imagecue). The [**SoftwareBitmap**](/uwp/api/windows.media.core.imagecue.SoftwareBitmap) property of the **ImageCue** contains a [**SoftwareBitmap**](/uwp/api/windows.graphics.imaging.softwarebitmap) representation of the subtitle image. Create a [**SoftwareBitmapSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.softwarebitmapsource) and call [**SetBitmapAsync**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.softwarebitmapsource.SetBitmapAsync) to assign the image to a XAML [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control. The [**Extent**](/uwp/api/windows.media.core.imagecue.Extent) and [**Position**](/uwp/api/windows.media.core.imagecue.Position) properties of the **ImageCue** provide information about the size and position of the subtitle image.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetImageSubtitleCueEntered":::
 
@@ -68,7 +68,7 @@ Register for the speech metadata events using the **MediaPlaybackItem** object. 
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetSpeechTracksChanged":::
 
-After registering for the speech metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement).
+After registering for the speech metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetSpeechPlay":::
 
@@ -90,7 +90,7 @@ Register for the chapter metadata events using the **MediaPlaybackItem** object 
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetChapterCueTracksChanged":::
 
-After registering for the chapter metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement).
+After registering for the chapter metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetChapterCuePlay":::
 
@@ -118,7 +118,7 @@ Register for the M3U metadata events using the **MediaPlaybackItem** object crea
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetEXTM3UCueTracksChanged":::
 
-After registering for the M3U metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement).
+After registering for the M3U metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetEXTM3UCuePlay":::
 
@@ -140,7 +140,7 @@ Register for the ID3 tag events using the **MediaPlaybackItem** object created i
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetID3LoadContent":::
 
-After registering for the ID3 metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement).
+After registering for the ID3 metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetID3CuePlay":::
 
@@ -163,7 +163,7 @@ Register for the emsg box events using the **MediaPlaybackItem** object created 
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetID3LoadContent":::
 
-After registering for the emsg box metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement).
+After registering for the emsg box metadata events, the **MediaItem** is assigned to a [**MediaPlayer**](/uwp/api/windows.media.playback.mediaplayer) for playback within a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetEmsgCuePlay":::
 
@@ -174,7 +174,7 @@ In the **RegisterMetadataHandlerForEmsgCues** helper method, get an instance of 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetRegisterMetadataHandlerForEmsgCues":::
 
 
-In the handler for the **CueEntered** event, cast the data cue contained in the **Cue** property of the [**MediaCueEventArgs**](/uwp/api/windows.media.core.mediacueeventargs) to an [**DataCue**](/uwp/api/windows.media.core.datacue).  Check to make sure the **DataCue** object is not null. The properties of the emsg box are provided by the media pipeline as custom properties in the DataCue object's [**Properties**](/uwp/api/windows.media.core.datacue.Properties) collection. This example attempts to extract several different property values using the **[TryGetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue)** method. If this method returns null, it means the requested property is not present in the emsg box, so a default value is set instead.
+In the handler for the **CueEntered** event, cast the data cue contained in the **Cue** property of the [**MediaCueEventArgs**](/uwp/api/windows.media.core.mediacueeventargs) to an [**DataCue**](/uwp/api/windows.media.core.datacue).  Check to make sure the **DataCue** object is not null. The properties of the emsg box are provided by the media pipeline as custom properties in the DataCue object's [**Properties**](/uwp/api/windows.media.core.datacue.Properties) collection. This example attempts to extract several different property values using the **TryGetValue** method. If this method returns null, it means the requested property is not present in the emsg box, so a default value is set instead.
 
 The next part of the example illustrates the scenario where ad playback is triggered, which is the case when the *scheme_id_uri* property, obtained in the previous step, has a value of "urn:scte:scte35:2013:xml". For more information, see [https://dashif.org/identifiers/event_schemes/](https://dashif.org/identifiers/event_schemes/). Note that the standard recommends sending this emsg multiple times for redundancy, so this example maintains a list of the emsg IDs that have already been processed and only processes new messages. Create a new **DataReader** to read the cue data by calling [**DataReader.FromBuffer**](/uwp/api/windows.storage.streams.datareader.FromBuffer) and set the encoding to UTF-8 by setting the [**UnicodeEncoding**](/uwp/api/windows.storage.streams.datareader.UnicodeEncoding) property, then read the data. In this example, the message payload is written to the debug output. A real app would use the payload data to schedule the playback of an ad.
 
