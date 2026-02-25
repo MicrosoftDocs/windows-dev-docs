@@ -143,19 +143,6 @@ This example replaces the On/Off labels with Show/Hide labels.
 
 You can also use more complex content by setting the [OnContentTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.oncontenttemplate) and [OffContentTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.offcontenttemplate) properties.
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ToggleSwitch class](/uwp/api/windows.ui.xaml.controls.toggleswitch), [IsOn property](/uwp/api/windows.ui.xaml.controls.toggleswitch.ison), [Toggled event](/uwp/api/windows.ui.xaml.controls.toggleswitch.toggled)
-> - [Open the WinUI for UWP Gallery app and see the Slider in action](winui2gallery:/item/Slider). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
-
 ## Related articles
 
 - [ToggleSwitch class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch)

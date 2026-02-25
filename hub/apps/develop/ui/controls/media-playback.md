@@ -360,23 +360,6 @@ MediaPlayerElement mediaPlayerElement = new MediaPlayerElement();
 mediaPlayerElement.MediaPlayer.RealTimePlayback = true;
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [MediaPlayerElement class](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaTransportControls class](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols)
-> - [Open the WinUI for UWP Gallery app and see the MediaPlayerElement in action](winui2gallery:/item/MediaPlayerElement). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
-
-If you are designing for the 10-foot experience, go with the double-row layout. It provides more space for controls than the compact single-row layout and it is easier to navigate using a gamepad for 10-foot. See the [Designing for Xbox and TV](../../../design/devices/designing-for-tv.md) article for more information about optimizing your application for the 10-foot experience.
-
-`MediaPlayerElement` is only available in Windows 10, version 1607 and later. If you are developing an app for an earlier version of Windows 10, you need to use the [MediaElement](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) control instead. All recommendations made here apply to `MediaElement` as well.
-
 ## Related articles
 
 - [Command design basics for Windows apps](../../../design/basics/commanding-basics.md)

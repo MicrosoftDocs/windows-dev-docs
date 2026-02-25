@@ -299,15 +299,6 @@ void OnNavigatedTo(NavigationEventArgs e)
 - Don't wait on network requests or other long-running asynchronous operations in between preparing and starting a connected animation. You may need to pre-load the necessary information to run the transition ahead of time, or use a low-resolution placeholder image while a high-resolution image loads in the destination view.
 - Use [SuppressNavigationTransitionInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.suppressnavigationtransitioninfo) to prevent a transition animation in a **Frame** if you are using **ConnectedAnimationService**, since connected animations aren't meant to be used simultaneously with the default navigation transitions. See [NavigationThemeTransition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationthemetransition) for more info on how to use navigation transitions.
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-> [!div class="checklist"]
->
-> - **Platform APIs**: [ConnectedAnimation class](/uwp/api/windows.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService class](/uwp/api/windows.ui.xaml.media.animation.connectedanimationservice)
-> - [Open the WinUI for UWP Gallery app and see Implicit Transitions in action](winui2gallery://item/ConnectedAnimation). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
 ## Related articles
 
 [ConnectedAnimation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.connectedanimation)

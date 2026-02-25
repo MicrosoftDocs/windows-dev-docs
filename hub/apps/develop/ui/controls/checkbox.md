@@ -304,19 +304,6 @@ private void SetCheckedState()
 }
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [CheckBox class](/uwp/api/Windows.ui.xaml.controls.checkbox), [Checked event](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked property](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.ischecked), [Content property](/uwp/api/windows.ui.xaml.controls.contentcontrol.content)
-> - [Open the WinUI for UWP Gallery app and see the CheckBox in action](winui2gallery:/item/CheckBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
-
 ## Related articles
 
 - [CheckBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox)

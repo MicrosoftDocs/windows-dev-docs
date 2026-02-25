@@ -129,24 +129,6 @@ animation.Target = "Scale";
 destinationButton.StartAnimation(animation);
 ```
 
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../includes/uwp-winui-2-note.md)]
-
-> [!div class="checklist"]
->
-> - **Platform APIs**: [CompositionAnimation class](/uwp/api/windows.ui.composition.compositionanimation), [UIElement class](/uwp/api/windows.ui.xaml.uielement)
-> - [Open the WinUI for UWP Gallery app and see Animation interop in action](winui2gallery://item/XamlCompInterop). [!INCLUDE [winui-2-gallery](../../../includes/winui-2-gallery.md)]
-
-> [!NOTE]
-> To use these properties on UIElement, your UWP project target version must be 1809 or later. For more info about configuring your project version, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
-
-To get the [Compositor](/uwp/api/windows.ui.composition.compositor) in a UWP app, use the [Window.Compositor](/uwp/api/windows.ui.xaml.window.compositor) property:
-
-```csharp
-Compositor compositor = Window.Current.Compositor;
-```
-
 ## Related topics
 
 - [Storyboarded animations](storyboarded-animations.md)

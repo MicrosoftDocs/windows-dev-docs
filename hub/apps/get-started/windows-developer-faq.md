@@ -438,20 +438,6 @@ Topics covered include:
 
 </details>
 
-## UWP and WinUI for UWP
-
-<details><summary>Can UWP apps be distributed outside of the Microsoft Store?</summary>
-
-> Yes. If your [MSIX](/windows/msix/) package is signed, the signing certificate must be valid and trusted on the target device.
-
-</details>
-
-<details><summary>Can I mix UWP XAML UI controls with Win32, WPF, or WinForms UI controls?</summary>
-
-> Yes — XAML Islands enables this. See [Learn more about XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md).
-
-</details>
-
 ## Packaging, deployment, and updates
 
 <details><summary>What's the difference between apps that are packaged, unpackaged, and packaged with external location?</summary>

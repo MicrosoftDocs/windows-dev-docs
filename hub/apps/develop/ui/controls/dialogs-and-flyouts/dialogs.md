@@ -324,22 +324,6 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
     </li>
 </ul>
 
-
-
-## UWP and WinUI for UWP
-
-[!INCLUDE [uwp-winui2-note](../../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [ContentDialog class](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog)
-> - [Open the WinUI for UWP Gallery app and see the ContentDialog in action](winui2gallery:/item/ContentDialog). [!INCLUDE [winui-2-gallery](../../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI for UWP](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../../design/style/rounded-corner.md).
-
-
 ### ContentDialog in AppWindow or Xaml Islands
 
 > NOTE: This section applies only to apps that target Windows 10, version 1903 or later. AppWindow and XAML Islands are not available in earlier versions. For more info about versioning, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
