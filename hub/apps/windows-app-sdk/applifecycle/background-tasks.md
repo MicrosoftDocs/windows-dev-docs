@@ -200,7 +200,7 @@ Use the following best practices when implementing **IBackgroundTask**.
 * If the background task will perform asynchronous operations, get a **deferral** object by calling [GetDeferral](/uwp/api/windows.applicationmodel.background.ibackgroundtaskinstance.getdeferral) on the **ITaskInstance** object passed into **Run**. This prevents the background task host, `backgroundtaskhost.exe`, from terminating prematurely before the operations are complete. Release the deferral once all of the asynchronous tasks have completed.
 * Keep tasks as lightweight as possible. Long-running tasks may be terminated by the system and are not recommended.
 * Use logging to capture execution details for troubleshooting.
-* For more best practices for implementing background tasks, see [Guidelines for background tasks](/uwp/launch-resume/guidelines-for-background-tasks).
+* For more best practices for implementing background tasks, see [Guidelines for background tasks](/windows/uwp/launch-resume/guidelines-for-background-tasks).
  
 
 ## Declare the background task app extension in the App Manifest
