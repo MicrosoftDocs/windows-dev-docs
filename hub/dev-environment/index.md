@@ -72,11 +72,6 @@ Follow these guides to set up your Windows development environment for your pref
         Install Python and set up your development environment on Windows.
     :::column-end:::
     :::column:::
-       [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
-        **[Get started building Windows apps](../apps/index.yml)**<br>
-        Build desktop apps with WinUI and the Windows App SDK.
-    :::column-end:::
-    :::column:::
        [![C / C++](../images/c-logo.png)](/cpp/)<br>
         **[Get started with C++ and C](/cpp/)**<br>
         Develop apps, services, and tools with C++, C, and assembly.
@@ -99,21 +94,21 @@ Follow these guides to set up your Windows development environment for your pref
         **[Get started with PowerShell](/powershell/)**<br>
         Cross-platform task automation and configuration management using PowerShell.
     :::column-end:::
-    :::column:::
-       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
-        **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
-        Create remote development containers with support from VS, VS Code, .NET, and WSL.
-    :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![Blazor icon](../images/blazor-icon.png)](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)<br>
-        **[Get started with Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor)**<br>
-        Build web UI components and single page applications with C# instead of JavaScript.
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
+        Create remote development containers with support from VS, VS Code, .NET, and WSL.
+    :::column-end:::    
+    :::column:::
+       [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
+        **[Get started building Windows apps](../apps/index.yml)**<br>
+        Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
     :::column:::
-       [![Game Dev icon](../images/windows-logo.png)](/gaming/)<br>
+       [![Game Dev icon](../images/game-icon.png)](/gaming/)<br>
         **[Get started with Game Development](/gaming/)**<br>
         Build games for Windows using Microsoft's game development tools and services.
     :::column-end:::
