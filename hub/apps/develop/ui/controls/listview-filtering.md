@@ -157,8 +157,6 @@ Now, as the user types in their filtering string in the `FilterByLastName` TextB
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
-> For UWP: [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
 
 ## Related articles
 

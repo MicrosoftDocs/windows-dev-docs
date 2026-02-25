@@ -6,14 +6,6 @@ ms.date: 12/17/2025
 ms.localizationpriority: medium
 ---
 
-<div class="buttons margin-top-xs">
-  <a href="../introduction.md" class="button button-sm"><span>Start</span></a>
-  <a href="../design/index.md" class="button button-sm"><span>Design</span></a>
-  <a href="../develop/index.md" class="button button-sm"><span>Develop</span></a>
-  <a href="" class="button button-sm button-primary button-filled"><span>Package</span></a>
-  <a href="../publish/index.md" class="button button-sm"><span>Publish</span></a>
-</div>
-
 # Package and deploy Windows apps overview
 
 :::image type="content" source="images/header-packaging.png" alt-text="Blue wrench and screwdriver icons on a light gray banner background representing tools for app packaging and deployment." border="false":::

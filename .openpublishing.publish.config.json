@@ -88,7 +88,7 @@
     {
       "path_to_root": "snippets-windows",
       "url": "https://github.com/MicrosoftDocs/windows-code-snippets-pr",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     },
     {
