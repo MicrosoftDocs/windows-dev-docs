@@ -9,7 +9,7 @@ ms.topic: how-to
 
 # Settings for developers
 
-The **System > Advanced** page in Windows settings includes Developer Mode and additional features that you can use when Developer Mode is enabled. Developer Mode unlocks tools, settings, and features designed for building, deploying, and testing apps on Windows.
+The  **[System > Advanced](ms-settings:developers)** page in Windows settings includes Developer Mode and additional features that you can use when Developer Mode is enabled. Developer Mode unlocks tools, settings, and features designed for building, deploying, and testing apps on Windows.
 
 :::image type="content" source="images/for-developers.png" alt-text="A screenshot of Windows Advanced settings for developers, showing Developer Mode, Device Portal, and Device discovery.":::
 
@@ -26,8 +26,8 @@ If you're writing software with Visual Studio, you *will* need to enable Develop
 To enable Developer Mode, or access other settings:
 
 1. Open Windows Settings.
-2. Search for **Advanced** or go to **System > Advanced**, then scroll to the **For developers** section.
-3. Toggle the Developer Mode setting, at the top of the **For developers** section.
+2. Search for **Advanced** or go to  **[System > Advanced](ms-settings:developers)**, then scroll to the **For developers** section.
+3. Toggle the **Developer Mode setting**, at the top of the **For developers** section.
 4. Read the disclaimer. Click **Yes** to accept the change.
 
    :::image type="content" source="images/use-developer-features.png" alt-text="Developer Mode dialog in Visual Studio":::
@@ -39,7 +39,7 @@ If you try to build a Windows project in Visual Studio when Developer Mode *isn'
 
 :::image type="content" source="images/enable-developer-mode-dialog.jpg" alt-text="Developer Mode dialog in Visual Studio that says Developer Mode needs to be enabled, with a link to settings for developers.":::
 
-If you see this dialog, select **settings for developers** to open the **System > Advanced** settings page.
+If you see this dialog, select **settings for developers** to open the  **[System > Advanced](ms-settings:developers)** settings page.
 
 > [!NOTE]
 > You can go to the **Advanced** settings page at any time to *enable* or *disable* Developer Mode.
