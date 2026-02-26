@@ -69,8 +69,6 @@ The code snippet below shows an example of what your settings file might look li
 }
 ```
 
-In particular, the `"$schema": "https://aka.ms/winget-settings.schema.json",` line is required in order for any of the file's settings to be applied.
-
 We have also defined a schema for the settings file. This allows you to use TAB to discover settings and syntax if your JSON editor supports JSON schemas.
 
 ## Updating settings
