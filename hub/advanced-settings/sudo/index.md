@@ -9,7 +9,7 @@ no-loc: [Gerardo Grignoli]
 
 # Sudo for Windows
 
-**Sudo for Windows** is a new way for users to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
+**Sudo for Windows** is a way for users to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
 
 [Read the announcement](https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/), which includes a demo video and deep-dive into how Sudo for Windows works.
 
@@ -17,12 +17,9 @@ no-loc: [Gerardo Grignoli]
 
 The Sudo for Windows command is available in [Windows 11, version 24H2](https://support.microsoft.com/topic/windows-11-version-24h2-update-history-0929c747-1815-4543-8461-0160d16f15e5) or higher. ([Check for Windows updates](ms-settings:windowsupdate)).
 
-> [!NOTE]
-> Sudo for Windows is not yet available for Windows 10, but may be in the future.
-
 ## How to enable Sudo for Windows
 
-To enable Sudo for Windows, open `Settings > System > For Developers` and set **Enable sudo** to **On**.
+To enable Sudo for Windows, open **[System > Advanced](ms-settings:developers)** in Windows Settings and set **Enable sudo** to **On**.
 
 ![Enable Sudo](../../images/sudo-enable.png)
 
@@ -31,7 +28,7 @@ To enable Sudo for Windows, open `Settings > System > For Developers` and set **
 
 ## How to configure Sudo for Windows
 
-Sudo for Windows currently supports three different configuration options. The configuration can be set from the `Settings > For Developers` menu or programmatically, using the command line. The configuration options include:
+Sudo for Windows currently supports three different configuration options. The configuration can be set from the **[System > Advanced](ms-settings:developers)** menu or programmatically, using the command line. The configuration options include:
 
 - **In a new window** (`forceNewWindow`): The `forceNewWindow` configuration option is the default configuration option for Sudo for Windows. Use `sudo` in this configuration to run the command in a new window. This is similar to the behavior of the `runas /user:admin` command.
 
@@ -39,7 +36,7 @@ Sudo for Windows currently supports three different configuration options. The c
 
 - **Inline** (`normal`): The `normal` configuration option is most similar to how sudo behaves on other operating systems. This configuration will run the elevated process in the current window and the process will be able to receive input from the current console session. This is useful for scenarios where you want to run a command as an administrator and want to allow the command to receive input from the current console window. This configuration option provides the most convenience, but you should only choose this option if you are familiar with the associated [security risks](#security-considerations).
 
-You can select among these configurations from the `Settings > For Developers` menu or change the configuration programmatically, in an elevated command line (admin console), using:
+You can select among these configurations from the **[System > Advanced](ms-settings:developers)** menu or change the configuration programmatically, in an elevated command line (admin console), using:
 
 - `sudo config --enable <configuration_option>`
 

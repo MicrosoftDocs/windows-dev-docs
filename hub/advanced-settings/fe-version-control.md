@@ -20,7 +20,7 @@ ms.date: 01/22/2026
 
 ## Enable version control indicators
 
-1. Open Settings and go to **System > Advanced**.
+1. Open Settings and go to **[System > Advanced](ms-settings:developers)***.
 2. Under **File Explorer + version control**, select **Add folders** and choose the repositories you want File Explorer to recognize.
 3. Return to File Explorer and open one of the selected folders to see repository details.
 
@@ -29,7 +29,7 @@ ms.date: 01/22/2026
 
 ## How to identify repositories
 
-Windows has to know which folders are source code repositories so File Explorer can display the version control information. You can select your repository folders in Windows Advanced Settings > File Explorer settings under the File Explorer + version control header.
+Windows has to know which folders are source code repositories so File Explorer can display the version control information. You can select your repository folders in **Settings > Advanced Settings > File Explorer** settings under the File Explorer + version control header.
 
 ![File Explorer version control Settings](../images/fe-source-settings.png)
 

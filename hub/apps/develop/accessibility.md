@@ -2,8 +2,8 @@
 title: Accessibility in Windows 11 and Windows 10
 description: This page provides the information for you to get started developing accessible Windows apps.
 ms.topic: article
-ms.date: 11/28/2023
-keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
+ms.date: 02/19/2026
+keywords: Accessibility in Windows 11, Accessibility, building accessible win32 apps, building accessible WinUI apps, building accessible WPF apps, building accessible WinForms apps
 ---
 
 # Accessibility in Windows 11 and Windows 10
@@ -24,11 +24,11 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      ![Universal Windows Platform (UWP)](images/platform-uwp.png)
+      ![WinUI and Windows App SDK](images/platform-uwp.png)
 
-      **Universal Windows Platform (UWP)**
+      **WinUI and Windows App SDK**
 
-      Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox, HoloLens, and more), and publish them to the Microsoft Store.
+      Develop accessible apps and tools with the modern Windows UI framework and Windows App SDK.
 
       [Designing inclusive software](/windows/uwp/accessibility/designing-inclusive-software)
 
@@ -145,16 +145,16 @@ Download and run full Windows samples that demonstrate various accessibility fea
       These samples demonstrate the functionality and programming model for Windows and Windows Server. 
    :::column-end:::
    :::column:::
-      [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
+      [Windows App SDK samples on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples)
 
-      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10 and later.
+      These samples demonstrate the API usage patterns for Windows App SDK and WinUI.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
-      [WinUI for UWP Gallery](https://github.com/Microsoft/WinUI-Gallery)
+      [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)
 
-      This app demonstrates the various Xaml controls supported in the Fluent Design System.
+      This app demonstrates the various WinUI controls supported in the Fluent Design System.
    :::column-end:::
 :::row-end:::
 
@@ -177,11 +177,6 @@ Various videos covering how to build accessible Windows applications to general 
    :::column:::
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
    :::column-end:::
-:::row-end:::
-:::row:::
-
-
-
 :::row-end:::
 :::row:::
    :::column:::
