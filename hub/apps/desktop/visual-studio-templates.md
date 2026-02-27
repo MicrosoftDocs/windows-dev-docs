@@ -16,7 +16,7 @@ Visual Studio 2019 (and later) provides many project and item templates that hel
 
 For more information about installing and configuring Visual Studio to get access to these templates, see [Start developing Windows apps](../get-started/start-here.md).
 
-## WinUI templates
+## WinUI 3 templates
 
 [WinUI](../winui/index.md) is the modern native user interface (UI) platform for Windows apps across desktop (.NET and native Win32) and UWP app platforms. [WinUI](../winui/index.md) is the latest major version of WinUI, and it transforms WinUI into a full UX framework for desktop Windows apps.
 

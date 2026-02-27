@@ -14,7 +14,7 @@ This FAQ provides answers to common questions about Windows application developm
 Topics covered include:
 
 - Getting started and the Windows app development landscape.
-- Native Windows-only app development with WinUI, Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
+- Native Windows-only app development with WinUI 3, Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
 - Windows Software Development Kit (SDK) and Windows App SDK.
 - Targeting Windows as part of your cross-platform development strategy.
 - Hybrid and web app development with .NET MAUI, Blazor, and ASP.NET Core.

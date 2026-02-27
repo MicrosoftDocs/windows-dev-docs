@@ -6,7 +6,7 @@ ms.date: 10/28/2025
 ms.localizationpriority: medium
 ---
 
-# Test apps built with the Windows App SDK and WinUI
+# Test apps built with the Windows App SDK and WinUI 3
 
 In this topic we provide some recommendations for how to test and validate functionality in apps created with the [Windows App SDK](/windows/apps/windows-app-sdk/) using [Windows UI Library (WinUI)](/windows/apps/winui/winui3/) user interface (UI) features.
 

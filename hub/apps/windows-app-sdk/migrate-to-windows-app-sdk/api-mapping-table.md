@@ -99,7 +99,7 @@ There are differences in the names of namespaces and classes (including UI contr
 
 ## Third-party libraries
 
-This section documents various libraries that were supported in UWP, and need to be changed when using WinUI.
+This section documents various libraries that were supported in UWP, and need to be changed when using WinUI 3.
 
 | UWP | Windows App SDK |
 | - | - |

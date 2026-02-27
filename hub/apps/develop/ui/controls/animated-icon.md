@@ -14,7 +14,7 @@ An AnimatedIcon control plays animated images in response to user intera
 
 Animated icons can draw attention to a UI component, such as the next button in a tutorial, or simply reflect the action associated with the icon in an entertaining and interesting way.
 
-Custom animations can be created with [Adobe AfterEffects](https://www.adobe.com/products/aftereffects.html) and rendered with the [Lottie-Windows](/windows/communitytoolkit/animations/lottie) library to use as an animated icon in your WinUI application. For more detail, see [Use Lottie to create animated content for an AnimatedIcon](#use-lottie-to-create-animated-content-for-an-animatedicon) later in this article.
+Custom animations can be created with [Adobe AfterEffects](https://www.adobe.com/products/aftereffects.html) and rendered with the [Lottie-Windows](/windows/communitytoolkit/animations/lottie) library to use as an animated icon in your WinUI 3 application. For more detail, see [Use Lottie to create animated content for an AnimatedIcon](#use-lottie-to-create-animated-content-for-an-animatedicon) later in this article.
 
 The following example shows a basic animated search icon that was created in Adobe AfterEffects and rendered through Lottie.
 

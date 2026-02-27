@@ -11,7 +11,7 @@ appliesto:
 ---
 # Show multiple windows for your app
 
-In your WinUI app, you can show your app content in secondary windows while still working on the same UI thread across each window.
+In your WinUI 3 app, you can show your app content in secondary windows while still working on the same UI thread across each window.
 
 > [!div class="checklist"]
 >

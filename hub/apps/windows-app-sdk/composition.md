@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 The Visual layer in the [Windows App SDK/WinUI](index.md) provides a high performance, retained-mode API for graphics, effects, animations, and input. It's the foundation for all UI across Windows devices.
 
-The types in [Microsoft.UI.Composition](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) form the Windows App SDK/WinUI implementation of the Visual layer. It's very similar to the [UWP Visual layer](/windows/uwp/composition/visual-layer), which is implemented in the **Windows.UI.Composition** namespace. The differences between the two and the missing functionality from the Windows App SDK/WinUI Visual layer are detailed below.
+The types in [Microsoft.UI.Composition](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) form the Windows App SDK/WinUI 3 implementation of the Visual layer. It's very similar to the [UWP Visual layer](/windows/uwp/composition/visual-layer), which is implemented in the **Windows.UI.Composition** namespace. The differences between the two and the missing functionality from the Windows App SDK/WinUI Visual layer are detailed below.
 
 ## Differences from UWP
 

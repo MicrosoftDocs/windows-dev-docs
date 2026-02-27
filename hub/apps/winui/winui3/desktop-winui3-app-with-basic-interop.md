@@ -8,7 +8,7 @@ ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Build a C# .NET app with WinUI and Win32 interop
+# Build a C# .NET app with WinUI 3 and Win32 interop
 
 In this topic, we step through how to build a basic **C# .NET** application with WinUI and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
 

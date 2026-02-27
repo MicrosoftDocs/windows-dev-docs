@@ -7,7 +7,7 @@ keywords: Windows, App, SDK, port, porting, migrate, migration, support
 ms.localizationpriority: medium
 ---
 
-# What's supported when migrating from UWP to WinUI
+# What's supported when migrating from UWP to WinUI 3
 
 WinUI and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
 

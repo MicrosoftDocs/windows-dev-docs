@@ -11,7 +11,7 @@ content-type: how-to
 #Customer intent: As a Windows developer, I want to learn how to integrate OpenAI's text generation and prompting APIs into my WinUI / Windows App SDK desktop app so that I can build a chat-like interface that generates responses to messages.
 ---
 
-# Add OpenAI chat completions to your WinUI / Windows App SDK desktop app
+# Add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app
 
 In this how-to, you'll learn how to integrate OpenAI's API into your WinUI / Windows App SDK desktop app. We'll build a chat-like interface that lets you generate responses to messages using OpenAI's [text generation and prompting APIs](https://platform.openai.com/docs/guides/text):
 

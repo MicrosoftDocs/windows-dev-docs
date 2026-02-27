@@ -6,7 +6,7 @@ ms.date: 03/06/2024
 #Customer intent: As a Windows application developer, I want to improve the responsiveness of my WinUI application by finding slow UI thread frames to optimize.
 ---
 
-# WinUI performance optimization
+# WinUI 3 performance optimization
 
 This topic describes how to use performance monitoring tools from the [Windows Performance Toolkit](/windows-hardware/test/wpt/) to produce in-depth performance profiles for WinUI applications.
 

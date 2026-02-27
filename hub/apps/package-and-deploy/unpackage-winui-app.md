@@ -9,7 +9,7 @@ content-type: how-to
 #Customer intent: As a Windows developer, I want to learn how to create an unpackaged WinUI app.
 ---
 
-# Unpackage a WinUI app
+# Unpackage a WinUI 3 app
 
 Packaging is an important part of any Windows App SDK project. For details on your options, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app).
 

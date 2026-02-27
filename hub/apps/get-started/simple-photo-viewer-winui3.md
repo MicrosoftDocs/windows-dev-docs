@@ -7,7 +7,7 @@ keywords: Windows, App, SDK, WinUI, WinUI, photo, viewer, Windows 11, Windows 10
 ms.localizationpriority: medium
 ---
 
-# Tutorial: Create a simple photo viewer with WinUI
+# Tutorial: Create a simple photo viewer with WinUI 3
 
 > [!NOTE]
 > For info about the benefits of WinUI, as well as other app type options, see [Overview of framework options](./index.md).

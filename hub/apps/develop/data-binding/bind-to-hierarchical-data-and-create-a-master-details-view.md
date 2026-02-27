@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # customer intent: As a Windows developer, I want to learn how to bind hierarchical data and create a master/details view with WinUI.
 ---
 
-# Bind hierarchical data and create a master/details view with WinUI
+# Bind hierarchical data and create a master/details view with WinUI 3
 
 Learn how to create a multilevel master/details view of hierarchical data in WinUI by binding items controls to [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances. This article explains how to use the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) for better performance and the [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension) when flexibility is needed.
 

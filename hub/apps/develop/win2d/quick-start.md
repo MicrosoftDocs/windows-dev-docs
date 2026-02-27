@@ -26,7 +26,7 @@ Make sure to set up your machine with all the necessary tools:
 
 ## Create a new Win2D project
 
-Follow the steps in the [Win2D "Hello, World!" quickstart](./hellowin2dworld.md) to create a new project using Win2D, and to add a reference to the Win2D NuGet package. You can use either WinUI (Windows App SDK) or the Universal Windows Platform (UWP).
+Follow the steps in the [Win2D "Hello, World!" quickstart](./hellowin2dworld.md) to create a new project using Win2D, and to add a reference to the Win2D NuGet package. You can use either WinUI 3 (Windows App SDK) or the Universal Windows Platform (UWP).
 
 ## Add a Win2D CanvasControl to your app's XAML
 

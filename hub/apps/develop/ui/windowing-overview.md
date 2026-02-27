@@ -14,7 +14,7 @@ appliesto:
   - ✅ <a href="hhttps://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 
-# Windowing overview for WinUI and Windows App SDK
+# Windowing overview for WinUI 3 and Windows App SDK
 
 Windowing functionality in a WinUI app is provided by a combination of the XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, both of which are based on the [Win32 HWND model](/windows/win32/winmsg/about-windows).
 

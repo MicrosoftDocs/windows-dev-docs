@@ -24,7 +24,7 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      ![WinUI and Windows App SDK](images/platform-uwp.png)
+      ![WinUI 3 and Windows App SDK](images/platform-uwp.png)
 
       **WinUI and Windows App SDK**
 

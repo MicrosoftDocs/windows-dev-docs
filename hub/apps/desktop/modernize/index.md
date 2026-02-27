@@ -24,7 +24,7 @@ The Windows App SDK is a set of new developer components and tools that represen
 
 For more information, see [Windows App SDK](../../windows-app-sdk/index.md).
 
-## WinUI
+## WinUI 3
 
 WinUI is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI, has grown in scope and is now the modern native UI platform for Windows desktop apps.
 

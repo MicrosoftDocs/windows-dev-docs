@@ -11,7 +11,7 @@ keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, 
 
 An app's instancing model determines whether multiple instances of your app's process can run at the same time. The app lifecycle API in the Windows App SDK provides a way to control how many instances of your app can run at the same time, and to redirect activations to other instances when necessary.
 
-This article describes how to use the app lifecycle API to control app instancing in your WinUI apps.
+This article describes how to use the app lifecycle API to control app instancing in your WinUI 3 apps.
 
 ## Prerequisites
 

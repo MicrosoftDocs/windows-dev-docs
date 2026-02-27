@@ -27,7 +27,7 @@ Depending on the situation, the scroll viewer's scrollbar uses two different vis
 :::row-end:::
 
 > [!IMPORTANT]
-> WinUI has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
+> WinUI 3 has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
 >
 > The `ScrollView` control is similar in behavior and usage to the `ScrollViewer` control, but is based on [InteractionTracker](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.interactions.interactiontracker), has new features such as animation-driven view changes, and is designed to ensure full functionality with [ItemsRepeater](../../../design/controls/items-repeater.md).
 

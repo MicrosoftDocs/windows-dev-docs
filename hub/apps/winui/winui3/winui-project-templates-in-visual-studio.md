@@ -6,7 +6,7 @@ ms.date: 07/09/2024
 ms.topic: article
 ---
 
-# WinUI templates in Visual Studio
+# WinUI 3 templates in Visual Studio
 
 Once you've set up your development computer (see [Start developing Windows apps](../../get-started/start-here.md)), you're ready to create a WinUI app by starting from one of the project templates in Visual Studio. This topic describes the available project and item templates.
 

@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 # customer intent: As a Windows app developer, I want to use the file picker APIs in Windows App SDK to allow users to save files in my WinUI app, so that they can specify the name and location of the file.
 ---
 
-# Save a file with Windows App SDK picker in WinUI
+# Save a file with Windows App SDK picker in WinUI 3
 
 When building Windows apps with Windows App SDK, users often need to save files like documents, images, or other content to specific locations on their device. The Windows App SDK provides the [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker) class to create a consistent, user-friendly interface that lets users choose where to save files and what to name them.
 

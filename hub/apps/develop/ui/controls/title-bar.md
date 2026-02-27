@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 The TitleBar control provides a simplified way to create a custom title bar for your app. The title bar is a fundamental component of a Windows app's user interface that identifies the app via its icon and title, houses the system caption buttons that let a user close, maximize, minimize, and restore the window, and lets a user drag the window around the screen.
 
-You can use a custom title bar to better integrate the title bar area with your app UI. The title bar can be customized to match the app's visual style using Mica theming. It can include other relevant information, such as a document title or the current state (e.g., “Editing,” “Viewing,” etc.). It can also host other WinUI controls, like AutoSuggestBox and PersonPicture, providing a cohesive user experience for your app.
+You can use a custom title bar to better integrate the title bar area with your app UI. The title bar can be customized to match the app's visual style using Mica theming. It can include other relevant information, such as a document title or the current state (e.g., “Editing,” “Viewing,” etc.). It can also host other WinUI 3 controls, like AutoSuggestBox and PersonPicture, providing a cohesive user experience for your app.
 
 ![Screenshot of an app window with a custom title bar](images/titlebar/title-bar-custom.png)
 

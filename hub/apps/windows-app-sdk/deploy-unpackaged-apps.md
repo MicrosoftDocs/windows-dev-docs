@@ -13,7 +13,7 @@ This topic provides guidance about deploying apps that are packaged with externa
 
 * Such apps are desktop apps (not UWP apps).
 * They can be written in a .NET language such as C#, or in C++.
-* For their user-interface, they can use WinUI, or WPF, or WinForms, or another UI framework.
+* For their user-interface, they can use WinUI 3, or WPF, or WinForms, or another UI framework.
 
 ## Overview
 

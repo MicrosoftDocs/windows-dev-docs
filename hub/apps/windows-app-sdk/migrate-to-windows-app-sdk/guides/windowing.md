@@ -24,7 +24,7 @@ The Windows App SDK provides a [**Microsoft.UI.Windowing.AppWindow**](/windows/w
 To take advantage of the Windows App SDK windowing APIs means that you'll migrate your UWP code to use the Win32 model. For more info about the Windows App SDK **AppWindow**, see [Manage app windows](../../windowing/windowing-overview.md).
 
 > [!TIP]
-> The [Manage app windows](../../windowing/windowing-overview.md) topic contains a code example demonstrating how to retrieve an **AppWindow** from a WinUI window. In your WinUI app, use that code pattern so that you can call the **AppWindow** APIs mentioned in the rest of this topic.
+> The [Manage app windows](../../windowing/windowing-overview.md) topic contains a code example demonstrating how to retrieve an **AppWindow** from a WinUI 3 window. In your WinUI app, use that code pattern so that you can call the **AppWindow** APIs mentioned in the rest of this topic.
 
 ## Window types in UWP versus the Windows App SDK
 

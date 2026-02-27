@@ -229,7 +229,7 @@ Different application types have different goals, architectures, and platform re
 **Use case:** Lightweight, focused tools that run quickly and feel modern.
 
 **Recommended technologies:**
-- UI: [WinUI](/windows/apps/winui/winui3/), [.NET MAUI](/dotnet/maui/)
+- UI: [WinUI 3](/windows/apps/winui/winui3/), [.NET MAUI](/dotnet/maui/)
 - Framework: [Windows App SDK](/windows/apps/windows-app-sdk/)
 - Packaging: [MSIX](/windows/msix/)
 - Design: [Fluent Design System](/windows/apps/design/)
