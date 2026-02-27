@@ -1,5 +1,5 @@
 ---
-title: Create a Windows Hello login service
+title: "Tutorial: Create a Windows Hello login service"
 description: This is the second part of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in packaged Windows apps.
 ms.date: 07/08/2024
 ms.topic: how-to
@@ -7,7 +7,7 @@ keywords: windows, winrt, security, identity, winui
 ms.custom: sfi-image-nochange
 ---
 
-# Create a Windows Hello login service
+# Tutorial: Create a Windows Hello login service
 
 This is the second part of a complete walkthrough on how to use Windows Hello as an alternative to traditional username and password authentication systems in packaged Windows apps. This article picks up where Part 1, [Windows Hello login app](windows-hello-login.md), left off and extends the functionality to demonstrate how you can integrate Windows Hello into your existing application.
 
