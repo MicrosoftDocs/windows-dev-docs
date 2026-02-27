@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/performance/introduction.md",
+      "redirect_url": "/windows/apps/performance/",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/android/emulator.md",
       "redirect_url": "/windows/dev-environment/",
       "redirect_document_id": false
