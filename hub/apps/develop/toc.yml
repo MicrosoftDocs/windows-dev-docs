@@ -561,6 +561,8 @@ items:
         href: security/credential-locker.md
       - name: Fingerprint biometrics
         href: security/fingerprint-biometrics.md
+      - name: OAuth 2.0
+        href: security/oauth2.md  
       - name: Passkeys
         items:
         - name: Overview
@@ -577,8 +579,6 @@ items:
           href: security/reference.md
         - name: Plugin passkey manager support
           href: security/third-party.md
-      - name: Implement OAuth 2.0 functionality
-        href: security/oauth2.md
       - name: Share certificates between apps
         href: security/share-certificates.md
       - name: Smart cards
@@ -587,9 +587,9 @@ items:
         items:
         - name: Overview
           href: security/windows-hello-login.md
-        - name: Create a Windows Hello login app
+        - name: "Tutorial: Create a Windows Hello login app"
           href: security/windows-hello-login.md
-        - name: Create a Windows Hello login service
+        - name: "Tutorial: Create a Windows Hello login service"
           href: security/windows-hello-auth-service.md
     - name: Speech
       href: speech.md
