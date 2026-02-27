@@ -239,7 +239,7 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 >
 > _**x**_ is the number of the current item. _**N**_ is the total number of items in the group.
 
-## Create a WinUI RadioButtons group
+## Create a WinUI 3 RadioButtons group
 
 > [!div class="checklist"]
 >

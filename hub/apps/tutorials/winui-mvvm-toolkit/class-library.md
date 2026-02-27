@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Create a class library project
 
-To enable unit testing of your ViewModels and services, create a separate class library project. You need this project because WinUI unit test projects can't directly reference WinUI app projects.
+To enable unit testing of your ViewModels and services, create a separate class library project. You need this project because WinUI 3 unit test projects can't directly reference WinUI app projects.
 
 ## Understanding the WinUI Class Library template
 

@@ -10,7 +10,7 @@ dev_langs:
   - cppwinrt
 ---
 
-# User interface migration (including WinUI)
+# User interface migration (including WinUI 3)
 
 This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
 

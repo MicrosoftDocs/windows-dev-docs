@@ -15,7 +15,7 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 ## Latest releases
 
-Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI.
+Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI 3.
 
 :::row:::
     :::column:::

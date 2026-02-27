@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Quick start: Set up your environment and create a WinUI project
+# Quick start: Set up your environment and create a WinUI 3 project
 
 This quick start guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To develop WinUI apps, you need:
 

@@ -36,7 +36,7 @@ The Live Visual Tree and Live Property Explorer features ship with Visual Studio
 
 #### When to use Live Visual Tree
 
-Use these tools when building apps with [WinUI](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI for UWP](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
+Use these tools when building apps with [WinUI 3](../../winui/winui3/index.md) in the [Windows App SDK](../../windows-app-sdk/index.md), [WinUI for UWP](/windows/uwp/get-started/winui2/) for [UWP](/windows/uwp/), [WPF](/dotnet/desktop/wpf/), [.NET MAUI](/dotnet/maui/), [WinForms](/dotnet/desktop/winforms/), or [React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows).
 
 - For more information on WinUI in the Windows App SDK, WinUI for UWP, and WPF, see [Inspect XAML properties while debugging](/visualstudio/xaml-tools/inspect-xaml-properties-while-debugging).
 - For more information on .NET MAUI, see [Inspect the visual tree of a .NET MAUI app](/dotnet/maui/user-interface/live-visual-tree).

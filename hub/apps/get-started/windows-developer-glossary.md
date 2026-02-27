@@ -19,7 +19,7 @@ Manage an application's execution state: not running, running in the background,
 
 #### Application model
 
-Often referred to as "app model." The application model combines deployment, isolation, lifecycle, and presentation components that are unique to a given application development technology. For example, Windows App SDK and WinUI apps run on the Win32 app model, while WinUI for UWP apps run on the UWP app model.
+Often referred to as "app model." The application model combines deployment, isolation, lifecycle, and presentation components that are unique to a given application development technology. For example, Windows App SDK and WinUI 3 apps run on the Win32 app model, while WinUI for UWP apps run on the UWP app model.
 
 #### Application packaging
 

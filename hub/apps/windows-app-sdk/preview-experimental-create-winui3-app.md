@@ -12,7 +12,7 @@ ms.custom:
 
 <!--todo: add to FAQ - "can we create a winui3 app without creating a win app sdk app?" - no, you build Windows desktop apps using the Win App SDK library. -->
 
-# Create a WinUI app using Preview and Experimental channels of the Windows App SDK
+# Create a WinUI 3 app using Preview and Experimental channels of the Windows App SDK
 
 The [Windows App SDK](index.md) includes WinUI project templates that enable you to create desktop apps with an entirely WinUI-based user interface. When you create apps using these project templates, the entire user interface of your application is implemented using windows, controls, and other UI types provided by WinUI. For a complete list of the project templates, see [WinUI templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md).
 

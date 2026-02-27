@@ -6,7 +6,7 @@ ms.date: 11/12/2021
 ms.topic: how-to
 ---
 
-# Localize your WinUI app
+# Localize your WinUI 3 app
 
 For more info about the value proposition of localizing your app, see [Globalization and localization](../../design/globalizing/globalizing-portal.md).
 

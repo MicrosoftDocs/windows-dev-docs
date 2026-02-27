@@ -16,7 +16,7 @@ This topic lists the available C# interop classes, and shows how to use them. Th
 
 The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET either as part of the [Windows App SDK](../../windows-app-sdk/index.md), or else by using a particular [Target Framework Moniker](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option), as we'll see.
 
-### In a WinUI C# desktop project
+### In a WinUI 3 C# desktop project
 
 When you create a new WinUI project in Visual Studio (see [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)), your project is already configured, and you can start using all of the C# interop classes right away.
 

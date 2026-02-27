@@ -52,7 +52,7 @@ For this reason, a Panel in XAML has often been synonymous with layout, but tech
 The [ItemsRepeater](../controls/items-repeater.md) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
 
 > [!NOTE]
-> The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI package.
+> The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI 3 package.
 
 #### Containers
 

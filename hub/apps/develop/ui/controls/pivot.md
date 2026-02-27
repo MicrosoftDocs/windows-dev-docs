@@ -19,7 +19,7 @@ The Pivot control enables touch-swiping between a small set of content sections.
 > [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../../../design/basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
-> - **WinUI** - Use the [SelectorBar](../../../design/controls/selector-bar.md) control.
+> - **WinUI 3** - Use the [SelectorBar](../../../design/controls/selector-bar.md) control.
 > - **WinUI for UWP/UWP** - Use a [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md) control instead of a Pivot control. See the [Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example.
 
 To create a Pivot-like UI when using WinUI and the Windows App SDK, use the [SelectorBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar) control.

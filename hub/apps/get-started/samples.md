@@ -17,7 +17,7 @@ This page contains links to resources that can make you more efficient as you de
 
 :::image type="content" source="./images/WASDK.png" alt-text="Header image for Windows App SDK" border="false":::
 
-The [**WindowsAppSDK-Samples repository**](https://github.com/microsoft/WindowsAppSDK-Samples) provides a collection of code samples that demonstrate how to use the Windows App SDK to build modern Windows applications. These samples cover key features such as WinUI, app lifecycle, windowing, and push notifications, offering practical, hands-on guidance for developers. Whether you're new to the Windows App SDK or looking for specific implementation details, this repository serves as a valuable resource to accelerate development and explore best practices. You can find other samples in our [Samples Browser](/samples/browse/).
+The [**WindowsAppSDK-Samples repository**](https://github.com/microsoft/WindowsAppSDK-Samples) provides a collection of code samples that demonstrate how to use the Windows App SDK to build modern Windows applications. These samples cover key features such as WinUI 3, app lifecycle, windowing, and push notifications, offering practical, hands-on guidance for developers. Whether you're new to the Windows App SDK or looking for specific implementation details, this repository serves as a valuable resource to accelerate development and explore best practices. You can find other samples in our [Samples Browser](/samples/browse/).
 
 
 > [!div class="nextstepaction"]

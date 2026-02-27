@@ -18,7 +18,7 @@ dev_langs:
 
 [Acrylic](../design/style/acrylic.md) is a semi-transparent material that replicates the effect of frosted glass. It's used only for transient, light-dismiss surfaces such as flyouts and context menus.
 
-This article describes how to apply Mica or Acrylic as the base layer of your Windows App SDK/WinUI XAML app.
+This article describes how to apply Mica or Acrylic as the base layer of your Windows App SDK/WinUI 3 XAML app.
 
 > [!NOTE]
 >

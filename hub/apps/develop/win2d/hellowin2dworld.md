@@ -13,7 +13,7 @@ In this topic you'll create a very simple "Hello, World!" project for Win2D.
 
 In Visual Studio, create a new project from one of the following project templates:
 
-* **WinUI (Windows App SDK)**. To create a new WinUI project, use the **WinUI Blank App (Packaged)** project template. You can find that project template by choosing language: either *C#* or *C++*; platform: *Windows*; project type: *Desktop*.
+* **WinUI 3 (Windows App SDK)**. To create a new WinUI project, use the **WinUI Blank App (Packaged)** project template. You can find that project template by choosing language: either *C#* or *C++*; platform: *Windows*; project type: *Desktop*.
 * **Universal Windows Platform (UWP)**. To create a new UWP project, use the **Blank App (Universal Windows)** or **Blank App (C++/WinRT)** or **Blank App (Universal Windows - C++/CX)** project template. For language, choose: either *C#* or *C++*; platform: *Windows*; project type: *UWP*.
 
 > [!IMPORTANT]

@@ -5,7 +5,7 @@ ms.topic: article
 ms.date: 07/15/2024
 ---
 
-# WinUI
+# WinUI 3
 
 :::image type="icon" source="images/winui-hero.png":::
 

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Update existing projects to a different release of the Windows App SDK
 
-If you created a project with an earlier version of the Windows App SDK (previously called Project Reunion) or WinUI, then you can update the project to use a more recent release. To learn more about what's currently available in each release channel, see [Windows App SDK release channels](release-channels.md).
+If you created a project with an earlier version of the Windows App SDK (previously called Project Reunion) or WinUI 3, then you can update the project to use a more recent release. To learn more about what's currently available in each release channel, see [Windows App SDK release channels](release-channels.md).
 
 > [!NOTE]
 > These instructions might have issues due to the uniqueness of each app's individual scenario. Please carefully follow them, and if you find an issue then please file a bug against the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml/issues/new/choose) GitHub repo.

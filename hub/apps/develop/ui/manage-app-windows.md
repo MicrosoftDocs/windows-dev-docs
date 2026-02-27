@@ -19,7 +19,7 @@ appliesto:
 The Windows App SDK provides the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which represents a high-level abstraction of the HWND. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows without the need to access the HWND directly.
 
 > [!NOTE]
-> This article demonstrates how to use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs in your app. As a prerequisite, we recommend that you read and understand the AppWindow information in [Windowing overview for WinUI and Windows App SDK](../ui-input/windowing-overview.md), which is applicable whether you use WinUI or another UI framework.
+> This article demonstrates how to use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs in your app. As a prerequisite, we recommend that you read and understand the AppWindow information in [Windowing overview for WinUI 3 and Windows App SDK](../ui-input/windowing-overview.md), which is applicable whether you use WinUI or another UI framework.
 
 > [!div class="checklist"]
 >

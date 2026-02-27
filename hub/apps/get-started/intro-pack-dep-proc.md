@@ -38,7 +38,7 @@ For more details about packaged versus unpackaged, see [Deployment overview](/wi
 
 For info about how to configure your app as packaged or unpackaged:
 
-* **WinUI apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](/windows/apps/package-and-deploy/project-properties); and see [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+* **WinUI 3 apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](/windows/apps/package-and-deploy/project-properties); and see [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
 * **Desktop apps**. See [Set up your desktop app for MSIX packaging](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 * **Universal Windows Platform (UWP) apps**. UWP apps are already configured as packaged; and that configuration can't be changed.
 

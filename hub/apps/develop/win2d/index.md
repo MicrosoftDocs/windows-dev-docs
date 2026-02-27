@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 Win2D is an easy-to-use Windows Runtime (WinRT) API for immediate-mode 2D graphics rendering with GPU acceleration. It's ideal for creating simple games, displays such as charts, and other simple 2D graphics.
 
-You can use Win2D in your WinUI (Windows App SDK) apps or Universal Windows Platform (UWP) apps, using either C#, C++, or VB. Win2D utilizes the power of Direct2D, and it integrates seamlessly with XAML on both WinUI (Windows App SDK) and UWP.
+You can use Win2D in your WinUI 3 (Windows App SDK) apps or Universal Windows Platform (UWP) apps, using either C#, C++, or VB. Win2D utilizes the power of Direct2D, and it integrates seamlessly with XAML on both WinUI (Windows App SDK) and UWP.
 
 > [!IMPORTANT]
 > Win2D for WinUI (Windows App SDK) is a work-in-progress, and some features aren't supported. This documentation refers to both the WinUI and UWP versions, which mostly share the same API surface and functionality. Whenever there's any relevant differences between the two, we'll call it out in the documentation. But otherwise, the info being presented applies to both platforms in the same way.
