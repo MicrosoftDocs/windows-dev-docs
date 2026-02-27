@@ -541,8 +541,6 @@ items:
       items:
       - name: Overview
         href: ../performance/index.md
-      - name: Introduction to performance
-        href: ../performance/introduction.md
       - name: Choosing performance tools
         href: ../performance/choose-between-tools.md
       - name: Improve disk and memory use
