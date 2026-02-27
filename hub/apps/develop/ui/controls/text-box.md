@@ -83,7 +83,7 @@ For more info about choosing the right text control, see the [Text controls](../
 > - **Important APIs:** [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the TextBox in action](winui3gallery:/item/TextBox)
+> [Open the WinUI 3 Gallery app and see the TextBox in action](winui3gallery:/item/TextBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -243,7 +243,7 @@ Paste | the clipboard contains text.
 Select all | the TextBox contains text.
 Undo | text has been changed.
 
-To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui3gallery:/item/RichEditBox">WinUI Gallery</a>. For design info, see Guidelines for [context menus](../../../design/controls/menus.md).
+To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui3gallery:/item/RichEditBox">WinUI 3 Gallery</a>. For design info, see Guidelines for [context menus](../../../design/controls/menus.md).
 
 ### Select, copy, and paste
 

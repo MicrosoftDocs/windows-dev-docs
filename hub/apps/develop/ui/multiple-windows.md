@@ -18,7 +18,7 @@ In your WinUI app, you can show your app content in secondary windows while stil
 > - **Important APIs**: [Microsoft.UI.Windowing namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing), [Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see multiple windows in action](winui3gallery:/item/CreateMultipleWindows)
+> [Open the WinUI 3 Gallery app and see multiple windows in action](winui3gallery:/item/CreateMultipleWindows)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

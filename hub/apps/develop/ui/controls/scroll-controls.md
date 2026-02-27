@@ -76,9 +76,9 @@ Various APIs are available that let you get the height and width of these region
 > - **Important APIs:** [ScrollView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer), [ScrollBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollbar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
+> [Open the WinUI 3 Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
 >
-> [Open the WinUI Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
+> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -464,7 +464,7 @@ Use the `MinZoomFactor` and `MaxZoomFactor` properties to control the amount the
 
 ### Programmatic zoom
 
-The `ZoomFactor` property is read-only, but methods are provided to let you zoom programmatically. A typical use for this is to connect the scroll viewer to a Slider that controls the zoom amount, or a button to reset the zoom level. (See ScrollViewer in the WinUI Gallery app to see an example of a zoom slider.)
+The `ZoomFactor` property is read-only, but methods are provided to let you zoom programmatically. A typical use for this is to connect the scroll viewer to a Slider that controls the zoom amount, or a button to reset the zoom level. (See ScrollViewer in the WinUI 3 Gallery app to see an example of a zoom slider.)
 
 ### [ScrollView](#tab/scrollview)
 

@@ -94,8 +94,8 @@ To get started with WinUI, you can try out these resources to get you started:
         Setup your development environment and build your first WinUI app.
     :::column-end:::
     :::column:::
-        [![WinUI Gallery](images/winui-gallery.png)](../../get-started/samples.md#winui-gallery)<br>
-        **[WinUI Gallery](../../get-started/samples.md#winui-gallery)**<br>
+        [![WinUI 3 Gallery](images/winui-gallery.png)](../../get-started/samples.md#winui-3-gallery)<br>
+        **[WinUI 3 Gallery](../../get-started/samples.md#winui-3-gallery)**<br>
         Explore interactive examples of WinUI controls, features, and functionality.
     :::column-end:::
     :::column:::

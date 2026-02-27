@@ -59,7 +59,7 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 > - **Important APIs:** [AnimatedIcon class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
+> [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery:/item/AnimatedIcon)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

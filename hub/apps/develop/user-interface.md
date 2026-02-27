@@ -114,7 +114,7 @@ WinUI is the latest generation of WinUI. WinUI for UWP and 3 share many of the s
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
+- Samples: [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
 
 ### [WinUI for UWP](#tab/winui-2)
 

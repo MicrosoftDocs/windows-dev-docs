@@ -23,15 +23,15 @@ The [**WindowsAppSDK-Samples repository**](https://github.com/microsoft/WindowsA
 > [!div class="nextstepaction"]
 > [Explore all Windows App SDK samples](https://github.com/microsoft/WindowsAppSDK-Samples)
 
-## WinUI Gallery
+## WinUI 3 Gallery
 
-:::image type="content" source="./images/winui3gallery.png" alt-text="Header image for WinUI Gallery" border="false":::
+:::image type="content" source="./images/winui3gallery.png" alt-text="Header image for WinUI 3 Gallery" border="false":::
 
-The [**WinUI Gallery**](https://github.com/microsoft/WinUI-Gallery) is the must-have companion app for WinUI developers. It's a sample app that showcases the full range of  WinUI controls, styles, design guidance, and capabilities. This interactive gallery helps you explore and experiment with WinUI components, view XAML code examples, and understand best practices for building modern, fluent Windows applications. Whether you're designing a new app or refining an existing UI, the WinUI Gallery is an essential reference for leveraging the power of WinUI in your projects. You can either [browse the repository](https://github.com/microsoft/WinUI-Gallery) for source code or [**download the WinUI Gallery from the Microsoft Store**](https://aka.ms/winuigallery).
+The [**WinUI 3 Gallery**](https://github.com/microsoft/WinUI-Gallery) is the must-have companion app for WinUI developers. It's a sample app that showcases the full range of  WinUI controls, styles, design guidance, and capabilities. This interactive gallery helps you explore and experiment with WinUI components, view XAML code examples, and understand best practices for building modern, fluent Windows applications. Whether you're designing a new app or refining an existing UI, the WinUI 3 Gallery is an essential reference for leveraging the power of WinUI in your projects. You can either [browse the repository](https://github.com/microsoft/WinUI-Gallery) for source code or [**download the WinUI 3 Gallery from the Microsoft Store**](https://aka.ms/winuigallery).
 
 
 > [!div class="nextstepaction"]
-> [Get started with WinUI Gallery](https://aka.ms/winuigallery)
+> [Get started with WinUI 3 Gallery](https://aka.ms/winuigallery)
 
 ## Windows Community Toolkit
 
