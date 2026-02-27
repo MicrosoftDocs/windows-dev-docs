@@ -5,7 +5,7 @@ author: jwmsft
 ms.author: jimwalk
 ms.date: 09/02/2025
 ms.topic: tutorial
-no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage.xaml", "AllNotes.cs", "WinUI Gallery"]
+no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage.xaml", "AllNotes.cs", "WinUI 3 Gallery"]
 ---
 # Add a view and model for all notes
 
@@ -299,7 +299,7 @@ And when you run the app with a Dark color setting, it will look like this:
 - [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md)
 
 > [!TIP]
-> The WinUI Gallery app is a great way to learn about different WinUI controls and design guidelines. To see the theme resources used in the data template, [open the WinUI Gallery app to the Color guidance](winui3gallery://item/Color). From there, you can see what the resources look like and copy the values you need directly from the app.
+> The WinUI 3 Gallery app is a great way to learn about different WinUI controls and design guidelines. To see the theme resources used in the data template, [open the WinUI 3 Gallery app to the Color guidance](winui3gallery://item/Color). From there, you can see what the resources look like and copy the values you need directly from the app.
 >
 > You can also open the [Typography page](winui3gallery://item/Typography) and [Geometry page](winui3gallery://item/Geometry) to see other built-in resources used in this data template.
 

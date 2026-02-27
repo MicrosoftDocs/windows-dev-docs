@@ -30,7 +30,7 @@ You can use a NumberBox control to capture and display mathematic input. If you 
 > - **Important APIs:** [NumberBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.NumberBox)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see NumberBox in action](winui3gallery:/item/NumberBox)
+> [Open the WinUI 3 Gallery app and see NumberBox in action](winui3gallery:/item/NumberBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

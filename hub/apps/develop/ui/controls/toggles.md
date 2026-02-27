@@ -53,7 +53,7 @@ For some actions, either a toggle switch or a check box might work. To decide wh
 > - **Important APIs**: [ToggleSwitch class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch), [IsOn property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.ison), [Toggled event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.toggled)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the ToggleSwitch in action](winui3gallery:/item/ToggleSwitch)
+> [Open the WinUI 3 Gallery app and see the ToggleSwitch in action](winui3gallery:/item/ToggleSwitch)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

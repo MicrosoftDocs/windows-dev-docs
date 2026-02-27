@@ -246,7 +246,7 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 > - **Important APIs**: [RadioButtons class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged), [RadioButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton), [IsChecked property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the RadioButton in action](winui3gallery:/item/RadioButton)
+> [Open the WinUI 3 Gallery app and see the RadioButton in action](winui3gallery:/item/RadioButton)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

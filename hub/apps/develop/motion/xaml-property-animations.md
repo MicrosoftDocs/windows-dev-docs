@@ -24,7 +24,7 @@ However, some properties on a UIElement let you animate them directly using comp
 > - **Important APIs**: [UIElement class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement), [CompositionAnimation class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionanimation)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see Animation interop in action](winui3gallery://item/XamlCompInterop)
+> [Open the WinUI 3 Gallery app and see Animation interop in action](winui3gallery://item/XamlCompInterop)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

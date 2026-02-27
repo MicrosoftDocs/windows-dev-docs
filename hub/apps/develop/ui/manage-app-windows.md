@@ -26,7 +26,7 @@ The Windows App SDK provides the [Microsoft.UI.Windowing.AppWindow](/windows/win
 > - **Important APIs**: [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow), [OverlappedPresenter class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see AppWindow in action](winui3gallery:/item/AppWindow)
+> [Open the WinUI 3 Gallery app and see AppWindow in action](winui3gallery:/item/AppWindow)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -192,9 +192,9 @@ The parameter is incorrect.
 The window should have an owner when IsModal=true.
 ```
 
-To set the owner window in a WinUI app requires Win32 interop. For more information and example code, see the AppWindow page in the WinUI Gallery sample app.
+To set the owner window in a WinUI app requires Win32 interop. For more information and example code, see the AppWindow page in the WinUI 3 Gallery sample app.
 
-- [Launch the WinUI Gallery app](winui3gallery:/item/AppWindow)
+- [Launch the WinUI 3 Gallery app](winui3gallery:/item/AppWindow)
 - [Open ModalWindow.xaml.cs on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/SamplePages/ModalWindow.xaml.cs)
 
 ### Apply a presenter

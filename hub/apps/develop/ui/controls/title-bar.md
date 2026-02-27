@@ -49,7 +49,7 @@ The layout is reversed when the [FlowDirection](/windows/windows-app-sdk/api/win
 > - **Important APIs:** [TitleBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar), [Title property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.title)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the TitleBar in action](winui3gallery:/item/TitleBar)
+> [Open the WinUI 3 Gallery app and see the TitleBar in action](winui3gallery:/item/TitleBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

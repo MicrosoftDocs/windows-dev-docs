@@ -62,7 +62,7 @@ New to Windows app development? These resources will help you get up and running
 
 - [Debugging, testing, and performance](/windows/uwp/debug-test-perf/) - Tools and techniques for finding and fixing issues
 - [Windows App SDK samples](https://github.com/microsoft/WindowsAppSDK-Samples) - Example code to learn from
-- [WinUI Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Interactive examples of WinUI controls
+- [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Interactive examples of WinUI controls
 
 ### Publishing to the Store
 
@@ -96,7 +96,7 @@ New to Windows app development? These resources will help you get up and running
 
 - [Visual Studio](https://visualstudio.microsoft.com/) - The primary IDE for Windows development
 - [Windows App SDK downloads](/windows/apps/windows-app-sdk/downloads) - Latest releases and tools
-- [WinUI Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Explore controls and design patterns
+- [WinUI 3 Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Explore controls and design patterns
 
 ### Stay connected
 

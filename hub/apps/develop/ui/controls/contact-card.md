@@ -44,7 +44,7 @@ Use the contact card when you want to display contact info for a contact. If you
 <table>
 <th align="left">WinUI for UWP Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI 3 Gallery"></img></td>
 <td>
     <p>If you have the <strong style="font-weight: semi-bold">WinUI for UWP Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Button">open the app and see the Button in action</a>.</p>
     <ul>

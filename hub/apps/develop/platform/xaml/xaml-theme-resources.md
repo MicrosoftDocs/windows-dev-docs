@@ -59,9 +59,9 @@ The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) re
 
 > [!TIP]
 > [!div class="nextstepaction"]
-> For a visual overview of these colors, see the WinUI Gallery app: [Colors](winui3gallery://item/Colors)
+> For a visual overview of these colors, see the WinUI 3 Gallery app: [Colors](winui3gallery://item/Colors)
 
-> The **WinUI Gallery** app includes interactive examples of most WinUI controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ### Windows system contrast theme colors
 
@@ -143,7 +143,7 @@ For details of the XAML styles, see WinUI on GitHub:
 
 > [!TIP]
 > [!div class="nextstepaction"]
-> For a visual overview of these styles, see the WinUI Gallery app: [Typography](winui3gallery://item/Typography)
+> For a visual overview of these styles, see the WinUI 3 Gallery app: [Typography](winui3gallery://item/Typography)
 
 ### BaseRichTextBlockStyle
 
