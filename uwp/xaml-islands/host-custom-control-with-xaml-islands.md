@@ -340,7 +340,7 @@ The following instructions show you how to package the all the components in the
 
 If you're hosting a custom control that contains a control from the WinUI library, you may encounter a problem where the control cannot be loaded in a packaged app and debugging the code shows the following error.
 
-![Failed to host WinUI library control](../images/xaml-islands/host-custom-control-error.png)
+![Failed to host WinUI library control](images/host-custom-control-error.png)
 
 To resolve this error, copy the **App.xbf** file from the build output folder of the WPF project to the **\AppX\\<WPF project\>** build output folder of the packaging project. 
 

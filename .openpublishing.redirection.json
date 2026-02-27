@@ -10719,6 +10719,41 @@
       "source_path": "hub/apps/design/basics/navigation-history-and-backwards-navigation.md",
       "redirect_url": "/windows/apps/develop/ui/navigation/navigation-history-and-backwards-navigation",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/advanced-scenarios-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-custom-control-with-xaml-islands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-custom-control-with-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-standard-control-with-xaml-islands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-standard-control-with-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/using-the-xaml-hosting-api.md",
+      "redirect_url": "/windows/uwp/xaml-islands/using-the-xaml-hosting-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/xaml-islands",
+      "redirect_document_id": false
     }
   ]
 }
