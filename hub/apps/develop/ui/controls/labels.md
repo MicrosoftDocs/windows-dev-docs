@@ -33,7 +33,7 @@ In XAML, many controls have a built-in Header property that you use to display t
 
 
 ## Get the sample code
-* [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
+* [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
 
 ## Related topics
 * [Text controls](../../../design/controls/text-controls.md)

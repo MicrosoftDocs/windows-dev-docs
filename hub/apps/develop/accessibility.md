@@ -24,7 +24,7 @@ This page provides information on how the various Windows development frameworks
 
 :::row:::
    :::column:::
-      ![WinUI and Windows App SDK](images/platform-uwp.png)
+      ![WinUI 3 and Windows App SDK](images/platform-uwp.png)
 
       **WinUI and Windows App SDK**
 
@@ -152,7 +152,7 @@ Download and run full Windows samples that demonstrate various accessibility fea
 :::row-end:::
 :::row:::
    :::column span="2":::
-      [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)
+      [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery)
 
       This app demonstrates the various WinUI controls supported in the Fluent Design System.
    :::column-end:::

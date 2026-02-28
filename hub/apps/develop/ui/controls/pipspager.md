@@ -37,7 +37,7 @@ This UI is commonly used in apps such as photo viewers and app lists, where disp
 > - **Important APIs**: [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the PipsPager in action](winui3gallery:/item/PipsPager)
+> [Open the WinUI 3 Gallery app and see the PipsPager in action](winui3gallery:/item/PipsPager)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

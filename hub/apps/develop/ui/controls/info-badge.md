@@ -155,7 +155,7 @@ The info badge comes at a default size that meets accessibility requirements. Yo
 > - **Important APIs:** [InfoBadge class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.value)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge)
+> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -335,7 +335,7 @@ If you place an InfoBadge inside of another control, such as a [Button](/windows
 
 ### Example: Placing an InfoBadge inside another control
 
-Here's a Button that has an InfoBadge placed in its upper right hand corner, with the badge layered on top of the content. This example can be applied to many controls other than Button as well – it simply shows how to place, position, and show an InfoBadge inside of another WinUI control.
+Here's a Button that has an InfoBadge placed in its upper right hand corner, with the badge layered on top of the content. This example can be applied to many controls other than Button as well – it simply shows how to place, position, and show an InfoBadge inside of another WinUI 3 control.
 
 ```xaml
 <Button Width="200" Height="60" Padding="4"

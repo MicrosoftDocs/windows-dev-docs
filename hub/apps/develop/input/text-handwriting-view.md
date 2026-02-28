@@ -13,7 +13,7 @@ ms.custom: RS5
 # Text input with the handwriting view
 
 > [!NOTE]
-> Handwriting view is not supported by text controls in [WinUI in the Windows App SDK](../../winui/winui3/index.md). This article applies to UWP apps only.
+> Handwriting view is not supported by text controls in [WinUI 3 in the Windows App SDK](../../winui/winui3/index.md). This article applies to UWP apps only.
 
 ![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
 

@@ -13,7 +13,7 @@ ms.custom: 19H1
 > [!IMPORTANT]
 > This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
 
-This article demonstrates how to use the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom WinRT XAML control in a WPF app that targets .NET Core 3.1. The custom control contains several first-party controls from the Windows SDK and binds a property in one of the WinRT XAML controls to a string in the WPF app. This article also demonstrates how to also host a control from the [WinUI library](/uwp/toolkits/winui/).
+This article demonstrates how to use the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom WinRT XAML control in a WPF app that targets .NET Core 3.1. The custom control contains several first-party controls from the Windows SDK and binds a property in one of the WinRT XAML controls to a string in the WPF app. This article also demonstrates how to also host a control from the [WinUI 3 library](/uwp/toolkits/winui/).
 
 Although this article demonstrates how to do this in a WPF app, the process is similar for a Windows Forms app. For an overview about hosting WinRT XAML controls in WPF and Windows Forms apps, see [this article](xaml-islands.md#wpf-and-windows-forms-applications).
 
@@ -340,7 +340,7 @@ The following instructions show you how to package the all the components in the
 
 If you're hosting a custom control that contains a control from the WinUI library, you may encounter a problem where the control cannot be loaded in a packaged app and debugging the code shows the following error.
 
-![Failed to host WinUI library control](../images/xaml-islands/host-custom-control-error.png)
+![Failed to host WinUI library control](images/host-custom-control-error.png)
 
 To resolve this error, copy the **App.xbf** file from the build output folder of the WPF project to the **\AppX\\<WPF project\>** build output folder of the packaging project. 
 

@@ -39,7 +39,7 @@ Here are some key differences from the WinRT [Windows.Storage.Pickers](/uwp/api/
 
 ## Access data with WinRT storage APIs
 
-Packaged apps have access to all the WinRT storage APIs available to UWP apps. Whether you're migrating an existing UWP app or creating a new app, you can use these APIs to read and write data. For examples of using the storage APIs in a WinUI app, see [Access files and folders with Windows App SDK and WinRT APIs](winrt-files.md).
+Packaged apps have access to all the WinRT storage APIs available to UWP apps. Whether you're migrating an existing UWP app or creating a new app, you can use these APIs to read and write data. For examples of using the storage APIs in a WinUI 3 app, see [Access files and folders with Windows App SDK and WinRT APIs](winrt-files.md).
 
 ## Use .NET file APIs for data access
 

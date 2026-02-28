@@ -232,7 +232,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 
 ## Get the sample code
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

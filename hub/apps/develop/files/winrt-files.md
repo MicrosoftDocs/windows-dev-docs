@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # customer intent: As a Windows app developer, I want to learn how to use WinRT APIs for file management in my app.
 ---
 
-# Access files and folders with WinUI and WinRT APIs
+# Access files and folders with WinUI 3 and WinRT APIs
 
 WinUI apps can access files and folders using Windows Runtime (WinRT) APIs for common file operations. This article shows you how to access files and folders, query system libraries, retrieve file properties, and work with locations like Pictures and Documents.
 

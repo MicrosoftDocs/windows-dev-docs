@@ -68,7 +68,7 @@ In the table below are the properties that you can set in your app's project fil
 
 ## Example
 
-Here's an excerpt from a typical `.csproj` file for a C# WinUI project, showing some of the project properties from the table above in use.
+Here's an excerpt from a typical `.csproj` file for a C# WinUI 3 project, showing some of the project properties from the table above in use.
 
 ```xml
 ...

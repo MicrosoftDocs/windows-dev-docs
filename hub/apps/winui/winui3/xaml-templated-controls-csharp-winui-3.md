@@ -10,7 +10,7 @@ ms.custom: 19H1
 
 # Build XAML controls with C#
 
-This article walks you through creating a templated XAML control for WinUI with C#. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
+This article walks you through creating a templated XAML control for WinUI 3 with C#. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
 
 To create standalone WinUI components in C# for consumption from both C# and C++/WinRT apps, see the article [Walkthrough: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK application](../../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md).
 

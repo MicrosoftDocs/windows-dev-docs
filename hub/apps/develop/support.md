@@ -23,7 +23,7 @@ The Windows developer community is an incredible resource for learning and probl
 
 - **[Microsoft Q&A](https://learn.microsoft.com/answers/questions/)** - Ask technical questions and get answers from Microsoft experts and the community
 - **[Windows App SDK discussions](https://github.com/microsoft/windowsappsdk/discussions)** - Connect with other developers and the Windows App SDK team
-- **[WinUI discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)** - Get help and share feedback about WinUI
+- **[WinUI 3 discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)** - Get help and share feedback about WinUI
 - **[Stack Overflow](https://stackoverflow.com/questions/tagged/windows-app-sdk)** - Browse thousands of answered questions tagged with Windows App SDK
 
 ### Application compatibility
@@ -62,7 +62,7 @@ New to Windows app development? These resources will help you get up and running
 
 - [Debugging, testing, and performance](/windows/uwp/debug-test-perf/) - Tools and techniques for finding and fixing issues
 - [Windows App SDK samples](https://github.com/microsoft/WindowsAppSDK-Samples) - Example code to learn from
-- [WinUI Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Interactive examples of WinUI controls
+- [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Interactive examples of WinUI controls
 
 ### Publishing to the Store
 
@@ -96,7 +96,7 @@ New to Windows app development? These resources will help you get up and running
 
 - [Visual Studio](https://visualstudio.microsoft.com/) - The primary IDE for Windows development
 - [Windows App SDK downloads](/windows/apps/windows-app-sdk/downloads) - Latest releases and tools
-- [WinUI Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Explore controls and design patterns
+- [WinUI 3 Gallery](https://apps.microsoft.com/detail/9p3jfpwwdzrc) - Explore controls and design patterns
 
 ### Stay connected
 

@@ -115,7 +115,7 @@ The WinRT XAML hosting API consists of several Windows Runtime classes and COM i
 
 Here's a quick look at how the different types of XAML Island controls are organized architecturally on top of the WinRT XAML hosting API.
 
-![Host control Architecture](../images/xaml-islands/host-controls.png)
+![Host control Architecture](images/host-controls.png)
 
 The APIs that appear at the bottom of this diagram ship with the Windows SDK. The wrapped controls and host controls are available via NuGet packages in the Windows Community Toolkit.
 
@@ -125,7 +125,7 @@ The following sections discuss limitations and workarounds for certain UWP devel
 
 ### Supported only with workarounds
 
-:heavy_check_mark: Hosting controls from the [WinUI for UWP Library](../../../winui/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package, or if you use the [Dynamic Dependencies API](../framework-packages/framework-packages-overview.md). Support for hosting controls from the [WinUI.0 Library](../../../winui/winui3/index.md) is coming in a later release.
+:heavy_check_mark: Hosting controls from the [WinUI for UWP Library](../get-started/winui2/index.md) in a XAML Island is supported conditionally in the current release of XAML Islands. If your desktop app uses an [MSIX package](/windows/msix) for deployment, you can host WinUI controls from prerelease or release versions of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package. If your desktop app is not packaged using MSIX, you can host WinUI controls only if you install a prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package, or if you use the [Dynamic Dependencies API](/windows/apps/desktop/modernize/framework-packages/framework-packages-overview).
 
 :heavy_check_mark: To access the root element of a tree of XAML content in a XAML Island and get related information about the context in which it is hosted, do not use the [CoreWindow](/uwp/api/windows.ui.core.corewindow), [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), and [Window](/uwp/api/windows.ui.xaml.window) classes. Instead, use the [XamlRoot](/uwp/api/windows.ui.xaml.xamlroot) class. For more information, see [this section](#window-host-context-for-xaml-islands).
 
@@ -176,6 +176,5 @@ For a sample that demonstrates how to use this interface in a WPF app, see the [
 
 For more background information and tutorials about using XAML Islands, see the following articles and resources:
 
-* [Modernize a WPF app tutorial](../modernize-wpf-tutorial.md): This tutorial provides step-by-step instructions for using the wrapped controls and host controls in the Windows Community Toolkit to add WinRT XAML controls to an existing WPF line-of-business application. This tutorial includes the complete code for the WPF application as well as detailed instructions for each step in the process.
 * [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples): This repo contains Windows Forms, WPF, and C++ desktop (Win32) samples that demonstrate how to use XAML Islands.
 * [XAML Islands v1 - Updates and Roadmap](https://blogs.windows.com/windowsdeveloper/2019/06/13/xaml-islands-v1-updates-and-roadmap): This blog post discusses many common questions about XAML Islands and provides a detailed development roadmap.

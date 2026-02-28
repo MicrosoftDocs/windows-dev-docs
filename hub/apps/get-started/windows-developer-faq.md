@@ -14,7 +14,7 @@ This FAQ provides answers to common questions about Windows application developm
 Topics covered include:
 
 - Getting started and the Windows app development landscape.
-- Native Windows-only app development with WinUI, Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
+- Native Windows-only app development with WinUI 3, Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
 - Windows Software Development Kit (SDK) and Windows App SDK.
 - Targeting Windows as part of your cross-platform development strategy.
 - Hybrid and web app development with .NET MAUI, Blazor, and ASP.NET Core.
@@ -225,7 +225,7 @@ Topics covered include:
 > 
 > - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets.
 > - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): Contains a WinUI notes sample used in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/) tutorial.
-> - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. Also available in the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+> - [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. Also available in the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 </details>
 

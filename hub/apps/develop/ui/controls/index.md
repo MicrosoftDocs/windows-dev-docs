@@ -327,13 +327,13 @@ The following table lists the common Windows app controls and patterns along wit
     :::column-end:::
 :::row-end:::
 
-## WinUI Gallery
+## WinUI 3 Gallery
 
-Get the *WinUI Gallery* apps from the Microsoft Store to see XAML controls and the [Fluent Design System](https://developer.microsoft.com/fluentui#/) in action. The **WinUI Gallery** and **WinUI for UWP Gallery** apps include interactive examples of most WinUI and WinUI for UWP controls, features, and functionality. The apps are an interactive companion to this website. When you have them installed, you can use links on individual control pages to launch the app and see the control in action.
+Get the *WinUI 3 Gallery* apps from the Microsoft Store to see XAML controls and the [Fluent Design System](https://developer.microsoft.com/fluentui#/) in action. The **WinUI 3 Gallery** and **WinUI for UWP Gallery** apps include interactive examples of most WinUI and WinUI for UWP controls, features, and functionality. The apps are an interactive companion to this website. When you have them installed, you can use links on individual control pages to launch the app and see the control in action.
 
 > [!div class="checklist"]
 >
-> - Get the [**WinUI Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI for UWP Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
+> - Get the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI for UWP Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
 > - Get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI and the *winui2* branch for WinUI for UWP).
 
 ## Additional controls

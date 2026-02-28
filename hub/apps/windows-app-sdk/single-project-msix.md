@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Package your app using single-project MSIX
 
-Single-project MSIX is a feature that lets you build a packaged WinUI desktop app without the need for a separate packaging project. A WinUI app is one that uses the [WinUI](/windows/apps/winui/winui3/) framework for its user interface (UI); and it uses the Windows App SDK. To package a desktop app that's *not* a WinUI app, see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
+Single-project MSIX is a feature that lets you build a packaged WinUI 3 desktop app without the need for a separate packaging project. A WinUI app is one that uses the [WinUI](/windows/apps/winui/winui3/) framework for its user interface (UI); and it uses the Windows App SDK. To package a desktop app that's *not* a WinUI app, see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 
 The single-project MSIX feature is available as a Visual Studio extension that you can use for these scenarios:
 

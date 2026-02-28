@@ -27,7 +27,7 @@ The user can type a filtering term into the TextBox to filter the list of `Conta
 For filtering to work, the ListView must have a data source that can be manipulated in the code-behind, such as an [ObservableCollection\<T>](/dotnet/api/system.collections.objectmodel.observablecollection-1). In this case, the ListView's [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property is assigned to an `ObservableCollection<Contact>` in the code-behind.
 
 > [!TIP]
-> This is a simplified version of the example in the ListView page of the [WinUI Gallery app](#get-the-sample-code). Use the WinUI Gallery app to run and view the full code, including the ListView's [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) and the `Contact` class.
+> This is a simplified version of the example in the ListView page of the [WinUI 3 Gallery app](#get-the-sample-code). Use the WinUI 3 Gallery app to run and view the full code, including the ListView's [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) and the `Contact` class.
 
 ```xaml
 <Grid>
@@ -153,7 +153,7 @@ Now, as the user types in their filtering string in the `FilterByLastName` TextB
 ## Get the sample code
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the ListView in action](winui3gallery:/item/ItemsView)
+> [Open the WinUI 3 Gallery app and see the ListView in action](winui3gallery:/item/ItemsView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

@@ -24,7 +24,7 @@ There are many ways to use sound to enhance your app. You can use to sound to su
 <table>
 <th align="left">WinUI for UWP Gallery<th>
 <tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI Gallery"></img></td>
+<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI 3 Gallery"></img></td>
 <td>
     <p>If you have the <strong>WinUI for UWP Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Sound">open the app and see Sound in action</a>.</p>
     <ul>

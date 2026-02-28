@@ -7,7 +7,7 @@ keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push,
 ms.localizationpriority: medium
 ---
 
-# App notifications from UWP to WinUI migration
+# App notifications from UWP to WinUI 3 migration
 
 The only difference when migrating app notification code from UWP to WinUI is in handling the activation of notifications. Sending and managing app notifications remains exactly the same.
 

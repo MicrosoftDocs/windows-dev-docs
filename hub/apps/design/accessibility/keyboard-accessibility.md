@@ -273,7 +273,7 @@ Some devices don't have a dedicated, hardware keyboard and rely on a Soft Input 
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see keyboard accessibility support in action](winui3gallery://item/AccessibilityKeyboard)
+> [Open the WinUI 3 Gallery app and see keyboard accessibility support in action](winui3gallery://item/AccessibilityKeyboard)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -11,7 +11,7 @@ content-type: how-to
 #Customer intent: As a Windows developer, I want to learn how to integrate DALL-E image generation capabilities into my WinUI / Windows App SDK desktop app so that I can enhance my app's functionality.
 ---
 
-# Add DALL-E to your WinUI / Windows App SDK desktop app
+# Add DALL-E to your WinUI 3 / Windows App SDK desktop app
 
 In this how-to, we'll integrate DALL-E's image generation capabilities into your WinUI / Windows App SDK desktop app.
 

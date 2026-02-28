@@ -16,7 +16,7 @@ Although you can use most Windows Runtime (WinRT) APIs (see [Windows UWP namespa
 * APIs that have dependencies on user interface (UI) features that were designed for use only in a Universal Windows Platform (UWP) app.
 * APIs that require package identity (see [Features that require package identity](./modernize-packaged-apps.md)). Such APIs are supported only in desktop apps that are packaged using [MSIX](/windows/msix/).
 
-This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in desktop apps. Most of the alternative APIs are available in [WinUI](../../winui/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
+This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
 > Apps using .NET can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. Those classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md). Note that those classes require the .NET 6 SDK or later.

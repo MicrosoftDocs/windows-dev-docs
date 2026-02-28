@@ -14,7 +14,7 @@ dev_langs:
 
 # Windows data binding in depth
 
-This article describes the WinUI data binding features using the APIs in the [Microsoft.UI.Xaml.Data namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data).
+This article describes the WinUI 3 data binding features using the APIs in the [Microsoft.UI.Xaml.Data namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data).
 
 > [!NOTE]
 > This topic describes data binding features in detail. For a short, practical introduction, see [Data binding overview](data-binding-overview.md).

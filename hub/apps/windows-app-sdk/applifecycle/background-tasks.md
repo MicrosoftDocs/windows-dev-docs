@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Using background tasks in Windows apps
 
-This article provides an overview of using background tasks and describes how to create a new background task in a WinUI app. For information about migrating your UWP apps with background tasks to WinUI, see the Windows App SDK [Background task migration strategy](../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md).
+This article provides an overview of using background tasks and describes how to create a new background task in a WinUI 3 app. For information about migrating your UWP apps with background tasks to WinUI, see the Windows App SDK [Background task migration strategy](../migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md).
 
 Background tasks are app components that run in the background without a user interface. They can perform actions such as downloading files, syncing data, sending notifications, or updating tiles. They can be triggered by various events, such as time, system changes, user actions, or push notifications. These tasks can get executed when corresponding trigger occurs even when the app is not in running state.
 

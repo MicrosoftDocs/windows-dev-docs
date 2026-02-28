@@ -9,7 +9,7 @@ no-loc: ["App.xaml", "App.xaml.cs", "MainWindow.xaml", "MainWindow.xaml.cs", "Pa
 ---
 # Project setup
 
-Before you get into coding the app, we'll take a quick look at the Visual Studio project and take care of some project setup. When Visual Studio creates a WinUI project, several important folders and code files are generated. These can be seen in the **Solution Explorer** pane of Visual Studio:
+Before you get into coding the app, we'll take a quick look at the Visual Studio project and take care of some project setup. When Visual Studio creates a WinUI 3 project, several important folders and code files are generated. These can be seen in the **Solution Explorer** pane of Visual Studio:
 
 :::image type="content" source="media/project/vs-solution-explorer.png" alt-text="Solution Explorer showing the files for a WinUI project in Visual Studio.":::
 

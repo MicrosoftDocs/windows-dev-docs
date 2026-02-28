@@ -6,7 +6,7 @@ ms.date: 05/28/2024
 ms.localizationpriority: medium
 ---
 
-# Unit tests for Windows UI Library (WinUI) apps in Visual Studio
+# Unit tests for Windows UI Library (WinUI 3) apps in Visual Studio
 
 This article describes how to create unit tests for WinUI apps in Visual Studio using the built-in unit test project templates.
 

@@ -22,7 +22,7 @@ This article describes how to accelerate warm launches for single-instance Windo
 
 This accelerated launch functionality doesn't cover every kind of launch, from every source application, on every version of Windows. As a result, your application must still maintain its own implementation of single-instancing (see [App instancing with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing) for one approach).
 
-The rest of this article walks through creating a simple C++ WinUI app that supports accelerated warm Start Menu and Protocol launches.
+The rest of this article walks through creating a simple C++ WinUI 3 app that supports accelerated warm Start Menu and Protocol launches.
 
 > [!IMPORTANT]
 > The accelerated launch APIs are part of a Limited Access Feature (see [LimitedAccessFeatures class](/uwp/api/windows.applicationmodel.limitedaccessfeatures)). For more information or to request an unlock token, use the [LAF Access Token Request Form](https://go.microsoft.com/fwlink/?linkid=2271232&clcid=0x409).

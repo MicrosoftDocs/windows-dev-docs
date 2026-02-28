@@ -63,7 +63,7 @@ Both **check box** and **radio button** controls let the user select from a list
 > - **Important APIs**: [CheckBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox), [Checked event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked), [IsChecked property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.ischecked), [Content property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the CheckBox in action](winui3gallery:/item/CheckBox)
+> [Open the WinUI 3 Gallery app and see the CheckBox in action](winui3gallery:/item/CheckBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

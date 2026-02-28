@@ -46,7 +46,7 @@ This rich edit box has a rich text document open in it. The formatting and file 
 > - **Important APIs:** [RichEditBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox), [Document property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox)
+> [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -202,7 +202,7 @@ By default, the RichEditBox control does not interpret input as math. To enable 
 richEditBox.TextDocument.SetMathMode(Microsoft.UI.Text.RichEditMathMode.MathOnly);
 ```
 
-This enables UnicodeMath input to be automatically recognized and converted to MathML in real time. For example, entering 4^2 converts to 4<sup>2</sup>, and 1/2 converts to ½. See the [WinUI Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) for more examples.
+This enables UnicodeMath input to be automatically recognized and converted to MathML in real time. For example, entering 4^2 converts to 4<sup>2</sup>, and 1/2 converts to ½. See the [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9p3jfpwwdzrc) for more examples.
 
 To save the math content of a rich edit box as a MathML string, call [GetMathML](/windows/windows-app-sdk/api/winrt/microsoft.ui.text.richedittextdocument.getmathml).
 
