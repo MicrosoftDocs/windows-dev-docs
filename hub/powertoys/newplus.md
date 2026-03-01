@@ -47,12 +47,16 @@ The option allows you to toggle the display of filename extensions. When this op
 
 The option gives you the ability to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
 
-#### Hide the built-in New context menu
+#### Hide the built-in "New" context menu
 
-With this option, you can hide the File Explorer built-in New content menu.
+With this option, you can hide the File Explorer built-in "New" context menu.
 
 > [!NOTE]
-> You need to run PowerToys as an Administrator to toggle this option. Also note that, as a precaution, the built-in New menu will automatically be re-enabled during PowerToys uninstall.
+> The built-in New menu will automatically be re-enabled during PowerToys uninstall. If the Windows 11 built-in New context menu doesn't reappear on uninstalling PowerToys, or some issue with the PowerToys settings app. here's how to restore the built-in New context menu.
+
+1. Open Registry Editor
+1. Go to the key "Computer\HKEY_CURRENT_USER\Software\Classes\Directory\background\ShellEx\ContextMenuHandlers"
+1. Delete the "New" subkey (the fullpath is "Computer\HKEY_CURRENT_USER\Software\Classes\Directory\background\ShellEx\ContextMenuHandlers\New")
 
 ### Behavior
 
