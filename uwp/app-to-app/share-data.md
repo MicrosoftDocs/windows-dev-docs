@@ -13,7 +13,9 @@ ms.localizationpriority: medium
 This article explains how to support the Share contract in a desktop or a Universal Windows Platform (UWP) app. The Share contract is an easy way to quickly share data&mdash;such as text, links, photos, and videos&mdash;between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later.
 
 > [!NOTE]
-> The code examples in this article are from UWP apps. Desktop apps should use the [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop). For more info, and code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects#for-classes-that-implement-idatatransfermanagerinterop). Also see the [WPF Sharing content source app sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
+> The code examples in this article are from UWP apps. Desktop apps should use the [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop). For more info, and code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects#for-classes-that-implement-idatatransfermanagerinterop).
+> 
+> You can also refer to the [WPF Sharing content source app sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) and [Integrate Share options in your Windows app](/windows/apps/develop/windows-integration/integrate-sharesheet-overview) for additional information on sharing data in desktop apps.
 
 ## Set up an event handler
 

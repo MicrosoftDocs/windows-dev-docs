@@ -1,8 +1,8 @@
 ---
 title: Use the Windows App SDK in an existing project
 description: This article provides instructions for using the Windows App SDK in an existing project.
-ms.topic: article
-ms.date: 02/03/2023
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -14,11 +14,11 @@ If you have a desktop project in which you want to use the Windows App SDK, then
 [!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
 
 > [!NOTE]
-> This procedure is supported in C# .NET 6 (and later) projects and C++ desktop projects. Those project types can use NuGet packages from either the [stable release channel](stable-channel.md), the [preview release channel](preview-channel.md), or the [experimental release channel](experimental-channel.md).
+> This procedure is supported in C# .NET 6 (and later) projects and C++ desktop projects. Those project types can use NuGet packages from either the stable release channel, the preview release channel, or the experimental release channel.
 
 ## Prerequisites
 
-* Visual Studio 2019 or later.
+* Visual Studio 2022 version 17.1 and later.
 * The workloads and components for Windows app development. For more info, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ## Instructions
@@ -62,5 +62,5 @@ If you encounter a *Class not registered* error when you try to use a Windows Ap
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md)
 - [Windows App SDK and supported Windows releases](support.md)

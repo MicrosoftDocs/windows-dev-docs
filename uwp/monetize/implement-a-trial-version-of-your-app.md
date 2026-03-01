@@ -4,7 +4,7 @@ description: Learn how to use the Windows.Services.Store namespace to implement 
 title: Implement a trial version of your app
 keywords: windows 10, uwp, trial, in-app purchases, Windows.Services.Store
 ms.date: 08/25/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

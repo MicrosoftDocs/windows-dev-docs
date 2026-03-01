@@ -1,32 +1,32 @@
 ---
-title: Tutorial--Create a simple photo viewer with WinUI 3
-description: In this topic we walk through the process of building a simple WinUI 3 app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
-ms.topic: article
+title: Tutorial--Create a simple photo viewer with WinUI
+description: In this topic we walk through the process of building a simple WinUI app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
+ms.topic: tutorial
 ms.date: 08/19/2024
-keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
+keywords: Windows, App, SDK, WinUI, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
 ms.localizationpriority: medium
 ---
 
 # Tutorial: Create a simple photo viewer with WinUI 3
 
 > [!NOTE]
-> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of framework options](./index.md).
+> For info about the benefits of WinUI, as well as other app type options, see [Overview of framework options](./index.md).
 
-In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
+In this topic we walk through the process of creating a new WinUI project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
 
 > [!TIP]
 > The source code in this topic is provided in both C# and C++/WinRT. If you're a C++ developer, then for more details and concepts explaining how the code that we show here works, see the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) documentation. Relevant topics there include [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection), and [Photo Editor C++/WinRT sample application](/windows/uwp/cpp-and-winrt-apis/photo-editor-sample).
 
 ## Step 1: Install tools for the Windows App SDK
 
-To set up your development computer, see [Get started with WinUI](../get-started/start-here.md). In that article, you'll also find instructions to create and launch a WinUI 3 project.
+To set up your development computer, see [Get started with WinUI](../get-started/start-here.md). In that article, you'll also find instructions to create and launch a WinUI project.
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](../windows-app-sdk/release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this tutorial and/or running the app we'll build.
 
 ## Step 2: Create a new project
 
-In Visual Studio, create your choice of a new C# or C++ project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *SimplePhotos*, and (so that your folder structure will match the one described in this tutorial) uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
+In Visual Studio, create your choice of a new C# or C++ project from the **Blank App, Packaged (WinUI in Desktop)** project template. Name the project *SimplePhotos*, and (so that your folder structure will match the one described in this tutorial) uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 ## Step 3: Copy asset files
 
@@ -903,7 +903,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
         ...
     ```
 
-    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
+    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping).
 
     Now that we've set an `x:DataType`, we can use `x:Bind` data-binding expressions in the data template to bind to properties of the data type we specified (**ImageFileInfo**, in this case).
 
@@ -919,7 +919,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 
     An `x:Bind` expression links the value of a UI property with the value of a **data-object** property. Of course, that depends on first setting `x:DataType` to the type of that **data-object** so that the tooling and the runtime know what properties are available to bind to.
 
-    For more info, see [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
+    For more info, see [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
 
 1. In the same way, replace the values of the other **TextBlock**s and the **RatingControl**. Here's the result:
 
@@ -960,7 +960,7 @@ The **Images** property value doesn't change at run-time for this particular app
 
 ## Conclusion
 
-In this tutorial we walked through the process of using Visual Studio to build a simple WinUI 3 app that displays photos. Hopefully this tutorial has given you experience working in a WinUI 3 app with controls, layout panels, data-binding, and GridView UI optimization.
+In this tutorial we walked through the process of using Visual Studio to build a simple WinUI app that displays photos. Hopefully this tutorial has given you experience working in a WinUI app with controls, layout panels, data-binding, and GridView UI optimization.
 
 ## See also
 

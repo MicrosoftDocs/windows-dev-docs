@@ -1,8 +1,8 @@
 ---
 title: Implement a widget provider in a win32 app (C++/WinRT)
 description: This article walks you through the process of creating widget provider, implemented in C++/WinRT that provides widget content and responds to widget actions. 
-ms.topic: article
-ms.date: 07/06/2022
+ms.topic: how-to
+ms.date: 09/22/2025
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 
 ## Prerequisites
 
-- Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
+- Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2022 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new C++/WinRT win32 console app
@@ -163,7 +163,7 @@ This example will declare some static strings to define the JSON templates for e
 In the latest release, apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. For more information, see [Customize the widget header area](widget-header-customization.md).
 
 > [!NOTE]
-> Starting with Windows Build [TBD - Build number], apps that implement Windows widgets can choose to populate the widget content with HTML served from a specified URL instead of supplying content in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Widget providers must still provide an Adaptive Card JSON payload, so the implementation steps in this walkthrough are applicable to web widgets. For more information, see [Web widget providers](web-widget-providers.md).
+> In the latest release, apps that implement Windows widgets can choose to populate the widget content with HTML served from a specified URL instead of supplying content in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Widget providers must still provide an Adaptive Card JSON payload, so the implementation steps in this walkthrough are applicable to web widgets. For more information, see [Web widget providers](web-widget-providers.md).
 
 ```cpp
 // WidgetProvider.h

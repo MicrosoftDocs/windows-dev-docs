@@ -2,7 +2,7 @@
 description: Discover how to integrate unpackaged apps with the Windows Share feature.
 title: Integrate unpackaged apps with Windows Share
 ms.topic: concept-article
-ms.date: 05/27/2025
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 # Customer intent: As a Windows developer, I want to learn how to integrate unpackaged apps with the Windows Share feature.
 ---
@@ -259,9 +259,9 @@ The following video demonstrates how an unpackaged app can be a share target aft
 ## See also
 
 - [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)
 - [Advantages and Disadvantages of packaging an application - Deployment overview](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app)
 - [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/)
-- [Share Contract Implementation for WinAppSDK App](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
+- [Share Contract Implementation for Windows App SDK](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
 - [Share Contract Implementation for Apps Packaged with External Location](https://github.com/microsoft/AppModelSamples/tree/master/Samples/PackageWithExternalLocation/cppwinrt/PackageWithExternalLocationCppApp)

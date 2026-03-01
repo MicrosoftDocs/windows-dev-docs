@@ -2,10 +2,11 @@
 ms.assetid: 9322B3A3-8F06-4329-AFCB-BE0C260C332C
 description: This article guides you through the steps to target various deployment and debugging targets.
 title: Deploying and debugging Universal Windows Platform (UWP) apps
-ms.date: 04/08/2019
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, uwp, debug, test, performance
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Deploying and debugging UWP apps

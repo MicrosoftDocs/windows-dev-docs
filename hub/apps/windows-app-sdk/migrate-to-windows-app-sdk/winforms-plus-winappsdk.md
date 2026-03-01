@@ -1,8 +1,8 @@
 ---
 title: Use the Windows App SDK in a WinForms app
 description: This topic enables you to use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in a Windows Forms (WinForms) app.
-ms.topic: article
-ms.date: 05/30/2023
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK, Windows Forms, WinForms
 ms.localizationpriority: medium
 ---
@@ -11,8 +11,8 @@ ms.localizationpriority: medium
 
 The [Windows App SDK](/windows/apps/windows-app-sdk/) is the next evolution in the Windows app development platform. But this topic shows how you can use Windows App SDK APIs (and Windows Runtime APIs) in a [Windows Forms (WinForms)](/dotnet/desktop/winforms/) app!
 
-* In many cases, you'll want to recreate your WinForms app in the form of a [WinUI 3](/windows/apps/winui/winui3/) app. Just one of the advantages of moving to WinUI 3 is to have access to the [Fluent Design System](https://www.microsoft.com/design/fluent/) (also see [Design and code Windows apps](/windows/apps/design/)). And WinUI 3 is part of the Windows App SDK&mdash;so, naturally, a WinUI 3 app can use the other Windows App SDK features and APIs, as well. This topic doesn't cover the process of migrating your WinForms app to WinUI 3.
-* But if you find that you're using features of WinForms that aren't yet available in WinUI 3, then you can still use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in your WinForms app. This topic shows you how.
+* In many cases, you'll want to recreate your WinForms app in the form of a [WinUI 3](/windows/apps/winui/winui3/) app. Just one of the advantages of moving to WinUI is to have access to the [Fluent Design System](https://www.microsoft.com/design/fluent/) (also see [Design and code Windows apps](/windows/apps/design/)). And WinUI is part of the Windows App SDK&mdash;so, naturally, a WinUI app can use the other Windows App SDK features and APIs, as well. This topic doesn't cover the process of migrating your WinForms app to WinUI.
+* But if you find that you're using features of WinForms that aren't yet available in WinUI, then you can still use Windows App SDK features (such as App Lifecycle, MRT Core, DWriteCore, and others) in your WinForms app. This topic shows you how.
 
 And in case you don't already have an existing WinForms project&mdash;or you want to practice the process&mdash;this topic includes steps to create a WinForms project so that you can follow along and configure it to call Windows App SDK APIs.
 

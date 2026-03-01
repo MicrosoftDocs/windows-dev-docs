@@ -1,17 +1,17 @@
 ---
-title: Third-party passkey manager support
-description: This topic describes the third-party API plugin support for third-party passkey providers on Windows.
+title: Plugin passkey manager support
+description: This topic describes the plugin API support for passkey providers on Windows.
 ms.topic: article
-ms.date: 12/12/2024
+ms.date: 09/29/2025
 ---
 
-# Third-party passkey manager support
+# Plugin passkey manager support
 
-This topic describes the third-party credential manager API plugin support for third-party passkey providers on Windows. It showcases a demo app named Contoso Passkey Manager.
+This topic describes the plugin credential manager API plugin support for passkey providers on Windows. It showcases a demo app named Contoso Passkey Manager.
 
 ## Contoso Passkey Manager
 
-Windows 11 supports a third-party plugin model for passkeys. Contoso Passkey Manager is a demo app that demonstrates this passkey provider support.
+Windows 11 supports a plugin model for passkeys. Contoso Passkey Manager is a demo app that demonstrates this passkey provider support.
 
 > [!WARNING] 
 > Contoso Passkey Manager is designed for passkey creation and usage testing only. Don't use the app for production passkeys.
@@ -38,26 +38,23 @@ Windows 11 supports a third-party plugin model for passkeys. Contoso Passkey Man
 
 ![A screenshot of creating a passkey for webuthn.io with Contoso Passkey Manager](images/saving-a-passkey-to-contoso-passkey-manager.png)
 
-4. The Contoso Passkey Manager app will open. Click **Create** to create the credential in Contoso Passkey Manager.
-5. Complete user verification with Windows Hello, and the passkey is created.
-6. You can see your saved passkeys by opening the Contoso Passkey Manager.
-7. If you want to test different experiences, then you can toggle **Simulate Vault Unlock** to test a vault unlock user experience when saving a passkey. The **Minimize UI** toggle simplifies the step that opens the passkey manager, and the experience flow will instead just be with user verification on Windows Hello.
+4. Complete user verification with Windows Hello, and the passkey is created.
+5. You can see your saved passkeys by opening the Contoso Passkey Manager.
+6. If you want to test different experiences, you can set up a vault lock mechanism and create a vault passkey to simulate the vault unlock user experience when saving a passkey. The **Minimize UI** toggle simplifies the step that opens the passkey manager, and the experience flow will just be with user verification on Windows Hello versus opening the credential manager.
 
 ![A screenshot of Contoso Passkey Manager with a passkey saved in the app](images/contoso-passkey-manager-passkey-created.png)
 
 ### Step 4: Passkey authentication
 
-1. Input your username, and click **Authenticate**.
-2. Select to sign in with the passkey saved to the Contoso Passkey Manager.
+1. Use the passkey autofill drop down and you will be prompted to complete user verificaition to sign in with you passkey saved to the Contoso Passkey Manager.
 
 ![A screenshot of authentication with a Contoso Passkey Manager passkey](images/authentication-contoso-passkey-manager.png)
 
-3. Complete user verification with Windows Hello to authenticate.
-4. You've successfully logged in.
+2. You've successfully logged in.
 
 ## Next steps
 
-To integrate with the third-party plugin capability, go to [webauthn](https://github.com/microsoft/webauthn) to find the header files.
+To integrate with the plugin capability, go to [webauthn](https://github.com/microsoft/webauthn) to find the header files.
 
 ## See also
 

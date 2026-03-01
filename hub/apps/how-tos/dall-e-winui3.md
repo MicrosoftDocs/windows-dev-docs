@@ -1,24 +1,24 @@
 ---
 title: How to add DALL-E image generation to your WinUI app
-description: Get started with WinUI 3 / Windows App SDK by integrating DALL-E image capabilities into your desktop app. 
+description: Get started with WinUI / Windows App SDK by integrating DALL-E image capabilities into your desktop app. 
 ms.topic: how-to
-ms.date: 11/26/2024
-keywords: windows app sdk, winappsdk, winui3
+ms.date: 10/28/2025
+keywords: windows app sdk, winappsdk, winui
 ms.localizationpriority: medium
 ms.custom: template-quickstart
 audience: new-desktop-app-developers
 content-type: how-to
-#Customer intent: As a Windows developer, I want to learn how to integrate DALL-E image generation capabilities into my WinUI 3 / Windows App SDK desktop app so that I can enhance my app's functionality.
+#Customer intent: As a Windows developer, I want to learn how to integrate DALL-E image generation capabilities into my WinUI / Windows App SDK desktop app so that I can enhance my app's functionality.
 ---
 
 # Add DALL-E to your WinUI 3 / Windows App SDK desktop app
 
-In this how-to, we'll integrate DALL-E's image generation capabilities into your WinUI 3 / Windows App SDK desktop app.
+In this how-to, we'll integrate DALL-E's image generation capabilities into your WinUI / Windows App SDK desktop app.
 
 ## Prerequisites
 
-- Set up your development computer (see [Get started with WinUI](../get-started/start-here.md)).
-- A functional chat interface into which this capability will be integrated. See *[How to add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app](./chatgpt-openai-winui3.md)* - we'll demonstrate how to integrate DALL-E into the chat interface from this how-to.
+- Set up your development computer (see [Start developing Windows apps](../get-started/start-here.md)).
+- A functional chat interface into which this capability will be integrated. See *[How to add OpenAI chat completions to your WinUI / Windows App SDK desktop app](./chatgpt-openai-winui3.md)* - we'll demonstrate how to integrate DALL-E into the chat interface from this how-to.
 - An OpenAI API key from your [OpenAI developer dashboard](https://platform.openai.com/api-keys) assigned to the `OPENAI_API_KEY` environment variable.
 - An OpenAI SDK installed in your project. Refer to the [OpenAI documentation](https://platform.openai.com/docs/libraries) for a list of community libraries. In this how-to, we'll use the official [OpenAI .NET API library](https://github.com/openai/openai-dotnet).
 
@@ -66,7 +66,7 @@ Modify your existing `DateTemplate` in `MainWindow.xaml` to include an `Image` c
 <!-- ... existing XAML ... -->
 ```
 
-Note that this how-to assumes you have a chat interface with a `TextBox` and `Button`; see *[How to add OpenAI chat completions to your WinUI 3 / Windows App SDK desktop app](./chatgpt-openai-winui3.md)*.
+Note that this how-to assumes you have a chat interface with a `TextBox` and `Button`; see *[How to add OpenAI chat completions to your WinUI / Windows App SDK desktop app](./chatgpt-openai-winui3.md)*.
 
 ## Implement DALL-E image generation
 
@@ -357,6 +357,6 @@ namespace ChatGPT_WinUI3
 
 ## Related content
 
-- [OpenAI API Documentation](https://platform.openai.com/docs/)
+- [OpenAI API Documentation](https://platform.openai.com/docs/overview)
 - [Windows App SDK Samples](../get-started/samples.md)
 - [OpenAI .NET library on GitHub](https://github.com/openai/openai-dotnet)

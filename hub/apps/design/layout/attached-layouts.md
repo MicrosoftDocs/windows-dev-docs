@@ -52,7 +52,7 @@ For this reason, a Panel in XAML has often been synonymous with layout, but tech
 The [ItemsRepeater](../controls/items-repeater.md) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
 
 > [!NOTE]
-> The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI package.
+> The [LayoutPanel](/uwp/api/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/uwp/api/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI 3 package.
 
 #### Containers
 
@@ -108,7 +108,7 @@ The layout's state object can be stored with and retrieved from the container wi
 
 ### UI Virtualization
 
-UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/uwp/xaml-platform/x-load-attribute). It does not require any special handling in your layout.
+UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/apps/develop/platform/xaml/x-load-attribute). It does not require any special handling in your layout.
 
 In scrolling-based scenarios such as a list, determining _when needed_ is often based on "will it be visible to a user" which depends heavily on where it was placed during the layout process and requires special considerations.  This scenario is a focus for this document.
 
@@ -292,7 +292,7 @@ The UI for the Xbox Activity Feed uses a repeating pattern where each line has a
 The code below walks through what a custom virtualizing UI for the activity feed might be to illustrate the general approach you might take for a **data layout**.
 
 > [!TIP]
-> If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
 
 #### Implementation
 

@@ -1,14 +1,15 @@
 ---
-title: PowerToys Workspaces utility for Windows
-description: The PowerToys Workspaces utility is a desktop manager that can efficiently launch a set of applications to custom positions and configurations.
-ms.date: 12/05/2024
-ms.topic: article
+title: PowerToys Workspaces Utility for Windows Desktop Management
+description: Learn how to use PowerToys Workspaces utility to efficiently launch applications in custom positions and configurations. Create desktop layouts, add CLI arguments, and manage workspaces with this Windows desktop manager tool.
+ms.date: 08/20/2025
+ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
+# customer intent: As a Windows power user, I want to learn how to use the Workspaces utility for Windows.
 ---
 
-# Workspaces utility
+# Workspaces utility for Windows desktop management
 
-PowerToys Workspaces is a desktop manager utility for launching a set of applications to custom positions and configurations with a single click. This gets you into your ideal desktop state for any project or activity faster. You can capture your desktop state as a new workspace using the editor, add arguments to apps to configure their state on launch, and pin the workspace as a desktop shortcut for quick-launching. Launching the workspace will launch all apps to their assigned positions.
+PowerToys Workspaces is a desktop manager utility that helps you launch applications to custom positions and configurations with a single click. This Windows desktop management tool gets you into your ideal desktop state for any project or activity faster. You can capture your desktop state as a new workspace using the editor, add arguments to apps to configure their state on launch, and pin the workspace as a desktop shortcut for quick-launching.
 
 ## Enabling
 
@@ -18,15 +19,15 @@ To start using Workspaces, enable it in the PowerToys Settings.
 
 Open the editor using by selecting "Launch editor" from PowerToys Workspaces settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
 
-![Workspaces Editor](../images/powertoys-workspaces/workspaces_editor.png)
+:::image type="content" source="../images/powertoys-workspaces/workspaces_editor.png" alt-text="Screenshot of PowerToys Workspaces editor interface showing workspace creation options.":::
 
- Click "+ Create workspace" to invoke the Capture experience - in this view, the desktop is fully functional and you are able to open, close, and reposition apps to get your apps into the desired layout. Once you have arranged the apps how you would like, select "Capture".
+Click "+ Create workspace" to invoke the Capture experience - in this view, the desktop is fully functional and you are able to open, close, and reposition apps to get your apps into the desired layout. Once you have arranged the apps how you would like, select "Capture".
 
-![Capture experience](../images/powertoys-workspaces/capture_ux.png)
+:::image type="content" source="../images/powertoys-workspaces/capture_ux.png" alt-text="Screenshot of PowerToys Workspaces capture experience showing app arrangement options.":::
 
 After capturing, you will enter the editor where you can name the workspace, adjust window sizes, add command line interface (CLI) arguments, remove apps, and create a desktop shortcut before finally saving the workspace.
 
-![Edit screen after capture](../images/powertoys-workspaces/post_capture_edit.png)
+:::image type="content" source="../images/powertoys-workspaces/post_capture_edit.png" alt-text="Screenshot of PowerToys Workspaces editor interface after capturing showing workspace editing options.":::
 
 ## Launching a workspace
 
@@ -79,7 +80,7 @@ Different apps may behave differently on launch if there is already an existing 
 For example, VS Code will launch a new window by default, but should a user prefer to move the existing window, the `--reuse-window` CLI argument can be added to VS Code's CLI arguments.
 
 > [!NOTE]
-> Some apps are "single-instance" applications, meaning that there may only be one active instance of the app open at a time. One example of this is the Windows Settings app. These apps, if already active, will be repositioned by default, and new instances cannot be launched.
+> Some apps are "single-instance" applications, meaning that there may only be one active instance of the app open at a time. One example of this is Windows Settings. These apps, if already active, will be repositioned by default, and new instances cannot be launched.
 
 ## Frequently Asked Questions
 

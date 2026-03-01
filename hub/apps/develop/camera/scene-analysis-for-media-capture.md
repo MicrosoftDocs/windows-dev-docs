@@ -1,5 +1,5 @@
 ---
-description: Learn how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the MediaCapture preview stream in a WinUI 3 app.
+description: Learn how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the MediaCapture preview stream in a WinUI app.
 title: Effects for analyzing camera frames
 ms.date: 02/08/2017
 ms.topic: article

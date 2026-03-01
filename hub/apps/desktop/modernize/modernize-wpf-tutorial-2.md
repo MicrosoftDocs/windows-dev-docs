@@ -1,7 +1,7 @@
 ---
 description: This tutorial demonstrates how to add support for digital signatures to the Contoso Expenses app.
 title: Add a UWP InkCanvas control using XAML Islands
-ms.topic: article
+ms.topic: how-to
 ms.date: 01/24/2020
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium

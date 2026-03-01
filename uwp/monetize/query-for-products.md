@@ -3,7 +3,7 @@ ms.assetid: D1F233EC-24B5-4F84-A92F-2030753E608E
 description: Use this method in the Microsoft Store collection API to get all the products that a customer owns for apps that are associated with your Azure AD client ID. You can scope your query to a particular product, or use other filters.
 title: Query for products
 ms.date: 04/22/2021
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store collection API, view products
 ms.localizationpriority: medium
 ---

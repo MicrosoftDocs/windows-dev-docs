@@ -1,9 +1,9 @@
 ---
 title: Set up Node.js on WSL 2
 description: A guide to help you get your Node.js development environment set up on Windows Subsystem for Linux (WSL).
-ms.topic: article
+ms.topic: install-set-up-deploy
 ms.localizationpriority: medium
-ms.date: 11/26/2024
+ms.date: 06/11/2025
 ---
 
 # Install Node.js on Windows Subsystem for Linux (WSL2)
@@ -86,7 +86,7 @@ We recommend using Visual Studio Code with the [Remote-development extension pac
 - Your project will automatically build in Linux.
 - You can use all your extensions running on Linux ([ES Lint, NPM Intellisense, ES6 snippets, etc.](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)).
 
-Other code editors, like IntelliJ, Sublime Text, Brackets, etc. will also work with a WSL 2 Node.js development environment, but may not have the same sort of remote  features that VS Code offers. These code editors may run into trouble accessing the WSL shared network location (\\wsl$\Ubuntu\home\) and will try to build your Linux files using Windows tools, which likely not what you want. The Remote-WSL Extension in VS Code handles this compatibility for you, with other IDEs you may need to set up an X server. [Support for running GUI apps in WSL](https://twitter.com/craigaloewen/status/1308452901266751488?lang=en) (like a code editor IDE) is coming soon.
+Other code editors, like IntelliJ, Sublime Text, Brackets, etc. will also work with a WSL 2 Node.js development environment, but may not have the same sort of remote  features that VS Code offers. These code editors may run into trouble accessing the WSL shared network location (\\wsl$\Ubuntu\home\) and will try to build your Linux files using Windows tools, which likely is not what you want. The Remote-WSL Extension in VS Code handles this compatibility for you, with other IDEs you may need to set up an X server. [Support for running GUI apps in WSL](https://twitter.com/craigaloewen/status/1308452901266751488?lang=en) (like a code editor IDE) is coming soon.
 
 Terminal-based text editors (vim, emacs, nano) are also helpful for making quick changes from right inside your console. The article, [Emacs, Nano, or Vim: Choose your Terminal-Based Text Editor Wisely](https://medium.com/linode-cube/emacs-nano-or-vim-choose-your-terminal-based-text-editor-wisely-8f3826c92a68) does a nice job explaining some differences and a bit about how to use each.
 

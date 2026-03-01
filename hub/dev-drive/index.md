@@ -1,7 +1,7 @@
 ---
 title: Set up a Dev Drive on Windows 11
 description: Learn about the new Dev Drive storage available to improve file system performance for development scenarios using the ReFS volume format, including how to set it up, designate trust to use performance mode for Microsoft Defender Antivirus, customized filters, and FAQs.
-ms.topic: article
+ms.topic: how-to
 ms.date: 08/27/2024
 ---
 
@@ -57,7 +57,7 @@ There are advantages and trade-offs to consider when choosing whether to [create
 When choosing the **Create new VHD** option to set up a Dev Drive, you will then need to determine the following:
 
 - **Virtual hard disk name**: Give a name to your VHD (Dev Drive).
-- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. The default location is `C:\`, unless creating a Dev Drive using [Dev Home](../dev-home/index.md), in which case the default location is `%userprofile%\DevDrives`. We recommend using a per-user directory path location to store your Dev Drive to avoid any unintentional sharing.
+- **Location**: Assign a directory path where the Dev Drive VHD will be located on your machine. The default location is `C:\`. We recommend using a per-user directory path location to store your Dev Drive to avoid any unintentional sharing.
 - **Virtual hard disk size**: Assign the amount of disk space that will be allocated for the volume to use, minimum size is 50 GB.
 - **Virtual hard disk format**:
   - **VHD**: Supports virtual disks up to 2040 GB in size.
@@ -158,7 +158,7 @@ A package cache is the global folder location used by applications to store file
 
 - **Maven cache (Java)**: Create a Maven cache directory in your Dev Drive, for example `D:\packages\maven`, then set a global environment variable `MAVEN_OPTS` to add a configuration setting to that path, for example `setx /M MAVEN_OPTS "-Dmaven.repo.local=D:\packages\maven"`. Move the contents of `%USERPROFILE%\.m2\repository` to this directory (this includes only the dependencies, plugins, and other artifacts that Maven downloads into the `repository` folder and uses for your projects). Learn more in the [Maven docs](https://maven.apache.org/settings.html) and see StackOverflow for [How to specify an alternate location for the .m2 folder or settings.xml permanently?](https://stackoverflow.com/questions/16649420/how-to-specify-an-alternate-location-for-the-m2-folder-or-settings-xml-permanen).
 
-- **Gradle cache (Java)**: Create a Gradle cache directory in your Dev Drive, for example, `D:\packages\gradle`. Then, set a global environment variable `GRADLE_USER_HOME` to point to that path, for example, use `setx /M GRADLE_USER_HOME "D:\packages\gradle"` in the command line to set it system-wide. After setting this variable, Gradle will use the specified directory (`D:\packages\gradle`) for its caches and configuration files. If you have existing Gradle files, move the contents of `%USERPROFILE%\.gradle` to this new directory. For more detailed information, you can refer to the [Gradle documentation](https://docs.gradle.org/current/userguide/userguide.html) and explore community resources like StackOverflow for [tips on managing Gradle configurations and cache directories](https://stackoverflow.com/questions/56350799/gradle-user-home-set-in-gradle-properties-build-gradle-or-settings-gradle-to).
+- **Gradle cache (Java)**: Create a Gradle cache directory in your Dev Drive, for example, `D:\packages\gradle`. Then, set a global environment variable `GRADLE_USER_HOME` to point to that path, for example, use `setx /M GRADLE_USER_HOME D:\packages\gradle` in the command line to set it system-wide. After setting this variable, Gradle will use the specified directory (`D:\packages\gradle`) for its caches and configuration files. If you have existing Gradle files, move the contents of `%USERPROFILE%\.gradle` to this new directory. For more detailed information, you can refer to the [Gradle documentation](https://docs.gradle.org/current/userguide/userguide.html) and explore community resources like StackOverflow for [tips on managing Gradle configurations and cache directories](https://stackoverflow.com/questions/56350799/gradle-user-home-set-in-gradle-properties-build-gradle-or-settings-gradle-to).
 
 ## Understanding security risks and trust in relation to Dev Drive
 

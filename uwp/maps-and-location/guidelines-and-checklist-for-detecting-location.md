@@ -31,7 +31,7 @@ This topic describes performance guidelines for apps that require access to a us
 -   Display a progress bar or ring while waiting to get location data. <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
 -   Show appropriate error messages or dialogs when location services are disabled or not available.
 
-    If the location settings don't allow your app to access the user's location, we recommend providing a convenient link to the **location privacy settings** in the **Settings** app. For example, you could use a Hyperlink control or call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch the **Settings** app from code using the `ms-settings:privacy-location` URI. For more info, see [Launch the Windows Settings app](/windows/apps/develop/launch/launch-settings-app).
+    If the location settings don't allow your app to access the user's location, we recommend providing a convenient link to the **location privacy settings** in **Settings**. For example, you could use a Hyperlink control or call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch **Settings** from code using the `ms-settings:privacy-location` URI. For more info, see [Launch Windows Settings](/windows/apps/develop/launch/launch-settings).
 
 -   Clear cached location data and release the [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) when the user disables access to location info.
 
@@ -101,7 +101,7 @@ This topic describes performance guidelines for apps that require access to a us
 
 ### Detecting changes in location settings
 
-The user can turn off location functionality by using the **location privacy settings** in the **Settings** app.
+The user can turn off location functionality by using the **location privacy settings** in **Settings**.
 
 -   To detect when the user disables or reenables location services:
     -   Handle the [**StatusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged) event. The [**Status**](/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) property of the argument to the **StatusChanged** event has the value **Disabled** if the user turns off location services.

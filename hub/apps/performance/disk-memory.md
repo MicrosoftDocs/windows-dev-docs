@@ -2,7 +2,7 @@
 title: Disk use, memory improvements and Windows Application Performance
 description: This guide will demonstrate ways to improve the memory consumption and the disk footprint of your Windows app(s).
 ms.reviewer: visu
-ms.topic: conceptual
+ms.topic: how-to
 ms.date: 05/11/2022
 #Customer intent: As a Windows application developer, I want to know how to improve the way my app consumes memory and uses disk space.
 ---

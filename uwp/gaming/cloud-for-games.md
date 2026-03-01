@@ -3,7 +3,7 @@ title: Using cloud services for UWP games
 description: When developing UWP games across platforms and devices, use a cloud backend to help scale your games according to demand.
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
 ms.date: 03/27/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, games, cloud services
 ms.localizationpriority: medium
 ---
@@ -198,7 +198,7 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 
 * [Microsoft for Startups](https://startups.microsoft.com)
 
-    Microsoft for Startups provides product, technical, and go-to-market benefits to help accelerate the growth of startups. One benefit includes getting an Azure free account. You have $200 credit to explore services for 30 days, 12 months of popular free services, and always free 25+ services. For more information, see [Bring your startup's ideas to life with an Azure free account](https://azure.microsoft.com/free/startups/).
+    Microsoft for Startups provides product, technical, and go-to-market benefits to help accelerate the growth of startups. One benefit includes getting an Azure free account. You have $200 credit to explore services for 30 days, 12 months of popular free services, and always free 25+ services. For more information, see [Bring your startup's ideas to life with an Azure free account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn).
     
 * [Developer programs](e2e.md#developer-programs)
 

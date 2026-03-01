@@ -4,6 +4,7 @@ description: Generates the SHA256 hash for an installer.
 ms.date: 07/11/2024
 ms.topic: article
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # hash command (winget)

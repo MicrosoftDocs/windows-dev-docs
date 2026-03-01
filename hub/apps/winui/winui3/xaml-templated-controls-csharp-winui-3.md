@@ -1,8 +1,8 @@
 ---
-description: This article walks you through creating a XAML templated control for WinUI 3 with C#.
+description: This article walks you through creating a XAML templated control for WinUI with C#.
 title: Build XAML controls with C#
 ms.date: 07/09/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, custom control, templated control
 ms.localizationpriority: high
 ms.custom: 19H1
@@ -12,22 +12,22 @@ ms.custom: 19H1
 
 This article walks you through creating a templated XAML control for WinUI 3 with C#. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
 
-To create standalone WinUI 3 components in C# for consumption from both C# and C++/WinRT apps, see the article [Walkthrough: Create a C# component with WinUI 3 controls, and consume it from a C++ Windows App SDK application](../../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md).
+To create standalone WinUI components in C# for consumption from both C# and C++/WinRT apps, see the article [Walkthrough: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK application](../../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md).
 
 ## Prerequisites
 
 1. Set up your development environment&mdash;see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
-2. Follow the instructions on how to [Create your first WinUI 3 project](create-your-first-winui3-app.md).
+2. Follow the instructions on how to [Create your first WinUI project](create-your-first-winui3-app.md).
 
 ## Create a Blank App (BgLabelControlApp)
 
-Begin by creating a new project in Microsoft Visual Studio. In the **Create a new project** dialog, select the **Blank App, Packaged (WinUI 3 in Desktop)** project template, making sure to select the C# language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. 
+Begin by creating a new project in Microsoft Visual Studio. In the **Create a new project** dialog, select the **Blank App, Packaged (WinUI in Desktop)** project template, making sure to select the C# language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. 
 
 ![Blank App Project Template](images/new-project-packaged-winui3-desktop.png)
 
 ## Add a templated control to your app
 
-To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C#->WinUI** select the **Custom Control (WinUI 3)** template. Name the new control "BgLabelControl" and click *Add*. 
+To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C#->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. 
 
 ## Update the custom control C# file
 
@@ -79,7 +79,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 }
 ```
 
-For more information on how dependency properties work, see [Dependency properties overview](/windows/uwp/xaml-platform/dependency-properties-overview).
+For more information on how dependency properties work, see [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview).
 
 ## Define the default style for BgLabelControl
 A templated control must provide a default style template that is used if the user of the control doesn't explicitly set a style. In this step, we will modify the generic template file for our control.
@@ -111,7 +111,7 @@ The generic template file is generated when you add the **Custom Control (WinUI)
 
 In this example you can see that the **TargetType** attribute of the **Style** element is set to our **BgLabelControl** type within the **BgLabelControlApp** namespace. This type is the same value as we specified above for the **DefaultStyleKey** property in the control's constructor which identifies this as the default style for the control.
 
-The **Text** property of the **TextBlock** in the control template is bound to our control's **Label** dependency property. The property is bound using the [TemplateBinding](/windows/uwp/xaml-platform/templatebinding-markup-extension) markup extension. This example also binds the **Grid** background to the **Background** dependency property which is inherited from the **Control** class.
+The **Text** property of the **TextBlock** in the control template is bound to our control's **Label** dependency property. The property is bound using the [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension) markup extension. This example also binds the **Grid** background to the **Background** dependency property which is inherited from the **Control** class.
 
 ## Add an instance of BgLabelControl to the main UI page
 
@@ -128,5 +128,4 @@ Build and run the app and you will see the templated control, with the backgroun
 ## See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

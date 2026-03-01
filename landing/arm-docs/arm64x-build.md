@@ -1,8 +1,8 @@
 ---
 title: Build Arm64X Files
 description: Build Arm64X files for situations where one file is loaded into both x64/Arm64EC and Arm64 processes.
-ms.date: 08/08/2024
-ms.topic: article
+ms.date: 11/06/2025
+ms.topic: how-to
 ms.service: windows
 ms.subservice: arm
 ---
@@ -11,23 +11,23 @@ ms.subservice: arm
 
 You can build Arm64X binaries, also known as [Arm64X PE files](./arm64x-pe.md), to support loading a single binary into both x64/Arm64EC and Arm64 processes.  
 
-## Building an Arm64X binary from a Visual Studio project
+## Build an Arm64X binary from a Visual Studio project
 
 To enable building Arm64X binaries, the property pages of Arm64EC configuration has a new "Build Project as ARM64X" property, known as `BuildAsX` in the project file.
 
 ![Property page for an Arm64EC configuration showing the Build Project as ARM64X option](./images/arm64x-build.png)
 
-When a user builds a project, Visual Studio would normally compile for Arm64EC and then link the outputs into an Arm64EC binary. When `BuildAsX` is set to `true`, Visual Studio will instead compile for both Arm64EC **and** Arm64. The Arm64EC link step is then used to link both together into a single Arm64X binary. The output directory for this Arm64X binary will be whatever the output directory is set to under the [Arm64EC configuration](./arm64ec-build.md).
+When you build a project, Visual Studio normally compiles for Arm64EC and then links the outputs into an Arm64EC binary. When you set `BuildAsX` to `true`, Visual Studio compiles for both Arm64EC **and** Arm64. The Arm64EC link step links both outputs into a single Arm64X binary. The output directory for this Arm64X binary is the output directory set under the [Arm64EC configuration](./arm64ec-build.md).
 
-For `BuildAsX` to work correctly, the user must have an existing Arm64 configuration, in addition to the Arm64EC configuration. The Arm64 and Arm64EC configurations must have the same C runtime and C++ standard library (e.g., both set [/MT](/cpp/c-runtime-library/crt-library-features)). To avoid build inefficiencies, such as building full Arm64 projects rather than just compilation, all direct and indirect references of the project should have `BuildAsX` set to true.
+For `BuildAsX` to work correctly, you must have an existing Arm64 configuration, in addition to the Arm64EC configuration. The Arm64 and Arm64EC configurations must use the same C runtime and C++ standard library (for example, both set to [/MT](/cpp/c-runtime-library/crt-library-features)). To avoid build inefficiencies, such as building full Arm64 projects rather than just compilation, set `BuildAsX` to true for all direct and indirect references of the project.
 
 The build system assumes that the Arm64 and Arm64EC configurations have the same name. If the Arm64 and Arm64EC configurations have different names (such as `Debug|ARM64` and `MyDebug|ARM64EC`), you can manually edit the [vcxproj](/cpp/build/reference/vcxproj-file-structure) or `Directory.Build.props` file to add an `ARM64ConfigurationNameForX` property to the Arm64EC configuration that provides the name of the Arm64 configuration.
 
-If the desired Arm64X binary is a combination of two separate projects, one as Arm64 and one as Arm64EC, you can manually edit the vxcproj of the Arm64EC project to add an `ARM64ProjectForX` property and specify the path to the Arm64 project. The two projects must be in the same solution.
+If you want the Arm64X binary to combine two separate projects, one as Arm64 and one as Arm64EC, you can manually edit the vxcproj of the Arm64EC project to add an `ARM64ProjectForX` property and specify the path to the Arm64 project. The two projects must be in the same solution.
 
 ## Building an Arm64X DLL with CMake
 
-To build your CMake project binaries as Arm64X, you can use any version of [CMake](https://cmake.org/documentation/) that supports building as Arm64EC. The process involves initially building the project targeting Arm64 to generate the Arm64 linker inputs. Subsequently, the project should be built again targeting Arm64EC, this time combining the Arm64 and Arm64EC inputs to form Arm64X binaries. The steps below leverage the use of [CMakePresets.json](/cpp/build/cmake-presets-vs).
+To build your CMake project binaries as Arm64X, use any version of [CMake](https://cmake.org/documentation/) that supports building as Arm64EC. First, build the project targeting Arm64 to generate the Arm64 linker inputs. Then, build the project again targeting Arm64EC, combining the Arm64 and Arm64EC inputs to form Arm64X binaries. The following steps show how to use [CMakePresets.json](/cpp/build/cmake-presets-vs).
 
 1. Ensure you have separate configuration presets targeting Arm64 and Arm64EC. For example:
 
@@ -76,7 +76,7 @@ To build your CMake project binaries as Arm64X, you can use any version of [CMak
 	}
 	```
 
-2. Add two new configurations that inherit from the Arm64 and Arm64EC presets you have above. Set `BUILD_AS_ARM64X` to `ARM64EC` in the config that inherits from Arm64EC and `BUILD_AS_ARM64X` to `ARM64` in the other. These variables will be used to signify that the builds from these two presets are a part of Arm64X.
+1. Add two new configurations that inherit from the Arm64 and Arm64EC presets you created in the previous step. Set `BUILD_AS_ARM64X` to `ARM64EC` in the config that inherits from Arm64EC and `BUILD_AS_ARM64X` to `ARM64` in the other. These variables signify that the builds from these two presets are part of Arm64X.
 
 	 ```JSON
 	    {
@@ -85,17 +85,19 @@ To build your CMake project binaries as Arm64X, you can use any version of [CMak
 	      "inherits": "arm64-debug",
 	      "cacheVariables": {
 	        "BUILD_AS_ARM64X": "ARM64"
-	    },
-	 	{
+	      }
+            },
+	    {
 	      "name": "arm64ec-debug-x",
 	      "displayName": "arm64ec Debug (arm64x)",
 	      "inherits": "arm64ec-debug",
 	      "cacheVariables": {
 	        "BUILD_AS_ARM64X": "ARM64EC"
-	    }
+	      }
+            }
 	```
 
-3. Add a new .cmake file to your CMake project called `arm64x.cmake`. Copy the snippet below into the new .cmake file.
+1. Add a new .cmake file to your CMake project called `arm64x.cmake`. Copy the following snippet into the new .cmake file.
 
 	```cmake
 	# directory where the link.rsp file generated during arm64 build will be stored
@@ -135,9 +137,9 @@ To build your CMake project binaries as Arm64X, you can use any version of [CMak
 	endif()
 	```
 
-[/LINKREPROFULLPATHRSP](/cpp/build/reference/link-repro-full-path-rsp) is only supported if you are building using the MSVC linker from Visual Studio 17.11 or later.
+[/LINKREPROFULLPATHRSP](/cpp/build/reference/link-repro-full-path-rsp) is only supported if you build by using the MSVC linker from Visual Studio 17.11 or later.
 
-If you need to use an older linker, copy the below snippet instead. This route uses an older flag [/LINK_REPRO](/cpp/build/reference/linkrepro). Using the /LINK_REPRO route will result in a slower overall build time due to the copying of files and has known issues when using Ninja generator.
+If you need to use an older linker, copy the following snippet instead. This route uses an older flag [/LINK_REPRO](/cpp/build/reference/linkrepro). Using the /LINK_REPRO route results in a slower overall build time due to the copying of files and has known issues when using Ninja generator.
 
 ```cmake
 # directory where the link_repro directories for each arm64x target will be created during arm64 build.
@@ -183,7 +185,7 @@ elseif("${BUILD_AS_ARM64X}" STREQUAL "ARM64EC")
 endif()
 ```
 
-4. In the bottom of the top level `CMakeLists.txt` file in your project, add the snippet below. Be sure to substitute the contents of the angle brackets with actual values. This will consume the `arm64x.cmake` file you just created above.
+1. At the bottom of the top level `CMakeLists.txt` file in your project, add the following snippet. Be sure to substitute the contents of the angle brackets with actual values. This step consumes the `arm64x.cmake` file you just created.
 
 	```cmake
 	if(DEFINED BUILD_AS_ARM64X)
@@ -192,9 +194,9 @@ endif()
 	endif()
 	```
 
-5. Build your CMake project using the Arm64X enabled Arm64 preset (arm64-debug-x).
+1. Build your CMake project by using the Arm64X enabled Arm64 preset (arm64-debug-x).
 
-6. Build your CMake project using the Arm64X enabled Arm64EC preset (arm64ec-debug-x). The final dll(s) contained in output directory for this build will be Arm64X binaries.
+1. Build your CMake project by using the Arm64X enabled Arm64EC preset (arm64ec-debug-x). The final DLLs in the output directory for this build are Arm64X binaries.
 
 ## Building an Arm64X pure forwarder DLL
 
@@ -204,20 +206,20 @@ An **Arm64X pure forwarder DLL** is a small Arm64X DLL that forwards APIs to sep
 
 - x64 APIs are forwarded to an x64 or Arm64EC DLL.
 
-An Arm64X pure forwarder enables the advantages of using an Arm64X binary even if there are challenges with building a merged Arm64X binary containing all of the Arm64EC and Arm64 code. Learn more about Arm64X pure forwarder DLLs in the [Arm64X PE files](./arm64x-pe.md) overview page.
+An Arm64X pure forwarder enables the advantages of using an Arm64X binary even if there are challenges with building a merged Arm64X binary containing all of the Arm64EC and Arm64 code. For more information, see [Arm64X PE files](./arm64x-pe.md).
 
-You can build an Arm64X pure forwarder from the Arm64 developer command prompt following the steps below. The resulting Arm64X pure forwarder will route x64 calls to `foo_x64.DLL` and Arm64 calls to `foo_arm64.DLL`.
+You can build an Arm64X pure forwarder from the Arm64 developer command prompt by following the steps below. The resulting Arm64X pure forwarder routes x64 calls to `foo_x64.DLL` and Arm64 calls to `foo_arm64.DLL`.
 
-1. Create empty `OBJ` files that will later be used by the linker to create the pure forwarder. These are empty as the pure forwarder has no code in it. To do this, create an empty file. For the example below, we named the file **empty.cpp**. Empty `OBJ` files are then created using `cl`, with one for Arm64 (`empty_arm64.obj`) and one for Arm64EC (`empty_x64.obj`):
+1. Create empty `OBJ` files that the linker uses to create the pure forwarder. These files are empty because the pure forwarder contains no code. To create these files, create an empty file. In the following example, the file is named **empty.cpp**. Use `cl` to create empty `OBJ` files, with one for Arm64 (`empty_arm64.obj`) and one for Arm64EC (`empty_x64.obj`):
 
     ```batch
     cl /c /Foempty_arm64.obj empty.cpp
     cl /c /arm64EC /Foempty_x64.obj empty.cpp
     ```
     
-   > If the error message "cl : Command line warning D9002 : ignoring unknown option '-arm64EC'" appears, the incorrect compiler is being used. To resolve that please switch to [the Arm64 Developer Command Prompt](https://devblogs.microsoft.com/cppblog/arm64ec-support-in-visual-studio/#developer-command-prompt).
+   > If you see the error message "cl : Command line warning D9002 : ignoring unknown option '-arm64EC'", you're using the wrong compiler. To fix this issue, switch to [the Arm64 Developer Command Prompt](https://devblogs.microsoft.com/cppblog/arm64ec-support-in-visual-studio/#developer-command-prompt).
 
-2. Create `DEF` files for both x64 and Arm64. These files enumerate all of the API exports of the DLL and points the loader to the name of the DLL that can fulfill those API calls.
+1. Create `DEF` files for both x64 and Arm64. These files list all of the API exports of the DLL and point the loader to the name of the DLL that can fulfill those API calls.
 
     `foo_x64.def`:
 
@@ -235,17 +237,17 @@ You can build an Arm64X pure forwarder from the Arm64 developer command prompt f
         MyAPI2  =  foo_arm64.MyAPI2
     ```
 
-3. You can then use `link` to create `LIB` import files for both x64 and Arm64:
+1. Use `link` to create `LIB` import files for both x64 and Arm64:
 
     ```batch
     link /lib /machine:x64 /def:foo_x64.def /out:foo_x64.lib
     link /lib /machine:arm64 /def:foo_arm64.def /out:foo_arm64.lib
     ```
 
-4. Link the empty `OBJ` and import `LIB` files using the flag `/MACHINE:ARM64X` to produce the Arm6X pure forwarder DLL:
+1. Link the empty `OBJ` and import `LIB` files by using the flag `/MACHINE:ARM64X` to produce the Arm6X pure forwarder DLL:
 
     ```cpp
     link /dll /noentry /machine:arm64x /defArm64Native:foo_arm64.def /def:foo_x64.def empty_arm64.obj empty_x64.obj /out:foo.dll foo_arm64.lib foo_x64.lib
     ```
 
-The resulting `foo.dll` can be loaded into either an Arm64 or an x64/Arm64EC process. When an Arm64 process loads `foo.dll`, the operating system will immediately load `foo_arm64.dll` in its place and any API calls will be handled by `foo_arm64.dll`.
+The resulting `foo.dll` can be loaded into either an Arm64 or an x64/Arm64EC process. When an Arm64 process loads `foo.dll`, the operating system immediately loads `foo_arm64.dll` in its place and any API calls are handled by `foo_arm64.dll`.

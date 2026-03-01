@@ -3,7 +3,7 @@ title: Continue user activity, even across devices
 description: This topic describes how to help users resume what they were doing in your app, even across multiple devices.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
 ms.date: 05/05/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

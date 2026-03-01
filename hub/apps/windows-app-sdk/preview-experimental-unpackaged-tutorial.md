@@ -1,8 +1,8 @@
 ---
 title: Build and deploy an unpackaged app that uses the Preview and Experimental versions of the Windows App SDK 
 description: This article provides a walkthrough for building and deploying an unpackaged app that uses the Preview and Experimental versions of Windows App SDK.
-ms.topic: article
-ms.date: 05/24/2021
+ms.topic: tutorial
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ You can choose to follow this tutorial using a C++ project or a C# project.
 
 ### [C++](#tab/cpp)
 
-Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C++ project that includes WinUI unpackaged support.  
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)
@@ -123,7 +123,7 @@ Follow these instructions to configure a C++ project. Starting in [1.0 Preview 3
 
 ### [C# with 1.0 Preview 3 and later](#tab/csharp-dotnet-preview3)
 
-Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI 3 unpackaged support.  
+Follow these instructions to configure a C# project. Starting in [1.0 Preview 3](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3), you can also configure a C# project that includes WinUI unpackaged support.  
 
 1. In Visual Studio, create a new C# **Console Application** project. Name the project **DynamicDependenciesTest**.
 
@@ -138,7 +138,7 @@ Follow these instructions to configure a C# project. Starting in [1.0 Preview 3]
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 doesn't support that platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI doesn't support that platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.
@@ -222,7 +222,7 @@ Follow these instructions to configure a C# project that uses the [1.0 Experimen
 
     3. Save and close the project file.
 
-3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI 3 doesn't support that platform.
+3. Change the platform for your solution to **x64**. The default value in a .NET project is **AnyCPU**, but WinUI doesn't support that platform.
 
     1. Select **Build** > **Configuration Manager**.
     2. Select the drop-down under **Active solution platform** and click **New** to open the **New Solution Platform** dialog box.

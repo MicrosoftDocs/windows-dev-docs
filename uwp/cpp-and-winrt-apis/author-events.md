@@ -2,7 +2,7 @@
 description: This topic demonstrates how to author a Windows Runtime component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events.
 title: Author events in C++/WinRT
 ms.date: 04/23/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event
 ms.localizationpriority: medium
 ---

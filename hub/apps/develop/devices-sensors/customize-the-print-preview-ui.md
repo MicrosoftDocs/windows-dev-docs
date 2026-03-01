@@ -3,7 +3,7 @@
 title: Customize the print preview UI
 description: This topic describes how to customize the print options and settings in the print preview UI.
 ms.date: 09/10/2024
-ms.topic: article
+ms.topic: how-to
 author: jwmsft
 ms.author: jimwalk
 ms.localizationpriority: medium
@@ -52,7 +52,7 @@ private void PrintTask_Requested(PrintManager sender, PrintTaskRequestedEventArg
 {
     // Create the PrintTask.
     // Defines the title and delegate for PrintTaskSourceRequested.
-    PrintTask printTask = args.Request.CreatePrintTask("WinUI 3 Printing example", PrintTaskSourceRequested);
+    PrintTask printTask = args.Request.CreatePrintTask("WinUI Printing example", PrintTaskSourceRequested);
 
     // Handle PrintTask.Completed to catch failed print jobs.
     printTask.Completed += PrintTask_Completed;
@@ -110,7 +110,7 @@ private void PrintTask_Requested(PrintManager sender, PrintTaskRequestedEventArg
 {
     // Create the PrintTask.
     PrintTask printTask = null;
-    printTask = args.Request.CreatePrintTask("WinUI 3 Printing example", sourceRequestedArgs =>
+    printTask = args.Request.CreatePrintTask("WinUI Printing example", sourceRequestedArgs =>
     {
         PrintTaskSourceRequestedDeferral deferral = 
             sourceRequestedArgs.GetDeferral();

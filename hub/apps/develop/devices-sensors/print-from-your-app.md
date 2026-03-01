@@ -3,7 +3,7 @@
 title: Print from your app
 description: Learn how to print documents from a Windows app. This topic also shows how to print specific pages.
 ms.date: 09/11/2024
-ms.topic: article
+ms.topic: how-to
 author: jwmsft
 ms.author: jimwalk
 ms.localizationpriority: medium
@@ -170,7 +170,7 @@ private void PrintTask_Requested(PrintManager sender, PrintTaskRequestedEventArg
 {
     // Create the PrintTask.
     // Defines the title and delegate for PrintTaskSourceRequested.
-    PrintTask printTask = args.Request.CreatePrintTask("WinUI 3 Printing example", PrintTaskSourceRequested);
+    PrintTask printTask = args.Request.CreatePrintTask("WinUI Printing example", PrintTaskSourceRequested);
 
     // Handle PrintTask.Completed to catch failed print jobs.
     printTask.Completed += PrintTask_Completed;

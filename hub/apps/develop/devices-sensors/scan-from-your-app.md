@@ -3,7 +3,7 @@
 title: Scan from your app
 description: Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

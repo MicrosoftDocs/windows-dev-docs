@@ -1,14 +1,15 @@
 ---
-title: Create a Windows Hello login app
+title: "Tutorial: Create a Windows Hello login app"
 description: This is the first part of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems.
 ms.date: 07/08/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows, winrt, security, identity, winui
+ms.custom: sfi-image-nochange
 ---
 
-# Create a Windows Hello login app
+# Tutorial: Create a Windows Hello login app
 
-This is the first part of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems. In this case, the app is a WinUI app, but the same approach can be used with any packaged Windows app, including WPF and Windows Forms apps. The app uses a username for sign-in and creates a Hello key for each account. These accounts will be protected by the PIN that is set up in Windows Settings on configuration of Windows Hello.
+This is the first part of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems. In this case, the app is a WinUI 3 app, but the same approach can be used with any packaged Windows app, including WPF and Windows Forms apps. The app uses a username for sign-in and creates a Hello key for each account. These accounts will be protected by the PIN that is set up in Windows Settings on configuration of Windows Hello.
 
 This walkthrough is split into two parts: building the app and connecting the backend service. When you're finished with this article, continue on to Part 2: [Windows Hello login service](windows-hello-auth-service.md).
 
@@ -20,7 +21,7 @@ In order to build this project, you'll need some experience with C#, and XAML. Y
 
 - In Visual Studio, select **File** > **New** > **Project**.
 - In the **New Project** dialog's drop-down filters, select **C#/C++**, **Windows**, and **WinUI**, respectively.
-- Choose **Blank App, Packaged (WinUI 3 in Desktop)** and name your application "WindowsHelloLogin".
+- Choose **Blank App, Packaged (WinUI in Desktop)** and name your application "WindowsHelloLogin".
 - Build and Run the new application (F5), you should see a blank window shown on the screen. Close the application.
 
 ![A screenshot of the new Windows Hello Login app running for the first time](images/windows-hello-login-1.png)

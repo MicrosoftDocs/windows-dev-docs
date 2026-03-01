@@ -12,7 +12,7 @@ This article provides an overview of the Windows UI frameworks that are currentl
 
 Microsoft produces both UI frameworks and app platforms. App platforms typically include a UI framework, while UI frameworks are either standalone (not shipped with an app platform) or can be used with multiple app platforms (see [Choose your app platform](/windows/apps/desktop/#choose-your-app-typechoose-your-app-type)).
 
-The frameworks discussed here include WinUI for both Windows App SDK (WinUI 3) and UWP (WinUI 2), Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
+The frameworks discussed here include WinUI for both Windows App SDK (WinUI) and UWP (WinUI for UWP), Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
 
 ## User interface fundamentals
 
@@ -24,13 +24,13 @@ There are five main components that go into creating a user interface for your W
 
   - A control is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface.
 
-    Here's an example of a Button control that's available in UWP, WinUI 2, and WinUI 3. When you place this control into your app, it automatically receives the default design that the UI framework provides.
+    Here's an example of a Button control that's available in UWP, WinUI for UWP, and WinUI 3. When you place this control into your app, it automatically receives the default design that the UI framework provides.
 
     ![WinUI button](images/button.png)
 
   - Styles consist of colors, typography, icons, Fluent materials, and more that can be used throughout your app's design to create a truly unique experience.
 
-    Here's an example of a style component called [Acrylic](../design/style/acrylic.md), available in WinUI 2 and WinUI 3. Acrylic is a brush that you can use on surfaces within your app or as the background of your app. It provides a translucent texture.
+    Here's an example of a style component called [Acrylic](../design/style/acrylic.md), available in WinUI for UWP and WinUI. Acrylic is a brush that you can use on surfaces within your app or as the background of your app. It provides a translucent texture.
 
     ![Acrylic material](images/Acrylic_LightTheme_Base.png)
 
@@ -61,7 +61,7 @@ There are five main components that go into creating a user interface for your W
 
     Built-in animations can really give your app a polished look and feel, and provide consistency with first-party apps throughout Windows.
 
-    An example of a built-in animation in UWP, WinUI 2, and WinUI 3 is the animation that occurs when the end user switches between light and dark mode. When the end user switches modes for their entire PC, the app's UI will automatically update as well with a transition animation.
+    An example of a built-in animation in UWP, WinUI for UWP, and WinUI is the animation that occurs when the end user switches between light and dark mode. When the end user switches modes for their entire PC, the app's UI will automatically update as well with a transition animation.
 
 - [Usability and accessibility](../design/usability/index.md)
 
@@ -75,7 +75,7 @@ Each UI framework released by Microsoft has unique capabilities, follows differe
 
 The table below shows a brief summary of a few main capabilities between these UI frameworks. For more details on each framework, navigate through the tabs further below.
 
-| Capability   | Windows App SDK (WinUI 3) | WinUI 2 for UWP      | WPF    | WinForms      |
+| Capability   | Windows App SDK (WinUI) | WinUI for UWP      | WPF    | WinForms      |
 |--------------|-----------|------------------|--------|---------------|
 | Languages supported   | C#/.NET 6 and later, C++/WinRT      | C#/.NET Native, C++/WinRT, C++/CX, VB    | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB | C#/.NET 6 (and later) and .NET Framework, C++/CLI (Managed Extensions for C++), F#, VB |
 | Devices supported   | PCs (incl. laptops and tablets), support for all Windows 10 devices coming soon | All Windows 10 devices (PCs, tablets, HoloLens, Xbox, Surface Dial, and more) | Desktop PCs and laptops    | Desktop PCs and laptops    |
@@ -86,17 +86,17 @@ The table below shows a brief summary of a few main capabilities between these U
 
 For more information about each of these UI frameworks, see the information on the following tabs.
 
-### [Windows App SDK (WinUI 3)](#tab/winui-3)
+### [Windows App SDK (WinUI)](#tab/winui-3)
 
-### Windows App SDK (WinUI 3)
+### Windows App SDK (WinUI)
 
-For most new Windows apps, we recommend WinUI with the Windows App SDK (WinUI 3) to build your user interface. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
+For most new Windows apps, we recommend WinUI with the Windows App SDK (WinUI) to build your user interface. WinUI provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns.
 
-WinUI 3 is completely decoupled from the Windows OS and ships as a part of the Windows App SDK, which is a set of tools and components that represent the next evolution in the Windows app development platform.
+WinUI is completely decoupled from the Windows OS and ships as a part of the Windows App SDK, which is a set of tools and components that represent the next evolution in the Windows app development platform.
 
-WinUI 3 is the latest generation of WinUI. WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI 2 and WinUI 3](../winui/index.md)).
+WinUI is the latest generation of WinUI. WinUI for UWP and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI for UWP and WinUI](../winui/index.md)).
 
-#### Key app scenarios enabled by WinUI 3
+#### Key app scenarios enabled by WinUI
 
 - Modern Windows apps that need to run on a variety of modern devices, with a range of modern inputs
 - Desktop/Win32 apps that are written in C++
@@ -104,44 +104,44 @@ WinUI 3 is the latest generation of WinUI. WinUI 2 and 3 share many of the same 
 - Apps with a lot of integrated web content that need high-performance
 - Apps that seek to provide experiences that "fit right in" on the Windows OS and with other first party Windows apps
 
-#### Helpful documentation for WinUI 3
+#### Helpful documentation for WinUI
 
-- Overview: [WinUI 3](../winui/winui3/index.md)
-- Get started: [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+- Overview: [WinUI](../winui/winui3/index.md)
+- Get started: [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)
 - Controls: [Controls overview](../design/controls/index.md)
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 3 Gallery app](https://www.microsoft.com/store/productId/9P3JFPWWDZRC)
+- Samples: [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
 
-### [WinUI 2 for UWP](#tab/winui-2)
+### [WinUI for UWP](#tab/winui-2)
 
-### WinUI 2 for UWP
+### WinUI for UWP
 
-For most UWP apps, we recommend using WinUI 2 to build your user interface. WinUI 2 is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.
+For most UWP apps, we recommend using WinUI for UWP to build your user interface. WinUI for UWP is a standalone UI framework that ships in a NuGet package and can easily be added to any UWP app to modernize the design and overall experience.
 
-WinUI 2 and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI 2 and WinUI 3](../winui/index.md)).
+WinUI for UWP and 3 share many of the same controls, styles, and other UI fundamentals (see [Comparison of WinUI for UWP and WinUI](../winui/index.md)).
 
-#### Key app scenarios enabled by WinUI 2
+#### Key app scenarios enabled by WinUI for UWP
 
 - UWP apps that are looking to work downlevel to all versions of Windows 10 and Windows 11
 - Graphic-heavy apps or games that want to take advantage of DirectX and Win2D 
 - UWP apps that need to run on a variety of modern devices, with a range of modern inputs
 - Apps that seek to provide experiences that "fit right in" on the Windows OS and with other first party Windows apps
 
-#### Helpful documentation for WinUI 2
+#### Helpful documentation for WinUI for UWP
 
-- Overview: [WinUI 2](/windows/uwp/get-started/winui2/)
-- Get started: [Get started with WinUI 2 for UWP](/windows/uwp/get-started/winui2/getting-started)
+- Overview: [WinUI for UWP](/windows/uwp/get-started/winui2/)
+- Get started: [Get started with WinUI for UWP](/windows/uwp/get-started/winui2/getting-started)
 - Writing XAML: [XAML Platform](/windows/uwp/xaml-platform)
 - API Reference: [WinUI API Reference](/windows/winui/api)
 - Controls: [Controls overview](../design/controls/index.md)
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI 2 Gallery app](https://www.microsoft.com/store/productId/9MSVH128X2ZT)
+- Samples: [WinUI for UWP Gallery app](https://apps.microsoft.com/detail/9MSVH128X2ZT)
 
 ### [WPF](#tab/wpf)
 
@@ -216,7 +216,7 @@ For more information on these UI frameworks, see the following documentation:
 
 For information about the fundamentals of building user interfaces for Windows apps, see the following articles.
 
-* WinRT APIs: [Layout](/windows/uwp/design/layout/), [Style](/windows/uwp/design/style/), [Motion](/windows/uwp/design/motion/), [Visual layer](/windows/uwp/composition/visual-layer), [XAML platform](/windows/uwp/xaml-platform/)
+* WinRT APIs: [Layout](/windows/uwp/design/layout/), [Style](/windows/uwp/design/style/), [Motion](/windows/uwp/design/motion/), [Visual layer](/windows/uwp/composition/visual-layer), [XAML platform](/windows/apps/develop/platform/xaml/)
 * Win32 APIs: [Desktop user interface](/windows/win32/windows-application-ui-development), [Desktop environment and shell](/windows/win32/user-interface), [UWP Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md), [Windows and messages](/windows/win32/winmsg/windowing), [Menus and other resources](/windows/win32/menurc/resources), [High DPI](/windows/win32/hidpi/high-dpi-desktop-application-development-on-windows)
 * .NET APIs: [Windows in WPF](/dotnet/framework/wpf/app-development/windows-in-wpf-applications), [Create a Windows Form](/dotnet/framework/winforms/creating-a-new-windows-form), [Navigation overview](/dotnet/framework/wpf/app-development/navigation-overview), [XAML in WPF](/dotnet/framework/wpf/advanced/xaml-in-wpf), [Visual layer programming](/dotnet/framework/wpf/graphics-multimedia/visual-layer-programming)
 

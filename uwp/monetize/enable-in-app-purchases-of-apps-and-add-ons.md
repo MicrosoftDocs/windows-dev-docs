@@ -4,7 +4,7 @@ description: Learn how to use the Windows.Services.Store namespace to purchase a
 title: Enable in-app purchases of apps and add-ons
 keywords: windows 10, uwp, add-ons, in-app purchases, IAPs, Windows.Services.Store
 ms.date: 08/25/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

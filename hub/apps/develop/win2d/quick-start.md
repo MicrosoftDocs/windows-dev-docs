@@ -1,8 +1,8 @@
 ---
 title: Build a simple Win2D app
 description: This tutorial introduces some of the basic drawing capabilities of Win2D.
-ms.date: 10/25/2023
-ms.topic: article
+ms.date: 10/28/2025
+ms.topic: how-to
 keywords: windows 11, windows 10, uwp, xaml, windows app sdk, winui, windows ui, graphics, games
 ms.localizationpriority: medium
 ---

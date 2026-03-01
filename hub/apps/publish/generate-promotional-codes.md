@@ -3,7 +3,7 @@ description: You can generate promotional codes for an app or add-on that you ha
 title: Generate promotional codes
 ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ms.date: 1/30/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, promo code, promo codes, token, tokens
 ms.localizationpriority: medium
 ---
@@ -15,9 +15,6 @@ ms.localizationpriority: medium
 Each promotional code has a corresponding unique redeemable URL that a customer can click in order to redeem the code and install your app or add-on from the Microsoft Store.  Note that your app must pass the final publishing phase of the [app certification process](publish-your-app/msix/app-certification-process.md) before customers can redeem a promotional code to install it.
 
 You can generate single-use codes (and distribute one to each customer), or you can choose to generate a code that can be used multiple times by a specified number of customers.
-
-> [!TIP]
-> You can use [targeted push notifications](send-push-notifications-to-your-apps-customers.md) to distribute a promotional code to a segment of your customers. When doing so, be sure to use a promotional code that allows multiple customers to use the same code.
 
 ## Promotional code policies
 

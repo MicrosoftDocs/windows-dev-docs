@@ -4,7 +4,7 @@ title: Timing and easing
 label: Timing and easing
 template: detail.hbs
 ms.date: 09/18/2024
-ms.topic: article
+ms.topic: concept-article
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
@@ -22,7 +22,7 @@ While motion is based in the real world, we are also a digital medium, which com
 
 ## Standard animation duration values
 
-WinUI provides a set of standard animation durations that are used throughout the platform controls. You can use these named resources when building custom Storyboard animations as well.
+WinUI 3 provides a set of standard animation durations that are used throughout the platform controls. You can use these named resources when building custom Storyboard animations as well.
 
 |ThemeResource Name  |Value  |
 |---------|---------|

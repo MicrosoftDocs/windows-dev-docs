@@ -1,7 +1,7 @@
 ---
 title: Windows App SDK deployment overview
 description: There are two ways in which you can deploy the Windows App SDK&mdash;framework-dependent or self-contained.
-ms.topic: article
+ms.topic: concept-article
 ms.date: 11/02/2023
 ms.localizationpriority: medium
 ---
@@ -71,5 +71,5 @@ The way that you should initialize the Windows App SDK depends on whether, and h
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../windows-app-sdk/deploy-unpackaged-apps.md)
 * [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../windows-app-sdk/tutorial-unpackaged-deployment.md)
 * [Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md)
-* [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+* [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)
 * [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)

@@ -3,7 +3,7 @@ description: Learn how to use the Windows.Services.Store namespace to implement 
 title: Enable subscription add-ons for your app
 keywords: windows 10, uwp, subscriptions, add-ons, in-app purchases, IAPs, Windows.Services.Store
 ms.date: 12/06/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

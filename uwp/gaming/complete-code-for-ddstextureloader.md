@@ -3,7 +3,7 @@ title: Complete code for DDSTextureLoader
 description: Complete code for a class and method that loads a DDS texture from memory.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, ddstextureloader
 ms.localizationpriority: medium
 ---

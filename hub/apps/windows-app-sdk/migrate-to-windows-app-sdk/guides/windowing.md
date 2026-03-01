@@ -1,8 +1,8 @@
 ---
 title: Windowing functionality migration
 description: This topic contains guidance related to window management, including migrating from UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) or [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow) to the Window App SDK [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow).
-ms.topic: article
-ms.date: 09/02/2022
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
 ms.localizationpriority: medium
 ---
@@ -24,7 +24,7 @@ The Windows App SDK provides a [**Microsoft.UI.Windowing.AppWindow**](/windows/w
 To take advantage of the Windows App SDK windowing APIs means that you'll migrate your UWP code to use the Win32 model. For more info about the Windows App SDK **AppWindow**, see [Manage app windows](../../windowing/windowing-overview.md).
 
 > [!TIP]
-> The [Manage app windows](../../windowing/windowing-overview.md) topic contains a code example demonstrating how to retrieve an **AppWindow** from a WinUI 3 window. In your WinUI 3 app, use that code pattern so that you can call the **AppWindow** APIs mentioned in the rest of this topic.
+> The [Manage app windows](../../windowing/windowing-overview.md) topic contains a code example demonstrating how to retrieve an **AppWindow** from a WinUI 3 window. In your WinUI app, use that code pattern so that you can call the **AppWindow** APIs mentioned in the rest of this topic.
 
 ## Window types in UWP versus the Windows App SDK
 
@@ -200,7 +200,7 @@ When you create a new UWP project in Visual Studio, the project template provide
 
 When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
 
-However, you have the option to add pages and user controls to your Windows App SDK project. For example, you could add a new page item to the project (**WinUI** > **Blank Page (WinUI 3)**), and name it `MainPage.xaml`, or some other name. That would add to your project a new class of type [**Microsoft.UI.Xaml.Controls.Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page). Then, for info about adding navigation code to the project, see [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation).
+However, you have the option to add pages and user controls to your Windows App SDK project. For example, you could add a new page item to the project (**WinUI** > **Blank Page (WinUI)**), and name it `MainPage.xaml`, or some other name. That would add to your project a new class of type [**Microsoft.UI.Xaml.Controls.Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page). Then, for info about adding navigation code to the project, see [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation).
 
 For Windows App SDK apps that are simple enough, you needn't create pages or user controls, and you can copy your XAML markup and code-behind into **MainWindow**. But for info about exceptions to that workflow, see [Visual State Manager, and Page.Resources](winui3.md#visual-state-manager-and-pageresources).
 

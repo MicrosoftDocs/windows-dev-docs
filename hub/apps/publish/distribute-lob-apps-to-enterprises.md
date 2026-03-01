@@ -1,16 +1,16 @@
 ---
-description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store.
+description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store , without making the apps broadly available in the Store.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ms.date: 10/30/2022
 ms.topic: article
-keywords: windows 10, uwp, lob, line-of-business, enterprise apps, store for business, store for education, enterprise
+keywords: windows 10, uwp, lob, line-of-business, enterprise apps, enterprise
 ms.localizationpriority: medium
 ---
 
 # Distribute LOB apps to enterprises
 
-You have several options for distributing line of business (LOB) apps to your organization’s users using [MSIX packages](/windows/msix/) without making the apps broadly available to the public. You can use device management tools, configure an App Installer-based deployment, sideload the apps directly, or publish the apps to the Microsoft Store for Business or Microsoft Store for Education.
+You have several options for distributing line of business (LOB) apps to your organization’s users using [MSIX packages](/windows/msix/) without making the apps broadly available to the public. You can use device management tools, configure an App Installer-based deployment, sideload the apps directly, or publish the apps to the Microsoft Store.
 
 ## Microsoft Endpoint Configuration Manager and Microsoft Intune
 
@@ -28,19 +28,6 @@ App Installer can be downloaded for offline use in the enterprise from Microsoft
 ## Sideloading
 
 Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install MSIX app packages directly. Starting in Windows 10 version 2004, sideloading is enabled by default and users can install apps by double-clicking signed MSIX app packages. On Windows 10 version 1909 and earlier, sideloading requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows 10 or Windows 11](/windows/application-management/sideload-apps-in-windows-10).
-
-## Microsoft Store for Business or Microsoft Store for Education
-
-> [!NOTE]
-> Microsoft [has announced](/lifecycle/announcements/microsoft-store-for-business-education-retiring) the retirement of the Microsoft Store for Business and Microsoft Store for Education in 2023. The instructions below are therefore no longer valid. For the replacement, please refer to [Add a Windows line-of-business app to Microsoft Intune](/mem/intune/apps/lob-apps-windows).
-
-You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via Microsoft Store for Business or Microsoft Store for Education, without making the apps broadly available in the Store. When using this option, the apps are signed by the Store and must comply with the standard Store Policies.
-
-> [!NOTE]
-> At this time, only free apps can be distributed exclusively to enterprises via Microsoft Store for Business or Microsoft Store for Education. If you submit a paid app as LOB, it will not be available to the enterprise. 
-
-> [!IMPORTANT]
-> You cannot use the [Microsoft Store submission API](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services) to publish LOB apps directly to enterprises. All submissions for LOB apps must be published through Partner Center.
 
 ### Set up the enterprise association
 
@@ -73,7 +60,7 @@ By default, the box for **Store-managed (online) volume licensing** is checked w
 
 If you’d like to make the app available to the enterprise via disconnected (offline) licensing, you can check the **Disconnected (offline) licensing** box as well.
 
-For more info, see [Organizational licensing options](organizational-licensing.md).
+For more info, see [Organizational licensing options](#organizational-licensing-options).
 
 #### Age ratings
 
@@ -81,7 +68,7 @@ For LOB apps, the [age ratings](publish-your-app/msix/age-ratings.md) step of th
 
 ### Enterprise deployment of LOB apps
 
-After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store for Business or Microsoft Store for Education portal. The enterprise can then deploy the app to its users.
+After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store portal. The enterprise can then deploy the app to its users.
 
 > [!NOTE]
 > In order to get your LOB app, the organization must be located in a [supported market](/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have [excluded that market](publish-your-app/msix/market-selection.md) when submitting your app. 
@@ -98,3 +85,42 @@ After the submission goes through the certification process, the app will no lon
 
 > [!NOTE]
 > When changing an app to **Retail distribution**, you'll need to complete the [age ratings questionnaire](publish-your-app/msix/age-ratings.md) if you haven't done so already, even if the app will not be available for new acquisitions.
+
+## Organizational licensing options
+
+You can indicate whether and how your app can be offered for volume purchases through Microsoft Store in the **Organizational licensing** section of the [Pricing and availability](publish-your-app/msix/price-and-availability.md#organizational-licensing) page of an app submission.
+
+Through these settings, you can opt to allow your app to be made available to organizations who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows 10 device types, including PCs, tablets and phones.
+
+You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
+
+> [!NOTE]
+> Selections for each of your apps are configured independently from each other. You may change your preferences for an app at any time by creating a new submission, and your changes will take effect after the submission completes the [certification process](publish-your-app/msix/app-certification-process.md).
+
+> [!IMPORTANT]
+> Submissions that use the [Microsoft Store submission API](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services) won't be made available to Microsoft Store. To make your app available for volume purchases by organizations, you must create and submit your submissions in Partner Center.
+
+
+### Allowing your app to be offered to organizations
+
+By default, the box labeled **Make my app available to organizations with Store-managed (online) licensing and distribution** is checked. This means that you wish your app to be available for inclusion in catalogs of apps that will be made available to organizations for volume acquisition, with app licenses managed through the Store's online licensing system.
+
+> [!NOTE]
+> This does not guarantee that your app will be made available to all organizations.
+
+If you prefer not to allow us to offer your app to organizations for volume acquisition, uncheck this box. Note that this change will only take place after the app completes the certification process. If any organizations had previously acquired licenses to your app, those licenses will still be valid, and the people who have the app already can continue to use it.
+
+> [!TIP]
+> To publish line-of-business (LOB) apps exclusively to a specific organization, you can set up an enterprise association and allow the organization to add the apps directly their private store. For more info, see [Distribute LOB apps to enterprises](distribute-lob-apps-to-enterprises.md).
+
+
+### Allowing disconnected (offline) licensing
+
+Many organizations need apps enabled for offline licensing. For example, some organizations need to deploy apps to devices which rarely or never connect to the internet. If you want to allow your app to be made available to these customers, check the box labeled **Allow organization-managed (offline) licensing and distribution for organizations**.
+
+Note that this box is **unchecked** by default. You must check the box to allow us to make your app available to verified organizations who will install it using organization-managed (offline) licensing. Organizations must go through additional validation in order to install paid apps to their end users in this way.
+
+Offline licensing allows organizations to acquire your app on a volume basis, and then install the app without requiring each device to contact the Store's licensing system. The organization is able to download your app's package along with a license which lets them install it to devices (via their own management tools or by preloading apps on OS images) without notifying the Store when a particular license has been used. Enabling this scenario greatly increases deployment flexibility, and it may substantially increase the attractiveness of your app with these customers.
+
+> [!IMPORTANT]
+> Offline licensing is not supported for .xap packages.

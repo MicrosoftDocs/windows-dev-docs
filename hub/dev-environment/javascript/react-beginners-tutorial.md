@@ -1,7 +1,7 @@
 ---
 title: Tutorial on React for beginners
 description: A guide to help beginners get started with React development on Windows.
-ms.topic: article
+ms.topic: tutorial
 keywords: React for beginners, Using React on Windows for beginners, react tutorial, react on windows tutorial, react with windows set up
 ms.localizationpriority: medium
 ms.date: 04/19/2021

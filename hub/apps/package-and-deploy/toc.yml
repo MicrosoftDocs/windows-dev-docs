@@ -1,0 +1,67 @@
+items:
+    - name: Build Windows apps
+      href: ../desktop/index.yml
+    - name: Package and deploy overview
+      href: ../package-and-deploy/index.md
+    - name: Packaging
+      items:
+        - name: Overview
+          href: ../package-and-deploy/packaging/index.md
+        - name: Package identity
+          items:
+            - name: Overview
+              href: ../desktop/modernize/package-identity-overview.md
+            - name: Features that require package identity
+              href: ../desktop/modernize/modernize-packaged-apps.md
+            - name: Integrate with package extensions
+              href: ../desktop/modernize/desktop-to-uwp-extensions.md
+            - name: Integrate a packaged desktop app with File Explorer
+              href: ../desktop/modernize/integrate-packaged-app-with-file-explorer.md
+            - name: Get activation info for packaged apps
+              href: ../desktop/modernize/get-activation-info-for-packaged-apps.md
+            - name: Extend with UWP components
+              href: ../desktop/modernize/desktop-to-uwp-extend.md
+            - name: Distribute your packaged app
+              href: ../desktop/modernize/desktop-to-uwp-distribute.md
+        - name: Package your app using single-project MSIX
+          href: ../windows-app-sdk/single-project-msix.md
+        - name: Grant package identity by packaging with external location
+          items:
+            - name: Overview
+              href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md
+            - name: Grant package identity by packaging with external location in Visual Studio
+              href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
+            - name: Grant package identity by packaging with external location manually
+              href: ../desktop/modernize/grant-identity-to-nonpackaged-apps.md
+        - name: "Windows apps: packaging, deployment, and process"
+          href: ../get-started/intro-pack-dep-proc.md    
+        - name: "Tutorial: Unpackage a WinUI app"
+          href: unpackage-winui-app.md
+    - name: Windows App SDK deployment
+      items:
+        - name: Overview
+          href: ../package-and-deploy/deploy-overview.md
+        - name: Project properties
+          href: ../package-and-deploy/project-properties.md
+        - name: Deployment guide for framework-dependent apps
+          items:
+            - name: Deployment architecture and overview
+              href: ../windows-app-sdk/deployment-architecture.md
+            - name: Deployment guide for packaged apps
+              href: ../windows-app-sdk/deploy-packaged-apps.md
+            - name: Deploying apps packaged with external location or unpackaged
+              items:
+                - name: Deployment guide for apps packaged with external location or unpackaged
+                  href: ../windows-app-sdk/deploy-unpackaged-apps.md
+                - name: Use the Windows App SDK runtime for apps packaged with external location or unpackaged
+                  href: ../windows-app-sdk/use-windows-app-sdk-run-time.md
+                - name: "Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK"
+                  href: ../windows-app-sdk/tutorial-unpackaged-deployment.md
+            - name: Check for installed versions of the Windows App SDK runtime
+              href: ../windows-app-sdk/check-windows-app-sdk-versions.md
+            - name: Remove outdated Windows App SDK runtime versions
+              href: ../windows-app-sdk/remove-windows-app-sdk-versions.md
+        - name: Deployment guide for self-contained apps
+          href: ../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
+        - name: "Tutorial: Set up CI for WinUI"
+          href: ../package-and-deploy/ci-for-winui3.md

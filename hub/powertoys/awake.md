@@ -1,7 +1,7 @@
 ---
-title: PowerToys Awake utility for Windows
-description: A tool for a Windows computer to stay awake.
-ms.date: 11/19/2024
+title: PowerToys Awake - Keep Windows Computer Awake Tool
+description: Learn how to use PowerToys Awake to keep your Windows computer awake without changing power settings. Configure timed, indefinite, or scheduled awake modes with CLI support.
+ms.date: 08/20/2025
 ms.topic: concept-article
 ms.localizationpriority: medium
 # Customer intent: As a Windows power user, I want to learn how to configure and use the PowerToys Awake utility.
@@ -9,20 +9,25 @@ ms.localizationpriority: medium
 
 # PowerToys Awake utility
 
-PowerToys Awake is a tool for Windows designed to keep a computer awake without having to manage its [power and sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This can be helpful when running time-consuming tasks, ensuring that the computer does not go to sleep or turn off its screens.
+PowerToys Awake is a Windows utility that keeps your computer awake without modifying [power and sleep settings](https://support.microsoft.com/windows/how-to-adjust-power-and-sleep-settings-26f623b5-4fcc-4194-863d-b824e5ea7679). This tool helps prevent your computer from sleeping during long-running tasks, presentations, or downloads, ensuring your work continues uninterrupted.
 
 ## Getting started
 
 You can use PowerToys Awake directly from PowerToys Settings or as a standalone executable (`PowerToys.Awake.exe` in the PowerToys installation folder).
 
 > [!NOTE]
-> PowerToys Awake does not modify any of the Windows power plan settings and does not depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine. Once PowerToys Awake exits, the threads are terminated and the computer will resume its standard power plan behavior.
+> PowerToys Awake is active only when you are signed in and it is enabled. **Awake doesn't function when the lock screen is displayed.** Your normal power plan is active at other times.
+>
+> PowerToys Awake doesn't modify any of the Windows power plan settings and doesn't depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine. Once PowerToys Awake exits, the threads are terminated and the computer resumes its standard power plan behavior.
+
+> [!IMPORTANT]
+> PowerToys Awake temporarily overrides your power plan choices and is intended for use while you are at your computer or in private environments. For persistent keep-awake needs, especially when stepping away in shared environments, configure your Windows power plan settings directly and lock your computer for security.
 
 ## Settings
 
 In the PowerToys Settings, start PowerToys Awake by toggling **Enable Awake** on. Once enabled, the application will manage the power and screen state of the computer.
 
-![A screenshot of the Awake settings](../images/powertoys-awake/pt-awake-settings-menu.png)
+:::image type="content" source="../images/powertoys-awake/pt-awake-settings-menu.png" alt-text="Screenshot of PowerToys Awake settings menu showing enable toggle and power mode options.":::
 
 PowerToys Awake supports a variety of modes that can be used to control computer and screen power behaviors:
 
@@ -41,6 +46,11 @@ PowerToys Awake supports a variety of modes that can be used to control computer
 While PowerToys Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off even if the computer stays awake. If you need the displays to be available, use the **Keep screen on** switch, which will keep displays active.
 
 This feature only works when PowerToys Awake is enabled and has one of the custom power states selected. It also does not prevent any user-initiated actions, such as manually putting the computer to sleep or hibernating it.
+
+## Lock screen behavior
+PowerToys Awake doesn't work when the lock screen is displayed. This limitation exists because the lock screen operates in a separate security context from the user session. When you lock your computer, Windows transitions to this secure context, and user-mode applications like PowerToys Awake can't maintain their power requests.
+
+If you need your computer to stay awake while locked, modify your Windows power plan settings directly instead of using PowerToys Awake.
 
 ## System tray
 

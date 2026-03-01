@@ -61,7 +61,9 @@ items:
         href: ./apps-on-arm-troubleshooting-x86.md 
       - name: Troubleshoot UWP apps on Arm
         href: ./apps-on-arm-troubleshooting-arm32.md
-      - name: Compatibility Troubleshooter for Arm
+      - name: Adjust emulation settings on Arm
         href: ./apps-on-arm-program-compat-troubleshooter.md
 - name: Set up your dev environment
   href: /windows/dev-environment/
+
+

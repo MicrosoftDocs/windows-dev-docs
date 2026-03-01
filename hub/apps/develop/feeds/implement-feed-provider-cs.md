@@ -1,7 +1,7 @@
 ---
 title: Implement a feed provider in a C# Windows App
 description: This article walks you through the process of creating a feed provider, implemented in C#, that registers a feed content URI and responds to requests from the Widgets Board. 
-ms.topic: article
+ms.topic: how-to
 ms.date: 11/02/2023
 ms.localizationpriority: medium
 ---
@@ -17,8 +17,8 @@ To implement a feed provider using C++/WinRT, see [Implement a feed provider in 
 
 ## Prerequisites
 
-- Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
-- Visual Studio 2022 or later with the **Universal Windows Platform development** workload. 
+- Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
+- Visual Studio 2022 or later with the **Universal Windows Platform development** workload.
 
 ## Create a new C# console app
 

@@ -37,10 +37,10 @@ The icon handle that corresponds to the specified *iconId*, if the provided *ico
 
 | Product | Introduced in |
 |-|-|
-|**WinUI 3**|Windows App SDK 1.0|
+|**WinUI**|Windows App SDK 1.0|
 
 ## See also
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
-* [Manage app windows](../../../windows-app-sdk/windowing/windowing-overview.md)
+* [Manage app windows](../../../develop/ui-input/manage-app-windows.md)
 * [Call interop APIs from a .NET app](../../../desktop/modernize/winrt-com-interop-csharp.md)

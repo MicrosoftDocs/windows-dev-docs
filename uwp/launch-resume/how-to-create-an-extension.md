@@ -3,7 +3,7 @@ title: Create and host an app extension
 description: Write and host app extensions that allow you to extend your app via packages that users can install from the Microsoft Store.
 keywords: app extension, app service, background
 ms.date: 01/28/2020
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 # Create and host an app extension

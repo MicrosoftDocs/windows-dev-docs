@@ -2,7 +2,7 @@
 description: This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself.
 title: Consume APIs with C++/WinRT
 ms.date: 04/23/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation
 ms.localizationpriority: medium
 ---

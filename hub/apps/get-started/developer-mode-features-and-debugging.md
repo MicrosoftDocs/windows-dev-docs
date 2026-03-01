@@ -2,14 +2,14 @@
 title: Developer Mode features and debugging
 description: Learn about Developer Mode features and installation errors in Windows.
 keywords: Get started Developer license Visual Studio, developer license enable device
-ms.date: 02/19/2024
+ms.date: 11/13/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Developer Mode features and debugging
 
-If you're only interested in the basics of installing Developer Mode on your app, follow the instructions outlined in [enable your device for development](./enable-your-device-for-development.md) to get started. This article covers advanced features of Developer Mode, Developer Mode in previous versions of Windows 10, and debugging failures related to Developer Mode installations.
+To enable Developer Mode on you device, see [Settings for developers](/windows/advanced-settings/developer-mode). This article covers advanced features of Developer Mode, Developer Mode in previous versions of Windows 10, and debugging failures related to Developer Mode installations.
 
 ## Additional Developer Mode features
 
@@ -31,7 +31,7 @@ For device-specific setup instructions, see:
 - [Device Portal for Mobile](/windows/uwp/debug-test-perf/device-portal-mobile)
 - [Device Portal for Xbox](/windows/uwp/xbox-apps/device-portal-xbox)
 
-If you encounter problems enabling Developer Mode or Device Portal, see the [Known Issues forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) to find workarounds for these issues, or visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) to learn which WSUS KBs to allow in order to unblock the Developer Mode package.
+If you encounter problems enabling Developer Mode or Device Portal, visit [Failure to install the Developer Mode package](#failure-to-install-developer-mode-package) to learn which WSUS KBs to allow in order to unblock the Developer Mode package, or use the Feedback Hub app to report issues as described in the troubleshooting section below.
 
 ### SSH
 
@@ -75,11 +75,9 @@ There are several tools you can use to deploy an app from a Windows 10 PC to a W
 
 Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for remote deployment to this PC (using Device Portal from a browser or Device Discovery to enable SSH), but not for local development. Even if you encounter these issues, you can still deploy your app locally using Visual Studio (or from this device to another device).
 
-See the [Known Issues forum](https://social.msdn.microsoft.com/Forums/en-US/home?forum=Win10SDKToolsIssues&sort=relevancedesc&brandIgnore=True&searchTerm=%22device+portal%22) to find workarounds for these issues (and others).
+If Developer Mode doesn't install correctly, we encourage you to file a feedback request using the Feedback Hub app.
 
 > [!NOTE]
-> If Developer Mode doesn't install correctly, we encourage you to file a feedback request.
->
 > 1. Install the [Feedback Hub app](https://apps.microsoft.com/store/detail/feedback-hub/9NBLGGH4R32N?hl=en-us&gl=us) (if you don't already have it) and open it.
 > 2. Click **Add new feedback**.
 > 3. Choose the **Developer Platform** category and the **Developer Mode** subcategory.
@@ -103,7 +101,8 @@ To fix this issue:
     - 3197985
 
 3. Check for Windows updates in **Settings &rarr; Updates and Security &rarr; Windows Updates**.
-4. Verify that the Windows Developer Mode package is present in **Settings &rarr; System &rarr; Apps & Features &rarr; Manage optional features &rarr; Add a feature**. If it's missing, Windows can't find the correct package for your computer.
+1. Verify that the Windows Developer Mode package is present in **Settings &rarr; System &rarr; Optional features &rarr; Add a feature** (on versions older than Windows 10 22H2, look under **Settings** **→** **Apps** **→** **Apps & features** **→ Optional features** **→** **Add a feature**). If it's missing, Windows can't find the correct package for your computer.
+
 5. After performing the above steps, *disable* and then *re-enable* Developer Mode to verify the fix.
 
 ### Failed to install the package
@@ -119,7 +118,7 @@ To fix this issue:
 
 ## Use group policies or registry keys to enable a device
 
-For most developers, you'll want to use the settings app to enable your device for debugging. In certain scenarios (such as automated tests) you can use other ways to enable your Windows desktop device for development.
+For most developers, you'll want to use Windows Settings to enable your device for debugging. In certain scenarios (such as automated tests) you can use other ways to enable your Windows desktop device for development.
 
 > [!NOTE]
 > These steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.
@@ -192,6 +191,6 @@ When you create or sideload apps on your Windows 8.1 device, you have to install
     unregister-windowsdeveloperlicense
     ```
 
-After you unregister your license, you'll need to enable your device for development (as described in [this topic](./enable-your-device-for-development.md)) so that you can continue to develop on this device. If you don't, you may get an error when you debug your app (or if you try to create a package for it). Here's an example of this error:
+After you unregister your license, you'll need to enable your device for development (as described in [Settings for developers](/windows/advanced-settings/developer-mode)) so that you can continue to develop on this device. If you don't, you may get an error when you debug your app (or if you try to create a package for it). Here's an example of this error:
 
 > Error : DEP0700 : Registration of the app failed.

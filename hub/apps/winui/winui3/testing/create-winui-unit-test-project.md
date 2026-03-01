@@ -6,11 +6,11 @@ ms.date: 05/28/2024
 ms.localizationpriority: medium
 ---
 
-# Unit tests for Windows UI Library (WinUI) apps in Visual Studio
+# Unit tests for Windows UI Library (WinUI 3) apps in Visual Studio
 
 This article describes how to create unit tests for WinUI apps in Visual Studio using the built-in unit test project templates.
 
-For a general overview of testing Windows App SDK apps, see [Test apps built with the Windows App SDK and WinUI 3](index.md).
+For a general overview of testing Windows App SDK apps, see [Test apps built with the Windows App SDK and WinUI](index.md).
 
 > [!NOTE]
 > The unit test app described here is written in the context of a WinUI application. This is required for any tests that execute code requiring the Xaml runtime. This project will create a Xaml UI Thread and execute the tests.
@@ -18,9 +18,9 @@ For a general overview of testing Windows App SDK apps, see [Test apps built wit
 In this tutorial, you learn how to:
 
 > [!div class="checklist"]
-> * Create a **Unit Test App (WinUI 3 in Desktop)** for C# or **Unit Test App (WinUI 3)** for C++ project in Visual Studio.
+> * Create a **Unit Test App (WinUI in Desktop)** for C# or **Unit Test App (WinUI)** for C++ project in Visual Studio.
 > * Use the Visual Studio **Text Explorer**.
-> * Add a **Class Library (WinUI 3 in Desktop)** project for testing.
+> * Add a **Class Library (WinUI in Desktop)** project for testing.
 > * Run tests with the Visual Studio Test Explorer.
 
 ## Prerequisites
@@ -29,7 +29,7 @@ You must have Visual Studio installed.
 
 If you haven't already installed Visual Studio, go to the [Visual Studio downloads page](https://visualstudio.microsoft.com/downloads/?cid=learn-onpage-download-cta) to install it for free.
 
-## How do I create a Test App (WinUI 3 in Desktop) project
+## How do I create a Test App (WinUI in Desktop) project
 
 To start, create a unit test project. The project type comes with all the template files you need.
 
@@ -37,7 +37,7 @@ To start, create a unit test project. The project type comes with all the templa
 
    :::image type="content" source="media/visual-studio-start-window.png" alt-text="Screenshot of the Visual Studio start window.":::
 
-2. In the **Create a new project** window, filter projects to **C#**, **Windows**, and **WinUI**, select the **Unit Test App in Desktop (WinUI 3)** template (or **Unit Test App (WinUI 3)** for C++), and then select **Next**
+2. In the **Create a new project** window, filter projects to **C#**, **Windows**, and **WinUI**, select the **Unit Test App in Desktop (WinUI)** template (or **Unit Test App (WinUI)** for C++), and then select **Next**
 
    :::image type="content" source="media/visual-studio-new-project-window.png" alt-text="Screenshot of the Visual Studio 'Create a new project' window.":::
 
@@ -100,21 +100,21 @@ namespace WinUITest1
 
    :::image type="content" source="media/visual-studio-unittest-add-new-project.png" alt-text="Screenshot of the Solution context menu with Add\/New Project highlighted in Visual Studio." :::
 
-7. For this example, add a WinUI class library project. From the New Project window, filter on C#/Windows/WinUI and select **Class Library (WinUI 3 in Desktop)**.
+7. For this example, add a WinUI class library project. From the New Project window, filter on C#/Windows/WinUI and select **Class Library (WinUI in Desktop)**.
 
-   :::image type="content" source="media/visual-studio-unittest-add-winui-class-library-project.png" alt-text="Screenshot of the New Project window with Class Library (WinUI 3 in Desktop) highlighted in Visual Studio." :::
+   :::image type="content" source="media/visual-studio-unittest-add-winui-class-library-project.png" alt-text="Screenshot of the New Project window with Class Library (WinUI in Desktop) highlighted in Visual Studio." :::
 
 8. Select Next and enter a name for the project (for this example we use "WinUIClassLibrary1") and press **Create**.
 
-   :::image type="content" source="media/visual-studio-unittest-winui-class-library.png" alt-text="Screenshot of the new 'Class Library (WinUI 3 in Desktop)' project highlighted in the Solution Explorer and the Class1.cs file open in the code editor." :::
+   :::image type="content" source="media/visual-studio-unittest-winui-class-library.png" alt-text="Screenshot of the new 'Class Library (WinUI in Desktop)' project highlighted in the Solution Explorer and the Class1.cs file open in the code editor." :::
 
 9. Add a new UserControl to the project. In the Solution Explorer, right click on the WinUI class library project you just added and select **Add -> New Item** from the context menu.
 
    :::image type="content" source="media/visual-studio-unittest-add-new-item.png" alt-text="Screenshot of the Solution context menu with Add\/New Item highlighted in Visual Studio." :::
 
-10. In the **Add New Item** window, select the **WinUI** node in the **Installed** items list and then choose **User Control (WinUI 3)** from the results. Name the control "UserControl1".
+10. In the **Add New Item** window, select the **WinUI** node in the **Installed** items list and then choose **User Control (WinUI)** from the results. Name the control "UserControl1".
 
-    :::image type="content" source="media/visual-studio-unittest-add-winui-user-control.png" alt-text="Screenshot of the Add New Item window with WinUI\/User Control (WinUI 3) highlighted in Visual Studio." :::
+    :::image type="content" source="media/visual-studio-unittest-add-winui-user-control.png" alt-text="Screenshot of the Add New Item window with WinUI\/User Control (WinUI) highlighted in Visual Studio." :::
 
 11. Open the UserControl1.xaml.cs code-behind file. For this example, we add a new public method called "GetSeven()" that simply returns an integer.
 
@@ -176,9 +176,9 @@ namespace WinUITest1
 In this tutorial, you learned how to:
 
 > [!div class="checklist"]
-> * Create a **Test App (WinUI 3 in Desktop)** project in Visual Studio.
+> * Create a **Test App (WinUI in Desktop)** project in Visual Studio.
 > * Use the Visual Studio **Text Explorer**.
-> * Add a **Class Library (WinUI 3 in Desktop)** project for testing.
+> * Add a **Class Library (WinUI in Desktop)** project for testing.
 > * Run tests with the Visual Studio Test Explorer.
 
 More comprehensive coverage of the testing tools included with Visual Studio:

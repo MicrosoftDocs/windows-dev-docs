@@ -3,7 +3,7 @@ description: Learn to use Mica in an app that uses WinUI 2 for UWP.
 title: Use Mica material in UWP apps
 template: detail.hbs
 ms.date: 07/12/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 11
 ms.localizationpriority: medium
 ---

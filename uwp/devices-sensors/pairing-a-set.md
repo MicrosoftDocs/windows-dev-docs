@@ -2,7 +2,7 @@
 title: Pairing a set with the DeviceInformationPairing.Custom property
 description: Windows supports pairing a collection of devices as an automatically-discovered set or as an explicit set.
 ms.date: 03/27/2024
-ms.topic: article
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 

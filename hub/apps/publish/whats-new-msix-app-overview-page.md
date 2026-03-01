@@ -2,7 +2,7 @@
 description: Explore the new changes on the MSIX app overview page.
 title: Whats new - MSIX app overview page
 ms.date: 03/06/2024
-ms.topic: article
+ms.topic: whats-new
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

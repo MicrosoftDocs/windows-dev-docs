@@ -1,8 +1,8 @@
 ### YamlMime:ZonePivotGroups
 groups:
 - id: winui3-version
-  title: WinUI 3 application type
-  prompt: "Choose the type of WinUI 3 application you want to build:"
+  title: WinUI application type
+  prompt: "Choose the type of WinUI application you want to build:"
   pivots:
     - id: winui3-packaged-csharp
       title: C# packaged
@@ -13,8 +13,8 @@ groups:
     - id: winui3-unpackaged-cpp
       title: C++ unpackaged
 - id: winui3-version-c#-only
-  title: WinUI 3 application type
-  prompt: "Choose the type of WinUI 3 application you want to build:"
+  title: WinUI application type
+  prompt: "Choose the type of WinUI application you want to build:"
   pivots:
     - id: winui3-packaged-csharp
       title: C# packaged
@@ -42,3 +42,13 @@ groups:
       title: macOS
     - id: msstoredevcli-installer-linux
       title: Linux
+- id: wasdk-release-channels
+  title: Windows App SDK release channels
+  prompt: Choose release channel
+  pivots:
+    - id: stable
+      title: Stable
+    - id: preview
+      title: Preview
+    - id: experimental
+      title: Experimental

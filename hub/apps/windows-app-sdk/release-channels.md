@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
-ms.date: 04/10/2025
+ms.date: 01/13/2026
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.localizationpriority: medium
 ---
@@ -11,14 +11,12 @@ ms.localizationpriority: medium
 
 The latest version of the Windows App SDK ships via three release channels: Experimental, Preview, and Stable. The following table provides an overview of these release channels.
 
-> [!NOTE]
-> When you [Install tools for the Windows App SDK](set-up-your-development-environment.md), install the release channel that best serves your development scenario.
+|   | Channel | Description | Release cadence | Supported? | Latest release |
+|--:|--|--|--|:--:|--|
+| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.5 (1.8.260204001)** <br/> Released: 02/10/2026 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-185-18260209005) |
+| **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **2.0 Preview (2.0-preview)** <br/> Released: 02/13/2026 <br/>  [Release Notes](release-notes/windows-app-sdk-2-0.md#windows-app-sdk-200-preview1-release-notes) ** |
+| **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.0 Experimental 4 (2.0.0-experimental4)** <br/> Released: 01/13/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-4-200-experimental4) |
 
-|           | Channel                                                 | Description                                                                                                                                                                | Release cadence                                                                    | Supported? | Latest release                                                                                        |
-| --------- | ------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------- |
-| **✅**    | Stable ([release notes](stable-channel.md))             | This channel is supported for use by apps in production environments. It includes only stable APIs.                                                                        | No more frequent than every six months<br>(+ servicing)                            | Yes        | [1.7.2 (1.7.250513003)](stable-channel.md#version-172-17250513003) (05/19/2025)                       |
-| **❇️**  | Preview ([release notes](preview-channel.md))           | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release.         | At least one preview per stable version                                            | No         | [1.7.0-preview1](preview-channel.md#version-17-preview-1-17-preview1) (02/11/2025)                    |
-| **🔄️** | Experimental ([release notes](experimental-channel.md)) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. | As needed when requiring feedback for features in early design or prototype stages | No         | [1.8.0-experimental2](experimental-channel.md#version-18-experimental-180-experimental2) (05/19/2025) |
 
 For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).
 
@@ -26,11 +24,11 @@ For a comprehensive list of all current and previous releases of the Windows App
 
 The following table shows which features are currently available in each release channel.
 
-| Feature                                                                                                                  | ✅&nbsp;&nbsp;[Stable](stable-channel.md) | ❇️&nbsp;&nbsp;[Preview](preview-channel.md) | 🔄️&nbsp;&nbsp;[Experimental](experimental-channel.md) |
+| Feature                                                                                                                  | ✅ Stable | ❇️ Preview | 🔄️ Experimental |
 | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | --------------------------------------------- | -------------------------------------------------------- |
 | [Deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)                                        | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
-| [WinUI 3](../winui/winui3/index.md)                                                                                      | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [WinUI](../winui/winui3/index.md)                                                                                      | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Text rendering](dwritecore.md)                                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Manage resources](mrtcore/mrtcore-overview.md)                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md)                                                 | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
@@ -51,16 +49,17 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
 | ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
-| 1.7                     | 03/18/2025            | 1.7.250513003        | 05/19/2025         | Current        | 03/18/2026       |
-| 1.6                     | 09/04/2024            | 1.6.250430001        | 05/13/2025         | Maintenance    | 09/04/2025       |
+| 1.8                     | 09/09/2025            | 1.8.260101001        | 01/13/2026         | Current        | 09/09/2026       |
+| 1.7                     | 03/18/2025            | 1.7.260208005        | 02/10/2026         | Maintenance    | 03/18/2026       |
+| 1.6                     | 09/04/2024            | 1.6.250602001        | 06/10/2025         | Out of Support | 09/04/2025       |
 | 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |
 | 1.4                     | 08/29/2023            | 1.4.240802001        | 08/13/2024         | Out of Support | 08/29/2024       |
 | 1.3                     | 04/12/2023            | 1.3.230724000        | 07/25/2023         | Out of Support | 04/12/2024       |
 | 1.2                     | 11/10/2022            | 1.2.230313.1         | 03/15/2023         | Out of Support | 11/10/2023       |
 | 1.1                     | 05/24/2022            | 1.1.5                | 09/14/2022         | Out of Support | 05/24/2023       |
 | 1.0                     | 11/16/2021            | 1.0.4                | 06/14/2022         | Out of Support | 11/16/2022       |
-| 0.8                     | 6/24/2021             | 0.8.12               | 08/03/2022         | Out of Support | 6/24/2022        |
-| 0.5                     | 3/29/2021             | 0.5.9                | 8/10/2021          | Out of Support | 11/1/2021        |
+| 0.8                     | 06/24/2021            | 0.8.12               | 08/03/2022         | Out of Support | 06/24/2022       |
+| 0.5                     | 03/29/2021            | 0.5.9                | 08/10/2021         | Out of Support | 11/01/2021       |
 
 ### Servicing  
 
@@ -114,9 +113,6 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 
 ## Related topics
 
-- [Stable channel](stable-channel.md)
-- [Preview channel](preview-channel.md)
-- [Experimental channel](experimental-channel.md)
 - [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)

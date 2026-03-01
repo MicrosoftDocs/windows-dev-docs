@@ -1,8 +1,8 @@
 ---
 description: Describes how to use power management and notification features with the app lifecycle API (Windows App SDK).
 title: Power management with the app lifecycle API (Windows App SDK)
-ms.topic: article
-ms.date: 03/07/2024
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, ApplicationModel, power, battery,
 ms.localizationpriority: medium
 ---
@@ -17,8 +17,8 @@ The power management APIs use a callback-based model similar to the existing [Po
 
 To use the app lifecycle API in the Windows App SDK:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI 3](../../get-started/start-here.md).
+2. Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Subscribe and respond to events
 

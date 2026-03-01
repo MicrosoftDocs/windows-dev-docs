@@ -2,7 +2,7 @@
 description: Describes how to use rich activation features with the app lifecycle API in unpackaged apps (Windows App SDK).
 title: Rich activation with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 03/07/2024
+ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, activation, activation contracts, rich activation, win32, win32 activation, unpackaged app, unpackaged app activation
 ms.localizationpriority: medium
 ---
@@ -20,8 +20,8 @@ Supporting rich activations requires two steps:
 
 To use the app lifecycle API in the Windows App SDK:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI 3](../../get-started/start-here.md).
+2. Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Activation details for unpackaged apps
 

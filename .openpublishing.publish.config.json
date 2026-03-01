@@ -76,25 +76,25 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "main",
+      "branch": "master",
       "branch_mapping": {}
     },
     {
       "path_to_root": "samples-xaml-gallery",
       "url": "https://github.com/microsoft/Xaml-Controls-Gallery",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     },
     {
       "path_to_root": "snippets-windows",
       "url": "https://github.com/MicrosoftDocs/windows-code-snippets-pr",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     },
     {
       "path_to_root": "_themes.pdf",
       "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
-      "branch": "main",
+      "branch": "master",
       "branch_mapping": {}
     }
   ],

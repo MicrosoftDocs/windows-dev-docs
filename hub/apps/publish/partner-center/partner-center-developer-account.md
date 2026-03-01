@@ -14,6 +14,9 @@ To publish your app in the Microsoft Store, you'll need to register as a Windows
 
 There are 2 types of developer accounts available in Partner Center: **Individual and Company**
 
+> [!NOTE]
+> Changing a developer account from Individual to Company is **not** supported in Partner Center. To publish as a company, you'll need to create a new Company developer account.
+
 | Who should choose individual account | Who should choose company account |
 |--------------------------------------|-----------------------------------|
 |<ul><li> **Independent developers** whose distribution of apps through the Store is **not in relation to their business, trade, or profession**</li> <li> **Small scale creators** producing content for non-commercial purposes</li> <li> Individuals creating digital content as a **hobbyist, amateur, school, or personal project** </li></ui> | <ul><li> **Independent developers and freelancers** whose distribution of apps through the Store is **in relation to their business, trade, or profession** </li> <li> **Businesses and Organizations** such as corporations, LLCs, partnerships, non-profits, or government organizations </li> <li> **Teams or Groups** within a company or organization </li><ul> |
@@ -23,14 +26,14 @@ Here are the additional differences between the two account types.
 
 | Individual account | Company account |
 |--------------------|-----------------|
-| <ul><li>Costs approximately $19 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Shorter account verification process</li><li>Coming soon: Legal disclaimer added to published products about consumer rights</li></ul> | <ul><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Requires greater account verification including business identification documents to be stored 6 months after account closure</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Able to submit apps with restricted functionality (as described in the [Microsoft Store Policies](../store-policies.md#1014-account-type))</li><li>Requires that you submit your email, business address, and phone number which will be visible to users on product pages.</li></ul> |
+| <ul><li>Free registration (no fees apply)</li><li>Shorter account verification process</li><li>Coming soon: Legal disclaimer added to published products about consumer rights</li></ul> | <ul><li>Costs approximately $99 USD (one-time registration fee; the exact amount varies depending on your country or region)</li><li>Requires greater account verification including business identification documents to be stored 6 months after account closure</li><li>Requires that your company is recognized as such in the country or region in which it is located</li><li>Able to submit apps with restricted functionality (as described in the [Microsoft Store Policies](../store-policies.md#1014-account-type))</li><li>Requires that you submit your email, business address, and phone number which will be visible to users on product pages.</li></ul> |
 
 Company accounts are a little more expensive, mostly because we take some additional steps to ensure that you are authorized to represent your company, verify and store identification information, and set up the account. Per the [Store Policies](../store-policies.md#1014-account-type), apps with certain functionality, such as those that access financial account information or that require authentication to access primary functionality (without using a secure dedicated third-party authentication provider), can only be published by company accounts.
 
 ## Additional guidelines for company accounts
 
 > [!IMPORTANT]
-> To allow multiple users to access your developer account, we recommend using Azure Active Directory (Azure AD) to assign roles to individual users instead of sharing access to the Microsoft account. Each user can then access the developer account by signing in to Partner Center with their individual Azure AD credentials. For more info, see [Manage account users](manage-account-users.md).
+> To allow multiple users to access your developer account, we recommend using Microsoft Entra ID to assign roles to individual users instead of sharing access to the Microsoft account. Each user can then access the developer account by signing in to Partner Center with their individual Microsoft Entra ID credentials. For more info, see [Manage account users](manage-account-users.md).
 
 If you want to let multiple people access the company account by signing in with the Microsoft account that opened it (instead of as individual users added to the account), see the following guidelines:
 

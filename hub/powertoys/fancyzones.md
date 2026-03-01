@@ -1,18 +1,18 @@
 ---
-title: PowerToys FancyZones utility for Windows
-description: A window manager utility for arranging and snapping windows into efficient layouts
-ms.date: 07/16/2024
-ms.topic: article
+title: FancyZones Window Manager for Windows - PowerToys
+description: FancyZones is a powerful window manager utility in PowerToys that helps you arrange and snap windows into custom layouts for improved productivity. Learn how to create zones and manage windows efficiently.
+ms.date: 08/20/2025
+ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
+# customer intent: As a Windows power user, I want to learn about the FancyZones utility in PowerToys.
 ---
 
-# FancyZones utility
+# FancyZones window manager utility
 
-FancyZones is a window manager utility for arranging and snapping windows into efficient layouts to improve your workflow and restore layouts quickly.
-You can define a set of zone locations to use as targets for windows on your desktop. When you drag a window into a zone or use the associated keyboard shortcut, the window is resized and repositioned to fill that zone.
+FancyZones is a powerful window manager utility in PowerToys that helps you arrange and snap windows into custom layouts for improved productivity and workflow efficiency. This utility allows you to define specific zone locations on your desktop as targets for windows, automatically resizing and repositioning them when dragged into zones or activated via keyboard shortcuts.
 
-## Snapping to a single zone with mouse
+## Snap to a single zone with mouse
 
 Drag the window. By default, you'll also need to select and hold <kbd>Shift</kbd>. You'll see the zones appear. As you move your mouse, hovering over a zone will highlight that zone.
 
@@ -20,29 +20,29 @@ You can also trigger zone selection mode by using a non-primary mouse button if 
 
 If both **Hold Shift key to activate zones while dragging** and **Use non-primary mouse button to toggle zone activation** are cleared, zones will appear immediately after you start dragging the window.
 
-![FancyZones in action screenshot](../images/pt-fancy-zones2.png)
+:::image type="content" source="../images/pt-fancy-zones2.png" alt-text="Screenshot of FancyZones utility showing window zones highlighted on desktop during window dragging operation.":::
 
-## Snapping to a single zone with keyboard
+## Snap to a single zone with keyboard
 
 Select **Override Windows Snap** in the FancyZones settings. Use <kbd>Win</kbd>+[arrow keys] to snap a window to a zone. Use **Move windows based on** to choose whether to move windows based the zone index or a window's relative position.
 
 ![Settings for Snapping to Multiple Zones via Keyboard](../images/pt-window-snap-multiple-zones-w-keyboard-settings.png)
 
-## Snapping to multiple zones
+## Snap to multiple zones
 
 A window can be snapped to more than one zone in the following ways.
 
-### Snapping to two zones by hovering the edges
+### Snap to two zones by hovering the edges
 
 If two zones are adjacent, you can snap a window to the sum of their area (rounded to the minimum rectangle that contains both). When the mouse cursor is near the common edge of two zones, both zones are activated simultaneously, allowing you to drop the window into both zones.
 
-### Snapping to multiple zones with the mouse and keyboard
+### Snap to multiple zones with the mouse and keyboard
 
 Drag the window until one zone is activated, then hold <kbd>Ctrl</kbd> while dragging the window to select multiple zones.
 
 ![Two Zones Activation screenshot](../images/pt-fancyzones-twozones.png)
 
-### Snapping to multiple zones with only the keyboard
+### Snap to multiple zones with only the keyboard
 
 Turn on the **Override Windows Snap** toggle and select **Move windows based on: Relative position**. Use <kbd>Win</kbd>+<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+[arrow keys] to expand the window to multiple zones.
 
@@ -64,11 +64,11 @@ When two or more windows are snapped in the same zone, cycle between the snapped
 
 FancyZones doesn't override the Windows <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+[arrow keys] to quickly move a window to an adjacent monitor.
 
-### Snapping apps with elevated permission
+### Snap apps with elevated permission
 
 To snap applications that are elevated (such as Windows Terminal or Task Manager), run PowerToys in administrator mode. Read [Running as administrator](administrator.md) for more information.
 
-## Getting started with the editor
+## Get started with the editor
 
 FancyZones includes an editor for layouts that can be accessed in PowerToys Settings.
 
@@ -94,7 +94,7 @@ When you first open the layout editor, you'll see a list of layouts that can be 
 
 ![FancyZones space around zones screenshot](../images/pt-fancyzones-spacearound.png)
 
-### Creating a custom layout
+### Create a custom layout
 
 Select **Create new layout** at the bottom.
 
@@ -123,7 +123,7 @@ Canvas layout also has keyboard support for zone editing. Use the arrow keys (Le
 
 ![FancyZones Window Editor Mode](../images/pt-fancyzones-canvaseditor.png)
 
-### Quickly changing between custom layouts
+### Quickly switch between custom layouts
 
 > [!NOTE]
 > Select **Enable quick layout switch** to use this feature.
@@ -176,5 +176,37 @@ In the demo below, we start with a default template applied to the screen and tw
 | Exclude applications from snapping to zones | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension) |
 
 ![FancyZones Settings bottom screenshot](../images/pt-fancyzones-settings2.png)
+
+## Command-line reference
+
+The FancyZones CLI lets you apply and manage window layouts directly from the command line.
+
+| Command | Aliases | Description |
+| :-- | :-- | :-- |
+| `help` | | Displays general help information for all commands |
+| `open-editor` | `editor`, `e` | Launch FancyZones layout editor |
+| `get-monitors` | `monitors`, `m` | List all monitors and their properties |
+| `get-layouts` | `layouts`, `ls` | List all available layouts with ASCII art preview |
+| `get-active-layout` | `active`, `a` | Show currently active layout |
+| `set-layout <uuid>` | `set`, `s` | Apply layout by UUID or template name |
+| `open-settings` | `settings` | Open FancyZones settings page |
+| `get-hotkeys` | `hotkeys`, `hk` | List all layout hotkeys |
+| `set-hotkey <key> <uuid>` | `shk` | Assign hotkey (0-9) to custom layout |
+| `remove-hotkey <key>` | `rhk` | Remove hotkey assignment |
+
+**Usage example**
+```powershell
+# List all layouts with visual previews
+FancyZonesCLI.exe ls
+
+# Apply "columns" template to all monitors
+FancyZonesCLI.exe s columns --all
+
+# Set custom layout on monitor 2
+FancyZonesCLI.exe s {uuid} --monitor 2
+
+# Assign hotkey Win+Ctrl+Alt+3 to a layout
+FancyZonesCLI.exe shk 3 {uuid}
+```
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

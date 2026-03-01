@@ -1,12 +1,12 @@
 ---
 title: Test apps built with the Windows App SDK and WinUI
 description: In this topic we recommend some approaches for testing and validating functionality in apps created with the Windows App SDK and Windows UI Library (WinUI) user interface (UI) features.
-ms.topic: article
-ms.date: 05/28/2024
+ms.topic: how-to
+ms.date: 10/28/2025
 ms.localizationpriority: medium
 ---
 
-# Test apps built with the Windows App SDK and WinUI
+# Test apps built with the Windows App SDK and WinUI 3
 
 In this topic we provide some recommendations for how to test and validate functionality in apps created with the [Windows App SDK](/windows/apps/windows-app-sdk/) using [Windows UI Library (WinUI)](/windows/apps/winui/winui3/) user interface (UI) features.
 
@@ -18,7 +18,7 @@ The following steps describe how to use Visual Studio to test code that depends 
 
 1. Create a unit test project in the same solution as the app you want to test. (This uses [MSTest](/visualstudio/test/using-microsoft-visualstudio-testtools-unittesting-members-in-unit-tests) to execute the test code and will initialize a Xaml Window and a Xaml UI Thread.)
 
-   Right click your solution in Solution Explorer, select **Add -> New Project** from the context menu, and choose **Unit Test App (WinUI 3 in Desktop)** for C# or **Unit Test App (WinUI 3)** for C++.
+   Right click your solution in Solution Explorer, select **Add -> New Project** from the context menu, and choose **Unit Test App (WinUI in Desktop)** for C# or **Unit Test App (WinUI)** for C++.
 
    :::image type="content" source="media/visual-studio-new-project-window.png" alt-text="Screenshot of the Visual Studio 'Create a new project' window.":::
 
@@ -48,7 +48,7 @@ When creating a new MSTest, NUnit or xUnit project that references a WinUI proje
 
    `<RuntimeIdentifiers Condition="$([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')) &lt; 8">win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>`
 
-3. Add the following property to the `PropertyGroup` in .csproj file of your test project to ensure that the test loads the WinAppSDK runtime:
+3. Add the following property to the `PropertyGroup` in .csproj file of your test project to ensure that the test loads the Windows App SDK runtime:
    `<WindowsAppSdkBootstrapInitialize>true</WindowsAppSdkBootstrapInitialize>`
 
 4. Ensure that the Windows App SDK runtime is installed on the machine running the test. For more information on Windows App SDK deployment, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location (or unpackaged)](../../../windows-app-sdk/deploy-unpackaged-apps.md).

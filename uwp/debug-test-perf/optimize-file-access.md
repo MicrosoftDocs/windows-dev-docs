@@ -2,8 +2,8 @@
 ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
 title: Optimize file access
 description: Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
-ms.date: 02/08/2017
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

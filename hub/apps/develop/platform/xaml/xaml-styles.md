@@ -13,15 +13,11 @@ ms.localizationpriority: medium
 ---
 # XAML styles
 
-
-
-
-
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 
 ## WinUI and styles
 
-Starting with WinUI 2.2, we have used [WinUI](../../../winui/index.md) to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
+Starting with WinUI 2.2, we have used WinUI to deliver new visual style updates across our UI components. If you notice your UI is not updating to the latest styles, be sure to update to the latest WinUI NuGet package.
 
 Starting with WinUI 2.6, we provide new styles for most of the controls, and a new versioning system that let's you revert to the previous control styles if needed. We encourage you to use the new styles, as they better match the design direction of Windows. However, if your scenario cannot support the new styles, the previous versions are still available.
 
@@ -38,17 +34,17 @@ Setting this value to `Version1` causes `XamlControlsResources` to load the prev
 
 ## Style basics
 
-Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush), [BorderThickness](/uwp/api/windows.ui.xaml.controls.control.borderthickness) and [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.
+Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the [BorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.borderbrush), [BorderThickness](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.borderthickness) and [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.foreground) properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.
 
 ![Screenshot of three styled buttons arranged side by side.](images/styles-rainbow-buttons.png)
 
 You can define a style inline in the XAML for a control, or as a reusable resource. Define resources in an individual page's XAML file, in the App.xaml file, or in a separate resource dictionary XAML file. A resource dictionary XAML file can be shared across apps, and more than one resource dictionary can be merged in a single app. Where the resource is defined determines the scope in which it can be used. Page-level resources are available only in the page where they are defined. If resources with the same key are defined in both App.xaml and in a page, the resource in the page overrides the resource in App.xaml. If a resource is defined in a separate resource dictionary file, its scope is determined by where the resource dictionary is referenced.
 
-In the [Style](/uwp/api/Windows.UI.Xaml.Style) definition, you need a [TargetType](/uwp/api/windows.ui.xaml.style.targettype) attribute and a collection of one or more [Setter](/uwp/api/Windows.UI.Xaml.Setter) elements. The **TargetType** attribute is a string that specifies a [FrameworkElement](/uwp/api/Windows.UI.Xaml.FrameworkElement) type to apply the style to. The **TargetType** value must specify a **FrameworkElement**-derived type that's defined by the Windows Runtime or a custom type that's available in a referenced assembly. If you try to apply a style to a control and the control's type doesn't match the **TargetType** attribute of the style you're trying to apply, an exception occurs.
+In the [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style) definition, you need a [TargetType](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) attribute and a collection of one or more [Setter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Setter) elements. The **TargetType** attribute is a string that specifies a [FrameworkElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement) type to apply the style to. The **TargetType** value must specify a **FrameworkElement**-derived type that's defined by the Windows Runtime or a custom type that's available in a referenced assembly. If you try to apply a style to a control and the control's type doesn't match the **TargetType** attribute of the style you're trying to apply, an exception occurs.
 
-Each [Setter](/uwp/api/Windows.UI.Xaml.Setter) element requires a [Property](/uwp/api/windows.ui.xaml.setter.property) and a [Value](/uwp/api/windows.ui.xaml.setter.value). These property settings indicate what control property the setting applies to, and the value to set for that property. You can set the **Setter.Value** with either attribute or property element syntax. The XAML here shows the style applied to the buttons shown previously. In this XAML, the first two **Setter** elements use attribute syntax, but the last **Setter**, for the [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush) property, uses property element syntax. The example doesn't use the [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute) attribute, so the style is implicitly applied to the buttons. Applying styles implicitly or explicitly is explained in the next section.
+Each [Setter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Setter) element requires a [Property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.setter.property) and a [Value](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.setter.value). These property settings indicate what control property the setting applies to, and the value to set for that property. You can set the **Setter.Value** with either attribute or property element syntax. The XAML here shows the style applied to the buttons shown previously. In this XAML, the first two **Setter** elements use attribute syntax, but the last **Setter**, for the [BorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.borderbrush) property, uses property element syntax. The example doesn't use the [x:Key attribute](x-key-attribute.md) attribute, so the style is implicitly applied to the buttons. Applying styles implicitly or explicitly is explained in the next section.
 
-```XAML
+```xaml
 <Page.Resources>
     <Style TargetType="Button">
         <Setter Property="BorderThickness" Value="5" />
@@ -77,18 +73,18 @@ Each [Setter](/uwp/api/Windows.UI.Xaml.Setter) element requires a [Property](/uw
 
 If you define a style as a resource, there are two ways to apply it to your controls:
 
--   Implicitly, by specifying only a [TargetType](/uwp/api/windows.ui.xaml.style.targettype) for the [Style](/uwp/api/Windows.UI.Xaml.Style).
--   Explicitly, by specifying a [TargetType](/uwp/api/windows.ui.xaml.style.targettype) and an [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute) attribute for the [Style](/uwp/api/Windows.UI.Xaml.Style) and then by setting the target control's [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) property with a [{StaticResource} markup extension](/windows/uwp/xaml-platform/staticresource-markup-extension) reference that uses the explicit key.
+- Implicitly, by specifying only a [TargetType](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) for the [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style).
+- Explicitly, by specifying a [TargetType](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) and an [x:Key attribute](x-key-attribute.md) attribute for the [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style) and then by setting the target control's [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.style) property with a [{StaticResource} markup extension](staticresource-markup-extension.md) reference that uses the explicit key.
 
-If a style contains the [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute), you can only apply it to a control by setting the [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) property of the control to the keyed style. In contrast, a style without an x:Key attribute is automatically applied to every control of its target type, that doesn't otherwise have an explicit style setting.
+If a style contains the [x:Key attribute](x-key-attribute.md), you can only apply it to a control by setting the [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.style) property of the control to the keyed style. In contrast, a style without an x:Key attribute is automatically applied to every control of its target type, that doesn't otherwise have an explicit style setting.
 
 Here are two buttons that demonstrate implicit and explicit styles.
 
 ![implicitly and explicitly styled buttons.](images/styles-buttons-implicit-explicit.png)
 
-In this example, the first style has an [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute) and its target type is [Button](/uwp/api/Windows.UI.Xaml.Controls.Button). The first button's [Style](/uwp/api/windows.ui.xaml.frameworkelement.style) property is set to this key, so this style is applied explicitly. The second style is applied implicitly to the second button because its target type is **Button** and the style doesn't have an x:Key attribute.
+In this example, the first style has an [x:Key attribute](x-key-attribute.md) and its target type is [Button](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button). The first button's [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.style) property is set to this key, so this style is applied explicitly. The second style is applied implicitly to the second button because its target type is **Button** and the style doesn't have an x:Key attribute.
 
-```XAML
+```xaml
 <Page.Resources>
     <Style x:Key="PurpleStyle" TargetType="Button">
         <Setter Property="FontFamily" Value="Segoe UI"/>
@@ -118,13 +114,13 @@ In this example, the first style has an [x:Key attribute](/windows/uwp/xaml-plat
 
 ## Use based-on styles
 
-To make styles easier to maintain and to optimize style reuse, you can create styles that inherit from other styles. You use the [BasedOn](/uwp/api/windows.ui.xaml.style.basedon) property to create inherited styles. Styles that inherit from other styles must target the same type of control or a control that derives from the type targeted by the base style. For example, if a base style targets [ContentControl](/uwp/api/Windows.UI.Xaml.Controls.ContentControl), styles that are based on this style can target **ContentControl** or types that derive from **ContentControl** such as [Button](/uwp/api/Windows.UI.Xaml.Controls.Button) and [ScrollViewer](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer). If a value is not set in the based-on style, it's inherited from the base style. To change a value from the base style, the based-on style overrides that value. The next example shows a **Button** and a [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) with styles that inherit from the same base style.
+To make styles easier to maintain and to optimize style reuse, you can create styles that inherit from other styles. You use the [BasedOn](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.basedon) property to create inherited styles. Styles that inherit from other styles must target the same type of control or a control that derives from the type targeted by the base style. For example, if a base style targets [ContentControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ContentControl), styles that are based on this style can target **ContentControl** or types that derive from **ContentControl** such as [Button](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button) and [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ScrollViewer). If a value is not set in the based-on style, it's inherited from the base style. To change a value from the base style, the based-on style overrides that value. The next example shows a **Button** and a [CheckBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.CheckBox) with styles that inherit from the same base style.
 
 ![styled buttons usign based-on styles.](images/styles-buttons-based-on.png)
 
-The base style targets [ContentControl](/uwp/api/Windows.UI.Xaml.Controls.ContentControl), and sets the [Height](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height), and [Width](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) properties. The styles based on this style target [CheckBox](/uwp/api/Windows.UI.Xaml.Controls.CheckBox) and [Button](/uwp/api/Windows.UI.Xaml.Controls.Button), which derive from **ContentControl**. The based-on styles set different colors for the [BorderBrush](/uwp/api/windows.ui.xaml.controls.control.borderbrush) and [Foreground](/uwp/api/windows.ui.xaml.controls.control.foreground) properties. (You don't typically put a border around a **CheckBox**. We do it here to show the effects of the style.)
+The base style targets [ContentControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ContentControl), and sets the [Height](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement.Height), and [Width](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement.Width) properties. The styles based on this style target [CheckBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.CheckBox) and [Button](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button), which derive from **ContentControl**. The based-on styles set different colors for the [BorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.borderbrush) and [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.foreground) properties. (You don't typically put a border around a **CheckBox**. We do it here to show the effects of the style.)
 
-```XAML
+```xaml
 <Page.Resources>
     <Style x:Key="BasicStyle" TargetType="ContentControl">
         <Setter Property="Width" Value="130" />
@@ -162,7 +158,7 @@ Overriding the system brushes is generally done at the App or Page level, and in
 
 ![Screenshot of two buttons: one in its rest state and one with lightweight Styling applied.](images/lightweight-styling-button-states-example.png)
 
-```XAML
+```xaml
 <Page.Resources>
     <ResourceDictionary>
         <ResourceDictionary.ThemeDictionaries>
@@ -186,7 +182,7 @@ In other cases, changing a single control on one page only to look a certain way
 
 ![Screenshot of three styled buttons arranged stacked one on top of the other.](images/lightweight-styling-checkbox-example.png)
 
-```XAML
+```xaml
 <CheckBox Content="Normal CheckBox" Margin="5"/>
 <CheckBox Content="Special CheckBox" Margin="5">
     <CheckBox.Resources>
@@ -263,13 +259,13 @@ In your Resource Dictionary or main definition, you would hook up the Lightweigh
 Its required that you use a `ThemeDictionary` that is duplicated three times in order to handle the three different theme changes properly (`Default`, `Light`, `HighContrast`).
 
 > [!CAUTION]
-> If you assign a Lightweight styling resource to a new alias, and also redefine the Lightweight styling resource, your customization might not be applied if the resource lookup is not in the correct order. For example, if you override `ButtonBackground` in a spot that is searched before `MyCustomControlBackground` is found, the override would be missed. 
+> If you assign a Lightweight styling resource to a new alias, and also redefine the Lightweight styling resource, your customization might not be applied if the resource lookup is not in the correct order. For example, if you override `ButtonBackground` in a spot that is searched before `MyCustomControlBackground` is found, the override would be missed.
 
 ## Avoid restyling controls
 
-The [WinUI](/windows/uwp/get-started/winui2/) 2.2 or later includes new styles and templates for both WinUI and system controls. 
+The [WinUI](/windows/uwp/get-started/winui2/) 2.2 or later includes new styles and templates for both WinUI and system controls.
 
-The best way to stay current with our latest visual styles is to use the latest WinUI 2 package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
+The best way to stay current with our latest visual styles is to use the latest WinUI for UWP package and avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 
 For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
 
@@ -279,16 +275,16 @@ For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace)
 </Style>
 ```
 
-For WinUI 2 controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
+For WinUI for UWP controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
 
 ### Derived controls
 
-If you derive a custom control from an existing XAML control, it will not get the WinUI 2 styles by default. To apply the WinUI 2 styles:
+If you derive a custom control from an existing XAML control, it will not get the WinUI for UWP styles by default. To apply the WinUI for UWP styles:
 
-- Create a new [Style](/uwp/api/windows.ui.xaml.style) with its [TargetType](/uwp/api/windows.ui.xaml.style.targettype) set to your custom control.
+- Create a new [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style) with its [TargetType](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) set to your custom control.
 - Base the Style on the default style of the control you derived from.
 
-One common scenario for this is to derive a new control from [ContentDialog](/uwp/api/windows.ui.xaml.controls.contentdialog). This example shows how to create a new Style that applies `DefaultContentDialogStyle` to your custom dialog. 
+One common scenario for this is to derive a new control from [ContentDialog](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog). This example shows how to create a new Style that applies `DefaultContentDialogStyle` to your custom dialog.
 
 ```xaml
 <ContentDialog
@@ -305,4 +301,4 @@ One common scenario for this is to derive a new control from [ContentDialog](/uw
 
 ## The template property
 
-A style setter can be used for the [Template](/uwp/api/windows.ui.xaml.controls.control.template) property of a [Control](/uwp/api/Windows.UI.Xaml.Controls.Control), and in fact this makes up the majority of a typical XAML style and an app's XAML resources. This is discussed in more detail in the topic [Control templates](xaml-control-templates.md).
+A style setter can be used for the [Template](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.template) property of a [Control](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Control), and in fact this makes up the majority of a typical XAML style and an app's XAML resources. This is discussed in more detail in the topic [Control templates](xaml-control-templates.md).

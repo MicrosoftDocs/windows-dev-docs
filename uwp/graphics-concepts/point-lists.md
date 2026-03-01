@@ -5,7 +5,7 @@ ms.assetid: 332954AE-019F-4A91-B773-E3A7C92F3297
 keywords:
 - Point lists
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

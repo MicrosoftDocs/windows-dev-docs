@@ -23,8 +23,12 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | Field name     | Required     | Notes                                                 |
 | -------------- | ------------ | ----------------------------------------------------- |
 | **Markets**    | **Required** | Default: All possible markets                         |
+| **Discoverability** | **Required** | One of: Available in microsoft store; Available through link.|
 | **Pricing**    | **Required** | One of: Free; Paid; Freemium; Subscription.           |
 | **Free Trial** | **Required** | _Not_ required if pricing is set to Free or Freemium. |
+
+> [!TIP]
+> For detailed information about the **Availability** fields, see the [Set pricing and availability](./price-and-availability.md) section.
 
 ### Properties page, support info section
 
@@ -39,6 +43,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Contact details**             | **Required** for business/company accounts |                              |
 | **Support contact info**        | Not required |                                                            |
 
+> [!TIP]
+> For detailed information about the **Properties** fields, see the [Support info](./support-info.md) section.
+
 ### Properties page, products declaration section
 
 | Field name                                                     | Required     | Notes                  |
@@ -47,6 +54,9 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **This app has been tested to meet accessibility guidelines.** | Not required |                        |
 | **This product supports pen and ink input.**                   | Not required |                        |
 | **Notes for certification**                                    | Recommended  | Character limit: 2,000 |
+
+> [!TIP]
+> For detailed information about the **Properties** fields, see the [Product declarations](./product-declarations.md) section.
 
 ### Properties page, system requirements section
 
@@ -67,22 +77,31 @@ Items that you are required to provide or specify are noted below. Some areas ar
 | **Processor**            | Not required |       |
 | **Graphics**             | Not required |       |
 
+> [!TIP]
+> For detailed information about the **Properties** fields, see the [System requirements](./system-requirements.md) section.
+
 ### Age ratings page
 
 | Field name      | Notes        |
 | --------------- | ------------ |
 | **All questions** | **Required** |
 
+> [!TIP]
+> For detailed information about the **Age ratings** fields, see the [Age ratings](./age-ratings.md) section.
+
 ### Packages page
 
 | Field name                 | Required     | Notes                                                                 |
 | -------------------------- | ------------ | --------------------------------------------------------------------- |
 | **Package URL**            | **Required** | At least one package URL is required                                  |
-| **Language**               | **Required** | At least one language is required                                     |
 | **Architecture**           | **Required** |                                                                       |
 | **Installer parameters**   | **Required** | Support for silent install is required. Other parameters are optional |
+| **Language**               | **Required** | At least one language is required                                     |
 | **App type**               | **Requited** | Specify between EXE and MSI                                           |
-| **Installer handling URL** | **Not Required** |                                           |
+                                          |
+
+> [!TIP]
+> For detailed information about the **Packages** fields, see the [Upload package](./upload-app-packages.md) section.
 
 ## Store listings page
 
@@ -91,6 +110,7 @@ Each language has a separate store listing page. One listing page is required. I
 | Field name                         | Required     | Notes                                                                                                                 |
 | ---------------------------------- | ------------ | --------------------------------------------------------------------------------------------------------------------- |
 | **Description**                    | **Required** | Character limit: 10,000                                                                                               |
+| **Product name**                    | Not required | Select on dropdown                                             |
 | **What’s new in this version**     | Not required | Character limit: 1,500                                                                                                |
 | **App features**                   | Not required | Character limit: 200 per feature; Feature limit: 20.                                                                  |
 | **Screenshots**                    | **Required** | Required: 1; Recommended: 4+; Maximum: 10                                                                             |
@@ -102,14 +122,13 @@ Each language has a separate store listing page. One listing page is required. I
 | **Applicable license terms**       | **Required** | Character limit: 10,000                                                                                               |
 | **Developed by**                   | Not required | Character limit: 255                                                                                                  |
 
+> [!TIP]
+> For detailed information about the **Store listings** fields, see the [Store listings](./add-and-edit-store-listing-info.md) section.
+
 Once you have completed all the sections, you can submit your app for certification by clicking on **Publish** button on the Store listing page or by clicking **Submit** button on the Application overview page.
 
 > [!NOTE]
 > You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
 
-## Notifications
-
-> [!IMPORTANT]
-> To ensure that you receive critical email notifications, you'll be required to verify your email address in Action Center. Go to [My Preferences](https://partner.microsoft.com/dashboard/actioncenter/mypreferences) in Action Center to verify.
-
-After publishing an app, the [owner](../../partner-center/assign-account-level-custom-permissions-to-account-users.md) of your developer account is always notified of the publishing status and required actions through email and the [Action Center](/partner-center/action-center-overview) in Partner Center.
+> [!TIP]
+> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/submit-your-app.md) section.

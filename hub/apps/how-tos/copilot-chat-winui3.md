@@ -1,17 +1,17 @@
 ---
-title: How to streamline your WinUI 3 development workflow with GitHub Copilot Chat
-description: Get started with GitHub Copilot Chat by learning how to streamline your WinUI 3 / Windows App SDK development workflow with context-aware prompts.
+title: How to streamline your WinUI development workflow with GitHub Copilot Chat
+description: Get started with GitHub Copilot Chat by learning how to streamline your WinUI / Windows App SDK development workflow with context-aware prompts.
 ms.topic: how-to
-ms.date: 11/26/2024
-keywords: windows app sdk, winappsdk, winui3, openai, chatgpt, copilot, github copilot
+ms.date: 10/28/2025
+keywords: windows app sdk, winappsdk, winui, openai, chatgpt, copilot, github copilot
 ms.localizationpriority: medium
 audience: new-desktop-app-developers
-#Customer intent: As a Windows developer, I want to learn how to streamline my WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio, so that I can build apps more efficiently.
+#Customer intent: As a Windows developer, I want to learn how to streamline my WinUI / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio, so that I can build apps more efficiently.
 ---
 
 # Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
 
-This how-to is targeted at desktop application developers who want to streamline their WinUI 3 / Windows App SDK application development workflow with Github Copilot Chat in Visual Studio.
+This how-to is targeted at desktop application developers who want to streamline their WinUI / Windows App SDK application development workflow with Github Copilot Chat in Visual Studio.
 
 We'll start by using GitHub Copilot Chat to build a "Hello world" app with a single prompt, and then we'll demonstrate how GitHub Copilot Chat can be used to add a chat interface that displays responses from a mocked server-side component.
 
@@ -21,7 +21,7 @@ We'll start by using GitHub Copilot Chat to build a "Hello world" app with a sin
 - An active [subscription](https://docs.github.com/en/billing/managing-billing-for-github-copilot/about-billing-for-github-copilot) to [GitHub Copilot for Individuals](https://docs.github.com/copilot/overview-of-github-copilot/about-github-copilot-for-individuals) or [GitHub Copilot for Business](https://docs.github.com/copilot/overview-of-github-copilot/about-github-copilot-for-business) associated with the GitHub account that you sign in to Visual Studio with.
 - [**GitHub Copilot Chat**](/visualstudio/ide/visual-studio-github-copilot-chat) in Visual Studio.
   - If you're using Visual Studio version 17.10 or later, GitHub Copilot Chat is included in the built-in, unified GitHub Copilot extension available as a recommended component in the Visual Studio Installer. It is installed by default with all workloads, unless you choose to exclude it during installation.
-- Familiarity with C#, WinUI 3, and Windows App SDK.
+- Familiarity with C#, WinUI, and Windows App SDK.
 
 ## Prompting techniques
 
@@ -43,17 +43,17 @@ From any file's editor window, right click and select Ask Copilot to bring up th
 
 This will reveal an inline chat window where you can prompt Copilot to assist you with the file you're currently working on. Use this when you're working within the context of a single file.
 
-## Create a new WinUI 3 project
+## Create a new WinUI project
 
 Type the following into the Copilot Chat window:
 
 ```
-Get me started with a blank WinUI 3 / WinAppSDK project
+Get me started with a blank WinUI / Windows App SDK project
 ```
 
 You should see instructions appear:
 
-:::image type="content" source="images/copilot-chat/2-get-me-started-winui3.png" alt-text="Screenshot of response to 'Get me started with a blank WinUI 3 / WinAppSDK project'":::
+:::image type="content" source="images/copilot-chat/2-get-me-started-winui3.png" alt-text="Screenshot of response to 'Get me started with a blank WinUI / Windows App SDK project'":::
 
 This highlights a limitation that you should be aware of: at the time of this writing, the Chat extension can't create a new project or file structure for you, but it *can* provide you with step-by-step instructions. Follow the instructions to create a new project.
 
@@ -246,7 +246,7 @@ Alternatively, you can use **multi-shot prompting** to break your problem down i
 
 In this how-to, we:
 
-- Demonstrated how to streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio
+- Demonstrated how to streamline your WinUI / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio
 - Prompted Copilot to generate code that meets your requirements
 - Highlighted the importance of providing Copilot with precise requirements to generate the code you want
 - Identified a variety of prompting techniques and use-cases for each
@@ -254,5 +254,5 @@ In this how-to, we:
 ## Related content
 
 - [Sample applications for Windows development](../get-started/samples.md)
-- [Windows developer FAQ](../get-started/windows-developer-faq.yml)
+- [Windows developer FAQ](../get-started/windows-developer-faq.md)
 - [Windows development best practices](../get-started/best-practices.md)

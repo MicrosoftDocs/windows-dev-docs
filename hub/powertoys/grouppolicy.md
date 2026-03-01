@@ -1,16 +1,17 @@
 ---
-title: PowerToys Group Policy
-description: Group policy documentation for PowerToys
-ms.date: 07/06/2024
-ms.topic: article
+title: Configure PowerToys with Group Policy Settings
+description: Learn how to configure and manage PowerToys utilities using Group Policy settings, administrative templates, and registry configurations for enterprise environments.
+ms.date: 08/20/2025
+ms.topic: how-to
 no-loc: [PowerToys, Windows, Group Policy, Win]
+# customer intent: As a Windows power user, I want to learn how to configure PowerToys using Group Policy settings.
 ---
 
-# Group Policies
+# PowerToys Group Policy configuration
 
-Since version 0.64, PowerToys is released on GitHub with Administrative Templates that allows you to configure PowerToys using Group Policies.
+PowerToys Group Policy configuration allows administrators to manage PowerToys utilities across enterprise environments using administrative templates. Since version 0.64, PowerToys includes ADMX files that enable centralized configuration of all PowerToys features through Group Policy settings.
 
-## How to install
+## Install PowerToys administrative templates
 
 ### Download
 
@@ -98,16 +99,19 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Awake|Awake: Configure enabled state|ConfigureEnabledUtilityAwake|
 |Color Picker|Color Picker: Configure enabled state|ConfigureEnabledUtilityColorPicker|
 |Command Not Found|Command Not Found: Configure enabled state|ConfigureEnabledUtilityCmdNotFound|
+|Command Palette|Command Palette: Configure enabled state|ConfigureEnabledUtilityCmdPal|
 |Crop And Lock|Crop And Lock: Configure enabled state|ConfigureEnabledUtilityCropAndLock|
 |Environment Variables|Environment Variables: Configure enabled state|ConfigureEnabledUtilityEnvironmentVariables|
 |FancyZones|FancyZones: Configure enabled state|ConfigureEnabledUtilityFancyZones|
 |File Locksmith|File Locksmith: Configure enabled state|ConfigureEnabledUtilityFileLocksmith|
 |Gcode file preview|Gcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodePreview|
+|Bgcode file preview|Bgcode file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerBgcodePreview|
 |Markdown file preview|Markdown file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMarkdownPreview|
 |PDF file preview|PDF file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFPreview|
 |QOI file preview|QOI file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIPreview|
 |Source code file preview|Source code file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerMonacoPreview|
 |SVG file preview|SVG file preview: Configure enabled state|ConfigureEnabledUtilityFileExplorerSVGPreview|
+|Bgcode file thumbnail|Bgcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerBgcodeThumbnails|
 |Gcode file thumbnail|Gcode file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerGcodeThumbnails|
 |PDF file thumbnail|PDF file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerPDFThumbnails|
 |QOI file thumbnail|QOI file thumbnail: Configure enabled state|ConfigureEnabledUtilityFileExplorerQOIThumbnails|
@@ -116,6 +120,8 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Hosts file editor|Hosts file editor: Configure enabled state|ConfigureEnabledUtilityHostsFileEditor|
 |Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer|
 |Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager|
+|Light Switch | Light Switch: Configure enabled state|ConfigureEnabledUtilityLightSwitch|
+|CursorWrap|CursorWrap: Configure enabled state|ConfigureEnabledUtilityCursorWrap|
 |Find My Mouse|Find My Mouse: Configure enabled state|ConfigureEnabledUtilityFindMyMouse|
 |Mouse Highlighter|Mouse Highlighter: Configure enabled state|ConfigureEnabledUtilityMouseHighlighter|
 |Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
@@ -132,6 +138,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Text Extractor|Text Extractor: Configure enabled state|ConfigureEnabledUtilityTextExtractor|
 |Video Conference Mute|Video Conference Mute: Configure enabled state|ConfigureEnabledUtilityVideoConferenceMute|
 |Workspaces|Workspaces: Configure enabled state|ConfigureEnabledUtilityWorkspaces|
+|ZoomIt|ZoomIt: Configure enabled state|ConfigureEnabledUtilityZoomIt|
 
 #### Group Policy (ADMX) information
 

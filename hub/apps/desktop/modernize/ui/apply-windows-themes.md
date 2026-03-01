@@ -1,7 +1,7 @@
 ---
 description: Learn how to detect system theme changes for dark or light mode.
 title: Support Dark and Light themes in Win32 apps
-ms.topic: article
+ms.topic: how-to
 ms.date: 05/05/2022
 ms.localizationpriority: medium
 ---
@@ -271,6 +271,5 @@ When this code is run, the app title bar should be dark:
 
 ## See also
 
-- [Make your app great on Windows 11](../../../get-started/make-apps-great-for-windows.md)
 - [Accessible text requirements](../../../design/accessibility/accessible-text-requirements.md)
 - [Desktop Windows Manager (DWM)](/windows/win32/dwm/dwm-overview)

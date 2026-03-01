@@ -1,7 +1,7 @@
 ---
-title: PowerToys New+ for Windows
-description: A tool that enables you to create files and folders from a personalized set of templates, directly from the File Explorer context menu.
-ms.date: 05/06/2025
+title: PowerToys New+ - Create Custom File Templates in Windows
+description: Create custom file and folder templates with PowerToys New+. Access personalized templates directly from File Explorer's context menu to boost productivity.
+ms.date: 08/20/2025
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
 # Customer intent: As a Windows power user, I want to learn about the New+ feature in PowerToys so that I can create files and folders from a personalized set of templates directly from the File Explorer context menu.
@@ -15,15 +15,15 @@ no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
 
 This section provides an overview of the New+ feature, including how to enable it, how to create new items using templates, and how to customize your template collection.
 
-### How to enable New+
+### Enable New+ in PowerToys settings
 
 To start using New+, enable New+ in the PowerToys settings.
 
-### How to create a new object using New+
+### Create a new object using New+
 
 To create a new item within a folder, right-click on the folder to bring up the context menu. From there, click on the "New+" option and then select the template you were looking for.
 
-### How to add or customize a new template to New+
+### Add or customize templates in New+
 
 To create a new template, start by right-clicking on the folder. This will open a context menu where you can select the 'New+' option. From there, choose 'Open templates' to access the "Templates" folder. In this folder, you have the freedom to add, edit, or rename objects as per your needs. It’s important to note that the objects you add here will be displayed on the ‘New+’ menu in a sorted order, with folders always appearing first. This provides the ability to find and select your templates.
 

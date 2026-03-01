@@ -63,7 +63,7 @@ _Click the image to see it animated._
 
 ### Resourceful: Utilizes existing controls to bring consistency where possible
 
-Avoid custom animations where possible. Use animation resources like [WinUI](../../winui/index.md) controls for page transitions, in-page focus, and micro interactions. If you can't use WinUI controls, mimic existing OS behaviors based on where the app entry point lives.
+Avoid custom animations where possible. Use animation resources like [WinUI 3](../../winui/index.md) controls for page transitions, in-page focus, and micro interactions. If you can't use WinUI controls, mimic existing OS behaviors based on where the app entry point lives.
 
 _Example:_ [Page transitions](../motion/page-transitions.md), [connected animations](../motion/connected-animation.md), and [animated icons](../controls/animated-icon.md) are the recommended WinUI controls that add delightful and necessary motion to apps.
 
@@ -106,7 +106,7 @@ Use [page transitions](../motion/page-transitions.md) to transition smoothly fro
 
 Page transitions guide your user's eyes to incoming and outgoing content, lowering cognitive load.
 
-:::image type="content" source="images/motion-page-transitions.png" lightbox="images/motion-page-transitions.gif" alt-text="An animated image that shows navigation between several pages in the Windows Settings app. Top-level pages slide up from the bottom. When navigating between top-level and sub-pages, pages slide left and right.":::
+:::image type="content" source="images/motion-page-transitions.png" lightbox="images/motion-page-transitions.gif" alt-text="An animated image that shows navigation between several pages in Windows Settings. Top-level pages slide up from the bottom. When navigating between top-level and sub-pages, pages slide left and right.":::
 
 _Click the image to see it animated._
 

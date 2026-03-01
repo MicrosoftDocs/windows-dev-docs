@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
 description: This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
 ms.topic: article
-ms.date: 08/07/2024
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ Packaged with external location and unpackaged apps also have extra runtime requ
 
 ### Additional prerequisites 
 
-* [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
+* Experimental and preview versions of the Windows App SDK require that sideloading is enabled to install the runtime.
   - Sideloading is automatically enabled on Windows 10 version 2004 and later.
   - If your development computer or the deployment computer is running **Windows 11**, confirm whether sideloading is enabled:
     - **Settings** > **Privacy & security** > **For developers**. Make sure the **Developer mode** setting is turned on.

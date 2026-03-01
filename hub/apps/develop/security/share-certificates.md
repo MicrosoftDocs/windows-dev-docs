@@ -4,6 +4,7 @@ description: Learn how to authenticate multiple Windows apps using the same cert
 ms.date: 09/05/2024
 ms.topic: how-to
 keywords: windows, winui, winrt, dotnet, security
+ms.custom: sfi-image-nochange
 #customer intent: As a Windows native app developer, I want to learn how to authenticate multiple Windows apps using shared certificates, and how to import a certificate provided for access to secured services.
 ---
 
@@ -11,7 +12,7 @@ keywords: windows, winui, winrt, dotnet, security
 
 Windows apps that require secure authentication beyond a user Id and password combination can use certificates for authentication. Certificate authentication provides a high level of trust when authenticating a user. In some cases, a group of services will want to authenticate a user for multiple apps. This article shows how you can authenticate multiple Windows apps using the same certificate, and how you can provide a method for users to import a certificate that was provided for access to secured web services.
 
-Apps can authenticate to a web service using a certificate, and multiple apps can use a single certificate from the certificate store to authenticate the same user. If a certificate does not exist in the store, you can add code to your app to import a certificate from a PFX file. The client app in this quickstart is a WinUI app, and the web service is an ASP.NET Core web API.
+Apps can authenticate to a web service using a certificate, and multiple apps can use a single certificate from the certificate store to authenticate the same user. If a certificate does not exist in the store, you can add code to your app to import a certificate from a PFX file. The client app in this quickstart is a WinUI 3 app, and the web service is an ASP.NET Core web API.
 
 > [!TIP]
 > [Microsoft Copilot](https://copilot.microsoft.com/) is a great resource if you have questions about getting started writing Windows apps or ASP.NET Core web APIs. Copilot can help you write code, find examples, and learn more about best practices for creating secure apps.

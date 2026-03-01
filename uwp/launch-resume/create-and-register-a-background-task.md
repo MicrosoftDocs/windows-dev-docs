@@ -3,7 +3,7 @@ title: Create and register an out-of-process background task
 description: Create an out-of-process background task class and register it to run when your app is not in the foreground.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ms.date: 02/27/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 dev_langs:

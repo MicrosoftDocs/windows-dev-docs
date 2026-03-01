@@ -8,7 +8,7 @@ ms.topic: how-to
 
 # Cross Device People API
 
-Windows is an ideal platform for third party apps to integrate their top people contacts. This integration enables users to interact with the personas for various people experiences. Windows now provides third party WinUI 3, UWP, and other apps with [package identity](/windows/apps/desktop/modernize/package-identity-overview) with APIs to store all their contacts.
+Windows is an ideal platform for third party apps to integrate their top people contacts. This integration enables users to interact with the personas for various people experiences. Windows now provides third party WinUI, UWP, and other apps with [package identity](/windows/apps/desktop/modernize/package-identity-overview) with APIs to store all their contacts.
 
 Once your apps store their contacts in Windows, users will be able to see these contact suggestions on the **Share** panel in Windows to seamlessly share with their top contacts. See [How to share files in File Explorer on Windows](https://support.microsoft.com/windows/how-to-share-files-in-file-explorer-on-windows-dcf7d3dc-40f7-111a-0c9e-a8981c4bbc32) for more information about the **Share** panel.
 

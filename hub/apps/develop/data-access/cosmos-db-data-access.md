@@ -14,7 +14,7 @@ This article contains the steps required to enable working with a Cosmos DB data
 
 ## Set up your solution
 
-This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to a Cosmos DB database. Follow these steps to install the package and try out example code for some basic tasks.
+This example can be used with any WPF, Windows Forms, WinUI, and UWP project to connect your Windows app to a Cosmos DB database. Follow these steps to install the package and try out example code for some basic tasks.
 
 1. Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console). Use the command `Install-Package Microsoft.Azure.Cosmos` to install the NuGet package for the **Azure Cosmos DB for NoSQL client library for .NET**. This will allow you to programmatically access Cosmos DB databases.
 1. Build your project and make sure that the build was successful with no errors.

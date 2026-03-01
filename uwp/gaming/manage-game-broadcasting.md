@@ -3,7 +3,7 @@ ms.assetid:
 description: Learn how to manage game broadcasting for a Universal Windows Platform (UWP) app using the Windows system UI and the Windows Desktop Extensions for UWP.
 title: Manage game broadcasting
 ms.date: 09/27/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, game, broadcasting
 ms.localizationpriority: medium
 ---

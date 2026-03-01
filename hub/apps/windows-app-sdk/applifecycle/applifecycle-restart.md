@@ -1,8 +1,8 @@
 ---
 title: Restart API (Windows App SDK)
 description: Describes how to use the Restart API, AppRestartFailureReason Restart(), with the App Lifecycle API (Windows App SDK).
-ms.topic: article
-ms.date: 05/19/2022
+ms.topic: how-to
+ms.date: 07/14/2025
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,7 @@ The Restart API returns an [`AppRestartFailureReason`](/uwp/api/windows.applicat
 To use the app lifecycle API in the Windows App SDK:
 
 1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+2. Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## What is this Restart Method?
 
@@ -41,7 +41,7 @@ This Restart API enables Win32 applications to terminate and restart on command,
 
 ## Restarting With Command Line Arguments
 
-Simply call the Restart method and specify an arbitrary command-line string for the restarted instance to restart with. The restart is completedly synchronously and no further action or handling is required. If the restart fails for some reason, the Restart method returns a failure reason.
+Simply call the Restart method and specify an arbitrary command-line string for the restarted instance to restart with. The restart is completely synchronously and no further action or handling is required. If the restart fails for some reason, the Restart method returns a failure reason.
 
 ## Examples
 

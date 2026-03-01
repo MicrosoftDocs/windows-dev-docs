@@ -2,7 +2,7 @@
 title: Reference for Windows 11 and Windows 10 settings
 description: This page lists the settings that are supported by both Windows 10 and Windows 11.
 ms.date: 03/20/2024
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, settings
 ms.localizationpriority: medium
 ---
@@ -1158,7 +1158,7 @@ Specifies the behavior of the taskbar when displayed on multiple monitors.
 | Registry value | Type | Data | Description |
 |---------------|------|-------|------------|
 | SystemSettings_Taskbar_MultiMonTaskbarMode | REG_SZ | 0, 1, or 2 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
-| SystemSettings_DesktopTaskbar_MultiMonTaskbarMode | REG_SZ | 0  1 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
+| SystemSettings_DesktopTaskbar_MultiMonTaskbarMode | REG_SZ | 0  1, or 2 | 0: Duplicate, 1: Primary and monitor window is on, 2: Monitor window is on. |
 
 ## Personalization - Taskbar - Pinned apps from other devices
 

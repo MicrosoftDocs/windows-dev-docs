@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 14393
 description: Windows 10 build 14393 and new developer tools provide the tools, features, and experiences powered by the new Universal Windows Platform.
 keywords: Windows 10, 1607, 14393
 ms.date: 11/02/2017
-ms.topic: article
+ms.topic: whats-new
 
 
 ms.assetid: f95cd87b-f959-4148-a9bd-ba0b90d16e71

@@ -2,7 +2,7 @@
 title: Overall migration strategy
 description: Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating.
 ms.topic: article
-ms.date: 10/01/2021
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---
@@ -33,7 +33,7 @@ We'd love to hear your feedback about this migration guide, and about your own m
 
 ## Why migrate to the Windows App SDK?
 
-The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI 3)](../../winui/index.md), which is developed and designed to delight your users.
+The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI)](../../winui/index.md), which is developed and designed to delight your users.
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
@@ -56,11 +56,11 @@ For more info, see [Windows App SDK](../index.md).
 
 ## Install the Windows App SDK VSIX
 
-Download the Windows App SDK Visual Studio extension (VSIX) installer from [Stable release channel for the Windows App SDK](../stable-channel.md), and run to install it.
+Download the latest Windows App SDK version from [Windows App SDK downloads](../downloads.md), and run to install it.
 
 ## Create a new project
 
-In Visual Studio, [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged (WinUI in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 
@@ -112,7 +112,6 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 * [Windows App SDK and supported Windows releases](../support.md)
 * [Windows Runtime (WinRT)](/uwp/api/) APIs
 * [WinUI](../../winui/index.md)
-* [Stable release channel for the Windows App SDK](../stable-channel.md)
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)
 * [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md)
