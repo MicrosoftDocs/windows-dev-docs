@@ -110,11 +110,11 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 9. Take action if verification requires it 
 
-   If a verification step requires additional supporting documents, the Verification summary page will show the action required and you’ll also be notified via email. Follow the instructions to upload the requested documents and submit your verification appeal.  
+If a verification step requires additional supporting documents, the Verification summary page will show the action required, and you’ll be notified via email. Follow the instructions to upload the requested documents and submit your verification appeal.
 
-   You’ll be notified by email when the verification status changes. 
+Each verification type (business and employment) allows up to three verification appeals, so ensure that all submitted information and documents are accurate and current to avoid delays. You’ll receive an email notification when the verification status changes or further action is required.
 
-   > **Note:** Each verification type (business and employment) allows up to three verification appeals, so make sure the uploaded documents are accurate and recent to avoid delays.   
+  > **Note:** If you realize that any of the information originally provided (such as company name, address, or email domain) was incorrect, you may update your account details. Updating key details will restart the verification process, and any previous appeals or related history will not be carried over.
 
 10. Create your company developer account 
 
