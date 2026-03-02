@@ -1,38 +1,47 @@
 ---
-description: What’s New - Near Real Time Insights in Analytics for Win32 Apps
-title: What’s New - Near Real Time Insights in Analytics for Win32 Apps
+description: What’s New - Recent data view in Acquisitions reports
+title: What’s New - Recent data view in Acquisitions reports
 ms.date: 11/24/2025
 ms.topic: article
-keywords: windows 10, windows 11, windows, windows store, store, analytics, acquisition, release, distribution, telemetry, trends
+keywords: windows 10, windows 11, windows, windows store, store, analytics, acquisitions, release, distribution, telemetry, trends, near real time, nrt, recent data
 ms.localizationpriority: medium
 ---
 
-# What’s new: Near Real Time Insights in Analytics for Win32 Apps
+# What’s New - Recent data view in Acquisitions reports
 
-Developers have consistently requested lower data latency for analytics reports in Partner Center. With the launch of Near Real-Time Insights in Partner Center Analytics, acquisitions data is now refreshed in about 3 hours instead of 30, delivering a faster and more responsive experience. We’ve also added a new ‘Recent Data’ view that updates hourly. 
-
-> [!NOTE]
-> These capabilities are currently available for Win32 apps and will be extended to MSIX apps soon. 
-
-### Overview
-
-Near Real-Time Insights deliver fresher acquisition data in Store Developer Analytics, enabling developers to track performance and respond to trends within hours rather than days. The experience builds on a new telemetry foundation and a dedicated “Recent data” view designed for short‑window, high‑frequency analysis.
+Developers have consistently requested lower data latency for analytics reports in Partner Center. With the launch of "Recent data" view in Acquisitions reports, data is now refreshed in about 3 hours instead of 30, delivering a faster and more responsive experience.
 
 ### Why This Matters to Developers
 
 #### Faster, fresher acquisition data
-Win32 acquisition data now flows through a near real time pipeline, cutting typical delay from about 30 hours down to approximately 3 hours for new events to appear in analytics. This tighter feedback loop helps developers validate releases, campaigns, and distribution changes while they are still in flight, rather than waiting for next‑day reports.
+Acquisition data now flows through a near real time pipeline, cutting typical delay from about 30 hours down to approximately 3 hours for new events to appear in analytics. This tighter feedback loop helps developers validate releases, campaigns, and distribution changes while they are still in flight, rather than waiting for next‑day reports.
 
 #### “Recent data” view with hourly updates
 
 :::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
 
-A new Recent data section in the Acquisitions report (_Apps and Games -> Select Your App -> View Analytics -> Installs_) surfaces Last 24 hours and Last 48 hours views that refresh using hourly telemetry streams.
+The new [Recent data section in the Acquisitions report](https://partner.microsoft.com/dashboard/insights/analytics/store/acquisitions?viewSelected=48h) surfaces Last 24 hours and Last 48 hours views that refresh using hourly telemetry streams.
 
 :::image type="content" source="images/nrt-filter.png" lightbox="images/nrt-filter.png" alt-text="A screenshot showing duation filter for analytics in Partner Center.":::
 
 This view is optimized for quick checks on live activity, enabling developers to observe hourly trends instead of daily trends for the same metrics previously available under other durations.
 
-### Benefits for Win32 analytics
+### Benefits
 
-The combination of lower latency and improved telemetry unlocks several practical benefits for Win32 developers. Developers can make faster decisions on promotion performance, detect anomalies or drops early, and trust that acquisition trends are no longer underreported by prior sampling behavior.
+The combination of lower latency and improved telemetry unlocks several practical benefits for developers. Developers can make faster decisions on promotion performance, detect anomalies or drops early, and trust that acquisition trends are no longer underreported by prior sampling behavior.
+
+### Frequently Asked Questions (FAQs)
+
+#### What metrics are available in the Recent data view?
+
+The Recent data view includes a limited set of charts focused on near real time insights. These currently cover page views, installs, and campaign conversions. For paid apps, the view also includes acquisitions and gross sales.
+
+#### How is the aggregation logic in the Recent data view different from the Daily view?
+
+The Recent data view aggregates data at an hourly level and represents the number of unique devices per hour, rather than per day.
+
+For example, if an install happens twice on the same device within a single day but in two different hours, the Recent data view will show this as two installs (one per hour). In contrast, the Daily view would count this as one install for that day.
+
+#### Can I rely on the Recent data view for complete and final numbers?
+
+No. The Recent data view is designed for trend analysis, not for complete or finalized reporting. The data may be partial or still evolving, but it helps you understand early trends and directional movement in key metrics.
