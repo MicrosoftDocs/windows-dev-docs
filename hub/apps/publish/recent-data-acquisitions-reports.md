@@ -38,10 +38,10 @@ The Recent data view includes a limited set of charts focused on near real time 
 
 #### How is the aggregation logic in the Recent data view different from the Daily view?
 
-The Recent data view aggregates data at an hourly level and represents the number of unique devices per hour, rather than per day.
+The Recent data view aggregates data at an hourly level, while the Daily view aggregates data at a daily level. This means the Recent data view counts unique devices per hour, not per day. If the same device performs the same action in multiple hours, each hour is counted separately.
+ 
+For example, if a single device installs your app twice on the same day, once in the morning and once in the evening, the Recent data view will report two installs (one perh hour). In contrast, the Daily view will report one install for that day, as it counts unique devices across the entire day.
 
-For example, if an install happens twice on the same device within a single day but in two different hours, the Recent data view will show this as two installs (one per hour). In contrast, the Daily view would count this as one install for that day.
+#### Does the Recent data view report complete and final numbers?
 
-#### Can I rely on the Recent data view for complete and final numbers?
-
-No. The Recent data view is designed for trend analysis, not for complete or finalized reporting. The data may be partial or still evolving, but it helps you understand early trends and directional movement in key metrics.
+The data shown in the Recent data view may be partial or still completing, and it helps you understand early trends and directional movement in key metrics shortly after the activity occurs.
