@@ -554,10 +554,7 @@ items:
     - name: Speech
       href: speech.md
     - name: Testing
-      href: ../winui/winui3/testing/index.md
-      items:
-          - name: Unit tests for Windows UI Library (WinUI) apps in Visual Studio
-            href: ../winui/winui3/testing/create-winui-unit-test-project.md
+      href: testing/index.md
     - name: User interface
       items:
       - name: Overview

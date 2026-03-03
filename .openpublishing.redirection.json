@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/winui/winui3/testing/index.md",
+      "redirect_url": "/windows/apps/develop/testing/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/testing/create-winui-unit-test-project.md",
+      "redirect_url": "/windows/apps/develop/testing/",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/performance/introduction.md",
       "redirect_url": "/windows/apps/performance/",
       "redirect_document_id": true
