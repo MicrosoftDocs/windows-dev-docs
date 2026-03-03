@@ -7,7 +7,7 @@ keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, 
 #customer intent: As a Windows developer, I want to learn how to create a single-instanced WinUI app so that I can ensure only one instance of my app is running at a time.
 ---
 
-# Create a single-instanced WinUI app with C#
+# Create a single-instanced WinUI 3 app with C#
 
 This how-to demonstrates how to create a single-instanced WinUI app with C# and the Windows App SDK. Single-instanced apps only allow one instance of the app running at a time. WinUI apps are multi-instanced by default. They allow you to launch multiple instances of the same app simultaneously. That's referred to a multiple instances. However, you may want to implement single-instancing based on the use case of your app. Attempting to launch a second instance of a single-instanced app will only result in the first instance’s main window being activated instead. This tutorial demonstrates how to implement single-instancing in a WinUI app.
 

@@ -36,7 +36,7 @@ Users click the header in the month view to open the year view, and click the he
 > - **Important APIs:** [CalendarView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView), [SelectedDatesChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selecteddateschanged)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the CalendarView in action](winui3gallery:/item/CalendarView)
+> [Open the WinUI 3 Gallery app and see the CalendarView in action](winui3gallery:/item/CalendarView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

@@ -645,4 +645,4 @@ public class MyListView : ListView
 
 ### Samples
 
-- [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)
+- [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery)

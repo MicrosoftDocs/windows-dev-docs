@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 ---
 
-This section brings together all technical documentation for building Windows apps. Whether you're starting fresh with WinUI, modernizing an existing desktop application, or adding the Windows App SDK to your current project, you'll find guidance tailored to your scenario.
+This section brings together all technical documentation for building Windows apps. Whether you're starting fresh with WinUI 3, modernizing an existing desktop application, or adding the Windows App SDK to your current project, you'll find guidance tailored to your scenario.
 
 Some of these features are available in the [Windows App SDK](../windows-app-sdk/index.md). Other features are available by using APIs in the Windows OS (via the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk)) and .NET.
 

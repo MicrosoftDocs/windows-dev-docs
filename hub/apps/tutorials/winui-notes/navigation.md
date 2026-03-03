@@ -128,7 +128,7 @@ Now you'll add navigation for existing notes. Currently, when you click the note
 
 Lastly, you need to update the app so that you can navigate back from an individual note to the all notes page.
 
-The WinUI [TitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar) control includes a back button that meets all the Fluent Design guidelines for placement and appearance. You'll use this built-in button for back navigation.
+The WinUI 3 [TitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar) control includes a back button that meets all the Fluent Design guidelines for placement and appearance. You'll use this built-in button for back navigation.
 
 1. Open **MainWindow.xaml**.
 1. Update the XAML for the `TitleBar` with [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible) = `True` and [IsBackButtonEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled) bound to the [Frame.CanGoBack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.cangoback) property.

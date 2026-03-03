@@ -36,7 +36,7 @@ Use an items view to:
 > - Important APIs: [ItemsView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview), [ItemsSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource), [ItemTemplate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemtemplate), [LinedFlowLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.linedflowlayout), [StackLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout), [UniformGridLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the ItemsView in action](winui3gallery:/item/ItemsView)
+> [Open the WinUI 3 Gallery app and see the ItemsView in action](winui3gallery:/item/ItemsView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -187,7 +187,7 @@ StackLayout provides properties to control:
 - whether the layout is vertical or horizontal ([Orientation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout.orientation))
 - the spacing of items ([Spacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout.spacing))
 
-You can use the layout in combination with the ItemTemplate to give your collection a variety of looks to suit your needs. For example, the [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) changes the ItemTemplate used with the StackLayout to look like this.
+You can use the layout in combination with the ItemTemplate to give your collection a variety of looks to suit your needs. For example, the [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) changes the ItemTemplate used with the StackLayout to look like this.
 
 :::image type="content" source="images/itemsview/itemsview-stack.png" alt-text="A collection of small photos shown in a vertical list with several rows of text below each photo.":::
 
@@ -243,7 +243,7 @@ UniformGridLayout provides properties to control:
 - the arrangement of items ([ItemsJustification](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsjustification), [ItemsStretch](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout.itemsstretch))
 
 > [!TIP]
-> Use the interactive demo in the [WinUI Gallery app](winui3gallery:/item/ItemsView) to see the effect of these properties in real time.
+> Use the interactive demo in the [WinUI 3 Gallery app](winui3gallery:/item/ItemsView) to see the effect of these properties in real time.
 
 ## Item selection and interaction
 
@@ -340,7 +340,7 @@ Sometimes, you might need to manipulate the ItemsView item selection programmati
 
 ## Get the sample code
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 

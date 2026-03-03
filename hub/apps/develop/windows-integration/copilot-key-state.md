@@ -14,7 +14,7 @@ This article describes how apps can register to be activated and receive notific
 
 This feature extends the features of a basic Microsoft Copilot hardware key provider, which simply registers to be launched when the hardware key is pressed. For more information, see [Microsoft Copilot hardware key providers](microsoft-copilot-key-provider.md).
 
-The rest of this article will walk through creating a simple C# WinUI app that responds to activation initiated by a single press or a press and hold and release of the Microsoft Copilot button.
+The rest of this article will walk through creating a simple C# WinUI 3 app that responds to activation initiated by a single press or a press and hold and release of the Microsoft Copilot button.
 
 ## Create a new project
 

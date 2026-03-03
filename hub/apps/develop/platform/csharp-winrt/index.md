@@ -23,7 +23,7 @@ For additional information, see the [C#/WinRT GitHub repo](https://aka.ms/cswinr
 
 Previous versions of .NET Framework and .NET Core had built-in knowledge of WinRT&mdash;a Windows-specific technology. To support the portability and efficiency goals of .NET 6+, we lifted the WinRT projection support out of the .NET compiler and runtime and moved it into the C#/WinRT toolkit (see [Built-in support for WinRT is removed from .NET](/dotnet/core/compatibility/interop/5.0/built-in-support-for-winrt-removed)). The goal of C#/WinRT is to provide parity with the built-in WinRT support provided by earlier versions of the C# compiler and .NET runtime. For details, see [.NET mappings of Windows Runtime types](net-mappings-of-winrt-types.md).
 
-C#/WinRT also supports components in the [Windows App SDK](../../../windows-app-sdk/index.md), including WinUI. The Windows App SDK lifts native Microsoft UI controls and other native components out of the operating system. This enables app developers to use the latest controls and components on Windows 10, version 1809, and later releases.
+C#/WinRT also supports components in the [Windows App SDK](../../../windows-app-sdk/index.md), including WinUI 3. The Windows App SDK lifts native Microsoft UI controls and other native components out of the operating system. This enables app developers to use the latest controls and components on Windows 10, version 1809, and later releases.
 
 Finally, C#/WinRT is a general toolkit and is intended to support other scenarios where built-in support for WinRT is not available in the C# compiler or .NET runtime.
 

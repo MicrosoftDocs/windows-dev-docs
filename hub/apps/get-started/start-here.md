@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Quick start: Set up your environment and create a WinUI project
+# Quick start: Set up your environment and create a WinUI 3 project
 
 This quick start guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To develop WinUI apps, you need:
 
@@ -28,8 +28,7 @@ Open [Windows Terminal](/windows/terminal/) and run the following command in Pow
 winget configure -f https://aka.ms/winui-config
 ```
 
-> [!TIP]
-> To review the config file and learn more, see its [README](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/WinUI/README.md] on GitHub.
+To review the config file and learn more, see its [README](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/WinUI/README.md) on GitHub.
 
 #### [Manual installation](#tab/manual)
 
@@ -95,8 +94,8 @@ In the Visual Studio Installer, select the following workloads on the **Workload
         Ready to go further? Follow the step-by-step tutorial to build a full WinUI app.
     :::column-end:::
     :::column:::
-        [![WinUI Gallery](../winui/winui3/images/winui-gallery.png)](samples.md#winui-gallery)<br>
-        **[WinUI Gallery](samples.md#winui-gallery)**<br>
+        [![WinUI 3 Gallery](../winui/winui3/images/winui-gallery.png)](samples.md#winui-3-gallery)<br>
+        **[WinUI 3 Gallery](samples.md#winui-3-gallery)**<br>
         Explore interactive examples of WinUI controls, features, and functionality.
     :::column-end:::
     :::column:::

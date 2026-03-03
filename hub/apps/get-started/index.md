@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Windows developer platform overview
 
-The Windows developer platform provides everything you need to build apps for Windows — from system-level access to modern UI frameworks. At the core are two SDKs: the **Windows SDK**, which gives you access to OS-level APIs, and the **Windows App SDK**, which provides a modern, decoupled set of APIs and tools — including WinUI, the recommended UI framework for new Windows apps.
+The Windows developer platform provides everything you need to build apps for Windows — from system-level access to modern UI frameworks. At the core are two SDKs: the **Windows SDK**, which gives you access to OS-level APIs, and the **Windows App SDK**, which provides a modern, decoupled set of APIs and tools — including WinUI 3, the recommended UI framework for new Windows apps.
 
 Together, these SDKs support a range of native and cross-platform app frameworks. Whether you're starting a new project with WinUI, modernizing an existing WPF or Windows Forms app, or building cross-platform with .NET MAUI or React Native, the platform gives you the flexibility to choose the right approach for your needs.
 
@@ -110,7 +110,7 @@ The [Universal Windows Platform (UWP)](/windows/uwp/) provides a common API surf
 | **Language** | C#, C++ | C#, Visual Basic | C#, Visual Basic | C# | JavaScript, TypeScript | C#, C++, Visual Basic | C++, Rust |
 | **UI language** | XAML | XAML | Code | XAML/Code | JSX | XAML | Code |
 | **UI designer** (drag & drop) | ❌ | ✅ | ✅ | ❌ | ❌ | ✅ | ❌ |
-| **Modern UI** | ✅ | ✅ ([Fluent theme](/dotnet/desktop/wpf/whats-new/net100)) | ❌ | ✅ | ✅ | ✅ ([WinUI 2](/windows/apps/winui/winui2)) | ❌ |
+| **Modern UI** | ✅ | ✅ ([Fluent theme](/dotnet/desktop/wpf/whats-new/net90#fluent-theme)) | ❌ | ✅ | ✅ | ✅ ([WinUI 2](/windows/apps/winui/winui2)) | ❌ |
 | **Cross-platform** | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ | ❌ |
-| **Sandboxing (AppContainer)** | ❌ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
+| **Sandboxing (AppContainer)** | ✅ | ❌ | ❌ | ❌ | ✅ | ✅ | ❌ |
 | **Actively maintained** | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️ Security & bug fixes only | ✅ |

@@ -170,7 +170,7 @@ Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to laun
 
 :::image type="content" source="images/mapnyc.png" alt-text="A screenshot of the Windows Maps app.":::
 
-To use the map control in your UWP app, see [Display maps with 2D, 3D, and Streetside views](/windows/uwp/maps-and-location/display-maps). If you're using Windows App SDK 1.5 or later in a WinUI app or other desktop app, you can use the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
+To use the map control in your UWP app, see [Display maps with 2D, 3D, and Streetside views](/windows/uwp/maps-and-location/display-maps). If you're using Windows App SDK 1.5 or later in a WinUI 3 app or other desktop app, you can use the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
 
 ### Messaging app URI scheme
 

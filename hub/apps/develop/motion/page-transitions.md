@@ -18,7 +18,7 @@ Two different animations are provided for navigation between pages in an app, *P
 > - **Important APIs**: [NavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationtransitioninfo), [EntranceNavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.entrancenavigationtransitioninfo), [DrillInNavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.drillinnavigationtransitioninfo), [SuppressNavigationTransitionInfo class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.suppressnavigationtransitioninfo)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see Implicit Transitions in action](winui3gallery://item/PageTransition)
+> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/PageTransition)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

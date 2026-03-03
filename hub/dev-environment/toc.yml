@@ -4,8 +4,6 @@ items:
 - name: Developer tools
   expanded: true
   items:
-  - name: Windows App Development CLI
-    href: ../apps/winapp-cli/index.md
   - name: Advanced Windows settings
     items:
       - name: Overview
@@ -26,7 +24,7 @@ items:
     href: /windows/powertoys/
   - name: Edit command line tool
     href: ../edit/index.md
-  - name: Windows Package Manager
+  - name: WinGet
     items:
       - name: Overview
         href: ../package-manager/index.md
@@ -151,27 +149,11 @@ items:
             - name: Tutorial for beginners
               href: ./javascript/vue-beginners-tutorial.md
   - name: Get started with Python
-    items:
-        - name: Overview
-          href: ../python/index.yml
-        - name: Get started for beginners
-          href: ../python/beginners.md
-        - name: Get started with web dev
-          href: ../python/web-frameworks.md
-        - name: Get started with automation
-          href: ../python/scripting.md
-        - name: FAQs
-          href: ../python/faqs.yml
-  - name: Get started with Windows app development
-    href: ../apps/index.yml
-  - name: Get started with Windows AI development
-    href: /windows/ai
+    href: ./python.md
   - name: Get started with C and C++
     href: /cpp/
   - name: Get started with C#
     href: /dotnet/csharp/
-  - name: Get started with F#
-    href: /dotnet/fsharp/
   - name: Get started with Docker
     href: ../dev-environment/docker/overview.md
   - name: Get started with Powershell
@@ -190,5 +172,7 @@ items:
           href: ./rust/rss-reader-rust-for-windows.md
         - name: Rust in Visual Studio Code
           href: https://code.visualstudio.com/docs/languages/rust
+  - name: Get started with Windows app development
+    href: ../apps/index.yml
   - name: Mac to Windows guide
     href: mac-to-windows.md

@@ -48,7 +48,7 @@ For recommendations on when to use a dialog vs. when to use a flyout (a similar 
 > - **Important APIs**: [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the ContentDialog in action](winui3gallery:/item/ContentDialog)
+> [Open the WinUI 3 Gallery app and see the ContentDialog in action](winui3gallery:/item/ContentDialog)
 
 [!INCLUDE [winui-3-gallery](../../../../../includes/winui-3-gallery.md)]
 

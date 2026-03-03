@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 #customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
 
-# Basic photo, video, and audio capture with MediaCapture in a WinUI app
+# Basic photo, video, and audio capture with MediaCapture in a WinUI 3 app
 
 This article shows the simplest way to capture photos and video using the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. To learn about more of the features that  **MediaCapture** provides, see [**Camera**](camera.md).
 
@@ -83,8 +83,6 @@ You can also get a result frame when you stop the video by calling [**StopWithRe
 
 Once you have captured a video to a file, you may want to load the file and play it back within your app's UI. You can do this using the **[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML control and an associated **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)**. For information on playing media in a XAML page, see [Play audio and video with MediaPlayer](/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer).
 
-[TBD - Is the MediaComposition framework supported / recommended for WinUI?]
-
 You can also create a **[MediaClip](/uwp/api/windows.media.editing.mediaclip)** object from a video file by calling **[CreateFromFileAsync](/uwp/api/windows.media.editing.mediaclip.createfromfileasync)**.  A **[MediaComposition](/uwp/api/windows.media.editing.mediacomposition)** provides basic video editing functionality like arranging the sequence of **MediaClip** objects, trimming video length, creating layers, adding background music, and applying video effects. For more information on working with media compositions, see [Media compositions and editing](/windows/uwp/audio-video-camera/media-compositions-and-editing).
 
 
@@ -92,7 +90,6 @@ You can also create a **[MediaClip](/uwp/api/windows.media.editing.mediaclip)** 
 
 You can quickly add audio capture to your app by using the same technique shown above for capturing video. Call [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) to initialize the capture session, passing in the file and a [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) which is generated in this example by the [**CreateMp3**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3) static method. To begin recording, call [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync).
 
-[TBD - This code is throwing 'The request is invalid in the current state.']
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStartAudioCapture":::
 

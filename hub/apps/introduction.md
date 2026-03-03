@@ -42,7 +42,7 @@ Design modern, intuitive apps that feel at home on Windows. Explore Fluent Desig
 
 ### Develop
 
-Build apps using frameworks, APIs, and platform features. Find guidance for new apps, modernizing existing ones, and integrating WinUI, WinRT, and Windows App SDK.
+Build apps using frameworks, APIs, and platform features. Find guidance for new apps, modernizing existing ones, and integrating WinUI 3, WinRT, and Windows App SDK.
 
 [Get started with develop](./develop/index.md)
 

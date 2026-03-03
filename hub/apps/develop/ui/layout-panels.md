@@ -19,7 +19,7 @@ There are several things to consider when choosing a layout panel:
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see layout panels in action](winui3gallery:/category/Layout)
+> [Open the WinUI 3 Gallery app and see layout panels in action](winui3gallery:/category/Layout)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -259,4 +259,4 @@ There are several special-purpose panels that can be used only as an [**ItemsPan
 
 ## Get the sample code
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.

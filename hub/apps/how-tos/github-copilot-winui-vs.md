@@ -9,7 +9,7 @@ audience: new-desktop-app-developers
 #Customer intent: As a Windows developer, I want to learn how to use GitHub Copilot in Visual Studio to create WinUI apps so that I can leverage the code completion capabilities to build my apps more efficiently.
 ---
 
-# Use GitHub Copilot to create WinUI / Windows App SDK apps in Visual Studio
+# Use GitHub Copilot to create WinUI 3 / Windows App SDK apps in Visual Studio
 
 In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/features/copilot) can be used to build WinUI / Windows App SDK desktop apps in Visual Studio. This guide builds upon *[What is GitHub Copilot Completions for Visual Studio?](/visualstudio/ide/visual-studio-github-copilot-extension)*, offering tailored tips and best practices for Copilot-assisted WinUI app development.
 

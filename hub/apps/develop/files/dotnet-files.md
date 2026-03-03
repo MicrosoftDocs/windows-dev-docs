@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Access files and folders with Windows App SDK and .NET
 
-This article shows you how to access files and folders using .NET APIs in packaged WinUI apps. You'll learn to read and write files, manage directories and drives, and work with memory streams for string encoding and decoding.
+This article shows you how to access files and folders using .NET APIs in packaged WinUI 3 apps. You'll learn to read and write files, manage directories and drives, and work with memory streams for string encoding and decoding.
 
 WinUI apps can use [.NET APIs](/dotnet/) alongside WinRT and Win32 APIs to provide comprehensive file system access. The examples in this article focus on the [System.IO](/dotnet/api/system.io) namespace, which provides the core functionality for file and directory operations.
 

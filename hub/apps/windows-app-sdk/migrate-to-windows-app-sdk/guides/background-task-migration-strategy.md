@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Background task migration strategy
 
-Background tasks are used heavily in UWP apps for performing jobs when a particular trigger is invoked on the machine. As these don’t require any service to be running listening for the triggers, it's very power efficient. So, while migrating UWP apps to WinUI and other desktop apps that use Windows App SDK, developers may require support for implementing background tasks on the platform.
+Background tasks are used heavily in UWP apps for performing jobs when a particular trigger is invoked on the machine. As these don’t require any service to be running listening for the triggers, it's very power efficient. So, while migrating UWP apps to WinUI 3 and other desktop apps that use Windows App SDK, developers may require support for implementing background tasks on the platform.
 
 Background tasks offered in the UWP app model can either be out-of-proc or in-proc. This article describes the migration strategy for each of these types when moving to [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) APIs in Windows App SDK.
 
@@ -34,7 +34,8 @@ More details on the implementation are available [here](/windows/uwp/launch-resu
 
 ## Windows App SDK BackgroundTaskBuilder API
 
-This Windows App SDK **BackgroundTaskBuilder** API is created to support the full trust COM background task implementations in WinUI and other desktop applications that use Windows App SDK, as the WinRT API throws exceptions during registration except for a few triggers.
+There are two different versions of the **BackgroundTaskBuilder** API. The [Windows.ApplicationModel.BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API was designed for UWP applications, and many of the background task triggers are not supported for full trust COM Components. They are supported only when registered with WinRT components that are launched with a `backgroundtaskhost` process. Due to this, Windows App SDK desktop applications can't directly register the full trust COM components to be launched with background task triggers. They require a workaround of including the WinRT components in the project. The [Microsoft.Windows.ApplicationModel.BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) API included in the Windows App SDK avoids this workaround so WinUI 3 and other desktop applications that use Windows App SDK can register the full trust COM components directly with background tasks.
+
 
 The following code shows how to register background task using Windows App SDK [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) APIs:
 

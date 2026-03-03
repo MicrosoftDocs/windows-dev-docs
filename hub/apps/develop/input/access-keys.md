@@ -359,4 +359,4 @@ If you specify the AccessKey property on a UIElement or TextElement control, you
 * [Keyboard accelerators](../../design/input/keyboard-accelerators.md)
 
 **Samples**
-* [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)
+* [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery)

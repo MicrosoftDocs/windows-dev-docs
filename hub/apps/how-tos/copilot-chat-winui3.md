@@ -9,7 +9,7 @@ audience: new-desktop-app-developers
 #Customer intent: As a Windows developer, I want to learn how to streamline my WinUI / Windows App SDK development workflow with GitHub Copilot Chat in Visual Studio, so that I can build apps more efficiently.
 ---
 
-# Streamline your WinUI / Windows App SDK development workflow with GitHub Copilot Chat
+# Streamline your WinUI 3 / Windows App SDK development workflow with GitHub Copilot Chat
 
 This how-to is targeted at desktop application developers who want to streamline their WinUI / Windows App SDK application development workflow with Github Copilot Chat in Visual Studio.
 

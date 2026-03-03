@@ -19,7 +19,7 @@ Before you add a page to show all the notes, let's make some changes to separate
 
 ## Views and models
 
-Typically, a WinUI app has at least a _view layer_ and a _data layer_.
+Typically, a WinUI 3 app has at least a _view layer_ and a _data layer_.
 
 The view layer defines the UI using XAML markup. The markup includes data binding expressions (such as x:Bind) that define the connection between specific UI components and data members. Code-behind files are sometimes used as part of the view layer to contain additional code needed to customize or manipulate the UI, or to extract data from event handler arguments before calling a method that performs the work on the data.
 

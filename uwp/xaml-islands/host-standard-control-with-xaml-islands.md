@@ -320,4 +320,4 @@ The following instructions show you how to package all the components in the sol
 * [IXamlMetadataProvider interface](/uwp/api/Windows.UI.Xaml.Markup.IXamlMetadataProvider)
 * [MSIX documentation](/windows/msix)
 * [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)
-* [Microsoft Visual C++ Redistributable latest supported downloads](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
+* [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist)

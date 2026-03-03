@@ -13,7 +13,6 @@
             "exclude": ["**/obj/**"]
         } ],
         "globalMetadata": {
-            "ms.subservice": "uwp-conceptual-docs",
             "ms.service": "uwp",
             "recommendations": true,
             "ROBOTS": "INDEX, FOLLOW",

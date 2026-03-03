@@ -27,7 +27,7 @@ Depending on the situation, the scroll viewer's scrollbar uses two different vis
 :::row-end:::
 
 > [!IMPORTANT]
-> WinUI has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
+> WinUI 3 has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
 >
 > The `ScrollView` control is similar in behavior and usage to the `ScrollViewer` control, but is based on [InteractionTracker](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.interactions.interactiontracker), has new features such as animation-driven view changes, and is designed to ensure full functionality with [ItemsRepeater](../../../design/controls/items-repeater.md).
 
@@ -76,9 +76,9 @@ Various APIs are available that let you get the height and width of these region
 > - **Important APIs:** [ScrollView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer), [ScrollBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollbar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
+> [Open the WinUI 3 Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
 >
-> [Open the WinUI Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
+> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -464,7 +464,7 @@ Use the `MinZoomFactor` and `MaxZoomFactor` properties to control the amount the
 
 ### Programmatic zoom
 
-The `ZoomFactor` property is read-only, but methods are provided to let you zoom programmatically. A typical use for this is to connect the scroll viewer to a Slider that controls the zoom amount, or a button to reset the zoom level. (See ScrollViewer in the WinUI Gallery app to see an example of a zoom slider.)
+The `ZoomFactor` property is read-only, but methods are provided to let you zoom programmatically. A typical use for this is to connect the scroll viewer to a Slider that controls the zoom amount, or a button to reset the zoom level. (See ScrollViewer in the WinUI 3 Gallery app to see an example of a zoom slider.)
 
 ### [ScrollView](#tab/scrollview)
 

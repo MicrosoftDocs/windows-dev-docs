@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/performance/introduction.md",
+      "redirect_url": "/windows/apps/performance/",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/android/emulator.md",
       "redirect_url": "/windows/dev-environment/",
       "redirect_document_id": false
@@ -5667,17 +5672,17 @@
     },
     {
       "source_path": "hub/python/get-started/python-for-education.md",
-      "redirect_url": "/windows/python/beginners",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-web.md",
-      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-scripting.md",
-      "redirect_url": "/windows/python/scripting",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
@@ -8267,7 +8272,7 @@
     },
     {
       "source_path": "hub/python/resources.md",
-      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
@@ -10611,6 +10616,31 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/python/beginners.md",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/faqs.yml",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/index.yml",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/scripting.md",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/web-frameworks.md",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/layout/depth-shadow.md",
       "redirect_url": "/windows/apps/develop/ui/shadows",
       "redirect_document_id": false
@@ -10688,6 +10718,41 @@
     {
       "source_path": "hub/apps/design/basics/navigation-history-and-backwards-navigation.md",
       "redirect_url": "/windows/apps/develop/ui/navigation/navigation-history-and-backwards-navigation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/advanced-scenarios-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-custom-control-with-xaml-islands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-custom-control-with-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-standard-control-with-xaml-islands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-standard-control-with-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/using-the-xaml-hosting-api.md",
+      "redirect_url": "/windows/uwp/xaml-islands/using-the-xaml-hosting-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/xaml-islands",
       "redirect_document_id": false
     }
   ]

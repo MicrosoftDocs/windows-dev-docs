@@ -13,7 +13,7 @@ dev_langs:
 
 # Windows data binding overview
 
-Data binding in WinUI apps lets you efficiently connect controls to data sources. Learn how to bind a control to a single item or a collection of items, control item rendering, implement details views, and format data for display. For more details, see [Data binding in depth](data-binding-in-depth.md).
+Data binding in WinUI 3 apps lets you efficiently connect controls to data sources. Learn how to bind a control to a single item or a collection of items, control item rendering, implement details views, and format data for display. For more details, see [Data binding in depth](data-binding-in-depth.md).
 
 ## Prerequisites
 

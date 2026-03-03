@@ -19,14 +19,14 @@ appliesto:
 The Windows App SDK provides the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which represents a high-level abstraction of the HWND. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows without the need to access the HWND directly.
 
 > [!NOTE]
-> This article demonstrates how to use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs in your app. As a prerequisite, we recommend that you read and understand the AppWindow information in [Windowing overview for WinUI and Windows App SDK](../ui-input/windowing-overview.md), which is applicable whether you use WinUI or another UI framework.
+> This article demonstrates how to use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs in your app. As a prerequisite, we recommend that you read and understand the AppWindow information in [Windowing overview for WinUI 3 and Windows App SDK](../ui-input/windowing-overview.md), which is applicable whether you use WinUI or another UI framework.
 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow), [OverlappedPresenter class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see AppWindow in action](winui3gallery:/item/AppWindow)
+> [Open the WinUI 3 Gallery app and see AppWindow in action](winui3gallery:/item/AppWindow)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
@@ -192,9 +192,9 @@ The parameter is incorrect.
 The window should have an owner when IsModal=true.
 ```
 
-To set the owner window in a WinUI app requires Win32 interop. For more information and example code, see the AppWindow page in the WinUI Gallery sample app.
+To set the owner window in a WinUI app requires Win32 interop. For more information and example code, see the AppWindow page in the WinUI 3 Gallery sample app.
 
-- [Launch the WinUI Gallery app](winui3gallery:/item/AppWindow)
+- [Launch the WinUI 3 Gallery app](winui3gallery:/item/AppWindow)
 - [Open ModalWindow.xaml.cs on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/SamplePages/ModalWindow.xaml.cs)
 
 ### Apply a presenter

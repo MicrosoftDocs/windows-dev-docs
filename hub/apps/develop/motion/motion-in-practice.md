@@ -65,7 +65,7 @@ Implicit animations are a simple way to achieve Fluent motion by automatically i
 > - **Important APIs:** [Windows.UI.Xaml.Media.Animation Namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation), [Windows.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
+> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ImplicitTransition)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

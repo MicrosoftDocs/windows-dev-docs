@@ -18,7 +18,7 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 > - **Important APIs**: [ParallaxView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.parallaxview), [VerticalShift property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.parallaxview.verticalshift), [HorizontalShift property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.parallaxview.horizontalshift)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see ParallaxView in action](winui3gallery://item/ParallaxView)
+> [Open the WinUI 3 Gallery app and see ParallaxView in action](winui3gallery://item/ParallaxView)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

@@ -7,7 +7,7 @@ keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, input
 ms.localizationpriority: medium
 ---
 
-# Keyboard API and events parity between UWP and WinUI
+# Keyboard API and events parity between UWP and WinUI 3
 
 The migration of apps from the Universal Windows Platform (UWP) to the Windows App SDK (specifically, WinUI) might require a few changes in the way input keyboard events are handled, primarily due to the app model differences. This topic describes commonly identified differences.
 

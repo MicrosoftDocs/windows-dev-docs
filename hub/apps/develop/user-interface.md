@@ -24,7 +24,7 @@ There are five main components that go into creating a user interface for your W
 
   - A control is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface.
 
-    Here's an example of a Button control that's available in UWP, WinUI for UWP, and WinUI. When you place this control into your app, it automatically receives the default design that the UI framework provides.
+    Here's an example of a Button control that's available in UWP, WinUI for UWP, and WinUI 3. When you place this control into your app, it automatically receives the default design that the UI framework provides.
 
     ![WinUI button](images/button.png)
 
@@ -114,7 +114,7 @@ WinUI is the latest generation of WinUI. WinUI for UWP and 3 share many of the s
 - Input: [Input and interactions](../design/input/index.md)
 - Motion: [Motion for Windows apps](../design/motion/index.md)
 - Accessibility: [Usability for Windows apps](../design/usability/index.md)
-- Samples: [WinUI Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
+- Samples: [WinUI 3 Gallery app](https://apps.microsoft.com/detail/9P3JFPWWDZRC)
 
 ### [WinUI for UWP](#tab/winui-2)
 

@@ -15,7 +15,7 @@ Use [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Brush
 > - **Important APIs**: [Brush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Brush), [SolidColorBrush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.SolidColorBrush), [RadialGradientBrush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.radialgradientbrush), [ImageBrush class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.ImageBrush)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see the RadialGradientBrush in action](winui3gallery://item/RadialGradientBrush)
+> [Open the WinUI 3 Gallery app and see the RadialGradientBrush in action](winui3gallery://item/RadialGradientBrush)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

@@ -18,7 +18,7 @@ In a connected animation, an element appears to "continue" between two views dur
 > - **Important APIs**: [ConnectedAnimation class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.connectedanimation), [ConnectedAnimationService class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.connectedanimationservice)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see Implicit Transitions in action](winui3gallery://item/ConnectedAnimation)
+> [Open the WinUI 3 Gallery app and see Implicit Transitions in action](winui3gallery://item/ConnectedAnimation)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
