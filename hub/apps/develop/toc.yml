@@ -225,8 +225,9 @@ items:
       - name: Overview
         href: devices-and-sensors.md
       - name: Printing and scanning
-        href: devices-sensors/printing-and-scanning.md
         items:
+        - name: Overview
+          href: devices-sensors/printing-and-scanning.md
         - name: Print from your app
           href: devices-sensors/print-from-your-app.md
         - name: Customize the print preview UI
