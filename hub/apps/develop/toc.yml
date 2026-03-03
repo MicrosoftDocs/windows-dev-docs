@@ -1074,8 +1074,6 @@ items:
         href: settings/settings-common.md
       - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
         href: settings/readclouddatasettings-exe.md
-    - name: WinUI templates in Visual Studio
-      href: ../winui/winui3/winui-project-templates-in-visual-studio.md    
   - name: API reference
     items:
     - name: Overview
@@ -1158,40 +1156,46 @@ items:
       href: /dotnet/api/
     - name: Schema specs for Windows apps >>
       href: /uwp/schemas/
-  - name: Windows App Development CLI
+  - name: Tools
     items:
-    - name: Overview
-      href: winapp-cli/index.md
-    - name: CLI reference
-      href: winapp-cli/usage.md
-    - name: Framework guides
+    - name: WinUI templates in Visual Studio
+      href: ../winui/winui3/winui-project-templates-in-visual-studio.md
+    - name: Agentic AI tools
+      href: dev-tools/agentic-tools.md    
+    - name: Windows App Development CLI
       items:
       - name: Overview
-        href: winapp-cli/guides/index.md
-      - name: C++
-        href: winapp-cli/guides/cpp.md
-      - name: .NET
-        href: winapp-cli/guides/dotnet.md
-      - name: Electron
+        href: dev-tools/winapp-cli/index.md
+      - name: CLI reference
+        href: dev-tools/winapp-cli/usage.md
+      - name: Framework guides
         items:
-        - name: Setup
-          href: winapp-cli/guides/electron-setup.md
-        - name: Packaging
-          href: winapp-cli/guides/electron-packaging.md
-        - name: C++ notification addon
-          href: winapp-cli/guides/electron-cpp-notification-addon.md
-        - name: Phi Silica addon
-          href: winapp-cli/guides/electron-phi-silica-addon.md
-        - name: WinML addon
-          href: winapp-cli/guides/electron-winml-addon.md
-      - name: Flutter
-        href: winapp-cli/guides/flutter.md
-      - name: Rust
-        href: winapp-cli/guides/rust.md
-      - name: Tauri
-        href: winapp-cli/guides/tauri.md
-      - name: Packaging a CLI executable
-        href: winapp-cli/guides/packaging-cli.md
+        - name: Overview
+          href: dev-tools/winapp-cli/guides/index.md
+        - name: C++
+          href: dev-tools/winapp-cli/guides/cpp.md
+        - name: .NET
+          href: dev-tools/winapp-cli/guides/dotnet.md
+        - name: Electron
+          items:
+          - name: Setup
+            href: dev-tools/winapp-cli/guides/electron-setup.md
+          - name: Packaging
+            href: dev-tools/winapp-cli/guides/electron-packaging.md
+          - name: C++ notification addon
+            href: dev-tools/winapp-cli/guides/electron-cpp-notification-addon.md
+          - name: Phi Silica addon
+            href: dev-tools/winapp-cli/guides/electron-phi-silica-addon.md
+          - name: WinML addon
+            href: dev-tools/winapp-cli/guides/electron-winml-addon.md
+        - name: Flutter
+          href: dev-tools/winapp-cli/guides/flutter.md
+        - name: Rust
+          href: dev-tools/winapp-cli/guides/rust.md
+        - name: Tauri
+          href: dev-tools/winapp-cli/guides/tauri.md
+        - name: Packaging a CLI executable
+          href: dev-tools/winapp-cli/guides/packaging-cli.md
   - name: Tutorials
     items:
     - name: Win32 interop APIs (PInvoke) in a C# WinUI app
