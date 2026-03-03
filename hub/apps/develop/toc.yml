@@ -172,53 +172,55 @@ items:
         items:
         - name: Overview
           href: data-access/index.md
-        - name: Use a SQLite database on Windows
+        - name: "Tutorial: SQLite database"
           href: data-access/sqlite-data-access.md
-        - name: Use SQL Server in a Windows app
+        - name: "Tutorial: SQL Server"
           href: data-access/sql-server-database.md
-        - name: Use Cosmos DB in a Windows app
+        - name: "Tutorial: Cosmos DB database "
           href: data-access/cosmos-db-data-access.md
-        - name: Use MySQL in a Windows app
+        - name: "Tutorial: MySQL database"
           href: data-access/mysql-database.md
-        - name: Use MongoDB in a Windows App
+        - name: "Tutorial: MongoDB database"
           href: data-access/mongodb-database.md
       - name: Data binding
         items:
         - name: Data binding
           href: data-binding/index.md
-        - name: Data binding overview
-          href: data-binding/data-binding-overview.md
         - name: Data binding in depth
           href: data-binding/data-binding-in-depth.md
         - name: Functions in x:Bind
           href: data-binding/function-bindings.md
-        - name: Bind to hierarchical data and create a master/details view
-          href: data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
+        - name: "Tutorial: Data binding basics"
+          href: data-binding/data-binding-overview.md
+        - name: "Tutorial: Bind hierarchical data and create a master/details view"
+          href: data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md  
         - name: Data binding and MVVM
-          href: data-binding/data-binding-and-mvvm.md
-        - name: Data binding with the MVVM Toolkit
           items:
-          - name: Introduction
-            href: ../tutorials/winui-mvvm-toolkit/intro.md
-          - name: 1 - Create class library project
-            href: ../tutorials/winui-mvvm-toolkit/class-library.md
-          - name: 2 - Implement MVVM
-            href: ../tutorials/winui-mvvm-toolkit/mvvm-implementation.md
-          - name: 3 - Add dependency injection
-            href: ../tutorials/winui-mvvm-toolkit/dependency-injection.md
-          - name: 4 - Add unit tests
-            href: ../tutorials/winui-mvvm-toolkit/unit-testing.md
+          - name: Overview
+            href: data-binding/data-binding-and-mvvm.md
+          - name: "Tutorial: Data binding with the MVVM Toolkit"
+            items:
+            - name: Introduction
+              href: ../tutorials/winui-mvvm-toolkit/intro.md
+            - name: 1 - Create class library project
+              href: ../tutorials/winui-mvvm-toolkit/class-library.md
+            - name: 2 - Implement MVVM
+              href: ../tutorials/winui-mvvm-toolkit/mvvm-implementation.md
+            - name: 3 - Add dependency injection
+              href: ../tutorials/winui-mvvm-toolkit/dependency-injection.md
+            - name: 4 - Add unit tests
+              href: ../tutorials/winui-mvvm-toolkit/unit-testing.md
       - name: Files, folders, and libraries
         items:
         - name: Files, folders, and libraries
           href: files/index.md
         - name: File access with Windows Runtime APIs
           href: files/winrt-files.md
-        - name: Access files and folders with .NET
+        - name: "Tutorial: Access files and folders with .NET"
           href: files/dotnet-files.md
-        - name: Open files and folders with a picker
+        - name: "Tutorial: Open files and folders with a picker"
           href: files/using-file-folder-pickers.md
-        - name: Save a file with a picker
+        - name: "Tutorial: Save a file with a picker"
           href: files/pickers-save-file.md
     - name: Devices and sensors
       items:

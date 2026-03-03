@@ -1,5 +1,5 @@
 ---
-title: Use a Cosmos DB database from a Windows app
+title: "Tutorial: Use a Cosmos DB database from a Windows app"
 description: Learn how to connect your Windows app to a Cosmos DB database and test the connection programmatically.
 ms.date: 08/01/2024
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 #customer intent: As a Windows developer, I want to learn how to connect my Windows app to a Cosmos DB database so that I can store and retrieve data in the cloud.
 ---
 
-# Use a Cosmos DB database from a Windows app
+# Tutorial: Use a Cosmos DB database from a Windows app
 
 This article contains the steps required to enable working with a Cosmos DB database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.
 
