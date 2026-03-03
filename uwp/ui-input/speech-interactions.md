@@ -21,9 +21,6 @@ Speech recognition converts words spoken by the user into text for form input, f
 **TTS**
 TTS uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
 
-**Other speech-related components:**
-**Cortana** in Windows applications uses customized voice commands (spoken or typed) to launch your app to the foreground (the app takes focus, just as if it was launched from the Start menu) or activate as a background service (**Cortana** retains focus but provides results from the app). See [Cortana interactions in Windows apps](../../design/input/cortana-interactions.md).
-
 ## Speech interaction design
 
 Designed and implemented thoughtfully, speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.
@@ -46,7 +43,7 @@ If you are considering supporting speech interactions in your app:
 
 Speech for text input can range from short form (single word or phrase) to long form (continuous dictation). Short form input must be less than 10 seconds in length, while long form input session can be up to two minutes in length. (Long form input can be restarted without user intervention to give the impression of continuous dictation.)
 
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Command bars](../../design/controls/command-bar.md)) can be used to show both availability and state.
+You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Command bars](/windows/apps/develop/ui/controls/command-bar)) can be used to show both availability and state.
 
 Provide ongoing recognition feedback to minimize any apparent lack of response while recognition is being performed.
 
@@ -68,7 +65,7 @@ Try to frame your questions such that they elicit as specific a response as poss
 
 Request confirmation from the user when speech recognition confidence is low. If the user's intent is unclear, it's better to get clarification than to initiate an unintended action.
 
-You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Guidelines for command bars](../../design/controls/command-bar.md)) can be used to show both availability and state.
+You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Guidelines for command bars](/windows/apps/develop/ui/controls/command-bar)) can be used to show both availability and state.
 
 If the speech recognition switch is typically out of view, consider displaying a state indicator in the content area of the app.
 
@@ -204,19 +201,14 @@ Both issues can be addressed by using SSML instead of plain text as input to the
 
 | Topic | Description |
 | --- | --- |
-| [Speech recognition](../../design/input/speech-recognition.md) | Use speech recognition to provide input, specify an action or command, and accomplish tasks. |
-| [Specify the speech recognizer language](../../design/input/specify-the-speech-recognizer-language.md) | Learn how to select an installed language to use for speech recognition. |
-| [Define custom recognition constraints](../../design/input/define-custom-recognition-constraints.md) | Learn how to define and use custom constraints for speech recognition. |
-| [Enable continuous dictation](../../design/input/enable-continuous-dictation.md) |Learn how to capture and recognize long-form, continuous dictation speech input. |
-| [Manage issues with audio input](../../design/input/manage-issues-with-audio-input.md) | Learn how to manage issues with speech-recognition accuracy caused by audio-input quality. |
-| [Set speech recognition timeouts](../../design/input/set-speech-recognition-timeouts.md) | Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input. |
+| [Speech recognition](speech-recognition.md) | Use speech recognition to provide input, specify an action or command, and accomplish tasks. |
+| [Specify the speech recognizer language](specify-the-speech-recognizer-language.md) | Learn how to select an installed language to use for speech recognition. |
+| [Define custom recognition constraints](define-custom-recognition-constraints.md) | Learn how to define and use custom constraints for speech recognition. |
+| [Enable continuous dictation](enable-continuous-dictation.md) |Learn how to capture and recognize long-form, continuous dictation speech input. |
+| [Manage issues with audio input](manage-issues-with-audio-input.md) | Learn how to manage issues with speech-recognition accuracy caused by audio-input quality. |
+| [Set speech recognition timeouts](set-speech-recognition-timeouts.md) | Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input. |
 
-## Related articles
-
-* [Speech interactions]()
-* [Cortana interactions](../../design/input/cortana-interactions.md)
-
- **Samples**
+## Samples
 
 * [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
  

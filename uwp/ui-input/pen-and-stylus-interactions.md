@@ -20,7 +20,7 @@ ms.localizationpriority: medium
 Optimize your Windows app for pen input to provide both standard [**pointer device**](/uwp/api/Windows.Devices.Input.PointerDevice) functionality and the best Windows Ink experience for your users.
 
 > [!NOTE]
-> This topic focuses on the Windows Ink platform. For general pointer input handling (similar to mouse, touch, and touchpad), see [Handle pointer input](../../design/input/handle-pointer-input.md).
+> This topic focuses on the Windows Ink platform. For general pointer input handling (similar to mouse, touch, and touchpad), see [Handle pointer input](/windows/apps/develop/input/handle-pointer-input).
 
 
 The Windows Ink platform, together with a pen device, provides a natural way to create digital handwritten notes, drawings, and annotations. The platform supports capturing digitizer input as ink data, generating ink data, managing ink data, rendering ink data as ink strokes on the output device, and converting ink to text through handwriting recognition.
@@ -32,15 +32,15 @@ In addition to capturing the basic position and movement of the pen as the user 
 
 The ink platform is very flexible. It is designed to support various levels of functionality, depending on your requirements.
 
-For Windows Ink UX guidelines, see [Inking controls](../../design/controls/inking-controls.md).
+For Windows Ink UX guidelines, see [Inking controls](inking-controls.md).
 
 ## Components of the Windows Ink platform
 
 | Component | Description |
 | --- | --- |
-| [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | A XAML UI platform control that, by default, receives and displays all input from a pen as either an ink stroke or an erase stroke.<br/>For more information about how to use the InkCanvas, see [Recognize Windows Ink strokes as text](../../design/input/convert-ink-to-text.md) and [Store and retrieve Windows Ink stroke data](../../design/input/save-and-load-ink.md). |
-| [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | A code-behind object, instantiated along with an [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control (exposed through the [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) property). This object provides all default inking functionality exposed by the **InkCanvas**, along with a comprehensive set of APIs for additional customization and personalization.<br/>For more information about how to use the InkPresenter, see [Recognize Windows Ink strokes as text](../../design/input/convert-ink-to-text.md) and [Store and retrieve Windows Ink stroke data](../../design/input/save-and-load-ink.md). |
-| [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) | A XAML UI platform control containing a customizable and extensible collection of buttons that activate ink-related features in an associated [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas).<br/>For more information about how to use the InkToolbar, see [Add an InkToolbar to a Windows app inking app](../../design/input/ink-toolbar.md). |
+| [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) | A XAML UI platform control that, by default, receives and displays all input from a pen as either an ink stroke or an erase stroke.<br/>For more information about how to use the InkCanvas, see [Recognize Windows Ink strokes as text](convert-ink-to-text.md) and [Store and retrieve Windows Ink stroke data](save-and-load-ink.md). |
+| [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) | A code-behind object, instantiated along with an [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control (exposed through the [**InkCanvas.InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) property). This object provides all default inking functionality exposed by the **InkCanvas**, along with a comprehensive set of APIs for additional customization and personalization.<br/>For more information about how to use the InkPresenter, see [Recognize Windows Ink strokes as text](convert-ink-to-text.md) and [Store and retrieve Windows Ink stroke data](save-and-load-ink.md). |
+| [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) | A XAML UI platform control containing a customizable and extensible collection of buttons that activate ink-related features in an associated [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas).<br/>For more information about how to use the InkToolbar, see [Add an InkToolbar to a Windows app inking app](ink-toolbar.md). |
 | [**IInkD2DRenderer**](/windows/desktop/api/inkrenderer/nn-inkrenderer-iinkd2drenderer) | Enables the rendering of ink strokes onto the designated Direct2D device context of a Universal Windows app, instead of the default [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control. This enables full customization of the inking experience.<br/>For more information, see the [Complex ink sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ComplexInk). |
 
 ## Basic inking with InkCanvas
@@ -78,7 +78,7 @@ In this example, an [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)
 
 This series of images shows how pen input is rendered by this [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) control.
 
-| ![Screenshot of the blank InkCanvas with a background image.](images/ink_basic_1_small.png) | ![Screenshot of the InkCanvas with ink strokes.](images/ink_basic_2_small.png) | ![Screenshot of the InkCanvas with one stroke erased.](images/ink_basic_3_small.png) |
+| ![Screenshot of the blank InkCanvas with a background image.](images/ink/ink_basic_1_small.png) | ![Screenshot of the InkCanvas with ink strokes.](images/ink/ink_basic_2_small.png) | ![Screenshot of the InkCanvas with one stroke erased.](images/ink/ink_basic_3_small.png) |
 | --- | --- | ---|
 | The blank [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with a background image. | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with ink strokes. | The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with one stroke erased (note how erase operates on an entire stroke, not a portion). |
 
@@ -191,7 +191,7 @@ These images shows how pen input is processed and customized by the [**InkPresen
 
 :::row:::
    :::column span="":::
-      ![Screenshot that shows the InkCanvas with default black ink strokes.](images/ink-basic-custom-1-small.png)
+      ![Screenshot that shows the InkCanvas with default black ink strokes.](images/ink/ink-basic-custom-1-small.png)
    :::column-end:::
    :::column span="":::
       The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with default black ink strokes.
@@ -199,7 +199,7 @@ These images shows how pen input is processed and customized by the [**InkPresen
 :::row-end:::
 :::row:::
    :::column span="":::
-      ![Screenshot of the InkCanvas with user selected red ink strokes.](images/ink-basic-custom-2-small.png)
+      ![Screenshot of the InkCanvas with user selected red ink strokes.](images/ink/ink-basic-custom-2-small.png)
    :::column-end:::
    :::column span="":::
       The [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) with user selected red ink strokes.
@@ -226,7 +226,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
     Here, we add a canvas (below the [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)) to draw the selection stroke. Using a separate layer to draw the selection stroke leaves the **InkCanvas** and its content untouched.
 
-    ![Screenshot of the blank InkCanvas with an underlying selection canvas.](images/ink-unprocessed-1-small.png)
+    ![Screenshot of the blank InkCanvas with an underlying selection canvas.](images/ink/ink-unprocessed-1-small.png)
 
       ```xaml
         <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -267,7 +267,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
     Finally, we assign listeners for the [**StrokeStarted**](/uwp/api/windows.ui.input.inking.inkstrokeinput.strokestarted) and [**StrokesErased**](/uwp/api/windows.ui.input.inking.inkpresenter.strokeserased) events of the [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter). We use the handlers for these events to clean up the selection UI if a new stroke is started or an existing stroke is erased.
 
-    ![Screenshot of the Advances ink customization sample app showing the inkcanvas with default black ink strokes.](images/ink-unprocessed-2-small.png)
+    ![Screenshot of the Advances ink customization sample app showing the inkcanvas with default black ink strokes.](images/ink/ink-unprocessed-2-small.png)
 
       ```csharp
         public MainPage()
@@ -316,7 +316,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
     All selection functionality is implemented in these handlers, including the lasso stroke and the bounding rectangle.
 
-    ![Screenshot of the selection lasso.](images/ink-unprocessed-3-small.png)
+    ![Screenshot of the selection lasso.](images/ink/ink-unprocessed-3-small.png)
 
       ```csharp
         // Handle unprocessed pointer events from modified input.
@@ -364,7 +364,7 @@ The following code example (all code is in the MainPage.xaml and MainPage.xaml.c
 
 5.  To conclude the PointerReleased event handler, we clear the selection layer of all content (the lasso stroke) and then draw a single bounding rectangle around the ink strokes encompassed by the lasso area.
 
-    ![Screenshot of the selection bounding rect.](images/ink-unprocessed-4-small.png)
+    ![Screenshot of the selection bounding rect.](images/ink/ink-unprocessed-4-small.png)
 
       ```csharp
         // Draw a bounding rectangle, on the selection canvas, encompassing
@@ -468,15 +468,15 @@ For a full example of this functionality, see the [Complex ink sample](https://g
 
 | Topic | Description |
 | --- | --- |
-| [Recognize ink strokes](../../design/input/convert-ink-to-text.md) | Convert ink strokes to text using handwriting recognition, or to shapes using custom recognition. |
-| [Store and retrieve ink strokes](../../design/input/save-and-load-ink.md) | Store ink stroke data in a Graphics Interchange Format (GIF) file using embedded Ink Serialized Format (ISF) metadata. |
-| [Add an InkToolbar to a Windows inking app](../../design/input/ink-toolbar.md) | Add a default InkToolbar to a Windows app inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition. |
+| [Recognize ink strokes](convert-ink-to-text.md) | Convert ink strokes to text using handwriting recognition, or to shapes using custom recognition. |
+| [Store and retrieve ink strokes](save-and-load-ink.md) | Store ink stroke data in a Graphics Interchange Format (GIF) file using embedded Ink Serialized Format (ISF) metadata. |
+| [Add an InkToolbar to a Windows inking app](ink-toolbar.md) | Add a default InkToolbar to a Windows app inking app, add a custom pen button to the InkToolbar, and bind the custom pen button to a custom pen definition. |
 
 ## Related articles
 
-- [Get started: Support ink in your Windows app](../../design/input/ink-walkthrough.md)
-- [Handle pointer input](../../design/input/handle-pointer-input.md)
-- [Identify input devices](../../design/input/identify-input-devices.md)
+- [Get started: Support ink in your Windows app](ink-walkthrough.md)
+- [Handle pointer input](/windows/apps/develop/input/handle-pointer-input)
+- [Identify input devices](/windows/apps/develop/input/identify-input-devices)
 - [Ink Serialized Format (ISF) Specification](https://download.microsoft.com/download/0/B/E/0BE8BDD7-E5E8-422A-ABFD-4342ED7AD886/InkSerializedFormat(ISF)Specification.pdf).
 
 ### APIs

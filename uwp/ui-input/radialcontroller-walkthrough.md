@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 # Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app
 
 ![Image of Surface Dial with Surface Studio](images/radialcontroller/dial-pen-studio-600px.png)  
-*Surface Dial with Surface Studio and Surface Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)).
+*Surface Dial with Surface Studio and Surface Pen*.
 
 This tutorial steps through how to customize the user interaction experiences supported by wheel devices such as the Surface Dial. We use snippets from a sample app, which you can download from GitHub (see [Sample code](#sample-code)), to demonstrate the various features and associated [**RadialController**](/uwp/api/windows.ui.input.radialcontroller) APIs discussed in each step.
 
@@ -23,7 +23,7 @@ We focus on the following:
 * Customizing click interactions
 * Customizing rotation interactions
 
-For more about implementing these and other features, see [Surface Dial interactions in Windows apps](../../design/input/windows-wheel-interactions.md).
+For more about implementing these and other features, see [Surface Dial interactions in Windows apps](windows-wheel-interactions.md).
 
 ## Introduction
 
@@ -37,12 +37,8 @@ The Dial supports three basic gestures:
 ## Prerequisites
 
 * A computer (or a virtual machine) running Windows 10 Creators Update or later
-* [Visual Studio 2019](https://developer.microsoft.com/windows/downloads)
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
+* [Visual Studio set up for UWP development](../get-started/winui2/getting-started.md).
 * A wheel device (only the [Surface Dial](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116) at this time)
-* If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
-    * [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)
-    * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
 
 ## Set up your devices
 
@@ -609,7 +605,7 @@ Congratulations, you've completed the *Get Started Tutorial: Support the Surface
 
 ## Related articles
 
-[Surface Dial interactions](../../design/input/windows-wheel-interactions.md)
+[Surface Dial interactions](windows-wheel-interactions.md)
 
 ### API reference
 

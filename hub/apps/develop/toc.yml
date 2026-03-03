@@ -290,23 +290,6 @@ items:
           href: input/input-primer.md
         - name: Pointer input
           href: input/handle-pointer-input.md
-        - name: Gaze
-          href: input/gaze-interactions.md
-        - name: Pen and Windows Ink
-          href: input/pen-and-stylus-interactions.md
-          items:
-            - name: "Pen interactions and haptic (tactile) feedback"
-              href: input/pen-haptics.md
-            - name: "Tutorial: Add Inking support to your app"
-              href: input/ink-walkthrough.md
-            - name: Recognize ink strokes
-              href: input/convert-ink-to-text.md
-            - name: Store and retrieve ink strokes
-              href: input/save-and-load-ink.md
-            - name: Add an InkToolbar
-              href: input/ink-toolbar.md
-            - name: Handwriting view
-              href: input/text-handwriting-view.md
         - name: Touch
           items:
             - name: Touch design guidelines
@@ -350,34 +333,10 @@ items:
               href: input/input-method-editors.md
             - name: Input Method Editor requirements
               href: input/input-method-editor-requirements.md
-        - name: Gamepad and remote control
-          href: input/gamepad-and-remote-interactions.md
         - name: Touchpad
           href: input/touchpad-interactions.md
-        - name: Surface Dial
-          href: input/windows-wheel-interactions.md
-          items:
-            - name: "Tutorial: Add Surface Dial support to your app"
-              href: input/radialcontroller-walkthrough.md
-        - name: Speech interactions
-          href: input/speech-interactions.md
-          items:
-            - name: Speech recognition
-              href: input/speech-recognition.md
-            - name: Specify the speech recognizer language
-              href: input/specify-the-speech-recognizer-language.md
-            - name: Define custom recognition constraints
-              href: input/define-custom-recognition-constraints.md
-            - name: Continuous dictation
-              href: input/enable-continuous-dictation.md
-            - name: Audio input issues
-              href: input/manage-issues-with-audio-input.md
-            - name: Speech recognition timeouts
-              href: input/set-speech-recognition-timeouts.md
         - name: Multiple inputs
           href: input/multiple-input-design-guidelines.md
-        - name: Input injection
-          href: input/input-injection.md
         - name: Identify input devices
           href: input/identify-input-devices.md
         - name: Optical zoom and resizing
@@ -691,8 +650,6 @@ items:
             href: ui/controls/animated-icon.md
           - name: Images and image brushes
             href: ui/controls/images-imagebrushes.md
-          - name: Ink
-            href: ui/controls/inking-controls.md
           - name: Media playback
             href: ui/controls/media-playback.md
           - name: Custom transport controls

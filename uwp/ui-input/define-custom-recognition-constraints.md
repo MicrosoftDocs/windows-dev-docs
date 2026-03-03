@@ -16,13 +16,13 @@ Learn how to define and use custom constraints for speech recognition.
 
 > **Important APIs**: [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint), [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint), [**SpeechRecognitionGrammarFileConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionGrammarFileConstraint)
 
-Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](../../design/input/speech-recognition.md).
+Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](speech-recognition.md).
 
 ## Add constraints
 
 Use the [**SpeechRecognizer.Constraints**](/uwp/api/windows.media.speechrecognition.speechrecognizer.constraints) property to add constraints to a speech recognizer.
 
-Here, we cover the three kinds of speech recognition constraints used from within an app. (For Cortana voice command constraints, see [Activate a foreground app with voice commands through Cortana](../../design/input/cortana-launch-a-foreground-app-with-voice-commands.md).)
+Here, we cover the three kinds of speech recognition constraints used from within an app.
 
 - [**SpeechRecognitionTopicConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionTopicConstraint)—A constraint based on a predefined grammar (dictation or web search).
 - [**SpeechRecognitionListConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionListConstraint)—A constraint based on a list of words or phrases.
@@ -219,7 +219,7 @@ To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.
 
 ## Related articles
 
-- [Speech interactions](../../design/input/speech-interactions.md)
+- [Speech interactions](speech-interactions.md)
 
 ### Samples
 

@@ -19,13 +19,13 @@ There are two different controls that facilitate inking in Windows apps: [**InkC
 
 The [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) control provides basic Windows Ink functionality. Use it to render pen input as either an ink stroke (using default settings for color and thickness) or an erase stroke.
 
-> For InkCanvas implementation details, see [Pen and stylus interactions in Windows apps](../../design/input/pen-and-stylus-interactions.md).
+> For InkCanvas implementation details, see [Pen and stylus interactions in Windows apps](pen-and-stylus-interactions.md).
 
 As a completely transparent overlay, the InkCanvas does not provide any built-in UI for setting ink stroke properties. If you want to change the default inking experience, let users set ink stroke properties, and support other custom inking features, you have two options:
 
 - In code-behind, use the underlying [**InkPresenter**](/uwp/api/windows.ui.input.inking.inkpresenter) object bound to the InkCanvas.
 
-  The InkPresenter APIs support extensive customization of the inking experience. For more detail, see [Pen and stylus interactions in Windows apps](../../design/input/pen-and-stylus-interactions.md).
+  The InkPresenter APIs support extensive customization of the inking experience. For more detail, see [Pen and stylus interactions in Windows apps](pen-and-stylus-interactions.md).
 
 - Bind an [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) to the InkCanvas. By default, the InkToolbar provides a customizable and extensible collection of buttons for activating ink-related features such as stroke size, ink color, and pen tip.
 
@@ -723,14 +723,14 @@ You can create a custom toggle (activated through a custom toggle button) to set
 In this example, we define a custom toggle button that enables inking with touch input (by default, touch inking is not enabled).
 
 > [!NOTE]  
-> If you need to support inking with touch, we recommended that you enable it using a CustomToggleButton, with the icon and [tooltip](../../design/controls/tooltips.md) specified in this example.
+> If you need to support inking with touch, we recommended that you enable it using a CustomToggleButton, with the icon and [tooltip](/windows/apps/develop/ui/controls/tooltips) specified in this example.
 
 Typically, touch input is used for direct manipulation of an object or the app UI. To demonstrate the differences in behavior when touch inking is enabled, we place the InkCanvas within a ScrollViewer container and set the dimensions of the ScrollViewer to be smaller than the InkCanvas. 
 
 When the app starts, only pen inking is supported and touch is used to pan or zoom the inking surface. When touch inking is enabled, the inking surface cannot be panned or zoomed through touch input.
 
 > [!NOTE]
-> See [Inking controls](../../design/controls/inking-controls.md) for both [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) UX guidelines. The following recommendations are relevant to this example:
+> See [Inking controls](/windows/apps/develop/ui/controls/inking-controls) for both [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar) UX guidelines. The following recommendations are relevant to this example:
 > - The [**InkToolbar**](/uwp/api/Windows.UI.Xaml.Controls.InkToolbar), and inking in general, is best experienced through an active pen. However, inking with mouse and touch can be supported if required by your app. 
 > - If supporting inking with touch input, we recommend using the "ED5F" icon from the "Segoe MLD2 Assets" font for the toggle button, with a "Touch writing" tooltip. 
 
@@ -915,7 +915,7 @@ In this example, we define a custom tool button that, when selected, causes subs
 
    This handler configures the [**InkPresenter**](/uwp/api/Windows.UI.Input.Inking.InkPresenter) to pass unprocessed input through to the app. 
 
-   For a more detailed step through of this code:  See the Pass-through input for advanced processing section of [Pen interactions and Windows Ink in Windows apps](../../design/input/pen-and-stylus-interactions.md).
+   For a more detailed step through of this code:  See the Pass-through input for advanced processing section of [Pen interactions and Windows Ink in Windows apps](pen-and-stylus-interactions.md).
 
    We also specified an icon for the button using the SymbolIcon element and the {x:Bind} markup extension that binds it to a field defined in the code-behind file (SelectIcon).
 
@@ -1117,7 +1117,7 @@ For more info on custom drying, see [Pen interactions and Windows Ink in Windows
 
 ## Related articles
 
-- [Pen and stylus interactions](../../design/input/pen-and-stylus-interactions.md)
+- [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 ### Topic samples
 

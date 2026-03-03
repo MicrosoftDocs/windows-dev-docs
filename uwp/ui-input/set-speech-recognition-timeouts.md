@@ -40,7 +40,7 @@ recognizer.Timeouts.EndSilenceTimeout = TimeSpan.FromSeconds(1.2);
 
 ## Related articles
 
-* [Speech interactions](../../design/input/speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
 **Samples**
 

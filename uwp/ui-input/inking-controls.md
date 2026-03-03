@@ -24,7 +24,7 @@ By default, the InkToolbar includes buttons for drawing, erasing, highlighting, 
 > [!NOTE]
 > InkToolbar supports pen and mouse input and can be configured to recognize touch input.
 
-<img src="images/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
+<img src="images/ink/ink-tools-invoked-toolbar.png" width="300" alt="InkToolbar palette flyout">
 
 ## Is this the right control?
 
@@ -58,7 +58,7 @@ You can customize both the color palette and size attributes (min, max, default)
 **Toggle**
 
 - Ruler – shows or hides the ruler. Drawing near the ruler edge causes the ink stroke to snap to the ruler.  
- ![Ruler visual associated with InkToolbar](images/inking-tools-ruler.png)
+ ![Ruler visual associated with InkToolbar](images/ink/inking-tools-ruler.png)
 
 Although this is the default configuration, you have complete control over which built-in buttons are included in the InkToolbar for your app.
 
@@ -89,13 +89,13 @@ Although the InkToolbar can be a top level item, it is typically exposed through
 
 All built-in pen and tool buttons include a flyout menu where ink properties and pen tip shape and size can be set. An "extension glyph" is displayed on the button to indicate the existence of the flyout.
 
-![InkToolbar glyph](images/ink-tools-glyph.png)
+![InkToolbar glyph](images/ink/ink-tools-glyph.png)
 
 The flyout is shown when the button of an active tool is selected again. When the color or size is changed, the flyout is automatically dismissed and inking can be resumed. Custom pens and tools can use the default flyout or specify a custom flyout.
 
 The eraser also has a flyout that provides the **Erase All Ink** command.
 
-![InkToolbar with eraser flyout invoked](images/ink-tools-erase-all-ink.png)
+![InkToolbar with eraser flyout invoked](images/ink/ink-tools-erase-all-ink.png)
 
  For information on customization and extensibility, check out [SimpleInk sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk).
 
@@ -114,12 +114,12 @@ The eraser also has a flyout that provides the **Erase All Ink** command.
 **Microsoft Edge**
 
 Microsoft Edge uses the InkCanvas and InkToolbar for **Web Notes**.  
-![InkCanvas is used to ink in Microsoft Edge](images/ink-tools-edge.png)
+![InkCanvas is used to ink in Microsoft Edge](images/ink/ink-tools-edge.png)
 
 **Windows Ink Workspace**
 
 The InkCanvas and InkToolbar are also used for **Snip & Sketch** in the **Windows Ink Workspace**.  
-![InkToolbar in the Windows Ink Workspace](images/ink-tools-ink-workspace.png)
+![InkToolbar in the Windows Ink Workspace](images/ink/ink-tools-ink-workspace.png)
 
 ## Create an InkCanvas and InkToolbar
 
@@ -130,7 +130,7 @@ Adding an InkCanvas to your app requires just one line of markup:
 ```
 
 > [!NOTE]
-> For detailed InkCanvas customization using InkPresenter, see the ["Pen interactions and Windows Ink in Windows apps"](../../../design/input/pen-and-stylus-interactions.md) article.
+> For detailed InkCanvas customization using InkPresenter, see the ["Pen interactions and Windows Ink in Windows apps"](pen-and-stylus-interactions.md) article.
 
 The InkToolbar control must be used in conjunction with an InkCanvas. Incorporating an InkToolbar (with all built-in tools) into your app requires one additional line of markup:
 
@@ -140,7 +140,7 @@ The InkToolbar control must be used in conjunction with an InkCanvas. Incorporat
 
 This displays the following InkToolbar:
 
-<img src="images/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
+<img src="images/ink/ink-tools-uninvoked-toolbar.png" width="250" alt="Basic InkToolbar">
 
 ## Get the sample code
 
@@ -150,6 +150,6 @@ This displays the following InkToolbar:
 
 ## Related articles
 
-- [Pen interactions and Windows Ink in Windows apps](../../../design/input/pen-and-stylus-interactions.md)
-- [Recognize Windows Ink strokes as text and shapes](../../../design/input/convert-ink-to-text.md)
-- [Store and retrieve Windows Ink stroke data](../../../design/input/save-and-load-ink.md)
+- [Pen interactions and Windows Ink in Windows apps](pen-and-stylus-interactions.md)
+- [Recognize Windows Ink strokes as text and shapes](convert-ink-to-text.md)
+- [Store and retrieve Windows Ink stroke data](save-and-load-ink.md)

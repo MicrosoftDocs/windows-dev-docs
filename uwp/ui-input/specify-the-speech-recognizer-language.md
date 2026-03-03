@@ -23,7 +23,7 @@ Here, we enumerate the languages installed on a system, identify which is the de
 
 **Prerequisites:**
 
-This topic builds on [Speech recognition](../../design/input/speech-recognition.md).
+This topic builds on [Speech recognition](speech-recognition.md).
 
 You should have a basic understanding of speech recognition and recognition constraints.
 
@@ -34,7 +34,7 @@ If you're new to developing Windows apps, have a look through these topics to ge
 
 **User experience guidelines:**
 
-For helpful tips about designing a useful and engaging speech-enabled app, see [Speech design guidelines](../../design/input/speech-interactions.md) .
+For helpful tips about designing a useful and engaging speech-enabled app, see [Speech design guidelines](speech-interactions.md) .
 
 ## Identify the default language
 
@@ -86,7 +86,7 @@ An SRGS grammar is an open-standard XML format represented by the [**SpeechRecog
 
 ## Related articles
 
-* [Speech interactions](../../design/input/speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
 **Samples**
 

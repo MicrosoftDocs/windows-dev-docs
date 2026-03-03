@@ -271,7 +271,7 @@ Here, we demonstrate how to use the clipboard to transfer ink strokes between ap
 
 To support clipboard functionality, the built-in [**InkStrokeContainer**](/uwp/api/Windows.UI.Input.Inking.InkStrokeContainer) cut and copy commands require one or more ink strokes be selected.
 
-For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](../../design/input/pen-and-stylus-interactions.md).
+For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
 
 **Download this sample from [Save and load ink strokes from the clipboard](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store-clipboard.zip)**
 
@@ -315,7 +315,7 @@ For this example, we enable stroke selection when input is modified with a pen b
 
     The [**InkPresenter**](/uwp/api/windows.ui.xaml.controls.inkcanvas.inkpresenter) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](/uwp/api/windows.ui.input.inking.inkpresenter.inputdevicetypes)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
 
-    For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](../../design/input/pen-and-stylus-interactions.md).
+    For a complete example of how to implement stroke selection, see Pass-through input for advanced processing in [Pen and stylus interactions](pen-and-stylus-interactions.md).
 ```csharp
 public MainPage()
     {
@@ -430,7 +430,7 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 ## Related articles
 
-* [Pen and stylus interactions](../../design/input/pen-and-stylus-interactions.md)
+* [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 **Topic samples**
 * [Save and load ink strokes from an Ink Serialized Format (ISF) file](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-ink-store.zip)

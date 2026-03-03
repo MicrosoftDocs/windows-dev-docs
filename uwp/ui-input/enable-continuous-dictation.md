@@ -7,8 +7,6 @@ template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
 ms.date: 02/08/2017
 ms.topic: how-to
-
-
 ms.localizationpriority: medium
 ---
 # Continuous dictation
@@ -17,12 +15,12 @@ Learn how to capture and recognize long-form, continuous dictation speech input.
 
 > **Important APIs**: [**SpeechContinuousRecognitionSession**](/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession), [**ContinuousRecognitionSession**](/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession)
 
-In [Speech recognition](../../design/input/speech-recognition.md), you learned how to capture and recognize relatively short speech input using the [**RecognizeAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) or [**RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) methods of a [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) object, for example, when composing a short message service (SMS) message or when asking a question.
+In [Speech recognition](speech-recognition.md), you learned how to capture and recognize relatively short speech input using the [**RecognizeAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) or [**RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) methods of a [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) object, for example, when composing a short message service (SMS) message or when asking a question.
 
 For longer, continuous speech recognition sessions, such as dictation or email, use the [**ContinuousRecognitionSession**](/uwp/api/windows.media.speechrecognition.speechrecognizer.continuousrecognitionsession) property of a [**SpeechRecognizer**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizer) to obtain a [**SpeechContinuousRecognitionSession**](/uwp/api/Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession) object.
 
 > [!NOTE]
-> Dictation language support depends on the [device](../../design/devices/index.md) where your app is running. For PCs and laptops, only en-US is recognized, while Xbox and phones can recognize all languages supported by speech recognition. For more info, see [Specify the speech recognizer language](../../design/input/specify-the-speech-recognizer-language.md).
+> Dictation language support depends on the device where your app is running. For PCs and laptops, only en-US is recognized, while Xbox can recognize all languages supported by speech recognition. For more info, see [Specify the speech recognizer language](specify-the-speech-recognizer-language.md).
 
 ## Set up
 
@@ -64,7 +62,7 @@ During the initialization of continuous speech recognition, you must:
 - Fetch the dispatcher for the UI thread if you update the UI of your app in the continuous recognition event handlers.
 - Initialize the speech recognizer.
 - Compile the built-in dictation grammar.
-    **Note**   Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, a predefined dictation grammar is used. See [Speech recognition](../../design/input/speech-recognition.md).
+    **Note**   Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, a predefined dictation grammar is used. See [Speech recognition](speech-recognition.md).
 - Set up the event listeners for recognition events.
 
 In this example, we initialize speech recognition in the [**OnNavigatedTo**](/uwp/api/windows.ui.xaml.controls.page.onnavigatedto) page event.
@@ -262,7 +260,7 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 ## Related articles
 
 
-* [Speech interactions](../../design/input/speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
 **Samples**
 * [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)

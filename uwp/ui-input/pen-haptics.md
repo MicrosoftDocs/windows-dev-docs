@@ -20,7 +20,7 @@ With Windows 11, a new capability is being introduced that makes the digital pen
 
 Haptic feedback experiences supported in Windows 11 include *inking feedback* and *interaction feedback*:
 
-- Inking feedback simulates the feel of various types of writing or drawing tools (such as pen, marker, pencil, highlighter, and so on) through continuous vibrations while the pen is in contact with the screen. By default, the [Windows Ink Platform](../../design/input/pen-and-stylus-interactions.md) supports haptic feedback for all drawing tools (this topic covers how to provide a custom inking solution beyond the one supported by Windows Ink).
+- Inking feedback simulates the feel of various types of writing or drawing tools (such as pen, marker, pencil, highlighter, and so on) through continuous vibrations while the pen is in contact with the screen. By default, the [Windows Ink Platform](pen-and-stylus-interactions.md) supports haptic feedback for all drawing tools (this topic covers how to provide a custom inking solution beyond the one supported by Windows Ink).
 - Interaction feedback, on the other hand, is direct feedback based on key user actions such as hovering over or clicking a button, responding to the completion of an action, or to draw the user's attention.
 
 Typically, five steps are required to fully support haptic feedback:
@@ -86,7 +86,7 @@ if (hapticsController == null)
 The [SimpleHapticsController](/uwp/api/windows.devices.haptics.simplehapticscontroller) retrieved in the preceding example is used in subsequent examples to query haptic capabilities and to send/stop haptic feedback.
 
 > [!NOTE]
-> If you are building apps with the [Windows App SDK Preview 1.0](../../windows-app-sdk/index.md), you can use [PenDevice interop](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop) ([PenDeviceInterop.FromPointerPoint(PointerPoint)](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint)) to access the system [PenDevice](/uwp/api/windows.devices.input.pendevice).
+> If you are building apps with the [Windows App SDK](/windows/apps/windows-app-sdk/), you can use [PenDevice interop](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop) ([PenDeviceInterop.FromPointerPoint(PointerPoint)](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.interop.pendeviceinterop.frompointerpoint)) to access the system [PenDevice](/uwp/api/windows.devices.input.pendevice).
 >
 > ```csharp
 > private void InputObserver_PointerEntered(PointerInputObserver sender, PointerEventArgs args)

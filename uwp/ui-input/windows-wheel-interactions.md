@@ -6,15 +6,13 @@ template: detail.hbs
 keywords: Surface Dial, Windows wheel, RadialController, Radial controller, user interaction, input
 ms.date: 09/24/2020
 ms.topic: how-to
-
-
 ms.assetid: e7deb1d6-feeb-471e-9a83-26386d1aaf37
 ms.localizationpriority: medium
 ---
 # Surface Dial interactions
 
 ![Image of Surface Dial with Surface Studio](images/windows-wheel/dial-pen-studio-600px.png)  
-*Surface Dial with Surface Studio and Pen* (available for purchase at the [Microsoft Store](https://www.microsoft.com/store/d/Surface-Dial/925R551SKTGN?icid=Surface_Accessories_ModB_Surface_Dial_103116)).
+*Surface Dial with Surface Studio and Pen*.
 
 ## Overview
 
@@ -675,7 +673,7 @@ Please send your questions, suggestions, and feedback to [radialcontroller@micro
 
 ## Related articles
 
-[Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app](../../design/input/radialcontroller-walkthrough.md)
+[Tutorial: Support the Surface Dial (and other wheel devices) in your Windows app](radialcontroller-walkthrough.md)
 
 ### API reference
 

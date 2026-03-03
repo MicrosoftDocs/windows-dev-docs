@@ -21,7 +21,7 @@ We focus on the following:
 * Supporting basic shape recognition
 * Saving and loading ink
 
-For more detail about implementing these features, see [Pen interactions and Windows Ink in Windows apps](../../design/input/pen-and-stylus-interactions.md).
+For more detail about implementing these features, see [Pen interactions and Windows Ink in Windows apps](pen-and-stylus-interactions.md).
 
 ## Introduction
 
@@ -30,12 +30,7 @@ With Windows Ink, you can provide your customers with the digital equivalent of 
 ## Prerequisites
 
 * A computer (or a virtual machine) running the current version of Windows 10 or Windows 11
-* [Visual Studio 2019 and the RS2 SDK](https://developer.microsoft.com/windows/downloads) or later
-* [Windows 10 SDK (10.0.15063.0)](https://developer.microsoft.com/windows/downloads/windows-10-sdk)
-* Depending on your configuration, you might have to install the [Microsoft.NETCore.UniversalWindowsPlatform](https://www.nuget.org/packages/Microsoft.NETCore.UniversalWindowsPlatform) NuGet package and enable **Developer mode** in your system settings (Settings -> Update & Security -> For developers -> Use developer features).
-* If you're new to Windows app development with Visual Studio, have a look through these topics before you start this tutorial:  
-    * [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md)
-    * [Create a "Hello, world" app (XAML)](/windows/uwp/get-started/create-a-hello-world-app-xaml-universal)
+* [Visual Studio set up for UWP development](../get-started/winui2/getting-started.md).
 * **[OPTIONAL]** A digital pen and a computer with a display that supports input from that digital pen.
 
 > [!NOTE] 
@@ -183,7 +178,7 @@ Here's an example of a custom **[InkToolbar](/uwp/api/windows.ui.xaml.controls.i
 
 ![Screenshot of the Ink Toolbar from Sketchpad in the Ink Workspace.](images/ink/ink-inktoolbar-sketchpad-small.png)
 
-For more details about customizing an [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Windows app inking app](../../design/input/ink-toolbar.md).
+For more details about customizing an [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar), see [Add an InkToolbar to a Windows app inking app](ink-toolbar.md).
 
 ## Step 5: Support handwriting recognition
 
@@ -269,13 +264,13 @@ Windows Ink supports text recognition for many of the of the languages supported
 
 Target a specific language by querying the installed handwriting recognition engines.
 
-For more details about international handwriting recognition, see [Recognize Windows Ink strokes as text](../../design/input/convert-ink-to-text.md).
+For more details about international handwriting recognition, see [Recognize Windows Ink strokes as text](convert-ink-to-text.md).
 
 ### Challenge 2: Dynamic recognition
 
 For this tutorial, we require that a button be pressed to initiate recognition. You can also perform dynamic recognition by using a basic timing function.
 
-For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](../../design/input/convert-ink-to-text.md).
+For more details about dynamic recognition, see [Recognize Windows Ink strokes as text](convert-ink-to-text.md).
 
 ## Step 6: Recognize shapes
 
@@ -404,7 +399,7 @@ In this step, we hook up the **Save** and **Load** buttons located beside the in
 
 Windows ink also supports copying and pasting ink strokes to and from the clipboard.
 
-For more details about using the clipboard with ink, see [Store and retrieve Windows Ink stroke data](../../design/input/save-and-load-ink.md).
+For more details about using the clipboard with ink, see [Store and retrieve Windows Ink stroke data](save-and-load-ink.md).
 
 ## Summary
 
@@ -412,7 +407,7 @@ Congratulations, you've completed the **Input: Support ink in your Windows app**
 
 ## Related articles
 
-* [Pen interactions and Windows Ink in Windows apps](../../design/input/pen-and-stylus-interactions.md)
+* [Pen interactions and Windows Ink in Windows apps](pen-and-stylus-interactions.md)
 
 ### Samples
 

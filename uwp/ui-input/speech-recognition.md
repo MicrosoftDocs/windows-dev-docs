@@ -7,8 +7,6 @@ template: detail.hbs
 keywords: speech, voice, speech recognition, natural language, dictation, input, user interaction
 ms.date: 10/25/2018
 ms.topic: article
-
-
 ms.localizationpriority: medium
 ---
 # Speech recognition
@@ -272,12 +270,11 @@ An Speech Recognition Grammar Specification (SRGS) grammar is a static document 
 
 ### Voice command constraints
 
-Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Activate a foreground app with voice commands through Cortana](../../design/input/cortana-launch-a-foreground-app-with-voice-commands.md).
-
-See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint)/
+Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. See [**SpeechRecognitionVoiceCommandDefinitionConstraint**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognitionVoiceCommandDefinitionConstraint).
 
 **Note**  The type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
-To get started with constraints, see [Define custom recognition constraints](../../design/input/define-custom-recognition-constraints.md).
+
+To get started with constraints, see [Define custom recognition constraints](define-custom-recognition-constraints.md).
 
 The predefined Universal Windows app dictation grammar recognizes most words and short phrases in a language. It is activated by default when a speech recognizer object is instantiated without custom constraints.
 
@@ -287,7 +284,7 @@ In this example, we show how to:
 - Compile the default Universal Windows app constraints (no grammars have been added to the speech recognizer's grammar set).
 - Start listening for speech by using the basic recognition UI and TTS feedback provided by the [**RecognizeWithUIAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizewithuiasync) method. Use the [**RecognizeAsync**](/uwp/api/windows.media.speechrecognition.speechrecognizer.recognizeasync) method if the default UI is not required.
 
-```CSharp
+```csharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 {
     // Create an instance of SpeechRecognizer.
@@ -324,15 +321,15 @@ If you're using a constraint based on a list of words or phrases, or a constrain
 
 The following image shows an example of the flow between screens for a speech recognizer that uses a constraint based on a SRGS grammar file. In this example, speech recognition was successful.
 
-![initial recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-initial.png)
+![initial recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-initial.png)
 
-![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-intermediate.png)
+![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-intermediate.png)
 
-![final recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-complete.png)
+![final recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-complete.png)
 
 The **Listening** screen can provide examples of words or phrases that the app can recognize. Here, we show how to use the properties of the [**SpeechRecognizerUIOptions**](/uwp/api/Windows.Media.SpeechRecognition.SpeechRecognizerUIOptions) class (obtained by calling the [**SpeechRecognizer.UIOptions**](/uwp/api/windows.media.speechrecognition.speechrecognizer.uioptions) property) to customize content on the **Listening** screen.
 
-```CSharp
+```csharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 {
     // Create an instance of SpeechRecognizer.
@@ -364,7 +361,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## Related articles
 
-* [Speech interactions](../../design/input/speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
 **Samples**
 

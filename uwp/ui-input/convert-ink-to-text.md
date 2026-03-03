@@ -863,7 +863,7 @@ For this example, we'll use the same UI and stroke settings as the previous inte
 
 ## Related articles
 
-- [Pen and stylus interactions](../../design/input/pen-and-stylus-interactions.md)
+- [Pen and stylus interactions](pen-and-stylus-interactions.md)
 
 ### Topic samples
 

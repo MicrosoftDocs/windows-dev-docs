@@ -13,7 +13,7 @@ ms.custom: RS5
 # Text input with the handwriting view
 
 > [!NOTE]
-> Handwriting view is not supported by text controls in [WinUI 3 in the Windows App SDK](../../winui/winui3/index.md). This article applies to UWP apps only.
+> Handwriting view is not supported by text controls in [WinUI 3 in the Windows App SDK](/windows/apps/winui/winui3/). This article applies to UWP apps only.
 
 ![Text box expands when tapped with pen](images/handwritingview/handwritingview2.gif)
 
@@ -21,7 +21,7 @@ Customize the handwriting view (for ink to text input) that is built into UWP te
 
 ## Overview
 
-UWP text input controls support pen input using [Windows Ink](../../design/input/pen-and-stylus-interactions.md) by transforming into a handwriting surface when a user taps into a text input box using a pen.
+UWP text input controls support pen input using [Windows Ink](pen-and-stylus-interactions.md) by transforming into a handwriting surface when a user taps into a text input box using a pen.
 
 Text is recognized as the user writes anywhere in the handwriting surface while a candidate window shows the recognition results. The user can tap a result to choose it, or continue writing to accept the proposed candidate. The literal (letter-by-letter) recognition results are included in the candidate window, so recognition is not restricted to words in a dictionary. As the user writes, the accepted text input is converted to a script font that retains the feel of natural writing.
 
@@ -306,12 +306,4 @@ private double GetPopupVerticalOffset()​
 
 As with all XAML framework controls, you can customize both the visual structure and visual behavior of a [HandwritingView](/uwp/api/windows.ui.xaml.controls.handwritingview) for your specific requirements.
 
-To see a full example of creating a custom template check out the [Create custom transport controls](../../design/controls/custom-transport-controls.md)​ how-to or the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
-​
-​
-​
-​
-​
-​
-​
-​
+To see a full example of creating a custom template check out the [Create custom transport controls](/windows/apps/develop/ui/controls/custom-transport-controls)​ how-to or the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).

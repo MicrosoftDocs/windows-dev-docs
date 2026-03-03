@@ -101,7 +101,7 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 ## Related articles
 
 
-* [Speech interactions](../../design/input/speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
 **Samples**
 * [Speech recognition and speech synthesis sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SpeechRecognitionAndSynthesis)
