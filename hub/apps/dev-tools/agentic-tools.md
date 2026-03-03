@@ -33,26 +33,26 @@ https://learn.microsoft.com/api/mcp
 
 For step-by-step setup instructions, see [Get started with the Learn MCP Server in VS Code](/training/support/mcp-get-started) or [in Foundry](/training/support/mcp-get-started-foundry).
 
-## Awesome Copilot customizations
+## WinUI 3 development plugin for GitHub Copilot
 
-The [Awesome Copilot](https://github.com/github/awesome-copilot) repository is a community-driven collection of custom instructions, agents, skills, and plugins for GitHub Copilot. These resources teach Copilot about specific frameworks and coding patterns so it can generate more accurate and idiomatic code.
+The [Awesome Copilot](https://github.com/github/awesome-copilot) repository is a community-driven collection of custom instructions, agents, skills, and plugins for GitHub Copilot. These resources teach Copilot about specific frameworks so it generates more accurate and idiomatic code.
 
-For Windows developers, the repository offers plugins that bundle together:
+The [WinUI 3 Development plugin](https://github.com/github/awesome-copilot/tree/main/plugins/winui3-development) is built specifically for Windows App SDK developers. It prevents common mistakes — like using legacy UWP APIs that no longer work in WinUI 3 — and guides Copilot toward correct, modern patterns.
 
-- **Custom instructions** — guidelines that shape how Copilot writes code, such as enforcing MVVM patterns, XAML best practices, or specific API usage
-- **Agents** — specialized Copilot personas with domain expertise, like expert .NET engineers
-- **Skills** — reusable prompts for common tasks like unit testing, code review, or framework upgrades
+The plugin includes:
 
-**Install a plugin:**
+- **WinUI 3 Expert agent** — an expert agent that covers UWP-to-WinUI 3 API migration rules, XAML controls, MVVM patterns, windowing, threading, app lifecycle, dialogs, and deployment
+- **Migration guide skill** — a slash command (`/winui3-development:winui3-migration-guide`) with API namespace mappings, before/after code snippets, and a step-by-step migration checklist
+- **Custom instructions** — rules applied to XAML, C#, and `.csproj` files that prevent the most common Copilot code generation mistakes, such as using `CoreDispatcher` instead of `DispatcherQueue`, or `MessageDialog` instead of `ContentDialog`
 
-You can install a plugin using the Copilot CLI. For example, to install the [C# .NET Development plugin](https://github.com/github/awesome-copilot/tree/main/plugins/csharp-dotnet-development):
+**Install the plugin:**
 
 ```bash
-copilot plugin install csharp-dotnet-development@awesome-copilot
+copilot plugin install winui3-development@awesome-copilot
 ```
 
-This copies the plugin's instructions, agents, and skills into your project's `.github/` directory, where Copilot picks them up automatically.
+This copies the plugin's agents, skills, and instructions into your project's `.github/` directory, where Copilot picks them up automatically.
 
-**Browse and discover:**
+**Browse and discover more plugins:**
 
-You can also browse available customizations using the [Awesome Copilot extension for VS Code](https://marketplace.visualstudio.com/items?itemName=TimHeuer.awesome-copilot), which lets you preview and download resources directly into your workspace.
+You can browse all available Copilot customizations using the [Awesome Copilot extension for VS Code](https://marketplace.visualstudio.com/items?itemName=TimHeuer.awesome-copilot), which lets you preview and install resources directly into your workspace.
