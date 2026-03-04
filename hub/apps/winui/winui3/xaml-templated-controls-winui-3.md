@@ -1,35 +1,126 @@
 ---
-description: This article walks you through creating a XAML templated control for WinUI with C++/WinRT.
-title: Build XAML controls with C++/WinRT
-ms.date: 07/09/2024
+description: This article walks you through creating a XAML templated control for WinUI 3 with C# or C++/WinRT.
+title: Build XAML templated controls
+ms.date: 03/03/2026
 ms.topic: how-to
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, custom control, templated control
+keywords: windows 11, Windows App SDK, winui, custom control, templated control
 ms.localizationpriority: high
-ms.custom: 19H1
+zone_pivot_groups: winui3-language
 ---
 
-# Build XAML controls with C++/WinRT
+# Build XAML templated controls
 
-This article walks you through creating a templated XAML control for WinUI 3 with C++/WinRT. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates. This article describes the same scenario as the article [XAML custom (templated) controls with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) but has been adapted to use WinUI.
+This article walks you through creating a templated XAML control for WinUI 3. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
 
 ## Prerequisites
+
+::: zone pivot="lang-csharp"
+
+1. Set up your development environment&mdash;see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
+2. Follow the instructions on how to [Create your first WinUI project](create-your-first-winui3-app.md).
+
+To create standalone WinUI components in C# for consumption from both C# and C++/WinRT apps, see the article [Walkthrough: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK application](../../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md).
+
+::: zone-end
+
+::: zone pivot="lang-cppwinrt"
 
 1. [Start developing Windows apps](../../get-started/start-here.md)
 2. Download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 
+::: zone-end
+
 ## Create a Blank App (BgLabelControlApp)
 
-Begin by creating a new project in Microsoft Visual Studio. In the `Create a new project` dialog, select the **Blank App (WinUI in UWP)** project template, making sure to select the C++ language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below. Set the **Target version** to Windows 10, version 1903 (build 18362) and **Minimum version** to Windows 10, version 1803 (build 17134). This walkthrough will also work for desktop apps created with the **Blank App, Packaged (WinUI in Desktop)** project template, just make sure to perform all of the steps in the **BgLabelControlApp (Desktop)** project.
+Begin by creating a new project in Microsoft Visual Studio. In the **Create a new project** dialog, select the **WinUI Blank App (Packaged)** project template and select the appropriate language version. Set the project name to "BgLabelControlApp" so that the file names align with the code in the examples below.
+
+::: zone pivot="lang-csharp"
+
+![Blank App Project Template](images/new-project-packaged-winui3-desktop.png)
+
+::: zone-end
+
+::: zone pivot="lang-cppwinrt"
 
 ![Blank App Project Template](images/WinUI-cpp-newproject-UWP.png)
 
+::: zone-end
+
 ## Add a templated control to your app
 
-To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item** . Under **Visual C++->WinUI** select the **Custom Control (WinUI)** template. Name the new control "BgLabelControl" and click *Add*. This will add three new files to your project. `BgLabelControl.h` is the header containing the control declarations and `BgLabelControl.cpp` contains the C++/WinRT implementation of the control. `BgLabelControl.idl` is the Interface Definition file that allows the control to be instantiated as a runtime class.
+To add a templated control, click the **Project** menu in the toolbar or right-click your project in **Solution Explorer** and select  **Add New Item**.
+
+::: zone pivot="lang-csharp"
+
+Under **Visual C#->WinUI** select the **Templated Control** template. Name the new control "BgLabelControl" and click *Add*.
+
+::: zone-end
+
+::: zone pivot="lang-cppwinrt"
+
+Under **Visual C++->WinUI** select the **Templated Control** template. Name the new control "BgLabelControl" and click *Add*. This will add three new files to your project. `BgLabelControl.h` is the header containing the control declarations and `BgLabelControl.cpp` contains the C++/WinRT implementation of the control. `BgLabelControl.idl` is the Interface Definition file that allows the control to be instantiated as a runtime class.
+
+::: zone-end
 
 ## Implement the BgLabelControl custom control class
 
-In the following steps you will update the code in the `BgLabelControl.idl`, `BgLabelControl.h`, and `BgLabelControl.cpp` files in the project directory to implement the runtime class. 
+::: zone pivot="lang-csharp"
+
+In the C# file, BgLabelControl.cs, note that the constructor defines the **DefaultStyleKey** property for our control. This key identifies the default template that will be used if the consumer of the control doesn't explicitly specify a template. The key value is the *type* of our control. We will see this key in use later when we implement our generic template file.
+
+```csharp
+public BgLabelControl()
+{
+    this.DefaultStyleKey = typeof(BgLabelControl);
+}
+```
+
+Our templated control will have a text label that can be set programmatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a [DependencyPropety](/uwp/api/Windows.UI.Xaml.DependencyProperty). To do this, first we declare a string property and call it **Label**. Instead of using a backing variable, we set and get the value of our dependency property by calling [GetValue](/uwp/api/windows.ui.xaml.dependencyobject.getvalue) and [SetValue](/uwp/api/windows.ui.xaml.dependencyobject.setvalue). These methods are provided by the [DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject), which **Microsoft.UI.Xaml.Controls.Control** inherits.
+
+```csharp
+public string Label
+{
+    get => (string)GetValue(LabelProperty);
+    set => SetValue(LabelProperty, value);
+}
+```
+Next, declare the dependency property and register it with the system by calling [DependencyProperty.Register](/uwp/api/windows.ui.xaml.dependencyproperty.register). This method specifies the name and type of our **Label** property, the type of the owner of the property, our **BgLabelControl** class, and the default value for the property.
+
+```csharp
+DependencyProperty LabelProperty = DependencyProperty.Register(
+    nameof(Label), 
+    typeof(string),
+    typeof(BgLabelControl), 
+    new PropertyMetadata(default(string), new PropertyChangedCallback(OnLabelChanged)));
+```
+
+These two steps are all that's required to implement a dependency property, but for this example, we'll add an optional handler for the **OnLabelChanged** event. This event is raised by the system whenever the property value is updated. In this case we check to see if the new label text is an empty string or not and update a class variable accordingly.
+
+```csharp
+public bool HasLabelValue { get; set; }
+
+private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+{
+    BgLabelControl labelControl = d as BgLabelControl; //null checks omitted
+    String s = e.NewValue as String; //null checks omitted
+    if (s == String.Empty)
+    {
+        labelControl.HasLabelValue = false;
+    }
+    else
+    {
+        labelControl.HasLabelValue = true;
+    }
+}
+```
+
+For more information on how dependency properties work, see [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview).
+
+::: zone-end
+
+::: zone pivot="lang-cppwinrt"
+
+In the following steps you will update the code in the `BgLabelControl.idl`, `BgLabelControl.h`, and `BgLabelControl.cpp` files in the project directory to implement the runtime class.
 
 The templated control class will be instantiated from XAML markup, and for that reason it's going to be a runtime class. When you build the finished project, the MIDL compiler (midl.exe) will use the `BgLabelControl.idl` file to a generate the Windows Runtime metadata file (.winmd) for your control, which consumers of your component will reference. For more information on creating runtime classes, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
@@ -91,7 +182,7 @@ namespace winrt::BgLabelControlApp::factory_implementation
 }
 ```
 
-The code shown above implements the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**. Again, note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.
+The code shown above implements the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**. Note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.
 
 
 Next, replace the contents of BgLabelControl.cpp with the following code.
@@ -138,13 +229,27 @@ The [xaml_typename](/uwp/cpp-ref-for-winrt/xaml-typename) function is provided b
 ...
 ```
 
-
+::: zone-end
 
 ## Define the default style for BgLabelControl
 
-In its constructor, **BgLabelControl** sets a default style key for itself. A templated control needs to have a default style — containing a default control template — which it can use to render itself with in case the consumer of the control doesn't set a style and/or template. In this section we'll add a markup file to the project containing our default style.
+A templated control must provide a default style template that is used if the user of the control doesn't explicitly set a style. In its constructor, the control sets a default style key for itself.
 
-Make sure that **Show All Files** is still toggled on (in **Solution Explorer**). Under your project node, create a new folder (not a filter, but a folder) and name it "Themes". Under `Themes`, add a new item of type **Visual C++ > WinUI > Resource Dictionary (WinUI)**, and name it "Generic.xaml". The folder and file names have to be like this in order for the XAML framework to find the default style for a templated control. Delete the default contents of Generic.xaml, and paste in the markup below.
+The generic template file is named "Generic.xaml" and must be located in a **Themes** folder in your project. The folder and file names are required in order for the XAML framework to find the default style for a templated control.
+
+::: zone pivot="lang-csharp"
+
+The generic template file is generated when you add the **Templated Control** to your app.
+
+::: zone-end
+
+::: zone pivot="lang-cppwinrt"
+
+Under your project node, create a new folder (not a filter, but a folder) and name it "Themes". Under `Themes`, add a new item of type **Visual C++ > WinUI > Resource Dictionary (WinUI)**, and name it "Generic.xaml".
+
+::: zone-end
+
+Delete the default contents of Generic.xaml, and paste in the markup below.
 
 ```xaml
 <!-- \Themes\Generic.xaml -->
@@ -167,7 +272,9 @@ Make sure that **Show All Files** is still toggled on (in **Solution Explorer**)
 </ResourceDictionary>
 ```
 
-In this case, the only property that the default style sets is the control template. The template consists of a square (whose background is bound to the **Background** property that all instances of the XAML **Control** type have), and a text element (whose text is bound to the **BgLabelControl::Label** dependency property).
+The **TargetType** attribute of the **Style** element is set to our **BgLabelControl** type within the **BgLabelControlApp** namespace. This type is the same value specified for the **DefaultStyleKey** property in the control's constructor, which identifies this as the default style for the control.
+
+The **Text** property of the **TextBlock** in the control template is bound to our control's **Label** dependency property using the [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension) markup extension. The **Grid** background is bound to the **Background** dependency property inherited from the **Control** class.
 
 ## Add an instance of BgLabelControl to the main UI page
 
@@ -176,6 +283,8 @@ Open `MainWindow.xaml`, which contains the XAML markup for our main UI page. Imm
 ```xaml
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
+
+::: zone pivot="lang-cppwinrt"
 
 Also, add the following include directive to `MainWindow.h` so that the **MainWindow** type (a combination of compiling XAML markup and imperative code) is aware of the **BgLabelControl** templated control type. If you want to use **BgLabelControl** from another XAML page, then add this same include directive to the header file for that page, too. Or, alternatively, just put a single include directive in your precompiled header file.
 
@@ -186,13 +295,53 @@ Also, add the following include directive to `MainWindow.h` so that the **MainWi
 ...
 ```
 
+::: zone-end
+
 Now build and run the project. You'll see that the default control template is binding to the background brush, and to the label, of the **BgLabelControl** instance in the markup.
 
 ![Templated control result](images/winui-templated-control-result.png)
 
-## Implementing overridable functions, such as **MeasureOverride** and **OnApplyTemplate**
+## Overriding control methods
 
-You derive a templated control from the **Control** runtime class, which itself further derives from base runtime classes. And there are overridable methods of **Control**, **FrameworkElement**, and **UIElement** that you can override in your derived class. Here's a code example showing you how to do that.
+You derive a templated control from the **Control** runtime class, which itself further derives from base runtime classes. There are overridable methods of **Control**, **FrameworkElement**, and **UIElement** that you can override in your derived class to customize control behavior.
+
+::: zone pivot="lang-csharp"
+
+In C#, overridable methods appear as `protected override` methods. For example, you can override layout measurement, template application, pointer input handling, and automation peer creation:
+
+```csharp
+// Control overrides.
+protected override void OnPointerPressed(PointerRoutedEventArgs e)
+{
+    base.OnPointerPressed(e);
+    // Custom pointer handling...
+}
+
+// FrameworkElement overrides.
+protected override Size MeasureOverride(Size availableSize)
+{
+    // Custom measure logic...
+    return base.MeasureOverride(availableSize);
+}
+
+protected override void OnApplyTemplate()
+{
+    base.OnApplyTemplate();
+    // Retrieve template parts and set up event handlers...
+}
+
+// UIElement overrides.
+protected override AutomationPeer OnCreateAutomationPeer()
+{
+    return new BgLabelControlAutomationPeer(this);
+}
+```
+
+::: zone-end
+
+::: zone pivot="lang-cppwinrt"
+
+In C++/WinRT, overridable functions are neither virtual nor protected, but you can still override them and provide your own implementation:
 
 ```cppwinrt
 // Control overrides.
@@ -206,13 +355,13 @@ void OnApplyTemplate() const { ... };
 Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const { ... };
 ```
 
-*Overridable* functions present themselves differently in different language projections. In C#, for example, overridable functions typically appear as protected virtual functions. In C++/WinRT, they're neither virtual nor protected, but you can still override them and provide your own implementation, as shown above.
+::: zone-end
 
+::: zone pivot="lang-cppwinrt"
 
+## Generating the control source files without using a template
 
-## Generating the control source files without using a template.
-
-This section shows how you can generate the necessary source files for creating your custom control without using the **Custom Control** item template. 
+This section shows how you can generate the necessary source files for creating your custom control without using the **Templated Control** item template. 
 
 First, add a new Midl File (.idl) item to the project. From the **Project** menu, select **Add New Item...** and type "MIDL" in the search box to find the .idl file item. Name the new file `BgLabelControl.idl` so that the name will be consistent with the steps in this article. Delete the default contents of `BgLabelControl.idl`, and paste in the runtime class declaration shown in the steps above.
 
@@ -222,6 +371,8 @@ After saving the new .idl file, the next step is to generate the Windows Runtime
 Copy the stub files BgLabelControl.h and BgLabelControl.cpp from \BgLabelControlApp\BgLabelControlApp\Generated Files\sources\ into the project folder. In **Solution Explorer**, make sure Show All Files is toggled on. Right-click the stub files that you copied, and click **Include In Project**.
 
 The compiler places a static_assert line at the top of BgLabelControl.h and BgLabelControl.cpp to prevent the generated files from being compiled. When implementing your control, you should remove these lines from the files you have placed in your project directory. For this walkthrough, you can just overwrite the entire contents of the files with the code provided above.
+
+::: zone-end
 
 ## See also
 

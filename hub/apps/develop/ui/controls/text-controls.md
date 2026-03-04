@@ -93,15 +93,7 @@ See these articles for info and examples specific to each text control.
 See these articles for font guidelines:
 
 - [Typography guidelines](../../../design/style/typography.md)
-- [Segoe MDL2 icon list and guidelines](../../../design/style/segoe-ui-symbol-font.md)
-
-## Pen input
-
-**Applies to:** TextBox, RichEditBox, AutoSuggestBox (UWP only)
-
-Starting with Windows 10, version 1803, XAML text input boxes feature embedded support for pen input using [Windows Ink](../../../design/input/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
-
-For more info, see [Text input with the handwriting view](../../../design/input/text-handwriting-view.md).
+- [Segoe Fluent Icons icon list and guidelines](../../../design/style/segoe-fluent-icons-font.md)
 
 ## Choose the right keyboard for your text control
 

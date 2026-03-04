@@ -1472,70 +1472,92 @@ This table shows which theme resource is used in each display mode.
 
 This example shows how to override the theme resources in App.xaml. When you override theme resources, you should always provide "Default" and "HighContrast" resource dictionaries at a minimum, and dictionaries for "Light" or "Dark" resources as needed. For more info, see [ResourceDictionary.ThemeDictionaries](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries).
 
-> [!IMPORTANT]
-> This code shows how to use the [WinUI for UWP](/windows/uwp/get-started/winui2/) version of AcrylicBrush. If you use the platform version of AcrylicBrush instead, the minimum version for your app project must be SDK 16299 or greater. To use the platform version, remove all references to `muxm:`.
-
-```xaml
-<Application ... xmlns:muxm="using:Microsoft.UI.Xaml.Media" ...>
-    <Application.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls"/>
-                <ResourceDictionary>
-                    <ResourceDictionary.ThemeDictionaries>
-                        <ResourceDictionary x:Key="Default">
-                            <!-- The "Default" theme dictionary is used unless a specific
-                                 light, dark, or high contrast dictionary is provided. These
-                                 resources should be tested with both the light and dark themes,
-                                 and specific light or dark resources provided as needed. -->
-                            <muxm:AcrylicBrush x:Key="NavigationViewDefaultPaneBackground"
-                                   BackgroundSource="Backdrop"
-                                   TintColor="LightSlateGray"
-                                   TintOpacity=".6"/>
-                            <muxm:AcrylicBrush x:Key="NavigationViewTopPaneBackground"
-                                   BackgroundSource="Backdrop"
-                                   TintColor="{ThemeResource SystemAccentColor}"
-                                   TintOpacity=".6"/>
-                            <LinearGradientBrush x:Key="NavigationViewExpandedPaneBackground"
-                                     StartPoint="0.5,0" EndPoint="0.5,1">
-                                <GradientStop Color="LightSlateGray" Offset="0.0" />
-                                <GradientStop Color="White" Offset="1.0" />
-                            </LinearGradientBrush>
-                        </ResourceDictionary>
-                        <ResourceDictionary x:Key="HighContrast">
-                            <!-- Always include a "HighContrast" dictionary when you override
-                                 theme resources. This empty dictionary ensures that the
-                                 default high contrast resources are used when the user
-                                 turns on high contrast mode. -->
-                        </ResourceDictionary>
-                    </ResourceDictionary.ThemeDictionaries>
-                </ResourceDictionary>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Application.Resources>
-</Application>
-```
-
 ### Top whitespace
 
-> The `IsTitleBarAutoPaddingEnabled` property requires [WinUI](/windows/uwp/get-started/winui2/) 2.2 or later.
+Apps that [customize their window's title bar](../../title-bar.md) often extend content into the title bar area. When NavigationView is used alongside a custom title bar, you need to ensure its interactive elements (back button, pane toggle) don't overlap with the title bar's drag region.
 
-Some apps choose to [customize their window's title bar](../../title-bar.md), potentially extending their app content into the title bar area.
-When NavigationView is the root element in apps that extend into the title bar **using the [ExtendViewIntoTitleBar](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) API**, the control automatically adjusts the position of its interactive elements to prevent overlap with [the draggable region](../../title-bar.md).
+#### Using the TitleBar control (recommended)
+
+The recommended approach is to place a [TitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar) control above the NavigationView, and let the TitleBar handle the back button and pane toggle. This is the pattern used by the [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery) app.
+
+Because the TitleBar control owns the back button and pane toggle button, you should hide NavigationView's built-in versions by setting `IsBackButtonVisible="Collapsed"` and `IsPaneToggleButtonVisible="False"`. The TitleBar then forwards those interactions to the NavigationView through event handlers:
+
+```xaml
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <TitleBar x:Name="titleBar"
+              Title="My App"
+              IsPaneToggleButtonVisible="True"
+              PaneToggleRequested="TitleBar_PaneToggleRequested"
+              IsBackButtonVisible="{x:Bind contentFrame.CanGoBack, Mode=OneWay}"
+              BackRequested="TitleBar_BackRequested" />
+
+    <NavigationView x:Name="NavView"
+                    Grid.Row="1"
+                    IsBackButtonVisible="Collapsed"
+                    IsPaneToggleButtonVisible="False"
+                    DisplayModeChanged="NavView_DisplayModeChanged">
+        <Frame x:Name="contentFrame" />
+    </NavigationView>
+</Grid>
+```
+
+In your code-behind, extend the content into the title bar, assign the TitleBar control, and wire up the event handlers that connect the TitleBar buttons to the NavigationView:
+
+```csharp
+this.ExtendsContentIntoTitleBar = true;
+this.SetTitleBar(titleBar);
+```
+
+```csharp
+// Toggle the NavigationView pane open or closed when the TitleBar button is clicked.
+private void TitleBar_PaneToggleRequested(TitleBar sender, object args)
+{
+    NavView.IsPaneOpen = !NavView.IsPaneOpen;
+}
+
+// Navigate back when the TitleBar back button is clicked.
+private void TitleBar_BackRequested(TitleBar sender, object args)
+{
+    if (contentFrame.CanGoBack)
+    {
+        contentFrame.GoBack();
+    }
+}
+
+// Hide the pane toggle button in the TitleBar when NavigationView switches to Top mode,
+// since the pane isn't applicable in that layout.
+private void NavView_DisplayModeChanged(NavigationView sender,
+    NavigationViewDisplayModeChangedEventArgs args)
+{
+    titleBar.IsPaneToggleButtonVisible =
+        sender.PaneDisplayMode != NavigationViewPaneDisplayMode.Top;
+}
+```
+
+With this pattern, the TitleBar control manages the drag region and interactive buttons, so NavigationView doesn't need auto-padding.
+
+#### Using a custom title bar element
+
+If you define a custom drag region using [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) with your own UIElement instead of the TitleBar control, NavigationView automatically adds padding to prevent its interactive elements from overlapping the title bar area.
 
 ![An app extending into the title bar](images/navigation-view-with-titlebar-padding.png)
 
-If your app specifies the draggable region by calling the [Window.SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) method and you would prefer to have the back and menu buttons draw closer to the top of your app window, set [IsTitleBarAutoPaddingEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.istitlebarautopaddingenabled) to `false`.
+If you prefer the back and menu buttons to draw closer to the top of your app window, set [IsTitleBarAutoPaddingEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.istitlebarautopaddingenabled) to `false`:
 
 ![App extending into the title bar without extra padding](images/navigation-view-no-titlebar-padding.png)
 
 ```xaml
-<muxc:NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
+<NavigationView x:Name="NavView" IsTitleBarAutoPaddingEnabled="False">
 ```
 
-#### Remarks
+#### Adjusting the header margin
 
-To further adjust the position of NavigationView's header area, override the *NavigationViewHeaderMargin* XAML theme resource, for example in your Page resources.
+To further adjust the position of NavigationView's header area, override the *NavigationViewHeaderMargin* XAML theme resource in your Page resources:
 
 ```xaml
 <Page.Resources>

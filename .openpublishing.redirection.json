@@ -10766,6 +10766,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-csharp-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
+    "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/input/gamepad-and-remote-interactions.md",
       "redirect_url": "/windows/uwp/ui-input/gamepad-and-remote-interactions",
       "redirect_document_id": false
