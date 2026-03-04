@@ -2,7 +2,7 @@
 title: Making games accessible
 description: Learn how to make games accessible. Use the inclusive game design principle to achieve game accessibility.
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
-ms.date: 11/09/2017
+ms.date: 03/03/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, accessibility, games
 ms.localizationpriority: medium
