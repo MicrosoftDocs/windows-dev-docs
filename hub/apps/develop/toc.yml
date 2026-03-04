@@ -172,61 +172,64 @@ items:
         items:
         - name: Overview
           href: data-access/index.md
-        - name: Use a SQLite database on Windows
+        - name: "Tutorial: SQLite database"
           href: data-access/sqlite-data-access.md
-        - name: Use SQL Server in a Windows app
+        - name: "Tutorial: SQL Server"
           href: data-access/sql-server-database.md
-        - name: Use Cosmos DB in a Windows app
+        - name: "Tutorial: Cosmos DB database "
           href: data-access/cosmos-db-data-access.md
-        - name: Use MySQL in a Windows app
+        - name: "Tutorial: MySQL database"
           href: data-access/mysql-database.md
-        - name: Use MongoDB in a Windows App
+        - name: "Tutorial: MongoDB database"
           href: data-access/mongodb-database.md
       - name: Data binding
         items:
         - name: Data binding
           href: data-binding/index.md
-        - name: Data binding overview
-          href: data-binding/data-binding-overview.md
         - name: Data binding in depth
           href: data-binding/data-binding-in-depth.md
         - name: Functions in x:Bind
           href: data-binding/function-bindings.md
-        - name: Bind to hierarchical data and create a master/details view
-          href: data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
+        - name: "Tutorial: Data binding basics"
+          href: data-binding/data-binding-overview.md
+        - name: "Tutorial: Bind hierarchical data and create a master/details view"
+          href: data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md  
         - name: Data binding and MVVM
-          href: data-binding/data-binding-and-mvvm.md
-        - name: Data binding with the MVVM Toolkit
           items:
-          - name: Introduction
-            href: ../tutorials/winui-mvvm-toolkit/intro.md
-          - name: 1 - Create class library project
-            href: ../tutorials/winui-mvvm-toolkit/class-library.md
-          - name: 2 - Implement MVVM
-            href: ../tutorials/winui-mvvm-toolkit/mvvm-implementation.md
-          - name: 3 - Add dependency injection
-            href: ../tutorials/winui-mvvm-toolkit/dependency-injection.md
-          - name: 4 - Add unit tests
-            href: ../tutorials/winui-mvvm-toolkit/unit-testing.md
+          - name: Overview
+            href: data-binding/data-binding-and-mvvm.md
+          - name: "Tutorial: Data binding with the MVVM Toolkit"
+            items:
+            - name: Introduction
+              href: ../tutorials/winui-mvvm-toolkit/intro.md
+            - name: 1 - Create class library project
+              href: ../tutorials/winui-mvvm-toolkit/class-library.md
+            - name: 2 - Implement MVVM
+              href: ../tutorials/winui-mvvm-toolkit/mvvm-implementation.md
+            - name: 3 - Add dependency injection
+              href: ../tutorials/winui-mvvm-toolkit/dependency-injection.md
+            - name: 4 - Add unit tests
+              href: ../tutorials/winui-mvvm-toolkit/unit-testing.md
       - name: Files, folders, and libraries
         items:
         - name: Files, folders, and libraries
           href: files/index.md
         - name: File access with Windows Runtime APIs
           href: files/winrt-files.md
-        - name: Access files and folders with .NET
+        - name: "Tutorial: Access files and folders with .NET"
           href: files/dotnet-files.md
-        - name: Open files and folders with a picker
+        - name: "Tutorial: Open files and folders with a picker"
           href: files/using-file-folder-pickers.md
-        - name: Save a file with a picker
+        - name: "Tutorial: Save a file with a picker"
           href: files/pickers-save-file.md
     - name: Devices and sensors
       items:
       - name: Overview
         href: devices-and-sensors.md
       - name: Printing and scanning
-        href: devices-sensors/printing-and-scanning.md
         items:
+        - name: Overview
+          href: devices-sensors/printing-and-scanning.md
         - name: Print from your app
           href: devices-sensors/print-from-your-app.md
         - name: Customize the print preview UI
@@ -289,23 +292,6 @@ items:
           href: input/input-primer.md
         - name: Pointer input
           href: input/handle-pointer-input.md
-        - name: Gaze
-          href: input/gaze-interactions.md
-        - name: Pen and Windows Ink
-          href: input/pen-and-stylus-interactions.md
-          items:
-            - name: "Pen interactions and haptic (tactile) feedback"
-              href: input/pen-haptics.md
-            - name: "Tutorial: Add Inking support to your app"
-              href: input/ink-walkthrough.md
-            - name: Recognize ink strokes
-              href: input/convert-ink-to-text.md
-            - name: Store and retrieve ink strokes
-              href: input/save-and-load-ink.md
-            - name: Add an InkToolbar
-              href: input/ink-toolbar.md
-            - name: Handwriting view
-              href: input/text-handwriting-view.md
         - name: Touch
           items:
             - name: Touch design guidelines
@@ -349,34 +335,10 @@ items:
               href: input/input-method-editors.md
             - name: Input Method Editor requirements
               href: input/input-method-editor-requirements.md
-        - name: Gamepad and remote control
-          href: input/gamepad-and-remote-interactions.md
         - name: Touchpad
           href: input/touchpad-interactions.md
-        - name: Surface Dial
-          href: input/windows-wheel-interactions.md
-          items:
-            - name: "Tutorial: Add Surface Dial support to your app"
-              href: input/radialcontroller-walkthrough.md
-        - name: Speech interactions
-          href: input/speech-interactions.md
-          items:
-            - name: Speech recognition
-              href: input/speech-recognition.md
-            - name: Specify the speech recognizer language
-              href: input/specify-the-speech-recognizer-language.md
-            - name: Define custom recognition constraints
-              href: input/define-custom-recognition-constraints.md
-            - name: Continuous dictation
-              href: input/enable-continuous-dictation.md
-            - name: Audio input issues
-              href: input/manage-issues-with-audio-input.md
-            - name: Speech recognition timeouts
-              href: input/set-speech-recognition-timeouts.md
         - name: Multiple inputs
           href: input/multiple-input-design-guidelines.md
-        - name: Input injection
-          href: input/input-injection.md
         - name: Identify input devices
           href: input/identify-input-devices.md
         - name: Optical zoom and resizing
@@ -592,10 +554,7 @@ items:
     - name: Speech
       href: speech.md
     - name: Testing
-      href: ../winui/winui3/testing/index.md
-      items:
-          - name: Unit tests for Windows UI Library (WinUI) apps in Visual Studio
-            href: ../winui/winui3/testing/create-winui-unit-test-project.md
+      href: testing/index.md
     - name: User interface
       items:
       - name: Overview
@@ -690,8 +649,6 @@ items:
             href: ui/controls/animated-icon.md
           - name: Images and image brushes
             href: ui/controls/images-imagebrushes.md
-          - name: Ink
-            href: ui/controls/inking-controls.md
           - name: Media playback
             href: ui/controls/media-playback.md
           - name: Custom transport controls

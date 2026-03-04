@@ -1,5 +1,5 @@
 ---
-title: Use a SQLite database in a Windows app
+title: "Tutorial: Use a SQLite database in a Windows app"
 description: Learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user's device.
 ms.date: 09/25/2025
 ms.topic: how-to
@@ -9,7 +9,7 @@ ms.custom: copilot-scenario-highlight
 #customer intent: As a Windows developer, I want to learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user's device.
 ---
 
-# Use a SQLite database in a Windows app
+# Tutorial: Use a SQLite database in a Windows app
 
 [SQLite](https://sqlite.org/index.html) provides a reliable, lightweight database solution for storing data locally in Windows apps. Unlike traditional database systems that require separate server installations and complex configurations, SQLite runs entirely within your application process and stores data in a single file on the user's device.
 
