@@ -246,44 +246,36 @@ items:
         href: ../windows-app-sdk/dwritecore.md
       - name: Win2D
         items:
-        - name: Overview of Win2D
+        - name: Overview
           href: win2d/index.md
-        - name: Win2D quickstart
-          href: win2d/hellowin2dworld.md
-        - name: Build a simple Win2D app
+        - name: "Tutorial: Build a simple Win2D app"
           href: win2d/quick-start.md
-        - name: Win2D in a Core App project
-          href: win2d/in-a-core-app.md
-        - name: Features
-          href: win2d/features.md
-        - name: Articles
-          items:
-          - name: Interop with Direct2D
-            href: win2d/interop.md
-          - name: Offscreen drawing
-            href: win2d/offscreen-drawing.md
-          - name: DPI and DIPs
-            href: win2d/dpi-and-dips.md
-          - name: Choosing control resolution
-            href: win2d/choosing-control-resolution.md
-          - name: Pixel formats
-            href: win2d/pixel-formats.md
-          - name: Premultiplied alpha
-            href: win2d/premultiplied-alpha.md
-          - name: Bitmap block compression
-            href: win2d/bitmap-block-compression.md
-          - name: Effect precision and clamping
-            href: win2d/effect-precision-and-clamping.md
-          - name: Handling device lost
-            href: win2d/handling-device-lost.md
-          - name: Using Win2D without built-in controls
-            href: win2d/using-win2d-without-built-in-controls.md
-          - name: Loading resources outside of CreateResources
-            href: win2d/loading-resources-outside-of-createresources.md
-          - name: Avoiding memory leaks
-            href: win2d/avoiding-memory-leaks.md
-          - name: Custom effects
-            href: win2d/custom-effects.md
+        - name: Interop with Direct2D
+          href: win2d/interop.md
+        - name: Offscreen drawing
+          href: win2d/offscreen-drawing.md
+        - name: DPI and DIPs
+          href: win2d/dpi-and-dips.md
+        - name: Choosing control resolution
+          href: win2d/choosing-control-resolution.md
+        - name: Pixel formats
+          href: win2d/pixel-formats.md
+        - name: Premultiplied alpha
+          href: win2d/premultiplied-alpha.md
+        - name: Bitmap block compression
+          href: win2d/bitmap-block-compression.md
+        - name: Effect precision and clamping
+          href: win2d/effect-precision-and-clamping.md
+        - name: Handling device lost
+          href: win2d/handling-device-lost.md
+        - name: Using Win2D without built-in controls
+          href: win2d/using-win2d-without-built-in-controls.md
+        - name: Loading resources outside of CreateResources
+          href: win2d/loading-resources-outside-of-createresources.md
+        - name: Avoiding memory leaks
+          href: win2d/avoiding-memory-leaks.md
+        - name: Custom effects
+          href: win2d/custom-effects.md
     - name: Input and interactions
       items:
         - name: Overview

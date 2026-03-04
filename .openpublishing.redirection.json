@@ -1,6 +1,21 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/develop/win2d/hellowin2dworld.md",
+      "redirect_url": "/windows/apps/develop/win2d/quick-start",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/features.md",
+      "redirect_url": "/windows/apps/develop/win2d/#features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/in-a-core-app.md",
+      "redirect_url": "/windows/apps/develop/win2d/",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/windows-app-sdk/system-backdrop-controller.md",
       "redirect_url": "/windows/apps/develop/ui/system-backdrops",
       "redirect_document_id": true

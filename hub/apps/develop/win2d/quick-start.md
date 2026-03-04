@@ -1,5 +1,5 @@
 ---
-title: Build a simple Win2D app
+title: "Tutorial: Build a simple Win2D app"
 description: This tutorial introduces some of the basic drawing capabilities of Win2D.
 ms.date: 10/28/2025
 ms.topic: how-to
@@ -7,26 +7,19 @@ keywords: windows 11, windows 10, uwp, xaml, windows app sdk, winui, windows ui,
 ms.localizationpriority: medium
 ---
 
-# Build a simple Win2D app
+# Tutorial: Build a simple Win2D app
 
 This tutorial introduces some of the basic drawing capabilities of Win2D. You'll learn how to:
 
-- Add Win2D to a C# XAML Windows project.
+- Add Win2D to a WinUI (C#) app.
 - Draw text and geometry.
 - Apply filter effects.
 - Animate your Win2D content.
 - Follow Win2D best practices.
 
-## Set up your dev machine
+## Reference the Win2D NuGet package
 
-Make sure to set up your machine with all the necessary tools:
-- [Install Visual Studio](https://visualstudio.microsoft.com/it/downloads/)
-  - Include the UWP or Windows SDK (depending on your needs), 17763+
-- If using UWP, ensure to also [enable developer mode](/windows/apps/get-started/developer-mode-features-and-debugging)
-
-## Create a new Win2D project
-
-Follow the steps in the [Win2D "Hello, World!" quickstart](./hellowin2dworld.md) to create a new project using Win2D, and to add a reference to the Win2D NuGet package. You can use either WinUI 3 (Windows App SDK) or the Universal Windows Platform (UWP).
+1. Create a new WinUI app, and add the [**Microsoft.Graphics.Win2D**](https://www.nuget.org/packages/Microsoft.Graphics.Win2D) Nuget package.
 
 ## Add a Win2D CanvasControl to your app's XAML
 
@@ -34,12 +27,12 @@ Follow the steps in the [Win2D "Hello, World!" quickstart](./hellowin2dworld.md)
 
 Before you continue, first ensure that the project's Architecture option is set to `x86` or `x64` and **not** to `Any CPU`. Win2D is implemented in C++, and therefore projects that use Win2D need to be targeted to a specific CPU architecture.
 
-1. Navigate to `MainPage.xaml` in your project by double clicking on it in Solution Explorer. This will open the file. For convenience, you can double click on the XAML button in the Designer tab; this will hide the visual designer and reserve all of the space for the code view.
+1. Navigate to `MainWindow.xaml` in your project by double clicking on it in Solution Explorer. This will open the file. For convenience, you can double click on the XAML button in the Designer tab; this will hide the visual designer and reserve all of the space for the code view.
 
-3. Before you add the control, you first have to tell XAML where **CanvasControl** is defined. To do this, go to the definition of the **Page** element, and add this directive: `xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"`. Your XAML should now look like this:
+3. Before you add the control, you first have to tell XAML where **CanvasControl** is defined. To do this, go to the definition of the **Window** element, and add this directive: `xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"`. Your XAML should now look like this:
 
 ```XAML
-<Page
+<Window
     ...
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
@@ -49,7 +42,7 @@ Before you continue, first ensure that the project's Architecture option is set 
 4. Now, add a new `canvas:CanvasControl` as a child element to the root **Grid** element. Give the control a name&mdash;for example, "canvas". Your XAML should now look like this:
 
 ```XAML
-<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+<Grid>
     <canvas:CanvasControl x:Name="canvas"/>
 </Grid>
 ```
@@ -60,12 +53,9 @@ Before you continue, first ensure that the project's Architecture option is set 
 <canvas:CanvasControl x:Name="canvas" Draw="canvas_Draw" />
 ```
 
-> [!NOTE]
-> Once you have entered in `Draw="`, Visual Studio should pop up a box prompting you to let it automatically fill out the right definition for the event handler. Press TAB to accept Visual Studio's default event handler. This will also automatically add a correctly formatted event handler method in your code behind (`MainPage.xaml.cs``). Don't worry if you didn't use AutoComplete; you can manually add the event handler method in the next step.
-
 ## Draw your first text in Win2D
 
-1. Now, let's go to the C# code behind. Open `MainPage.xaml.cs` from Solution Explorer.
+1. Now, let's go to the C# code behind. Open `MainWindow.xaml.cs` from Solution Explorer.
 
 2. At the top of the C# file are various namespace definitions. Add the following namespaces:
 
@@ -106,7 +96,7 @@ The first argument, `"Hello, World!"`, is the string that you want Win2D to disp
 
 For more information, see [Avoiding memory leaks](./avoiding-memory-leaks.md).
 
-2. Open `MainPage.xaml` and find the Page XAML element that contains your **CanvasControl**. It should be the first element in the file.
+2. Open `MainWindow.xaml` and find the XAML element that contains your **CanvasControl**. It should be the first element in the file.
 
 3. Add a handler for the `Unloaded` event. Your XAML should look like this:
 
@@ -119,7 +109,7 @@ For more information, see [Avoiding memory leaks](./avoiding-memory-leaks.md).
     Unloaded="Page_Unloaded">
 ```
 
-4. Go to `MainPage.xaml.cs` and find the `Page_Unloaded` event handler. Add the following code:
+4. Go to `MainWindow.xaml.cs` and find the `Page_Unloaded` event handler. Add the following code:
 
 ```csharp
 void Page_Unloaded(object sender, RoutedEventArgs e)
@@ -150,7 +140,7 @@ You may be wondering how to control more advanced drawing options, such as line 
 
 1. Now, let's add some variety by drawing a bunch of shapes and text with randomized colors.
 
-Add the following code to the top of your `MainPage` class. This is helper functionality to generate random values that you will use when drawing:
+Add the following code to the top of your `MainWindow` class. This is helper functionality to generate random values that you will use when drawing:
 
 ```csharp
 Random rnd = new Random();
