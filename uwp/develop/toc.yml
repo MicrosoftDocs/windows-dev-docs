@@ -1316,3 +1316,48 @@ items:
       href: ../xaml-islands/host-custom-control-with-xaml-islands-cpp.md
     - name: Advanced scenarios
       href: ../xaml-islands/advanced-scenarios-xaml-islands-cpp.md
+  - name: Input
+    items:
+    - name: Gaze
+      href: ../ui-input/gaze-interactions.md
+    - name: Gamepad and remote control
+      href: ../ui-input/gamepad-and-remote-interactions.md
+    - name: Input injection
+      href: ../ui-input/input-injection.md
+    - name: Pen and Windows Ink
+      href: ../ui-input/pen-and-stylus-interactions.md
+      items:
+      - name: "Pen interactions and haptic (tactile) feedback"
+        href: ../ui-input/pen-haptics.md
+      - name: "Tutorial: Add Inking support to your app"
+        href: ../ui-input/ink-walkthrough.md
+      - name: Recognize ink strokes
+        href: ../ui-input/convert-ink-to-text.md
+      - name: Store and retrieve ink strokes
+        href: ../ui-input/save-and-load-ink.md
+      - name: Add an InkToolbar
+        href: ../ui-input/ink-toolbar.md
+      - name: Handwriting view
+        href: ../ui-input/text-handwriting-view.md
+      - name: Ink controls
+        href: ../ui-input/inking-controls.md
+    - name: Speech interactions
+      href: ../ui-input/speech-interactions.md
+      items:
+      - name: Speech recognition
+        href: ../ui-input/speech-recognition.md
+      - name: Specify the speech recognizer language
+        href: ../ui-input/specify-the-speech-recognizer-language.md
+      - name: Define custom recognition constraints
+        href: ../ui-input/define-custom-recognition-constraints.md
+      - name: Continuous dictation
+        href: ../ui-input/enable-continuous-dictation.md
+      - name: Audio input issues
+        href: ../ui-input/manage-issues-with-audio-input.md
+      - name: Speech recognition timeouts
+        href: ../ui-input/set-speech-recognition-timeouts.md        
+    - name: Surface Dial
+      href: ../ui-input/windows-wheel-interactions.md
+      items:
+      - name: "Tutorial: Add Surface Dial support to your app"
+        href: ../ui-input/radialcontroller-walkthrough.md

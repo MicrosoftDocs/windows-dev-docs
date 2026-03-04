@@ -1,5 +1,5 @@
 ---
-title: Use a MongoDB database in a Windows app
+title: "Tutorial: Use a MongoDB database in a Windows app"
 description: Learn how to connect your Windows app directly to a MongoDB database and test the connection programmatically.
 ms.date: 08/01/2024
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 #customer intent: As a Windows developer, I want to learn how to connect my Windows app directly to a MongoDB database so that I can store and retrieve data.
 ---
 
-# Use a MongoDB database in a Windows app
+# Tutorial: Use a MongoDB database in a Windows app
 
 This article contains the steps required to enable working with a MongoDB database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.
 
