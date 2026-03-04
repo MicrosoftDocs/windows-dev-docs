@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/windows-app-sdk/system-backdrop-controller.md",
+      "redirect_url": "/windows/apps/develop/ui/system-backdrops",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/winui/winui3/testing/index.md",
       "redirect_url": "/windows/apps/develop/testing/",
       "redirect_document_id": false

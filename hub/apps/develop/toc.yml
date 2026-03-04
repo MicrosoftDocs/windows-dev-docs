@@ -559,6 +559,10 @@ items:
       items:
       - name: Overview
         href: user-interface.md
+      - name: Alignment, margin, and padding
+        href: ui/alignment-margin-padding.md
+      - name: Colors and themes
+        href: ui/theming.md  
       - name: Controls
         items:
         - name: Overview
@@ -747,25 +751,17 @@ items:
           href: ui/controls/title-bar.md
         - name: "Tutorial: Build XAML templated controls"
           href: ../winui/winui3/xaml-templated-controls-winui-3.md
-      - name: Shadows
-        href: ui/shadows.md
-      - name: Colors and themes
-        href: ui/theming.md
-      - name: Alignment, margin, and padding
-        href: ui/alignment-margin-padding.md
-      - name: Layout panels
-        href: ui/layout-panels.md
-      - name: Responsive layouts
-        href: ui/layouts-with-xaml.md
-      - name: Materials (Acrylic / Mica)
-        href: ../windows-app-sdk/system-backdrop-controller.md
       - name: Layout
         items:
-        - name: Custom panels
-          href: ../design/layout/custom-panels-overview.md
-        - name: 'Custom panel example: BoxPanel'
-          href: ../design/layout/boxpanel-example-custom-panel.md
-        - name: Attached Layout
+        - name: Panels
+          items:
+          - name: Layout panels
+            href: ui/layout-panels.md
+          - name: Custom panels
+            href: ../design/layout/custom-panels-overview.md
+          - name: "Tutorial: Create a custom panel"
+            href: ../design/layout/boxpanel-example-custom-panel.md
+        - name: Attached layouts
           href: ../design/layout/attached-layouts.md
         - name: Transforms
           href: platform/xaml/transforms.md
@@ -773,13 +769,21 @@ items:
           href: platform/xaml/3-d-perspective-effects.md
       - name: Navigation
         items:
-        - name: Basic page navigation
-          href: ui/navigation/navigate-between-two-pages.md
         - name: Navigation history and backwards navigation
           href: ui/navigation/navigation-history-and-backwards-navigation.md
+        - name: "Tutorial: Implement navigation between two pages"
+          href: ui/navigation/navigate-between-two-pages.md
+      - name: Materials
+        items:
+        - name: Overview
+          href: ui/materials.md
+        - name: System backdrops (Mica/Acrylic)
+          href: ui/system-backdrops.md
+        - name: In-app acrylic
+          href: ui/in-app-acrylic.md
       - name: Motion
         items:
-        - name: Motion in practice
+        - name: Overview
           href: motion/motion-in-practice.md
         - name: Page transitions
           href: motion/page-transitions.md
@@ -796,6 +800,10 @@ items:
               href: motion/storyboarded-animations.md
             - name: Key-frame and easing function animations
               href: motion/key-frame-and-easing-function-animations.md
+      - name: Responsive layouts
+        href: ui/layouts-with-xaml.md
+      - name: Shadows
+        href: ui/shadows.md   
       - name: Windowing
         items:
         - name: Overview

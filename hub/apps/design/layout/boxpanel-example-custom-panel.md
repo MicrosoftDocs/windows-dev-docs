@@ -3,7 +3,7 @@ description: Learn to write code for a custom Panel class, implementing ArrangeO
 MS-HAID: dev\_ctrl\_layout\_txt.boxpanel\_example\_custom\_panel
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-title: BoxPanel, an example custom panel (Windows apps)
+title: "Tutorial: Create a custom panel"
 ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
@@ -13,9 +13,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# BoxPanel, an example custom panel
-
- 
+# "Tutorial: Create a custom panel
 
 Learn to write code for a custom [**Panel**](/uwp/api/Windows.UI.Xaml.Controls.Panel) class, implementing [**ArrangeOverride**](/uwp/api/windows.ui.xaml.frameworkelement.arrangeoverride) and [**MeasureOverride**](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride) methods, and using the [**Children**](/uwp/api/windows.ui.xaml.controls.panel.children) property. 
 

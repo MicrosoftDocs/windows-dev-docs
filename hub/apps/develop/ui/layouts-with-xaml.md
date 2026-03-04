@@ -63,10 +63,6 @@ The default column width is "*", so you don't need to explicitly set this value 
 </Grid>
 ```
 
-In the Visual Studio XAML designer, the result looks like this.
-
-![A 4 column grid in the Visual Studio designer](../../design/layout/images/xaml-layout-grid-in-designer.png)
-
 To get the size of an element at runtime, use the read-only [**ActualHeight**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.actualheight) and [**ActualWidth**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.actualwidth) properties instead of Height and Width.
 
 **Size constraints**
@@ -135,11 +131,11 @@ To apply a visual state from code, you call the [**VisualStateManager.GoToState*
 Here, a [**VisualStateGroup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstategroup) contains two VisualState definitions. The first, `DefaultState`, is empty. When it's applied, the values defined in the XAML page are applied. The second, `WideState`, changes the [**DisplayMode**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview.displaymode) property of the [**SplitView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview) to **Inline** and opens the pane. This state is applied in the SizeChanged event handler if the window width is greater than 640 effective pixels.
 
 > [!NOTE]
-> Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window). We recommend defining visual states for [screen sizes and break points](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
+> Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the effective resolution, and the amount of screen space available to the app (the size of the app's window). We recommend defining visual states for [screen sizes and break points](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md).
 
 ```xaml
 <Page ...
-    SizeChanged="CurrentWindow_SizeChanged">
+    SizeChanged="Page_SizeChanged">
     <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
@@ -182,7 +178,7 @@ Here, a [**VisualStateGroup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.x
 ```
 
 ```csharp
-private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSizeChangedEventArgs e)
+private void Page_SizeChanged(object sender, Microsoft.UI.Xaml.SizeChangedEventArgs e)
 {
     if (e.Size.Width > 640)
         VisualStateManager.GoToState(this, "WideState", false);
@@ -193,10 +189,10 @@ private void CurrentWindow_SizeChanged(object sender, Windows.UI.Core.WindowSize
 
 ```cppwinrt
 // YourPage.h
-void CurrentWindow_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::SizeChangedEventArgs const& e);
+void Page_SizeChanged(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::SizeChangedEventArgs const& e);
 
 // YourPage.cpp
-void YourPage::CurrentWindow_SizeChanged(IInspectable const& sender, SizeChangedEventArgs const& e)
+void YourPage::Page_SizeChanged(IInspectable const& sender, SizeChangedEventArgs const& e)
 {
     if (e.NewSize.Width > 640)
         VisualStateManager::GoToState(*this, "WideState", false);
