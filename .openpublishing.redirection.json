@@ -10884,6 +10884,11 @@
       "source_path": "hub/apps/develop/ui/controls/inking-controls.md",
       "redirect_url": "/windows/uwp/ui-input/inking-controls",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/system-requirements.md",
+      "redirect_url": "/windows/apps/windows-app-sdk",
+      "redirect_document_id": false
     }
   ]
 }
