@@ -51,12 +51,14 @@ Item templates let you add new files to an existing WinUI project. Right-click y
 
 | Template | Language | Description |
 |----------|----------|-------------|
-| **Blank Page** | C# and C++ | A new XAML page derived from **Microsoft.UI.Xaml.Controls.Page**. |
-| **Blank Window** | C# and C++ | A new window derived from **Microsoft.UI.Xaml.Window**. |
-| **Resource Dictionary** | C# and C++ | An empty, keyed collection of XAML resources. See [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md). |
-| **Resources File (.resw)** | C# and C++ | A string resource file for localizing your app. See [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). |
-| **Templated Control** | C# and C++ | A lookless control derived from **Microsoft.UI.Xaml.Controls.Control** with a default style. See the walkthroughs for [C++/WinRT](xaml-templated-controls-cppwinrt-winui-3.md) and [C#](xaml-templated-controls-csharp-winui-3.md). |
-| **User Control** | C# and C++ | A composite control derived from **Microsoft.UI.Xaml.Controls.UserControl** that groups existing controls with custom logic. See [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+
+| Blank Page | C# and C++ | Adds a XAML file and code file that defines a new page derived from the **Microsoft.UI.Xaml.Controls.Page** class. |
+| Blank Window | C# and C++ | Adds a XAML file and code file that defines a new window derived from the **Microsoft.UI.Xaml.Window** class. |
+| Resource Dictionary | C# and C++ | Adds an empty, keyed collection of XAML resources. For more information, see [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md). |
+| Resources File (.resw) | C# and C++ | Adds a file for storing string and conditional resources for your app. You can use this item to help localize your app. For more info, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest). |
+| Templated Control | C# and C++ | Adds a code file for creating a templated control with a default style. The templated control is derived from the **Microsoft.UI.Xaml.Controls.Control** class.<p></p>For a walkthrough that demonstrates how to use this item template, see [Build XAML templated controls](xaml-templated-controls-winui-3.md). For more information about templated controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+| User Control | C# and C++ | Adds a XAML file and code file for creating a user control that derives from the **Microsoft.UI.Xaml.Controls.UserControl** class. Typically, a user control encapsulates related existing controls and provide its own logic.<p></p>For more information about user controls, see [Custom XAML Controls](/archive/msdn-magazine/2019/may/xaml-custom-xaml-controls). |
+
 
 ## See also
 

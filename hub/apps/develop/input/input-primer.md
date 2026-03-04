@@ -1,105 +1,31 @@
 ---
-description: User interactions in the Windows app are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, Cortana, controller, gesture, gaze, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
+description: User interactions in Windows apps are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
 title: Interaction primer
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
 ms.date: 08/03/2021
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Interaction primer
 
-![windows input types](images/input-interactions/icons-inputdevices03.png)
+User interactions in the Windows app are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
 
-User interactions in the Windows app are a combination of input and output sources (such as mouse, keyboard, pen, touch, touchpad, speech, **Cortana**, controller, gesture, gaze, and so on), along with various modes or modifiers that enable extended experiences (including mouse wheel and buttons, pen eraser and barrel buttons, touch keyboard, and background app services).
-
-UWP uses a "smart" contextual interaction system that, in most cases, eliminates the need to individually handle the unique types of input received by your app. This includes handling touch, touchpad, mouse, and pen input as a generic pointer type to support static gestures such as tap or press-and-hold, manipulation gestures such as slide for panning, or rendering digital ink.
+Windows uses a "smart" contextual interaction system that, in most cases, eliminates the need to individually handle the unique types of input received by your app. This includes handling touch, touchpad, mouse, and pen input as a generic pointer type to support static gestures such as tap or press-and-hold, manipulation gestures such as slide for panning, or rendering digital ink.
 
 Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. This can help you decide whether the platform controls and affordances are sufficient for your app, or require you to provide customized interaction experiences.
 
-## Gaze
-
-For **Windows 10 April 2018 Update**, we introduced support for Gaze input using eye and head tracking input devices. 
-
-> [!NOTE]
-> Support for eye tracking hardware was introduced in **Windows 10 Fall Creators Update** along with [Eye control](https://support.microsoft.com/help/4043921/windows-10-get-started-eye-control), a built-in feature that lets you use your eyes to control the on-screen pointer, type with the on-screen keyboard, and communicate with people using text-to-speech.
-
-### Device support
-
-- Tablet
-- PCs and laptops
-
-### Typical usage
-
-Track a user's gaze, attention, and presence based on the location and movement of their eyes. This powerful new way to use and interact with Windows apps is especially useful as an assistive technology for users with neuro-muscular diseases (such as ALS) and other disabilities involving impaired muscle or nerve functions. Gaze input also provides compelling opportunities for both gaming (including target acquisition and tracking) and traditional productivity applications, kiosks, and other interactive scenarios where traditional input devices (keyboard, mouse, touch) are not available, or where it might be useful/helpful to free up the user's hands for other tasks (such as holding shopping bags).
-
-### More info
-
-[Gaze interactions and eye tracking](../../design/input/gaze-interactions.md)
-
-## Surface Dial
-
-For **Windows 10 Anniversary Update**, we introduced the Windows Wheel category of input device. The Surface Dial is the first in this class of device.
-
-### Device support
-
-- Tablet
-- PCs and laptops
-
-### Typical usage
-
-With a form factor based on a rotate action (or gesture), the Surface Dial is intended as a secondary, multi-modal input device that complements or modifies input from a primary device. In most cases, the device is manipulated by a user's non-dominant hand while they perform a task with their dominant hand (such as inking with a pen).
-
-### More info
-
-[Surface Dial design guidelines](../../design/input/windows-wheel-interactions.md)
-
-## Cortana
-
-In Windows 10, **Cortana** extensibility lets you handle voice commands from a user and launch your application to carry out a single action.
-
-### Device support
-
--   Phones and phablets
--   Tablet
--   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
-
-![cortana](images/input-interactions/icons-cortana01.png)
-
-### Typical usage
-
-A voice command is a single utterance, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**. The app can be launched in the foreground or background, depending on the level and complexity of the interaction. For instance, voice commands that require additional context or user input are best handled in the foreground, while basic commands can be handled in the background.
-
-Integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, lets **Cortana** become a liaison between your app and the user. In many cases, this can save the user significant time and effort. For more info, see [Cortana design guidelines](../../design/input/cortana-design-guidelines.md).
-
-### More info
-
-[Cortana design guidelines](../../design/input/cortana-design-guidelines.md)
- 
-
-## Speech
-
 Speech is an effective and natural way for people to interact with applications. It's an easy and accurate way to communicate with applications, and lets people be productive and stay informed in a variety of situations.
 
-Speech can complement or, in many cases, be the primary input type, depending on the user's device. For example, devices such as HoloLens and Xbox do not support traditional input types (aside from a software keyboard in specific scenarios). Instead, they rely on speech input and output (often combined with other non-traditional input types such as gaze and gesture) for most user interactions.
+Speech can complement or, in many cases, be the primary input type, depending on the user's device.
 
 Text-to-speech (also known as TTS, or speech synthesis) is used to inform or direct the user.
 
 ### Device support
 
--   Phones and phablets
 -   Tablet
 -   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
 
 ![speech](images/input-interactions/icons-speech01.png)
 
@@ -113,7 +39,7 @@ Natural language is how we verbally interact with people on a regular basis. Our
 
 Natural language interactions with an app are similar: we speak to the app through our device as if it were a person and expect it to understand and react accordingly.
 
-Natural language is the most advanced mode of speech interaction, and can be implemented and exposed through **Cortana**.
+Natural language is the most advanced mode of speech interaction.
 
 **Command and control**
 
@@ -144,11 +70,8 @@ When we refer to pen devices here, we are referring to active pens that provide 
 
 ### Device support
 
--   Phones and phablets
 -   Tablet
 -   PCs and laptops
--   Surface Hub
--   IoT
 
 ![pen](images/input-interactions/icons-pen01.png)
 
@@ -171,11 +94,8 @@ With touch, physical gestures from one or more fingers can be used to either emu
 
 ### Device support
 
--   Phones and phablets
 -   Tablet
 -   PCs and laptops
--   Surface Hub
--   IoT
 
 ![touch](images/input-interactions/icons-touch01.png)
 
@@ -187,11 +107,9 @@ Some devices don't support touch at all, some devices support a single touch con
 
 Most devices that support multi-touch input, typically recognize ten unique, concurrent contacts.
 
-Surface Hub devices recognize 100 unique, concurrent touch contacts.
-
 In general, touch is:
 
--   Single user, unless being used with a Microsoft Team device like Surface Hub, where collaboration is emphasized.
+-   Single user.
 -   Not constrained to device orientation.
 -   Used for all interactions, including text input (touch keyboard) and inking (app-configured).
 
@@ -207,7 +125,6 @@ A touchpad combines both indirect multi-touch input with the precision input of 
 ### Device support
 
 -   PCs and laptops
--   IoT
 
 ![touchpad](images/input-interactions/icons-touchpad01.png)
 
@@ -230,19 +147,14 @@ A keyboard is the primary input device for text, and is often indispensable to p
 
 ### Device support
 
--   Phones and phablets
 -   Tablet
 -   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
 
 ![keyboard](images/input-interactions/icons-keyboard01.png)
 
 ### Typical usage
 
-Users can interact with Universal Windows apps through a hardware keyboard and two software keyboards: the On-Screen Keyboard (OSK) and the touch keyboard.
+Users can interact with Windows apps through a hardware keyboard and two software keyboards: the On-Screen Keyboard (OSK) and the touch keyboard.
 
 The OSK is a visual, software keyboard that you can use instead of the physical keyboard to type and enter data using touch, mouse, pen/stylus or other pointing device (a touch screen is not required). The OSK is provided for systems that don't have a physical keyboard, or for users whose mobility impairments prevent them from using traditional physical input devices. The OSK emulates most, if not all, the functionality of a hardware keyboard.
 
@@ -268,11 +180,8 @@ A mouse is best suited for productivity apps and high-density UI where user inte
 
 ### Device support
 
--   Phones and phablets
 -   Tablet
 -   PCs and laptops
--   Surface Hub
--   IoT
 
 ![mouse](images/input-interactions/icons-mouse01.png)
 
@@ -296,9 +205,6 @@ A gesture is any form of user movement that is recognized as input for controlli
 ### Device support
 
 -   PCs and laptops
--   IoT
--   Xbox
--   HoloLens
 
 ![gesture](images/input-interactions/icons-gesture01.png)
 
@@ -324,8 +230,6 @@ The gamepad/controller is a highly specialized device typically dedicated to pla
 ### Device support
 
 -   PCs and laptops
--   IoT
--   Xbox
 
 ![controller](images/input-interactions/icons-controller01.png)
 
@@ -340,15 +244,8 @@ Accommodating as many users and devices as possible and designing your apps to w
 
 ### Device support
 
--   Phones and phablets
 -   Tablet
 -   PCs and laptops
--   Surface Hub
--   IoT
--   Xbox
--   HoloLens
-
-![multiple inputs](images/input-interactions/icons-inputdevices03-vertical.png)
 
 ### Typical usage
 

@@ -22,9 +22,6 @@ Before starting, you should be familiar with the MediaPlayerElement and the Medi
 > [!TIP]
 > The examples in this topic are based on the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls). You can download the sample to view and run the completed code.
 
-> [!NOTE]
-> **MediaPlayerElement** is only available in Windows 10, version 1607 and later. If you are developing an app for an earlier version of Windows 10 you will need to use [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) instead. All of the examples on this page work with **MediaElement** as well.
-
 ## When should you customize the template?
 
 **MediaPlayerElement** has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They're provided by the [**MediaTransportControls**](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the [**IsCompact**](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact) property to specify whether the controls are shown in one row or two.

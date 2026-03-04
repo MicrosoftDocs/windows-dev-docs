@@ -28,9 +28,6 @@ You will typically need to present the list such that it appears to grow from th
 
 To create an inverted list, use a list view with an [ItemsStackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel) as its items panel. On the ItemsStackPanel, set the [ItemsUpdatingScrollMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsstackpanel.itemsupdatingscrollmode) to [KeepLastItemInView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsupdatingscrollmode).
 
-> [!IMPORTANT]
-> The **KeepLastItemInView** enum value is available starting with Windows 10, version 1607. You can't use this value when your app runs on earlier versions of Windows 10.
-
 This example shows how to align the list view’s items to the bottom and indicate that when there is a change to the items the last item should remain in view.
  
  **XAML**

@@ -70,14 +70,6 @@ Certain conditions require TextBlock to fall back to a more feature-rich and CPU
 - [CharacterSpacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.characterspacing): Only the default value of 0 is fast path.
 - [TextTrimming](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.texttrimming): Only the `None`, `CharacterEllipsis`, and `WordEllipsis` values are fast path. The `Clip` value disables the fast path.
 
-> [!NOTE]
-> **UWP Only:**
-> Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will cause your text to render on the slow path. For more info about versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code).
->
-> - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography): Only the default values for the various `Typography` properties are fast path.
-> - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): If [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) is not 0, the `BaselineToBaseline` and `MaxHeight` values disable the fast path.
-> - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Only `false` is fast path. Setting this property to `true` disables the fast path.
-
 You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.debugsettings.istextperformancevisualizationenabled) property to `true` during debugging to determine whether text is using fast path rendering. When this property is set to `true`, the text that is on the fast path displays in a bright green color.
 
 You typically set debug settings in the [OnLaunched](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) method override in the code-behind page for `App.xaml`, like this.

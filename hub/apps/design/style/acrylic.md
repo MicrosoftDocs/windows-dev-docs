@@ -90,7 +90,7 @@ It's important to ensure that any text your app presents to users meets contrast
 
 ## Apply acrylic in your app
 
-To learn how to apply background acrylic or in-app acrylic in your app, including how to create custom acrylic brushes, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](/windows/apps/windows-app-sdk/system-backdrop-controller).
+To learn how to apply background acrylic or in-app acrylic in your app, including how to create custom acrylic brushes, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](/windows/apps/develop/ui/system-backdrops).
 
 ## Do's and don'ts
 

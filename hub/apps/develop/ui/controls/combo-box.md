@@ -174,22 +174,6 @@ By default, the SelectionChanged event occurs when a user clicks, taps, or press
 
 To make a combo box that "live updates" while the user is navigating the open list with the arrow keys (like a Font selection drop-down), set [SelectionChangedTrigger](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.selectionchangedtrigger) to [Always](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxselectionchangedtrigger). This causes the SelectionChanged event to occur when focus changes to another item in the open list.
 
-#### Selected item behavior change
-
-In Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, the behavior of selected items is updated to support editable combo boxes.
-
-Prior to SDK 17763, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) was required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
-
-- SelectedItem = null
-- SelectedValue = null
-- SelectedIndex = -1
-
-In SDK 17763 and later, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) is not required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
-
-- SelectedItem = Pink
-- SelectedValue = Pink
-- SelectedIndex = -1
-
 ### Text Search
 
 Combo boxes automatically support search within their collections. As users type characters on a physical keyboard while focused on an open or closed combo box, candidates matching the user's string are brought into view. This functionality is especially helpful when navigating a long list. For example, when interacting with a drop-down containing a list of states, users can press the "w" key to bring "Washington" into view for quick selection. The text search is not case-sensitive.

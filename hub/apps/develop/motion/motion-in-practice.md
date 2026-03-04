@@ -9,7 +9,7 @@ doc-status: Published
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
-# Bringing it together
+# Animations in Windows app
 
 Timing, easing, directionality, and gravity work together to form the foundation of Fluent motion. Each has to be considered in the context of the others, and applied appropriately in the context of your app.
 
