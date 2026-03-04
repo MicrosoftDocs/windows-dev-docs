@@ -16,11 +16,6 @@ ms.localizationpriority: medium
 
 Design your app so that users can interact with it through a touchpad. A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.
 
- 
-
-![touchpad](images/input-patterns/input-touchpad.jpg)
-
-
 Touchpad interactions require three things:
 
 -   A standard touchpad or a Windows Precision Touchpad.
@@ -59,56 +54,17 @@ Users can set far more Precision Touchpad gestures and interaction behaviors tha
 
 Here are some examples of touchpad-optimized gestures for performing common tasks.
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Term</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Three-finger tap</p></td>
-<td align="left"><p>User preference to search with <strong>Cortana</strong> or show <strong>Action Center</strong>.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Three finger slide</p></td>
-<td align="left"><p>User preference to open the virtual desktop Task View, show Desktop, or switch between open apps.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Single finger tap for primary action</p></td>
-<td align="left"><p>Use a single finger to tap an element and invoke its primary action (such as launching an app or executing a command).</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Two finger tap to right-click</p></td>
-<td align="left"><p>Tap with two fingers simultaneously on an element to select it and display contextual commands.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Two finger slide to pan</p></td>
-<td align="left"><p>Slide is used primarily for panning interactions but can also be used for moving, drawing, or writing.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Pinch and stretch to zoom</p></td>
-<td align="left"><p>The pinch and stretch gestures are commonly used for resizing and Semantic Zoom.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Single finger press and slide to rearrange</p></td>
-<td align="left"><p>Drag an element.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Single finger press and slide to select text</p></td>
-<td align="left"><p>Press within selectable text and slide to select it. Double-tap to select a word.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Left and right click zone</p></td>
-<td align="left"><p>Emulate the left and right button functionality of a mouse device.</p></td>
-</tr>
-</tbody>
-</table>
+| Term | Description |
+|---|---|
+| Three-finger tap | User preference to search with **Cortana** or show **Action Center**. |
+| Three finger slide | User preference to open the virtual desktop Task View, show Desktop, or switch between open apps. |
+| Single finger tap for primary action | Use a single finger to tap an element and invoke its primary action (such as launching an app or executing a command). |
+| Two finger tap to right-click | Tap with two fingers simultaneously on an element to select it and display contextual commands. |
+| Two finger slide to pan | Slide is used primarily for panning interactions but can also be used for moving, drawing, or writing. |
+| Pinch and stretch to zoom | The pinch and stretch gestures are commonly used for resizing and Semantic Zoom. |
+| Single finger press and slide to rearrange | Drag an element. |
+| Single finger press and slide to select text | Press within selectable text and slide to select it. Double-tap to select a word. |
+| Left and right click zone | Emulate the left and right button functionality of a mouse device. |
 
  
 
@@ -135,7 +91,7 @@ For more general guidance about visual feedback, see [Guidelines for visual feed
 
 A set of standard cursors is available for a touchpad pointer. These are used to indicate the primary action of an element.
 
-Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. UWP apps specify a cursor image through the [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) function.
+Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. WinUI apps specify a cursor image through the [**PointerCursor**](/uwp/api/windows.ui.core.corewindow.pointercursor) function.
 
 If you need to customize the mouse cursor:
 

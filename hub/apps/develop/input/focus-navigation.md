@@ -12,9 +12,7 @@ dev-contact: niallm
 doc-status: Published
 ms.localizationpriority: medium
 ---
-# Focus navigation for keyboard, gamepad, remote control, and accessibility tools
-
-![Keyboard, remote, and D-pad](images/dpad-remote/dpad-remote-keyboard.png)
+# Focus navigation for keyboard and accessibility tools
 
 Use focus navigation to provide comprehensive and consistent interaction experiences in your Windows apps and custom controls for keyboard power users, those with disabilities and other accessibility requirements, as well as the 10-foot experience of television screens and the Xbox One.
 
