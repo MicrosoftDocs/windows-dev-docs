@@ -42,7 +42,7 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **Segoe Fluent Icons Font updated**: The Segoe Fluent Icons Font documentation has been refreshed with the latest icon additions and usage guidance — [View icons](/windows/apps/design/style/segoe-fluent-icons-font).
 - **WinUI terminology clarification**: Updated terminology across documentation for clarity — "WinUI 2" is now referred to as "WinUI for UWP" and "WinUI 3" is now simply "WinUI" to reflect current naming conventions.
 - **Windows Developer Support hub**: New centralized support page with quick help actions, community channels, and Microsoft support contacts — [Get support](/windows/apps/develop/support).
-- **PowerToys**. 0.97.2 release with new features and improvements to existing tools: ([Microsoft PowerToys: Utilities to customize Windows](/windows/powertoys/)
+- **PowerToys**: 0.97.2 release with new features and improvements to existing tools ([Microsoft PowerToys: Utilities to customize Windows](/windows/powertoys/)).
 - **Windows App SDK release notes**: Refactored and consolidated history from 0.5 through 2.0 — find the latest fixes and APIs in one place ([release notes hub](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)).
 - **Windows SDK updates**: New overview and detailed release notes to track SDK changes ([overview](/windows/apps/windows-sdk/) · [release notes](/windows/apps/windows-sdk/release-notes)).
 
