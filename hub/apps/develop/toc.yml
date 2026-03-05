@@ -246,44 +246,36 @@ items:
         href: ../windows-app-sdk/dwritecore.md
       - name: Win2D
         items:
-        - name: Overview of Win2D
+        - name: Overview
           href: win2d/index.md
-        - name: Win2D quickstart
-          href: win2d/hellowin2dworld.md
-        - name: Build a simple Win2D app
+        - name: "Tutorial: Build a simple Win2D app"
           href: win2d/quick-start.md
-        - name: Win2D in a Core App project
-          href: win2d/in-a-core-app.md
-        - name: Features
-          href: win2d/features.md
-        - name: Articles
-          items:
-          - name: Interop with Direct2D
-            href: win2d/interop.md
-          - name: Offscreen drawing
-            href: win2d/offscreen-drawing.md
-          - name: DPI and DIPs
-            href: win2d/dpi-and-dips.md
-          - name: Choosing control resolution
-            href: win2d/choosing-control-resolution.md
-          - name: Pixel formats
-            href: win2d/pixel-formats.md
-          - name: Premultiplied alpha
-            href: win2d/premultiplied-alpha.md
-          - name: Bitmap block compression
-            href: win2d/bitmap-block-compression.md
-          - name: Effect precision and clamping
-            href: win2d/effect-precision-and-clamping.md
-          - name: Handling device lost
-            href: win2d/handling-device-lost.md
-          - name: Using Win2D without built-in controls
-            href: win2d/using-win2d-without-built-in-controls.md
-          - name: Loading resources outside of CreateResources
-            href: win2d/loading-resources-outside-of-createresources.md
-          - name: Avoiding memory leaks
-            href: win2d/avoiding-memory-leaks.md
-          - name: Custom effects
-            href: win2d/custom-effects.md
+        - name: Interop with Direct2D
+          href: win2d/interop.md
+        - name: Offscreen drawing
+          href: win2d/offscreen-drawing.md
+        - name: DPI and DIPs
+          href: win2d/dpi-and-dips.md
+        - name: Choosing control resolution
+          href: win2d/choosing-control-resolution.md
+        - name: Pixel formats
+          href: win2d/pixel-formats.md
+        - name: Premultiplied alpha
+          href: win2d/premultiplied-alpha.md
+        - name: Bitmap block compression
+          href: win2d/bitmap-block-compression.md
+        - name: Effect precision and clamping
+          href: win2d/effect-precision-and-clamping.md
+        - name: Handling device lost
+          href: win2d/handling-device-lost.md
+        - name: Using Win2D without built-in controls
+          href: win2d/using-win2d-without-built-in-controls.md
+        - name: Loading resources outside of CreateResources
+          href: win2d/loading-resources-outside-of-createresources.md
+        - name: Avoiding memory leaks
+          href: win2d/avoiding-memory-leaks.md
+        - name: Custom effects
+          href: win2d/custom-effects.md
     - name: Input and interactions
       items:
         - name: Overview
@@ -559,6 +551,10 @@ items:
       items:
       - name: Overview
         href: user-interface.md
+      - name: Alignment, margin, and padding
+        href: ui/alignment-margin-padding.md
+      - name: Colors and themes
+        href: ui/theming.md  
       - name: Controls
         items:
         - name: Overview
@@ -595,11 +591,11 @@ items:
             href: ui/controls/listview-and-gridview.md
           - name: Flip view
             href: ui/controls/flipview.md
-          - name: PipsPager
+          - name: Pips pager
             href: ui/controls/pipspager.md
           - name: Tree view
             href: ui/controls/tree-view.md
-          - name: ItemsRepeater
+          - name: Items repeater
             href: ui/controls/items-repeater.md
           - name: Item containers and templates
             items:
@@ -745,29 +741,19 @@ items:
             href: ui/controls/labels.md
         - name: Title bar
           href: ui/controls/title-bar.md
-        - name: "Tutorial: Build XAML controls with C++/WinRT"
-          href: ../winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
-        - name: "Tutorial: Build XAML controls with C#"
-          href: ../winui/winui3/xaml-templated-controls-csharp-winui-3.md
-      - name: Shadows
-        href: ui/shadows.md
-      - name: Colors and themes
-        href: ui/theming.md
-      - name: Alignment, margin, and padding
-        href: ui/alignment-margin-padding.md
-      - name: Layout panels
-        href: ui/layout-panels.md
-      - name: Responsive layouts
-        href: ui/layouts-with-xaml.md
-      - name: Materials (Acrylic / Mica)
-        href: ../windows-app-sdk/system-backdrop-controller.md
+        - name: "Tutorial: Build XAML templated controls"
+          href: ../winui/winui3/xaml-templated-controls-winui-3.md
       - name: Layout
         items:
-        - name: Custom panels
-          href: ../design/layout/custom-panels-overview.md
-        - name: 'Custom panel example: BoxPanel'
-          href: ../design/layout/boxpanel-example-custom-panel.md
-        - name: Attached Layout
+        - name: Panels
+          items:
+          - name: Layout panels
+            href: ui/layout-panels.md
+          - name: Custom panels
+            href: ../design/layout/custom-panels-overview.md
+          - name: "Tutorial: Create a custom panel"
+            href: ../design/layout/boxpanel-example-custom-panel.md
+        - name: Attached layouts
           href: ../design/layout/attached-layouts.md
         - name: Transforms
           href: platform/xaml/transforms.md
@@ -775,13 +761,21 @@ items:
           href: platform/xaml/3-d-perspective-effects.md
       - name: Navigation
         items:
-        - name: Basic page navigation
-          href: ui/navigation/navigate-between-two-pages.md
         - name: Navigation history and backwards navigation
           href: ui/navigation/navigation-history-and-backwards-navigation.md
+        - name: "Tutorial: Implement navigation between two pages"
+          href: ui/navigation/navigate-between-two-pages.md
+      - name: Materials
+        items:
+        - name: Overview
+          href: ui/materials.md
+        - name: System backdrops (Mica/Acrylic)
+          href: ui/system-backdrops.md
+        - name: In-app acrylic
+          href: ui/in-app-acrylic.md
       - name: Motion
         items:
-        - name: Motion in practice
+        - name: Overview
           href: motion/motion-in-practice.md
         - name: Page transitions
           href: motion/page-transitions.md
@@ -798,6 +792,10 @@ items:
               href: motion/storyboarded-animations.md
             - name: Key-frame and easing function animations
               href: motion/key-frame-and-easing-function-animations.md
+      - name: Responsive layouts
+        href: ui/layouts-with-xaml.md
+      - name: Shadows
+        href: ui/shadows.md   
       - name: Windowing
         items:
         - name: Overview
@@ -1029,8 +1027,6 @@ items:
         href: settings/settings-common.md
       - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
         href: settings/readclouddatasettings-exe.md
-    - name: WinUI templates in Visual Studio
-      href: ../winui/winui3/winui-project-templates-in-visual-studio.md    
   - name: API reference
     items:
     - name: Overview
@@ -1113,6 +1109,46 @@ items:
       href: /dotnet/api/
     - name: Schema specs for Windows apps >>
       href: /uwp/schemas/
+  - name: Tools
+    items:
+    - name: Agentic tools
+      href: ../dev-tools/agentic-tools.md
+    - name: Visual Studio
+      href: ../winui/winui3/winui-project-templates-in-visual-studio.md
+    - name: Windows App Development CLI
+      items:
+      - name: Overview
+        href: ../dev-tools/winapp-cli/index.md
+      - name: CLI reference
+        href: ../dev-tools/winapp-cli/usage.md
+      - name: Framework guides
+        items:
+        - name: Overview
+          href: ../dev-tools/winapp-cli/guides/index.md
+        - name: C++
+          href: ../dev-tools/winapp-cli/guides/cpp.md
+        - name: .NET
+          href: ../dev-tools/winapp-cli/guides/dotnet.md
+        - name: Electron
+          items:
+          - name: Setup
+            href: ../dev-tools/winapp-cli/guides/electron-setup.md
+          - name: Packaging
+            href: ../dev-tools/winapp-cli/guides/electron-packaging.md
+          - name: C++ notification addon
+            href: ../dev-tools/winapp-cli/guides/electron-cpp-notification-addon.md
+          - name: Phi Silica addon
+            href: ../dev-tools/winapp-cli/guides/electron-phi-silica-addon.md
+          - name: WinML addon
+            href: ../dev-tools/winapp-cli/guides/electron-winml-addon.md
+        - name: Flutter
+          href: ../dev-tools/winapp-cli/guides/flutter.md
+        - name: Rust
+          href: ../dev-tools/winapp-cli/guides/rust.md
+        - name: Tauri
+          href: ../dev-tools/winapp-cli/guides/tauri.md
+        - name: Packaging a CLI executable
+          href: ../dev-tools/winapp-cli/guides/packaging-cli.md
   - name: Tutorials
     items:
     - name: Win32 interop APIs (PInvoke) in a C# WinUI app

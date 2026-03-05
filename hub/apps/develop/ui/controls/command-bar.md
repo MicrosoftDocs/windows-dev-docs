@@ -20,9 +20,6 @@ Command bars provide users with easy access to your app's most common tasks. Com
 
 The CommandBar control is a general-purpose, flexible, light-weight control that can display both complex content, such as images or text blocks, as well as simple commands such as [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), [AppBarToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton), and [AppBarSeparator](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarseparator) controls.
 
-> [!NOTE]
-> XAML provides both the [AppBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbar) control and the [CommandBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar) control. You should use the AppBar only when you are upgrading a Universal Windows 8 app that uses the AppBar, and need to minimize changes. For new apps in Windows 10, we recommend using the CommandBar control instead. This document assumes you are using the CommandBar control.
-
 ## Anatomy
 
 By default, the command bar shows a row of icon buttons and an optional "see more" button, which is represented by an ellipsis \[...\]. Here's the command bar created by the example code shown later. It's shown in its closed compact state.

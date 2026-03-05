@@ -1,6 +1,26 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/develop/win2d/hellowin2dworld.md",
+      "redirect_url": "/windows/apps/develop/win2d/quick-start",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/features.md",
+      "redirect_url": "/windows/apps/develop/win2d/#features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/in-a-core-app.md",
+      "redirect_url": "/windows/apps/develop/win2d/",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/system-backdrop-controller.md",
+      "redirect_url": "/windows/apps/develop/ui/system-backdrops",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/winui/winui3/testing/index.md",
       "redirect_url": "/windows/apps/develop/testing/",
       "redirect_document_id": false
@@ -10766,6 +10786,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-csharp-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
+    "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/input/gamepad-and-remote-interactions.md",
       "redirect_url": "/windows/uwp/ui-input/gamepad-and-remote-interactions",
       "redirect_document_id": false
@@ -10868,6 +10898,11 @@
     {
       "source_path": "hub/apps/develop/ui/controls/inking-controls.md",
       "redirect_url": "/windows/uwp/ui-input/inking-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/system-requirements.md",
+      "redirect_url": "/windows/apps/windows-app-sdk",
       "redirect_document_id": false
     }
   ]

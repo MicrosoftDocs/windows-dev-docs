@@ -13,6 +13,9 @@ Windows apps support light and dark themes, and you can customize how your app r
 
 For design guidance on using color effectively, see [Color in Windows](../../design/signature-experiences/color.md).
 
+> [!div class="nextstepaction"]
+> [Open the WinUI Gallery app and see Colors in action](winui3gallery:/item/Color)
+
 ## Changing the theme
 
 You can change themes by changing the **RequestedTheme** property in your `App.xaml` file.
@@ -128,7 +131,7 @@ These shades can be accessed as [theme resources](../platform/xaml/xaml-theme-re
 - `SystemAccentColorDark2`
 - `SystemAccentColorDark3`
 
-You can also access the accent color palette programmatically with the [**UISettings.GetColorValue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.viewmanagement.uisettings.getcolorvalue) method and [**UIColorType**](/windows/windows-app-sdk/api/winrt/microsoft.ui.viewmanagement.uicolortype) enum.
+You can also access the accent color palette programmatically with the [**UISettings.GetColorValue**](/uwp/api/windows.ui.viewmanagement.uisettings.getcolorvalue) method and [**UIColorType**](/uwp/api/windows.ui.viewmanagement.uicolortype) enum.
 
 You can use the accent color palette for color theming in your app. Below is an example of how you can use the accent color palette on a button.
 
@@ -166,7 +169,7 @@ There are several APIs that can be used to add color to your application. First,
 <Button Background="MediumSlateBlue" Foreground="White">Button text</Button>
 ```
 
-You can create your own colors from RGB or hex values using the [**Color**](/windows/windows-app-sdk/api/winrt/microsoft.ui.color) struct in XAML.
+You can create your own colors from RGB or hex values using the [**Color**](/uwp/api/windows.ui.color) struct in XAML.
 
 ```xaml
 <Color x:Key="LightBlue">#FF36C0FF</Color>
