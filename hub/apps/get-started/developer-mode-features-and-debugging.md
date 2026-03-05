@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Developer Mode features and debugging
 
-To enable Developer Mode on you device, see [Settings for developers](/windows/advanced-settings/developer-mode). This article covers advanced features of Developer Mode, Developer Mode in previous versions of Windows 10, and debugging failures related to Developer Mode installations.
+To enable Developer Mode on your device, see [Settings for developers](/windows/advanced-settings/developer-mode). This article covers advanced features of Developer Mode, Developer Mode in previous versions of Windows 10, and debugging failures related to Developer Mode installations.
 
 ## Additional Developer Mode features
 
@@ -101,7 +101,7 @@ To fix this issue:
     - 3197985
 
 3. Check for Windows updates in **Settings &rarr; Updates and Security &rarr; Windows Updates**.
-1. Verify that the Windows Developer Mode package is present in **Settings &rarr; System &rarr; Optional features &rarr; Add a feature** (on versions older than Windows 10 22H2, look under **Settings** **→** **Apps** **→** **Apps & features** **→ Optional features** **→** **Add a feature**). If it's missing, Windows can't find the correct package for your computer.
+4. Verify that the Windows Developer Mode package is present in **Settings &rarr; System &rarr; Optional features &rarr; Add a feature** (on versions older than Windows 10 22H2, look under **Settings** **→** **Apps** **→** **Apps & features** **→ Optional features** **→** **Add a feature**). If it's missing, Windows can't find the correct package for your computer.
 
 5. After performing the above steps, *disable* and then *re-enable* Developer Mode to verify the fix.
 
