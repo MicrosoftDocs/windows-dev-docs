@@ -69,7 +69,7 @@ A [**ResourceDictionary.ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedi
 
 ## Contrast colors
 
-On the *Settings > Ease of access > Contrast themes* page (shown in the following image), users can select from four default contrast themes: **Aquatic**, **Desert**, **Dusk**, and **Night sky**.
+On the *Settings > Accessibility > Contrast themes* page (shown in the following image), users can select from four default contrast themes: **Aquatic**, **Desert**, **Dusk**, and **Night sky**.
 
 :::image type="content" border="false" source="images/contrast-theme-settings.png" alt-text="Contrast theme settings.":::
 
