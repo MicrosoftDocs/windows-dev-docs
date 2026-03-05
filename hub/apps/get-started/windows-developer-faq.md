@@ -113,7 +113,7 @@ Topics covered include:
 
 <details><summary>When I build an app using Windows App SDK and WinUI, am I building a "WinUI app"?</summary>
 
-> Yes — “WinUI app” is the recommended term. WinUI apps are referred to as “WinUI apps” because WinUI for UWP is not a type of app but a set of components used in UWP apps.
+> Yes — "WinUI app" is the recommended term. WinUI apps are referred to as "WinUI apps" because WinUI for UWP is not a type of app but a set of components used in UWP apps.
 
 </details>
 
@@ -128,7 +128,7 @@ Topics covered include:
 > Migrating UI components is generally straightforward (for C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)). Otherwise, migration cost depends primarily on:
 >
 > 1. **Project file and MSBuild customization:** Migration effort varies depending on advanced MSBuild usage.
-> 2. **.NET API migration:** UWP apps using .NET must move to .NET 6 or later. In many cases, adopting .NET 6 is straightforward.
+> 2. **.NET API migration:** UWP apps using .NET must move to .NET 8 or later. In many cases, adopting .NET 8 is straightforward.
 > 3. **UI component libraries:** Libraries must have versions targeting WinUI.
 > 4. If the UWP app is written in the now-superseded C++/CX, some source code porting is required. See [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
 >
@@ -209,7 +209,7 @@ Topics covered include:
 
 <details><summary>If I create a WinUI app, will it look modern on both Windows 11 and Windows 10?</summary>
 
-> Yes. Your app’s UI will inherit the latest Fluent UI design principles on all supported versions of Windows 11 and Windows 10, down to version 1809, in both packaged and unpackaged scenarios.
+> Yes. Your app's UI will inherit the latest Fluent UI design principles on all supported versions of Windows 11 and Windows 10, down to version 1809, in both packaged and unpackaged scenarios.
 
 </details>
 
@@ -239,7 +239,7 @@ Topics covered include:
 
 <details><summary>If I build a new WPF app, will it look dated compared to other new Windows apps?</summary>
 
-> When developing a WPF application with .NET 9 or later, you can ensure your app matches the sleek, modern look of Windows 11. The new Fluent theme for WPF introduces a contemporary Windows 11 aesthetic, with integrated Light/Dark mode and system accent color support. This modernizes your app’s appearance and delivers a polished, cohesive user experience.
+> When developing a WPF application with .NET 9 or later, you can ensure your app matches the sleek, modern look of Windows 11. The new Fluent theme for WPF introduces a contemporary Windows 11 aesthetic, with integrated Light/Dark mode and system accent color support. This modernizes your app's appearance and delivers a polished, cohesive user experience.
 
 </details>
 
@@ -289,7 +289,7 @@ Topics covered include:
 
 <details><summary>Our team has strong web front-end development skills. Should we consider using React Native for Desktop?</summary>
 
-> Teams with strong web development experience may want to consider React Native for Desktop. It includes React Native for [Windows](https://github.com/microsoft/react-native-windows) and [macOS](https://github.com/microsoft/react-native-macos). With the “Learn once, write anywhere” approach, existing JavaScript, TypeScript, and React skills can be used to build native Windows and macOS apps.
+> Teams with strong web development experience may want to consider React Native for Desktop. It includes React Native for [Windows](https://github.com/microsoft/react-native-windows) and [macOS](https://github.com/microsoft/react-native-macos). With the "Learn once, write anywhere" approach, existing JavaScript, TypeScript, and React skills can be used to build native Windows and macOS apps.
 > 
 > React Native for Desktop renders UI directly to native primitives, delivering native performance and platform capabilities.
 > 
@@ -388,7 +388,7 @@ Topics covered include:
 > - Are you building Windows-first or cross-platform?
 > - What languages or skills do you already have — .NET, JavaScript, something else?
 > - Do you need access to Windows-specific APIs?
-> - Which framework’s capabilities best match your app’s requirements?
+> - Which framework's capabilities best match your app's requirements?
 > - See [this table](/windows/apps/get-started/#app-development-framework-feature-comparison) for additional comparison factors.
 > 
 > For many business apps, teams often choose based on existing skills and what the team is most comfortable using.
@@ -399,7 +399,7 @@ Topics covered include:
 
 > Consider the following when choosing a development approach for your web app:
 > 
-> - Blazor is recommended for building front-end web apps with .NET. It lets you build both the front-end and back-end using .NET, saving time and cost, and it’s especially good for enterprise apps.
+> - Blazor is recommended for building front-end web apps with .NET. It lets you build both the front-end and back-end using .NET, saving time and cost, and it's especially good for enterprise apps.
 > - JavaScript web apps still make sense if you want to leverage existing JavaScript skills or need to integrate with established JS libraries or frameworks.
 > - Existing apps using older frameworks like Web Forms, MVC, or Razor Pages remain supported and can continue to be developed and maintained.
 
@@ -410,7 +410,7 @@ Topics covered include:
 > Many customers are building with WinUI today, including Adobe and Apple:
 > 
 > - [Adobe Fresco](https://apps.microsoft.com/detail/xp8c8r0zkzr27v), a free drawing and painting app.
-> - Apple’s [Apple Music](https://apps.microsoft.com/detail/9pfhdd62mxs1), [Apple TV](https://apps.microsoft.com/detail/9nm4t8b9jqz1), and [Apple Devices](https://apps.microsoft.com/detail/9np83lwlpz9k) apps were built with WinUI and the Windows App SDK.
+> - Apple's [Apple Music](https://apps.microsoft.com/detail/9pfhdd62mxs1), [Apple TV](https://apps.microsoft.com/detail/9nm4t8b9jqz1), and [Apple Devices](https://apps.microsoft.com/detail/9np83lwlpz9k) apps were built with WinUI and the Windows App SDK.
 > 
 > Microsoft has also built many WinUI apps, such as Windows 11 File Explorer and the Photos app.
 
@@ -432,7 +432,7 @@ Topics covered include:
 
 <details><summary>Who is building Blazor apps today?</summary>
 
-> GE Digital’s [FlightPulse](https://customers.microsoft.com/story/816181-ge-aviation-manufacturing-azure) airline system uses Blazor for the backend configuration of everything pilots see, bringing sensor data and analytics directly to pilots to improve safety and efficiency.
+> GE Digital's [FlightPulse](https://customers.microsoft.com/story/816181-ge-aviation-manufacturing-azure) airline system uses Blazor for the backend configuration of everything pilots see, bringing sensor data and analytics directly to pilots to improve safety and efficiency.
 > 
 > See more [Blazor customer stories](https://dotnet.microsoft.com/platform/customers/blazor) on the .NET site.
 
