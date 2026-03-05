@@ -5956,6 +5956,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/developer-mode-features-and-debugging.md",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/project-reunion/index.md",
       "redirect_url": "/windows/apps/windows-app-sdk/index",
       "redirect_document_id": false
