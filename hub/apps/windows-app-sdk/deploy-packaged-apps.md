@@ -37,7 +37,7 @@ However, if you build your app package manually using a separate Windows Applica
 
  ```xml
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>
 </ItemGroup>
@@ -58,10 +58,10 @@ The Deployment API is provided by the Windows App SDK framework package, and is 
 1. To deploy the Singleton package for features not in the Framework package (for example, push notifications).
 2. To deploy the Main package, which enables automatic updates to the Framework package from the Microsoft Store.
 
-For packaged apps that are *not* distributed through the Store, you as the developer are responsible for distributing the Framework package. We recommended that you call the Deployment API so that any critical servicing updates are delivered. Note that for using features outside the Framework package (for example, push notifications), the Singleton package must be deployed (this can be done with the Deployment API, or by redistributing the MSIX packages using your own install method).
+For packaged apps that are *not* distributed through the Store, you as the developer are responsible for distributing the Framework package. We recommend that you call the Deployment API so that any critical servicing updates are delivered. Note that for using features outside the Framework package (for example, push notifications), the Singleton package must be deployed (this can be done with the Deployment API, or by redistributing the MSIX packages using your own install method).
 
 > [!IMPORTANT]
-> In Windows App SDK version 1.0, only packaged apps that are full trust or that have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the Deployment API to install the Main and Singleton package dependencies. Support for partial trust packaged apps will be coming in later releases. 
+> Only packaged apps that are full trust or that have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the Deployment API to install the Main and Singleton package dependencies.
 
 You should call the Deployment API after your app's process is initialized, but before your app uses Windows App SDK runtime features that use the Singleton package (for example, push notifications). The main methods of the Deployment API are the static [GetStatus](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.getstatus) and [Initialize](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize) methods of the [DeploymentManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager) class.
 
