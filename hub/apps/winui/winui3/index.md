@@ -90,7 +90,7 @@ To get started with WinUI, you can try out these resources to get you started:
 :::row:::
     :::column:::
         [![Hello WinUI](images/hero-hello-winui.png)](../../get-started/start-here.md)<br>
-        **[Hello, WinUI](../../get-started/start-here.md))**<br>
+        **[Hello, WinUI](../../get-started/start-here.md)**<br>
         Setup your development environment and build your first WinUI app.
     :::column-end:::
     :::column:::
