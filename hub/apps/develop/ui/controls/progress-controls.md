@@ -127,7 +127,7 @@ When the duration of the operation is known and the ring visual is desired, when
 > - **Important APIs:** [ProgressBar class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressBar), [IsIndeterminate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressbar.isindeterminate), [ProgressRing class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ProgressRing), [IsActive property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.progressring.isactive)
 
 > [!div class="nextstepaction"]
-> Open the WinUI 3 Gallery app and see the [ProgressBar](winui3gallery:/item/ProgressBar) or [ProgressRing](winui3gallery:/item/ProgressRing).
+> Open the WinUI 3 Gallery app and see the [ProgressBar](winui3gallery://item/ProgressBar) or [ProgressRing](winui3gallery://item/ProgressRing).
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

@@ -56,7 +56,7 @@ Learn more about ItemsRepeater by reading its [Guidelines](../../../design/contr
 > - **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview), [ItemsSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource), [Items property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.items)
 
 > [!div class="nextstepaction"]
-> Open the WinUI 3 Gallery app and see the [ListView](winui3gallery:/item/ListView) or the [GridView](winui3gallery:/item/GridView) in action.
+> Open the WinUI 3 Gallery app and see the [ListView](winui3gallery://item/ListView) or the [GridView](winui3gallery://item/GridView) in action.
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

@@ -31,7 +31,7 @@ If a particular command will be used frequently and you have the space available
 > - **Important APIs:** [MenuFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout), [ContextFlyout property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout), [FlyoutBase.AttachedFlyout property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.attachedflyout)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see MenuFlyout in action](winui3gallery:/item/MenuFlyout)
+> [Open the WinUI 3 Gallery app and see MenuFlyout in action](winui3gallery://item/MenuFlyout)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -159,7 +159,7 @@ Light dismiss controls such as menus, context menus, and other flyouts, trap key
 > - **Important APIs:** [MenuBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar). [MenuBarItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubaritem)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery:/item/MenuBar)
+> [Open the WinUI 3 Gallery app and see MenuBar in action](winui3gallery://item/MenuBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

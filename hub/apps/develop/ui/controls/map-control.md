@@ -27,7 +27,7 @@ Use a MapControl when you want to display geographic data in your app, such as:
 > - **Important APIs**: [MapControl class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol), [MapIcon class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapicon), [MapElementsLayer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapelementslayer)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the MapControl in action](winui3gallery:/item/MapControl)
+> [Open the WinUI 3 Gallery app and see the MapControl in action](winui3gallery://item/MapControl)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

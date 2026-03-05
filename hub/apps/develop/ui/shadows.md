@@ -29,7 +29,7 @@ Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a b
 ![A screen shot of ThemeShadow applied to a MenuFlyout with three open, nested menus.](../../design/layout/images/elevation-shadow/themeshadow-menuflyout.png)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see ThemeShadow in action](winui3gallery:/item/ThemeShadow)
+> [Open the WinUI Gallery app and see ThemeShadow in action](winui3gallery://item/ThemeShadow)
 
 
 ### ThemeShadow in common controls

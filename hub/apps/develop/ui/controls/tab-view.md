@@ -95,7 +95,7 @@ Press <kbd>Ctrl + F4</kbd> to raise  the [TabCloseRequested](/windows/windows-ap
 > - **Important APIs**: [TabView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview), [TabViewItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TabView in action](winui3gallery:/item/TabView)
+> [Open the WinUI 3 Gallery app and see the TabView in action](winui3gallery://item/TabView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
