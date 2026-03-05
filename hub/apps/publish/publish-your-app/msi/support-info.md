@@ -14,8 +14,6 @@ You are responsible for ensuring your app complies with privacy laws and regulat
 
 :::image type="content" source="images/msiexe-privacy-policy.png" lightbox="images/msiexe-privacy-policy.png" alt-text="A screenshot showing the privacy policy url and textbox for a developer.":::
 
-To help you determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md#105-personal-information).
-
 > [!NOTE]
 > Microsoft doesn't provide a default privacy policy for your app. Likewise, your app is not covered by any Microsoft privacy policy.
 
