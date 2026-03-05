@@ -58,7 +58,9 @@ When you enable Developer Mode on desktop, a package of features is installed, i
 
 ### Device Portal
 
-To learn more about Device Portal, see [Windows Device Portal overview](/windows/uwp/debug-test-perf/device-portal) and [Device Portal for desktop](/windows/uwp/debug-test-perf/device-portal-desktop).
+To learn more about Device Portal, see [Windows Device Portal overview](/windows/uwp/debug-test-perf/device-portal).
+
+For specific setup instructions, see [Device Portal for desktop](/windows/uwp/debug-test-perf/device-portal-desktop).
 
 ### Device Discovery
 
@@ -82,3 +84,107 @@ SSH login is done via the *DevToolsUser* account, which accepts a password for a
 ##### Caveats for SSH usage
 
 The existing SSH server used in Windows is not yet protocol compliant. Using an SFTP or SSH client may require special configuration. In particular, the SFTP subsystem runs at version 3 or less, so any connecting client should be configured to expect an old server. The SSH server on older devices uses `ssh-dss` for public key authentication (which OpenSSH has deprecated). To connect to such devices, the SSH client must be manually configured to accept `ssh-dss`.
+
+## Failure to install Developer Mode package
+
+Sometimes, due to network or administrative issues, Developer Mode won't install correctly. The Developer Mode package is required for remote deployment to this PC (using Device Portal from a browser or Device Discovery to enable SSH), but not for local development. Even if you encounter these issues, you can still deploy your app locally using Visual Studio (or from this device to another device).
+
+If Developer Mode doesn't install correctly, we encourage you to file a feedback request using the Feedback Hub app.
+
+> [!NOTE]
+> 1. Install the [Feedback Hub app](https://apps.microsoft.com/store/detail/feedback-hub/9NBLGGH4R32N) (if you don't already have it) and open it.
+> 2. Click **Add new feedback**.
+> 3. Choose the **Developer Platform** category and the **Developer Mode** subcategory.
+> 4. Fill out the fields (you may optionally attach a screenshot) and click **Submit**.
+>
+> Submitting feedback will help Microsoft resolve the issue you encountered.
+
+### Failed to locate the package
+
+> Developer Mode package couldn't be located in Windows Update. Error Code 0x80004005. Learn more.
+
+This error may occur due to a network connectivity problem, Enterprise settings, or the package may be missing.
+
+To fix this issue:
+
+1. Ensure that your computer is connected to the internet.
+2. If you're on a domain-joined computer, speak to your network administrator. The Developer Mode package (like all Features on Demand) is blocked by default in WSUS 2.1. In order to unblock the Developer Mode package in the current and previous releases, the following KBs should be allowed in WSUS:
+
+    - 4016509
+    - 3180030
+    - 3197985
+
+3. Check for Windows updates in **Settings &rarr; Updates and Security &rarr; Windows Updates**.
+1. Verify that the Windows Developer Mode package is present in **Settings &rarr; System &rarr; Optional features &rarr; Add a feature** (on versions older than Windows 10 22H2, look under **Settings** **→** **Apps** **→** **Apps & features** **→ Optional features** **→** **Add a feature**). If it's missing, Windows can't find the correct package for your computer.
+
+5. After performing the above steps, *disable* and then *re-enable* Developer Mode to verify the fix.
+
+### Failed to install the package
+
+> Developer Mode package failed to install. Error code 0x80004005. Learn more.
+
+This error may occur due to incompatibilities between your build of Windows and the Developer Mode package.
+
+To fix this issue:
+
+1. Check for Windows updates in the **Settings &rarr; Updates and Security &rarr; Windows Updates**.
+2. Restart your computer to ensure all updates are applied.
+
+## Use group policies or registry keys to enable a device
+
+For most developers, you'll want to use Windows Settings to enable your device for debugging. In certain scenarios (such as automated tests) you can use other ways to enable your Windows desktop device for development.
+
+> [!NOTE]
+> These steps will not enable the SSH server or allow the device to be targeted for remote deployment and debugging.
+
+You can use `gpedit.msc` to set the group policies to enable your device, unless you have *Windows 10 Home* or *Windows 11 Home*. If you do, you'll need to use regedit or PowerShell commands to set the registry keys directly to enable your device.
+
+### Use gpedit to enable your device
+
+1. Run `gpedit.msc`.
+
+2. Go to **Local Computer Policy &rarr; Computer Configuration &rarr; Administrative Templates &rarr; Windows Components &rarr; App Package Deployment**.
+
+3. Edit the following policies to enable sideloading:
+
+    - Allow all trusted apps to install.
+
+    OR
+
+    Edit the following policies to enable both sideloading and Developer Mode:
+
+    - Allow all trusted apps to install.
+    - Allows development of UWP apps and installation from an *Integrated Development Environment (IDE)*.
+    - Reboot your machine.
+
+### Use regedit to enable your device
+
+1. Run `regedit`.
+
+2. To enable sideloading, set the value of this `DWORD` to `1`:
+
+    `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowAllTrustedApps`
+
+    OR
+
+    To enable developer mode, set the values of this `DWORD` to `1`:
+
+    `HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock\AllowDevelopmentWithoutDevLicense`
+
+### Use PowerShell to enable your device
+
+1. Run PowerShell with administrator privileges.
+
+2. To enable sideloading, run this command:
+
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowAllTrustedApps" /d "1"
+    ```
+
+    OR
+
+    To enable developer mode, run this command:
+
+    ```powershell
+    PS C:\WINDOWS\system32> reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
+    ```

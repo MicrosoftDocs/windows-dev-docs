@@ -43,6 +43,7 @@
       },
     "fileMetadata": {
       "ms.subservice": {
+        "apps/winapp-cli/**": "winapp-cli",
         "apps/design/**": "design",
         "apps/**": "apps",
         "apps/trace-processing/**": "",
@@ -114,6 +115,7 @@
       "feedback_product_url": 
       {
         "android/**": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
+        "apps/winapp-cli/**": "https://github.com/microsoft/WinAppCli/issues",
         "apps/**": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
         "apps/package-and-deploy/**": "https://github.com/microsoft/msix-packaging/issues",
         "apps/performance/**": "https://github.com/microsoft/Windows-Dev-Performance/issues",
@@ -145,6 +147,7 @@
       },
       "author":
       {
+        "apps/winapp-cli/**": "nickes",
         "android/**": "GrantMeStrength",
         "apps/**": "Karl-Bridge-Microsoft",
         "apps/api-reference/**": "Karl-Bridge-Microsoft",
@@ -247,6 +250,7 @@
       },
       "ms.author":
       {
+        "apps/winapp-cli/**": "nickes",
         "android/**": "jken",
         "apps/**": "kbridge",
         "apps/api-reference/**": "kbridge",
@@ -349,6 +353,7 @@
       },
       "ms.update-cycle":
       {
+        "apps/winapp-cli/**": "365-days",
         "android/**": "365-days",
         "apps/**": "365-days",
         "apps/api-reference/**": "365-days",

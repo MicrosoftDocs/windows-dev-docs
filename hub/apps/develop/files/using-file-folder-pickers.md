@@ -4,10 +4,13 @@ description: Learn how to use Windows App SDK file and folder pickers in your Wi
 ms.date: 10/28/2025
 ms.topic: how-to
 keywords: windows 11, winui, windows app sdk
+dev_langs:
+  - csharp
+  - cppwinrt
 # Customer intent: As a Windows app developer, I want to use the file picker APIs in Windows App SDK to allow users to open files and folders in my WinUI app, so that they can specify the name and location of the file or folder.
 ---
 
-# Open files and folders with pickers in WinUI 3
+# Tutorial: Open files and folders with pickers in WinUI
 
 Use Windows App SDK file and folder pickers to let users browse and select files or folders in your WinUI app. The picker APIs provide a familiar Windows experience that helps users navigate their device and cloud storage locations. This article shows you how to implement file open pickers and folder pickers, customize their behavior, and handle the selected results in your app.
 
@@ -81,9 +84,7 @@ else
 }
 ```
 
-This is the same example in C++:
-
-```cpp
+```cppwinrt
 #include <winrt/Microsoft.Windows.Storage.Pickers.h>
 #include <fstream>
 #include <string>
@@ -144,9 +145,7 @@ else
 }
 ```
 
-To perform the same operation in C++, use the following code:
-
-```cpp
+```cppwinrt
 #include <winrt/Microsoft.Windows.Storage.Pickers.h>
 #include <fstream>
 #include <string>
@@ -204,9 +203,7 @@ else
 }
 ```
 
-To perform the same operation in C++, use the following code:
-
-```cpp
+```cppwinrt
 #include <winrt/Microsoft.Windows.Storage.Pickers.h>
 
 using namespace winrt::Microsoft::Windows::Storage::Pickers;

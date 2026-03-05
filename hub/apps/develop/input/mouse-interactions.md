@@ -13,70 +13,26 @@ ms.localizationpriority: medium
 
 Optimize your Windows app design for touch input and get basic mouse support by default. 
 
-![mouse](images/input-patterns/input-mouse.jpg)
-
 Mouse input is best suited for user interactions that require precision when pointing and clicking. This inherent precision is naturally supported by the UI of Windows, which is optimized for the imprecise nature of touch.
 
 Where mouse and touch input diverge is the ability for touch to more closely emulate the direct manipulation of UI elements through physical gestures performed directly on those objects (such as swiping, sliding, dragging, rotating, and so on). Manipulations with a mouse typically require some other UI affordance, such as the use of handles to resize or rotate an object.
 
 This topic describes design considerations for mouse interactions.
 
-## The UWP app mouse language
+## The Windows mouse language
 
 A concise set of mouse interactions are used consistently throughout the system.
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Term</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left"><p>Hover to learn</p></td>
-<td align="left"><p>Hover over an element to display more detailed info or teaching visuals (such as a tooltip) without a commitment to an action.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Left-click for primary action</p></td>
-<td align="left"><p>Left-click an element to invoke its primary action (such as launching an app or executing a command).</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Scroll to change view</p></td>
-<td align="left"><p>Display scroll bars to move up, down, left, and right within a content area. Users can scroll by clicking scroll bars or rotating the mouse wheel. Scroll bars can indicate the location of the current view within the content area (panning with touch displays a similar UI).</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Right-click to select and command</p></td>
-<td align="left"><p>Right-click to display the navigation bar (if available) and the app bar with global commands. Right-click an element to select it and display the app bar with contextual commands for the selected element.</p>
-<div class="alert">
-<strong>Note</strong>  Right-click to display a context menu if selection or app bar commands are not appropriate UI behaviors. But we strongly recommend that you use the app bar for all command behaviors.
-</div>
-<div>
- 
-</div></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>UI commands to zoom</p></td>
-<td align="left"><p>Display UI commands in the app bar (such as + and -), or press Ctrl and rotate mouse wheel, to emulate pinch and stretch gestures for zooming.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>UI commands to rotate</p></td>
-<td align="left"><p>Display UI commands in the app bar, or press Ctrl+Shift and rotate mouse wheel, to emulate the turn gesture for rotating. Rotate the device itself to rotate the entire screen.</p></td>
-</tr>
-<tr class="odd">
-<td align="left"><p>Left-click and drag to rearrange</p></td>
-<td align="left"><p>Left-click and drag an element to move it.</p></td>
-</tr>
-<tr class="even">
-<td align="left"><p>Left-click and drag to select text</p></td>
-<td align="left"><p>Left-click within selectable text and drag to select it. Double-click to select a word.</p></td>
-</tr>
-</tbody>
-</table>
+| Term | Description |
+|---|---|
+| Hover to learn | Hover over an element to display more detailed info or teaching visuals (such as a tooltip) without a commitment to an action. |
+| Left-click for primary action | Left-click an element to invoke its primary action (such as launching an app or executing a command). |
+| Scroll to change view | Display scroll bars to move up, down, left, and right within a content area. Users can scroll by clicking scroll bars or rotating the mouse wheel. Scroll bars can indicate the location of the current view within the content area (panning with touch displays a similar UI). |
+| Right-click to select and command | Right-click to display the navigation bar (if available) and the app bar with global commands. Right-click an element to select it and display the app bar with contextual commands for the selected element.<br>**Note:** Right-click to display a context menu if selection or app bar commands are not appropriate UI behaviors. But we strongly recommend that you use the app bar for all command behaviors. |
+| UI commands to zoom | Display UI commands in the app bar (such as + and -), or press Ctrl and rotate mouse wheel, to emulate pinch and stretch gestures for zooming. |
+| UI commands to rotate | Display UI commands in the app bar, or press Ctrl+Shift and rotate mouse wheel, to emulate the turn gesture for rotating. Rotate the device itself to rotate the entire screen. |
+| Left-click and drag to rearrange | Left-click and drag an element to move it. |
+| Left-click and drag to select text | Left-click within selectable text and drag to select it. Double-click to select a word. |
 
 ## Mouse input events
 

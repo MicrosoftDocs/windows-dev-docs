@@ -47,11 +47,6 @@ To create a tree view, you use a [TreeView](/windows/windows-app-sdk/api/winrt/m
 
 You can bind a hierarchical data source to the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource) property to provide the tree view content, just as you would with [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)'s **ItemsSource**. Similarly, use [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate) (and the optional [ItemTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate)) to provide a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) that renders the item.
 
-> [!IMPORTANT]
-> **ItemsSource** and its related APIs require Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-sdk)) or later, or [WinUI for UWP](/windows/uwp/get-started/winui2/).
->
-> **ItemsSource** is an alternative mechanism to **TreeView.RootNodes** for putting content into the **TreeView** control. You cannot set both **ItemsSource** and **RootNodes** at the same time. When you use **ItemsSource**, nodes are created for you, and you can access them from the **TreeView.RootNodes** property.
-
 Here's an example of a simple tree view declared in XAML. You typically add the nodes in code, but we show the XAML hierarchy here because it can be helpful for visualizing how the hierarchy of nodes is created.
 
 ```xaml
@@ -173,9 +168,6 @@ Dim pictureNode As New muxc.TreeViewNode With {.Content = picturesFolder}
 
 You can provide a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
 
-> [!NOTE]
-> In Windows 10, version 1803, you have to re-template the **TreeView** control and specify a custom **ItemTemplate** if your content is not a string. In later versions, set the **ItemTemplate** property. For more info, see [TreeView.ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemtemplate).
-
 ### Item container style
 
 Whether you use **ItemsSource** or **RootNodes**, the actual element used to display each node – called the "container" – is a [TreeViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem) object. You can modify **TreeViewItem** properties to style the container using the **TreeView**'s [ItemContainerStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemcontainerstyle) or [ItemContainerStyleSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemcontainerstyleselector) properties.
@@ -215,7 +207,7 @@ For example, in a file explorer app, you could use one data template for folders
 Here is an example of how to create and use an item template selector.  For more info, see the [DataTemplateSelector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector) class.
 
 > [!NOTE]
-> This code is part of a larger example and won't work on its own. To see the full example, including the code that defines `ExplorerItem`, check out the [Xaml-Controls-Gallery repository](https://github.com/Microsoft/WinUI-Gallery) on GitHub. [TreeViewPage.xaml](https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml) and [TreeViewPage.xaml.cs](https://github.com/Microsoft/WinUI-Gallery/blob/1ecd85c908a8a1cb9a8201e548f58db379801e69/XamlControlsGallery/ControlPages/TreeViewPage.xaml.cs) contain the relevant code.
+> This code is part of a larger example and won't work on its own. To see the full example, including the code that defines `ExplorerItem`, check out the [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery) on GitHub. [TreeViewPage.xaml](https://github.com/microsoft/WinUI-Gallery/blob/853358e358e2b61f69752d8bad573003b3c63643/WinUIGallery/Samples/ControlPages/TreeViewPage.xaml) and [TreeViewPage.xaml.cs](https://github.com/microsoft/WinUI-Gallery/blob/853358e358e2b61f69752d8bad573003b3c63643/WinUIGallery/Samples/ControlPages/TreeViewPage.xaml.cs) contain the relevant code.
 
 ```xaml
 <Page.Resources>

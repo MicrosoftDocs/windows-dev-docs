@@ -126,7 +126,7 @@ In some cases you might need to use measurements from one class in the other cla
 | [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) | [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.dispatcherqueue), [AssociateWithDispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.associatewithdispatcherqueue) |
 | [Compositor](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.compositor) | N/A |
 
-XAML Window APIs are generally responsible for the appearance of your app content, like the background. For more info about [SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), see [Apply Mica or Acrylic materials](/windows/apps/windows-app-sdk/system-backdrop-controller).
+XAML Window APIs are generally responsible for the appearance of your app content, like the background. For more info about [SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), see [Apply Mica or Acrylic materials](system-backdrops.md).
 
 AppWindow APIs are responsible for the _non-client_ portion of the window and your app's interaction with the Windows OS.
 

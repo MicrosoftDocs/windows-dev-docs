@@ -77,7 +77,7 @@ Don't overwhelm users with many navigation options.
 
 Clear paths allow for logical navigation for users. Making navigation options obvious and clarifying relationships between pages should prevent users from getting lost.
 
-![Screenshot of a mock-up of an application showing clear paths fo navigation for a user.](images/nav/clarity-image.svg)
+![Screenshot of a mock-up of an application showing clear paths for navigation for a user.](images/nav/clarity-image.svg)
 
 > *Destinations are clearly labeled so users know where they are.*
 
@@ -86,7 +86,7 @@ Clear paths allow for logical navigation for users. Making navigation options ob
 Now, let's take our design principles--consistency, simplicity, and clarity--and use them to come up with some general recommendations.
 
 - Think about your users. Trace out typical paths they might take through your app, and for each page, think about why the user is there and where they might want to go.
-- Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a [breadcrumb bar](../controls/breadcrumbbar.md) that shows the user where they are and let's them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
+- Avoid deep navigation hierarchies. If you go beyond two levels of navigation, provide a [breadcrumb bar](../controls/breadcrumbbar.md) that shows the user where they are and lets them quickly get back out. Otherwise, you risk stranding your user in a deep hierarchy that they will have difficulty leaving.
 - Avoid "pogo-sticking." Pogo-sticking occurs when there is related content, but navigating to it requires the user to go up a level and then down again.
 
 ## Use the right structure
@@ -204,7 +204,7 @@ Use tabs when:
     :::column span="2":::
         [**Breadcrumb**](../controls/breadcrumbbar.md)
 
-Displays a horizontal list of links to pages at each of the higher levels. The [BreadcrumbBar](../controls/breadcrumbbar.md) control implements the top navigation pattern.
+Displays a horizontal list of links to pages at each of the higher levels. The [BreadcrumbBar](../controls/breadcrumbbar.md) control implements the breadcrumb navigation pattern.
 
 Use a breadcrumb when:
 
@@ -303,7 +303,7 @@ If you choose to provide your own back stack navigation, the experience should b
 <p>The app displays content for an on-screen item, such as the details for the selected item in list/details list.</p></td>
 <td><strong>No</strong>
 <p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
-<p><img src="images/back-nav/nav-enumerate.png" alt="Iterm enumeration" /></p></td>
+<p><img src="images/back-nav/nav-enumerate.png" alt="Item enumeration" /></p></td>
 </tr>
 </tbody>
 </table>

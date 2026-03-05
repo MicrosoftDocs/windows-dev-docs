@@ -2,4 +2,9 @@
 ms.topic: include
 ms.date: 02/19/2026
 ---
-> The **WinUI 3 Gallery** app lets you explore and browse interactive examples of WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> <table>
+> <tr>
+> <td><img src="./images/winui-gallery-logo.png" width="76" alt="WinUI 3 Gallery icon" /></td>
+> <td>The <strong>WinUI 3 Gallery</strong> app includes interactive examples of WinUI controls and features. Get the app from the <a href="https://apps.microsoft.com/detail/9P3JFPWWDZRC">Microsoft Store</a> or browse the source code on <a href="https://github.com/microsoft/WinUI-Gallery">GitHub</a>.</td>
+> </tr>
+> </table>

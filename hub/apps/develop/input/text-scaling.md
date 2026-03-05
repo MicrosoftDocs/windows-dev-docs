@@ -16,13 +16,13 @@ ms.custom: RS5
 
 ## Overview
 
-Reading text on a computer screen (from mobile device to laptop to desktop monitor to the giant screen of a Surface Hub) can be challenging for many people. Conversely, some users find the font sizes used in apps and web sites to be larger than necessary.
+Reading text on a computer screen can be challenging for many people. Conversely, some users find the font sizes used in apps and web sites to be larger than necessary.
 
 To ensure text is as legible as possible for the broadest range of users, Windows provides the ability for users to change relative font size across both the OS and individual applications. Instead of using a magnifier app (which typically just enlarges everything within an area of the screen and introduces its own usability issues), changing display resolution, or relying on DPI scaling (which resizes everything based on display and typical viewing distance), a user can quickly access a setting to resize just text, ranging from 100% (the default size) up to 225%.
 
 ## Support
 
-Universal Windows applications (both standard and PWA), support text scaling by default.
+WinUI apps support text scaling by default.
 
 If your Windows application includes custom controls, custom text surfaces, hard-coded control heights, older frameworks, or 3rd party frameworks, you likely have to make some updates to ensure a consistent and useful experience for your users.  
 
@@ -45,9 +45,9 @@ As text is resized, controls and containers must also resize and reflow to accom
 
 Did we say this already? It's worth repeating: When possible, always use the built-in controls provided with the various Windows app frameworks to get the most comprehensive user experience possible for the least amount of effort.
 
-For example, all UWP text controls support the full text scaling experience without any customization or templating.
+For example, all WinUI text controls support the full text scaling experience without any customization or templating.
 
-Here's a snippet from a basic UWP app that includes a couple of standard text controls:
+Here's a snippet from a basic WinUI app that includes a couple of standard text controls:
 
 ``` xaml
 <Grid>

@@ -28,6 +28,10 @@ Here is how ThemeShadow has been implemented on a MenuFlyout. MenuFlyout has a b
 
 ![A screen shot of ThemeShadow applied to a MenuFlyout with three open, nested menus.](../../design/layout/images/elevation-shadow/themeshadow-menuflyout.png)
 
+> [!div class="nextstepaction"]
+> [Open the WinUI Gallery app and see ThemeShadow in action](winui3gallery://item/ThemeShadow)
+
+
 ### ThemeShadow in common controls
 
 The following common controls will automatically use ThemeShadow to cast shadows from 32px depth unless otherwise specified:
@@ -45,9 +49,6 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [Media transport control](controls/media-playback.md#media-transport-controls), [InkToolbar](controls/inking-controls.md)
 - [BreadcrumbBar](controls/breadcrumbbar.md)
 - [Connected animation](../../design/motion/connected-animation.md)
-
-> [!NOTE]
-> ThemeShadow was introduced in Windows 10 version 1903 (SDK 18362). It is updated in Windows 11 to use ninegrid shadow instead of projected shadow for better performance.
 
 ### ThemeShadow in Popups
 
@@ -153,4 +154,4 @@ DropShadow does not provide built in shadow values and you need to specify them 
 ## Related articles
 
 - [Elevation and layering in Windows](../../design/signature-experiences/layering.md)
-- [Materials (Acrylic / Mica)](../../windows-app-sdk/system-backdrop-controller.md)
+- [Materials (Acrylic / Mica)](system-backdrops.md)

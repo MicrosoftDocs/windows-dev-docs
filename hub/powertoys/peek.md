@@ -64,6 +64,8 @@ From the settings page, the following options can be configured:
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). New starting in PowerToys 0.95 - <kbd>Space</kbd> is now the default keyboard command. |
 | Always run without elevation, even when PowerToys is elevated | Tries to run Peek without elevated permissions, to fix access to network shares. |
+| Peek window is always on top |  |
+| Show Peek icon on the taskbar |  |
 | Automatically close the Peek window after it loses focus |  |
 | Confirm before deleting files | When enabled, Peek shows a confirmation dialog before deleting files. |
 

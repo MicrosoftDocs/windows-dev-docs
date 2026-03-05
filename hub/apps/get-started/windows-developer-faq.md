@@ -215,7 +215,7 @@ Topics covered include:
 
 <details><summary>Can I use Mica or Acrylic backgrounds in apps built with Windows App SDK?</summary>
 
-> Yes. See [Apply Mica or Acrylic materials in desktop apps for Windows 11](../windows-app-sdk/system-backdrop-controller.md).
+> Yes. See [Apply Mica or Acrylic materials in desktop apps for Windows 11](../develop/ui/system-backdrops.md).
 
 </details>
 
