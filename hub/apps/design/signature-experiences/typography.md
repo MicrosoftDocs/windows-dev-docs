@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 As the visual representation of language, typography's main task is to communicate information. The Windows type system helps you create structure and hierarchy in your content in order to maximize legibility and readability in your UI.
 
-[Segoe UI Variable](..\downloads\index.md#fonts) is the new system font for Windows. It is a refreshed take on the classic Segoe and uses variable font technology to dynamically provide great legibility at very small sizes, and improved outlines at display sizes.
+[Segoe UI Variable](../downloads/index.md#fonts) is the new system font for Windows. It is a refreshed take on the classic Segoe and uses variable font technology to dynamically provide great legibility at very small sizes, and improved outlines at display sizes.
 
 > [!TIP]
 > This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [**Fluent Design - Typography**](https://fluent2.microsoft.design/typography).
@@ -176,15 +176,15 @@ Use the [LanguageFont font-mapping APIs](/uwp/api/windows.globalization.fonts.la
 |---------|---------|---------|
 | Ebrima | Regular, Bold | User-interface font for African scripts (ADLaM, Ethiopic, N'Ko, Osmanya, Tifinagh, Vai). |
 | Gadugi | Regular, Bold | User-interface font for North American scripts (Canadian Syllabics, Cherokee, Osage). |
-| Leelawadee UI</p> | Regular, Semilight, Bold | User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai). |
-| Malgun Gothic</p> | Regular | User-interface font for Korean. |
-| Microsoft JhengHei UI</p> | Regular, Bold, Light | User-interface font for Traditional Chinese. |
-| Microsoft YaHei UI</p> | Regular, Bold, Light | User-interface font for Simplified Chinese. |
-| Myanmar Text</p> | Regular | Fallback font for Myanmar script. |
-| Nirmala UI</p> | Regular, Semilight, Bold | User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu). |
-| Segoe UI</p> | Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black | User-interface font for Arabic, Armenian, Georgian, and Hebrew. |
-| SimSun</p> | Regular | A legacy Chinese UI font. |
-| Yu Gothic UI</p> | Light, Semilight, Regular, Semibold, Bold | User-interface font for Japanese. |
+| Leelawadee UI | Regular, Semilight, Bold | User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai). |
+| Malgun Gothic | Regular | User-interface font for Korean. |
+| Microsoft JhengHei UI | Regular, Bold, Light | User-interface font for Traditional Chinese. |
+| Microsoft YaHei UI | Regular, Bold, Light | User-interface font for Simplified Chinese. |
+| Myanmar Text | Regular | Fallback font for Myanmar script. |
+| Nirmala UI | Regular, Semilight, Bold | User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu). |
+| Segoe UI | Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black | User-interface font for Arabic, Armenian, Georgian, and Hebrew. |
+| SimSun | Regular | A legacy Chinese UI font. |
+| Yu Gothic UI | Light, Semilight, Regular, Semibold, Bold | User-interface font for Japanese. |
 
 ## Fonts
 
