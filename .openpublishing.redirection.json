@@ -1,6 +1,26 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/windows-app-sdk/breaking-changes.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/breaking-changes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/preview-experimental-create-winui3-app.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/preview-experimental-create-winui3-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/preview-experimental-unpackaged-tutorial.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/preview-experimental-unpackaged-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/update-existing-projects-to-the-latest-release.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/update-existing-projects-to-the-latest-release",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/win2d/hellowin2dworld.md",
       "redirect_url": "/windows/apps/develop/win2d/quick-start",
       "redirect_document_id": true
