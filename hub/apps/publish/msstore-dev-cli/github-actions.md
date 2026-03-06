@@ -19,8 +19,8 @@ To understand how to set up pre-requisites for the app update process, check out
 ## Pre-requisite
 
 1. Register as a Windows app developer in [Partner Center](https://storedeveloper.microsoft.com/). 
-2. Have a tenant associated with your Partner Center account. You can achieve that by either [associating an existing Microsoft Entra ID in Partner Center](https://learn.microsoft.com/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account) or by [creating a new Microsoft Entra ID in Partner Center](https://learn.microsoft.com/windows/apps/publish/partner-center/create-new-azure-ad-tenant). 
-3. [Register](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app) an application in Microsoft Entra ID 
+2. Have a tenant associated with your Partner Center account. You can achieve that by either [associating an existing Microsoft Entra ID in Partner Center](/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account) or by [creating a new Microsoft Entra ID in Partner Center](/windows/apps/publish/partner-center/create-new-azure-ad-tenant). 
+3. [Register](/entra/identity-platform/quickstart-register-app) an application in Microsoft Entra ID 
 4. Next, from the Microsoft Entra applications tab under User management page in the Account settings section of Partner Center, add the Microsoft Entra ID application that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. 
 5. The app you want to update must already be published and live in Microsoft Store. 
 6. Required IDs and Secrets:  
@@ -173,7 +173,7 @@ The above workflows will do the following in the background:
   * Authenticate your Microsoft Store Partner Center account using the secrets you configured (Tenant ID, Client ID, Client Secret, Seller ID). 
   * Use the Microsoft Store Developer CLI (msstore) to obtain base metadata and publish the updated package or metadata to the Microsoft Store.
 
-For more information on commands, refer [Microsoft Store Developer CLI (MSIX)](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview).
+For more information on commands, refer [Microsoft Store Developer CLI (MSIX)](/windows/apps/publish/msstore-dev-cli/overview).
 
 ## [MSI/EXE](#tab/msiexe)
 
@@ -340,7 +340,7 @@ The above workflows will do the following in the background:
   * Authenticate your Microsoft Store Partner Center account using the secrets you configured (Tenant ID, Client ID, Client Secret, Seller ID). 
   * Use the Microsoft Store Developer CLI (msstore) to obtain base package info and metadata and publish the updated package or metadata to the Microsoft Store.
 
-For more information on commands, refer  [Microsoft Store Developer CLI (MSI/EXE)](https://learn.microsoft.com/windows/apps/publish/msstore-dev-cli/overview-exe).
+For more information on commands, refer  [Microsoft Store Developer CLI (MSI/EXE)](/windows/apps/publish/msstore-dev-cli/overview-exe).
 
 ---
 
