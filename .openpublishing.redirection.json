@@ -1,6 +1,36 @@
 {
   "redirections": [
-	{
+    {
+      "source_path": "hub/apps/develop/win2d/hellowin2dworld.md",
+      "redirect_url": "/windows/apps/develop/win2d/quick-start",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/features.md",
+      "redirect_url": "/windows/apps/develop/win2d/#features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/in-a-core-app.md",
+      "redirect_url": "/windows/apps/develop/win2d/",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/system-backdrop-controller.md",
+      "redirect_url": "/windows/apps/develop/ui/system-backdrops",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/testing/index.md",
+      "redirect_url": "/windows/apps/develop/testing/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/testing/create-winui-unit-test-project.md",
+      "redirect_url": "/windows/apps/develop/testing/",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/performance/introduction.md",
       "redirect_url": "/windows/apps/performance/",
       "redirect_document_id": true
@@ -5926,6 +5956,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/developer-mode-features-and-debugging.md",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/project-reunion/index.md",
       "redirect_url": "/windows/apps/windows-app-sdk/index",
       "redirect_document_id": false
@@ -10755,10 +10790,150 @@
       "redirect_url": "/windows/uwp/xaml-islands/xaml-islands",
       "redirect_document_id": false
     },
-	{
-      "source_path": "hub/apps/publish/nrt-in-analytics.md",
-      "redirect_url": "windows/apps/publish/recent-data-acquisitions-reports",
+    {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
       "redirect_document_id": false
-    }  
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-csharp-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
+    "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/gamepad-and-remote-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/gamepad-and-remote-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/gaze-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/gaze-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/input-injection.md",
+      "redirect_url": "/windows/uwp/ui-input/input-injection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/radialcontroller-walkthrough.md",
+      "redirect_url": "/windows/uwp/ui-input/radialcontroller-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/windows-wheel-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/windows-wheel-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/convert-ink-to-text.md",
+      "redirect_url": "/windows/uwp/ui-input/convert-ink-to-text",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/ink-toolbar.md",
+      "redirect_url": "/windows/uwp/ui-input/ink-toolbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/ink-walkthrough.md",
+      "redirect_url": "/windows/uwp/ui-input/ink-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/pen-and-stylus-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/pen-and-stylus-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/pen-haptics.md",
+      "redirect_url": "/windows/uwp/ui-input/pen-haptics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/save-and-load-ink.md",
+      "redirect_url": "/windows/uwp/ui-input/save-and-load-ink",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/text-handwriting-view.md",
+      "redirect_url": "/windows/uwp/ui-input/text-handwriting-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/define-custom-recognition-constraints.md",
+      "redirect_url": "/windows/uwp/ui-input/define-custom-recognition-constraints",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/enable-continuous-dictation.md",
+      "redirect_url": "/windows/uwp/ui-input/enable-continuous-dictation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/manage-issues-with-audio-input.md",
+      "redirect_url": "/windows/uwp/ui-input/manage-issues-with-audio-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/set-speech-recognition-timeouts.md",
+      "redirect_url": "/windows/uwp/ui-input/set-speech-recognition-timeouts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/specify-the-speech-recognizer-language.md",
+      "redirect_url": "/windows/uwp/ui-input/specify-the-speech-recognizer-language",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/speech-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/speech-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/speech-recognition.md",
+      "redirect_url": "/windows/uwp/ui-input/speech-recognition",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/speech.md",
+      "redirect_url": "/windows/uwp/ui-input/speech-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui/controls/inking-controls.md",
+      "redirect_url": "/windows/uwp/ui-input/inking-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/system-requirements.md",
+      "redirect_url": "/windows/apps/windows-app-sdk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/analyze-app-performance/gdk-xbox.md",
+      "redirect_url": "/partner-center/insights/apps-and-games-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/chatgpt-openai-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/copilot-chat-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/dall-e-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-notifications-overview.md",
+      "redirect_url": "/windows/apps/develop/notifications/app-notifications/",
+      "redirect_document_id": false
+    }
   ]
 }

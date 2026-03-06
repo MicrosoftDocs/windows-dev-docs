@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Welcome to Windows app development
+# The essentials of Windows app development
 
 :::image type="content" source="images/essentials-header.png" alt-text="Windows logo with app icons floating in the background" border="false":::
 

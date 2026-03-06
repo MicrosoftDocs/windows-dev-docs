@@ -1,6 +1,6 @@
 ---
 description: Learn how to enable peer-to-peer navigation between two basic pages in an Windows app.
-title: Peer-to-peer navigation between two pages
+title: "Tutorial: Implement navigation between two pages"
 ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
@@ -13,7 +13,7 @@ dev_langs:
 - cppwinrt
 ---
 
-# Implement navigation between two pages
+# Tutorial: Implement navigation between two pages
 
 Learn how to use a frame and pages to enable basic peer-to-peer navigation in your app.
 
@@ -36,7 +36,7 @@ To create a blank app in Visual Studio:
 1. To set up your development computer, see [Start developing Windows apps](../../../get-started/start-here.md).
 1. From the Microsoft Visual Studio start window, select **Create a new project**, OR, on the Visual Studio menu, choose **File** > **New** > **Project**.
 1. In the **Create a new project** dialog's drop-down filters, select **C#** or **C++**, **Windows**, and **WinUI**, respectively.
-1. Select the **Blank App, Packaged (WinUI in Desktop)** project template, and click **Next**. That template creates a desktop app with a WinUI-based user interface.
+1. Select the **WinUI Blank App (Packaged)** project template, and click **Next**. That template creates a desktop app with a WinUI-based user interface.
 1. In the **Project name** box, enter `BasicNavigation`, and click **Create**.
 1. To run the program, choose **Debug** > **Start Debugging** from the menu, or press F5. Build and run your solution on your development computer to confirm that the app runs without errors. A blank page is displayed.
 1. To stop debugging and return to Visual Studio, exit the app, or click **Stop Debugging** from the menu.
@@ -116,7 +116,7 @@ To add a new item to your app:
 
 1. In **Solution Explorer**, right-click the `BasicNavigation` project node to open the context menu.
 1. Choose **Add** > **New Item** from the context menu.
-1. In the **Add New Item** dialog box, select the **WinUI** node in the left pane, then choose **Blank Page (WinUI)** in the middle pane.
+1. In the **Add New Item** dialog box, select the **WinUI** node in the left pane, then choose **Blank Page** in the middle pane.
 1. In the **Name** box, enter `MainPage` and press the **Add** button.
 1. Repeat steps 1-4 to add the second page, but in the **Name** box, enter `Page2`.
 

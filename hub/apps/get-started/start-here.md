@@ -10,7 +10,7 @@ ms.collection: windows11
 
 # Quick start: Set up your environment and create a WinUI 3 project
 
-This quick start guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To develop WinUI apps, you need:
+This quick start guide walks you through setting up your WinUI and Windows App SDK development environment and creating your first app. To learn more about how [Visual Studio and its templates](../winui/winui3/winui-project-templates-in-visual-studio.md) support WinUI development, see the Visual Studio overview. To develop WinUI apps, you need:
 
 - [Visual Studio 2026](/visualstudio/ide/) with the required workloads for WinUI and Windows App SDK
 - [Developer Mode](/windows/advanced-settings/developer-mode) enabled on your device
@@ -57,9 +57,6 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 :::image type="content" source="images/hello-world/vs-workload-winui.png" alt-text="A screenshot of the Visual Studio installer UI with the WinUI application development workload selected.":::
 
 * **For C++ app development**, select the **C++ WinUI app development tools** under the **WinUI application development** node in the **Installation details** pane (This will also select any additional required components.)
-
-> [!NOTE]
-> _In Visual Studio 17.10 - 17.12, this workload is called **Windows application development**._
 
 ---
 

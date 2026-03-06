@@ -32,21 +32,6 @@ ItemsRepeater does not have a built-in Items collection. If you need to provide 
 
 When you use an **ItemsRepeater**, you should provide scrolling functionality by wrapping it in a [**ScrollViewer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) control.
 
-> [!NOTE]
-> If your app will run on earlier versions of Windows - those released *before* Windows 10, version 1809 - then you also need to host the **ScrollViewer** inside the [**ItemsRepeaterScrollHost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
->
-> ```xaml
-> <muxc:ItemsRepeaterScrollHost>
->     <ScrollViewer>
->         <muxc:ItemsRepeater ... />
->     </ScrollViewer>
-> </muxc:ItemsRepeaterScrollHost>
-> ```
->
-> If your app will only run on recent versions of Windows 10, version 1809 and later - then there is no need to use the [**ItemsRepeaterScrollHost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeaterscrollhost).
->
-> Prior to Windows 10, version 1809, **ScrollViewer** did not implement the [**IScrollAnchorProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iscrollanchorprovider) interface that the **ItemsRepeater** needs.  The **ItemsRepeaterScrollHost** enables the **ItemsRepeater** to coordinate with **ScrollViewer** on earlier releases to correctly preserve the visible location of items the user is viewing.  Otherwise, the items might appear to move or disappear suddenly when the items in the list are changed or the app is resized.
-
 ## Create an ItemsRepeater
 
 > [!div class="checklist"]
@@ -54,7 +39,7 @@ When you use an **ItemsRepeater**, you should provide scrolling functionality by
 > - **Important APIs**: [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater)
+> [Open the WinUI 3 Gallery app and see the ItemsRepeater in action](winui3gallery://item/ItemsRepeater)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -205,9 +190,6 @@ The following interfaces on an ItemsSource enable special functionality in the L
 - [ISupportIncrementalLoading](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.isupportincrementalloading)
 - [IItemsRangeInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.iitemsrangeinfo)
 - [ISelectionInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.iselectioninfo)
-
-> [!TIP]
-> We want your feedback! Let us know what you think on the [WinUI 3 GitHub project](https://github.com/Microsoft/microsoft-ui-xaml/issues). Consider adding your thoughts on existing proposals such as [#374](https://github.com/Microsoft/microsoft-ui-xaml/issues/374): Add incremental loading support for ItemsRepeater.
 
 An alternative approach to incrementally load your data as the user scrolls up or down is to observe the position of the ScrollViewer's viewport and load more data as the viewport approaches the extent.
 

@@ -75,7 +75,7 @@ A list box allows the user to choose either a single item or multiple items from
 > - **Important APIs**: [ComboBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [IsEditable property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.iseditable), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [TextSubmitted event](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ComboBox), [ListBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListBox)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ComboBox in action](winui3gallery:/item/ComboBox)
+> [Open the WinUI 3 Gallery app and see the ComboBox in action](winui3gallery://item/ComboBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -173,22 +173,6 @@ private void ColorComboBox_SelectionChanged(object sender, SelectionChangedEvent
 By default, the SelectionChanged event occurs when a user clicks, taps, or presses Enter on an item in the list to commit their selection, and the combo box closes. Selection doesn't change when the user navigates the open combo box list with the keyboard arrow keys.
 
 To make a combo box that "live updates" while the user is navigating the open list with the arrow keys (like a Font selection drop-down), set [SelectionChangedTrigger](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox.selectionchangedtrigger) to [Always](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxselectionchangedtrigger). This causes the SelectionChanged event to occur when focus changes to another item in the open list.
-
-#### Selected item behavior change
-
-In Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later, the behavior of selected items is updated to support editable combo boxes.
-
-Prior to SDK 17763, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) was required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
-
-- SelectedItem = null
-- SelectedValue = null
-- SelectedIndex = -1
-
-In SDK 17763 and later, the value of the SelectedItem property (and therefore, SelectedValue and SelectedIndex) is not required to be in the combo box's Items collection. Using the previous example, setting `colorComboBox.SelectedItem = "Pink"` results in:
-
-- SelectedItem = Pink
-- SelectedValue = Pink
-- SelectedIndex = -1
 
 ### Text Search
 

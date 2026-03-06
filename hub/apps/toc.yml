@@ -2,7 +2,7 @@ items:
 - name: Build Windows apps
   href: desktop/index.yml
   items:
-  - name: Introduction
+  - name: Essentials
     href: introduction.md
   - name: Core concepts
     expanded: true

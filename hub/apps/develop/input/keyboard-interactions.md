@@ -21,10 +21,6 @@ Learn how to design and optimize your Windows apps so they provide the best expe
 
 Across devices, keyboard input is an important part of the overall Windows app interaction experience. A well-designed keyboard experience lets users efficiently navigate the UI of your app and access its full functionality without ever lifting their hands from the keyboard.
 
-![keyboard and gamepad image](images/keyboard/keyboard-gamepad.jpg)
-
-***Common interaction patterns are shared between keyboard and gamepad***
-
 In this topic, we focus specifically on Windows app design for keyboard input on PCs. However, a well-designed keyboard experience is important for supporting accessibility tools such as Windows Narrator, using [software keyboards](#software-keyboard) such as the touch keyboard and the On-Screen Keyboard (OSK), and for handling other input device types, such as a game pad or remote control.
 
 Many of the guidelines and recommendations discussed here, including [focus visuals](#focus-visuals), [access keys](#access-keys), and [UI navigation](#navigation), are also applicable to these other scenarios.
@@ -35,26 +31,7 @@ Many of the guidelines and recommendations discussed here, including [focus visu
 
 Along with the mouse, the keyboard is the most widely used peripheral on PCs and, as such, is a fundamental part of the PC experience. PC users expect a comprehensive and consistent experience from both the system and individual apps in response to keyboard input.
 
-All UWP controls include built-in support for rich keyboard experiences and user interactions, while the platform itself provides an extensive foundation for creating keyboard experiences that you feel are best suited to both your custom controls and apps.
-
-![keyboard with phone image](images/keyboard/keyboard-phone.jpg)
-
-***UWP supports keyboard with any device***
-
-## Basic experiences
-![Focus based devices](images/keyboard/focus-based-devices.jpg)
-
-As mentioned previously, input devices such as a game pad and remote control, and accessibility tools such as Narrator, share much of the keyboard input experience for navigation and commanding. This common experience across input types and tools minimizes additional work from you and contributes to the "build once, run anywhere" goal of the Universal Windows Platform.
-
-Where necessary, we'll identify key differences you should be aware of and describe any mitigations you should consider.
-
-Here are the devices and tools discussed in this topic:
-
-| Device/tool                       | Description     |
-|-----------------------------------|-----------------|
-|Keyboard (hardware and software)   |In addition to the standard hardware keyboard, Windows applications support two software keyboards: the [touch (or software) keyboard](#software-keyboard) and the [On-Screen Keyboard](#on-screen-keyboard).|
-|Game pad and remote control         |A game pad and remote control are fundamental input devices in the [10-foot experience](../../design/devices/designing-for-tv.md). For specific details on Windows support for game pad and remote control, see [Game pad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md).|
-|Screen readers (Narrator)          |Narrator is a built-in screen reader for Windows that provides unique interaction experiences and functionality, but still relies on basic keyboard navigation and input. For Narrator details, see [Getting started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator).|
+All WinUI controls include built-in support for rich keyboard experiences and user interactions, while the platform itself provides an extensive foundation for creating keyboard experiences that you feel are best suited to both your custom controls and apps.
 
 ## Custom experiences and efficient keyboarding
 As mentioned, keyboard support is integral to ensuring your applications work great for users with different skills, abilities, and expectations. We recommend that you prioritize the following.
@@ -68,7 +45,7 @@ As mentioned, keyboard support is integral to ensuring your applications work gr
 
 ### Focus visuals
 
-The UWP supports a single focus visual design that works well for all input types and experiences.
+WinUI supports a single focus visual design that works well for all input types and experiences.
 ![Focus visual](images/keyboard/focus-visual.png)
 
 A focus visual:
@@ -78,7 +55,7 @@ A focus visual:
 - Helps a user navigate an app UI without getting lost
 - Can be customized for your app (See [High visibility focus  visuals](guidelines-for-visualfeedback.md#high-visibility-focus-visuals))
 
-**NOTE** The UWP focus visual is not the same as the Narrator focus rectangle.
+**NOTE** The WinUI focus visual is not the same as the Narrator focus rectangle.
 
 ### Tab stops
 
@@ -134,7 +111,7 @@ Keyboard navigation is typically supported through the Tab keys and the Arrow ke
 
 ![tab and arrow keys](images/keyboard/tab-and-arrow.png)
 
-By default, UWP controls follow these basic keyboard behaviors:
+By default, WinUI controls follow these basic keyboard behaviors:
 -   **Tab keys** navigate between actionable/active controls in tab order.
 -   **Shift + Tab** navigate controls in reverse tab order. If user has navigated inside the control using arrow key, focus is set to the last known value inside the control.
 -   **Arrow keys** expose control-specific "inner navigation" When user enters "inner navigation,"" arrow keys do not navigate out of a control. Some examples include:
@@ -276,7 +253,7 @@ Accelerators have the following characteristics:
 
 #### Access keys
 
-See [Access keys](../../design/input/access-keys.md) page for more in-depth information for supporting access keys with UWP.
+See [Access keys](../../design/input/access-keys.md) page for more in-depth information for supporting access keys with WinUI.
 
 Access keys help users with motor function disabilities an ability to press one key at a time to action on a specific item in the UI. Moreover, access keys can be used to communicate additional shortcut keys to help advanced users perform actions quickly.
 
@@ -311,7 +288,7 @@ For a comprehensive list of Windows system shortcuts, see [keyboard shortcuts fo
 
 ## Advanced experiences
 
-In this section, we discuss some of the more complex keyboard interaction experiences supported by UWP apps, along with some of the behaviors you should be aware of when your app is used on different devices and with different tools.
+In this section, we discuss some of the more complex keyboard interaction experiences supported by WinUI apps, along with some of the behaviors you should be aware of when your app is used on different devices and with different tools.
 
 ### Control group
 
@@ -327,7 +304,7 @@ Users expect support for arrow key navigation when there is a group of similar, 
 -   `ListItems` or `GridItems` inside `ListView` or `GridView`
 -   `Buttons` inside `ContentDialog`
 
-UWP controls support arrow key navigation by default. For custom layouts and control groups, use `XYFocusKeyboardNavigation="Enabled"` to provide similar behavior.
+WinUI controls support arrow key navigation by default. For custom layouts and control groups, use `XYFocusKeyboardNavigation="Enabled"` to provide similar behavior.
 
 Consider adding support for arrow key navigation when using the following controls:
 
@@ -356,7 +333,7 @@ Depending on your application's functionality and layout, the best navigation op
 
 Accessibility users rely on well-established keyboard navigation rules, which do not typically use arrow keys to navigate a collection of buttons. However, users without visual impairments might feel that the behavior is natural.
 
-An example of default UWP behavior in this case is the `ContentDialog`. While arrow keys can be used to navigate between buttons, each button is also a tab stop.
+An example of default WinUI behavior in this case is the `ContentDialog`. While arrow keys can be used to navigate between buttons, each button is also a tab stop.
 
 ##### Assign single tab stop to familiar UI patterns
 
@@ -381,9 +358,9 @@ The following image shows an intuitive keyboard navigation behavior for a contro
 
 ### Keyboard and Narrator
 
-Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported). However, Narrator functionality goes beyond the keyboard interactions supported by UWP apps and extra care is required when designing your UWP app for Narrator. (The [Narrator basics page](https://support.microsoft.com/help/22808/windows-10-narrator-basics) guides you through the Narrator user experience.)
+Narrator is a UI accessibility tool geared towards keyboard users (other input types are also supported). However, Narrator functionality goes beyond the keyboard interactions supported by WinUI apps and extra care is required when designing your WinUI app for Narrator. (The [Narrator basics page](https://support.microsoft.com/help/22808/windows-10-narrator-basics) guides you through the Narrator user experience.)
 
-Some of the differences between UWP keyboard behaviors and those supported by Narrator include:
+Some of the differences between WinUI keyboard behaviors and those supported by Narrator include:
 -   Extra key combinations for navigation to UI elements that are not exposed through standard keyboard navigation, such as Caps lock + arrow keys to read control labels.
 -   Navigation to disabled items. By default, disabled items are not exposed through standard keyboard navigation.
 -   Control "views" for quicker navigation based on UI granularity. Users can navigate to items, characters, word, lines, paragraphs, links, headings, tables, landmarks, and suggestions. Standard keyboard navigation exposes these objects as a flat list, which might make navigation cumbersome unless you provide shortcut keys.
@@ -411,9 +388,9 @@ The search button for the `AutoSuggestBox` is not accessible to standard keyboar
 
 ### Keyboard, game pad, and remote control
 
-Game pads and remote controls support many UWP keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, game pad and remote control lack many keyboard optimizations (remote control is even more limited than game pad).
+Game pads and remote controls support many WinUI keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, game pad and remote control lack many keyboard optimizations (remote control is even more limited than game pad).
 
-See [Game pad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md) for more detail on UWP support for game pad and remote control input.
+See [Game pad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md) for more detail on WinUI support for game pad and remote control input.
 
 The following shows some key mappings between keyboard, game pad, and remote control.
 
@@ -425,7 +402,7 @@ The following shows some key mappings between keyboard, game pad, and remote con
 | Home/End      | N/A                                 | N/A                 |
 | Page Up/Down  | Trigger button for vertical scroll, Bumper button for horizontal scroll   | N/A                 |
 
-Some key differences you should be aware of when designing your UWP app for use with game pad and remote control usage include:
+Some key differences you should be aware of when designing your WinUI app for use with game pad and remote control usage include:
 -   Text entry requires the user to press A to activate a text control.
 -   Focus navigation is not limited to control groups, users can navigate freely to any focusable UI element in the app.
 
@@ -436,9 +413,7 @@ Some key differences you should be aware of when designing your UWP app for use 
 
 #### Directional navigation
 
-Directional navigation is managed by a UWP [Focus Manager](/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.
-
-Unlike the keyboard, when an app opts out of [Mouse Mode](gamepad-and-remote-interactions.md#mouse-mode), directional navigation is applied across the entire application for gamepad and remote control. See [Gamepad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md) for more detail on directional navigation optimization.
+Directional navigation is managed by a WinUI [Focus Manager](/uwp/api/Windows.UI.Xaml.Input.FocusManager) helper class, which takes the directional key pressed (arrow key, D-pad) and attempts to move focus in the corresponding visual direction.
 
 **NOTE** Navigation using the keyboard Tab key is not considered directional navigation. For more info, see the [Tab stops](#tab-stops) section.
 
@@ -457,7 +432,7 @@ Unlike the keyboard, when an app opts out of [Mouse Mode](gamepad-and-remote-int
 
 ### Built in keyboard optimization
 
-Depending on the layout and controls used, UWP apps can be optimized specifically for keyboard input.
+Depending on the layout and controls used, WinUI apps can be optimized specifically for keyboard input.
 
 The following example shows a group of list items, grid items, and menu items that have been assigned to a single tab stop (see the [Tab stops](#tab-stops) section). When the group has focus, inner navigation is performed with the directional arrow keys in the corresponding visual order (see [Navigation](#navigation) section).
 

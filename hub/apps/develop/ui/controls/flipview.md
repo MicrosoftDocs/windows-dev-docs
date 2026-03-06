@@ -43,7 +43,7 @@ A flip view can also be browsed vertically:
 > - **Important APIs**: [FlipView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview), [ItemsSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource), [ItemTemplate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the FlipView in action](winui3gallery:/item/FlipView)
+> [Open the WinUI 3 Gallery app and see the FlipView in action](winui3gallery://item/FlipView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
