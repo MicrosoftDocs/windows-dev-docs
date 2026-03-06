@@ -29,7 +29,7 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Basic input
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Buttons](images/Button.png) | [Buttons](buttons.md) | A control that responds to user input and raises a Click event. Includes button, drop-down button, split button, toggle button, and more. |
 | ![Check boxes](images/CheckBox.png) | [Check boxes](checkbox.md) | A control that a user can select or clear. |
@@ -42,7 +42,7 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Collections
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Items view](images/ItemsView.png) | [Items view](itemsview.md) | A control that presents a collection of items using various layouts. |
 | ![List view and grid view](images/ListView.png) | [List view and grid view](listview-and-gridview.md) | Controls that present a collection of items in a vertical list or in rows and columns. |
@@ -55,7 +55,7 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Dialogs and flyouts
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Dialogs](images/ContentDialog.png) | [Dialogs](dialogs-and-flyouts/dialogs.md) | A dialog box that can be customized to contain any XAML content. |
 | ![Flyouts](images/Flyout.png) | [Flyouts](dialogs-and-flyouts/flyouts.md) | Shows contextual information and enables user interaction. |
@@ -63,13 +63,13 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Forms
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | | [Forms](forms.md) | A pattern for collecting and submitting user input using a combination of input controls and labels. |
 
 ### Media, graphics, and shapes
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Icons](images/Image.png) | [Icons](icons.md) | Represent icon controls that use different image types as content. |
 | ![Animated icons](images/AnimatedIcon.png) | [Animated icons](animated-icon.md) | An element that displays and controls an icon that animates when the user interacts with the control. |
@@ -80,7 +80,7 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Menus and toolbars
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Menus and context menus](images/MenuFlyout.png) | [Menus and context menus](menus-and-context-menus.md) | Shows a contextual list of simple commands or options. |
 | ![Command bar](images/CommandBar.png) | [Command bar](command-bar.md) | A toolbar for displaying application-specific commands that handles layout and resizing of its contents. |
@@ -89,24 +89,24 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Navigation
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Breadcrumb bar](images/BreadcrumbBar.png) | [Breadcrumb bar](breadcrumbbar.md) | Shows the trail of navigation taken to the current location. |
 | | [List/details](list-details.md) | A pattern that displays a list of items alongside the details of the currently selected item. |
 | ![Navigation view](images/NavigationView.png) | [Navigation view](navigationview.md) | Common vertical layout for top-level areas of your app via a collapsible navigation menu. |
-| ![Pivot](images/Pivot.png) | [Pivot](pivot.md) | Presents information from different sources in a tabbed view. |
+| ![Screenshot of the Pivot control](images/Pivot.png) | [Pivot](pivot.md) | Presents information from different sources in a tabbed view. |
 | ![Selector bar](images/Pivot.png) | [Selector bar](selector-bar.md) | Presents information from a small set of different sources. The user can pick one of them. |
 | ![Tab view](images/TabView.png) | [Tab view](tab-view.md) | A control that displays a collection of tabs that can be used to display several documents. |
 
 ### People
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Person picture](images/PersonPicture.png) | [Person picture](person-picture.md) | Displays the picture of a person/contact. |
 
 ### Pickers
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Color picker](images/ColorPicker.png) | [Color picker](color-picker.md) | A control that displays a selectable color spectrum. |
 | ![Calendar date picker](images/CalendarDatePicker.png) | [Calendar date picker](calendar-date-picker.md) | A control that lets users pick a date value using a calendar. |
@@ -116,9 +116,9 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Scrolling and layout
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
-| ![Expander](images/Expander.png) | [Expander](expander.md) | A container with a header that can be expanded to show a body with more content. |
+| ![Screenshot of the Expander control](images/Expander.png) | [Expander](expander.md) | A container with a header that can be expanded to show a body with more content. |
 | ![Scrolling and panning controls](images/ScrollViewer.png) | [Scrolling and panning controls](scroll-controls.md) | A container control that lets the user pan and zoom its content. |
 | ![Annotated scrollbar](images/AnnotatedScrollbar.png) | [Annotated scrollbar](annotated-scrollbar.md) | A control that extends a regular vertical scrollbar's functionality for an easy navigation through large collections. |
 | ![Semantic zoom](images/SemanticZoom.png) | [Semantic zoom](semantic-zoom.md) | Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items. |
@@ -127,16 +127,16 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Status and information
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Progress](images/ProgressBar.png) | [Progress](progress-controls.md) | Shows the app's progress on a task using a progress bar or progress ring. |
-| ![Tooltip](images/ToolTip.png) | [Tooltip](tooltips.md) | Displays information for an element in a pop-up window. |
+| ![Screenshot of the Tooltip control](images/ToolTip.png) | [Tooltip](tooltips.md) | Displays information for an element in a pop-up window. |
 | ![Info bar](images/InfoBar.png) | [Info bar](infobar.md) | An inline message to display app-wide status change information. |
 | ![Info badge](images/InfoBadge.png) | [Info badge](info-badge.md) | A non-intrusive UI to display notifications or bring focus to an area. |
 
 ### Text
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Auto-suggest box](images/AutoSuggestBox.png) | [Auto-suggest box](auto-suggest-box.md) | A control to provide suggestions as a user is typing. |
 | ![Text block](images/TextBlock.png) | [Text block](text-block.md) | A lightweight control for displaying small amounts of text. |
@@ -149,7 +149,7 @@ The following table lists the Windows app controls available in WinUI, with link
 
 ### Title bar
 
-| | Control | Description |
+| Image | Control | Description |
 |---|---|---|
 | ![Title bar](images/TitleBar.png) | [Title bar](title-bar.md) | Customize the title bar of your app window. |
 
