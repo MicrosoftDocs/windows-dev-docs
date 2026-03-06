@@ -6,7 +6,7 @@ ms.date: 11/4/2024
 ms.localizationpriority: medium
 ---
 
-# Define markets
+# Define markets for add-ons
 
 The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](./price-and-availability.md) features per market or per group of markets.
 
