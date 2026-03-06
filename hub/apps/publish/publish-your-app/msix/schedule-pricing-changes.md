@@ -26,7 +26,7 @@ You can set the **Base price** to **Free**, or you can choose an available price
 
 In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/windows/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
-Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](/hub/apps/publish/publish-your-app/faqs/consumer-markets.md).
+Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](./market-selection.md#microsoft-store-consumer-markets).
 
 
 > [!NOTE]
