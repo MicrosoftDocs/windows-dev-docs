@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Enter app properties
+# Enter app properties for MSIX apps
 
 The **Properties** page of the [app submission process](./create-app-submission.md) is where you define your app's category and enter other info and declarations. Be sure to provide complete and accurate details about your app on this page.
 
