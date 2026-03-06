@@ -21,7 +21,7 @@ Get help with coding, APIs, and building Windows apps.
 
 The Windows developer community is an incredible resource for learning and problem-solving:
 
-- **[Microsoft Q&A](https://learn.microsoft.com/answers/questions/)** - Ask technical questions and get answers from Microsoft experts and the community
+- **[Microsoft Q&A](/answers/questions/)** - Ask technical questions and get answers from Microsoft experts and the community
 - **[Windows App SDK discussions](https://github.com/microsoft/windowsappsdk/discussions)** - Connect with other developers and the Windows App SDK team
 - **[WinUI 3 discussions](https://github.com/microsoft/microsoft-ui-xaml/discussions)** - Get help and share feedback about WinUI
 - **[Stack Overflow](https://stackoverflow.com/questions/tagged/windows-app-sdk)** - Browse thousands of answered questions tagged with Windows App SDK
