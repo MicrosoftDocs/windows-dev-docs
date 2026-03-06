@@ -2,7 +2,7 @@
 title: WinUI performance optimization
 description: Learn how to use performance monitoring tools from the Windows Performance Toolkit to produce in-depth performance profiles of WinUI applications. 
 ms.topic: article
-ms.date: 03/06/2024
+ms.date: 06/10/2025
 #Customer intent: As a Windows application developer, I want to improve the responsiveness of my WinUI application by finding slow UI thread frames to optimize.
 ---
 
@@ -35,12 +35,12 @@ WinUI logs ETW events that track the start and stop of each frame (shown in the 
 
 :::image type="content" source="images/wpa-generic-events.png" alt-text="Screenshot of the Windows Performance Analyzer showing the Generic Events table with a series of frame starts and stops.":::
 
-To address this issue, a new "XAML Frame Analysis" table plugin is included with the [Windows Assessment Toolkit (ADK) preview](https://www.microsoft.com/software-download/windowsinsiderpreviewadk), build 26020 and later. This table calculates and shows the duration of each frame (along with other time-consuming operations).
+To address this issue, a new "XAML Frame Analysis" table plugin is included with the [Windows Assessment Toolkit (ADK)](https://learn.microsoft.com/windows-hardware/get-started/adk-install) 10.1.26100.1 and later. This table calculates and shows the duration of each frame (along with other time-consuming operations).
 
 > [!NOTE]
-> While only the preview version of the Windows Performance Analyzer (WPA) has the "XAML Frame Analysis" table, the version of WPR used to take the trace does not matter.
+> The "XAML Frame Analysis" table requires Windows Performance Analyzer (WPA) from Windows ADK 10.1.26100.1 or later. The version of WPR used to take the trace does not matter.
 
-Once the ADK preview is installed, the "XAML Frame Analysis" table must be enabled by editing the "perfcore.ini" config file in the WPA folder (typically, C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\). To do this, close any open instances of WPA, open "perfcore.ini" in a text editor, add `perf_xaml.dll` to the list of dlls, and save and close the file. Restart WPA, which should now show the "XAML Frame Analysis" graph at the bottom of the System Activity section.
+Once the ADK is installed, the "XAML Frame Analysis" table must be enabled by editing the "perfcore.ini" config file in the WPA folder (typically, C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\). To do this, close any open instances of WPA, open "perfcore.ini" in a text editor, add `perf_xaml.dll` to the list of dlls, and save and close the file. Restart WPA, which should now show the "XAML Frame Analysis" graph at the bottom of the System Activity section.
 
 :::image type="content" source="images/wpa-xaml-frame-analysis.png" alt-text="Screenshot of the Windows Performance Analyzer showing the XAML Frame Analysis table at the bottom of the System Activity section.":::
 
@@ -49,7 +49,7 @@ Once the ADK preview is installed, the "XAML Frame Analysis" table must be enabl
 The Xaml Frame Analysis supports two views (both views show the same columns):
 
 - "Interesting Xaml Frames" (default) - Shows WinUI frames based on heuristics that identify those most likely to cause responsiveness problems. These correspond to regions that start with operations like WinUI initialization, frame navigation, or flyout display, and stop with the end of the next frame. These scenarios typically involve extensive changes to the UIElement tree and are the most susceptible to performance problems.
-- "All Xaml Info" - Shows all WinUI frames from all process found in the trace. For operations like a frame or a layout pass, the plugin automatically computes and displays the durations based on the Start and Stop events.
+- "All Xaml Info" - Shows all WinUI frames from all processes found in the trace. For operations like a frame or a layout pass, the plugin automatically computes and displays the durations based on the Start and Stop events.
 
 The following screenshot highlights how to switch between Xaml Frame Analysis views.
 

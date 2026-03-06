@@ -58,9 +58,6 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 * **For C++ app development**, select the **C++ WinUI app development tools** under the **WinUI application development** node in the **Installation details** pane (This will also select any additional required components.)
 
-> [!NOTE]
-> _In Visual Studio 17.10 - 17.12, this workload is called **Windows application development**._
-
 ---
 
 ## Create and launch your first WinUI app

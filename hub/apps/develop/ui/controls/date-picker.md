@@ -37,7 +37,7 @@ The entry point displays the chosen date, and when the user selects the entry po
 > - **Important APIs:** [DatePicker class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.DatePicker), [SelectedDate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datepicker.selecteddate)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the DatePicker in action](winui3gallery:/item/DatePicker)
+> [Open the WinUI 3 Gallery app and see the DatePicker in action](winui3gallery://item/DatePicker)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

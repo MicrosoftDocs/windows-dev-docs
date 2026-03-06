@@ -76,9 +76,9 @@ Various APIs are available that let you get the height and width of these region
 > - **Important APIs:** [ScrollView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview), [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer), [ScrollBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.scrollbar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ScrollView in action](winui3gallery:/item/ScrollView)
+> [Open the WinUI 3 Gallery app and see the ScrollView in action](winui3gallery://item/ScrollView)
 >
-> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery:/item/ScrollViewer)
+> [Open the WinUI 3 Gallery app and see the ScrollViewer in action](winui3gallery://item/ScrollViewer)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

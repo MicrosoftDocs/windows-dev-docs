@@ -14,7 +14,7 @@ Windows apps support light and dark themes, and you can customize how your app r
 For design guidance on using color effectively, see [Color in Windows](../../design/signature-experiences/color.md).
 
 > [!div class="nextstepaction"]
-> [Open the WinUI Gallery app and see Colors in action](winui3gallery:/item/Color)
+> [Open the WinUI Gallery app and see Colors in action](winui3gallery://item/Color)
 
 ## Changing the theme
 

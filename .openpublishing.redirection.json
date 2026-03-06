@@ -5956,6 +5956,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/developer-mode-features-and-debugging.md",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/project-reunion/index.md",
       "redirect_url": "/windows/apps/windows-app-sdk/index",
       "redirect_document_id": false
@@ -10903,6 +10908,31 @@
     {
       "source_path": "hub/apps/windows-app-sdk/system-requirements.md",
       "redirect_url": "/windows/apps/windows-app-sdk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/analyze-app-performance/gdk-xbox.md",
+      "redirect_url": "/partner-center/insights/apps-and-games-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/chatgpt-openai-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/copilot-chat-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/dall-e-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-notifications-overview.md",
+      "redirect_url": "/windows/apps/develop/notifications/app-notifications/",
       "redirect_document_id": false
     }
   ]

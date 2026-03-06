@@ -77,7 +77,7 @@ For example, you cannot have two [LeftItems](/windows/windows-app-sdk/api/winrt/
 > - **Important APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see SwipeControl in action](winui3gallery:/item/SwipeControl)
+> [Open the WinUI 3 Gallery app and see SwipeControl in action](winui3gallery://item/SwipeControl)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
