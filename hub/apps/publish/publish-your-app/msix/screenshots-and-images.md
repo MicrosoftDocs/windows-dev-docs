@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Add app screenshots, images, and trailers
+# Add app screenshots, images, and trailers for MSIX apps
 
 > [!TIP]
 > Use the [Microsoft Store Asset Guidance Kit for Figma](../../../design/downloads/index.md#microsoft-store-asset-guidance-kit) to create polished icons, screenshots, and other assets for your Store submission.

@@ -35,7 +35,7 @@ WinUI logs ETW events that track the start and stop of each frame (shown in the 
 
 :::image type="content" source="images/wpa-generic-events.png" alt-text="Screenshot of the Windows Performance Analyzer showing the Generic Events table with a series of frame starts and stops.":::
 
-To address this issue, a new "XAML Frame Analysis" table plugin is included with the [Windows Assessment Toolkit (ADK)](https://learn.microsoft.com/windows-hardware/get-started/adk-install) 10.1.26100.1 and later. This table calculates and shows the duration of each frame (along with other time-consuming operations).
+To address this issue, a new "XAML Frame Analysis" table plugin is included with the [Windows Assessment Toolkit (ADK)](/windows-hardware/get-started/adk-install) 10.1.26100.1 and later. This table calculates and shows the duration of each frame (along with other time-consuming operations).
 
 > [!NOTE]
 > The "XAML Frame Analysis" table requires Windows Performance Analyzer (WPA) from Windows ADK 10.1.26100.1 or later. The version of WPR used to take the trace does not matter.

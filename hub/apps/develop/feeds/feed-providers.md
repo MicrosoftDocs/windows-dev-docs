@@ -25,7 +25,7 @@ For detailed guidance on how to implement a feed provider, see these articles be
 
 Feeds in the Widgets Board helps users stay on top of what matters, enabling them to easily discover useful information and empowering them to act on it. Feed providers enable users to see content from multiple apps and services at the same time. Users can access content from various apps directly on their Widgets Board without the need to open individual apps, ensuring they have the latest information at their fingertips. Users also have the control to enable or disable feeds from the Widgets Board settings, tailoring the content to their preferences.
 
-![hidedashboard-screenshot](media/feed-providers/hidedashboard-screenshot.png)
+![Screenshot showing the option to hide the dashboard panel in the Widgets Board settings](media/feed-providers/hidedashboard-screenshot.png)
 
 ## Getting started with feed providers
 

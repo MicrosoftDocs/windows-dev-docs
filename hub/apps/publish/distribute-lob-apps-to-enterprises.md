@@ -17,13 +17,13 @@ You have several options for distributing line of business (LOB) apps to your or
 If your organization uses Microsoft Endpoint Configuration Manager or Microsoft Intune to manage devices, you can deploy LOB apps using these tools. For more information, see these articles:
 
 * [Introduction to application management in Configuration Manager](/configmgr/apps/understand/introduction-to-application-management)
-* [Overview of the app lifecycle in Microsoft Intune](/intune/apps/app-lifecycle)
+* [Overview of the app lifecycle in Microsoft Intune](/mem/intune/apps/app-lifecycle)
 
 ## App Installer
 
 App Installer enables Windows 10 or Windows 11 apps to be installed by double-clicking an MSIX app package directly, or by double-clicking an .appinstaller file that installs the app package from a web server. This means that users don't need to use PowerShell or other developer tools to install LOB apps. App Installer can also install app packages that include optional packages and related sets.
 
-App Installer can be downloaded for offline use in the enterprise from Microsoft Store for Business [web portal](https://businessstore.microsoft.com/store/details/app-installer/9NBLGGH4NNS1). For more information about App Installer, see [Install Windows 10 or Windows 11 apps with App Installer](/windows/msix/app-installer/app-installer-root).
+App Installer can be downloaded for offline use in the enterprise from the [Microsoft Store](https://apps.microsoft.com/detail/9NBLGGH4NNS1). For more information about App Installer, see [Install Windows 10 or Windows 11 apps with App Installer](/windows/msix/app-installer/app-installer-root).
 
 ## Sideloading
 
