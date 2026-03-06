@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Set pricing and availability
+# Set pricing and availability for add-ons
 
 When submitting an add-on in [Partner Center](https://partner.microsoft.com/dashboard), the options on the **Pricing and availability** page determine how much to charge customers for your add-on and how it should be offered to customers.
 
