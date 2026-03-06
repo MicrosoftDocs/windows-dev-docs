@@ -10937,7 +10937,7 @@
     },
 	{
       "source_path": "hub/apps/publish/nrt-in-analytics.md",
-      "redirect_url": "windows/apps/publish/recent-data-acquisitions-reports",
+      "redirect_url": "/windows/apps/publish/recent-data-acquisitions-reports",
       "redirect_document_id": false
     }
   ]
