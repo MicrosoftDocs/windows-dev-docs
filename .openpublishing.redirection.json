@@ -3,7 +3,7 @@
     {
       "source_path": "hub/apps/publish/nrt-in-analytics.md",
       "redirect_url": "hub/apps/publish/recent-data-acquisitions-reports.md",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },	  
 	{
       "source_path": "hub/apps/performance/introduction.md",
