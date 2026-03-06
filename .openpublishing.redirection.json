@@ -1,10 +1,5 @@
 {
   "redirections": [
-    {
-      "source_path": "hub/apps/publish/nrt-in-analytics.md",
-      "redirect_url": "windows/apps/publish/recent-data-acquisitions-reports",
-      "redirect_document_id": false
-    },	  
 	{
       "source_path": "hub/apps/performance/introduction.md",
       "redirect_url": "/windows/apps/performance/",
@@ -10759,6 +10754,11 @@
       "source_path": "hub/apps/desktop/modernize/xaml-islands/xaml-islands.md",
       "redirect_url": "/windows/uwp/xaml-islands/xaml-islands",
       "redirect_document_id": false
-    }
+    },
+	{
+      "source_path": "hub/apps/publish/nrt-in-analytics.md",
+      "redirect_url": "windows/apps/publish/recent-data-acquisitions-reports",
+      "redirect_document_id": false
+    }  
   ]
 }
