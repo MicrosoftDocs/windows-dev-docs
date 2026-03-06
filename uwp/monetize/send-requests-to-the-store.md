@@ -201,7 +201,7 @@ The following examples show the format of the JSON data to pass to *parametersAs
 ```json
 {
     "storeAction": 1,
-    "productId": "9pb2mz1zmb1s",
+    "productId": "9PB2MZ1ZMB1S",
     "autoInstall": true,
     "autoOpenOnInstallComplete": true
 }
