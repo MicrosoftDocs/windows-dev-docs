@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Manage submission options
+# Manage submission options for PWAs
 
 The **Submission options** page of the app submission process is where you can provide more information to help us test your product properly. This is an optional step, but is recommended for many submissions. You can also optionally set publishing hold options if you want to delay the publishing process.
 
