@@ -51,7 +51,6 @@ Item templates let you add new files to an existing WinUI project. Right-click y
 
 | Template | Language | Description |
 |----------|----------|-------------|
-
 | Blank Page | C# and C++ | Adds a XAML file and code file that defines a new page derived from the **Microsoft.UI.Xaml.Controls.Page** class. |
 | Blank Window | C# and C++ | Adds a XAML file and code file that defines a new window derived from the **Microsoft.UI.Xaml.Window** class. |
 | Resource Dictionary | C# and C++ | Adds an empty, keyed collection of XAML resources. For more information, see [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md). |
