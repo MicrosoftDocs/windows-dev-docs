@@ -10959,6 +10959,46 @@
       "source_path": "hub/apps/publish/nrt-in-analytics.md",
       "redirect_url": "/windows/apps/publish/recent-data-acquisitions-reports",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/live-tile-icons.md",
+      "redirect_url": "/windows/uwp/launch-resume/live-tile-icons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/app-icon-construction.md",
+      "redirect_url": "/windows/apps/design/iconography/app-icon-construction",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/app-icon-design.md",
+      "redirect_url": "/windows/apps/design/iconography/app-icon-design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/overview.md",
+      "redirect_url": "/windows/apps/design/iconography/app-icons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/visual-studio-asset-generation.md",
+      "redirect_url": "/windows/apps/design/iconography/visual-studio-asset-generation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/segoe-fluent-icons-font.md",
+      "redirect_url": "/windows/apps/design/iconography/segoe-fluent-icons-font",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/segoe-ui-symbol-font.md",
+      "redirect_url": "/windows/apps/design/iconography/segoe-ui-symbol-font",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/signature-experiences/iconography.md",
+      "redirect_url": "/windows/apps/design/iconography",
+      "redirect_document_id": false
     }
   ]
 }

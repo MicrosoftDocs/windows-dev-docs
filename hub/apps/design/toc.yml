@@ -21,23 +21,21 @@ items:
     - name: Iconography
       items:
         - name: Overview
-          href: signature-experiences/iconography.md
+          href: iconography/index.md
         - name: App icons
           items:
             - name: Overview
-              href: style/iconography/overview.md
+              href: iconography/app-icons.md
             - name: Design guidelines
-              href: style/iconography/app-icon-design.md
+              href: iconography/app-icon-design.md
             - name: Construct your app icon
-              href: style/iconography/app-icon-construction.md
-            - name: Construction guidelines for Windows 10 icons
-              href: style/iconography/live-tile-icons.md
+              href: iconography/app-icon-construction.md
             - name: Generate app icons using Visual Studio
-              href: style/iconography/visual-studio-asset-generation.md
+              href: iconography/visual-studio-asset-generation.md
         - name: Segoe MDL2 icons
-          href: style/segoe-ui-symbol-font.md
+          href: iconography/segoe-ui-symbol-font.md
         - name: Segoe Fluent Icons
-          href: style/segoe-fluent-icons-font.md
+          href: iconography/segoe-fluent-icons-font.md
     - name: Layout
       items:
         - name: Overview
