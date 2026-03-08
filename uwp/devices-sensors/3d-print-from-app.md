@@ -61,7 +61,7 @@ The following code shows how to load a single file into app memory using the [**
 See the [3MF Specification](https://3mf.io/spec/) to learn more about 3MF and the supported features for producers and consumers of 3D product. To learn how to utilize these features with Windows APIs, see the [Generate a 3MF package](./3d-generate-3mf.md) tutorial.
 
 > [!NOTE]  
-> The [3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) app can open files of most popular 3D formats and save them as .3mf files. It also provides tools to edit your models, add color data, and perform other print-specific operations.
+> The [3D Builder](https://apps.microsoft.com/detail/9wzdncrfj3t6) app can open files of most popular 3D formats and save them as .3mf files. It also provides tools to edit your models, add color data, and perform other print-specific operations.
 >
 > In this example, where the file type could vary, you could open the 3D Builder app and prompt the user to save the imported data as a .3mf file and then reload it.
 
@@ -123,6 +123,6 @@ It is also good practice to de-register your event handlers once your app resume
 
 ## Related topics
 
-[3D printing with Windows 10](https://www.microsoft.com/3d-print/windows-3d-printing)
+[3D printing with Windows](/windows-hardware/drivers/3dprint/)
 [Generate a 3MF package](./3d-generate-3mf.md)  
 [3D printing UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/3DPrinting)
