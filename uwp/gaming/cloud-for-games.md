@@ -61,7 +61,7 @@ Learn how other developers have implemented cloud solutions in their games.
         </td>
         <td>
             <ul>
-                <li><a href="https://customers.microsoft.com/story/tencent-telecommunications-azure-service-fabric-windows-server-en">Tencent Games and Microsoft built the cloud game solution</a></li>
+                <li>Tencent Games and Microsoft built the cloud game solution</li>
                 <li>Building Games with Service Fabric: Details about Tencent's implementation (video)</li>
             </ul>
         </td>
