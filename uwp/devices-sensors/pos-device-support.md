@@ -66,9 +66,9 @@ This topic describes the hardware support for each of the Point of Service devic
 
 
 <sup>1</sup> Upgradable to support 2D barcodes through Honeywell <br/>
-<sup>2</sup> Minimum firmware 009 (2018.07.09) required. Upgradable using Zebra [123Scan](https://www.zebra.com/us/en/software/scanners/123scan-software.html).<br/>
-<sup>3</sup> Minimum firmware 016 (2018.01.18) required. Upgradable using Zebra [123Scan](https://www.zebra.com/us/en/software/scanners/123scan-software.html).<br/> 
-<sup>4</sup> Minimum firmware 023 (2019.03.11) required. Upgradable using Zebra [123Scan](https://www.zebra.com/us/en/software/scanners/123scan-software.html).<br/>
+<sup>2</sup> Minimum firmware 009 (2018.07.09) required. Check the Zebra (https://www.zebra.com/) size for updates.<br/>
+<sup>3</sup> Minimum firmware 016 (2018.01.18) required. Check the Zebra (https://www.zebra.com/) size for updates.<br/> 
+<sup>4</sup> Minimum firmware 023 (2019.03.11) required. Check the Zebra (https://www.zebra.com/) size for updates.<br/>
 
 <hr>
 
