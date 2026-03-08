@@ -185,9 +185,9 @@ Contact [developer support](https://developer.microsoft.com/windows/support/?tab
 
 ## Verifiable Credentials (VC) Vetting Service 
 
-* For more information on Verifiable Credentials, [see the FAQ](https://learn.microsoft.com/partner-center/enroll/get-verifiable-credentials)
-* Verifiable Credentials support [can be found here](https://learn.microsoft.com/partner-center/support/report-problems-with-partner-center#contact-support-using-partner-center-ai-assistant)
-* [Submit a help ticket here](https://learn.microsoft.com/partner-center/support/report-problems-with-partner-center#contact-support-using-partner-center-ai-assistant)
+* For more information on Verifiable Credentials, [see the FAQ](/partner-center/enroll/get-verifiable-credentials)
+* Verifiable Credentials support [can be found here](/partner-center/support/report-problems-with-partner-center#contact-support-using-partner-center-ai-assistant)
+* [Submit a help ticket here](/partner-center/support/report-problems-with-partner-center#contact-support-using-partner-center-ai-assistant)
 
 
 ## Additional resources
