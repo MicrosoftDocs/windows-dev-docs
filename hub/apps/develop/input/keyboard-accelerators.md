@@ -374,8 +374,6 @@ Notice that some of the combinations are not valid for localized versions of Win
 
 As keyboard accelerators are not typically described directly in the UI of your Windows application, you can improve discoverability through [tooltips](../../design/controls/tooltips.md), which display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip can identify whether a control has an associated keyboard accelerator and, if so, what the accelerator key combination is.
 
-**Windows 10, Version 1803 (April 2018 Update) and newer**
-
 By default, when keyboard accelerators are declared, all controls (except [MenuFlyoutItem](/uwp/api/Windows.UI.Xaml.Controls.MenuFlyoutItem) and [ToggleMenuFlyoutItem](/uwp/api/windows.ui.xaml.controls.togglemenuflyoutitem)) present the corresponding key combinations in a tooltip.
 
 > [!NOTE] 
@@ -645,4 +643,4 @@ public class MyListView : ListView
 
 ### Samples
 
-- [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)
+- [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery)

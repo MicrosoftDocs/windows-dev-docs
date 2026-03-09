@@ -14,7 +14,7 @@ This FAQ provides answers to common questions about Windows application developm
 Topics covered include:
 
 - Getting started and the Windows app development landscape.
-- Native Windows-only app development with WinUI, Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
+- Native Windows-only app development with WinUI 3, Windows Presentation Foundation (WPF), and Windows Forms (WinForms).
 - Windows Software Development Kit (SDK) and Windows App SDK.
 - Targeting Windows as part of your cross-platform development strategy.
 - Hybrid and web app development with .NET MAUI, Blazor, and ASP.NET Core.
@@ -103,27 +103,23 @@ Topics covered include:
 
 </details>
 
-<details><summary>What is the difference between WinUI, WinUI 2 and WinUI 3?</summary>
+<details><summary>What is the difference between WinUI and WinUI for UWP?</summary>
 
-> **WinUI** is the latest native UI framework for Windows app development. It provides a modern and flexible UI framework for creating visually appealing and interactive Windows apps. WinUI is part of the Windows App SDK and works best with the latest versions of Windows.
+> **WinUI** (previously referred to as WinUI 3) is the latest native UI framework for Windows app development. It provides a modern and flexible UI framework for creating visually appealing and interactive Windows apps. WinUI is part of the Windows App SDK and works best with the latest versions of Windows.
 >
-> **WinUI 2** is a set of UI controls and styles built on top of UWP. It provides a modern look and feel for UWP apps and is designed for Windows 10.
+> **WinUI for UWP** (previously referred to as WinUI 2) is a set of UI controls and styles built on top of UWP. It provides a modern look and feel for UWP apps and is designed for Windows 10.
 >
-> **WinUI 3** was the earlier name for WinUI when it first shipped as part of the Windows App SDK.
->
-> In summary, WinUI is the latest and most advanced version of the WinUI framework, WinUI 2 is a control library for UWP, and WinUI 3 was an earlier label for WinUI. Use “WinUI” going forward unless specifically referring to WinUI 2.
-
 </details>
 
 <details><summary>When I build an app using Windows App SDK and WinUI, am I building a "WinUI app"?</summary>
 
-> Yes — “WinUI app” is the recommended term. WinUI apps are referred to as “WinUI apps” because WinUI 2 is not a type of app but a set of components used in UWP apps.
+> Yes — “WinUI app” is the recommended term. WinUI apps are referred to as “WinUI apps” because WinUI for UWP is not a type of app but a set of components used in UWP apps.
 
 </details>
 
-<details><summary>Can I incrementally update my UWP app with WinUI 2 controls to WinUI by gradually replacing WinUI 2 components with WinUI components?</summary>
+<details><summary>Can I incrementally update my UWP app with WinUI for UWP controls to WinUI by gradually replacing WinUI for UWP components with WinUI components?</summary>
 
-> No. Windows App SDK can't be used in UWP apps, and WinUI 2 can't be mixed with WinUI. See [Migrate from UWP to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
+> No. Windows App SDK can't be used in UWP apps, and WinUI for UWP can't be mixed with WinUI. See [Migrate from UWP to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
 
 </details>
 
@@ -179,15 +175,15 @@ Topics covered include:
 
 </details>
 
-<details><summary>Does Windows App SDK include WinUI 2?</summary>
+<details><summary>Does Windows App SDK include WinUI for UWP?</summary>
 
-> No. WinUI 2 is part of the UWP platform.
+> No. WinUI for UWP is part of the UWP platform.
 
 </details>
 
-<details><summary>Are WinUI 2 and WinUI built on the same technology?</summary>
+<details><summary>Are WinUI for UWP and WinUI built on the same technology?</summary>
 
-> Not quite. Although WinUI originally started from the WinUI 2 codebase, they are distinct technologies. Both are XAML-based UI frameworks that work across .NET and C++, but WinUI 2 and WinUI are not compatible with each other.
+> Not quite. Although WinUI originally started from the WinUI for UWP codebase, they are distinct technologies. Both are XAML-based UI frameworks that work across .NET and C++, but WinUI for UWP and WinUI are not compatible with each other.
 
 </details>
 
@@ -207,7 +203,7 @@ Topics covered include:
 
 > XAML Islands let you host modern XAML-based controls alongside existing Win32 UI from other frameworks such as WinForms and WPF.
 > 
-> Today, XAML Islands support _most_ system XAML and WinUI 2 controls. See [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md) for more details. Support for hosting WinUI controls is available starting in [Windows App SDK 1.4](/windows/apps/windows-app-sdk/stable-channel#xaml-islands-no-longer-experimental).
+> Today, XAML Islands support _most_ system XAML and WinUI for UWP controls. See [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md) for more details. Support for hosting WinUI controls is available starting in [Windows App SDK 1.4](/windows/apps/windows-app-sdk/stable-channel#xaml-islands-no-longer-experimental).
 
 </details>
 
@@ -219,7 +215,7 @@ Topics covered include:
 
 <details><summary>Can I use Mica or Acrylic backgrounds in apps built with Windows App SDK?</summary>
 
-> Yes. See [Apply Mica or Acrylic materials in desktop apps for Windows 11](../windows-app-sdk/system-backdrop-controller.md).
+> Yes. See [Apply Mica or Acrylic materials in desktop apps for Windows 11](../develop/ui/system-backdrops.md).
 
 </details>
 
@@ -229,7 +225,7 @@ Topics covered include:
 > 
 > - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets.
 > - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): Contains a WinUI notes sample used in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/) tutorial.
-> - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. Also available in the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+> - [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. Also available in the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 </details>
 
@@ -442,20 +438,6 @@ Topics covered include:
 
 </details>
 
-## UWP and WinUI 2
-
-<details><summary>Can UWP apps be distributed outside of the Microsoft Store?</summary>
-
-> Yes. If your [MSIX](/windows/msix/) package is signed, the signing certificate must be valid and trusted on the target device.
-
-</details>
-
-<details><summary>Can I mix UWP XAML UI controls with Win32, WPF, or WinForms UI controls?</summary>
-
-> Yes — XAML Islands enables this. See [Learn more about XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md).
-
-</details>
-
 ## Packaging, deployment, and updates
 
 <details><summary>What's the difference between apps that are packaged, unpackaged, and packaged with external location?</summary>
@@ -500,9 +482,9 @@ Topics covered include:
 
 ## Deprecations and migrations
 
-<details><summary>Are UWP / WinUI 2 deprecated?</summary>
+<details><summary>Are UWP / WinUI for UWP deprecated?</summary>
 
-> No. UWP and WinUI 2 are still supported and continue to receive bug, reliability, and security fixes. However, most new features and capabilities are added to WinUI.
+> No. UWP and WinUI for UWP are still supported and continue to receive bug, reliability, and security fixes. However, most new features and capabilities are added to WinUI.
 >
 > UWP support for .NET 9 is available. This option provides a modernization path for UWP apps using the latest .NET version.
 >
@@ -516,7 +498,7 @@ Topics covered include:
 
 </details>
 
-<details><summary>When should I migrate a UWP / WinUI 2 app to WinUI?</summary>
+<details><summary>When should I migrate a UWP / WinUI for UWP app to WinUI?</summary>
 
 > UWP developers should not feel pressured to migrate if they are satisfied with UWP and its feature set — for many apps, the right choice may be to stay on UWP.
 > 
@@ -524,7 +506,7 @@ Topics covered include:
 
 </details>
 
-<details><summary>When should I *not* migrate a UWP + WinUI 2 app to WinUI?</summary>
+<details><summary>When should I *not* migrate a UWP + WinUI for UWP app to WinUI?</summary>
 
 > Continue using UWP if you're building for Xbox, Surface Hub, or HoloLens.
 

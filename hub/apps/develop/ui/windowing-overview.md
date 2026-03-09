@@ -10,11 +10,11 @@ dev_langs:
   - csharp
   - cppwinrt
 appliesto:
-  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI 3</a>
+  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI</a>
   - ✅ <a href="hhttps://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 
-# Windowing overview for WinUI and Windows App SDK
+# Windowing overview for WinUI 3 and Windows App SDK
 
 Windowing functionality in a WinUI app is provided by a combination of the XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, both of which are based on the [Win32 HWND model](/windows/win32/winmsg/about-windows).
 
@@ -52,7 +52,7 @@ This diagram shows the relationship between the classes and APIs that you use to
 :::image type="content" source="images/winui-windowing-diagram.png" lightbox="images/winui-windowing-diagram.png" alt-text="win u i windowing diagram":::
 
 > [!NOTE]
-> You can use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI 3. For frameworks other than WinUI 3, the functionality shown in the _XAML Window_ box of the diagram would be replaced by the appropriate framework-specific windowing APIs:
+> You can use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI. For frameworks other than WinUI, the functionality shown in the _XAML Window_ box of the diagram would be replaced by the appropriate framework-specific windowing APIs:
 >
 > - [WPF Window](/dotnet/api/system.windows.window)
 > - [Windows Forms Form](/dotnet/api/system.windows.forms.form)
@@ -60,10 +60,10 @@ This diagram shows the relationship between the classes and APIs that you use to
 
 ## Window/AppWindow API comparison
 
-If you use WinUI 3 XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, you can use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the additional window management APIs.
+If you use WinUI XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, you can use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the additional window management APIs.
 
 > [!IMPORTANT]
-> If you're not using WinUI 3 1.3 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](manage-app-windows.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
+> If you're not using WinUI 1.3 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](manage-app-windows.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
 ### Lifetime management
 
@@ -126,7 +126,7 @@ In some cases you might need to use measurements from one class in the other cla
 | [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) | [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.dispatcherqueue), [AssociateWithDispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.associatewithdispatcherqueue) |
 | [Compositor](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.compositor) | N/A |
 
-XAML Window APIs are generally responsible for the appearance of your app content, like the background. For more info about [SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), see [Apply Mica or Acrylic materials](/windows/apps/windows-app-sdk/system-backdrop-controller).
+XAML Window APIs are generally responsible for the appearance of your app content, like the background. For more info about [SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), see [Apply Mica or Acrylic materials](system-backdrops.md).
 
 AppWindow APIs are responsible for the _non-client_ portion of the window and your app's interaction with the Windows OS.
 

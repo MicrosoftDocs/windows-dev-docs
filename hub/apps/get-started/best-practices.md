@@ -36,7 +36,7 @@ Windows 11 is built on the [Windows 11 design principles](../design/signature-ex
 - Window behavior
 - Shell integration points
 
-[WinUI](../winui/index.md) provides built-in support for many of these experiences and styles through its common controls. If you can't use WinUI, consider emulating the styles demonstrated in our [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+[WinUI](../winui/index.md) provides built-in support for many of these experiences and styles through its common controls. If you can't use WinUI, consider emulating the styles demonstrated in our [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 ### Layout
 
@@ -101,7 +101,7 @@ WinUI supports switching between Dark and Light themes by default (see [XAML the
 
 Windows 11 brings beautiful UI innovations to the Windows operating system that you can leverage in your apps. [Windows 11 geometry](../design/signature-experiences/geometry.md) supports modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
 
-The visual and behavioral changes are built in to [WinUI](../winui/index.md). Use WinUI where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+The visual and behavioral changes are built in to [WinUI](../winui/index.md). Use WinUI where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 [Common controls](../develop/ui/controls/index.md) are one way that you can utilize these updates immediately. Use the latest common controls whenever possible to get the benefits of compatibility and accessibility for free. And these common controls are more cost effective than building your own custom controls when you factor in maintenance and testing costs.
 
@@ -164,7 +164,7 @@ Applications run in a frame that Windows provides. Users expect the built-in Win
 
 Users interact with the title bar and caption buttons (minimize, maximize, close) to resize, move, and close app windows. A consistent experience helps people use your application smoothly. See [Windows app title bar](../design/basics/titlebar-design.md) to learn about title bar and caption button design for Windows.  
 
-You can use the Windows App SDK APIs to [integrate app content with the title bar](../develop/title-bar.md) in WinUI 3, .NET, WinForms, and WPF apps.
+You can use the Windows App SDK APIs to [integrate app content with the title bar](../develop/title-bar.md) in WinUI, .NET, WinForms, and WPF apps.
 
 #### Snap Layout
   
@@ -295,7 +295,7 @@ Reliable installation, update, and uninstallation experiences are important part
 
 ### Updates
 
-  - Support an update mechanism that allows your app to restart when it's convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior for WinUI 3 apps. 
+  - Support an update mechanism that allows your app to restart when it's convenient for the user. Consider using the Windows App SDK Restart APIs to manage app behavior for WinUI apps. 
   - Ensure that your update mechanism downloads only the essential changed components that need to be updated. This approach minimizes the required network bandwidth.  
   - Provide a way to update and repair your app. Consider MSIX, which automatically handles update repair. For more information, see [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview).
   - Consider push notification-based updates or checking for available updates at app startup or at restart.
@@ -410,5 +410,5 @@ Your privacy policy must:
 
 ## Related articles
 
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)
 - [Windows Developer FAQ](./windows-developer-faq.md)

@@ -1,19 +1,19 @@
 ---
-title: Show the camera preview in a WinUI 3 app
-description: Learn how to show the camera preview in a WinUI 3 app. 
+title: Show the camera preview in a WinUI app
+description: Learn how to show the camera preview in a WinUI app. 
 ms.topic: article
 ms.date: 06/14/2024
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
-#customer intent: As a developer, I want to access the camera in a Windows app using WinUI 3.
+#customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
 
 # Show the camera preview in a WinUI 3 app
 
-In this quickstart, you will learn how to create a basic WinUI 3 camera app that displays the camera preview. In a WinUI 3 app, you use the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control in the [Microsoft.UI.Xaml.Controls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls) namespace to render the camera preview and the WinRT class [MediaCapture](/uwp/api/windows.media.capture.mediacapture) to access the device's camera preview stream. **MediaCapture** provides APIs for performing a wide range of camera-related tasks such as such as capturing photos and videos and configuring the camera's device driver. See the other articles in this section for details about other **MediaCapture** features.
+In this quickstart, you will learn how to create a basic WinUI camera app that displays the camera preview. In a WinUI app, you use the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control in the [Microsoft.UI.Xaml.Controls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls) namespace to render the camera preview and the WinRT class [MediaCapture](/uwp/api/windows.media.capture.mediacapture) to access the device's camera preview stream. **MediaCapture** provides APIs for performing a wide range of camera-related tasks such as such as capturing photos and videos and configuring the camera's device driver. See the other articles in this section for details about other **MediaCapture** features.
 
-The code in this walkthrough is adapted from the [MediaCapture WinUI 3 sample on github](https://github.com/microsoft/Windows-Camera/tree/master/Samples/MediaCaptureWinUI3). 
+The code in this walkthrough is adapted from the [MediaCapture WinUI sample on github](https://github.com/microsoft/Windows-Camera/tree/master/Samples/MediaCaptureWinUI3). 
 
 > [!TIP]
 > For the UWP version of this article, see [Display the camera preview](/windows/uwp/audio-video-camera/simple-camera-preview-access) in the UWP documentation.
@@ -23,9 +23,9 @@ The code in this walkthrough is adapted from the [MediaCapture WinUI 3 sample on
 - Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2022 or later with the **WinUI application development** workload.
 
-## Create a new WinUI 3 app
+## Create a new WinUI app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to "Windows", then select the "Blank App, Packaged (WinUI 3 in desktop)" project template.
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to "Windows", then select the "Blank App, Packaged (WinUI in desktop)" project template.
 
 
 ## Create the UI

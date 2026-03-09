@@ -16,11 +16,43 @@ This page provides an overview of the technologies and development tools for mea
 
 ## What is application performance and why is it important?
 
-Performance in the context of an application usually revolves around _cost_. How long is it going to take to complete a particular task? How much of the system's resources will be used?
+Performance is the measure of how effectively your application uses the system's resources to do what you've designed it to do. It covers different aspects of how your program interacts with the underlying device, including:
 
-The answers to these questions play a fundamental role in the quality of a user's experience with an application (you can likely recall times where as a user, you have felt frustrated at an application for its poor performance!). As a developer, by keeping performance in mind, you will ensure that users of your applications don't experience that same frustration.
+* CPU usage
+* Memory consumption
+* Power consumption
+* Network and storage utilization
+* Animation performance
 
-To learn more about the importance of performance and suggestions on how to get started, see this [introduction to the world of performance](introduction.md).
+All of these properties have an element of cost associated with them: for example, how much CPU does my application use? How much of the user's bandwidth will it consume? How fast does this particular page of my application load?
+
+Users expect performance as a fundamental property of the software they use. They want their applications to be responsive and make efficient use of their system's resources. Applications that exhibit poor performance cause frustration, which can lead to reduced user engagement. To provide your customers with the best possible experience, it is therefore crucial to make performance a regular part of your development workflow.
+
+## When should you measure application performance?
+
+Application performance can span many stages of the development process. It has implications on everything ranging from your choice of data structure to the technology that you choose for building your application. Keep performance in mind as you are developing your application, and plan to do regular performance testing as part of updating and maintaining your application.
+
+## How to approach performance measurement
+
+Here are some suggestions for how to approach testing your application for performance.
+
+* **Leverage your knowledge of your application.** Understanding the most common scenarios for your users will enable you to spend your time wisely on optimizing the right things. If you have data available on how users interact with your application, this would be a great time to look at it.
+  * Where are your users spending most of their time?
+  * What are the most important things that a customer will do with your software?
+  * What are your application's hardware requirements?
+* **Set performance goals for your most important user scenarios.**
+* **Be precise about what you are trying to optimize.** Is it CPU? Battery? Network throughput?
+* **Select the tools you will use to do your measurements.**
+* **Apply a scientific mindset when testing.** Create benchmarks in a controlled environment. Then, make your change, and re-measure to see how your changes have affected your application's behavior.
+* **Add regression testing into your test environment.** This will ensure that your performance metrics don't regress over time.
+
+### Intertwining metrics
+
+While you will typically focus on one area of performance during your analysis, be aware that areas are often intertwined. An improvement in one can cascade into an improvement in the other areas.
+
+For example, fixing power consumption is frequently a synchronization problem. Reducing memory usage can result in reducing the time spent using the CPU. There can also be situations where additional resources spent in one area yield a more impactful improvement in another area—for instance, increasing memory consumption can decrease network or storage utilization through caching.
+
+The decision to make a change depends on what is most important for your customers.
 
 ## What tools can I use to measure application performance?
 

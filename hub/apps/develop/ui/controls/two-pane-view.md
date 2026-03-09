@@ -307,24 +307,6 @@ private void TwoPaneView_ModeChanged(TwoPaneView sender, object args)
 }
 ```
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The [TwoPaneView](/uwp/api/microsoft.ui.xaml.controls.twopaneview) for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [TwoPaneView class](/uwp/api/microsoft.ui.xaml.controls.twopaneview)
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:TwoPaneView />
-```
-
 ## Related articles
 
 - [Layout overview](../../../design/layout/index.md)

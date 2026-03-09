@@ -30,7 +30,7 @@ You can use a NumberBox control to capture and display mathematic input. If you 
 > - **Important APIs:** [NumberBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.NumberBox)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see NumberBox in action](winui3gallery:/item/NumberBox)
+> [Open the WinUI 3 Gallery app and see NumberBox in action](winui3gallery://item/NumberBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -171,21 +171,3 @@ NumberBox uses infix notation to evaluate expressions. In order of precedence, t
 
 Note that parentheses can be used to override precedence rules.
 
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The NumberBox for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [NumberBox class](/windows/winui/api/microsoft.ui.xaml.controls.NumberBox)
-> - [Open the WinUI 2 Gallery app and see NumberBox in action](winui2gallery:/item/NumberBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:NumberBox />
-```

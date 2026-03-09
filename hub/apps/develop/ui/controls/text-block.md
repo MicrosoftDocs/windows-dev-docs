@@ -30,7 +30,7 @@ For more info about choosing the right text control, see the [Text controls](../
 > - **Important APIs:** [TextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock), [Text property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text), [Inlines property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.inlines)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TextBlock in action](winui3gallery:/item/TextBlock)
+> [Open the WinUI 3 Gallery app and see the TextBlock in action](winui3gallery://item/TextBlock)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -69,14 +69,6 @@ Certain conditions require TextBlock to fall back to a more feature-rich and CPU
 - [Text](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.text): The most important condition is that the fast path is used only when you set text by explicitly setting the `Text` property, either in XAML or in code (as shown in the previous examples). Setting the text via TextBlock's `Inlines` collection (such as `<TextBlock>Inline text</TextBlock>`) will disable the fast path, due to the potential complexity of multiple formats.
 - [CharacterSpacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.characterspacing): Only the default value of 0 is fast path.
 - [TextTrimming](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.texttrimming): Only the `None`, `CharacterEllipsis`, and `WordEllipsis` values are fast path. The `Clip` value disables the fast path.
-
-> [!NOTE]
-> **UWP Only:**
-> Prior to Windows 10, version 1607, additional properties also affect the fast path. If your app is run on an earlier version of Windows, these conditions will cause your text to render on the slow path. For more info about versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code).
->
-> - [Typography](/uwp/api/Windows.UI.Xaml.Documents.Typography): Only the default values for the various `Typography` properties are fast path.
-> - [LineStackingStrategy](/uwp/api/windows.ui.xaml.controls.textblock.linestackingstrategy): If [LineHeight](/uwp/api/windows.ui.xaml.controls.textblock.lineheight) is not 0, the `BaselineToBaseline` and `MaxHeight` values disable the fast path.
-> - [IsTextSelectionEnabled](/uwp/api/windows.ui.xaml.controls.textblock.istextselectionenabled): Only `false` is fast path. Setting this property to `true` disables the fast path.
 
 You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.debugsettings.istextperformancevisualizationenabled) property to `true` during debugging to determine whether text is using fast path rendering. When this property is set to `true`, the text that is on the fast path displays in a bright green color.
 
@@ -169,19 +161,6 @@ Typography.SetStylisticSet4(textBlock1, true);
 ```xaml
 <TextBlock>12 x <Run Typography.Fraction="Slashed">1/3</Run> = 4.</TextBlock>
 ```
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [TextBlock class](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), [Text property](/uwp/api/windows.ui.xaml.controls.textblock.text), [Inlines property](/uwp/api/windows.ui.xaml.controls.textblock.inlines)
-> - [Open the WinUI 2 Gallery app and see the TextBlock in action](winui2gallery:/item/TextBlock). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
 
 ## Related articles
 

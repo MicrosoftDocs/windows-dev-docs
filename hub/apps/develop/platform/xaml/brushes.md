@@ -213,24 +213,3 @@ For [**ImageBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.
 [**ImageSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesourceproperty) requires a [**BitmapImage**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Imaging.BitmapImage) (not a URI) when you define an [**ImageBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.ImageBrush) using code. If your source is a stream , use the [**SetSourceAsync**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource.setsourceasync) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [**BitmapImage**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage) constructor that takes a URI. You might also consider handling the [**ImageOpened**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imageopened) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available.
 
 For code examples, see [**ImageBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.ImageBrush) and [**XamlCompositionBrushBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase).
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-Brush APIs exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.media) and [Windows.UI.Xaml.Controls](/uwp/api/windows.ui.xaml.controls) namespaces.
-
-> [!div class="checklist"]
->
-> - **Platform APIs:** [Brush class](/uwp/api/windows.ui.xaml.media.brush)
-> - [Open the WinUI 2 Gallery app and see RadialGradientBrush in action](winui2gallery:/item/RadialGradientBrush). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles, templates, and features for all controls.
-
-### WebViewBrush (UWP only)
-
-A [**WebViewBrush**](/uwp/api/windows.ui.xaml.controls.webviewbrush) is a special type of brush that can access the content normally viewed in a [**WebView**](/uwp/api/windows.ui.xaml.controls.webview) control. Instead of rendering the content in the rectangular **WebView** control area, **WebViewBrush** paints that content onto another element that has a [**Brush**](/uwp/api/windows.ui.xaml.Media.Brush)-type property for a render surface. **WebViewBrush** isn't appropriate for every brush scenario, but is useful for transitions of a **WebView**. For more info, see [**WebViewBrush**](/uwp/api/windows.ui.xaml.controls.webviewbrush).
-
-If you create a [**WebViewBrush**](/uwp/api/windows.ui.xaml.controls.webviewbrush) in code, use the default constructor and then call other APIs before you attempt to use that brush for a UI property. You might need to call [**Redraw**](/uwp/api/windows.ui.xaml.controls.webviewbrush.redraw) if you've recently reset the [**SourceName**](/uwp/api/windows.ui.xaml.controls.webviewbrush.sourcename) property or if the content of the [**WebView**](/uwp/api/windows.ui.xaml.controls.webview) is also being changed with code.
-
-For code examples, see [**WebViewBrush**](/uwp/api/windows.ui.xaml.controls.webviewbrush).

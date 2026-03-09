@@ -50,7 +50,7 @@ For collections that only have a few items or that only require a small amount o
 > - **Important APIs:** [AnnotatedScrollBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.annotatedscrollbar), [ScrollView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview), [IScrollController interface](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.iscrollcontroller)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the AnnotatedScrollBar in action](winui3gallery:/item/AnnotatedScrollBar)
+> [Open the WinUI 3 Gallery app and see the AnnotatedScrollBar in action](winui3gallery://item/AnnotatedScrollBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -126,7 +126,7 @@ You add labels by populating the [Labels](/windows/windows-app-sdk/api/winrt/mic
 
 Labels (if specified) are always visible on the scrollbar, unless they collide with other labels or extend past the bounds of the rail. (See [Label behavior](#label-behavior) for more info.)
 
-The calculation of the label offset value depends on the details of your app and its data. For one example of how the offset can be calculated, see the [WinUI Gallery example on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/ControlPages/AnnotatedScrollBarPage.xaml.cs).
+The calculation of the label offset value depends on the details of your app and its data. For one example of how the offset can be calculated, see the [WinUI 3 Gallery example on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/ControlPages/AnnotatedScrollBarPage.xaml.cs).
 
 #### Detail labels
 
@@ -140,7 +140,7 @@ You can handle the [Scrolling](/windows/windows-app-sdk/api/winrt/microsoft.ui.x
 
 ## Get the sample code
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related topics
 

@@ -1,5 +1,5 @@
 ---
-title: Use a MongoDB database in a Windows app
+title: "Tutorial: Use a MongoDB database in a Windows app"
 description: Learn how to connect your Windows app directly to a MongoDB database and test the connection programmatically.
 ms.date: 08/01/2024
 ms.topic: how-to
@@ -8,13 +8,13 @@ ms.localizationpriority: medium
 #customer intent: As a Windows developer, I want to learn how to connect my Windows app directly to a MongoDB database so that I can store and retrieve data.
 ---
 
-# Use a MongoDB database in a Windows app
+# Tutorial: Use a MongoDB database in a Windows app
 
 This article contains the steps required to enable working with a MongoDB database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.
 
 ## Set up your solution
 
-This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to MongoDB. Follow these steps to install the package and try out the example code to read data from an existing MongoDB database.
+This example can be used with any WPF, Windows Forms, WinUI, and UWP project to connect your Windows app to MongoDB. Follow these steps to install the package and try out the example code to read data from an existing MongoDB database.
 
 1. Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console).
 1. Use the command `Install-Package MongoDB.Driver` to install the NuGet package for the official driver for MongoDB.

@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 :::image type="icon" source="images/windows-app-sdk-hero.png":::
 
-The Windows App SDK provides a unified set of APIs and tools that you can use to build modern Windows apps. It brings the latest Windows platform features to both [WinUI](../winui/winui3/index.md) and existing desktop app frameworks such as WPF, Windows Forms, or Win32.
+The Windows App SDK provides a unified set of APIs and tools that you can use to build modern Windows apps. It brings the latest Windows platform features to both [WinUI 3](../winui/winui3/index.md) and existing desktop app frameworks such as WPF, Windows Forms, or Win32.
 
 
 Windows App SDK is built in the open, and contributions or discussions are welcome. Visit the repository for details:
@@ -22,7 +22,7 @@ Windows App SDK is built in the open, and contributions or discussions are welco
 
 ### What you can do with the Windows App SDK
 
-Whether you are building a new app with WinUI 3 or enhancing an existing one with modern capabilities, the Windows App SDK helps you take advantage of the latest Windows APIs.
+Whether you are building a new app with WinUI or enhancing an existing one with modern capabilities, the Windows App SDK helps you take advantage of the latest Windows APIs.
 
 :::image type="content" source="images/windows-app-sdk-overview.png" alt-text="Diagram of the Windows App SDK architecture" border="false":::
 
@@ -36,7 +36,7 @@ Here's a breakdown of the major features that Windows App SDK provides:
 | [Modern text rendering](dwritecore.md) | Use a device-independent text layout and rendering system with [ClearType](/typography/cleartype/) subpixel rendering, hardware acceleration, and broad language support for precise, high-quality text. |
 | [Resource management](mrtcore/mrtcore-overview.md) | Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic. |
 | [App lifecycle](applifecycle/applifecycle.md) | Manage key aspects of your app's runtime behavior, including [instance management](applifecycle/applifecycle-instancing.md), [rich activation](applifecycle/applifecycle-rich-activation.md) (file, protocol, restart, and more), and [power management](applifecycle/applifecycle-power.md). Gain control over how your app starts, runs, and conserves system resources. |
-| [Windowing](windowing/windowing-overview.md) | Create, position, and customize app windows with modern windowing APIs. |
+| [Windowing](../develop/ui/windowing-overview.md) | Create, position, and customize app windows with modern windowing APIs. |
 | Notifications | Send local or cloud-based notifications to engage users and keep your app connected, including both [app notifications](../develop/notifications/app-notifications/index.md) and [push notifications](../develop/notifications/push-notifications/index.md). |
 | [Widgets](../develop/widgets/widget-providers.md) | Bring personalized, glanceable information to the Windows widget board, allowing users to stay connected to your app's live content right from their desktop. |
 | [XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md) | Embed modern Windows UI controls inside existing desktop apps to refresh your interface and add new capabilities without a full rewrite. |
@@ -91,4 +91,4 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 ## Related topics
 
 - [Release channels and release notes](release-channels.md)
-- [Create your first WinUI 3 project](../get-started/start-here.md)
+- [Create your first WinUI project](../get-started/start-here.md)

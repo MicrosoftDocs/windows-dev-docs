@@ -18,7 +18,7 @@ The rest of this article will walk through creating a simple C# WinUI 3 app that
 
 ## Create a new project
 
-In Visual Studio, create a new project. For this example, in the **Create a new project** dialog, set the language filter to C# and the project type to WinUI 3 and then select the "Blank App, Packaged (WinUI 3 in Desktop).
+In Visual Studio, create a new project. For this example, in the **Create a new project** dialog, set the language filter to C# and the project type to WinUI and then select the "Blank App, Packaged (WinUI in Desktop).
 
 ## Add a property to track the Microsoft Copilot key pressed state
 
@@ -149,7 +149,7 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
 ```
 
 > [!IMPORTANT]
-> Note that, by default, WinUI 3 apps are multi-instanced, which means that a new instance will be launched whenever the Microsoft Copilot hot key is pressed or released. This may be the desired behavior for many providers, but if you would prefer, you can update you app to use a single instance. For more information, see [Create a single-instanced WinUI app with C#](/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance).
+> Note that, by default, WinUI apps are multi-instanced, which means that a new instance will be launched whenever the Microsoft Copilot hot key is pressed or released. This may be the desired behavior for many providers, but if you would prefer, you can update you app to use a single instance. For more information, see [Create a single-instanced WinUI app with C#](/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance).
 
 ## Handle fast path invocation
 

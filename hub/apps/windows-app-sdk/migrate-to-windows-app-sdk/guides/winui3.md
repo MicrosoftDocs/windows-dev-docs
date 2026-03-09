@@ -1,6 +1,6 @@
 ---
-title: User interface migration (including WinUI 3)
-description: This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI 3](../../../winui/index.md).
+title: User interface migration (including WinUI)
+description: This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
 ms.topic: article
 ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, WinUI
@@ -12,7 +12,7 @@ dev_langs:
 
 # User interface migration (including WinUI 3)
 
-This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI 3](../../../winui/index.md).
+This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
 
 ## Summary of API and/or feature differences
 
@@ -112,7 +112,7 @@ co_await showDialog.ShowAsync();
 And here's the equivalent code in a Windows App SDK app.
 
 ```csharp
-// MainWindow.xaml.cs in a WinUI 3 app
+// MainWindow.xaml.cs in a WinUI app
 var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
 WinRT.Interop.InitializeWithWindow.Initialize(showDialog,
     WinRT.Interop.WindowNative.GetWindowHandle(this));
@@ -120,7 +120,7 @@ await showDialog.ShowAsync();
 ```
 
 ```cppwinrt
-// pch.h in a WinUI 3 app
+// pch.h in a WinUI app
 ...
 #include <Shobjidl.h>
 #include <microsoft.ui.xaml.window.h>

@@ -104,23 +104,8 @@ landingContent:
             url: /windows/windows-app-sdk/api/winrt/
           - text: Win32 API for the Windows App SDK
             url: /windows/windows-app-sdk/api/win32/
-          - text: WinUI 2 for UWP API reference
+          - text: WinUI for UWP API reference
             url: /windows/winui/api/
-
-  - title: Platforms
-    linkLists:
-      - linkListType: architecture
-        links:
-          - text: Windows App SDK
-            url: ../windows-app-sdk/index.md
-          - text: .NET MAUI
-            url: /dotnet/maui/what-is-maui
-          - text: Universal Windows Platform (UWP)
-            url: /windows/uwp/
-          - text: Windows Presentation Foundation (WPF)
-            url: /dotnet/desktop/wpf/overview/?view=netdesktop-7.0
-          - text: Windows Forms
-            url: /dotnet/desktop/winforms/overview/?view=netdesktop-7.0
   
   - title: Community and support
     linkLists:

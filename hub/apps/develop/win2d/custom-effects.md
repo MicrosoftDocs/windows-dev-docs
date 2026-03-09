@@ -271,7 +271,7 @@ You can add a reference to ComputeSharp in your project through NuGet:
   * For WinUI, select the [**ComputeSharp.D2D1.WinUI**](https://www.nuget.org/packages/ComputeSharp.D2D1.WinUI/) package.
 
 > [!NOTE]
-> Many APIs in ComputeSharp.D2D1.\* are identical across the UWP and WinUI targets, the only difference being the namespace (ending in either `.Uwp` or `.WinUI`). However, the UWP target is in sustained maintenance and not receiving new features. As such, some code changes might be needed compared to the samples shown here for WinUI. The snippets in this document reflect the API surface as of ComputeSharp.D2D1.WinUI 3.0.0 (the last release for the UWP target is 2.1.0).
+> Many APIs in ComputeSharp.D2D1.\* are identical across the UWP and WinUI targets, the only difference being the namespace (ending in either `.Uwp` or `.WinUI`). However, the UWP target is in sustained maintenance and not receiving new features. As such, some code changes might be needed compared to the samples shown here for WinUI. The snippets in this document reflect the API surface as of ComputeSharp.D2D1.WinUI.0.0 (the last release for the UWP target is 2.1.0).
 
 There are two main components in ComputeSharp to interop with Win2D:
 - `PixelShaderEffect<T>`: a Win2D effect that is powered by a D2D1 pixel shader. The shader itself is written in C# using the APIs provided by ComputeSharp. This class also provides properties to set effect sources, constant values, and more.

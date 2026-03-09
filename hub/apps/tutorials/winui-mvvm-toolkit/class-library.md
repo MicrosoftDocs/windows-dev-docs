@@ -9,18 +9,18 @@ ms.localizationpriority: medium
 
 # Create a class library project
 
-To enable unit testing of your ViewModels and services, create a separate class library project. You need this project because WinUI unit test projects can't directly reference WinUI app projects.
+To enable unit testing of your ViewModels and services, create a separate class library project. You need this project because WinUI 3 unit test projects can't directly reference WinUI app projects.
 
 ## Understanding the WinUI Class Library template
 
-The **WinUI Class Library** project template creates a .NET managed class library (DLL) specifically designed for use with WinUI 3 desktop applications. This template is part of the Windows App SDK and provides important capabilities that a standard .NET class library doesn't include.
+The **WinUI Class Library** project template creates a .NET managed class library (DLL) specifically designed for use with WinUI desktop applications. This template is part of the Windows App SDK and provides important capabilities that a standard .NET class library doesn't include.
 
 ### Key differences from a .NET Class Library
 
 The WinUI Class Library template differs from a standard .NET Class Library in several important ways:
 
 - **Windows-specific targeting**: It targets a Windows-specific framework (like `net8.0-windows10.0.19041.0`) rather than the cross-platform .NET framework, giving access to Windows APIs.
-- **Windows App SDK integration**: It includes references to the `Microsoft.WindowsAppSDK` and `Microsoft.Windows.SDK.BuildTools` NuGet packages, providing access to WinUI 3 and Windows App SDK APIs.
+- **Windows App SDK integration**: It includes references to the `Microsoft.WindowsAppSDK` and `Microsoft.Windows.SDK.BuildTools` NuGet packages, providing access to WinUI and Windows App SDK APIs.
 - **WinUI support enabled**: The project includes `<UseWinUI>true</UseWinUI>` in its configuration, enabling WinUI-specific build tasks and XAML compilation.
 - **Windows runtime identifiers**: It's configured for Windows-specific runtime identifiers (win-x86, win-x64, win-arm64).
 
@@ -28,9 +28,9 @@ The WinUI Class Library template differs from a standard .NET Class Library in s
 
 Use the **WinUI Class Library** template instead of a regular **.NET Class Library** when your library needs to:
 
-- **Reference WinUI 3 types and controls**: The WinUI Class Library template allows you to use types from the `Microsoft.UI.Xaml` namespace and other Windows App SDK APIs in your library code.
+- **Reference WinUI types and controls**: The WinUI Class Library template allows you to use types from the `Microsoft.UI.Xaml` namespace and other Windows App SDK APIs in your library code.
 - **Include XAML resources**: If your library contains UserControls, custom controls, or other XAML resources, you need the WinUI Class Library template to properly compile and package these resources.
-- **Integrate with WinUI apps**: The template is configured to work seamlessly with WinUI 3 desktop apps, ensuring compatibility with the Windows App SDK runtime and deployment model.
+- **Integrate with WinUI apps**: The template is configured to work seamlessly with WinUI desktop apps, ensuring compatibility with the Windows App SDK runtime and deployment model.
 - **Support XAML markup compilation**: The template includes the necessary build tasks to compile XAML files into the library.
 
 ### When to use a regular .NET Class Library
@@ -38,14 +38,14 @@ Use the **WinUI Class Library** template instead of a regular **.NET Class Libra
 Use a standard **.NET Class Library** project when your library:
 
 - Contains only pure .NET code (ViewModels, models, services, utilities)
-- Doesn't reference any WinUI 3 or Windows App SDK types
+- Doesn't reference any WinUI or Windows App SDK types
 - Doesn't include any XAML files or UI-related code
 - Needs to be shared across different application types (not just WinUI apps)
 - Targets multiple platforms (for example, .NET MAUI or ASP.NET Core) or operating systems (for example, Linux or macOS)
 
 For a tutorial on adding a .NET Class Library to your solution, see [Extend C# console app and debug in Visual Studio](/visualstudio/get-started/csharp/tutorial-console-part-2).
 
-For this tutorial, use the **WinUI Class Library** template because it allows you to reference WinUI types if needed in the future, and it's specifically designed to integrate with WinUI 3 applications. While our ViewModels and services don't currently require WinUI types, using this template provides flexibility and ensures proper integration with the Windows App SDK environment.
+For this tutorial, use the **WinUI Class Library** template because it allows you to reference WinUI types if needed in the future, and it's specifically designed to integrate with WinUI applications. While our ViewModels and services don't currently require WinUI types, using this template provides flexibility and ensures proper integration with the Windows App SDK environment.
 
 ## Create the WinUINotes.Bus project
 
@@ -56,7 +56,7 @@ Create a new WinUI Class Library project named `WinUINotes.Bus` to hold your Vie
 1. Choose the **WinUI Class Library** template and select **Next**.
    
    > [!NOTE]
-   > Make sure you select **WinUI Class Library**, not just **Class Library**. The WinUI Class Library template includes references to the Windows App SDK and WinUI 3 framework.
+   > Make sure you select **WinUI Class Library**, not just **Class Library**. The WinUI Class Library template includes references to the Windows App SDK and WinUI framework.
 
 1. Name the project `WinUINotes.Bus` and select **Create**.
 1. Delete the default `Class1.cs` file.

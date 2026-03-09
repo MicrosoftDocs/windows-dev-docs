@@ -13,10 +13,6 @@ ms.localizationpriority: medium
 
 Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
 
-> [!div class="checklist"]
->
-> - [Open the WinUI 2 Gallery app and see Date and Time controls in action](winui2gallery:/category/DateAndTime). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see Date and Time controls in action](winui3gallery:/category/DateAndTime)
 
@@ -190,7 +186,7 @@ A related concept is the Calendar class, which influences how dates are interpre
 
 ## Get the sample code
 
-- [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
+- [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
 - [Calendar sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Calendar)
 - [Date and time formatting sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/DateTimeFormatting)
 

@@ -50,7 +50,7 @@ These classes implement [**IInitializeWithWindow**](/windows/win32/api/shobjidl_
 
 The next sections contain code examples to display a [**FolderPicker**](/uwp/api/windows.storage.pickers.fileopenpicker). But it's the same technique to display any of the APIs listed above.
 
-### WinUI 3 with C# (also WPF/WinForms with .NET 6 or later)
+### WinUI with C# (also WPF/WinForms with .NET 6 or later)
 
 > [!NOTE]
 > The code examples in this section use the **WinRT.Interop.WindowNative** C# interop class. If you target .NET 6 or later, then you can use that class in a WPF or WinForms project. For info about setting up your project to do that, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
@@ -73,7 +73,7 @@ private async void ShowFolderPickerAsync(IntPtr hWnd)
 }
 ```
 
-### WinUI 3 with C++
+### WinUI with C++
 
 The C++/WinRT code below expects that you've already used the pattern documented in [Retrieve a window handle (HWND)](../ui-input/retrieve-hwnd.md). Then, to set the owner window for the UI object that you want to display, the code calls the interoperability method [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
@@ -106,7 +106,7 @@ The [**Windows.ApplicationModel.DataTransfer.DataTransferManager**](/uwp/api/win
 
 In a desktop app, instead of calling the [**DataTransferManager.ShowShareUI**](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui) method, you call [**IDataTransferManagerInterop::ShowShareUIForWindow**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-idatatransfermanagerinterop-showshareuiforwindow), as shown in the code examples below.
 
-### WinUI 3 with C# (also WPF/WinForms with .NET 6 or later)
+### WinUI with C# (also WPF/WinForms with .NET 6 or later)
 
 ```csharp
 // MainWindow.xaml.cs
@@ -131,7 +131,7 @@ public sealed partial class MainWindow : Window
 
     private void myButton_Click(object sender, RoutedEventArgs e)
     {
-        // Retrieve the window handle (HWND) of the current WinUI 3 window.
+        // Retrieve the window handle (HWND) of the current WinUI window.
         var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
 
         IDataTransferManagerInterop interop =
@@ -157,7 +157,7 @@ public sealed partial class MainWindow : Window
 ...
 ```
 
-### WinUI 3 with C++
+### WinUI with C++
 
 ```cppwinrt
 // pch.h in a Windows App SDK app
@@ -171,7 +171,7 @@ public sealed partial class MainWindow : Window
 ...
 void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
 {
-    // Retrieve the window handle (HWND) of the current WinUI 3 window.
+    // Retrieve the window handle (HWND) of the current WinUI window.
     auto windowNative{ this->m_inner.as<::IWindowNative>() };
     HWND hWnd{ 0 };
     windowNative->get_WindowHandle(&hWnd);
@@ -228,7 +228,7 @@ These interfaces have **XxxForWindow** methods, which let you set an owner windo
 ## Related topics
 
 * [Retrieve a window handle (HWND)](../ui-input/retrieve-hwnd.md)
-* [WinUI 3](../../winui/winui3/index.md)
+* [WinUI](../../winui/winui3/index.md)
 * [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 * [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 * [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/)

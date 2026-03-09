@@ -33,7 +33,7 @@ We'd love to hear your feedback about this migration guide, and about your own m
 
 ## Why migrate to the Windows App SDK?
 
-The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI 3)](../../winui/index.md), which is developed and designed to delight your users.
+The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI)](../../winui/index.md), which is developed and designed to delight your users.
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
@@ -60,7 +60,7 @@ Download the latest Windows App SDK version from [Windows App SDK downloads](../
 
 ## Create a new project
 
-In Visual Studio, [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged (WinUI 3 in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged (WinUI in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 

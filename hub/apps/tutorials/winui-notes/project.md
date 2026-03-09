@@ -11,9 +11,9 @@ no-loc: ["App.xaml", "App.xaml.cs", "MainWindow.xaml", "MainWindow.xaml.cs", "Pa
 
 Before you get into coding the app, we'll take a quick look at the Visual Studio project and take care of some project setup. When Visual Studio creates a WinUI 3 project, several important folders and code files are generated. These can be seen in the **Solution Explorer** pane of Visual Studio:
 
-:::image type="content" source="media/project/vs-solution-explorer.png" alt-text="Solution Explorer showing the files for a WinUI 3 project in Visual Studio.":::
+:::image type="content" source="media/project/vs-solution-explorer.png" alt-text="Solution Explorer showing the files for a WinUI project in Visual Studio.":::
 
-The items listed here are the ones you'll primarily interact with. These files help get the WinUI 3 app configured and running. Each file serves a different purpose, described below:
+The items listed here are the ones you'll primarily interact with. These files help get the WinUI app configured and running. Each file serves a different purpose, described below:
 
 - **Assets** folder
 

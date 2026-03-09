@@ -48,22 +48,6 @@ The split view control can be used to create any "drawer" experience where users
 
 If you'd like to build a navigation menu with an expand/collapse button and a list of navigation items, then use the [NavigationView](../../../design/controls/navigationview.md) control.
 
-## Examples
-
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/item/SplitView">open the app and see the SplitView in action</a>.</p>
-    <ul>
-    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
 ## Create a split view
 
 Here's a SplitView control with an open Pane appearing inline next to the Content.
@@ -89,7 +73,7 @@ Here's a SplitView control with an open Pane appearing inline next to the Conten
 
 ## Get the sample code
 
-- [WinUI 2 Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+- [WinUI for UWP Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related topics
 - [Nav pane pattern](../../../design/controls/navigationview.md)

@@ -46,7 +46,7 @@ This rich edit box has a rich text document open in it. The formatting and file 
 > - **Important APIs:** [RichEditBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox), [Document property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery:/item/RichEditBox)
+> [Open the WinUI 3 Gallery app and see the RichEditBox in action](winui3gallery://item/RichEditBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -217,19 +217,6 @@ To set the math content of a rich edit box, call [SetMathML](/windows/windows-ap
 To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. The default keyboard layout is usually appropriate for working with rich text documents.
 
 For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md).
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [RichEditBox class](/uwp/api/Windows.UI.Xaml.Controls.RichEditBox), [Document property](/uwp/api/windows.ui.xaml.controls.richeditbox.document), [IsReadOnly property](/uwp/api/windows.ui.xaml.controls.richeditbox.isreadonly), [IsSpellCheckEnabled property](/uwp/api/windows.ui.xaml.controls.richeditbox.isspellcheckenabled)
-> - [Open the WinUI 2 Gallery app and see the RichEditBox in action](winui2gallery:/item/RichEditBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 ## Related articles
 

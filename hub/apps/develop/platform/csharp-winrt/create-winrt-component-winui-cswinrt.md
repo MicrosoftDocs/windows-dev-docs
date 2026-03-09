@@ -1,5 +1,5 @@
 ---
-title: Walkthrough—Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK
+title: Walkthrough—Create a C# component with WinUI controls, and consume it from a C++/WinRT app that uses the Windows App SDK
 description: Author a Windows Runtime component with C#/WinRT with WinUI controls, and consume it from any Windows App SDK app.
 ms.date: 03/15/2022
 ms.topic: article
@@ -12,7 +12,7 @@ C#/WinRT provides support for authoring Windows Runtime components, including Wi
 
 For more details about the supported scenarios, refer to [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) in the C#/WinRT GitHub repo.
 
-This walkthrough demonstrates how to author a C# component with a custom WinUI 3 control, and how to consume that component from a C++/WinRT app, using the Windows App SDK project templates.
+This walkthrough demonstrates how to author a C# component with a custom WinUI control, and how to consume that component from a C++/WinRT app, using the Windows App SDK project templates.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ This walkthrough requires the following tools and components:
 
 ## Author your C#/WinRT component using the Windows App SDK
 
-1. Create a new C# library project using the **Class Library (WinUI 3 in Desktop)** template provided by the Windows App SDK. For this walkthrough, we've named the library project **WinUIComponentCs**, and the solution **AuthoringWinUI**. 
+1. Create a new C# library project using the **Class Library (WinUI in Desktop)** template provided by the Windows App SDK. For this walkthrough, we've named the library project **WinUIComponentCs**, and the solution **AuthoringWinUI**. 
 
     Leave the **Place solution and project in the same directory** box unchecked (otherwise, the `packages` folder for the C++ application in the preceding section will end up interfering with the C# library project).
 
@@ -48,7 +48,7 @@ This walkthrough requires the following tools and components:
     
     - The `CsWinRTComponent` property specifies that your project is a Windows Runtime component so that a `.winmd` file is generated when you build the project.
 
-1. Add a custom control or user control to your library. To do this, right-click on your project in Visual Studio, click **Add** > **New Item**, and select **WinUI** on the left pane. For this walkthrough, we added a new **User Control (WinUI 3)** and named it `NameReporter.xaml`. The **NameReporter** user control allows a user to enter a first and last name into the appropriate **TextBox** control, and click a button. The control then displays a message box with the name that the user entered.
+1. Add a custom control or user control to your library. To do this, right-click on your project in Visual Studio, click **Add** > **New Item**, and select **WinUI** on the left pane. For this walkthrough, we added a new **User Control (WinUI)** and named it `NameReporter.xaml`. The **NameReporter** user control allows a user to enter a first and last name into the appropriate **TextBox** control, and click a button. The control then displays a message box with the name that the user entered.
 
 1. Paste the following code in the `NameReporter.xaml` file:
 
@@ -108,11 +108,11 @@ This walkthrough requires the following tools and components:
 
 ## Reference the component from a Windows App SDK C++/WinRT app
 
-The following steps show how to consume the component created from the previous section from a C++/WinRT Windows App SDK application. Consuming a C#/WinRT component from C++ currently requires using the single-project **Blank App, Packaged (WinUI 3 in Desktop)** template. Note that C# components can also be referenced from C# packaged apps without class registrations.
+The following steps show how to consume the component created from the previous section from a C++/WinRT Windows App SDK application. Consuming a C#/WinRT component from C++ currently requires using the single-project **Blank App, Packaged (WinUI in Desktop)** template. Note that C# components can also be referenced from C# packaged apps without class registrations.
 
 Consumption from packaged apps that use a separate **Windows Application Packaging (WAP)** project is not currently supported. See [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) in the C#/WinRT GitHub repo for the latest updates on supported project configurations.
 
-1. Add a new C++ Windows App SDK application project to your solution. Right-click on your solution in Visual Studio, and select **Add** > **New Project**. Select the C++ **Blank App, Packaged (WinUI 3 in Desktop)** template provided by the Windows App SDK. For this walkthrough, we named the app **CppApp**.
+1. Add a new C++ Windows App SDK application project to your solution. Right-click on your solution in Visual Studio, and select **Add** > **New Project**. Select the C++ **Blank App, Packaged (WinUI in Desktop)** template provided by the Windows App SDK. For this walkthrough, we named the app **CppApp**.
 
 1. Add a project reference from the C++ app to the C# component. In Visual Studio, right-click on the C++ project and choose **Add** > **Reference**, and select the **WinUIComponentCs** project.
 

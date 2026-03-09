@@ -11,14 +11,14 @@ keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, 
 
 An app's instancing model determines whether multiple instances of your app's process can run at the same time. The app lifecycle API in the Windows App SDK provides a way to control how many instances of your app can run at the same time, and to redirect activations to other instances when necessary.
 
-This article describes how to use the app lifecycle API to control app instancing in your WinUI apps.
+This article describes how to use the app lifecycle API to control app instancing in your WinUI 3 apps.
 
 ## Prerequisites
 
-To use the app lifecycle API in WinUI 3 apps:
+To use the app lifecycle API in WinUI apps:
 
 - Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-- Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+- Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Single-instance apps
 
@@ -28,7 +28,7 @@ WinUI apps are multi-instanced by default but have the ability to become single-
 
 The [Microsoft Photos](https://apps.microsoft.com/detail/9WZDNCRFJBH4) app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.
 
-For an example of how to implement single instancing in a WinUI 3 app with C#, see [Create a single-instanced WinUI app](applifecycle-single-instance.md).
+For an example of how to implement single instancing in a WinUI app with C#, see [Create a single-instanced WinUI app](applifecycle-single-instance.md).
 
 ## Multi-instanced apps
 

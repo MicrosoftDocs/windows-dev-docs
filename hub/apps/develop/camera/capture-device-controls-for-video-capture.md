@@ -1,5 +1,5 @@
 ---
-description: Learn how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority in a WinUI 3 app.
+description: Learn how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority in a WinUI app.
 title: Manual camera controls for video capture
 ms.date: 10/24/2024
 ms.topic: article

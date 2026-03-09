@@ -12,331 +12,158 @@ ms.localizationpriority: medium
 
 # Controls for Windows apps
 
-In Windows app development, a *control* is a UI element that displays content or enables interaction. Controls are the building blocks of the user interface. A *pattern* is a recipe for combining several controls to make something new.
+Controls are the UI elements that make up your Windows app—buttons, text fields, lists, pickers, and more. A *control* displays content or lets users interact with your app. A *pattern* combines multiple controls into a reusable recipe for common scenarios like forms or list-detail layouts.
 
-We provide 45+ controls for you to use, ranging from simple buttons to powerful data controls like the grid view.  These controls are a part of the Fluent Design System and can help you create a bold, scalable UI that looks great on all devices and screen sizes.
+Windows provides over 45 ready-to-use controls, all built on the [Fluent Design System](https://developer.microsoft.com/fluentui#/). From simple toggles to rich data views like grid and list, these controls help you build interfaces that are visually polished, accessible, and responsive across devices.
 
-The articles in this section provide design guidance and coding instructions for adding controls & patterns to your Windows app.
+Browse the articles in this section for design guidance, code examples, and best practices for each control and pattern.
 
-## General instructions and code examples
+## Getting started
 
-The topics highlighted here provide instructions and code examples for adding and styling controls in XAML and C#.
+To learn how to add controls to your app and wire up event handlers, see [Add controls and handle events](../../../design/controls/controls-and-events-intro.md). To customize control appearance with reusable XAML styles, see [Styling controls](../../platform/xaml/xaml-styles.md).
 
-:::row:::
-    :::column:::
-      [**Add controls and handle events**](../../../design/controls/controls-and-events-intro.md)
 
-      There are 3 key steps to adding controls to your app: Add a control to your app UI, set properties on the control, and add code to the control's event handlers so that it does something.</p>
-    :::column-end:::
-    :::column:::
-      [**Styling controls**](../../platform/xaml/xaml-styles.md)
+## Controls
 
-      You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.</p>
-    :::column-end:::
-:::row-end:::
+The following table lists the Windows app controls available in WinUI, with links to their documentation.
 
-## Get WinUI
+### Basic input
 
-:::row:::
-   :::column:::
-      ![WinUI logo](images/winui-logo-64x64.png)
-   :::column-end:::
-   :::column span="3":::
-      Some controls are only available in WinUI, a NuGet package that contains new controls and UI features. To get it, see the [WinUI overview and installation instructions](/uwp/toolkits/winui/).
-   :::column-end:::
-   :::column:::
+| Image | Control | Description |
+|---|---|---|
+| ![Buttons](images/Button.png) | [Buttons](buttons.md) | A control that responds to user input and raises a Click event. Includes button, drop-down button, split button, toggle button, and more. |
+| ![Check boxes](images/CheckBox.png) | [Check boxes](checkbox.md) | A control that a user can select or clear. |
+| ![Combo boxes](images/ComboBox.png) | [Combo boxes](combo-box.md) | A drop-down list of items a user can select from. |
+| ![Hyperlinks](images/HyperlinkButton.png) | [Hyperlinks](hyperlinks.md) | A button that appears as hyperlink text, and can navigate to a URI or handle a Click event. |
+| ![Radio buttons](images/RadioButton.png) | [Radio buttons](radio-button.md) | A control that allows a user to select a single option from a group of options. |
+| ![Rating control](images/RatingControl.png) | [Rating control](rating.md) | Rate something 1 to 5 stars. |
+| ![Sliders](images/Slider.png) | [Sliders](slider.md) | A control that lets the user select from a range of values by moving a Thumb control along a track. |
+| ![Toggle switches](images/ToggleSwitch.png) | [Toggle switches](toggles.md) | A switch that can be toggled between 2 states. |
 
-   :::column-end:::
-:::row-end:::
+### Collections
 
-## Index of controls
+| Image | Control | Description |
+|---|---|---|
+| ![Items view](images/ItemsView.png) | [Items view](itemsview.md) | A control that presents a collection of items using various layouts. |
+| ![List view and grid view](images/ListView.png) | [List view and grid view](listview-and-gridview.md) | Controls that present a collection of items in a vertical list or in rows and columns. |
+| ![Flip view](images/FlipView.png) | [Flip view](flipview.md) | Presents a collection of items that the user can flip through, one item at a time. |
+| ![Pips pager](images/PipsPager.png) | [Pips pager](pipspager.md) | A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known. |
+| ![Tree view](images/TreeView.png) | [Tree view](tree-view.md) | A hierarchical list pattern with expanding and collapsing nodes that contain nested items. |
+| ![Items repeater](images/ListView.png) | [Items repeater](items-repeater.md) | A flexible, primitive control for data-driven layouts. |
+| ![Swipe](images/SwipeControl.png) | [Swipe](swipe.md) | Touch gesture for quick menu actions on items. |
+| ![Pull-to-refresh](images/PullToRefresh.png) | [Pull-to-refresh](pull-to-refresh.md) | Provides the ability to pull on a collection of items in a list/grid to refresh the contents of the collection. |
 
-The following table lists the common Windows app controls and patterns along with those that are exclusive to WinUI.
+### Dialogs and flyouts
 
-:::row:::
-    :::column span="2":::
-        **Common Windows app controls**
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png":::  **WinUI only**
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Auto-suggest box](../../../design/controls/auto-suggest-box.md)
-    :::column-end:::
-    :::column:::
-        [Button](../../../design/controls/buttons.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Animated icon](../../../design/controls/animated-icon.md)
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Calendar date picker](../../../design/controls/calendar-date-picker.md)
-    :::column-end:::
-    :::column:::
-        [Calendar view](../../../design/controls/calendar-view.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: Animated visual player (see [Lottie](/windows/communitytoolkit/animations/lottie))
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Checkbox](../../../design/controls/checkbox.md)
-    :::column-end:::
-    :::column:::
-        [Combo box](../../../design/controls/combo-box.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Breadcrumb bar](../../../design/controls/breadcrumbbar.md)
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Command bar](../../../design/controls/command-bar.md)
-    :::column-end:::
-    :::column:::
-        [Contact card](../../../design/controls/contact-card.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Color picker](../../../design/controls/color-picker.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Content dialog](../../../design/controls/dialogs-and-flyouts/dialogs.md)
-    :::column-end:::
-    :::column:::
-        [Content link](../../../design/controls/content-links.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Command bar flyout](../../../design/controls/command-bar-flyout.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Context menu](../../../design/controls/menus.md)
-    :::column-end:::
-    :::column:::
-        [Date picker](../../../design/controls/date-picker.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Drop down button](buttons.md#create-a-drop-down-button) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Dialogs and flyouts](../../../design/controls/dialogs-and-flyouts/index.md)
-    :::column-end:::
-    :::column:::
-        [Flip view](../../../design/controls/flipview.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Expander](../../../design/controls/expander.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Flyout](../../../design/controls/dialogs-and-flyouts/flyouts.md)
-    :::column-end:::
-    :::column:::
-        [Forms](../../../design/controls/forms.md) (pattern)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Info bar](../../../design/controls/infobar.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Grid view](../../../design/controls/listview-and-gridview.md)
-    :::column-end:::
-    :::column:::
-        [Hyperlink](../../../design/controls/hyperlinks.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Menu bar](menus.md#create-a-menu-bar) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Hyperlink button](hyperlinks.md#create-a-hyperlinkbutton)
-    :::column-end:::
-    :::column:::
-        [Images and image brushes](../../../design/controls/images-imagebrushes.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Navigation view](../../../design/controls/navigationview.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Inking controls](../../../design/controls/inking-controls.md)
-    :::column-end:::
-    :::column:::
-        [List/details](../../../design/controls/list-details.md) (pattern)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Number box](../../../design/controls/number-box.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [List view](../../../design/controls/listview-and-gridview.md)
-    :::column-end:::
-    :::column:::
-        [Map control](/windows/uwp/maps-and-location/display-maps)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Parallax view](../../../design/motion/parallax.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Media playback](../../../design/controls/media-playback.md)
-    :::column-end:::
-    :::column:::
-        [Menu flyout](../../../design/controls/menus.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Person picture](../../../design/controls/person-picture.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Password box](../../../design/controls/password-box.md)
-    :::column-end:::
-    :::column:::
-        [Repeat button](buttons.md#create-a-repeat-button)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Pips pager](../../../design/controls/pipspager.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Rich edit box](../../../design/controls/rich-edit-box.md)
-    :::column-end:::
-    :::column:::
-        [Rich text block](../../../design/controls/rich-text-block.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Progress bar](../../../design/controls/progress-controls.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Scroll viewer](../../../design/controls/scroll-controls.md)
-    :::column-end:::
-    :::column:::
-        [Semantic zoom](../../../design/controls/semantic-zoom.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Progress ring](../../../design/controls/progress-controls.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Shapes](../../../design/controls/shapes.md)
-    :::column-end:::
-    :::column:::
-        [Slider](../../../design/controls/slider.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Radio button](../../../design/controls/radio-button.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Split view](../../../design/controls/split-view.md)
-    :::column-end:::
-    :::column:::
-        [Text block](../../../design/controls/text-block.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Rating control](../../../design/controls/rating.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Text box](../../../design/controls/text-box.md)
-    :::column-end:::
-    :::column:::
-        [Time picker](../../../design/controls/time-picker.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Split button](buttons.md#create-a-split-button) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Toggle switch](../../../design/controls/toggles.md)
-    :::column-end:::
-    :::column:::
-        [Toggle button](../../../design/controls/buttons.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Swipe control](../../../design/controls/swipe.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Toggle split button](buttons.md#create-a-toggle-split-button)
-    :::column-end:::
-    :::column:::
-        [Tooltips](../../../design/controls/tooltips.md)
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Tab view](../../../design/controls/tab-view.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        [Web view](../../../design/controls/web-view.md)
-    :::column-end:::
-    :::column:::
-        
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Teaching tip](../../../design/controls/dialogs-and-flyouts/teaching-tip.md) 
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        
-    :::column-end:::
-    :::column:::
-        
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Tree view](../../../design/controls/tree-view.md) 
-    :::column-end:::
-:::row-end:::
+| Image | Control | Description |
+|---|---|---|
+| ![Dialogs](images/ContentDialog.png) | [Dialogs](dialogs-and-flyouts/dialogs.md) | A dialog box that can be customized to contain any XAML content. |
+| ![Flyouts](images/Flyout.png) | [Flyouts](dialogs-and-flyouts/flyouts.md) | Shows contextual information and enables user interaction. |
+| ![Teaching tip](images/TeachingTip.png) | [Teaching tip](dialogs-and-flyouts/teaching-tip.md) | A content-rich flyout for guiding users and enabling teaching moments. |
 
-:::row:::
-    :::column:::
-        
-    :::column-end:::
-    :::column:::
-        
-    :::column-end:::
-    :::column:::
-        :::image type="icon" source="images/winui-logo-16x16.png"::: [Two-pane view](../../../design/controls/two-pane-view.md) 
-    :::column-end:::
-:::row-end:::
+### Forms
 
-## WinUI Gallery
+| Image | Control | Description |
+|---|---|---|
+| | [Forms](forms.md) | A pattern for collecting and submitting user input using a combination of input controls and labels. |
 
-Get the *WinUI Gallery* apps from the Microsoft Store to see XAML controls and the [Fluent Design System](https://developer.microsoft.com/fluentui#/) in action. The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality. The apps are an interactive companion to this website. When you have them installed, you can use links on individual control pages to launch the app and see the control in action.
+### Media, graphics, and shapes
+
+| Image | Control | Description |
+|---|---|---|
+| ![Icons](images/Image.png) | [Icons](icons.md) | Represent icon controls that use different image types as content. |
+| ![Animated icons](images/AnimatedIcon.png) | [Animated icons](animated-icon.md) | An element that displays and controls an icon that animates when the user interacts with the control. |
+| ![Images and image brushes](images/Image.png) | [Images and image brushes](images-imagebrushes.md) | A control to display image content. |
+| | [Ink](inking-controls.md) | Controls for digital inking, including ink canvas and ink toolbar. |
+| ![Media playback](images/MediaPlayerElement.png) | [Media playback](media-playback.md) | A control to display video and image content. |
+| ![Shapes](images/Shape.png) | [Shapes](shapes.md) | Draw shapes such as ellipses, rectangles, and polygons. |
+
+### Menus and toolbars
+
+| Image | Control | Description |
+|---|---|---|
+| ![Menus and context menus](images/MenuFlyout.png) | [Menus and context menus](menus-and-context-menus.md) | Shows a contextual list of simple commands or options. |
+| ![Command bar](images/CommandBar.png) | [Command bar](command-bar.md) | A toolbar for displaying application-specific commands that handles layout and resizing of its contents. |
+| ![Command bar flyout](images/CommandBarFlyout.png) | [Command bar flyout](command-bar-flyout.md) | A mini-toolbar displaying proactive commands, and an optional menu of commands. |
+| ![Menu flyout and menu bar](images/MenuBar.png) | [Menu flyout and menu bar](menus.md) | A classic menu, allowing the display of MenuItems containing MenuFlyoutItems. |
+
+### Navigation
+
+| Image | Control | Description |
+|---|---|---|
+| ![Breadcrumb bar](images/BreadcrumbBar.png) | [Breadcrumb bar](breadcrumbbar.md) | Shows the trail of navigation taken to the current location. |
+| | [List/details](list-details.md) | A pattern that displays a list of items alongside the details of the currently selected item. |
+| ![Navigation view](images/NavigationView.png) | [Navigation view](navigationview.md) | Common vertical layout for top-level areas of your app via a collapsible navigation menu. |
+| ![Screenshot of the Pivot control](images/Pivot.png) | [Pivot](pivot.md) | Presents information from different sources in a tabbed view. |
+| ![Selector bar](images/Pivot.png) | [Selector bar](selector-bar.md) | Presents information from a small set of different sources. The user can pick one of them. |
+| ![Tab view](images/TabView.png) | [Tab view](tab-view.md) | A control that displays a collection of tabs that can be used to display several documents. |
+
+### People
+
+| Image | Control | Description |
+|---|---|---|
+| ![Person picture](images/PersonPicture.png) | [Person picture](person-picture.md) | Displays the picture of a person/contact. |
+
+### Pickers
+
+| Image | Control | Description |
+|---|---|---|
+| ![Color picker](images/ColorPicker.png) | [Color picker](color-picker.md) | A control that displays a selectable color spectrum. |
+| ![Calendar date picker](images/CalendarDatePicker.png) | [Calendar date picker](calendar-date-picker.md) | A control that lets users pick a date value using a calendar. |
+| ![Calendar view](images/CalendarView.png) | [Calendar view](calendar-view.md) | A control that presents a calendar for a user to choose a date from. |
+| ![Date picker](images/DatePicker.png) | [Date picker](date-picker.md) | A control that lets a user pick a date value. |
+| ![Time picker](images/TimePicker.png) | [Time picker](time-picker.md) | A configurable control that lets a user pick a time value. |
+
+### Scrolling and layout
+
+| Image | Control | Description |
+|---|---|---|
+| ![Screenshot of the Expander control](images/Expander.png) | [Expander](expander.md) | A container with a header that can be expanded to show a body with more content. |
+| ![Scrolling and panning controls](images/ScrollViewer.png) | [Scrolling and panning controls](scroll-controls.md) | A container control that lets the user pan and zoom its content. |
+| ![Annotated scrollbar](images/AnnotatedScrollbar.png) | [Annotated scrollbar](annotated-scrollbar.md) | A control that extends a regular vertical scrollbar's functionality for an easy navigation through large collections. |
+| ![Semantic zoom](images/SemanticZoom.png) | [Semantic zoom](semantic-zoom.md) | Lets the user zoom between two different views of a collection, making it easier to navigate through large collections of items. |
+| ![Split view](images/SplitView.png) | [Split view](split-view.md) | A container that has 2 content areas, with multiple display options for the pane. |
+| ![Two-pane view](images/SplitView.png) | [Two-pane view](two-pane-view.md) | A control with two content areas that span the available space, either side-by-side or top-bottom. |
+
+### Status and information
+
+| Image | Control | Description |
+|---|---|---|
+| ![Progress](images/ProgressBar.png) | [Progress](progress-controls.md) | Shows the app's progress on a task using a progress bar or progress ring. |
+| ![Screenshot of the Tooltip control](images/ToolTip.png) | [Tooltip](tooltips.md) | Displays information for an element in a pop-up window. |
+| ![Info bar](images/InfoBar.png) | [Info bar](infobar.md) | An inline message to display app-wide status change information. |
+| ![Info badge](images/InfoBadge.png) | [Info badge](info-badge.md) | A non-intrusive UI to display notifications or bring focus to an area. |
+
+### Text
+
+| Image | Control | Description |
+|---|---|---|
+| ![Auto-suggest box](images/AutoSuggestBox.png) | [Auto-suggest box](auto-suggest-box.md) | A control to provide suggestions as a user is typing. |
+| ![Text block](images/TextBlock.png) | [Text block](text-block.md) | A lightweight control for displaying small amounts of text. |
+| ![Rich text block](images/RichTextBlock.png) | [Rich text block](rich-text-block.md) | A control that displays formatted text, hyperlinks, inline images, and other rich content. |
+| ![Text box](images/TextBox.png) | [Text box](text-box.md) | A single-line or multi-line plain text field. |
+| ![Rich edit box](images/RichEditBox.png) | [Rich edit box](rich-edit-box.md) | A rich text editing control that supports formatted text, hyperlinks, and other rich content. |
+| ![Password box](images/PasswordBox.png) | [Password box](password-box.md) | A control for entering passwords. |
+| ![Number box](images/NumberBox.png) | [Number box](number-box.md) | A text control used for numeric input and evaluation of algebraic equations. |
+| | [Labels](labels.md) | Guidance for adding accessible labels to input controls. |
+
+### Title bar
+
+| Image | Control | Description |
+|---|---|---|
+| ![Title bar](images/TitleBar.png) | [Title bar](title-bar.md) | Customize the title bar of your app window. |
+
+## WinUI 3 Gallery
+
+The **WinUI 3 Gallery** app is the best way to explore these controls hands-on. It provides interactive demos of most WinUI controls, features, and Fluent Design patterns—making it an ideal companion to this documentation. Install it to try controls in real time and link directly from individual control pages.
 
 > [!div class="checklist"]
 >
-> - Get the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
-> - Get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
+> - Get the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) from the Microsoft Store.
+> - Get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery).
 
-## Additional controls
+## Additional controls and resources
 
-Additional controls for Windows development are available from companies such as <a href="https://www.telerik.com/">Telerik</a>, <a href="https://www.syncfusion.com/uwp-ui-controls">SyncFusion</a>, <a href="https://www.devexpress.com/Products/NET/Controls/Win10Apps/">DevExpress</a>,
-<a href="https://www.infragistics.com/products/universal-windows-platform">Infragistics</a>, <a href="https://www.componentone.com/Studio/Platform/UWP">ComponentOne</a>, and <a href="https://www.actiprosoftware.com/products/controls/universal">ActiPro</a>. These controls provide additional support for enterprise and .NET developers by augmenting the standard system controls with custom controls and services.
+The [**Windows Community Toolkit**](https://github.com/CommunityToolkit/Windows) is a collection of helpers, extensions, and additional UI controls that complement the built-in WinUI controls. It's community-driven and maintained by Microsoft, covering common scenarios like advanced layouts, converters, and animations.
+
+For early access to experimental controls and features, check out [**Windows Community Toolkit Labs**](https://github.com/CommunityToolkit/Labs-Windows), where new components are developed and tested before graduating to the main toolkit.

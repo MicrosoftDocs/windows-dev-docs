@@ -25,7 +25,7 @@ Use an **ImageBrush** to apply an image to another object. Uses for an ImageBrus
 > - **Important APIs:** [Image class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Image), [Source property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image.source), [ImageBrush class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.ImageBrush), [ImageSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesource)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery:/item/Image)
+> [Open the WinUI 3 Gallery app and see ImageBrushes in action](winui3gallery://item/Image)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -136,28 +136,10 @@ For more info about how to design for scaling, see [UX guidelines for layout and
 
 It's typical to specify Image and ImageBrush elements using XAML rather than code. This is because these elements are often the output of design tools as part of a XAML UI definition.
 
-If you define an Image or ImageBrush using code, use the default constructors, then set the relevant source property ([Image.Source](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image.source) or [ImageBrush.ImageSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesource)). The source properties require a [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.Imaging.BitmapImage) (not a URI) when you set them using code. If your source is a stream, use the [SetSourceAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource.setsourceasync) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage) constructor that takes a URI. You might also consider handling the [ImageOpened](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage.imageopened) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available. For example code, see the [WinUI Gallery sample](https://github.com/Microsoft/WinUI-Gallery).
+If you define an Image or ImageBrush using code, use the default constructors, then set the relevant source property ([Image.Source](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image.source) or [ImageBrush.ImageSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesource)). The source properties require a [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.Imaging.BitmapImage) (not a URI) when you set them using code. If your source is a stream, use the [SetSourceAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource.setsourceasync) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage) constructor that takes a URI. You might also consider handling the [ImageOpened](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage.imageopened) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available. For example code, see the [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery).
 
 > [!NOTE]
 > If you establish images using code, you can use automatic handling for accessing unqualified resources with current scale and culture qualifiers, or you can use [ResourceManager](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) and [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) with qualifiers for culture and scale to obtain the resources directly. For more info see [Resource management system](/windows/uwp/app-resources/resource-management-system).
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Windows.UI.Xaml.Media](/uwp/api/Windows.UI.Xaml.Media) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Image class](/uwp/api/Windows.UI.Xaml.Controls.Image), [Source property](/uwp/api/windows.ui.xaml.controls.image.source), [ImageBrush class](/uwp/api/Windows.UI.Xaml.Media.ImageBrush), [ImageSource property](/uwp/api/windows.ui.xaml.media.imagebrush.imagesource)
-> - [Open the WinUI 2 Gallery app and see ImageBrushes in action](winui2gallery:/item/Image). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
-
-Starting in Windows 10, version 1607, the **Image** element supports animated GIF images. When you use a **BitmapImage** as the image **Source**, you can access BitmapImage APIs to control playback of the animated GIF image. For more info, see the Remarks on the [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.Imaging.BitmapImage) class page.
-
-> [!NOTE]
-> Animated GIF support is available when your app is compiled for Windows 10, version 1607 and running on version 1607 (or later). When your app is compiled for or runs on previous versions, the first frame of the GIF is shown, but it is not animated.
 
 ## Related articles
 

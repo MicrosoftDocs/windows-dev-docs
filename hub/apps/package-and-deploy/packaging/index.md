@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Packaging overview
 
-Packaging defines how your app is installed, updated, and integrated with Windows. WinUI apps are packaged by default, while many desktop apps, such as traditional Win32 applications, run unpackaged. Packaged apps benefit from a clean installation model, automatic updates, and access to Windows features that require package identity, including background tasks, notifications, context menu extensions, and other extensibility points. Unpackaged apps can still access many Windows App SDK capabilities, but may require additional setup to enable certain features.
+Packaging defines how your app is installed, updated, and integrated with Windows. WinUI 3 apps are packaged by default, while many desktop apps, such as traditional Win32 applications, run unpackaged. Packaged apps benefit from a clean installation model, automatic updates, and access to Windows features that require package identity, including background tasks, notifications, context menu extensions, and other extensibility points. Unpackaged apps can still access many Windows App SDK capabilities, but may require additional setup to enable certain features.
 
 ## Why app packaging matters
 

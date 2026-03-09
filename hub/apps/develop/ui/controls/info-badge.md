@@ -155,7 +155,7 @@ The info badge comes at a default size that meets accessibility requirements. Yo
 > - **Important APIs:** [InfoBadge class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobadge.value)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery:/item/InfoBadge)
+> [Open the WinUI 3 Gallery app and see the InfoBadge in action](winui3gallery://item/InfoBadge)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -335,7 +335,7 @@ If you place an InfoBadge inside of another control, such as a [Button](/windows
 
 ### Example: Placing an InfoBadge inside another control
 
-Here's a Button that has an InfoBadge placed in its upper right hand corner, with the badge layered on top of the content. This example can be applied to many controls other than Button as well – it simply shows how to place, position, and show an InfoBadge inside of another WinUI control.
+Here's a Button that has an InfoBadge placed in its upper right hand corner, with the badge layered on top of the content. This example can be applied to many controls other than Button as well – it simply shows how to place, position, and show an InfoBadge inside of another WinUI 3 control.
 
 ```xaml
 <Button Width="200" Height="60" Padding="4"
@@ -380,25 +380,6 @@ If neither `InfoBadge.Value` nor `InfoBadge.IconSource` are set, the InfoBadge d
 You can also change the InfoBadge's type while it is being shown. To change the type of InfoBadge, be sure that the current type's corresponding property (`Value` or `IconSource`) is set to its default value (`-1` or `null`), and set the new type's property equal to an appropriate value. To change the type of InfoBadge from numeric or icon to a dot type InfoBadge, make sure that `InfoBadge.Value` is set to `-1` and `InfoBadge.IconSource` is set to `null`.
 
 Depending on how you've positioned your InfoBadge, be aware that this may cause items to shift as the size and shape of the InfoBadge may change.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The InfoBadge for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [InfoBadge class](/windows/winui/api/microsoft.ui.xaml.controls.infobadge), [IconSource property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.iconsource), [Value property](/windows/winui/api/microsoft.ui.xaml.controls.infobadge.value)
-> - [Open the WinUI 2 Gallery app and see InfoBadge in action](winui2gallery:/item/InfoBadge). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:InfoBadge/>
-```
 
 ## Related articles
 

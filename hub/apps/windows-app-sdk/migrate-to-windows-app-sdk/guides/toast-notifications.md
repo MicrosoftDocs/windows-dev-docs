@@ -1,5 +1,5 @@
 ---
-title: App notifications from UWP to WinUI 3 migration
+title: App notifications from UWP to WinUI migration
 description: This topic contains migration guidance in the app notifications feature area.
 ms.topic: article
 ms.date: 07/14/2025
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # App notifications from UWP to WinUI 3 migration
 
-The only difference when migrating app notification code from UWP to WinUI 3 is in handling the activation of notifications. Sending and managing app notifications remains exactly the same.
+The only difference when migrating app notification code from UWP to WinUI is in handling the activation of notifications. Sending and managing app notifications remains exactly the same.
 
 > [!NOTE]
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
@@ -22,7 +22,7 @@ The only difference when migrating app notification code from UWP to WinUI 3 is 
 
 ### [Windows App SDK](#tab/appsdk) 
 
-Category | UWP | WinUI 3
+Category | UWP | WinUI
 --|--|--
 Foreground activation entry point | `OnActivated` method inside `App.xaml.cs` is called | `OnLaunched` method inside `App.xaml.cs` is called.
 Background activation entry point | Handled separately as a background task | Same as foreground activation. `OnLaunched` method inside `App.xaml.cs` is called. Use [GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to determine if the app should fully launch or just handle task and quit. 
@@ -30,7 +30,7 @@ Window activation | Your window is automatically brought to foreground when fore
 
 ### [Windows Community Toolkit](#tab/toolkit) 
 
-Category | UWP | WinUI 3
+Category | UWP | WinUI
 --|--|--
 Foreground activation entry point | `OnActivated` method inside `App.xaml.cs` is called | Subscribe to `ToastNotificationManagerCompat.OnActivated` event (or COM class for C++)
 Background activation entry point | Handled separately as a background task | Arrives through same `ToastNotificationManagerCompat.OnActivated` event (or COM class for C++)
@@ -44,7 +44,7 @@ Window activation | Your window is automatically brought to foreground when fore
 
 #### [Windows App SDK](#tab/appsdk) 
 
-For a WinUI 3 app, you handle activation for notifications by using the [AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) class. This class is provided by the Microsoft.WindowsAppSDK Nuget package, which is included by default in the WinUI 3 Visual Studio project templates.
+For a WinUI app, you handle activation for notifications by using the [AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) class. This class is provided by the Microsoft.WindowsAppSDK Nuget package, which is included by default in the WinUI Visual Studio project templates.
 
 #### [Windows Community Toolkit](#tab/toolkit)
 
@@ -404,7 +404,7 @@ notificationManager.Show(builder.BuildNotification());
 
 #### [Windows Community Toolkit](#tab/toolkit) 
 
-You can continue to use the **ToastContentBuilder** class provided by the Windows Community Toolkit both to create app notification content and to send notifications in a WinUI 3 app.
+You can continue to use the **ToastContentBuilder** class provided by the Windows Community Toolkit both to create app notification content and to send notifications in a WinUI app.
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;

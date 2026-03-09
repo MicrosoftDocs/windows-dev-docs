@@ -16,7 +16,7 @@ This portion of the tutorial adds a new page to the app, a view that displays al
 Currently the **note** view displays a single note. To display all your saved notes, create a new view and model: **AllNotes**.
 
 01. In the **Solution Explorer** pane, right-click on the **:::no-loc text="Views":::** folder and select **Add** > **New Item...**
-01. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI 3)** template. Name the file _AllNotesPage.xaml_ and press **Add**.
+01. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI)** template. Name the file _AllNotesPage.xaml_ and press **Add**.
 01. In the **Solution Explorer** pane, right-click on the **:::no-loc text="Models":::** folder and select **Add** > **Class...**
 01. Name the class _AllNotes.cs_ and press **Add**.
 
@@ -240,7 +240,7 @@ However, if your Windows Personalization > Colors settings use the Dark mode, it
 
 :::image type="content" source="media/all-notes/itemsview-with-template-dark.png" alt-text="The notes app UI with a dark background but light gray note template.":::
 
-This is not the intended look for the app. It happened because there are hard-coded color values in the data template for the note. By default, WinUI elements adapt to the user's Dark or Light color preference. When you define you own elements, like a data template, you need to be careful to do the same.
+This is not the intended look for the app. It happened because there are hard-coded color values in the data template for the note. By default, WinUI 3 elements adapt to the user's Dark or Light color preference. When you define you own elements, like a data template, you need to be careful to do the same.
 
 When you define a resource in a XAML `ResourceDictionary`, you have to assign an `x:Key` value to identify the resource. Then, you can use that `x:Key` to retrieve the resource in XAML using the `{StaticResource}` markup extension or `{ThemeResource}` markup extension.
 

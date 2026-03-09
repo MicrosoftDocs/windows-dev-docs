@@ -6,7 +6,7 @@ metadata:
    title: Windows app development documentation
    description: Everything you need to design, build, package, and publish Windows apps.
    ms.topic: hub-page
-   ms.date: 01/05/2026
+   ms.date: 02/20/2026
    ms.localizationpriority: medium
    
 highlightedContent:
@@ -15,15 +15,15 @@ highlightedContent:
     - title: What's new for Windows developers
       itemType: whats-new
       url: /windows/apps/whats-new/whats-new-for-developers 
-    - title: Learn about the Windows developer platform
+    - title: Introduction to the Windows developer platform
       itemType: concept
       url: /windows/apps/introduction
     - title: Build your first Windows app
       itemType: tutorial 
       url: /windows/apps/get-started/start-here
-    - title: Add features to your app
+    - title: Support
       itemType: reference
-      url: /windows/apps/develop/
+      url: /windows/apps/develop/support
 
 productDirectory:
   title: Your path to building Windows apps
@@ -35,16 +35,12 @@ productDirectory:
     links:
       - url: /windows/apps/introduction
         text: Introduction
-      - url: /windows/apps/windows-sdk
-        text: Core concepts
       - url: /windows/apps/get-started
-        text: App frameworks
+        text: Core concepts
       - url: /windows/apps/get-started/start-here
         text: Get started
       - url: /windows/apps/get-started/samples
         text: Samples and resources
-      - url: /windows/apps/get-started/best-practices
-        text: Help and guidance
 
   - title: Design
     imageSrc: /windows/apps/images/hub-design.svg
@@ -68,7 +64,7 @@ productDirectory:
       - url: /windows/apps/desktop/modernize/
         text: Use features with other UI frameworks
       - url: /windows/apps/develop/platform/csharp-winrt/
-        text: Platform
+        text: Platforms
       - url: /windows/apps/api-reference/
         text: API reference
 
@@ -97,7 +93,6 @@ productDirectory:
         text: App management
       - url: /windows/apps/publish/analyze-app-performance/msix
         text: App performance
-
 tools:
   title: Platforms and SDKs
   summary: Build new apps or modernize existing ones using our SDKs, frameworks, and tools.
@@ -120,12 +115,12 @@ additionalContent:
         - title: Samples
           summary: Explore sample apps and code snippets that demonstrate Windows app features and APIs.
           url: /windows/apps/get-started/samples
-        - title: Windows developer blog
-          summary: Read announcements, release updates, and deep dives from the Windows developer team.
-          url: https://devblogs.microsoft.com/ifdef-windows/
         - title: Windows developer tools 
           summary: Set up your development environment with tools for Windows or the Windows Subsystem for Linux.
           url: /windows/dev-environment/
+        - title: Windows developer blog
+          summary: Read announcements, release updates, and deep dives from the Windows developer team.
+          url: https://devblogs.microsoft.com/ifdef-windows/  
         - title: Windows App Community Discord
           summary: Connect with other Windows developers to get help, share ideas, and stay up to date.
           url: https://discord.gg/eBHZSKG

@@ -45,7 +45,7 @@ The auto-suggest results list populates automatically once the user starts to en
 > - **Important APIs:** [AutoSuggestBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox), [TextChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.autosuggestbox.querysubmitted)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the AutoSuggestBox in action](winui3gallery:/item/AutoSuggestBox)
+> [Open the WinUI 3 Gallery app and see the AutoSuggestBox in action](winui3gallery://item/AutoSuggestBox)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -138,19 +138,6 @@ By default, the text entry box doesn't have a query button shown. You can set th
 Here's an AutoSuggestBox with a 'find' icon.
 
 ![Example of auto-suggest control with a find icon.](images/controls-autosuggest-entrypoint.png)
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [AutoSuggestBox class](/uwp/api/Windows.ui.xaml.controls.autosuggestbox), [TextChanged event](/uwp/api/windows.ui.xaml.controls.autosuggestbox.textchanged), [SuggestionChose event](/uwp/api/windows.ui.xaml.controls.autosuggestbox.suggestionchosen), [QuerySubmitted event](/uwp/api/windows.ui.xaml.controls.autosuggestbox.querysubmitted)
-> - [Open the WinUI 2 Gallery app and see the AutoSuggestBox in action](winui2gallery:/item/AutoSuggestBox). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls. WinUI 2.2 or later includes a new template for this control that uses rounded corners. For more info, see [Corner radius](../../../design/style/rounded-corner.md).
 
 ## Related articles
 

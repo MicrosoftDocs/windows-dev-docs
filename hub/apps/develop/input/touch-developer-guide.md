@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Touch interactions developer guide
 
-Design your app with the expectation that touch will be the primary input method of your users. If you use UWP controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because UWP apps provide this for free.
+Design your app with the expectation that touch will be the primary input method of your users. If you use WinUI controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because WinUI apps provide this for free.
 
 However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch, touchpad, pen/stylus, mouse, and keyboard input.
 
@@ -47,22 +47,17 @@ Providing unique and distinctive interaction experiences for all input devices w
 
 The following table shows some of the differences between input devices that you should consider when you design touch-optimized Windows apps.
 
-<table>
-<tbody><tr><th>Factor</th><th>Touch interactions</th><th>Mouse, keyboard, pen/stylus interactions</th><th>Touchpad</th></tr>
-<tr><td rowspan="3">Precision</td><td>The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.</td><td>The mouse and pen/stylus supply a precise x-y coordinate.</td><td>Same as mouse.</td></tr>
-<tr><td>The shape  of the contact area changes throughout the movement.  </td><td>Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.</td><td>Same as mouse.</td></tr>
-<tr><td>There is no mouse cursor to assist with targeting.</td><td>The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.</td><td>Same as mouse.</td></tr>
-<tr><td rowspan="3">Human anatomy</td><td>Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.</td><td>It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.</td><td>Same as mouse.</td></tr>
-<tr><td>Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.</td><td>The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order. </td><td>Finger posture and grip can be an issue.</td></tr>
-<tr><td>Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.</td><td>Indirect input devices do not cause  occlusion.</td><td>Same as mouse.</td></tr>
-<tr><td>Object state</td><td>Touch uses a two-state model: the touch surface of a display device  is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.</td><td>
-<p>A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).</p>
-<p>Hover lets users explore and learn through tooltips  associated with UI elements. Hover and focus effects  can relay which objects are interactive and also help with targeting. 
-</p>
-</td><td>Same as mouse.</td></tr>
-<tr><td rowspan="2">Rich interaction</td><td>Supports multi-touch: multiple input points (fingertips) on a touch surface.</td><td>Supports a single input point.</td><td>Same as touch.</td></tr>
-<tr><td>Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.</td><td>No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.</td><td>Same as mouse.</td></tr>
-</tbody></table>
+| Factor | Touch interactions | Mouse, keyboard, pen/stylus interactions | Touchpad |
+|---|---|---|---|
+| Precision | The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations. | The mouse and pen/stylus supply a precise x-y coordinate. | Same as mouse. |
+| | The shape of the contact area changes throughout the movement. | Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit. | Same as mouse. |
+| | There is no mouse cursor to assist with targeting. | The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting. | Same as mouse. |
+| Human anatomy | Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion. | It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen. | Same as mouse. |
+| | Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device. | The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order. | Finger posture and grip can be an issue. |
+| | Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion. | Indirect input devices do not cause occlusion. | Same as mouse. |
+| Object state | Touch uses a two-state model: the touch surface of a display device is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback. | A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).<br>Hover lets users explore and learn through tooltips associated with UI elements. Hover and focus effects can relay which objects are interactive and also help with targeting. | Same as mouse. |
+| Rich interaction | Supports multi-touch: multiple input points (fingertips) on a touch surface. | Supports a single input point. | Same as touch. |
+| | Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating. | No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices. | Same as mouse. |
 
 > [!NOTE]
 > Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.

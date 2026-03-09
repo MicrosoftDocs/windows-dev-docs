@@ -1,6 +1,61 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/windows-app-sdk/breaking-changes.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/breaking-changes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/preview-experimental-create-winui3-app.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/preview-experimental-create-winui3-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/preview-experimental-unpackaged-tutorial.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/preview-experimental-unpackaged-tutorial",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/update-existing-projects-to-the-latest-release.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/update-existing-projects-to-the-latest-release",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/hellowin2dworld.md",
+      "redirect_url": "/windows/apps/develop/win2d/quick-start",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/features.md",
+      "redirect_url": "/windows/apps/develop/win2d/#features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/win2d/in-a-core-app.md",
+      "redirect_url": "/windows/apps/develop/win2d/",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/system-backdrop-controller.md",
+      "redirect_url": "/windows/apps/develop/ui/system-backdrops",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/testing/index.md",
+      "redirect_url": "/windows/apps/develop/testing/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/testing/create-winui-unit-test-project.md",
+      "redirect_url": "/windows/apps/develop/testing/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/performance/introduction.md",
+      "redirect_url": "/windows/apps/performance/",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/android/emulator.md",
       "redirect_url": "/windows/dev-environment/",
       "redirect_document_id": false
@@ -5667,17 +5722,17 @@
     },
     {
       "source_path": "hub/python/get-started/python-for-education.md",
-      "redirect_url": "/windows/python/beginners",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-web.md",
-      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/python/get-started/python-for-scripting.md",
-      "redirect_url": "/windows/python/scripting",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
@@ -5918,6 +5973,11 @@
     {
       "source_path": "hub/apps/get-started/get-set-up.md",
       "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/developer-mode-features-and-debugging.md",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
       "redirect_document_id": false
     },
     {
@@ -8267,7 +8327,7 @@
     },
     {
       "source_path": "hub/python/resources.md",
-      "redirect_url": "/windows/python/web-frameworks",
+      "redirect_url": "/windows/dev-environment/python",
       "redirect_document_id": false
     },
     {
@@ -10608,6 +10668,336 @@
     {
       "source_path": "hub/apps/get-started/make-apps-great-for-windows.md",
       "redirect_url": "/windows/apps/get-started/best-practices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/beginners.md",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/faqs.yml",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/index.yml",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/scripting.md",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/python/web-frameworks.md",
+      "redirect_url": "/windows/dev-environment/python",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/depth-shadow.md",
+      "redirect_url": "/windows/apps/develop/ui/shadows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/rounded-corner.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/geometry",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/spacing.md",
+      "redirect_url": "/windows/apps/design/basics/content-basics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/alignment-margin-padding.md",
+      "redirect_url": "/windows/apps/develop/ui/alignment-margin-padding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/layout-panels.md",
+      "redirect_url": "/windows/apps/develop/ui/layout-panels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/layouts-with-xaml.md",
+      "redirect_url": "/windows/apps/develop/ui/layouts-with-xaml",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-in-practice.md",
+      "redirect_url": "/windows/apps/develop/motion/motion-in-practice",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/page-transitions.md",
+      "redirect_url": "/windows/apps/develop/motion/page-transitions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/connected-animation.md",
+      "redirect_url": "/windows/apps/develop/motion/connected-animation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/parallax.md",
+      "redirect_url": "/windows/apps/develop/motion/parallax",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/xaml-animation.md",
+      "redirect_url": "/windows/apps/develop/motion/xaml-animation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/xaml-property-animations.md",
+      "redirect_url": "/windows/apps/develop/motion/xaml-property-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/storyboarded-animations.md",
+      "redirect_url": "/windows/apps/develop/motion/storyboarded-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/key-frame-and-easing-function-animations.md",
+      "redirect_url": "/windows/apps/develop/motion/key-frame-and-easing-function-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/basics/navigate-between-two-pages.md",
+      "redirect_url": "/windows/apps/develop/ui/navigation/navigate-between-two-pages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/basics/navigation-history-and-backwards-navigation.md",
+      "redirect_url": "/windows/apps/develop/ui/navigation/navigation-history-and-backwards-navigation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/advanced-scenarios-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-custom-control-with-xaml-islands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-custom-control-with-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-standard-control-with-xaml-islands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/uwp/xaml-islands/host-standard-control-with-xaml-islands-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/using-the-xaml-hosting-api.md",
+      "redirect_url": "/windows/uwp/xaml-islands/using-the-xaml-hosting-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands/xaml-islands.md",
+      "redirect_url": "/windows/uwp/xaml-islands/xaml-islands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/xaml-templated-controls-csharp-winui-3.md",
+      "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
+    "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/gamepad-and-remote-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/gamepad-and-remote-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/gaze-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/gaze-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/input-injection.md",
+      "redirect_url": "/windows/uwp/ui-input/input-injection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/radialcontroller-walkthrough.md",
+      "redirect_url": "/windows/uwp/ui-input/radialcontroller-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/windows-wheel-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/windows-wheel-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/convert-ink-to-text.md",
+      "redirect_url": "/windows/uwp/ui-input/convert-ink-to-text",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/ink-toolbar.md",
+      "redirect_url": "/windows/uwp/ui-input/ink-toolbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/ink-walkthrough.md",
+      "redirect_url": "/windows/uwp/ui-input/ink-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/pen-and-stylus-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/pen-and-stylus-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/pen-haptics.md",
+      "redirect_url": "/windows/uwp/ui-input/pen-haptics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/save-and-load-ink.md",
+      "redirect_url": "/windows/uwp/ui-input/save-and-load-ink",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/text-handwriting-view.md",
+      "redirect_url": "/windows/uwp/ui-input/text-handwriting-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/define-custom-recognition-constraints.md",
+      "redirect_url": "/windows/uwp/ui-input/define-custom-recognition-constraints",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/enable-continuous-dictation.md",
+      "redirect_url": "/windows/uwp/ui-input/enable-continuous-dictation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/manage-issues-with-audio-input.md",
+      "redirect_url": "/windows/uwp/ui-input/manage-issues-with-audio-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/set-speech-recognition-timeouts.md",
+      "redirect_url": "/windows/uwp/ui-input/set-speech-recognition-timeouts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/specify-the-speech-recognizer-language.md",
+      "redirect_url": "/windows/uwp/ui-input/specify-the-speech-recognizer-language",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/speech-interactions.md",
+      "redirect_url": "/windows/uwp/ui-input/speech-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/input/speech-recognition.md",
+      "redirect_url": "/windows/uwp/ui-input/speech-recognition",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/speech.md",
+      "redirect_url": "/windows/uwp/ui-input/speech-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui/controls/inking-controls.md",
+      "redirect_url": "/windows/uwp/ui-input/inking-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/system-requirements.md",
+      "redirect_url": "/windows/apps/windows-app-sdk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/analyze-app-performance/gdk-xbox.md",
+      "redirect_url": "/partner-center/insights/apps-and-games-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/chatgpt-openai-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/copilot-chat-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/dall-e-winui3.md",
+      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-notifications-overview.md",
+      "redirect_url": "/windows/apps/develop/notifications/app-notifications/",
+      "redirect_document_id": false
+    },
+	{
+      "source_path": "hub/apps/publish/nrt-in-analytics.md",
+      "redirect_url": "/windows/apps/publish/recent-data-acquisitions-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/live-tile-icons.md",
+      "redirect_url": "/windows/uwp/launch-resume/live-tile-icons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/app-icon-construction.md",
+      "redirect_url": "/windows/apps/design/iconography/app-icon-construction",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/app-icon-design.md",
+      "redirect_url": "/windows/apps/design/iconography/app-icon-design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/overview.md",
+      "redirect_url": "/windows/apps/design/iconography/app-icons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/iconography/visual-studio-asset-generation.md",
+      "redirect_url": "/windows/apps/design/iconography/visual-studio-asset-generation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/segoe-fluent-icons-font.md",
+      "redirect_url": "/windows/apps/design/iconography/segoe-fluent-icons-font",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/segoe-ui-symbol-font.md",
+      "redirect_url": "/windows/apps/design/iconography/segoe-ui-symbol-font",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/signature-experiences/iconography.md",
+      "redirect_url": "/windows/apps/design/iconography",
       "redirect_document_id": false
     }
   ]

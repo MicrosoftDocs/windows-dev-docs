@@ -2,7 +2,7 @@
 description: Add modern XAML user interfaces, create MSIX packages, and incorporate other modern components into your desktop application.
 title: Modernize your desktop apps for Windows
 ms.topic: article
-ms.date: 01/28/2026
+ms.date: 02/27/2026
 ms.localizationpriority: medium
 ---
 
@@ -20,18 +20,18 @@ For more information, see [Windows application development - Best practices](../
 
 ## Windows App SDK
 
-The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and many versions of Windows 10. You can use project templates to create new desktop apps that use the Windows App SDK with a WinUI 3-based UI, or you can use the Windows App SDK in existing desktop apps.
+The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and many versions of Windows 10. You can use project templates to create new desktop apps that use the Windows App SDK with a WinUI-based UI, or you can use the Windows App SDK in existing desktop apps.
 
 For more information, see [Windows App SDK](../../windows-app-sdk/index.md).
 
-## WinUI
+## WinUI 3
 
-WinUI is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI 3, has grown in scope and is now the modern native UI platform for Windows desktop apps.
+WinUI is a native user experience framework for both Windows desktop and UWP applications. WinUI started as a toolkit that provided new and updated versions of WinRT XAML controls for UWP apps that target down-level versions of Windows. The latest version, WinUI, has grown in scope and is now the modern native UI platform for Windows desktop apps.
 
 You can use WinUI in the following ways in desktop apps:
 
-* Use [WinUI 3](../../winui/index.md) to create desktop apps (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)) with an entirely WinUI 3-based user interface. WinUI 3 is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
-* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands/xaml-islands.md) and host WinUI 2 controls.
+* Use [WinUI](../../winui/index.md) to create desktop apps (see [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)) with an entirely WinUI-based user interface. WinUI is one of many features provided by the [Windows App SDK](../../windows-app-sdk/index.md).
+* You can update existing WPF, Windows Forms, and C++ desktop (Win32) apps with [XAML Islands](xaml-islands/xaml-islands.md) and host WinUI for UWP controls.
 
 For more information, see [WinUI](../../winui/index.md).
 
@@ -57,42 +57,19 @@ For more information, see [Use MSIX framework packages dynamically from your des
 
 ## .NET
 
-.NET (previously known as .NET Core) supports Windows desktop apps, including WinUI 3 apps created with the Windows App SDK (see [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)). .NET also supports [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.
+.NET (previously known as .NET Core) supports Windows desktop apps, including WinUI apps created with the Windows App SDK (see [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)). .NET also supports [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) and [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. You can run new and existing Windows desktop apps on .NET, and enjoy all the benefits that .NET has to offer.
 
 For more information, see [What's new in .NET 10](/dotnet/core/whats-new/dotnet-10/overview).
 
-## Host WinRT XAML controls (XAML Islands)
+## Host WinUI XAML controls (XAML Islands)
 
-Starting with Windows 10, version 1903, you can add [UWP XAML controls](/windows/uwp/design/controls-and-patterns/controls-by-function) directly to any UI element in a WPF, Windows Forms, or C++ desktop app that is associated with a window handle (HWND). This means that you can fully integrate the latest UWP features such as [Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) and controls that support the [Fluent Design System](/windows/uwp/design/fluent-design-system/index) into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called *XAML islands*.
-
-For more information, see [WinRT XAML controls in desktop apps](xaml-islands/xaml-islands.md)
-
-## Use the Visual layer in desktop apps
-
-You can now use Windows Runtime APIs in non-UWP desktop apps to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ desktop apps, and take advantage of the latest Windows UI features that are only available via UWP. This is useful when you need to create custom experiences that go beyond the built-in WinRT XAML controls you can host by using XAML Islands.
+You can add [WinUI XAML controls](/windows/uwp/design/controls-and-patterns/controls-by-function) directly to any UI element in a WPF, Windows Forms, or C++ desktop app that is associated with a window handle (HWND). This means that you can fully integrate the latest WinUI features and controls that support the [Fluent Design System](../../design/index.md) into windows and other display surfaces in your desktop apps. This developer scenario is sometimes called *XAML islands*.
 
 For more information, see [Modernize your desktop app using the Visual layer](ui/visual-layer-in-desktop-apps.md).
 
 ## Additional features available to apps with package identity
 
 Some modern Windows experiences are available only to desktop apps that have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. These features include certain Windows Runtime APIs, package extensions, and UWP components. For more info, see [Features that require package identity](modernize-packaged-apps.md).
-
-<a id="desktop-uwp-controls"></a>
-
-## WinRT XAML controls optimized for desktop apps
-
-Whether you're building a UWP app that exclusively targets the desktop device family or you want to use WinRT XAML controls in a WPF, Windows Forms, or C++ desktop app, the following new and updated WinRT XAML controls are designed to offer desktop-optimized experiences with the [Fluent Design System](/windows/uwp/design/fluent-design-system/index). These controls were introduced in Windows 10, version 1809 (the October 2018 Update, or version 10.0.17763).
-
-| Control |  Description |
-|------ |--------------|
-| [MenuBar](/windows/uwp/design/controls-and-patterns/menus#create-a-menu-bar) | Provides a quick and simple way to expose a set of commands for apps that might need more organization or grouping than a **CommandBar** allows. |
-| [DropDownButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-drop-down-button) | Shows a chevron as a visual indicator that it has an attached flyout that contains more options.  |
-| [SplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-split-button) | Provides a button has two parts that can be invoked separately. One part behaves like a standard button and invokes an immediate action. The other part invokes a flyout that contains additional options that the user can choose from.|
-| [ToggleSplitButton](/windows/uwp/design/controls-and-patterns/buttons#create-a-toggle-split-button) | Provides a button has two parts that can be invoked separately. One part behaves like a toggle button that can be on or off. The other part invokes a flyout that contains additional options that the user can choose from. |
-| [CommandBarFlyout](/windows/uwp/design/controls-and-patterns/command-bar-flyout) |  Lets you show common user tasks in the context of an item on your UI canvas. |
-| [ComboBox](/windows/uwp/design/controls-and-patterns/combo-box#make-a-combo-box-editable) | You can now make a combo box editable so the user can enter values that aren't listed in the control.  |
-| [TreeView](/windows/uwp/design/controls-and-patterns/tree-view) | You can now configure a tree view to enable data binding, item templates, and drag and drop.  |
-| [DataGridView](/windows/communitytoolkit/controls/datagrid) |   Provides a flexible way to display a collection of data in rows and columns. This control is available in the [Windows Community Toolkit](/windows/uwpcommunitytoolkit/).  |
 
 ## Other technologies for modern desktop apps
 

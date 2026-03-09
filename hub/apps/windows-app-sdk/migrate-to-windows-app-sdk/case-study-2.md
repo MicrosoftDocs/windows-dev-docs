@@ -25,7 +25,7 @@ To set up your development computer, see [Install tools for the Windows App SDK]
 
 ## Create a new project
 
-* In Visual Studio, create a new C++/WinRT project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *PhotoEditor*, uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
+* In Visual Studio, create a new C++/WinRT project from the **Blank App, Packaged (WinUI in Desktop)** project template. Name the project *PhotoEditor*, uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 > [!NOTE]
 > We'll be referring to the UWP version of the sample project (the one that you cloned from its [repo](https://github.com/microsoft/windows-appsample-photo-editor/tree/master/)) as the *source* solution/project. We'll be referring to the Windows App SDK version as the *target* solution/project.
@@ -82,7 +82,7 @@ In this walkthrough we'll be copying over source code files using **File Explore
 
 ### Migrate Photo source code
 
-1. In `Photo.idl`, search for the namespace name `Windows.UI.Xaml` (which is the namespace for UWP XAML), and change that to `Microsoft.UI.Xaml` (which is the namespace for WinUI XAML).
+1. In `Photo.idl`, search for the namespace name `Windows.UI.Xaml` (which is the namespace for UWP XAML), and change that to `Microsoft.UI.Xaml` (which is the namespace for WinUI 3 XAML).
 
 > [!NOTE]
 > The [Mapping UWP APIs to the Windows App SDK](api-mapping-table.md) topic provides a mapping of UWP APIs to their Windows App SDK equivalents. The change we made above is an example of a namespace name change necessary during the migration process.

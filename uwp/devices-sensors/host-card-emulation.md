@@ -16,7 +16,7 @@ This topic describes how to use Host Card Emulation (HCE) to communicate directl
 
 ## What you need to develop an HCE app
 
-To develop an HCE-based card emulation app, you need to install Microsoft Visual Studio 2015 (see the [Visual Studio download page](https://visualstudio.microsoft.com/vs/older-downloads/)) (includes the Windows developer tools) and the [Windows 10 Mobile emulator](https://www.microsoft.com/download/details.aspx?id=53424).
+To develop an HCE-based card emulation app, you need to install Microsoft Visual Studio 2015 (see the [Visual Studio download page](https://visualstudio.microsoft.com/vs/older-downloads/)) (includes the Windows developer tools) and the Windows 10 Mobile emulator.
 
 > For more information about getting setup, see [Test with the Microsoft Emulator for Windows 10 Mobile](../debug-test-perf/test-with-the-emulator.md).
 

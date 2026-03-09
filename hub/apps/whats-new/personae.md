@@ -30,7 +30,7 @@ The following personas represent typical Windows developers. Each profile outlin
 
 **Go-to tech:**
 
-- [WinUI 3](/windows/apps/winui/winui3/)
+- [WinUI](/windows/apps/winui/winui3/)
 - [WPF](/dotnet/desktop/wpf/overview/)
 - [Windows App SDK](/windows/apps/windows-app-sdk/)
 - [.NET MAUI](/dotnet/maui/)

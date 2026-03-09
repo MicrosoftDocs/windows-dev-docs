@@ -1,6 +1,6 @@
 ---
-title: What's supported when migrating from UWP to WinUI 3
-description: WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
+title: What's supported when migrating from UWP to WinUI
+description: WinUI and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
 ms.topic: article
 ms.date: 07/14/2025
 keywords: Windows, App, SDK, port, porting, migrate, migration, support
@@ -9,9 +9,9 @@ ms.localizationpriority: medium
 
 # What's supported when migrating from UWP to WinUI 3
 
-WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
+WinUI and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
 
-| UWP feature | WinUI 3 status |
+| UWP feature | WinUI status |
 | - | - |
 | [Background acrylic](guides/winui3.md#acrylicbrushbackgroundsource-property) | ✅ Available via [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller). |
 | [Background tasks](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task) | ✅ Supported; see [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) (introduced in 1.7). |
@@ -33,18 +33,18 @@ WinUI 3 and the Windows App SDK are new technologies and, when compared to UWP, 
 | CoreTextServicesManager | ⚠️ Supported only on Windows 11 |
 | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | ⚠️ Supported on Windows 11 (not yet available on Windows 10) |
 | [CoreWindow](/uwp/api/windows.ui.core.corewindow) and related APIs | ❌ Not supported in 1.7. For alternative APIs with some of the same functionality, see [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow), and [HWND](/windows/apps/develop/ui-input/retrieve-hwnd)-based APIs. |
-| [Virtual key support for gamepad input](/uwp/api/windows.system.virtualkey) | ❌ Not supported in 1.7; see [Gamepad support in WinUI 3](https://github.com/microsoft/microsoft-ui-xaml/issues/6891) |
+| [Virtual key support for gamepad input](/uwp/api/windows.system.virtualkey) | ❌ Not supported in 1.7; see [Gamepad support in WinUI](https://github.com/microsoft/microsoft-ui-xaml/issues/6891) |
 | [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) | ❌ Not supported in 1.7 |
 | [Single-app kiosk](https://github.com/microsoft/WindowsAppSDK/issues/3642) | ❌ Not supported in 1.7 |
 | [Xbox](/windows/uwp/xbox-apps/) and HoloLens | ❌ Not supported in 1.7 |
 
 ## Performance considerations
 
-Today in version 1.7 of the Windows App SDK, launch speeds, RAM usage, and installation size of WinUI 3 apps are larger/slower than seen in UWP. We're actively working to improve this.
+Today in version 1.7 of the Windows App SDK, launch speeds, RAM usage, and installation size of WinUI apps are larger/slower than seen in UWP. We're actively working to improve this.
 
 ## Visual Studio
 
-The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI 3 projects (as of version 1.7 of the Windows App SDK). For more info, see [Create a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
+The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI projects (as of version 1.7 of the Windows App SDK). For more info, see [Create a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
 
 ## See Also
 

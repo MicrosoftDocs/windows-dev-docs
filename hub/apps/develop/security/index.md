@@ -51,7 +51,7 @@ The following articles provide information about features available via Win32 (C
 
 ## .NET features
 
-The .NET SDK also provides APIs related to security and identity scenarios for WPF and Windows Forms apps. The security and cryptography APIs in .NET can also be used in C# WinUI apps.
+The .NET SDK also provides APIs related to security and identity scenarios for WPF and Windows Forms apps. The security and cryptography APIs in .NET can also be used in C# WinUI 3 apps.
 
 | Article | Description |
 |---------|-------------|

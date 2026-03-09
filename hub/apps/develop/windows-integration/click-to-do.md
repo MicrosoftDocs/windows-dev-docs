@@ -8,7 +8,7 @@ no-loc: [Click to Do, Windows Copilot Runtime, Phi Silica]
 
 # Click to Do overview
 
-**Click to Do** is an AI-supported feature that utilizes the local Phi Silica model in Copilot+ PCs or [eligible Cloud PCs](https://learn.microsoft.com/windows-365/enterprise/ai-enabled-cloud-pcs) to connect actions to the content (text or images) on the screen.
+**Click to Do** is an AI-supported feature that utilizes the local Phi Silica model in Copilot+ PCs or [eligible Cloud PCs](/windows-365/enterprise/ai-enabled-cloud-pcs) to connect actions to the content (text or images) on the screen.
 
 Click to Do analyzes what's on screen and then you can choose the text or image you want to take action on. Once selected, Click to Do will suggest actions that you can take based on the content. For example, if you select a piece of text, it might suggest summarizing or rewriting it. If you select an image, it might suggest blurring the background, erasing objects in the image, or searching the web for related information.
 

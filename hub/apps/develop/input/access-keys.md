@@ -114,86 +114,6 @@ _CommandBar primary scope and supported access keys_
 
 _CommandBar secondary scope and supported access keys_
 
-### Windows 10 Creators Update and older
-
-Prior to Windows 10 Fall Creators Update, some controls, such as the CommandBar, didn't support built-in access key scopes.
-
-The following example shows how to support CommandBar SecondaryCommands with access keys, which are available once a parent command is invoked (similar to the Ribbon in Word).
-
-```xaml
-<local:CommandBarHack x:Name="MainCommandBar" AccessKey="M" >
-    <AppBarButton AccessKey="G" Icon="Globe" Label="Go"/>
-    <AppBarButton AccessKey="S" Icon="Stop" Label="Stop"/>
-    <AppBarSeparator/>
-    <AppBarButton AccessKey="R" Icon="Refresh" Label="Refresh" IsAccessKeyScope="True">
-        <AppBarButton.Flyout>
-            <MenuFlyout>
-                <MenuFlyoutItem AccessKey="A" Icon="Globe" Text="Refresh A" />
-                <MenuFlyoutItem AccessKey="B" Icon="Globe" Text="Refresh B" />
-                <MenuFlyoutItem AccessKey="C" Icon="Globe" Text="Refresh C" />
-                <MenuFlyoutItem AccessKey="D" Icon="Globe" Text="Refresh D" />
-            </MenuFlyout>
-        </AppBarButton.Flyout>
-    </AppBarButton>
-    <AppBarButton AccessKey="B" Icon="Back" Label="Back"/>
-    <AppBarButton AccessKey="F" Icon="Forward" Label="Forward"/>
-    <AppBarSeparator/>
-    <AppBarToggleButton AccessKey="T" Icon="Favorite" Label="Favorite"/>
-    <CommandBar.SecondaryCommands>
-        <AppBarToggleButton Icon="Like" AccessKey="L" Label="Like"/>
-        <AppBarButton Icon="Setting" AccessKey="S" Label="Settings" />
-    </CommandBar.SecondaryCommands>
-</local:CommandBarHack>
-```
-
-```csharp
-public class CommandBarHack : CommandBar
-{
-    CommandBarOverflowPresenter secondaryItemsControl;
-    Popup overflowPopup;
-
-    public CommandBarHack()
-    {
-        this.ExitDisplayModeOnAccessKeyInvoked = false;
-        AccessKeyInvoked += OnAccessKeyInvoked;
-    }
-
-    protected override void OnApplyTemplate()
-    {
-        base.OnApplyTemplate();
-
-        Button moreButton = GetTemplateChild("MoreButton") as Button;
-        moreButton.SetValue(Control.IsTemplateKeyTipTargetProperty, true);
-        moreButton.IsAccessKeyScope = true;
-
-        // SecondaryItemsControl changes
-        secondaryItemsControl = GetTemplateChild("SecondaryItemsControl") as CommandBarOverflowPresenter;
-        secondaryItemsControl.AccessKeyScopeOwner = moreButton;
-
-        overflowPopup = GetTemplateChild("OverflowPopup") as Popup;
-    }
-
-    private void OnAccessKeyInvoked(UIElement sender, AccessKeyInvokedEventArgs args)
-    {
-        if (overflowPopup != null)
-        {
-            overflowPopup.Opened += SecondaryMenuOpened;
-        }
-    }
-
-    private void SecondaryMenuOpened(object sender, object e)
-    {
-        //This is not necessary given we are automatically pushing the scope.
-        var item = secondaryItemsControl.Items.First();
-        if (item != null && item is Control)
-        {
-            (item as Control).Focus(FocusState.Keyboard);
-        }
-        overflowPopup.Opened -= SecondaryMenuOpened;
-    }
-}
-```
-
 ## Avoid access key collisions
 
 Access key collisions occur when two or more elements in the same scope have duplicate access keys, or start with the same alphanumeric characters.
@@ -359,4 +279,4 @@ If you specify the AccessKey property on a UIElement or TextElement control, you
 * [Keyboard accelerators](../../design/input/keyboard-accelerators.md)
 
 **Samples**
-* [WinUI Gallery](https://github.com/Microsoft/WinUI-Gallery)
+* [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery)

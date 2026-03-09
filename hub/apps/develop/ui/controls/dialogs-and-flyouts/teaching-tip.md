@@ -56,7 +56,7 @@ A teaching tip can require the user to dismiss it via an "X" button in a top cor
 > - **Important APIs:** [TeachingTip class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.teachingtip)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the TeachingTip in action](winui3gallery:/item/TeachingTip)
+> [Open the WinUI 3 Gallery app and see the TeachingTip in action](winui3gallery://item/TeachingTip)
 
 [!INCLUDE [winui-3-gallery](../../../../../includes/winui-3-gallery.md)]
 
@@ -337,25 +337,6 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
         }
     }
 }
-```
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../../includes/uwp-winui-2-note.md)]
-
-The TeachingTip for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [TeachingTip class](/windows/winui/api/microsoft.ui.xaml.controls.teachingtip)
-> - [Open the WinUI 2 Gallery app and see the TeachingTip in action](winui2gallery:/item/TeachingTip). [!INCLUDE [winui-2-gallery](../../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:TeachingTip />
 ```
 
 ## Related articles

@@ -15,59 +15,41 @@ items:
     - name: Commanding
       href: basics/commanding-basics.md
     - name: Elevation
-      items:
-        - name: Overview
-          href: signature-experiences/layering.md
-        - name: Z-depth and shadow
-          href: layout/depth-shadow.md
+      href: signature-experiences/layering.md
     - name: Geometry
-      items:
-        - name: Overview
-          href: signature-experiences/geometry.md
-        - name: Corner radius
-          href: style/rounded-corner.md
+      href: signature-experiences/geometry.md
     - name: Iconography
       items:
         - name: Overview
-          href: signature-experiences/iconography.md
+          href: iconography/index.md
         - name: App icons
           items:
             - name: Overview
-              href: style/iconography/overview.md
+              href: iconography/app-icons.md
             - name: Design guidelines
-              href: style/iconography/app-icon-design.md
+              href: iconography/app-icon-design.md
             - name: Construct your app icon
-              href: style/iconography/app-icon-construction.md
-            - name: Construction guidelines for Windows 10 icons
-              href: style/iconography/live-tile-icons.md
+              href: iconography/app-icon-construction.md
             - name: Generate app icons using Visual Studio
-              href: style/iconography/visual-studio-asset-generation.md
+              href: iconography/visual-studio-asset-generation.md
         - name: Segoe MDL2 icons
-          href: style/segoe-ui-symbol-font.md
+          href: iconography/segoe-ui-symbol-font.md
         - name: Segoe Fluent Icons
-          href: style/segoe-fluent-icons-font.md
+          href: iconography/segoe-fluent-icons-font.md
     - name: Layout
       items:
         - name: Overview
           href: layout/index.md
-        - name: App Silhouette
+        - name: App silhouette
           href: basics/app-silhouette.md
         - name: App title bar
           href: basics/titlebar-design.md
-        - name: Hierarchy
+        - name: Content layout and spacing
           href: basics/content-basics.md  
-        - name: Spacing
-          href: style/spacing.md
         - name: Screen sizes and breakpoints
           href: layout/screen-sizes-and-breakpoints-for-responsive-design.md
         - name: Responsive design techniques
           href: layout/responsive-design.md
-        - name: Alignment, margin, and padding
-          href: layout/alignment-margin-padding.md
-        - name: Layouts with XAML
-          href: layout/layouts-with-xaml.md
-        - name: Layout panels
-          href: layout/layout-panels.md
     - name: Materials
       items:
         - name: Overview
@@ -84,31 +66,8 @@ items:
           href: motion/timing-and-easing.md
         - name: Directionality and gravity
           href: motion/directionality-and-gravity.md
-        - name: Motion in practice
-          href: motion/motion-in-practice.md
-        - name: Page transitions
-          href: motion/page-transitions.md
-        - name: Connected animation
-          href: motion/connected-animation.md
-        - name: Parallax
-          href: motion/parallax.md
-        - name: Animations in XAML
-          href: motion/xaml-animation.md
-          items:
-            - name: Property animations
-              href: motion/xaml-property-animations.md
-            - name: Storyboarded animations
-              href: motion/storyboarded-animations.md
-            - name: Key-frame and easing function animations
-              href: motion/key-frame-and-easing-function-animations.md
     - name: Navigation
-      items:
-      - name: Overview
-        href: basics/navigation-basics.md
-      - name: Implement basic navigation
-        href: basics/navigate-between-two-pages.md
-      - name: Navigation history and backwards navigation
-        href: basics/navigation-history-and-backwards-navigation.md  
+      href: basics/navigation-basics.md
     - name: Sound
       href: style/sound.md
     - name: Typography

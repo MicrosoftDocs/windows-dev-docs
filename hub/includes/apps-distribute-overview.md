@@ -17,13 +17,19 @@ ms.date: 07/12/2024
 
 :::row:::
     :::column:::
-       [![App performance icon](../apps/publish/images/tile-app-performance.png)](../apps/publish/analyze-app-performance/msix.md)<br>
+       [![App management icon](../apps/publish/images/tile-update.png)](../apps/publish/publish-your-app/msix/publish-update-to-your-app-on-store.md)<br>
+        **[Managing your app](../apps/publish/publish-your-app/msix/publish-update-to-your-app-on-store.md)**<br>
+        Update listings, publish new versions, and manage availability after your app is live.
     :::column-end:::
     :::column:::
-       [![App management icon](../apps/publish/images/tile-app-management.png)](../apps/publish/publish-your-app/msix/publish-update-to-your-app-on-store.md)<br>
+       [![App performance monitoring icon](../apps/publish/images/tile-monitor.png)](../apps/publish/analyze-app-performance/msix.md)<br>
+        **[App performance monitoring](../apps/publish/analyze-app-performance/msix.md)**<br>
+        Track usage, reliability, and performance insights to improve your app over time.
     :::column-end:::
     :::column:::
-        [![Developer tools icon](../apps/publish/images/tile-developer-tools.png)](../apps/publish/product-page-experiments.md)<br>
+        [![Developer tools icon](../apps/publish/images/tile-tools.png)](../apps/publish/product-page-experiments.md)<br>
+        **[Developer tools](../apps/publish/product-page-experiments.md)**<br>
+       Use Partner Center and supporting tools to build, test, and publish Store apps.
     :::column-end:::
 :::row-end:::
 

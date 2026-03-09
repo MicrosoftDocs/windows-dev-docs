@@ -46,7 +46,7 @@ There are some scenarios where another control may be more appropriate to use.
 > - **Important APIs**: [SelectorBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar), [Items property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.items), [SelectionChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged),  [SelectorBarItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbaritem)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the SelectorBar in action](winui3gallery:/item/SelectorBar)
+> [Open the WinUI 3 Gallery app and see the SelectorBar in action](winui3gallery://item/SelectorBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -127,7 +127,7 @@ When a user selects an item, you typically change the view by either navigating 
 ### Navigate with transition animations
 
 > [!TIP]
-> You can find these examples in the [SelectorBar page of the WinUI Gallery app](winui3gallery:/item/SelectorBar). Use the WinUI Gallery app to run and view the full code.
+> You can find these examples in the [SelectorBar page of the WinUI 3 Gallery app](winui3gallery://item/SelectorBar). Use the WinUI 3 Gallery app to run and view the full code.
 
 This example demonstrates handling the [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.selectorbar.selectionchanged) event to navigate between different pages. The navigation uses the [SlideNavigationTransitionEffect](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.slidenavigationtransitioneffect) to slide the pages in from the left or right, as appropriate.
 
@@ -225,11 +225,6 @@ private void SelectorBar3_SelectionChanged
     }
 }
 ```
-
-## UWP and WinUI 2
-
-> [!IMPORTANT]
-> The SelectorBar control is not available for UWP and WinUI 2. For alternatives, see [NavigationView](../../../design/controls/navigationview.md) or [TabView](../../../design/controls/tab-view.md).
 
 ## Related topics
 

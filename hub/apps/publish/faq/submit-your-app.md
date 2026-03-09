@@ -160,7 +160,7 @@ Search terms are not shown to users but play a crucial role in helping your app 
 <details>
 <summary><strong>How can I manage who receives submission notifications in Partner Center?</strong></summary>
 
-After publishing an app, the **owner** of your developer account is always notified about the publishing status and required actions via email and through the [Action Center](https://learn.microsoft.com/partner-center/action-center-overview) in Partner Center. 
+After publishing an app, the **owner** of your developer account is always notified about the publishing status and required actions via email and through the [Action Center](/partner-center/action-center-overview) in Partner Center. 
 
 To ensure delivery of these critical notifications, the owner must verify their email address via [My Preferences](https://partner.microsoft.com/dashboard/actioncenter/mypreferences) in Action Center.
 

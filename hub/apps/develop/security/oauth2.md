@@ -13,7 +13,7 @@ The [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authen
 
 ## OAuth 2.0 background for Windows apps
 
-The Windows Runtime (WinRT) [WebAuthenticationBroker](/uwp/api/windows.security.authentication.web.webauthenticationbroker), primarily designed for UWP apps, presents several challenges when used in desktop apps. Key issues include the dependency on [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), which isn't compatible with desktop app frameworks. As a result, developers must resort to workarounds involving interop interfaces and additional code to implement OAuth 2.0 functionality into WinUI 3 and other desktop apps.
+The Windows Runtime (WinRT) [WebAuthenticationBroker](/uwp/api/windows.security.authentication.web.webauthenticationbroker), primarily designed for UWP apps, presents several challenges when used in desktop apps. Key issues include the dependency on [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview), which isn't compatible with desktop app frameworks. As a result, developers must resort to workarounds involving interop interfaces and additional code to implement OAuth 2.0 functionality into WinUI and other desktop apps.
 
 ## OAuth2Manager API in Windows App SDK
 
@@ -23,7 +23,7 @@ The **OAuth2Manager** is different from the **WebAuthenticationBroker** in WinRT
 
 ## OAuth 2.0 code examples
 
-A full WinUI 3 sample app is available on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager). The following sections provide code snippets for the most common OAuth 2.0 flows using the **OAuth2Manager** API.
+A full WinUI sample app is available on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager). The following sections provide code snippets for the most common OAuth 2.0 flows using the **OAuth2Manager** API.
 
 ### Authorization code request
 

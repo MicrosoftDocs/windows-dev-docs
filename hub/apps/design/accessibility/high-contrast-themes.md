@@ -69,7 +69,7 @@ A [**ResourceDictionary.ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedi
 
 ## Contrast colors
 
-On the *Settings > Ease of access > Contrast themes* page (shown in the following image), users can select from four default contrast themes: **Aquatic**, **Desert**, **Dusk**, and **Night sky**.
+On the *Settings > Accessibility > Contrast themes* page (shown in the following image), users can select from four default contrast themes: **Aquatic**, **Desert**, **Dusk**, and **Night sky**.
 
 :::image type="content" border="false" source="images/contrast-theme-settings.png" alt-text="Contrast theme settings.":::
 
@@ -158,11 +158,11 @@ Here are some recommendations for customizing the contrast theme colors in your 
 - **Do not** use `SystemColorHotlightColor` and corresponding brush as both are reserved for hyperlinks.
 
 > [!TIP]
-> It's often helpful to look at the WinUI Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:) or [**WinUI 2 Gallery**](winui2gallery:).
+> It's often helpful to look at the WinUI 3 Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:) or [**WinUI for UWP Gallery**](winui2gallery:).
 >
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI for UWP Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
 >
-> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
+> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI and the *winui2* branch for WinUI for UWP).
 
 ### Hard-coded colors
 

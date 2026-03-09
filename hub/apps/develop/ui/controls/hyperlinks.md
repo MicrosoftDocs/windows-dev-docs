@@ -63,7 +63,7 @@ The hyperlink appears inline and flows with the surrounding text:
 > - **Important APIs**: [HyperlinkButton control](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the Hyperlinks in action](winui3gallery:/item/HyperlinkButton)
+> [Open the WinUI 3 Gallery app and see the Hyperlinks in action](winui3gallery://item/HyperlinkButton)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -156,17 +156,6 @@ Hyperlink has restrictions on the content that can exist in its [Inlines](/windo
 Hyperlink doesn't inherit from [Control](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control), so it doesn't have a [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.style) property or a [Template](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.template). You can edit the properties that are inherited from [TextElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement), such as Foreground or FontFamily, to change the appearance of a Hyperlink, but you can't use a common style or template to apply changes. Instead of using a template, consider using common resources for values of Hyperlink properties to provide consistency. Some properties of Hyperlink use defaults from a {ThemeResource} markup extension value provided by the system. This enables the Hyperlink appearance to switch in appropriate ways when the user changes the system theme at run-time.
 
 The default color of the hyperlink is the accent color of the system. You can set the [Foreground](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.documents.textelement.foreground) property to override this.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-APIs for this control exist in the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) namespace.
-
-> [!div class="checklist"]
->
-> - **UWP APIs:** [Hyperlink text element](/uwp/api/Windows.UI.Xaml.Documents.Hyperlink), [HyperlinkButton control](/uwp/api/Windows.UI.Xaml.Controls.HyperlinkButton)
-> - [Open the WinUI 2 Gallery app and see Hyperlinks in action](winui2gallery:/item/HyperlinkButton). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
 
 ## Related articles
 

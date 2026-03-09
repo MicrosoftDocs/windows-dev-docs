@@ -49,7 +49,7 @@ The image below shows the parts of the `BreadcrumbBar` control. You can modify t
 > - **Important APIs:** [BreadcrumbBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the BreadcrumbBar in action](winui3gallery:/item/BreadcrumbBar)
+> [Open the WinUI 3 Gallery app and see the BreadcrumbBar in action](winui3gallery://item/BreadcrumbBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -239,25 +239,6 @@ public readonly struct Crumb
     public object Data { get; }
     public override string ToString() => Label;
 }
-```
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The BreadcrumbBar for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [BreadcrumbBar class](/windows/winui/api/microsoft.ui.xaml.controls.breadcrumbbar)
-> - [Open the WinUI 2 Gallery app and see the BreadcrumbBar in action](winui2gallery:/item/BreadcrumbBar). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:BreadcrumbBar />
 ```
 
 ## Related articles

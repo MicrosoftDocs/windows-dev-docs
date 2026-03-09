@@ -239,14 +239,14 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 >
 > _**x**_ is the number of the current item. _**N**_ is the total number of items in the group.
 
-## Create a WinUI RadioButtons group
+## Create a WinUI 3 RadioButtons group
 
 > [!div class="checklist"]
 >
 > - **Important APIs**: [RadioButtons class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons.selectionchanged), [RadioButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton), [IsChecked property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the RadioButton in action](winui3gallery:/item/RadioButton)
+> [Open the WinUI 3 Gallery app and see the RadioButton in action](winui3gallery://item/RadioButton)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -549,33 +549,6 @@ The following images show the preferred spacing of radio buttons in a group.
 
 > [!NOTE]
 > If you're using a WinUI RadioButtons control, the spacing, margins, and orientation are already optimized.
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The RadioButtons control for UWP apps is included as part of WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for these controls exist in both the [Windows.UI.Xaml.Controls](/uwp/api/Windows.UI.Xaml.Controls) and [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespaces.
-
-> [!div class="checklist"]
->
-> - **UWP APIs**: [RadioButton class](/uwp/api/windows.ui.xaml.controls.radiobutton), [IsChecked property](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.IsChecked), [Checked event](/uwp/api/Windows.UI.Xaml.Controls.Primitives.ToggleButton.Checked)
-> - **WinUI 2 Apis**: [RadioButtons class](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons), [SelectedItem property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selecteditem), [SelectedIndex property](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectedindex), [SelectionChanged event](/windows/winui/api/microsoft.ui.xaml.controls.radiobuttons.selectionchanged)
-> - [Open the WinUI 2 Gallery app and see the RadioButton in action](winui2gallery:/item/RadioButton). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-There are two ways to create radio button groups.
-
-- Starting with WinUI 2.3, we recommend the **[RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)** control. This control simplifies layout, handles keyboard navigation and accessibility, and supports binding to a data source.
-- You can use groups of individual **[RadioButton](/uwp/api/windows.ui.xaml.controls.radiobutton)** controls. If your app does not use WinUI 2.3 or later, this is the only option.
-
-We recommend using the latest [WinUI 2](/windows/uwp/get-started/winui2/) to get the most current styles and templates for all controls.
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:RadioButtons />
-```
 
 ## Related topics
 

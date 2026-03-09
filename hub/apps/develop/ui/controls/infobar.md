@@ -113,7 +113,7 @@ Please view the guidance for [Adjust layout and fonts, and support RTL](../../..
 > - **Important APIs:** [InfoBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery:/item/InfoBar)
+> [Open the WinUI 3 Gallery app and see the InfoBar in action](winui3gallery://item/InfoBar)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -315,25 +315,6 @@ public void InfoBar_Closing(InfoBar sender, InfoBarClosingEventArgs args)
         }
     }
 }
-```
-
-## UWP and WinUI 2
-
-[!INCLUDE [uwp-winui2-note](../../../../includes/uwp-winui-2-note.md)]
-
-The InfoBar for UWP apps requires WinUI 2. For more info, including installation instructions, see [WinUI 2](/windows/uwp/get-started/winui2/). APIs for this control exist in the [Microsoft.UI.Xaml.Controls](/windows/winui/api/microsoft.ui.xaml.controls) namespace.
-
-> [!div class="checklist"]
->
-> - **WinUI 2 Apis:** [InfoBar class](/windows/winui/api/microsoft.ui.xaml.controls.infobar)
-> - [Open the WinUI 2 Gallery app and see InfoBar in action](winui2gallery:/item/InfoBar). [!INCLUDE [winui-2-gallery](../../../../includes/winui-2-gallery.md)]
-
-[!INCLUDE [muxc-alias-note](../../../../includes/muxc-alias-note.md)]
-
-```xaml
-xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
-
-<muxc:InfoBar />
 ```
 
 ## Related articles

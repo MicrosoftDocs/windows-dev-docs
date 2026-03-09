@@ -56,9 +56,9 @@ In the table below are the properties that you can set in your app's project fil
 
 |Property name and description|Values|For more info|
 |-|-|-|
-|**AppxPackage**. Specifies whether or not a WinUI 3 app is packaged.|*false* (for an unpackaged app), or absent (for a packaged app)|[Unpackage a WinUI app](unpackage-winui-app.md)|
+|**AppxPackage**. Specifies whether or not a WinUI app is packaged.|*false* (for an unpackaged app), or absent (for a packaged app)|[Unpackage a WinUI app](unpackage-winui-app.md)|
 |**EnableMsixTooling**. Enables the single-project MSIX feature for a project.|*true* (to enable), or absent (to disable)|[Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)|
-|**UseWinUI**. Specifies whether you're using the WinUI 3 user interface framework in your app.|*true*, or absent (for *false*)|[WinUI in the Windows App SDK (WinUI 3)](/windows/apps/winui/winui3/)|
+|**UseWinUI**. Specifies whether you're using the WinUI user interface framework in your app.|*true*, or absent (for *false*)|[WinUI in the Windows App SDK (WinUI)](/windows/apps/winui/winui3/)|
 |**WindowsAppSdkBootstrapInitialize**. Determines whether or not the Windows App SDK leverages the bootstrapper/dynamic dependencies auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) auto-initializers](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time#opting-out-of-or-into-automatic-module-initialization)|
 |**WindowsAppSdkDeploymentManagerInitialize**. Determines whether or not the Windows App SDK leverages the Deployment Manager auto-initializer.|*true* (the default), *false*||
 |**WindowsAppSDKRuntimePatchLevel1**, **WindowsAppSDKRuntimePatchLevel2**, and **WindowsAppSDKDisabledChanges**. Determines whether or not the Windows App SDK leverages the compatibility auto-initializer, and configures any desired compatibility options for Windows App Runtime behavior of changes added in servicing updates.|Various, or absent (to disable the auto-initializer)|[RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)|
@@ -87,11 +87,11 @@ Here's an excerpt from a typical `.csproj` file for a C# WinUI 3 project, showin
 ## Related topics
 
 * [Deployment overview](/windows/apps/package-and-deploy/)
-* [Create your first WinUI 3 (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+* [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 * [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)
 * [RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)
 * [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
 * [Windows App SDK deployment guide for self-contained apps](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps)
 * [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
 * [Windows apps: packaging, deployment, and process](/windows/apps/get-started/intro-pack-dep-proc)
-* [WinUI in the Windows App SDK (WinUI 3)](/windows/apps/winui/winui3/)
+* [WinUI in the Windows App SDK (WinUI)](/windows/apps/winui/winui3/)

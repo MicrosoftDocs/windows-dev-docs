@@ -13,8 +13,8 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |--:|--|--|--|:--:|--|
-| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.4 (1.8.260101001)** <br/> Released: 01/13/2026 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-184-18260101001) |
-| **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **1.8 Preview (1.8-preview)** <br/> Released: 08/19/2025 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=preview#version-18-preview-18-preview) ** |
+| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.5 (1.8.260204001)** <br/> Released: 02/10/2026 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-185-18260209005) |
+| **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **2.0 Preview (2.0-preview)** <br/> Released: 02/13/2026 <br/>  [Release Notes](release-notes/windows-app-sdk-2-0.md#windows-app-sdk-200-preview1-release-notes) ** |
 | **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.0 Experimental 4 (2.0.0-experimental4)** <br/> Released: 01/13/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-4-200-experimental4) |
 
 
@@ -28,7 +28,7 @@ The following table shows which features are currently available in each release
 | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------- | --------------------------------------------- | -------------------------------------------------------- |
 | [Deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)                                        | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
-| [WinUI 3](../winui/winui3/index.md)                                                                                      | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [WinUI](../winui/winui3/index.md)                                                                                      | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Text rendering](dwritecore.md)                                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Manage resources](mrtcore/mrtcore-overview.md)                                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md)                                                 | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
@@ -50,7 +50,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
 | ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
 | 1.8                     | 09/09/2025            | 1.8.260101001        | 01/13/2026         | Current        | 09/09/2026       |
-| 1.7                     | 03/18/2025            | 1.7.260114001        | 01/14/2026         | Maintenance    | 03/18/2026       |
+| 1.7                     | 03/18/2025            | 1.7.260208005        | 02/10/2026         | Maintenance    | 03/18/2026       |
 | 1.6                     | 09/04/2024            | 1.6.250602001        | 06/10/2025         | Out of Support | 09/04/2025       |
 | 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |
 | 1.4                     | 08/29/2023            | 1.4.240802001        | 08/13/2024         | Out of Support | 08/29/2024       |
@@ -115,4 +115,4 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 
 - [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)

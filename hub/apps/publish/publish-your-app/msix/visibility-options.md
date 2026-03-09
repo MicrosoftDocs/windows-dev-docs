@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Choose visibility options
+# Choose visibility options for MSIX apps
 
 The **Visibility** section of the [Pricing and availability page](./price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
 

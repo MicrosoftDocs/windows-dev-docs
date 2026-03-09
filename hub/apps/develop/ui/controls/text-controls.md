@@ -66,20 +66,6 @@ There are many ways you can get user input in your app. These questions will hel
 
 ## Examples
 
-<table>
-<th align="left">WinUI 2 Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-app-icon-sm.png" alt="WinUI Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, click here to <a href="winui2gallery:/category/Text">open the app and see the text controls in action</a>.</p>
-    <ul>
-    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
-
 Text box
 
 ![A text box](images/text-box.png)
@@ -107,15 +93,7 @@ See these articles for info and examples specific to each text control.
 See these articles for font guidelines:
 
 - [Typography guidelines](../../../design/style/typography.md)
-- [Segoe MDL2 icon list and guidelines](../../../design/style/segoe-ui-symbol-font.md)
-
-## Pen input
-
-**Applies to:** TextBox, RichEditBox, AutoSuggestBox (UWP only)
-
-Starting with Windows 10, version 1803, XAML text input boxes feature embedded support for pen input using [Windows Ink](../../../design/input/pen-and-stylus-interactions.md). When a user taps into a text input box using a Windows pen, the text box transforms to let the user write directly into it with a pen, rather than opening a separate input panel.
-
-For more info, see [Text input with the handwriting view](../../../design/input/text-handwriting-view.md).
+- [Segoe Fluent Icons icon list and guidelines](../../../design/style/segoe-fluent-icons-font.md)
 
 ## Choose the right keyboard for your text control
 

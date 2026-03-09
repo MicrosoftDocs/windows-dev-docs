@@ -399,8 +399,8 @@ items:
       href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
 - name: What's new
   items:
-      - name: Near real time insights in analytics for Win32 apps
-        href: nrt-in-analytics.md
+      - name: Recent data view in acquisitions reports
+        href: recent-data-acquisitions-reports.md
       - name: Usage reports in analytics
         href: usage.md
       - name: Anomaly alerts for health metrics
