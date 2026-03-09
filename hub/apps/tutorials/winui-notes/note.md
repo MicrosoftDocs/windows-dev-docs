@@ -161,7 +161,7 @@ Now you're going to add code to the **NotePage.xaml.cs** code-behind file to han
 
 ### Add event handlers
 
-Next, add the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event handlers for the for the **Save** and **Delete** buttons. Adding event handlers is something that you'll do often while creating your apps, so Visual Studio provides several features to make it easier.
+Next, add the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event handlers for the **Save** and **Delete** buttons. Adding event handlers is something that you'll do often while creating your apps, so Visual Studio provides several features to make it easier.
 
 1. In the **NotePage.xaml** file, place your cursor after the `Content` attribute in the **Save** `Button` control. Type `Click=`. At this point, Visual Studio should pop up an auto-complete UI that looks like this:
 

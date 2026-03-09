@@ -89,7 +89,7 @@ You'll also add a [Frame](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.c
     </Grid>
     ```
 
-1. Save the file by pressing <kbd>CTRL + S</kbd>, clicking the Save icon in the tool bar, or by selecting the menu **File** > **Save MainPage.xaml**.
+1. Save the file by pressing <kbd>CTRL + S</kbd>, clicking the Save icon in the tool bar, or by selecting the menu **File** > **Save MainWindow.xaml**.
 
 Don't worry if you don't understand what all this XAML markup does right now. As you build the rest of the app UI, we'll explain XAML concepts in more detail.
 
