@@ -41,7 +41,7 @@ ms.date: 07/12/2024
 
 :::row:::
     :::column:::
-       [![Whats new icon](../apps/publish/images/tile-whats-new.png)](../apps/publish/whats-new-game-publishing.md)<br>
+       [![Whats new icon](../apps/publish/images/tile-whats-new.png)](../apps/publish/whats-new-company-developer.md)<br>
     :::column-end:::
     :::column:::
     :::column-end:::
