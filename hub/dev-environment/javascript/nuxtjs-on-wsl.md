@@ -42,7 +42,7 @@ To install Nuxt.js, you will need to answer a series of questions about what sor
     - Project description: Description of my Nuxt.js app.
     - Author name: I use my GitHub alias.
     - Choose the package manager: Yarn or **Npm** - we use NPM for our examples.
-    - Choose UI framework: None, Ant Design Vue, Bootstrap Vue, etc. Let's choose **Vuetify** for this example, but the Vue Community created a nice [summary comparing these UI frameworks](https://vue-community.org/guide/ecosystem/ui-libraries.html#summary-tldr) to help you choose the best fit for your project.
+    - Choose UI framework: None, Ant Design Vue, Bootstrap Vue, etc. Let's choose **Vuetify** for this example, but the Vue Community has created summaries comparing these UI frameworks to help you choose the best fit for your project.
     - Choose custom server frameworks: None, AdonisJs, Express, Fastify, etc. Let's choose **None** for this example, but you can find a [2019-2020 server framework comparison](https://dev.to/santypk4/introducing-the-best-10-node-js-frameworks-for-2019-and-2020-mcm) on the Dev.to site.
     - Choose Nuxt.js modules (use spacebar to select modules or just enter if you don't want any): Axios (for simplifying HTTP requests) or [PWA support](https://pwa.nuxtjs.org/) (for adding a service-worker, manifest.json file, etc). Let's not add a module for this example.
     - Choose linting tools: **ESLint**, Prettier, Lint staged files. Let's choose **ESLint** (a tool for analyzing your code and warning you of potential errors).
