@@ -7,7 +7,7 @@ ms.topic: overview
 
 # dscv3 command (winget)
 
-The **dscv3** command of [winget](index.md) represents [Microsoft Desired State Configuration version 3](/powershell/dsc/overview?view=dsc-3.0) (DSC v3) command-based resource implementation.
+The **dscv3** command of [winget](index.md) represents [Microsoft Desired State Configuration version 3](/powershell/dsc/overview?view=dsc-3.0&preserve-view=true) (DSC v3) command-based resource implementation.
 
 
 ## Usage

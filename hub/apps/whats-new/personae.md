@@ -68,8 +68,8 @@ The following personas represent typical Windows developers. Each profile outlin
 - [WebView2](/Microsoft-edge/webview2/)
 - [React](https://react.dev)
 - [Angular](https://angular.dev)
-- [Blazor](/aspnet/core/blazor/?view=aspnetcore-8.0)
-- [ASP.NET Core](/aspnet/core/?view=aspnetcore-8.0)
+- [Blazor](/aspnet/core/blazor/)
+- [ASP.NET Core](/aspnet/core/)
 
 **Favorite tools:**
 
@@ -131,7 +131,7 @@ The following personas represent typical Windows developers. Each profile outlin
 **Go-to tech:**
 
 - [.NET](/dotnet/)
-- [WinForms](/dotnet/desktop/winforms/overview/?view=netdesktop-8.0)
+- [WinForms](/dotnet/desktop/winforms/overview/)
 - [WPF](/dotnet/desktop/wpf/overview/)
 - [Entity Framework Core](/ef/core/)
 
