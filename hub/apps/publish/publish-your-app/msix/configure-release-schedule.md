@@ -1,5 +1,5 @@
 ---
-description: Learn how to configure precise release scheduling for your app in the Microsoft Store, including setting release and stop acquisition dates for specific markets.
+description: Learn how to configure precise release scheduling for your MSIX app in the Microsoft Store, including setting release and stop acquisition dates for specific markets.
 title: Configure precise release scheduling for MSIX apps
 ms.date: 6/5/2025
 ms.topic: article
