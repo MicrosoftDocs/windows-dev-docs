@@ -20,7 +20,7 @@ This list covers a broad spectrum of APIs from across Microsoft that may interes
 
 - **[Bing Ads API](/advertising/guides/)**: Bing Ads is a pay-per-click (PPC) advertising platform used to display ads based on the keywords used in a user’s search query.
 
-- **[Bing Knowledge Widget](https://www.bing.com/widget/knowledge)**: Enhances your web site with the power of the Bing knowledge repository and provides your users relevant information about the entities detected within the context of your page.
+- **Bing Knowledge widget**: Enhances your web site with the power of the Bing knowledge repository and provides your users relevant information about the entities detected within the context of your page.
 
 - **[Bing Maps REST Services API](/bingmaps/rest-services/)**: Services for performing tasks such as geocoding, reverse-geocoding, routing and static imagery.
 
