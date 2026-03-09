@@ -22,6 +22,7 @@ Also, you can exchange a key or shortcut to an arbitrary unicode text sequence. 
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
+<a id="keys-that-cannot-be-remapped"></a>
 > [!IMPORTANT]
 > There are some shortcut keys that are reserved by the operating system or cannot be replaced. Keys that cannot be remapped include:
 >
