@@ -725,7 +725,7 @@ The following values represent available price tiers in the [pricing resource](#
 
 ### Enterprise licensing values
 
-The following values represent the organizational licensing behavior for the app. For more information about these options, see the [Partner Center documentation](https://learn.microsoft.com/partner-center/). Note that the Microsoft Store for Business and Microsoft Store for Education programs have been discontinued.
+The following values represent the organizational licensing behavior for the app. For more information about these options, see the [Partner Center documentation](/partner-center/). Note that the Microsoft Store for Business and Microsoft Store for Education programs have been discontinued.
 
 > [!NOTE]
 > Although you can configure the organizational licensing options for an app submission via the submission API, you cannot use this API to publish submissions for volume purchases through the Microsoft Store for Business and Microsoft Store for Education (these programs have been discontinued). To publish submissions through organizational licensing channels, you must use Partner Center.

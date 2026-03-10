@@ -159,7 +159,7 @@ Your unpackaged application likely stores its local data in:
 ```
 
 
-Packaged applications have their reserved space for data storage, which is automatically deleted when the application is uninstalled. It is highly recommended (though not mandatory) to migrate the data to this space upon the first launch. You can retrieve the absolute path of this folder by calling [Windows.Storage.ApplicationData.Current.LocalFolder.Path](/uwp/api/windows.storage.applicationdata.localfolder?view=winrt-22621).
+Packaged applications have their reserved space for data storage, which is automatically deleted when the application is uninstalled. It is highly recommended (though not mandatory) to migrate the data to this space upon the first launch. You can retrieve the absolute path of this folder by calling [Windows.Storage.ApplicationData.Current.LocalFolder.Path](/uwp/api/windows.storage.applicationdata.localfolder).
 
 
 ### How to migrate acquisitions and in-app purchases
