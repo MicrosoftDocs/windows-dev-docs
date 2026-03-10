@@ -14,6 +14,20 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="stable"
 
+## Version 1.7.9 (1.7.260224002)
+
+Released: **March 10, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed a pointer arithmetic issue in the app-instance activation-redirection shared-memory queue that could cause incorrect behavior when using `AppInstance.RedirectActivationTo`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppLifecycle_SharedMemoryRedirectionQueueFix)
+> * Fixed an issue in the deployment manager where activity data was being incorrectly reset during package installation and license operations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DeploymentManager_ActivityCollectionFix)
+>
+
+</details>
+
+
 ## Version 1.7.8 (1.7.260208005)
 
 Released: **February 10, 2026** <br><br>
