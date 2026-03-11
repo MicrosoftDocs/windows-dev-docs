@@ -68,7 +68,7 @@ This copies agents, skills, and custom instructions into your project's `.github
 
 The [Microsoft Learn MCP Server](../dev-tools/agentic-tools.md#microsoft-learn-mcp-server) gives Copilot live access to official Microsoft documentation — so it can look up current API references and code samples as it helps you code.
 
-#### [VS Code](#tab/vscode)
+#### [VS Code (Electron, Flutter, .NET, Rust)](#tab/vscode)
 
 Add the following to your VS Code `settings.json` (open with `Ctrl+Shift+P` > **Open User Settings (JSON)**):
 

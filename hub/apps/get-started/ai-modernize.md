@@ -85,26 +85,23 @@ winapp init
 winapp create-debug-identity --publisher "CN=MyApp"
 ```
 
-### Add modern UI controls with XAML Islands
+### Modernize the app's look and feel
 
-> *"Show me how to add a WinUI 3 control to an existing WPF window using XAML Islands. I want to add a WinUI 3 NavigationView."*
+> *"My WPF app looks dated. Make it look modern with a dark mode option and a navigation sidebar like modern Windows apps use."*
 
 ### Add a file picker using Windows App SDK
 
 > *"Replace my WPF OpenFileDialog usage with the Windows App SDK StorageFilePicker for a better modern Windows experience."*
 
-### Package for the Microsoft Store
+### Add Windows notifications
 
-WPF and WinForms apps can be packaged as MSIX for Store distribution with winapp CLI:
+> *"Add a notification that tells the user when a background task completes."*
 
-```bash
-winapp init          # Adds winapp config to your project
-winapp pack          # Builds the MSIX package
-```
+Copilot will recognize this requires Windows package identity and suggest using winapp CLI to add MSIX packaging — explaining what it is and why it's needed. Once packaging is set up, it will provide the Windows notification code.
 
-Ask Copilot to help with any manifest questions:
+Ask Copilot to walk you through it:
 
-> *"What capabilities do I need to declare in the manifest for my app to access the Documents folder?"*
+> *"I want my app to show a Windows toast notification. Explain what I need to set up first."*
 
 ---
 

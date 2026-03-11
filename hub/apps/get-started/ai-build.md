@@ -32,7 +32,7 @@ In this tutorial, you use GitHub Copilot in agent mode to build a complete WinUI
 
 ### Create the WinUI project
 
-Create a new WinUI 3 project using Visual Studio's **Blank App, Packaged (WinUI 3 in Desktop)** C# template, name it `NotesApp`, and open it.
+Create a new WinUI 3 project: in Visual Studio, select **File** > **New** > **Project**, filter by **WinUI**, and choose the **Blank App (Packaged)** C# template. Name the project `NotesApp` and open it.
 
 ### Open Copilot agent mode and scaffold the structure
 

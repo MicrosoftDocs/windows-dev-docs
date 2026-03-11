@@ -45,7 +45,7 @@ The [winapp CLI](../dev-tools/winapp-cli/index.md) is a command-line tool that a
 - Interactive notifications and Windows shell integration
 - MSIX packaging for the Microsoft Store or enterprise deployment
 
-Copilot can help you understand the manifest, adapt your code for Windows APIs, and work through the packaging steps — while winapp CLI does the plumbing.
+Copilot can help you understand the manifest and adapt your code for Windows APIs — while winapp CLI handles the packaging plumbing. Note that winapp CLI itself is not an AI tool; it's a command-line utility that Copilot can guide you through using.
 
 ---
 
