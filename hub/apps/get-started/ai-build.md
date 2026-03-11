@@ -23,7 +23,7 @@ In this tutorial, you use GitHub Copilot in agent mode to build a complete WinUI
 ## Prerequisites
 
 - GitHub Copilot set up with the WinUI 3 plugin and Learn MCP Server — see [Set up GitHub Copilot for Windows development](ai-setup.md)
-- [Visual Studio 2022](/visualstudio/install/install-visual-studio) with the **WinUI application development** workload, or VS Code with the [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+- [Visual Studio 2022](/visualstudio/install/install-visual-studio) with the **WinUI application development** workload
 - [winapp CLI](../dev-tools/winapp-cli/index.md) installed (`winget install Microsoft.winappcli`)
 
 ---
@@ -36,7 +36,7 @@ Create a new WinUI 3 project using Visual Studio's **Blank App, Packaged (WinUI 
 
 ### Open Copilot agent mode and scaffold the structure
 
-Open Copilot Chat (`Ctrl+Alt+I` in VS Code, or the Copilot Chat panel in Visual Studio) and switch to **agent mode**. Then enter:
+Open the Copilot Chat panel in Visual Studio and switch to **agent mode**. Then enter:
 
 > *"I have a new blank WinUI 3 project called NotesApp. Set up an MVVM architecture with the following structure: a MainWindow with a NavigationView, three pages (Notes, Favorites, Settings), a ViewModels folder with a base ViewModel class and a NotesViewModel, and a Models folder with a Note model that has Id, Title, Content, and CreatedAt properties. Use CommunityToolkit.Mvvm."*
 
