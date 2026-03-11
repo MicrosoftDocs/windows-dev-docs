@@ -215,7 +215,7 @@ For more information on affected APIs as well as workarounds and replacements fo
     - `INotifyCollectionChanged`
     - `ICommand`
 
-  The `System` namespace versions still exist, but cannot be used with WinUI 3. This means that `ObservableCollection` doesn't work as-is in WinUI 3 C# UWP apps. For a workaround, see the [CollectionsInterop sample](https://github.com/microsoft/Xaml-Controls-Gallery/blob/winui3preview/XamlControlsGallery/CollectionsInterop.cs) in the [XAML Controls Gallery sample](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview).
+  The `System` namespace versions still exist, but cannot be used with WinUI 3. This means that `ObservableCollection` doesn't work as-is in WinUI 3 C# UWP apps. For a workaround, see the [CollectionsInterop sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/CollectionsInterop.cs) in the [XAML Controls Gallery sample](https://github.com/microsoft/WinUI-Gallery).
 
 ## XAML Controls Gallery (WinUI 3 Preview branch)
 
