@@ -31,7 +31,7 @@ Released: **February 10, 2026** <br><br>
 
 >
 > * Fixed a package downgrade init failure and added 1.8.5 runtime support—ensuring reliable deployment and correct app recognition across configurations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DeploymentManager_PackageDowngradeFix).
-> * Fixed an issue where `CompositionIsland.StateChanged` event handlers were not triggered when the user modified the size of a window by dragging it to the top of the screen or using the edges of the screen and the window has a non-default `TitleBar` with an `IconSource` set. Closing #[#10374](https://github.com/microsoft/microsoft-ui-xaml/issues/10374) ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputNonClientPointerSource_PropagateWindowPosChangedMessage).
+> * Fixed an issue where `CompositionIsland.StateChanged` event handlers were not triggered when the user modified the size of a window by dragging it to the top of the screen or using the edges of the screen and the window has a non-default `TitleBar` with an `IconSource` set. Closing [#10374](https://github.com/microsoft/microsoft-ui-xaml/issues/10374) ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputNonClientPointerSource_PropagateWindowPosChangedMessage).
 > * Fixed a crash during app shutdown for certain custom input handling scenarios inside of a ScrollViewer. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DwmCoreI_ShutdownManipulationCrash).
 > * Improved diagnosability for Windows AI model initialization and Text Intelligence APIs. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_Insights).
 > * Fixed an issue in the Windows AI API `GetReadyState` which erroneously returns `AIFeatureReadyState::NotReady` on unsupported Windows OS versions. The API now returns `AIFeatureReadyState::NotSupportedOnCurrentSystem`  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_KnownExceptions).
@@ -142,7 +142,7 @@ Released: **October 14, 2025** <br><br>
 >
 > **Key enhancements include:**
 > * Python bindings for `OrtMemoryInfoDeviceType`, `OrtDeviceMemoryType`, and expanded `OrtDevice` to expose the memory type via a new `mem_type` method. The `OrtMemoryInfo` Python class now supports both legacy and new V2 constructors and exposes additional properties such as device memory type and Vendor ID.
-> * Extended the Python `InferenceSession` object to provide access to imput/output `OrtMemoryInfo` and `OrtEpDevice` objects through new properties and methods
+> * Extended the Python `InferenceSession` object to provide access to input/output `OrtMemoryInfo` and `OrtEpDevice` objects through new properties and methods
 > * Introduced Python bindings for `OrtSyncStream`, including creation via `OrtEpDevice.create_sync_stream()` and retrieval of device-specific `OrtMemoryInfo` via `OrtEpDevice.memory_info()`.
 > * Refactored the C++ API to generalize `SyncStream` handling, allowing for unowned streams and improved type safety.
 > * Added a new Python-level `copy_tensors` function and corresponding C++ binding, enabling efficient copying of tensor data between OrtValue objects, optionally using a synchronization stream.
@@ -271,7 +271,7 @@ Released: **September 9, 2025** <br><br>
 >
 
 </details>
-<details><summary>indows AI Object Erase</summary>
+<details><summary>Windows AI Object Erase</summary>
 
 >
 > Object Erase can be used to remove objects from images. The model takes both an image and a greyscale mask indicating the object to be removed, erases the masked area from the image, and replaces the erased area with the image background.

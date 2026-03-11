@@ -136,7 +136,7 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 - Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
 - All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
-  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md)). For sample code that demonstrates how to do that, see the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample app.
+  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md)). For sample code that demonstrates how to do that, see the [PackageWithExternalLocation](https://github.com/microsoft/AppModelSamples/tree/master/Samples/PackageWithExternalLocation) sample app.
   - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
 
 ![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)
@@ -324,7 +324,7 @@ In fact, the [World Health Organization](https://www.who.int/news-room/fact-shee
 >
 > **Accessibility is an opportunity**
 >
-> According to the [Microsoft Accessibility Approach Datasheet](https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wNu4): Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who are 75% of the global workforce, typically choose employers who reflect their values. Diversity and inclusion top that list.
+> Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who are 75% of the global workforce, typically choose employers who reflect their values. Diversity and inclusion top that list.
 
 ### Incorporating accessibility
 
