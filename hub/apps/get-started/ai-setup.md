@@ -11,7 +11,10 @@ ms.localizationpriority: medium
 
 # Set up GitHub Copilot for Windows development
 
-This guide walks you through setting up GitHub Copilot with the tools that make it genuinely useful for Windows development: the **WinUI 3 development plugin** that keeps Copilot on modern APIs, and the **Microsoft Learn MCP Server** that gives Copilot live access to official Windows documentation.
+This guide walks you through setting up GitHub Copilot with the tools that make it genuinely useful for Windows development: the **WinUI 3 development plugin** that gives Copilot accurate Windows App SDK context, and the **Microsoft Learn MCP Server** that gives Copilot live access to official Windows documentation.
+
+> [!NOTE]
+> Building and debugging WinUI 3 apps requires **Visual Studio** — VS Code doesn't have MSIX build tooling or WinUI project templates. If you're working on other Windows frameworks (Electron, Flutter, .NET, or Rust via winapp CLI), VS Code works well for those. Steps below are marked accordingly.
 
 ## Prerequisites
 
@@ -23,7 +26,17 @@ This guide walks you through setting up GitHub Copilot with the tools that make 
 
 ## Step 1: Install GitHub Copilot in your IDE
 
-#### [VS Code](#tab/vscode)
+#### [Visual Studio (WinUI 3)](#tab/visualstudio)
+
+GitHub Copilot is built into Visual Studio 2022 17.10 and later. Visual Studio is required for WinUI 3 development.
+
+1. Open Visual Studio and go to **Extensions** > **Manage Extensions**.
+2. Search for **GitHub Copilot** and install it, or verify it's already installed.
+3. Sign in via **Tools** > **Options** > **GitHub** > **Accounts**.
+
+For detailed setup, see [GitHub Copilot in Visual Studio](../how-tos/github-copilot-winui-vs.md).
+
+#### [VS Code (Electron, Flutter, .NET, Rust)](#tab/vscode)
 
 1. Open VS Code and go to the **Extensions** view (`Ctrl+Shift+X`).
 2. Search for **GitHub Copilot** and install the extension.
@@ -31,16 +44,6 @@ This guide walks you through setting up GitHub Copilot with the tools that make 
 4. To enable **agent mode** (required for multi-step tasks), open **Settings** (`Ctrl+,`), search for `chat.agent.enabled`, and toggle it on.
 
 For detailed setup, see [GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/overview).
-
-#### [Visual Studio](#tab/visualstudio)
-
-GitHub Copilot is built into Visual Studio 2022 17.10 and later.
-
-1. Open Visual Studio and go to **Extensions** > **Manage Extensions**.
-2. Search for **GitHub Copilot** and install it, or verify it's already installed.
-3. Sign in via **Tools** > **Options** > **GitHub** > **Accounts**.
-
-For detailed setup, see [GitHub Copilot in Visual Studio](../how-tos/github-copilot-winui-vs.md).
 
 ---
 
@@ -107,9 +110,9 @@ Or, to add it per-project, create `.vscode/mcp.json` in your project root:
 Open Copilot Chat and try these prompts to confirm everything is working:
 
 **Test the WinUI 3 plugin:**
-> *"What's the correct WinUI 3 API for showing a modal dialog? Don't use MessageDialog."*
+> *"Add a confirmation dialog to my WinUI 3 app that asks before deleting an item."*
 
-Copilot should give you `ContentDialog` with the correct `XamlRoot` setup — not the deprecated UWP `MessageDialog`.
+Copilot should respond with a `ContentDialog` implementation including the required `XamlRoot` setup — the plugin's Windows App SDK context guides it to the right modern API without you needing to specify what to avoid.
 
 **Test the Learn MCP Server:**
 > *"Look up the latest Windows App SDK release notes and tell me what's new."*
