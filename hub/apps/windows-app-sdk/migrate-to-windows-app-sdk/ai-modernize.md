@@ -21,7 +21,7 @@ Make sure you have the key tools configured:
 - **Microsoft Learn MCP Server** — gives Copilot access to current Windows App SDK documentation
 - **winapp CLI** — adds package identity and Windows packaging to any framework
 
-If you haven't set these up yet, start with [Set up GitHub Copilot for Windows development](ai-setup.md).
+If you haven't set these up yet, start with [Set up GitHub Copilot for Windows development](../../get-started/ai-setup.md).
 
 ---
 
@@ -107,7 +107,7 @@ Ask Copilot to walk you through it:
 
 ## Add Windows features to a cross-platform app
 
-Electron, Flutter, React Native, and Rust apps can all become first-class Windows citizens with [winapp CLI](../dev-tools/winapp-cli/index.md). Copilot helps you adapt your code for Windows APIs once you have package identity.
+Electron, Flutter, React Native, and Rust apps can all become first-class Windows citizens with [winapp CLI](../../dev-tools/winapp-cli/index.md). Copilot helps you adapt your code for Windows APIs once you have package identity.
 
 ### Electron
 
@@ -121,7 +121,7 @@ Once the addon is scaffolded, ask Copilot to integrate it:
 
 > *"I've scaffolded a Windows notifications addon for my Electron app using winapp CLI. Show me how to send a notification from the main process when a download completes."*
 
-For a complete walkthrough, see the [Electron setup guide](../dev-tools/winapp-cli/guides/electron-setup.md).
+For a complete walkthrough, see the [Electron setup guide](../../dev-tools/winapp-cli/guides/electron-setup.md).
 
 ### Flutter
 
@@ -131,19 +131,19 @@ winapp init
 
 > *"I have a Flutter app for Windows. Show me how to use the Windows App SDK to add a system tray icon with a context menu."*
 
-See the [Flutter guide](../dev-tools/winapp-cli/guides/flutter.md) for Windows-specific setup.
+See the [Flutter guide](../../dev-tools/winapp-cli/guides/flutter.md) for Windows-specific setup.
 
 ### WPF / .NET
 
 > *"I have a WPF app. Walk me through using winapp CLI to add MSIX packaging and then add an on-device AI feature using the Windows AI APIs."*
 
-See the [.NET guide](../dev-tools/winapp-cli/guides/dotnet.md).
+See the [.NET guide](../../dev-tools/winapp-cli/guides/dotnet.md).
 
 ---
 
 ## What gets unlocked by package identity
 
-Many powerful Windows features require [package identity](../dev-tools/winapp-cli/index.md#why-package-identity) — which winapp CLI can add to any framework. Once you have it, Copilot can help you use:
+Many powerful Windows features require [package identity](../../dev-tools/winapp-cli/index.md#why-package-identity) — which winapp CLI can add to any framework. Once you have it, Copilot can help you use:
 
 | Feature | What to ask Copilot |
 |---|---|
@@ -157,7 +157,7 @@ Many powerful Windows features require [package identity](../dev-tools/winapp-cl
 
 ## Next steps
 
-- [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md) — full details on the WinUI 3 plugin and Learn MCP Server
-- [Windows App Development CLI (winapp CLI)](../dev-tools/winapp-cli/index.md) — full reference for adding Windows features to any framework
-- [Windows App SDK documentation](../windows-app-sdk/index.md)
+- [Agentic AI tools for Windows development](../../dev-tools/agentic-tools.md) — full details on the WinUI 3 plugin and Learn MCP Server
+- [Windows App Development CLI (winapp CLI)](../../dev-tools/winapp-cli/index.md) — full reference for adding Windows features to any framework
+- [Windows App SDK documentation](../index.md)
 - [Windows AI APIs](/windows/ai/) — on-device AI features available once you have package identity

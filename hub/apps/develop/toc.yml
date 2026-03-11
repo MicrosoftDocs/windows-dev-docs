@@ -898,6 +898,8 @@ items:
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
               - name: Additional migration guidance
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+              - name: Modernize or port a Windows app with GitHub Copilot
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md
               - name: Migrate UWP to Windows App SDK with the .NET Upgrade Assistant
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
     - name: Use MSIX framework packages

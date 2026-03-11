@@ -23,19 +23,9 @@ This article introduces the tools and what they make possible. When you're ready
 
 For Windows developers, the key is giving Copilot accurate Windows-specific knowledge. Out of the box, Copilot knows a lot about general C# and .NET — but it can struggle with WinUI 3 specifics, confusing newer APIs with deprecated UWP equivalents. The tools below fix that.
 
-### WinUI 3 development plugin
+### WinUI 3 development plugin and Microsoft Learn MCP Server
 
-The [WinUI 3 development plugin](../dev-tools/agentic-tools.md#winui-3-development-plugin-for-github-copilot) for GitHub Copilot teaches Copilot the right modern Windows App SDK patterns. It includes:
-
-- A **WinUI 3 Expert agent** that knows current API namespaces, XAML controls, MVVM patterns, and app lifecycle
-- A **migration guide skill** (`/winui3-development:winui3-migration-guide`) that maps UWP APIs to their WinUI 3 equivalents with before/after code samples
-- **Custom instructions** applied to your XAML and C# files that prevent the most common mistakes, like using `CoreDispatcher` instead of `DispatcherQueue`
-
-### Microsoft Learn MCP Server
-
-The [Microsoft Learn MCP Server](../dev-tools/agentic-tools.md#microsoft-learn-mcp-server) gives Copilot live access to official Microsoft documentation. Instead of relying on training data that may be out of date, Copilot can look up the latest API references, code samples, and release notes as it helps you code.
-
-Add one endpoint to your IDE config and Copilot can answer questions like *"What's the WinUI 3 API for showing a file picker?"* with accurate, current answers.
+Two tools give Copilot the Windows-specific context it needs: the **WinUI 3 development plugin** (which teaches Copilot correct modern API patterns) and the **Microsoft Learn MCP Server** (which gives Copilot live access to official documentation). Full details and setup are in [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md).
 
 ### Windows App Development CLI (winapp CLI)
 
@@ -91,5 +81,5 @@ Electron, Flutter, React Native, and Rust developers can use Copilot to adapt th
 Or jump straight to:
 
 - [Tutorial: Build a Windows app with GitHub Copilot](ai-build.md)
-- [Modernize or port a Windows app with Copilot](ai-modernize.md)
+- [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)

@@ -96,8 +96,7 @@ items:
       href: get-started/ai-setup.md
     - name: "Tutorial: Build a Windows app with GitHub Copilot"
       href: get-started/ai-build.md
-    - name: Modernize or port a Windows app with Copilot
-      href: get-started/ai-modernize.md
+
   - name: Samples and resources
     items:
     - name: Samples
