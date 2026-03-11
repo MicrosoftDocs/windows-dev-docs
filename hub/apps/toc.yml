@@ -91,7 +91,7 @@ items:
   - name: Get started with AI for Windows development
     items:
     - name: AI-assisted Windows development
-      href: get-started/ai-for-windows-devs.md
+      href: get-started/ai-for-windows-developers.md
     - name: Set up GitHub Copilot for Windows development
       href: get-started/ai-setup.md
     - name: "Tutorial: Build a Windows app with GitHub Copilot"

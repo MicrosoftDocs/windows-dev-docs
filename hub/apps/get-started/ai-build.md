@@ -131,7 +131,7 @@ You've built a complete WinUI 3 notes app using:
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Modernize or port a Windows app with Copilot](ai-modernize.md)
+> [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)
 - [Windows App Development CLI (winapp CLI)](../dev-tools/winapp-cli/index.md)

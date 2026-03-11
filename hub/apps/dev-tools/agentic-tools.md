@@ -73,5 +73,5 @@ For a complete walkthrough — including IDE setup, agent mode, MCP server confi
 ## Related content
 
 - [Set up GitHub Copilot for Windows development](../get-started/ai-setup.md)
-- [AI-assisted Windows development](../get-started/ai-for-windows-devs.md)
+- [AI-assisted Windows development](../get-started/ai-for-windows-developers.md)
 - [GitHub Copilot in Visual Studio](../how-tos/github-copilot-winui-vs.md)

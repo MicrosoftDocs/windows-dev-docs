@@ -137,5 +137,5 @@ Extend Copilot's context further with additional Windows-specific MCP servers:
 > [!div class="nextstepaction"]
 > [Tutorial: Build a Windows app with GitHub Copilot](ai-build.md)
 
-- [Modernize or port a Windows app with Copilot](ai-modernize.md)
+- [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md) — full details on all tools
