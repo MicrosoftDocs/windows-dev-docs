@@ -53,8 +53,8 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 
 This is a servicing release of the Windows App SDK that includes critical bug fixes for the 0.8.0 release.
 
-[!NOTE]
-For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
+> [!NOTE]
+> For C# developers, one of the following .NET SDK versions (or later) is required: 6.0.202, 6.0.104, 5.0.407, 5.0.213. To update your .NET SDK version, visit [.NET Downloads](https://dotnet.microsoft.com/download) or update to the latest version of Visual Studio. Without the required .NET SDK version, when updating your NuGet package you will see an error like: *"This version of WindowsAppSDK requires WinRT.Runtime.dll version 1.6 or greater."*.
 
 <details><summary>Bug fixes</summary>
 
@@ -79,7 +79,7 @@ This is a servicing release of the Windows App SDK that includes several perform
         <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
         <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
         <WindowsSdkPackageVersion>10.0.19041.24</WindowsSdkPackageVersion>
-    <PropertyGroup>
+    </PropertyGroup>
     ...
 ```
 

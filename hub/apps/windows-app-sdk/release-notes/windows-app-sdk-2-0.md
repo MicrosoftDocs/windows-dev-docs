@@ -58,7 +58,7 @@ Released: **February 13, 2026** <br><br>
 >     * GetContentIndexingStatus -> GetContentItemStatus
 >     * GetMultipleContentIndexingStatus -> GetContentItemStatuses
 >     * GetContentItems    
->   * AppCOntentIndexListener
+>   * AppContentIndexListener
 >     * IndexingStatusChanged -> ContentItemStatusChanged                
 >   * AppIndexTextQuerySession
 >     * UpdateQuery -> UpdateQueryPhrase
