@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/develop/ui/controls/contact-card.md",
+      "redirect_url": "/previous-versions/windows/uwp/contacts-and-calendar/contact-card",
+      "redirect_document_id": false
+    },
+	{
+      "source_path": "hub/apps/design/devices/designing-for-tv.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/designing-for-tv",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/windows-app-sdk/breaking-changes.md",
       "redirect_url": "/previous-versions/windows/app-dev/windows-app-sdk/breaking-changes",
       "redirect_document_id": false

@@ -677,8 +677,6 @@ items:
             href: ui/controls/tab-view.md
         - name: People
           items:
-          - name: Contact card
-            href: ui/controls/contact-card.md
           - name: Person picture
             href: ui/controls/person-picture.md
         - name: Pickers
@@ -898,6 +896,8 @@ items:
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
               - name: Additional migration guidance
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+              - name: Modernize or port a Windows app with GitHub Copilot
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md
               - name: Migrate UWP to Windows App SDK with the .NET Upgrade Assistant
                 href: ../windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
     - name: Use MSIX framework packages
@@ -1159,3 +1159,4 @@ items:
       href: ../how-tos/github-copilot-winui-vs.md
     - name: Create a photo viewer with WinUI
       href: ../get-started/simple-photo-viewer-winui3.md
+
