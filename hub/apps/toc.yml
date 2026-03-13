@@ -88,6 +88,15 @@ items:
         href: tutorials/winui-notes/all-notes.md
       - name: 5. Navigation
         href: tutorials/winui-notes/navigation.md
+  - name: Get started with AI for Windows development
+    items:
+    - name: AI-assisted Windows development
+      href: get-started/ai-for-windows-developers.md
+    - name: Set up GitHub Copilot for Windows development
+      href: get-started/ai-setup.md
+    - name: "Tutorial: Build a Windows app with GitHub Copilot"
+      href: get-started/ai-build.md
+
   - name: Samples and resources
     items:
     - name: Samples
