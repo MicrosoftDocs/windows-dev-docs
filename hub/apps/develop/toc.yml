@@ -677,8 +677,6 @@ items:
             href: ui/controls/tab-view.md
         - name: People
           items:
-          - name: Contact card
-            href: ui/controls/contact-card.md
           - name: Person picture
             href: ui/controls/person-picture.md
         - name: Pickers
@@ -1161,3 +1159,4 @@ items:
       href: ../how-tos/github-copilot-winui-vs.md
     - name: Create a photo viewer with WinUI
       href: ../get-started/simple-photo-viewer-winui3.md
+
