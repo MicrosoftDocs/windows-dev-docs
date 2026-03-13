@@ -128,11 +128,59 @@ You've built a complete WinUI 3 notes app using:
 - **Learn MCP Server** to look up Windows App SDK notification APIs
 - **winapp CLI** for package identity and MSIX packaging
 
-## Next steps
+---
+
+## Optional: Add on-device AI to your app
+
+The notes app is fully functional — but you can take it further by adding an AI feature that runs entirely on the user's device. [Foundry Local](../../../ai/foundry-local/overview.md) makes this straightforward: it runs a language model locally and exposes an OpenAI-compatible API.
+
+### Install Foundry Local and download a model
+
+```bash
+winget install Microsoft.AIFoundry.Local
+foundry model run phi-4-mini
+```
+
+Once the model starts, it listens at `http://localhost:5272/openai/v1`.
+
+### Add the NuGet package
+
+```bash
+dotnet add package Azure.AI.OpenAI
+```
+
+### Add a "Summarize" button to the Notes page
+
+Ask Copilot:
+
+> *"Add a 'Summarize' button to the Notes page. When clicked, it should send the selected note's content to a local AI endpoint at http://localhost:5272/openai/v1 using the Azure.AI.OpenAI package, and display the summary in a ContentDialog. Model name is phi-4-mini."*
+
+Copilot generates the `AzureOpenAIClient` call and dialog — the OpenAI-compatible API means the code looks identical to a cloud API call, just pointed at localhost:
+
+```csharp
+var client = new AzureOpenAIClient(
+    new Uri("http://localhost:5272/openai/v1"),
+    new ApiKeyCredential("foundry-local"));
+
+var completion = await client.GetChatClient("phi-4-mini")
+    .CompleteChatAsync($"Summarize this note in 2 sentences: {note.Content}");
+```
+
+### What the user sees
+
+No internet connection required. No API key. The model runs on their PC — fast, private, and free.
+
+> [!TIP]
+> For apps targeting Copilot+ PCs, you can swap Foundry Local for [Phi Silica](../../../ai/apis/phi-silica.md) to use the NPU directly for even faster inference. The API surface is different (Windows AI APIs rather than OpenAI-compatible), but Copilot can help you make the switch.
+
+---
 
 > [!div class="nextstepaction"]
 > [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)
+- [Foundry Local overview](../../../ai/foundry-local/overview.md) — run any model locally on Windows
+- [Phi Silica](../../../ai/apis/phi-silica.md) — NPU-accelerated inference on Copilot+ PCs
+- [Windows AI APIs overview](/windows/ai/)
 - [Windows App Development CLI (winapp CLI)](../dev-tools/winapp-cli/index.md)
 - [Windows App SDK documentation](../windows-app-sdk/index.md)

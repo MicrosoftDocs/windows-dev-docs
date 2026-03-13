@@ -1,19 +1,35 @@
 ---
 title: AI-assisted Windows development
-description: Discover how GitHub Copilot, MCP servers, and Windows-specific AI tools make it faster and easier to build and modernize Windows apps.
+description: Discover how to build better Windows apps faster — using AI coding tools and shipping apps with AI built in, from Foundry Local to Phi Silica and Windows AI APIs.
 ms.topic: overview
 ms.date: 03/10/2026
 ms.author: jken
 author: GrantMeStrength
-keywords: windows, github copilot, ai development, winui, copilot, mcp server
+keywords: windows, github copilot, ai development, winui, copilot, mcp server, foundry local, phi silica, windows ai
 ms.localizationpriority: medium
 ---
 
 # AI-assisted Windows development
 
-GitHub Copilot and a growing set of Windows-specific AI tools have changed what it means to build for Windows. Whether you're starting a brand-new WinUI app, integrating Windows AI APIs, or migrating a legacy UWP project, AI can handle the scaffolding, suggest the right APIs, explain unfamiliar patterns, and keep your code on the right track — all without leaving your IDE.
+Windows is where AI development is happening — both for developers writing apps with AI assistance and for apps that ship with AI built in.
 
-This article introduces the tools and what they make possible. When you're ready, follow the links to set up your environment and start building.
+This article covers both: the AI coding tools that help you build Windows apps faster, and the Windows AI stack that lets you put intelligence directly into your app. When you're ready, follow the links to set up your environment and start building.
+
+> [!TIP]
+> **New to Windows development?** Windows has the deepest local AI stack of any platform: [Foundry Local](../../../ai/foundry-local/overview.md) runs state-of-the-art models on any hardware, [Phi Silica](../../../ai/apis/phi-silica.md) uses the NPU on Copilot+ PCs for near-instant inference, and the full [Windows AI API surface](/windows/ai/) is available to any packaged app. If you're coming from Linux or macOS, Windows Subsystem for Linux (WSL) and the GitHub Copilot CLI Terminal mean you don't have to give up your existing workflow to get started.
+
+## Two ways AI changes Windows development
+
+There are two distinct—and complementary—things AI does for Windows developers:
+
+| | What it is | Example |
+|---|---|---|
+| **AI-assisted development** | Tools that help you *write* your app faster and more accurately | GitHub Copilot generates your WinUI scaffolding; the Learn MCP Server looks up the right API |
+| **AI in your app** | AI features you *ship* inside your app for end users | Note summarization via Foundry Local; real-time transcription via Live Captions API; image description via Windows Vision Skills |
+
+Both are first-class scenarios on Windows. The rest of this article covers the tools for each.
+
+---
 
 ## What AI tools are available for Windows developers?
 
@@ -73,6 +89,41 @@ Electron, Flutter, React Native, and Rust developers can use Copilot to adapt th
 
 ---
 
+## Build apps with AI built in
+
+The Windows AI stack lets you ship AI features directly in your app — with hardware-accelerated inference, privacy-preserving on-device models, and no cloud dependency required.
+
+### Foundry Local
+
+[Foundry Local](../../../ai/foundry-local/overview.md) runs large language models locally on any Windows PC. It exposes an OpenAI-compatible REST API, so you can use your existing AI code against local models with no rewrite. Foundry Local is the recommended starting point for adding AI to a Windows app — it works on any hardware, requires no Azure subscription, and keeps user data on-device.
+
+```bash
+winget install Microsoft.AIFoundry.Local
+foundry model run phi-4-mini
+```
+
+After the model starts, call it from your app using the OpenAI-compatible endpoint at `http://localhost:5272/openai/v1`.
+
+### Phi Silica
+
+[Phi Silica](../../../ai/apis/phi-silica.md) is a compact, highly capable model built into Windows 11 on Copilot+ PCs. It runs entirely on the NPU — no GPU, no cloud, near-instant inference. If your app targets Copilot+ PCs, Phi Silica is the fastest local AI option available.
+
+> [!NOTE]
+> Phi Silica requires a Copilot+ PC (with NPU, 40+ TOPS). For apps targeting all Windows hardware, use Foundry Local with a fallback to cloud APIs.
+
+### Windows AI APIs
+
+Beyond language models, Windows exposes a rich set of AI-powered APIs that any packaged app can use:
+
+- **Text recognition** — [Windows.Media.Ocr](/uwp/api/windows.media.ocr) for on-device OCR
+- **Live Captions API** — real-time, on-device speech-to-text
+- **Image analysis** — vision features via Windows Vision Skills
+- **LoRA fine-tuning** — adapt Phi Silica to your domain with [LoRA support](/windows/ai/apis/lora)
+
+All of these run on-device, require no cloud subscription, and become available to your app once you have package identity (which [winapp CLI](../dev-tools/winapp-cli/index.md) can add to any framework).
+
+---
+
 ## Next steps
 
 > [!div class="nextstepaction"]
@@ -81,5 +132,7 @@ Electron, Flutter, React Native, and Rust developers can use Copilot to adapt th
 Or jump straight to:
 
 - [Tutorial: Build a Windows app with GitHub Copilot](ai-build.md)
+- [Tutorial: Add on-device AI to a Windows app](../../../ai/foundry-local/tutorial-windows-app.md)
 - [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)
+- [Windows AI APIs overview](/windows/ai/)
