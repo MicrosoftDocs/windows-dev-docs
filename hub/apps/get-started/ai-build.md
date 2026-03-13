@@ -179,8 +179,8 @@ No internet connection required. No API key. The model runs on their PC — fast
 > [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)
-- [Foundry Local overview](https://learn.microsoft.com/windows/ai/foundry-local/get-started) — run any model locally on Windows
-- [Phi Silica](https://learn.microsoft.com/windows/ai/apis/phi-silica) — NPU-accelerated inference on Copilot+ PCs
+- [Foundry Local overview](/windows/ai/foundry-local/get-started) — run any model locally on Windows
+- [Phi Silica](/windows/ai/apis/phi-silica) — NPU-accelerated inference on Copilot+ PCs
 - [Windows AI APIs overview](/windows/ai/)
 - [Windows App Development CLI (winapp CLI)](../dev-tools/winapp-cli/index.md)
 - [Windows App SDK documentation](../windows-app-sdk/index.md)
