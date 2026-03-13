@@ -1,5 +1,5 @@
 ---
-title: WinUI
+title: WinUI 3
 description: Provides info for WinUI and Windows app development with the Windows App SDK. 
 ms.topic: article
 ms.date: 07/15/2024
@@ -9,7 +9,7 @@ ms.date: 07/15/2024
 
 :::image type="icon" source="images/winui-hero.png":::
 
-WinUI is Microsoft's modern native user interface framework for building Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
+WinUI 3 is Microsoft's modern native user interface framework for building Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
 
 Delivered as part of the [Windows App SDK](../../windows-app-sdk/index.md), WinUI enables you to create modern, polished, and responsive desktop experiences that run on Windows 10, version 1809 (build 17763) and later, including Windows 11.
 
@@ -77,7 +77,7 @@ WinUI combines the flexibility of the Win32 app model with the richness of moder
     :::column-end:::
     :::column span="2":::
         **Powers key experiences in Windows**<br>
-        The Windows shell and many built-in apps are built with WinUI, giving your app the same modern look, feel, and performance as Windows itself.
+        Parts of the Windows shell and its built-in apps are built with WinUI. Open-source projects like [PowerToys](/windows/powertoys/) are also built with WinUI.
     :::column-end:::    
 :::row-end:::
 
@@ -85,7 +85,7 @@ WinUI combines the flexibility of the Win32 app model with the richness of moder
 
 ## Get started with WinUI
 
-To get started with WinUI, you can try out these resources to get you started:
+To get started with WinUI, try out these resources:
 
 :::row:::
     :::column:::
