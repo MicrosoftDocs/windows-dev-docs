@@ -16,7 +16,7 @@ Windows is where AI development is happening — both for developers writing app
 This article covers both: the AI coding tools that help you build Windows apps faster, and the Windows AI stack that lets you put intelligence directly into your app. When you're ready, follow the links to set up your environment and start building.
 
 > [!TIP]
-> **New to Windows development?** Windows has the deepest local AI stack of any platform: [Foundry Local](../../../ai/foundry-local/overview.md) runs state-of-the-art models on any hardware, [Phi Silica](../../../ai/apis/phi-silica.md) uses the NPU on Copilot+ PCs for near-instant inference, and the full [Windows AI API surface](/windows/ai/) is available to any packaged app. If you're coming from Linux or macOS, Windows Subsystem for Linux (WSL) and the GitHub Copilot CLI Terminal mean you don't have to give up your existing workflow to get started.
+> **New to Windows development?** Windows has the deepest local AI stack of any platform: [Foundry Local](https://learn.microsoft.com/windows/ai/foundry-local/get-started) runs state-of-the-art models on any hardware, [Phi Silica](https://learn.microsoft.com/windows/ai/apis/phi-silica) uses the NPU on Copilot+ PCs for near-instant inference, and the full [Windows AI API surface](/windows/ai/) is available to any packaged app. If you're coming from Linux or macOS, Windows Subsystem for Linux (WSL) and the GitHub Copilot CLI Terminal mean you don't have to give up your existing workflow to get started.
 
 ## Two ways AI changes Windows development
 
@@ -95,7 +95,7 @@ The Windows AI stack lets you ship AI features directly in your app — with har
 
 ### Foundry Local
 
-[Foundry Local](../../../ai/foundry-local/overview.md) runs large language models locally on any Windows PC. It exposes an OpenAI-compatible REST API, so you can use your existing AI code against local models with no rewrite. Foundry Local is the recommended starting point for adding AI to a Windows app — it works on any hardware, requires no Azure subscription, and keeps user data on-device.
+[Foundry Local](https://learn.microsoft.com/windows/ai/foundry-local/get-started) runs large language models locally on any Windows PC. It exposes an OpenAI-compatible REST API, so you can use your existing AI code against local models with no rewrite. Foundry Local is the recommended starting point for adding AI to a Windows app — it works on any hardware, requires no Azure subscription, and keeps user data on-device.
 
 ```bash
 winget install Microsoft.AIFoundry.Local
@@ -106,7 +106,7 @@ After the model starts, call it from your app using the OpenAI-compatible endpoi
 
 ### Phi Silica
 
-[Phi Silica](../../../ai/apis/phi-silica.md) is a compact, highly capable model built into Windows 11 on Copilot+ PCs. It runs entirely on the NPU — no GPU, no cloud, near-instant inference. If your app targets Copilot+ PCs, Phi Silica is the fastest local AI option available.
+[Phi Silica](https://learn.microsoft.com/windows/ai/apis/phi-silica) is a compact, highly capable model built into Windows 11 on Copilot+ PCs. It runs entirely on the NPU — no GPU, no cloud, near-instant inference. If your app targets Copilot+ PCs, Phi Silica is the fastest local AI option available.
 
 > [!NOTE]
 > Phi Silica requires a Copilot+ PC (with NPU, 40+ TOPS). For apps targeting all Windows hardware, use Foundry Local with a fallback to cloud APIs.
@@ -118,7 +118,7 @@ Beyond language models, Windows exposes a rich set of AI-powered APIs that any p
 - **Text recognition** — [Windows.Media.Ocr](/uwp/api/windows.media.ocr) for on-device OCR
 - **Live Captions API** — real-time, on-device speech-to-text
 - **Image analysis** — vision features via Windows Vision Skills
-- **LoRA fine-tuning** — adapt Phi Silica to your domain with [LoRA support](/windows/ai/apis/lora)
+- **LoRA fine-tuning** — adapt Phi Silica to your domain with [LoRA support](/windows/ai/apis/phi-silica-lora)
 
 All of these run on-device, require no cloud subscription, and become available to your app once you have package identity (which [winapp CLI](../dev-tools/winapp-cli/index.md) can add to any framework).
 
@@ -132,7 +132,7 @@ All of these run on-device, require no cloud subscription, and become available 
 Or jump straight to:
 
 - [Tutorial: Build a Windows app with GitHub Copilot](ai-build.md)
-- [Tutorial: Add on-device AI to a Windows app](../../../ai/foundry-local/tutorial-windows-app.md)
+- [Get started with Foundry Local](https://learn.microsoft.com/windows/ai/foundry-local/get-started)
 - [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)
 - [Windows AI APIs overview](/windows/ai/)

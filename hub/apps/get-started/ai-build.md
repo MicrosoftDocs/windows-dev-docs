@@ -132,7 +132,7 @@ You've built a complete WinUI 3 notes app using:
 
 ## Optional: Add on-device AI to your app
 
-The notes app is fully functional — but you can take it further by adding an AI feature that runs entirely on the user's device. [Foundry Local](../../../ai/foundry-local/overview.md) makes this straightforward: it runs a language model locally and exposes an OpenAI-compatible API.
+The notes app is fully functional — but you can take it further by adding an AI feature that runs entirely on the user's device. [Foundry Local](https://learn.microsoft.com/windows/ai/foundry-local/get-started) makes this straightforward: it runs a language model locally and exposes an OpenAI-compatible API.
 
 ### Install Foundry Local and download a model
 
@@ -171,7 +171,7 @@ var completion = await client.GetChatClient("phi-4-mini")
 No internet connection required. No API key. The model runs on their PC — fast, private, and free.
 
 > [!TIP]
-> For apps targeting Copilot+ PCs, you can swap Foundry Local for [Phi Silica](../../../ai/apis/phi-silica.md) to use the NPU directly for even faster inference. The API surface is different (Windows AI APIs rather than OpenAI-compatible), but Copilot can help you make the switch.
+> For apps targeting Copilot+ PCs, you can swap Foundry Local for [Phi Silica](https://learn.microsoft.com/windows/ai/apis/phi-silica) to use the NPU directly for even faster inference. The API surface is different (Windows AI APIs rather than OpenAI-compatible), but Copilot can help you make the switch.
 
 ---
 
@@ -179,8 +179,8 @@ No internet connection required. No API key. The model runs on their PC — fast
 > [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 
 - [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)
-- [Foundry Local overview](../../../ai/foundry-local/overview.md) — run any model locally on Windows
-- [Phi Silica](../../../ai/apis/phi-silica.md) — NPU-accelerated inference on Copilot+ PCs
+- [Foundry Local overview](https://learn.microsoft.com/windows/ai/foundry-local/get-started) — run any model locally on Windows
+- [Phi Silica](https://learn.microsoft.com/windows/ai/apis/phi-silica) — NPU-accelerated inference on Copilot+ PCs
 - [Windows AI APIs overview](/windows/ai/)
 - [Windows App Development CLI (winapp CLI)](../dev-tools/winapp-cli/index.md)
 - [Windows App SDK documentation](../windows-app-sdk/index.md)
