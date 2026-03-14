@@ -20,14 +20,14 @@ An _attached property_ is a XAML concept. Attached properties are typically defi
 
 ## Prerequisites
 
-We assume that you understand dependency properties from the perspective of a consumer of existing dependency properties, and that you have read the [Dependency properties overview](dependency-properties-overview.md). You should also have read [Attached properties overview](attached-properties-overview.md). To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
+We assume that you understand dependency properties from the perspective of a consumer of existing dependency properties, and that you have read the [Dependency properties overview](dependency-properties-overview.md). You should also have read [Attached properties overview](attached-properties-overview.md). To follow the examples in this topic, you should also understand XAML and know how to write a basic WinUI app using C++ or C#.
 
 ## Scenarios for attached properties
 
 You might create an attached property when there is a reason to have a property-setting mechanism available for classes other than the defining class. The most common scenarios for this are layout and services support. Examples of existing layout properties are [**Canvas.ZIndex**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.zindex) and [**Canvas.Top**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.top). In a layout scenario, elements that exist as child elements to layout-controlling elements can express layout requirements to their parent elements individually, each setting a property value that the parent defines as an attached property. An example of the services-support scenario in the Windows Runtime API is set of the attached properties of [**ScrollViewer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ScrollViewer), such as [**ScrollViewer.IsZoomChainingEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.iszoomchainingenabled).
 
 > [!WARNING]
-> An existing limitation of the Windows Runtime XAML implementation is that you cannot animate your custom attached property.
+> An existing limitation of the WinUI app implementation is that you cannot animate your custom attached property.
 
 ## Registering a custom attached property
 

@@ -1,11 +1,41 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/notification-mirroring.md",
+      "redirect_url": "/previous-versions/windows/uwp/notifications/notification-mirroring",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/universal-dismiss.md",
+      "redirect_url": "/previous-versions/windows/uwp/notifications/universal-dismiss",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/contacts-and-calendar/my-people-support.md",
+      "redirect_url": "/previous-versions/windows/uwp/contacts-and-calendar/my-people-support",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/contacts-and-calendar/my-people-sharing.md",
+      "redirect_url": "/previous-versions/windows/uwp/contacts-and-calendar/my-people-sharing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/contacts-and-calendar/my-people-notifications.md",
+      "redirect_url": "/previous-versions/windows/uwp/contacts-and-calendar/my-people-notifications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/contacts-and-calendar/integrating-with-contacts.md",
+      "redirect_url": "/previous-versions/windows/uwp/contacts-and-calendar/integrating-with-contacts",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/ui/controls/contact-card.md",
       "redirect_url": "/previous-versions/windows/uwp/contacts-and-calendar/contact-card",
       "redirect_document_id": false
     },
-	{
+	  {
       "source_path": "hub/apps/design/devices/designing-for-tv.md",
       "redirect_url": "/previous-versions/windows/uwp/xbox-apps/designing-for-tv",
       "redirect_document_id": false

@@ -940,32 +940,37 @@ items:
               href: platform/csharp-winrt/authoring-diagnostics.md
     - name: XAML
       items:
-        - name: XAML platform
+        - name: Overview
           href: platform/xaml/index.md
-        - name: XAML overview
+        - name: Introduction to XAML
           href: platform/xaml/xaml-overview.md
-        - name: Dependency properties overview
-          href: platform/xaml/dependency-properties-overview.md
-        - name: Custom dependency properties
-          href: platform/xaml/custom-dependency-properties.md
-        - name: Attached properties overview
-          href: platform/xaml/attached-properties-overview.md
-        - name: Custom attached properties
-          href: platform/xaml/custom-attached-properties.md
-        - name: Events and routed events overview
+        - name: Dependency properties
+          items:  
+            - name: Overview
+              href: platform/xaml/dependency-properties-overview.md
+            - name: Custom dependency properties
+              href: platform/xaml/custom-dependency-properties.md
+        - name: Attached properties
+          items:        
+            - name: Overview
+              href: platform/xaml/attached-properties-overview.md
+            - name: Custom attached properties
+              href: platform/xaml/custom-attached-properties.md
+        - name: Events and routed events
           href: platform/xaml/events-and-routed-events-overview.md
         - name: Styles, templates, and resources
-          href: platform/xaml/xaml-styles.md
           items:
-            - name: XAML brushes
+            - name: Styles
+              href: platform/xaml/xaml-styles.md
+            - name: Brushes
               href: platform/xaml/brushes.md
-            - name: XAML Control templates
+            - name: Control templates
               href: platform/xaml/xaml-control-templates.md
             - name: Template settings classes
               href: platform/xaml/template-settings-classes.md
             - name: ResourceDictionary and XAML resource references
               href: platform/xaml/xaml-resource-dictionary.md
-            - name: XAML theme resources
+            - name: Theme resources
               href: platform/xaml/xaml-theme-resources.md
         - name: Syntax guide
           items:

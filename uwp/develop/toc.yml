@@ -1206,13 +1206,6 @@ items:
   - name: Contacts, My People, and calendar
     href: ../contacts-and-calendar/index.md
     items:
-    - name: My People
-      href: ../contacts-and-calendar/my-people-support.md
-      items:
-      - name: My People sharing
-        href: ../contacts-and-calendar/my-people-sharing.md
-      - name: My People notifications
-        href: ../contacts-and-calendar/my-people-notifications.md
     - name: Select contacts
       href: ../contacts-and-calendar/selecting-contacts.md
     - name: Send email
@@ -1221,8 +1214,6 @@ items:
       href: ../contacts-and-calendar/sending-an-sms-message.md
     - name: Manage appointments
       href: ../contacts-and-calendar/managing-appointments.md
-    - name: Connect your app to actions on a contact card
-      href: ../contacts-and-calendar/integrating-with-contacts.md
   - name: Maps and location
     href: ../maps-and-location/index.md
     items:
@@ -1329,9 +1320,9 @@ items:
     - name: Pen and Windows Ink
       href: ../ui-input/pen-and-stylus-interactions.md
       items:
-      - name: "Pen interactions and haptic (tactile) feedback"
+      - name: Pen interactions and haptic (tactile) feedback
         href: ../ui-input/pen-haptics.md
-      - name: "Tutorial: Add Inking support to your app"
+      - name: 'Tutorial: Add Inking support to your app'
         href: ../ui-input/ink-walkthrough.md
       - name: Recognize ink strokes
         href: ../ui-input/convert-ink-to-text.md
@@ -1357,9 +1348,9 @@ items:
       - name: Audio input issues
         href: ../ui-input/manage-issues-with-audio-input.md
       - name: Speech recognition timeouts
-        href: ../ui-input/set-speech-recognition-timeouts.md        
+        href: ../ui-input/set-speech-recognition-timeouts.md
     - name: Surface Dial
       href: ../ui-input/windows-wheel-interactions.md
       items:
-      - name: "Tutorial: Add Surface Dial support to your app"
+      - name: 'Tutorial: Add Surface Dial support to your app'
         href: ../ui-input/radialcontroller-walkthrough.md
