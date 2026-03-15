@@ -399,6 +399,8 @@ items:
       href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
 - name: What's new
   items:
+      - name: Revamped company onboarding experience with zero registration fees
+        href: whats-new-company-developer.md
       - name: Recent data view in acquisitions reports
         href: recent-data-acquisitions-reports.md
       - name: Usage reports in analytics
