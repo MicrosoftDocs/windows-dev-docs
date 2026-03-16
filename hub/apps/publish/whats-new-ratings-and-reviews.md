@@ -1,21 +1,21 @@
 ---
-description: What's new - Ratings & Reviews in Partner Center
-title: What's new - Ratings & Reviews in Partner Center 
+description: What's new - Ratings and reviews in Partner Center
+title: What's new - Ratings and reviews in Partner Center 
 ms.date: 03/16/2026
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, analytics, partner center, ratings and reviews, customer feedback, customer reviews, app reviews, win32, MSI, MSIX, EXE
 ms.localizationpriority: medium
 ---
 
-# What's new - Ratings & Reviews in Partner Center
+# What's new - Ratings and reviews in Partner Center
 
-The new [**Ratings & Reviews**](https://partner.microsoft.com/dashboard/insights/analytics/store/reviews) experience in Partner Center provides a streamlined way to analyze customer feedback for **Windows apps**, with a consistent and aligned set of insights available for **both Win32 (MSI/EXE) and MSIX apps**. 
+The new [**Ratings and reviews**](https://partner.microsoft.com/dashboard/insights/analytics/store/reviews) experience in Partner Center provides a streamlined way to analyze customer feedback for **Windows apps**, with a consistent and aligned set of insights available for **both Win32 (MSI/EXE) and MSIX apps**. 
 
-Recent updates provide a unified set of experiences for both Win32 and MSIX, thus ensuring the same Ratings & Reviews capabilities, layout, and analysis views are available regardless of app packaging. The experience brings together ratings breakdowns, trends over time, geographical distribution, and detailed customer reviews into a single view to help you understand customer sentiment and respond to feedback more effectively. 
+Recent updates provide a unified set of experiences for both Win32 and MSIX, thus ensuring the same Ratings and reviews capabilities, layout, and analysis views are available regardless of app packaging. The experience brings together ratings breakdowns, trends over time, geographical distribution, and detailed customer reviews into a single view to help you understand customer sentiment and respond to feedback more effectively. 
 
 ### What’s included in the experience 
 
-The Ratings & Reviews dashboard presents a consolidated view of customer feedback across supported Windows app types. The experience is designed to help you move quickly from a high‑level view to detailed review data using the below insights:
+The Ratings and reviews dashboard presents a consolidated view of customer feedback across supported Windows app types. The experience is designed to help you move quickly from a high‑level view to detailed review data using the below insights:
 
 #### Ratings breakdown
 
@@ -95,7 +95,7 @@ The table is sortable and paginated, allowing you to browse, search by country, 
 
 :::image type="content" source="images/rnr-filter-by-source.png" lightbox="images/rnr-filter-by-source.png" alt-text="A screenshot showing source filter for reviews in Partner Center.":::
 
-The updated Ratings & Reviews experience introduces a review source filter, a key new capability that helps you understand where customer reviews originate. 
+The updated Ratings and reviews experience introduces a review source filter, a key new capability that helps you understand where customer reviews originate. 
 
 You can filter reviews by the following sources: 
 
