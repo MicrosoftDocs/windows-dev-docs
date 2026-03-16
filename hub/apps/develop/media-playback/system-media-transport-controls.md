@@ -103,9 +103,10 @@ If you are not using the automatic SMTC integration provided by **MediaPlayer** 
 
 Apps that use the new one-process model for background audio should get an instance of the [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) by calling [**GetForCurrentView**](/uwp/api/windows.media.systemmediatransportcontrols.getforcurrentview). Apps that use the legacy two-process model for background audio must use [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](/uwp/api/windows.media.playback.mediaplayer.systemmediatransportcontrols) to get access to the SMTC from their background process.
 
-For more information on playing audio in the background, see [Play media in the background](background-audio.md).
+
 
 ## Related topics
+
 * [Media playback](media-playback.md)
 * [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md) 
 * [System Media Transport sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 

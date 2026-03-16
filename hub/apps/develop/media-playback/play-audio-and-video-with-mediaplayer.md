@@ -271,4 +271,3 @@ The user may decide that they want to pause or continue playback, even if the au
 * [Media items, playlists, and tracks](media-playback-with-mediasource.md)
 * [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
 * [Create, schedule, and manage media breaks](create-schedule-and-manage-media-breaks.md)
-* [Play media in the background](background-audio.md)

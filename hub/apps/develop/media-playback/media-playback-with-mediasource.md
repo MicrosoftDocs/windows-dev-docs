@@ -133,7 +133,7 @@ In the handler for the [**TimedTextSource.Resolved**](/uwp/api/windows.media.cor
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetTimedTextSourceResolved":::
 
-For a list of the timed text formats that are supported on Windows, see [Supported codecs](supported-codecs.md).
+For a list of the timed text formats that are supported on Windows, see [Supported codecs](/windows/uwp/audio-video-camera/supported-codecs).
 
 ## Add additional metadata tracks
 
@@ -230,7 +230,8 @@ Starting with Windows 10, version 1703, you can supply an [**AdaptiveMediaSource
 
 
 ## Related topics
+
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
-* [Play media in the background](background-audio.md)
+
