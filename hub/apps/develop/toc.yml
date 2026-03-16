@@ -240,10 +240,9 @@ items:
       items:
       - name: Overview
         href: graphics.md
-      - name: Enhance UI with the Visual layer
-        href: ../windows-app-sdk/composition.md
+      - name: Visual layer
         items:
-        - name: Visual layer overview
+        - name: Overview
           href: composition/visual-layer.md
         - name: Composition visual
           href: composition/composition-visual-tree.md
