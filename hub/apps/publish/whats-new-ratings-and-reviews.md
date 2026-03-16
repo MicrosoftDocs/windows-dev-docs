@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # What's new - Ratings & Reviews in Partner Center
 
-The Ratings & Reviews experience in Partner Center provides a streamlined way to analyze customer feedback for Windows apps, with a consistent and aligned set of insights available for both Win32 (MSI/EXE) and MSIX apps. 
+The new [**Ratings & Reviews**](https://partner.microsoft.com/dashboard/insights/analytics/store/reviews) experience in Partner Center provides a streamlined way to analyze customer feedback for **Windows apps**, with a consistent and aligned set of insights available for **both Win32 (MSI/EXE) and MSIX apps**. 
 
 Recent updates provide a unified set of experiences for both Win32 and MSIX, thus ensuring the same Ratings & Reviews capabilities, layout, and analysis views are available regardless of app packaging. The experience brings together ratings breakdowns, trends over time, geographical distribution, and detailed customer reviews into a single view to help you understand customer sentiment and respond to feedback more effectively. 
 
@@ -19,36 +19,95 @@ The Ratings & Reviews dashboard presents a consolidated view of customer feedbac
 
 #### Ratings breakdown
 
+:::image type="content" source="images/rnr-ratings-breakdown.png" lightbox="images/rnr-ratings-breakdown.png" alt-text="A screenshot showing ratings breakdown in Partner Center.":::
 
+The **Ratings breakdown** chart shows a snapshot of overall customer sentiment, including: 
 
-Acquisition data now flows through a near real time pipeline, cutting typical delay from about 30 hours down to approximately 3 hours for new events to appear in analytics. This tighter feedback loop helps developers validate releases, campaigns, and distribution changes while they are still in flight, rather than waiting for next‑day reports.
+* The average star rating for the app
+* The total number of ratings for the selected duration
+* The total number of ratings for each star rating (1–5 stars)
+* A breakdown of original and revised ratings for each star rating 
 
-#### “Recent data” view with hourly updates
+**Original ratings** are ratings that customers have submitted without making any changes and **Revised ratings** are ratings that customers have modified in any way, including changes only to the review text. 
 
-:::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
+> [!NOTE]
+> The average rating shown to customers in the Microsoft Store takes into account the customer’s market and device type. As a result, it may differ from the average rating shown in Partner Center.
 
-The new [Recent data section in the Acquisitions report](https://partner.microsoft.com/dashboard/insights/analytics/store/acquisitions?viewSelected=48h) surfaces Last 24 hours and Last 48 hours views that refresh using hourly telemetry streams.
+#### Ratings over time
 
-:::image type="content" source="images/nrt-filter.png" lightbox="images/nrt-filter.png" alt-text="A screenshot showing duation filter for analytics in Partner Center.":::
+:::image type="content" source="images/rnr-ratings-over-time.png" lightbox="images/rnr-ratings-over-time.png" alt-text="A screenshot showing ratings over time in Partner Center.":::
 
-This view is optimized for quick checks on live activity, enabling developers to observe hourly trends instead of daily trends for the same metrics previously available under other durations.
+The **Ratings over time** section displays a time‑series chart that shows how your app’s ratings change over time. 
 
-### Benefits
+This chart shows two data series: 
 
-The combination of lower latency and improved telemetry unlocks several practical benefits for developers. Developers can make faster decisions on promotion performance, detect anomalies or drops early, and trust that acquisition trends are no longer underreported by prior sampling behavior.
+* **Average rating** plotted over time, representing how the overall star rating of the app changes as customers submit ratings
+* **Total ratings** plotted over the same time range, showing the volume of ratings received during each period 
 
-### Frequently Asked Questions (FAQs)
+The chart is displayed across a timeline and uses separate axes to represent average rating values and total rating counts. Together, these trends show how changes in rating volume relate to changes in overall customer sentiment over time.
 
-#### What metrics are available in the Recent data view?
+#### Reviews
 
-The Recent data view includes a limited set of charts focused on near real time insights. These currently cover page views, installs, and campaign conversions. For paid apps, the view also includes acquisitions and gross sales.
+:::image type="content" source="images/rnr-reviews.png" lightbox="images/rnr-revies.png" alt-text="A screenshot showing customer reviews in Partner Center.":::
 
-#### How is the aggregation logic in the Recent data view different from the Daily view?
+Reviews allow customers to share their experience with your app and are visible publicly on the app product page in the Microsoft Store. If a review is edited, the most recent version is shown. 
 
-The Recent data view aggregates data at an hourly level, while the Daily view aggregates data at a daily level. This means the Recent data view counts unique devices per hour, not per day. If the same device performs the same action in multiple hours, each hour is counted separately.
- 
-For example, if a single device installs your app twice on the same day, once in the morning and once in the evening, the Recent data view will report two installs (one perh hour). In contrast, the Daily view will report one install for that day, as it counts unique devices across the entire day.
+The **Reviews** section in Partner Center lets you view the comments that customers submitted when rating your app. You can review this data directly in Partner Center or download it for offline analysis. 
 
-#### Does the Recent data view report complete and final numbers?
+From this page, you can also **respond to customer reviews**. 
 
-The data shown in the Recent data view may be partial or still completing, and it helps you understand early trends and directional movement in key metrics shortly after the activity occurs.
+Each review includes: 
+
+* The star rating
+* The review title and text provided by the customer
+* The app package version installed on the customer’s device at the time the review was submitted
+* The country or region of the reviewer
+* The reviewer name as shown in the Microsoft Store
+* The date the review was submitted 
+
+> [!NOTE]
+> Customers can submit a rating without adding a written review, so the total number of reviews is typically lower than the total number of ratings. 
+
+You can: 
+
+* Sort reviews by **newest, oldest, highest rating, lowest rating**, or **most helpful**
+* Use the search box to find specific words or phrases within reviews 
+
+> [!NOTE]
+> Only the **original review text** written by the customer is searched, even if the review was written in another language. Translated review text is not searched.
+
+#### Geographical spread
+
+:::image type="content" source="images/rnr-geographical-spread.png" lightbox="images/rnr-geographical-spread.png" alt-text="A screenshot showing geographical spread of reviews in Partner Center.":::
+
+The **Geographical spread** section displays a tabular view of ratings and reviews grouped by country or region. 
+
+This table shows the following information for each market: 
+
+* **Country or region** where ratings and reviews were submitted
+* **Average rating** for that market
+* **Total ratings**, representing the number of ratings received from that market
+* **Total reviews**, representing the number of written reviews submitted 
+
+The table is sortable and paginated, allowing you to browse, search by country, and compare rating volume and average ratings across different markets.
+
+#### Filter reviews by source
+
+:::image type="content" source="images/rnr-filter-by-source.png" lightbox="images/rnr-filter-by-source.png" alt-text="A screenshot showing source filter for reviews in Partner Center.":::
+
+The updated Ratings & Reviews experience introduces a review source filter, a key new capability that helps you understand where customer reviews originate. 
+
+You can filter reviews by the following sources: 
+
+* **All sources** – View a combined set of all reviews
+* **In‑app reviews** – Reviews submitted directly from within the app experience
+* **Store reviews** – Reviews submitted on the Microsoft Store 
+
+Using the review source filter, you can:  
+
+* Analyze ratings and reviews by source
+* Compare sentiment between in‑app and Store reviews
+* Identify whether feedback patterns are specific to a particular source or consistent across sources
+* Combine review source with other filters, such as date range, market, OS version, and package version, for more targeted analysis 
+
+This filter is useful when you want to understand how customer feedback differs based on how and where users submit reviews. 
