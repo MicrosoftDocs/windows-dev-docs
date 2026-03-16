@@ -154,7 +154,7 @@ _imageVisual.Size = new Vector2(156, 156);
 ### Paint with a custom drawing
 A [CompositionSurfaceBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionsurfacebrush) can also be used to paint an area with pixels from an ICompositionSurface rendered using [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm) (or D2D).
 
-The following code shows a SpriteVisual painted with a text run rendered onto an ICompositionSurface by using Win2D. To use Win2D with WinUI, install the [Win2D.WinUI NuGet package](https://www.nuget.org/packages/Win2D.WinUI) in your project.
+The following code shows a SpriteVisual painted with a text run rendered onto an ICompositionSurface by using Win2D. To use Win2D with WinUI, install the [Microsoft.Graphics.Win2D NuGet package](https://www.nuget.org/packages/Microsoft.Graphics.Win2D) in your project.
 
 ```cs
 Compositor _compositor;
