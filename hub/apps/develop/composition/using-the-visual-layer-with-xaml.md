@@ -191,7 +191,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-The following listing shows the [C++/WinRT](../cpp-and-winrt-apis/index.md) equivalent of the previous C&#35; code using the same XAML structure.
+The following listing shows the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) equivalent of the previous C&#35; code using the same XAML structure.
 
 ```cppwinrt
 #include <winrt/Microsoft.UI.Composition.h>

@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/windows-app-sdk/composition.md",
+      "redirect_url": "/windows/apps/develop/composition/visual-layer",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/notification-mirroring.md",
       "redirect_url": "/previous-versions/windows/uwp/notifications/notification-mirroring",
       "redirect_document_id": false

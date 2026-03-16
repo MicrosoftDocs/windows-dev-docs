@@ -17,7 +17,7 @@ WinUI and the Windows App SDK are new technologies and, when compared to UWP, th
 | [Background tasks](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task) | ✅ Supported; see [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) (introduced in 1.7). |
 | Common UI controls | ✅ Supported |
 | [CameraCaptureUI](https://github.com/microsoft/WindowsAppSDK/pull/4721) | ✅ Supported; see [CameraCaptureUI](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture) (introduced in 1.7). For alternative APIs, see [Using video capture](/windows/win32/multimedia/using-video-capture). |
-| [Composition/DirectX interop](https://github.com/microsoft/microsoft-ui-xaml/issues/5025) | ✅ Most Composition and Drawing features are supported (global composition effects aren't supported in 1.7); see [Enhance UI with the Visual layer](../composition.md). |
+| [Composition/DirectX interop](https://github.com/microsoft/microsoft-ui-xaml/issues/5025) | ✅ Most Composition and Drawing features are supported (global composition effects aren't supported in 1.7); see [Enhance UI with the Visual layer](../develop/composition/visual-layer.md). |
 | Distributing via Store | ✅ Supported |
 | Live Tiles (on Windows 10) | ✅ Supported |
 | [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) | ✅ Supported; see [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol) (introduced in 1.5). |

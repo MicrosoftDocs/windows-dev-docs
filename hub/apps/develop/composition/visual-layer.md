@@ -76,7 +76,7 @@ The **Microsoft.UI.Composition** compositor runs entirely within a Windows App S
 
 An example of external content is the (**Microsoft.UI.Xaml.Controls**) [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement). The Windows media stack provides to XAML an opaque media swap chain handle. XAML gives that handle to the compositor, which in turn hands it off to Windows (via **Windows.UI.Composition**) to display. Since the compositor can't see any of the pixels in the media swap chain, it can't composite that as part of the overall rendering for the window. Instead, it gives the media swap chain to Windows to render it below the compositor's rendering, with a hole cut out of the compositor's rendering in order to allow the media swap chain below it to be visible.
 
-[![Diagram of rendering external content](../windows-app-sdk/images/external-content.png) ](../windows-app-sdk/images/external-content.png#lightbox)
+[![Diagram of rendering external content](../../windows-app-sdk/images/external-content.png) ](../../windows-app-sdk/images/external-content.png#lightbox)
 
 In the Windows App SDK/WinUI, the following APIs all create external content:
 
@@ -103,4 +103,4 @@ Explore the samples on GitHub: [WindowsAppSDK-Samples / SceneGraph](https://gith
 ## Related topics
 
 * [**Microsoft.UI.Composition API reference**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition)
-* [Using the Visual layer in desktop apps](../desktop/modernize/ui/visual-layer-in-desktop-apps.md)
+* [Using the Visual layer in desktop apps](../../desktop/modernize/ui/visual-layer-in-desktop-apps.md)
