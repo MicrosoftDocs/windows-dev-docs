@@ -48,7 +48,7 @@ The chart is displayed across a timeline and uses separate axes to represent ave
 
 #### Reviews
 
-:::image type="content" source="images/rnr-reviews.png" lightbox="images/rnr-revies.png" alt-text="A screenshot showing customer reviews in Partner Center.":::
+:::image type="content" source="images/rnr-reviews.png" lightbox="images/rnr-reviews.png" alt-text="A screenshot showing customer reviews in Partner Center.":::
 
 Reviews allow customers to share their experience with your app and are visible publicly on the app product page in the Microsoft Store. If a review is edited, the most recent version is shown. 
 
