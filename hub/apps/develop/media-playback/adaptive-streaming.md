@@ -112,4 +112,4 @@ If you want to register event handlers for the bound adaptive media source, you 
 * [HLS tag support](hls-tag-support.md) 
 * [Dash profile support](dash-profile-support.md) 
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
-* [Play media in the background](background-audio.md) 
+ 

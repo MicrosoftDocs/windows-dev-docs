@@ -148,8 +148,30 @@ items:
           href: camera/connect-to-remote-cameras.md
       - name: Media playback
         items:
-        - name: Play media with MediaPlayer and MediaPlayerElement
-          href: media/play-audio-and-video-with-mediaplayer.md
+        - name: Overview
+          href: media-playback/media-playback.md
+        - name: Play audio and video with MediaPlayer
+          href: media-playback/play-audio-and-video-with-mediaplayer.md
+        - name: Media items, playlists, and tracks
+          href: media-playback/media-playback-with-mediasource.md
+        - name: Integrate with the System Media Transport Controls
+          href: media-playback/integrate-with-systemmediatransportcontrols.md
+        - name: Manual control of the System Media Transport Controls
+          href: media-playback/system-media-transport-controls.md
+        - name: System-supported timed metadata cues
+          href: media-playback/system-supported-metadata-cues.md
+        - name: Create, schedule, and manage media breaks
+          href: media-playback/create-schedule-and-manage-media-breaks.md
+        - name: Adaptive streaming
+          href: media-playback/adaptive-streaming.md
+        - name: HLS tag support
+          href: media-playback/hls-tag-support.md
+        - name: DASH profile support
+          href: media-playback/dash-profile-support.md
+        - name: Media casting
+          href: media-playback/media-casting.md
+        - name: Enable audio playback from remote Bluetooth-connected devices
+          href: media-playback/enable-remote-audio-playback.md
     - name: Communication
       href: communication/index.md
     - name: Data and files

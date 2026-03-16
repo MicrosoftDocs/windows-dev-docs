@@ -36,35 +36,11 @@ items:
   - name: Media playback
     href: ../audio-video-camera/media-playback.md
     items:
-    - name: Play audio and video with MediaPlayer
-      href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
-    - name: Media items, playlists, and tracks
-      href: ../audio-video-camera/media-playback-with-mediasource.md
-    - name: Integrate with the System Media Transport Controls
-      href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
-      items:
-      - name: Manual control of the System Media Transport Controls
-        href: ../audio-video-camera/system-media-transport-controls.md
-    - name: System-supported timed metadata cues
-      href: ../audio-video-camera/system-supported-metadata-cues.md
-    - name: Create, schedule, and manage media breaks
-      href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
     - name: Play media in the background
       href: ../audio-video-camera/background-audio.md
       items:
       - name: Legacy background media playback
         href: ../audio-video-camera/legacy-background-media-playback.md
-    - name: Adaptive streaming
-      href: ../audio-video-camera/adaptive-streaming.md
-      items:
-      - name: HLS tag support
-        href: ../audio-video-camera/hls-tag-support.md
-      - name: DASH profile support
-        href: ../audio-video-camera/dash-profile-support.md
-    - name: Media casting
-      href: ../audio-video-camera/media-casting.md
-    - name: Enable audio playback from remote Bluetooth-connected devices
-      href: ../audio-video-camera/enable-remote-audio-playback.md
     - name: PlayReady DRM
       href: ../audio-video-camera/playready-client-sdk.md
       items:
