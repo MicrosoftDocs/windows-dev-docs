@@ -36,16 +36,16 @@ This overview assumes that you are familiar with the structure of a basic Compos
 
 A [CompositionBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionbrush) "paints" an area with its output. Different brushes have different types of output. Some brushes paint an area with a solid color, others with a gradient, image, custom drawing, or effect. There are also specialized brushes that modify the behavior of other brushes. For example, opacity mask can be used to control which area is painted by a CompositionBrush, or a nine-grid can be used to control the stretch applied to a CompositionBrush when painting an area. CompositionBrush can be of one of the following types:
 
-|Class                                   |Details                                         |Introduced In|
-|-------------------------------------|---------------------------------------------------------|--------------------------------------|
-|[CompositionColorBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioncolorbrush)         |Paints an area with a solid color                        |Windows 10, version 1511 (SDK 10586)|
-|[CompositionSurfaceBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionsurfacebrush)       |Paints an area with the contents of an [ICompositionSurface](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.icompositionsurface)|Windows 10, version 1511 (SDK 10586)|
-|[CompositionEffectBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioneffectbrush)        |Paints an area with the contents of a composition effect |Windows 10, version 1511 (SDK 10586)|
-|[CompositionMaskBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionmaskbrush)          |Paints a visual with a CompositionBrush with an opacity mask |Windows 10, version 1607 (SDK 14393)
-|[CompositionNineGridBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionninegridbrush)      |Paints an area with a CompositionBrush using a NineGrid stretch |Windows 10, version 1607 (SDK 14393)
-|[CompositionLinearGradientBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionlineargradientbrush)|Paints an area with a linear gradient                    |Windows 10, version 1709 (SDK 16299)
-|[CompositionRadialGradientBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionradialgradientbrush)|Paints an area with a radial gradient                    |Windows 10, version 1903 (Insider Preview SDK)
-|[CompositionBackdropBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionbackdropbrush)     |Paints an area by sampling background pixels from either the application or pixels directly behind the application's window on desktop. Used as an input to another CompositionBrush like a CompositionEffectBrush | Windows 10, version 1607 (SDK 14393)
+|Class                                   |Details                                         |
+|-------------------------------------|---------------------------------------------------------|
+|[CompositionColorBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioncolorbrush)         |Paints an area with a solid color                        |
+|[CompositionSurfaceBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionsurfacebrush)       |Paints an area with the contents of an [ICompositionSurface](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.icompositionsurface)|
+|[CompositionEffectBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioneffectbrush)        |Paints an area with the contents of a composition effect |
+|[CompositionMaskBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionmaskbrush)          |Paints a visual with a CompositionBrush with an opacity mask |
+|[CompositionNineGridBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionninegridbrush)      |Paints an area with a CompositionBrush using a NineGrid stretch |
+|[CompositionLinearGradientBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionlineargradientbrush)|Paints an area with a linear gradient                    |
+|[CompositionRadialGradientBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionradialgradientbrush)|Paints an area with a radial gradient                    |
+|[CompositionBackdropBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionbackdropbrush)     |Paints an area by sampling background pixels from either the application or pixels directly behind the application's window on desktop. Used as an input to another CompositionBrush like a CompositionEffectBrush |
 
 ### Paint with a solid color
 

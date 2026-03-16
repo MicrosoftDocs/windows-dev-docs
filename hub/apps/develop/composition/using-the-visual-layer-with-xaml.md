@@ -191,7 +191,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-The following two listings show the [C++/WinRT](../cpp-and-winrt-apis/index.md) and [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) equivalents of the previous C&#35; code using the same XAML structure.
+The following listing shows the [C++/WinRT](../cpp-and-winrt-apis/index.md) equivalent of the previous C&#35; code using the same XAML structure.
 
 ```cppwinrt
 #include <winrt/Microsoft.UI.Composition.h>
@@ -233,43 +233,6 @@ void InitializeDropShadow(Microsoft::UI::Xaml::UIElement const& shadowHost, Micr
     bindSizeAnimation.SetReferenceParameter(L"hostVisual", hostVisual);
 
     shadowVisual.StartAnimation(L"Size", bindSizeAnimation);
-}
-```
-
-```cpp
-#include "WindowsNumerics.h"
-
-MainPage::MainPage()
-{
-    InitializeComponent();
-    InitializeDropShadow(ShadowHost, CircleImage);
-}
-
-void MainPage::InitializeDropShadow(Microsoft::UI::Xaml::UIElement^ shadowHost, Microsoft::UI::Xaml::Shapes::Shape^ shadowTarget)
-{
-    auto hostVisual = Microsoft::UI::Xaml::Hosting::ElementCompositionPreview::GetElementVisual(shadowHost);
-    auto compositor = hostVisual->Compositor;
-
-    // Create a drop shadow
-    auto dropShadow = compositor->CreateDropShadow();
-    dropShadow->Color = Microsoft::UI::ColorHelper::FromArgb(255, 75, 75, 80);
-    dropShadow->BlurRadius = 15.0f;
-    dropShadow->Offset = Windows::Foundation::Numerics::float3(2.5f, 2.5f, 0.0f);
-    // Associate the shape of the shadow with the shape of the target element
-    dropShadow->Mask = shadowTarget->GetAlphaMask();
-
-    // Create a Visual to hold the shadow
-    auto shadowVisual = compositor->CreateSpriteVisual();
-    shadowVisual->Shadow = dropShadow;
-
-    // Add the shadow as a child of the host in the visual tree
-    Microsoft::UI::Xaml::Hosting::ElementCompositionPreview::SetElementChildVisual(shadowHost, shadowVisual);
-
-    // Make sure size of shadow host and shadow visual always stay in sync
-    auto bindSizeAnimation = compositor->CreateExpressionAnimation("hostVisual.Size");
-    bindSizeAnimation->SetReferenceParameter("hostVisual", hostVisual);
-
-    shadowVisual->StartAnimation("Size", bindSizeAnimation);
 }
 ```
 
