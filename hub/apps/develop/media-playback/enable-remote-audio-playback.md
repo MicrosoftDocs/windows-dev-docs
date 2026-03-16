@@ -19,7 +19,7 @@ The [AudioPlaybackConnection](/uwp/api/windows.media.audio.audioplaybackconnecti
 
 For the examples in this article, we will use the following simple XAML UI which defines **ListView** control to display available remote devices, a **TextBlock** to display connection status, and three buttons for enabling, disabling, and opening connections.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/audio-playback-connection/cs/AudioPlaybackConnectionExample/MainWindow.xaml.cs" id="snippet_AudioPlaybackConnectionXAML":::
+:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/audio-playback-connection/cs/AudioPlaybackConnectionExample/MainWindow.xaml" id="snippet_AudioPlaybackConnectionXAML":::
 
 ## Use DeviceWatcher to monitor for remote devices
 
@@ -27,7 +27,7 @@ The [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) class al
 
 The [DeviceWatcher.Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event is raised for each device that is connected when the device watcher is started as well as for any device that is connected while the device watcher is running. The [DeviceWatcher.Removed](/uwp/api/windows.devices.enumeration.devicewatcher.removed) event is raised if a previously connected device disconnects. 
 
-Call [DeviceWatcher.Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) to begin watching for connected devices that support audio playback connections. In this example we will start the device manager when the main **Grid** control in the UI is loaded. For more information on using **DeviceWatcher**, see [Enumerate Devices](../devices-sensors/enumerate-devices.md).
+Call [DeviceWatcher.Start](/uwp/api/windows.devices.enumeration.devicewatcher.start) to begin watching for connected devices that support audio playback connections. In this example we will start the device manager when the main **Grid** control in the UI is loaded. For more information on using **DeviceWatcher**, see [Enumerate Devices](/windows/uwp/devices-sensors/enumerate-devices).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/audio-playback-connection/cs/AudioPlaybackConnectionExample/MainWindow.xaml.cs" id="snippet_MainGridLoaded":::
 
