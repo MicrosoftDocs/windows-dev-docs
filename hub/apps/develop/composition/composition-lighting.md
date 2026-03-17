@@ -155,7 +155,6 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 ## Related articles
 
 - [Creating Materials and Lights in the Visual Layer](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
-- [Lighting Overview](/windows/win32/direct3d9/lighting-overview)
 - [CompositionCapabilities API](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioncapabilities)
 - [Mathematics of Lighting](/windows/win32/direct3d9/mathematics-of-lighting)
 - [SceneLightingEffect](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.effects.scenelightingeffect)
