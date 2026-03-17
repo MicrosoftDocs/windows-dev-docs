@@ -1,9 +1,8 @@
 ---
 title: Pull-to-refresh with source modifiers
-description: Learn how to use an InteractionTracker’s SourceModifier feature to create a custom pull-to-refresh control.
-ms.date: 10/10/2017
+description: Learn how to use an InteractionTracker's SourceModifier feature in WinUI and Windows App SDK apps to create a custom pull-to-refresh control.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
 # Pull-to-refresh with source modifiers
@@ -36,7 +35,7 @@ When InteractionTracker is in its Interacting state, it evaluates each of the So
 
 ## Example
 
-Now let’s look at how you can use Source Modifiers to create a custom pull-to-refresh experience with an existing XAML ListView Control. We will be using a Canvas as the “Refresh Panel” that will be stacked on top of a XAML ListView to build this experience.
+Now let’s look at how you can use Source Modifiers to create a custom pull-to-refresh experience with an existing WinUI XAML ListView control. We will be using a Canvas as the “Refresh Panel” that will be stacked on top of a XAML ListView to build this experience.
 
 For the end user experience, we want to create the effect of "resistance" as the user is actively panning the list (with touch) and stop panning after the position goes beyond a certain point.
 

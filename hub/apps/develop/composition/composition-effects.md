@@ -1,23 +1,21 @@
 ---
-ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
-title: Composition effects
-description: The effect APIs enable developers to customize how their UI is rendered.
-ms.date: 02/08/2017
+title: Composition effects in WinUI
+description: The composition effect APIs let you customize how WinUI and Windows App SDK UI is rendered.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Composition effects
 
-The [**Windows.UI.Composition**](/uwp/api/Windows.UI.Composition) APIs allows real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a composition visual.
+The [**Microsoft.UI.Composition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) APIs allow real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll walk through the functionality that lets you apply effects to a composition visual in WinUI and Windows App SDK apps.
 
-To support [Universal Windows Platform (UWP)](../get-started/universal-application-platform-guide.md) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/WinUI2/html/N_Microsoft_Graphics_Canvas_Effects.htm) Namespace.
+To support consistent effect authoring in WinUI and Windows App SDK apps, composition effects leverage Win2D’s IGraphicsEffect interface so you can describe effects by using the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/WinUI2/html/N_Microsoft_Graphics_Canvas_Effects.htm) namespace.
 
-Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows 10 composition effect APIs are focused on Sprite Visuals. The SpriteVisual allows for flexibility and interplay in color, image and effect creation. The SpriteVisual is a composition visual type that can fill a 2D rectangle with a brush. The visual defines the bounds of the rectangle and the brush defines the pixels used to paint the rectangle.
+Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows App SDK composition effect APIs are focused on SpriteVisuals. A SpriteVisual gives you flexibility when combining color, image, and effect creation. The visual defines the bounds of the rectangle, and the brush defines the pixels used to paint it.
 
 Effect brushes are used on composition tree visuals whose content comes from the output of an effect graph. Effects can reference existing surfaces/textures, but not the output of other composition trees.
 
-Effects can also be applied to XAML UIElements using an effect brush with [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+Effects can also be applied to XAML UIElements by using an effect brush with [**XamlCompositionBrushBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase).
 
 ## Effect Features
 
@@ -54,7 +52,7 @@ See Win2D’s [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Wi
 
 Effects can be chained, allowing an application to simultaneously use multiple effects on an image. Effect graphs can support multiple effects that can refer to one and other. When describing your effect, simply add an effect as input to your effect.
 
-```cs
+```csharp
 IGraphicsEffect graphicsEffect =
 new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 {
@@ -85,13 +83,13 @@ When compiling the effect description above, you have the flexibility of either 
 
 Compiling an effect with saturation baked in:
 
-```cs
+```csharp
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 ```
 
 Compiling an effect with dynamic saturation:
 
-```cs
+```csharp
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{"SaturationEffect.Saturation"});
 _catEffect = effectFactory.CreateBrush();
 _catEffect.SetSourceParameter("mySource", surfaceBrush);
@@ -102,7 +100,7 @@ The saturation property of the effect above can then be either set to a static v
 
 You can create a ScalarKeyFrame that will be used to animate the Saturation property of an effect like this:
 
-```cs
+```csharp
 ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimation();
             effectAnimation.InsertKeyFrame(0f, 0f);
             effectAnimation.InsertKeyFrame(0.50f, 1f);
@@ -113,7 +111,7 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
 
 Start the animation on the Saturation property of the effect like this:
 
-```cs
+```csharp
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
@@ -138,22 +136,19 @@ This quick start tutorial shows you how to make use of some of the basic capabil
 
 ### Creating a new project
 
-- Go to File->New->Project...
-- Select 'Visual C#'
-- Create a 'Blank App (Windows Universal)' (Visual Studio 2015)
-- Enter a project name of your choosing
-- Click 'OK'
+- Go to **File** > **New** > **Project**.
+- Select the **Blank App, Packaged (WinUI 3 in Desktop)** template, or choose **Blank App, Unpackaged (WinUI 3 in Desktop)** if that better matches your app model.
+- Enter a project name of your choosing.
+- Click **Create**.
 
 ### Installing Win2D
 
-Win2D is released as a Nuget.org package and needs to be installed before you can use effects.
+Win2D is released as a NuGet.org package and needs to be installed before you can use these effects in a WinUI project.
 
-There are two package versions, one for Windows 10 and one for Windows 8.1. For Composition effects you’ll use the Windows 10 version.
-
-- Launch the NuGet Package Manager by going to Tools → NuGet Package Manager → Manage NuGet Packages for Solution.
-- Search for "Win2D" and select the appropriate package for your target version of Windows. Because Windows.UI. Composition supports Windows 10 (not 8.1), select Win2D.uwp.
-- Accept the license agreement
-- Click 'Close'
+- Launch the NuGet Package Manager by going to **Tools** > **NuGet Package Manager** > **Manage NuGet Packages for Solution**.
+- Search for **Win2D.WinUI** and install that package for your project.
+- Accept the license agreement.
+- Click **Close**.
 
 In the next few steps we will use composition API’s to apply a saturation effect to this cat image which will remove all saturation. In this model the effect is created and then applied to an image.
 
@@ -161,77 +156,61 @@ In the next few steps we will use composition API’s to apply a saturation effe
 
 ### Setting your Composition Basics
 
-```cs
-_compositor = new Compositor();
+```csharp
+_compositor = ElementCompositionPreview.GetElementVisual(MyHost).Compositor;
 _root = _compositor.CreateContainerVisual();
-_target = _compositor.CreateTargetForCurrentView();
-_target.Root = _root;
-_imageFactory = new CompositionImageFactory(_compositor)
-Desaturate();
+ElementCompositionPreview.SetElementChildVisual(MyHost, _root);
 ```
 
 ### Creating a CompositionSurface Brush
 
-```cs
+```csharp
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
-LoadImage(surfaceBrush);
+LoadedImageSurface imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/cat.png"));
+surfaceBrush.Surface = imageSurface;
 ```
 
 ### Creating, Compiling and Applying Effects
 
-1. Create the graphics effect
+1. Create the graphics effect.
 
-    ```cs
+    ```csharp
     var graphicsEffect = new SaturationEffect
     {
-      Saturation = 0.0f,
-      Source = new CompositionEffectSourceParameter("mySource")
+        Saturation = 0.0f,
+        Source = new CompositionEffectSourceParameter("mySource")
     };
     ```
 
-1. Compile the effect and create effect brush
+1. Compile the effect and create the effect brush.
 
-    ```cs
+    ```csharp
     var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 
     var catEffect = effectFactory.CreateBrush();
     catEffect.SetSourceParameter("mySource", surfaceBrush);
     ```
 
-1. Create a SpriteVisual in the composition tree and apply the effect
+1. Create a SpriteVisual in the composition tree and apply the effect.
 
-    ```cs
+    ```csharp
     var catVisual = _compositor.CreateSpriteVisual();
     catVisual.Brush = catEffect;
     catVisual.Size = new Vector2(219, 300);
-    _root.Children.InsertAtBottom(catVisual);    
+    _root.Children.InsertAtBottom(catVisual);
     ```
 
-1. Create your image source to load.
-
-    ```cs
-    CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
-    CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
-    if (result.Status == CompositionImageLoadStatus.Success)
-    ```
-
-1. Size and brush the surface on the SpriteVisual
-
-    ```cs
-    brush.Surface = imageSource.Surface;
-    ```
-
-1. Run your app – your results should be a desaturated cat:
+1. Run your app. Your results should be a desaturated cat:
 
 ![Desaturated image](images/composition-cat-desaturated.png)
 
 ## More Information
 
 - [Microsoft – Composition GitHub](https://github.com/microsoft/WindowsCompositionSamples)
-- [**Windows.UI.Composition**](/uwp/api/Windows.UI.Composition)
+- [**Microsoft.UI.Composition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition)
 - [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 - [Visual Tree Basics](composition-visual-tree.md)
 - [Composition Brushes](composition-brushes.md)
-- [XamlCompositionBrushBase](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
+- [XamlCompositionBrushBase](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase)
 - [Animation Overview](composition-animation.md)
 - [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)

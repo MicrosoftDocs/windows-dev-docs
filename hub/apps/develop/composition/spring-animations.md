@@ -1,14 +1,13 @@
 ---
 title: Spring animations
-description: Learn how to create spring motion experiences in your apps by using the NaturalMotionAnimation APIs.
-ms.date: 10/10/2017
+description: Learn how to create spring motion experiences in WinUI and Windows App SDK apps by using the NaturalMotionAnimation APIs.
+ms.date: 03/16/2026
 ms.topic: how-to
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
 # Spring animations
 
-The article shows how to use spring NaturalMotionAnimations.
+This article shows how to use spring NaturalMotionAnimations in WinUI.
 
 ## Prerequisites
 
@@ -25,7 +24,7 @@ Springs are a common motion experience we've all experienced at some point in ou
 
 ## Using springs in your UI
 
-As mentioned previously, springs can be a useful motion to integrate into your app to introduce a very familiar and playful UI experience. Common usage of springs in UI are:
+As mentioned previously, springs can be a useful motion to integrate into your WinUI app to introduce a very familiar and playful UI experience. Common usage of springs in UI are:
 
 | Spring Usage Description | Visual Example |
 | ------------------------ | -------------- |
@@ -46,8 +45,8 @@ You create a spring experience by using the NaturalMotionAnimation APIs. Specifi
 | ------------------- | ----------- |
 | DampingRatio = 0 | Undamped – the spring will oscillate for a long time |
 | 0 < DampingRatio < 1 | Underdamped – spring will oscillate from a little to a lot. |
-| DampingRatio = 1 | Criticallydamped – the spring will perform no oscillation. |
-| DampingRation > 1 | Overdamped – the spring will quickly reach its destination with an abrupt deceleration and no oscillation |
+| DampingRatio = 1 | Critically damped – the spring will perform no oscillation. |
+| DampingRatio > 1 | Overdamped – the spring will quickly reach its destination with an abrupt deceleration and no oscillation |
 
 - Period – the time it takes the spring to perform a single oscillation.
 - Final / Starting Value – defined starting and ending positions of the spring motion (if not defined, starting value and/or final value will be current value).
@@ -78,22 +77,24 @@ Start by defining the spring animation within the clicked event for when the nav
 ```csharp
 private void Button_Clicked(object sender, RoutedEventArgs e)
 {
- _springAnimation = _compositor.CreateSpringScalarAnimation();
- _springAnimation.DampingRatio = 0.75f;
- _springAnimation.Period = TimeSpan.FromSeconds(0.5);
+    _springAnimation = _compositor.CreateSpringScalarAnimation();
+    _springAnimation.DampingRatio = 0.75f;
+    _springAnimation.Period = TimeSpan.FromSeconds(0.5);
 
- if (!_expanded)
- {
- _expanded = true;
- _propSet.InsertBoolean("expanded", true);
- _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue + 250";
- } else
- {
- _expanded = false;
- _propSet.InsertBoolean("expanded", false);
-_springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 250";
- }
- _naviPane.StartAnimation("Offset.X", _springAnimation);
+    if (!_expanded)
+    {
+        _expanded = true;
+        _propSet.InsertBoolean("expanded", true);
+        _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue + 250";
+    }
+    else
+    {
+        _expanded = false;
+        _propSet.InsertBoolean("expanded", false);
+        _springAnimation.InitialValueExpression["FinalValue"] = "this.StartingValue - 250";
+    }
+
+    _naviPane.StartAnimation("Offset.X", _springAnimation);
 }
 ```
 
@@ -104,38 +105,40 @@ Now what if you wanted to tie this motion to input? So if the end user swipes ou
 To do this, you can take our same Spring Animation and pass it into an InertiaModifier with InteractionTracker. For more information about InputAnimations and InteractionTracker, see [Custom manipulation experiences with InteractionTracker](interaction-tracker-manipulations.md). We’ll assume for this code example, you have already setup your InteractionTracker and VisualInteractionSource. We’ll focus on creating the InertiaModifiers that will take in a NaturalMotionAnimation, in this case a spring.
 
 ```csharp
-// InteractionTracker and the VisualInteractionSource previously setup
-// The open and close ScalarSpringAnimations defined earlier
+// InteractionTracker and the VisualInteractionSource were previously set up.
+// The open and close ScalarSpringAnimations were defined earlier.
 private void SetupInput()
 {
- // Define the InertiaModifier to manage the open motion
- var openMotionModifer = InteractionTrackerInertiaNaturalMotion.Create(compositor);
+    // Define the InertiaModifier to manage the open motion.
+    var openMotionModifier = InteractionTrackerInertiaNaturalMotion.Create(_compositor);
 
- // Condition defines to use open animation if panes in non-expanded view
- // Property set value to track if open or closed is managed in other part of code
- openMotionModifer.Condition = _compositor.CreateExpressionAnimation(
-"propset.expanded == false");
- openMotionModifer.Condition.SetReferenceParameter("propSet", _propSet);
- openMotionModifer.NaturalMotion = _openSpringAnimation;
+    // Use the open animation if the pane is not expanded.
+    openMotionModifier.Condition = _compositor.CreateExpressionAnimation(
+        "propSet.expanded == false");
+    openMotionModifier.Condition.SetReferenceParameter("propSet", _propSet);
+    openMotionModifier.NaturalMotion = _openSpringAnimation;
 
- // Define the InertiaModifer to manage the close motion
- var closeMotionModifier = InteractionTrackerInertiaNaturalMotion.Create(_compositor);
+    // Define the InertiaModifier to manage the close motion.
+    var closeMotionModifier = InteractionTrackerInertiaNaturalMotion.Create(_compositor);
 
- // Condition defines to use close animation if panes in expanded view
- // Property set value to track if open or closed is managed in other part of code
- closeMotionModifier.Condition = 
-_compositor.CreateExpressionAnimation("propSet.expanded == true");
- closeMotionModifier.Condition.SetReferenceParameter("propSet", _propSet);
- closeMotionModifier.NaturalMotion = _closeSpringAnimation;
+    // Use the close animation if the pane is expanded.
+    closeMotionModifier.Condition = _compositor.CreateExpressionAnimation(
+        "propSet.expanded == true");
+    closeMotionModifier.Condition.SetReferenceParameter("propSet", _propSet);
+    closeMotionModifier.NaturalMotion = _closeSpringAnimation;
 
- _tracker.ConfigurePositionXInertiaModifiers(new 
-InteractionTrackerInertiaNaturalMotion[] { openMotionModifer, closeMotionModifier});
+    _tracker.ConfigurePositionXInertiaModifiers(new InteractionTrackerInertiaNaturalMotion[]
+    {
+        openMotionModifier,
+        closeMotionModifier,
+    });
 
- // Take output of InteractionTracker and assign to the pane
- var exp = _compositor.CreateExpressionAnimation("-tracker.Position.X");
- exp.SetReferenceParameter("tracker", _tracker);
- ElementCompositionPreview.GetElementVisual(pageNavigation).
-StartAnimation("Translation.X", exp);
+    // Take the InteractionTracker output and assign it to the pane.
+    var exp = _compositor.CreateExpressionAnimation("-tracker.Position.X");
+    exp.SetReferenceParameter("tracker", _tracker);
+
+    ElementCompositionPreview.GetElementVisual(pageNavigation)
+        .StartAnimation("Translation.X", exp);
 }
 ```
 
@@ -153,4 +156,3 @@ In summary, the steps to using a spring animation in your app:
 1. Assign to target.
     - If you're animating a CompositionObject property, pass in SpringAnimation as parameter to StartAnimation.
     - If you want to use with input, set NaturalMotion property of an InertiaModifier to SpringAnimation.
-
