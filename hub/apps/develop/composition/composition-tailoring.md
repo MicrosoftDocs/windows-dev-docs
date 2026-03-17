@@ -1,14 +1,13 @@
 ---
-title: Composition Tailoring
-description: Use the Composition APIs to tailor your UI, optimize for performance, and accommodate user settings and device characteristics.
-ms.date: 03/16/2023
+title: Composition tailoring for WinUI apps
+description: Use the WinUI composition APIs in the Windows App SDK to tailor your UI, optimize for performance, and accommodate user settings and device characteristics.
+ms.date: 03/16/2026
 ms.topic: how-to
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Tailoring effects & experiences using Windows UI
+# Tailoring effects and experiences
 
-Windows UI provides many beautiful effects, animations, and means for differentiation. However, meeting user expectations for performance and customizability is still a necessary part of creating successful applications. The Universal Windows Platform supports a large, diverse family of devices, which have different features and capabilities. In order to provide an inclusive experience for all your users, you need to ensure your applications scale across devices and respect user preferences. UI tailoring can provide an efficient way to leverage a device’s capabilities and ensure a pleasant and inclusive user experience.
+WinUI provides many beautiful effects, animations, and means for differentiation. However, meeting user expectations for performance and customizability is still a necessary part of creating successful applications. Windows App SDK apps can run across a large, diverse family of Windows devices and configurations, which have different features and capabilities. In order to provide an inclusive experience for all your users, you need to ensure your applications scale across devices and respect user preferences. UI tailoring can provide an efficient way to leverage a device’s capabilities and ensure a pleasant and inclusive user experience.
 
 UI tailoring is a broad category encompassing work for performant, beautiful UI with respect to the following areas:
 
@@ -69,7 +68,7 @@ public MainPage()
 
 ## Leveraging the capabilities API
 
-By leveraging the [CompositionCapabilities](/uwp/api/windows.ui.composition.compositioncapabilities) APIs, you can detect which composition features are available and performant on given hardware and tailor the design to ensure end users get a performant and beautiful experience on any device. The APIs provide a means to check hardware system capabilities in order to implement graceful effect scaling across a variety of form factors. This makes it easy to appropriately tailor the application to create a beautiful and seamless end user experience.
+By leveraging the [CompositionCapabilities](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioncapabilities) APIs, you can detect which composition features are available and performant on given hardware and tailor the design to ensure end users get a performant and beautiful experience on any device. The APIs provide a means to check hardware system capabilities in order to implement graceful effect scaling across a variety of form factors. This makes it easy to appropriately tailor the application to create a beautiful and seamless end user experience.
 
 This API provides methods and an event listener that can be used to make effect scaling decisions for the application UI. The feature detects how well the system can handle complex composition and rendering operations and then returns the information in an easy-to-consume model for developers to utilize.
 
@@ -82,7 +81,7 @@ The API can be added to existing code in a few easy steps.
 1. Acquire the capabilities object in your application’s constructor.
 
     ```cs
-    _capabilities = CompositionCapabilities.GetForCurrentView();
+    _capabilities = new CompositionCapabilities();
     ```
 
 1. Register a capabilities changed event listener for your app.
@@ -106,11 +105,11 @@ The API can be added to existing code in a few easy steps.
     }
     ```
 
-Full example code can be found on the [Windows UI Github repo](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
+Full example code can be found on the [Windows UI GitHub repo](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
 
 ## Fast vs. slow effects
 
-Based on feedback from the provided [AreEffectsSupported](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectssupported) and [AreEffectsFast](/uwp/api/windows.ui.composition.compositioncapabilities.areeffectsfast) methods in the CompositionCapabilities API, the application can decide to swap expensive or unsupported effects for other effects of their choice that are optimized for the device. Some effects are known to consistently be more resource intensive than others and should be used sparingly, and other effects can be used more freely. For all effects, however, care should be used when chaining and animating as some scenarios or combinations may change the performance characteristics of the effect graph. Below are some rule of thumb performance characteristics for individual effects:
+Based on feedback from the provided [AreEffectsSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioncapabilities.areeffectssupported) and [AreEffectsFast](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioncapabilities.areeffectsfast) methods in the CompositionCapabilities API, the application can decide to swap expensive or unsupported effects for other effects of their choice that are optimized for the device. Some effects are known to consistently be more resource intensive than others and should be used sparingly, and other effects can be used more freely. For all effects, however, care should be used when chaining and animating as some scenarios or combinations may change the performance characteristics of the effect graph. Below are some rule of thumb performance characteristics for individual effects:
 
 - Effects that are known to have high performance impact are as follows – Gaussian Blur, Shadow Mask, BackDropBrush, HostBackDropBrush, and Layer Visual. These are not recommended for low end devices [(feature level 9.1-9.3)](/windows/desktop/direct3d11/overviews-direct3d-11-devices-downlevel-intro), and should be used judiciously on high end devices.
 - Effects with medium performance impact include Color Matrix, certain Blend Effect BlendModes (Luminosity, Color, Saturation, and Hue), SpotLight, SceneLightingEffect, and (depending on scenario) BorderEffect. These effects may work with certain scenarios on low end devices, but care should be used when chaining and animating. Recommend restricting use to two or less and animating on transitions only.
@@ -118,5 +117,5 @@ Based on feedback from the provided [AreEffectsSupported](/uwp/api/windows.ui.co
 
 ## Related articles
 
-- [UWP Responsive Design Techniques](/windows/apps/design/layout/responsive-design)
-- [UWP Device Tailoring](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design)
+- [Responsive design techniques](/windows/apps/design/layout/responsive-design)
+- [Device tailoring guidance](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design)

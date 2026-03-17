@@ -1,20 +1,19 @@
 ---
 title: Input-driven animations
-description: Learn about the InputAnimation API, and how to use input-driven animations to create dynamically responding motion in your app UI.
-ms.date: 10/10/2017
+description: Learn about the InputAnimation API in WinUI and Windows App SDK apps, and how to use input-driven animations to create dynamically responding motion in your app UI.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
 # Input-driven animations
 
-This article provides an introduction to the InputAnimation API, and recommends how to use these types of animations in your UI.
+This article provides an introduction to the InputAnimation API in WinUI and Windows App SDK apps, and recommends how to use these types of animations in your UI.
 
 ## Prerequisites
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Relation based animations](../../../../uwp/composition/relation-animations.md)
+- [Relation based animations](relation-animations.md)
 
 ## Smooth motion driven from user interactions
 
@@ -28,7 +27,7 @@ Although touch is one of the more common interfaces end users use to manipulate 
 
 ## Different Input-Driven Motion Experiences
 
-The InputAnimation space provides several different experiences for you to create dynamically responding motion. Like the rest of the Windows UI Animation system, these input-driven animations operate on an independent thread, which helps contribute to the dynamic motion experience. However, in some cases where the experience leverages existing XAML controls and components, parts of those experiences are still UI thread bound.
+The InputAnimation space provides several different experiences for you to create dynamically responding motion. Like the rest of the Windows App SDK Composition Animation system, these input-driven animations operate on an independent thread, which helps contribute to the dynamic motion experience. However, in some cases where the experience leverages existing XAML controls and components, parts of those experiences are still UI thread bound.
 
 There are three core experiences that you create when building dynamic input-driven motion animations:
 
@@ -52,7 +51,7 @@ When creating these types of experiences, there is a general formula to follow:
 1. Create a Composition ExpressionAnimation with an equation that references the Translation property.
 1. Start the animation on a CompositionObject’s property.
 
-For more info on building these experiences, see [Enhance existing ScrollViewer experiences](../../../../uwp/composition/scroll-input-animations.md).
+For more info on building these experiences, see [Enhance existing ScrollViewer experiences](scroll-input-animations.md).
 
 ## Pointer Position-driven experiences
 

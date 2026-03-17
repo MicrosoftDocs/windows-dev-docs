@@ -1,31 +1,30 @@
 ---
 title: Pointer-based animations
-description: Learn how to use the position of a pointer to create dynamic "stick to the cursor" experiences.
-ms.date: 03/23/2021
+description: Learn how to use the position of a pointer in WinUI and Windows App SDK apps to create dynamic "stick to the cursor" experiences.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
 # Pointer-based animations
 
-This article shows how to use the position of a pointer to create dynamic "stick to the cursor" experiences.
+This article shows how to use the position of a pointer in WinUI and Windows App SDK apps to create dynamic "stick to the cursor" experiences.
 
 ## Prerequisites
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
-- [Relation based animations](../../../../uwp/composition/relation-animations.md)
+- [Input-driven animations](input-driven-animations.md)
+- [Relation based animations](relation-animations.md)
 
 ## Why Create Pointer Position-Driven Experiences?
 
-In the [Fluent design language](/windows/apps/fluent-design-system), touch is not the only way to interact with UI. Because UWP spans across multiple device form factors, end users interact with apps with other input modalities such as Mouse and Pen. Using position data from these other input modalities provides an opportunity to make end users feel even more connected with your app.
+In the [Fluent design language](/windows/apps/fluent-design-system), touch is not the only way to interact with UI. Because WinUI apps can span across multiple device form factors, end users interact with apps with other input modalities such as Mouse and Pen. Using position data from these other input modalities provides an opportunity to make end users feel even more connected with your app.
 
 Pointer position-driven experiences let you leverage the on-screen position of a Pointer input modality to create additional motion and UI experiences for your app. These experiences often can provide additional context and feedback to end users about the behavior and structure of the UI. The experience is no longer a one-way stream, but rather starts to become a two-way stream where the end user provides input with their input modality and the app UI can respond back.
 
 Some examples include:
 
-- Animating the position of a [Spotlight](/uwp/api/windows.ui.composition.spotlight) to follow the cursor
+- Animating the position of a [Spotlight](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.spotlight) to follow the cursor
 
     ![Pointer spotlight example](images/animation/spotlight-reveal.gif)
 
@@ -43,7 +42,7 @@ General steps to get started:
 
 1. Identify the UIElement, you wish to have the position of the pointer tracked in.
 1. Access the PointerPositionPropertySet via ElementCompositionPreview.
-    - Pass UIElement into the [ElementCompositionPreview.GetPointerPositionPropertySet](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getpointerpositionpropertyset) method.
+    - Pass UIElement into the [ElementCompositionPreview.GetPointerPositionPropertySet](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.getpointerpositionpropertyset) method.
 1. Create an ExpressionAnimation that references the Position property in the PropertySet.
     - Don't forget to set your reference parameter!
 1. Target a CompositionObject's property with the ExpressionAnimation.

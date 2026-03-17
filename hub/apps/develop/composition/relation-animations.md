@@ -1,16 +1,15 @@
 ---
-title: Relation based animations
-description: Learn how to use ExpressionAnimations to create relation-based animations when motion depends on a property of another object.
-ms.date: 10/16/2020
+title: Relation-based animations
+description: Learn how to use ExpressionAnimation in WinUI and Windows App SDK apps to create relation-based composition animations when motion depends on a property of another object.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
-# Relation based animations
+# Relation-based animations
 
 This article provides a brief overview of how to make relation-based animations using Composition ExpressionAnimations.
 
-## Dynamic Relation-based Experiences
+## Dynamic relation-based experiences
 
 When building out motion experiences in an app, there are times when the motion is not time-based, but rather dependent on a property on another object. KeyFrameAnimations are not able to express these types of motion experiences very easily. In these specific instances, motion no longer needs to be discrete and pre-defined. Instead, the motion can dynamically adapt based on its relationship to other object properties. For example, you can animate the opacity of an object based on its horizontal position. Other examples include motion experiences like Sticky Headers and Parallax.
 
@@ -25,8 +24,8 @@ These types of motion experiences let you create UI that feels more connected, i
 To create relation-based motion experiences, you use the ExpressionAnimation type. ExpressionAnimations (or Expressions for short), are a new type of animation that let you express a mathematical relationship – a relationship that the system uses to calculate the value of an animating property every frame. Put another way, Expressions are simply a mathematical equation that defines the desired value of an animating property per frame. Expressions are a very versatile component that can be used across a wide variety of scenarios, including:
 
 - Relative Size, Offset animations.
-- Sticky Headers, Parallax with ScrollViewer. (See [Enhance existing ScrollViewer experiences](../../../../uwp/composition/scroll-input-animations.md).)
-- Snap Points with InertiaModifiers and InteractionTracker. (See [Create snap points with inertia modifiers](../../../../uwp/composition/inertia-modifiers.md).)
+- Sticky Headers, Parallax with ScrollViewer. (See [Enhance existing ScrollViewer experiences](scroll-input-animations.md).)
+- Snap Points with InertiaModifiers and InteractionTracker. (See [Create snap points with inertia modifiers](inertia-modifiers.md).)
 
 When working with ExpressionAnimations, there are a couple of things worth mentioning up front:
 
@@ -40,13 +39,13 @@ When building the mathematical relationship of an Expression, there are several 
 
 - Parameters – values representing constant values or references to other Composition objects.
 - Mathematical Operators – the typical mathematical operators plus(+), minus(-), multiply(*), divide(/) that join together parameters to form an equation. Also included are conditional operators such as greater than(>), equal(==), ternary operator (condition ? ifTrue : ifFalse), etc.
-- Mathematical Functions – mathematical functions/shortcuts based on System.Numerics. For a full list of supported functions, see [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation).
+- Mathematical Functions – mathematical functions/shortcuts based on System.Numerics. For a full list of supported functions, see [ExpressionAnimation](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.expressionanimation).
 
-Expressions also support a set of keywords – special phrases that have distinct meaning only within the ExpressionAnimation system. These are listed (along with the full list of math functions) in the [ExpressionAnimation](/uwp/api/Windows.UI.Composition.ExpressionAnimation) documentation.
+Expressions also support a set of keywords – special phrases that have distinct meaning only within the ExpressionAnimation system. These are listed (along with the full list of math functions) in the [ExpressionAnimation](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.expressionanimation) documentation.
 
 ### Creating Expressions with ExpressionBuilder
 
-There are two options for building Expressions in your UWP app:
+There are two options for building Expressions in your WinUI app:
 
 1. Build the equation as a string via the official, public API.
 1. Build the equation in a type-safe object model via the ExpressionBuilder tool included with the [Windows Community Toolkit](/windows/communitytoolkit/animations/expressions).
@@ -106,9 +105,7 @@ var orbitRotation = EF.Vector3(
 ```
 
 > [!NOTE]
-> `EF` is a shorthand "using" notation to define ExpressionFunctions.
->
-> `using EF = Microsoft.Toolkit.Uwp.UI.Animations.Expressions.ExpressionFunctions;`
+> `EF` is a shorthand "using" notation to define ExpressionFunctions from your WinUI expression builder library.
 
 Finally, combine these components together and reference the position of the Red Ball to define the mathematical relationship.
 

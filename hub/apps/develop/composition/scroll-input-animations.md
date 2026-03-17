@@ -1,21 +1,20 @@
 ---
 title: Enhance existing ScrollViewer experiences
-description: Learn how to use a XAML ScrollViewer and ExpressionAnimations to create dynamic input-driven motion experiences.
-ms.date: 10/10/2017
+description: Learn how to use a XAML ScrollViewer and ExpressionAnimations in WinUI and Windows App SDK apps to create dynamic input-driven motion experiences.
+ms.date: 03/16/2026
 ms.topic: how-to
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
 # Enhance existing ScrollViewer experiences
 
-This article explains how to use a XAML ScrollViewer and ExpressionAnimations to create dynamic input-driven motion experiences.
+This article explains how to use a WinUI XAML ScrollViewer and ExpressionAnimations to create dynamic input-driven motion experiences.
 
 ## Prerequisites
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
-- [Relation based animations](../../../../uwp/composition/relation-animations.md)
+- [Input-driven animations](input-driven-animations.md)
+- [Relation based animations](relation-animations.md)
 
 ## Why build on top of ScrollViewer?
 

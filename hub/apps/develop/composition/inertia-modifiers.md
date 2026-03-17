@@ -1,22 +1,23 @@
 ---
 title: Use inertia modifiers to create snap points
-description: Learn how to use an InteractionTracker’s InertiaModifier feature to create motion experiences that snap to a specified point.
-ms.date: 10/10/2017
+description: Learn how to use an InteractionTracker's InertiaModifier feature in WinUI to create motion experiences that snap to a specified point.
+ms.date: 03/16/2026
 ms.topic: how-to
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
 # Create snap points with inertia modifiers
 
-In this article, we take a deeper dive into how to use an InteractionTracker’s InertiaModifier feature to create motion experiences that snap to a specified point.
+In this article, we take a deeper dive into how to use an InteractionTracker's InertiaModifier feature to create motion experiences that snap to a specified point in a WinUI app.
+
+In WinUI apps, `InteractionTracker` and the related inertia modifier types are in the `Microsoft.UI.Composition.Interactions` namespace.
 
 ## Prerequisites
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
-- [Custom manipulation experiences with InteractionTracker](../../../../uwp/composition/interaction-tracker-manipulations.md)
-- [Relation based animations](../../../../uwp/composition/relation-animations.md)
+- [Input-driven animations](input-driven-animations.md)
+- [Custom manipulation experiences with InteractionTracker](interaction-tracker-manipulations.md)
+- [Relation based animations](relation-animations.md)
 
 ## What are snap points and why are they useful?
 
@@ -40,9 +41,9 @@ There are 3 types of InertiaModifiers:
 - InteractionTrackerInertiaMotion – a way to define a specific motion InteractionTracker will perform after an interaction or programmatic velocity. The final position will be derived from this motion.
 - InteractionTrackerInertiaNaturalMotion – a way to define the final resting position after an interaction or programmatic velocity but with a physics based animation (NaturalMotionAnimation).
 
-When entering Inertia, InteractionTracker evaluates each of the InertiaModifiers assigned to it and determines if any of them apply. This means you can create and assign multiple InertiaModifiers to an InteractionTracker, But, when defining each, you need to do the following:
+When entering Inertia, InteractionTracker evaluates each of the InertiaModifiers assigned to it and determines if any of them apply. This means you can create and assign multiple InertiaModifiers to an InteractionTracker. But, when defining each, you need to do the following:
 
-1. Define the Condition – an Expression that defines the conditional statement when this specific InertiaModifier should take place. This often requires looking at InteractionTracker’s NaturalRestingPosition (destination given default Inertia).
+1. Define the Condition – an Expression that defines the conditional statement when this specific InertiaModifier should take place. This often requires looking at InteractionTracker's NaturalRestingPosition (destination given default Inertia).
 1. Define the RestingValue/Motion/NaturalMotion – define the actual Resting Value Expression, Motion Expression or NaturalMotionAnimation that takes place when the condition is met.
 
 > [!NOTE]
@@ -73,7 +74,7 @@ private void SetupInput()
 }
 ```
 
-Next, because a Single Mandatory Snap Point behavior either will move the content up or down, you will need two different inertia modifiers: one that moves the Scrollable content up, and one that moves it down.
+Next, because a Single Mandatory Snap Point behavior either will move the content up or down, you will need two different inertia modifiers: one that moves the scrollable content up, and one that moves it down.
 
 ```csharp
 // Snap-Point to move the content up
@@ -82,7 +83,7 @@ var snapUpModifier = InteractionTrackerInertiaRestingValue.Create(_compositor);
 var snapDownModifier = InteractionTrackerInertiaRestingValue.Create(_compositor);
 ```
 
-Whether to snap up or down is determined based on where InteractionTracker naturally would land within relative to the snap distance – the distance between the snap locations. If past the halfway point, then snap down, otherwise snap up. (In this example, you store the snap distance in a PropertySet)
+Whether to snap up or down is determined based on where InteractionTracker naturally would land relative to the snap distance – the distance between the snap locations. If past the halfway point, then snap down, otherwise snap up. (In this example, you store the snap distance in a PropertySet)
 
 ```csharp
 // Is NaturalRestingPosition less than the halfway point between Snap Points?
@@ -113,7 +114,7 @@ snapDownModifier.RestingValue = _compositor.CreateExpressionAnimation(
 snapDownModifier.RestingValue.SetReferenceParameter("prop", _propSet);
 ```
 
-Finally, add the InertiaModifiers to InteractionTracker. Now when InteractionTracker enters it’s InertiaState, it will check the conditions of your InertiaModifiers to see if its position should be modified.
+Finally, add the InertiaModifiers to InteractionTracker. Now when InteractionTracker enters its InertiaState, it will check the conditions of your InertiaModifiers to see if its position should be modified.
 
 ```csharp
 var modifiers = new InteractionTrackerInertiaRestingValue[] { 

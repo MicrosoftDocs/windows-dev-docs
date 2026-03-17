@@ -1,14 +1,13 @@
 ---
-title: Composition Shadows
-description: The shadow APIs let you add dynamic customizable shadows to UI content.
-ms.date: 07/16/2018
+title: Composition shadows in WinUI
+description: The shadow APIs let you add dynamic customizable shadows to WinUI and Windows App SDK UI content.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Shadows in Windows UI
+# Composition shadows
 
-The [DropShadow](/uwp/api/Windows.UI.Composition.DropShadow) class provides means of creating a configurable shadow that can be applied to a [SpriteVisual](/uwp/api/windows.ui.composition.spritevisual) or [LayerVisual](/uwp/api/windows.ui.composition.layervisual) (subtree of Visuals). As is customary for objects in the Visual Layer, all properties of the DropShadow can be animated using CompositionAnimations.
+The [DropShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow) class provides means of creating a configurable shadow that can be applied to a [SpriteVisual](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.spritevisual) or [LayerVisual](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.layervisual) (subtree of Visuals). As is customary for objects in the Visual Layer, all properties of the DropShadow can be animated using CompositionAnimations.
 
 ## Basic drop shadow
 
@@ -34,8 +33,8 @@ basicRectVisual.Shadow = basicShadow;
 There are a few ways to define the shape for your DropShadow:
 
 - **Use the default** - By default the DropShadow shape is defined by the ‘Default’ mode on CompositionDropShadowSourcePolicy. For SpriteVisual, the Default is Rectangular unless a mask is provided. For LayerVisual, Default is to inherit a mask using the alpha of the visual’s brush.
-- **Set a mask** – You may set the [Mask](/uwp/api/windows.ui.composition.dropshadow.mask) property to define an opacity mask for the shadow.
-- **Specify to use Inherited mask** – Set the [SourcePolicy](/uwp/api/windows.ui.composition.dropshadow.sourcepolicy) property to use [CompositionDropShadowSourcePolicy](/uwp/api/windows.ui.composition.compositiondropshadowsourcepolicy). InheritFromVisualContent to use the mask generated from the alpha of the visual’s brush.
+- **Set a mask** – You may set the [Mask](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow.mask) property to define an opacity mask for the shadow.
+- **Specify to use Inherited mask** – Set the [SourcePolicy](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow.sourcepolicy) property to use [CompositionDropShadowSourcePolicy](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositiondropshadowsourcepolicy). InheritFromVisualContent to use the mask generated from the alpha of the visual’s brush.
 
 ## Masking to match your content
 
@@ -103,12 +102,12 @@ blurAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
 shadow.StartAnimation("BlurRadius", blurAnimation);
 ```
 
-## Shadows in XAML
+## Shadows in WinUI XAML
 
-If you want to add a shadow to more complex framework elements, there are a couple ways to interop with shadows between XAML and Composition:
+If you want to add a shadow to more complex framework elements, there are a couple of ways to interop with shadows between WinUI XAML and Composition:
 
-1. Use the `DropShadowPanel` available in the Windows Community Toolkit. See the [DropShadowPanel documentation](/windows/uwpcommunitytoolkit/controls/DropShadowPanel) for details on how to use it.
-1. Create a Visual to use as the shadow host & tie it to the XAML handout Visual.
+1. Use the `DropShadowPanel` available in the CommunityToolkit.WinUI package.
+1. Create a Visual to use as the shadow host and tie it to the XAML hand-off Visual.
 1. Use the Composition Sample Gallery’s [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) custom CompositionShadow control. See the example here for usage.
 
 ## Performance
@@ -125,5 +124,5 @@ Animating Blur Radius | High
 
 ## Additional Resources
 
-- [Composition DropShadow API](/uwp/api/Windows.UI.Composition.DropShadow)
+- [Composition DropShadow API](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow)
 - [WindowsCompositionSamples GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)

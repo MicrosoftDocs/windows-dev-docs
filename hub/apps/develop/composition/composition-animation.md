@@ -1,15 +1,13 @@
 ---
-ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
-title: Composition animations
-description: Many composition object and effect properties can be animated using key frame and expression animations allowing properties of a UI element to change over time or based on a calculation.
-ms.date: 10/10/2017
+title: Composition animations for WinUI
+description: Many Microsoft.UI.Composition object and effect properties can be animated in WinUI and Windows App SDK apps by using key frame and expression animations that change UI properties over time or based on calculations.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Composition animations
 
-The Windows.UI.Composition APIs allows you to create, animate, transform and manipulate compositor objects in a unified API layer. Composition animations provide a powerful and efficient way to run animations in your application UI. They have been designed from the ground up to ensure that your animations run at 60 FPS independent of the UI thread and to give you the flexibility to build amazing experiences using not only time, but input and other properties, to drive animations.
+The Microsoft.UI.Composition APIs allow you to create, animate, transform, and manipulate compositor objects in a unified API layer. Composition animations provide a powerful and efficient way to run animations in your WinUI app UI. They have been designed from the ground up to ensure that your animations run at 60 FPS independent of the UI thread and to give you the flexibility to build amazing experiences using not only time, but input and other properties, to drive animations.
 
 ## Motion in Windows
 
@@ -47,8 +45,8 @@ As a developer creating experiences at the Windows UI layer, you have access to 
 
 | Animation concept | Description |
 | ----------------- | ----------- |
-| [Time-based motion with KeyFrameAnimations](../../../../uwp/composition/time-animations.md)  | KeyFrameAnimations are used to directly control the entirety of a motion experience over a period of time. Developers describing a motion’s start, end, interpolation in between, and duration in a traditional keyframed fashion. |
-| [Relative motion with ExpressionAnimations](../../../../uwp/composition/relation-animations.md)  | ExpressionAnimations are used to describe how a motion of one object’s property should be driven relative to another object’s property. Developers define a mathematical equation that defines the reference-based relationship. |
+| [Time-based motion with KeyFrameAnimations](time-animations.md)  | KeyFrameAnimations are used to directly control the entirety of a motion experience over a period of time. Developers describing a motion’s start, end, interpolation in between, and duration in a traditional keyframed fashion. |
+| [Relative motion with ExpressionAnimations](relation-animations.md)  | ExpressionAnimations are used to describe how a motion of one object’s property should be driven relative to another object’s property. Developers define a mathematical equation that defines the reference-based relationship. |
 | ImplicitAnimations | These animations are trigger-based and are defined separately from core app logic. ImplicitAnimations are used to describe how and when animations occur as a response to direct property changes. |
-| [Input-driven motion with Input Animations](../../../../uwp/composition/input-driven-animations.md)  | Input Animations covers a set of scenarios that enable developers to describe manipulation-based motion via touch or other input modalities. These animations are driven based on active user input or gestures. |
-| [Physics-based motion with NaturalMotionAnimations](../../../../uwp/composition/natural-animations.md)  | NaturalMotionAnimations are used to describe natural and familiar motion experiences based on real-world force driven motion. Rather than defining time, developers define characteristics of the motion (for example, damping ratio for Springs) |
+| [Input-driven motion with Input Animations](input-driven-animations.md)  | Input Animations covers a set of scenarios that enable developers to describe manipulation-based motion via touch or other input modalities. These animations are driven based on active user input or gestures. |
+| [Physics-based motion with NaturalMotionAnimations](natural-animations.md)  | NaturalMotionAnimations are used to describe natural and familiar motion experiences based on real-world force driven motion. Rather than defining time, developers define characteristics of the motion (for example, damping ratio for Springs) |

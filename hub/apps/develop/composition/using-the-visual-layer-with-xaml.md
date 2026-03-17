@@ -1,15 +1,13 @@
 ---
-ms.assetid: b7a4ac8a-d91e-461b-a060-cc6fcea8e778
-title: Using the Visual Layer with XAML
-description: Learn techniques for using the Visual Layer API's in combination with existing XAML content to create advanced animations and effects.
-ms.date: 02/08/2017
+title: Using the Visual Layer with WinUI XAML
+description: Learn techniques for using the Visual Layer APIs with WinUI XAML content to create advanced animations and effects in Windows App SDK apps.
+ms.date: 03/16/2026
 ms.topic: how-to
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Using the Visual Layer with XAML
+# Using the Visual Layer with WinUI XAML
 
-Most apps that consume Visual Layer capabilities will use XAML to define the main UI content. In the Windows 10 Anniversary Update, there are new features in the XAML framework and the Visual Layer that make it easier to combine these two technologies to create stunning user experiences.
+Most WinUI and Windows App SDK apps that consume Visual Layer capabilities will use XAML to define the main UI content. WinUI provides features in the XAML framework and the Visual Layer that make it easier to combine these two technologies to create stunning user experiences.
 XAML and Visual Layer interop functionality can be used to create advanced animations and effects not available using XAML APIs alone. This includes:
 
 - Brush effects like blur and frosted glass
@@ -18,33 +16,33 @@ XAML and Visual Layer interop functionality can be used to create advanced anima
 - Automatic layout animations
 - Pixel-perfect drop shadows
 
-These effects and animations can be applied to existing XAML content, so you don't have to dramatically restructure your XAML app to take advantage of the new functionality.
+These effects and animations can be applied to existing XAML content, so you don't have to dramatically restructure your WinUI app to take advantage of the functionality.
 Layout animations, shadows, and blur effects are covered in the Recipes section below. For a code sample implementing parallax, see the [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). The [WindowsCompositionSamples repository](https://github.com/microsoft/WindowsCompositionSamples) also has several other samples for implementing animations, shadows and effects.
 
-## The XamlCompositionBrushBase class
+## The Microsoft.UI.Xaml.Media.XamlCompositionBrushBase class
 
-**XamlCompositionBrush** provides a base class for XAML brushes that paint an area with a **CompositionBrush**. This can be used to easily apply composition effects like blur or frosted glass to XAML UI elements.
+**XamlCompositionBrushBase** provides a base class for XAML brushes that paint an area with a **CompositionBrush**. This can be used to easily apply composition effects like blur or frosted glass to XAML UI elements.
 
 See the [**Brushes**](/windows/apps/design/style/brushes#xamlcompositionbrushbase) section for more info on using brushes with XAML UI.
 
-For code examples, see the reference page for [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase).
+For code examples, see the reference page for [**XamlCompositionBrushBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase).
 
-## The XamlLight class
+## The Microsoft.UI.Xaml.Media.XamlLight class
 
 **XamlLight** provides a base class for XAML lighting effects that dynamically light an area with a **CompositionLight**.
 
-See the [**Lighting**](../../../../uwp/composition/xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
+See the [**Lighting**](xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
 
-For code examples, see the reference page for [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
+For code examples, see the reference page for [**XamlLight**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamllight).
 
-## The ElementCompositionPreview class
+## Working with WinUI XAML
 
-[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](../../../../uwp/composition/visual-layer.md). The **ElementCompositionPreview** class provides the following methods:
+[**ElementCompositionPreview**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](./visual-layer.md). The **ElementCompositionPreview** class provides the following WinUI interop methods:
 
--   [**GetElementVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get a "handout" Visual that is used to render this element
--   [**SetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
--   [**GetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Retrieve the Visual set using **SetElementChildVisual**
--   [**GetScrollViewerManipulationPropertySet**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get an object that can be used to create 60fps animations based on scroll offset in a **ScrollViewer**
+-   [**GetElementVisual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get a "handout" Visual that is used to render this element
+-   [**SetElementChildVisual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
+-   [**GetElementChildVisual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.getelementchildvisual): Retrieve the Visual set using **SetElementChildVisual**
+-   [**GetScrollViewerManipulationPropertySet**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.getscrollviewermanipulationpropertyset): Get an object that can be used to create 60fps animations based on scroll offset in a **ScrollViewer**
 
 ## Remarks on ElementCompositionPreview.GetElementVisual
 
@@ -90,7 +88,7 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 
 ## **GetAlphaMask** methods
 
-[**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image), [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock), and [**Shape**](/uwp/api/Windows.UI.Xaml.Shapes.Shape) each implement a method called **GetAlphaMask** that returns a **CompositionBrush** representing a grayscale image with the shape of the element. This **CompositionBrush** can serve as an input for a Composition **DropShadow**, so the shadow can reflect the shape of the element instead of a rectangle. This enables pixel perfect, contour-based shadows for text, images with alpha, and shapes. See *Drop Shadow* below for an example of this API.
+[**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image), [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock), and [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) each implement a method called **GetAlphaMask** that returns a **CompositionBrush** representing a grayscale image with the shape of the element. This **CompositionBrush** can serve as an input for a Composition **DropShadow**, so the shadow can reflect the shape of the element instead of a rectangle. This enables pixel perfect, contour-based shadows for text, images with alpha, and shapes. See *Drop Shadow* below for an example of this API.
 
 ## Recipes
 
@@ -141,7 +139,7 @@ Apply a pixel-perfect drop shadow to a **UIElement**, for example an **Ellipse**
 #### Implementation overview
 
 1. Get the handout **Visual** for the host element
-2. Create a Windows.UI.Composition **DropShadow**
+2. Create a Microsoft.UI.Composition **DropShadow**
 3. Configure the **DropShadow** to get its shape from the target element via a mask
     - **DropShadow** is rectangular by default, so this is not necessary if the target is rectangular
 4. Attach shadow to a new **SpriteVisual**, and set the **SpriteVisual** as the child of the host element
@@ -193,13 +191,13 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-The following two listings show the [C++/WinRT](../../../../uwp/cpp-and-winrt-apis/index.md) and [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) equivalents of the previous C&#35; code using the same XAML structure.
+The following listing shows the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) equivalent of the previous C&#35; code using the same XAML structure.
 
 ```cppwinrt
-#include <winrt/Windows.UI.Composition.h>
-#include <winrt/Windows.UI.Xaml.h>
-#include <winrt/Windows.UI.Xaml.Hosting.h>
-#include <winrt/Windows.UI.Xaml.Shapes.h>
+#include <winrt/Microsoft.UI.Composition.h>
+#include <winrt/Microsoft.UI.Xaml.h>
+#include <winrt/Microsoft.UI.Xaml.Hosting.h>
+#include <winrt/Microsoft.UI.Xaml.Shapes.h>
 ...
 MainPage()
 {
@@ -210,14 +208,14 @@ MainPage()
 int32_t MyProperty();
 void MyProperty(int32_t value);
 
-void InitializeDropShadow(Windows::UI::Xaml::UIElement const& shadowHost, Windows::UI::Xaml::Shapes::Shape const& shadowTarget)
+void InitializeDropShadow(Microsoft::UI::Xaml::UIElement const& shadowHost, Microsoft::UI::Xaml::Shapes::Shape const& shadowTarget)
 {
-    auto hostVisual{ Windows::UI::Xaml::Hosting::ElementCompositionPreview::GetElementVisual(shadowHost) };
+    auto hostVisual{ Microsoft::UI::Xaml::Hosting::ElementCompositionPreview::GetElementVisual(shadowHost) };
     auto compositor{ hostVisual.Compositor() };
 
     // Create a drop shadow
     auto dropShadow{ compositor.CreateDropShadow() };
-    dropShadow.Color(Windows::UI::ColorHelper::FromArgb(255, 75, 75, 80));
+    dropShadow.Color(Microsoft::UI::ColorHelper::FromArgb(255, 75, 75, 80));
     dropShadow.BlurRadius(15.0f);
     dropShadow.Offset(Windows::Foundation::Numerics::float3{ 2.5f, 2.5f, 0.0f });
     // Associate the shape of the shadow with the shape of the target element
@@ -228,50 +226,13 @@ void InitializeDropShadow(Windows::UI::Xaml::UIElement const& shadowHost, Window
     shadowVisual.Shadow(dropShadow);
 
     // Add the shadow as a child of the host in the visual tree
-    Windows::UI::Xaml::Hosting::ElementCompositionPreview::SetElementChildVisual(shadowHost, shadowVisual);
+    Microsoft::UI::Xaml::Hosting::ElementCompositionPreview::SetElementChildVisual(shadowHost, shadowVisual);
 
     // Make sure size of shadow host and shadow visual always stay in sync
     auto bindSizeAnimation{ compositor.CreateExpressionAnimation(L"hostVisual.Size") };
     bindSizeAnimation.SetReferenceParameter(L"hostVisual", hostVisual);
 
     shadowVisual.StartAnimation(L"Size", bindSizeAnimation);
-}
-```
-
-```cpp
-#include "WindowsNumerics.h"
-
-MainPage::MainPage()
-{
-    InitializeComponent();
-    InitializeDropShadow(ShadowHost, CircleImage);
-}
-
-void MainPage::InitializeDropShadow(Windows::UI::Xaml::UIElement^ shadowHost, Windows::UI::Xaml::Shapes::Shape^ shadowTarget)
-{
-    auto hostVisual = Windows::UI::Xaml::Hosting::ElementCompositionPreview::GetElementVisual(shadowHost);
-    auto compositor = hostVisual->Compositor;
-
-    // Create a drop shadow
-    auto dropShadow = compositor->CreateDropShadow();
-    dropShadow->Color = Windows::UI::ColorHelper::FromArgb(255, 75, 75, 80);
-    dropShadow->BlurRadius = 15.0f;
-    dropShadow->Offset = Windows::Foundation::Numerics::float3(2.5f, 2.5f, 0.0f);
-    // Associate the shape of the shadow with the shape of the target element
-    dropShadow->Mask = shadowTarget->GetAlphaMask();
-
-    // Create a Visual to hold the shadow
-    auto shadowVisual = compositor->CreateSpriteVisual();
-    shadowVisual->Shadow = dropShadow;
-
-    // Add the shadow as a child of the host in the visual tree
-    Windows::UI::Xaml::Hosting::ElementCompositionPreview::SetElementChildVisual(shadowHost, shadowVisual);
-
-    // Make sure size of shadow host and shadow visual always stay in sync
-    auto bindSizeAnimation = compositor->CreateExpressionAnimation("hostVisual.Size");
-    bindSizeAnimation->SetReferenceParameter("hostVisual", hostVisual);
-
-    shadowVisual->StartAnimation("Size", bindSizeAnimation);
 }
 ```
 
@@ -356,8 +317,8 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## Additional Resources
 
-- [Visual Layer overview](../../../../uwp/composition/visual-layer.md)
-- [**ElementCompositionPreview** class](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
+- [Visual Layer overview](./visual-layer.md)
+- [**ElementCompositionPreview** class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview)
 - Advanced UI and Composition samples in the [WindowsCompositionSamples GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 - [BasicXamlInterop sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)
 - [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems)

@@ -1,34 +1,31 @@
 ---
-title: XAML lighting
-description: Light objects are used in conjunction with SceneLightingEffect to simulate dynamic lighting and reflectivity.
-ms.date: 06/28/2018
+title: XAML lighting in WinUI
+description: Learn how CompositionLight and XamlLight objects work in WinUI and Windows App SDK apps to simulate dynamic lighting and reflectivity.
+ms.date: 03/16/2026
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:
   - csharp
-  - vb
-  - cppcx
   - cppwinrt
 ---
-# XAML lighting
+# XAML lighting in WinUI
 
-[**CompositionLight**](/uwp/api/Windows.UI.Composition.CompositionLight) objects are used in conjunction with [**SceneLightingEffect**](/uwp/api/Windows.UI.Composition.Effects.SceneLightingEffect) to simulate dynamic lighting and reflectivity.
+[**CompositionLight**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionlight) objects are used in conjunction with [**SceneLightingEffect**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.effects.scenelightingeffect) to simulate dynamic lighting and reflectivity.
 
-You can apply lights to [**Visuals**](/uwp/api/Windows.UI.Composition.Visual) and XAML [**UIElements**](/uwp/api/Windows.UI.Xaml.UIElement).
+You can apply lights to [**Visuals**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.visual) and XAML [**UIElements**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement).
 
 ## Applying lights to XAML UIElements
 
-[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](/uwp/api/Windows.UI.Composition.CompositionLight) to dynamically light XAML UIElements. XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.
+[**XamlLight**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamllight) objects are used to apply [**CompositionLights**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionlight) to dynamically light XAML UIElements. XamlLight provides methods for targeting UIElements or XAML Brushes, applying lights to trees of UIElements, and helping manage the lifetime of CompositionLight resources based on whether they're currently in use.
 
 - If you target a **Brush** with a XamlLight then the portions of any UIElements using that Brush are lit by the light.
 - If you target a **UIElement** with a XamlLight then the entire UIElement and its child UIElements are all lit by the light.
 
 ## Creating and using a XamlLight
 
-[**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.
+[**XamlLight**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamllight) is a base class which can be used to create custom lights.
 
-This example shows the definition for a custom XamlLight that applies a multicolored spotlight to targeted UIElements and Brushes.
+This example shows the definition for a custom XamlLight that applies a multicolored spotlight to targeted UIElements and Brushes in WinUI.
 
 ```csharp
 public sealed class OrangeSpotLight : XamlLight
@@ -88,7 +85,7 @@ public sealed class OrangeSpotLight : XamlLight
         {
             // OnConnected is called when the first target UIElement is shown on the screen.
             // This lets you delay creation of the composition object until it's actually needed.
-            var spotLight = Window.Current.Compositor.CreateSpotLight();
+            var spotLight = CompositionTarget.GetCompositorForCurrentThread().CreateSpotLight();
             spotLight.InnerConeColor = Colors.Orange;
             spotLight.OuterConeColor = Colors.Yellow;
             spotLight.InnerConeAngleInDegrees = 30;
@@ -101,7 +98,6 @@ public sealed class OrangeSpotLight : XamlLight
     {
         // OnDisconnected is called when there are no more target UIElements on the screen.
         // The CompositionLight should be disposed when no longer required.
-        // For SDK 15063, see Remarks in the XamlLight class documentation.
         if (CompositionLight != null)
         {
             CompositionLight.Dispose();
@@ -123,81 +119,6 @@ public sealed class OrangeSpotLight : XamlLight
 }
 ```
 
-```vb
-Public NotInheritable Class OrangeSpotLight
-    Inherits XamlLight
-
-    ' Register an attached property that lets you set a UIElement
-    ' or Brush as a target for this light type in markup.
-    Public Shared ReadOnly IsTargetProperty As DependencyProperty = DependencyProperty.RegisterAttached(
-            "IsTarget",
-            GetType(Boolean),
-            GetType(OrangeSpotLight),
-            New PropertyMetadata(Nothing, New PropertyChangedCallback(AddressOf OnIsTargetChanged)
-            )
-        )
-
-    Public Shared Sub SetIsTarget(target As DependencyObject, value As Boolean)
-        target.SetValue(IsTargetProperty, value)
-    End Sub
-
-    Public Shared Function GetIsTarget(target As DependencyObject) As Boolean
-        Return DirectCast(target.GetValue(IsTargetProperty), Boolean)
-    End Function
-
-    ' Handle attached property changed to automatically target And untarget UIElements And Brushes.
-    Public Shared Sub OnIsTargetChanged(obj As DependencyObject, e As DependencyPropertyChangedEventArgs)
-        Dim isAdding = DirectCast(e.NewValue, Boolean)
-
-        If isAdding Then
-            If TypeOf obj Is UIElement Then
-                XamlLight.AddTargetElement(GetIdStatic(), TryCast(obj, UIElement))
-            ElseIf TypeOf obj Is Brush Then
-                XamlLight.AddTargetBrush(GetIdStatic(), TryCast(obj, Brush))
-            End If
-        Else
-            If TypeOf obj Is UIElement Then
-                XamlLight.RemoveTargetElement(GetIdStatic(), TryCast(obj, UIElement))
-            ElseIf TypeOf obj Is Brush Then
-                XamlLight.RemoveTargetBrush(GetIdStatic(), TryCast(obj, Brush))
-            End If
-        End If
-    End Sub
-
-    Protected Overrides Sub OnConnected(newElement As UIElement)
-        If CompositionLight Is Nothing Then
-            ' OnConnected Is called when the first target UIElement Is shown on the screen.
-            ' This lets you delay creation of the composition object until it's actually needed.
-            Dim spotLight = Window.Current.Compositor.CreateSpotLight()
-            spotLight.InnerConeColor = Colors.Orange
-            spotLight.OuterConeColor = Colors.Yellow
-            spotLight.InnerConeAngleInDegrees = 30
-            spotLight.OuterConeAngleInDegrees = 45
-            CompositionLight = spotLight
-        End If
-    End Sub
-
-    Protected Overrides Sub OnDisconnected(oldElement As UIElement)
-        ' OnDisconnected Is called when there are no more target UIElements on the screen.
-        ' The CompositionLight should be disposed when no longer required.
-        If CompositionLight IsNot Nothing Then
-            CompositionLight.Dispose()
-            CompositionLight = Nothing
-        End If
-    End Sub
-
-    Protected Overrides Function GetId() As String
-        Return GetIdStatic()
-    End Function
-
-    Private Shared Function GetIdStatic() As String
-        ' This specifies the unique name of the light.
-        ' In most cases you should use the type's FullName.
-        Return GetType(OrangeSpotLight).FullName
-    End Function
-End Class
-```
-
 ```cppwinrt
 // For the C++/WinRT code example below, you'll need to add a Midl File (.idl) file to your project.
 
@@ -205,12 +126,12 @@ End Class
 namespace MyApp
 {
     [default_interface]
-    runtimeclass OrangeSpotLight : Windows.UI.Xaml.Media.XamlLight
+    runtimeclass OrangeSpotLight : Microsoft.UI.Xaml.Media.XamlLight
     {
         OrangeSpotLight();
-        static Windows.UI.Xaml.DependencyProperty IsTargetProperty{ get; };
-        static Boolean GetIsTarget(Windows.UI.Xaml.DependencyObject target);
-        static void SetIsTarget(Windows.UI.Xaml.DependencyObject target, Boolean value);
+        static Microsoft.UI.Xaml.DependencyProperty IsTargetProperty{ get; };
+        static Boolean GetIsTarget(Microsoft.UI.Xaml.DependencyObject target);
+        static void SetIsTarget(Microsoft.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
@@ -221,22 +142,22 @@ struct OrangeSpotLight : OrangeSpotLightT<OrangeSpotLight>
 
     winrt::hstring GetId();
 
-    static Windows::UI::Xaml::DependencyProperty IsTargetProperty() { return m_isTargetProperty; }
+    static Microsoft::UI::Xaml::DependencyProperty IsTargetProperty() { return m_isTargetProperty; }
 
-    static bool GetIsTarget(Windows::UI::Xaml::DependencyObject const& target)
+    static bool GetIsTarget(Microsoft::UI::Xaml::DependencyObject const& target)
     {
 		return winrt::unbox_value<bool>(target.GetValue(m_isTargetProperty));
 	}
 
-    static void SetIsTarget(Windows::UI::Xaml::DependencyObject const& target, bool value)
+    static void SetIsTarget(Microsoft::UI::Xaml::DependencyObject const& target, bool value)
     {
         target.SetValue(m_isTargetProperty, winrt::box_value(value));
     }
 
-    void OnConnected(Windows::UI::Xaml::UIElement const& newElement);
-    void OnDisconnected(Windows::UI::Xaml::UIElement const& oldElement);
+    void OnConnected(Microsoft::UI::Xaml::UIElement const& newElement);
+    void OnDisconnected(Microsoft::UI::Xaml::UIElement const& oldElement);
 
-    static void OnIsTargetChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e);
+    static void OnIsTargetChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e);
 
     inline static winrt::hstring GetIdStatic()
     {
@@ -245,33 +166,33 @@ struct OrangeSpotLight : OrangeSpotLightT<OrangeSpotLight>
     }
 
 private:
-	static Windows::UI::Xaml::DependencyProperty m_isTargetProperty;
+	static Microsoft::UI::Xaml::DependencyProperty m_isTargetProperty;
 };
 
 // OrangeSpotLight.cpp
-Windows::UI::Xaml::DependencyProperty OrangeSpotLight::m_isTargetProperty =
-    Windows::UI::Xaml::DependencyProperty::RegisterAttached(
+Microsoft::UI::Xaml::DependencyProperty OrangeSpotLight::m_isTargetProperty =
+    Microsoft::UI::Xaml::DependencyProperty::RegisterAttached(
         L"IsTarget",
         winrt::xaml_typename<bool>(),
         winrt::xaml_typename<MyApp::OrangeSpotLight>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(false), Windows::UI::Xaml::PropertyChangedCallback{ &OrangeSpotLight::OnIsTargetChanged } }
+        Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(false), Microsoft::UI::Xaml::PropertyChangedCallback{ &OrangeSpotLight::OnIsTargetChanged } }
 );
 
-void OrangeSpotLight::OnConnected(Windows::UI::Xaml::UIElement const& /* newElement */)
+void OrangeSpotLight::OnConnected(Microsoft::UI::Xaml::UIElement const& /* newElement */)
 {
     if (!CompositionLight())
     {
         // OnConnected is called when the first target UIElement is shown on the screen. This enables delaying composition object creation until it's actually necessary.
-        auto spotLight{ Windows::UI::Xaml::Window::Current().Compositor().CreateSpotLight() };
-        spotLight.InnerConeColor(Windows::UI::Colors::Orange());
-        spotLight.OuterConeColor(Windows::UI::Colors::Yellow());
+        auto spotLight{ Microsoft::UI::Xaml::Media::CompositionTarget::GetCompositorForCurrentThread().CreateSpotLight() };
+        spotLight.InnerConeColor(Microsoft::UI::Colors::Orange());
+        spotLight.OuterConeColor(Microsoft::UI::Colors::Yellow());
         spotLight.InnerConeAngleInDegrees(30);
         spotLight.OuterConeAngleInDegrees(45);
         CompositionLight(spotLight);
     }
 }
 
-void OrangeSpotLight::OnDisconnected(Windows::UI::Xaml::UIElement const& /* oldElement */)
+void OrangeSpotLight::OnDisconnected(Microsoft::UI::Xaml::UIElement const& /* oldElement */)
 {
     // OnDisconnected is called when there are no more target UIElements on the screen.
     // Dispose of composition resources when no longer in use.
@@ -286,10 +207,10 @@ winrt::hstring OrangeSpotLight::GetId()
     return OrangeSpotLight::GetIdStatic();
 }
 
-void OrangeSpotLight::OnIsTargetChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+void OrangeSpotLight::OnIsTargetChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
 {
-    auto uie{ d.try_as<Windows::UI::Xaml::UIElement>() };
-    auto brush{ d.try_as<Windows::UI::Xaml::Media::Brush>() };
+    auto uie{ d.try_as<Microsoft::UI::Xaml::UIElement>() };
+    auto brush{ d.try_as<Microsoft::UI::Xaml::Media::Brush>() };
 
     auto isAdding = winrt::unbox_value<bool>(e.NewValue());
     if (isAdding)
@@ -297,22 +218,22 @@ void OrangeSpotLight::OnIsTargetChanged(Windows::UI::Xaml::DependencyObject cons
 
         if (uie)
         {
-            Windows::UI::Xaml::Media::XamlLight::AddTargetElement(OrangeSpotLight::GetIdStatic(), uie);
+            Microsoft::UI::Xaml::Media::XamlLight::AddTargetElement(OrangeSpotLight::GetIdStatic(), uie);
         }
         else if (brush)
         {
-            Windows::UI::Xaml::Media::XamlLight::AddTargetBrush(OrangeSpotLight::GetIdStatic(), brush);
+            Microsoft::UI::Xaml::Media::XamlLight::AddTargetBrush(OrangeSpotLight::GetIdStatic(), brush);
         }
     }
     else
     {
         if (uie)
         {
-            Windows::UI::Xaml::Media::XamlLight::RemoveTargetElement(OrangeSpotLight::GetIdStatic(), uie);
+            Microsoft::UI::Xaml::Media::XamlLight::RemoveTargetElement(OrangeSpotLight::GetIdStatic(), uie);
         }
         else if (brush)
         {
-            Windows::UI::Xaml::Media::XamlLight::RemoveTargetBrush(OrangeSpotLight::GetIdStatic(), brush);
+            Microsoft::UI::Xaml::Media::XamlLight::RemoveTargetBrush(OrangeSpotLight::GetIdStatic(), brush);
         }
     }
 }
@@ -334,127 +255,10 @@ struct MainPage : MainPageT<MainPage>
 };
 ```
 
-```cppcx
-// OrangeSpotLight.h:
-public ref class OrangeSpotLight sealed :
-    public Windows::UI::Xaml::Media::XamlLight
-{
-public:
-    OrangeSpotLight();
-
-    static property Windows::UI::Xaml::DependencyProperty^ IsTargetProperty
-    {
-        Windows::UI::Xaml::DependencyProperty^ get() { return m_isTargetProperty; }
-    };
-    static void SetIsTarget(Windows::UI::Xaml::DependencyObject^ target, bool value);
-    static bool GetIsTarget(Windows::UI::Xaml::DependencyObject^ target);
-
-protected:
-    virtual void OnConnected(Windows::UI::Xaml::UIElement^ newElement) override;
-    virtual void OnDisconnected(Windows::UI::Xaml::UIElement^ oldElement) override;
-    virtual Platform::String^ GetId() override;
-
-private:
-    static Windows::UI::Xaml::DependencyProperty^ m_isTargetProperty;
-    static void OnIsTargetChanged(Windows::UI::Xaml::DependencyObject^ obj, Windows::UI::Xaml::DependencyPropertyChangedEventArgs^ e);
-
-    inline static Platform::String^ GetIdStatic()
-    {
-        // This specifies the unique name of the light. In most cases you should use the type's FullName.
-        return OrangeSpotLight::typeid->FullName;
-    }
-};
-
-//OrangeSpotLight.cpp:
-
-// Register an attached property that lets you set a UIElement
-// or Brush as a target for this light type in markup.
-DependencyProperty^ OrangeSpotLight::m_isTargetProperty = DependencyProperty::RegisterAttached(
-    "IsTarget",
-    bool::typeid,
-    OrangeSpotLight::typeid,
-    ref new PropertyMetadata(0.0, ref new PropertyChangedCallback(OnIsTargetChanged))
-);
-
-OrangeSpotLight::OrangeSpotLight()
-{
-}
-
-void OrangeSpotLight::SetIsTarget(DependencyObject^ target, bool value)
-{
-    target->SetValue(IsTargetProperty, value);
-}
-
-bool OrangeSpotLight::GetIsTarget(DependencyObject^ target)
-{
-    return static_cast<bool>(target->GetValue(IsTargetProperty));
-}
-
-// Handle attached property changed to automatically target and untarget UIElements and Brushes.
-void OrangeSpotLight::OnIsTargetChanged(DependencyObject^ obj, DependencyPropertyChangedEventArgs^ e)
-{
-    auto isAdding = static_cast<bool>(e->NewValue);
-
-    if (isAdding)
-    {
-        if (dynamic_cast<UIElement^>(obj))
-        {
-            XamlLight::AddTargetElement(GetIdStatic(), static_cast<UIElement^>(obj));
-        }
-        else if (dynamic_cast<Brush^>(obj))
-        {
-            XamlLight::AddTargetBrush(GetIdStatic(), static_cast<Brush^>(obj));
-        }
-    }
-    else
-    {
-        if (dynamic_cast<UIElement^>(obj))
-        {
-            XamlLight::RemoveTargetElement(GetIdStatic(), static_cast<UIElement^>(obj));
-        }
-        else if (dynamic_cast<Brush^>(obj))
-        {
-            XamlLight::RemoveTargetBrush(GetIdStatic(), static_cast<Brush^>(obj));
-        }
-    }
-}
-void OrangeSpotLight::OnConnected(UIElement^ newElement)
-{
-    if (CompositionLight == nullptr)
-    {
-        // OnConnected is called when the first target UIElement is shown on the screen.
-        // This lets you delay creation of the composition object until it's actually needed.
-        auto spotLight = Window::Current->Compositor->CreateSpotLight();
-        spotLight->InnerConeColor = Colors::Orange;
-        spotLight->OuterConeColor = Colors::Yellow;
-        spotLight->InnerConeAngleInDegrees = 30;
-        spotLight->OuterConeAngleInDegrees = 45;
-        CompositionLight = spotLight;
-    }
-}
-
-void OrangeSpotLight::OnDisconnected(UIElement^ oldElement)
-{
-    // OnDisconnected is called when there are no more target UIElements on the screen.
-    // The CompositionLight should be disposed when no longer required.
-    // For SDK 15063, see Remarks in the XamlLight class documentation.
-    if (CompositionLight != nullptr)
-    {
-        delete CompositionLight;
-        CompositionLight = nullptr;
-    }
-}
-
-Platform::String^ OrangeSpotLight::GetId()
-{
-    return GetIdStatic();
-}
-```
-
 You can then apply this light to any XAML UIElement or Brush to light them. This example shows different potential usages.
 
 > [!Important]
-> For [C++/WinRT](../../../../uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
+> For [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
 
 ```xaml
 <StackPanel Width="100">

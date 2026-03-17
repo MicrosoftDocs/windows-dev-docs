@@ -1,18 +1,17 @@
 ---
 title: Time animations
-description: Learn how to use KeyFrameAnimations classes to create time-based animations that guide users through UI changes.
-ms.date: 12/12/2018
+description: Learn how to use KeyFrameAnimation classes in WinUI and Windows App SDK apps to create time-based composition animations that guide users through UI changes.
+ms.date: 03/16/2026
 ms.topic: how-to
-keywords: windows 10, uwp, animation
 ms.localizationpriority: medium
 ---
-# Time based animations
+# Time-based animations for
 
 When a component in, or an entire user experience changes, end users often observe it in two ways: over time or instantaneously. On the Windows platform, the former is preferred over the latter -  user experiences that instantly change often confuse and surprise end users because they are not able to follow what happened. The end user then perceives the experience as jarring and unnatural.
 
 Instead, you can change your UI over time to guide the end user through, or notify them of changes to the experience. On the Windows platform, this is done by using time-based animations, also known as KeyFrameAnimations. KeyFrameAnimations let you change a UI over time and control each aspect of the animation, including how and when it starts, and how it reaches its end state. For example, animating an object to a new position over 300 milliseconds is more pleasant than instantly "teleporting" it there. When using animations instead of instantaneous changes, the net result is a more pleasant and appealing experience.
 
-## Types of time based Animations
+## Types of time-based animations
 
 There are two categories of time-based animations you can use to build beautiful user experiences on Windows:
 
@@ -30,7 +29,7 @@ For both explicit and implicit time based animations, there are different types,
 - Vector3KeyFrameAnimation
 - Vector4KeyFrameAnimation
 
-## Create time based animations with KeyFrameAnimations
+## Create time-based animations with KeyFrameAnimations
 
 Before describing how to create explicit time-based animations with KeyFrameAnimations, let’s go over a few concepts.
 
@@ -47,7 +46,7 @@ Before describing how to create explicit time-based animations with KeyFrameAnim
 - Animation Group – starting multiple animations at the same time.
   - Often used when wanting to animate multiple properties at the same time.
 
-For more info, see [CompositionAnimationGroup](/uwp/api/windows.ui.composition.compositionanimationgroup).
+For more info, see [CompositionAnimationGroup](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionanimationgroup).
 
 With these concepts in mind, let’s talk through the general formula for constructing a KeyFrameAnimation:
 
@@ -84,7 +83,7 @@ Then you define the properties of the KeyFrameAnimation to describe it’s durat
 
 ```csharp
     animation.Duration = TimeSpan.FromSeconds(2);
-    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
+    animation.Direction = Microsoft.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
 ```
@@ -103,7 +102,7 @@ private void AnimateSquare(Compositor compositor, SpriteVisual redVisual)
     Vector3KeyFrameAnimation animation = compositor.CreateVector3KeyFrameAnimation();
     animation.InsertKeyFrame(1f, new Vector3(200f, 0f, 0f));
     animation.Duration = TimeSpan.FromSeconds(2);
-    animation.Direction = Windows.UI.Composition.AnimationDirection.Alternate;
+    animation.Direction = Microsoft.UI.Composition.AnimationDirection.Alternate;
     // Run animation for 10 times
     animation.IterationCount = 10;
     redVisual.StartAnimation("Offset", animation);
