@@ -18,6 +18,20 @@ Mouse utilities in PowerToys is a collection of features that enhance mouse and 
 ## CursorWrap
 CursorWrap helps you move your mouse faster by allowing the cursor to seamlessly wrap around the edges of the screen. When enabled, moving past the top, bottom, left, or right edge instantly brings the cursor back on the opposite side, reducing long mouse travel and making navigation smoother on both single- and multi-monitor setups.
 
+### Settings
+
+From the settings page, you can configure the following options:
+
+| Setting | Description |
+| :--- | :--- |
+| Enable CursorWrap | Toggle to enable or disable CursorWrap. |
+| Activation shortcut | The customizable keyboard command to toggle CursorWrap on or off. |
+| Automatically activate on utility startup | When enabled, CursorWrap activates automatically when the utility starts. |
+| Disable wrapping while dragging | Prevents the cursor from wrapping while dragging items. |
+| Wrap mode | Choose between **Vertical and horizontal**, **Vertical only**, or **Horizontal only**. |
+| Wrapping activation | Control when cursor wrapping occurs as the pointer reaches the screen edge. Options: **Always**, **Holding Ctrl**, or **Holding Shift**. |
+| Disable wrapping when using a single monitor | Prevents the cursor from wrapping when only one monitor is connected. |
+
 ## Find My Mouse
 
 Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight dismisses on its own shortly after the mouse stops moving. It has an option to use a transparent spotlight with independent backdrop and spotlight opacities, boosting focus and accessibility.
@@ -31,7 +45,10 @@ From the settings page, you can configure the following options:
 | Setting | Description |
 | :--- | :--- |
 | Activation method | Choose between **Press Left Ctrl twice**, **Press Right Ctrl twice**, **Shake mouse**, or **Custom shortcut**. |
+| Only activate while holding the Windows key | When using the Press Left Ctrl twice or Press Right Ctrl twice activation method, requires also holding the Windows key. |
 | Minimum distance to shake | Adjust sensitivity. |
+| Shake detection interval (ms) | Time window used to monitor mouse movement for shake detection. Shorter intervals may detect quicker shakes. (default: 1000ms) |
+| Shake sensitivity factor (percent) | Determines how far the pointer must move, relative to the screen diagonal, to count as a shake. Lower values make it more sensitive. (default: 2000) |
 | Activation shortcut | The custom shortcut used to activate the spotlight. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
 | Overlay opacity | The opacity of the spotlight backdrop. (default: 50%) |
@@ -55,6 +72,7 @@ From the settings page, you can configure the following options:
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn mouse highlighting on or off. |
+| Automatically activate on utility startup | When enabled, Mouse Highlighter activates automatically when the utility starts. |
 | Primary button highlight color | The highlighter color for the primary mouse button. |
 | Secondary button highlight color | The highlighter color for the secondary mouse button. |
 | Always highlight color | The highlighter color for the mouse pointer. |
@@ -88,6 +106,7 @@ The gliding cursor option is an accessibility feature that lets you control the 
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn mouse crosshairs on or off. |
+| Automatically activate on utility startup | When enabled, Mouse Pointer Crosshairs activates automatically when the utility starts. |
 | Color | The color for the crosshairs. |
 | Opacity | (default: 75%) |
 | Center radius | (default: 20px) |
