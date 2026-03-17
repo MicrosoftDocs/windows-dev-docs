@@ -13,7 +13,7 @@ The [DropShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dro
 
 To create a basic shadow, simply create a new DropShadow and associate it to your visual. The shadow is rectangular by default. A standard set of properties are available to tweak the look and feel of your shadow.
 
-```cs
+```csharp
 var basicRectVisual = _compositor.CreateSpriteVisual();
 basicRectVisual.Brush = _compositor.CreateColorBrush(Colors.Blue);
 basicRectVisual.Offset = new Vector3(100, 100, 20);
@@ -40,7 +40,7 @@ There are a few ways to define the shape for your DropShadow:
 
 If you want your shadow to match the Visual’s content you can either use the Visual’s brush for your Shadow mask property, or set the shadow to automatically inherit mask from the content. If using a LayerVisual, the shadow will inherit the mask by default.
 
-```cs
+```csharp
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
 var imageBrush = _compositor.CreateSurfaceBrush(imageSurface);
 
@@ -66,7 +66,7 @@ In some cases, you may want to shape the shadow such that it doesn’t match you
 
 In the below example, we load two surfaces - one for the Visual content and one for the Shadow mask:
 
-```cs
+```csharp
 var imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/myImage.png"));
 var imageBrush = _compositor.CreateSurfaceBrush(imageSurface);
 
@@ -92,7 +92,7 @@ imageSpriteVisual.Shadow = shadow;
 
 As is standard in the Visual Layer, DropShadow properties can be animated using Composition Animations. Below, we modify the code from the sprinkles sample above to animate the blur radius for the shadow.
 
-```cs
+```csharp
 ScalarKeyFrameAnimation blurAnimation = _compositor.CreateScalarKeyFrameAnimation();
 blurAnimation.InsertKeyFrame(0.0f, 25.0f);
 blurAnimation.InsertKeyFrame(0.7f, 50.0f);

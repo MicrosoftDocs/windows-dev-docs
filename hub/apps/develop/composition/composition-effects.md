@@ -52,7 +52,7 @@ See Win2D’s [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Wi
 
 Effects can be chained, allowing an application to simultaneously use multiple effects on an image. Effect graphs can support multiple effects that can refer to one and other. When describing your effect, simply add an effect as input to your effect.
 
-```cs
+```csharp
 IGraphicsEffect graphicsEffect =
 new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
 {
@@ -83,13 +83,13 @@ When compiling the effect description above, you have the flexibility of either 
 
 Compiling an effect with saturation baked in:
 
-```cs
+```csharp
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 ```
 
 Compiling an effect with dynamic saturation:
 
-```cs
+```csharp
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{"SaturationEffect.Saturation"});
 _catEffect = effectFactory.CreateBrush();
 _catEffect.SetSourceParameter("mySource", surfaceBrush);
@@ -100,7 +100,7 @@ The saturation property of the effect above can then be either set to a static v
 
 You can create a ScalarKeyFrame that will be used to animate the Saturation property of an effect like this:
 
-```cs
+```csharp
 ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimation();
             effectAnimation.InsertKeyFrame(0f, 0f);
             effectAnimation.InsertKeyFrame(0.50f, 1f);
@@ -111,7 +111,7 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
 
 Start the animation on the Saturation property of the effect like this:
 
-```cs
+```csharp
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
@@ -156,7 +156,7 @@ In the next few steps we will use composition API’s to apply a saturation effe
 
 ### Setting your Composition Basics
 
-```cs
+```csharp
 _compositor = ElementCompositionPreview.GetElementVisual(MyHost).Compositor;
 _root = _compositor.CreateContainerVisual();
 ElementCompositionPreview.SetElementChildVisual(MyHost, _root);
@@ -164,7 +164,7 @@ ElementCompositionPreview.SetElementChildVisual(MyHost, _root);
 
 ### Creating a CompositionSurface Brush
 
-```cs
+```csharp
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
 LoadedImageSurface imageSurface = LoadedImageSurface.StartLoadFromUri(new Uri("ms-appx:///Assets/cat.png"));
 surfaceBrush.Surface = imageSurface;
@@ -174,7 +174,7 @@ surfaceBrush.Surface = imageSurface;
 
 1. Create the graphics effect.
 
-    ```cs
+    ```csharp
     var graphicsEffect = new SaturationEffect
     {
         Saturation = 0.0f,
@@ -184,7 +184,7 @@ surfaceBrush.Surface = imageSurface;
 
 1. Compile the effect and create the effect brush.
 
-    ```cs
+    ```csharp
     var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 
     var catEffect = effectFactory.CreateBrush();
@@ -193,7 +193,7 @@ surfaceBrush.Surface = imageSurface;
 
 1. Create a SpriteVisual in the composition tree and apply the effect.
 
-    ```cs
+    ```csharp
     var catVisual = _compositor.CreateSpriteVisual();
     catVisual.Brush = catEffect;
     catVisual.Size = new Vector2(219, 300);

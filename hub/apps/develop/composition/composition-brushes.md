@@ -55,7 +55,7 @@ The following illustration and code shows a small visual tree to create a rectan
 
 ![CompositionColorBrush](images/composition-compositioncolorbrush.png)
 
-```cs
+```csharp
 Compositor _compositor;
 ContainerVisual _container;
 SpriteVisual _colorVisual1, _colorVisual2;
@@ -87,7 +87,7 @@ The following illustration and code shows a SpriteVisual painted with a LinearGr
 
 ![CompositionLinearGradientBrush](images/composition-compositionlineargradientbrush.png)
 
-```cs
+```csharp
 Compositor _compositor;
 SpriteVisual _gradientVisual;
 CompositionLinearGradientBrush _redyellowBrush;
@@ -110,7 +110,7 @@ The following illustration and code shows a SpriteVisual painted with a RadialGr
 
 ![CompositionRadialGradientBrush](images/radial-gradient-brush.png)
 
-```cs
+```csharp
 Compositor _compositor;
 SpriteVisual _gradientVisual;
 CompositionRadialGradientBrush RGBrush;
@@ -133,7 +133,7 @@ The following illustration and code shows a SpriteVisual painted with a bitmap o
 
 ![CompositionSurfaceBrush](images/composition-compositionsurfacebrush.png)
 
-```cs
+```csharp
 Compositor _compositor;
 SpriteVisual _imageVisual;
 CompositionSurfaceBrush _imageBrush;
@@ -156,7 +156,7 @@ A [CompositionSurfaceBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.comp
 
 The following code shows a SpriteVisual painted with a text run rendered onto an ICompositionSurface by using Win2D. To use Win2D with WinUI, install the [Microsoft.Graphics.Win2D NuGet package](https://www.nuget.org/packages/Microsoft.Graphics.Win2D) in your project.
 
-```cs
+```csharp
 Compositor _compositor;
 CanvasDevice _device;
 CompositionGraphicsDevice _compositionGraphicsDevice;
@@ -203,7 +203,7 @@ A [CompositionSurfaceBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.comp
 
 The following code shows a SpriteVisual painted with a video loaded onto an ICompositionSurface.
 
-```cs
+```csharp
 Compositor _compositor;
 SpriteVisual _videoVisual;
 CompositionSurfaceBrush _videoBrush;
@@ -236,7 +236,7 @@ The following illustration and code shows a SpriteVisual painted with an image o
 
 ![CompositionEffectBrush](images/composition-cat-desaturated.png)
 
-```cs
+```csharp
 Compositor _compositor;
 SpriteVisual _effectVisual;
 CompositionEffectBrush _effectBrush;
@@ -273,7 +273,7 @@ The following illustration and code shows a SpriteVisual painted with a Composit
 
 ![CompositionMaskBrush](images/composition-compositionmaskbrush.png)
 
-```cs
+```csharp
 Compositor _compositor;
 SpriteVisual _maskVisual;
 CompositionMaskBrush _maskBrush;
@@ -301,7 +301,7 @@ A [CompositionNineGridBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.com
 
 The following code shows a SpriteVisual painted with a CompositionNineGridBrush. The source of the mask is a CompositionSurfaceBrush which is stretched using a Nine-Grid.
 
-```cs
+```csharp
 Compositor _compositor;
 SpriteVisual _nineGridVisual;
 CompositionNineGridBrush _nineGridBrush;
@@ -332,7 +332,7 @@ A [CompositionBackdropBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.com
 
 The following code shows a small visual tree to create an image using CompositionSurfaceBrush and a frosted glass overlay above the image. The frosted glass overlay is created by placing a SpriteVisual filled with an EffectBrush above the image. The EffectBrush uses a CompositionBackdropBrush as an input to the blur effect.
 
-```cs
+```csharp
 Compositor _compositor;
 ContainerVisual _containerVisual;
 SpriteVisual _imageVisual;

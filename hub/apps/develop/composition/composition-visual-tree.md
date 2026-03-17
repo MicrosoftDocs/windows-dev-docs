@@ -42,7 +42,7 @@ This shows a number of basic concepts for working with the API including:
 
 Creating a [**Compositor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositor) and storing it in a variable for use as a factory is a simple task. In a WinUI app, you typically retrieve the compositor from a XAML element that is already connected to the visual tree:
 
-```cs
+```csharp
 Compositor compositor = ElementCompositionPreview.GetElementVisual(MyHost).Compositor;
 ```
 
@@ -52,7 +52,7 @@ If you need a compositor and do not have a UIElement available, you can use `Com
 
 Using the [**Compositor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositor) it's easy to create objects whenever you need them, such as a [**SpriteVisual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.spritevisual) and a [**CompositionColorBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositioncolorbrush):
 
-```cs
+```csharp
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
@@ -63,7 +63,7 @@ While this is only a few lines of code, it demonstrates a powerful concept: [**S
 
 The [**Compositor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositor) can also be used to create clips to a [**Visual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.visual). Below is an example from the sample of using the [**InsetClip**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.insetclip) to trim each side of the visual:
 
-```cs
+```csharp
 var clip = _compositor.CreateInsetClip();
 clip.LeftInset = 1.0f;
 clip.RightInset = 1.0f;
@@ -78,7 +78,7 @@ Like other objects in the API, [**InsetClip**](/windows/windows-app-sdk/api/winr
 
 A [**Visual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.visual) can be transformed with a rotation. Note that [**RotationAngle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.visual.rotationangle) supports both radians and degrees. It defaults to radians, but it's easy to specify degrees as shown in the following snippet:
 
-```cs
+```csharp
 child.RotationAngleInDegrees = 45.0f;
 ```
 
@@ -88,7 +88,7 @@ Rotation is just one example of a set of transform components provided by the AP
 
 Setting the opacity of a visual is a simple operation using a float value. For example, in the sample all the squares start at .8 opacity:
 
-```cs
+```csharp
 visual.Opacity = 0.8f;
 ```
 
@@ -100,7 +100,7 @@ The Composition API allows for a Visual's position in a [**VisualCollection**](/
 
 In the sample, a [**Visual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.visual) that has been clicked is sorted to the top:
 
-```cs
+```csharp
 parent.Children.InsertAtTop(_currentVisual);
 ```
 
@@ -123,7 +123,7 @@ In the full WinUI sample, all of the concepts above are used together to constru
 </Page>
 ```
 
-```cs
+```csharp
 using System;
 using System.Numerics;
 using Microsoft.UI.Composition;

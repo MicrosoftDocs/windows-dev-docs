@@ -43,7 +43,7 @@ When lights target a Visual (add to [Targets](/windows/windows-app-sdk/api/winrt
 
 In the sample below, we use a PointLight to target a XAML TextBlock.
 
-```cs
+```csharp
     _pointLight = _compositor.CreatePointLight();
     _pointLight.Color = Colors.White;
     _pointLight.CoordinateSpace = text; //set up co-ordinate space for offset
@@ -52,7 +52,7 @@ In the sample below, we use a PointLight to target a XAML TextBlock.
 
 By adding animation to the offset of the point light, a shimmering effect is easily achieved.
 
-```cs
+```csharp
 _pointLight.Offset = new Vector3(-(float)TextBlock.ActualWidth, (float)TextBlock.ActualHeight / 2, (float)TextBlock.FontSize);
 ```
 
@@ -121,7 +121,7 @@ Property | Description
 
 The sample below shows how to add a normal map to a SceneLightingEffect.
 
-```cs
+```csharp
 CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 {
     var colorSourceEffect = new ColorSourceEffect()

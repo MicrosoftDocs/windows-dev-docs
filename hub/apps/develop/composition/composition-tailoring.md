@@ -36,7 +36,7 @@ When turned off, acrylic material will automatically fall back to a solid color 
 
 However, for any custom effects the application needs to respond to the [UISettings.AdvancedEffectsEnabled](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabled) property or [AdvancedEffectsEnabledChanged](/uwp/api/windows.ui.viewmanagement.uisettings.advancedeffectsenabledchanged) event and switch out the effect/effect graph to use an effect that has no transparency. An example of this is below:
 
-```cs
+```csharp
 public MainPage()
 {
    var uisettings = new UISettings();
@@ -56,7 +56,7 @@ Similarly, applications should listen and respond to the [UISettings.AnimationsE
 
 ![Animations Option in Settings](images/tailoring-animations-setting.png)
 
-```cs
+```csharp
 public MainPage()
 {
    var uisettings = new UISettings();
@@ -80,20 +80,20 @@ The API can be added to existing code in a few easy steps.
 
 1. Acquire the capabilities object in your application’s constructor.
 
-    ```cs
+    ```csharp
     _capabilities = new CompositionCapabilities();
     ```
 
 1. Register a capabilities changed event listener for your app.
 
-    ```cs
+    ```csharp
     _capabilities.Changed += HandleCapabilitiesChanged;
     ```
 
 1. Add content to the event callback method to handle various capabilities levels. This may or may not be similar to the next step below.
 1. When using effects, check the capabilities object first. Consider using conditional checks or switch control statements, depending on how you want to tailor the effects.
 
-    ```cs
+    ```csharp
     if (_capabilities.AreEffectsSupported())
     {
         // Add incremental effects updates here
