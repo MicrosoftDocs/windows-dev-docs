@@ -5,7 +5,7 @@ ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-# Tailoring effects and experiences in WinUI
+# Tailoring effects and experiences
 
 WinUI provides many beautiful effects, animations, and means for differentiation. However, meeting user expectations for performance and customizability is still a necessary part of creating successful applications. Windows App SDK apps can run across a large, diverse family of Windows devices and configurations, which have different features and capabilities. In order to provide an inclusive experience for all your users, you need to ensure your applications scale across devices and respect user preferences. UI tailoring can provide an efficient way to leverage a device’s capabilities and ensure a pleasant and inclusive user experience.
 

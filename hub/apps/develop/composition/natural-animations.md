@@ -1,11 +1,11 @@
 ---
-title: Natural motion animations in WinUI
+title: Natural motion animations
 description: Learn how to use natural motion animations in WinUI and Windows App SDK app UI.
 ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Natural motion animations in WinUI
+# Natural motion animations
 
 This article provides a brief overview of the NaturalMotionAnimation space and how to conceptually think about using these types of animations in your UI.
 

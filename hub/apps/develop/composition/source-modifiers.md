@@ -1,11 +1,11 @@
 ---
-title: Pull-to-refresh with source modifiers in WinUI
+title: Pull-to-refresh with source modifiers
 description: Learn how to use an InteractionTracker's SourceModifier feature in WinUI and Windows App SDK apps to create a custom pull-to-refresh control.
 ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Pull-to-refresh with source modifiers in WinUI
+# Pull-to-refresh with source modifiers
 
 In this article, we take a deeper dive into how to use an InteractionTracker’s SourceModifier feature and demonstrate its use by creating a custom pull-to-refresh control.
 

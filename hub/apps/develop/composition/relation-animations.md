@@ -1,11 +1,11 @@
 ---
-title: Relation-based animations in WinUI composition
+title: Relation-based animations
 description: Learn how to use ExpressionAnimation in WinUI and Windows App SDK apps to create relation-based composition animations when motion depends on a property of another object.
 ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Relation-based animations for WinUI composition
+# Relation-based animations
 
 This article provides a brief overview of how to make relation-based animations using Composition ExpressionAnimations.
 

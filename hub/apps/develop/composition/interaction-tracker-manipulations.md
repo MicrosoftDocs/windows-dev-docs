@@ -1,11 +1,11 @@
 ---
-title: Custom manipulation experiences with InteractionTracker in WinUI
+title: Custom manipulation experiences with InteractionTracker
 description: Use the InteractionTracker APIs in WinUI and Windows App SDK apps to create custom manipulation experiences.
 ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Custom manipulation experiences with InteractionTracker in WinUI
+# Custom manipulation experiences with InteractionTracker
 
 In this article, we show how to use InteractionTracker to create custom manipulation experiences.
 

@@ -5,7 +5,7 @@ ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Composition effects in WinUI
+# Composition effects
 
 The [**Microsoft.UI.Composition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) APIs allow real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll walk through the functionality that lets you apply effects to a composition visual in WinUI and Windows App SDK apps.
 

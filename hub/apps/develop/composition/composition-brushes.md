@@ -6,7 +6,7 @@ ms.topic: article
 ms.custom: 19H1
 ms.localizationpriority: medium
 ---
-# Composition brushes in WinUI
+# Composition brushes
 Everything visible on your screen in a WinUI app is visible because it was painted by a brush. Brushes enable you to paint user interface (UI) objects with content ranging from simple solid colors to images, drawings, and complex effect chains. This topic introduces the concepts of painting with CompositionBrush.
 
 When working with a WinUI XAML app, you can choose to paint a UIElement with a [XAML brush](/windows/apps/design/style/brushes) or a [CompositionBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionbrush). Typically, it is easier to choose a XAML brush if your scenario is already supported by one. For example, animating the color of a button or changing the fill of text or a shape with an image. If you need something that is not supported by a XAML brush, such as an animated mask, an animated nine-grid stretch, or an effect chain, you can use a CompositionBrush to paint a UIElement through [XamlCompositionBrushBase](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase).

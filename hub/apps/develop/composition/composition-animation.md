@@ -5,7 +5,7 @@ ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Composition animations for WinUI
+# Composition animations
 
 The Microsoft.UI.Composition APIs allow you to create, animate, transform, and manipulate compositor objects in a unified API layer. Composition animations provide a powerful and efficient way to run animations in your WinUI app UI. They have been designed from the ground up to ensure that your animations run at 60 FPS independent of the UI thread and to give you the flexibility to build amazing experiences using not only time, but input and other properties, to drive animations.
 

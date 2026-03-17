@@ -11044,6 +11044,111 @@
       "source_path": "hub/apps/design/signature-experiences/iconography.md",
       "redirect_url": "/windows/apps/design/iconography",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-animation.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-animation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-brushes.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-brushes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-effects.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-effects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-lighting.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-lighting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-native-interop.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-native-interop",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-shadows.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-shadows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-tailoring.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-tailoring",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/composition-visual-tree.md",
+      "redirect_url": "/windows/apps/develop/composition/composition-visual-tree",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/inertia-modifiers.md",
+      "redirect_url": "/windows/apps/develop/composition/inertia-modifiers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/input-driven-animations.md",
+      "redirect_url": "/windows/apps/develop/composition/input-driven-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/interaction-tracker-manipulations.md",
+      "redirect_url": "/windows/apps/develop/composition/interaction-tracker-manipulations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/natural-animations.md",
+      "redirect_url": "/windows/apps/develop/composition/natural-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/pointer-input-animations.md",
+      "redirect_url": "/windows/apps/develop/composition/pointer-input-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/relation-animations.md",
+      "redirect_url": "/windows/apps/develop/composition/relation-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/scroll-input-animations.md",
+      "redirect_url": "/windows/apps/develop/composition/scroll-input-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/source-modifiers.md",
+      "redirect_url": "/windows/apps/develop/composition/source-modifiers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/spring-animations.md",
+      "redirect_url": "/windows/apps/develop/composition/spring-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/time-animations.md",
+      "redirect_url": "/windows/apps/develop/composition/time-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/using-the-visual-layer-with-xaml.md",
+      "redirect_url": "/windows/apps/develop/composition/using-the-visual-layer-with-xaml",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/visual-layer.md",
+      "redirect_url": "/windows/apps/develop/composition/visual-layer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/composition/xaml-lighting.md",
+      "redirect_url": "/windows/apps/develop/composition/xaml-lighting",
+      "redirect_document_id": false
     }
   ]
 }

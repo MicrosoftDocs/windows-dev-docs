@@ -1,11 +1,11 @@
 ---
-title: Composition visuals in WinUI apps
+title: Composition visuals
 description: Composition visuals make up the visual tree structure that Microsoft.UI.Composition uses in WinUI and Windows App SDK apps. You can create one or many visual objects, each representing a single node in a visual tree.
 ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Composition visuals in WinUI apps
+# Composition visuals
 
 Composition Visuals make up the visual tree structure that all other features of the Microsoft.UI.Composition API use and build on. The API allows developers to define and create one or many visual objects, each representing a single node in a visual tree.
 

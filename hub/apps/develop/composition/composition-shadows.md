@@ -5,7 +5,7 @@ ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Composition shadows in WinUI
+# Composition shadows
 
 The [DropShadow](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow) class provides means of creating a configurable shadow that can be applied to a [SpriteVisual](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.spritevisual) or [LayerVisual](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.layervisual) (subtree of Visuals). As is customary for objects in the Visual Layer, all properties of the DropShadow can be animated using CompositionAnimations.
 

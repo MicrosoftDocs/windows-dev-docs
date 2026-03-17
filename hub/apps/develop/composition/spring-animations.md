@@ -1,11 +1,11 @@
 ---
-title: Spring animations in WinUI
+title: Spring animations
 description: Learn how to create spring motion experiences in WinUI and Windows App SDK apps by using the NaturalMotionAnimation APIs.
 ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-# Spring animations in WinUI
+# Spring animations
 
 This article shows how to use spring NaturalMotionAnimations in WinUI.
 

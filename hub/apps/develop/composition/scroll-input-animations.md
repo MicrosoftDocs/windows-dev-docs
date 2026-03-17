@@ -1,11 +1,11 @@
 ---
-title: Enhance existing ScrollViewer experiences in WinUI
+title: Enhance existing ScrollViewer experiences
 description: Learn how to use a XAML ScrollViewer and ExpressionAnimations in WinUI and Windows App SDK apps to create dynamic input-driven motion experiences.
 ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-# Enhance existing ScrollViewer experiences in WinUI
+# Enhance existing ScrollViewer experiences
 
 This article explains how to use a WinUI XAML ScrollViewer and ExpressionAnimations to create dynamic input-driven motion experiences.
 

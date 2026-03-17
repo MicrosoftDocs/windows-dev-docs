@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Composition native interoperation with DirectX and Direct2D for WinUI
+# Composition native interoperation with DirectX and Direct2D
 
 > [!IMPORTANT]
 > This article is being adapted from UWP documentation for Windows App SDK/WinUI. Some code examples in this article still reference UWP-specific APIs such as `CoreWindow`, `CoreApplicationView`, and `CoreDispatcher`, which are **not available** in WinUI/Windows App SDK. The WinUI equivalents are:

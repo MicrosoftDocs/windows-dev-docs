@@ -1,11 +1,11 @@
 ---
-title: Time animations in WinUI composition
+title: Time animations
 description: Learn how to use KeyFrameAnimation classes in WinUI and Windows App SDK apps to create time-based composition animations that guide users through UI changes.
 ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-# Time-based animations for WinUI composition
+# Time-based animations for
 
 When a component in, or an entire user experience changes, end users often observe it in two ways: over time or instantaneously. On the Windows platform, the former is preferred over the latter -  user experiences that instantly change often confuse and surprise end users because they are not able to follow what happened. The end user then perceives the experience as jarring and unnatural.
 

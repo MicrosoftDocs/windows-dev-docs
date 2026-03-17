@@ -1,11 +1,11 @@
 ---
-title: Input-driven animations for WinUI
+title: Input-driven animations
 description: Learn about the InputAnimation API in WinUI and Windows App SDK apps, and how to use input-driven animations to create dynamically responding motion in your app UI.
 ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Input-driven animations for WinUI
+# Input-driven animations
 
 This article provides an introduction to the InputAnimation API in WinUI and Windows App SDK apps, and recommends how to use these types of animations in your UI.
 

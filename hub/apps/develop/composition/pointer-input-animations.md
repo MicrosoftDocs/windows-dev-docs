@@ -1,11 +1,11 @@
 ---
-title: Pointer-based animations for WinUI
+title: Pointer-based animations
 description: Learn how to use the position of a pointer in WinUI and Windows App SDK apps to create dynamic "stick to the cursor" experiences.
 ms.date: 03/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
-# Pointer-based animations for WinUI
+# Pointer-based animations
 
 This article shows how to use the position of a pointer in WinUI and Windows App SDK apps to create dynamic "stick to the cursor" experiences.
 

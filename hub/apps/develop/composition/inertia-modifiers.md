@@ -1,11 +1,11 @@
 ---
-title: Use inertia modifiers to create snap points in WinUI
+title: Use inertia modifiers to create snap points
 description: Learn how to use an InteractionTracker's InertiaModifier feature in WinUI to create motion experiences that snap to a specified point.
 ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-# Create snap points with inertia modifiers in WinUI
+# Create snap points with inertia modifiers
 
 In this article, we take a deeper dive into how to use an InteractionTracker's InertiaModifier feature to create motion experiences that snap to a specified point in a WinUI app.
 

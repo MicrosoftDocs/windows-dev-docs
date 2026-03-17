@@ -5,7 +5,7 @@ ms.date: 03/16/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
-# Using lights in WinUI
+# Using lights
 
 The Microsoft.UI.Composition APIs in the Windows App SDK enable you to create real-time animations and effects. Composition lighting enables 3D lighting in 2D applications. In this overview, we will run through the functionality of how to set up composition lights, identify visuals to receive each light, and use effects to define materials for your content.
 
