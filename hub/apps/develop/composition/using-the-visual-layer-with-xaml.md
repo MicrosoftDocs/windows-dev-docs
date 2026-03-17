@@ -1,11 +1,11 @@
 ---
-title: Using the Visual Layer with WinUI XAML
+title: Use the Visual Layer with WinUI XAML
 description: Learn techniques for using the Visual Layer APIs with WinUI XAML content to create advanced animations and effects in Windows App SDK apps.
 ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-# Using the Visual Layer with WinUI XAML
+# Use the Visual Layer with WinUI XAML
 
 Most WinUI and Windows App SDK apps that consume Visual Layer capabilities will use XAML to define the main UI content. WinUI provides features in the XAML framework and the Visual Layer that make it easier to combine these two technologies to create stunning user experiences.
 XAML and Visual Layer interop functionality can be used to create advanced animations and effects not available using XAML APIs alone. This includes:
@@ -19,17 +19,17 @@ XAML and Visual Layer interop functionality can be used to create advanced anima
 These effects and animations can be applied to existing XAML content, so you don't have to dramatically restructure your WinUI app to take advantage of the functionality.
 Layout animations, shadows, and blur effects are covered in the Recipes section below. For a code sample implementing parallax, see the [ParallaxingListItems sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/ParallaxingListItems). The [WindowsCompositionSamples repository](https://github.com/microsoft/WindowsCompositionSamples) also has several other samples for implementing animations, shadows and effects.
 
-## The Microsoft.UI.Xaml.Media.XamlCompositionBrushBase class
+## The XamlCompositionBrushBase class
 
-**XamlCompositionBrushBase** provides a base class for XAML brushes that paint an area with a **CompositionBrush**. This can be used to easily apply composition effects like blur or frosted glass to XAML UI elements.
+**Microsoft.UI.Xaml.Media.XamlCompositionBrushBase** provides a base class for XAML brushes that paint an area with a **CompositionBrush**. This can be used to easily apply composition effects like blur or frosted glass to XAML UI elements.
 
 See the [**Brushes**](/windows/apps/design/style/brushes#xamlcompositionbrushbase) section for more info on using brushes with XAML UI.
 
 For code examples, see the reference page for [**XamlCompositionBrushBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase).
 
-## The Microsoft.UI.Xaml.Media.XamlLight class
+## The XamlLight class
 
-**XamlLight** provides a base class for XAML lighting effects that dynamically light an area with a **CompositionLight**.
+**Microsoft.UI.Xaml.Media.XamlLight** provides a base class for XAML lighting effects that dynamically light an area with a **CompositionLight**.
 
 See the [**Lighting**](xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
 
@@ -44,15 +44,15 @@ For code examples, see the reference page for [**XamlLight**](/windows/windows-a
 -   [**GetElementChildVisual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.getelementchildvisual): Retrieve the Visual set using **SetElementChildVisual**
 -   [**GetScrollViewerManipulationPropertySet**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.elementcompositionpreview.getscrollviewermanipulationpropertyset): Get an object that can be used to create 60fps animations based on scroll offset in a **ScrollViewer**
 
-## Remarks on ElementCompositionPreview.GetElementVisual
+### GetElementVisual
 
-**ElementCompositionPreview.GetElementVisual** returns a “handout” Visual that is used to render the given **UIElement**. Properties such as **Visual.Opacity**, **Visual.Offset**, and **Visual.Size** are set by the XAML framework based on the state of the UIElement. This enables techniques such as implicit reposition animations (see *Recipes*).
+**ElementCompositionPreview.GetElementVisual** returns a "handout" Visual that is used to render the given **UIElement**. Properties such as **Visual.Opacity**, **Visual.Offset**, and **Visual.Size** are set by the XAML framework based on the state of the UIElement. This enables techniques such as implicit reposition animations (see *Recipes*).
 
 Note that since **Offset** and **Size** are set as the result of XAML framework layout, developers should be careful when modifying or animating these properties. Developers should only modify or animate Offset when the element’s top-left corner has the same position as that of its parent in layout. Size should generally not be modified, but accessing the property may be useful. For example, the Drop Shadow and Frosted Glass samples below use Size of a handout Visual as input to an animation.
 
 As an additional caveat, updated properties of the handout Visual will not be reflected in the corresponding UIElement. So for example, setting **UIElement.Opacity** to 0.5 will set the corresponding handout Visual’s Opacity to 0.5. However, setting the handout Visual’s **Opacity** to 0.5 will cause the content to appear at 50% opacity, but will not change the value of the corresponding UIElement’s Opacity property.
 
-### Example of **Offset** animation
+### Example of Offset animation
 
 #### Incorrect
 
@@ -82,11 +82,11 @@ ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", par
 ElementCompositionPreview.GetElementVisual(MyImage).StartAnimation("Offset", parallaxAnimation);
 ```
 
-## The **ElementCompositionPreview.SetElementChildVisual** method
+### SetElementChildVisual
 
 **ElementCompositionPreview.SetElementChildVisual** allows the developer to supply a “handin” Visual that will appear as part of an element’s Visual Tree. This allows developers to create a “Composition Island” where Visual-based content can appear inside a XAML UI. Developers should be conservative about using this technique because Visual-based content will not have the same accessibility and user experience guarantees of XAML content. Therefore, it is generally recommended that this technique only be used when necessary to implement custom effects such as those found in the Recipes section below.
 
-## **GetAlphaMask** methods
+## GetAlphaMask methods
 
 [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image), [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock), and [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) each implement a method called **GetAlphaMask** that returns a **CompositionBrush** representing a grayscale image with the shape of the element. This **CompositionBrush** can serve as an input for a Composition **DropShadow**, so the shadow can reflect the shape of the element instead of a rectangle. This enables pixel perfect, contour-based shadows for text, images with alpha, and shapes. See *Drop Shadow* below for an example of this API.
 
