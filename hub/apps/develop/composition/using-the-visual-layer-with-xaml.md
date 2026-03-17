@@ -33,13 +33,13 @@ For code examples, see the reference page for [**XamlCompositionBrushBase**](/uw
 
 **XamlLight** provides a base class for XAML lighting effects that dynamically light an area with a **CompositionLight**.
 
-See the [**Lighting**](xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
+See the [**Lighting**](../../../../uwp/composition/xaml-lighting.md) section for more info on using lights, including lighting XAML UI elements.
 
 For code examples, see the reference page for [**XamlLight**](/uwp/api/windows.ui.xaml.media.xamllight).
 
 ## The ElementCompositionPreview class
 
-[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](./visual-layer.md). The **ElementCompositionPreview** class provides the following methods:
+[**ElementCompositionPreview**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview) is a static class that provides XAML and Visual Layer interop functionality. For an overview of the Visual Layer and its functionality, see [Visual Layer](../../../../uwp/composition/visual-layer.md). The **ElementCompositionPreview** class provides the following methods:
 
 -   [**GetElementVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.getelementvisual): Get a "handout" Visual that is used to render this element
 -   [**SetElementChildVisual**](/uwp/api/windows.ui.xaml.hosting.elementcompositionpreview.setelementchildvisual): Sets a "handin" Visual as the last child of this element’s visual tree. This Visual will draw on top of the rest of the element. 
@@ -193,7 +193,7 @@ private void InitializeDropShadow(UIElement shadowHost, Shape shadowTarget)
 }
 ```
 
-The following two listings show the [C++/WinRT](../cpp-and-winrt-apis/index.md) and [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) equivalents of the previous C&#35; code using the same XAML structure.
+The following two listings show the [C++/WinRT](../../../../uwp/cpp-and-winrt-apis/index.md) and [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) equivalents of the previous C&#35; code using the same XAML structure.
 
 ```cppwinrt
 #include <winrt/Windows.UI.Composition.h>
@@ -356,7 +356,7 @@ private void InitializeFrostedGlass(UIElement glassHost)
 
 ## Additional Resources
 
-- [Visual Layer overview](./visual-layer.md)
+- [Visual Layer overview](../../../../uwp/composition/visual-layer.md)
 - [**ElementCompositionPreview** class](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview)
 - Advanced UI and Composition samples in the [WindowsCompositionSamples GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 - [BasicXamlInterop sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2010586/BasicXamlInterop)

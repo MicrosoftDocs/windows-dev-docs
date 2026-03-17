@@ -14,9 +14,9 @@ In this article, we take a deeper dive into how to use an InteractionTracker’s
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](input-driven-animations.md)
-- [Custom manipulation experiences with InteractionTracker](interaction-tracker-manipulations.md)
-- [Relation based animations](relation-animations.md)
+- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
+- [Custom manipulation experiences with InteractionTracker](../../../../uwp/composition/interaction-tracker-manipulations.md)
+- [Relation based animations](../../../../uwp/composition/relation-animations.md)
 
 ## What are snap points and why are they useful?
 

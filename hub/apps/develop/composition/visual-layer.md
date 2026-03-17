@@ -34,7 +34,7 @@ The primary functions of the Visual layer are:
 
 Content is hosted, transformed and made available for use by the animation and effects system using visuals. At the base of the class hierarchy is the [**Visual**](/uwp/api/Windows.UI.Composition.Visual) class, a lightweight, thread-agile proxy in the app process for visual state in the compositor. Sub-classes of Visual include  [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual) to allow for children to create trees of visuals and [**SpriteVisual**](/uwp/api/Windows.UI.Composition.SpriteVisual) that contains content and can be painted with either solid colors, custom drawn content or visual effects. Together, these Visual types make up the visual tree structure for 2D UI and back most visible XAML FrameworkElements.
 
-For more information, see the [Composition Visual](composition-visual-tree.md) overview.
+For more information, see the [Composition Visual](../../../../uwp/composition/composition-visual-tree.md) overview.
 
 ### Effects
 
@@ -42,19 +42,19 @@ The Effects system in the Visual layer lets you apply a chain of filter and tran
 
 In addition to animatable effect chains, the Visual Layer also supports a lighting model that allows Visuals to mimic material properties by responding to animatable lights. Visuals may also cast shadows. Lighting and shadows can be combined to create a perception of depth and realism.
 
-For more information, see the [Composition Effects](composition-effects.md) overview.
+For more information, see the [Composition Effects](../../../../uwp/composition/composition-effects.md) overview.
 
 ### Animations
 
 The animation system in the Visual layer lets you move visuals, animate effects, and drive transformations, clips, and other properties.  It is a framework agnostic system that has been designed from the ground up with performance in mind.  It runs independently from the UI thread to ensure smoothness and scalability.  While it lets you use familiar KeyFrame animations to drive property changes over time, it also lets you set up mathematical relationships between different properties, including user input, letting you directly craft seamless choreographed experiences.
 
-For more information, see the [Composition animations](composition-animation.md) overview.
+For more information, see the [Composition animations](../../../../uwp/composition/composition-animation.md) overview.
 
 ### Working with your XAML UWP app
 
 You can get to a Visual created by the XAML framework, and backing a visible FrameworkElement, using the [**ElementCompositionPreview**](/uwp/api/Windows.UI.Xaml.Hosting.ElementCompositionPreview) class in [**Windows.UI.Xaml.Hosting**](/uwp/api/Windows.UI.Xaml.Hosting). Note that Visuals created for you by the framework come with some limits on customization. This is because the framework is managing offsets, transforms and lifetimes. You can however create your own Visuals and attach them to an existing XAML element via ElementCompositionPreview, or by adding it to an existing ContainerVisual somewhere in the visual tree structure.
 
-For more information, see the [Using the Visual layer with XAML](using-the-visual-layer-with-xaml.md) overview.
+For more information, see the [Using the Visual layer with XAML](../../../../uwp/composition/using-the-visual-layer-with-xaml.md) overview.
 
 ### Working with your desktop app
 

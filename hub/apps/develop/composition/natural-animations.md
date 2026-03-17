@@ -37,7 +37,7 @@ On the other end of the spectrum, there are simulations often seen in gaming and
 
 ## Using NaturalMotionAnimations
 
-Starting with the Fall Creators Update, you have access to a new motion experience: **spring animations**. See [Spring animations](spring-animations.md) for a more in depth walkthrough of springs.
+Starting with the Fall Creators Update, you have access to a new motion experience: **spring animations**. See [Spring animations](../../../../uwp/composition/spring-animations.md) for a more in depth walkthrough of springs.
 
 This motion type is achieved by using the new NaturalMotionAnimation – a new animation type centered on enabling developers to build more familiar and natural feeling motion into their UI, with a balance of control and dynamism. They expose the following capabilities:
 

@@ -454,7 +454,7 @@ Platform::String^ OrangeSpotLight::GetId()
 You can then apply this light to any XAML UIElement or Brush to light them. This example shows different potential usages.
 
 > [!Important]
-> For [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
+> For [C++/WinRT](../../../../uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
 
 ```xaml
 <StackPanel Width="100">

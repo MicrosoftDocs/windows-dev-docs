@@ -14,7 +14,7 @@ This article provides an introduction to the InputAnimation API, and recommends 
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Relation based animations](relation-animations.md)
+- [Relation based animations](../../../../uwp/composition/relation-animations.md)
 
 ## Smooth motion driven from user interactions
 
@@ -52,7 +52,7 @@ When creating these types of experiences, there is a general formula to follow:
 1. Create a Composition ExpressionAnimation with an equation that references the Translation property.
 1. Start the animation on a CompositionObject’s property.
 
-For more info on building these experiences, see [Enhance existing ScrollViewer experiences](scroll-input-animations.md).
+For more info on building these experiences, see [Enhance existing ScrollViewer experiences](../../../../uwp/composition/scroll-input-animations.md).
 
 ## Pointer Position-driven experiences
 

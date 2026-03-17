@@ -14,8 +14,8 @@ In this article, we show how to use InteractionTracker to create custom manipula
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](input-driven-animations.md)
-- [Relation based animations](relation-animations.md)
+- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
+- [Relation based animations](../../../../uwp/composition/relation-animations.md)
 
 ## Why create custom manipulation experiences?
 
@@ -161,5 +161,5 @@ private void InteractionTrackerSetup(Compositor compositor, Visual hitTestRoot)
 
 For more advanced usages of InteractionTracker, see the following articles:
 
-- [Create snap points with InertiaModifiers](inertia-modifiers.md)
-- [Pull-to-refresh with SourceModifiers](source-modifiers.md)
+- [Create snap points with InertiaModifiers](../../../../uwp/composition/inertia-modifiers.md)
+- [Pull-to-refresh with SourceModifiers](../../../../uwp/composition/source-modifiers.md)

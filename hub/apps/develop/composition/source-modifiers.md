@@ -14,13 +14,13 @@ In this article, we take a deeper dive into how to use an InteractionTracker’s
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](input-driven-animations.md)
-- [Custom manipulation experiences with InteractionTracker](interaction-tracker-manipulations.md)
-- [Relation based animations](relation-animations.md)
+- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
+- [Custom manipulation experiences with InteractionTracker](../../../../uwp/composition/interaction-tracker-manipulations.md)
+- [Relation based animations](../../../../uwp/composition/relation-animations.md)
 
 ## What is a SourceModifier and why are they useful?
 
-Like [InertiaModifiers](inertia-modifiers.md), SourceModifiers give you finer grain control over the motion of an InteractionTracker. But unlike InertiaModifiers that define the motion after InteractionTracker enters inertia, SourceModifiers define the motion while InteractionTracker is still in its interacting state. In these cases, you want a different experience than the traditional "stick to the finger".
+Like [InertiaModifiers](../../../../uwp/composition/inertia-modifiers.md), SourceModifiers give you finer grain control over the motion of an InteractionTracker. But unlike InertiaModifiers that define the motion after InteractionTracker enters inertia, SourceModifiers define the motion while InteractionTracker is still in its interacting state. In these cases, you want a different experience than the traditional "stick to the finger".
 
 A classic example of this is the pull-to-refresh experience - when the user pulls the list to refresh the contents and the list pans at the same speed as the finger and stops after a certain distance, the motion would feel abrupt and mechanical. A more natural experience would be to introduce a feel of resistance while the user actively interacts with the list. This small nuance helps make the overall end user experience of interacting with a list more dynamic and appealing. In the Example section, we go into more detail about how to build this.
 

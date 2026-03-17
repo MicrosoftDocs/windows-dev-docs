@@ -14,7 +14,7 @@ The article shows how to use spring NaturalMotionAnimations.
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Natural motion animations](natural-animations.md)
+- [Natural motion animations](../../../../uwp/composition/natural-animations.md)
 
 ## Why springs?
 
@@ -101,7 +101,7 @@ Now what if you wanted to tie this motion to input? So if the end user swipes ou
 
 ![Spring animation on swipe](images/animation/spring-animation-on-swipe.gif)
 
-To do this, you can take our same Spring Animation and pass it into an InertiaModifier with InteractionTracker. For more information about InputAnimations and InteractionTracker, see [Custom manipulation experiences with InteractionTracker](interaction-tracker-manipulations.md). We’ll assume for this code example, you have already setup your InteractionTracker and VisualInteractionSource. We’ll focus on creating the InertiaModifiers that will take in a NaturalMotionAnimation, in this case a spring.
+To do this, you can take our same Spring Animation and pass it into an InertiaModifier with InteractionTracker. For more information about InputAnimations and InteractionTracker, see [Custom manipulation experiences with InteractionTracker](../../../../uwp/composition/interaction-tracker-manipulations.md). We’ll assume for this code example, you have already setup your InteractionTracker and VisualInteractionSource. We’ll focus on creating the InertiaModifiers that will take in a NaturalMotionAnimation, in this case a spring.
 
 ```csharp
 // InteractionTracker and the VisualInteractionSource previously setup

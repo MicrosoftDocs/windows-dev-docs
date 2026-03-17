@@ -32,7 +32,7 @@ When working with the Visual layer, a CompositionBrush must be used to paint the
 -   [Related Topics](./composition-brushes.md#related-topics)
 
 ## Prerequisites
-This overview assumes that you are familiar with the structure of a basic Composition application, as described in the [Visual layer overview](visual-layer.md).
+This overview assumes that you are familiar with the structure of a basic Composition application, as described in the [Visual layer overview](../../../../uwp/composition/visual-layer.md).
 
 ## Paint with a CompositionBrush
 
@@ -259,7 +259,7 @@ _effectVisual.Brush = _effectBrush;
 _effectVisual.Size = new Vector2(156, 156);
 ```
 
-For more information on creating an Effect using CompositionBrushes see [Effects in Visual layer](./composition-effects.md)
+For more information on creating an Effect using CompositionBrushes see [Effects in Visual layer](../../../../uwp/composition/composition-effects.md)
 
 ### Paint with a CompositionBrush with opacity mask applied
 
@@ -472,6 +472,6 @@ The following table provides a list of scenarios and whether XAML or Composition
 
 ## Related Topics
 
-[Composition native DirectX and Direct2D interop with BeginDraw and EndDraw](composition-native-interop.md)
+[Composition native DirectX and Direct2D interop with BeginDraw and EndDraw](../../../../uwp/composition/composition-native-interop.md)
 
 [XAML brush interop with XamlCompositionBrushBase](/windows/apps/design/style/brushes#xamlcompositionbrushbase)

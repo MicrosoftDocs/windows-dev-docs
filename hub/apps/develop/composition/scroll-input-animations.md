@@ -14,8 +14,8 @@ This article explains how to use a XAML ScrollViewer and ExpressionAnimations to
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](input-driven-animations.md)
-- [Relation based animations](relation-animations.md)
+- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
+- [Relation based animations](../../../../uwp/composition/relation-animations.md)
 
 ## Why build on top of ScrollViewer?
 

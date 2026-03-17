@@ -25,8 +25,8 @@ These types of motion experiences let you create UI that feels more connected, i
 To create relation-based motion experiences, you use the ExpressionAnimation type. ExpressionAnimations (or Expressions for short), are a new type of animation that let you express a mathematical relationship – a relationship that the system uses to calculate the value of an animating property every frame. Put another way, Expressions are simply a mathematical equation that defines the desired value of an animating property per frame. Expressions are a very versatile component that can be used across a wide variety of scenarios, including:
 
 - Relative Size, Offset animations.
-- Sticky Headers, Parallax with ScrollViewer. (See [Enhance existing ScrollViewer experiences](scroll-input-animations.md).)
-- Snap Points with InertiaModifiers and InteractionTracker. (See [Create snap points with inertia modifiers](inertia-modifiers.md).)
+- Sticky Headers, Parallax with ScrollViewer. (See [Enhance existing ScrollViewer experiences](../../../../uwp/composition/scroll-input-animations.md).)
+- Snap Points with InertiaModifiers and InteractionTracker. (See [Create snap points with inertia modifiers](../../../../uwp/composition/inertia-modifiers.md).)
 
 When working with ExpressionAnimations, there are a couple of things worth mentioning up front:
 

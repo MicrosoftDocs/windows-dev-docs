@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 The [**Windows.UI.Composition**](/uwp/api/Windows.UI.Composition) APIs allows real-time effects to be applied to images and UI with animatable effect properties. In this overview, we’ll run through the functionality available that allows effects to be applied to a composition visual.
 
-To support [Universal Windows Platform (UWP)](../get-started/universal-application-platform-guide.md) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/WinUI2/html/N_Microsoft_Graphics_Canvas_Effects.htm) Namespace.
+To support [Universal Windows Platform (UWP)](../../../../uwp/get-started/universal-application-platform-guide.md) consistency for developers describing effects in their applications, composition effects leverage Win2D’s IGraphicsEffect interface to use effect descriptions via the [Microsoft.Graphics.Canvas.Effects](https://microsoft.github.io/Win2D/WinUI2/html/N_Microsoft_Graphics_Canvas_Effects.htm) Namespace.
 
 Brush effects are used to paint areas of an application by applying effects to a set of existing images. Windows 10 composition effect APIs are focused on Sprite Visuals. The SpriteVisual allows for flexibility and interplay in color, image and effect creation. The SpriteVisual is a composition visual type that can fill a 2D rectangle with a brush. The visual defines the bounds of the rectangle and the brush defines the pixels used to paint the rectangle.
 
@@ -230,8 +230,8 @@ LoadImage(surfaceBrush);
 - [Microsoft – Composition GitHub](https://github.com/microsoft/WindowsCompositionSamples)
 - [**Windows.UI.Composition**](/uwp/api/Windows.UI.Composition)
 - [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
-- [Visual Tree Basics](composition-visual-tree.md)
-- [Composition Brushes](composition-brushes.md)
+- [Visual Tree Basics](../../../../uwp/composition/composition-visual-tree.md)
+- [Composition Brushes](../../../../uwp/composition/composition-brushes.md)
 - [XamlCompositionBrushBase](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase)
-- [Animation Overview](composition-animation.md)
-- [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](composition-native-interop.md)
+- [Animation Overview](../../../../uwp/composition/composition-animation.md)
+- [Composition native DirectX and Direct2D interoperation with BeginDraw and EndDraw](../../../../uwp/composition/composition-native-interop.md)

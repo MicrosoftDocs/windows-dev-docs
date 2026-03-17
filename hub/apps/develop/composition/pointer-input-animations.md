@@ -14,8 +14,8 @@ This article shows how to use the position of a pointer to create dynamic "stick
 
 Here, we assume that you're familiar with the concepts discussed in these articles:
 
-- [Input-driven animations](input-driven-animations.md)
-- [Relation based animations](relation-animations.md)
+- [Input-driven animations](../../../../uwp/composition/input-driven-animations.md)
+- [Relation based animations](../../../../uwp/composition/relation-animations.md)
 
 ## Why Create Pointer Position-Driven Experiences?
 

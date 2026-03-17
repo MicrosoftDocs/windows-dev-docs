@@ -533,7 +533,7 @@ int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
 ## C++/CX usage example
 
 > [!NOTE]
-> This code example exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
+> This code example exists to help you maintain your C++/CX application. But we recommend that you use [C++/WinRT](../../../../uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md) for new applications. C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API.
 
 The C++/CX code example below omits the DirectWrite and Direct2D parts of the example.
 

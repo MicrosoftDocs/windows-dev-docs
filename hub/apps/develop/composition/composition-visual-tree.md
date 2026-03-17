@@ -27,7 +27,7 @@ There are several visual types that make up the visual tree structure plus a bas
   - [**RedirectVisual**](/uwp/api/Windows.UI.Composition.RedirectVisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual). The visual gets its content from another visual.<br/>(_Introduced in Windows 10, version 1809, SDK 17763._)
   - [**SceneVisual**](/uwp/api/windows.ui.composition.scenes.scenevisual) – derives from [**ContainerVisual**](/uwp/api/Windows.UI.Composition.ContainerVisual). A container visual for the nodes of a 3D scene.<br/>(_Introduced in Windows 10, version 1903, SDK 18362._)
 
-You can apply content and effects to SpriteVisuals using the [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) and its subclasses including the [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) and [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush). To learn more about brushes see [**CompositionBrush Overview**](./composition-brushes.md).
+You can apply content and effects to SpriteVisuals using the [**CompositionBrush**](/uwp/api/Windows.UI.Composition.CompositionBrush) and its subclasses including the [**CompositionColorBrush**](/uwp/api/Windows.UI.Composition.CompositionColorBrush), [**CompositionSurfaceBrush**](/uwp/api/Windows.UI.Composition.CompositionSurfaceBrush) and [**CompositionEffectBrush**](/uwp/api/Windows.UI.Composition.CompositionEffectBrush). To learn more about brushes see [**CompositionBrush Overview**](../../../../uwp/composition/composition-brushes.md).
 
 ## The CompositionVisual Sample
 

@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 The Windows.UI.Composition APIs enable you to create real-time animations and effects. Composition Lighting enables 3D lighting in 2D applications. In this overview, we will run through the functionality of how to setup composition lights, identify visuals to receive each light, and use effects to define materials for your content.
 
 > [!NOTE]
-> To read how [XamlLight](/uwp/api/windows.ui.xaml.media.xamllight) objects apply [CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight) to illuminate XAML UIElements, see [XAML lighting](xaml-lighting.md).
+> To read how [XamlLight](/uwp/api/windows.ui.xaml.media.xamllight) objects apply [CompositionLights](/uwp/api/Windows.UI.Composition.CompositionLight) to illuminate XAML UIElements, see [XAML lighting](../../../../uwp/composition/xaml-lighting.md).
 
 Composition lighting lets you create interesting UI by allowing:
 
@@ -77,7 +77,7 @@ Depending on the type of light used, a light can have properties for attenuation
 
 Property | Description
 --- | ---
-**Color** | The [Color](/uwp/api/windows.ui.color) of the light. Lighting color values are defined by [D3D](../graphics-concepts/light-properties.md) Diffuse, Ambient, and Specular that defines the color being emitted. Lighting uses RGBA values for lights; the alpha color component is not used.
+**Color** | The [Color](/uwp/api/windows.ui.color) of the light. Lighting color values are defined by [D3D](../../../../uwp/graphics-concepts/light-properties.md) Diffuse, Ambient, and Specular that defines the color being emitted. Lighting uses RGBA values for lights; the alpha color component is not used.
 **Direction** | The direction of light. The direction in which the light is pointing is specified relative to its [CoordinateSpace](/uwp/api/windows.ui.composition.distantlight.coordinatespace) Visual.
 **Coordinate Space** | Every Visual has an implicit 3D coordinate space. X direction is from left to right. Y direction is from top to bottom. Z direction is a point out of the plane. The original point of this coordinate is the upper-left corner of the visual, and the unit is Device Independent Pixel (DIP). A light's offset defined in this coordinate.
 **Inner and Outer Cones** | Spotlights emit a cone of light that has two parts: a bright inner cone and an outer cone. Composition allows you control over inner and outer cone angles and color.
@@ -157,8 +157,8 @@ CompositionBrush CreateNormalMapBrush(ICompositionSurface normalMapImage)
 ## Related articles
 
 - [Creating Materials and Lights in the Visual Layer](https://blogs.windows.com/buildingapps/2017/08/04/creating-materials-lights-visual-layer/)
-- [Lighting Overview](../graphics-concepts/lighting-overview.md)
+- [Lighting Overview](../../../../uwp/graphics-concepts/lighting-overview.md)
 - [CompositionCapabilities API](/uwp/api/windows.ui.composition.compositioncapabilities)
-- [Mathematics of Lighting](../graphics-concepts/mathematics-of-lighting.md)
+- [Mathematics of Lighting](../../../../uwp/graphics-concepts/mathematics-of-lighting.md)
 - [SceneLightingEffect](/uwp/api/windows.ui.composition.effects.scenelightingeffect)
 - [WindowsCompositionSamples GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)
