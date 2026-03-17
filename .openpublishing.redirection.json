@@ -11149,6 +11149,61 @@
       "source_path": "uwp/composition/xaml-lighting.md",
       "redirect_url": "/windows/apps/develop/composition/xaml-lighting",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/play-audio-and-video-with-mediaplayer.md",
+      "redirect_url": "/windows/apps/develop/media-playback/play-audio-and-video-with-mediaplayer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/media-playback-with-mediasource.md",
+      "redirect_url": "/windows/apps/develop/media-playback/media-playback-with-mediasource",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/integrate-with-systemmediatransportcontrols.md",
+      "redirect_url": "/windows/apps/develop/media-playback/integrate-with-systemmediatransportcontrols",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/system-media-transport-controls.md",
+      "redirect_url": "/windows/apps/develop/media-playback/system-media-transport-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/system-supported-metadata-cues.md",
+      "redirect_url": "/windows/apps/develop/media-playback/system-supported-metadata-cues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/create-schedule-and-manage-media-breaks.md",
+      "redirect_url": "/windows/apps/develop/media-playback/create-schedule-and-manage-media-breaks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/adaptive-streaming.md",
+      "redirect_url": "/windows/apps/develop/media-playback/adaptive-streaming",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/hls-tag-support.md",
+      "redirect_url": "/windows/apps/develop/media-playback/hls-tag-support",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/dash-profile-support.md",
+      "redirect_url": "/windows/apps/develop/media-playback/dash-profile-support",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/media-casting.md",
+      "redirect_url": "/windows/apps/develop/media-playback/media-casting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/enable-remote-audio-playback.md",
+      "redirect_url": "/windows/apps/develop/media-playback/enable-remote-audio-playback",
+      "redirect_document_id": false
     }
   ]
 }

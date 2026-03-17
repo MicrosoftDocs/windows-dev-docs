@@ -1,14 +1,14 @@
 ---
-ms.assetid: 66a9cfe2-b212-4c73-8a36-963c33270099
-description: This article lists the HTTP Live Streaming (HLS) protocol tags supported for UWP apps.
+description: This article lists the HTTP Live Streaming (HLS) protocol tags supported for WinUI apps.
 title: HTTP Live Streaming (HLS) tag support
-ms.date: 02/08/2017
+ms.date: 02/24/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
 # HTTP Live Streaming (HLS) tag support
-The following table lists the HLS tags that are supported for UWP apps.
+
+The following table lists the HLS tags that are supported for WinUI apps.
 
 > [!NOTE] 
 > Custom tags that start with "X-" can be accessed as timed metadata as described in the article [Media items, playlists, and tracks](media-playback-with-mediasource.md).

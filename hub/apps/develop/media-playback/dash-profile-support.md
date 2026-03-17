@@ -1,17 +1,16 @@
 ---
-ms.assetid: 3E0FBB43-F6A4-4558-AA89-20E7760BA73F
-description: This article lists the Dynamic Adaptive Streaming over HTTP (DASH) profiles supported for UWP apps.
+description: This article lists the Dynamic Adaptive Streaming over HTTP (DASH) profiles supported for WinUI apps.
 title: Dynamic Adaptive Streaming over HTTP (DASH) profile support
-ms.date: 02/15/2017
+ms.date: 02/24/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, winui, dash
 ms.localizationpriority: medium
 ---
 # Dynamic Adaptive Streaming over HTTP (DASH) profile support
 
 
 ## Supported DASH profiles
-The following table lists the DASH profiles that are supported for UWP apps.
+The following table lists the DASH profiles that are supported for WinUI apps.
 
 |Tag | Manifest type | Notes|July release of Windows 10|Windows 10, Version 1511|Windows 10, Version 1607 |Windows 10, Version 1607 |Windows 10, Version 1703| Windows 10, Version 1809
 |----------------|------|-------|-----------|--------------|---------|-------|--------|--------|
