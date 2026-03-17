@@ -28,7 +28,7 @@ This section provides guidance for creating WinUI 3 apps that play back audio an
 | [Enable audio playback from remote Bluetooth-connected devices](enable-remote-audio-playback.md) | Shows you how to use AudioPlaybackConnection to enable Bluetooth-connected remote devices to play back audio on the local machine. |
 
 
-## UWP app samples for media playback
+## App samples for media playback
 
 * [Adaptive streaming sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming)
 * [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)

@@ -30,7 +30,7 @@ To play adaptive streaming media in a WinUI app, create a **Uri** object pointin
 
 The above example will play the audio of the media content but it doesn't automatically render the content in your UI. Most apps that play video content will want to render the content in a XAML page.  To do this, add a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control to your XAML page.
 
-:::code language="xml" source="~/../snippets-windows/windows-uwp/audio-video-camera/AdaptiveStreaming_RS1/cs/MainPage.xaml" id="SnippetMediaPlayerElementXAML":::
+:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/adaptive-streaming-winui/cs/AdaptiveStreamingWinUI/MainWindow.xaml" id="SnippetMediaPlayerElementXAML":::
 
 Call [**MediaSource.CreateFromUri**](/uwp/api/windows.media.core.mediasource.createfromuri) to create a **MediaSource** from the URI of a DASH or HLS manifest file. Then set the [**Source**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property of the **MediaPlayerElement**. The **MediaPlayerElement** will automatically create a new **MediaPlayer** object for the content. You can call **Play** on the **MediaPlayer** to start playback of the content.
 
@@ -96,7 +96,7 @@ The [**MediaBinder**](/uwp/api/Windows.Media.Core.MediaBinder) class allows you 
 
 Create a **MediaBinder** instance, set an app-defined [**Token**](/uwp/api/Windows.Media.Core.MediaBinder.Token) string to identify the content to be bound, and register for the [**Binding**](/uwp/api/Windows.Media.Core.MediaBinder.Binding) event. Create a **MediaSource** from the **Binder** by calling [**MediaSource.CreateFromMediaBinder**](/uwp/api/windows.media.core.mediasource.createfrommediabinder). Then, create a **MediaPlaybackItem** from the **MediaSource** and add it to the playback list.
 
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/MediaSource_RS1/cs/MainPage.xaml.cs" id="SnippetInitMediaBinder":::
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetInitMediaBinder":::
 
 In the **Binding** event handler, use the token string to identify the content to be bound and then create the adaptive media source by calling one of the overloads of **[CreateFromStreamAsync](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromstreamasync)** or **[CreateFromUriAsync](/uwp/api/windows.media.streaming.adaptive.adaptivemediasource.createfromuriasync)**. Because these are asynchronous methods, you should first call the [**MediaBindingEventArgs.GetDeferral**](/uwp/api/windows.media.core.mediabindingeventargs.GetDeferral) method to instruct the system to wait for your operation to complete before continuing.  Set the adaptive media source as the bound content by calling **[SetAdaptiveMediaSource](/uwp/api/windows.media.core.mediabindingeventargs.setadaptivemediasource)**. Finally, call [**Deferral.Complete**](/uwp/api/windows.foundation.deferral.Complete) after your operation is complete to instruct the system to continue.
 

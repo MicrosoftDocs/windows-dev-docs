@@ -104,8 +104,6 @@ In the handler for the event, first make sure that the requested value is within
 
 If you are not using the automatic SMTC integration provided by **MediaPlayer** you must manually integrate with the SMTC to enable background audio. At a minimum, your app must enable the play and pause buttons by setting [**IsPlayEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.isplayenabled) and [**IsPauseEnabled**](/uwp/api/windows.media.systemmediatransportcontrols.ispauseenabled) to true. Your app must also handle the [**ButtonPressed**](/uwp/api/windows.media.systemmediatransportcontrols.buttonpressed) event. If your app does not meet these requirements, audio playback will stop when your app moves to the background.
 
-Apps that use the new one-process model for background audio should get an instance of the [**SystemMediaTransportControls**](/uwp/api/Windows.Media.SystemMediaTransportControls) by calling [**GetForCurrentView**](/uwp/api/windows.media.systemmediatransportcontrols.getforcurrentview). Apps that use the legacy two-process model for background audio must use [**BackgroundMediaPlayer.Current.SystemMediaTransportControls**](/uwp/api/windows.media.playback.mediaplayer.systemmediatransportcontrols) to get access to the SMTC from their background process.
-
 
 
 ## Related topics
