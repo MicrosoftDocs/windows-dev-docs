@@ -146,6 +146,32 @@ items:
           href: camera/camera-privacy-setting.md
         - name: Connect to remote cameras
           href: camera/connect-to-remote-cameras.md
+      - name: Media playback
+        items:
+        - name: Overview
+          href: media-playback/media-playback.md
+        - name: Play audio and video with MediaPlayer
+          href: media-playback/play-audio-and-video-with-mediaplayer.md
+        - name: Media items, playlists, and tracks
+          href: media-playback/media-playback-with-mediasource.md
+        - name: Integrate with the System Media Transport Controls
+          href: media-playback/integrate-with-systemmediatransportcontrols.md
+        - name: Manual control of the System Media Transport Controls
+          href: media-playback/system-media-transport-controls.md
+        - name: System-supported timed metadata cues
+          href: media-playback/system-supported-metadata-cues.md
+        - name: Create, schedule, and manage media breaks
+          href: media-playback/create-schedule-and-manage-media-breaks.md
+        - name: Adaptive streaming
+          href: media-playback/adaptive-streaming.md
+        - name: HLS tag support
+          href: media-playback/hls-tag-support.md
+        - name: DASH profile support
+          href: media-playback/dash-profile-support.md
+        - name: Media casting
+          href: media-playback/media-casting.md
+        - name: Enable audio playback from remote Bluetooth-connected devices
+          href: media-playback/enable-remote-audio-playback.md
     - name: Communication
       href: communication/index.md
     - name: Data and files
@@ -240,10 +266,58 @@ items:
       items:
       - name: Overview
         href: graphics.md
-      - name: Enhance UI with the Visual layer
-        href: ../windows-app-sdk/composition.md
       - name: Render text with DWriteCore
         href: ../windows-app-sdk/dwritecore.md
+      - name: Visual layer
+        items:
+        - name: Overview
+          href: composition/visual-layer.md
+        - name: Composition visual
+          href: composition/composition-visual-tree.md
+        - name: Composition animations
+          href: composition/composition-animation.md
+          items:
+          - name: Time animations
+            href: composition/time-animations.md
+          - name: Relation animations
+            href: composition/relation-animations.md
+          - name: Natural animations
+            href: composition/natural-animations.md
+            items:
+            - name: Spring animations
+              href: composition/spring-animations.md
+          - name: Input-driven animations
+            href: composition/input-driven-animations.md
+            items:
+            - name: Scroll-based animations
+              href: composition/scroll-input-animations.md
+            - name: Pointer-based animations
+              href: composition/pointer-input-animations.md
+            - name: Custom manipulations
+              href: composition/interaction-tracker-manipulations.md
+              items:
+              - name: Snap points
+                href: composition/inertia-modifiers.md
+              - name: Pull-to-refresh
+                href: composition/source-modifiers.md
+        - name: Composition effects
+          href: composition/composition-effects.md
+          items:
+          - name: Composition shadows
+            href: composition/composition-shadows.md
+          - name: Composition lighting
+            href: composition/composition-lighting.md
+        - name: Composition brushes
+          href: composition/composition-brushes.md
+        - name: Composition native interoperation
+          href: composition/composition-native-interop.md
+        - name: Tailoring your UI
+          href: composition/composition-tailoring.md
+        - name: Use the Visual layer with XAML
+          href: composition/using-the-visual-layer-with-xaml.md
+          items:
+          - name: XAML lighting
+            href: composition/xaml-lighting.md
       - name: Win2D
         items:
         - name: Overview
