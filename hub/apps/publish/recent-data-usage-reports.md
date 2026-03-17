@@ -13,7 +13,7 @@ The [Recent data view in Usage reports](https://partner.microsoft.com/dashboard/
 
 #### What the Recent data view shows
 
-:::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
+:::image type="content" source="images/usage-recent-dash.png" lightbox="images/usage-recent-dash.png" alt-text="A screenshot showing recent data view for usage reports in Partner Center.":::
 
 The Recent data view supports two short‑term time ranges: 
 
@@ -24,7 +24,7 @@ These time ranges allow you to observe near real‑time usage signals and identi
 
 #### Key metrics in Recent data
 
-:::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
+:::image type="content" source="images/usage-recent-key-metrics.png" lightbox="images/usage-recent-key-metrics.png" alt-text="A screenshot showing key metrics for usage reports in Partner Center.":::
 
 The Recent data view surfaces a focused set of usage metrics optimized for short‑term monitoring: 
 
@@ -40,17 +40,17 @@ The Recent data view includes hourly trend charts that present usage data in the
 
 The following hourly charts are available:
 
-:::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
+:::image type="content" source="images/usage-recent-hourly-trends.png" lightbox="images/usage-recent-hourly-trends.png" alt-text="A screenshot showing hourly active devices and users in Partner Center.":::
 * Hourly Active Devices and Users: Compare device‑level and user‑level activity hour by hour to understand usage peaks and behavioral patterns. 
 
-:::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
+:::image type="content" source="images/usage-recent-sessions-engagement.png" lightbox="images/usage-recent-sessions-engagement.png" alt-text="A screenshot showing sessions and engagement duration in Partner Center.":::
 * Sessions: Track session volume across each hour to identify bursts of activity or sudden drops.
 * Average and Total Engagement Duration: View average session length alongside total engagement time to contrast session quality with overall time spent. 
 
-:::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
+:::image type="content" source="images/usage-recent-version-adoption.png" lightbox="images/usage-recent-version-adoption.png" alt-text="A screenshot showing App Version Adoption in Partner Center.":::
 * App Version Adoption: Monitor how users adopt newer app versions shortly after release.
 
-:::image type="content" source="images/nrt-recent-data.png" lightbox="images/nrt-recent-data.png" alt-text="A screenshot showing view recent data banner in Partner Center.":::
+:::image type="content" source="images/usage-recent-distribution.png" lightbox="images/usage-recent-distribution.png" alt-text="A screenshot showing distribution by app version and country in Partner Center.":::
 * Distribution by App Version and Country: Analyze how recent usage is distributed across app versions and regions. 
 
 #### Does the Recent data view report complete and final numbers?
