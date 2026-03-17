@@ -11151,6 +11151,51 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "uwp/debug-test-perf/best-practices-for-your-app-s-startup-performance.md",
+      "redirect_url": "/windows/apps/develop/performance/app-startup-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/improve-garbage-collection-performance.md",
+      "redirect_url": "/windows/apps/develop/performance/improve-garbage-collection-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/listview-and-gridview-data-optimization.md",
+      "redirect_url": "/windows/apps/develop/performance/listview-and-gridview-data-optimization",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/mvvm-performance-tips.md",
+      "redirect_url": "/windows/apps/develop/performance/mvvm-performance-tips",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/optimize-animations-and-media.md",
+      "redirect_url": "/windows/apps/develop/performance/optimize-animations-and-media",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/optimize-file-access.md",
+      "redirect_url": "/windows/apps/develop/performance/optimize-file-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/optimize-gridview-and-listview.md",
+      "redirect_url": "/windows/apps/develop/performance/optimize-gridview-and-listview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/optimize-xaml-loading.md",
+      "redirect_url": "/windows/apps/develop/performance/optimize-xaml-loading",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/optimize-your-xaml-layout.md",
+      "redirect_url": "/windows/apps/develop/performance/optimize-xaml-layout",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/audio-video-camera/play-audio-and-video-with-mediaplayer.md",
       "redirect_url": "/windows/apps/develop/media-playback/play-audio-and-video-with-mediaplayer",
       "redirect_document_id": false
@@ -11203,6 +11248,36 @@
     {
       "source_path": "uwp/audio-video-camera/enable-remote-audio-playback.md",
       "redirect_url": "/windows/apps/develop/media-playback/enable-remote-audio-playback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/performance/choose-between-tools.md",
+      "redirect_url": "/windows/apps/develop/performance/choose-between-tools",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/performance/disk-memory.md",
+      "redirect_url": "/windows/apps/develop/performance/disk-memory",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/performance/index.md",
+      "redirect_url": "/windows/apps/develop/performance/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/performance/power.md",
+      "redirect_url": "/windows/apps/develop/performance/power",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/performance/responsive.md",
+      "redirect_url": "/windows/apps/develop/performance/responsive",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/performance/winui-perf.md",
+      "redirect_url": "/windows/apps/develop/performance/winui-perf",
       "redirect_document_id": false
     }
   ]
