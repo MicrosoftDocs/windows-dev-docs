@@ -36,6 +36,8 @@ items:
         items:
           - name: Overview
             href: ../powertoys/command-palette/overview.md
+          - name: Dock
+            href: ../powertoys/command-palette/dock.md
           - name: Extension development guide
             items:
               - name: Overview
@@ -56,6 +58,8 @@ items:
                     href: ../powertoys/command-palette/using-markdown-content.md
                   - name: Get user input with forms
                     href: ../powertoys/command-palette/using-form-pages.md
+                  - name: Adding Dock support
+                    href: ../powertoys/command-palette/adding-dock-support.md
                   # - name: Handle the search text
                   #   href: ../powertoys/command-palette/dynamic-lists.md
                   # - name: Adding details
