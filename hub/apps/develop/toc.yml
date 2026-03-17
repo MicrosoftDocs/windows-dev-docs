@@ -240,6 +240,8 @@ items:
       items:
       - name: Overview
         href: graphics.md
+      - name: Render text with DWriteCore
+        href: ../windows-app-sdk/dwritecore.md
       - name: Visual layer
         items:
         - name: Overview
@@ -285,13 +287,11 @@ items:
           href: composition/composition-native-interop.md
         - name: Tailoring your UI
           href: composition/composition-tailoring.md
-        - name: Using the Visual layer with XAML
+        - name: Use the Visual layer with XAML
           href: composition/using-the-visual-layer-with-xaml.md
           items:
           - name: XAML lighting
             href: composition/xaml-lighting.md
-      - name: Render text with DWriteCore
-        href: ../windows-app-sdk/dwritecore.md
       - name: Win2D
         items:
         - name: Overview
