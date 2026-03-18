@@ -5,9 +5,9 @@ ms.date: 07/12/2024
 
 :::row:::
     :::column:::
-       [![Developer account icon](../apps/publish/images/tile-account.png)<br>
+       [![Developer account icon](../apps/publish/images/tile-account.png)<br>](../apps/publish/partner-center/open-a-developer-account.md)
        **Open a developer account**<br>
-       Create your Microsoft Store developer account in Partner Center, choosing the right setup.](../apps/publish/partner-center/open-a-developer-account.md)
+       [Create your Microsoft Store developer account in Partner Center, choosing the right setup.](../apps/publish/partner-center/open-a-developer-account.md)
     :::column-end:::
     :::column:::
        [![App submission icon](../apps/publish/images/tile-app-submit.png)<br>
