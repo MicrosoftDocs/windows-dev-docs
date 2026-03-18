@@ -55,7 +55,7 @@ Here’s an example of how to set border properties on a Grid.
 
 ![A Grid with borders](../../design/layout/images/layout-panel-grid-border.png)
 
-Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see [Optimize your XAML layout](/windows/uwp/debug-test-perf/optimize-your-xaml-layout).
+Using the built-in border properties reduces the XAML element count, which can improve the UI performance of your app. For more info about layout panels and UI performance, see [Optimize your XAML layout](../performance/optimize-xaml-layout.md).
 
 ## RelativePanel
 

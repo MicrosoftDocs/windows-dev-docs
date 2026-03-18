@@ -273,28 +273,10 @@ items:
         href: ../debug-test-perf/planning-and-measuring-performance.md
       - name: Optimize background activity
         href: ../debug-test-perf/optimize-background-activity.md
-      - name: ListView and GridView UI optimization
-        href: ../debug-test-perf/optimize-gridview-and-listview.md
-      - name: ListView and GridView data virtualization
-        href: ../debug-test-perf/listview-and-gridview-data-optimization.md
-      - name: Improve garbage collection performance
-        href: ../debug-test-perf/improve-garbage-collection-performance.md
       - name: Keep the UI thread responsive
         href: ../debug-test-perf/keep-the-ui-thread-responsive.md
-      - name: Optimize your XAML markup
-        href: ../debug-test-perf/optimize-xaml-loading.md
-      - name: Optimize your XAML layout
-        href: ../debug-test-perf/optimize-your-xaml-layout.md
-      - name: MVVM and language performance tips
-        href: ../debug-test-perf/mvvm-performance-tips.md
-      - name: Best practices for your app's startup performance
-        href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
-      - name: Optimize animations, media, and images
-        href: ../debug-test-perf/optimize-animations-and-media.md
       - name: Optimize suspend/resume
         href: ../debug-test-perf/optimize-suspend-resume.md
-      - name: Optimize file access
-        href: ../debug-test-perf/optimize-file-access.md
       - name: Windows Runtime components and optimizing interop
         href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
       - name: Tools for profiling and performance
