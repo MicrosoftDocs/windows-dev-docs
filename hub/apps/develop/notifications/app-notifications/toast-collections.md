@@ -5,14 +5,17 @@ label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018
 ms.topic: how-to
-keywords: windows 10, uwp, notification, collections, collection, group notifications, grouping notifications, group, organize, Action Center, toast
+keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, notification, collections, collection, group notifications, grouping notifications, group, organize, Action Center, toast
 ms.localizationpriority: medium
 ---
 # Grouping toast notifications with collections
 Use collections to organize your app's toasts in Action Center. Collections help users locate information within Action Center more easily and allow for developers to better manage their notifications.  The APIs below allow for removing, creating, and updating notification collections.
 
 > [!IMPORTANT]
-> **Requires Creators Update**: You must target SDK 15063 and be running build 15063 or later to use toast collections. Related APIs include [Windows.UI.Notifications.ToastCollection](/uwp/api/windows.ui.notifications.toastcollection), and [Windows.UI.Notifications.ToastCollectionManager](/uwp/api/windows.ui.notifications.toastcollectionmanager)
+> **Requires Creators Update**: You must target SDK 15063 and be running build 15063 or later to use toast collections. Related APIs include [Windows.UI.Notifications.ToastCollection](/uwp/api/windows.ui.notifications.toastcollection) and [Windows.UI.Notifications.ToastCollectionManager](/uwp/api/windows.ui.notifications.toastcollectionmanager).
+
+> [!NOTE]
+> Toast collections are managed through the `Windows.UI.Notifications` namespace and do not have direct equivalents in the Windows App SDK `Microsoft.Windows.AppNotifications` namespace. Windows App SDK apps can use these WinRT APIs for collection management alongside the `Microsoft.Windows.AppNotifications` APIs for constructing and sending notifications.
 
 You can see the example below with a messaging app that separates the notifications based on the chat group; each title (Comp Sci 160A Project Chat, Direct Messages, Lacrosse Team Chat) is a separate collection.  Notice how the notifications are distinctly grouped as if they were from a separate app, even though they are all notifications from the same app.  If you are looking for a more subtle way to organize your notifications, see [toast headers](toast-headers.md).  
 ![Collection Example with two different Groups of Notifications](images/toast-collection-example.png)
@@ -47,6 +50,17 @@ We will cover sending notifications from three different toast pipelines: local,
 
 Construct the toast content:
 
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+// Windows App SDK - construct notification content
+var notification = new AppNotificationBuilder()
+    .AddText("Adam sent a message to the group")
+    .BuildNotification();
+```
+
+### [Community Toolkit](#tab/toolkit)
+
 ``` csharp
 // Construct the content
 var content = new ToastContentBuilder()
@@ -54,7 +68,44 @@ var content = new ToastContentBuilder()
 	.GetToastContent();
 ```
 
+### [XML](#tab/xml)
+
+```xml
+<toast>
+  <visual>
+    <binding template="ToastGeneric">
+      <text>Adam sent a message to the group</text>
+    </binding>
+  </visual>
+</toast>
+```
+
+---
+
 ### Send a toast to a collection
+
+#### [Windows App SDK](#tab/appsdk)
+
+> [!NOTE]
+> When using the Windows App SDK `AppNotificationBuilder` to construct your notification content, you still use `ToastNotificationManager` from `Windows.UI.Notifications` for collection-based delivery, since collection management is handled by the WinRT APIs.
+
+```csharp
+// Build the notification with Windows App SDK
+var notification = new AppNotificationBuilder()
+    .AddText("Adam sent a message to the group")
+    .BuildNotification();
+
+// For collection-based delivery, use the WinRT ToastNotification with the XML payload
+var toast = new ToastNotification(notification.Payload);
+
+// Get the collection notifier
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
+
+// And show the toast
+notifier.Show(toast);
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 // Create the toast
@@ -66,6 +117,21 @@ var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForTo
 // And show the toast
 notifier.Show(toast);
 ```
+
+#### [XML](#tab/xml)
+
+```csharp
+// Create the toast from XML
+ToastNotification toast = new ToastNotification(xmlDoc);
+
+// Get the collection notifier
+var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
+
+// And show the toast
+notifier.Show(toast);
+```
+
+---
 
 ### Add a scheduled toast to a collection
 
@@ -173,4 +239,4 @@ The toast collections that you create will also be reflected in the user's notif
 
 * [Toast content](adaptive-interactive-toasts.md)
 * [Toast headers](toast-headers.md)
-* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
+* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/CommunityToolkit/WindowsCommunityToolkit/tree/main/Microsoft.Toolkit.Uwp.Notifications)

@@ -5,7 +5,7 @@ label: Notifications design basics
 template: detail.hbs
 ms.date: 07/28/2025
 ms.topic: article
-keywords: windows 10, uwp, notification, collection, group, ux, ux guidance, guidance, action, toast, action center, noninterruptive, effective notifications, nonintrusive notifications, actionable, manage, organize
+keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, notification, collection, group, ux, ux guidance, guidance, action, toast, action center, noninterruptive, effective notifications, nonintrusive notifications, actionable, manage, organize
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
 ---

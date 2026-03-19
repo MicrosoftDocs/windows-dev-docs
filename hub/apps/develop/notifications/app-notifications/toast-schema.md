@@ -6,7 +6,7 @@ label: Toast content schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, app notification
 ms.localizationpriority: medium
 ---
 # Toast content schema

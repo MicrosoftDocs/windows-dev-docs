@@ -5,7 +5,7 @@ description: Learn how Win32 C++ WRL apps can send local toast notifications and
 template: detail.hbs
 ms.date: 07/28/2025
 ms.topic: how-to
-keywords: windows 11, windows 10, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, external location, C++, cpp, cplusplus, WRL
+keywords: windows 11, windows 10, windows app sdk, winappsdk, uwp, win32, desktop, toast notifications, send a toast, send local toast, desktop bridge, msix, external location, C++, cpp, cplusplus, WRL
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
 ---
@@ -21,6 +21,9 @@ However, for an unpackaged desktop app, there are a few special steps. That's du
 
 > [!IMPORTANT]
 > If you're writing a UWP app, please see the [UWP documentation](send-local-toast.md). For other desktop languages, please see [Desktop C#](send-local-toast.md).
+
+> [!NOTE]
+> For C++ desktop apps using the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) which covers the recommended approach using the `Microsoft.Windows.AppNotifications` APIs.
 
 ## Step 1: Enable the Windows SDK
 

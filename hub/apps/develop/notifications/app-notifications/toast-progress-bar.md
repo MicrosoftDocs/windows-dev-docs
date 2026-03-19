@@ -5,7 +5,7 @@ label: Toast progress bar and data binding
 template: detail.hbs
 ms.date: 12/07/2017
 ms.topic: how-to
-keywords: windows 10, uwp, toast, progress bar, toast progress bar, notification, toast data binding
+keywords: windows 10, windows 11, windows app sdk, winappsdk, uwp, toast, progress bar, toast progress bar, notification, toast data binding
 ms.localizationpriority: medium
 ---
 # Toast progress bar and data binding
@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 Using a progress bar inside your toast notification allows you to convey the status of long-running operations to the user, like downloads, video rendering, exercise goals, and more.
 
 > [!IMPORTANT]
-> **Requires Creators Update and 1.4.0 of Notifications library**: You must target SDK 15063 and be running build 15063 or later to use progress bars on toasts. You must use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the progress bar in your toast's content.
+> **Requires Windows 10 Creators Update**: You must target SDK 15063 and be running build 15063 or later to use progress bars on notifications. If using the Windows Community Toolkit, you must use version 1.4.0 or later of the [Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
 
 A progress bar inside a toast can either be "indeterminate" (no specific value, animated dots indicate an operation is occurring) or "determinate" (a specific percent of the bar is filled, like 60%).
 
-> **Important APIs**: [NotificationData class](/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update method](/uwp/api/Windows.UI.Notifications.ToastNotifier.Update), [ToastNotification class](/uwp/api/Windows.UI.Notifications.ToastNotification)
+> **Important APIs**: [AppNotificationProgressData class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationprogressdata), [AppNotificationManager.UpdateAsync method](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.updateasync), [AppNotification class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotification), [NotificationData class](/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update method](/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)
 
 > [!NOTE]
 > Only Desktop supports progress bars in toast notifications. On other devices, the progress bar will be dropped from your notification.
@@ -36,7 +36,19 @@ The picture below shows a determinate progress bar with all of its corresponding
 
 Here's how you would generate the notification seen above...
 
-#### [Builder syntax](#tab/builder-syntax)
+#### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("Downloading your weekly playlist...")
+    .AddProgressBar(new AppNotificationProgressBar()
+        .SetTitle("Weekly playlist")
+        .SetValue(0.6)
+        .SetValueStringOverride("15/26 songs")
+        .SetStatus("Downloading..."));
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -84,6 +96,43 @@ Using data binding involves the following steps...
 
 The following code snippet shows steps 1-4. The next snippet will show how to update the toast **Data** values.
 
+#### [Windows App SDK](#tab/appsdk)
+
+```csharp
+using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
+
+public void SendUpdatableToastWithProgress()
+{
+    string tag = "weekly-playlist";
+    string group = "downloads";
+
+    var builder = new AppNotificationBuilder()
+        .AddText("Downloading your weekly playlist...")
+        .AddProgressBar(new AppNotificationProgressBar()
+            .BindTitle()
+            .BindValue()
+            .BindValueStringOverride()
+            .BindStatus());
+
+    var notification = builder.BuildNotification();
+    notification.Tag = tag;
+    notification.Group = group;
+
+    notification.Progress = new AppNotificationProgressData(1)
+    {
+        Title = "Weekly playlist",
+        Value = 0.6,
+        ValueStringOverride = "15/26 songs",
+        Status = "Downloading..."
+    };
+
+    AppNotificationManager.Default.Show(notification);
+}
+```
+
+#### [Community Toolkit](#tab/toolkit)
+
 ```csharp
 using Windows.UI.Notifications;
 using Microsoft.Toolkit.Uwp.Notifications;
@@ -128,7 +177,31 @@ public void SendUpdatableToastWithProgress()
 }
 ```
 
-Then, when you want to change your **Data** values, use the [**Update**](/uwp/api/Windows.UI.Notifications.ToastNotifier.Update) method to provide the new data without re-constructing the entire toast payload.
+---
+
+Then, when you want to change your **Data** values, use the update method to provide the new data without re-constructing the entire toast payload.
+
+#### [Windows App SDK](#tab/appsdk)
+
+```csharp
+using Microsoft.Windows.AppNotifications;
+
+public async void UpdateProgress()
+{
+    string tag = "weekly-playlist";
+    string group = "downloads";
+
+    var data = new AppNotificationProgressData(2)
+    {
+        Value = 0.7,
+        ValueStringOverride = "18/26 songs"
+    };
+
+    await AppNotificationManager.Default.UpdateAsync(data, tag, group);
+}
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 using Windows.UI.Notifications;
@@ -156,6 +229,8 @@ public void UpdateProgress()
     ToastNotificationManager.CreateToastNotifier().Update(data, tag, group);
 }
 ```
+
+---
 
 Using the **Update** method rather than replacing the entire toast also ensures that the toast notification stays in the same position in Action Center and doesn't move up or down. It would be quite confusing to the user if the toast kept jumping to the top of Action Center every few seconds while the progress bar filled!
 

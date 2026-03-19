@@ -5,7 +5,7 @@ label: Toast headers
 template: detail.hbs
 ms.date: 12/07/2017
 ms.topic: how-to
-keywords: windows 10, uwp, toast, header, toast headers, notification, group toasts, Action Center
+keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, toast, header, toast headers, notification, group toasts, Action Center
 ms.localizationpriority: medium
 ---
 # Toast headers
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 You can visually group a set of related notifications inside Action Center by using a toast header on your notifications.
 
 > [!IMPORTANT]
-> **Requires Desktop Creators Update and 1.4.0 of Notifications library**: You must be running Desktop build 15063 or later to see toast headers. You must use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the header in your toast's content. Headers are only supported on Desktop.
+> **Requires Desktop Creators Update**: You must be running Desktop build 15063 or later to see toast headers. Headers are only supported on Desktop. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct headers. For apps using the Community Toolkit, use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the header in your toast's content.
 
 As seen below, this group conversation is unified under a single header, "Camping!!". Each individual message in the conversation is a separate toast notification sharing the same toast header.
 
@@ -28,7 +28,15 @@ Here's how you add a header to a toast notification.
 > [!NOTE]
 > Headers are only supported on Desktop. Devices that don't support headers will simply ignore the header.
 
-#### [Builder syntax](#tab/builder-syntax)
+#### [Windows App SDK](#tab/appsdk)
+
+```csharp
+new AppNotificationBuilder()
+    .SetHeader(new AppNotificationHeader("6289", "Camping!!", "action=openConversation&id=6289"))
+    .AddText("Anyone have a sleeping bag I can borrow?");
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 new ToastContentBuilder()
@@ -69,19 +77,36 @@ Headers are clickable by users, so that the user can click the header to find ou
 
 Therefore, apps can provide **Arguments** on the header, similar to the launch arguments on the toast itself.
 
-Activation is handled identical to [normal toast activation](send-local-toast.md#step-3-handle-activation), meaning you can retrieve these arguments in the **OnActivated** method of `App.xaml.cs` just like you do when the user clicks the body of your toast or a button on your toast.
+Activation is handled identical to [normal toast activation](send-local-toast.md#step-3-handle-activation), meaning you can retrieve these arguments when the user clicks the body of your toast or a button on your toast.
+
+#### [Windows App SDK](#tab/appsdk)
+
+For Windows App SDK apps, activation is handled through the `AppNotificationManager.Default.NotificationInvoked` event. See [Send a local app notification](send-local-toast.md) to learn more about Windows App SDK notification activation.
+
+```csharp
+// In your App.xaml.cs or startup code
+AppNotificationManager.Default.NotificationInvoked += (sender, args) =>
+{
+    // Arguments specified from the header
+    string arguments = args.Argument;
+};
+```
+
+#### [UWP](#tab/uwp)
 
 ```csharp
 protected override void OnActivated(IActivatedEventArgs e)
 {
-    // Handle toast activation
-    if (e is ToastNotificationActivatedEventArgs)
-    {
+    // Handle toast activation
+    if (e is ToastNotificationActivatedEventArgs)
+    {
         // Arguments specified from the header
-        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
+        string arguments = (e as ToastNotificationActivatedEventArgs).Argument;
     }
 }
 ```
+
+---
 
 
 ## Additional info

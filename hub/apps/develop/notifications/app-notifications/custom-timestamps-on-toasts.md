@@ -5,7 +5,7 @@ label: Custom timestamps on an notifications
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
-keywords: windows 10, uwp, toast, custom timestamp, timestamp, notification, Action Center
+keywords: windows 10, windows 11, windows app sdk, winappsdk, uwp, toast, custom timestamp, timestamp, notification, Action Center
 ms.localizationpriority: medium
 ---
 # Custom timestamps on app notifications
@@ -20,7 +20,7 @@ This feature is available in Windows Build 15063 and later.
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 
-To use a custom timestamp, simply assign the **displayTimestamp** property on the **toast** element of your app notification XML payload. Starting with Windows App SDK 1.2, you can add a custom timestamp to an app notification with the [Microsoft.Windows.AppNotifications.Builder](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder). For UWP apps, you can use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). YOu an also specify the timestamp using raw xml.
+To use a custom timestamp, simply assign the **displayTimestamp** property on the **toast** element of your app notification XML payload. Starting with Windows App SDK 1.2, you can add a custom timestamp to an app notification with the [Microsoft.Windows.AppNotifications.Builder](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder). For UWP apps, you can use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). You can also specify the timestamp using raw xml.
 
 
 ### [Windows App SDK](#tab/appsdk)

@@ -5,7 +5,7 @@ label: Schedule an app notification
 template: detail.hbs
 ms.date: 07/28/2025
 ms.topic: how-to
-keywords: windows 10, uwp, scheduled toast notification, scheduledtoastnotification, how to, quickstart, getting started, code sample, walkthrough
+keywords: windows 10, windows 11, windows app sdk, winappsdk, uwp, scheduled toast notification, scheduledtoastnotification, how to, quickstart, getting started, code sample, walkthrough
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
 ---
@@ -19,10 +19,10 @@ Note that scheduled app notifications have a delivery window of 5 minutes. If th
 > [!NOTE]
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
-> [!IMPORTANT]
-> Desktop applications (both packaged and unpackaged) have slightly different steps for sending notifications and handling activation. Follow along with the instructions below, however replace `ToastNotificationManager` with the `DesktopNotificationManagerCompat` class from the [desktop apps](toast-desktop-apps.md) documentation.
+> [!NOTE]
+> For Windows App SDK apps, you can use `AppNotificationManager` from the `Microsoft.Windows.AppNotifications` namespace. For apps using the Windows Community Toolkit, use `ToastNotificationManagerCompat`.
 
-> **Important APIs**: [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+> **Important APIs**: [AppNotificationManager.Show](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show), [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
 ## Prerequisites
 
@@ -30,21 +30,78 @@ To fully understand this topic, the following will be helpful...
 
 * A working knowledge of app notification terms and concepts. For more information, see [Toast and action center overview](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
 * A familiarity with Windows 10 app notification content. For more information, see [App notification content](adaptive-interactive-toasts.md) documentation.
-* A Windows 10 UWP app project
+* A Windows desktop app project (WinUI 3, WPF, or other)
 
 ## Step 1: Install NuGet package
 
+#### [Windows App SDK](#tab/appsdk)
+
+If you're using a WinUI 3 or Windows App SDK project, the notification APIs are included in the `Microsoft.WindowsAppSDK` NuGet package, which is already referenced by default.
+
+#### [Community Toolkit](#tab/toolkit)
+
 Install the [Microsoft.Toolkit.Uwp.Notifications NuGet package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). Our code sample will use this package. At the end of the article we'll provide the "plain" code snippets that don't use any NuGet packages. This package allows you to create app notifications without using XML.
 
+---
+
 ## Step 2: Add namespace declarations
+
+#### [Windows App SDK](#tab/appsdk)
+
+```csharp
+using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
 ```
 
+---
+
 ## Step 3: Schedule the notification
 
 We'll use a simple text-based notification reminding a student about the homework they have due today. Construct the notification and schedule it!
+
+#### [Windows App SDK](#tab/appsdk)
+
+The Windows App SDK doesn't have a direct `Schedule()` method like the Community Toolkit. You can use `AppNotificationManager.Default.Show()` with an expiration time, or use the platform `ScheduledToastNotification` API via the `Windows.UI.Notifications` namespace for true scheduling.
+
+```csharp
+// Construct the notification
+var notification = new AppNotificationBuilder()
+    .AddArgument("action", "viewItemsDueToday")
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!")
+    .BuildNotification();
+
+notification.Expiration = DateTimeOffset.Now.AddSeconds(5);
+AppNotificationManager.Default.Show(notification);
+```
+
+To schedule a notification for a future time, use the platform `ScheduledToastNotification` API:
+
+```csharp
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+
+var xml = new AppNotificationBuilder()
+    .AddArgument("action", "viewItemsDueToday")
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!")
+    .BuildNotification()
+    .Payload;
+
+var doc = new XmlDocument();
+doc.LoadXml(xml);
+
+var scheduledNotification = new ScheduledToastNotification(doc, DateTimeOffset.Now.AddSeconds(5));
+ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledNotification);
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 // Construct the content and schedule the toast!
@@ -55,6 +112,8 @@ new ToastContentBuilder()
     .Schedule(DateTime.Now.AddSeconds(5));
 ```
 
+---
+
 ## Provide a primary key for your notification
 
 If you want to programmatically cancel, remove, or replace the scheduled notification, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to cancel, remove, or replace the notification.
@@ -62,6 +121,23 @@ If you want to programmatically cancel, remove, or replace the scheduled notific
 To see more details on replacing/removing already delivered app notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
+
+#### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var notification = new AppNotificationBuilder()
+    .AddArgument("action", "viewItemsDueToday")
+    .AddText("ASTR 170B1")
+    .AddText("You have 3 items due today!")
+    .BuildNotification();
+
+notification.Tag = "18365";
+notification.Group = "ASTR 170B1";
+
+AppNotificationManager.Default.Show(notification);
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 // Construct the content and schedule the toast!
@@ -76,11 +152,29 @@ new ToastContentBuilder()
     });
 ```
 
+---
+
 ## Cancel scheduled notifications
 
 To cancel a scheduled notification, you first have to retrieve the list of all scheduled notifications.
 
-Then, find your scheduled app notification matching the tag (and optionally group) you specified earlier, and call RemoveFromSchedule().
+Then, find your scheduled app notification matching the tag (and optionally group) you specified earlier, and remove it.
+
+#### [Windows App SDK](#tab/appsdk)
+
+For Windows App SDK apps, you can remove displayed notifications by tag and group using `AppNotificationManager`:
+
+```csharp
+await AppNotificationManager.Default.RemoveByTagAndGroupAsync("18365", "ASTR 170B1");
+```
+
+To remove all notifications for a group:
+
+```csharp
+await AppNotificationManager.Default.RemoveByGroupAsync("ASTR 170B1");
+```
+
+#### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 // Create the toast notifier
@@ -101,6 +195,8 @@ if (toRemove != null)
 > [!IMPORTANT]
 > An unpackaged (lacks package identity at runtime) Win32 app must use the **ToastNotificationManagerCompat** class as seen above. If you use **ToastNotificationManager** itself, then you'll receive an element-not-found exception. All types of apps can use the **Compat** class, and it will work correctly.
 
+---
+
 ## Activation handling
 
 See the [send a local app notification](send-local-toast.md) docs to learn more about handling activation. Activation of a scheduled app notification is handled the same as activation of a local app notification.
@@ -112,4 +208,6 @@ See the [send a local app notification](send-local-toast.md) docs to learn more 
 ## Resources
 
 * [App notification content documentation](adaptive-interactive-toasts.md)
+* [AppNotificationManager class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
+* [AppNotificationBuilder class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
 * [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)

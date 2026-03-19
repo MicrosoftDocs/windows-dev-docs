@@ -6,7 +6,7 @@ label: Send a local app notification from a C++ UWP app
 template: detail.hbs
 ms.date: 07/28/2025
 ms.topic: how-to
-keywords: windows 10, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, cpp, c++, uwp
+keywords: windows 10, windows app sdk, winappsdk, uwp, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, cpp, c++, uwp
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
 ---
@@ -19,6 +19,9 @@ no-loc: [toast, Toast, app, App]
 
 > [!IMPORTANT]
 > If you're writing a C++ non-UWP app, please see the [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation. If you're writing a C# app, please see the [C# documentation](send-local-toast.md).
+
+> [!NOTE]
+> For C++ apps using the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) which covers the recommended approach using the `Microsoft.Windows.AppNotifications` APIs.
 
 ## Step 1: Install NuGet package
 

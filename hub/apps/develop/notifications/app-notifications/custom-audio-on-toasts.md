@@ -5,30 +5,54 @@ label: Custom audio on app notifications
 template: detail.hbs
 ms.date: 12/15/2017
 ms.topic: article
-keywords: windows 10, uwp, toast, custom audio, notification, audio, sound
+keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, toast, custom audio, notification, audio, sound
 ms.localizationpriority: medium
 ---
 # Custom audio on app notifications
 
 App notifications can use custom audio, which lets your app express your brand's unique sound effects. For example, a messaging app can use their own messaging sound on their app notifications, so that the user can instantly know that they received a notification from the app, rather than hearing the generic notification sound.
 
-## Install UWP Community Toolkit NuGet package
+## Install notification libraries
 
-In order to create notifications via code, we strongly recommend using the UWP Community Toolkit Notifications library, which provides an object model for the notification XML content. You could manually construct the notification XML, but that is error-prone and messy. The Notifications library inside UWP Community Toolkit is built and maintained by the team that owns notifications at Microsoft.
+For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace, which is included in the Windows App SDK — no additional NuGet packages are required.
 
-Install [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) from NuGet.
+For apps using the Community Toolkit, install the [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package, which provides an object model for the notification XML content.
 
 ## Add namespace declarations
+
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
+```
+
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
 ```
+
+---
 
 ## Add the custom audio
 
 Windows Mobile has always supported custom audio in Toast notifications. However, Desktop only added support for custom audio in Version 1511 (build 10586). If you send a Toast that contains custom audio to a Desktop device before Version 1511, the toast will be silent. Therefore, for Desktop pre-Version 1511, you should NOT include the custom audio in your Toast notification, so that the notification will at least use the default notification sound.
 
 **Known Issue**: If you're using Desktop Version 1511, the custom toast audio will only work if your app is installed via the Store. That means you cannot locally test your custom audio on Desktop before submitting to the Store - but the audio will work fine once installed from the Store. We fixed this in the Anniversary Update, so that custom audio from your locally deployed app will work correctly.
+
+### [Windows App SDK](#tab/appsdk)
+
+```csharp
+var builder = new AppNotificationBuilder()
+    .AddText("New message")
+    .SetAudioUri(new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a"));
+
+var notification = builder.BuildNotification();
+AppNotificationManager.Default.Show(notification);
+```
+
+### [Community Toolkit](#tab/toolkit)
 
 ```csharp
 var contentBuilder = new ToastContentBuilder()
@@ -54,6 +78,21 @@ if (supportsCustomAudio)
 contentBuilder.Show();
 ```
 
+### [XML](#tab/xml)
+
+```xml
+<toast>
+  <visual>
+    <binding template="ToastGeneric">
+      <text>New message</text>
+    </binding>
+  </visual>
+  <audio src="ms-appx:///Assets/Audio/CustomToastAudio.m4a"/>
+</toast>
+```
+
+---
+
 Supported audio file types include:
 
 - .aac
@@ -77,7 +116,7 @@ Supported audio file sources:
 
 ## Send the notification
 
-Sending a notification with audio is the same as sending a regular notification (just call the Show method). See [Send local toast](send-local-toast.md) to learn more.
+Sending a notification with audio is the same as sending a regular notification. For Windows App SDK apps, use `AppNotificationManager.Default.Show()`. For Community Toolkit apps, call the `Show()` method on the builder. See [Send local toast](send-local-toast.md) to learn more.
 
 
 ## Related topics

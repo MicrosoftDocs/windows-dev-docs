@@ -6,7 +6,7 @@ label: Chaseable tiles
 template: detail.hbs
 ms.date: 06/13/2017
 ms.topic: article
-keywords: windows 10, uwp, notification listener, usernotificationlistener, documentation, access notifications
+keywords: windows 10, windows 11, windows app sdk, winappsdk, uwp, notification listener, usernotificationlistener, documentation, access notifications
 ms.localizationpriority: medium
 ---
 # Notification listener: Access all notifications
@@ -16,6 +16,9 @@ The notification listener provides access to a user's notifications. Smartwatche
 > [!IMPORTANT]
 > **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or later to use Notification Listener.
 
+
+> [!NOTE]
+> The Notification Listener APIs are part of the `Windows.UI.Notifications.Management` WinRT namespace and can be used by both UWP and Windows App SDK apps. For information about sending app notifications with the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md).
 
 > **Important APIs**: [UserNotificationListener class](/uwp/api/Windows.UI.Notifications.Management.UserNotificationListener), [UserNotificationChangedTrigger class](/uwp/api/Windows.ApplicationModel.Background.UserNotificationChangedTrigger)
 

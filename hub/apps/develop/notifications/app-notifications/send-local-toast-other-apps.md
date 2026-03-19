@@ -6,7 +6,7 @@ label: Send a local toast notification from other types of unpackaged apps
 template: detail.hbs
 ms.date: 07/28/2025
 ms.topic: how-to
-keywords: windows 10, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, other types of apps, unpackaged
+keywords: windows 10, windows app sdk, winappsdk, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, other types of apps, unpackaged
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
 ---
@@ -25,6 +25,9 @@ An app notification is a message that an app can construct and deliver to the us
 
 > [!IMPORTANT]
 > If you're writing a C# app, then please see the [C# documentation](send-local-toast.md). If you're writing a C++ app, the please see the [C++ UWP](send-local-toast-cpp-uwp.md) or [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation.
+
+> [!NOTE]
+> If your app can use the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) for the recommended approach.
 
 ## Step 1: Register your app in the registry
 
