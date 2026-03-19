@@ -412,6 +412,7 @@ items:
         - name: Visual feedback
           href: input/guidelines-for-visualfeedback.md    
     - name: Notifications
+      href: notifications/index.md
       items:
       - name: Push notifications
         items:

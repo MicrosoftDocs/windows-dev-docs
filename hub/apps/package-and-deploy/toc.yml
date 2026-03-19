@@ -3,6 +3,8 @@ items:
       href: ../desktop/index.yml
     - name: Package and deploy overview
       href: ../package-and-deploy/index.md
+    - name: Choose a packaging model
+      href: ../package-and-deploy/choose-packaging-model.md
     - name: Packaging
       items:
         - name: Overview

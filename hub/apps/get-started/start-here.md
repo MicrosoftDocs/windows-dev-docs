@@ -58,6 +58,9 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 * **For C++ app development**, select the **C++ WinUI app development tools** under the **WinUI application development** node in the **Installation details** pane (This will also select any additional required components.)
 
+> [!TIP]
+> If you don't see WinUI templates after installing Visual Studio, open the Visual Studio Installer, select **Modify**, and confirm the **WinUI application development** workload is checked. Restart Visual Studio after modifying the installation.
+
 ---
 
 ## Create and launch your first WinUI app
@@ -65,6 +68,9 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 1. Open Visual Studio and select **Create a new project**.
 
 2. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
+
+   > [!NOTE]
+   > The **Packaged** template is recommended for new apps. A packaged app (using MSIX) gives your users a clean install and uninstall experience, and enables Windows features like notifications, background tasks, and the Microsoft Store. You can learn more about the packaged vs. unpackaged choice in [Windows apps: packaging, deployment, and process](intro-pack-dep-proc.md).
 
    :::image type="content" source="images/hello-world/create-project.png" lightbox="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
 
