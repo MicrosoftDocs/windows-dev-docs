@@ -42,20 +42,19 @@ Many of these APIs return enumeration values that express the result as "NotSupp
 
 ## Media type and subtype
 
-Windows APIs support content type strings with the media types `"video"` and `"audio"` and the subtype/container of `"mp4"`.
+Windows APIs only support content type strings with the media type `"video"` and the subtype/container of `"mp4"`.
 
 
 | Value | Description | Remarks |
-|-------|-------------|----------------|--------------------|
+|-------|-------------|----------------|
 | "video/mp4" | Video media type and MPEG-4 subtype/container. | |
-| "audio/mp4" | Audio media type and MPEG-4 subtype/container. | Used for audio-only codec capability queries. |
 
 
 
 ## Video codecs
 
 | Value | Description | Remarks |
-|-------|-------------|----------------|--------------------|
+|-------|-------------|----------------|
 | "avc1" | H.264 | |
 | "hvc1" | HEVC  | |
 | "hev1" | HEVC  | |
@@ -116,21 +115,19 @@ It is up to the content provider to choose the resolution limit to use when this
 
 ### Supported audio endpoint codecs
 
-Some audio encoding features require the audio endpoint to support the feature natively. The *audio-endpoint-codec* extension is useful for applications and streaming services, allowing them to figure out dynamically whether they should send stereo audio or 5.1 (because the device supports 5.1), and therefore control used bandwidth while maximizing audio quality. 
-
-The `audio-endpoint-codec` query differs from the `codecs` query because it determines whether the audio endpoint device connected to the PC supports the specified format. So, for example, if a PC has the software decoder for the AC3 codec, the `codecs=ac-3` query will succeed. If the PC is using basic headphones as the audio endpoint, the `audio-endpoint-codec=ac-3` query will fail. But if the PC is connected to an audio/video receiver that can decode AC3 format, the `audio-endpoint-codec=ac-3` query will pass.
+Some audio playback scenarios require the audio endpoint to support the a given audio codec or feature natively. The *audio-endpoint-codec* extension is useful for applications and streaming services, allowing them to figure out dynamically whether they should send stereo audio or 5.1 (because the device supports 5.1), and therefore control used bandwidth while maximizing audio quality. It also exposes information on whether the audio endpoint is connected to a device that can decode the audio format in hardware instead of relying on the software decoder on the system.
 
 Support for *audio-endpoint-codec* was introduced in Windows 10, build 1803.
 
-The following is an example content type string using *audio-endpoint-codec*.
+The following is an example content type string using *audio-endpoint-codec* checking for the audio endpoint hardware support for the Dolby Digital decoder.
 
 `'video/mp4; codecs="avc1,mp4a"; features="audio-endpoint-codec=DD"'`
 
-The following is an example content type string for uncompressed PCM audio.
+The following is an example content type string checking for the number of channels supported by the audio endpoint.
 
 `'video/mp4; features="audio-endpoint-codec=PCM2.0"'`
 
-Note that if the endpoint supports more or the same number of channels as specified, the check will succeed. So, if the system is configured for 5.1 audio, then checks for "PCM2.0" and "PCM5.1" will pass, but a check for "PCM7.1" will fail.
+Note that if the endpoint supports more or the same number of channels as specified, the check will succeed. So, if the system is configured for 5.1 audio, then checks for "PCM2.0" and "PCM5.1" will pass, but a check for "PCM7.1" will return a failure.
 
 
 | Codec string | Description | Remarks |
@@ -145,6 +142,9 @@ Note that if the endpoint supports more or the same number of channels as specif
 | PCM7.1 |  Uncompressed 7.1 channel audio          |         |
 | AC3 | Dolby Digital | |
 
+> [!NOTE]
+> The `codecs=ac-3` query and the `audio-endpoint-codec=DD` query check for different capabilities despite both referencing the Dolby Digital codec. The `codecs` query checks whether a software decoder is present on the system that can decode the format, while the `audio-endpoint-codec` query checks whether the connected audio endpoint device natively supports the format. The result of one query does not affect the other — a system can have a software decoder without a capable endpoint or a capable endpoint without a software decoder.
+
 ### Audio capability query examples
 
 Windows supports enhanced MIME CanPlayType queries that allow a client to discover the audio capabilities of a device. You can query the CanPlayType/IsTypeSupported API for audio capabilities to find out what codecs are available on the machine, the number of speakers the system is configured for, and the capabilities of the connected audio endpoint device.
@@ -153,12 +153,9 @@ Windows supports enhanced MIME CanPlayType queries that allow a client to discov
 
 Use the `codecs` parameter to determine whether the system has a software decoder that can decode the specified audio format into PCM and play it through the connected speaker or headphone configuration.
 
-`"audio/mp4; codecs=\"ac-3\""`
+`"video/mp4; codecs=\"ac-3\""`
 
 This query checks whether there is a software decoder that can decode AC-3 (Dolby Digital) audio.
-
-> [!NOTE]
-> The `codecs=ac-3` query and the `audio-endpoint-codec=DD` query check for different capabilities despite both referencing the Dolby Digital codec. The `codecs` query checks whether a software decoder is present on the system that can decode the format, while the `audio-endpoint-codec` query checks whether the connected audio endpoint device natively supports the format. The result of one query does not affect the other — a system can have a software decoder without a capable endpoint, or a capable endpoint without a software decoder.
 
 **Querying for audio endpoint device capabilities**
 
@@ -180,7 +177,7 @@ This query checks whether the system is configured for 5.1 speakers and can play
 
 When systems with Dolby Atmos or headphones that support Virtual Surround Sound (VSS) are considered, the number of possible hardware and software combinations can be very large. The following table shows the query results for `audio-endpoint-codec` and `codecs` across representative device configurations.
 
-| # | Device configuration | Dolby SW decoder | DD | DD+ | DD+JOC | PCM2.0 | PCM5.1 | PCM7.1 | codecs=ac-3 |
+| # | Device configuration | Dolby SW Decoder | DD | DD+ | DD+JOC | PCM2.0 | PCM5.1 | PCM7.1 | codecs=ac-3 |
 |---|---------------------|---------------|:---:|:---:|:------:|:------:|:------:|:------:|:-----------:|
 | 1 | Headphones with Atmos, VSS enabled | Installed | ✗ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | 2 | Headphones without Atmos, VSS disabled | Installed | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✓ |
@@ -188,8 +185,8 @@ When systems with Dolby Atmos or headphones that support Virtual Surround Sound 
 | 4 | Headphones without Atmos, VSS enabled | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ | ✗ |
 | 5 | 5.1 speakers (no AVR) | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✓ |
 | 6 | 5.1 speakers (no AVR) | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✗ |
-| 7 | Atmos-capable AVR, configured for 5.1 | Installed | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |
-| 8 | Atmos-capable AVR, configured for 5.1 | Not installed | ✓ | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ |
+| 7 | Atmos-capable AVR, configured for 5.1 | Not Installed | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ |
+| 8 | Non-Atmos AVR, configured for 5.1 | Installed | ✓ | ✓ | ✗ | ✓ | ✓ | ✗ | ✓ |
 
 The DD, DD+, DD+JOC, PCM2.0, PCM5.1, and PCM7.1 columns show the results of the `audio-endpoint-codec` feature query.
 
