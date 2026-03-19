@@ -11,13 +11,13 @@ audience: new-desktop-app-developers
 
 # Use GitHub Copilot to create WinUI 3 / Windows App SDK apps in Visual Studio
 
-In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/features/copilot) can be used to build WinUI / Windows App SDK desktop apps in Visual Studio. This guide builds upon *[What is GitHub Copilot Completions for Visual Studio?](/visualstudio/ide/visual-studio-github-copilot-extension)*, offering tailored tips and best practices for Copilot-assisted WinUI app development.
+In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/features/copilot) can be used to build WinUI / Windows App SDK desktop apps in Visual Studio. This guide builds upon *[GitHub Copilot in Visual Studio](/visualstudio/ide/visual-studio-github-copilot-extension)*, offering tailored tips and best practices for Copilot-assisted WinUI app development.
 
 :::image type="content" source="images/github-copilot-winui-vs/github-copilot-extension-example.gif" alt-text="Animated screenshot that shows the code completion capabilities of the GitHub Copilot in Visual Studio.":::
 
 ## Prerequisites
 
-- Visual Studio 2022 (v17.10 or later) or Visual Studio 2026, with the **WinUI application development** workload applied (see [Get started with WinUI](../get-started/start-here.md) for setup details). GitHub Copilot is included in Visual Studio 2022 v17.10 and later by default.
+- Visual Studio 2022 (v17.10 or later) or Visual Studio 2026, with the **WinUI application development** workload applied (see [Set up your environment and create your first WinUI project](../get-started/start-here.md) for setup details). GitHub Copilot is included in Visual Studio 2022 v17.10 and later by default.
 - An active subscription to [GitHub Copilot](https://github.com/features/copilot/plans) associated with the GitHub account that you sign in to Visual Studio with.
 - Familiarity with C#, WinUI, and Windows App SDK.
 
