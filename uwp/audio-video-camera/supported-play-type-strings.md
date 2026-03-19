@@ -187,7 +187,7 @@ When systems with Dolby Atmos or headphones that support Virtual Surround Sound 
 | 4 | Headphones without Atmos, VSS enabled | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ | ✗ |
 | 5 | 5.1 speakers (no AVR) | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✓ |
 | 6 | 5.1 speakers (no AVR) | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✗ |
-| 7 | Atmos-capable AVR, configured for 5.1 | Not Installed | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ |
+| 7 | Atmos-capable AVR, configured for 5.1 | Not installed | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | ✗ |
 | 8 | Non-Atmos AVR, configured for 5.1 | Installed | ✓ | ✓ | ✗ | ✓ | ✓ | ✗ | ✓ |
 
 The DD, DD+, DD+JOC, PCM2.0, PCM5.1, and PCM7.1 columns show the results of the `audio-endpoint-codec` feature query.
