@@ -109,7 +109,7 @@ Topics covered include:
 >
 > - If you're running a **packaged** app (the recommended default), ensure you're launching via Visual Studio with the **MsixPackage** launch profile selected (not the plain executable profile). The MSIX packaging step installs the required runtime components.
 > - If you're running an **unpackaged** app, you must install the [Windows App SDK runtime](../windows-app-sdk/downloads.md) separately before running the app outside of Visual Studio.
-> - If the error occurs during development, open your `.csproj` and confirm `<WindowsPackageType>MSIX</WindowsPackageType>` is set (for packaged apps), or that you've called `Bootstrap.Initialize()` at startup (for unpackaged apps).
+> - If the error occurs during development, open your `.csproj` and confirm that your packaging configuration matches your deployment model: for **packaged** apps, omit the `<WindowsPackageType>` property (or leave it at its default) and build/run the MSIX package; for **unpackaged** apps, set `<WindowsPackageType>None</WindowsPackageType>` and ensure you've called `Bootstrap.Initialize()` at startup.
 >
 > See [Deploy apps that use the Windows App SDK](../package-and-deploy/deploy-overview.md) for more details on deployment requirements.
 
