@@ -55,9 +55,12 @@ To reference a specific file in Chat, type `#` and select the file from the pick
 
 ### Ask Copilot for inline suggestions
 
-Right-click in the code editor and select `Ask Copilot`. A prompt window will open where you can chat inline with Copilot to get a list of suggestions based on the current cursor position and your prompt:
+Right-click in the code editor and select **Chat** to open an inline chat window at your cursor position. Type your question and press **Enter**:
 
-:::image type="content" source="images/github-copilot-winui-vs/2-generate-multiple-suggestions.png" alt-text="Screenshot that shows the inline prompting capabilities of GitHub Copilot.":::
+:::image type="content" source="images/github-copilot-winui-vs/2-generate-multiple-suggestions.png" alt-text="Screenshot that shows the inline chat capabilities of GitHub Copilot.":::
+
+> [!TIP]
+> You can promote an inline chat thread to the full Chat panel at any time by selecting **Copilot Actions** > **Add to Chat**. This preserves the conversation context so you can continue in the panel.
 
 ### Prompt Copilot with plain-language comments
 
