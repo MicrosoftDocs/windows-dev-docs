@@ -80,11 +80,18 @@ Alternatively, for inline completions you can use temporary comments to paste th
 
 :::image type="content" source="images/github-copilot-winui-vs/4-add-context-temporary-comments.png" alt-text="Screenshot that shows the code completion capabilities of GitHub Copilot (context expansion).":::
 
-### Ask Copilot to explain how something works with inline comments
+### Ask Copilot to explain how something works
 
-You can use inline comments to ask Copilot to explain how a specific piece of code works. This is similar to using the inline Ask Copilot feature or the Copilot Chat window, except your prompt is typed directly into the code editor:
+The best way to ask Copilot to explain code is to select it in the editor, then right-click and choose **Copilot Actions** > **Explain**. This opens the Chat panel with your selected code already attached as context, and Copilot provides a detailed explanation.
 
-:::image type="content" source="images/github-copilot-winui-vs/5-ask-copilot-inline-explanation.png" alt-text="Screenshot that shows the code completion capabilities of GitHub Copilot (explain).":::
+You can also ask for explanations directly in the Chat panel using the `/explain` slash command:
+
+```
+/explain What does this DispatcherQueue.TryEnqueue call do?
+```
+
+> [!TIP]
+> Slash commands like `/explain`, `/fix`, and `/doc` are shortcuts in the Chat panel that tell Copilot exactly what kind of help you want. Type `/` in the Chat input to see all available commands.
 
 ### Use Copilot to test code standards
 
@@ -117,7 +124,7 @@ In this how-to, we demonstrated how to use GitHub Copilot in Visual Studio to as
 - Generate autocomplete suggestions inline with Ask Copilot.
 - Prompt Copilot with plain-language comments.
 - Use `#file` references or temporary comments to add context from other files.
-- Ask Copilot to explain how something works with inline comments.
+- Ask Copilot to explain code using **Copilot Actions** > **Explain** or the `/explain` slash command in Chat.
 - Use Copilot to test and enforce code standards.
 - Identify and correct UWP patterns that Copilot may suggest in WinUI 3 projects.
 
