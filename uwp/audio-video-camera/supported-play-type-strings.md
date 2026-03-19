@@ -42,12 +42,13 @@ Many of these APIs return enumeration values that express the result as "NotSupp
 
 ## Media type and subtype
 
-Windows APIs only support content type strings with the media type `"video"` and the subtype/container of `"mp4"`.
+Windows APIs support content type strings with the media types `"video"` and `"audio"` and the subtype/container of `"mp4"`.
 
 
 | Value | Description | Remarks |
 |-------|-------------|----------------|--------------------|
 | "video/mp4" | Video media type and MPEG-4 subtype/container. | |
+| "audio/mp4" | Audio media type and MPEG-4 subtype/container. | Used for audio-only codec capability queries. |
 
 
 
@@ -143,4 +144,49 @@ Note that if the endpoint supports more or the same number of channels as specif
 | PCM5.1 |  Uncompressed 5.1 channel audio           |         |
 | PCM7.1 |  Uncompressed 7.1 channel audio          |         |
 | AC3 | Dolby Digital | |
+
+### Audio capability query examples
+
+Windows supports enhanced MIME CanPlayType queries that allow a client to discover the audio capabilities of a device. You can query the CanPlayType/IsTypeSupported API for audio capabilities to find out what codecs are available on the machine, the number of speakers the system is configured for, and the capabilities of the connected audio endpoint device.
+
+**Querying for audio codec support**
+
+Use the `codecs` parameter to determine whether the system has a software decoder that can decode the specified audio format into PCM and play it through the connected speaker or headphone configuration.
+
+`"audio/mp4; codecs=\"ac-3\""`
+
+This query checks whether there is a software decoder that can decode AC-3 (Dolby Digital) audio.
+
+**Querying for audio endpoint device capabilities**
+
+Use the `audio-endpoint-codec` feature to determine the capabilities of the audio endpoint device, such as whether the system is connected to an audio/video receiver (AVR) that can decode a specific audio format.
+
+`"video/mp4; codecs=\"avc3,mp4a\";features=\"audio-endpoint-codec=DD\""`
+
+This query checks whether the connected audio endpoint device, such as an AVR, can play Dolby Digital audio.
+
+**Querying for speaker configuration**
+
+Use the `audio-endpoint-codec` feature with a PCM codec string to discover the number of speakers the system is configured for.
+
+`'video/mp4; features="audio-endpoint-codec=PCM5.1"'`
+
+This query checks whether the system is configured for 5.1 speakers and can play 5.1-channel PCM audio. If the endpoint supports an equal or greater number of channels than specified, the check succeeds.
+
+### Example audio capability matrix
+
+When systems with Dolby Atmos or headphones that support Virtual Surround Sound (VSS) are considered, the number of possible hardware and software combinations can be very large. The following table shows the query results for the `audio-endpoint-codec` feature and the `codecs=ac-3` codec query across representative device configurations.
+
+| # | Device configuration | Dolby decoder | DD | DD+ | DD+JOC | PCM2.0 | PCM5.1 | PCM7.1 | codecs=ac-3 |
+|---|---------------------|---------------|:---:|:---:|:------:|:------:|:------:|:------:|:-----------:|
+| 1 | Headphones with Atmos, VSS enabled | Installed | ✗ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| 2 | Headphones without Atmos, VSS disabled | Installed | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✓ |
+| 3 | Headphones without Atmos, VSS enabled | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ | ✓ |
+| 4 | Headphones without Atmos, VSS enabled | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ | ✗ |
+| 5 | 5.1 speakers (no AVR) | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✓ |
+| 6 | 5.1 speakers (no AVR) | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✗ |
+| 7 | Atmos-capable AVR, configured for 5.1 | Installed | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |
+| 8 | Atmos-capable AVR, configured for 5.1 | Not installed | ✓ | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ |
+
+The DD, DD+, DD+JOC, PCM2.0, PCM5.1, and PCM7.1 columns show the results of the `audio-endpoint-codec` feature query. The `codecs=ac-3` column shows whether a software decoder for AC-3 (Dolby Digital) is available on the system.
 
