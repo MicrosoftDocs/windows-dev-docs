@@ -155,7 +155,7 @@ Windows supports enhanced MIME CanPlayType queries that allow a client to discov
 
 Use the `codecs` parameter to determine whether the system has a software decoder that can decode the specified audio format into PCM and play it through the connected speaker or headphone configuration.
 
-`"video/mp4; codecs=\"ac-3\""`
+`video/mp4; codecs="ac-3"`
 
 This query checks whether there is a software decoder that can decode AC-3 (Dolby Digital) audio.
 
@@ -163,7 +163,7 @@ This query checks whether there is a software decoder that can decode AC-3 (Dolb
 
 Use the `audio-endpoint-codec` feature to determine the capabilities of the audio endpoint device, such as whether the system is connected to an audio/video receiver (AVR) that can decode a specific audio format.
 
-`"video/mp4; codecs=\"avc3,mp4a\";features=\"audio-endpoint-codec=DD\""`
+`video/mp4; codecs="avc3,mp4a";features="audio-endpoint-codec=DD"`
 
 This query checks whether the connected audio endpoint device, such as an AVR, can play Dolby Digital audio.
 
