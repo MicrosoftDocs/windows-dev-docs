@@ -18,7 +18,7 @@ In this how-to, we'll demonstrate how [GitHub Copilot](https://github.com/featur
 ## Prerequisites
 
 - Visual Studio 2022 (v17.10 or later) or Visual Studio 2026, with the **WinUI application development** workload applied (see [Set up your environment and create your first WinUI project](../get-started/start-here.md) for setup details). GitHub Copilot is included in Visual Studio 2022 v17.10 and later by default.
-- An active subscription to [GitHub Copilot](https://github.com/features/copilot/plans) associated with the GitHub account that you sign in to Visual Studio with.
+- A GitHub account with access to [GitHub Copilot](https://github.com/features/copilot/plans). GitHub Copilot is available for free for individual developers; paid plans are also available. Sign in to Visual Studio with the same GitHub account.
 - Familiarity with C#, WinUI, and Windows App SDK.
 
 ## Use GitHub Copilot
@@ -93,11 +93,27 @@ You can also ask for explanations directly in the Chat panel using the `/explain
 > [!TIP]
 > Slash commands like `/explain`, `/fix`, and `/doc` are shortcuts in the Chat panel that tell Copilot exactly what kind of help you want. Type `/` in the Chat input to see all available commands.
 
-### Use Copilot to test code standards
+### Use Copilot to enforce code standards
 
-You can use Copilot to generate code that adheres to your project's coding standards, and to test any given snippet's adherence to those standards. Here's an example of how you can use inline comments to specify two conventions, and then have Copilot validate the code snippet against these conventions:
+The most reliable way to have Copilot follow your project's coding conventions is to add a `.github/copilot-instructions.md` file to your repository. Copilot reads this file automatically and applies the instructions to all suggestions in that repo. For example:
 
-:::image type="content" source="images/github-copilot-winui-vs/6-enforce-code-standards.png" alt-text="Screenshot that shows the code completion capabilities of GitHub Copilot (standards).":::
+```markdown
+# Copilot instructions
+
+- Use DispatcherQueue.TryEnqueue for all UI thread dispatch, never CoreDispatcher
+- Always set XamlRoot when showing a ContentDialog
+- Use the MVVM pattern with CommunityToolkit.Mvvm ObservableObject and RelayCommand
+- Target net10.0-windows10.0.19041.0 — do not use plain net10.0
+```
+
+You can also ask Copilot to review a code snippet against specific standards in the Chat panel:
+
+```
+Does this code follow the MVVM pattern correctly for a WinUI 3 app?
+```
+
+> [!TIP]
+> For team-wide consistency, commit `.github/copilot-instructions.md` to source control. Every developer on the team will get the same Copilot behavior without any per-machine configuration.
 
 ## WinUI 3 patterns to watch for
 
@@ -121,11 +137,11 @@ In this how-to, we demonstrated how to use GitHub Copilot in Visual Studio to as
 
 - Autocomplete your code snippets.
 - Use the Copilot Chat panel for multi-step WinUI questions and file references.
-- Generate autocomplete suggestions inline with Ask Copilot.
+- Generate inline suggestions using right-click > **Chat**.
 - Prompt Copilot with plain-language comments.
 - Use `#file` references or temporary comments to add context from other files.
 - Ask Copilot to explain code using **Copilot Actions** > **Explain** or the `/explain` slash command in Chat.
-- Use Copilot to test and enforce code standards.
+- Use Copilot to enforce code standards with `.github/copilot-instructions.md` or Chat review.
 - Identify and correct UWP patterns that Copilot may suggest in WinUI 3 projects.
 
 ## Related content
