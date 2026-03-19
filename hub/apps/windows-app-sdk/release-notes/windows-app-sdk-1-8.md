@@ -15,6 +15,63 @@ zone_pivot_groups: wasdk-release-channels
 :::zone pivot="stable"
 
 
+## Version 1.8.6 (1.8.260317003)
+
+Released: **March 18, 2026** <br><br>
+
+
+<details><summary>New SplitMenuFlyoutItem Control</summary>
+
+>
+> The new **SplitMenuFlyoutItem** control is designed to provide a split button experience within a menu flyout. This control will enable developers to expose a default primary action while also offering additional options through a submenu, ideal for condensing complex functionality into a smaller footprint and saving overall menu length. For more information, see GitHub spec [10862](https://github.com/microsoft/microsoft-ui-xaml/pull/10862). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): SplitMenuFlyoutItem_Available)
+>
+
+</details>
+
+<details><summary>Windows ML CMake support</summary>
+
+>
+> Windows ML can now be used from C++ projects using CMake. See the [Get started page](/windows/ai/new-windows-ml/get-started) to learn more.
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.23.4. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed a pointer arithmetic issue in the app-instance activation-redirection shared-memory queue that could cause incorrect behavior when using `AppInstance.RedirectActivationTo`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppLifecycle_SharedMemoryRedirectionQueueFix)
+> * Fixed an issue in the deployment manager where activity data was being incorrectly reset during package installation and license operations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DeploymentManager_ActivityCollectionFix)
+> * Improved diagnosability for Text Intelligence APIs used in Windows AI scenarios. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): TextIntelligence_Insights)
+> * Fixed a visual alignment issue with `AppBarToggleButton` in `CommandBarFlyout` secondary commands. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, XAML control template fix)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 1.8.5 release:
+> ```
+> Microsoft.UI.Xaml.Automation.Peers
+> 
+>     SplitMenuFlyoutItemAutomationPeer
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls
+> 
+>     SplitMenuFlyoutItem
+> ```
+</details>
+
+
 ## Version 1.8.5 (1.8.260209005)
 
 Released: **February 10, 2026** <br><br>
