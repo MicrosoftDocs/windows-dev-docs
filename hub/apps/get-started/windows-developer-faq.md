@@ -103,6 +103,18 @@ Topics covered include:
 
 </details>
 
+<details><summary>I get an "Unable to load DLL 'Microsoft.ui.xaml.dll'" error when running my app. How do I fix it?</summary>
+
+> This error usually occurs in **unpackaged** app scenarios where the Windows App SDK runtime hasn't been installed on the machine. Try the following:
+>
+> - If you're running a **packaged** app (the recommended default), ensure you're launching via Visual Studio with the **MsixPackage** launch profile selected (not the plain executable profile). The MSIX packaging step installs the required runtime components.
+> - If you're running an **unpackaged** app, you must install the [Windows App SDK runtime](../windows-app-sdk/downloads.md) separately before running the app outside of Visual Studio.
+> - If the error occurs during development, open your `.csproj` and confirm that your packaging configuration matches your deployment model: for **packaged** apps, omit the `<WindowsPackageType>` property (or leave it at its default) and build/run the MSIX package; for **unpackaged** apps, set `<WindowsPackageType>None</WindowsPackageType>` and ensure you've called `Bootstrap.Initialize()` at startup.
+>
+> See [Deploy apps that use the Windows App SDK](../package-and-deploy/deploy-overview.md) for more details on deployment requirements.
+
+</details>
+
 <details><summary>What is the difference between WinUI and WinUI for UWP?</summary>
 
 > **WinUI** (previously referred to as WinUI 3) is the latest native UI framework for Windows app development. It provides a modern and flexible UI framework for creating visually appealing and interactive Windows apps. WinUI is part of the Windows App SDK and works best with the latest versions of Windows.
