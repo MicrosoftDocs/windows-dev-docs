@@ -12,7 +12,7 @@ ms.custom: template-quickstart
 
 ![A screen capture showing an app notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, "Going". There are two buttons labeled "RSVP" and "Dismiss"](images/shell-1x.png)
 
-In this quickstart, you will create a desktop Windows application that sends and receives local app notifications, also known as toast notifications, using the [Windows App SDK](../../../windows-app-sdk/index.md).
+In this quickstart, you will create a desktop Windows application that sends and receives local app notifications using the [Windows App SDK](../../../windows-app-sdk/index.md).
 
 > [!IMPORTANT]
 > Notifications for an elevated (admin) app is currently not supported.

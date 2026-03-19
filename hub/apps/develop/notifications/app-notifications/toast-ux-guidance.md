@@ -1,5 +1,5 @@
 ---
-description: This article provides design guidance to consider as you plan and implement the toast notification experience for your app.
+description: This article provides design guidance to consider as you plan and implement the app notification experience for your app.
 title: Notifications design basics
 label: Notifications design basics
 template: detail.hbs

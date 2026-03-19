@@ -1,5 +1,5 @@
 ---
-description: Learn how to use toast with pending update activation to create multi-step interactions in your toast notifications.
+description: Learn how to use notification with pending update activation to create multi-step interactions in your app notifications.
 title: Toast with pending update activation
 label: Toast with pending update activation
 template: detail.hbs
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Toast with pending update activation
 
-You can use **PendingUpdate** to create multi-step interactions in your toast notifications. For example, as seen below, you can create a series of toasts where the subsequent toasts depend on responses from the previous toasts.
+You can use **PendingUpdate** to create multi-step interactions in your app notifications. For example, as seen below, you can create a series of notifications where the subsequent notifications depend on responses from the previous notifications.
 
 ![Toast with pending update](images/toast-pendingupdate.gif)
 
@@ -23,20 +23,20 @@ You can use **PendingUpdate** to create multi-step interactions in your toast no
 This article assumes a working knowledge of...
 
 - [Constructing toast content](adaptive-interactive-toasts.md)
-- [Sending a toast and handling background activation](send-local-toast.md)
+- [Sending an app notification and handling background activation](send-local-toast.md)
 
 
 ## Overview
 
-To implement a toast that uses pending update as its after activation behavior...
+To implement a notification that uses pending update as its after activation behavior...
 
-1. On your toast background activation buttons, specify an **AfterActivationBehavior** of **PendingUpdate**
+1. On your notification background activation buttons, specify an **AfterActivationBehavior** of **PendingUpdate**
 
-2. Assign a **Tag** (and optionally **Group**) when sending your toast
+2. Assign a **Tag** (and optionally **Group**) when sending your notification
 
-3. When the user clicks your button, your background task will be activated, and the toast will be kept on-screen in a pending update state
+3. When the user clicks your button, your background task will be activated, and the notification will be kept on-screen in a pending update state
 
-4. In your background task, send a new toast with your new content, using the same **Tag** and **Group**
+4. In your background task, send a new notification with your new content, using the same **Tag** and **Group**
 
 
 ## Assign PendingUpdate
@@ -129,11 +129,11 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 ---
 
 
-## Replace the toast with new content
+## Replace the notification with new content
 
-In response to the user clicking your button, your background task gets triggered and you need to replace the toast with new content. You replace the toast by simply sending a new toast with the same **Tag** and **Group**.
+In response to the user clicking your button, your background task gets triggered and you need to replace the notification with new content. You replace the notification by simply sending a new notification with the same **Tag** and **Group**.
 
-We strongly recommend **setting the audio to silent** on replacements in response to a button click, since the user is already interacting with your toast.
+We strongly recommend **setting the audio to silent** on replacements in response to a button click, since the user is already interacting with your notification.
 
 #### [Windows App SDK](#tab/appsdk)
 
@@ -181,6 +181,6 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 ## Related topics
 
 - [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [Send a local toast and handle activation](send-local-toast.md)
+- [Send a local app notification and handle activation](send-local-toast.md)
 - [Toast content documentation](adaptive-interactive-toasts.md)
 - [Toast progress bar](toast-progress-bar.md)

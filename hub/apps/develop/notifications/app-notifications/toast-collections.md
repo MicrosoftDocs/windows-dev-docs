@@ -1,6 +1,6 @@
 ---
 title: Toast Collections
-description: Learn how to organize toast notifications for your app by creating, updating, or removing notification collections in Action Center.
+description: Learn how to organize app notifications for your app by creating, updating, or removing notification collections in Action Center.
 label: Toast Collections
 template: detail.hbs
 ms.date: 05/16/2018
@@ -8,7 +8,7 @@ ms.topic: how-to
 keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, notification, collections, collection, group notifications, grouping notifications, group, organize, Action Center, toast
 ms.localizationpriority: medium
 ---
-# Grouping toast notifications with collections
+# Grouping app notifications with collections
 Use collections to organize your app's toasts in Action Center. Collections help users locate information within Action Center more easily and allow for developers to better manage their notifications.  The APIs below allow for removing, creating, and updating notification collections.
 
 > [!IMPORTANT]

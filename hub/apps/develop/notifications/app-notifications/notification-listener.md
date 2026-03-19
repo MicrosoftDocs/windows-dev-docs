@@ -93,7 +93,7 @@ The user can revoke access at any time via Windows Settings. Therefore, your app
 
 ## Access the user's notifications
 
-With the notification listener, you can get a list of the user's current notifications. Simply call the [GetNotificationsAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) method, and specify the type of notifications you want to get (currently, the only type of notifications supported are toast notifications).
+With the notification listener, you can get a list of the user's current notifications. Simply call the [GetNotificationsAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.GetNotificationsAsync) method, and specify the type of notifications you want to get (currently, the only type of notifications supported are app notifications).
 
 ```csharp
 // Get the toast notifications

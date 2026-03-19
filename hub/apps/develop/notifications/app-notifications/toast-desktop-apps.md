@@ -1,7 +1,7 @@
 ---
-description: Discover the different options desktop apps have for sending toast notifications
-title: Activating toast notifications from desktop apps
-label: Activating toast notifications from desktop apps
+description: Discover the different options desktop apps have for sending app notifications
+title: Activating app notifications from desktop apps
+label: Activating app notifications from desktop apps
 template: detail.hbs
 ms.date: 02/27/2025
 ms.topic: concept-article
@@ -9,16 +9,16 @@ keywords: windows 10, windows app sdk, winappsdk, uwp, win32, desktop, toast not
 ms.localizationpriority: medium
 ---
 
-# Activating toast notifications from desktop apps
+# Activating app notifications from desktop apps
 
-Packaged and unpackaged Win32 apps can send interactive toast notifications just like other Windows apps can. That includes packaged apps (see [Create a new project for a packaged WinUI desktop app](../../../winui/winui3/create-your-first-winui3-app.md#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity by packaging with external location](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)); and unpackaged apps (see [Create a new project for an unpackaged WinUI desktop app](../../../winui/winui3/create-your-first-winui3-app.md#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
+Packaged and unpackaged Win32 apps can send interactive app notifications just like other Windows apps can. That includes packaged apps (see [Create a new project for a packaged WinUI desktop app](../../../winui/winui3/create-your-first-winui3-app.md#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)); packaged apps with external location (see [Grant package identity by packaging with external location](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)); and unpackaged apps (see [Create a new project for an unpackaged WinUI desktop app](../../../winui/winui3/create-your-first-winui3-app.md#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)).
 
 > [!NOTE]
 > For Windows App SDK apps, activation is handled through the `AppNotificationManager.Default.NotificationInvoked` event. See [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) for the recommended approach.
 
 However, for an unpackaged Win32 app there are a few special steps. That's due to the different activation schemes, and the lack of package identity at runtime.
 
-In this topic, we list out the options you have for sending a toast notification on Windows 10. Every option fully supports...
+In this topic, we list out the options you have for sending an app notification on Windows 10. Every option fully supports...
 
 * Persisting in Action Center
 * Being activatable from both the popup and inside Action Center
@@ -26,7 +26,7 @@ In this topic, we list out the options you have for sending a toast notification
 
 ## All options
 
-The table below illustrates your options for supporting toasts within your desktop app, and the corresponding supported features. You can use the table to select the best option for your scenario.<br/><br/>
+The table below illustrates your options for supporting app notifications within your desktop app, and the corresponding supported features. You can use the table to select the best option for your scenario.<br/><br/>
 
 | Option | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- | -- |
@@ -53,11 +53,11 @@ With the COM activator option, you can use the following notification templates 
 > [!NOTE]
 > If you add the COM activator to your existing packaged app, then Foreground/Background and Legacy notification activations will activate your COM activator instead of your command line.
 
-To learn how to use this option, see [Send a local toast notification from desktop C# apps](send-local-toast.md) or [Send a local toast notification from Win32 C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
+To learn how to use this option, see [Send a local app notification from desktop C# apps](send-local-toast.md) or [Send a local app notification from Win32 C++ WRL apps](send-local-toast-desktop-cpp-wrl.md).
 
 ## Alternative option - No COM / Stub CLSID
 
-This is an alternative option if you can't implement a COM activator. However, you'll sacrifice a few features, such as input support (text boxes on toasts) and activating in-process.<br/><br/>
+This is an alternative option if you can't implement a COM activator. However, you'll sacrifice a few features, such as input support (text boxes on app notifications) and activating in-process.<br/><br/>
 
 | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- |
@@ -72,12 +72,12 @@ With this option, if you support desktop, then you're much more limited in the n
 | ToastGeneric Protocol | **Supported** | **Supported** |
 | Legacy templates | **Supported** | Not supported |
 
-For packaged apps, just send toast notifications like a UWP app would. When the user clicks on your toast, your app will be command-line launched with the launch args that you specified in the toast.
+For packaged apps, just send app notifications like a UWP app would. When the user clicks on your notification, your app will be command-line launched with the launch args that you specified in the notification.
 
-For unpackaged apps, set up the AUMID so that you can send toasts, and then also specify a CLSID on your shortcut. That can be any random GUID. Don't add the COM server/activator. You're adding a "stub" COM CLSID, which will cause Action Center to persist the notification. Note that you can use only protocol activation toasts, because the stub CLSID will break activation of any other toast activations. Therefore, you have to update your app to support protocol activation, and have the toast's protocol activate your own app.
+For unpackaged apps, set up the AUMID so that you can send notifications, and then also specify a CLSID on your shortcut. That can be any random GUID. Don't add the COM server/activator. You're adding a "stub" COM CLSID, which will cause Action Center to persist the notification. Note that you can use only protocol activation notifications, because the stub CLSID will break activation of any other notification activations. Therefore, you have to update your app to support protocol activation, and have the notification's protocol activate your own app.
 
 ## Resources
 
-* [Send a local toast notification from desktop C# apps](send-local-toast.md)
-* [Send a local toast notification from Win32 C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
-* [Toast content documentation](adaptive-interactive-toasts.md)
+* [Send a local app notification from desktop C# apps](send-local-toast.md)
+* [Send a local app notification from Win32 C++ WRL apps](send-local-toast-desktop-cpp-wrl.md)
+* [App notification content documentation](adaptive-interactive-toasts.md)

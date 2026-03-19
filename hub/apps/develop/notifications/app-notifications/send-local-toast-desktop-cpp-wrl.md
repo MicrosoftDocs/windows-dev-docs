@@ -1,7 +1,7 @@
 ---
 title: Send a local app notification from a WRL C++ desktop app
 label: Send a local app notification from a WRL C++ desktop app
-description: Learn how Win32 C++ WRL apps can send local toast notifications and handle the user clicking the toast.
+description: Learn how Win32 C++ WRL apps can send local app notifications and handle the user clicking the notification.
 template: detail.hbs
 ms.date: 07/28/2025
 ms.topic: how-to
@@ -136,7 +136,7 @@ If your app is packaged (see [Create a new project for a packaged WinUI desktop 
 
 ### Unpackaged
 
-If your app is unpackaged (see [Create a new project for an unpackaged WinUI desktop app](../../../winui/winui3/create-your-first-winui3-app.md#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)), or if you support both, then you have to declare your Application User Model ID (AUMID) and toast activator CLSID (the GUID from step #4) on your app's shortcut in Start.
+If your app is unpackaged (see [Create a new project for an unpackaged WinUI desktop app](../../../winui/winui3/create-your-first-winui3-app.md#unpackaged-create-a-new-project-for-an-unpackaged-c-or-c-winui-3-desktop-app)), or if you support both, then you have to declare your Application User Model ID (AUMID) and notification activator CLSID (the GUID from step #4) on your app's shortcut in Start.
 
 Pick a unique AUMID that will identify your app. This is typically in the form of [CompanyName].[AppName]. But you want to ensure that it's unique across all apps (so feel free to add some digits at the end).
 
@@ -176,9 +176,9 @@ This method allows you to call the compat APIs to send and manage notifications 
 
 ## Step 6: Register COM activator
 
-For both packaged and unpackaged apps, you must register your notification activator type, so that you can handle toast activations.
+For both packaged and unpackaged apps, you must register your notification activator type, so that you can handle notification activations.
 
-In your app's startup code, call the following **RegisterActivator** method. This must be called in order for you to receive any toast activations.
+In your app's startup code, call the following **RegisterActivator** method. This must be called in order for you to receive any notification activations.
 
 ```cpp
 // Register activator type
@@ -189,7 +189,7 @@ hr = DesktopNotificationManagerCompat::RegisterActivator();
 
 Sending a notification is identical to UWP apps, except that you'll use **DesktopNotificationManagerCompat** to create a **ToastNotifier**. The compat library automatically handles the difference between packaged and unpackaged apps, so you don't need to fork your code. For an unpackaged app, the compat library caches the AUMID that you provided when you called **RegisterAumidAndComServer** so that you don't need to worry about when to provide or not provide the AUMID.
 
-Make sure you use the **ToastGeneric** binding as seen below, since the legacy Windows 8.1 toast notification templates won't activate the COM notification activator that you created in step #4.
+Make sure you use the **ToastGeneric** binding as seen below, since the legacy Windows 8.1 app notification templates won't activate the COM notification activator that you created in step #4.
 
 > [!IMPORTANT]
 > Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged apps don't support http images; you must download the image to your local app data, and reference it locally.
@@ -223,7 +223,7 @@ if (SUCCEEDED(hr))
 ```
 
 > [!IMPORTANT]
-> Desktop apps can't use legacy toast templates (such as ToastText02). Activation of the legacy templates will fail when the COM CLSID is specified. You must use the Windows ToastGeneric templates, as seen above.
+> Desktop apps can't use legacy notification templates (such as ToastText02). Activation of the legacy templates will fail when the COM CLSID is specified. You must use the Windows ToastGeneric templates, as seen above.
 
 ## Step 8: Handle activation
 
@@ -392,7 +392,7 @@ If your notifications simply fail to appear in your desktop app (and no exceptio
 
 If your notifications appear but aren't persisted in Action Center (disappearing after the popup is dismissed), that means you haven't implemented the COM activator correctly.
 
-If you've installed both your packaged and unpackaged desktop app, note that the packaged app will supersede the unpackaged app when handling toast activations. That means that app notifications from the unpackaged app will launch the packaged app when clicked. Uninstalling the packaged app will revert activations back to the unpackaged app.
+If you've installed both your packaged and unpackaged desktop app, note that the packaged app will supersede the unpackaged app when handling notification activations. That means that app notifications from the unpackaged app will launch the packaged app when clicked. Uninstalling the packaged app will revert activations back to the unpackaged app.
 
 If you receive `HRESULT 0x800401f0 CoInitialize has not been called.`, be sure to call `CoInitialize(nullptr)` in your app before calling the APIs.
 
@@ -402,11 +402,11 @@ If you get numerous `unresolved external symbol` compilation errors, you likely 
 
 ## Handle older versions of Windows
 
-If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric toasts.
+If you support Windows 8.1 or lower, you'll want to check at runtime whether you're running on Windows before calling any **DesktopNotificationManagerCompat** APIs or sending any ToastGeneric notifications.
 
-Windows 8 introduced toast notifications, but used the [legacy toast templates](/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since toasts were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric toasts](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your toast can be activated days after you created it.
+Windows 8 introduced app notifications, but used the [legacy notification templates](/previous-versions/windows/apps/hh761494(v=win.10)), like ToastText01. Activation was handled by the in-memory **Activated** event on the **ToastNotification** class since notifications were only brief popups that weren't persisted. Windows 10 introduced [interactive ToastGeneric notifications](adaptive-interactive-toasts.md), and also introduced Action Center where notifications are persisted for multiple days. The introduction of Action Center required the introduction of a COM activator, so that your notification can be activated days after you created it.
 
-| OS | ToastGeneric | COM activator | Legacy toast templates |
+| OS | ToastGeneric | COM activator | Legacy notification templates |
 | -- | ------------ | ------------- | ---------------------- |
 | Windows 10 and later | Supported | Supported | Supported (but won't activate COM server) |
 | Windows 8.1 / 8 | N/A | N/A | Supported |
@@ -425,7 +425,7 @@ if (IsWindows10OrGreater())
 
 ## Known issues
 
-**FIXED: App doesn't become focused after clicking toast**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 or later.
+**FIXED: App doesn't become focused after clicking notification**: In builds 15063 and earlier, foreground rights weren't being transferred to your application when we activated the COM server. Therefore, your app would simply flash when you tried to move it to the foreground. There was no workaround for this issue. We fixed this in builds 16299 or later.
 
 ## Resources
 

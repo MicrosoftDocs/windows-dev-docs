@@ -86,7 +86,7 @@ var builder = new ToastContentBuilder()
 
 Here is a visual representation of the app notification's content:
 
-![An screenshot of an app notification with labels for the attribution area at the top showing the app icon and and app name Notifications Visualizer. The middle part of the toast is labeled as the visual area, which includes three lines of text. The bottom section of the toast is labeled as the action area and contains two buttons labeled Accept and Decline. ](images/toast-content-structure.png)
+![An screenshot of an app notification with labels for the attribution area at the top showing the app icon and and app name Notifications Visualizer. The middle part of the notification is labeled as the visual area, which includes three lines of text. The bottom section of the notification is labeled as the action area and contains two buttons labeled Accept and Decline. ](images/toast-content-structure.png)
 
 
 ## Attribution area
@@ -305,7 +305,7 @@ new ToastContentBuilder()
 
 ## Image size restrictions
 
-The images you use in your toast notification can be sourced from...
+The images you use in your app notification can be sourced from...
 
  - http://
  - ms-appx:///
@@ -327,7 +327,7 @@ If an image exceeds the file size, or fails to download, or times out, the image
 On older versions of Windows that don't support attribution text, the text will simply be displayed as another text element (assuming you don't already have the maximum of three text elements).
 
 
-![A screenshot of a toast notification showing the attribution text "via SMS" below the other lines of text in the visual area of the toast.](images/toast-content-attribution-text.png)
+![A screenshot of an app notification showing the attribution text "via SMS" below the other lines of text in the visual area of the notification.](images/toast-content-attribution-text.png)
 
 ### [Windows App SDK](#tab/appsdk)
 
@@ -413,7 +413,7 @@ var builder = new ToastContentBuilder()
 
 **New in Creators Update**: You can provide a progress bar on your app notification to keep the user informed of the progress of operations such as downloads.
 
-![A screenshot of a toast notification showing a progress bar.](images/toast-content-progress-bar.png)
+![A screenshot of an app notification showing a progress bar.](images/toast-content-progress-bar.png)
 
 To learn more about using a progress bar, please see [Toast progress bar](toast-progress-bar.md).
 
@@ -440,7 +440,7 @@ Note that any adaptive content must be contained within an [**AdaptiveGroup**](.
 
 Here's an example where columns and some advanced adaptive text elements are used. Since the text elements are within an **AdaptiveGroup**, they support all the rich adaptive styling properties.
 
-![A screenshot of a toast notification showing groups of text elements aligned to the left and right of the visual area of the toast.](images/toast-content-columns.png)
+![A screenshot of an app notification showing groups of text elements aligned to the left and right of the visual area of the notification.](images/toast-content-columns.png)
 
 ### [Windows App SDK](#tab/appsdk)
 
@@ -538,7 +538,7 @@ Buttons can activate an app in the following ways:
 > [!NOTE]
 > You can only have up to 5 buttons (including context menu items which we discuss later).
 
-![A screenshot of a toast notification showing a line of text followed a row with two buttons defined by action elements".](images/toast-content-buttons.png)
+![A screenshot of an app notification showing a line of text followed a row with two buttons defined by action elements".](images/toast-content-buttons.png)
 
 ### [Windows App SDK](#tab/appsdk)
 
@@ -589,7 +589,7 @@ var builder = new ToastContentBuilder()
 
 ### Buttons with icons
 
-You can add icons to your buttons. These icons are white transparent 16x16 pixel images at 100% scaling, and should have no padding included in the image itself. If you choose to provide icons on a toast notification, you must provide icons for ALL of your buttons in the notification, as it transforms the style of your buttons into icon buttons.
+You can add icons to your buttons. These icons are white transparent 16x16 pixel images at 100% scaling, and should have no padding included in the image itself. If you choose to provide icons on an app notification, you must provide icons for ALL of your buttons in the notification, as it transforms the style of your buttons into icon buttons.
 
 > [!NOTE]
 > For accessibility, be sure to include a contrast-white version of the icon (a black icon for white backgrounds), so that when the user turns on High Contrast White mode, your icon is visible. For more information, see [Tile and toast notification support for language, scale, and high contrast](/windows/uwp/launch-resume/tile-toast-language-scale-contrast).
@@ -773,7 +773,7 @@ var builder = new AppNotificationBuilder()
 
 ## Context menu actions
 
-**New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your toast notification or selects the context menu icon.
+**New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your app notification or selects the context menu icon.
 
 > [!NOTE]
 > On older devices, these additional context menu actions will simply appear as normal buttons on your notification.
@@ -845,7 +845,7 @@ Inputs are specified within the **Actions** region of the app notification, mean
 
 To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
 
-![A screenshot of a toast notification with a profile picture and some lines of text. A text box for typing directly into the toast is included as well as a button to send the reply.](images/toast-content-text-box.png)
+![A screenshot of an app notification with a profile picture and some lines of text. A text box for typing directly into the notification is included as well as a button to send the reply.](images/toast-content-text-box.png)
 
 ### [Windows App SDK](#tab/appsdk)
 
@@ -1280,7 +1280,7 @@ var builder = new ToastContentBuilder()
 ### Incoming calls
 Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.
 
-![Incoming call toast notification](images/toast-content-incoming-call.png)
+![Incoming call app notification](images/toast-content-incoming-call.png)
 
 #### [Windows App SDK](#tab/appsdk)
 

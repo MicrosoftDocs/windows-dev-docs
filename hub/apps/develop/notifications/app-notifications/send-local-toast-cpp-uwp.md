@@ -181,7 +181,7 @@ You can add rich content to notifications. We'll add an inline image and a profi
 
 [!INCLUDE [images note](includes/images-note.md)]
 
-<img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
+<img alt="App notification with images" src="images/send-toast-02.png" width="364"/>
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -242,7 +242,7 @@ toastNotifier.Show(notif);
 
 You can add buttons and inputs to make your notifications interactive. Buttons can launch your foreground app, a protocol, or your background task. We'll add a reply text box, a "Like" button, and a "View" button that opens the image.
 
-<img src="images/toast-notification.png" width="628" alt="Screenshot of a toast notification with inputs and buttons"/>
+<img src="images/toast-notification.png" width="628" alt="Screenshot of an app notification with inputs and buttons"/>
 
 #### [Builder syntax](#tab/builder-syntax)
 
@@ -408,7 +408,7 @@ However, if the message in your notification is only relevant for a period of ti
 
 If you want to programmatically remove or replace the notification you send, you need to use the Tag property (and optionally the Group property) to provide a primary key for your notification. Then, you can use this primary key in the future to remove or replace the notification.
 
-To see more details on replacing/removing already delivered app notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
+To see more details on replacing/removing already delivered app notifications, please see [Quickstart: Managing app notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
@@ -438,7 +438,7 @@ Here's an example of what a messaging app should do…
 3. The app opens the conversation and then clears all notifications for that conversation (by using [RemoveGroup](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory) on the app-supplied group for that conversation)
 4. User's Action Center now properly reflects the notification state, since there are no stale notifications for that conversation left in Action Center.
 
-To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
+To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing app notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 ```cpp
 ToastNotificationManagerCompat::History->Clear();

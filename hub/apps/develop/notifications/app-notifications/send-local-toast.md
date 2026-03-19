@@ -207,7 +207,7 @@ You can add rich content to notifications. We'll add an inline image and a profi
 > [!IMPORTANT]
 > Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged apps don't support http images; you must download the image to your local app data, and reference it locally.
 
-<img alt="Toast with images" src="images/send-toast-02.png" width="364"/>
+<img alt="App notification with images" src="images/send-toast-02.png" width="364"/>
 
 ### [Windows App SDK](#tab/appsdk)
 

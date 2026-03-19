@@ -1,8 +1,8 @@
 ---
-title: Send a local toast notification from other types of unpackaged apps
-description: Learn how to send a local toast notification from other types of unpackaged apps, and handle the user clicking the toast.
+title: Send a local app notification from other types of unpackaged apps
+description: Learn how to send a local app notification from other types of unpackaged apps, and handle the user clicking the notification.
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
-label: Send a local toast notification from other types of unpackaged apps
+label: Send a local app notification from other types of unpackaged apps
 template: detail.hbs
 ms.date: 07/28/2025
 ms.topic: how-to
@@ -124,4 +124,4 @@ Your COM activator will be activated when your notification is clicked.
 
 ### AUMID restrictions
 
-The AUMID should be at most 129 characters long. If the AUMID is more than 129 characters long, scheduled toast notifications won't work - you'll get the following exception when adding a scheduled notification: *The data area passed to a system call is too small. (0x8007007A)*.
+The AUMID should be at most 129 characters long. If the AUMID is more than 129 characters long, scheduled app notifications won't work - you'll get the following exception when adding a scheduled notification: *The data area passed to a system call is too small. (0x8007007A)*.

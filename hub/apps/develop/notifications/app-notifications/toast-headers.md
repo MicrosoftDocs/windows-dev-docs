@@ -1,5 +1,5 @@
 ---
-description: Learn how to use headers to visually group your toast notifications in Action Center.
+description: Learn how to use headers to visually group your app notifications in Action Center.
 title: Toast headers
 label: Toast headers
 template: detail.hbs
@@ -13,17 +13,17 @@ ms.localizationpriority: medium
 You can visually group a set of related notifications inside Action Center by using a toast header on your notifications.
 
 > [!IMPORTANT]
-> **Requires Desktop Creators Update**: You must be running Desktop build 15063 or later to see toast headers. Headers are only supported on Desktop. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct headers. For apps using the Community Toolkit, use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the header in your toast's content.
+> **Requires Desktop Creators Update**: You must be running Desktop build 15063 or later to see toast headers. Headers are only supported on Desktop. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct headers. For apps using the Community Toolkit, use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the header in your notification's content.
 
-As seen below, this group conversation is unified under a single header, "Camping!!". Each individual message in the conversation is a separate toast notification sharing the same toast header.
+As seen below, this group conversation is unified under a single header, "Camping!!". Each individual message in the conversation is a separate app notification sharing the same toast header.
 
 <img alt="Toasts with header" src="images/toast-headers-action-center.png" width="396"/>
 
 You can also choose to visually group your notifications by category too, like flight reminders, package tracking, and more.
 
-## Add a header to a toast
+## Add a header to an app notification
 
-Here's how you add a header to a toast notification.
+Here's how you add a header to an app notification.
 
 > [!NOTE]
 > Headers are only supported on Desktop. Devices that don't support headers will simply ignore the header.
@@ -75,9 +75,9 @@ In summary...
 
 Headers are clickable by users, so that the user can click the header to find out more from your app.
 
-Therefore, apps can provide **Arguments** on the header, similar to the launch arguments on the toast itself.
+Therefore, apps can provide **Arguments** on the header, similar to the launch arguments on the notification itself.
 
-Activation is handled identical to [normal toast activation](send-local-toast.md#step-3-handle-activation), meaning you can retrieve these arguments when the user clicks the body of your toast or a button on your toast.
+Activation is handled identical to [normal app notification activation](send-local-toast.md#step-3-handle-activation), meaning you can retrieve these arguments when the user clicks the body of your notification or a button on your notification.
 
 #### [Windows App SDK](#tab/appsdk)
 
@@ -124,5 +124,5 @@ Clicking on the header, just like clicking on the app title, does not clear any 
 
 ## Related topics
 
-- [Send a local toast and handle activation](send-local-toast.md)
+- [Send a local app notification and handle activation](send-local-toast.md)
 - [Toast content documentation](adaptive-interactive-toasts.md)

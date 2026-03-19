@@ -35,11 +35,11 @@ ToastContent is the top level object that describes a notification's content, in
 | Property | Type | Required | Description |
 |---|---|---|---|
 | **Launch**| string | false | A string that is passed to the application when it is activated by the Toast. The format and contents of this string are defined by the app for its own use. When the user taps or clicks the Toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the Toast content, rather than launching in its default way. |
-| **Visual** | [ToastVisual](#toastvisual) | true | Describes the visual portion of the toast notification. |
+| **Visual** | [ToastVisual](#toastvisual) | true | Describes the visual portion of the app notification. |
 | **Actions** | [IToastActions](#itoastactions) | false | Optionally create custom actions with buttons and inputs. |
-| **Audio** | [ToastAudio](#toastaudio) | false | Describes the audio portion of the toast notification. |
+| **Audio** | [ToastAudio](#toastaudio) | false | Describes the audio portion of the app notification. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Specifies what activation type will be used when the user clicks the body of this Toast. |
-| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | New in Creators Update: Additional options relating to activation of the toast notification. |
+| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | New in Creators Update: Additional options relating to activation of the app notification. |
 | **Scenario** | [ToastScenario](#toastscenario) | false | Declares the scenario your toast is used for, like an alarm or reminder. |
 | **DisplayTimestamp** | DateTimeOffset? | false | New in Creators Update: Override the default timestamp with a custom timestamp representing when your notification content was actually delivered, rather than the time the notification was received by the Windows platform. |
 | **Header** | [ToastHeader](#toastheader) | false | New in Creators Update: Add a custom header to your notification to group multiple notifications together within Action Center. |
@@ -63,7 +63,7 @@ The visual portion of toasts contains the bindings, which contains text, images,
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | The generic toast binding, which can be rendered on all devices. This binding is required and cannot be null. |
 | **BaseUri** | Uri | false | A default base URL that is combined with relative URLs in image source attributes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **Language**| string | false | The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as "en-US" or "fr-FR". This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead. |
 
 
@@ -75,9 +75,9 @@ The generic binding is the default binding for toasts, and is where you specify 
 | **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | The contents of the body of the Toast, which can include text, images, and groups (added in Anniversary Update). Text elements must come before any other elements, and only 3 text elements are supported. If a text element is placed after any other element, it will either be pulled to the top or dropped. And finally, certain text properties like HintStyle aren't supported on the root children text elements, and only work inside an AdaptiveSubgroup. If you use AdaptiveGroup on devices without the Anniversary Update, the group content will simply be dropped. |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | An optional logo to override the app logo. |
 | **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | An optional featured "hero" image that is displayed on the toast and within Action Center. |
-| **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | Optional attribution text which will be displayed at the bottom of the toast notification. |
+| **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | Optional attribution text which will be displayed at the bottom of the app notification. |
 | **BaseUri** | Uri | false | A default base URL that is combined with relative URLs in image source attributes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **Language**| string | false | The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as "en-US" or "fr-FR". This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead. |
 
 
@@ -161,7 +161,7 @@ An inline image.
 | **HintRemoveMargin** | bool? | false | By default, images inside groups/subgroups have an 8px margin around them. You can remove this margin by setting this property to true. |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | The horizontal alignment of the image. Only works for images inside a group/subgroup. |
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
 ### AdaptiveImageCrop
@@ -260,7 +260,7 @@ A logo to be displayed instead of the app logo.
 | **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size. |
 | **HintCrop** | [ToastGenericAppLogoCrop](#toastgenericapplogocrop) | false | Specify how you would like the image to be cropped. |
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
 ### ToastGenericAppLogoCrop
@@ -280,11 +280,11 @@ A featured "hero" image that is displayed on the toast and within Action Center.
 |---|---|---|---|
 | **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size. |
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
 ## ToastGenericAttributionText
-Attribution text displayed at the bottom of the toast notification.
+Attribution text displayed at the bottom of the app notification.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -450,13 +450,13 @@ A context menu item entry.
 
 
 ## ToastAudio
-Specify audio to be played when the Toast notification is received.
+Specify audio to be played when the app notification is received.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
 | **Src** | uri | false | The media file to play in place of the default sound. Only ms-appx and ms-resource are supported. All else (ms-appdata, http, C:\, etc.) is not supported.|
 | **Loop** | boolean | false | Set to true if the sound should repeat as long as the Toast is shown; false to play only once (default). |
-| **Silent** | boolean | false | True to mute the sound; false to allow the toast notification sound to play (default). |
+| **Silent** | boolean | false | True to mute the sound; false to allow the app notification sound to play (default). |
 
 
 ## ToastHeader
