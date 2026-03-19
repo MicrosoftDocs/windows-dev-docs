@@ -262,7 +262,7 @@ var notification = new AppNotificationBuilder()
     ...
 
     // Text box for replying
-    .AddTextBox("tbReply", "Type a response")
+    .AddTextBox("tbReply", "Type a response", "Reply")
 
     // Buttons
     .AddButton(new AppNotificationButton("Reply")
