@@ -103,7 +103,7 @@ Topics covered include:
 
 </details>
 
-<details><summary>I get a "Unable to load DLL 'Microsoft.ui.xaml.dll'" error when running my app. How do I fix it?</summary>
+<details><summary>I get an "Unable to load DLL 'Microsoft.ui.xaml.dll'" error when running my app. How do I fix it?</summary>
 
 > This error usually occurs in **unpackaged** app scenarios where the Windows App SDK runtime hasn't been installed on the machine. Try the following:
 >
