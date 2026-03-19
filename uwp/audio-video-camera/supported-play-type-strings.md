@@ -1,7 +1,7 @@
 ---
 description: This article lists the MIME type strings supported for the Windows APIs that query for supported media playback features.
 title: Supported media type strings for querying media feature support
-ms.date: 08/28/2024
+ms.date: 03/18/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
