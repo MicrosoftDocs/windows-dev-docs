@@ -96,7 +96,9 @@ var notification = new AppNotificationBuilder()
     .BuildNotification();
 
 // For collection-based delivery, use the WinRT ToastNotification with the XML payload
-var toast = new ToastNotification(notification.Payload);
+var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
+xmlDoc.LoadXml(notification.Payload);
+var toast = new ToastNotification(xmlDoc);
 
 // Get the collection notifier
 var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");

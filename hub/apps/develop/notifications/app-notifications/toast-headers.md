@@ -30,10 +30,22 @@ Here's how you add a header to an app notification.
 
 #### [Windows App SDK](#tab/appsdk)
 
+> [!NOTE]
+> `AppNotificationBuilder` doesn't currently include a `SetHeader` method, so use the XML payload directly with the `AppNotification` constructor.
+
 ```csharp
-new AppNotificationBuilder()
-    .SetHeader(new AppNotificationHeader("6289", "Camping!!", "action=openConversation&id=6289"))
-    .AddText("Anyone have a sleeping bag I can borrow?");
+string xml = @"
+<toast>
+    <header id='6289' title='Camping!!' arguments='action=openConversation&amp;id=6289'/>
+    <visual>
+        <binding template='ToastGeneric'>
+            <text>Anyone have a sleeping bag I can borrow?</text>
+        </binding>
+    </visual>
+</toast>";
+
+var notification = new AppNotification(xml);
+AppNotificationManager.Default.Show(notification);
 ```
 
 #### [Community Toolkit](#tab/toolkit)
