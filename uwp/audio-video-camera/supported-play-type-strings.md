@@ -157,6 +157,9 @@ Use the `codecs` parameter to determine whether the system has a software decode
 
 This query checks whether there is a software decoder that can decode AC-3 (Dolby Digital) audio.
 
+> [!NOTE]
+> The `codecs=ac-3` query and the `audio-endpoint-codec=DD` query check for different capabilities despite both referencing the Dolby Digital codec. The `codecs` query checks whether a software decoder is present on the system that can decode the format, while the `audio-endpoint-codec` query checks whether the connected audio endpoint device natively supports the format. The result of one query does not affect the other — a system can have a software decoder without a capable endpoint, or a capable endpoint without a software decoder.
+
 **Querying for audio endpoint device capabilities**
 
 Use the `audio-endpoint-codec` feature to determine the capabilities of the audio endpoint device, such as whether the system is connected to an audio/video receiver (AVR) that can decode a specific audio format.
@@ -175,18 +178,18 @@ This query checks whether the system is configured for 5.1 speakers and can play
 
 ### Example audio capability matrix
 
-When systems with Dolby Atmos or headphones that support Virtual Surround Sound (VSS) are considered, the number of possible hardware and software combinations can be very large. The following table shows the query results for the `audio-endpoint-codec` feature and the `codecs=ac-3` codec query across representative device configurations.
+When systems with Dolby Atmos or headphones that support Virtual Surround Sound (VSS) are considered, the number of possible hardware and software combinations can be very large. The following table shows the query results for the `audio-endpoint-codec` feature across representative device configurations.
 
-| # | Device configuration | Dolby decoder | DD | DD+ | DD+JOC | PCM2.0 | PCM5.1 | PCM7.1 | codecs=ac-3 |
-|---|---------------------|---------------|:---:|:---:|:------:|:------:|:------:|:------:|:-----------:|
-| 1 | Headphones with Atmos, VSS enabled | Installed | ✗ | ✗ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| 2 | Headphones without Atmos, VSS disabled | Installed | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ | ✓ |
-| 3 | Headphones without Atmos, VSS enabled | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ | ✓ |
-| 4 | Headphones without Atmos, VSS enabled | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ | ✗ |
-| 5 | 5.1 speakers (no AVR) | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✓ |
-| 6 | 5.1 speakers (no AVR) | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ | ✗ |
-| 7 | Atmos-capable AVR, configured for 5.1 | Installed | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ | ✓ |
-| 8 | Atmos-capable AVR, configured for 5.1 | Not installed | ✓ | ✓ | ✗ | ✓ | ✓ | ✗ | ✗ |
+| # | Device configuration | Dolby decoder | DD | DD+ | DD+JOC | PCM2.0 | PCM5.1 | PCM7.1 |
+|---|---------------------|---------------|:---:|:---:|:------:|:------:|:------:|:------:|
+| 1 | Headphones with Atmos, VSS enabled | Installed | ✗ | ✗ | ✓ | ✓ | ✓ | ✓ |
+| 2 | Headphones without Atmos, VSS disabled | Installed | ✗ | ✗ | ✗ | ✓ | ✗ | ✗ |
+| 3 | Headphones without Atmos, VSS enabled | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ |
+| 4 | Headphones without Atmos, VSS enabled | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✓ |
+| 5 | 5.1 speakers (no AVR) | Installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ |
+| 6 | 5.1 speakers (no AVR) | Not installed | ✗ | ✗ | ✗ | ✓ | ✓ | ✗ |
+| 7 | Atmos-capable AVR, configured for 5.1 | Installed | ✓ | ✓ | ✓ | ✓ | ✓ | ✗ |
+| 8 | Atmos-capable AVR, configured for 5.1 | Not installed | ✓ | ✓ | ✗ | ✓ | ✓ | ✗ |
 
-The DD, DD+, DD+JOC, PCM2.0, PCM5.1, and PCM7.1 columns show the results of the `audio-endpoint-codec` feature query. The `codecs=ac-3` column shows whether a software decoder for AC-3 (Dolby Digital) is available on the system.
+The DD, DD+, DD+JOC, PCM2.0, PCM5.1, and PCM7.1 columns show the results of the `audio-endpoint-codec` feature query.
 
