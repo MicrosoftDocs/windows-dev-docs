@@ -20,7 +20,6 @@ This section provides guidance for using the Windows App SDK to create apps that
 | [Copilot hardware key](/windows/apps/develop/windows-integration/microsoft-copilot-key-provider) | Learn how to use the Copilot hardware key feature to quickly access Copilot. |
 | [Recall](/windows/apps/develop/windows-integration/recall/index) | Learn how to use the Recall feature to help find content. |
 | [Studio Effects](/windows/apps/develop/windows-integration/studio-effects) | Learn how to use Studio Effects to enhance video calls with AI-powered background effects. |
-| [Windows Settings connector](/windows/apps/develop/windows-integration/settings-mcp) | Learn how to use the Windows Settings connector via MCP to manage settings on a Windows device. |
 
 ## Other AI features
 
