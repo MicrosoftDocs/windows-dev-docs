@@ -1,6 +1,6 @@
 ---
 title: Install Vue.js directly on Windows
-description: A guide to help you get started using Vue.js on Windows using npm create vue and Vite.
+description: A guide to help you get started using Vue.js on Windows using npm create vue@latest and Vite.
 ms.topic: install-set-up-deploy
 ms.date: 03/23/2026
 ---
