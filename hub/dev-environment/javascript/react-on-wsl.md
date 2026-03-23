@@ -3,7 +3,7 @@ title: Install React on Windows Subsystem for Linux
 description: Install React on Windows Subsystem for Linux (WSL) and start developing web apps with React components and the Vite front-end build toolchain.
 ms.topic: install-set-up-deploy
 keywords: react, install react on wsl, install react on linux on windows, react and windows, react development with windows, react with windows 10, react on windows, react with wsl
-ms.date: 03/30/2021
+ms.date: 03/23/2026
 ---
 
 # Install React on Windows Subsystem for Linux
