@@ -40,7 +40,7 @@
       "redirect_url": "/previous-versions/windows/uwp/contacts-and-calendar/contact-card",
       "redirect_document_id": false
     },
-	  {
+    {
       "source_path": "hub/apps/design/devices/designing-for-tv.md",
       "redirect_url": "/previous-versions/windows/uwp/xbox-apps/designing-for-tv",
       "redirect_document_id": false
@@ -125,7 +125,7 @@
       "redirect_url": "/previous-versions/windows/app-dev/how-tos/uno-multiplatform",
       "redirect_document_id": false
     },
-	{
+    {
       "source_path": "hub/apps/whats-new/windows-11-build-22000.md",
       "redirect_url": "/windows/apps/whats-new/whats-new-for-developers",
       "redirect_document_id": false
@@ -165,7 +165,7 @@
       "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-tutorial",
       "redirect_document_id": false
     },
-	{
+    {
       "source_path": "hub/apps/get-started/sign-up.md",
       "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
       "redirect_document_id": false
@@ -10534,7 +10534,7 @@
       "source_path": "hub/apps/how-tos/hello-world-winui3.md",
       "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": false
-    }, 
+    },
     {
       "source_path": "hub/apps/winui/index.md",
       "redirect_url": "/windows/apps/winui/winui3/",
@@ -10863,7 +10863,7 @@
     {
       "source_path": "hub/apps/winui/winui3/xaml-templated-controls-csharp-winui-3.md",
       "redirect_url": "/windows/apps/winui/winui3/xaml-templated-controls-winui-3",
-    "redirect_document_id": false
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/develop/input/gamepad-and-remote-interactions.md",
@@ -11000,7 +11000,7 @@
       "redirect_url": "/windows/apps/develop/notifications/app-notifications/",
       "redirect_document_id": false
     },
-	{
+    {
       "source_path": "hub/apps/publish/nrt-in-analytics.md",
       "redirect_url": "/windows/apps/publish/recent-data-acquisitions-reports",
       "redirect_document_id": false
@@ -11278,6 +11278,26 @@
     {
       "source_path": "hub/apps/performance/winui-perf.md",
       "redirect_url": "/windows/apps/develop/performance/winui-perf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/react-beginners-tutorial.md",
+      "redirect_url": "/windows/dev-environment/javascript/react-on-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/nextjs-on-wsl.md",
+      "redirect_url": "https://nextjs.org/docs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/gatsby-on-wsl.md",
+      "redirect_url": "https://www.gatsbyjs.com/docs/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/react-native-for-android.md",
+      "redirect_url": "https://reactnative.dev/docs/environment-setup",
       "redirect_document_id": false
     }
   ]
