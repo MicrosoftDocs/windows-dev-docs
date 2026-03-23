@@ -11293,6 +11293,7 @@
     {
       "source_path": "hub/dev-environment/javascript/nuxtjs-on-wsl.md",
       "redirect_url": "https://nuxt.com/docs",
+
       "redirect_document_id": false
     }
   ]
