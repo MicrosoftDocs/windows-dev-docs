@@ -1,6 +1,6 @@
 ---
 title: Install Vue.js on WSL
-description: A guide to help you get started using Vue.js on Windows Subsystem for Linux using npm create vue and Vite.
+description: A guide to help you get started using Vue.js on Windows Subsystem for Linux using npm create vue@latest and Vite.
 ms.topic: install-set-up-deploy
 keywords: Vue, Vue.js, windows, install vue on wsl, install vue on windows subsystem for linux, vue wsl
 ms.localizationpriority: medium
