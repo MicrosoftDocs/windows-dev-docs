@@ -11281,23 +11281,19 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/dev-environment/javascript/react-beginners-tutorial.md",
-      "redirect_url": "/windows/dev-environment/javascript/react-on-windows",
+      "source_path": "hub/dev-environment/javascript/nodejs-beginners-tutorial.md",
+      "redirect_url": "/windows/dev-environment/javascript/nodejs-on-windows",
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/dev-environment/javascript/nextjs-on-wsl.md",
-      "redirect_url": "https://nextjs.org/docs",
+      "source_path": "hub/dev-environment/javascript/vue-beginners-tutorial.md",
+      "redirect_url": "https://vuejs.org/tutorial/",
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/dev-environment/javascript/gatsby-on-wsl.md",
-      "redirect_url": "https://www.gatsbyjs.com/docs/",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/dev-environment/javascript/react-native-for-android.md",
-      "redirect_url": "https://reactnative.dev/docs/environment-setup",
+      "source_path": "hub/dev-environment/javascript/nuxtjs-on-wsl.md",
+      "redirect_url": "https://nuxt.com/docs",
+
       "redirect_document_id": false
     }
   ]
