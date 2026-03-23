@@ -26,7 +26,7 @@ Choose your preferred environment:
 
 ## Build native Windows or mobile apps with React
 
-To build **native Windows desktop apps** using React (not web apps), see [React Native for Desktop](./react-native-for-windows.md) — a Microsoft open-source project that targets Windows, Android, iOS, and macOS.
+To build native **Universal Windows Platform (UWP)** or **WPF** desktop apps using React (not web apps), see [React Native for Desktop](./react-native-for-windows.md) — a Microsoft open-source project that targets Windows, Android, iOS, and macOS.
 
 For cross-platform mobile apps, visit [reactnative.dev](https://reactnative.dev/).
 
