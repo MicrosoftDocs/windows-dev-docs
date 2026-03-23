@@ -30,6 +30,7 @@ The recommended way to start a new Vue 3 project is `npm create vue@latest`, whi
 2. Navigate to your projects directory:
 
    ```bash
+   mkdir -p ~/projects
    cd ~/projects
    ```
 
