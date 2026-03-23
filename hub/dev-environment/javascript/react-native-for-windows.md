@@ -1,15 +1,15 @@
 ---
 title: React Native for Desktop
-description: Build native Windows desktop apps with JavaScript using React Native for Desktop, a Microsoft open-source project.
+description: Build native UWP and WPF Windows desktop apps with JavaScript using React Native for Desktop, a Microsoft open-source project.
 ms.topic: concept-article
-keywords: React Native for Desktop, react native windows, native windows app, UWP react
+keywords: React Native for Desktop, react native windows, UWP react, universal windows platform react, WPF react
 ms.localizationpriority: medium
 ms.date: 03/23/2026
 ---
 
 # React Native for Desktop
 
-[React Native for Desktop](https://microsoft.github.io/react-native-windows/) is a Microsoft open-source project that lets you build **native Windows desktop applications** using React and JavaScript. Unlike React web apps that run in a browser, React Native for Desktop renders native Windows UI controls. The same JavaScript components can also target Android, iOS, and macOS.
+[React Native for Desktop](https://microsoft.github.io/react-native-windows/) is a Microsoft open-source project that lets you build native **Universal Windows Platform (UWP)** and **WPF** desktop applications using React and JavaScript. Unlike React web apps that run in a browser, React Native for Desktop renders native Windows UI controls. The same JavaScript components can also target Android, iOS, and macOS.
 
 ## Get started
 
