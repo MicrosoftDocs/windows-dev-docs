@@ -709,10 +709,6 @@ items:
     href: ../devices-sensors/get-battery-info.md
   - name: Customize the print workflow
     href: ../devices-sensors/print-workflow-customize.md
-  - name: Archive
-    items:
-    - name: Create an NFC Smart Card app (archived)
-      href: ../devices-sensors/archive/host-card-emulation.md
 - name: Launching, resuming, and background tasks
   href: ../launch-resume/index.md
   items:
