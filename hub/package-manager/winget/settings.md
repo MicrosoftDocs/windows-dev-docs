@@ -1,7 +1,7 @@
 ---
 title: settings command
 description: Provides customizations for the Windows Package Manager.
-ms.date: 07/08/2025
+ms.date: 03/24/2026
 ms.topic: article
 ---
 
@@ -73,7 +73,7 @@ We have also defined a schema for the settings file. This allows you to use TAB 
 
 ## Updating settings
 
-The following settings are available for the 1.11 release of the Windows Package Manager.
+The following settings are available for the 1.28 release of the Windows Package Manager.
 
 ### source settings
 
@@ -119,7 +119,7 @@ Color of the progress bar that WinGet displays when not specified by arguments.
 
 Replaces some known folder paths with their respective environment variables.
 
-#### enableSizels
+#### enableSixels
 
 Enables output of sixel images in certain contexts.
 
@@ -143,6 +143,39 @@ The following logging levels are available. Defaults to `info` if the value is n
 - warning
 - error
 - critical
+
+#### channels
+
+The `channels` setting restricts logging output to specific log channels. Special values `default` (the default set of channels) and `all` (all channels) are also accepted. Invalid values are ignored.
+
+```json
+"logging": {
+    "channels": ["default"]
+}
+```
+
+#### file
+
+The `file` settings control automatic cleanup of log files in the default log directory. Cleanup runs at the start of each WinGet process and applies only to the default log location.
+
+| Setting | Description | Default |
+|---------|-------------|---------|
+| `ageLimitInDays` | Maximum age in days of files in the log directory; older files are deleted. Set to `0` to disable. | 7 |
+| `totalSizeLimitInMB` | Maximum total size in megabytes of all files in the log directory; the oldest files are deleted first. Set to `0` to disable. | 128 |
+| `countLimit` | Maximum number of files in the log directory; the oldest files are deleted first. Set to `0` to disable. | 0 (disabled) |
+| `individualSizeLimitInMB` | Maximum size in megabytes of a single log file. If a file would exceed this limit, logs wrap. Set to `0` to disable. | 16 |
+
+```json
+"logging": {
+    "level": "verbose",
+    "file": {
+        "ageLimitInDays": 7,
+        "totalSizeLimitInMB": 128,
+        "countLimit": 0,
+        "individualSizeLimitInMB": 16
+    }
+}
+```
 
 ### preferences and requirements settings
 
@@ -336,3 +369,54 @@ The `Interactivity` setting controls whether interactive prompts are shown by th
 ### Enabling experimental features
 
 To discover which experimental features are available, go to [https://aka.ms/winget-settings](https://aka.ms/winget-settings) where you can see the experimental features available to you.
+
+The `experimentalFeatures` settings involve the configuration of these "experimental" features. Individual features can be enabled under this node:
+
+```json
+"experimentalFeatures": {
+    "directMSI": true,
+    "resume": true
+}
+```
+
+#### directMSI
+
+This feature enables the Windows Package Manager to directly install MSI packages with the MSI APIs rather than through msiexec. Note that when silent installation is used this is already in effect, as MSI packages that require elevation will fail in that scenario without it.
+
+```json
+"experimentalFeatures": {
+    "directMSI": true
+}
+```
+
+#### resume
+
+This feature enables support for some commands to resume after a reboot.
+
+```json
+"experimentalFeatures": {
+    "resume": true
+}
+```
+
+#### fonts
+
+This feature enables support for fonts via `winget settings`. The `winget font list` command will list installed font families and the number of installed font faces.
+
+```json
+"experimentalFeatures": {
+    "fonts": true
+}
+```
+
+#### sourcePriority
+
+This feature enables sources to have a priority value assigned. Sources with a higher priority will appear earlier in search results and will be selected for installing new packages when multiple sources have a matching package.
+
+Note that search result ordering is dependent on several factors, and source priority is the lowest field currently (match quality and field are more important).
+
+```json
+"experimentalFeatures": {
+    "sourcePriority": true
+}
+```
