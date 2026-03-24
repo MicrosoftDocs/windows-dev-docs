@@ -1,7 +1,7 @@
 ---
 title: Using Windows Package Manager with Model Context Protocol (MCP) Server
 description: The Windows Package Manager includes a Model Context Protocol (MCP) server that enables AI agents and tools to discover and install packages through a standardized interface, enhancing the authoring experience in supported editors like VS Code.
-ms.date: 10/30/2025
+ms.date: 03/24/2026
 ms.topic: overview
 ---
 
@@ -129,14 +129,102 @@ To start using the Windows Package Manager (WinGet) MCP Server in Visual Studio 
 1. Verify that the WinGet MCP server tools are available, with a checkmark next to the entry.
 1. Begin asking questions or requesting assistance with package management tasks. The AI agent automatically uses the WinGet MCP tools when appropriate to provide accurate, context-aware help.
 
+## Use WinGet MCP with GitHub Copilot CLI
+
+[GitHub Copilot CLI](https://docs.github.com/copilot/concepts/agents/about-copilot-cli) brings AI-powered assistance directly to your terminal. After registering the WinGet MCP server with Copilot CLI, you can search for and install packages using natural language prompts — without leaving the command line.
+
+### Prerequisites
+
+- [GitHub Copilot CLI installed](https://docs.github.com/copilot/how-tos/set-up/install-copilot-cli) and authenticated
+- The WinGet MCP server executable path (see [Find the WinGet MCP server executable path](#find-the-winget-mcp-server-executable-path))
+
+### Add the WinGet MCP server to Copilot CLI
+
+#### Option 1: Use the interactive `/mcp add` command (recommended)
+
+1. Start Copilot CLI in your terminal:
+
+   ```powershell
+   copilot
+   ```
+
+1. At the prompt, enter the `/mcp add` slash command:
+
+   ```
+   /mcp add
+   ```
+
+1. Fill in the MCP server details in the interactive form. Use **Tab** to move between fields:
+
+   | Field | Value |
+   |---|---|
+   | Name | `winget-mcp` |
+   | Type | `stdio` |
+   | Command | Full path to `WindowsPackageManagerMCPServer.exe` |
+
+1. Press **Ctrl+S** to save. Copilot CLI writes the configuration to `~/.copilot/mcp-config.json`.
+
+#### Option 2: Edit `mcp-config.json` directly
+
+Open (or create) `~/.copilot/mcp-config.json` and add the following entry, replacing `<username>` with your Windows username:
+
+```json
+{
+  "mcpServers": {
+    "winget-mcp": {
+      "type": "stdio",
+      "command": "C:\\Users\\<username>\\AppData\\Local\\Microsoft\\WindowsApps\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\\WindowsPackageManagerMCPServer.exe",
+      "args": [],
+      "tools": ["*"]
+    }
+  }
+}
+```
+
+> [!NOTE]
+> If `mcp-config.json` already exists and contains other servers, add the `winget-mcp` entry inside the existing `mcpServers` object rather than replacing the file.
+
+### Verify the server is registered
+
+After adding the server, confirm it is loaded:
+
+1. Start or restart Copilot CLI:
+
+   ```powershell
+   copilot
+   ```
+
+1. At the prompt, enter:
+
+   ```
+   /mcp
+   ```
+
+   The output lists all configured MCP servers. Verify that **winget-mcp** appears and shows a connected status.
+
+### Use WinGet MCP in Copilot CLI prompts
+
+Once the server is registered, Copilot CLI automatically calls WinGet MCP tools when your prompt involves package management. After each search or install request, Copilot asks for your approval before running any command. For example prompts and prompting tips, see [Example prompts for WinGet MCP](#example-prompts-for-winget-mcp).
+
 ## Example prompts for WinGet MCP
 
-Example prompts that work well with WinGet MCP integration:
+The following prompts work well with both GitHub Copilot (VS Code) and GitHub Copilot CLI when the WinGet MCP server is configured:
 
-- "What packages are available for Python development?"
-- "Help me install Visual Studio Code"
-- "Find packages for Docker on Windows"
-- "Install the latest version of Git"
+| Goal | Example prompt |
+|---|---|
+| Search for a package | `"Search WinGet for a PDF reader"` |
+| Install by name | `"Install the latest version of Git"` |
+| Install a specific version | `"Install Node.js 20 LTS from WinGet"` |
+| Find packages for a task | `"What WinGet packages are available for container development?"` |
+| Find packages for Python development | `"What packages are available for Python development?"` |
+| Install a common tool | `"Help me install Visual Studio Code"` |
+| Find platform-specific packages | `"Find packages for Docker on Windows"` |
+
+### Tips for effective prompting
+
+To help Copilot reliably invoke the WinGet MCP tools, use language that clearly indicates a package management intent. If Copilot does not use the WinGet MCP tools automatically, add explicit keywords such as **"using WinGet"**, **"from WinGet"**, or **"search WinGet"** to your prompt.
+
+When using VS Code, also verify that Agent Mode is still enabled and that **winget-mcp** is checked in the tools panel. When using Copilot CLI, use `/mcp` to confirm the server is connected.
 
 ## Available WinGet MCP commands
 
