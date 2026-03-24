@@ -73,7 +73,7 @@ We have also defined a schema for the settings file. This allows you to use TAB 
 
 ## Updating settings
 
-The following settings are available for the 1.12 release of the Windows Package Manager.
+The following settings are available for the 1.28 release of the Windows Package Manager.
 
 ### source settings
 
