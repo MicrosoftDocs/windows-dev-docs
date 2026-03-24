@@ -11282,7 +11282,7 @@
     },
     {
       "source_path": "uwp/devices-sensors/host-card-emulation.md",
-      "redirect_url": "/windows/uwp/devices-sensors/",
+      "redirect_url": "/previous-versions/dotnet/devices-sensors/host-card-emulation",
       "redirect_document_id": false
     }
   ]
