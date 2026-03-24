@@ -1,7 +1,7 @@
 ---
 title: Use WinGet to install and manage applications
 description: The WinGet command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 09/15/2025
+ms.date: 03/24/2026
 ms.topic: overview
 ---
 
@@ -69,13 +69,13 @@ Some users have reported [issues](https://github.com/microsoft/winget-cli/issues
 
 ### Commands
 
-The current preview of the **WinGet** tool supports the following commands.
+The current version of the **WinGet** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
 | [install](install.md) | Installs the specified application. |
 | [show](show.md) | Displays details for the specified application. |
-| [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by **WinGet**. |
+| [source](source.md) | Adds, edits, removes, and updates the Windows Package Manager repositories accessed by **WinGet**. |
 | [search](search.md) | Searches for an application. |
 | [list](list.md) | Display installed packages. |
 | [upgrade](upgrade.md) |  Upgrades the given specified application. |
@@ -123,6 +123,7 @@ The **WinGet** tool supports the following options.
 * MSIX
 * BURN
 * PORTABLE
+* FONT
 
 ## Scripting WinGet
 
