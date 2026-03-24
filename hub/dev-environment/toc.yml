@@ -116,8 +116,6 @@ items:
               href: ./javascript/nodejs-on-wsl.md
             - name: Install on Windows
               href: ./javascript/nodejs-on-windows.md
-            - name: Tutorial for beginners
-              href: ./javascript/nodejs-beginners-tutorial.md
         - name: Get started with React
           items:
             - name: Overview
@@ -128,14 +126,6 @@ items:
               href: ./javascript/react-on-windows.md
             - name: Install React Native for Desktop
               href: ./javascript/react-native-for-windows.md
-            - name: Install React Native for Android
-              href: ./javascript/react-native-for-android.md
-            - name: Install NextJS
-              href: ./javascript/nextjs-on-wsl.md
-            - name: Install Gatsby
-              href: ./javascript/gatsby-on-wsl.md
-            - name: Tutorial for beginners
-              href: ./javascript/react-beginners-tutorial.md
         - name: Get started with Vue
           items:
             - name: Overview
@@ -144,10 +134,6 @@ items:
               href: ./javascript/vue-on-wsl.md
             - name: Install on Windows
               href: ./javascript/vue-on-windows.md
-            - name: Install NuxtJS
-              href: ./javascript/nuxtjs-on-wsl.md
-            - name: Tutorial for beginners
-              href: ./javascript/vue-beginners-tutorial.md
   - name: Get started with Python
     href: ./python.md
   - name: Get started with C and C++
