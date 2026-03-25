@@ -21,5 +21,5 @@ Windows apps can integrate with printers and scanners to let users print documen
 
 ## Related topics
 
-- [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)
+- [Print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)
 - [Customize the print workflow](/windows/uwp/devices-sensors/print-workflow-customize)
