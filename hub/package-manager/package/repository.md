@@ -83,13 +83,13 @@ The `PackageIdentifier` and the `PackageVersion` values in the manifest must mat
 
 Thus to set up sparse checkout for all manifests of a publisher, you'd type:
 
-a. If you are using Git version 2.37.0 or newer, run the following command to set up sparse checkout for your folder.
+* If you are using Git version 2.37.0 or newer, run the following command to set up sparse checkout for your folder.
 
     ```powershell
     git sparse-checkout set manifests\<letter>\<publisher>
     ```
 
-b. If you are using an older version of Git, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for how to set up sparse checkout for your local repository.
+* If you are using an older version of Git, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for how to set up sparse checkout for your local repository.
 
 Note that the above command will override all current sparse checkout settings and set it up for only that one folder, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for setting up sparse checkout with multiple folders.
 
@@ -148,7 +148,7 @@ If there is ever an error during the process, you will be notified and our label
 
 ## Validation process
 
-When you [create a pull request](#step-6-create-a-pull-request) to submit your manifest to the Windows Package Manager repository, this will start an automation process that validates the manifest and processes your pull request. GitHub labels are used to share progress and allow you to communicate with us.
+When you [create a pull request](#step-8-create-a-pull-request) to submit your manifest to the Windows Package Manager repository, this will start an automation process that validates the manifest and processes your pull request. GitHub labels are used to share progress and allow you to communicate with us.
 
 ### Submission expectations
 
