@@ -6,7 +6,7 @@ template: detail.hbs
 ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
 ms.date: 05/19/2017
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: windows 10, winui
 pm-contact: kisai
 design-contact: mattben
 dev-contact: joyate
@@ -21,19 +21,13 @@ There are many ways to use sound to enhance your app. You can use to sound to su
 
 ## Examples
 
-<table>
-<th align="left">WinUI for UWP Gallery<th>
-<tr>
-<td><img src="images/xaml-controls-gallery-sm.png" alt="WinUI 3 Gallery"></img></td>
-<td>
-    <p>If you have the <strong>WinUI for UWP Gallery</strong> app installed, click here to <a href="winui2gallery:/item/Sound">open the app and see Sound in action</a>.</p>
-    <ul>
-    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI for UWP Gallery app (Microsoft Store)</a></li>
-    <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
-    </ul>
-</td>
-</tr>
-</table>
+> [!div class="nextstepaction"]
+
+> [Open the WinUI 3 Gallery app and see Mica in action](winui3gallery://item/Sound)
+
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
 
 ## Sound Global API
 
@@ -60,11 +54,6 @@ The **SpatialAudioMode** property can takes these values:
 
 To learn more about spatial audio and how XAML handles it see [AudioGraph - Spatial Audio](/windows/uwp/audio-video-camera/audio-graphs#spatial-audio).
 
-### Sound for TV and Xbox
-
-Sound is a key part of the 10-foot experience, and by default, the **ElementSoundPlayer**'s state is **Auto**, meaning that you will only get sound when your app is running on Xbox.
-Please see [Designing for Xbox and TV](../devices/designing-for-tv.md) for more details.
-
 ## Sound Volume Override
 
 All sounds within the app can be dimmed with the **Volume** control. However, sounds within the app cannot get *louder than the system volume*.
@@ -89,11 +78,11 @@ The **ElementSoundMode** has two states: **Off** and **Default**. When not set, 
 ButtonName.ElementSoundState = ElementSoundMode.Off;
 ```
 
-## Is This The Right Sound?
+## Is this the right sound?
 
 When creating a custom control, or changing an existing control's sound, it is important to understand the usages of all the sounds the system provides.
 
-Each sound relates to a certain basic user interaction, and although sounds can be customized to play on any interaction, this section serves to illustrate the scenarios where sounds should be used to maintain a consistent experience across all UWP apps.
+Each sound relates to a certain basic user interaction, and although sounds can be customized to play on any interaction, this section serves to illustrate the scenarios where sounds should be used to maintain a consistent experience across all WinUI apps.
 
 ### Invoking an Element
 
@@ -160,10 +149,6 @@ ElementSoundPlayer.Play(ElementSoundKind.Focus);
 As an added feature to calling **ElementSound.Focus**, the sound system will, by default, cycle through 4 different sounds on each navigation trigger. Meaning that no two exact focus sounds will play right after the other.
 
 The purpose behind this cycling feature is to keep the focus sounds from becoming monotonous and from being noticeable by the user; focus sounds will be played most often and therefore should be the most subtle.
-
-## Get the sample code
-
-- [WinUI for UWP Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
 
 ## Related articles
 
