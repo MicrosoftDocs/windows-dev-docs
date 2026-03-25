@@ -21,7 +21,7 @@ In this guide, we'll show you one way to do that in apps that use the Windows Ap
 > [!TIP]
 > You can also get scripts to create the **Northwind** and **pubs** sample databases from the [SQL Server Samples GitHub repository](https://github.com/microsoft/sql-server-samples/blob/master/samples/databases/northwind-pubs/readme.md).
 
-The snippets that appear in this guide are based on this [UWP sample app](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).
+The snippets that appear in this guide are based on this [sample app](https://github.com/StefanWickDev/IgniteDemos/tree/master/NorthwindDemo).
 
 ## First, set up your solution
 
