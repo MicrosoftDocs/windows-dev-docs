@@ -22,7 +22,7 @@ In this tutorial, you learn how to:
 > - Use navigation to move to and from pages in the app.
 > - Use resources like documentation and sample apps to create your own app.
 
-You'll use Visual Studio 2022 to create an app that you can use to enter a note and save it to local app storage. You can find the source code for this app here. The app will have two pages:
+You'll use Visual Studio 2026 to create an app that you can use to enter a note and save it to local app storage. You can find the source code for this app here. The app will have two pages:
 
 - `NotePage` - a page for editing a single note.
 - `AllNotesPage` - a page to show all the saved notes.
@@ -39,7 +39,7 @@ _NotePage_
 
 ## Create the Visual Studio project
 
-To begin this tutorial, you must create a WinUI app project in Visual Studio using the `Blank App, Packaged (WinUI in Desktop)` C# project template. When creating the project, use the following settings:
+To begin this tutorial, you must create a WinUI app project in Visual Studio using the `WinUI Blank App (Packaged)` C# project template. When creating the project, use the following settings:
 
 - **Project Name**
 

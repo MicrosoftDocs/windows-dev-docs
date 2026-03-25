@@ -97,7 +97,7 @@ Topics covered include:
 
 <details><summary>Do I need to use Visual Studio to build WinUI apps?</summary>
 
-> Using Visual Studio 2022 version 17.10 or above is strongly recommended for WinUI development. The latest Visual Studio versions offer rich development features like Hot Reload and include a **WinUI application development** workload that simplifies setup.
+> Using Visual Studio 2026 or later is strongly recommended for WinUI development. The latest Visual Studio versions offer rich development features like Hot Reload and include a **WinUI application development** workload that simplifies setup.
 >
 > Other IDEs and workflows may work, but [Visual Studio](/visualstudio/windows/) is currently the only officially supported IDE for WinUI. Note that [MSBuild](/visualstudio/msbuild/msbuild) is required to compile XAML or WinUI projects.
 

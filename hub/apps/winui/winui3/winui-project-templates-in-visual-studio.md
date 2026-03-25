@@ -25,13 +25,13 @@ Visual Studio includes project templates to help you quickly create WinUI apps. 
 
 :::image type="content" source="images/WinUI3-csharp-newproject-1.0-later.png" alt-text="WinUI project templates" border="true":::
 
-### Blank App (Packaged)
+### WinUI Blank App (Packaged)
 
-Creates a desktop app in C# (.NET) or C++ (Win32) with a WinUI-based UI. The project starts with a single window derived from **Microsoft.UI.Xaml.Window**, ready for you to add your own controls and pages. This is the recommended starting point for most new apps. For a walkthrough, see [Start developing Windows apps](../../get-started/start-here.md).
+Creates a desktop app in C# (.NET) or C++ (Win32) with a WinUI-based UI.The project starts with a single window derived from **Microsoft.UI.Xaml.Window**, ready for you to add your own controls and pages. This is the recommended starting point for most new apps. For a walkthrough, see [Start developing Windows apps](../../get-started/start-here.md).
 
 ### Blank App (Packaged with WAP Project)
 
-Same as the Blank App template above, but adds a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to the solution. This project handles building your app into an [MSIX package](/windows/msix/overview) for distribution. If you prefer a simpler setup, you can use [single-project MSIX](../../windows-app-sdk/single-project-msix.md) instead to avoid maintaining the separate packaging project.
+Same as the WinUI Blank App (Packaged) template above, but adds a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) to the solution. This project handles building your app into an [MSIX package](/windows/msix/overview) for distribution. If you prefer a simpler setup, you can use [single-project MSIX](../../windows-app-sdk/single-project-msix.md) instead to avoid maintaining the separate packaging project.
 
 ### Component and test templates
 

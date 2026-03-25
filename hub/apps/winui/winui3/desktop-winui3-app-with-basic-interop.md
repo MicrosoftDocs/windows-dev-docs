@@ -108,7 +108,7 @@ In this second example, we show how to customize the window's title bar and its 
 
 ### Create a new project
 
-1. In Visual Studio, create a new C# or C++/WinRT project from the **Blank App, Packaged (WinUI in Desktop)** project template.
+1. In Visual Studio, create a new C# or C++/WinRT project from the **WinUI Blank App (Packaged)** project template.
 
 ### Configuration
 
