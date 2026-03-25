@@ -100,7 +100,20 @@ The following example installs an application by version and ID.
 winget install --id Microsoft.PowerToys --version 0.91.1
 ```
 
-## Multiple selections
+## Install multiple packages
+
+You can install multiple packages in a single command by listing their IDs separated by spaces.
+
+```CMD
+winget install Microsoft.VisualStudioCode Microsoft.PowerShell Git.Git
+```
+
+WinGet installs each package in sequence. This is useful for quickly setting up a new machine or sharing a set of tools with a colleague.
+
+> [!TIP]
+> For larger sets of packages, consider using [**winget export**](export.md) and [**winget import**](import.md) to save and restore a full package list, or [**winget configure**](configure.md) to install packages alongside other machine configuration in a single file.
+
+## Disambiguate results
 
 If the query provided to **WinGet** does not result in a single application, then **WinGet** will display the results of the search. This will provide you with the additional data necessary to refine the search for a correct install.
 
@@ -120,12 +133,6 @@ The **msstore** source uses unique identifiers as the "Id" for packages. These d
 
 ```CMD
 winget install XP9KHM4BK9FZ7Q -s msstore
-```
-
-You may also use the install command to install multiple packages. For example:
-
-```CMD
-winget install Microsoft.Edit Microsoft.NuGet
 ```
 
 ## Local install
