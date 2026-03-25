@@ -82,7 +82,7 @@ The `PackageIdentifier` and the `PackageVersion` values in the manifest must mat
 
 Thus to set up sparse checkout for all manifests of a publisher, you'd type:
 
-1. If you are using Git version 2.37.0 or newer, run the following command to set up spare checkout for your folder.
+1. If you are using Git version 2.37.0 or newer, run the following command to set up sparse checkout for your folder.
 
     ```powershell
     git sparse-checkout set manifests\<letter>\<publisher>
@@ -90,7 +90,7 @@ Thus to set up sparse checkout for all manifests of a publisher, you'd type:
 
     If you are using an older version of Git, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for how to set up sparse checkout for your local repository.
 
-Note that the above command will override all current sparse checkout settings and set it up for only that one folder, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for setting up sparce checkout with multiple folders.
+Note that the above command will override all current sparse checkout settings and set it up for only that one folder, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for setting up sparse checkout with multiple folders.
 
 ### Step 5: Checkout the repository
 
@@ -100,18 +100,18 @@ You can now apply the sparse checkout settings by running.
 git checkout
 ```
 
-If you are entering multiple submissions, create   a branch instead of a fork. We currently allow only one manifest file per submission.
+If you are entering multiple submissions, create a branch instead of a fork. We currently allow only one manifest file per submission.
 
 ```powershell
 git checkout -b <branch-name>
 ```
 
-### Step 5: Add your manifest to the local repository
+### Step 6: Add your manifest to the local repository
 
-Add your files into the folder explained in step 3.
+Add your files into the folder following folder (format explained in step 4):
 **manifests** / **letter** / **publisher** / **application** / **version** 
 
-### Step 5: Submit your manifest to the remote repository
+### Step 7: Submit your manifest to the remote repository
 
 You're now ready to push your new manifest to the remote repository.
 
@@ -127,7 +127,7 @@ You're now ready to push your new manifest to the remote repository.
     git push
     ```
 
-### Step 6: Create a pull request
+### Step 8: Create a pull request
 
 After you push your changes, return to [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and create a pull request to merge your fork or branch to the main branch.
 
