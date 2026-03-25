@@ -11284,6 +11284,21 @@
       "source_path": "uwp/devices-sensors/host-card-emulation.md",
       "redirect_url": "/previous-versions/dotnet/devices-sensors/host-card-emulation",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/nodejs-beginners-tutorial.md",
+      "redirect_url": "/windows/dev-environment/javascript/nodejs-on-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/vue-beginners-tutorial.md",
+      "redirect_url": "https://vuejs.org/tutorial/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/nuxtjs-on-wsl.md",
+      "redirect_url": "https://nuxt.com/docs",
+      "redirect_document_id": false
     }
   ]
 }

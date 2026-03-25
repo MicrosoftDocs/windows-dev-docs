@@ -1,7 +1,7 @@
 ---
 title: list Command
 description: Displays the list of listed apps and if an update is available.
-ms.date: 07/15/2025
+ms.date: 03/24/2026
 ms.topic: overview
 ---
 
@@ -60,6 +60,7 @@ The options allow you to customize the list experience to meet your needs.
 | **--upgrade-available** | Lists only packages which have an upgrade available. |
 | **-u, --unknown, --include-unknown** | Lists packages even if their current version cannot be determined. |
 | **--pinned, --include-pinned** | Lists packages even if they have a pin that prevents upgrades by WinGet. |
+| **--details** | Displays detailed, `show`-like output for each matched package instead of a table view. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |

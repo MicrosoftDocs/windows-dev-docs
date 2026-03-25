@@ -59,18 +59,16 @@ To create a fork of the Windows Package Manager Community repository and clone t
 2. From Windows Command Prompt or PowerShell, use the following command to clone your fork.
 
     ```powershell
-    git clone <your-fork-name>
+    git clone --no-checkout <your-fork-name>
     ```
 
-3. If you are entering multiple submissions, create   a branch instead of a fork. We currently allow only one manifest file per submission.
+### Step 4: Setup sparse checkout
 
-    ```powershell
-    git checkout -b <branch-name>
-    ```
-
-### Step 4: Add your manifest to the local repository
+Sparse checkout allows you to choose which parts of a repository you want to download, instead of downloading everything.
+Next you have to specify filters for sparse checkout to use (stored in `.git/info/sparse-checkout`).
 
 You must add your manifest files to the repository in the following folder structure:
+To initialize sparse checkout for a repository you must type:
 
 **manifests** / **letter** / **publisher** / **application** / **version**
 
@@ -82,7 +80,38 @@ You must add your manifest files to the repository in the following folder struc
 
 The `PackageIdentifier` and the `PackageVersion` values in the manifest must match the publisher, application names and version in the manifest folder path. For more information, see [Create your package manifest](manifest.md#tips-and-best-practices).
 
-### Step 5: Submit your manifest to the remote repository
+Thus to set up sparse checkout for all manifests of a publisher, you'd type:
+
+1. If you are using Git version 2.37.0 or newer, run the following command to set up sparse checkout for your folder.
+
+    ```powershell
+    git sparse-checkout set manifests\<letter>\<publisher>
+    ```
+
+    If you are using an older version of Git, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for how to set up sparse checkout for your local repository.
+
+Note that the above command will override all current sparse checkout settings and set it up for only that one folder, refer to the [Git documentation](https://git-scm.com/docs/git-sparse-checkout) for setting up sparse checkout with multiple folders.
+
+### Step 5: Checkout the repository
+
+You can now apply the sparse checkout settings by running.
+
+```powershell
+git checkout
+```
+
+If you are entering multiple submissions, create a branch instead of a fork. We currently allow only one manifest file per submission.
+
+```powershell
+git checkout -b <branch-name>
+```
+
+### Step 6: Add your manifest to the local repository
+
+Add your files into the folder following folder (format explained in step 4):
+**manifests** / **letter** / **publisher** / **application** / **version** 
+
+### Step 7: Submit your manifest to the remote repository
 
 You're now ready to push your new manifest to the remote repository.
 
@@ -98,7 +127,7 @@ You're now ready to push your new manifest to the remote repository.
     git push
     ```
 
-### Step 6: Create a pull request
+### Step 8: Create a pull request
 
 After you push your changes, return to [https://github.com/microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs) and create a pull request to merge your fork or branch to the main branch.
 
