@@ -11295,6 +11295,16 @@
       "redirect_url": "https://nuxt.com/docs",
 
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/winui-project-templates-in-visual-studio.md",
+      "redirect_url": "/windows/apps/dev-tools/visual-studio",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/visual-studio-templates.md",
+      "redirect_url": "/windows/apps/dev-tools/visual-studio",
+      "redirect_document_id": false
     }
   ]
 }

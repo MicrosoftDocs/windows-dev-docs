@@ -20,7 +20,7 @@ In this topic, we step through how to build a basic **C# .NET** application with
 
 For this example, we'll specify the location and size of the app window, convert and scale it for the appropriate DPI, disable the window minimize and maximize buttons, and finally query the current process to show a list of the modules that are loaded into the current process.
 
-We're going to build our example app from the initial template application (see [Prerequisites](#prerequisites)). Also see [WinUI templates in Visual Studio](winui-project-templates-in-visual-studio.md).
+We're going to build our example app from the initial template application (see [Prerequisites](#prerequisites)). Also see [WinUI templates in Visual Studio](../../dev-tools/visual-studio.md).
 
 ### The MainWindow.xaml file
 
