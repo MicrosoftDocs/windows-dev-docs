@@ -17,7 +17,7 @@ WinUI apps can use [.NET APIs](/dotnet/) alongside WinRT and Win32 APIs to provi
 
 ## Prerequisites
 
-- Visual Studio 2022 with the **WinUI application development** workload installed
+- Visual Studio 2026 with the **WinUI application development** workload installed
 - A packaged WinUI project
 - Basic familiarity with C# and .NET development
 

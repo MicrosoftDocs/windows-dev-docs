@@ -137,7 +137,7 @@ This quick start tutorial shows you how to make use of some of the basic capabil
 ### Creating a new project
 
 - Go to **File** > **New** > **Project**.
-- Select the **Blank App, Packaged (WinUI 3 in Desktop)** template, or choose **Blank App, Unpackaged (WinUI 3 in Desktop)** if that better matches your app model.
+- Select the **WinUI Blank App (Packaged)** template.
 - Enter a project name of your choosing.
 - Click **Create**.
 

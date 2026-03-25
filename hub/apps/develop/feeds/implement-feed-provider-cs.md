@@ -18,7 +18,7 @@ To implement a feed provider using C++/WinRT, see [Implement a feed provider in 
 ## Prerequisites
 
 - Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
-- Visual Studio 2022 or later with the **Universal Windows Platform development** workload.
+- Visual Studio 2026 or later with the **WinUI application development** workload.
 
 ## Create a new C# console app
 

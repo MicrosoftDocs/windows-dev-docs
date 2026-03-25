@@ -18,7 +18,7 @@ The rest of this article will walk through creating a simple C# WinUI 3 app that
 
 ## Create a new project
 
-In Visual Studio, create a new project. For this example, in the **Create a new project** dialog, set the language filter to C# and the project type to WinUI and then select the "Blank App, Packaged (WinUI in Desktop).
+In Visual Studio, create a new project. For this example, in the **Create a new project** dialog, set the language filter to C# and the project type to WinUI and then select the "WinUI Blank App (Packaged)".
 
 ## Add a property to track the Microsoft Copilot key pressed state
 

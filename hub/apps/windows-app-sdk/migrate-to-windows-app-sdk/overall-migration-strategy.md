@@ -60,7 +60,7 @@ Download the latest Windows App SDK version from [Windows App SDK downloads](../
 
 ## Create a new project
 
-In Visual Studio, [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **Blank App, Packaged (WinUI in Desktop)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **WinUI Blank App (Packaged)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 

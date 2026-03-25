@@ -13,7 +13,7 @@ Single-project MSIX is a feature that lets you build a packaged WinUI 3 desktop 
 
 The single-project MSIX feature is available as a Visual Studio extension that you can use for these scenarios:
 
-- Create a *new* WinUI desktop app using the **Blank App, Packaged (WinUI in Desktop)** Visual Studio project template that comes with the Windows App SDK. That project is configured to build your app into an MSIX package without needing a separate packaging project.
+- Create a *new* WinUI desktop app using the **WinUI Blank App (Packaged)** Visual Studio project template that comes with the Windows App SDK. That project is configured to build your app into an MSIX package without needing a separate packaging project.
 - Modify an *existing* WinUI desktop app that uses a separate packaging project. The modification involves removing the separate packaging project, as shown in the illustration below.
 
 [![Comparing packaging project to single project](images/single-project-overview.png) ](images/single-project-overview.png#lightbox)
@@ -28,7 +28,7 @@ Before the introduction of the single-project MSIX feature, if you wanted to bui
 
 ### Supported project types
 
-The single-project MSIX feature supports [WinUI templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md) (C# and C++) for the Windows App SDK.
+The single-project MSIX feature supports [WinUI templates in Visual Studio](../dev-tools/visual-studio.md) (C# and C++) for the Windows App SDK.
 
 ### Limitations
 
@@ -40,15 +40,15 @@ The single-project MSIX packaging tools include Visual Studio project templates 
 
 **Windows App SDK 0.8 and C# version of 1.0 Preview 3:** The single-project MSIX packaging tools are *not* included with the Windows App SDK extension for Visual Studio for Windows App SDK version 0.8, or for C# projects with up to and including Preview 3 of the Windows App SDK 1.0. So if you're using those versions, then you *might* need to explicitly install the single-project MSIX packaging tools. See the info below:
 
-  - **Visual Studio 2022 version 17.1 and later:** The Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension is built into Visual Studio 2022 version 17.1 and later.
+  - **Visual Studio 2026 or later:** The Single-project MSIX Packaging Tools are built into Visual Studio 2026 and later.
 
-  - **Visual Studio 2022 prior to version 17.1:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2022 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17).
+  - **Earlier versions of Visual Studio:** Install the [Single-project MSIX Packaging Tools for Visual Studio 2026 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingToolsDev17).
 
 To confirm that you have the extension installed, click **Extensions** > **Manage Extensions** > **Installed** > **All** and check that *Single-project MSIX Packaging Tools* is listed.
 
 ## Create a new project
 
-If you're using Windows App SDK 1.0 Preview 2 or later, then you can create a new WinUI-based app that includes single-project MSIX support simply by using the **Blank App, Packaged (WinUI in Desktop)** template. For more information, see [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md).
+If you're using Windows App SDK 1.0 Preview 2 or later, then you can create a new WinUI-based app that includes single-project MSIX support simply by using the **WinUI Blank App (Packaged)** template. For more information, see [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md).
 
 ## Modify an existing project
 
@@ -56,7 +56,7 @@ Follow the steps in this section to modify an existing WinUI-based app that uses
 
 ### Step 1: Create or open an existing packaging project
 
-If you already have a solution for a WinUI desktop app (see [WinUI templates in Visual Studio](../winui/winui3/winui-project-templates-in-visual-studio.md)) that includes a **Windows Application Packaging Project** (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)), then open that solution in Visual Studio now.
+If you already have a solution for a WinUI desktop app (see [WinUI templates in Visual Studio](../dev-tools/visual-studio.md)) that includes a **Windows Application Packaging Project** (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)), then open that solution in Visual Studio now.
 
 If not, then create a new WinUI desktop app in Visual Studio by using the **Blank App, Packaged with Windows Application Packaging Project (WinUI in Desktop)** template. Your solution will look similar to the screenshot below.
 
@@ -93,7 +93,7 @@ Next, edit some configuration settings to use the single-project MSIX feature. T
 
 3. Perform one of the following procedures, depending on your version of Visual Studio.
 
-    **For Visual Studio 2022 or later**:
+    **For Visual Studio 2026 or later**:
 
     1. In **Solution Explorer**, right-click the **Properties** folder under the project node for your application, and select **Add** > **New Item...**.
 

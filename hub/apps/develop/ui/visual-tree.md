@@ -95,7 +95,7 @@ Spy++ can be started from either Visual Studio or the Developer Command Prompt f
 
 To start Spy++ from Visual Studio:
 
-- Confirm that your Visual Studio installation includes the **C++ core desktop features** component from the **Desktop development with C++** workload. (This is installed by default with Visual Studio 2022.)
+- Confirm that your Visual Studio installation includes the **C++ core desktop features** component from the **Desktop development with C++** workload. (This is installed by default with Visual Studio 2026.)
   :::image type="content" source="images/vs-installer-cpp-core-desktop-features.png" alt-text="Screenshot of the Visual Studio Installer with the Desktop development with C++ card checked and the C++ core desktop features installation status highlighted.":::
 - When installed, Spy++ is available from the **Tools** menu.
 - Spy++ runs independently of Visual Studio, which can be closed if no longer required.
