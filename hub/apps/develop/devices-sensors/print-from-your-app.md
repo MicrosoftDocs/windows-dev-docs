@@ -26,7 +26,7 @@ The first step to add printing to your app is to register for printing by gettin
 Your app must do this on every screen from which you want your user to be able to print. Only the screen that is displayed to the user can be registered for printing. If one screen of your app has registered for printing, it must unregister for printing when it exits. If it is replaced by another screen, the next screen must register for printing when it opens.
 
 > [!TIP]
-> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing).
+> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [Print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing).
 
 After a user has initiated printing, you use a [PrintDocument](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing.printdocument) to prepare the pages to be sent to the printer.The `PrintDocument` type is in the [**Microsoft.UI.Xaml.Printing**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing) namespace along with other types that support preparing XAML content for printing.
 
@@ -62,7 +62,7 @@ private void RegisterForPrinting()
 ```
 
 > [!WARNING]
-> In UWP printing examples, it's recommended to register for printing from the OnNavigatedTo method override. You need to use the window handle in the PrintManagerInterop.GetForWindow call, so you should use the Loaded event to ensure that the window handle is not `null`, which might be the case in OnNavigatedTo.
+> In printing examples, it's recommended to register for printing from the OnNavigatedTo method override. You need to use the window handle in the PrintManagerInterop.GetForWindow call, so you should use the Loaded event to ensure that the window handle is not `null`, which might be the case in OnNavigatedTo.
 
 Here, the event handlers are unregistered in the `UnregisterForPrinting` method, which is called from the [OnNavigatedFrom](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.onnavigatedfrom) method.
 
