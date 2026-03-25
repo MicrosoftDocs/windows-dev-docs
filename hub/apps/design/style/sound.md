@@ -23,7 +23,7 @@ There are many ways to use sound to enhance your app. You can use to sound to su
 
 > [!div class="nextstepaction"]
 
-> [Open the WinUI 3 Gallery app and see Mica in action](winui3gallery://item/Sound)
+> [Open the WinUI 3 Gallery app and see Sound in action](winui3gallery://item/Sound)
 
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
