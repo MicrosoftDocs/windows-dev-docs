@@ -46,7 +46,7 @@ Independent of mode, there are two kinds of binding, and you typically declare b
 
 ### UWP sample apps that demonstrate {Binding}
 
-- Download the [UWP Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) app.
+- Download the [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) app.
 - Download the [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) app.
 
 ## Every binding involves these pieces
