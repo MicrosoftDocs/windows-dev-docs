@@ -1,6 +1,6 @@
 ---
 title: MACs, hashes, and signatures
-description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in WinUI apps to detect message tampering.
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 
 
-This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+This article discusses how message authentication codes (MACs), hashes, and signatures can be used in WinUI apps to detect message tampering.
 
 ## Message authentication codes (MACs)
 
