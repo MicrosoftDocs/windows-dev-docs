@@ -1,6 +1,6 @@
 ---
 description: Learn how you can remove a PWA app from the Store.
-title: Removing an app from the Store
+title: Removing a PWA app from the Store
 ms.date: 03/26/2026
 ms.topic: article
 ms.localizationpriority: medium
