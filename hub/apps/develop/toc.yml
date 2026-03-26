@@ -6,6 +6,8 @@ items:
   - name: Features
     expanded: true
     items:
+    - name: Overview
+      href: features-overview.md
     - name: Accessibility
       href: accessibility.md
     - name: AI-powered features
