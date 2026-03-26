@@ -1,101 +1,118 @@
 ---
 title: Windows developer tools
-description: Windows includes a suite of tools designed specifically for developers — from a built-in package manager to a Linux subsystem, optimized storage, and more.
+description: Windows includes built-in tools designed for developers — a package manager, a Linux subsystem, optimized storage, and more.
 ms.topic: overview
 ms.subservice: windows-dev-environment
-ms.date: 03/25/2026
+ms.date: 03/26/2026
 ---
 
 # Windows developer tools
 
-Windows includes a suite of tools built specifically for developers. Whether you're building apps, working across stacks, or optimizing your workflow, these tools are designed to make Windows a great place to develop.
+Windows includes a suite of tools built for developers. Whether you're building apps, working across stacks, or optimizing your workflow, these tools are available on Windows out of the box or as free downloads.
 
-## Windows-native developer tools
-
-These tools are built into or designed specifically for Windows.
-
-:::row:::
-    :::column:::
-       [![WSL icon](../images/wsl-icon.png)](/windows/wsl/)<br>
-        **[Windows Subsystem for Linux](/windows/wsl/)**<br>
-        Run Linux distributions natively on Windows — fully integrated with the Windows file system and tools.
-    :::column-end:::
-    :::column:::
-       [![Dev Drive icon](../images/dev-drive-icon.png)](/windows/dev-drive)<br>
-        **[Dev Drive](/windows/dev-drive/)**<br>
-        A ReFS-based storage volume optimized for build performance and package cache trust.
-    :::column-end:::
-    :::column:::
-       [![WinGet icon](../images/winget.png)](../package-manager/)<br>
-        **[WinGet](../package-manager/)**<br>
-        Install, configure, and automate software setup from the command line or declarative configuration files.
-    :::column-end:::
-:::row-end:::
+## Tools to get you started
 
 :::row:::
     :::column:::
        [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
         **[Windows Terminal](/windows/terminal/)**<br>
-        A modern terminal with tabs, panes, Unicode support, and full customization for any shell.
+        Customize your terminal environment to work with multiple command line shells.
     :::column-end:::
     :::column:::
-       [![Sudo icon](../images/sudo.png)](/windows/sudo/)<br>
-        **[Sudo for Windows](/windows/sudo/)**<br>
-        Run elevated commands directly from an unelevated console session — no UAC prompt required.
+       [![WinGet icon](../images/winget.png)](../package-manager/index.md)<br>
+        **[WinGet](../package-manager/index.md)**<br>
+        Install and configure packages through command-line or declarative manifests.
     :::column-end:::
     :::column:::
-       [![PowerToys icon](../images/powertoys.png)](../powertoys/)<br>
-        **[Microsoft PowerToys](../powertoys/)**<br>
-        Power user utilities for developers and advanced users: file tools, keyboard remapping, and more.
+       [![WSL icon](../images/wsl-icon.png)](/windows/wsl/)<br>
+        **[Windows Subsystem for Linux](/windows/wsl/)**<br>
+        Run your favorite Linux distribution fully integrated with Windows.
     :::column-end:::
 :::row-end:::
 
+:::row:::
+    :::column:::
+       [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
+        **[Microsoft PowerToys](../powertoys/index.md)**<br>
+        A set of power user utilities to tune and streamline your Windows experience.
+    :::column-end:::
+    :::column:::
+       [![Dev Drive icon](../images/dev-drive-icon.png)](/windows/dev-drive)<br>
+        **[Dev Drive](/windows/dev-drive/)**<br>
+        A storage volume optimized for performance in developer scenarios.
+    :::column-end:::
+    :::column:::
+       [![Sudo for Windows icon](../images/sudo.png)](/windows/sudo/)<br>
+        **[Sudo for Windows](/windows/sudo/)**<br>
+        Run elevated commands directly from an unelevated console session.
+    :::column-end:::
+:::row-end:::
+<br>
+
 ---
 
-## Build for Windows
+## Development paths
 
-Resources for developing apps and experiences that run on Windows.
+Follow these guides to set up your development environment for your preferred language or framework on Windows.
 
 :::row:::
     :::column:::
+       [![JavaScrip icon](../images/javascript-logo.png)](./javascript/index.md)<br>
+        **[Get started with JavaScript](./javascript/index.md)**<br>
+        Set up your JavaScript development environment with Node.js, React, Vue, and more.
+    :::column-end:::
+    :::column:::
+       [![Python icon](../images/python-logo.png)](./python.md)<br>
+        **[Get started with Python](./python.md)**<br>
+        Install Python and set up your development environment on Windows.
+    :::column-end:::
+    :::column:::
+       [![C / C++](../images/c-logo.png)](/cpp/)<br>
+        **[Get started with C++ and C](/cpp/)**<br>
+        Develop apps, services, and tools with C++, C, and assembly.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
+        **[Get started with C#](/dotnet/csharp/)**<br>
+        Build apps using C# and .NET.
+    :::column-end:::
+    :::column:::
+       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
+        **[Get started with Rust](./rust/index.yml)**<br>
+        Get started programming with Rust, including how to set up Rust for Windows.
+    :::column-end:::
+    :::column:::
+       [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
+        **[Get started with PowerShell](/powershell/)**<br>
+        Cross-platform task automation and configuration management using PowerShell.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
+        **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
+        Create remote development containers with support from VS, VS Code, .NET, and WSL.
+    :::column-end:::    
+    :::column:::
        [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
-        **[Windows App SDK and WinUI](../apps/index.yml)**<br>
-        Build modern desktop apps with the latest Windows UI framework.
+        **[Get started building Windows apps](../apps/index.yml)**<br>
+        Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
     :::column:::
        [![Game Dev icon](../images/game-icon.png)](/gaming/)<br>
-        **[Game development on Windows](/gaming/)**<br>
-        Build games using DirectX, Xbox Game Development Kit, and Microsoft's game tools.
-    :::column-end:::
-    :::column:::
-       [![Windows on Arm](../images/windows-logo.png)](/windows/arm/overview)<br>
-        **[Windows on Arm](/windows/arm/overview)**<br>
-        Develop and optimize apps for Arm64 devices, including Copilot+ PCs.
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-       [![Windows AI icon](../images/windows-logo.png)](/windows/ai/)<br>
-        **[Windows AI](/windows/ai/)**<br>
-        Add local AI capabilities to your app using Windows AI APIs, Phi Silica, and more — no cloud required.
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-    :::column:::
+        **[Get started with Game Development](/gaming/)**<br>
+        Build games for Windows using Microsoft's game development tools and services.
     :::column-end:::
 :::row-end:::
 
 ---
 
-## Language and framework setup
 
-These guides cover Windows-specific setup considerations for common development scenarios.
+## Transitioning between Mac and Windows
 
-- [Get started with JavaScript / Node.js on Windows](./javascript/index.md)
-- [Get started with Python on Windows](./python.md)
-- [Get started with Rust on Windows](./rust/index.yml)
-- [Get started with Docker on Windows](./docker/overview.md)
-- [Transitioning from Mac to Windows](./mac-to-windows.md)
-
+Check out our [guide to transitioning between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment.
 
