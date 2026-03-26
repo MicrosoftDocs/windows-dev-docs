@@ -3,22 +3,24 @@ description: "Learn more about: Screen readers and hardware system buttons"
 title: Screen readers and hardware button events
 label: Screen readers and hardware button events
 template: detail.hbs
-ms.date: 02/20/2020
+ms.date: 03/17/2026
 ms.topic: how-to
-keywords: windows 10, uwp, accessibility, narrator, screen reader
+keywords: windows 11, winui, winappsdk, windows app sdk, accessibility, narrator, screen reader
 ms.localizationpriority: medium
 ---
 
 # Screen readers and hardware system buttons
 
-Screen-readers, such as [Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
+Screen-readers, such as [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
 
-Beginning with Windows 10 version 2004, UWP applications can listen for and handle the **Fn** hardware system button events in the same way as other hardware buttons. Previously, this system button acted only as a modifier for how other hardware buttons reported their events and state.
+To listen for and handle the **Fn** hardware system button events in the same way as other hardware buttons, use [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace of the Windows SDK.
+
+For WinUI 3 / Windows App SDK apps, this API is still consumed from the Windows namespace (`winrt::Windows::UI::Input`) rather than `Microsoft.UI.*`.
 
 > [!NOTE]
 > Fn button support is OEM-specific and can include features such as the ability to toggle/lock on or off (vs. a press-and-hold key combination), along with a corresponding lock indicator light (which might not be helpful to users who are blind or have a vision impairment).
 
-Fn button events are exposed through a new [SystemButtonEventController Class](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace. The SystemButtonEventController object supports the following events:
+Fn button events are exposed through [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace. The SystemButtonEventController object supports the following events:
 
 - [SystemFunctionButtonPressed](/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionbuttonpressed)
 - [SystemFunctionButtonReleased](/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionbuttonreleased)
@@ -34,7 +36,7 @@ In the following examples, we show how to create a [SystemButtonEventController]
 
 It is common for more than one of the supported events to fire when the Fn button is pressed. For example, pressing the Fn button on a Surface keyboard fires SystemFunctionButtonPressed, SystemFunctionLockChanged, and SystemFunctionLockIndicatorChanged at the same time.
 
-1. In this first snippet, we simply include the required namespaces and specify some global objects, including the [DispatcherQueue](/uwp/api/windows.system.dispatcherqueue) and the [DispatcherQueueController](/uwp/api/windows.system.dispatcherqueuecontroller) objects for managing the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) thread.
+1. In this first snippet, we simply include the required namespaces and specify some global objects, including the [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) and the [DispatcherQueueController](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller) objects for managing the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) thread.
 
    We then specify the [event tokens](/uwp/cpp-ref-for-winrt/event-token) returned when registering the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) event-handling delegates.
 
