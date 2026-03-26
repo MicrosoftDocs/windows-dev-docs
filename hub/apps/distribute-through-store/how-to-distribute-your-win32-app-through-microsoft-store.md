@@ -35,7 +35,8 @@ Let's explore each of these options in more detail in the following sections.
 
 ### Option 1 - Package your Win32 app as MSIX
 
-Package your application into an MSIX is very simple, you can either use:
+To package your application into an MSIX, you can either use:
+
 - Visual Studio by adding the project Windows Application Packaging to your solution. See [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 - Use installer solutions from one of our partners. See [Package a desktop app using third-party installers](/windows/msix/desktop/desktop-to-uwp-third-party-installer).
 - Microsoft MSIX Packaging Tool to create the MSIX from an existing installer. See [Create an MSIX package from any desktop installer (MSI, EXE, ClickOnce, or App-V)](/windows/msix/packaging-tool/create-app-package).
