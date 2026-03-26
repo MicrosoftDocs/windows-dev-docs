@@ -30,6 +30,6 @@ When you build accessible Windows experiences, avoid the following implementatio
 
 ## Related topics
 
-* [Accessibility](accessibility.md)
+* [Accessibility overview](accessibility-overview.md)
 * [Accessibility in the Store](accessibility-in-the-store.md)
 * [Accessibility checklist](accessibility-checklist.md)

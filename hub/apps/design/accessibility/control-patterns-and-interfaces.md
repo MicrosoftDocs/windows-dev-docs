@@ -63,4 +63,4 @@ When you implement a control pattern, you should also consult the UI Automation 
 ## Related topics
 
 * [Custom automation peers](custom-automation-peers.md)
-* [Accessibility](accessibility.md)
+* [Accessibility overview](accessibility-overview.md)

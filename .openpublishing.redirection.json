@@ -1462,8 +1462,13 @@
     },
     {
       "source_path": "uwp/accessibility/accessibility.md",
-      "redirect_url": "/windows/uwp/design/accessibility/accessibility",
-      "redirect_document_id": true
+      "redirect_url": "/windows/uwp/design/accessibility/accessibility-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/accessibility.md",
+      "redirect_url": "/windows/uwp/design/accessibility/accessibility-overview",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/accessibility/accessible-text-requirements.md",

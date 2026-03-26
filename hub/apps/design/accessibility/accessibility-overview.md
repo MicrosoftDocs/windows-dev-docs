@@ -14,6 +14,8 @@ ms.localizationpriority: medium
 
 This topic introduces concepts and technologies related to building accessible Windows apps.
 
+Accessible Windows applications support not only people with disabilities (both temporary and permanent) but also those with personal preferences, specific work styles, or situational and environmental constraints (such as shared work spaces, low bandwidth, bright sunlight, noisy or quiet surroundings, while cooking, and so on).
+
 The guidance is written for development teams that treat accessibility as a core quality requirement and use automated accessibility checks as part of regular engineering workflows. Use these topics to define accessibility expectations early, validate them continuously, and prevent regressions as features evolve.
 
 Many disabilities, including impaired mobility, vision, color perception, hearing, speech, cognition, and literacy, can be addressed by providing:
@@ -131,11 +133,11 @@ For more info about accessibility declarations and publishing your app, see [Acc
 > [!TIP]
 > [!div class="nextstepaction"]
 > Open the WinUI 3 Gallery app and see the following Accessibility principles in action:
->
+> 
 > - [Screen reader support](winui3gallery://item/AccessibilityScreenReader)
 > - [Keyboard support](winui3gallery://item/AccessibilityKeyboard)
 > - [Color contrast](winui3gallery://item/AccessibilityColorContrast)
->
+> 
 > The **WinUI 3 Gallery** app includes interactive examples of most WinUI controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ## Related topics
@@ -143,5 +145,5 @@ For more info about accessibility declarations and publishing your app, see [Acc
 - [Microsoft.UI.Xaml.Automation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation)
 - [Microsoft.UI.Xaml.Automation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation)
 - [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample)
-- [Accessibility](accessibility.md)
+- [Accessibility overview](accessibility-overview.md)
 - [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
