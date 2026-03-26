@@ -250,7 +250,7 @@ The following examples demonstrate an administrator's ability to set filters all
 To use the `setfiltersallowed` command to allow `Filter-01` and `Filter-02` on all Dev Drives, use the command:
 
 ```powershell
-fsutil devdrv setfiltersallowed Filter-01, Filter-02
+fsutil devdrv setfiltersallowed "Filter-01, Filter-02"
 ```
 
 To display the filter attach policy for all Dev Drives, use the command:
@@ -292,7 +292,7 @@ The following filters may be used with Dev Drive:
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
 ```powershell
-fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24"
+fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24, WinSetupMon, applockerfltr"
 ```
 
 > [!TIP]
