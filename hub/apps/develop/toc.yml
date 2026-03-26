@@ -4,9 +4,10 @@ items:
   - name: Develop overview
     href: index.md
   - name: Features
-    href: features.md
     expanded: true
     items:
+    - name: Overview
+      href: features-overview.md
     - name: Accessibility
       href: accessibility.md
     - name: AI-powered features

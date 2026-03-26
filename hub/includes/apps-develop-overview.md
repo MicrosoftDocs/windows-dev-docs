@@ -5,8 +5,8 @@ ms.date: 01/27/2026
 
 :::row:::
     :::column:::
-       [![Features icon](../apps/develop/images/tile-features.png)](../apps/develop/features.md)<br>
-        **[Features](../apps/develop/features.md)**<br>
+       [![Features icon](../apps/develop/images/tile-features.png)](../apps/develop/features-overview.md)<br>
+        **[Features](../apps/develop/features-overview.md)**<br>
         Explore the building blocks for creating rich Windows experiences.
     :::column-end:::
     :::column:::
