@@ -603,28 +603,6 @@ items:
         href: security/index.md
       - name: Credential locker
         href: security/credential-locker.md
-      - name: Fingerprint biometrics
-        href: security/fingerprint-biometrics.md
-      - name: OAuth 2.0
-        href: security/oauth2.md  
-      - name: Passkeys
-        items:
-        - name: Overview
-          href: security/intro.md
-        - name: Implementation
-          href: security/implement.md
-        - name: Design guidelines
-          href: security/design.md
-        - name: Use cases
-          href: security/use-cases.md
-        - name: Tools and libraries
-          href: security/tools-libraries.md
-        - name: Reference
-          href: security/reference.md
-        - name: Plugin passkey manager support
-          href: security/third-party.md
-      - name: Share certificates between apps
-        href: security/share-certificates.md
       - name: Cryptography
         href: security/cryptography.md
         items:
@@ -651,6 +629,28 @@ items:
             href: security/copy-to-from-byte-arrays.md
           - name: Encode and decode data
             href: security/encode-decode-data.md
+      - name: Fingerprint biometrics
+        href: security/fingerprint-biometrics.md
+      - name: OAuth 2.0
+        href: security/oauth2.md  
+      - name: Passkeys
+        items:
+        - name: Overview
+          href: security/intro.md
+        - name: Implementation
+          href: security/implement.md
+        - name: Design guidelines
+          href: security/design.md
+        - name: Use cases
+          href: security/use-cases.md
+        - name: Tools and libraries
+          href: security/tools-libraries.md
+        - name: Reference
+          href: security/reference.md
+        - name: Plugin passkey manager support
+          href: security/third-party.md
+      - name: Share certificates between apps
+        href: security/share-certificates.md
       - name: Smart cards
         href: security/smart-cards.md
       - name: Windows Hello
