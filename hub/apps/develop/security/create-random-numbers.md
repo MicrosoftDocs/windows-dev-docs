@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This example code shows how to create a random number or buffer for use in cryptography in a WinUI app.
 
-```cs
+```csharp
 public string GenerateRandomData()
 {
     // Define the length, in bytes, of the buffer.

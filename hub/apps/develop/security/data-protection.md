@@ -27,7 +27,7 @@ To protect data, when you create a [**DataProtectionProvider**](/uwp/api/Windows
 
 The following example shows how to use the [**ProtectAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectasync) and [**UnprotectAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectasync) methods to asynchronously protect static data to the current user's SID.
 
-```cs
+```csharp
 using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.DataProtection;
 using Windows.Storage.Streams;
@@ -112,7 +112,7 @@ namespace SampleProtectAsync
 
 The following example shows how to use the [**ProtectStreamAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.protectstreamasync) and [**UnprotectStreamAsync**](/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider.unprotectstreamasync) methods to asynchronously protect stream data to the current user's SID.
 
-```cs
+```csharp
 using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.DataProtection;
 using Windows.Storage.Streams;

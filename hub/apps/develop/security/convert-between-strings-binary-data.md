@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This example code shows how to convert between strings and binary data in a WinUI app.
 
-```cs
+```csharp
 public void ConvertData()
 {
     // Create a string to convert.

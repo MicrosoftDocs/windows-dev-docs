@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This example code shows how to encode and decode base64 and hexadecimal data in a WinUI app.
 
-```cs
+```csharp
 public void EncodeDecodeBase64()
 {
     // Define a Base64 encoded string.

@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This example code shows how to copy to and from byte arrays in a WinUI app.
 
-```cs
+```csharp
 public void ByteArrayCopy()
 {
     // Initialize a byte array.

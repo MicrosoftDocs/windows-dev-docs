@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 This example code shows how to compare buffers in a WinUI app.
 
-```cs
+```csharp
 public void CompareBuffers()
 {
     // Create a hexadecimal string.
