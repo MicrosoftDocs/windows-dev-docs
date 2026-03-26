@@ -59,13 +59,13 @@ To create a fork of the Windows Package Manager Community repository and clone t
 2. From Windows Command Prompt or PowerShell, use the following command to clone your fork.
 
     ```powershell
-    git clone --no-checkout <your-fork-name>
+    git clone --filter=blob:none --no-checkout <your-fork-name>
     ```
 
 ### Step 4: Setup sparse checkout
 
 Sparse checkout allows you to choose which parts of a repository you want to download, instead of downloading everything.
-In the previous step, `--no-checkout` means that no files have been downloaded yet.
+In the previous step, `--filter=blob:none` means that the commit history has not been downloaded yet, and `--no-checkout` means that no files have been added to the working copy (the index) yet.
 
 Before downloading anything, you'll have to specify filters for sparse checkout to use (stored in `.git/info/sparse-checkout`).
 
@@ -101,7 +101,7 @@ You can now apply the sparse checkout settings by running the normal checkout co
 git checkout
 ```
 
-Even if the folder you want to submit hasn't been committed to the repository yet, you must still run the checkout command, as it will be impossible to push without the Git internals it sets up.
+Even if the folder you want to submit hasn't been committed to the repository yet, you must still run the checkout command, as it will be impossible to add (and thus commit) anything without the Git internals it sets up (the index).
 
 If you are entering multiple submissions, create a branch instead of a fork. We currently allow only one manifest file per submission.
 
