@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/develop/windows-integration/settings-mcp.md",
+      "redirect_url": "/windows/apps/develop/windows-integration/",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/windows-app-sdk/composition.md",
       "redirect_url": "/windows/apps/develop/composition/visual-layer",
       "redirect_document_id": false
