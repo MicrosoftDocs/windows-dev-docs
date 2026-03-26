@@ -1,6 +1,6 @@
 ---
 description: Manage the status of your MSI/EXE draft app submissions
-title: App submission controls for MSI/EXE app
+title: App submission controls for MSIX app
 ms.date: 03/26/2026
 ms.topic: article
 ms.localizationpriority: medium
