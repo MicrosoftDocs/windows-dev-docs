@@ -6,7 +6,7 @@ label: Accessibility
 template: detail.hbs
 ms.date: 03/03/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
 ---
 
