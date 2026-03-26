@@ -32,7 +32,7 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 
 > [!NOTE]
-> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to uniquely identify the package you wish to install.
+> The query argument is positional. By default, winget performs a **case-insensitive substring match** against the package name, ID, and moniker. Wild-card syntax is not supported. Use **-e, --exact** to require an exact match (case-sensitive). Use **--id**, **--name**, or **--moniker** to restrict which field is searched.
 
 ## Options
 
@@ -62,12 +62,12 @@ The options allow you to customize the install experience to meet your needs.
 | **--skip-dependencies** | Skips processing package dependencies and Windows features. |
 | **--ignore-local-archive-malware-scan** |    Ignore the malware scan performed as part of installing an archive type package from local manifest. |
 | **--dependency-source** |    Find package dependencies using the specified source. |
-| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-package-agreements** | Accepts any license agreements or EULAs presented by the package installer, suppressing the interactive prompt. This applies to the package's own license terms only — it does not affect optional components or bundled software offered by the installer. For a fully non-interactive install, combine with **--silent (-h)**. |
 | **--no-upgrade** |    Skips upgrade if an installed version already exists. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
 | **--authentication-account** | Specify the account to be used for authentication. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Accepts the license agreement for the WinGet source (repository), suppressing the interactive prompt. This is separate from any package license — it covers the terms of use for the source itself, such as the winget community repository. |
 | **-r, --rename** | The value to rename the executable file (portable). |
 | **--uninstall-previous** | Uninstall the previous version of the package during upgrade. |
 | **--force** | Direct run the command and continue with non security related issues. |
