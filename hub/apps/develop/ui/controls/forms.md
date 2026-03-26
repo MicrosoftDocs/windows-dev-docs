@@ -54,7 +54,7 @@ To facilitate the user experience and ensure that users are able to enter the co
 ### Labels
 [Labels](../../../design/controls/labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock) instead.
 
-To [design for accessibility](../../../design/accessibility/accessibility.md), label all individual and groups of controls for clarity for both human and screen readers. 
+To design for accessibility, label all individual and groups of controls for clarity for both human and screen readers. For more details on accessibility, see [Accessibility overview](../../../design/accessibility/accessibility-overview.md).
 
 For font styles, use the default [Windows type ramp](../../../design/style/typography.md). Use `TitleTextBlockStyle` for page titles, `SubtitleTextBlockStyle` for group headings, and `BodyTextBlockStyle` for control labels.
 

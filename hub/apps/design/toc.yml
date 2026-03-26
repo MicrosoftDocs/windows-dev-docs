@@ -77,10 +77,8 @@ items:
         - name: Overview
           href: usability/index.md
         - name: Accessibility
-          href: accessibility/accessibility.md
+          href: accessibility/accessibility-overview.md
           items:
-            - name: Overview
-              href: accessibility/accessibility-overview.md
             - name: Designing inclusive software
               href: accessibility/designing-inclusive-software.md
             - name: Developing inclusive Windows apps

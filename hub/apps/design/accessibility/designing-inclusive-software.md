@@ -113,4 +113,4 @@ In summary, apply these seven steps to keep inclusive design actionable througho
 * [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
 * [Developing inclusive Windows apps](developing-inclusive-windows-apps.md)
-* [Accessibility](accessibility.md)
+* [Accessibility overview](accessibility-overview.md)

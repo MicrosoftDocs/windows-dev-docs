@@ -334,7 +334,7 @@ Some common solutions include providing information in alternative formats (such
 
 Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibility can reduce the cost of maintaining your app.
 
-For detailed guidance on building accessible Windows apps, see [Accessibility in Windows](../develop/accessibility.md).
+For detailed guidance on building accessible Windows apps, see [Accessibility overview](../design/accessibility/accessibility-overview.md).
 
 ### Accessibility testing
 

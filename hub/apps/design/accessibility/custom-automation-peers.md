@@ -460,7 +460,7 @@ More generally, be conservative with exceptions. Many clients cannot convert pro
 
 ## Related topics
 
-* [Accessibility](accessibility.md)
+* [Accessibility overview](accessibility-overview.md)
 * [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample)
 * [**FrameworkElementAutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.frameworkelementautomationpeer)
 * [**AutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer)

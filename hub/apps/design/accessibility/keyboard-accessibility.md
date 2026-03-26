@@ -304,7 +304,7 @@ For example, even without a physical Tab key, Narrator supports gestures that ma
 
 ## Related topics
 
-- [Accessibility](accessibility.md)
+- [Accessibility overview](accessibility-overview.md)
 - [Keyboard interactions](../input/keyboard-interactions.md)
 - [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard) (legacy sample)
 - [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample)

@@ -40,4 +40,4 @@ See the [Accessibility checklist](accessibility-checklist.md) for more detail on
 
 ## Related topics
 
-- [Accessibility](accessibility.md)
+- [Accessibility overview](accessibility-overview.md)

@@ -76,6 +76,5 @@ Use the following recommendations during design, implementation, and testing. To
 
 - [Accessible text requirements](accessible-text-requirements.md)
 - [Text scaling](../input/text-scaling.md)
-- [Accessibility](accessibility.md)
 - [Design for accessibility](./accessibility-overview.md)
 - [Practices to avoid](practices-to-avoid.md)

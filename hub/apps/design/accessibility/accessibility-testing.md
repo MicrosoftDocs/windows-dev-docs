@@ -160,7 +160,7 @@ Verify that only intended elements appear in each accessibility view and that re
 
 ## Related topics
 
-- [Accessibility](accessibility.md)
+- [Accessibility overview](accessibility-overview.md)
 - [Practices to avoid](practices-to-avoid.md)
 - [UI Automation](/windows/desktop/WinAuto/entry-uiauto-win32)
 - [Accessibility in Windows](https://www.microsoft.com/accessibility/)
