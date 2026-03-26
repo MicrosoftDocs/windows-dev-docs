@@ -51,6 +51,13 @@ Windows includes a suite of tools built for developers. Whether you're building 
 
 ---
 
+Watch the Windows developer tools overview from Microsoft Ignite to see these tools in action.
+<br><br>
+
+<iframe width="600" height="338" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+---
+
 ## Development paths
 
 Follow these guides to set up your development environment for your preferred language or framework on Windows.
