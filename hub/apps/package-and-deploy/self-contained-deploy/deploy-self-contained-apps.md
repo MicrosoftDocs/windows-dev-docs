@@ -16,7 +16,7 @@ A Windows App SDK project is framework-dependent by default. To switch to self-c
 ![Screenshot showing the WindowsAppSDKSelfContained property set in a project file.](../../images/winappsdk-self-contained.png)
 * Save and close the project file.
 * Click **Reload Project**.
-* If you're using a **Windows Application Packaging Project** (rather than the single-project MSIX that you get with **Blank App, Packaged (WinUI in Desktop)**), then make all of the above changes in the project file for the packaging project as well.
+* If you're using a **Windows Application Packaging Project** (rather than the single-project MSIX that you get with **WinUI Blank App (Packaged)**), then make all of the above changes in the project file for the packaging project as well.
 
 > [!NOTE]
 > Library projects should not be changed. Self-contained deployment should only be configured in app projects (and, where applicable, in a **Windows Application Packaging Project**).

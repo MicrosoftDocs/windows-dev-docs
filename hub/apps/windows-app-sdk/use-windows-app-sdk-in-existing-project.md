@@ -18,7 +18,7 @@ If you have a desktop project in which you want to use the Windows App SDK, then
 
 ## Prerequisites
 
-* Visual Studio 2022 version 17.1 and later.
+* Visual Studio 2026 or later.
 * The workloads and components for Windows app development. For more info, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
 ## Instructions

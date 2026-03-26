@@ -28,7 +28,7 @@ In this tutorial, you'll learn how to:
 
 To complete this tutorial, you need:
 
-- Visual Studio 2022 or later with **WinUI application development** workload
+- Visual Studio 2026 or later with **WinUI application development** workload
 - Basic familiarity with C# and XAML
 - Understanding of fundamental database concepts
 

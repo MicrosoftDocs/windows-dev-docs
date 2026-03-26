@@ -25,7 +25,7 @@ The following Windows Runtime (WinRT) APIs are used in this topic:
 - [PreferredApplicationPackageFamilyName](/uwp/api/windows.system.launcheroptions.preferredapplicationpackagefamilyname)
 - [DesiredRemainingView](/uwp/api/windows.system.launcheroptions.desiredremainingview)
 
-Note that the WinRT APIs used in this topic can be used in both UWP apps, WinUI apps, and other desktop apps. To read more about enabling your desktop app to work with WinRT APIs, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+Note that the WinRT APIs used in this topic can be used in both WinUI and other desktop apps. To read more about enabling your desktop app to work with WinRT APIs, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## How to launch Settings
 
@@ -72,25 +72,20 @@ The following sections describe different categories of ms-settings URIs used to
 - [Accounts](#accounts)
 - [Apps](#apps)
 - [Control Center](#control-center)
-- [Cortana](#cortana)
 - [Devices](#devices)
 - [Ease of access](#ease-of-access)
 - [Extras](#extras)
 - [Family Group](#family-group)
 - [Gaming](#gaming)
-- [Mixed reality](#mixed-reality)
 - [Network and internet](#network-and-internet)
 - [Personalization](#personalization)
 - [Phone](#phone)
 - [Privacy](#privacy)
 - [Search](#search)
 - [Sound](#sound)
-- [Surface Hub](#surface-hub)
 - [System](#system)
 - [Time and language](#time-and-language)
 - [Update and security](#update-and-security)
-
-> [!NOTE]
 > The availability of some settings pages varies by Windows version and SKU. For some settings, the URI column also captures some usage information and any additional requirements that must be met for a page to be available.
 
 ### Accounts
@@ -128,22 +123,6 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | Control center | ms-settings:controlcenter |
-
-### Cortana
-
-|Settings page| URI |
-|-------------|-----|
-| Cortana across my devices | ms-settings:cortana-notifications |
-| More details | ms-settings:cortana-moredetails |
-| Permissions & History | ms-settings:cortana-permissions |
-| Searching Windows | ms-settings:cortana-windowssearch |
-| Talk to Cortana | ms-settings:cortana-language<br/>ms-settings:cortana<br/>ms-settings:cortana-talktocortana |
-
-> [!IMPORTANT]
-> Cortana voice assistance in Windows as a standalone app was retired in the spring of 2023. For more information, see [End of support for Cortana](https://support.microsoft.com/topic/end-of-support-for-cortana-d025b39f-ee5b-4836-a954-0ab646ee1efa).
-
-> [!NOTE]
-> This Settings section on desktop will be called Search when the PC is set to regions where Cortana is not currently available or Cortana has been disabled. Cortana-specific pages (Cortana across my devices, and Talk to Cortana) will not be listed in this case.
 
 ### Devices
 
@@ -207,16 +186,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Playing a game full screen | ms-settings:quietmomentsgame |
 | TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
 
-### Mixed reality
-
-> [!NOTE]
-> These settings are only available if the [Mixed Reality Portal](https://apps.microsoft.com/detail/9ng1h8b3zc7m) app is installed.
-
-> [!IMPORTANT]
-> Windows Mixed Reality devices are not supported with Windows 11, version 24H2 and newer.
->
-> Windows Mixed Reality support is limited to Windows 10, version 20H2 through Windows 11, version 23H2.
-
 | Settings page | URI |
 |---------------|-----|
 | Audio and speech | ms-settings:holographic-audio |
@@ -267,7 +236,7 @@ The following sections describe different categories of ms-settings URIs used to
 
 |Settings page| URI |
 |-------------|-----|
-| Your phone | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-settings:mobile-devices-addphone-direct (Opens **Your Phone** app) |
+| Phone Link | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-settings:mobile-devices-addphone-direct (Opens **Phone Link** app) |
 | Device Usage | ms-settings:deviceusage |
 
 ### Privacy
@@ -329,16 +298,6 @@ The following sections describe different categories of ms-settings URIs used to
 | Default audio output| ms-settings:sound-defaultoutputproperties |
 | Audio device properties<br/>(specific device) | ms-settings:sound-properties?endpointId={0.0.0.00000000}.{aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}<br/><br/>**Note:** User of URI must know the `endpointId` string to use. |
 | Audio device properties<br/>(specific device) | ms-settings:sound-properties?interfaceId=\\\\?\\SWD#MMDEVAPI#{3.0.0.00000003}.{bbbbbbbb-1111-2222-3333-cccccccccccc}#{cccccccc-2222-3333-4444-dddddddddddd}<br/><br/>**Note:** User of URI must know the `interfaceId` string to use and the string must be escaped correctly before sending. |
-
-### Surface Hub
-
-|Settings page| URI |
-|-------------|-----|
-| Accounts | ms-settings:surfacehub-accounts |
-| Session cleanup | ms-settings:surfacehub-sessioncleanup |
-| Team Conferencing | ms-settings:surfacehub-calling |
-| Team device management | ms-settings:surfacehub-devicemanagement |
-| Welcome screen | ms-settings:surfacehub-welcome |
 
 ### System
 

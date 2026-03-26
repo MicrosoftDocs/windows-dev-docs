@@ -18,7 +18,7 @@ This article contains the steps required to enable working with a MySQL database
 
 ## Set up your solution
 
-This example can be used with any WPF, Windows Forms, WinUI, and UWP project to connect your Windows app to a MySQL database. Follow these steps to install the package and try out the example code to read data from an existing MySQL database.
+This example can be used with any WPF, Windows Forms and WinUI project to connect your Windows app to a MySQL database. Follow these steps to install the package and try out the example code to read data from an existing MySQL database.
 
 1. Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console).
 1. Use the command `Install-Package MySql.Data` to install the NuGet package for the MySQL core class library.

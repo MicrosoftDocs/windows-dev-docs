@@ -1213,7 +1213,7 @@ items:
     - name: Agentic tools
       href: ../dev-tools/agentic-tools.md
     - name: Visual Studio
-      href: ../winui/winui3/winui-project-templates-in-visual-studio.md
+      href: ../dev-tools/visual-studio.md
     - name: Windows App Development CLI
       items:
       - name: Overview

@@ -19,7 +19,7 @@ This guide walks you through setting up GitHub Copilot with the tools that make 
 ## Prerequisites
 
 - A [GitHub Copilot subscription](https://github.com/features/copilot) (a free tier is available)
-- [Visual Studio Code](https://code.visualstudio.com/) or [Visual Studio 2022](/visualstudio/install/install-visual-studio) (17.10 or later)
+- [Visual Studio Code](https://code.visualstudio.com/) or [Visual Studio 2026](/visualstudio/install/install-visual-studio)
 - [Node.js](https://nodejs.org/) 18 or later (required for the Copilot plugin install command)
 
 ---
@@ -28,7 +28,7 @@ This guide walks you through setting up GitHub Copilot with the tools that make 
 
 #### [Visual Studio (WinUI 3)](#tab/visualstudio)
 
-GitHub Copilot is built into Visual Studio 2022 17.10 and later. Visual Studio is required for WinUI 3 development.
+GitHub Copilot is built into Visual Studio 2026. Visual Studio is required for WinUI 3 development.
 
 1. Open Visual Studio and go to **Extensions** > **Manage Extensions**.
 2. Search for **GitHub Copilot** and install it, or verify it's already installed.
