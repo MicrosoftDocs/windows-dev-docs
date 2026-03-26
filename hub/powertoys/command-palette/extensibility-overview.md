@@ -22,6 +22,7 @@ For more detailed instructions, you can follow these pages:
 * [Command results](../command-palette/command-results.md)
 * [Display markdown content](../command-palette/using-markdown-content.md)
 * [Get user input with forms](../command-palette/using-form-pages.md)
+* [Adding Dock support](../command-palette/adding-dock-support.md)
 <!-- * [Handle the search text](../command-palette/dynamic-lists.md) -->
 <!-- * [Advanced: Adding an extension to your package](../command-palette/adding-an-extension-to-your-package.md) -->
 

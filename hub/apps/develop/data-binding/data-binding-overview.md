@@ -21,7 +21,7 @@ This topic assumes that you know how to create a basic WinUI app with Windows Ap
 
 ## Create the project
 
-Create a new **WinUI Blank App, Packaged** C# project. Name it "Quickstart".
+Create a new **WinUI Blank App (Packaged)** C# project. Name it "Quickstart".
 
 ## Bind to a single item
 

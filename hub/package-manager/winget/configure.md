@@ -7,7 +7,10 @@ ms.topic: overview
 
 # configure command (winget)
 
-The **configure** command of the [winget](./index.md) tool uses a [WinGet Configuration file](../configuration/index.md) to begin setting up your Windows machine to a desired development environment state.
+The **configure** command of the [winget](./index.md) tool uses a [WinGet Configuration file](../configuration/index.md) to begin setting up your Windows machine to a desired development environment state. A configuration file can specify a collection of packages to install alongside other system settings, making it the most complete approach for reproducible environment setup.
+
+> [!TIP]
+> For simpler scenarios, you can install multiple packages in a single command (`winget install A B C`), or use [**winget export**](export.md) and [**winget import**](import.md) to save and restore a package list.
 
 > [!WARNING]
 > Do not run a WinGet Configuration file without first reviewing the contents of the file and verifying the credibility of the related resources. See [How to check the trustworthiness of a WinGet Configuration file](../configuration/check.md).

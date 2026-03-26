@@ -1,56 +1,54 @@
 ---
 title: Install Vue.js directly on Windows
-description: A guide to help you get started using the Vue.js web frameworks directly on Windows.
+description: A guide to help you get started using Vue.js on Windows using npm create vue@latest and Vite.
 ms.topic: install-set-up-deploy
-ms.date: 03/30/2021
+ms.date: 03/23/2026
 ---
 
 # Install Vue.js directly on Windows
 
-A guide to help you set up a Vue.js development environment on Windows. Learn more on the [Vue.js overview](./vue-overview.md) page.
+A guide to set up a Vue.js development environment on Windows. For background, see the [Vue.js overview](./vue-overview.md).
 
-Vue can be installed directly on Windows or on the Windows Subsystem for Linux (WSL). We generally recommend that you [install Vue on WSL](./vue-on-wsl.md) if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. You may also want to consider [Vite](https://vitejs.dev/guide/why.html) as an alternative to Vue.js.
+Vue can be installed directly on Windows or on the Windows Subsystem for Linux (WSL). If you plan to interact with a Node.js backend, deploy to Linux servers, or follow tutorials that use Bash commands, consider [installing Vue on WSL](./vue-on-wsl.md) instead.
 
 ## Prerequisites
 
-- [Install Node.js on Windows](./nodejs-on-windows.md): This includes a version manager, package manager, and Visual Studio Code. The Node Package Manager (npm) is used to install Vue.js.
+- [Install Node.js on Windows](./nodejs-on-windows.md): This includes a version manager, package manager, and Visual Studio Code.
 
-## Install Vue.js
+## Create a Vue project
 
-To install Vue.js:
+The recommended way to start a new Vue 3 project is `npm create vue@latest`, which uses [create-vue](https://github.com/vuejs/create-vue) — the official Vite-based scaffolding tool:
 
-1. Open a command line (ie. Windows Command Prompt or PowerShell).
+1. Open PowerShell or Windows Command Prompt.
 
-2. Create a new project folder: `mkdir VueProjects` and enter that directory: `cd VueProjects`.
+2. Navigate to your projects directory:
 
-3. Install Vue.js using Node Package Manager (npm):
+   ```powershell
+   cd C:\Users\YourName\Projects
+   ```
 
-```powershell
-npm install vue
-```
+3. Create a new Vue project:
 
-Check the version number you have installed by using the command: `vue --version`.
+   ```powershell
+   npm create vue@latest
+   ```
 
-> [!NOTE]
-> To install Vue.js using a CDN, rather than NPM, see the [Vue.js install docs](https://vuejs.org/v2/guide/installation.html#CDN). See the Vue docs for an [Explanation of different Vue builds](https://vuejs.org/v2/guide/installation.html#Explanation-of-Different-Builds).
+   The installer prompts you to name your project and choose optional features (TypeScript, JSX support, Vue Router, Pinia state management, Vitest, ESLint).
 
-## Install Vue CLI
+4. Navigate into the project folder, install dependencies, and start the dev server:
 
-Vue CLI is a toolkit for working with Vue in your terminal / command line. It enables you to quickly scaffold a new project (vue create), prototype new ideas (vue serve), or manage projects using a graphical user interface (vue ui). Vue CLI is a globally installed npm package that handles some of the build complexities (like using Babel or Webpack) for you. *If you are not building a new single-page app, you may not need or want Vue CLI.*
+   ```powershell
+   cd <your-project-name>
+   npm install
+   npm run dev
+   ```
 
-To install Vue CLI, use npm. You must use the `-g` flag to globally install in order to upgrade (`vue upgrade --next`):
-
-```PowerShell
-npm install -g @vue/cli
-```
-
-To learn more about additional plugins that can be added (such as linting or Apollo for integrating GraphQL), visit [Vue CLI plugins](https://cli.vuejs.org/guide/#cli-plugins) in the Vue CLI docs.
+   Your app will be available at `http://localhost:5173`.
 
 ## Additional resources
 
-- [Vue docs](https://vuejs.org/)
+- [Vue docs](https://vuejs.org/guide/introduction.html)
 - [Vue.js overview](./vue-overview.md)
 - [Install Vue.js on WSL](./vue-on-wsl.md)
-- [Install Nuxt.js](./nuxtjs-on-wsl.md)
 - [Take your first steps with Vue.js](/training/paths/vue-first-steps/) learning path
-- Try a [Vue tutorial with VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial)
+- [Vue tutorial with VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial)

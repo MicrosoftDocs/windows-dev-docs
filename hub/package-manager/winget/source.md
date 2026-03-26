@@ -1,14 +1,14 @@
 ---
 title: The WinGet source command
 description: Use the WinGet source command and subcommands to list and manage the sources WinGet accesses.
-ms.date: 07/08/2025
+ms.date: 03/24/2026
 ms.topic: reference
 ms.custom: kr2b-contr-experiment
 ---
 
 # The WinGet source command
 
-The [WinGet](index.md) **source** command allows you to manage sources. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** WinGet sources.
+The [WinGet](index.md) **source** command allows you to manage sources. With the **source** command, you can **add**, **edit**, **list**, **update**, **remove**, **reset**, or **export** WinGet sources.
 
 A WinGet source provides the data for you to discover and install applications. Only use secure, trusted sources.
 
@@ -33,6 +33,7 @@ The following arguments are available.
 | Sub-Command  | Description |
 |--------------|-------------|
 | **add** | Adds a new source. |
+| **edit** | Edits an existing source. |
 | **list** | Lists current sources. |
 | **update** | Updates current sources. |
 | **remove** | Removes current sources. |
@@ -83,7 +84,7 @@ The following options are available.
 | **--trust-level** | Trust level of the source (none or trusted). |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--explicit** |  |
+| **--explicit** | Marks the source as explicit, requiring commands to directly target it using `--source`. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
@@ -103,6 +104,56 @@ The **add** subcommand supports the optional **type** parameter, which tells the
 |--------------|-------------|
 | **Microsoft.PreIndexed.Package** | The default source type. |
 | **Microsoft.Rest** | A Microsoft REST API source. |
+
+### edit
+
+The **edit** subcommand modifies an existing source's configuration. The primary use is to toggle whether a source is **explicit** or **implicit**. When a source is explicit, WinGet commands must directly target it using `--source`. When a source is implicit, it is included in all commands automatically.
+
+Usage:
+
+```cmd
+winget source edit [-n] <name> [<options>]
+```
+
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name of the source to edit. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|-------------|-------------|
+| **--explicit** | Sets the source as explicit (`true`) or implicit (`false`). When explicit, commands must directly target the source using `--source`. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **-?, --help** | Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
+| **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
+
+#### Example
+
+The **winget-font** source is explicit by default, meaning commands must target it directly using `--source winget-font`. To reset it to the default (implicit) state so that it is included in all WinGet commands automatically, run:
+
+```cmd
+winget source edit winget-font --explicit false
+```
+
+To set a source as explicit:
+
+```cmd
+winget source edit winget-font --explicit true
+```
 
 ### list
 

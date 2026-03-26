@@ -15,6 +15,63 @@ zone_pivot_groups: wasdk-release-channels
 :::zone pivot="stable"
 
 
+## Version 1.8.6 (1.8.260317003)
+
+Released: **March 18, 2026** <br><br>
+
+
+<details><summary>New SplitMenuFlyoutItem Control</summary>
+
+>
+> The new **SplitMenuFlyoutItem** control is designed to provide a split button experience within a menu flyout. This control will enable developers to expose a default primary action while also offering additional options through a submenu, ideal for condensing complex functionality into a smaller footprint and saving overall menu length. For more information, see GitHub spec [10862](https://github.com/microsoft/microsoft-ui-xaml/pull/10862). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): SplitMenuFlyoutItem_Available)
+>
+
+</details>
+
+<details><summary>Windows ML CMake support</summary>
+
+>
+> Windows ML can now be used from C++ projects using CMake. See the [Get started page](/windows/ai/new-windows-ml/get-started) to learn more.
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.23.4. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed a pointer arithmetic issue in the app-instance activation-redirection shared-memory queue that could cause incorrect behavior when using `AppInstance.RedirectActivationTo`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppLifecycle_SharedMemoryRedirectionQueueFix)
+> * Fixed an issue in the deployment manager where activity data was being incorrectly reset during package installation and license operations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DeploymentManager_ActivityCollectionFix)
+> * Improved diagnosability for Text Intelligence APIs used in Windows AI scenarios. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): TextIntelligence_Insights)
+> * Fixed a visual alignment issue with `AppBarToggleButton` in `CommandBarFlyout` secondary commands. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, XAML control template fix)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 1.8.5 release:
+> ```
+> Microsoft.UI.Xaml.Automation.Peers
+> 
+>     SplitMenuFlyoutItemAutomationPeer
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls
+> 
+>     SplitMenuFlyoutItem
+> ```
+</details>
+
+
 ## Version 1.8.5 (1.8.260209005)
 
 Released: **February 10, 2026** <br><br>
@@ -31,7 +88,7 @@ Released: **February 10, 2026** <br><br>
 
 >
 > * Fixed a package downgrade init failure and added 1.8.5 runtime support—ensuring reliable deployment and correct app recognition across configurations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DeploymentManager_PackageDowngradeFix).
-> * Fixed an issue where `CompositionIsland.StateChanged` event handlers were not triggered when the user modified the size of a window by dragging it to the top of the screen or using the edges of the screen and the window has a non-default `TitleBar` with an `IconSource` set. Closing #[#10374](https://github.com/microsoft/microsoft-ui-xaml/issues/10374) ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputNonClientPointerSource_PropagateWindowPosChangedMessage).
+> * Fixed an issue where `CompositionIsland.StateChanged` event handlers were not triggered when the user modified the size of a window by dragging it to the top of the screen or using the edges of the screen and the window has a non-default `TitleBar` with an `IconSource` set. Closing [#10374](https://github.com/microsoft/microsoft-ui-xaml/issues/10374) ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputNonClientPointerSource_PropagateWindowPosChangedMessage).
 > * Fixed a crash during app shutdown for certain custom input handling scenarios inside of a ScrollViewer. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DwmCoreI_ShutdownManipulationCrash).
 > * Improved diagnosability for Windows AI model initialization and Text Intelligence APIs. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_Insights).
 > * Fixed an issue in the Windows AI API `GetReadyState` which erroneously returns `AIFeatureReadyState::NotReady` on unsupported Windows OS versions. The API now returns `AIFeatureReadyState::NotSupportedOnCurrentSystem`  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_KnownExceptions).
@@ -142,7 +199,7 @@ Released: **October 14, 2025** <br><br>
 >
 > **Key enhancements include:**
 > * Python bindings for `OrtMemoryInfoDeviceType`, `OrtDeviceMemoryType`, and expanded `OrtDevice` to expose the memory type via a new `mem_type` method. The `OrtMemoryInfo` Python class now supports both legacy and new V2 constructors and exposes additional properties such as device memory type and Vendor ID.
-> * Extended the Python `InferenceSession` object to provide access to imput/output `OrtMemoryInfo` and `OrtEpDevice` objects through new properties and methods
+> * Extended the Python `InferenceSession` object to provide access to input/output `OrtMemoryInfo` and `OrtEpDevice` objects through new properties and methods
 > * Introduced Python bindings for `OrtSyncStream`, including creation via `OrtEpDevice.create_sync_stream()` and retrieval of device-specific `OrtMemoryInfo` via `OrtEpDevice.memory_info()`.
 > * Refactored the C++ API to generalize `SyncStream` handling, allowing for unowned streams and improved type safety.
 > * Added a new Python-level `copy_tensors` function and corresponding C++ binding, enabling efficient copying of tensor data between OrtValue objects, optionally using a synchronization stream.
@@ -271,7 +328,7 @@ Released: **September 9, 2025** <br><br>
 >
 
 </details>
-<details><summary>indows AI Object Erase</summary>
+<details><summary>Windows AI Object Erase</summary>
 
 >
 > Object Erase can be used to remove objects from images. The model takes both an image and a greyscale mask indicating the object to be removed, erases the masked area from the image, and replaces the erased area with the image background.

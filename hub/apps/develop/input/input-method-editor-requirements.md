@@ -42,7 +42,7 @@ TSF is the intermediary between the app and your IME. TSF communicates input eve
 
 This behavior is the same as previous versions of Windows, but being loaded into a Windows app affects the potential capabilities of an IME.
 
-If your IME needs to provide different functionality or UI between Windows apps and desktop apps, ensure that the DLL that’s loaded by TSF checks which type of app it's being loaded into. Call the [ITfThreadMgrEx::GetActiveFlags](/windows/win32/api/msctf/nf-msctf-itfthreadmgrex-getactiveflags) method in your IME and check the TF_TMF_IMMERSIVEMODE flag, so your IME triggers different application logic depending on the result.
+If your IME needs to provide different functionality or UI between Windows apps and desktop apps, ensure that the DLL that's loaded by TSF checks which type of app it's being loaded into. Call the [ITfThreadMgrEx::GetActiveFlags](/windows/win32/api/msctf/nf-msctf-itfthreadmgrex-getactiveflags) method in your IME and check the TF_TMF_IMMERSIVEMODE flag, so your IME triggers different application logic depending on the result.
 
 Windows apps do not support Table Text Service (TTS) IMEs.
 
@@ -76,7 +76,7 @@ Some IME functions are affected in an app container.
 - **Dictionary Files** - Frequently, IMEs have read-only dictionary files to map user input to specific characters. To access these files from inside an app container, your IME must place them under the Program Files or Windows directories. By default, these directories can be read from an app container, so IMEs can access dictionary files that are stored in these locations. If your IME must store the dictionary file somewhere else, it must explicitly manipulate the [Access Control Lists (ACL)](/windows/win32/secauthz/access-control-lists) of the dictionary files to allow access from app containers.
 - **Internet Updating** - If your IME needs to update its dictionaries using data from the Internet, it can't reliably do so inside an app container, because Internet access isn't always permitted. Instead, your IME should run a separate desktop process that's responsible for updating the dictionary files with data from the Internet.
 - **On-the-fly learning** - If an IME is running in an app container that has Internet access, there's no restriction on the endpoints that the IME can communicate with. In this case, an IME can use a cloud server to provide on-the-fly learning services. Some IMEs download and upload user input on the fly, while the user is typing. Since Internet access is not guaranteed in an app container, this may not always be allowed.
-- **Sharing information between processes** - IMEs may need to share data about the user’s input preferences between apps that are in different app containers. Use a web service to share data between apps.
+- **Sharing information between processes** - IMEs may need to share data about the user's input preferences between apps that are in different app containers. Use a web service to share data between apps.
 
 > [!Important]
 > If you try to circumvent app container security rules, your IME may be treated as malware and blocked.
@@ -296,4 +296,4 @@ Implement the following convention to make your IMEs conform to the accessibilit
 - [ITfFnSearchCandidateProvider](/windows/win32/api/ctffunc/nn-ctffunc-itffnsearchcandidateprovider)
 - [ITfIntegratableCandidateListUIElement](/windows/win32/api/ctffunc/nn-ctffunc-itfintegratablecandidatelistuielement)
 - [SendInput](/windows/win32/api/winuser/nf-winuser-sendinput)
-- [Accessibility](../../design/accessibility/accessibility.md)
+- [Accessibility overview](../../design/accessibility/accessibility-overview.md)

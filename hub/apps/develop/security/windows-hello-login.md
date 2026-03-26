@@ -17,11 +17,11 @@ Before you begin, you should read the [Windows Hello](windows-hello.md) overview
 
 ## Get started
 
-In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2022 on a Windows 10 or Windows 11 machine. See [Start developing Windows apps](/windows/apps/get-started/start-here) for complete instructions on setting up your development environment.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2026 on a Windows 10 or Windows 11 machine. See [Start developing Windows apps](/windows/apps/get-started/start-here) for complete instructions on setting up your development environment.
 
 - In Visual Studio, select **File** > **New** > **Project**.
 - In the **New Project** dialog's drop-down filters, select **C#/C++**, **Windows**, and **WinUI**, respectively.
-- Choose **Blank App, Packaged (WinUI in Desktop)** and name your application "WindowsHelloLogin".
+- Choose **WinUI Blank App (Packaged)** and name your application "WindowsHelloLogin".
 - Build and Run the new application (F5), you should see a blank window shown on the screen. Close the application.
 
 ![A screenshot of the new Windows Hello Login app running for the first time](images/windows-hello-login-1.png)

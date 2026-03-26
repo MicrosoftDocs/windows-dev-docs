@@ -120,19 +120,11 @@ To give your app's window a seamless look, Mica Alt should be visible in the tit
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
-## How to use Mica
+### How to use Mica
 
-You can use Mica in UWP apps that use WinUI for UWP, or in apps that use Windows App SDK 1.1 or later. You can use Mica Alt in apps that use Windows App SDK 1.1 or later.
-
-### Use Mica with the Windows App SDK
-
-To use Mica in a WinUI XAML app, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../develop/ui/system-backdrops.md).
+To use Mica in a WinUI app, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../develop/ui/system-backdrops.md).
 
 To use Mica in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md).
-
-### Use Mica with WinUI for UWP
-
-To use Mica in a UWP app with WinUI for UWP, see [Apply Mica with WinUI for UWP](/windows/uwp/ui-input/mica-uwp).
 
 ## Related articles
 

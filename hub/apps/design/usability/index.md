@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Usability for Windows apps
 
-It’s the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
+It's the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
 
 The design and coding instructions in this section can make your Windows app more inclusive by adding accessibility features, enabling globalization and localization, enabling users to customize their experience, and providing help when users need it.
 
@@ -19,7 +19,7 @@ The design and coding instructions in this section can make your Windows app mor
 
 Accessibility is about making your app usable by people who have limitations that prevent or impede the use of conventional user interfaces. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
 
-[Accessibility portal](../accessibility/accessibility.md)
+[Accessibility overview](../accessibility/accessibility-overview.md)
 
 <!--
 <ul class="panelContent cardsH">
@@ -216,7 +216,7 @@ Windows is used worldwide by audiences that are diverse in terms of language, re
 <a href="../globalizing/globalizing-portal.md">Globalization and localization portal</a>
 
 ## In-app help
-No matter how well you’ve designed your app, some users will need a little extra help.
+No matter how well you've designed your app, some users will need a little extra help.
 
 :::row:::
     :::column:::

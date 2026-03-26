@@ -1,83 +1,95 @@
 ---
-description: Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+description: Learn to develop accessible Windows apps that include programmatic access, keyboard navigation, and color/contrast behavior.
 ms.assetid: 9311D23A-B340-42F0-BEFE-9261442AF108
 title: Developing inclusive Windows apps
 label: Developing inclusive Windows apps
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 03/17/2026
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
 ---
-# Developing inclusive Windows apps  
 
-This article discusses how to develop accessible Windows apps. Specifically, it assumes that you understand how to design the logical hierarchy for your app. Learn to develop accessible Windows apps that include keyboard navigation, color and contrast settings, and support for assistive technologies.
+# Developing inclusive Windows apps
+
+This article describes how to build accessible Windows apps for real-world usage with assistive technology. It assumes you already understand your app's logical hierarchy and interaction model, and focuses on implementation areas that most directly affect usability: programmatic access, keyboard navigation, and color/contrast behavior.
+
+The guidance is intended for engineering teams that treat accessibility as a product requirement and automated accessibility verification as part of standard development and release quality gates.
 
 If you have not yet done so, please start by reading [Designing inclusive software](designing-inclusive-software.md).
 
-There are three things you should do to make sure that your app is accessible:
+There are three core areas to validate in your accessibility implementation:
 
 1. Expose your UI elements to [programmatic access](#programmatic-access).
 2. Ensure that your app supports [keyboard navigation](#keyboard-navigation) for people who are unable to use a mouse or touchscreen.
 3. Make sure that your app supports accessible [color and contrast](#color-and-contrast) settings.
 
-## Programmatic access  
-Programmatic access is critical for creating accessibility in apps. This is achieved by setting the accessible name (required) and description (optional) for content and interactive UI elements in your app. This ensures that UI controls are exposed to assistive technology (AT) such as screen readers (for example, Narrator) or alternative output devices (such as Braille displays). Without programmatic access, the APIs for assistive technology cannot interpret information correctly, leaving the user unable to use the products sufficiently, or forcing the AT to use undocumented programming interfaces or techniques never intended to be used as an accessibility interface. When UI controls are exposed to assistive technology, the AT is able to determine what actions and options are available to the user.  
+In practice, these areas should be validated continuously. Add automated accessibility checks for core experiences to your CI pipeline, then use manual assistive technology testing to confirm nuanced behavior that automation alone cannot verify.
+
+## Programmatic access
+
+Programmatic access is the foundation for accessibility in any modern UI. In practice, this means providing an accessible name (required) and description (optional) for content and interactive elements so they are correctly represented in the UI Automation (UIA) tree. This allows assistive technology (AT), such as screen readers (for example, Narrator) and Braille displays, to reliably discover element purpose, state, and available actions.
+
+Without accurate programmatic metadata, AT cannot interpret the UI correctly causing users to experience incomplete or misleading output and AT to attempt fallback techniques that were never intended for accessibility. When controls are exposed correctly, AT can present the same actionable model for all users.
 
 For more information about making your app UI elements available to assistive technologies (AT), see [Expose basic accessibility information](basic-accessibility-information.md).
 
-## Keyboard navigation  
-For users who are blind or have mobility issues, being able to navigate the UI with a keyboard is extremely important. However, only those UI controls that require user interaction to function should be given keyboard focus. Components that don’t require an action, such as static images, do not need keyboard focus.  
+## Keyboard navigation
 
-It is important to remember that unlike navigating with a mouse or touch, keyboard navigation is linear. When considering keyboard navigation, think about how your user will interact with your product and what the logical navigation will be. In Western cultures, people read from left to right, top to bottom. It is, therefore, common practice to follow this pattern for keyboard navigation.  
+Robust keyboard navigation is essential for users who are blind, have low vision, or have mobility-related input constraints. At the same time, only controls that support meaningful interaction should participate in the tab sequence. Non-actionable content, such as static decorative images, should generally not receive focus.  
 
-When designing keyboard navigation, examine your UI, and think about these questions:
+Unlike pointer interaction, keyboard interaction is linear and stateful. Define a predictable navigation order that reflects your information architecture and task flow. For example, in most left-to-right locales, a top-to-bottom, left-to-right progression is expected.
+
+When designing keyboard behavior, examine your UI and answer these questions:
+
 * How are the controls laid out or grouped in the UI?
 * Are there a few significant groups of controls?
-    * If yes, do those groups contain another level of groups?
-* 	Among peer controls, should navigation be done by tabbing around, or via special navigation (such as arrow keys), or both?
+* If yes, do those groups contain another level of groups?
+* Among peer controls, should navigation use tabbing, directional keys (such as arrow keys), or both?
 
-The goal is to help the user understand how the UI is laid out and identify the controls that are actionable. If you are finding that there are too many tab stops before the user completes the navigation loop, consider grouping related controls together. Some controls that are related, such as a hybrid control, may need to be addressed at this early exploration stage. After you begin to develop your product, it is difficult to rework the keyboard navigation, so plan carefully and plan early!  
+Your goal is to help users quickly understand layout and reach actionable controls. If a screen requires too many tab stops to complete a common task, regroup related controls and reevaluate focus boundaries. Composite or hybrid controls often need explicit keyboard design early; redesigning keyboard behavior late in development is often expensive and error-prone.
 
-To learn more about keyboard navigation among UI elements, see [Keyboard accessibility](keyboard-accessibility.md).  
+To learn more about keyboard navigation among UI elements, see [Keyboard accessibility](keyboard-accessibility.md) and the [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) eBook chapter on this subject titled *Designing the Logical Hierarchy*.
 
-Also, the [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262) eBook has an excellent chapter on this subject titled _Designing the Logical Hierarchy_.
+## Color and contrast
 
-## Color and contrast  
-One of the built-in accessibility features in Windows is the High Contrast mode, which heightens the color contrast of text and images on the computer screen. For some people, increasing the contrast in colors reduces eyestrain and makes it easier to read. When you verify your UI in high contrast, you want to check that controls have been coded consistently and with system colors (not with hard-coded colors) to ensure that they will be able to see all the controls on the screen that a user not using high contrast would see.  
+High contrast is a built-in Windows accessibility feature that increases the perceived distinction between foreground and background content. For many users, this reduces visual fatigue and improves readability. When validating your UI in high contrast, verify that controls rely on system resources rather than hard-coded colors so that all content remains visible and usable.  
 
-XAML
 ```xaml
 <Button Background="{ThemeResource ButtonBackgroundThemeBrush}">OK</Button>
 ```
+
 For more information about using system colors and resources, see [XAML theme resources](../../develop/platform/xaml/xaml-theme-resources.md).
 
-As long as you haven’t overridden system colors, a UWP app supports high-contrast themes by default. If a user has chosen that they want the system to use a high-contrast theme from system settings or accessibility tools, the framework automatically uses colors and style settings that produce a high-contrast layout and rendering for controls and components in the UI.   
+If you have not overridden system color behavior, Windows apps generally support high-contrast themes by default. When a user enables a high-contrast theme in system settings or accessibility tools, the framework applies high-contrast-aware resources and styles to produce an accessible rendering of controls and UI components.
 
 For more information, see [High-contrast themes](high-contrast-themes.md).  
 
-If you have decided to use you own color theme instead of system colors, consider these guidelines:  
+If you choose to use your own color theme instead of system colors, apply these guidelines:  
 
-**Color contrast ratio** – The updated Section 508 of the Americans with Disability Act, as well as other legislation, requires that the default color contrasts between text and its background must be 5:1. For large text (18-point font sizes, or 14 points and bolded), the required default contrast is 3:1.  
+**Color contrast ratio** - [Section 508](https://www.section508.gov/) requirements in the United States, along with similar international regulations, require sufficient default contrast between text and background. In this guidance, target a minimum of 5:1 for standard text, and 3:1 for large text (18-point or 14-point bold).  
 
-**Color  combinations** – About 7 percent of males (and less than 1 percent of females) have some form of color deficiency. Users with colorblindness have problems distinguishing between certain colors, so it is important that color alone is never used to convey status or meaning in an application. As for decorative images (such as icons or backgrounds), color combinations should be chosen in a manner that maximizes the perception of the image by colorblind users.  
+**Color combinations** - About 7 percent of males (and less than 1 percent of females) have some form of color vision deficiency. Because some color pairings are difficult to distinguish, never use color alone to communicate status or meaning. For decorative visuals (such as icons or backgrounds), prefer combinations that preserve legibility and shape recognition across common color vision profiles.  
 
-## Accessibility checklist  
-Following is an abbreviated version of the accessibility checklist:
+## Accessibility checklist
+
+The following is an abbreviated accessibility checklist:
 
 1. Set the accessible name (required) and description (optional) for content and interactive UI elements in your app.
-2. Implement keyboard accessibility.
-3. Visually verify your UI to ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
-4. Run accessibility tools, address reported issues, and verify the screen reading experience. (See Accessibility testing topic.)
-5. Make sure your app manifest settings follow accessibility guidelines.
-6. Declare your app as accessible in the Microsoft Store. (See the [Accessibility in the store](accessibility-in-the-store.md) topic.)
+1. Implement keyboard accessibility.
+1. Ensure text is a readable size.
+1. Ensure that the text contrast is adequate, elements render correctly in the high-contrast themes, and colors are used correctly.
+1. Run accessibility tools, address reported issues, and verify the screen reading experience. (See Accessibility testing topic.)
+1. Make sure your app manifest settings follow accessibility guidelines.
+1. Declare your app as accessible in the Microsoft Store. (See the [Accessibility in the store](accessibility-in-the-store.md) topic.)
 
 For more detail, please see the full [Accessibility checklist](accessibility-checklist.md) topic.
 
-## Related topics  
+## Related topics
+
 * [Designing inclusive software](designing-inclusive-software.md)  
 * [Inclusive design](https://www.microsoft.com/design/inclusive/)
 * [Accessibility practices to avoid](practices-to-avoid.md)
 * [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Accessibility](accessibility.md)
+* [Accessibility overview](accessibility-overview.md)

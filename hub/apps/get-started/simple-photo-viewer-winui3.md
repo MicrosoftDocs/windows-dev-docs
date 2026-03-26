@@ -26,7 +26,7 @@ To set up your development computer, see [Get started with WinUI](../get-started
 
 ## Step 2: Create a new project
 
-In Visual Studio, create your choice of a new C# or C++ project from the **Blank App, Packaged (WinUI in Desktop)** project template. Name the project *SimplePhotos*, and (so that your folder structure will match the one described in this tutorial) uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
+In Visual Studio, create your choice of a new C# or C++ project from the **WinUI Blank App (Packaged)** project template. Name the project *SimplePhotos*, and (so that your folder structure will match the one described in this tutorial) uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 ## Step 3: Copy asset files
 

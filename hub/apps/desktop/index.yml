@@ -24,7 +24,7 @@ landingContent:
             url: ../get-started/start-here.md
           - text: An overview of UI frameworks
             url: ../get-started/index.md
-          - text: Window App SDK
+          - text: Windows App SDK
             url: ../windows-app-sdk/index.md
 
   - title: Design and UI
@@ -115,7 +115,7 @@ landingContent:
             url: /answers/questions/
           - text: "@WindowsDocs"
             url: https://twitter.com/WindowsDocs
-          - text: OneDevMinute on YouTube
+          - text: OneDevMinute on Microsoft Learn
             url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
           - text: Windows developer support
             url: https://developer.microsoft.com/windows/support

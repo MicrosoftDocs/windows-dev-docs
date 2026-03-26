@@ -36,35 +36,11 @@ items:
   - name: Media playback
     href: ../audio-video-camera/media-playback.md
     items:
-    - name: Play audio and video with MediaPlayer
-      href: ../audio-video-camera/play-audio-and-video-with-mediaplayer.md
-    - name: Media items, playlists, and tracks
-      href: ../audio-video-camera/media-playback-with-mediasource.md
-    - name: Integrate with the System Media Transport Controls
-      href: ../audio-video-camera/integrate-with-systemmediatransportcontrols.md
-      items:
-      - name: Manual control of the System Media Transport Controls
-        href: ../audio-video-camera/system-media-transport-controls.md
-    - name: System-supported timed metadata cues
-      href: ../audio-video-camera/system-supported-metadata-cues.md
-    - name: Create, schedule, and manage media breaks
-      href: ../audio-video-camera/create-schedule-and-manage-media-breaks.md
     - name: Play media in the background
       href: ../audio-video-camera/background-audio.md
       items:
       - name: Legacy background media playback
         href: ../audio-video-camera/legacy-background-media-playback.md
-    - name: Adaptive streaming
-      href: ../audio-video-camera/adaptive-streaming.md
-      items:
-      - name: HLS tag support
-        href: ../audio-video-camera/hls-tag-support.md
-      - name: DASH profile support
-        href: ../audio-video-camera/dash-profile-support.md
-    - name: Media casting
-      href: ../audio-video-camera/media-casting.md
-    - name: Enable audio playback from remote Bluetooth-connected devices
-      href: ../audio-video-camera/enable-remote-audio-playback.md
     - name: PlayReady DRM
       href: ../audio-video-camera/playready-client-sdk.md
       items:
@@ -297,28 +273,10 @@ items:
         href: ../debug-test-perf/planning-and-measuring-performance.md
       - name: Optimize background activity
         href: ../debug-test-perf/optimize-background-activity.md
-      - name: ListView and GridView UI optimization
-        href: ../debug-test-perf/optimize-gridview-and-listview.md
-      - name: ListView and GridView data virtualization
-        href: ../debug-test-perf/listview-and-gridview-data-optimization.md
-      - name: Improve garbage collection performance
-        href: ../debug-test-perf/improve-garbage-collection-performance.md
       - name: Keep the UI thread responsive
         href: ../debug-test-perf/keep-the-ui-thread-responsive.md
-      - name: Optimize your XAML markup
-        href: ../debug-test-perf/optimize-xaml-loading.md
-      - name: Optimize your XAML layout
-        href: ../debug-test-perf/optimize-your-xaml-layout.md
-      - name: MVVM and language performance tips
-        href: ../debug-test-perf/mvvm-performance-tips.md
-      - name: Best practices for your app's startup performance
-        href: ../debug-test-perf/best-practices-for-your-app-s-startup-performance.md
-      - name: Optimize animations, media, and images
-        href: ../debug-test-perf/optimize-animations-and-media.md
       - name: Optimize suspend/resume
         href: ../debug-test-perf/optimize-suspend-resume.md
-      - name: Optimize file access
-        href: ../debug-test-perf/optimize-file-access.md
       - name: Windows Runtime components and optimizing interop
         href: ../debug-test-perf/windows-runtime-components-and-optimizing-interop.md
       - name: Tools for profiling and performance
@@ -747,11 +705,6 @@ items:
       href: ../devices-sensors/3d-print-from-app.md
     - name: Generate a 3MF package
       href: ../devices-sensors/3d-generate-3mf.md
-  - name: NFC
-    href: ../devices-sensors/nfc.md
-    items:
-    - name: Create an NFC Smart Card app
-      href: ../devices-sensors/host-card-emulation.md
   - name: Get battery information
     href: ../devices-sensors/get-battery-info.md
   - name: Customize the print workflow
@@ -1124,55 +1077,6 @@ items:
           href: ../security/copy-to-and-from-byte-arrays.md
         - name: Encode and decode data
           href: ../security/encode-and-decode-data.md
-  - name: Visual layer
-    href: ../composition/visual-layer.md
-    items:
-    - name: Composition visual
-      href: ../composition/composition-visual-tree.md
-    - name: Composition animations
-      href: ../composition/composition-animation.md
-      items:
-      - name: Time animations
-        href: ../composition/time-animations.md
-      - name: Relation animations
-        href: ../composition/relation-animations.md
-      - name: Natural animations
-        href: ../composition/natural-animations.md
-        items:
-        - name: Spring animations
-          href: ../composition/spring-animations.md
-      - name: Input-driven animations
-        href: ../composition/input-driven-animations.md
-        items:
-        - name: Scroll-based animations
-          href: ../composition/scroll-input-animations.md
-        - name: Pointer-based animations
-          href: ../composition/pointer-input-animations.md
-        - name: Custom manipulations
-          href: ../composition/interaction-tracker-manipulations.md
-          items:
-          - name: Snap points
-            href: ../composition/inertia-modifiers.md
-          - name: Pull-to-refresh
-            href: ../composition/source-modifiers.md
-    - name: Composition effects
-      href: ../composition/composition-effects.md
-      items:
-      - name: Composition shadows
-        href: ../composition/composition-shadows.md
-      - name: Composition lighting
-        href: ../composition/composition-lighting.md
-    - name: Composition brushes
-      href: ../composition/composition-brushes.md
-    - name: Composition native interoperation
-      href: ../composition/composition-native-interop.md
-    - name: Tailoring your UI
-      href: ../composition/composition-tailoring.md
-    - name: Using UWP XAML
-      href: ../composition/using-the-visual-layer-with-xaml.md
-      items:
-      - name: XAML lighting
-        href: ../composition/xaml-lighting.md
   - name: Windows as a service
     href: ../updates-and-versions/application-development-for-windows-as-a-service.md
   - name: Windows Runtime components
@@ -1206,13 +1110,6 @@ items:
   - name: Contacts, My People, and calendar
     href: ../contacts-and-calendar/index.md
     items:
-    - name: My People
-      href: ../contacts-and-calendar/my-people-support.md
-      items:
-      - name: My People sharing
-        href: ../contacts-and-calendar/my-people-sharing.md
-      - name: My People notifications
-        href: ../contacts-and-calendar/my-people-notifications.md
     - name: Select contacts
       href: ../contacts-and-calendar/selecting-contacts.md
     - name: Send email
@@ -1221,8 +1118,6 @@ items:
       href: ../contacts-and-calendar/sending-an-sms-message.md
     - name: Manage appointments
       href: ../contacts-and-calendar/managing-appointments.md
-    - name: Connect your app to actions on a contact card
-      href: ../contacts-and-calendar/integrating-with-contacts.md
   - name: Maps and location
     href: ../maps-and-location/index.md
     items:
@@ -1329,9 +1224,9 @@ items:
     - name: Pen and Windows Ink
       href: ../ui-input/pen-and-stylus-interactions.md
       items:
-      - name: "Pen interactions and haptic (tactile) feedback"
+      - name: Pen interactions and haptic (tactile) feedback
         href: ../ui-input/pen-haptics.md
-      - name: "Tutorial: Add Inking support to your app"
+      - name: 'Tutorial: Add Inking support to your app'
         href: ../ui-input/ink-walkthrough.md
       - name: Recognize ink strokes
         href: ../ui-input/convert-ink-to-text.md
@@ -1357,9 +1252,9 @@ items:
       - name: Audio input issues
         href: ../ui-input/manage-issues-with-audio-input.md
       - name: Speech recognition timeouts
-        href: ../ui-input/set-speech-recognition-timeouts.md        
+        href: ../ui-input/set-speech-recognition-timeouts.md
     - name: Surface Dial
       href: ../ui-input/windows-wheel-interactions.md
       items:
-      - name: "Tutorial: Add Surface Dial support to your app"
+      - name: 'Tutorial: Add Surface Dial support to your app'
         href: ../ui-input/radialcontroller-walkthrough.md

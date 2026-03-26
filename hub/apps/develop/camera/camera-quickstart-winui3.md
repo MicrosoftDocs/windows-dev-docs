@@ -15,17 +15,14 @@ In this quickstart, you will learn how to create a basic WinUI camera app that d
 
 The code in this walkthrough is adapted from the [MediaCapture WinUI sample on github](https://github.com/microsoft/Windows-Camera/tree/master/Samples/MediaCaptureWinUI3). 
 
-> [!TIP]
-> For the UWP version of this article, see [Display the camera preview](/windows/uwp/audio-video-camera/simple-camera-preview-access) in the UWP documentation.
-
 ## Prerequisites
 
 - Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
-- Visual Studio 2022 or later with the **WinUI application development** workload.
+- Visual Studio 2026 or later with the **WinUI application development** workload.
 
 ## Create a new WinUI app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to "Windows", then select the "Blank App, Packaged (WinUI in desktop)" project template.
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to "Windows", then select the "WinUI Blank App (Packaged)" project template.
 
 
 ## Create the UI

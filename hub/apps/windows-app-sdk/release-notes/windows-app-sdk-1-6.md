@@ -185,7 +185,7 @@ Microsoft.Windows.Widgets.Providers
 >        <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
 >        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 >        <WindowsSdkPackageVersion>10.0.22621.38</WindowsSdkPackageVersion>
->    <PropertyGroup>
+>    </PropertyGroup>
 >    ...
 > ```
 >
@@ -537,7 +537,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 > - Fixed an issue where debugger symbols weren't working correctly for some binaries. For more info, see GitHub issue [#4633](https://github.com/microsoft/windowsappsdk/issues/4633).
 > - Fixed a build break when using `/permissive-`. For more info, see GitHub issue [#4643](https://github.com/microsoft/windowsappsdk/issues/4643).
 > - Fixed a couple of API breaking changes in 1.6-preview1 caused by renamed parameters. For more info, see GitHub issue [#4645](https://github.com/microsoft/windowsappsdk/issues/4645).
-> - Fixed type conflict build breaks hit by some projects in 1.6-preview1, particularly with `Windows.UI.Text` types. For more info, see GitHub issue [#4646](https://github.com/microsoft/windowsappsdk/issues/4646).
+> - Fixed type conflict build breaks hit by some projects in 1.6-preview1, particularly with `Windows.UI.Text` types. 
 > - Fixed an issue with resource lookups by control libraries in 1.6-preview1. For more info, see GitHub issue [#4649](https://github.com/microsoft/windowsappsdk/issues/4649).
 > - Fixed a potential crash when subclassing `NavigationView`.
 > - Fixed an issue where table borders in a `RichEditBox` would not correctly erase when scrolling or reducing the size of the table.
@@ -557,7 +557,6 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 > The new TitleBar control we released in 1.6-experimental1 is not yet available in non-experimental builds of 1.6 to allow more time to evaluate and respond to community feedback. We received a lot of great input here and want to make sure we take the time needed to address it.
 >
 
-</details>
 
 <details>
 <summary>Required C# project changes for 1.6-preview1</summary>
@@ -572,7 +571,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 >        <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
 >        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 >        <WindowsSdkPackageVersion>10.0.22621.38</WindowsSdkPackageVersion>
->    <PropertyGroup>
+>    </PropertyGroup>
 >    ...
 > ```
 >
@@ -1268,7 +1267,7 @@ To download, retarget your Windows App SDK NuGet version to `1.6.240531000-exper
 >        <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
 >        <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 >        <WindowsSdkPackageVersion>10.0.22621.35-preview</WindowsSdkPackageVersion>
->    <PropertyGroup>
+>    </PropertyGroup>
 >    ...
 > ```
 >

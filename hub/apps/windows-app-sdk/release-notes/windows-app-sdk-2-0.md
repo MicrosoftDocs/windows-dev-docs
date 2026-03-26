@@ -58,7 +58,7 @@ Released: **February 13, 2026** <br><br>
 >     * GetContentIndexingStatus -> GetContentItemStatus
 >     * GetMultipleContentIndexingStatus -> GetContentItemStatuses
 >     * GetContentItems    
->   * AppCOntentIndexListener
+>   * AppContentIndexListener
 >     * IndexingStatusChanged -> ContentItemStatusChanged                
 >   * AppIndexTextQuerySession
 >     * UpdateQuery -> UpdateQueryPhrase
@@ -256,6 +256,121 @@ Released: **February 13, 2026** <br><br>
 :::zone-end
 
 :::zone pivot="experimental"
+
+## Version 2.0 Experimental 6 (2.0.0-Experimental6)
+
+Released: **March 13, 2026** <br><br>
+
+<details><summary>Windows ML CMake support</summary>
+
+>
+> Windows ML can now be used from C++ projects using CMake. See the [Get started page](/windows/ai/new-windows-ml/get-started) to learn more.
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.24.2. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info.
+>
+
+</details>
+
+<details><summary>Windows AI Language Model</summary>
+
+>
+> * `NPUPowerMode` has been deprecated in favor of newer power management APIs.
+> * `GetReadyState` now gracefully returns `NotSupported` when the session broker is unavailable, instead of throwing an exception.
+>
+
+</details>
+
+<details><summary>Video Super Resolution</summary>
+
+>
+> * Added NV12 output format support for Video Super Resolution.
+>
+
+</details>
+
+<details><summary>App Content Search</summary>
+
+> * Improved `DeleteIndex` reliability. Sometimes `DeleteIndex` would fail with ERROR_SHARING_VIOLATION.
+> * Fix for OCR Bounding boxes returning negative values in some edge cases.
+> * App Content Search are part of a separate `Microsoft.Windows.Search` package instead of being part of `Microsoft.Windows.AI package`.
+> * Fix for prefix search not working with short query strings.
+>
+> * New APIs and renames based on official API review.
+>   * AppContentIndexer
+>     * GetContentItemsRequiringReindexing
+>     * Remove -> RemoveContentItem
+>     * RemoveMultiple -> RemoveContentItems
+>     * RemoveAllContentItems
+>     * GetContentIndexingStatus -> GetContentItemStatus
+>     * GetMultipleContentIndexingStatus -> GetContentItemStatuses
+>     * GetContentItems
+>   * AppCOntentIndexListener
+>     * IndexingStatusChanged -> ContentItemStatusChanged
+>   * AppIndexTextQuerySession
+>     * UpdateQuery -> UpdateQueryPhrase
+>     * MostRecentResult -> GetResult
+>     * MostRecentResultChanged -> ResultChanged
+>   * AppIndexImageQuerySession
+>     * UpdateQuery -> UpdateQueryPhrase
+>     * MostRecentResult -> GetResult
+>     * MostRecentResultChanged -> ResultChanged
+>   * AppManagedImageQueryMatch
+>     * Subregion -> RegionOfInterest
+>   * ContentItemStatusResult
+>     * ReindexingStatus * ContentItemReindexingStatus
+>   * TextQuerySessionResult
+>     * IsValid
+>   * ImageQuerySessionResult
+>     * IsValid
+>   * QueryContentItemsFilterFlags
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed `ImageDescription.DescribeAsync` failing with `InternalError` due to a race condition.
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new and modified experimental APIs compared to 2.0.0-experimental5:
+> 
+> ```
+> Microsoft.Windows.Search.AppContentIndex
+> 
+>     AppContentIndexer
+>         GetContentItems
+>         GetContentItemStatus
+>         GetContentItemStatuses
+>         RemoveAllContentItems
+>         RemoveContentItem
+>         RemoveContentItems
+> 
+>     AppContentIndexListener
+>         ContentItemStatusChanged
+> 
+>     AppManagedImageQueryMatch
+>     ContentItemErrorDetail
+>         IndexCorruption
+> 
+>     ContentItemReindexingStatus
+>         Unspecified
+> 
+>     QueryContentItemsFilterFlags
+> ```
+>
+</details>
 
 ## Version 2.0 Experimental 5 (2.0.0-Experimental5)
 
