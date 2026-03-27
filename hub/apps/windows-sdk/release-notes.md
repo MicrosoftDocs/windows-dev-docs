@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 02/02/2026
+ms.date: 03/27/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -13,6 +13,145 @@ In a new or existing Windows app, you can get the Windows SDK in several ways: i
 You can update the SDK by manually installing the new build, updating in Visual Studio or update the Nuget package
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
+
+## Build 10.0.28000.0
+
+Released: **March, 2026** <br><br>
+
+This is a major version bump to the **28000** SDK series.
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Devices.Haptics** (UniversalApiContract 19.0):
+> <br/>
+> New types:
+>
+> - `HapticDeviceType` enum — Defines haptic device types: `None`, `Generic`, `Pen`, `Touchpad`, `Mouse`
+> - `HapticsControllerOverrideToken` struct — Token for managing haptics controller overrides
+> - `IInputHapticsManager` interface — Provides per-thread haptics management with methods for sending waveforms, controlling duration/play count, stopping feedback, and overriding haptics controllers
+> - `IInputHapticsManagerStatics` interface — Static methods: `IsSupported`, `IsHapticDevicePresent`, `GetForCurrentThread`, `TryGetForThread`
+> - `InputHapticsManager` runtime class
+>
+> **Windows.ApplicationModel.Contacts.Provider** (UniversalApiContract 19.0):
+> <br/>
+> New types:
+>
+> - `IContactProvider` interface — Provides `GetContactFromRemoteIdAsync` method and `ContactListId` property for contact provider scenarios
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions (UniversalApiContract 20.0)</summary>
+
+> **Windows.Devices.Printers**:
+> <br/>
+> New types:
+>
+> - `IppAttributeGroupKind` enum — Defines IPP attribute group kinds: `Printer`, `Job`, `Operation`
+> - `IIppAttributeConverterStatics` interface — Provides `ConvertPrintTicketToIppAttributesForPrinter`, `ConvertBufferToIppAttributes`, `ConvertIppAttributesToBuffer`
+> - `IppAttributeConverter` runtime class
+> - `IPdlPassthroughProvider2` interface — Adds `IsPassthroughWithJobAttributesSupported` property and `StartPrintJobWithIppJobAttributes` method
+>
+> **Windows.Graphics.Printing.PrintSupport**:
+> <br/>
+> New types:
+>
+> - `IPrintSupportPrintDeviceCapabilitiesChangedEventArgs5` interface — Adds `SetPdlPassthroughWithJobAttributesSupported` method
+>
+> **Windows.Graphics.Printing.Workflow**:
+> <br/>
+> New types:
+>
+> - `IPrintWorkflowPrinterJob3` interface — Adds `IsPassthroughJob` property, `GetPassthroughJobAttributes`, and `GetPassthroughJobOperationAttributes` methods
+>
+> **Windows.UI.Shell.Tasks**:
+> <br/>
+> New types:
+>
+> - `IAppTaskInfo2` interface — Adds `Id` and `HiddenByUser` properties and `UpdateDeepLink` method
+> - `AppTaskContract` version bumped from 1.0 to 2.0
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Video Encoding — D3D12 Reconstructed Picture Output (codecapi.h / mfapi.h)**
+> <br/>
+> New enum and properties for D3D12-based video encoder reconstructed picture output:
+>
+> - `eAVEncVideoD3D12ReconstructedPictureOutputMode` enum — Values: `None`, `Copy`, `Shared`
+> - `CODECAPI_AVEncVideoD3D12ReconstructedPictureOutputMode` codec API GUID
+> - `MFSampleExtension_VideoEncodeD3D12ReconstructedPicture` Media Foundation sample extension GUID
+>
+> **HTTP Server API (http.h)**
+> <br/>
+> New server property and struct:
+>
+> - `HttpServerRequestInfoProperty` (=19) — New server property to enable optional request info fields
+> - `HTTP_REQUEST_INFO_PROPERTY_INFO` struct with `HTTP_REQUEST_INFO_FLAG_INITIAL_TTL` flag
+> - `HttpFeatureTlsHandshakePerformanceCounters` (=17) — New HTTP feature for TLS handshake performance counters
+>
+> **Graphics / Display Driver (d3dukmdt.h)**
+> <br/>
+> New driver feature:
+>
+> - `DXGK_DRIVER_FEATURE_PANEL_BUFFER_CONTROL` (=46) and corresponding `DXGK_FEATURE_PANEL_BUFFER_CONTROL` feature ID
+>
+> **Event Tracing (evntprov.h / evntcons.h)**
+> <br/>
+> New definitions:
+>
+> - `EVENT_DATA_DESCRIPTOR_TYPE_RESERVED1` (=4) — Reserved event data descriptor type
+> - `EventProviderSetReserved2` — New value in `EVENT_INFO_CLASS` enum
+> - `EVENT_HEADER_FLAG_RESERVED1` (0x0400) — New event header flag
+>
+> **Storage Provider Properties (propkey.h)**
+> <br/>
+> New property:
+>
+> - `PKEY_StorageProviderUserAccountKind` — Identifies the account kind (Unknown, Consumer, Business) for the authenticated storage provider user
+>
+> **User Input (WinUser.h)**
+> <br/>
+> New function:
+>
+> - `ConvertPrimaryPointerToMouseDrag` — Converts primary pointer input to a mouse drag operation
+>
+> Updated struct:
+>
+> - `TOUCHPAD_PARAMETERS_V2` — Improved C/C++ layout compatibility
+>
+> **WebAuthn Plugin API (webauthnplugin.h)**
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS_2` (previously `EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS_2`)
+> - `WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS_2` (previously `EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS_2`)
+> - `WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST_2` (previously `EXPERIMENTAL_WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST_2`)
+> - `WebAuthNPluginAddAuthenticator2`, `WebAuthNPluginUpdateAuthenticatorDetails2`, `WebAuthNPluginPerformUserVerification2` functions
+>
+> **Rust Bindgen Compatibility (ntdef.h / winnt.h)**
+> <br/>
+> Updated:
+>
+> - `DECLSPEC_NOINITALL` macro now excludes Rust bindgen passes via `!defined(RUST_BINDGEN)`
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Shell Object IDL (ShObjIdl_core.idl)**
+> <br/>
+> Updated:
+>
+> - `IAttachmentExecute2` — Method comments corrected: `Save2()` renamed to `SaveNoVirusCheck()`, `SaveWithUI2()` renamed to `SaveWithUINoVirusCheck()`
+
+</details>
+
+---
 
 ## Build 10.0.26100.7705
 
