@@ -54,3 +54,44 @@ For the complete and current list of cryptographic applications, see [EAR Contro
 If your app calls, supports, contains, or uses cryptography or encryption for any task that is not in this list, it needs an Export Commodity Classification Number (ECCN).
 
 If you don't have an ECCN, see [ECCN Questions and Answers](https://www.bis.doc.gov/licensing/do_i_needaneccn.html).
+
+## Microsoft Store submission process for apps with ECCNs
+
+After you have obtained an ECCN for your app, you must provide this information during the Microsoft Store submission process. Here's what you need to know:
+
+### Providing ECCN information during submission
+
+When submitting your app to the Microsoft Store through [Partner Center](https://partner.microsoft.com/dashboard), you will need to provide your ECCN information as part of the [submission process](/windows/apps/publish/publish-your-app/create-app-submission). During the app submission:
+
+1. **Upload your app packages** as normal through Partner Center
+2. **Provide ECCN details** on the [Submission options](/windows/apps/publish/publish-your-app/manage-submission-options) page when prompted
+3. **Include complete information** about your ECCN classification and any export licensing requirements
+4. **Wait for review** - Microsoft's certification team will review your ECCN information as part of the standard certification process
+
+### Compliance responsibilities
+
+**Developer responsibilities:**
+- Obtaining the appropriate ECCN classification for your app
+- Ensuring your app complies with all applicable Export Administration Regulations (EAR)
+- Providing accurate ECCN information during Microsoft Store submission
+- Maintaining compliance with any ongoing reporting requirements as specified by your ECCN classification
+
+**Microsoft's role:**
+- Reviewing ECCN information provided during the submission process
+- Ensuring apps in the Microsoft Store meet basic export control requirements
+- Microsoft handles distribution reporting related to the Microsoft Store platform itself
+
+> [!IMPORTANT]
+> It remains your responsibility as the app developer to understand and comply with all export control obligations associated with your specific ECCN classification, including any required annual or semi-annual reporting to government authorities.
+
+### Certification process
+
+During the certification process, Microsoft's review team will:
+
+- Verify that appropriate ECCN information has been provided
+- Ensure the ECCN classification appears consistent with the app's functionality
+- May request additional documentation if needed
+
+This review may add additional time to your app's certification process. If Microsoft approves your ECCN information, your app will continue through the rest of the standard certification process. If there are issues with the ECCN information provided, your submission may fail certification, and you will receive feedback in the certification report.
+
+For questions specific to your ECCN classification or export control requirements, consult with qualified legal counsel or export control specialists.
