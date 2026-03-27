@@ -290,13 +290,25 @@ However, if the message in your notification is only relevant for a period of ti
 > The default and maximum expiration time for local app notifications is 3 days.
 
 ```cpp
-// Create toast content and show the toast!
-(ref new ToastContentBuilder())
-    ->AddText("Expires in 2 days...")
-    ->Show(toast =>
-    {
-        toast->ExpirationTime = DateTime::Now->AddDays(2);
-    });
+// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L"\
+    <toast>\
+        <visual>\
+            <binding template=\"ToastGeneric\">\
+                <text>Expires in 2 days...</text>\
+            </binding>\
+        </visual>\
+    </toast>");
+
+// Construct the notification and set expiration time to 2 days
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+notif.ExpirationTime(winrt::clock::now() + std::chrono::hours{ 48 });
+
+// Show the notification
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+toastNotifier.Show(notif);
 ```
 
 ## Provide a primary key for your app notification
@@ -308,14 +320,26 @@ To see more details on replacing/removing already delivered app notifications, p
 Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
 
 ```cpp
-// Create toast content and show the toast!
-(ref new ToastContentBuilder())
-    ->AddText("New post on your wall!")
-    ->Show(toast =>
-    {
-        toast.Tag = "18365";
-        toast.Group = "wallPosts";
-    });
+// Construct the XML toast template
+XmlDocument doc;
+doc.LoadXml(L"\
+    <toast>\
+        <visual>\
+            <binding template=\"ToastGeneric\">\
+                <text>New post on your wall!</text>\
+            </binding>\
+        </visual>\
+    </toast>");
+
+// Construct the notification and assign tag and group
+winrt::Windows::UI::Notifications::ToastNotification notif{ doc };
+notif.Tag(L"18365");
+notif.Group(L"wallPosts");
+
+// Show the notification
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
+toastNotifier.Show(notif);
 ```
 
 
@@ -336,7 +360,8 @@ Here's an example of what a messaging app should do…
 To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing app notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 ```cpp
-ToastNotificationManagerCompat::History->Clear();
+winrt::Windows::UI::Notifications::ToastNotificationManager toastManager{};
+toastManager.History().Clear();
 ```
 
 ## Resources

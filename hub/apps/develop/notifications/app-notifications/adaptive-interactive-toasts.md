@@ -383,15 +383,14 @@ Buttons can activate an app in the following ways:
 ### [Windows App SDK](#tab/appsdk)
 
 ```csharp
-new ToastContentBuilder()
-    var builder = new AppNotificationBuilder()
-        .AddText("New product in stock!")
-        .AddButton(new AppNotificationButton("See more details")
-            .AddArgument("action", "viewDetails"))
-            .AddArgument("contentId", "351")
-        .AddButton(new AppNotificationButton("Remind me later")
-            .AddArgument("action", "remindLater"))
-            .AddArgument("contentId", "351");
+var builder = new AppNotificationBuilder()
+    .AddText("New product in stock!")
+    .AddButton(new AppNotificationButton("See more details")
+        .AddArgument("action", "viewDetails"))
+        .AddArgument("contentId", "351")
+    .AddButton(new AppNotificationButton("Remind me later")
+        .AddArgument("action", "remindLater"))
+        .AddArgument("contentId", "351");
 ```
 
 ### [XML](#tab/xml)
@@ -423,18 +422,17 @@ You can add icons to your buttons. These icons are white transparent 16x16 pixel
 ![Screenshot of an app notification that uses buttons with icons.](images/toast-content-button-icons.png)
 
 ```csharp
-new ToastContentBuilder()
-    var builder = new AppNotificationBuilder()
-        .AddText("Return books to the library.")
-        .AddButton(new AppNotificationButton("Accept")
-            .AddArgument("action", "accept")
-            .SetIcon(new Uri("ms-appx:///Images/Accept.png")))
-        .AddButton(new AppNotificationButton("Snooze")
-            .AddArgument("action", "snooze")
-            .SetIcon(new Uri("ms-appx:///Images/Snooze.png")))
-        .AddButton(new AppNotificationButton("Dismiss")
-            .AddArgument("action", "dismiss")
-            .SetIcon(new Uri("ms-appx:///Images/Dismiss.png")));
+var builder = new AppNotificationBuilder()
+    .AddText("Return books to the library.")
+    .AddButton(new AppNotificationButton("Accept")
+        .AddArgument("action", "accept")
+        .SetIcon(new Uri("ms-appx:///Images/Accept.png")))
+    .AddButton(new AppNotificationButton("Snooze")
+        .AddArgument("action", "snooze")
+        .SetIcon(new Uri("ms-appx:///Images/Snooze.png")))
+    .AddButton(new AppNotificationButton("Dismiss")
+        .AddArgument("action", "dismiss")
+        .SetIcon(new Uri("ms-appx:///Images/Dismiss.png")));
 ```
 
 
