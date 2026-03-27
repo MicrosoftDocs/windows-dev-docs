@@ -20,7 +20,7 @@ Note that scheduled app notifications have a delivery window of 5 minutes. If th
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 > [!NOTE]
-> For Windows App SDK apps, you can use `AppNotificationManager` from the `Microsoft.Windows.AppNotifications` namespace. For apps using the Windows Community Toolkit, use `ToastNotificationManagerCompat`.
+> For Windows App SDK apps, you can use `AppNotificationManager` from the `Microsoft.Windows.AppNotifications` namespace.
 
 > **Important APIs**: [AppNotificationManager.Show](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show), [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
 
@@ -34,40 +34,22 @@ To fully understand this topic, the following will be helpful...
 
 ## Step 1: Install NuGet package
 
-#### [Windows App SDK](#tab/appsdk)
-
 If you're using a WinUI 3 or Windows App SDK project, the notification APIs are included in the `Microsoft.WindowsAppSDK` NuGet package, which is already referenced by default.
 
-#### [Community Toolkit](#tab/toolkit)
-
-Install the [Microsoft.Toolkit.Uwp.Notifications NuGet package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). Our code sample will use this package. At the end of the article we'll provide the "plain" code snippets that don't use any NuGet packages. This package allows you to create app notifications without using XML.
-
----
 
 ## Step 2: Add namespace declarations
-
-#### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
 using Microsoft.Windows.AppNotifications.Builder;
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-using Microsoft.Toolkit.Uwp.Notifications; // Notifications library
-```
-
----
 
 ## Step 3: Schedule the notification
 
 We'll use a simple text-based notification reminding a student about the homework they have due today. Construct the notification and schedule it!
 
-#### [Windows App SDK](#tab/appsdk)
-
-The Windows App SDK doesn't have a direct `Schedule()` method like the Community Toolkit. You can use `AppNotificationManager.Default.Show()` with an expiration time, or use the platform `ScheduledToastNotification` API via the `Windows.UI.Notifications` namespace for true scheduling.
+The Windows App SDK doesn't have a direct scheduling method. You can use `AppNotificationManager.Default.Show()` with an expiration time, or use the platform `ScheduledToastNotification` API via the `Windows.UI.Notifications` namespace for true scheduling.
 
 ```csharp
 // Construct the notification
@@ -101,18 +83,6 @@ var scheduledNotification = new ScheduledToastNotification(doc, DateTimeOffset.N
 ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledNotification);
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Construct the content and schedule the toast!
-new ToastContentBuilder()
-    .AddArgument("action", "viewItemsDueToday")
-    .AddText("ASTR 170B1")
-    .AddText("You have 3 items due today!");
-    .Schedule(DateTime.Now.AddSeconds(5));
-```
-
----
 
 ## Provide a primary key for your notification
 
@@ -121,8 +91,6 @@ If you want to programmatically cancel, remove, or replace the scheduled notific
 To see more details on replacing/removing already delivered app notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
-
-#### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 var notification = new AppNotificationBuilder()
@@ -137,30 +105,12 @@ notification.Group = "ASTR 170B1";
 AppNotificationManager.Default.Show(notification);
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Construct the content and schedule the toast!
-new ToastContentBuilder()
-    .AddArgument("action", "viewItemsDueToday")
-    .AddText("ASTR 170B1")
-    .AddText("You have 3 items due today!");
-    .Schedule(DateTime.Now.AddSeconds(5), toast =>
-    {
-        toast.Tag = "18365";
-        toast.Group = "ASTR 170B1";
-    });
-```
-
----
 
 ## Cancel scheduled notifications
 
 To cancel a scheduled notification, you first have to retrieve the list of all scheduled notifications.
 
 Then, find your scheduled app notification matching the tag (and optionally group) you specified earlier, and remove it.
-
-#### [Windows App SDK](#tab/appsdk)
 
 For Windows App SDK apps, you can remove displayed notifications by tag and group using `AppNotificationManager`:
 
@@ -174,28 +124,6 @@ To remove all notifications for a group:
 await AppNotificationManager.Default.RemoveByGroupAsync("ASTR 170B1");
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Create the toast notifier
-ToastNotifierCompat notifier = ToastNotificationManagerCompat.CreateToastNotifier();
-
-// Get the list of scheduled toasts that haven't appeared yet
-IReadOnlyList<ScheduledToastNotification> scheduledToasts = notifier.GetScheduledToastNotifications();
-
-// Find our scheduled toast we want to cancel
-var toRemove = scheduledToasts.FirstOrDefault(i => i.Tag == "18365" && i.Group == "ASTR 170B1");
-if (toRemove != null)
-{
-    // And remove it from the schedule
-    notifier.RemoveFromSchedule(toRemove);
-}
-```
-
-> [!IMPORTANT]
-> An unpackaged (lacks package identity at runtime) Win32 app must use the **ToastNotificationManagerCompat** class as seen above. If you use **ToastNotificationManager** itself, then you'll receive an element-not-found exception. All types of apps can use the **Compat** class, and it will work correctly.
-
----
 
 ## Activation handling
 

@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 You can visually group a set of related notifications inside Action Center by using a toast header on your notifications.
 
 > [!IMPORTANT]
-> **Requires Desktop Creators Update**: You must be running Desktop build 15063 or later to see toast headers. Headers are only supported on Desktop. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct headers. For apps using the Community Toolkit, use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to construct the header in your notification's content.
+> **Requires Desktop Creators Update**: You must be running Desktop build 15063 or later to see toast headers. Headers are only supported on Desktop. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct headers.
 
 As seen below, this group conversation is unified under a single header, "Camping!!". Each individual message in the conversation is a separate app notification sharing the same toast header.
 
@@ -46,14 +46,6 @@ string xml = @"
 
 var notification = new AppNotification(xml);
 AppNotificationManager.Default.Show(notification);
-```
-
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-    .AddHeader("6289", "Camping!!", "action=openConversation&id=6289")
-    .AddText("Anyone have a sleeping bag I can borrow?");
 ```
 
 #### [XML](#tab/xml)

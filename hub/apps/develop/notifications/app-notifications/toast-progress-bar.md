@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Using a progress bar inside your app notification allows you to convey the status of long-running operations to the user, like downloads, video rendering, exercise goals, and more.
 
 > [!IMPORTANT]
-> **Requires Windows 10 Creators Update**: You must target SDK 15063 and be running build 15063 or later to use progress bars on notifications. If using the Windows Community Toolkit, you must use version 1.4.0 or later of the [Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/).
+> **Requires Windows 10 Creators Update**: You must target SDK 15063 and be running build 15063 or later to use progress bars on notifications.
 
 A progress bar inside an app notification can either be "indeterminate" (no specific value, animated dots indicate an operation is occurring) or "determinate" (a specific percent of the bar is filled, like 60%).
 
@@ -46,20 +46,6 @@ var builder = new AppNotificationBuilder()
         .SetValue(0.6)
         .SetValueStringOverride("15/26 songs")
         .SetStatus("Downloading..."));
-```
-
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-    .AddText("Downloading your weekly playlist...")
-    .AddVisualChild(new AdaptiveProgressBar()
-    {
-        Title = "Weekly playlist",
-        Value = 0.6,
-        ValueStringOverride = "15/26 songs",
-        Status = "Downloading..."
-    });
 ```
 
 #### [XML](#tab/xml)
@@ -96,8 +82,6 @@ Using data binding involves the following steps...
 
 The following code snippet shows steps 1-4. The next snippet will show how to update the notification **Data** values.
 
-#### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 using Microsoft.Windows.AppNotifications;
 using Microsoft.Windows.AppNotifications.Builder;
@@ -131,57 +115,8 @@ public void SendUpdatableToastWithProgress()
 }
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-using Windows.UI.Notifications;
-using Microsoft.Toolkit.Uwp.Notifications;
- 
-public void SendUpdatableToastWithProgress()
-{
-    // Define a tag (and optionally a group) to uniquely identify the notification, in order update the notification data later;
-    string tag = "weekly-playlist";
-    string group = "downloads";
- 
-    // Construct the toast content with data bound fields
-    var content = new ToastContentBuilder()
-        .AddText("Downloading your weekly playlist...")
-        .AddVisualChild(new AdaptiveProgressBar()
-        {
-            Title = "Weekly playlist",
-            Value = new BindableProgressBarValue("progressValue"),
-            ValueStringOverride = new BindableString("progressValueString"),
-            Status = new BindableString("progressStatus")
-        })
-        .GetToastContent();
- 
-    // Generate the toast notification
-    var toast = new ToastNotification(content.GetXml());
- 
-    // Assign the tag and group
-    toast.Tag = tag;
-    toast.Group = group;
- 
-    // Assign initial NotificationData values
-    // Values must be of type string
-    toast.Data = new NotificationData();
-    toast.Data.Values["progressValue"] = "0.6";
-    toast.Data.Values["progressValueString"] = "15/26 songs";
-    toast.Data.Values["progressStatus"] = "Downloading...";
- 
-    // Provide sequence number to prevent out-of-order updates, or assign 0 to indicate "always update"
-    toast.Data.SequenceNumber = 1;
- 
-    // Show the toast notification to the user
-    ToastNotificationManager.CreateToastNotifier().Show(toast);
-}
-```
-
----
 
 Then, when you want to change your **Data** values, use the update method to provide the new data without re-constructing the entire notification payload.
-
-#### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
@@ -201,36 +136,6 @@ public async void UpdateProgress()
 }
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-using Windows.UI.Notifications;
- 
-public void UpdateProgress()
-{
-    // Construct a NotificationData object;
-    string tag = "weekly-playlist";
-    string group = "downloads";
- 
-    // Create NotificationData and make sure the sequence number is incremented
-    // since last update, or assign 0 for updating regardless of order
-    var data = new NotificationData
-    {
-        SequenceNumber = 2
-    };
-
-    // Assign new values
-    // Note that you only need to assign values that changed. In this example
-    // we don't assign progressStatus since we don't need to change it
-    data.Values["progressValue"] = "0.7";
-    data.Values["progressValueString"] = "18/26 songs";
-
-    // Update the existing notification's data by using tag/group
-    ToastNotificationManager.CreateToastNotifier().Update(data, tag, group);
-}
-```
-
----
 
 Using the **Update** method rather than replacing the entire notification also ensures that the app notification stays in the same position in Action Center and doesn't move up or down. It would be quite confusing to the user if the notification kept jumping to the top of Action Center every few seconds while the progress bar filled!
 

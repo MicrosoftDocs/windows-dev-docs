@@ -18,10 +18,9 @@ App notifications are flexible notifications with text, images, and buttons/inpu
 
 ## Getting started
 
-App notifications are defined with an XML payload that is defined by the [App notification schema](/uwp/schemas/tiles/toastschema/schema-root). Currently, there are three ways of generating the XML payload for an app notification. The code examples in this article demonstrate all three methods:
+App notifications are defined with an XML payload that is defined by the [App notification schema](/uwp/schemas/tiles/toastschema/schema-root). Currently, there are two ways of generating the XML payload for an app notification. The code examples in this article demonstrate both methods:
 
 - The [Microsoft.Windows.AppNotifications.Builder](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder) APIs - Introduced in Windows App SDK 1.2, this namespace provides APIs that allow you to easily build the XML payload for a notification programmatically without having to worry about the specifics of the XML format. Code examples using these APIs are in the tabs labeled "Windows App SDK".
-- The `Microsoft.Toolkit.Uwp.Notifications` builder syntax - These APIs are part of the UWP Community Toolkit and provides support for UWP apps.  Although these APIs can also be used for Windows App SDK apps, and continue to be supported, we recommend that new implementations use the **Microsoft.Windows.AppNotifications.Builder** APIs. To use Community Toolkit APIs, add the [UWP Community Toolkit Notifications nuget package](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to your project. The C# samples provided in this article use version 7.0.0 of the NuGet package. Code examples using these APIs are in the tabs labeled "Windows Community Toolkit".
 - Raw XML - If you prefer, you can create your own custom code to generate XML strings in the required format. The raw XML examples are in the tabs labeled "XML".
 
 **Install Notifications Visualizer.** This free Windows app helps you design interactive app notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](../notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://apps.microsoft.com/detail/9nblggh5xsl1).
@@ -49,21 +48,6 @@ var builder = new AppNotificationBuilder()
         .AddArgument("action", "archive"))
 
     .SetAudioUri(new Uri("ms-appx:///Sound.mp3"));
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddArgument("conversationId", 9813)
-
-    .AddText("Some text")
-
-    .AddButton(new ToastButton()
-        .SetContent("Archive")
-        .AddArgument("action", "archive"))
-
-    .AddAudio(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
 ```
 
 ### [XML](#tab/xml)
@@ -118,16 +102,6 @@ var builder = new AppNotificationBuilder()
     .AddText("10:00 AM - 10:30 AM");
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddArgument("meetingId", 9813)
-    .AddText("Adaptive Tiles Meeting", hintMaxLines: 1)
-    .AddText("Conf Room 2001 / Building 135")
-    .AddText("10:00 AM - 10:30 AM");
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -160,14 +134,6 @@ var builder = new AppNotificationBuilder()
 AppNotificationManager.Default.Show(builder.BuildNotification());
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Featured image of the day.")
-    .AddInlineImage(new Uri("ms-appx:///Images/InlineImage.png"));
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -192,36 +158,12 @@ Image dimensions are 48x48 pixels at 100% scaling. We generally recommend provid
 
 ![A screenshot of an app notification showing the app logo override image placement in a square on the left side of the visual area of the notification.](images/toast-content-applogooverride.png)
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 var builder = new AppNotificationBuilder()
     .AddText("Featured image of the day.")
     .SetAppLogoOverride(new Uri("ms-appx:///Images/AppLogo.png"));
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Featured image of the day.")
-    .AddAppLogoOverride(new Uri("ms-appx:///Images/AppLogo.png"));
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast>
-    <visual>
-        <binding template='ToastGeneric'>
-            <text>Featured image of the day.</text>
-            <image placement='appLogoOverride' src='ms-appx:///Images/AppLogo.png'/>
-        </binding>
-    </visual>
-</toast>
-```
-
----
 
 ## Hint crop
 
@@ -236,15 +178,6 @@ var builder = new AppNotificationBuilder()
     .AddText("Matt sent you a friend request")
     .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
     .SetAppLogoOverride(new Uri("ms-appx:///Images/Profile.png"), AppNotificationImageCrop.Circle);
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Matt sent you a friend request")
-    .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
-    .AddAppLogoOverride(new Uri("ms-appx:///Images/Profile.png"), ToastGenericAppLogoCrop.Circle);
 ```
 
 ### [XML](#tab/xml)
@@ -269,8 +202,6 @@ var builder = new ToastContentBuilder()
 
 ![A screenshot of an app notification showing the hero image placement, above the attribution area.](images/toast-content-hero-image.png)
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 var builder = new AppNotificationBuilder()
     .AddText("Marry Anne")
@@ -278,30 +209,6 @@ var builder = new AppNotificationBuilder()
     .SetHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-    .AddText("Marry Anne")
-    .AddText("Check out where we camped last night!")
-    .AddHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast>
-    <visual>
-        <binding template='ToastGeneric'>
-            <text>Mary Anne</text>
-            <text>Check out where we camped last night!</text>
-            <image placement='hero' src='ms-appx:///Images/HeroImage.png'/>
-        </binding>
-    </visual>
-</toast>
-```
-
----
 
 ## Image size restrictions
 
@@ -339,16 +246,6 @@ var builder = new AppNotificationBuilder()
     .SetHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-    .AddText("Marry Anne")
-    .AddText("Check out where we camped last night!")
-    .AddAttributionText("Via SMS");
-    .AddHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -382,15 +279,6 @@ var builder = new AppNotificationBuilder()
     .AddText("Matt sent you a friend request")
     .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
     .SetTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Matt sent you a friend request")
-    .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
-    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
 ```
 
 ### [XML](#tab/xml)
@@ -446,54 +334,6 @@ Here's an example where columns and some advanced adaptive text elements are use
 
 ```csharp
 // The Microsoft.Windows.AppNotifications.Builder syntax does not currently support adaptive text elements.
-```
-
-### [Builder syntax](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddVisualChild(new AdaptiveGroup()
-    {
-        Children =
-        {
-            new AdaptiveSubgroup()
-            {
-                Children =
-                {
-                    new AdaptiveText()
-                    {
-                        Text = "52 attendees",
-                        HintStyle = AdaptiveTextStyle.Base
-                    },
-                    new AdaptiveText()
-                    {
-                        Text = "23 minute drive",
-                        HintStyle = AdaptiveTextStyle.CaptionSubtle
-                    }
-                }
-            },
-            new AdaptiveSubgroup()
-            {
-                Children =
-                {
-                    new AdaptiveText()
-                    {
-                        Text = "1 Microsoft Way",
-                        HintStyle = AdaptiveTextStyle.CaptionSubtle,
-                        HintAlign = AdaptiveTextAlign.Right
-                    },
-                    new AdaptiveText()
-                    {
-                        Text = "Bellevue, WA 98008",
-                        HintStyle = AdaptiveTextStyle.CaptionSubtle,
-                        HintAlign = AdaptiveTextAlign.Right
-                    }
-                }
-            }
-        }
-    });
 ```
 
 ### [XML](#tab/xml)
@@ -554,20 +394,6 @@ new ToastContentBuilder()
             .AddArgument("contentId", "351");
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("New product in stock!")
-    .AddButton(new ToastButton()
-        .SetContent("See more details")
-        .AddArgument("action", "viewDetails"))
-
-    .AddButton(new ToastButton()
-        .SetContent("Remind me later")
-        .AddArgument("action", "remindLater"));
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -596,8 +422,6 @@ You can add icons to your buttons. These icons are white transparent 16x16 pixel
 
 ![Screenshot of an app notification that uses buttons with icons.](images/toast-content-button-icons.png)
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 new ToastContentBuilder()
     var builder = new AppNotificationBuilder()
@@ -613,43 +437,6 @@ new ToastContentBuilder()
             .SetIcon(new Uri("ms-appx:///Images/Dismiss.png")));
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("New product in stock!")
-    .AddButton(new ToastButton()
-        .SetContent("Accept")
-        .AddArgument("action", "accept")
-        .SetImageUri(new Uri("ms-appx:///Images/Accept.png")))
-    .AddButton(new ToastButton()
-        .SetContent("Snooze")
-        .AddArgument("action", "snooze")
-        .SetImageUri(new Uri("ms-appx:///Images/Snooze.png")))
-    .AddButton(new ToastButton()
-        .SetContent("Dismiss")
-        .AddArgument("action", "dismiss")
-        .SetImageUri(new Uri("ms-appx:///Images/Dismiss.png")));
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast>
-    <visual>
-        <binding template='ToastGeneric'>
-            <text>Return books to the library.</text>
-        </binding>
-    </visual>
-    <actions>
-        <action content='Accept' arguments='action=accept' imageUri='ms-appx:///Assets/Accept.png'/>
-        <action content='Snooze' arguments='action=snooze' imageUri='ms-appx:///Assets/Snooze.png'/>
-        <action content='Dismiss' arguments='action=dismiss' imageUri='ms-appx:///Assets/Dismiss.png'/>
-    </actions>
-</toast>
-```
-
----
 
 **New in Windows 11 Update**: You can add tooltips to your icons with the **HintToolTip** property in XML. This is ideal if your buttons have icons but no content, as this will make sure you can pass text that Windows Narrator can read. However, if content is present, then Narrator will read the content, no matter what is passed in the tooltip.
 
@@ -667,12 +454,6 @@ if (AppNotificationButton.IsToolTipSupported())
 var builder = new AppNotificationBuilder()
     .AddText("Notification text.")
     .AddButton(button); 
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// The Community Toolkit builder syntax does not currently support icon tooltips. 
 ```
 
 ### [XML](#tab/xml)
@@ -725,12 +506,6 @@ var builder = new AppNotificationBuilder()
         .SetButtonStyle(AppNotificationButtonStyle.Critical)
         .SetIcon(new Uri("ms-appx:///Images/HangUp.png"))
         .AddArgument("hangUpId", "123"));
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// The WIndows Community Toolkit builder syntax does not currently support red and green button colors.
 ```
 
 ### [XML](#tab/xml)
@@ -793,25 +568,6 @@ var builder = new AppNotificationBuilder()
         .SetContextMenuPlacement());
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-The Windows Community Toolkit builder syntax doesn't currently support context menu actions, so we recommend using initializer syntax.
-
-```csharp
-ToastContent content = new ToastContent()
-{
-    ...
- 
-    Actions = new ToastActionsCustom()
-    {
-        ContextMenuItems =
-        {
-            new ToastContextMenuItem("Mute group chat for 1 hour", "action=muteId")
-        }
-    }
-};
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -858,18 +614,6 @@ var builder = new AppNotificationBuilder()
     .BuildNotification();
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddInputTextBox("tbReply", "Type a reply")
-        .AddButton(new ToastButton()
-        .SetContent("Reply")
-        .SetTextBoxId("tbReply") // To place button next to text box, reference text box's id
-        .SetImageUri(new Uri("Assets/Reply.png", UriKind.Relative))
-        .AddArgument("action", "reply"));
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -908,23 +652,6 @@ You also can have one (or many) inputs with normal buttons displayed below the i
 // The Microsoft.Windows.AppNotifications.Builder syntax does not currently support quick reply text boxes.
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-    ...
-    
-    .AddInputTextBox("tbReply", "Type a reply")
-
-    .AddButton(new ToastButton()
-        .SetContent("Reply")
-        .AddArgument("action", "reply"))
-
-    .AddButton(new ToastButton()
-        .SetContent("Video call")
-        .AddArgument("action", "videoCall"));
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -959,8 +686,6 @@ In addition to text boxes, you can also use a selection menu.
 ![A screenshot of an app notification showing a line of text, a selection input with "Lunch" as the selected item, and a row with two buttons labeled "Reserve" and "Call restaurant".](images/toast-content-selection-input.png)
 
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 var builder = new AppNotificationBuilder()
     .AddText("4th coffee?")
@@ -981,54 +706,6 @@ var builder = new AppNotificationBuilder()
         .SetContextMenuPlacement());
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("4th coffee?")
-    .AddText("When do you plan to come in tomorrow?")
-    .AddToastInput(new ToastSelectionBox("time")
-    {
-        DefaultSelectionBoxItemId = "lunch",
-        Items =
-            {
-                new ToastSelectionBoxItem("breakfast", "Breakfast"),
-                new ToastSelectionBoxItem("lunch", "Lunch"),
-                new ToastSelectionBoxItem("dinner", "Dinner")
-            }
-    })
-    .AddButton(new ToastButton()
-        .SetContent("Reply")
-        .AddArgument("action", "reply")
-        .AddArgument("threadId", "9218"))
-    .AddButton(new ToastButton()
-        .SetContent("Call restaurant")
-        .AddArgument("action", "videoCall")
-        .AddArgument("threadId", "9218"));
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast>
-    <visual>
-        <binding template='ToastGeneric'>
-            <text>4th coffee?</text>
-            <text>When do you plan to come in tomorrow?</text>
-        </binding>
-    </visual>
-    <actions>
-        <input id='time' type='selection' title='Select an item:' defaultInput='lunch'>
-            <selection id='breakfast' content='Breakfast'/><selection id='dinner' content='Dinner'/>
-            <selection id='lunch' content='Lunch'/>
-        </input>
-        <action content='Reply' arguments='action=reply;threadId=9218' placement='contextMenu'/>
-        <action content='Call Restaurant' arguments='action=videocall;threadId=9218' placement='contextMenu'/>
-    </actions>
-</toast>
-```
-
----
 
 
 
@@ -1040,67 +717,14 @@ Using a selection menu and two buttons, we can create a reminder notification th
 
 We link the Snooze button to the selection menu input using the **SelectionBoxId** property on the toast button.
 
-The **Microsoft.Windows.AppNotifications.Builder** syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
-
-### [Windows App SDK](#tab/appsdk)
+The **Microsoft.Windows.AppNotifications.Builder** syntax does not currently support system activation. But this scenario is supported for Windows App SDK apps, and you can build notifications for this scenario using raw XML.
 
 ```csharp
 // The Microsoft.Windows.AppNotifications.Builder syntax does not currently support system activation. 
 // But this scenario is supported for Windows App SDK apps, and you can build notifications for this 
-// scenario using the `Microsoft.Toolkit.Uwp.Notifications` APIs or raw XML.
+// scenario using raw XML.
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-    .SetToastScenario(ToastScenario.Reminder)
-    
-    ...
-    
-    .AddToastInput(new ToastSelectionBox("snoozeTime")
-    {
-        DefaultSelectionBoxItemId = "15",
-        Items =
-        {
-            new ToastSelectionBoxItem("5", "5 minutes"),
-            new ToastSelectionBoxItem("15", "15 minutes"),
-            new ToastSelectionBoxItem("60", "1 hour"),
-            new ToastSelectionBoxItem("240", "4 hours"),
-            new ToastSelectionBoxItem("1440", "1 day")
-        }
-    })
-
-    .AddButton(new ToastButtonSnooze() { SelectionBoxId = "snoozeTime" })
-    .AddButton(new ToastButtonDismiss());
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast>
-  <visual>
-    <binding template="ToastGeneric">
-      <text hint-maxLines="1">Adaptive Tiles Meeting</text>
-      <text>Conf Room 2001 / Building 135</text>
-      <text>10:00 AM - 10:30 AM</text>
-    </binding>
-  </visual>
-  <actions>
-    <input id="snoozeTime" type="selection" defaultInput="15">
-      <selection id="1" content="1 minute"/>
-      <selection id="15" content="15 minutes"/>
-      <selection id="60" content="1 hour"/>
-      <selection id="240" content="4 hours"/>
-      <selection id="1440" content="1 day"/>
-    </input>
-    <action activationType="system" arguments="snooze" hint-inputId="snoozeTime" content="" />
-    <action activationType="system" arguments="dismiss" content=""/>
-  </actions>
-</toast>
-```
-
----
 
 To use the system snooze and dismiss actions:
 
@@ -1123,36 +747,12 @@ Custom audio has always been supported on Mobile, and is supported in Desktop Ve
 - ms-appx:///
 - ms-appdata:///
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 var builder = new AppNotificationBuilder()
     .AddText("Notification text.")
     .SetAudioUri(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Notification text")
-    .AddAudio(new Uri("ms-appx:///Audio/NotificationSound.mp3"));
-```
-
-#### [XML](#tab/xml)
-
-```xml
-<toast>
-    <visual>
-        <binding template='ToastGeneric'>
-            <text>Notification text.</text>
-        </binding>
-    </visual>
-    <audio src='ms-appx:///Audio/NotificationSound.mp3'/>
-</toast>
-```
-
----
 
 Alternatively, you can pick from the [list of ms-winsoundevents](/uwp/schemas/tiles/toastschema/element-audio#attributes-and-elements), which have always been supported on both platforms.
 
@@ -1162,14 +762,6 @@ Alternatively, you can pick from the [list of ms-winsoundevents](/uwp/schemas/ti
 var builder = new AppNotificationBuilder()
     .AddText("Notification text.")
     .SetAudioEvent(AppNotificationSoundEvent.Alarm, AppNotificationAudioLooping.Loop);
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Notification text")
-    .AddAudio(new Uri("ms-winsoundevent:Notification.Looping.Alarm"));
 ```
 
 ### [XML](#tab/xml)
@@ -1211,14 +803,6 @@ var builder = new AppNotificationBuilder()
     .SetScenario(AppNotificationScenario.Reminder);
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Notification text.")
-    .SetToastScenario(ToastScenario.Reminder)
-```
-
 #### [XML](#tab/xml)
 
 ```xml
@@ -1244,17 +828,6 @@ var builder = new AppNotificationBuilder()
     .AddText("Notification text.")
     .SetScenario(AppNotificationScenario.Alarm)
     .AddButton(new AppNotificationButton("Dismiss")
-        .AddArgument("action", "dismiss"));
-```
-
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Notification text")
-    .SetToastScenario(ToastScenario.Alarm)
-    .AddButton(new ToastButton()
-        .SetContent("Dismiss")
         .AddArgument("action", "dismiss"));
 ```
 
@@ -1308,35 +881,6 @@ var builder = new AppNotificationBuilder()
     .AddButton(new AppNotificationButton("Answer")
         .SetToolTip("Answer")
         .SetIcon(new Uri("ms-appx:///images/answer.png"))
-        .AddArgument("answerId", "123"));
-```
-
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .SetToastScenario(ToastScenario.IncomingCall)
-    .AddText("Andrew Bares")
-    .AddText("incoming call - mobile")
-    .AddInlineImage(new Uri("ms-appx:///images/profile.png"), 
-        "Andrew Bares",
-        null,
-        AdaptiveImageCrop.Circle)
-    .AddButton(new ToastButton()
-        .SetContent("Text reply")
-        .SetImageUri(new Uri("ms-appx:///images/reply.png"))
-        .AddArgument("textId", "123"))
-    .AddButton(new ToastButton()
-        .SetContent("Reminder")
-        .SetImageUri(new Uri("ms-appx:///images/reminder.png"))
-        .AddArgument("reminderId", "123"))
-    .AddButton(new ToastButton()
-        .SetContent("Ignore")
-        .SetImageUri(new Uri("ms-appx:///images/ignore.png"))
-        .AddArgument("ignoreId", "123"))
-    .AddButton(new ToastButton()
-        .SetContent("Answer")
-        .SetImageUri(new Uri("ms-appx:///images/answer.png"))
         .AddArgument("answerId", "123"));
 ```
 
@@ -1405,12 +949,6 @@ if (AppNotificationBuilder.IsUrgentScenarioSupported())
 }
 ```
 
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// The builder syntax does not support important notifications yet.
-```
-
 #### [XML](#tab/xml)
 
 ```xml
@@ -1438,5 +976,4 @@ To learn how to handle app activations (the user clicking your toast or buttons 
 ## Related topics
 
 * [Send a local toast and handle activation](send-local-toast.md)
-* [Notifications library on GitHub (part of the UWP Community Toolkit)](https://github.com/windows-toolkit/WindowsCommunityToolkit/tree/master/Microsoft.Toolkit.Uwp.Notifications)
 * [Tile and toast notification support for language, scale, and high contrast](/windows/uwp/launch-resume/tile-toast-language-scale-contrast)

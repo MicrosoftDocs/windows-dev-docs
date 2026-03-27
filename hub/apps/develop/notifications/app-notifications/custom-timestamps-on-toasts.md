@@ -20,7 +20,7 @@ This feature is available in Windows Build 15063 and later.
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 
-To use a custom timestamp, simply assign the **displayTimestamp** property on the **toast** element of your app notification XML payload. Starting with Windows App SDK 1.2, you can add a custom timestamp to an app notification with the [Microsoft.Windows.AppNotifications.Builder](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder). For UWP apps, you can use version 1.4.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/). You can also specify the timestamp using raw xml.
+To use a custom timestamp, simply assign the **displayTimestamp** property on the **toast** element of your app notification XML payload. Starting with Windows App SDK 1.2, you can add a custom timestamp to an app notification with the [Microsoft.Windows.AppNotifications.Builder](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder). You can also specify the timestamp using raw XML.
 
 
 ### [Windows App SDK](#tab/appsdk)
@@ -30,15 +30,6 @@ var builder = new AppNotificationBuilder()
     .AddText("Matt sent you a friend request")
     .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
     .SetTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var builder = new ToastContentBuilder()
-    .AddText("Matt sent you a friend request")
-    .AddText("Hey, wanna dress up as wizards and ride around on hoverboards?")
-    .AddCustomTimeStamp(new DateTime(2017, 04, 15, 19, 45, 00, DateTimeKind.Utc));
 ```
 
 ### [XML](#tab/xml)

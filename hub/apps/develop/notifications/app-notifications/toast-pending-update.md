@@ -15,7 +15,7 @@ You can use **PendingUpdate** to create multi-step interactions in your app noti
 ![Toast with pending update](images/toast-pendingupdate.gif)
 
 > [!IMPORTANT]
-> **Requires Desktop Fall Creators Update**: You must be running Desktop build 16299 or later to see pending update work. **PendingUpdate** is only supported on Desktop and will be ignored on other devices. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct notification content. For apps using the Community Toolkit, use version 2.0.0 or later of the [UWP Community Toolkit Notifications NuGet library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) to assign **PendingUpdate** on your buttons.
+> **Requires Desktop Fall Creators Update**: You must be running Desktop build 16299 or later to see pending update work. **PendingUpdate** is only supported on Desktop and will be ignored on other devices. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct notification content.
 
 
 ## Prerequisites
@@ -46,31 +46,13 @@ On your background activation buttons, set the **AfterActivationBehavior** to **
 #### [Windows App SDK](#tab/appsdk)
 
 > [!NOTE]
-> The Windows App SDK `AppNotificationButton` does not have a direct `AfterActivationBehavior` equivalent. For pending update behavior, use the Community Toolkit or raw XML approach below to set `afterActivationBehavior="pendingUpdate"` on your buttons, or handle the update logic in your background activation handler.
+> The Windows App SDK `AppNotificationButton` does not have a direct `AfterActivationBehavior` equivalent. For pending update behavior, use the raw XML approach below to set `afterActivationBehavior="pendingUpdate"` on your buttons, or handle the update logic in your background activation handler.
 
 ```csharp
 new AppNotificationBuilder()
     .AddText("Would you like to order lunch today?")
     .AddButton(new AppNotificationButton("Yes")
         .AddArgument("action", "orderLunch"));
-```
-
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-new ToastContentBuilder()
-
-    .AddText("Would you like to order lunch today?")
-
-    .AddButton(new ToastButton("Yes", "action=orderLunch")
-    {
-        ActivationType = ToastActivationType.Background,
-
-        ActivationOptions = new ToastActivationOptions()
-        {
-            AfterActivationBehavior = ToastAfterActivationBehavior.PendingUpdate
-        }
-    });
 ```
 
 #### [XML](#tab/xml)
@@ -102,8 +84,6 @@ new ToastContentBuilder()
 
 In order to later replace the notification, we have to assign the **Tag** (and optionally the **Group**) on the notification.
 
-#### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 // Create and tag the notification
 var notification = builder.BuildNotification();
@@ -113,20 +93,6 @@ notification.Tag = "lunch";
 AppNotificationManager.Default.Show(notification);
 ```
 
-#### [Community Toolkit / UWP](#tab/toolkit)
-
-```csharp
-// Create the notification
-var notif = new ToastNotification(content.GetXml())
-{
-    Tag = "lunch"
-};
-
-// And show it
-ToastNotificationManager.CreateToastNotifier().Show(notif);
-```
-
----
 
 
 ## Replace the notification with new content
@@ -134,8 +100,6 @@ ToastNotificationManager.CreateToastNotifier().Show(notif);
 In response to the user clicking your button, your background task gets triggered and you need to replace the notification with new content. You replace the notification by simply sending a new notification with the same **Tag** and **Group**.
 
 We strongly recommend **setting the audio to silent** on replacements in response to a button click, since the user is already interacting with your notification.
-
-#### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 // Generate new content with silent audio
@@ -152,30 +116,6 @@ notification.Tag = "lunch";
 AppNotificationManager.Default.Show(notification);
 ```
 
-#### [Community Toolkit / UWP](#tab/toolkit)
-
-```csharp
-// Generate new content
-ToastContent content = new ToastContent()
-{
-    ...
-
-    // We disable audio on all subsequent toasts since they appear right after the user
-    // clicked something, so the user's attention is already captured
-    Audio = new ToastAudio() { Silent = true }
-};
-
-// Create the new notification
-var notif = new ToastNotification(content.GetXml())
-{
-    Tag = "lunch"
-};
-
-// And replace the old one with this one
-ToastNotificationManager.CreateToastNotifier().Show(notif);
-```
-
----
 
 
 ## Related topics

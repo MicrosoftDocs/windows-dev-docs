@@ -12,28 +12,15 @@ ms.localizationpriority: medium
 
 App notifications can use custom audio, which lets your app express your brand's unique sound effects. For example, a messaging app can use their own messaging sound on their app notifications, so that the user can instantly know that they received a notification from the app, rather than hearing the generic notification sound.
 
-## Install notification libraries
-
-For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace, which is included in the Windows App SDK — no additional NuGet packages are required.
-
-For apps using the Community Toolkit, install the [Microsoft.Toolkit.Uwp.Notifications](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/) NuGet package, which provides an object model for the notification XML content.
-
 ## Add namespace declarations
 
-### [Windows App SDK](#tab/appsdk)
+For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace, which is included in the Windows App SDK — no additional NuGet packages are required.
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
 using Microsoft.Windows.AppNotifications.Builder;
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-using Microsoft.Toolkit.Uwp.Notifications;
-```
-
----
 
 ## Add the custom audio
 
@@ -50,32 +37,6 @@ var builder = new AppNotificationBuilder()
 
 var notification = builder.BuildNotification();
 AppNotificationManager.Default.Show(notification);
-```
-
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-var contentBuilder = new ToastContentBuilder()
-    .AddText("New message");
-
-    
-bool supportsCustomAudio = true;
- 
-// If we're running on Desktop before Version 1511, do NOT include custom audio
-// since it was not supported until Version 1511, and would result in a silent toast.
-if (AnalyticsInfo.VersionInfo.DeviceFamily.Equals("Windows.Desktop")
-    && !ApiInformation.IsApiContractPresent("Windows.Foundation.UniversalApiContract", 2))
-{
-    supportsCustomAudio = false;
-}
- 
-if (supportsCustomAudio)
-{
-    contentBuilder.AddAudio(new Uri("ms-appx:///Assets/Audio/CustomToastAudio.m4a"));
-}
-
-// Send the toast
-contentBuilder.Show();
 ```
 
 ### [XML](#tab/xml)
@@ -116,7 +77,7 @@ Supported audio file sources:
 
 ## Send the notification
 
-Sending a notification with audio is the same as sending a regular notification. For Windows App SDK apps, use `AppNotificationManager.Default.Show()`. For Community Toolkit apps, call the `Show()` method on the builder. See [Send local toast](send-local-toast.md) to learn more.
+Sending a notification with audio is the same as sending a regular notification. For Windows App SDK apps, use `AppNotificationManager.Default.Show()`. See [Send local toast](send-local-toast.md) to learn more.
 
 
 ## Related topics

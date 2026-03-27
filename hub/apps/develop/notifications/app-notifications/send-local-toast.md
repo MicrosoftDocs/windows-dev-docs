@@ -22,8 +22,6 @@ ms.localizationpriority: medium
 
 ## Step 1: Add namespace references
 
-### [Windows App SDK](#tab/appsdk)
-
 Add the namespace references for Windows App SDK app notifications. No additional NuGet packages are required — these APIs are included in the Windows App SDK.
 
 ```csharp
@@ -31,21 +29,10 @@ using Microsoft.Windows.AppNotifications;
 using Microsoft.Windows.AppNotifications.Builder;
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-[!INCLUDE [nuget package](includes/nuget-package.md)]
-
-[!INCLUDE [nuget package .NET warnings](includes/nuget-package-dotnet-warnings.md)]
-
-This package allows you to create app notifications without using XML, and also allows desktop apps to send app notifications.
-
----
 
 ## Step 2: Send an app notification
 
 [!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
-
-### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
@@ -61,19 +48,6 @@ var notification = new AppNotificationBuilder()
 AppNotificationManager.Default.Show(notification);
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Requires Microsoft.Toolkit.Uwp.Notifications NuGet package version 7.0 or greater
-new ToastContentBuilder()
-    .AddArgument("action", "viewConversation")
-    .AddArgument("conversationId", 9813)
-    .AddText("Andrew sent you a picture")
-    .AddText("Check this out, The Enchantments in Washington!")
-    .Show(); // Not seeing the Show() method? Make sure you have version 7.0, and if you're using .NET 6 (or later), then your TFM must be net6.0-windows10.0.17763.0 or greater
-```
-
----
 
 Try running this code and you should see the notification appear!
 
@@ -84,7 +58,7 @@ After showing a notification, you likely need to handle the user clicking the no
 > [!TIP]
 > **For Windows App SDK apps**, the recommended approach is to handle activation through `AppNotificationManager.Default.NotificationInvoked`. See [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) for a complete walkthrough of registering and handling app notification activation with `AppNotificationManager`.
 
-The steps below describe handling activation with the Community Toolkit for desktop (MSIX and unpackaged) and UWP apps.
+The steps below describe handling activation for desktop (MSIX and unpackaged) and UWP apps.
 
 #### [Desktop (MSIX)](#tab/desktop-msix)
 
@@ -209,8 +183,6 @@ You can add rich content to notifications. We'll add an inline image and a profi
 
 <img alt="App notification with images" src="images/send-toast-02.png" width="364"/>
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 // Construct the content and show the notification!
 var notification = new AppNotificationBuilder()
@@ -227,31 +199,12 @@ var notification = new AppNotificationBuilder()
 AppNotificationManager.Default.Show(notification);
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Construct the content and show the toast!
-new ToastContentBuilder()
-    ...
-
-    // Inline image
-    .AddInlineImage(new Uri("https://picsum.photos/360/202?image=883"))
-
-    // Profile (app logo override) image
-    .AddAppLogoOverride(new Uri("ms-appdata:///local/Andrew.jpg"), ToastGenericAppLogoCrop.Circle)
-    
-    .Show();
-```
-
----
 
 ## Add buttons and inputs
 
 You can add buttons and inputs to make your notifications interactive. Buttons can launch your foreground app, a protocol, or your background task. We'll add a reply text box, a "Like" button, and a "View" button that opens the image.
 
 <img src="images/toast-notification.png" width="628" alt="Screenshot of an app notification with inputs and buttons"/>
-
-### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 int conversationId = 384928;
@@ -280,39 +233,6 @@ var notification = new AppNotificationBuilder()
 AppNotificationManager.Default.Show(notification);
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-int conversationId = 384928;
-
-// Construct the content
-new ToastContentBuilder()
-    .AddArgument("conversationId", conversationId)
-    ...
-
-    // Text box for replying
-    .AddInputTextBox("tbReply", placeHolderContent: "Type a response")
-
-    // Buttons
-    .AddButton(new ToastButton()
-        .SetContent("Reply")
-        .AddArgument("action", "reply")
-        .SetBackgroundActivation())
-
-    .AddButton(new ToastButton()
-        .SetContent("Like")
-        .AddArgument("action", "like")
-        .SetBackgroundActivation())
-
-    .AddButton(new ToastButton()
-        .SetContent("View")
-        .AddArgument("action", "viewImage")
-        .AddArgument("imageUrl", image.ToString()))
-    
-    .Show();
-```
-
----
 
 The activation of foreground buttons are handled in the same way as the main notification body (your App.xaml.cs OnActivated will be called).
 
@@ -396,8 +316,6 @@ However, if the message in your notification is only relevant for a period of ti
 > [!NOTE]
 > The default and maximum expiration time for local app notifications is 3 days.
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 var notification = new AppNotificationBuilder()
     .AddText("Expires in 2 days...")
@@ -408,19 +326,6 @@ notification.Expiration = DateTime.Now.AddDays(2);
 AppNotificationManager.Default.Show(notification);
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Create toast content and show the toast!
-new ToastContentBuilder()
-    .AddText("Expires in 2 days...")
-    .Show(toast =>
-    {
-        toast.ExpirationTime = DateTime.Now.AddDays(2);
-    });
-```
-
----
 
 ## Provide a primary key for your notification
 
@@ -429,8 +334,6 @@ If you want to programmatically remove or replace the notification you send, you
 To see more details on replacing/removing already delivered app notifications, please see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
 Tag and Group combined act as a composite primary key. Group is the more generic identifier, where you can assign groups like "wallPosts", "messages", "friendRequests", etc. And then Tag should uniquely identify the notification itself from within the group. By using a generic group, you can then remove all notifications from that group by using the [RemoveGroup API](/uwp/api/Windows.UI.Notifications.ToastNotificationHistory#Windows_UI_Notifications_ToastNotificationHistory_RemoveGroup_System_String_).
-
-### [Windows App SDK](#tab/appsdk)
 
 ```csharp
 var notification = new AppNotificationBuilder()
@@ -443,20 +346,6 @@ notification.Group = "wallPosts";
 AppNotificationManager.Default.Show(notification);
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Create toast content and show the toast!
-new ToastContentBuilder()
-    .AddText("New post on your wall!")
-    .Show(toast =>
-    {
-        toast.Tag = "18365";
-        toast.Group = "wallPosts";
-    });
-```
-
----
 
 ## Clear your notifications
 
@@ -473,19 +362,10 @@ Here's an example of what a messaging app should do…
 
 To learn about clearing all notifications or removing specific notifications, see [Quickstart: Managing toast notifications in action center (XAML)](/previous-versions/windows/apps/dn631260(v=win.10)).
 
-### [Windows App SDK](#tab/appsdk)
-
 ```csharp
 await AppNotificationManager.Default.RemoveAllAsync();
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-```csharp
-ToastNotificationManagerCompat.History.Clear();
-```
-
----
 
 ## Resources
 

@@ -59,15 +59,6 @@ var notification = new AppNotificationBuilder()
     .BuildNotification();
 ```
 
-### [Community Toolkit](#tab/toolkit)
-
-``` csharp
-// Construct the content
-var content = new ToastContentBuilder()
-	.AddText("Adam sent a message to the group")
-	.GetToastContent();
-```
-
 ### [XML](#tab/xml)
 
 ```xml
@@ -99,19 +90,6 @@ var notification = new AppNotificationBuilder()
 var xmlDoc = new Windows.Data.Xml.Dom.XmlDocument();
 xmlDoc.LoadXml(notification.Payload);
 var toast = new ToastNotification(xmlDoc);
-
-// Get the collection notifier
-var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
-
-// And show the toast
-notifier.Show(toast);
-```
-
-#### [Community Toolkit](#tab/toolkit)
-
-```csharp
-// Create the toast
-ToastNotification toast = new ToastNotification(content.GetXml());
 
 // Get the collection notifier
 var notifier = await ToastNotificationManager.GetDefault().GetToastNotifierForToastCollectionIdAsync("MyToastCollection");
@@ -241,4 +219,3 @@ The toast collections that you create will also be reflected in the user's notif
 
 * [Toast content](adaptive-interactive-toasts.md)
 * [Toast headers](toast-headers.md)
-* [Notifications library on GitHub (part of the Windows Community Toolkit)](https://github.com/CommunityToolkit/WindowsCommunityToolkit/tree/main/Microsoft.Toolkit.Uwp.Notifications)
