@@ -74,11 +74,18 @@ Follow these guides to set up your development environment for your preferred la
         Install Python and set up your development environment on Windows.
     :::column-end:::
     :::column:::
+       [![Java icon](../images/java-logo.png)](./java.md)<br>
+        **[Get started with Java](./java.md)**<br>
+        Install a JDK, configure JAVA_HOME, and set up your Java development environment on Windows.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
        [![C / C++](../images/c-logo.png)](/cpp/)<br>
         **[Get started with C++ and C](/cpp/)**<br>
         Develop apps, services, and tools with C++, C, and assembly.
     :::column-end:::
-:::row-end:::
 
 :::row:::
     :::column:::

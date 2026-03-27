@@ -136,6 +136,8 @@ items:
               href: ./javascript/vue-on-windows.md
   - name: Get started with Python
     href: ./python.md
+  - name: Get started with Java
+    href: ./java.md
   - name: Get started with C and C++
     href: /cpp/
   - name: Get started with C#
