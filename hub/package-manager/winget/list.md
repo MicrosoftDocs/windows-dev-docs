@@ -96,4 +96,10 @@ The **list** command will show not only the update version available, but the so
 
 If there are no updates available, **list** will only show you the currently installed version and the update column will not be displayed.
 
+## List with details
+
+The following example lists details for an installed application by its identifier.
+
+:::image type="content" source="./images/list-details.png" alt-text="Screenshot listing winget winget list --id Microsoft.VisualStudioCode --details to display details about the installed application" lightbox="./images/list-details.png":::
+
 * [Use the winget tool to list and manage applications](index.md)
