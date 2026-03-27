@@ -2,7 +2,6 @@
 title: Get started with Java on Windows
 description: A guide to help you set up a Java development environment on Windows, including JDK installation, JAVA_HOME configuration, and recommended tools.
 ms.topic: get-started
-ms.subservice: windows-nodejs
 ms.date: 03/27/2026
 ---
 

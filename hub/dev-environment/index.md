@@ -2,7 +2,6 @@
 title: Windows developer tools
 description: Windows includes built-in tools designed for developers — a package manager, a Linux subsystem, optimized storage, and more.
 ms.topic: overview
-ms.subservice: windows-nodejs
 ms.date: 03/26/2026
 ---
 
