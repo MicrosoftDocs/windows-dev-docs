@@ -14,7 +14,7 @@ You can update the SDK by manually installing the new build, updating in Visual 
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
-## Build 10.0.28000.0
+## Build 10.0.28000.1721
 
 Released: **March, 2026** <br><br>
 
