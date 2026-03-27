@@ -23,50 +23,18 @@ no-loc: [toast, Toast, app, App]
 > [!NOTE]
 > For C++ apps using the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) which covers the recommended approach using the `Microsoft.Windows.AppNotifications` APIs.
 
-## Step 1: Install NuGet package
-
-You can create app notifications with the Windows Community Toolkit (WCT)'s builder syntax OR with XML. If you prefer the latter, please skip to **Step 2** and refer to the **Without builder syntax** code examples.
-
-[!INCLUDE [nuget package](includes/nuget-package.md)]
-
-Our **Builder syntax** code examples will use this package. This package allows you to create app notifications without using XML.
-
-## Step 2: Add namespace declarations
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```cpp
-using namespace Microsoft::Toolkit::Uwp::Notifications;
-```
-
-#### [Without builder syntax](#tab/xml)
+## Step 1: Add namespace declarations
 
 ```cpp
 using namespace winrt::Windows::UI::Notifications;
 using namespace Windows::Data::Xml::Dom;
 ```
 
----
-
-## Step 3: Send an app notification
+## Step 2: Send an app notification
 
 [!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
 
-If you are not using the WCT Notifications library builder syntax, you will instead construct the XML app notification template, populate it with text and values, construct the notification, and show it.
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```cpp
-// Construct the content and show the toast!
-(ref new ToastContentBuilder())
-    ->AddArgument("action", "viewConversation")
-    ->AddArgument("conversationId", 9813)
-    ->AddText("Andrew sent you a picture")
-    ->AddText("Check this out, The Enchantments in Washington!")
-    ->Show();
-```
-
-#### [Without builder syntax](#tab/xml)
+Construct the XML app notification template, populate it with text and values, construct the notification, and show it.
 
 ```cpp
 // Construct the XML toast template
@@ -95,9 +63,7 @@ ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
 toastNotifier.Show(notif);
 ```
 
----
-
-## Step 4: Handle activation
+## Step 3: Handle activation
 
 When the user clicks your notification (or a button on the notification with foreground activation), your app's **App.xaml.cpp** **OnActivated** will be invoked.
 
@@ -128,22 +94,6 @@ void App::OnActivated(IActivatedEventArgs^ e)
 
 The first step in making your notifications actionable is to add some launch args to your notification, so that your app can know what to launch when the user clicks the notification (in this case, we're including some information that later tells us we should open a conversation, and we know which specific conversation to open).
 
-#### [Builder syntax](#tab/builder-syntax)
-
-```cpp
-// Construct the content and show the toast!
-(ref new ToastContentBuilder())
-
-    // Arguments returned when user taps body of notification
-    ->AddArgument("action", "viewConversation")
-    ->AddArgument("conversationId", 9813)
-
-    ->AddText("Andrew sent you a picture")
-    ->Show();
-```
-
-#### [Without builder syntax](#tab/xml)
-
 ```cpp
 // Construct the XML toast template
 XmlDocument doc;
@@ -173,8 +123,6 @@ ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
 toastNotifier.Show(notif);
 ```
 
----
-
 ## Add images
 
 You can add rich content to notifications. We'll add an inline image and a profile (app logo override) image.
@@ -182,24 +130,6 @@ You can add rich content to notifications. We'll add an inline image and a profi
 [!INCLUDE [images note](includes/images-note.md)]
 
 <img alt="App notification with images" src="images/send-toast-02.png" width="364"/>
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```cpp
-// Construct the content and show the toast!
-(ref new ToastContentBuilder())
-    ...
-
-    // Inline image
-    ->AddInlineImage(ref new Uri("https://picsum.photos/360/202?image=883"))
-
-    // Profile (app logo override) image
-    ->AddAppLogoOverride(ref new Uri("ms-appdata:///local/Andrew.jpg"), ToastGenericAppLogoCrop::Circle)
-
-    ->Show();
-```
-
-#### [Without builder syntax](#tab/xml)
 
 ```cpp
 // Construct the XML toast template
@@ -236,44 +166,11 @@ ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
 toastNotifier.Show(notif);
 ```
 
----
-
 ## Add buttons and inputs
 
 You can add buttons and inputs to make your notifications interactive. Buttons can launch your foreground app, a protocol, or your background task. We'll add a reply text box, a "Like" button, and a "View" button that opens the image.
 
 <img src="images/toast-notification.png" width="628" alt="Screenshot of an app notification with inputs and buttons"/>
-
-#### [Builder syntax](#tab/builder-syntax)
-
-```cpp
-// Construct the content
-(ref new ToastContentBuilder())
-    ->AddArgument("conversationId", 9813)
-    ...
-
-    // Text box for replying
-    ->AddInputTextBox("tbReply", "Type a response")
-
-    // Buttons
-    ->AddButton((ref new ToastButton())
-        ->SetContent("Reply")
-        ->AddArgument("action", "reply")
-        ->SetBackgroundActivation())
-
-    ->AddButton((ref new ToastButton())
-        ->SetContent("Like")
-        ->AddArgument("action", "like")
-        ->SetBackgroundActivation())
-
-    ->AddButton((ref new ToastButton())
-        ->SetContent("View")
-        ->AddArgument("action", "view"))
-
-    ->Show();
-```
-
-#### [Without builder syntax](#tab/xml)
 
 ```cpp
 // Construct the XML toast template
@@ -322,8 +219,6 @@ ToastNotifier toastNotifier{ toastManager.CreateToastNotifier() };
 // And show it!
 toastNotifier.Show(notif);
 ```
-
----
 
 The activation of foreground buttons are handled in the same way as the main notification body (your App.xaml.cpp OnActivated will be called).
 

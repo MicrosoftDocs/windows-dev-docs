@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 The following describes all of the properties and elements within toast content.
 
-If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](/uwp/schemas/tiles/toastschema/schema-root).
+If you would rather use raw XML instead of the Windows App SDK builder APIs, please see [the XML schema](/uwp/schemas/tiles/toastschema/schema-root).
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -474,4 +474,3 @@ New in Creators Update: A custom header that groups multiple notifications toget
 ## Related topics
 
 * [Quickstart: Send a local toast and handle activation](/archive/blogs/tiles_and_toasts/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10)
-* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit)
