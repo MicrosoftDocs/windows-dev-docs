@@ -82,6 +82,8 @@ items:
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/color.md
                   - name: CommandResultKind
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/commandresultkind.md
+                  - name: ContentSize
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/contentsize.md
                   - name: ICommand
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommand.md
                   - name: ICommandContextItem
@@ -102,6 +104,12 @@ items:
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_initializewithhost.md
                           - name: TopLevelCommands
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_toplevelcommands.md
+                  - name: ICommandProvider2
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider2.md
+                  - name: ICommandProvider3
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider3.md
+                  - name: ICommandProvider4
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider4.md
                   - name: ICommandResult
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandresult.md
                   - name: ICommandResultArgs
@@ -126,6 +134,8 @@ items:
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetails.md
                   - name: IDetailsCommand
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailscommand.md
+                  - name: IDetailsCommands
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailscommands.md
                   - name: IDetailsData
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailsdata.md
                   - name: IDetailsElement
@@ -138,6 +148,8 @@ items:
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailstags.md
                   - name: IDynamicListPage
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idynamiclistpage.md
+                  - name: IExtendedAttributesProvider
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextendedattributesprovider.md
                   - name: IExtension
                     items:
                       - name: IExtension
@@ -162,6 +174,8 @@ items:
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_showstatus.md
                   - name: IFallbackCommandItem
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackcommanditem.md
+                  - name: IFallbackCommandItem2
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackcommanditem2.md
                   - name: IFallbackHandler
                     items:
                       - name: IFallbackHandler
@@ -216,6 +230,12 @@ items:
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igotopageargs.md
                   - name: IGridProperties
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igridproperties.md
+                  - name: IGalleryGridLayout
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igallerygridlayout.md
+                  - name: IMediumGridLayout
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imediumgridlayout.md
+                  - name: ISmallGridLayout
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ismallgridlayout.md
                   - name: IIconData
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iicondata.md
                   - name: IIconInfo
@@ -272,6 +292,8 @@ items:
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iseparatorfilteritem.md
                   - name: IStatusMessage
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/istatusmessage.md
+                  - name: StatusContext
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/statuscontext.md
                   - name: ITag
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions/itag.md
                   - name: IToastArgs
@@ -434,10 +456,14 @@ items:
                         items:
                           - name: Invoke
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_invoke.md
+                  - name: CopyPathCommand
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copypathcommand.md
                   - name: Details
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/details.md
                   - name: DetailsCommand
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailscommand.md
+                  - name: DetailsCommands
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailscommands.md
                   - name: DetailsElement
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailselement.md
                   - name: DetailsLink
@@ -488,6 +514,8 @@ items:
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filter.md
                   - name: Filters
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filters.md
+                  - name: FontIconData
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fonticondata.md
                   - name: FormContent
                     items:
                       - name: FormContent
@@ -498,6 +526,8 @@ items:
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_string.md
                           - name: SubmitForm(String, String)
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_stringstring.md
+                  - name: GalleryGridLayout
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gallerygridlayout.md
                   - name: GoToPageArgs
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gotopageargs.md
                   - name: IconData
@@ -648,6 +678,14 @@ items:
                         items:
                           - name: Invoke
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openurlcommand_invoke.md
+                  - name: OpenFileCommand
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openfilecommand.md
+                  - name: OpenInConsoleCommand
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openinconsolecommand.md
+                  - name: OpenPropertiesCommand
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openpropertiescommand.md
+                  - name: OpenWithCommand
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openwithcommand.md
                   - name: Page
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/page.md
                   - name: ProgressState
@@ -660,6 +698,8 @@ items:
                         href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/propchangedeventargs_constructor.md
                   - name: SearchPrecisionScore
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/searchprecisionscore.md
+                  - name: Separator
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/separator.md
                   - name: Setting
                     items:
                       - name: Setting
@@ -718,6 +758,10 @@ items:
                         items:
                           - name: ShellRunAsType
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellrunastype.md
+                  - name: ShowFileInFolderCommand
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/showfileinfoldercommand.md
+                  - name: SmallGridLayout
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/smallgridlayout.md
                   - name: StatusMessage
                     href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/statusmessage.md
                   - name: StringMatcher
@@ -812,6 +856,8 @@ items:
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities_basesettingspath.md
                           - name: IsPackaged
                             href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities_ispackaged.md
+                  - name: WrappedDockItem
+                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/wrappeddockitem.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables
