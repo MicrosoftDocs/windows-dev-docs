@@ -1,6 +1,6 @@
 ---
 title: MACs, hashes, and signatures
-description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in WinUI apps to detect message tampering.
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 
 
-This article discusses how message authentication codes (MACs), hashes, and signatures can be used in Universal Windows Platform (UWP) apps to detect message tampering.
+This article discusses how message authentication codes (MACs), hashes, and signatures can be used in WinUI apps to detect message tampering.
 
 ## Message authentication codes (MACs)
 
@@ -34,7 +34,7 @@ Digital signatures are the public key equivalent of private key message authenti
 
 This example code shows how to use the [**MacAlgorithmProvider**](/uwp/api/Windows.Security.Cryptography.Core.MacAlgorithmProvider) class to create a hashed message authentication code (HMAC).
 
-```cs
+```csharp
 using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
@@ -137,7 +137,7 @@ Digital signatures are the public key equivalent of private key message authenti
 
 The [**CryptographicHash**](/uwp/api/Windows.Security.Cryptography.Core.CryptographicHash) object can be used to repeatedly hash different data without having to re-create the object for each use. The [**Append**](/uwp/api/windows.security.cryptography.core.cryptographichash.append) method adds new data to a buffer to be hashed. The [**GetValueAndReset**](/uwp/api/windows.security.cryptography.core.cryptographichash.getvalueandreset) method hashes the data and resets the object for another use. This is shown by the following example.
 
-```cs
+```csharp
 public void SampleReusableHash()
 {
     // Create a string that contains the name of the hashing algorithm to use.
