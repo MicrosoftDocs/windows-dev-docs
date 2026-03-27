@@ -6,6 +6,8 @@ items:
   - name: Features
     expanded: true
     items:
+    - name: Overview
+      href: features-overview.md
     - name: Accessibility
       href: accessibility.md
     - name: AI-powered features
@@ -37,8 +39,6 @@ items:
             href: windows-integration/recall/decrypt-exported-snapshots.md 
         - name: Studio Effects
           href: windows-integration/studio-effects.md
-        - name: Windows Settings connector
-          href: windows-integration/settings-mcp.md
     - name: App lifecycle and system services
       items:
       - name: App lifecycle
