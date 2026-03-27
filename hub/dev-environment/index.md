@@ -8,7 +8,7 @@ ms.date: 03/26/2026
 
 # Windows developer tools
 
-Windows includes a suite of tools built for developers. Whether you're building apps, working across stacks, or optimizing your workflow, these tools are available on Windows out of the box or as free downloads.
+Windows supports a wide range of development workflows. Tools like Visual Studio Code and GitHub Copilot are well-integrated on Windows, and with AI assistance built into your editor and terminal, it's straightforward to write scripts and build utilities to automate your work. Whether you're developing for Windows, the web, or cross-platform, this page points you to the tools and setup guides to get started.
 
 ## Tools to get you started
 
