@@ -84,7 +84,6 @@ Follow these guides to set up your development environment for your preferred la
         **[Get started with C++ and C](/cpp/)**<br>
         Develop apps, services, and tools with C++, C, and assembly.
     :::column-end:::
-:::row:::
     :::column:::
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
         **[Get started with C#](/dotnet/csharp/)**<br>
