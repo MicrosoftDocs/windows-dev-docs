@@ -605,6 +605,32 @@ items:
         href: security/index.md
       - name: Credential locker
         href: security/credential-locker.md
+      - name: Cryptography
+        href: security/cryptography.md
+        items:
+        - name: Certificates
+          href: security/certificates.md
+        - name: Cryptographic keys
+          href: security/cryptographic-keys.md
+        - name: Data protection
+          href: security/data-protection.md
+        - name: MACs, hashes, and signatures
+          href: security/macs-hashes-signatures.md
+        - name: Export restrictions on cryptography
+          href: security/export-restrictions-cryptography.md
+        - name: Common cryptography tasks
+          href: security/common-cryptography-tasks.md
+          items:
+          - name: Create random numbers
+            href: security/create-random-numbers.md
+          - name: Compare buffers
+            href: security/compare-buffers.md
+          - name: Convert between strings and binary data
+            href: security/convert-between-strings-binary-data.md
+          - name: Copy to and from byte arrays
+            href: security/copy-to-from-byte-arrays.md
+          - name: Encode and decode data
+            href: security/encode-decode-data.md
       - name: Fingerprint biometrics
         href: security/fingerprint-biometrics.md
       - name: OAuth 2.0

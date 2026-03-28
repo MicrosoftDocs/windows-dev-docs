@@ -1,6 +1,6 @@
 ---
 title: Intro to certificates
-description: This article discusses the use of certificates in Universal Windows Platform (UWP) apps.
+description: This article discusses the use of certificates in WinUI apps.
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ms.date: 02/08/2017
 ms.topic: article
@@ -12,11 +12,11 @@ ms.localizationpriority: medium
 
 
 
-This article discusses the use of certificates in Universal Windows Platform (UWP) apps. Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization. The bound identities are most often used to authenticate one entity to another. For example, certificates are often used to authenticate a web server to a user and a user to a web server. You can create certificate requests and install or import issued certificates. You can also enroll a certificate in a certificate hierarchy.
+This article discusses the use of certificates in WinUI apps. Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization. The bound identities are most often used to authenticate one entity to another. For example, certificates are often used to authenticate a web server to a user and a user to a web server. You can create certificate requests and install or import issued certificates. You can also enroll a certificate in a certificate hierarchy.
 
 ### Shared certificate stores
 
-UWP apps use the new isolationist application model introduced in Windows 8. In this model, apps run in low-level operating system construct, called an app container, that prohibits the app from accessing resources or files outside of itself unless explicitly permitted to do so. The following sections describe the implications this has on public key infrastructure (PKI).
+WinUI apps use the new isolationist application model introduced in Windows 8. In this model, apps run in low-level operating system construct, called an app container, that prohibits the app from accessing resources or files outside of itself unless explicitly permitted to do so. The following sections describe the implications this has on public key infrastructure (PKI).
 
 ### Certificate storage per app container
 

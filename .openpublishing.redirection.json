@@ -8601,6 +8601,66 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "uwp/security/cryptography.md",
+      "redirect_url": "/windows/apps/develop/security/cryptography",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/certificates.md",
+      "redirect_url": "/windows/apps/develop/security/certificates",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/cryptographic-keys.md",
+      "redirect_url": "/windows/apps/develop/security/cryptographic-keys",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/data-protection.md",
+      "redirect_url": "/windows/apps/develop/security/data-protection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/macs-hashes-and-signatures.md",
+      "redirect_url": "/windows/apps/develop/security/macs-hashes-signatures",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/export-restrictions-on-cryptography.md",
+      "redirect_url": "/windows/apps/develop/security/export-restrictions-cryptography",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/common-cryptography-tasks.md",
+      "redirect_url": "/windows/apps/develop/security/common-cryptography-tasks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/create-random-numbers.md",
+      "redirect_url": "/windows/apps/develop/security/create-random-numbers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/compare-buffers.md",
+      "redirect_url": "/windows/apps/develop/security/compare-buffers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/convert-between-strings-and-binary-data.md",
+      "redirect_url": "/windows/apps/develop/security/convert-between-strings-binary-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/copy-to-and-from-byte-arrays.md",
+      "redirect_url": "/windows/apps/develop/security/copy-to-from-byte-arrays",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/encode-and-decode-data.md",
+      "redirect_url": "/windows/apps/develop/security/encode-decode-data",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/security-and-identity.md",
       "redirect_url": "/windows/apps/develop/security/",
       "redirect_document_id": false

@@ -1,6 +1,6 @@
 ---
 title: Copy to and from byte arrays
-description: This example code shows how to copy to and from byte arrays in a Universal Windows Platform (UWP) app.
+description: This example code shows how to copy to and from byte arrays in a WinUI app.
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 ms.date: 02/08/2017
 ms.topic: article
@@ -11,9 +11,9 @@ ms.localizationpriority: medium
 
 
 
-This example code shows how to copy to and from byte arrays in a Universal Windows Platform (UWP) app.
+This example code shows how to copy to and from byte arrays in a WinUI app.
 
-```cs
+```csharp
 public void ByteArrayCopy()
 {
     // Initialize a byte array.
