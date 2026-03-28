@@ -78,14 +78,12 @@ Follow these guides to set up your development environment for your preferred la
         Install a JDK, configure JAVA_HOME, and set up your Java development environment on Windows.
     :::column-end:::
 :::row-end:::
-
 :::row:::
     :::column:::
        [![C / C++](../images/c-logo.png)](/cpp/)<br>
         **[Get started with C++ and C](/cpp/)**<br>
         Develop apps, services, and tools with C++, C, and assembly.
     :::column-end:::
-
 :::row:::
     :::column:::
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
@@ -97,14 +95,14 @@ Follow these guides to set up your development environment for your preferred la
         **[Get started with Rust](./rust/index.yml)**<br>
         Get started programming with Rust, including how to set up Rust for Windows.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
         **[Get started with PowerShell](/powershell/)**<br>
         Cross-platform task automation and configuration management using PowerShell.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
         **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
@@ -115,13 +113,19 @@ Follow these guides to set up your development environment for your preferred la
         **[Get started building Windows apps](../apps/index.yml)**<br>
         Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Game Dev icon](../images/game-icon.png)](/gaming/)<br>
         **[Get started with Game Development](/gaming/)**<br>
         Build games for Windows using Microsoft's game development tools and services.
     :::column-end:::
+    :::column:::
+    :::column-end:::     
+    :::column:::
+    :::column-end:::     
 :::row-end:::
-
 ---
 
 
