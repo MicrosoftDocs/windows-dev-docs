@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 :::image type="icon" source="images/windows-sdk-hero.png":::
 
-The Windows SDK (10.0.28000) for Windows 11 contains the latest platform headers, libraries, WinRT metadata, and build tools required to develop Windows applications. It supports both UWP and Win32 development and can target Windows 11, version 26H2, in addition to previous Windows releases. By using this SDK, developers gain access to the full set of Windows APIs and capabilities needed to build native and performant applications.
+The Windows SDK (10.0.28000) for Windows 11 contains the latest platform headers, libraries, WinRT metadata, and build tools required to develop Windows applications. It supports both UWP and Win32 development and can target Windows 11, version 26H1, in addition to previous Windows releases. By using this SDK, developers gain access to the full set of Windows APIs and capabilities needed to build native and performant applications.
 
 Additionally, the [Windows App SDK](../windows-app-sdk/index.md) builds on top of the Windows SDK by offering a consistent set of modern Windows APIs for desktop apps, allowing developers to adopt new capabilities without depending on a specific Windows version.
 
