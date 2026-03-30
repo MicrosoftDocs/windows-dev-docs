@@ -3,7 +3,7 @@ title: Best practices for writing to files
 description: Learn best practices for using various file writing methods of the FileIO and PathIO classes.
 ms.date: 02/06/2019
 ms.topic: best-practice
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
 # Best practices for writing to files
@@ -55,7 +55,7 @@ To protect the integrity of the original file in case something goes wrong while
 
 The following diagram illustrates the underlying tasks performed by the WriteTextAsync method in a successful write operation. This illustration provides a simplified view of the operation. For example, it skips steps such as text encoding and async completion on different threads.
 
-![UWP API call sequence diagram for writing to a file](images/file-write-call-sequence.png)
+![WinRT API call sequence diagram for writing to a file](images/file-write-call-sequence.png)
 
 The advantages of using the Write methods of the [FileIO](/uwp/api/Windows.Storage.FileIO) and [PathIO](/uwp/api/windows.storage.pathio) classes instead of the more complex four-step model using a stream are:
 

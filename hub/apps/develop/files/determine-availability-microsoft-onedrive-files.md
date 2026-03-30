@@ -4,7 +4,7 @@ title: Determining availability of Microsoft OneDrive files
 description: Determine if a Microsoft OneDrive file is available using the StorageFile.IsAvailable property.
 ms.date: 02/08/2017
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
 # Determining availability of Microsoft OneDrive files
@@ -20,7 +20,7 @@ Determine if a Microsoft OneDrive file is available using the [StorageFile.IsAva
 
 ## Prerequisites
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **Understand async programming for WinUI apps**
 
     You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 

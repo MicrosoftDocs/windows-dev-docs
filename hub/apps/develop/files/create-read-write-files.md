@@ -1,10 +1,10 @@
 ---
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: Create, write, and read a file
-description: Learn how to create, write, and read a file using the Universal Windows Platform (UWP) objects FileIO, StorageFolder, and StorageFile.
+description: Learn how to create, write, and read a file using the WinUI objects FileIO, StorageFolder, and StorageFile.
 ms.date: 12/19/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -27,7 +27,7 @@ Read and write a file using a [StorageFile](/uwp/api/windows.storage.storagefile
 
 ## Prerequisites
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **Understand async programming for WinUI apps**
 
     You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 

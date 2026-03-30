@@ -4,7 +4,7 @@ title: File access permissions
 description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 ms.date: 01/28/2022
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -15,9 +15,9 @@ dev_langs:
 
 # File access permissions
 
-Universal Windows Platform (UWP) apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
+WinUI apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
 
-### Locations that UWP apps can access
+### Locations that WinUI apps can access
 
 When you create a new app, you can access the following file system locations by default:
 
@@ -86,7 +86,7 @@ There are two primary ways to access files and folders in your app's install dir
 
     The "ms-appx:///" prefix in the URI refers to the app's install directory. You can learn more about using app URIs in [How to use URIs to reference content](/previous-versions/windows/apps/hh781215(v=win.10)).
 
-In addition, and unlike other locations, you can also access files in your app install directory by using some [Win32 and COM for Universal Windows Platform (UWP) apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps) and some [C/C++ Standard Library functions from Microsoft Visual Studio](/cpp/cpp/c-cpp-language-and-standard-libraries).
+In addition, and unlike other locations, you can also access files in your app install directory by using some [Win32 and COM for WinUI apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps) and some [C/C++ Standard Library functions from Microsoft Visual Studio](/cpp/cpp/c-cpp-language-and-standard-libraries).
 
 The app's install directory is a read-only location. You can't gain access to the install directory through the file picker.
 
@@ -159,7 +159,7 @@ There are two primary ways to access files and folders from your app's data loca
 
     The "ms-appdata:///local/" prefix in the URI refers to the app's local folder. To access files in the app's roaming or temporary folders use "ms-appdata:///roaming/" or "ms-appdata:///temporary/" instead. You can learn more about using app URIs in [How to load file resources](/previous-versions/windows/apps/hh781229(v=win.10)).
 
-In addition, and unlike other locations, you can also access files in your app data locations by using some [Win32 and COM for UWP apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps) and some C/C++ Standard Library functions from Visual Studio.
+In addition, and unlike other locations, you can also access files in your app data locations by using some [Win32 and COM for WinUI apps](/uwp/win32-and-com/win32-and-com-for-uwp-apps) and some C/C++ Standard Library functions from Visual Studio.
 
 You can't access the local, roaming, or temporary folders through the file picker.
 

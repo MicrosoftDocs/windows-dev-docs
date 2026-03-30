@@ -4,7 +4,7 @@ title: Get file properties
 description: Get properties&\#8212;top-level, basic, and extended&\#8212;for a file represented by a StorageFile object.
 ms.date: 12/19/2018
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
 # Get file properties
@@ -22,7 +22,7 @@ Get properties—top-level, basic, and extended—for a file represented by a [S
 
 ## Prerequisites
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **Understand async programming for WinUI apps**
 
     You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 

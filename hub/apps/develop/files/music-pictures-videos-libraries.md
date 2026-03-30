@@ -4,7 +4,7 @@ title: Managing the Music, Pictures, and Videos libraries
 description: Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
 ms.date: 06/18/2018
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
 # Files and folders in the Music, Pictures, and Videos libraries
@@ -16,7 +16,7 @@ A library is a virtual collection of folders, which includes a known folder by d
 ## Prerequisites
 
 
--   **Understand async programming for Universal Windows Platform (UWP) apps**
+-   **Understand async programming for WinUI apps**
 
     You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 

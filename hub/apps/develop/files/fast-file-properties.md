@@ -1,17 +1,17 @@
 ---
-title: Fast access to file properties in UWP
-description: Efficiently gather a list of files and their properties from a library to use in a UWP app.
+title: Fast access to file properties in WinUI
+description: Efficiently gather a list of files and their properties from a library to use in a WinUI app.
 ms.date: 02/06/2019
 ms.topic: article
-keywords: windows 10, uwp, file, properties
+keywords: windows 10, winui, file, properties
 ms.localizationpriority: medium
 ---
-# Fast access to file properties in UWP 
+# Fast access to file properties in WinUI 
 
 Learn how to quickly gather a list of files and their properties from a library and use those properties in an app.  
 
 Prerequisites 
-- **Asynchronous programming for Universal Windows Platform (UWP) apps**     
+- **Asynchronous programming for WinUI apps**     
 You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
 - **Access permissions to Libraries**  
 The code in these examples requires the picturesLibrary capability, but your file location may require a different capability, or no capability at all. To learn more, see [File access permissions](./file-access-permissions.md). 
