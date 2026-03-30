@@ -25,13 +25,13 @@ Your app's MRU is represented by the [**StorageItemMostRecentlyUsedList**](/uwp/
 
 -   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Access permissions to the location**
 
     See [File access permissions](file-access-permissions.md).
 
--   [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md)
+-   [Open files and folders with a picker](/windows/uwp/files/quickstart-using-file-and-folder-pickers)
 
     Picked files are often the same files that users return to again and again.
 

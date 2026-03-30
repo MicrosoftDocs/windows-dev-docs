@@ -12,16 +12,16 @@ Learn how to quickly gather a list of files and their properties from a library 
 
 Prerequisites 
 - **Asynchronous programming for Universal Windows Platform (UWP) apps**     
-You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md). 
+You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
 - **Access permissions to Libraries**  
 The code in these examples requires the **picturesLibrary** capability, but your file location may require a different capability, or no capability at all. To learn more, see [File access permissions](./file-access-permissions.md). 
 - **Simple file enumeration**   
-This example uses [QueryOptions](/uwp/api/Windows.Storage.Search.QueryOptions) to set a few advanced enumeration properties. To learn more about just getting a simple list of files for a smaller directory, see [Enumerate and query files and folders](./quickstart-listing-files-and-folders.md). 
+This example uses [QueryOptions](/uwp/api/Windows.Storage.Search.QueryOptions) to set a few advanced enumeration properties. To learn more about just getting a simple list of files for a smaller directory, see [Enumerate and query files and folders](./list-files-folders.md). 
 
 ## Usage  
 Many apps need to list the properties of a group of files, but don't always need to interact with the files directly. For example, a music app plays (opens) one file at a time, but it needs the properties of all of the files in a folder so the app can show the song queue, or so the user can choose a valid file to play. 
 
-The examples on this page shouldn't be used in apps that will modify the metadata of every file or apps that interact with all the resulting StorageFiles beyond reading their properties. See [Enumerate and query files and folders](./quickstart-listing-files-and-folders.md) for more information. 
+The examples on this page shouldn't be used in apps that will modify the metadata of every file or apps that interact with all the resulting StorageFiles beyond reading their properties. See [Enumerate and query files and folders](./list-files-folders.md) for more information. 
 
 ## Enumerate all the pictures in a location 
 In this example, we will
@@ -113,7 +113,7 @@ Apps can request the user to add the location to the index using [StorageLibrary
  
 ## See also
 [QueryOptions API Reference](/uwp/api/windows.storage.search.queryoptions)  
-[Enumerate and query files and folders](./quickstart-listing-files-and-folders.md)  
+[Enumerate and query files and folders](./list-files-folders.md)  
 [File access permissions](./file-access-permissions.md)  
  
  

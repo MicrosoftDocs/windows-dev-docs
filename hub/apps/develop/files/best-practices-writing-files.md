@@ -35,7 +35,7 @@ The **Write** methods of the [**FileIO**](/uwp/api/Windows.Storage.FileIO) and [
 
 A [**StorageFile**](/uwp/api/windows.storage.storagefile) object is not a file handle like the native Win32 programming model. Instead, a [**StorageFile**](/uwp/api/windows.storage.storagefile) is a representation of a file with methods to manipulate its contents.
 
-Understanding this concept is useful when performing I/O with a **StorageFile**. For example, the [Writing to a file](quickstart-reading-and-writing-files.md#writing-to-a-file) section presents three ways to write to a file:
+Understanding this concept is useful when performing I/O with a **StorageFile**. For example, the [Writing to a file](create-read-write-files.md#writing-to-a-file) section presents three ways to write to a file:
 
 * Using the [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) method.
 * By creating a buffer and then calling the [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) method.
@@ -129,7 +129,7 @@ The time values on the y-axis are omitted intentionally from this chart because 
 
 ## I/O during app suspension
 
-Your app must designed to handle suspension if you want to keep state information or metadata for use in later sessions. For background information about app suspension, see [App lifecycle](../launch-resume/app-lifecycle.md) and [this blog post](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97).
+Your app must designed to handle suspension if you want to keep state information or metadata for use in later sessions. For background information about app suspension, see [App lifecycle](/windows/uwp/launch-resume/app-lifecycle) and [this blog post](https://blogs.windows.com/buildingapps/2016/04/28/the-lifecycle-of-a-uwp-app/#qLwdmV5zfkAPMEco.97).
 
 Unless the OS grants extended execution to your app, when your app is suspended it has 5 seconds to release all its resources and save its data. For the best reliability and user experience, always assume the time you have to handle suspension tasks is limited. Keep in mind the following guidelines during the 5 second time period for handling suspension tasks:
 
@@ -190,4 +190,4 @@ The [Parallel Programming with .NET blog](https://devblogs.microsoft.com/pfxteam
 
 ## See also
 
-* [Create, write, and read a file](quickstart-reading-and-writing-files.md)
+* [Create, write, and read a file](create-read-write-files.md)

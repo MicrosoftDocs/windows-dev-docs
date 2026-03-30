@@ -18,7 +18,7 @@ A library is a virtual collection of folders, which includes a known folder by d
 
 -   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Access permissions to the location**
 
@@ -33,7 +33,7 @@ A library is a virtual collection of folders, which includes a known folder by d
 ## Get a reference to a library
 
 > [!NOTE]
-> Remember to declare the appropriate capability. See [App capability declarations](../packaging/app-capability-declarations.md) for more information.
+> Remember to declare the appropriate capability. See [App capability declarations](/windows/uwp/packaging/app-capability-declarations) for more information.
  
 
 To get a reference to the user's Music, Pictures, or Video library, call the [**StorageLibrary.GetLibraryAsync**](/uwp/api/windows.storage.storagelibrary.getlibraryasync) method. Provide the corresponding value from the [**KnownLibraryId**](/uwp/api/Windows.Storage.KnownLibraryId) enumeration.
@@ -119,7 +119,7 @@ The locations are:
 
 -   **Video** folder. Contains videos.
 
-Users or apps may also store media files outside the media library folders on the SD card. To find a media file reliably on the SD card, scan the contents of the SD card, or ask the user to locate the file by using a file picker. For more info, see [Access the SD card](access-the-sd-card.md).
+Users or apps may also store media files outside the media library folders on the SD card. To find a media file reliably on the SD card, scan the contents of the SD card, or ask the user to locate the file by using a file picker. For more info, see [Access the SD card](/windows/uwp/files/access-the-sd-card).
 
 ## Querying the media libraries
 

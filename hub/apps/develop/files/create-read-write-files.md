@@ -29,11 +29,11 @@ Read and write a file using a [**StorageFile**](/uwp/api/windows.storage.storage
 
 -   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](../threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Know how to get the file that you want to read from, write to, or both**
 
-    You can learn how to get a file by using a file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
+    You can learn how to get a file by using a file picker in [Open files and folders with a picker](/windows/uwp/files/quickstart-using-file-and-folder-pickers).
 
 ## Creating a file
 
@@ -248,7 +248,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  Next, get an output stream by calling the [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`. If you're using C#, then enclose this in a **using** statement to manage the output stream's lifetime. If you're using [C++/WinRT](../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.
+2.  Next, get an output stream by calling the [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`. If you're using C#, then enclose this in a **using** statement to manage the output stream's lifetime. If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -325,7 +325,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 
 **Best practices for writing to a file**
 
-For additional details and best practice guidance, see [Best practices for writing to files](best-practices-for-writing-to-files.md).
+For additional details and best practice guidance, see [Best practices for writing to files](best-practices-writing-files.md).
     
 ## Reading from a file
 
@@ -550,4 +550,4 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 
 ## See also
 
-- [Best practices for writing to files](best-practices-for-writing-to-files.md)
+- [Best practices for writing to files](best-practices-writing-files.md)
