@@ -29,14 +29,14 @@ For guidance on how to store your Universal Windows Platform app's data, see the
 
 -   **Access permissions to the location**
 
-    For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
+    For example, the code in these examples require the picturesLibrary capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
 
 ## Enumerate files and folders in a location
 
 > [!NOTE]
-> Remember to declare the **picturesLibrary** capability.
+> Remember to declare the picturesLibrary capability.
 
-In this example we first use the [**StorageFolder.GetFilesAsync**](/uwp/api/windows.storage.storagefolder.getfilesasync) method to get all the files in the root folder of the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders) and list the name of each file. Next, we use the [**StorageFolder.GetFoldersAsync**](/uwp/api/windows.storage.storagefolder.getfoldersasync) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.
+In this example we first use the [StorageFolder.GetFilesAsync](/uwp/api/windows.storage.storagefolder.getfilesasync) method to get all the files in the root folder of the [KnownFolders.PicturesLibrary](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders) and list the name of each file. Next, we use the [StorageFolder.GetFoldersAsync](/uwp/api/windows.storage.storagefolder.getfoldersasync) method to get all the subfolders in the PicturesLibrary and list the name of each subfolder.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -169,9 +169,9 @@ Next folder
 ```
 
 > [!NOTE]
-> In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
+> In C# or Visual Basic, remember to put the async keyword in the method declaration of any method in which you use the await operator.
 
-Alternatively, you can use the [**StorageFolder.GetItemsAsync**](/uwp/api/windows.storage.storagefolder.getitemsasync) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
+Alternatively, you can use the [StorageFolder.GetItemsAsync](/uwp/api/windows.storage.storagefolder.getitemsasync) method to get all items (both files and subfolders) in a particular location. The following example uses the GetItemsAsync method to get all files and subfolders in the root folder of the [KnownFolders.PicturesLibrary](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
@@ -274,9 +274,9 @@ Next item
 
 ## Query files in a location and enumerate matching files
 
-In this example we query for all the files in the [**KnownFolders.PicturesLibrary**](/uwp/api/windows.storage.knownfolders.pictureslibrary) grouped by the month, and this time the example recurses into subfolders. First, we call [**StorageFolder.CreateFolderQuery**](/uwp/api/windows.storage.storagefolder.createfolderquery) and pass the [**CommonFolderQuery.GroupByMonth**](/uwp/api/windows.storage.search.commonfolderquery) value to the method. That gives us a [**StorageFolderQueryResult**](/uwp/api/windows.storage.search.storagefolderqueryresult) object.
+In this example we query for all the files in the [KnownFolders.PicturesLibrary](/uwp/api/windows.storage.knownfolders.pictureslibrary) grouped by the month, and this time the example recurses into subfolders. First, we call [StorageFolder.CreateFolderQuery](/uwp/api/windows.storage.storagefolder.createfolderquery) and pass the [CommonFolderQuery.GroupByMonth](/uwp/api/windows.storage.search.commonfolderquery) value to the method. That gives us a [StorageFolderQueryResult](/uwp/api/windows.storage.search.storagefolderqueryresult) object.
 
-Next we call [**StorageFolderQueryResult.GetFoldersAsync**](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) which returns [**StorageFolder**](/uwp/api/windows.storage.storagefolder) objects representing virtual folders. In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.
+Next we call [StorageFolderQueryResult.GetFoldersAsync](/uwp/api/windows.storage.search.storagefolderqueryresult.getfoldersasync) which returns [StorageFolder](/uwp/api/windows.storage.storagefolder) objects representing virtual folders. In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.
 
 ```csharp
 StorageFolder picturesFolder = KnownFolders.PicturesLibrary;

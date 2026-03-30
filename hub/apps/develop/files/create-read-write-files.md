@@ -16,11 +16,11 @@ dev_langs:
 
 **Important APIs**
 
--   [**StorageFolder class**](/uwp/api/windows.storage.storagefolder)
--   [**StorageFile class**](/uwp/api/windows.storage.storagefile)
--   [**FileIO class**](/uwp/api/windows.storage.fileio)
+-   [StorageFolder class](/uwp/api/windows.storage.storagefolder)
+-   [StorageFile class](/uwp/api/windows.storage.storagefile)
+-   [FileIO class](/uwp/api/windows.storage.fileio)
 
-Read and write a file using a [**StorageFile**](/uwp/api/windows.storage.storagefile) object.
+Read and write a file using a [StorageFile](/uwp/api/windows.storage.storagefile) object.
 
 > [!NOTE]
 > For a complete sample, see the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
@@ -74,7 +74,7 @@ Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt"
 
 ## Writing to a file
 
-Here's how to write to a writable file on disk using the [**StorageFile**](/uwp/api/windows.storage.storagefile) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).
+Here's how to write to a writable file on disk using the [StorageFile](/uwp/api/windows.storage.storagefile) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [StorageFolder.GetFileAsync](/uwp/api/windows.storage.storagefolder.getfileasync).
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder =
@@ -110,7 +110,7 @@ Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 
 **Writing text to a file**
 
-Write text to your file by calling the [**FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync) method.
+Write text to your file by calling the [FileIO.WriteTextAsync](/uwp/api/windows.storage.fileio.writetextasync) method.
 
 ```csharp
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
@@ -144,7 +144,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 
 **Writing bytes to a file by using a buffer (2 steps)**
 
-1.  First, call [**CryptographicBuffer.ConvertStringToBinary**](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) to get a buffer of the bytes (based on a string) that you want to write to your file.
+1.  First, call [CryptographicBuffer.ConvertStringToBinary](/uwp/api/windows.security.cryptography.cryptographicbuffer.convertstringtobinary) to get a buffer of the bytes (based on a string) that you want to write to your file.
 
     ```csharp
     var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -185,7 +185,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
         Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
     ```
 
-2.  Then write the bytes from your buffer to your file by calling the [**FileIO.WriteBufferAsync**](/uwp/api/windows.storage.fileio.writebufferasync) method.
+2.  Then write the bytes from your buffer to your file by calling the [FileIO.WriteBufferAsync](/uwp/api/windows.storage.fileio.writebufferasync) method.
 
     ```csharp
     await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
@@ -213,7 +213,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 
 **Writing text to a file by using a stream (4 steps)**
 
-1.  First, open the file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method. It returns a stream of the file's content when the open operation completes.
+1.  First, open the file by calling the [StorageFile.OpenAsync](/uwp/api/windows.storage.storagefile.openasync) method. It returns a stream of the file's content when the open operation completes.
 
     ```csharp
     var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
@@ -248,7 +248,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
     ```
 
-2.  Next, get an output stream by calling the [**IRandomAccessStream.GetOutputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`. If you're using C#, then enclose this in a **using** statement to manage the output stream's lifetime. If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.
+2.  Next, get an output stream by calling the [IRandomAccessStream.GetOutputStreamAt](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`. If you're using C#, then enclose this in a using statement to manage the output stream's lifetime. If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))
@@ -274,7 +274,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     End Using
     ```
 
-3.  Now add this code (if you're using C#, within the existing **using** statement) to write to the output stream by creating a new [**DataWriter**](/uwp/api/windows.storage.streams.datawriter) object and calling the [**DataWriter.WriteString**](/uwp/api/windows.storage.streams.datawriter.writestring) method.
+3.  Now add this code (if you're using C#, within the existing using statement) to write to the output stream by creating a new [DataWriter](/uwp/api/windows.storage.streams.datawriter) object and calling the [DataWriter.WriteString](/uwp/api/windows.storage.streams.datawriter.writestring) method.
 
     ```csharp
     using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
@@ -300,7 +300,7 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
     ```
 
-4.  Lastly, add this code (if you're using C#, within the inner **using** statement) to save the text to your file with [**DataWriter.StoreAsync**](/uwp/api/windows.storage.streams.datawriter.storeasync) and close the stream with [**IOutputStream.FlushAsync**](/uwp/api/windows.storage.streams.ioutputstream.flushasync).
+4.  Lastly, add this code (if you're using C#, within the inner using statement) to save the text to your file with [DataWriter.StoreAsync](/uwp/api/windows.storage.streams.datawriter.storeasync) and close the stream with [IOutputStream.FlushAsync](/uwp/api/windows.storage.streams.ioutputstream.flushasync).
 
     ```csharp
     await dataWriter.StoreAsync();
@@ -329,7 +329,7 @@ For additional details and best practice guidance, see [Best practices for writi
     
 ## Reading from a file
 
-Here's how to read from a file on disk using the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) class. The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync).
+Here's how to read from a file on disk using the [StorageFile](/uwp/api/Windows.Storage.StorageFile) class. The common first step for each of the ways of reading from a file is to get the file with [StorageFolder.GetFileAsync](/uwp/api/windows.storage.storagefolder.getfileasync).
 
 ```csharp
 Windows.Storage.StorageFolder storageFolder =
@@ -359,7 +359,7 @@ Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 
 **Reading text from a file**
 
-Read text from your file by calling the [**FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync) method.
+Read text from your file by calling the [FileIO.ReadTextAsync](/uwp/api/windows.storage.fileio.readtextasync) method.
 
 ```csharp
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
@@ -388,7 +388,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 
 **Reading text from a file by using a buffer (2 steps)**
 
-1.  First, call the [**FileIO.ReadBufferAsync**](/uwp/api/windows.storage.fileio.readbufferasync) method.
+1.  First, call the [FileIO.ReadBufferAsync](/uwp/api/windows.storage.fileio.readbufferasync) method.
 
     ```csharp
     var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
@@ -417,7 +417,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
     ```
 
-2.  Then use a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object to read first the length of the buffer and then its contents.
+2.  Then use a [DataReader](/uwp/api/windows.storage.streams.datareader) object to read first the length of the buffer and then its contents.
 
     ```csharp
     using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
@@ -444,7 +444,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 
 **Reading text from a file by using a stream (4 steps)**
 
-1.  Open a stream for your file by calling the [**StorageFile.OpenAsync**](/uwp/api/windows.storage.storagefile.openasync) method. It returns a stream of the file's content when the operation completes.
+1.  Open a stream for your file by calling the [StorageFile.OpenAsync](/uwp/api/windows.storage.storagefile.openasync) method. It returns a stream of the file's content when the operation completes.
 
     ```csharp
     var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read);
@@ -492,7 +492,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     Dim size = stream.Size
     ```
 
-3.  Get an input stream by calling the [**IRandomAccessStream.GetInputStreamAt**](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) method. Put this in a **using** statement to manage the stream's lifetime. Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.
+3.  Get an input stream by calling the [IRandomAccessStream.GetInputStreamAt](/uwp/api/windows.storage.streams.irandomaccessstream.getinputstreamat) method. Put this in a using statement to manage the stream's lifetime. Specify 0 when you call GetInputStreamAt to set the position to the beginning of the stream.
 
     ```csharp
     using (var inputStream = stream.GetInputStreamAt(0))
@@ -519,7 +519,7 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     End Using
     ```
 
-4.  Lastly, add this code within the existing **using** statement to get a [**DataReader**](/uwp/api/windows.storage.streams.datareader) object on the stream then read the text by calling [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) and [**DataReader.ReadString**](/uwp/api/windows.storage.streams.datareader.readstring).
+4.  Lastly, add this code within the existing using statement to get a [DataReader](/uwp/api/windows.storage.streams.datareader) object on the stream then read the text by calling [DataReader.LoadAsync](/uwp/api/windows.storage.streams.datareader.loadasync) and [DataReader.ReadString](/uwp/api/windows.storage.streams.datareader.readstring).
 
     ```csharp
     using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))

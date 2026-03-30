@@ -14,7 +14,7 @@ These guidelines describe how to use thumbnail images to help users preview file
 
 **Important APIs**
 
--   [**ThumbnailMode**](/uwp/api/windows.storage.fileproperties.thumbnailmode)
+-   [ThumbnailMode](/uwp/api/windows.storage.fileproperties.thumbnailmode)
 
 ## Should my app include thumbnails?
 

@@ -14,7 +14,7 @@ Prerequisites 
 - **Asynchronous programming for Universal Windows Platform (UWP) apps**     
 You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps). 
 - **Access permissions to Libraries**  
-The code in these examples requires the **picturesLibrary** capability, but your file location may require a different capability, or no capability at all. To learn more, see [File access permissions](./file-access-permissions.md). 
+The code in these examples requires the picturesLibrary capability, but your file location may require a different capability, or no capability at all. To learn more, see [File access permissions](./file-access-permissions.md). 
 - **Simple file enumeration**   
 This example uses [QueryOptions](/uwp/api/Windows.Storage.Search.QueryOptions) to set a few advanced enumeration properties. To learn more about just getting a simple list of files for a smaller directory, see [Enumerate and query files and folders](./list-files-folders.md). 
 
@@ -41,7 +41,7 @@ Users may have thousands or millions of files in their pictures library, so call
 In our example, we do this by using [StorageFileQueryResult.GetFilesAsync(UInt32 StartIndex, UInt32 maxNumberOfItems)](/uwp/api/windows.storage.search.storagefilequeryresult.getfilesasync) to only fetch 100 files at a time. The app will then process the files and allow the OS to release that memory afterwards. This technique caps the maximum memory of the app and ensures the system stays responsive. Of course, you will need to adjust the number of files returned for your scenario, but to ensure a responsive experience for all users, it's recommended to not fetch more than 500 files at one time.
 
 
-**Example**  
+Example  
 ```csharp
 StorageFolder folderToEnumerate = KnownFolders.PicturesLibrary; 
 // Check if the folder is indexed before doing anything. 
