@@ -11383,57 +11383,57 @@
     {
       "source_path": "uwp/files/quickstart-listing-files-and-folders.md",
       "redirect_url": "/windows/apps/develop/files/list-files-folders",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/quickstart-reading-and-writing-files.md",
       "redirect_url": "/windows/apps/develop/files/create-read-write-files",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/best-practices-for-writing-to-files.md",
       "redirect_url": "/windows/apps/develop/files/best-practices-writing-files",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/quickstart-getting-file-properties.md",
       "redirect_url": "/windows/apps/develop/files/file-properties",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/quickstart-determining-availability-of-microsoft-onedrive-files.md",
       "redirect_url": "/windows/apps/develop/files/determine-availability-microsoft-onedrive-files",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md",
       "redirect_url": "/windows/apps/develop/files/music-pictures-videos-libraries",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/thumbnails.md",
       "redirect_url": "/windows/apps/develop/files/thumbnails",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/how-to-track-recently-used-files-and-folders.md",
       "redirect_url": "/windows/apps/develop/files/track-recently-used-files-folders",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/change-tracking-filesystem.md",
       "redirect_url": "/windows/apps/develop/files/change-tracking-filesystem",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/file-access-permissions.md",
       "redirect_url": "/windows/apps/develop/files/file-access-permissions",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/files/fast-file-properties.md",
       "redirect_url": "/windows/apps/develop/files/fast-file-properties",
-      "redirect_document_id": true
+      "redirect_document_id": false
     }
   ]
 }
