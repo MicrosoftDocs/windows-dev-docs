@@ -33,7 +33,7 @@ Access files and folders by letting the user interact with a picker. You can use
 
 - **Access permissions to the location**
 
-    See [File access permissions](file-access-permissions.md).
+    See [File access permissions](/windows/apps/develop/files/file-access-permissions).
 
 ## File picker UI
 
@@ -167,7 +167,7 @@ else
 ```
 
 > [!TIP]
-> Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [**MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](how-to-track-recently-used-files-and-folders.md).
+> Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [**MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](/windows/apps/develop/files/track-recently-used-files-folders).
 
 ## See also
 

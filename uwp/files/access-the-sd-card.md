@@ -50,7 +50,7 @@ To access files on the SD card, typically you have to specify the following thin
 
 Use the preceding method also to access media files on the SD card without referencing a known folder like **KnownFolders.MusicLibrary**, or to access media files that are stored outside of the media library folders.
 
-To access media files stored in the media libraries—Music, Photos, or Videos—by using known folders, you only have to specify the associated capability in the app manifest file—**musicLibrary**, **picturesLibrary**, or **videoLibrary**. You do not have to specify the **removableStorage** capability. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+To access media files stored in the media libraries—Music, Photos, or Videos—by using known folders, you only have to specify the associated capability in the app manifest file—**musicLibrary**, **picturesLibrary**, or **videoLibrary**. You do not have to specify the **removableStorage** capability. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](/windows/apps/develop/files/music-pictures-videos-libraries).
 
 ## Accessing files on the SD card
 

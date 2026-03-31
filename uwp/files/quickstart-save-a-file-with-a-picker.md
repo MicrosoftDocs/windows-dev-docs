@@ -32,7 +32,7 @@ Use [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to let
 
 - **Access permissions to the location**
 
-    See [File access permissions](file-access-permissions.md).
+    See [File access permissions](/windows/apps/develop/files/file-access-permissions).
 
 ## FileSavePicker: step-by-step
 
@@ -97,7 +97,7 @@ Use a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) so t
     }
     ```
 
-The example checks that the file is valid and writes its own file name into it. Also see [Creating, writing, and reading a file](quickstart-reading-and-writing-files.md).
+The example checks that the file is valid and writes its own file name into it. Also see [Creating, writing, and reading a file](/windows/apps/develop/files/create-read-write-files).
 
 > [!TIP]
 > You should always check the saved file to make sure it is valid before you perform any other processing. Then, you can save content to the file as appropriate for your app, and provide appropriate behavior if the picked file is not valid.
@@ -110,4 +110,4 @@ The example checks that the file is valid and writes its own file name into it. 
 
 [Integrating with file picker contracts](/previous-versions/windows/apps/hh465192(v=win.10))
 
-[Creating, writing, and reading a file](quickstart-reading-and-writing-files.md)
+[Creating, writing, and reading a file](/windows/apps/develop/files/create-read-write-files)

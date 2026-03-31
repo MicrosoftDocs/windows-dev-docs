@@ -194,36 +194,14 @@ items:
   - name: Files, folders, and libraries
     href: ../files/index.md
     items:
-    - name: Enumerate and query files and folders
-      href: ../files/quickstart-listing-files-and-folders.md
-    - name: Create, write, and read a file
-      href: ../files/quickstart-reading-and-writing-files.md
-    - name: Best practices for writing to files
-      href: ../files/best-practices-for-writing-to-files.md
-    - name: Get file properties
-      href: ../files/quickstart-getting-file-properties.md
     - name: Open files and folders with a picker
       href: ../files/quickstart-using-file-and-folder-pickers.md
     - name: Save a file with a picker
       href: ../files/quickstart-save-a-file-with-a-picker.md
     - name: Accessing HomeGroup content
       href: ../files/quickstart-accessing-homegroup-content.md
-    - name: Determining availability of Microsoft OneDrive files
-      href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
-    - name: Files and folders in the Music, Pictures, and Videos libraries
-      href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
-    - name: Thumbnail images
-      href: ../files/thumbnails.md
-    - name: Track recently used files and folders
-      href: ../files/how-to-track-recently-used-files-and-folders.md
-    - name: Track file system changes in the background
-      href: ../files/change-tracking-filesystem.md
     - name: Access the SD card
       href: ../files/access-the-sd-card.md
-    - name: File access permissions
-      href: ../files/file-access-permissions.md
-    - name: Fast access to file properties in UWP
-      href: ../files/fast-file-properties.md
   - name: Machine Learning
     href: /windows/ai/
 - name: Deployment
