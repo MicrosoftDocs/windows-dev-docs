@@ -28,7 +28,7 @@ items:
       - name: Release notes
         items:
         - name: Windows App SDK 2.0
-          href: windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental
+          href: windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=preview
         - name: Windows App SDK 1.8
           href: windows-app-sdk/release-notes/windows-app-sdk-1-8.md
         - name: Windows App SDK 1.7
