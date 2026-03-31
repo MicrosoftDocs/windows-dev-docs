@@ -42,7 +42,7 @@ To get a reference to the user's Music, Pictures, or Video library, call the [St
 -   [KnownLibraryId.Pictures](/uwp/api/windows.storage.knownfolders.pictureslibrary)
 -   [KnownLibraryId.Videos](/uwp/api/windows.storage.knownfolders.videoslibrary)
 
-```cs
+```csharp
 var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Pictures);
 ```
 
@@ -51,7 +51,7 @@ var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.St
 
 To get the list of folders in a library, get the value of the [StorageLibrary.Folders](/uwp/api/windows.storage.storagelibrary.folders) property.
 
-```cs
+```csharp
 using Windows.Foundation.Collections;
 IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
@@ -61,7 +61,7 @@ IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.F
 
 To get the folder in a library where new files are saved by default, get the value of the [StorageLibrary.SaveFolder](/uwp/api/windows.storage.storagelibrary.savefolder) property.
 
-```cs
+```csharp
 Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
@@ -70,7 +70,7 @@ Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 To add a folder to a library, you call the [StorageLibrary.RequestAddFolderAsync](/uwp/api/windows.storage.storagelibrary.requestaddfolderasync). Taking the Pictures Library as an example, calling this method causes a folder picker to be shown to the user with an **Add this folder to Pictures** button. If the user picks a folder then the folder remains in its original location on disk and it becomes an item in the [StorageLibrary.Folders](/uwp/api/windows.storage.storagelibrary.folders) property (and in the built-in Photos app), but the folder does not appear as a child of the Pictures folder in File Explorer.
 
 
-```cs
+```csharp
 Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
@@ -83,7 +83,7 @@ When you call [StorageLibrary.RequestRemoveFolderAsync](/uwp/api/windows.storage
 The following example assumes that the user has selected the folder to remove from a [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) control named lvPictureFolders.
 
 
-```cs
+```csharp
 bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
@@ -93,7 +93,7 @@ bool result = await myPictures.RequestRemoveFolderAsync(folder);
 To get notified about changes to the list of folders in a library, register a handler for the [StorageLibrary.DefinitionChanged](/uwp/api/windows.storage.storagelibrary.definitionchanged) event of the library.
 
 
-```cs
+```csharp
 myPictures.DefinitionChanged += MyPictures_DefinitionChanged;
 
 void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
@@ -125,7 +125,7 @@ Users or apps may also store media files outside the media library folders on th
 
 To get a collection of files, specify the library and the type of files that you want.
 
-```cs
+```csharp
 using Windows.Storage;
 using Windows.Storage.Search;
 
@@ -171,7 +171,7 @@ The Camera Roll and the Saved Pictures folder do not support the deep queries.
 
 If you want to let the user open a photo again later in the app that captured it, you can save the CreatorAppId with the photo's metadata by using code similar to the following example. In this example, testPhoto is a [StorageFile](/uwp/api/Windows.Storage.StorageFile).
 
-```cs
+```csharp
 IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();
 
 propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
@@ -186,7 +186,7 @@ When you access a media library by using a known folder such as KnownFolders.Pic
 
 For example, when you run the following code, the file is not added to the media library. In the line of code, `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))`, both the OpenAsync method and the GetOutputStreamAt method open a stream. However only the stream opened by the GetOutputStreamAt method is disposed as a result of the using statement. The other stream remains open and prevents saving the file.
 
-```cs
+```csharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
 StorageFile sourceFile = await testFolder.GetFileAsync("TestImage.jpg");
 StorageFile destinationFile = await KnownFolders.CameraRoll.CreateFileAsync("MyTestImage.jpg");
@@ -201,7 +201,7 @@ using (var sourceStream = (await sourceFile.OpenReadAsync()).GetInputStreamAt(0)
 
 To use stream methods successfully to add a file to the media library, make sure to close all the streams that your code opens, as shown in the following example.
 
-```cs
+```csharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
 StorageFile sourceFile = await testFolder.GetFileAsync("TestImage.jpg");
 StorageFile destinationFile = await KnownFolders.CameraRoll.CreateFileAsync("MyTestImage.jpg");

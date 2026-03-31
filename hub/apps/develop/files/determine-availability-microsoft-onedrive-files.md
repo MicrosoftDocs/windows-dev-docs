@@ -52,7 +52,7 @@ The following steps illustrate how to determine if a file is currently available
 
 The following generic method illustrates how to enumerate any folder and return the collection of [StorageFile](/uwp/api/Windows.Storage.StorageFile) objects for that folder. The calling method then iterates over the returned collection referencing the [StorageFile.IsAvailable](/uwp/api/windows.storage.storagefile.isavailable) property for each file.
 
-```cs
+```csharp
 /// <summary>
 /// Generic function that retrieves all files from the specified folder.
 /// </summary>

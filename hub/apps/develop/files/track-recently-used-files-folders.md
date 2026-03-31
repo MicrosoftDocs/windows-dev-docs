@@ -39,7 +39,7 @@ Your app's MRU is represented by the [StorageItemMostRecentlyUsedList](/uwp/api/
 
 -   The files that your user picks are often files that they return to repeatedly. So consider adding picked files to your app's MRU as soon as they are picked. Here's how.
 
-    ```cs
+    ```csharp
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
     var mru = Windows.Storage.AccessCache.StorageApplicationPermissions.MostRecentlyUsedList;
@@ -61,13 +61,13 @@ Use the retrieval method most appropriate for the item you want to retrieve.
 
 Here's how to get back the file we just added.
 
-```cs
+```csharp
 StorageFile retrievedFile = await mru.GetFileAsync(mruToken);
 ```
 
 Here's how to iterate all the entries to get tokens and then items.
 
-```cs
+```csharp
 foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 {
     string mruToken = entry.Token;
