@@ -25,7 +25,7 @@ Access content stored in the user's HomeGroup folder, including pictures, music,
 
 -   **App capability declarations**
 
-    To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](file-access-permissions.md).
+    To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](/windows/apps/develop/files/file-access-permissions).
 
     > [!NOTE]
     > Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.     
@@ -36,7 +36,7 @@ Access content stored in the user's HomeGroup folder, including pictures, music,
 
 -   **Understand file and folder queries**
 
-    You can use queries to enumerate files and folders in the HomeGroup. To learn about file and folder queries, see [Enumerating and querying files and folders](quickstart-listing-files-and-folders.md).
+    You can use queries to enumerate files and folders in the HomeGroup. To learn about file and folder queries, see [Enumerating and querying files and folders](/windows/apps/develop/files/list-files-folders).
 
 ## Open the file picker at the HomeGroup
 

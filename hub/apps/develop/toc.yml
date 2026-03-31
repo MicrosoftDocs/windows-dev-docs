@@ -248,6 +248,28 @@ items:
           href: files/using-file-folder-pickers.md
         - name: "Tutorial: Save a file with a picker"
           href: files/pickers-save-file.md
+        - name: Enumerate and query files and folders
+          href: files/list-files-folders.md
+        - name: Create, write, and read a file
+          href: files/create-read-write-files.md
+        - name: Best practices for writing to files
+          href: files/best-practices-writing-files.md
+        - name: Get file properties
+          href: files/file-properties.md
+        - name: Determining availability of Microsoft OneDrive files
+          href: files/determine-availability-microsoft-onedrive-files.md
+        - name: Files and folders in the Music, Pictures, and Videos libraries
+          href: files/music-pictures-videos-libraries.md
+        - name: Thumbnail images
+          href: files/thumbnails.md
+        - name: Track recently used files and folders
+          href: files/track-recently-used-files-folders.md
+        - name: Track file system changes in the background
+          href: files/change-tracking-filesystem.md
+        - name: File access permissions
+          href: files/file-access-permissions.md
+        - name: Fast access to file properties in UWP
+          href: files/fast-file-properties.md
     - name: Devices and sensors
       items:
       - name: Overview
