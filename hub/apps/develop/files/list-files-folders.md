@@ -2,7 +2,7 @@
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: Enumerate and query files and folders
 description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
-ms.date: 12/19/2018
+ms.date: 03/31/2026
 ms.topic: how-to
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -25,7 +25,7 @@ For guidance on how to store your WinUI app's data, see the [ApplicationData](/u
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 -   **Access permissions to the location**
 
@@ -88,59 +88,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 
     OutputTextBlock().Text(outputString.str().c_str());
 }
-```
-
-```cpp
-#include <ppltasks.h>
-#include <string>
-#include <memory>
-
-using namespace Windows::Storage;
-using namespace Platform::Collections;
-using namespace concurrency;
-using namespace std;
-
-// Be sure to specify the Pictures Folder capability in the appxmanifext file.
-StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
-
-// Use a shared_ptr so that the string stays in memory
-// until the last task is complete.
-auto outputString = make_shared<wstring>();
-*outputString += L"Files:\n";
-
-// Get a read-only vector of the file objects
-// and pass it to the continuation.
-create_task(picturesFolder->GetFilesAsync())        
-   // outputString is captured by value, which creates a copy
-   // of the shared_ptr and increments its reference count.
-   .then ([outputString] (IVectorView\<StorageFile^>^ files)
-   {        
-       for ( unsigned int i = 0 ; i < files->Size; i++)
-       {
-           *outputString += files->GetAt(i)->Name->Data();
-           *outputString += L"\n";
-      }
-   })
-   // We need to explicitly state the return type
-   // here: -IAsyncOperation<...>
-   .then([picturesFolder]() -IAsyncOperation\<IVectorView\<StorageFolder^>^>^
-   {
-       return picturesFolder->GetFoldersAsync();
-   })
-   // Capture "this" to access m_OutputTextBlock from within the lambda.
-   .then([this, outputString](IVectorView/<StorageFolder^>^ folders)
-   {        
-       *outputString += L"Folders:\n";
-
-       for ( unsigned int i = 0; i < folders->Size; i++)
-       {
-          *outputString += folders->GetAt(i)->Name->Data();
-          *outputString += L"\n";
-       }
-
-       // Assume m_OutputTextBlock is a TextBlock defined in the XAML.
-       m_OutputTextBlock->Text = ref new String((*outputString).c_str());
-    });
 ```
 
 ```vb
@@ -224,30 +171,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
         OutputTextBlock().Text(outputString.str().c_str());
     }
 }
-```
-
-```cpp
-// See previous example for comments, namespace and #include info.
-StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
-auto outputString = make_shared<wstring>();
-
-create_task(picturesFolder->GetItemsAsync())        
-    .then ([this, outputString] (IVectorView<IStorageItem^>^ items)
-{        
-    for ( unsigned int i = 0 ; i < items->Size; i++)
-    {
-        *outputString += items->GetAt(i)->Name->Data();
-        if(items->GetAt(i)->IsOfType(StorageItemTypes::Folder))
-        {
-            *outputString += L"  folder\n";
-        }
-        else
-        {
-            *outputString += L"\n";
-        }
-        m_OutputTextBlock->Text = ref new String((*outputString).c_str());
-    }
-});
 ```
 
 ```vb
@@ -337,50 +260,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 
     OutputTextBlock().Text(outputString.str().c_str());
 }
-```
-
-```cpp
-#include <ppltasks.h>
-#include <string>
-#include <memory>
-using namespace Windows::Storage;
-using namespace Windows::Storage::Search;
-using namespace concurrency;
-using namespace Platform::Collections;
-using namespace Windows::Foundation::Collections;
-using namespace std;
-
-StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
-
-StorageFolderQueryResult^ queryResult =
-    picturesFolder->CreateFolderQuery(CommonFolderQuery::GroupByMonth);
-
-// Use shared_ptr so that outputString remains in memory
-// until the task completes, which is after the function goes out of scope.
-auto outputString = std::make_shared<wstring>();
-
-create_task( queryResult->GetFoldersAsync()).then([this, outputString] (IVectorView<StorageFolder^>^ view)
-{        
-    for ( unsigned int i = 0; i < view->Size; i++)
-    {
-        create_task(view->GetAt(i)->GetFilesAsync()).then([this, i, view, outputString](IVectorView<StorageFile^>^ files)
-        {
-            *outputString += view->GetAt(i)->Name->Data();
-            *outputString += L" (";
-            *outputString += to_wstring(files->Size);
-            *outputString += L")\r\n";
-            for (unsigned int j = 0; j < files->Size; j++)
-            {
-                *outputString += L"     ";
-                *outputString += files->GetAt(j)->Name->Data();
-                *outputString += L"\r\n";
-            }
-        }).then([this, outputString]()
-        {
-            m_OutputTextBlock->Text = ref new String((*outputString).c_str());
-        });
-    }    
-});
 ```
 
 ```vb

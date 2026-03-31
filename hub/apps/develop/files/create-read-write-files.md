@@ -29,7 +29,7 @@ Read and write a file using a [StorageFile](/uwp/api/windows.storage.storagefile
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency). To learn how to write asynchronous apps in C++/CX, see [Asynchronous programming in C++/CX](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 -   **Know how to get the file that you want to read from, write to, or both**
 
@@ -58,12 +58,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
     Windows::Storage::StorageFolder storageFolder{ Windows::Storage::ApplicationData::Current().LocalFolder() };
     co_await storageFolder.CreateFileAsync(L"sample.txt", Windows::Storage::CreationCollisionOption::ReplaceExisting);
 }
-```
-
-```cpp
-// Create a sample file; replace if exists.
-StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-concurrency::create_task(storageFolder->CreateFileAsync("sample.txt", CreationCollisionOption::ReplaceExisting));
 ```
 
 ```vb
@@ -95,14 +89,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 }
 ```
 
-```cpp
-StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile) 
-{
-    // Process file
-});
-```
-
 ```vb
 Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
@@ -127,15 +113,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
     // Write text to the file.
     co_await Windows::Storage::FileIO::WriteTextAsync(sampleFile, L"Swift as a shadow");
 }
-```
-
-```cpp
-StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile) 
-{
-    //Write text to a file
-    create_task(FileIO::WriteTextAsync(sampleFile, "Swift as a shadow"));
-});
 ```
 
 ```vb
@@ -169,15 +146,6 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     }
     ```
 
-    ```cpp
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-    {
-        // Create the buffer
-        IBuffer^ buffer = CryptographicBuffer::ConvertStringToBinary
-        ("What fools these mortals be", BinaryStringEncoding::Utf8);
-    });
-    ```
 
     ```vb
     Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
@@ -195,17 +163,6 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     co_await Windows::Storage::FileIO::WriteBufferAsync(sampleFile, buffer);
     ```
     
-    ```cpp
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-    {
-        // Create the buffer
-        IBuffer^ buffer = CryptographicBuffer::ConvertStringToBinary
-        ("What fools these mortals be", BinaryStringEncoding::Utf8);      
-        // Write bytes to a file using a buffer
-        create_task(FileIO::WriteBufferAsync(sampleFile, buffer));
-    });
-    ```
     
     ```vb
     Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
@@ -233,16 +190,6 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     }
     ```
     
-    ```cpp
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-    {
-        create_task(sampleFile->OpenAsync(FileAccessMode::ReadWrite)).then([sampleFile](IRandomAccessStream^ stream)
-        {
-            // Process stream
-        });
-    });
-    ```
     
     ```vb
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
@@ -263,10 +210,6 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     // The code in step 3 goes here.
     ```
     
-    ```cpp
-    // Add to "Process stream" in part 1
-    IOutputStream^ outputStream = stream->GetOutputStreamAt(0);
-    ```
     
     ```vb
     Using outputStream = stream.GetOutputStreamAt(0)
@@ -289,11 +232,6 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     // The code in step 4 goes here.
     ```
     
-    ```cpp
-    // Added after code from part 2
-    DataWriter^ dataWriter = ref new DataWriter(outputStream);
-    dataWriter->WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.");
-    ```
     
     ```vb
     Dim dataWriter As New DataWriter(outputStream)
@@ -312,11 +250,6 @@ Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
     outputStream.FlushAsync();
     ```
     
-    ```cpp
-    // Added after code from part 3
-    dataWriter->StoreAsync();
-    outputStream->FlushAsync();
-    ```
     
     ```vb
     Await dataWriter.StoreAsync()
@@ -344,14 +277,6 @@ auto sampleFile{ co_await storageFolder.GetFileAsync(L"sample.txt") };
 // Process file
 ```
 
-```cpp
-StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-{
-    // Process file
-});
-```
-
 ```vb
 Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.LocalFolder
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
@@ -374,14 +299,6 @@ Windows::Foundation::IAsyncOperation<winrt::hstring> ExampleCoroutineAsync()
 }
 ```
 
-```cpp
-StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-{
-    return FileIO::ReadTextAsync(sampleFile);
-});
-```
-
 ```vb
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
@@ -401,17 +318,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     // The code in step 2 goes here.
     ```
     
-    ```cpp
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-    {
-        return FileIO::ReadBufferAsync(sampleFile);
-    
-    }).then([](Streams::IBuffer^ buffer)
-    {
-        // Process buffer
-    });
-    ```
     
     ```vb
     Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
@@ -431,11 +337,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     winrt::hstring bufferText{ dataReader.ReadString(buffer.Length()) };
     ```
     
-    ```cpp
-    // Add to "Process buffer" section from part 1
-    auto dataReader = DataReader::FromBuffer(buffer);
-    String^ bufferText = dataReader->ReadString(buffer->Length);
-    ```
     
     ```vb
     Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer)
@@ -457,16 +358,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     // The code in step 2 goes here.
     ```
     
-    ```cpp
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    create_task(storageFolder->GetFileAsync("sample.txt")).then([](StorageFile^ sampleFile)
-    {
-        create_task(sampleFile->OpenAsync(FileAccessMode::Read)).then([sampleFile](IRandomAccessStream^ stream)
-        {
-            // Process stream
-        });
-    });
-    ```
     
     ```vb
     Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.Read)
@@ -483,10 +374,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     // The code in step 3 goes here.
     ```
     
-    ```cpp
-    // Add to "Process stream" from part 1
-    UINT64 size = stream->Size;
-    ```
     
     ```vb
     Dim size = stream.Size
@@ -507,11 +394,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     // The code in step 4 goes here.
     ```
     
-    ```cpp
-    // Add after code from part 2
-    IInputStream^ inputStream = stream->GetInputStreamAt(0);
-    auto dataReader = ref new DataReader(inputStream);
-    ```
     
     ```vb
     Using inputStream = stream.GetInputStreamAt(0)
@@ -534,13 +416,6 @@ Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
     winrt::hstring streamText{ dataReader.ReadString(cBytesLoaded) };
     ```
     
-    ```cpp
-    // Add after code from part 3
-    create_task(dataReader->LoadAsync(size)).then([sampleFile, dataReader](unsigned int numBytesLoaded)
-    {
-        String^ streamText = dataReader->ReadString(numBytesLoaded);
-    });
-    ```
     
     ```vb
     Dim dataReader As New DataReader(inputStream)

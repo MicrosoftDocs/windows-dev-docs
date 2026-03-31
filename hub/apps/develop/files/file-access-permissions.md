@@ -43,9 +43,6 @@ There are two primary ways to access files and folders in your app's install dir
     Windows::Storage::StorageFolder installedLocation{ Windows::ApplicationModel::Package::Current().InstalledLocation() };
     ```
 
-    ```cpp
-    Windows::Storage::StorageFolder^ installedLocation = Windows::ApplicationModel::Package::Current->InstalledLocation;
-    ```
 
     You can then access files and folders in the directory using [StorageFolder](/uwp/api/Windows.Storage.StorageFolder) methods. In the example, this StorageFolder is stored in the `installDirectory` variable. You can learn more about working with your app package and install directory from the [App package information sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Package) on GitHub.
 
@@ -74,13 +71,6 @@ There are two primary ways to access files and folders in your app's install dir
     }
     ```
 
-    ```cpp
-    auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appx:///file.txt")));
-    getFileTask.then([](StorageFile^ file) 
-    {
-        // Process file
-    });
-    ```
 
     When [GetFileFromApplicationUriAsync](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) completes, it returns a [StorageFile](/uwp/api/Windows.Storage.StorageFile) that represents the `file.txt` file in the app's install directory (`file` in the example).
 
@@ -115,10 +105,6 @@ There are two primary ways to access files and folders from your app's data loca
     };
     ```
 
-    ```cpp
-    using namespace Windows::Storage;
-    StorageFolder^ storageFolder = ApplicationData::Current->LocalFolder;
-    ```
 
     If you want to access your app's roaming or temporary folder, use the [RoamingFolder](/uwp/api/windows.storage.applicationdata.roamingfolder) or [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) property instead.
 
@@ -146,14 +132,6 @@ There are two primary ways to access files and folders from your app's data loca
     // Process file
     ```
 
-    ```cpp
-    using Windows::Storage;
-    auto getFileTask = create_task(StorageFile::GetFileFromApplicationUriAsync(ref new Uri("ms-appdata:///local/file.txt")));
-    getFileTask.then([](StorageFile^ file) 
-    {
-        // Process file
-    });
-    ```
 
     When [GetFileFromApplicationUriAsync](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync) completes, it returns a [StorageFile](/uwp/api/Windows.Storage.StorageFile) that represents the `file.txt` file in the app's local folder (`file` in the example).
 
@@ -200,14 +178,6 @@ By default, your app can only access files and folders in the user's Downloads f
     // Process file
     ```
 
-    ```cpp
-    using Windows::Storage;
-    auto createFileTask = create_task(DownloadsFolder::CreateFileAsync(L"file.txt"));
-    createFileTask.then([](StorageFile^ newFile)
-    {
-        // Process file
-    });
-    ```
 
     [DownloadsFolder](/uwp/api/Windows.Storage.DownloadsFolder).[CreateFileAsync](/uwp/api/windows.storage.downloadsfolder.createfileasync) is overloaded so that you can specify what the system should do if there is already an existing file in the Downloads folder that has the same name. When these methods complete, they return a [StorageFile](/uwp/api/Windows.Storage.StorageFile) that represents the file that was created. This file is called `newFile` in the example.
 
@@ -233,14 +203,6 @@ By default, your app can only access files and folders in the user's Downloads f
     // Process folder
     ```
 
-    ```cpp
-    using Windows::Storage;
-    auto createFolderTask = create_task(DownloadsFolder::CreateFolderAsync(L"New Folder"));
-    createFolderTask.then([](StorageFolder^ newFolder)
-    {
-        // Process folder
-    });
-    ```
 
     [DownloadsFolder](/uwp/api/Windows.Storage.DownloadsFolder).[CreateFolderAsync](/uwp/api/windows.storage.downloadsfolder.createfolderasync) is overloaded so that you can specify what the system should do if there is already an existing subfolder in the Downloads folder that has the same name. When these methods complete, they return a [StorageFolder](/uwp/api/Windows.Storage.StorageFolder) that represents the subfolder that was created. This file is called `newFolder` in the example.
 
