@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 dev_langs:
   - csharp
   - cppwinrt
-  - cpp
-  - vb
 ---
 # Enumerate and query files and folders
 
@@ -25,7 +23,7 @@ For guidance on how to store your WinUI app's data, see the [ApplicationData](/u
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 -   **Access permissions to the location**
 
@@ -90,33 +88,9 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 }
 ```
 
-```vb
-Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
-Dim outputText As New StringBuilder
-
-Dim fileList As IReadOnlyList(Of StorageFile) =
-    Await picturesFolder.GetFilesAsync()
-
-outputText.AppendLine("Files:")
-For Each file As StorageFile In fileList
-
-    outputText.Append(file.Name & vbLf)
-
-Next file
-
-Dim folderList As IReadOnlyList(Of StorageFolder) =
-    Await picturesFolder.GetFoldersAsync()
-
-outputText.AppendLine("Folders:")
-For Each folder As StorageFolder In folderList
-
-    outputText.Append(folder.DisplayName & vbLf)
-
-Next folder
-```
 
 > [!NOTE]
-> In C# or Visual Basic, remember to put the async keyword in the method declaration of any method in which you use the await operator.
+> In C#, remember to put the async keyword in the method declaration of any method in which you use the await operator.
 
 Alternatively, you can use the [StorageFolder.GetItemsAsync](/uwp/api/windows.storage.storagefolder.getitemsasync) method to get all items (both files and subfolders) in a particular location. The following example uses the GetItemsAsync method to get all files and subfolders in the root folder of the [KnownFolders.PicturesLibrary](/uwp/api/windows.storage.knownfolders.pictureslibrary) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
 
@@ -173,27 +147,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 }
 ```
 
-```vb
-Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
-Dim outputText As New StringBuilder
-
-Dim itemsList As IReadOnlyList(Of IStorageItem) =
-    Await picturesFolder.GetItemsAsync()
-
-For Each item In itemsList
-
-    If TypeOf item Is StorageFolder Then
-
-        outputText.Append(item.Name & " folder" & vbLf)
-
-    Else
-
-        outputText.Append(item.Name & vbLf)
-
-    End If
-
-Next item
-```
 
 ## Query files in a location and enumerate matching files
 
@@ -262,33 +215,6 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
 }
 ```
 
-```vb
-Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
-Dim outputText As New StringBuilder
-
-Dim queryResult As StorageFolderQueryResult =
-    picturesFolder.CreateFolderQuery(CommonFolderQuery.GroupByMonth)
-
-Dim folderList As IReadOnlyList(Of StorageFolder) =
-    Await queryResult.GetFoldersAsync()
-
-For Each folder As StorageFolder In folderList
-
-    Dim fileList As IReadOnlyList(Of StorageFile) =
-        Await folder.GetFilesAsync()
-
-    ' Print the month and number of files in this group.
-    outputText.AppendLine(folder.Name & " (" & fileList.Count & ")")
-
-    For Each file As StorageFile In fileList
-
-        ' Print the name of the file.
-        outputText.AppendLine("   " & file.Name)
-
-    Next file
-
-Next folder
-```
 
 The output of the example looks similar to the following.
 

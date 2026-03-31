@@ -25,7 +25,7 @@ Your app's MRU is represented by the [StorageItemMostRecentlyUsedList](/uwp/api/
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Access permissions to the location**
 

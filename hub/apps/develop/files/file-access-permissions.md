@@ -9,8 +9,6 @@ ms.localizationpriority: medium
 dev_langs:
   - csharp
   - cppwinrt
-  - cpp
-  - javascript
 ---
 
 # File access permissions
@@ -33,9 +31,6 @@ There are two primary ways to access files and folders in your app's install dir
     Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
     ```
 
-    ```javascript
-    var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
-    ```
 
     ```cppwinrt
     #include <winrt/Windows.Storage.h>
@@ -53,13 +48,6 @@ There are two primary ways to access files and folders in your app's install dir
     StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///file.txt"));
     ```
 
-    ```javascript
-    Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appx:///file.txt").done(
-        function(file) {
-            // Process file
-        }
-    );
-    ```
 
     ```cppwinrt
     Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
@@ -95,9 +83,6 @@ There are two primary ways to access files and folders from your app's data loca
     StorageFolder localFolder = ApplicationData.Current.LocalFolder;
     ```
 
-    ```javascript
-    var localFolder = Windows.Storage.ApplicationData.current.localFolder;
-    ```
 
     ```cppwinrt
     Windows::Storage::StorageFolder storageFolder{
@@ -117,13 +102,6 @@ There are two primary ways to access files and folders from your app's data loca
     StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appdata:///local/file.txt"));
     ```
 
-    ```javascript
-    Windows.Storage.StorageFile.getFileFromApplicationUriAsync("ms-appdata:///local/file.txt").done(
-        function(file) {
-            // Process file
-        }
-    );
-    ```
 
     ```cppwinrt
     Windows::Storage::StorageFile file{
@@ -163,13 +141,6 @@ By default, your app can only access files and folders in the user's Downloads f
     StorageFile newFile = await DownloadsFolder.CreateFileAsync("file.txt");
     ```
 
-    ```javascript
-    Windows.Storage.DownloadsFolder.createFileAsync("file.txt").done(
-        function(newFile) {
-            // Process file
-        }
-    );
-    ```
 
     ```cppwinrt
     Windows::Storage::StorageFile newFile{
@@ -188,13 +159,6 @@ By default, your app can only access files and folders in the user's Downloads f
     StorageFolder newFolder = await DownloadsFolder.CreateFolderAsync("New Folder");
     ```
 
-    ```javascript
-    Windows.Storage.DownloadsFolder.createFolderAsync("New Folder").done(
-        function(newFolder) {
-            // Process folder
-        }
-    );
-    ```
 
     ```cppwinrt
     Windows::Storage::StorageFolder newFolder{
