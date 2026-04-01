@@ -44,6 +44,13 @@ Add new preset sizes. Each size can be configured as Fill, Fit, or Stretch. The 
 
 The fallback encoder is used when the file can't be saved in its original format. For example, the Windows Meta File (.wmf) image format has a decoder to read the image, but no encoder to write a new image. In this case, the image can't be saved in its original format. Specify the format the fallback encoder will use: PNG, JPEG, TIFF, BMP, GIF, or WMPhoto settings. **This isn't a file type conversion tool. It only works as a fallback for unsupported file formats.**
 
+### Encoding options
+
+| Setting | Description |
+| :--- | :--- |
+| PNG interlacing | Set PNG interlacing for resized images. Options: **Default**, **On**, or **Off**. Interlaced PNGs load progressively, showing a low-resolution version first. |
+| TIFF compression | Set the compression algorithm for resized TIFF images. Options: **Default**, **None**, **CCITT3**, **CCITT4**, **LZW**, **RLE**, or **Zip**. |
+
 ### File
 
 The file name of the resized image can use the following parameters:

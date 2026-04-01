@@ -59,5 +59,6 @@ The following settings are available for the Crop And Lock utility:
 | :--- | :--- |
 | **Thumbnail shortcut** | The customizable keyboard command to activate the thumbnail mode for cropping and creating a thumbnail view. |
 | **Reparent shortcut** | The customizable keyboard command to activate the reparent mode for cropping and reparenting to a new window. |
+| **Screenshot shortcut** | The customizable keyboard command to create a cropped, static screenshot of another window. Unlike the thumbnail mode, the screenshot does not update with the original window's content. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

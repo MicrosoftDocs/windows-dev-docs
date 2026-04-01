@@ -35,6 +35,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 
 To create mappings with Keyboard Manager, open the PowerToys Settings. In PowerToys Settings, on the Keyboard Manager tab, you'll see options to:
 
+- **Try the new editor**: Switch to the new editor experience. You can switch back at any time using the same toggle.
 - Open the Remap Keys settings window by selecting **Remap a key**
 - Open the Remap Shortcuts settings window by selecting **Remap a shortcut**
 

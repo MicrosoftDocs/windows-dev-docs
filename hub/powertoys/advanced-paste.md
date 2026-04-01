@@ -33,7 +33,9 @@ From the Settings menu, configure the following options:
 | Model providers | Lists the configured AI model providers for use with Paste with AI. You can add providers with the **Add model** button. See [Adding a model provider](#adding-a-model-provider) for a list of supported providers and more information about configuring them. An account and valid API key is required for online model providers. You can also remove any of the configured providers from this list. |
 | Clipboard history | Enable to automatically save clipboard history. |
 | Automatically close the Advanced Paste window after it loses focus | Determines whether the Advanced Paste window closes after it loses focus. |
+| Show clipboard preview | Display a preview of the current clipboard content in the Advanced Paste window. |
 | Custom format preview | Enable to preview the output of the custom format before pasting. |
+| Auto-copy selection for custom action hotkeys | When enabled, attempts to copy the current selection before running a custom action shortcut, so you can trigger custom actions directly on selected text without manually copying first. |
 | Actions (Create and manage Advanced Paste custom actions) | When using Paste with AI, save the prompts you frequently use and give them descriptive names, so you can easily select them from the Advanced Paste window without having to type them out. You can also assign each action a keyboard command, so you can execute them without opening the Advanced Paste window. |
 | Open Advanced Paste window shortcut | The customizable keyboard command to open the **Advanced Paste** window. |
 | Paste as plain text directly shortcut | The customizable keyboard command to paste as plain text without opening the **Advanced Paste** window. |

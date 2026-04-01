@@ -51,8 +51,7 @@ From the settings page, you can configure the following options:
 | Shake sensitivity factor (percent) | Determines how far the pointer must move, relative to the screen diagonal, to count as a shake. Lower values make it more sensitive. (default: 2000) |
 | Activation shortcut | The custom shortcut used to activate the spotlight. |
 | Do not activate when Game Mode is on | Prevents the spotlight from being used when actively playing a game on the system. |
-| Overlay opacity | The opacity of the spotlight backdrop. (default: 50%) |
-| Background color | The color of the spotlight backdrop. (default: #000000) Support for transparency is available. |
+| Background color | The color of the spotlight backdrop. (default: #000000) Support for transparency is available, with the alpha channel controlling the backdrop opacity. |
 | Spotlight color | The color of the circle that centers on the cursor. (default: #FFFFFF) Support for transparency is available. |
 | Spotlight radius | The radius of the circle that centers on the cursor. (default: 100px) |
 | Spotlight initial zoom | The spotlight animation's zoom factor. Higher values result in more pronounced zoom animation as the spotlight closes in on the cursor position. |
