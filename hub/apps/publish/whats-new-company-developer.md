@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 The new onboarding process allows company developers to publish apps to the Microsoft Store without any onboarding fees.  
 
 > [!NOTE]
-> This onboarding experience is currently available in India. Availability will expand to additional markets over time.
+> This onboarding experience is currently available in flighted markets (including US) only. Availability will expand to additional markets over time.
 
 ## What’s New
 
