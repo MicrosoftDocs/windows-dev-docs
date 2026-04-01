@@ -1,7 +1,7 @@
 ---
 title: Windows on Arm documentation
 description: Learn more about running Windows on PCs powered by Arm processors. Find guidance on how to build Windows apps for Arm64 devices or iteratively update your existing Windows app to take advantage of Arm64 native capabilities.
-ms.date: 11/06/2025
+ms.date: 04/01/2026
 ms.topic: article
 ms.service: windows
 ms.subservice: arm
@@ -128,3 +128,5 @@ Our guidance to [Add Arm support to your Windows app](add-arm-support.md) walks 
 - [Developer.arm.com: Port applications to Windows on Arm](https://developer.arm.com/documentation/102341/0400/Overview)
 - [Developer.arm.com: Building a Native Windows on Arm App with WinUI 3](https://developer.arm.com/documentation/102767/0100/)
 - [Developer.arm.com: Building libraries for Windows on Arm](https://developer.arm.com/documentation/102528/)
+- [Developer.arm.com: PC Base System Architecture (PC BSA)](https://developer.arm.com/Architectures/System%20Standards)
+- [Developer.arm.com: Base Boot Requirements (BBR)](https://developer.arm.com/Architectures/Base%20Boot%20Requirements)
