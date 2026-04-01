@@ -74,7 +74,7 @@ For most Java development — web backends, Android, enterprise apps — native 
 > [!div class="nextstepaction"]
 > [Java on Azure and Windows documentation](/java/)
 
-- [Java for Beginners (video series)](https://learn.microsoft.com/shows/java-for-beginners/)
+- [Java for Beginners (video series)](/shows/java-for-beginners/)
 - [Learn Java (java.com)](https://dev.java/learn/)
 - [Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
 - [Gradle quickstart](https://docs.gradle.org/current/userguide/getting_started_eng.html)
