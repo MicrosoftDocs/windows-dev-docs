@@ -70,6 +70,7 @@ From the Settings menu, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation key | Choose **Left/Right Arrow**, **Space** or **Left, Right or Space**. |
+| Do not activate when Game Mode is on | Prevents Quick Accent from activating when Game Mode is on, avoiding interference while gaming. |
 | Character set | Show only characters that are in the chosen sets. |
 | Toolbar location | Position of the toolbar. |
 | Show the Unicode code and name of the currently selected character | Shows the Unicode code (in hexadecimal) and name of the currently selected character under the selector. |

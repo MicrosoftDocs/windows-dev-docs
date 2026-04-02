@@ -47,6 +47,10 @@ The option allows you to toggle the display of filename extensions. When this op
 
 The option gives you the ability to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
 
+#### Hide the built-in "New" context menu
+
+When enabled, this option hides the built-in Windows "New" context menu and uses only New+ templates instead. This is useful if you want to rely exclusively on your New+ templates for creating new files and folders. Disabled by default.
+
 ### Behavior
 
 #### Replace variables in template filename

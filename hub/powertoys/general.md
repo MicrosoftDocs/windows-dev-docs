@@ -15,7 +15,13 @@ The General settings section of Microsoft PowerToys allows you to configure esse
 
 ## Version & updates
 
-Here you can check for new updates, and if one is available, you can download and install it. You can also indicate whether updates should be downloaded automatically, if you want to be notified about new releases, and if the release notes should be displayed after an update.
+Here you can check for new updates, and if one is available, you can download and install it.
+
+| Setting | Description |
+| :--- | :--- |
+| Download updates automatically | When enabled, PowerToys automatically downloads available updates in the background. |
+| Show new updates as toast notifications | When enabled, displays a Windows toast notification when a new update is available. |
+| Show what's new after updates | When enabled, displays a "What's New" dialog after updates are applied so you can see the latest changes. |
 
 ## Settings search
 
@@ -35,7 +41,11 @@ PowerToys includes a feature to detect shortcut conflicts. If you have multiple 
 
 ## Administrator mode
 
-Read more about the administrator mode in the [PowerToys running with administrator permissions](./administrator.md) section of the documentation.
+PowerToys can run in administrator mode for enhanced capabilities. Read more about the administrator mode in the [PowerToys running with administrator permissions](./administrator.md) section of the documentation.
+
+| Setting | Description |
+| :--- | :--- |
+| Warnings for elevated apps | When enabled, shows warnings when an elevated (administrator) application may interfere with PowerToys utilities. This helps you understand when certain features might not work as expected due to Windows security boundaries between elevated and non-elevated processes. |
 
 ## Appearance & behavior
 
@@ -55,7 +65,18 @@ If activated, PowerToys will start automatically when you log in to Windows.
 
 When activated, PowerToys shows an icon in the system tray area of the taskbar. You can use this icon to open the PowerToys settings app or the PowerToys flyout.
 
-In addition, you can control whether the Quick Access flyout is enabled, assign a hotkey, and choose a theme-aware monochrome system tray icon.
+| Setting | Description |
+| :--- | :--- |
+| Show theme-adaptive system tray icon | When enabled, the system tray icon uses a monochrome icon that adapts to your current Windows theme (light or dark) for a more consistent appearance. |
+
+### Quick Access flyout
+
+The Quick Access flyout provides a shortcut to toggle PowerToys utilities on or off without opening the full Settings window.
+
+| Setting | Description |
+| :--- | :--- |
+| Enable Quick Access | Enable or disable the Quick Access flyout. |
+| Quick Access shortcut | Set the keyboard shortcut to open the Quick Access flyout. |
 
 ## Back up & restore
 
