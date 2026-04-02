@@ -1,0 +1,11 @@
+{
+   "version": "2.0",
+    "configurationProfile": "mcp-custom-handler",
+    "customHandler": {
+        "description": {
+            "defaultExecutablePath": "python",
+            "arguments": ["hello.py"] 
+        },
+        "port": "8000"
+    }
+}
