@@ -46,7 +46,7 @@ Released: **February 13, 2026** <br><br>
 
 > * Improved `DeleteIndex` reliability. Sometimes `DeleteIndex` would fail with ERROR_SHARING_VIOLATION.
 > * Fix for OCR Bounding boxes returning negative values in some edge cases.
-> * App Content Search are part of a separate `Microsoft.Windows.Search` package instead of being part of `Microsoft.Windows.AI package`.
+> * App Content Search is part of a separate `Microsoft.Windows.Search` package instead of being part of `Microsoft.Windows.AI package`.
 > * Fix for prefix search not working with short query strings.
 > 
 > * New APIs and renames based on official API review.
@@ -58,7 +58,7 @@ Released: **February 13, 2026** <br><br>
 >     * GetContentIndexingStatus -> GetContentItemStatus
 >     * GetMultipleContentIndexingStatus -> GetContentItemStatuses
 >     * GetContentItems    
->   * AppCOntentIndexListener
+>   * AppContentIndexListener
 >     * IndexingStatusChanged -> ContentItemStatusChanged                
 >   * AppIndexTextQuerySession
 >     * UpdateQuery -> UpdateQueryPhrase
@@ -898,7 +898,7 @@ Released: **November 6, 2025** <br><br>
 > - Query results using `AppIndexQuery.GetNextTextMatches` and `AppIndexQuery.GetNextImageMatches` will be null when there are no matches instead of an empty list.
 > - Image matches using `AppManagedImageQueryMatch.Subregion` based on OCR values may occasionally be inaccurate, particularly when the text is rotated or skewed.
 > - Image matches using `AppManagedImageQueryMatch.Subregion` may sometimes include zero-size or extremely small rectangles, leading to inaccurate results.
-> - An Empty query from `AppContentIndex.CreateQuery` can throw an exception.
+> - An Empty query from `AppContentIndexer.CreateQuery` can throw an exception.
 > 
 </details>
 

@@ -184,24 +184,24 @@ Released: **November 11, 2025** <br><br>
 > ##### Image Description 
 > The Image Description APIs enable the generation of textual descriptions of images. The length and type of these descriptions can be configured to meet accessibility requirements, ranging from short captions to long descriptions.
 >
-> For additional details, see [What can I do with Image Description?](/windows/ai/apis/imaging#what-can-i-do-with-image-description) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+> For additional details, see [What can I do with Image Description?](/windows/ai/apis/imaging) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
 >
 > ##### Text Recognition
 >
-> Text recognition, also known as optical character recognition (OCR), detects and extracts text within images, converting it into machine-readable character streams. These APIs identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. Benefiting from NPU-assisted acceleration, the Windows AI AI-assisted APIs perform faster and more accurately than the legacy [Windows.Media.Ocr.OcrEngine](/uwp/api/windows.media.ocr.ocrengine) APIs.
+> Text recognition, also known as optical character recognition (OCR), detects and extracts text within images, converting it into machine-readable character streams. These APIs identify characters, words, lines, polygonal text boundaries, and provide confidence levels for each match. Benefiting from NPU-assisted acceleration, the Windows AI-assisted APIs perform faster and more accurately than the legacy [Windows.Media.Ocr.OcrEngine](/uwp/api/windows.media.ocr.ocrengine) APIs.
 >
 > For additional details, see [Get Started with Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition) and [API ref for AI-backed Text Recognition (OCR) in the Windows App SDK](/windows/ai/apis/text-recognition-api-ref).
 >
 > ##### Image Super Resolution 
 > The 'ImageScaler' APIs can increase the sharpness and clarity of an image and upscale the image by up to 8x its original resolution.
 >
-> For additional details, see [What can I do with Image Super Resolution?](/windows/ai/apis/imaging#what-can-i-do-with-image-super-resolution) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+> For additional details, see [What can I do with Image Super Resolution?](/windows/ai/apis/imaging) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
 >
 > ##### Image Segmentation 
 >
 > The Image Segmentation APIs allow for the identification of specific objects within an image. By inputting an image and a "hints" object, the model returns a mask of the identified object.
 >
-> For additional details, see [What can I do with Image Segmentation?](/windows/ai/apis/imaging#what-can-i-do-with-image-segmentation) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
+> For additional details, see [What can I do with Image Segmentation?](/windows/ai/apis/imaging) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref).
 >
 
 </details>
@@ -217,11 +217,11 @@ Released: **November 11, 2025** <br><br>
 <details><summary>Bugfixes</summary>
 
 >
-> - Fixed PackageDeploymentManager telemetry to properly capture completion status. For more info, see GitHub issue [#5296](https://github.com/microsoft/WindowsAppSDK/pull/5296). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
+> - Fixed PackageDeploymentManager telemetry to properly capture completion status. For more info, see GitHub PR [#5296](https://github.com/microsoft/WindowsAppSDK/pull/5296). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
 > - Fixed a crash when using pen input on an x86 app. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputStateManager_PenInputCrashX86)
 > - Fixed a potential crash if the window is already destroyed when WinUI is attempting to initialize for scrolling. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ActivateDirectManipulationManager_CheckCanInit)
 > - Fixed the WINDOWSAPPSDK_RELEASE_PATCH define and Microsoft::WindowsAppSDK::Release::Patch values in WindowsAppSDK-VersionInfo.h to not always be 0. The define is now the yymmdd date of the build, and the Patch value is the mmdd date. This change provides better runtime information on the version being used without changing any variable sizes or the version scheme. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, header change)
-> - Fixed a potential issue in the Bootstrapper if it is used to load a 1.6 or earlier version of Windows App SDK. For more info, see GitHub issue [#5349](https://github.com/microsoft/WindowsAppSDK/pull/5349). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
+> - Fixed a potential issue in the Bootstrapper if it is used to load a 1.6 or earlier version of Windows App SDK. For more info, see GitHub PR [#5349](https://github.com/microsoft/WindowsAppSDK/pull/5349). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A)
 > - Fixed an issue where using MSBuild to build a single-project app could incorrectly fail with a build error if it didn't have a correct launchSettings.json. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
 > - Improved the performance of rendering the first frame on application launch. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DwmCoreI_OptimizeFirstFrameLatency)
 >
@@ -311,7 +311,7 @@ Released: **November 11, 2025** <br><br>
 <details><summary>Bugfixes</summary>
 
 >  
-> - Improved the telemetry for failure scenarios in WindowsAppRuntimeInstall-&lt;arch&gt;.exe. For more info, see GitHub issue [#5289](https://github.com/microsoft/WindowsAppSDK/pull/5289). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, installer change).
+> - Improved the telemetry for failure scenarios in WindowsAppRuntimeInstall-&lt;arch&gt;.exe. For more info, see GitHub PR [#5289](https://github.com/microsoft/WindowsAppSDK/pull/5289). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, installer change).
 > - Fixed an issue where pointer input would stop working when using arrow keys at the same time. For more info, see GitHub issue [#10126](https://github.com/microsoft/microsoft-ui-xaml/issues/10126). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue).
 > - Fixed an issue where apps in remote desktop stop responding to pointer input. For more info, see GitHub issue [#10009](https://github.com/microsoft/microsoft-ui-xaml/issues/10009). (This is the same fix as the pointer input plus arrow keys fix, due to remote desktop automatically sending some key input during the switch away and back.)  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixStuckPointerInputQueue).
 > - Fixed a potential crash trying to restore focus if a window activation event is delivered for a window which is closing. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixWindowCloseFocusCrash)
@@ -319,7 +319,7 @@ Released: **November 11, 2025** <br><br>
 > - Fixed a potential crash if ProgressBar::SetProgressBarIndicatorWidth is called on a ProgressBar which is not in the tree. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixSetProgressBarIndicatorWidthCrash)
 > - Fixed a potential crash caused by CPopup::EnsureBridgeClosed sometimes triggering reentrancy. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixPopupClosingReentrancyCrash)
 > - Fixed a potential crash when closing a popup due to CUIElement::FlushPendingKeepVisibleOperations using a null children collection. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixPopupUnloadingCrash)
-> - Fixed PackageDeploymentManager.EnsurePackage\*Ready to ensure version supersedence. For more info, see GitHub issue [#5191](https://github.com/microsoft/WindowsAppSDK/pull/5191).  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): EnsurePackageReadyVersionSupercedence)
+> - Fixed PackageDeploymentManager.EnsurePackage\*Ready to ensure version supersedence. For more info, see GitHub PR [#5191](https://github.com/microsoft/WindowsAppSDK/pull/5191).  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): EnsurePackageReadyVersionSupercedence)
 > - Fixed a potential crash caused by WebView2::UpdateCoreWebViewVisibility sometimes triggering reentrancy. For more info, see GitHub issue [#10305](https://github.com/microsoft/microsoft-ui-xaml/issues/10305). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixWebViewVisibilityReentrancyCrash)
 > - Fixed an issue where app UI sometimes permanently freezes and can stop rendering due to the DispatcherQueue getting stuck. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FixRandomUIFreezeInDispatcher)
 >
@@ -854,7 +854,7 @@ Released: **November 11, 2025** <br><br>
 >
 > Using the 'ImageScaler' APIs you can increase the sharpness and clarity of an image and upscale the image up to 8x its original resolution.
 >
-> See [What can I do with Image Super Resolution?](/windows/ai/apis/imaging#what-can-i-do-with-image-super-resolution) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to get started.
+> See [What can I do with Image Super Resolution?](/windows/ai/apis/imaging) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to get started.
 >
 > #### Image Description
 >
@@ -863,13 +863,13 @@ Released: **November 11, 2025** <br><br>
 > [!NOTE]
 > When calling ImageDescriptionGenerator.DescribeAsync() in a Debug build, an error may occur that can be mitigated by continuing the build in Visual Studio.
 >
-> See [What can I do with Image Description?](/windows/ai/apis/imaging#what-can-i-do-with-image-description) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to learn more.
+> See [What can I do with Image Description?](/windows/ai/apis/imaging) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to learn more.
 >
 > #### Image Segmentation
 >
 > Using Image Segmentation APIs you can identify specific objects within an image. The model takes both an image and a "hints" object and returns a mask of the identified object.
 >
-> See [What can I do with Image Segmentation?](/windows/ai/apis/imaging#what-can-i-do-with-image-segmentation) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to get started.
+> See [What can I do with Image Segmentation?](/windows/ai/apis/imaging) and [API ref for AI imaging features in the Windows App SDK](/windows/ai/apis/imaging-api-ref) to get started.
 >
 
 </details>

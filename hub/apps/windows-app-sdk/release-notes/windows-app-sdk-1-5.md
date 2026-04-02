@@ -356,7 +356,7 @@ zone_pivot_groups: wasdk-release-channels
 
 >
 > - Fixed an issue where `StackPanel` applied spacing to collapsed items. For more info, see GitHub issue [#916](https://github.com/microsoft/microsoft-ui-xaml/issues/916).
-> - Fixed problems with scrolling controls no longer working after closing another app window. Fore more info, see GitHub issues [#9292](https://github.com/microsoft/microsoft-ui-xaml/issues/9292) and [#9355](https://github.com/microsoft/microsoft-ui-xaml/issues/9355).
+> - Fixed problems with scrolling controls no longer working after closing another app window. For more info, see GitHub issues [#9292](https://github.com/microsoft/microsoft-ui-xaml/issues/9292) and [#9355](https://github.com/microsoft/microsoft-ui-xaml/issues/9355).
 > - Fixed a crash when setting `DebugSettings.EnableFrameRateCounter` to *true* before the first frame rendered. For more info, see GitHub issue [#2835](https://github.com/microsoft/microsoft-ui-xaml/issues/2835).
 > - Fixed a potential compile error for C++ where some headers did not include necessary dependencies. Note that the change of `#include` order might impact some apps, such as possibly causing a compile error for `IInspectable` if the app is using a version of C++/WinRT older than 2023. For more info, see GitHub issue [#9014](https://github.com/microsoft/microsoft-ui-xaml/issues/9014).
 > - Fixed an issue where `ElementName` bindings didn't work inside the `ItemsRepeater` `DataTemplate`. For more info, see GitHub issue [#560](https://github.com/microsoft/microsoft-ui-xaml/issues/560).
@@ -641,7 +641,7 @@ zone_pivot_groups: wasdk-release-channels
 <summary>New APIs for 1.5-experimental2</summary>
 
 >
-> 1.5-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the Windows App SDKpp SDK.
+> 1.5-experimental2 includes the following new APIs. These APIs are not experimental, but are not yet included in a stable release version of the Windows App SDK.
 >
 > ```C#
 > Microsoft.Graphics.DirectX

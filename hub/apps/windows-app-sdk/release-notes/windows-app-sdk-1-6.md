@@ -36,7 +36,7 @@ zone_pivot_groups: wasdk-release-channels
 
 <details><summary>Bug Fixes</summary>
 
-> - Fixed PackageDeploymentManager telemetry to properly capture when completion status. For more info, see GitHub issue [#5297](https://github.com/microsoft/WindowsAppSDK/pull/5297).
+> - Fixed PackageDeploymentManager telemetry to properly capture completion status. For more info, see GitHub PR [#5297](https://github.com/microsoft/WindowsAppSDK/pull/5297).
 > - Fixed a crash when using pen input on an x86 app.
 > - Fixed a potential crash if the window is already destroyed when WinUI is attempting to initialize for scrolling.
 > - Fixed the WINDOWSAPPSDK_RELEASE_PATCH define and Microsoft::WindowsAppSDK::Release::Patch values in WindowsAppSDK-VersionInfo.h to not always be 0. The define is now the yymmdd date of the build, and the Patch value is the mmdd date. This change provides better runtime information on the version being used without changing any variable sizes or the version scheme.
@@ -50,7 +50,7 @@ zone_pivot_groups: wasdk-release-channels
 
 <details><summary>Bug Fixes</summary>
 
-- Improved the telemetry for failure scenarios in `WindowsAppRuntimeInstall-<arch>.exe`. For more info, see GitHub issue [#5291](https://github.com/microsoft/WindowsAppSDK/pull/5291).
+- Improved the telemetry for failure scenarios in `WindowsAppRuntimeInstall-<arch>.exe`. For more info, see GitHub PR [#5291](https://github.com/microsoft/WindowsAppSDK/pull/5291).
 - Fixed an issue where pointer input would stop working when using arrow keys at the same time. For more info, see GitHub issue [#10126](https://github.com/microsoft/microsoft-ui-xaml/issues/10126).
 - Fixed an issue where apps in remote desktop stop responding to pointer input. For more info, see GitHub issue [#10009](https://github.com/microsoft/microsoft-ui-xaml/issues/10009). (This is the same fix as the pointer input plus arrow keys fix, due to remote desktop automatically sending some key input during the switch away and back.)
 - Fixed a potential crash trying to restore focus if a window activation event is delivered for a window which is closing.
@@ -59,7 +59,7 @@ zone_pivot_groups: wasdk-release-channels
 - Fixed a potential crash if `ProgressBar::SetProgressBarIndicatorWidth` is called on a ProgressBar which is not in the tree.
 - Fixed a potential crash caused by `CPopup::EnsureBridgeClosed` sometimes triggering reentrancy.
 - Fixed a potential crash when closing a popup due to `CUIElement::FlushPendingKeepVisibleOperations` using a null children collection.
-- Fixed `PackageDeploymentManager.EnsurePackage*Ready` to ensure version supersedence. For more info, see GitHub issue [#5225](https://github.com/microsoft/WindowsAppSDK/pull/5225).
+- Fixed `PackageDeploymentManager.EnsurePackage*Ready` to ensure version supersedence. For more info, see GitHub PR [#5225](https://github.com/microsoft/WindowsAppSDK/pull/5225).
 
 </details>
 
@@ -106,7 +106,7 @@ Microsoft.Windows.Widgets.Providers
 <details><summary>Bug Fixes</summary>
 - Fixed an issue with text selection highlighting in a multi-line TextBox. For more info, see GitHub issue [#9965](https://github.com/microsoft/microsoft-ui-xaml/issues/9965).
 - Fixed an issue where the DDLM package would sometimes not install, preventing launch of unpackaged apps. For more info, see GitHub issue [#3855](https://github.com/microsoft/WindowsAppSDK/issues/3855).
-- Fixed a potential crash in Detours in some scenarios. For more info, see GitHub issue [#4937](https://github.com/microsoft/WindowsAppSDK/pull/4937).
+- Fixed a potential crash in Detours in some scenarios. For more info, see GitHub PR [#4937](https://github.com/microsoft/WindowsAppSDK/pull/4937).
 - Fixed another potential issue where a menu off a CommandBar may incorrectly open up instead of down when the CommandBar is at the bottom of the window.
 - Fixed a potential crash when running on older graphics hardware.
 - Fixed a potential crash in pointer event handling when closing a window.
@@ -261,7 +261,7 @@ Microsoft.Windows.Widgets.Providers
 > </linker>
 > ```
 >
-> For complete root descriptor XML expression syntax, see [Root Descriptors](/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0#root-descriptors).
+> For complete root descriptor XML expression syntax, see [Root Descriptors](/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0).
 >
 > [!NOTE]
 > Dependency packages that have not yet adopted AOT support may exhibit runtime issues.
@@ -299,7 +299,7 @@ Microsoft.Windows.Widgets.Providers
 
 >
 > - Added a new `ColorHelper.ToDisplayName()` API, filling that gap from UWP.
-> - Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub issue [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
+> - Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub PR [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
 > - Unsealed `ItemsWrapGrid`. This should be a backward-compatible change.
 > - `PipsPager` supports a new mode where it can wrap between the first and last items.
 >
@@ -378,7 +378,7 @@ Microsoft.Windows.Widgets.Providers
 > - Fixed an issue where SVG files defining a negative viewbox no longer rendered. For more info, see GitHub issue [#9415](https://github.com/microsoft/microsoft-ui-xaml/issues/9415).
 > - Fixed an issue where changing `ItemsView.Layout` orientation caused an item to be removed. For more info, see GitHub issue [#9422](https://github.com/microsoft/microsoft-ui-xaml/issues/9422).
 > - Fixed an issue where scrolling a `ScrollView` generated a lot of debug output. For more info, see GitHub issue [#9434](https://github.com/microsoft/microsoft-ui-xaml/issues/9434).
-> - Fixed an issue where `MapContorl.InteractiveControlsVisible` did not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
+> - Fixed an issue where `MapControl.InteractiveControlsVisible` did not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
 > - Fixed an issue where `MapControl.MapElementClick` event didn't properly fire. For more info, see GitHub issue [#9487](https://github.com/microsoft/microsoft-ui-xaml/issues/9487).
 > - Fixed an issue where x:Bind didn't check for null before using a weak reference, which could result in a crash. For more info, see GitHub issue [#9551](https://github.com/microsoft/microsoft-ui-xaml/issues/9551).
 > - Fixed an issue where changing the `TeachingTip.Target` property didn't correctly update its position. For more info, see GitHub issue [#9553](https://github.com/microsoft/microsoft-ui-xaml/issues/9553).
@@ -585,7 +585,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 <summary>Native AOT support</summary>
 
 >
-> The .NET `PublishAot` project property is now supported for native Ahead-Of-Time compilation. For details on Native AOT, see [Native AOT Deployment](/dotnet/core/deploying/native-aot/). Because AOT builds on Trimming support, much of the Trimming-related guidance previously described in the 1.6-experimental1 release applies as well. See [Native AOT support](/windows/apps/windows-app-sdk/experimental-channel#native-aot-support) for more info.
+> The .NET `PublishAot` project property is now supported for native Ahead-Of-Time compilation. For details on Native AOT, see [Native AOT Deployment](/dotnet/core/deploying/native-aot/). Because AOT builds on Trimming support, much of the Trimming-related guidance previously described in the 1.6-experimental1 release applies as well. See [Native AOT support](/windows/apps/windows-app-sdk/experimental-channel) for more info.
 >
 > As noted above, C# projects should have a package reference to [Microsoft.Windows.CsWinRT](https://www.nuget.org/packages/Microsoft.Windows.CsWinRT) 2.1.1 (or later).This version includes an AOT-safe `ICustomPropertyProvider` implementation. Types used with this support should be marked with the `WinRT.GeneratedBindableCustomProperty` attribute along with being made `partial`.
 >
@@ -624,9 +624,9 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 
 >
 > - We added a new `ColorHelper.ToDisplayName()` API, filling that gap from UWP.
-> - Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub issue [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
+> - Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub PR [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
 > - Unsealed `ItemsWrapGrid`. This should be a backward-compatible change.
-> - `PipsPager` supports a new mode where it can wrap between the first and list items.
+> - `PipsPager` supports a new mode where it can wrap between the first and last items.
 > - `RatingControl` is now more customizable, by moving some hard-coded style properties to theme resources. This allows apps to override these values to better customize the appearance of RatingControl.
 >
 
@@ -688,7 +688,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 > - Fixed an issue where SVG files defining a negative viewbox no longer rendered. For more info, see GitHub issue [#9415](https://github.com/microsoft/microsoft-ui-xaml/issues/9415).
 > - Fixed an issue where changing `ItemsView.Layout` orientation caused an item to be removed. For more info, see GitHub issue [#9422](https://github.com/microsoft/microsoft-ui-xaml/issues/9422).
 > - Fixed an issue where scrolling a `ScrollView` generated a lot of debug output. For more info, see GitHub issue [#9434](https://github.com/microsoft/microsoft-ui-xaml/issues/9434).
-> - Fixed an issue where `MapContorl.InteractiveControlsVisible` did not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
+> - Fixed an issue where `MapControl.InteractiveControlsVisible` did not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
 > - Fixed an issue where `MapControl.MapElementClick` event didn't properly fire. For more info, see GitHub issue [#9487](https://github.com/microsoft/microsoft-ui-xaml/issues/9487).
 > - Fixed an issue where x:Bind didn't check for null before using a weak reference, which could result in a crash. For more info, see GitHub issue [#9551](https://github.com/microsoft/microsoft-ui-xaml/issues/9551).
 > - Fixed an issue where changing the `TeachingTip.Target` property didn't correctly update its position. For more info, see GitHub issue [#9553](https://github.com/microsoft/microsoft-ui-xaml/issues/9553).
@@ -847,7 +847,7 @@ For the updated runtime and MSIX, see [Downloads for the Windows App SDK](../../
 > - Starting with 1.6-experimental2, the latest WinUI 3 source will now publish to the main branch in the microsoft-ui-xaml GitHub repo, which will enable source searching in that repo.
 > - We added a new `ColorHelper.ToDisplayName()` API, filling that gap from UWP.
 >     - **Known issue:** Some language translations have character encoding issues. This will be fixed in the next 1.6 release.
-> - Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub issue [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
+> - Added a new `Microsoft.Windows.Globalization.ApplicationLanguages` class, which notably includes a new `PrimaryLanguageOverride` feature. For more info, see GitHub PR [#4523](https://github.com/microsoft/WindowsAppSDK/pull/4523).
 > - New extensions enable Widget Providers to provide Widgets with web content and announcements for Widgets.
 >
 
@@ -1336,7 +1336,7 @@ To download, retarget your Windows App SDK NuGet version to `1.6.240531000-exper
 > </linker>
 > ```
 >
-> For complete root descriptor XML expression syntax, see [Root Descriptors](/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0#root-descriptors).
+> For complete root descriptor XML expression syntax, see [Root Descriptors](/dotnet/core/deploying/trimming/trimming-options?pivots=dotnet-8-0).
 >
 > [!NOTE]
 > Dependency packages that have not yet adopted AOT support may exhibit runtime issues.
@@ -1405,7 +1405,7 @@ To download, retarget your Windows App SDK NuGet version to `1.6.240531000-exper
 
 >
 > - Unsealed `ItemsWrapGrid`. This should be a backward-compatible change.
-> - `PipsPager` supports a new mode where it can wrap between the first and list items.
+> - `PipsPager` supports a new mode where it can wrap between the first and last items.
 > - `RatingControl` is now more customizable, by moving some hard-coded style properties to theme resources. This allows apps to override these values to better customize the appearance of RatingControl.
 >
 
@@ -1571,7 +1571,7 @@ To download, retarget your Windows App SDK NuGet version to `1.6.240531000-exper
 > - Fixed an issue where SVG files defining a negative viewbox no longer rendered. For more info, see GitHub issue [#9415](https://github.com/microsoft/microsoft-ui-xaml/issues/9415).
 > - Fixed an issue where changing `ItemsView.Layout` orientation caused an item to be removed. For more info, see GitHub issue [#9422](https://github.com/microsoft/microsoft-ui-xaml/issues/9422).
 > - Fixed an issue where scrolling a `ScrollView` generated a lot of debug output. For more info, see GitHub issue [#9434](https://github.com/microsoft/microsoft-ui-xaml/issues/9434).
-> - Fixed an issue where `MapContorl.InteractiveControlsVisible` does not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
+> - Fixed an issue where `MapControl.InteractiveControlsVisible` does not work properly. For more info, see GitHub issue [#9486](https://github.com/microsoft/microsoft-ui-xaml/issues/9486).
 > - Fixed an issue where `MapControl.MapElementClick` event doesn't properly fire. For more info, see GitHub issue [#9487](https://github.com/microsoft/microsoft-ui-xaml/issues/9487).
 > - Fixed an issue where x:Bind doesn't check for null before using a weak reference, which can result in a crash. For more info, see GitHub issue [#9551](https://github.com/microsoft/microsoft-ui-xaml/issues/9551).
 > - Fixed an issue where changing the `TeachingTip.Target` property doesn't correctly update its position. For more info, see GitHub issue [#9553](https://github.com/microsoft/microsoft-ui-xaml/issues/9553).

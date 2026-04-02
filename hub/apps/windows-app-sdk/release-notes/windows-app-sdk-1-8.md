@@ -34,7 +34,7 @@ Released: **February 10, 2026** <br><br>
 > * Fixed an issue where `CompositionIsland.StateChanged` event handlers were not triggered when the user modified the size of a window by dragging it to the top of the screen or using the edges of the screen and the window has a non-default `TitleBar` with an `IconSource` set. Closing #[#10374](https://github.com/microsoft/microsoft-ui-xaml/issues/10374) ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputNonClientPointerSource_PropagateWindowPosChangedMessage).
 > * Fixed a crash during app shutdown for certain custom input handling scenarios inside of a ScrollViewer. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DwmCoreI_ShutdownManipulationCrash).
 > * Improved diagnosability for Windows AI model initialization and Text Intelligence APIs. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_Insights).
-> * Fixed an issue in the Windows AI API `GetReadyState` which erroneously returns `AIFeatureReadyState::NotReady` on unsupported Windows OS versions. The API now returns `AIFeatureReadyState::NotSupportedOnCurrentSystem`  ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_KnownExceptions).
+> * Fixed an issue in the Windows AI API `GetReadyState` which erroneously returns `AIFeatureReadyState::NotReady` on unsupported Windows OS versions. The API now returns `AIFeatureReadyState::NotSupportedOnCurrentSystem` ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_KnownExceptions).
 > * Fixed a critical issue where WebView2 crashes in nested or windowless Xaml Islands, blocking React Native for Windows scenarios. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlRoot_FixGetHostWindowInNestedIslands).
 >
 </details>
@@ -61,7 +61,7 @@ Released: **January 13, 2026** <br><br>
 
 >
 > * Fixed "Class not registered" errors when using Windows ML in self-contained deployments. Developers using self-contained deployment no longer need to register all the Foundation package activatable classes that were used internally.
-> * Fixed a crash  that occurs during process shutdown after using Windows ML.
+> * Fixed a crash that occurs during process shutdown after using Windows ML.
 > * Improved `FileOpenPicker`/`FileSavePicker` behavior:
 >     * Filter names display correctly when extensions are hidden. For more info, see GitHub issue [#5837](https://github.com/microsoft/WindowsAppSDK/issues/5837). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_DisplayFileTypeFilterNames)
 >     * Existing files are not truncated on save unless overwritten. For more info, see GitHub issue [#5976](https://github.com/microsoft/WindowsAppSDK/issues/5976). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_DoNotTruncateExistingFileOnSave)
@@ -95,7 +95,7 @@ Released: **December 8, 2025** <br><br>
 >
 > **Expanded OS Support**
 > Windows ML now supports Windows 10 (version 1809 and later) and Windows Server 2019 and later for CPU and GPU workloads with select execution providers.
-Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supported-execution-providers)
+Learn more: [Supported Execution Providers](/windows/ai/new-windows-ml/supported-execution-providers)
 
 > **AMD MiGraphX Execution Provider**
 > Added support for the AMD MiGraphX execution provider, enabling ML workloads on AMD GPUs for the latest Ryzen AI 300-series processors. This provider is currently being flighted in Windows Insider Program channels and is targeted for retail availability by the end of the month. Learn more: [Supported Execution Providers](/windows/ai/new-windows-ml/supported-execution-providers)
@@ -125,7 +125,7 @@ Learn more:  [Supported Execution Providers](/windows/ai/new-windows-ml/supporte
 
 <details><summary>Bug fixes</summary>
 
-> * Fixed a potential crash if OrientedVirtualizingPanel hits an overflow when computing bounds. (RuntimeCompatibilityChange: OrientedVirtualizingPanel_FixBoundsOverflow).
+> * Fixed a potential crash if OrientedVirtualizingPanel hits an overflow when computing bounds. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): OrientedVirtualizingPanel_FixBoundsOverflow).
 >
 
 </details>
@@ -223,7 +223,7 @@ Released: **September 23, 2025** <br><br>
 <details><summary>Known issues</summary>
 
 >
-> - C# developers must manually reference the  [System.Numerics.Tensors]() version 9.0.0 or greater NuGet package in order to use the `Microsoft.ML.OnnxRuntime.Tensors`. Without this NuGet package reference, you will experience the following runtime error when calling the `Microsoft.ML.OnnxRuntime.Tensors` APIs: `Could not load file or assembly 'System.Numerics.Tensors, Version=9.0.0.0`.
+> - C# developers must manually reference the [System.Numerics.Tensors](https://www.nuget.org/packages/System.Numerics.Tensors) version 9.0.0 or greater NuGet package in order to use the `Microsoft.ML.OnnxRuntime.Tensors`. Without this NuGet package reference, you will experience the following runtime error when calling the `Microsoft.ML.OnnxRuntime.Tensors` APIs: `Could not load file or assembly 'System.Numerics.Tensors, Version=9.0.0.0`.
 >
 
 </details>
@@ -431,6 +431,8 @@ Released: **August 19, 2025** <br><br>
 
 </details>
 
+</details>
+
 <details><summary>Conversation Summary Options</summary>
 
 >  
@@ -558,7 +560,7 @@ Released: **July 8, 2025** <br><br>
 > [!IMPORTANT]
 > The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
 >
-> The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.
+> The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extracting objects from pictures, and more.
 >
 > For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
 >
@@ -625,7 +627,7 @@ Released: **July 8, 2025** <br><br>
 > - Addressed a potential crash in `ApplicationDataProvider::GetStateFolderUris` caused by reentrancy. For more information see [Windows App SDK GitHub Issue #10513](https://github.com/microsoft/Microsoft-UI-XAML/issues/10513)
 > - Addressed a UI bug where the `TitleBar` displayed incorrect spacing when a short title was used. For more information see [Windows App SDK GitHub Issue #10492](https://github.com/microsoft/Microsoft-UI-XAML/issues/10492)
 > - Addressed a UI bug where the `CalendarDatePicker` control displayed incorrect icon margins when a long header was set. For more information see [Windows App SDK GitHub Issue #10469](https://github.com/microsoft/Microsoft-UI-XAML/issues/10469)
-> - Resolved an issue related to versioning mismatches between WIndowsAppSDK and Windows SDK NuGet packages, which can cause new projects to fail to build out of the box. For more information see [Windows App SDK GitHub Issue #10467](https://github.com/microsoft/Microsoft-UI-XAML/issues/10467)
+> - Resolved an issue related to versioning mismatches between WindowsAppSDK and Windows SDK NuGet packages, which can cause new projects to fail to build out of the box. For more information see [Windows App SDK GitHub Issue #10467](https://github.com/microsoft/Microsoft-UI-XAML/issues/10467)
 > - Addressed a regression where the mouse wheel input was ignored if the "Scroll inactive windows when hovering over them" setting was disabled, making windows appear perpetually inactive. For more information see [Windows App SDK GitHub Issue #10091](https://github.com/microsoft/Microsoft-UI-XAML/issues/10091)
 > - Addressed a deployment bug where failing to set `$(WindowsPackageType)=MSIX` in the project file prevents the Deployment Manager from being added, causing apps to require admin privileges unexpectedly. For more information see [Windows App SDK GitHub Issue #8182](https://github.com/microsoft/Microsoft-UI-XAML/issues/8182)
 >
@@ -1038,7 +1040,7 @@ Released: **June 12, 2025** <br><br>
 > [!IMPORTANT]
 > The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
 >
-> The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.
+> The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extracting objects from pictures, and more.
 >
 > For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
 >
@@ -1408,7 +1410,7 @@ Released: **May 16, 2025** <br><br>
 > [!IMPORTANT]
 > The underlying ML models required for these APIs currently require your device to be running the latest Windows 11 Insider Preview Build on the Dev Channel. Additionally, these APIs require your device to be a Copilot+ PC. See [Copilot+ PCs Developer Guide](/windows/ai/npu-devices) to learn more about these devices. APIs will throw an exception when called on devices lacking the necessary support.
 >
-> The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extract objects from pictures, and more.
+> The Windows App SDK incorporates advanced Windows AI capabilities, enabling developers to seamlessly integrate intelligent features into their applications. These enhancements include local AI functionalities such as responding to incoming prompts, recognizing text within images, describing image contents, extracting objects from pictures, and more.
 >
 > For information on responsible development practices utilized during the creation of the Windows AI APIs, which can also be applied when creating AI-assisted features, consult the [Developing Responsible Generative AI Applications and Features on Windows](/windows/ai/rai) guidance.
 >

@@ -31,9 +31,9 @@ zone_pivot_groups: wasdk-release-channels
 <details><summary>Bug fixes</summary>
 
 > - Fixed issue causing self-contained apps to not be able to set UAC Settings. For more information, see GitHub issue [#3376](https://github.com/microsoft/WindowsAppSDK/issues/3376).
-> - Fixed issue causing push notifications to return an inaccurate Expiration time with `PushNotificationChannel::ExpirationTime`. For more information, see GitHub issue [#3300](https://github.com/microsoft/WindowsAppSDK/issues/3330).
+> - Fixed issue causing push notifications to return an inaccurate Expiration time with `PushNotificationChannel::ExpirationTime`. For more information, see GitHub issue [#3330](https://github.com/microsoft/WindowsAppSDK/issues/3330).
 > - Fixed issue causing negative numbers to be considered "invalid" when passing a double as a parameter into an x:Bind function.
-> - Several fixes to update the WinUI VSIX. These updates included simplifying the project template dipAwareness in app.manifest, removing the UWP templates, updating localized resource files, adding the phone id to unblock store submission, and removing the copyright notice and license. For more info see GitHub issues [#5659](https://github.com/microsoft/microsoft-ui-xaml/issues/5659), [#3205](https://github.com/microsoft/WindowsAppSDK/issues/3205), [#3323](https://github.com/microsoft/WindowsAppSDK/issues/3323), [#3322](https://github.com/microsoft/WindowsAppSDK/issues/3322), [#3143](https://github.com/microsoft/WindowsAppSDK/issues/3143).
+> - Several fixes to update the WinUI VSIX. These updates included simplifying the project template dpiAwareness in app.manifest, removing the UWP templates, updating localized resource files, adding the phone id to unblock store submission, and removing the copyright notice and license. For more info see GitHub issues [#5659](https://github.com/microsoft/microsoft-ui-xaml/issues/5659), [#3205](https://github.com/microsoft/WindowsAppSDK/issues/3205), [#3323](https://github.com/microsoft/WindowsAppSDK/issues/3323), [#3322](https://github.com/microsoft/WindowsAppSDK/issues/3322), [#3143](https://github.com/microsoft/WindowsAppSDK/issues/3143).
 
 </details>
 
@@ -137,7 +137,7 @@ zone_pivot_groups: wasdk-release-channels
 
 <details><summary>Support for Visual Studio Arm64</summary>
 
-> As early as Project Reunion (now Windows App SDK) 0.5, apps developed with Windows App SDK were able to run on Arm64. Starting with Visual Studio 17.3 Preview 2, you can develop native applications with Windows App SDKpp SDK on Arm64 devices.
+> As early as Project Reunion (now Windows App SDK) 0.5, apps developed with Windows App SDK were able to run on Arm64. Starting with Visual Studio 17.3 Preview 2, you can develop native applications with Windows App SDK on Arm64 devices.
 >
 > To get started developing on an Arm64 device, see [Windows on Arm](/windows/arm/overview) and [Arm64 Visual Studio](https://devblogs.microsoft.com/visualstudio/arm64-visual-studio/).
 
@@ -170,7 +170,7 @@ zone_pivot_groups: wasdk-release-channels
 
 <details><summary>Windowing</summary>
 
-> Full title bar customization is now available on Windows 10, version 1809 and later through the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) class. You can set [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) to `true` to extend content into the title bar area, and [**SetDragRectangles**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles#microsoft-ui-windowing-appwindowtitlebar-setdragrectangles(windows-graphics-rectint32())) to define drag regions (in addition to other customization options).
+> Full title bar customization is now available on Windows 10, version 1809 and later through the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) class. You can set [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) to `true` to extend content into the title bar area, and [**SetDragRectangles**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles) to define drag regions (in addition to other customization options).
 >
 > If you've been using the [**AppWindowTitleBar.IsCustomizationSupported**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) property to check whether you can call the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) APIs, it now returns `true` on supported Windows App SDK Windows 10 versions (1809 and later).
 >
@@ -317,7 +317,7 @@ zone_pivot_groups: wasdk-release-channels
 <details><summary>Windowing</summary>
 
 >
-> Full title bar customization is now available on Windows 10, version 1809 and later through the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) class. You can set [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) to `true` to extend content into the title bar area, and [**SetDragRectangles**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles#microsoft-ui-windowing-appwindowtitlebar-setdragrectangles(windows-graphics-rectint32())) to define drag regions (in addition to other customization options).
+> Full title bar customization is now available on Windows 10, version 1809 and later through the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) class. You can set [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) to `true` to extend content into the title bar area, and [**SetDragRectangles**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.setdragrectangles) to define drag regions (in addition to other customization options).
 >
 > If you've been using the [**AppWindowTitleBar.IsCustomizationSupported**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) property to check whether you can call the [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) APIs, it now returns `true` on supported Windows App SDK Windows 10 versions (1809 and later).
 >
