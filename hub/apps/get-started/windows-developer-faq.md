@@ -85,7 +85,7 @@ Topics covered include:
 
 > Note that [WinUI](../winui/winui3/index.md) (a UI framework) ships with the [Windows App SDK](../windows-app-sdk/index.md) (a Windows platform development framework).
 >
-> Generally, WinUI can't be used unless the app is ready to migrate its UI framework entirely. A feature called [XAML islands](/windows/apps/windows-app-sdk/stable-channel#xaml-islands-no-longer-experimental) is in development to host WinUI content in other UI frameworks (WPF, Win32).
+> Generally, WinUI can't be used unless the app is ready to migrate its UI framework entirely. A feature called [XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md) enables hosting WinUI content in other UI frameworks (WPF, Win32). See [XAML Islands documentation](../desktop/modernize/xaml-islands/xaml-islands.md) for more info.
 >
 > Elements of the Windows App SDK can often be used in desktop apps, depending on how the existing app was built. UWP apps are not supported by Windows App SDK.
 >
@@ -221,7 +221,7 @@ Topics covered include:
 
 <details><summary>Where can I find WinUI samples?</summary>
 
-> See [Sample and resources](./samples.md). Some notable repositories:
+> See [Samples and resources](./samples.md). Some notable repositories:
 > 
 > - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets.
 > - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): Contains a WinUI notes sample used in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/) tutorial.
@@ -389,7 +389,7 @@ Topics covered include:
 > - What languages or skills do you already have — .NET, JavaScript, something else?
 > - Do you need access to Windows-specific APIs?
 > - Which framework’s capabilities best match your app’s requirements?
-> - See [this table](/windows/apps/get-started/#app-development-framework-feature-comparison) for additional comparison factors.
+> - See [this table](/windows/apps/get-started/) for additional comparison factors.
 > 
 > For many business apps, teams often choose based on existing skills and what the team is most comfortable using.
 
