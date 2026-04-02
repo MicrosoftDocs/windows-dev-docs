@@ -287,7 +287,7 @@ namespace WinUINotes
 
 With this code in place, you can test the app to make sure the note saves and loads correctly.
 
-1. Build and run the project by pressing <kbd>F5</kbd>, clicking the Debug "Start" button in the tool bar, or by selecting the menu **Run** > **Start Debugging**.
+1. Build and run the project by pressing <kbd>F5</kbd>, clicking the Debug "Start" button in the tool bar, or by selecting the menu **Debug** > **Start Debugging**.
 1. Type into the text entry box and press the **Save** button.
 1. Close the app, then restart it. The note you entered should be loaded from the device's storage.
 1. Press the **Delete** button.
