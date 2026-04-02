@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 # What's new in the Windows SDK
 
 In a new or existing Windows app, you can get the Windows SDK in several ways: install it from the installer or ISO, in the Visual Studio 2022 Installer, or by downloading the NuGet package.
-You can update the SDK by manually installing the new build, updating in Visual Studio or update the Nuget package
+You can update the SDK by manually installing the new build, updating in Visual Studio, or updating the NuGet package.
 
-For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
+For the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## Build 10.0.26100.7705
 
