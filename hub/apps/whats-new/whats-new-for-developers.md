@@ -26,7 +26,6 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
     :::column:::
-        :::column:::
         ![Windows SDK icon](images/wsdk-hero.png)<br>
         **Windows SDK**<br>
         Discover what's new<br>
