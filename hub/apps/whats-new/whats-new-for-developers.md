@@ -36,7 +36,7 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ---
 
-## Highlights – Aprl 2026
+## Highlights – April 2026
 
 - **Agentic AI tools for Windows development**: New guide on enhancing AI coding agents with Windows-specific context — including the [Microsoft Learn MCP Server](/training/support/mcp) for live documentation access, and the [WinUI 3 development plugin for GitHub Copilot](https://github.com/github/awesome-copilot/tree/main/plugins/winui3-development) to generate accurate, modern WinUI 3 code — [Agentic AI tools for Windows](../dev-tools/agentic-tools.md).
 - **WinApp CLI cross-framework guides**: The Windows App Development CLI (public preview) now has step-by-step guides for adding Windows capabilities to apps built with **.NET, C++, Rust, Flutter, Electron, and Tauri** — including packaging, identity, AI integration, and notifications — [WinApp CLI guides](../dev-tools/winapp-cli/guides/index.md).
@@ -47,7 +47,7 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **Windows notifications overview**: Confused by `AppNotificationManager` vs `ToastNotificationManager`? New overview page explains which notification API to use for your app type, with a feature comparison table and links to samples — [Windows notifications overview](../develop/notifications/index.md).
 - **Choose a packaging model**: New scenario-based decision guide for choosing between packaged (MSIX), unpackaged, and sparse-package / external-location approaches — covering distribution options, feature requirements, and migration paths — [Choose a packaging model](../package-and-deploy/choose-packaging-model.md).
 - **Performance docs for WinUI**: The full set of Windows app performance documentation — startup, memory, XAML layout, animations, ListView/GridView optimization, and more — is now available under the WinUI developer section at [Windows app performance](../develop/performance/index.md).
-- **Visual layer and Composition docs for WinUI**: Documentation for the Visual layer (`Windows.UI.Composition`) — including visuals, animations, effects, brushes, lighting, and shadows — is now linked from the WinUI/Windows App SDK developer section.
+- **Visual layer and Composition docs for WinUI**: Documentation for the Visual layer (`Microsoft.UI.Composition`) — including visuals, animations, effects, brushes, lighting, and shadows — is available in the WinUI/Windows App SDK developer section at [Visual layer overview](../develop/composition/visual-layer.md).
 - **Command Palette extension toolkit**: New API reference documentation for the PowerToys Command Palette extension toolkit, covering built-in commands (`CopyPathCommand`, `OpenFileCommand`, `OpenInConsoleCommand`, and more) and layout types — [Command Palette extension toolkit](/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/).
 - **Java getting started for Windows**: New guide for setting up a Java development environment on Windows, covering JDK installation, `JAVA_HOME` configuration, editor options, and WSL considerations — [Java on Windows](../dev-environment/java.md).
 - **App features overview**: New landing page for the Features section of the Windows developer docs, with entry points to accessibility, AI, files, notifications, UI, and more — [Features for Windows app development](../develop/features-overview.md).
