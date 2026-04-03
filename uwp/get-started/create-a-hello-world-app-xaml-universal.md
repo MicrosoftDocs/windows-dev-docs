@@ -1,7 +1,7 @@
 ---
 ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
-title: Learn to create a Hello World UWP app with XAML and .NET 10
-description: Use XAML with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) and .NET 10 on Windows.
+title: Learn to create a Hello World UWP app with XAML and C#
+description: Use XAML with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows.
 ms.date: 01/26/2026
 ms.topic: how-to
 keywords: windows 10, uwp, first app, hello world, windows 11, xaml, c#, universal windows platform, uwp app, uwp tutorial
@@ -9,13 +9,13 @@ ms.localizationpriority: medium
 # Customer intent: As a Windows developer, I want to learn how to create a "Hello, World!" UWP app using Visual Studio, XAML, and C#.
 ---
 
-# Create a "Hello, World!" UWP app (XAML) with .NET 10
+# Create a "Hello, World!" UWP app (XAML)
 
-This tutorial teaches you how to use XAML, C#, and .NET 10 with [Native AOT](/dotnet/core/deploying/native-aot/) (Ahead-of-Time) to create a simple "Hello, World!" app for the Universal Windows Platform (UWP) on Windows. With a single project in Microsoft Visual Studio, you can build an app that runs on all supported versions of Windows 10 and Windows 11.
+This tutorial teaches you how to use XAML and C# with [Native AOT](/dotnet/core/deploying/native-aot/) (Ahead-of-Time) to create a simple "Hello, World!" app for the Universal Windows Platform (UWP) on Windows. With a single project in Microsoft Visual Studio, you can build an app that runs on all supported versions of Windows 10 and Windows 11.
 
 Here you'll learn how to:
 
--   Create a new **UWP** project targeting .NET 10 in **Visual Studio**.
+-   Create a new **UWP** project in **Visual Studio**.
 -   Write XAML to change the UI on your start page.
 -   Run the project on the local desktop in Visual Studio.
 -   Use a [SpeechSynthesizer](/uwp/api/windows.media.speechsynthesis.speechsynthesizer) to make the app talk when you press a button.
@@ -44,7 +44,7 @@ Here you'll learn how to:
 1. Choose the **UWP Blank App** template.
 
    > [!IMPORTANT]
-   > Make sure to select the **UWP Blank App** template. If you select the **UWP Blank App (.NET Native)** template, it will target the .NET Native runtime, not .NET 10. Apps targeting .NET Native do not have access to the latest .NET and C# features or security and performance improvements. For more information about the differences between the two project types, see [Modernize your UWP app with .NET and Native AOT](../dotnet-native/modernize-uwp-apps-with-dotnet.md).
+   > The **UWP Blank App** template is the default and targets the latest .NET with Native AOT. If you see a **UWP Blank App (.NET Native)** template, that is a legacy template targeting the older .NET Native runtime. Apps using the modern .NET template have access to the latest .NET and C# features, improved performance, and better tooling. For more information about the differences, see [Modernize your UWP app with .NET and Native AOT](../dotnet-native/modernize-uwp-apps-with-dotnet.md).
 
 1. Select **Next**, and enter "HelloWorld" as the **Project name**. Select **Create**.
 
@@ -110,7 +110,7 @@ Let's add a button to our page. In this tutorial, you work with just a few of th
    ![A screenshot of Visual Studio showing the Main Page in the X A M L editor](images/cs-xaml-hw-app4.png)
 
    > [!NOTE]
-   > You won't see a design view when working with the **UWP Blank App** template that uses .NET 10. If you want to work with a UWP project with a XAML design view, you can use the **UWP Blank App (.NET Native)** template instead. As previously noted, the **UWP Blank App (.NET Native)** template is a little different from the **UWP Blank App** template, but it has the same basic structure. The main difference is that the **UWP Blank App (.NET Native)** template uses .NET Native to compile your app. See [Modernize your UWP app with .NET and Native AOT](../dotnet-native/modernize-uwp-apps-with-dotnet.md) for information about the advantages of using the new .NET 10 template.
+   > You won't see a design view when working with the **UWP Blank App** template that uses modern .NET. If you want to work with a UWP project with a XAML design view, you can use the **UWP Blank App (.NET Native)** template instead. As previously noted, the **UWP Blank App (.NET Native)** template is a little different from the **UWP Blank App** template, but it has the same basic structure. The main difference is that the **UWP Blank App (.NET Native)** template uses .NET Native to compile your app. See [Modernize your UWP app with .NET and Native AOT](../dotnet-native/modernize-uwp-apps-with-dotnet.md) for information about the advantages of using the modern .NET template.
 
 1. Add the following XAML code to the `<Grid>` element in MainPage.xaml. You can type it in, or copy and paste it from here:
 
@@ -214,7 +214,7 @@ When you run the app and click on the button, your computer (or phone) will lite
 
 ## Summary
 
-Congratulations, you've created your first UWP app for Windows with .NET 10!
+Congratulations, you've created your first UWP app for Windows with modern .NET!
 
 To learn how to use XAML for laying out the controls your app will use, try the [grid tutorial](/windows/apps/design/layout/grid-tutorial), or jump straight to [next steps](create-uwp-apps.md)?
 
