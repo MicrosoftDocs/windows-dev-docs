@@ -70,6 +70,9 @@ Instead of setting **Width** from a Resources File, you'll probably want to allo
 Greeting.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name
 ```
 
+> [!NOTE]
+> Unlike XAML resource references such as `{StaticResource}` or `{ThemeResource}`, there is no XAML markup extension for directly assigning a `.resw` string resource to a property in markup—for example, `<TextBlock Text="{ms-resource:Farewell}"/>` is not valid syntax. **x:Uid** is the XAML-only approach. To explicitly set a localized string to a specific property, add the corresponding property identifier to your `.resw` file (for example, `Farewell.Text`) and set `x:Uid="Farewell"` on the element. If you need to assign a resource string to a property in code (for example, when the identifier naming convention that **x:Uid** requires doesn't fit your scenario), use `ResourceLoader.GetString()` as described in [Refer to a string resource identifier from code](#refer-to-a-string-resource-identifier-from-code).
+
 ## Refer to a string resource identifier from code
 
 You can explicitly load a string resource based on a simple string resource identifier.
