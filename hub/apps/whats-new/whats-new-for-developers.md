@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 03/10/2026
+ms.date: 04/03/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -44,6 +44,13 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **Materials documentation**: New dedicated pages covering how to use Mica and Acrylic in your WinUI apps — [Materials overview](../develop/ui/materials.md) and [In-app acrylic](../develop/ui/in-app-acrylic.md).
 - **Store API updates**: New sections documenting how to check if an unpackaged app is installed and how to open the Store product detail page for a product — [Send requests to the Store](/windows/uwp/monetize/send-requests-to-the-store).
 - **Iconography documentation reorganized**: App icon and iconography docs have been consolidated into a dedicated [Iconography hub](../design/iconography/index.md) for easier navigation.
+- **Windows notifications overview**: Confused by `AppNotificationManager` vs `ToastNotificationManager`? New overview page explains which notification API to use for your app type, with a feature comparison table and links to samples — [Windows notifications overview](../develop/notifications/index.md).
+- **Choose a packaging model**: New scenario-based decision guide for choosing between packaged (MSIX), unpackaged, and sparse-package / external-location approaches — covering distribution options, feature requirements, and migration paths — [Choose a packaging model](../package-and-deploy/choose-packaging-model.md).
+- **Performance docs for WinUI**: The full set of Windows app performance documentation — startup, memory, XAML layout, animations, ListView/GridView optimization, and more — is now available under the WinUI developer section at [Windows app performance](../develop/performance/index.md).
+- **Visual layer and Composition docs for WinUI**: Documentation for the Visual layer (`Windows.UI.Composition`) — including visuals, animations, effects, brushes, lighting, and shadows — is now linked from the WinUI/Windows App SDK developer section.
+- **Command Palette extension toolkit**: New API reference documentation for the PowerToys Command Palette extension toolkit, covering built-in commands (`CopyPathCommand`, `OpenFileCommand`, `OpenInConsoleCommand`, and more) and layout types — [Command Palette extension toolkit](/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/).
+- **Java getting started for Windows**: New guide for setting up a Java development environment on Windows, covering JDK installation, `JAVA_HOME` configuration, editor options, and WSL considerations — [Java on Windows](../dev-environment/java.md).
+- **App features overview**: New landing page for the Features section of the Windows developer docs, with entry points to accessibility, AI, files, notifications, UI, and more — [Features for Windows app development](../develop/features-overview.md).
 
 Previous highlights:
 
@@ -74,3 +81,9 @@ Previous highlights:
 | [WinApp CLI overview](../dev-tools/winapp-cli/index.md) | Command-line tool for packaging, identity, and SDK management across frameworks. |
 | [MapControl](../develop/ui/controls/map-control.md) | Interactive Azure Maps-powered map control for WinUI apps. |
 | [Materials in Windows apps](../develop/ui/materials.md) | Overview of Mica and Acrylic materials for WinUI. |
+| [Windows notifications overview](../develop/notifications/index.md) | Which notification API to use: AppNotificationManager vs ToastNotificationManager. |
+| [Choose a packaging model](../package-and-deploy/choose-packaging-model.md) | Scenario-based guide for choosing packaged, unpackaged, or sparse packaging. |
+| [Windows app performance](../develop/performance/index.md) | Performance docs for WinUI apps: startup, memory, XAML layout, and more. |
+| [Command Palette extension toolkit](/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/) | API reference for building PowerToys Command Palette extensions. |
+| [Java on Windows](../dev-environment/java.md) | Set up a Java development environment on Windows. |
+| [Features for Windows app development](../develop/features-overview.md) | Landing page for Windows platform features: accessibility, AI, files, notifications, and more. |
