@@ -143,12 +143,12 @@ See [**ListViewBase.CanReorderItems**](/uwp/api/windows.ui.xaml.controls.listvie
 
 The [UIElement](/uwp/api/windows.ui.xaml.uielement) class does most of the work of implementing drag-and-drop for you. But if you want, you can implement your own version by using the APIs below.
 
-| Functionality | Windows App SDK</br> Microsoft.UI.Input.DragDrop namespace | UWP<br/> Windows.Applicationmodel.DataTransfer.DragDrop.Core namespace |
-| --- | --- | --- |
-| DragPrimitive | [DragOperation](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation) | [CoreDragOperation](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
-| Create a data package | [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)  | same |
-| Hand off drag to the shell  |[DragOperation.StartAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation)  |  [CoreDragOperation.StartAsync](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragoperation)  |
-| Receive drop from the shell  | [DragDropManager.TargetRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragdropmanager) <br/>[ICoreDropOperationTarget](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation)  | [CoreDragDropManager.TargetRequested](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.coredragdropmanager)<br/>[ICoreDropOperationTarget](/uwp/api/windows.applicationmodel.datatransfer.dragdrop.core.icoredropoperationtarget)    |
+| Functionality | Windows App SDK</br> Microsoft.UI.Input.DragDrop namespace |
+| --- | --- |
+| DragPrimitive | [DragOperation](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation) |
+| Create a data package | [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)  |
+| Hand off drag to the shell  |[DragOperation.StartAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation)  |
+| Receive drop from the shell  | [DragDropManager.TargetRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragdropmanager) <br/>[ICoreDropOperationTarget](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.dragdrop.dragoperation)  |
 
 ## See also
 
