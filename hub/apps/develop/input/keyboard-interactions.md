@@ -91,7 +91,7 @@ Try to rank and present the most important commands, controls, and content first
 
 Initial focus specifies the UI element that receives focus when an application or a page is first launched or activated. When using a keyboard, it is from this element that a user starts interacting with your application's UI.
 
-For UWP apps, initial focus is set to the element with the highest [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) that can receive focus. Child elements of container controls are ignored. In a tie, the first element in the visual tree receives focus.
+For WinUI apps, initial focus is set to the element with the highest [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) that can receive focus. Child elements of container controls are ignored. In a tie, the first element in the visual tree receives focus.
 
 #### Set initial focus on the most logical element
 
