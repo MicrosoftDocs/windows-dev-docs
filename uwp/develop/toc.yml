@@ -25,8 +25,6 @@ items:
       href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
     - name: Display the camera preview
       href: ../audio-video-camera/simple-camera-preview-access.md
-    - name: Camera UI features for mobile devices
-      href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
     - name: Handle device and screen orientation with MediaCapture
       href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
     - name: Use OpenCV with MediaFrameReader
@@ -198,10 +196,6 @@ items:
       href: ../files/quickstart-using-file-and-folder-pickers.md
     - name: Save a file with a picker
       href: ../files/quickstart-save-a-file-with-a-picker.md
-    - name: Accessing HomeGroup content
-      href: ../files/quickstart-accessing-homegroup-content.md
-    - name: Access the SD card
-      href: ../files/access-the-sd-card.md
   - name: Machine Learning
     href: /windows/ai/
 - name: Deployment
@@ -215,8 +209,6 @@ items:
       href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
     - name: Testing and debugging tools for PLM
       href: ../debug-test-perf/testing-debugging-plm.md
-    - name: Test with the Microsoft Emulator for Windows
-      href: ../debug-test-perf/test-with-the-emulator.md
     - name: Test Surface Hub apps using Visual Studio
       href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
     - name: Deploy an app through loose file registration
@@ -228,8 +220,6 @@ items:
       items:
       - name: Windows Device Portal for Desktop
         href: ../debug-test-perf/device-portal-desktop.md
-      - name: Windows Device Portal for Mobile
-        href: ../debug-test-perf/device-portal-mobile.md
       - name: Windows Device Portal core REST APIs
         href: ../debug-test-perf/device-portal-api-core.md
       - name: Write a custom plugin for Windows Device Portal
@@ -1108,8 +1098,6 @@ items:
   items:
   - name: Asynchronous programming (UWP apps)
     href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
-  - name: Asynchronous programming in C++/CX (UWP apps)
-    href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
   - name: Best practices for using the thread pool
     href: ../threading-async/best-practices-for-using-the-thread-pool.md
   - name: Call asynchronous APIs in C# or Visual Basic

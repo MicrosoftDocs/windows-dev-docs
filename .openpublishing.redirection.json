@@ -1,6 +1,36 @@
 {
   "redirections": [
     {
+      "source_path": "uwp/audio-video-camera/camera-ui-features-for-mobile-devices.md",
+      "redirect_url": "/previous-versions/windows/uwp/audio-video-camera/camera-ui-features-for-mobile-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/device-portal-mobile.md",
+      "redirect_url": "/previous-versions/windows/uwp/debug-test-perf/device-portal-mobile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/test-with-the-emulator.md",
+      "redirect_url": "/previous-versions/windows/uwp/debug-test-perf/test-with-the-emulator",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md",
+      "redirect_url": "/previous-versions/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/quickstart-accessing-homegroup-content.md",
+      "redirect_url": "/previous-versions/windows/uwp/files/quickstart-accessing-homegroup-content",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/access-the-sd-card.md",
+      "redirect_url": "/previous-versions/windows/uwp/files/access-the-sd-card",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/windows-integration/settings-mcp.md",
       "redirect_url": "/windows/apps/develop/windows-integration/",
       "redirect_document_id": false
