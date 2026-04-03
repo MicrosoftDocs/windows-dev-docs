@@ -4,7 +4,7 @@ title: Send a local app notification from a C# app
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 label: Send a local app notification from C# apps
 template: detail.hbs
-ms.date: 11/27/2024
+ms.date: 04/01/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, windows app sdk, winappsdk, send toast notifications, notifications, send notifications, toast notifications, how to, quickstart, getting started, code sample, walkthrough, c#, csharp, win32, desktop
 ms.localizationpriority: medium
@@ -12,10 +12,14 @@ ms.localizationpriority: medium
 
 # Send a local app notification from a C# app
 
-[!INCLUDE [intro](includes/send-toast-intro.md)]
+An app notification is a message that your app can construct and deliver to your user while they are not currently inside your app.
+
+<img src="images/toast-notification.png" width="628" alt="Screenshot of an app notification"/>
+
+This quickstart walks you through the steps to create, deliver, and display a Windows 11 app notification using rich content and interactive actions. This quickstart uses local notifications, which are the simplest notification to implement. Many types of Windows apps including WinUI, WPF, WinForms, and console, can send notifications with the [Windows App SDK](/windows/apps/windows-app-sdk/).
 
 > [!NOTE]
-> The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
+> The term "toast notification" is being replaced with "app notification".These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 > [!IMPORTANT]
 > If you're writing a C++ app, please see the [C++ UWP](send-local-toast-cpp-uwp.md) or [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation.
@@ -32,7 +36,11 @@ using Microsoft.Windows.AppNotifications.Builder;
 
 ## Step 2: Send an app notification
 
-[!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
+In Windows 10 and Windows 11, your app notification content is described using an adaptive language that allows great flexibility with how your notification looks. For more information, see the [App notification content](adaptive-interactive-toasts.md) documentation.
+
+We'll start with a simple text-based notification. Construct the notification content and show the notification! You can use the [Windows App SDK](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder) `AppNotificationBuilder` APIs.
+
+<img alt="Simple text notification" src="images/send-toast-01.png" width="364"/>
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
@@ -110,20 +118,74 @@ First, in your **Package.appxmanifest**, add:
 
 Then, **in your app's startup code** (App.xaml.cs OnStartup for WPF), subscribe to the OnActivated event.
 
-[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
+```csharp
+// Listen to notification activation
+ToastNotificationManagerCompat.OnActivated += toastArgs =>
+{
+    // Obtain the arguments from the notification
+    ToastArguments args = ToastArguments.Parse(toastArgs.Argument);
 
-[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-sequence.md)]
+    // Obtain any user input (text boxes, menu selections) from the notification
+    ValueSet userInput = toastArgs.UserInput;
+
+    // Need to dispatch to UI thread if performing UI operations
+    Application.Current.Dispatcher.Invoke(delegate
+    {
+        // TODO: Show the corresponding content
+        MessageBox.Show("Toast activated. Args: " + toastArgs.Argument);
+    });
+};
+```
+
+When the user clicks any of your notifications (or a button on the notification), the following will happen...
+
+**If your app is currently running**...
+
+1. The **ToastNotificationManagerCompat.OnActivated** event will be invoked on a background thread.
+
+**If your app is currently closed**...
+
+1. Your app's EXE will be launched and `ToastNotificationManagerCompat.WasCurrentProcessToastActivated()` will return true to indicate the process was started due to a modern activation and that the event handler will soon be invoked.
+1. Then, the 
+ **ToastNotificationManagerCompat.OnActivated** event will be invoked on a background thread.
 
 #### [Desktop (unpackaged)](#tab/desktop)
 
 > [!NOTE]
 > For Windows App SDK apps, activation is handled through `AppNotificationManager.Default.NotificationInvoked` rather than the approach described below. See the [app notifications quickstart](app-notifications-quickstart.md) for details.
 
-[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-sequence.md)]
+When the user clicks any of your notifications (or a button on the notification), the following will happen...
 
-**In your app's startup code** (App.xaml.cs OnStartup for WPF), subscribe to the OnActivated event.
+**If your app is currently running**...
 
-[!INCLUDE [desktop toast activation sequence](includes/desktop-toast-activation-code.md)]
+1. The **ToastNotificationManagerCompat.OnActivated** event will be invoked on a background thread.
+
+**If your app is currently closed**...
+
+1. Your app's EXE will be launched and `ToastNotificationManagerCompat.WasCurrentProcessToastActivated()` will return true to indicate the process was started due to a modern activation and that the event handler will soon be invoked.
+1. Then, the 
+ **ToastNotificationManagerCompat.OnActivated** event will be invoked on a background thread.
+
+**In your app's startup code**(App.xaml.cs OnStartup for WPF), subscribe to the OnActivated event.
+
+```csharp
+// Listen to notification activation
+ToastNotificationManagerCompat.OnActivated += toastArgs =>
+{
+    // Obtain the arguments from the notification
+    ToastArguments args = ToastArguments.Parse(toastArgs.Argument);
+
+    // Obtain any user input (text boxes, menu selections) from the notification
+    ValueSet userInput = toastArgs.UserInput;
+
+    // Need to dispatch to UI thread if performing UI operations
+    Application.Current.Dispatcher.Invoke(delegate
+    {
+        // TODO: Show the corresponding content
+        MessageBox.Show("Toast activated. Args: " + toastArgs.Argument);
+    });
+};
+```
 
 #### [UWP](#tab/uwp)
 
@@ -151,7 +213,8 @@ protected override void OnActivated(IActivatedEventArgs e)
 }
 ```
 
-[!INCLUDE [OnLaunched warning](includes/onlaunched-warning.md)]
+> [!IMPORTANT]
+> You must initialize your frame and activate your window just like your **OnLaunched** code. **OnLaunched is NOT called if the user clicks on your app notification**, even if your app was closed and is launching for the first time. We often recommend combining **OnLaunched** and **OnActivated** into your own `OnLaunchedOrActivated` method since the same initialization needs to occur in both.
 ---
 
 ## Step 4: Handle uninstallation
@@ -176,7 +239,8 @@ You don't need to do anything! When UWP apps are uninstalled, all notifications 
 
 You can add rich content to notifications. We'll add an inline image and a profile (app logo override) image.
 
-[!INCLUDE [images note](includes/images-note.md)]
+> [!NOTE]
+> Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.
 
 > [!IMPORTANT]
 > Http images are supported only in packaged apps that have the internet capability in their manifest. Unpackaged apps don't support http images; you must download the image to your local app data, and reference it locally.

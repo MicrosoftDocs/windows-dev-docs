@@ -2,7 +2,7 @@
 title: App notifications overview
 description: Overview of Windows App SDK App Notifications
 ms.topic: concept-article
-ms.date: 07/28/2025
+ms.date: 03/01/2026
 keywords: toast, notification
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
@@ -11,7 +11,7 @@ no-loc: [toast, Toast, app, App]
 
 ![A screen capture showing an app notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, "Going". There are two buttons labeled "RSVP" and "Dismiss"](images/shell-1x.png)
 
-App notifications (also called _toast_ notifications) are messages that your app can construct and deliver to your user while they are not currently inside your app. The notification content is displayed in a transient window in the bottom right corner of the screen and in the Notification Center (called Action Center in Windows 10). App notifications can be used to inform the user of application status or state changes, or to prompt the user to take an action. App notifications can either be sent locally or from a cloud service using [push notifications](../push-notifications/index.md).
+App notifications are messages that your app can construct and deliver to your user while they are not currently inside your app. The notification content is displayed in a transient window in the bottom right corner of the screen and in the Notification Center. App notifications can be used to inform the user of application status or state changes, or to prompt the user to take an action. App notifications can either be sent locally or from a cloud service using [push notifications](../push-notifications/index.md).
 
 > [!NOTE]
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.

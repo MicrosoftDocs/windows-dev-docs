@@ -12,7 +12,11 @@ no-loc: [toast, Toast, app, App]
 ---
 # Send a local app notification from C++ UWP apps
 
-[!INCLUDE [intro](includes/send-toast-intro.md)]
+An app notification is a message that your app can construct and deliver to your user while they are not currently inside your app.
+
+<img src="images/toast-notification.png" width="628" alt="Screenshot of an app notification"/>
+
+This quickstart walks you through the steps to create, deliver, and display a Windows 11 app notification using rich content and interactive actions. This quickstart uses local notifications, which are the simplest notification to implement. Many types of Windows apps including WinUI, WPF, WinForms, and console, can send notifications with the [Windows App SDK](/windows/apps/windows-app-sdk/).
 
 > [!NOTE]
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
@@ -32,7 +36,11 @@ using namespace Windows::Data::Xml::Dom;
 
 ## Step 2: Send an app notification
 
-[!INCLUDE [basic toast intro](includes/send-toast-basic-toast-intro.md)]
+In Windows 10 and Windows 11, your app notification content is described using an adaptive language that allows great flexibility with how your notification looks. For more information, see the [App notification content](adaptive-interactive-toasts.md) documentation.
+
+We'll start with a simple text-based notification. Construct the notification content and show the notification! You can use the [Windows App SDK](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder) `AppNotificationBuilder` APIs.
+
+<img alt="Simple text notification" src="images/send-toast-01.png" width="364"/>
 
 Construct the XML app notification template, populate it with text and values, construct the notification, and show it.
 
@@ -88,7 +96,8 @@ void App::OnActivated(IActivatedEventArgs^ e)
 }
 ```
 
-[!INCLUDE [OnLaunched warning](includes/onlaunched-warning.md)]
+> [!IMPORTANT]
+> You must initialize your frame and activate your window just like your **OnLaunched** code. **OnLaunched is NOT called if the user clicks on your app notification**, even if your app was closed and is launching for the first time. We often recommend combining **OnLaunched** and **OnActivated** into your own `OnLaunchedOrActivated` method since the same initialization needs to occur in both.
 
 ## Activation in depth
 
@@ -127,7 +136,8 @@ toastNotifier.Show(notif);
 
 You can add rich content to notifications. We'll add an inline image and a profile (app logo override) image.
 
-[!INCLUDE [images note](includes/images-note.md)]
+> [!NOTE]
+> Images can be used from the app's package, the app's local storage, or from the web. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB.
 
 <img alt="App notification with images" src="images/send-toast-02.png" width="364"/>
 
