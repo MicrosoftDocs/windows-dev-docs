@@ -31,7 +31,7 @@ winget configure -f https://aka.ms/winui-config
 To review the config file and learn more, see its [README](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/WinUI/README.md) on GitHub.
 
 > [!NOTE]
-> If WinGet is not available by default in your environment, you can use the following commands to install it. See [Using WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/) for more information.
+> If WinGet is not available by default in your environment, you can use the following commands to install it. See [Using WinGet](https://learn.microsoft.com/windows/package-manager/winget/) for more information.
 ```powershell
 Install-Module -Name Microsoft.WinGet.Client -Force
 Repair-WinGetPackageManager -AllUsers
