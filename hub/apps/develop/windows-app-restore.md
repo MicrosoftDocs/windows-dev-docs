@@ -38,7 +38,7 @@ When a user installs a new operating system (OS), and chooses to restore from th
 
 Another key to creating a great experience for your users is ensuring that the app gets installed, and behaves correctly. The best way to do that is with a *packaged* app (see [Deployment overview](/windows/apps/package-and-deploy/)).
 
-A packaged app (either a packaged desktop app or a Universal Windows Platform app) is packaged using MSIX, and it's run inside of a lightweight app container. The packaged app process and its child processes run inside the container; and they're isolated using file system and registry virtualization. It's these aspects of packaging that make installation extremely reliable, and ensure that the app doesn't misbehave or leave registry configuration or app files on the PC when the user uninstalls.
+A packaged app (either a packaged desktop app or a WinUI app) is packaged using MSIX, and it's run inside of a lightweight app container. The packaged app process and its child processes run inside the container; and they're isolated using file system and registry virtualization. It's these aspects of packaging that make installation extremely reliable, and ensure that the app doesn't misbehave or leave registry configuration or app files on the PC when the user uninstalls.
 
 For more info about the benefits of using MSIX for packaging, see [What is MSIX?](/windows/msix/overview).
 
