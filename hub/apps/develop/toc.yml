@@ -1256,6 +1256,14 @@ items:
         href: /dotnet/api/
       - name: Schema specs for Windows apps >>
         href: /uwp/schemas/
+      - name: Windows Settings reference
+        items:
+        - name: Windows 10 and Windows 11 settings reference
+          href: settings/settings-common.md
+        - name: Windows 11 settings reference
+          href: settings/settings-windows-11.md
+        - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
+          href: settings/readclouddatasettings-exe.md    
   - name: Tools
     items:
       - name: Agentic tools
