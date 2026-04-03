@@ -37,7 +37,7 @@ The list is determined at compile time, but you have two options for controlling
   </Resources>
 ```
 
-Each time Visual Studio produces your built app package manifest file (`AppxManifest.xml`), it expands that single `Resource` element in the source file into a union of all the language qualifiers that it finds in your project (see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)). For example, if you've begun localizing and you have string, image, and/or file resources whose folder or file names include "en-US", "ja-JP", and "fr-FR", then your built `AppxManifest.xml` file will contain the following (the first entry in the list is the default language that you set).
+Each time Visual Studio produces your built app package manifest file (`AppxManifest.xml`), it expands that single `Resource` element in the source file into a union of all the language qualifiers that it finds in your project (see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)). For example, if you've begun localizing and you have string, image, and/or file resources whose folder or file names include "en-US", "ja-JP", and "fr-FR", then your built `AppxManifest.xml` file will contain the following (the first entry in the list is the default language that you set).
 
 ```xml
   <Resources>
@@ -87,7 +87,7 @@ The app runtime language list determines the resources that Windows loads for yo
 **Note** If the user profile language and the app manifest language are regional variants of one another, then the user's regional variant is used as the app runtime language. For example, if the user prefers en-GB and the app supports en-US, then the app runtime language is en-GB. This ensures that dates, times, and numbers are formatted more closely to the user's expectations (en-GB), but localized resources are still loaded (due to language matching) in the app's supported language (en-US).
 
 ## Qualify resource files with their language
-Name your resource files, or their folders, with language resource qualifiers. To learn more about resource qualifiers, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast). A resource file can be an image (or other asset), or it can be a resource container file, such as a *.resw* that contains text strings.
+Name your resource files, or their folders, with language resource qualifiers. To learn more about resource qualifiers, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast). A resource file can be an image (or other asset), or it can be a resource container file, such as a *.resw* that contains text strings.
 
 **Note** Even resources in your app's default language must specify the language qualifier. For example, if your app's default language is English (United States), then qualify your assets as `\Assets\Images\en-US\logo.png`.
 
@@ -204,7 +204,7 @@ The following table contains examples of what the user would see in your app's U
 ## Related topics
 * [BCP-47 language tag](https://tools.ietf.org/html/bcp47)
 * [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
-* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
+* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)
 * [Supported languages](../../publish/publish-your-app/msix/app-package-requirements.md#supported-languages)
 * [Globalize your date/time/number formats](use-global-ready-formats.md)
 * [How the Resource Management System matches language tags](/windows/uwp/app-resources/how-rms-matches-lang-tags)
