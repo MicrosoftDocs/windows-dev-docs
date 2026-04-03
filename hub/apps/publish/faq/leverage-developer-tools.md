@@ -230,7 +230,7 @@ If you want to directly open the Microsoft Store app (without launching a browse
 `ms-windows-store://pdp/?ProductId=<your app's Store ID>`
 
 
-This approach is particularly useful when you know your users are already on a Windows device, or when directing users from within a Universal Windows Platform (UWP) app.
+This approach is particularly useful when you know your users are already on a Windows device, or when directing users from within a WinUI app.
 
 </details>
 

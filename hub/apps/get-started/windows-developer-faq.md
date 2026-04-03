@@ -115,7 +115,7 @@ Topics covered include:
 
 </details>
 
-<details><summary>What is the difference between WinUI and WinUI for UWP?</summary>
+<details><summary>What is the difference between WinUI 3 and WinUI 2 for UWP?</summary>
 
 > **WinUI** (previously referred to as WinUI 3) is the latest native UI framework for Windows app development. It provides a modern and flexible UI framework for creating visually appealing and interactive Windows apps. WinUI is part of the Windows App SDK and works best with the latest versions of Windows.
 >

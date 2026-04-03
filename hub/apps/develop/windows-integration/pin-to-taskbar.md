@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Pin your app to the taskbar
 
-Now you can programmatically request users to pin your Win32 or UWP app to the taskbar, similar to how you can [pin your app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis). And you can check whether your app is currently pinned, and whether the taskbar allows pinning.
+Now you can programmatically request users to pin your Win32 or WinUI app to the taskbar, similar to how you can [pin your app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis). And you can check whether your app is currently pinned, and whether the taskbar allows pinning.
 
 ![Screenshot of a Windows 11 task bar showing the app pinned there.](images/taskbar/taskbar.png)
 
@@ -36,22 +36,6 @@ The [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) class lets you as
 
 
 ## 1. Check whether the required APIs exist
-
-### UWP
-
-If your app supports older versions of Windows 10, you need to check whether the `TaskbarManager` class is available. You can use the [ApiInformation.IsTypePresent method](/uwp/api/windows.foundation.metadata.apiinformation#Windows_Foundation_Metadata_ApiInformation_IsTypePresent_System_String_) to perform this check. If the `TaskbarManager` class isn't available, avoid executing any calls to the APIs.
-
-```csharp
-if (ApiInformation.IsTypePresent("Windows.UI.Shell.TaskbarManager"))
-{
-    // Taskbar APIs exist!
-}
-
-else
-{
-    // Older version of Windows, no taskbar APIs
-}
-```
 
 ### Win32
 

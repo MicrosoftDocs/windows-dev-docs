@@ -1,6 +1,6 @@
 ---
 ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
-description: This section includes topics that explain the XAML framework for Universal Windows Platform (UWP) apps.
+description: This section includes topics that explain the XAML framework for WinUI apps.
 title: XAML platform
 ms.date: 09/08/2025
 ms.topic: article
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # XAML platform
 
-This section includes topics that explain programming concepts that are generally applicable to any app that you write using the Windows Runtime and XAML for your UI definition. This section applies to both WinUI 3 and UWP.
+This section includes topics that explain programming concepts that are generally applicable to any app that you write using the Windows Runtime and XAML for your UI definition.
 
 | Topic | Description |
 |-------|-------------|

@@ -26,11 +26,7 @@ Almost every app requires navigation between pages. Even a simple app with a sin
 > - **Applies to**: Windows App SDK/WinUI3
 > - **Important APIs**: [Microsoft.UI.Xaml.Controls.Frame](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame) class, [Microsoft.UI.Xaml.Controls.Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) class, [Microsoft.UI.Xaml.Navigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.navigation) namespace
 
-> [!NOTE]
-> For navigation in UWP apps, see [App navigation (UWP)](/windows/uwp/ui-input/app-navigation)
-
 ## 1. Create a blank app
-
 To create a blank app in Visual Studio:
 
 1. To set up your development computer, see [Start developing Windows apps](../../../get-started/start-here.md).

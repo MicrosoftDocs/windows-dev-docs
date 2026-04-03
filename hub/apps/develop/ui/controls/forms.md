@@ -1,10 +1,10 @@
 ---
 title: Forms
-description: Learn the guidelines for designing and creating XAML layouts for forms in a Universal Windows Platform (UWP) app.
+description: Learn the guidelines for designing and creating XAML layouts for forms in a WinUI app.
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: windows 10, uwp, fluent
+keywords: windows 10, winui, fluent
 ---
 # Forms
 A form is a group of controls that collect and submit data from users. Forms are typically used for settings pages, surveys, creating accounts, and much more. 
