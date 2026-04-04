@@ -11411,6 +11411,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/design/globalizing/use-patterns-to-format-dates-and-times.md",
+      "redirect_url": "/windows/apps/design/globalizing/use-global-ready-formats#use-templates-and-patterns-for-advanced-datetime-formatting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/localize-winui3-app.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/mrtcore/localize-strings#localize-a-winui-3-packaged-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md",
+      "redirect_url": "/windows/apps/design/globalizing/globalizing-portal#guidelines-for-globalization",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/files/quickstart-listing-files-and-folders.md",
       "redirect_url": "/windows/apps/develop/files/list-files-folders",
       "redirect_document_id": false

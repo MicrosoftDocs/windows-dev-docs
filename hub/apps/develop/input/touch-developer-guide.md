@@ -184,7 +184,7 @@ To provide customized touch support, you can handle various [**UIElement**](/uwp
 
   Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.
 
-Here is the basic set of touch gestures supported by UWP.
+Here is the basic set of touch gestures supported by WinUI.
 
 | Name           | Type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|

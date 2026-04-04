@@ -124,7 +124,7 @@ Each verification type (business and employment) allows up to three verification
 
    If you’re not taken there immediately: 
    * Wait about 5 minutes, refresh your browser until the Apps & Games tile appears, and then select it, or 
-   * Navigate directly to the Partner Center Apps & Games page 
+   * Navigate directly to the [Partner Center Apps & Games page](https://aka.ms/submitwindowsapp)
 
    From there, you can start submitting apps for publishing to the Microsoft Store. 
 

@@ -28,7 +28,7 @@ You should use swipe commanding when you have a potentially large group of items
 
 ## How does Swipe work?
 
-UWP swipe commanding has two modes: [Reveal](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode) and [Execute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode). It also supports four different swipe directions: up, down, left, and right.
+WinUI swipe commanding has two modes: [Reveal](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode) and [Execute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipemode). It also supports four different swipe directions: up, down, left, and right.
 
 ### Reveal mode
 

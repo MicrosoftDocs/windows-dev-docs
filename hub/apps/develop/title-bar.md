@@ -19,9 +19,6 @@ See the [Title bar](../design/basics/titlebar-design.md) design article for guid
 > [See the Windows 11 Fluent Design guidance for title bar](../design/basics/titlebar-design.md)
 
 > [!IMPORTANT]
-> This article shows how to customize the title bar for apps that use the Windows App SDK, either with or without WinUI 3. For apps that use UWP and WinUI for UWP, see [Title bar customization](/windows/uwp/ui-input/title-bar) for UWP.
-
-> [!IMPORTANT]
 > A new [Title bar](../design/controls/title-bar.md) control has been added in Windows App SDK 1.7. It simplifies the process of title bar customization.
 
 > [!div class="checklist"]

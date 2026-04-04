@@ -58,6 +58,8 @@ The **ResourceManager** not only supports access to an app's string resources, i
 
 Resource candidates are chosen based on a particular [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext), which is a collection of resource qualifier values (language, scale, contrast, and so on). A default context uses the app's current configuration for each qualifier value, unless overridden. For example, resources such as images can be qualified for scale, which varies from one monitor to another and hence from one application view to another. For this reason, each application view has a distinct default context. Whenever you retrieve a resource candidate, you should pass in a **ResourceContext** instance to obtain the most appropriate value for a given view.
 
+You can also construct a new **ResourceContext** and override its qualifier values to be explicit about which language, scale, contrast, or other qualifier to use when looking for a matching resource. For specific examples, see [Load a string for a specific language or other context](localize-strings.md#load-a-string-for-a-specific-language-or-other-context) and [Load an image for a specific language or other context](images-tailored-for-scale-theme-contrast.md#load-an-image-for-a-specific-language-or-other-context).
+
 ## Sample
 
 For a sample that demonstrates how to use the MRT Core API, see the [MRT Core sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement).

@@ -141,8 +141,6 @@ namespace BgLabelControlApp
 
 The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in [Custom attached properties](/windows/apps/develop/platform/xaml/custom-attached-properties).
 
-Note that the XAML classes referenced in the code above are in Microsoft.UI.Xaml namespaces. This is what distinguishes them as WinUI controls as opposed to UWP XAML controls, which are defined in Windows.UI.XAML namespaces.
-
 Replace the contents of BgLabelControl.h with the following code.
 
 ```cppwinrt
@@ -182,7 +180,7 @@ namespace winrt::BgLabelControlApp::factory_implementation
 }
 ```
 
-The code shown above implements the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**. Note that the XAML classes referenced in the header file are in the Microsoft.UI.Xaml namespaces that belong to the WinUI framework instead of the Windows.UI.Xaml namespaces used by the UWP UI framework.
+The code shown above implements the **Label** and **LabelProperty** properties, add a static event handler named **OnLabelChanged** to process changes to the value of the dependency property, and adds a private member to store the backing field for **LabelProperty**.
 
 
 Next, replace the contents of BgLabelControl.cpp with the following code.

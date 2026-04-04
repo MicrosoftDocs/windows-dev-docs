@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 
 A localized app is one that can be localized for other markets, languages, or regions without uncovering any functional defects in the app. The most essential property of a localizable app is that its executable code has been cleanly separated from its localizable resources. So, you should determine which of your app's resources need to be localized. Ask yourself what needs to change if your app is to be localized for other markets.
 
-We also recommend that you become familiar with the [guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md).
+We also recommend that you become familiar with the [guidelines for globalization](globalizing-portal.md#guidelines-for-globalization).
 
 ## Put your strings into Resources Files (.resw)
 
-Don't hard-code string literals in your imperative code, XAML markup, nor in your app package manifest. Instead, put your strings into Resources Files (.resw) so that they can be adapted to different local markets independently of your app's built binaries. For details, see [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest).
+Don't hard-code string literals in your imperative code, XAML markup, nor in your app package manifest. Instead, put your strings into Resources Files (.resw) so that they can be adapted to different local markets independently of your app's built binaries. For details, see [Localize strings in your UI and app package manifest](/windows/apps/windows-app-sdk/mrtcore/localize-strings).
 
 That topic also shows you how to add comments to your default Resources File (.resw). For example, if you are adopting an informal voice or tone then be sure to explain that in comments. Also, to minimize expense, confirm that only the strings that need to be translated are provided to translators.
 
@@ -25,7 +25,7 @@ Set the default language for your app appropriately in your app package manifest
 
 ## Tailor your images and other file resources for language
 
-Ideally, you will be able to globalize your images&mdash;that is, make them culture-independent. For any images and other file resources where that's not possible, create as many different variants of them as you need and put the appropriate language qualifiers into their file or folder names. To learn more, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast).
+Ideally, you will be able to globalize your images&mdash;that is, make them culture-independent. For any images and other file resources where that's not possible, create as many different variants of them as you need and put the appropriate language qualifiers into their file or folder names. To learn more, see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast).
 
 To minimize localization costs, don't put text nor culturally-sensitive material into images to begin with. An image that's appropriate in your own culture might be offensive or misinterpreted in other cultures. Avoid the use of culture-specific images such as mailboxes, which are not common around the world. Avoid religious symbols, animals, political, or gender-specific images. The display of flesh, body parts, or hand gestures can also be a sensitive topic. If you can't avoid all of these, then your images will need to be thoughtfully localized. If you're localizing to a language with a different reading direction than your own, using symmetrical images and effects make it easier to support mirroring.
 
@@ -100,7 +100,7 @@ Avoid political offense in maps or when referring to regions. Maps might include
 
 ## Language- and region-changed events
 
-Subscribe to events that are raised when the system's language and region settings change. Do this so that you can re-load resources, if appropriate. For details, see [Updating strings in response to qualifier value change events](/windows/uwp/app-resources/localize-strings-ui-manifest#updating-strings-in-response-to-qualifier-value-change-events) and [Updating images in response to qualifier value change events](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast#updating-images-in-response-to-qualifier-value-change-events).
+Subscribe to events that are raised when the system's language and region settings change. Do this so that you can re-load resources, if appropriate. For details, see [Localize strings in your UI and app package manifest](/windows/apps/windows-app-sdk/mrtcore/localize-strings) and [Load images and assets tailored for scale, theme, high contrast, and others](/windows/apps/windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast).
 
 ## Ensure the correct parameter order when formatting strings
 
@@ -177,11 +177,11 @@ Sorting follows the **Regional Control Panel** format:
 
 ## Related topics
 
-- [Guidelines for globalization](guidelines-and-checklist-for-globalizing-your-app.md)
-- [Localize strings in your UI and app package manifest](/windows/uwp/app-resources/localize-strings-ui-manifest)
-- [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
+- [Guidelines for globalization](globalizing-portal.md#guidelines-for-globalization)
+- [Localize strings in your UI and app package manifest](/windows/apps/windows-app-sdk/mrtcore/localize-strings)
+- [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)
 - [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)
-- [Updating images in response to qualifier value change events](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast#updating-images-in-response-to-qualifier-value-change-events)
+- [Load images and assets tailored for scale, theme, high contrast, and others](/windows/apps/windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast)
 
 ## Samples
 

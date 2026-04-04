@@ -6,7 +6,7 @@ label: Split view
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, winui
 pm-contact: yulikl
 design-contact: kimsea
 dev-contact: tpaine
@@ -73,7 +73,10 @@ Here's a SplitView control with an open Pane appearing inline next to the Conten
 
 ## Get the sample code
 
-- [WinUI for UWP Gallery sample](https://github.com/Microsoft/WinUI-Gallery) - See all the XAML controls in an interactive format.
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see SplitView in action](winui3gallery://item/SplitView)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Related topics
 - [Nav pane pattern](../../../design/controls/navigationview.md)

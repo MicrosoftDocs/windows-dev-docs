@@ -182,18 +182,6 @@ items:
             href: data/drag-and-drop.md
           - name: Copy and paste
             href: communication/copy-and-paste.md
-          - name: App resources
-            items:
-              - name: Manage resources with MRT Core
-                href: ../windows-app-sdk/mrtcore/mrtcore-overview.md
-              - name: Tailor your resources for language, scale, contrast, others
-                href: ../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md
-              - name: Localize strings in your UI and app package manifest
-                href: ../windows-app-sdk/mrtcore/localize-strings.md
-              - name: Load images, assets tailored for scale, theme, contrast, others
-                href: ../windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md
-              - name: Localize your WinUI app
-                href: ../winui/winui3/localize-winui3-app.md
           - name: Data access
             items:
               - name: Overview
@@ -372,6 +360,43 @@ items:
                 href: win2d/avoiding-memory-leaks.md
               - name: Custom effects
                 href: win2d/custom-effects.md
+      - name: Globalization and localization
+        href: 
+        items:
+          - name: Overview
+            href: ../design/globalizing/globalizing-portal.md
+          - name: User profile and app manifest languages
+            href: ../design/globalizing/manage-language-and-region.md
+          - name: Make your app localizable
+            href: ../design/globalizing/prepare-your-app-for-localization.md
+          - name: App resources
+            items:
+              - name: Manage resources with MRT Core
+                href: ../windows-app-sdk/mrtcore/mrtcore-overview.md
+              - name: Tailor your resources for language, scale, contrast, others
+                href: ../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md
+              - name: Localize strings in your UI and app package manifest
+                href: ../windows-app-sdk/mrtcore/localize-strings.md
+              - name: Load images, assets tailored for scale, theme, contrast, others
+                href: ../windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md          
+          - name: Formatting
+            items:
+              - name: Globalize your date/time/number formats
+                href: ../design/globalizing/use-global-ready-formats.md
+              - name: NumeralSystem values
+                href: ../design/globalizing/glob-numeralsystem-values.md
+          - name: Layout and fonts
+            items:
+              - name: Adjust layout and fonts, and support RTL
+                href: ../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md
+              - name: International fonts
+                href: ../design/globalizing/loc-international-fonts.md
+          - name: Use UTF-8 code pages in Windows apps
+            href: ../design/globalizing/use-utf8-code-page.md
+          - name: Prepare your application for the Japanese era change
+            href: ../design/globalizing/japanese-era-change.md
+          - name: Multilingual App Toolkit (MAT)
+            href: ../design/globalizing/mat-announcements.md          
       - name: Input and interactions
         items:
           - name: Overview
@@ -1256,6 +1281,14 @@ items:
         href: /dotnet/api/
       - name: Schema specs for Windows apps >>
         href: /uwp/schemas/
+      - name: Windows Settings reference
+        items:
+        - name: Windows 10 and Windows 11 settings reference
+          href: settings/settings-common.md
+        - name: Windows 11 settings reference
+          href: settings/settings-windows-11.md
+        - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
+          href: settings/readclouddatasettings-exe.md    
   - name: Tools
     items:
       - name: Agentic tools
