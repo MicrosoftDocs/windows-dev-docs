@@ -86,10 +86,9 @@ UWP modern .NET projects use SDK-style .csproj files with key properties:
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net10.0-windows10.0.19041.0</TargetFramework> <!-- Use the latest supported .NET version -->
+    <TargetFramework>net10.0-windows10.0.26100.0</TargetFramework> <!-- Use the latest supported .NET version -->
     <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
     <UseUwp>true</UseUwp>
-    <UseUwpTools>true</UseUwpTools>
     <EnableMsixTooling>true</EnableMsixTooling>
     <PublishAot>true</PublishAot>
     <DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
@@ -100,13 +99,10 @@ UWP modern .NET projects use SDK-style .csproj files with key properties:
 ### Key Properties Explained
 
 - **UseUwp**: References WinRT projections for Windows.UI.Xaml types and configures CsWinRT for UWP compatibility
-- **UseUwpTools**: Enables UWP-specific tooling including XAML compiler, project capabilities, and MSIX packaging
+- **UseUwpTools**: Enables UWP-specific tooling including XAML compiler, project capabilities, and MSIX packaging.  Note this property is enabled by default when `UseUwp` is enabled.
 - **EnableMsixTooling**: Enables single-project MSIX support (no separate packaging project needed)
 - **PublishAot**: Enables Native AOT compilation (required for Microsoft Store publication)
 - **DisableRuntimeMarshalling**: Optimizes performance for Native AOT scenarios
-
-> [!IMPORTANT]
-> Native AOT is the only supported way for publishing UWP apps targeting modern .NET to the Microsoft Store. This ensures fast startup times and meets the Store's native code requirement for UWP apps.
 
 ## Migrating Existing UWP Apps to Modern .NET
 
@@ -115,29 +111,37 @@ To migrate an existing UWP app from [.NET Native](index.md) to modern .NET:
 ### Step 1: Update Project File
 
 1. Convert your existing .csproj to SDK-style format
-2. Add the required properties (`UseUwp`, `UseUwpTools`, `EnableMsixTooling`, `PublishAot`)
+2. Add the required properties (`UseUwp`, `EnableMsixTooling`, `PublishAot`)
 3. Update NuGet package references to versions compatible with the latest .NET
-
-> [!TIP]
-> If your existing app uses a [runtime directives (rd.xml) file](runtime-directives-rd-xml-configuration-file-reference.md) for .NET Native, you'll need to address reflection and trimming requirements differently with Native AOT using attributes and analyzers instead.
 
 ### Step 2: Address Native AOT Compatibility
 
-Native AOT requires all code to be AOT-compatible. Common issues include:
+Native AOT requires all code to be trim-compatible. Common issues include:
 
 - **Reflection usage**: Add appropriate attributes or use source generators
 - **Dynamic code generation**: Replace with compile-time alternatives
 - **Third-party libraries**: Ensure all dependencies support Native AOT
 
-Enable AOT analyzers to catch issues at build time:
+Application code projects:
+
+```xml
+<PropertyGroup>
+  <PublishAot>true</PublishAot>
+</PropertyGroup>
+```
+
+The following can be set in library projects:
 
 ```xml
 <PropertyGroup>
   <IsAotCompatible>true</IsAotCompatible>
-  <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
-  <EnableSingleFileAnalyzer>true</EnableSingleFileAnalyzer>
 </PropertyGroup>
 ```
+
+If your existing app uses a [runtime directives (rd.xml) file](runtime-directives-rd-xml-configuration-file-reference.md) for .NET Native, you'll need to address reflection and trimming requirements differently with Native AOT using attributes and analyzers instead.
+
+> [!TIP]
+Use `[GeneratedCustomPropertyProvider]`classes that need `{Binding}` in XAML.  These classes should be marked as `partial`. 
 
 ### Step 3: Test Thoroughly
 
@@ -174,7 +178,7 @@ For more information on .NET Native limitations, see [Getting Started with .NET 
 
 When publishing UWP apps with modern .NET to the Microsoft Store:
 
-1. Build in Release configuration with `PublishAot` enabled
+1. Build in Release configuration with either `PublishAot` or `SelfContained` enabled
 2. Ensure no AOT or trim warnings are present
 3. Create MSIX package as usual
 4. Upload to Partner Center
