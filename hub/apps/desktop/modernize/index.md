@@ -67,4 +67,4 @@ For more information, see [Integrate your desktop app with Windows using packagi
 
 If you're planning a larger modernization effort — or building new features as separate modules — consider building new components with [WinUI 3](../../winui/index.md) and the Windows App SDK. WinUI 3 is the modern native UI framework for Windows desktop apps and is the recommended path for new development.
 
-See [Create your first WinUI 3 app](../../winui/winui3/create-your-first-winui3-app.md) to get started.
+See [Create your first WinUI 3 app](../../get-started/start-here.md) to get started.
