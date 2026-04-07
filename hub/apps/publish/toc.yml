@@ -13,6 +13,12 @@ items:
       href: partner-center/partner-center-developer-account.md
     - name: Developer account fees and locations
       href: partner-center/account-types-locations-and-fees.md  
+- name: Choose your distribution options
+  items: 
+    - name: Distribute your Win32 app
+      href: partner-center/open-a-developer-account.md
+    - name: Transition users to the Store
+      href: partner-center/partner-center-developer-account.md
 - name: Submit your app
   items:
   - name: MSIX
