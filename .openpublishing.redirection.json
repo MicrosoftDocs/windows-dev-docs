@@ -11082,17 +11082,17 @@
     },
     {
       "source_path": "hub/apps/how-tos/chatgpt-openai-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/how-tos/copilot-chat-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/how-tos/dall-e-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
@@ -11408,6 +11408,11 @@
     {
       "source_path": "hub/apps/desktop/visual-studio-templates.md",
       "redirect_url": "/windows/apps/dev-tools/visual-studio",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/package-and-deploy/choose-packaging-model.md",
+      "redirect_url": "/windows/apps/package-and-deploy/packaging/",
       "redirect_document_id": false
     },
     {
