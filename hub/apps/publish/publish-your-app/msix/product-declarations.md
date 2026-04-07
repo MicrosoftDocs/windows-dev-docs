@@ -55,7 +55,7 @@ If you want to prevent your app's data from being included in automated backups,
 
 ## Customers can use Windows 10/11 features to record and broadcast clips of this game
 
-Select this option if your product is a game and supports Windows features such as Game DVR, screen recording, or broadcast/streaming.
+Select this option if your product is a **game** and supports Windows features such as screen recording or broadcast/streaming.
 
 * This declaration applies only to apps in the Games category.
 * If selected for a non-game app, this option has no effect and is not supported.
@@ -67,3 +67,19 @@ Select this option if your app supports pen input or digital ink, such as:
 * Drawing or handwriting with a stylus
 * Inking experiences (annotations, sketching, markup)
 * Windows Ink–enabled interactions
+
+## This product incorporates generative AI features
+
+Select this option if your app includes generative AI capabilities that use artificial intelligence to create new content, such as:
+
+* Text
+* Images
+* Audio
+* Video
+* Code
+
+This declaration is required if your app generates new content dynamically using AI models, whether the models are:
+
+* Built into your app
+* Accessed via cloud services or APIs
+* Provided by third‑party AI platforms
