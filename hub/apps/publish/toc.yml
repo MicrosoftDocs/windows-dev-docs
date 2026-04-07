@@ -16,9 +16,9 @@ items:
 - name: Choose your distribution options
   items: 
     - name: Distribute your Win32 app
-      href: how-to-distribute-your-win32-app-through-microsoft-store.md
+      href: ../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
     - name: Transition users to the Store
-      href: how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
+      href: ../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
 - name: Submit your app
   items:
   - name: MSIX
