@@ -146,7 +146,7 @@ The following can be set in library projects:
 If your existing app uses a [runtime directives (rd.xml) file](runtime-directives-rd-xml-configuration-file-reference.md) for .NET Native, you'll need to address reflection and trimming requirements differently with Native AOT using attributes and analyzers instead.
 
 > [!TIP]
-Use `[GeneratedCustomPropertyProvider]` classes that need `{Binding}` in XAML.  These classes should be marked as `partial`.
+Use `[GeneratedBindableCustomProperty]` classes that need `{Binding}` in XAML.  These classes should be marked as `partial`.
 
 ### Step 3: Test Thoroughly
 
