@@ -123,9 +123,9 @@ Native AOT requires all code to be AOT-compatible. Common issues include:
 - **Third-party libraries**: Ensure all dependencies support Native AOT
 
 For more information on AOT compatibility:
-- [Fixing trim warnings](https://learn.microsoft.com/dotnet/core/deploying/trimming/fixing-warnings)
-- [Known trimming incompatibilities](https://learn.microsoft.com/dotnet/core/deploying/trimming/incompatibilities)
-- [Intrinsic APIs marked RequiresDynamicCode](https://learn.microsoft.com/dotnet/core/deploying/native-aot/intrinsic-requiresdynamiccode-apis)
+- [Fixing trim warnings](/dotnet/core/deploying/trimming/fixing-warnings)
+- [Known trimming incompatibilities](/dotnet/core/deploying/trimming/incompatibilities)
+- [Intrinsic APIs marked RequiresDynamicCode](/dotnet/core/deploying/native-aot/intrinsic-requiresdynamiccode-apis)
 
 Application code projects:
 
