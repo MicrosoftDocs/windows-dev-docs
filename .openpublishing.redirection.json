@@ -11484,6 +11484,36 @@
       "source_path": "uwp/files/fast-file-properties.md",
       "redirect_url": "/windows/apps/develop/files/fast-file-properties",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-1.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-2.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-3.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-4.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-5.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
     }
   ]
 }
