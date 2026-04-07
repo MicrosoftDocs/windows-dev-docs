@@ -16,7 +16,7 @@ Use the table below to find the right starting point for your situation.
 
 | I want to... | Recommended approach |
 |---|---|
-| Add modern UI controls (Fluent, rounded corners, dark mode) to my WPF or Win32 app | [Use WinUI controls in a WPF app](ui/visual-layer-in-desktop-apps.md) |
+| Add modern UI controls (Fluent, rounded corners, dark mode) to my WPF or Win32 app | [Host WinUI controls in a WPF app (XAML Islands)](xaml-islands/xaml-islands.md) |
 | Use Windows platform features (notifications, sharing, file pickers) in my WPF or WinForms app | [Call Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md) |
 | Package my app for the Microsoft Store or enterprise deployment | [Package a desktop app with MSIX](/windows/msix/desktop/source-code-overview) |
 | Unlock features that require package identity (background tasks, app extensions) | [Grant identity to an unpackaged app](grant-identity-to-nonpackaged-apps-overview.md) |
@@ -34,7 +34,7 @@ You can use the Windows App SDK in your existing app without changing your UI fr
 
 You can host [WinUI 3 controls](../../winui/index.md) inside existing WPF or Win32 app windows using the Windows App SDK. This lets you modernize your UI incrementally — one window or dialog at a time — without migrating the entire app.
 
-For guidance on visual layer integration, see [Modernize your desktop app using the Visual layer](ui/visual-layer-in-desktop-apps.md).
+For guidance on hosting WinUI 3 controls in your existing app, see [Host WinRT XAML controls in desktop apps (XAML Islands)](xaml-islands/xaml-islands.md). For low-level visual effects and animations, see [Modernize your desktop app using the Visual layer](ui/visual-layer-in-desktop-apps.md).
 
 ## Call Windows Runtime APIs
 
