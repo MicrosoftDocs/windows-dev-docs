@@ -1501,11 +1501,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/design/accessibility/accessibility.md",
-      "redirect_url": "/windows/uwp/design/accessibility/accessibility-overview",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/accessibility/accessible-text-requirements.md",
       "redirect_url": "/windows/uwp/design/accessibility/accessible-text-requirements",
       "redirect_document_id": true
@@ -11411,6 +11406,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/design/accessibility/accessibility.md",
+      "redirect_url": "/windows/apps/design/accessibility/accessibility-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/practices-to-avoid.md",
+      "redirect_url": "/windows/apps/design/accessibility/accessibility-overview#practices-to-avoid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/developing-inclusive-windows-apps.md",
+      "redirect_url": "/windows/apps/develop/accessibility",
+      "redirect_document_id": false
+    },
+    {      
       "source_path": "hub/apps/package-and-deploy/choose-packaging-model.md",
       "redirect_url": "/windows/apps/package-and-deploy/packaging/",
       "redirect_document_id": false

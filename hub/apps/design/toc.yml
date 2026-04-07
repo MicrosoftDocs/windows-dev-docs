@@ -77,36 +77,11 @@ items:
         - name: Overview
           href: usability/index.md
         - name: Accessibility
-          href: accessibility/accessibility-overview.md
           items:
+            - name: Overview
+              href: accessibility/accessibility-overview.md
             - name: Designing inclusive software
               href: accessibility/designing-inclusive-software.md
-            - name: Developing inclusive Windows apps
-              href: accessibility/developing-inclusive-windows-apps.md
-            - name: Accessibility testing
-              href: accessibility/accessibility-testing.md
-            - name: Accessibility in the Store
-              href: accessibility/accessibility-in-the-store.md
-            - name: Accessibility checklist
-              href: accessibility/accessibility-checklist.md
-            - name: Expose basic accessibility information
-              href: accessibility/basic-accessibility-information.md
-            - name: Keyboard accessibility
-              href: accessibility/keyboard-accessibility.md
-            - name: Screen readers and hardware system buttons
-              href: accessibility/system-button-narration.md
-            - name: Landmarks and Headings
-              href: accessibility/landmarks-and-headings.md
-            - name: High-contrast themes
-              href: accessibility/high-contrast-themes.md
-            - name: Accessible text requirements
-              href: accessibility/accessible-text-requirements.md
-            - name: Accessibility practices to avoid
-              href: accessibility/practices-to-avoid.md
-            - name: Custom automation peers
-              href: accessibility/custom-automation-peers.md
-            - name: Control patterns and interfaces
-              href: accessibility/control-patterns-and-interfaces.md
         - name: App settings
           items:
             - name: Guidelines for app settings
