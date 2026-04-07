@@ -116,11 +116,16 @@ To migrate an existing UWP app from [.NET Native](index.md) to modern .NET:
 
 ### Step 2: Address Native AOT Compatibility
 
-Native AOT requires all code to be trim-compatible. Common issues include:
+Native AOT requires all code to be AOT-compatible. Common issues include:
 
 - **Reflection usage**: Add appropriate attributes or use source generators
 - **Dynamic code generation**: Replace with compile-time alternatives
 - **Third-party libraries**: Ensure all dependencies support Native AOT
+
+For more information on AOT compatibility:
+- [Fixing trim warnings](https://learn.microsoft.com/dotnet/core/deploying/trimming/fixing-warnings)
+- [Known trimming incompatibilities](https://learn.microsoft.com/dotnet/core/deploying/trimming/incompatibilities)
+- [Intrinsic APIs marked RequiresDynamicCode](https://learn.microsoft.com/dotnet/core/deploying/native-aot/intrinsic-requiresdynamiccode-apis)
 
 Application code projects:
 
@@ -141,7 +146,7 @@ The following can be set in library projects:
 If your existing app uses a [runtime directives (rd.xml) file](runtime-directives-rd-xml-configuration-file-reference.md) for .NET Native, you'll need to address reflection and trimming requirements differently with Native AOT using attributes and analyzers instead.
 
 > [!TIP]
-Use `[GeneratedCustomPropertyProvider]`classes that need `{Binding}` in XAML.  These classes should be marked as `partial`. 
+Use `[GeneratedCustomPropertyProvider]` classes that need `{Binding}` in XAML.  These classes should be marked as `partial`.
 
 ### Step 3: Test Thoroughly
 
