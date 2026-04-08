@@ -155,11 +155,11 @@ For WPF apps that need to execute code when the app isn't running, there are thr
 
 | Approach | Packaging required | Best for |
 |---|---|---|
-| [Windows App SDK background tasks](../../windows-app-sdk/applifecycle/background-tasks.md) | Yes (MSIX) | Power-efficient system-managed triggers (time, network, push) |
+| [Windows App SDK background tasks](../applifecycle/background-tasks.md) | Yes (MSIX) | Power-efficient system-managed triggers (time, network, push) |
 | [Task Scheduler](/windows/win32/taskschd/task-scheduler-start-page) | No | Periodic sync, unpackaged apps |
 | [.NET Worker Services](/dotnet/core/extensions/workers) | No | Long-running headless workloads, any deployment model |
 
-For Windows App SDK background tasks, your WPF app registers a COM component using `BackgroundTaskBuilder` just like a WinUI 3 app — the `Application.Startup` event in WPF maps to the role that `App.OnLaunched` plays in WinUI 3. See [Using background tasks in Windows apps](../../windows-app-sdk/applifecycle/background-tasks.md) for the full walkthrough.
+For Windows App SDK background tasks, your WPF app registers a COM component using `BackgroundTaskBuilder` just like a WinUI 3 app — the `Application.Startup` event in WPF maps to the role that `App.OnLaunched` plays in WinUI 3. See [Using background tasks in Windows apps](../applifecycle/background-tasks.md) for the full walkthrough.
 
 > [!NOTE]
 > Windows App SDK background tasks require MSIX packaging. For unpackaged WPF apps, use Task Scheduler or .NET Worker Services instead.
