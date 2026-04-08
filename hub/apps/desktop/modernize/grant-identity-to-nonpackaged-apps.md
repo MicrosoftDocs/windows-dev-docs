@@ -82,10 +82,9 @@ that will resolve to a .png, .jpg, or .jpeg image
 * Ensure the `AllowExternalContent` element is set to `true` as shown which enables reusing your
 existing installer
 * Set `TargetDeviceFamily` `MinVersion` and `MaxVersionTested` per below:
-  * Set `MinVersion` to `10.0.19041.0` as shown for maximum reach and uniformity across Windows 10
-  and Windows 11 OS versions
-  * Set `MinVersion` to `10.0.26100.0` to restrict the identity package to Windows 11, version 24H2
-  and above
+  * Choose a `MinVersion` value based on your minimum supported OS:
+    * `10.0.19041.0` — recommended for maximum reach across Windows 10 and Windows 11
+    * `10.0.26100.0` — use this only if your app targets Windows 11, version 24H2 or later exclusively
   * Set `MaxVersionTested` to `10.0.26100.0` as shown
   * Note: The `AllowExternalContent` feature used here was introduced in Windows build 10.0.19041.0.
   If your application runs further downlevel than that, you should perform an OS version check in your
@@ -127,6 +126,17 @@ to register the package on end user computers.
 ```Console
 SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <certificate password> <path to package with external location>\MyPackage.msix
 ```
+
+> [!IMPORTANT]
+> When using a **self-signed certificate** for local development, you must add it to the **Trusted People** certificate store on your machine before `Add-AppxPackage` will accept it. Without this step, registration fails with `CERT_E_UNTRUSTEDROOT` (0x800B0109).
+>
+> ```PowerShell
+> Import-PfxCertificate -FilePath "<path>\MyCertificate.pfx" `
+>     -CertStoreLocation Cert:\LocalMachine\TrustedPeople `
+>     -Password (ConvertTo-SecureString -String "<password>" -Force -AsPlainText)
+> ```
+>
+> Production certificates issued by a trusted CA do not require this step.
 
 Note: For how to build and sign the identity package within a CI/CD pipeline with production certificates,
 see the [MSIX and CI/CD Pipeline Overview](/windows/msix/desktop/cicd-overview) for examples.
@@ -212,7 +222,7 @@ powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -Execution
 To unregister the identity package during a machine-wide uninstallation:
 
 ```Console
-powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "$packages = Get-AppxPackage <PackageName>; foreach ($package in $packages) { Remove-AppxProvisionedPackage -PackageName $package.PackageFullName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }
+powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "$packages = Get-AppxPackage <PackageName>; foreach ($package in $packages) { Remove-AppxProvisionedPackage -PackageName $package.PackageFullName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }"
 ```
 
 * Set `<PackageName>` to the package name you defined in your identity package manifest
@@ -259,7 +269,7 @@ var packageManager = new PackageManager();
 var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
 foreach (var package in packages)
 {
-  await packageManager.RemovePackageAsync(package.Id.FamilyName);
+  await packageManager.RemovePackageAsync(package.Id.FullName);
 }
 ```
 
@@ -305,8 +315,8 @@ var packageManager = new PackageManager();
 var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
 foreach (var package in packages)
 {
-  await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FamilyName);
-  await packageManager.RemovePackageAsync(package.Id.FamilyName, RemovalOptions.RemoveForAllUsers);
+  await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FullName);
+  await packageManager.RemovePackageAsync(package.Id.FullName, RemovalOptions.RemoveForAllUsers);
 }
 ```
 
