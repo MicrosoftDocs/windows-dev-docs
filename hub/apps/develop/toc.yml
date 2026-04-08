@@ -1038,6 +1038,8 @@ items:
         items:
           - name: Integrate Windows App SDK
             href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md
+          - name: Migrate WPF patterns to WinUI 3
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-patterns-winui3.md
           - name: Visual layer
             items:
               - name: Overview
