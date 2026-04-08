@@ -1,7 +1,7 @@
 ---
 title: Implement OAuth 2.0 in Windows Apps
 description: Learn how to implement OAuth 2.0 authentication in Windows apps using Windows App SDK's OAuth2Manager API. Secure user authentication with step-by-step examples. Get started now.
-ms.date: 10/28/2025
+ms.date: 04/08/2026
 ms.topic: concept-article
 keywords: windows, winui, winrt, dotnet, security
 #customer intent: As a Windows app developer, I want to learn how to implement OAuth 2.0 in my app so that I can securely authenticate users and access protected resources.
