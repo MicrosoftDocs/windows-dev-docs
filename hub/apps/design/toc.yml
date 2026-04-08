@@ -82,12 +82,8 @@ items:
               href: accessibility/accessibility-overview.md
             - name: Designing inclusive software
               href: accessibility/designing-inclusive-software.md
-        - name: App settings
-          items:
-            - name: Guidelines for app settings
-              href: app-settings/guidelines-for-app-settings.md
-            - name: Store and retrieve app settings and data
-              href: app-settings/store-and-retrieve-app-data.md
+    - name: Designing a settings page
+      href: app-settings/guidelines-for-app-settings.md
         - name: Design your app for bidirectional text
           href: globalizing/design-for-bidi-text.md
         - name: In-app help

@@ -208,6 +208,8 @@ items:
         items:
           - name: Overview
             href: data-and-files.md
+          - name: Store and retrieve settings
+            href: data/store-and-retrieve-app-data.md
           - name: Drag and drop
             href: data/drag-and-drop.md
           - name: Copy and paste

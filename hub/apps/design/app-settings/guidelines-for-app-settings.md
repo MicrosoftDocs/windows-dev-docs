@@ -116,4 +116,4 @@ Once you have a list of items that you want to include in your app settings page
 * [SettingsCard and SettingsExpander (Windows Community Toolkit)](/windows/communitytoolkit/controls/settingscard)
 * [Command design basics](../basics/commanding-basics.md)
 * [Guidelines for progress controls](../controls/progress-controls.md)
-* [Store and retrieve app data](./store-and-retrieve-app-data.md)
+* [Store and retrieve app data](../../develop/data/store-and-retrieve-app-data.md)
