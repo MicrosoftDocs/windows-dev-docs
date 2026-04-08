@@ -82,7 +82,7 @@ Before you commit to unpackaged, check the [features table above](#features-that
 
 | Scenario | Recommended model | Details |
 |---|---|---|
-| **Indie developer publishing to the Microsoft Store** | Packaged (MSIX) | The Store requires MSIX. WinUI 3 apps are packaged by default — no changes needed. → [Distribute your packaged app](../../desktop/modernize/desktop-to-uwp-distribute.md) |
+| **Indie developer publishing to the Microsoft Store** | Packaged (MSIX) | The Store requires MSIX. WinUI 3 apps are packaged by default — no changes needed. → [Distribute your packaged app](/windows/msix/desktop/source-code-overview) |
 | **Enterprise app deployed via Intune or Configuration Manager** | Packaged, or external location for existing installers | New apps should use MSIX. Existing apps with their own installer can use packaging with external location. → [Deploy packaged apps](../../windows-app-sdk/deploy-packaged-apps.md) |
 | **ISV shipping a direct download with own installer** | Packaging with external location | Register a lightweight identity package alongside your existing installer. Users see no change; you get Windows features. → [Grant package identity](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) |
 | **Internal tool or developer utility** | Unpackaged | Simplest to build and deploy. The Windows App SDK works via NuGet, but some features won't be available. |

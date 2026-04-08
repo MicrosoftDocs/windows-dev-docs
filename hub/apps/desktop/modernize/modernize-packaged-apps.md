@@ -36,10 +36,10 @@ For more info, see [Get activation info for packaged apps](get-activation-info-f
 
 Some Windows experiences (for example, a touch-enabled UI page) must run inside of an AppContainer. In general, you should first determine whether you can add your experience by [enhancing](desktop-to-uwp-enhance.md) your existing desktop app with Windows Runtime APIs. If you have to use a UWP component to achieve the experience, then you can add a UWP project to your solution, and use app services to communicate between your desktop app and the UWP component.
 
-For more information, see [Extend your desktop app with UWP components](desktop-to-uwp-extend.md).
+For more information, see [Add Windows App SDK features to your existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
 
 ## Distribute
 
 If you package your app in an MSIX package, then it's very easy to distribute it by publishing it the Microsoft Store, or by sideloading it onto systems.
 
-For more info, see [Distribute your packaged desktop app](desktop-to-uwp-distribute.md).
+For more info, see [Distribute a packaged desktop app](/windows/msix/desktop/source-code-overview).
