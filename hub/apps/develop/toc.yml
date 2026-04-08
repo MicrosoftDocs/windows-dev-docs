@@ -752,8 +752,6 @@ items:
             href: ui/alignment-margin-padding.md
           - name: Colors and themes
             href: ui/theming.md
-          - name: Sound
-            href: ui/sound.md
           - name: Controls
             items:
               - name: Overview
@@ -993,6 +991,8 @@ items:
             href: ui/layouts-with-xaml.md
           - name: Shadows
             href: ui/shadows.md
+          - name: Sound
+            href: ui/sound.md
           - name: Windowing
             items:
               - name: Overview
