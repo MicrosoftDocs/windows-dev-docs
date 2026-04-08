@@ -14,8 +14,8 @@ You can use **PendingUpdate** to create multi-step interactions in your app noti
 
 ![Toast with pending update](images/toast-pendingupdate.gif)
 
-> [!IMPORTANT]
-> **Requires Desktop Fall Creators Update**: You must be running Desktop build 16299 or later to see pending update work. **PendingUpdate** is only supported on Desktop and will be ignored on other devices. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct notification content.
+> [!NOTE]
+> **PendingUpdate** is only supported on Desktop and will be ignored on other devices. For Windows App SDK apps, use the `AppNotificationBuilder` from the `Microsoft.Windows.AppNotifications.Builder` namespace to construct notification content.
 
 
 ## Prerequisites

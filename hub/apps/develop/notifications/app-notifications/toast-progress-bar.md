@@ -12,9 +12,6 @@ ms.localizationpriority: medium
 
 Using a progress bar inside your app notification allows you to convey the status of long-running operations to the user, like downloads, video rendering, exercise goals, and more.
 
-> [!IMPORTANT]
-> **Requires Windows 10 Creators Update**: You must target SDK 15063 and be running build 15063 or later to use progress bars on notifications.
-
 A progress bar inside an app notification can either be "indeterminate" (no specific value, animated dots indicate an operation is occurring) or "determinate" (a specific percent of the bar is filled, like 60%).
 
 > **Important APIs**: [AppNotificationProgressData class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationprogressdata), [AppNotificationManager.UpdateAsync method](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.updateasync), [AppNotification class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotification), [NotificationData class](/uwp/api/windows.ui.notifications.notificationdata), [ToastNotifier.Update method](/uwp/api/Windows.UI.Notifications.ToastNotifier.Update)

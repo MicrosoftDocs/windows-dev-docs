@@ -11,9 +11,6 @@ ms.localizationpriority: medium
 # Grouping app notifications with collections
 Use collections to organize your app's toasts in Action Center. Collections help users locate information within Action Center more easily and allow for developers to better manage their notifications.  The APIs below allow for removing, creating, and updating notification collections.
 
-> [!IMPORTANT]
-> **Requires Creators Update**: You must target SDK 15063 and be running build 15063 or later to use toast collections. Related APIs include [Windows.UI.Notifications.ToastCollection](/uwp/api/windows.ui.notifications.toastcollection) and [Windows.UI.Notifications.ToastCollectionManager](/uwp/api/windows.ui.notifications.toastcollectionmanager).
-
 > [!NOTE]
 > Toast collections are managed through the `Windows.UI.Notifications` namespace and do not have direct equivalents in the Windows App SDK `Microsoft.Windows.AppNotifications` namespace. Windows App SDK apps can use these WinRT APIs for collection management alongside the `Microsoft.Windows.AppNotifications` APIs for constructing and sending notifications.
 

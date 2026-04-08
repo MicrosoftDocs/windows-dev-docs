@@ -11,10 +11,7 @@ ms.localizationpriority: medium
 ---
 # App notification content
 
-App notifications are flexible notifications with text, images, and buttons/inputs. This article describes the UI elements that can be used in an app notification and provides code examples for generating the XML format for an app notification.
-
-> [!NOTE]
-> The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
+This article describes the UI elements that can be used in an app notification and provides code examples for generating the notification content. For more information about app notifications, see [App notifications overview](index.md). For a walkthrough of implementing app notifications, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md).
 
 ## Getting started
 
@@ -25,13 +22,13 @@ App notifications are defined with an XML payload that is defined by the [App no
 
 **Install Notifications Visualizer.** This free Windows app helps you design interactive app notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](../notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://apps.microsoft.com/detail/9nblggh5xsl1).
 
-This article only covers creating the app notification content. For information on sending a notification after you have generated the XML payload, see [Send a local app notification](app-notifications-csharp-legacy.md). 
+This article only covers creating the app notification content. For information on sending a notification, see [App notifications overview](index.md).
 
 ## App notification structure
 
 Some important, high-level components of an app notification XML payload include:
 
-- **toast**: The **launch** attribute of this element defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see [Send a local app notification](app-notifications-csharp-legacy.md).
+- **toast**: The **launch** attribute of this element defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see [App notifications overview](index.md).
 - **visual**: This element represents visual portion of the toast, including the generic binding that contains text and images.
 - **actions**: This element represents interactive portion of the toast, including inputs and actions.
 - **audio**: This element specifies the audio played when the toast is shown to the user.
@@ -89,7 +86,7 @@ Each app notification must have at least one text element, and can contain two a
 
 ![A screenshot of an app notification with three lines of text. The top line of text is bold.](images/toast-content-text-elements.png)
 
-Since the Windows 10 Anniversary Update, you can control how many lines of text are displayed by using the **HintMaxLines** property on the text. The default (and maximum) is up to 2 lines of text for the title, and up to 4 lines (combined) for the two additional description elements (the second and third **AdaptiveText**).
+You can control how many lines of text are displayed by using the **HintMaxLines** property on the text. The default (and maximum) is up to 2 lines of text for the title, and up to 4 lines (combined) for the two additional description elements (the second and third **AdaptiveText**).
 
 
 ### [Windows App SDK](#tab/appsdk)
@@ -198,7 +195,7 @@ var builder = new AppNotificationBuilder()
 
 ## Hero image
 
-**New in Anniversary Update**: App notifications can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.
+App notifications can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.
 
 ![A screenshot of an app notification showing the hero image placement, above the attribution area.](images/toast-content-hero-image.png)
 
@@ -218,18 +215,18 @@ The images you use in your app notification can be sourced from...
  - ms-appx:///
  - ms-appdata:///
 
-For http and https remote web images, there are limits on the file size of each individual image. In the Fall Creators Update (16299), we increased the limit to be 3 MB on normal connections and 1 MB on metered connections. Before that, images were always limited to 200 KB.
+For http and https remote web images, there are limits on the file size of each individual image. The limit is 3 MB on normal connections and 1 MB on metered connections.
 
-| Normal connection | Metered connection | Before Fall Creators Update |
-| - | - | - |
-| 3 MB | 1 MB | 200 KB |
+| Normal connection | Metered connection |
+| - | - |
+| 3 MB | 1 MB |
 
 If an image exceeds the file size, or fails to download, or times out, the image will be dropped and the rest of the notification will be displayed.
 
 
 ## Attribution text
 
-**New in Anniversary Update**: If you need to reference the source of your content, you can use attribution text. This text is always displayed below any text elements, but above inline images. The text uses a slightly smaller size than standard text elements to help to distinguish from regular text elements.
+If you need to reference the source of your content, you can use attribution text. This text is always displayed below any text elements, but above inline images. The text uses a slightly smaller size than standard text elements to help to distinguish from regular text elements.
 
 On older versions of Windows that don't support attribution text, the text will simply be displayed as another text element (assuming you don't already have the maximum of three text elements).
 
@@ -266,7 +263,7 @@ var builder = new AppNotificationBuilder()
 
 ## Custom timestamp
 
-**New in Creators Update**: You can now override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Notification Center.
+You can override the system-provided timestamp with your own timestamp that accurately represents when the message/information/content was generated. This timestamp is visible within Notification Center.
 
 ![Screenshot of a notification in the Notifications Center with a custom timestamp](images/toast-content-custom-timestamp.png)
 
@@ -299,7 +296,7 @@ var builder = new AppNotificationBuilder()
 
 ## Progress bar
 
-**New in Creators Update**: You can provide a progress bar on your app notification to keep the user informed of the progress of operations such as downloads.
+You can provide a progress bar on your app notification to keep the user informed of the progress of operations such as downloads.
 
 ![A screenshot of an app notification showing a progress bar.](images/toast-content-progress-bar.png)
 
@@ -308,7 +305,7 @@ To learn more about using a progress bar, please see [Toast progress bar](toast-
 
 ## Headers
 
-**New in Creators Update**: You can group notifications under headers within Notification Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.
+You can group notifications under headers within Notification Center. For example, you can group messages from a group chat under a header, or group notifications of a common theme under a header, or more.
 
 ![A screenshot of a action center showing multiple notifications for the application Notifications Viewer organized under a header labeled "Camping!".](images/toast-content-headers.png)
 
@@ -317,7 +314,7 @@ To learn more about using headers, please see [Toast headers](toast-headers.md).
 
 ## Adaptive content
 
-**New in Anniversary Update**: In addition to the content specified above, you can also display additional adaptive content that is visible when the toast is expanded.
+In addition to the content specified above, you can also display additional adaptive content that is visible when the toast is expanded.
 
 This additional content is specified using Adaptive, which you can learn more about by reading the [Adaptive Tiles documentation](/windows/uwp/launch-resume/create-adaptive-tiles).
 
@@ -366,7 +363,7 @@ Here's an example where columns and some advanced adaptive text elements are use
 
 Buttons make your toast interactive, letting the user take quick actions on your app notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app. Buttons appear in the expanded portion of your notification.
 
-To learn more about implementing buttons end-to-end, see [Send local toast](app-notifications-csharp-legacy.md).
+To learn more about implementing buttons end-to-end, see [App notifications overview](index.md).
 
 Buttons can activate an app in the following ways:
 
@@ -546,7 +543,7 @@ var builder = new AppNotificationBuilder()
 
 ## Context menu actions
 
-**New in Anniversary Update**: You can add additional context menu actions to the existing context menu that appears when the user right clicks your app notification or selects the context menu icon.
+You can add additional context menu actions to the existing context menu that appears when the user right clicks your app notification or selects the context menu icon.
 
 > [!NOTE]
 > On older devices, these additional context menu actions will simply appear as normal buttons on your notification.
@@ -740,7 +737,7 @@ To use the system snooze and dismiss actions:
 
 ## Audio
 
-Custom audio has always been supported on Mobile, and is supported in Desktop Version 1511 (build 10586) or later. Custom audio can be referenced via the following paths:
+Custom audio can be referenced via the following paths:
 
 - ms-appx:///
 - ms-appdata:///
@@ -969,11 +966,13 @@ Your tiles and app notifications can load strings and images tailored for displa
 
 
 ## Handling activation
-To learn how to handle app activations (the user clicking your toast or buttons on the toast), see [Send local toast](app-notifications-csharp-legacy.md).
+To learn how to handle app activations (the user clicking your notification or buttons on the notification), see [App notifications overview](index.md).
  
 ## Related topics
 
-* [Send a local toast and handle activation](app-notifications-csharp-legacy.md)
+* [App notifications overview](index.md)
 * [Tile and toast notification support for language, scale, and high contrast](/windows/uwp/launch-resume/tile-toast-language-scale-contrast)
+
+
 
 

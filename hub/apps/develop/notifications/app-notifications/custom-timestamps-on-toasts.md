@@ -12,8 +12,6 @@ ms.localizationpriority: medium
 
 By default, the timestamp on app notifications, which is visible within Notification Center, is set to the time that the notification was sent. You can optionally override the timestamp with your own custom date and time, so that the timestamp represents the time the message/information/content was actually created, rather than the time that the notification was sent. This also ensures that your notifications appear in the correct order within Notification Center, which is sorted by time. We recommend that most apps specify a custom timestamp.
 
-This feature is available in Windows Build 15063 and later.
-
 :::image type="content" source="images/toast-content-custom-timestamp.png" alt-text="App notification with custom timestamp":::
 
 > [!NOTE]

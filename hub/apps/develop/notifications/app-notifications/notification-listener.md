@@ -13,9 +13,6 @@ ms.localizationpriority: medium
 
 The notification listener provides access to a user's notifications. Smartwatches and other wearables can use the notification listener to send the phone's notifications to the wearable device. Home automation apps can use notification listener to perform specific actions when notifications are received, such as making the lights blink when you receive a call. 
 
-> [!IMPORTANT]
-> **Requires Anniversary Update**: You must target SDK 14393 and be running build 14393 or later to use Notification Listener.
-
 
 > [!NOTE]
 > The Notification Listener APIs are part of the `Windows.UI.Notifications.Management` WinRT namespace and can be used by both UWP and Windows App SDK apps. For information about sending app notifications with the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md).
@@ -180,7 +177,7 @@ listener.ClearNotifications();
 
 A common way to enable an app to listen to notifications is to set up a background task, so that you can know when a notification was added or dismissed regardless of whether your app is currently running.
 
-Thanks to the [single process model](/windows/uwp/launch-resume/create-and-register-an-inproc-background-task) added in the Anniversary Update, adding background tasks is fairly simple. In your main app's code, after you have obtained the user's access to Notification Listener and obtained access to run background tasks by calling [UserNotificationListener.Current.RequestAccessAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.requestaccessasync) and [BackgroundExecutionManager.RequestAccessAsync](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) respectively, simply register a new background task, and set the [UserNotificationChangedTrigger](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) using the [Toast notification kind](/uwp/api/windows.ui.notifications.notificationkinds).
+Thanks to the [single process model](/windows/uwp/launch-resume/create-and-register-an-inproc-background-task), adding background tasks is fairly simple. In your main app's code, after you have obtained the user's access to Notification Listener and obtained access to run background tasks by calling [UserNotificationListener.Current.RequestAccessAsync](/uwp/api/windows.ui.notifications.management.usernotificationlistener.requestaccessasync) and [BackgroundExecutionManager.RequestAccessAsync](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccessasync) respectively, simply register a new background task, and set the [UserNotificationChangedTrigger](/uwp/api/windows.applicationmodel.background.usernotificationchangedtrigger) using the [Toast notification kind](/uwp/api/windows.ui.notifications.notificationkinds).
 
 ```csharp
 // TODO: Request/check Listener access via UserNotificationListener.Current.RequestAccessAsync
