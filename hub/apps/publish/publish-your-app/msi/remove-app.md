@@ -16,4 +16,4 @@ Note that any customers who already have the app will still be able to use it an
 
 After making the app unavailable, you'll still see it in Partner Center. If you decide to offer the app to customers again, you can click **Make product available** from the banner on the **App overview** page or you can navigate to **Store presence** card on **App overview** page and **Modify availability** for your product. After you confirm, the app will be available to new customers within a few hours.
 
-:::image type="content" source="images/new-overview-make-product-available.png" lightbox="images/new-overview-make-product-available.png" alt-text="A screenshot of the new msix overview page showing how to make product available in Store":::
+:::image type="content" source="images/msiexe-make-product-available.png" lightbox="images/msiexe-make-product-available.png" alt-text="A screenshot of the new msi/exe overview page showing how to make product available in Store":::
