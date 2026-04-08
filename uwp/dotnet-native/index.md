@@ -11,6 +11,9 @@ ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
 ---
 # Compile apps with .NET Native
 
+> [!IMPORTANT]
+> **Modernize your UWP app with .NET and Native AOT**: If you are developing a new UWP app or want to modernize an existing UWP app, we recommend using [UWP support for the latest .NET with Native AOT](modernize-uwp-apps-with-dotnet.md) instead of .NET Native. UWP support for modern .NET is now generally available and is the **default project type for C# UWP apps in Visual Studio 2026**. This provides access to the latest .NET and C# features, improved tooling and debugging support, and faster build times. .NET Native will continue to receive security and reliability fixes but will not receive new feature updates.
+
 .NET Native is a precompilation technology for building and deploying UWP apps. .NET Native is included with Visual Studio 2015 and later versions. It automatically compiles the release version of UWP apps that are written in managed code (C# or Visual Basic) to native code.
 
 Typically, .NET apps are compiled to intermediate language (IL). At run time, the just-in-time (JIT) compiler translates the IL to native code. In contrast, .NET Native compiles UWP apps directly to native code. For developers, this means:
