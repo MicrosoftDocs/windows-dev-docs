@@ -9,6 +9,8 @@ ms.localizationpriority: medium
 ---
 # Support your app with background tasks
 
+> [!NOTE]
+> This page covers the UWP background task model (`IBackgroundTask`, `BackgroundTaskBuilder`). This model **does not apply to WPF or Windows Forms apps**. For WPF and Windows Forms apps, see [Background tasks (Windows App SDK)](/windows/apps/windows-app-sdk/applifecycle/background-tasks) (requires MSIX packaging), [Task Scheduler](/windows/win32/taskschd/task-scheduler-start-page) (no packaging required), or [.NET Worker Services](/dotnet/core/extensions/workers) (no packaging required).
 
 The topics in this section show you how to make lightweight code run in the background in response to triggers. You can use background tasks to provide functionality when your app is suspended or not running. You can also use background tasks for real-time communication apps like VOIP, mail, and IM.
 
