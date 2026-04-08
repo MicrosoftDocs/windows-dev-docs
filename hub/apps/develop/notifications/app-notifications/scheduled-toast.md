@@ -127,11 +127,11 @@ await AppNotificationManager.Default.RemoveByGroupAsync("ASTR 170B1");
 
 ## Activation handling
 
-See the [send a local app notification](app-notification-csharp-legacy.md) docs to learn more about handling activation. Activation of a scheduled app notification is handled the same as activation of a local app notification.
+See the [send a local app notification](app-notifications-csharp-legacy.md) docs to learn more about handling activation. Activation of a scheduled app notification is handled the same as activation of a local app notification.
 
 ## Adding actions, inputs, and more
 
-See the [send a local app notification](app-notification-csharp-legacy.md) docs to learn more about advanced topics like actions and inputs. Actions and inputs work the same in local app notifications as they do in scheduled app notifications.
+See the [send a local app notification](app-notifications-csharp-legacy.md) docs to learn more about advanced topics like actions and inputs. Actions and inputs work the same in local app notifications as they do in scheduled app notifications.
 
 ## Resources
 
@@ -139,4 +139,5 @@ See the [send a local app notification](app-notification-csharp-legacy.md) docs 
 * [AppNotificationManager class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 * [AppNotificationBuilder class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
 * [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+
 

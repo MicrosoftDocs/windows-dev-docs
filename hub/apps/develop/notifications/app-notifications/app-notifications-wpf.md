@@ -16,7 +16,7 @@ An app notification is a message that your app can construct and deliver to your
 This article walks you through the steps to send and handle app notifications from a WPF app using the [Windows App SDK](/windows/apps/windows-app-sdk/). The Windows App SDK `Microsoft.Windows.AppNotifications` APIs handle all the complexity of notification registration and activation for both packaged and unpackaged apps.
 
 > [!NOTE]
-> For WinUI apps, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md). For other app types, see [WinForms](app-notification-winforms.md), [Console](app-notification-console.md), or [UWP](app-notification-uwp.md).
+> For WinUI apps, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md). For other app types, see [WinForms](app-notifications-winforms.md), [Console](app-notifications-console.md), or [UWP](app-notifications-uwp.md).
 
 > [!IMPORTANT]
 > Notifications for elevated (admin) apps are not currently supported.
@@ -253,4 +253,5 @@ For unpackaged WPF apps, `Register()` handles COM registration automatically. Fo
 - [App notification content](adaptive-interactive-toasts.md)
 - [AppNotificationManager Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 - [AppNotificationBuilder Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
+
 

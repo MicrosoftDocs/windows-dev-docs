@@ -21,10 +21,10 @@ This section provides design and implementation guidance for app notifications i
 ## App notification UX and implementation guidance
 
 - [App notification UX guidance](toast-ux-guidance.md)
-- [Send a local app notification from C# apps](app-notification-csharp-legacy.md)
-- [Send a local app notification from C++ UWP apps](app-notification-cpp-uwp.md)
-- [Send a local app notification from Win32 C++ WRL apps](app-notification-cpp-wrl.md)
-- [Send a local app notification from other types of unpackaged apps](app-notification-other-apps.md)
+- [Send a local app notification from C# apps](app-notifications-csharp-legacy.md)
+- [Send a local app notification from C++ UWP apps](app-notifications-cpp-uwp.md)
+- [Send a local app notification from Win32 C++ WRL apps](app-notifications-cpp-wrl.md)
+- [Send a local app notification from other types of unpackaged apps](app-notifications-other-apps.md)
 - [App notification content](adaptive-interactive-toasts.md)
 - [App notification content schema](toast-schema.md)
 - [Schedule an app notification](scheduled-toast.md)
@@ -48,4 +48,5 @@ The app notifications support in the Windows App SDK currently has these limitat
 ## Next steps
 
 See [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) to get started.
+
 

@@ -19,7 +19,7 @@ This article walks you through the steps to send and handle app notifications fr
 > For new desktop apps, we recommend using the [Windows App SDK](/windows/apps/windows-app-sdk/) instead. See [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) for the recommended approach using the `Microsoft.Windows.AppNotifications` APIs.
 
 > [!NOTE]
-> For other app types, see [WPF](app-notification-wpf.md), [WinForms](app-notification-winforms.md), or [Console](app-notification-console.md).
+> For other app types, see [WPF](app-notifications-wpf.md), [WinForms](app-notifications-winforms.md), or [Console](app-notifications-console.md).
 
 ## Prerequisites
 
@@ -309,4 +309,5 @@ Background task registration and handling in C++ follows the same pattern. For d
 - [App notification content](adaptive-interactive-toasts.md)
 - [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification)
 - [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+
 

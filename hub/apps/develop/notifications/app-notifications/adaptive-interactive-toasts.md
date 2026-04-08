@@ -25,13 +25,13 @@ App notifications are defined with an XML payload that is defined by the [App no
 
 **Install Notifications Visualizer.** This free Windows app helps you design interactive app notifications by providing an instant visual preview of your toast as you edit it, similar to Visual Studio's XAML editor/design view. See [Notifications Visualizer](../notifications-visualizer.md) for more information, or [download Notifications Visualizer from the Store](https://apps.microsoft.com/detail/9nblggh5xsl1).
 
-This article only covers creating the app notification content. For information on sending a notification after you have generated the XML payload, see [Send a local app notification](app-notification-csharp-legacy.md). 
+This article only covers creating the app notification content. For information on sending a notification after you have generated the XML payload, see [Send a local app notification](app-notifications-csharp-legacy.md). 
 
 ## App notification structure
 
 Some important, high-level components of an app notification XML payload include:
 
-- **toast**: The **launch** attribute of this element defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see [Send a local app notification](app-notification-csharp-legacy.md).
+- **toast**: The **launch** attribute of this element defines what arguments will be passed back to your app when the user clicks your toast, allowing you to deep link into the correct content that the toast was displaying. To learn more, see [Send a local app notification](app-notifications-csharp-legacy.md).
 - **visual**: This element represents visual portion of the toast, including the generic binding that contains text and images.
 - **actions**: This element represents interactive portion of the toast, including inputs and actions.
 - **audio**: This element specifies the audio played when the toast is shown to the user.
@@ -366,7 +366,7 @@ Here's an example where columns and some advanced adaptive text elements are use
 
 Buttons make your toast interactive, letting the user take quick actions on your app notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app. Buttons appear in the expanded portion of your notification.
 
-To learn more about implementing buttons end-to-end, see [Send local toast](app-notification-csharp-legacy.md).
+To learn more about implementing buttons end-to-end, see [Send local toast](app-notifications-csharp-legacy.md).
 
 Buttons can activate an app in the following ways:
 
@@ -969,10 +969,11 @@ Your tiles and app notifications can load strings and images tailored for displa
 
 
 ## Handling activation
-To learn how to handle app activations (the user clicking your toast or buttons on the toast), see [Send local toast](app-notification-csharp-legacy.md).
+To learn how to handle app activations (the user clicking your toast or buttons on the toast), see [Send local toast](app-notifications-csharp-legacy.md).
  
 ## Related topics
 
-* [Send a local toast and handle activation](app-notification-csharp-legacy.md)
+* [Send a local toast and handle activation](app-notifications-csharp-legacy.md)
 * [Tile and toast notification support for language, scale, and high contrast](/windows/uwp/launch-resume/tile-toast-language-scale-contrast)
+
 

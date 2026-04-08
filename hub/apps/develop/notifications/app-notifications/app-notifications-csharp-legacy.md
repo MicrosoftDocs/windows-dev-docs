@@ -22,7 +22,7 @@ This quickstart walks you through the steps to create, deliver, and display a Wi
 > The term "toast notification" is being replaced with "app notification".These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 > [!IMPORTANT]
-> If you're writing a C++ app, please see the [C++ UWP](app-notification-cpp-uwp.md) or [C++ WRL](app-notification-cpp-wrl.md) documentation.
+> If you're writing a C++ app, please see the [C++ UWP](app-notifications-cpp-uwp.md) or [C++ WRL](app-notifications-cpp-wrl.md) documentation.
 
 ## Step 1: Add namespace references
 
@@ -439,4 +439,5 @@ await AppNotificationManager.Default.RemoveAllAsync();
 * [AppNotificationBuilder Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
 * [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+
 
