@@ -24,14 +24,14 @@ The [Windows App SDK](../../windows-app-sdk/index.md) provides APIs related to O
 
 ### Sign in with Microsoft (MSAL.NET + WAM)
 
-For apps that need users to sign in with a **Microsoft account or Entra ID (work/school) account**, the recommended approach is [MSAL.NET](https://learn.microsoft.com/en-us/entra/msal/dotnet/) with the **Web Account Manager (WAM) broker**. WAM provides silent SSO using the account already signed in to Windows, Windows Hello support, and device-bound refresh tokens — without launching a browser.
+For apps that need users to sign in with a **Microsoft account or Entra ID (work/school) account**, the recommended approach is [MSAL.NET](/entra/msal/dotnet/) with the **Web Account Manager (WAM) broker**. WAM provides silent SSO using the account already signed in to Windows, Windows Hello support, and device-bound refresh tokens — without launching a browser.
 
 | Article | Description |
 |---------|-------------|
-| [Acquire tokens using WAM](https://learn.microsoft.com/en-us/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam) | Learn how to use MSAL.NET with the WAM broker to acquire tokens for Microsoft and Entra ID accounts in desktop apps including WPF, WinForms, and WinUI 3. |
-| [MSAL.NET overview](https://learn.microsoft.com/en-us/entra/msal/dotnet/) | Overview of the Microsoft Authentication Library for .NET — the recommended library for authentication with Microsoft identity in desktop apps. |
-| [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) | How to register your app in the Azure portal to get a client ID, which is required before using MSAL. |
-| [Web Account Manager (WinRT API)](https://learn.microsoft.com/en-us/windows/uwp/security/web-account-manager) | The underlying WinRT API that WAM is built on (`Windows.Security.Authentication.Web.Core`). Reference this if you need low-level token broker access without MSAL.NET. |
+| [Acquire tokens using WAM](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam) | Learn how to use MSAL.NET with the WAM broker to acquire tokens for Microsoft and Entra ID accounts in desktop apps including WPF, WinForms, and WinUI 3. |
+| [MSAL.NET overview](/entra/msal/dotnet/) | Overview of the Microsoft Authentication Library for .NET — the recommended library for authentication with Microsoft identity in desktop apps. |
+| [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app) | How to register your app in the Azure portal to get a client ID, which is required before using MSAL. |
+| [Web Account Manager (WinRT API)](/windows/uwp/security/web-account-manager) | The underlying WinRT API that WAM is built on (`Windows.Security.Authentication.Web.Core`). Reference this if you need low-level token broker access without MSAL.NET. |
 | [Retrieve a window handle (HWND)](../ui-input/retrieve-hwnd.md) | WAM requires your app's window handle (HWND) to display authentication UI. This article shows how to retrieve it in WPF, WinForms, and WinUI 3. |
 
 > [!NOTE]
