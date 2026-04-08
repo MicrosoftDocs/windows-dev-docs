@@ -123,7 +123,7 @@ For more details, see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and
 Once your project is configured, you can call WinRT APIs directly. The following example sends a toast notification from a WPF or Win32 app.
 
 > [!NOTE]
-> Toast notifications require app identity. Packaged apps have identity automatically. For unpackaged apps, see [Send local toast notifications from desktop C# apps](/windows/apps/develop/notifications/app-notifications/send-local-toast-desktop-csharp) for the additional registration steps required.
+> Toast notifications require app identity. Packaged apps have identity automatically. For unpackaged apps, see [Send local toast notifications from desktop C# apps](/windows/apps/develop/notifications/app-notifications/send-local-toast) for the additional registration steps required.
 
 
 ```csharp
