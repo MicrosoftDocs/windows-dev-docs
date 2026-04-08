@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 At times, you may want to stop offering an app to customers, effectively "unpublishing" it. To do so, navigate to the **Store presence** card on the **App overview** page. You will see that your product is currently available in the Microsoft Store. Click on **Modify availability**, select **Make product unavailable** and click on **Apply**. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it.
 
-:::image type="content" source="images/new-overview-make-product-unavailable.png" lightbox="images/new-overview-make-product-unavailable.png" alt-text="A screenshot of the new msix overview page showing how to make product unavailable in Store":::
+:::image type="content" source="images/msiexe-make-product-unavailable.png" lightbox="images/msiexe-make-product-unavailable.png" alt-text="A screenshot of the new msi/exe overview page showing how to make product unavailable in Store":::
 
 Note that any customers who already have the app will still be able to use it and can download it again (and could even get updates if you submit new packages later).
 
