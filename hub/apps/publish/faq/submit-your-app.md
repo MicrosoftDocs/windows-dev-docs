@@ -15,7 +15,7 @@ Every app in the Microsoft Store must have a unique name. Reserving an app name 
 
 To reserve a name:
 - Go to your Apps & games section in Partner Center and select “New product.”
-- Choose the type of app (e.g., MSIX/PWA or EXE/MSI).
+- Choose the type of app (e.g., MSIX/PWA).
 - Enter the app title and click **Check availability**.
 - If available, click **Reserve product name** to hold the name for 3 months.
 
@@ -32,7 +32,7 @@ After reserving a name, start a new submission. The process involves:
 - **Pricing and Availability**: Choose free/paid, markets, trials.
 - **Properties**: Set category and capabilities.
 - **Age Ratings**: Complete content questionnaire for regional ratings.
-- **Packages**: Upload your MSIX or EXE/MSI packages.
+- **Packages**: Upload your MSIX package.
 - **Store Listings**: Add descriptions, features, images, logos.
 - **Submission Options**: (Optional) Add notes for certification or schedule publish date.
 
@@ -44,22 +44,28 @@ Fill out all required fields, then click **Submit for certification**. Partner C
 <details>
 <summary><strong>Do I need to package my app as an MSIX, or can I submit a traditional EXE/MSI installer?</strong></summary>
 
-Store allows both app types.
+The Microsoft Store requires apps to be submitted using supported packaging formats such as MSIX and related package types.
 
-**MSIX Benefits are**:
+**Supported package formats include**:
+- .msix
+- .msixbundle
+- .msixupload
+- .appx
+- .appxbundle
+- .appxupload
+- .xap
+
+**MSIX benefits include**:
 - Free Microsoft code signing and CDN hosting.
-- Easier updates, better integration with Windows features.
-- Enables advanced capabilities like flighting and commerce.
+- Easier updates and better integration with Windows features.
+- Support for advanced capabilities like flighting and commerce.
 
-**MSI/EXE Submission**:
-- Allowed since June 2021.
-- You must provide a URL or upload the installer in submission.
-- Requirements:
-  - Must be .exe or .msi only.
-  - Offline installer – no downloads during setup.
-  - Installer must not change after submission or bundle unrelated software.
+**EXE/MSI installers**:
+- Traditional installer formats such as .exe or .msi are not supported for direct submission in the Microsoft Store.
+- Developers should convert or package their applications using MSIX or one of the supported formats listed above to ensure compatibility with Store requirements and certification processes.
 
-Both app types can be submitted in Store depending on developer's needs.
+Using msix package format ensures a more reliable, secure, and streamlined installation and update experience for users.
+
 </details>
 
 ---
