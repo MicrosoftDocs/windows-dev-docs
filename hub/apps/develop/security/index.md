@@ -22,6 +22,20 @@ The [Windows App SDK](../../windows-app-sdk/index.md) provides APIs related to O
 |---------|-------------|
 | [Implement OAuth 2.0 functionality in Windows apps](oauth2.md) | The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth 2.0 authentication in Windows apps. This article describes how to implement OAuth 2.0 with the Windows App SDK. |
 
+### Sign in with Microsoft (MSAL.NET + WAM)
+
+For apps that need users to sign in with a **Microsoft account or Entra ID (work/school) account**, the recommended approach is [MSAL.NET](https://learn.microsoft.com/en-us/entra/msal/dotnet/) with the **Web Account Manager (WAM) broker**. WAM provides silent SSO using the account already signed in to Windows, Windows Hello support, and device-bound refresh tokens — without launching a browser.
+
+| Article | Description |
+|---------|-------------|
+| [Acquire tokens using WAM](https://learn.microsoft.com/en-us/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam) | Learn how to use MSAL.NET with the WAM broker to acquire tokens for Microsoft and Entra ID accounts in desktop apps including WPF, WinForms, and WinUI 3. |
+| [MSAL.NET overview](https://learn.microsoft.com/en-us/entra/msal/dotnet/) | Overview of the Microsoft Authentication Library for .NET — the recommended library for authentication with Microsoft identity in desktop apps. |
+| [Register an application with the Microsoft identity platform](https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-register-app) | How to register your app in the Azure portal to get a client ID, which is required before using MSAL. |
+| [Retrieve a window handle (HWND)](../ui-input/retrieve-hwnd.md) | WAM requires your app's window handle (HWND) to display authentication UI. This article shows how to retrieve it in WPF, WinForms, and WinUI 3. |
+
+> [!NOTE]
+> WAM supports Microsoft accounts and Entra ID accounts only. If you need to authenticate with a third-party identity provider (Google, GitHub, etc.) or Azure AD B2C, use [OAuth2Manager](oauth2.md) or another general-purpose OAuth 2.0 library instead.
+
 ### WinRT APIs
 
 The following articles provide information about features available via WinRT APIs provided by the Windows SDK.
