@@ -32,7 +32,7 @@ For apps that need users to sign in with a **Microsoft account or Entra ID (work
 | [MSAL.NET overview](/entra/msal/dotnet/) | Overview of the Microsoft Authentication Library for .NET — the recommended library for authentication with Microsoft identity in desktop apps. |
 | [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app) | How to register your app in the Azure portal to get a client ID, which is required before using MSAL. |
 | [Web Account Manager (WinRT API)](/windows/uwp/security/web-account-manager) | The underlying WinRT API that WAM is built on (`Windows.Security.Authentication.Web.Core`). Reference this if you need low-level token broker access without MSAL.NET. |
-| [Retrieve a window handle (HWND)](../ui-input/retrieve-hwnd.md) | Web Account Manager requires your app's window handle (HWND) to display authentication UI. This article shows how to retrieve it in WPF, WinForms, and WinUI 3. |
+| [Retrieve a window handle (HWND)](../ui/retrieve-hwnd.md) | Web Account Manager requires your app's window handle (HWND) to display authentication UI. This article shows how to retrieve it in WPF, WinForms, and WinUI 3. |
 
 > [!NOTE]
 > Web Account Manager supports Microsoft accounts and Entra ID accounts only. If you need to authenticate with a third-party identity provider (Google, GitHub, etc.) or Azure AD B2C, use [OAuth2Manager](oauth2.md) or another general-purpose OAuth 2.0 library instead.
