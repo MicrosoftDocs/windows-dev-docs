@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows experiences. Most WPF patterns have direct equivalents in WinUI 3. In some areas WinUI 3 introduces an improved approach that replaces an older pattern, and in a few cases features are still in active development.
 
-This topic maps common WPF patterns to their WinUI 3 equivalents so you can plan your migration with confidence.
+This topic maps common WPF patterns to their WinUI 3 equivalents so you can plan your migration.
 
 > [!TIP]
 > For general WPF + Windows App SDK guidance, see [Use the Windows App SDK in a WPF app](wpf-plus-winappsdk.md).
