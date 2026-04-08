@@ -110,8 +110,6 @@ items:
           href: widgets/widgets-states-and-ui.md
         - name: Interaction design guidance
           href: widgets/widgets-interaction-design.md
-        - name: Create a template with the Adaptive Card Designer
-          href: widgets/widgets-create-a-template.md
         - name: Integrate with the widget picker
           href: widgets/widgets-picker-integration.md
     - name: Writing

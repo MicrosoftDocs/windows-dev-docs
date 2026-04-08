@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/design/widgets/widgets-create-a-template.md",
+      "redirect_url": "/windows/apps/develop/widgets/widgets-create-a-template",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "uwp/audio-video-camera/camera-ui-features-for-mobile-devices.md",
       "redirect_url": "/previous-versions/windows/uwp/audio-video-camera/camera-ui-features-for-mobile-devices",
       "redirect_document_id": false

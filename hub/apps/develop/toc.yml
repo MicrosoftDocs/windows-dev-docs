@@ -597,6 +597,7 @@ items:
               - name: Test your app's signature with Smart App Control
                 href: smart-app-control/test-your-app-with-smart-app-control.md
           - name: Widgets
+            href: widgets/index.md
             items:
               - name: Feed providers
                 items:
@@ -624,6 +625,8 @@ items:
                     href: widgets/widget-provider-manifest.md
                   - name: ActivateApplication protocol
                     href: widgets/widget-provider-activateapplication-protocol.md
+                  - name: Adaptive Cards Designer
+                    href: widgets/widgets-create-a-template.md
           - name: Windows Search
             href: search/index.md
             items:
