@@ -1,14 +1,13 @@
 ---
-title: Setup a development environment on Windows
-description: A guide to help you setup your development environment on Windows and install your preferred tools and code languages. 
-ms.topic: install-set-up-deploy
-ms.subservice: windows-nodejs
-ms.date: 01/07/2025
+title: Windows developer tools
+description: Windows includes built-in tools designed for developers — a package manager, a Linux subsystem, optimized storage, and more.
+ms.topic: overview
+ms.date: 03/26/2026
 ---
 
-# Development environment on Windows
+# Windows developer tools
 
-Windows invites you to code as you are. Use whatever coding language or framework you prefer - whether developing with tools on Windows or with Linux tools on the Windows Subsystem for Linux, this guide will help you get set up and install what you need to start coding, debugging, and accessing services to put your work into production.
+Windows supports a wide range of development workflows. Tools like Visual Studio Code and GitHub Copilot are well-integrated on Windows, and with AI assistance built into your editor and terminal, it's straightforward to write scripts and build utilities to automate your work. Whether you're developing for Windows, the web, or cross-platform, this page points you to the tools and setup guides to get started.
 
 ## Tools to get you started
 
@@ -57,9 +56,10 @@ Watch the Windows developer tools overview from Microsoft Ignite to see these to
 <iframe width="600" height="338" src="https://www.youtube.com/embed/mJQxAKYkCBk?si=y6-YTNGHkuDpFzZn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
+
 ## Development paths
 
-Follow these guides to set up your Windows development environment for your preferred language or framework.
+Follow these guides to set up your development environment for your preferred language or framework on Windows.
 
 :::row:::
     :::column:::
@@ -73,13 +73,17 @@ Follow these guides to set up your Windows development environment for your pref
         Install Python and set up your development environment on Windows.
     :::column-end:::
     :::column:::
+       [![Java icon](../images/java-logo.png)](./java.md)<br>
+        **[Get started with Java](./java.md)**<br>
+        Install a JDK, configure JAVA_HOME, and set up your Java development environment on Windows.
+    :::column-end:::
+:::row-end:::
+:::row:::
+    :::column:::
        [![C / C++](../images/c-logo.png)](/cpp/)<br>
         **[Get started with C++ and C](/cpp/)**<br>
         Develop apps, services, and tools with C++, C, and assembly.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
         **[Get started with C#](/dotnet/csharp/)**<br>
@@ -90,14 +94,14 @@ Follow these guides to set up your Windows development environment for your pref
         **[Get started with Rust](./rust/index.yml)**<br>
         Get started programming with Rust, including how to set up Rust for Windows.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
         **[Get started with PowerShell](/powershell/)**<br>
         Cross-platform task automation and configuration management using PowerShell.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
         **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
@@ -108,13 +112,19 @@ Follow these guides to set up your Windows development environment for your pref
         **[Get started building Windows apps](../apps/index.yml)**<br>
         Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Game Dev icon](../images/game-icon.png)](/gaming/)<br>
         **[Get started with Game Development](/gaming/)**<br>
         Build games for Windows using Microsoft's game development tools and services.
     :::column-end:::
+    :::column:::
+    :::column-end:::     
+    :::column:::
+    :::column-end:::     
 :::row-end:::
-
 ---
 
 

@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 The new onboarding process allows company developers to publish apps to the Microsoft Store without any onboarding fees.  
 
 > [!NOTE]
-> This onboarding experience is currently available in India. Availability will expand to additional markets over time.
+> This onboarding experience is currently available in flighted markets (including US) only. Availability will expand to additional markets over time.
 
 ## What’s New
 
@@ -124,7 +124,7 @@ Each verification type (business and employment) allows up to three verification
 
    If you’re not taken there immediately: 
    * Wait about 5 minutes, refresh your browser until the Apps & Games tile appears, and then select it, or 
-   * Navigate directly to the Partner Center Apps & Games page 
+   * Navigate directly to the [Partner Center Apps & Games page](https://aka.ms/submitwindowsapp)
 
    From there, you can start submitting apps for publishing to the Microsoft Store. 
 

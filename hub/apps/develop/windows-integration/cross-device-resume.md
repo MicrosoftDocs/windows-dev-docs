@@ -404,7 +404,7 @@ URIs allow you to launch another app to perform a specific task, enabling helpfu
 
 ## Handling API responses in Windows
 
-This section describes how to handle the API responses in Windows applications. The Continuity SDK provides a way to handle the API responses for Win32, UWP, and Windows App SDK apps.
+This section describes how to handle the API responses in Windows applications. The Continuity SDK provides a way to handle the API responses for Win32 and WinUI apps.
 
 ### Win32 app example
 
@@ -459,9 +459,9 @@ For Win32 apps to handle protocol URI launch, the following steps are required:
     } 
     ```
 
-### UWP Apps 
+### WinUI apps 
 
-For UWP apps, the protocol URI can be registered in the project's app manifest. The following steps demonstrate how to handle protocol activation in a UWP app.
+For packaged WinUI apps, the protocol URI can be registered in the project's app manifest. The following steps demonstrate how to handle protocol activation in a WinUI app.
 
 1. First, the protocol URI is registered in the `Package.appxmanifest` file as follows:
 
@@ -480,25 +480,6 @@ For UWP apps, the protocol URI can be registered in the project's app manifest. 
             </Application> 
        <Applications> 
     ```
-
-1. Next, in the `App.xaml.cs` file, override the `OnActivated` method as follows: 
-
-    ```csharp
-    public partial class App 
-    { 
-       protected override void OnActivated(IActivatedEventArgs args) 
-      { 
-          if (args.Kind == ActivationKind.Protocol) 
-          { 
-             ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs; 
-             // TODO: Handle URI activation 
-             // The received URI is eventArgs.Uri.AbsoluteUri 
-          } 
-       } 
-    } 
-    ```
-
-For more information on handling URI launch in UWP apps, see step 3 in [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation#step-3-handle-the-activated-event).
 
 ### WinUI 3 example
 

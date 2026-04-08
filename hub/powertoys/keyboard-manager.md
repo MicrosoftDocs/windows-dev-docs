@@ -22,6 +22,7 @@ Also, you can exchange a key or shortcut to an arbitrary unicode text sequence. 
 
 PowerToys Keyboard Manager must be enabled (with PowerToys running in the background) for remapped keys and shortcuts to be applied. If PowerToys is not running, key remapping will no longer be applied.
 
+<a id="keys-that-cannot-be-remapped"></a>
 > [!IMPORTANT]
 > There are some shortcut keys that are reserved by the operating system or cannot be replaced. Keys that cannot be remapped include:
 >
@@ -34,6 +35,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 
 To create mappings with Keyboard Manager, open the PowerToys Settings. In PowerToys Settings, on the Keyboard Manager tab, you'll see options to:
 
+- **Try the new editor**: Switch to the new editor experience. You can switch back at any time using the same toggle.
 - Open the Remap Keys settings window by selecting **Remap a key**
 - Open the Remap Shortcuts settings window by selecting **Remap a shortcut**
 

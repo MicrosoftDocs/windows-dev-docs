@@ -25,8 +25,6 @@ items:
       href: ../audio-video-camera/capture-photos-and-video-with-cameracaptureui.md
     - name: Display the camera preview
       href: ../audio-video-camera/simple-camera-preview-access.md
-    - name: Camera UI features for mobile devices
-      href: ../audio-video-camera/camera-ui-features-for-mobile-devices.md
     - name: Handle device and screen orientation with MediaCapture
       href: ../audio-video-camera/handle-device-orientation-with-mediacapture.md
     - name: Use OpenCV with MediaFrameReader
@@ -194,36 +192,10 @@ items:
   - name: Files, folders, and libraries
     href: ../files/index.md
     items:
-    - name: Enumerate and query files and folders
-      href: ../files/quickstart-listing-files-and-folders.md
-    - name: Create, write, and read a file
-      href: ../files/quickstart-reading-and-writing-files.md
-    - name: Best practices for writing to files
-      href: ../files/best-practices-for-writing-to-files.md
-    - name: Get file properties
-      href: ../files/quickstart-getting-file-properties.md
     - name: Open files and folders with a picker
       href: ../files/quickstart-using-file-and-folder-pickers.md
     - name: Save a file with a picker
       href: ../files/quickstart-save-a-file-with-a-picker.md
-    - name: Accessing HomeGroup content
-      href: ../files/quickstart-accessing-homegroup-content.md
-    - name: Determining availability of Microsoft OneDrive files
-      href: ../files/quickstart-determining-availability-of-microsoft-onedrive-files.md
-    - name: Files and folders in the Music, Pictures, and Videos libraries
-      href: ../files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md
-    - name: Thumbnail images
-      href: ../files/thumbnails.md
-    - name: Track recently used files and folders
-      href: ../files/how-to-track-recently-used-files-and-folders.md
-    - name: Track file system changes in the background
-      href: ../files/change-tracking-filesystem.md
-    - name: Access the SD card
-      href: ../files/access-the-sd-card.md
-    - name: File access permissions
-      href: ../files/file-access-permissions.md
-    - name: Fast access to file properties in UWP
-      href: ../files/fast-file-properties.md
   - name: Machine Learning
     href: /windows/ai/
 - name: Deployment
@@ -237,8 +209,6 @@ items:
       href: ../debug-test-perf/deploying-and-debugging-uwp-apps.md
     - name: Testing and debugging tools for PLM
       href: ../debug-test-perf/testing-debugging-plm.md
-    - name: Test with the Microsoft Emulator for Windows
-      href: ../debug-test-perf/test-with-the-emulator.md
     - name: Test Surface Hub apps using Visual Studio
       href: ../debug-test-perf/test-surface-hub-apps-using-visual-studio.md
     - name: Deploy an app through loose file registration
@@ -250,8 +220,6 @@ items:
       items:
       - name: Windows Device Portal for Desktop
         href: ../debug-test-perf/device-portal-desktop.md
-      - name: Windows Device Portal for Mobile
-        href: ../debug-test-perf/device-portal-mobile.md
       - name: Windows Device Portal core REST APIs
         href: ../debug-test-perf/device-portal-api-core.md
       - name: Write a custom plugin for Windows Device Portal
@@ -1051,32 +1019,6 @@ items:
         href: ../security/companion-device-unlock.md
       - name: Web authentication broker
         href: ../security/web-authentication-broker.md
-    - name: Cryptography
-      href: ../security/cryptography.md
-      items:
-      - name: Certificates
-        href: ../security/certificates.md
-      - name: Cryptographic keys
-        href: ../security/cryptographic-keys.md
-      - name: Data protection
-        href: ../security/data-protection.md
-      - name: MACs, hashes, and signatures
-        href: ../security/macs-hashes-and-signatures.md
-      - name: Export restrictions on cryptography
-        href: ../security/export-restrictions-on-cryptography.md
-      - name: Common cryptography tasks
-        href: ../security/common-cryptography-tasks.md
-        items:
-        - name: Create random numbers
-          href: ../security/create-random-numbers.md
-        - name: Compare buffers
-          href: ../security/compare-buffers.md
-        - name: Convert between strings and binary data
-          href: ../security/convert-between-strings-and-binary-data.md
-        - name: Copy to and from byte arrays
-          href: ../security/copy-to-and-from-byte-arrays.md
-        - name: Encode and decode data
-          href: ../security/encode-and-decode-data.md
   - name: Windows as a service
     href: ../updates-and-versions/application-development-for-windows-as-a-service.md
   - name: Windows Runtime components
@@ -1156,8 +1098,6 @@ items:
   items:
   - name: Asynchronous programming (UWP apps)
     href: ../threading-async/asynchronous-programming-universal-windows-platform-apps.md
-  - name: Asynchronous programming in C++/CX (UWP apps)
-    href: ../threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md
   - name: Best practices for using the thread pool
     href: ../threading-async/best-practices-for-using-the-thread-pool.md
   - name: Call asynchronous APIs in C# or Visual Basic

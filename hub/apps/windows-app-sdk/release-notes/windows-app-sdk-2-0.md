@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Provides information about what's new in Windows App SDK 2.0.
 ms.topic: release-notes
-ms.date: 09/22/2025
+ms.date: 03/31/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -20,13 +20,119 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="preview"
 
+## Version 2.0 Preview 2 (2.0.0-Preview2)
+
+Released: **March 31, 2026** <br><br>
+
+<details><summary>Windows ML</summary>
+
+>
+> The Microsoft.WindowsAppSDK.ML NuGet package has been refactored, adding a new base dependency. The existing ML NuGet package's functionality remains the same, but the core Windows ML features have been refactored into a base dependent package called Microsoft.Windows.AI.MachineLearning. This new package contains a minimal set of dependencies, but on C#/WinRT or C++/WinRT it only supports down to Windows 10 18362. If you need Windows 10 17763 support, use the existing Microsoft.WindowsAppSDK.ML package.
+>
+> For new transitive dependencies, we recommend using tooling to upgrade the package (nuget.exe or VS). See also: [Windows App SDK 1.6 release notes](/windows/apps/windows-app-sdk/release-notes/windows-app-sdk-1-6?pivots=stable).
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.24.4. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info.
+>
+
+</details>
+
+<details><summary>Windows AI APIs</summary>
+
+>
+> Enforced Phi Silica APIs to be part of a Limited Access Feature.
+>
+> Added additional enum states to help explain transient failures during the AI model acquisition process, providing guidance on issues such as missing capabilities, incompatible hardware, or required OS updates.
+>
+> Added checks for various network and Windows Update errors during AI model installation, flagging durable failures so users can understand why model packages failed to install.
+>
+> Improved diagnosability for Text Intelligence APIs used in Windows AI scenarios.
+>
+
+</details>
+
+<details><summary>App Content Search</summary>
+
+>
+> App Content Search has been removed from 2.0 preview while we work to improve fundamentals and ensure future compatibility as the underlying AI models change.In the meantime, please continue to use the experimental channel to try the latest changes.
+>
+
+</details>
+
+<details><summary>WebView2 (WinUI 3)</summary>
+
+>
+> Enabled drag support for WebView2 content hosted in WinUI 3 applications. This capability was previously unsupported and is now available without introducing new public APIs. Note: Drop into WebView2 from external sources is already supported.
+>
+> #### Supported scenarios
+>
+> - **Standard drag-and-drop content**
+>   Dragging text, HTML, images, and URLs is supported. Based on current behavior, dragging images outside the app results in a default file name (for example, `download.jpg`) when dropped into File Explorer.
+>   *Example scenario:* A user selects text or an image inside WebView2 and drags it either within the app or to another destination such as File Explorer.
+>
+> - **Drag cancellation**
+>   On-demand cancellation of an active drag operation is supported.
+>   *Example scenario:* An app conditionally blocks drag operations for certain content types (such as restricted or ephemeral content) by cancelling the drag after it has been initiated.
+>
+> - **Custom drag visuals**
+>   Custom drag UI, such as icons or previews, is supported to help users clearly identify the content being dragged.
+>   *Example scenario:* An app displays a thumbnail preview or icon while a user drags media content, making it clear which item is currently being moved.
+>
+> - **Customizable drag data**
+>   Editing and customizing drag data is supported, enabling app-specific scenarios such as dragging messages within the app (for example, as an alternative interaction for message forwarding).
+>   *Example scenario:* An app customizes the drag payload to include contextual metadata, such as the originating application name. When the content is dropped, the destination can display or process information like "From \<app name\>" to indicate the source of the dragged content.
+>
+> #### Limitations
+>
+> - Support for additional drag data types is limited. The following formats are not currently supported:
+>   - `DownloadURL`
+>
+> #### Requirements
+>
+> - **Minimum WebView2 Runtime version (Edge Beta channel):** 144.0.3719.11
+>
+
+</details>
+
+<details><summary>Custom XAML Conditionals (IXamlCondition)</summary>
+
+>
+> The `IXamlCondition` interface enables developers to define custom conditions that integrate with XAML's conditional namespace syntax and are evaluated at XAML parse time. This is a rename and graduation of the experimental `IXamlPredicate` interface. Custom conditions enable conditional XAML scenarios based on application-specific factors such as feature flags, device capabilities, business logic, configuration settings, and other runtime conditions.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed MSB8027 and LNK4042 build warnings caused by duplicate ClCompile items in Windows App SDK NuGet .targets files by moving preprocessor definitions from `<Target>` blocks to `<ItemDefinitionGroup>`. An opt-out workaround (`WindowsAppSDK_Arm64EcCompilerWorkaround`) is included for ARM64EC+LTCG builds to avoid a known MSVC internal compiler error.
+> * Fixed a ListView crash that could occur during keyboard navigation (Tab/Shift+Tab) after the items list was updated.
+> * Fixed an issue where WinUI 3 could crash if focus was moved to the CoreWebView2Controller while the controller was not visible.
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new and modified APIs compared to 2.0-Preview1:
+> ```
+> Microsoft.UI.Xaml.Markup
+>
+>     IXamlCondition
+> ```
+>
+
+</details>
+
 ## Version 2.0 Preview 1 (2.0.0-Preview1)
 
 Released: **February 13, 2026** <br><br>
-
-### Windows App SDK 2.0.0-Preview1 Release Notes
- 
----
 
 <details><summary>Windows ML</summary>
 

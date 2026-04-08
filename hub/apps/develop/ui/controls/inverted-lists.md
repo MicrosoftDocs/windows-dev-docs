@@ -1,6 +1,6 @@
 ---
 title: Inverted lists
-description: Learn how to create an inverted list and use it to add new items at the bottom of a ListView control in a Universal Windows Platform (UWP) app.
+description: Learn how to create an inverted list and use it to add new items at the bottom of a ListView control in a WinUI app.
 label: Inverted lists
 template: detail.hbs
 ms.date: 05/19/2017

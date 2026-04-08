@@ -1,7 +1,7 @@
 ---
-description: Learn how to customize your Universal Windows Platform (UWP) app for interaction with specific types of inputs including pen, Surface dial, and speech.
+description: Learn how to customize your WinUI for interaction with specific types of inputs including pen and speech.
 title: Input and interactions
-keywords: app inputs, customize UWP application
+keywords: app inputs, customize WinUI application
 label: Input and interactions
 template: detail.hbs
 ms.date: 09/24/2020
@@ -12,9 +12,9 @@ ms.localizationpriority: medium
 
 # Input and interactions
 
-UWP apps automatically handle a wide variety of inputs and run on a variety of devices—there’s nothing extra you need to do to enable touch input, for example. But there are times when you might want to optimize your app for certain types of input or devices. For example, if you’re creating a painting app, you might want to customize the way you handle pen input.
+WinUI apps automatically handle a wide variety of inputs and run on a variety of devices—there’s nothing extra you need to do to enable touch input, for example. But there are times when you might want to optimize your app for certain types of input or devices. For example, if you’re creating a painting app, you might want to customize the way you handle pen input.
 
-The design and coding instructions in this section help you customize your UWP app for specific types of inputs.
+The design and coding instructions in this section help you customize your WinUI app for specific types of inputs.
 
 :::row:::
     :::column:::
@@ -67,22 +67,11 @@ See our <b>[Input primer](../../design/input/index.md)</b> to familiarize yourse
 
 <!-- <div class="side-by-side">
 <div class="side-by-side-content">
-<p>
-<b>[Surface Dial](../../design/input/windows-wheel-interactions.md)</b><br/>
-Learn how to integrate this brand new category of input device into your Windows apps.</br>
-This device is intended as a secondary, multi-modal input device that complements or modifies input from a primary device.
-</p>
 </div>
 </div>
 
 <div class="side-by-side">
 <div class="side-by-side-content">
-<div class="side-by-side-content-left">
-<p>
-<b>[Cortana](../../design/input/cortana-interactions.md)</b><br/>
-Extend the basic functionality of Cortana with voice commands that launch and execute a single action in an external application.
-</p>
-</div>
 <div class="side-by-side-content-right">
 <p>
 <b>[Speech](../../design/input/speech-interactions.md)</b><br/>
@@ -103,18 +92,29 @@ Optimize your UWP app for pen input to provide both standard pointer device func
 <div class="side-by-side-content-right">
 <p>
 <b>[Keyboard](../../design/input/keyboard-interactions.md)</b><br/>
+<div class="side-by-side">
+<div class="side-by-side-content">
+<div class="side-by-side-content-left">
+<p>
+<b>[Pen](../../design/input/pen-and-stylus-interactions.md)</b><br/>
+Optimize your WinUI app for pen input to provide both standard pointer device functionality and the best Windows Ink experience for your users.
+</p>
+</div>
+<div class="side-by-side-content-right">
+<p>
+<b>[Keyboard](../../design/input/keyboard-interactions.md)</b><br/>
 Keyboard input is an important part of the overall user interaction experience for apps. The keyboard is indispensable to people with certain disabilities or users who just consider it a more efficient way to interact with an app.
 </p>
 </div>
 </div>
 </div>
-
+<b>[Touchpad](../../design/input/touchpad-interactions.md)</b><br/>
 <div class="side-by-side">
 <div class="side-by-side-content">
 <div class="side-by-side-content-left">
 <p>
 <b>[Touch](../../design/input/touch-interactions.md)</b><br/>
-UWP includes a number of different mechanisms for handling touch input, all of which enable you to create an immersive experience that your users can explore with confidence.
+WinUI includes a number of different mechanisms for handling touch input, all of which enable you to create an immersive experience that your users can explore with confidence.
 </p>
 </div>
 <div class="side-by-side-content-right">
@@ -128,26 +128,9 @@ A touchpad combines both indirect multi-touch input with the precision input of 
 
 <div class="side-by-side">
 <div class="side-by-side-content">
-<div class="side-by-side-content-left">
-<p>
-<b>[Mouse](../../design/input/mouse-interactions.md)</b><br/>
-Mouse input is best suited for user interactions that require precision when pointing and clicking. This inherent precision is naturally supported by the UI of Windows, which is optimized for the imprecise nature of touch.
-</p>
-</div>
-<div class="side-by-side-content-right">
-<p>
-<b>[Gamepad and remote control](../../design/input/gamepad-and-remote-interactions.md)</b><br/>
-UWP apps now support gamepad and remote control input. Gamepads and remote controls are the primary input devices for Xbox and TV experiences.
-</p>
-</div>
-</div>
-</div>
-
-<div class="side-by-side">
-<div class="side-by-side-content">
 <p>
 <b>[Multiple inputs](../../design/input/multiple-input-design-guidelines.md)</b><br/>
-To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (gesture, speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
+To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
 </p>
 </div>
 </div>
@@ -173,7 +156,7 @@ Receive, process, and manage input data from pointing devices, such as touch, mo
 <div class="side-by-side-content">
 <div class="side-by-side-content-left">
 <p><b>[Custom text input](../../design/input/custom-text-input.md)</b><br/>
-The core text APIs in the Windows.UI.Text.Core namespace enable a UWP app to receive text input from any text service supported on Windows devices. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
+The core text APIs in the Windows.UI.Text.Core namespace enable a WinUI app to receive text input from any text service supported on Windows devices. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
 </p>
 </div>
 <div class="side-by-side-content-right">
@@ -186,11 +169,28 @@ This article describes selecting and manipulating text, images, and controls and
 </div>
 
 <div class="side-by-side">
+<div class="side-by-side">
 <div class="side-by-side-content">
-<p>
-<b>[Panning](../../design/input/guidelines-for-panning.md)</b><br/>
-Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport.
+<div class="side-by-side-content-left">
+<p><b>[Custom text input](../../design/input/custom-text-input.md)</b><br/>
+The core text APIs in the Windows.UI.Text.Core namespace enable a WinUI app to receive text input from any text service supported on Windows devices. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
 </p>
+</div>
+<div class="side-by-side-content-right">
+<p>
+<b>[Selecting text and images](../../design/input/guidelines-for-textselection.md)</b><br/>
+This article describes selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these mechanisms in your apps.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div class="side-by-side-content-right">
+<p>
+<b>[Rotation](../../design/input/guidelines-for-rotation.md)</b><br/>
+This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your WinUI app.
+</p>
+</div>
 </div>
 </div>
 
@@ -205,25 +205,8 @@ This article describes Windows zooming and resizing elements and provides user e
 <div class="side-by-side-content-right">
 <p>
 <b>[Rotation](../../design/input/guidelines-for-rotation.md)</b><br/>
-This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your UWP app.
+This article describes the new Windows UI for rotation and provides user experience guidelines that should be considered when using this new interaction mechanism in your WinUI app.
 </p>
 </div>
 </div>
 </div>
-
-<div class="side-by-side">
-<div class="side-by-side-content">
-<div class="side-by-side-content-left">
-<p><b>[Targeting](../../design/input/guidelines-for-targeting.md)</b><br/>
-Touch targeting in Windows uses the full contact area of each finger that is detected by a touch digitizer. The larger, more complex set of input data reported by the digitizer is used to increase precision when determining the user's intended (or most likely) target.
-</p>
-</div>
-<div class="side-by-side-content-right">
-<p><b>[Visual feedback](../../design/input/guidelines-for-visualfeedback.md)</b><br/>
-Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
-</p>
-</div>
-</div>
-</div> -->
-
-

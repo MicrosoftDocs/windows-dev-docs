@@ -127,7 +127,6 @@ Extend Copilot's context further with additional Windows-specific MCP servers:
 
 | MCP Server | What it gives Copilot | URL / setup |
 |---|---|---|
-| Windows Settings | Read/write Windows Settings from Copilot | [Windows Settings connector](../develop/windows-integration/settings-mcp.md) |
 | Azure DevOps | Access work items, PRs, and builds | [Azure DevOps MCP Server](https://github.com/microsoft/azure-devops-mcp) |
 
 ---

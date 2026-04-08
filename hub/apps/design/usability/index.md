@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Usability for Windows apps
 
-It’s the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
+It's the little touches, an extra attention to detail, that can transform a good user experience into a truly inclusive user experience that meets the needs of users around the globe.
 
 The design and coding instructions in this section can make your Windows app more inclusive by adding accessibility features, enabling globalization and localization, enabling users to customize their experience, and providing help when users need it.
 
@@ -19,7 +19,7 @@ The design and coding instructions in this section can make your Windows app mor
 
 Accessibility is about making your app usable by people who have limitations that prevent or impede the use of conventional user interfaces. For some situations, accessibility requirements are imposed by law. However, it's a good idea to address accessibility issues regardless of legal requirements so that your apps have the largest possible audience.
 
-[Accessibility portal](../accessibility/accessibility.md)
+[Accessibility overview](../accessibility/accessibility-overview.md)
 
 <!--
 <ul class="panelContent cardsH">
@@ -50,7 +50,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Developing inclusive Windows apps</a></b><br/> This article is a roadmap for developing accessible Windows apps.</p>
+<p><b><a href="/windows/apps/develop/accessibility">Develop accessible Windows apps</a></b><br/> Learn how to implement accessibility in your Windows apps, including keyboard navigation, screen reader support, and contrast themes.</p>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">Accessibility in the Store</a></b><br/>Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.</p>
+<p><b><a href="../accessibility/accessibility-checklist.md">Accessibility checklist</a></b><br/>A checklist to help you ensure that your Windows app meets accessibility requirements, including declaring it accessible in the Microsoft Store.</p>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/practices-to-avoid.md">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible Windows app.</p>                    
+<p><b><a href="../accessibility/accessibility-overview.md#practices-to-avoid">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible Windows app.</p>                    
                     </div>
                 </div>
             </div>
@@ -216,7 +216,7 @@ Windows is used worldwide by audiences that are diverse in terms of language, re
 <a href="../globalizing/globalizing-portal.md">Globalization and localization portal</a>
 
 ## In-app help
-No matter how well you’ve designed your app, some users will need a little extra help.
+No matter how well you've designed your app, some users will need a little extra help.
 
 :::row:::
     :::column:::

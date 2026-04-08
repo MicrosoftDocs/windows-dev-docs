@@ -240,7 +240,7 @@ You can build, package, and deliver Windows apps in many ways. The best practice
 People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics and neural processing chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Support a variety of inputs and interactions - [Input and interactions overview](../develop/input/index.md)
-- Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/windows-ml/).
+- Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/new-windows-ml/overview).
 - Use AI models that run locally and power Microsoft Foundry on Windows features on Copilot+ PCs - [What is Windows ML?](/windows/ai/apis/).
 - Use a variety of AI-powered features supported by Windows AI APIs in the Windows App SDK and machine learning (ML) models that run locally on Copilot+ PCs - [What are Windows AI APIs?](/windows/ai/apis/).
 
@@ -334,7 +334,7 @@ Some common solutions include providing information in alternative formats (such
 
 Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibility can reduce the cost of maintaining your app.
 
-For detailed guidance on building accessible Windows apps, see [Accessibility in Windows](../develop/accessibility.md).
+For detailed guidance on building accessible Windows apps, see [Accessibility overview](../design/accessibility/accessibility-overview.md).
 
 ### Accessibility testing
 

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Improving the performance and fundamentals of your application gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Your app will consume less power, improving battery life and reducing carbon emissions. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
-This page provides an overview of the technologies and development tools for measuring, understanding, and refining the performance of your Windows application. If you are writing a UWP application, be sure to also consult the [UWP Performance](/windows/uwp/debug-test-perf/performance-and-xaml-ui) documentation.
+This page provides an overview of the technologies and development tools for measuring, understanding, and refining the performance of your Windows application.
 
 ## What is application performance and why is it important?
 

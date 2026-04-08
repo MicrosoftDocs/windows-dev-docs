@@ -4,23 +4,27 @@ ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Accessibility testing
 label: Accessibility testing
 template: detail.hbs
-ms.date: 08/12/2022
+ms.date: 03/23/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
 ---
 
-# Accessibility testing  
+# Accessibility testing
 
-This topic describes various tools and procedures to help you verify the accessibility implementation of your Windows and web applications.
+This topic describes various tools and procedures for verifying the accessibility of your Windows app.
+
+It is intended for teams that prioritize accessibility and automated testing throughout the development lifecycle. The most effective approach combines automation that runs in CI with focused manual assistive technology testing for high-risk scenarios.
 
 ## Successful user experiences
 
-Programmatic access and keyboard access are critical requirements for supporting accessibility in your application. Testing the accessibility of your Windows applications, assistive technology (AT) tools, and UI frameworks is crucial to ensure a successful user experience for people with various disabilities and limitations (including vision, learning, dexterity/mobility, and language/communication disabilities), or those who simply prefer using a keyboard.
+Programmatic and keyboard access are essential for accessibility. Test your Windows app, assistive technology (AT) tools, and UI frameworks to ensure a successful experience for people with vision, learning, dexterity/mobility, or language/communication disabilities, as well as people who prefer keyboard navigation.
 
-Without adequate support for accessible technology (AT) such as screen-readers and on-screen keyboards, users with vision, learning, dexterity/mobility, and language/communication disabilities or limitations (and users who just prefer using the keyboard) could find it difficult, if not impossible, to use your application.
+Without adequate support for assistive technology (AT), such as screen readers and on-screen keyboards, many users may find your app difficult or impossible to use.
 
 ## Accessibility testing tools
+
+Use the tools in this section throughout development, not just before release. Start with Accessibility Insights for fast, high-impact checks, then use legacy SDK tools for deeper inspection of UI Automation properties, events, or control patterns.
 
 ### Accessibility Insights
 
@@ -53,7 +57,7 @@ The [**AccScope**](/windows/desktop/WinAuto/accscope) Enables visual evaluation 
 
 [**Inspect**](/windows/desktop/WinAuto/inspect-objects) enables you to select any UI element and view its accessibility data. You can view Microsoft UI Automation properties and control patterns and test the navigational structure of the automation elements in the UI Automation tree. It is especially useful for ensuring properties and control patterns are set correctly when extending a common control or creating a custom control.
 
-Use **Inspect** as you develop the UI to verify how accessibility attributes are exposed in UI Automation. In some cases the attributes come from the UI Automation support that is already implemented for default XAML controls. In other cases the attributes come from specific values that you have set in your XAML markup, as [**AutomationProperties**](/uwp/api/windows.ui.xaml.automation.automationproperties) attached properties.
+Use **Inspect** as you develop the UI to verify how accessibility attributes are exposed in UI Automation. In some cases the attributes come from the UI Automation support that is already implemented for default XAML controls. In other cases the attributes come from specific values that you have set in your XAML markup, as [**AutomationProperties**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) attached properties.
 
 The following image shows the [**Inspect**](/windows/desktop/WinAuto/inspect-objects) tool querying the UI Automation properties of the **Edit** menu element in Notepad.
 
@@ -73,16 +77,26 @@ The following image shows the [**Inspect**](/windows/desktop/WinAuto/inspect-obj
 
 ## Accessibility testing procedures
 
+### Build an automation-first accessibility workflow
+
+Use accessibility testing as a release gate, in the same way you use unit, integration, and reliability tests.
+
+1. Define baseline accessibility expectations for core user flows and control behavior.
+2. Add automated checks that run in pull requests and CI to detect regressions quickly.
+3. Fail builds when critical accessibility issues are detected, and track exemptions with an owner and expiration date.
+4. Schedule manual screen reader and keyboard validation for scenarios where human judgment is required.
+5. Retest affected scenarios whenever templates, control logic, or navigation behavior changes.
+
 ### Test keyboard accessibility
 
-The best way to test your keyboard accessibility is to unplug your mouse or use the On-Screen Keyboard if you are using a tablet device. Test keyboard accessibility navigation by using the _Tab_ key. You should be able to cycle through all interactive UI elements by using _Tab_ key. For composite UI elements, verify that you can navigate among the parts of elements by using the arrow keys. For example, you should be able to navigate lists of items using keyboard keys. Finally, make sure that you can invoke all interactive UI elements with the keyboard once those elements have focus, typically by using the Enter or Spacebar key.
+Validate keyboard behavior without pointer input. Confirm a complete and logical *Tab* sequence across all interactive elements, expected arrow-key navigation within composite controls, and reliable keyboard invocation of actions (typically *Enter* or *Spacebar*) for every focusable command surface.
 
 ### Verify the contrast ratio of visible text
 
-Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn’t convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.0 G18 (Resources section)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
+Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn't convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.0 G18 (Resources section)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
 
 > [!NOTE]
-> Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a UWP app. You may need to enter foreground and background color values manually in the tool, make screen captures of app UI and then run the contrast ratio tool over the screen capture image, or run the tool while opening source bitmap files in an image editing program rather than while that image is loaded by the app.
+> Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a Windows app. You may need to enter foreground and background color values manually in the tool, make screen captures of app UI and then run the contrast ratio tool over the screen capture image, or run the tool while opening source bitmap files in an image editing program rather than while that image is loaded by the app.
 
 ### Verify your app in high contrast
 
@@ -90,7 +104,7 @@ Use your app while a high-contrast theme is active to verify that all the UI ele
 
 ### Verify your app with display settings  
 
-Use the system display options that adjust the display's dots per inch (dpi) value, and ensure that your app UI scales correctly when the dpi value changes. (Some users change dpi values as an accessibility option, it's available from **Ease of Access** as well as display properties.) If you find any issues, follow the [Guidelines for layout scaling](https://developer.microsoft.com/windows/apps/design) and provide additional resources for different scaling factors.
+Validate UI scaling across system DPI changes, including accessibility-driven scaling scenarios. If layout or rendering regressions appear, apply the [Guidelines for layout scaling](https://developer.microsoft.com/windows/apps/design) and add resources for affected scale factors.
 
 ### Verify main app scenarios by using Narrator
 
@@ -98,16 +112,16 @@ Use Narrator to test the screen reading experience for your app.
 
 **Use these steps to test your app using Narrator with a mouse and keyboard:**
 
-1. Start Narrator by pressing _Windows logo key + Ctrl + Enter_. In versions prior to Windows 10 version 1607, use _Windows logo key + Enter_ to start Narrator.
-2. Navigate your app with the keyboard by using the _Tab_ key, the arrow keys, and the _Caps Lock + arrow keys_.
+1. Start Narrator by pressing *Windows logo key + Ctrl + Enter*. In versions prior to Windows 10 version 1607, use *Windows logo key + Enter* to start Narrator.
+2. Navigate your app with the keyboard by using the *Tab* key, the arrow keys, and the *Caps Lock + arrow keys*.
 3. As you navigate your app, listen as Narrator reads the elements of your UI and verify the following:
     - For each control, ensure that Narrator reads all visible content. Also ensure that Narrator reads each control's name, any applicable state (checked, selected, and so on), and the control type (button, check box, list item, and so on).
-    - If the element is interactive, verify that you can use Narrator to invoke its action by pressing _Caps Lock + Enter_.
+    - If the element is interactive, verify that you can use Narrator to invoke its action by pressing *Caps Lock + Enter*.
     - For each table, ensure that Narrator correctly reads the table name, the table description (if available), and the row and column headings.
-4. Press _Caps Lock + Shift + Enter_ to search your app and verify that all of your controls appear in the search list, and that the control names are localized and readable.
-5. Turn off your monitor and try to accomplish main app scenarios by using only the keyboard and Narrator. To get the full list of Narrator commands and shortcuts, press _Caps Lock + F1_.
+4. Press *Caps Lock + Shift + Enter* to search your app and verify that all of your controls appear in the search list, and that the control names are localized and readable.
+5. Turn off your monitor and try to accomplish main app scenarios by using only the keyboard and Narrator. To get the full list of Narrator commands and shortcuts, press *Caps Lock + F1*.
 
-Starting with Windows 10 version 1607, we introduced a new developer mode in Narrator. Turn on developer mode when Narrator is already running by pressing _Control + Caps Lock + F12_. When developer mode is enabled, the screen will be masked and will highlight only the accessible objects and the associated text that is exposed programmatically to Narrator. This gives a you a good visual representation of the information that is exposed to Narrator.
+While Narrator is running, enable developer mode with *Control + Caps Lock + F12*. Developer mode masks the screen and highlights only programmatically exposed accessible objects and text, making it easier to validate Narrator-visible output.
 
 **Use these steps to test your app using Narrator's touch mode:**
 
@@ -115,10 +129,10 @@ Starting with Windows 10 version 1607, we introduced a new developer mode in Nar
 > Narrator automatically enters touch mode on devices that support 4+ contacts. Narrator doesn't support multi-monitor scenarios or multi-touch digitizers on the primary screen.
 
 1. Get familiar with the UI and explore the layout.
-    - **Navigate through the UI by using single-finger swipe gestures.** Use left or right swipes to move between items, and up or down swipes to change the category of items being navigated. Categories include all items, links, tables, headers, and so on. Navigating with single-finger swipe gestures is similar to navigating with _Caps Lock + Arrow_.
-    - **Use tab gestures to navigate through focusable elements.** A three-finger swipe to the right or left is the same as navigating with _Tab_ and _Shift + Tab_ on a keyboard.
+    - **Navigate through the UI by using single-finger swipe gestures.** Use left or right swipes to move between items, and up or down swipes to change the category of items being navigated. Categories include all items, links, tables, headers, and so on. Navigating with single-finger swipe gestures is similar to navigating with *Caps Lock + Arrow*.
+    - **Use tab gestures to navigate through focusable elements.** A three-finger swipe to the right or left is the same as navigating with *Tab* and *Shift + Tab* on a keyboard.
     - **Spatially investigate the UI with a single finger.** Drag a single finger up and down, or left and right, to have Narrator read the items under your finger. You can use the mouse as an alternative because it uses the same hit-testing logic as dragging a single finger.
-    - **Read the entire window and all its contents with a three finger swipe up**. This is equivalent to using _Caps Lock + W_.
+    - **Read the entire window and all its contents with a three finger swipe up**. This is equivalent to using *Caps Lock + W*.
 
     If there is important UI that you cannot reach, you may have an accessibility issue.
 
@@ -138,15 +152,15 @@ You should also consider using the [**AccScope**](/windows/desktop/WinAuto/accsc
 
 ### Examine the UI Automation representation for your app
 
-Several of the UI Automation testing tools mentioned previously provide a way to view your app in a way that deliberately does not consider what the app looks like, and instead represents the app as a structure of UI Automation elements. This is how UI Automation clients, mainly assistive technologies, will be interacting with your app in accessibility scenarios.
+Use UI Automation inspection tools to view your app as the UIA element tree consumed by assistive technologies.
 
-The [**AccScope**](/windows/desktop/WinAuto/accscope) tool provides a particularly interesting view of your app because you can see the UI Automation elements either as a visual representation or as a list. If you use the visualization, you can drill down into the parts in a way that you'll be able to correlate with the visual appearance of your app's UI. You can even test the accessibility of your earliest UI prototypes before you've assigned all the logic to the UI, making sure that both the visual interaction and accessibility-scenario navigation for your app is in balance.
+[**AccScope**](/windows/desktop/WinAuto/accscope) is useful because it shows the tree as either a list or a visual overlay, letting you correlate automation structure with rendered UI. This is effective even for early UI prototypes, before full interaction logic is implemented.
 
-One aspect that you can test is whether there are elements appearing in the UI Automation element view that you don't want to appear there. If you find elements you want to omit from the view, or conversely if there are elements missing, you can use the [**AutomationProperties.AccessibilityView**](/uwp/api/windows.ui.xaml.automation.automationproperties.accessibilityviewproperty) XAML attached property to adjust how XAML controls appear in accessibility views. After you've looked at the basic accessibility views, this is also a good opportunity to recheck your tab sequences or spatial navigation as enabled by arrow keys to make sure users can reach each of the parts that are interactive and exposed in the control view.
+Verify that only intended elements appear in each accessibility view and that required elements are present. Use [**AutomationProperties.AccessibilityView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.accessibilityviewproperty) to correct omissions or overexposure, then revalidate tab order and arrow-key navigation for all interactive elements in control view.
 
 ## Related topics
 
-- [Accessibility](accessibility.md)
+- [Accessibility overview](accessibility-overview.md)
 - [Practices to avoid](practices-to-avoid.md)
 - [UI Automation](/windows/desktop/WinAuto/entry-uiauto-win32)
 - [Accessibility in Windows](https://www.microsoft.com/accessibility/)
