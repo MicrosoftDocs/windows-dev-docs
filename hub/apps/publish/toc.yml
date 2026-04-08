@@ -15,9 +15,9 @@ items:
       href: partner-center/account-types-locations-and-fees.md  
 - name: Choose your distribution options
   items: 
-    - name: Distribute your Win32 app
+    - name: How to distribute your win32 app in Store
       href: ../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
-    - name: Transition users to the Store
+    - name: Transition users from web unpackaged app to Store packaged app
       href: ../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
 - name: Submit your app
   items:
