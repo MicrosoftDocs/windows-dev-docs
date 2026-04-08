@@ -22,12 +22,12 @@ Most WPF controls have direct equivalents in WinUI 3. The following table covers
 
 | WPF control | WinUI 3 equivalent | Notes |
 |---|---|---|
-| `DataGrid` | No first-party equivalent | WinUI 3 does not include a built-in DataGrid. The community-maintained [WinUI.TableView](https://github.com/w-ahmad/WinUI.TableView) is one option. Evaluate community projects based on your support and maintenance requirements. |
-| `Ribbon` | `CommandBar` / Community Toolkit Labs | Consider [CommandBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar) and [CommandBarFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout) for toolbar-style scenarios. A [Ribbon control](https://github.com/CommunityToolkit/Labs-Windows/tree/main/components/Ribbon) is also available in Community Toolkit Labs (experimental). |
-| `StatusBar` | `InfoBar` + custom layout | Use [InfoBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar) for status messaging, or add a dedicated footer area to your layout. |
-| `FlowDocumentReader` / `FlowDocumentScrollViewer` | `RichTextBlock` | Use [RichTextBlock](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock) for read-only rich text display. WinUI 3 takes a different approach to document content that is better suited to modern app scenarios. |
-| `PasswordBox` with `SecureString` | `PasswordBox` | WinUI 3's [PasswordBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox) provides password masking. `SecureString` is deprecated in .NET 5+; the recommended approach is to minimize how long credentials are held in memory using `ReadOnlySpan<char>` patterns. |
-| `WebBrowser` | [WebView2](/microsoft-edge/webview2/) | `WebView2` uses the modern Microsoft Edge (Chromium) engine and is the recommended approach for embedding web content across all desktop app types. |
+| [`DataGrid`](/dotnet/api/system.windows.controls.datagrid) | No first-party equivalent | WinUI 3 does not include a built-in DataGrid. The community-maintained [WinUI.TableView](https://github.com/w-ahmad/WinUI.TableView) is one option. Evaluate community projects based on your support and maintenance requirements. |
+| [`Ribbon`](/dotnet/api/system.windows.controls.ribbon.ribbon) | `CommandBar` / Community Toolkit Labs | Consider [CommandBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar) and [CommandBarFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout) for toolbar-style scenarios. A [Ribbon control](https://github.com/CommunityToolkit/Labs-Windows/tree/main/components/Ribbon) is also available in Community Toolkit Labs (experimental). |
+| [`StatusBar`](/dotnet/api/system.windows.controls.primitives.statusbar) | `InfoBar` + custom layout | Use [InfoBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar) for status messaging, or add a dedicated footer area to your layout. |
+| [`FlowDocumentReader`](/dotnet/api/system.windows.controls.flowdocumentreader) / [`FlowDocumentScrollViewer`](/dotnet/api/system.windows.controls.flowdocumentscrollviewer) | [`RichTextBlock`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock) | Use [RichTextBlock](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock) for read-only rich text display. WinUI 3 takes a different approach to document content that is better suited to modern app scenarios. |
+| [`PasswordBox`](/dotnet/api/system.windows.controls.passwordbox) with `SecureString` | [`PasswordBox`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox) | WinUI 3's [PasswordBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox) provides password masking. `SecureString` is deprecated in .NET 5+; the recommended approach is to minimize how long credentials are held in memory using `ReadOnlySpan<char>` patterns. |
+| [`WebBrowser`](/dotnet/api/system.windows.controls.webbrowser) | [WebView2](/microsoft-edge/webview2/) | `WebView2` uses the modern Microsoft Edge (Chromium) engine and is the recommended approach for embedding web content across all desktop app types. |
 
 ## XAML features
 
@@ -35,20 +35,20 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 
 | WPF feature | WinUI 3 approach | Notes |
 |---|---|---|
-| `DataTrigger` / `MultiTrigger` | [Behaviors (Community Toolkit)](https://aka.ms/toolkit/behaviors) | WinUI 3 uses attached behaviors rather than inline triggers. The XAML Behaviors package supports `DataTriggerBehavior`, `EventTriggerBehavior`, and more. Behaviors are more composable and unit-testable than WPF triggers. |
-| `DynamicResource` | `ThemeResource` | `ThemeResource` provides runtime resource lookup and responds automatically to theme changes (light, dark, high contrast). Use `StaticResource` for values that never change at runtime. |
-| `MultiBinding` / `PriorityBinding` | Converters or `x:Bind` | Use a multi-value converter with individual bindings, or use `x:Bind` with a computed property on your view model. `x:Bind` is compiled and type-safe, which makes it more performant than `Binding`. |
+| [`DataTrigger`](/dotnet/api/system.windows.datatrigger) / [`MultiTrigger`](/dotnet/api/system.windows.multitrigger) | [Behaviors (Community Toolkit)](https://aka.ms/toolkit/behaviors) | WinUI 3 uses attached behaviors rather than inline triggers. The XAML Behaviors package supports `DataTriggerBehavior`, `EventTriggerBehavior`, and more. Behaviors are more composable and unit-testable than WPF triggers. |
+| [`DynamicResource`](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) | [`ThemeResource`](/windows/uwp/xaml-platform/themeresource-markup-extension) | `ThemeResource` provides runtime resource lookup and responds automatically to theme changes (light, dark, high contrast). Use `StaticResource` for values that never change at runtime. |
+| [`MultiBinding`](/dotnet/api/system.windows.data.multibinding) / [`PriorityBinding`](/dotnet/api/system.windows.data.prioritybinding) | Converters or `x:Bind` | Use a multi-value converter with individual bindings, or use `x:Bind` with a computed property on your view model. `x:Bind` is compiled and type-safe, which makes it more performant than `Binding`. |
 | `Style` with `BasedOn` | ✅ Supported | Style inheritance with `BasedOn` works in WinUI 3. |
 | Implicit styles | ✅ Supported | Resource dictionary implicit styles (styles without `x:Key`) work as expected. |
-| `AdornerLayer` | Custom overlay approach | For validation visuals, use the built-in built-in input validation support in text controls (input validation is supported on text controls in WinUI 3). For custom overlays, use a `Canvas` or `Grid` overlay layer in your layout — this is more explicit and easier to reason about than WPF's adorner layer. |
+| [`AdornerLayer`](/dotnet/api/system.windows.documents.adornerlayer) | Custom overlay approach | WinUI 3 has no adorner layer equivalent. Use a `Canvas` or `Grid` overlay in your layout to achieve similar visual decoration effects — this approach is more explicit and easier to reason about. |
 
 ## Threading and dispatch
 
 | WPF pattern | WinUI 3 equivalent | Notes |
 |---|---|---|
-| `Dispatcher.Invoke` / `BeginInvoke` | `DispatcherQueue.TryEnqueue` | WinUI 3 uses [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue). The async pattern is `await DispatcherQueue.EnqueueAsync(...)` using the Community Toolkit extension. |
-| `Application.Current.Dispatcher` | `DispatcherQueue.GetForCurrentThread()` | Capture the `DispatcherQueue` at construction time on the UI thread and store it for later use on background threads. |
-| `BackgroundWorker` | `Task` / `async`-`await` | Modern .NET async patterns are the right approach in WinUI 3. `Task`, `CancellationToken`, and `IProgress<T>` cover all `BackgroundWorker` scenarios and integrate naturally with `x:Bind`. |
+| [`Dispatcher.Invoke`](/dotnet/api/system.windows.threading.dispatcher.invoke) / `BeginInvoke` | [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) | WinUI 3 uses [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue). The async pattern is `await DispatcherQueue.EnqueueAsync(...)` using the Community Toolkit extension. |
+| [`Application.Current.Dispatcher`](/dotnet/api/system.windows.application.current) | [`DispatcherQueue.GetForCurrentThread()`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.getforcurrentthread) | Capture the `DispatcherQueue` at construction time on the UI thread and store it for later use on background threads. |
+| [`BackgroundWorker`](/dotnet/api/system.componentmodel.backgroundworker) | `Task` / `async`-`await` | Modern .NET async patterns are the right approach in WinUI 3. `Task`, `CancellationToken`, and `IProgress<T>` cover all `BackgroundWorker` scenarios and integrate naturally with `x:Bind`. |
 
 ## App model and lifecycle
 
@@ -72,7 +72,7 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 
 | WPF feature | WinUI 3 status | Notes |
 |---|---|---|
-| `PrintDialog` / `PrintDocument` | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Full printing support is available via `PrintManager`. See [Print from your app](/windows/apps/develop/devices-sensors/print-from-your-app). |
+| [`PrintDialog`](/dotnet/api/system.windows.controls.printdialog) / [`PrintDocument`](/dotnet/api/system.drawing.printing.printdocument) | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Full printing support is available via `PrintManager`. See [Print from your app](/windows/apps/develop/devices-sensors/print-from-your-app). |
 
 ## Developer tooling
 
