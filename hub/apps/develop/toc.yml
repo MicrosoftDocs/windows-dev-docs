@@ -448,11 +448,19 @@ items:
           href: notifications/app-notifications/toast-ux-guidance.md
         - name: Send local notifications
           items:
-          - name: C# apps
+          - name: WPF apps
+            href: notifications/app-notifications/send-local-toast-wpf.md
+          - name: WinForms apps
+            href: notifications/app-notifications/send-local-toast-winforms.md
+          - name: Console apps
+            href: notifications/app-notifications/send-local-toast-console.md
+          - name: UWP apps
+            href: notifications/app-notifications/send-local-toast-uwp.md
+          - name: C# apps (legacy)
             href: notifications/app-notifications/send-local-toast.md
-          - name: C++ UWP apps
+          - name: C++ UWP apps (legacy)
             href: notifications/app-notifications/send-local-toast-cpp-uwp.md
-          - name: C++ WRL apps
+          - name: C++ WRL apps (legacy)
             href: notifications/app-notifications/send-local-toast-desktop-cpp-wrl.md
           - name: Other apps
             href: notifications/app-notifications/send-local-toast-other-apps.md
