@@ -12,11 +12,11 @@ You can check boxes in this section to indicate if any of the declarations apply
 
 :::image type="content" source="images/msiexe-product-declarations.png" lightbox="images/msiexe-product-declarations.png" alt-text="A screenshot of the Properties section where you can provide product declarations for your app.":::
 
-**This app depends on non-Microsoft drivers or NT services.**
+## This app depends on non-Microsoft drivers or NT services.
 
 If your app depends on non-Microsoft drivers or NT services, you can check this box and provide info in Notes for Certification section.
 
-**This app has been tested to meet accessibility guidelines.**
+## This app has been tested to meet accessibility guidelines.
 
 Checking this box makes your app discoverable to customers who are specifically looking for accessible apps in the Store.
 
@@ -32,7 +32,8 @@ When you declare your app as accessible, you agree that your app is accessible t
 
 > [!IMPORTANT]
 > Do not list your app as accessible unless you have specifically engineered and tested it for that purpose. If your app is declared as accessible, but it does not support accessibility, you'll probably receive negative feedback from the community.
-> **This product supports pen and ink input.**
+
+## This product supports pen and ink input.
 
 If your app supports pen and ink input, you can check this box which makes your app discoverable to customers who are specifically looking for pen and ink input supported apps in the Store.
 
