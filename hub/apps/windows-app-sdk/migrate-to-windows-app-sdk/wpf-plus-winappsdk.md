@@ -155,7 +155,7 @@ For WPF apps that need to execute code when the app isn't running, there are thr
 
 | Approach | Packaging required | Best for |
 |---|---|---|
-| [Windows App SDK background tasks](../applifecycle/background-tasks.md) | Yes (MSIX) | Power-efficient system-managed triggers (time, network, push) |
+| [Windows App SDK background tasks](../applifecycle/background-tasks.md) | Yes (MSIX) | Power-efficient system-managed triggers (time/system) |
 | [Task Scheduler](/windows/win32/taskschd/task-scheduler-start-page) | No | Periodic sync, unpackaged apps |
 | [.NET Worker Services](/dotnet/core/extensions/workers) | No | Long-running headless workloads, any deployment model |
 
