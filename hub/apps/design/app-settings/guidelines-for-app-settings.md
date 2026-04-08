@@ -52,7 +52,7 @@ If you're using a [command bar](../controls/command-bar.md) or tool bar, place t
 
 The app settings page should open full-screen and fill the whole window. Use a scrollable layout with a constrained max width (around 1000–1100 px) so content remains readable on wide displays. Group related settings under section headers using the **BodyStrong** text style.
 
-Use the [SettingsCard and SettingsExpander](/windows/communitytoolkit/controls/settingscard) controls from the [Windows Community Toolkit](https://aka.ms/toolkit/windows) to build your settings page. These controls provide a consistent, accessible layout with a header, description, icon, and an action control aligned to the right side of the card.
+Use the [SettingsCard and SettingsExpander](/dotnet/communitytoolkit/windows/settingscontrols/settingscard) controls from the [Windows Community Toolkit](https://aka.ms/toolkit/windows) to build your settings page. These controls provide a consistent, accessible layout with a header, description, icon, and an action control aligned to the right side of the card.
 
 For complete implementation examples, see the [WinUI Gallery settings page](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Pages/SettingsPage.xaml) and the [Windows Community Toolkit SettingsControls sample](https://github.com/CommunityToolkit/Windows/blob/main/components/SettingsControls/samples/SettingsPageExample.xaml).
 
@@ -60,11 +60,11 @@ For complete implementation examples, see the [WinUI Gallery settings page](http
 
 ### SettingsCard
 
-Use a [SettingsCard](/windows/communitytoolkit/controls/settingscard) for individual settings. Each card has a **Header**, an optional **Description**, an optional **HeaderIcon**, and an action control (such as a `ToggleSwitch`, `ComboBox`, or `Button`) placed as the card's content. Setting the `IsClickEnabled` property to `true` makes the entire card clickable, which is useful for navigation-style entries.
+Use a [SettingsCard](/dotnet/communitytoolkit/windows/settingscontrols/settingscard) for individual settings. Each card has a **Header**, an optional **Description**, an optional **HeaderIcon**, and an action control (such as a `ToggleSwitch`, `ComboBox`, or `Button`) placed as the card's content. Setting the `IsClickEnabled` property to `true` makes the entire card clickable, which is useful for navigation-style entries.
 
 ### SettingsExpander
 
-Use a [SettingsExpander](/windows/communitytoolkit/controls/settingsexpander) when a setting has sub-options that should be revealed on demand. The expander shows a primary action control on the header row and additional `SettingsCard` items inside the `Items` collection. This keeps the page compact while still surfacing advanced options. Avoid nesting expanders deeper than one level.
+Use a [SettingsExpander](/dotnet/communitytoolkit/windows/settingscontrols/settingsexpander) when a setting has sub-options that should be revealed on demand. The expander shows a primary action control on the header row and additional `SettingsCard` items inside the `Items` collection. This keeps the page compact while still surfacing advanced options. Avoid nesting expanders deeper than one level.
 
 ## App theme settings
 
@@ -113,7 +113,7 @@ Once you have a list of items that you want to include in your app settings page
 
 ## Related articles
 
-* [SettingsCard and SettingsExpander (Windows Community Toolkit)](/windows/communitytoolkit/controls/settingscard)
+* [SettingsCard and SettingsExpander (Windows Community Toolkit)](/dotnet/communitytoolkit/windows/settingscontrols/settingscard)
 * [Command design basics](../basics/commanding-basics.md)
 * [Guidelines for progress controls](../controls/progress-controls.md)
 * [Store and retrieve app data](../../develop/data/store-and-retrieve-app-data.md)

@@ -3,12 +3,12 @@
     {
       "source_path": "hub/apps/design/widgets/widgets-create-a-template.md",
       "redirect_url": "/windows/apps/develop/widgets/widgets-create-a-template",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/design/style/sound.md",
       "redirect_url": "/windows/apps/develop/ui/sound",
-      "redirect_document_id": true
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/design/app-settings/store-and-retrieve-app-data.md",
