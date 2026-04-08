@@ -24,7 +24,7 @@ An app notification is a message that an app can construct and deliver to the us
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 > [!IMPORTANT]
-> If you're writing a C# app, then please see the [C# documentation](send-local-toast.md). If you're writing a C++ app, the please see the [C++ UWP](send-local-toast-cpp-uwp.md) or [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation.
+> If you're writing a C# app, then please see the [C# documentation](app-notification-csharp-legacy.md). If you're writing a C++ app, the please see the [C++ UWP](app-notification-cpp-uwp.md) or [C++ WRL](app-notification-cpp-wrl.md) documentation.
 
 > [!NOTE]
 > If your app can use the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) for the recommended approach.
@@ -125,3 +125,4 @@ Your COM activator will be activated when your notification is clicked.
 ### AUMID restrictions
 
 The AUMID should be at most 129 characters long. If the AUMID is more than 129 characters long, scheduled app notifications won't work - you'll get the following exception when adding a scheduled notification: *The data area passed to a system call is too small. (0x8007007A)*.
+

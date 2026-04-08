@@ -449,21 +449,21 @@ items:
         - name: Send local notifications
           items:
           - name: WPF apps
-            href: notifications/app-notifications/send-local-toast-wpf.md
+            href: notifications/app-notifications/app-notification-wpf.md
           - name: WinForms apps
-            href: notifications/app-notifications/send-local-toast-winforms.md
+            href: notifications/app-notifications/app-notification-winforms.md
           - name: Console apps
-            href: notifications/app-notifications/send-local-toast-console.md
+            href: notifications/app-notifications/app-notification-console.md
           - name: UWP apps
-            href: notifications/app-notifications/send-local-toast-uwp.md
+            href: notifications/app-notifications/app-notification-uwp.md
           - name: C# apps (legacy)
-            href: notifications/app-notifications/send-local-toast.md
+            href: notifications/app-notifications/app-notification-csharp-legacy.md
           - name: C++ UWP apps (legacy)
-            href: notifications/app-notifications/send-local-toast-cpp-uwp.md
+            href: notifications/app-notifications/app-notification-cpp-uwp.md
           - name: C++ WRL apps (legacy)
-            href: notifications/app-notifications/send-local-toast-desktop-cpp-wrl.md
+            href: notifications/app-notifications/app-notification-cpp-wrl.md
           - name: Other apps
-            href: notifications/app-notifications/send-local-toast-other-apps.md
+            href: notifications/app-notifications/app-notification-other-apps.md
           - name: Activating app notifications from desktop apps
             href: notifications/app-notifications/toast-desktop-apps.md
         - name: App notification content
@@ -1292,4 +1292,5 @@ items:
       href: ../how-tos/github-copilot-winui-vs.md
     - name: Create a photo viewer with WinUI
       href: ../get-started/simple-photo-viewer-winui3.md
+
 

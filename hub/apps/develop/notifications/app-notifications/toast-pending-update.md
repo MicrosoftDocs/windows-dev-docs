@@ -23,7 +23,7 @@ You can use **PendingUpdate** to create multi-step interactions in your app noti
 This article assumes a working knowledge of...
 
 - [Constructing toast content](adaptive-interactive-toasts.md)
-- [Sending an app notification and handling background activation](send-local-toast.md)
+- [Sending an app notification and handling background activation](app-notification-csharp-legacy.md)
 
 
 ## Overview
@@ -121,6 +121,7 @@ AppNotificationManager.Default.Show(notification);
 ## Related topics
 
 - [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-toast-pending-update)
-- [Send a local app notification and handle activation](send-local-toast.md)
+- [Send a local app notification and handle activation](app-notification-csharp-legacy.md)
 - [Toast content documentation](adaptive-interactive-toasts.md)
 - [Toast progress bar](toast-progress-bar.md)
+

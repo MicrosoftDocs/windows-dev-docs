@@ -22,7 +22,7 @@ This quickstart walks you through the steps to create, deliver, and display a Wi
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
 
 > [!IMPORTANT]
-> If you're writing a C++ non-UWP app, please see the [C++ WRL](send-local-toast-desktop-cpp-wrl.md) documentation. If you're writing a C# app, please see the [C# documentation](send-local-toast.md).
+> If you're writing a C++ non-UWP app, please see the [C++ WRL](app-notification-cpp-wrl.md) documentation. If you're writing a C# app, please see the [C# documentation](app-notification-csharp-legacy.md).
 
 > [!NOTE]
 > For C++ apps using the Windows App SDK, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) which covers the recommended approach using the `Microsoft.Windows.AppNotifications` APIs.
@@ -380,3 +380,4 @@ toastManager.History().Clear();
 * [App content documentation](adaptive-interactive-toasts.md)
 * [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification)
 * [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
+

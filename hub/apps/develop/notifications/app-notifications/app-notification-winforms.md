@@ -16,7 +16,7 @@ An app notification is a message that your app can construct and deliver to your
 This article walks you through the steps to send and handle app notifications from a WinForms app using the [Windows App SDK](/windows/apps/windows-app-sdk/). The Windows App SDK `Microsoft.Windows.AppNotifications` APIs handle all the complexity of notification registration and activation for both packaged and unpackaged apps.
 
 > [!NOTE]
-> For WinUI apps, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md). For other app types, see [WPF](send-local-toast-wpf.md), [Console](send-local-toast-console.md), or [UWP](send-local-toast-uwp.md).
+> For WinUI apps, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md). For other app types, see [WPF](app-notification-wpf.md), [Console](app-notification-console.md), or [UWP](app-notification-uwp.md).
 
 > [!IMPORTANT]
 > Notifications for elevated (admin) apps are not currently supported.
@@ -160,7 +160,7 @@ AppNotificationManager.Default.Show(notification);
 
 ## Packaged app setup
 
-For unpackaged WinForms apps, `Register()` handles COM registration automatically. For packaged apps (MSIX), you need to add extensions to your `Package.appxmanifest`. See [Packaged app setup](send-local-toast-wpf.md#packaged-app-setup) in the WPF article for the required manifest entries.
+For unpackaged WinForms apps, `Register()` handles COM registration automatically. For packaged apps (MSIX), you need to add extensions to your `Package.appxmanifest`. See [Packaged app setup](app-notification-wpf.md#packaged-app-setup) in the WPF article for the required manifest entries.
 
 ## Related content
 
@@ -168,3 +168,4 @@ For unpackaged WinForms apps, `Register()` handles COM registration automaticall
 - [App notification content](adaptive-interactive-toasts.md)
 - [AppNotificationManager Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 - [AppNotificationBuilder Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
+

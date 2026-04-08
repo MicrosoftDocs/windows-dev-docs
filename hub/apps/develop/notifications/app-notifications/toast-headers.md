@@ -71,7 +71,7 @@ In summary...
 
 1. Add the **Header** to your **ToastContent**
 2. Assign the required **Id**, **Title**, and **Arguments** properties
-3. Send your notification ([learn more](send-local-toast.md))
+3. Send your notification ([learn more](app-notification-csharp-legacy.md))
 4. On another notification, use the same header **Id** to unify them under the header. The **Id** is the only property used to determine whether the notifications should be grouped, meaning the **Title** and **Arguments** can be different. The **Title** and **Arguments** from the most recent notification within a group are used. If that notification gets removed, then the **Title** and **Arguments** falls back to the next most recent notification.
 
 
@@ -81,11 +81,11 @@ Headers are clickable by users, so that the user can click the header to find ou
 
 Therefore, apps can provide **Arguments** on the header, similar to the launch arguments on the notification itself.
 
-Activation is handled identical to [normal app notification activation](send-local-toast.md#step-3-handle-activation), meaning you can retrieve these arguments when the user clicks the body of your notification or a button on your notification.
+Activation is handled identical to [normal app notification activation](app-notification-csharp-legacy.md#step-3-handle-activation), meaning you can retrieve these arguments when the user clicks the body of your notification or a button on your notification.
 
 #### [Windows App SDK](#tab/appsdk)
 
-For Windows App SDK apps, activation is handled through the `AppNotificationManager.Default.NotificationInvoked` event. See [Send a local app notification](send-local-toast.md) to learn more about Windows App SDK notification activation.
+For Windows App SDK apps, activation is handled through the `AppNotificationManager.Default.NotificationInvoked` event. See [Send a local app notification](app-notification-csharp-legacy.md) to learn more about Windows App SDK notification activation.
 
 ```csharp
 // In your App.xaml.cs or startup code
@@ -128,5 +128,6 @@ Clicking on the header, just like clicking on the app title, does not clear any 
 
 ## Related topics
 
-- [Send a local app notification and handle activation](send-local-toast.md)
+- [Send a local app notification and handle activation](app-notification-csharp-legacy.md)
 - [Toast content documentation](adaptive-interactive-toasts.md)
+

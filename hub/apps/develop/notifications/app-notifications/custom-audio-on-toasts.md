@@ -77,11 +77,12 @@ Supported audio file sources:
 
 ## Send the notification
 
-Sending a notification with audio is the same as sending a regular notification. For Windows App SDK apps, use `AppNotificationManager.Default.Show()`. See [Send local toast](send-local-toast.md) to learn more.
+Sending a notification with audio is the same as sending a regular notification. For Windows App SDK apps, use `AppNotificationManager.Default.Show()`. See [Send local toast](app-notification-csharp-legacy.md) to learn more.
 
 
 ## Related topics
 
 - [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
-- [Send a local toast](send-local-toast.md)
+- [Send a local toast](app-notification-csharp-legacy.md)
 - [Toast content documentation](adaptive-interactive-toasts.md)
+

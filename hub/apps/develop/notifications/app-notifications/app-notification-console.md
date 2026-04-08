@@ -16,7 +16,7 @@ An app notification is a message that your app can construct and deliver to your
 This article walks you through the steps to send and handle app notifications from a .NET console app using the [Windows App SDK](/windows/apps/windows-app-sdk/). The Windows App SDK `Microsoft.Windows.AppNotifications` APIs handle all the complexity of notification registration and activation for both packaged and unpackaged apps.
 
 > [!NOTE]
-> For WinUI apps, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md). For other app types, see [WPF](send-local-toast-wpf.md), [WinForms](send-local-toast-winforms.md), or [UWP](send-local-toast-uwp.md).
+> For WinUI apps, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md). For other app types, see [WPF](app-notification-wpf.md), [WinForms](app-notification-winforms.md), or [UWP](app-notification-uwp.md).
 
 > [!IMPORTANT]
 > Notifications for elevated (admin) apps are not currently supported.
@@ -144,3 +144,4 @@ AppNotificationManager.Default.Unregister();
 - [App notification content](adaptive-interactive-toasts.md)
 - [AppNotificationManager Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 - [AppNotificationBuilder Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
+

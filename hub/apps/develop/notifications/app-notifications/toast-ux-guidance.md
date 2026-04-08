@@ -116,4 +116,5 @@ Just like the design of your notification UI, the behavior when the user clicks 
 
 ## Related articles
 
-[Developer guidance for notifications](send-local-toast.md)
+[Developer guidance for notifications](app-notification-csharp-legacy.md)
+

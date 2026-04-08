@@ -199,3 +199,4 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE, _In_ LPWSTR cm
 * [Full code sample on GitHub](https://github.com/WindowsNotifications/desktop-toasts)
 * [App notification content documentation](adaptive-interactive-toasts.md)
 * [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md)
+
