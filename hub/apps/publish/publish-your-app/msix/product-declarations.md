@@ -70,15 +70,7 @@ Select this option if your app supports pen input or digital ink, such as:
 
 ## This product incorporates generative AI features
 
-Select this option if your app includes generative AI capabilities that use artificial intelligence to create new content, such as:
-
-* Text
-* Images
-* Audio
-* Video
-* Code
-
-This declaration is required if your app generates new content dynamically using AI models, whether the models are:
+Select this option if your app includes generative AI capabilities that use artificial intelligence to create new content, such as text, images, audio, video and code. This declaration is required if your app generates new content dynamically using AI models, whether the models are:
 
 * Built into your app
 * Accessed via cloud services or APIs
