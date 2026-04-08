@@ -31,7 +31,7 @@ Most WPF controls have direct equivalents in WinUI 3. The following table covers
 
 ## XAML features
 
-WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. Some WPF-specific XAML features have evolved into more composable, testable alternatives.
+WinUI 3 XAML uses the same core concepts as WPF — resource dictionaries, styles, data binding, and markup extensions all work similarly. Some WPF-specific patterns have evolved into improved, more composable alternatives.
 
 | WPF feature | WinUI 3 approach | Notes |
 |---|---|---|
@@ -84,7 +84,6 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 ## See also
 
 - [Use the Windows App SDK in a WPF app](wpf-plus-winappsdk.md)
-- [What's supported when migrating from UWP to WinUI 3](what-is-supported.md)
 - [Overall migration strategy](overall-migration-strategy.md)
 - [Windows Community Toolkit](/dotnet/communitytoolkit/introduction)
 - [XAML Behaviors (Community Toolkit)](https://aka.ms/toolkit/behaviors)
