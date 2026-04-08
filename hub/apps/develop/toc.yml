@@ -752,6 +752,8 @@ items:
             href: ui/alignment-margin-padding.md
           - name: Colors and themes
             href: ui/theming.md
+          - name: Sound
+            href: ui/sound.md
           - name: Controls
             items:
               - name: Overview

@@ -69,8 +69,8 @@ Use these fundamentals as a guide throughout your design process—whether you'r
 :::row-end:::
 :::row:::
     :::column:::
-       [![Sound icon](./images/tile-sound.png)](./style/sound.md)<br>
-        **[Sound](./style/sound.md)**<br>
+       [![Sound icon](./images/tile-sound.png)](../develop/ui/sound.md)<br>
+        **[Sound](../develop/ui/sound.md)**<br>
         Use audio cues to provide feedback, reinforce actions, and support accessibility.
     :::column-end:::
     :::column:::
