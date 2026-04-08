@@ -128,13 +128,18 @@ SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <c
 ```
 
 > [!IMPORTANT]
-> When using a **self-signed certificate** for local development, you must add it to the **Trusted People** certificate store on your machine before `Add-AppxPackage` will accept it. Without this step, registration fails with `CERT_E_UNTRUSTEDROOT` (0x800B0109).
+> When using a **self-signed certificate** for local development, you must add its **public certificate** to the **Trusted People** certificate store before `Add-AppxPackage` will accept it. Without this step, registration fails with `CERT_E_UNTRUSTEDROOT` (0x800B0109).
+>
+> Keep the `.pfx` file private — it contains the private key and should only be used for signing. For the trust step, export a `.cer` (public cert only) and import that:
 >
 > ```PowerShell
-> Import-PfxCertificate -FilePath "<path>\MyCertificate.pfx" `
->     -CertStoreLocation Cert:\LocalMachine\TrustedPeople `
->     -Password (ConvertTo-SecureString -String "<password>" -Force -AsPlainText)
+> $cert = Get-PfxCertificate -FilePath "<path>\MyCertificate.pfx"
+> Export-Certificate -Cert $cert -FilePath "<path>\MyCertificate.cer"
+> Import-Certificate -FilePath "<path>\MyCertificate.cer" `
+>     -CertStoreLocation Cert:\CurrentUser\TrustedPeople
 > ```
+>
+> For machine-wide installs, use `Cert:\LocalMachine\TrustedPeople` instead (requires elevation).
 >
 > Production certificates issued by a trusted CA do not require this step.
 
@@ -222,7 +227,7 @@ powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -Execution
 To unregister the identity package during a machine-wide uninstallation:
 
 ```Console
-powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "$packages = Get-AppxPackage <PackageName>; foreach ($package in $packages) { Remove-AppxProvisionedPackage -PackageName $package.PackageFullName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }"
+powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "$packages = Get-AppxPackage -AllUsers -Name <PackageName>; $provisioned = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -eq '<PackageName>' }; foreach ($p in $provisioned) { Remove-AppxProvisionedPackage -PackageName $p.PackageName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }"
 ```
 
 * Set `<PackageName>` to the package name you defined in your identity package manifest
@@ -266,7 +271,7 @@ await packageManager.AddPackageByUriAsync(packageUri, options);
 // Unregister the identity package during uninstall
 
 var packageManager = new PackageManager();
-var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
+var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageTypes.Main);
 foreach (var package in packages)
 {
   await packageManager.RemovePackageAsync(package.Id.FullName);
@@ -312,7 +317,7 @@ await packageManager.ProvisionPackageForAllUsersAsync(packageFamilyName);
 
 var packageManager = new PackageManager();
 
-var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
+var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageTypes.Main);
 foreach (var package in packages)
 {
   await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FullName);
