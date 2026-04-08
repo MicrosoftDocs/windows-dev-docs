@@ -309,6 +309,7 @@ var options = new StagePackageOptions();
 options.ExternalLocationUri = externalUri;
 
 await packageManager.StagePackageByUriAsync(packageUri, options);
+var packageFamilyName = "<IdentityPackageFamilyName>";
 await packageManager.ProvisionPackageForAllUsersAsync(packageFamilyName);
 
 ...
