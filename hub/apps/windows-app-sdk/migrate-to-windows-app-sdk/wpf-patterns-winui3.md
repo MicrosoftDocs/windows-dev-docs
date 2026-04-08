@@ -1,20 +1,20 @@
 ---
-title: WPF patterns and their WinUI 3 equivalents
-description: WinUI 3 was designed for modern Windows from the ground up. This topic maps familiar WPF patterns to their WinUI 3 equivalents, and describes the modern approach for cases where the pattern has evolved.
+title: Migrate WPF app patterns to WinUI 3
+description: WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows experiences. This topic maps common WPF patterns to their WinUI 3 equivalents to help you plan your migration.
 ms.topic: concept-article
 ms.date: 04/07/2026
 keywords: windows, app, sdk, wpf, winui, winui3, migration, patterns, equivalents
 ms.localizationpriority: medium
 ---
 
-# WPF patterns and their WinUI 3 equivalents
+# Migrate WPF app patterns to WinUI 3
 
-WPF is a mature framework built over two decades, and WinUI 3 is a modern UI platform designed for Windows 10 and Windows 11 from the ground up. Most WPF concepts have direct equivalents in WinUI 3. In some areas, WinUI 3 introduces a better approach that replaces an older pattern. And in a few cases, features are still being actively developed.
+WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows experiences. Most WPF patterns have direct equivalents in WinUI 3. In some areas WinUI 3 introduces an improved approach that replaces an older pattern, and in a few cases features are still in active development.
 
 This topic maps common WPF patterns to their WinUI 3 equivalents so you can plan your migration with confidence.
 
 > [!TIP]
-> For UWP-to-WinUI 3 migration guidance, see [What's supported when migrating from UWP to WinUI 3](what-is-supported.md). For general WPF + Windows App SDK guidance, see [Use the Windows App SDK in a WPF app](wpf-plus-winappsdk.md).
+> For general WPF + Windows App SDK guidance, see [Use the Windows App SDK in a WPF app](wpf-plus-winappsdk.md).
 
 ## Controls
 
@@ -22,9 +22,8 @@ Most WPF controls have direct equivalents in WinUI 3. The following table covers
 
 | WPF control | WinUI 3 equivalent | Notes |
 |---|---|---|
-| `DataGrid` | [DataGrid (Community Toolkit)](https://github.com/CommunityToolkit/Windows/tree/main/components/DataGrid) | The WinUI 3 Community Toolkit provides a DataGrid control. Most common WPF DataGrid features are supported; see the toolkit docs for specifics. |
-| `InkCanvas` / `InkToolbar` | Under active development | Ink support in WinUI 3 is being actively developed. Follow [microsoft-ui-xaml #1000](https://github.com/microsoft/microsoft-ui-xaml/issues/1000) for updates. In the meantime, you can host the WPF `InkCanvas` via [XAML Islands](../../desktop/modernize/xaml-islands/xaml-islands.md). |
-| `Ribbon` | `CommandBar` / `CommandBarFlyout` | Consider [CommandBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar) and [CommandBarFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout) for toolbar-style scenarios. For a full ribbon surface, the [Fluent UI React](https://developer.microsoft.com/fluentui) component via WebView2 is an option for hybrid apps. |
+| `DataGrid` | No first-party equivalent | WinUI 3 does not include a built-in DataGrid. The community-maintained [WinUI.TableView](https://github.com/w-ahmad/WinUI.TableView) is one option. Evaluate community projects based on your support and maintenance requirements. |
+| `Ribbon` | `CommandBar` / Community Toolkit Labs | Consider [CommandBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar) and [CommandBarFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout) for toolbar-style scenarios. A [Ribbon control](https://github.com/CommunityToolkit/Labs-Windows/tree/main/components/Ribbon) is also available in Community Toolkit Labs (experimental). |
 | `StatusBar` | `InfoBar` + custom layout | Use [InfoBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar) for status messaging, or add a dedicated footer area to your layout. |
 | `FlowDocumentReader` / `FlowDocumentScrollViewer` | `RichTextBlock` | Use [RichTextBlock](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock) for read-only rich text display. WinUI 3 takes a different approach to document content that is better suited to modern app scenarios. |
 | `PasswordBox` with `SecureString` | `PasswordBox` | WinUI 3's [PasswordBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox) provides password masking. `SecureString` is deprecated in .NET 5+; the recommended approach is to minimize how long credentials are held in memory using `ReadOnlySpan<char>` patterns. |
@@ -41,7 +40,7 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 | `MultiBinding` / `PriorityBinding` | Converters or `x:Bind` | Use a multi-value converter with individual bindings, or use `x:Bind` with a computed property on your view model. `x:Bind` is compiled and type-safe, which makes it more performant than `Binding`. |
 | `Style` with `BasedOn` | ✅ Supported | Style inheritance with `BasedOn` works in WinUI 3. |
 | Implicit styles | ✅ Supported | Resource dictionary implicit styles (styles without `x:Key`) work as expected. |
-| `AdornerLayer` | Custom overlay approach | For validation visuals, use the built-in built-in input validation support in text controls (see [TextBox.InputValidationErrorEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textboxinputvalidationerroreventargs)). For custom overlays, use a `Canvas` or `Grid` overlay layer in your layout — this is more explicit and easier to reason about than WPF's adorner layer. |
+| `AdornerLayer` | Custom overlay approach | For validation visuals, use the built-in built-in input validation support in text controls (input validation is supported on text controls in WinUI 3). For custom overlays, use a `Canvas` or `Grid` overlay layer in your layout — this is more explicit and easier to reason about than WPF's adorner layer. |
 
 ## Threading and dispatch
 
@@ -80,7 +79,7 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 | WPF tooling | WinUI 3 status | Notes |
 |---|---|---|
 | XAML Designer (Design tab) | Not yet supported | The Visual Studio XAML Designer doesn't currently support WinUI 3 projects. [XAML Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) is supported and is the recommended way to iterate on layout and styles without stopping the debugger. |
-| Blend for Visual Studio | Limited support | Blend can open WinUI 3 projects but Design view is not available. |
+| Blend for Visual Studio | ⚠️ Limited support | Blend ships with Visual Studio and can open WinUI 3 projects. The XAML Document Outline is functional, but Design view is not available for WinUI 3. |
 
 ## See also
 
