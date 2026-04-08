@@ -11,20 +11,21 @@ no-loc: [toast, Toast, app, App]
 
 ![A screen capture showing an app notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, "Going". There are two buttons labeled "RSVP" and "Dismiss"](images/shell-1x.png)
 
-App notifications are messages that your app can construct and deliver to your user while they are not currently inside your app. The notification content is displayed in a transient window in the bottom right corner of the screen and in the Notification Center. App notifications can be used to inform the user of application status or state changes, or to prompt the user to take an action. App notifications can either be sent locally or from a cloud service using [push notifications](../push-notifications/index.md).
-
-> [!NOTE]
-> The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
+App notifications are UI popups that appear outside of your app's window, delivering timely information or actions to the user. Notifications can be purely informational, can launch your app when clicked, or can trigger a background action without bringing your app to the foreground. App notifications can either be sent locally or from a cloud service using [push notifications](../push-notifications/index.md).
 
 This section provides design and implementation guidance for app notifications in the [Windows App SDK](../../../windows-app-sdk/index.md) and WinRT.
 
-## App notification UX and implementation guidance
+## App notifications by framework
+
+- [WinUI apps (quickstart)](app-notifications-quickstart.md)
+- [WPF apps](app-notifications-wpf.md)
+- [WinForms apps](app-notifications-winforms.md)
+- [Console apps](app-notifications-console.md)
+- [UWP apps](app-notifications-uwp.md)
+
+## UX and content guidance
 
 - [App notification UX guidance](toast-ux-guidance.md)
-- [Send a local app notification from C# apps](app-notifications-csharp-legacy.md)
-- [Send a local app notification from C++ UWP apps](app-notifications-cpp-uwp.md)
-- [Send a local app notification from Win32 C++ WRL apps](app-notifications-cpp-wrl.md)
-- [Send a local app notification from other types of unpackaged apps](app-notifications-other-apps.md)
 - [App notification content](adaptive-interactive-toasts.md)
 - [App notification content schema](toast-schema.md)
 - [Schedule an app notification](scheduled-toast.md)
@@ -48,5 +49,6 @@ The app notifications support in the Windows App SDK currently has these limitat
 ## Next steps
 
 See [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md) to get started.
+
 
 

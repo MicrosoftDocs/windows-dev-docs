@@ -35,7 +35,7 @@ The table below illustrates your options for supporting app notifications within
 
 ## Preferred option - COM activator
 
-This is the preferred option that works for desktop apps, and supports all notification features. Don't be afraid of the "COM activator"; we have a library [for C#](app-notifications-csharp-legacy.md) and [C++ apps](app-notifications-cpp-wrl.md) that makes this very straightforward, even if you've never written a COM server before.<br/><br/>
+This is the preferred option that works for desktop apps, and supports all notification features. Don't be afraid of the "COM activator"; we have a library [for C#](app-notifications-csharp-legacy.md) and [C++ apps](app-notifications-cpp-wrl-legacy.md) that makes this very straightforward, even if you've never written a COM server before.<br/><br/>
 
 | Visuals | Actions | Inputs | Activates in-process |
 | -- | -- | -- | -- |
@@ -53,7 +53,7 @@ With the COM activator option, you can use the following notification templates 
 > [!NOTE]
 > If you add the COM activator to your existing packaged app, then Foreground/Background and Legacy notification activations will activate your COM activator instead of your command line.
 
-To learn how to use this option, see [Send a local app notification from desktop C# apps](app-notifications-csharp-legacy.md) or [Send a local app notification from Win32 C++ WRL apps](app-notifications-cpp-wrl.md).
+To learn how to use this option, see [Send a local app notification from desktop C# apps](app-notifications-csharp-legacy.md) or [Send a local app notification from Win32 C++ WRL apps](app-notifications-cpp-wrl-legacy.md).
 
 ## Alternative option - No COM / Stub CLSID
 
@@ -79,7 +79,8 @@ For unpackaged apps, set up the AUMID so that you can send notifications, and th
 ## Resources
 
 * [Send a local app notification from desktop C# apps](app-notifications-csharp-legacy.md)
-* [Send a local app notification from Win32 C++ WRL apps](app-notifications-cpp-wrl.md)
+* [Send a local app notification from Win32 C++ WRL apps](app-notifications-cpp-wrl-legacy.md)
 * [App notification content documentation](adaptive-interactive-toasts.md)
+
 
 

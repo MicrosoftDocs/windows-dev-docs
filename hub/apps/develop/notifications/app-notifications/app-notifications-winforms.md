@@ -1,5 +1,5 @@
 ---
-title: Send a local app notification from a WinForms app
+title: Use app notifications with a WinForms app
 description: Learn how to send a local app notification from a WinForms app and handle the user clicking the notification using the Windows App SDK.
 ms.date: 04/08/2026
 ms.topic: how-to
@@ -7,16 +7,17 @@ keywords: windows 11, windows 10, windows app sdk, winappsdk, winforms, windows 
 ms.localizationpriority: medium
 ---
 
-# Send a local app notification from a WinForms app
+# Use app notifications with a WinForms app
 
-An app notification is a message that your app can construct and deliver to your user while they are not currently inside your app.
+An app notification is a UI popup that appears outside of your app's window, delivering timely information or actions to the user. Notifications can be purely informational, can launch your app when clicked, or can trigger a background action without bringing your app to the foreground.
 
 :::image type="content" source="images/toast-notification.png" alt-text="Screenshot of an app notification" width="628":::
 
-This article walks you through the steps to send and handle app notifications from a WinForms app using the [Windows App SDK](/windows/apps/windows-app-sdk/). The Windows App SDK `Microsoft.Windows.AppNotifications` APIs handle all the complexity of notification registration and activation for both packaged and unpackaged apps.
+This article walks you through the steps to create and send an app notification from a WinForms app, and then handle activation when the user interacts with it. This article uses the [Windows App SDK](/windows/apps/windows-app-sdk/) `Microsoft.Windows.AppNotifications` APIs.
 
-> [!NOTE]
-> For WinUI apps, see [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md). For other app types, see [WPF](app-notifications-wpf.md), [Console](app-notifications-console.md), or [UWP](app-notifications-uwp.md).
+For an overview of app notifications and guidance for other frameworks, see [App notifications overview](index.md).
+
+This article covers local notifications. For information about delivering notifications from a cloud service, see [Push notifications](../push-notifications/index.md).
 
 > [!IMPORTANT]
 > Notifications for elevated (admin) apps are not currently supported.
@@ -46,7 +47,7 @@ For unpackaged apps, add:
 <WindowsPackageType>None</WindowsPackageType>
 ```
 
-## Step 1: Register for app notifications
+## Register for app notifications
 
 In `Program.cs`, register for notifications *before* calling `Application.Run()`. You must register your `NotificationInvoked` handler before calling `Register()`.
 
@@ -97,7 +98,7 @@ static class Program
 > [!NOTE]
 > For unpackaged apps, `Register()` automatically sets up the COM server registration that allows Windows to launch your app when a notification is clicked. You don't need to configure COM activation or an AUMID manually.
 
-## Step 2: Send an app notification
+## Send an app notification
 
 Use the `AppNotificationBuilder` API to construct and send a notification from your form.
 
@@ -120,43 +121,7 @@ private void SendNotification()
 }
 ```
 
-## Adding buttons
-
-You can add interactive buttons to your notifications. Each button can have its own arguments that are passed to your `NotificationInvoked` handler.
-
-```csharp
-var notification = new AppNotificationBuilder()
-    .AddArgument("conversationId", "9813")
-    .AddText("Andrew sent you a picture")
-    .AddText("Check this out, The Enchantments in Washington!")
-    .AddButton(new AppNotificationButton("Reply")
-        .AddArgument("action", "reply"))
-    .AddButton(new AppNotificationButton("Like")
-        .AddArgument("action", "like"))
-    .BuildNotification();
-
-AppNotificationManager.Default.Show(notification);
-```
-
-## Adding images
-
-You can add rich content to notifications, including inline images and profile images.
-
-> [!NOTE]
-> Images can be used from the app's package, the app's local storage, or from the web. Web images can be up to 3 MB on normal connections and 1 MB on metered connections.
-
-```csharp
-var notification = new AppNotificationBuilder()
-    .AddArgument("action", "viewConversation")
-    .AddText("Andrew sent you a picture")
-    .SetInlineImage(new Uri("https://picsum.photos/360/202?image=883"))
-    .SetAppLogoOverride(
-        new Uri("ms-appdata:///local/Andrew.jpg"),
-        AppNotificationImageCrop.Circle)
-    .BuildNotification();
-
-AppNotificationManager.Default.Show(notification);
-```
+For information about adding buttons, images, inputs, and other rich content to your notifications, see [App notification content](adaptive-interactive-toasts.md).
 
 ## Packaged app setup
 
@@ -168,5 +133,7 @@ For unpackaged WinForms apps, `Register()` handles COM registration automaticall
 - [App notification content](adaptive-interactive-toasts.md)
 - [AppNotificationManager Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 - [AppNotificationBuilder Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
+
+
 
 
