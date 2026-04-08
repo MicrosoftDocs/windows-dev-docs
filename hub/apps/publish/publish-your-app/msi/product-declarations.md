@@ -36,6 +36,14 @@ When you declare your app as accessible, you agree that your app is accessible t
 
 If your app supports pen and ink input, you can check this box which makes your app discoverable to customers who are specifically looking for pen and ink input supported apps in the Store.
 
+## This product incorporates generative AI features
+
+Select this option if your app includes generative AI capabilities that use artificial intelligence to create new content, such as text, images, audio, video and code. This declaration is required if your app generates new content dynamically using AI models, whether the models are:
+
+* Built into your app
+* Accessed via cloud services or APIs
+* Provided by third‑party AI platforms
+
 ## Notes for certification
 
 **Notes for certification**<br>Character limit: 2000<br>_Recommended_
