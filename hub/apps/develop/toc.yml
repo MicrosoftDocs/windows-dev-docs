@@ -9,7 +9,37 @@ items:
       - name: Overview
         href: features-overview.md
       - name: Accessibility
-        href: accessibility.md
+        items:
+          - name: Overview
+            href: accessibility.md
+          - name: Screen readers and UI Automation
+            items:
+              - name: Expose basic accessibility information
+                href: ../design/accessibility/basic-accessibility-information.md
+              - name: Landmarks and headings
+                href: ../design/accessibility/landmarks-and-headings.md
+              - name: Screen readers and hardware system buttons
+                href: ../design/accessibility/system-button-narration.md
+              - name: Custom automation peers
+                href: ../design/accessibility/custom-automation-peers.md
+              - name: Control patterns and interfaces
+                href: ../design/accessibility/control-patterns-and-interfaces.md
+          - name: Keyboard accessibility
+            href: ../design/accessibility/keyboard-accessibility.md
+          - name: Visual accessibility
+            items:
+              - name: Contrast themes
+                href: ../design/accessibility/high-contrast-themes.md
+              - name: Accessible text requirements
+                href: ../design/accessibility/accessible-text-requirements.md
+          - name: Testing and verification
+            items:
+              - name: Accessibility testing
+                href: ../design/accessibility/accessibility-testing.md
+              - name: Accessibility checklist
+                href: ../design/accessibility/accessibility-checklist.md
+              - name: Accessibility in the Store
+                href: ../design/accessibility/accessibility-in-the-store.md
       - name: AI-powered features
         items:
           - name: Overview

@@ -2,66 +2,109 @@
 title: Packaging overview
 description: Understand the differences between packaged and unpackaged apps and how packaging affects installation, updates, and access to Windows features.
 ms.topic: concept-article
-ms.date: 12/15/2025
+ms.date: 03/27/2026
 ms.localizationpriority: medium
 ---
 
-
 # Packaging overview
 
-Packaging defines how your app is installed, updated, and integrated with Windows. WinUI 3 apps are packaged by default, while many desktop apps, such as traditional Win32 applications, run unpackaged. Packaged apps benefit from a clean installation model, automatic updates, and access to Windows features that require package identity, including background tasks, notifications, context menu extensions, and other extensibility points. Unpackaged apps can still access many Windows App SDK capabilities, but may require additional setup to enable certain features.
+Packaging defines how your app is installed, updated, and integrated with Windows. WinUI 3 apps are packaged by default, while many desktop apps, such as traditional Win32 applications, run unpackaged. Choosing between a **packaged** or **unpackaged** app affects the features you can use, the deployment model you rely on, and the overall experience your customers get.
+
+> [!NOTE]
+> **Building a new WinUI 3 app?** You're already packaged by default. The guidance below is most relevant for developers who need to make an explicit choice — typically when porting an existing app, deploying to enterprise machines, or adding Windows features to an app that wasn't originally packaged.
 
 ## Why app packaging matters
 
-Packaging determines how your app is installed, updated, identified, and integrated with Windows. Choosing between a **packaged** or **unpackaged** app affects the features you can use, the deployment model you rely on, and the overall experience your customers get. The goal of this overview is to help you quickly understand the trade-offs so you can choose the model that best matches your app’s architecture and requirements.
+Packaged apps benefit from a clean installation model, automatic updates, and access to Windows features that require package identity — including background tasks, notifications, context menu extensions, share targets, and other extensibility points. Packaging also helps ensure cleaner deployments, reliable updates, and streamlined distribution through channels such as the Microsoft Store and enterprise deployment tools.
 
-## Packaged vs. unpackaged apps
+## Features that require package identity
 
-### Packaged apps  
-Packaged apps use MSIX and have **package identity**, which is required for many Windows extensibility points—including background tasks, notifications, custom context menu extensions, and share targets. Package identity allows Windows to reliably identify the caller of platform APIs, which is why these features depend on it. For more information, see [Features that require package identity](../../desktop/modernize/modernize-packaged-apps.md).
-- Packaged apps typically run in a lightweight app container with file system and registry virtualization (see [AppContainer for legacy apps](/windows/win32/secauthz/appcontainer-for-legacy-applications-) and [MSIX AppContainer apps](/windows/msix/msix-container)).  
-- Apps can also be configured **not** to run in an app container if needed.  
+These Windows features only work in apps that have package identity — either through full MSIX packaging or [packaging with external location (Sparse packaging)](#packaging-with-external-location-sparse-packaging).
+
+| Feature | Description |
+|---|---|
+| **Background tasks** | Run code when your app isn't in the foreground — for example, to sync data, process downloads, or respond to system events. |
+| **Windows AI APIs** (Phi Silica, OCR, etc.) | Access on-device AI capabilities such as local language models, text recognition, and image analysis. |
+| **Push notifications** (WNS) | Receive real-time notifications from your cloud service through the Windows Notification Service. |
+| **Share target** | Let users share content from other apps directly into yours via the system Share sheet. |
+| **Custom context menu extensions** | Add your app's actions to the right-click menu in File Explorer and other shell surfaces. |
+| **File type and protocol associations** | Register your app as the handler for specific file types or URI protocols (e.g., `yourapp://`). |
+| **Startup tasks** | Launch your app automatically when the user signs in to Windows. |
+| **App services** | Expose background services that other apps can call into, enabling inter-app communication. |
+
+> [!TIP]
+> If you're unpackaged and hitting `E_ILLEGAL_METHOD_CALL` or `APPMODEL_ERROR_NO_PACKAGE` errors when calling Windows APIs, that's the package identity requirement. See [packaging with external location (Sparse packaging)](#packaging-with-external-location-sparse-packaging) as the lowest-friction fix.
+
+For more information, see [Features that require package identity](../../desktop/modernize/modernize-packaged-apps.md).
+
+## Packaging models at a glance
+
+| Model | Package identity | Installer | Store eligible | Best for |
+|---|---|---|---|---|
+| **Packaged (MSIX)** | ✅ Yes | MSIX replaces installer | ✅ Yes | New apps, Store publishing, enterprise MDM |
+| **Packaging with external location** | ✅ Yes | Your existing installer | ❌ No | Existing apps with own installer, ISVs |
+| **Unpackaged** | ❌ No | XCopy / script | ❌ No | Internal tools, dev utilities, simple scenarios |
+
+### Packaged apps (MSIX)
+
+Packaged apps use MSIX and have **package identity**, which is required for many Windows extensibility points. Package identity allows Windows to reliably identify the caller of platform APIs, which is why these features depend on it.
+
+- Packaged apps typically run in a lightweight app container with file system and registry virtualization (see [AppContainer for legacy apps](/windows/win32/secauthz/appcontainer-for-legacy-applications-) and [MSIX AppContainer apps](/windows/msix/msix-container)).
+- Apps can also be configured **not** to run in an app container if needed.
 - MSIX is used both for packaging and installation (see [What is MSIX?](/windows/msix/overview)).
 
-#### Packaged with external location  
-Some existing desktop apps aren't yet ready for all their content to live inside an MSIX package. **Packaging with external location** gives these apps package identity while allowing most of their content to remain outside the package.  
-- This option still requires an installer: think of it as a hybrid model between packaged and unpackaged.  
-- See [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+## Packaging with external location (Sparse packaging)
 
-### Unpackaged apps  
-Unpackaged apps don't use MSIX and **don't have package identity**, which means they cannot access the [features that require it](../../desktop/modernize/modernize-packaged-apps.md)..  
-- They remain fully unrestricted in terms of API surface, file system access, registry access, elevation, and process model.  
-- Installation and updates rely on `.exe`, `.msi`, custom installers, ClickOnce, or xcopy deployment.  
-- See [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+Packaging with external location (also called *sparse packages*) lets you register a small identity package alongside your existing app — without changing your installer, binary locations, or update process. It was introduced in Windows 10 version 2004 (build 19041).
 
----
+This is the sweet spot for existing Win32/WPF/WinForms apps that ship via their own installer (NSIS, WiX, InstallShield, etc.) and don't want to replace it with MSIX. You register a lightweight identity package, your binaries stay where they are, and you unlock the full set of package-identity-gated Windows features.
 
-### Summary comparison
-
-|  | **Packaged** (optional app container) | **Packaged with external location / Unpackaged** |
+| Capability | MSIX | External location |
 |---|---|---|
-| **Key benefits** | Modern install/uninstall, automatic/incremental updates, clean removal with no leftover artifacts, optimized Microsoft Store experience, and access to features requiring package identity. | Full control over process model, elevation, IPC, registry and file system access. External-location packaging allows gaining package identity without fully adopting MSIX. |
-| **Key limitations** | Some system-level scenarios aren't supported (e.g., NT Services). IPC options can be limited, Store publication restricts elevated access, and virtualization applies in many cases (see [Flexible virtualization](/windows/msix/desktop/flexible-virtualization)). Enterprise policies may disable Store-driven updates. | Higher risk of stale files or configuration after uninstall. Installation/update must be handled manually via `.exe`, `.msi`, or custom mechanisms. Unpackaged apps lack features that require package identity. |
+| Replaces your installer | Yes | No |
+| Binaries inside the package | Yes | No (external) |
+| Store eligible | Yes | No |
+| Package identity | Yes | Yes |
+| Update mechanism | MSIX update | Your existing mechanism |
 
----
+→ [Full walkthrough: Grant package identity by packaging with external location](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md)
 
-> [!IMPORTANT]
-> For most apps, using MSIX and running in an app container provides the most seamless, secure, and modern installation and update experience.
+### Unpackaged apps
 
-For more details about install location, working directory, virtualization, and runtime behavior, see  
-[Understanding how packaged desktop apps run on Windows](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes).
+Unpackaged apps don't use MSIX and **don't have package identity**, which means they cannot access the features listed above.
 
+- They remain fully unrestricted in terms of API surface, file system access, registry access, elevation, and process model.
+- Installation and updates rely on `.exe`, `.msi`, custom installers, ClickOnce, or xcopy deployment.
+
+Before you commit to unpackaged, check the [features table above](#features-that-require-package-identity) against your roadmap. If notifications, background tasks, or AI APIs are on the horizon, consider starting packaged.
+
+## Choose by scenario
+
+| Scenario | Recommended model | Details |
+|---|---|---|
+| **Indie developer publishing to the Microsoft Store** | Packaged (MSIX) | The Store requires MSIX. WinUI 3 apps are packaged by default — no changes needed. → [Distribute your packaged app](../../desktop/modernize/desktop-to-uwp-distribute.md) |
+| **Enterprise app deployed via Intune or Configuration Manager** | Packaged, or external location for existing installers | New apps should use MSIX. Existing apps with their own installer can use packaging with external location. → [Deploy packaged apps](../../windows-app-sdk/deploy-packaged-apps.md) |
+| **ISV shipping a direct download with own installer** | Packaging with external location | Register a lightweight identity package alongside your existing installer. Users see no change; you get Windows features. → [Grant package identity](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) |
+| **Internal tool or developer utility** | Unpackaged | Simplest to build and deploy. The Windows App SDK works via NuGet, but some features won't be available. |
+
+## Framework-dependent vs self-contained deployment
+
+Separately from packaging model, apps using the Windows App SDK choose how to carry their runtime dependencies:
+
+- **Framework-dependent**: The Windows App SDK runtime must be installed on the user's machine. Smaller app footprint; relies on the runtime being present or auto-installed.
+- **Self-contained**: All Windows App SDK binaries ship with your app. Larger footprint; no external runtime requirement. Good for locked-down enterprise environments.
+
+→ [Deploy self-contained apps](../self-contained-deploy/deploy-self-contained-apps.md)
 
 ## Get started with MSIX
 
-If you build a Win32 desktop app (sometimes called a *classic desktop app*) or a .NET app&mdash;including Windows Presentation Foundation (WPF) and Windows Forms (WinForms)&mdash;then you can package and deploy your app using MSIX.
+If you build a Win32 desktop app (sometimes called a *classic desktop app*) or a .NET app — including Windows Presentation Foundation (WPF) and Windows Forms (WinForms) — then you can package and deploy your app using MSIX.
 
 - [Create an MSIX package from an existing installer](/windows/msix/packaging-tool/create-an-msix-overview)
 - [Build an MSIX package from source code](/windows/msix/desktop/source-code-overview)
 - [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
 
 ## Other installation technologies
-You can also package and deploy these types of apps using other installation technologies.
 
 - [Application installation and servicing](/windows/desktop/application-installing-and-servicing)
 - [Windows Installer](/windows/desktop/msi/windows-installer-portal)
@@ -70,4 +113,9 @@ You can also package and deploy these types of apps using other installation tec
 - [Deploying a WPF application](/dotnet/framework/wpf/app-development/deploying-a-wpf-application-wpf)
 - [ClickOnce Deployment for Windows Forms](/dotnet/framework/winforms/clickonce-deployment-for-windows-forms)
 
+## Related content
 
+- [Package identity overview](../../desktop/modernize/package-identity-overview.md)
+- [Deploy packaged apps (Windows App SDK)](../../windows-app-sdk/deploy-packaged-apps.md)
+- [Deploy unpackaged apps (Windows App SDK)](../../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Tutorial: Unpackage a WinUI app](../unpackage-winui-app.md)

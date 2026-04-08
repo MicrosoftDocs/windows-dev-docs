@@ -69,9 +69,6 @@ In the Visual Studio Installer, select the following workloads on the **Workload
 
 2. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
 
-   > [!NOTE]
-   > The **Packaged** template is recommended for new apps. A packaged app (using MSIX) gives your users a clean install and uninstall experience, and enables Windows features like notifications, background tasks, and the Microsoft Store. You can learn more about the packaged vs. unpackaged choice in [Windows apps: packaging, deployment, and process](intro-pack-dep-proc.md).
-
    :::image type="content" source="images/hello-world/create-project.png" lightbox="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
 
 3. Enter a project name and select **Create**.

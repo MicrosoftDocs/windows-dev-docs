@@ -21,17 +21,7 @@ Whether you're building with .NET/Win32, CMake, Electron, or Rust, this CLI give
 
 ## Why package identity?
 
-Many powerful Windows APIs require your app to have package identity, enabling you to leverage OS components Windows offers that you wouldn't otherwise have access to. With identity, your app gains access to features like notifications, OS integration, and on-device AI.
-
-Examples of what package identity and MSIX packaging unlocks:
-
-- [Interactive native notifications](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart?tabs=cs) and notification management
-- [Integration with Windows Explorer, Taskbar, Share sheet](/windows/apps/develop/windows-integration/integrate-sharesheet-packaged), and other shell surfaces
-- [Protocol handlers](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#start-your-application-in-different-ways) (`yourapp://` URIs)
-- [On-device AI](/windows/ai/apis/) (local LLM, text and image AI APIs)
-- [Background tasks](/windows/uwp/launch-resume/declare-background-tasks-in-the-application-manifest) (run when app is closed)
-- [File type associations](/windows/apps/desktop/modernize/desktop-to-uwp-extensions#integrate-with-file-explorer)
-- [Clean install/uninstall and auto-updates](/windows/msix/overview)
+Many powerful Windows APIs require your app to have package identity. With identity, your app gains access to features like notifications, OS integration, and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](../../package-and-deploy/packaging/index.md).
 
 ## Installation
 

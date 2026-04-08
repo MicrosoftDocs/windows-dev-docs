@@ -1501,11 +1501,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/design/accessibility/accessibility.md",
-      "redirect_url": "/windows/uwp/design/accessibility/accessibility-overview",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/accessibility/accessible-text-requirements.md",
       "redirect_url": "/windows/uwp/design/accessibility/accessible-text-requirements",
       "redirect_document_id": true
@@ -11082,17 +11077,17 @@
     },
     {
       "source_path": "hub/apps/how-tos/chatgpt-openai-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/how-tos/copilot-chat-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/how-tos/dall-e-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
@@ -11411,6 +11406,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/design/accessibility/accessibility.md",
+      "redirect_url": "/windows/apps/design/accessibility/accessibility-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/practices-to-avoid.md",
+      "redirect_url": "/windows/apps/design/accessibility/accessibility-overview#practices-to-avoid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/developing-inclusive-windows-apps.md",
+      "redirect_url": "/windows/apps/develop/accessibility",
+      "redirect_document_id": false
+    },
+    {      
+      "source_path": "hub/apps/package-and-deploy/choose-packaging-model.md",
+      "redirect_url": "/windows/apps/package-and-deploy/packaging/",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/globalizing/use-patterns-to-format-dates-and-times.md",
       "redirect_url": "/windows/apps/design/globalizing/use-global-ready-formats#use-templates-and-patterns-for-advanced-datetime-formatting",
       "redirect_document_id": false
@@ -11478,6 +11493,36 @@
     {
       "source_path": "uwp/files/fast-file-properties.md",
       "redirect_url": "/windows/apps/develop/files/fast-file-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-1.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-2.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-3.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-4.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-5.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
       "redirect_document_id": false
     }
   ]

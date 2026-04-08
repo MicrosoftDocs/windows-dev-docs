@@ -118,6 +118,7 @@ You should then validate against Windows text-related accessibility settings, in
 - Magnifier, which enlarges part of the UI. Ensure layout and line wrapping remain readable under magnification.
 - Global scale and resolution settings in **Settings->System->Display->Scale and layout**. Available values vary by display hardware.
 - Text size settings in **Settings->Ease of access->Display**. **Make text bigger** scales text in supported controls across apps and screens (WinUI text controls support this by default).
+
 > [!NOTE]
 > The **Make everything bigger** setting lets a user specify their preferred size for text and apps in general on their primary screen only.
 
