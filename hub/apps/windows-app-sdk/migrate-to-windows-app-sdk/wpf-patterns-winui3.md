@@ -22,7 +22,7 @@ Most WPF controls have direct equivalents in WinUI 3. The following table covers
 
 | WPF control | WinUI 3 equivalent | Notes |
 |---|---|---|
-| `DataGrid` | [DataGrid (Community Toolkit)](/dotnet/communitytoolkit/maui/views/datagrid) | The WinUI 3 Community Toolkit provides a DataGrid control. Most common WPF DataGrid features are supported; see the toolkit docs for specifics. |
+| `DataGrid` | [DataGrid (Community Toolkit)](https://github.com/CommunityToolkit/Windows/tree/main/components/DataGrid) | The WinUI 3 Community Toolkit provides a DataGrid control. Most common WPF DataGrid features are supported; see the toolkit docs for specifics. |
 | `InkCanvas` / `InkToolbar` | Under active development | Ink support in WinUI 3 is being actively developed. Follow [microsoft-ui-xaml #1000](https://github.com/microsoft/microsoft-ui-xaml/issues/1000) for updates. In the meantime, you can host the WPF `InkCanvas` via [XAML Islands](../../desktop/modernize/xaml-islands/xaml-islands.md). |
 | `Ribbon` | `CommandBar` / `CommandBarFlyout` | Consider [CommandBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar) and [CommandBarFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbarflyout) for toolbar-style scenarios. For a full ribbon surface, the [Fluent UI React](https://developer.microsoft.com/fluentui) component via WebView2 is an option for hybrid apps. |
 | `StatusBar` | `InfoBar` + custom layout | Use [InfoBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.infobar) for status messaging, or add a dedicated footer area to your layout. |
@@ -41,7 +41,7 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 | `MultiBinding` / `PriorityBinding` | Converters or `x:Bind` | Use a multi-value converter with individual bindings, or use `x:Bind` with a computed property on your view model. `x:Bind` is compiled and type-safe, which makes it more performant than `Binding`. |
 | `Style` with `BasedOn` | ✅ Supported | Style inheritance with `BasedOn` works in WinUI 3. |
 | Implicit styles | ✅ Supported | Resource dictionary implicit styles (styles without `x:Key`) work as expected. |
-| `AdornerLayer` | Custom overlay approach | For validation visuals, use the built-in [InputValidation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.inputvalidationkind) support in text controls. For custom overlays, use a `Canvas` or `Grid` overlay layer in your layout — this is more explicit and easier to reason about than WPF's adorner layer. |
+| `AdornerLayer` | Custom overlay approach | For validation visuals, use the built-in built-in input validation support in text controls (see [TextBox.InputValidationErrorEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textboxinputvalidationerroreventargs)). For custom overlays, use a `Canvas` or `Grid` overlay layer in your layout — this is more explicit and easier to reason about than WPF's adorner layer. |
 
 ## Threading and dispatch
 
@@ -57,7 +57,7 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 |---|---|---|
 | `Application.Startup` / `Exit` events | `App.OnLaunched` / `Window.Closed` | WinUI 3 uses `OnLaunched` in `App.xaml.cs` as the entry point. Per-window teardown is handled in `Window.Closed`. |
 | `Application.Current.MainWindow` | Your `Window` instance | Hold a reference to your window instance in `App.xaml.cs` and expose it as a property. |
-| `Window` subclassing | [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) customization | WinUI 3 windows are customized through `AppWindow` (title bar, presenter, overlapped/fullscreen/compact overlay modes) rather than subclassing. See [Manage app windows](../../develop/ui/windowing/manage-app-windows.md). |
+| `Window` subclassing | [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) customization | WinUI 3 windows are customized through `AppWindow` (title bar, presenter, overlapped/fullscreen/compact overlay modes) rather than subclassing. See [Manage app windows](../../develop/ui/manage-app-windows.md). |
 | `SystemParameters` | `DisplayArea` / `UISettings` | System display properties are available through [DisplayArea](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.displayarea) and [UISettings](/uwp/api/windows.ui.viewmanagement.uisettings). |
 
 ## Resources and localization
@@ -73,7 +73,7 @@ WinUI 3 XAML is closely related to UWP XAML, and shares the same core engine. So
 
 | WPF feature | WinUI 3 status | Notes |
 |---|---|---|
-| `PrintDialog` / `PrintDocument` | [PrintManager](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing.printmanager) | Full printing support is available via `PrintManager`. See [Print from your app](/windows/apps/develop/print-and-capture/printing-and-scanning). |
+| `PrintDialog` / `PrintDocument` | [PrintManager](/uwp/api/windows.graphics.printing.printmanager) | Full printing support is available via `PrintManager`. See [Print from your app](/windows/apps/develop/devices-sensors/print-from-your-app). |
 
 ## Developer tooling
 
