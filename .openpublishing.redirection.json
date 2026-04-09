@@ -9569,13 +9569,23 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/develop/notifications/app-notifications/custom-audio-on-toasts.md",
+      "redirect_url": "custom-audio-on-notifications",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/custom-timestamps-on-toasts.md",
+      "redirect_url": "custom-timestamps-on-notifications",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/custom-audio-on-toasts.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/custom-audio-on-toasts",
+      "redirect_url": "../../../develop/notifications/app-notifications/custom-audio-on-notifications",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/custom-timestamps-on-toasts.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/custom-timestamps-on-toasts",
+      "redirect_url": "../../../develop/notifications/app-notifications/custom-timestamps-on-notifications",
       "redirect_document_id": false
     },
     {

@@ -267,7 +267,7 @@ You can override the system-provided timestamp with your own timestamp that accu
 
 ![Screenshot of a notification in the Notifications Center with a custom timestamp](images/toast-content-custom-timestamp.png)
 
-To learn more about using a custom timestamp, please see [custom timestamps on toasts](custom-timestamps-on-toasts.md).
+To learn more about using a custom timestamp, please see [Custom timestamps on app notifications](custom-timestamps-on-notifications.md).
 
 ### [Windows App SDK](#tab/appsdk)
 
@@ -774,7 +774,7 @@ var builder = new AppNotificationBuilder()
 
 ---
 
-See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in app notifications. To learn how to send an app notification that uses custom audio, see [custom audio on toasts](custom-audio-on-toasts.md).
+See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in app notifications. To learn how to send an app notification that uses custom audio, see [Custom audio on app notifications](custom-audio-on-notifications.md).
 
 
 ## Scenarios

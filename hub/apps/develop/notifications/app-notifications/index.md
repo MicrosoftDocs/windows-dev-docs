@@ -32,10 +32,10 @@ This section provides design and implementation guidance for app notifications i
 
 ## Additional app notifications features
 
-- [Custom audio on app notifications](custom-audio-on-toasts.md)
+- [Custom audio on app notifications](custom-audio-on-notifications.md)
 - [App notification progress bar and data binding](notification-progress-bar.md)
 - [App notification with pending update](notification-pending-update.md)
-- [Custom timestamps on app notifications](custom-timestamps-on-toasts.md)
+- [Custom timestamps on app notifications](custom-timestamps-on-notifications.md)
 - [App notification collections](notification-collections.md)
 - [App notification headers](notification-headers.md)
 - [Notification listener: Access all notifications](notification-listener.md)
