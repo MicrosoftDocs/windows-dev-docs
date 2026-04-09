@@ -111,7 +111,7 @@ To migrate an existing UWP app from [.NET Native](index.md) to modern .NET:
 ### Step 1: Update Project File
 
 1. Convert your existing .csproj to SDK-style format
-2. Add the required properties (`UseUwp`, `EnableMsixTooling`, `PublishAot`)
+2. Add the required properties - `UseUwp`, `EnableMsixTooling`, then `PublishAot` or `SelfContained`
 3. Update NuGet package references to versions compatible with the latest .NET
 
 ### Step 2: Address Native AOT Compatibility
