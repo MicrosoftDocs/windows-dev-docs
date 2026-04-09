@@ -153,7 +153,7 @@ You need to write a bit of code to finish replacing the system title bar.
 
     The [ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) property hides the default system title bar and extends your app XAML into that area. The call to [SetTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar) then tells the system to treat the XAML element you specified (`AppTitleBar`) as the title bar for the app.
 
-1. Build and run the project by pressing <kbd>F5</kbd>, clicking the Debug "Start" button in the tool bar, or by selecting the menu **Run** > **Start Debugging**.
+1. Build and run the project by pressing <kbd>F5</kbd>, clicking the Debug "Start" button in the tool bar, or by selecting the menu **Debug** > **Start Debugging**.
 
 When you run the app now, you'll see an empty window with a mica background and the XAML title bar that's replaced the system title bar.
 

@@ -11420,7 +11420,7 @@
       "redirect_url": "/windows/apps/develop/accessibility",
       "redirect_document_id": false
     },
-    {      
+    {
       "source_path": "hub/apps/package-and-deploy/choose-packaging-model.md",
       "redirect_url": "/windows/apps/package-and-deploy/packaging/",
       "redirect_document_id": false
@@ -11523,6 +11523,16 @@
     {
       "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-5.md",
       "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/background-processing/index.md",
+      "redirect_url": "/windows/apps/develop/app-lifecycle-and-system-services",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/applifecycle/app-background-task.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/applifecycle/background-tasks",
       "redirect_document_id": false
     }
   ]
