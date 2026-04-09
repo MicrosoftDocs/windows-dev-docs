@@ -23,7 +23,7 @@ In this quickstart you will create a desktop Windows application that sends and 
 
 ## Packaging requirements
 
-Push notifications in Windows App SDK require that your app has package identity. The following table summarizes what's required based on your packaging model:
+Push notifications in the Windows App SDK support both packaged and truly unpackaged desktop apps. However, **package identity is required for background delivery and COM activation** — the most common production scenario. The following table summarizes what's required based on your packaging model:
 
 | Packaging model | COM activator required | PFN mapping required | Unpackaged supported |
 |---|---|---|---|

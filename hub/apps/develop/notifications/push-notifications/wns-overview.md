@@ -61,7 +61,7 @@ At a high level, the information chain is as follows:
 
 ![wns diagram for cloud service authentication](images/wns-diagram-02.jpg)
 
-In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field as shown in the following example. For syntax details, see the [access token request](push-request-response-headers.md) reference.
+In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-form-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field as shown in the following example. For syntax details, see the [access token request](push-request-response-headers.md) reference.
 
 > [!NOTE]
 > This is just an example, not cut-and-paste code that you can successfully use in your own code. 
@@ -103,7 +103,7 @@ The following example shows a successful authentication response, including the 
 
 Using the channel URI, the cloud service can send a notification whenever it has an update for the user.
 
-The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommended that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see [Push notification service request and response headers](push-request-response-headers.md).
+The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommend that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see [Push notification service request and response headers](push-request-response-headers.md).
 
 1.  The cloud service makes an HTTP POST to the channel URI. This request must be made over SSL and contains the necessary headers and the notification payload. The authorization header must include the acquired access token for authorization.
 
