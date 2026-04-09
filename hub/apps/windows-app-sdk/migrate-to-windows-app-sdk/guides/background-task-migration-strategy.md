@@ -91,7 +91,7 @@ For C# applications, an **ActivatableClass** registration should also be added t
 
 ## Leveraging TaskScheduler for background task migration
 
-[Task Scheduler](/windows/win32/api/_taskschd/) helps desktop apps achieve the same functionality that is provided by [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) in UWP apps. More details on implementations using **TaskScheduler** are available [here](/windows/win32/api/taskschd/).
+[Task Scheduler](/windows/win32/api/_taskschd/) helps desktop apps achieve the same functionality that is provided by [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) in UWP apps. More details on implementations using **TaskScheduler** are available in the [Task Scheduler API reference](/windows/win32/api/taskschd/).
 
 ## ApplicationTrigger use in Windows App SDK applications
 
