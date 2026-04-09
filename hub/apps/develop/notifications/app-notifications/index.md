@@ -27,8 +27,8 @@ This section provides design and implementation guidance for app notifications i
 
 - [App notification UX guidance](toast-ux-guidance.md)
 - [App notification content](app-notifications-content.md)
-- [App notification content schema](toast-schema.md)
-- [Schedule an app notification](scheduled-toast.md)
+- [App notification content schema](notification-schema.md)
+- [Schedule an app notification](scheduled-notification.md)
 
 ## Additional app notifications features
 

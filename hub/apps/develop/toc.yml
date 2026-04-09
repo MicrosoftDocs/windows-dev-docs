@@ -456,16 +456,14 @@ items:
             href: notifications/app-notifications/app-notifications-console.md
           - name: UWP apps
             href: notifications/app-notifications/app-notifications-uwp.md
-          - name: Activating app notifications from desktop apps
-            href: notifications/app-notifications/toast-desktop-apps.md
         - name: App notification content
           items:
           - name: Content
             href: notifications/app-notifications/app-notifications-content.md
           - name: Schema
-            href: notifications/app-notifications/toast-schema.md
+            href: notifications/app-notifications/notification-schema.md
         - name: Schedule notifications
-          href: notifications/app-notifications/scheduled-toast.md
+          href: notifications/app-notifications/scheduled-notification.md
         - name: Additional features
           items:
           - name: Custom audio

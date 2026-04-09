@@ -1,15 +1,15 @@
 ---
 description: The following article describes all of the properties and elements within toast content.
-title: Toast content schema
+title: App notification content schema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
-label: Toast content schema
+label: App notification content schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
 keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, app notification
 ms.localizationpriority: medium
 ---
-# Toast content schema
+# App notification content schema
 
  
 
@@ -42,7 +42,7 @@ ToastContent is the top level object that describes a notification's content, in
 | **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Additional options relating to activation of the app notification. |
 | **Scenario** | [ToastScenario](#toastscenario) | false | Declares the scenario your toast is used for, like an alarm or reminder. |
 | **DisplayTimestamp** | DateTimeOffset? | false | Override the default timestamp with a custom timestamp representing when your notification content was actually delivered, rather than the time the notification was received by the Windows platform. |
-| **Header** | [ToastHeader](#toastheader) | false | Add a custom header to your notification to group multiple notifications together within Action Center. |
+| **Header** | [ToastHeader](#toastheader) | false | Add a custom header to your notification to group multiple notifications together within Notification Center. |
 
 
 ### ToastScenario
@@ -74,7 +74,7 @@ The generic binding is the default binding for toasts, and is where you specify 
 |---|---|---|---|
 | **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | The contents of the body of the Toast, which can include text, images, and groups. Text elements must come before any other elements, and only 3 text elements are supported. If a text element is placed after any other element, it will either be pulled to the top or dropped. And finally, certain text properties like HintStyle aren't supported on the root children text elements, and only work inside an AdaptiveSubgroup. |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | An optional logo to override the app logo. |
-| **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | An optional featured "hero" image that is displayed on the toast and within Action Center. |
+| **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | An optional featured "hero" image that is displayed on the toast and within Notification Center. |
 | **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | Optional attribution text which will be displayed at the bottom of the app notification. |
 | **BaseUri** | Uri | false | A default base URL that is combined with relative URLs in image source attributes. |
 | **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
@@ -274,7 +274,7 @@ Controls the cropping of the app logo image.
 
 
 ## ToastGenericHeroImage
-A featured "hero" image that is displayed on the toast and within Action Center.
+A featured "hero" image that is displayed on the toast and within Notification Center.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
@@ -460,11 +460,11 @@ Specify audio to be played when the app notification is received.
 
 
 ## ToastHeader
-A custom header that groups multiple notifications together within Action Center.
+A custom header that groups multiple notifications together within Notification Center.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **Id** | string | true | A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Action Center. |
+| **Id** | string | true | A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Notification Center. |
 | **Title** | string | true | A title for the header. |
 | **Arguments**| string | true | Gets or sets a developer-defined string of arguments that is returned to the app when the user clicks this header. Cannot be null. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Gets or sets the type of activation this header will use when clicked. Defaults to Foreground. Note that only Foreground and Protocol are supported. |

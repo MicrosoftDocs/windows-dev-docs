@@ -9526,8 +9526,21 @@
       "redirect_document_id": true
     },
     {
-      "source_path": "hub/apps/design/shell/tiles-and-notifications/channel-types.md",
-      "redirect_url": "../../../develop/notifications/channel-types",
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-desktop-apps.md",
+      "redirect_url": "app-notifications-quickstart",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-schema.md",
+      "redirect_url": "notification-schema",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/scheduled-toast.md",
+      "redirect_url": "scheduled-notification",
+      "redirect_document_id": true
+    },
+    {
       "redirect_document_id": false
     },
     {
@@ -9562,7 +9575,7 @@
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/scheduled-toast.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/scheduled-toast",
+      "redirect_url": "../../../develop/notifications/app-notifications/scheduled-notification",
       "redirect_document_id": false
     },
     {
@@ -9617,7 +9630,7 @@
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-schema.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/toast-schema",
+      "redirect_url": "../../../develop/notifications/app-notifications/notification-schema",
       "redirect_document_id": false
     },
     {

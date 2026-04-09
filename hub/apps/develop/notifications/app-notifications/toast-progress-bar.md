@@ -25,10 +25,10 @@ The picture below shows a determinate progress bar with all of its corresponding
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **Title** | string or [BindableString](toast-schema.md#bindablestring) | false | Gets or sets an optional title string. Supports data binding. |
-| **Value** | double or [AdaptiveProgressBarValue](toast-schema.md#adaptiveprogressbarvalue) or [BindableProgressBarValue](toast-schema.md#bindableprogressbarvalue) | false | Gets or sets the value of the progress bar. Supports data binding. Defaults to 0. Can either be a double between 0.0 and 1.0, `AdaptiveProgressBarValue.Indeterminate`, or `new BindableProgressBarValue("myProgressValue")`. |
-| **ValueStringOverride** | string or [BindableString](toast-schema.md#bindablestring) | false | Gets or sets an optional string to be displayed instead of the default percentage string. If this isn't provided, something like "70%" will be displayed. |
-| **Status** | string or [BindableString](toast-schema.md#bindablestring) | true | Gets or sets a status string (required), which is displayed underneath the progress bar on the left. This string should reflect the status of the operation, like "Downloading..." or "Installing..." |
+| **Title** | string or [BindableString](notification-schema.md#bindablestring) | false | Gets or sets an optional title string. Supports data binding. |
+| **Value** | double or [AdaptiveProgressBarValue](notification-schema.md#adaptiveprogressbarvalue) or [BindableProgressBarValue](notification-schema.md#bindableprogressbarvalue) | false | Gets or sets the value of the progress bar. Supports data binding. Defaults to 0. Can either be a double between 0.0 and 1.0, `AdaptiveProgressBarValue.Indeterminate`, or `new BindableProgressBarValue("myProgressValue")`. |
+| **ValueStringOverride** | string or [BindableString](notification-schema.md#bindablestring) | false | Gets or sets an optional string to be displayed instead of the default percentage string. If this isn't provided, something like "70%" will be displayed. |
+| **Status** | string or [BindableString](notification-schema.md#bindablestring) | true | Gets or sets a status string (required), which is displayed underneath the progress bar on the left. This string should reflect the status of the operation, like "Downloading..." or "Installing..." |
 
 
 Here's how you would generate the notification seen above...

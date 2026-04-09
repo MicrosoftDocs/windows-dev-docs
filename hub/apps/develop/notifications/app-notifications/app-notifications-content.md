@@ -78,11 +78,11 @@ The attribution area is at the top of the app notification. Starting with Window
 
 Each app notification must specify a **visual** element, where you must provide a generic toast binding and which can contain text and images. These elements will be rendered on various Windows devices, including desktop, phones, tablets, and Xbox.
 
-For all attributes supported in the **visual** section and its child elements, see [App notification schema](toast-schema.md#toastvisual).
+For all attributes supported in the **visual** section and its child elements, see [App notification schema](notification-schema.md#toastvisual).
 
 ## Text elements
 
-Each app notification must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](toast-schema.md#adaptivetext).
+Each app notification must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](notification-schema.md#adaptivetext).
 
 ![A screenshot of an app notification with three lines of text. The top line of text is bold.](images/toast-content-text-elements.png)
 
@@ -195,7 +195,7 @@ var builder = new AppNotificationBuilder()
 
 ## Hero image
 
-App notifications can display a hero image, which is a featured [**ToastGenericHeroImage**](toast-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.
+App notifications can display a hero image, which is a featured [**ToastGenericHeroImage**](notification-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.
 
 ![A screenshot of an app notification showing the hero image placement, above the attribution area.](images/toast-content-hero-image.png)
 
@@ -318,7 +318,7 @@ In addition to the content specified above, you can also display additional adap
 
 This additional content is specified using Adaptive, which you can learn more about by reading the [Adaptive Tiles documentation](/windows/uwp/launch-resume/create-adaptive-tiles).
 
-Note that any adaptive content must be contained within an [**AdaptiveGroup**](./toast-schema.md#adaptivegroup). Otherwise it will not be rendered using adaptive.
+Note that any adaptive content must be contained within an [**AdaptiveGroup**](./notification-schema.md#adaptivegroup). Otherwise it will not be rendered using adaptive.
 
 
 ### Columns and text elements
