@@ -37,7 +37,7 @@ This section provides design and implementation guidance for app notifications i
 - [App notification with pending update activation](toast-pending-update.md)
 - [Custom timestamps on app notifications](custom-timestamps-on-toasts.md)
 - [App notification collections](notification-collections.md)
-- [App notification headers](toast-headers.md)
+- [App notification headers](notification-headers.md)
 - [Notification listener: Access all notifications](notification-listener.md)
 
 ## Limitations

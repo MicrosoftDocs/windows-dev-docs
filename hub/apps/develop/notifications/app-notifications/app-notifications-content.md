@@ -309,7 +309,7 @@ You can group notifications under headers within Notification Center. For exampl
 
 ![A screenshot of a action center showing multiple notifications for the application Notifications Viewer organized under a header labeled "Camping!".](images/toast-content-headers.png)
 
-To learn more about using headers, please see [Toast headers](toast-headers.md).
+To learn more about using headers, please see [App notification headers](notification-headers.md).
 
 
 ## Adaptive content

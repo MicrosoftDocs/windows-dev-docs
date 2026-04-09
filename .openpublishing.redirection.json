@@ -9546,6 +9546,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-headers.md",
+      "redirect_url": "notification-headers",
+      "redirect_document_id": true
+    },
+    {
       "redirect_document_id": false
     },
     {
@@ -9615,7 +9620,7 @@
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-headers.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/toast-headers",
+      "redirect_url": "../../../develop/notifications/app-notifications/notification-headers",
       "redirect_document_id": false
     },
     {

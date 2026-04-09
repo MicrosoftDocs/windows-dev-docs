@@ -53,7 +53,8 @@ Activation from a header is handled through the [**NotificationInvoked**](/windo
 ```csharp
 AppNotificationManager.Default.NotificationInvoked += (sender, args) =>
 {
-    // Arguments specified from the header
+    // For the header defined above, args.Argument contains:
+    // "action=openConversation&id=6289"
     string arguments = args.Argument;
 };
 ```

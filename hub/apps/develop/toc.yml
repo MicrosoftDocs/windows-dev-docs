@@ -477,7 +477,7 @@ items:
           - name: Collections
             href: notifications/app-notifications/notification-collections.md
           - name: Headers
-            href: notifications/app-notifications/toast-headers.md
+            href: notifications/app-notifications/notification-headers.md
           - name: Notification Listener
             href: notifications/app-notifications/notification-listener.md
       - name: Notification delivery methods
