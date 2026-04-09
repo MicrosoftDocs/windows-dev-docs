@@ -3,7 +3,7 @@ description: The Windows Push Notification Services (WNS) enables third-party de
 title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 11/27/2024
+ms.date: 04/09/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -31,6 +31,9 @@ The following diagram shows the complete data flow for sending a push notificati
 Before you can send notifications using WNS, your app must be registered with the Store Dashboard, as described [here](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
 ## Requesting a notification channel
+
+> [!NOTE]
+> The channel-request guidance in this section applies to UWP apps that use [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_). If you're building a Windows App SDK desktop app (WinUI 3, WPF, or WinForms), use `PushNotificationManager` instead — see the [Push notifications quickstart](push-quickstart.md).
 
 When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager#Windows_Networking_PushNotifications_PushNotificationChannelManager_CreatePushNotificationChannelForApplicationAsync_System_String_). For a full discussion and example code, see [How to request, create, and save a notification channel](request-create-save-notification-channel.md). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
 
