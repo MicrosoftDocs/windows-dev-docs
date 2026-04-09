@@ -214,5 +214,5 @@ The toast collections that you create will also be reflected in the user's notif
 
 ## Related topics
 
-* [Toast content](adaptive-interactive-toasts.md)
+* [App notification content](app-notifications-content.md)
 * [Toast headers](toast-headers.md)

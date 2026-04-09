@@ -80,7 +80,7 @@ For unpackaged apps, set up the AUMID so that you can send notifications, and th
 
 * [Send a local app notification from desktop C# apps](app-notifications-csharp-legacy.md)
 * [Send a local app notification from Win32 C++ WRL apps](app-notifications-cpp-wrl-legacy.md)
-* [App notification content documentation](adaptive-interactive-toasts.md)
+* [App notification content documentation](app-notifications-content.md)
 
 
 

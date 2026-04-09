@@ -129,6 +129,6 @@ Clicking on the header, just like clicking on the app title, does not clear any 
 ## Related topics
 
 - [Send a local app notification and handle activation](app-notifications-csharp-legacy.md)
-- [Toast content documentation](adaptive-interactive-toasts.md)
+- [App notification content documentation](app-notifications-content.md)
 
 

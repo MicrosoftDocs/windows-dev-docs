@@ -50,4 +50,4 @@ This screenshot from the app shows the tile editor:
 
 * [Get Notifications Visualizer in the Store](https://apps.microsoft.com/detail/9nblggh5xsl1)
 * [Create adaptive tiles (UWP)](/windows/uwp/launch-resume/create-adaptive-tiles)
-* [Interactive toasts](app-notifications/adaptive-interactive-toasts.md)
+* [App notification content](app-notifications/app-notifications-content.md)

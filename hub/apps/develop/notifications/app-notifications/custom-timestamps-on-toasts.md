@@ -72,5 +72,5 @@ If you sent a local notification, we use the time when the notification platform
 ## Related topics
 
 - [Send a local toast](app-notifications-csharp-legacy.md)
-- [App notification content documentation](adaptive-interactive-toasts.md)
+- [App notification content documentation](app-notifications-content.md)
 

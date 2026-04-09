@@ -181,12 +181,12 @@ void App::OnLaunchedOrActivated(ApplicationExecutionState previousState)
 
 ---
 
-For information about adding buttons, images, inputs, audio, and other rich content to your notifications, see [App notification content](adaptive-interactive-toasts.md).
+For information about adding buttons, images, inputs, audio, and other rich content to your notifications, see [App notification content](app-notifications-content.md).
 
 ## Related content
 
 - [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md)
-- [App notification content](adaptive-interactive-toasts.md)
+- [App notification content](app-notifications-content.md)
 - [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification)
 - [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 

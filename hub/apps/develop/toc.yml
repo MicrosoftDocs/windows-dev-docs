@@ -461,7 +461,7 @@ items:
         - name: App notification content
           items:
           - name: Content
-            href: notifications/app-notifications/adaptive-interactive-toasts.md
+            href: notifications/app-notifications/app-notifications-content.md
           - name: Schema
             href: notifications/app-notifications/toast-schema.md
         - name: Schedule notifications

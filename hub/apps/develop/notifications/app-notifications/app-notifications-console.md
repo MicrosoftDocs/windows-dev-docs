@@ -142,7 +142,7 @@ AppNotificationManager.Default.Unregister();
 ## Related content
 
 - [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md)
-- [App notification content](adaptive-interactive-toasts.md)
+- [App notification content](app-notifications-content.md)
 - [AppNotificationManager Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 - [AppNotificationBuilder Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
 

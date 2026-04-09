@@ -191,7 +191,7 @@ Now you're ready to add modern experiences that light up when users run your app
 
 :white_check_mark: **First, decide what experiences you want to add**
 
-There's lots to choose from. For example, you can simplify your purchase order flow by using [monetization APIs](/windows/uwp/monetize), or [direct attention to your application](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts) when you have something interesting to share, such as a new picture that another user has posted.
+There's lots to choose from. For example, you can simplify your purchase order flow by using [monetization APIs](/windows/uwp/monetize), or [direct attention to your application](/windows/apps/develop/notifications/app-notifications/app-notifications-content) when you have something interesting to share, such as a new picture that another user has posted.
 
 ![Toast notification](images/desktop-to-uwp/toast.png)
 
@@ -320,7 +320,7 @@ void UWP::ShowToast()
 }
 ```
 
-To learn more about notifications, see [Adaptive and Interactive toast notifications](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+To learn more about notifications, see [App notification content](/windows/apps/develop/notifications/app-notifications/app-notifications-content).
 
 ## Support Windows XP, Windows Vista, and Windows 7/8 install bases
 

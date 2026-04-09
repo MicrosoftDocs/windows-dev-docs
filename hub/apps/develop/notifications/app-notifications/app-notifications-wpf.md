@@ -138,7 +138,7 @@ private void SendNotification()
 }
 ```
 
-For information about adding buttons, images, inputs, and other rich content to your notifications, see [App notification content](adaptive-interactive-toasts.md).
+For information about adding buttons, images, inputs, and other rich content to your notifications, see [App notification content](app-notifications-content.md).
 
 ## Packaged app setup
 
@@ -184,7 +184,7 @@ For unpackaged WPF apps, `Register()` handles COM registration automatically. Fo
 ## Related content
 
 - [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md)
-- [App notification content](adaptive-interactive-toasts.md)
+- [App notification content](app-notifications-content.md)
 - [AppNotificationManager Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 - [AppNotificationBuilder Class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
 

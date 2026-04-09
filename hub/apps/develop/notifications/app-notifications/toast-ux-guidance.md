@@ -44,7 +44,7 @@ Buttons trigger an immediate action. By adding buttons, the user can complete a 
     :::column span="2":::
 **Images**
 
-Images can either be [app logo override](adaptive-interactive-toasts.md?tabs=builder-syntax#app-logo-override), [inline](adaptive-interactive-toasts.md?tabs=builder-syntax#inline-image), or [hero](adaptive-interactive-toasts.md?tabs=builder-syntax#hero-image). By adding images, the user can parse your content more quickly. Examples include adding an app logo override image depicting the sender’s profile image to a chat or email notification.
+Images can either be [app logo override](app-notifications-content.md?tabs=builder-syntax#app-logo-override), [inline](app-notifications-content.md?tabs=builder-syntax#inline-image), or [hero](app-notifications-content.md?tabs=builder-syntax#hero-image). By adding images, the user can parse your content more quickly. Examples include adding an app logo override image depicting the sender’s profile image to a chat or email notification.
     :::column-end:::
 :::row-end:::
 
@@ -81,7 +81,7 @@ Progress bars communicate status of long-running operations. By adding a progres
     :::column-end:::
 :::row-end:::
 
-To see all of the UI elements that can be used in a notification, see [App notification content](adaptive-interactive-toasts.md).
+To see all of the UI elements that can be used in a notification, see [App notification content](app-notifications-content.md).
 
 ## Notifications should not be noisy
 

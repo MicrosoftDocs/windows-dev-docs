@@ -80,6 +80,6 @@ Sending a notification with audio is the same as sending a regular notification.
 
 - [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-toast-with-custom-audio)
 - [Send a local toast](app-notifications-csharp-legacy.md)
-- [Toast content documentation](adaptive-interactive-toasts.md)
+- [App notification content documentation](app-notifications-content.md)
 
 

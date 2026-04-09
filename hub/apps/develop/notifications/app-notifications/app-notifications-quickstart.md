@@ -421,7 +421,7 @@ void MainWindow::UpdateNotificationUI(winrt::hstring const& action, winrt::hstri
 ## Resources
 
 - [App notifications overview](index.md)
-- [Adaptive and interactive app notification content](adaptive-interactive-toasts.md)
+- [App notification content](app-notifications-content.md)
 - [App notification progress bar](toast-progress-bar.md)
 - [Notifications code sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)
 - [Microsoft.Windows.AppNotifications API reference](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications)

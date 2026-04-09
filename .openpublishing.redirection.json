@@ -9517,8 +9517,13 @@
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/adaptive-interactive-toasts",
+      "redirect_url": "../../../develop/notifications/app-notifications/app-notifications-content",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/adaptive-interactive-toasts.md",
+      "redirect_url": "app-notifications-content",
+      "redirect_document_id": true
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/channel-types.md",

@@ -171,4 +171,4 @@ Often times, after your sequence of updates have completed (like the file has be
 ## Related topics
 
 - [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-toast-progress-bar)
-- [App notification content documentation](adaptive-interactive-toasts.md)
+- [App notification content documentation](app-notifications-content.md)

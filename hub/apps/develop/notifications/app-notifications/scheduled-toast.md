@@ -29,7 +29,7 @@ Note that scheduled app notifications have a delivery window of 5 minutes. If th
 To fully understand this topic, the following will be helpful...
 
 * A working knowledge of app notification terms and concepts. For more information, see [Toast and action center overview](/archive/blogs/tiles_and_toasts/toast-notification-and-action-center-overview-for-windows-10).
-* A familiarity with Windows 10 app notification content. For more information, see [App notification content](adaptive-interactive-toasts.md) documentation.
+* A familiarity with Windows 10 app notification content. For more information, see [App notification content](app-notifications-content.md) documentation.
 * A Windows desktop app project (WinUI 3, WPF, or other)
 
 ## Step 1: Install NuGet package
@@ -135,7 +135,7 @@ See the [send a local app notification](app-notifications-csharp-legacy.md) docs
 
 ## Resources
 
-* [App notification content documentation](adaptive-interactive-toasts.md)
+* [App notification content documentation](app-notifications-content.md)
 * [AppNotificationManager class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)
 * [AppNotificationBuilder class](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder)
 * [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
