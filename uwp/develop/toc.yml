@@ -912,6 +912,8 @@ items:
     items:
     - name: Overview
       href: ../dotnet-native/index.md
+    - name: Modernize with .NET and Native AOT
+      href: ../dotnet-native/modernize-uwp-apps-with-dotnet.md
     - name: .NET Native and compilation
       href: ../dotnet-native/net-native-and-compilation.md
     - name: Get started
