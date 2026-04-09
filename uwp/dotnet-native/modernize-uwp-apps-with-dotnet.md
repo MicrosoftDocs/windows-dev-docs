@@ -101,7 +101,7 @@ UWP modern .NET projects use SDK-style .csproj files with key properties:
 - **UseUwp**: References WinRT projections for Windows.UI.Xaml types and configures CsWinRT for UWP compatibility
 - **UseUwpTools**: Enables UWP-specific tooling including XAML compiler, project capabilities, and MSIX packaging.  Note this property is enabled by default when `UseUwp` is enabled.
 - **EnableMsixTooling**: Enables single-project MSIX support (no separate packaging project needed)
-- **PublishAot**: Enables Native AOT compilation (required for Microsoft Store publication)
+- **PublishAot**: Enables Native AOT compilation
 - **DisableRuntimeMarshalling**: Optimizes performance for Native AOT scenarios
 
 ## Migrating Existing UWP Apps to Modern .NET
