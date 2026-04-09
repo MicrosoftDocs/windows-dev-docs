@@ -54,6 +54,13 @@ For a full breakdown of delivery methods, see [Choose a notification delivery me
 - [App notifications quickstart](app-notifications/app-notifications-quickstart.md)
 - [Push notifications overview](push-notifications/index.md) — WNS push using `PushNotificationManager`
 
+**Building a WPF or WinForms app?**
+- [App notifications quickstart](app-notifications/app-notifications-quickstart.md) — local toast notifications work packaged or unpackaged
+- [Push notifications quickstart](push-notifications/push-quickstart.md) — WNS push requires MSIX packaging or packaged with external location
+
+> [!IMPORTANT]
+> Windows App SDK push notifications require an [Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account) and an **Azure AD app registration**. If your app is packaged, you also need to submit a Package Family Name (PFN) mapping request by email — allow for **up to one week** of processing time before launch. See the [push notifications quickstart](push-notifications/push-quickstart.md) for full prerequisites.
+
 **Building or maintaining a UWP app?**
 - [Send a local app notification from C++ UWP apps](app-notifications/send-local-toast-cpp-uwp.md)
 - [Windows Push Notification Services (WNS) overview](push-notifications/wns-overview.md)

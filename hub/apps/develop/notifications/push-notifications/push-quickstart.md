@@ -21,6 +21,21 @@ In this quickstart you will create a desktop Windows application that sends and 
 - An [Azure Account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) is required in order to use Windows App SDK push notifications.
 - Read [Push notifications overview](../../../windows-app-sdk/notifications/push-notifications/index.md)
 
+## Packaging requirements
+
+Push notifications in Windows App SDK require that your app has package identity. The following table summarizes what's required based on your packaging model:
+
+| Packaging model | COM activator required | PFN mapping required | Unpackaged supported |
+|---|---|---|---|
+| **MSIX packaged** (WinUI 3, packaged WPF/WinForms) | Yes — in `Package.appxmanifest` | Yes — via PFN mapping email | No |
+| **Packaged with external location** | Yes — in `Package.appxmanifest` | Yes — via PFN mapping email | No |
+| **Truly unpackaged** (no package identity) | No (skip Step 3) | No | Yes — limited functionality |
+
+> [!IMPORTANT]
+> If your app is packaged (MSIX or packaged with external location), you must map your app's **Package Family Name (PFN)** to its **Azure AppId** before push notifications will work. Mapping requests are submitted by email to [Win_App_SDK_Push@microsoft.com](mailto:Win_App_SDK_Push@microsoft.com) and are processed **on a weekly basis**. Plan for this lead time before your launch.
+>
+> See [Step 4: Map your app's Package Family Name to its Azure AppId](#step-4-map-your-apps-package-family-name-to-its-azure-appid) for details.
+
 ## Sample app
 
 This quickstart walks through adding push notifications support to your app on Windows App SDK 1.7. See similar code to this quickstart in the sample apps found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/1.7-stable/Samples/Notifications/Push). Make sure to check out the [branch with your preferred version of the Windows App SDK](https://github.com/microsoft/WindowsAppSDK-Samples/branches) for the samples that best match your project.
@@ -162,6 +177,9 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
 ```
 
 > [!NOTE]
+> The `Id` attribute in `<com:Class>` must be set to your **Azure AppId** (the Application (client) ID from your Azure AD app registration). This is how Windows App SDK connects your app's COM activation to its Azure identity — when WNS activates your app to deliver a background push notification, it uses this GUID to locate and launch the correct COM server. Use the same Azure AppId value you noted in Step 1 above.
+
+> [!NOTE]
 > An example of the completed C++ class for this example can be found [after Step 5](#example-code). Steps 4 and 5 provide step-by-step guidance to add each piece in the final example.
 
 ### Step 4: Register for and respond to push notifications on app startup
@@ -195,7 +213,7 @@ Now that there's confirmed push notification support, add in behavior based on [
 WNS Channel URIs are the HTTP endpoints for sending push notifications. Each client must request a Channel URI and register it with the WNS server to receive push notifications.
 
 > [!NOTE]
-> WNS Channel URIs expire after 30 days.
+> WNS Channel URIs expire after 30 days. **Request a fresh channel URI on every app launch** rather than caching a previous one. When the new URI differs from what your backend has stored, send the updated URI to your cloud service so it can keep its records current. Do not assume the URI will remain stable between sessions — treating it as a mutable, session-scoped value avoids silent delivery failures caused by expired or stale channel URIs.
 
 ```cpp
 auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(winrt::guid("[Your app's Azure ObjectID]")) };
