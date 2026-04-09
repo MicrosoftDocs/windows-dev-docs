@@ -82,7 +82,7 @@ For all attributes supported in the **visual** section and its child elements, s
 
 ## Text elements
 
-Each app notification must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](notification-schema.md#adaptivetext).
+Each app notification must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](notification-schema.md#adaptivetext). Text elements support data binding, which allows you to update text content after the notification is displayed. For more information, see [App notification progress bar and data binding](notification-progress-bar.md).
 
 ![A screenshot of an app notification with three lines of text. The top line of text is bold.](images/toast-content-text-elements.png)
 
@@ -296,11 +296,11 @@ var builder = new AppNotificationBuilder()
 
 ## Progress bar
 
-You can provide a progress bar on your app notification to keep the user informed of the progress of operations such as downloads.
+You can provide a progress bar on your app notification to keep the user informed of the progress of operations such as downloads. Progress bars support data binding, which allows you to dynamically update the progress values after the notification is displayed.
 
 ![A screenshot of an app notification showing a progress bar.](images/toast-content-progress-bar.png)
 
-To learn more about using a progress bar, please see [Toast progress bar](toast-progress-bar.md).
+To learn more about using a progress bar, see [App notification progress bar and data binding](notification-progress-bar.md).
 
 
 ## Headers

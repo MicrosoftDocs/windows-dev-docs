@@ -9554,6 +9554,16 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-progress-bar.md",
+      "redirect_url": "notification-progress-bar",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-pending-update.md",
+      "redirect_url": "notification-pending-update",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/choosing-a-notification-delivery-method.md",
       "redirect_url": "../../../develop/notifications/choosing-a-notification-delivery-method",
       "redirect_document_id": false
@@ -9630,12 +9640,12 @@
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-pending-update.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/toast-pending-update",
+      "redirect_url": "../../../develop/notifications/app-notifications/notification-pending-update",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-progress-bar.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/toast-progress-bar",
+      "redirect_url": "../../../develop/notifications/app-notifications/notification-progress-bar",
       "redirect_document_id": false
     },
     {

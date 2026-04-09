@@ -469,9 +469,9 @@ items:
           - name: Custom audio
             href: notifications/app-notifications/custom-audio-on-toasts.md
           - name: Progress bar
-            href: notifications/app-notifications/toast-progress-bar.md
+            href: notifications/app-notifications/notification-progress-bar.md
           - name: Pending update
-            href: notifications/app-notifications/toast-pending-update.md
+            href: notifications/app-notifications/notification-pending-update.md
           - name: Custom timestamps
             href: notifications/app-notifications/custom-timestamps-on-toasts.md
           - name: Collections
