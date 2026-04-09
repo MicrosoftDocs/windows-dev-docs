@@ -127,6 +127,7 @@ Once your project is configured, you can call WinRT APIs directly. The following
 
 
 ```csharp
+using System.Security;
 using Windows.Data.Xml.Dom;
 using Windows.UI.Notifications;
 
@@ -134,9 +135,9 @@ void ShowToast(string title, string content, string image, string logo)
 {
     string xmlString =
         $@"<toast><visual><binding template='ToastGeneric'>" +
-        $"<text>{title}</text><text>{content}</text>" +
-        $"<image src='{image}'/>" +
-        $"<image src='{logo}' placement='appLogoOverride' hint-crop='circle'/>" +
+        $"<text>{SecurityElement.Escape(title)}</text><text>{SecurityElement.Escape(content)}</text>" +
+        $"<image src='{SecurityElement.Escape(image)}'/>" +
+        $"<image src='{SecurityElement.Escape(logo)}' placement='appLogoOverride' hint-crop='circle'/>" +
         "</binding></visual></toast>";
 
     XmlDocument toastXml = new XmlDocument();
@@ -153,13 +154,30 @@ void ShowToast(string title, string content, string image, string logo)
 using namespace winrt::Windows::UI::Notifications;
 using namespace winrt::Windows::Data::Xml::Dom;
 
+std::wstring XmlEscape(std::wstring_view input)
+{
+    std::wstring result;
+    result.reserve(input.size());
+    for (wchar_t ch : input) {
+        switch (ch) {
+            case L'&':  result += L"&amp;";  break;
+            case L'<':  result += L"&lt;";   break;
+            case L'>':  result += L"&gt;";   break;
+            case L'\'': result += L"&apos;"; break;
+            case L'"':  result += L"&quot;"; break;
+            default:    result += ch;        break;
+        }
+    }
+    return result;
+}
+
 void ShowToast(std::wstring title, std::wstring content, std::wstring image, std::wstring logo)
 {
     std::wostringstream xml;
     xml << L"<toast><visual><binding template='ToastGeneric'>"
-        << L"<text>" << title << L"</text><text>" << content << L"</text>"
-        << L"<image src='" << image << L"'/>"
-        << L"<image src='" << logo << L"' placement='appLogoOverride' hint-crop='circle'/>"
+        << L"<text>" << XmlEscape(title) << L"</text><text>" << XmlEscape(content) << L"</text>"
+        << L"<image src='" << XmlEscape(image) << L"'/>"
+        << L"<image src='" << XmlEscape(logo) << L"' placement='appLogoOverride' hint-crop='circle'/>"
         << L"</binding></visual></toast>";
 
     XmlDocument toastXml;
