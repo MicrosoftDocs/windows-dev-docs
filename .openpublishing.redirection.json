@@ -9541,6 +9541,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-collections.md",
+      "redirect_url": "notification-collections",
+      "redirect_document_id": true
+    },
+    {
       "redirect_document_id": false
     },
     {
@@ -9600,7 +9605,7 @@
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-collections.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/toast-collections",
+      "redirect_url": "../../../develop/notifications/app-notifications/notification-collections",
       "redirect_document_id": false
     },
     {

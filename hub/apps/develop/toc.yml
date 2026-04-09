@@ -475,7 +475,7 @@ items:
           - name: Custom timestamps
             href: notifications/app-notifications/custom-timestamps-on-toasts.md
           - name: Collections
-            href: notifications/app-notifications/toast-collections.md
+            href: notifications/app-notifications/notification-collections.md
           - name: Headers
             href: notifications/app-notifications/toast-headers.md
           - name: Notification Listener

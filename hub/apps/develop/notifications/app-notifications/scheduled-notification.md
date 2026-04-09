@@ -18,10 +18,13 @@ Scheduled app notifications have a delivery window of 5 minutes. If the computer
 
 For more information about app notifications, see [App notifications overview](index.md).
 
+> [!NOTE]
+> The code examples in this article use the `Microsoft.Windows.AppNotifications` namespace to build notification content and the `Windows.UI.Notifications` namespace for scheduling. These two namespaces can be used together in the same app.
+
 
 ## Schedule the notification
 
-To schedule a notification for a future time, use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to define the notification content and the [**ScheduledToastNotification**](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) API to schedule it. The following example schedules a notification to appear 10 seconds from now.
+To schedule a notification for a future time, use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to define the notification content, then call [**AddToSchedule**](/uwp/api/windows.ui.notifications.toastnotifier.addtoschedule) with a [**ScheduledToastNotification**](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification). The following example schedules a notification to appear 10 seconds from now.
 
 ```csharp
 using Microsoft.Windows.AppNotifications.Builder;
@@ -50,7 +53,7 @@ The **Tag** and **Group** properties act as a composite primary key for the noti
 
 ## Cancel scheduled notifications
 
-To cancel a scheduled notification, retrieve the list of scheduled notifications from the [**ToastNotificationManager**](/uwp/api/Windows.UI.Notifications.ToastNotificationManager) and remove the one matching the tag you specified earlier.
+To cancel a scheduled notification, call [**GetScheduledToastNotifications**](/uwp/api/windows.ui.notifications.toastnotifier.getscheduledtoastnotifications) to retrieve the list of pending notifications, then call [**RemoveFromSchedule**](/uwp/api/windows.ui.notifications.toastnotifier.removefromschedule) on the one matching the tag you specified earlier.
 
 ```csharp
 var notifier = ToastNotificationManager.CreateToastNotifier();
