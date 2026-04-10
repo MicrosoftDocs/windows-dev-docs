@@ -1,6 +1,6 @@
 ---
-title: Quickstart: Use app notifications with the Windows App SDK
-description: Send app notifications using the Windows App SDK
+title: "Quickstart: Send and Handle App Notifications"
+description: Send and respond to local app notifications in a WinUI app using the Windows App SDK. Walk through creating notification content, handling foreground and background activation, and configuring the app manifest.
 ms.topic: quickstart
 ms.date: 07/25/2025
 keywords: toast, local, notification, windows app sdk, winappsdk
@@ -12,12 +12,12 @@ ms.custom: template-quickstart
 
 ![A screen capture showing an app notification above the task bar. The notification is a reminder for an event. The app name, event name, event time, and event location are shown. A selection input displays the currently selected value, "Going". There are two buttons labeled "RSVP" and "Dismiss"](images/shell-1x.png)
 
-In this quickstart, you will create a WinUI app that sends and responds to local app notifications using the [Windows App SDK](../../../windows-app-sdk/index.md).
+In this quickstart, you'll create a WinUI app that sends and responds to local app notifications using the [Windows App SDK](../../../windows-app-sdk/index.md).
 
 For complete sample apps that implement app notifications, see the [Windows App SDK Samples repo on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/).
 
 > [!IMPORTANT]
-> Notifications for an elevated (admin) app is currently not supported.
+> App notifications aren't supported for elevated (admin) apps.
 
 ## Prerequisites
 

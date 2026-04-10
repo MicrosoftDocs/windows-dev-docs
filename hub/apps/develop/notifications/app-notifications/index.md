@@ -1,6 +1,6 @@
 ---
-title: App notifications overview
-description: Overview of Windows App SDK App Notifications
+title: App Notifications Overview for Windows Apps
+description: Learn how to send, manage, and respond to app notifications in Windows apps using the Windows App SDK notification APIs and Notification Center.
 ms.topic: concept-article
 ms.date: 03/01/2026
 keywords: toast, notification

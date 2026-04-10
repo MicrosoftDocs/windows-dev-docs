@@ -1,6 +1,6 @@
 ---
-description: Learn about additional app notification features including removing notifications, scheduling, custom audio, progress bars, and more.
-title: Additional app notification features
+description: Explore additional app notification features in the Windows App SDK, including removing notifications, scheduling, custom audio, progress bars, and organizing with collections and headers.
+title: Additional App Notification Features
 label: Additional app notification features
 template: detail.hbs
 ms.date: 07/28/2025

@@ -1,6 +1,6 @@
 ---
-description: Learn how to remove app notifications from Notification Center and control notification expiration.
-title: Remove app notifications
+description: Learn how to remove app notifications from Notification Center by tag and group, set expiration times, and control notification behavior on reboot with the Windows App SDK.
+title: Remove and Manage App Notifications
 label: Remove app notifications
 template: detail.hbs
 ms.date: 07/28/2025

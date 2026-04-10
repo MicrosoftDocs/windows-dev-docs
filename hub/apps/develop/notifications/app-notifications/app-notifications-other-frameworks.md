@@ -1,6 +1,6 @@
 ---
-description: Learn how to use app notifications with WPF, WinForms, Console, and UWP apps.
-title: Use app notifications with other frameworks
+description: Learn how to send app notifications and handle activation in WPF, WinForms, Console, and UWP apps using the Windows App SDK notification APIs.
+title: App Notifications for WPF, WinForms, Console, and UWP
 label: Use app notifications with other frameworks
 template: detail.hbs
 ms.date: 07/28/2025
@@ -20,3 +20,9 @@ The [app notifications quickstart](app-notifications-quickstart.md) demonstrates
 | UWP | [Use app notifications with a UWP app](/uwp/develop/app-notifications-uwp) |
 
 For notification content, additional features, and design guidance, see [App notifications overview](index.md).
+
+## See also
+
+- [App notifications overview](index.md)
+- [Quickstart: App notifications](app-notifications-quickstart.md)
+- [App notification content](app-notifications-content.md)
