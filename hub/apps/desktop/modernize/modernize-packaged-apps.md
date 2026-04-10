@@ -40,6 +40,6 @@ For more information, see [Add Windows App SDK features to your existing project
 
 ## Distribute
 
-If you package your app in an MSIX package, then it's very easy to distribute it by publishing it the Microsoft Store, or by sideloading it onto systems.
+If you package your app in an MSIX package, then it's very easy to distribute it by publishing it to the Microsoft Store, or by sideloading it onto systems.
 
 For more info, see [Package and deploy your app](/windows/apps/package-and-deploy/).
