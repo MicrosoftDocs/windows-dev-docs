@@ -21,7 +21,7 @@ items:
               href: ../desktop/modernize/get-activation-info-for-packaged-apps.md
             - name: Use the Windows App SDK in an existing project
               href: /windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project
-            - name: Distribute your packaged app
+            - name: Package your app from source code overview
               href: /windows/msix/desktop/source-code-overview
         - name: Package your app using single-project MSIX
           href: ../windows-app-sdk/single-project-msix.md
