@@ -19,10 +19,10 @@ items:
               href: ../desktop/modernize/integrate-packaged-app-with-file-explorer.md
             - name: Get activation info for packaged apps
               href: ../desktop/modernize/get-activation-info-for-packaged-apps.md
-            - name: Extend with UWP components
-              href: ../desktop/modernize/desktop-to-uwp-extend.md
-            - name: Distribute your packaged app
-              href: ../desktop/modernize/desktop-to-uwp-distribute.md
+            - name: Use the Windows App SDK in an existing project
+              href: /windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project
+            - name: Package your app from source code overview
+              href: /windows/msix/desktop/source-code-overview
         - name: Package your app using single-project MSIX
           href: ../windows-app-sdk/single-project-msix.md
         - name: Grant package identity by packaging with external location
