@@ -5702,7 +5702,7 @@
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-distribute.md",
-      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-distribute",
+      "redirect_url": "/windows/msix/desktop/source-code-overview",
       "redirect_document_id": false
     },
     {
@@ -5712,7 +5712,7 @@
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-extend.md",
-      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-extend",
+      "redirect_url": "/windows/apps/windows-app-sdk/",
       "redirect_document_id": false
     },
     {
