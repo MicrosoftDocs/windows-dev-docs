@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 An app notification is a UI popup that appears outside of your app's window, delivering timely information or actions to the user. Notifications can be purely informational, can launch your app when clicked, or can trigger a background action without bringing your app to the foreground.
 
-:::image type="content" source="/hub/apps/develop/notifications/app-notifications/images/toast-notification.png" alt-text="Screenshot of an app notification":::
+:::image type="content" source="images/toast-notification.png" alt-text="Screenshot of an app notification":::
 
 This article walks you through the steps to create and send an app notification from a UWP app, and then handle activation when the user interacts with it.
 

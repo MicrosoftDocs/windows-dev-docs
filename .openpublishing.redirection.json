@@ -9696,6 +9696,76 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/develop/notifications/app-notifications/adaptive-interactive-toasts.md",
+      "redirect_url": "app-notifications-content",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/send-local-toast.md",
+      "redirect_url": "app-notifications-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/send-local-toast-cpp-uwp.md",
+      "redirect_url": "app-notifications-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/send-local-toast-desktop-cpp-wrl.md",
+      "redirect_url": "app-notifications-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/send-local-toast-other-apps.md",
+      "redirect_url": "app-notifications-other-frameworks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-desktop-apps.md",
+      "redirect_url": "app-notifications-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-schema.md",
+      "redirect_url": "app-notifications-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/scheduled-toast.md",
+      "redirect_url": "app-notifications-scheduled",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-collections.md",
+      "redirect_url": "app-notifications-collections",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-headers.md",
+      "redirect_url": "app-notifications-headers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-pending-update.md",
+      "redirect_url": "app-notifications-pending-update",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/toast-progress-bar.md",
+      "redirect_url": "app-notifications-progress-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/custom-audio-on-toasts.md",
+      "redirect_url": "app-notifications-custom-audio",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/custom-timestamps-on-toasts.md",
+      "redirect_url": "app-notifications-custom-timestamps",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
       "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
       "redirect_document_id": false
