@@ -134,6 +134,9 @@ void MainWindow::SendNotificationButton_Click(winrt::Windows::Foundation::IInspe
 
 At this point, you can build and run your app. Click the **Send App Notification** button to display the notification. Note that clicking the notification won't perform any action yet — in the next section, you'll learn how to handle app activation so your app can respond when a user clicks the notification.
 
+> [!NOTE]
+> App notifications are not supported when your app is running with administrator privileges (elevated). [**Show**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show) will fail silently and no notification will be displayed. Make sure you run your app without elevation when testing notifications.
+
 ## Update the app package manifest file
 
 The `Package.appmanifest` file provides the details of the MSIX package for an app. To enable your app to be launched when a user interacts with an app notification, you must update your app package manifest file so that your app is registered with the system as a target for app notification activation. For more information about app package manifests, see [App package manifest](/uwp/schemas/appxpackage/appx-package-manifest).
@@ -418,11 +421,15 @@ void MainWindow::UpdateNotificationUI(winrt::hstring const& action, winrt::hstri
 
 ---
 
-## Resources
+## Next steps
+
+- [App notification content](app-notifications-content.md) — learn how to add images, buttons, inputs, and other UI elements to your notifications.
+- [Remove app notifications](manage-app-notifications.md) — learn how to tag, remove, and set expiration on your notifications.
+
+## See also
 
 - [App notifications overview](index.md)
-- [App notification content](app-notifications-content.md)
-- [App notification progress bar](notification-progress-bar.md)
+- [App notification progress bar](app-notifications-progress-bar.md)
 - [Notifications code sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)
 - [Microsoft.Windows.AppNotifications API reference](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications)
 - [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root)

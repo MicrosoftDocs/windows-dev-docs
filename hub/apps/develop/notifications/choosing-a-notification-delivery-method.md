@@ -119,7 +119,7 @@ By default, scheduled notifications expire three days from the time they are del
 
 For more information, see these topics:
 
--   [Schedule an app notification](app-notifications/scheduled-notification.md)
+-   [Schedule an app notification](app-notifications/app-notifications-scheduled.md)
 -   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Periodic notifications

@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 Use collections to organize your app's notifications in Notification Center. Collections help users locate information more easily and allow developers to better manage their notifications.
 
-A messaging app, for example, can separate notifications by chat group. Each group title ("Comp Sci 160A Project Chat", "Direct Messages", "Lacrosse Team Chat") is a separate collection. Notifications are grouped as if they were from a separate app, even though they all come from the same app. For a more subtle way to organize notifications, see [App notification headers](notification-headers.md).
+A messaging app, for example, can separate notifications by chat group. Each group title ("Comp Sci 160A Project Chat", "Direct Messages", "Lacrosse Team Chat") is a separate collection. Notifications are grouped as if they were from a separate app, even though they all come from the same app. For a more subtle way to organize notifications, see [App notification headers](app-notifications-headers.md).
 
 ![Collection Example with two different Groups of Notifications](images/toast-collection-example.png)
 

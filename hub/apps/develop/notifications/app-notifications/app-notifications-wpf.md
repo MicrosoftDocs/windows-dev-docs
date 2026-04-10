@@ -49,7 +49,7 @@ For unpackaged apps, add:
 
 ## Register for app notifications
 
-In your `App.xaml.cs`, register for notifications in the `Startup` event handler. You must register your `NotificationInvoked` handler *before* calling `Register()`.
+In your `App.xaml.cs`, register for notifications in the `Startup` event handler. You must register your [**NotificationInvoked**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked) handler *before* calling [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register).
 
 First, update `App.xaml` to use a `Startup` event handler instead of `StartupUri`:
 
@@ -117,7 +117,7 @@ public partial class App : Application
 
 ## Send an app notification
 
-Use the `AppNotificationBuilder` API to construct and send a notification.
+Use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to construct notification content and [**AppNotificationManager.Show**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show) to send a notification.
 
 **MainWindow.xaml.cs**
 

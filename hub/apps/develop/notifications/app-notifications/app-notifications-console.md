@@ -49,7 +49,7 @@ For unpackaged apps, add:
 
 ## Register for app notifications
 
-In your `Main` method, register the `NotificationInvoked` handler *before* calling `Register()`. The console app must remain running to receive activation callbacks when notifications are clicked.
+In your `Main` method, register the [**NotificationInvoked**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked) handler *before* calling [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register). The console app must remain running to receive activation callbacks when notifications are clicked.
 
 **Program.cs**
 
@@ -75,7 +75,7 @@ AppNotificationManager.Default.Register();
 
 ## Send an app notification
 
-Use the `AppNotificationBuilder` API to construct and send a notification.
+Use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to construct notification content and [**AppNotificationManager.Show**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show) to send a notification.
 
 ```csharp
 var notification = new AppNotificationBuilder()

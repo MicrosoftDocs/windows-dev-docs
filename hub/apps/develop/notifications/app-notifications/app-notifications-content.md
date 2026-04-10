@@ -78,15 +78,15 @@ The attribution area is at the top of the app notification. Starting with Window
 
 Each app notification must specify a **visual** element, where you must provide a generic toast binding and which can contain text and images. These elements will be rendered on various Windows devices, including desktop, phones, tablets, and Xbox.
 
-For all attributes supported in the **visual** section and its child elements, see [App notification schema](notification-schema.md#toastvisual).
+For all attributes supported in the **visual** section and its child elements, see [App notification schema](app-notifications-schema.md#toastvisual).
 
 ## Text elements
 
-Each app notification must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](notification-schema.md#adaptivetext). Text elements support data binding, which allows you to update text content after the notification is displayed. For more information, see [App notification progress bar and data binding](notification-progress-bar.md).
+Each app notification must have at least one text element, and can contain two additional text elements, all of type [**AdaptiveText**](app-notifications-schema.md#adaptivetext). Text elements support data binding, which allows you to update text content after the notification is displayed. For more information, see [App notification progress bar and data binding](app-notifications-progress-bar.md).
 
 ![A screenshot of an app notification with three lines of text. The top line of text is bold.](images/toast-content-text-elements.png)
 
-You can control how many lines of text are displayed by using the **HintMaxLines** property on the text. The default (and maximum) is up to 2 lines of text for the title, and up to 4 lines (combined) for the two additional description elements (the second and third **AdaptiveText**).
+You can control how many lines of text are displayed by using the [**AppNotificationTextProperties.SetMaxLines**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationtextproperties.setmaxlines) method. The default (and maximum) is up to 2 lines of text for the title, and up to 4 lines (combined) for the two additional description elements (the second and third **AdaptiveText**).
 
 
 ### [Windows App SDK](#tab/appsdk)
@@ -117,7 +117,7 @@ var builder = new AppNotificationBuilder()
 
 ## Inline image
 
-By default, images are displayed inline, after any text elements, filling the full width of the visual area.
+By default, images are displayed inline, after any text elements, filling the full width of the visual area. Use [**AppNotificationBuilder.SetInlineImage**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.setinlineimage) to add an inline image.
 
 ![A screenshot of an app notification showing the default image placement, inline, filling the full width of the visual area.](images/toast-content-inline-image.png)
 
@@ -149,7 +149,7 @@ AppNotificationManager.Default.Show(builder.BuildNotification());
 
 ## App logo override
 
-Specifying a **placement** value of "appLogoOverride" will cause the image to be displayed in a square on the left side of the visual area. The name of this property reflects the behavior in previous versions of Windows, where the image would replace the default app logo image. In Windows 11, the app logo is displayed in the attribution area, so it is not overridden by the **appLogoOverride** image placement.
+Specifying a **placement** value of "appLogoOverride" will cause the image to be displayed in a square on the left side of the visual area. Use [**AppNotificationBuilder.SetAppLogoOverride**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.setapplogooverride) to set this image. The name of this property reflects the behavior in previous versions of Windows, where the image would replace the default app logo image. In Windows 11, the app logo is displayed in the attribution area, so it is not overridden by the **appLogoOverride** image placement.
 
 Image dimensions are 48x48 pixels at 100% scaling. We generally recommend providing a version each icon asset for each scale factor: 100%, 125%, 150%, 200%, and 400%. 
 
@@ -164,7 +164,7 @@ var builder = new AppNotificationBuilder()
 
 ## Hint crop
 
-Microsoft style guidelines recommend representing profile pictures with a circular image to provide a consistent representation of people across apps and the shell. Set the **HintCrop** property to **Circle** to render the image with a circular crop.  
+Microsoft style guidelines recommend representing profile pictures with a circular image to provide a consistent representation of people across apps and the shell. Pass [**AppNotificationImageCrop.Circle**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationimagecrop) to **SetAppLogoOverride** to render the image with a circular crop.
 
 ![A screenshot of an app notification showing the app logo override image placement cropped into a circle on the left side of the visual area of the toast.](images/toast-content-hint-crop.png)
 
@@ -195,7 +195,7 @@ var builder = new AppNotificationBuilder()
 
 ## Hero image
 
-App notifications can display a hero image, which is a featured [**ToastGenericHeroImage**](notification-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Image dimensions are 364x180 pixels at 100% scaling.
+App notifications can display a hero image, which is a featured [**ToastGenericHeroImage**](app-notifications-schema.md#toastgenericheroimage) displayed prominently within the toast banner and while inside Notification Center. Use [**AppNotificationBuilder.SetHeroImage**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.setheroimage) to add a hero image. Image dimensions are 364x180 pixels at 100% scaling.
 
 ![A screenshot of an app notification showing the hero image placement, above the attribution area.](images/toast-content-hero-image.png)
 
@@ -226,7 +226,7 @@ If an image exceeds the file size, or fails to download, or times out, the image
 
 ## Attribution text
 
-If you need to reference the source of your content, you can use attribution text. This text is always displayed below any text elements, but above inline images. The text uses a slightly smaller size than standard text elements to help to distinguish from regular text elements.
+If you need to reference the source of your content, you can use attribution text. Use [**AppNotificationBuilder.SetAttributionText**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.setattributiontext) to set attribution text. This text is always displayed below any text elements, but above inline images. The text uses a slightly smaller size than standard text elements to help to distinguish from regular text elements.
 
 On older versions of Windows that don't support attribution text, the text will simply be displayed as another text element (assuming you don't already have the maximum of three text elements).
 
@@ -267,7 +267,7 @@ You can override the system-provided timestamp with your own timestamp that accu
 
 ![Screenshot of a notification in the Notifications Center with a custom timestamp](images/toast-content-custom-timestamp.png)
 
-To learn more about using a custom timestamp, please see [Custom timestamps on app notifications](custom-timestamps-on-notifications.md).
+To learn more about using a custom timestamp, please see [Custom timestamps on app notifications](app-notifications-custom-timestamps.md).
 
 ### [Windows App SDK](#tab/appsdk)
 
@@ -300,7 +300,7 @@ You can provide a progress bar on your app notification to keep the user informe
 
 ![A screenshot of an app notification showing a progress bar.](images/toast-content-progress-bar.png)
 
-To learn more about using a progress bar, see [App notification progress bar and data binding](notification-progress-bar.md).
+To learn more about using a progress bar, see [App notification progress bar and data binding](app-notifications-progress-bar.md).
 
 
 ## Headers
@@ -309,7 +309,7 @@ You can group notifications under headers within Notification Center. For exampl
 
 ![A screenshot of a action center showing multiple notifications for the application Notifications Viewer organized under a header labeled "Camping!".](images/toast-content-headers.png)
 
-To learn more about using headers, please see [App notification headers](notification-headers.md).
+To learn more about using headers, please see [App notification headers](app-notifications-headers.md).
 
 
 ## Adaptive content
@@ -318,7 +318,7 @@ In addition to the content specified above, you can also display additional adap
 
 This additional content is specified using Adaptive, which you can learn more about by reading the [Adaptive Tiles documentation](/windows/uwp/launch-resume/create-adaptive-tiles).
 
-Note that any adaptive content must be contained within an [**AdaptiveGroup**](./notification-schema.md#adaptivegroup). Otherwise it will not be rendered using adaptive.
+Note that any adaptive content must be contained within an [**AdaptiveGroup**](./app-notifications-schema.md#adaptivegroup). Otherwise it will not be rendered using adaptive.
 
 
 ### Columns and text elements
@@ -361,7 +361,7 @@ Here's an example where columns and some advanced adaptive text elements are use
 
 ## Buttons
 
-Buttons make your toast interactive, letting the user take quick actions on your app notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app. Buttons appear in the expanded portion of your notification.
+Buttons make your toast interactive, letting the user take quick actions on your app notification without interrupting their current workflow. For example, users can reply to a message directly from within a toast, or delete an email without even opening the email app. Buttons appear in the expanded portion of your notification. Use [**AppNotificationButton**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton) to define buttons and [**AppNotificationBuilder.AddButton**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.addbutton) to add them to the notification.
 
 To learn more about implementing buttons end-to-end, see [App notifications overview](index.md).
 
@@ -411,7 +411,7 @@ var builder = new AppNotificationBuilder()
 
 ### Buttons with icons
 
-You can add icons to your buttons. These icons are white transparent 16x16 pixel images at 100% scaling, and should have no padding included in the image itself. If you choose to provide icons on an app notification, you must provide icons for ALL of your buttons in the notification, as it transforms the style of your buttons into icon buttons.
+You can add icons to your buttons using [**AppNotificationButton.SetIcon**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton.seticon). These icons are white transparent 16x16 pixel images at 100% scaling, and should have no padding included in the image itself. If you choose to provide icons on an app notification, you must provide icons for ALL of your buttons in the notification, as it transforms the style of your buttons into icon buttons.
 
 > [!NOTE]
 > For accessibility, be sure to include a contrast-white version of the icon (a black icon for white backgrounds), so that when the user turns on High Contrast White mode, your icon is visible. For more information, see [Tile and toast notification support for language, scale, and high contrast](/windows/uwp/launch-resume/tile-toast-language-scale-contrast).
@@ -470,7 +470,7 @@ var builder = new AppNotificationBuilder()
 
 ### Buttons with colors
 
-**New in Windows 11 Update**: You can add red or green colors to your buttons by adding the **useButtonStyle** attribute to the **toast** XML element and the **hint-buttonStyle** attribute to the action XML element as seen below.
+**New in Windows 11 Update**: You can add red or green colors to your buttons by using [**AppNotificationButton.SetButtonStyle**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton.setbuttonstyle) with [**AppNotificationButtonStyle**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuttonstyle). In XML, add the **useButtonStyle** attribute to the **toast** element and the **hint-buttonStyle** attribute to the action element as seen below.
 
 
 ![A screenshot of a notification with three buttons, the two left buttons are green with icons for starting a video call or starting an audio call. The third button is red and has an icon for rejecting the call.](images/toast-content-button-colors.png)
@@ -543,7 +543,7 @@ var builder = new AppNotificationBuilder()
 
 ## Context menu actions
 
-You can add additional context menu actions to the existing context menu that appears when the user right clicks your app notification or selects the context menu icon.
+You can add additional context menu actions to the existing context menu that appears when the user right clicks your app notification or selects the context menu icon. Use [**AppNotificationButton.SetContextMenuPlacement**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbutton.setcontextmenuplacement) to place a button in the context menu instead of the action bar.
 
 > [!NOTE]
 > On older devices, these additional context menu actions will simply appear as normal buttons on your notification.
@@ -594,7 +594,7 @@ Inputs are specified within the **Actions** region of the app notification, mean
 
 ### Quick reply text box
 
-To enable a quick reply text box (for example, in a messaging app) add a text input and a button, and reference the ID of the text input field so that the button is displayed next to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
+To enable a quick reply text box (for example, in a messaging app) add a text input with [**AppNotificationBuilder.AddTextBox**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.addtextbox) and a button, and reference the ID of the text input field so that the button is displayed next to the input field. The optional icon for the button, if provided, should be a 32x32 pixel image with no padding, white pixels set to transparent, and 100% scale.
 
 ![A screenshot of an app notification with a profile picture and some lines of text. A text box for typing directly into the notification is included as well as a button to send the reply.](images/toast-content-text-box.png)
 
@@ -676,7 +676,7 @@ You also can have one (or many) inputs with normal buttons displayed below the i
 
 ### Selection input
 
-In addition to text boxes, you can also use a selection menu.
+In addition to text boxes, you can also use a selection menu with [**AppNotificationBuilder.AddComboBox**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.addcombobox).
 
 ![A screenshot of an app notification showing a line of text, a selection input with "Lunch" as the selected item, and a row with two buttons labeled "Reserve" and "Call restaurant".](images/toast-content-selection-input.png)
 
@@ -737,7 +737,7 @@ To use the system snooze and dismiss actions:
 
 ## Audio
 
-Custom audio can be referenced via the following paths:
+Use [**AppNotificationBuilder.SetAudioUri**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.setaudiouri) to specify a custom audio file, or use [**AppNotificationBuilder.SetAudioEvent**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.setaudioevent) to select a system sound. Custom audio can be referenced via the following paths:
 
 - ms-appx:///
 - ms-appdata:///
@@ -774,12 +774,12 @@ var builder = new AppNotificationBuilder()
 
 ---
 
-See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in app notifications. To learn how to send an app notification that uses custom audio, see [Custom audio on app notifications](custom-audio-on-notifications.md).
+See the [audio schema page](/uwp/schemas/tiles/toastschema/element-audio) for information on audio in app notifications. To learn how to send an app notification that uses custom audio, see [Custom audio on app notifications](app-notifications-custom-audio.md).
 
 
 ## Scenarios
 
-To create important notifications, alarms, reminders, and incoming call notifications, you simply use a normal app notification with a **Scenario** value assigned to it. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible **Scenario** values: 
+To create important notifications, alarms, reminders, and incoming call notifications, use [**AppNotificationBuilder.SetScenario**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.setscenario) with an [**AppNotificationScenario**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationscenario) value. The scenario adjusts a few behaviors to create a consistent and unified user experience. There are four possible **Scenario** values: 
 
 - **Reminder**
 - **Alarm**

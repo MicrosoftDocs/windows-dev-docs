@@ -49,7 +49,7 @@ For unpackaged apps, add:
 
 ## Register for app notifications
 
-In `Program.cs`, register for notifications *before* calling `Application.Run()`. You must register your `NotificationInvoked` handler before calling `Register()`.
+In `Program.cs`, register for notifications *before* calling `Application.Run()`. You must register your [**NotificationInvoked**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.notificationinvoked) handler before calling [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.register).
 
 **Program.cs**
 
@@ -100,7 +100,7 @@ static class Program
 
 ## Send an app notification
 
-Use the `AppNotificationBuilder` API to construct and send a notification from your form.
+Use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to construct notification content and [**AppNotificationManager.Show**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.show) to send a notification from your form.
 
 **Form1.cs**
 

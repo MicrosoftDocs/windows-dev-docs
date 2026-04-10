@@ -63,7 +63,7 @@ AppNotificationManager.Default.Show(notification);
 
 ## Replace the notification with new content
 
-In response to the user clicking the button, your background task is triggered and you replace the notification by sending a new notification with the same **Tag** and **Group**. We recommend muting the audio on replacements in response to a button click, since the user is already interacting with the notification.
+In response to the user clicking the button, your background task is triggered and you replace the notification by sending a new notification with the same **Tag** and **Group**. Use [**AppNotificationBuilder.MuteAudio**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder.muteaudio) to mute the audio on replacements in response to a button click, since the user is already interacting with the notification.
 
 ```csharp
 var notification = new AppNotificationBuilder()
