@@ -50,7 +50,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/developing-inclusive-windows-apps.md">Developing inclusive Windows apps</a></b><br/> This article is a roadmap for developing accessible Windows apps.</p>
+<p><b><a href="/windows/apps/develop/accessibility">Develop accessible Windows apps</a></b><br/> Learn how to implement accessibility in your Windows apps, including keyboard navigation, screen reader support, and contrast themes.</p>
                     </div>
                 </div>
             </div>
@@ -72,7 +72,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/accessibility-in-the-store.md">Accessibility in the Store</a></b><br/>Describes the requirements for declaring your Windows app as accessible in the Microsoft Store.</p>
+<p><b><a href="../accessibility/accessibility-checklist.md">Accessibility checklist</a></b><br/>A checklist to help you ensure that your Windows app meets accessibility requirements, including declaring it accessible in the Microsoft Store.</p>
                     </div>
                 </div>
             </div>
@@ -138,7 +138,7 @@ Accessibility is about making your app usable by people who have limitations tha
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../accessibility/practices-to-avoid.md">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible Windows app.</p>                    
+<p><b><a href="../accessibility/accessibility-overview.md#practices-to-avoid">Accessibility practices to avoid</a></b><br/>Lists the practices to avoid if you want to create an accessible Windows app.</p>                    
                     </div>
                 </div>
             </div>

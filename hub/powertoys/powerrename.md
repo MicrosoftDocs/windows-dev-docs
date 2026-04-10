@@ -287,6 +287,7 @@ Additional options can be configured in the settings, as described below:
 | :--- | :--- |
 | Show PowerRename in | PowerRename appears as one of the default options or only in the extended context menu. |
 | Hide icon in context menu | Hides the PowerRename icon in the context menu. |
+| Restore flags on launch | When enabled, PowerRename remembers which options and flags were selected when the tool was last used and restores them the next time it launches. |
 | Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename. |
 | Maximum number of items | The largest number of search and replace suggestions to display. |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used. |

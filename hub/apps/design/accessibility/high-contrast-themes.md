@@ -135,15 +135,6 @@ Then apply the resource to the target element background.
 
 The preceding example uses `{ThemeResource}` twice: once to resolve **SystemColorWindowColor** and again to resolve **BrandedPageBackgroundBrush**. This two-stage lookup is important for runtime theme updates. With this setup, the **Grid** background updates automatically when users switch into or between contrast themes.
 
-> [!NOTE]
->**WinUI 2.6 and newer**
->
-> There are eight high-contrast system brushes available through **ResourceKey** (for example, **SystemColorWindowTextColorBrush**).
->
-> `<StaticResource x:Key="MyControlBackground" ResourceKey="SystemColorWindowTextColorBrush" />`
->
-> Brush names match the corresponding system color names with the `Brush` suffix appended. Prefer **StaticResource** over local **SolidColorBrush** declarations for these fixed key lookups to reduce overhead.
-
 ## Best practices
 
 Use the following recommendations when customizing contrast-theme colors in your app.
@@ -157,12 +148,11 @@ Use the following recommendations when customizing contrast-theme colors in your
 - **Do not** use `SystemColorGrayTextColor` for secondary body text or hint text. Reserve it for disabled content.
 - **Do not** use `SystemColorHotlightColor` for anything other than hyperlinks.
 
-> [!TIP]
-> It's often helpful to look at the WinUI 3 Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open [**WinUI 3 Gallery**](winui3gallery:).
->
-> If it isn't installed, download [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) from the Microsoft Store.
->
-> You can also get the source code from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see high-contrast colors in action](winui3gallery://item/Color)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ### Hard-coded colors
 

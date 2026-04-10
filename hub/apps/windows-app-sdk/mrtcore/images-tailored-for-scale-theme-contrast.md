@@ -23,21 +23,9 @@ Some common qualifiers for images are:
 
 ## Qualify an image resource for scale, theme, and contrast
 
-The default value for the `scale` qualifier is `scale-100`. So, these two variants are equivalent (they both provide an image at scale 100, or scale factor 1).
+Use qualifiers in your image file or folder names so that the system can automatically select the best variant for the current runtime context. For full details on qualifier naming syntax, folder vs. file naming strategies, and matching behavior, see [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
-```console
-\Assets\Images\logo.png
-\Assets\Images\logo.scale-100.png
-```
-
-You can use qualifiers in folder names instead of file names. This is a better strategy when you have several asset files per qualifier. For purposes of illustration, these two variants are equivalent to the two above.
-
-```console
-\Assets\Images\logo.png
-\Assets\Images\scale-100\logo.png
-```
-
-The next example shows how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast. This example uses folder naming.
+The following example shows how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast using folder naming.
 
 ```console
 \Assets\Images\contrast-standard\theme-dark
@@ -156,13 +144,9 @@ See [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts-
 
 ## Load an image for a specific language or other context
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
+You can override the default [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext) to be explicit about which qualifier value to use when loading an image. For example, you might want to control exactly when and which high contrast images are loaded. For background on how ResourceContext works, see [Qualify resource selection with ResourceContext](mrtcore-overview.md#qualify-resource-selection-with-resourcecontext). For a similar example using string resources, see [Load a string for a specific language or other context](localize-strings.md#load-a-string-for-a-specific-language-or-other-context).
 
-The default [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Image files are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
-
-But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching image to load. For example, you might want to control exactly when and which high contrast images are loaded.
-
-You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap) image lookups with [GetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getvalue) or [TryGetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue).
+Construct a new **ResourceContext**, override its values, and then use that context object in your [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap) image lookups with [GetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getvalue) or [TryGetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue).
 
 ```csharp
 var resourceManager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
@@ -189,13 +173,13 @@ By default, the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.w
 
 ## Important APIs
 
-The following APIs are imporant to understand when working with image resources:
-
 - [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext)
 - [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap)
 
 ## Related content
 
+- [Localize strings in your UI and app package manifest](localize-strings.md)
 - [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
+- [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md)
 - [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast)
 - [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images)

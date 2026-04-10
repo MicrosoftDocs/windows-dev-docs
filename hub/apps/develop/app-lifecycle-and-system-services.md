@@ -62,3 +62,4 @@ The .NET SDK also provides APIs related to system services for WPF and Windows F
 |---------|-------------|
 | [Threading model (WPF)](/dotnet/framework/wpf/advanced/threading-model) | Learn about the threading model of WPF apps. |
 | [System information](/dotnet/framework/winforms/advanced/system-information-and-windows-forms) | Learn how to access system information in Windows Forms apps. |
+| [.NET Worker Services](/dotnet/core/extensions/workers) | A lightweight way to run long-running background workloads in .NET apps. No packaging required — works with any WPF, Windows Forms, or console app deployment model. |

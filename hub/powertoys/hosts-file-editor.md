@@ -49,6 +49,7 @@ From the Settings menu, the following options can be configured:
 | Show a warning at startup | Warns that editing hosts can change DNS names resolution. Enabled by default. |
 | Placement of additional content | Determines where new host entries are added in the hosts file. Default value is **Top** (new entries are added near the top of the file after the default Windows header comments). If **Bottom** is selected, new entries are added at the end of the file. This affects the organization of your hosts file and can impact which entries take precedence if there are conflicts. |
 | Consider loopback addresses as duplicates | When enabled, multiple loopback addresses (127.0.0.1, ::1) pointing to the same hostname are treated as duplicates. This prevents adding redundant entries and helps avoid conflicts. When disabled, you can add multiple loopback entries for the same hostname, which may be useful for testing different network configurations but could lead to unexpected behavior. |
+| No leading spaces | When enabled, prevents prepending spaces to active lines when saving the hosts file. Disabled by default. |
 | Encoding | Default value is **UTF-8**. If **UTF-8 with BOM** is selected, a Byte Order Mark (BOM) is included at the start of the file. |
 | Backups hosts file | If enabled, a backup of the hosts file is created when you save for the first time in a session. |
 | Location | Specify where backups are created. Default `%SystemRoot%\System32\drivers\etc`. |

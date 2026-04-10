@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # What’s New - Recent data view in Usage reports
 
-The [**Recent data** view in Usage reports](https://partner.microsoft.com/dashboard/insights/analytics/store/usage?viewSelected=48h) provides near real‑time visibility into how users are engaging with your app. With this launch, data is now refreshed in about 3 hours instead of 30 hours, delivering a faster and more responsive reporting experience. This view is designed to complement the [existing daily and longer‑term Usage insights](https://learn.microsoft.com/windows/apps/publish/usage) by focusing on very recent activity, helping you react quickly to changes without waiting for daily aggregation. 
+The [**Recent data** view in Usage reports](https://partner.microsoft.com/dashboard/insights/analytics/store/usage?viewSelected=48h) provides near real‑time visibility into how users are engaging with your app. With this launch, data is now refreshed in about 3 hours instead of 30 hours, delivering a faster and more responsive reporting experience. This view is designed to complement the [existing daily and longer‑term Usage insights](/windows/apps/publish/usage) by focusing on very recent activity, helping you react quickly to changes without waiting for daily aggregation. 
 
 #### What the Recent data view shows
 

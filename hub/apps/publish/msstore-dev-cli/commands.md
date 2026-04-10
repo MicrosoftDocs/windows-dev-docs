@@ -687,13 +687,13 @@ msstore flights submission rollout finalize --help
 
 The `init` command helps you setup your application to publish to the Microsoft Store. It currently supports the following application types:
 
-- Windows App SDK/WinUI
-- UWP
+- WinUI 
 - .NET MAUI
 - Flutter
 - Electron
 - React Native for Desktop
 - PWA
+- UWP
 
 ### Usage Examples
 
@@ -773,7 +773,7 @@ Helps you package your Microsoft Store Application as an MSIX.
 msstore package "C:\path\to\winui3_app"
 ```
 
-#### UWP
+#### WinUI
 
 ```console
 msstore package "C:\path\to\uwp_app"
@@ -835,7 +835,7 @@ Publishes your Application to the Microsoft Store.
 msstore publish "C:\path\to\winui3_app"
 ```
 
-#### UWP
+#### WinUI
 
 ```console
 msstore publish "C:\path\to\uwp_app"

@@ -15,7 +15,7 @@ This glossary promotes a common vocabulary among Windows developers.
 
 #### App lifecycle management (ALM)
 
-Manage an application's execution state: not running, running in the background, running in the foreground, or suspended. See [UWP app lifecycle](/windows/uwp/launch-resume/app-lifecycle).
+Manage an application's execution state: not running, running in the background, running in the foreground, or suspended. See [UWP app lifecycle](/windows/uwp/launch-resume/app-lifecycle) and [Windows App SDK app lifecycle](../windows-app-sdk/applifecycle/applifecycle.md).
 
 #### Application model
 
@@ -23,7 +23,7 @@ Often referred to as "app model." The application model combines deployment, iso
 
 #### Application packaging
 
-Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-apps-that-are-packaged--unpackaged--and-packaged-with-external-location)).
+Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq)).
 
 
 #### Bootstrapper
@@ -96,7 +96,7 @@ Traditionally, "native" refers to applications built without using the .NET runt
 
 #### Neural Processing Unit (NPU)
 
-A dedicated on‑device AI accelerator optimized for transformer operations and other ML workloads. Windows apps can target NPUs via APIs included as part of [Foundry Local](/windows/ai/foundry-local/get-started).
+A dedicated on‑device AI accelerator optimized for transformer operations and other ML workloads. Windows apps can target NPUs via [Windows AI APIs](/windows/ai/apis/), [Foundry Local](/windows/ai/foundry-local/get-started), or [Windows ML execution providers](/windows/ai/new-windows-ml/supported-execution-providers).
 
 #### ONNX Runtime (ORT)
 
@@ -163,11 +163,11 @@ Lets you create, package, and deploy Visual Studio extensions. [Get started with
 
 #### WebView2
 
-A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI, Win32 C++, WPF, and WinForms, and it offers a developer preview for WinUI for UWP support. See [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/).
+A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI, Win32 C++, WPF, and WinForms. See [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/).
 
 #### Microsoft Foundry on Windows
 
-Microsoft Foundry on Windows offers AI-backed features and APIs on Windows 11 PCs. These features are in active development. See [Windows AI APIs overview](/windows/ai/overview).
+Microsoft Foundry on Windows offers AI-backed features and APIs on Windows 10 and later PCs. Some features like Phi Silica require Copilot+ PC hardware. See [Windows AI APIs overview](/windows/ai/overview).
 
 #### Windows API
 
@@ -203,7 +203,7 @@ XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinFor
 
 #### Windows ML
 
-Windows APIs for running ONNX models locally in Windows apps, with hardware acceleration via DirectML where it's available. See [Windows ML](/windows/ai/new-windows-ml/overview).
+Windows APIs for running ONNX models locally in Windows apps, with automatic execution provider management across CPUs, GPUs, and NPUs. See [Windows ML](/windows/ai/new-windows-ml/overview).
 
 ## Related content
 

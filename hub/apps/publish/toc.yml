@@ -13,6 +13,12 @@ items:
       href: partner-center/partner-center-developer-account.md
     - name: Developer account fees and locations
       href: partner-center/account-types-locations-and-fees.md  
+- name: Choose your distribution options
+  items: 
+    - name: How to distribute your win32 app in Store
+      href: ../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
+    - name: Transition users from web unpackaged app to Store packaged app
+      href: ../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
 - name: Submit your app
   items:
   - name: MSIX
@@ -66,7 +72,9 @@ items:
           - name: Import and export Store listings
             href: publish-your-app/msix/import-and-export-store-listings.md
       - name: Manage Submission options
-        href: publish-your-app/msix/manage-submission-options.md                  
+        href: publish-your-app/msix/manage-submission-options.md   
+      - name: App submission controls
+        href: publish-your-app/msix/app-submission-control.md
   - name: MSI/EXE
     items:
       - name: Reserve app name
@@ -164,7 +172,9 @@ items:
           - name: Import and export Store listings
             href: publish-your-app/pwa/import-and-export-store-listings.md
       - name: Manage submission options
-        href: publish-your-app/pwa/manage-submission-options.md                      
+        href: publish-your-app/pwa/manage-submission-options.md
+      - name: App submission controls
+        href: publish-your-app/pwa/app-submission-control.md
   - name: Add-ons
     items:
           - name: What are add-ons
@@ -235,18 +245,24 @@ items:
                 href: publish-your-app/msix/publish-update-to-your-app-on-store.md
               - name: Guidance for app package management
                 href: publish-your-app/msix/app-package-management.md
+              - name: Removing an app
+                href: publish-your-app/msix/remove-app.md
         - name: MSI/EXE
           items:
               - name: Publish update to your app
                 href: publish-your-app/msi/publish-update-to-your-app-on-store.md  
               - name: Guidance for app package management
-                href: publish-your-app/msi/app-package-management.md                     
+                href: publish-your-app/msi/app-package-management.md
+              - name: Removing an app
+                href: publish-your-app/msi/remove-app.md
         - name: PWA
           items:
               - name: Publish update to your app
                 href: publish-your-app/pwa/publish-update-to-your-app-on-store.md
               - name: Guidance for app package management
-                href: publish-your-app/pwa/app-package-management.md        
+                href: publish-your-app/pwa/app-package-management.md
+              - name: Removing an app
+                href: publish-your-app/pwa/remove-app.md
         - name: Add-ons
           items:
               - name: Publish update to your add-on

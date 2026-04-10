@@ -1,6 +1,36 @@
 {
   "redirections": [
     {
+      "source_path": "uwp/audio-video-camera/camera-ui-features-for-mobile-devices.md",
+      "redirect_url": "/previous-versions/windows/uwp/audio-video-camera/camera-ui-features-for-mobile-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/device-portal-mobile.md",
+      "redirect_url": "/previous-versions/windows/uwp/debug-test-perf/device-portal-mobile",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/debug-test-perf/test-with-the-emulator.md",
+      "redirect_url": "/previous-versions/windows/uwp/debug-test-perf/test-with-the-emulator",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps.md",
+      "redirect_url": "/previous-versions/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/quickstart-accessing-homegroup-content.md",
+      "redirect_url": "/previous-versions/windows/uwp/files/quickstart-accessing-homegroup-content",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/access-the-sd-card.md",
+      "redirect_url": "/previous-versions/windows/uwp/files/access-the-sd-card",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/windows-integration/settings-mcp.md",
       "redirect_url": "/windows/apps/develop/windows-integration/",
       "redirect_document_id": false
@@ -1467,11 +1497,6 @@
     },
     {
       "source_path": "uwp/accessibility/accessibility.md",
-      "redirect_url": "/windows/uwp/design/accessibility/accessibility-overview",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/design/accessibility/accessibility.md",
       "redirect_url": "/windows/uwp/design/accessibility/accessibility-overview",
       "redirect_document_id": false
     },
@@ -5677,7 +5702,7 @@
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-distribute.md",
-      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-distribute",
+      "redirect_url": "/windows/msix/desktop/source-code-overview",
       "redirect_document_id": false
     },
     {
@@ -5687,7 +5712,7 @@
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-extend.md",
-      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-extend",
+      "redirect_url": "/windows/apps/windows-app-sdk/",
       "redirect_document_id": false
     },
     {
@@ -11150,17 +11175,17 @@
     },
     {
       "source_path": "hub/apps/how-tos/chatgpt-openai-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/how-tos/copilot-chat-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/how-tos/dall-e-winui3.md",
-      "redirect_url": "/windows/apps/how-tos/github-copilot-winui-vs",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
       "redirect_document_id": false
     },
     {
@@ -11476,6 +11501,146 @@
     {
       "source_path": "hub/apps/desktop/visual-studio-templates.md",
       "redirect_url": "/windows/apps/dev-tools/visual-studio",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/accessibility.md",
+      "redirect_url": "/windows/apps/design/accessibility/accessibility-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/practices-to-avoid.md",
+      "redirect_url": "/windows/apps/design/accessibility/accessibility-overview#practices-to-avoid",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/accessibility/developing-inclusive-windows-apps.md",
+      "redirect_url": "/windows/apps/develop/accessibility",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/package-and-deploy/choose-packaging-model.md",
+      "redirect_url": "/windows/apps/package-and-deploy/packaging/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/use-patterns-to-format-dates-and-times.md",
+      "redirect_url": "/windows/apps/design/globalizing/use-global-ready-formats#use-templates-and-patterns-for-advanced-datetime-formatting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/localize-winui3-app.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/mrtcore/localize-strings#localize-a-winui-3-packaged-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md",
+      "redirect_url": "/windows/apps/design/globalizing/globalizing-portal#guidelines-for-globalization",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/quickstart-listing-files-and-folders.md",
+      "redirect_url": "/windows/apps/develop/files/list-files-folders",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/quickstart-reading-and-writing-files.md",
+      "redirect_url": "/windows/apps/develop/files/create-read-write-files",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/best-practices-for-writing-to-files.md",
+      "redirect_url": "/windows/apps/develop/files/best-practices-writing-files",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/quickstart-getting-file-properties.md",
+      "redirect_url": "/windows/apps/develop/files/file-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/quickstart-determining-availability-of-microsoft-onedrive-files.md",
+      "redirect_url": "/windows/apps/develop/files/determine-availability-microsoft-onedrive-files",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md",
+      "redirect_url": "/windows/apps/develop/files/music-pictures-videos-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/thumbnails.md",
+      "redirect_url": "/windows/apps/develop/files/thumbnails",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/how-to-track-recently-used-files-and-folders.md",
+      "redirect_url": "/windows/apps/develop/files/track-recently-used-files-folders",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/change-tracking-filesystem.md",
+      "redirect_url": "/windows/apps/develop/files/change-tracking-filesystem",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/file-access-permissions.md",
+      "redirect_url": "/windows/apps/develop/files/file-access-permissions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/files/fast-file-properties.md",
+      "redirect_url": "/windows/apps/develop/files/fast-file-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-1.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-2.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-3.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-4.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-5.md",
+      "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/background-processing/index.md",
+      "redirect_url": "/windows/apps/develop/app-lifecycle-and-system-services",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/applifecycle/app-background-task.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/applifecycle/background-tasks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-distribute.md",
+      "redirect_url": "/windows/msix/desktop/source-code-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-extend.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/",
       "redirect_document_id": false
     }
   ]
