@@ -9542,65 +9542,17 @@
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts.md",
-      "redirect_url": "../../../develop/notifications/app-notifications/app-notifications-content",
+      "redirect_url": "../../../develop/notifications/app-notifications/adaptive-interactive-toasts",
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/develop/notifications/app-notifications/adaptive-interactive-toasts.md",
-      "redirect_url": "app-notifications-content",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/toast-desktop-apps.md",
-      "redirect_url": "app-notifications-quickstart",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/toast-schema.md",
-      "redirect_url": "app-notifications-schema",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/scheduled-toast.md",
-      "redirect_url": "app-notifications-scheduled",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/toast-collections.md",
-      "redirect_url": "app-notifications-collections",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/toast-headers.md",
-      "redirect_url": "app-notifications-headers",
-      "redirect_document_id": false
-    },
-    {
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/toast-progress-bar.md",
-      "redirect_url": "app-notifications-progress-bar",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/toast-pending-update.md",
-      "redirect_url": "app-notifications-pending-update",
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/channel-types.md",
+      "redirect_url": "../../../develop/notifications/channel-types",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/choosing-a-notification-delivery-method.md",
       "redirect_url": "../../../develop/notifications/choosing-a-notification-delivery-method",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/custom-audio-on-toasts.md",
-      "redirect_url": "app-notifications-custom-audio",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/notifications/app-notifications/custom-timestamps-on-toasts.md",
-      "redirect_url": "app-notifications-custom-timestamps",
       "redirect_document_id": false
     },
     {
