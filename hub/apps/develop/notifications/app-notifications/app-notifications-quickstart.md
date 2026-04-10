@@ -1,6 +1,6 @@
 ---
 title: Quickstart: Use app notifications with the Windows App SDK
-description: Send app notifications using the Windows App SDK 
+description: Send app notifications using the Windows App SDK
 ms.topic: quickstart
 ms.date: 07/25/2025
 keywords: toast, local, notification, windows app sdk, winappsdk

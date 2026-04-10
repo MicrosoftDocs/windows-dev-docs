@@ -11,13 +11,13 @@ ms.localizationpriority: medium
 
 An app notification is a UI popup that appears outside of your app's window, delivering timely information or actions to the user. Notifications can be purely informational, can launch your app when clicked, or can trigger a background action without bringing your app to the foreground.
 
-:::image type="content" source="images/toast-notification.png" alt-text="Screenshot of an app notification" width="628":::
+:::image type="content" source="/hub/apps/develop/notifications/app-notifications/images/toast-notification.png" alt-text="Screenshot of an app notification":::
 
 This article walks you through the steps to create and send an app notification from a UWP app, and then handle activation when the user interacts with it.
 
-For an overview of app notifications and guidance for other frameworks, see [App notifications overview](index.md).
+For an overview of app notifications and guidance for other frameworks, see [App notifications overview](/windows/apps/develop/notifications/app-notifications/).
 
-This article covers local notifications. For information about delivering notifications from a cloud service, see [Push notifications](../push-notifications/index.md).
+This article covers local notifications. For information about delivering notifications from a cloud service, see [Push notifications overview](/windows/apps/develop/notifications/push-notifications/).
 
 ## Prerequisites
 
@@ -181,12 +181,12 @@ void App::OnLaunchedOrActivated(ApplicationExecutionState previousState)
 
 ---
 
-For information about adding buttons, images, inputs, audio, and other rich content to your notifications, see [App notification content](app-notifications-content.md).
+For information about adding buttons, images, inputs, audio, and other rich content to your notifications, see [App notification content](/windows/apps/develop/notifications/app-notifications/app-notifications-content).
 
 ## Related content
 
-- [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md)
-- [App notification content](app-notifications-content.md)
+- [Quickstart: App notifications in the Windows App SDK](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart)
+- [App notification content](/windows/apps/develop/notifications/app-notifications/app-notifications-content)
 - [ToastNotification Class](/uwp/api/Windows.UI.Notifications.ToastNotification)
 - [ToastNotificationActivatedEventArgs Class](/uwp/api/Windows.ApplicationModel.Activation.ToastNotificationActivatedEventArgs)
 

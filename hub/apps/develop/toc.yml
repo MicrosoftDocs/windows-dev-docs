@@ -176,7 +176,8 @@ items:
                 href: camera/camera-privacy-setting.md
               - name: Connect to remote cameras
                 href: camera/connect-to-remote-cameras.md
-      items:
+      - name: Graphics
+        items:
       - name: Overview
         href: graphics.md
       - name: Render text with DWriteCore
