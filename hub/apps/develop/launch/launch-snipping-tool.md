@@ -235,8 +235,8 @@ The following table lists the status codes that can be returned in the redirect 
 
 | Use Case           | Full URI Example                                                                                                                                                               |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Successful Capture | `my-snip-protocol-test-app://response/?code=200&reason=Success&request-correlation-id=CF99C5A5-3907-461E-A9A9-D8AAFFAD5031&token=8930-ASDFA-ASDF4545`                          |
-| Failed Capture     | `my-snip-protocol-test-app://response/?code=400&reason=Bad%20Request%20-%20Invalid%20value%20Missing%20Parameters&request-correlation-id=C7696B38-52C8-419A-880F-F3350D7A6626` |
+| Successful Capture | `my-snip-protocol-test-app://response/?code=200&reason=Success&request-correlation-id=aaaa0000-bb11-2222-33cc-444444dddddd&token=8930-ASDFA-ASDF4545`                          |
+| Failed Capture     | `my-snip-protocol-test-app://response/?code=400&reason=Bad%20Request%20-%20Invalid%20value%20Missing%20Parameters&request-correlation-id=bbbb1111-cc22-3333-44dd-555555eeeeee` |
 
 ## Caller example
 
