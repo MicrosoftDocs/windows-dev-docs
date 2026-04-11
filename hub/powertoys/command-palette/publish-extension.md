@@ -9,29 +9,50 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Publish Command Palette extensions
 
-This article provides instructions for Command Palette extensions that you create with the Command Palette template.
+After creating your Command Palette extension with the Command Palette template, you can share it with other users by publishing it to the Microsoft Store, WinGet, or both platforms.
 
-You can publish your Command Palette extension through the Microsoft Store, WinGet, or both. This article includes instructions for preparing and publishing your extension to both distribution platforms.
+This guide walks you through the complete publishing process for both distribution methods. Each platform offers different benefits:
+
+- **Microsoft Store**: Provides wider reach to general Windows users, automatic updates, and professional certification. Best for consumer-facing extensions.
+- **WinGet**: Enables automatic discovery within Command Palette and simple command-line installation. Best for developer audiences and quick distribution.
+- **Both**: Maximizes your extension's visibility and gives users installation flexibility.
+
+> [!NOTE]
+> The Command Palette template includes publication scripts in the `Publication` folder to simplify the build and submission process for both platforms.
 
 ## Microsoft Store
 
-You can publish Command Palette extensions to the Microsoft Store. The publishing process is similar to other apps or extensions. You create a new submission in Partner Center and upload your `.msix` package. Command Palette automatically discovers your extension when users install it from the Microsoft Store.
+Publishing to the Microsoft Store gives your extension professional certification and wide distribution to Windows users. The Store handles automatic updates, secure installation, and provides analytics for your extension's performance.
 
-> [!NOTE]
-> **MSIX packages explained**
-> MSIX is Microsoft's modern app packaging format that provides secure installation, automatic updates, and clean uninstallation. It replaces older formats like MSI and ensures your extension integrates properly with Windows security and deployment features.
-
-Command Palette can't search for or install extensions that are only listed in the Store. You can find those extensions by running the following command:
-
-```cmd
-ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette
-```
-
-You can run this command from the "Run commands" command in Command Palette, from the command line, or from the Run dialog.
+Command Palette automatically discovers extensions when users install them from the Microsoft Store. However, extensions published to the Store aren't searchable or installable directly from within Command Palette - users must visit the Store to install them.
 
 ## Guide to Microsoft Store publishing
 
 Publishing to the Microsoft Store provides your extension with wide reach across Windows devices and automatic update delivery to users. This guide walks you through the complete process from setting up your Partner Center account to building MSIX packages and submitting your extension for certification. You'll learn how to prepare your extension's manifest files, create the required bundle packages, and navigate the Partner Center submission workflow to get your extension published successfully.
+
+
+```mermaid
+flowchart LR
+    subgraph A["📝 Start Partner Center submission"]
+        direction TB
+        A1[Register Developer Account in Partner Center]
+        A1 --> A2["Reserve Product Name & Copy Identity Values (Package Name, Publisher, Display Name)"]
+    end
+
+    subgraph B["⚙️ Local Preparation"]
+        direction TB
+        B1["Run one-time setup script: store-publishing-setup.ps1"]
+        B1 --> B2["Run build script: build-msix-bundles.ps1"]
+    end
+
+    subgraph C["✅ Finish & Submit Partner Center submission"]
+        direction TB
+        C1[Upload MSIX bundle in Partner Center Packages section]
+        C1 --> C2["Complete Submission"]
+    end
+
+    A --> B --> C
+```
 
 > [!NOTE]
 > This guide provides basic Microsoft Store publishing steps specific to Command Palette extensions. For comprehensive Microsoft Store publishing guidance, including detailed submission requirements, certification processes, and best practices, see [Publish Windows apps and games](/windows/apps/publish/).
@@ -69,168 +90,48 @@ Publishing to the Microsoft Store provides your extension with wide reach across
 1. Create or reserve a product name.
 1. Start the submission and complete as much as you can until you reach the **Packages** section.
 1. In the left navigation, under **Product Management**, select **Product identity**.
-1. Copy the following values for use in the next steps:
-
-> [!IMPORTANT]
-> **Copy these values from Partner Center:**
->
-> - **Package/Identity/Name**: `_________________`
-> - **Package/Identity/Publisher**: `_________________`
-> - **Package/Properties/PublisherDisplayName**: `_________________`
->
-> Use these exact values in the code examples below.
+1. Copy the following values for use in the following steps. 
 
 ### Prepare the extension
 
-1. In your IDE, open `<ExtensionName>\Package.appxmanifest`.
-1. Replace the values with the information you copied from Partner Center.
+> [!IMPORTANT]
+> If your project does not have a `Publication` directory, you can copy it from [Template's Publication](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal/ExtensionTemplate/TemplateCmdPalExtension/TemplateCmdPalExtension/Publication)
+>
 
-```xml
-<Identity
-    Name="YOUR_PACKAGE_IDENTITY_NAME_HERE" 
-    Publisher="YOUR_PACKAGE_IDENTITY_PUBLISHER_HERE" 
-    Version="0.0.1.0" />
+1. Open PowerShell and navigate to the Publication folder:
 
-  <Properties>
-    <DisplayName>YOUR_EXTENSION_DISPLAY_NAME</DisplayName> <!-- Replace with the reserved name from Partner Center -->
-    <PublisherDisplayName>YOUR_PUBLISHER_DISPLAY_NAME_HERE</PublisherDisplayName> <!-- Replace with your Package/Properties/PublisherDisplayName -->
-    <Logo>Assets\StoreLogo.png</Logo> <!-- Confirm that this image exist -->
-  </Properties>
-```
+   ```powershell
+   cd <YourProject>\Publication
+   ```
 
-1. In your IDE, open `<ExtensionName>.csproj`.
-1. Locate a `PropertyGroup` element (with no conditions) and add the following properties by using your Partner Center values:
+2. Run the one-time setup script:
 
-```xml
-    <AppxPackageIdentityName>YOUR_PACKAGE_IDENTITY_NAME_HERE</AppxPackageIdentityName>
-    <AppxPackagePublisher>YOUR_PACKAGE_IDENTITY_PUBLISHER_HERE</AppxPackagePublisher>
-    <AppxPackageVersion>0.0.1.0</AppxPackageVersion>
-```
+   ```powershell
+   .\one-time-store-publishing-setup.ps1
+   ```
 
-1. Update the `ItemGroup` for images to get all of them by removing:
+3. Follow the prompts to enter your Microsoft Store information from Partner Center:
+   - Package Identity Name
+   - Publisher Certificate
+   - Display Name
+   - Publisher Display Name
 
-```xml
-  <ItemGroup>
-    <Content Include="Assets\SplashScreen.scale-200.png" />
-    <Content Include="Assets\LockScreenLogo.scale-200.png" />
-    <Content Include="Assets\Square150x150Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.scale-200.png" />
-    <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
-  </ItemGroup>
-```
-
-with
-
-```xml
-  <ItemGroup>
-    <Content Include="Assets\**\*.png" />
-  </ItemGroup>
-```
-
-1. Under the `<ItemGroup>` you just updated, add:
-
-```xml
-  <Target Name="PrepareAssets" BeforeTargets="BeforeBuild">
-    <!-- Copy scale-specific assets to base filenames expected by store validations -->
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Square150x150Logo.scale-200.png"
-          DestinationFiles="$(MSBuildProjectDirectory)\Assets\Square150x150Logo.png"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Square44x44Logo.scale-200.png"
-          DestinationFiles="$(MSBuildProjectDirectory)\Assets\SmallTile.png"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Wide310x150Logo.scale-200.png"
-          DestinationFiles="$(MSBuildProjectDirectory)\Assets\Wide310x150Logo.png"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\SplashScreen.scale-200.png"
-          DestinationFiles="$(MSBuildProjectDirectory)\Assets\SplashScreen.png"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\Square150x150Logo.scale-200.png"
-          DestinationFiles="$(MSBuildProjectDirectory)\Assets\LargeTile.png"
-          SkipUnchangedFiles="true" />
-    <Copy SourceFiles="$(MSBuildProjectDirectory)\Assets\StoreLogo.scale-100.png"
-          DestinationFiles="$(MSBuildProjectDirectory)\Assets\StoreLogo.png"
-          SkipUnchangedFiles="true" />
-  </Target>
-```
+   The script will double check you have required images, update your `Package.appxmanifest` and `<ExtensionName>.csproj` with Store-specific values.
 
 ### Build MSIX
 
-1. In the terminal, move to the `<ExtensionName>\<ExtensionName>` directory.
-1. Create an x64 build MSIX with the following command:
+1. Once configured, build your bundle:
 
    ```powershell
-   dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=x64 -p:AppxPackageDir="AppPackages\x64\"
-
+   .\build-msix-bundles.ps1
    ```
 
-1. Create an ARM64 build MSIX with the following command:
+This script will:
+    - Build either x64, ARM64 MSIX packages or Complete Bundle (x64 + ARM64 + Bundle)
+    - Automatically update `microsoft-store-resources\bundle_mapping.txt` with correct paths
+    - Display the bundle location when complete
 
-   ```powershell
-   dotnet build --configuration Release -p:GenerateAppxPackageOnBuild=true -p:Platform=ARM64 -p:AppxPackageDir="AppPackages\ARM64\"
-   ```
-
-> [!NOTE]
-> You need the `AppxPackageDir="AppPackages\x64\"` setting so that the ARM64 build doesn't overwrite the x64 build.
-
-1. Locate the MSIX files:
-
-   ```powershell
-   dir AppPackages -Recurse -Filter "*.msix"
-   ```
-
-> [!TIP]
-> If you don't see your MSIX files, try `dir bin\ -Recurse -Filter "*.msix"`.
-
-1. Note the locations of the `<ExtensionName>_<VersionNumber>_x64.msix` and `<ExtensionName>_<VersionNumber>_arm64.msix` files.
-
-1. In your current location in the directory, create a new `bundle_mapping.txt` file and include the following content, updating the paths to your MSIX files:
-
-   ```text
-   [Files]
-   "AppPackages\<ExtensionName>_<VersionNumber>_x64_Test\<ExtensionName>_<VersionNumber>_x64.msix" "<ExtensionName>_<VersionNumber>_x64.msix"
-   "AppPackages\t<ExtensionName>_<VersionNumber>_arm64_Test\<ExtensionName>_<VersionNumber>_arm64.msix" "<ExtensionName>_<VersionNumber>_arm64.msix"
-   ```
-
-1. Create a bundle that combines both architectures into a single package for Microsoft Store submission. Update the `<ExtensionName>` and `<VersionNumber>`:
-
-   ```powershell
-   makeappx bundle /v /d bin\Release\ /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
-   ```
-
-   > [!NOTE]
-   > If `makeappx` isn't recognized, find it on your machine:
-   >
-   > ```powershell
-   > $arch = switch ($env:PROCESSOR_ARCHITECTURE) { "AMD64" { "x64" } "x86" { "x86" } "ARM64" { "arm64" } default { "x64" } }; Write-Host "Detected: $arch"; $found = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin\*\$arch\makeappx.exe" -ErrorAction SilentlyContinue | Sort-Object Name -Descending | Select-Object -First 1; if ($found) { Write-Host "SUCCESS: $($found.FullName)" -ForegroundColor Green; $found.FullName } else { Write-Host "Not found for $arch" -ForegroundColor Red }
-   > ```
-   >
-   > Then update the following script your machine's path:
-   >
-   > ```powershell
-   > & "<PATH>\makeappx.exe" bundle /f bundle_mapping.txt /p <ExtensionName>_<VersionNumber>_Bundle.msixbundle
-   > ```
-
-1. Locate the bundle:
-
-   ```powershell
-   dir *.msixbundle
-   ```
-
-1. You should find the file: `<ExtensionName>_<VersionNumber>_Bundle.msixbundle`.
-
-#### MSIX build validation
-
-Verify your MSIX build is ready by checking:
-
-- ✅ You updated `Package.appxmanifest` with correct Identity and Properties
-- ✅ You updated `<ExtensionName>.csproj` with AppxPackage properties
-- ✅ Both x64 and ARM64 MSIX files were built successfully
-- ✅ The `bundle_mapping.txt` file contains correct paths to both MSIX files
-- ✅ The `.msixbundle` file was created without errors
-- ✅ You can locate the final bundle file
-
-If any items are missing or failed, review the build commands and check for error messages before continuing.
+2. Upload the resulting `mix` or `.msixbundle` file from `microsoft-store-resources\` to Partner Center
 
 ### Microsoft Store submission
 
@@ -245,26 +146,33 @@ After submission, Microsoft reviews your extension for certification. Monitor yo
 
 ## WinGet
 
-To share your extensions with users, publish your packages to WinGet. Users can discover and install extension packages listed on WinGet directly from Command Palette.
+Publishing to WinGet is the recommended distribution method for Command Palette extensions. WinGet provides the best user experience because extensions published to WinGet are:
+
+- **Automatically discoverable**: Users can find and install your extension directly from within Command Palette
+- **Easy to install**: Simple `winget install` command-line installation
+- **Easy to update**: Users can update extensions with `winget upgrade`
+- **Open source**: The WinGet package repository is transparent and community-driven
 
 > [!TIP]
 > **What is WinGet?**
-> WinGet is Microsoft's open-source command-line package manager for Windows. It's similar to package managers like npm or pip, but for Windows applications. When you publish to WinGet, users can install your extension with a simple `winget install` command. It also enables automatic discovery within Command Palette.
+> WinGet is Microsoft's open-source command-line package manager for Windows. It's similar to package managers like npm (Node.js) or pip (Python), but for Windows applications. Publishing to WinGet makes your extension accessible to both command-line users and Command Palette users.
 
-Before submitting your manifest to WinGet, check the following two requirements:
+**WinGet manifest requirements**
 
-**Add the `windows-commandpalette-extension` tag**
+Before submitting your extension to WinGet, ensure your manifest meets these two requirements:
 
-Command Palette uses the special `windows-commandpalette-extension` tag to discover extensions. Make sure that your manifest includes this tag so that Command Palette can discover your extension. Add the following code to each `.locale.*.yaml` file in your manifest:
+- Add the `windows-commandpalette-extension` tag
+
+Command Palette uses the special `windows-commandpalette-extension` tag to discover extensions. Add this tag to each `.locale.*.yaml` file in your WinGet manifest:
 
 ```yaml
 Tags:
 - windows-commandpalette-extension
 ```
 
-**Ensure WindowsAppSdk is listed as a dependency**
+- Ensure WindowsAppSdk is listed as a dependency
 
-If you're using Windows App SDK, make sure that it's listed as a dependency of your package. Add the following code to your `.installer.yaml` manifest:
+If you're using Windows App SDK, list it as a dependency in your `.installer.yaml` manifest:
 
 ```yaml
 Dependencies:
@@ -272,9 +180,43 @@ Dependencies:
   - PackageIdentifier: Microsoft.WindowsAppRuntime.#.#
 ```
 
+Replace `#.#` with the specific version of Windows App SDK your extension requires (for example, `1.6`).
+
 ## Guide to WinGet publishing
 
 Publishing to WinGet is the recommended distribution method for Command Palette extensions. It enables automatic discovery and installation directly within Command Palette. This guide covers most of the WinGet publication process, from preparing your project and creating build scripts to setting up GitHub Actions automation and submitting your first package manifest. You'll learn how to create installer packages, configure automated builds, and navigate the WinGet submission workflow to make your extension easily discoverable and installable for users.
+
+```mermaid
+flowchart LR
+    subgraph A ["🚀 Start Requirements & Project Preparation"]
+        direction TB
+        A1["Install GitHub CLI & WingetCreate"]
+        A1 --> A2["Run one-time setup script<br/>winget-publishing-setup.ps1"]
+        A2 --> A3["Commit & push changes"]
+    end
+
+    subgraph B ["⚙️ Automate with GitHub Actions"]
+        direction TB
+        B1["Create GitHub Release manually"]
+    end
+
+    subgraph C ["📦 WinGet First Submission"]
+        direction TB
+        C1["Run interactive submission"]
+        C1 --> C2["WingetCreate forks microsoft/winget-pkgs & opens PR"]
+
+    end
+
+    subgraph D ["✅ Post-Submission Review"]
+        direction TB
+        D1["Monitor PR on GitHub & respond to feedback"]
+        D1 --> D2["Merge → Extension available via WinGet within hours"]
+    end
+
+    A --> B
+    B --> C
+    C --> D
+```
 
 ### Requirements
 
@@ -291,200 +233,37 @@ Publishing to WinGet is the recommended distribution method for Command Palette 
 
 ### Prepare the project
 
-1. In `<ExtensionName>.csproj`, from the `<PropertyGroup>`:
-   - Remove `<PublishProfile>win-$(Platform).pubxml</PublishProfile>`
-   - Add `<WindowsPackageType>None</WindowsPackageType>`
-1. Locate `CLSID`
-    1. Open the extension's main `.cs` file (for example, `<ExtensionName>.cs`).
-    1. Look for the `[Guid("...")]` attribute above the class declaration.
-    1. This GUID is your CLSID - Keep note of this because it will be used in the next step
-
-       ```csharp
-       // Example from <ExtensionName>.cs
-       [Guid("0ab5d8ab-b206-4023-99f0-97dde26e14f2")]  // This is the CLSID
-       public sealed partial class <ExtensionName> : IExtension
-       ```
-
-    > [!NOTE]
-    > **What is a CLSID?**
-    > A CLSID (Class Identifier) is a unique identifier that Windows uses to identify COM (Component Object Model) components. Each Command Palette extension needs a unique CLSID so Windows can properly register and load your extension. This GUID is automatically generated when you create your extension project.
-
-1. Make sure that you're in the directory that contains your `<ExtensionName>.cs` for the next two files being created.
-1. Create a `setup-template.iss` file. For a simple extension, you can copy and customize the following template:
-
-**Template: `setup-template.iss`**
-
-```ini
-; TEMPLATE: Inno Setup Script for Command Palette Extensions
-;
-; To use this template for a new extension:
-; 1. Copy this file to your extension's project folder as "setup-template.iss"
-; 2. Replace EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
-; 3. Replace DISPLAY_NAME with your extension's display name (e.g., My Extension)
-; 4. Replace DEVELOPER_NAME with your name (e.g., Your Name Here)
-; 5. Replace CLSID-HERE with extensions CLSID
-; 6. Update the default version to match your project file
-
-#define AppVersion "0.0.1.0"
-
-[Setup]
-AppId={{GUID-HERE}}
-AppName=DISPLAY_NAME
-AppVersion={#AppVersion}
-AppPublisher=DEVELOPER_NAME
-DefaultDirName={autopf}\EXTENSION_NAME
-OutputDir=bin\Release\installer
-OutputBaseFilename=EXTENSION_NAME-Setup-{#AppVersion}
-Compression=lzma
-SolidCompression=yes
-MinVersion=10.0.19041
-
-[Languages]
-Name: "english"; MessagesFile: "compiler:Default.isl"
-
-[Files]
-Source: "bin\Release\win-x64\publish\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs
-
-[Icons]
-Name: "{group}\DISPLAY_NAME"; Filename: "{app}\EXTENSION_NAME.exe"
-
-[Registry]
-Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}"; ValueData: "EXTENSION_NAME"
-Root: HKCU; Subkey: "SOFTWARE\Classes\CLSID\{{CLSID-HERE}}\LocalServer32"; ValueData: "{app}\EXTENSION_NAME.exe -RegisterProcessAsComServer"
-```
-
-1. Create a `build-exe.ps1` file. For a simple extension, you can copy and customize the following template:
-
-**Template: `build-exe.ps1`**
-
-```powershell
-# TEMPLATE: PowerShell Build Script for Command Palette Extensions
-#
-# To use this template for a new extension:
-# 1. Copy this file to your extension's project folder as "build-exe.ps1"
-# 2. Update in param():
-#   - EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension) 
-#   - VERSION with your extension version (e.g., 0.0.1.0)
-
-
-
-param(
-    [string]$ExtensionName = "UPDATE",  # Change to your extension name
-    [string]$Configuration = "Release",
-    [string]$Version = "UPDATE",  # Change to your version
-    [string]$Platform = @("x64", "arm64")
-)
-
-$ErrorActionPreference = "Stop"
-
-Write-Host "Building $ExtensionName EXE installer..." -ForegroundColor GreenWrite-Host "Version: $Version" -ForegroundColor Yellow
-Write-Host "Platforms: $($Platforms -join ', ')" -ForegroundColor Yellow
-
-
-$ProjectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-$ProjectFile = "$ProjectDir\$ExtensionName.csproj"
-
-# Clean previous builds
-Write-Host "Cleaning previous builds..." -ForegroundColor Yellow
-if (Test-Path "$ProjectDir\bin") { 
-    Remove-Item -Path "$ProjectDir\bin" -Recurse -Force -ErrorAction SilentlyContinue 
-}
-if (Test-Path "$ProjectDir\obj") { 
-    Remove-Item -Path "$ProjectDir\obj" -Recurse -Force -ErrorAction SilentlyContinue 
-}
-
-# Restore packages
-Write-Host "Restoring NuGet packages..." -ForegroundColor Yellow
-dotnet restore $ProjectFile
-
-# Build for each platform
-foreach ($Platform in $Platforms) {
-    Write-Host "`n=== Building $Platform ===" -ForegroundColor Cyan
-    
-    # Build and publish
-    Write-Host "Building and publishing $Platform application..." -ForegroundColor Yellow
-    dotnet publish $ProjectFile `
-        --configuration $Configuration `
-        --runtime "win-$Platform" `
-        --self-contained true `
-        --output "$ProjectDir\bin\$Configuration\win-$Platform\publish"
-
-    if ($LASTEXITCODE -ne 0) { 
-        Write-Warning "Build failed for $Platform with exit code: $LASTEXITCODE"
-        continue
-    }
-# Check if files were published
-    $publishDir = "$ProjectDir\bin\$Configuration\win-$Platform\publish"
-    $fileCount = (Get-ChildItem -Path $publishDir -Recurse -File).Count
-    Write-Host "✅ Published $fileCount files to $publishDir" -ForegroundColor Green
-
-    # Create platform-specific setup script
-    Write-Host "Creating installer script for $Platform..." -ForegroundColor Yellow
-    $setupTemplate = Get-Content "$ProjectDir\setup-template.iss" -Raw
-    
-    # Update version
-    $setupScript = $setupTemplate -replace '#define AppVersion ".*"', "#define AppVersion `"$Version`""
-    
-    # Update output filename to include platform suffix
-    $setupScript = $setupScript -replace 'OutputBaseFilename=(.*?)\{#AppVersion\}', "OutputBaseFilename=`$1{#AppVersion}-$Platform"
-    
-    # Update source path for the platform
-    $setupScript = $setupScript -replace 'Source: "bin\\Release\\win-x64\\publish', "Source: `"bin\Release\win-$Platform\publish"
-    
-    # Add architecture settings after [Setup] section
-    if ($Platform -eq "arm64") {
-        $setupScript = $setupScript -replace '(\[Setup\][^\[]*)(MinVersion=)', "`$1ArchitecturesAllowed=arm64`r`nArchitecturesInstallIn64BitMode=arm64`r`n`$2"
-    } else {
-        $setupScript = $setupScript -replace '(\[Setup\][^\[]*)(MinVersion=)', "`$1ArchitecturesAllowed=x64compatible`r`nArchitecturesInstallIn64BitMode=x64compatible`r`n`$2"
-    }
-    
-    $setupScript | Out-File -FilePath "$ProjectDir\setup-$Platform.iss" -Encoding UTF8
-
-    # Create installer with Inno Setup
-    Write-Host "Creating $Platform installer with Inno Setup..." -ForegroundColor Yellow
-    $InnoSetupPath = "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
-    if (-not (Test-Path $InnoSetupPath)) { 
-        $InnoSetupPath = "${env:ProgramFiles}\Inno Setup 6\iscc.exe" 
-    }
-
-    if (Test-Path $InnoSetupPath) {
-        & $InnoSetupPath "$ProjectDir\setup-$Platform.iss"
-        
-        if ($LASTEXITCODE -eq 0) {
-            $installer = Get-ChildItem "$ProjectDir\bin\$Configuration\installer\*-$Platform.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
-            if ($installer) {
-                $sizeMB = [math]::Round($installer.Length / 1MB, 2)
-                Write-Host "✅ Created $Platform installer: $($installer.Name) ($sizeMB MB)" -ForegroundColor Green
-            } else {
-                Write-Warning "Installer file not found for $Platform"
-            }
-        } else {
-            Write-Warning "Inno Setup failed for $Platform with exit code: $LASTEXITCODE"
-        }
-    } else {
-        Write-Warning "Inno Setup not found at expected locations"
-    }
-}
-
-Write-Host "`n🎉 Build completed successfully!" -ForegroundColor Green
-```
-
-> [!TIP]
-> You can test this process locally by installing [.NET 9](https://dotnet.microsoft.com/download/dotnet/9.0) and [Inno Setup](https://jrsoftware.org/isdl.php) installed.
+> [!IMPORTANT]
+> If your project does not have a `Publication` directory, you can copy it from [Template's Publication](https://github.com/microsoft/PowerToys/tree/main/src/modules/cmdpal/ExtensionTemplate/TemplateCmdPalExtension/TemplateCmdPalExtension/Publication)
 >
-> ```powershell
-> # verify .Net 9 is installed
-> dotnet --version
-> 
-> # verify Inno Setup is installed
-> Test-Path "${env:ProgramFiles(x86)}\Inno Setup 6\iscc.exe"
->
-> # build installer, this step takes a while
-> .\build-exe.ps1 -Version "0.0.1.0"
->
-> # verify that <ExtensionName>-Setup-0.0.1.0.exe is listed
-> Get-ChildItem "bin\Release\installer\" -File
-> ```
+
+1. Open PowerShell and navigate to the Publication folder:
+
+   ```powershell
+   cd <YourProject>\Publication
+   ```
+
+2. Run the one-time setup script:
+
+   ```powershell
+   .\one-time-winget-publishing-setup.ps1
+   ```
+
+3. Follow the prompts to enter:
+   - GitHub Repository URL (where releases will be published)
+   - Developer/Publisher Name
+
+   The script will:
+   - Configure `winget-resources\build-exe.ps1` with your extension details
+   - Configure `winget-resources\setup-template.iss` with your extension information
+   - Move `release-extension.yml` to `.github\workflows\` in your repository root
+
+4. Add, Commit and push changes to GitHub:
+
+   ```powershell
+   git commit -m "Configure extension for WinGet publishing"
+   git push
+   ```
 
 ### Automate with GitHub Actions
 
@@ -492,165 +271,15 @@ Write-Host "`n🎉 Build completed successfully!" -ForegroundColor Green
 > **What are GitHub Actions?**
 > GitHub Actions is a CI/CD platform that automates software workflows directly in your GitHub repository. For Command Palette extensions, GitHub Actions can automatically build your installer whenever you push code changes, create releases, and even submit updates to WinGet - eliminating manual build steps and ensuring consistent, reproducible builds.
 
-Now set up GitHub Actions to automate the build and release process:
-
-1. Run `cd ..` to go up a directory. You should be in the directory that contains `<ExtensionName>.sln`.
-1. Create a new repo.
-
-```powershell
-mkdir .github/workflows
-```
-
-1. In the `workflows` directory, create a new file called `release-extension.yml`.
-1. Add the following content to the new file:
-
-```yml
-# TEMPLATE: Extension EXE Installer Build and Release Workflow
-# 
-# To use this template for a new extension:
-# 1. Copy this file to a new workflow file (e.g., release-myextension-exe.yml)
-# 2. Update Global constants with your data:
-# - GITHUB_REPO_URL with your GitHub repository URL (e.g., https://github.com/yourusername/YourRepository)
-# - DISPLAY_NAME with your display name (e.g., My Extension)
-# - EXTENSION_NAME with your extension name (e.g., CmdPalMyExtension)
-# - FOLDER_NAME with your project folder name (e.g., CmdPalMyExtension)
-
-name: CmdPal Extension - Build EXE Installer
-
-on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version number (leave empty to auto-detect)'
-        required: false
-        type: string
-      release_notes:
-        description: 'What is new in this version'
-        required: false
-        default: 'New release with latest updates and improvements.'
-        type: string
-
-
-# Global constants: UPDATE THESE, example; DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'CmdPal Name' }}
-env:
-  DISPLAY_NAME: ${{ vars.DISPLAY_NAME || 'DISPLAY_NAME' }}
-  EXTENSION_NAME: ${{ vars.EXTENSION_NAME || 'EXTENSION_NAME' }}
-  FOLDER_NAME: ${{ vars.FOLDER_NAME || 'FOLDER_NAME' }}
-  GITHUB_REPO_URL: ${{ vars.GITHUB_REPO_URL || 'GITHUB_REPO_URL' }}
-
-
-jobs:
-  build:
-    runs-on: windows-2022
-    permissions:
-      contents: write
-      actions: read
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-    
-    - name: Setup .NET 9
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '9.0.x'
-    
-    - name: Install Inno Setup
-      run: choco install innosetup -y --no-progress
-      shell: pwsh
-    
-    - name: Get version from project
-      id: version
-      run: |
-        if ("${{ github.event.inputs.version }}" -ne "") {
-          $version = "${{ github.event.inputs.version }}"
-        } else {
-          $projectFile = "${{ env.FOLDER_NAME }}/${{ env.EXTENSION_NAME }}.csproj"
-          $xml = [xml](Get-Content $projectFile)
-          $version = $xml.Project.PropertyGroup.AppxPackageVersion | Select-Object -First 1
-          if (-not $version) { throw "Version not found in project file" }
-        }
-        echo "VERSION=$version" >> $env:GITHUB_OUTPUT
-        Write-Host "Using version: $version"
-      shell: pwsh
-    
-    - name: Build EXE installers (x64 and ARM64)
-      run: |
-        Set-Location "${{ env.FOLDER_NAME }}/${{ env.FOLDER_NAME }}"
-        .\build-exe.ps1 -Version "${{ steps.version.outputs.VERSION }}" -Platforms @("x64", "arm64")
-      shell: pwsh
-    
-    - name: Upload x64 installer artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.EXTENSION_NAME }}-x64-installer
-        path: ${{ env.FOLDER_NAME }}/bin/Release/installer/*-x64.exe
-        if-no-files-found: error
-
-    - name: Upload ARM64 installer artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.EXTENSION_NAME }}-arm64-installer
-        path: ${{ env.FOLDER_NAME }}/bin/Release/installer/*-arm64.exe
-        if-no-files-found: warn
-    
-    - name: Create GitHub Release
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ${{ env.EXTENSION_NAME }}-v${{ steps.version.outputs.VERSION }}
-        name: "${{ env.DISPLAY_NAME }} v${{ steps.version.outputs.VERSION }}"
-        body: |
-          ## 🎯 ${{ env.DISPLAY_NAME }} ${{ steps.version.outputs.VERSION }}
-          
-          ## What's New
-          ${{ github.event.inputs.release_notes }}
-          
-          ## 📦 Installation
-          
-          Download the installer for your system architecture:
-          
-          - **x64 (Intel/AMD)**: `${{ env.DISPLAY_NAME }}-Setup-${{ steps.version.outputs.VERSION }}-x64.exe`
-          - **ARM64 (Windows on ARM)**: `${{ env.DISPLAY_NAME }}-Setup-${{ steps.version.outputs.VERSION }}-arm64.exe`
-          
-          1. Download the appropriate installer from the Assets section below
-          2. Run the installer with administrator privileges
-          3. The extension will be registered and available in Command Palette
-          
-          
-          ## 🔗 More Information
-          
-          Repository: ${{ env.GITHUB_REPO_URL }}
-        files: ${{ env.FOLDER_NAME }}/bin/Release/installer/*.exe
-        draft: false
-        prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    
-    - name: Build summary
-      run: |
-        Write-Host "🎉 ${{ env.DISPLAY_NAME }} Release Complete!" -ForegroundColor Green
-        Write-Host "Version: ${{ steps.version.outputs.VERSION }}" -ForegroundColor Yellow
-        Write-Host "📁 Installer uploaded to GitHub Release" -ForegroundColor Green
-      shell: pwsh
-```
-
-This file is a GitHub Action script that does the following tasks:
-
-- Setup (.NET, Inno Setup)
-- Get Version (simple version detection)
-- Build App (straightforward dotnet publish)
-- Create Installer (simple Inno Setup call)
-- Upload Results (clear artifact + release steps)
-
-1. Update the placeholders in `release-extension.yml`.
-1. Commit the three new files: `build-exe.ps1`, `setup.iss`, and `release-extension.yml`.
-1. Push changes to GitHub.
-1. Trigger the GitHub Action:
+1. Trigger the GitHub Action to build and release:
 
    ```powershell
-   gh workflow run release-extension.yml --ref main -f create_release=true -f "release_notes= **First Release of <ExtensionName> Extension for Command Palette**
+   gh workflow run release-extension.yml --ref main -f "release_notes=**First Release of <ExtensionName> Extension for Command Palette**
+   
    The inaugural release of the <ExtensionName> for Command Palette..."
    ```
+
+   Or create a release manually through the GitHub web interface.
 
 #### GitHub Actions validation
 
@@ -793,8 +422,6 @@ jobs:
             --token $env:GITHUB_TOKEN `
             --submit
 ```
-
-
 
 ## Related content
 
