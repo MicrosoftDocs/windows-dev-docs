@@ -53,7 +53,8 @@ The Microsoft Store supports multiple packaging formats. MSIX is the recommended
 - .appx
 - .appxbundle
 - .appxupload
-- .xap
+
+`.xap` is a legacy package type associated with previously published apps and isn't used for new submissions.
 
 **MSIX benefits include**:
 - Free Microsoft code signing and CDN hosting.
@@ -64,7 +65,7 @@ Using the MSIX package format ensures a more reliable, secure, and streamlined i
 
 **EXE/MSI submission**:
 - Allowed since June 2021.
-- You must provide a URL or upload the installer in submission.
+- You must provide a package URL for the installer as part of the submission; the installer must be hosted on your own infrastructure or CDN.
 - Requirements:
   - Must be .exe or .msi only.
   - Offline installer – no downloads during setup.
