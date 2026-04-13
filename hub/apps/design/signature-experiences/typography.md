@@ -108,12 +108,16 @@ Windows 11 uses the following values for various types of text in the UI.
 | ![Example of body text](images/typography_body.svg) | Text             | 14/20 epx        |
 | ![Example of body strong text](images/typography_body_strong.svg)| Text semibold    | 14/20 epx        |
 | ![Example of body large text](images/typography_body_large.svg)| Text             | 18/24 epx        |
+| ![Example of body large strong text](images/typography_body_large_strong.png)| Text semibold    | 18/24 epx        |
 | ![Example of subtitle text](images/typography_subtitle.svg)| Display semibold | 20/28 epx        |
 | ![Example of title text](images/typography_title.svg)| Display semibold | 28/36 epx        |
 | ![Example of title large text](images/typography_title_large.svg)| Display semibold | 40/52 epx        |
 | ![Example of display text](images/typography_display.svg)| Display semibold | 68/92 epx        |
 
-Check out the guidance on using the [XAML type ramp](../../develop/platform/xaml/xaml-theme-resources.md#the-xaml-type-ramp) for more details.
+These type styles are available as XAML static resources that follow the [XAML type ramp](../../develop/platform/xaml/xaml-theme-resources.md#the-xaml-type-ramp) conventions, so you can use them directly in your app.
+
+> [!NOTE]
+> Bold and Italic styles are not part of the Fluent type ramp. Use Semibold instead of Bold for emphasis. Italic is excluded because it can reduce readability and legibility, particularly for people with dyslexia.
 
 ### Alignment
 
@@ -224,7 +228,7 @@ Variable fonts are good for precisely controlling the appearance of text.
 
 | Font-family | Styles | Notes |
 |---------|---------|---------|
-| Segoe MDL2 Assets | Regular | User-interface font for app icons. For more info, see the [Segoe Fluent Icons font](../style/segoe-fluent-icons-font.md) article. |
+| Segoe Fluent Icons | Regular | User-interface font for app icons. For more info, see the [Segoe Fluent Icons font](../style/segoe-fluent-icons-font.md) article. |
 | Segoe UI Emoji | Regular | User-interface font for Emoji. |
 | Segoe UI Symbol | Regular | Fallback font for symbols. |
 
