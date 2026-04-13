@@ -1,7 +1,7 @@
 ---
 title: Walkthrough—Create a C# component with WinUI controls, and consume it from a C++/WinRT app that uses the Windows App SDK
 description: Author a Windows Runtime component with C#/WinRT with WinUI controls, and consume it from any Windows App SDK app.
-ms.date: 03/15/2022
+ms.date: 04/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,8 +18,8 @@ This walkthrough demonstrates how to author a C# component with a custom WinUI c
 
 This walkthrough requires the following tools and components:
 
-- [Visual Studio 2026](/visualstudio/releases/2026/release-notes)
-- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
+- [Visual Studio 2022 or later](/visualstudio/releases/2022/release-notes)
+- [.NET 8.0 SDK (LTS)](https://dotnet.microsoft.com/download) or later
 - [Windows App SDK VSIX](../../../windows-app-sdk/downloads.md) (1.1 from the stable channel)
 
 ## Author your C#/WinRT component using the Windows App SDK
@@ -104,7 +104,7 @@ This walkthrough requires the following tools and components:
 1. You can now build the **WinUIComponentCs** project to generate a `.winmd` file for the component. 
 
  > [!NOTE]
- > You can also package the component as a NuGet package for end app consumers to reference. For more details, see [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) on the C#/WinRT Github repo.
+ > You can also package the component as a NuGet package for end app consumers to reference. For more details, see [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) on the C#/WinRT GitHub repo.
 
 ## Reference the component from a Windows App SDK C++/WinRT app
 
@@ -177,8 +177,8 @@ Consumption from packaged apps that use a separate **Windows Application Packagi
 
 ## Known issues
 
-- Consuming a C# component as a project reference requires `PublishReadyToRun` to be set to `False`. See [Github Issue #1151](https://github.com/microsoft/CsWinRT/issues/1151) for more details.
-- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `Arm64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.* See [Github Issue #1151](https://github.com/microsoft/CsWinRT/issues/1093) for more details.
+- Consuming a C# component as a project reference requires `PublishReadyToRun` to be set to `False`. See [GitHub Issue #1151](https://github.com/microsoft/CsWinRT/issues/1151) for more details.
+- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `Arm64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.* See [GitHub Issue #1093](https://github.com/microsoft/CsWinRT/issues/1093) for more details.
       
 ## Related topics
 

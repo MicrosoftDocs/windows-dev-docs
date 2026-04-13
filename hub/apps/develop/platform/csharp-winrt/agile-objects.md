@@ -1,7 +1,7 @@
 ---
 description:  An agile object is one that can be accessed from any thread. C#/WinRT provides support for agile references if you need to marshal a non-agile object across apartments in a safe way.
 title: Agile objects with C#/WinRT
-ms.date: 11/17/2020
+ms.date: 04/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -40,6 +40,6 @@ You can now pass `agileReference` to a thread in a different apartment, and use 
 
 ```csharp
 await Task.Run(() => {
-        Windows.UI.Popups.PopupMenu nonAgileObjAgain = agileReference.Get()
+        Windows.UI.Popups.PopupMenu nonAgileObjAgain = agileReference.Get();
     });
 ```
