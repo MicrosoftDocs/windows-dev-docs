@@ -14,7 +14,7 @@ You can update the SDK by manually installing the new build, updating in Visual 
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
-# 28000 versions
+## 28000 versions
 
 ## Build 10.0.28000.1721
 
@@ -155,7 +155,7 @@ This is a major version bump to the **28000** SDK series.
 
 ---
 
-# 26100 versions
+## 26100 versions
 
 ## Build 10.0.26100.8038
 
@@ -963,7 +963,7 @@ Initial release of the 10.0.26100 series, to correspond with the Windows 11, ver
 
 ---
 
-# 22000 versions and earlier
+## 22000 versions and earlier
 
 ## Build 10.0.22621.3235
 
