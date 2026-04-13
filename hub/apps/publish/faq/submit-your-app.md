@@ -1,7 +1,7 @@
 ---
 description: Learn how to submit your app to the Microsoft Store, including reserving names, uploading packages, and using different installer formats.
 title: Submit your app to Microsoft Store
-ms.date: 06/18/2025
+ms.date: 04/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -44,14 +44,25 @@ Fill out all required fields, then click **Submit for certification**. Partner C
 <details>
 <summary><strong>Do I need to package my app as an MSIX, or can I submit a traditional EXE/MSI installer?</strong></summary>
 
-Store allows both app types.
+The Microsoft Store supports multiple packaging formats. MSIX is the recommended format, but traditional EXE/MSI installers are also accepted.
 
-**MSIX Benefits are**:
+**Supported MSIX and related package formats**:
+- .msix
+- .msixbundle
+- .msixupload
+- .appx
+- .appxbundle
+- .appxupload
+- .xap
+
+**MSIX benefits include**:
 - Free Microsoft code signing and CDN hosting.
-- Easier updates, better integration with Windows features.
-- Enables advanced capabilities like flighting and commerce.
+- Easier updates and better integration with Windows features.
+- Support for advanced capabilities like flighting and commerce.
 
-**MSI/EXE Submission**:
+Using the MSIX package format ensures a more reliable, secure, and streamlined installation and update experience for users.
+
+**EXE/MSI submission**:
 - Allowed since June 2021.
 - You must provide a URL or upload the installer in submission.
 - Requirements:
