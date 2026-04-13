@@ -125,11 +125,7 @@ items:
               - name: Reserved file and URI scheme names
                 href: launch/reserved-uri-scheme-names.md
           - name: Background tasks
-            items:
-              - name: Working with background tasks in Windows apps
-                href: launch/create-and-register-a-background-task.md
-              - name: BackgroundTaskBuilder in the Windows App SDK
-                href: ../windows-app-sdk/applifecycle/background-tasks.md
+            href: ../windows-app-sdk/applifecycle/background-tasks.md
           - name: DispatcherQueue
             href: dispatcherqueue.md
       - name: App restore
