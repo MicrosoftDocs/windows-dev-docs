@@ -1,7 +1,10 @@
 ---
 title: Walkthrough—Create a C# component with WinUI controls, and consume it from a C++/WinRT app that uses the Windows App SDK
 description: Author a Windows Runtime component with C#/WinRT with WinUI controls, and consume it from any Windows App SDK app.
-ms.date: 04/13/2026, and consume it from a C++/WinRT app that uses the Windows App SDK
+ms.date: 04/13/2026
+ms.topic: article
+ms.localizationpriority: medium
+---
 
 C#/WinRT provides support for authoring Windows Runtime components, including WinUI custom types and custom controls. These components can be consumed from either C# or C++/WinRT applications that use the Windows App SDK. We recommend using C#/WinRT v1.6.4 or later to author runtime components with NuGet packaging support.
 
@@ -13,7 +16,7 @@ This walkthrough demonstrates how to author a C# component with a custom WinUI c
 
 This walkthrough requires the following tools and components:
 
-- [Visual Studio 2026](/visualstudio/releases/2026/release-notes)
+- [Visual Studio 2022 or later](/visualstudio/releases/2022/release-notes)
 - [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0) or later
 - [Windows App SDK VSIX](../../../windows-app-sdk/downloads.md) (1.1 from the stable channel)
 
@@ -173,7 +176,7 @@ Consumption from packaged apps that use a separate **Windows Application Packagi
 ## Known issues
 
 - Consuming a C# component as a project reference requires `PublishReadyToRun` to be set to `False`. See [GitHub Issue #1151](https://github.com/microsoft/CsWinRT/issues/1151) for more details.
-- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `Arm64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.* See [GitHub Issue #1151](https://github.com/microsoft/CsWinRT/issues/1093) for more details.
+- Consuming a C# component built for `AnyCPU` from C++ is supported only from `x86` applications currently. `x64` and `Arm64` apps result in a runtime error similar to: *%1 is not a valid Win32 application.* See [GitHub Issue #1093](https://github.com/microsoft/CsWinRT/issues/1093) for more details.
       
 ## Related topics
 

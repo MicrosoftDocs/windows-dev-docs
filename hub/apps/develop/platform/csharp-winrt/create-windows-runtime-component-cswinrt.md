@@ -1,7 +1,10 @@
 ---
 title: Walkthrough—Create a C#/WinRT component, and consume it from C++/WinRT
 description: Author a Windows Runtime component with C#/WinRT, and consume it from a native application.
-ms.date: 04/13/2026, and consume it from C++/WinRT
+ms.date: 04/13/2026
+ms.topic: article
+ms.localizationpriority: medium
+---
 
 C#/WinRT enables developers using .NET to author their own Windows Runtime components in C# using a class library project. Authored components can be consumed in native desktop applications as a package reference or as a project reference with a few modifications.
 
