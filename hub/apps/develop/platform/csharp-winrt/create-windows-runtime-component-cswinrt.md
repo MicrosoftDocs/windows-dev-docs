@@ -6,6 +6,8 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
+# Walkthrough&mdash;Create a C#/WinRT component, and consume it from C++/WinRT
+
 C#/WinRT enables developers using .NET to author their own Windows Runtime components in C# using a class library project. Authored components can be consumed in native desktop applications as a package reference or as a project reference with a few modifications.
 
 This walkthrough demonstrates how to create a simple Windows Runtime component using C#/WinRT, distribute the component as a NuGet package, and consume the component from a C++/WinRT console application. For the full sample that provides the code for this article, see the [C#/WinRT authoring sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/AuthoringDemo). For more details about authoring, see [Authoring components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
@@ -17,7 +19,7 @@ For a walkthrough on authoring WinUI 3 controls with C#/WinRT specifically for u
 This walkthrough requires the following tools and components:
 
 - [Visual Studio 2022 or later](/visualstudio/releases/2022/release-notes)
-- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later
+- [.NET 8.0 SDK (LTS)](https://dotnet.microsoft.com/download) or later
 - [C++/WinRT VSIX](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) for C++/WinRT project templates
 
 ## Create a simple Windows Runtime Component using C#/WinRT

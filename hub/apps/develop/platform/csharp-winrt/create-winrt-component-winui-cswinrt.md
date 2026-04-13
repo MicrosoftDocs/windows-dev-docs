@@ -6,6 +6,8 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
+# Walkthrough&mdash;Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK
+
 C#/WinRT provides support for authoring Windows Runtime components, including WinUI custom types and custom controls. These components can be consumed from either C# or C++/WinRT applications that use the Windows App SDK. We recommend using C#/WinRT v1.6.4 or later to author runtime components with NuGet packaging support.
 
 For more details about the supported scenarios, refer to [Authoring C#/WinRT components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md) in the C#/WinRT GitHub repo.
@@ -17,7 +19,7 @@ This walkthrough demonstrates how to author a C# component with a custom WinUI c
 This walkthrough requires the following tools and components:
 
 - [Visual Studio 2022 or later](/visualstudio/releases/2022/release-notes)
-- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet/6.0) or later
+- [.NET 8.0 SDK (LTS)](https://dotnet.microsoft.com/download) or later
 - [Windows App SDK VSIX](../../../windows-app-sdk/downloads.md) (1.1 from the stable channel)
 
 ## Author your C#/WinRT component using the Windows App SDK

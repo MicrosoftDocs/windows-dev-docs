@@ -22,7 +22,7 @@ In .NET 6 and later, consumption of Windows metadata (WinMD) files is no longer 
 This walkthrough and the corresponding sample require the following tools and components:
 
 * [Visual Studio 2022 or later](https://visualstudio.microsoft.com/downloads/) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
-* [.NET 6.0 SDK](https://dotnet.microsoft.com/download/) or later.
+* [.NET 8.0 SDK (LTS)](https://dotnet.microsoft.com/download) or later.
 
 We'll be using Visual Studio 2022 or later and .NET 8 in this walkthrough.
 
