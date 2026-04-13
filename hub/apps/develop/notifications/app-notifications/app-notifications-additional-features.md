@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Additional app notification features
 
-Beyond the basics covered in the [quickstart](app-notifications-quickstart.md), the Windows App SDK supports a range of additional features for app notifications. These articles cover how to manage notification lifecycle, customize appearance and behavior, and organize notifications in Notification Center.
+The articles in this section describe app notifications features such as how to manage notification lifecycle, customize appearance and behavior, and organize notifications in Notification Center. To get started using app notifications in a Windows app, see [Quickstart: App notifications](app-notifications-quickstart.md).
 
 | Feature | Description |
 |---------|-------------|
