@@ -117,7 +117,7 @@ Windows 11 uses the following values for various types of text in the UI.
 These type styles are available as XAML static resources that follow the [XAML type ramp](../../develop/platform/xaml/xaml-theme-resources.md#the-xaml-type-ramp) conventions, so you can use them directly in your app.
 
 > [!NOTE]
-> Bold and Italic styles are not part of the Fluent type ramp. Use Semibold instead of Bold for emphasis. Italic is excluded because it can reduce readability and legibility, particularly for people with dyslexia.
+> Bold and Italic styles are not part of the Windows type ramp. Use Semibold instead of Bold for emphasis. Italic is excluded because it can reduce readability and legibility, particularly for people with dyslexia.
 
 ### Alignment
 
