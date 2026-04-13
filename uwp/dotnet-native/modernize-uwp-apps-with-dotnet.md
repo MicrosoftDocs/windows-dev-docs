@@ -101,7 +101,7 @@ UWP modern .NET projects use SDK-style .csproj files with key properties:
 - **UseUwp**: References WinRT projections for Windows.UI.Xaml types and configures CsWinRT for UWP compatibility
 - **UseUwpTools**: Enables UWP-specific tooling including XAML compiler, project capabilities, and MSIX packaging.  Note this property is enabled by default when `UseUwp` is enabled.
 - **EnableMsixTooling**: Enables single-project MSIX support (no separate packaging project needed)
-- **PublishAot**: Enables Native AOT compilation (required for Microsoft Store publication)
+- **PublishAot**: Enables Native AOT compilation
 - **DisableRuntimeMarshalling**: Optimizes performance for Native AOT scenarios
 
 ## Migrating Existing UWP Apps to Modern .NET
@@ -111,7 +111,7 @@ To migrate an existing UWP app from [.NET Native](index.md) to modern .NET:
 ### Step 1: Update Project File
 
 1. Convert your existing .csproj to SDK-style format
-2. Add the required properties (`UseUwp`, `EnableMsixTooling`, `PublishAot`)
+2. Add the required properties - `UseUwp`, `EnableMsixTooling`, then `PublishAot` or `SelfContained`
 3. Update NuGet package references to versions compatible with the latest .NET
 
 ### Step 2: Address Native AOT Compatibility
@@ -146,7 +146,7 @@ The following can be set in library projects:
 If your existing app uses a [runtime directives (rd.xml) file](runtime-directives-rd-xml-configuration-file-reference.md) for .NET Native, you'll need to address reflection and trimming requirements differently with Native AOT using attributes and analyzers instead.
 
 > [!TIP]
-Use `[GeneratedBindableCustomProperty]` classes that need `{Binding}` in XAML.  These classes should be marked as `partial`.
+> Use `[GeneratedBindableCustomProperty]` on classes that need `{Binding}` in XAML. These classes should be marked as `partial`.
 
 ### Step 3: Test Thoroughly
 
