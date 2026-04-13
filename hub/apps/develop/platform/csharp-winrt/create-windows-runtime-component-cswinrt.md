@@ -1,12 +1,7 @@
 ---
 title: Walkthrough—Create a C#/WinRT component, and consume it from C++/WinRT
 description: Author a Windows Runtime component with C#/WinRT, and consume it from a native application.
-ms.date: 03/15/2022
-ms.topic: article
-ms.localizationpriority: medium
----
-
-# Walkthrough&mdash;Create a C#/WinRT component, and consume it from C++/WinRT
+ms.date: 04/13/2026, and consume it from C++/WinRT
 
 C#/WinRT enables developers using .NET to author their own Windows Runtime components in C# using a class library project. Authored components can be consumed in native desktop applications as a package reference or as a project reference with a few modifications.
 
@@ -18,7 +13,7 @@ For a walkthrough on authoring WinUI 3 controls with C#/WinRT specifically for u
 
 This walkthrough requires the following tools and components:
 
-- [Visual Studio 2022](/visualstudio/releases/2022/release-notes)
+- [Visual Studio 2022 or later](/visualstudio/releases/2022/release-notes)
 - [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later
 - [C++/WinRT VSIX](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) for C++/WinRT project templates
 
@@ -41,7 +36,7 @@ Begin by creating a new project in Visual Studio. Select the **Class Library** p
 
     a. In Solution Explorer, right click on the project node and select **Manage NuGet Packages**.
 
-    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version. This walkthrough uses C#/WinRT version 1.4.1.
+    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version.
 
 3. Add a new `PropertyGroup` element that sets the `CsWinRTComponent` property. This specifies that your project is a Windows Runtime component so that a `.winmd` file is generated when you build the project.
 

@@ -1,7 +1,7 @@
 ---
 title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
 description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
-ms.date: 03/23/2023
+ms.date: 04/13/2026
 ms.topic: how-to
 keywords: windows 10, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
@@ -73,7 +73,7 @@ First, with the **CppWinRTComponentProjectionSample** solution still open in Vis
     1. In **Solution Explorer**, right-click your solution node and click **Add** > **New Project**. 
     2. In the **Add a new project** dialog box, type **Class Library** in the search box. Choose **C#** from the language list, and then choose **Windows** from the platform list. Choose the C# project template that's called simply **Class Library** (with no prefixes nor suffixes), and click **Next**.
     3. Name the new project *SimpleMathProjection*. The location should already be set to the same `\CsWinRT\src\Samples\NetProjectionSample` folder that the **SimpleMathComponent** folder is in; but confirm that. Then click **Next**.
-    4. On the **Additional information** page, select **.NET 6.0 (Long-term support)**, and then choose **Create**.
+    4. On the **Additional information** page, select **.NET 8.0 (Long-term support)**, and then choose **Create**.
 
 2. Delete the stub **Class1.cs** file from the project.
 
@@ -235,7 +235,7 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
     1. In a new instance of Visual Studio, select **File** > **New** > **Project**.
     2. In the **Create a new project** dialog box, search for the **Console App** project template. Choose the C# project template that's called simply **Console App** (with no prefixes nor suffixes), and click **Next**. If you're using Visual Studio 2019, then the project template is **Console Application**.
     3. Name the new project **SampleConsoleApp**, set its location to the same `\CsWinRT\src\Samples\NetProjectionSample` folder that the **SimpleMathComponent** and **SimpleMathProjection** folders are in, and click **Next**.
-    4. On the **Additional information** page, select **.NET 6.0 (Long-term support)**, and then choose **Create**.
+    4. On the **Additional information** page, select **.NET 8.0 (Long-term support)**, and then choose **Create**.
 
 2. In **Solution Explorer**, double-click the **SampleConsoleApp** node to open the **SampleConsoleApp.csproj** project file, and edit the `TargetFramework` and `Platform` properties so that they look as shown in the following listing. Add the `Platform` element if it's not there.
 

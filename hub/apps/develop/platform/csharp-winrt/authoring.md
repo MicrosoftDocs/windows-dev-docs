@@ -1,7 +1,7 @@
 ---
 title: Author Windows Runtime components with C#/WinRT
 description: Overview of authoring Windows Runtime Components with C#/WinRT 
-ms.date: 03/15/2022
+ms.date: 04/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ The C#/WinRT NuGet package provides support for authoring your own Windows Runti
 
 For a walkthrough showing how to author a Windows Runtime component with .NET 6, and how to consume it from a C++/WinRT console application, see [Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT](./create-windows-runtime-component-cswinrt.md).
 
-For more details, and to search for or file any issues, refer to the [C#/WinRT Github repo](https://github.com/microsoft/CsWinRT) and [Authoring C#/WinRT Components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
+For more details, and to search for or file any issues, refer to the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT) and [Authoring C#/WinRT Components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
 
 ## Declaring types in Windows Runtime components
 
