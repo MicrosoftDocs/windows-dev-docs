@@ -989,6 +989,8 @@ items:
             href: ui/layouts-with-xaml.md
           - name: Shadows
             href: ui/shadows.md
+          - name: Sound
+            href: ui/sound.md
           - name: Windowing
             items:
               - name: Overview

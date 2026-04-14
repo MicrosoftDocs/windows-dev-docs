@@ -3,19 +3,14 @@ description: Sound helps complete an application's user experience, and gives th
 label: Sound
 title: Sound
 template: detail.hbs
-ms.assetid: 9fa77494-2525-4491-8f26-dc733b6a18f6
-ms.date: 05/19/2017
+ms.date: 04/08/2026
 ms.topic: how-to
 keywords: windows 10, winui
-pm-contact: kisai
-design-contact: mattben
-dev-contact: joyate
-doc-status: Published
 ms.localizationpriority: medium
 ---
 # Sound
 
-![hero image](images/header-sound.svg)
+![hero image](../../design/style/images/header-sound.svg)
 
 There are many ways to use sound to enhance your app. You can use to sound to supplement other UI elements, enabling users to recognize events audibly. Sound can be an effective user interface element for people with visual disabilities. You can use sound to create an atmosphere that immerses the user; for example, you might play a whimsical soundtrack in the background of puzzle game, or use ominous sound effects for a horror/survival game.
 
@@ -31,9 +26,9 @@ There are many ways to use sound to enhance your app. You can use to sound to su
 
 ## Sound Global API
 
-UWP provides an easily accessible sound system that allows you to simply "flip a switch" and get an immersive audio experience across your entire app.
+WinUI provides an easily accessible sound system that allows you to simply "flip a switch" and get an immersive audio experience across your entire app.
 
-The [**ElementSoundPlayer**](/uwp/api/windows.ui.xaml.elementsoundplayer) is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
+The [**ElementSoundPlayer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.elementsoundplayer) is an integrated sound system within XAML, and when turned on all default controls will play sounds automatically.
 ```C#
 ElementSoundPlayer.State = ElementSoundPlayerState.On;
 ```
@@ -88,7 +83,7 @@ Each sound relates to a certain basic user interaction, and although sounds can 
 
 The most common control-triggered sound in our system today is the **Invoke** sound. This sound plays when a user invokes a control through a tap/click/enter/space or press of the 'A' button on a gamepad.
 
-Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../input/index.md).
+Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../../design/input/index.md).
 
 
 To play this sound from any control event, simply call the Play method from **ElementSoundPlayer** and pass in **ElementSound.Invoke**:
@@ -112,7 +107,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### Navigation Within a Page
 
-When navigating between panels or views within an app's page (see [NavigationView](../controls/navigationview.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
+When navigating between panels or views within an app's page (see [NavigationView](../../design/controls/navigationview.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
 
 The audio experience around this navigation concept is encompassed by the **MovePrevious** and **MoveNext** sounds.
 
@@ -152,5 +147,4 @@ The purpose behind this cycling feature is to keep the focus sounds from becomin
 
 ## Related articles
 
-* [Designing for Xbox and TV](../devices/designing-for-tv.md)
-* [ElementSoundPlayer class documentation](/uwp/api/windows.ui.xaml.elementsoundplayer)
+* [ElementSoundPlayer class documentation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.elementsoundplayer)

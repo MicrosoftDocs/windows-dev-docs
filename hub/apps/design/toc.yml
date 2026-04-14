@@ -68,8 +68,6 @@ items:
           href: motion/directionality-and-gravity.md
     - name: Navigation
       href: basics/navigation-basics.md
-    - name: Sound
-      href: style/sound.md
     - name: Typography
       href: signature-experiences/typography.md
     - name: Usability
