@@ -21,7 +21,7 @@ The [App notifications quickstart](app-notifications-quickstart.md) walks you th
 
 ## Use app notifications with other frameworks
 
-These articles show how to send an app notification and handle activation for other supported frameworks. For notification content, features, and design guidance, see the sections below.
+These articles show how to send an app notification and handle activation for [other supported frameworks](app-notifications-other-frameworks.md). For notification content, features, and design guidance, see the sections below.
 
 - [WPF apps](app-notifications-wpf.md)
 - [WinForms apps](app-notifications-winforms.md)
@@ -37,7 +37,7 @@ These articles cover how to design your notifications and define their content, 
 - [App notification content schema](app-notifications-schema.md)
 - [Schedule an app notification](app-notifications-scheduled.md)
 
-## Additional app notifications features
+## [Additional app notifications features](app-notifications-additional-features.md)
 
 These articles cover additional capabilities you can add to your app notifications, such as progress bars, custom audio, and grouping.
 

@@ -550,6 +550,13 @@ items:
                   href: notifications/app-notifications/notification-listener.md
               - name: Other frameworks
                 href: notifications/app-notifications/app-notifications-other-frameworks.md
+                items:
+                - name: WPF apps
+                  href: notifications/app-notifications/app-notifications-wpf.md
+                - name: WinForms apps
+                  href: notifications/app-notifications/app-notifications-winforms.md
+                - name: Console apps
+                  href: notifications/app-notifications/app-notifications-console.md
           - name: Notification delivery methods
             href: notifications/choosing-a-notification-delivery-method.md
             items:

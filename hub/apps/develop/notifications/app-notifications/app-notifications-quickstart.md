@@ -30,7 +30,7 @@ For complete sample apps that implement app notifications, see the [Windows App 
 - Make sure Windows Application Development is selected.
 - Make sure Windows UI Application Development is selected.
 
-For more information about managing workloads in Visual Studio, see [Modify Visual Studio workloads, components, and language packs](/visualstudio/install/modify-visual-studio). For more information about getting started with WinUI, see [Get started with WinUI](../../../get-started/start-here.md). To create a new WinUI project, see [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md). To add the Windows App SDK to an existing project, see [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+For more information about managing workloads in Visual Studio, see [Modify Visual Studio workloads, components, and language packs](/visualstudio/install/modify-visual-studio). For more information about getting started with WinUI, see [Get started with WinUI](../../../get-started/start-here.md). To add the Windows App SDK to an existing project, see [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
 
 ## Create a new WinUI app project in Visual Studio
 
