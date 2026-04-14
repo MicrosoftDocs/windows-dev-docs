@@ -50,7 +50,7 @@ As you can see, Windows does a great job in helping your customers find and inst
 
 Storing app settings to the cloud requires a service. To provide as rich an experience as possible, Microsoft provides a variety of services that eliminate the need to spin up servers, or pick your database, or worry about scale or security. Those services provide a great developer experience that lets you store application data in the cloud by using SQL or NoSQL APIs. To help build scalable and robust applications, you can also sync data on all devices, and enable the application to work with or without a network connection. For more info about Microsoft services, see [Store, sync, and query mobile application data from the cloud](/azure/developer/mobile-apps/data-storage).
 
-For more info about the best practices of storing app data, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
+For more info about the best practices of storing app data, see [Store and retrieve settings and other app data](/windows/apps/develop/data/store-and-retrieve-app-data).
 
 ## Write user-generated content to Known Folders
 

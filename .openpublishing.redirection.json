@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/design/app-settings/store-and-retrieve-app-data.md",
+      "redirect_url": "/windows/apps/develop/data/store-and-retrieve-app-data",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "uwp/audio-video-camera/camera-ui-features-for-mobile-devices.md",
       "redirect_url": "/previous-versions/windows/uwp/audio-video-camera/camera-ui-features-for-mobile-devices",
       "redirect_document_id": false
