@@ -123,6 +123,7 @@ The styles look like this when applied to a [TextBlock](/windows/windows-app-sdk
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Body Strong" Style="{StaticResource BodyStrongTextBlockStyle}"/>
 <TextBlock Text="Body Large" Style="{StaticResource BodyLargeTextBlockStyle}"/>
+<TextBlock Text="Body Large Strong" Style="{StaticResource BodyLargeStrongTextBlockStyle}"/>
 <TextBlock Text="Subtitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
 <TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
 <TextBlock Text="Title Large" Style="{StaticResource TitleLargeTextBlockStyle}"/>
