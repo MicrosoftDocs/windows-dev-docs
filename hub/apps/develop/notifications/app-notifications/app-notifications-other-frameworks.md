@@ -17,7 +17,7 @@ The [app notifications quickstart](app-notifications-quickstart.md) demonstrates
 | WPF | [Use app notifications with a WPF app](app-notifications-wpf.md) |
 | WinForms | [Use app notifications with a WinForms app](app-notifications-winforms.md) |
 | Console | [Use app notifications with a console app](app-notifications-console.md) |
-| UWP | [Use app notifications with a UWP app](/uwp/develop/app-notifications-uwp) |
+| UWP | [Use app notifications with a UWP app](/windows/uwp/develop/app-notifications-uwp) |
 
 For notification content, additional features, and design guidance, see [App notifications overview](index.md).
 

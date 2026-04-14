@@ -26,7 +26,7 @@ These articles show how to send an app notification and handle activation for ot
 - [WPF apps](app-notifications-wpf.md)
 - [WinForms apps](app-notifications-winforms.md)
 - [Console apps](app-notifications-console.md)
-- [UWP apps](/uwp/develop/app-notifications-uwp)
+- [UWP apps](/windows/uwp/develop/app-notifications-uwp)
 
 ## UX and content guidance
 
