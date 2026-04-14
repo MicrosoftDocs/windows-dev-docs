@@ -1,7 +1,7 @@
 ---
 title: .NET mappings of WinRT types in C#/WinRT
 description: The following table lists the mappings that C#/WinRT makes between Windows Runtime types and .NET types.
-ms.date: 04/19/2020
+ms.date: 04/13/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -18,7 +18,7 @@ The C#/WinRT custom type mappings are categorized by types in the Windows SDK or
 - **WinRT types that map to .NET types with the same name and namespace.** These custom mappings are generally for performance or enhancement reasons, and are implemented directly in C#. Most of the types that have the same namespace name and type name in WinRT and .NET are structures (or types associated with structures, such as enumerations). In WinRT, structures have no members other than fields, and require helper types, which .NET hides. The .NET versions of these structures have properties and methods that provide the functionality of the hidden helper types (for example, **Windows.UI.Color**).
 
 > [!NOTE]
-> For a list of mappings between WinRT and .NET types in the context of UWP apps, see [.NET mappings of WinRT types in UWP](/windows/apps/develop/platform/csharp-winrt/net-mappings-of-winrt-types).
+> For a list of mappings between WinRT and .NET types in the context of UWP apps, see [.NET mappings of Windows Runtime types](/windows/uwp/winrt-components/net-framework-mappings-of-windows-runtime-types).
 
 ## Mappings for WinRT types in the Windows SDK
 
@@ -99,4 +99,4 @@ The C#/WinRT custom type mappings are categorized by types in the Windows SDK or
 | KeyTime | Microsoft.UI.Xaml.Media.Animation | 
 | RepeatBehavior | Microsoft.UI.Xaml.Media.Animation | 
 | RepeatBehaviorType | Microsoft.UI.Xaml.Media.Animation | 
-| Matrix3D |(Microsoft.UI.Xaml.Media.Media3D |
+| Matrix3D | Microsoft.UI.Xaml.Media.Media3D |

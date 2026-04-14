@@ -2,7 +2,7 @@
 title: Tutorial--Create a simple photo viewer with WinUI
 description: In this topic we walk through the process of building a simple WinUI app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: tutorial
-ms.date: 08/19/2024
+ms.date: 03/24/2026
 keywords: Windows, App, SDK, WinUI, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
 ms.localizationpriority: medium
 ---
@@ -238,6 +238,9 @@ A *model* (in the sense of models, views, and view models) is a class that to so
 
 1. Replace the contents of `ImageFileInfo.h` with the code listing below.
 
+    > [!TIP]
+    > For a complete, buildable reference implementation of this class, see [Photo.h](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/PhotoEditor/cpp-winui/PhotoEditor/Photo.h) in the Windows App SDK Photo Editor C++ sample.
+
     ```cppwinrt
     // ImageFileInfo.h
     #pragma once
@@ -250,17 +253,17 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             ImageFileInfo() = default;
 
             ImageFileInfo(
-                winrt::Windows::Storage::FileProperties::ImageProperties const& properties,
-                winrt::Windows::Storage::StorageFile const& imageFile,
+                Windows::Storage::FileProperties::ImageProperties const& properties,
+                Windows::Storage::StorageFile const& imageFile,
                 hstring const& name,
                 hstring const& type);
 
-            winrt::Windows::Storage::FileProperties::ImageProperties ImageProperties()
+            Windows::Storage::FileProperties::ImageProperties ImageProperties()
             {
                 return m_imageProperties;
             }
 
-            winrt::Windows::Storage::StorageFile ImageFile()
+            Windows::Storage::StorageFile ImageFile()
             {
                 return m_imageFile;
             }
@@ -294,15 +297,8 @@ A *model* (in the sense of models, views, and view models) is a class that to so
 
             void ImageRating(uint32_t value);
 
-            winrt::event_token PropertyChanged(winrt::Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
-            {
-                return m_propertyChanged.add(handler);
-            }
-
-            void PropertyChanged(winrt::event_token const& token) noexcept
-            {
-                m_propertyChanged.remove(token);
-            }
+            event_token PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& handler);
+            void PropertyChanged(event_token const& token) noexcept;
 
             Windows::Foundation::IAsyncOperation<Microsoft::UI::Xaml::Media::Imaging::BitmapImage> GetImageSourceAsync();
 
@@ -316,10 +312,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             hstring m_imageFileType;
 
             event<Microsoft::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
-            void OnPropertyChanged(hstring propertyName)
-            {
-                m_propertyChanged(*this, Microsoft::UI::Xaml::Data::PropertyChangedEventArgs(propertyName));
-            }
+            void RaisePropertyChanged(hstring const& propertyName);
         };
     }
     namespace winrt::SimplePhotos::factory_implementation
@@ -343,6 +336,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
     namespace winrt
     {
         using namespace Microsoft::UI::Xaml;
+        using namespace Microsoft::UI::Xaml::Data;
         using namespace Microsoft::UI::Xaml::Media::Imaging;
         using namespace Windows::Foundation;
         using namespace Windows::Storage;
@@ -353,8 +347,8 @@ A *model* (in the sense of models, views, and view models) is a class that to so
     namespace winrt::SimplePhotos::implementation
     {
         ImageFileInfo::ImageFileInfo(
-            winrt::Windows::Storage::FileProperties::ImageProperties const& properties,
-            winrt::Windows::Storage::StorageFile const& imageFile,
+            Windows::Storage::FileProperties::ImageProperties const& properties,
+            Windows::Storage::StorageFile const& imageFile,
             hstring const& name,
             hstring const& type) :
             m_imageProperties{ properties },
@@ -368,13 +362,28 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             ImageRating(rating == 0 ? dist(random) : rating);
         }
 
+        event_token ImageFileInfo::PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
+        {
+            return m_propertyChanged.add(handler);
+        }
+
+        void ImageFileInfo::PropertyChanged(event_token const& token) noexcept
+        {
+            m_propertyChanged.remove(token);
+        }
+
+        void ImageFileInfo::RaisePropertyChanged(hstring const& propertyName)
+        {
+            m_propertyChanged(*this, PropertyChangedEventArgs{ propertyName });
+        }
+
         void ImageFileInfo::ImageTitle(hstring const& value)
         {
             if (ImageProperties().Title() != value)
             {
                 ImageProperties().Title(value);
                 ImageProperties().SavePropertiesAsync();
-                OnPropertyChanged(L"ImageTitle");
+                RaisePropertyChanged(L"ImageTitle");
             }
         }
 
@@ -384,7 +393,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             {
                 ImageProperties().Rating(value);
                 ImageProperties().SavePropertiesAsync();
-                OnPropertyChanged(L"ImageRating");
+                RaisePropertyChanged(L"ImageRating");
             }
         }
 
