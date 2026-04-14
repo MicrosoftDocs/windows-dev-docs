@@ -5,7 +5,7 @@ ms.date: 03/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
-# Time-based animations for
+# Time-based animations
 
 When a component in, or an entire user experience changes, end users often observe it in two ways: over time or instantaneously. On the Windows platform, the former is preferred over the latter -  user experiences that instantly change often confuse and surprise end users because they are not able to follow what happened. The end user then perceives the experience as jarring and unnatural.
 

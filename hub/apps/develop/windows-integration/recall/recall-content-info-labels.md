@@ -74,7 +74,7 @@ Sensitive (single):
     "labels": [
       {
         "labelID": "F96E0B19-8C3A-4D5A-8B9A-2E8CFC43247B",
-        "organizationID": "D3FE4C20-9C77-45AB-A8E7-9870D3C9C856"
+        "organizationID": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
       }
     ]
   }
@@ -114,11 +114,11 @@ Sensitive (single):
   "labels": [
     {
       "labelID": "F96E0B19-8C3A-4D5A-8B9A-2E8CFC43247B",
-      "organizationID": "D3FE4C20-9C77-45AB-A8E7-9870D3C9C856"
+      "organizationID": "00aa00aa-bb11-cc22-dd33-44ee44ee44ee"
     },
     {
       "labelID": "9A724CF8-E7D2-4B1C-8F4A-1D2E7B3A6C8D",
-      "organizationID": "7C56AB24-9E32-44FA-B7D8-1E9F43C7A92B"
+      "organizationID": "11bb11bb-cc22-dd33-ee44-55ff55ff55ff"
     }
   ]
 }

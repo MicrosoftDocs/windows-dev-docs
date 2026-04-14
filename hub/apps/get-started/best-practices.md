@@ -276,7 +276,7 @@ Reliable installation, update, and uninstallation experiences are important part
 
   - Listing your app on the [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) makes your app more discoverable for users.
   - If you host your app across multiple channels (for example, on a website and on the Microsoft Store), use a consistent application identity and update mechanism across all channels.
-  - [Distribute your app through the Microsoft Store](../desktop/modernize/desktop-to-uwp-distribute.md) to make it more discoverable for users. Note that Windows users access Store apps through the Windows Package Manager [WinGet](../../package-manager/winget/index.md). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in WinGet via the [WinGet repository](../../package-manager/package/index.md).
+  - [Distribute your app through the Microsoft Store](../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md) to make it more discoverable for users. Note that Windows users access Store apps through the Windows Package Manager [WinGet](../../package-manager/winget/index.md). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in WinGet via the [WinGet repository](../../package-manager/package/index.md).
 
 <!--todo: unpackaged app distribution best practices -->
 
