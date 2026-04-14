@@ -53,6 +53,6 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 - Provide complete and accurate responses to all of the questions in the [Age ratings](./age-ratings.md) section.
 
-- Don't [declare your app as accessible](./product-declarations.md#this-app-has-been-tested-to-meet-accessibility-guidelines) unless you have specifically engineered and tested it for accessibility scenarios.
+- Don't [declare your app as accessible](./product-declarations.md#this-product-has-been-tested-to-meet-accessibility-guidelines) unless you have specifically engineered and tested it for accessibility scenarios.
 
 - If your app uses the commerce APIs from the [**Windows.ApplicationModel.Store**](/uwp/api/Windows.ApplicationModel.Store) namespace, make sure to test the app and verify that it handles typical exceptions. Also, make sure that your app uses the [**CurrentApp**](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) class and not the [**CurrentAppSimulator**](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) class, which is for testing purposes only. (Note that if your app targets Windows 10, version 1607 or later, we recommend that you use members of the [Windows.Services.Store](/uwp/api/windows.services.store) namespace instead of the Windows.ApplicationModel.Store namespace.)

@@ -1,7 +1,7 @@
 ---
 title: Walkthrough—Create a C#/WinRT component, and consume it from C++/WinRT
 description: Author a Windows Runtime component with C#/WinRT, and consume it from a native application.
-ms.date: 03/15/2022
+ms.date: 04/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,8 +18,8 @@ For a walkthrough on authoring WinUI 3 controls with C#/WinRT specifically for u
 
 This walkthrough requires the following tools and components:
 
-- [Visual Studio 2022](/visualstudio/releases/2022/release-notes)
-- [.NET 6.0 SDK](https://dotnet.microsoft.com/download/dotnet) or later
+- [Visual Studio 2022 or later](/visualstudio/releases/2022/release-notes)
+- [.NET 8.0 SDK (LTS)](https://dotnet.microsoft.com/download) or later
 - [C++/WinRT VSIX](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) for C++/WinRT project templates
 
 ## Create a simple Windows Runtime Component using C#/WinRT
@@ -41,7 +41,7 @@ Begin by creating a new project in Visual Studio. Select the **Class Library** p
 
     a. In Solution Explorer, right click on the project node and select **Manage NuGet Packages**.
 
-    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version. This walkthrough uses C#/WinRT version 1.4.1.
+    b. Search for the **Microsoft.Windows.CsWinRT** NuGet package and install the latest version.
 
 3. Add a new `PropertyGroup` element that sets the `CsWinRTComponent` property. This specifies that your project is a Windows Runtime component so that a `.winmd` file is generated when you build the project.
 
@@ -95,7 +95,7 @@ When you build the package, the **Build** window should indicate that the NuGet 
 C#/WinRT authored Windows Runtime components can be consumed from any Windows Runtime (WinRT)-compatible language. The following steps demonstrate how to call the authored component above in a C++/WinRT console application. 
 
 > [!NOTE]
-> Consuming a C#/WinRT component from C#/.NET apps is supported by both package reference or project reference. This scenario is equivalent to consuming any ordinary C# class library and does not involve WinRT activation in most cases. Starting with C#/WinRT 1.3.5, project references for C# consumers require .NET 6.
+> Consuming a C#/WinRT component from C#/.NET apps is supported by both package reference or project reference. This scenario is equivalent to consuming any ordinary C# class library and does not involve WinRT activation in most cases. Starting with C#/WinRT 1.3.5, project references for C# consumers require .NET 6 or later.
 
 1. Add a new **C++/WinRT Console Application** project to your solution. Note that this project can also be part of a different solution if you choose so.
 

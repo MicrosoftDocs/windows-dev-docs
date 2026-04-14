@@ -179,7 +179,7 @@ App settings let you the user customize your app, optimizing it for their indivi
         <p>Best practices for creating and displaying app settings.</p>
     :::column-end:::
     :::column:::
-        <h3><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></h3>
+        <h3><a href="../../develop/data/store-and-retrieve-app-data.md">Store and retrieve app data</a></h3>
         <p>How to store and retrieve local, roaming, and temporary app data.</p>
     :::column-end:::
 :::row-end:::
@@ -201,7 +201,7 @@ App settings let you the user customize your app, optimizing it for their indivi
             <div class="cardPadding">
                 <div class="card">
                     <div class="cardText">
-<p><b><a href="../app-settings/store-and-retrieve-app-data.md">Store and retrieve app data</a></b><br/>How to store and retrieve local, roaming, and temporary app data.</p>
+<p><b><a href="../../develop/data/store-and-retrieve-app-data.md">Store and retrieve app data</a></b><br/>How to store and retrieve local, roaming, and temporary app data.</p>
                     </div>
                 </div>
             </div>

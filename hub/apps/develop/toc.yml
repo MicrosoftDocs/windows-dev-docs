@@ -125,11 +125,7 @@ items:
               - name: Reserved file and URI scheme names
                 href: launch/reserved-uri-scheme-names.md
           - name: Background tasks
-            items:
-              - name: Working with background tasks in Windows apps
-                href: launch/create-and-register-a-background-task.md
-              - name: BackgroundTaskBuilder in the Windows App SDK
-                href: ../windows-app-sdk/applifecycle/background-tasks.md
+            href: ../windows-app-sdk/applifecycle/background-tasks.md
           - name: DispatcherQueue
             href: dispatcherqueue.md
       - name: App restore
@@ -208,6 +204,8 @@ items:
         items:
           - name: Overview
             href: data-and-files.md
+          - name: Store and retrieve settings
+            href: data/store-and-retrieve-app-data.md
           - name: Drag and drop
             href: data/drag-and-drop.md
           - name: Copy and paste
@@ -994,6 +992,8 @@ items:
             href: ui/layouts-with-xaml.md
           - name: Shadows
             href: ui/shadows.md
+          - name: Sound
+            href: ui/sound.md
           - name: Windowing
             items:
               - name: Overview

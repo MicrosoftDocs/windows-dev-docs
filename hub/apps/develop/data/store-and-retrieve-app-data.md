@@ -1,17 +1,19 @@
 ---
 description: Learn how to store and retrieve local and temporary app data.
 title: Store and retrieve settings and other app data
-ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
 label: App settings and data
 template: detail.hbs
-ms.date: 11/14/2017
+ms.date: 04/08/2026
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: windows 11, winui
 ms.localizationpriority: medium
 ---
 # Store and retrieve settings and other app data
 
-*App data* is mutable data that is created and managed by a specific app. It includes runtime state, app settings, user preferences, reference content (such as the dictionary definitions in a dictionary app), and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.
+> [!IMPORTANT]
+> The [ApplicationData](/uwp/api/Windows.Storage.ApplicationData) APIs described in this article are designed for packaged apps. Unpackaged apps do not have access to the system-managed app data stores and should use alternative storage mechanisms such as direct file I/O or registry access.
+
+*App data* is mutable data that is created and managed by a specific app.It includes runtime state, app settings, user preferences, reference content (such as the dictionary definitions in a dictionary app), and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.
 
 **Important note about app data:** The lifetime of the app data is tied to the lifetime of the app. If the app is removed, all of the app data will be lost as a consequence. Don't use app data to store user data or anything that users might perceive as valuable and irreplaceable. We recommend that the user's libraries and Microsoft OneDrive be used to store this sort of information. App data is ideal for storing app-specific user preferences, settings, and favorites.
 
@@ -149,188 +151,6 @@ async void ReadTimestamp()
 > [!WARNING]
 > Roaming data and settings is [no longer supported as of Windows 11](/windows/deployment/planning/windows-10-deprecated-features).
 > The recommended replacement is [Azure App Service](/azure/app-service/). Azure App Service is widely supported, well documented, reliable, and supports cross-platform/cross-ecosystem scenarios such as iOS, Android and web.
->
-> The following documentation applies to Windows 10 versions 1909 and lower.
-
-If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
-
-The OS limits the size of the app data that each app may roam. See [**ApplicationData.RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota). If the app hits this limit, none of the app's app data will be replicated to the cloud until the app's total roamed app data is less than the limit again. For this reason, it is a best practice to use roaming data only for user preferences, links, and small data files.
-
-Roaming data for an app is available in the cloud as long as it is accessed by the user from some device within the required time interval. If the user does not run an app for longer than this time interval, its roaming data is removed from the cloud. If a user uninstalls an app, its roaming data isn't automatically removed from the cloud, it's preserved. If the user reinstalls the app within the time interval, the roaming data is synchronized from the cloud.
-
-### Roaming data do's and don'ts
-
-> See important note about [roaming data](#roaming-data).
-
-- Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
-- Use roaming to let users continue a task across devices. For example, roam app data like the contents of a drafted email or the most recently viewed page in a reader app.
-- Handle the [**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
-- Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
-- For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](/uwp/api/windows.storage.applicationdata.roamingsettings).
-- Don't roam app data that is specific to a device. Some info is only pertinent locally, such as a path name to a local file resource. If you do decide to roam local information, make sure that the app can recover if the info isn't valid on the secondary device.
-- Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
-- Don't use roaming for data that relies on instant syncing. Windows doesn't guarantee an instant sync; roaming could be significantly delayed if a user is offline or on a high latency network. Ensure that your UI doesn't depend on instant syncing.
-- Don't use roaming for frequently changing data. For example, if your app tracks frequently changing info, such as the position in a song by second, don't store this as roaming app data. Instead, pick a less frequent representation that still provides a good user experience, like the currently playing song.
-
-### Roaming pre-requisites
-
-> See important note about [roaming data](#roaming-data).
-
-Any user can benefit from roaming app data if they use a Microsoft account to log on to their device. However, users and group policy administrators can switch off roaming app data on a device at any time. If a user chooses not to use a Microsoft account or disables roaming data capabilities, she will still be able to use your app, but app data will be local to each device.
-
-Data stored in the [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault) will only transition if a user has made a device "trusted". If a device isn't trusted, data secured in this vault will not roam.
-
-### Conflict resolution
-
-> See important note about [roaming data](#roaming-data).
-
-Roaming app data is not intended for simultaneous use on more than one device at a time. If a conflict arises during synchronization because a particular data unit was changed on two devices, the system will always favor the value that was written last. This ensures that the app utilizes the most up-to-date information. If the data unit is a setting composite, conflict resolution will still occur on the level of the setting unit, which means that the composite with the latest change will be synchronized.
-
-### When to write data
-
-> See important note about [roaming data](#roaming-data).
-
-Depending on the expected lifetime of the setting, data should be written at different times. Infrequently or slowly changing app data should be written immediately. However, app data that changes frequently should only be written periodically at regular intervals (such as once every 5 minutes), as well as when the app is suspended. For example, a music app might write the "current song" settings whenever a new song starts to play, however, the actual position in the song should only be written on suspend.
-
-### Excessive usage protection
-
-> See important note about [roaming data](#roaming-data).
-
-The system has various protection mechanisms in place to avoid inappropriate use of resources. If app data does not transition as expected, it is likely that the device has been temporarily restricted. Waiting for some time will usually resolve this situation automatically and no action is required.
-
-### Versioning
-
-> See important note about [roaming data](#roaming-data).
-
-App data can utilize versioning to upgrade from one data structure to another. The version number is different from the app version and can be set at will. Although not enforced, it is highly recommended that you use increasing version numbers, since undesirable complications (including data loss)could occur if you try to transition to a lower data version number that represents newer data.
-
-App data only roams between installed apps with the same version number. For example, devices on version 2 will transition data between each other and devices on version 3 will do the same, but no roaming will occur between a device running version 2 and a device running version 3. If you install a new app that utilized various version numbers on other devices, the newly installed app will sync the app data associated with the highest version number.
-
-### Testing and tools
-
-> See important note about [roaming data](#roaming-data).
-
-Developers can lock their device in order to trigger a synchronization of roaming app data. If it seems that the app data does not transition within a certain time frame, please check the following items and make sure that:
-
-- Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](/uwp/api/windows.storage.applicationdata.roamingstoragequota) for details).
-- Your files are closed and released properly.
-- There are at least two devices running the same version of the app.
-
-### Register to receive notification when roaming data changes
-
-> See important note about [roaming data](#roaming-data).
-
-To use roaming app data, you need to register for roaming data changes and retrieve the roaming data containers so you can read and write settings.
-
-1.  Register to receive notification when roaming data changes.
-
-    The [**DataChanged**](/uwp/api/windows.storage.applicationdata.datachanged) event notifies you when roaming data changes. This example sets `DataChangeHandler` as the handler for roaming data changes.
-
-```csharp
-void InitHandlers()
-    {
-       Windows.Storage.ApplicationData.Current.DataChanged += 
-          new TypedEventHandler<ApplicationData, object>(DataChangeHandler);
-    }
-
-    void DataChangeHandler(Windows.Storage.ApplicationData appData, object o)
-    {
-       // TODO: Refresh your data
-    }
-```
-
-2.  Get the containers for the app's settings and files.
-
-    Use the [**ApplicationData.RoamingSettings**](/uwp/api/windows.storage.applicationdata.roamingsettings) property to get the settings and the [**ApplicationData.RoamingFolder**](/uwp/api/windows.storage.applicationdata.roamingfolder) property to get the files.
-
-```csharp
-Windows.Storage.ApplicationDataContainer roamingSettings = 
-        Windows.Storage.ApplicationData.Current.RoamingSettings;
-    Windows.Storage.StorageFolder roamingFolder = 
-        Windows.Storage.ApplicationData.Current.RoamingFolder;
-```
-
-### Create and retrieve roaming settings
-
-> See important note about [roaming data](#roaming-data).
-
-Use the [**ApplicationDataContainer.Values**](/uwp/api/windows.storage.applicationdatacontainer.values) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
-
-```csharp
-// Simple setting
-
-roamingSettings.Values["exampleSetting"] = "Hello World";
-// High Priority setting, for example, last page position in book reader app
-roamingSettings.values["HighPriority"] = "65";
-
-// Composite setting
-
-Windows.Storage.ApplicationDataCompositeValue composite = 
-    new Windows.Storage.ApplicationDataCompositeValue();
-composite["intVal"] = 1;
-composite["strVal"] = "string";
-
-roamingSettings.Values["exampleCompositeSetting"] = composite;
-
-```
-
-This example retrieves the settings we just created.
-
-```csharp
-// Simple setting
-
-Object value = roamingSettings.Values["exampleSetting"];
-
-// Composite setting
-
-Windows.Storage.ApplicationDataCompositeValue composite = 
-   (Windows.Storage.ApplicationDataCompositeValue)roamingSettings.Values["exampleCompositeSetting"];
-
-if (composite == null)
-{
-   // No data
-}
-else
-{
-   // Access data in composite["intVal"] and composite["strVal"]
-}
-```
-
-### Create and retrieve roaming files
-
-> See important note about [roaming data](#roaming-data).
-
-To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](/uwp/api/windows.storage.storagefolder.createfileasync) and [**Windows.Storage.FileIO.WriteTextAsync**](/uwp/api/windows.storage.fileio.writetextasync). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](/uwp/api/Windows.Storage.CreationCollisionOption) enumeration indicates to replace the file if it already exists.
-
-```csharp
-async void WriteTimestamp()
-{
-   Windows.Globalization.DateTimeFormatting.DateTimeFormatter formatter = 
-       new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longtime");
-
-   StorageFile sampleFile = await roamingFolder.CreateFileAsync("dataFile.txt", 
-       CreationCollisionOption.ReplaceExisting);
-   await FileIO.WriteTextAsync(sampleFile, formatter.Format(DateTimeOffset.Now));
-}
-```
-
-To open and read a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](/uwp/api/windows.storage.storagefolder.getfileasync), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](/uwp/api/windows.storage.storagefile.getfilefromapplicationuriasync), and [**Windows.Storage.FileIO.ReadTextAsync**](/uwp/api/windows.storage.fileio.readtextasync). This example opens the `dataFile.txt` file created in the previous section and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](/previous-versions/windows/apps/hh965322(v=win.10)).
-
-```csharp
-async void ReadTimestamp()
-{
-   try
-   {
-      StorageFile sampleFile = await roamingFolder.GetFileAsync("dataFile.txt");
-      String timestamp = await FileIO.ReadTextAsync(sampleFile);
-      // Data is contained in timestamp
-   }
-   catch (Exception)
-   {
-      // Timestamp not found
-   }
-}
-```
 
 ## Temporary app data
 

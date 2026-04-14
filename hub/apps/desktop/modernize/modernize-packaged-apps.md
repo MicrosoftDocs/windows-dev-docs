@@ -32,14 +32,14 @@ Starting in Windows 10, version 1809, packaged apps can retrieve certain kinds o
 
 For more info, see [Get activation info for packaged apps](get-activation-info-for-packaged-apps.md).
 
-## Extend with UWP components
+## Use the Windows App SDK in an existing project
 
-Some Windows experiences (for example, a touch-enabled UI page) must run inside of an AppContainer. In general, you should first determine whether you can add your experience by [enhancing](desktop-to-uwp-enhance.md) your existing desktop app with Windows Runtime APIs. If you have to use a UWP component to achieve the experience, then you can add a UWP project to your solution, and use app services to communicate between your desktop app and the UWP component.
+You can use the Windows App SDK to add modern Windows features—such as WinUI 3 controls, push notifications, and app lifecycle management—to your existing Win32 or .NET desktop app without requiring a full rewrite.
 
-For more information, see [Extend your desktop app with UWP components](desktop-to-uwp-extend.md).
+For more information, see [Add Windows App SDK features to your existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
 
 ## Distribute
 
-If you package your app in an MSIX package, then it's very easy to distribute it by publishing it the Microsoft Store, or by sideloading it onto systems.
+If you package your app in an MSIX package, then it's very easy to distribute it by publishing it to the Microsoft Store, or by sideloading it onto systems.
 
-For more info, see [Distribute your packaged desktop app](desktop-to-uwp-distribute.md).
+For more info, see [Package and deploy your app](/windows/apps/package-and-deploy/).

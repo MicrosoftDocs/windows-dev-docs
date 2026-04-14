@@ -6,6 +6,16 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "hub/apps/design/style/sound.md",
+      "redirect_url": "/windows/apps/develop/ui/sound",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/app-settings/store-and-retrieve-app-data.md",
+      "redirect_url": "/windows/apps/develop/data/store-and-retrieve-app-data",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "uwp/audio-video-camera/camera-ui-features-for-mobile-devices.md",
       "redirect_url": "/previous-versions/windows/uwp/audio-video-camera/camera-ui-features-for-mobile-devices",
       "redirect_document_id": false
@@ -5707,7 +5717,7 @@
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-distribute.md",
-      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-distribute",
+      "redirect_url": "/windows/msix/desktop/source-code-overview",
       "redirect_document_id": false
     },
     {
@@ -5717,7 +5727,7 @@
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-extend.md",
-      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-extend",
+      "redirect_url": "/windows/apps/windows-app-sdk/",
       "redirect_document_id": false
     },
     {
@@ -11425,7 +11435,7 @@
       "redirect_url": "/windows/apps/develop/accessibility",
       "redirect_document_id": false
     },
-    {      
+    {
       "source_path": "hub/apps/package-and-deploy/choose-packaging-model.md",
       "redirect_url": "/windows/apps/package-and-deploy/packaging/",
       "redirect_document_id": false
@@ -11528,6 +11538,26 @@
     {
       "source_path": "hub/apps/desktop/modernize/modernize-wpf-tutorial-5.md",
       "redirect_url": "/windows/apps/desktop/modernize/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/background-processing/index.md",
+      "redirect_url": "/windows/apps/develop/app-lifecycle-and-system-services",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/applifecycle/app-background-task.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/applifecycle/background-tasks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-distribute.md",
+      "redirect_url": "/windows/msix/desktop/source-code-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-extend.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/",
       "redirect_document_id": false
     }
   ]
