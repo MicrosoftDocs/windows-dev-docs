@@ -26,7 +26,7 @@ WinGet is included in the App Installer. To try the latest Windows Package Manag
 
 ### Install WinGet on Windows Sandbox
 
-[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include WinGet, nor the Microsoft Store app, so you will need to download the latest WinGet package from the WinGet releases page on GitHub, or use the Repair-WinGetPackageManager cmdlet.
+[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include WinGet, nor the Microsoft Store app, so you will need to download the latest WinGet package from the WinGet releases page on GitHub, or use the `Repair-WinGetPackageManager` cmdlet.
 
 To install the stable release of WinGet on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
 
@@ -40,9 +40,9 @@ Repair-WinGetPackageManager -AllUsers
 Write-Host "Done."
 ```
 
-To install the WinGet PowerShell module in machine scope, you can use the `-Scope AllUsers` parameter with the `Install-Module` cmdlet. If you would like a preview version of WinGet, you can add `-IncludePrerelease` parameter with the Repair-WinGetPackageManager cmdlet. To see the available parameters for the Repair-WinGetPackageManager cmdlet, you can run `Get-Help Repair-WinGetPackageManager -Full`.
+To install the WinGet PowerShell module in machine scope, you can use the `-Scope AllUsers` parameter with the `Install-Module` cmdlet. If you would like a preview version of WinGet, you can add `-IncludePrerelease` parameter with the `Repair-WinGetPackageManager` cmdlet. To see the available parameters for the `Repair-WinGetPackageManager` cmdlet, you can run `Get-Help Repair-WinGetPackageManager -Full`.
 
-For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
+For more information on Windows Sandbox, including how to install a sandbox and what to expect from its usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
 
 ## Administrator considerations
 
