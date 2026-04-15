@@ -40,7 +40,6 @@ To set a Nerd Font for use with Oh My Posh and Terminal Icons, open the Windows 
 
 > [!NOTE]
 > If you want to use a terminal font that does not support glyph icons, such as [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases), consider using an Oh My Posh theme that contains the `minimal` function, indicating that additional icons aren't required.
-> If you want to use a terminal font that does not support glyph icons, such as [Cascadia Code PL](https://github.com/microsoft/cascadia-code/releases), consider using an Oh My Posh theme that contains the `minimal` function, indicating that additional icons aren't required.
 
 ## Customize your PowerShell prompt with Oh My Posh
 
