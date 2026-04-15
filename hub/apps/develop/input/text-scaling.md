@@ -127,7 +127,7 @@ If text wrapping is not the preferred behavior, most text controls let you eithe
 > [!NOTE]
 > If you need to clip your text, clip the end of the string, not the beginning.
 
-In this example, we show how to clip text in a TextBlock using the [TextTrimming](/uwp/api/windows.ui.xaml.controls.textblock.texttrimming) property.
+In this example, we show how to clip text in a TextBlock using the [TextTrimming](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.texttrimming) property.
 
 ``` xaml
 <TextBlock TextTrimming="Clip">
@@ -157,7 +157,7 @@ Here, we add a tooltip to a TextBlock that doesn't support text wrapping:
 
 When using font-based icons for emphasis or decoration, disable scaling on these characters.
 
-Set the [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled) property to `false` for most XAML controls.
+Set the [IsTextScaleFactorEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.istextscalefactorenabled) property to `false` for most XAML controls.
 
 ### Support text scaling natively
 
@@ -171,5 +171,5 @@ This topic provides an overview of text scaling support in Windows and includes 
 
 ### API reference
 
-- [IsTextScaleFactorEnabled](/uwp/api/windows.ui.xaml.controls.control.istextscalefactorenabled)
+- [IsTextScaleFactorEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.istextscalefactorenabled)
 - [TextScaleFactorChanged](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged)

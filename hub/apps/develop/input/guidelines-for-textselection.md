@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 This article describes selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these mechanisms in your apps.
 
-> **Important APIs**: [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
+> **Important APIs**: [**Windows.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
  
 
 
