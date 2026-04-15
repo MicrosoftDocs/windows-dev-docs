@@ -59,7 +59,7 @@ productDirectory:
     links:
       - url: /windows/apps/develop/
         text: Overview
-      - url: /windows/apps/develop/accessibility
+      - url: /windows/apps/develop/features-overview
         text: Features
       - url: /windows/apps/desktop/modernize/
         text: Use features with other UI frameworks

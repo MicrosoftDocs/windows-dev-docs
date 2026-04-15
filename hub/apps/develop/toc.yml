@@ -204,6 +204,8 @@ items:
         items:
           - name: Overview
             href: data-and-files.md
+          - name: Store and retrieve settings
+            href: data/store-and-retrieve-app-data.md
           - name: Drag and drop
             href: data/drag-and-drop.md
           - name: Copy and paste
@@ -593,6 +595,7 @@ items:
               - name: Test your app's signature with Smart App Control
                 href: smart-app-control/test-your-app-with-smart-app-control.md
           - name: Widgets
+            href: widgets/index.md
             items:
               - name: Feed providers
                 items:
@@ -620,6 +623,8 @@ items:
                     href: widgets/widget-provider-manifest.md
                   - name: ActivateApplication protocol
                     href: widgets/widget-provider-activateapplication-protocol.md
+                  - name: Adaptive Cards Designer
+                    href: widgets/widgets-create-a-template.md
           - name: Windows Search
             href: search/index.md
             items:
@@ -987,6 +992,8 @@ items:
             href: ui/layouts-with-xaml.md
           - name: Shadows
             href: ui/shadows.md
+          - name: Sound
+            href: ui/sound.md
           - name: Windowing
             items:
               - name: Overview

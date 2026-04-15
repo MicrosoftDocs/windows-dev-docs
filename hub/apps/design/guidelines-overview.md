@@ -69,11 +69,6 @@ Use these fundamentals as a guide throughout your design process—whether you'r
 :::row-end:::
 :::row:::
     :::column:::
-       [![Sound icon](./images/tile-sound.png)](./style/sound.md)<br>
-        **[Sound](./style/sound.md)**<br>
-        Use audio cues to provide feedback, reinforce actions, and support accessibility.
-    :::column-end:::
-    :::column:::
        [![Typography icon](./images/tile-typography.png)](./signature-experiences/typography.md)<br>
         **[Typography](./signature-experiences/typography.md)**<br>
         Set the tone and improve readability with consistent type choices and hierarchy.
@@ -83,18 +78,20 @@ Use these fundamentals as a guide throughout your design process—whether you'r
         **[Usability](./usability/index.md)**<br>
         Ensure your app is easy to use through intuitive interactions, clear affordances, and accessibility.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Widgets icon](./images/tile-widgets.png)](./widgets/index.md)<br>
         **[Widgets](./widgets/index.md)**<br>
         Extend your app with glanceable, interactive surfaces that surface key information and actions.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Writing icon](./images/tile-writing.png)](style/writing-style.md )<br>
         **[Writing](./style/writing-style.md )**<br>
         Use clear, concise, and helpful language to improve understanding and reduce cognitive load.
+    :::column-end:::
+    :::column:::
     :::column-end:::
     :::column:::
     :::column-end:::

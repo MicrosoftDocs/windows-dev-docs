@@ -20,7 +20,7 @@ The UI and interaction for Windows Widgets are implemented using [Adaptive Cards
 
 The example in this article is a simple counting widget that displays an integer value and allows the user to increment the value by clicking on a button in the widget's UI. This example template uses data binding to automatically update the UI based on the data context.
 
-Apps need to implement a widget provider to generate and update the widget template and/or data and pass them to the widget host. The article [Implement a widget provider in a win32 app](../../develop/widgets/implement-widget-provider-win32.md) provides step-by-step guidance for implementing the widget provider for the counting widget that we will generate in the steps below.
+Apps need to implement a widget provider to generate and update the widget template and/or data and pass them to the widget host. The article [Implement a widget provider in a win32 app](implement-widget-provider-win32.md) provides step-by-step guidance for implementing the widget provider for the counting widget that we will generate in the steps below.
 
 ## The Adaptive Cards Designer
 
@@ -57,7 +57,7 @@ The counting widget that we will create is very simple, only consisting of 4 [Te
 
 Add four **TextBlock** elements by dragging them from the **Card elements** pane on the left of the page onto the blank adaptive card in the preview pane. At this point, the widget preview should look like the following image. The content again overflows outside of the widget borders, but this will be fixed in the following steps.
 
-:::image type="content" source="images/widgets-designer-walkthrough-1.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text New TextBlock. The four lines of text overflow the bottom border of the widget.":::
+:::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-1.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text New TextBlock. The four lines of text overflow the bottom border of the widget.":::
 
 ## Implementing conditional layout
 
@@ -91,11 +91,11 @@ In the Adaptive Cards Template Language, the `$when` property specifies that the
 
 Now the preview should look like the following image:
 
-:::image type="content" source="images/widgets-designer-walkthrough-2.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text specified in the JSON payload shown in the previous step. Instead of conditionally hiding elements, all of the elements are visible and overflow the bottom border of the image.":::
+:::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-2.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text specified in the JSON payload shown in the previous step. Instead of conditionally hiding elements, all of the elements are visible and overflow the bottom border of the image.":::
 
 Note that the conditional statements aren't being reflected in the preview. This is because the designer isn't simulating the behavior of the widget host. Click the **Preview mode** button at the top of the page to start the simulation. The widget preview now looks like the following image:
 
-:::image type="content" source="images/widgets-designer-walkthrough-3.png" alt-text="An adaptive card in progress. It shows a widget with two lines containing the text specified in the JSON payload. Only the TextBlock for the small size is rendered.":::
+:::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-3.png" alt-text="An adaptive card in progress. It shows a widget with two lines containing the text specified in the JSON payload. Only the TextBlock for the small size is rendered.":::
 
 From the **Container size** dropdown, select "Medium" and note that the preview switches to only show the **TextBlock** for the medium size. The container in the preview also changes size, demonstrating how you can use the preview to make sure that your UI fits within the widget container for each supported size.
 
@@ -109,7 +109,7 @@ Our example widget will use a custom state property named "count". You can see i
 
 Note that the preview now inserts the value specified for the *count* property into the text for the first **TextBlock**.
 
-:::image type="content" source="images/widgets-designer-walkthrough-4.png" alt-text="An adaptive card in progress. The first line of text now includes the value 2 from the data payload.":::
+:::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-4.png" alt-text="An adaptive card in progress. The first line of text now includes the value 2 from the data payload.":::
 
 ## Add a button
 
@@ -129,7 +129,7 @@ With Adaptive Cards, interactive elements are defined with **action** elements. 
 ```
 In this JSON string, *type* property specifies the type of action that is being represented. Widgets only support the "Action.Execute" action type. The *title* contains the text that is displayed on the button for the action. The *verb* property is an app-defined string that the widget host will send to the widget provider to communicate the intent associated with the action. A widget can have multiple actions, and the widget provider code will check the value of the verb in the request to determine what action to take.
 
-:::image type="content" source="images/widgets-designer-walkthrough-5.png" alt-text="The final adaptive card. A blue button with the text Increment is displayed after the two text lines.":::
+:::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-5.png" alt-text="The final adaptive card. A blue button with the text Increment is displayed after the two text lines.":::
 
 ## The complete widget template
 

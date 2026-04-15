@@ -68,8 +68,6 @@ items:
           href: motion/directionality-and-gravity.md
     - name: Navigation
       href: basics/navigation-basics.md
-    - name: Sound
-      href: style/sound.md
     - name: Typography
       href: signature-experiences/typography.md
     - name: Usability
@@ -82,24 +80,20 @@ items:
               href: accessibility/accessibility-overview.md
             - name: Designing inclusive software
               href: accessibility/designing-inclusive-software.md
-        - name: App settings
-          items:
-            - name: Guidelines for app settings
-              href: app-settings/guidelines-for-app-settings.md
-            - name: Store and retrieve app settings and data
-              href: app-settings/store-and-retrieve-app-data.md
-        - name: Design your app for bidirectional text
-          href: globalizing/design-for-bidi-text.md
+    - name: Designing a settings page
+      href: app-settings/guidelines-for-app-settings.md
+    - name: Design your app for bidirectional text
+      href: globalizing/design-for-bidi-text.md
+    - name: In-app help
+      items:
+        - name: Guidelines for app help
+          href: in-app-help/guidelines-for-app-help.md
+        - name: Instructional UI
+          href: in-app-help/instructional-ui.md
         - name: In-app help
-          items:
-            - name: Guidelines for app help
-              href: in-app-help/guidelines-for-app-help.md
-            - name: Instructional UI
-              href: in-app-help/instructional-ui.md
-            - name: In-app help
-              href: in-app-help/in-app-help.md
-            - name: External help
-              href: in-app-help/external-help.md   
+          href: in-app-help/in-app-help.md
+        - name: External help
+          href: in-app-help/external-help.md
     - name: Widgets
       items:
         - name: Overview
@@ -110,8 +104,6 @@ items:
           href: widgets/widgets-states-and-ui.md
         - name: Interaction design guidance
           href: widgets/widgets-interaction-design.md
-        - name: Create a template with the Adaptive Card Designer
-          href: widgets/widgets-create-a-template.md
         - name: Integrate with the widget picker
           href: widgets/widgets-picker-integration.md
     - name: Writing
