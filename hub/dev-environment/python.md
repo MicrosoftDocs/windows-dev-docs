@@ -2,39 +2,46 @@
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
 ms.topic: get-started
-ms.date: 07/03/2025
+ms.date: 03/23/2026
 ms.custom: copilot-scenario-highlight
 ---
 
 # Set up your Python development environment on Windows
 
-Get your Python environment ready on Windows in minutes — set it up manually or automate everything with winget. You'll need the following:
+Get your Python environment ready on Windows in minutes — install from the command line with winget or set it up manually. You'll need the following:
 
-- **Python 3.13** – The latest Python runtime
+- **Python** – The current stable Python runtime (3.14 or later)
 - **Visual Studio Code** – A lightweight, powerful code editor
 - **Python extension for Visual Studio Code** – Adds Python language support, debugging, linting, and more
 
-#### [WinGet Configuration](#tab/winget)
+#### [WinGet](#tab/winget)
 
-The [WinGet configuration file](https://aka.ms/python-config) below installs everything listed above automatically.
-
-To get started:
-
-1. Open PowerShell in Windows Terminal and run the following command:
+1. Open PowerShell in Windows Terminal and install Python:
 
     ```powershell
-    winget configure -f https://aka.ms/python-config
+    winget install Python.Python.3.14
     ```
-2. When the configuration starts, a terminal window shows the setup steps and required installs. Review them, then confirm by selecting [Y] Yes or [N] No to continue.
 
-3. The required workloads are installed. Verify your setup by running `python --version`.
+2. Install Visual Studio Code:
+
+    ```powershell
+    winget install Microsoft.VisualStudioCode
+    ```
+
+3. Close and reopen PowerShell, then verify Python is installed:
+
+    ```powershell
+    python --version
+    ```
+
+4. Open VS Code and install the [Python extension](https://marketplace.visualstudio.com/items?itemName=ms-python.python) from the VS Code Marketplace.
 
 You're now ready for Python development.
 
 
 #### [Manual installation](#tab/manual)
 
-1. **Install Python 3.13**: Install [Python 3 from the Microsoft Store](https://apps.microsoft.com/search?query=python). The Microsoft Store version automatically configures your PATH and provides automatic updates. Once installed, open PowerShell and run `python --version` to verify.
+1. **Install Python**: Install [Python from the Microsoft Store](https://apps.microsoft.com/search?query=python). The Microsoft Store version automatically configures your PATH and provides automatic updates. Once installed, open PowerShell and run `python --version` to verify.
 
 2. **Install Visual Studio Code**: Download and install [Visual Studio Code](https://code.visualstudio.com).
 
@@ -53,7 +60,7 @@ You're now ready for Python development.
 >
 > A common cause for trouble is trying to install into a location that you do not have permission to modify. For example, the default install location might require Administrative privileges, but by default Python will not have them. The best solution is to create a [virtual environment](https://docs.python.org/3/tutorial/venv.html) and install there.
 >
-> Some packages include native code that requires a C or C++ compiler to install. In general, package developers should publish pre-compiled versions, but often do not. Some of these packages might work if you [install Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2019) and select the C++ option, however in most cases you will need to contact the package developer.
+> Some packages include native code that requires a C or C++ compiler to install. In general, package developers should publish pre-compiled versions, but often do not. Some of these packages might work if you [install Build Tools for Visual Studio](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio) and select the C++ option, however in most cases you will need to contact the package developer.
 >
 > [Follow the discussion on StackOverflow](https://stackoverflow.com/questions/4750806/how-do-i-install-pip-on-windows/12476379)
 
@@ -133,7 +140,7 @@ You're now ready for Python development.
 
 <details><summary>What if I need to work across different machines?</summary>
 
-> [Settings Sync](https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync) allows you to synchronize your VS Code settings across different installations using GitHub. If you work on different machines, this helps keep your environment consistent across them.
+> VS Code has built-in [Settings Sync](https://code.visualstudio.com/docs/configure/settings-sync) that lets you share your settings, keybindings, extensions, and more across machines using your GitHub or Microsoft account. No extension needed.
 
 </details>
 
