@@ -18,7 +18,7 @@ The **IDetails** interface is used to define the details view of a command in th
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Body | **String** | The body of the details. |
+| Body | **String** | The body of the details. This content is rendered as markdown, so you can use markdown syntax for formatting (headings, bold, italic, links, lists, etc.). |
 | HeroImage | [IIconInfo](iiconinfo.md) | The hero image associated with the details. |
 | Metadata | [IDetailsElement[]](idetailselement.md) | The metadata associated with the details. |
 | Title | **String** | The title of the details section. |

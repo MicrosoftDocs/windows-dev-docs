@@ -8,7 +8,7 @@ no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
 ---
 
-# How to create Command Palette extensions
+# Getting started with Command Palette extensions
 
 Learn how to build custom extensions for the Command Palette using C#. This comprehensive guide covers everything from project setup to deployment, helping you enhance this powerful productivity tool for Windows.
 
@@ -25,9 +25,7 @@ The Command Palette extension system allows developers to create custom commands
 
 **Prerequisites:**
 
-- Visual Studio with the following workloads
-  - C# development workload
-  - WinUI application development workload
+- [Set up your Windows development environment](/windows/apps/get-started/start-here) — install Visual Studio with the required workloads for WinUI and the Windows App SDK
 - Windows 11 with PowerToys installed
 - Enable [Developer mode on Windows](/windows/advanced-settings/developer-mode)
 - Basic knowledge of C# programming

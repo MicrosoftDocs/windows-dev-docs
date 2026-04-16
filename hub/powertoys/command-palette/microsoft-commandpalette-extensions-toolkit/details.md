@@ -22,7 +22,7 @@ The **Details** class is used to define the details section of an item in the Co
 
 | Property | Type | Description |
 | :--- | :--- | :--- |
-| Body | **String** | The body of the details section. This is the main content that will be displayed in the details section. |
+| Body | **String** | The body of the details section. This content is rendered as markdown, so you can use markdown syntax for formatting (headings, bold, italic, links, lists, etc.). |
 | HeroImage | [IIconInfo](../microsoft-commandpalette-extensions/iiconinfo.md) | The hero image associated with the details section. This is an image that represents the details section visually. |
 | Metadata | [IDetailsElement](../microsoft-commandpalette-extensions/idetailselement.md) | The metadata associated with the details section. This is additional information that can be displayed in the details section. |
 | Title | **String** | The title of the details section. This is the main heading that will be displayed in the details section. |
