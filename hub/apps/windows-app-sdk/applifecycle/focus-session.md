@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Detect and react to focus session state
 
-Windows 11 introduced the Focus feature which helps users minimize distractions by turning on Do Not Disturb and silencing icon flashing and badge notifications for apps in the taskbar. This article shows you how to use the [FocusSessionManager](/uwp/api/windows.ui.shell.focussessionmanager) API to detect whether a Focus session is currently active or receive updates when the Focus session state changes, allowing you to customize your app's behavior to minimize distractions when a Focus session is active. For more information on the Focus feature, see [How to use focus in Windows 11](https://support.microsoft.com/en-us/windows/how-to-use-focus-in-windows-11-cbcc9ddb-8164-43fa-8919-b9a2af072382).
+Windows 11 introduced the Focus feature which helps users minimize distractions by turning on Do Not Disturb and silencing icon flashing and badge notifications for apps in the taskbar. This article shows you how to use the [FocusSessionManager](/uwp/api/windows.ui.shell.focussessionmanager) API to detect whether a Focus session is currently active or receive updates when the Focus session state changes, allowing you to customize your app's behavior to minimize distractions when a Focus session is active. For more information on the Focus feature, see [How to use focus in Windows 11](https://support.microsoft.com/en-us/windows/how-to-use-focus-in-windows-11-aaaabbbb-0000-cccc-1111-dddd2222eeee).
 
 ## Get the current Focus session state
 
