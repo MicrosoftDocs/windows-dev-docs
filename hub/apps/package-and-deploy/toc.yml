@@ -13,6 +13,8 @@ items:
       href: ../package-and-deploy/publish-first-app.md
     - name: Code signing options
       href: ../package-and-deploy/code-signing-options.md
+    - name: MSIX on Windows 10 and Windows 11
+      href: ../package-and-deploy/msix-windows10-windows11.md
     - name: Packaging
       items:
         - name: Overview

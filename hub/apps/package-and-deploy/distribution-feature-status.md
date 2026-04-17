@@ -83,21 +83,9 @@ See [SmartScreen reputation for Windows app developers](smartscreen-reputation.m
 
 **Status: Several MSIX features are Windows 11-only**
 
-MSIX was introduced on Windows 10, but many improvements and bug fixes since then have only been made available on Windows 11. If your app targets Windows 10 users, be aware of the following limitations.
+MSIX works on both Windows 10 and Windows 11, but several features — including shared package containers, mutable package directories, and MSIX persistent identity — are Windows 11-only and have not been backported. Dynamic dependencies are also supported on Windows 10 via the Windows App SDK (`Mdd*` APIs / bootstrapper), with Windows 11 additionally providing an OS-native implementation. Additionally, Windows 10 mainstream support ended October 14, 2025.
 
-| Feature / scenario | Windows 10 | Windows 11 |
-|---|---|---|
-| MSIX sideloading (non-Store) | ✅ Supported (requires policy) | ✅ Supported (enabled by default) |
-| Registry virtualization fixes | ⚠️ Known issues | ✅ Fixed |
-| App container improvements | ⚠️ Some fixes not backported | ✅ Latest behavior |
-| MSIX packaging tool stability | ⚠️ Some scenarios require workarounds | ✅ Better supported |
-| App Installer reliability | ⚠️ More known issues | ✅ Improved |
-| Sideloading without Developer Mode | ✅ Via `AllowAllTrustedApps` policy | ✅ Enabled by default |
-
-> [!IMPORTANT]
-> Several platform-level MSIX bugs reported in the `microsoft/msix-packaging` repository affect Windows 10 and have not been backported to Windows 10. If you are seeing MSIX issues specifically on Windows 10 that do not reproduce on Windows 11, this may be a known unbackported issue.
-
-**Recommendation:** If you need to support MSIX on Windows 10 reliably in complex scenarios, test thoroughly on Windows 10 specifically and review open issues in [microsoft/msix-packaging](https://github.com/microsoft/msix-packaging/issues).
+For a full comparison table, known unbackported limitations, and per-feature workarounds, see [MSIX on Windows 10 and Windows 11](msix-windows10-windows11.md).
 
 ---
 
