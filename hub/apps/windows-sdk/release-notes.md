@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 03/27/2026
+ms.date: 04/10/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -13,6 +13,8 @@ In a new or existing Windows app, you can get the Windows SDK in several ways: i
 You can update the SDK by manually installing the new build, updating in Visual Studio or update the Nuget package
 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
+
+## 28000 versions
 
 ## Build 10.0.28000.1721
 
@@ -148,6 +150,147 @@ This is a major version bump to the **28000** SDK series.
 > Updated:
 >
 > - `IAttachmentExecute2` — Method comments corrected: `Save2()` renamed to `SaveNoVirusCheck()`, `SaveWithUI2()` renamed to `SaveWithUINoVirusCheck()`
+
+</details>
+
+---
+
+## 26100 versions
+
+## Build 10.0.26100.8038
+
+Released: **March, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.ApplicationModel.Contacts.Provider**:
+> <br/>
+> New types:
+>
+> - `IContactProvider` - Interface with `GetContactFromRemoteIdAsync` method
+>
+> **Windows.Devices.Printers**:
+> <br/>
+> New types:
+>
+> - `IppAttributeGroupKind` - Enum for IPP attribute group kinds
+> - `IIppAttributeConverterStatics` - Interface with `ConvertPrintTicketToIppAttributesForPrinter`, `ConvertBufferToIppAttributes`, `ConvertIppAttributesToBuffer`
+> - `IppAttributeConverter` - Runtime class
+> - `IPdlPassthroughProvider2` - Interface with `IsPassthroughWithJobAttributesSupported` property and `StartPrintJobWithIppJobAttributes` method
+>
+> **Windows.Graphics.Printing.PrintSupport**:
+> <br/>
+> New types:
+>
+> - `IPrintSupportPrintDeviceCapabilitiesChangedEventArgs5` - Interface with `SetPdlPassthroughWithJobAttributesSupported` method
+>
+> **Windows.Graphics.Printing.Workflow**:
+> <br/>
+> New types:
+>
+> - `IPrintWorkflowPrinterJob3` - Interface with `IsPassthroughJob` property, `GetPassthroughJobAttributes`, and `GetPassthroughJobOperationAttributes` methods
+>
+> **Windows.Storage.Search**:
+> <br/>
+> New types:
+>
+> - `IQueryOptionsAdditionalSearchSources` - Adds `IncludeCloudProviders` and `IncludeLocalSemanticIndex` properties to `QueryOptions`
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Bluetooth Hands-Free Profile (bthdef.h)**
+> <br/>
+> Added new defines for HFP Audio Gateway and Hands-Free SDP and BRSF supported features:
+>
+> - `HFP_AG_SDP_SUPPORTED_FEATURE_*` - Audio Gateway SDP feature flags for three-way calling, echo cancellation, voice recognition, in-band ring tone, voice tag, wide-band speech, and more
+> - `HFP_AG_BRSF_SUPPORTED_FEATURE_*` - Audio Gateway BRSF feature flags for three-way calling, echo cancellation, voice recognition, reject call, enhanced call status/control, codec negotiation, and more
+> - `HFP_HF_SDP_SUPPORTED_FEATURE_*` - Hands-Free SDP feature flags for echo cancellation, three-way calling, CLI presentation, voice recognition, remote volume control, wide-band speech, and more
+> - `HFP_HF_BRSF_SUPPORTED_FEATURE_*` - Hands-Free BRSF feature flags for echo cancellation, three-way calling, CLI presentation, voice recognition, remote volume control, codec negotiation, and more
+> - `HFP_NETWORK_NO_ABILITY_TO_REJECT`, `HFP_NETWORK_ABILITY_TO_REJECT` - Network call rejection capability flags
+>
+> **Virtualization-Based Security (ntstatus.h / winerror.h)**
+> <br/>
+> New error codes:
+>
+> - `STATUS_VSM_FW_MEASUREMENTS_SEAL_FAILURE` - VSM firmware measurements seal failure status
+> - `ERROR_VSM_FW_MEASUREMENTS_SEAL_FAILURE` - Corresponding Win32 error code
+>
+> **Video Encoding (codecapi.h)**
+> <br/>
+> New enum and property for D3D12 reconstructed picture output:
+>
+> - `eAVEncVideoD3D12ReconstructedPictureOutputMode` enum
+> - `CODECAPI_AVEncVideoD3D12ReconstructedPictureOutputMode` codec API GUID
+>
+> **Direct3D 12 (d3d12.h)**
+> <br/>
+> Spelling corrections for tight alignment defines:
+>
+> - `D3D12_TIGHT_ALIGNMENT_MIN_COMMITTED_RESOURCE_ALIGNMENT` (replaces misspelled `ALIGNEMNT` variant)
+> - `D3D12_TIGHT_ALIGNMENT_MIN_PLACED_RESOURCE_ALIGNMENT` (replaces misspelled `ALIGNEMNT` variant)
+>
+> **Local Security Authority (ntlsa.h)**
+> <br/>
+> Added new structs for agent-based logon:
+>
+> - `_LSA_AGENT_LOGON_CREDENTIAL` - Agent logon credential data
+> - `_LSA_AGENT_ACCOUNT_INFO` - Agent account information
+> - `_LSA_AGENT_ACCOUNT_LIST` - List of agent accounts
+>
+> **Content Indexing (NTQuery.h)**
+> <br/>
+> New define:
+>
+> - `CI_VERSION_CORRID` - Content index version correlation ID
+>
+> **Secure Channel (schannel.h)**
+> <br/>
+> Added new types for TLS extension copying:
+>
+> - `SCH_COPY_EXTS_DATA` struct - Data structure for copying TLS extensions
+> - `SchCopyExtsOptions` enum - Options for TLS extension copy operations
+>
+> **Text Services Framework (TextStor.h)**
+> <br/>
+> New defines:
+>
+> - `TS_SD_DISABLEWRITINGSUGGESTIONS` - Flag to disable writing suggestions
+> - `TS_SS_MULTILINE` - Flag for multiline text store support
+>
+> **Remote Desktop Virtual Channels (tsvirtualchannels.h)**
+> <br/>
+> Added new interfaces, structs, and enums for RDP window information:
+>
+> - `IWTSWindowChangedCallback` - Callback interface for window change notifications
+> - `IWTSWindowInfoService` - Interface for querying window info, client process ID, session type, and subscribing to window changes
+> - `WTSWindowInfo` struct - Window information data
+> - `RdpSessionType` enum - RDP session type values
+>
+> **WebAuthn Plugin API (webauthnplugin.h)**
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS_2` (previously `EXPERIMENTAL_WEBAUTHN_PLUGIN_ADD_AUTHENTICATOR_OPTIONS_2`)
+> - `WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS_2` (previously `EXPERIMENTAL_WEBAUTHN_PLUGIN_UPDATE_AUTHENTICATOR_DETAILS_2`)
+> - `WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST_2` (previously `EXPERIMENTAL_WEBAUTHN_PLUGIN_USER_VERIFICATION_REQUEST_2`)
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Remote Desktop Virtual Channels (tsvirtualchannels.idl)**
+> <br/>
+> Added new interfaces for RDP window information:
+>
+> - `IWTSWindowChangedCallback` - Callback interface with `WindowChanged` method
+> - `IWTSWindowInfoService` - Interface with `GetWindowInfo`, `GetRdpClientProcessId`, `GetRdpSessionType`, `SubscribeWindowChanged`, `UnsubscribeWindowChanged`
+> - `WTSWindowInfo` struct - Window information data
+> - `RdpSessionType` enum - RDP session type values
 
 </details>
 
@@ -819,6 +962,8 @@ Released: **May 5, 2024**
 Initial release of the 10.0.26100 series, to correspond with the Windows 11, version 24H2 preview.
 
 ---
+
+## 22000 versions and earlier
 
 ## Build 10.0.22621.3235
 
