@@ -27,7 +27,20 @@ When you create your package in Visual Studio, make sure you are signed in with 
 
 When you build your app's UWP packages, Visual Studio can create an .msix or appx file, or a .msixupload or .appxupload file. For UWP apps, we recommend that you always upload the .msixupload or .appxupload file in the [Packages](./upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
-Your app's packages don't have to be signed with a certificate rooted in a trusted certificate authority.
+#### Code signing for Microsoft Store submissions
+
+Your MSIX and AppX packages don't have to be signed with a certificate rooted in a trusted certificate authority when submitting to the Microsoft Store. The Microsoft Store will automatically re-sign your MSIX/AppX packages with a Microsoft certificate during the publishing process after your app passes certification. This means:
+
+- You don't need to purchase a CA-trusted code signing certificate for MSIX/AppX Store submissions
+- You don't need to provide a .pfx or .cer file from a certificate authority to submit MSIX/AppX packages
+- USB tokens or hardware security modules (HSMs) are not required for MSIX/AppX Store submissions
+- The Store replaces any existing signature on MSIX/AppX packages with a Microsoft certificate, providing trust and security to customers
+
+> [!NOTE]
+> If you are submitting an **MSI or EXE installer** to the Store, the Store does not re-sign those files. You must Authenticode-sign your MSI/EXE installer yourself with a valid code signing certificate before submission.
+
+> [!NOTE]
+> If you are distributing your MSIX package outside the Microsoft Store (for example, for enterprise deployment or sideloading), you will need to sign the package yourself with your own code signing certificate. For more information, see [Sign an app package using SignTool](/windows/win32/appxpkg/how-to-sign-a-package-using-signtool).
 
 #### App bundles
 

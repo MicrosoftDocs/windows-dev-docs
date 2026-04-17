@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # The app certification process for MSIX app
 
-When you finish creating your app's submission and click **Submit to the Store**, the submission enters the certification step. This process can take up to three business days. After your submission passes certification, on an average, customers will be able to see the app’s listing within 15 minutes depending on their location. You'll be notified when your submission is published, and the app's status in the dashboard will be **In the Store**.
+When you finish creating your app's submission and click **Submit to the Store**, the submission enters the certification step. This process can take up to three business days. After your submission passes certification, on average, customers will be able to see the app’s listing within 15 minutes, depending on their location. You'll be notified when your submission is published, and the app's status in the dashboard will be **In the Store**.
 
 ## Preprocessing
 
@@ -35,9 +35,11 @@ When your app passes certification, it's ready to move to the **Publishing** pro
 
 ## Publishing
 
-Your app's packages are digitally signed to protect them against tampering after they have been released. Once this phase has begun, you can no longer cancel your submission or change its release date.
+Your app's packages are digitally signed by Microsoft to protect them against tampering after they have been released. The Microsoft Store automatically signs all MSIX/AppX packages with a Microsoft certificate, which ensures that customers can trust and install your app without security warnings.
 
-The publishing process take a few minutes and on an average, customers will be able to see the app’s listing within 15 minutes depending on their location.
+You don’t need to provide your own code signing certificate for Store distribution—the Store handles this automatically. Once this phase has begun, you can no longer cancel your submission or change its release date.
+
+The publishing process takes a few minutes and on average, customers will be able to see the app’s listing within 15 minutes, depending on their location.
 
 ## In the Store
 
