@@ -18,8 +18,8 @@ How you distribute your Windows app affects code signing costs, update mechanics
 | Path | Best for | Code signing cost | Auto-update | Enterprise MDM | Distributed via Store |
 |---|---|---|---|---|---|
 | **Microsoft Store** | Consumer and business apps, broad reach | ✅ Free (Store signs for you) | ✅ Built-in | ✅ Via Intune with Company Portal | ✅ Yes |
-| **MSIX sideload (enterprise)** | Internal LOB apps via Intune/ConfigMgr | 💲 Azure Trusted Signing (~$10/mo) or self-signed + Intune cert profile | ✅ Via App Installer file or MDM | ✅ Native | ❌ No |
-| **MSIX direct download (ISV)** | Commercial apps sold from your own site | 💲 CA-trusted cert required ([Azure Trusted Signing](/azure/trusted-signing/) recommended) | ✅ Via `.appinstaller` file | ⚠️ Limited | ❌ No |
+| **MSIX sideload (enterprise)** | Internal LOB apps via Intune/ConfigMgr | 💲 Azure Artifact Signing (formerly Trusted Signing) (~$10/mo) or self-signed + Intune cert profile | ✅ Via App Installer file or MDM | ✅ Native | ❌ No |
+| **MSIX direct download (ISV)** | Commercial apps sold from your own site | 💲 CA-trusted cert required ([Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) recommended) | ✅ Via `.appinstaller` file | ⚠️ Limited | ❌ No |
 | **Packaging with external location** | Existing apps with own installer needing Windows features | 💲 Same as MSIX direct download | ✅ Your existing mechanism | ⚠️ Limited | ❌ No |
 
 ## Microsoft Store (recommended)
@@ -55,7 +55,7 @@ For internal line-of-business apps that will be deployed to managed devices via 
 - Full package identity and access to Windows features (notifications, background tasks, etc.)
 
 **Code signing:**
-- Use [Azure Trusted Signing](/azure/trusted-signing/) (~$10/month) for a CA-trusted certificate, or
+- Use [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) (~$10/month) for a CA-trusted certificate, or
 - Use a self-signed certificate deployed to endpoints via Intune Trusted Certificate profiles
 
 **Requirements:**
@@ -81,7 +81,7 @@ For commercial apps sold directly from your website (not through the Store), you
 
 **Code signing:**
 - A CA-trusted code signing certificate is required — users cannot install unsigned or self-signed MSIX packages without trusting the cert manually
-- [Azure Trusted Signing](/azure/trusted-signing/) (~$10/month) is Microsoft's recommended option: no hardware token required, integrates with CI/CD pipelines
+- [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) (~$10/month) is Microsoft's recommended option: no hardware token required, integrates with CI/CD pipelines
 - Traditional OV certificates are also accepted (typically $150–300/year from a CA)
 
 **SmartScreen:** New certificates accumulate SmartScreen reputation over time based on download volume. Expect some SmartScreen prompts for new releases. See [SmartScreen reputation for Windows app developers](smartscreen-reputation.md).
@@ -127,4 +127,4 @@ Many Windows apps are distributed using MSI, WiX, Inno Setup, ClickOnce, or simi
 - [SmartScreen reputation for Windows app developers](smartscreen-reputation.md)
 - [Current status of Windows app distribution features](distribution-feature-status.md)
 - [Publish to the Microsoft Store](/windows/apps/publish/)
-- [Azure Trusted Signing](/azure/trusted-signing/)
+- [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/)

@@ -36,7 +36,7 @@ Historically, Extended Validation (EV) code signing certificates granted **immed
 | Self-signed | ❌ Strong block — cert not trusted by default; same behavior as unsigned |
 | OV certificate (Organization Validated) | ⚠️ Warning — app flagged as unrecognized until reputation accumulates; publisher name is displayed as verified |
 | EV certificate (Extended Validation) | ⚠️ Warning — same as OV for new files (no longer instant bypass) |
-| Azure Trusted Signing certificate | ⚠️ Warning for new files; reputation accumulates normally |
+| Azure Artifact Signing (formerly Trusted Signing) certificate | ⚠️ Warning for new files; reputation accumulates normally |
 | Microsoft Store | ✅ No warning — covered by Microsoft's certificate |
 
 EV certificates still provide value (they require more identity validation, which may matter for enterprise procurement), but they no longer provide instant SmartScreen bypass. Paying a premium for EV solely to avoid SmartScreen warnings is no longer justified.
@@ -47,9 +47,9 @@ EV certificates still provide value (they require more identity validation, whic
 
 Apps published through the Microsoft Store are re-signed by Microsoft and carry full reputation. Users will never see a SmartScreen warning for a Store-installed app.
 
-### Azure Trusted Signing
+### Azure Artifact Signing (formerly Trusted Signing)
 
-[Azure Trusted Signing](/azure/trusted-signing/) is Microsoft's recommended code signing service for non-Store distribution:
+[Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is Microsoft's recommended code signing service for non-Store distribution:
 
 - **Cost:** Approximately $10/month — significantly lower than traditional CA certificates
 - **No hardware token required** — integrates directly with CI/CD pipelines (GitHub Actions, Azure DevOps)
@@ -60,7 +60,7 @@ Apps published through the Microsoft Store are re-signed by Microsoft and carry 
 
 Traditional code signing certificates from Certificate Authorities (DigiCert, Sectigo, etc.) are also accepted. OV certificates typically cost $150–300/year; EV certificates $400+/year. Both now have equivalent SmartScreen behavior for new files.
 
-If you already have an OV or EV certificate, it remains valid and functional. If you're purchasing a new certificate, Azure Trusted Signing is typically the better choice for Windows app distribution.
+If you already have an OV or EV certificate, it remains valid and functional. If you're purchasing a new certificate, Azure Artifact Signing (formerly Trusted Signing) is typically the better choice for Windows app distribution.
 
 ## What to expect when you publish a new app
 
@@ -78,7 +78,7 @@ There is no way to manually submit a file for SmartScreen reputation review for 
 - **Publish to the Microsoft Store** where feasible — this is the most reliable way to avoid warnings entirely
 - **Sign every release** — unsigned files show a stronger SmartScreen warning than signed files, and enterprises may block unsigned binaries entirely
 - **Use a consistent signing identity** — changing your signing certificate affects the publisher trust signal; note that each new build's hash also starts with no file reputation regardless of certificate continuity
-- **Use Azure Trusted Signing** for non-Store distribution — it's cost-effective and integrates with automated build pipelines
+- **Use Azure Artifact Signing (formerly Trusted Signing)** for non-Store distribution — it's cost-effective and integrates with automated build pipelines
 - **Communicate with early adopters** — for new apps, let beta users know they may see a SmartScreen prompt on first download, and that they should only proceed after verifying the publisher and confirming they trust the download source
 
 ## Related content
@@ -86,5 +86,5 @@ There is no way to manually submit a file for SmartScreen reputation review for 
 - [Choose a distribution path for your Windows app](choose-distribution-path.md)
 - [Current status of Windows app distribution features](distribution-feature-status.md)
 - [Sign an app package using SignTool](/windows/msix/package/sign-app-package-using-signtool)
-- [Azure Trusted Signing documentation](/azure/trusted-signing/)
+- [Azure Artifact Signing (formerly Trusted Signing) documentation](/azure/trusted-signing/)
 - [Microsoft Trusted Root Program requirements](/security/trusted-root/program-requirements)

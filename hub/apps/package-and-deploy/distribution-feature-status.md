@@ -119,4 +119,4 @@ The `MsixPackaging@1` task in Azure DevOps pipelines uses MSBuild 4.8.4161.0 (in
 - [SmartScreen reputation for Windows app developers](smartscreen-reputation.md)
 - [App Installer file overview](/windows/msix/app-installer/app-installer-file-overview)
 - [Auto-update and repair apps](/windows/msix/app-installer/auto-update-and-repair--overview)
-- [Azure Trusted Signing](/azure/trusted-signing/)
+- [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/)
