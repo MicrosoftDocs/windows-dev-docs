@@ -94,13 +94,13 @@ To get started with WinUI, try out these resources:
         Setup your development environment and build your first WinUI app.
     :::column-end:::
     :::column:::
-        [![WinUI 3 Gallery](images/winui-gallery.png)](../../get-started/samples.md#winui-3-gallery)<br>
-        **[WinUI 3 Gallery](../../get-started/samples.md#winui-3-gallery)**<br>
+        [![WinUI 3 Gallery](images/winui-gallery.png)](../../dev-tools/samples.md#winui-3-gallery)<br>
+        **[WinUI 3 Gallery](../../dev-tools/samples.md#winui-3-gallery)**<br>
         Explore interactive examples of WinUI controls, features, and functionality.
     :::column-end:::
     :::column:::
-        [![Samples icon](../../images/tile-samples.png)](../../get-started/samples.md)<br>
-        **[Samples and resources](../../get-started/samples.md)**<br>
-        Browse code samples, starter projects, and tools to accelerate your development.
+        [![Samples icon](../../images/tile-samples.png)](../../dev-tools/samples.md)<br>
+        **[Tools and samples](../../dev-tools/samples.md)**<br>
+        Tools, samples, and AI-powered resources to help you apps faster.
     :::column-end:::
 :::row-end:::

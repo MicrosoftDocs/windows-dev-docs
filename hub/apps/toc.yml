@@ -35,7 +35,6 @@ items:
           href: windows-app-sdk/release-notes/windows-app-sdk-1-7.md  
         - name: Older versions
           items:
-
           - name: Windows App SDK 1.6
             href: windows-app-sdk/release-notes/windows-app-sdk-1-6.md
           - name: Windows App SDK 1.5
@@ -88,24 +87,9 @@ items:
         href: tutorials/winui-notes/all-notes.md
       - name: 5. Navigation
         href: tutorials/winui-notes/navigation.md
-  - name: Get started with AI for Windows development
-    items:
-    - name: AI-assisted Windows development
-      href: get-started/ai-for-windows-developers.md
-    - name: Set up GitHub Copilot for Windows development
-      href: get-started/ai-setup.md
-    - name: "Tutorial: Build a Windows app with GitHub Copilot"
-      href: get-started/ai-build.md
-
-  - name: Samples and resources
-    items:
-    - name: Samples
-      href: get-started/samples.md
-    - name: Windows developer community
-      href: whats-new/community.md              
   - name: Help and guidance
     items:
-    - name: Support
+    - name: Support and community
       href: develop/support.md
     - name: Windows developers and their tools
       href: whats-new/personae.md

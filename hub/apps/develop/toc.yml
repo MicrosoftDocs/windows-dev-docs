@@ -1323,14 +1323,26 @@ items:
         - name: Windows 11 settings reference
           href: settings/settings-windows-11.md
         - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
-          href: settings/readclouddatasettings-exe.md    
-  - name: Tools
+          href: settings/readclouddatasettings-exe.md   
+  - name: Tools and samples
     items:
+      - name: Overview
+        href: ../dev-tools/index.md
       - name: Agentic tools
-        href: ../dev-tools/agentic-tools.md
+        items:
+        - name: Overview
+          href: ../dev-tools/agentic-tools.md
+        - name: Tutorials
+          items:
+          - name: Set up GitHub Copilot for Windows development
+            href: ../how-tos/ai-setup.md
+          - name: "Build a Windows app with GitHub Copilot"
+            href: ../how-tos/ai-build.md
+      - name: Code samples
+        href: ../dev-tools/samples.md  
       - name: Visual Studio
         href: ../dev-tools/visual-studio.md
-      - name: Windows App Development CLI
+      - name: winappCLI
         items:
           - name: Overview
             href: ../dev-tools/winapp-cli/index.md

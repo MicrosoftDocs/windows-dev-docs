@@ -233,7 +233,7 @@ Topics covered include:
 
 <details><summary>Where can I find WinUI samples?</summary>
 
-> See [Samples and resources](./samples.md). Some notable repositories:
+> See [Sample and resources](../dev-tools/samples.md). Some notable repositories:
 > 
 > - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets.
 > - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): Contains a WinUI notes sample used in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/) tutorial.
