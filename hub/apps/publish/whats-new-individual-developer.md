@@ -14,7 +14,7 @@ The new onboarding process is now live, allowing individual developers to publis
 
 | Feature                           | Description                                                               |
 |-----------------------------------|---------------------------------------------------------------------------|
-| **No registration fee**           | The $19 registration fee is waived in the new flow (flighted markets only). |
+| **No registration fee**           | The $19 registration fee is waived in the new flow. |
 | **ID-based verification**         | Verify your identity using a government-issued ID and selfie for a secure and compliant onboarding. |
 | **Guided, lightweight onboarding**| Clean, modern UX with contextual guidance, MFA security, and live support links. |
 | **Auto-filled profile info**      | Verified ID data pre-fills your developer profile for speed and accuracy. |
@@ -32,7 +32,7 @@ The new onboarding process is now live, allowing individual developers to publis
 
 3. Select **Individual developer** (free). If you’re a business, select Company account.
 
-   > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
+   > **Note for Company developers:** Selecting **Company account** will redirect you to the new onboarding flow for Company developers. Learn more about Company account setup [here](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
 
 ![Choose account type](images/choose-account.png)
 
@@ -60,7 +60,7 @@ You’ll be redirected to Partner Center to finish setup and publish your first 
 
 ## Need help? Contact us
 
-If you need assistance with the new account onboarding process for individual developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process in **flighted markets**.
+If you need assistance with the new account onboarding process for individual developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process.
 
 For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
 You can also explore guidance in our [publishing documentation](/windows/apps/publish).
@@ -71,13 +71,11 @@ You can also explore guidance in our [publishing documentation](/windows/apps/pu
 
 ### Do I need to pay the registration fee?
 
-No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market. If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
-
-The free onboarding flow applies only to individual developers. Company accounts continue to pay a one-time $99 USD registration fee as part of the existing onboarding process.
+No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/).
 
 ### How do I access the new flow?
 
-You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point during the flighting phase. Other paths (e.g. direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
+You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point for the new flow. Other paths (e.g. direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
 
 ### Why is ID verification required?
 

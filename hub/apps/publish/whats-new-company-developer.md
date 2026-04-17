@@ -1,5 +1,5 @@
 ---
-description: This page describes what's new in test markets for company account onboarding
+description: This page describes what's new for company account onboarding
 title: Revamped company onboarding experience with zero registration fees
 ms.date: 02/11/2026
 ms.topic: article
@@ -10,14 +10,11 @@ ms.localizationpriority: medium
 
 The new onboarding process allows company developers to publish apps to the Microsoft Store without any onboarding fees.  
 
-> [!NOTE]
-> This onboarding experience is currently available in flighted markets (including US) only. Availability will expand to additional markets over time.
-
 ## What’s New
 
 | Feature                           | Description                                                               |
 |-----------------------------------|---------------------------------------------------------------------------|
-| **Free registration**           | The $99 registration fee is waived in the new flow (available in flighted markets). |
+| **Free registration**           | The $99 registration fee is waived in the new flow. |
 | **Guided, lightweight onboarding**         | A clean, modern experience with step-by-step guidance and email notifications for verification status updates, so you know what’s happening and what to do next. |
 
 ## Who should select a company account
@@ -29,8 +26,6 @@ The new onboarding process allows company developers to publish apps to the Micr
 Company accounts publish apps under the organization’s legal or trade name and require business and employment verification before apps can be published. 
 
 ## Step-by-Step Flow
-
-### What you’ll need before you start 
 
 Before you begin, make sure you have the following: 
 
@@ -70,7 +65,7 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 2. Click **“Get started”** to begin.
 
-3. Select **Company account** (free). If you’re an Individual developer, select **Individual developer**.
+3. Select **Company account** (free).
 
 ![Choose account type](images/new-company-account-2.png)
 
@@ -118,7 +113,9 @@ Each verification type (business and employment) allows up to three verification
 
 10. Create your company developer account 
 
-   After your account is created, complete your account setup and select **“Go to Partner Center dashboard”**. 
+   After your verification is completed, finish your account setup and select **“Publish to Store”**. 
+
+![Create company account](images/new-company-account-8.png)
 
    You’ll first be prompted to choose a Microsoft account (MSA). Make sure to select the same account you used to create your Store developer account. Once signed in, you’ll land on the “Apps & Games overview” page in Partner Center. 
 
@@ -134,7 +131,7 @@ Each verification type (business and employment) allows up to three verification
 
 ## Need help? Contact us
 
-If you need assistance with the new account onboarding process for company developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process in **flighted markets**.
+If you need assistance with the new account onboarding process for company developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process.
 
 For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
 You can also explore guidance in our [publishing documentation](/windows/apps/publish).
@@ -143,11 +140,11 @@ You can also explore guidance in our [publishing documentation](/windows/apps/pu
 
 ### Do I need to pay the registration fee?
 
-No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market. If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
+No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/).  
 
 ### How do I access the new flow?
 
-You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point during the flighting phase for company onboarding.
+You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point for company onboarding.
 
 ### I already have a developer account—do I need to use this?
 

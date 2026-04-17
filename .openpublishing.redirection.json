@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/publish/partner-center/account-types-locations-and-fees.md",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/partner-center/partner-center-developer-account.md",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/widgets/widgets-create-a-template.md",
       "redirect_url": "/windows/apps/develop/widgets/widgets-create-a-template",
       "redirect_document_id": true

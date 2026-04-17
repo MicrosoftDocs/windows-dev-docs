@@ -6,13 +6,7 @@ items:
 - name: Get started with Microsoft Store
   href: get-started.md  
 - name: Open a developer account
-  items: 
-    - name: Steps to open a developer account
-      href: partner-center/open-a-developer-account.md
-    - name: Types of developer accounts
-      href: partner-center/partner-center-developer-account.md
-    - name: Developer account fees and locations
-      href: partner-center/account-types-locations-and-fees.md  
+  href: partner-center/open-a-developer-account.md  
 - name: Choose your distribution options
   items: 
     - name: How to distribute your win32 app in Store

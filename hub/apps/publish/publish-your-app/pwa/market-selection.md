@@ -405,9 +405,6 @@ You can choose to list your app in one or more of the following markets.
 
 </details>
 
-> [!NOTE]
-> For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](../../partner-center/account-types-locations-and-fees.md).
-
 ## Price considerations for specific markets
 
 Payment methods such as gift cards and mobile operator billing can help increase sales of paid apps and in-app purchase items. Due to the higher costs to enable such payment methods, a Commerce Expansion Adjustment is added to the Store Fee deducted from Net Receipts to calculate the App Proceeds payable for paid apps and in-app purchase transactions in the countries/regions and using the payment methods in the tables below. You may want to consider if the Commerce Expansion Adjustment applies in a country/region where your app is available and factor that into your market pricing strategy. Details about the Commerce Expansion Adjustment can be found in the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
