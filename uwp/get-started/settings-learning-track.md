@@ -3,7 +3,7 @@ title: Save and load settings in a UWP app
 description: Learn how to save and load app settings in Universal Windows Platform apps.
 ms.date: 05/07/2018
 ms.topic: how-to
-keywords: get started, uwp, windows 10, learning track, settings, save settings, load settings
+keywords: get started, uwp, windows 10, windows 11, learning track, settings, save settings, load settings
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -23,10 +23,13 @@ The following data types can be used with settings: integers, doubles, floats, c
 
 Here are the main APIs you need to know about to save or load app settings:
 
-- [Windows.Storage.ApplicationData.Current.LocalSettings](/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) gets the application settings container from the local app data store. Settings stored here are kept on the device.
+- [Windows.Storage.ApplicationData.Current.LocalSettings](/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) gets the application settings container from the local app data store. Settings stored here are kept on the device and reliably persist through app updates.
 - [Windows.Storage.ApplicationData.Current.RoamingSettings](/uwp/api/windows.storage.applicationdata.roamingsettings#Windows_Storage_ApplicationData_RoamingSettings) gets the application settings container from the roaming app data store. Settings stored here no longer roam (as of Windows 11), but the settings store is still available. The recommended replacement for RoamingSettings is [Azure App Service](/azure/app-service/). Azure App Service is widely supported, well documented, reliable, and supports cross-platform/cross-ecosystem scenarios such as iOS, Android and web.
 - [Windows.Storage.ApplicationDataContainer](/uwp/api/windows.storage.applicationdatacontainer) is a container that represents app settings as key/value pairs. Use this class to create and retrieve setting values.
 - [Windows.Storage.ApplicationDataCompositeValue](/uwp/api/Windows.Storage.ApplicationDataCompositeValue) represents multiple app settings that should be serialized as a unit. This is useful when one setting shouldn't be updated independently of another.
+
+> [!IMPORTANT]
+> RoamingSettings may not persist through Microsoft Store app updates. For settings that must survive app updates, use [LocalSettings](/uwp/api/Windows.Storage.ApplicationData#Windows_Storage_ApplicationData_LocalSettings) instead.
 
 ## Save app settings
 
