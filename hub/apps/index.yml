@@ -74,6 +74,8 @@ productDirectory:
         text: Overview
       - url: /windows/apps/package-and-deploy/packaging/
         text: Packaging
+      - url: /windows/apps/package-and-deploy/choose-distribution-path
+        text: Choose a distribution path
       - url: /windows/apps/package-and-deploy/deploy-overview
         text: Deployment
   - title: Publish

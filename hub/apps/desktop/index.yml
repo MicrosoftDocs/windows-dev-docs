@@ -80,6 +80,8 @@ landingContent:
     linkLists:
       - linkListType: overview
         links:
+          - text: Choose a distribution path
+            url: ../package-and-deploy/choose-distribution-path.md
           - text: Publish overview
             url: ../publish/index.md
           - text: Get started with Microsoft Store
@@ -94,8 +96,6 @@ landingContent:
             url: ../publish/analyze-app-performance/msix.md
           - text: Manage and update your app
             url: ../publish/publish-your-app/msix/publish-update-to-your-app-on-store.md
-          - text: Leverage developer tools
-            url: ../publish/product-page-experiments.md
           - text: Manage your account
             url: ../publish/partner-center/manage-account-users.md
           - text: Microsoft Store policies and resources
