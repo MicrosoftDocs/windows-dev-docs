@@ -65,10 +65,13 @@ If you already have an OV or EV certificate, it remains valid and functional. If
 ## What to expect when you publish a new app
 
 1. **First downloads:** Users may see a SmartScreen prompt indicating the app is unrecognized. For signed apps, the publisher name is displayed — the warning is about low file reputation, not an unknown publisher. Users should proceed only after verifying the source.
-2. **As downloads accumulate:** SmartScreen reputation builds up automatically. The prompt will stop appearing once the file hash has sufficient download history.
+2. **As downloads accumulate:** SmartScreen reputation builds up automatically. The prompt will stop appearing once the file hash has sufficient download history. Based on developer reports, this typically takes **several weeks and hundreds of clean installs** — there is no exact threshold Microsoft publishes.
 3. **New version:** Each new build starts fresh — reputation does not carry over from the previous version's hash.
 
 There is no way to manually submit a file for SmartScreen reputation review for consumer endpoints. Reputation builds organically through download volume.
+
+> [!TIP]
+> For enterprise environments, IT administrators can submit files for review via the [Microsoft Security Intelligence portal](https://www.microsoft.com/en-us/wdsi/filesubmission). This can accelerate trust for internal or managed deployments, but does not affect consumer SmartScreen behavior.
 
 > [!NOTE]
 > Enterprise environments managed by Microsoft Defender for Endpoint or Windows Defender Application Control (WDAC) may have different SmartScreen behavior depending on policy configuration. IT administrators can allowlist specific publisher certificates or file hashes to bypass SmartScreen checks for managed devices.

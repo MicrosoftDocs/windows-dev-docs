@@ -119,7 +119,38 @@ If you have an existing app with its own installer (WiX, NSIS, InstallShield) an
 
 ## What about other installer formats?
 
-Many Windows apps are distributed using MSI, WiX, Inno Setup, ClickOnce, or similar technologies. These are established and supported options, especially for existing apps. However, they may not provide MSIX's package identity, clean uninstall model, or Store eligibility.
+Many Windows apps are distributed using ClickOnce, MSI, WiX, Inno Setup, or similar technologies. These are established and supported options, especially for apps that can't use MSIX or don't need Store distribution. The table below summarizes the common options and their trade-offs.
+
+| Method | Auto-update | Code signing required | Store eligible | Best for |
+|---|---|---|---|---|
+| **MSIX via Store** | ✅ Built-in | ✅ Free (Store signs) | ✅ Yes | Most apps — recommended starting point |
+| **MSIX + .appinstaller** | ✅ Built-in | 💲 CA-trusted cert | ❌ No | ISVs distributing directly from a website |
+| **ClickOnce** | ✅ Built-in | 💲 Cert recommended | ❌ No | WPF/WinForms apps; not supported for WinUI 3 |
+| **MSI / WiX / Inno Setup** | ⚠️ Manual or custom | 💲 Cert recommended | ❌ No | Apps with complex install requirements or existing installer |
+| **Self-contained EXE (xcopy/zip)** | ❌ None | 💲 Cert recommended | ❌ No | Simple utilities; developer/power-user audiences |
+| **winget manifest** | ✅ Via winget | 💲 Cert recommended | ❌ No | Any of the above — adds discoverability via `winget install` |
+
+### ClickOnce
+
+ClickOnce is a .NET deployment technology built into Visual Studio. It hosts a manifest on a web server or file share; users install from the manifest URL and ClickOnce handles update checks at launch. It's a good fit for WPF and WinForms apps distributed to a known user base.
+
+ClickOnce is **not supported for WinUI 3 apps**. Use MSIX with `.appinstaller` for WinUI 3 direct distribution.
+
+→ [ClickOnce security and deployment](/visualstudio/deployment/clickonce-security-and-deployment)
+
+### MSI, WiX, Inno Setup, and NSIS
+
+Traditional EXE and MSI installers remain common for Windows apps with complex installation requirements (driver installation, system services, registry configuration). Tools like [WiX Toolset](https://wixtoolset.org/), [Inno Setup](https://jrsoftware.org/isinfo.php), and [NSIS](https://nsis.sourceforge.io/) are community-maintained and widely used. Update support requires your own implementation.
+
+These formats are not Store-eligible as primary distribution packages. However, you can combine them with [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) if you need package identity for specific Windows features.
+
+### Self-contained EXE (xcopy deployment)
+
+`dotnet publish --self-contained` produces a folder of files (or a single-file EXE) that users can run without installing .NET. This is the simplest distribution model but requires users to download a new version manually. It suits command-line tools, developer utilities, and power-user apps.
+
+### winget — adding discoverability to any distribution path
+
+Regardless of your packaging format, you can submit a manifest to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs) to make your app installable via `winget install <your-app>`. This doesn't replace your existing distribution method — it adds a command-line installation path valued by developer and technical audiences.
 
 ## Related content
 
