@@ -19,7 +19,7 @@ Use the table below to find the right starting point for your situation.
 | Add modern UI controls (Fluent, rounded corners, dark mode) to my WPF or Win32 app | [Host WinUI controls in a WPF app (XAML Islands)](xaml-islands/xaml-islands.md) |
 | Use Windows platform features (notifications, sharing, file pickers) in my WPF or WinForms app | [Call Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md) |
 | Package my app for the Microsoft Store or enterprise deployment | [Package a desktop app with MSIX](/windows/msix/desktop/source-code-overview) |
-| Unlock features that require package identity (background tasks, app extensions) | [Grant identity to an unpackaged app](grant-identity-to-nonpackaged-apps-overview.md) |
+| Unlock features that require package identity (push notifications, background tasks, app extensions, Windows AI APIs, share targets, and more) | [Grant identity to an unpackaged app](grant-identity-to-nonpackaged-apps-overview.md) |
 | Integrate my app with Windows 11 shell features (snap layouts, context menus, taskbar) | [Integrate with Windows 11 features](desktop-to-uwp-extensions.md) |
 | Move to a fully modern app with WinUI 3 over time | [Migrate to WinUI 3](../../winui/winui3/create-your-first-winui3-app.md) |
 | Add on-device AI capabilities to my desktop app | [Windows AI Foundry](/windows/ai/overview) |
@@ -50,7 +50,7 @@ For more information, see [Building an MSIX package from your code](/windows/msi
 
 ## Features that require package identity
 
-Some Windows platform features — including certain background tasks, app extensions, and sharing targets — require your app to have a [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. You can grant identity to an unpackaged app without full MSIX packaging.
+Some Windows platform features — including push notifications, background tasks, app extensions, sharing targets, Windows AI Foundry APIs, file associations, and startup tasks — require your app to have a [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. You can grant identity to an unpackaged app without full MSIX packaging. This approach is sometimes called a *sparse package* or *packaging with external location*.
 
 For more information, see:
 - [Package identity overview](package-identity-overview.md)
