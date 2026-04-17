@@ -17,11 +17,11 @@ This section of the documentation covers local app notifications, which are crea
 
 ## App notifications quickstart
 
-The [App notifications quickstart](app-notifications-quickstart.md) walks you through the end-to-end process of creating notification UI, sending a notification, and handling foreground and background activation in a WinUI app.
+For a walkthrough of creating notification UI, sending a notification, and handling foreground and background activation in a WinUI app, see [Quickstart: App notifications](app-notifications-quickstart.md).
 
 ## Use app notifications with other frameworks
 
-These articles show how to send an app notification and handle activation for [other supported frameworks](app-notifications-other-frameworks.md). For notification content, features, and design guidance, see the sections below.
+These articles show how to send an app notification and handle activation for other supported frameworks. For notification content, features, and design guidance, see the sections below. For a full list of supported frameworks, see [Use app notifications with other frameworks](app-notifications-other-frameworks.md).
 
 - [WPF apps](app-notifications-wpf.md)
 - [WinForms apps](app-notifications-winforms.md)

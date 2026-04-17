@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 ---
 # Use app notifications with other frameworks
 
-The [app notifications quickstart](app-notifications-quickstart.md) demonstrates how to send and respond to app notifications in a WinUI app. The same Windows App SDK notification APIs are available for other .NET frameworks as well. The following articles show how to send a notification and handle activation for each supported framework.
+The Windows App SDK notification APIs are available for desktop and console apps built with WinUI, WPF, WinForms, and Console frameworks. The following articles show how to send a notification and handle activation for each supported framework. For a WinUI walkthrough, see [Quickstart: App notifications](app-notifications-quickstart.md).
 
 | Framework | Article |
 |-----------|---------|
