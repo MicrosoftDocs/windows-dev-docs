@@ -16,6 +16,8 @@ App packaging provides your application with a predictable installation, update,
 
 Not sure which packaging model is right for your app? See [Packaging overview](packaging/index.md).
 
+Choosing how to distribute your app — through the Microsoft Store, enterprise sideloading, or direct download? See [Choose a distribution path](choose-distribution-path.md) for a side-by-side comparison of signing costs, update mechanics, and enterprise management per path. For the current status of distribution features (including the ms-appinstaller protocol change), see [Current status of Windows app distribution features](distribution-feature-status.md).
+
 When deploying apps that use the Windows App SDK, you can choose between framework-dependent and self-contained deployment models. Framework-dependent apps rely on the Windows App SDK runtime and/or framework package being installed on the user’s machine. In contrast, self-contained apps bundle the Windows App SDK dependencies directly with the application, ensuring the app carries everything it needs to run. The right model depends on your distribution scenario, update strategy, and how much control you want over the app’s footprint and dependencies.
 
 ---
