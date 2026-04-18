@@ -15,7 +15,7 @@ This page contains links to resources that can make you more efficient as you de
 
 ## Samples
 
-:::image type="content" source="./images/WASDK.png" alt-text="Header image for Windows App SDK" border="false":::
+:::image type="content" source="../get-started/images/WASDK.png" alt-text="Header image for Windows App SDK" border="false":::
 
 The [**WindowsAppSDK-Samples repository**](https://github.com/microsoft/WindowsAppSDK-Samples) provides a collection of code samples that demonstrate how to use the Windows App SDK to build modern Windows applications. These samples cover key features such as WinUI 3, app lifecycle, windowing, and push notifications, offering practical, hands-on guidance for developers. Whether you're new to the Windows App SDK or looking for specific implementation details, this repository serves as a valuable resource to accelerate development and explore best practices. You can find other samples in our [Samples Browser](/samples/browse/).
 
@@ -25,7 +25,7 @@ The [**WindowsAppSDK-Samples repository**](https://github.com/microsoft/WindowsA
 
 ## WinUI 3 Gallery
 
-:::image type="content" source="./images/winui3gallery.png" alt-text="Header image for WinUI 3 Gallery" border="false":::
+:::image type="content" source="../get-started/images/winui3gallery.png" alt-text="Header image for WinUI 3 Gallery" border="false":::
 
 The [**WinUI 3 Gallery**](https://github.com/microsoft/WinUI-Gallery) is the must-have companion app for WinUI developers. It's a sample app that showcases the full range of  WinUI controls, styles, design guidance, and capabilities. This interactive gallery helps you explore and experiment with WinUI components, view XAML code examples, and understand best practices for building modern, fluent Windows applications. Whether you're designing a new app or refining an existing UI, the WinUI 3 Gallery is an essential reference for leveraging the power of WinUI in your projects. You can either [browse the repository](https://github.com/microsoft/WinUI-Gallery) for source code or [**download the WinUI 3 Gallery from the Microsoft Store**](https://aka.ms/winuigallery).
 
@@ -35,7 +35,7 @@ The [**WinUI 3 Gallery**](https://github.com/microsoft/WinUI-Gallery) is the mus
 
 ## Windows Community Toolkit
 
-:::image type="content" source="./images/WCT.png" alt-text="Header image for Windows Community Toolkit" border="false":::
+:::image type="content" source="../get-started/images/WCT.png" alt-text="Header image for Windows Community Toolkit" border="false":::
 
 The [**Windows Community Toolkit**](https://github.com/CommunityToolkit/Windows) is an open-source collection of helper functions, custom controls, and app services. It simplifies and demonstrates common developer tasks when building apps for Windows.
 

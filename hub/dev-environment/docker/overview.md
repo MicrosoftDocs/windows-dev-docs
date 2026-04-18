@@ -3,7 +3,7 @@ title: Get started with Docker for remote development with containers
 description: A complete guide to get started with Docker Desktop on Windows or WSL. Including support offered by Microsoft and variety of Azure services.
 ms.topic: get-started
 keywords: Microsoft, Windows, Docker, WSL, Remote development, Containers, Docker Desktop, Windows vs WSL
-ms.date: 09/24/2020
+ms.date: 04/15/2026
 ---
 
 # Overview of Docker remote development on Windows
@@ -39,24 +39,24 @@ Using containers for remote development and deploying applications with the Dock
 
 :::row:::
     :::column:::
-       [![VS Code remote container graphic](../../images/vscode-remote-containers.png)](https://code.visualstudio.com/docs/remote/create-dev-container)<br>
-        **[Create a Docker container with VS Code](https://code.visualstudio.com/docs/remote/containers-tutorial)**<br>
-        Set up a full-featured dev environment inside of a container with the [Remote - Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and find tutorials to set up a [NodeJS container](https://code.visualstudio.com/docs/containers/quickstart-node), a [Python container](https://code.visualstudio.com/docs/containers/quickstart-python), or a [ASP.NET Core container](https://code.visualstudio.com/docs/containers/quickstart-aspnet-core).
+       [![VS Code remote container graphic](../../images/vscode-remote-containers.png)](https://code.visualstudio.com/docs/devcontainers/tutorial)<br>
+        **[Dev Containers tutorial](https://code.visualstudio.com/docs/devcontainers/tutorial)**<br>
+        Set up a full-featured dev environment inside a container with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers). Find tutorials to set up a [Node.js container](https://code.visualstudio.com/docs/containers/quickstart-node), a [Python container](https://code.visualstudio.com/docs/containers/quickstart-python), or an [ASP.NET Core container](https://code.visualstudio.com/docs/containers/quickstart-aspnet-core).
     :::column-end:::
     :::column:::
-       [![VSCode attach Docker screenshot](../../images/vscode-attach-docker.png)](https://code.visualstudio.com/docs/remote/attach-container)<br>
-        **[Attach VS Code to a Docker container](https://code.visualstudio.com/docs/remote/attach-container)**<br>
-        Learn how to attach Visual Studio Code to a Docker container that is already running or to a [container in a Kubernetes cluster](https://code.visualstudio.com/docs/remote/attach-container#_attach-to-a-container-in-a-kubernetes-cluster).
+       [![VSCode attach Docker screenshot](../../images/vscode-attach-docker.png)](https://code.visualstudio.com/docs/devcontainers/attach-container)<br>
+        **[Attach VS Code to a Docker container](https://code.visualstudio.com/docs/devcontainers/attach-container)**<br>
+        Learn how to attach Visual Studio Code to a Docker container that is already running or to a [container in a Kubernetes cluster](https://code.visualstudio.com/docs/devcontainers/attach-container#_attach-to-a-container-in-a-kubernetes-cluster).
     :::column-end:::
     :::column:::
-       [![VSCode container menu screenshot](../../images/vscode-advanced-docker.png)](https://code.visualstudio.com/docs/remote/containers-advanced)<br>
-        **[Advanced Container Configuration](https://code.visualstudio.com/docs/remote/containers-advanced)**<br>
-        Learn about advanced setup scenarios for using Docker containers with Visual Studio Code or read this article on how to [Inspect Containers](https://code.visualstudio.com/blogs/2019/10/31/inspecting-containers) for debugging with VS Code.
+       [![VSCode container menu screenshot](../../images/vscode-advanced-docker.png)](https://code.visualstudio.com/docs/devcontainers/containers)<br>
+        **[Dev Containers documentation](https://code.visualstudio.com/docs/devcontainers/containers)**<br>
+        The full Dev Containers reference from the VS Code team, covering advanced configuration, environment variables, port forwarding, and more.
     :::column-end:::
     :::column:::
-       [![VSCode Docker Desktop with WSL screenshot](../../images/vscode-docker-wsl.png)](https://code.visualstudio.com/blogs/2020/07/01/containers-wsl)<br>
-        **[Using Remote Containers in WSL 2](https://code.visualstudio.com/blogs/2020/07/01/containers-wsl)**<br>
-        Read about using Docker containers with WSL 2 (Windows Subsystem for Linux, version 2) and how to set everything up with VS Code. You can also read about [how it works](https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2#_how-it-works).
+       [![VSCode Docker Desktop with WSL screenshot](../../images/vscode-docker-wsl.png)](./dev-containers.md)<br>
+        **[Set up Dev Containers on Windows](./dev-containers.md)**<br>
+        Windows-specific setup guide covering WSL 2 and Docker Desktop configuration, and the file system placement requirement for good container performance.
     :::column-end:::
 :::row-end:::
 

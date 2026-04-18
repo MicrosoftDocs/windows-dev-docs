@@ -143,7 +143,12 @@ items:
   - name: Get started with C#
     href: /dotnet/csharp/
   - name: Get started with Docker
-    href: ../dev-environment/docker/overview.md
+    href: ./docker/overview.md
+    items:
+      - name: Overview
+        href: ./docker/overview.md
+      - name: Set up Dev Containers on Windows
+        href: ./docker/dev-containers.md
   - name: Get started with Powershell
     href: /powershell/
   - name: Get started with Rust

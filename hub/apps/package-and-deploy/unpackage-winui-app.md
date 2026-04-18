@@ -71,3 +71,52 @@ Setting the `<WindowsPackageType>None</WindowsPackageType>` project property cau
 If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
 
 For more info about the bootstrapper, see [Deployment architecture and overview for framework-dependent apps](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper).
+
+## Deploying the Windows App SDK runtime
+
+Unpackaged WinUI 3 apps depend on the Windows App SDK runtime being installed on the user's machine. You have two options for ensuring the runtime is present:
+
+**Option 1: Windows App SDK runtime installer (.exe) (recommended)**
+
+Include the Windows App SDK runtime installer alongside your app. The runtime installer is a redistributable `.exe` that installs the required Windows App SDK runtime packages. Download it from the [Windows App SDK releases page](https://github.com/microsoft/WindowsAppSDK/releases) and bundle it with your own installer or setup script. For full guidance, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time).
+
+Users must run the runtime installer once. Subsequent app updates don't require reinstallation of the runtime unless the required Windows App SDK version changes.
+
+**Option 2: Self-contained deployment**
+
+Set `<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>` in your project file to bundle the Windows App SDK runtime directly into your app's output folder. This removes the runtime dependency — users don't need to install anything separately.
+
+```xml
+<PropertyGroup>
+  <WindowsPackageType>None</WindowsPackageType>
+  <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+</PropertyGroup>
+```
+
+The trade-off: your output folder is significantly larger (the full runtime is included), and each app update carries the full runtime payload. Use this option for simple distribution scenarios or when you can't control what's installed on the target machine.
+
+→ [Deploy unpackaged apps that use the Windows App SDK](/windows/apps/windows-app-sdk/deploy-unpackaged-apps) for the complete runtime deployment reference.
+
+## Single-file EXE limitation
+
+> [!IMPORTANT]
+> **Unpackaged WinUI 3 apps cannot be published as a single-file EXE.** The Windows App SDK runtime and several WinUI 3 dependencies must exist as separate files — the .NET single-file publish feature cannot bundle them into one executable.
+
+If a single-file distribution experience is important for your scenario, consider these alternatives:
+
+- **Use MSIX packaging** — users get a single installer experience (App Installer handles all the files), and you get Store eligibility, package identity, and built-in updates
+- **Use a traditional installer (WiX, Inno Setup)** — wrap the output folder in a single EXE installer that extracts and installs all required files transparently
+- **Use a different framework** — WPF and WinForms apps with `dotnet publish --self-contained -p:PublishSingleFile=true` *can* produce a single-file EXE, though some native dependencies may still be extracted at runtime
+
+## Distribution considerations for unpackaged apps
+
+Unpackaged WinUI 3 apps lack package identity, which means they cannot access certain Windows features:
+
+- No automatic update via App Installer or Windows Store
+- No background task registration via package manifest
+- No file type associations or protocol handlers via package manifest
+- No Start menu tile customization via package manifest
+
+If you need these features, consider [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) as a middle path that adds package identity without requiring full MSIX conversion.
+
+→ [Publish your first Windows app](publish-first-app.md) for a full overview of distribution options for WinUI 3 and other Windows app frameworks.

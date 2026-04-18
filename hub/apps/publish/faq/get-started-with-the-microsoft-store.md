@@ -162,6 +162,27 @@ For general questions, you can also use Microsoft Q&A forums or check the Learn 
 
 </details>
 
+---
+
+<details>
+<summary><strong>Does the Microsoft Store provide code signing for my app? Do I need my own code signing certificate?</strong></summary>
+
+Yes, the Microsoft Store provides **automatic code signing** for **MSIX and AppX packages** submitted for Store distribution. You do not need to purchase or provide your own CA-trusted code signing certificate, .pfx file, .cer file, or use a USB token/hardware security module (HSM) to submit MSIX packages to the Microsoft Store.
+
+Here's how it works:
+
+- **For MSIX/AppX Store submissions:** When you submit your MSIX/AppX package to the Microsoft Store, the package does not need to be signed with a CA-trusted certificate. After your app passes certification, the Microsoft Store automatically re-signs your package with a Microsoft certificate during the publishing process, replacing any existing signature. This ensures customers can trust and install your app without security warnings.
+  
+- **What you need:** Only the MSIX/AppX package files (.msix, .msixupload, .msixbundle, .appx, .appxupload, or .appxbundle) are required for submission. No CA-trusted code signing certificate is needed.
+
+- **For MSI or EXE installers:** The Store does **not** re-sign MSI or EXE installers. If you submit an MSI or EXE installer, you must Authenticode-sign it yourself with a valid code signing certificate before submission.
+
+- **For non-Store distribution:** If you plan to distribute your MSIX package outside the Microsoft Store (for example, for enterprise deployment, sideloading, or direct downloads), you will need to sign the package yourself with a valid code signing certificate before distribution. For more information, see [Sign an app package using SignTool](/windows/win32/appxpkg/how-to-sign-a-package-using-signtool).
+
+This automatic re-signing is one of the key benefits of publishing MSIX packages through the Microsoft Store, as it eliminates the need to purchase and manage CA-trusted code signing infrastructure for Store distribution.
+
+</details>
+
 <br>
 
 > [!TIP]

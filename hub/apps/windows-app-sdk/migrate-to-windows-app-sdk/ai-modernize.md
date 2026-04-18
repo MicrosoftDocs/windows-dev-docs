@@ -21,7 +21,7 @@ Make sure you have the key tools configured:
 - **Microsoft Learn MCP Server** — gives Copilot access to current Windows App SDK documentation
 - **winapp CLI** — adds package identity and Windows packaging to any framework
 
-If you haven't set these up yet, start with [Set up GitHub Copilot for Windows development](../../get-started/ai-setup.md).
+If you haven't set these up yet, start with [Set up GitHub Copilot for Windows development](../../how-tos/ai-setup.md).
 
 ---
 

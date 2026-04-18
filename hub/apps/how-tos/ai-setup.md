@@ -34,7 +34,7 @@ GitHub Copilot is built into Visual Studio 2026. Visual Studio is required for W
 2. Search for **GitHub Copilot** and install it, or verify it's already installed.
 3. Sign in via **Tools** > **Options** > **GitHub** > **Accounts**.
 
-For detailed setup, see [GitHub Copilot in Visual Studio](../how-tos/github-copilot-winui-vs.md).
+For detailed setup, see [Tutorial: Build a Windows app with GitHub Copilot](ai-build.md).
 
 #### [VS Code (Electron, Flutter, .NET, Rust)](#tab/vscode)
 

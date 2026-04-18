@@ -3,6 +3,18 @@ items:
       href: ../desktop/index.yml
     - name: Package and deploy overview
       href: ../package-and-deploy/index.md
+    - name: Choose a distribution path
+      href: ../package-and-deploy/choose-distribution-path.md
+    - name: SmartScreen reputation for developers
+      href: ../package-and-deploy/smartscreen-reputation.md
+    - name: Current status of distribution features
+      href: ../package-and-deploy/distribution-feature-status.md
+    - name: Publish your first Windows app
+      href: ../package-and-deploy/publish-first-app.md
+    - name: Code signing options
+      href: ../package-and-deploy/code-signing-options.md
+    - name: MSIX on Windows 10 and Windows 11
+      href: ../package-and-deploy/msix-windows10-windows11.md
     - name: Packaging
       items:
         - name: Overview

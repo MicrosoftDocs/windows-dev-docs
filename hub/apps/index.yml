@@ -39,9 +39,8 @@ productDirectory:
         text: Core concepts
       - url: /windows/apps/get-started/start-here
         text: Get started
-      - url: /windows/apps/get-started/samples
-        text: Samples and resources
-
+      - url: /windows/apps/develop/support
+        text: Help and guidance
   - title: Design
     imageSrc: /windows/apps/images/hub-design.svg
     links:
@@ -53,7 +52,6 @@ productDirectory:
         text: Guidelines
       - url:  /windows/apps/design/downloads
         text: Design tools and resources
-
   - title: Develop
     imageSrc: /windows/apps/images/hub-develop.svg
     links:
@@ -67,7 +65,8 @@ productDirectory:
         text: Platforms
       - url: /windows/apps/api-reference/
         text: API reference
-
+      - url: /windows/apps/dev-tools/
+        text: Tools and samples
   - title: Package and deploy
     imageSrc: /windows/apps/images/hub-package.svg
     links:
@@ -75,9 +74,10 @@ productDirectory:
         text: Overview
       - url: /windows/apps/package-and-deploy/packaging/
         text: Packaging
+      - url: /windows/apps/package-and-deploy/choose-distribution-path
+        text: Choose a distribution path
       - url: /windows/apps/package-and-deploy/deploy-overview
         text: Deployment
-
   - title: Publish
     imageSrc: /windows/apps/images/hub-publish.svg
     links:

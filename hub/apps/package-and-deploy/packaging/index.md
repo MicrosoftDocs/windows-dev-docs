@@ -82,10 +82,13 @@ Before you commit to unpackaged, check the [features table above](#features-that
 
 | Scenario | Recommended model | Details |
 |---|---|---|
-| **Indie developer publishing to the Microsoft Store** | Packaged (MSIX) | The Store requires MSIX. WinUI 3 apps are packaged by default — no changes needed. → [Distribute your packaged app](../../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md) |
-| **Enterprise app deployed via Intune or Configuration Manager** | Packaged, or external location for existing installers | New apps should use MSIX. Existing apps with their own installer can use packaging with external location. → [Deploy packaged apps](../../windows-app-sdk/deploy-packaged-apps.md) |
-| **ISV shipping a direct download with own installer** | Packaging with external location | Register a lightweight identity package alongside your existing installer. Users see no change; you get Windows features. → [Grant package identity](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) |
+| **Indie developer publishing to the Microsoft Store** | Packaged (MSIX) | The Store requires MSIX. WinUI 3 apps are packaged by default — no changes needed. **Code signing is handled free by the Store.** → [Distribute your packaged app](../../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md) |
+| **Enterprise app deployed via Intune or Configuration Manager** | Packaged, or external location for existing installers | New apps should use MSIX. Existing apps with their own installer can use packaging with external location. **Code signing:** use a self-signed cert (trusted via Intune, Group Policy, or Configuration Manager) or [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/). → [Deploy packaged apps](../../windows-app-sdk/deploy-packaged-apps.md) |
+| **ISV shipping a direct download with own installer** | Packaging with external location | Register a lightweight identity package alongside your existing installer. **Code signing:** a CA-trusted certificate is required for non-Store distribution. [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is the recommended lower-cost option. → [Grant package identity](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) |
 | **Internal tool or developer utility** | Unpackaged | Simplest to build and deploy. The Windows App SDK works via NuGet, but some features won't be available. |
+
+> [!TIP]
+> **Not sure about code signing costs?** Publishing through the Microsoft Store means you don't need to separately obtain or manage a certificate for end-user trust. For other distribution paths, your signing approach depends on deployment context — enterprise environments can trust a self-signed certificate through device management, while broader non-Store distribution typically requires a CA-trusted code signing solution. [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is Microsoft's recommended option (see [pricing](https://azure.microsoft.com/pricing/details/trusted-signing/)), with no hardware token required.
 
 ## Framework-dependent vs self-contained deployment
 

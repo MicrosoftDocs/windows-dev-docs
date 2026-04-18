@@ -1,6 +1,16 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/publish/partner-center/account-types-locations-and-fees.md",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/partner-center/partner-center-developer-account.md",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/widgets/widgets-create-a-template.md",
       "redirect_url": "/windows/apps/develop/widgets/widgets-create-a-template",
       "redirect_document_id": true
@@ -11418,6 +11428,36 @@
     {
       "source_path": "hub/apps/desktop/visual-studio-templates.md",
       "redirect_url": "/windows/apps/dev-tools/visual-studio",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/whats-new/community.md",
+      "redirect_url": "/windows/apps/develop/support#stay-connected",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/ai-for-windows-developers.md",
+      "redirect_url": "/windows/apps/dev-tools/agentic-tools",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/github-copilot-winui-vs.md",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/ai-build.md",
+      "redirect_url": "/windows/apps/how-tos/ai-build",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/ai-setup.md",
+      "redirect_url": "/windows/apps/how-tos/ai-setup",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/samples.md",
+      "redirect_url": "/windows/apps/dev-tools/samples",
       "redirect_document_id": false
     },
     {

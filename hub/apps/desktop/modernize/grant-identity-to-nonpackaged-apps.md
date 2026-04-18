@@ -3,14 +3,16 @@ title: Grant package identity by packaging with external location manually
 description: Learn how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
 ms.date: 04/08/2026
 ms.topic: how-to
-keywords: windows 10, desktop, sparse, package, identity, external, location, MSIX, Win32
+keywords: windows 10, desktop, sparse package, packaging with external location, package identity, external location, MSIX, Win32, unpackaged app
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
 # Grant package identity by packaging with external location manually
 
-For the motivations behind adding package identity, as well as the differences between building
+> **Why do this?** Granting your app a package identity (also called a *sparse package* or *packaging with external location*) unlocks Windows platform features that are otherwise unavailable to unpackaged apps: toast and push notifications, background tasks, app extensions, share targets, file associations, startup tasks, privacy consent prompts, and Windows AI Foundry APIs — all without switching to full MSIX packaging or changing your existing installer.
+
+For more about the motivations behind adding package identity, as well as the differences between building
 identity packages in Visual Studio and building them manually, see
 [Overview](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview).
 
@@ -264,7 +266,11 @@ var packageManager = new PackageManager();
 var options = new AddPackageOptions();
 options.ExternalLocationUri = externalUri;
 
-await packageManager.AddPackageByUriAsync(packageUri, options);
+var result = await packageManager.AddPackageByUriAsync(packageUri, options);
+if (result.ExtendedErrorCode != 0)
+{
+    throw new Exception($"Package registration failed: {result.ErrorText} (0x{result.ExtendedErrorCode:X8})");
+}
 
 ...
 
@@ -280,13 +286,14 @@ foreach (var package in packages)
 
 Note the below important details about this code:
 
-* Set `externalLocation` to the absolute path of your application's installation directory
-(without any executable names)
-* Set `packagePath` to the absolute path of the signed identity package produced in the previous step
+* Set `externalLocation` to the **absolute path** of your application's installation directory
+(without any executable names). `new Uri(somePath)` produces a `file:///` URI as required by the API.
+* Set `packagePath` to the **absolute path** of the signed identity package produced in the previous step
 (with the file name)
 * The `<IdentityPackageFamilyName>` can be found by running the `Get-AppxPackage <IdentityPackageName>`
 PowerShell command on a system where the identity package is registered. The `PackageFamilyName` property
 contains the value to use here.
+* Check `result.ExtendedErrorCode` after registration to surface actionable error details. See [Troubleshooting](#troubleshooting) for common error codes.
 
 #### Per-Machine (PackageManager)
 
@@ -335,6 +342,21 @@ Note the below important details about this code:
 * The `<IdentityPackageFamilyName>` can be found by running the `Get-AppxPackage <IdentityPackageName>`
 PowerShell command on a system where the identity package is registered. The `PackageFamilyName`
 property contains the value to use here.
+
+## Troubleshooting
+
+The table below lists the most common errors when registering an identity package and how to fix them.
+
+| Error code | Symptom | Cause | Fix |
+|---|---|---|---|
+| `0x800B0109` / `CERT_E_UNTRUSTEDROOT` | `Add-AppxPackage` or `AddPackageByUriAsync` fails immediately | Self-signed certificate is not in the **Trusted People** store | Follow the [cert trust step](#build-and-sign-the-identity-package) above to import the public `.cer` into `Cert:\CurrentUser\TrustedPeople` |
+| `0x80073CF9` | Registration fails with "version already registered" | The exact same package version is already registered on this machine | Unregister the existing package first (`Remove-AppxPackage` or `RemovePackageAsync`), then re-register |
+| `0x80073D54` | Registration succeeds but identity is missing at runtime | `publisher`, `packageName`, or `applicationId` in the app's side-by-side manifest (`msix` element) don't match the identity package manifest | Ensure `Publisher`/`Name`/`Application Id` are identical in both manifests — see [Add identity metadata](#add-identity-metadata-to-your-desktop-application-manifests) |
+| Identity absent at runtime (no error) | `Package.Current` is null or `GetPackage()` returns nothing | The `ExternalLocation` path passed at registration doesn't match the directory where the app actually runs | Verify the absolute path passed as `ExternalLocation` is exactly the app's install directory |
+| `0x80073CF6` | Registration fails with "manifest invalid" | Manifest XML is malformed or a required attribute is missing | Validate the manifest with `MakeAppx.exe pack` — it reports schema errors. Ensure `uap10:AllowExternalContent` is `true` and `runFullTrust` capability is declared |
+
+> [!TIP]
+> For richer diagnostics, check the Windows **Event Viewer** under **Applications and Services Logs > Microsoft > Windows > AppxDeployment-Server**. It logs the full deployment error with context that isn't always surfaced in the API result or PowerShell output.
 
 ## Sample apps
 

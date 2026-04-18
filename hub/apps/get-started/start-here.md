@@ -94,13 +94,13 @@ In the Visual Studio Installer, select the following workloads on the **Workload
         Ready to go further? Follow the step-by-step tutorial to build a full WinUI app.
     :::column-end:::
     :::column:::
-        [![WinUI 3 Gallery](../winui/winui3/images/winui-gallery.png)](samples.md#winui-3-gallery)<br>
-        **[WinUI 3 Gallery](samples.md#winui-3-gallery)**<br>
+        [![WinUI 3 Gallery](../winui/winui3/images/winui-gallery.png)](../dev-tools/samples.md#winui-3-gallery)<br>
+        **[WinUI 3 Gallery](../dev-tools/samples.md#winui-3-gallery)**<br>
         Explore interactive examples of WinUI controls, features, and functionality.
     :::column-end:::
     :::column:::
-        [![Samples icon](../images/tile-samples.png)](samples.md)<br>
-        **[Samples and resources](samples.md)**<br>
+        [![Samples icon](../images/tile-samples.png)](../dev-tools/samples.md)<br>
+        **[Samples and resources](../dev-tools/samples.md)**<br>
         Browse code samples, starter projects, and tools to accelerate your development.
     :::column-end:::
 :::row-end:::

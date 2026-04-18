@@ -8,114 +8,95 @@ metadata:
   description: This documentation provides the latest guidance about building desktop apps for Windows 11.
   ms.topic: landing-page
   ms.collection: collection
-  ms.date: 11/25/2025
+  ms.date: 03/27/2026
   keywords: windows win32, desktop development
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
-  - title: Get ready for development
+  - title: Essentials
     linkLists:
       - linkListType: get-started
         links:
-          - text: What's new in Windows development
-            url: /windows/apps/whats-new/whats-new-for-developers
-          - text: Setup and tools
-            url: ../get-started/start-here.md
-          - text: An overview of UI frameworks
+          - text: Essentials
+            url: ../introduction.md
+          - text: Core concepts
             url: ../get-started/index.md
-          - text: Windows App SDK
-            url: ../windows-app-sdk/index.md
+          - text: Get started with WinUI
+            url: ../get-started/start-here.md
+          - text: Tools and samples
+            url: ../dev-tools/index.md
+          - text: Help and guidance
+            url: ../develop/support.md
+          - text: What's new
+            url: ../whats-new/whats-new-for-developers.md
 
-  - title: Design and UI
+  - title: Design
     linkLists:
       - linkListType: overview
         links:
-          - text: Design your app
+          - text: Design overview
             url: ../design/index.md
-          - text: Design resources and tools
+          - text: Design principles
+            url: ../design/design-principles.md
+          - text: Guidelines
+            url: ../design/guidelines-overview.md
+          - text: Tools and resources
             url: ../design/downloads/index.md
-          - text: Design for accessibility
-            url: ../design/accessibility/accessibility.md
-          - text: Design basics
-            url: ../design/basics/index.md
 
   - title: Develop
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Develop apps
+          - text: Develop overview
             url: ../develop/index.md
-          - text: Best practices for Windows apps
-            url: ../get-started/best-practices.md
-          - text: Windows developer FAQ
-            url: ../get-started/windows-developer-faq.md
-          - text: Other development tools
-            url: /windows/dev-environment/
+          - text: Features
+            url: ../develop/features-overview.md
+          - text: Use features with other UI frameworks
+            url: ../desktop/modernize/index.md
+          - text: Platform
+            url: ../develop/platform/csharp-winrt/index.md
+          - text: API reference
+            url: ../api-reference/index.md
+          - text: Tools and samples
+            url: ../dev-tools/index.md
+          - text: Tutorials
+            url: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
 
-  - title: Deploy
+  - title: Package and deploy
     linkLists:
-      - linkListType: overview
+      - linkListType: deploy
         links:
-          - text: Packaging and deployment overview
+          - text: Package and deploy overview
             url: ../package-and-deploy/index.md
-          - text: Learn about packaged and unpackaged apps
-            url: ../desktop/modernize/package-identity-overview.md
-          - text: Windows App SDK deployment guide
+          - text: Choose a packaging model
+            url: ../package-and-deploy/choose-packaging-model.md
+          - text: Packaging
+            url: ../package-and-deploy/packaging/index.md
+          - text: Windows App SDK deployment
             url: ../package-and-deploy/deploy-overview.md
-          - text: The MSIX app package format
-            url: /windows/msix
 
   - title: Distribute
     linkLists:
       - linkListType: overview
         links:
-          - text: Microsoft Store overview
+          - text: Choose a distribution path
+            url: ../package-and-deploy/choose-distribution-path.md
+          - text: Publish overview
             url: ../publish/index.md
+          - text: Get started with Microsoft Store
+            url: ../publish/get-started.md
           - text: Open a developer account
             url: ../publish/partner-center/open-a-developer-account.md
-          - text: Microsoft Store FAQ
-            url: ../publish/faq/get-started-with-the-microsoft-store.md    
-          - text: Microsoft Store Policies
-            url: ../publish/store-policies.md            
-
-  - title: Artificial intelligence and machine learning
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Windows AI
-            url: /windows/ai/
-          - text: GitHub Copilot extension for Visual Studio
-            url: /visualstudio/ide/visual-studio-github-copilot-extension
-          - text: App Actions on Windows
-            url: /windows/ai/app-actions/
-          - text: Windows ML
-            url: /windows/ai/new-windows-ml/overview
-
-  - title: API Reference
-    linkLists:
-      - linkListType: reference
-        links:
-          - text: WinRT API for the Windows SDK
-            url: /uwp/api/
-          - text: Win32 API for the Windows SDK
-            url: /windows/win32/api/
-          - text: WinRT API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/winrt/
-          - text: Win32 API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/win32/
-          - text: WinUI for UWP API reference
-            url: /windows/winui/api/
-  
-  - title: Community and support
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Microsoft Q&A Forum
-            url: /answers/questions/
-          - text: "@WindowsDocs"
-            url: https://twitter.com/WindowsDocs
-          - text: OneDevMinute on Microsoft Learn
-            url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
-          - text: Windows developer support
-            url: https://developer.microsoft.com/windows/support
+          - text: Submit your app
+            url: ../publish/publish-your-app/msix/reserve-your-apps-name.md
+          - text: Get your app certified
+            url: ../publish/publish-your-app/msix/app-certification-process.md
+          - text: Monitor your app performance
+            url: ../publish/analyze-app-performance/msix.md
+          - text: Manage and update your app
+            url: ../publish/publish-your-app/msix/publish-update-to-your-app-on-store.md
+          - text: Manage your account
+            url: ../publish/partner-center/manage-account-users.md
+          - text: Microsoft Store policies and resources
+            url: ../publish/store-policies.md

@@ -27,13 +27,13 @@ ms.date: 01/27/2026
         Look up detailed API docs for every namespace and feature.
     :::column-end:::
     :::column:::
+        [![Tools and samples icon](../apps/develop/images/tile-tools.png)](../apps/dev-tools/index.md)<br>
+        **[Tools and samples](../apps/dev-tools/index.md)**<br>
+       Tools, samples, and AI-powered resources to help you build apps faster.
+    :::column-end:::
+    :::column:::
         [![Tutorials icon](../apps/develop/images/tile-tutorials.png)](../apps/winui/winui3/desktop-winui3-app-with-basic-interop.md)<br>
         **[Tutorials](../apps/winui/winui3/desktop-winui3-app-with-basic-interop.md)**<br>
        Follow step-by-step guides to learn by building.
-    :::column-end:::
-    :::column:::
-        [![Tools icon](../apps/develop/images/tile-tools.png)](/windows/dev-environment/)<br>
-        **[Development environment](/windows/dev-environment/)**<br>
-       Set up your development environment with the right tools.
     :::column-end:::
 :::row-end:::

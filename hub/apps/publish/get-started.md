@@ -25,8 +25,6 @@ Who should select an individual account:
 - Individuals creating digital content as a **hobbyist, amateur, school, or personal project**
 </br>
 
-The registration for Individual accounts is free.
-
 For more details, refer [steps to create individual developer account](../publish/partner-center/open-a-developer-account.md).
 
 ### [Open company developer account](#tab/company)
@@ -36,15 +34,6 @@ Who should select a company account:
 - **Independent developers and freelancers** whose distribution of apps through the Store is **in relation to their business, trade, or profession**
 - **Businesses and Organizations** such as corporations, LLCs, partnerships, non-profits, or government organizations
 - **Teams or Groups** within a company or organization
-</br>
-
-The company account requires a one-time registration fee of approximately **$99 USD**. (The fees varies depending on your [country or region](./partner-center/account-types-locations-and-fees.md#developer-account-and-app-submission-markets))
-
-</br>
-
-To understand how to open developer account, you can watch the following video:
-
->[!VIDEO https://learn-video.azurefd.net/vod/player?id=2125b1c6-20d4-47da-ba76-d1ff17b89cc2]
 
 For more details, refer [steps to create company developer account](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
 

@@ -68,11 +68,9 @@ The WinUI 3 plugin addresses this directly: its custom instructions give Copilot
 
 ## Set up step-by-step
 
-For a complete walkthrough — including IDE setup, agent mode, MCP server configuration, and verification — see [Set up GitHub Copilot for Windows development](../get-started/ai-setup.md).
+For a complete walkthrough — including IDE setup, agent mode, MCP server configuration, and verification — see [Set up GitHub Copilot for Windows development](../how-tos/ai-setup.md).
 
 ## Related content
 
-- [Set up GitHub Copilot for Windows development](../get-started/ai-setup.md)
-- [AI-assisted Windows development](../get-started/ai-for-windows-developers.md)
-- [Build apps with AI built in](../get-started/ai-for-windows-developers.md#build-apps-with-ai-built-in) — Foundry Local, Phi Silica, and Windows AI APIs
-- [GitHub Copilot in Visual Studio](../how-tos/github-copilot-winui-vs.md)
+- [Set up GitHub Copilot for Windows development](../how-tos/ai-setup.md)
+- [Tutorial: Build a Windows app with GitHub Copilot](../how-tos/ai-build.md)
