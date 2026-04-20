@@ -2,7 +2,7 @@
 title: Code signing options for Windows app developers
 description: Compare code signing options for distributing Windows apps outside the Microsoft Store — including Azure Artifact Signing, OV/EV certificates, and when no signing is needed.
 ms.topic: concept-article
-ms.date: 04/17/2026
+ms.date: 04/20/2026
 ms.localizationpriority: medium
 ---
 
@@ -25,7 +25,7 @@ If you publish your app through the Microsoft Store, code signing is free and ha
 
 Publishing through the Microsoft Store is the recommended distribution path for most Windows apps. Microsoft re-signs your package automatically, meaning users never see a SmartScreen warning and you never need to purchase or renew a certificate.
 
-A one-time $19 developer account fee gives you access to [Partner Center](https://partner.microsoft.com/dashboard), where you submit your app and manage its listing.
+Create a free developer account at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). After you register, use [Partner Center](https://partner.microsoft.com/dashboard) to submit your app and manage its listing.
 
 → [Publish your app to the Microsoft Store](/windows/apps/publish/publish-your-app/msix/create-app-submission)
 

@@ -19,7 +19,7 @@ Your distribution path determines your code signing costs, update mechanics, how
 
 → [Choose a distribution path for your Windows app](choose-distribution-path.md) has a full comparison. In short:
 
-- **Microsoft Store** — recommended for most apps. Free signing, built-in updates, broad discoverability, and a trusted install experience. Requires a one-time $19 [Partner Center](https://partner.microsoft.com/dashboard) developer account fee.
+- **Microsoft Store** — recommended for most apps. Free signing, built-in updates, broad discoverability, and a trusted install experience. Requires a free developer account — register at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com).
 - **Direct download** — appropriate for commercial ISVs with their own storefront, enterprise LOB apps, or apps with content the Store doesn't permit. You are responsible for signing, hosting, and updates.
 
 Most new indie apps are a good fit for the Store. If you're unsure, start there.
@@ -75,7 +75,7 @@ The Store submission process runs through [Partner Center](https://partner.micro
 
 **Steps at a glance:**
 
-1. **Create a developer account** — One-time $19 fee at [Partner Center](https://partner.microsoft.com/dashboard). The account is permanent.
+1. **Create a developer account** — Free. Register at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). The account is permanent.
 2. **Reserve your app name** — Claim your app's name in Partner Center before submission. The name is held for you during development.
 3. **Build and package your app** — Create an MSIX package that meets Store requirements. For Store submissions, MSIX/AppX packages don't need a CA-trusted signature — Microsoft re-signs the package with a Microsoft certificate after certification. If you distribute outside the Store using an MSI or EXE installer, Authenticode signing is recommended and expected by Windows security features.
 4. **Create your submission** — Upload your package, provide store listing details (description, screenshots, categories, age rating), and set pricing.
