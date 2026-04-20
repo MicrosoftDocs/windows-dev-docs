@@ -229,8 +229,8 @@ items:
           href: analyze-app-performance/msi-exe.md
         - name: Key metrics
           href: analyze-msi-exe/analyze-app-performance.md
-        - name: Ratings, Reviews, and Responses
-          href: analyze-msi-exe/ratings-reviews-performance.md
+    - name: Ratings, Reviews, and Responses
+      href: analyze-msi-exe/ratings-reviews-performance.md
 - name: Manage and update your app
   items:
         - name: MSIX
@@ -291,8 +291,6 @@ items:
                 href: engage-with-your-customers.md
               - name: Create customer groups
                 href: create-customer-groups.md
-              - name: Respond to customer reviews
-                href: respond-to-customer-reviews.md
               - name: Use targeted offers
                 href: use-targeted-offers-to-maximize-engagement-and-conversions.md
           - name: Targeted distribution

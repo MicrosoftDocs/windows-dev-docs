@@ -16,7 +16,7 @@ Show attractive, personalized content to specific segments of your customers to 
 ## Respond to reviews
 Follow up and connect with your customers by responding publicly or privately to their reviews. You can submit your responses either in the dashboard or by using our REST API.
 
-[Respond to reviews](respond-to-customer-reviews.md)
+[Respond to reviews](analyze-msi-exe/ratings-reviews-performance.md#respond-to-customer-reviews)
 
 ## Engagement analytics
 
