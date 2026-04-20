@@ -14,7 +14,7 @@ The PowerToys Keyboard Manager enables you to remap keys and shortcuts on your k
 
 For example, you can exchange the letter <kbd>A</kbd> for the letter <kbd>B</kbd> on your keyboard. When you press the <kbd>A</kbd> key, a `B` will be inserted.
 
-![PowerToys Keyboard Manager remap keys screenshot](../images/powertoys-keyboard-remap.png)
+![PowerToys Keyboard Manager remap keys screenshot](images/powertoys-keyboard-remap.png)
 
 You can exchange shortcut key combinations. For example: The shortcut key <kbd>Ctrl</kbd>+<kbd>C</kbd> will copy text in many applications. With PowerToys Keyboard Manager utility, you can swap that shortcut for <kbd>⊞ Win</kbd>+<kbd>C</kbd>. Now, <kbd>⊞ Win</kbd>+<kbd>C</kbd> will copy text. If you do not specify a targeted application in PowerToys Keyboard Manager, the shortcut exchange will be applied globally across Windows.
 
@@ -57,7 +57,7 @@ To swap key positions between the <kbd>A</kbd> and <kbd>B</kbd> keys, add anothe
 | :--- | :--- |
 | `B` | `A` |
 
-![Keyboard Remap Keys screenshot](../images/powertoys-keyboard-remap-a-b.png)
+![Keyboard Remap Keys screenshot](images/powertoys-keyboard-remap-a-b.png)
 
 > [!NOTE]
 > Some of the keys in the drop-down list may not be present on your keyboard. For example, the <kbd>Start App 1</kbd> key is only available on keyboards that physically have a <kbd>Start App 1</kbd> key, and the <kbd>IME Mode Change</kbd> key is only available on keyboards that support Input Method Editors (IME).
@@ -99,7 +99,7 @@ For example, the shortcut <kbd>Ctrl</kbd>+<kbd>C</kbd> copies selected text. To 
 | :--- | :--- |
 | `Alt` + `C` | `Ctrl` + `C` |
 
-![Keyboard Remap Shortcut screenshot](../images/powertoys-keyboard-remap-shortcut.png)
+![Keyboard Remap Shortcut screenshot](images/powertoys-keyboard-remap-shortcut.png)
 
 There are a few rules to follow when remapping shortcuts. These rules only apply to the "Shortcut" column.
 
@@ -202,7 +202,7 @@ Using the drop-down menu, you can search with the key name and additional drop-d
 
 Orphaning a key means that you mapped it to another key and no longer have anything mapped to it. For example, if the key is remapped from `A` to `B`, then a key no longer exists on your keyboard that results in `A`. To remind you of this, a warning will display for any orphaned keys. To fix this, create another remapped key that is mapped to result in `A`.
 
-![PowerToys Keyboard Manager orphaned key](../images/powertoys-keyboard-remap-orphaned.png)
+![PowerToys Keyboard Manager orphaned key](images/powertoys-keyboard-remap-orphaned.png)
 
 ## Frequently asked questions about keyboard remapping
 
@@ -238,7 +238,7 @@ Currently, no. We aren't aware of an API where we can see the input and which de
 
 Keyboard Manager lists mappings for all known physical keyboard keys. Some of these mappings may not be available on your keyboard as there may not be a physical key to which it corresponds. For instance, the <kbd>Start App 1</kbd> option shown below is only available on keyboards that physically have a <kbd>Start App 1</kbd> key. Trying to map to and from this key on a keyboard that does not support the <kbd>Start App 1</kbd> key will result in undefined behavior.
 
-![PowerToys Keyboard Manager List of Keys](../images/pt-key-remap-drop-down.png)
+![PowerToys Keyboard Manager List of Keys](images/pt-key-remap-drop-down.png)
 
 ## Troubleshooting keyboard remapping issues
 

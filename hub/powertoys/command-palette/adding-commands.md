@@ -54,7 +54,7 @@ To update the extension in the Command Palette you need to:
 1. Deploy your extension
 1. In the Command Palette, type the "reload" command to refresh the extensions in the palette
 
-![Screenshot of reload](../../images/command-palette/reload.png)
+![Screenshot of reload](../images/command-palette/reload.png)
 
 > [!NOTE]
 > There are several reload options, make sure to select the **Reload Command Palette extensions**
@@ -97,14 +97,14 @@ As your building your extension, you'll most likely want to debug it.
 1. You’ll see a dropdown that says either `Debug` or `Release` (next to the green "Start" button ▶️)
 1. If it says `Release`, click the dropdown and select `Debug`.
 
-![Screenshot of Visual Studio's toolbar that displays Debug](../../images/command-palette/debug-configuration.png)
+![Screenshot of Visual Studio's toolbar that displays Debug](../images/command-palette/debug-configuration.png)
 
 </details>
 
 1. Run the app in debug by pressing the green "Start" button ▶️ or press `F5`
 1. Ensure the Output window is set to show `Debug` output (Ctrl + Alt + O)
 
-![Screenshot of Visual Studio's Output panel](../../images/command-palette/output.png)
+![Screenshot of Visual Studio's Output panel](../images/command-palette/output.png)
 
 1. In the Command Palette, run `reload`
 1. Go to your extension and select `Open the Command Palette documentation`.
@@ -188,16 +188,16 @@ There are two different kinds of pages you can show:
 
 - [ListPage](./microsoft-commandpalette-extensions-toolkit/listpage.md) - This is a page that shows a list of commands. This is what we've been working with so far.
 
-![Screenshot of ListPage](../../images/command-palette/list-page.png)
+![Screenshot of ListPage](../images/command-palette/list-page.png)
 
 - [ContentPage](./microsoft-commandpalette-extensions-toolkit/contentpage.md) - This is a page that shows rich content to the user. This allows you to specify abstract content, and let Command Palette worry about rendering the content in a native experience. There are two different types of content supported so far:
   - [Markdown content](./using-markdown-content.md) - This is content that's written in Markdown, and is rendered in the Command Palette. See [MarkdownContent](./microsoft-commandpalette-extensions-toolkit/markdowncontent.md) for details.
 
-![Screenshot of extension using ContentPage](../../images/command-palette/markdown.png)
+![Screenshot of extension using ContentPage](../images/command-palette/markdown.png)
 
   - [Form content](./using-form-pages.md) - This is content that shows a form to the user, and then returns the results of that form to the extension. These are powered by [Adaptive Cards](https://aka.ms/adaptive-cards) This is useful for getting user input, or displaying more complex layouts of information. See [FormContent](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for details.
 
-![Screenshot of Form content](../../images/command-palette/form-toggle-command-palette.png)
+![Screenshot of Form content](../images/command-palette/form-toggle-command-palette.png)
 
 ## Add more commands
 

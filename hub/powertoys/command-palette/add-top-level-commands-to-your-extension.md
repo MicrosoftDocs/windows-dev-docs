@@ -61,7 +61,7 @@ public <ExtensionName>CommandsProvider()
 1. Deploy your extension
 1. In Command Palette, `Reload`
 
-![Screenshot of extension with send message command at top level](../../images/command-palette/top-level-command.png)
+![Screenshot of extension with send message command at top level](../images/command-palette/top-level-command.png)
 
 Now there is an additional top-level commands to your extension.
 

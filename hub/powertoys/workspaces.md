@@ -19,29 +19,29 @@ To start using Workspaces, enable it in the PowerToys Settings.
 
 Open the editor using by selecting "Launch editor" from PowerToys Workspaces settings or by using the shortcut <kbd>⊞ Win</kbd>+<kbd>Ctrl</kbd>+<kbd>`</kbd>.
 
-:::image type="content" source="../images/powertoys-workspaces/workspaces_editor.png" alt-text="Screenshot of PowerToys Workspaces editor interface showing workspace creation options.":::
+:::image type="content" source="images/powertoys-workspaces/workspaces_editor.png" alt-text="Screenshot of PowerToys Workspaces editor interface showing workspace creation options.":::
 
 Click "+ Create workspace" to invoke the Capture experience - in this view, the desktop is fully functional and you are able to open, close, and reposition apps to get your apps into the desired layout. Once you have arranged the apps how you would like, select "Capture".
 
-:::image type="content" source="../images/powertoys-workspaces/capture_ux.png" alt-text="Screenshot of PowerToys Workspaces capture experience showing app arrangement options.":::
+:::image type="content" source="images/powertoys-workspaces/capture_ux.png" alt-text="Screenshot of PowerToys Workspaces capture experience showing app arrangement options.":::
 
 After capturing, you will enter the editor where you can name the workspace, adjust window sizes, add command line interface (CLI) arguments, remove apps, and create a desktop shortcut before finally saving the workspace.
 
-:::image type="content" source="../images/powertoys-workspaces/post_capture_edit.png" alt-text="Screenshot of PowerToys Workspaces editor interface after capturing showing workspace editing options.":::
+:::image type="content" source="images/powertoys-workspaces/post_capture_edit.png" alt-text="Screenshot of PowerToys Workspaces editor interface after capturing showing workspace editing options.":::
 
 ## Launching a workspace
 
 Launch a workspace by either selecting "Launch" from the list of workspaces in the editor, or by using a desktop shortcut if you chose to create one when saving the workspace originally. Shortcuts can also be pinned to the taskbar for convenient launching.
 
-![Workspaces methods](../images/powertoys-workspaces/launch_buttons.png)
+![Workspaces methods](images/powertoys-workspaces/launch_buttons.png)
 
 While the workspace launches, PowerToys will display a dialog box presenting the status of each app. Each app will have one of the following statuses:
 
 | Symbol      | Status    |
 |-------------|-----------|
-| ![Green checkmark](../images/powertoys-workspaces/checkmark.png) | The app has successfully launched and repositioned. |
-| ![Loading circle](../images/powertoys-workspaces/spinner.png) | The app is in the process of launching and moving to the correct position. |
-| ![Red X](../images/powertoys-workspaces/failed.png) | The app has failed to launch. |
+| ![Green checkmark](images/powertoys-workspaces/checkmark.png) | The app has successfully launched and repositioned. |
+| ![Loading circle](images/powertoys-workspaces/spinner.png) | The app is in the process of launching and moving to the correct position. |
+| ![Red X](images/powertoys-workspaces/failed.png) | The app has failed to launch. |
 
 The dialog box will dismiss itself once all apps have properly launched and been arranged in their desired positions. You can also dismiss the dialog yourself at any time, or use it to cancel the launch.
 
@@ -56,7 +56,7 @@ Start by launching the editor and selecting the workspace you would like to edit
 
 To launch apps in a desired state, CLI arguments can be added to each app in their respective dropdown menus. These arguments are specific to the app itself and are called alongside the app when launched. In the below example, Visual Studio Code (VS Code) is launched to the file provided at the path and Terminal is launched to the "Ubuntu" profile.
 
-![CLI arguments in editor](../images/powertoys-workspaces/cli_args.png)
+![CLI arguments in editor](images/powertoys-workspaces/cli_args.png)
 
 You can find more information on VS Code and Terminal CLI arguments can be found below:
 
