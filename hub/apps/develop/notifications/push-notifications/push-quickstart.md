@@ -518,5 +518,5 @@ Console.WriteLine(response.Content);
 - [Push notifications sample code on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push/)
 - [Microsoft.Windows.PushNotifications API details](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md#api-details)
 - [Push notifications spec on GitHub](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/PushNotifications/PushNotifications-spec.md)
-- [Toast content](../app-notifications/adaptive-interactive-toasts.md)
+- [App notification content](../app-notifications/app-notifications-content.md)
 - [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root)

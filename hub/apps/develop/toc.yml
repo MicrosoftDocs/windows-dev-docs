@@ -520,43 +520,41 @@ items:
               - name: Quickstart
                 href: notifications/app-notifications/app-notifications-quickstart.md
               - name: UX guidance
-                href: notifications/app-notifications/toast-ux-guidance.md
-              - name: Send local notifications
-                items:
-                  - name: C# apps
-                    href: notifications/app-notifications/send-local-toast.md
-                  - name: C++ UWP apps
-                    href: notifications/app-notifications/send-local-toast-cpp-uwp.md
-                  - name: C++ WRL apps
-                    href: notifications/app-notifications/send-local-toast-desktop-cpp-wrl.md
-                  - name: Other apps
-                    href: notifications/app-notifications/send-local-toast-other-apps.md
-                  - name: Activating app notifications from desktop apps
-                    href: notifications/app-notifications/toast-desktop-apps.md
-              - name: App notification content
-                items:
-                  - name: Content
-                    href: notifications/app-notifications/adaptive-interactive-toasts.md
-                  - name: Schema
-                    href: notifications/app-notifications/toast-schema.md
-              - name: Schedule notifications
-                href: notifications/app-notifications/scheduled-toast.md
+                href: notifications/app-notifications/app-notifications-ux-guidance.md
+              - name: Content
+                href: notifications/app-notifications/app-notifications-content.md
+              - name: Schema
+                href: notifications/app-notifications/app-notifications-schema.md
               - name: Additional features
+                href: notifications/app-notifications/app-notifications-additional-features.md
                 items:
-                  - name: Custom audio
-                    href: notifications/app-notifications/custom-audio-on-toasts.md
-                  - name: Progress bar
-                    href: notifications/app-notifications/toast-progress-bar.md
-                  - name: Pending update
-                    href: notifications/app-notifications/toast-pending-update.md
-                  - name: Custom timestamps
-                    href: notifications/app-notifications/custom-timestamps-on-toasts.md
-                  - name: Collections
-                    href: notifications/app-notifications/toast-collections.md
-                  - name: Headers
-                    href: notifications/app-notifications/toast-headers.md
-                  - name: Notification Listener
-                    href: notifications/app-notifications/notification-listener.md
+                - name: Remove notifications
+                  href: notifications/app-notifications/manage-app-notifications.md
+                - name: Schedule notifications
+                  href: notifications/app-notifications/app-notifications-scheduled.md
+                - name: Custom audio
+                  href: notifications/app-notifications/app-notifications-custom-audio.md
+                - name: Progress bar
+                  href: notifications/app-notifications/app-notifications-progress-bar.md
+                - name: Pending update
+                  href: notifications/app-notifications/app-notifications-pending-update.md
+                - name: Custom timestamps
+                  href: notifications/app-notifications/app-notifications-custom-timestamps.md
+                - name: Collections
+                  href: notifications/app-notifications/app-notifications-collections.md
+                - name: Headers
+                  href: notifications/app-notifications/app-notifications-headers.md
+                - name: Notification Listener
+                  href: notifications/app-notifications/notification-listener.md
+              - name: Other frameworks
+                href: notifications/app-notifications/app-notifications-other-frameworks.md
+                items:
+                - name: WPF apps
+                  href: notifications/app-notifications/app-notifications-wpf.md
+                - name: WinForms apps
+                  href: notifications/app-notifications/app-notifications-winforms.md
+                - name: Console apps
+                  href: notifications/app-notifications/app-notifications-console.md
           - name: Notification delivery methods
             href: notifications/choosing-a-notification-delivery-method.md
             items:
@@ -1040,6 +1038,8 @@ items:
             href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md
           - name: Migrate WPF patterns to WinUI 3
             href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-patterns-winui3.md
+          - name: App notifications
+            href: notifications/app-notifications/app-notifications-wpf.md
           - name: Visual layer
             items:
               - name: Overview
@@ -1050,6 +1050,8 @@ items:
         items:
           - name: Integrate Windows App SDK
             href: ../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md
+          - name: App notifications
+            href: notifications/app-notifications/app-notifications-winforms.md
           - name: Visual layer
             items:
               - name: Overview
