@@ -15,6 +15,73 @@ zone_pivot_groups: wasdk-release-channels
 :::zone pivot="stable"
 
 
+## Version 1.8.7 (1.8.260416003)
+
+Released: **April 21, 2026** <br><br>
+
+
+<details><summary>New CoPilot+ PC capability check</summary>
+
+>
+> A new **AICapabilities.HasAICapability** API enables third-party applications to determine whether the device is a Copilot+ PC.
+>
+
+</details>
+
+<details><summary>New AIFeatureReadyResult.PackageInstallationFailed API</summary>
+
+>
+> The `AIFeatureReadyResult.PackageInstallationFailed` API enables apps to detect when an `EnsureReadyAsync` failure was caused by a known or expected install condition (such as a network failure, Windows Update error, or low disk space). Apps can use this signal to handle expected install failures differently from genuine errors, rather than treating them all as fatal.
+>
+
+</details>
+
+<details><summary>Expanded NPU hardware support</summary>
+
+>
+> Windows ML NPU detection has been centralized to support new and upcoming NPU hardware types without requiring client application updates.
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.23.5. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed a crash in Windows AI **LanguageModel** APIs that could occur when an exception was encountered during input processing. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_ProcessingFix)
+> * Fixed `ImageDescription.DescribeAsync` failing with `InternalError` when called concurrently from multiple threads. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ImageDescription_ConcurrencyFix)
+> * Fixed an issue where content moderation error codes from **LanguageModel** APIs could be silently overwritten by subsequent errors, preventing callers from receiving the correct content safety signals. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_ContentErrorHandlingFix)
+> * Fixed an issue where the touch keyboard would not appear in XAML island scenarios (such as File Explorer) after using touch elsewhere in the app. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_TouchKeyboardInvocationFix)
+> * Fixed a ListView crash (`E_BOUNDS` in `Selector::OnGettingFocus`) that could occur during keyboard navigation (Tab/Shift+Tab) after the items list was updated. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ListViewSelector_FixFocusedIndex)
+> * Fixed a crash that may occur on certain devices when active touch contacts are canceled by input hardware, such as when pen input overrides them. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_PointerCancelCrashFix)
+> * Improved diagnosability for Windows AI model initialization telemetry. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_Activities)
+> * Improved diagnosability for Windows ML APIs. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsML_DiagnosabilityFix)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 1.8.6 release:
+> ```
+> Microsoft.Windows.AI
+>
+>     AICapabilities
+>     AICapabilityCategory
+>     AIFeatureReadyResult
+>         PackageInstallationFailed
+> ```
+</details>
+
+
 ## Version 1.8.6 (1.8.260317003)
 
 Released: **March 18, 2026** <br><br>
