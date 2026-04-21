@@ -105,7 +105,7 @@ By default, local toast notifications expire in three days, and local tile notif
 For more information, see these topics:
 
 -   [Send a local tile notification](/windows/uwp/launch-resume/sending-a-local-tile-notification)
--   [Send a local toast notification](app-notifications/send-local-toast.md)
+-   [Send a local app notification](app-notifications/app-notifications-quickstart.md)
 -   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Scheduled notifications
@@ -119,7 +119,7 @@ By default, scheduled notifications expire three days from the time they are del
 
 For more information, see these topics:
 
--   [Scheduling a toast notification](app-notifications/scheduled-toast.md)
+-   [Schedule an app notification](app-notifications/app-notifications-scheduled.md)
 -   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
 ## Periodic notifications
@@ -156,7 +156,7 @@ For more information, see:
 
 
 * [Send a local tile notification](/windows/uwp/launch-resume/sending-a-local-tile-notification)
-* [Send a local toast notification](app-notifications/send-local-toast.md)
+* [Send a local app notification](app-notifications/app-notifications-quickstart.md)
 * [Guidelines for push notifications](push-notifications/index.md)
 * [Guidelines for toast notifications](app-notifications/index.md)
 * [Periodic notification overview](periodic-notification-overview.md)

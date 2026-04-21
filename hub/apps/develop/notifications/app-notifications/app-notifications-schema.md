@@ -1,21 +1,21 @@
 ---
 description: The following article describes all of the properties and elements within toast content.
-title: Toast content schema
+title: App notification content schema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
-label: Toast content schema
+label: App notification content schema
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, windows 11, uwp, windows app sdk, winappsdk, app notification
 ms.localizationpriority: medium
 ---
-# Toast content schema
+# App notification content schema
 
  
 
 The following describes all of the properties and elements within toast content.
 
-If you would rather use raw XML instead of the [Notifications library](https://www.nuget.org/packages/Microsoft.Toolkit.Uwp.Notifications/), please see [the XML schema](/uwp/schemas/tiles/toastschema/schema-root).
+If you would rather use raw XML instead of the Windows App SDK builder APIs, please see [the XML schema](/uwp/schemas/tiles/toastschema/schema-root).
 
 [ToastContent](#toastcontent)
 * [ToastVisual](#toastvisual)
@@ -35,14 +35,14 @@ ToastContent is the top level object that describes a notification's content, in
 | Property | Type | Required | Description |
 |---|---|---|---|
 | **Launch**| string | false | A string that is passed to the application when it is activated by the Toast. The format and contents of this string are defined by the app for its own use. When the user taps or clicks the Toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the Toast content, rather than launching in its default way. |
-| **Visual** | [ToastVisual](#toastvisual) | true | Describes the visual portion of the toast notification. |
+| **Visual** | [ToastVisual](#toastvisual) | true | Describes the visual portion of the app notification. |
 | **Actions** | [IToastActions](#itoastactions) | false | Optionally create custom actions with buttons and inputs. |
-| **Audio** | [ToastAudio](#toastaudio) | false | Describes the audio portion of the toast notification. |
+| **Audio** | [ToastAudio](#toastaudio) | false | Describes the audio portion of the app notification. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Specifies what activation type will be used when the user clicks the body of this Toast. |
-| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | New in Creators Update: Additional options relating to activation of the toast notification. |
+| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Additional options relating to activation of the app notification. |
 | **Scenario** | [ToastScenario](#toastscenario) | false | Declares the scenario your toast is used for, like an alarm or reminder. |
-| **DisplayTimestamp** | DateTimeOffset? | false | New in Creators Update: Override the default timestamp with a custom timestamp representing when your notification content was actually delivered, rather than the time the notification was received by the Windows platform. |
-| **Header** | [ToastHeader](#toastheader) | false | New in Creators Update: Add a custom header to your notification to group multiple notifications together within Action Center. |
+| **DisplayTimestamp** | DateTimeOffset? | false | Override the default timestamp with a custom timestamp representing when your notification content was actually delivered, rather than the time the notification was received by the Windows platform. |
+| **Header** | [ToastHeader](#toastheader) | false | Add a custom header to your notification to group multiple notifications together within Notification Center. |
 
 
 ### ToastScenario
@@ -63,7 +63,7 @@ The visual portion of toasts contains the bindings, which contains text, images,
 |---|---|---|---|
 | **BindingGeneric** | [ToastBindingGeneric](#toastbindinggeneric) | true | The generic toast binding, which can be rendered on all devices. This binding is required and cannot be null. |
 | **BaseUri** | Uri | false | A default base URL that is combined with relative URLs in image source attributes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **Language**| string | false | The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as "en-US" or "fr-FR". This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead. |
 
 
@@ -72,12 +72,12 @@ The generic binding is the default binding for toasts, and is where you specify 
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | The contents of the body of the Toast, which can include text, images, and groups (added in Anniversary Update). Text elements must come before any other elements, and only 3 text elements are supported. If a text element is placed after any other element, it will either be pulled to the top or dropped. And finally, certain text properties like HintStyle aren't supported on the root children text elements, and only work inside an AdaptiveSubgroup. If you use AdaptiveGroup on devices without the Anniversary Update, the group content will simply be dropped. |
+| **Children** | IList<[IToastBindingGenericChild](#itoastbindinggenericchild)> | false | The contents of the body of the Toast, which can include text, images, and groups. Text elements must come before any other elements, and only 3 text elements are supported. If a text element is placed after any other element, it will either be pulled to the top or dropped. And finally, certain text properties like HintStyle aren't supported on the root children text elements, and only work inside an AdaptiveSubgroup. |
 | **AppLogoOverride** | [ToastGenericAppLogo](#toastgenericapplogo) | false | An optional logo to override the app logo. |
-| **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | An optional featured "hero" image that is displayed on the toast and within Action Center. |
-| **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | Optional attribution text which will be displayed at the bottom of the toast notification. |
+| **HeroImage** | [ToastGenericHeroImage](#toastgenericheroimage) | false | An optional featured "hero" image that is displayed on the toast and within Notification Center. |
+| **Attribution** | [ToastGenericAttributionText](#toastgenericattributiontext) | false | Optional attribution text which will be displayed at the bottom of the app notification. |
 | **BaseUri** | Uri | false | A default base URL that is combined with relative URLs in image source attributes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 | **Language**| string | false | The target locale of the visual payload when using localized resources, specified as BCP-47 language tags such as "en-US" or "fr-FR". This locale is overridden by any locale specified in binding or text. If not provided, the system locale will be used instead. |
 
 
@@ -97,7 +97,7 @@ An adaptive text element. If placed in the top level ToastBindingGeneric.Childre
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Text** | string or [BindableString](#bindablestring) | false | The text to display. Data binding support added in Creators Update, but only works for top-level text elements. |
+| **Text** | string or [BindableString](#bindablestring) | false | The text to display. Data binding only works for top-level text elements. |
 | **HintStyle** | [AdaptiveTextStyle](#adaptivetextstyle) | false | The style controls the text's font size, weight, and opacity. Only works for text elements inside a group/subgroup. |
 | **HintWrap** | bool? | false | Set this to true to enable text wrapping. Top-level text elements ignore this property and always wrap (you can use HintMaxLines = 1 to disable wrapping for top-level text elements). Text elements inside groups/subgroups default to false for wrapping. |
 | **HintMaxLines** | int? | false | The maximum number of lines the text element is allowed to display. |
@@ -156,12 +156,12 @@ An inline image.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
-| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. As of the Fall Creators Update, web images can be up to 3 MB on normal connections and 1 MB on metered connections. On devices not yet running the Fall Creators Update, web images must be no larger than 200 KB. |
-| **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | New in Anniversary Update: Control the desired cropping of the image. |
+| **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Web images can be up to 3 MB on normal connections and 1 MB on metered connections. |
+| **HintCrop** | [AdaptiveImageCrop](#adaptiveimagecrop) | false | Control the desired cropping of the image. |
 | **HintRemoveMargin** | bool? | false | By default, images inside groups/subgroups have an 8px margin around them. You can remove this margin by setting this property to true. |
 | **HintAlign** | [AdaptiveImageAlign](#adaptiveimagealign) | false | The horizontal alignment of the image. Only works for images inside a group/subgroup. |
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
 ### AdaptiveImageCrop
@@ -187,7 +187,7 @@ Specifies the horizontal alignment for an image.
 
 
 ## AdaptiveGroup
-New in Anniversary Update: Groups semantically identify that the content in the group must either be displayed as a whole, or not displayed if it cannot fit. Groups also allow creating multiple columns.
+Groups semantically identify that the content in the group must either be displayed as a whole, or not displayed if it cannot fit. Groups also allow creating multiple columns.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
@@ -195,7 +195,7 @@ New in Anniversary Update: Groups semantically identify that the content in the 
 
 
 ## AdaptiveSubgroup
-New in Anniversary Update: Subgroups are vertical columns that can contain text and images.
+Subgroups are vertical columns that can contain text and images.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
@@ -225,7 +225,7 @@ TextStacking specifies the vertical alignment of content.
 
 
 ## AdaptiveProgressBar
-New in Creators Update: A progress bar. Only supported on toasts on Desktop, build 15063 or later.
+A progress bar. Only supported on Desktop.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -260,7 +260,7 @@ A logo to be displayed instead of the app logo.
 | **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size. |
 | **HintCrop** | [ToastGenericAppLogoCrop](#toastgenericapplogocrop) | false | Specify how you would like the image to be cropped. |
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
 ### ToastGenericAppLogoCrop
@@ -274,17 +274,17 @@ Controls the cropping of the app logo image.
 
 
 ## ToastGenericHeroImage
-A featured "hero" image that is displayed on the toast and within Action Center.
+A featured "hero" image that is displayed on the toast and within Notification Center.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
 | **Source** | string | true | The URL to the image. ms-appx, ms-appdata, and http are supported. Http images must be 200 KB or less in size. |
 | **AlternateText** | string | false | Alternate text describing the image, used for accessibility purposes. |
-| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the toast notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
+| **AddImageQuery** | bool? | false | Set to "true" to allow Windows to append a query string to the image URL supplied in the app notification. Use this attribute if your server hosts images and can handle query strings, either by retrieving an image variant based on the query strings or by ignoring the query string and returning the image as specified without the query string. This query string specifies scale, contrast setting, and language; for instance, a value of "www.website.com/images/hello.png" given in the notification becomes "www.website.com/images/hello.png?ms-scale=100&ms-contrast=standard&ms-lang=en-us" |
 
 
 ## ToastGenericAttributionText
-Attribution text displayed at the bottom of the toast notification.
+Attribution text displayed at the bottom of the app notification.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
@@ -310,7 +310,7 @@ Create your own custom actions and inputs, using controls like buttons, text box
 |---|---|---|---|
 | **Inputs** | IList<[IToastInput](#itoastinput)> | false | Inputs like text boxes and selection inputs. Only up to 5 inputs are allowed. |
 | **Buttons** | IList<[IToastButton](#itoastbutton)> | false | Buttons are displayed after all the inputs (or adjacent to an input if the button is used as a quick reply button). Only up to 5 buttons are allowed (or fewer if you also have context menu items). |
-| **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | New in Anniversary Update: Custom context menu items, providing additional actions if the user right clicks the notification. You can only have up to 5 buttons and context menu items *combined*. |
+| **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | Custom context menu items, providing additional actions if the user right clicks the notification. You can only have up to 5 buttons and context menu items *combined*. |
 
 
 ## IToastInput
@@ -377,7 +377,7 @@ A button that the user can click.
 | **Content** | string | true | Required. The text to display on the button. |
 | **Arguments** | string | true | Required. App-defined string of arguments that the app will later receive if the user clicks this button. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Controls what type of activation this button will use when clicked. Defaults to Foreground. |
-| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | New in Creators Update: Gets or sets additional options relating to activation of the toast button. |
+| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Gets or sets additional options relating to activation of the toast button. |
 
 
 ### ToastActivationType
@@ -391,11 +391,11 @@ Decides the type of activation that will be used when the user interacts with a 
 
 
 ### ToastActivationOptions
-New in Creators Update: Additional options relating to activation.
+Additional options relating to activation.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | New in Fall Creators Update: Gets or sets the behavior that the toast should use when the user invokes this action. This only works on Desktop, for [ToastButton](#toastbutton) and [ToastContextMenuItem](#toastcontextmenuitem). |
+| **AfterActivationBehavior** | [ToastAfterActivationBehavior](#toastafteractivationbehavior) | false | Gets or sets the behavior that the toast should use when the user invokes this action. This only works on Desktop, for [ToastButton](#toastbutton) and [ToastContextMenuItem](#toastcontextmenuitem). |
 | **ProtocolActivationTargetApplicationPfn** | string | false | If you are using *ToastActivationType.Protocol*, you can optionally specify the target PFN, so that regardless of whether multiple apps are registered to handle the same protocol uri, your desired app will always be launched. |
 
 
@@ -435,7 +435,7 @@ Automatically constructs a selection box for snooze intervals, and snooze/dismis
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | New in Anniversary Update: Custom context menu items, providing additional actions if the user right clicks the notification. You can only have up to 5 items. |
+| **ContextMenuItems** | IList<[ToastContextMenuItem](#toastcontextmenuitem)> | false | Custom context menu items, providing additional actions if the user right clicks the notification. You can only have up to 5 items. |
 
 
 ## ToastContextMenuItem
@@ -446,25 +446,25 @@ A context menu item entry.
 | **Content** | string | true | Required. The text to display. |
 | **Arguments** | string | true | Required. App-defined string of arguments that the app can later retrieve once it is activated when the user clicks the menu item. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Controls what type of activation this menu item will use when clicked. Defaults to Foreground. |
-| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | New in Creators Update: Additional options relating to activation of the toast context menu item. |
+| **ActivationOptions** | [ToastActivationOptions](#toastactivationoptions) | false | Additional options relating to activation of the toast context menu item. |
 
 
 ## ToastAudio
-Specify audio to be played when the Toast notification is received.
+Specify audio to be played when the app notification is received.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
 | **Src** | uri | false | The media file to play in place of the default sound. Only ms-appx and ms-resource are supported. All else (ms-appdata, http, C:\, etc.) is not supported.|
 | **Loop** | boolean | false | Set to true if the sound should repeat as long as the Toast is shown; false to play only once (default). |
-| **Silent** | boolean | false | True to mute the sound; false to allow the toast notification sound to play (default). |
+| **Silent** | boolean | false | True to mute the sound; false to allow the app notification sound to play (default). |
 
 
 ## ToastHeader
-New in Creators Update: A custom header that groups multiple notifications together within Action Center.
+A custom header that groups multiple notifications together within Notification Center.
 
 | Property | Type | Required | Description |
 |---|---|---|---|
-| **Id** | string | true | A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Action Center. |
+| **Id** | string | true | A developer-created identifier that uniquely identifies this header. If two notifications have the same header id, they will be displayed underneath the same header in Notification Center. |
 | **Title** | string | true | A title for the header. |
 | **Arguments**| string | true | Gets or sets a developer-defined string of arguments that is returned to the app when the user clicks this header. Cannot be null. |
 | **ActivationType** | [ToastActivationType](#toastactivationtype) | false | Gets or sets the type of activation this header will use when clicked. Defaults to Foreground. Note that only Foreground and Protocol are supported. |
@@ -474,4 +474,6 @@ New in Creators Update: A custom header that groups multiple notifications toget
 ## Related topics
 
 * [Quickstart: Send a local toast and handle activation](/archive/blogs/tiles_and_toasts/quickstart-sending-a-local-toast-notification-and-handling-activations-from-it-windows-10)
-* [Notifications library on GitHub](https://github.com/windows-toolkit/WindowsCommunityToolkit)
+
+
+

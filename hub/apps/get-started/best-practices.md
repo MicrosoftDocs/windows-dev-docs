@@ -197,14 +197,14 @@ Windows shell integration lets users benefit from your app even when it's not ru
 
 #### Toast notifications
 
-[Toast notifications](../design/shell/tiles-and-notifications/toast-ux-guidance.md) are the Windows notifications that appear at the bottom of the user's screen and in the Notification Center.
+[Toast notifications](../develop/notifications/app-notifications/app-notifications-ux-guidance.md) are the Windows notifications that appear at the bottom of the user's screen and in the Notification Center.
 
   - Personalize, make actionable, and ensure notifications are useful to your users. Give your users what they want, not what you want them to know.
   - Avoid noisy notifications. Too many interruptions from your app lead to users turning off this critical communication channel for your app.
   - Respond to the user's intent. Selecting a notification should launch your app in the notification's context. The only exception to this guideline is when the user selects a button on your notification that's attached to a background task, such as a quick reply.
   - Provide a consistent Notification Center experience. Keep Notification Center tidy by clearing out old notifications.
 
-  For more information about toast notifications, see [Notifications design basics](../design/shell/tiles-and-notifications/toast-ux-guidance.md).
+  For more information about toast notifications, see [Notifications design basics](../develop/notifications/app-notifications/app-notifications-ux-guidance.md).
 
 ## Performance and fundamentals
 

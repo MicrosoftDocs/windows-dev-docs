@@ -64,7 +64,7 @@ Follow these steps to create a notification in Partner Center and send it to a p
     * **Base URI** (interactive toast type). For more details, see [BaseUri](/uwp/api/windows.ui.xaml.frameworkelement.baseuri#Windows_UI_Xaml_FrameworkElement_BaseUri).
     * **Add image query** (interactive toast type). For more details, see [addImageQuery](/uwp/schemas/tiles/toastschema/element-visual#attributes-and-elements).
     * **Visual**. An image, video, or sound. For more details, see [visual](/uwp/schemas/tiles/toastschema/element-visual).
-    * **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [Adaptive and interactive toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+    * **Input**/**Action**/**Selection** (interactive toast type). Allows you to let users interact with the notification. For more info, see [App notification content](/windows/apps/develop/notifications/app-notifications/app-notifications-content).
     * **Binding** (interactive tile type). The toast template. For more details, see [binding](/uwp/schemas/tiles/toastschema/element-binding).
 
     > [!TIP]

@@ -727,6 +727,8 @@ items:
       href: ../launch-resume/primary-tile-apis.md
     - name: Tile, toast notification support for language, scale, contrast
       href: ../launch-resume/tile-toast-language-scale-contrast.md
+    - name: App notifications
+      href: app-notifications-uwp.md
   - name: Splash screens
     href: ../launch-resume/splash-screens.md
     items:

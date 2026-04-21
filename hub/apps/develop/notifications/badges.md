@@ -119,6 +119,6 @@ private void clearBadge()
 
 ## Related articles
 
-* [Adaptive and interactive toast notifications](app-notifications/adaptive-interactive-toasts.md)
+* [App notification content](app-notifications/app-notifications-content.md)
 * [Create tiles](/windows/uwp/launch-resume/creating-tiles)
 * [Create adaptive tiles](/windows/uwp/launch-resume/create-adaptive-tiles)
