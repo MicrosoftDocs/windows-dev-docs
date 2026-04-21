@@ -209,6 +209,7 @@ msstore apps get <productId>
 | [get](#submission---get---usage)                           | Gets the metadata and package info of a specific submission.|
 | [getListingAssets](#submission---getlistingassets---usage) | Gets the listing assets of a specific submission.           |
 | [updateMetadata](#submission---updatemetadata---usage)     | Updates the metadata of a specific submission.              |
+| [update](#submission---update---usage)                     | Updates the package of a specific submission.               |
 | [poll](#submission---poll---usage)                         | Polls the status of a submission.                           |
 | [publish](#submission---publish---usage)                   | Publishes a specific submission.                            |
 | [delete](#submission---delete---usage)                     | Deletes a specific submission.                              |
@@ -290,6 +291,43 @@ msstore submission updateMetadata <productId> <metadata>
 | -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
 | -v, --verbose            | Print verbose output.                                                  |
 | -?, -h, --help           | Show help and usage information.                                       |
+
+#### Submission - Update - Usage
+
+```console
+msstore submission update <productId> <package>
+```
+
+#### Arguments
+
+| Argument    | Description                                         |
+| ----------- | --------------------------------------------------- |
+| `productId` | The Store product ID.                               |
+| `package`   | The updated JSON representation of the app package. |
+
+#### Options
+
+| Option                   | Description                                                            |
+| ------------------------ | ---------------------------------------------------------------------- |
+| -s, --skipInitialPolling | Skip the initial polling before executing the action. [default: False] |
+| -v, --verbose            | Print verbose output.                                                  |
+| -?, -h, --help           | Show help and usage information.                                       |
+
+> [!TIP]
+> Use `submission get` to retrieve the current package JSON before calling `submission update`. This ensures you're working with the correct structure and current values. For example, in PowerShell:
+>
+> ```powershell
+> # Step 1: Retrieve the current submission package JSON
+> msstore submission get <productId> | Out-File -Encoding utf8 package.json
+>
+> # Step 2: Edit package.json to reflect your changes
+>
+> # Step 3: Pass the updated JSON to submission update
+> $updatedPackage = Get-Content -Raw package.json
+> msstore submission update <productId> $updatedPackage
+> ```
+>
+> For more context, see [Publish app updates to Microsoft Store with GitHub Actions](./github-actions.md).
 
 #### Submission - Poll - Usage
 

@@ -275,6 +275,22 @@ msstore submission update <productId> <package>
 | -v, --verbose            | Print verbose output.                                                  |
 | -?, -h, --help           | Show help and usage information.                                       |
 
+> [!TIP]
+> Use `submission get` to retrieve the current package JSON before calling `submission update`. This ensures you're working with the correct structure and current values. For example, in PowerShell:
+>
+> ```powershell
+> # Step 1: Retrieve the current submission package JSON
+> msstore submission get <productId> | Out-File -Encoding utf8 package.json
+>
+> # Step 2: Edit package.json to reflect your changes (for example, a new installer URL)
+>
+> # Step 3: Pass the updated JSON to submission update
+> $updatedPackage = Get-Content -Raw package.json
+> msstore submission update <productId> $updatedPackage
+> ```
+>
+> For more context, see [Publish app updates to Microsoft Store with GitHub Actions](./github-actions.md).
+
 #### Submission - Poll - Usage
 
 ```console
