@@ -26,7 +26,9 @@ Most new indie apps are a good fit for the Store. If you're unsure, start there.
 
 ## Step 2: Set up code signing
 
-**If you're publishing to the Microsoft Store:** skip this step. Microsoft signs your package automatically as part of the certification process.
+**If you're publishing an MSIX package to the Microsoft Store:** skip this step. Microsoft re-signs your package automatically as part of the certification process.
+
+**If you're submitting a Win32 MSI/EXE installer to the Microsoft Store:** you still need to sign your installer before submission. The installer and its PE files must be signed with a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list). Self-signed certificates are not acceptable. See [App package requirements for MSI/EXE](/windows/apps/publish/publish-your-app/msi/app-package-requirements).
 
 **If you're distributing directly:** you need a trusted code signing certificate. Unsigned apps and self-signed apps trigger strong SmartScreen warnings, and some enterprise environments will block them entirely.
 
@@ -127,7 +129,8 @@ Keeping users on the latest version reduces support burden and ensures security 
 
 | Distribution path | Update mechanism |
 |---|---|
-| Microsoft Store | Automatic — Store delivers updates in the background |
+| Microsoft Store (MSIX) | Automatic — Store delivers updates in the background |
+| Microsoft Store (MSI/EXE installer) | Manual — the app or installer handles updates; Store does not push updates to existing users |
 | MSIX + `.appinstaller` | Built-in — Windows checks the URL you specify on a schedule |
 | ClickOnce | Built-in — checks for updates at launch |
 | EXE installer or self-contained EXE | Manual implementation required |
@@ -150,7 +153,7 @@ Once your app is published, you can:
 
 - **Monitor app health and ratings** — Partner Center provides crash analytics, user ratings, and review management for Store apps
 - **Manage releases with staged rollouts** — the Store supports rolling out a new version to a percentage of users before a full release
-- **Set up telemetry** — consider integrating [Windows App SDK diagnostics](/windows/apps/windows-app-sdk/applifecycle/app-lifecycle) or a third-party analytics service to understand how your app is used
+- **Set up telemetry** — consider integrating a crash and usage analytics service such as [Azure Application Insights](/azure/azure-monitor/app/app-insights-overview) or another analytics SDK to understand how your app is used
 - **Respond to user feedback** — Partner Center surfaces Store reviews; for direct download apps, consider a feedback channel (GitHub Issues, a dedicated email address, or a community forum)
 
 ## Related content

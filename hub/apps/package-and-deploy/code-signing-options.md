@@ -8,22 +8,26 @@ ms.localizationpriority: medium
 
 # Code signing options for Windows app developers
 
-If you publish your app through the Microsoft Store, code signing is free and handled for you automatically — you don't need to purchase or manage a certificate. Everything in this article applies to apps distributed **outside the Microsoft Store**.
+If you publish your app as an **MSIX package** through the Microsoft Store, code signing is free and handled for you automatically — Microsoft re-signs the package after certification and you don't need to purchase or manage a certificate. If you publish as an **MSI/EXE installer** through the Store, you are responsible for Authenticode signing your installer before submission. Everything else in this article applies to apps distributed **outside the Microsoft Store**.
 
 ## Comparison at a glance
 
 | Option | Cost | Availability | SmartScreen behavior | Store eligible | Best for |
 |---|---|---|---|---|---|
-| **Microsoft Store** (signs for you) | Free | Worldwide | ✅ No warnings | ✅ Yes | Recommended for most developers |
+| **Microsoft Store (MSIX)** — Store re-signs your package | Free | Worldwide | ✅ No warnings | ✅ Yes | Recommended for most new apps |
+| **Microsoft Store (MSI/EXE installer)** — publisher must sign | Cert chaining to [Trusted Root Program CA](/security/trusted-root/participants-list) required (varies by CA) | Worldwide | ✅ No SmartScreen prompts during Store install (UAC may still appear) | ✅ Yes | Existing Win32 apps submitting via MSI/EXE installer path |
 | **Azure Artifact Signing** (formerly Trusted Signing) | ~$9.99/month | Organizations: USA, Canada, EU, UK. Individuals: USA and Canada only | ⚠️ Reputation builds over time; initial warnings expected | ❌ No | Recommended for non-Store distribution |
 | **OV certificate** (from a CA such as DigiCert, Sectigo) | $150–300/year | Worldwide | ⚠️ Same as Azure Artifact Signing — reputation builds over time | ❌ No | Developers who can't use Azure Artifact Signing, or who prefer traditional CAs |
 | **EV certificate** | $400+/year | Worldwide | ⚠️ Same as OV since 2024 — no longer instant bypass | ❌ No | No longer recommended specifically for SmartScreen bypass |
 | **Self-signed certificate** | Free | — | ❌ Blocks installation for public users | ❌ No | Dev/testing only, or enterprise with managed certificate trust |
 | **No signature** | Free | — | ❌ Strong SmartScreen block; enterprises may block entirely | ❌ No | Not recommended for public distribution |
 
-## Microsoft Store — no signing needed
+## Microsoft Store — MSIX submissions: no signing needed
 
-Publishing through the Microsoft Store is the recommended distribution path for most Windows apps. Microsoft re-signs your package automatically, meaning users never see a SmartScreen warning and you never need to purchase or renew a certificate.
+Publishing an **MSIX package** through the Microsoft Store is the recommended distribution path for most Windows apps. Microsoft re-signs your package automatically, meaning users never see a SmartScreen warning and you never need to purchase or renew a certificate.
+
+> [!NOTE]
+> If you're submitting a **Win32 MSI or EXE installer** to the Store (rather than an MSIX package), Microsoft does not re-sign your installer. The installer and its PE files must be signed with a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list) — self-signed certificates are not accepted. See [App package requirements for MSI/EXE](/windows/apps/publish/publish-your-app/msi/app-package-requirements).
 
 Create a free developer account at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). After you register, use [Partner Center](https://partner.microsoft.com/dashboard) to submit your app and manage its listing.
 
