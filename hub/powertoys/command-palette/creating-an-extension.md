@@ -46,7 +46,7 @@ The form will ask you for the following information:
   - The project will be created in a subdirectory of the path you provided.
   - If this path doesn't exist, it will be created for you.
 
-![The "Create a new extension" page of the Windows Command Palette](../../images/command-palette/create-extension-page.png)
+![The "Create a new extension" page of the Windows Command Palette](../images/command-palette/create-extension-page.png)
 
 ## Understanding the extension project structure
 
@@ -106,13 +106,13 @@ Once your package is deployed and running, Command Palette will automatically di
 
 1. In the Command Palette, type `Reload` and press `Enter`
     1. Make sure to select the `Reload` that has a subtitle of: `Reload Command Palette Extension`
-    ![Screenshot of reload](../../images/command-palette/reload.png)
+    ![Screenshot of reload](../images/command-palette/reload.png)
 1. In the Command Palette, scroll all the way down to the bottom of the list of commands
     1. or `up arrow` once to get to the end
 1. Press `Enter` on your \<ExtensionName\>
 1. You should see a single command that says `TODO: Implement your extension here`.
 
-![A screenshot of the empty extension template, running in the command palette](../../images/command-palette/initial-created-extension-list.png)
+![A screenshot of the empty extension template, running in the command palette](../images/command-palette/initial-created-extension-list.png)
 
 Congrats! You've made your first extension! Now let's go ahead and actually add some commands to it.
 

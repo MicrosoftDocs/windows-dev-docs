@@ -117,7 +117,7 @@ internal sealed partial class <ExtensionName>Page : ListPage
 1. Deploy your extension
 1. In Command Palette, `Reload`
 
-![Screenshot of extension with several commands for CommandResult](../../images/command-palette/command-result.png)
+![Screenshot of extension with several commands for CommandResult](../images/command-palette/command-result.png)
 
 ### Next up: [Display markdown content](using-markdown-content.md)
 

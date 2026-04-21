@@ -1,8 +1,8 @@
 ---
 title: Choose a distribution path for your Windows app
-description: Compare the available Windows app distribution paths — Microsoft Store, MSIX sideloading, and direct download — to find the right fit for your app and audience.
+description: Compare the available Windows app distribution paths — Microsoft Store, PWA, MSIX sideloading, and direct download — to find the right fit for your app and audience.
 ms.topic: concept-article
-ms.date: 04/17/2026
+ms.date: 04/20/2026
 ms.localizationpriority: medium
 ---
 
@@ -13,14 +13,19 @@ How you distribute your Windows app affects code signing costs, update mechanics
 > [!TIP]
 > **For most developers, the Microsoft Store is the recommended path.** It provides free code signing, built-in update delivery, broad discoverability, and a trusted install experience — with no infrastructure to manage.
 
+> [!NOTE]
+> **If your app is built on web technologies** (HTML, JavaScript, CSS), a [Progressive Web App (PWA)](#progressive-web-app-pwa) is the fastest path to the Microsoft Store — no native packaging tools required.
+
 ## Distribution paths at a glance
 
 | Path | Best for | Code signing cost | Auto-update | Enterprise MDM | Distributed via Store |
 |---|---|---|---|---|---|
 | **Microsoft Store** | Consumer and business apps, broad reach | ✅ Free (Store signs for you) | ✅ Built-in | ✅ Via Intune with Company Portal | ✅ Yes |
+| **PWA (Progressive Web App)** | Web apps and web-based experiences | ✅ Free (Store signs for you) | ✅ Via Store or browser | ✅ Via Intune with Company Portal | ✅ Yes |
 | **MSIX sideload (enterprise)** | Internal LOB apps via Intune/ConfigMgr | 💲 Azure Artifact Signing (formerly Trusted Signing) (~$10/mo) or self-signed + Intune cert profile | ✅ Via App Installer file or MDM | ✅ Native | ❌ No |
 | **MSIX direct download (ISV)** | Commercial apps sold from your own site | 💲 CA-trusted cert required ([Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) recommended) | ✅ Via `.appinstaller` file | ⚠️ Limited | ❌ No |
 | **Packaging with external location** | Existing apps with own installer needing Windows features | 💲 Same as MSIX direct download | ✅ Your existing mechanism | ⚠️ Limited | ❌ No |
+| **Unpackaged WinUI 3** | Niche: enterprise without MSIX capability, or max install simplicity | 💲 Cert recommended for SmartScreen | ❌ Manual only | ⚠️ Limited (via Intune/ConfigMgr Win32 deployment) | ⚠️ Limited (Store-listed installer submission) |
 
 ## Microsoft Store (recommended)
 
@@ -44,6 +49,35 @@ Publishing to the Microsoft Store is the most complete distribution solution for
 - You're building a new WinUI 3 app (you're already packaged — just submit)
 
 → [Publish to the Microsoft Store](/windows/apps/publish/publish-your-app/msix/create-app-submission)
+
+## Progressive Web App (PWA)
+
+If your app is a website or built primarily on web technologies, a Progressive Web App is the fastest path to the Microsoft Store — with no native packaging tools or code signing purchase required.
+
+A PWA is a web app that browsers can install as a standalone app. It can run offline, send push notifications, appear in the Start menu and taskbar, and be distributed through the Microsoft Store. Use [PWABuilder](https://www.pwabuilder.com/) to package your site for Store submission in minutes.
+
+**What you get:**
+- Store distribution with free code signing (Store signs the package)
+- Works across any device with a modern browser
+- No manual MSIX, WiX, or installer authoring required — tools like [PWABuilder](https://www.pwabuilder.com/) generate the Store submission package for you
+- Built-in update delivery — users always get your latest web content (hosted content updates without a Store re-submission)
+
+**Requirements:**
+- App must be served over HTTPS
+- A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- App must pass [Store certification requirements](/windows/apps/publish/publish-your-app/msix/app-package-requirements)
+
+**Limitations:**
+- Deep native Windows APIs (file system access, hardware integration beyond Web APIs) are not available without additional bridging
+- App logic runs in a web context — not suitable for apps that require native .NET, C++, or WinRT APIs
+
+**When to choose this:**
+- Your app is a web app, SaaS tool, or content site you want to make installable
+- You want the fastest path to the Store with minimal tooling
+- Your feature requirements are satisfied by modern Web APIs
+
+→ [Overview of Progressive Web Apps](/microsoft-edge/progressive-web-apps-chromium/)  
+→ [Publish a PWA to the Microsoft Store with PWABuilder](https://docs.pwabuilder.com/#/builder/windows)
 
 ## MSIX sideloading — enterprise LOB distribution
 
@@ -117,7 +151,31 @@ If you have an existing app with its own installer (WiX, NSIS, InstallShield) an
 
 → [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md)
 
-## What about other installer formats?
+## Unpackaged WinUI 3
+
+Unpackaged distribution removes MSIX from the picture entirely — the app runs directly from a folder without a package manifest. This is a niche option suited to specific scenarios.
+
+**What you get:**
+- Simpler build output (a folder of files, no MSIX tooling)
+- No MSIX infrastructure required on target machines
+- Works on machines where MSIX sideloading isn't enabled
+
+**Limitations:**
+- **No single-file EXE** — The Windows App SDK runtime must ship as separate files alongside your executable
+- **Runtime deployment** — You must bundle the Windows App SDK runtime installer, or use self-contained deployment (larger output)
+- **No package identity** — No automatic updates, no background tasks, no file type associations via manifest
+- **No MSIX/package-identity Store submission** — This model has no package identity and cannot be submitted to the Store as an MSIX package. A traditional installer (MSI/EXE) can be submitted separately, but that is outside this distribution path.
+- SmartScreen warnings unless signed with a CA-trusted certificate
+
+**When to choose this:**
+- Your target environment can't use MSIX (uncommon; most managed enterprise environments support MSIX)
+- You're building an internal tool where MSIX overhead isn't justified
+
+**For most WinUI 3 apps, MSIX (via Store or direct download) is the better path.** The limitations above often surprise developers who discover them after investing in unpackaged distribution.
+
+→ [Distribute an unpackaged WinUI 3 app](unpackage-winui-app.md) — step-by-step guide with runtime deployment options
+
+
 
 Many Windows apps are distributed using ClickOnce, MSI, WiX, Inno Setup, or similar technologies. These are established and supported options, especially for apps that can't use MSIX or don't need Store distribution. The table below summarizes the common options and their trade-offs.
 
@@ -158,4 +216,5 @@ Regardless of your packaging format, you can submit a manifest to the [Windows P
 - [SmartScreen reputation for Windows app developers](smartscreen-reputation.md)
 - [Current status of Windows app distribution features](distribution-feature-status.md)
 - [Publish to the Microsoft Store](/windows/apps/publish/)
+- [Progressive Web Apps overview](/microsoft-edge/progressive-web-apps-chromium/)
 - [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/)

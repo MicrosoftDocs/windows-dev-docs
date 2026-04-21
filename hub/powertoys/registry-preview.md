@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Registry Preview, Win]
 
 Registry Preview is a PowerToys utility that helps you visualize and edit Windows Registry files before applying changes to your system. This tool provides a user-friendly interface to preview .reg files, explore registry keys in a tree structure, and safely write changes to the Windows Registry, making registry management more accessible for Windows power users.
 
-:::image type="content" source="../images/pt-registrypreview.png" alt-text="Screenshot of Registry Preview utility showing registry file content and tree structure interface.":::
+:::image type="content" source="images/pt-registrypreview.png" alt-text="Screenshot of Registry Preview utility showing registry file content and tree structure interface.":::
 
 Use Registry Preview to:
 

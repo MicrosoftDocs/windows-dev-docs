@@ -14,7 +14,7 @@ no-loc: [PowerToys, Windows, Crop And Lock, Win]
 
 This feature is particularly useful when you need to monitor specific areas of applications while working with other programs, or when you want to create custom window layouts that better suit your workflow.
 
-:::image type="content" source="../images/powertoys-crop-and-lock.gif" alt-text="Animation of the PowerToys Crop And Lock utility demonstrating window cropping and thumbnail features.":::
+:::image type="content" source="images/powertoys-crop-and-lock.gif" alt-text="Animation of the PowerToys Crop And Lock utility demonstrating window cropping and thumbnail features.":::
 
 ## Get started with Crop And Lock
 

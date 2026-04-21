@@ -72,7 +72,7 @@ public <ExtensionName>CommandsProvider()
 
 In this example, a new `ContentPage` that displays a simple markdown string is created. The 'MarkdownContent' class takes a string of markdown content and renders it in the Command Palette.
 
-:::image type="content" source="../../images/command-palette/markdown.png" alt-text="Screenshot of Command Palette extension displaying markdown content with formatted text and document icon.":::
+:::image type="content" source="../images/command-palette/markdown.png" alt-text="Screenshot of Command Palette extension displaying markdown content with formatted text and document icon.":::
 
 You can also add multiple blocks of content to a page. For example, you can add two blocks of markdown content.
 
@@ -131,7 +131,7 @@ public class <ExtensionName>Page : ContentPage
 1. Select \<ExtensionName\>
 1. Press `Enter` key, the docs should open
 
-:::image type="content" source="../../images/command-palette/command-context-item.png" alt-text="Screenshot of Command Palette extension showing CommandContextItem with Open in File Explorer option.":::
+:::image type="content" source="../images/command-palette/command-context-item.png" alt-text="Screenshot of Command Palette extension showing CommandContextItem with Open in File Explorer option.":::
 
 ## Add images to markdown content
 

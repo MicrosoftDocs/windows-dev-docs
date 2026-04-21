@@ -1,17 +1,29 @@
 ---
-title: How to unpackage a WinUI app
-description:  How to unpackage a WinUI app
+title: Distribute an unpackaged WinUI 3 app
+description: Learn how to set WindowsPackageType=None for unpackaged WinUI 3 distribution, understand the runtime deployment options, and review the key limitations before you start.
 ms.topic: how-to
-ms.date: 12/15/2025
-keywords: windows app sdk, winappsdk, winui
+ms.date: 04/20/2026
+keywords: windows app sdk, winappsdk, winui, unpackaged, WindowsPackageType, bootstrapper, self-contained
 ms.localizationpriority: medium
 content-type: how-to
-#Customer intent: As a Windows developer, I want to learn how to create an unpackaged WinUI app.
+#Customer intent: As a Windows developer, I want to distribute my WinUI 3 app without MSIX packaging and understand the limitations and runtime requirements.
 ---
 
-# Unpackage a WinUI 3 app
+# Distribute an unpackaged WinUI 3 app
 
-Packaging is an important part of any Windows App SDK project. For details on your options, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app).
+Unpackaged distribution lets you ship a WinUI 3 app without MSIX — useful for enterprise scenarios where MSIX deployment isn't available, or for developers who prefer a traditional folder-based install.
+
+> [!IMPORTANT]
+> **Review these limitations before you start.** Unpackaged WinUI 3 apps have constraints that affect your distribution strategy:
+>
+> - **No single-file EXE** — The Windows App SDK runtime and WinUI 3 dependencies must exist as separate files. The .NET single-file publish feature (`PublishSingleFile`) cannot bundle them into one executable. You will always distribute a folder of files (or wrap them in a traditional installer such as WiX or Inno Setup).
+> - **Runtime dependency** — The Windows App SDK runtime must be present on the user's machine. You must either bundle the runtime installer with your app, or use self-contained deployment (which significantly increases output size). See [Deploying the Windows App SDK runtime](#deploying-the-windows-app-sdk-runtime) below.
+> - **No package identity** — Without a package manifest, your app cannot use manifest-based Windows features: no automatic updates via App Installer or Store, no background task registration, and no file type associations or Start menu tile customization via package manifest. (Traditional Win32 mechanisms such as installer-written registry entries and shortcuts still work.)
+> - **No MSIX/package-identity Store submission** — This distribution model has no package identity; it is not eligible as an MSIX submission to the Microsoft Store. (You can submit a traditional installer to the Store via the [MSI or EXE installer submission path](../publish/publish-your-app/msi/upload-app-packages.md), but that is a separate workflow from what this article describes.)
+>
+> If these constraints are a concern, consider [packaging your app](index.md) (recommended for most apps) or [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) to add package identity without a full MSIX conversion.
+
+For details on all packaging options, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app).
 
 If you choose to unpackage a new or existing WinUI app, follow these steps:
 

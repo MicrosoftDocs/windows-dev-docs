@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Screen ruler, Win]
 
 PowerToys Screen ruler allows you to quickly measure pixels on your screen using advanced image edge detection technology. This utility helps developers and designers accurately measure distances, spacing, and dimensions directly on their Windows desktop. The tool was inspired by [Pete Blois's Rooler](https://github.com/peteblois/rooler).
 
-:::image type="content" source="../images/pt-screen-ruler.png" alt-text="Screenshot of PowerToys Screen ruler utility interface showing measurement tools and toolbar options.":::
+:::image type="content" source="images/pt-screen-ruler.png" alt-text="Screenshot of PowerToys Screen ruler utility interface showing measurement tools and toolbar options.":::
 
 ## How to activate
 

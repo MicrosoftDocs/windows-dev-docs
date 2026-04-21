@@ -41,7 +41,7 @@ public override IListItem[] GetItems()
 1. Deploy your extension
 1. In command palette, `Reload`
 
-![Screenshot of extension updating page title](../../images/command-palette/update-page-title.png)
+![Screenshot of extension updating page title](../images/command-palette/update-page-title.png)
 
 Here, we're using ``AnonymousCommand`` to create a command that will update the title of the page. `AnonymousCommand` is a helper that's useful for creating simple, lightweight commands that don't need to be reused.
 

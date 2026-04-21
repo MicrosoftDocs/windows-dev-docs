@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 # General settings for PowerToys
 
-:::image type="content" source="../images/pt-general.png" alt-text="Screenshot of PowerToys general settings interface showing version updates, administrator mode, and appearance options.":::
+:::image type="content" source="images/pt-general.png" alt-text="Screenshot of PowerToys general settings interface showing version updates, administrator mode, and appearance options.":::
 
 The General settings section of Microsoft PowerToys allows you to configure essential app behaviors including updates, administrator permissions, appearance themes, and startup options. These settings help you customize your PowerToys experience to match your Windows workflow preferences.
 
@@ -27,17 +27,17 @@ Here you can check for new updates, and if one is available, you can download an
 
 Use the search bar at the top of the settings window to quickly find specific settings or features within PowerToys. You can type keywords related to the setting you're looking for, and the results will filter in real-time as you type.
 
-:::image type="content" source="../images/pt-settings-search.png" alt-text="A screenshot of the PowerToys Settings search feature.":::
+:::image type="content" source="images/pt-settings-search.png" alt-text="A screenshot of the PowerToys Settings search feature.":::
 
 Select the desired setting from the filtered results to jump directly to it, or you can press **Enter** or select **Show all results** to see all results for the current search.
 
-:::image type="content" source="../images/pt-settings-search-results.png" alt-text="A screenshot of the PowerToys Settings Search Results page.":::
+:::image type="content" source="images/pt-settings-search-results.png" alt-text="A screenshot of the PowerToys Settings Search Results page.":::
 
 ## Shortcut conflict detection
 
 PowerToys includes a feature to detect shortcut conflicts. If you have multiple PowerToys modules that use the same keyboard shortcut, the conflict detection feature will alert you so you can resolve the issue. When the **PowerToys shortcut conflicts** window appears, you can view all conflicting shortcuts. From this window, you can reassign shortcuts to resolve conflicts, choose to ignore specific conflicts, or remove shortcuts entirely.
 
-:::image type="content" source="../images/pt-shortcut-conflicts.png" alt-text="A screenshot of the PowerToys shortcut conflicts window.":::
+:::image type="content" source="images/pt-shortcut-conflicts.png" alt-text="A screenshot of the PowerToys shortcut conflicts window.":::
 
 ## Administrator mode
 

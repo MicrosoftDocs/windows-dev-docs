@@ -67,10 +67,10 @@ The simplest way to run an app or program in administrative mode is to right-cli
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-:::image type="content" source="../images/pt-admin-prompt.png" alt-text="Screenshot of Windows User Account Control prompt requesting administrator permissions for PowerToys.":::
+:::image type="content" source="images/pt-admin-prompt.png" alt-text="Screenshot of Windows User Account Control prompt requesting administrator permissions for PowerToys.":::
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-:::image type="content" source="../images/pt-admin-terminal.png" alt-text="Screenshot of Windows PowerShell and Command Prompt running with administrator permissions showing elevated status in title bar.":::
+:::image type="content" source="images/pt-admin-terminal.png" alt-text="Screenshot of Windows PowerShell and Command Prompt running with administrator permissions showing elevated status in title bar.":::
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

@@ -2,7 +2,7 @@
 title: Publish your first Windows app
 description: An end-to-end guide for indie developers — from a built app to users' hands. Covers choosing a distribution path, code signing, packaging, and getting your first users.
 ms.topic: concept-article
-ms.date: 04/17/2026
+ms.date: 04/20/2026
 ms.localizationpriority: high
 ---
 
@@ -19,7 +19,7 @@ Your distribution path determines your code signing costs, update mechanics, how
 
 → [Choose a distribution path for your Windows app](choose-distribution-path.md) has a full comparison. In short:
 
-- **Microsoft Store** — recommended for most apps. Free signing, built-in updates, broad discoverability, and a trusted install experience. Requires a one-time $19 [Partner Center](https://partner.microsoft.com/dashboard) developer account fee.
+- **Microsoft Store** — recommended for most apps. Free signing, built-in updates, broad discoverability, and a trusted install experience. Requires a free developer account — register at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com).
 - **Direct download** — appropriate for commercial ISVs with their own storefront, enterprise LOB apps, or apps with content the Store doesn't permit. You are responsible for signing, hosting, and updates.
 
 Most new indie apps are a good fit for the Store. If you're unsure, start there.
@@ -46,7 +46,7 @@ How you package your app depends on the app framework you used.
 
 WinUI 3 apps created with the Windows App SDK project templates are **already packaged as MSIX by default**. When you build your solution in Visual Studio, the output is an `.msix` or `.msixbundle` file ready for Store submission or direct distribution.
 
-If you want to distribute an unpackaged WinUI 3 app (for example, a self-contained EXE), see [Unpackage a WinUI app](unpackage-winui-app.md).
+If you want to distribute an unpackaged WinUI 3 app (without MSIX packaging), see [Distribute an unpackaged WinUI 3 app](unpackage-winui-app.md). Note that unpackaged WinUI 3 apps cannot produce a single-file EXE and require the Windows App SDK runtime on the user's machine (either installed separately via the runtime installer, or bundled using self-contained deployment).
 
 ### WPF and WinForms
 
@@ -75,7 +75,7 @@ The Store submission process runs through [Partner Center](https://partner.micro
 
 **Steps at a glance:**
 
-1. **Create a developer account** — One-time $19 fee at [Partner Center](https://partner.microsoft.com/dashboard). The account is permanent.
+1. **Create a developer account** — Free. Register at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). The account is permanent.
 2. **Reserve your app name** — Claim your app's name in Partner Center before submission. The name is held for you during development.
 3. **Build and package your app** — Create an MSIX package that meets Store requirements. For Store submissions, MSIX/AppX packages don't need a CA-trusted signature — Microsoft re-signs the package with a Microsoft certificate after certification. If you distribute outside the Store using an MSI or EXE installer, Authenticode signing is recommended and expected by Windows security features.
 4. **Create your submission** — Upload your package, provide store listing details (description, screenshots, categories, age rating), and set pricing.

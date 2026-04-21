@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, File Locksmith, Win]
 
 File Locksmith is a PowerToys utility that helps you identify which processes are using specific files or directories in Windows. This shell extension allows you to easily unlock files that are being used by other processes, making file management more efficient.
 
-:::image type="content" source="../images/powertoys-file-locksmith.gif" alt-text="An animated GIF of File Locksmith utility interface showing process list and file usage information.":::
+:::image type="content" source="images/powertoys-file-locksmith.gif" alt-text="An animated GIF of File Locksmith utility interface showing process list and file usage information.":::
 
 ## How to activate and use File Locksmith
 
@@ -21,7 +21,7 @@ To open File Locksmith to see which processes are using one or more file(s), rig
 
 When File Locksmith is opened, it will scan all of the running processes that it can access, checking which files the processes are using. Processes that are being run by a different user cannot be accessed and may be missing from the list of results. To scan all processes, select **Restart as administrator**.
 
-:::image type="content" source="../images/powertoys-file-locksmith-restart-as-admin.png" alt-text="Screenshot of File Locksmith restart as administrator button for accessing all processes.":::
+:::image type="content" source="images/powertoys-file-locksmith-restart-as-admin.png" alt-text="Screenshot of File Locksmith restart as administrator button for accessing all processes.":::
 
 After scanning, a list of processes will be displayed. Select **End task** to terminate the process, or select the expander to show more information. File Locksmith will automatically remove terminated processes from the list, whether or not this action was done via File Locksmith. To manually refresh the list of processes, select **Reload**.
 

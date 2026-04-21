@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Use the **Settings** button in the Command Palette to open the settings page:
 
-:::image type="content" source="../../images/command-palette/cmdpal-settings.png" alt-text="A screenshot of the Command Palette interface with the Settings button highlighted in red.":::
+:::image type="content" source="../images/command-palette/cmdpal-settings.png" alt-text="A screenshot of the Command Palette interface with the Settings button highlighted in red.":::
 
 The Command Palette settings page provides the following options.
 
