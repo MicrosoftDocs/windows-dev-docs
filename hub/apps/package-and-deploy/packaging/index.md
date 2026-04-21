@@ -41,9 +41,9 @@ For more information, see [Features that require package identity](../../desktop
 
 | Model | Package identity | Installer | Store eligible | Best for |
 |---|---|---|---|---|
-| **Packaged (MSIX)** | ✅ Yes | MSIX replaces installer | ✅ Yes | New apps, Store publishing, enterprise MDM |
-| **Packaging with external location** | ✅ Yes | Your existing installer | ❌ No | Existing apps with own installer, ISVs |
-| **Unpackaged** | ❌ No | XCopy / script | ❌ No | Internal tools, dev utilities, simple scenarios |
+| **Packaged (MSIX)** | ✅ Yes | MSIX replaces installer | ✅ Yes (MSIX submission) | New apps, Store publishing, enterprise MDM |
+| **Packaging with external location** | ✅ Yes | Your existing installer | ✅ Yes (MSI/EXE submission) | Existing apps with own installer, ISVs |
+| **Unpackaged** | ❌ No | MSI or EXE installer (also: XCopy or script for non-Store distribution) | ✅ Yes (MSI/EXE submission — requires an MSI or EXE installer with silent install support) | Broad Win32 distribution, internal tools |
 
 ### Packaged apps (MSIX)
 
@@ -63,7 +63,7 @@ This is the sweet spot for existing Win32/WPF/WinForms apps that ship via their 
 |---|---|---|
 | Replaces your installer | Yes | No |
 | Binaries inside the package | Yes | No (external) |
-| Store eligible | Yes | No |
+| Store eligible | Yes (MSIX submission) | Yes (MSI/EXE submission) |
 | Package identity | Yes | Yes |
 | Update mechanism | MSIX update | Your existing mechanism |
 
@@ -82,13 +82,13 @@ Before you commit to unpackaged, check the [features table above](#features-that
 
 | Scenario | Recommended model | Details |
 |---|---|---|
-| **Indie developer publishing to the Microsoft Store** | Packaged (MSIX) | The Store requires MSIX. WinUI 3 apps are packaged by default — no changes needed. **Code signing is handled free by the Store.** → [Distribute your packaged app](../../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md) |
+| **Indie developer publishing to the Microsoft Store** | Packaged (MSIX) recommended | MSIX is the recommended path — it enables Store-managed updates, differential downloads, and clean uninstall. WinUI 3 apps are packaged by default. **Code signing is handled free by the Store.** → [Distribute your packaged app](../../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md)<br><br>Win32 apps with an existing MSI or EXE installer can also publish to the Store via the [MSI/EXE submission path](../../publish/publish-your-app/msi/create-app-submission.md), but the Store does not push updates to existing users — updates must be handled by the app or installer. |
 | **Enterprise app deployed via Intune or Configuration Manager** | Packaged, or external location for existing installers | New apps should use MSIX. Existing apps with their own installer can use packaging with external location. **Code signing:** use a self-signed cert (trusted via Intune, Group Policy, or Configuration Manager) or [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/). → [Deploy packaged apps](../../windows-app-sdk/deploy-packaged-apps.md) |
-| **ISV shipping a direct download with own installer** | Packaging with external location | Register a lightweight identity package alongside your existing installer. **Code signing:** a CA-trusted certificate is required for non-Store distribution. [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is the recommended lower-cost option. → [Grant package identity](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) |
+| **ISV shipping a direct download with own installer** | Packaging with external location | Register a lightweight identity package alongside your existing installer. **Code signing:** a CA-trusted certificate is required for non-Store distribution. [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is the recommended lower-cost option. → [Grant package identity](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md)<br><br>Alternatively, submit your existing installer to the Store via the [MSI/EXE submission path](../../publish/publish-your-app/msi/create-app-submission.md). |
 | **Internal tool or developer utility** | Unpackaged | Simplest to build and deploy. The Windows App SDK works via NuGet, but some features won't be available. |
 
 > [!TIP]
-> **Not sure about code signing costs?** Publishing through the Microsoft Store means you don't need to separately obtain or manage a certificate for end-user trust. For other distribution paths, your signing approach depends on deployment context — enterprise environments can trust a self-signed certificate through device management, while broader non-Store distribution typically requires a CA-trusted code signing solution. [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is Microsoft's recommended option (see [pricing](https://azure.microsoft.com/pricing/details/trusted-signing/)), with no hardware token required.
+> **Not sure about code signing costs?** Publishing an **MSIX package** through the Microsoft Store means you don't need to separately obtain or manage a certificate for end-user trust — Microsoft re-signs the package. Publishing a **Win32 MSI/EXE installer** through the Store requires a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list); self-signed is not accepted. For other distribution paths, your signing approach depends on deployment context — enterprise environments can trust a self-signed certificate through device management, while broader non-Store distribution typically requires a CA-trusted code signing solution. [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is Microsoft's recommended option (see [pricing](https://azure.microsoft.com/pricing/details/trusted-signing/)), with no hardware token required.
 
 ## Framework-dependent vs self-contained deployment
 

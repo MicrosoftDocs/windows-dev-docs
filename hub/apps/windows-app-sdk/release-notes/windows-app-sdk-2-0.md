@@ -363,6 +363,215 @@ Released: **February 13, 2026** <br><br>
 
 :::zone pivot="experimental"
 
+## Version 2.0 Experimental 7 (2.0.0-Experimental7)
+
+Released: **April 21, 2026** <br><br>
+
+<details><summary>CMake Support [Experimental]</summary>
+
+>
+> Windows App SDK 2.0.0-experimental7 introduces experimental CMake support (under active development), enabling C++ developers to consume Windows App SDK NuGet packages from CMake-based projects.
+>
+> The CMake integration is built on [NuGetCMakePackage](https://github.com/mschofie/NuGetCMakePackage), an open-source CMake module that bridges the gap between NuGet package management and CMake's native `find_package()` workflow. NuGetCMakePackage handles downloading and restoring NuGet packages at configure time via `add_nuget_packages()`, probes each package for an embedded cmake config (at `build/cmake/<package>-config.cmake`), and exposes the package's headers, import libraries, runtime DLLs, and WinRT metadata as standard CMake targets.
+>
+> Each Windows App SDK NuGet component and dependent package now embeds a CMake configuration file under `build/cmake/`, which with the help of the NuGetCMakePackage library, allows CMake's `find_package()` to automatically discover targets, headers, libraries, and runtime DLLs without manual path configuration. This covers all component packages including Foundation, InteractiveExperiences, DWrite, Widgets, AI, ML, and WinUI, as well as dependencies such as Base and Runtime.
+>
+> For an overview of the CMake consumption model and getting started guidance, see the [CMake landing page](https://github.com/mschofie/NuGetCMakePackage/blob/develop/.github/copilot-instructions.md).
+>
+> This feature is experimental and is being flighted early to collect community feedback. The target naming conventions, and configuration patterns are subject to change based on developer input. Because this is an early flight, there is some ceremony and setup involved - please refer to the [CMake sample applications](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/2.0-experimental/Samples/CMake) which illustrate end-to-end configuration and usage across all four deployment scenarios (`SelfContained|FrameworkDependent` x `Packaged|Unpackaged`).
+>
+> We want to hear from you! If you encounter a scenario that isn't currently covered, have suggestions for improving the developer experience, or run into issues, please file feedback under the [Issues](https://github.com/microsoft/WindowsAppSDK/issues) tab in the Windows App SDK open-source repository or start a conversation in [Discussions](https://github.com/microsoft/WindowsAppSDK/discussions). Your input will directly shape the active development of this feature.
+>
+
+</details>
+
+<details><summary>Changes brought forward from the Preview channel</summary>
+
+>
+> This experimental release rolls up the changes and fixes shipped in **[2.0-Preview1](#version-20-preview-1-200-preview1)** and **[2.0-Preview2](#version-20-preview-2-200-preview2)**. Items brought forward are summarized below; refer to the linked Preview release notes for full details.
+>
+> **From 2.0-Preview1:**
+> * **Windows ML**: Fix for `RegisterCertifiedAsync` returning 0 execution providers when called again in the same process.
+> * **Microsoft.UI.Content**: New `InputFocusController.ShouldShowKeyboardCues` property and new convenience API `PointerPoint.GetCurrentPoint`.
+> * **Microsoft.Windows.Management.Deployment**: New `PackageVolume` APIs for parity+ with `Windows.Management.Deployment` (including `AddAsync`, `GetDefault`, `GetAvailableSpaceAsync`, `IsAppxInstallSupported`, `IsOffline`, `IsFeatureSupported`, and more). New `IPackageValidator` extensibility point on `AddPackageOptions` and `StagePackageOptions`, with three built-in validators: `PackageCertificateEkuValidator`, `PackageFamilyNameValidator`, and `PackageMinimumVersionValidator`.
+> * **Microsoft.Windows.Storage.Pickers**:
+>    * New `Title` properties on `FileOpenPicker`, `FileSavePicker`, and `FolderPicker`, enabling custom dialog titles.
+>    * New `SettingsIdentifier` properties on `FileOpenPicker`, `FileSavePicker`, and `FolderPicker`, enabling picker instance-specific state across sessions.
+>    * New `InitialFileTypeIndex` properties on `FileOpenPicker` and `FileSavePicker`, allowing developers to set the default selected file type filter by index (0-based).
+>    * New `ShowOverwritePrompt` property on `FileSavePicker`. It defaults to `true` and controls whether the picker warns about overwriting when user picks an existing file via `FileSavePicker`.
+>    * Changed the default behavior of `FileSavePicker`: starting from WindowsAppSDK 2.0, the `FileSavePicker` will NOT create an empty file when the user picks a non-existing file, allowing developers to decide when to make the file.
+>    * New `PickMultipleFoldersAsync` method on `FolderPicker`, enabling selection of multiple folders in a single operation.
+> * **Bug fixes**: Installer progress reporting; improved error handling for `WindowsAppSDKSelfContained` class libraries.
+>
+> **From 2.0-Preview2:**
+> * **Windows AI APIs**: Phi Silica APIs are enforced as a Limited Access Feature; new `AIFeatureReadyState` values surface model-acquisition issues such as missing capabilities, incompatible hardware, and required OS updates; durable network/Windows Update install failures are now flagged; improved diagnosability for Text Intelligence APIs.
+> * **Custom XAML Conditionals**: `IXamlCondition` graduates and renames the experimental `IXamlPredicate` interface, enabling custom conditions evaluated at XAML parse time.
+> * **WebView2 (WinUI 3)**: Drag support for content hosted in WebView2 (text, HTML, images, URLs), drag cancellation, custom drag visuals, and customizable drag data. Requires WebView2 Runtime 144.0.3719.11 or later. (`DownloadURL` not yet supported.)
+> * **Bug fixes**: MSB8027/LNK4042 build warnings from duplicate ClCompile items in `.targets` files (with an opt-out workaround `WindowsAppSDK_Arm64EcCompilerWorkaround` for ARM64EC+LTCG); ListView crash during keyboard navigation after items list updates; WinUI 3 crash when focus moved to a non-visible CoreWebView2Controller.
+>
+
+</details>
+
+<details><summary>Video Super Resolution</summary>
+
+>
+> * API rename pass for clarity and consistency:
+>   * `ScaleFrameStatus` → `VideoScalerStatus`
+>   * `VideoScalerOptions.RegionOfInterests` → `VideoScalerOptions.RegionsOfInterest`
+>   * `VideoScaler.ScaleFrame` → `VideoScaler.Scale` and `VideoScaler.ScaleImageBuffer`
+> * Various bug fixes and quality improvements in VSR.
+>
+
+</details>
+
+<details><summary>Windows AI Language Model</summary>
+
+>
+> * New `LanguageModelExperimental.GenerateStructuredJsonResponseAsync` API under `Microsoft.Windows.AI.Text.Experimental` for generating structured JSON output from a language model.
+> * New `LanguageModelResponseStatus.ResponseInvalidJson` status value to indicate a model returned a response that did not parse as valid JSON.
+>
+
+</details>
+
+<details><summary>App Content Indexer</summary>
+
+>
+> * New `AppContentIndexer.GetExistingIndexes` and `AppContentIndexer.IsContentKindSupported` APIs.
+> * New `AppManagedOcrTextQueryMatch` type and `QueryMatchContentKind.AppManagedOcrText` value to support querying app content via OCR-derived text.
+> * New `GetOrCreateIndexOptions.CreateAlways` to force creation of a fresh index.
+> * New `ContentItemErrorDetail.InsufficientDiskSpace` to surface low-disk-space failures during indexing.
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new and modified experimental APIs compared to 2.0.0-experimental6:
+>
+> ```
+> Microsoft.UI.Input
+>
+>     InputFocusController
+>         ShouldShowKeyboardCues
+>
+>     PointerPoint
+>         GetCurrentPoint
+> ```
+> ```
+> Microsoft.UI.Xaml.Markup
+>
+>     IXamlCondition
+> ```
+> ```
+> Microsoft.Windows.AI
+>
+>     AIFeatureReadyResult
+>         PackageInstallationFailed
+>
+>     AIFeatureReadyState
+>         CapabilityMissing
+>         NotCompatibleWithSystemHardware
+>         OSUpdateNeeded
+> ```
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModelResponseStatus
+>         ResponseInvalidJson
+> ```
+> ```
+> Microsoft.Windows.AI.Text.Experimental
+>
+>     LanguageModelExperimental
+>         GenerateStructuredJsonResponseAsync
+> ```
+> ```
+> Microsoft.Windows.AI.Video
+>
+>     VideoScaler
+>         Scale
+>         ScaleImageBuffer
+>
+>     VideoScalerOptions
+>         RegionsOfInterest
+>
+>     VideoScalerStatus
+> ```
+> ```
+> Microsoft.Windows.Management.Deployment
+>
+>     AddPackageOptions
+>         GetValidationEventSourceForUri
+>         IsPackageValidationSupported
+>         PackageValidators
+>
+>     IPackageValidator
+>     PackageCertificateEkuValidator
+>     PackageFamilyNameValidator
+>     PackageMinimumVersionValidator
+>     PackageValidationEventArgs
+>     PackageValidationEventSource
+>     PackageValidationHandler
+>     PackageVolume
+>         AddAsync
+>         GetAvailableSpaceAsync
+>         GetDefault
+>         GetPackageVolumeByName
+>         GetPackageVolumeByPath
+>         IsFeatureSupported
+>         IsOffline
+>         RemoveAsync
+>         SetDefault
+>         SetOfflineAsync
+>         SetOnlineAsync
+>
+>     PackageVolumeFeature
+>     StagePackageOptions
+>         GetValidationEventSourceForUri
+>         IsPackageValidationSupported
+>         PackageValidators
+> ```
+> ```
+> Microsoft.Windows.Search.AppContentIndex
+>
+>     AppContentIndexer
+>         GetExistingIndexes
+>         IsContentKindSupported
+>
+>     AppManagedOcrTextQueryMatch
+>     ContentItemErrorDetail
+>         InsufficientDiskSpace
+>
+>     GetOrCreateIndexOptions
+>         CreateAlways
+>
+>     QueryMatchContentKind
+>         AppManagedOcrText
+> ```
+> ```
+> Microsoft.Windows.Storage.Pickers
+>
+>     FileOpenPicker
+>         InitialFileTypeIndex
+>         SettingsIdentifier
+>         Title
+>
+>     FileSavePicker
+>         InitialFileTypeIndex
+>         SettingsIdentifier
+>         ShowOverwritePrompt
+>         Title
+>
+>     FolderPicker
+>         PickMultipleFoldersAsync
+>         SettingsIdentifier
+>         Title
+> ```
+>
+
+</details>
+
 ## Version 2.0 Experimental 6 (2.0.0-Experimental6)
 
 Released: **March 13, 2026** <br><br>

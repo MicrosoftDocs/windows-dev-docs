@@ -1,7 +1,7 @@
 ---
 description: The Packages page allows you to upload the installers and files for your MSIX app. Once uploaded, a table will display the packages, showing which will be offered to specific Windows 10 device families (and earlier OS versions if applicable), in ranked order.
 title: Upload MSIX app packages
-ms.date: 10/30/2022
+ms.date: 04/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---

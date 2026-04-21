@@ -1,12 +1,15 @@
 ---
 description: System requirements page helps you indicate if certain hardware features are required or recommended to run and interact with your MSIX app properly.
 title: System requirements for MSIX app
-ms.date: 10/30/2022
+ms.date: 04/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # System requirements for MSIX apps
+
+> [!NOTE]
+> This section is optional. If you leave it blank, no additional hardware requirements are published for your app, and the Store won't display hardware-based warnings based on this section. App download eligibility is still governed by your submission's target platform settings (such as target OS version, architecture, and device family). Fill in this section to communicate minimum or recommended hardware requirements to customers.
 
 In this section, you have the option to indicate if certain hardware features are required or recommended to run and interact with your app properly. You can check the box (or indicate the appropriate option) for each hardware item where you would like to specify **Minimum hardware** and/or **Recommended hardware**.
 

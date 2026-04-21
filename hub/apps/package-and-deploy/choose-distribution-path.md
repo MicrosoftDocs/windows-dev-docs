@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 How you distribute your Windows app affects code signing costs, update mechanics, enterprise manageability, and how easily customers discover and install it. This article compares the main paths to help you make the right choice.
 
 > [!TIP]
-> **For most developers, the Microsoft Store is the recommended path.** It provides free code signing, built-in update delivery, broad discoverability, and a trusted install experience — with no infrastructure to manage.
+> **For most developers, the Microsoft Store is the recommended path.** It provides broad discoverability, a trusted install experience, and no infrastructure to manage for MSIX submissions (Microsoft re-signs and hosts the package). Win32 MSI/EXE installer submissions are also accepted — the publisher must host a versioned HTTPS installer URL — see [MSI/EXE app submission](/windows/apps/publish/publish-your-app/msi/create-app-submission). MSIX submissions get free code signing and built-in update delivery.
 
 > [!NOTE]
 > **If your app is built on web technologies** (HTML, JavaScript, CSS), a [Progressive Web App (PWA)](#progressive-web-app-pwa) is the fastest path to the Microsoft Store — no native packaging tools required.
@@ -20,27 +20,30 @@ How you distribute your Windows app affects code signing costs, update mechanics
 
 | Path | Best for | Code signing cost | Auto-update | Enterprise MDM | Distributed via Store |
 |---|---|---|---|---|---|
-| **Microsoft Store** | Consumer and business apps, broad reach | ✅ Free (Store signs for you) | ✅ Built-in | ✅ Via Intune with Company Portal | ✅ Yes |
+| **Microsoft Store (MSIX)** | Consumer and business apps, broad reach | ✅ Free (Store re-signs your package) | ✅ Built-in | ✅ Via Intune with Company Portal | ✅ Yes |
+| **Microsoft Store (MSI/EXE installer)** | Existing Win32 apps with own installer | 💲 Publisher must sign the installer and all PE files with a cert chaining to the [Microsoft Trusted Root Program](/security/trusted-root/participants-list) | ❌ Manual (app or installer handles updates) | ✅ Via Intune with Company Portal | ✅ Yes |
 | **PWA (Progressive Web App)** | Web apps and web-based experiences | ✅ Free (Store signs for you) | ✅ Via Store or browser | ✅ Via Intune with Company Portal | ✅ Yes |
 | **MSIX sideload (enterprise)** | Internal LOB apps via Intune/ConfigMgr | 💲 Azure Artifact Signing (formerly Trusted Signing) (~$10/mo) or self-signed + Intune cert profile | ✅ Via App Installer file or MDM | ✅ Native | ❌ No |
 | **MSIX direct download (ISV)** | Commercial apps sold from your own site | 💲 CA-trusted cert required ([Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) recommended) | ✅ Via `.appinstaller` file | ⚠️ Limited | ❌ No |
-| **Packaging with external location** | Existing apps with own installer needing Windows features | 💲 Same as MSIX direct download | ✅ Your existing mechanism | ⚠️ Limited | ❌ No |
-| **Unpackaged WinUI 3** | Niche: enterprise without MSIX capability, or max install simplicity | 💲 Cert recommended for SmartScreen | ❌ Manual only | ⚠️ Limited (via Intune/ConfigMgr Win32 deployment) | ⚠️ Limited (Store-listed installer submission) |
+| **Packaging with external location** | Existing apps with own installer needing Windows features | 💲 Same as MSIX direct download | ✅ Your existing mechanism | ⚠️ Limited | ⚠️ Via MSI/EXE Store submission (publisher signing required) |
+| **Unpackaged WinUI 3** | Niche: enterprise without MSIX capability, or max install simplicity | 💲 Cert recommended for SmartScreen | ❌ Manual only | ⚠️ Limited (via Intune/ConfigMgr Win32 deployment) | ⚠️ Via MSI/EXE Store submission (publisher signing required) |
 
 ## Microsoft Store (recommended)
 
-Publishing to the Microsoft Store is the most complete distribution solution for Windows apps.
+Publishing to the Microsoft Store is the most complete distribution solution for Windows apps. Two submission paths are available:
 
-**What you get:**
-- Code signing handled automatically — no certificate purchase needed
-- Built-in update delivery with staged rollout support
+- **MSIX submission** — recommended for new apps and WinUI 3 apps. Microsoft re-signs the package; no cert purchase needed. Includes Store-managed updates, staged rollouts, and differential downloads.
+- **MSI/EXE installer submission** — for existing Win32 apps with their own installer. Publisher submits a versioned HTTPS URL to the installer hosted on the publisher's own CDN; the Store downloads and runs the installer from that URL as part of the Store install flow. Publisher must sign the installer with a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list). Updates are the app's responsibility.
+
+**What you get (both paths):**
 - Discovery through the Store's search and curated collections
-- Trusted install UX with no SmartScreen warnings
+- Trusted install UX
 - Revenue processing, refunds, and analytics included
+- Enterprise deployment via Intune with Company Portal
 
 **Requirements:**
-- App must be packaged as MSIX (WinUI 3 apps are packaged by default)
-- App must pass [Store certification requirements](/windows/apps/publish/publish-your-app/msix/app-package-requirements)
+- MSIX is the recommended package format — WinUI 3 apps are packaged by default. Win32 apps with an existing MSI or EXE installer can also submit via the [MSI/EXE installer path](/windows/apps/publish/publish-your-app/msi/create-app-submission) (note: MSI/EXE submissions require a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list) — self-signed is not accepted; Store-managed updates are not available for this path)
+- App must pass Store certification requirements: [MSIX requirements](/windows/apps/publish/publish-your-app/msix/app-package-requirements) | [MSI/EXE requirements](/windows/apps/publish/publish-your-app/msi/app-package-requirements)
 - Developer account required ([Partner Center](https://partner.microsoft.com/dashboard))
 
 **When to choose this:**
@@ -141,7 +144,7 @@ If you have an existing app with its own installer (WiX, NSIS, InstallShield) an
 - Your existing install and update mechanism stays in place
 
 **What you don't get:**
-- Store eligibility
+- Direct MSIX Store submission (the sparse package is not itself Store-submitted; however, your underlying installer can be submitted via the [MSI/EXE Store installer path](/windows/apps/publish/publish-your-app/msi/create-app-submission))
 - The clean install/uninstall model of full MSIX
 
 **When to choose this:**
@@ -184,7 +187,7 @@ Many Windows apps are distributed using ClickOnce, MSI, WiX, Inno Setup, or simi
 | **MSIX via Store** | ✅ Built-in | ✅ Free (Store signs) | ✅ Yes | Most apps — recommended starting point |
 | **MSIX + .appinstaller** | ✅ Built-in | 💲 CA-trusted cert | ❌ No | ISVs distributing directly from a website |
 | **ClickOnce** | ✅ Built-in | 💲 Cert recommended | ❌ No | WPF/WinForms apps; not supported for WinUI 3 |
-| **MSI / WiX / Inno Setup** | ⚠️ Manual or custom | 💲 Cert recommended | ❌ No | Apps with complex install requirements or existing installer |
+| **MSI / WiX / Inno Setup** | ⚠️ Manual or custom | 💲 Cert recommended | ⚠️ Via MSI/EXE Store submission (see below) | Apps with complex install requirements or existing installer |
 | **Self-contained EXE (xcopy/zip)** | ❌ None | 💲 Cert recommended | ❌ No | Simple utilities; developer/power-user audiences |
 | **winget manifest** | ✅ Via winget | 💲 Cert recommended | ❌ No | Any of the above — adds discoverability via `winget install` |
 
@@ -200,7 +203,7 @@ ClickOnce is **not supported for WinUI 3 apps**. Use MSIX with `.appinstaller` f
 
 Traditional EXE and MSI installers remain common for Windows apps with complex installation requirements (driver installation, system services, registry configuration). Tools like [WiX Toolset](https://wixtoolset.org/), [Inno Setup](https://jrsoftware.org/isinfo.php), and [NSIS](https://nsis.sourceforge.io/) are community-maintained and widely used. Update support requires your own implementation.
 
-These formats are not Store-eligible as primary distribution packages. However, you can combine them with [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) if you need package identity for specific Windows features.
+These formats are not Store-eligible as MSIX packages, but can be submitted to the Store via the [MSI/EXE installer path](/windows/apps/publish/publish-your-app/msi/create-app-submission) (requires a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list) and a silent-install capable installer). You can also combine them with [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) if you need package identity for specific Windows features.
 
 ### Self-contained EXE (xcopy deployment)
 

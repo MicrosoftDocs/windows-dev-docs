@@ -45,7 +45,10 @@ Enter the URL of the web page where your customers can go for support with your 
 
 ### Phone number and address info
 
-Enter Phone number, Address, Apartment / Suite, City, State / Province, Country and Postal code so customers can reach out to you in case of any concern or dispute.
+Enter your phone number and address details (Phone number, Address, Apartment / Suite, City, State / Province, Country, and Postal code). This information is used for regulatory compliance and legal dispute resolution purposes.
+
+> [!NOTE]
+> This contact information is not part of your app's standard Store listing fields and is generally not displayed to customers browsing the Store (though it may be shared with applicable authorities when required by law).
 
 > [!IMPORTANT]
 > Businesses / Company accounts offering products in France market need to ensure to provide this info for compliance with France Consumer Protection Laws and Regulations 2023 - 2024. This is optional for individual developers.
