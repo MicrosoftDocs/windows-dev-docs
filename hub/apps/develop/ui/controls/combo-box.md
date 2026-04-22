@@ -102,9 +102,9 @@ The following example demonstrates binding a combo box to a collection of FontFa
 ```csharp
 ObservableCollection<FontFamily> fonts = new ObservableCollection<FontFamily>()
 {
-    fonts.Add(new FontFamily("Arial"));
-    fonts.Add(new FontFamily("Courier New"));
-    fonts.Add(new FontFamily("Times New Roman"));
+    new FontFamily("Arial"),
+    new FontFamily("Courier New"),
+    new FontFamily("Times New Roman")
 };
 ```
 
