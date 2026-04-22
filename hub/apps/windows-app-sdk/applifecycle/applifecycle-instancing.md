@@ -314,7 +314,7 @@ void OnActivated(const IInspectable&, const AppActivationArguments& args)
         // We'll try to find the instance that handles protocol activations.
         // If there isn't one, then this instance will take over that duty.
         auto instance = AppInstance::FindOrRegisterForKey(uri.AbsoluteUri());
-        if (!instance.IsCurrent)
+        if (!instance.IsCurrent())
         {
             instance.RedirectActivationToAsync(args).get();
         }
