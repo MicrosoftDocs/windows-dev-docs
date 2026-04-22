@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Mouse, jump]
 
 Mouse utilities in PowerToys is a collection of features that enhance mouse and cursor functionality on Windows. These utilities help you locate your cursor, highlight mouse clicks, jump across screens, and display crosshairs for improved precision and productivity.
 
-:::image type="content" source="images/pt-mouse-utilities-cursorwrap.gif" alt-text="An animated gif of the PowerToys Cursor Wrap feature of its Mouse Utilities.":::
+:::image type="content" source="images/mouse-utilities/cursorwrap.gif" alt-text="An animated gif of the PowerToys Cursor Wrap feature of its Mouse Utilities.":::
 
 
 ## CursorWrap
@@ -36,7 +36,7 @@ From the settings page, you can configure the following options:
 
 Activate a spotlight that focuses on the cursor's position by pressing the <kbd>Ctrl</kbd> key twice, using a custom shortcut, or by shaking the mouse. Click the mouse or press any keyboard key to dismiss it. If you move the mouse while the spotlight is active, the spotlight dismisses on its own shortly after the mouse stops moving. It has an option to use a transparent spotlight with independent backdrop and spotlight opacities, boosting focus and accessibility.
 
-:::image type="content" source="images/pt-mouse-utilities-find-my-mouse.gif" alt-text="An animated gif of the PowerToys Find my mouse feature of its Mouse Utilities.":::
+:::image type="content" source="images/mouse-utilities/find-my-mouse.gif" alt-text="An animated gif of the PowerToys Find my mouse feature of its Mouse Utilities.":::
 
 ### Settings
 
@@ -64,7 +64,7 @@ Display visual indicators when the left or right mouse buttons are clicked. By d
 
 ### Settings
 
-![Screenshot of Mouse highlighter](images/pt-mouse-highlighter.gif)
+![Screenshot of Mouse highlighter](images/mouse-utilities/mouse-highlighter.gif)
 
 From the settings page, you can configure the following options:
 
@@ -82,7 +82,7 @@ From the settings page, you can configure the following options:
 
 ## Mouse jump
 
-![Screenshot of Mouse jump](images/pt-mouse-jump.gif)
+![Screenshot of Mouse jump](images/mouse-utilities/mouse-jump.gif)
 
 Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
 
@@ -94,13 +94,13 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 
 ## Mouse pointer crosshairs
 
-![Screenshot of Crosshairs](images/pt-mouseutilities-crosshairs.png)
+![Screenshot of Crosshairs](images/mouse-utilities/crosshairs.png)
 
 Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer. This feature is particularly useful for users with visual impairments or those who need enhanced cursor visibility for precision tasks.
 
 The gliding cursor option is an accessibility feature that lets you control the mouse with a single button by using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.</kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position. Cancel the gliding cursor with the <kbd>Esc</kbd> key or by clicking the mouse.
 
-:::image type="content" source="images/pt-mouse-utilities-gliding-cursor.png" lightbox="images/pt-mouse-utilities-gliding-cursor.gif" alt-text="An animated gif of the PowerToys gliding cursor feature of its Mouse Utilities.":::
+:::image type="content" source="images/mouse-utilities/gliding-cursor.png" lightbox="images/mouse-utilities/gliding-cursor.gif" alt-text="An animated gif of the PowerToys gliding cursor feature of its Mouse Utilities.":::
 
 | Setting | Description |
 | :--- | :--- |

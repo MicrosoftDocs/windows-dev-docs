@@ -116,13 +116,13 @@ After successfully installing PowerToys, an overview window will display with in
 
 If you view the Home view of the PowerToys settings, you can get quick access to some of the utilities, see an overview of the available shortcuts, and enable or disable individual utilities.
 
-:::image type="content" source="images/powertoys-settings-home.png" alt-text="A screenshot of the Home page of the PowerToys settings.":::
+:::image type="content" source="images/general/settings-home.png" alt-text="A screenshot of the Home page of the PowerToys settings.":::
 
 ### Updates
 
 PowerToys uses an automatic update checker that checks for new versions when the app is running. If enabled, a toast notification will appear when an update is available. You can also check for updates manually from the PowerToys Settings.
 
-![PowerToys Update](images/powertoys-updates.png)
+![PowerToys Update](images/general/updates.png)
 
 ### Extracting the MSI from the bundle
 #### [0.94 and later](#tab/extract-094)

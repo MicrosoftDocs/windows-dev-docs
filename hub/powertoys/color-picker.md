@@ -12,7 +12,7 @@ no-loc: [PowerToys, Windows, Color Picker, Color, Picker]
 
 Color Picker is a PowerToys utility for Windows that lets you pick colors from any screen and copy them to the clipboard in configurable formats. This tool helps designers and developers quickly capture exact colors for their projects.
 
-![A screenshot of the Color Picker utility.](images/pt-colorpicker-hex-editor.png)
+![A screenshot of the Color Picker utility.](images/color-picker/hex-editor.png)
 
 ## Get started with Color Picker
 
@@ -26,7 +26,7 @@ You can enable the Color Picker in PowerToys Settings.
 
 Choose what happens when you activate Color Picker (default: <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd>) by changing **Activation Behavior**:
 
-:::image type="content" source="images/pt-colorpicker-activation.gif" alt-text="Screenshot of Color Picker activation behaviors showing different options for when the utility is activated.":::
+:::image type="content" source="images/color-picker/activation.gif" alt-text="Screenshot of Color Picker activation behaviors showing different options for when the utility is activated.":::
 
 - **Open editor** opens an editor that lets you choose a color from the colors history, fine-tune a selected color, or pick a new color.
 - **Pick a color first** activates Color Picker. You can then take action on the selected color using the options described in the **Pick colors from your screen** section below.
@@ -43,7 +43,7 @@ After activating Color Picker, select a color on your screen to pick that color.
 
 Color Picker copies the selected color to the clipboard in the **Default color format** you've chosen in Color Picker's settings (default: HEX).
 
-![Selecting a Color](images/pt-colorpicker.gif)
+![Selecting a Color](images/color-picker/colorpicker.gif)
 
 > [!TIP]
 > To select the color of the non-hover state of an element:
@@ -65,7 +65,7 @@ To fine tune your chosen color, select the central color in the color bar. The f
 
 To choose a similar color, select one of the segments on the top and bottom edges of the color bar. Selecting one of these similar colors adds it to the history.
 
-![Color Picker Editor window](images/pt-colorpicker-editor.gif)
+![Color Picker Editor window](images/color-picker/editor.gif)
 
 To remove a color from the history, right-click a color and select **Remove**.
 
@@ -84,7 +84,7 @@ Color Picker has the following settings:
 | **Show color name** | Displays a high-level representation of the color. For example, 'Light Green', 'Green', or 'Dark Green'. |
 | **Color formats** | Enable and add different color formats, and change the order of color formats in the Color Picker editor. Read more about color formats in [Manage color formats](#manage-color-formats). |
 
-![Color Picker Settings screenshot](images/pt-colorpicker-settings.png)
+![Color Picker Settings screenshot](images/color-picker/settings.png)
 
 ### Manage color formats
 
