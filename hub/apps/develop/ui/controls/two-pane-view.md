@@ -114,7 +114,7 @@ This example creates the simple picture/info app UI shown previously. The conten
             </Grid>
         </TwoPaneView.Pane1>
 
-        <TwoPaneView.Pane2
+        <TwoPaneView.Pane2>
             <Grid x:Name="Pane2Root">
                 <ScrollViewer x:Name="DetailsContent">
                     <StackPanel Padding="16">
