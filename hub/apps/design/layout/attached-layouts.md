@@ -597,7 +597,7 @@ The snippet below shows the additional logic that could be added to the MeasureO
 
         for (int i = state.LastRealizedIndex; i < newLastRealizedIndex; i++)
         {
-            context.RecycleElement(context.IndexElementMap.Get(i));
+            context.RecycleElement(state.IndexToElementMap.Get(i));
             state.IndexToElementMap.Clear(i);
         }
 

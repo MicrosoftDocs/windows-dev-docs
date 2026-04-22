@@ -480,7 +480,7 @@ request.AddHeader("Content-Type", "application/octet-stream");
 request.AddHeader("X-WNS-Type", "wns/raw");
 request.AddHeader("Authorization", "Bearer [your access token]");
 request.AddBody("Notification body");
-RestResponse response = await client.ExecutePostAsync(request);");
+RestResponse response = await client.ExecutePostAsync(request);
 ```
 
 ### Step 3: Send a cloud-sourced app notification

@@ -306,7 +306,7 @@ Here, we show how to specify that the buttons of a CommandBar have a wrap-around
 ```csharp
 private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 {
-    if (IsNotAChildOf(MyCommandBar, args.NewFocussedElement))
+    if (IsNotAChildOf(MyCommandBar, args.NewFocusedElement))
     {
         DependencyObject candidate = null;
         if (args.Direction == FocusNavigationDirection.Left)

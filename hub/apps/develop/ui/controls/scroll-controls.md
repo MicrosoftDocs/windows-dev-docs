@@ -523,7 +523,7 @@ private void ZoomSlider_ValueChanged(object sender, RangeBaseValueChangedEventAr
         scrollViewer.ChangeView(
             horizontalOffset: null,
             verticalOffset: null,
-            zoomFactor: (float)e.NewValue));
+            zoomFactor: (float)e.NewValue);
     }
 }
 ```

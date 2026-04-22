@@ -105,7 +105,7 @@ void MainPage::DefaultLaunch()
 {
    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
 
-   concurrency::task<Windows::Storage::StorageFile^getFileOperation(installFolder->GetFileAsync("images\\test.png"));
+   concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
    getFileOperation.then([](Windows::Storage::StorageFile^ file)
    {
       if (file != nullptr)

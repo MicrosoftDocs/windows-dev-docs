@@ -55,7 +55,7 @@ void RunCustomMessageLoop()
     {
         if (!ContentPreTranslateMessage(&msg))
         {
-            TranslateMesasge(&msg);
+            TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
     }

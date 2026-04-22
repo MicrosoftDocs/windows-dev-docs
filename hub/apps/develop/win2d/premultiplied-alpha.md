@@ -55,11 +55,11 @@ Win2D image effects use a mixture of straight and premultiplied alpha. Some effe
 
 The bitmap APIs `GetPixelBytes`, `SetPixelBytes`, `GetPixelColors`, and `SetPixelColors`, do **not** perform any alpha format conversions. They just directly transfer bit values to or from the underlying GPU texture. This allows you to observe what alpha format Win2D is using internally:
 - Create a drawing session on a rendertarget
-- Call `drawingSession.Clear(Colors.Tranparent)`
-- `Colors.Tranparent` is defined as R = 255, G = 255, B = 255, A = 0
+- Call `drawingSession.Clear(Colors.Transparent)`
+- `Colors.Transparent` is defined as R = 255, G = 255, B = 255, A = 0
 - Win2D will convert this value to premultiplied format, yielding R = 0, G = 0, B = 0, A = 0
 - Use `GetPixelColors` to read back the contents of the rendertarget
-- Observe that it contains premultiplied format RGB = 0, not RGB = 255 like the original straight alpha `Colors.Tranparent` value
+- Observe that it contains premultiplied format RGB = 0, not RGB = 255 like the original straight alpha `Colors.Transparent` value
 
 ## Converting between alpha formats
 

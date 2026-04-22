@@ -67,6 +67,7 @@ This example creates a parallax effect for a list:
        <x:String>Item 9</x:String>
        <x:String>Item 10</x:String>
        <x:String>Item 11</x:String>
+       <x:String>Item 12</x:String>
        <x:String>Item 13</x:String>
        <x:String>Item 14</x:String>
        <x:String>Item 15</x:String>

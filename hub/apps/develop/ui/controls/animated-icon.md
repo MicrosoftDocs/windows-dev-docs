@@ -211,7 +211,7 @@ private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
 
 private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 {
-    AnimatedIcon.SetState(this.StackPaAnimatedIcon1nel1, "Normal");
+    AnimatedIcon.SetState(this.AnimatedIcon1, "Normal");
 }
 ```
 

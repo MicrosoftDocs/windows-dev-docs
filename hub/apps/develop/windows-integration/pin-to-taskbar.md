@@ -39,7 +39,7 @@ The [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) class lets you as
 
 ### Win32
 
-If you want to use `TaskbarManager` from your WIn32 desktop app, then you'll need to check whether desktop app support is present. You can look for the `ITaskbarManagerDesktopAppSupportStatics` marker interface on the `TaskbarManager` activation factory to perform this check. If this interface is not available, then you won't be able to use `TaskbarManager` from your desktop app.
+If you want to use `TaskbarManager` from your Win32 desktop app, then you'll need to check whether desktop app support is present. You can look for the `ITaskbarManagerDesktopAppSupportStatics` marker interface on the `TaskbarManager` activation factory to perform this check. If this interface is not available, then you won't be able to use `TaskbarManager` from your desktop app.
 
 ```cpp
 if (winrt::try_get_activation_factory<winrt::Windows::UI::Shell::TaskbarManager, winrt::Windows::UI::Shell::ITaskbarManagerDesktopAppSupportStatics>())

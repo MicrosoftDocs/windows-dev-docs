@@ -239,7 +239,7 @@ On older versions of Windows that don't support attribution text, the text will 
 var builder = new AppNotificationBuilder()
     .AddText("Marry Anne")
     .AddText("Check out where we camped last night!")
-    .SetAttributionText("via SMS");
+    .SetAttributionText("via SMS")
     .SetHeroImage(new Uri("ms-appx:///Images/HeroImage.png"));
 ```
 

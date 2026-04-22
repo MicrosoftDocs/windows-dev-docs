@@ -46,7 +46,7 @@ Windows 11 supports a plugin model for passkeys. Contoso Passkey Manager is a de
 
 ### Step 4: Passkey authentication
 
-1. Use the passkey autofill drop down and you will be prompted to complete user verificaition to sign in with you passkey saved to the Contoso Passkey Manager.
+1. Use the passkey autofill drop down and you will be prompted to complete user verification to sign in with you passkey saved to the Contoso Passkey Manager.
 
 ![A screenshot of authentication with a Contoso Passkey Manager passkey](images/authentication-contoso-passkey-manager.png)
 

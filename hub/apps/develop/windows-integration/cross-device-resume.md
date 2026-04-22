@@ -400,7 +400,7 @@ Every application is different, and it's up to Windows to understand the target 
 
 ## Intent URIs
 
-URIs allow you to launch another app to perform a specific task, enabling helpful app-to-app scenarios. For more infomation about launching apps using URIs, see [Launch the default Windows app for a URI](/windows/apps/develop/launch/launch-default-app) and [Create Deep Links to App Content | Android Developers](https://developer.android.com/training/app-links/deep-linking).
+URIs allow you to launch another app to perform a specific task, enabling helpful app-to-app scenarios. For more information about launching apps using URIs, see [Launch the default Windows app for a URI](/windows/apps/develop/launch/launch-default-app) and [Create Deep Links to App Content | Android Developers](https://developer.android.com/training/app-links/deep-linking).
 
 ## Handling API responses in Windows
 

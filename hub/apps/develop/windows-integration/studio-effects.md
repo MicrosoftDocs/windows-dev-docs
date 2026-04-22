@@ -127,11 +127,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
  // Hard coded for this example, one can use DeviceInformation and/or
  // MediaCapture VideoDeviceController.Id to get the symbolic link
 
- string symlink = "\\?\USB#VID_04F2&PID_B6B6&MI_00#6&12293a26&1&0000#{e5323777-f976-4f5b-9b55-
-b94699c46e44}\GLOBAL";
+ string symlink = "\\?\USB#VID_04F2&PID_B6B6&MI_00#6&12293a26&1&0000#{e5323777-f976-4f5b-9b55-b94699c46e44}\GLOBAL";
  
- bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:camera?cameraId=" + 
-Uri.EscapeDataString(symlink) ));
+ bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:camera?cameraId=" + Uri.EscapeDataString(symlink) ));
 }
 ```
 

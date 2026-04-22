@@ -51,7 +51,7 @@ This table summarizes the notification delivery types.
 <td align="left"><ul>
 <li>A music app updates its tile to show what's &quot;Now Playing&quot;.</li>
 <li>A game app updates its tile with the user's high score when the user leaves the game.</li>
-<li>A badge whose glyph indicates that there's new info int the app is cleared when the app is activated.</li>
+<li>A badge whose glyph indicates that there's new info in the app is cleared when the app is activated.</li>
 </ul></td>
 </tr>
 <tr class="even">

@@ -29,7 +29,7 @@ There may be times when the system does not yet provide an exact motion solution
 :::row:::
     :::column:::
 <b>Direction Forward Out:</b><br>
-Fade out: 150m; Easing: Default Accelerate
+Fade out: 150ms; Easing: Default Accelerate
 <b>Direction Forward In:</b><br>
 Slide up 150px: 300ms; Easing: Default Decelerate
     :::column-end:::
