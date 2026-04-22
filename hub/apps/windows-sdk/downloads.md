@@ -17,6 +17,7 @@ For older versions, see the [Windows SDK download archive](downloads-archive.md)
 
 | Release  | Downloads |
 | ----- | -------------------------------------- |
+| **Windows SDK for Windows 11 (10.0.28000.1839)** <br/> April 2026 <br/> [Release notes](./release-notes.md#build-100280001839) | [Installer](https://go.microsoft.com/fwlink/?linkid=2361309) <br/> [ISO](https://go.microsoft.com/fwlink/?linkid=2361406) |
 | **Windows SDK for Windows 11 (10.0.28000.1721)** <br/> March 2026 <br/> [Release notes](./release-notes.md#build-100280001721) | [Installer](https://go.microsoft.com/fwlink/?linkid=2357925) <br/> [ISO](https://go.microsoft.com/fwlink/?linkid=2357642) |
 | **Windows SDK for Windows 11 26H1 for OEMs and Partners (10.0.28000.1)** <br/> November 2025 | [Installer](//go.microsoft.com/fwlink/?linkid=2342535) <br/> [ISO](//go.microsoft.com/fwlink/?linkid=2343616) |
 

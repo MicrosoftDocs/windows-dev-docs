@@ -16,6 +16,186 @@ For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## 28000 versions
 
+## Build 10.0.28000.1839
+
+Released: **April, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Devices.Haptics** (UniversalApiContract 19.0):
+> <br/>
+> New properties on `KnownSimpleHapticsControllerWaveforms`:
+>
+> - `Collide` — Waveform ID for collision haptic feedback
+> - `Align` — Waveform ID for alignment haptic feedback
+> - `Step` — Waveform ID for step haptic feedback
+> - `Grow` — Waveform ID for growth haptic feedback
+>
+> **Windows.Devices.Printers**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `VirtualPrinterInstallationStatus` enum — Installation status values including `InstallationSucceeded`
+> - `VirtualPrinterPreferredInputFormat` enum — Preferred input format values including `OpenXps`
+> - `IVirtualPrinterInstallationParameters` interface
+> - `IVirtualPrinterInstallationResult` interface
+> - `IVirtualPrinterManagerStatics` interface
+> - `IVirtualPrinterSupportedFormat` interface
+> - `IVirtualPrinterSupportedFormatFactory` interface
+> - `VirtualPrinterInstallationParameters` runtime class
+> - `VirtualPrinterInstallationResult` runtime class
+> - `VirtualPrinterSupportedFormat` runtime class
+>
+> **Windows.Media.ClosedCaptioning** (UniversalApiContract 15.0):
+> <br/>
+> New types:
+>
+> - `ClosedCaptionTheme` runtime class — Represents a closed caption theme with customization support
+> - `IClosedCaptionTheme` interface — Properties: `Id`, `DisplayName`, `FontColor`, `ComputedFontColor`, `FontOpacity`, `FontSize`, `FontStyle`, `FontEffect`, `BackgroundColor`, `ComputedBackgroundColor`, `BackgroundOpacity`, `RegionColor`, `ComputedRegionColor`, `RegionOpacity`
+> - `IClosedCaptionThemeStatics` interface — Methods: `GetAvailableThemes`, `GetSelectedTheme`, `TrySetSelectedTheme`; Events: `ThemesChanged`, `SelectedThemeChanged`
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions</summary>
+
+> **Windows.Storage.Search** (UniversalApiContract 19.0):
+> <br/>
+> New interface:
+>
+> - `IQueryOptionsAdditionalSearchSources` — Adds `IncludeCloudProviders` and `IncludeLocalSemanticIndex` properties to `QueryOptions`
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Bluetooth Hands-Free Profile (bthdef.h)**
+> <br/>
+> Added comprehensive Bluetooth Hands-Free Profile (HFP) feature constants:
+>
+> - `HFP_AG_SDP_SUPPORTED_FEATURE_*` — Audio Gateway SDP supported feature flags for three-way calling, echo cancellation, voice recognition, in-band ring tone, voice tag, wide-band speech, and more
+> - `HFP_AG_BRSF_SUPPORTED_FEATURE_*` — Audio Gateway BRSF supported feature flags for three-way calling, echo cancellation, voice recognition, codec negotiation, and more
+> - `HFP_HF_SDP_SUPPORTED_FEATURE_*` — Hands-Free SDP supported feature flags for echo cancellation, three-way calling, CLI presentation, voice recognition, and more
+> - `HFP_HF_BRSF_SUPPORTED_FEATURE_*` — Hands-Free BRSF supported feature flags for echo cancellation, three-way calling, voice recognition, codec negotiation, and more
+> - `HFP_NETWORK_NO_ABILITY_TO_REJECT`, `HFP_NETWORK_ABILITY_TO_REJECT` — Network call rejection capability flags
+>
+> **Graphics / Display (d3dkmdt.h)**
+> <br/>
+> Updated struct:
+>
+> - `_D3DKMT_DISPLAY_CAPS` — Added `CursorDoesNotSupportXorBlendWithMultiPlaneOverlay` bitfield
+>
+> **Graphics / Direct3D Kernel (d3dkmthk.h)**
+> <br/>
+> New APIs and structs for process debug blob collection:
+>
+> - `D3DKMT_MAPPROCESSDEBUGBLOB` / `D3DKMT_UNMAPPROCESSDEBUGBLOB` — Structs for mapping and unmapping process debug blobs
+> - `D3DKMT_DEVICE_MARKED_AS_ERROR_INFO` — Struct for device error information
+> - `DXGK_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION_INTERFACE_V1` — Feature interface for debug blob collection
+> - `D3DKMT_DEVICE_MARKED_AS_ERROR_FAILURE_CODE` — Enum for device error failure codes
+> - `PFND3DKMT_ENABLEPROCESSDEBUGBLOBCOLLECTION`, `PFND3DKMT_DISABLEPROCESSDEBUGBLOBCOLLECTION`, `PFND3DKMT_MAPPROCESSDEBUGBLOB`, `PFND3DKMT_UNMAPPROCESSDEBUGBLOB` — Function pointers for debug blob operations
+>
+> **Graphics / Display Driver (d3dukmdt.h)**
+> <br/>
+> New driver feature:
+>
+> - `DXGK_DRIVER_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION` — Driver feature for process debug blob collection
+> - `DXGK_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION` — Feature ID for process debug blob collection
+>
+> **HID Usages (hidusage.h)**
+> <br/>
+> New haptics usage values:
+>
+> - `HID_USAGE_HAPTICS_WAVEFORM_COLLIDE`, `HID_USAGE_HAPTICS_WAVEFORM_ALIGN`, `HID_USAGE_HAPTICS_WAVEFORM_STEP`, `HID_USAGE_HAPTICS_WAVEFORM_GROW`
+>
+> **Storage / SCSI (ntddscsi.h)**
+> <br/>
+> New define:
+>
+> - `BOOT_PARTITION_STATUS_WRITE_PROHIBITED` — Boot partition write protection status flag
+>
+> **Error Codes (ntstatus.h / winerror.h)**
+> <br/>
+> New error definitions:
+>
+> - `STATUS_VSM_FW_MEASUREMENTS_SEAL_FAILURE` — VSM firmware measurements seal failure
+> - `ERROR_VSM_FW_MEASUREMENTS_SEAL_FAILURE` — Corresponding Win32 error code
+>
+> **NVMe (nvme.h)**
+> <br/>
+> Fixed typo:
+>
+> - `NVME_LOG_PAGE_BOOT_PARTITON` renamed to `NVME_LOG_PAGE_BOOT_PARTITION`
+>
+> **Security / SSPI (sspi.h)**
+> <br/>
+> New GUID:
+>
+> - `SEC_WINNT_AUTH_DATA_TYPE_PLACEHOLDER` — Placeholder authentication data type
+>
+> **Security / LSA (ntlsa.h)**
+> <br/>
+> New agent-based authentication APIs:
+>
+> - `LsaCreateAgentAccount` — Creates an agent account
+> - `LsaRetrieveAgentLogonCredential` — Retrieves agent logon credentials
+> - `LsaEnumerateAgentAccounts` — Enumerates agent accounts
+> - `LsaDeleteAgentAccount` — Deletes an agent account
+> - `LsaGetAgentOwner` — Gets the agent owner
+> - `LSA_AGENT_LOGON_CREDENTIAL` — Agent logon credential struct
+> - `LSA_AGENT_ACCOUNT_INFO` — Agent account information struct
+> - `LSA_AGENT_ACCOUNT_LIST` — List of agent accounts struct
+>
+> **Security / Authentication (NTSecPKG.h)**
+> <br/>
+> New definitions:
+>
+> - `KSecAllocateContextBuffer` — Function for allocating security context buffers
+> - Added `extern "C"` guards for C++ compatibility
+>
+> **Content Indexing (NTQuery.h)**
+> <br/>
+> New define:
+>
+> - `CI_VERSION_CORRID` — Content index correlation ID version constant
+>
+> **Text Services (TextStor.h)**
+> <br/>
+> New defines:
+>
+> - `TS_SD_DISABLEWRITINGSUGGESTIONS` — Flag to disable writing suggestions
+> - `TS_SS_MULTILINE` — Flag for multiline text store support
+>
+> **WRL Async (wrl/async.h)**
+> <br/>
+> Updated:
+>
+> - Async completion handling reworked for thread safety using `_InterlockedCompareExchange` and reference counting (`cCompleteDelegateRefCount_`)
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Edition Upgrade Helper (EditionUpgradeHelper.idl)**
+> <br/>
+> Updated method:
+>
+> - `IClipServiceNotificationHelper::ShowToast` — Parameter list simplified from 5 BSTR parameters to `void`
+>
+> **Text Services Framework (TextStor.idl)**
+> <br/>
+> New constants:
+>
+> - `TS_SD_DISABLEWRITINGSUGGESTIONS` — Flag to disable writing suggestions
+> - `TS_SS_MULTILINE` — Flag for multiline text store support
+
+</details>
+
+---
+
 ## Build 10.0.28000.1721
 
 Released: **March, 2026** <br><br>
