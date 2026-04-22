@@ -37,7 +37,7 @@ Windows.System.Launcher.LaunchUriAsync(clickToDoUri)
 ```cppwinrt
 winrt::Windows::Foundation::Uri clickToDoUri(L"ms-clicktodo://");  
  
-winrt::Windows::System::Launcher::LaunchUriAsync(clickToDoUri);
+co_await winrt::Windows::System::Launcher::LaunchUriAsync(clickToDoUri);
 ```
 
 ---
