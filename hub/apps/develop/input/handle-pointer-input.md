@@ -57,7 +57,7 @@ Here are some code snippets from a basic pointer tracking app that show how to l
 
 ![Pointer application UI](images/pointers/pointers1.gif)
 
-**Download this sample from [Pointer input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/winui3-pointers.zip)**
+**See the complete sample: [Input sample (WinUI 3)](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)**
 
 ### Create the UI
 
@@ -623,7 +623,7 @@ This particular app uses both color and animation to highlight the primary point
 
 ![Pointer application with animated visual feedback](images/pointers/pointers-usercontrol-animation.gif)
 
-**Download this sample from [Pointer input sample (UserControl with animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/winui3-pointers-animation.zip)**
+**See [GestureRecognizer.xaml.cs](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Input/cs-winui/GestureRecognizer.xaml.cs) for a complete example using pointer events with GestureRecognizer.**
 
 ### Visual feedback
 
@@ -872,16 +872,12 @@ Here's the MainPage.xaml:
 
 ### Handle pointer events
 
-Finally, we define our basic pointer event handlers in the MainPage.xaml.cs code-behind. We won't reproduce the code here as the basics were covered in the previous example, but you can download the working sample from [Pointer input sample (UserControl with animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/winui3-pointers-animation.zip).
+Finally, we define our basic pointer event handlers in the MainPage.xaml.cs code-behind. We won't reproduce the code here as the basics were covered in the previous example. See the [Input sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui) for a complete working project.
 
 ## Related articles
 
-### Topic samples
+### Samples
 
-- [Pointer input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/winui3-pointers.zip)
-- [Pointer input sample (UserControl with animation)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/winui3-pointers-animation.zip)
-
-### Windows App SDK samples
-
-- [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples) — Official Windows App SDK samples
-- [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery) — Showcases WinUI 3 controls and features
+- [Input sample (WinUI 3)](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui) — Demonstrates pointer events, gesture recognition, and input cursors
+- [GestureRecognizer.xaml.cs](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Input/cs-winui/GestureRecognizer.xaml.cs) — Pointer events with GestureRecognizer
+- [GestureRecognizerManipulation.xaml.cs](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Input/cs-winui/GestureRecognizerManipulation.xaml.cs) — Manipulation (drag/scale/rotate) with pointer input
