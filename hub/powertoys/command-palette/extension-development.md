@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Command Palette is the go-to launcher for Windows power users — a fast, extensible interface for launching apps, running commands, and getting things done. With the Command Palette extension platform, you can build tools that plug directly into that workflow — putting your ideas right where people are already working.
 
-:::image type="content" source="../images/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
+:::image type="content" source="../images/command-palette/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
 
 Whether you want to build something for yourself, share it with the community, or distribute it to your team, the platform is designed to get you from idea to working extension quickly.
 

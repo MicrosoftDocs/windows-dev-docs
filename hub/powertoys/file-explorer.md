@@ -54,7 +54,7 @@ Expand the **Source code files (Monaco)** section to change the following settin
 
 To enable preview support, set the extension to **On**.
 
-:::image type="content" source="images/powertoys-settings-fileexplorer.png" alt-text="Screenshot of PowerToys settings page showing File Explorer add-ons toggle enabled.":::
+:::image type="content" source="images/file-explorer/settings-fileexplorer.png" alt-text="Screenshot of PowerToys settings page showing File Explorer add-ons toggle enabled.":::
 
 If the preview pane does not appear to work after setting the extension to **On**, there is an advanced setting in Windows that may be blocking the preview handler. Go to **Options** in Windows File Explorer and under the **View** tab, you will see a list of **Advanced settings**. Ensure that **Show preview handlers in preview pane** is selected in order for the preview pane to display.
 
@@ -62,13 +62,13 @@ If the preview pane does not appear to work after setting the extension to **On*
 
 Open Windows File Explorer, go to **View** in the Explorer ribbon and select **Preview pane**.
 
-:::image type="content" source="images/powertoys-fileexplorer-win11.gif" alt-text="Screenshot of Windows 11 File Explorer showing PowerToys preview pane functionality.":::
+:::image type="content" source="images/file-explorer/fileexplorer-win11.gif" alt-text="Screenshot of Windows 11 File Explorer showing PowerToys preview pane functionality.":::
 
 ### Enabling the Explorer pane in Windows 10
 
 Open Windows File Explorer, go to **View** in the Explorer ribbon and select **Preview Pane**.
 
-:::image type="content" source="images/powertoys-fileexplorer.gif" alt-text="Screenshot of Windows 10 File Explorer showing PowerToys preview pane functionality.":::
+:::image type="content" source="images/file-explorer/fileexplorer.gif" alt-text="Screenshot of Windows 10 File Explorer showing PowerToys preview pane functionality.":::
 
 > [!NOTE]
 > It isn't possible to change the background color of the preview pane, so if you're working with transparent images with white shapes, you may not be able to see them in the preview.

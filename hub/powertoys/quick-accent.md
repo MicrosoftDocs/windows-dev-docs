@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Quick Accent, Win]
 
 # Quick Accent utility
 
-:::image type="content" source="images/pt-quick-accent.gif" alt-text="An animated GIF of Quick Accent utility overlay showing accented character options in PowerToys.":::
+:::image type="content" source="images/quick-accent/quick-accent.gif" alt-text="An animated GIF of Quick Accent utility overlay showing accented character options in PowerToys.":::
 
 Quick Accent utility provides an alternative way to type accented characters in Windows PowerToys. This tool helps users whose keyboards don't support specific accents with quick key combinations, making it easier to type international characters. The utility is based on [Damien Leroy's PowerAccent](https://github.com/damienleroy/PowerAccent).
 

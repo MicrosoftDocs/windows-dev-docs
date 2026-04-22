@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 Once your Command Palette extension is built and tested, you need to distribute it so users can install it. There are several ways to get your extension into the hands of users, each with different trade-offs.
 
-:::image type="content" source="../images/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
+:::image type="content" source="../images/command-palette/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
 
 ## Distribution options
 

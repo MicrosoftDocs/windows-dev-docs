@@ -12,11 +12,11 @@ no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
 
 Image Resizer is a Windows shell extension for bulk image-resizing that helps you quickly resize multiple images at once. After installing PowerToys, you can right-click on one or more selected image files in File Explorer and select **Resize with ImageResizer** from the menu to streamline your image processing workflow.
 
-:::image type="content" source="images/powertoys-resize-images.gif" alt-text="An animated GIF demo of PowerToys Image Resizer utility showing bulk image resizing process in Windows File Explorer.":::
+:::image type="content" source="images/image-resizer/resize-images.gif" alt-text="An animated GIF demo of PowerToys Image Resizer utility showing bulk image resizing process in Windows File Explorer.":::
 
 Image Resizer allows you to resize images by dragging and dropping your selected files with the right mouse button. This allows resized pictures to quickly be saved in a folder.
 
-:::image type="content" source="images/powertoys-resize-drag-drop.gif" alt-text="An animated GIF demo of PowerToys Image Resizer drag and drop functionality for bulk image resizing.":::
+:::image type="content" source="images/image-resizer/resize-drag-drop.gif" alt-text="An animated GIF demo of PowerToys Image Resizer drag and drop functionality for bulk image resizing.":::
 
 > [!NOTE]
 > If **Ignore the orientation of pictures** is selected, the width and height of the specified size *may* be swapped to match the orientation (portrait/landscape) of the current image. In other words: If selected, the **smallest** number (in width/height) in the settings will be applied to the **smallest** dimension of the picture. Regardless if this is declared as width or height. The idea is that different photos with different orientations will still be the same size.
@@ -25,7 +25,7 @@ Image Resizer allows you to resize images by dragging and dropping your selected
 
 On the **Image Resizer** page, configure the following settings.
 
-:::image type="content" source="images/powertoys-imageresize-settings.png" alt-text="A screenshot of PowerToys Image Resizer settings page showing size presets and configuration options.":::
+:::image type="content" source="images/image-resizer/imageresize-settings.png" alt-text="A screenshot of PowerToys Image Resizer settings page showing size presets and configuration options.":::
 
 ### Sizes
 

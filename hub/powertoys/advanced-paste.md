@@ -81,13 +81,13 @@ The following model providers are supported:
 
 Advanced Paste includes several text-based paste options. You find these options in the **Advanced Paste** window. Open the window by using the activation shortcut. You can also use customizable keyboard commands to directly invoke a paste action with quick keys.
 
-:::image type="content" source="images/pt-advanced-paste.png" alt-text="Advanced Paste screenshot":::
+:::image type="content" source="images/advanced-paste/advanced-paste.png" alt-text="Advanced Paste screenshot":::
 
 ### Paste as Plain Text
 
 **Paste as Plain Text** enables you to paste text stored in your clipboard, excluding any text-formatting, by using a quick key shortcut. The feature replaces any formatting included with the clipboard text with an unformatted version of the text.
 
-:::image type="content" source="images/pt-paste-as-plain-text.png" alt-text="Paste as Plain Text screenshot":::
+:::image type="content" source="images/advanced-paste/paste-as-plain-text.png" alt-text="Paste as Plain Text screenshot":::
 
 > [!NOTE]
 > Paste as Plain Text is a feature that runs locally and doesn't use AI.
@@ -220,7 +220,7 @@ Translate to French and save as a .txt file.
 
 Advanced Paste includes several image-based paste options. You can find these options in the **Advanced Paste** window. Open the window by using the activation shortcut. You can also set a quick key shortcut in settings.
 
-:::image type="content" source="images/pt-advanced-paste-img.png" alt-text="Advanced Paste image screenshot":::
+:::image type="content" source="images/advanced-paste/img.png" alt-text="Advanced Paste image screenshot":::
 
 ### Paste Image to text
 
@@ -242,7 +242,7 @@ The **Advanced Paste** window offers two paste options that work with media file
 
 You can cancel paste actions by selecting the cancel (**X**) button:
 
-:::image type="content" source="images/pt-advanced-paste-cancel.png" alt-text="A screenshot of the PowerToys Advanced Paste window processing a transcode operation with an available cancel button.":::
+:::image type="content" source="images/advanced-paste/cancel.png" alt-text="A screenshot of the PowerToys Advanced Paste window processing a transcode operation with an available cancel button.":::
 
 This cancel option is useful for media transcoding but also for other potentially long-running actions, such as the Paste with AI operations.
 
@@ -257,7 +257,7 @@ The feature uses the [Windows.Media.Transcoding](/uwp/api/windows.media.transcod
 
 The Transcode to .mp3 feature works with both audio and video files. It extracts the audio channel from the media on the clipboard and saves it as an .mp3 file.
 
-:::image type="content" source="images/pt-advanced-paste-transcode.png" alt-text="A screenshot of the PowerToys Advanced Paste window with the Transcode to .mp3 and Transcode to .mp4 (H.264/AAC) options enabled.":::
+:::image type="content" source="images/advanced-paste/transcode.png" alt-text="A screenshot of the PowerToys Advanced Paste window with the Transcode to .mp3 and Transcode to .mp4 (H.264/AAC) options enabled.":::
 
 Use this feature to extract audio from combined audio and video files to save disk space and to work with audio-only apps and devices.
 
