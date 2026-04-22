@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 04/10/2026
+ms.date: 04/22/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -156,6 +156,182 @@ This is a major version bump to the **28000** SDK series.
 ---
 
 ## 26100 versions
+
+## Build 10.0.26100.8249
+
+Released: **April, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Devices.Printers**:
+> <br/>
+> Updated methods:
+>
+> - `IIppAttributeConverterStatics.ConvertPrintTicketToIppAttributesForPrinter` — Now accepts an additional `targetPdlFormat` parameter
+>
+> Graduated from experimental to stable:
+>
+> - `IppAttributeConverter` runtime class
+> - `IppAttributeGroupKind` enum
+> - `IPdlPassthroughProvider2` interface
+>
+> **Windows.Graphics.Printing.PrintSupport**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IPrintSupportPrintDeviceCapabilitiesChangedEventArgs5` — Interface with `SetPdlPassthroughWithJobAttributesSupported` method
+>
+> New types:
+>
+> - `PrintSupportEnterpriseManagementUIEventArgs` — Implements `IActivatedEventArgs` and `IActivatedEventArgsWithUser` for enterprise management UI activation scenarios
+>
+> **Windows.Graphics.Printing.Workflow**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IPrintWorkflowPrinterJob3` — Interface with passthrough attribute support
+>
+> Updated properties:
+>
+> - `IsPassthroughJob` renamed to `IsPassthroughJobWithAttributes`
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions</summary>
+
+> **Windows.AI.Agents.Mcp**:
+> <br/>
+> New interface:
+>
+> - `IMcpMessageFilterExperimental2` — Adds `Initialize` method with client/server process identifiers and IDs, plus `OnMessage` for MCP message filtering
+>
+> **Windows.Devices.Haptics**:
+> <br/>
+> New properties on `KnownSimpleHapticsControllerWaveforms`:
+>
+> - `Collide` — Waveform ID for collision haptic feedback
+> - `Align` — Waveform ID for alignment haptic feedback
+> - `Step` — Waveform ID for step haptic feedback
+> - `Grow` — Waveform ID for growth haptic feedback
+>
+> **Windows.Graphics.Capture**:
+> <br/>
+> New interfaces:
+>
+> - `IDirect3D11CaptureFrame3` — Adds `ConfigurationIteration` property to capture frames
+> - `IGraphicsCaptureSession7` — Adds `ConfigurationIteration` property and window exclusion list management
+> - `IDisplayGraphicsCaptureSession` — Display-specific graphics capture session
+>
+> New methods:
+>
+> - `SetWindowExclusionList` — Sets a list of windows to exclude from capture
+> - `GetWindowExclusionList` — Gets the current window exclusion list
+>
+> **Windows.Media.ClosedCaptioning**:
+> <br/>
+> New types:
+>
+> - `ClosedCaptionTheme` — Represents a closed caption theme with customization support
+>
+> New methods:
+>
+> - `GetAvailableThemes` — Retrieves available closed caption themes
+> - `GetSelectedTheme` — Gets the currently selected theme
+> - `TrySetSelectedTheme` — Attempts to set the selected theme
+>
+> New events:
+>
+> - `SelectedThemeChanged` — Fires when the selected closed caption theme changes
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Graphics / Direct3D Kernel (d3dkmthk.h)**
+> <br/>
+> New APIs and structs for process debug blob collection:
+>
+> - `D3DKMT_MAPPROCESSDEBUGBLOB` / `D3DKMT_UNMAPPROCESSDEBUGBLOB` — Structs for mapping and unmapping process debug blobs
+> - `D3DKMT_DEVICE_MARKED_AS_ERROR_INFO` — Struct for device error information
+> - `DXGK_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION_INTERFACE_V1` — Feature interface for debug blob collection
+> - `D3DKMT_DEVICE_MARKED_AS_ERROR_FAILURE_CODE` — Enum for device error failure codes
+>
+> **Graphics / Display Driver (d3dukmdt.h)**
+> <br/>
+> New driver feature:
+>
+> - `DXGK_DRIVER_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION` — Driver feature for process debug blob collection
+> - `DXGK_ISFEATUREENABLED_RESULT` — Expanded bitfields with `Available` and `Experimental` fields
+>
+> **Event Tracing (evntprov.h / evntcons.h)**
+> <br/>
+> New definitions:
+>
+> - `EVENT_DATA_DESCRIPTOR_TYPE_RESERVED1` — Reserved event data descriptor type
+> - `EventProviderSetReserved2` — New value in `EVENT_INFO_CLASS` enum
+> - `EVENT_HEADER_FLAG_RESERVED1` — New event header flag
+>
+> **HID Usages (hidusage.h)**
+> <br/>
+> New haptics usage values:
+>
+> - `HID_USAGE_HAPTICS_WAVEFORM_COLLIDE` — Collision haptic waveform
+> - `HID_USAGE_HAPTICS_WAVEFORM_ALIGN` — Alignment haptic waveform
+> - `HID_USAGE_HAPTICS_WAVEFORM_STEP` — Step haptic waveform
+> - `HID_USAGE_HAPTICS_WAVEFORM_GROW` — Growth haptic waveform
+>
+> **Error Codes (winerror.h)**
+> <br/>
+> New BitLocker error codes:
+>
+> - `FVE_E_MISSING_PROTECTORS` — BitLocker protectors are missing
+> - `FVE_E_METHOD_MISMATCH` — BitLocker method mismatch
+>
+> **Security / Authentication (NTSecPKG.h)**
+> <br/>
+> New definitions:
+>
+> - `SECPKG_CALL_AGENT_LOGON` — Security package call flag for agent-based logon
+> - `KSecAllocateContextBuffer` — Function for allocating security context buffers
+> - Added `extern "C"` guards for C++ compatibility
+>
+> **Crypto / TPM (ncrypt.h)**
+> <br/>
+> New TPM property defines:
+>
+> - `NCRYPT_PCP_AIKSTORE_PROPERTY` — TPM AIK store property
+> - `NCRYPT_PCP_EKSTORE_PROPERTY` — TPM EK store property
+>
+> **Content Indexing (NTQuery.h)**
+> <br/>
+> New define:
+>
+> - `CI_VERSION_QUERY_METADATA` — Content index version for query metadata / semantic reliability
+>
+> **Shell API (shellapi.h)**
+> <br/>
+> New define:
+>
+> - `ABC_OVERLAYDESKTOPICONS` — Overlay desktop icons flag for `ABM_NEW`
+>
+> **Rust Bindgen Compatibility (ntdef.h / winnt.h)**
+> <br/>
+> Updated:
+>
+> - `DECLSPEC_NOINITALL` macro now excludes Rust bindgen passes via `!defined(RUST_BINDGEN)`
+>
+> **WRL Async (wrl/async.h)**
+> <br/>
+> Updated:
+>
+> - Async completion handling reworked for thread safety using `_InterlockedCompareExchange` and reference counting (`cCompleteDelegateRefCount_`)
+
+</details>
+
+---
 
 ## Build 10.0.26100.8038
 
