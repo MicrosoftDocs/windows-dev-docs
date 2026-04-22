@@ -81,47 +81,11 @@ Released: **April, 2026** <br><br>
 > - `HFP_HF_BRSF_SUPPORTED_FEATURE_*` — Hands-Free BRSF supported feature flags for echo cancellation, three-way calling, voice recognition, codec negotiation, and more
 > - `HFP_NETWORK_NO_ABILITY_TO_REJECT`, `HFP_NETWORK_ABILITY_TO_REJECT` — Network call rejection capability flags
 >
-> **Graphics / Display (d3dkmdt.h)**
-> <br/>
-> Updated struct:
->
-> - `_D3DKMT_DISPLAY_CAPS` — Added `CursorDoesNotSupportXorBlendWithMultiPlaneOverlay` bitfield
->
-> **Graphics / Direct3D Kernel (d3dkmthk.h)**
-> <br/>
-> New APIs and structs for process debug blob collection:
->
-> - `D3DKMT_MAPPROCESSDEBUGBLOB` / `D3DKMT_UNMAPPROCESSDEBUGBLOB` — Structs for mapping and unmapping process debug blobs
-> - `D3DKMT_DEVICE_MARKED_AS_ERROR_INFO` — Struct for device error information
-> - `DXGK_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION_INTERFACE_V1` — Feature interface for debug blob collection
-> - `D3DKMT_DEVICE_MARKED_AS_ERROR_FAILURE_CODE` — Enum for device error failure codes
-> - `PFND3DKMT_ENABLEPROCESSDEBUGBLOBCOLLECTION`, `PFND3DKMT_DISABLEPROCESSDEBUGBLOBCOLLECTION`, `PFND3DKMT_MAPPROCESSDEBUGBLOB`, `PFND3DKMT_UNMAPPROCESSDEBUGBLOB` — Function pointers for debug blob operations
->
-> **Graphics / Display Driver (d3dukmdt.h)**
-> <br/>
-> New driver feature:
->
-> - `DXGK_DRIVER_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION` — Driver feature for process debug blob collection
-> - `DXGK_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION` — Feature ID for process debug blob collection
->
 > **HID Usages (hidusage.h)**
 > <br/>
 > New haptics usage values:
 >
 > - `HID_USAGE_HAPTICS_WAVEFORM_COLLIDE`, `HID_USAGE_HAPTICS_WAVEFORM_ALIGN`, `HID_USAGE_HAPTICS_WAVEFORM_STEP`, `HID_USAGE_HAPTICS_WAVEFORM_GROW`
->
-> **Storage / SCSI (ntddscsi.h)**
-> <br/>
-> New define:
->
-> - `BOOT_PARTITION_STATUS_WRITE_PROHIBITED` — Boot partition write protection status flag
->
-> **Error Codes (ntstatus.h / winerror.h)**
-> <br/>
-> New error definitions:
->
-> - `STATUS_VSM_FW_MEASUREMENTS_SEAL_FAILURE` — VSM firmware measurements seal failure
-> - `ERROR_VSM_FW_MEASUREMENTS_SEAL_FAILURE` — Corresponding Win32 error code
 >
 > **NVMe (nvme.h)**
 > <br/>
@@ -430,22 +394,6 @@ Released: **April, 2026** <br><br>
 <details>
 <summary>Win32 API additions and updates</summary>
 
-> **Graphics / Direct3D Kernel (d3dkmthk.h)**
-> <br/>
-> New APIs and structs for process debug blob collection:
->
-> - `D3DKMT_MAPPROCESSDEBUGBLOB` / `D3DKMT_UNMAPPROCESSDEBUGBLOB` — Structs for mapping and unmapping process debug blobs
-> - `D3DKMT_DEVICE_MARKED_AS_ERROR_INFO` — Struct for device error information
-> - `DXGK_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION_INTERFACE_V1` — Feature interface for debug blob collection
-> - `D3DKMT_DEVICE_MARKED_AS_ERROR_FAILURE_CODE` — Enum for device error failure codes
->
-> **Graphics / Display Driver (d3dukmdt.h)**
-> <br/>
-> New driver feature:
->
-> - `DXGK_DRIVER_FEATURE_PROCESS_DEBUG_BLOB_COLLECTION` — Driver feature for process debug blob collection
-> - `DXGK_ISFEATUREENABLED_RESULT` — Expanded bitfields with `Available` and `Experimental` fields
->
 > **Event Tracing (evntprov.h / evntcons.h)**
 > <br/>
 > New definitions:
