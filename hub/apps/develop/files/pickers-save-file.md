@@ -93,7 +93,7 @@ Use a [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.stor
     
     // (Optional) Sets the folder that the file save dialog displays when it opens.
     //     If not specified or the specified path doesn't exist, defaults to the last folder the user visited.
-    savePicker.SuggestedFolder = L"C:\\MyFiles",
+    savePicker.SuggestedFolder(L"C:\\MyFiles");
     
     // (Optional) specify the text displayed on the commit button. 
     //     If not specified, the system uses a default label of "Save" (suitably translated).
