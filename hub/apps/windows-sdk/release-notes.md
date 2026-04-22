@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 04/10/2026
+ms.date: 04/22/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,150 @@ You can update the SDK by manually installing the new build, updating in Visual 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## 28000 versions
+
+## Build 10.0.28000.1839
+
+Released: **April, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Devices.Haptics** (UniversalApiContract 19.0):
+> <br/>
+> New properties on `KnownSimpleHapticsControllerWaveforms`:
+>
+> - `Collide` — Waveform ID for collision haptic feedback
+> - `Align` — Waveform ID for alignment haptic feedback
+> - `Step` — Waveform ID for step haptic feedback
+> - `Grow` — Waveform ID for growth haptic feedback
+>
+> **Windows.Devices.Printers**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `VirtualPrinterInstallationStatus` enum — Installation status values including `InstallationSucceeded`
+> - `VirtualPrinterPreferredInputFormat` enum — Preferred input format values including `OpenXps`
+> - `IVirtualPrinterInstallationParameters` interface
+> - `IVirtualPrinterInstallationResult` interface
+> - `IVirtualPrinterManagerStatics` interface
+> - `IVirtualPrinterSupportedFormat` interface
+> - `IVirtualPrinterSupportedFormatFactory` interface
+> - `VirtualPrinterInstallationParameters` runtime class
+> - `VirtualPrinterInstallationResult` runtime class
+> - `VirtualPrinterSupportedFormat` runtime class
+>
+> **Windows.Media.ClosedCaptioning** (UniversalApiContract 15.0):
+> <br/>
+> New types:
+>
+> - `ClosedCaptionTheme` runtime class — Represents a closed caption theme with customization support
+> - `IClosedCaptionTheme` interface — Properties: `Id`, `DisplayName`, `FontColor`, `ComputedFontColor`, `FontOpacity`, `FontSize`, `FontStyle`, `FontEffect`, `BackgroundColor`, `ComputedBackgroundColor`, `BackgroundOpacity`, `RegionColor`, `ComputedRegionColor`, `RegionOpacity`
+> - `IClosedCaptionThemeStatics` interface — Methods: `GetAvailableThemes`, `GetSelectedTheme`, `TrySetSelectedTheme`; Events: `ThemesChanged`, `SelectedThemeChanged`
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions</summary>
+
+> **Windows.Storage.Search** (UniversalApiContract 19.0):
+> <br/>
+> New interface:
+>
+> - `IQueryOptionsAdditionalSearchSources` — Adds `IncludeCloudProviders` and `IncludeLocalSemanticIndex` properties to `QueryOptions`
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Bluetooth Hands-Free Profile (bthdef.h)**
+> <br/>
+> Added comprehensive Bluetooth Hands-Free Profile (HFP) feature constants:
+>
+> - `HFP_AG_SDP_SUPPORTED_FEATURE_*` — Audio Gateway SDP supported feature flags for three-way calling, echo cancellation, voice recognition, in-band ring tone, voice tag, wide-band speech, and more
+> - `HFP_AG_BRSF_SUPPORTED_FEATURE_*` — Audio Gateway BRSF supported feature flags for three-way calling, echo cancellation, voice recognition, codec negotiation, and more
+> - `HFP_HF_SDP_SUPPORTED_FEATURE_*` — Hands-Free SDP supported feature flags for echo cancellation, three-way calling, CLI presentation, voice recognition, and more
+> - `HFP_HF_BRSF_SUPPORTED_FEATURE_*` — Hands-Free BRSF supported feature flags for echo cancellation, three-way calling, voice recognition, codec negotiation, and more
+> - `HFP_NETWORK_NO_ABILITY_TO_REJECT`, `HFP_NETWORK_ABILITY_TO_REJECT` — Network call rejection capability flags
+>
+> **HID Usages (hidusage.h)**
+> <br/>
+> New haptics usage values:
+>
+> - `HID_USAGE_HAPTICS_WAVEFORM_COLLIDE`, `HID_USAGE_HAPTICS_WAVEFORM_ALIGN`, `HID_USAGE_HAPTICS_WAVEFORM_STEP`, `HID_USAGE_HAPTICS_WAVEFORM_GROW`
+>
+> **NVMe (nvme.h)**
+> <br/>
+> Fixed typo:
+>
+> - `NVME_LOG_PAGE_BOOT_PARTITON` renamed to `NVME_LOG_PAGE_BOOT_PARTITION`
+>
+> **Security / SSPI (sspi.h)**
+> <br/>
+> New GUID:
+>
+> - `SEC_WINNT_AUTH_DATA_TYPE_PLACEHOLDER` — Placeholder authentication data type
+>
+> **Security / LSA (ntlsa.h)**
+> <br/>
+> New agent-based authentication APIs:
+>
+> - `LsaCreateAgentAccount` — Creates an agent account
+> - `LsaRetrieveAgentLogonCredential` — Retrieves agent logon credentials
+> - `LsaEnumerateAgentAccounts` — Enumerates agent accounts
+> - `LsaDeleteAgentAccount` — Deletes an agent account
+> - `LsaGetAgentOwner` — Gets the agent owner
+> - `LSA_AGENT_LOGON_CREDENTIAL` — Agent logon credential struct
+> - `LSA_AGENT_ACCOUNT_INFO` — Agent account information struct
+> - `LSA_AGENT_ACCOUNT_LIST` — List of agent accounts struct
+>
+> **Security / Authentication (NTSecPKG.h)**
+> <br/>
+> New definitions:
+>
+> - `KSecAllocateContextBuffer` — Function for allocating security context buffers
+> - Added `extern "C"` guards for C++ compatibility
+>
+> **Content Indexing (NTQuery.h)**
+> <br/>
+> New define:
+>
+> - `CI_VERSION_CORRID` — Content index correlation ID version constant
+>
+> **Text Services (TextStor.h)**
+> <br/>
+> New defines:
+>
+> - `TS_SD_DISABLEWRITINGSUGGESTIONS` — Flag to disable writing suggestions
+> - `TS_SS_MULTILINE` — Flag for multiline text store support
+>
+> **WRL Async (wrl/async.h)**
+> <br/>
+> Updated:
+>
+> - Async completion handling reworked for thread safety using `_InterlockedCompareExchange` and reference counting (`cCompleteDelegateRefCount_`)
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Edition Upgrade Helper (EditionUpgradeHelper.idl)**
+> <br/>
+> Updated method:
+>
+> - `IClipServiceNotificationHelper::ShowToast` — Parameter list simplified from 5 BSTR parameters to `void`
+>
+> **Text Services Framework (TextStor.idl)**
+> <br/>
+> New constants:
+>
+> - `TS_SD_DISABLEWRITINGSUGGESTIONS` — Flag to disable writing suggestions
+> - `TS_SS_MULTILINE` — Flag for multiline text store support
+
+</details>
+
+---
 
 ## Build 10.0.28000.1721
 
@@ -156,6 +300,166 @@ This is a major version bump to the **28000** SDK series.
 ---
 
 ## 26100 versions
+
+## Build 10.0.26100.8249
+
+Released: **April, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Devices.Printers**:
+> <br/>
+> Updated methods:
+>
+> - `IIppAttributeConverterStatics.ConvertPrintTicketToIppAttributesForPrinter` — Now accepts an additional `targetPdlFormat` parameter
+>
+> Graduated from experimental to stable:
+>
+> - `IppAttributeConverter` runtime class
+> - `IppAttributeGroupKind` enum
+> - `IPdlPassthroughProvider2` interface
+>
+> **Windows.Graphics.Printing.PrintSupport**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IPrintSupportPrintDeviceCapabilitiesChangedEventArgs5` — Interface with `SetPdlPassthroughWithJobAttributesSupported` method
+>
+> New types:
+>
+> - `PrintSupportEnterpriseManagementUIEventArgs` — Implements `IActivatedEventArgs` and `IActivatedEventArgsWithUser` for enterprise management UI activation scenarios
+>
+> **Windows.Graphics.Printing.Workflow**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IPrintWorkflowPrinterJob3` — Interface with passthrough attribute support
+>
+> Updated properties:
+>
+> - `IsPassthroughJob` renamed to `IsPassthroughJobWithAttributes`
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions</summary>
+
+> **Windows.AI.Agents.Mcp**:
+> <br/>
+> New interface:
+>
+> - `IMcpMessageFilterExperimental2` — Adds `Initialize` method with client/server process identifiers and IDs, plus `OnMessage` for MCP message filtering
+>
+> **Windows.Devices.Haptics**:
+> <br/>
+> New properties on `KnownSimpleHapticsControllerWaveforms`:
+>
+> - `Collide` — Waveform ID for collision haptic feedback
+> - `Align` — Waveform ID for alignment haptic feedback
+> - `Step` — Waveform ID for step haptic feedback
+> - `Grow` — Waveform ID for growth haptic feedback
+>
+> **Windows.Graphics.Capture**:
+> <br/>
+> New interfaces:
+>
+> - `IDirect3D11CaptureFrame3` — Adds `ConfigurationIteration` property to capture frames
+> - `IGraphicsCaptureSession7` — Adds `ConfigurationIteration` property and window exclusion list management
+> - `IDisplayGraphicsCaptureSession` — Display-specific graphics capture session
+>
+> New methods:
+>
+> - `SetWindowExclusionList` — Sets a list of windows to exclude from capture
+> - `GetWindowExclusionList` — Gets the current window exclusion list
+>
+> **Windows.Media.ClosedCaptioning**:
+> <br/>
+> New types:
+>
+> - `ClosedCaptionTheme` — Represents a closed caption theme with customization support
+>
+> New methods:
+>
+> - `GetAvailableThemes` — Retrieves available closed caption themes
+> - `GetSelectedTheme` — Gets the currently selected theme
+> - `TrySetSelectedTheme` — Attempts to set the selected theme
+>
+> New events:
+>
+> - `SelectedThemeChanged` — Fires when the selected closed caption theme changes
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Event Tracing (evntprov.h / evntcons.h)**
+> <br/>
+> New definitions:
+>
+> - `EVENT_DATA_DESCRIPTOR_TYPE_RESERVED1` — Reserved event data descriptor type
+> - `EventProviderSetReserved2` — New value in `EVENT_INFO_CLASS` enum
+> - `EVENT_HEADER_FLAG_RESERVED1` — New event header flag
+>
+> **HID Usages (hidusage.h)**
+> <br/>
+> New haptics usage values:
+>
+> - `HID_USAGE_HAPTICS_WAVEFORM_COLLIDE` — Collision haptic waveform
+> - `HID_USAGE_HAPTICS_WAVEFORM_ALIGN` — Alignment haptic waveform
+> - `HID_USAGE_HAPTICS_WAVEFORM_STEP` — Step haptic waveform
+> - `HID_USAGE_HAPTICS_WAVEFORM_GROW` — Growth haptic waveform
+>
+> **Error Codes (winerror.h)**
+> <br/>
+> New BitLocker error codes:
+>
+> - `FVE_E_MISSING_PROTECTORS` — BitLocker protectors are missing
+> - `FVE_E_METHOD_MISMATCH` — BitLocker method mismatch
+>
+> **Security / Authentication (NTSecPKG.h)**
+> <br/>
+> New definitions:
+>
+> - `SECPKG_CALL_AGENT_LOGON` — Security package call flag for agent-based logon
+> - `KSecAllocateContextBuffer` — Function for allocating security context buffers
+> - Added `extern "C"` guards for C++ compatibility
+>
+> **Crypto / TPM (ncrypt.h)**
+> <br/>
+> New TPM property defines:
+>
+> - `NCRYPT_PCP_AIKSTORE_PROPERTY` — TPM AIK store property
+> - `NCRYPT_PCP_EKSTORE_PROPERTY` — TPM EK store property
+>
+> **Content Indexing (NTQuery.h)**
+> <br/>
+> New define:
+>
+> - `CI_VERSION_QUERY_METADATA` — Content index version for query metadata / semantic reliability
+>
+> **Shell API (shellapi.h)**
+> <br/>
+> New define:
+>
+> - `ABC_OVERLAYDESKTOPICONS` — Overlay desktop icons flag for `ABM_NEW`
+>
+> **Rust Bindgen Compatibility (ntdef.h / winnt.h)**
+> <br/>
+> Updated:
+>
+> - `DECLSPEC_NOINITALL` macro now excludes Rust bindgen passes via `!defined(RUST_BINDGEN)`
+>
+> **WRL Async (wrl/async.h)**
+> <br/>
+> Updated:
+>
+> - Async completion handling reworked for thread safety using `_InterlockedCompareExchange` and reference counting (`cCompleteDelegateRefCount_`)
+
+</details>
+
+---
 
 ## Build 10.0.26100.8038
 
