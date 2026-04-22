@@ -16,7 +16,7 @@ Press <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. That's it
 > [!IMPORTANT]
 > Command Palette must be enabled and running in the background. You can enable or disable it from the PowerToys settings Home page, and change the activation shortcut in [Command Palette settings](settings.md).
 
-:::image type="content" source="../images/pt-cmdpal-overview1.gif" alt-text="An animated GIF of PowerToys Command Palette interface showing web search and git information features in action.":::
+:::image type="content" source="../images/command-palette/cmdpal-overview1.gif" alt-text="An animated GIF of PowerToys Command Palette interface showing web search and git information features in action.":::
 
 ## What you can do
 

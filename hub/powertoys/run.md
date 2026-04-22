@@ -17,7 +17,7 @@ To use PowerToys Run, select <kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *
 > [!IMPORTANT]
 > For this utility to work, PowerToys must be running in the background and Run must be enabled.
 
-![An animated GIF of a PowerToys Run demo opening apps](images/pt-powerrun-demo.gif)
+![An animated GIF of a PowerToys Run demo opening apps](images/run/powerrun-demo.gif)
 
 > [!NOTE]
 > PowerToys Run is getting an upgrade to v2! Check out the [Command Palette](command-palette/overview.md), PowerToys Run's evolution.
@@ -67,7 +67,7 @@ The following general options are available on the PowerToys Run settings page.
 
 PowerToys Run uses a plugin system to provide different types of results. The settings page includes a plugin manager that allows you to enable/disable the available plugins. By selecting and expanding the sections, you can customize the direct activation commands used by each plugin. In addition, you can select whether a plugin appears in global results and set additional plugin options where available.
 
-![PowerToys Run Plugin Manager](images/pt-run-plugin-manager.png)
+![PowerToys Run Plugin Manager](images/run/plugin-manager.png)
 
 #### Direct activation commands
 
@@ -457,11 +457,11 @@ With the Window Walker plugin, you can kill the process of a window if it stops 
 
 If the File Explorer settings in Windows are not configured to open each window in a separate process, you'll see the following message when searching for open Explorer windows:
 
-![Explorer Process Info in PowerToys Run](images/pt-run-explorer-info.png)
+![Explorer Process Info in PowerToys Run](images/run/explorer-info.png)
 
 You can turn off the message in the PowerToys Run plugin manager options for Window Walker, or select the message to change the File Explorer settings. On the **Folder options** window, select **Launch folder windows in a separate process**.
 
-![Folder Options Window](images/pt-run-folder-options.png)
+![Folder Options Window](images/run/folder-options.png)
 
 ### Windows Search plugin
 
@@ -471,11 +471,11 @@ With the Windows Search plugin, you can search for files and folders that are in
 
 If the indexing settings for Windows Search aren't set to cover all drives, you'll see the following warning when using the Windows Search plugin:
 
-![PowerToys Run Indexer Warning](images/pt-run-indexer-warning.png)
+![PowerToys Run Indexer Warning](images/run/indexer-warning.png)
 
 You can turn off the warning in the PowerToys Run plugin manager options for Windows Search, or select the warning to expand which drives are being indexed. After selecting the warning, the Windows settings page **Searching Windows** will open.
 
-![Indexing Settings](images/pt-run-indexing.png)
+![Indexing Settings](images/run/indexing.png)
 
 On the **Searching Windows** page, you can:
 
@@ -483,7 +483,7 @@ On the **Searching Windows** page, you can:
 - Specify folder paths to exclude.
 - Select **Advanced Search Indexer Settings** to set advanced index settings, add or remove search locations, index encrypted files, etc.
 
-![Advanced Indexing Settings](images/pt-run-indexing-advanced.png)
+![Advanced Indexing Settings](images/run/indexing-advanced.png)
 
 ## Known issues
 
