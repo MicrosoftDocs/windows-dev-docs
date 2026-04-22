@@ -635,7 +635,7 @@ namespace winrt::NavigationViewDemo::implementation
             muxc::NavigationView const& /* sender */,
             muxc::NavigationViewSelectionChangedEventArgs const& args);
         void NavView_Navigate(
-            Windows::UI::Xaml::Interop::TypeName navPageType,
+            Microsoft::UI::Xaml::Interop::TypeName navPageType,
             Microsoft::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo);
         void NavView_BackRequested(
             muxc::NavigationView const& /* sender */,
@@ -722,9 +722,9 @@ namespace winrt::NavigationViewDemo::implementation
         }
         else if (args.InvokedItemContainer())
         {
-            Windows::UI::Xaml::Interop::TypeName pageTypeName;
+            Microsoft::UI::Xaml::Interop::TypeName pageTypeName;
             pageTypeName.Name = unbox_value<hstring>(args.InvokedItemContainer().Tag());
-            pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+            pageTypeName.Kind = Microsoft::UI::Xaml::Interop::TypeKind::Primitive;
             NavView_Navigate(pageTypeName, args.RecommendedNavigationTransitionInfo());
         }
     }
@@ -743,20 +743,20 @@ namespace winrt::NavigationViewDemo::implementation
         }
         else if (args.SelectedItemContainer())
         {
-            Windows::UI::Xaml::Interop::TypeName pageTypeName;
+            Microsoft::UI::Xaml::Interop::TypeName pageTypeName;
             pageTypeName.Name = unbox_value<hstring>(args.SelectedItemContainer().Tag());
-            pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+            pageTypeName.Kind = Microsoft::UI::Xaml::Interop::TypeKind::Primitive;
             NavView_Navigate(pageTypeName, args.RecommendedNavigationTransitionInfo());
         }
     }
 
     void MainPage::NavView_Navigate(
-        Windows::UI::Xaml::Interop::TypeName navPageType,
+        Microsoft::UI::Xaml::Interop::TypeName navPageType,
         Microsoft::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo)
     {
         // Get the page type before navigation so you can prevent duplicate
         // entries in the backstack.
-        Windows::UI::Xaml::Interop::TypeName preNavPageType =
+        Microsoft::UI::Xaml::Interop::TypeName preNavPageType =
             ContentFrame().CurrentSourcePageType();
 
         // Navigate only if the selected page isn't currently loaded.

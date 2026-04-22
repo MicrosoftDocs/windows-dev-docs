@@ -136,7 +136,7 @@ namespace winrt::AppName::implementation
 
 // App.xaml.h
 using namespace winrt;
-using namespace Windows::UI::Xaml::Controls;
+using namespace Microsoft::UI::Xaml::Controls;
 
 struct App : AppT<App>
 {

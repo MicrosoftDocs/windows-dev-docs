@@ -130,14 +130,14 @@ The following code sets up the global dictionary object for tracking each active
 // Dictionary to maintain information about each active pointer. 
 // An entry is added during PointerPressed/PointerEntered events and removed 
 // during PointerReleased/PointerCaptureLost/PointerCanceled/PointerExited events.
-Dictionary<uint, Windows.UI.Xaml.Input.Pointer> pointers;
+Dictionary<uint, Microsoft.UI.Xaml.Input.Pointer> pointers;
 
 public MainPage()
 {
     this.InitializeComponent();
 
     // Initialize the dictionary.
-    pointers = new Dictionary<uint, Windows.UI.Xaml.Input.Pointer>();
+    pointers = new Dictionary<uint, Microsoft.UI.Xaml.Input.Pointer>();
 
     // Declare the pointer event handlers.
     Target.PointerPressed += 
@@ -205,7 +205,7 @@ void Target_PointerPressed(object sender, PointerRoutedEventArgs e)
     }
 
     // Change background color of target when pointer contact detected.
-    Target.Fill = new SolidColorBrush(Windows.UI.Colors.Green);
+    Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Green);
 
     // Display pointer details.
     CreateInfoPop(ptrPt);
@@ -241,7 +241,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
     if (pointers.Count == 0)
     {
         // Change background color of target when pointer contact detected.
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Blue);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Blue);
     }
 
     // Display pointer details.
@@ -357,7 +357,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
     if (ptrPt.PointerDevice.PointerDeviceType != Windows.Devices.Input.PointerDeviceType.Mouse)
     {
         // Update target UI.
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Red);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Red);
 
         DestroyInfoPop(ptrPt);
 
@@ -376,7 +376,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
     }
     else
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Blue);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Blue);
     }
 }
 ```
@@ -408,7 +408,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 
     if (pointers.Count == 0)
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Red);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Red);
     }
 
     // Update the UI and pointer details.
@@ -448,7 +448,7 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 
     if (pointers.Count == 0)
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Black);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Black);
     }
 
     DestroyInfoPop(ptrPt);
@@ -483,7 +483,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
     if (pointers.Count == 0)
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Black);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Black);
     }
 
     // Remove contact from dictionary.
@@ -512,7 +512,7 @@ void CreateInfoPop(PointerPoint ptrPt)
 {
     TextBlock pointerDetails = new TextBlock();
     pointerDetails.Name = ptrPt.PointerId.ToString();
-    pointerDetails.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+    pointerDetails.Foreground = new SolidColorBrush(Microsoft.UI.Colors.White);
     pointerDetails.Text = QueryPointer(ptrPt);
 
     TranslateTransform x = new TranslateTransform();
@@ -535,7 +535,7 @@ void UpdateInfoPop(PointerPoint ptrPt)
 {
     foreach (var pointerDetails in Container.Children)
     {
-        if (pointerDetails.GetType().ToString() == "Windows.UI.Xaml.Controls.TextBlock")
+        if (pointerDetails.GetType().ToString() == "Microsoft.UI.Xaml.Controls.TextBlock")
         {
             TextBlock textBlock = (TextBlock)pointerDetails;
             if (textBlock.Name == ptrPt.PointerId.ToString())
@@ -702,9 +702,9 @@ We define a **[UserControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml
 And here's the code-behind:
 ```csharp
 using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 
 // The User Control item template is documented at 
 // https://go.microsoft.com/fwlink/?LinkId=234236

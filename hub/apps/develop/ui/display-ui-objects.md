@@ -40,7 +40,7 @@ These classes implement [**IInitializeWithWindow**](/windows/win32/api/shobjidl_
 * [**Windows.System.LauncherOptions**](/uwp/api/windows.system.launcheroptions)&mdash;Windows 10, version 1903 (10.0; Build 18362) and later
 * [**Windows.UI.Core.CoreWindowDialog**](/uwp/api/windows.ui.core.corewindowdialog)
 * [**Windows.UI.Core.CoreWindowFlyout**](/uwp/api/windows.ui.core.corewindowflyout)
-* [**Windows.UI.Popups.MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). But for new apps we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead.
+* [**Windows.UI.Popups.MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). But for new apps we recommend using the [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) control instead.
 * [**Windows.UI.Popups.PopupMenu**](/uwp/api/windows.ui.popups.popupmenu)
 * [**Windows.UI.StartScreen.SecondaryTile**](/uwp/api/windows.ui.startscreen.secondarytile)
 * [**Windows.Web.Http.Filters.HttpBaseProtocolFilter**](/uwp/api/windows.web.http.filters.httpbaseprotocolfilter)

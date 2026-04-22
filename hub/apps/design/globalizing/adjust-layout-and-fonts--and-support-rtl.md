@@ -59,11 +59,11 @@ this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
 var flowDirectionSetting = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues["LayoutDirection"];
 if (flowDirectionSetting == "LTR")
 {
-    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.LeftToRight;
+    this.layoutRoot.FlowDirection = Microsoft.UI.Xaml.FlowDirection.LeftToRight;
 }
 else
 {
-    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.RightToLeft;
+    this.layoutRoot.FlowDirection = Microsoft.UI.Xaml.FlowDirection.RightToLeft;
 }
 ```
 

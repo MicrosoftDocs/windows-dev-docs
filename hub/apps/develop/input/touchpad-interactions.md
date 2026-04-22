@@ -33,7 +33,7 @@ The input data provided by the touchpad sensor can be:
 
 A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your Windows app design for touch input and get touchpad support by default.
 
-Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
+Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
 
 The gestures and guidelines discussed in this topic can help to ensure that your app supports touchpad input seamlessly and with minimal code.
 
