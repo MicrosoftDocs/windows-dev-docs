@@ -14,7 +14,7 @@ To migrate your app from the [Universal Windows Platform](/windows/uwp/) (UWP) t
 > [!NOTE]
 > Your existing UWP app will continue to function as expected. However, to take advantage of modern features in [WinUI 3](../../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) we recommend migrating your app.
 
-Below are the steps, at a high level, for migrating manually. But see the following section for info about using the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool)).
+Below are the steps, at a high level, for migrating manually. But see the following section for info about using the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool).
 
 1. Create a new WinUI packaged desktop project (see [Create your first WinUI project](../../get-started/start-here.md)). That could go into your project's existing solution.
 2. Copy your XAML/UI code. In many cases you can simply change namespaces (for example, **Windows.UI.\*** to **Microsoft.UI.\***).
