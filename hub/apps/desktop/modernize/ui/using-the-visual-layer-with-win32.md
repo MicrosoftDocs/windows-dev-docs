@@ -285,9 +285,9 @@ For this example, you add code that creates a randomly-colored square [SpriteVis
             auto visual = m_compositor.CreateSpriteVisual();
 
             auto element = m_compositor.CreateSpriteVisual();
-            uint8_t r = (double)(double)(rand() % 255);;
-            uint8_t g = (double)(double)(rand() % 255);;
-            uint8_t b = (double)(double)(rand() % 255);;
+            uint8_t r = static_cast<uint8_t>(rand() % 255);
+            uint8_t g = static_cast<uint8_t>(rand() % 255);
+            uint8_t b = static_cast<uint8_t>(rand() % 255);
 
             element.Brush(m_compositor.CreateColorBrush({ 255, r, g, b }));
             element.Size({ size, size });
@@ -495,9 +495,9 @@ void CompositionHost::AddElement(float size, float x, float y)
         auto visual = m_compositor.CreateSpriteVisual();
 
         auto element = m_compositor.CreateSpriteVisual();
-        uint8_t r = (double)(double)(rand() % 255);;
-        uint8_t g = (double)(double)(rand() % 255);;
-        uint8_t b = (double)(double)(rand() % 255);;
+        uint8_t r = static_cast<uint8_t>(rand() % 255);
+        uint8_t g = static_cast<uint8_t>(rand() % 255);
+        uint8_t b = static_cast<uint8_t>(rand() % 255);
 
         element.Brush(m_compositor.CreateColorBrush({ 255, r, g, b }));
         element.Size({ size, size });
