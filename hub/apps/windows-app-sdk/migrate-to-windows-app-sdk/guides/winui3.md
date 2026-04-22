@@ -30,7 +30,7 @@ In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winr
 
 ## Change Windows.UI.Xaml.Window.Current to App.Window
 
-This section applies if you're using the [**Windows.UI.Xaml.Window.Current**](/uwp/api/windows.ui.xaml.window.current) property in your UWP app. That property isn't supported in the Windows App SDK, so this section describes how to port UWP code that uses **Window.Current**.
+This section applies if you're using the [**Windows.UI.Xaml.Window.Current**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.current) property in your UWP app. That property isn't supported in the Windows App SDK, so this section describes how to port UWP code that uses **Window.Current**.
 
 ```csharp
 // MainPage.xaml.cs in a UWP app
@@ -93,7 +93,7 @@ In your UWP app, if you use certain types from the [**Windows.UI.Popups**](/uwp/
 The steps that you have to follow in a desktop app are described in [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
 
 > [!NOTE]
-> For new apps, we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
+> For new apps, we recommend using the [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
 
 Here's some typical UWP code to display a [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog).
 
@@ -181,7 +181,7 @@ To use **DataTransferManager.ShowShareUI** in your Windows App SDK app, you need
 
 ## ContentDialog, and Popup
 
-If in your UWP app you're using the [**Windows.UI.Xaml.Controls.ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) or [**Windows.UI.Xaml.Controls.Primitives.Popup**](/uwp/api/windows.ui.xaml.controls.primitives.popup) classes, then this section contains info to help you migrate that code. The code examples below use **ContentDialog**, but you can apply exactly the same techniques to displaying a **Popup** object.
+If in your UWP app you're using the [**Windows.UI.Xaml.Controls.ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) or [**Windows.UI.Xaml.Controls.Primitives.Popup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup) classes, then this section contains info to help you migrate that code. The code examples below use **ContentDialog**, but you can apply exactly the same techniques to displaying a **Popup** object.
 
 Here's some typical UWP code to display a **ContentDialog**.
 
@@ -249,7 +249,7 @@ In addition, you won't be able to copy a `<Page.Resources>` element over to **Ma
 
 ## AcrylicBrush.BackgroundSource property
 
-The [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
+The [**AcrylicBrush.BackgroundSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
 
 So if you're accessing the **AcrylicBrush.BackgroundSource** property in the source code of your UWP app (whether that's in XAML markup or in imperative code), then remove that code when migrating your app to the Windows App SDK. Instead, use the [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller) class.
 
