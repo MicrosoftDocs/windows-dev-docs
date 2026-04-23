@@ -16,6 +16,9 @@ ms.localizationpriority: medium
 Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
 
 > **Important APIs**:  [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
+>
+> [!NOTE]
+> The `Windows.Devices.Input` and `Windows.UI.Input` APIs are Windows SDK (WinRT) APIs that work in both UWP and WinUI 3 apps. For WinUI 3-specific input APIs, see [Microsoft.UI.Input](/windows/windows-app-sdk/api/winrt/microsoft.ui.input).
 
 ## Recommendations
 

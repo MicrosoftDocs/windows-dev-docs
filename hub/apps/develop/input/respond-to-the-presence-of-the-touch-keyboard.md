@@ -70,6 +70,9 @@ Here are a few basic recommendations for custom text input controls.
 
 Here's an example of attaching event handlers for the [Showing](/uwp/api/windows.ui.viewmanagement.inputpane.showing) and [Hiding](/uwp/api/windows.ui.viewmanagement.inputpane.hiding) events of the touch keyboard.
 
+> [!NOTE]
+> The code samples use `InputPane.GetForCurrentView()`, which is a UWP-era API. For WinUI 3 desktop apps, consider using [InputPane.GetForWindow](/uwp/api/windows.ui.viewmanagement.inputpane.getforwindow) with your window's HWND instead.
+
 ```csharp
 using Windows.UI.ViewManagement;
 using Microsoft.UI.Xaml.Controls;
@@ -212,9 +215,13 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 ### Samples
 
-- [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
+- [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard) (UWP)
+- [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery) - For WinUI 3 control examples
 
 ### Archive samples
+
+> [!NOTE]
+> The following samples are from archived repositories and target Windows 8 or early UWP. They may not compile in modern WinUI 3 projects.
 
 - [Input: Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard)
 - [Responding to the appearance of the on-screen keyboard sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Responding%20to%20the%20appearance%20of%20the%20on-screen%20keyboard%20sample)
