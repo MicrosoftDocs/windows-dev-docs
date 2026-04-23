@@ -142,7 +142,7 @@ This example shows how to retrieve the `redButtonStyle` resource out of a page's
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L"redButtonStyle")).as<Windows::UI::Xaml::Style>();
+        Microsoft::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L"redButtonStyle")).as<Microsoft::UI::Xaml::Style>();
     }
 ```
 
@@ -178,9 +178,9 @@ To look up app-wide resources from code, use **Application.Current.Resources** t
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Application::Current().Resources()
-                                                               .TryLookup(winrt::box_value(L"appButtonStyle"))
-                                                               .as<Windows::UI::Xaml::Style>();
+        Microsoft::UI::Xaml::Style style = Application::Current().Resources()
+                                                                 .TryLookup(winrt::box_value(L"appButtonStyle"))
+                                                                 .as<Microsoft::UI::Xaml::Style>();
     }
 ```
 
@@ -200,14 +200,16 @@ sealed partial class App : Application
 {
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        Frame rootFrame = Window.Current.Content as Frame;
-        if (rootFrame == null)
+        // In WinUI 3, use m_window (a field you create) instead of Window.Current
+        if (m_window.Content is not Frame rootFrame)
         {
-            SolidColorBrush brush = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 255, 0)); // green
+            SolidColorBrush brush = new SolidColorBrush(Microsoft.UI.Colors.Green);
             this.Resources["brush"] = brush;
             // … Other code that VS generates for you …
         }
     }
+
+    private Window m_window;
 }
 ```
 
@@ -217,7 +219,8 @@ sealed partial class App : Application
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
     Frame rootFrame{ nullptr };
-    auto content = Window::Current().Content();
+    // In WinUI 3, use m_window (a member variable you create) instead of Window::Current()
+    auto content = m_window.Content();
     if (content)
     {
         rootFrame = content.try_as<Frame>();
@@ -227,7 +230,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
     // just ensure that the window is active
     if (rootFrame == nullptr)
     {
-        Windows::UI::Xaml::Media::SolidColorBrush brush{ Windows::UI::ColorHelper::FromArgb(255, 0, 255, 0) };
+        Microsoft::UI::Xaml::Media::SolidColorBrush brush{ Microsoft::UI::Colors::Green() };
         Resources().Insert(winrt::box_value(L"brush"), winrt::box_value(brush));
         // … Other code that VS generates for you …
 ```

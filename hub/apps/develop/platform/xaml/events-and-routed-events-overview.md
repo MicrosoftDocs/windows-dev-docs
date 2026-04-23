@@ -59,15 +59,15 @@ End Sub
 ```
 
 ```cppwinrt
-void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& e)
 {
-    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    auto b{ sender.as<Microsoft::UI::Xaml::Controls::Button>() };
     // More logic to do here.
 }
 ```
 
 ```cpp
-void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
+void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Microsoft::UI::Xaml::RoutedEventArgs^ e) 
 {
     Button^ b = (Button^) sender;
     //more logic to do here...
@@ -130,7 +130,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 {
     textBlock1.PointerEntered += new PointerEventHandler(textBlock1_PointerEntered);
-    textBlock1.PointerExited += new MouseEventHandler(textBlock1_PointerExited);
+    textBlock1.PointerExited += new PointerEventHandler(textBlock1_PointerExited);
 }
 ```
 
@@ -228,7 +228,6 @@ The Windows Runtime supports the concept of a routed event for a set of events t
 - [**PointerWheelChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged)
 - [**PreviewKeyDown**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.previewkeydown)
 - [**PreviewKeyUp**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.previewkeyup)
-- [**PointerWheelChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged)
 - [**RightTapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.righttapped)
 - [**Tapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.tapped)
 
@@ -280,7 +279,7 @@ Determining whether and where in UI an element is visible to mouse, touch, and s
 - If the element is a control, its [**IsEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.isenabled) property value must be **true**.
 - The element must have actual dimensions in layout. An element where either [**ActualHeight**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.actualheight) and [**ActualWidth**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.actualwidth) are 0 won't fire input events.
 
-Some controls have special rules for hit testing. For example, [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) has no **Background** property, but is still hit testable within the entire region of its dimensions. [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Image) and [**MediaElement**](/uwp/api/windows.ui.xaml.controls.mediaelement) controls are hit testable over their defined rectangle dimensions, regardless of transparent content such as alpha channel in the media source file being displayed. [**WebView**](/uwp/api/windows.ui.xaml.controls.webview) controls have special hit testing behavior because the input can be handled by the hosted HTML and fire script events.
+Some controls have special rules for hit testing. For example, [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) has no **Background** property, but is still hit testable within the entire region of its dimensions. [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Image) and [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) controls are hit testable over their defined rectangle dimensions, regardless of transparent content such as alpha channel in the media source file being displayed. [**WebView2**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.webview2) controls have special hit testing behavior because the input can be handled by the hosted HTML and fire script events.
 
 Most [**Panel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Panel) classes and [**Border**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Border) are not hit-testable in their own background, but can still handle the user input events that are routed from the elements that they contain.
 
