@@ -17,13 +17,13 @@ Access files and folders in either a folder, library, device, or network locatio
 For guidance on how to store your WinUI app's data, see the [ApplicationData](/uwp/api/windows.storage.applicationdata) class.
 
 > [!NOTE]
-> For a complete sample, see the [Folder enumeration sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration).
+> For a complete sample, see the [Folder enumeration sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration) (UWP sample - uses the same WinRT APIs as WinUI 3 apps).
 
 ## Prerequisites
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+    To learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
 
 -   **Access permissions to the location**
 

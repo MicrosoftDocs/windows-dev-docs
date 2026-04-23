@@ -59,18 +59,21 @@ For examples of using the .NET APIs in a WinUI app, see [Access files and folder
 
 If you're developing packaged WinUI apps, the WinRT storage APIs can be a powerful tool for reading and writing data. The following topics provide a wealth of information for developers looking to leverage these APIs in their apps.
 
+> [!NOTE]
+> The topics below link to WinRT API documentation which is applicable to both UWP and WinUI 3 (Windows App SDK) apps.
+
 | Topic | Description |
 |-------|-------------|
 | [Enumerate and query files and folders](/windows/uwp/files/quickstart-listing-files-and-folders) | Access files and folders in either a folder, library, device, or network   location. You can also query the files and folders in a location by constructing file and folder queries. |
 | [Create, write, and read a file](/windows/uwp/files/quickstart-reading-and-writing-files) | Read and write a file using a [StorageFile](/uwp/api/Windows.Storage.StorageFile) object. |
 | [Best practices for writing to files](/windows/uwp/files/best-practices-for-writing-to-files) | Learn best practices for using various file writing methods of the [FileIO](/uwp/api/windows.storage.fileio) and [PathIO](/uwp/api/windows.storage.pathio) classes. |
 | [Get file properties](/windows/uwp/files/quickstart-getting-file-properties) | Get properties—top-level, basic, and extended—for a file represented by a   [StorageFile](/uwp/api/Windows.Storage.StorageFile) object. |
-| [Accessing HomeGroup content](/windows/uwp/files/quickstart-accessing-homegroup-content) | Access content stored in the user's HomeGroup folder, including pictures, music, and videos. |
+| [Accessing HomeGroup content](/windows/uwp/files/quickstart-accessing-homegroup-content) | ~~Access content stored in the user's HomeGroup folder.~~ **Note: HomeGroup was removed in Windows 10 version 1803.** |
 | [Determining availability of Microsoft OneDrive files](/windows/uwp/files/quickstart-determining-availability-of-microsoft-onedrive-files) | Determine if a Microsoft OneDrive file is available using the [StorageFile.IsAvailable](/uwp/api/windows.storage.storagefile.isavailable) property. |
 | [Files and folders in the Music, Pictures, and Videos libraries](/windows/uwp/files/quickstart-managing-folders-in-the-music-pictures-and-videos-libraries) | Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos. |
 | [Track recently used files and folders](/windows/uwp/files/how-to-track-recently-used-files-and-folders) | Track files that your user accesses frequently by adding them to your app's most recently used list (MRU). The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached. All apps have their own MRU. |
 | [Track file system changes in the background](/windows/uwp/files/change-tracking-filesystem) | Track changes to the file system, even when the app isn't running.|
-| [Access the SD card](/windows/uwp/files/access-the-sd-card) | You can store and access non-essential data on an optional microSD card, especially on low-cost mobile devices that have limited internal storage. |
+| [Access the SD card](/windows/uwp/files/access-the-sd-card) | Store and access non-essential data on removable storage media (primarily applicable to devices with SD card slots). |
 | [Fast access to file properties](/windows/uwp/files/fast-file-properties) | Efficiently gather a list of files and their properties from a library to use via the Windows Runtime APIs. |
 
 ## See also

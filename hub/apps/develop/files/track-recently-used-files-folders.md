@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 **Important APIs**
 
 - [MostRecentlyUsedList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist)
-- [FileOpenPicker](/uwp/schemas/appxpackage/appxmanifestschema/element-fileopenpicker)
+- [FileOpenPicker](/uwp/api/windows.storage.pickers.fileopenpicker)
 
 Track files that your user accesses frequently by adding them to your app's most recently used list (MRU). The platform manages the MRU for you by sorting items based on when they were last accessed, and by removing the oldest item when the list's 25-item limit is reached. All apps have their own MRU.
 
@@ -25,13 +25,13 @@ Your app's MRU is represented by the [StorageItemMostRecentlyUsedList](/uwp/api/
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
+    To learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](/windows/uwp/threading-async/asynchronous-programming-in-cpp-universal-windows-platform-apps).
 
 -   **Access permissions to the location**
 
     See [File access permissions](file-access-permissions.md).
 
--   [Open files and folders with a picker](/windows/uwp/files/quickstart-using-file-and-folder-pickers)
+-   [Open files and folders with a picker](file-pickers.md)
 
     Picked files are often the same files that users return to again and again.
 
