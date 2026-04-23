@@ -90,7 +90,7 @@ For background info about some of the types we've just mentioned, see [Layout pa
 A *model* (in the sense of models, views, and view models) is a class that to some degree represents a real-world object or concept (such as a bank account). It's an *abstraction* of that real-world thing. In this section we'll be adding to our project a new class called **ImageFileInfo**. **ImageFileInfo** will be a model of an image file, such as a photo. This section will take us a step closer to being able to display photos in the app's user interface (UI).
 
 > [!TIP]
-> In preparation for the code example below, let's introduce the term *observable*. A property that can be dynamically bound to a XAML control (so that the UI updates each time the property value changes) is known as an *observable* property. This idea is based on the software design pattern known as the observer pattern. In the app that we build in this tutorial, the properties of our **ImageFileInfo** model won't change. But even so, we'll show how to make **ImageFileInfo** observable, by having it implement the [**INotifyPropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged) interface.
+> In preparation for the code example below, let's introduce the term *observable*. A property that can be dynamically bound to a XAML control (so that the UI updates each time the property value changes) is known as an *observable* property. This idea is based on the software design pattern known as the observer pattern. In the app that we build in this tutorial, the properties of our **ImageFileInfo** model won't change. But even so, we'll show how to make **ImageFileInfo** observable, by having it implement the [**INotifyPropertyChanged**](/dotnet/api/system.componentmodel.inotifypropertychanged) interface.
 
 ### [C#](#tab/cs/)
 
@@ -785,7 +785,7 @@ When you build and run this time, and experiment with adjusting the width of the
 Now it's time to move our sketch to a higher level of fidelity; and that means replacing the placeholder image with the real ones, and replacing the "lorem ipsum"-style placeholder text with real data. Let's take care of the images first.
 
 > [!IMPORTANT]
-> The technique we'll use to display the photos in the `Assets\Samples` folder involves updating the **GridView**'s items progressively. Specifically, that's the code in the **ImageGridView_ContainerContentChanging** and **ShowImage** methods in the code example below, including use of the **ContainerContentChangingEventArgs.InRecycleQueue** and **ContainerContentChangingEventArgs.Phase** properties. For more info, see [ListView and GridView UI optimization](/windows/uwp/debug-test-perf/optimize-gridview-and-listview). But in a nutshell, the **GridView** will let us know (by way of an event) when one of its item containers is ready to display its item. And then we'll keep track of which phase of its update lifecycle the item container is in so that we can determine when it's ready to display photo data.
+> The technique we'll use to display the photos in the `Assets\Samples` folder involves updating the **GridView**'s items progressively. Specifically, that's the code in the **ImageGridView_ContainerContentChanging** and **ShowImage** methods in the code example below, including use of the **ContainerContentChangingEventArgs.InRecycleQueue** and **ContainerContentChangingEventArgs.Phase** properties. For more info, see [ListView and GridView UI optimization](/windows/apps/develop/ui/controls/optimize-listview-gridview). But in a nutshell, the **GridView** will let us know (by way of an event) when one of its item containers is ready to display its item. And then we'll keep track of which phase of its update lifecycle the item container is in so that we can determine when it's ready to display photo data.
 
 ### [C#](#tab/cs/)
 
@@ -928,7 +928,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 
     An `x:Bind` expression links the value of a UI property with the value of a **data-object** property. Of course, that depends on first setting `x:DataType` to the type of that **data-object** so that the tooling and the runtime know what properties are available to bind to.
 
-    For more info, see [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
+    For more info, see [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [Data binding in depth](/windows/apps/develop/data-binding/data-binding-in-depth).
 
 1. In the same way, replace the values of the other **TextBlock**s and the **RatingControl**. Here's the result:
 

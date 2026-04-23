@@ -9,7 +9,10 @@ ms.localizationpriority: medium
 
 # Using the Visual layer in desktop apps
 
-You can now use Windows Runtime APIs in non-UWP desktop applications to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 applications, and take advantage of the latest Windows UI features that are only available via UWP.
+> [!IMPORTANT]
+> This page describes the Windows SDK Visual layer (`Windows.UI.Composition`) for Win32 interop scenarios. For new WinUI 3 / Windows App SDK development, see [Visual layer overview](/windows/apps/develop/composition/visual-layer) which covers the `Microsoft.UI.Composition` namespace.
+
+You can now use Windows Runtime APIs in non-UWP desktop applications to enhance the look, feel, and functionality of your WPF, Windows Forms, and C++ Win32 applications, and take advantage of modern Windows UI features.
 
 For many scenarios, you can use [XAML islands](../xaml-islands/xaml-islands.md) to add modern XAML controls to your app. However, when you need to create custom experiences that go beyond the built-in controls, you can access the Visual layer APIs.
 
@@ -29,7 +32,7 @@ You can use the Visual layer to give your application a unique look and feel, an
 
 ### Brushes
 
-[Composition brushes](/windows/uwp/composition/composition-brushes) let you paint UI objects with solid colors, gradients, images, videos, complex effects, and more.
+[Composition brushes](/windows/apps/develop/composition/composition-brushes) let you paint UI objects with solid colors, gradients, images, videos, complex effects, and more.
 
 ![An egg created with Material Creator](../images/visual-layer-interop/egg.gif)
 
@@ -37,7 +40,7 @@ You can use the Visual layer to give your application a unique look and feel, an
 
 ### Effects
 
-[Composition effects](/windows/uwp/composition/composition-effects) include light, shadow, and a list of filter effects. They can be animated, customized, and chained, then applied directly to visuals. The SceneLightingEffect can be combined with composition lighting to create atmosphere, depth and materials.
+[Composition effects](/windows/apps/develop/composition/composition-effects) include light, shadow, and a list of filter effects. They can be animated, customized, and chained, then applied directly to visuals. The SceneLightingEffect can be combined with composition lighting to create atmosphere, depth and materials.
 
 ![Lights and material](../images/visual-layer-interop/light-interop.gif)
 
@@ -45,7 +48,7 @@ You can use the Visual layer to give your application a unique look and feel, an
 
 ### Animations
 
-[Composition animations](/windows/uwp/composition/composition-animation) run directly in the compositor process, independent of the UI thread. This ensures smoothness and scale, so you can run large numbers of concurrent, explicit animations. In addition to familiar KeyFrame animations to drive property changes over time, you can use expressions to set up mathematical relationships between different properties, including user input. Input driven animations let you create UI that dynamically and fluidly responds to user input, which can result in higher user engagement.
+[Composition animations](/windows/apps/develop/composition/composition-animation) run directly in the compositor process, independent of the UI thread. This ensures smoothness and scale, so you can run large numbers of concurrent, explicit animations. In addition to familiar KeyFrame animations to drive property changes over time, you can use expressions to set up mathematical relationships between different properties, including user input. Input driven animations let you create UI that dynamically and fluidly responds to user input, which can result in higher user engagement.
 
 ![Short video of another user interface created with the visual layer.](../images/visual-layer-interop/swipe-scroller.gif)
 
@@ -84,7 +87,7 @@ Learn how to use the Visual layer in your applications by experimenting with our
 
 While many Visual Layer features work the same when hosted in a desktop application as they do in a UWP app, some features do have limitations. Here are some of the limitations to be aware of:
 
-- Effect chains rely on [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm) for the effect descriptions. The [Win2D NuGet package](https://www.nuget.org/packages/Win2D.uwp) is not supported in desktop applications, so you would need to recompile it from the [source code](https://github.com/Microsoft/Win2D).
+- Effect chains rely on [Win2D](https://microsoft.github.io/Win2D/html/Introduction.htm) for the effect descriptions. For Windows App SDK apps, use the [Microsoft.Graphics.Win2D](https://www.nuget.org/packages/Microsoft.Graphics.Win2D) NuGet package. For UWP apps, use [Win2D.uwp](https://www.nuget.org/packages/Win2D.uwp).
 - To do hit testing, you need to do bounds calculations by walking the visual tree yourself. This is the same as the Visual Layer in UWP, except in this case there's no XAML element you can easily bind to for hit testing.
 - The Visual Layer does not have a primitive for rendering text.
 - When two different UI technologies are used together, such as WPF and the Visual Layer, they are each responsible for drawing their own pixels on the screen, and they can't share pixels. As a result, Visual Layer content is always rendered on top of other UI content. (This is known as the _airspace_ issue.) You might need to do extra coding and testing to ensure your Visual layer content resizes with the host UI and doesn't occlude other content.
@@ -92,11 +95,11 @@ While many Visual Layer features work the same when hosted in a desktop applicat
 
 ## Additional Resources
 
-- [Visual layer](/windows/uwp/composition/visual-layer)
-- [Composition visual](/windows/uwp/composition/composition-visual-tree)
-- [Composition brushes](/windows/uwp/composition/composition-brushes)
-- [Composition effects](/windows/uwp/composition/composition-effects)
-- [Composition animations](/windows/uwp/composition/composition-animation)
+- [Visual layer](/windows/apps/develop/composition/visual-layer)
+- [Composition visual](/windows/apps/develop/composition/composition-visual-tree)
+- [Composition brushes](/windows/apps/develop/composition/composition-brushes)
+- [Composition effects](/windows/apps/develop/composition/composition-effects)
+- [Composition animations](/windows/apps/develop/composition/composition-animation)
 
 API reference
 

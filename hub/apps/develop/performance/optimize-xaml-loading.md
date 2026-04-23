@@ -27,10 +27,10 @@ Here, we look at some other ways you can reduce the number of elements your app 
 
 If your XAML markup contains elements that you don't show right away, you can defer loading those elements until they are shown. For example, you can delay the creation of non-visible content such as a secondary tab in a tab-like UI. Or, you might show items in a grid view by default, but provide an option for the user to view the data in a list instead. You can delay loading the list until it's needed.
 
-Use the [x:Load attribute](/windows/uwp/xaml-platform/x-load-attribute) instead of the [Visibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.visibility) property to control when an element is shown. When an element's visibility is set to **Collapsed**, then it is skipped during the render pass, but you still pay the object instance costs in memory. When you use x:Load instead, the framework does not create the object instance until it is needed, so the memory costs are even lower. The drawback is that you pay a small memory overhead (approximately 600 bytes) when the UI is not loaded.
+Use the [x:Load attribute](/windows/apps/develop/platform/xaml/x-load-attribute) instead of the [Visibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.visibility) property to control when an element is shown. When an element's visibility is set to **Collapsed**, then it is skipped during the render pass, but you still pay the object instance costs in memory. When you use x:Load instead, the framework does not create the object instance until it is needed, so the memory costs are even lower. The drawback is that you pay a small memory overhead (approximately 600 bytes) when the UI is not loaded.
 
 > [!NOTE]
-> In Windows App SDK, [x:Load](/windows/uwp/xaml-platform/x-load-attribute) is the recommended deferred-loading pattern for XAML content that is not needed immediately.
+> In Windows App SDK, [x:Load](/windows/apps/develop/platform/xaml/x-load-attribute) is the recommended deferred-loading pattern for XAML content that is not needed immediately.
 
 The following examples show the difference in element count and memory use when different techniques are used to hide UI elements. A ListView and a GridView containing identical items are placed in a page's root Grid. The ListView is not visible, but the GridView is shown. The XAML in each of these examples produces the same UI on the screen. Use [tools for profiling and performance](/windows/apps/performance/choose-between-tools) to check element count and memory use in your app.
 
@@ -146,7 +146,7 @@ In general, [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui
 
 ### Resources with x:Name
 
-Use the [x:Key attribute](/windows/uwp/xaml-platform/x-key-attribute) to reference your resources. Any resource with the [x:Name attribute](/windows/uwp/xaml-platform/x-name-attribute) won't benefit from the platform optimization; instead, it is instantiated as soon as the ResourceDictionary is created. This happens because x:Name tells the platform that your app needs field access to this resource, so the platform needs to create something to hold a reference to it.
+Use the [x:Key attribute](/windows/apps/develop/platform/xaml/x-key-attribute) to reference your resources. Any resource with the [x:Name attribute](/windows/apps/develop/platform/xaml/x-name-attribute) won't benefit from the platform optimization; instead, it is instantiated as soon as the ResourceDictionary is created. This happens because x:Name tells the platform that your app needs field access to this resource, so the platform needs to create something to hold a reference to it.
 
 ### ResourceDictionary in a UserControl
 
@@ -272,7 +272,7 @@ To fix the duplication, define the brush as a resource. If controls in other pag
 
 Overdrawing occurs where more than one object is drawn in the same screen pixels. Note that there is sometimes a tradeoff between this guidance and the desire to minimize element count.
 
-Use [**DebugSettings.IsOverdrawHeatMapEnabled**](/uwp/api/windows.ui.xaml.debugsettings.isoverdrawheatmapenabled) as a visual diagnostic. You might find objects being drawn that you didn't know were in the scene.
+Use [**DebugSettings.IsOverdrawHeatMapEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.debugsettings.isoverdrawheatmapenabled) as a visual diagnostic. You might find objects being drawn that you didn't know were in the scene.
 
 ### Transparent or hidden elements
 

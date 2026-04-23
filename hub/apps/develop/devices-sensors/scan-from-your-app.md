@@ -18,6 +18,9 @@ This topic describes how to scan content from your app by using a flatbed, feede
 -   [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation)
 -   [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass)
 
+> [!NOTE]
+> The code samples in this article use UWP patterns. For WinUI 3 / Windows App SDK apps, replace `Dispatcher.RunAsync` with `DispatcherQueue.TryEnqueue` and use `Microsoft.UI.Dispatching.DispatcherQueuePriority` instead of `Windows.UI.Core.CoreDispatcherPriority`. For detailed migration guidance and code examples, see [Threading functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/threading).
+
 To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object and getting the [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
 
 After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration and must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](/windows-hardware/drivers/image/auto-configured-scanning).

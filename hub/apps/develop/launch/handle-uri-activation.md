@@ -131,12 +131,12 @@ The following code programmatically launches the app via its URI:
 ```csharp
    // Launch the URI
    var uri = new Uri("alsdk:");
-   var success = await Windows.System.Launcher.LaunchUriAsync(uri)
+   var success = await Windows.System.Launcher.LaunchUriAsync(uri);
 ```
 
 For more details about how to launch an app via a URI, see [Launch the default app for a URI](launch-default-app.md).
 
-It is recommended that apps create a new XAML [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) for each activation event that opens a new page. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML **Frame** for Launch and File Contracts should clear the pages on the **Frame** navigation journal before navigating to a new page.
+It is recommended that apps create a new XAML [Frame](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame) for each activation event that opens a new page. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML **Frame** for Launch and File Contracts should clear the pages on the **Frame** navigation journal before navigating to a new page.
 
 When launched via Protocol activation, apps should consider including UI that allows the user to go back to the top page of the app.
 
@@ -150,9 +150,9 @@ Any app or website can use your URI scheme name, including malicious ones. So an
 > [!NOTE]
 > When a UWP app is launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-We recommend that apps create a new XAML [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) for each activation event that opens a new Uri target. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended.
+We recommend that apps create a new XAML [**Frame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame) for each activation event that opens a new Uri target. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended.
 
-If you decide that you want your apps to use a single XAML [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) for Launch and Protocol Contracts, clear the pages on the **Frame** navigation journal before navigating to a new page. When launched via Protocol Contract, consider including UI into your apps that allows the user to go back to the top of the app.
+If you decide that you want your apps to use a single XAML [**Frame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame) for Launch and Protocol Contracts, clear the pages on the **Frame** navigation journal before navigating to a new page. When launched via Protocol Contract, consider including UI into your apps that allows the user to go back to the top of the app.
 
 ## Related content
 

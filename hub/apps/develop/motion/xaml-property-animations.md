@@ -13,7 +13,7 @@ This article introduces properties that let you animate a XAML UIElement with th
 Typically, you use either XAML or Composition APIs to build animations in your Windows apps:
 
 - Use XAML constructs like [Storyboarded animations](storyboarded-animations.md), or the _*ThemeTransition_ and _*ThemeAnimation_ classes in the [Microsoft.UI.Xaml.Media.Animation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation) namespace.
-- Use composition animations as described in [Using the Visual Layer with XAML](/windows/uwp/composition/using-the-visual-layer-with-xaml).
+- Use composition animations as described in [Using the Visual Layer with XAML](/windows/apps/develop/composition/visual-layer).
 
 Using the visual layer provides better performance than using the XAML constructs. But using [ElementCompositionPreview](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Hosting.ElementCompositionPreview) to get the element's underlying composition [Visual](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.visual) object, and then animating the Visual with composition animations, is more complex to use.
 
@@ -100,7 +100,7 @@ Use the [StartAnimation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ui
 This example shows how to animate the scale of a Button.
 
 ```csharp
-var compositor = Window.Current.Compositor;
+var compositor = CompositionTarget.GetCompositorForCurrentThread();
 var animation = compositor.CreateVector3KeyFrameAnimation();
 
 animation.InsertKeyFrame(1.0f, new Vector3(2.0f,2.0f,1.0f));
@@ -132,5 +132,5 @@ destinationButton.StartAnimation(animation);
 ## Related topics
 
 - [Storyboarded animations](storyboarded-animations.md)
-- [Using the Visual Layer with XAML](/windows/uwp/composition/using-the-visual-layer-with-xaml)
+- [Using the Visual Layer with XAML](/windows/apps/develop/composition/visual-layer)
 - [Transforms overview](../../develop/platform/xaml/transforms.md)
