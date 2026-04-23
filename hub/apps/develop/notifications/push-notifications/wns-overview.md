@@ -168,9 +168,9 @@ Here's an example of how to check whether battery saver is turned on in WindowsÂ
 
 ```csharp
 using System;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Navigation;
 using Windows.System;
 using Windows.System.Power;
 ...
@@ -216,16 +216,16 @@ async public void CheckForEnergySaving()
 #include <winrt/Windows.Storage.h>
 #include <winrt/Windows.System.h>
 #include <winrt/Windows.System.Power.h>
-#include <winrt/Windows.UI.Xaml.h>
-#include <winrt/Windows.UI.Xaml.Controls.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Xaml.h>
+#include <winrt/Microsoft.UI.Xaml.Controls.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 using namespace winrt;
 using namespace winrt::Windows::Foundation;
 using namespace winrt::Windows::Storage;
 using namespace winrt::Windows::System;
 using namespace winrt::Windows::System::Power;
-using namespace winrt::Windows::UI::Xaml;
-using namespace winrt::Windows::UI::Xaml::Controls;
+using namespace winrt::Microsoft::UI::Xaml;
+using namespace winrt::Microsoft::UI::Xaml::Controls;
 using namespace winrt::Windows::UI::Xaml::Navigation;
 ...
 winrt::fire_and_forget CheckForEnergySaving()
@@ -267,7 +267,7 @@ winrt::fire_and_forget CheckForEnergySaving()
 }
 ```
 
-This is the XAML for the [**ContentDialog**](/uwp/api/Windows.UI.Xaml.Controls.ContentDialog) featured in this example.
+This is the XAML for the [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) featured in this example.
 
 ```xaml
 <ContentDialog x:Name="saveEnergyDialog"
