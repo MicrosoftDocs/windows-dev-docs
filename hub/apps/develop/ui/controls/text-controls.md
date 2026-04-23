@@ -178,5 +178,5 @@ For TextBox and RichEditBox controls, spell checking is turned on by default. Yo
 
 **For developers (XAML)**
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
+- [Microsoft.UI.Xaml.Controls.PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

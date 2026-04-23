@@ -50,4 +50,4 @@ This example shows how to align the list view’s items to the bottom and indica
 
 ## Get the sample code
 
-- [XAML Bottom-up list sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)
+- [WinUI Gallery - ListViewPage](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/ListViewPage.xaml.cs)

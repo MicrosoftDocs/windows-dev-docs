@@ -546,8 +546,8 @@ This example shows how to create a simple tree view structure in XAML. The tree 
 ```
 
 ```csharp
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using muxc = Microsoft.UI.Xaml.Controls;
 
 namespace TreeViewTest
@@ -664,8 +664,8 @@ This example shows how to create the same tree view as the previous example. How
 
 ```csharp
 using System.Collections.ObjectModel;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using muxc = Microsoft.UI.Xaml.Controls;
 
 namespace TreeViewTest
@@ -897,8 +897,8 @@ A custom item template is used to display the data items, which are of type [ISt
 using System;
 using System.Collections.Generic;
 using Windows.Storage;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 using muxc = Microsoft.UI.Xaml.Controls;
 
 namespace TreeViewTest
@@ -1227,8 +1227,8 @@ The following example demonstrates how to create two tree views whose items can 
 ```csharp
 using System;
 using Windows.ApplicationModel.DataTransfer;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace TreeViewTest
 {

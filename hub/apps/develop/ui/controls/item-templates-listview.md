@@ -13,7 +13,7 @@ This section contains item templates that you can use with a [**ListView**](/win
 To demonstrate data binding, these templates bind **ListViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
 
 > [!NOTE] 
-> Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibility overview](../../../design/accessibility/accessibility-overview.md).
+> Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibility overview](../../../design/accessibility/accessibility-overview.md).
 
 ## Single line list item
 Use this template to display a list of items with an image and a single line of text.
@@ -126,5 +126,5 @@ Use this template to display a list of items with text in defined columns.
 - [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)
 - [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
 - [Accessibility overview](../../../design/accessibility/accessibility-overview.md)
-- [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [WinUI Gallery - ListViewPage](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/ListViewPage.xaml.cs)
 - [Thumbnail images](/windows/uwp/files/thumbnails)

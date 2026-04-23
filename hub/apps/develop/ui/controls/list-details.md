@@ -87,8 +87,7 @@ To create an adaptive layout, define different [**VisualStates**](/windows/windo
 ## Get the sample code
 
 The following samples implement the list/details pattern with adaptive layouts and demonstrate data binding to static, database, and online resources: 
-- [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [WinUI Gallery - ListDetailsViewPage](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/ListDetailsViewPage.xaml.cs)
 - [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 

@@ -16,7 +16,7 @@ In this topic, we describe commanding in Windows applications. Specifically, we 
 
 ## Important APIs
 
-- [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) and [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)
+- [Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) and [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)
 - [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand)
 - [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand)
 
@@ -70,16 +70,16 @@ To provide rich and comprehensive user experiences across command surfaces effic
 
 To bind a control to a shared command resource, you can implement the ICommand interfaces yourself, or you can build your command from either the [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) base class or one of the platform commands defined by the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) derived class.
 
-- The ICommand interface ([Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) or [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)) lets you create fully customized, reusable commands across your app.
+- The ICommand interface ([Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) or [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)) lets you create fully customized, reusable commands across your app.
 - [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) also provides this capability but simplifies development by exposing a set of built-in command properties such as the command behavior, keyboard shortcuts (access key and accelerator key), icon, label, and description.
 - [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) simplifies things further by letting you choose from a set of standard platform commands with predefined properties.
 
 > [!Important]
-> In WinUI applications, commands are implementations of either the [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) (C++) or the [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) (C#) interface, depending on your chosen language framework.
+> In WinUI applications, commands are implementations of either the [Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) (C++) or the [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) (C#) interface, depending on your chosen language framework.
 
 ## Command experiences using the StandardUICommand class
 
-Derived from [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) (derived from [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
+Derived from [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) (derived from [Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
 
 A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) provides a quick and consistent way to define common commands such as `Save` or `Delete`. All you have to do is provide the execute and canExecute functions.
 
@@ -91,7 +91,7 @@ A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input
 
 | Download the code for this example |
 | -------------------- |
-| [Commanding sample (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
+| [StandardUICommandPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/StandardUICommandPage.xaml.cs) |
 
 In this example, we show how to enhance a basic [ListView](../../../design/controls/listview-and-gridview.md) with a Delete item command implemented through the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, while optimizing the user experience for a variety of input types using a [MenuBar](../../../design/controls/menus.md), [Swipe](../../../design/controls/swipe.md) control, hover buttons, and [context menu](../../../design/controls/menus.md).
 
@@ -371,10 +371,10 @@ If you need to create a command that isn't defined by the [StandardUICommand](/w
 
 | Download the code for this example |
 | -------------------- |
-| [WinUI commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
+| [XamlUICommandPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/XamlUICommandPage.xaml.cs) |
 | Download the code for this example |
 | -------------------- |
-| [Commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
+| [XamlUICommandPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/XamlUICommandPage.xaml.cs) |
 Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section. 
 
 **Xaml:**
@@ -605,7 +605,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 Standard WinUI controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see [Controls and patterns for Windows apps](../../../design/controls/index.md).
 
-The most basic way to support a structured commanding experience is to define an implementation of the ICommand interface ([Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#).  This ICommand instance can then be bound to controls such as buttons.
+The most basic way to support a structured commanding experience is to define an implementation of the ICommand interface ([Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#).  This ICommand instance can then be bound to controls such as buttons.
 
 > [!NOTE]
 > In some cases, it might be just as efficient to bind a method to the Click event and a property to the IsEnabled property.
@@ -618,13 +618,13 @@ Standard WinUI controls (button, list, selection, calendar, predictive text) pro
 
 | Download the code for this example |
 | -------------------- |
-| [Commanding sample (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
+| [CommandBarPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/CommandBarPage.xaml.cs) |
 
 In this basic example, we demonstrate how a single command can be invoked with a button click, a keyboard accelerator, and rotating a mouse wheel.
 
 | Download the code for this example |
 | -------------------- |
-| [Commanding sample (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
+| [CommandBarPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/CommandBarPage.xaml.cs) |
 
 ```xaml
 <Page
@@ -739,12 +739,12 @@ In this basic example, we demonstrate how a single command can be invoked with a
 In code-behind, we connect to our view model that contains our command code. In addition, we define a handler for input from the mouse wheel, which also connects our command code.
 
 ```csharp
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Controls;
 using UICommand1.ViewModel;
 using Windows.System;
-using Windows.UI.Core;
+using Microsoft.UI.Input;
 
 namespace UICommand1.View
 {
@@ -805,8 +805,8 @@ Our view model is where we define the execution details for the two commands in 
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Data;
 
 namespace UICommand1.ViewModel
 {
@@ -1096,12 +1096,6 @@ WinUI provides a robust and flexible commanding system that lets you build apps 
 
 ### Samples
 
-#### Topic samples
-
-- [Commanding sample (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip)
-- [Commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip)
-- [Commanding sample (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip)
-
-#### Other samples
-
-- [Universal Windows Platform samples (C# and C++)](https://github.com/Microsoft/Windows-universal-samples/tree/b78d95134ce2d57c848e0a8dc339fc362748fb9c/Samples/RadialController)
+- [StandardUICommandPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/StandardUICommandPage.xaml.cs)
+- [XamlUICommandPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/XamlUICommandPage.xaml.cs)
+- [CommandBarPage (WinUI Gallery)](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/CommandBarPage.xaml.cs)
