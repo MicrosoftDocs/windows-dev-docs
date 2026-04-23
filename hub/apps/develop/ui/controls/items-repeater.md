@@ -56,7 +56,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
+You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](/windows/apps/develop/data-binding/data-binding-overview).
 
 ```xaml
 <ItemsRepeater ItemsSource="{x:Bind Items}"/>
@@ -209,14 +209,14 @@ private async void ScrollViewer_ViewChanged(object sender, ScrollViewerViewChang
 
         // trigger if within 2 viewports of the end
         if (distanceToEnd <= 2.0 * scroller.ViewportHeight
-                && MyItemsSource.HasMore && !itemsSource.Busy)
+                && MyItemsSource.HasMore && !MyItemsSource.Busy)
         {
             // show an indeterminate progress UI
             myLoadingIndicator.Visibility = Visibility.Visible;
 
             await MyItemsSource.LoadMoreItemsAsync(/*DataFetchSize*/);
 
-            loadingIndicator.Visibility = Visibility.Collapsed;
+            myLoadingIndicator.Visibility = Visibility.Collapsed;
         }
     }
 }
@@ -237,12 +237,11 @@ You can set the [Spacing](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.c
 This example shows how to set the ItemsRepeater.Layout property to a StackLayout with horizontal orientation and spacing of 8 pixels.
 
 ```xaml
-<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
-<muxc:ItemsRepeater ItemsSource="{x:Bind Items}" ItemTemplate="{StaticResource MyTemplate}">
-    <muxc:ItemsRepeater.Layout>
-        <muxc:StackLayout Orientation="Horizontal" Spacing="8"/>
-    </muxc:ItemsRepeater.Layout>
-</muxc:ItemsRepeater>
+<ItemsRepeater ItemsSource="{x:Bind Items}" ItemTemplate="{StaticResource MyTemplate}">
+    <ItemsRepeater.Layout>
+        <StackLayout Orientation="Horizontal" Spacing="8"/>
+    </ItemsRepeater.Layout>
+</ItemsRepeater>
 ```
 
 ### UniformGridLayout
@@ -295,15 +294,14 @@ This image shows the effect of the **ItemsStretch** values in a vertical layout 
 This example shows how to set the **ItemsRepeater.Layout** property to a **UniformGridLayout**.
 
 ```xaml
-<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
-<muxc:ItemsRepeater ItemsSource="{x:Bind Items}"
+<ItemsRepeater ItemsSource="{x:Bind Items}"
                     ItemTemplate="{StaticResource MyTemplate}">
-    <muxc:ItemsRepeater.Layout>
-        <muxc:UniformGridLayout MinItemWidth="200"
+    <ItemsRepeater.Layout>
+        <UniformGridLayout MinItemWidth="200"
                                 MinColumnSpacing="28"
                                 ItemsJustification="SpaceAround"/>
-    </muxc:ItemsRepeater.Layout>
-</muxc:ItemsRepeater>
+    </ItemsRepeater.Layout>
+</ItemsRepeater>
 ```
 
 ## Lifecycle events
@@ -322,16 +320,15 @@ In a virtualizing control, you cannot rely on Loaded/Unloaded events because the
 This example shows how you could use these events to attach a custom selection service to track item selection in a custom control that uses ItemsRepeater to display items.
 
 ```xaml
-<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
 <UserControl ...>
     ...
     <ScrollViewer>
-        <muxc:ItemsRepeater ItemsSource="{x:Bind Items}"
+        <ItemsRepeater ItemsSource="{x:Bind Items}"
                             ItemTemplate="{StaticResource MyTemplate}"
                             ElementPrepared="OnElementPrepared"
                             ElementIndexChanged="OnElementIndexChanged"
                             ElementClearing="OnElementClearing">
-        </muxc:ItemsRepeater>
+        </ItemsRepeater>
     </ScrollViewer>
     ...
 </UserControl>
@@ -537,7 +534,6 @@ You can use the [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.
 This example shows how to place an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) in the template of a custom control named _MediaCollectionView_ and expose its properties.
 
 ```xaml
-<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
 <Style TargetType="local:MediaCollectionView">
     <Setter Property="Template">
         <Setter.Value>
@@ -547,7 +543,7 @@ This example shows how to place an [ItemsRepeater](/windows/windows-app-sdk/api/
                     BorderBrush="{TemplateBinding BorderBrush}"
                     BorderThickness="{TemplateBinding BorderThickness}">
                     <ScrollViewer x:Name="ScrollViewer">
-                        <muxc:ItemsRepeater x:Name="ItemsRepeater"
+                        <ItemsRepeater x:Name="ItemsRepeater"
                                             ItemsSource="{TemplateBinding ItemsSource}"
                                             ItemTemplate="{TemplateBinding ItemTemplate}"
                                             Layout="{TemplateBinding Layout}"
@@ -607,32 +603,31 @@ You can nest an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.
 This example shows how you can display a list of grouped items in a vertical stack. The outer ItemsRepeater generates each group. In the template for each group, another ItemsRepeater generates the items.
 
 ```xaml
-<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
 
 <Page.Resources>
-    <muxc:StackLayout x:Key="MyGroupLayout"/>
-    <muxc:StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
+    <StackLayout x:Key="MyGroupLayout"/>
+    <StackLayout x:Key="MyItemLayout" Orientation="Horizontal"/>
 </Page.Resources>
 
 <ScrollViewer>
-  <muxc:ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
+  <ItemsRepeater ItemsSource="{x:Bind AppNotifications}"
                       Layout="{StaticResource MyGroupLayout}">
-    <muxc:ItemsRepeater.ItemTemplate>
+    <ItemsRepeater.ItemTemplate>
       <DataTemplate x:DataType="ExampleApp:AppNotifications">
         <!-- Group -->
         <StackPanel>
           <!-- Header -->
           <TextBlock Text="{x:Bind AppTitle}"/>
           <!-- Items -->
-          <muxc:ItemsRepeater ItemsSource="{x:Bind Notifications}"
+          <ItemsRepeater ItemsSource="{x:Bind Notifications}"
                               Layout="{StaticResource MyItemLayout}"
                               ItemTemplate="{StaticResource MyTemplate}"/>
           <!-- Footer -->
           <Button Content="{x:Bind FooterText}"/>
         </StackPanel>
       </DataTemplate>
-    </muxc:ItemsRepeater.ItemTemplate>
-  </muxc:ItemsRepeater>
+    </ItemsRepeater.ItemTemplate>
+  </ItemsRepeater>
 </ScrollViewer>
 ```
 The image below shows the basic layout that's created using the above sample as a guideline.
@@ -642,22 +637,19 @@ The image below shows the basic layout that's created using the above sample as 
 This next example shows a layout for an app that has various categories that can change with user preference and are presented as horizontally scrolling lists. The layout of this example is also represented by the image above.
 
 ```xaml
-<!-- xmlns:muxc="using:Microsoft.UI.Xaml.Controls" -->
-<!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
 <ScrollViewer>
-  <muxc:ItemsRepeater ItemsSource="{x:Bind Categories}"
+  <ItemsRepeater ItemsSource="{x:Bind Categories}"
                       Background="LightGreen">
-    <muxc:ItemsRepeater.ItemTemplate>
+    <ItemsRepeater.ItemTemplate>
       <DataTemplate x:DataType="local:Category">
         <StackPanel Margin="12,0">
           <TextBlock Text="{x:Bind Name}" Style="{ThemeResource TitleTextBlockStyle}"/>
-          <!-- Include the <muxc:ItemsRepeaterScrollHost> if targeting Windows 10 versions earlier than 1809. -->
           <ScrollViewer HorizontalScrollMode="Enabled"
                                           VerticalScrollMode="Disabled"
                                           HorizontalScrollBarVisibility="Auto" >
-            <muxc:ItemsRepeater ItemsSource="{x:Bind Items}"
+            <ItemsRepeater ItemsSource="{x:Bind Items}"
                                 Background="Orange">
-              <muxc:ItemsRepeater.ItemTemplate>
+              <ItemsRepeater.ItemTemplate>
                 <DataTemplate x:DataType="local:CategoryItem">
                   <Grid Margin="10"
                         Height="60" Width="120"
@@ -667,16 +659,16 @@ This next example shows a layout for an app that has various categories that can
                                Margin="4"/>
                   </Grid>
                 </DataTemplate>
-              </muxc:ItemsRepeater.ItemTemplate>
-              <muxc:ItemsRepeater.Layout>
-                <muxc:StackLayout Orientation="Horizontal"/>
-              </muxc:ItemsRepeater.Layout>
-            </muxc:ItemsRepeater>
+              </ItemsRepeater.ItemTemplate>
+              <ItemsRepeater.Layout>
+                <StackLayout Orientation="Horizontal"/>
+              </ItemsRepeater.Layout>
+            </ItemsRepeater>
           </ScrollViewer>
         </StackPanel>
       </DataTemplate>
-    </muxc:ItemsRepeater.ItemTemplate>
-  </muxc:ItemsRepeater>
+    </ItemsRepeater.ItemTemplate>
+  </ItemsRepeater>
 </ScrollViewer>
 ```
 
@@ -741,7 +733,7 @@ public class MyPage : Page
 ### Keyboarding
 The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](../../../design/input/focus-navigation.md#2d-directional-navigation-for-keyboard).
 
-![Direction Navigation](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
+![Direction Navigation](../../input/images/keyboard/directional-navigation.png)
 
 The ItemsRepeater's [XYFocusKeyboardNavigation mode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](../../../design/input/keyboard-interactions.md) such as Home, End, PageUp, and PageDown.
 
