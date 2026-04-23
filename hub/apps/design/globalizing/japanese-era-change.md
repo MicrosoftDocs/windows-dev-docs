@@ -3,7 +3,7 @@ title: Prepare your application for the Japanese era change
 description: Learn about the May 2019 Japanese era change and how to prepare your application.
 ms.assetid: 5A945F9A-8632-4038-ADD6-C0568091EF27
 ms.date: 04/26/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, localizability, localization, japanese, era
 ms.localizationpriority: high
 ---
@@ -62,14 +62,14 @@ Your device should now be configured to use the Japanese calendar, and it will r
 
 1. Right-click the date and time area in the lower-right corner of the screen.
 2. Select **Adjust date/time**.
-3. In the Settings app, under **Change date and time**, select **Change**.
+3. In Settings, under **Change date and time**, select **Change**.
 4. Change the date to on or after May 1, 2019.
 
 ### On Windows 11
 
 1. Right-click the date and time area in the lower-right corner of the screen.
 2. Select **Adjust date/time**.
-3. In the Settings app, under **Set the date and time manually**, select **Change**.
+3. In Settings, under **Set the date and time manually**, select **Change**.
 4. Change the date to on or after May 1, 2019.
 
 > [!NOTE]

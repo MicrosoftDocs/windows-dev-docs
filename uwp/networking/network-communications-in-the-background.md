@@ -3,7 +3,7 @@ description: To continue network communication while it's not in the background,
 title: Network communications in the background
 ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ms.date: 06/14/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -576,7 +576,7 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 For more information on using [HttpClient](/dotnet/api/system.net.http.httpclient) with [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger), see the [ControlChannelTrigger HttpClient sample](https://github.com/microsoft/VCSamples/tree/master/VC2012Samples/Windows%208%20samples/C%2B%2B/Windows%208%20app%20samples/ControlChannelTrigger%20XMLHTTPRequest%20sample%20(Windows%208)).
 
 ## ControlChannelTrigger with IXMLHttpRequest2
-Some special considerations apply when using [**IXMLHTTPRequest2**](/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) with [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). There are some transport-specific usage patterns and best practices that should be followed when using a **IXMLHTTPRequest2** with **ControlChannelTrigger**. Using **ControlChannelTrigger** does not affect the way that requests to send or receive HTTP requests on the **IXMLHTTPRequest2** are handled.
+Some special considerations apply when using [**IXMLHTTPRequest2**](/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) with [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). There are some transport-specific usage patterns and best practices that should be followed when using an **IXMLHTTPRequest2** with **ControlChannelTrigger**. Using **ControlChannelTrigger** does not affect the way that requests to send or receive HTTP requests on the **IXMLHTTPRequest2** are handled.
 
 Usage patterns and best practices when using [**IXMLHTTPRequest2**](/previous-versions/windows/desktop/api/msxml6/nn-msxml6-ixmlhttprequest2) with [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger)
 

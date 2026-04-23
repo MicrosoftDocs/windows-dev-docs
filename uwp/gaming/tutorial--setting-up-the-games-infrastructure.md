@@ -3,7 +3,7 @@ title: Set up the game project
 description: The first step in developing your game is to set up a project in Microsoft Visual Studio. After you've configured a project specifically for game development, you could later re-use it as a kind of template.
 ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ms.date: 06/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, setup, directx
 ms.localizationpriority: medium
 ---

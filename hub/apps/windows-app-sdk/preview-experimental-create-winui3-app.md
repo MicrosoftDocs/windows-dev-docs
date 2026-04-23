@@ -1,11 +1,13 @@
 ---
 description: This guide shows you how to use the Preview and Experimental channel of Windows App SDK to create a .NET and C++ apps with WinUI 3 UI. 
 title: Create a new project that uses the Preview and Experimental channel of the Windows App SDK 
-ms.date: 10/05/2021
-ms.topic: article
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library
+ms.date: 07/14/2025
+ms.topic: how-to
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
 ms.localizationpriority: high
-ms.custom: 19H1
+ms.custom:
+  - 19H1
+  - sfi-image-nochange
 ---
 
 <!--todo: add to FAQ - "can we create a winui3 app without creating a win app sdk app?" - no, you build Windows desktop apps using the Win App SDK library. -->
@@ -38,9 +40,6 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 3. Select one of the following project types and click **Next**.
 
     - **Blank App, Packaged (WinUI 3 in Desktop)**: Creates a desktop C# .NET app with a WinUI-based user interface. The generated project is configured with the package manifest and other support needed to build the app into an [MSIX package](/windows/msix/overview) without the use of a separate packaging project. For more information about this project type, see [Package your app using single-project MSIX](single-project-msix.md).
-
-        > [!NOTE]
-        > If you installed the Windows App SDK 1.0 Preview 2 with Visual Studio 2019, this project template has a known issue that results in a build error. To resolve this issue, install the [Single-project MSIX Packaging Tools for Visual Studio 2019 VSIX extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools) after you install the Windows App SDK 1.0 Preview 2.
 
     - **Blank App, Packaged with WAP (WinUI 3 in Desktop)**: Creates a desktop C# .NET app with a WinUI-based user interface. The generated solution includes a separate [Windows Application Packaging Project](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net) that is configured to build the app into an [MSIX package](/windows/msix/overview).
 
@@ -283,7 +282,7 @@ To support multiple languages in a WinUI desktop app, and ensure proper localiza
 ## Instructions for WinUI 3 unpackaged desktop apps
 
 > [!NOTE]
-> WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the [Windows App SDK Preview Extension for Visual Studio](preview-channel.md) to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](preview-channel.md).
+> WinUI 3 support for unpackaged apps is currently in **preview**, and is not production-ready. You must download the Windows App SDK Preview Extension for Visual Studio to get the project templates and build unpackaged desktop apps with WinUI 3. For a list of the **known issues**, see [Windows App SDK 1.0 Preview 3 release notes](./release-notes/windows-app-sdk-1-0.md?pivots=preview).
 
 To create a WinUI 3 application without MSIX packaging, choose from one of the following sets of instructions depending on the project language and the version of the Windows App SDK you have installed.
 
@@ -293,7 +292,7 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
 1. Install the [Single-project MSIX Packaging Tools](./single-project-msix.md#install-the-single-project-msix-packaging-tools).
 
-2. Install the [Visual Studio 2019 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/csharp) or [Visual Studio 2022 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp), depending on your version of Visual Studio.
+2. Install the [Visual Studio 2022 C# extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/csharp).
 
 3. Install the [Windows App SDK runtime and MSIX packages](downloads.md). These are required to run and deploy your app.
 
@@ -318,7 +317,7 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
 
     > [!NOTE]
     > You may need to close the Visual Studio solution to manually delete this file from the filesystem.
-    :::image type="content" source="../winui/winui3/images/winui-csharp-unpackaged-appxmanifest.png" alt-text="Visual Studio 2019 - Solution explorer open with appxmanifest file highlighted":::
+    :::image type="content" source="../winui/winui3/images/winui-csharp-unpackaged-appxmanifest.png" alt-text="Visual Studio - Solution explorer open with appxmanifest file highlighted":::
 
 7. To debug in Visual Studio, change the debug properties from 'MsixPackage' to 'Project'.
    Otherwise, you'll see an error: "The project doesn't know how to run the profile …"
@@ -338,13 +337,13 @@ To create a WinUI 3 desktop app with C# using Windows App SDK 1.0 Preview 3:
         }
         ```
 
-    - In **Visual Studio 2019 and Visual Studio 2022**: You can use the Visual Studio UI to change the launch settings:
+    - In **Visual Studio 2022**: You can use the Visual Studio UI to change the launch settings:
   
       Open the Debug Properties and change the launch profile to 'Project'
   
-      :::image type="content" source="../winui/winui3/images/winui-csharp-vs-debug.png" alt-text="Visual Studio 2019 - Start drop down with C# application debug properties highlighted":::
+      :::image type="content" source="../winui/winui3/images/winui-csharp-vs-debug.png" alt-text="Visual Studio - Start drop down with C# application debug properties highlighted":::
 
-      :::image type="content" source="../winui/winui3/images/winui-csharp-vs-debugging-page.png" alt-text="Visual Studio 2019 - C# Application property page with debugger to launch property of Local Windows Debugger highlighted":::
+      :::image type="content" source="../winui/winui3/images/winui-csharp-vs-debugging-page.png" alt-text="Visual Studio - C# Application property page with debugger to launch property of Local Windows Debugger highlighted":::
 
 7. If you haven't already done so, **install the Windows App SDK runtime and MSIX packages, which are required to run and deploy your app.**
     > [!div class="button"]
@@ -358,7 +357,7 @@ To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 3:
 
 1. Install the [Single-project MSIX Packaging Tools](./single-project-msix.md#install-the-single-project-msix-packaging-tools).
 
-2. Install the [Visual Studio 2019 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2019/cpp) or [Visual Studio 2022 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp), depending on your version of Visual Studio.
+2. Install the [Visual Studio 2022 C++ extension](https://aka.ms/windowsappsdk/1.0-preview2/extension/VS2022/cpp).
 
 3. Install the [Windows App SDK runtime and MSIX packages](downloads.md). These are required to run and deploy your app.
 
@@ -400,11 +399,11 @@ To create a WinUI 3 desktop app with C++ using Windows App SDK 1.0 Preview 3:
     > [!NOTE]
     > This isn't necessary if you open the application with the executable (.exe).
 
-    - In **Visual Studio 2019 and Visual Studio 2022**: Open the Debug properties and change the Debugger to launch to 'Local Windows Debugger'
+    - In **Visual Studio 2022**: Open the Debug properties and change the Debugger to launch to 'Local Windows Debugger'
 
-      :::image type="content" source="../winui/winui3/images/winui-cpp-vs-debug.png" alt-text="Visual Studio 2019 - Start drop down with C++ application debug properties highlighted":::
+      :::image type="content" source="../winui/winui3/images/winui-cpp-vs-debug.png" alt-text="Visual Studio - Start drop down with C++ application debug properties highlighted":::
 
-      :::image type="content" source="../winui/winui3/images/winui-cpp-vs-debugging-page.png" alt-text="Visual Studio 2019 - C++ application property page with debugger to launch property of Local Windows Debugger highlighted":::
+      :::image type="content" source="../winui/winui3/images/winui-cpp-vs-debugging-page.png" alt-text="Visual Studio - C++ application property page with debugger to launch property of Local Windows Debugger highlighted":::
 
 11. If you haven't already done so, **install the Windows App SDK runtime and MSIX packages, which are required to run and deploy your app.**
     > [!div class="button"]

@@ -2,7 +2,7 @@
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
 ms.date: 01/28/2022
-ms.topic: article
+ms.topic: get-started
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, get, getting, started
 ms.localizationpriority: medium
 ---
@@ -75,7 +75,7 @@ The headers contain Windows APIs projected into C++/WinRT. In other words, for e
 > [!IMPORTANT]
 > Whenever you want to use a type from a Windows namespaces, you must `#include` the corresponding C++/WinRT Windows namespace header file, as shown above. The *corresponding* header is the one with the same name as the type's namespace. For example, to use the C++/WinRT projection for the [**Windows::Foundation::Collections::PropertySet**](/uwp/api/windows.foundation.collections.propertyset) runtime class, include the `winrt/Windows.Foundation.Collections.h` header.
 > 
-> It's usual for a C++/WinRT projection header to automatically include its parent namespace header file. So, for example, `winrt/Windows.Foundation.Collections.h` includes `winrt/Windows.Foundation.h`. But you shouldn't rely on this behavior, since it's an implementation detail that changes over time. You must explicitly include any headers that you need.
+> It is common for a C++/WinRT projection header to automatically include related namespace header files. For example, `winrt/Windows.Foundation.Collections.h` includes `winrt/Windows.Foundation.h`. But you shouldn't rely on this behavior, since it's an implementation detail that changes over time. You must explicitly include any headers that you need.
 
 ```cppwinrt
 using namespace winrt;

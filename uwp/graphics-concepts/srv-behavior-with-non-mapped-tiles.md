@@ -5,7 +5,7 @@ ms.assetid: 0E1D64BE-EB09-4F9D-9800-BD23A3B374EE
 keywords:
 - SRV behavior with non-mapped tiles
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 ---
 # Arcade stick
 
-This page describes the basics of programming for Xbox One arcade sticks using [Windows.Gaming.Input.ArcadeStick][arcadestick] and related APIs for the Universal Windows Platform (UWP).
+This page describes the basics of programming for arcade sticks using [Windows.Gaming.Input.ArcadeStick][arcadestick] and related APIs for the Universal Windows Platform (UWP).
 
 By reading this page, you'll learn:
 
@@ -20,9 +20,9 @@ By reading this page, you'll learn:
 
 ## Arcade stick overview
 
-Arcade sticks are input devices valued for reproducing the feel of stand-up arcade machines and for their high-precision digital controls. Arcade sticks are the perfect input device for head-to-head-fighting and other arcade-style games, and are suitable for any game that works well with all-digital controls. Arcade sticks are supported in Windows 10 and Xbox One UWP apps by the [Windows.Gaming.Input][] namespace.
+Arcade sticks are input devices valued for reproducing the feel of stand-up arcade machines and for their high-precision digital controls. Arcade sticks are the perfect input device for head-to-head-fighting and other arcade-style games, and are suitable for any game that works well with all-digital controls. Arcade sticks are supported in UWP apps for Windows 10 or Windows 11 and Xbox One apps through the [Windows.Gaming.Input][] namespace.
 
-Xbox One arcade sticks are equipped with an 8-way digital joystick, six **Action** buttons (represented as A1-A6 in the image below), and two **Special** buttons (represented as S1 and S2); they're all-digital input devices that don't support analog controls or vibration. Xbox One arcade sticks are also equipped with **View** and **Menu** buttons used to support UI navigation but they're not intended to support gameplay commands and can't be readily accessed as joystick buttons.
+Arcade sticks are equipped with an 8-way digital joystick, six **Action** buttons (represented as A1-A6 in the image below), and two **Special** buttons (represented as S1 and S2); they're all-digital input devices that don't support analog controls or vibration. Arcade sticks are also equipped with **View** and **Menu** buttons used to support UI navigation but they're not intended to support gameplay commands and can't be readily accessed as joystick buttons.
 
 ![Arcade stick with 4-directional joystick, 6 action buttons (A1-A6), and 2 special buttons (S1 and S2)](images/arcade-stick-1.png)
 

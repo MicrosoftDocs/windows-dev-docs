@@ -42,3 +42,13 @@ groups:
       title: macOS
     - id: msstoredevcli-installer-linux
       title: Linux
+- id: wasdk-release-channels
+  title: Windows App SDK release channels
+  prompt: Choose release channel
+  pivots:
+    - id: stable
+      title: Stable
+    - id: preview
+      title: Preview
+    - id: experimental
+      title: Experimental

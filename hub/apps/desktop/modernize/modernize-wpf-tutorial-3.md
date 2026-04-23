@@ -1,7 +1,7 @@
 ---
 description: This tutorial demonstrates how to make it easier to choose the date for an expense report on a touch-enabled device.
 title: Add a UWP CalendarView control using XAML Islands
-ms.topic: article
+ms.topic: how-to
 ms.date: 06/27/2019
 keywords: windows 10, uwp, windows forms, wpf, xaml islands
 ms.localizationpriority: medium
@@ -19,7 +19,7 @@ In the fictional scenario of this tutorial, the Contoso development team wants t
 Unlike the **InkCanvas** control you added in [part 2](modernize-wpf-tutorial-2.md), the Windows Community Toolkit does not provide a wrapped version of the UWP **CalendarView** that can be used in WPF apps. As an alternative, you'll host an **InkCanvas** in the generic [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control. You can use this control to host any first-party UWP control provided by the Windows SDK or WinUI library or any custom UWP control created by a third party. The **WindowsXamlHost** control is provided by the `Microsoft.Toolkit.Wpf.UI.XamlHost` package NuGet package. This package is included with the `Microsoft.Toolkit.Wpf.UI.Controls` NuGet package that you installed in [part 2](modernize-wpf-tutorial-2.md).
 
 > [!NOTE]
-> This tutorial only demonstrates how to use [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) to host the first-party **CalendarView** control provided by the Windows SDK. For a walkthrough that demonstrates how to host a custom control, see [Host a custom UWP control in a WPF app using XAML Islands](host-custom-control-with-xaml-islands.md).
+> This tutorial only demonstrates how to use [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) to host the first-party **CalendarView** control provided by the Windows SDK. For a walkthrough that demonstrates how to host a custom control, see [Host a custom UWP control in a WPF app using XAML Islands](xaml-islands/host-custom-control-with-xaml-islands.md).
 
 In order to use the **WindowsXamlHost** control, you'll need to directly call WinRT APIs from code in the WPF app. The `Microsoft.Windows.SDK.Contracts` NuGet package contains the references necessary to enable you to call WinRT APIs from the app. This package is also included in the `Microsoft.Toolkit.Wpf.UI.Controls` NuGet package that you installed in [part 2](modernize-wpf-tutorial-2.md).
 

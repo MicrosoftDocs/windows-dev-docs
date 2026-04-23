@@ -4,7 +4,7 @@ title: Screen readers and hardware button events
 label: Screen readers and hardware button events
 template: detail.hbs
 ms.date: 02/20/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, accessibility, narrator, screen reader
 ms.localizationpriority: medium
 ---

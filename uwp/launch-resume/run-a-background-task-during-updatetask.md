@@ -2,7 +2,7 @@
 title: Run a background task when your UWP app is updated
 description: Learn how to create a background task that runs when your Universal Windows Platform (UWP) store app is updated.
 ms.date: 04/21/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, update, background task, updatetask, background task
 ms.localizationpriority: medium
 ---
@@ -25,7 +25,7 @@ As with other types of background tasks, you implement the Update Task backgroun
 
 You don't need to register this background task (the "Register the background task to run" section in the **Create and register an out-of-process background task** topic) to use the Update Task. This is the main reason to use an Update Task because you don't need to add any code to your app to register the task and the app doesn't have to at least run once before being updated to register the background task.
 
-The following sample code shows a basic starting point for a Update Task background task class in C#. The background task class itself - and all other classes in the background task project - need to be **public** and **sealed**. Your background task class must derive from **IBackgroundTask** and have a public **Run()** method with the signature shown below:
+The following sample code shows a basic starting point for an Update Task background task class in C#. The background task class itself - and all other classes in the background task project - need to be **public** and **sealed**. Your background task class must derive from **IBackgroundTask** and have a public **Run()** method with the signature shown below:
 
 ```cs
 using Windows.ApplicationModel.Background;

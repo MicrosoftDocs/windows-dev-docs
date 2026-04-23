@@ -3,7 +3,7 @@ title: Port OpenGL ES 2.0 buffers, uniforms, vertexes to Direct3D
 description: During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
 ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, opengl, direct3d, buffers, uniforms, vertex attributes
 ms.localizationpriority: medium
 ---
@@ -218,7 +218,7 @@ attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-In some ways, the same process holds for Direct3D. Instead of a attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](/windows/desktop/direct3dhlsl/dcl-usage---ps).
+In some ways, the same process holds for Direct3D. Instead of attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](/windows/desktop/direct3dhlsl/dcl-usage---ps).
 
 Collectively, the process of setting the vertex and index buffers, and setting the input layout is called the "Input Assembly" (IA) stage of the Direct3D graphics pipeline.
 

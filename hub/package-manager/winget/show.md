@@ -1,16 +1,15 @@
 ---
 title: show Command
 description: Displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
-ms.date: 04/28/2020
+ms.date: 07/08/2025
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # show command (winget)
 
-The **show** command of the [winget](index.md) tool displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
+The **show** command of [WinGet](index.md) displays details for the specified application, including its source and associated metadata.
 
-The **show** command only shows metadata that was submitted with the application. If the submitted application excludes some metadata, then the data will not be displayed.
+The **show** command only shows metadata that was submitted with the application. If the submitted application excludes some metadata, then the data will not be displayed. The installer information presented in the **show** command is based on the arguments provided and decisions made by WinGet for the current device.
 
 ## Aliases
 
@@ -20,9 +19,9 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget show [[-q] \<query>] [\<options>]`
+`winget show [[-q] <query>] [<options>]`
 
-![show command](./images/show.png)
+:::image type="content" source="./images/show.png" alt-text="Screenshot listing winget show vscode command result with the Visual Studio Code icon." lightbox="./images/show.png":::
 
 ## Arguments
 
@@ -41,24 +40,30 @@ The following options are available.
 
 | Option  | Description |
 |--------------|-------------|
-| **-m,--manifest** | The path to the manifest of the application to install. |
-| **--id**         |  Filter results by ID. |
-| **--name**   |      Filter results by name. |
-| **--moniker**   |  Filter results by application moniker. |
-| **-v,--version** |  Use the specified version. The default is the latest version. |
-| **-s,--source** |   Find the application using the specified [source](source.md). |
-| **-e,--exact**     | Find the application using exact match. |
-| **--scope**     | Select install scope (user or machine). |
-| **-a,--architecture**     | Select the architecture to install. |
+| **-m,--manifest** | The path to the manifest of the application to show. |
+| **--id** |  Filter results by ID. |
+| **--name** | Filter results by name. |
+| **--moniker** | Filter results by application moniker. |
+| **-v,--version** | Use the specified version. The default is the latest version. |
+| **-s,--source** | Find the application using the specified [source](source.md). |
+| **-e,--exact** | Find the application using exact match. |
+| **--scope** | Select install scope (user or machine). |
+| **-a,--architecture** | Select the architecture to show. |
+| **--installer-type** |  Select the installer type to show. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
 | **--locale**     | Locale to use (BCP47 format). |
 | **--versions**    | Show available versions of the application. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **-?,--help** | Shows help about the selected command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ## Multiple selections
 
@@ -72,21 +77,30 @@ If a single application is detected, the following data will be displayed.
 
 | Value  | Description |
 |--------------|-------------|
+| **Name** | Name of the application. |
+| **Id** | Package identifier. |
+| **Icon** | Package icon (if sixels is enabled in your terminal) |
 | **Version** | Version of the application. |
 | **Publisher** | Publisher of the application. |
+| **Publisher Url** | Publisher URL of the application. |
 | **Moniker** | AppMoniker of the application. |
 | **Description** | Description of the application. |
-| **Homepage**  | Homepage of the application. |
-| **License**  | License of the application. |
-| **LicenseUrl** | The URL to the license file of the application. |
+| **Homepage** | Homepage of the application. |
+| **License** | License of the application. |
+| **License Url** | The URL to the license file of the application. |
+| **Privacy Url** | The URL to the privacy information of the application. |
+| **Tags** | The tags specified in the manifest. |
 
 ### Installer details
 
 | Value  | Description |
 |--------------|-------------|
-| **Type**  | The type of installer. |
-| **Download Url** | The Url of the installer. |
-| **SHA256** | The Sha-256 of the installer.  |
+| **Installer Type** | The installer type of the application. |
+| **Installer Url** | The URL to the installer for the application. |
+| **Installer SHA256** | The SHA 256 has of the installer. |
+| **Release Date** | The release date for the version of the application. |
+| **Offline Distribution Supported** | Shows if the application can be downloaded. |
+| **Dependencies** | Shows dependencies for installing the application. |
 
 ## Related topics
 

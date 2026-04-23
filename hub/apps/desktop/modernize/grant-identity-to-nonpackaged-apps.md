@@ -1,75 +1,46 @@
 ---
-description: Learn how to grant package identity to an unpackaged app so that you can use modern Windows features in that app.
-title: Grant package identity by packaging with external location
-ms.date: 10/04/2022
-ms.topic: article
-keywords: windows 10, desktop, package, identity, MSIX, Win32
+title: Grant package identity by packaging with external location manually
+description: Learn how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
+ms.date: 10/13/2023
+ms.topic: how-to
+keywords: windows 10, desktop, sparse, package, identity, external, location, MSIX, Win32
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
-# Grant package identity by packaging with external location
+# Grant package identity by packaging with external location manually
 
-If you have an existing desktop app, with its own installer, there's very little you need to change in order to benefit from [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity).
+For the motivations behind adding package identity, as well as the differences between building
+identity packages in Visual Studio and building them manually, see
+[Overview](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview).
 
-Many Windows extensibility features&mdash;including background tasks, notifications, live tiles, and share targets&mdash;can be used by a desktop app only if that app has package identity at runtime. That's because the operating system (OS) needs to be able to identify the caller of the corresponding API. See [Features that require package identity](./modernize-packaged-apps.md).
+This topic describes how to build and register an identity package manually.
+For info about building an identity package in Visual Studio, see
+[Grant package identity by packaging with external location in Visual Studio](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio).
 
-Only packaged apps have package identity at runtime. For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../../package-and-deploy/index.md).
+These are the steps (which this topic describes in detail) to build and register an identity package manually:
 
-* In Windows 10, version 2004, and earlier the only way to grant package identity to an app is to package it in a signed MSIX package (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). In that case, identity is specified in the package manifest, and identity registration is handled by the MSIX deployment pipeline based on the information in the manifest. All content referenced in the package manifest is present inside the MSIX package.
-* But starting in Windows 10, version 2004, you can grant package identity to an app simply by building and registering a *package with external location* with your app. Doing so turns it into a packaged app; specifically, *a packaged app with external location*. That's because some desktop apps aren't yet ready for all of their content to be present inside an MSIX package. So this support enables such apps to have package identity; thereby being able to use Windows extensibility features that require package identity. For more background info, see the blog post [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/).
+1. [Create a package manifest for the identity package](#create-a-package-manifest-for-the-identity-package)
+2. [Build and sign the identity package](#build-and-sign-the-identity-package)
+3. [Add identity metadata to your desktop application manifests](#add-identity-metadata-to-your-desktop-application-manifests)
+4. [Register the identity package in your installer](#register-the-identity-package-in-your-installer)
+5. [Optional steps](#optional-steps)
 
-To build and register a package with external location (which grants package identity to your app), follow these steps.
+## Create a package manifest for the identity package
 
-1. [Create a package manifest for the package with external location](#create-a-package-manifest-for-the-package-with-external-location)
-2. [Build and sign the package with external location](#build-and-sign-the-package-with-external-location)
-3. [Add the package identity metadata to your desktop application manifest](#add-the-package-identity-metadata-to-your-desktop-application-manifest)
-4. [Register your package with external location at run time](#register-your-package-with-external-location-at-run-time)
-
-## Important concepts
-
-The following features enable unpackaged desktop apps to acquire package identity.
-
-### Package with external location
-
-A *package with external location* contains a package manifest, but no other app binaries and content. The manifest of a package with external location can reference files outside the package in a predetermined external location. As mentioned above, this support enables apps that aren't yet ready for all of their content to be present inside an MSIX package to use Windows extensibility features that require package identity.
-
-> [!NOTE]
-> A desktop app that uses a package with external location doesn't receive some benefits of being fully deployed via an MSIX package. These benefits include tamper protection, installation in a locked-down location, and full management by the OS at deployment, run time, and uninstall.
-
-### Allowing external content
-
-To support packages with external location, the package manifest schema now supports an optional [**uap10:AllowExternalContent**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) element under the [**Properties**](/uwp/schemas/appxpackage/uapmanifestschema/element-properties) element. This allows your package manifest to reference content outside the package, in a specific location on disk.
-
-For example, if you have your existing unpackaged desktop app that installs the app executable and other content in C:\Program Files\MyDesktopApp\, you can create a package with external location that includes the **uap10:AllowExternalContent** element in the manifest. During the install process for your app, or the first time your app runs, you can install the package with external location and declare C:\Program Files\MyDesktopApp\ as the external location your app will use.
-
-## Create a package manifest for the package with external location
-
-Before you can build a package with external location, you must first create a [package manifest](/uwp/schemas/appxpackage/appx-package-manifest) (a file named AppxManifest.xml) that declares package identity metadata for your desktop app and other required details. The easiest way to create a package manifest for the package with external location is to use the example below and customize it for your app by using the [schema reference](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).
-
-Make sure the package manifest includes these items:
-
-* An [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element that describes the identity attributes for your desktop app.
-* An [**uap10:AllowExternalContent**](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent) element under the [**Properties**](/uwp/schemas/appxpackage/uapmanifestschema/element-properties) element. This element should be assigned the value `true`, which allows your package manifest to reference content outside the package, in a specific location on disk. In a later step, you'll specify the path of the external location when you register your package with external location from code that runs in your installer or your app. Any content that you reference in the manifest that isn’t located in the package itself should be installed to the external location.
-* The **MinVersion** attribute of the [**TargetDeviceFamily**](/uwp/schemas/appxpackage/uapmanifestschema/element-targetdevicefamily) element should be set to `10.0.19000.0` or a later version.
-* The **TrustLevel=mediumIL** and **RuntimeBehavior=Win32App** attributes of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element declare that the desktop app associated with the package with external location will run similar to a standard unpackaged desktop app, without registry and file system virtualization and other run time changes.
-
-The following example shows the complete contents of a package with external location manifest (`AppxManifest.xml`). This manifest includes a `windows.sharetarget` extension, which requires package identity.
+The first step to creating an identity package is to create a package manifest based on the below template.
+This is an MSIX manifest but is only used for identity and doesn't alter the app's runtime behavior.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<Package 
+<Package IgnorableNamespaces="uap uap10"
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
   xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
-  xmlns:uap2="http://schemas.microsoft.com/appx/manifest/uap/windows10/2"
-  xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
-  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
-  xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
   xmlns:uap10="http://schemas.microsoft.com/appx/manifest/uap/windows10/10"
-  IgnorableNamespaces="uap uap2 uap3 rescap desktop uap10">
-  <Identity Name="ContosoPhotoStore" ProcessorArchitecture="x64" Publisher="CN=Contoso" Version="1.0.0.0" />
+  xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities">
+  <Identity Name="ContosoPhotoStore" Publisher="CN=Contoso" Version="1.0.0.0" ProcessorArchitecture="neutral" />
   <Properties>
-    <DisplayName>ContosoPhotoStore</DisplayName>
+    <DisplayName>Contoso PhotoStore</DisplayName>
     <PublisherDisplayName>Contoso</PublisherDisplayName>
     <Logo>Assets\storelogo.png</Logo>
     <uap10:AllowExternalContent>true</uap10:AllowExternalContent>
@@ -78,7 +49,7 @@ The following example shows the complete contents of a package with external loc
     <Resource Language="en-us" />
   </Resources>
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19000.0" MaxVersionTested="10.0.19000.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.19041.0" MaxVersionTested="10.0.26100.0" />
   </Dependencies>
   <Capabilities>
     <rescap:Capability Name="runFullTrust" />
@@ -86,56 +57,98 @@ The following example shows the complete contents of a package with external loc
   </Capabilities>
   <Applications>
     <Application Id="ContosoPhotoStore" Executable="ContosoPhotoStore.exe" uap10:TrustLevel="mediumIL" uap10:RuntimeBehavior="win32App"> 
-      <uap:VisualElements AppListEntry="none" DisplayName="Contoso PhotoStore" Description="Demonstrate photo app" BackgroundColor="transparent" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png"></uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
-      </uap:VisualElements>
-      <Extensions>
-        <uap:Extension Category="windows.shareTarget">
-          <uap:ShareTarget Description="Send to ContosoPhotoStore">
-            <uap:SupportedFileTypes>
-              <uap:FileType>.jpg</uap:FileType>
-              <uap:FileType>.png</uap:FileType>
-              <uap:FileType>.gif</uap:FileType>
-            </uap:SupportedFileTypes>
-            <uap:DataFormat>StorageItems</uap:DataFormat>
-            <uap:DataFormat>Bitmap</uap:DataFormat>
-          </uap:ShareTarget>
-        </uap:Extension>
-      </Extensions>
+      <uap:VisualElements AppListEntry="none" DisplayName="Contoso PhotoStore" Description="Contoso PhotoStore App" BackgroundColor="transparent" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" />
     </Application>
   </Applications>
 </Package>
 ```
 
-## Build and sign the package with external location
+Note the below important details about this manifest:
 
-After you create your package manifest, build the package with external location by using the [MakeAppx.exe tool](/windows/msix/package/create-app-package-with-makeappx-tool) in the Windows SDK. Because the package with external location doesn’t contain the files referenced in the manifest, you must specify the `/nv` option, which skips semantic validation for the package.
+* Fill in the `Identity` element attributes with the details of your application
+  * `Name` is the desired name of the identity package
+  * `Publisher` must match the `Subject` of the certificate used to sign the application
+  * `Version` is the desired version of the identity package. A common practice is to align the
+  identity package version with the application version. You will not be able to register a version
+  of an identity package on a system if that version of the package is already registered.
+  You must first unregister the existing package to reinstall a package with the same version.
+  * `ProcessorArchitecture` should be `neutral` as shown so the identity package works across all
+  architectures (x86, x64, and ARM64)
+* Fill in the `DisplayName` and `PublisherDisplayName` elements with the details of your application
+  * Unless you add additional features to the manifest beyond simple identity, these values
+  are not displayed anywhere
+* Update the `Logo` element to a relative path within your application's installation directory
+that will resolve to a .png, .jpg, or .jpeg image
+* Ensure the `AllowExternalContent` element is set to `true` as shown which enables reusing your
+existing installer
+* Set `TargetDeviceFamily` `MinVersion` and `MaxVersionTested` per below:
+  * Set `MinVersion` to `10.0.19041.0` as shown for maximum reach and uniformity across Windows 10
+  and Windows 11 OS versions
+  * Set `MinVersion` to `10.0.26100.0` to restrict the identity package to Windows 11, version 24H2
+  and above
+  * Set `MaxVersionTested` to `10.0.26100.0` as shown
+  * Note: The `AllowExternalContent` feature used here was introduced in Windows build 10.0.19041.0.
+  If your application runs further downlevel than that, you should perform an OS version check in your
+  installer and not register the identity package on OS versions earlier than 10.0.19041.0. See
+  [Register the identity package in your installer](#register-the-identity-package-in-your-installer).
+* Ensure the `runFullTrust` and `unvirtualizedResources` capabilities are declared as shown for
+Win32 compatibility
+* Add an `Application` element as shown for each executable associated with your application
+  * Ensure `TrustLevel` is `mediumIL` and `RuntimeBehavior` is `win32App` as shown for Win32 compatibility
+* The `VisualElements` child element is required, but the `AppListEntry="none"` attribute ensures
+the identity package isn't shown among installed apps
+  * Update the `DisplayName` and `Description` attributes with relevant details and leave the other
+  attributes as shown (the referenced image paths do not need to resolve)
+  * See [Localization and Visual Assets](#localization-and-visual-assets) for scenarios where
+  localization and images may be needed here.
 
-The following example demonstrates how to create a package with external location from the command line.  
+The identity package created from this manifest will be connected to your application's
+installation directory when you register the package in a later step.
+
+## Build and sign the identity package
+
+After you create your identity package manifest, build the identity package using the
+[MakeAppx.exe tool](/windows/msix/package/create-app-package-with-makeappx-tool) in the Windows SDK.
 
 ```Console
-MakeAppx.exe pack /d <path to directory that contains manifest> /p <output path>\MyPackage.msix /nv
+MakeAppx.exe pack /o /d <path to directory that contains manifest> /nv /p <output path>\MyPackage.msix
 ```
 
-Before your package with external location can be successfully installed on a target computer, you must sign it with a certificate that is trusted on the target computer. You can create a new self-signed certificate for development purposes and sign your package with external location using [SignTool](/windows/msix/package/sign-app-package-using-signtool), which is available in the Windows SDK.
+Note: The `/nv` flag is required to bypass validation of referenced file paths in the manifest.
 
-The following example demonstrates how to sign a package with external location from the command line.
+In order to be installed on end user computers, the identity package must be signed with a certificate
+that is trusted on the target computer. You can
+[create a new self-signed certificate for development purposes](/windows/msix/package/create-certificate-package-signing)
+and sign your identity package using [SignTool](/windows/msix/package/sign-app-package-using-signtool),
+which is available in the Windows SDK, but a production certificate from an IT Department or a service
+like [Azure Trusted Signing](https://azure.microsoft.com/products/trusted-signing) will be required
+to register the package on end user computers.
 
 ```Console
 SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <certificate password> <path to package with external location>\MyPackage.msix
 ```
 
-### Add the package identity metadata to your desktop application manifest
+Note: For how to build and sign the identity package within a CI/CD pipeline with production certificates,
+see the [MSIX and CI/CD Pipeline Overview](/windows/msix/desktop/cicd-overview) for examples.
 
-You must also include a side-by-side application manifest with your desktop app. See [Application manifests](/windows/win32/sbscs/application-manifests) (it's the file that declares things like DPI awareness, and is embedded into your app's `.exe` during build). In that file, include an [**msix**](/windows/win32/sbscs/application-manifests#msix) element with attributes that declare the identity attributes of your app. The values of these attributes are used by the OS to determine your app's identity when the executable is launched.
+## Add identity metadata to your desktop application manifests
 
-The following example shows a side-by-side application manifest with an **msix** element.
+You connect the identity package with your application executables by including
+[application manifests](/windows/win32/sbscs/application-manifests) (a.k.a side-by-side or fusion manifests)
+with metadata that matches metadata from the identity package manifest.
+
+In Visual Studio, you can add an [application manifest](/windows/win32/sbscs/application-manifests)
+to an executable project by opening the **Project** context menu, and selecting **Add** > **New Item** > **Application Manifest File**.
+
+
+Below is an example application manifest snippet demonstrating the `msix` element required
+to connect your binaries with metadata from your identity package.
+
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <assembly manifestVersion="1.0" xmlns="urn:schemas-microsoft-com:asm.v1">
-  <assemblyIdentity version="1.0.0.0" name="Contoso.PhotoStoreApp"/>
+  <assemblyIdentity version="0.0.0.0" name="ContosoPhotoStore"/>
   <msix xmlns="urn:schemas-microsoft-com:msix.v1"
           publisher="CN=Contoso"
           packageName="ContosoPhotoStore"
@@ -144,51 +157,190 @@ The following example shows a side-by-side application manifest with an **msix**
 </assembly>
 ```
 
-The attributes of the **msix** element must match these values in the package manifest for your package with external location:
+The attributes of the `msix` element must match these values from the identity package manifest:
 
-* The **packageName** and **publisher** attributes must match the **Name** and **Publisher** attributes in the [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element in your package manifest, respectively.
-* The **applicationId** attribute must match the **Id** attribute of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element in your package manifest.
+* The `packageName` and `publisher` attributes must match the `Name` and `Publisher` attributes in the
+[`Identity`](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element in your identity package manifest, respectively
+* The `applicationId` attribute must match the `Id` attribute of the corresponding
+[`Application`](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element in your identity package manifest
 
-## Register your package with external location at run time
+## Register the identity package in your installer
 
-To grant package identity to your desktop app, your app must register the package with external location by using the [**AddPackageByUriAsync**](/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync) method of the [**PackageManager**](/uwp/api/windows.management.deployment.packagemanager) class. This method is available starting in Windows 10, version 2004. You can add code to your app to register the package with external location when your app is run for the first time, or you can run code to register the package while your desktop app is installed (for example, if you're using MSI to install your desktop app, you can run this code from a custom action).
+The last step to associate identity with your application is to register the identity package
+in your installer and associate it with your application's installation directory.
 
-The following example demonstrates how to register a package with external location. This code creates an [**AddPackageOptions**](/uwp/api/windows.management.deployment.addpackageoptions) object that contains the path to the external location where your package manifest can reference content outside the package. Then, the code passes this object to the **AddPackageByUriAsync**  method to register the package with external location. This method also receives the location of your signed package with external location as a URI. For a more complete example, see the `StartUp.cs` code file in the related sample app (see the [Sample app](#sample-app) section in this topic).
+### PowerShell
+
+Executing powershell.exe with the right parameters is the simplest way to register the package.
+The guidance differs for per-user installations vs. machine-wide installations.
+
+#### Per-User (PowerShell)
+
+To register the identity package during a per-user installation:
+
+```Console
+powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "Add-AppxPackage -Path <PackagePath> -ExternalLocation <ExternalLocation>"
+```
+
+* Set `<PackagePath>` to the absolute path of the signed identity package produced in the previous step
+(with the file name).
+* Set `<ExternalLocation>` to the absolute path of your application's installation directory
+(without any executable names).
+
+To unregister the identity package during a per-user uninstallation:
+
+```Console
+powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "Get-AppxPackage <PackageName> | Remove-AppxPackage"
+```
+
+* Set `<PackageName>` to the package name you defined in your identity package manifest
+(the **Name** attribute of the **Identity** element)
+
+#### Per-Machine (PowerShell)
+
+To register the identity package during a machine-wide installation:
+
+```Console
+powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "Add-AppxPackage -Stage <PackagePath> -ExternalLocation <ExternalLocation>; Add-AppxProvisionedPackage -Online -PackagePath <PackagePath>"
+```
+
+* Set `<PackagePath>` to the absolute path of the signed identity package produced in the previous step
+(with the file name).
+* Set `<ExternalLocation>` to the absolute path of your application's installation directory
+(without any executable names).
+
+To unregister the identity package during a machine-wide uninstallation:
+
+```Console
+powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "$packages = Get-AppxPackage <PackageName>; foreach ($package in $packages) { Remove-AppxProvisionedPackage -PackageName $package.PackageFullName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }
+```
+
+* Set `<PackageName>` to the package name you defined in your identity package manifest
+(the **Name** attribute of the **Identity** element)
+
+### PackageManager APIs
+
+If you'd rather call OS APIs to register and unregister the identity package, the PackageManager API
+provides equivalent functionality to PowerShell. The guidance differs for per-user installations vs.
+machine-wide installations.
+
+Below are snippets that demonstrate the API. For production-ready code in C# and C++, see [Sample apps](#sample-apps).
+
+#### Per-User (PackageManager)
+
+The code listing below demonstrates registering the identity package by using the
+[**AddPackageByUriAsync**](/uwp/api/windows.management.deployment.packagemanager.addpackagebyuriasync)
+method and unregistering the identity package by using the
+[**RemovePackageAsync**](/uwp/api/windows.management.deployment.packagemanager.removepackageasync)
+method.
 
 ```csharp
-private static bool registerPackageWithExternalLocation(string externalLocation, string pkgPath)
+using Windows.Management.Deployment;
+
+...
+
+// Register the identity package during install
+
+var externalUri = new Uri(externalLocation);
+var packageUri = new Uri(packagePath);
+
+var packageManager = new PackageManager();
+
+var options = new AddPackageOptions();
+options.ExternalLocationUri = externalUri;
+
+await packageManager.AddPackageByUriAsync(packageUri, options);
+
+...
+
+// Unregister the identity package during uninstall
+
+var packageManager = new PackageManager();
+var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
+foreach (var package in packages)
 {
-    bool registration = false;
-    try
-    {
-        Uri externalUri = new Uri(externalLocation);
-        Uri packageUri = new Uri(pkgPath);
-
-        Console.WriteLine("exe Location {0}", externalLocation);
-        Console.WriteLine("msix Address {0}", pkgPath);
-
-        Console.WriteLine("  exe Uri {0}", externalUri);
-        Console.WriteLine("  msix Uri {0}", packageUri);
-
-        PackageManager packageManager = new PackageManager();
-
-        // Declare use of an external location
-        var options = new AddPackageOptions();
-        options.ExternalLocationUri = externalUri;
-
-        Windows.Foundation.IAsyncOperationWithProgress<DeploymentResult, DeploymentProgress> deploymentOperation = packageManager.AddPackageByUriAsync(packageUri, options);
-
-        // Other progress and error-handling code omitted for brevity...
-    }
+  await packageManager.RemovePackageAsync(package.Id.FamilyName);
 }
 ```
 
-## Sample app
+Note the below important details about this code:
 
-See the [SparsePackages](https://github.com/microsoft/AppModelSamples/tree/master/Samples/SparsePackages) sample for a fully functional sample app that demonstrates how to grant package identity to a desktop app using a package with external location. More information about building and running the sample is provided in the blog post [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/).
+* Set `externalLocation` to the absolute path of your application's installation directory
+(without any executable names)
+* Set `packagePath` to the absolute path of the signed identity package produced in the previous step
+(with the file name)
+* The `<IdentityPackageFamilyName>` can be found by running the `Get-AppxPackage <IdentityPackageName>`
+PowerShell command on a system where the identity package is registered. The `PackageFamilyName` property
+contains the value to use here.
 
-This sample includes the following:
+#### Per-Machine (PackageManager)
 
-* The source code for a WPF app named PhotoStoreDemo. During startup, the app checks to see whether it is running with identity. If it is not running with identity, it registers the package with external location, and then restarts the app. See `StartUp.cs` for the code that performs these steps.
-* A side-by-side application manifest named `PhotoStoreDemo.exe.manifest`.
-* A package manifest named `AppxManifest.xml`.
+The code listing below demonstrates registering the identity package by using the
+[**StagePackageByUriAsync**](/uwp/api/windows.management.deployment.packagemanager.stagepackagebyuriasync) and
+[**ProvisionPackageForAllUsersAsync**](/uwp/api/windows.management.deployment.packagemanager.provisionpackageforallusersasync)
+methods and unregistering the identity package by using the
+[**DeprovisionPackageForAllUsersAsync**](/uwp/api/windows.management.deployment.packagemanager.deprovisionpackageforallusersasync)
+and [**RemovePackageAsync**](/uwp/api/windows.management.deployment.packagemanager.removepackageasync) methods.
+
+```csharp
+// Register the identity package during install
+
+var externalUri = new Uri(externalLocation);
+var packageUri = new Uri(packagePath);
+
+var packageManager = new PackageManager();
+
+var options = new StagePackageOptions();
+options.ExternalLocationUri = externalUri;
+
+await packageManager.StagePackageByUriAsync(packageUri, options);
+await packageManager.ProvisionPackageForAllUsersAsync(packageFamilyName);
+
+...
+
+// Unregister the identity package during uninstall
+
+var packageManager = new PackageManager();
+
+var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
+foreach (var package in packages)
+{
+  await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FamilyName);
+  await packageManager.RemovePackageAsync(package.Id.FamilyName, RemovalOptions.RemoveForAllUsers);
+}
+```
+
+Note the below important details about this code:
+
+* Set `externalLocation` to the absolute path of your application's installation directory
+(without any executable names)
+* Set `packagePath` to the absolute path of the signed identity package produced in the previous step
+(with the file name)
+* The `<IdentityPackageFamilyName>` can be found by running the `Get-AppxPackage <IdentityPackageName>`
+PowerShell command on a system where the identity package is registered. The `PackageFamilyName`
+property contains the value to use here.
+
+## Sample apps
+
+See the [PackageWithExternalLocation](https://aka.ms/sparsepkgsample) samples for fully functional
+C# and C++ apps that demonstrate how to register and unregister an identity package.
+
+## Optional steps
+
+### Localization and Visual Assets
+
+Some features that understand package identity might result in strings and images from your
+identity package manifest being displayed in the Windows OS. For example:
+
+* An application that uses camera, microphone, or location APIs will have a dedicated control toggle
+in Windows Privacy Settings along with a brokered consent prompt that users can use to grant or
+deny access to those sensitive resources.
+* An application that registers a share target will show up in the share dialog.
+
+To localize the strings in the identity package manifest, see
+[Localize the manifest](/windows/uwp/app-resources/using-mrt-for-converted-desktop-apps-and-games#phase-1-localize-the-manifest).
+
+When providing paths to images in the `VisualElements` attributes in the identity package manifest,
+the provided paths should be relative paths within your application's installation directory that
+will resolve to a .png, .jpg, or .jpeg image. The attribute names indicate the expected dimensions
+of the images (150x150 and 40x40).

@@ -5,7 +5,7 @@ ms.assetid: 2FAD6BE8-C6E4-4112-AF97-419CD27F7C73
 keywords:
 - Block compression
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 
 
 ms.localizationpriority: medium

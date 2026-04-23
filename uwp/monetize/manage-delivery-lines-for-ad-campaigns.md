@@ -3,7 +3,7 @@ ms.assetid: dc632a4c-ce48-400b-8e6e-1dddbd13afff
 description: Use this method in the Microsoft Store promotions API to manage delivery lines for promotional ad campaigns.
 title: Manage delivery lines
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store promotions API, ad campaigns
 ms.localizationpriority: medium
 ---

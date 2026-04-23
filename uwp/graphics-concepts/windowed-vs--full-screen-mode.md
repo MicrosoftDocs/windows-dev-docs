@@ -5,7 +5,7 @@ ms.assetid: EE8B9F87-822B-4576-A446-CA603E786862
 keywords:
 - Windowed vs. full-screen mode
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

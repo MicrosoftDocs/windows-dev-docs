@@ -2,8 +2,8 @@
 ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
 title: Optimize your XAML markup
 description: Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
-ms.date: 08/10/2017
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -86,7 +86,7 @@ ListView and its children are loaded into memory.
 Here, the ListView's Visibility is set to collapsed (the other XAML is identical to the original). The ListView is created in the visual tree, but its child elements are not. However, they are loaded into memory, so memory use is identical to the previous example.
 
 ```xaml
-    <ListView x:Name="List1" Visibility="Collapsed">
+<ListView x:Name="List1" Visibility="Collapsed">
 ```
 
 Live visual tree with the ListView collapsed. Total element count for the page is 46.
@@ -102,7 +102,7 @@ ListView and its children are loaded into memory.
 Here, the ListView has the x:Load attribute set to **False** (the other XAML is identical to the original). The ListView is not created in the visual tree or loaded into memory at start up.
 
 ```xaml
-    <ListView x:Name="List1" Visibility="Collapsed" x:Load="False">
+<ListView x:Name="List1" Visibility="Collapsed" x:Load="False">
 ```
 
 Live visual tree with the ListView not loaded. Total element count for the page is 45.
@@ -223,7 +223,7 @@ If you use a resource on many pages throughout your app, then storing it in _App
 <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE. -->
 <Page x:Class="ExampleNamespace.SecondPage" ...>
     <StackPanel>
-        <Button Content="Submit" Foreground="{StaticResource SecondPageTextBrush}" />
+        <Button Content="Submit" Foreground="{StaticResource SecondPageTextBrush}"/>
     </StackPanel>
 </Page>
 ```
@@ -368,8 +368,8 @@ Use a [Border](/uwp/api/windows.ui.xaml.controls.border) element to draw a borde
 **Efficient.**
 
 ```xaml
- <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
-     <TextBox/>
+<Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
+    <TextBox/>
 </Border>
 ```
 

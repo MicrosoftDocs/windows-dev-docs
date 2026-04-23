@@ -5,7 +5,7 @@ title: Accessibility checklist
 label: Accessibility checklist
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: checklist
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

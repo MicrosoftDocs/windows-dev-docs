@@ -1,9 +1,7 @@
 ---
 title: Quickstart Process a trace - .NET TraceProcessing
 description: In this quickstart, learn how to access data in an ETW trace.
-author: maiak
-ms.author: maiak
-ms.date: 02/20/2020
+ms.date: 08/19/2024
 ms.topic: quickstart
 ---
 

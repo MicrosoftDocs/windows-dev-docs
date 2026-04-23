@@ -1,8 +1,8 @@
 ---
 title: Test with the Microsoft Emulator for Windows 10 Mobile
 description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
-ms.date: 06/13/2023
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -46,7 +46,7 @@ Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Window
 
 ### Installing
 
-[Windows 10 Mobile emulator](https://www.microsoft.com/download/details.aspx?id=53424) ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://visualstudio.microsoft.com/vs/older-downloads/).
+Windows 10 Mobile emulator ships as part of the [Windows 10 SDK](https://developer.microsoft.com/en-us/windows/downloads/sdk-archive/#windows-10). The Windows 10 SDK and emulator can be installed as part of the Visual Studio installation. See the [Visual Studio download page](https://visualstudio.microsoft.com/vs/older-downloads/).
 
 ### Uninstalling
 
@@ -84,7 +84,7 @@ In addition to the new features mentioned in the previous section, you can test 
 
 - **Language and region settings**. Prepare your app for an international market by changing the display language and region settings in Windows Phone Emulator.
 
-    On the running emulator, go to the **Settings** app, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
+    On the running emulator, go to **Settings**, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
 
 - **Application lifecycle and tombstoning**. Test the behavior or your app when it's deactivated or tombstoned by changing the value of the option **Tombstone upon deactivation while debugging** on the **Debug** page of project properties.
 
@@ -128,9 +128,9 @@ By default, the hardware keyboard is not enabled. This implementation is equival
 
 Special characters on the keyboard of a localized version of a Windows development computer are not supported by the emulator. To enter special characters that are present on a localized keyboard, use the Software Input Panel (SIP) instead. 
 
-To use your computer’s keyboard in the emulator, press F4.
+To use your computer's keyboard in the emulator, press F4.
 
-To stop using your computer’s keyboard in the emulator, press F4.
+To stop using your computer's keyboard in the emulator, press F4.
 
 The following table lists the keys on a hardware keyboard that you can use to emulate the buttons and other controls on a Windows Phone.
 
@@ -141,7 +141,7 @@ Computer hardware keys (Emulator Build 10.0.14295 and earlier) | Computer hardwa
 F1 | WIN + ESC | BACK | Long presses work as expected.
 F2 | WIN + F2 | START | Long presses work as expected.
 F3 | WIN + F3 | SEARCH |  
-F4 | F4 (no change) | Toggles between using the local computer’s keyboard and not using the local computer’s keyboard. | 
+F4 | F4 (no change) | Toggles between using the local computer's keyboard and not using the local computer's keyboard. | 
 F6 | WIN + F6 | CAMERA HALF | A dedicated camera button that is pressed halfway.
 F7 | WIN + F7 | CAMERA FULL | A dedicated camera button.
 F9 | WIN + F9 | VOLUME UP | 
@@ -153,7 +153,7 @@ ESC | WIN + ESC | BACK | Long presses work as expected.
 
 ## Near Field Communications (NFC)
 
-Build and test apps that use Near Field Communication (NFC) enabled features on Windows 10 Mobile by using the **NFC** tab of the emulator’s **Additional Tools** menu. NFC is useful for a number of scenarios ranging from Proximity scenarios (such as tap to share) to card emulation (such as tap to pay).
+Build and test apps that use Near Field Communication (NFC) enabled features on Windows 10 Mobile by using the **NFC** tab of the emulator's **Additional Tools** menu. NFC is useful for a number of scenarios ranging from Proximity scenarios (such as tap to share) to card emulation (such as tap to pay).
 
 You can test your app by simulating a pair of phones tapping together by using a pair of emulators, or you can test your app by simulating a tap to a tag. Also in Windows 10, mobile devices are enabled with HCE (Host Card Emulation) feature and by using the phone emulator you can simulate tapping your device to a payment terminal for APDU command-response traffic.
 
@@ -224,16 +224,11 @@ In Host Card Emulation (HCE) mode you can test your HCE-based card emulation app
 - Delete your scripts by selecting the script in the dropdown menu and hitting **Delete** button.
 - The emulator tool does not check for the syntax of your scripts until you run the script using the **Play** button. The messages sent by your script are dependent on your implementation of your card emulation app.
 
-You can also use the terminal simulator tool from MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) for payments app testing.
-
-- Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
-- Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
-
 To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](https://blogs.msdn.com/b/nfc/).
 
 ### How to Create Scripts for HCE Testing
 
-The scripts are written as C# code and your script’s Run method is called when you click the **Play** button, this method takes an IScriptProcessor interface which is used to transceive APDU commands, output to the log window, and control the timeout for waiting on an APDU response from the phone.
+The scripts are written as C# code and your script's Run method is called when you click the **Play** button, this method takes an IScriptProcessor interface which is used to transceive APDU commands, output to the log window, and control the timeout for waiting on an APDU response from the phone.
 
 Below is a reference on what functionality is available:
 
@@ -260,7 +255,7 @@ Below is a reference on what functionality is available:
 
 ### Smart Card Reader Mode
 
-The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you’d like to be connected from the dropdown.
+The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you'd like to be connected from the dropdown.
 
 Note that not all NFC-capable smart card readers support some types of NFC cards, and some do not support the standard PC/SC storage card APDU commands.
 
@@ -285,7 +280,7 @@ The following screenshot shows multi-touch input.
 
 Test apps that track the movement of the phone by using the **Accelerometer** tab of the emulator's **Additional Tools**.
 
-You can test the accelerometer sensor with live input or pre-recorded input. The only type of recorded data that’s available simulates shaking the phone. You can’t record or save your own simulations for the accelerometer.
+You can test the accelerometer sensor with live input or pre-recorded input. The only type of recorded data that's available simulates shaking the phone. You can't record or save your own simulations for the accelerometer.
 
 1.  Select the desired starting orientation in the **Orientation** drop-down list.
 
@@ -381,7 +376,7 @@ The following screenshot shows Route mode. The orange line indicates the route. 
 
 - You can request a position with the accuracy set to Default.
 
-- When you test geofencing in the emulator, create a simulation that gives the geofencing engine a “warm-up” period to learn and adjust to the movement patterns.
+- When you test geofencing in the emulator, create a simulation that gives the geofencing engine a "warm-up" period to learn and adjust to the movement patterns.
 
 - The only position properties that are simulated are the Latitude, Longitude, Accuracy, and PositionSource. The location simulator does not simulate other properties such as Speed, Heading, and so forth.
 
@@ -597,7 +592,7 @@ You can enable or disable the display of the frame rate counters in your code. W
 
 The following are known issues with the emulator, with suggested ways to work around problems if you encounter them.
 
-### Error message: “Failed while removing virtual Ethernet switch”
+### Error message: "Failed while removing virtual Ethernet switch"
 
 In certain situations, including after you update to a new Windows 10 flight, a virtual network switch associated with the emulator can get into a state where it can't be deleted through the user interface.
 

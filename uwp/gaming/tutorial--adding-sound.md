@@ -3,7 +3,7 @@ title: Add sound
 description: Develop a simple sound engine using XAudio2 APIs to playback game music and sound effects.
 ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ms.date: 10/24/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, sound
 ms.localizationpriority: medium
 ---

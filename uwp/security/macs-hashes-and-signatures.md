@@ -124,10 +124,10 @@ namespace SampleMacAlgorithmProvider
 
 A cryptographic hash function takes an arbitrarily long block of data and returns a fixed-size bit string. Hash functions are typically used when signing data. Because most public key signature operations are computationally intensive, it is typically more efficient to sign (encrypt) a message hash than it is to sign the original message. The following procedure represents a common, albeit simplified, scenario:
 
--   Bob and Alice share a secret key and agree on a MAC function to use.
--   Bob creates a message and inputs the message and the secret key into a MAC function to retrieve a MAC value.
--   Bob sends the \[unencrypted\] message and the MAC value to Alice over a network.
--   Alice uses the secret key and the message as input to the MAC function. She compares the generated MAC value to the MAC value sent by Bob. If they are the same, the message was not changed in transit.
+-   Alice has a public/private key pair and wants to send a signed message to Bob.
+-   Alice creates a message and calculates a hash of the message using a hash function.
+-   Alice signs the hash using her private key and sends the \[unencrypted\] message and the signature to Bob over a network.
+-   Bob calculates a hash of the received message using the same hash function. He then uses Alice's public key to decrypt the signature and compares it to the calculated hash. If they are the same, the message was not changed in transit and came from Alice.
 
 Note that Alice sent an unencrypted message. Only the hash was encrypted. The procedure ensures only that the original message was not altered and, by using Alice's public key, that the message hash was signed by someone with access to Alice's private key, presumably Alice.
 

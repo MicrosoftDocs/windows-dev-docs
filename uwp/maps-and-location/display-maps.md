@@ -2,14 +2,23 @@
 title: Display maps with 2D, 3D, and Streetside views
 description: You can show a map in light dismissable window called a map *place card* or in a full featured map control.
 ms.assetid: 3839E00B-2C1E-4627-A45F-6DDA98D7077F
-ms.date: 08/27/2021
-ms.topic: article
+ms.date: 05/27/2025
+ms.topic: how-to
 keywords: windows 10, uwp, map, location, map control, map views
 ms.localizationpriority: medium
 ---
 
 # Display maps with 2D, 3D, and Streetside views
 
+> [!IMPORTANT]
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and Windows Maps platform APIs ([Windows.Services.Maps.*](/uwp/api/windows.services.maps)) are deprecated and may not be available in future versions of Windows. For more information, see [Resources for deprecated features](/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis).
+
+> [!IMPORTANT]
+> **Bing Maps for Enterprise service retirement**
+>
+> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and map services from the [Windows.Services.Maps](/uwp/api/windows.services.maps) namespaces rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
+>
+> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
 You can show a map in light dismissable window called a map *placecard* or in a full featured map control.
 
 Download the [map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl) to try out some the features described in this guide.
@@ -81,16 +90,13 @@ Use a map control to show rich and customizable map data in your app. A map cont
 
 Use a map control when you want a map within your app that allows users to view app-specific or general geographic information. Having a map control in your app means that users don't have to go outside your app to get that information.
 
-> [!NOTE]
-> If you don't mind users going outside your app, consider using the Windows Maps app to provide that information. Your app can launch the Windows Maps app to display specific maps, directions, and search results. For more info, see [Launch the Windows Maps app](../launch-resume/launch-maps-app.md).
-
 ### Add a map control to your app
 
 Display a map on a XAML page by adding a [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl). To use the **MapControl**, you must declare the [**Windows.UI.Xaml.Controls.Maps**](/uwp/api/Windows.UI.Xaml.Controls.Maps) namespace in the XAML page or in your code. If you drag the control from the Toolbox, this namespace declaration is added automatically. If you add the **MapControl** to the XAML page manually, you must add the namespace declaration manually at the top of the page.
 
 The following example displays a basic map control and configures the map to display the zoom and tilt controls in addition to accepting touch inputs.
 
-```xml
+```xaml
 <Page
     x:Class="MapsAndLocation1.DisplayMaps"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -213,8 +219,6 @@ myMap.StyleSheet = MapStyleSheet.RoadDark();
 ![Dark style map](images/style-dark.png)
 
 You can also use JSON to define custom styles and then use that JSON to create a [**MapStyleSheet**](/uwp/api/windows.ui.xaml.controls.maps.mapstylesheet) object.
-
-Style sheet JSON can be created interactively using the [Map Style Sheet Editor](https://www.microsoft.com/p/map-style-sheet-editor/9nbhtcjt72ft) application.
 
 ```csharp
 myMap.StyleSheet = MapStyleSheet.ParseFromJson(@"
@@ -444,6 +448,4 @@ Handle changes that happen when the user or the app changes the settings of the 
 - [UWP map sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MapControl)
 - [Get current location](get-location.md)
 - [Design guidelines for location-aware apps](./guidelines-and-checklist-for-detecting-location.md)
-- Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps
-- [UWP traffic app sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
 - [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl)

@@ -3,7 +3,7 @@ title: Deploy barcode scanner profiles with MDM
 description: Learn how to deploy barcode scanner profiles with a Mobile Device Management (MDM) server using the EnterpriseExtFileSystem configuration service provider (CSP).
 
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: install-set-up-deploy
 
 ms.localizationpriority: medium
 ---

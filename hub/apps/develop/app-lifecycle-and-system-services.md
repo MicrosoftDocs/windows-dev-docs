@@ -1,14 +1,14 @@
 ---
-title: App lifecycle and system services
+title: App lifecycle, background tasks, and system services in Windows apps
 description: This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and system-level services.
-ms.topic: article
-ms.date: 10/07/2021
-ms.author: hickeys
-author: hickeys
+ms.date: 02/13/2025
+ms.topic: concept-article
+keywords: windows 11, winui, background task, app service, connected devices, remote systems, app lifecycle
 ms.localizationpriority: medium
+# Customer intent: As a Windows developer, I want to learn about the features available for managing the lifecycle of Windows apps and using system-level services.
 ---
 
-# App lifecycle and system services
+# App lifecycle, background tasks, and system services
 
 This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and using system-level services provided by the Windows OS.
 
@@ -22,8 +22,9 @@ The [Windows App SDK](../windows-app-sdk/index.md) provides the following featur
 |---------|-------------|
 | [App lifecycle](../windows-app-sdk/applifecycle/applifecycle.md) | Get an overview of managing the lifecycle of your app. |
 | [App instancing](../windows-app-sdk/applifecycle/applifecycle-instancing.md) | Control whether multiple instances of your app's process can run at the same time. |
+| [Background tasks](../windows-app-sdk/applifecycle/background-tasks.md) | Background tasks are app components that run in the background without a user interface. They can perform actions such as downloading files, syncing data, sending notifications, or updating tiles. |
 | [Rich activation](../windows-app-sdk/applifecycle/applifecycle-rich-activation.md) | Receive information about different kinds activations for your app. |
-| [Power management](../windows-app-sdk/applifecycle/applifecycle-power.md) | Get visibility into how your app affects the device's power state, and enable your app to make intelligent decisions about resource usage.
+| [Power management](../windows-app-sdk/applifecycle/applifecycle-power.md) | Get visibility into how your app affects the device's power state, and enable your app to make intelligent decisions about resource usage. |
 | [Restart](../windows-app-sdk/applifecycle/applifecycle-restart.md) | Programmatically restart your application and set restart options after app termination. |
 
 ## Windows OS features
@@ -60,4 +61,4 @@ The .NET SDK also provides APIs related to system services for WPF and Windows F
 | Article | Description |
 |---------|-------------|
 | [Threading model (WPF)](/dotnet/framework/wpf/advanced/threading-model) | Learn about the threading model of WPF apps. |
-| [System information](/dotnet/framework/winforms/advanced/system-information-and-windows-forms) | Learn how to access sytem information in Windows Forms apps. |
+| [System information](/dotnet/framework/winforms/advanced/system-information-and-windows-forms) | Learn how to access system information in Windows Forms apps. |

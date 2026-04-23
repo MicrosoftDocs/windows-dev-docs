@@ -5,7 +5,7 @@ ms.assetid: 6FC5AD93-6F47-479E-947C-895C99B427BC
 keywords:
 - Streaming resource creation parameters
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

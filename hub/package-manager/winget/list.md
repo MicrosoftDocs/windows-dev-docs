@@ -1,14 +1,13 @@
 ---
 title: list Command
 description: Displays the list of listed apps and if an update is available.
-ms.date: 05/5/2021
+ms.date: 07/15/2025
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # list command (winget)
 
-The **list** command of the [winget](./index.md) tool displays a list of the applications currently installed on your computer. The list command will show apps that were installed through the Windows Package Manager as well as apps that were installed by other means.
+The **list** command of [WinGet](./index.md) displays a list of the applications currently installed on your computer. The list command will show apps that were installed through the Windows Package Manager as well as apps that were installed by other means.
 
 The **list** command will also display if an update is available for an app, and you can use the [**upgrade**](./upgrade.md) command to update the app.
 
@@ -22,12 +21,11 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget list [[-q] \<query>] [\<options>]`
+`winget list [[-q] <query>] [<options>]`
 
-![Image of list command usage](./images/list.png)
+:::image type="content" source="./images/list.png" alt-text="Screenshot listing winget list command options." lightbox="./images/list.png":::
 
-> [!NOTE]
-> If you want to list all apps with available updates use `winget upgrade` (without any arguments).
+To list all apps with available updates, use the command: `winget list --upgrade-available` (without any arguments).
 
 ## Arguments
 
@@ -56,35 +54,42 @@ The options allow you to customize the list experience to meet your needs.
 | **-e, --exact**   |   Uses the exact string in the list query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
 | **--scope** | Select installed package scope filter (user or machine). |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--upgrade-available** | Lists only packages which have an upgrade available. |
+| **-u, --unknown, --include-unknown** | Lists packages even if their current version cannot be determined. |
+| **--pinned, --include-pinned** | Lists packages even if they have a pin that prevents upgrades by WinGet. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ### Example queries
 
-The following example lists a specific version of an application.
+The following example lists installed applications with a given substring in their name.
 
-![list name command](./images/list-name.png)
+:::image type="content" source="./images/list-name.png" alt-text="Screenshot of using the winget --list git command to all installed applications with the name git." lightbox="./images/list-name.png":::
 
 The following example lists all application by ID from a specific source.
 
-![list id with source command](./images/list-id-source.png)
+:::image type="content" source="./images/list-id-source.png" alt-text="Screenshot listing winget list --id Git.Git to show all installed applications coming from that source." lightbox="./images/list-id-source.png":::
 
 The following example limits the output of **list** to 9 apps.
 
-![list count command](./images/list-count.png)
+:::image type="content" source="./images/list-count.png" alt-text="Screenshot listing winget list --count 9 to limit the number of installed apps listed to only 9." lightbox="./images/list-count.png":::
 
 ## List with update
 
-As stated above, the **list** command allows you to see what apps you have installed that have updates available.
+As stated above, the **list** command allows you to see what apps you have installed that have upgrades available.
 
-In the image below, you will notice the preview version of Terminal has an update available.
+In the image below, you will notice applications with an upgrade available.
 
-![Image of list with update command](./images/list-update.png)
+:::image type="content" source="./images/list-update.png" alt-text="Screenshot listing winget list --upgrade-available to show installed apps with an available upgrade." lightbox="./images/list-update.png":::
 
 The **list** command will show not only the update version available, but the source that the update is available from.
 

@@ -1,17 +1,52 @@
 ---
 title: Use a SQLite database in a Windows app
 description: Learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user's device.
-ms.date: 12/06/2022
-ms.topic: article
-keywords: windows 10, windows 11, windows app sdk, SQLite, database
+ms.date: 09/25/2025
+ms.topic: how-to
+keywords: windows 10, windows 11, windows app sdk, winui, SQLite, database
 ms.localizationpriority: medium
+ms.custom: copilot-scenario-highlight
+#customer intent: As a Windows developer, I want to learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user's device.
 ---
 
 # Use a SQLite database in a Windows app
 
-You can use SQLite to store and retrieve data in a lightweight database on the user's device. This guide shows you how to do it in your Windows App SDK apps.
+[SQLite](https://sqlite.org/index.html) provides a reliable, lightweight database solution for storing data locally in Windows apps. Unlike traditional database systems that require separate server installations and complex configurations, SQLite runs entirely within your application process and stores data in a single file on the user's device.
 
-## Some benefits of using SQLite for local storage
+This tutorial shows you how to integrate SQLite into your WinUI application using Microsoft's recommended data access libraries. You'll learn to set up a database, create tables, and implement basic data operations—all while following security best practices to protect against common vulnerabilities.
+
+## What you'll accomplish
+
+In this tutorial, you'll learn how to:
+
+- Configure your Windows app to use SQLite with the Microsoft.Data.SQLite library
+- Create and initialize a local database
+- Implement secure data insertion and retrieval methods
+- Build a simple user interface to interact with your data
+
+## Prerequisites
+
+To complete this tutorial, you need:
+
+- Visual Studio 2022 or later with **WinUI application development** workload
+- Basic familiarity with C# and XAML
+- Understanding of fundamental database concepts
+
+## Key improvements this approach offers
+
+Using SQLite for local data storage in your Windows app offers several advantages:
+
+- Simplified deployment: No separate database server installation required
+- Enhanced security: Data stays local on the user's device
+- Improved performance: Direct file access eliminates network latency
+- Reduced complexity: Single-file database simplifies backup and migration
+
+The techniques you'll learn apply to any Windows app that needs to store structured data locally, from simple settings storage to complex data management scenarios.
+
+> [!TIP]
+> You can use AI assistance to help [avoid SQL injection attacks in SQLite](#avoid-sql-injection-attacks).
+
+## Benefits of SQLite for local storage
 
 :heavy_check_mark: SQLite is lightweight and self-contained. It's a code library without any other dependencies. There's nothing to configure.
 
@@ -29,7 +64,7 @@ We recommend that you use either [Entity Framework Core](/ef/core/) or the open-
 
 ### Entity Framework Core
 
-Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can use the same code in your Windows App SDK app and it will work with appropriate changes to the connection string.
+Entity Framework (EF) is an object-relational mapper that you can use to work with relational data by using domain-specific objects. If you've already used this framework to work with data in other .NET apps, you can use the same code in your WinUI app and it will work with appropriate changes to the connection string.
 
 To try it out, see [Getting Started with EF Core](/ef/core/get-started/overview/first-app).
 
@@ -39,9 +74,9 @@ The [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite) library implement
 
 The rest of this guide helps you to use this library.
 
-## Set up your solution to use the Microsoft.Data.SQlite library
+## Set up your solution to use the Microsoft.Data.SQLite library
 
-We'll start with a basic Windows App SDK project, and then install the SQLite NuGet package.
+We'll start with a basic WinUI project, and then install the SQLite NuGet package. See [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) for instructions on how to create your first WinUI project.
 
 All supported versions of Windows support SQLite, so your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 
@@ -53,15 +88,15 @@ All supported versions of Windows support SQLite, so your app does not have to p
 
 Let's start by adding a class to your project named **DataAccess**. If you plan to share your data access logic with other client code, you can use a .NET class library project to contain your data access code, but we won't use one in our example.
 
-Right-click the solution, and then click **Manage NuGet Packages for Solution**.
+1. Right-click the solution, and then click **Manage NuGet Packages for Solution**.
 
-![A screenshot of Visual Studio's Solution Explorer with the project right-clicked and the Manage NuGet Packages option highlighted.](images/manage-nuget-2.png)
+    ![A screenshot of Visual Studio's Solution Explorer with the project right-clicked and the Manage NuGet Packages option highlighted.](images/manage-nuget-2.png)
 
-At this point, you have a choice. You can use the version of SQLite that is included with Windows or if you have some reason to use a specific version of SQLite, you can include the SQLite library in your package. We are going to use the version of SQLite that's included with Windows.
+    At this point, you have a choice. You can use the version of SQLite that is included with Windows or if you have some reason to use a specific version of SQLite, you can include the SQLite library in your package. We are going to use the version of SQLite that's included with Windows.
 
-Choose the **Browse** tab, search for the **Microsoft.Data.SQLite.Core** package, and then install the latest stable version.
+1. Choose the **Browse** tab, search for the **Microsoft.Data.SQLite** package, and then install the latest stable version.
 
-![SQLite Core package](images/sqlite-core-package.png)
+    ![SQLite NuGet package](images/sqlite-nuget-package.png)
 
 ## Add and retrieve data in a SQLite database
 
@@ -81,8 +116,8 @@ We'll do these things:
 
 Open the `DataAccess` class in your project and make that class static.
 
->[!NOTE]
->While our example will place data access code in a static class, this is a design choice and is completely optional.
+> [!NOTE]
+> While the example will put your data access code in a static class, this is a design choice and is completely optional.
 
 ```csharp
 public static class DataAccess
@@ -247,7 +282,19 @@ public MainWindow()
 
 That's it. Explore the [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite) to see what other things you can do with your SQLite database. Check out the links below to learn about other ways to use data in your Windows apps.
 
-## Next steps
+## Avoid SQL injection attacks
+
+The code in this example uses parameterized queries to prevent SQL injection attacks. Never concatenate user input into a SQL query string. Always use parameters. You can ask Copilot for more tips on avoiding SQL injection attacks.
+
+The following text shows an example prompt for Copilot:
+
+```copilot-prompt
+Can you provide some best practices to avoid SQL injection attacks when writing SQLite queries in C# code?
+```
+
+Copilot is powered by AI, so surprises and mistakes are possible. For more information, see [Copilot FAQs](https://aka.ms/copilot-general-use-faqs).
+
+## Related content
 
 ### Connect your app directly to a SQL Server database
 

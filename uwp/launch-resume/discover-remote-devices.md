@@ -3,7 +3,7 @@ title: Discover remote devices
 description: Learn how to discover remote devices from your app using Project Rome.
 ms.assetid: 5b4231c0-5060-49e2-a577-b747e20cf633
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, connected devices, remote systems, rome, project rome
 ms.localizationpriority: medium
 ---
@@ -82,7 +82,7 @@ if (!RemoteSystem.IsAuthorizationKindEnabled(RemoteSystemAuthorizationKind.Anony
 }
 ```
 
-To change this setting, the user must open the **Settings** app. In the **System** > **Shared experiences** > **Share across devices** menu, there is a drop-down box where the user can specify which devices their system can share with.
+To change this setting, the user must open **Settings**. In the **System** > **Shared experiences** > **Share across devices** menu, there is a drop-down box where the user can specify which devices their system can share with.
 
 ![shared experiences settings page](images/shared-experiences-settings.png)
 

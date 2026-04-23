@@ -3,7 +3,7 @@ ms.assetid: f0c0325e-ad61-4238-a096-c37802db3d3b
 description: Use this method in the Microsoft Store analytics API to get detailed data for a specific error for your app.
 title: Get details for an error in your app
 ms.date: 06/05/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, errors, details
 ms.localizationpriority: medium
 ---
@@ -58,10 +58,10 @@ To use this method, you need to first do the following:
 The following examples demonstrate several requests for getting detailed error data. Replace the *applicationId* value with the Store ID for your app.
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=00001111-aaaa-2222-bbbb-3333cccc4444&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0 HTTP/1.1
 Authorization: Bearer <your access token>
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=012e33e3-dbc9-b12f-c124-9d9810f05d8b&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0&filter=market eq 'US' and deviceType eq 'Windows.Desktop' HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/failuredetails?applicationId=9NBLGGGZ5QDR&failureHash=00001111-aaaa-2222-bbbb-3333cccc4444&startDate=2016-11-05&endDate=2016-11-06&top=10&skip=0&filter=market eq 'US' and deviceType eq 'Windows.Desktop' HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 

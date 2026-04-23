@@ -2,7 +2,7 @@
 description: Learn how to register your UWP app to receive push notifications that you send from Partner Center.
 title: Configure your app for targeted push notifications
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store Services SDK, targeted push notifications, Partner Center
 ms.assetid: 30c832b7-5fbe-4852-957f-7941df8eb85a
 ms.localizationpriority: medium

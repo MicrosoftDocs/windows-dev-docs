@@ -2,7 +2,7 @@
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your desktop application.
 title: Get the stack trace for an error in your desktop application
 ms.date: 06/05/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, stack trace, error, desktop application
 ms.localizationpriority: medium
 ---
@@ -47,7 +47,7 @@ To use this method, you need to first do the following:
 The following example demonstrates how to get a stack trace using this method. Replace the *applicationId* and *cabIdHash* parameters with the appropriate values for your desktop application.
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/stacktrace?applicationId=10238467886765136388&cabIdHash=54ffb83a-e159-41d2-8158-f36f306cc01e HTTP/1.1
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/desktop/stacktrace?applicationId=10238467886765136388&cabIdHash=00001111-aaaa-2222-bbbb-3333cccc4444 HTTP/1.1
 Authorization: Bearer <your access token>
 ```
 

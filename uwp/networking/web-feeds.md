@@ -120,7 +120,7 @@ catch (Exception ex)
 ```javascript
 function onError(err) {
     WinJS.log && WinJS.log(err, "sample", "error");
-    // Match error number with a ErrorStatus value.
+    // Match error number with an ErrorStatus value.
     // Use Windows.Web.WebErrorStatus.getStatus() to retrieve HTTP error status codes.
     var errorStatus = Windows.Web.Syndication.SyndicationError.getStatus(err.number);
     if (errorStatus === Windows.Web.Syndication.SyndicationErrorStatus.invalidXml) {

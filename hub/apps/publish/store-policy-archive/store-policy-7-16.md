@@ -12,9 +12,9 @@ ms.assetid: F02A720E-2899-4863-8945-9AB99158BCA1
 
 **Document version: 7.16**
 
-**Publish date: June 16, 2022**
+**Publish date: October 30, 2023**
 
-**Effective date: July 16, 2022**
+**Effective date: June 16, 2022**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](../store-policies-change-history.md).
@@ -147,10 +147,10 @@ Your product must not contain or enable malware as defined by the Microsoft crit
 
 **10.2.4**
 
-Your product may depend on non-integrated software (such as another product, module, or service) to deliver its primary functionality, subject to the following requirements:
+Your product may depend on non-integrated software (such as another product, module, or service) to deliver its primary functionality if you disclose the dependency at the beginning of the description in metadata.
 
-- You disclose the dependency at the beginning of the description metadata.
-- Dependency on non-Microsoft provided driver(s) or NT service(s) is not allowed. If your product has a dependency on non-Microsoft provided driver(s) or NT service(s), you must disclose that dependency to Microsoft in the certification notes in Microsoft Partner Center to be considered for an exception to this policy.
+Generally, dependency on non-Microsoft provided drivers or NT services is not allowed, but may be considered case by case for WHCP certified drivers. ([link here](/windows-hardware/design/compatibility/whcp-certification-process)). If your product has a dependency on non-Microsoft provided driver(s) or NT service(s), you must disclose that dependency to Microsoft in the certification notes in Microsoft Partner Center. 
+
 
 **10.2.5**
 
@@ -351,13 +351,12 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs) and [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
+If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0) and [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
 **10.10.3**
 
-Any advertising content your product displays must adhere to Microsoft’s [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
-
-If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
+Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 **10.10.4**
 
@@ -444,7 +443,7 @@ Products that emulate a game system or game platform are not allowed on any devi
 
 **10.13.11**
 
-The following privacy requirements apply to Xbox Live user data:
+The following privacy requirements apply to Xbox Live services and user data:
 
 - Services and user data are only for use in your game by you. Don't sell, license, or share any data obtained from us or our services. If you receive personal data of end users through Xbox Live, you are an independent controller of such data and must have a privacy statement (or policy) in place with end users governing your use of personal data, as required by the App Developer Agreement. We recommend you include a link to your privacy statement on your website and on the Microsoft Store pages for your games.
 - Services and user data must be used appropriately in games. This data includes (without limitation) usage data, account identifiers and any other personally identifiable data, statistics, scores, ratings, rankings, connections with other users, and any other data relating to a user’s social activity.
@@ -455,6 +454,8 @@ The following privacy requirements apply to Xbox Live user data:
 ### 10.14 Account Type
 
 If a reasonable consumer would interpret your application or publisher name to be that of a business entity, you must publish from a company account type, not an individual account type.
+
+For more information go to our account-types page [here](/windows/apps/publish/partner-center/account-types-locations-and-fees).
 
 ## Content Policies
 
@@ -565,4 +566,4 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

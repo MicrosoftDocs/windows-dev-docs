@@ -5,7 +5,7 @@ ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
 label: Use patterns to format dates and times
 template: detail.hbs
 ms.date: 11/09/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---
@@ -23,7 +23,7 @@ But when you want even more control over the order and format of the components 
 
 ## The difference between format templates and format patterns
 
-A format template is a culture-agnostic format string. So, if you construct a **DateTimeFormatter** using a format template, then the formatter displays your format components in the right order for the current language. Conversely, a format pattern is culture-specific. If you construct a **DateTimeFormatter** using a format pattern, then the formatter will use the pattern exactly as given. Consequently, a pattern isn't necesssarily valid across cultures.
+A format template is a culture-agnostic format string. So, if you construct a **DateTimeFormatter** using a format template, then the formatter displays your format components in the right order for the current language. Conversely, a format pattern is culture-specific. If you construct a **DateTimeFormatter** using a format pattern, then the formatter will use the pattern exactly as given. Consequently, a pattern isn't necessarily valid across cultures.
 
 Let's illustrate this distinction with an example. We'll pass a simple format template (not a pattern) to the **DateTimeFormatter** constructor. This is the format template "month day".
 

@@ -5,7 +5,7 @@ ms.assetid: 4FC1470C-11F7-4D60-A856-B580F47113A0
 keywords:
 - Blending stages
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

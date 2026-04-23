@@ -2,10 +2,8 @@
 title: Windows App SDK deployment guide for framework-dependent packaged apps
 description: This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 ms.topic: article
-ms.date: 11/28/2022
+ms.date: 07/22/2025
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +31,7 @@ The Windows App SDK framework package contains the Windows App SDK binaries used
 
 ### Stable version
 
-When you install a stable release version (see [Stable channel release notes](stable-channel.md)) of the Windows App SDK NuGet package on your development computer, and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
+When you install a stable release version of the Windows App SDK NuGet package on your development computer, and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
 
 However, if you build your app package manually using a separate Windows Application Packaging Project, then you must declare a **PackageReference** in your `Application (package).wapproj` file, like the following:
 
@@ -49,7 +47,7 @@ That package dependency ensures that the Framework package is installed when you
 
 ### Preview version
 
-When you install a preview release version (see [Preview channel release notes](preview-channel.md)) of the Windows App SDK NuGet package on your development computer, a preview version of the Windows App SDK framework package is deployed during build time as a NuGet package dependency.
+When you install a preview release version of the Windows App SDK NuGet package on your development computer, a preview version of the Windows App SDK framework package is deployed during build time as a NuGet package dependency.
 
 ## Call the Deployment API
 
@@ -68,7 +66,10 @@ For packaged apps that are *not* distributed through the Store, you as the devel
 You should call the Deployment API after your app's process is initialized, but before your app uses Windows App SDK runtime features that use the Singleton package (for example, push notifications). The main methods of the Deployment API are the static [GetStatus](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.getstatus) and [Initialize](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize) methods of the [DeploymentManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager) class.
 
 * The **GetStatus** method returns the current deployment status of the Windows App SDK runtime that's currently loaded. Use this method to identify whether there's work required to install Windows App SDK runtime packages before the current app can use Windows App SDK features.
-* The **Initialize** method verifies whether all required packages are present to a minimum version needed by the Windows App SDK runtime that's currently loaded. If any package dependencies are missing, then the method attempts to register those missing packages. Beginning in Windows App SDK 1.1, the **Initialize** method also supports the option to force-deploy the Windows App SDK runtime packages. That shuts down any processes for the *Main* and *Singleton* runtime packages, and thus interrupts their services (for example, push notifications won't deliver notifications during this time).
+* The **Initialize** method verifies whether all required packages are present to a minimum version needed by the Windows App SDK runtime that's currently loaded. If any package dependencies are missing, then the method attempts to register those missing packages. Beginning in Windows App SDK 1.1, the **Initialize** method also supports the option to force-deploy the Windows App SDK runtime packages. That shuts down any processes for the *Main* and *Singleton* runtime packages, and thus interrupts their services (for example, push notifications won't deliver notifications during this time). You should call **Initialize** only once. You don't need to call **Initialize** for apps deployed via the **Start Without Debugging** and **Start Debugging** commands in Visual Studio.
+
+> [!IMPORTANT]
+> The default value of the Visual Studio property `<WindowsAppSdkDeploymentManagerInitialize>` is `true`. So if you wish to call **DeploymentManager.Initialize** explicitly, then set `<WindowsAppSdkDeploymentManagerInitialize>false</WindowsAppSdkDeploymentManagerInitialize>` in your Visual Studio project file.
 
 ### Deployment API sample app
 

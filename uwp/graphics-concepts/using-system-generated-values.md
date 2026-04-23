@@ -5,7 +5,7 @@ ms.assetid: C7CBA81D-68CA-4E9A-95E3-8185C280C843
 keywords:
 - Using system-generated values
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

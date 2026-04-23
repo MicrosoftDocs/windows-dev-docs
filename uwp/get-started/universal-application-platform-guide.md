@@ -2,16 +2,18 @@
 title: What's a Universal Windows Platform (UWP) app?
 description: Learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices that run Windows.
 ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
-ms.date: 12/10/2021
+ms.date: 08/21/2024
 ms.topic: article
-ms.custom: contperf-fy21q1
 keywords: windows 10, uwp, universal
 ms.localizationpriority: medium
 ---
 
 # What's a Universal Windows Platform (UWP) app?
 
-UWP is one of many ways to create client applications for Windows. UWP apps use WinRT APIs to provide powerful UI and advanced asynchronous features that are ideal for internet-connected devices.
+UWP is one of many ways to create client applications for Windows. 
+
+> [!NOTE]
+> If you are starting to develop Windows apps, we recommend you consider using the [Windows App SDK](/windows/apps/windows-app-sdk/), and [WinUI](/windows/apps/develop/) rather than UWP. Although still supported, UWP is not under active development. Please see [Start developing Windows apps](/windows/apps/get-started/start-here) for more information.
 
 To download the tools you will need to start creating Windows apps, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment), and then [write your first app](your-first-app.md).
 
@@ -19,7 +21,6 @@ To download the tools you will need to start creating Windows apps, see [Install
 
 UWP is one choice for creating apps that run on Windows 10 and Windows 11 devices, and can be combined with other platforms. UWP apps can make use of Win32 APIs and .NET classes (see [API Sets for UWP apps](/previous-versions/mt186421(v=vs.85)), [Dlls for UWP apps](/previous-versions/mt186422(v=vs.85)), and [.NET for UWP apps](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true)).
 
-The Microsoft development story continues to evolve, and along with initiatives such as [WinUI](/windows/apps/winui/), [MSIX](/windows/msix/), and the [Windows App SDK](/windows/apps/windows-app-sdk/), UWP is a powerful tool for creating client apps.
 
 
 ## Features of a UWP app
@@ -57,14 +58,14 @@ You can write your app so that you expect it to run only on a particular type of
 
 ### Adaptive controls and input
 
-UI elements respond to the size and DPI of the screen the app is running on by adjusting their layout and scale. UWP apps work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you design UI that can adapt to the different devices and form factors that your app may run on.
+UI elements respond to the size and DPI of the screen the app is running on by adjusting their layout and scale. UWP apps work well with multiple types of input such as keyboard, mouse, touch, pen, and game controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you design UI that can adapt to the different devices and form factors that your app may run on.
 
 ![Windows-powered devices](images/1894834-hig-device-primer-01-500.png)
 
 Windows helps you target your UI to multiple devices with the following features:
 
 - Universal controls and layout panels help you to optimize your UI for the screen resolution of the device. For example, controls such as buttons and sliders automatically adapt to device screen size and DPI density. Layout panels help adjust the layout of content based on the size of the screen. Adaptive scaling adjusts to resolution and DPI differences across devices.
-- Common input handling allows you to receive input through touch, a pen, a mouse, a keyboard, or a controller such as a Microsoft Xbox controller.
+- Common input handling allows you to receive input through touch, a pen, a mouse, a keyboard, or a game controller.
 - Tooling that helps you to design UI that can adapt to different screen resolutions.
 
 Some aspects of your app's UI will automatically adapt across devices. Your app's user-experience design, however, may need to adapt depending on the device the app is running on. For example, a photo app could adapt its UI when running on a small, handheld device to ensure that usage is ideal for single-handed use. When a photo app is running on a desktop computer, the UI should adapt to take advantage of the additional screen space.
@@ -124,7 +125,7 @@ In addition to interaction on different devices, [plan your app](./plan-your-app
 
 - Design your workflow using [Navigation design basics for UWP apps](/windows/apps/design/basics/navigation-basics) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design) to respond to different screen sizes and resolutions.
 
-- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](/windows/apps/design/layout/index) to learn how users can interact with your app by using [Cortana](/cortana/skills/), [Speech](/windows/apps/design/input/speech-interactions), [Touch interactions](/windows/apps/design/input/touch-interactions), the [Touch keyboard](/windows/apps/design/input/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](/windows/apps/design/controls/text-controls) for more traditional interaction experiences.
+- Consider how you'll accommodate multiple kinds of input. See the [Guidelines for interactions](/windows/apps/design/layout/index) to learn how users can interact with your app by using [Speech](/windows/apps/design/input/speech-interactions), [Touch interactions](/windows/apps/design/input/touch-interactions), the [Touch keyboard](/windows/apps/design/input/keyboard-interactions) and more.  Or, see the [Guidelines for text and text input](/windows/apps/design/controls/text-controls) for more traditional interaction experiences.
 
 ### Add services
 
@@ -153,8 +154,8 @@ For more introductory material, see [An Introduction to Building Windows Apps fo
 ## How the Universal Windows Platform relates to Windows Runtime APIs
 If you're building a Universal Windows Platform (UWP) app, then you can get a lot of mileage and convenience out of treating the terms "Universal Windows Platform (UWP)" and "Windows Runtime (WinRT)" as more or less synonymous. But it *is* possible to look under the covers of the technology, and determine just what the difference is between those ideas. If you're curious about that, then this last section is for you.
 
-The Windows Runtime, and WinRT APIs, are an evolution of Windows APIs. Originally, Windows was programmed via flat, C-style Win32 APIs. To those were added COM APIs ([DirectX](/windows/desktop/directx) being a prominent example). Windows Forms, WPF, .NET, and managed languages brought their own way of writing Windows apps, and their own flavor of API technology. The Windows Runtime is, under the covers, the next stage of COM. At the actual application binary interface (ABI) layer, its roots in COM become visible. But the Windows Runtime was designed to be callable from a great range of different programming languages. And callable in a way that's very natural to each of those languages. To this end, access to the Windows Runtime is made available via what are known as language projections. There is a Windows Runtime language projection into C#, into Visual Basic, into standard C++, into JavaScript, and so on. Furthermore, once packaged appropriately (see [Desktop Bridge](/windows/msix/desktop/source-code-overview)), you can call WinRT APIs from an app built in one of a great range of application models: Win32, .NET, WinForms, and WPF.
+The Windows Runtime, and WinRT APIs, are an evolution of Windows APIs. Originally, Windows apps were written using flat, C-style Win32 APIs and to those were added COM APIs—[DirectX](/windows/desktop/directx) being a prominent example. Later technologies such as Windows Forms, WPF, .NET, and managed languages also providing a unique way of writing Windows apps with their own flavor of API technology. Under the covers, the Windows Runtime is the next stage of COM. At the actual application binary interface (ABI) layer, its roots in COM become visible. But unlike COM, the Windows Runtime was designed to be callable from a wide variety of programming languages in a more natural way. As a result, access to the Windows Runtime is made available via what are known as language projections. A projection hides the COM details, and provides a more natural programming experience for a given language. There is a Windows Runtime language projection into C#, Visual Basic, standard C++, JavaScript, and so on. Furthermore, once packaged appropriately—see [Desktop Bridge](/windows/msix/desktop/source-code-overview)—you can call WinRT APIs from an app built in a variety of application models: Win32, .NET, WinForms, WPF, and UWP.
 
-And, of course, you can call WinRT APIs from your UWP app. UWP is an application model built on top of the Windows Runtime. Technically, the UWP application model is based on [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication), although that detail may be hidden from you, depending on your choice of programming language. As this topic has explained, from a value proposition point of view, the UWP lends itself to writing a single binary that can, should you choose, be published to the Microsoft Store and run on any one of a great range of device form factors. The device reach of your UWP app depends on the subset of Windows Runtime APIs that you limit your app to calling, or that you call conditionally.
+UWP is an application model built on top of the Windows Runtime. Technically, the UWP application model is based on [CoreApplication](/uwp/api/windows.applicationmodel.core.coreapplication), although that detail may be hidden from you depending on your chosen programming language. The UWP lends itself to writing a single binary that can, should you choose, be published to the Microsoft Store and run on a wide range of device form factors as covered above. The device reach of your UWP app depends on the subset of Windows Runtime APIs that you limit your app to calling, or that you call conditionally.
 
 Hopefully, this section has been successful in describing the difference between the technology underlying Windows Runtime APIs, and the mechanism and business value of the Universal Windows Platform.

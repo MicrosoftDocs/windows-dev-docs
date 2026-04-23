@@ -1,11 +1,9 @@
 ---
 title: Push notifications functionality migration
 description: This topic contains migration guidance in the push notifications feature area.
-ms.topic: article
-ms.date: 10/07/2021
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -89,3 +87,7 @@ Content-Length: 46
 
 { Sync: "Hello from the Contoso App Service" }
 ```
+
+## See Also
+
+* [Windows App SDK and supported Windows releases](../../support.md)

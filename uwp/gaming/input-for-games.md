@@ -9,17 +9,18 @@ ms.localizationpriority: medium
 ---
 # Input for games
 
-This section describes the different kinds of input devices that can be used in Universal Windows Platform (UWP) games on Windows 10 and Xbox One, demonstrates their basic usage, and recommends patterns and techniques for effective input programming in games.
+This section describes the different kinds of input devices that can be used in Universal Windows Platform (UWP) games on Windows 10 or Windows 11 and Xbox, demonstrates their basic usage, and recommends patterns and techniques for effective input programming in games.
 
-> **Note**    Other kinds of input devices exist and are available to be used in UWP games such as custom input devices that might be genre-specific or game-specific. Such devices and their programming are not discussed in this section. For information on the interfaces used to facilitate custom input devices, see the [Windows.Gaming.Input.Custom](/uwp/api/windows.gaming.input.custom) namespace.
+> [!NOTE]
+> Other kinds of input devices exist and are available to be used in UWP games such as custom input devices that might be genre-specific or game-specific. Such devices and their programming are not discussed in this section. For information on the interfaces used to facilitate custom input devices, see the [Windows.Gaming.Input.Custom](/uwp/api/windows.gaming.input.custom) namespace.
 
 ## Gaming input devices
 
-Game input devices are supported in UWP games and apps for Windows 10 and Xbox One by the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) namespace.
+Game input devices are supported in UWP games and apps for Windows 10 or Windows 11 and Xbox One through the [Windows.Gaming.Input](/uwp/api/windows.gaming.input) namespace.
 
 ### Gamepads
 
-Gamepads are the standard input device on Xbox One and a common choice for Windows gamers when they don't favor a keyboard and mouse. They provide a variety of digital and analog controls making them suitable for almost any kind of game and also provide tactile feedback through embedded vibration motors.
+Gamepads are the standard input device on Xbox and a common choice for Windows gamers when they don't favor a keyboard and mouse. They provide a variety of digital and analog controls making them suitable for almost any kind of game and also provide tactile feedback through embedded vibration motors.
 
 For information on how to use gamepads in your UWP game, see [Gamepad and vibration](gamepad-and-vibration.md).
 

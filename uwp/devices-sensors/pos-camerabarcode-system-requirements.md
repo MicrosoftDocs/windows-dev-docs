@@ -1,8 +1,6 @@
 ---
 title: Camera barcode scanner system requirements
 description: Lists the requirements for using camera barcode scanner from a UWP app.
-author: twarwick
-ms.author: twarwick
 ms.date: 05/04/2023
 ms.topic: article
 

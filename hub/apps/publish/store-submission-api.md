@@ -5,47 +5,48 @@ ms.date: 10/30/2022
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, msi, exe, unpackaged, unpackaged app, desktop app, traditional desktop app, price, available, discoverable, free trial, trials, trial, apps, release date
 ms.localizationpriority: medium
+ms.custom: sfi-ga-nochange
 ---
 
 # Microsoft Store submission API for MSI or EXE app
 
-Use the Microsoft Store submission API for MSI or EXE app to programmatically query and create submissions for MSI or EXE apps for your or your organization's Partner Center account. This API is useful if your account manages many apps, and you want to automate and optimize the submission process for these assets. This API uses Azure Active Directory (Azure AD) to authenticate the calls from your app or service.
+Use the Microsoft Store submission API for MSI or EXE app to programmatically query and create submissions for MSI or EXE apps for your or your organization's Partner Center account. This API is useful if your account manages many apps, and you want to automate and optimize the submission process for these assets. This API uses Microsoft Entra ID to authenticate the calls from your app or service.
 
 The following steps describe the end-to-end process of using the Microsoft Store submission API:
 
 1. Make sure that you have completed all the prerequisites.
-2. Before you call a method in the Microsoft Store submission API, obtain an Azure AD access token. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
+2. Before you call a method in the Microsoft Store submission API, obtain an Microsoft Entra ID access token. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
 3. Call the Microsoft Store submission API for MSI or EXE app.
 
 ## Step 1: Complete prerequisites for using the Microsoft Store submission API
 
 Before you start writing code to call the Microsoft Store submission API for MSI or EXE app, make sure that you have completed the following prerequisites.
 
-- You (or your organization) must have an Azure AD directory and you must have Global administrator permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Azure AD directory. Otherwise, you can [create a new Azure AD in Partner Center](partner-center/manage-azure-ad-applications-in-partner-center.md) for no additional charge.
-- You must associate an Azure AD application with your Partner Center account and obtain your tenant ID, client ID and key. You need these values to obtain an Azure AD access token, which you will use in calls to the Microsoft Store submission API.
+- You (or your organization) must have an Microsoft Entra ID directory and you must have Global administrator permission for the directory. If you already use Microsoft 365 or other business services from Microsoft, you already have Microsoft Entra ID directory. Otherwise, you can [create a new Microsoft Entra ID in Partner Center](partner-center/manage-azure-ad-applications-in-partner-center.md) for no additional charge.
+- You must associate an Microsoft Entra ID application with your Partner Center account and obtain your tenant ID, client ID and key. You need these values to obtain an Microsoft Entra ID access token, which you will use in calls to the Microsoft Store submission API.
 - Prepare your app for use with the Microsoft Store submission API:
-  - If your app does not yet exist in Partner Center, you must [create your app by reserving its name](publish-your-app/reserve-your-apps-name.md?pivots=store-installer-msi-exe) in Partner Center. You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it.
-  - Before you can create a submission for a given app using this API, you must first [create one submission for the app](publish-your-app/create-app-submission.md?pivots=store-installer-msi-exe)] in Partner Center, including answering the [age ratings](publish-your-app/age-ratings.md?pivots=store-installer-msi-exe) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API.
-  - If you are creating or updating an app submission and you need to include new package, [prepare the package details](publish-your-app/upload-app-packages.md?pivots=store-installer-msi-exe).
-  - If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](publish-your-app/create-app-store-listing.md?pivots=store-installer-msi-exe).
+  - If your app does not yet exist in Partner Center, you must [create your app by reserving its name](publish-your-app/msix/reserve-your-apps-name.md) in Partner Center. You cannot use the Microsoft Store submission API to create an app in Partner Center; you must work in Partner Center to create it, and then after that you can use the API to access the app and programmatically create submissions for it.
+  - Before you can create a submission for a given app using this API, you must first [create one submission for the app](publish-your-app/msix/create-app-submission.md) in Partner Center, including answering the [age ratings](publish-your-app/msix/age-ratings.md) questionnaire. After you do this, you will be able to programmatically create new submissions for this app using the API.
+  - If you are creating or updating an app submission and you need to include new package, [prepare the package details](publish-your-app/msi/upload-app-packages.md).
+  - If you are creating or updating an app submission and you need to include screenshots or images for the Store listing, [prepare the app screenshots and images](publish-your-app/msi/add-and-edit-store-listing-info.md).
 
-### How to associate an Azure AD application with your Partner Center account
+### How to associate an Microsoft Entra ID application with your Partner Center account
 
-Before you can use the Microsoft Store submission API for MSI or EXE app, you must associate an Azure AD application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. The Azure AD application represents the app or service from which you want to call the Microsoft Store submission API. You need the tenant ID, client ID and key to obtain an Azure AD access token that you pass to the API.
+Before you can use the Microsoft Store submission API for MSI or EXE app, you must associate an Microsoft Entra ID application with your Partner Center account, retrieve the tenant ID and client ID for the application and generate a key. The Microsoft Entra ID application represents the app or service from which you want to call the Microsoft Store submission API. You need the tenant ID, client ID and key to obtain an Microsoft Entra ID access token that you pass to the API.
 
 > [!NOTE]
-> You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Azure AD access token.
+> You only need to perform this task one time. After you have the tenant ID, client ID and key, you can reuse them any time you need to create a new Microsoft Entra ID access token.
 
-1. In Partner Center, [associate your organization's Partner Center account with your organization's Azure AD directory](partner-center/associate-azure-ad-with-partner-center.md).
-2. Next, from the Users page in the Account settings section of Partner Center, [add the Azure AD application](partner-center/manage-azure-ad-applications-in-partner-center.md) that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. If the application doesn't exist yet in your Azure AD directory, you can [create a new Azure AD application in Partner Center](partner-center/manage-azure-ad-applications-in-partner-center.md#create-a-new-azure-ad-application-account-in-your-organizations-directory-and-add-it-to-your-partner-center-account).
-3. Return to the Users page, click the name of your Azure AD application to go to the application settings, and copy down the Tenant ID and Client ID values.
+1. In Partner Center, [associate your organization's Partner Center account with your organization's Microsoft Entra ID directory](partner-center/associate-azure-ad-with-partner-center.md).
+2. Next, from the Users page in the Account settings section of Partner Center, [add the Microsoft Entra ID application](partner-center/manage-azure-ad-applications-in-partner-center.md#add-microsoft-entra-application) that represents the app or service that you will use to access submissions for your Partner Center account. Make sure you assign this application the Manager role. If the application doesn't exist yet in your Microsoft Entra ID directory, you can [create a new Microsoft Entra ID application in Partner Center](partner-center/manage-azure-ad-applications-in-partner-center.md#create-microsoft-entra-application).
+3. Return to the Users page, click the name of your Microsoft Entra ID application to go to the application settings, and copy down the Tenant ID and Client ID values.
 4. To add a new key or Client secret, see the following instructions or refer instructions to [register app through Azure Portal](/azure/active-directory/develop/quickstart-register-app):
 
 To register your app:
 
 1. Sign in to the [Azure portal](https://portal.azure.com/).
 2. If you have access to multiple tenants, use the Directories + subscriptions filter   in the top menu to switch to the tenant in which you want to register the application.
-3. Search for and select Azure Active Directory.
+3. Search for and select Microsoft Entra ID Directory.
 4. Under Manage, select App registrations > Select your application.
 5. Select Certificates & secrets > Client secrets > New client secret.
 6. Add a description for your client secret.
@@ -58,11 +59,11 @@ To register your app:
 9. Select Add.
 10. Record the secret's value for use in your client application code. This secret value is never displayed again after you leave this page.
 
-## Step 2: Obtain an Azure AD access token
+## Step 2: Obtain an Microsoft Entra ID access token
 
-Before you call any of the methods in the Microsoft Store submission API for MSI or EXE app, you must first obtain an Azure AD access token that you pass to the Authorization header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
+Before you call any of the methods in the Microsoft Store submission API for MSI or EXE app, you must first obtain an Microsoft Entra ID access token that you pass to the Authorization header of each method in the API. After you obtain an access token, you have 60 minutes to use it before it expires. After the token expires, you can refresh the token so you can continue to use it in further calls to the API.
 
-To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials]/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) to send an HTTP POST to the https://login.microsoftonline.com/<tenant_id>/oauth2/token endpoint. Here is a sample request.
+To obtain the access token, follow the instructions in [Service to Service Calls Using Client Credentials](/azure/active-directory/azuread-dev/v1-oauth2-client-creds-grant-flow) to send an HTTP POST to the https://login.microsoftonline.com/<tenant_id>/oauth2/token endpoint. Here is a sample request.
 
 ```json
 POST https://login.microsoftonline.com/<tenant-id>/oauth2/v2.0/token HTTP/1.1
@@ -83,7 +84,7 @@ For examples that demonstrate how to obtain an access token by using C# or Node.
 
 ## Step 3: Use the Microsoft Store submission API
 
-After you have an Azure AD access token, you can call methods in the Microsoft Store submission API for MSI or EXE app. The API includes many methods that are grouped into scenarios for apps. To create or update submissions, you typically call multiple methods in a specific order. For information about each scenario and the syntax of each method, see the following sections:
+After you have an Microsoft Entra ID access token, you can call methods in the Microsoft Store submission API for MSI or EXE app. The API includes many methods that are grouped into scenarios for apps. To create or update submissions, you typically call multiple methods in a specific order. For information about each scenario and the syntax of each method, see the following sections:
 
 > [!NOTE]
 > After you obtain an access token, you have 60 minutes to call methods in the Microsoft Store submission API for MSI or EXE app before the token expires.
@@ -120,7 +121,7 @@ Fetches metadata in each module (listings, properties or availability) under cur
 
 | Header                          | Value                                                      |
 |---------------------------------|------------------------------------------------------------|
-| `Authorization: Bearer <Token>` | The Azure AD app ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | The Microsoft Entra ID app ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account                        |
 
 **Response Headers**
@@ -180,140 +181,6 @@ Fetches metadata in each module (listings, properties or availability) under cur
 | website                  | String           |             |
 | whatsNew                 | String           |             |
 
-**Sample Response**
-
-```json
-{
-    "isSuccess": true,
-    "errors": [{
-        "code": "badrequest",
-        "message": "Error Message 1",
-        "target": "listings"
-        }, {
-        "code": "warning",
-        "message": "Warning Message 1",
-        "target": "properties"
-    }],
-    "responseData": {
-        "availability":{
-            "markets": ["US"],
-            "discoverability": "DISCOVERABLE",
-            "enableInFutureMarkets": true,
-            "pricing": "PAID",
-            "freeTrial": "NO_FREE_TRIAL"
-        },
-        "properties":{
-            "isPrivacyPolicyRequired": true,
-            "privacyPolicyUrl": "http://contoso.com",
-            "website": "http://contoso.com",
-            "supportContactInfo": "http://contoso.com",
-            "certificationNotes": "Certification Notes",
-            "category": "DeveloperTools",
-            "subcategory": "Database",
-            "productDeclarations": {
-                "dependsOnDriversOrNT": false,
-                "accessibilitySupport": false,
-                "penAndInkSupport": false
-            },
-            "isSystemFeatureRequired": [
-                {
-                    "isRequired": true,
-                    "isRecommended": false,
-                    "hardwareItemType": "Touch"
-                },
-                {
-                    "isRequired": true,
-                    "isRecommended": false,
-                    "hardwareItemType": "Keyboard"
-                },
-                {
-                    "isRequired": false,
-                    "isRecommended": false,
-                    "hardwareItemType": "Mouse"
-                },
-                {
-                    "isRequired": false,
-                    "isRecommended": false,
-                    "hardwareItemType": "Camera"
-                },
-                {
-                    "isRequired": false,
-                    "isRecommended": false,
-                    "hardwareItemType": "NFC_HCE"
-                },
-                {
-                    "isRequired": false,
-                    "isRecommended": false,
-                    "hardwareItemType": "NFC_Proximity"
-                },
-                {
-                    "isRequired": false,
-                    "isRecommended": false,
-                    "hardwareItemType": "Bluetooth_LE"
-                },
-                {
-                    "isRequired": false,
-                    "isRecommended": false,
-                    "hardwareItemType": "Telephony"
-                },
-                {
-                    "isRequired": false,
-                    "isRecommended": false,
-                    "hardwareItemType": "Microphone"
-                }
-            ],
-            "systemRequirementDetails": [
-                {
-                    "minimumRequirement": "1GB",
-                    "recommendedRequirement": "4GB",
-                    "hardwareItemType": "Memory"
-                },
-                {
-                    "minimumRequirement": "",
-                    "recommendedRequirement": "",
-                    "hardwareItemType": "DirectX"
-                },
-                {
-                    "minimumRequirement": "",
-                    "recommendedRequirement": "",
-                    "hardwareItemType": "Video_Memory"
-                },
-                {
-                    "minimumRequirement": "",
-                    "recommendedRequirement": "",
-                    "hardwareItemType": "Processor"
-                },
-                {
-                    "minimumRequirement": "",
-                    "recommendedRequirement": "",
-                    "hardwareItemType": "Graphics"
-                }
-            ]
-        },
-        "listings":[{
-            "language": "en-us",
-            "description": "Description",
-            "whatsNew": "What's New",
-            "productFeatures": ["Feature 1"],
-            "shortDescription": "Short Description",
-            "searchTerms": ["Search Ter 1"],
-            "additionalLicenseTerms": "License Terms",
-            "copyright": "Copyright Information",
-            "developedBy": "Developer Details",
-            "sortTitle": "Product 101",
-            "requirements": [
-                {
-                    "minimumHardware": "Pentium4",
-                    "recommendedHardware": "Corei9"
-                }
-            ],
-            "contactInfo": "contactus@contoso.com"               
-        }],      
-        "listingLanguages": [{"language":"en-us", "isComplete": true}]
-    }
-}
-```
-
 ### Update Current Draft Submission Metadata API
 
 Updates metadata in each Module under draft submission. The API checks
@@ -347,7 +214,7 @@ In the case of Patch Module Update API – only fields which are to be updated n
 
 | Header                          | Value                                                      |
 |---------------------------------|------------------------------------------------------------|
-| `Authorization: Bearer <Token>` | The Azure AD app ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | The Microsoft Entra ID app ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account                        |
 
 **Request Parameters**
@@ -398,6 +265,9 @@ In the case of Patch Module Update API – only fields which are to be updated n
 
 **Markets**
 
+<details>
+
+<summary>View table</summary>
 | Market | Abbreviation |
 |--------|--------------|
 | Afghanistan | AF |
@@ -641,9 +511,13 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | Zambia | ZM |
 | Zimbabwe | ZW |
 | Åland Islands | AX |
+</details>
 
 **Categories and Sub-categories**
 
+<details>
+
+<summary>View table</summary>
 | Category              | Subcategories |
 |-----------------------|---------------|
 | BooksAndReference     | EReader, Fiction, Nonfiction, Reference |
@@ -671,9 +545,13 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | Sports                | (None)        |
 | Travel                | CityGuides, Hotels |
 | UtilitiesAndTools     | BackupAndManage, FileManager |
+</details>
 
 **Languages**
 
+<details>
+
+<summary>View table</summary>
 | Language name | Supported language codes |
 |---------------|--------------------------|
 | Afrikaans | af, af-za |
@@ -778,6 +656,7 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | Welsh | cy, cy-gb |
 | Wolof | wo, wo-sn |
 | Yoruba | yo-latn, yo-ng |
+</details>
 
 **Sample Request**
 
@@ -964,7 +843,7 @@ Fetches package details under current draft submission.
 
 | Header             | Value                                                                         |
 |--------------------|-------------------------------------------------------------------------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD app ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID app ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account                              |
 
 **Response Headers**
@@ -1062,7 +941,7 @@ In the case of Single Package Patch Update API – only fields which are to be u
 
 | Header                          | Value                                                            |
 |---------------------------------|------------------------------------------------------------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD app ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID app ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account                              |
 
 **Request Parameters**
@@ -1185,7 +1064,7 @@ Commits the new set of Packages updated using Package Update APIs under current 
 
 | Header                          | Value                                                            |
 |---------------------------------|------------------------------------------------------------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD App ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID App ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account                              |
 
 **Response Headers**
@@ -1252,7 +1131,7 @@ Fetches listing asset details under current draft submission.
 
 | Header                          | Value                                                            |
 |---------------------------------|------------------------------------------------------------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD App ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID App ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account                              |
 
 **Response Headers**
@@ -1351,7 +1230,7 @@ To have the ability to update listing assets, and in turn, to be able to add/rem
 
 | Header                          | Description |
 |---------------------------------|-------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD App ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID App ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account |
 
 **Request Parameters**
@@ -1444,7 +1323,7 @@ Commits the new Listing Asset Uploaded using the details from Create Assets API 
 
 | Header                          | Description |
 |---------------------------------|-------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD App ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID App ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account |
 
 **Request Parameters**
@@ -1538,7 +1417,7 @@ API to check the module readiness before submission can be created. Also validat
 
 | Header                          | Description |
 |---------------------------------|-------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD App ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID App ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account |
 
 **Response Headers**
@@ -1603,7 +1482,7 @@ Creates a submission from current draft for MSI or EXE app. The API checks:
 
 | Header                          | Description |
 |---------------------------------|-------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD App ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID App ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account |
 
 **Response Headers**
@@ -1666,7 +1545,7 @@ API to check the Submission Status.
 
 | Header                          | Description |
 |---------------------------------|-------------|
-| `Authorization: Bearer <Token>` | Using the Azure AD App ID registered with Partner Center account |
+| `Authorization: Bearer <Token>` | Using the Microsoft Entra ID App ID registered with Partner Center account |
 | `X-Seller-Account-Id`           | Seller ID of Partner Center account |
 
 **Response Headers**
@@ -1726,7 +1605,7 @@ These examples use the following library:
 The following example implements a command line program that calls the other example methods in this article to demonstrate different ways to use the Microsoft Store submission API. To adapt this program for your own use:
 - Assign the SellerId property to the Seller ID of your Partner Center account.
 - Assign the ApplicationId property to the ID of the app you want to manage.
-- Assign the ClientId and ClientSecret properties to the client ID and key for your app, and replace the tenantid string in the TokenEndpoint URL with the tenant ID for your app. For more information, see How to associate an Azure AD application with your Partner Center account
+- Assign the ClientId and ClientSecret properties to the client ID and key for your app, and replace the tenantid string in the TokenEndpoint URL with the tenant ID for your app. For more information, see How to associate an Microsoft Entra ID application with your Partner Center account
 
 ```csharp
 using System;
@@ -1758,7 +1637,7 @@ namespace Win32SubmissionApiCSharpSample
 
 ### ClientConfiguration helper class using C#
 
-The sample app uses the ClientConfiguration helper class to pass Azure Active Directory data and app data to each of the example methods that use the Microsoft Store submission API.
+The sample app uses the ClientConfiguration helper class to pass Microsoft Entra ID Directory data and app data to each of the example methods that use the Microsoft Store submission API.
 
 ```csharp
 using System;
@@ -1770,13 +1649,13 @@ namespace Win32SubmissionApiCSharpSample
     public class ClientConfiguration
     {
         /// <summary>
-        /// Client Id of your Azure Active Directory app.
-        /// Example" ba3c223b-03ab-4a44-aa32-38aa10c27e32
+        /// Client Id of your Microsoft Entra ID Directory app.
+        /// Example" 00001111-aaaa-2222-bbbb-3333cccc4444
         /// </summary>
         public string ClientId { get; set; }
 
         /// <summary>
-        /// Client secret of your Azure Active Directory app
+        /// Client secret of your Microsoft Entra ID Directory app
         /// </summary>
         public string ClientSecret { get; set; }
 
@@ -1787,7 +1666,7 @@ namespace Win32SubmissionApiCSharpSample
         public string ServiceUrl { get; set; }
 
         /// <summary>
-        /// Token endpoint to which the request is to be made. Specific to your Azure Active Directory app
+        /// Token endpoint to which the request is to be made. Specific to your Microsoft Entra ID Directory app
         /// Example: https://login.microsoftonline.com/d454d300-128e-2d81-334a-27d9b2baf002/oauth2/v2.0/token
         /// </summary>
         public string TokenEndpoint { get; set; }
@@ -1951,7 +1830,7 @@ namespace Win32SubmissionApiCSharpSample
                     {
                         if(AppDraftStatus.errors[index].code == "packageuploaderror")
                         {
-                            throw new InvalidOperationException("Package Upload Failed. Please try commiting packages again.");
+                            throw new InvalidOperationException("Package Upload Failed. Please try committing packages again.");
                         }
                     }
                 }
@@ -2080,7 +1959,7 @@ namespace Win32SubmissionApiCSharpSample
 
 The IngestionClient class provides helper methods that are used by other methods in the sample app to perform the following tasks:
 
-- Obtain an Azure AD access token that can be used to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
+- Obtain an Microsoft Entra ID access token that can be used to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
 - Process the HTTP requests for the Microsoft Store submission API.
 
 ```csharp
@@ -2127,7 +2006,7 @@ namespace Win32SubmissionApiCSharpSample
         /// Initializes a new instance of the <see cref="SubmissionClient" /> class.
         /// </summary>
         /// <param name="accessToken">
-        /// The access token. This is JWT a token obtained from Azure Active Directory allowing the caller to invoke the API
+        /// The access token. This is JWT a token obtained from Microsoft Entra ID Directory allowing the caller to invoke the API
         /// on behalf of a user
         /// </param>
         /// <param name="serviceUrl">The service URL.</param>
@@ -2177,9 +2056,9 @@ namespace Win32SubmissionApiCSharpSample
         /// make sure to get a new one periodically.
         /// </summary>
         /// <param name="tokenEndpoint">Token endpoint to which the request is to be made. Specific to your
-        /// Azure Active Directory app. Example: https://login.microsoftonline.com/d454d300-128e-2d81-334a-27d9b2baf002/oauth2/v2.0/token </param>
-        /// <param name="clientId">Client Id of your Azure Active Directory app. Example" ba3c223b-03ab-4a44-aa32-38aa10c27e32</param>
-        /// <param name="clientSecret">Client secret of your Azure Active Directory app</param>
+        /// Microsoft Entra ID Directory app. Example: https://login.microsoftonline.com/d454d300-128e-2d81-334a-27d9b2baf002/oauth2/v2.0/token </param>
+        /// <param name="clientId">Client Id of your Microsoft Entra ID Directory app. Example" 00001111-aaaa-2222-bbbb-3333cccc4444</param>
+        /// <param name="clientSecret">Client secret of your Microsoft Entra ID Directory app</param>
         /// <param name="scope">Scope. If not provided, default one is used for the production API endpoint.</param>
         /// <returns>Autorization token. Prepend it with "Bearer: " and pass it in the request header as the
         /// value for "Authorization: " header.</returns>
@@ -2342,7 +2221,7 @@ The following example calls the other example methods in this article to demonst
 
 - Assign the SellerId property to the Seller ID of your Partner Center account.
 - Assign the ApplicationId property to the ID of the app you want to manage.
-- Assign the ClientId and ClientSecret properties to the client ID and key for your app, and replace the tenantid string in the TokenEndpoint URL with the tenant ID for your app. For more information, see How to associate an Azure AD application with your Partner Center account
+- Assign the ClientId and ClientSecret properties to the client ID and key for your app, and replace the tenantid string in the TokenEndpoint URL with the tenant ID for your app. For more information, see How to associate an Microsoft Entra ID application with your Partner Center account
 
 The following example implements a class that uses several methods in the Microsoft Store submission API to update an app submission.
 
@@ -2512,7 +2391,7 @@ RunNodeJsSample();
 ```
 
 ### ClientConfiguration helper 
-The sample app uses the ClientConfiguration helper class to pass Azure Active Directory data and app data to each of the example methods that use the Microsoft Store submission API.
+The sample app uses the ClientConfiguration helper class to pass Microsoft Entra ID Directory data and app data to each of the example methods that use the Microsoft Store submission API.
 ```nodejs
 /** Configuration Object for Store Submission API */
 var config = {
@@ -2536,7 +2415,7 @@ module.exports = config;
 
 The IngestionClient class provides helper methods that are used by other methods in the sample app to perform the following tasks:
 
-- Obtain an Azure AD access token that can be used to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
+- Obtain an Microsoft Entra ID access token that can be used to call methods in the Microsoft Store submission API. After you obtain a token, you have 60 minutes to use this token in calls to the Microsoft Store submission API before the token expires. After the token expires, you can generate a new token.
 - Process the HTTP requests for the Microsoft Store submission API.
 
 ```nodejs

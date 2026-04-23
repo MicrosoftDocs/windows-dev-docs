@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "WinUI-3-basic-win32-interop (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "WinUI-3-basic-win32-interop (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -143,7 +143,7 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 }
 ```
 
-For this scenario, there's a little bit of ineffiency around the call to **StorageFile::OpenAsync**. There's a necessary context switch to a background thread (so that the handler can return execution to the caller), on resumption after which C++/WinRT restores the UI thread context. But, in this case, it's not necessary to be on the UI thread until we're about to update the UI. The more Windows Runtime APIs we call *before* our call to **winrt::resume_background**, the more unnecessary back-and-forth context switches we incur. The solution is not to call *any* Windows Runtime APIs before then. Move them all after the **winrt::resume_background**.
+For this scenario, there's a little bit of inefficiency around the call to **StorageFile::OpenAsync**. There's a necessary context switch to a background thread (so that the handler can return execution to the caller), on resumption after which C++/WinRT restores the UI thread context. But, in this case, it's not necessary to be on the UI thread until we're about to update the UI. The more Windows Runtime APIs we call *before* our call to **winrt::resume_background**, the more unnecessary back-and-forth context switches we incur. The solution is not to call *any* Windows Runtime APIs before then. Move them all after the **winrt::resume_background**.
 
 ```cppwinrt
 IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /* args */)
@@ -437,20 +437,20 @@ using namespace winrt;
 using namespace Windows::Foundation;
 using namespace std::chrono_literals;
 
-IAsyncAction ImplicitCancellationAsync()
+IAsyncAction ImplicitCancelationAsync()
 {
     while (true)
     {
-        std::cout << "ImplicitCancellationAsync: do some work for 1 second" << std::endl;
+        std::cout << "ImplicitCancelationAsync: do some work for 1 second" << std::endl;
         co_await 1s;
     }
 }
 
 IAsyncAction MainCoroutineAsync()
 {
-    auto implicit_cancellation{ ImplicitCancellationAsync() };
+    auto implicit_cancelation{ ImplicitCancelationAsync() };
     co_await 3s;
-    implicit_cancellation.Cancel();
+    implicit_cancelation.Cancel();
 }
 
 int main()
@@ -460,29 +460,29 @@ int main()
 }
 ```
 
-If you run the example above, then you'll see **ImplicitCancellationAsync** print one message per second for three seconds, after which time it automatically terminates as a result of being canceled. This works because, on encountering a `co_await` expression, a coroutine checks whether it has been cancelled. If it has, then it short-circuits out; and if it hasn't, then it suspends as normal.
+If you run the example above, then you'll see **ImplicitCancelationAsync** print one message per second for three seconds, after which time it automatically terminates as a result of being canceled. This works because, on encountering a `co_await` expression, a coroutine checks whether it has been canceled. If it has, then it short-circuits out; and if it hasn't, then it suspends as normal.
 
 Cancellation can, of course, happen while the coroutine is suspended. Only when the coroutine resumes, or hits another `co_await`, will it check for cancellation. The issue is one of potentially too-coarse-grained latency in responding to cancellation.
 
-So, another option is to explicitly poll for cancellation from within your coroutine. Update the example above with the code in the listing below. In this new example, **ExplicitCancellationAsync** retrieves the object returned by the [**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token) function, and uses it to periodically check whether the coroutine has been canceled. As long as it's not canceled, the coroutine loops indefinitely; once it is canceled, the loop and the function exit normally. The outcome is the same as the previous example, but here exiting happens explicitly, and under control.
+So, another option is to explicitly poll for cancellation from within your coroutine. Update the example above with the code in the listing below. In this new example, **ExplicitCancelationAsync** retrieves the object returned by the [**winrt::get_cancellation_token**](/uwp/cpp-ref-for-winrt/get-cancellation-token) function, and uses it to periodically check whether the coroutine has been canceled. As long as it's not canceled, the coroutine loops indefinitely; once it is canceled, the loop and the function exit normally. The outcome is the same as the previous example, but here exiting happens explicitly, and under control.
 
 ```cppwinrt
-IAsyncAction ExplicitCancellationAsync()
+IAsyncAction ExplicitCancelationAsync()
 {
-    auto cancellation_token{ co_await winrt::get_cancellation_token() };
+    auto cancelation_token{ co_await winrt::get_cancellation_token() };
 
-    while (!cancellation_token())
+    while (!cancelation_token())
     {
-        std::cout << "ExplicitCancellationAsync: do some work for 1 second" << std::endl;
+        std::cout << "ExplicitCancelationAsync: do some work for 1 second" << std::endl;
         co_await 1s;
     }
 }
 
 IAsyncAction MainCoroutineAsync()
 {
-    auto explicit_cancellation{ ExplicitCancellationAsync() };
+    auto explicit_cancelation{ ExplicitCancelationAsync() };
     co_await 3s;
-    explicit_cancellation.Cancel();
+    explicit_cancelation.Cancel();
 }
 ...
 ```
@@ -493,7 +493,7 @@ Waiting on **winrt::get_cancellation_token** retrieves a cancellation token with
 
 The Windows Runtime's cancellation doesn't automatically flow to other asynchronous objects. But&mdash;introduced in version 10.0.17763.0 (Windows 10, version 1809) of the Windows SDK&mdash;you can register a cancellation callback. This is a pre-emptive hook by which cancellation can be propagated, and makes it possible to integrate with existing concurrency libraries.
 
-In this next code example, **NestedCoroutineAsync** does the work, but it has no special cancellation logic in it. **CancellationPropagatorAsync** is essentially a wrapper on the nested coroutine; the wrapper forwards cancellation pre-emptively.
+In this next code example, **NestedCoroutineAsync** does the work, but it has no special cancellation logic in it. **CancelationPropagatorAsync** is essentially a wrapper on the nested coroutine; the wrapper forwards cancellation pre-emptively.
 
 ```cppwinrt
 // main.cpp
@@ -513,12 +513,12 @@ IAsyncAction NestedCoroutineAsync()
     }
 }
 
-IAsyncAction CancellationPropagatorAsync()
+IAsyncAction CancelationPropagatorAsync()
 {
-    auto cancellation_token{ co_await winrt::get_cancellation_token() };
+    auto cancelation_token{ co_await winrt::get_cancellation_token() };
     auto nested_coroutine{ NestedCoroutineAsync() };
 
-    cancellation_token.callback([=]
+    cancelation_token.callback([=]
     {
         nested_coroutine.Cancel();
     });
@@ -528,9 +528,9 @@ IAsyncAction CancellationPropagatorAsync()
 
 IAsyncAction MainCoroutineAsync()
 {
-    auto cancellation_propagator{ CancellationPropagatorAsync() };
+    auto cancelation_propagator{ CancelationPropagatorAsync() };
     co_await 3s;
-    cancellation_propagator.Cancel();
+    cancelation_propagator.Cancel();
 }
 
 int main()
@@ -540,7 +540,7 @@ int main()
 }
 ```
 
-**CancellationPropagatorAsync** registers a lambda function for its own cancellation callback, and then it awaits (it suspends) until the nested work completes. When or if **CancellationPropagatorAsync** is canceled, it propagates the cancellation to the nested coroutine. There's no need to poll for cancellation; nor is cancellation blocked indefinitely. This mechanism is flexible enough for you to use it to interop with a coroutine or concurrency library that knows nothing of C++/WinRT.
+**CancelationPropagatorAsync** registers a lambda function for its own cancellation callback, and then it awaits (it suspends) until the nested work completes. When or if **CancellationPropagatorAsync** is canceled, it propagates the cancellation to the nested coroutine. There's no need to poll for cancellation; nor is cancellation blocked indefinitely. This mechanism is flexible enough for you to use it to interop with a coroutine or concurrency library that knows nothing of C++/WinRT.
 
 ## Reporting progress
 
@@ -766,7 +766,7 @@ int main()
 
 The **get** function blocks indefinitely, while the async object completes. Async objects tend to be very short-lived, so this is often all you need.
 
-But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the [**wait_for**](/uwp/api/windows.foundation.iasyncaction#cwinrt-extension-functions) function. It's also implementated on **IAsyncAction**, and again it's similar to that provided by **std::future**.
+But there are cases where that's not sufficient, and you need to abandon the wait after some time has elapsed. Writing that code has always been possible, thanks to the building blocks provided by the Windows Runtime. But now C++/WinRT makes it a lot easier by providing the [**wait_for**](/uwp/api/windows.foundation.iasyncaction#cwinrt-extension-functions) function. It's also implemented on **IAsyncAction**, and again it's similar to that provided by **std::future**.
 
 ```cppwinrt
 using namespace std::chrono_literals;
@@ -822,7 +822,7 @@ case AsyncStatus::Started:
 ```
 
 - Remember that **AsyncStatus::Completed** means that the async object completed successfully, and you may call the **GetResults** method to retrieve any result.
-- **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a cancelled async object is simply discarded. You can call the **GetResults** method to rethrow the cancellation exception if you wish.
+- **AsyncStatus::Canceled** means that the async object was canceled. A cancellation is typically requested by the caller, so it would be rare to handle this state. Typically, a canceled async object is simply discarded. You can call the **GetResults** method to rethrow the cancellation exception if you wish.
 - **AsyncStatus::Error** means that the async object has failed in some way. You can call the **GetResults** method to rethrow the exception if you wish.
 - **AsyncStatus::Started** means that the async object is still running. The Windows Runtime async pattern doesn't allow multiple waits, nor waiters. That means that you can't call **wait_for** in a loop. If the wait has effectively timed-out, then you're left with a few choices. You can abandon the object, or you can poll its status before calling the **GetResults** method to retrieve any result. But it's best just to discard the object at this point.
 
@@ -835,7 +835,7 @@ if (async.wait_for(5s) == AsyncStatus::Started)
 }
 else
 {
-    // will throw appropriate exception if in cancelled or error state
+    // will throw appropriate exception if in canceled or error state
     auto results = async.GetResults();
 }
 ```

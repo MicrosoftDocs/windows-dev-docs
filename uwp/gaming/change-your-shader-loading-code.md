@@ -3,7 +3,7 @@ title: Compare the OpenGL ES 2.0 shader pipeline to Direct3D
 description: Conceptually, the Direct3D 11 shader pipeline is very similar to the one in OpenGL ES 2.0.
 ms.assetid: 3678a264-e3f9-72d2-be91-f79cd6f7c4ca
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, opengl, direct3d, shader pipeline
 ms.localizationpriority: medium
 ---
@@ -159,7 +159,7 @@ Configuring a pixel shader in Direct3D 11 is done when the shader is loaded. Uni
 ## Generating the final results
 
 
-When the pipeline completes, you draw the results of the shader stages into the back buffer. In Direct3D 11, just as it is with Open GL ES 2.0, this involves calling a draw command to output the results as a color map in the back buffer, and thensending that back buffer to the display.
+When the pipeline completes, you draw the results of the shader stages into the back buffer. In Direct3D 11, just as it is with Open GL ES 2.0, this involves calling a draw command to output the results as a color map in the back buffer, and then sending that back buffer to the display.
 
 | OpenGL ES 2.0  | Direct3D 11                                                                                                                                                                                                                                         |
 |----------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -191,7 +191,7 @@ Semantics that are prefixed with "SV\_" are system value semantics that are writ
 
 Additionally, SV\_ semantics have different behaviors when they are used to specify input to or output from a shader stage. For example, SV\_POSITION (output) contains the vertex data transformed during the vertex shader stage, and SV\_POSITION (input) contains the pixel position values interpolated during rasterization.
 
-Here are a few mappings for common OpenGL ES 2.0 shader instrinsics:
+Here are a few mappings for common OpenGL ES 2.0 shader intrinsics:
 
 | OpenGL system value | Use this HLSL Semantic                                                                                                                                                   |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

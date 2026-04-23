@@ -3,7 +3,7 @@ description: Learn responsive design techniques to tailor your app for specific 
 title: Responsive design techniques
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/24/2020
+ms.date: 09/25/2024
 ms.topic: article
 keywords: windows 10, uwp
 localizationpriority: medium
@@ -11,7 +11,9 @@ ms.custom: RS5
 ---
 # Responsive design techniques
 
-UWP apps use effective pixels to guarantee that your UI will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device family?
+_Responsive_ design uses just one layout where the content is fluid and can adapt to changing window sizes. Responsive design lets you build a feature one time and expect it to work across all screen sizes. _Adaptive_ design is similar, but replaces one layout with another layout.
+
+XAML apps use effective pixels to guarantee that your UI will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device or screen size?
 
 - **To make the most effective use of space and reduce the need to navigate**
 
@@ -25,12 +27,9 @@ UWP apps use effective pixels to guarantee that your UI will be legible and usab
 
 - **To optimize for input**
 
-    The universal control library works with all input types (touch, pen, keyboard, mouse), but you can still optimize for certain input types by re-arranging your UI elements. For example, if you place navigation elements at the bottom of the screen, they'll be easier for phone users to access—but most PC users expect to see navigation elements toward the top of the screen.
+    The universal control library works with all input types (touch, pen, keyboard, mouse), but you can still optimize for certain input types by re-arranging your UI elements.
 
-When you optimize your app's UI for specific screen widths, we say that you're creating a responsive design. Here are six responsive design techniques you can use to customize your app's UI.
-
->[!TIP]
-> Many UWP controls automatically implement these responsive behaviors. To create a responsive UI, we recommend checking out the [UWP controls](../controls/index.md).
+When you optimize your app's UI for specific screen widths, we say that you're creating a responsive design. Here are some responsive design techniques you can use to customize your app's UI.
 
 ## Reposition
 
@@ -68,15 +67,7 @@ Part of the reveal-or-hide technique includes choosing when to display more meta
 - In a music app, you can display more info about an album or artist.
 - In a video app, you can display more info about a film or a show, such as showing cast and crew details.
 - In any app, you can break apart columns and reveal more details.
-- In any app, you can take something that's vertically stacked and lay it out horizontally. When going from phone or phablet to larger devices, stacked list items can change to reveal rows of list items and columns of metadata.
-
-## Replace
-
-This technique lets you switch the user interface for a specific breakpoints. In this example, the nav pane and its compact, transient UI works well for a smaller screen, but on a larger screen, tabs might be a better choice.
-
-![Replacing design elements](images/rsp-design/rspd-replace.gif)
-
-The [NavigationView](../controls/navigationview.md) control supports this responsive technique, by letting users set the pane position to either top or left.
+- In any app, you can take something that's vertically stacked and lay it out horizontally. When going from a small window to a larger window, stacked list items can change to reveal rows of list items and columns of metadata.
 
 ## Re-architect
 
@@ -84,8 +75,19 @@ You can collapse or fork the architecture of your app to better target specific 
 
 ![an example of re-architecting a user interface](images/rsp-design/rspd-rearchitect.gif)
 
+## Adaptive layout
+
+An adaptive layout is similar to responsive layout, but entirely replaces UI based on the format it's presented in. Adaptive design has multiple fixed layout sizes and triggers the page to load a given layout based on the available space.
+
+This technique lets you switch the user interface for a specific breakpoints. In this example, the nav pane and its compact, transient UI works well for a smaller screen, but on a larger screen, tabs might be a better choice.
+
+![Replacing design elements](images/rsp-design/rspd-replace.gif)
+
+The [NavigationView](../controls/navigationview.md) control supports this technique by letting users set the pane position to either top or left.
+
 ## Related topics
 
+- [Fluent Design - Layout](https://fluent2.microsoft.design/layout)
 - [Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)
 - [Responsive layouts with XAML](layouts-with-xaml.md)
-- [UWP controls and patterns](../controls/index.md)
+- [XAML controls](../controls/index.md)

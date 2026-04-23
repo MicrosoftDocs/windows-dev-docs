@@ -2,7 +2,7 @@
 description: This topic goes in-depth on a C++/WinRT 2.0 feature that helps you diagnose the mistake of creating an object of implementation type on the stack, rather than using the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers, as you should.
 title: Diagnosing direct allocations
 ms.date: 07/19/2019
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, direct, stack, allocations, projected, implementation
 ms.localizationpriority: medium
 ---

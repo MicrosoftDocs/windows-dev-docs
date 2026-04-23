@@ -1,13 +1,10 @@
 ---
 title: Set up your dev environment on Windows for Rust
 description: Setting up your dev environment for beginners interested in developing on Windows with Rust.
-author: stevewhims
-ms.author: stwhi 
-manager: jken
-ms.topic: article
+ms.topic: how-to
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code
 ms.localizationpriority: medium
-ms.date: 03/04/2021
+ms.date: 12/13/2024
 ---
 
 # Set up your dev environment on Windows for Rust
@@ -60,7 +57,7 @@ VS Code also contains a [built-in terminal](https://code.visualstudio.com/docs/e
 3. For debugging support, install the **CodeLLDB** extension. You can either install the [CodeLLDB extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb), or you can open VS Code, and search for **CodeLLDB** in the extensions menu (Ctrl+Shift+X).
 
    > [!NOTE]
-   > An alternative to the **CodeLLDB** extension for debugging support is the Microsoft **C/C++** extenson. The **C/C++** extension doesn't integrate as well with the IDE as **CodeLLDB** does. But the **C/C++** extension provides superior debugging information. So you might want to have that standing by in case you need it.
+   > An alternative to the **CodeLLDB** extension for debugging support is the Microsoft **C/C++** extension. The **C/C++** extension doesn't integrate as well with the IDE as **CodeLLDB** does. But the **C/C++** extension provides superior debugging information. So you might want to have that standing by in case you need it.
    >
    > You can either install the [C/C++ extension from the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools), or you can open VS Code, and search for **C/C++** in the extensions menu (Ctrl+Shift+X).
 

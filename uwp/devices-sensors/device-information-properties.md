@@ -154,6 +154,6 @@ Some properties are common across all [**DeviceInformationKind**](/uwp/api/windo
 | **System.Devices.AepService.ContainerId**       | GUID    | The identifier of the parent **AssociationEndpointContainer** object.                                            |
 | **System.Devices.AepService.ParentAepIsPaired** | Boolean | Indicates whether the parent **AssociationEndpoint** object is paired with the system.                           |
 | **System.Devices.AepService.ProtocolId**        | GUID    | Identity of the protocol used to discover this device.                                                           |
-| **System.Devices.AepService.ServiceClassId**    | GUID    | Iidentity of the service represented by this device.                                                             |
+| **System.Devices.AepService.ServiceClassId**    | GUID    | Identity of the service represented by this device.                                                             |
 | **System.Devices.AepService.ServiceId**         | String  | Identity of this service. This is also the value of [**DeviceInformation.Id**](/uwp/api/windows.devices.enumeration.deviceinformation.id). |
 | **System.ItemNameDisplay**                      | String  | The best display name for the service.                                                                           |

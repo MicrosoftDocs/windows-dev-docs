@@ -2,7 +2,7 @@
 description: Use this REST URI to get block data for a desktop application during a given date range and other optional filters.
 title: Get upgrade blocks for your desktop application
 ms.date: 07/11/2018
-ms.topic: article
+ms.topic: upgrade-and-migration-article
 localizationpriority: medium
 ---
 

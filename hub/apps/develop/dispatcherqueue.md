@@ -4,8 +4,6 @@ description: Describes the purpose and function of the Windows App SDK Dispatche
 ms.date: 08/30/2023
 ms.topic: article
 keywords: windows 11, windows 10, dispatcherqueue, dispatcherqueuecontroller
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: high
 ---
 
@@ -20,8 +18,7 @@ ms.localizationpriority: high
 * It provides a means to register a delegate that's called when a timeout expires.
 * It provides events that let components know when a message loop is exiting, and optionally defer that shutdown until outstanding work completes. That ensures components that use the **DispatcherQueue**, but don't own the message loop, may do cleanup on-thread as the loop exits.
 * The **DispatcherQueue** is a thread singleton (there can be at most one of them running on any given thread). By default, a thread has no **DispatcherQueue**.
-* A thread owner may create a [DispatcherQueueController](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller) to initialize the **DispatcherQueue** for the thread. At that point, any code can access the thread's **DispatcherQueue**; but only the **DispatcherQueueController**'s owner has access to the [DispatcherQueueController.ShutdownQueueAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueueasync) method, which drains the 
-**DispatcherQueue**, and raises **ShutdownStarted** and **ShutdownCompleted** events.
+* A thread owner may create a [DispatcherQueueController](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller) to initialize the **DispatcherQueue** for the thread. At that point, any code can access the thread's **DispatcherQueue**; but only the **DispatcherQueueController**'s owner has access to the [DispatcherQueueController.ShutdownQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueue) method, which drains the **DispatcherQueue**, and raises **ShutdownStarted** and **ShutdownCompleted** events.
 * An outermost message loop owner must create a **DispatcherQueue** instance. Only the code in charge of running a thread's outermost message loop knows when dispatch is complete, which is the appropriate time to shut down the **DispatcherQueue**. That means that components that rely on **DispatcherQueue** mustn't create the **DispatcherQueue** unless they own the thread's message loop.
 
 ## Run-down
@@ -171,7 +168,7 @@ void Main()
 
     var appWindow = AppWindow.Create(nullptr, 0, dispatcherQueueController.DispatcherQueue());
 
-    // Since we associated the DispatcherQueue above with the AppWindow, we're able to retreive it 
+    // Since we associated the DispatcherQueue above with the AppWindow, we're able to retrieve it 
     // as a property. If we were to not associate a dispatcher, this property would be null.
     ASSERT(appWindow.DispatcherQueue() == dispatcherQueueController.DispatcherQueue());
 

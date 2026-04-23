@@ -2,10 +2,8 @@
 title: A Windows App SDK migration of the UWP PhotoLab sample app (C#)
 description: A case study of taking the C# [UWP PhotoLab sample app](/samples/microsoft/windows-appsample-photo-lab/photolab-sample/), and migrating it to the Windows App SDK.
 ms.topic: article
-ms.date: 10/01/2021
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C#, PhotoLab, UWP
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -16,7 +14,7 @@ This topic is a case study of taking the C# [UWP PhotoLab sample app](/samples/m
 Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/windows-appsample-photo-lab/tree/master/), and opening the solution in [Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
 > [!IMPORTANT]
-> For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see [Overall migration strategy](overall-migration-strategy.md). It's particularly important to see [What's supported when when porting from UWP to WinUI 3](what-is-supported.md) so that you can ensure that all the features you need for your app are supported before you attempt migration.
+> For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see [Overall migration strategy](overall-migration-strategy.md). It's particularly important to see [What's supported when porting from UWP to WinUI 3](what-is-supported.md) so that you can ensure that all the features you need for your app are supported before you attempt migration.
 
 ## Install tools for the Windows App SDK
 
@@ -308,3 +306,7 @@ private void BackButton_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e
 ## Test the migrated app
 
 Now build the project, and run the app to test it. Select an image, set a zoom level, choose effects, and configure them.
+
+## See Also
+
+- [Windows App SDK and supported Windows releases](../support.md)

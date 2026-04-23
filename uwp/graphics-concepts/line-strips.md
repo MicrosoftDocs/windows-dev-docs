@@ -5,7 +5,7 @@ ms.assetid: 6E8C58E1-B463-44FD-A69F-81CCBF25D856
 keywords:
 - Line strips
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

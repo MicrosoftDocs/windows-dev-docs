@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 10/30/2022
+ms.date: 09/10/2025
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -18,7 +18,7 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </colgroup>
 <thead>
 <tr class="header">
-<th>Date</th>
+<th>Published Date</th>
 <th>Document version</th>
 <th>Change description</th>
 </tr>
@@ -27,9 +27,113 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 </tr>
 
 
+<tr class="even">
+<td>September 10, 2025</td>
+<td><a href="store-policies.md">7.19</a></td>
+<td>
+
+Updated all references of "Xbox Live" to "Xbox network" to align with updated branding.
+
+Updated 10.1.3 to clarify that developers cannot use pricing terms in their search terms.
+
+Updated 10.2.4 to remove the “link here” copy.
+
+Updated 10.4.4 to state apps must not have unreasonably low installation rates to ensure a better customer install experience.
+
+Updated 10.8.1 to disallow any real-world value exchange for in-product digital goods or currencies on external marketplaces.
+
+Updated 10.8.2.7 to note that in cases where developers are allowed to use a third-party purchase API under policy, and have chosen to do so, they must indicate this usage via the check box in Partner Center.
+
+Updated 10.13.5 to clarify that in-game advertising on Xbox must adhere to the same guidelines as those for the [Xbox Console Dashboard](https://help.ads.microsoft.com/#apex/ads/en/60181/0).
+
+New 10.13.12 Policy clarification that [XR-007](/gaming/gdk/docs/store/policies/xr/xr007)  Cross-Network Gameplay applies for any store content that roams across networks and platforms.
+
+New 11.15 New child safety policy requires that products that target children provide robust protections, including safeguards against exploitation, bullying, and access to inappropriate or adult-themed content.
+
+New 11.16 New policy aims to ensure transparency in how live generative AI technologies are deployed in-app and the nature of their output.
+
+
+<tr class="odd">
+<td>October 19, 2024</td>
+<td><a href="./store-policy-archive/store-policy-7-18.md">7.18</a></td>
+<td>
+
+
+<p>Updated what is considered a “Product” in the introduction section.</p>
+
+<p>Updated 10.1 to include search terms in the definition of metadata.</p>
+
+<p>Updated 10.1.3 to clarify that developers cannot use other product titles in their search terms unless published by them.</p>
+
+<p>Updated 10.2.4 to clarify language on disclosing dependency on non-integrated software and inform of the exception request which will be handled on a case-by-case process.</p>
+
+<p>Updated 10.2.6 to consolidate policy related to cryptocurrency accounts under the main crypto policy, as well as reiterate the requirement of a company account if the app requires financial information.</p>
+
+<p>Updated 10.8.3 to include that an app that requires financial information must be a company account. Clarified what is considered financial information.</p>
+
+<p>New 10.10.7 added to support the updated policy regarding in-game/in-app ads 3P middleware. See 10.13.11.2</p>
+
+<p>Updated 10.13.11 to include language to restrict data sharing between 3rd party API/Ad services to serve in-game/in-app ads.</p>
+
+<p>Updated 10.14 to align with the EU Digital Services Act that requires business verification and customer support contact information that is required for company accounts (for more information, see <a href="/windows/apps/publish/store-business-verification-reqs">Upcoming company account verification requirements</a>).</p>
+
+<p>Updated 11.11 to include a link to the Age Rating page.</p>
+
+</td>
+</tr>
+
+<tr class="even">
+<td>October 30, 2023</td>
+<td><a href="store-policy-archive/store-policy-7-17.md">7.17</a></td>
+<td>
+
+
+<p>New 10.4.3 Policy setting guidelines for a discontinued or merged app.</p>
+
+<p>New 10.4.4 added policy setting guidelines for reasonable download time.</p>
+
+<p>New 10.5.8 Explicit policy around collection of child data.</p>
+
+<p>New 11.14 Policy outlining gambling requirements and restrictions.</p>
+
+<p>Update to 10.1 Extends game franchise hub to PC and requires them to be categorized as games.</p>
+
+<p>Update to 10.1.5 Clarifies that the product must be distributed/acquired through the Store.</p>
+
+<p>Update to 10.1.6 Excludes game franchise hubs from being submitted as Storefronts, which are subject to app policies and commercial terms.</p>
+
+<p>Update to 10.2.4 Clarified wording dependency on non Microsoft provided driver or NT service.</p>
+
+<p>Update to 10.2.6 Provide more clarity around cryptocurrency wallets and trading platforms.</p>
+
+<p>Update to 10.2.8 Added a link to the blog post for “A principled approach to app pinning and app defaults in Windows”.</p>
+
+<p>Update to 10.4.1 “should” to “must” to reiterate the importance.</p>
+
+<p>Update 10.4.2 Remove 10.4.3 copy and move to 10.4.2</p>
+
+<p>Update to 10.8.1 Providing clarification on disallowing any real-world value exchange in game with a clearer policy.</p>
+
+<p>Update to 10.8.2 Tightened up language to provide clarity around 3P billing requirements and restrictions.</p>
+
+<p>Update to 10.8.3 clarification around accounts requiring financial information.</p>
+
+<p>Update to 10.10.2 & 10.10.3 consolidated 10.10.3 into 10.10.2</p>
+
+<p>Update to 10.13.2 Removed reference to Xbox One.</p>
+
+<p>Update to 10.13.3 Removed reference to Xbox One.</p>
+
+<p>Update to 11.2 Updating IP infringement verbiage to align with what will be updated in the Report an App feature.</p>
+
+<p>Update to 11.13 Strengthen language around limiting access to mature/adult content to minors.</p>
+
+</td>
+</tr>
+
 <tr class="odd">
 <td>July 18, 2022</td>
-<td><a href="store-policies.md">7.16.1</a></td>
+<td><a href="store-policy-archive/store-policy-7-16-1.md">7.16.1</a></td>
 <td>
 <p>Update to 10.8.7 to remove language related to open-source or other free software.</p>
 <p>Update to 11.2 adding a link to Microsoft’s online infringement reporting form.</p>
@@ -281,4 +385,4 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 ### See also
 
 - [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

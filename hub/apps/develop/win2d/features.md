@@ -49,4 +49,4 @@ Win2D includes an extensive set of features to support lots of different scenari
 - [Text layouts](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextLayout.htm) can be drawn, measured, or hit-tested against
 - Convert [text outlines to geometry](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_Geometry_CanvasGeometry_CreateText.htm)
 - [Enumerate fonts](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_Text_CanvasFontSet_GetSystemFontSet.htm) and query their metrics
-- Draw or manipulate individual [glyph runs](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Text_ICanvasTextRenderer.htm) to create [custom text layouts](https://github.com/Microsoft/Win2D-Samples/blob/master/ExampleGallery/Shared/CustomTextLayouts.xaml.cs)
+- Draw or manipulate individual [glyph runs](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Text_ICanvasTextRenderer.htm) to create [custom text layouts](https://github.com/Microsoft/Win2D-Samples/blob/master/ExampleGallery/CustomTextLayouts.xaml.cs)

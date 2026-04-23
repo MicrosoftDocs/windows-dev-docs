@@ -36,7 +36,7 @@ sections:
       - question: |
           Why does my Bluetooth LE Device stop responding after a disconnect?
         answer: |
-          The most common reason this occurs is because the remote device has lost pairing information. A large number of older Bluetooth devices don't require authentication. To protect the user, all pairing transactions performed from the Settings application will require authentication, and some devices were not designed with this in mind. 
+          The most common reason this occurs is because the remote device has lost pairing information. A large number of older Bluetooth devices don't require authentication. To protect the user, all pairing transactions performed from Windows Settings will require authentication, and some devices were not designed with this in mind. 
           
           Starting with Windows 10 release 1511, developers have control over the pairing handshake. The [Device Enumeration and Pairing Sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/DeviceEnumerationAndPairing) details the various aspects of associating new devices.
           

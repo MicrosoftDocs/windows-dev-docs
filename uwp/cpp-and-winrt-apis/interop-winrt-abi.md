@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects.
 title: Interop between C++/WinRT and the ABI
-ms.date: 11/30/2018
+ms.date: 09/29/2023
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, ABI
 ms.localizationpriority: medium
@@ -12,6 +12,9 @@ ms.localizationpriority: medium
 This topic shows how to convert between SDK application binary interface (ABI) and [C++/WinRT](./intro-to-using-cpp-with-winrt.md) objects. You can use these techniques to interop between code that uses these two ways of programming with the Windows Runtime, or you can use them as you gradually move your code from the ABI to C++/WinRT.
 
 In general, C++/WinRT exposes ABI types as **void\***, so that you don't need to include platform header files.
+
+> [!NOTE]
+> In the code examples, we use `reinterpret_cast` (rather than `static_cast`) in an effort to *telegraph* what are inherently unsafe casts.
 
 ## What is the Windows Runtime ABI, and what are ABI types?
 A Windows Runtime class (runtime class) is really an abstraction. This abstraction defines a binary interface (the Application Binary Interface, or ABI) that allows various programming languages to interact with an object. Regardless of programming language, client code interaction with a Windows Runtime object happens at the lowest level, with client language constructs translated into calls into the object's ABI.
@@ -149,11 +152,11 @@ For the lowest-level conversions, which only copy addresses, you can use the [**
     // Lowest-level conversions that only copy addresses
 
     // Convert to a non-owning ABI object with get_abi.
-    abi::IStringable* non_owning{ static_cast<abi::IStringable*>(winrt::get_abi(uriAsIStringable)) };
+    abi::IStringable* non_owning{ reinterpret_cast<abi::IStringable*>(winrt::get_abi(uriAsIStringable)) };
     WINRT_ASSERT(non_owning);
 
     // Avoid interlocks this way.
-    owning = static_cast<abi::IStringable*>(winrt::detach_abi(uriAsIStringable));
+    owning = reinterpret_cast<abi::IStringable*>(winrt::detach_abi(uriAsIStringable));
     WINRT_ASSERT(!uriAsIStringable);
     winrt::attach_abi(uriAsIStringable, owning);
     WINRT_ASSERT(uriAsIStringable);
@@ -350,7 +353,7 @@ void GetString(_Out_ HSTRING* value);
 
 | Operation | How to do it | Notes |
 |-|-|-|
-| Extract **HSTRING** from **hstring** | `h = static_cast<HSTRING>(get_abi(s));` | *s* still owns the string. |
+| Extract **HSTRING** from **hstring** | `h = reinterpret_cast<HSTRING>(get_abi(s));` | *s* still owns the string. |
 | Detach **HSTRING** from **hstring** | `h = reinterpret_cast<HSTRING>(detach_abi(s));` | *s* no longer owns the string. |
 | Set **HSTRING** into **hstring** | `*put_abi(s) = h;` | *s* takes ownership of string. Any string previously owned by *s* is leaked (will assert in debug). |
 | Receive **HSTRING** into **hstring** | `GetString(reinterpret_cast<HSTRING*>(put_abi(s)));` | *s* takes ownership of string. Any string previously owned by *s* is leaked (will assert in debug). |

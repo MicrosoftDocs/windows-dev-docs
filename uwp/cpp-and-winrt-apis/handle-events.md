@@ -2,7 +2,7 @@
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
 ms.date: 04/23/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
 ms.localizationpriority: medium
 ---
@@ -96,6 +96,7 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
     template <typename L> RoutedEventHandler(L lambda);
     template <typename F> RoutedEventHandler(F* function);
     template <typename O, typename M> RoutedEventHandler(O* object, M method);
+    /* ... other constructors ... */
     void operator()(winrt::Windows::Foundation::IInspectable const& sender,
         winrt::Windows::UI::Xaml::RoutedEventArgs const& e) const;
 };

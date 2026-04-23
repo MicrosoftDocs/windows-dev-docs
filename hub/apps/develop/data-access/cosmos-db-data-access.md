@@ -1,23 +1,23 @@
 ---
 title: Use a Cosmos DB database from a Windows app
-description: Learn how to connect your Windows App SDK app to a Cosmos DB database and test the connection programmatically.
-ms.date: 12/06/2022
-ms.topic: article
-keywords: windows 10, windows 11, windows app sdk, Cosmos DB, azure, cloud, nosql, database
+description: Learn how to connect your Windows app to a Cosmos DB database and test the connection programmatically.
+ms.date: 08/01/2024
+ms.topic: how-to
+keywords: windows, windows app sdk, Cosmos DB, azure, cloud, nosql, database, wpf, uwp, winforms, windows forms, winui
 ms.localizationpriority: medium
+#customer intent: As a Windows developer, I want to learn how to connect my Windows app to a Cosmos DB database so that I can store and retrieve data in the cloud.
 ---
 
 # Use a Cosmos DB database from a Windows app
 
-This article contains the steps required to enable working with a Cosmos DB database from a Windows App SDK app. It also contains a small code snippet showing how you can interact with the database in code.
+This article contains the steps required to enable working with a Cosmos DB database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.
 
 ## Set up your solution
 
-To connect your app directly to a Cosmos DB database, your WinUI app can target any minimum version of Windows supported by Windows App SDK. Follow these steps to install the package and try out example code for some basic tasks.
+This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to a Cosmos DB database. Follow these steps to install the package and try out example code for some basic tasks.
 
-Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console). Use the command `Install-Package Microsoft.Azure.Cosmos` to install the NuGet package for the **Azure Cosmos DB for NoSQL client library for .NET**. This will allow you to programmatically access Cosmos DB databases.
-
-Build your project and make sure that the build was successful with no errors.
+1. Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console). Use the command `Install-Package Microsoft.Azure.Cosmos` to install the NuGet package for the **Azure Cosmos DB for NoSQL client library for .NET**. This will allow you to programmatically access Cosmos DB databases.
+1. Build your project and make sure that the build was successful with no errors.
 
 Next, you'll need to create a Cosmos DB instance in Azure. You can do this by following the steps in [Create a NoSQL database account in Azure Cosmos DB](/azure/cosmos-db/create-cosmosdb-resources-portal).
 
@@ -70,8 +70,7 @@ public async Task CosmosSample(string endpoint, string authKey)
 }
 ```
 
-## See also
+## Related content
 
 - [Azure Cosmos DB for NoSQL client library for .NET](/azure/cosmos-db/nosql/quickstart-dotnet)
-
 - [Use a MySQL database in a Windows app](mysql-database.md)

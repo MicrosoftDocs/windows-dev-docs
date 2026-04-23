@@ -5,7 +5,7 @@ ms.assetid: 6BAD6287-2930-42F8-BF51-69A379D1D2C3
 keywords:
 - Choosing a resource
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

@@ -1,11 +1,9 @@
 ---
 title: Windows App SDK deployment architecture and overview
 description: This article provides a high level explanation of the Windows App SDK deployment architecture and scenarios.
-ms.topic: article
-ms.date: 11/16/2021
+ms.topic: concept-article
+ms.date: 07/14/2025
 keywords: windows win32, windows app development, Windows App SDK 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -69,7 +67,7 @@ The bootstrapper is a library that must be included with your packaged with exte
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
 
-To accomplish these tasks, the nuget package leverages module initializers to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you can call the bootstrapper API directly in your app's startup code (see [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) so that it can properly initialize the system for the unpackaged app. Your app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+To accomplish these tasks, the nuget package leverages [auto-initializers](/windows/apps/package-and-deploy/project-properties#auto-initializers-in-the-windows-app-sdk) to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you can call the bootstrapper API directly in your app's startup code (see [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) so that it can properly initialize the system for the unpackaged app. Your app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
 
 The bootstrapper library in the Windows App SDK 1.0 release includes:
 

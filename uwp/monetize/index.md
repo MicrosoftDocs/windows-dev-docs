@@ -2,7 +2,7 @@
 ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
 description: The Windows SDK, Microsoft Advertising SDK, Microsoft Store Services SDK, and the Microsoft Store provide many features that enable you to make more money from your apps and gain customers from engaging with your users.
 title: Monetization, engagement, and Store services
-ms.date: 11/29/2017
+ms.date: 8/23/2025
 ms.topic: article
 keywords: windows 10, uwp, monetize, engage, promote, Store services
 ms.localizationpriority: medium
@@ -55,47 +55,7 @@ Whether you charge a price for your app or offer it for free, you can use in-app
     :::column-end:::
 :::row-end:::
 
-## Monetize your app with ads
 
-:::row:::
-    :::column:::
-        ![Ads for every context](images/monetize-ads-every-context.png)
-    :::column-end:::
-    :::column span="2":::
-**Ads for every context**
-
-We support a wide variety of ad experiences to suit most needs, including banner ads, interstitial ads (banner and video), linear video ads, playable ads, and native ads. Our platform is compliant with the OpenRTB, VAST 2.x, MRAID 2, and VPAID 3 standards and is compatible with MOAT and IAS.
-
-[Explore ad options]()
-[Install ad SDK](https://marketplace.visualstudio.com/items?itemName=AdMediator.MicrosoftAdvertisingSDK)
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![Ad mediation service](images/monetize-ad-mediation-service.png)
-    :::column-end:::
-    :::column span="2":::
-**Ad mediation service**
-
-Maximize ad revenue in your apps by using the microsoft ad mediation service to serve ads from multiple popular ad networks. You can configure your mediation settings in Partner Center without touching a line of code. If you let us configure mediation for you, our machine learning algorithms will help you maximize ad revenue across the markets your app supports.
-
-[Use ad service](https://blogs.windows.com/windowsdeveloper/2017/05/08/announcing-microsofts-ad-mediation-service/)
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
-        ![Analytics](images/monetize-analytics-pie-chart.png)
-    :::column-end:::
-    :::column span="2":::
-**Analytics**
-
-Detailed analytics reports let you see how your ads in apps are performing, giving you the information you need to maximize your ad revenue. We also provide a RESTful API you can you use to get this data programmatically.
-
-[Review performance](/windows/apps/publish/advertising-performance-report)
-    :::column-end:::
-:::row-end:::
 
 ## Other monetization opportunities
 
@@ -105,7 +65,7 @@ Looking for other ways to increase your monetization? Consider these options.
 
  Topic                | Description                 |
 |--------------------|-----------------------------|
-| [Microsoft Affiliate Program](https://www.microsoftaffiliates.com/) | Earn commissions by linking to Microsoft products from your app, blog, web page or other communications. You can link to apps, games, music, movies, hardware, accessories, and other goods sold in the Microsoft Store.
+| [Microsoft Affiliate Program]((https://www.microsoft.com/microsoft-365/business/microsoft-365-affiliate-program) | Earn commissions by linking to Microsoft products from your app, blog, web page or other communications. You can link to apps, games, music, movies, hardware, accessories, and other goods sold in the Microsoft Store.
 | [A/B experimentation](./run-app-experiments-with-a-b-testing.md) | Run A/B tests in your apps to measure the effectiveness of feature changes on some customers before you enable the changes for everyone.
 | [Engage customers with the Microsoft Store Services SDK](microsoft-store-services-sdk.md) | The Microsoft Store Services SDK provides libraries and tools that you can use to add features to your apps that help you engage with your customers. These features include targeted notifications, A/B tests, and launching Feedback Hub from your app.
 | [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md) | Add code to your UWP apps to direct your Windows 10 and Windows 11 customers to Feedback Hub, where they can submit problems, suggestions, and upvotes. Then, manage this feedback in the [Feedback report](/windows/apps/publish/feedback-report) in Partner Center. This feature requires the Microsoft Store Services SDK. 

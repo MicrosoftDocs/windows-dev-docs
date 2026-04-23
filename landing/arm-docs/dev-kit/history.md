@@ -1,12 +1,10 @@
 ---
 title: Windows Dev Kit 2023 update history
 description: History of updates available for the Windows Dev Kit 2023. 
-ms.date: 08/01/2023
+ms.date: 11/06/2025
 ms.topic: article
-ms.prod: windows
-ms.technology: arm
-author: mattwojo
-ms.author: mattwoj
+ms.service: windows
+ms.subservice: arm
 ---
 
 # Windows Dev Kit 2023 update history
@@ -17,11 +15,174 @@ To keep your device performing its best, make sure that you have the latest upda
 
 [Check for optional updates](ms-settings:windowsupdate-optionalupdates?activationSource=SMC-IA-4027667)
 
-The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater.
+## April 2025 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Ensures a more stable and faster internet connection by making enhancements to the Wi-Fi module.
+- Ensure better performance through improvements in the graphic driver.
+
+| Driver Version | Device Manager |
+|----|----|
+| .200.6.0 | Microsoft Devices Telemetry Service - Extensions |
+|  1153.16.20.0830 |  Surface Ethernet Adapter - Network adapters |
+| 30.0.4122.4000 | Qualcomm(R) Adreno(TM) 8cx Gen 3 - Display adapters |
+| 1.0.4122.4000 | Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter - Network adapters |
+| 1.0.4122.4000 | Qualcomm(R) Wlan Thermal Mitigation Device - Extensions |
+| 1.0.4122.4000 | Qualcomm(R) Slimbus Device - System devices |
+
+## February 2025 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Enhances the overall security posture of the devices, protecting customers from potential threat.
+
+| Driver Version | Device Manager |
+|----|----|
+| 13.42.235.0       | Surface UEFI - Firmware |
+
+## September 2024 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Improves security for devices with PXE boot enabled in IPv6 networks by protecting them against external access within compromised network segments.
+- Addresses data collection regulatory requirements and updates the consent experience for data transmission.
+- Mitigates a potential security vulnerability, increasing protection against unauthorized privilege.
+
+| Driver Version | Device Manager |
+|----|----|
+| 1.0.3741.8500        | Qualcomm(R) Audio DSP Subsystem Device - Extensions |
+| 13.101.139.0         | Surface System Aggregator - Firmware |
+| 1.0.3933.9300        | Qualcomm(R) FastRPC Device - System devices         |
+| 1.0.3933.9300        | Qualcomm(R) Audio RPC Daemon Device - System devices|
+| 1.0.3933.9300        | Qualcomm Secure Processor Device - System devices   |
+| 12.21.235.0          | Surface UEFI - Firmware                             |
+| 6.214.10.0           | Surface Integration Service - System devices        |
+| 10.105.10.0          | Surface System Telemetry Driver - System devices    |
+| 1153.13.20.0420      | Surface Ethernet Adapter - Network adapters         |
+| 9.166.37.0           | Surface Serial Hub Driver - System devices          |
+
+## June 2024 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update:
+
+- Enhances the gaming experience by preventing glitches in the video playback.
+- Improves stability addressing the Blue Screen error.
+- Improves Windows Hello facial recognition success rate.
+
+| Driver Version | Device Manager |
+|----|----|
+| 1.0.3638.8100        | Qualcomm(R) Analog-to-Digital Converter Device - System devices |
+| Surface - Firmware - 5.65.139.0  | Surface System Aggregator - Firmware |
+| 9.166.8.0        | Surface Serial Hub Driver - System devices        |
+| 1.0.3851.4800        | Qualcomm ADC Temperature Monitor Device - System devices |
+| 1.0.3902.9400       | Qualcomm(R) Bluetooth UART Transport Driver - Bluetooth  |
+| 1.0.3820.3000         | Qualcomm(R) System Manager GPIO Device - System devices|
+| 1.0.3933.9300         | Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter - Network adapters |
+| 1.0.3933.9300           | Qualcomm(R) Wlan Thermal Mitigation Device - Extensions  |
+| 1.0.3902.9400      | Qualcomm(R) Bluetooth Radio Driver - Bluetooth        |
+| 30.0.3959.8900     | Qualcomm(R) Adreno(TM) 8cx Gen 3 - Display adapters       |
+| 1.0.3959.8900     | Qualcomm(R) Device Crash Dump Injector Service - System devices |
+
+## April 2024 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update: Extends device security certificate authority. Addresses data collection regulatory requirements. Improves interoperability with the Surface Thunderbolt 4 Dock by resolving issues that were preventing the system from detecting audio devices. Reduces device crash rate. Improves system performance and stability, and addresses bug check.
+
+| Driver Version | Device Manager |
+|----|----|
+| 1.49.5.0 | Surface EEPROM Driver - Human Interface Devices |
+| 6.213.30.0 | Surface Integration Service - System devices |
+| 12.6.235.0 | Surface UEFI - Firmware |
+| 1.0.3851.4800 | Qualcomm WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter - Network adapters |
+| 1153.9.20.0823 | Surface Ethernet Adapter - Network adapters |
+| 10.104.30.0 | Surface System Telemetry Driver - System devices |
+| 6.197.9.0 | Microsoft Devices Telemetry Service - Extensions |
+| 2.148.18.0 | Surface SPT Core - System devices |
+| 2.26.7.0 | Surface Thunderbolt(TM) 4 Dock Firmware Update - Firmware |
+
+## September 2023 updates
+
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater. This update addresses critical security vulnerability and improves system stability.
+
+| Driver Version | Device Manager |
+|----|----|
+| 4.15.12412.20015 | ELAN WBF Fingerprint Sensor                                                                |
+| 6.196.139.0      | Microsoft Devices Telemetry Service                                                        |
+| 1.0.3551.9400    | Qualcomm(R) ACPI Bridge Device                                                             |
+| 30.0.3776.0300   | Qualcomm(R) Adreno(TM) 8cx Gen 3                                                           |
+| 30.0.3741.8500   | Qualcomm(R) Adreno(TM) 8cx Gen 3 Surface Extension                                         |
+| 1.0.3551.9400    | Qualcomm(R) BAM Bus Device                                                                 |
+| 1.0.3741.8500    | Qualcomm(R) Bluetooth Radio Driver                                                         |
+| 1.0.3741.8500    | Qualcomm(R) Bluetooth UART Transport Driver                                                |
+| 1.0.3741.8500    | Qualcomm(R) Combined Subsystem Driver                                                      |
+| 1.0.3741.8500    | Qualcomm(R) Compute DSP Subsystem Device Extension                                         |
+| 1.0.3551.9400    | Qualcomm(R) Data IPC Router Device                                                         |
+| 1.0.3638.8100    | Qualcomm(R) Device Crash Dump Injector Service                                             |
+| 1.0.3638.8100    | Qualcomm(R) FastRPC Device                                                                 |
+| 1.0.3551.9400    | Qualcomm(R) GPI Bus Device                                                                 |
+| 1.0.3611.3300    | Qualcomm(R) I2C Bus Device                                                                 |
+| 1.0.3586.6600    | Qualcomm(R) I2C Bus Device Extension                                                       |
+| 1.0.3600.9600    | Qualcomm(R) Inter Processor Communication Interrupt Device                                 |
+| 1.0.3681.5800    | Qualcomm(R) IOMMU Device                                                                   |
+| 1.0.3681.5800    | Qualcomm(R) IOMMU Device Extension                                                         |
+| 18.52.1.16       | Qualcomm(R) Mobile Broadband Update Device                                                 |
+| 1.0.3681.5800    | Qualcomm(R) PCIe Platform Extension Plugin                                                 |
+| 1.0.3681.5800    | Qualcomm(R) Peripheral Image Loader Device                                                 |
+| 1.0.3681.5800    | Qualcomm(R) Peripheral Image Loader Device Extension                                       |
+| 1.0.3741.8500    | Qualcomm(R) Peripheral Image Loader Device Extension                                       |
+| 1.0.3638.8100    | Qualcomm(R) Power Management FGBCL Device                                                  |
+| 1.0.3726.4700    | Qualcomm(R) Power Management PMIC Apps Device                                              |
+| 1.0.3638.8100    | Qualcomm(R) Power Management PMIC Device                                                   |
+| 1.0.3726.4700    | Qualcomm(R) Power Management PMIC GLink Device                                             |
+| 1.0.3638.8100    | Qualcomm(R) Power Management PML0 Extension                                                |
+| 1.0.3638.8100    | Qualcomm(R) Protection Domain Service Registry Device                                      |
+| 18.52.1.8        | Qualcomm(R) QMUX Interconnect                                                              |
+| 1.0.3638.8100    | Qualcomm(R) Reset Power Error Notifier Device                                              |
+| 1.0.3681.5800    | Qualcomm(R) Secure Kernel Extension                                                        |
+| 1.0.3741.8500    | Qualcomm(R) Secure Processor Device                                                        |
+| 1.0.3741.8500    | Qualcomm(R) Secure Processor Subsystem Device Extension                                    |
+| 1.0.3681.5800    | Qualcomm(R) Shared Memory Port Device                                                      |
+| 1.0.3638.8100    | Qualcomm(R) Slimbus Device                                                                 |
+| 1.0.3681.5800    | Qualcomm(R) SOC Partition Interface Device                                                 |
+| 1.0.3564.4300    | Qualcomm(R) SPI Device                                                                     |
+| 1.0.3551.9400    | Qualcomm(R) SPMI Bus Device                                                                |
+| 1.0.3551.9400    | Qualcomm(R) SSG Secure Services Device                                                     |
+| 1.0.3741.8500    | Qualcomm(R) Subsystem Thermal Manager Driver                                               |
+| 1.0.3638.8100    | Qualcomm(R) System Cache Device                                                            |
+| 1.0.3551.9400    | Qualcomm(R) System Manager Device                                                          |
+| 1.0.3681.5800    | Qualcomm(R) System Manager Device                                                          |
+| 1.0.3681.5800    | Qualcomm(R) System Manager Device Extension                                                |
+| 1.0.3551.9400    | Qualcomm(R) System Manager DiagRouter Device                                               |
+| 1.0.3638.8100    | Qualcomm(R) System Manager GPIO Device                                                     |
+| 1.0.3681.5800    | Qualcomm(R) System Manager PMIC GPIO Framework Device Extension                            |
+| 1.0.3681.5800    | Qualcomm(R) System Manager Power Engine Plug-in Device                                     |
+| 1.0.3681.5801    | Qualcomm(R) System Manager Qcom Device Extension                                           |
+| 1.0.3741.8500    | Qualcomm(R) System Manager SCM Device                                                      |
+| 1.0.3741.8500    | Qualcomm(R) System Manager Secapp Device                                                   |
+| 1.0.3638.8100    | Qualcomm(R) System MMU Device                                                              |
+| 1.0.3681.5800    | Qualcomm(R) TFTP Device                                                                    |
+| 1.0.3551.9400    | Qualcomm(R) UART Bus Device                                                                |
+| 1.0.3681.5800    | Qualcomm(R) URS Extension                                                                  |
+| 1.0.3726.4700    | Qualcomm(R) USB Type-C Device                                                              |
+| 1.0.3681.5800    | Qualcomm(R) USB3(TM) Device Controller                                                     |
+| 1.0.3681.5800    | Qualcomm(R) USB3(TM) eXtensible Host Controller                                            |
+| 1.0.3741.8500    | Qualcomm(R) WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter           |
+| 1.0.3741.8500    | Qualcomm(R) WCN685x Wi-Fi 6E Dual Band Simultaneous (DBS) WiFiCx Network Adapter Extension |
+| 1.0.3551.9400    | Qualcomm(R) Windows WLAN Sleep Manager Driver                                              |
+| 1.42.137.0       | Surface ACPI Wake Alarm                                                                    |
+| 4.95.139.0       | Surface Button                                                                             |
+| 6.213.2.0        | Surface Integration Service                                                                |
+| 9.140.139.0      | Surface Serial Hub Driver                                                                  |
+| 8.150.139.0      | Surface SMF Client Driver                                                                  |
+| 2.136.139.0      | Surface SPT Core                                                                           |
+| 10.95.137.0      | Surface System Telemetry Driver                                                            |
+| 8.89.139.0       | Surface Thermal Policy Driver                                                              |
+| 2.26.4.0         | surface Thunderbolt(TM) 4 Dock Firmware Update                                             |
+| 11.1.235.0       | Surface UEFI                                                                               |
 
 ## July 2023 updates
 
-The following update is available for Surface Pro 9 with 5G (SQ3 Processor) devices running Windows 11 Update, Version 22H2, or greater.
+The following update is available for Windows Dev Kit 2023 devices running Windows 11 Update, Version 22H2, or greater.
 
 | Driver Version | Device Manager |
 |----|----|

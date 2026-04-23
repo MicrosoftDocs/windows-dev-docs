@@ -1,10 +1,8 @@
 ---
 title: Implement a widget provider in a C# Windows App
 description: This article walks you through the process of creating a widget provider, implemented in C#, that provides widget content and responds to widget actions. 
-ms.topic: article
+ms.topic: how-to
 ms.date: 07/06/2022
-ms.author: drewbat
-author: drewbatgit
 ms.localizationpriority: medium
 ---
 
@@ -13,7 +11,7 @@ ms.localizationpriority: medium
 
 This article walks you through creating a simple widget provider that implements the [IWidgetProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider) interface. The methods of this interface are invoked by the widget host to request the data that defines a widget or to let the widget provider respond to a user action on a widget. Widget providers can support a single widget or multiple widgets. In this example, we will define two different widgets. One widget is a mock weather widget  that illustrates some of the formatting options provided by the Adaptive Cards framework. The second widget will demonstrate user actions and the custom widget state feature by maintaining a counter that is incremented whenever the user clicks on a button displayed on the widget.
 
-:::image type="content" source="images/weather-widget-screenshot.png" alt-text="A screenshot of a simple weather widget. The widget shows some weather-related graphics an data as well as some diagnostic text illustrating that the template for the medium size widget is being displayed.":::
+:::image type="content" source="images/weather-widget-screenshot.png" alt-text="A screenshot of a simple weather widget. The widget shows some weather-related graphics and data as well as some diagnostic text illustrating that the template for the medium size widget is being displayed.":::
 
 :::image type="content" source="images/counting-widget-screenshot.png" alt-text="A screenshot of a simple counting widget. The widget shows a string containing the numeric value to be incremented and a button labeled Increment, as well as some diagnostic text illustrating that the template for the small size widget is being displayed.":::
 
@@ -21,18 +19,25 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 
 ## Prerequisites
 
-- Your device must have developer mode enabled. For more information see [Enable your device for development](/windows/apps/get-started/enable-your-device-for-development).
+- Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2022 or later with the **Universal Windows Platform development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new C# console app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleWidgetProvider". When prompted, set the target .NET version to 6.0. 
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleWidgetProvider". When prompted, set the target .NET version to 8.0.
 
 When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.0.19041.0 or later.
 
+To update your project to support .NET 8.0, in **Solution Explorer** right-click the project name and select **Edit Project File**. Inside of **PropertyGroup**, add the following **RuntimeIdentifiers** element.
+
+```xml
+<RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
+```
+
+
 Note that this walkthrough uses a console app that displays the console window when the widget is activated to enable easy debugging. When you are ready to publish your widget provider app, you can convert the console application to a Windows application by following the steps in [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
 
-## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
+## Add references to the Windows App SDK
 
 This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
 
@@ -54,8 +59,8 @@ A widget provider can support a single widget or multiple widgets. Whenever the 
 
 public class CompactWidgetInfo
 {
-    public string widgetId { get; set; }
-    public string widgetName { get; set; }
+    public string? widgetId { get; set; }
+    public string? widgetName { get; set; }
     public int customState = 0;
     public bool isActive = false;
 
@@ -75,130 +80,137 @@ public static Dictionary<string, CompactWidgetInfo> RunningWidgets = new Diction
 
 This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the member variables of the **WidgetProvider** class. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Card Designer](../../design/widgets/widgets-create-a-template.md).
 
+In the latest release, apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. For more information, see [Customize the widget header area](widget-header-customization.md).
+
+> [!NOTE]
+> In the latest release, apps that implement Windows widgets can choose to populate the widget content with HTML served from a specified URL instead of supplying content in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Widget providers must still provide an Adaptive Card JSON payload, so the implementation steps in this walkthrough are applicable to web widgets. For more information, see [Web widget providers](web-widget-providers.md).
+
 ```csharp
 // WidgetProvider.cs
 
 // Class members of WidgetProvider
-const string weatherWidgetTemplate = @"
+        const string weatherWidgetTemplate = """
 {
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""type"": ""AdaptiveCard"",
-    ""version"": ""1.0"",
-    ""speak"": ""<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>"",
-    ""backgroundImage"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg"",
-    ""body"": [
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
+    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
+    "body": [
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Redmond, WA"",
-            ""size"": ""large"",
-            ""isSubtle"": true,
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Redmond, WA",
+            "size": "large",
+            "isSubtle": true,
+            "wrap": true
         },
         {
-            ""type"": ""TextBlock"",
-            ""text"": ""Mon, Nov 4, 2019 6:21 PM"",
-            ""spacing"": ""none"",
-            ""wrap"": true
+            "type": "TextBlock",
+            "text": "Mon, Nov 4, 2019 6:21 PM",
+            "spacing": "none",
+            "wrap": true
         },
         {
-            ""type"": ""ColumnSet"",
-            ""columns"": [
+            "type": "ColumnSet",
+            "columns": [
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""Image"",
-                            ""url"": ""https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png"",
-                            ""size"": ""small"",
-                            ""altText"": ""Mostly cloudy weather""
+                            "type": "Image",
+                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
+                            "size": "small",
+                            "altText": "Mostly cloudy weather"
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""auto"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""46"",
-                            ""size"": ""extraLarge"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "46",
+                            "size": "extraLarge",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""°F"",
-                            ""weight"": ""bolder"",
-                            ""spacing"": ""small"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "°F",
+                            "weight": "bolder",
+                            "spacing": "small",
+                            "wrap": true
                         }
                     ]
                 },
                 {
-                    ""type"": ""Column"",
-                    ""width"": ""stretch"",
-                    ""items"": [
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Hi 50"",
-                            ""horizontalAlignment"": ""left"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Hi 50",
+                            "horizontalAlignment": "left",
+                            "wrap": true
                         },
                         {
-                            ""type"": ""TextBlock"",
-                            ""text"": ""Lo 41"",
-                            ""horizontalAlignment"": ""left"",
-                            ""spacing"": ""none"",
-                            ""wrap"": true
+                            "type": "TextBlock",
+                            "text": "Lo 41",
+                            "horizontalAlignment": "left",
+                            "spacing": "none",
+                            "wrap": true
                         }
                     ]
                 }
             ]
         }
     ]
-}";
+}
+""";
 
-const string countWidgetTemplate = @"
+    const string countWidgetTemplate = """
 {                                                                     
-    ""type"": ""AdaptiveCard"",                                         
-    ""body"": [                                                         
+    "type": "AdaptiveCard",                                         
+    "body": [                                                         
         {                                                               
-            ""type"": ""TextBlock"",                                    
-            ""text"": ""You have clicked the button ${count} times""    
+            "type": "TextBlock",                                    
+            "text": "You have clicked the button ${count} times"    
         },
         {
-                ""text"":""Rendering Only if Small"",
-                ""type"":""TextBlock"",
-                ""$when"":""${$host.widgetSize==\""small\""}""
+                "text":"Rendering Only if Small",
+                "type":"TextBlock",
+                "$when":"${$host.widgetSize==\"small\"}"
         },
         {
-                ""text"":""Rendering Only if Medium"",
-                ""type"":""TextBlock"",
-                ""$when"":""${$host.widgetSize==\""medium\""}""
+                "text":"Rendering Only if Medium",
+                "type":"TextBlock",
+                "$when":"${$host.widgetSize==\"medium\"}"
         },
         {
-            ""text"":""Rendering Only if Large"",
-            ""type"":""TextBlock"",
-            ""$when"":""${$host.widgetSize==\""large\""}""
+            "text":"Rendering Only if Large",
+            "type":"TextBlock",
+            "$when":"${$host.widgetSize==\"large\"}"
         }                                                                    
     ],                                                                  
-    ""actions"": [                                                      
+    "actions": [                                                      
         {                                                               
-            ""type"": ""Action.Execute"",                               
-            ""title"": ""Increment"",                                   
-            ""verb"": ""inc""                                           
+            "type": "Action.Execute",                               
+            "title": "Increment",                                   
+            "verb": "inc"                                           
         }                                                               
     ],                                                                  
-    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
-    ""version"": ""1.5""                                                
-}";
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.5"                                                
+}
+""";
 ```
 
 ## Implement the IWidgetProvider methods
@@ -208,7 +220,7 @@ In the next few sections, we'll implement the methods of the **IWidgetProvider**
 > [!NOTE]
 > Objects passed into the callback methods of the **IWidgetProvider** interface are only guaranteed to be valid within the callback. You should not store references to these objects because their behavior outside of the context of the callback is undefined.
 
-## CreateWidget
+### CreateWidget
 
 The widget host calls [CreateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.createwidget) when the user has pinned one of your app's widgets in the widget host. First, this method gets the ID and name of the associated widget and adds a new instance of our helper structure, **CompactWidgetInfo**, to the collection of enabled widgets. Next, we send the initial template and data for the widget, which is encapsulated in the **UpdateWidget** helper method.
 
@@ -228,7 +240,7 @@ public void CreateWidget(WidgetContext widgetContext)
 }
 ```
 
-## DeleteWidget
+### DeleteWidget
 
 The widget host calls [DeleteWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.deletewidget) when the user has unpinned one of your app's widgets from the widget host. When this occurs, we will remove the associated widget from our list of enabled widgets so that we don't send any further updates for that widget.
 
@@ -258,7 +270,7 @@ public static ManualResetEvent GetEmptyWidgetListEvent()
 }
 ```
 
-## OnActionInvoked
+### OnActionInvoked
 
 The widget host calls [OnActionInvoked](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onactioninvoked) when the user interacts with an action you defined in your widget template. For the counter widget used in this example, an action was declared with a **verb** value of "inc" in the JSON template for the widget. The widget provider code will use this **verb** value to determine what action to take in response to the user interaction.  
 
@@ -303,7 +315,7 @@ public void OnActionInvoked(WidgetActionInvokedArgs actionInvokedArgs)
 For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design)
 
 
-## OnWidgetContextChanged
+### OnWidgetContextChanged
 
 In the current release, [OnWidgetContextChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.onwidgetcontextchanged) is only called when the user changes the size of a pinned widget. You can choose to return a different JSON template/data to the widget host depending on what size is requested. You can also design the template JSON to support all the available sizes using conditional rendering based on the value of **host.widgetSize**. If you don't need to send a new template or data to account for the size change, you can use the **OnWidgetContextChanged** for telemetry purposes.
 
@@ -324,7 +336,7 @@ public void OnWidgetContextChanged(WidgetContextChangedArgs contextChangedArgs)
     
 ```
 
-## Activate and Deactivate
+### Activate and Deactivate
 
 The [Activate](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.activate) method is called to notify the widget provider that the widget host is currently interested in receiving updated content from the provider. For example, it could mean that the user is currently actively viewing the widget host. The [Deactivate](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider.deactivate) method is called to notify the widget provider that the widget host is no longer requesting content updates. These two methods define a window in which the widget host is most interested in showing the most up-to-date content. Widget providers can send updates to the widget at any time, such as in response to a push notification, but as with any background task, it's important to balance providing up-to-date content with resource concerns like battery life. 
 
@@ -367,7 +379,7 @@ void UpdateWidget(CompactWidgetInfo localWidgetInfo)
 {
     WidgetUpdateRequestOptions updateOptions = new WidgetUpdateRequestOptions(localWidgetInfo.widgetId);
 
-    string templateJson = null;
+    string? templateJson = null;
     if (localWidgetInfo.widgetName == "Weather_Widget")
     {
         templateJson = weatherWidgetTemplate.ToString();
@@ -377,7 +389,7 @@ void UpdateWidget(CompactWidgetInfo localWidgetInfo)
         templateJson = countWidgetTemplate.ToString();
     }
 
-    string dataJson = null;
+    string? dataJson = null;
     if (localWidgetInfo.widgetName == "Weather_Widget")
     {
         dataJson = "{}";
@@ -414,7 +426,7 @@ public WidgetProvider()
         var customState = widgetInfo.CustomState;
         if (!RunningWidgets.ContainsKey(widgetId))
         {
-            CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetName, widgetName = widgetId };
+            CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetId, widgetName = widgetName };
             try
             {
                 // If we had any save state (in this case we might have some state saved for Counting widget)
@@ -764,7 +776,7 @@ To convert the console app created in this walkthrough to a Windows app, right-c
 
 ## Publishing your widget
 
-After you have developed and tested your widget you must publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
+After you have developed and tested your widget you can publish your app on the Microsoft Store in order for users to install your widgets on their devices. For step by step guidance for publishing an app, see [Publish your app in the Microsoft Store](/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msix).
 
 ### The widgets Store Collection
 
@@ -772,3 +784,192 @@ After your app has been published on the Microsoft Store, you can request for yo
 
 :::image type="content" source="images/widgets-store-collection.png" alt-text="Screenshot of the Microsoft Store showing the widgets collection that allows users to discover apps that feature Windows Widgets.":::
 
+## Implementing widget customization
+
+Starting with Windows App SDK 1.4, widgets can support user customization. When this feature is implemented, a **Customize widget** option is added to the ellipsis menu above the **Unpin widget** option.  
+
+:::image type="content" source="images/widget-customization-menu.png" alt-text="A screenshot showing a widget with the customization dialog displayed.":::
+
+
+The following steps summarize the process for widget customization.
+
+1. In normal operation, the widget provider responds to requests from the widget host with the template and data payloads for the regular widget experience.
+1. The user clicks the **Customize widget** button in the ellipsis menu.
+1. The widget raises the **OnCustomizationRequested** event on the widget provider to indicate that the user has requested the widget customization experience.
+1. The widget provider sets an internal flag to indicate that the widget is in customization mode. While in customization mode, the widget provider sends the JSON templates for the widget customization UI instead of the regular widget UI.
+1. While in customization mode, the widget provider receives **OnActionInvoked** events as the user interacts with the customization UI and adjusts its internal configuration and behavior based on the user's actions.
+1. When the action associated with the **OnActionInvoked** event is the app-defined "exit customization" action, the widget provider resets its internal flag to indicate that it is no longer in customization mode and resumes sending the visual and data JSON templates for the regular widget experience, reflecting the changes requested during customization. It's possible for the user to close out of the customization experience without clicking the app-defined exit customization action. In this case, the [IWidgetProviderAnalytics.OnAnalyticsInfoReported](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovideranalytics.onanalyticsinforeported) will be raised, and the [WidgetAnalyticsInfoReportedArgs.AnalyticsJson](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetanalyticsinforeportedargs.analyticsjson) will have an *interactionKind* of "exitCustomization".
+1. The widget provider persists the customization options to disk or the cloud so that the changes are preserved between invocations of the widget provider.
+
+> [!NOTE]
+> There is a known bug with the Windows Widget Board, for widgets built using the Windows App SDK, that causes the ellipsis menu to become unresponsive after the customization card is shown.
+
+In typical Widget customization scenarios, the user will choose what data is displayed on the widget or adjust visual presentation of the widget. For simplicity, the example in this section will add customization behavior that allows the user to reset the counter of the counting widget implemented in the previous steps.
+
+> [!NOTE]
+> Widget customization is only supported in Windows App SDK 1.4 and later. Make sure you update the references in your project to the latest version of the Nuget package.
+
+### Update the package manifest to declare customization support
+
+To let the widget host know that the widget supports customization, add the attribute **IsCustomizable** to the **Definition** element for the widget and set it to true.
+
+```xml
+...
+<Definition Id="Counting_Widget"
+    DisplayName="Microsoft Counting Widget"
+    Description="CONFIG counting widget description"
+    IsCustomizable="true">
+...
+```
+
+### Track when a widget is in customization mode
+
+The example in this article uses the helper struct **CompactWidgetInfo** to track the current state of our active widgets. Add the *inCustomization* field, which will be used to track when the widget host is expecting us to send our customization json template rather than the regular widget template. 
+
+```csharp
+// WidgetProvider.cs
+public class CompactWidgetInfo
+{
+    public string widgetId { get; set; }
+    public string widgetName { get; set; }
+    public int customState = 0;
+    public bool isActive = false;
+    public bool inCustomization = false;
+}
+```
+
+### Implement IWidgetProvider2
+
+The widget customization feature is exposed through the [IWidgetProvider2](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2) interface. Update the **WidgetProvider** class definition to implement this interface.
+
+```csharp
+// WidgetProvider.cs
+internal class WidgetProvider : IWidgetProvider, IWidgetProvider2
+```
+
+Add an implementation for the [OnCustomizationRequested](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider2.oncustomizationrequested) callback of the **IWidgetProvider2** interface. This method uses the same pattern as the other callbacks we have used. We get the ID for the widget to be customized from the **WidgetContext** and find the **CompactWidgetInfo** helper struct associated with that widget and set the **inCustomization** field to true.
+
+```csharp
+// WidgetProvider.cs
+public void OnCustomizationRequested(WidgetCustomizationRequestedArgs customizationInvokedArgs)
+{
+    var widgetId = customizationInvokedArgs.WidgetContext.Id;
+    if (RunningWidgets.ContainsKey(widgetId))
+    {
+        var localWidgetInfo = RunningWidgets[widgetId];
+        localWidgetInfo.inCustomization = true;
+        UpdateWidget(localWidgetInfo);
+    }
+}
+```
+
+Now, declare a string variable that defines the JSON template for the widget customization UI. For this example, we have a "Reset counter" button and an "Exit customization" button that will signal our provider to return to regular widget behavior. Place this definition next to the other template definitions.
+
+```csharp
+// WidgetProvider.cs
+const string countWidgetCustomizationTemplate = @"
+{
+    ""type"": ""AdaptiveCard"",
+    ""actions"" : [
+        {
+            ""type"": ""Action.Execute"",
+            ""title"" : ""Reset counter"",
+            ""verb"": ""reset""
+            },
+            {
+            ""type"": ""Action.Execute"",
+            ""title"": ""Exit customization"",
+            ""verb"": ""exitCustomization""
+            }
+    ],
+    ""$schema"": ""http://adaptivecards.io/schemas/adaptive-card.json"",
+    ""version"": ""1.5""
+}";
+```
+
+### Send customization template in UpdateWidget
+
+Next, we'll update our **UpdateWidget** helper method that sends our data and visual JSON templates to the widget host. When we are updating the counting widget, we send either the regular widget template or the customization template depending on the value of the **inCustomization** field. For brevity, code not relevant to customization is omitted in this code snippet.
+
+```csharp
+// WidgetProvider.cs
+void UpdateWidget(CompactWidgetInfo localWidgetInfo)
+{
+    ...
+    else if (localWidgetInfo.widgetName == "Counting_Widget")
+    {
+        if (!localWidgetInfo.inCustomization)
+        {
+            templateJson = countWidgetTemplate.ToString();
+        }
+        else
+        {
+            templateJson = countWidgetCustomizationTemplate.ToString();
+        }
+    
+    }
+    ...
+    updateOptions.Template = templateJson;
+    updateOptions.Data = dataJson;
+    // You can store some custom state in the widget service that you will be able to query at any time.
+    updateOptions.CustomState = localWidgetInfo.customState.ToString();
+    WidgetManager.GetDefault().UpdateWidget(updateOptions);
+}
+```
+
+### Respond to customization actions
+
+When users interact with inputs in our customization template, it calls the same **OnActionInvoked** handler as when the user interacts with the regular widget experience. To support customization, we look for the verbs "reset" and "exitCustomization" from our customization JSON template. If the action is for the "Reset counter" button, we reset the counter held in the **customState** field of our helper struct to 0. If the action is for the "Exit customization" button, we set the **inCustomization** field to false so that when we call **UpdateWidget**, our helper method will send the regular JSON templates and not the customization template.
+
+```csharp
+// WidgetProvider.cs
+public void OnActionInvoked(WidgetActionInvokedArgs actionInvokedArgs)
+{
+    var verb = actionInvokedArgs.Verb;
+    if (verb == "inc")
+    {
+        var widgetId = actionInvokedArgs.WidgetContext.Id;
+        // If you need to use some data that was passed in after
+        // Action was invoked, you can get it from the args:
+        var data = actionInvokedArgs.Data;
+        if (RunningWidgets.ContainsKey(widgetId))
+        {
+            var localWidgetInfo = RunningWidgets[widgetId];
+            // Increment the count
+            localWidgetInfo.customState++;
+            UpdateWidget(localWidgetInfo);
+        }
+    } 
+    else if (verb == "reset") 
+    {
+        var widgetId = actionInvokedArgs.WidgetContext.Id;
+        var data = actionInvokedArgs.Data;
+        if (RunningWidgets.ContainsKey(widgetId))
+        {
+            var localWidgetInfo = RunningWidgets[widgetId];
+            // Reset the count
+            localWidgetInfo.customState = 0;
+            localWidgetInfo.inCustomization = false;
+            UpdateWidget(localWidgetInfo);
+        }
+    }
+    else if (verb == "exitCustomization")
+    {
+        var widgetId = actionInvokedArgs.WidgetContext.Id;
+        var data = actionInvokedArgs.Data;
+        if (RunningWidgets.ContainsKey(widgetId))
+        {
+            var localWidgetInfo = RunningWidgets[widgetId];
+            // Stop sending the customization template
+            localWidgetInfo.inCustomization = false;
+            UpdateWidget(localWidgetInfo);
+        }
+    }
+}
+```
+
+Now, when you deploy your widget, you should see the **Customize widget** button in the ellipses menu. Clicking on the customize button will display your customization template.
+
+:::image type="content" source="images/widget-customization-template.png" alt-text="A screenshot showing the widgets customization UI.":::
+
+Click the **Reset counter** button to reset the counter to 0. Click the **Exit customization** button to return to your widget's regular behavior.

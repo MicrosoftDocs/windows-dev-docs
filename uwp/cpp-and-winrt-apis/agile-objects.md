@@ -56,7 +56,7 @@ if (myimpl.try_as<IAgileObject>()) { /* myimpl is agile. */ }
 
 **IAgileObject** is a *marker interface*. The mere success or failure of querying for **IAgileObject** is the extent of the information and utility you get from it.
 
-## Opting out of agile object support
+## Opt out of agile object support
 
 You can choose explicitly to opt out of agile object support by passing the [**winrt::non_agile**](/uwp/cpp-ref-for-winrt/non-agile) marker struct as a template argument to your base class.
 

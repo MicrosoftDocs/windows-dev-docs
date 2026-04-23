@@ -1,76 +1,23 @@
 ---
-description: Design guidelines and UI code examples for creating Windows app experiences.
-title: Design and code Windows apps
-ms.date: 01/28/2022
+description: Design guidelines and UI examples for creating Windows app experiences.
+title: Design Windows apps overview
+ms.date: 10/28/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Design and code Windows apps
+# Design Windows apps overview
 
-Design guidelines and UI code examples for creating Windows app experiences.
+:::image type="content" source="images/header-design.png" alt-text="A stylized blue brush and shapes representing design tools against a light gradient background" border="false":::
 
-:::row:::
-    :::column:::
-        ### [Design downloads](downloads/index.md)
-        :::image type="content" source="images/downloads-1x.png" alt-text="Design downloads" link="/windows/apps/design/downloads/":::
-        Get design toolkits and samples.
-    :::column-end:::
-    :::column:::
-        ### [Design basics](basics/index.md)
-        :::image type="content" source="images/basics-1x.png" alt-text="Design basics" link="/windows/apps/design/basics/":::
-        An introduction to app design and the Fluent Design System.
-    :::column-end:::
-:::row-end:::
+---
 
-:::row:::
-    :::column:::
-        ### [Layout](layout/index.md)
-        :::image type="content" source="images/layout-1x.png" alt-text="Layout" link="/windows/apps/design/layout/":::
-        Responsive tips and APIs for a UI that looks great on every screen size.
-    :::column-end:::
-    :::column:::
-        ### [Controls and patterns](controls/index.md)
-        :::image type="content" source="images/controls-1x.png" alt-text="Controls and patterns" link="/windows/apps/design/controls/":::
-        All the UI building blocks you need, from radio buttons to navigation controls.
-    :::column-end:::
-:::row-end:::
+Designing a great Windows app starts with a solid understanding of how users expect apps to look, feel, and behave. This hub brings together the core guidance, patterns, and resources needed to create intuitive, accessible, and delightful experiences on Windows leveraging Microsoft's [Fluent Design language](https://fluent2.microsoft.design/).
 
-:::row:::
-    :::column:::
-        ### [Style](style/index.md)
-        :::image type="content" source="images/style-1x.png" alt-text="Style" link="/windows/apps/design/style/":::
-        Make your app stand out with color, typography, and acrylic.
-    :::column-end:::
-    :::column:::
-        ### [Motion](motion/index.md)
-        :::image type="content" source="images/motion-1x.png" alt-text="Motion" link="/windows/apps/design/motion/":::
-        Bring your app to life with animations and transitions.
-    :::column-end:::
-:::row-end:::
+Whether you're building a new app or refining an existing one, you'll find practical principles, UI foundations, and ready-to-use tools to help you craft consistent interfaces that work seamlessly across devices, input types, and form factors.
 
-:::row:::
-    :::column:::
-        ### [Shell](shell/index.md)
-        :::image type="content" source="images/shell-1x.png" alt-text="Shell" link="/windows/apps/design/shell/":::
-        Use Windows shell features to launch your app and display notifications.
-    :::column-end:::
-    :::column:::
-        ### [Input and interactions](input/index.md)
-        :::image type="content" source="images/inputs-1x.png" alt-text="Input and interactions" link="/windows/apps/design/input/":::
-        Optimize your app for touch, pen, Surface dial, and other input types.
-    :::column-end:::
-:::row-end:::
+---
 
-:::row:::
-    :::column:::
-        ### [Devices](devices/index.md)
-        :::image type="content" source="images/devices-1x.png" alt-text="Devices" link="/windows/apps/design/devices/":::
-        Learn about the spectrum of Windows 10 and Windows 11 devices and how to optimize for them.
-    :::column-end:::
-    :::column:::
-        ### [Usability](usability/index.md)
-        :::image type="content" source="images/usability-1x.png" alt-text="Usability" link="/windows/apps/design/usability/":::
-        Make your app inclusive and accessible to people around the world.
-    :::column-end:::
-:::row-end:::
+#### Get started with designing your Windows app
+
+[!INCLUDE [apps-design-overview](../../includes/apps-design-overview.md)]

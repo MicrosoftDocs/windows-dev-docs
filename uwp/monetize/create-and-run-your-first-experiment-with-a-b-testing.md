@@ -3,7 +3,7 @@ description: In this walkthrough, you will create, run, and manage your first ex
 title: Create and run your first experiment
 ms.assetid: 16A2B129-14E1-4C68-86E8-52F1BE58F256
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store Services SDK, A/B tests, experiments
 ms.localizationpriority: medium
 ---

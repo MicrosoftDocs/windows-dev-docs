@@ -2,7 +2,7 @@
 title: ".NET Native and Compilation"
 description: Compare the compiling method for .NET Native with Just-In-Time (JIT) and other compilation technologies available for .NET Framework apps and why exceptions my occur.
 ms.date: 03/30/2017
-ms.topic: conceptual
+ms.topic: article
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 ---
 

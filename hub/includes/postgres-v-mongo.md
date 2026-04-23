@@ -1,7 +1,5 @@
 ---
 ms.topic: include
-author: mattwojo
-ms.author: mattwoj
 ms.date: 10/04/2019
 ---
 Two [popular choices](https://insights.stackoverflow.com/survey/2019#technology-_-databases) for a database system are [MongoDB](https://www.mongodb.com/what-is-mongodb) and [PostgreSQL](https://www.postgresql.org/about/). 

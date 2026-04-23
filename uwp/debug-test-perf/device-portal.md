@@ -1,9 +1,10 @@
 ---
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 01/28/2022
+ms.date: 07/14/2025
 ms.topic: article
 ms.localizationpriority: medium
+ms.custom: sfi-image-nochange
 ---
 
 # Windows Device Portal overview
@@ -25,24 +26,29 @@ Each device family provides a version of the WDP, but features and setup vary ba
 
 These are the basic steps for all devices.
 
-1. Enable Developer Mode and Device Portal on your device (Settings -> Privacy & security -> For developers).
+1. Enable Developer Mode (Settings -> System -> For developers).
 
-2. Connect your device and PC through a local network or with USB.
+   :::image type="content" source="images/device-portal/device-portal-desk-settings-developer-mode.PNG" alt-text="Screenshot of the Settings -> System -> For developers window showing Developer Mode enabled.":::
 
-3. Navigate to the Device Portal page in your browser. This table shows the ports and protocols used by each device family.
+2. Enable Device Portal on your device (Settings -> System -> For developers).
+
+   :::image type="content" source="images/device-portal/device-portal-desk-settings.PNG" alt-text="Screenshot of the Settings -> System -> For developers window that shows the Device Portal settings available after being enabled.":::
+
+3. Connect your device and PC through a local network or with USB.
+
+4. Navigate to the Device Portal page in your browser. This table shows the ports and protocols used by each device family.
 
 The following table includes device-specific details for the WDP.
 
 > [!NOTE]
-> Windows Mixed Reality runs on regular desktop, so it’s the same portal as Desktop.
+> Windows Mixed Reality runs on regular desktop, so it's the same portal as Desktop.
 
 Device family | On by default? | HTTP | HTTPS | USB | Instructions |
 --------------|----------------|------|-------|-----|--------------|
-Desktop and IoT&nbsp;Enterprise| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Device&nbsp;Portal&nbsp;for&nbsp;Desktop or IoT&nbsp;Enterprise device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
+Desktop and IoT Enterprise| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Device Portal for Desktop or IoT Enterprise device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
 Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md) |
 HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | `http://127.0.0.1:10080` | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
-IoT&nbsp;Core| Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT Core](/windows/iot-core/manage-your-device/DevicePortal) |
-Phone | Enable inside Dev Mode | 80| 443 | `http://127.0.0.1:10080` | [Device Portal for Mobile](device-portal-mobile.md) |
+IoT Core| Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT Core](/windows/iot-core/manage-your-device/DevicePortal) |
 
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  
 

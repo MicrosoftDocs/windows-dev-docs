@@ -1,28 +1,45 @@
 items:
 - name: Windows development environment
-  href: ./index.md
+  href: index.md
 - name: Developer tools
+  expanded: true
   items:
-  - name: Dev Home
+  - name: Windows App Development CLI
+    href: https://github.com/microsoft/WinAppCli
+  - name: Advanced Windows settings
     items:
       - name: Overview
-        href: ../dev-home/index.md
-      - name: Machine configuration
-        href: ../dev-home/setup.md
-      - name: Dev Home extensions
-        href: ../dev-home/extensions.md
+        href: ../advanced-settings/index.md
+      - name: File Explorer + version control
+        href: ../advanced-settings/fe-version-control.md
+      - name: Sudo for Windows
+        href: ../advanced-settings/sudo/index.md
+      - name: Settings for developers
+        href: ../advanced-settings/developer-mode.md
   - name: Dev Drive
-    href: ../dev-drive/index.md
+    items:
+      - name: Overview
+        href: ../dev-drive/index.md
+      - name: Group Policy for enterprise control
+        href: ../dev-drive/group-policy.md
+  - name: PowerToys
+    href: /windows/powertoys/
+  - name: Edit command line tool
+    href: ../edit/index.md
   - name: Windows Package Manager
     items:
       - name: Overview
         href: ../package-manager/index.md
-      - name: Use the winget tool
+      - name: Using WinGet
         items:
           - name: Overview
             href: ../package-manager/winget/index.md
+          - name: WinGet MCP Server
+            href: ../package-manager/winget/mcp-server.md
           - name: configure command
             href: ../package-manager/winget/configure.md
+          - name: download command
+            href: ../package-manager/winget/download.md
           - name: export command
             href: ../package-manager/winget/export.md
           - name: features command
@@ -41,6 +58,8 @@ items:
             href: ../package-manager/winget/list.md
           - name: pin command
             href: ../package-manager/winget/pinning.md
+          - name: repair command
+            href: ../package-manager/winget/repair.md
           - name: search command
             href: ../package-manager/winget/search.md
           - name: settings command
@@ -81,72 +100,10 @@ items:
             href: ../package-manager/package/repository.md#submission-troubleshooting
           - name: Repository policies
             href: ../package-manager/package/windows-package-manager-policies.md
-  - name: PowerToys
-    items:
-      - name: Overview
-        items:
-          - name: About PowerToys
-            href: ../powertoys/index.md
-          - name: Install PowerToys
-            href: ../powertoys/install.md
-          - name: General settings
-            href: ../powertoys/general.md
-          - name: Run in admin mode
-            href: ../powertoys/administrator.md
-          - name: Group Policy
-            href: ../powertoys/grouppolicy.md
-          - name: Report a Bug
-            href: https://github.com/microsoft/PowerToys/issues/new/choose
-      - name: Always on Top
-        href: ../powertoys/always-on-top.md
-      - name: PowerToys Awake
-        href: ../powertoys/awake.md
-      - name: Color Picker
-        href: ../powertoys/color-picker.md
-      - name: FancyZones
-        href: ../powertoys/fancyzones.md
-      - name: File Explorer add-ons
-        href: ../powertoys/file-explorer.md
-      - name: File Locksmith
-        href: ../powertoys/file-locksmith.md
-      - name: Hosts File Editor
-        href: ../powertoys/hosts-file-editor.md
-      - name: Image Resizer
-        href: ../powertoys/image-resizer.md
-      - name: Keyboard Manager
-        href: ../powertoys/keyboard-manager.md
-      - name: Mouse Utilities
-        href: ../powertoys/mouse-utilities.md
-      - name: Mouse without Borders
-        href: ../powertoys/mouse-without-borders.md
-      - name: Paste as Plain Text
-        href: ../powertoys/paste-as-plain-text.md
-      - name: Peek
-        href: ../powertoys/peek.md
-      - name: PowerRename
-        href: ../powertoys/powerrename.md
-      - name: Quick Accent
-        href: ../powertoys/quick-accent.md
-      - name: Registry Preview
-        href: ../powertoys/registry-preview.md
-      - name: PowerToys Run
-        href: ../powertoys/run.md
-      - name: Screen Ruler
-        href: ../powertoys/screen-ruler.md
-      - name: Shortcut Guide
-        href: ../powertoys/shortcut-guide.md
-      - name: Text Extractor
-        href: ../powertoys/text-extractor.md
-      - name: Video Conference Mute
-        href: ../powertoys/video-conference-mute.md
   - name: Windows Subsystem for Linux
     href: /windows/wsl/
   - name: Windows Terminal
     href: /windows/terminal/
-  - name: Mac to Windows guide
-    href: mac-to-windows.md
-  - name: Keyboard shortcuts
-    href: mac-to-windows.md#keyboard-shortcuts
 - name: Development paths
   items:
   - name: Get started with JavaScript
@@ -171,7 +128,7 @@ items:
               href: ./javascript/react-on-wsl.md
             - name: Install on Windows
               href: ./javascript/react-on-windows.md
-            - name: Install React Native for Windows
+            - name: Install React Native for Desktop
               href: ./javascript/react-native-for-windows.md
             - name: Install React Native for Android
               href: ./javascript/react-native-for-android.md
@@ -205,30 +162,10 @@ items:
           href: ../python/scripting.md
         - name: FAQs
           href: ../python/faqs.yml
-  - name: Get started with Android
-    items:
-        - name: Overview
-          href: ../android/overview.md
-        - name: Windows Subsystem for Android™️
-          items:
-            - name: Overview
-              href: ../android/wsa/index.md
-            - name: Release notes
-              href:  ../android/wsa/release-notes.md
-            - name: Preview program
-              href: ../android/wsa/preview-program.md
-        - name: Native Android
-          href: ../android/native-android.md
-        - name: Cross-platform
-          items:
-            - name: React Native
-              href: ../dev-environment/javascript/react-native-for-android.md
-            - name: PWA (Ionic, PhoneGap, Cordova)
-              href: ../android/pwa.md
-        - name: Defender settings to improve performance
-          href: ../android/defender-settings.md
-        - name: Test on device or emulator
-          href: ../android/emulator.md
+  - name: Get started with Windows app development
+    href: ../apps/index.yml
+  - name: Get started with Windows AI development
+    href: /windows/ai
   - name: Get started with C and C++
     href: /cpp/
   - name: Get started with C#
@@ -253,11 +190,5 @@ items:
           href: ./rust/rss-reader-rust-for-windows.md
         - name: Rust in Visual Studio Code
           href: https://code.visualstudio.com/docs/languages/rust
-  - name: VS Code docs
-    href: https://code.visualstudio.com/docs
-  - name: Visual Studio docs
-    href: /visualstudio/windows/
-  - name: Azure docs
-    href: /azure/?product=featured
-  - name: .NET docs
-    href: /dotnet/
+  - name: Mac to Windows guide
+    href: mac-to-windows.md

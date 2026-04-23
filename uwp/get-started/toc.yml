@@ -1,9 +1,38 @@
 - name: Overview
   href: index.md
-- name: What's a Windows app?
-  href: ../get-started/universal-application-platform-guide.md
+- name: What's a UWP app?
+  href: universal-application-platform-guide.md
+- name: WinUI 2 for UWP
+  href: winui2/index.md
+  items: 
+    - name: Get started with WinUI for UWP
+      href: winui2/getting-started.md
+    - name: NuGet package list
+      href: winui2/nuget-packages.md
+    - name: Release notes
+      items: 
+        - name: Release notes
+          href: winui2/release-notes/index.md
+        - name: WinUI 2.8
+          href: winui2/release-notes/winui-2.8.md
+        - name: WinUI 2.7
+          href: winui2/release-notes/winui-2.7.md
+        - name: WinUI 2.6
+          href: winui2/release-notes/winui-2.6.md
+        - name: WinUI 2.5
+          href: winui2/release-notes/winui-2.5.md
+        - name: WinUI 2.4
+          href: winui2/release-notes/winui-2.4.md
+        - name: WinUI 2.3
+          href: winui2/release-notes/winui-2.3.md
+        - name: WinUI 2.2
+          href: winui2/release-notes/winui-2.2.md
+        - name: WinUI 2.1
+          href: winui2/release-notes/winui-2.1.md
+        - name: WinUI 2.0
+          href: winui2/release-notes/winui-2.0.md
 - name: Start coding
-  href: ../get-started/create-uwp-apps.md
+  href: create-uwp-apps.md
   items:
     - name: Construct a form
       href: construct-form-learning-track.md
@@ -14,13 +43,13 @@
     - name: Work with files
       href: fileio-learning-track.md
     - name: Your first app
-      href: ../get-started/your-first-app.md
+      href: your-first-app.md
       items:
-        - name: A "Hello, World!" app in C#
-          href: ../get-started/create-a-hello-world-app-xaml-universal.md
-        - name: A "Hello, World!" app in C++/WinRT
-          href: ../get-started/create-a-basic-windows-10-app-in-cppwinrt.md
-        - name: A "Hello, World!" app in C++/CX
-          href: ../get-started/create-a-basic-windows-10-app-in-cpp.md
-    - name: Building a complex app
-      href: ../get-started/plan-your-app.md
+        - name: A "Hello, World!" UWP app in C#
+          href: create-a-hello-world-app-xaml-universal.md
+        - name: A "Hello, World!" UWP app in C++/WinRT
+          href: create-a-basic-windows-10-app-in-cppwinrt.md
+        - name: A "Hello, World!" UWP app in C++/CX
+          href: create-a-basic-windows-10-app-in-cpp.md
+    - name: Building a complex UWP app
+      href: plan-your-app.md

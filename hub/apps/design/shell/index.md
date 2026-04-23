@@ -3,7 +3,7 @@ description: Learn how to integrate your app with the Windows shell.
 title: Shell overview for Windows apps
 keywords: uwp app, universal windows platform, app design, interface, shell
 ms.date: 09/30/2021
-ms.topic: article
+ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 # Shell
@@ -38,7 +38,5 @@ Ask your user to pin your app to the taskbar to make it easier to find.
 Extend your app content into the title bar and add custom content.
     :::column-end:::
     :::column:::
-### [Start menu icon](tiles-and-notifications/creating-tiles.md)
-Every app is represented in the Start Menu by an icon. You can also pin secondary icons to provide direct access to specific content.
     :::column-end:::
 :::row-end:::

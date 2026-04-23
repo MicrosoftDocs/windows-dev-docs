@@ -2,12 +2,14 @@
 title: Auto-launching with AutoPlay
 description: You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD.
 ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
-ms.date: 08/25/2022
-ms.topic: article
+ms.date: 06/12/2025
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
+# customer intent: As a Windows developer, I want to know how to use AutoPlay to provide my app as an option when a user connects a device to their PC.
 ---
-# <span id="dev_launch_resume.auto-launching_with_autoplay"></span>Auto-launching with AutoPlay
+
+# Auto-launching with AutoPlay
 
 You can use **AutoPlay** to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. You can also use **AutoPlay** to offer your app as an option when users share files between two PCs by using proximity (tapping).
 
@@ -31,13 +33,13 @@ When files are shared by using proximity, the **Files** property of the **FileAc
 
 ### Step 1: Create a new project and add AutoPlay declarations
 
-1. Open Microsoft Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the app **AutoPlayDisplayOrCopyImages** and click **OK.**
-2. Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** and **Pictures Library** capabilities. This gives the app access to removable storage devices for camera memory, and access to local pictures.
-3. In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
-4. An **AutoPlay Content** declaration identifies your app as an option when AutoPlay raises a content event. The event is based on the content of a volume device such as a DVD or a thumb drive. AutoPlay examines the content of the volume device and determines which content event to raise. If the root of the volume contains a DCIM, AVCHD, or PRIVATE\\ACHD folder, or if a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel and pictures are found in the root of the volume, then AutoPlay raises the **ShowPicturesOnArrival** event. In the **Launch Actions** section, enter the values from Table 1 below for the first launch action.
-5. In the **Launch Actions** section for the **AutoPlay Content** item, click **Add New** to add a second launch action. Enter the values in Table 2 below for the second launch action.
-6. In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **AutoPlay Copy or Show Images** and the **Name** field to **image\_association1**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.jpg**. In the **Supported File Types** section, set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
-7. Save and close the manifest file.
+1. Open Microsoft Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **UWP Blank App (.NET Native)**. Name the app **AutoPlayDisplayOrCopyImages** and click **OK.**
+1. Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** and **Pictures Library** capabilities. This gives the app access to removable storage devices for camera memory, and access to local pictures.
+1. In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
+1. An **AutoPlay Content** declaration identifies your app as an option when AutoPlay raises a content event. The event is based on the content of a volume device such as a DVD or a thumb drive. AutoPlay examines the content of the volume device and determines which content event to raise. If the root of the volume contains a DCIM, AVCHD, or PRIVATE\\ACHD folder, or if a user has enabled **Choose what to do with each type of media** in the AutoPlay Control Panel and pictures are found in the root of the volume, then AutoPlay raises the **ShowPicturesOnArrival** event. In the **Launch Actions** section, enter the values from Table 1 below for the first launch action.
+1. In the **Launch Actions** section for the **AutoPlay Content** item, click **Add New** to add a second launch action. Enter the values in Table 2 below for the second launch action.
+1. In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **AutoPlay Copy or Show Images** and the **Name** field to **image\_association1**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.jpg**. In the **Supported File Types** section, set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
+1. Save and close the manifest file.
 
 **Table 1**
 
@@ -100,7 +102,8 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Note**  The `DisplayImages` and `CopyImages` methods are added in the following steps.
+> [!NOTE]
+> The `DisplayImages` and `CopyImages` methods are added in the following steps.
 
 ### Step 4: Add code to display images
 
@@ -211,7 +214,7 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 ### Step 6: Build and run the app
 
 1. Press F5 to build and deploy the app (in debug mode).
-2. To run your app, insert a camera memory card or another storage device from a camera into your PC. Then, select one of the content event options that you specified in your package.appxmanifest file from the AutoPlay list of options. This sample code only displays or copies pictures in the DCIM folder of a camera memory card. If your camera memory card stores pictures in an AVCHD or PRIVATE\\ACHD folder, you will need to update the code accordingly.
+1. To run your app, insert a camera memory card or another storage device from a camera into your PC. Then, select one of the content event options that you specified in your package.appxmanifest file from the AutoPlay list of options. This sample code only displays or copies pictures in the DCIM folder of a camera memory card. If your camera memory card stores pictures in an AVCHD or PRIVATE\\ACHD folder, you will need to update the code accordingly.
 
 > [!NOTE]
 > If you don't have a camera memory card, you can use a flash drive if it has a folder named **DCIM** in the root and if the DCIM folder has a subfolder that contains images.
@@ -226,12 +229,12 @@ Here we show how to identify your app as an **AutoPlay** option when a camera is
 
 ### Step 1: Create another new project and add AutoPlay declarations
 
-1. Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the app **AutoPlayDevice\_Camera** and click **OK.**
-2. Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the data on the camera as a removable storage volume device.
-3. In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Device** and click **Add**. Select the new **AutoPlay Device** item that was added to the **Supported Declarations** list.
-4. An **AutoPlay Device** declaration identifies your app as an option when AutoPlay raises a device event for known events. In the **Launch Actions** section, enter the values in the table below for the first launch action.
-5. In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show Images from Camera** and the **Name** field to **camera\_association1**. In the **Supported File Types** section, click **Add New** (if needed). Set the **File Type** field to **.jpg**. In the **Supported File Types** section, click **Add New** again. Set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
-6. Save and close the manifest file.
+1. Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **UWP Blank App (.NET Native)**. Name the app **AutoPlayDevice\_Camera** and click **OK.**
+1. Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the data on the camera as a removable storage volume device.
+1. In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Device** and click **Add**. Select the new **AutoPlay Device** item that was added to the **Supported Declarations** list.
+1. An **AutoPlay Device** declaration identifies your app as an option when AutoPlay raises a device event for known events. In the **Launch Actions** section, enter the values in the table below for the first launch action.
+1. In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show Images from Camera** and the **Name** field to **camera\_association1**. In the **Supported File Types** section, click **Add New** (if needed). Set the **File Type** field to **.jpg**. In the **Supported File Types** section, click **Add New** again. Set the **File Type** field of the new file association to **.png**. For content events, AutoPlay filters out any file types that are not explicitly associated with your app.
+1. Save and close the manifest file.
 
 | Setting             | Value            |
 |---------------------|------------------|
@@ -243,11 +246,11 @@ The **Action Display Name** setting identifies the string that AutoPlay displays
 
 ### Step 2: Add assembly reference for the desktop extensions
 
-The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice), are part of the desktop [desktop device family](../get-started/universal-application-platform-guide.md). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
+The APIs required to access storage on a Windows Portable Device, [**Windows.Devices.Portable.StorageDevice**](/uwp/api/Windows.Devices.Portable.StorageDevice), are part of the [desktop device family](../get-started/universal-application-platform-guide.md). This means a special assembly is required to use the APIs and those calls will only work on a device in the desktop device family (such as a PC).
 
 1. In **Solution Explorer**, right click on **References** and then **Add Reference...**.
-2. Expand **Universal Windows** and click **Extensions**.
-3. Then select **Windows Desktop Extensions for the UWP** and click **OK**.
+1. Expand **Universal Windows** and click **Extensions**.
+1. Then select **Windows Desktop Extensions for the UWP** and click **OK**.
 
 ### Step 3: Add XAML UI
 
@@ -401,7 +404,7 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 ### Step 7: Build and run the app
 
 1. Press F5 to build and deploy the app (in debug mode).
-2. To run your app, connect a camera to your machine. Then select the app from the AutoPlay list of options.
+1. To run your app, connect a camera to your machine. Then select the app from the AutoPlay list of options.
 
 > [!NOTE]
 > Not all cameras advertise for the **WPD\\ImageSource** AutoPlay device event.
@@ -425,16 +428,16 @@ CustomEvent=AutoPlayCustomEventQuickstart
 
 ### Step 2: Create a new project and add AutoPlay declarations
 
-1. Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **Blank App (Universal Windows)**. Name the application **AutoPlayCustomEvent** and click **OK.**
-2. Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the files and folders on removable storage devices.
-3. In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
+1. Open Visual Studio and select **New Project** from the **File** menu. In the **Visual C#** section, under **Windows**, select **UWP Blank App (.NET Native)**. Name the application **AutoPlayCustomEvent** and click **OK.**
+1. Open the Package.appxmanifest file and select the **Capabilities** tab. Select the **Removable Storage** capability. This gives the app access to the files and folders on removable storage devices.
+1. In the manifest file, select the **Declarations** tab. In the **Available Declarations** drop-down list, select **AutoPlay Content** and click **Add**. Select the new **AutoPlay Content** item that was added to the **Supported Declarations** list.
 
-> [!NOTE]
-> Alternatively, you can also choose to add an **AutoPlay Device** declaration for your custom AutoPlay event.
+   > [!NOTE]
+   > Alternatively, you can also choose to add an **AutoPlay Device** declaration for your custom AutoPlay event.
 
-4. In the **Launch Actions** section for your **AutoPlay Content** event declaration, enter the values in the table below for the first launch action.
-5. In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show .ms Files** and the **Name** field to **ms\_association**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.ms**. For content events, AutoPlay filters out any file types that aren't explicitly associated with your app.
-6. Save and close the manifest file.
+1. In the **Launch Actions** section for your **AutoPlay Content** event declaration, enter the values in the table below for the first launch action.
+1. In the **Available Declarations** drop-down list, select **File Type Associations** and click **Add**. In the Properties of the new **File Type Associations** declaration, set the **Display Name** field to **Show .ms Files** and the **Name** field to **ms\_association**. In the **Supported File Types** section, click **Add New**. Set the **File Type** field to **.ms**. For content events, AutoPlay filters out any file types that aren't explicitly associated with your app.
+1. Save and close the manifest file.
 
 | Setting             | Value                         |
 |---------------------|-------------------------------|
@@ -505,7 +508,7 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 ### Step 6: Build and run the application
 
 1. Press F5 to build and deploy the app (in debug mode).
-2. To run your app, insert a memory card or another storage device into your PC. Then select your app from the list of AutoPlay handler options.
+1. To run your app, insert a memory card or another storage device into your PC. Then select your app from the list of AutoPlay handler options.
 
 ## AutoPlay event reference
 

@@ -2,8 +2,8 @@
 ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
 title: Optimizing interop for Windows Runtime components
 description: Create Windows apps that use Windows Components and interop between native and managed types while avoiding interop performance issues.
-ms.date: 02/08/2017
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: concept-article
 keywords: windows 10, uwp, winrt
 ms.localizationpriority: medium
 ---
@@ -34,7 +34,7 @@ Each time you access a property or call a method on a Windows Runtime component,
 
 ### Using Windows Runtime Components efficiently
 
-If you find that you need to get better performance, you can ensure that your code uses Windows Runtime components as efficiently as possible. This section discusses some tips for improving performance when you use Windows Runtim components.
+If you find that you need to get better performance, you can ensure that your code uses Windows Runtime components as efficiently as possible. This section discusses some tips for improving performance when you use Windows Runtime components.
 
 It takes a significant number of calls in a short period of time for the performance impact to be noticeable. A well-designed application that encapsulates calls to Windows Runtime components from business logic and other managed code should not incur huge interoperability costs. But if your tests indicate that using Windows Runtime components is affecting your app's performance, the tips discussed in this section help you improve performance.
 

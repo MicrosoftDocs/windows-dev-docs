@@ -302,7 +302,7 @@ protected override object GetPatternCore(PatternInterface patternInterface)
     {
         return this;
     }
-    return base.GetPattern(patternInterface);
+    return base.GetPatternCore(patternInterface);
 }
 ```
 

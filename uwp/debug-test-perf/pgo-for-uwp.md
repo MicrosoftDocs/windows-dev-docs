@@ -1,9 +1,9 @@
 ---
 title: Running Profile Guided Optimization (PGO) on Universal Windows Platform (UWP) apps
 description: A step-by-step guide to applying Profile Guided Optimization (PGO) to Universal Windows Platform (UWP) apps.
-ms.date: 02/08/2017
+ms.date: 07/14/2025
 ms.localizationpriority: medium
-ms.topic: article
+ms.topic: how-to
 ---
 # Running Profile Guided Optimization on Universal Windows Platform apps 
  

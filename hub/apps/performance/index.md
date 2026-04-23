@@ -1,10 +1,8 @@
 ---
 title: Windows app performance and fundamentals overview
 description: Learn about ways to optimize the performance of your Windows apps.
-ms.topic: article
-ms.date: 05/16/2022
-ms.author: mattwoj
-author: mattwojo
+ms.topic: concept-article
+ms.date: 02/27/2025
 ms.reviewer: adityar
 ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
@@ -39,8 +37,6 @@ Visual Studio offers tooling to help you monitor your application and give you i
 * [Case Study: Using Visual Studio Profiler to reduce memory allocations in the Windows Terminal console host startup path](https://devblogs.microsoft.com/visualstudio/case-study-using-visual-studio-profiler-to-reduce-memory-allocations-in-the-windows-terminal-console-host-startup-path/)
 
 * [Case Study: Double Performance in under 30 minutes](https://devblogs.microsoft.com/visualstudio/case-study-double-performance-in-under-30-minutes/)
-
-* [Case Study: How many colors are too many colors for Windows Terminal?](https://devblogs.microsoft.com/commandline/case-study-how-many-colors-are-too-many-colors-for-windows-terminal/)
 
 ### ![Windows Performance Analyzer Icon](./images/wpa.png) Windows Performance Toolkit
 
@@ -88,7 +84,7 @@ Go behind the scenes with developer blogs, written by our performance experts to
 
 Performance engineering intersects directly with the sustainable software movement. Most electrical grids burn fossil fuels to generate electricity. As your application runs on a PC, it consumes incremental power that may be small for a single user but adds up as your user base grows.
 
-Interested in learning how performance engineering intersects with sustainability? 🌍 Check out the [Principles of Green Software Engineering](https://principles.green/) and Microsoft's [Sustainable Software blog](https://devblogs.microsoft.com/sustainable-software/).
+Interested in learning how performance engineering intersects with sustainability? Check out the [Principles of Green Software Engineering](https://principles.green/) and Microsoft's [Sustainable Software blog](https://devblogs.microsoft.com/sustainable-software/).
 
 * [Measuring Your Application Power and Carbon Impact](https://devblogs.microsoft.com/sustainable-software/measuring-your-application-power-and-carbon-impact-part-1/)
 
@@ -100,7 +96,7 @@ Interested in learning how performance engineering intersects with sustainabilit
 
 ### Our content road map
 
-Performance can be a tricky part of your development process without the right guidance. Ensuring that the right documentation is available for app developers is key to creating faster apps. The road map below details the next pages to be added to this doc set, and in the order that they will be published. If you see something you like or something that’s missing, let us know on GitHub via the Feedback links at the bottom of this page! Our goal is to curate a well-rounded and educational doc set for app performance that meets your needs, so we’d love to hear from you. Please feel welcome to submit feedback for this page below with your recommendations for what you would like to see covered in regard to Windows application performance.
+Performance can be a tricky part of your development process without the right guidance. Ensuring that the right documentation is available for app developers is key to creating faster apps. The road map below details the next pages to be added to this doc set, and in the order that they will be published. If you see something you like or something that's missing, let us know on GitHub via the Feedback links at the bottom of this page! Our goal is to curate a well-rounded and educational doc set for app performance that meets your needs, so we'd love to hear from you. Please feel welcome to submit feedback for this page below with your recommendations for what you would like to see covered in regard to Windows application performance.
 
 |Topic |Description|
 |----------|-----------|

@@ -3,7 +3,7 @@ title: Port a simple OpenGL ES 2.0 renderer to Direct3D 11
 description: For the first porting exercise, we'll start with the basics-- bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.
 ms.assetid: e7f6fa41-ab05-8a1e-a154-704834e72e6d
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, opengl, direct3d 11, port
 ms.localizationpriority: medium
 ---
@@ -39,7 +39,7 @@ Upon completing this walkthrough, you should be familiar with the following basi
 -   Shading languages, and the inputs and outputs to shader objects.
 -   Screen drawing behaviors.
 
-In this walkthrough, we refer to an simple and generic OpenGL renderer structure, which is defined like this:
+In this walkthrough, we refer to a simple and generic OpenGL renderer structure, which is defined like this:
 
 ``` syntax
 typedef struct 

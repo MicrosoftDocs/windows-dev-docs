@@ -13,6 +13,9 @@ summary: |
   Look through this page of frequently asked questions. 
   Also check out the [Known issues](known-issues.md) topic and the [Developing Universal Windows apps](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) forum. 
   
+  > [!NOTE]
+  > Please note that UWP based games are no longer accepted in the Xbox Store. Please use the [ID@XBOX program](https://www.xbox.com/games/id).
+
 
 sections:
   - name: Ignored
@@ -93,7 +96,7 @@ sections:
       - question: |
           Can I publish my game?
         answer: |
-          You can use UWP and your Xbox One in Developer Mode to build and test your games on Xbox One. To publish UWP games, you must register with [ID@XBOX](https://www.xbox.com/Developers/id) or be part of the [Xbox Live Creators Program](https://developer.microsoft.com/games/xbox/xboxlive/creator). For more info, see [Developer Program Overview](https://learn.microsoft.com/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav).
+          You can use UWP and your Xbox One in Developer Mode to build and test your games on Xbox One. To publish UWP games, you must register with [ID@XBOX](https://www.xbox.com/Developers/id) or be part of the [Xbox Live Creators Program](https://developer.microsoft.com/games/publish/). For more info, see [Developer Program Overview](https://learn.microsoft.com/gaming/gdk/_content/gc/live/get-started/live-getstarted-nav).
           
       - question: |
           Will the standard Game engines work?
@@ -152,5 +155,4 @@ additionalContent: |
   ## See also
   
   - [Known issues with UWP on Xbox One](known-issues.md)
-  - [UWP on Xbox One](index.md)
   - [UWP on Xbox One](index.md)

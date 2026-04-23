@@ -5,7 +5,7 @@ title: Designing inclusive software in Windows
 label: Designing inclusive software
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -94,7 +94,7 @@ In summary, follow these seven steps to ensure your software is inclusive.
 3.	Design a logical hierarchy for your product, noting where the standard controls, any custom controls, and keyboard focus are in the UI.  
 4.	Design useful system settings (such as keyboard navigation, high contrast, and high dpi) into your product.  
 5.	Implement your design, using the [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps) and your framework’s accessibility specification as a reference point.  
-6.	Test your product with users who have special needs to ensure they will be able to take advantage of the inclusive design techniques implemented in it.  
+6.	Test your product with users who have functional needs to ensure they will be able to take advantage of the inclusive design techniques implemented in it.  
 7.	Deliver your finished product and document your implementation for those who may work on the project after you.  
 
 ## Related topics  

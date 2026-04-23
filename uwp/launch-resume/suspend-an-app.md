@@ -3,7 +3,7 @@ title: Handle app suspend
 description: Learn how to save important application data when the system suspends your app.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ms.date: 07/06/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

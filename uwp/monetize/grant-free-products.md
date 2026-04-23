@@ -3,7 +3,7 @@ ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
 description: Use this method in the Microsoft Store purchase API to grant a free app or add-on to a given user.
 title: Grant free products
 ms.date: 03/19/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store purchase API, grant products
 ms.localizationpriority: medium
 ---
@@ -153,7 +153,7 @@ The IdentityV6 object contains the following parameters.
 ```syntax
 Content-Length: 1203
 Content-Type: application/json
-MS-CorrelationId: fb2e69bc-f26a-4aab-a823-7586c19f5762
+MS-CorrelationId: aaaa0000-bb11-2222-33cc-444444dddddd
 MS-RequestId: c1bc832c-f742-47e4-a76c-cf061402f698
 MS-CV: XjfuNWLQlEuxj6Mt.8
 MS-ServerId: 030032362

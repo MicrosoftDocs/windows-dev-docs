@@ -4,7 +4,7 @@ title: Make your app localizable
 ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
 template: detail.hbs
 ms.date: 11/07/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, globalization, localizability, localization
 ms.localizationpriority: medium
 ---

@@ -3,7 +3,7 @@ ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
 description: Use this method in the Microsoft Store submission API to get data for an existing add-on submission.
 title: Get an add-on submission
 ms.date: 04/17/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, in-app product, IAP
 ms.localizationpriority: medium
 ---

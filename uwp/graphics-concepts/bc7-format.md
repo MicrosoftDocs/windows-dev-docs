@@ -119,7 +119,7 @@ decompress_bc7(x, y, block)
 }
 ```
 
-The followoing pseudocode outlines the steps to fully decode endpoint color and alpha components for each subset given a 16-byte BC7 block.
+The following pseudocode outlines the steps to fully decode endpoint color and alpha components for each subset given a 16-byte BC7 block.
 
 ``` syntax
 fully_decode_endpoints(endpoint_array, mode, block)

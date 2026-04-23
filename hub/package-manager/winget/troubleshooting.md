@@ -1,21 +1,30 @@
 ---
-title: Debugging and troubleshooting issues with the winget tool
-description: Provides information on logging and winget diagnostics.
-ms.date: 10/01/2021
-ms.topic: article
-ms.localizationpriority: medium
+title: Debugging and troubleshooting issues with WinGet
+description: Provides information on logging and WinGet diagnostics.
+ms.date: 07/15/2025
+ms.topic: troubleshooting-general
 ---
 
-# Debugging and troubleshooting issues with the winget tool
+# Debugging and troubleshooting issues with the WinGet tool
 
-When Windows Package Manager is installing, searching or listing applications, sometimes it is necessary to look at the log files to understand the behavior better.
+If WinGet does not appear to be installed correctly, follow these steps from a PowerShell command prompt: 
 
-## Logs
+```PowerShell
+Install-PackageProvider -Name NuGet -Force | Out-Null
+Install-Module -Name Microsoft.WinGet.Client -Force -Repository PSGallery | Out-Null
+Repair-WinGetPackageManager -Force -Latest
+```
 
-Windows Package Manager by default creates log files when executing commands. These log files are located here:
+When WinGet commands are failing, sometimes it is necessary to look at the log files to better understand the behavior.
+
+## WinGet Logs
+
+Windows Package Manager by default creates log files when executing commands. These logs contain information that can aid in debugging issues with WinGet. There is no maximum size for the log files. They are typically only a few KB in size. When the number of log files in the directory exceeds 100, the oldest log files will begin being deleted. There is no time-based removal of logs and these settings are not configurable. If you have reached the 100 file log capacity, just move any WinGet logs that you wish to preserve into a different directory.
+
+Use the command [`winget --info`](./info.md) to find the directory path to your WinGet log files. The default path for WinGet log files is:
 
 ```CMD
-> Logs: %LOCALAPPDATA%\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\DiagOutputDir
+%LOCALAPPDATA%\Packages\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\LocalState\DiagOutputDir
 ```
 
 You can include the **--logs** or **--open-logs** option to any command to open the logs directory after the command completes. Here are some examples of using the **--logs** option:
@@ -35,13 +44,33 @@ If you need more comprehensive log files, that provide the complete communicatio
 > winget source add -n mysource -t Microsoft.REST -a https://www.contoso.org --verbose
 ```
 
+### settings
+
+You can specify the default logging level for WinGet to use in your WinGet Settings file. The **settings** command will open the settings.json file in your default JSON editor.
+
+Example with verbose logging:
+```JSON
+{
+    "$schema": "https://aka.ms/winget-settings.schema.json",
+    "logging": {
+        "level": "verbose"
+    }
+}
+```
+
 ## Known issues
 
-A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the winget tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
+A list of known issues with sources and behaviors is kept up to date in the [Windows Package Manager Client repository](https://www.github.com/microsoft/winget-cli).  If you encounter issues when using the WinGet tool, go [here](https://github.com/microsoft/winget-cli/tree/master/doc/troubleshooting) for troubleshooting.
 
 ## Exit codes
 
-The winget tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
+The WinGet tool returns exit codes to indicate success or failure of the command.  Find a table of exit codes and their meanings in the ["Return codes" file of the Windows Package Manager Client repository](https://github.com/microsoft/winget-cli/blob/master/doc/windows/package-manager/winget/returnCodes.md).
+
+The WinGet **error** command accepts errors from "Exit codes" and displays a description for known error codes for WinGet, MSIX, and MSI installers. Many .exe-based installers have non-standard error codes and may not be displayed.
+
+```CMD
+> winget error 1603
+```
 
 ### Scope for specific user vs machine-wide
 
@@ -52,3 +81,21 @@ Not all installers support installing in “user” scope vs. “machine” scop
 - [EXE-based installers](https://stackoverflow.com/questions/3886455/whats-the-difference-between-an-exe-and-a-msi-installer) behavior around scope is not necessarily deterministic. In some cases the arguments to specify scope are not available, and in other cases the installer may make the determination based on whether the user is a member of the local administrators group. Packages installed in user scope may still require UAC (User Account Control) authorization from an administrator.
 
 See more details on [scope-related issues](https://github.com/microsoft/winget-cli/issues?q=is%3Aissue+is%3Aopen+label%3Aarea-scope) in the WinGet product repository on GitHub.
+
+### 403 Forbidden error
+
+A 403 Forbidden error may occur when attempting to download a package using the WinGet tool. This issue can arise if an Independent Software Vendor (ISV) opts not have their product distributed by a package manager service like WinGet.
+
+The server responsible for initiating the download typically checks for a user agent string included with the download request to identify the device or client (e.g., browser, WinGet). If you can download the installer using your browser, but encounter issues with WinGet, it is possible that the ISV has blocked the WinGet user agent string.
+
+The user agent string for WinGet has the following format:
+
+`winget-cli WindowsPackageManager/{Client Version} DesktopAppInstaller/Microsoft.DesktopAppInstaller {AppInstaller Version}`
+
+Example: 
+
+`winget-cli WindowsPackageManager/1.9.25200 DesktopAppInstaller/Microsoft.DesktopAppInstaller v1.24.25200.0`
+
+### System Context
+
+WinGet is delivered via the App Installer as a packaged application. MSIX (packaged) applications depend on an App Execution Alias to be resolved on the PATH environment variable. The WinGet CLI is not supported in the system context. The Microsoft.WinGet.Client PowerShell module can be used in the system context with applications that are installed machine wide.

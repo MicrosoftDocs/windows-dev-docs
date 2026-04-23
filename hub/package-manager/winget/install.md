@@ -1,22 +1,21 @@
 ---
 title: install Command
 description: Installs the specified application.
-ms.date: 07/26/2023
+ms.date: 07/15/2025
 ms.topic: overview
-ms.localizationpriority: medium
 ---
 
 # install command (winget)
 
-The **install** command of the [winget](index.md) tool installs the specified application. Use the [**search**](search.md) command to identify the application you want to install.
+The **install** command of [WinGet](index.md) installs the specified application. Use the [**search**](search.md) command to identify the application you want to install. Use the [**show**](show.md) command to view details about the application and the installer selected by WinGet for your system.
 
 The **install** command requires that you specify the exact string to install. If there is any ambiguity, you will be prompted to further filter the **install** command to  an exact application.
 
 ## Usage
 
-`winget install [[-q] \<query>] [\<options>]`
+`winget install [[-q] <query> ...] [<options>]`
 
-![search command](./images/install.png)
+:::image type="content" source="./images/install.png" alt-text="Screenshot listing winget import command help options." lightbox="./images/install.png":::
 
 ## Aliases
 
@@ -49,6 +48,7 @@ The options allow you to customize the install experience to meet your needs.
 | **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
 | **--scope**   |  Allows you to specify if the installer should target user or machine scope. See [known issues relating to package installation scope](./troubleshooting.md#scope-for-specific-user-vs-machine-wide).|
 | **-a, --architecture**   |  Select the architecture to install. |
+| **--installer-type**   |  Select the installer type to install. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
 | **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
 | **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |
 | **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |
@@ -58,27 +58,34 @@ The options allow you to customize the install experience to meet your needs.
 | **--override** | A string that will be passed directly to the installer.    |
 | **-l, --location** |    Location to install to (if supported). |
 | **--ignore-security-hash** |    Ignore the installer hash check failure. Not recommended. |
+| **--allow-reboot** | Allows a reboot if applicable. |
+| **--skip-dependencies** | Skips processing package dependencies and Windows features. |
 | **--ignore-local-archive-malware-scan** |    Ignore the malware scan performed as part of installing an archive type package from local manifest. |
 | **--dependency-source** |    Find package dependencies using the specified source. |
 | **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
 | **--no-upgrade** |    Skips upgrade if an installed version already exists. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **-r, --rename** | The value to rename the executable file (portable) |
-| **--uninstall-previous** | Uninstall the previous version of the package during upgrade |
+| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
+| **--authentication-account** | Specify the account to be used for authentication. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **-r, --rename** | The value to rename the executable file (portable). |
+| **--uninstall-previous** | Uninstall the previous version of the package during upgrade. |
 | **--force** | Direct run the command and continue with non security related issues. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
 | **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
 | **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
 
 ### Example queries
 
 The following example installs a specific version of an application.
 
 ```CMD
-winget install powertoys --version 0.15.2
+winget install powertoys --version 0.91.1
 ```
 
 The following example installs an application from its ID.
@@ -90,12 +97,12 @@ winget install --id Microsoft.PowerToys
 The following example installs an application by version and ID.
 
 ```CMD
-winget install --id Microsoft.PowerToys --version 0.15.2
+winget install --id Microsoft.PowerToys --version 0.91.1
 ```
 
 ## Multiple selections
 
-If the query provided to **winget** does not result in a single application, then **winget** will display the results of the search. This will provide you with the additional data necessary to refine the search for a correct install.
+If the query provided to **WinGet** does not result in a single application, then **WinGet** will display the results of the search. This will provide you with the additional data necessary to refine the search for a correct install.
 
 The best way to limit the selection to one file is to use the **id** of the application combined with the **exact** query option.  For example:
 
@@ -109,10 +116,16 @@ If multiple sources are configured, it is possible to have duplicate entries. Sp
 winget install --id Git.Git -e --source winget
 ```
 
-The **msstore** source uses unique identifiers as the "Id" for packages. These do not require the **exact** query toption. For example:
+The **msstore** source uses unique identifiers as the "Id" for packages. These do not require the **exact** query option. For example:
 
 ```CMD
 winget install XP9KHM4BK9FZ7Q -s msstore
+```
+
+You may also use the install command to install multiple packages. For example:
+
+```CMD
+winget install Microsoft.Edit Microsoft.NuGet
 ```
 
 ## Local install
@@ -125,18 +138,18 @@ Usage: `winget install --manifest \<path>`
 |---------|-------------|
 |  **-m, --manifest** | The path to the manifests of the application to install. |
 
-> [!NOTE]
-> Installing packages from local manifest files may have risks. As an extra measure of precaution this feature needs to be enabled by an administrator. To enable this feature run `winget settings --enable LocalManifestFiles`. To disable this feature run `winget settings --disable LocalManifestFiles`.
+Installing packages from local manifest files may have risks. As an extra measure of precaution this feature needs to be enabled by an administrator. To enable this feature run `winget settings --enable LocalManifestFiles`. To disable this feature run `winget settings --disable LocalManifestFiles`.
 
 ### Log files
 
-The log files for winget unless redirected, will be located in the following folder:  **\%temp%\\AICLI\\*.log**
+The log files for WinGet unless redirected, will be located in the following folder:
+`\%LOCALAPPDATA%\\Packages\\Microsoft.DesktopAppInstaller_8wekyb3d8bbwe\\LocalState\\DiagOutputDir\\*.log`
 
 ## License Agreements
 
 Some applications when installed will require the user to agree to the license or other agreements before installing.  When this occurs, the Windows Package Manager will prompt the user to agree to the agreements.  If the user does not agree, the application will not install.
 
-![Image of agreement](./images/agreements.png)
+:::image type="content" source="./images/agreements.png" alt-text="Screenshot of user agreement prompt in winget." lightbox="./images/agreements.png":::
 
 From the command line, you can auto accept the agreements by passing the following option **--accept-package-agreements** on the command line. This can be beneficial when scripting the Windows Package Manager.
 

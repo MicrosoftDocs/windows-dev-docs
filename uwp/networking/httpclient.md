@@ -52,7 +52,7 @@ The [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers) namespace 
 
 ## Send a simple GET request over HTTP
 
-As mentioned earlier in this article, the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to http:\//www.contoso.com using the [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
+As mentioned earlier in this article, the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to `http://www.contoso.com` using the [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
 
 ```csharp
 //Create an HTTP client object
@@ -322,7 +322,7 @@ int main()
 
 ## Exceptions in Windows.Web.Http
 
-An exception is thrown when an invalid string for a the Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) object.
+An exception is thrown when an invalid string for a Uniform Resource Identifier (URI) is passed to the constructor for the [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) object.
 
 **.NET:**  The [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri) type appears as [**System.Uri**](/dotnet/api/system.uri) in C# and VB.
 

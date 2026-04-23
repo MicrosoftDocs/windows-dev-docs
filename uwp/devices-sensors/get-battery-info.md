@@ -3,7 +3,7 @@
 title: Get battery information
 description: Learn how to get a battery report that includes detailed battery information (such as the charge, capacity, and status of a battery or aggregate of batteries), and handle state changes to any items in the report.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

@@ -7,11 +7,17 @@ items:
     href: ./overview.md
   - name: Add Arm support to your app
     href: ./add-arm-support.md
-  - name: Windows Dev Kit 2023
+  - name: FAQs
+    href: ./faq.yml
+  - name: How emulation works on Arm
+    href: ./apps-on-arm-x86-emulation.md
+  - name: Devices
     items:
-    - name: Overview & Set up
+    - name: Copilot+ PCs
+      href: https://www.microsoft.com/windows/copilot-plus-pcs
+    - name: Windows Dev Kit 2023
       href: ./dev-kit/index.md
-    - name: Update History
+    - name: Windows Dev Kit 2023 Update History
       href: ./dev-kit/history.md
   - name: Arm64EC for Windows 11 apps
     items:
@@ -21,8 +27,6 @@ items:
         href: ./arm64ec-build.md
       - name: Understand Arm64EC ABI
         href: ./arm64ec-abi.md
-      # - name: Choose Arm64 or Arm64EC ABI
-      #   href: ./arm64-or-arm64ec.md
       - name: Arm64X PE files
         items:
           - name: Overview
@@ -31,6 +35,10 @@ items:
             href: ./arm64x-build.md
   - name: Arm developer tools
     items:
+      - name: Windows on Arm ISO files
+        href: ./iso.md
+      - name: Windows on Arm VM with Azure
+        href: ./create-arm-vm.md
       - name: Visual Studio for Arm
         href: /visualstudio/install/visual-studio-on-arm-devices
       - name: Visual Studio Code for Arm64
@@ -41,8 +49,6 @@ items:
         href: /cpp/build/configuring-programs-for-arm-processors-visual-cpp
       - name: .NET 7 for Arm
         href: https://dotnet.microsoft.com/download/dotnet/7.0
-  - name: How x86 emulation works on Arm
-    href: ./apps-on-arm-x86-emulation.md
   - name: Change Arm32 to Arm64
     href: ./arm32-to-arm64.md
   - name: Build Arm64 drivers with the WDK
@@ -55,7 +61,9 @@ items:
         href: ./apps-on-arm-troubleshooting-x86.md 
       - name: Troubleshoot UWP apps on Arm
         href: ./apps-on-arm-troubleshooting-arm32.md
-      - name: Compatibility Troubleshooter for Arm
+      - name: Adjust emulation settings on Arm
         href: ./apps-on-arm-program-compat-troubleshooter.md
 - name: Set up your dev environment
   href: /windows/dev-environment/
+
+

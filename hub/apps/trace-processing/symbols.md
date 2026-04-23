@@ -1,15 +1,13 @@
 ---
 title: Load Symbols - .NET TraceProcessing
 description: In this tutorial, learn how load symbols when processing traces.
-author: maiak
-ms.author: maiak
-ms.date: 02/23/2020
+ms.date: 08/19/2024
 ms.topic: tutorial
 ---
 
 # Use symbols in .NET TraceProcessing
 
-[TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor) supports loading symbols and getting stacks from several data sources. The following console application looks at CPU samples and outputs the estimated duration that a specific function was running (based on the trace’s statistical sampling of CPU usage).
+[TraceProcessor](/dotnet/api/microsoft.windows.eventtracing.traceprocessor) supports loading symbols and getting stacks from several data sources. The following console application looks at CPU samples and outputs the estimated duration that a specific function was running (based on the trace's statistical sampling of CPU usage).
 
 ```csharp
 using Microsoft.Windows.EventTracing;

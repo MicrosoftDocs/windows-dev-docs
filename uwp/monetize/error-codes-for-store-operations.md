@@ -1,8 +1,8 @@
 ---
 description: This article describes common error codes for Store operations for apps and add-ons, including in-app purchasing, licensing, and self-install app updates.
 title: Error codes for Store operations
-ms.date: 08/24/2017
-ms.topic: article
+ms.date: 10/28/2025
+ms.topic: troubleshooting-error-codes
 keywords: windows 10, uwp, in-app purchases, IAPs, add-ons, error codes
 ms.localizationpriority: medium
 ---
@@ -20,7 +20,7 @@ The following error codes are related to in-app purchase operations.
 |--------------|---------------|
 | 0x803F6100   | The in-app purchase could not be completed because Kid's Corner is active. To complete the purchase, sign in to the device with your Microsoft account and run the application again.               |
 | 0x803F6101   | The specified app could not be found. The app may no longer be available in the Store, or you might have provided the wrong Store ID for the app.     |
-| 0x803F6102   | The specified add-on could not be found. The add-on may no longer be available in the Store, or your  might have provided the wrong Store ID for the add-on.                                               |
+| 0x803F6102   | The specified add-on could not be found. The add-on may no longer be available in the Store, or you  might have provided the wrong Store ID for the add-on.                                               |
 | 0x803F6103   | The specified product could not be found. The product may no longer be available in the Store, or you might have provided the wrong Store ID for the product.                                          |
 | 0x803F6104   | The in-app purchase could not be completed because you are running a trial version of the app. To complete in-app purchases, install the full version of the app.               |
 | 0x803F6105   | The in-app purchase could not be completed because you are not signed in with your Microsoft account.                                              |
@@ -40,6 +40,7 @@ The following error codes are related to licensing operations for apps or add-on
 
 |  Error code  |  Description  |
 |--------------|---------------|
+| 0x800706BE   | The remote procedure call failed. This can occur due to network connectivity issues or when system services required for Store operations are not responding properly.            |
 | 0x803F700C   | The device is currently offline. To use this app while the device is offline, open your Store settings and toggle the **Offline Permissions** setting.            |
 | 0x803F8001   | You do not have an entitlement for the product. You might be using a different Microsoft account than the one that was used to purchase the product.           |
 | 0x803F8002   | Your entitlement for the product has expired.           |
@@ -59,6 +60,7 @@ The following error codes are related to [self-installing package updates](../pa
 
 |  Error code  |  Description  |
 |--------------|---------------|
+| 0x80073CF3   | The package failed update, dependency, or conflict validation. Possible causes include: the incoming package conflicts with an installed package, a specified package dependency cannot be found, or the package does not support the correct processor architecture.               |
 | 0x803F6200   | User consent is required to download the package update.               |
 | 0x803F6201   | User consent is required to download and install the package update.                                                  |
 | 0x803F6203   | User consent is required to install the package update.                                         |
@@ -68,10 +70,10 @@ The following error codes are related to [self-installing package updates](../pa
 
 ## Related topics
 
-* [In-app purchases and trials](in-app-purchases-and-trials.md)
-* [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
-* [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
-* [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
-* [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
-* [Enable subscription add-ons for your app](enable-subscription-add-ons-for-your-app.md)
-* [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)
+- [In-app purchases and trials](in-app-purchases-and-trials.md)
+- [Get product info for apps and add-ons](get-product-info-for-apps-and-add-ons.md)
+- [Get license info for apps and add-ons](get-license-info-for-apps-and-add-ons.md)
+- [Enable in-app purchases of apps and add-ons](enable-in-app-purchases-of-apps-and-add-ons.md)
+- [Enable consumable add-on purchases](enable-consumable-add-on-purchases.md)
+- [Enable subscription add-ons for your app](enable-subscription-add-ons-for-your-app.md)
+- [Implement a trial version of your app](implement-a-trial-version-of-your-app.md)

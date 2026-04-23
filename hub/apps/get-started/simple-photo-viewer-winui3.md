@@ -1,18 +1,16 @@
 ---
 title: Tutorial--Create a simple photo viewer with WinUI 3
 description: In this topic we walk through the process of building a simple WinUI 3 app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
-ms.topic: article
-ms.date: 04/05/2023
+ms.topic: tutorial
+ms.date: 08/19/2024
 keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
 # Tutorial: Create a simple photo viewer with WinUI 3
 
 > [!NOTE]
-> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of app development options](./index.md).
+> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of framework options](./index.md).
 
 In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
 
@@ -21,7 +19,7 @@ In this topic we walk through the process of creating a new WinUI 3 project in V
 
 ## Step 1: Install tools for the Windows App SDK
 
-To set up your development computer, see [Install tools for the Windows App SDK](../windows-app-sdk/set-up-your-development-environment.md). You could then optionally follow along with [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
+To set up your development computer, see [Get started with WinUI](../get-started/start-here.md). In that article, you'll also find instructions to create and launch a WinUI 3 project.
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](../windows-app-sdk/release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this tutorial and/or running the app we'll build.
@@ -96,7 +94,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
 
 ### [C#](#tab/cs/)
 
-1. Right-click the project node (**SimplePhotos**), and click **Add** > **New Item...**. Under **Visual C# Items** > **Code**, select **Class**. Set the name to *ImageFileInfo.cs*, and click **Add**.
+1. Right-click the project node (**SimplePhotos**), and click **Add** > **New Item...**. Under **C# Items** > **Code**, select **Class**. Set the name to *ImageFileInfo.cs*, and click **Add**.
 
 1. Replace the contents of `ImageFileInfo.cs` with the code listing below.
 
@@ -436,7 +434,7 @@ In this section we'll add a new property to the **MainWindow** class. The proper
     }
     ```
 
-1. The code to populate the new collection property with images is shown in the **GetItemsAsync** and **LoadImageInfoAsync** methods below. Paste the `using` directives, and the two method implementations, into `MainWindow.xaml.cs`, too.
+1. The code to populate the new collection property with images is shown in the **GetItemsAsync** and **LoadImageInfoAsync** methods below. Paste the `using` directives, and the two method implementations, into `MainWindow.xaml.cs`, too. These methods are members of the **MainWindow** class, so paste them inside there just as you did with the **Images** property above.
 
     ```csharp
     ...
@@ -905,7 +903,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
         ...
     ```
 
-    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/uwp/xaml-platform/xaml-namespaces-and-namespace-mapping).
+    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping).
 
     Now that we've set an `x:DataType`, we can use `x:Bind` data-binding expressions in the data template to bind to properties of the data type we specified (**ImageFileInfo**, in this case).
 
@@ -921,7 +919,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 
     An `x:Bind` expression links the value of a UI property with the value of a **data-object** property. Of course, that depends on first setting `x:DataType` to the type of that **data-object** so that the tooling and the runtime know what properties are available to bind to.
 
-    For more info, see [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
+    For more info, see [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
 
 1. In the same way, replace the values of the other **TextBlock**s and the **RatingControl**. Here's the result:
 

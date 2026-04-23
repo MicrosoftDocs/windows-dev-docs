@@ -42,7 +42,7 @@ Inputs
 -   Mouse
 -   Keyboard
 -   Touch on laptops and all-in-one desktops.
--   Gamepads, such as the Xbox controller, are sometimes used.
+-   Game pads, such as the Xbox controller, are sometimes used.
 
 Typical device capabilities
 -   Camera
@@ -100,17 +100,17 @@ Typical usage
 - Often shared among several people, though is also often used by just one person.
 - Usually used for longer periods.
 - Most commonly used at home, staying in one place.
-- Rarely asks for text input because it takes longer with a gamepad or remote.
+- Rarely asks for text input because it takes longer with a game pad or remote.
 - Orientation of the screen is fixed.
 - Usually only runs one app at a time, but it may be possible to snap apps to the side (such as on Xbox).
 
 UI considerations
 - Apps usually stay the same size, unless another app is snapped to the side.
-- System back is useful functionality that is offered in most Xbox apps, accessed using the B button on the gamepad.
+- System back is useful functionality that is offered in most Xbox apps, accessed using the B button on the game pad.
 - Since the customer is sitting approximately 10 feet away from the screen, make sure that UI is large and clear enough to be visible.
 
 Inputs
-- Gamepad (such as an Xbox controller)
+- Game pad (such as an Xbox controller)
 - Remote
 - Voice (occasionally, if the customer has a Kinect or headset)
 

@@ -3,7 +3,7 @@ ms.assetid: 9630AF6D-6887-4BE3-A3CB-D058F275B58F
 description: Learn how to use the Windows.Services.Store namespace to get license info for the current app and its add-ons.
 title: Get license info for your app and add-ons
 ms.date: 12/04/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, licenses, apps, add-ons, in-app purchases, IAPs, Windows.Services.Store
 ms.localizationpriority: medium
 ---

@@ -3,7 +3,7 @@ title: Add controls
 description: Now, we take a look at how the sample game implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls.
 ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 ms.date: 10/24/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, controls, input
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 \[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](/previous-versions/windows/apps/mt244353(v=win.10)?redirectedfrom=MSDN) \]
 
-A good Universal Windows Platform (UWP) game supports a wide variety of interfaces. A potential player might have Windows 10 on a tablet with no physical buttons, a PC with an Xbox controller attached, or the latest desktop gaming rig with a high-performance mouse and gaming keyboard. In our game the controls are implemented in the [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) class. This class aggregates all three types of input (mouse and keyboard, touch, and gamepad) into a single controller. The end result is a first-person shooter that uses genre standard move-look controls that work with multiple devices.
+A good Universal Windows Platform (UWP) game supports a wide variety of interfaces. A potential player might have Windows 10 on a tablet with no physical buttons, a PC with a game controller attached, or the latest desktop gaming rig with a high-performance mouse and gaming keyboard. In our game the controls are implemented in the [**MoveLookController**](https://github.com/Microsoft/Windows-universal-samples/blob/ef073ed8a2007d113af1d88eddace479e3bf0e07/SharedContent/cpp/GameContent/MoveLookController.cpp) class. This class aggregates all three types of input (mouse and keyboard, touch, and gamepad) into a single controller. The end result is a first-person shooter that uses genre standard move-look controls that work with multiple devices.
 
 > [!NOTE]
 > For more info about controls, see [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md) and [Touch controls for games](tutorial--adding-touch-controls-to-your-directx-game.md).
@@ -233,7 +233,7 @@ m_fireUpperLeft = upperLeft;
 m_fireLowerRight = lowerRight;
 ```
 
-If the screen is resized, these rectangles are redrawn to the approperiate size.
+If the screen is resized, these rectangles are redrawn to the appropriate size.
 
 Now that we've zoned off our controls, it's time to determine when a user is actually using them.
 To do this, we set up some event handlers in the **MoveLookController::InitWindow** method for when the user presses, moves, or releases their pointer.
@@ -566,7 +566,7 @@ Gamepad::GamepadRemoved({ this, &MoveLookController::OnGamepadRemoved });
 ```
 
 > [!NOTE]
-> UWP apps cannot receive input from an Xbox One Controller while the app is not in focus.
+> UWP apps cannot receive input from a game controller while the app is not in focus.
 
 ### The UpdatePollingDevices method
 
@@ -577,7 +577,7 @@ If the state of the game is **WaitForInput**, we only listen for the Start/Menu 
 If it's **Active**, we check the user's input and determine what in-game action needs to happen.
 For instance, if the user moved the left analog stick in a specific direction, this lets the game know we need to move the player in the direction the stick is being moved. The movement of the stick in a specific direction must register as larger than the radius of the **dead zone**; otherwise, nothing will happen. This dead zone radius is necessary to prevent "drifting," which is when the controller picks up small movements from the player's thumb as it rests on the stick. Without dead zones, the controls can appear too sensitive to the user.
 
-Thumbstick input is between -1 and 1 for both the x and y axis. The following consant specifies the radius of the thumbstick dead zone.
+Thumbstick input is between -1 and 1 for both the x and y axis. The following constant specifies the radius of the thumbstick dead zone.
 
 ```cppwinrt
 #define THUMBSTICK_DEADZONE 0.25f

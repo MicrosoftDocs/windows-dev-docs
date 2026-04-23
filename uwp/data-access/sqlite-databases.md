@@ -2,7 +2,7 @@
 title: Use a SQLite database in a UWP app
 description: Learn how to use a SQLite database in a UWP app to store and retrieve data in a light-weight database on the user's device.
 ms.date: 09/23/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, uwp, SQLite, database
 ms.localizationpriority: medium
 ---
@@ -42,6 +42,9 @@ The rest of this guide helps you to use this library.
 ## Set up your solution to use the Microsoft.Data.SQlite library
 
 We'll start with a basic UWP project, and then install the appropriate Nuget packages.
+
+> [!NOTE]
+> Make sure you install the `Microsoft.Data.Sqlite' package and not 'Microsoft.Data.Sqlite.Core`. This package will install `Microsoft.Data.Sqlite.Core` as a dependency.
 
 All supported versions of Windows support SQLite, so your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 
@@ -150,6 +153,7 @@ public static void AddData(string inputText)
     using (SqliteConnection db =
       new SqliteConnection($"Filename={dbpath}"))
     {
+        SQLitePCL.Batteries.Init();
         db.Open();
 
         SqliteCommand insertCommand = new SqliteCommand();

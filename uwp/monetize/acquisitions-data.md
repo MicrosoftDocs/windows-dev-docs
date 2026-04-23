@@ -2,7 +2,7 @@
 description: Use this method in the Microsoft Store analytics API to get aggregate acquisition data in JSON format for UWP apps and Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics dashboard. 
 title: Get acquisitions data for your games and apps  
 ms.date: 03/06/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, advertising network, app metadata
 ms.localizationpriority: medium
 ---
@@ -83,7 +83,7 @@ Elements in the *Value* array contain the following values.
 | acquisitionQuantity | number | The number of acquisitions that occurred during the specified aggregation level. |
 | purchasePriceUSDAmount | number | The amount paid by the customer for the acquisition, converted to USD, using the monthly exchange rate. |
 | purchaseTaxUSDAmount | number | The tax amount applied to the acquisition, converted to USD. |
-| localCurrencyCode | string | Local Currency code based on the country of the Partner Center account.  |
+| localCurrencyCode | string | Local Currency code based on the country/region of the Partner Center account.  |
 | xboxProductId | string | Xbox Product ID of the product from XDP, if applicable.  |
 | availabilityId | string | Availability ID of the product from XDP, if applicable.  |
 | skuId | string | SKU ID of the product from XDP, if applicable.  |

@@ -158,7 +158,7 @@ The following requirements apply to apps that access personal information. Perso
 
 If your app accesses, collects or transmits personal information, or if otherwise required by law, you must maintain a privacy policy. You must provide users with access to your privacy policy by entering the privacy policy URL in Dev Center when you submit your app. In addition, you may also include or link to your privacy policy in the app. The privacy policy can be hosted within or directly linked from the app. Your privacy policy must inform users of the personal information accessed, collected or transmitted by your app, how that information is used, stored and secured, and indicate the types of parties to whom it is disclosed. It must describe the controls that users have over the use and sharing of their information and how they may access their information, and it must comply with applicable laws and regulations. Your privacy policy must be kept up-to-date as you add new features and functionality to your app.
 
-Additionally, apps that receive device location must provide settings that allow the user to enable and disable the app's access to and use of location from the Location Service API. For Windows Phone 8 and Windows Phone 8.1 apps, these settings must be provided in-app. For Windows Mobile 10 apps, these settings are provided automatically by Windows within the Settings App (on the **Settings** > **Privacy** > **Location** page).
+Additionally, apps that receive device location must provide settings that allow the user to enable and disable the app's access to and use of location from the Location Service API. For Windows Phone 8 and Windows Phone 8.1 apps, these settings must be provided in-app. For Windows Mobile 10 apps, these settings are provided automatically by Windows within Settings (on the **Settings** > **Privacy** > **Location** page).
 
 **10.5.2**
 
@@ -262,13 +262,13 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your apps through the “Promote Your App” capability in Dev Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://go.microsoft.com/fwlink/p/?LinkId=532593) and [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
+If you purchase or create promotional ad campaigns to promote your apps through the “Promote Your App” capability in Dev Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0) and [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
 **10.10.3**
 
-Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](https://go.microsoft.com/fwlink/p/?LinkId=532595).
+Any advertising content your app displays must adhere to Microsoft’s [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
-If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
+If your app displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905), including the following requirements:
 
 **10.10.4**
 
@@ -438,4 +438,4 @@ If your app provides content (such as user-generated, retail or other web-based 
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

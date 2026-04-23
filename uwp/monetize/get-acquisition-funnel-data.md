@@ -2,7 +2,7 @@
 description: Use this method in the Microsoft Store analytics API to get acquisition funnel data for an application during a given date range and other optional filters.
 title: Get app acquisition funnel data
 ms.date: 08/04/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, acquisition, funnel
 ms.localizationpriority: medium
 ---
@@ -114,7 +114,7 @@ Authorization: Bearer <your access token>
             "UserCount": 6214
         },
         {
-            "MetricType": "Acqusition",
+            "MetricType": "Acquisition",
             "UserCount": 1502
         },
         {
@@ -147,7 +147,7 @@ Authorization: Bearer <your access token>
             "UserCount": 10
         },
         {
-            "MetricType": "Acqusition",
+            "MetricType": "Acquisition",
             "UserCount": 8
         },
         {

@@ -2,7 +2,7 @@
 description: Learn more about compiling UWP apps with .NET Native.
 title: Compiling Apps with .NET Native
 ms.date: 04/29/2021
-ms.topic: conceptual
+ms.topic: concept-article
 helpviewer_keywords:
   - ".NET and native code"
   - "compilation with .NET Native"

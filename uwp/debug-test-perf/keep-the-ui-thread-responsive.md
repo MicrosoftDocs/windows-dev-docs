@@ -2,8 +2,8 @@
 ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
 title: Keep the UI thread responsive
 description: Users expect an app to remain responsive while it does computation, regardless of the type of machine.
-ms.date: 02/08/2017
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

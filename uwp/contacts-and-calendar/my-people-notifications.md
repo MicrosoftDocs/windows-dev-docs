@@ -1,23 +1,18 @@
 ---
 title: My People notifications
 description: Explains how to create and use My People notifications, a new kind of toast.
-ms.date: 01/24/2022
+ms.date: 01/04/2024
 ms.topic: article
 ms.localizationpriority: medium
 ---
 # My People notifications
 
 > [!IMPORTANT]
-> My People is no longer supported in Windows 11.
+> My people is no longer supported in Windows 11 and Windows 10 versions with KB5034203 applied.
 
 My People notifications provide a new way for users to connect with the people they care about, through quick expressive gestures. This article shows how to design and implement My People notifications in your application. For complete implementations, see the [My People Notifications Sample.](https://github.com/microsoft/Windows-universal-samples/tree/dev/archived/MyPeopleNotifications)
 
 ![heart emoji notification](images/heart-emoji-notification-small.gif)
-
-## Requirements
-
-+ Windows 10 and Microsoft Visual Studio 2019 or later. For installation details, see [Get set up with Visual Studio](/windows/apps/get-started/get-set-up).
-+ Basic knowledge of C# or a similar object-oriented programming language. To get started with C#, see [Create a "Hello, world" app](../get-started/create-a-hello-world-app-xaml-universal.md).
 
 ## How it works
 
@@ -36,7 +31,7 @@ As an alternative to generic toast notifications, you can now send notifications
 
 ## Notification parameters
 
-My People notifications use the [toast notification](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts) framework, but require an additional binding node in the toast payload. This second binding must include the following parameter:
+My People notifications use the [toast notification](/windows/apps/develop/notifications/app-notifications/adaptive-interactive-toasts) framework, but require an additional binding node in the toast payload. This second binding must include the following parameter:
 
 ```xml
 experienceType="shoulderTap"
@@ -47,17 +42,17 @@ This indicates that the toast should be treated as a My People notification.
 The image node inside the binding should include the following parameters:
 
 + **src**
-    + The URI of the asset. This can be either HTTP/HTTPS web URI, an msappx URI, or a path to a local file.
+  + The URI of the asset. This can be either HTTP/HTTPS web URI, an msappx URI, or a path to a local file.
 + **spritesheet-src**
-    + The URI of the asset. This can be either HTTP/HTTPS web URI, an msappx URI, or a path to a local file. Only required for spritesheet animations.
+  + The URI of the asset. This can be either HTTP/HTTPS web URI, an msappx URI, or a path to a local file. Only required for spritesheet animations.
 + **spritesheet-height**
-    + The frame height (in pixels). Only required for spritesheet animations.
+  + The frame height (in pixels). Only required for spritesheet animations.
 + **spritesheet-fps**
-    + Frames per second (FPS). Only required for spritesheet animations. Only values 1-120 are supported.
+  + Frames per second (FPS). Only required for spritesheet animations. Only values 1-120 are supported.
 + **spritesheet-startingFrame**
-    + The frame number to begin the animation. Only used for spritesheet animations and defaults to 0 if not provided.
+  + The frame number to begin the animation. Only used for spritesheet animations and defaults to 0 if not provided.
 + **alt**
-    + Text string used for screen reader narration.
+  + Text string used for screen reader narration.
 
 > [!NOTE]
 > When making an animated notification, you should still specify a static image in the "src" parameter. It will be used as a fall-back if the animation fails to display.
@@ -65,11 +60,11 @@ The image node inside the binding should include the following parameters:
 In addition, the top-level toast node must include the **hint-people** parameter to specify the sending contact. This parameter can have any the following values:
 
 + **Email address**
-    + E.g. ` mailto:johndoe@mydomain.com `
+  + e.g. `mailto:johndoe@mydomain.com`
 + **Telephone number**
-    + E.g. tel:888-888-8888
+  + e.g. `tel:888-888-8888`
 + **Remote ID**
-    + E.g. remoteid:1234
+  + e.g. `remoteid:1234`
 
 > [!NOTE]
 > If your app uses the [ContactStore APIs](/uwp/api/windows.applicationmodel.contacts.contactstore) and uses the [StoredContact.RemoteId](/uwp/api/Windows.Phone.PersonalInformation.StoredContact.RemoteId) property to link contacts stored on the PC with contacts stored remotely, it is essential that the value for the RemoteId property is both stable and unique. This means that the remote ID must consistently identify a single user account, and should contain a unique tag to guarantee that it does not conflict with the remote IDs of other contacts on the PC, including contacts that are owned by other apps.
@@ -79,7 +74,7 @@ In addition to the second binding and payload, you must include another payload 
 
 ## Creating the notification
 
-You can create a My People notification template just like you would a [toast notification](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
+You can create a My People notification template just like you would a [toast notification](/windows/apps/develop/notifications/app-notifications/adaptive-interactive-toasts).
 
 Here's an example of how to create a My People notification with a static image payload:
 
@@ -127,7 +122,7 @@ When you start the notification, it should look like this:
 
 To start a My People notification, we need to convert the toast template into an [XmlDocument](/uwp/api/windows.data.xml.dom.xmldocument) object. When you have defined the toast in an XML file (here named "content.xml"), you can use this code to start it:
 
-```CSharp
+```csharp
 string xmlText = File.ReadAllText("content.xml");
 XmlDocument xmlContent = new XmlDocument();
 xmlContent.LoadXml(xmlText);
@@ -135,7 +130,7 @@ xmlContent.LoadXml(xmlText);
 
 You can then use this code to create and send the toast:
 
-```CSharp
+```csharp
 ToastNotification notification = new ToastNotification(xmlContent);
 ToastNotificationManager.CreateToastNotifier().Show(notification);
 ```
@@ -154,5 +149,5 @@ If a My People notification falls back to toast, the second My-People-specific b
 
 + [My People Notifications Sample](https://github.com/microsoft/Windows-universal-samples/tree/dev/archived/MyPeopleNotifications)
 + [Adding My People support](my-people-support.md)
-+ [Adaptive toast notifications](/windows/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts)
++ [Adaptive toast notifications](/windows/apps/develop/notifications/app-notifications/adaptive-interactive-toasts)
 + [ToastNotification Class](/uwp/api/windows.ui.notifications.toastnotification)

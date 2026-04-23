@@ -95,7 +95,7 @@ If there are no selected items in the **ListView** control, then there is nothin
 
 Call [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditemsresult.importitemsasync) to begin the import operation. Just as with the find operation, the [**AsTask**](/dotnet/api/system) extension method is used to convert the returned operation to a task that can be awaited, reports progress, and can be cancelled.
 
-After the import operation is complete, the operation status can be obtained from the [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) object returned by [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditemsresult.importitemsasync). This example outputs the status information to the debug console and then finallly, sets the cancellation token to null.
+After the import operation is complete, the operation status can be obtained from the [**PhotoImportImportItemsResult**](/uwp/api/Windows.Media.Import.PhotoImportImportItemsResult) object returned by [**ImportItemsAsync**](/uwp/api/windows.media.import.photoimportfinditemsresult.importitemsasync). This example outputs the status information to the debug console and then finally, sets the cancellation token to null.
 
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/audio-video-camera/PhotoImport_Win10/cs/MainPage.xaml.cs" id="SnippetImportClick":::
 

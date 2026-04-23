@@ -1,61 +1,58 @@
 ---
 title: Understanding Arm64EC ABI and assembly code
 description: An in-depth look at Arm64EC ABI, register mapping, call checkers, stack checkers, variadic calling, entry thunks, exit thunks, and adjuster thunks, fast-forward sequences, authoring Arm64EC in Assembly, and dynamically generating (JIT Compiling) Arm64EC code. 
-ms.date: 03/18/2022
-ms.topic: article
-ms.prod: windows
-ms.technology: arm
-author: pmsjt
-ms.author: pedrot
-ms.reviewer: mattwoj
+ms.date: 11/06/2025
+ms.topic: concept-article
+ms.service: windows
+ms.subservice: arm
 ---
 
 # Understanding Arm64EC ABI and assembly code
 
-Arm64EC (“Emulation Compatible”) is a new application binary interface (ABI) for building apps for Windows 11 on Arm. For an overview of Arm64EC and how to start building Win32 apps as Arm64EC, see [Using Arm64EC to build apps for Windows 11 on Arm devices](./arm64ec.md).
+Arm64EC ("Emulation Compatible") is a new application binary interface (ABI) for building apps for Windows 11 on Arm. For an overview of Arm64EC and how to start building Win32 apps as Arm64EC, see [Using Arm64EC to build apps for Windows 11 on Arm devices](./arm64ec.md).
 
-The purpose of this document is to provide a detailed view of the Arm64EC ABI with enough information for an application developer to write and debug code compiled for Arm64EC, including low-level/assembler debugging and writing assembly code targeting the Arm64EC ABI.
+This article provides a detailed view of the Arm64EC ABI with enough information for an application developer to write and debug code compiled for Arm64EC, including low-level/assembler debugging and writing assembly code targeting the Arm64EC ABI.
 
 ## Design of Arm64EC
 
-Arm64EC was designed to deliver native-level functionality and performance, while providing transparent and direct interoperability with x64 code running under emulation.
+Arm64EC delivers native-level functionality and performance, while providing transparent and direct interoperability with x64 code running under emulation.
 
-Arm64EC is mostly additive to the Classic Arm64 ABI. Very little of the Classic ABI was changed, but portions were added to enable x64 interoperability.
+Arm64EC is mostly additive to the Classic Arm64 ABI. The Classic ABI changed very little, but the Arm64EC ABI added portions to enable x64 interoperability.
 
-In this document, the original, standard Arm64 ABI shall be referred to as “Classic ABI”. This avoids the ambiguity inherent to overloaded terms like “Native”. Arm64EC, to be clear, is every bit as native as the original ABI.
+In this document, the original, standard Arm64 ABI is referred to as "Classic ABI". This term avoids the ambiguity inherent to overloaded terms like "Native". Arm64EC is every bit as native as the original ABI.
 
-## Arm64EC vs Arm64 Classic ABI
+## Arm64EC vs. Arm64 Classic ABI
 
-The following list points out where Arm64EC has diverged from Arm64 Classic ABI.
+The following list points out where Arm64EC diverges from Arm64 Classic ABI.
 
 - [Register mapping and blocked registers](#register-mapping-and-blocked-registers)
 - [Call checkers](#call-checkers)
 - [Stack checkers](#stack-checkers)
 - [Variadic calling convention](#variadic-calling-convention)
 
-These are small changes when seen in perspective of how much the entire ABI defines.
+These differences are small changes when seen in perspective of how much the entire ABI defines.
 
 ### Register mapping and blocked registers
 
-For there to be type-level interoperability with x64 code, Arm64EC code is compiled with the same pre-processor architecture definitions as x64 code.
+To enable type-level interoperability with x64 code, Arm64EC code compiles with the same preprocessor architecture definitions as x64 code.
 
 In other words, `_M_AMD64` and `_AMD64_` are defined. One of the types affected by this rule is the `CONTEXT` structure. The `CONTEXT` structure defines the state of the CPU at a given point. It is used for things like `Exception Handling` and `GetThreadContext` APIs. Existing x64 code expects the CPU context to be represented as an x64 `CONTEXT` structure or, in other words, the `CONTEXT` structure as it is defined during x64 compilation.
 
-This structure must be used to represent the CPU context while executing x64 code, as well as Arm64EC code. Existing code would not understand a novel concept, such as the CPU register set changing from function to function. If the x64 `CONTEXT` structure is used to represent Arm64 execution states, this implies Arm64 registers are effectively mapped into x64 registers.
+You must use this structure to represent the CPU context while executing x64 code and Arm64EC code. Existing code doesn't understand a novel concept, such as the CPU register set changing from function to function. If you use the x64 `CONTEXT` structure to represent Arm64 execution states, you effectively map Arm64 registers into x64 registers.
 
-It also implies that any Arm64 registers which cannot be fitted into the x64 `CONTEXT` must not be used, as their values can be lost anytime an operation using `CONTEXT` occurs (and some can be asynchronous and unexpected, such as the Garbage Collection operation of a Managed Language Runtime, or an APC).
+This mapping also means you can't use any Arm64 registers that don't fit into the x64 `CONTEXT`. Their values can be lost anytime an operation uses `CONTEXT` (and some operations can be asynchronous and unexpected, such as the Garbage Collection operation of a Managed Language Runtime, or an APC).
 
-The mapping rules between Arm64EC and x64 registers are represented by the `ARM64EC_NT_CONTEXT` structure in the Windows headers, present in the SDK. This structure is essentially a union of the `CONTEXT` structure, exactly as it is defined for x64, but with an extra Arm64 register overlay.
+The Windows headers in the SDK represent the mapping rules between Arm64EC and x64 registers with the `ARM64EC_NT_CONTEXT` structure. This structure is essentially a union of the `CONTEXT` structure, exactly as it's defined for x64, but with an extra Arm64 register overlay.
 
-For example, `RCX` maps to `X0`, `RDX` to `X1`, `RSP` to `SP`, `RIP` to `PC`, etc. We can also see how the registers `x13`, `x14`, `x23`, `x24`, `x28`, `v16`-`v31` have no representation and, thus, cannot be used in Arm64EC.
+For example, `RCX` maps to `X0`, `RDX` to `X1`, `RSP` to `SP`, `RIP` to `PC`, and so on. The registers `x13`, `x14`, `x23`, `x24`, `x28`, and `v16` through `v31` have no representation and, thus, can't be used in Arm64EC.
 
 This register usage restriction is the first difference between the Arm64 Classic and EC ABIs.
 
 ### Call checkers
 
-Call checkers have been a part of Windows ever since [Control Flow Guard (CFG)](/windows/win32/secbp/control-flow-guard) was introduced in Windows 8.1. Call checkers are address sanitizers for function pointers (before these things were called address sanitizers). Every time code is compiled with the option `/guard:cf` the compiler will generate an extra call to the checker function just before every indirect call/jump. The checker function itself is provided by Windows and, for CFG, it performs a validity check against the known-to-be-good call targets. This information is also included in binaries compiled with `/guard:cf`.
+Call checkers have been a part of Windows ever since [Control Flow Guard (CFG)](/windows/win32/secbp/control-flow-guard) was introduced in Windows 8.1. Call checkers are address sanitizers for function pointers (before these things were called address sanitizers). Every time you compile code with the option `/guard:cf`, the compiler generates an extra call to the checker function just before every indirect call or jump. Windows provides the checker function itself. For CFG, it performs a validity check against the known-to-be-good call targets. Binaries compiled with `/guard:cf` also include this information.
 
-This is an example of a call checker use in Classic Arm64:
+This example shows a call checker use in Classic Arm64:
 
 ```
 mov     x15, <target>
@@ -65,9 +62,9 @@ blr     x16                                     ; check target function
 blr     x15                                     ; call function
 ```
 
-In the CFG case, the call checker will simply return if the target is valid, or fast-fail the process if it is not. Call checkers have custom calling conventions. They take the function pointer in a register not used by the normal calling convention and preserving all normal calling-convention registers. This way, they don’t introduce register spillage around them.
+In the CFG case, the call checker simply returns if the target is valid, or fast-fails the process if it isn't. Call checkers have custom calling conventions. They take the function pointer in a register not used by the normal calling convention and preserve all normal calling-convention registers. This way, they don't introduce register spillage around them.
 
-Call checkers are optional on all other Windows ABIs, but mandatory on Arm64EC. On Arm64EC, call checkers accumulate the task of verifying the architecture of the function being called. They verify whether the call is another EC (“Emulation Compatible”) function or an x64 function that must be executed under emulation. In many cases, this can only be verified at runtime.
+Call checkers are optional on all other Windows ABIs, but mandatory on Arm64EC. On Arm64EC, call checkers accumulate the task of verifying the architecture of the function being called. They verify whether the call is another EC ("Emulation Compatible") function or an x64 function that must be executed under emulation. In many cases, this can only be verified at runtime.
 
 Arm64EC call checkers build on top of the existing Arm64 checkers, but they have a slightly different custom calling convention. They take an extra parameter and they may modify the register containing the target address. For example, if the target is x64 code, control must be transferred to the emulation scaffolding logic first.
 
@@ -88,7 +85,7 @@ Slight differences from Classic Arm64 include:
 - Symbol name for the call checker is different.
 - The target address is supplied in `x11` instead of `x15`.
 - The target address (`x11`) is `[in, out]` instead of `[in]`.
-- There is an extra parameter, provided through `x10`, called an “Exit Thunk”.
+- There is an extra parameter, provided through `x10`, called an "Exit Thunk".
 
 An [Exit Thunk](#exit-thunks) is a funclet which transforms function parameters from Arm64EC calling convention to x64 calling convention.
 
@@ -117,7 +114,7 @@ As with CFG in Classic Arm64, the call to the target function (`x11`) must immed
 
 This implies that x64 code and Arm64EC code need their own, distinct, `__chkstk` functions, as Entry and Exit thunks assume standard calling conventions.
 
-x64 and Arm64EC share the same symbol namespace so there can’t be two functions named `__chkstk`. To accommodate compatibility with pre-existing x64 code, `__chkstk` name will be associated with the x64 stack checker. Arm64EC code will use `__chkstk_arm64ec` instead.
+x64 and Arm64EC share the same symbol namespace so there can't be two functions named `__chkstk`. To accommodate compatibility with pre-existing x64 code, `__chkstk` name will be associated with the x64 stack checker. Arm64EC code will use `__chkstk_arm64ec` instead.
 
 The custom calling convention for `__chkstk_arm64ec` is the same as for Classic Arm64 `__chkstk`: `x15` provides the size of the allocation in bytes, divided by 16. All non-volatile registers, as well as all volatile registers involved in the standard calling convention are preserved.
 
@@ -125,17 +122,17 @@ Everything said above about `__chkstk` applies equally to `__security_check_cook
 
 ### Variadic calling convention
 
-Arm64EC follows the Classic Arm64 ABI calling convention, except for Variadic functions (aka varargs, aka functions with the ellipsis (. . .) parameter keyword).
+Arm64EC follows the Classic Arm64 ABI calling convention, except for variadic functions (also known as varargs or functions with the ellipsis (. . .) parameter keyword).
 
-For the variadic specific case, Arm64EC follows a calling convention very similar to x64 variadic, with only a few differences. Below are the major rules for Arm64EC variadic:
+For the variadic specific case, Arm64EC follows a calling convention very similar to x64 variadic, with only a few differences. The following list shows the major rules for Arm64EC variadic:
 
-- Only the first 4 registers are used for parameter passing: `x0`, `x1`, `x2`, `x3`. Remaining parameters are spilled onto the stack. This follows the x64 variadic calling convention exactly, and differs from Arm64 Classic, where registers `x0`->`x7` are used.
-- Floating Point / SIMD parameters being passed by register will use a General-Purpose register, not a SIMD one. This is similar to Arm64 Classic, and differs from x64, where FP/SIMD parameters are passed in both a General-Purpose and SIMD register. For example, for a function `f1(int, …)` being called as `f1(int, double)`, on x64, the second parameter will be assigned to both `RDX` and `XMM1`. On Arm64EC, the second parameter will be assigned to just `x1`.
-- When passing structures by value through a register, x64 size rules apply: Structures with sizes exactly 1, 2, 4 and 8 will be loaded directly into the General-Purpose register. Structures with other sizes are spilled onto the stack, and a pointer to the spilled location is assigned to the register. This essentially demotes by-value into by-reference, at the low-level. On the Classic Arm64 ABI, structures of any size up to 16 bytes are assigned directly to General-Purposed registers.
-- X4 register is loaded with a pointer to the first parameter passed via stack (the 5th parameter). This does not include structures spilled due to the size restrictions outlined above.
-- X5 register is loaded with the size, in bytes, of all parameters passed by stack (size of all parameters, starting with the 5th). This does not include structures passed by value spilled due to the size restrictions outlined above.
+- Only the first four registers are used for parameter passing: `x0`, `x1`, `x2`, `x3`. The remaining parameters spill onto the stack. This rule follows the x64 variadic calling convention exactly and differs from Arm64 Classic, where registers `x0` through `x7` are used.
+- Floating point and SIMD parameters passed by register use a general-purpose register, not a SIMD one. This rule is similar to Arm64 Classic and differs from x64, where FP/SIMD parameters are passed in both a general-purpose and SIMD register. For example, for a function `f1(int, …)` called as `f1(int, double)`, on x64, the second parameter is assigned to both `RDX` and `XMM1`. On Arm64EC, the second parameter is assigned to just `x1`.
+- When passing structures by value through a register, x64 size rules apply: Structures with sizes exactly 1, 2, 4, and 8 bytes load directly into the general-purpose register. Structures with other sizes spill onto the stack, and a pointer to the spilled location is assigned to the register. This rule essentially demotes by-value into by-reference at the low level. On the Classic Arm64 ABI, structures of any size up to 16 bytes are assigned directly to general-purpose registers.
+- The `x4` register loads a pointer to the first parameter passed via stack (the fifth parameter). This rule doesn't include structures spilled due to the size restrictions outlined earlier.
+- The `x5` register loads the size, in bytes, of all parameters passed by stack (size of all parameters, starting with the fifth). This rule doesn't include structures passed by value spilled due to the size restrictions outlined earlier.
 
-In the following example: `pt_nova_function` below takes parameters in a non-variadic form, therefore following the Classic Arm64 calling convention. It then calls `pt_va_function` with the exact same parameters but in a variadic call instead.
+In the following example, `pt_nova_function` takes parameters in a non-variadic form, so it follows the Classic Arm64 calling convention. It then calls `pt_va_function` with the exact same parameters but in a variadic call instead.
 
 ```cpp
 struct three_char {
@@ -163,25 +160,25 @@ pt_nova_function (
 }
 ```
 
-`pt_nova_function` takes 5 parameters which will be assigned following the Classic Arm64 calling convention rules:
+`pt_nova_function` takes five parameters, which it assigns following the Classic Arm64 calling convention rules:
 
-- ‘f ‘ is a double. It will be assigned to d0.
-- ‘tc’ is a struct, with a size of 3 bytes. It will be assigned to x0.
-- ull1 is an 8-byte integer. It will be assigned to x1.
-- ull2 is an 8-byte integer. It will be assigned to x2.
-- ull3 is an 8-byte integer. It will be assigned to x3.
+- 'f ' is a double. It assigns to `d0`.
+- 'tc' is a struct with a size of 3 bytes. It assigns to `x0`.
+- `ull1` is an 8-byte integer. It assigns to `x1`.
+- `ull2` is an 8-byte integer. It assigns to `x2`.
+- `ull3` is an 8-byte integer. It assigns to `x3`.
 
-`pt_va_function` is a variadic function, so it will follow the Arm64EC variadic rules outlined above:
+`pt_va_function` is a variadic function, so it follows the Arm64EC variadic rules outlined earlier:
 
-- ‘f ‘ is a double. It will be assigned to x0.
-- ‘tc’ is a struct, with a size of 3 bytes. It will be spilled onto the stack and its location loaded into x1.
-- ull1 is an 8-byte integer. It will be assigned to x2.
-- ull2 is an 8-byte integer. It will be assigned to x3.
-- ull3 is an 8-byte integer. It will be assigned directly to the stack.
-- x4 is loaded with the location of ull3 in the stack.
-- x5 is loaded with the size of ull3.
+- 'f ' is a double. It assigns to `x0`.
+- 'tc' is a struct with a size of 3 bytes. It spills onto the stack and its location loads into `x1`.
+- `ull1` is an 8-byte integer. It assigns to `x2`.
+- `ull2` is an 8-byte integer. It assigns to `x3`.
+- `ull3` is an 8-byte integer. It assigns directly to the stack.
+- `x4` loads the location of `ull3` in the stack.
+- `x5` loads the size of `ull3`.
 
-The following shows a possible compilation output for `pt_nova_function`, which illustrates the parameter assignment differences outlined above.
+The following example shows possible compilation output for `pt_nova_function`, which illustrates the parameter assignment differences outlined earlier.
 
 ```
 stp         fp,lr,[sp,#-0x30]!
@@ -206,7 +203,7 @@ ret
 
 ## ABI additions
 
-To achieve transparent interoperability with x64 code, many additions have been made to the Classic Arm64 ABI. They handle the calling conventions differences between Arm64EC and x64.
+To achieve transparent interoperability with x64 code, make many additions to the classic Arm64 ABI. These additions handle the calling conventions differences between Arm64EC and x64.
 
 The following list includes these additions:
 
@@ -216,11 +213,11 @@ The following list includes these additions:
 - [Adjustor Thunks](#adjustor-thunks)
 - [Fast-Forward Sequences](#fast-forward-sequences)
 
-## Entry and Exit Thunks
+## Entry and exit thunks
 
-Entry and Exit Thunks take care of translating the Arm64EC calling convention (mostly the same as Classic Arm64) into the x64 calling convention, and vice-versa.
+Entry and exit thunks translate the Arm64EC calling convention (mostly the same as classic Arm64) into the x64 calling convention, and vice versa.
 
-A common misconception is that calling conventions can be converted by following a single rule applied to all function signatures. The reality is that calling conventions have parameter assignment rules. These rules depend on the parameter type and are different from ABI to ABI. A consequence is that translation between ABIs will be specific to each function signature, varying with the type of each parameter.
+A common misconception is that you can convert calling conventions by following a single rule applied to all function signatures. The reality is that calling conventions have parameter assignment rules. These rules depend on the parameter type and are different from ABI to ABI. A consequence is that translation between ABIs is specific to each function signature, varying with the type of each parameter.
 
 Consider the following function:
 
@@ -228,7 +225,7 @@ Consider the following function:
 int fJ(int a, int b, int c, int d);
 ```
 
-Parameter assignment will occur as follows:
+Parameter assignment occurs as follows:
 
 - Arm64: a -> x0, b -> x1, c -> x2, d -> x3
 - x64: a -> RCX, b -> RDX, c -> R8, d -> r9
@@ -240,19 +237,19 @@ Now consider a different function:
 int fK(int a, double b, int c, double d);
 ```
 
-Parameter assignment will occur as follows:
+Parameter assignment occurs as follows:
 
 - Arm64: a -> x0, b -> d0, c -> x1, d -> d1
 - x64: a -> RCX, b -> XMM1, c -> R8, d -> XMM3
 - Arm64 -> x64 translation: x0 -> RCX, d0 -> XMM1, x1 -> R8, d1 -> XMM3
 
-These examples demonstrate that parameter assignment and translation vary by type, but also the types of the preceding parameters in the list are depended upon. This detail is illustrated by the 3rd parameter. In both functions, the parameter’s type is “int”, but the resulting translation is different.
+These examples demonstrate that parameter assignment and translation vary by type, but also depend on the types of the preceding parameters in the list. This detail is illustrated by the third parameter. In both functions, the parameter's type is `int`, but the resulting translation is different.
 
-Entry and Exit Thunks exist for this reason and are specifically tailored for each individual function signature.
+Entry and exit thunks exist for this reason and are specifically tailored for each individual function signature.
 
-Both types of thunks are, themselves, functions. Entry Thunks are automatically invoked by the emulator when x64 functions call into Arm64EC functions (execution *Enters* Arm64EC). Exit Thunks are automatically invoked by the call checkers when Arm64EC functions call into x64 functions (execution *Exits* Arm64EC).
+Both types of thunks are functions. The emulator automatically invokes entry thunks when x64 functions call into Arm64EC functions (execution *Enters* Arm64EC). Call checkers automatically invoke exit thunks when Arm64EC functions call into x64 functions (execution *Exits* Arm64EC).
 
-When compiling Arm64EC code, the compiler will generate an Entry Thunk for each Arm64EC function, matching its signature. The compiler will also generate an Exit Thunk for every function an Arm64EC function calls.
+When compiling Arm64EC code, the compiler generates an entry thunk for each Arm64EC function, matching its signature. The compiler also generates an exit thunk for every function an Arm64EC function calls.
 
 Consider the following example:
 
@@ -272,24 +269,24 @@ int fA(int a, double b, struct SC c, int i1, int i2, int i3) {
 }
 ```
 
-When compiling the code above targeting Arm64EC, the compiler will generate:
+When compiling the preceding code targeting Arm64EC, the compiler generates:
 
-- Code for ‘fA’.
-- Entry Thunk for ‘fA’
-- Exit Thunk for ‘fB’
-- Exit Thunk for ‘fC’
+- Code for `fA`.
+- Entry thunk for `fA`
+- Exit thunk for `fB`
+- Exit thunk for `fC`
 
-The `fA` Entry Thunk is generated in case `fA` and called from x64 code. Exit Thunks for `fB` and `fC` are generated in case `fB` and/or `fC` and turn out to be x64 code.
+The compiler generates the `fA` entry thunk in case `fA` is called from x64 code. The compiler generates exit thunks for `fB` and `fC` in case `fB` and `fC` are x64 code.
 
-The same Exit Thunk may be generated multiple times, given the compiler will generate them at the call site rather than the function itself. This may result in a considerable amount of redundant thunks so, in reality, the compiler will apply trivial optimization rules to make sure only the required thunks make it into the final binary.
+The compiler might generate the same exit thunk multiple times because it generates them at the call site rather than the function itself. This duplication might result in a considerable amount of redundant thunks. To avoid this duplication, the compiler applies trivial optimization rules to make sure only the required thunks make it into the final binary.
 
-For example, in a binary where Arm64EC function `A` calls Arm64EC function `B`, `B` is not exported and its address is never known outside of `A`. It is safe to eliminate the Exit Thunk from `A` to `B`, along with the Entry Thunk for `B`. It is also safe to alias together all Exit and Entry thunks which contain the same code, even if they were generated for distinct functions.
+For example, in a binary where Arm64EC function `A` calls Arm64EC function `B`, `B` isn't exported and its address is never known outside of `A`. It's safe to eliminate the exit thunk from `A` to `B`, along with the entry thunk for `B`. It's also safe to alias together all exit and entry thunks that contain the same code, even if they were generated for distinct functions.
 
-#### Exit Thunks
+#### Exit thunks
 
-Using the example functions `fA`, `fB` and `fC` above, this is how the compiler would generate both `fB` and `fC` Exit Thunks:
+Using the example functions `fA`, `fB`, and `fC` in the preceding section, the compiler generates both `fB` and `fC` exit thunks as follows:
 
-Exit Thunk to `int fB(int a, double b, int i1, int i2, int i3);`
+Exit thunk to `int fB(int a, double b, int i1, int i2, int i3);`
 
 ```
 $iexit_thunk$cdecl$i8$i8di8i8i8:
@@ -309,7 +306,7 @@ $iexit_thunk$cdecl$i8$i8di8i8i8:
     ret
 ```
 
-Exit Thunk to `int fC(int a, struct SC c, int i1, int i2, int i3);`
+Exit thunk to `int fC(int a, struct SC c, int i1, int i2, int i3);`
 
 ```
 $iexit_thunk$cdecl$i8$i8m3i8i8i8:
@@ -328,24 +325,24 @@ $iexit_thunk$cdecl$i8$i8m3i8i8i8:
     ret
 ```
 
-In the `fB` case, we can see how the presence of a ‘double’ parameter will cause the remaining GP register assignment to reshuffle, a result of Arm64 and x64’s different assignment rules. We can also see x64 only assigns 4 parameters to registers, so the 5th parameter must be spilled onto the stack.
+In the `fB` case, the presence of a `double` parameter causes the remaining GP register assignment to reshuffle, a result of Arm64 and x64's different assignment rules. You can also see that x64 only assigns four parameters to registers, so the fifth parameter must be spilled onto the stack.
 
-In the `fC` case, the second parameter is a structure of 3-byte length. Arm64 will allow any size structure to be assigned to a register directly. x64 only allows sizes 1, 2, 4 and 8. This Exit Thunk must then transfer this `struct` from the register onto the stack and assign a pointer to the register instead. This still consumes one register (to carry the pointer) so it does not change assignments for the remaining registers: no register reshuffling happens for the 3rd and 4th parameter. Just as for the `fB` case, the 5th parameter must be spilled onto the stack.
+In the `fC` case, the second parameter is a structure of 3-byte length. Arm64 allows any size structure to be assigned directly to a register. x64 only allows sizes 1, 2, 4, and 8. This Exit Thunk must transfer this `struct` from the register onto the stack and assign a pointer to the register instead. This approach still consumes one register (to carry the pointer), so it doesn't change assignments for the remaining registers: no register reshuffling happens for the third and fourth parameters. Just as for the `fB` case, the fifth parameter must be spilled onto the stack.
 
 Additional considerations for Exit Thunks:
 
-- The compiler will name them not by the function name they translate from->to, but rather the signature they address. This makes it easier to find redundancies.
-- The Exit Thunk is called with the register `x9` carrying the address of the target (x64) function. This is set by the call checker and passes through the Exit Thunk, undisturbed, into the emulator.
+- The compiler names them not by the function name they translate from and to, but rather by the signature they address. This naming convention makes it easier to find redundancies.
+- The call checker sets the register `x9` to carry the address of the target (x64) function. The Exit Thunk calls the emulator, passing `x9` without any changes.
 
-After rearranging the parameters, the Exit Thunk then calls into the emulator via `__os_arm64x_dispatch_call_no_redirect`.
+After rearranging the parameters, the Exit Thunk calls into the emulator through `__os_arm64x_dispatch_call_no_redirect`.
 
-It is worth, at this point, reviewing the function of the call checker, and detail about its own custom ABI. This is what an indirect call to `fB` would look like:
+At this point, it's worth reviewing the function of the call checker and its custom ABI. Here's what an indirect call to `fB` looks like:
 
 ```
 mov     x11, <target>
 adrp    x9, __os_arm64x_check_icall_cfg
 ldr     x9, [x9, __os_arm64x_check_icall_cfg] 
-adrp    x10, $iexit_thunk$cdecl$i8$i8di8i8i8    ; fB function’s exit thunk
+adrp    x10, $iexit_thunk$cdecl$i8$i8di8i8i8    ; fB function's exit thunk
 add     x10, x10, $iexit_thunk$cdecl$i8$i8di8i8i8
 blr     x9                                      ; check target function
 blr     x11                                     ; call function
@@ -353,28 +350,28 @@ blr     x11                                     ; call function
 
 When calling the call checker:
 
-- `x11` supplies the address of the target function to call (`fB` in this case). It may not be known, at this point, if the target function is Arm64EC or x64.
+- `x11` supplies the address of the target function to call (`fB` in this case). At this point, the call checker might not know if the target function is Arm64EC or x64.
 - `x10` supplies an Exit Thunk matching the signature of the function being called (`fB` in this case).
 
-The data returned by the call checker will depend on the target function being Arm64EC or x64.
+The data the call checker returns depends on whether the target function is Arm64EC or x64.
 
 If the target is Arm64EC:
 
-- `x11` will return the address of the Arm64EC code to call. This may or may not be the same value that was provided in.
+- `x11` returns the address of the Arm64EC code to call. This value might be the same as the one provided in.
 
 If the target is x64 code:
 
-- `x11` will return the address of the Exit Thunk. This is copied from input provided in `x10`.
-- `x10` will return the address of the Exit Thunk, undisturbed from input.
-- `x9` will return the target x64 function. This may or may not be the same value it was provided in via `x11`.
+- `x11` returns the address of the Exit Thunk. This address is copied from the input provided in `x10`.
+- `x10` returns the address of the Exit Thunk, undisturbed from the input.
+- `x9` returns the target x64 function. This value might be the same as the one provided in via `x11`.
 
-Call checkers will always leave calling convention parameter registers undisturbed, so the calling code should follow the call to the call checker immediately with `blr x11` (or `br x11` in case of a tail-call). These are the registers call checkers. They will always preserve above and beyond standard non-volatile registers: `x0`-`x8`, `x15`(`chkstk`) and `q0`-`q7`.
+Call checkers always leave calling convention parameter registers undisturbed. The calling code should follow the call to the call checker immediately with `blr x11` (or `br x11` in case of a tail-call). Call checkers always preserve these registers above and beyond standard non-volatile registers: `x0`-`x8`, `x15`(`chkstk`), and `q0`-`q7`.
 
 #### Entry Thunks
 
-Entry Thunks take care of the transformations required from the x64 to the Arm64 calling conventions. This is, essentially, the reverse of Exit Thunks but there are a few more aspects to consider.
+Entry Thunks take care of the transformations required from the x64 to the Arm64 calling conventions. This transformation is essentially the reverse of Exit Thunks but involves a few more aspects to consider.
 
-Consider the previous example of compiling `fA`, an Entry Thunk is generated so that `fA` can be called by x64 code.
+Consider the previous example of compiling `fA`. An Entry Thunk is generated so that x64 code can call `fA`.
 
 Entry Thunk for `int fA(int a, double b, struct SC c, int i1, int i2, int i3)`
 
@@ -407,21 +404,21 @@ $ientry_thunk$cdecl$i8$i8dm3i8i8i8:
     br          xip0
 ```
 
-The address of the target function is provided by the emulator in `x9`.
+The emulator provides the address of the target function in `x9`.
 
-Before calling the Entry Thunk, the x64 emulator will pop the return address from the stack into the `LR` register. It is then expected that `LR` will be pointing at x64 code when control is transferred to the Entry Thunk.
+Before calling the Entry Thunk, the x64 emulator pops the return address from the stack into the `LR` register. `LR` is then expected to point at x64 code when control transfers to the Entry Thunk.
 
-The emulator may also perform another adjustment to the stack, depending on the following: Both Arm64 and x64 ABIs define a stack alignment requirement where the stack must be aligned to 16-bytes at the point a function is called. When running Arm64 code, hardware enforces this rule, but there is no hardware enforcement for x64. While running x64 code, erroneously calling functions with an unaligned stack may go unnoticed indefinitely, until some 16-byte alignment instruction is used (some SSE instructions do) or Arm64EC code is called.
+The emulator might also perform another adjustment to the stack, depending on the following: Both Arm64 and x64 ABIs define a stack alignment requirement where the stack must be aligned to 16 bytes at the point a function is called. When running Arm64 code, hardware enforces this rule, but there's no hardware enforcement for x64. While running x64 code, erroneously calling functions with an unaligned stack might go unnoticed indefinitely, until some 16-byte alignment instruction is used (some SSE instructions do) or Arm64EC code is called.
 
-To address this potential compatibility problem, before calling the Entry Thunk, the emulator will always align-down the Stack Pointer to 16-bytes and store its original value in the `x4` register. This way Entry Thunks always start executing with an aligned stack but can still correctly reference the parameters passed on the stack, via `x4`.
+To address this potential compatibility problem, before calling the Entry Thunk, the emulator always aligns down the Stack Pointer to 16 bytes and stores its original value in the `x4` register. This way, Entry Thunks always start executing with an aligned stack but can still correctly reference the parameters passed on the stack, via `x4`.
 
-When it comes to non-volatile SIMD registers, there is a significant difference between the Arm64 and x64 calling conventions. On Arm64, the low 8 bytes (64 bits) of the register are considered non-volatile. In other words, only the `Dn` part of the `Qn` registers is non-volatile. On x64, the entire 16 bytes of the `XMMn` register is considered non-volatile. Furthermore, on x64, `XMM6` and `XMM7` are non-volatile registers whereas D6 and D7 (the corresponding Arm64 registers) are volatile.
+When it comes to non-volatile SIMD registers, there's a significant difference between the Arm64 and x64 calling conventions. On Arm64, the low 8 bytes (64 bits) of the register are considered non-volatile. In other words, only the `Dn` part of the `Qn` registers is non-volatile. On x64, the entire 16 bytes of the `XMMn` register is considered non-volatile. Furthermore, on x64, `XMM6` and `XMM7` are non-volatile registers whereas D6 and D7 (the corresponding Arm64 registers) are volatile.
 
-To address these SIMD register manipulation asymmetries, Entry Thunks must explicitly save all SIMD registers which are considered non-volatile in x64. This is only needed on Entry Thunks (not Exit Thunks) because x64 is stricter than Arm64. In other words, register saving/preservation rules in x64 exceed the Arm64 requirements in all cases.
+To address these SIMD register manipulation asymmetries, Entry Thunks must explicitly save all SIMD registers that are considered non-volatile in x64. This saving is only needed on Entry Thunks (not Exit Thunks) because x64 is stricter than Arm64. In other words, register saving and preservation rules in x64 exceed the Arm64 requirements in all cases.
 
-To address the correct recovery of these register values when unwinding the stack (e.g. setjmp + longjmp, or throw + catch), a new unwind opcode was introduced: `save_any_reg (0xE7)`. This new 3-byte unwind opcode enables saving any General Purpose or SIMD register (including the ones considered volatile) and including full-sized `Qn` registers. This new opcode is used for the `Qn` register spills/fill operations above. `save_any_reg` is compatible with `save_next_pair (0xE6)`.
+To address the correct recovery of these register values when unwinding the stack (for example, setjmp + longjmp, or throw + catch), a new unwind opcode was introduced: `save_any_reg (0xE7)`. This new 3-byte unwind opcode enables saving any General Purpose or SIMD register (including the ones considered volatile) and including full-sized `Qn` registers. This new opcode is used for the `Qn` register spills and fill operations. `save_any_reg` is compatible with `save_next_pair (0xE6)`.
 
-For reference, below is the corresponding unwind information belonging to the Entry Thunk presented above:
+For reference, the following unwind information belongs to the Entry Thunk presented earlier:
 
 ```
    Prolog unwind:
@@ -446,17 +443,17 @@ For reference, below is the corresponding unwind information belonging to the En
                    +0070 (end sequence)
 ```
 
-After the Arm64EC function returns, the `__os_arm64x_dispatch_ret` routine is used to re-enter the emulator, back to x64 code (pointed to by `LR`).
+After the Arm64EC function returns, the `__os_arm64x_dispatch_ret` routine re-enters the emulator, back to x64 code (pointed to by `LR`).
 
-Arm64EC functions have the 4 bytes before the first instruction in the function reserved for storing information to be used at runtime. It is in these 4 bytes that the relative address of Entry Thunk for the function can be found. When performing a call from an x64 function to an Arm64EC function, the emulator will read the 4 bytes before the start of the function, mask-out the lower two bits and add that amount to the address of the function. This will produce the address of the Entry Thunk to call.
+Arm64EC functions reserve the four bytes before the first instruction in the function for storing information to be used at runtime. In these four bytes, the relative address of Entry Thunk for the function can be found. When performing a call from an x64 function to an Arm64EC function, the emulator reads the four bytes before the start of the function, masks out the lower two bits, and adds that amount to the address of the function. This process produces the address of the Entry Thunk to call.
 
 ### Adjustor Thunks
 
-Adjustor Thunks are signature-less functions which simply transfer control to (tail-call) another function, after performing some transformation to one of the parameters. The type of the parameter(s) being transformed is known, but all the remaining parameters can be anything and, in any number – Adjustor Thunks will not touch any register potentially holding a parameter and will not touch the stack. This is what makes Adjustor Thunks signature-less functions.
+Adjustor Thunks are signature-less functions that transfer control to (tail-call) another function. Before transferring control, they transform one of the parameters. The type of the parameters being transformed is known, but all the remaining parameters can be anything and can be in any number. Adjustor Thunks don't touch any register that potentially holds a parameter, and they don't touch the stack. This characteristic makes Adjustor Thunks signature-less functions.
 
-Adjustor Thunks can be generated automatically by the compiler. This is common, for example, with C++ multiple-inheritance, where any virtual method may be delegated to the parent class, unmodified, aside from an adjustment to the `this` pointer. 
+The compiler can automatically generate Adjustor Thunks. This generation is common, for example, with C++ multiple inheritance, where any virtual method can delegate to the parent class without modification, except for an adjustment to the `this` pointer. 
 
-Below is a real-world example:
+The following example shows a real-world scenario:
 
 ```
 [thunk]:CObjectContext::Release`adjustor{8}':
@@ -488,7 +485,7 @@ In the example above, consider how the code looks in Arm64EC.
     br          x11
 ```
 
-**Adjustor Thunk’s Entry Trunk**
+**Adjustor Thunk's Entry Trunk**
 
 ```
 [thunk]:CObjectContext::Release$entry_thunk`adjustor{8}':
@@ -500,13 +497,13 @@ In the example above, consider how the code looks in Arm64EC.
     br          xip0
 ```
 
-### Fast-Forward Sequences
+### Fast-forward sequences
 
-Some applications make run-time modifications to functions residing in binaries that they do not own but depend on – commonly operating system binaries – for the purpose of detouring execution when the function is called. This is also known as hooking.
+Some applications make run-time modifications to functions residing in binaries that they don't own but depend on – commonly operating system binaries – for the purpose of detouring execution when the function is called. This process is also known as hooking.
 
-At the high-level, the hooking process is simple. In detail, however, hooking is architecture specific and quite complex given the potential variations the hooking logic must address.
+At a high level, the hooking process is simple. In detail, however, hooking is architecture specific and quite complex given the potential variations the hooking logic must address.
 
-In general terms, the process involves the following:
+In general terms, the process involves the following steps:
 
 - Determine the address of the function to hook.
 - Replace the first instruction of the function with a jump to the hook routine.
@@ -514,18 +511,18 @@ In general terms, the process involves the following:
 
 The variations arise from things like:
 
-- The size of the 1st instruction: It is a good idea to replace it with a JMP which is the same size or smaller, to avoid replacing the top of the function while other thread may be running it in flight.
-- The type of the first instruction: If the first instruction has some PC relative nature to it, relocating it may require changing things like the displacement fields. Since they are likely to overflow when an instruction is moved to a distant place, this may require providing equivalent logic with different instructions altogether.
+- The size of the first instruction: It's a good idea to replace it with a JMP that's the same size or smaller, to avoid replacing the top of the function while other thread might be running it in flight.
+- The type of the first instruction: If the first instruction has some PC relative nature to it, relocating it might require changing things like the displacement fields. Since they might overflow when an instruction is moved to a distant place, this change might require providing equivalent logic with different instructions altogether.
 
-Due to all of this complexity, robust and generic hooking logic is rare to find. Frequently the logic present in applications can only cope with a limited set of cases that the application is expecting to encounter in the specific APIs it is interested in. It is not hard to imagine how much of an application compatibility problem this is. Even a simple change in the code or compiler optimizations may render applications unusable if the code no longer looks exactly as expected.
+Due to all of this complexity, robust and generic hooking logic is rare to find. Frequently, the logic present in applications can only cope with a limited set of cases that the application expects to encounter in the specific APIs it is interested in. It's not hard to imagine how much of an application compatibility problem this is. Even a simple change in the code or compiler optimizations might render applications unusable if the code no longer looks exactly as expected.
 
-What would happen to these applications if they were to encounter Arm64 code when setting up a hook? They would most certainly fail.
+What would happen to these applications if they encountered Arm64 code when setting up a hook? They would most certainly fail.
 
-Fast-Forward Sequence (FFS) functions address this compatibility requirement in Arm64EC.
+Fast-forward sequence (FFS) functions address this compatibility requirement in Arm64EC.
 
-FFS are very small x64 functions which contain no real logic and tail-call to the real Arm64EC function. They are optional but enabled by default for all DLL exports and for any function decorated with `__declspec(hybrid_patchable)`.
+FFS are very small x64 functions that contain no real logic and tail-call to the real Arm64EC function. They're optional but enabled by default for all DLL exports and for any function decorated with `__declspec(hybrid_patchable)`.
 
-For these cases, when code obtains a pointer to a given function, either by `GetProcAddress` in the export case, or by `&function` in the `__declspec(hybrid_patchable)` case, the resulting address will contain x64 code. That x64 code will pass for a legitimate x64 function, satisfying most of the hooking logic currently available.
+For these cases, when code obtains a pointer to a given function, either by `GetProcAddress` in the export case, or by `&function` in the `__declspec(hybrid_patchable)` case, the resulting address contains x64 code. That x64 code passes for a legitimate x64 function, satisfying most of the hooking logic currently available.
 
 Consider the following example (error handling omitted for brevity):
 
@@ -540,9 +537,9 @@ auto pgma =
 hr = (*pgma)(IMAGE_FILE_MACHINE_Arm64, &MachineAttributes);
 ```
 
-The function pointer value in the `pgma` variable will contain the address of `GetMachineTypeAttributes`’s FFS.
+The function pointer value in the `pgma` variable contains the address of `GetMachineTypeAttributes`'s FFS.
 
-This is an example of a Fast-Forward Sequence:
+This example shows a Fast-Forward Sequence:
 
 ```
 kernelbase!EXP+#GetMachineTypeAttributes:
@@ -568,15 +565,15 @@ kernelbase!GetMachineTypeAttributes:
                            [...]
 ```
 
-It would be quite inefficient if it was required to run 5 emulated x64 instructions between two Arm64EC functions. FFS functions are special. FFS functions don’t really run if they remain unaltered. The call-checker helper will efficiently check if the FFS hasn’t been changed. If that is the case, the call will be transferred directly to the real destination. If the FFS has been changed in any possible way, then it will no longer be an FFS. Execution will be transferred to the altered FFS and run whichever code may be there, emulating the detour and any hooking logic.
+It would be quite inefficient if it was required to run five emulated x64 instructions between two Arm64EC functions. FFS functions are special. FFS functions don't really run if they remain unaltered. The call-checker helper efficiently checks if the FFS hasn't been changed. If that's the case, the call transfers directly to the real destination. If the FFS is changed in any possible way, then it no longer is an FFS. Execution transfers to the altered FFS and runs whichever code might be there, emulating the detour and any hooking logic.
 
-When the hook transfers execution back to the end of the FFS, it will eventually reach the tail-call to the Arm64EC code, which will then execute after the hook, just as the application is expecting it would.
+When the hook transfers execution back to the end of the FFS, it eventually reaches the tail-call to the Arm64EC code, which then executes after the hook, just as the application expects.
 
-## Authoring Arm64EC in Assembly
+## Authoring Arm64EC in assembly
 
-Windows SDK headers and the C compiler can simplify the job of authoring Arm64EC assembly. For example, the C compiler can be used to generate Entry and Exit Thunks for functions not compiled from C code.
+Windows SDK headers and the C compiler simplify the job of authoring Arm64EC assembly. For example, you can use the C compiler to generate entry and exit thunks for functions that aren't compiled from C code.
 
-Consider the example of an equivalent to the following function `fD` that must be authored in Assembly (ASM). This function can be called by both Arm64EC and x64 code and the `pfE` function pointer may point at either Arm64EC or x64 code as well.
+Consider the example of an equivalent to the following function `fD` that you must author in assembly (ASM). Both Arm64EC and x64 code can call this function, and the `pfE` function pointer can point to either Arm64EC or x64 code.
 
 ```cpp
 typedef int (PF_E)(int, double);
@@ -588,7 +585,7 @@ int fD(int i, double d) {
 }
 ```
 
-Writing `fD` in ASM would look something like:
+Writing `fD` in ASM might look like the following code:
 
 ```
 #include "ksarm64.h"
@@ -619,15 +616,15 @@ Writing `fD` in ASM would look something like:
         end
 ```
 
-In the example above:
+In the preceding example:
 
 - Arm64EC uses the same procedure declaration and prolog/epilog macros as Arm64.
-- Function names should be wrapped by the `A64NAME` macro. When compiling C/C++ code as Arm64EC, the compiler marks the `OBJ` as `Arm64EC` containing Arm64EC code. This does not happen with `ArmASM`. When compiling ASM code there is an alternate way to inform the linker that the produced code is Arm64EC. This is by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_Arm64EC_` is defined and leaves the name unchanged when `_Arm64EC_` is not defined. This makes it possible to share source code between Arm64 and Arm64EC.
-- The `pfE` function pointer must first be run through the EC call checker, together with the appropriate Exit Thunk, in case the target function is x64.
+- Wrap function names with the `A64NAME` macro. When you compile C or C++ code as Arm64EC, the compiler marks the `OBJ` as `ARM64EC` containing Arm64EC code. This marking doesn't happen with `ARMASM`. When you compile ASM code, you can inform the linker that the produced code is Arm64EC by prefixing the function name with `#`. The `A64NAME` macro performs this operation when `_ARM64EC_` is defined and leaves the name unchanged when `_ARM64EC_` isn't defined. This approach makes it possible to share source code between Arm64 and Arm64EC.
+- You must first run the `pfE` function pointer through the EC call checker, together with the appropriate exit thunk, in case the target function is x64.
 
-## Generating Entry and Exit Thunks
+## Generating entry and exit thunks
 
-The next step is to generate the Entry Thunk for `fD` and the Exit Thunk for `pfE`. The C compiler can perform this task with minimal effort, using the `_Arm64XGenerateThunk` compiler keyword.
+The next step is to generate the entry thunk for `fD` and the exit thunk for `pfE`. The C compiler can perform this task with minimal effort by using the `_Arm64XGenerateThunk` compiler keyword.
 
 ```cpp
 void _Arm64XGenerateThunk(int);
@@ -647,17 +644,17 @@ int fE(int i, double d) {
 }
 ```
 
-The `_Arm64XGenerateThunk` keyword tells the C compiler to use the function signature, ignore the body, and generate either an Exit Thunk (when the parameter is 1) or an Entry Thunk (when the parameter is 2).
+The `_Arm64XGenerateThunk` keyword tells the C compiler to use the function signature, ignore the body, and generate either an exit thunk (when the parameter is 1) or an entry thunk (when the parameter is 2).
 
-It is recommended to place thunk generation in its own C file. Being in isolated files makes it simpler to confirm the symbol names by dumping the corresponding `OBJ` symbols or even disassembly.
+Place thunk generation in its own C file. Being in isolated files makes it simpler to confirm the symbol names by dumping the corresponding `OBJ` symbols or even disassembly.
 
-## Custom Entry Thunks
+## Custom entry thunks
 
-Macros have been added to the SDK to help authoring custom, hand-coded, Entry Thunks. One case where this can be used is when authoring custom Adjustor Thunks.
+The SDK includes macros that help you create custom, hand-coded entry thunks. You can use these macros when you create custom adjustor thunks.
 
-Most Adjustor Thunks are generated by the C++ compiler, but they can also be generated manually. This can be found in cases where a generic callback transfers control to the real callback, identified by one of the parameters.
+Most adjustor thunks are generated by the C++ compiler, but you can also generate them manually. You might manually generate an adjustor thunk when a generic callback transfers control to the real callback, and one of the parameters identifies the real callback.
 
-Below is an example in Arm64 Classic code:
+The following example shows an adjustor thunk in Arm64 Classic code:
 
 ```
     NESTED_ENTRY MyAdjustorThunk
@@ -671,9 +668,9 @@ Below is an example in Arm64 Classic code:
     NESTED_END
 ```
 
-In this example, the target function address is retrieved from the element of a structure, provided by reference, through the 1st parameter. Because the structure is writable, the target address must be validated through Control Flow Guard (CFG).
+In this example, the first parameter provides a reference to a structure. The code retrieves the target function address from an element of this structure. Because the structure is writable, Control Flow Guard (CFG) must validate the target address.
 
-The below example demonstrates how the equivalent Adjustor Thunk would look when ported to Arm64EC:
+The following example shows how to port the equivalent adjustor thunk to Arm64EC:
 
 ```
     NESTED_ENTRY_COMDAT A64NAME(MyAdjustorThunk)
@@ -687,12 +684,12 @@ The below example demonstrates how the equivalent Adjustor Thunk would look when
     NESTED_END
 ```
 
-The code above does not supply an Exit Thunk (in register x10). This is not possible since the code can be executed for many different signatures. This code is taking advantage of the caller having set x10 to the Exit Thunk. The caller would have made the call targeting an explicit signature.
+The preceding code doesn't supply an exit thunk (in register x10). This approach isn't possible because the code can execute for many different signatures. This code takes advantage of the caller setting x10 to the exit thunk. The caller makes the call targeting an explicit signature.
 
-The above code does need an Entry Thunk to address the case when the caller is x64 code. This is how to author the corresponding Entry Thunk, using the macro for custom Entry Thunks:
+The preceding code needs an entry thunk to address the case when the caller is x64 code. The following example shows how to author the corresponding entry thunk by using the macro for custom entry thunks:
 
 ```
-    Arm64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
+    ARM64EC_CUSTOM_ENTRY_THUNK A64NAME(MyAdjustorThunk)
     ldr     x9, [x0, 0x18]
     adrp    xip0, __os_arm64x_x64_jump
     ldr     xip0, [xip0, __os_arm64x_x64_jump]
@@ -700,33 +697,33 @@ The above code does need an Entry Thunk to address the case when the caller is x
     LEAF_END
 ```
 
-Unlike other functions, this Entry Thunk does not eventually transfer control to the associated function (the Adjustor Thunk). In this case, the functionality itself (performing the parameter adjustment) is embedded into the Entry Thunk and control is transferred directly to the end target, via the `__os_arm64x_x64_jump` helper.
+Unlike other functions, this entry thunk doesn't eventually transfer control to the associated function (the adjustor thunk). In this case, the entry thunk embeds the functionality itself (performing the parameter adjustment) and transfers control directly to the end target through the `__os_arm64x_x64_jump` helper.
 
-## Dynamically Generating (JIT Compiling) Arm64EC code
+## Dynamically generating (JIT compiling) Arm64EC code
 
-In Arm64EC processes there are two types of executable memory: Arm64EC code and x64 code.
+In Arm64EC processes, two types of executable memory exist: Arm64EC code and x64 code.
 
-The operating system extracts this information from the loaded binaries. x64 binaries are all x64 and Arm64EC contain a range-table for Arm64EC vs x64 code pages.
+The operating system extracts this information from the loaded binaries. x64 binaries are all x64, and Arm64EC binaries contain a range table for Arm64EC versus x64 code pages.
 
-What about Dynamically Generated code? Just-in-time (JIT) compilers generate code, at runtime, which is not backed by any binary file.
+What about dynamically generated code? Just-in-time (JIT) compilers generate code at runtime that isn't backed by any binary file.
 
-Usually this implies:
+Usually, this process involves the following steps:
 
 - Allocating writable memory (`VirtualAlloc`).
-- Producing the code into the allocated memory.
-- Re-protecting the memory from Read-Write to Read-Execute (`VirtualProtect`).
-- Add unwind function entries for all non-trivial (non-leaf) generated functions (`RtlAddFunctionTable` or `RtlAddGrowableFunctionTable`).
+- Producing the code in the allocated memory.
+- Re-protecting the memory from read-write to read-execute (`VirtualProtect`).
+- Adding unwind function entries for all non-trivial (non-leaf) generated functions (`RtlAddFunctionTable` or `RtlAddGrowableFunctionTable`).
 
-For trivial compatibility reasons, any application performing these steps in an Arm64EC process will result in the code being considered x64 code. This will happen for any process using the unmodified x64 Java Runtime, .NET runtime, JavaScript engine, etc.
+For trivial compatibility reasons, if an application performs these steps in an Arm64EC process, the operating system considers the code as x64 code. This behavior happens for any process that uses the unmodified x64 Java Runtime, .NET runtime, JavaScript engine, and so on.
 
-To generate Arm64EC dynamic code, the process is mostly the same with only two differences:
+To generate Arm64EC dynamic code, follow the same process with two differences:
 
-- When allocating the memory, use newer `VirtualAlloc2` (instead of `VirtualAlloc` or `VirtualAllocEx`) and provide the `MEM_EXTENDED_PARAMETER_EC_CODE` attribute.
+- When allocating the memory, use the newer `VirtualAlloc2` (instead of `VirtualAlloc` or `VirtualAllocEx`) and provide the `MEM_EXTENDED_PARAMETER_EC_CODE` attribute.
 - When adding function entries:
-  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type will match the x64 format. For Arm64 format when compiling Am64EC, use the `ARM64_RUNTIME_FUNCTION` type instead.
-  - Do not use the older `RtlAddFunctionTable` API. Always use the newer `RtlAddGrowableFunctionTable` API instead.
+  - They must be in Arm64 format. When compiling Arm64EC code, the `RUNTIME_FUNCTION` type matches the x64 format. For Arm64 format when compiling Arm64EC, use the `ARM64_RUNTIME_FUNCTION` type instead.
+  - Don't use the older `RtlAddFunctionTable` API. Always use the newer `RtlAddGrowableFunctionTable` API.
 
-Below is an example of memory allocation:
+The following example shows memory allocation:
 
 ```cpp
     MEM_EXTENDED_PARAMETER Parameter = { 0 };
@@ -747,10 +744,10 @@ Below is an example of memory allocation:
         1);
 ```
 
-And an example of adding one unwind function entry:
+And the following example shows how to add one unwind function entry:
 
 ```cpp
-Arm64_RUNTIME_FUNCTION FunctionTable[1];
+ARM64_RUNTIME_FUNCTION FunctionTable[1];
 
 FunctionTable[0].BeginAddress = 0;
 FunctionTable[0].Flags = PdataPackedUnwindFunction;

@@ -18,7 +18,7 @@ By reading this page, you'll learn:
 
 ## Headset overview
 
-Headsets are audio capture and playback devices most often used to communicate with other players in online games but can also be used in gameplay or for other creative uses. Headsets are supported in Windows 10 and Xbox UWP apps by the [Windows.Gaming.Input][] namespace.
+Headsets are audio capture and playback devices most often used to communicate with other players in online games but can also be used in gameplay or for other creative uses. Headsets are supported in Windows 10 or Windows 11 and Xbox UWP apps through the [Windows.Gaming.Input][] namespace.
 
 
 ## Detect and track headsets

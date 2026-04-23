@@ -1,6 +1,686 @@
 {
   "redirections": [
     {
+      "source_path": "hub/android/emulator.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/native-android.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/overview.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/pwa.md",
+      "redirect_url": "/windows/dev-environment/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/uno-multiplatform.md",
+      "redirect_url": "/previous-versions/windows/app-dev/how-tos/uno-multiplatform",
+      "redirect_document_id": false
+    },
+	{
+      "source_path": "hub/apps/whats-new/windows-11-build-22000.md",
+      "redirect_url": "/windows/apps/whats-new/whats-new-for-developers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/uno-simple-photo-viewer.md",
+      "redirect_url": "/previous-versions/windows/app-dev/get-started/uno-simple-photo-viewer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/index.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/tutorial-csharp-ui-maui-toolkit",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-graph-api.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/tutorial-graph-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/walkthrough-first-app.md",
+      "redirect_url": "/previous-versions/windows/app-dev/windows-dotnet-maui/walkthrough-first-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/customer-database-app-structure.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-app-structure",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/customer-database-tutorial.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/customer-database-tutorial",
+      "redirect_document_id": false
+    },
+	{
+      "source_path": "hub/apps/get-started/sign-up.md",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/enterprise-shared-storage.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/enterprise-shared-storage",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/index.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/wip-dev-guide.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/wip-dev-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/enterprise/wip-hub.md",
+      "redirect_url": "/previous-versions/windows/uwp/enterprise/wip-hub",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/desktop-to-uwp-migrate.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/desktop-to-uwp-migrate",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/index.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-bookstore1.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-bookstore1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-bookstore2.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-bookstore2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-case-study-quizgame.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-case-study-quizgame",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-input-and-sensors.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-input-and-sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-porting-to-a-uwp-project.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-porting-to-a-uwp-project",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-porting-xaml-and-ui.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-porting-xaml-and-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-root.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-root",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/w8x-to-uwp-troubleshooting.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/w8x-to-uwp-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-business-and-data.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-business-and-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-case-study-bookstore1.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-case-study-bookstore1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-case-study-bookstore2.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-case-study-bookstore2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-form-factors-and-ux.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-form-factors-and-ux",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-input-and-sensors.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-input-and-sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-namespace-and-class-mappings.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-namespace-and-class-mappings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-porting-to-a-uwp-project.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-porting-to-a-uwp-project",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-porting-xaml-and-ui.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-porting-xaml-and-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-root.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-root",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/porting/wpsl-to-uwp-troubleshooting.md",
+      "redirect_url": "/previous-versions/windows/uwp/porting/wpsl-to-uwp-troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/ad-mediation-service.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/ad-mediation-service",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/adcontrol-in-html-5-and-javascript.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/adcontrol-in-html-5-and-javascript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/adcontrol-in-xaml-and--net.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/adcontrol-in-xaml-and--net",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/add-advertisements-to-video-content.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/add-advertisements-to-video-content",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/banner-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/banner-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/best-practices-for-ads-in-apps.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/best-practices-for-ads-in-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/developer-walkthroughs.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/developer-walkthroughs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/display-ads-in-your-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/display-ads-in-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/error-handling-in-javascript-walkthrough.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/error-handling-in-javascript-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/error-handling-in-xamlc-walkthrough.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/error-handling-in-xamlc-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/error-handling-with-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/error-handling-with-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/html-and-javascript-troubleshooting-guide.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/html-and-javascript-troubleshooting-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/install-the-microsoft-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/install-the-microsoft-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/interstitial-ad-sample-code-in-c.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/interstitial-ad-sample-code-in-c",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/interstitial-ad-sample-code-in-javascript.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/interstitial-ad-sample-code-in-javascript",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/interstitial-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/interstitial-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/known-issues-for-the-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/known-issues-for-the-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/native-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/native-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/optimize-ad-unit-viewability.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/optimize-ad-unit-viewability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/release-notes-for-the-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/release-notes-for-the-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/set-up-ad-units-in-your-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/set-up-ad-units-in-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/supported-ad-sizes-for-banner-ads.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/supported-ad-sizes-for-banner-ads",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/ui-and-user-experience-guidelines.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/ui-and-user-experience-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/update-your-app-to-the-latest-advertising-libraries.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/update-your-app-to-the-latest-advertising-libraries",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/windows-premium-ads-publishers-program.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/windows-premium-ads-publishers-program",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/xaml-and-c-troubleshooting-guide.md",
+      "redirect_url": "/previous-versions/windows/uwp/monetize/xaml-and-c-troubleshooting-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/video-conference-mute.md",
+      "redirect_url": "/previous-versions/windows/powertoys/video-conference-mute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/wsa/index.md",
+      "redirect_url": "/previous-versions/windows/android/wsa/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/wsa/release-notes.md",
+      "redirect_url": "/previous-versions/windows/android/wsa/release-notes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/environments.md",
+      "redirect_url": "/previous-versions/windows/dev-home/environments",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/extensions.md",
+      "redirect_url": "/previous-versions/windows/dev-home/extensions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/index.md",
+      "redirect_url": "/previous-versions/windows/dev-home/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/setup.md",
+      "redirect_url": "/previous-versions/windows/dev-home/setup",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/utilities.md",
+      "redirect_url": "/previous-versions/windows/dev-home/utilities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/windows-customization.md",
+      "redirect_url": "/previous-versions/windows/dev-home/windows-customization",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/whats-new/latest-docs-updates.md",
+      "redirect_url": "/windows/apps/whats-new/whats-new-for-developers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/devices/kinect-for-windows.md",
+      "redirect_url": "https://azure.microsoft.com/en-us/products/kinect-dk",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/automate-launching-uwp-apps.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/automate-launching-uwp-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/cpusets-games.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/cpusets-games",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/dev-home.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/dev-home",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-environment-setup.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-environment-setup",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-custom-cpp.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-custom-cpp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-html.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-html",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-landing.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-landing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-unity-versioning.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-unity-versioning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/development-lanes-unity.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/development-lanes-unity",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-capture.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-home.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-home",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-live.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-live",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-networking.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-networking",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-performance.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devhome-settings.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devhome-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/device-portal-xbox.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/device-portal-xbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devkit-activation.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devkit-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/devkit-deactivation.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/devkit-deactivation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/disable-scaling.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/disable-scaling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/getting-started.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/getting-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/how-to-disable-mouse-mode.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/how-to-disable-mouse-mode",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/index.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/introduction-to-xbox-tools.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/introduction-to-xbox-tools",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/known-issues.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/known-issues",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/multi-user-applications.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/multi-user-applications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/reference.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/reference",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/samples-xaml-dev.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/samples-xaml-dev",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/samples-xaml-media.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/samples-xaml-media",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/samples.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/system-resource-allocation.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/system-resource-allocation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/tailoring-for-xbox.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/tailoring-for-xbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/turn-off-overscan.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/turn-off-overscan",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-deployinfo-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-deployinfo-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-fiddler.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-fiddler",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-networkcredentials-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-networkcredentials-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-remoteinput-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-remoteinput-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-remoteinput-controllers-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-remoteinput-controllers-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/uwp-sshpins-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/uwp-sshpins-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/ves-on-xbox.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/ves-on-xbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-fiddler-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-fiddler-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-folder-upload.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-folder-upload",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-httpMonitor-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-httpMonitor-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-loose-folder-register-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-loose-folder-register-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-media-capture-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-media-capture-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-sandbox-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-sandbox-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-smb-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-smb-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-user-management.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-user-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-xboxinfo-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-xboxinfo-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/wdp-xboxsettings-api.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/wdp-xboxsettings-api",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/whats-new.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/whats-new",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xbox-apps/xbox-dev-mode-companion.md",
+      "redirect_url": "/previous-versions/windows/uwp/xbox-apps/xbox-dev-mode-companion",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-august-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-august-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-december-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-february-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-january-2019.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-july-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-july-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-may-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-september-2017.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/whats-new/windows-docs-september-2018.md",
+      "redirect_url": "/windows/uwp/",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/monetize/get-xbox-live-analytics.md",
       "redirect_url": "/windows/uwp/publish/xbox-analytics-report",
       "redirect_document_id": false
@@ -49,7 +729,7 @@
       "source_path": "uwp/get-started/get-uwp-app-samples.md",
       "redirect_url": "/windows/apps/get-started/samples",
       "redirect_document_id": false
-    },  
+    },
     {
       "source_path": "uwp/home.md",
       "redirect_url": "/windows/uwp/",
@@ -162,22 +842,12 @@
     },
     {
       "source_path": "uwp/get-started/enable-your-device-for-development.md",
-      "redirect_url": "/windows/apps/get-started/enable-your-device-for-development",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "uwp/get-started/get-set-up.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/get-started/get-set-up.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/get-started/sign-up.md",
-      "redirect_url": "/windows/apps/get-started/sign-up",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
       "redirect_document_id": false
     },
     {
@@ -667,7 +1337,7 @@
     },
     {
       "source_path": "hub/apps/whats-new/windows-11-build-22000-apis.md",
-      "redirect_url": "/windows/apps/whats-new/windows-11-build-22000",
+      "redirect_url": "/windows/apps/whats-new/whats-new-for-developers",
       "redirect_document_id": false
     },
     {
@@ -1177,13 +1847,13 @@
     },
     {
       "source_path": "uwp/controls-and-patterns/xaml-styles.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-styles",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-styles",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/controls-and-patterns/xaml-theme-resources.md",
-      "redirect_url": "/windows/uwp/design/controls-and-patterns/xaml-theme-resources",
-      "redirect_document_id": true
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-theme-resources",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/controls-and-patterns/tiles-and-notifications/channel-types.md",
@@ -1512,7 +2182,7 @@
     },
     {
       "source_path": "uwp/layout/show-multiple-views.md",
-      "redirect_url": "/windows/uwp/design/layout/show-multiple-views",
+      "redirect_url": "/windows/uwp/ui-input/show-multiple-views",
       "redirect_document_id": true
     },
     {
@@ -1552,38 +2222,38 @@
     },
     {
       "source_path": "uwp/style/motion-dragdrop.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-dragdrop",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-dragdrop",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-edgebased.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-edgebased",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-edgebased",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-fade.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-fade",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-fade",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-list.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-list",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-list",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-pointer.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-pointer",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-pointer",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-popup-animations.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-popup-animations",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-popup-animations",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion-reposition.md",
-      "redirect_url": "/windows/uwp/design/motion/motion-reposition",
-      "redirect_document_id": true
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/style/motion.md",
@@ -1717,7 +2387,7 @@
     },
     {
       "source_path": "uwp/graphics/3-d-perspective-effects.md",
-      "redirect_url": "/windows/uwp/design/layout/3-d-perspective-effects",
+      "redirect_url": "/windows/apps/develop/platform/xaml/3-d-perspective-effects",
       "redirect_document_id": false
     },
     {
@@ -4766,6 +5436,81 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/desktop/modernize/advanced-scenarios-xaml-islands-cpp.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/advanced-scenarios-xaml-islands-cpp",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-custom-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands-cpp",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-custom-control-with-xaml-islands.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-custom-control-with-xaml-islands",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-standard-control-with-xaml-islands-cpp.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands-cpp",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/host-standard-control-with-xaml-islands.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/host-standard-control-with-xaml-islands",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-xaml-hosting-api.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/using-the-xaml-hosting-api",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/xaml-islands.md",
+      "redirect_url": "/windows/apps/desktop/modernize/xaml-islands/xaml-islands",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-mica-win32.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-mica-win32",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-rounded-corners.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-rounded-corners",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-snap-layout-menu.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-snap-layout-menu",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/apply-windows-themes.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/apply-windows-themes",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-win32.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-win32",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-windows-forms.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-windows-forms",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-wpf.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-wpf",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/visual-layer-in-desktop-apps.md",
+      "redirect_url": "/windows/apps/desktop/modernize/ui/visual-layer-in-desktop-apps",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "uwp/porting/desktop-to-uwp-root.md",
       "redirect_url": "/windows/msix/desktop/desktop-to-uwp-root",
       "redirect_document_id": false
@@ -5161,6 +5906,21 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "hub/apps/windows-app-sdk/older-downloads.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/downloads-archive",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/get-started/get-set-up.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/getting-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/get-set-up.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/project-reunion/index.md",
       "redirect_url": "/windows/apps/windows-app-sdk/index",
       "redirect_document_id": false
@@ -5182,7 +5942,7 @@
     },
     {
       "source_path": "hub/apps/project-reunion/set-up-your-development-environment.md",
-      "redirect_url": "/windows/apps/windows-app-sdk/set-up-your-development-environment",
+      "redirect_url": "/windows/apps/get-started/start-here",
       "redirect_document_id": false
     },
     {
@@ -5261,6 +6021,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/winui/reference/iwindownative.md",
+      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/reference/iwindownative-windowhandle.md",
+      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/samples.md",
+      "redirect_url": "/windows/apps/get-started/samples",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/preview-experimental-install.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "hub/apps/get-started/build-apps-for-windows.md",
       "redirect_url": "/windows/apps/winui/winui3/create-your-first-winui3-app",
       "redirect_document_id": false
@@ -5273,16 +6053,6 @@
     {
       "source_path": "hub/apps/winui/winui3/desktop-build-basic-winui3-app.md",
       "redirect_url": "/windows/apps/winui/winui3/desktop-winui3-app-with-basic-interop",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/winui/reference/iwindownative.md",
-      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/winui/reference/iwindownative-windowhandle.md",
-      "redirect_url": "/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nf-microsoft-ui-xaml-window-iwindownative-get_windowhandle",
       "redirect_document_id": false
     },
     {
@@ -5562,7 +6332,7 @@
     },
     {
       "source_path": "uwp/design/controls-and-patterns/content-links.md",
-      "redirect_url": "/windows/apps/design/controls/content-links",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/content-links",
       "redirect_document_id": false
     },
     {
@@ -5867,12 +6637,12 @@
     },
     {
       "source_path": "uwp/design/controls-and-patterns/xaml-styles.md",
-      "redirect_url": "/windows/apps/design/style/xaml-styles",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-styles",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/controls-and-patterns/xaml-theme-resources.md",
-      "redirect_url": "/windows/apps/design/style/xaml-theme-resources",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-theme-resources",
       "redirect_document_id": false
     },
     {
@@ -5997,42 +6767,42 @@
     },
     {
       "source_path": "uwp/design/input/cortana-deep-link-into-your-app.md",
-      "redirect_url": "/windows/apps/design/input/cortana-deep-link-into-your-app",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-deep-link-into-your-app",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-design-guidelines.md",
-      "redirect_url": "/windows/apps/design/input/cortana-design-guidelines",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-design-guidelines",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
-      "redirect_url": "/windows/apps/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-interact-with-a-background-app.md",
-      "redirect_url": "/windows/apps/design/input/cortana-interact-with-a-background-app",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interact-with-a-background-app",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-interactions.md",
-      "redirect_url": "/windows/apps/design/input/cortana-interactions",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interactions",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-launch-a-background-app-with-voice-commands.md",
-      "redirect_url": "/windows/apps/design/input/cortana-launch-a-background-app-with-voice-commands",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-background-app-with-voice-commands",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-launch-a-foreground-app-with-voice-commands.md",
-      "redirect_url": "/windows/apps/design/input/cortana-launch-a-foreground-app-with-voice-commands",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-foreground-app-with-voice-commands",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/input/cortana-support-natural-language-voice-commands.md",
-      "redirect_url": "/windows/apps/design/input/cortana-support-natural-language-voice-commands",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-support-natural-language-voice-commands",
       "redirect_document_id": false
     },
     {
@@ -6047,7 +6817,7 @@
     },
     {
       "source_path": "uwp/design/input/drag-and-drop.md",
-      "redirect_url": "/windows/apps/design/input/drag-and-drop",
+      "redirect_url": "/windows/apps/develop/data/drag-and-drop",
       "redirect_document_id": false
     },
     {
@@ -6252,7 +7022,7 @@
     },
     {
       "source_path": "uwp/design/layout/3-d-perspective-effects.md",
-      "redirect_url": "/windows/apps/design/layout/3-d-perspective-effects",
+      "redirect_url": "/windows/apps/develop/platform/xaml/3-d-perspective-effects",
       "redirect_document_id": false
     },
     {
@@ -6262,12 +7032,12 @@
     },
     {
       "source_path": "uwp/design/layout/app-window.md",
-      "redirect_url": "/windows/apps/design/layout/app-window",
+      "redirect_url": "/windows/uwp/ui-input/app-window",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/layout/application-view.md",
-      "redirect_url": "/windows/apps/design/layout/application-view",
+      "redirect_url": "/windows/uwp/ui-input/application-view",
       "redirect_document_id": false
     },
     {
@@ -6327,12 +7097,12 @@
     },
     {
       "source_path": "uwp/design/layout/show-multiple-views.md",
-      "redirect_url": "/windows/apps/design/layout/show-multiple-views",
+      "redirect_url": "/windows/uwp/ui-input/show-multiple-views",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/layout/transforms.md",
-      "redirect_url": "/windows/apps/design/layout/transforms",
+      "redirect_url": "/windows/apps/develop/platform/xaml/transforms",
       "redirect_document_id": false
     },
     {
@@ -6362,17 +7132,17 @@
     },
     {
       "source_path": "uwp/design/motion/motion-dragdrop.md",
-      "redirect_url": "/windows/apps/design/motion/motion-dragdrop",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-dragdrop",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-edgebased.md",
-      "redirect_url": "/windows/apps/design/motion/motion-edgebased",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-edgebased",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-fade.md",
-      "redirect_url": "/windows/apps/design/motion/motion-fade",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-fade",
       "redirect_document_id": false
     },
     {
@@ -6382,22 +7152,22 @@
     },
     {
       "source_path": "uwp/design/motion/motion-list.md",
-      "redirect_url": "/windows/apps/design/motion/motion-list",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-list",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-pointer.md",
-      "redirect_url": "/windows/apps/design/motion/motion-pointer",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-pointer",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-popup-animations.md",
-      "redirect_url": "/windows/apps/design/motion/motion-popup-animations",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-popup-animations",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/design/motion/motion-reposition.md",
-      "redirect_url": "/windows/apps/design/motion/motion-reposition",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
       "redirect_document_id": false
     },
     {
@@ -6712,7 +7482,7 @@
     },
     {
       "source_path": "uwp/design/style/brushes.md",
-      "redirect_url": "/windows/apps/design/style/brushes",
+      "redirect_url": "/windows/apps/develop/platform/xaml/brushes",
       "redirect_document_id": false
     },
     {
@@ -6732,7 +7502,7 @@
     },
     {
       "source_path": "uwp/design/style/reveal-focus.md",
-      "redirect_url": "/windows/apps/design/style/reveal-focus",
+      "redirect_url": "/windows/uwp/ui-input/reveal-focus",
       "redirect_document_id": false
     },
     {
@@ -6806,11 +7576,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/windows-app-sdk/samples.md",
-      "redirect_url": "/windows/apps/get-started/samples",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "hub/apps/whats-new/build2021-docs.md",
       "redirect_url": "/windows/apps",
       "redirect_document_id": false
@@ -6869,6 +7634,21 @@
       "source_path": "hub/apps/get-started/simple-photo-viewer-winiu3.md",
       "redirect_url": "/windows/apps/get-started/simple-photo-viewer-winui3",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/migrate-from-uwp-to-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/winforms-plus-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/wpf-plus-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk",
+      "redirect_document_id": true
     },
     {
       "source_path": "hub/package-manager/package/windows-package-manager-policies-change-history.md",
@@ -6962,7 +7742,7 @@
     },
     {
       "source_path": "uwp/publish/add-on-submissions.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-add-on",
+      "redirect_url": "/windows/apps/publish/publish-your-app/add-on/create-app-submission",
       "redirect_document_id": false
     },
     {
@@ -6972,22 +7752,22 @@
     },
     {
       "source_path": "uwp/publish/age-ratings.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/age-ratings",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/app-package-requirements.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/app-package-requirements?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-requirements",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/app-screenshots-and-images.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/screenshots-and-images?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/screenshots-and-images",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/app-submissions.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/create-app-submission",
       "redirect_document_id": false
     },
     {
@@ -6997,32 +7777,32 @@
     },
     {
       "source_path": "uwp/publish/avoid-common-certification-failures.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/avoid-common-certification-failures?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/resolve-submission-errors#avoid-common-certification-failures",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/category-and-subcategory-table.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/categories-and-subcategories?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/categories-and-subcategories",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/choose-visibility-options.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/visibility-options",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/configure-precise-release-scheduling.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/release-schedule?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/schedule-pricing-changes#configure-precise-release-scheduling",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/create-add-on-store-listings.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on",
+      "redirect_url": "/windows/apps/publish/publish-your-app/add-on/create-app-store-listing",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/create-app-store-listings.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/create-app-store-listing",
       "redirect_document_id": false
     },
     {
@@ -7032,37 +7812,37 @@
     },
     {
       "source_path": "uwp/publish/create-your-app-by-reserving-a-name.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/reserve-your-apps-name",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/define-market-selection.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/market-selection?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/market-selection",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/device-family-availability.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/device-families?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/upload-app-packages#device-family-availability",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/enter-add-on-properties.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on",
+      "redirect_url": "/windows/apps/publish/publish-your-app/add-on/enter-app-properties",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/enter-app-properties.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/enter-app-properties",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/guidance-for-app-package-management.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/app-package-management?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-management",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/import-and-export-store-listings.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/import-and-export-store-listings?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/import-and-export-store-listings",
       "redirect_document_id": false
     },
     {
@@ -7077,32 +7857,32 @@
     },
     {
       "source_path": "uwp/publish/manage-submission-options.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/manage-submission-options?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/manage-submission-options",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/age-ratings.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/age-ratings?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/age-ratings",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/app-submissions.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/create-app-submission?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/create-app-submission",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/create-app-store-listings.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/create-app-store-listing",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/create-your-app-by-reserving-a-name.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/reserve-your-apps-name?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/reserve-your-apps-name",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/enter-app-properties.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/enter-app-properties",
       "redirect_document_id": false
     },
     {
@@ -7112,82 +7892,82 @@
     },
     {
       "source_path": "uwp/publish/msiexe/overview.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/overview?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/reserve-your-apps-name",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/provide-package-details.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/upload-app-packages",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/set-app-pricing-and-availability.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/price-and-availability",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/msiexe/the-app-certification-process.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/app-certification-process",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/notes-for-certification.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/notes-for-certification?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/manage-submission-options#notes-for-certification",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/opening-a-developer-account.md",
-      "redirect_url": "/windows/apps/publish/partner-center/opening-a-developer-account?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/package-version-numbering.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/package-version-numbering?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-requirements#package-version-numbering",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/partner-center-workspaces.md",
-      "redirect_url": "/windows/apps/publish/partner-center/partner-center-workspaces?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/partner-center/partner-center-workspaces",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/product-declarations.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/product-declarations?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/product-declarations",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/pwa/create-your-app-by-reserving-a-name.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/reseerve-your-apps-name",
+      "redirect_url": "/windows/apps/publish/publish-your-app/pwa/reserve-your-apps-name",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/pwa/overview.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/overview?pivots=store-installer-pwa",
+      "redirect_url": "/windows/apps/publish/publish-your-app/pwa/reserve-your-apps-name",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/pwa/turn-your-website-pwa.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/turn-your-website-pwa?pivots=store-installer-pwa",
+      "redirect_url": "/windows/apps/publish/publish-your-app/pwa/turn-your-website-pwa",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/resolve-submission-errors.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/resolve-submission-errors?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/resolve-submission-errors",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/set-add-on-pricing-and-availability.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-add-on",
+      "redirect_url": "/windows/apps/publish/publish-your-app/add-on/price-and-availability",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/set-and-schedule-app-pricing.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/schedule-pricing-changes?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/schedule-pricing-changes",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/set-app-pricing-and-availability.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/price-and-availability?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/price-and-availability",
       "redirect_document_id": false
     },
     {
@@ -7197,17 +7977,17 @@
     },
     {
       "source_path": "uwp/publish/set-your-add-on-product-id.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-add-on",
+      "redirect_url": "/windows/apps/publish/publish-your-app/add-on/create-app-submission#set-your-add-on-product-type-and-product-id",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/supported-languages.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/supported-languages?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-requirements#supported-languages",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/the-app-certification-process.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/app-certification-process?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-certification-process",
       "redirect_document_id": false
     },
     {
@@ -7217,12 +7997,12 @@
     },
     {
       "source_path": "uwp/publish/upload-app-packages.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/upload-app-packages",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/publish/write-a-great-app-description.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/write-great-app-description?pivots=store-installer-msix",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/write-great-app-description",
       "redirect_document_id": false
     },
     {
@@ -7242,7 +8022,7 @@
     },
     {
       "source_path": "uwp/publish/msiexe/update-your-app.md",
-      "redirect_url": "/windows/apps/publish/update-your-app",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/publish-update-to-your-app-on-store",
       "redirect_document_id": false
     },
     {
@@ -7276,8 +8056,8 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/publish/app-management-and-services.md",
-      "redirect_url": "/windows/apps/publish/app-management-and-services",
+      "source_path": "uwp/publish/product-management.md",
+      "redirect_url": "/windows/apps/publish/product-management",
       "redirect_document_id": false
     },
     {
@@ -7376,11 +8156,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/publish/organizational-licensing.md",
-      "redirect_url": "/windows/apps/publish/organizational-licensing",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/publish/package-flights.md",
       "redirect_url": "/windows/apps/publish/package-flights",
       "redirect_document_id": false
@@ -7445,14 +8220,14 @@
       "redirect_url": "/windows/apps/publish/partner-center/associate-existing-azure-ad-tenant-with-partner-center-account",
       "redirect_document_id": false
     },
-     {
+    {
       "source_path": "hub/apps/publish/partner-center/add-users-groups-and-azure-ad-applications.md",
       "redirect_url": "/windows/apps/publish/partner-center/overview-users-groups-azure-ad-applications",
       "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/publish/partner-center/opening-a-developer-account.md",
-      "redirect_url": "/windows/apps/publish/partner-center/partner-center-developer-account",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account",
       "redirect_document_id": false
     },
     {
@@ -7509,79 +8284,2331 @@
       "source_path": "uwp/publish/store-app-quality.md",
       "redirect_url": "/windows/apps/publish/store-app-quality",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-developer-code-of-conduct.md",
       "redirect_url": "/windows/apps/publish/store-developer-code-of-conduct",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policies-and-code-of-conduct.md",
       "redirect_url": "/windows/apps/publish/store-policies-and-code-of-conduct",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policies-change-history.md",
       "redirect_url": "/windows/apps/publish/store-policies-change-history",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policies.md",
       "redirect_url": "/windows/apps/publish/store-policies",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-11.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-11",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-12.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-12",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-13.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-13",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-14.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-14",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-15.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-15",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-16.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-16",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-6.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-6",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/store-policy-archive/store-policy-7-7.md",
       "redirect_url": "/windows/apps/publish/store-policy-archive/store-policy-7-7",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "uwp/publish/index.md",
       "redirect_url": "/windows/apps/publish/",
       "redirect_document_id": false
-    },    
+    },
     {
       "source_path": "hub/apps/publish/update-your-app.md",
-      "redirect_url": "/windows/apps/publish/publish-your-app/publish-update-to-your-app-on-store?pivots=store-installer-msi-exe",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/publish-update-to-your-app-on-store",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/data-access/mysql-databases.md",
+      "redirect_url": "/windows/apps/develop/data-access/mysql-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/data-access/mongo-db-databases.md",
+      "redirect_url": "/windows/apps/develop/data-access/mongodb-database",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/xamarin-android.md",
+      "redirect_url": "/dotnet/maui/migration/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/analytics.md",
+      "redirect_url": "/partner-center/analyze-app-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/acquisitions-report.md",
+      "redirect_url": "/partner-center/acquisitions-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/add-on-acquisitions-report.md",
+      "redirect_url": "/partner-center/add-on-acquisitions-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/usage-report.md",
+      "redirect_url": "/partner-center/usage-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/health-report.md",
+      "redirect_url": "/partner-center/health-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/ratings-and-reviews.md",
+      "redirect_url": "/partner-center/ratings-and-reviews",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/ratings-report.md",
+      "redirect_url": "/partner-center/ratings-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/reviews-report.md",
+      "redirect_url": "/partner-center/reviews-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/feedback-report.md",
+      "redirect_url": "/partner-center/feedback-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/xbox-analytics-report.md",
+      "redirect_url": "/partner-center/xbox-analytics-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/insights-report.md",
+      "redirect_url": "/partner-center/insights-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/advertising-performance-report.md",
+      "redirect_url": "/partner-center/advertising-performance-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/download-analytic-reports.md",
+      "redirect_url": "/partner-center/download-analytic-reports",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/distribute-through-store/best-practices-for-win32-app-distribution.md",
+      "redirect_url": "/windows/apps/distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/settings/index.md",
+      "redirect_url": "/windows/apps/develop/settings/settings-windows-11",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/javascript/windows-or-wsl.md",
+      "redirect_url": "hub/dev-environment/javascript/nodejs-overview.md",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/dall-e-maui-windows.md",
+      "redirect_url": "/windows/ai/samples/dall-e-maui-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-dotnet-maui/tutorial-maui-ai.md",
+      "redirect_url": "/windows/ai/samples/tutorial-maui-ai",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/paste-as-plain-text.md",
+      "redirect_url": "/windows/powertoys/advanced-paste",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/dev-options.md",
+      "redirect_url": "/windows/apps/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/microsoft-passport.md",
+      "redirect_url": "/windows/apps/develop/security/windows-hello",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/microsoft-passport-login.md",
+      "redirect_url": "/windows/apps/develop/security/windows-hello-login",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/microsoft-passport-login-auth-service.md",
+      "redirect_url": "/windows/apps/develop/security/windows-hello-auth-service",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/security-and-identity.md",
+      "redirect_url": "/windows/apps/develop/security/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/apps-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/apps-get-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/apps-list-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/ci-cd-environments.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/info-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/init-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/install.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/package-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/publish-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/reconfigure-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/settings-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/settings-setpdn-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-delete-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-get-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-getListingAssets-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-poll-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-publish-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-status-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-update-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/msstore-dev-cli/submission-updateMetadata-command.md",
+      "redirect_url": "/windows/apps/publish/msstore-dev-cli/commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/add-additional-information.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/add-additional-information",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/add-and-edit-store-listing-info.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/add-and-edit-store-listing-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/age-ratings.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/age-ratings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/app-certification-process.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-certification-process",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/app-package-management.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-management",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/app-package-requirements.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/app-submission-control.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/manage-submission-options#app-submission-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/avoid-common-certification-failures.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/resolve-submission-errors#avoid-common-certification-failures",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/categories-and-subcategories.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/categories-and-subcategories",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/create-app-store-listing.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/create-app-store-listing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/create-app-submission.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/create-app-submission",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/create-platform-specific-store-listings.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/create-app-store-listing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/device-families.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/upload-app-packages#device-family-availability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/enter-app-properties.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/enter-app-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/import-and-export-store-listings.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/import-and-export-store-listings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/manage-submission-options.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/manage-submission-options",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/manual-package-validation.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/manual-package-validation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/market-selection.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/market-selection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/notes-for-certification.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/manage-submission-options#notes-for-certification",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/overview.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/package-validation-pre-check.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msi/package-validation-pre-check",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/package-version-numbering.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-requirements#package-version-numbering",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/price-and-availability.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/price-and-availability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/product-declarations.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/product-declarations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/publish-update-to-your-app-on-store.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/publish-update-to-your-app-on-store",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/release-schedule.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/schedule-pricing-changes#configure-precise-release-scheduling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/resolve-submission-errors.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/resolve-submission-errors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/schedule-pricing-changes.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/schedule-pricing-changes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/screenshots-and-images.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/screenshots-and-images",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/support-info.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/support-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/supported-languages.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/app-package-requirements#supported-languages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/system-requirements.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/system-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/upload-app-packages.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/upload-app-packages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/visibility-options.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/visibility-options",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/reserve-your-apps-name.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/reserve-your-apps-name",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/turn-your-website-pwa.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/pwa/turn-your-website-pwa",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/write-great-app-description.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/write-great-app-description",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/partner-center/manage-app-name-reservations.md",
+      "redirect_url": "/windows/apps/publish/partner-center/msix/manage-app-name-reservations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/msix/overview.md",
+      "redirect_url": "/windows/apps/publish/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/msi/overview.md",
+      "redirect_url": "/windows/apps/publish/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/pwa/overview.md",
+      "redirect_url": "/windows/apps/publish/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/adaptive-tiles-schema.md",
+      "redirect_url": "/windows/uwp/launch-resume/adaptive-tiles-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/chaseable-tile-notifications.md",
+      "redirect_url": "/windows/uwp/launch-resume/chaseable-tile-notifications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/create-adaptive-tiles.md",
+      "redirect_url": "/windows/uwp/launch-resume/create-adaptive-tiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/creating-tiles.md",
+      "redirect_url": "/windows/uwp/launch-resume/creating-tiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/primary-tile-apis.md",
+      "redirect_url": "/windows/uwp/launch-resume/primary-tile-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles-guidance.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles-guidance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles-pin-to-taskbar.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles-pin-to-taskbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles-pinning.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles-pinning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/secondary-tiles.md",
+      "redirect_url": "/windows/uwp/launch-resume/secondary-tiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/sending-a-local-tile-notification.md",
+      "redirect_url": "/windows/uwp/launch-resume/sending-a-local-tile-notification",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/special-tile-templates-catalog.md",
+      "redirect_url": "/windows/uwp/launch-resume/special-tile-templates-catalog",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/tile-schema.md",
+      "redirect_url": "/windows/uwp/launch-resume/tile-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast.md",
+      "redirect_url": "/windows/uwp/launch-resume/tile-toast-language-scale-contrast",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/index.md",
+      "redirect_url": "/windows/uwp/launch-resume/creating-tiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/fingerprint-biometrics.md",
+      "redirect_url": "/windows/apps/develop/security/fingerprint-biometrics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/smart-cards.md",
+      "redirect_url": "/windows/apps/develop/security/smart-cards",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/security/credential-locker.md",
+      "redirect_url": "/windows/apps/develop/security/credential-locker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/printing-and-scanning.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/printing-and-scanning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/print-from-your-app.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/print-from-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/customize-the-print-preview-ui.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/customize-the-print-preview-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/scan-from-your-app.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/scan-from-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/index.md",
+      "redirect_url": "/windows/apps/design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/signature-experiences/design-principles.md",
+      "redirect_url": "/windows/apps/design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/signature-experiences/signature-experiences.md",
+      "redirect_url": "/windows/apps/design",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/color.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/color",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/typography.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/typography",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/index.md",
+      "redirect_url": "/windows/apps/design/signature-experiences/motion",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/project-ironsides.md",
+      "redirect_url": "/windows/dev-home/#experimental-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/dev-diagnostics.md",
+      "redirect_url": "/windows/dev-home/#experimental-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-home/quickstart-playground.md",
+      "redirect_url": "/windows/dev-home/#experimental-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/xaml-control-templates.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-control-templates",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/xaml-resource-dictionary.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-resource-dictionary",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/xaml-styles.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-styles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/xaml-theme-resources.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-theme-resources",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/transforms.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/transforms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/3-d-perspective-effects.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/3-d-perspective-effects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/brushes.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/brushes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/reveal-focus.md",
+      "redirect_url": "/windows/uwp/ui-input/reveal-focus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/app-window.md",
+      "redirect_url": "/windows/uwp/ui-input/app-window",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/application-view.md",
+      "redirect_url": "/windows/uwp/ui-input/application-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/layout/show-multiple-views.md",
+      "redirect_url": "/windows/uwp/ui-input/show-multiple-views",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/android/defender-settings.md",
+      "redirect_url": "/defender-endpoint/microsoft-defender-security-center-antivirus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/client-frameworks-faq.yml",
+      "redirect_url": "/windows/apps/get-started/windows-developer-faq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/in-app-ads.md",
+      "redirect_url": "/windows/apps/publish/attract-customers-and-promote-your-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/basic-photo-video-and-audio-capture-with-MediaCapture.md",
+      "redirect_url": "/windows/apps/develop/camera/basic-photo-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/camera-profiles.md",
+      "redirect_url": "/windows/apps/develop/camera/camera-profiles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/set-media-encoding-properties.md",
+      "redirect_url": "/windows/apps/develop/camera/set-media-encoding-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/high-dynamic-range-hdr-photo-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/high-dynamic-range-hdr-photo-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-device-controls-for-photo-and-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-device-controls-for-photo-and-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-device-controls-for-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-device-controls-for-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/effects-for-video-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/effects-for-video-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/scene-analysis-for-media-capture.md",
+      "redirect_url": "/windows/apps/develop/camera/scene-analysis-for-media-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/variable-photo-sequence.md",
+      "redirect_url": "/windows/apps/develop/camera/variable-photo-sequence",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/process-media-frames-with-mediaframereader.md",
+      "redirect_url": "/windows/apps/develop/camera/process-media-frames-with-mediaframereader",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/process-audio-frames-with-mediaframereader.md",
+      "redirect_url": "/windows/apps/develop/camera/process-audio-frames-with-mediaframereader",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/capture-from-multiple-sources-simultaneously.md",
+      "redirect_url": "/windows/apps/develop/camera/capture-from-multiple-sources-simultaneously",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/connect-to-remote-cameras.md",
+      "redirect_url": "/windows/apps/develop/camera/connect-to-remote-cameras",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/launch-camera-settings.md",
+      "redirect_url": "/windows/apps/develop/camera/launch-camera-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/camera/index.md",
+      "redirect_url": "/windows/apps/develop/camera/camera",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/handle-uri-activation.md",
+      "redirect_url": "/windows/apps/develop/launch/handle-uri-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-app-from-file.md",
+      "redirect_url": "/windows/apps/develop/launch/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-app-with-uri.md",
+      "redirect_url": "/windows/apps/develop/launch/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-default-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-default-apps-settings.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-apps-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-maps-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-people-apps.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-people-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-screen-snipping.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-screen-snipping",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-settings-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-store-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-store-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/launch-the-default-app-for-a-file.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-the-default-app-for-a-file",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/reserved-uri-scheme-names.md",
+      "redirect_url": "/windows/apps/develop/launch/reserved-uri-scheme-names",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/web-to-app-linking.md",
+      "redirect_url": "/windows/apps/develop/launch/web-to-app-linking",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/launch-resume/handle-file-activation.md",
+      "redirect_url": "/windows/apps/develop/launch/handle-file-activation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/index.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/getting-started.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/getting-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/nuget-packages.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/nuget-packages",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/index.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.0.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.0",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.1.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.1",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.2.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.3.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.4.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.4",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.5.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.5",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.6.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.6",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.7.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.7",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui2/release-notes/winui-2.8.md",
+      "redirect_url": "/windows/uwp/get-started/winui2/release-notes/winui-2.8",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/windowing/windowing-overview.md",
+      "redirect_url": "/windows/apps/develop/ui-input/manage-app-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/sudo/index.md",
+      "redirect_url": "/windows/advanced-settings/sudo/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-json.md",
+      "redirect_url": "/windows/ai/app-actions/actions-json",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/action-provider-manifest.md",
+      "redirect_url": "/windows/ai/app-actions/actions-provider-manifest",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/actions/index.md",
+      "redirect_url": "/windows/ai/app-actions/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/launch/launch-maps-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-default-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push-notifications/index.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push-notifications/push-quickstart.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/push-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/push-notifications/troubleshooting.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/app-notifications-quickstart",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/notifications/app-notifications/index.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/badges.md",
+      "redirect_url": "../../../develop/notifications/badges",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/firewall-allowlist-config.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/firewall-allowlist-config",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/push-request-response-headers.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/push-request-response-headers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/quickstart-send-push-notification.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/quickstart-send-push-notification",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/raw-notification-overview.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/raw-notification-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/request-create-save-notification-channel.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/request-create-save-notification-channel",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/troubleshoot-notifications.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/troubleshoot-notifications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/the-code-generated-by-the-push-notification-wizard.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/code-generated-by-wizard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/WNS-Notification-Priorities.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/wns-notification-priorities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md",
+      "redirect_url": "../../../develop/notifications/push-notifications/wns-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/pin-to-taskbar.md",
+      "redirect_url": "../../develop/windows-integration/pin-to-taskbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/adaptive-interactive-toasts.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/adaptive-interactive-toasts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/channel-types.md",
+      "redirect_url": "../../../develop/notifications/channel-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/choosing-a-notification-delivery-method.md",
+      "redirect_url": "../../../develop/notifications/choosing-a-notification-delivery-method",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/custom-audio-on-toasts.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/custom-audio-on-toasts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/custom-timestamps-on-toasts.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/custom-timestamps-on-toasts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/notification-listener.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/notification-listener",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/notifications-visualizer.md",
+      "redirect_url": "../../../develop/notifications/notifications-visualizer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/periodic-notification-overview.md",
+      "redirect_url": "../../../develop/notifications/periodic-notification-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/scheduled-toast.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/scheduled-toast",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast-cpp-uwp.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast-cpp-uwp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast-desktop-cpp-wrl.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast-desktop-cpp-wrl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/send-local-toast-other-apps.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/send-local-toast-other-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-collections.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-collections",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-desktop-apps.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-desktop-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-headers.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-headers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-notifications-overview.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-notifications-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-pending-update.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-pending-update",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-progress-bar.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-progress-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-schema.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-schema",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-ux-guidance.md",
+      "redirect_url": "../../../develop/notifications/app-notifications/toast-ux-guidance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/windows-integration/microsoft-copliot-key-provider.md",
+      "redirect_url": "/windows/apps/develop/windows-integration/microsoft-copilot-key-provider",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_filters.md",
+      "redirect_url": "/windows/powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_getfilters",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/tutorials/winui-notes/index.yml",
+      "redirect_url": "/windows/apps/tutorials/winui-notes/intro",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/attached-properties-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/attached-properties-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/binding-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/binding-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/custom-attached-properties.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/custom-attached-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/custom-dependency-properties.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/custom-dependency-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/customresource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/customresource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/dependency-properties-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/dependency-properties-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/events-and-routed-events-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/events-and-routed-events-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/index.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/move-draw-commands-syntax.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/move-draw-commands-syntax",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/property-path-syntax.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/property-path-syntax",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/relativesource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/relativesource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/staticresource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/staticresource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/templatebinding-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/templatebinding-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/template-settings-classes.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/template-settings-classes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/themeresource-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/themeresource-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-and-whitespace.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-and-whitespace",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-intrinsic-data-types.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-intrinsic-data-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-namescopes.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-namescopes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-namespaces-and-namespace-mapping.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-overview.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/xaml-syntax-guide.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/xaml-syntax-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-bind-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-bind-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-class-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-class-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-defaultbindmode-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-defaultbindmode-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-deferloadstrategy-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-deferloadstrategy-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-fieldmodifier-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-fieldmodifier-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-key-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-key-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-load-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-load-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-name-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-name-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-null-markup-extension.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-null-markup-extension",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-phase-attribute.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-phase-attribute",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/xaml-platform/x-uid-directive.md",
+      "redirect_url": "/windows/apps/develop/platform/xaml/x-uid-directive",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/launch/launch-settings-app.md",
+      "redirect_url": "/windows/apps/develop/launch/launch-settings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/app-to-app/copy-and-paste.md",
+      "redirect_url": "/windows/apps/develop/communication/copy-and-paste",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/communication.md",
+      "redirect_url": "/windows/apps/develop/communication/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/mat-faq-troubleshooting.yml",
+      "redirect_url": "/windows/apps/design/globalizing/mat-announcements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/multilingual-app-toolkit-editor-downloads.md",
+      "redirect_url": "/windows/apps/design/globalizing/mat-announcements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/globalizing/use-mat.md",
+      "redirect_url": "/windows/apps/design/globalizing/mat-announcements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/powertoys/dsc-configure.md",
+      "redirect_url": "/windows/powertoys/dsc-configure/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/enable-your-device-for-development.md",
+      "redirect_url": "/windows/advanced-settings/developer-mode",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/style/icons.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/icons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/animated-icon.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/animated-icon",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/annotated-scrollbar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/annotated-scrollbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/auto-suggest-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/auto-suggest-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/breadcrumbbar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/breadcrumbbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/buttons.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/buttons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/calendar-date-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/calendar-date-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/calendar-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/calendar-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/checkbox.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/checkbox",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/collection-commanding.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/collection-commanding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/color-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/color-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/combo-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/combo-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/command-bar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/command-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/command-bar-flyout.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/command-bar-flyout",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/commanding.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/commanding",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/contact-card.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/contact-card",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/content-links.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/content-links",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/controls-and-events-intro.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/controls-and-events-intro",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/custom-transport-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/custom-transport-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/data-template-selector.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/data-template-selector",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/date-and-time.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/date-and-time",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/date-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/date-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/expander.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/expander",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/flipview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/flipview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/forms.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/forms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/hyperlinks.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/hyperlinks",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/images-imagebrushes.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/images-imagebrushes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/index.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/info-badge.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/info-badge",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/infobar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/infobar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/inking-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/inking-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/inverted-lists.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/inverted-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/item-containers-templates.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/item-containers-templates",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/items-repeater.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/items-repeater",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/itemsview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/itemsview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/item-templates-gridview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/item-templates-gridview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/item-templates-listview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/item-templates-listview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/labels.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/labels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/list-details.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/list-details",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/lists.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/listview-and-gridview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/listview-and-gridview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/listview-filtering.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/listview-filtering",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/media-playback.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/media-playback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/menus.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/menus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/menus-and-context-menus.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/menus-and-context-menus",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/navigationview.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/navigationview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/nested-ui.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/nested-ui",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/number-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/number-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/password-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/password-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/person-picture.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/person-picture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/pipspager.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/pipspager",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/pivot.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/pivot",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/progress-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/progress-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/pull-to-refresh.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/pull-to-refresh",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/radio-button.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/radio-button",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/rating.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/rating",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/rich-edit-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/rich-edit-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/rich-text-block.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/rich-text-block",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/scroll-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/scroll-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/selection-modes.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/selection-modes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/selector-bar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/selector-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/semantic-zoom.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/semantic-zoom",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/shapes.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/shapes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/slider.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/slider",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/split-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/split-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/swipe.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/swipe",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/tab-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/tab-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-block.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/text-block",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-box.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/text-box",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-controls.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/text-controls",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/text-handwriting-view.md",
+      "redirect_url": "/windows/apps/design/input/text-handwriting-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/time-picker.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/time-picker",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/title-bar.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/title-bar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/toggles.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/toggles",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/tooltips.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/tooltips",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/tree-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/tree-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/two-pane-view.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/two-pane-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/web-view.md",
+      "redirect_url": "/windows/uwp/ui-input/web-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/dialogs.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/dialogs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/flyouts.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/flyouts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/index.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/controls/dialogs-and-flyouts/teaching-tip.md",
+      "redirect_url": "/windows/apps/develop/ui/controls/dialogs-and-flyouts/teaching-tip",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/display-ui-objects.md",
+      "redirect_url": "/windows/apps/develop/ui/display-ui-objects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/manage-app-windows.md",
+      "redirect_url": "/windows/apps/develop/ui/manage-app-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/multiple-windows.md",
+      "redirect_url": "/windows/apps/develop/ui/multiple-windows",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/retrieve-hwnd.md",
+      "redirect_url": "/windows/apps/develop/ui/retrieve-hwnd",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/visual-tree.md",
+      "redirect_url": "/windows/apps/develop/ui/visual-tree",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/ui-input/windowing-overview.md",
+      "redirect_url": "/windows/apps/develop/ui/windowing-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/access-keys.md",
+      "redirect_url": "/windows/apps/develop/input/access-keys",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/convert-ink-to-text.md",
+      "redirect_url": "/windows/apps/develop/input/convert-ink-to-text",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/custom-text-input.md",
+      "redirect_url": "/windows/apps/develop/input/custom-text-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/define-custom-recognition-constraints.md",
+      "redirect_url": "/windows/apps/develop/input/define-custom-recognition-constraints",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/enable-continuous-dictation.md",
+      "redirect_url": "/windows/apps/develop/input/enable-continuous-dictation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/focus-navigation.md",
+      "redirect_url": "/windows/apps/develop/input/focus-navigation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/focus-navigation-programmatic.md",
+      "redirect_url": "/windows/apps/develop/input/focus-navigation-programmatic",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/gamepad-and-remote-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/gamepad-and-remote-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/gaze-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/gaze-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-cross-slide.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-cross-slide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-optical-zoom.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-optical-zoom",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-panning.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-panning",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-rotation.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-rotation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-targeting.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-targeting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-textselection.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-textselection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/guidelines-for-visualfeedback.md",
+      "redirect_url": "/windows/apps/develop/input/guidelines-for-visualfeedback",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/handle-pointer-input.md",
+      "redirect_url": "/windows/apps/develop/input/handle-pointer-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/identify-input-devices.md",
+      "redirect_url": "/windows/apps/develop/input/identify-input-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/index.md",
+      "redirect_url": "/windows/apps/develop/input/index",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/ink-toolbar.md",
+      "redirect_url": "/windows/apps/develop/input/ink-toolbar",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/ink-walkthrough.md",
+      "redirect_url": "/windows/apps/develop/input/ink-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-injection.md",
+      "redirect_url": "/windows/apps/develop/input/input-injection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-method-editor-requirements.md",
+      "redirect_url": "/windows/apps/develop/input/input-method-editor-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-method-editors.md",
+      "redirect_url": "/windows/apps/develop/input/input-method-editors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/input-primer.md",
+      "redirect_url": "/windows/apps/develop/input/input-primer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/keyboard-accelerators.md",
+      "redirect_url": "/windows/apps/develop/input/keyboard-accelerators",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/keyboard-events.md",
+      "redirect_url": "/windows/apps/develop/input/keyboard-events",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/keyboard-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/keyboard-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/manage-issues-with-audio-input.md",
+      "redirect_url": "/windows/apps/develop/input/manage-issues-with-audio-input",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/mouse-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/mouse-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/multiple-input-design-guidelines.md",
+      "redirect_url": "/windows/apps/develop/input/multiple-input-design-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/pen-and-stylus-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/pen-and-stylus-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/pen-haptics.md",
+      "redirect_url": "/windows/apps/develop/input/pen-haptics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/radialcontroller-walkthrough.md",
+      "redirect_url": "/windows/apps/develop/input/radialcontroller-walkthrough",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/respond-to-the-presence-of-the-touch-keyboard.md",
+      "redirect_url": "/windows/apps/develop/input/respond-to-the-presence-of-the-touch-keyboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/save-and-load-ink.md",
+      "redirect_url": "/windows/apps/develop/input/save-and-load-ink",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/set-speech-recognition-timeouts.md",
+      "redirect_url": "/windows/apps/develop/input/set-speech-recognition-timeouts",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/specify-the-speech-recognizer-language.md",
+      "redirect_url": "/windows/apps/develop/input/specify-the-speech-recognizer-language",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/speech-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/speech-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/speech-recognition.md",
+      "redirect_url": "/windows/apps/develop/input/speech-recognition",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/text-handwriting-view.md",
+      "redirect_url": "/windows/apps/develop/input/text-handwriting-view",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/text-scaling.md",
+      "redirect_url": "/windows/apps/develop/input/text-scaling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/touch-developer-guide.md",
+      "redirect_url": "/windows/apps/develop/input/touch-developer-guide",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/touch-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/touch-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/touchpad-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/touchpad-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/use-input-scope-to-change-the-touch-keyboard.md",
+      "redirect_url": "/windows/apps/develop/input/use-input-scope-to-change-the-touch-keyboard",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/windows-wheel-interactions.md",
+      "redirect_url": "/windows/apps/develop/input/windows-wheel-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/drag-and-drop.md",
+      "redirect_url": "/windows/apps/develop/data/drag-and-drop",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-deep-link-into-your-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-deep-link-into-your-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-design-guidelines.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-design-guidelines",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-dynamically-modify-voice-command-definition-vcd-phrase-lists",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-interactions.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interactions",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-interact-with-a-background-app.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-interact-with-a-background-app",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-launch-a-background-app-with-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-background-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-launch-a-foreground-app-with-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-launch-a-foreground-app-with-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/input/cortana-support-natural-language-voice-commands.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/cortana-support-natural-language-voice-commands",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-dragdrop.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-dragdrop",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-edgebased.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-edgebased",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-fade.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-fade",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-list.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-list",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-pointer.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-popup-animations.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-popup-animations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/motion/motion-reposition.md",
+      "redirect_url": "/previous-versions/windows/uwp/ui-input/motion-reposition",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/create-your-first-winui3-app.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/set-up-your-development-environment.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/how-tos/hello-world-winui3.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": false
+    }, 
+    {
+      "source_path": "hub/apps/winui/index.md",
+      "redirect_url": "/windows/apps/winui/winui3/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/release-notes/release-notes-08-preview.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/project-reunion-0-8-preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/release-notes/winui3-project-reunion-0.5.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/project-reunion-0-5",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/winui/winui3/release-notes/winui3-project-reunion-0.5-preview.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/project-reunion-0-5-preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-0.8.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-0-8&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1-8.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-8&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.0.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-8&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.2.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-2&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.3.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-3&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.4.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-4&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.5.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-5&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.6.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-6&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/experimental-channel-1.7.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-7&pivots=experimental",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.7.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-7&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1-7.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-7&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.0.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-0&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.1.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-1&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.2.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-2&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.3.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-3&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.4.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-4&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.5.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-5&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/preview-channel-1.6.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-6&pivots=preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-0.5.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-0-5&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-0.8.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-0-8&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1-7.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-7&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.0.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-0&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.1.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-1&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.2.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-2&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.3.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-3&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.4.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-4&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.5.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-5&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/release-notes-archive/stable-channel-1.6.md",
+      "redirect_url": "/windows/windows-app-sdk/release-notes/windows-app-sdk-1-6&pivots=stable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/experimental-channel.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/release-channels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/preview-channel.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/release-channels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/stable-channel.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/release-channels",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/get-started/make-apps-great-for-windows.md",
+      "redirect_url": "/windows/apps/get-started/best-practices",
       "redirect_document_id": false
     }
   ]
 }
-
-
-

@@ -1,9 +1,7 @@
 ---
 title: Use streaming - .NET TraceProcessing
 description: In this tutorial, learn how to use streaming to access trace data right away and using less memory.
-author: maiak
-ms.author: maiak
-ms.date: 02/23/2020
+ms.date: 08/19/2024
 ms.topic: tutorial
 ---
 

@@ -1,8 +1,8 @@
-﻿---
+---
 title: Getting started with Point of Service
 description: This article contains information about getting started with the point of service Windows Runtime APIs.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: get-started
 
 ms.localizationpriority: medium
 ---
@@ -15,13 +15,13 @@ Here you’ll learn the basics of interfacing with Point of Service devices by u
 
 ## Finding and connecting to Point of Service peripherals
 
-Before a Point of Service device can be used by an app, it must be paired with the PC where the app is running. There are several ways to connect to Point of Service devices, either programmatically or through the Settings app.
+Before a Point of Service device can be used by an app, it must be paired with the PC where the app is running. There are several ways to connect to Point of Service devices, either programmatically or through Windows Settings.
 
-### Connecting to devices by using the Settings app
+### Connecting to devices by using Windows Settings
 
-When you plug a Point of Service device like a barcode scanner into a PC, it shows up just like any other device. You can find it in the **Devices > Bluetooth & other devices** section of the Settings app. There you can pair with a Point of Service device by selecting **Add Bluetooth or other device**.
+When you plug a Point of Service device like a barcode scanner into a PC, it shows up just like any other device. You can find it in the **Devices > Bluetooth & other devices** section of Settings. There you can pair with a Point of Service device by selecting **Add Bluetooth or other device**.
 
-Some Point of Service devices may not appear in the Settings app until they are programmatically enumerated by using the Point of Service APIs.
+Some Point of Service devices may not appear in Settings until they are programmatically enumerated by using the Point of Service APIs.
 
 ### Getting a single Point of Service device with GetDefaultAsync
 

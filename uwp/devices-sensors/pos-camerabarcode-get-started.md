@@ -1,10 +1,8 @@
 ---
 title: Get started with camera barcode scanner
 description: Set up a basic camera barcode scanner in a UWP application.
-author: twarwick
-ms.author: twarwick
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: get-started
 
 ms.localizationpriority: medium
 ---

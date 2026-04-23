@@ -199,7 +199,7 @@ function addPlayreadyKeyEventHandler()
                 
         // TODO: send the secure stop challenge to a server that handles the secure stop challenge
 
-        // TODO: Receive and response and call event.target.Update() to proecess the response
+        // TODO: Receive and response and call event.target.Update() to process the response
     });
     
     // add 'keyerror' eventhandler

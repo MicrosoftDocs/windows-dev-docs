@@ -3,7 +3,7 @@ ms.assetid: b7333924-d641-4ba5-92a2-65925b44ccaa
 description: This article shows you how to play media while your app is running in the background.
 title: Play media in the background
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

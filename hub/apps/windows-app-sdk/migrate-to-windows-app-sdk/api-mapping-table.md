@@ -1,11 +1,9 @@
 ---
 title: Mapping UWP APIs to the Windows App SDK
 description: This topic provides a mapping of UWP APIs and libraries to their Windows App SDK equivalents.
-ms.topic: article
-ms.date: 10/01/2021
+ms.topic: concept-article
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, api, class, mapping, mappings, uwp
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
@@ -20,6 +18,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | UWP | Windows App SDK |
 | - | - |
 | (**Windows.ApplicationModel.Activation**) [**LaunchActivatedEventArgs**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) class | (**Microsoft.UI.Xaml**) [**LaunchActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.launchactivatedeventargs) class; for example, in **App.OnLaunched**. |
+| (**Windows.ApplicationModel.Background**) [**BackgroundTaskBuilder**](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) class | (**Microsoft.Windows.ApplicationModel.Background**) [**BackgroundTaskBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) class. See [Using background tasks in Windows apps](../applifecycle/background-tasks.md). |
 | (**Windows.ApplicationModel.Core**) [**CoreApplication.CreateNewView**](/uwp/api/windows.applicationmodel.core.coreapplication.createnewview) method | (**Microsoft.UI.Windowing**) [**AppWindow.Create**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create) method |
 | (**Windows.ApplicationModel.Core**) [**CoreApplicationViewTitleBar**](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar) class | (**Microsoft.UI.Windowing**) [**AppWindowTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) class |
 | (**Windows.ApplicationModel.Core**) [**CoreApplicationViewTitleBar.ExtendViewIntoTitleBar**](/uwp/api/windows.applicationmodel.core.coreapplicationviewtitlebar.extendviewintotitlebar) property | (**Microsoft.UI.Windowing**) [**AppWindowTitleBar.ExtendsContentIntoTitleBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property. The platform continues to draw the **Minimize**/**Maximize**/**Close** buttons for you, and reports the occlusion information. |
@@ -32,8 +31,8 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.ApplicationModel.Resources.Core**) [**ResourceManager.Current**](/uwp/api/windows.applicationmodel.resources.core.resourcemanager.current) property | Create a new (**Microsoft.Windows.ApplicationModel.Resources**) [**ResourceManager**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemanager) object. See [ResourceManager class](guides/mrtcore.md#resourcemanager-class). |
 | (**Windows.ApplicationModel.Resources.Core**) [**ResourceQualifierObservableMap.MapChanged**](/uwp/api/windows.applicationmodel.resources.core.resourcequalifierobservablemap.mapchanged) event | Detect environment changes for yourself. See [Resource qualifier value change](guides/mrtcore.md#resource-qualifier-value-change). |
 | (**Windows.Graphics.Printing**) [**PrintManager**](/uwp/api/windows.graphics.printing.printmanager) class | Not supported in Windows App SDK 1.0. |
-| (**Windows.Media.Capture**) [**CameraCaptureUI**](/uwp/api/windows.media.capture.cameracaptureui) class | Not supported in Windows App SDK 1.0. |
-| (**Windows.Security.Authentication.Web**) [**WebAuthenticationBroker**](/uwp/api/windows.security.authentication.web.webauthenticationbroker) class | Not supported in Windows App SDK 1.0. |
+| (**Windows.Media.Capture**) [**CameraCaptureUI**](/uwp/api/windows.media.capture.cameracaptureui) class | (**Microsoft.Windows.Media.Capture**) [**CameraCaptureUI**](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui) class|
+| (**Windows.Security.Authentication.Web**) [**WebAuthenticationBroker**](/uwp/api/windows.security.authentication.web.webauthenticationbroker) class | (**Microsoft.Security.Authentication.OAuth**) [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager) class (supported in Windows App SDK 1.7 and later). See [Implement OAuth functionality in Windows apps](/windows/apps/develop/security/oauth2) for more information on using **OAuth2Manager** and related APIs for performing OAuth 2.0 authentication. See [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/OAuth2Manager) for a full sample application. |
 | (**Windows.Storage.Pickers**) [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker), [**FileSavePicker**](/uwp/api/windows.storage.pickers.filesavepicker), and [**FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker) classes | Supported, but you must use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface. See [MessageDialog, and Pickers](guides/winui3.md#messagedialog-and-pickers). |
 | (**Windows.System.Display**) [**DisplayRequest**](/uwp/api/windows.system.display.displayrequest) class | Not supported in Windows App SDK 1.0. |
 | [**Windows.UI.Composition**](/uwp/api/windows.ui.composition) namespace | [**Microsoft.UI.Composition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) namespace |
@@ -41,7 +40,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Core**) [**CoreDispatcher.RunAsync**](/uwp/api/Windows.UI.Core.CoreDispatcher.RunAsync) method | (**Microsoft.UI.Dispatching**) [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method. See [Change RunAsync to TryEnqueue](guides/threading.md#change-coredispatcherrunasync-to-dispatcherqueuetryenqueue). |
 | (**Windows.UI.Core**) [**CoreWindow**](/uwp/api/windows.ui.core.corewindow) class | (**Microsoft.UI.Windowing**) [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class. See [Windowing functionality migration](guides/windowing.md). |
 | (**Windows.UI.Core**) [**CoreWindow.Bounds**](/uwp/api/windows.ui.core.corewindow.bounds) property (commonly appears in C# as `CoreWindow.GetForCurrentThread.Bounds`) | (**Microsoft.UI.Windowing**) [**AppWindow.Size**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size) property |
-| (**Windows.UI.Core**) [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method | (**Microsoft.UI.Windowing**) [**AppWindow.Create**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.create) method |
+| (**Windows.UI.Core**) [**CoreWindow.GetForCurrentThread**](/uwp/api/windows.ui.core.corewindow.getforcurrentthread) method |     No direct 1:1 mapping to a Windows App SDK API. When using XAML, you can get **Window.AppWindow** to get the **AppWindow** associated with a XAML **Window**, but an app needs to cache the **Window** or **AppWindow** if it wants to access it from somewhere that doesn't otherwise have access. We recommend caching and exposing the **Window** on the **App** object. |
 | (**Windows.UI.Core**) [**CoreWindow.Activate**](/uwp/api/windows.ui.core.corewindow.activate) method | (**Microsoft.UI.Windowing**) [**AppWindow.Show**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.show) method |
 | (**Windows.UI.Core**) [**CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property | (**Microsoft.UI.Xaml**) [**Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property. See [Change CoreWindow.Dispatcher to Window.DispatcherQueue](guides/windowing.md#change-corewindowdispatcher-to-windowdispatcherqueue). |
 | (**Windows.UI.Core**) [**CoreWindow.SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) event | (**Microsoft.UI.Windowing**) [**AppWindowChangedEventArgs.DidSizeChange**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange) method |
@@ -49,6 +48,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Core**) [**WindowSizeChangedEventArgs**](/uwp/api/windows.ui.core.windowsizechangedeventargs) class | (**Microsoft.UI.Xaml**) [**WindowSizeChangedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.windowsizechangedeventargs) class; for example, in a handler for (**Microsoft.UI.Xaml**) [**Window.SizeChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged). |
 | (**Windows.UI.Popups**) [**MessageDialog**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class | Supported, but you must use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface. See [MessageDialog, and Pickers](guides/winui3.md#messagedialog-and-pickers). |
 | (**Windows.UI.Text.Core**) [**CoreTextServicesManager**](/uwp/api/windows.ui.text.core.coretextservicesmanager) class | Supported only on Windows 11. |
+| (**Windows.UI.ViewManagement**) [**AccessibilitySettings.HighContrastChanged**](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) event | (**Microsoft.UI.System**) [**ThemeSettings.Changed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.system.themesettings.changed) event |
 | (**Windows.UI.ViewManagement**) [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview) class | (**Microsoft.UI.Windowing**) [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class |
 | (**Windows.UI.ViewManagement**) [**ApplicationView.Title**](/uwp/api/windows.ui.viewmanagement.applicationview.title) property | (**Microsoft.UI.Windowing**) [**AppWindow.Title**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title) property |
 | (**Windows.UI.ViewManagement**) [**ApplicationView.TryConsolidateAsync**](/uwp/api/windows.ui.viewmanagement.applicationview.tryconsolidateasync) method | (**Microsoft.UI.Windowing**) [**AppWindow.Destroy**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroy) method |
@@ -92,7 +92,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Xaml.Controls**) [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) class | (**Microsoft.UI.Xaml.Controls**) [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) is supported, but you must set its [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. See [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). |
 | (**Windows.UI.Xaml.Controls**) [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) class | Not supported in Windows App SDK 1.0. |
 | (**Windows.UI.Xaml.Controls**) [**MediaElement**](/uwp/api/windows.ui.xaml.controls.mediaelement) class | Not supported in Windows App SDK 1.0. |
-| (**Windows.UI.Xaml.Controls.Maps**) [**MapControl**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) class | Not supported in Windows App SDK 1.0. |
+| (**Windows.UI.Xaml.Controls.Maps**) [**MapControl**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) class | (**Microsoft.UI.Xaml.Controls**) [**MapControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol) class |
 | (**Windows.UI.Xaml.Controls.Primitives**) [**Popup**](/uwp/api/windows.ui.xaml.controls.primitives.popup) class | (**Microsoft.UI.Xaml.Controls.Primitives**) [**Popup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup) is supported, but you must set its [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. See [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). |
 | (**Windows.UI.Xaml.Media**) [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property | In the Windows App SDK, the (**Microsoft.UI.Xaml.Media**) [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content. See [AcrylicBrush.BackgroundSource property](guides/winui3.md#acrylicbrushbackgroundsource-property). |
 | **C++/WinRT**. `co_await winrt.resume_foreground(this->Dispatcher());` | See [Migrate winrt.resume_foreground](guides/threading.md#migrate-winrtresume_foreground-cwinrt) |
@@ -104,3 +104,7 @@ This section documents various libraries that were supported in UWP, and need to
 | UWP | Windows App SDK |
 | - | - |
 | OneDrive SDK | Microsoft Graph SDK |
+
+## See Also
+
+- [Windows App SDK and supported Windows releases](../support.md)

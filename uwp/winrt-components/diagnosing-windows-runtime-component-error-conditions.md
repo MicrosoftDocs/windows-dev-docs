@@ -3,7 +3,7 @@ title: Diagnosing Windows Runtime Component error conditions
 description: This article provides additional information about restrictions on Windows Runtime components written with managed code.
 ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

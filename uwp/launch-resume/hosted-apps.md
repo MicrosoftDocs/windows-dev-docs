@@ -2,7 +2,7 @@
 description: Learn how to build a hosted app that inherits the executable, entry point and runtime attributes of a host app.
 title: Create hosted apps
 ms.date: 05/26/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium
 ms.custom: RS5
@@ -144,7 +144,7 @@ The hosted app consists of a python script and package artifacts such as the pac
 
 The package manifest for the hosted app (the NumberGuesser/AppxManifest.xml file) contains the following items:
 
-* The **Publisher** attribute of the [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element contains the `OID.2.25.311729368913984317654407730594956997722=1` identifer, which is required for an unsigned package.
+* The **Publisher** attribute of the [**Identity**](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) element contains the `OID.2.25.311729368913984317654407730594956997722=1` identifier, which is required for an unsigned package.
 * The **uap10:HostId** attribute of the [**Application**](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element identifies **PythonHost** as its host.
 
 ### Run the sample

@@ -3,7 +3,7 @@ ms.assetid: 9BA3F85A-970F-411C-ACB1-B65768B8548A
 description: This article describes how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app.
 title: Display the camera preview
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -53,6 +53,9 @@ Create a helper method to start up the camera preview, called **StartPreviewAsyn
 Create a new instance of the **MediaCapture** class and call [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) to initialize the capture device. This method may fail, on devices that don't have a camera for example, so you should call it from within a **try** block. An **UnauthorizedAccessException** will be thrown when you attempt to initialize the camera if the user has disabled camera access in the device's privacy settings. You will also see this exception during development if you have neglected to add the proper capabilities to your app manifest.
 
 **Important** On some device families, a user consent prompt is displayed to the user before your app is granted access to the device's camera. For this reason, you must only call [**MediaCapture.InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) from the main UI thread. Attempting to initialize the camera from another thread may result in initialization failure.
+
+> [!NOTE]
+> Windows allows users to grant or deny access to the device's camera in Windows Settings, under **Privacy & Security -> Camera**. When initializing the capture device, apps should check whether they have access to the camera and handle the case where access is denied by the user. For more information, see [Handle the Windows camera privacy setting](/windows/uwp/audio-video-camera/camera-privacy-setting).
 
 Connect the **MediaCapture** to the **CaptureElement** by setting the [**Source**](/uwp/api/windows.ui.xaml.controls.captureelement.source) property. Start the preview by calling [**StartPreviewAsync**](/uwp/api/windows.media.capture.mediacapture.startpreviewasync). This method will throw a **FileLoadException** if another app has exclusive control of the capture device. See the next section for information listening for changes in exclusive control.
 

@@ -2,9 +2,6 @@
 metadata:
   title: "FAQ's about using Python on Windows"
   description: "Get help by reviewing answers to frequently asked questions (FAQs) about using Python on Windows for development."
-  author: mattwojo 
-  ms.author: mattwoj 
-  manager: jken
   ms.topic: article
   keywords: python, windows 10, microsoft, pip, py.exe, file paths, PYTHONPATH, python deployment, python packaging
   ms.localizationpriority: medium

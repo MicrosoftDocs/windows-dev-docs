@@ -1,11 +1,9 @@
 ---
 description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 title: Localize strings in your UI and app package manifest
-ms.date: 03/08/2023
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
-ms.author: aashcraft
-author: alvinashcraft
 ms.localizationpriority: medium
 ---
 
@@ -46,7 +44,7 @@ Unlike image resources, where only one image resource is contained in an image r
 
 ## Refer to a string resource identifier from XAML
 
-You use an [x:Uid directive](/windows/uwp/xaml-platform/x-uid-directive) to associate a control or other element in your markup with a string resource identifier.
+You use an [x:Uid directive](/windows/apps/develop/platform/xaml/x-uid-directive) to associate a control or other element in your markup with a string resource identifier.
 
 ```xaml
 <TextBlock x:Uid="Greeting"/>
@@ -59,7 +57,7 @@ When assigning a string resource identifier to a XAML element, be certain that *
 Instead of setting **Width** from a Resources File, you'll probably want to allow controls to dynamically size to content.
 
 > [!NOTE]
-> For [attached properties](/windows/uwp/xaml-platform/attached-properties-overview), you need a special syntax in the **Name** column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty) attached property for the "Greeting" identifier, this is what you would enter in the **Name** column.
+> For [attached properties](/windows/apps/develop/platform/xaml/attached-properties-overview), you need a special syntax in the **Name** column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty) attached property for the "Greeting" identifier, this is what you would enter in the **Name** column.
 
 ```xml
 Greeting.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name
@@ -222,7 +220,7 @@ To use resources in unpackaged applications, you should do a few things:
     - Run `makepri new /pr <PROJECTROOT> /cf <PRICONFIG> /of resources.pri`
     - The &lt;PRICONFIG&gt; must omit the "&lt;packaging&gt;" section so that all resources are bundled in a single resources.pri file. If using the default [MakePri.exe configuration file](/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](/windows/uwp/app-resources/makepri-exe-command-options), you need to delete the "&lt;packaging&gt;" section manually after it is created.
     - The &lt;PRICONFIG&gt; must contain all relevant indexers required to merge all resources in your project into a single resources.pri file. The default [MakePri.exe configuration file](/windows/uwp/app-resources/makepri-exe-configuration) created by [createconfig](/windows/uwp/app-resources/makepri-exe-command-options) includes all indexers.
-    - If you don’t use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from project references, NuGet references, and so on, that are located within the project root.
+    - If you don't use the default config, make sure the PRI indexer is enabled (review the default config for how to do this) to merge PRIs found from project references, NuGet references, and so on, that are located within the project root.
         > [!NOTE]
         > By omitting `/IndexName`, and by the project not having an app manifest, the IndexName/root namespace of the PRI file is automatically set to *Application*, which the runtime understands for unpackaged apps (this removes the previous hard dependency on package ID). When specifying resource URIs, ms-resource:/// references that omit the root namespace infer *Application* as the root namespace for unpackaged apps (or you can specify *Application* explicitly as in ms-resource://Application/).
 1. Copy the PRI file to the build output directory of the .exe

@@ -1,12 +1,10 @@
 ---
 title: Get started with Arm64EC apps for Windows 11 on Arm
 description: Build Arm64EC apps that run on Arm-powered devices with Windows 11.
-ms.date: 08/08/2022
-ms.topic: article
-ms.prod: windows
-ms.technology: arm
-author: marswe
-ms.author: marcs
+ms.date: 11/06/2025
+ms.topic: get-started
+ms.service: windows
+ms.subservice: arm
 ---
 
 # Get started with Arm64EC
@@ -38,7 +36,7 @@ Once you have installed the prerequisites and tools, you can target Arm64EC in y
 2. To add the Arm64EC platform:
     - In the **Build** menu, select **Configuration Manager**.
     - In the **Active solution platform** box, select **`<New…>`** to create a new platform.
-    - Select **ARM64EC**, Copy settings from **x64**, and check the **Create new project platforms** checkbox.
+    - Select **Arm64EC**, Copy settings from **x64**, and check the **Create new project platforms** checkbox.
 
     ![Visual Studio Installer New Arm64EC Platform screenshot](./images/arm64ec-vs-new-platform.png)
 
@@ -46,7 +44,7 @@ Once you have installed the prerequisites and tools, you can target Arm64EC in y
 
 3. With the new solution platform in place and selected, select **Build** in Visual Studio to start building Arm64EC binaries.  
 
-By design, not all projects in an Arm64EC solution need to be targeting Arm64EC as they can target x64 instead. For any such projects that you want to remain as x64, ensure that you configure those projects in the configuration manager to target x64 under the ARM64EC solution build.
+By design, not all projects in an Arm64EC solution need to be targeting Arm64EC as they can target x64 instead. For any such projects that you want to remain as x64, ensure that you configure those projects in the configuration manager to target x64 under the Arm64EC solution build.
 
 ## CMake Projects
 
@@ -65,7 +63,7 @@ By design, not all projects in an Arm64EC solution need to be targeting Arm64EC 
 
     The default generator is Ninja. If using the Visual Studio generator, change the strategy field to **set**.
 
-4. If using the Ninja generator, you’ll also need to set some environment variables by adding the environment object to your CMakePresets configuration.
+4. If using the Ninja generator, you'll also need to set some environment variables by adding the environment object to your CMakePresets configuration.
 
     ```cpp
      "environment": { 
@@ -80,7 +78,7 @@ By design, not all projects in an Arm64EC solution need to be targeting Arm64EC 
 
 ## Developer Command Prompt
   
-If you are interested in using the Visual Studio Developer Command Prompt for compiling and linking source files for Arm64EC, you need to use the **Arm64** Developer Command Prompt, and then run your`cl` and `link` commands separately.  Use the `/arm64EC` switch for `cl` and `/MACHINE:ARM64EC` for `link` to build and link Arm64EC code.
+If you are interested in using the Visual Studio Developer Command Prompt for compiling and linking source files for Arm64EC, you need to use the **Arm64** Developer Command Prompt, and then run your `cl` and `link` commands separately.  Use the `/arm64EC` switch for `cl` and `/MACHINE:ARM64EC` for `link` to build and link Arm64EC code.
 
 ```cpp
 cl /arm64EC /c <args>

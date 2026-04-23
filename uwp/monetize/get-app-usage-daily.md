@@ -3,7 +3,7 @@ ms.assetid: 99DB5622-3700-4FB2-803B-DA447A1FD7B7
 description: Use this method in the Microsoft Store analytics API to get daily app usage data for a given date range and other optional filters.
 title: Get daily app usage
 ms.date: 08/15/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, usage
 ms.localizationpriority: medium
 ---
@@ -97,7 +97,7 @@ Elements in the *Value* array contain the following values.
 | monthlyNewDevices         | long    | The number of devices which used the app for the first time in last 30 days.  |No|Yes|No    |
 
 > [!NOTE]
-> If a field is not valid for a specific product, then the value to those fields will be sent as 0 or null in the response. Computation of new users and new devices is done with the rolling window of 3 years, i.e., if an user/device doesn’t use the application for 3 years and above, they will be treated as new user/device after 3 years.
+> If a field is not valid for a specific product, then the value to those fields will be sent as 0 or null in the response. Computation of new users and new devices is done with the rolling window of 3 years, i.e., if a user/device doesn’t use the application for 3 years and above, they will be treated as new user/device after 3 years.
 
 ### Request and Response example
 

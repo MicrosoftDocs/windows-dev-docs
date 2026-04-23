@@ -1,10 +1,7 @@
 ---
 title: Using Python for scripting and automation 
 description: How to get started using Python for scripting, automation, and systems administration on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
-ms.topic: article
+ms.topic: get-started
 keywords: python, windows 10, microsoft, python system administration, python file automation, python scripts on windows, set up python on windows, python developer environment on windows, python dev environment on windows, python with powershell, python scripts for file system tasks
 ms.localizationpriority: medium
 ms.date: 05/07/2021
@@ -58,7 +55,7 @@ VS Code contains a [built-in terminal](https://code.visualstudio.com/docs/editor
 1. Open the terminal in VS Code, select **View** > **Terminal**, or alternatively use the shortcut **Ctrl+`** (using the backtick character).
 
     > [!NOTE]
-    > The default terminal should be PowerShell, but if you need to change it, use **Ctrl+Shift+P** to enter the command pallette. Enter **Terminal: Select Default Shell** and a list of terminal options will display containing PowerShell, Command Prompt, WSL, etc. Select the one you'd like to use and enter **Ctrl+Shift+`** (using the backtick) to create a new terminal.
+    > The default terminal should be PowerShell, but if you need to change it, use **Ctrl+Shift+P** to enter the command palette. Enter **Terminal: Select Default Shell** and a list of terminal options will display containing PowerShell, Command Prompt, WSL, etc. Select the one you'd like to use and enter **Ctrl+Shift+`** (using the backtick) to create a new terminal.
 
 2. Inside your VS Code terminal, open Python by entering: `python`
 

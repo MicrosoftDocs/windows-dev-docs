@@ -3,7 +3,7 @@ description: Your app can load image resource files containing images tailored f
 title: Load images and assets tailored for scale, theme, high contrast, and more
 template: detail.hbs
 ms.date: 08/15/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, windows 11, uwp, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
 ---

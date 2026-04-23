@@ -3,7 +3,7 @@
 title: Use the light sensor
 description: Learn how to use the ambient light sensor to detect changes in lighting.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---

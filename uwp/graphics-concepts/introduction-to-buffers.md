@@ -5,7 +5,7 @@ ms.assetid: 494FDF57-0FBE-434C-B568-06F977B40263
 keywords:
 - Introduction to buffers
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

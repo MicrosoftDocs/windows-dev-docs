@@ -3,7 +3,7 @@ ms.assetid: b556a245-6359-4ddc-a4bd-76f9873ab694
 description: Use this method in the Microsoft Store analytics API to get the stack trace for an error in your app.
 title: Get the stack trace for an error in your app
 ms.date: 06/05/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Store services, Microsoft Store analytics API, stack trace, error
 ms.localizationpriority: medium
 ---

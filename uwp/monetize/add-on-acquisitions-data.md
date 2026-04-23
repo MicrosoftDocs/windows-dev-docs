@@ -2,7 +2,7 @@
 description: Use this method in the Microsoft Store analytics API to get aggregate add-on acquisition data in JSON format for UWP apps and Xbox One games that were ingested through the Xbox Developer Portal (XDP) and available in the XDP Analytics Partner Center dashboard.  
 title: Get add-on acquisitions data for your games and apps 
 ms.date: 03/06/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, advertising network, app metadata
 ms.localizationpriority: medium
 ---
@@ -49,13 +49,13 @@ The *applicationId* or *addonProductId* parameter is required. To retrieve acqui
 The following examples demonstrates several requests for getting add-on acquisition data. Replace the *addonProductId* and *applicationId* values with the appropriate Store ID for your add-on or app. 
 
 ```syntax
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&skip=0 HTTP/1.1 
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0 HTTP/1.1 
 
 Authorization: Bearer <your access token> 
 
  
 
-GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&skip=0&filter=market eq 'GB' and gender eq 'm' HTTP/1.1 
+GET https://manage.devcenter.microsoft.com/v1.0/my/analytics/addonacquisitions?applicationId=9WZDNCRFJ314&startDate=1/1/2015&endDate=2/1/2015&top=10&skip=0&filter=market eq 'GB' and gender eq 'm' HTTP/1.1 
 
 Authorization: Bearer <your access token>
 ```
@@ -92,7 +92,7 @@ Elements in the Value array contain the following values.
 | paymentInstrumentType | string | Payment instrument type used for the acquisition.  |
 | sandboxId | string | The Sandbox ID created for the game. This can be the value **RETAIL** or a private sandbox ID.  |
 | xboxTitleId | string | Xbox Title ID of the product from XDP, if applicable.  |
-| localCurrencyCode | string | Local Currency code based on the country of the Partner Center account.  |
+| localCurrencyCode | string | Local Currency code based on the country/region of the Partner Center account.  |
 | xboxProductId | string | Xbox Product ID of the product from XDP, if applicable.  |
 | availabilityId | string | Availability ID of the product from XDP, if applicable.  |
 | skuId | string | SKU ID of the product from XDP, if applicable.  |

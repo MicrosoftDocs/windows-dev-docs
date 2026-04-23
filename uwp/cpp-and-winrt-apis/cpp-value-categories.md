@@ -2,7 +2,7 @@
 description: This topic describes the various categories of values that exist in C++. You'll doubtless have heard of lvalues and rvalues, but there are other kinds too.
 title: Value categories, and references to them
 ms.date: 02/22/2022
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, moving, forwarding, value categories, move semantics, perfect forwarding, lvalue, rvalue, glvalue, prvalue, xvalue
 ms.localizationpriority: medium
 ms.custom: RS5
@@ -63,7 +63,7 @@ An lvalue, conversely, is not movable, as shown in this illustration. If an lval
 So you can't move an lvalue. But there *is* a kind of glvalue (the set of things with identity) that you can move&mdash;if you know what you're doing (including being careful not to access it after the move)&mdash;and that's the xvalue. We'll revisit that idea one more time later in this topic when we look at the complete picture of value categories.
 
 ## Rvalue references, and reference-binding rules
-This section introduces the syntax for a reference to an rvalue. We'll have to wait for another topic to go into a substantial treatment of moving and forwarding, but suffice to say that rvalue references are a necessary piece of the solution of those problems. Before we look at rvalue references, though, we first need to be clearer about `T&`&mdash;the thing we've formerly been calling just "a reference". It's really "an lvalue (non-const) reference", which refers to an value to which the user of the reference can write.
+This section introduces the syntax for a reference to an rvalue. We'll have to wait for another topic to go into a substantial treatment of moving and forwarding, but suffice to say that rvalue references are a necessary piece of the solution of those problems. Before we look at rvalue references, though, we first need to be clearer about `T&`&mdash;the thing we've formerly been calling just "a reference". It's really "an lvalue (non-const) reference", which refers to a value to which the user of the reference can write.
 
 ```cppwinrt
 template<typename T> T& get_by_lvalue_ref() { ... } // Get by lvalue (non-const) reference.

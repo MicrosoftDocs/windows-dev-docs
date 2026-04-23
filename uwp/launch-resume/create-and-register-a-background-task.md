@@ -3,7 +3,7 @@ title: Create and register an out-of-process background task
 description: Create an out-of-process background task class and register it to run when your app is not in the foreground.
 ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ms.date: 02/27/2019
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
 dev_langs:
@@ -418,7 +418,7 @@ Before your app can run background tasks, you must declare each background task 
 3.  From the **Available Declarations** drop-down, select **Background Tasks** and click **Add**.
 4.  Select the **System event** checkbox.
 5.  In the **Entry point:** textbox, enter the namespace and name of your background class which is for this example is Tasks.ExampleBackgroundTask.
-6.  Close the manfiest designer.
+6.  Close the manifest designer.
 
 The following Extensions element is added to your Package.appxmanifest file to register the background task:
 

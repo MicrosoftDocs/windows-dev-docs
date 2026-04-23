@@ -3,7 +3,7 @@ ms.assetid: F37C2CEC-9ED1-4F9E-883D-9FBB082504D4
 description: Use this method in the Microsoft Store purchase API to change the billing state of a subscription for a user.
 title: Change the billing state of a subscription for a user
 ms.date: 04/22/2021
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store purchase API, subscriptions
 ms.localizationpriority: medium
 ---

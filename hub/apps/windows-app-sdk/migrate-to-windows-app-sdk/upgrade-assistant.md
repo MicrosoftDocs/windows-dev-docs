@@ -1,17 +1,15 @@
 ---
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
-description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [Windows UI Library (WinUI) 3](../../winui/index.md) app that uses the Windows App SDK.
-ms.topic: article
-ms.date: 06/06/2023
+description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI 3](../../winui/index.md) app that uses the Windows App SDK.
+ms.topic: upgrade-and-migration-article
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 ---
 
 # Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
 
-The .NET Upgrade Assistant (see [Overview of the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview)) is a Visual Studio extension (recommended), and a command-line tool, that can assist with migrating a C# Universal Windows Platform (UWP) app to a [Windows UI Library (WinUI) 3](/windows/apps/winui/) app that uses the Windows App SDK.
+The .NET Upgrade Assistant (see [Overview of the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview)) is a Visual Studio extension (recommended), and a command-line tool, that can assist with migrating a C# Universal Windows Platform (UWP) app to a [WinUI 3](/windows/apps/winui/) app that uses the Windows App SDK.
 
 Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features. If you find issues related to the .NET Upgrade Assistant, then you can file them within Visual Studio by selecting **Help** > **Send Feedback** > **Report a Problem**.
 
@@ -88,6 +86,8 @@ As source material, we'll be migrating the UWP [PhotoLab sample](https://github.
 
 1. Having installed the .NET Upgrade Assistant extension (see [Install the .NET Upgrade Assistant](#install-the-net-upgrade-assistant) earlier in this topic), right-click on the project in **Solution Explorer**, and click **Upgrade**.
 
+1. Choose the **Upgrade project to a newer .NET version** option.
+
 1. Choose the **In-place project upgrade** option.
 
 1. Choose a target framework.
@@ -111,12 +111,12 @@ The version numbers in your resulting `.csproj` will be slightly different, but 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
-    <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x86;win-x64;win-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <EnableMsixTooling>true</EnableMsixTooling>
@@ -158,8 +158,44 @@ See the **Task List** in Visual Studio (**View** > **Task List**) for TODOs that
 
 It's possible that the UWP (.NET Framework) version of your app contained library references that your project isn't actually using. You'll need to analyze each reference, and determine whether or not it's required. The tool might also have added or upgraded a NuGet package reference to the wrong version.
 
+The Upgrade Assistant doesn't edit the `Package.appxmanifest`, which will need some edits in order for the app to launch:
+
+1. Add this namespace on the root \<Package\> element:
+
+```
+xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
+```
+
+2. Edit the \<Application\> element from `EntryPoint="appnamehere.App"` to `EntryPoint="$targetentrypoint$"`
+
+4. Replace any specified `Capability` with this:
+
+```xml
+<rescap:Capability Name="runFullTrust" />
+```
+
+In your `.csproj` file, you might need to edit the project file to set `<OutputType>WinExe</OutputType>` and `<UseMaui>False</UseMaui>`.
+
+To use many of the XAML controls, ensure that your `app.xaml` file includes the `<XamlControlsResources>`, such as in this example:
+
+```xml
+<Application.Resources>
+    <ResourceDictionary>
+        <ResourceDictionary.MergedDictionaries>
+            <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            <!-- Other merged dictionaries here -->
+        </ResourceDictionary.MergedDictionaries>
+        <!-- Other app resources here -->
+    </ResourceDictionary>
+</Application.Resources>
+```
+
 ## Troubleshooting tips
 
 There are several known problems that can occur when using the .NET Upgrade Assistant. In some cases, these problems are with the [try-convert tool](https://github.com/dotnet/try-convert) that the .NET Upgrade Assistant uses internally.
 
 But for more troubleshooting tips and known issues, see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository.
+
+## See Also
+
+- [Windows App SDK and supported Windows releases](../support.md)

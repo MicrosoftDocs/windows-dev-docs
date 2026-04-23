@@ -1,8 +1,8 @@
 ---
 description: This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly.
 title: Author APIs with C++/WinRT
-ms.date: 07/08/2019
-ms.topic: article
+ms.date: 12/18/2023
+ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, implement, runtime class, activation
 ms.localizationpriority: medium
 ---
@@ -166,7 +166,25 @@ namespace winrt::MyProject::implementation
 // winrt::MyProject::factory_implementation::MyRuntimeClass is here, too.
 ```
 
-Note the F-bound polymorphism pattern being used (**MyRuntimeClass** uses itself as a template argument to its base, **MyRuntimeClassT**). This is also called the curiously recurring template pattern (CRTP). If you follow the inheritance chain upwards, you'll come across **MyRuntimeClass_base**.
+Notice that the F-bound polymorphism pattern being used (**MyRuntimeClass** uses itself as a template argument to its base, **MyRuntimeClassT**). This is also called the curiously recurring template pattern (CRTP). If you follow the inheritance chain upwards, you'll come across **MyRuntimeClass_base**.
+
+You can simplify the implementation of simple properties by using [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil). Here's how:
+
+```cppwinrt
+// MyRuntimeClass.h
+...
+namespace winrt::MyProject::implementation
+{
+    struct MyRuntimeClass : MyRuntimeClassT<MyRuntimeClass>
+    {
+        MyRuntimeClass() = default;
+
+        wil::single_threaded_rw_property<winrt::hstring> Name;
+    };
+}
+```
+
+See [Simple properties](https://github.com/microsoft/wil/wiki/CppWinRT-authoring-helpers#simple-properties).
 
 ```cppwinrt
 template <typename D, typename... I>
@@ -288,7 +306,10 @@ IStringable istringable = winrt::make<MyType>();
 > [!NOTE]
 > However, if you're referencing your type from your XAML UI, then there will be both an implementation type and a projected type in the same project. In that case, **make** returns an instance of the projected type. For a code example of that scenario, see [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage).
 
-We can only use `istringable` (in the code example above) to call the members of the **IStringable** interface. But a C++/WinRT interface (which is a projected interface) derives from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) on it to query for other projected types or interfaces, which you can also either use or return.
+We can use `istringable` (in the code example above) only to call the members of the **IStringable** interface. But a C++/WinRT interface (which is a projected interface) derives from [**winrt::Windows::Foundation::IUnknown**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown). So, you can call [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) (or [**IUnknown::try_as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)) on it to query for other projected types or interfaces, which you can also either use or return.
+
+> [!TIP]
+> A scenario where you *shouldn't* call **as** or **try_as** is runtime class derivation ("composable classes"). When an implementation type composes another class, don't call **as** or **try_as** in order to perform an unchecked or checked **QueryInterface** of the class being composed. Instead, access the (`this->`) `m_inner` data member, and call **as** or **try_as** on that. For more info, see [Runtime class derivation](#runtime-class-derivation) in this topic.
 
 ```cppwinrt
 istringable.ToString();
@@ -401,6 +422,103 @@ void FreeFunction(MyProject::MyOtherClass const& oc)
 ...
 ```
 
+## Runtime class derivation
+
+You can create a runtime class that derives from another runtime class, provided that the base class is declared as "unsealed". The Windows Runtime term for class derivation is "composable classes". The code for implementing a derived class depends on whether the base class is provided by another component or by the same component. Fortunately, you don't have to learn these rules&mdash;you can just copy the sample implementations from the `sources` output folder produced by the `cppwinrt.exe` compiler.
+
+Consider this example.
+
+```idl
+// MyProject.idl
+namespace MyProject
+{
+    [default_interface]
+    runtimeclass MyButton : Windows.UI.Xaml.Controls.Button
+    {
+        MyButton();
+    }
+
+    unsealed runtimeclass MyBase
+    {
+        MyBase();
+        overridable Int32 MethodOverride();
+    }
+
+    [default_interface]
+    runtimeclass MyDerived : MyBase
+    {
+        MyDerived();
+    }
+}
+```
+
+In the above example, **MyButton** is derived from the XAML **Button** control, which is provided by another component. In that case, the implementation looks just like the implementation of a non-composable class:
+
+```cpp
+namespace winrt::MyProject::implementation
+{
+    struct MyButton : MyButtonT<MyButton>
+    {
+    };
+}
+
+namespace winrt::MyProject::factory_implementation
+{
+    struct MyButton : MyButtonT<MyButton, implementation::MyButton>
+    {
+    };
+}
+```
+
+On the other hand, in the above example, **MyDerived** is derived from another class in the same component. In this case, the implementation requires an additional template parameter specifying the implementation class for the base class.
+
+```cpp
+namespace winrt::MyProject::implementation
+{
+    struct MyDerived : MyDerivedT<MyDerived, implementation::MyBase>
+    {                                     // ^^^^^^^^^^^^^^^^^^^^^^
+    };
+}
+
+namespace winrt::MyProject::factory_implementation
+{
+    struct MyDerived : MyDerivedT<MyDerived, implementation::MyDerived>
+    {
+    };
+}
+```
+
+In either case, your implementation can call a method from the base class by qualifying it with the `base_type` type alias:
+
+```cpp
+namespace winrt::MyProject::implementation
+{
+    struct MyButton : MyButtonT<MyButton>
+    {
+        void OnApplyTemplate()
+        {
+            // Call base class method
+            base_type::OnApplyTemplate();
+
+            // Do more work after the base class method is done
+            DoAdditionalWork();
+        }
+    };
+
+    struct MyDerived : MyDerivedT<MyDerived, implementation::MyBase>
+    {
+        int MethodOverride()
+        {
+            // Return double what the base class returns
+            return 2 * base_type::MethodOverride();
+        }
+    };
+}
+```
+
+> [!TIP]
+> When an implementation type composes another class, don't call **as** or **try_as** in order to perform an unchecked or checked **QueryInterface** of the class being composed. Instead, access the (`this->`) `m_inner` data member, and call **as** or **try_as** on that.
+
 ## Deriving from a type that has a non-default constructor
 
 [**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/uwp/api/windows.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Windows_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Windows_UI_Xaml_Controls_Primitives_ToggleButton_) is an example of a non-default constructor. There's no default constructor so, to construct a **ToggleButtonAutomationPeer**, you need to pass an *owner*. Consequently, if you derive from **ToggleButtonAutomationPeer**, then you need to provide a constructor that takes an *owner* and passes it to the base. Let's see what that looks like in practice.
@@ -505,7 +623,7 @@ Here are various places where a C++/WinRT features expects a type, and what kind
 
 This section describes a C++/WinRT 2.0 feature that's opt-in, although it is enabled by default for new projects. For an existing project, you'll need to opt in by configuring the `cppwinrt.exe` tool. In Visual Studio, set project property **Common Properties** > **C++/WinRT** > **Optimized** to *Yes*. That has the effect of adding `<CppWinRTOptimized>true</CppWinRTOptimized>` to your project file. And it has the same effect as adding the  switch when invoking `cppwinrt.exe` from the command line.
 
-The `-opt[imize]` switch enables what's often called *uniform construction*. With uniform (or *unified*) construction, you use the C++/WinRT language projection itself to create and use your implmentation types (types implemented by your component, for consumption by applications) efficiently and without any loader difficulties.
+The `-opt[imize]` switch enables what's often called *uniform construction*. With uniform (or *unified*) construction, you use the C++/WinRT language projection itself to create and use your implementation types (types implemented by your component, for consumption by applications) efficiently and without any loader difficulties.
 
 Before describing the feature, let's first show the situation *without* uniform construction. To illustrate, we'll begin with this example Windows Runtime class.
 
@@ -749,6 +867,7 @@ This requires that all members of the class hierarchy agree on the return value 
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
 * [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
 * [winrt::Windows::Foundation::IUnknown::as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function)
+* [winrt::Windows::Foundation::IUnknown::try_as function](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknowntry_as-function)
 
 ## Related topics
 * [Author events in C++/WinRT](./author-events.md)

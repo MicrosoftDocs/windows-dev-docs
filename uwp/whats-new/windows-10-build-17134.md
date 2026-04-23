@@ -3,7 +3,7 @@ title: What's New in Windows 10, build 17134
 description: Windows 10 build 17134 and new developer tools provide the tools, features, and experiences powered by the Universal Windows Platform.
 keywords: Windows 10, 17134, 1803
 ms.date: 04/10/2018
-ms.topic: article
+ms.topic: whats-new
 
 
 ms.localizationpriority: medium
@@ -44,7 +44,7 @@ Graphics adapters | The following DXGI APIs have been added, which are related t
 
 Feature | Description
  :------ | :------
-Adaptive Cards | [Adaptive cards](/adaptive-cards/) are an open card exchange format enbling developers to exchange UI content in a common and consistent way. They describe their content as a JSON object that can be rendered to automatically adapt to the look and feel of the host application.
+Adaptive Cards | [Adaptive cards](/adaptive-cards/) are an open card exchange format enabling developers to exchange UI content in a common and consistent way. They describe their content as a JSON object that can be rendered to automatically adapt to the look and feel of the host application.
 App Resource Group | The [AppResourceGroupInfo](/uwp/api/windows.system.appresourcegroupinfo) class has new methods that you can use to initiate the transition to the app suspended, active (resumed), and terminated states.
 Broad file-system access | The **broadFileSystemAccess** capability grants apps the same access to the file system as the user who is currently running the app without file-picker style prompts. For more info, see [File access permissions](../files/file-access-permissions.md) and the **broadFileSystemAccess** entry in [App capability declarations](../packaging/app-capability-declarations.md).
 C++/WinRT | [C++/WinRT](../cpp-and-winrt-apis/index.md) is a new, entirely standard, modern C++17 language projection for Windows Runtime (WinRT) APIs. It's implemented solely in header files, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume WinRT APIs using any standards-compliant C++17 compiler. For your C++ applications — from Win32 to UWP — use C++/WinRT to keep your code standard, modern, and clean, and your application lightweight and fast.
@@ -56,7 +56,7 @@ Map Controls | The [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontro
 Map Elements | The [MapElement](/uwp/api/windows.ui.xaml.controls.maps.mapelement) class has a new property named **IsEnabled** that you can use to specify whether users can interact with the [MapElement](/uwp/api/windows.ui.xaml.controls.maps.mapelement).
 Map Place Info | The [PlaceInfo](/uwp/api/windows.services.maps.placeinfo) class contains a new method **CreateFromAddress** that you can use to create a [PlaceInfo](/uwp/api/windows.services.maps.placeinfo) by using an address and display name.
 Map Services | The [MapRouteDrivingOptions](/uwp/api/windows.services.maps.maproutedrivingoptions) class contains a new property named **DepartureTime** that you can use to compute a route with the traffic conditions that are typical for the specified day and time.
-Multi-instance UWP apps | A UWP app can opt-in to support multiple instances. If an instance of an multi-instance UWP app is running, and a subsequent activation request comes through, the platform will not activate the existing instance. Instead, it will create a new instance, running in a separate process. For more info, see [Create a multi-instance Universal Windows App](../launch-resume/multi-instance-uwp.md).
+Multi-instance UWP apps | A UWP app can opt-in to support multiple instances. If an instance of a multi-instance UWP app is running, and a subsequent activation request comes through, the platform will not activate the existing instance. Instead, it will create a new instance, running in a separate process. For more info, see [Create a multi-instance Universal Windows App](../launch-resume/multi-instance-uwp.md).
 Package resource indexing APIs and custom build systems | With [package resource indexing (PRI) APIs](../app-resources/pri-apis-custom-build-systems.md), you can develop a custom build system for your UWP app's resources. The build system will be able to create, version, and dump PRI files to whatever level of complexity your UWP app needs. If you have a custom build system that currently uses the MakePri.exe command-line tool, we recommend that you switch over to calling the PRI APIs instead, as they provide increased performance and control.
 PlayReady | Microsoft PlayReady is a set of technologies for protecting digital content from unauthorized usage. PlayReady runs on all sorts of devices and apps, and across all operating systems. [Learn how to incorporate PlayReady in your app.](/playready/)
 Private Audience | If you want your app’s Store listing to be visible only to selected people that you specify, use the new **Private audience** option. The app will not be discoverable or available to anyone other than people in the group(s) you specify. This option is useful for beta testing, as it lets you distribute your app to testers without anyone else being able to get the app, or even see its Store listing. For more info, see [Choose visibility options](/windows/apps/publish/publish-your-app/visibility-options?pivots=store-installer-msix).
@@ -108,9 +108,9 @@ It's easier than ever to bring your desktop app to the Universal Windows Platfor
 
 The Xbox Live Creators Program allows developers to quickly publish their UWP games to Xbox One and Windows 10. [Watch the video](https://www.youtube.com/watch?v=zpFfHHBkVq4) to learn about the program, then [check out this page](https://www.xbox.com/developers/creators-program) to get started.
 
-### One Dev Question - Why was Docments and Settings renamed Users?
+### One Dev Question - Why was Documents and Settings renamed Users?
 
-Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more developement details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
+Curious why the Documents and Settings directory was renamed? [Raymond Chen explains where the name came from, and why it was changed](https://www.youtube.com/watch?v=4vDHQewVmM8&index=1&list=PLWs4_NfqMtoxjy3LrIdf2oamq1coolpZ7). For more development details about Windows and its history, check out [Raymond's blog.](https://devblogs.microsoft.com/oldnewthing/)
 
 
 ## Samples

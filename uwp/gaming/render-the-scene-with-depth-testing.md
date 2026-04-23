@@ -3,7 +3,7 @@ title: Render the scene with depth testing
 description: Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.
 ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, rendering, scene, depth testing, direct3d, shadows
 ms.localizationpriority: medium
 ---

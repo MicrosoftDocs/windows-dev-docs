@@ -1,37 +1,38 @@
 ---
 ms.assetid: b7a8ec88-3013-4e5a-a110-fab3f20ee4bf
 title: Windows data binding and MVVM
-description: Data binding is at the core of the Model-View-ViewModel (MVVM) UI architectural design pattern, and enables loose coupling between UI and non-UI code.
-ms.date: 12/13/2022
-ms.topic: article
+description: Learn how data binding in the Model-View-ViewModel (MVVM) pattern enables loose coupling between UI and non-UI code for better maintainability.
+ms.date: 11/11/2025
+ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui, mvvm
 ms.localizationpriority: medium
+# customer intent: As a Windows developer, I want to learn how data binding in the Model-View-ViewModel (MVVM) pattern enables loose coupling between UI and non-UI code so that I can improve maintainability.
 ---
 
 # Windows data binding and MVVM
 
-Model-View-ViewModel (MVVM) is a UI architectural design pattern for decoupling UI and non-UI code. With MVVM, you define your UI declaratively in XAML and use data binding markup to link it to other layers containing data and commands. The data binding infrastructure provides a loose coupling that keeps the UI and the linked data synchronized and routes user input to the appropriate commands.
+Model-View-ViewModel (MVVM) is a UI architectural design pattern that decouples UI and non-UI code. Learn how MVVM enables loose coupling using data binding in XAML to synchronize UI and data, improving maintainability and reducing dependencies.
 
-Because it provides loose coupling, the use of data binding reduces hard dependencies between different kinds of code. This makes it easier to change individual code units (methods, classes, controls, etc.) without causing unintended side effects in other units. This decoupling is an example of the *separation of concerns*, which is an important concept in many design patterns.
+Because it provides loose coupling, the use of data binding reduces hard dependencies between different kinds of code. This approach makes it easier to change individual code units (methods, classes, controls, and so on) without causing unintended side effects in other units. This decoupling is an example of the *separation of concerns*, which is an important concept in many design patterns.
 
 ## Benefits of MVVM
 
 Decoupling your code has many benefits, including:
 
 * Enabling an iterative, exploratory coding style. Change that is isolated is less risky and easier to experiment with.
-* Simplifying unit testing. Code units that are isolated from one another can be tested individually and outside of production environments.
-* Supporting team collaboration. Decoupled code that adheres to well-designed interfaces can be developed by separate individuals or teams, and integrated later.
+* Simplifying unit testing. You can test code units that are isolated from one another individually and outside of production environments.
+* Supporting team collaboration. Separate individuals or teams can develop decoupled code that adheres to well-designed interfaces and integrate it later.
 * Improving maintainability. Fixing bugs in decoupled code is less likely to cause regressions in other code.
 
-In contrast with MVVM, an app with a more conventional "code-behind" structure typically uses data binding for display-only data, and responds to user input by directly handling events exposed by controls. The event handlers are implemented in code-behind files (such as MainWindow.xaml.cs), and are often tightly coupled to the controls, typically containing code that manipulates the UI directly. This makes it difficult or impossible to replace a control without having to update the event handling code. With this architecture, code-behind files often accumulate code that isn't directly related to the UI, such as database-access code, which ends up being duplicated and modified for use with other windows.
+In contrast with MVVM, an app with a more conventional "code-behind" structure typically uses data binding for display-only data. It responds to user input by directly handling events exposed by controls. The event handlers are implemented in code-behind files (such as MainWindow.xaml.cs) and are often tightly coupled to the controls. They typically contain code that manipulates the UI directly. This structure makes it difficult or impossible to replace a control without having to update the event handling code. With this architecture, code-behind files often accumulate code that isn't directly related to the UI, such as database-access code, which ends up being duplicated and modified for use with other windows.
 
 ## App layers
 
-When using the MVVM pattern, an app is divided into the following layers:
+When you use the MVVM pattern, divide your app into the following layers:
 
-* The **model** layer defines the types that represent your business data. This includes everything required to model the core app domain, and often includes core app logic. This layer is completely independent of the view and view-model layers, and often resides partially in the cloud. Given a fully implemented model layer, you can create multiple different client apps if you so choose, such as Windows App SDK and web apps that work with the same underlying data.
-* The **view** layer defines the UI using XAML markup. The markup includes data binding expressions (such as [x:Bind](/windows/uwp/xaml-platform/x-bind-markup-extension)) that define the connection between specific UI components and various view-model and model members. Code-behind files are sometimes used as part of the view layer to contain additional code needed to customize or manipulate the UI, or to extract data from event handler arguments before calling a view-model method that performs the work.
-* The **view-model** layer provides data binding targets for the view. In many cases, the view-model exposes the model directly, or provides members that wrap specific model members. The view-model can also define members for keeping track of data that is relevant to the UI but not to the model, such as the display order of a list of items. The view-model also serves as an integration point with other services such as data access code. For simple projects, you might not need a separate model layer, but only a view-model that encapsulates all the data you need.
+* The **model** layer defines the types that represent your business data. This layer includes everything required to model the core app domain and often includes core app logic. This layer is completely independent of the view and view-model layers and often resides partially in the cloud. Given a fully implemented model layer, you can create multiple different client apps if you choose, such as Windows App SDK and web apps that work with the same underlying data.
+* The **view** layer defines the UI by using XAML markup. The markup includes data binding expressions (such as [x:Bind](/windows/apps/develop/platform/xaml/x-bind-markup-extension)) that define the connection between specific UI components and various view-model and model members. You can sometimes use code-behind files as part of the view layer to contain additional code needed to customize or manipulate the UI or to extract data from event handler arguments before calling a view-model method that performs the work.
+* The **view-model** layer provides data binding targets for the view. In many cases, the view-model exposes the model directly or provides members that wrap specific model members. The view-model can also define members for keeping track of data that is relevant to the UI but not to the model, such as the display order of a list of items. The view-model also serves as an integration point with other services such as data access code. For simple projects, you might not need a separate model layer, but only a view-model that encapsulates all the data you need.
 
 ## Basic and advanced MVVM
 
@@ -39,7 +40,7 @@ As with any design pattern, there is more than one way to implement MVVM, and ma
 
 Although sophisticated MVVM frameworks can be very useful, especially for enterprise-scale projects, there is typically a cost associated with adopting any particular pattern or technique, and the benefits are not always clear, depending on the scale and size of your project. Fortunately, you can adopt only those techniques that provide a clear and tangible benefit, and ignore others until you need them.
 
-In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows App SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
+In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows App SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
 
 For additional guidance on using basic, out-of-the-box MVVM, check out the [Customers Orders Database UWP sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) on GitHub. Many of the other [UWP app samples](https://github.com/Microsoft?q=windows-appsample
 ) also use a basic MVVM architecture, and the [Traffic App UWP sample](https://github.com/Microsoft/Windows-appsample-trafficapp) includes both code-behind and MVVM versions, with notes describing the [MVVM conversion](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md).
@@ -49,7 +50,7 @@ For additional guidance on using basic, out-of-the-box MVVM, check out the [Cust
 ### Topics
 
 [Data binding in depth](data-binding-in-depth.md)  
-[{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension)
+[{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
 
 ### UWP MVVM Samples
 

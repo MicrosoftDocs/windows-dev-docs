@@ -3,9 +3,7 @@ title: Win32Interop.GetWindowIdFromWindow(IntPtr) method
 description: Gets the `WindowId` that corresponds to the specified _hwnd_, if the provided `HWND` is a valid.
 ms.topic: article
 ms.date: 02/08/2022
-keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, Windows UI Library, app sdk, C#, interop, Win32Interop.GetDisplayIdFromMonitor, GetDisplayIdFromMonitor
-ms.author: stwhi
-author: stevewhims
+keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, app sdk, C#, interop, Win32Interop.GetDisplayIdFromMonitor, GetDisplayIdFromMonitor
 ms.localizationpriority: low
 ---
 
@@ -44,5 +42,5 @@ The identifier that corresponds to the specified *hwnd*, if the provided *hwnd* 
 ## See also
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
-* [Manage app windows](../../../windows-app-sdk/windowing/windowing-overview.md)
+* [Manage app windows](../../../develop/ui-input/manage-app-windows.md)
 * [Call interop APIs from a .NET app](../../../desktop/modernize/winrt-com-interop-csharp.md)

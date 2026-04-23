@@ -2,10 +2,8 @@
 title: Application lifecycle functionality migration
 description: This topic contains migration guidance in the application lifecycle area.
 ms.topic: article
-ms.date: 07/05/2022
+ms.date: 07/14/2025
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, application lifecycle, applifecycle, application, lifecycle
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -27,7 +25,9 @@ This topic contains migration guidance in the application lifecycle area.
 
 Universal Windows Platform (UWP) apps are single-instanced by default; Windows App SDK (WinUI 3) apps are multi-instanced by default.
 
-A UWP app has **App** methods such as **OnFileActivated**, **OnSearchActivated**, and **OnActivated** that implicitly tell you how the app was activated; In a Windows App SDK app, in **App.OnLaunched** (or in any method), call ([**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated.
+A UWP app has **App** methods such as **OnFileActivated**, **OnSearchActivated**, **OnActivated**, and **OnBackgroundActivated** that implicitly tell you how the app was activated; In a Windows App SDK app, in **App.OnLaunched** (or in any method), call ([**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated.
+
+Also see the *Background tasks* row in the table in the [What's supported when migrating from UWP to WinUI 3](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported) topic.
 
 ## Single-instanced apps
 
@@ -56,7 +56,7 @@ Go to **Properties** > (select **All Configurations** and **All Platforms**) > *
 
 Because we've just prevented the project from auto-generating a **Main** function, the project won't build at the moment. So the second and last step is to implement our own version of that function in a source code file.
 
-Add a new project item of type **Class** to the project, and name it *Program.cs*. Inside `Program.cs`, replace the code `class Program {}` with your own implementation. For an example of the code to use, see `Program.cs` in the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/Instancing/cs-winui-packaged/CsWinUiDesktopInstancing/CsWinUiDesktopInstancing/Program.cs).
+Add a new project item of type **Class** to the project, and name it *Program.cs*. Inside `Program.cs`, replace the code `class Program {}` with your own implementation. For an example of the code to use, see `Program.cs` in the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing/cs/cs-winui-packaged/CsWinUiDesktopInstancing/CsWinUiDesktopInstancing/Program.cs).
 
 #### Instructions for C++/WinRT
 
@@ -64,7 +64,7 @@ Go to **Properties** > (select **All Configurations** and **All Platforms**) > *
 
 Because we've just prevented the project from auto-generating a **wWinMain** function, the project won't build at the moment. So the second and last step is to implement our own version of that function in a source code file.
 
-Add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package, and update your project's `pch.h` and `App.xaml.cpp` source code files. For an example of the code to use, see the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/Instancing/cpp-winui-packaged/CppWinUiDesktopInstancing/CppWinUiDesktopInstancing/App.xaml.cpp). Be sure to change the namespace in `winrt::CppWinUiDesktopInstancing::implementation::App` to suit your particular project).
+Add a reference to the [Microsoft.Windows.ImplementationLibrary](https://www.nuget.org/packages/Microsoft.Windows.ImplementationLibrary/) NuGet package, and update your project's `pch.h` and `App.xaml.cpp` source code files. For an example of the code to use, see the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing/cpp/cpp-winui-packaged/CppWinUiDesktopInstancing/CppWinUiDesktopInstancing/App.xaml.cpp). Be sure to change the namespace in `winrt::CppWinUiDesktopInstancing::implementation::App` to suit your particular project).
 
 To resolve "error C2872: 'Microsoft': ambiguous symbol", change `using namespace Microsoft::UI::Xaml;` to `using namespace winrt::Microsoft::UI::Xaml;`. And make any additional similar changes to `using` directives.
 
@@ -212,5 +212,6 @@ See the [File type association](#file-type-association) section above for more d
 
 ## Related topics
 
+* [Windows App SDK and supported Windows releases](../../support.md)
 * [App instancing with the app lifecycle API](../../applifecycle/applifecycle-instancing.md)
 * [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation)

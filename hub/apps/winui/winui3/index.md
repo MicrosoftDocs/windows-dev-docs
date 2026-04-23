@@ -1,45 +1,120 @@
 ---
-title: Windows UI Library (WinUI) 3
+title: WinUI 3
 description: Provides info for WinUI 3 and Windows app development with the Windows App SDK. 
 ms.topic: article
-ms.date: 11/10/2021
+ms.date: 07/15/2024
 ---
 
-# Windows UI Library in the Windows App SDK (WinUI 3)
+# WinUI 3
 
-WinUI 3 is the native UI platform component that ships with the [Windows App SDK](../../windows-app-sdk/index.md) (completely decoupled from [Windows SDKs](https://developer.microsoft.com/windows/downloads/windows-10-sdk/)). The Windows App SDK provides a unified set of APIs and tools that can be used to create production desktop apps that target Windows 10 and later, and can be published to the Microsoft Store.
+:::image type="icon" source="images/winui-hero.png":::
 
-> [!Important]
-> The **Windows App SDK** was previously known as **Project Reunion**. Some assets, such as the VSIX extension and NuGet packages, still use this code name (these will be renamed in a future release).
->
->**Windows App SDK** is used in all documentation except where a specific release or asset still refers to **Project Reunion**.
+WinUI 3 is Microsoft's modern native user interface framework for building Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
 
-> [!div class="nextstepaction"]
-> [Create your first WinUI 3 project](create-your-first-winui3-app.md)
+Delivered as part of the [Windows App SDK](../../windows-app-sdk/index.md), WinUI 3 enables you to create modern, polished, and responsive desktop experiences that run on Windows 10, version 1809 (build 17763) and later, including Windows 11.
 
-## WinUI resources
+WinUI is built in the open, and contributions or discussions are welcome. Visit the repository for details:
 
-**Release notes:** For more details on WinUI 3 in the Windows App SDK, see [WinUI 3 in the Stable channel release notes for the Windows App SDK](../../windows-app-sdk/stable-channel.md#winui-3)
+<div class="buttons margin-top-xs">
+	<a href="https://github.com/microsoft/microsoft-ui-xaml" class="button button-sm"><span class="icon docon docon-brand-github" role="img"></span><span>View on GitHub</span></a>
+</div>
 
-**Github**: WinUI is hosted on Github. Use the [WinUI repo](https://github.com/microsoft/microsoft-ui-xaml), to file feature requests or bugs, and interact with the WinUI team.
+To stay up to date with what's new with WinUI, check out the [latest Windows App SDK release notes](../../windows-app-sdk/release-notes/windows-app-sdk-1-8.md).
 
-## Examples
+:::image type="content" source="images/hero-controlset.png" alt-text="Diagram of the Windows App SDK architecture" border="false":::
 
-> [!TIP]
-> For more info, design guidance, and code examples, see [Design and code Windows apps](../../design/index.md).
->
-> The **WinUI 3 Gallery** and **WinUI 2 Gallery** apps include interactive examples of most WinUI 3 and WinUI 2 controls, features, and functionality.
->
-> If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:/item/AnimatedIcon) or [**WinUI 2 Gallery**](winui2gallery:/item/AnimatedIcon).
->
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
->
-> You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
+### Key benefits of WinUI 3
+
+WinUI 3 combines the flexibility of the Win32 app model with the richness of modern Windows UX. It's designed for developers who want to build production-grade desktop apps using the same design language and system features as built-in Windows experiences.
+
+:::row:::
+    :::column:::
+        ![A floating app window with UI controls](images/hero-fluentdesign.png)
+    :::column-end:::
+    :::column span="2":::
+        **Modern UI**<br>
+         WinUI includes a comprehensive set of modern UI controls and styles, designed for usability, adaptability, and a polished, Fluent look and feel.
+        <br><br>
+         [Explore Fluent Design](../../design/index.md)
+    :::column-end:::    
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![C# and C++ logos](images/hero-control.png)
+    :::column-end:::
+    :::column span="2":::
+        **Code in your preferred language**<br>
+         Use .NET (C#) or C++ with XAML markup to build apps that run seamlessly across x86, x64, and ARM devices.
+    :::column-end:::    
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![A speed indicator](images/hero-performance.png)
+    :::column-end:::
+    :::column span="2":::
+        **Optimized for modern experiences and hardware**<br>
+         Create rich, high-performance apps with advanced pixel rendering, high-DPI visuals, and smooth animations, optimized for modern hardware and input methods such as touch, pen, keyboard, and mouse.
+    :::column-end:::    
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![The WinUI and Windows App SDK logos](images/hero-wasdk.png)
+    :::column-end:::
+    :::column span="2":::
+        **Built on the Windows App SDK**<br>
+         WinUI 3 is part of the Windows App SDK, giving you access to modern Windows APIs, consistent app behaviors, and tools that simplify development and deployment.
+         <br><br>
+         [Learn more about the Windows App SDK](../../windows-app-sdk/index.md)
+    :::column-end:::    
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![Multiple app windows icons](images/hero-os.png)
+    :::column-end:::
+    :::column span="2":::
+        **Powers key experiences in Windows**<br>
+        The Windows shell and many built-in apps are built with WinUI, giving your app the same modern look, feel, and performance as Windows itself.
+    :::column-end:::    
+:::row-end:::
+
+---
+
+## Get started with WinUI
+
+To get started with WinUI, you can try out these resources to get you started:
+
+:::row:::
+    :::column:::
+        ![An image that says Hello, WinUI](images/hero-hello-winui.png)
+    :::column-end:::
+    :::column span="2":::
+        **Hello, WinUI**<br>
+         Setup your development environment and build your first WinUI app.
+         <br>
+         > [!div class="nextstepaction"]
+         > [Create your first WinUI app](../../get-started/start-here.md)
+    :::column-end:::    
+:::row-end:::
+
+:::row:::
+    :::column:::
+        ![A screenshot of the WinUI Gallery](images/winui-gallery.png)
+    :::column-end:::
+    :::column span="2":::
+        **Explore the WinUI Gallery**<br>
+         The WinUI Gallery is an open-source app that showcases interactive examples of WinUI controls, features, and functionality. It includes code snippets and design guidance to help you get started quickly.
+         <br><br>
+         [Explore WinUI Gallery](../../get-started/samples.md#winui-gallery)
+    :::column-end:::    
+:::row-end:::
 
 ### See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Windows App SDK API docs](/windows/windows-app-sdk/api/winrt/)
-- [WinUI 2 API docs](/windows/winui/api/)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
+- [Design guidelines](../../design/index.md)

@@ -1,12 +1,9 @@
 ---
 title: Web development with Python on Windows
 description: A step-by-step guide to get started using Python for web development on Windows, including set up for frameworks like Flask and Django.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
-ms.topic: article
+ms.topic: get-started
 ms.localizationpriority: medium
-ms.date: 10/08/2021
+ms.date: 11/20/2024
 ---
 
 # Get started using Python for web development on Windows
@@ -41,13 +38,13 @@ Take advantage of [IntelliSense](https://code.visualstudio.com/docs/editor/intel
 2. Install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) on VS Code. This allows you to use WSL as your integrated development environment and will handle compatibility and pathing for you. [Learn more](https://code.visualstudio.com/docs/remote/remote-overview).
 
 > [!IMPORTANT]
-> If you already have VS Code installed, you need to ensure that you have the [1.35 May release](https://code.visualstudio.com/updates/v1_35) or later in order to install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). We do not recommend using WSL in VS Code without the Remote-WSL extension as you will lose support for auto-complete, debugging, linting, etc. Fun fact: This WSL extension is installed in $HOME/.vscode-server/extensions.
+> If you already have VS Code installed, you need to ensure that you have the [1.35 May release](https://code.visualstudio.com/updates/v1_35) or later in order to install the [WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl). We do not recommend using WSL in VS Code without the Remote-WSL extension as you will lose support for auto-complete, debugging, linting, etc. Fun fact: This WSL extension is installed in $HOME/.vscode-server/extensions.
 
 ## Create a new project
 
 Let's create a new project directory on our Linux (Ubuntu) file system that we will then work on with Linux apps and tools using VS Code.
 
-1. Close VS Code and open Ubuntu 18.04 (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu 18.04".
+1. Close VS Code and open Ubuntu (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu".
 
 2. In your Ubuntu command line, navigate to where you want to put your project, and create a directory for it: `mkdir HelloWorld`.
 
@@ -58,7 +55,7 @@ Let's create a new project directory on our Linux (Ubuntu) file system that we w
 
 ## Install Python, pip, and venv
 
-Ubuntu 18.04 LTS comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install **pip**, the standard package manager for Python, and **venv**, the standard module used to create and manage lightweight virtual environments. *Remember that you may need to update your Linux distribution so that it has the latest version using the command: `sudo apt update && sudo apt upgrade`.*
+Ubuntu comes with Python 3.6 already installed, but it does not come with some of the modules that you may expect to get with other Python installations. We will still need to install **pip**, the standard package manager for Python, and **venv**, the standard module used to create and manage lightweight virtual environments. *Remember that you may need to update your Linux distribution so that it has the latest version using the command: `sudo apt update && sudo apt upgrade`.*
 
 1. Confirm that Python3 is already installed by opening your Ubuntu terminal and entering: `python3 --version`. This should return your Python version number. If you need to update your version of Python, first update your Ubuntu version by entering: `sudo apt update && sudo apt upgrade`, then update Python using `sudo apt upgrade python3`.
 
@@ -79,33 +76,29 @@ Using virtual environments is a recommended best practice for Python development
 > [!TIP]
 > We recommend creating the virtual environment inside the directory in which you plan to have your project. Since each project should have its own separate directory, each will have its own virtual environment, so there is not a need for unique naming. Our suggestion is to use the name **.venv** to follow the Python convention. Some tools (like pipenv) also default to this name if you install into your project directory. You don't want to use **.env** as that conflicts with environment variable definition files. We generally do not recommend non-dot-leading names, as you don't need `ls` constantly reminding you that the directory exists. We also recommend adding **.venv** to your .gitignore file. (Here is [GitHub's default gitignore template for Python](https://github.com/github/gitignore/blob/50e42aa1064d004a5c99eaa72a2d8054a0d8de55/Python.gitignore#L99-L106) for reference.) For more information about working with virtual environments in VS Code, see [Using Python environments in VS Code](https://code.visualstudio.com/docs/python/environments).
 
-## Open a WSL - Remote window
+## Open a WSL terminal window in VS Code
 
-VS Code uses the Remote - WSL Extension (installed previously) to treat your Linux subsystem as a remote server. This allows you to use WSL as your integrated development environment. [Learn more](https://code.visualstudio.com/docs/remote/wsl).
+VS Code uses the WSL Extension (installed previously) to treat your Linux subsystem as a remote server. This allows you to use WSL as your integrated development environment. [Learn more](https://code.visualstudio.com/docs/remote/wsl).
 
 1. Open your project folder in VS Code from your Ubuntu terminal by entering: `code .` (the "." tells VS Code to open the current folder).
 
-2. A Security Alert will pop-up from Windows Defender, select "Allow access". Once VS Code opens, you should see the Remote Connection Host indicator, in the bottom-left corner, letting you know that you are editing on **WSL: Ubuntu-18.04**.
+2. Close your Ubuntu terminal. Moving forward we will use the WSL terminal integrated into VS Code.
 
-    ![VS Code Remote Connection Host indicator](../images/wsl-remote-extension.png)
-
-3. Close your Ubuntu terminal. Moving forward we will use the WSL terminal integrated into VS Code.
-
-4. Open the WSL terminal in VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. This will open a bash (WSL) command-line opened to the project folder path that you created in your Ubuntu terminal.
+3. Open the WSL terminal in VS Code by pressing **Ctrl+`** (using the backtick character) or selecting  **View** > **Terminal**. This will open a bash (WSL) command-line opened to the project folder path that you created in your Ubuntu terminal.
 
     ![VS Code with WSL terminal](../images/vscode-bash-remote.png)
 
 ## Install the Microsoft Python extension
 
-You will need to install any VS Code extensions for your Remote - WSL. Extensions already installed locally on VS Code will not automatically be available. [Learn more](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions).
+You may need to install VS Code extensions for your WSL installation. Some extensions already installed locally on VS Code will not automatically be available. [Learn more](https://code.visualstudio.com/docs/remote/wsl#_managing-extensions).
 
 1. Open the VS Code Extensions window by entering **Ctrl+Shift+X** (or use the menu to navigate to **View** > **Extensions**).
 
 2. In the top **Search Extensions in Marketplace** box, enter:  **Python**.
 
-3. Find the **Python (ms-python.python) by Microsoft** extension and select the green **Install** button.
+3. Find the **Python (ms-python.python) by Microsoft** extension and select the **Install in WSL: [distribution name]** button.
 
-4. Once the extension is finished installing, you will need to select the blue **Reload Required** button. This will reload VS Code and display a **WSL: UBUNTU-18.04 - Installed** section in your VS Code Extensions window showing that you've installed the Python extension.
+4. Once the extension is finished installing, you will see a **WSL: [distribution name] - Installed** section in your VS Code Extensions window showing that you've installed the Python extension.
 
 ## Run a simple Python program
 
@@ -115,7 +108,7 @@ Let's create and run a simple Python program as a test and ensure that we have t
 
 1. Open the VS Code File Explorer window by entering **Ctrl+Shift+E** (or use the menu to navigate to **View** > **Explorer**).
 
-2. If it's not already open, open your integrated WSL terminal by entering **Ctrl+Shift+`** and ensure that your **HelloWorld** python project folder is selected.
+2. If it's not already open, open your integrated WSL terminal by entering **Ctrl+Shift+`** and ensure that your current directory is the **HelloWorld** python project folder.
 
 3. Create a python file by entering: `touch test.py`. You should see the file you just created appear in your Explorer window under the .venv and .vscode folders already in your project directory.
 
@@ -129,15 +122,17 @@ Let's create and run a simple Python program as a test and ensure that we have t
     print("Hello World")
     ```
 
-6. To run the Python "Hello World" program that we just created, select the **test.py** file in the VS Code Explorer window, then right-click the file to display a menu of options. Select **Run Python File in Terminal**. Alternatively, in your integrated WSL terminal window, enter: `python test.py` to run your "Hello World" program. The Python interpreter will print "Hello World" in your terminal window.
+6. To run the Python "Hello World" program that we just created, select the **test.py** file in the VS Code Explorer window, then right-click the file to display a menu of options. Select **Run Python File in Terminal**. Alternatively, in your integrated WSL terminal window, enter: `python3 test.py` to run your "Hello World" program. The Python interpreter will print "Hello World" in your terminal window.
 
 Congratulations. You're all set up to create and run Python programs! Now let's try creating a Hello World app with two of the most popular Python web frameworks: Flask and Django.
 
 ## Hello World tutorial for Flask
 
-[Flask](http://flask.pocoo.org/) is a web application framework for Python. In this brief tutorial, you'll create a small "Hello World" Flask app using VS Code and WSL.
+[Flask](https://flask.palletsprojects.com/) is a web application framework for Python. The Flask documentation offers guidance on getting started and a [more detailed tutorial](https://flask.palletsprojects.com/tutorial/) about how to create a small but complete application.
 
-1. Open Ubuntu 18.04 (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu 18.04".
+Following the steps below, you can create a small "Hello World" Flask app using VS Code and WSL.
+
+1. Open Ubuntu (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu".
 
 2. Create a directory for your project: `mkdir HelloWorld-Flask`, then `cd HelloWorld-Flask` to enter the directory.
 
@@ -194,7 +189,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
      * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
     ```
 
-14. Open your default web browser to the rendered page, **Ctrl+Click** the http://127.0.0.1:5000/ URL in the terminal. You should see the following message in your browser:
+14. Visual Studio will launch a notification stating "Your application now running on port 5000 is available." Click the **Open in Browser** button. Or, you can **Ctrl+Click** the http://127.0.0.1:5000/ URL in the terminal. You should see the following message in your browser:
 
     ![Hello World! I'm using Flask.](../images/hello-flask.png)
 
@@ -207,7 +202,7 @@ Congratulations. You're all set up to create and run Python programs! Now let's 
 16. Stop the app by using **Ctrl+C** in the terminal.
 
 > [!TIP]
-> If you want to use a different filename than **app.py**, such as **program.py**, define an environment variable named **FLASK_APP** and set its value to your chosen file. Flask's development server then uses the value of **FLASK_APP** instead of the default file **app.py**. For more information, see [Flask's Command Line Interface documentation](http://flask.pocoo.org/docs/1.0/cli/).
+> If you want to use a different filename than **app.py**, such as **program.py**, define an environment variable named **FLASK_APP** and set its value to your chosen file. Flask's development server then uses the value of **FLASK_APP** instead of the default file **app.py**. For more information, see the [Flask documentation](https://flask.palletsprojects.com/).
 
 Congratulations, you've created a Flask web application using Visual Studio Code and Windows Subsystem for Linux! For a more in-depth tutorial using VS Code and Flask, see [Flask Tutorial in Visual Studio Code](https://code.visualstudio.com/docs/python/tutorial-flask).
 
@@ -215,7 +210,7 @@ Congratulations, you've created a Flask web application using Visual Studio Code
 
 [Django](https://www.djangoproject.com) is a web application framework for Python. In this brief tutorial, you'll create a small "Hello World" Django app using VS Code and WSL.
 
-1. Open Ubuntu 18.04 (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu 18.04".
+1. Open Ubuntu (your WSL command line) by going to your **Start** menu (lower left Windows icon) and typing: "Ubuntu".
 
 2. Create a directory for your project: `mkdir HelloWorld-Django`, then `cd HelloWorld-Django` to enter the directory.
 
@@ -242,6 +237,7 @@ Congratulations, you've created a Flask web application using Visual Studio Code
     - A subfolder named `web_project`, which contains the following files:
         - `__init__.py`: an empty file that tells Python that this folder is a Python package.
         - `wsgi.py`: an entry point for WSGI-compatible web servers to serve your project. You typically leave this file as-is as it provides the hooks for production web servers.
+        - `asgi.py`: an entry point for ASGI-compatible web servers to serve your project. You typically leave this file as-is as it provides the hooks for production web servers.
         - `settings.py`: contains settings for Django project, which you modify in the course of developing a web app.
         - `urls.py`: contains a table of contents for the Django project, which you also modify in the course of development.
 
@@ -262,7 +258,7 @@ Congratulations, you've created a Flask web application using Visual Studio Code
 
     If you want to use a different port than the default 8000, specify the port number on the command line, such as `python3 manage.py runserver 5000`.
 
-10. `Ctrl+click` the `http://127.0.0.1:8000/` URL in the terminal output window to open your default browser to that address. If Django is installed correctly and the project is valid, you'll see a default page. The VS Code terminal output window also shows the server log.
+10. Visual Studio will launch a notification stating "Your application now running on port 8000 is available." Click the **Open in Browser** button. Or `Ctrl+click` the `http://127.0.0.1:8000/` URL in the terminal output window to open your default browser to that address. If Django is installed correctly and the project is valid, you'll see a default page. The VS Code terminal output window also shows the server log.
 
 11. When you're done, close the browser window and stop the server in VS Code using `Ctrl+C` as indicated in the terminal output window.
 
@@ -316,5 +312,5 @@ Congratulations, you've created a Django web application using VS Code and Windo
 - [Microsoft Dev Blogs: Python](https://devblogs.microsoft.com/python/): Read the latest updates about all things Python at Microsoft.
 - [Python Tutorial with VS Code](https://code.visualstudio.com/docs/python/python-tutorial): An intro tutorial to VS Code as a Python environment, primarily how to edit, run, and debug code.
 - [Git support in VS Code](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support): Learn how to use Git version control basics in VS Code.  
-- [Learn about updates coming soon with WSL 2!](/windows/wsl/wsl2-index): This new version changes how Linux distributions interact with Windows, increasing file system performance and adding full system call compatibility.
+- [Learn new features and improvements in WSL 2](/windows/wsl/wsl2-index): This new version changes how Linux distributions interact with Windows, increasing file system performance and adding full system call compatibility.
 - [Working with multiple Linux distributions on Windows](/windows/wsl/wsl-config): Learn how to manage multiple different Linux distributions on your Windows machine.

@@ -3,7 +3,7 @@ title: Marble Maze sample fundamentals
 description: This document describes the fundamental characteristics of the Marble Maze project; for example, how it uses Visual C++ in the Windows Runtime environment, how it is created and structured, and how it is built.
 ms.assetid: 73329b29-62e3-1b36-01db-b7744ee5b4c3
 ms.date: 08/22/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, sample, directx, fundamentals
 ms.localizationpriority: medium
 ---
@@ -58,7 +58,7 @@ In the dropdown menus at the top of Visual Studio, to the left of the green play
 
 ###  Controlling the game
 
-You can use touch, the accelerometer, the Xbox One controller, or the mouse to control Marble Maze.
+You can use touch, the accelerometer, a game controller, or the mouse to control Marble Maze.
 
 -   Use the directional pad on the controller to change the active menu item.
 -   Use touch, the A or Start button on the controller, or the mouse to pick a menu item.

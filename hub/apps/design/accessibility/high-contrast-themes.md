@@ -4,8 +4,8 @@ title: Contrast themes
 label: Contrast design guidelines
 keywords: 
 template: detail.hbs
-ms.date: 12/08/2021
-ms.topic: article
+ms.date: 02/27/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -81,14 +81,14 @@ This table shows the contrast theme colors and their recommended pairings. Each 
 
 | Color swatch | Description |
 |---------|---------|
-|:::image type="icon" source="images/sys-color/aquatic-color-window.png":::|  **SystemColorWindowColor**</br>Background of pages, panes, popups, and windows.<br/><br/>Pair with **SystemColorWindowTextColor**       |
-|:::image type="icon" source="images/sys-color/aquatic-color-windowtext.png"::: | **SystemColorWindowTextColor**</br>Headings, body copy, lists, placeholder text, app and window borders, any UI that can't be interacted with.</br></br>Pair with **SystemColorWindowColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-hotlight.png":::| **SystemColorHotlightColor**</br>Hyperlinks.</br></br>Pair with **SystemColorWindowColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-graytext.png":::|  **SystemColorGrayTextColor**</br>Inactive (disabled) UI.</br></br>Pair with **SystemColorWindowColor**       |
-|:::image type="icon" source="images/sys-color/aquatic-color-highlighttext.png":::| **SystemColorHighlightTextColor**</br>Foreground color for text or UI that is in selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-highlight.png":::| **SystemColorHighlightColor**</br>Background or accent color for UI that is in selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightTextColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-btntext.png":::| **SystemColorButtonTextColor**</br>Foreground color for buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonFaceColor**        |
-|:::image type="icon" source="images/sys-color/aquatic-color-3dface.png":::| **SystemColorButtonFaceColor**</br>Background color for buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonTextColor**        |
+|:::image source="images/sys-color/aquatic-color-window.png" alt-text="Color swatch of SystemColorWindowColor used for background of pages, panes, popups, and windows.":::|  **SystemColorWindowColor**</br>Background of pages, panes, popups, and windows.</br></br>Pair with **SystemColorWindowTextColor**       |
+|:::image source="images/sys-color/aquatic-color-windowtext.png" alt-text="Color swatch of SystemColorWindowTextColor used for headings, body copy, lists, placeholder text, app and window borders, any UI that can't be interacted with."::: | **SystemColorWindowTextColor**</br>Headings, body copy, lists, placeholder text, app and window borders, any UI that can't be interacted with.</br></br>Pair with **SystemColorWindowColor**        |
+|:::image source="images/sys-color/aquatic-color-hotlight.png" alt-text="Color swatch of SystemColorWindowTextColor used for hyperlinks.":::| **SystemColorHotlightColor**</br>Hyperlinks.</br></br>Pair with **SystemColorWindowColor**        |
+|:::image source="images/sys-color/aquatic-color-graytext.png" alt-text="Color swatch of SystemColorWindowTextColor used for inactive or disabled UI.":::|  **SystemColorGrayTextColor**</br>Inactive or disabled UI.</br></br>Pair with **SystemColorWindowColor**       |
+|:::image source="images/sys-color/aquatic-color-highlighttext.png" alt-text="Color swatch of SystemColorWindowTextColor used for foreground color of text or UI that is selected, interacted with (hover, pressed), or in progress.":::| **SystemColorHighlightTextColor**</br>Foreground color of text or UI that is selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightColor**        |
+|:::image source="images/sys-color/aquatic-color-highlight.png" alt-text="Color swatch of SystemColorWindowTextColor used for background or accent color of UI that is selected, interacted with (hover, pressed), or in progress.":::| **SystemColorHighlightColor**</br>Background or accent color of UI that is selected, interacted with (hover, pressed), or in progress.</br></br>Pair with **SystemColorHighlightTextColor**        |
+|:::image source="images/sys-color/aquatic-color-btntext.png" alt-text="Color swatch of SystemColorWindowTextColor used for foreground color of buttons and any UI that can be interacted with.":::| **SystemColorButtonTextColor**</br>Foreground color of buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonFaceColor**        |
+|:::image source="images/sys-color/aquatic-color-3dface.png" alt-text="Color swatch of SystemColorWindowTextColor used for background color of buttons and any UI that can be interacted with.":::| **SystemColorButtonFaceColor**</br>Background color of buttons and any UI that can be interacted with.</br></br>Pair with **SystemColorButtonTextColor**        |
 
 The next table shows how the colors appear when used on a background set to **SystemColorWindowColor**.
 
@@ -160,7 +160,7 @@ Here are some recommendations for customizing the contrast theme colors in your 
 > [!TIP]
 > It's often helpful to look at the WinUI Gallery app to see how common controls use the **SystemColor** brushes. If installed already, open them by clicking the following links: [**WinUI 3 Gallery**](winui3gallery:) or [**WinUI 2 Gallery**](winui2gallery:).
 >
-> If they are not installed, you can download the [**WinUI 3 Gallery**](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://www.microsoft.com/store/productId/9MSVH128X2ZT) from the Microsoft Store.
+> If they are not installed, you can download the [**WinUI 3 Gallery**](https://apps.microsoft.com/detail/9P3JFPWWDZRC) and the [**WinUI 2 Gallery**](https://apps.microsoft.com/detail/9MSVH128X2ZT) from the Microsoft Store.
 >
 > You can also get the source code for both from [GitHub](https://github.com/Microsoft/WinUI-Gallery) (use the *main* branch for WinUI 3 and the *winui2* branch for WinUI 2).
 
@@ -174,7 +174,7 @@ In the following code snippet, we show a Grid element declared with a background
 <Grid Background="#E6E6E6">
 ```
 
-Instead, we recommend using the [**{ThemeResource} markup extension**](/windows/uwp/xaml-platform/themeresource-markup-extension) to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). This enables the automatic substitution of colors and brushes based on the user's current theme.
+Instead, we recommend using the [**{ThemeResource} markup extension**](/windows/apps/develop/platform/xaml/themeresource-markup-extension) to reference a color in the [**ThemeDictionaries**](/uwp/api/windows.ui.xaml.resourcedictionary.themedictionaries) collection of a [**ResourceDictionary**](/uwp/api/Windows.UI.Xaml.ResourceDictionary). This enables the automatic substitution of colors and brushes based on the user's current theme.
 
 ```xaml
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">
@@ -249,11 +249,10 @@ The following code snippet (from an App.xaml file) shows an example [**ThemeDict
 
 ## Examples
 
-> [!TIP]
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see color contrast accessibility support in action](winui3gallery://item/AccessibilityColorContrast).
+> [Open the WinUI 3 Gallery app and see color contrast accessibility support in action](winui3gallery://item/AccessibilityColorContrast)
 
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Related topics
 

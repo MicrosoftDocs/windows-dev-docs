@@ -3,7 +3,7 @@ title: Complete code for DDSTextureLoader
 description: Complete code for a class and method that loads a DDS texture from memory.
 ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, ddstextureloader
 ms.localizationpriority: medium
 ---
@@ -450,7 +450,7 @@ static DXGI_FORMAT GetDXGIFormat(const DDS_PIXELFORMAT& ddpf)
             // No DXGI format maps to ISBITMASK(0x000000ff, 0x0000ff00, 0x00ff0000, 0x00000000) aka D3DFMT_X8B8G8R8
 
             // Note that many common DDS reader/writers (including D3DX) swap the
-            // the RED/BLUE masks for 10:10:10:2 formats. We assumme
+            // the RED/BLUE masks for 10:10:10:2 formats. We assume
             // below that the 'backwards' header mask is being used since it is most
             // likely written by D3DX. The more robust solution is to use the 'DX10'
             // header extension and specify the DXGI_FORMAT_R10G10B10A2_UNORM format directly
@@ -1098,7 +1098,7 @@ static void CreateTextureFromDDS(
     }
 
     // Create the texture.
-    std::unique_ptr<D3D11_SUBRESOURCE_DATA> initData(new D3D11_SUBRESOURCE_DATA[mipCount * arraySize]);
+    std::unique_ptr<D3D11_SUBRESOURCE_DATA[]> initData(new D3D11_SUBRESOURCE_DATA[mipCount * arraySize]);
 
     size_t skipMip = 0;
     size_t twidth = 0;

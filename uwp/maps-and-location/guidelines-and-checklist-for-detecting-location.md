@@ -2,22 +2,21 @@
 description: This topic describes performance guidelines for apps that require access to a user's location.
 title: Guidelines for location-aware apps
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, location, map, geolocation
 ms.localizationpriority: medium
 ---
 # Guidelines for location-aware apps
 
+This topic describes performance guidelines for apps that require access to a user's location.
+
 **Important APIs**
 
 -   [**Geolocation**](/uwp/api/Windows.Devices.Geolocation)
 -   [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
-This topic describes performance guidelines for apps that require access to a user's location.
-
 ## Recommendations
-
 
 -   Start using the location object only when the app requires location data.
 
@@ -32,7 +31,7 @@ This topic describes performance guidelines for apps that require access to a us
 -   Display a progress bar or ring while waiting to get location data. <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
 -   Show appropriate error messages or dialogs when location services are disabled or not available.
 
-    If the location settings don't allow your app to access the user's location, we recommend providing a convenient link to the **location privacy settings** in the **Settings** app. For example, you could use a Hyperlink control or call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch the **Settings** app from code using the `ms-settings:privacy-location` URI. For more info, see [Launch the Windows Settings app](../launch-resume/launch-settings-app.md).
+    If the location settings don't allow your app to access the user's location, we recommend providing a convenient link to the **location privacy settings** in **Settings**. For example, you could use a Hyperlink control or call the [**LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync) method to launch **Settings** from code using the `ms-settings:privacy-location` URI. For more info, see [Launch Windows Settings](/windows/apps/develop/launch/launch-settings).
 
 -   Clear cached location data and release the [**Geolocator**](/uwp/api/Windows.Devices.Geolocation.Geolocator) when the user disables access to location info.
 
@@ -102,7 +101,7 @@ This topic describes performance guidelines for apps that require access to a us
 
 ### Detecting changes in location settings
 
-The user can turn off location functionality by using the **location privacy settings** in the **Settings** app.
+The user can turn off location functionality by using the **location privacy settings** in **Settings**.
 
 -   To detect when the user disables or reenables location services:
     -   Handle the [**StatusChanged**](/uwp/api/windows.devices.geolocation.geolocator.statuschanged) event. The [**Status**](/uwp/api/windows.devices.geolocation.statuschangedeventargs.status) property of the argument to the **StatusChanged** event has the value **Disabled** if the user turns off location services.
@@ -146,7 +145,7 @@ Some types of apps—for example, a weather app or a local information app—nee
 
 A user's geographic location is personally identifiable information (PII). The following website provides guidance for protecting user privacy.
 
--   [Microsoft Privacy]( https://www.microsoft.com/privacy/dpd/default.aspx)
+-   [Microsoft Privacy]( https://privacy.microsoft.com/privacystatement)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
@@ -155,7 +154,6 @@ A user's geographic location is personally identifiable information (PII). The f
 * [Set up a geofence](./set-up-a-geofence.md)
 * [Get current location](./get-location.md)
 * [Display maps with 2D, 3D, and Streetside views](./display-maps.md)
-<!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 

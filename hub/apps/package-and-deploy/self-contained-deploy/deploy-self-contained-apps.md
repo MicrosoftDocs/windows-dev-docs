@@ -14,18 +14,6 @@ A Windows App SDK project is framework-dependent by default. To switch to self-c
 * In the app project file, inside the main `PropertyGroup`, add `<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>` as shown in the screenshot below.
 
 ![Screenshot showing the WindowsAppSDKSelfContained property set in a project file.](../../images/winappsdk-self-contained.png)
-* For packaged projects, in the app project file, at the end of the file before the closing `</Project>`, add the `Target` shown below.
-
-```
-  <Target Name="_RemoveFrameworkReferences" BeforeTargets="_ConvertItems;_CalculateInputsForGenerateCurrentProjectAppxManifest">
-    <ItemGroup>
-      <FrameworkSdkReference Remove="@(FrameworkSdkReference)" Condition="$([System.String]::Copy('%(FrameworkSdkReference.SDKName)').StartsWith('Microsoft.WindowsAppRuntime.'))" />
-    </ItemGroup>
-  </Target>
-```
-
-> [!NOTE]
-> This is a workaround for a bug in Windows App SDK 1.1 and will not be necessary with Windows App SDK 1.2. It is only required for packaged projects.
 * Save and close the project file.
 * Click **Reload Project**.
 * If you're using a **Windows Application Packaging Project** (rather than the single-project MSIX that you get with **Blank App, Packaged (WinUI 3 in Desktop)**), then make all of the above changes in the project file for the packaging project as well.

@@ -3,7 +3,7 @@ title: Adding visual content to the Marble Maze sample
 description: This document describes how the Marble Maze game uses Direct3D and Direct2D in the Universal Windows Platform (UWP) app environment so that you can learn the patterns and adapt them when you work with your own game content.
 ms.assetid: 6e43422e-e1a1-b79e-2c4b-7d5b4fa88647
 ms.date: 09/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, sample, directx, graphics
 ms.localizationpriority: medium
 ---
@@ -948,7 +948,7 @@ else
 ## Next steps
 
 
-Read [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md) for information about some of the key practices to keep in mind when you work with input devices. This document discusses how Marble Maze supports touch, accelerometer, Xbox controllers, and mouse input.
+Read [Adding input and interactivity to the Marble Maze sample](adding-input-and-interactivity-to-the-marble-maze-sample.md) for information about some of the key practices to keep in mind when you work with input devices. This document discusses how Marble Maze supports touch, accelerometer, game controllers, and mouse input.
 
 ## Related topics
 

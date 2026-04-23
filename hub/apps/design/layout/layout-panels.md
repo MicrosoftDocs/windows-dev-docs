@@ -25,7 +25,7 @@ There are several things to consider when choosing a layout panel:
 <td>
     <p>If you have the <strong>WinUI 2 Gallery</strong> app installed, see the <a href="winui2gallery:/item/RelativePanel">RelativePanel</a>, <a href="winui2gallery:/item/StackPanel">StackPanel</a>, <a href="winui2gallery:/item/Grid">Grid</a>, <a href="winui2gallery:/item/VariableSizedWrapGrid">VariableSizedWrapGrid</a>, and <a href="winui2gallery:/item/Canvas">Canvas</a> in action.</p>
     <ul>
-    <li><a href="https://www.microsoft.com/store/productId/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
+    <li><a href="https://apps.microsoft.com/detail/9MSVH128X2ZT">Get the WinUI 2 Gallery app (Microsoft Store)</a></li>
     <li><a href="https://github.com/Microsoft/WinUI-Gallery">Get the source code (GitHub)</a></li>
     </ul>
 </td>
@@ -48,7 +48,7 @@ Here is an example of how you can set the [**Canvas.Left**](/dotnet/api/system.w
 </Canvas>
 ```
 
-For more info about attached properties, see [Attached properties overview](/windows/uwp/xaml-platform/attached-properties-overview).
+For more info about attached properties, see [Attached properties overview](/windows/apps/develop/platform/xaml/attached-properties-overview).
 
 ### Panel borders
 
@@ -197,7 +197,7 @@ The default column width is "*", so you don't need to explicitly set this value 
         <ColumnDefinition Width="44"/>
         <ColumnDefinition Width="2*"/>
     </Grid.ColumnDefinitions>
-    <TextBlock Text="Column 1 sizes to its conent." FontSize="24"/>
+    <TextBlock Text="Column 1 sizes to its content." FontSize="24"/>
 </Grid>
 ```
 

@@ -1,10 +1,7 @@
 ---
 title: 'Tutorial: Node.js on Windows for beginners'
 description: A guide to help beginners get started with Node.js development on Windows.
-author: mattwojo 
-ms.author: mattwoj 
-manager: jken
-ms.topic: article
+ms.topic: tutorial
 keywords: NodeJS beginners tutorial, Node.js for beginners, windows 10, microsoft, learning nodejs, node on windows, node on windows for beginners, develop with node on windows, developer with nodejs on windows
 ms.localizationpriority: medium
 ms.date: 03/30/2021
@@ -22,19 +19,17 @@ If you're brand new to using Node.js, this guide will help you to get started wi
 
 - Installing on Node.js on [Windows](./nodejs-on-windows.md) or on [Windows Subsystem for Linux](./nodejs-on-wsl.md)
 
-If you are a beginner, trying Node.js for the first time, we recommend installing directly on Windows. For more information, see [Should I install Node.js on Windows or Windows Subsystem for Linux](./windows-or-wsl.md)
-
 ## Try NodeJS with Visual Studio Code
 
 If you have not yet installed Visual Studio Code, return to the prerequisite section above and follow the installation steps linked for Windows or WSL.
 
 1. Open your command line and create a new directory: `mkdir HelloNode`, then enter the directory: `cd HelloNode`
 
-2. Create a JavaScript file named "app.js" with a variable named "msg" inside: `echo var msg > app.js`
+2. Open the directory in VS Code using the command: `code .`
 
-3. Open the directory and your app.js file in VS Code using the command: `code .`
+3. Create a file named "app.js"
 
-4. Add a simple string variable ("Hello World"), then send the contents of the string to your console by entering this in your "app.js" file:
+4. Add a simple string "Hello World" to a variable named `msg`, then send the contents of the string to your console by entering this in your "app.js" file:
 
     ```js
     var msg = 'Hello World';

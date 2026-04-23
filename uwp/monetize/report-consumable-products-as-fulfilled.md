@@ -3,7 +3,7 @@ ms.assetid: E9BEB2D2-155F-45F6-95F8-6B36C3E81649
 description: Use this method in the Microsoft Store collection API to report a consumable product as fulfilled for a given customer. Before a user can repurchase a consumable product, your app or service must report the consumable product as fulfilled for that user.
 title: Report consumable products as fulfilled
 ms.date: 04/22/2021
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store collection API, fulfill, consumable
 ms.localizationpriority: medium
 ---
@@ -120,7 +120,7 @@ No content will be returned if the consumption was executed successfully.
 ```syntax
 HTTP/1.1 204 No Content
 Content-Length: 0
-MS-CorrelationId: 386f733d-bc66-4bf9-9b6f-a1ad417f97f0
+MS-CorrelationId: aaaa0000-bb11-2222-33cc-444444dddddd
 MS-RequestId: e488cd0a-9fb6-4c2c-bb77-e5100d3c15b1
 MS-CV: 5.1
 MS-ServerId: 030011326

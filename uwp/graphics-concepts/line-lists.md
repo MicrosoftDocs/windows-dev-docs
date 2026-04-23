@@ -5,7 +5,7 @@ ms.assetid: 42BF32A1-3535-42A3-82C5-3945CB309F2C
 keywords:
 - Line lists
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

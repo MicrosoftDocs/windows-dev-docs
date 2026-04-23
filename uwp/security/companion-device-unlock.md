@@ -1,12 +1,14 @@
 ---
-title: Windows Hello and unlocking with companion devices
+title: Windows Hello and Unlocking With Companion Devices
 description: A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (for example, if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
-ms.date: 02/08/2017
-ms.topic: article
+ms.date: 07/15/2025
+ms.topic: concept-article
 keywords: windows 10, uwp, security
 ms.assetid: 89f3d331-20cd-457b-83e8-1a22aaab2658
 ms.localizationpriority: medium
+# customer intent: As a Windows developer, I want to know how to use the Windows Hello companion device framework to enhance the user authentication experience on Windows 10 desktops.
 ---
+
 # Windows Unlock with Windows Hello companion (IoT) devices
 
 A Windows Hello companion device is a device that can act in conjunction with your Windows 10 desktop to enhance the user authentication experience. Using the Windows Hello companion device framework, a companion device can provide a rich experience for Windows Hello even when biometrics are not available (for example, if the Windows 10 desktop lacks a camera for face authentication or fingerprint reader device, for example).
@@ -35,7 +37,7 @@ If the companion device supports biometrics, in some cases the [Windows Biometri
 
 The diagram below depicts the components of the solution and who is responsible for building them.
 
-![framework overview](images/companion-device-1.png)
+![A diagram of the framework overview.](images/companion-device-1.png)
 
 The Windows Hello companion device framework is implemented as a service running on Windows (called the Companion Authentication Service in this article). This service is responsible for generating an unlock token which needs to be protected by an HMAC key stored on the Windows Hello companion device. This guarantees that access to the unlock token requires Windows Hello companion device presence. Per each (PC, Windows user) tuple, there will be a unique unlock token.
 
@@ -71,8 +73,9 @@ The relationship between the Windows Hello companion device and the Windows 10 d
 
 Before a Windows Hello companion device can communicate with a PC, they need to agree on a transport to use. Such choice is left to the Windows Hello companion device app; the Windows Hello companion device framework does not impose any limitations on transport type (USB, NFC, WiFi, BT, BLE, etc) or protocol being used between the Windows Hello companion device and the Windows Hello companion device app on the Windows 10 desktop device side. It does, however, suggest certain security considerations for the transport layer as outlined in the "Security Requirements" section of this document. It is the device provider’s responsibility to provide those requirements. The framework does not provide them for you.
 
-
 ## User Interaction Model
+
+The Windows Hello companion device framework is designed to be used in a variety of scenarios. The user interaction model is flexible and can be adapted to the specific needs of the Windows Hello companion device and its app.
 
 ### Windows Hello companion device app discovery, installation, and first-time registration
 
@@ -91,7 +94,7 @@ Notes:
 
 The following diagram illustrates how the Windows Hello companion device interacts with Companion Authentication Service during registration.  
 
-![Diagram of the registration flow.](images/companion-device-2.png)
+![A diagram of the registration flow.](images/companion-device-2.png)
 
 There are two keys used in our protocol:
 
@@ -134,7 +137,7 @@ Once the background task associated with a Windows Hello companion device app is
 
 The second computed value is used by the service to authenticate the device and also prevent replay attack in transport channel.
 
-![Diagram of the updated registration flow.](images/companion-device-3.png)
+![A diagram of the updated registration flow.](images/companion-device-3.png)
 
 ## Lifecycle management
 
@@ -180,42 +183,42 @@ Implementing these features requires the Windows Hello companion device app to c
 
 ### Overview
 
-A Windows Hello companion device app should contain two components: a foregroud app with UI responsible for registering and unregistering the device, and a background task that handles authentication.
+A Windows Hello companion device app should contain two components: a foreground app with UI responsible for registering and unregistering the device, and a background task that handles authentication.
 
 The overall API flow is as follows:
 
 1. Register the Windows Hello companion device
-	* Make sure the device is nearby and query its capability (if required)
-	* Generate two HMAC keys (either on the companion device side or the app side)
-	* Call RequestStartRegisteringDeviceAsync
-	* Call FinishRegisteringDeviceAsync
-	* Make sure Windows Hello companion device app stores HMAC keys (if supported) and Windows Hello companion device app discards its copies
-2. Register your background task
-3. Wait for the right event in the background task
-	* WaitingForUserConfirmation: Wait for this event if the user action/gesture on the Windows Hello companion device side is required to start authentication flow
-	* CollectingCredential: Wait for this event if the Windows Hello companion device relies on user action/gesture on the PC side to start authentication flow (for example, by hitting spacebar)
-	* Other trigger, like a smartcard: Make sure to query for current authentication state to call the right APIs.
-4. Keep user informed about error messages or required next steps by calling ShowNotificationMessageAsync. Only call this API once an intent signal is collected
-5. Unlock
-	* Make sure intent and user presence signals were collected
-	* Call StartAuthenticationAsync
-	* Communicate with the companion device to perform required HMAC operations
-	* Call FinishAuthenticationAsync
-6. Un-register a Windows Hello companion device when the user requests it (for example, if they've lost their companion device)
-	* Enumerate the Windows Hello companion device for logged in user via FindAllRegisteredDeviceInfoAsync
-	* Un-register it using UnregisterDeviceAsync
+   - Make sure the device is nearby and query its capability (if required)
+   - Generate two HMAC keys (either on the companion device side or the app side)
+   - Call **RequestStartRegisteringDeviceAsync**
+   - Call **FinishRegisteringDeviceAsync**
+   - Make sure Windows Hello companion device app stores HMAC keys (if supported) and Windows Hello companion device app discards its copies
+1. Register your background task
+1. Wait for the right event in the background task
+   - **WaitingForUserConfirmation**: Wait for this event if the user action/gesture on the Windows Hello companion device side is required to start authentication flow
+   - **CollectingCredential**: Wait for this event if the Windows Hello companion device relies on user action/gesture on the PC side to start authentication flow (for example, by hitting spacebar)
+   - **Other trigger**, like a smartcard: Make sure to query for current authentication state to call the right APIs.
+1. Keep user informed about error messages or required next steps by calling **ShowNotificationMessageAsync**. Only call this API once an intent signal is collected
+1. Unlock
+   - Make sure intent and user presence signals were collected
+   - Call **StartAuthenticationAsync**
+   - Communicate with the companion device to perform required HMAC operations
+   - Call **FinishAuthenticationAsync**
+1. Un-register a Windows Hello companion device when the user requests it (for example, if they've lost their companion device)
+   - Enumerate the Windows Hello companion device for logged in user via **FindAllRegisteredDeviceInfoAsync**
+   - Un-register it using **UnregisterDeviceAsync**
 
 ### Registration and de-registration
 
-Registration requires two API calls to the Companion Authentication Service: RequestStartRegisteringDeviceAsync and FinishRegisteringDeviceAsync.
+Registration requires two API calls to the Companion Authentication Service: **RequestStartRegisteringDeviceAsync** and **FinishRegisteringDeviceAsync**.
 
 Before any of these calls are made, the Windows Hello companion device app must make sure that the Windows Hello companion device is available. If the Windows Hello companion device is responsible for generating HMAC keys (authentication and device keys), then the Windows Hello companion device app should also ask the companion device to generate them before making any of the above two calls. If the Windows Hello companion device app is responsible for generating HMAC keys, then it should do so before calling the above two calls.
 
-Additionally, as part of first API call (RequestStartRegisteringDeviceAsync), the Windows Hello companion device app must decide on device capability and be prepared to pass it as part of the API call; for example, whether the Windows Hello companion device supports secure storage for HMAC keys. If the same Windows Hello companion device app is used to manage multiple versions of the same companion device and those capabilities change (and requires a device query to decide), we recommend this queries occurs before first API call is made.   
+Additionally, as part of first API call (**RequestStartRegisteringDeviceAsync**), the Windows Hello companion device app must decide on device capability and be prepared to pass it as part of the API call; for example, whether the Windows Hello companion device supports secure storage for HMAC keys. If the same Windows Hello companion device app is used to manage multiple versions of the same companion device and those capabilities change (and requires a device query to decide), we recommend this queries occurs before first API call is made.   
 
-The first API (RequestStartRegisteringDeviceAsync) will return a handle used by the second API (FinishRegisteringDeviceAsync). The first call for registration will launch the PIN prompt to make sure user is present. If no PIN is set up, this call will fail. The Windows Hello companion device app can query whether PIN is set up or not via KeyCredentialManager.IsSupportedAsync call as well. RequestStartRegisteringDeviceAsync call can also fail if policy has disabled the usage of the Windows Hello companion device.
+The first API (**RequestStartRegisteringDeviceAsync**) will return a handle used by the second API (**FinishRegisteringDeviceAsync**). The first call for registration will launch the PIN prompt to make sure user is present. If no PIN is set up, this call will fail. The Windows Hello companion device app can query whether PIN is set up or not via **KeyCredentialManager.IsSupportedAsync** call as well. **RequestStartRegisteringDeviceAsync** call can also fail if policy has disabled the usage of the Windows Hello companion device.
 
-The result of first call is returned via SecondaryAuthenticationFactorRegistrationStatus enum:
+The result of first call is returned via **SecondaryAuthenticationFactorRegistrationStatus** enum:
 
 ```C#
 {
@@ -381,7 +384,7 @@ Details of each of these states are as follows:
 | SuspendingAuthentication   	| When the Windows Hello companion device app receives this state, it means that the Companion Authentication Service has stopped accepting authentication requests.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          	|
 | CredentialCollected        	| This means that another Windows Hello companion device app has called the second API and that the Companion Authentication Service is verifying what was submitted. At this point, the Companion Authentication Service is not accepting any other authentication requests unless the currently submitted one does not pass verification. The Windows Hello companion device app should stay tuned until next state is reached.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                	|
 | CredentialAuthenticated    	| This means that the submitted credential worked. The credentialAuthenticated has the device ID of the Windows Hello companion device that succeeded. The Windows Hello companion device app should make sure to check on that to see if its associated device was the winner. If not, then the Windows Hello companion device app should avoid showing any post authentication flows (like success message on the companion device or perhaps a vibration on that device). Note that if the submitted credential did not work, the state will change to CollectingCredential state.                                                                                                                                                                                                                                                                                                                                                                                    	|
-| StoppingAuthentication    	| Authentication succeeded and user saw the desktop. Time to kill your background task. Before exiting the backround task, explicitly unregister the StageEvent handler. This will help the background task exit quickly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      	|
+| StoppingAuthentication    	| Authentication succeeded and user saw the desktop. Time to kill your background task. Before exiting the background task, explicitly unregister the StageEvent handler. This will help the background task exit quickly.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      	|
 
 
 
@@ -528,7 +531,7 @@ namespace SecondaryAuthFactorSample
 			// Register canceled event for this task
 			taskInstance.Canceled += TaskInstanceCanceled;
 
-			// Find all device registred by this application
+			// Find all device registered by this application
 			IReadOnlyList<SecondaryAuthenticationFactorInfo> deviceInfoList =
 				await SecondaryAuthenticationFactorRegistration.FindAllRegisteredDeviceInfoAsync(
 					SecondaryAuthenticationFactorDeviceFindScope.AllUsers);

@@ -16,7 +16,7 @@ This topic demonstrates how you can author and consume your own completion sourc
 
 ## Source code for the **completion_source** sample
 
-The code in the listing below is offered as a sample. Its purpose is to illustrate how you could write your own version of it. For example, support for cancelation and error propagation are outside the scope of this sample.
+The code in the listing below is offered as a sample. Its purpose is to illustrate how you could write your own version of it. For example, support for cancellation and error propagation are outside the scope of this sample.
 
 ```cppwinrt
 #include <winrt/base.h>

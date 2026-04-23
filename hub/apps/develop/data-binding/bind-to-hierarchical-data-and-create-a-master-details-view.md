@@ -1,29 +1,30 @@
 ---
 ms.assetid: 6c563dd4-3dd0-4175-a1ab-7a1103fc9559
-title: Bind hierarchical data and create a master/details view with Windows App SDK
-description: You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to CollectionViewSource instances that are bound together in a chain.
-ms.date: 12/13/2022
-ms.topic: article
+title: Bind hierarchical data and create a master/details view with WinUI
+description: Create a multi-level master/details view of hierarchical data in WinUI by binding items controls to CollectionViewSource instances. Learn how to implement this structure.
+ms.date: 11/11/2025
+ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, windows ui, xBind
 ms.localizationpriority: medium
+# customer intent: As a Windows developer, I want to learn how to bind hierarchical data and create a master/details view with WinUI.
 ---
 
-# Bind hierarchical data and create a master/details view with Windows App SDK
+# Bind hierarchical data and create a master/details view with WinUI
 
-> [!NOTE]
+Learn how to create a multilevel master/details view of hierarchical data in WinUI by binding items controls to [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances. This article explains how to use the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) for better performance and the [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension) when flexibility is needed.
+
+One common structure for WinUI apps is to navigate to different details pages when a user makes a selection in a master list. This structure is useful when you want to provide a rich visual representation of each item at every level in a hierarchy. Another option is to display multiple levels of data on a single page. This structure is useful when you want to display a few simple lists that let the user quickly drill down to an item of interest. This article describes how to implement this interaction. The [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances keep track of the current selection at each hierarchical level.
+
+You create a view of a sports team hierarchy that's organized into lists for leagues, divisions, and teams, and includes a team details view. When you select an item from any list, the subsequent views update automatically.
+
+:::image type="content" source="images/xaml-masterdetails.png" alt-text="Screenshot of a master/details view of a sports hierarchy. The view includes leagues, divisions, and teams.":::
+
+> [!TIP]
 > Also see the [Master/detail UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
-
-You can make a multi-level master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances that are bound together in a chain. In this topic we use the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension) where possible, and the more flexible (but less performant) [{Binding} markup extension](/windows/uwp/xaml-platform/binding-markup-extension) where necessary.
-
-One common structure for Windows App SDK apps is to navigate to different details pages when a user makes a selection in a master list. This is useful when you want to provide a rich visual representation of each item at every level in a hierarchy. Another option is to display multiple levels of data on a single page. This is useful when you want to display a few simple lists that let the user quickly drill down to an item of interest. This topic describes how to implement this interaction. The [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances keep track of the current selection at each hierarchical level.
-
-We'll create a view of a sports team hierarchy that is organized into lists for leagues, divisions, and teams, and includes a team details view. When you select an item from any list, the subsequent views update automatically.
-
-![master/details view of a sports hierarchy](images/xaml-masterdetails.png)
 
 ## Prerequisites
 
-This topic assumes that you know how to create a basic Windows App SDK app. For instructions on creating your first Windows App SDK app, see [Create your first WinUI 3 (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+This article assumes that you know how to create a basic WinUI app. For instructions on creating your first WinUI app, see [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro).
 
 ## Create the project
 
@@ -31,14 +32,11 @@ Create a new **Blank App, Packaged (WinUI 3 in Desktop)** project. Name it "Mast
 
 ## Create the data model
 
-Add a new class to your project, name it **ViewModel.cs**, and add this code to it. This will be your binding source class.
+Add a new class to your project, name it **ViewModel.cs**, and add this code to it. This class is your binding source class.
 
 ```cs
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MasterDetailsBinding
 {
@@ -83,7 +81,7 @@ namespace MasterDetailsBinding
             return from y in Enumerable.Range(1, 3)
                    select new Division
                    {
-                       Name = String.Format("Division {0}-{1}", x, y),
+                       Name = string.Format("Division {0}-{1}", x, y),
                        Teams = GetTeams(x, y).ToList()
                    };
         }
@@ -93,7 +91,7 @@ namespace MasterDetailsBinding
             return from z in Enumerable.Range(1, 4)
                    select new Team
                    {
-                       Name = String.Format("Team {0}-{1}-{2}", x, y, z),
+                       Name = string.Format("Team {0}-{1}-{2}", x, y, z),
                        Wins = 25 - (x * y * z),
                        Losses = x * y * z
                    };
@@ -104,7 +102,7 @@ namespace MasterDetailsBinding
 
 ## Create the view
 
-Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type `LeagueList` to **MainWindow**.
+Next, expose the binding source class from the class that represents your page of markup. Add a property of type `LeagueList` to **MainWindow**.
 
 ```cs
 namespace MasterDetailsBinding
@@ -113,7 +111,7 @@ namespace MasterDetailsBinding
     {
         public MainWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             ViewModel = new LeagueList();
         }
         public LeagueList ViewModel { get; set; }
@@ -121,7 +119,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-Finally, replace the contents of the **MainWindow.xaml** file with the following markup, which declares three [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances and binds them together in a chain. The subsequent controls can then bind to the appropriate `CollectionViewSource`, depending on its level in the hierarchy.
+Finally, replace the contents of the **MainWindow.xaml** file with the following markup. This markup declares three [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances and binds them together in a chain. The subsequent controls can then bind to the appropriate `CollectionViewSource`, depending on its level in the hierarchy.
 
 ``` xaml
 <Window
@@ -133,27 +131,27 @@ Finally, replace the contents of the **MainWindow.xaml** file with the following
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Window.Resources>
-        <CollectionViewSource x:Name="Leagues"
-            Source="{x:Bind ViewModel}"/>
-        <CollectionViewSource x:Name="Divisions"
-            Source="{Binding Divisions, Source={StaticResource Leagues}}"/>
-        <CollectionViewSource x:Name="Teams"
-            Source="{Binding Teams, Source={StaticResource Divisions}}"/>
-
-        <Style TargetType="TextBlock">
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="ListBox">
-            <Setter Property="FontSize" Value="15"/>
-        </Style>
-        <Style TargetType="ContentControl">
-            <Setter Property="FontSize" Value="15"/>
-        </Style>
-    </Window.Resources>
-
     <Grid>
+        <Grid.Resources>
+            <CollectionViewSource x:Name="Leagues"
+                Source="{x:Bind ViewModel}"/>
+            <CollectionViewSource x:Name="Divisions"
+                Source="{Binding Divisions, Source={StaticResource Leagues}}"/>
+            <CollectionViewSource x:Name="Teams"
+                Source="{Binding Teams, Source={StaticResource Divisions}}"/>
+    
+            <Style TargetType="TextBlock">
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontWeight" Value="Bold"/>
+            </Style>
+            <Style TargetType="ListBox">
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+            <Style TargetType="ContentControl">
+                <Setter Property="FontSize" Value="15"/>
+            </Style>
+        </Grid.Resources>
+
         <StackPanel Orientation="Horizontal">
 
             <!-- All Leagues view -->
@@ -201,7 +199,7 @@ Finally, replace the contents of the **MainWindow.xaml** file with the following
 </Window>
 ```
 
-Note that by binding directly to the [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource), you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the `CurrentItem` property as the path for the binding, although you can do that if there's any ambiguity. For example, the [**ContentControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol) representing the team view has its [**Content**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) property bound to the `Teams` `CollectionViewSource`. However, the controls in the [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) bind to properties of the `Team` class because the `CollectionViewSource` automatically supplies the currently selected team from the teams list when necessary.
+When you bind directly to the [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource), you imply that you want to bind to the current item in bindings where the path can't be found on the collection itself. You don't need to specify the `CurrentItem` property as the path for the binding, although you can add it if there's any ambiguity. For example, the [**ContentControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol) representing the team view has its [**Content**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content) property bound to the `Teams` `CollectionViewSource`. However, the controls in the [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) bind to properties of the `Team` class because the `CollectionViewSource` automatically supplies the currently selected team from the teams list when necessary.
 
 ## See also
 

@@ -3,7 +3,7 @@ ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Partner Center account.
 title: Manage app submissions
 ms.date: 04/30/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, app submissions
 ms.localizationpriority: medium
 ---
@@ -427,7 +427,7 @@ This resource contains base listing info for an app. This resource has the follo
 |  recommendedHardware               |   array      |  An array of up to 11 strings that list the [recommended hardware configurations](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix#additional-information) for your app.     |
 |  minimumHardware               |     string    |  An array of up to 11 strings that list the [minimum hardware configurations](/windows/apps/publish/publish-your-app/create-app-store-listing?pivots=store-installer-msix#additional-information) for your app.    |  
 |  title               |     string    |   The title for the app listing.   |  
-|  shortDescription               |     string    |  Only used for games. This description appears in the **Information** section of the Game Hub on Xbox One, and helps customers understand more about your game.   |  
+|  shortDescription               |     string    |  This description appears in the **Information** section of the Game Hub on Xbox One, and helps customers understand more about your game.   |  
 |  shortTitle               |     string    |  A shorter version of your product’s name. If provided, this shorter name may appear in various places on Xbox One (during installation, in Achievements, etc.) in place of the full title of your product.    |  
 |  sortTitle               |     string    |   If your product could be alphabetized in different ways, you can enter another version here. This may help customers find the product more quickly when searching.    |  
 |  voiceTitle               |     string    |   An alternate name for your product that, if provided, may be used in the audio experience on Xbox One when using Kinect or a headset.    |  

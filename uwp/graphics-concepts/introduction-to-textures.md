@@ -5,7 +5,7 @@ ms.assetid: 6F3C76A8-F762-4296-AE02-BFBD6476A5A8
 keywords:
 - Introduction to textures
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

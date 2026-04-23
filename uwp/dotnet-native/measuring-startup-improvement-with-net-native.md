@@ -2,7 +2,7 @@
 description: "Learn more about: Measuring Startup Improvement with .NET Native"
 title: "Measuring Startup Improvement with .NET Native"
 ms.date: "03/30/2017"
-ms.topic: conceptual
+ms.topic: concept-article
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
 ---
 # Measure startup improvement with .NET Native
@@ -51,7 +51,7 @@ When the app is instrumented, you're ready to gather events.
 
 ## Gathering events with PerfView
 
-PerfView uses ETW events to help you do all sorts of performance investigations on your app. It also includes a configuration GUI that lets you turn logging for different types of events on or off. PerfView is a free tool and can be downloaded from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=28567). For more information, watch the PerfView tutorial videos.
+PerfView uses ETW events to help you do all sorts of performance investigations on your app. It also includes a configuration GUI that lets you turn logging for different types of events on or off. [PerfView](https://github.com/Microsoft/perfview/releases) is an open-source tool. For more information, watch the PerfView tutorial videos.
 
 > [!NOTE]
 > PerfView cannot be used to collect events on Arm systems. To collect events on Arm systems, use Windows Performance Recorder (WPR). For more information, see [Vance Morrison's blog post](/archive/blogs/vancem/collecting-etwperfview-data-on-an-windows-rt-winrt-arm-surface-device).

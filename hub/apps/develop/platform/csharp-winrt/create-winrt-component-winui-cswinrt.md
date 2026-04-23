@@ -1,5 +1,5 @@
 ---
-title: Walkthrough&mdash;Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK
+title: Walkthrough—Create a C# component with WinUI 3 controls, and consume it from a C++/WinRT app that uses the Windows App SDK
 description: Author a Windows Runtime component with C#/WinRT with WinUI controls, and consume it from any Windows App SDK app.
 ms.date: 03/15/2022
 ms.topic: article

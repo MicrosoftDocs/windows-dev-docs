@@ -1,11 +1,9 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C#.
 title: Build XAML controls with C#
-ms.date: 03/05/2021
-ms.topic: article
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, custom control, templated control
-ms.author: drewbat
-author: drewbatgit
+ms.date: 07/09/2024
+ms.topic: how-to
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, custom control, templated control
 ms.localizationpriority: high
 ms.custom: 19H1
 ---
@@ -42,7 +40,7 @@ public BgLabelControl()
 }
 ```
 
-Our templated control will have a text label that can be set programatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a [DependencyPropety](/uwp/api/Windows.UI.Xaml.DependencyProperty). To do this, first we declare a string property and call it **Label**. Instead of using a backing variable, we set and get the value of our dependency property by calling [GetValue](/uwp/api/windows.ui.xaml.dependencyobject.getvalue) and [SetValue](/uwp/api/windows.ui.xaml.dependencyobject.setvalue). These methods are provided by the [DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject), which **Microsoft.UI.Xaml.Controls.Control** inherits.
+Our templated control will have a text label that can be set programmatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a [DependencyPropety](/uwp/api/Windows.UI.Xaml.DependencyProperty). To do this, first we declare a string property and call it **Label**. Instead of using a backing variable, we set and get the value of our dependency property by calling [GetValue](/uwp/api/windows.ui.xaml.dependencyobject.getvalue) and [SetValue](/uwp/api/windows.ui.xaml.dependencyobject.setvalue). These methods are provided by the [DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject), which **Microsoft.UI.Xaml.Controls.Control** inherits.
 
 ```csharp
 public string Label
@@ -80,7 +78,8 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
     }
 }
 ```
-For more information on how dependency properties work, see [Dependency properties overview](/windows/uwp/xaml-platform/dependency-properties-overview).
+
+For more information on how dependency properties work, see [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview).
 
 ## Define the default style for BgLabelControl
 A templated control must provide a default style template that is used if the user of the control doesn't explicitly set a style. In this step, we will modify the generic template file for our control.
@@ -112,7 +111,7 @@ The generic template file is generated when you add the **Custom Control (WinUI)
 
 In this example you can see that the **TargetType** attribute of the **Style** element is set to our **BgLabelControl** type within the **BgLabelControlApp** namespace. This type is the same value as we specified above for the **DefaultStyleKey** property in the control's constructor which identifies this as the default style for the control.
 
-The **Text** property of the **TextBlock** in the control template is bound to our control's **Label** dependency property. The property is bound using the [TemplateBinding](/windows/uwp/xaml-platform/templatebinding-markup-extension) markup extension. This example also binds the **Grid** background to the **Background** dependency property which is inherited from the **Control** class.
+The **Text** property of the **TextBlock** in the control template is bound to our control's **Label** dependency property. The property is bound using the [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension) markup extension. This example also binds the **Grid** background to the **Background** dependency property which is inherited from the **Control** class.
 
 ## Add an instance of BgLabelControl to the main UI page
 
@@ -129,5 +128,4 @@ Build and run the app and you will see the templated control, with the backgroun
 ## See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

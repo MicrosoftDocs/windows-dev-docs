@@ -3,15 +3,19 @@ description: This article explains how to receive content in your Universal Wind
 title: Receive data
 ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
+
 # Receive data
 
-
-
 This article explains how to receive content in your Universal Windows Platform (UWP) app shared from another app by using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share.
+
+> [!NOTE]
+> The code examples in this article are from UWP apps. Desktop apps should use the [**IDataTransferManagerInterop**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop). For more info, and code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects#for-classes-that-implement-idatatransfermanagerinterop).
+> 
+> You can also refer to the [WPF Sharing content source app sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) and [Integrate Share options in your Windows app](/windows/apps/develop/windows-integration/integrate-sharesheet-overview) for additional information on sharing data in desktop apps.
 
 ## Declare your app as a share target
 

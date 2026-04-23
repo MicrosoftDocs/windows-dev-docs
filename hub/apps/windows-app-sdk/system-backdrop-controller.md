@@ -1,11 +1,9 @@
 ---
 title: Using a SystemBackdropController with WinUI 3 XAML 
 description: Sample code for applying Mica in a WinUI 3 application.
-ms.topic: article
-ms.date: 09/01/2022
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: windows, windows app development, Windows App SDK, Mica
-ms.author: jimwalk
-author: jwmsft
 ms.localizationpriority: medium
 dev_langs: 
 - csharp
@@ -24,8 +22,9 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 
 > [!NOTE]
 >
-> - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md).
-> - To use backdrop materials in a UWP/WinUI 2 app, see [Mica](../design/style/mica.md) or [Acrylic](../design/style/acrylic.md).
+> - To use an in-app AcrylicBrush, see [Acrylic material](../design/style/acrylic.md).
+> - To use backdrop materials in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md).
+> - To use backdrop materials in a UWP/WinUI 2 app, see [Apply Mica with WinUI 2 for UWP](/windows/uwp/ui-input/mica-uwp) or [Acrylic material](../design/style/acrylic.md).
 
 ## How to use a backdrop material
 
@@ -34,15 +33,27 @@ This article describes how to apply Mica or Acrylic as the base layer of your Wi
 > - **Important APIs**: [Window.SystemBackdrop property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop), [MicaBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop), [DesktopAcrylicBackdrop class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop), [SystemBackdropConfiguration class](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops).
+> [Open the WinUI 3 Gallery app and see the System Backdrops in action](winui3gallery://item/SystemBackdrops)
 
 [!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
 
-To apply Mica or Acrylic material to your app, you set the [Window.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop) property to a XAML [SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop) (typically, one of the built-in backdrops, [MicaBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop) or [DesktopAcrylicBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop)).
+To apply Mica or Acrylic material to your app, you set the `SystemBackdrop` property to a XAML [SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.systembackdrop) (typically, one of the built-in backdrops, [MicaBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.micabackdrop) or [DesktopAcrylicBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.desktopacrylicbackdrop)).
 
-These examples show how to do this in XAML and in code.
+These elements have a `SystemBackdrop` property:
+
+- [CommandBarFlyoutCommandBar.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.commandbarflyoutcommandbar.systembackdrop)
+- [ContentIsland.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.content.contentisland.systembackdrop)
+- [DesktopWindowXamlSource.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.hosting.desktopwindowxamlsource.systembackdrop)
+- [FlyoutBase.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.systembackdrop)
+- [MenuFlyoutPresenter.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutpresenter.systembackdrop)
+- [Popup.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup.systembackdrop)
+- [Window.SystemBackdrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.systembackdrop)
+
+These examples show how to set the system backdrop in XAML and in code.
 
 ### Mica
+
+Mica is typically used as the backdrop for an app Window.
 
 ```xaml
 <Window
@@ -67,24 +78,23 @@ public MainWindow()
 
 ### Acrylic
 
+Acrylic is typically used as the backdrop for transient UI, like a flyout.
+
 ```xaml
-<Window
+<Flyout
     ... >
 
-    <Window.SystemBackdrop>
+    <Flyout.SystemBackdrop>
         <DesktopAcrylicBackdrop/>
-    </Window.SystemBackdrop>
-
-</Window>
+    </Flyout.SystemBackdrop>
+</Flyout>
 ```
 
 ```csharp
-public MainWindow()
+Flyout flyout = new Flyout()
 {
-    this.InitializeComponent();
-
-    SystemBackdrop = new DesktopAcrylicBackdrop();
-}
+    SystemBackdrop = new DesktopAcrylicBackdrop()
+};
 ```
 
 ## How to use a system backdrop controller
@@ -204,6 +214,10 @@ The controller reacts to the system Light and Dark themes by default. To overrid
 - [LuminosityOpacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.luminosityopacity)
 - [TintColor](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintcolor)
 - [TintOpacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.tintopacity)
+
+> [!NOTE]
+>
+> After customizing any of the controller’s four properties, it no longer applies default Light or Dark values when the associated [SystemBackdropConfiguration.Theme](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.systembackdropconfiguration.theme) changes. You need to manually update those properties to match the new theme.
 
 In order to use the backdrop material in your app, the following items are required:
 
@@ -422,7 +436,7 @@ struct MainWindow : MainWindowT<MainWindow>
             m_backdropController = winrt::MUCSB::MicaController();
             m_backdropController.SetSystemBackdropConfiguration(m_configuration);
             m_backdropController.AddSystemBackdropTarget(
-                this->try_as<winrt::MUC::ICompositionSupportsSystemBackdrop>());
+                this->m_inner.as<winrt::MUC::ICompositionSupportsSystemBackdrop>());
         }
         else
         {
@@ -499,4 +513,4 @@ struct MainWindow : MainWindowT<MainWindow>
 - [Materials in Windows 11](../design/signature-experiences/materials.md)
 - [Mica](../design/style/mica.md)
 - [Acrylic](../design/style/acrylic.md)
-- [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/apply-mica-win32.md)
+- [Apply Mica in Win32 desktop apps for Windows 11](../desktop/modernize/ui/apply-mica-win32.md)

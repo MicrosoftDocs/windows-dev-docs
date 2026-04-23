@@ -1,26 +1,27 @@
 ---
 title: Create data bindings
-description: Learn how to create data bindings using XAML and C# to form a direct link between your UI and data by following this tutorial.
+description: Learn how to create data bindings in XAML and C# to link your UI and data, format data, and keep them in sync with this tutorial.
 keywords: XAML, UWP, Getting Started, windows 10, windows 11
-ms.date: 04/14/2023
-ms.topic: article
+ms.date: 11/11/2025
+ms.topic: tutorial
 ms.localizationpriority: medium
 ---
-# Tutorial: Create data bindings
 
-Suppose you've designed and implemented a nice looking UI filled with placeholder images, "lorem ipsum" boilerplate text, and controls that don't do anything yet. Next, you'll want to connect it to real data and transform it from a design prototype into a living app.
+# Create data bindings
 
-In this tutorial, you'll learn how to replace your boilerplate with data bindings and create other direct links between your UI and your data. You'll also learn how to format or convert your data for display, and keep your UI and data in sync. When you complete this tutorial, you'll be able to improve the simplicity and organization of the XAML and C# code, making it easier to maintain and extend.
+If you've designed a UI with placeholder images and boilerplate text, this tutorial shows how to connect it to real data using data bindings. Learn to format data, keep your UI and data in sync, and improve code maintainability.
 
-You'll start with a simplified version of the PhotoLab sample. This starter version includes the complete data layer plus the basic XAML page layouts, and leaves out many features to make the code easier to browse around in. This tutorial doesn't build up to the complete app, so be sure to check out the final version to see features such as custom animations and adaptive layouts. You can find the final version in the root folder of the [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) repo.
+In this tutorial, you learn how to replace your boilerplate with data bindings and create other direct links between your UI and your data. You also learn how to format or convert your data for display, and keep your UI and data in sync. When you complete this tutorial, you can improve the simplicity and organization of the XAML and C# code, making it easier to maintain and extend.
+
+You start with a simplified version of the PhotoLab sample. This starter version includes the complete data layer plus the basic XAML page layouts, and leaves out many features to make the code easier to browse around in. This tutorial doesn't build up to the complete app, so be sure to check out the final version to see features such as custom animations and adaptive layouts. You can find the final version in the root folder of the [Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab) repo.
 
 The PhotoLab sample app has two pages. The _main page_ displays a photo gallery view, along with some information about each image file.
 
-![Screenshot of the Photo lab main page.](images/mainpage.png)
+:::image type="content" source="images/mainpage.png" alt-text="Screenshot of the PhotoLab app's main page showing a photo gallery view with image metadata.":::
 
-The _details page_ displays a single photo after it has been selected. A flyout editing menu allows the photo to be altered, renamed, and saved.
+The _details page_ displays a single photo after you select it. A flyout editing menu allows you to alter, rename, and save the photo.
 
-![Screenshot of the Photo lab detail page.](images/detailpage.png)
+:::image type="content" source="images/detailpage.png" alt-text="Screenshot of the PhotoLab app's detail page showing a single photo with editing options.":::
 
 ## Prerequisites
 
@@ -30,43 +31,43 @@ The _details page_ displays a single photo after it has been selected. A flyout 
 
 ## Part 0: Get the starter code from GitHub
 
-For this tutorial, you'll start with a simplified version of the PhotoLab sample.
+For this tutorial, you start with a simplified version of the PhotoLab sample.
 
 1. Go to the GitHub page for the sample: [https://github.com/Microsoft/Windows-appsample-photo-lab](https://github.com/Microsoft/Windows-appsample-photo-lab).
-2. Next, you'll need to clone or download the sample. Select the **Clone or download** button. A sub-menu appears.
+1. Next, you need to clone or download the sample. Select the **Clone or download** button. A sub-menu appears.
     ![The Clone or download menu on the PhotoLab sample's GitHub page](images/clone-repo.png)
 
     **If you're not familiar with GitHub:**
 
-    a. Select **Download ZIP** and save the file locally. This downloads a .zip file that contains all the project files you need.
+    a. Select **Download ZIP** and save the file locally. This action downloads a .zip file that contains all the project files you need.
 
     b. Extract the file. Use File Explorer to browse to the .zip file that you just downloaded, right-click it, and select **Extract All...**.
 
     c. Browse to your local copy of the sample, and go to the `Windows-appsample-photo-lab-master\xaml-basics-starting-points\data-binding` directory.
 
-    **If you are familiar with GitHub:**
+    **If you're familiar with GitHub:**
 
     a. Clone the main branch of the repo locally.
 
     b. Browse to the `Windows-appsample-photo-lab\xaml-basics-starting-points\data-binding` directory.
 
-3. Double-click `Photolab.sln` to open the solution in Visual Studio.
+1. Double-click `Photolab.sln` to open the solution in Visual Studio.
 
 ## Part 1: Replace the placeholders
 
-Here, you create one-time bindings in data-template XAML to display real images and image metadata instead of placeholder content.
+In this section, you create one-time bindings in data-template XAML to display real images and image metadata instead of placeholder content.
 
-One-time bindings are for read-only, unchanging data, which means they are high performance and easy to create, letting you display large data sets in `GridView` and `ListView` controls.
+One-time bindings are for read-only, unchanging data. They're high performance and easy to create, so you can display large data sets in `GridView` and `ListView` controls.
 
 ### Replace the placeholders with one-time bindings
 
 1. Open the `xaml-basics-starting-points\data-binding` folder and launch the `PhotoLab.sln` file in Visual Studio.
 
-2. Make sure your **Solution Platform** is set to x86 or x64, not Arm, and then run the app. This shows the state of the app with UI placeholders, before bindings have been added.
+1. Make sure your **Solution Platform** is set to x86 or x64, not Arm, and then run the app. This step shows the state of the app with UI placeholders, before bindings are added.
 
     ![Running app with placeholder images and text](images/gallery-with-placeholder-templates.png)
 
-3. Open MainPage.xaml and search for a `DataTemplate` named **ImageGridView_DefaultItemTemplate**. You'll update this template to use data bindings.
+1. Open MainPage.xaml and search for a `DataTemplate` named **ImageGridView_DefaultItemTemplate**. You'll update this template to use data bindings.
 
     **Before:**
 
@@ -76,7 +77,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
 
     The `x:Key` value is used by the `ImageGridView` to select this template for displaying data objects.
 
-4. Add an `x:DataType` value to the template.
+1. Add an `x:DataType` value to the template.
 
     **After:**
 
@@ -85,11 +86,11 @@ One-time bindings are for read-only, unchanging data, which means they are high 
                   x:DataType="local:ImageFileInfo">
     ```
 
-    `x:DataType` indicates which type this is a template for. In this case, it's a template for the `ImageFileInfo` class (where `local:` indicates the local namespace, as defined in an xmlns declaration near the top of the file).
+    `x:DataType` indicates which type this template is for. In this case, it's a template for the `ImageFileInfo` class (where `local:` indicates the local namespace, as defined in an xmlns declaration near the top of the file).
 
-    `x:DataType` is required when using `x:Bind` expressions in a data template, as described next.
+    You need `x:DataType` when using `x:Bind` expressions in a data template, as described next.
 
-5. In the `DataTemplate`, find the `Image` element named `ItemImage` and replace its `Source` value as shown.
+1. In the `DataTemplate`, find the `Image` element named `ItemImage` and replace its `Source` value as shown.
 
     **Before:**
 
@@ -109,12 +110,12 @@ One-time bindings are for read-only, unchanging data, which means they are high 
 
     `x:Name` identifies a XAML element so you can refer to it elsewhere in the XAML and in the code-behind.
 
-    `x:Bind` expressions supply a value to a UI property by getting the value from a **data-object** property. In templates, the property indicated is a property of whatever the `x:DataType` has been set to. So in this case, the data source is the `ImageFileInfo.ImageSource` property.
+    `x:Bind` expressions supply a value to a UI property by getting the value from a **data-object** property. In templates, the property indicated is a property of whatever the `x:DataType` is set to. So in this case, the data source is the `ImageFileInfo.ImageSource` property.
 
     > [!NOTE]
     > The `x:Bind` value also lets the editor know about the data type, so you can use IntelliSense instead of typing in the property name in an `x:Bind` expression. Try it on the code you just pasted in: place the cursor just after `x:Bind` and press the Spacebar to see a list of properties you can bind to.
 
-6. Replace the values of the other UI controls in the same way. (Try doing this with IntelliSense instead of copy/pasting!)
+1. Replace the values of the other UI controls in the same way. (Try doing this with IntelliSense instead of copy/pasting!)
 
     **Before:**
 
@@ -138,7 +139,7 @@ One-time bindings are for read-only, unchanging data, which means they are high 
     <muxc:RatingControl Value="{x:Bind ImageRating}" ... />
     ```
 
-Run the app to see how it looks so far. No more placeholders! We're off to a good start.
+Run the app to see how it looks so far. No more placeholders! You're off to a good start.
 
 ![Running app with real images and text instead of placeholders](images/gallery-with-populated-templates.png)
 
@@ -147,13 +148,13 @@ Run the app to see how it looks so far. No more placeholders! We're off to a goo
 
 ## Part 2: Use binding to connect the gallery UI to the images
 
-Here, you'll create one-time bindings in page XAML to connect the gallery view to the image collection, replacing the existing procedural code that does this in code-behind. You'll also create a **Delete** button to see how the gallery view changes when images are removed from the collection. At the same time, you'll learn how to bind events to event handlers for more flexibility than that provided by traditional event handlers.
+In this section, you create one-time bindings in page XAML to connect the gallery view to the image collection. These bindings replace the existing procedural code in code-behind. You also create a **Delete** button to see how the gallery view changes when you remove images from the collection. At the same time, you learn how to bind events to event handlers for more flexibility than traditional event handlers.
 
 All the bindings covered so far are inside data templates and refer to properties of the class indicated by the `x:DataType` value. What about the rest of the XAML in your page?
 
-`x:Bind` expressions outside of data templates are always bound to the page itself. This means you can reference anything you put in code-behind or declare in XAML, including custom properties and properties of other UI controls on the page (as long as they have an `x:Name` value).
+`x:Bind` expressions outside of data templates always bind to the page itself. This means you can reference anything you put in code-behind or declare in XAML, including custom properties and properties of other UI controls on the page (as long as they have an `x:Name` value).
 
-In the PhotoLab sample, one use for a binding like this is to connect the main `GridView` control directly to the collection of images, instead of doing it in code-behind. Later, you'll see other examples.
+In the PhotoLab sample, you use a binding like this to connect the main `GridView` control directly to the collection of images, instead of doing it in code-behind. Later, you see other examples.
 
 ### Bind the main GridView control to the Images collection
 
@@ -172,7 +173,7 @@ In the PhotoLab sample, one use for a binding like this is to connect the main `
     // ImageGridView.ItemsSource = Images;
     ```
 
-2. In MainPage.xaml, find the `GridView` named `ImageGridView` and add an `ItemsSource` attribute. For the value, use an `x:Bind` expression that refers to the `Images` property implemented in code-behind.
+1. In MainPage.xaml, find the `GridView` named `ImageGridView` and add an `ItemsSource` attribute. For the value, use an `x:Bind` expression that refers to the `Images` property implemented in code-behind.
 
     **Before:**
 
@@ -187,9 +188,9 @@ In the PhotoLab sample, one use for a binding like this is to connect the main `
               ItemsSource="{x:Bind Images}"
     ```
 
-    The `Images` property is of type `ObservableCollection<ImageFileInfo>`, so the individual items displayed in the `GridView` are of type `ImageFileInfo`. This matches the `x:DataType` value described in Part 1.
+    The `Images` property is of type `ObservableCollection<ImageFileInfo>`, so the individual items displayed in the `GridView` are of type `ImageFileInfo`. This type matches the `x:DataType` value described in Part 1.
 
-All the bindings we've looked at so far are one-time, read-only bindings, which is the default behavior for plain `x:Bind` expressions. The data is loaded only at initialization, which makes for high-performance bindings - perfect for supporting multiple, complex views of large data sets.
+All the bindings you saw earlier are one-time, read-only bindings, which is the default behavior for plain `x:Bind` expressions. The data loads only at initialization, which makes for high-performance bindings - perfect for supporting multiple, complex views of large data sets.
 
 Even the `ItemsSource` binding you just added is a one-time, read-only binding to an unchanging property value, but there's an important distinction to make here. The unchanging value of the `Images` property is a single, specific instance of a collection, initialized once as shown here.
 
@@ -198,9 +199,9 @@ private ObservableCollection<ImageFileInfo> Images { get; }
     = new ObservableCollection<ImageFileInfo>();
 ```
 
-The `Images` property value never changes, but because the property is of type `ObservableCollection<T>`, the _contents_ of the collection can change, and the binding will automatically notice the changes and update the UI.
+The `Images` property value never changes, but because the property is of type `ObservableCollection<T>`, the _contents_ of the collection can change, and the binding automatically notices the changes and updates the UI.
 
-To test this, we're going to temporarily add a button that deletes the currently-selected image. This button isn't in the final version because selecting an image will take you to a detail page. However, the behavior of `ObservableCollection<T>` is still important in the final PhotoLab sample because the XAML is initialized in the page constructor (through the `InitializeComponent` method call), but the `Images` collection is populated later in the `GetItemsAsync` method.
+To test this behavior, temporarily add a button that deletes the currently selected image. This button isn't in the final version because selecting an image takes you to a detail page. However, the behavior of `ObservableCollection<T>` is still important in the final PhotoLab sample because the XAML initializes in the page constructor (through the `InitializeComponent` method call), but the `Images` collection populates later in the `GetItemsAsync` method.
 
 ### Add a delete button
 
@@ -585,6 +586,27 @@ The final part in this tutorial is to add bindings that format the slider values
 Now when you run the app, everything works, including the slider labels.
 
 ![Effect sliders with working labels](images/effect-sliders-after-label-fix.png)
+
+## Differences between Binding and x:Bind
+
+When creating data bindings in XAML in your UWP apps, you can choose between `Binding` and `x:Bind`. Here are the key differences:
+
+- **`x:Bind`**: Provides compile-time validation, better performance, and is strongly typed. It is best suited for scenarios where the data structure is known at compile time.
+- **`Binding`**: Offers runtime evaluation and greater flexibility for dynamic scenarios, such as when the data structure is determined at runtime.
+
+### Scenarios not supported by x:Bind
+
+Although `x:Bind` is highly efficient, it has limitations in certain scenarios:
+
+- **Dynamic data structures**: `x:Bind` cannot be used when the data structure is determined at runtime.
+- **Element-to-element binding**: Direct binding between two UI elements is not supported by `x:Bind`.
+- **DataContext inheritance**: Unlike `Binding`, `x:Bind` does not automatically inherit the `DataContext` of a parent element.
+- **Two-way bindings**: `x:Bind` supports two-way bindings, allowing changes to flow from the UI back to the source property. For the UI to update when the source property changes (in either one-way or two-way bindings), you must implement `INotifyPropertyChanged` on your data objects.
+
+For more details and examples, refer to the following resources:
+
+- [Data binding in depth](data-binding-in-depth.md)
+- [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
 
 ## Conclusion
 

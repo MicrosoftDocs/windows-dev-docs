@@ -1,6 +1,6 @@
 ---
 title: Develop apps for education.
-description: This section describes the Universal Windows Apps resources that are available to you to write Education apps for the Windows 10 and Windows 11 platforms.
+description: This section describes the Universal Windows Apps resources that are available to write Education apps for the Windows 10 and Windows 11 platforms.
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, uwp, education
@@ -16,7 +16,7 @@ The following resources will help you write a Universal Windows app for educatio
 
 ## Accessibility
 
-Education apps need to be accessible. See [Developing apps for accessibility](https://developer.microsoft.com/windows/accessible-apps) for more information.
+Education apps need to be accessible. See [Accessibility](/windows/apps/design/accessibility/accessibility) for more information.
 
 ## Secure assessments
 
@@ -24,13 +24,13 @@ Assessment/testing apps will often need to produce a *locked down* environment i
 
 ## User input
 
-User input is a critical part of education apps; UI controls must be responsive and intuitive so as not to break the focus of their users. For a general overview of the input options available in a Universal Windows app, see the [Input primer](/windows/apps/design/input/input-primer) and the topics below it in the Design & UI section. Additionally, the following sample apps showcase basic UI handling in the Universal Windows Platform.
+User input is a critical part of education apps; UI controls must be responsive and intuitive so as not to break the focus of their users. For a general overview of the input options available in a Universal Windows app, see the [Interaction primer](/windows/apps/develop/input/input-primer) and the topics below it in the Design & UI section. Additionally, the following sample apps showcase basic UI handling in the Universal Windows Platform.
 
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput) shows how to handle input in Universal Windows Apps.
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode) shows how to detect and respond to the user interaction mode.
 - [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals) shows how to take advantage of the new system drawn focus visuals or create your own custom focus visuals if the system drawn ones do not fit your needs.
 
-The Windows Ink platform can make education apps shine by fitting them with an input mode that students are accustomed to. See [Pen interactions and Windows Ink](/windows/apps/design/input/pen-and-stylus-interactions) and the topics below it for a comprehensive guide to implementing Windows Ink in your app. The following sample apps provide working examples of this API.
+The Windows Ink platform can make education apps shine by fitting them with an input mode that students are accustomed to. See [Pen interactions and Windows Ink](/windows/apps/develop/input/pen-and-stylus-interactions) and the topics below it for a comprehensive guide to implementing Windows Ink in your app. The following sample apps provide working examples of this API.
 
 - [Ink Analysis sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/InkAnalysis) demonstrates how to use ink functionality (such as capturing, manipulating, and interpreting ink strokes) in Universal Windows apps using JavaScript.
 - [Simple ink sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SimpleInk) demonstrates how to use ink functionality (such as capturing ink from user input and performing handwriting recognition on ink strokes) in Universal Windows apps using C#.
@@ -42,4 +42,4 @@ Education apps are often released under special circumstances to a specific orga
 
 ## Related Topics
 
-- [Windows 10/11 for Education](/education/windows/index) on the Windows IT Center
+- [Windows for Education](/education/windows/index) on the Windows IT Center

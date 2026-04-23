@@ -1,11 +1,9 @@
 ---
 title: Initialize function
 description: Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, throws an exception.
-ms.topic: article
+ms.topic: how-to
 ms.date: 03/23/2022
 keywords: windows 10, windows 11, Windows App SDK, desktop development, app sdk, bootstrapper, bootstrapper api
-ms.author: stwhi
-author: stevewhims
 ms.localizationpriority: low
 ---
 

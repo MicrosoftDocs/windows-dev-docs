@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Microsoft Store.
 
-The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption. All apps listed in the Microsoft Store must comply with these laws and regulations because the app files can be stored in the United States. Even apps that are uploaded by app developers from other countries for distribution outside of the United States must comply with these regulations. Consequently, when submitting an app to the Microsoft Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.
+The Bureau of Industry and Security in the United States Department of Commerce regulates the export of technology that uses certain types of encryption. All apps listed in the Microsoft Store must comply with these laws and regulations because the app files can be stored in the United States. Even apps that are uploaded by app developers from other countries/regions for distribution outside of the United States must comply with these regulations. Consequently, when submitting an app to the Microsoft Store, all app developers must make sure that their apps don't contain any technology that is restricted by these regulations.
 
 > **Note**  The information provided here provides some guidance, but it is your responsibility as the app developer who is publishing apps in the Microsoft Store to make sure that your app complies with all applicable laws and regulations.
 

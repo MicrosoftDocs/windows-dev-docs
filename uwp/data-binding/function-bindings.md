@@ -170,6 +170,9 @@ Multiple function arguments can be specified, separated by comma's (,)
 - Constant Number - for example -123.456
 - Boolean – specified as "x:True" or "x:False"
 
+> [!TIP]
+> [`TargetNullValue`](../xaml-platform/x-bind-markup-extension.md#properties-that-you-can-set-with-xbind) will apply to the result of the function call, not to any bound arguments.
+
 ### Two way function bindings
 
 In a two-way binding scenario, a second function must be specified for the reverse direction of the binding. This is done using the **BindBack** binding property. In the below example, the function should take one argument which is the value that needs to be pushed back to the model.

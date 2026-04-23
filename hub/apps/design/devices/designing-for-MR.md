@@ -7,7 +7,7 @@ template: detail.hbs
 isNew: true
 keywords: Mixed Reality, Hololens, Augmented Reality, gaze, voice, controller
 ms.date: 02/26/2021
-ms.topic: article
+ms.topic: concept-article
 
 
 pm-contact: chigy
@@ -59,7 +59,7 @@ Other, more natural, input methods are also supported, and these may be particul
 
 Without any extra hardware or coding, apps will use gaze - the vector your user is looking along - as a mouse pointer when working with 2D apps. It is implemented as if a mouse pointer was hovering over something in the virtual scene.
 
-In a typical interaction, your user will look at a control in your app, causing it to highlight. The user will when trigger an action, using either a gesture (on the HoloLens), or a contoller or by giving a voice command. If the user selects a text input field, the software keyboard will appear. 
+In a typical interaction, your user will look at a control in your app, causing it to highlight. The user will when trigger an action, using either a gesture (on the HoloLens), or a controller or by giving a voice command. If the user selects a text input field, the software keyboard will appear. 
 
 
 ![The pop-up keyboard in Mixed Reality](images/MR-keyboard.png)
@@ -116,7 +116,7 @@ When creating a UWP app that will potentially be used on a Mixed Reality platfor
 
 * Remember, gaze is not as accurate as mouse pointing. Smaller mouse targets or buttons may cause frustration for your users, so resize controls accordingly. If they are designed for touch, they will work in Mixed Reality, but you may decide to enlarge some buttons at runtime. See [Updating 2D UWP apps for Windows Mixed Reality](/windows/mixed-reality/develop/porting-apps/building-2d-apps).
 
-* The HoloLens defines the color black as the absence of light. It's simply not rendered, allowing the "real world" so show through. Your application should not use black if this is would cause confusion. In a Mixed Reality headset, black is black.
+* Your application should not use black as this could cause confusion. The HoloLens defines the color black as the absence of light and is simply not rendered, allowing the "real world" to show through. In a Mixed Reality headset, black is rendered as black.
 
 * The HoloLens does not support color themes in apps, and defaults to blue to ensure the best experience for users. For more advice about selecting colors, you should consult [this topic](https://developer.microsoft.com/windows/mixed-reality/color_light_and_materials) which discusses the use of color and material in Mixed Reality designs.
 

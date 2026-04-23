@@ -3,9 +3,7 @@ title: Win32Interop.GetMonitorFromDisplayId(DisplayId) method
 description: Gets the display monitor handle that corresponds to the specified *displayId*, if the provided *displayId* is valid and the system has an `HMONITOR` that represents the display monitor.
 ms.topic: article
 ms.date: 02/08/2022
-keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, Windows UI Library, app sdk, C#, interop, Win32Interop.GetDisplayIdFromMonitor, GetDisplayIdFromMonitor
-ms.author: stwhi
-author: stevewhims
+keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, app sdk, C#, interop, Win32Interop.GetDisplayIdFromMonitor, GetDisplayIdFromMonitor
 ms.localizationpriority: low
 ---
 
@@ -44,5 +42,5 @@ The display monitor handle that corresponds to the specified *displayId*, if the
 ## See also
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
-* [Manage app windows](../../../windows-app-sdk/windowing/windowing-overview.md)
+* [Manage app windows](../../../develop/ui-input/manage-app-windows.md)
 * [Call interop APIs from a .NET app](../../../desktop/modernize/winrt-com-interop-csharp.md)

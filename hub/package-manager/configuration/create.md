@@ -1,7 +1,7 @@
 ---
 title: How to author a WinGet Configuration file
-description: Learn how to create a WinGet Configuration. 
-ms.date: 05/23/2023
+description: Learn how to create a WinGet Configuration.
+ms.date: 09/28/2023
 ms.topic: overview
 ---
 
@@ -16,16 +16,15 @@ To create a WinGet Configuration file:
 5. Determine the directives and settings needed for each configuration resource.
 6. Determine the dependencies for each resource.
 
-> [!IMPORTANT]
-> WinGet Configuration is currently in preview. To use a WinGet Configuration file with the [`winget configure` command](../winget/configure.md), you must first [enable the experimental configuration feature](index.md#enable-the-winget-configuration-experimental-configuration-preview-feature).
+Learn more about using the [WinGet configure command](/windows/package-manager/winget/configure).
 
 ## File format
 
-Windows Package Manager uses manifests (YAML files) to locate and install packages for Windows users. WinGet Configuration files use the same YAML style format, adding a JSON schema specification to help define the structure and validation of the file. To further assist in detecting whether the format of your WinGet Configuration file is valid, we recomend using [Visual Studio Code](https://code.visualstudio.com/download) with the [YAML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) by RedHat to support proper syntax, help detect any formatting errors, provide hover support and auto-completion (when linked to the JSON schema file), and ensure valid formatting.
+Windows Package Manager uses manifests (YAML files) to locate and install packages for Windows users. WinGet Configuration files use the same YAML style format, adding a JSON schema specification to help define the structure and validation of the file. To further assist in detecting whether the format of your WinGet Configuration file is valid, we recommend using [Visual Studio Code](https://code.visualstudio.com/download) with the [YAML extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) by RedHat to support proper syntax, help detect any formatting errors, provide hover support and auto-completion (when linked to the JSON schema file), and ensure valid formatting.
 
 ### File naming convention
 
-The convention for naming a WinGet Configuration file is `configuration.dsc.yaml`. For Git-based projects the default configuration should be stored in a "configurations" directory at: `./configurations/configuration.dsc.yaml`.
+The convention for naming a WinGet Configuration file is using the ".winget" file extension (like `configuration.winget`). For Git-based projects the default configuration should be stored in a ".config" directory at: `./config/configuration.winget`. In some cases, more than one configuration file may be appropriate given different toolchains or user preferences. Those additional configuration files should also be located in the ".config" directory.
 
 ### Sections of a WinGet Configuration file
 
@@ -46,11 +45,11 @@ If an assertion returns “false” to indicate the system is not in the desired
 
 ### Resources section
 
-The list of Resources cover all of the software, tools, packages, etc. that need to be installed and the configurations settings for your Windows operating system or installed applications. Each resource will need to be given a name, description of the directive to be carried out and the PowerShell module that will be responsible for carrying out that directive, and any associated settings or dependencies.
+The list of Resources covers all of the software, tools, packages, etc. that need to be installed and the configurations settings for your Windows operating system or installed applications. Each resource will need to be given a name, description of the directive to be carried out and the PowerShell module that will be responsible for carrying out that directive, as well as any associated settings or dependencies.
 
 ## Example WinGet Configuration file
 
-The following is an example WinGet Configuration `configuration.dsc.yaml` formatted file:
+The following is an example WinGet Configuration `configuration.winget` formatted file:
 
 ```yml
 # yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
@@ -63,17 +62,18 @@ properties:
       settings:
         MinVersion: '10.0.22000'
   resources:
-    - resource: Microsoft.Windows.Developer/DeveloperMode
+    - resource: Microsoft.Windows.Settings/WindowsSettings
       directives:
         description: Enable Developer Mode
         allowPrerelease: true
+        securityContext: elevated
       settings:
-        Ensure: Present
+        DeveloperMode: true
     - resource: Microsoft.WinGet.DSC/WinGetPackage
       id: vsPackage
       directives:
         description: Install Visual Studio 2022 Community
-        allowPrerelease: true
+        securityContext: elevated
       settings:
         id: Microsoft.VisualStudio.2022.Community
         source: winget
@@ -83,6 +83,7 @@ properties:
       directives:
         description: Install required VS workloads from vsconfig file
         allowPrerelease: true
+        securityContext: elevated
       settings:
         productId: Microsoft.VisualStudio.Product.Community
         channelId: VisualStudio.17.Release
@@ -95,19 +96,19 @@ The components of this file consist of:
 
 1. **Schema**: The first line in your configuration file should contain the following comment: `# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/<most recent schema version #>` to establish the DSC schema being followed by the file. To find the most recent version of the WinGet Configuration schema, go to [https://aka.ms/configuration-dsc-schema/](https://aka.ms/configuration-dsc-schema/). The most recent schema number at the time of this example is `0.2`, so the schema was entered as: `# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2`.
 
-2. **Properties**: The root node for a configuration file is “properties” which must contain a configuration version (`configurationVersion: 0.2.0` in this example). This version should be updated in accordance with updates to the configuration file. The properties node should contain an `assertions` node and a `resources` node
+2. **Properties**: The root node for a configuration file is `properties` which must contain a configuration version (`configurationVersion: 0.2.0` in this example). This version should be updated in accordance with updates to the configuration file. The properties node should contain an `assertions` node and a `resources` node.
 
 3. **Assertions**: List the preconditions (or prerequisites) required for this configuration in this section.
 
-4. **Resource**: Both the "Assertions" and "Resources" list sections consist of individual `resource` nodes to represent the set up task. The `resource` should be given the name of the PowerShell module followed by the name of the module's DSC resource that will be invoked to apply your desired state: `{ModuleName}/{DscResource}`. When applying a configuration, WinGet will know to install the module from the [PowerShell Gallery](https://www.powershellgallery.com/packages) and invoke the specified [DSC resource](/powershell/dsc/concepts/resources).
+4. **Resources**: Both the `assertions` and `resources` list sections consist of individual `resource` nodes to represent the set up task. The `resource` should be given the name of the PowerShell module followed by the name of the module's DSC resource that will be invoked to apply your desired state: `{ModuleName}/{DscResource}`. Each resource must include `directives` and `settings`. Optionally, it can also include an `id` value. When applying a configuration, WinGet will know to install the module from the [PowerShell Gallery](https://www.powershellgallery.com/packages) and invoke the specified [DSC resource](/powershell/dsc/concepts/resources).
 
-5. **Directives**: The `directives` section provides information about the module and the resource. This section should include a `description` value to describe the configuration task being accomplished by the module. The `allowPrerelease` value enables you to choose whether or not the configuration will be allowed (`true`) to use "Prerelease" modules from the [PowerShell Gallery](https://www.powershellgallery.com/packages).
+5. **Directives**: The `directives` section provides information about the module and the resource. This section should include a `description` value to describe the configuration task being accomplished by the module. The `allowPrerelease` value enables you to choose whether or not the configuration will be allowed (`true`) to use "Prerelease" modules from the [PowerShell Gallery](https://www.powershellgallery.com/packages). Some DSC resources may need to run with administrator privileges. The `securityContext: elevated` field under the directives section of a resource indicates this requirement. When set to `elevated`, WinGet will prompt for one UAC approval at the start of the configuration. WinGet will then launch two processes: one that runs resources with elevated privileges and another that runs resources with the current user's privileges.
 
 6. **Settings**: The `settings` value of a resource represents the collection of name-value pairs being passed to the PowerShell DSC Resource. Settings could represent anything from whether Developer Mode is enabled, to applying a reg key, or to establishing a particular network setting.
 
 7. **Dependencies**: The `dependsOn` value of a resource determines whether any other assertion or resource must be complete prior to beginning this task. If the dependency failed, this resource will also automatically fail.
 
-8. **ID**: A unique identifier for the particular resource instance. The id value can be used if another resource has a dependency on this resource being applied first.
+8. **ID**: A unique identifier for the particular resource instance. The `id` value can be used if another resource has a dependency on this resource being applied first.
 
 ## Organizing the Resources section
 

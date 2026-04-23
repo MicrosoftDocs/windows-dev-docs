@@ -1,9 +1,9 @@
 ---
 title: Web authentication broker
-description: This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on.
+description: This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth.
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
 ---
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 
 
-This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on. The [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) method sends a request to the online identity provider and gets back an access token that describes the provider resources to which the app has access.
+This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth. The [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync) method sends a request to the online identity provider and gets back an access token that describes the provider resources to which the app has access.
 
 >[!NOTE]
 >For a complete, working code sample, clone the [WebAuthenticationBroker repo on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebAuthenticationBroker).
@@ -178,3 +178,28 @@ The Fiddler web debugger can be used with apps. For more information, see [Fiddl
     ```
 
 3.  Add a firewall rule for incoming traffic to Fiddler.
+
+    You can create the firewall rule using either the command line or the Windows Defender Firewall GUI:
+
+    **Option A: Using netsh command (run as administrator):**
+
+    ```cmd
+    netsh advfirewall firewall add rule name="Fiddler for AuthHost Debugging" dir=in action=allow program="C:\Program Files\Fiddler\Fiddler.exe" enable=yes
+    ```
+    
+    If Fiddler is installed in a different location, adjust the path accordingly. Alternatively, you can create a port-based rule:
+
+    ```cmd
+    netsh advfirewall firewall add rule name="Fiddler Port for AuthHost" dir=in action=allow protocol=TCP localport=8888
+    ```
+
+    **Option B: Using Windows Defender Firewall with Advanced Security:**
+
+    1. Open Windows Defender Firewall with Advanced Security (run `wf.msc`)
+    1. Click "Inbound Rules" in the left pane
+    1. Click "New Rule..." in the right pane
+    1. Select "Program" and click Next
+    1. Browse to your Fiddler executable (typically `C:\Program Files\Fiddler\Fiddler.exe` in a per-machine installation) and click Next
+    1. Select "Allow the connection" and click Next
+    1. Check all network types (Domain, Private, Public) and click Next
+    1. Give the rule a name like "Fiddler for AuthHost Debugging" and click Finish

@@ -5,7 +5,7 @@ ms.assetid: CDB224E2-CC07-4568-9AAC-C8DC74536561
 keywords:
 - UAV behavior with non-mapped tiles
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

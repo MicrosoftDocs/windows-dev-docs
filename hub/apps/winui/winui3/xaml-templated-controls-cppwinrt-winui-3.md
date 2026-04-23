@@ -1,11 +1,9 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C++/WinRT.
 title: Build XAML controls with C++/WinRT
-ms.date: 07/09/2020
-ms.topic: article
-keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, Windows UI Library, custom control, templated control
-ms.author: drewbat
-author: drewbatgit
+ms.date: 07/09/2024
+ms.topic: how-to
+keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, custom control, templated control
 ms.localizationpriority: high
 ms.custom: 19H1
 ---
@@ -16,9 +14,8 @@ This article walks you through creating a templated XAML control for WinUI 3 wit
 
 ## Prerequisites
 
-1. Set up your development environment&mdash;see [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md).
+1. [Start developing Windows apps](../../get-started/start-here.md)
 2. Download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
-3. Follow the instructions on how to [Create your first WinUI 3 project](create-your-first-winui3-app.md). 
 
 ## Create a Blank App (BgLabelControlApp)
 
@@ -51,7 +48,7 @@ namespace BgLabelControlApp
 }
 ```
 
-The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in [Custom attached properties](/windows/uwp/xaml-platform/custom-attached-properties).
+The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in [Custom attached properties](/windows/apps/develop/platform/xaml/custom-attached-properties).
 
 Note that the XAML classes referenced in the code above are in Microsoft.UI.Xaml namespaces. This is what distinguishes them as WinUI controls as opposed to UWP XAML controls, which are defined in Windows.UI.XAML namespaces.
 
@@ -129,6 +126,7 @@ namespace winrt::BgLabelControlApp::implementation
     }
 }
 ```
+
 This walkthrough won't use the **OnLabelChanged** callback, but it's provided so that you can see how to register a dependency property with a property-changed callback. The implementation of **OnLabelChanged** also shows how to obtain a derived projected type from a base projected type (the base projected type is DependencyObject, in this case). And it shows how to then obtain a pointer to the type that implements the projected type. That second operation will naturally only be possible in the project that implements the projected type (that is, the project that implements the runtime class).
 
 The [xaml_typename](/uwp/cpp-ref-for-winrt/xaml-typename) function is provided by the Windows.UI.Xaml.Interop namespace that is not included by default in the WinUI 3 project template. Add a line to the precompiled header file for your project, `pch.h`, to include the header file associated with this namespace.
@@ -173,16 +171,16 @@ In this case, the only property that the default style sets is the control templ
 
 ## Add an instance of BgLabelControl to the main UI page
 
-Open `MainPage.xaml`, which contains the XAML markup for our main UI page. Immediately after the **Button** element (inside the **StackPanel**), add the following markup.
+Open `MainWindow.xaml`, which contains the XAML markup for our main UI page. Immediately after the **Button** element (inside the **StackPanel**), add the following markup.
 
 ```xaml
 <local:BgLabelControl Background="Red" Label="Hello, World!"/>
 ```
 
-Also, add the following include directive to `MainPage.h` so that the **MainPage** type (a combination of compiling XAML markup and imperative code) is aware of the **BgLabelControl** templated control type. If you want to use **BgLabelControl** from another XAML page, then add this same include directive to the header file for that page, too. Or, alternatively, just put a single include directive in your precompiled header file.
+Also, add the following include directive to `MainWindow.h` so that the **MainWindow** type (a combination of compiling XAML markup and imperative code) is aware of the **BgLabelControl** templated control type. If you want to use **BgLabelControl** from another XAML page, then add this same include directive to the header file for that page, too. Or, alternatively, just put a single include directive in your precompiled header file.
 
 ```cppwinrt
-//MainPage.h
+//MainWindow.h
 ...
 #include "BgLabelControl.h"
 ...
@@ -228,5 +226,4 @@ The compiler places a static_assert line at the top of BgLabelControl.h and BgLa
 ## See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

@@ -5,36 +5,42 @@ brand: windows
 metadata:
    title: Windows Documentation | Microsoft Docs
    titleSuffix: ""
-   author: GrantMeStrength
-   ms.author: jken
    ms.topic: hub-page
    ms.custom: intro-hub-or-landing
-   ms.date: 03/20/2023
+   ms.date: 07/17/2024
    
 
 productDirectory:
   items:
   - title: Application developers
-    imageSrc: /media/common/i_portal.svg
+    imageSrc: ./images/windows-appdev.svg
     summary: Design, develop, and deploy applications and other solutions for Windows PCs and other devices.
     url: ./apps/index.yml
+  - title: Developer tools
+    imageSrc: ./images/windows-devtools.svg
+    summary: No matter what you're building, Windows is optimized for developers.
+    url: ./dev-environment/index.md
   - title: Hardware developers
-    imageSrc: /media/common/i_tools.svg
+    imageSrc: ./images/windows-driver.svg
     summary: Design, develop, and deploy hardware and device drivers for Windows PCs and other devices.
     url: /windows-hardware/drivers/
   - title: Windows client for IT pros
-    imageSrc: /media/common/i_subscription.svg
+    imageSrc: ./images/windows-client.svg
     summary: Evaluate, plan, deploy, secure, and manage devices running Windows 10 and Windows 11.
     url: /windows/resources/
   - title: Windows Server for IT pros
-    imageSrc: /media/common/i_server.svg
+    imageSrc: ./images/windows-server.svg
     summary: Build and deploy connected applications, networks, and web services on Windows Server.
     url: /windows-server/
   - title: Windows for IoT
-    imageSrc: /media/common/i_multi-connect.svg
+    imageSrc: ./images/windows-iot.svg
     summary: Create IoT solutions with secure devices that can be quickly provisioned, easily managed, and seamlessly connected to an overall cloud strategy.
     url: /windows/iot/
   - title: Windows Insider Program
-    imageSrc: /media/common/i_event.svg
+    imageSrc: ./images/windows-insiders.svg
     summary: Be the first to see what's next and help shape Windows' future by running Windows Insider Preview builds and giving feedback.
     url: /windows-insider/
+  - title: Windows 365
+    imageSrc: ./images/windows-365.svg
+    summary: Official product documentation for Windows 365.
+    url: /windows-365/

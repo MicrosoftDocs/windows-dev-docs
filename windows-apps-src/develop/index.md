@@ -158,7 +158,7 @@ How-to articles and code for creating UWP apps for Windows.
         <a href="/windows/uwp/composition/visual-layer">Visual layer</a><br/>
         <a href="/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service">Windows as a service</a><br/>
         <a href="/windows/uwp/winrt-components/">Windows Runtime components</a><br/>
-        <a href="/windows/uwp/xaml-platform/">XAML platform</a><br/>
+        <a href="/windows/apps/develop/platform/xaml/">XAML platform</a><br/>
     :::column-end:::
 :::row-end:::
 :::row:::

@@ -2,91 +2,93 @@
 title: Build desktop Windows apps with the Windows App SDK 
 description: Learn about the Windows App SDK, benefits it provides to developers, what is ready for developers now, and how to give feedback.
 ms.topic: article
-ms.date: 07/29/2022
+ms.date: 07/14/2025
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
 
 # Windows App SDK
 
-The Windows App SDK is a set of new developer components and tools that represent the next evolution in the Windows app development platform. The Windows App SDK provides a unified set of APIs and tools that can be used in a consistent way by any desktop app on Windows 11 and downlevel to Windows 10, version 1809.
+:::image type="icon" source="images/windows-app-sdk-hero.png":::
 
-&nbsp;
+The Windows App SDK provides a unified set of APIs and tools that you can use to build modern Windows apps. It brings the latest Windows platform features to both [WinUI](../winui/winui3/index.md) and existing desktop app frameworks such as WPF, Windows Forms, or Win32.
 
-> [!VIDEO ff5c6036-2911-4ea8-80da-89befb39267b]
 
-The Windows App SDK doesn't replace the Windows SDK or existing desktop Windows app types such as .NET (including Windows Forms and WPF) and desktop Win32 with C++. Instead, the Windows App SDK complements those existing tools and app types with a common set of APIs that developers can rely on across these platforms. For more details, see [Benefits of the Windows App SDK](#benefits-of-the-windows-app-sdk-for-windows-developers).
+Windows App SDK is built in the open, and contributions or discussions are welcome. Visit the repository for details:
 
-[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
+<div class="buttons margin-top-xs">
+	<a href="https://github.com/microsoft/WindowsAppSDK" class="button button-sm"><span class="icon docon docon-brand-github" role="img"></span><span>View on GitHub</span></a>
+</div>
 
-## Get started with the Windows App SDK
+### What you can do with the Windows App SDK
 
-The Windows App SDK provides extensions for Visual Studio 2022 and Visual Studio 2019. Those extensions include project templates configured to use the Windows App SDK components in new projects. The Windows App SDK libraries are also available via a NuGet package that you can install in existing projects.
+Whether you are building a new app with WinUI 3 or enhancing an existing one with modern capabilities, the Windows App SDK helps you take advantage of the latest Windows APIs.
 
-> [!IMPORTANT]
-> To learn about configuring Visual Studio for creating new Windows App SDK projects, see [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment); in particular the section that lists the [Required workloads and components](/windows/apps/windows-app-sdk/set-up-your-development-environment#required-workloads-and-components) for Visual Studio.
+:::image type="content" source="images/windows-app-sdk-overview.png" alt-text="Diagram of the Windows App SDK architecture" border="false":::
 
-If you've already installed the required developer tools, then you're ready to [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md). You can also [use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md).
-
-For guidance on specific Windows App SDK versions, see [Release channels](release-channels.md) and [Downloads](downloads.md).
-
-### Windows App SDK features
-
-The following table highlights the development features that are provided by the current releases of the Windows App SDK. For more details about the release channels of the Windows App SDK that include each of these features, see [Features available by release channel](release-channels.md#features-available-by-release-channel).
+Here's a breakdown of the major features that Windows App SDK provides:
 
 | Feature | Description |
 |--|--|
-| [WinUI 3](../winui/index.md) | The premiere native user interface (UI) framework for Windows desktop apps, including managed apps that use C# and .NET and native apps that use C++ with the Win32 API. WinUI 3 provides consistent, intuitive, and accessible experiences using the latest user interface (UI) patterns. |
-| [Render text with DWriteCore](dwritecore.md) | Render text using a device-independent text layout system, high quality sub-pixel Microsoft ClearType text rendering, hardware-accelerated text, multi-format text, wide language support, and much more. |
-| [Manage resources with MRT Core](mrtcore/mrtcore-overview.md) | Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic. |
-| [App lifecycle: App instancing](applifecycle/applifecycle-instancing.md) | Control whether multiple instances of your app's process can run at the same time. |
-| [App lifecycle: Rich activation](applifecycle/applifecycle-rich-activation.md) | Process information about different kinds activations for your app. |
-| [App lifecycle: Power management](applifecycle/applifecycle-power.md) | Gain visibility into how your app affects the device's power state, and enable the app to make intelligent decisions about resource usage. |
-| [Manage app windows](windowing/windowing-overview.md) | Create and manage the windows associated with your app. |
-| [Push notifications](../windows-app-sdk/notifications/push-notifications/index.md) | Send raw notifications and app notifications to your app from the cloud using Azure App Registration identities. |
-| [App notifications](../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md) | Send app notifications to your app locally. |
-| [Deployment](deployment-architecture.md) | Deploy Windows App SDK runtime with your unpackaged and packaged app |
+| [WinUI](../winui/winui3/index.md) | The modern native UI (user interface) framework for Windows apps, supporting both .NET (C#) and C++ projects. WinUI enables consistent, accessible, and beautiful user experiences that align with the Fluent Design system. |
+| [Windows AI APIs](/windows/ai/apis/) | Bring powerful, hardware-accelerated artificial intelligence (AI) capabilities to your apps, running local models seamlessly and efficiently on Copilot+ PCs. |
+| [Windows ML](/windows/ai/new-windows-ml/overview) | Run ONNX AI models locally on Windows, automatically optimizing performance across available hardware such as CPUs, GPUs, and NPUs for fast, efficient inference. |
+| [Modern text rendering](dwritecore.md) | Use a device-independent text layout and rendering system with [ClearType](/typography/cleartype/) subpixel rendering, hardware acceleration, and broad language support for precise, high-quality text. |
+| [Resource management](mrtcore/mrtcore-overview.md) | Manage app resources such as strings and images in multiple languages, scales, and contrast variants independently of your app's logic. |
+| [App lifecycle](applifecycle/applifecycle.md) | Manage key aspects of your app's runtime behavior, including [instance management](applifecycle/applifecycle-instancing.md), [rich activation](applifecycle/applifecycle-rich-activation.md) (file, protocol, restart, and more), and [power management](applifecycle/applifecycle-power.md). Gain control over how your app starts, runs, and conserves system resources. |
+| [Windowing](windowing/windowing-overview.md) | Create, position, and customize app windows with modern windowing APIs. |
+| Notifications | Send local or cloud-based notifications to engage users and keep your app connected, including both [app notifications](../develop/notifications/app-notifications/index.md) and [push notifications](../develop/notifications/push-notifications/index.md). |
+| [Widgets](../develop/widgets/widget-providers.md) | Bring personalized, glanceable information to the Windows widget board, allowing users to stay connected to your app's live content right from their desktop. |
+| [XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md) | Embed modern Windows UI controls inside existing desktop apps to refresh your interface and add new capabilities without a full rewrite. |
+| [Deployment](deployment-architecture.md) | Deploy the Windows App SDK runtime with your app, whether it is packaged or unpackaged, to ensure consistent and reliable operation across devices. |
+
+---
+
+### Benefits of using the Windows App SDK
+
+The Windows App SDK provides a modern foundation for building Windows apps with a unified set of APIs delivered through NuGet. It works alongside the Windows SDK and gives developers access to new Windows features on a faster release cycle.
+
+- **Modern UI out of the box:** The Windows App SDK includes [WinUI](../winui/winui3/index.md), a powerful native UI framework for creating modern, high-performance interfaces that align with the Fluent Design system. You can use it to build new desktop apps or refresh existing experiences with modern visuals and controls.
+
+
+- **Works with your existing app and development stack:** The Windows App SDK can be added to existing apps built with WPF, Windows Forms, Win32, or other application frameworks.
+
+- **Modular SDK design:** Employs a metapackage structure that lets apps reference the full SDK or only specific components, for example WinUI, AI, or text rendering. This enables incremental adoption and reduces overall package size.
+
+- **Consistent across Windows versions:** Windows App SDK APIs run on Windows 11 and earlier versions starting from Windows 10, version 1809. This allows you to use new features as soon as they are released without depending on operating system updates or writing version adaptive code.
+
+- **Faster release cadence:** Because the Windows App SDK is released independently from the operating system, new APIs and improvements become available several times per year. This faster cadence gives developers earlier access to the latest Windows features without waiting for major OS updates.
+
+---
 
 ### Windows App SDK release channels
 
-The following table provides an overview of the different release channels.
+The Windows App SDK is available through multiple release channels that let you choose the right balance between stability and early access.
 
 | Release channel | Description |
-|--|--|
-| [Stable](stable-channel.md) | This channel is supported for use by apps in production environments. It only includes stable APIs. By default, the Windows App SDK docs focus on the Stable channel. |
-| [Preview](preview-channel.md) | This channel provides a preview of the next stable release. There may be breaking API changes between a given preview channel release and the next stable release. For documentation on using the Preview release, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md). |
-| [Experimental](experimental-channel.md) | This channel includes experimental features that are in early stages of development. Experimental features may be removed from the next release, or may never be released. For documentation on using the Experimental release, see [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md). |
+|-----------------|-------------|
+| **Stable** | Intended for production apps and includes only stable, supported APIs. This is the default channel used throughout the Windows App SDK documentation. |
+| **Preview** | Offers an early look at what’s coming in the next stable release. API changes can occur between a preview release and its corresponding stable version. |
+| **Experimental** | Contains features that are early in development and may change or be removed before future releases. |
+
 
  For more details about the release channels of the Windows App SDK, see [Windows App SDK release channels](release-channels.md).
 
-## Benefits of the Windows App SDK for Windows developers
+### Get started with the Windows App SDK
 
-The Windows App SDK provides a broad set of Windows APIs with implementations that are decoupled from the OS and released to developers via NuGet packages. The Windows App SDK is not meant to replace the Windows SDK. The Windows SDK will continue to work as is, and there are many core components of Windows that will continue to evolve via APIs that are delivered via OS and Windows SDK releases. Developers are encouraged to adopt the Windows App SDK at their own pace.
+- For new apps, explore [WinUI](../winui/winui3/index.md) and [get started building your first WinUI app](../get-started/start-here.md).
 
-### Unified API surface across desktop app platforms
+- To integrate the Windows App SDK into an existing WPF, Windows Forms, Win32, or cross-platform project, see [use the Windows App SDK in an existing app](use-windows-app-sdk-in-existing-project.md)  guidance.
+- For version-specific details, visit [Release channels](release-channels.md) and [Downloads](downloads.md).
 
-Developers who want to create desktop Windows apps must choose between several app platforms and frameworks. Although each platform provides many features and APIs that can be used by apps that are built using other platforms, some features and APIs can only be used by specific platforms. The Windows App SDK unifies access to Windows APIs for desktop Windows 11 and Windows 10 apps. No matter which app model you choose, you will have access to the same set of Windows APIs that are available in the Windows App SDK.
+[!INCLUDE [UWP migration guidance](../windows-app-sdk/includes/uwp-app-sdk-migration-pointer.md)]
 
-Over time, we plan to make further investments in the Windows App SDK that remove more distinctions between the different app models. The Windows App SDK will include both WinRT APIs and native C APIs.
 
-### Consistent experience across Windows versions
+### Give feedback and contribute
 
-As the Windows APIs continue to evolve with new OS versions, developers must use techniques such as [version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code) to account for all the differences in versions to reach their application audience. This can add complexity to the code and the development experience.
-
-Windows App SDK APIs will work on Windows 11 and downlevel to Windows 10, version 1809. This means that as long as your customers are on Windows 10, version 1809, or any later version of Windows, you can use new Windows App SDK APIs and features as soon as they are released, and without having to write version adaptive code.
-
-### Faster release cadence
-
-New Windows APIs and features are usually shipped within major Windows OS updates that release about once a year (often less frequently). Windows App SDK ships new releases about once every six months. This release cadence ensures that you continuously have access to the latest innovations in the Windows development platform.
-
-## Give feedback and contribute
-
-We are building the Windows App SDK as an open source project. We have a lot more information on our [Github page](https://github.com/microsoft/WindowsAppSDK) about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our [contributor guide](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/contributor-guide.md) to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.
+We are building the Windows App SDK as an open source project. We have a lot more information on our [GitHub page](https://github.com/microsoft/WindowsAppSDK) about how we're building the Windows App SDK, and how you can be a part of the development process. Check out our [contributor guide](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/contributor-guide.md) to ask questions, start discussions, or make feature proposals. We want to make sure that the Windows App SDK brings the biggest benefits to developers like you.
 
 ## Related topics
 
 - [Release channels and release notes](release-channels.md)
-- [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
-- [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md#use-the-windows-app-sdk)
+- [Create your first WinUI 3 project](../get-started/start-here.md)

@@ -7,13 +7,14 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# View app identity details
+# View product identity details
 
 
-You can view details related to the unique identity assigned to your app by the Microsoft Store on its **App identity** pages. You can also get a link to your app's Store listing on this page.
+You can view details related to the unique identity assigned to your app by the Microsoft Store on its **Product identity** pages. You can also get a link to your app's Store listing on this page.
 
-To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Select **App identity** to view these details.
+To find this info, navigate to one of your apps, then expand **Product management** in the left navigation menu. Select **Product identity** to view these details.
 
+:::image type="content" source="publish-your-app/msix/images/msix-product-identity.png" lightbox="publish-your-app/msix/images/msix-product-identity.png" alt-text="A screenshot showing the product identity section for MSIX/PWA app.":::
 
 ## Values to include in your app package manifest
 
@@ -38,14 +39,8 @@ The following values are additional values that refer to your app's package fami
 
 ## Link to your app's listing
 
-The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://www.microsoft.com/store/apps/<your app's Store ID>`**. When a customer clicks this link, it opens the web-based listing page for your app. On Windows devices, the Store app will also launch and display your app's listing.
+The direct link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://apps.microsoft.com/detail/<your app's Store ID>`**. When a customer clicks this link, it opens the web-based listing page for your app. On Windows devices, the Store app will also launch and display your app's listing.
 
 Your app's **Store ID** is also shown in this section. This Store ID can be used to [generate Store badges](https://developer.microsoft.com/store/badges) or otherwise identify your app.
 
-The **Store protocol link** can be used to link directly to your app in the Store without opening a browser, such as when you are linking from within an app. For more info, see [Link to your app](link-to-your-app.md).
-
-
-
- 
-
- 
+The **Store protocol link** can be used to link directly to your app in the Store without opening a browser, such as when you are linking from within an app. For more info, see, "How do I link to my app in the Microsoft Store?" in the [Leverage developer tools FAQ](faq/leverage-developer-tools.md).

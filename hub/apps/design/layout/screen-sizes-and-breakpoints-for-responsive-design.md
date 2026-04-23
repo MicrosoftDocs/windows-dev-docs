@@ -1,7 +1,7 @@
 ---
-title: Screen sizes and break points for responsive design
-description: Rather than optimizing your UI the many devices across the Windows 10 ecosystem, we recommended designing for a few key width categories called breakpoints.
-ms.date: 01/28/2022
+title: Screen sizes and break points for responsive design.
+description: Rather than optimizing your UI for the many devices across the Windows ecosystem, we recommended designing for a few key width categories called breakpoints.
+ms.date: 11/21/2024
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -40,13 +40,13 @@ XAML's effective pixel system automatically takes viewing distance in account fo
 
 XAML helps by automatically adjusting UI elements so that they're legible and easy to interact with on all devices and screen sizes.
 
-When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5" phone that's a few inches away.
+When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on a large presentation screen 10 feet away is just as legible to the user as a 24 px font on a small portable screen that's a few inches away.
 
 :::image type="content" source="images/scaling-chart.png" alt-text="Content is scaled differently on different devices based on how far away the user is expected to be from the device's screen":::
 
 Because of how the scaling system works, when you design your XAML app, you're designing in effective pixels, not actual physical pixels. Effective pixels (epx) are a virtual unit of measurement, and they're used to express layout dimensions and spacing, independent of screen density. (In our guidelines, epx, ep, and px are used interchangeably.)
 
-You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class (for details, see the Screen sizes and breakpoints article).
+You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class.
 
 > [!TIP]
 > When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting.
@@ -55,6 +55,13 @@ You can ignore the pixel density and the actual screen resolution when designing
 
 :::image type="content" source="images/4epx.svg" alt-text="A 4 epx image being scaled to many dimensions without fractional pixels.":::
 
-The sizes, margins, and positions of UI elements should always be in multiples of 4 epx in your UWP apps.
+The sizes, margins, and positions of UI elements should always be in multiples of 4 epx in your XAML apps.
 
 XAML scales across a range of devices with scaling plateaus of 100%, 125%, 150%, 175%, 200%, 225%, 250%, 300%, 350%, and 400%. The base unit is 4 because it can be scaled to these plateaus as a whole number (for example; 4 x 125% = 5, 4 x 150% = 6). Using multiples of four aligns all UI elements with whole pixels and ensures UI elements have crisp, sharp edges. (Note that text doesn't have this requirement; text can have any size and position.)
+
+## Related topics
+
+- [Fluent Design - Layout](https://fluent2.microsoft.design/layout)
+- [Responsive design](responsive-design.md)
+- [Responsive layouts with XAML](layouts-with-xaml.md)
+- [XAML controls](../controls/index.md)

@@ -5,7 +5,7 @@ ms.assetid: 3B0C95E2-1025-4F70-BF14-EBFF2BB53AFF
 keywords:
 - Floating-point rules
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

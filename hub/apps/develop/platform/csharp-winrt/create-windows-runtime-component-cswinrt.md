@@ -1,5 +1,5 @@
 ---
-title: Walkthrough&mdash;Create a C#/WinRT component, and consume it from C++/WinRT
+title: Walkthrough—Create a C#/WinRT component, and consume it from C++/WinRT
 description: Author a Windows Runtime component with C#/WinRT, and consume it from a native application.
 ms.date: 03/15/2022
 ms.topic: article
@@ -30,7 +30,7 @@ Begin by creating a new project in Visual Studio. Select the **Class Library** p
 
     ```xml
     <PropertyGroup>
-        <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
+        <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
         <Platforms>x64</Platforms>
     </PropertyGroup>
     ```

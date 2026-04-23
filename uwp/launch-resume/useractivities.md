@@ -3,7 +3,7 @@ title: Continue user activity, even across devices
 description: This topic describes how to help users resume what they were doing in your app, even across multiple devices.
 keywords: user activity, user activities, timeline, cortana pick up where you left off, cortana pick up where i left off, project rome
 ms.date: 05/05/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -172,6 +172,6 @@ You can use the [UserActivity](/uwp/api/windows.applicationmodel.useractivities)
 * [User Activities (Project Rome docs)](/windows/project-rome/user-activities/)
 * [Adaptive cards](/adaptive-cards/)
 * [Adaptive cards visualizer, samples](https://adaptivecards.io/)
-* [Handle URI activation](./handle-uri-activation.md)
+* [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation)
 * [Engaging with your customers on any platform using the Microsoft Graph, Activity Feed, and Adaptive Cards](/events/connect-2017/b111)
 * [Microsoft Graph](https://developer.microsoft.com/graph)

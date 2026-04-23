@@ -3,7 +3,7 @@ title: Add a user interface
 description: Learn how to use Direct2D APIs to add a 2D user interface overlay with a heads up display and game state menus to a DirectX UWP game.
 ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ms.date: 10/24/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, user interface, directx
 ms.localizationpriority: medium
 ---
@@ -21,7 +21,7 @@ Now that our game has its 3D visuals in place, it's time to focus on adding some
 ## Objective
 
 Using Direct2D, add a number of user interface graphics and behaviors to our UWP DirectX game including:
-- Heads-up display, including [move-look controller](tutorial--adding-controls.md) boundry rectangles
+- Heads-up display, including [move-look controller](tutorial--adding-controls.md) boundary rectangles
 - Game state menus
 
 
@@ -56,7 +56,7 @@ The overlay consists of the following basic primitives.
     - Time remaining in the level
     - Current level number 
 - Two intersecting line segments used to form a cross hair
-- Two rectangles at the bottom corners for the [move-look controller](tutorial--adding-controls.md) boundries. 
+- Two rectangles at the bottom corners for the [move-look controller](tutorial--adding-controls.md) boundaries. 
 
 
 The in-game heads-up display state of the overlay is drawn in the [**GameHud::Render**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.cpp#L234-L358) method of the [**GameHud**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameHud.h) class. Within this method, the Direct2D overlay that represents our UI is updated to reflect the changes in the number of hits, time remaining, and level number.
@@ -233,7 +233,7 @@ The overlay is created using the [**GameInfoOverlay**](https://github.com/Micros
 
 ![status and action of overlay](images/simple-dx-game-ui-finaloverlay.png)
 
-The overlay is broken up into two sections: **Status** and **Action**. The **Status** secton is further broken down into **Title** and **Body** rectangles. The **Action** section only has one rectangle. Each rectangle has a different purpose.
+The overlay is broken up into two sections: **Status** and **Action**. The **Status** section is further broken down into **Title** and **Body** rectangles. The **Action** section only has one rectangle. Each rectangle has a different purpose.
 
 -   `titleRectangle` contains the title text.
 -   `bodyRectangle` contains the body text.
@@ -277,7 +277,7 @@ The [**GameInfoOverlay::GameInfoOverlay**](https://github.com/Microsoft/Windows-
 
 
 #### GameInfoOverlay::CreateDeviceDependentResources
-[**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) is our method for creating brushes that will be used to draw our text. To do this, we obtain a [**ID2D1DeviceContext2**](/windows/desktop/api/d2d1_3/nn-d2d1_3-id2d1devicecontext2) object which enables the creation and drawing of geometry, plus functionality such as ink and gradient mesh rendering. We then create a series of colored brushes using [**ID2D1SolidColorBrush**](/windows/desktop/api/d2d1/nn-d2d1-id2d1solidcolorbrush) to draw the folling UI elements.
+[**GameInfoOverlay::CreateDeviceDependentResources**](https://github.com/Microsoft/Windows-universal-samples/blob/5f0d0912214afc1c2a7c7470203933ddb46f7c89/Samples/Simple3DGameDX/cpp/GameInfoOverlay.cpp#L82-L104) is our method for creating brushes that will be used to draw our text. To do this, we obtain an [**ID2D1DeviceContext2**](/windows/desktop/api/d2d1_3/nn-d2d1_3-id2d1devicecontext2) object which enables the creation and drawing of geometry, plus functionality such as ink and gradient mesh rendering. We then create a series of colored brushes using [**ID2D1SolidColorBrush**](/windows/desktop/api/d2d1/nn-d2d1-id2d1solidcolorbrush) to draw the following UI elements.
 - Black brush for rectangle backgrounds
 - White brush for status text
 - Orange brush for action text
@@ -315,7 +315,7 @@ The [**GameInfoOverlay::CreateWindowsSizeDependentResources**](https://github.co
 - `m_levelBitmap` is set as our 2D render target using [**ID2D1DeviceContext::SetTarget**](/windows/desktop/api/d2d1_1/nf-d2d1_1-id2d1devicecontext-settarget).
 - The Bitmap is cleared with every pixel made black using [**ID2D1RenderTarget::Clear**](/windows/win32/direct2d/id2d1rendertarget-clear).
 - [**ID2D1RenderTarget::BeginDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-begindraw) is called to initiate drawing. 
-- **DrawText** is called to draw the text stored in `m_titleString`, `m_bodyString`, and `m_actionString` in the approperiate rectangle using the corresponding **ID2D1SolidColorBrush**.
+- **DrawText** is called to draw the text stored in `m_titleString`, `m_bodyString`, and `m_actionString` in the appropriate rectangle using the corresponding **ID2D1SolidColorBrush**.
 - [**ID2D1RenderTarget::EndDraw**](/windows/desktop/api/d2d1/nf-d2d1-id2d1rendertarget-enddraw) is called to stop all drawing operations on `m_levelBitmap`.
 - Another Bitmap is created using **CreateBitmap** named `m_tooSmallBitmap` to use as a fallback, showing only if the display configuration is too small for the game.
 - Repeat process for drawing on `m_levelBitmap` for `m_tooSmallBitmap`, this time only drawing the string `Paused` in the body.

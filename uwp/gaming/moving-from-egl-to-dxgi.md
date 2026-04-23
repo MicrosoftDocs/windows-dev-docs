@@ -3,7 +3,7 @@ title: Compare EGL code to DXGI and Direct3D
 description: The DirectX Graphics Interface (DXGI) and several Direct3D APIs serve the same role as EGL. This topic helps you understand DXGI and Direct3D 11 from the perspective of EGL.
 ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, egl, dxgi, direct3d
 ms.localizationpriority: medium
 ---
@@ -269,7 +269,7 @@ D3D11CreateDevice(
   nullptr, // Specify nullptr to use the default adapter.
   D3D_DRIVER_TYPE_HARDWARE,
   nullptr,
-  creationFlags, // Set set debug and Direct2D compatibility flags.
+  creationFlags, // Set debug and Direct2D compatibility flags.
   featureLevels, // List of feature levels this app can support.
   ARRAYSIZE(featureLevels),
   D3D11_SDK_VERSION, // Always set this to D3D11_SDK_VERSION for UWP apps.

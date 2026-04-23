@@ -1,10 +1,8 @@
 ---
 title: Introduction to Windows App Performance
 description: Introduction to Windows app performance testing, measurement, and optimization improvements. Performance metrics include CPU, Memory, Power, Network, Storage, and Animation.
-ms.author: mattwoj
-author: mattwojo
 ms.reviewer: adityar
-ms.topic: conceptual
+ms.topic: concept-article
 ms.date: 11/05/2021
 #Customer intent: As a Windows application developer, I want to know what perf is and why it matters to me, so that I can figure out how to incorporate it into my development process.
 ---

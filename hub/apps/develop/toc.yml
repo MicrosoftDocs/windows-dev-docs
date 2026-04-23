@@ -1,0 +1,1135 @@
+items:
+  - name: Build Windows apps
+    href: ../desktop/index.yml
+  - name: Develop overview
+    href: index.md
+  - name: Features
+    expanded: true
+    items:
+    - name: Accessibility
+      href: accessibility.md
+    - name: AI-powered features
+      items:
+        - name: Overview
+          href: ai-powered/ai-powered.md
+        - name: Microsoft Foundry on Windows >>
+          href: /windows/ai/
+        - name: Click to Do
+          href: windows-integration/click-to-do.md 
+        - name: Copilot hardware key
+          href: windows-integration/microsoft-copilot-key-provider.md
+          items:
+          - name: Handle Microsoft Copilot hardware key state changes
+            href: windows-integration/copilot-key-state.md
+        - name: Recall
+          items:
+          - name: Overview
+            href: windows-integration/recall/index.md
+          - name: Enabling relaunch
+            href: windows-integration/recall/recall-relaunch.md
+          - name: Web browsers
+            href: windows-integration/recall/recall-web-browsers.md
+          - name: Apply sensitivity labels
+            href: windows-integration/recall/recall-content-info-labels.md
+          - name: DLP Provider API
+            href: windows-integration/recall/dlp-provider-api.md
+          - name: (EEA-only) Decrypt exported snapshots
+            href: windows-integration/recall/decrypt-exported-snapshots.md 
+        - name: Studio Effects
+          href: windows-integration/studio-effects.md
+        - name: Windows Settings connector
+          href: windows-integration/settings-mcp.md
+    - name: App lifecycle and system services
+      items:
+      - name: App lifecycle
+        items:
+        - name: Overview
+          href: app-lifecycle-and-system-services.md
+        - name: Manage app lifecycle
+          items:
+          - name: App lifecycle
+            href: ../windows-app-sdk/applifecycle/applifecycle.md
+          - name: App instancing
+            href: ../windows-app-sdk/applifecycle/applifecycle-instancing.md
+          - name: Create a single-instanced app
+            href: ../windows-app-sdk/applifecycle/applifecycle-single-instance.md
+          - name: Rich activation
+            href: ../windows-app-sdk/applifecycle/applifecycle-rich-activation.md
+          - name: Power management
+            href: ../windows-app-sdk/applifecycle/applifecycle-power.md
+          - name: Detect Focus session state
+            href: ../windows-app-sdk/applifecycle/focus-session.md
+      - name: App launching
+        items:
+        - name: Overview
+          href: launch/index.md
+        - name: File activation
+          items:
+          - name: Handle file activation
+            href: launch/handle-file-activation.md
+          - name: Launch the default app for a file
+            href: launch/launch-the-default-app-for-a-file.md
+        - name: URI activation
+          items:
+          - name: Handle URI activation
+            href: launch/handle-uri-activation.md
+          - name: Launch the default app for a URI
+            href: launch/launch-default-app.md
+          - name: Launch Windows Settings
+            href: launch/launch-settings.md
+          - name: Launch the Default Apps settings page
+            href: launch/launch-default-apps-settings.md
+          - name: Launch the Microsoft Store app
+            href: launch/launch-store-app.md
+          - name: Launch Snipping Tool
+            href: launch/launch-snipping-tool.md
+            items:
+            - name: Launch screen snipping (legacy)
+              href: launch/launch-screen-snipping.md
+          - name: Launch the People app
+            href: launch/launch-people-app.md
+          - name: Support web-to-app linking with app URI handlers
+            href: launch/web-to-app-linking.md
+          - name: Support accelerated URI activations
+            href: launch/accelerated-launch.md
+        - name: Reserved file and URI scheme names
+          href: launch/reserved-uri-scheme-names.md
+      - name: Background tasks
+        items:
+        - name: Working with background tasks in Windows apps
+          href: launch/create-and-register-a-background-task.md
+        - name: BackgroundTaskBuilder in the Windows App SDK
+          href: ../windows-app-sdk/applifecycle/background-tasks.md
+      - name: DispatcherQueue
+        href: dispatcherqueue.md
+    - name: App restore
+      href: ../develop/windows-app-restore.md 
+    - name: Audio, video, and camera
+      items:
+      - name: Overview
+        href: audio-video-camera.md
+      - name: Camera
+        items:
+        - name: Overview
+          href: camera/camera.md
+        - name: Capture photos and video with Windows built-in camera UI
+          href: camera/cameracaptureui.md
+        - name: Show the camera preview in a WinUI 3 app
+          href: camera/camera-quickstart-winui3.md
+        - name: Basic photo, video, and audio capture with MediaCapture
+          href: camera/basic-photo-capture.md
+        - name: Discover and select camera capabilities with camera profiles
+          href: camera/camera-profiles.md
+        - name: Set format, resolution, and frame rate for MediaCapture
+          href: camera/set-media-encoding-properties.md
+        - name: HDR and low-light photo capture
+          href: camera/hdr-low-light-photo-capture.md
+        - name: Manual camera controls for photo and video capture
+          href: camera/capture-device-controls-for-photo-and-video-capture.md
+        - name: Manual camera controls for video capture
+          href: camera/capture-device-controls-for-video-capture.md
+        - name: Video stabilization effect for video capture
+          href: camera/effects-for-video-capture.md
+        - name: Scene analysis for MediaCapture
+          href: camera/scene-analysis-for-media-capture.md
+        - name: Capture a photo sequence with VariablePhotoSequence
+          href: camera/variable-photo-sequence.md
+        - name: Process media frames with MediaFrameReader
+          href: camera/process-media-frames-with-mediaframereader.md
+        - name: Process audio frames with MediaFrameReader
+          href: camera/process-audio-frames-with-mediaframereader.md
+        - name: Detect and respond to audio level changes by the system
+          href: camera/detect-audio-level-changes.md
+        - name: Launch the camera settings page
+          href: camera/launch-camera-settings.md
+        - name: Handle the Windows camera privacy setting
+          href: camera/camera-privacy-setting.md
+        - name: Connect to remote cameras
+          href: camera/connect-to-remote-cameras.md
+    - name: Communication
+      href: communication/index.md
+    - name: Data and files
+      items:
+      - name: Overview
+        href: data-and-files.md
+      - name: Drag and drop
+        href: data/drag-and-drop.md
+      - name: Copy and paste
+        href: communication/copy-and-paste.md
+      - name: App resources
+        items:
+        - name: Manage resources with MRT Core
+          href: ../windows-app-sdk/mrtcore/mrtcore-overview.md
+        - name: Tailor your resources for language, scale, contrast, others
+          href: ../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md
+        - name: Localize strings in your UI and app package manifest
+          href: ../windows-app-sdk/mrtcore/localize-strings.md
+        - name: Load images, assets tailored for scale, theme, contrast, others
+          href: ../windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md
+        - name: Localize your WinUI app
+          href: ../winui/winui3/localize-winui3-app.md
+      - name: Data access
+        items:
+        - name: Overview
+          href: data-access/index.md
+        - name: Use a SQLite database on Windows
+          href: data-access/sqlite-data-access.md
+        - name: Use SQL Server in a Windows app
+          href: data-access/sql-server-database.md
+        - name: Use Cosmos DB in a Windows app
+          href: data-access/cosmos-db-data-access.md
+        - name: Use MySQL in a Windows app
+          href: data-access/mysql-database.md
+        - name: Use MongoDB in a Windows App
+          href: data-access/mongodb-database.md
+      - name: Data binding
+        items:
+        - name: Data binding
+          href: data-binding/index.md
+        - name: Data binding overview
+          href: data-binding/data-binding-overview.md
+        - name: Data binding in depth
+          href: data-binding/data-binding-in-depth.md
+        - name: Functions in x:Bind
+          href: data-binding/function-bindings.md
+        - name: Bind to hierarchical data and create a master/details view
+          href: data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
+        - name: Data binding and MVVM
+          href: data-binding/data-binding-and-mvvm.md
+        - name: Data binding with the MVVM Toolkit
+          items:
+          - name: Introduction
+            href: ../tutorials/winui-mvvm-toolkit/intro.md
+          - name: 1 - Create class library project
+            href: ../tutorials/winui-mvvm-toolkit/class-library.md
+          - name: 2 - Implement MVVM
+            href: ../tutorials/winui-mvvm-toolkit/mvvm-implementation.md
+          - name: 3 - Add dependency injection
+            href: ../tutorials/winui-mvvm-toolkit/dependency-injection.md
+          - name: 4 - Add unit tests
+            href: ../tutorials/winui-mvvm-toolkit/unit-testing.md
+      - name: Files, folders, and libraries
+        items:
+        - name: Files, folders, and libraries
+          href: files/index.md
+        - name: File access with Windows Runtime APIs
+          href: files/winrt-files.md
+        - name: Access files and folders with .NET
+          href: files/dotnet-files.md
+        - name: Open files and folders with a picker
+          href: files/using-file-folder-pickers.md
+        - name: Save a file with a picker
+          href: files/pickers-save-file.md
+    - name: Devices and sensors
+      items:
+      - name: Overview
+        href: devices-and-sensors.md
+      - name: Printing and scanning
+        href: devices-sensors/printing-and-scanning.md
+        items:
+        - name: Print from your app
+          href: devices-sensors/print-from-your-app.md
+        - name: Customize the print preview UI
+          href: devices-sensors/customize-the-print-preview-ui.md
+        - name: Scan from your app
+          href: devices-sensors/scan-from-your-app.md
+    - name: Graphics
+      items:
+      - name: Overview
+        href: graphics.md
+      - name: Enhance UI with the Visual layer
+        href: ../windows-app-sdk/composition.md
+      - name: Render text with DWriteCore
+        href: ../windows-app-sdk/dwritecore.md
+      - name: Win2D
+        items:
+        - name: Overview of Win2D
+          href: win2d/index.md
+        - name: Win2D quickstart
+          href: win2d/hellowin2dworld.md
+        - name: Build a simple Win2D app
+          href: win2d/quick-start.md
+        - name: Win2D in a Core App project
+          href: win2d/in-a-core-app.md
+        - name: Features
+          href: win2d/features.md
+        - name: Articles
+          items:
+          - name: Interop with Direct2D
+            href: win2d/interop.md
+          - name: Offscreen drawing
+            href: win2d/offscreen-drawing.md
+          - name: DPI and DIPs
+            href: win2d/dpi-and-dips.md
+          - name: Choosing control resolution
+            href: win2d/choosing-control-resolution.md
+          - name: Pixel formats
+            href: win2d/pixel-formats.md
+          - name: Premultiplied alpha
+            href: win2d/premultiplied-alpha.md
+          - name: Bitmap block compression
+            href: win2d/bitmap-block-compression.md
+          - name: Effect precision and clamping
+            href: win2d/effect-precision-and-clamping.md
+          - name: Handling device lost
+            href: win2d/handling-device-lost.md
+          - name: Using Win2D without built-in controls
+            href: win2d/using-win2d-without-built-in-controls.md
+          - name: Loading resources outside of CreateResources
+            href: win2d/loading-resources-outside-of-createresources.md
+          - name: Avoiding memory leaks
+            href: win2d/avoiding-memory-leaks.md
+          - name: Custom effects
+            href: win2d/custom-effects.md
+    - name: Input and interactions
+      items:
+        - name: Overview
+          href: input/index.md
+        - name: Input primer
+          href: input/input-primer.md
+        - name: Pointer input
+          href: input/handle-pointer-input.md
+        - name: Gaze
+          href: input/gaze-interactions.md
+        - name: Pen and Windows Ink
+          href: input/pen-and-stylus-interactions.md
+          items:
+            - name: "Pen interactions and haptic (tactile) feedback"
+              href: input/pen-haptics.md
+            - name: "Tutorial: Add Inking support to your app"
+              href: input/ink-walkthrough.md
+            - name: Recognize ink strokes
+              href: input/convert-ink-to-text.md
+            - name: Store and retrieve ink strokes
+              href: input/save-and-load-ink.md
+            - name: Add an InkToolbar
+              href: input/ink-toolbar.md
+            - name: Handwriting view
+              href: input/text-handwriting-view.md
+        - name: Touch
+          items:
+            - name: Touch design guidelines
+              href: input/touch-interactions.md
+            - name: Touch developer guidelines
+              href: input/touch-developer-guide.md
+            - name: Panning
+              href: input/guidelines-for-panning.md
+            - name: Rotation
+              href: input/guidelines-for-rotation.md
+            - name: Targeting
+              href: input/guidelines-for-targeting.md
+        - name: Mouse
+          href: input/mouse-interactions.md
+        - name: Keyboard
+          href: input/keyboard-interactions.md
+          items:
+            - name: Access keys
+              href: input/access-keys.md
+            - name: Keyboard Accelerators
+              href: input/keyboard-accelerators.md
+            - name: Keyboard events
+              href: input/keyboard-events.md
+            - name: Focus navigation with keyboard, gamepad, remote control, and accessibility tools
+              href: input/focus-navigation.md
+            - name: Programmatic focus navigation
+              href: input/focus-navigation-programmatic.md
+            - name: Respond to the presence of the touch keyboard
+              href: input/respond-to-the-presence-of-the-touch-keyboard.md
+            - name: Use input scope to change the touch keyboard
+              href: input/use-input-scope-to-change-the-touch-keyboard.md
+        - name: Text input
+          items:
+            - name: Custom text input
+              href: input/custom-text-input.md
+            - name: Text scaling
+              href: input/text-scaling.md
+            - name: Selecting text and images
+              href: input/guidelines-for-textselection.md
+            - name: Input Method Editors
+              href: input/input-method-editors.md
+            - name: Input Method Editor requirements
+              href: input/input-method-editor-requirements.md
+        - name: Gamepad and remote control
+          href: input/gamepad-and-remote-interactions.md
+        - name: Touchpad
+          href: input/touchpad-interactions.md
+        - name: Surface Dial
+          href: input/windows-wheel-interactions.md
+          items:
+            - name: "Tutorial: Add Surface Dial support to your app"
+              href: input/radialcontroller-walkthrough.md
+        - name: Speech interactions
+          href: input/speech-interactions.md
+          items:
+            - name: Speech recognition
+              href: input/speech-recognition.md
+            - name: Specify the speech recognizer language
+              href: input/specify-the-speech-recognizer-language.md
+            - name: Define custom recognition constraints
+              href: input/define-custom-recognition-constraints.md
+            - name: Continuous dictation
+              href: input/enable-continuous-dictation.md
+            - name: Audio input issues
+              href: input/manage-issues-with-audio-input.md
+            - name: Speech recognition timeouts
+              href: input/set-speech-recognition-timeouts.md
+        - name: Multiple inputs
+          href: input/multiple-input-design-guidelines.md
+        - name: Input injection
+          href: input/input-injection.md
+        - name: Identify input devices
+          href: input/identify-input-devices.md
+        - name: Optical zoom and resizing
+          href: input/guidelines-for-optical-zoom.md
+        - name: Visual feedback
+          href: input/guidelines-for-visualfeedback.md    
+    - name: Notifications
+      items:
+      - name: Push notifications
+        items:
+        - name: Overview
+          href: notifications/push-notifications/index.md
+        - name: Quickstart
+          href: notifications/push-notifications/push-quickstart.md
+        - name: Troubleshooting
+          href: notifications/push-notifications/troubleshooting.md
+        - name: Windows Push Notification Services (WNS) overview
+          href: notifications/push-notifications/wns-overview.md
+        - name: Quickstart Sending a push notification (XAML)
+          href: notifications/push-notifications/quickstart-send-push-notification.md
+        - name: WNS Priorities
+          href: notifications/push-notifications/wns-notification-priorities.md
+        - name: Allowlisting WNS Traffic
+          href: notifications/push-notifications/firewall-allowlist-config.md
+        - name: Code generated by the push notification wizard
+          href: notifications/push-notifications/code-generated-by-wizard.md
+        - name: How to request, create, and save a notification channel
+          href: notifications/push-notifications/request-create-save-notification-channel.md
+        - name: Push notification service request and response headers
+          href: notifications/push-notifications/push-request-response-headers.md
+        - name: Raw Notification Overview
+          href: notifications/push-notifications/raw-notification-overview.md
+      - name: App notifications
+        items:
+        - name: Overview
+          href: notifications/app-notifications/index.md
+        - name: Quickstart
+          href: notifications/app-notifications/app-notifications-quickstart.md
+        - name: UX guidance
+          href: notifications/app-notifications/toast-ux-guidance.md
+        - name: Send local notifications
+          items:
+          - name: C# apps
+            href: notifications/app-notifications/send-local-toast.md
+          - name: C++ UWP apps
+            href: notifications/app-notifications/send-local-toast-cpp-uwp.md
+          - name: C++ WRL apps
+            href: notifications/app-notifications/send-local-toast-desktop-cpp-wrl.md
+          - name: Other apps
+            href: notifications/app-notifications/send-local-toast-other-apps.md
+          - name: Activating app notifications from desktop apps
+            href: notifications/app-notifications/toast-desktop-apps.md
+        - name: App notification content
+          items:
+          - name: Content
+            href: notifications/app-notifications/adaptive-interactive-toasts.md
+          - name: Schema
+            href: notifications/app-notifications/toast-schema.md
+        - name: Schedule notifications
+          href: notifications/app-notifications/scheduled-toast.md
+        - name: Additional features
+          items:
+          - name: Custom audio
+            href: notifications/app-notifications/custom-audio-on-toasts.md
+          - name: Progress bar
+            href: notifications/app-notifications/toast-progress-bar.md
+          - name: Pending update
+            href: notifications/app-notifications/toast-pending-update.md
+          - name: Custom timestamps
+            href: notifications/app-notifications/custom-timestamps-on-toasts.md
+          - name: Collections
+            href: notifications/app-notifications/toast-collections.md
+          - name: Headers
+            href: notifications/app-notifications/toast-headers.md
+          - name: Notification Listener
+            href: notifications/app-notifications/notification-listener.md
+      - name: Notification delivery methods
+        href: notifications/choosing-a-notification-delivery-method.md
+        items:
+        - name: Notification channel types
+          href: notifications/channel-types.md
+        - name: Periodic notifications
+          href: notifications/periodic-notification-overview.md
+      - name: Badge notifications
+        href: notifications/badges.md
+      - name: Notifications Visualizer
+        href: notifications/notifications-visualizer.md
+    - name: OS integration
+      items:
+      - name: Overview
+        href: windows-integration/index.md
+      - name: Cross Device People API
+        href: windows-integration/cross-device-people-api.md
+      - name: Cross Device Resume (XDR)
+        items:
+        - name: Overview
+          href: windows-integration/cross-device-resume-overview.md
+        - name: Cross Device Resume with Android Apps
+          href: windows-integration/cross-device-resume.md
+        - name: WNS for Cross Device Resume
+          href: windows-integration/integrate-app-continuity.md
+      - name: Default apps platform
+        href: windows-integration/default-apps-platform.md
+      - name: Pin to taskbar
+        href: windows-integration/pin-to-taskbar.md
+      - name: Smart App Control
+        items:
+        - name: Overview
+          href: smart-app-control/overview.md
+        - name: Sign your app for Smart App Control compliance
+          href: smart-app-control/code-signing-for-smart-app-control.md
+        - name: Test your app's signature with Smart App Control
+          href: smart-app-control/test-your-app-with-smart-app-control.md
+      - name: Widgets
+        items:
+        - name: Feed providers
+          items:
+          - name: Overview
+            href: feeds/feed-providers.md
+          - name: Implement a feed provider in a Win32 app (C#)
+            href: feeds/implement-feed-provider-cs.md
+          - name: Implement a feed provider in a Win32 app (C++/WinRT)
+            href: feeds/implement-feed-provider-win32.md
+          - name: Feed provider package manifest XML format
+            href: feeds/feed-provider-manifest.md
+        - name: Widget providers
+          items:
+          - name: Overview
+            href: widgets/widget-providers.md
+          - name: Implement a widget provider in a Win32 app (C#)
+            href: widgets/implement-widget-provider-cs.md
+          - name: Implement a widget provider in a Win32 app (C++/WinRT)
+            href: widgets/implement-widget-provider-win32.md
+          - name: Web widget providers
+            href: widgets/web-widget-providers.md
+          - name: Customize the widget header area
+            href: widgets/widget-header-customization.md
+          - name: Package manifest XML format
+            href: widgets/widget-provider-manifest.md
+          - name: ActivateApplication protocol
+            href: widgets/widget-provider-activateapplication-protocol.md
+      - name: Windows Search
+        href: search/index.md
+        items:
+        - name: Windows Search web search providers
+          href: search/search-providers.md
+        - name: Cloud files provider integration with Windows Search
+          href: search/cloud-search-integration.md
+      - name: Windows Share
+        items:
+        - name: Overview
+          href: windows-integration/integrate-sharesheet-overview.md
+        - name: Integrate packaged apps
+          href: windows-integration/integrate-sharesheet-packaged.md
+        - name: Integrate PWAs
+          href: windows-integration/integrate-sharesheet-pwa.md
+        - name: Integrate UWP apps >>
+          href: /windows/uwp/app-to-app/share-data
+        - name: Integrate unpackaged apps
+          href: windows-integration/integrate-sharesheet-unpackaged.md
+    - name: Performance
+      items:
+      - name: Overview
+        href: ../performance/index.md
+      - name: Introduction to performance
+        href: ../performance/introduction.md
+      - name: Choosing performance tools
+        href: ../performance/choose-between-tools.md
+      - name: Improve disk and memory use
+        href: ../performance/disk-memory.md
+      - name: Improve power consumption
+        href: ../performance/power.md
+      - name: Improve responsiveness
+        href: ../performance/responsive.md
+      - name: WinUI performance optimization
+        href: ../performance/winui-perf.md
+    - name: Security and identity
+      items:
+      - name: Overview
+        href: security/index.md
+      - name: Credential locker
+        href: security/credential-locker.md
+      - name: Fingerprint biometrics
+        href: security/fingerprint-biometrics.md
+      - name: Passkeys
+        items:
+        - name: Overview
+          href: security/intro.md
+        - name: Implementation
+          href: security/implement.md
+        - name: Design guidelines
+          href: security/design.md
+        - name: Use cases
+          href: security/use-cases.md
+        - name: Tools and libraries
+          href: security/tools-libraries.md
+        - name: Reference
+          href: security/reference.md
+        - name: Plugin passkey manager support
+          href: security/third-party.md
+      - name: Implement OAuth 2.0 functionality
+        href: security/oauth2.md
+      - name: Share certificates between apps
+        href: security/share-certificates.md
+      - name: Smart cards
+        href: security/smart-cards.md
+      - name: Windows Hello
+        items:
+        - name: Overview
+          href: security/windows-hello-login.md
+        - name: Create a Windows Hello login app
+          href: security/windows-hello-login.md
+        - name: Create a Windows Hello login service
+          href: security/windows-hello-auth-service.md
+    - name: Speech
+      href: speech.md
+    - name: Testing
+      href: ../winui/winui3/testing/index.md
+      items:
+          - name: Unit tests for Windows UI Library (WinUI) apps in Visual Studio
+            href: ../winui/winui3/testing/create-winui-unit-test-project.md
+    - name: User interface
+      items:
+      - name: Overview
+        href: user-interface.md
+      - name: Controls
+        items:
+        - name: Overview
+          href: ui/controls/index.md
+        - name: Intro to controls and events
+          href: ui/controls/controls-and-events-intro.md
+        - name: Commanding using StandardUICommand, XamlUICommand, and ICommand
+          href: ui/controls/commanding.md
+        - name: Basic input
+          items:
+          - name: Buttons
+            href: ui/controls/buttons.md
+          - name: Check boxes
+            href: ui/controls/checkbox.md
+          - name: Combo boxes and list boxes
+            href: ui/controls/combo-box.md
+          - name: Hyperlinks
+            href: ui/controls/hyperlinks.md
+          - name: Radio buttons
+            href: ui/controls/radio-button.md
+          - name: Rating control
+            href: ui/controls/rating.md
+          - name: Sliders
+            href: ui/controls/slider.md
+          - name: Toggle switches
+            href: ui/controls/toggles.md
+        - name: Collections
+          items:
+          - name: Overview
+            href: ui/controls/lists.md
+          - name: Items view
+            href: ui/controls/itemsview.md
+          - name: List view and grid view
+            href: ui/controls/listview-and-gridview.md
+          - name: Flip view
+            href: ui/controls/flipview.md
+          - name: PipsPager
+            href: ui/controls/pipspager.md
+          - name: Tree view
+            href: ui/controls/tree-view.md
+          - name: ItemsRepeater
+            href: ui/controls/items-repeater.md
+          - name: Item containers and templates
+            items:
+            - name: Item containers and templates
+              href: ui/controls/item-containers-templates.md
+            - name: Data template selection
+              href: ui/controls/data-template-selector.md
+            - name: Item templates for list view
+              href: ui/controls/item-templates-listview.md
+            - name: Item templates for grid view
+              href: ui/controls/item-templates-gridview.md
+          - name: Selection and interaction
+            items:
+            - name: Collection commanding
+              href: ui/controls/collection-commanding.md
+            - name: Selection mode overview
+              href: ui/controls/selection-modes.md
+            - name: Swipe
+              href: ui/controls/swipe.md
+            - name: Pull-to-refresh
+              href: ui/controls/pull-to-refresh.md
+            - name: Filtering collections
+              href: ui/controls/listview-filtering.md
+          - name: Additional collection options and customizations
+            items:
+            - name: Inverted lists
+              href: ui/controls/inverted-lists.md
+            - name: Nested UI
+              href: ui/controls/nested-ui.md
+        - name: Dialogs and flyouts
+          items:
+          - name: Overview
+            href: ui/controls/dialogs-and-flyouts/index.md
+          - name: Dialogs
+            href: ui/controls/dialogs-and-flyouts/dialogs.md
+          - name: Flyouts
+            href: ui/controls/dialogs-and-flyouts/flyouts.md
+          - name: Teaching tip
+            href: ui/controls/dialogs-and-flyouts/teaching-tip.md
+        - name: Forms
+          href: ui/controls/forms.md
+        - name: Media, graphics, and shapes
+          items:
+          - name: Icons
+            href: ui/controls/icons.md
+          - name: Animated icons
+            href: ui/controls/animated-icon.md
+          - name: Images and image brushes
+            href: ui/controls/images-imagebrushes.md
+          - name: Ink
+            href: ui/controls/inking-controls.md
+          - name: Media playback
+            href: ui/controls/media-playback.md
+          - name: Custom transport controls
+            href: ui/controls/custom-transport-controls.md
+          - name: Shapes
+            href: ui/controls/shapes.md
+        - name: Menus and toolbars
+          items:
+          - name: Menus and context menus
+            href: ui/controls/menus-and-context-menus.md
+          - name: Command bar
+            href: ui/controls/command-bar.md
+          - name: Command bar flyout
+            href: ui/controls/command-bar-flyout.md
+          - name: Menu flyout and menu bar
+            href: ui/controls/menus.md
+        - name: Navigation
+          items:
+          - name: Breadcrumb bar
+            href: ui/controls/breadcrumbbar.md
+          - name: List/details
+            href: ui/controls/list-details.md
+          - name: Navigation view
+            href: ui/controls/navigationview.md
+          - name: Pivot
+            href: ui/controls/pivot.md
+          - name: Selector bar
+            href: ui/controls/selector-bar.md
+          - name: Tab view
+            href: ui/controls/tab-view.md
+        - name: People
+          items:
+          - name: Contact card
+            href: ui/controls/contact-card.md
+          - name: Person picture
+            href: ui/controls/person-picture.md
+        - name: Pickers
+          items:
+          - name: Color picker
+            href: ui/controls/color-picker.md
+          - name: Date and time controls
+            href: ui/controls/date-and-time.md
+          - name: Calendar date picker
+            href: ui/controls/calendar-date-picker.md
+          - name: Calendar view
+            href: ui/controls/calendar-view.md
+          - name: Date picker
+            href: ui/controls/date-picker.md
+          - name: Time picker
+            href: ui/controls/time-picker.md
+        - name: Scrolling and layout
+          items:
+          - name: Expander
+            href: ui/controls/expander.md
+          - name: Scrolling and panning controls
+            href: ui/controls/scroll-controls.md
+          - name: Annotated scrollbar
+            href: ui/controls/annotated-scrollbar.md
+          - name: Semantic zoom
+            href: ui/controls/semantic-zoom.md
+          - name: Split view
+            href: ui/controls/split-view.md
+          - name: Two-pane view
+            href: ui/controls/two-pane-view.md
+        - name: Status and information
+          items:
+          - name: Progress
+            href: ui/controls/progress-controls.md
+          - name: Tooltip
+            href: ui/controls/tooltips.md
+          - name: Info bar
+            href: ui/controls/infobar.md
+          - name: Info badge
+            href: ui/controls/info-badge.md
+        - name: Text
+          items:
+          - name: Overview
+            href: ui/controls/text-controls.md
+          - name: Auto-suggest box
+            href: ui/controls/auto-suggest-box.md
+          - name: Text block
+            href: ui/controls/text-block.md
+          - name: Rich text block
+            href: ui/controls/rich-text-block.md
+          - name: Text box
+            href: ui/controls/text-box.md
+          - name: Rich edit box
+            href: ui/controls/rich-edit-box.md
+          - name: Password box
+            href: ui/controls/password-box.md
+          - name: Number box
+            href: ui/controls/number-box.md
+          - name: Labels
+            href: ui/controls/labels.md
+        - name: Title bar
+          href: ui/controls/title-bar.md
+        - name: "Tutorial: Build XAML controls with C++/WinRT"
+          href: ../winui/winui3/xaml-templated-controls-cppwinrt-winui-3.md
+        - name: "Tutorial: Build XAML controls with C#"
+          href: ../winui/winui3/xaml-templated-controls-csharp-winui-3.md
+      - name: Materials (Acrylic / Mica)
+        href: ../windows-app-sdk/system-backdrop-controller.md
+      - name: Layout
+        items:
+        - name: Custom panels
+          href: ../design/layout/custom-panels-overview.md
+        - name: 'Custom panel example: BoxPanel'
+          href: ../design/layout/boxpanel-example-custom-panel.md
+        - name: Attached Layout
+          href: ../design/layout/attached-layouts.md
+        - name: Transforms
+          href: platform/xaml/transforms.md
+        - name: 3-D perspective effects
+          href: platform/xaml/3-d-perspective-effects.md
+      - name: Windowing
+        items:
+        - name: Overview
+          href: ui/windowing-overview.md
+        - name: CoreWindow interop
+          href: ui/display-ui-objects.md  
+        - name: Manage app windows
+          href: ui/manage-app-windows.md
+        - name: Title bar
+          href: title-bar.md
+        - name: Multiple windows
+          href: ui/multiple-windows.md
+        - name: Retrieve a window handle (HWND)
+          href: ui/retrieve-hwnd.md
+      - name: Choose the right visual tree viewer
+        href: ui/visual-tree.md
+  - name: Use features with other UI frameworks
+    items:
+    - name: Overview
+      href: ../desktop/modernize/index.md
+    - name: Win32
+      items:
+      - name: Integrate Windows App SDK
+        href: ../windows-app-sdk/use-windows-app-sdk-in-existing-project.md
+      - name: Modern user interface
+        items:
+          - name: Dark and light app modes
+            href: ../desktop/modernize/ui/apply-windows-themes.md  
+          - name: Mica background material
+            href: ../desktop/modernize/ui/apply-mica-win32.md
+          - name: Snap layouts
+            href: ../desktop/modernize/ui/apply-snap-layout-menu.md
+          - name: Rounded window corners
+            href: ../desktop/modernize/ui/apply-rounded-corners.md
+      - name: Visual layer
+        items:
+          - name: Overview
+            href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
+          - name: "Tutorial: Using Composition APIs in Win32"
+            href: ../desktop/modernize/ui/using-the-visual-layer-with-win32.md
+    - name: WPF
+      items:
+       - name: Integrate Windows App SDK
+         href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md
+       - name: Visual layer
+         items:
+            - name: Overview
+              href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
+            - name: "Tutorial: Using Composition APIs in WPF"
+              href: ../desktop/modernize/ui/using-the-visual-layer-with-wpf.md
+    - name: WinForms  
+      items:
+       - name: Integrate Windows App SDK
+         href: ../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md
+       - name: Visual layer
+         items:
+            - name: Overview
+              href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
+            - name: "Tutorial: Using Composition APIs in WinForms"
+              href: ../desktop/modernize/ui/using-the-visual-layer-with-windows-forms.md
+    - name: Migrate from UWP to Windows App SDK
+      items:
+          - name: Overview
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
+          - name: Overall migration strategy
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
+          - name: Mapping UWP features to Windows App SDK
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md
+          - name: What's supported
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
+          - name: Mapping UWP APIs to Windows App SDK
+            href: ../windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md
+          - name: Feature area guides
+            items:
+              - name: Overview of feature area guides
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
+              - name: User interface migration (including WinUI 3)
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
+              - name: Keyboard API and events parity between UWP and WinUI 3
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/keyboard-events.md
+              - name: Windowing functionality migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
+              - name: Application lifecycle functionality migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
+              - name: Toast notifications
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/toast-notifications.md
+              - name: Push notifications
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
+              - name: DirectWrite to DWriteCore migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
+              - name: MRT to MRTCore migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
+              - name: Background task migration strategy
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md
+              - name: Threading functionality migration
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
+              - name: Case study 1—PhotoLab (C#)
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md
+              - name: Case study 2—Photo Editor (C++/WinRT)
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
+              - name: Additional migration guidance
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
+              - name: Migrate UWP to Windows App SDK with the .NET Upgrade Assistant
+                href: ../windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
+    - name: Use MSIX framework packages
+      items:
+        - name: Overview
+          href: ../desktop/modernize/framework-packages/index.md
+        - name: MSIX framework packages and dynamic dependencies
+          href: ../desktop/modernize/framework-packages/framework-packages-overview.md
+        - name: Reference MSIX packages at run time
+          href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md     
+    - name: Call Windows Runtime APIs
+      items:
+        - name: Overview
+          href: ../desktop/modernize/desktop-to-uwp-enhance.md
+        - name: APIs not supported in desktop apps
+          href: ../desktop/modernize/desktop-to-uwp-supported-api.md
+        - name: Call interop APIs from a .NET app
+          href: ../desktop/modernize/winrt-com-interop-csharp.md              
+  - name: Platform
+    items:
+    - name: C#/WinRT
+      items:
+        - name: Overview
+          href: platform/csharp-winrt/index.md
+        - name: .NET mappings of WinRT types in C#/WinRT
+          href: platform/csharp-winrt/net-mappings-of-winrt-types.md
+        - name: Agile objects
+          href: platform/csharp-winrt/agile-objects.md
+        - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+          href: platform/csharp-winrt/net-projection-from-cppwinrt-component.md
+        - name: Windows Runtime components with C#/WinRT
+          items:
+            - name: Author Windows Runtime components with C#/WinRT
+              href: platform/csharp-winrt/authoring.md
+            - name: "Walkthrough: Create a C#/WinRT component, and consume it from C++/WinRT"
+              href: platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
+            - name: "Walkthrough: Create a C# component with WinUI 3 controls, and consume it from a C++ Windows App SDK app"
+              href: platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
+            - name: Diagnose component errors
+              href: platform/csharp-winrt/authoring-diagnostics.md
+    - name: XAML
+      items:
+        - name: XAML platform
+          href: platform/xaml/index.md
+        - name: XAML overview
+          href: platform/xaml/xaml-overview.md
+        - name: Dependency properties overview
+          href: platform/xaml/dependency-properties-overview.md
+        - name: Custom dependency properties
+          href: platform/xaml/custom-dependency-properties.md
+        - name: Attached properties overview
+          href: platform/xaml/attached-properties-overview.md
+        - name: Custom attached properties
+          href: platform/xaml/custom-attached-properties.md
+        - name: Events and routed events overview
+          href: platform/xaml/events-and-routed-events-overview.md
+        - name: Styles, templates, and resources
+          href: platform/xaml/xaml-styles.md
+          items:
+            - name: XAML brushes
+              href: platform/xaml/brushes.md
+            - name: XAML Control templates
+              href: platform/xaml/xaml-control-templates.md
+            - name: Template settings classes
+              href: platform/xaml/template-settings-classes.md
+            - name: ResourceDictionary and XAML resource references
+              href: platform/xaml/xaml-resource-dictionary.md
+            - name: XAML theme resources
+              href: platform/xaml/xaml-theme-resources.md
+        - name: Syntax guide
+          items:
+            - name: XAML syntax guide
+              href: platform/xaml/xaml-syntax-guide.md
+            - name: XAML and whitespace
+              href: platform/xaml/xaml-and-whitespace.md
+            - name: Namescopes
+              href: platform/xaml/xaml-namescopes.md
+            - name: Namespaces and namespace mapping
+              href: platform/xaml/xaml-namespaces-and-namespace-mapping.md
+            - name: Property-path syntax
+              href: platform/xaml/property-path-syntax.md
+            - name: Move and draw commands syntax
+              href: platform/xaml/move-draw-commands-syntax.md
+        - name: Reference
+          items:
+            - name: XAML intrinsic data types
+              href: platform/xaml/xaml-intrinsic-data-types.md
+            - name: x:Class attribute
+              href: platform/xaml/x-class-attribute.md
+            - name: x:DefaultBindMode attribute
+              href: platform/xaml/x-defaultbindmode-attribute.md
+            - name: x:DeferLoadStrategy attribute
+              href: platform/xaml/x-deferloadstrategy-attribute.md
+            - name: x:FieldModifier attribute
+              href: platform/xaml/x-fieldmodifier-attribute.md
+            - name: x:Key attribute
+              href: platform/xaml/x-key-attribute.md
+            - name: x:Load attribute
+              href: platform/xaml/x-load-attribute.md
+            - name: x:Name attribute
+              href: platform/xaml/x-name-attribute.md
+            - name: x:Phase attribute
+              href: platform/xaml/x-phase-attribute.md
+            - name: x:Uid directive
+              href: platform/xaml/x-uid-directive.md
+            - name: "{x:Bind} markup extension"
+              href: platform/xaml/x-bind-markup-extension.md
+            - name: "{Binding} markup extension"
+              href: platform/xaml/binding-markup-extension.md
+            - name: "{x:Null} markup extension"
+              href: platform/xaml/x-null-markup-extension.md
+            - name: "{CustomResource} markup extension"
+              href: platform/xaml/customresource-markup-extension.md
+            - name: "{RelativeSource} markup extension"
+              href: platform/xaml/relativesource-markup-extension.md
+            - name: "{StaticResource} markup extension"
+              href: platform/xaml/staticresource-markup-extension.md
+            - name: "{TemplateBinding} markup extension"
+              href: platform/xaml/templatebinding-markup-extension.md
+            - name: "{ThemeResource} markup extension"
+              href: platform/xaml/themeresource-markup-extension.md
+    - name: Windows Settings access
+      items:
+      - name: Reference for Windows 11 settings
+        href: settings/settings-windows-11.md
+      - name: Reference for Windows 11 and Windows 10 settings
+        href: settings/settings-common.md
+      - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
+        href: settings/readclouddatasettings-exe.md
+    - name: WinUI templates in Visual Studio
+      href: ../winui/winui3/winui-project-templates-in-visual-studio.md    
+  - name: API reference
+    items:
+    - name: Overview
+      href: ../api-reference/index.md
+    - name: Windows SDK API reference
+      items:
+        - name: WinRT API reference >>
+          href: /uwp/api/
+        - name: WinUI 2 for UWP API reference >>
+          href: /windows/winui/api/
+        - name: Win32 API reference >>
+          href: /windows/win32/api/
+    - name: Windows App SDK API reference
+      items:
+        - name: WinRT API reference >>
+          href: /windows/windows-app-sdk/api/winrt/
+        - name: Win32 API reference
+          items:
+            - name: Win32 API reference >>
+              href: /windows/windows-app-sdk/api/win32
+            - name: Bootstrapper C++ API
+              href: ../api-reference/bootstrapper-cpp-api/index.md
+              items:
+                - name: Constants for use with the Bootstrapper C++ API
+                  href: ../api-reference/bootstrapper-cpp-api/bootstrapper-cpp-api-constants.md
+                - name: Microsoft:Windows:ApplicationModel namespace
+                  href: ../api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md
+                  items:
+                    - name: PackageVersion class
+                      href: ../api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md
+                - name: Microsoft:Windows:ApplicationModel:DynamicDependency:Bootstrap namespace
+                  href: ../api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                  items:
+                    - name: Initialize function
+                      href: ../api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initialize.md
+                    - name: InitializeFailFast function
+                      href: ../api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
+                    - name: InitializeNoThrow function
+                      href: ../api-reference/bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
+        - name: WinUI API reference
+          items:
+            - name: COM interop APIs for WinUI
+              href: /windows/windows-app-sdk/api/win32/_winuicominterop/
+            - name: C# Interop APIs for WinUI
+              href: ../api-reference/cs-interop-apis/index.md
+              items:
+                - name: Microsoft.UI namespace
+                  href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.md
+                  items:
+                    - name: Win32Interop class
+                      href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md
+                      items:
+                        - name: Methods
+                          items:
+                            - name: Win32Interop.GetDisplayIdFromMonitor
+                              href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md
+                            - name: Win32Interop.GetIconFromIconId
+                              href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md
+                            - name: Win32Interop.GetIconIdFromIcon
+                              href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md
+                            - name: Win32Interop.GetMonitorFromDisplayId
+                              href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md
+                            - name: Win32Interop.GetWindowFromWindowId
+                              href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md
+                            - name: Win32Interop.GetWindowIdFromWindow
+                              href: ../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md
+        - name: Bootstrapper C# APIs
+          href: ../api-reference/cs-bootstrapper-apis/index.md
+          items:
+            - name: Constants for use with the Bootstrapper C# APIs
+              href: ../api-reference/cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
+            - name: Microsoft.Windows.ApplicationModel.DynamicDependency namespace
+              href: ../api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
+              items:
+                - name: Bootstrap class
+                  href: ../api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                - name: PackageVersion struct
+                  href: ../api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
+    - name: .NET API reference >>
+      href: /dotnet/api/
+    - name: Schema specs for Windows apps >>
+      href: /uwp/schemas/
+  - name: Tutorials
+    items:
+    - name: Win32 interop APIs (PInvoke) in a C# WinUI app
+      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
+    - name: Build a C# .NET app with WinUI 3 and Win32 interop
+      href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
+    - name: Use GitHub Copilot to build WinUI 3 apps in Visual Studio
+      href: ../how-tos/github-copilot-winui-vs.md
+    - name: Create a photo viewer with WinUI 3
+      href: ../get-started/simple-photo-viewer-winui3.md

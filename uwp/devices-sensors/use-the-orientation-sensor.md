@@ -3,7 +3,7 @@
 title: Use the orientation sensor
 description: Learn how to use the orientation sensors to determine the device orientation.
 ms.date: 05/04/2023
-ms.topic: article
+ms.topic: how-to
 
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,7 @@ Learn how to use the orientation sensors to determine the device orientation.
 
 You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-The device or emulator that you're using must support a orientation sensor.
+The device or emulator that you're using must support an orientation sensor.
 
 ## Create an OrientationSensor app
 

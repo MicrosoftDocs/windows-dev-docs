@@ -21,7 +21,7 @@ In the [Diagnosing direct allocations](./diag-direct-alloc.md) topic, we mention
 
 The benefit of having a public destructor is that it enables deferred destruction, which is the ability to detect the final [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) call on your object, and then to take ownership of that object to defer its destruction indefinitely.
 
-Recall that classic COM objects are intrinsically reference counted; the reference count is managed via the [**IUnknown::AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) and **IUnknown::Release** functions. In a traditional implementation of **Release**, a classic COM object's C++ destructor is invoked once the reference count reaches 0.
+Recall that classic COM objects are intrinsically reference counted; the reference count is managed via the [**IUnknown::AddRef**](/windows/win32/api/unknwn/nf-unknwn-iunknown-addref) and [**IUnknown::Release**](/windows/win32/api/unknwn/nf-unknwn-iunknown-release) functions. In a traditional implementation of **Release**, a classic COM object's C++ destructor is invoked once the reference count reaches 0.
 
 ```cppwinrt
 uint32_t WINRT_CALL Release() noexcept
@@ -83,12 +83,12 @@ struct Sample : implements<Sample, IStringable>
  
     static void final_release(std::unique_ptr<Sample> ptr) noexcept
     {
-        gc.push_back(std::move(ptr));
+        batch_cleanup.push_back(std::move(ptr));
     }
 };
 ```
 
-Think of this as a more deterministic garbage collector.
+This code saves the object in a collection named *batch_cleanup* one of whose jobs will be to clean up all the objects at some future point in the app's run-time.
 
 Normally, the object destructs when the **std::unique_ptr** destructs, but you can hasten its destruction by calling **std::unique_ptr::reset**; or you can postpone it by saving the **std::unique_ptr** somewhere.
 
@@ -109,6 +109,8 @@ struct Sample : implements<Sample, IStringable>
 ```
 
 A suspension will point causes the calling thread&mdash;which originally initiated the call to the **IUnknown::Release** function&mdash;to return, and thus signal to the caller that the object it once held is no longer available through that interface pointer. UI frameworks often need to ensure that objects are destroyed on the specific UI thread that originally created the object. This feature makes fulfilling such a requirement trivial, because destruction is separated from releasing the object.
+
+Note that the object passed to **final_release** is merely a C++ object; it is no longer a COM object. For example, existing COM weak references to the object no longer resolve.
 
 ## Safe queries during destruction
 

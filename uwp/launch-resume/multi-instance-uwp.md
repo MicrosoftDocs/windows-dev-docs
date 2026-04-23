@@ -2,10 +2,8 @@
 title: Create a multi-instance Universal Windows App
 description: This topic describes how to write UWP apps that support multi-instancing.
 keywords: multi-instance uwp
-ms.date: 08/10/2022
-ms.topic: article
-
-
+ms.date: 10/28/2025
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 # Create a multi-instance Universal Windows App
@@ -14,29 +12,30 @@ This topic describes how to create multi-instance Universal Windows Platform (UW
 
 From Windows 10, version 1803 (10.0; Build 17134) onward, your UWP app can opt in to support multiple instances. If an instance of an multi-instance UWP app is running, and a subsequent activation request comes through, the platform will not activate the existing instance. Instead, it will create a new instance, running in a separate process.
 
-> [!IMPORTANT]
-> Multi-instancing is supported for JavaScript applications, but multi-instancing redirection is not. Since multi-instancing redirection is not supported for JavaScript applications, the [**AppInstance**](/uwp/api/windows.applicationmodel.appinstance) class is not useful for such applications.
-
 ## Opt in to multi-instance behavior
 
 If you are creating a new multi-instance application, you can install the [Multi-Instance App Project Templates.VSIX](https://marketplace.visualstudio.com/items?itemName=AndrewWhitechapelMSFT.MultiInstanceApps), available from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/). Once you install the templates, they will be available in the **New Project** dialog under **Visual C# > Windows Universal** (or **Other Languages > Visual C++ > Windows Universal**).
 
+> [!Note]
+> The Multi-Instance App Project template is no longer available. The VSIX template was a convenience, so you will need to modify the existing project instead, as described below.  Be certain to add the DISABLE_XAML_GENERATED_MAIN constant to the project build symbols, as this prevents the build from generating a default Main(). This allows used of a specially written app-specific version of Main().
+
 Two templates are installed: **Multi-Instance UWP app**, which provides the template for creating a multi-instance app, and **Multi-Instance Redirection UWP app**, which provides additional logic that you can build on to either launch a new instance or selectively activate an instance that has already been launched. For example, perhaps you only want one instance at a time editing the same document, so you bring the instance that has that file open to the foreground rather than launching a new instance.
 
-Both templates add `SupportsMultipleInstances` to the `package.appxmanifest` file. Note the namespace prefix `desktop4` and `iot2`: only projects that target the desktop, or Internet of Things (IoT) projects, support multi-instancing.
+Both templates add `SupportsMultipleInstances` to the `package.appxmanifest` file. Note the namespace prefix `desktop4`: only projects that target the desktop support multi-instancing.
+
+> [!NOTE]
+> If your app targets Windows 10, version 2004 (Build 19041) or later, you can use the newer `uap10:SupportsMultipleInstances` attribute instead of `desktop4:SupportsMultipleInstances`. The `uap10` namespace is the preferred approach for newer applications.
 
 ```xml
 <Package
   ...
   xmlns:desktop4="http://schemas.microsoft.com/appx/manifest/desktop/windows10/4"
-  xmlns:iot2="http://schemas.microsoft.com/appx/manifest/iot/windows10/2"  
-  IgnorableNamespaces="uap mp desktop4 iot2">
+  IgnorableNamespaces="uap mp desktop4">
   ...
   <Applications>
     <Application Id="App"
       ...
-      desktop4:SupportsMultipleInstances="true"
-      iot2:SupportsMultipleInstances="true">
+      desktop4:SupportsMultipleInstances="true">
       ...
     </Application>
   </Applications>
@@ -106,7 +105,7 @@ public static class Program
 
 `Main()` is the first thing that runs. It runs before [**OnLaunched**](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnLaunched_Windows_ApplicationModel_Activation_LaunchActivatedEventArgs_) and [**OnActivated**](/uwp/api/windows.ui.xaml.application#Windows_UI_Xaml_Application_OnActivated_Windows_ApplicationModel_Activation_IActivatedEventArgs_). This allows you to determine whether to activate this, or another instance, before any other initialization code in your app runs.
 
-The code above determines whether an existing, or new, instance of your application is activated. A key is used to determine whether there is an existing instance that you want to activate. For example, if your app can be launched to [Handle file activation](./handle-file-activation.md), you might use the file name as a key. Then you can check whether an instance of your app is already registered with that key and activate it instead of opening a new instance. This is the idea behind the code: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
+The code above determines whether an existing, or new, instance of your application is activated. A key is used to determine whether there is an existing instance that you want to activate. For example, if your app can be launched to [Handle file activation](/windows/apps/develop/launch/handle-file-activation), you might use the file name as a key. Then you can check whether an instance of your app is already registered with that key and activate it instead of opening a new instance. This is the idea behind the code: `var instance = AppInstance.FindOrRegisterInstanceForKey(key);`
 
 If an instance registered with the key is found, then that instance is activated. If the key is not found, then the current instance (the instance that is currently running `Main`) creates its application object  and starts running.
 
@@ -120,7 +119,7 @@ If an instance registered with the key is found, then that instance is activated
 
 ## Additional considerations
 
-- Multi-instancing is supported by UWP apps that target desktop and Internet of Things (IoT) projects.
+- Multi-instancing is supported by UWP apps that target desktop projects.
 - To avoid race-conditions and contention issues, multi-instance apps need to take steps to partition/synchronize access to settings, app-local storage, and any other resource (such as user files, a data store, and so on) that can be shared among multiple instances. Standard synchronization mechanisms such as mutexes, semaphores, events, and so on, are available.
 - If the app has `SupportsMultipleInstances` in its Package.appxmanifest file, then its extensions do not need to declare `SupportsMultipleInstances`.
 - If you add `SupportsMultipleInstances` to any other extension, apart from background tasks or app-services, and the app that hosts the extension doesn't also declare `SupportsMultipleInstances` in its Package.appxmanifest file, then a schema error is generated.

@@ -5,7 +5,7 @@ ms.assetid: B3F3E43C-54D4-458C-9E16-E13CB382C83F
 keywords:
 - Creating streaming resources
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

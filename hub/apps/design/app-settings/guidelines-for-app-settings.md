@@ -47,7 +47,7 @@ For a nav pane layout, app settings should be the last item in the list of navig
 
 If you're using a [command bar](../controls/command-bar.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the command bar and not within the overflow.
 
-![app settings entry point for command bar](../controls/images/appbar_rs2_overflow_icons.png)
+![app settings entry point for command bar](images/appbar-overflow-icons.png)
 
 **Hub**
 
@@ -55,7 +55,7 @@ If you're using a hub layout, the entry point for app settings should be placed 
 
 **Tabs/pivots**
 
-For a tabs or pivots layout, we don't recommended placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
+For a tabs or pivots layout, we don't recommend placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
 
 **List-details**
 
@@ -77,7 +77,7 @@ If your app allows users to choose the app's color mode, present these options u
 - Dark
 - Windows default
 
-We also recommend adding a hyperlink to the Colors page of the Windows Settings app where users can access and modify the current default app mode. Use the string "Windows color settings" for the hyperlink text and `ms-settings:colors` for the URI.
+We also recommend adding a hyperlink to the Colors page of Windows Settings where users can access and modify the current default app mode. Use the string "Windows color settings" for the hyperlink text and `ms-settings:colors` for the URI.
 
 !["Choose a mode" section](images/appsettings_mode.png)
 

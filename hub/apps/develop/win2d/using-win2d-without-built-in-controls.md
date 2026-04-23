@@ -1,8 +1,8 @@
 ---
 title: Using Win2D without built-in controls
 description: A guide on how to use the lower level APIs of Win2D, without any of its built-in XAML controls.
-ms.date: 05/28/2023
-ms.topic: article
+ms.date: 10/28/2025
+ms.topic: concept-article
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -66,7 +66,7 @@ swapChain.Present();
 The size of the swap chain should match the size of the `CoreWindow`. If the size of the window changes, call [`ResizeBuffers(Size)`](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasSwapChain_ResizeBuffers_3.htm) on the swap chain with the new size. For more information, see the `CoreWindow` Win2D sample.
 
 > [!NOTE]
-> `CoreWindow` is only supported on UWP. For WinAppSDK apps, use either composition or HWND swapchains.
+> `CoreWindow` is only supported on UWP. For Windows App SDK, use either composition or HWND swapchains.
 
 ## CanvasSwapChainPanel
 
@@ -82,7 +82,7 @@ And declare:
 <canvas:CanvasSwapChainPanel x:Name="canvasSwapChainPanel"/>
 ```
 
-A `CanvasSwapChainPanel` does not have a swap chain automatically assigned to it. An an example, to assign one:
+A `CanvasSwapChainPanel` does not have a swap chain automatically assigned to it. As an example, to assign one:
 
 ```csharp
 CanvasDevice device = CanvasDevice.GetSharedDevice();

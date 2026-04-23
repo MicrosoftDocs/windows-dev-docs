@@ -2,11 +2,9 @@
 title: Create icons using Visual Studio's asset generation tool
 description: Use the Visual Studio asset generation tool to create a variety of icon files from just one image.
 keywords: windows 10, uwp
-author: hickeys
-ms.author: hickeys
 design-contact: judysa
 ms.date: 10/29/2021
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +17,7 @@ While handcrafting each icon file will create the best, most consistent user exp
 :::row:::
     :::column:::
         1. Use Visual Studio to open a WinUI or UWP project.
-        2. In the **Solution Explorer**, double-click the Package.appmxanifest file.
+        2. In the **Solution Explorer**, double-click the Package.appxmanifest file.
     :::column-end:::
     :::column:::
         :::image type="content" source="images/package-appmanifest.png" alt-text="A diagram that shows a view of solution explorer highlighting the Package.appxmanifest file.":::
@@ -30,7 +28,7 @@ While handcrafting each icon file will create the best, most consistent user exp
         3. Visual Studio displays the Manifest Designer.
     :::column-end:::
     :::column:::
-            :::image type="content" source="images/manifest-properties.png" lightbox="images/manifest-properties.png" alt-text="A diagram that shows a view of the properties panel for a Package.ammxmanifest file.":::
+            :::image type="content" source="images/manifest-properties.png" lightbox="images/manifest-properties.png" alt-text="A diagram that shows a view of the properties panel for a Package.appxmanifest file.":::
     :::column-end:::
 :::row-end:::
 :::row:::

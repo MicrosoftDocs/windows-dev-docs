@@ -2,7 +2,7 @@
 ms.assetid: 2f76c520-84a3-4066-8eb3-ecc0ecd198a7
 title: Windows Desktop Bridge app tests
 description: Use the Desktop Bridge's built-in tests to ensure that your desktop app is optimized for its conversion to a UWP app.
-ms.date: 12/18/2017
+ms.date: 07/14/2025
 ms.topic: article
 keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
@@ -280,4 +280,4 @@ Remove any private code signing keys (such as .pfx and .snk files) from the pack
 
 ## Related topics
 
-* [Microsoft Store Policies](/legal/windows/agreements/store-policies)
+* [Microsoft Store Policies](/windows/apps/publish/store-policies-and-code-of-conduct)

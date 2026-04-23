@@ -2,7 +2,7 @@
 title: Learning track - Display customers in a list
 description: Learn what you need to do to display a collection of Customer objects in a list.
 ms.date: 03/17/2021
-ms.topic: article
+ms.topic: how-to
 keywords: get started, uwp, windows 10, learning track, data binding, list
 ms.localizationpriority: medium
 ms.custom: RS5

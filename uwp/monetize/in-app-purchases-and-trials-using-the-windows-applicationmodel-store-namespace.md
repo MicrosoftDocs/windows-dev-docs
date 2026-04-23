@@ -16,6 +16,9 @@ The articles in this section provide in-depth guidance and code examples for usi
 > [!IMPORTANT]
 > The **Windows.ApplicationModel.Store** namespace is no longer being updated with new features. If your project targets **Windows 10 Anniversary Edition (10.0; Build 14393)** or a later release in Visual Studio (that is, you are targeting Windows 10, version 1607, or later), we recommend that you use the [Windows.Services.Store](/uwp/api/windows.services.store) namespace instead. For more information, see [In-app purchases and trials](./in-app-purchases-and-trials.md). The **Windows.ApplicationModel.Store** namespace is not supported in Windows desktop applications that use the [Desktop Bridge](/windows/msix/desktop/source-code-overview) or in apps or games that use a development sandbox in Partner Center (for example, this is the case for any game that integrates with Xbox Live). These products must use the **Windows.Services.Store** namespace to implement in-app purchases and trials.
 
+> [!IMPORTANT]
+> In-app purchase and in-app rate and review functionalities provided in the **Windows.ApplicationModel.Store** namespace is not currently supported in evelated applications.
+
 ## Get started with the CurrentApp and CurrentAppSimulator classes
 
 The main entry point to the **Windows.ApplicationModel.Store** namespace is the [CurrentApp](/uwp/api/windows.applicationmodel.store.currentapp) class. This class provides static properties and methods you can use to get info for the current app and its available add-ons, get license info for the current app or its add-ons, purchase an app or add-on for the current user, and perform other tasks.
@@ -60,8 +63,8 @@ This example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes an 
 <CurrentApp>
   <ListingInformation>
     <App>
-      <AppId>2B14D306-D8F8-4066-A45B-0FB3464C67F2</AppId>
-      <LinkUri>http://apps.windows.microsoft.com/app/2B14D306-D8F8-4066-A45B-0FB3464C67F2</LinkUri>
+      <AppId>00001111-aaaa-2222-bbbb-3333cccc4444</AppId>
+      <LinkUri>http://apps.windows.microsoft.com/app/00001111-aaaa-2222-bbbb-3333cccc4444</LinkUri>
       <CurrentMarket>en-US</CurrentMarket>
       <AgeRating>3</AgeRating>
       <MarketData xml:lang="en-us">
@@ -93,8 +96,8 @@ The next example is a WindowsStoreProxy.xml file (UTF-16 encoded) that describes
 <CurrentApp>
   <ListingInformation>
     <App>
-      <AppId>988b90e4-5d4d-4dea-99d0-e423e414ffbc</AppId>
-      <LinkUri>http://apps.windows.microsoft.com/app/988b90e4-5d4d-4dea-99d0-e423e414ffbc</LinkUri>
+      <AppId>11112222-bbbb-3333-cccc-4444dddd5555</AppId>
+      <LinkUri>http://apps.windows.microsoft.com/app/11112222-bbbb-3333-cccc-4444dddd5555</LinkUri>
       <CurrentMarket>en-us</CurrentMarket>
       <AgeRating>3</AgeRating>
       <MarketData xml:lang="en-us">

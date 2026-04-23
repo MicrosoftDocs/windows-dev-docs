@@ -5,7 +5,7 @@ ms.assetid: 544B3B9E-31E3-41DA-8081-CC3477447E94
 keywords:
 - Stencil buffers
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 

@@ -1,10 +1,8 @@
 ---
 title: Enable user mode access to GPIO, I2C, and SPI
 description: This tutorial describes how to enable user mode access to GPIO, I2C, SPI, and UART on Windows 10 and later.
-ms.date: 05/04/2023
-ms.topic: article
-
-
+ms.date: 11/15/2023
+ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
@@ -43,7 +41,7 @@ Next we declare each of the GPIO and SPB resources that should be exposed to use
 Raspberry Pi has two exposed SPI buses. SPI0 has two hardware chip select lines and SPI1 has one hardware chip select line. One SPISerialBus() resource declaration is required for each chip select line for each bus. The following two SPISerialBus resource declarations are for the two chip select lines on SPI0. The DeviceSelection field contains a unique value which the driver interprets as a hardware chip select line identifier. The exact value that you put in the DeviceSelection field depends on how your driver interprets this field of the ACPI connection descriptor.
 
 > [!NOTE]
-> This article contains references to the term slave, a term that Microsoft no longer uses. When the term is removed from the software, we’ll remove it from this article.
+> This article contains references to the term slave&mdash;a term that Microsoft doesn't condone, and has stopped using in new products and documentation. When the term is removed from the software, we’ll remove it from this article.
 
 ```cpp
 // Index 0
@@ -735,7 +733,7 @@ devcon status *msft8000
 
 If the output indicates that rhproxy is started, rhproxy has loaded and started successfully. If you see a problem code, you need to investigate. Some common problem codes are:
 
-- Problem 51 - `CM_PROB_WAITING_ON_DEPENDENCY` - The system is not starting rhproxy because one of it's dependencies has failed to load. This means that either the resources passed to rhproxy point to invalid ACPI nodes, or the target devices are not starting. First, double check that all devices are running successfully (see 'Verify controller drivers' above). Then, double check your ASL and ensure that all your resource paths (for example, `\_SB.I2C1`) are correct and point to valid nodes in your DSDT.
+- Problem 51 - `CM_PROB_WAITING_ON_DEPENDENCY` - The system is not starting rhproxy because one of its dependencies has failed to load. This means that either the resources passed to rhproxy point to invalid ACPI nodes, or the target devices are not starting. First, double check that all devices are running successfully (see 'Verify controller drivers' above). Then, double check your ASL and ensure that all your resource paths (for example, `\_SB.I2C1`) are correct and point to valid nodes in your DSDT.
 - Problem 10 - `CM_PROB_FAILED_START` - Rhproxy failed to start, most likely because of a resource parsing issue. Go over your ASL and double check resource indices in the DSD, and verify that GPIO resources are specified in increasing pin number order.
 
 ### Verify that the expected devices are exposed to user mode
@@ -805,7 +803,7 @@ Use the following samples to validate that devices work from UWP.
 
 ### Run the HLK Tests
 
-Download the [Hardware Lab Kit (HLK)](/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are availble:
+Download the [Hardware Lab Kit (HLK)](/windows-hardware/test/hlk/windows-hardware-lab-kit). The following tests are available:
 
 - [GPIO WinRT Functional and Stress Tests](/windows-hardware/test/hlk/testref/f1fc0922-1186-48bd-bfcd-c7385a2f6f96)
 - [I2C WinRT Write Tests (EEPROM Required)](/windows-hardware/test/hlk/testref/2ab0df1b-3369-4aaf-a4d5-d157cb7bf578)

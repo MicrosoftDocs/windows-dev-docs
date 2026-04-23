@@ -3,7 +3,7 @@ ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
 title: Data binding overview
 description: This topic shows you how to bind a control (or other UI element) to a single item or bind an item's control to a collection of items in a Universal Windows Platform (UWP) app.
 ms.date: 10/05/2018
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 dev_langs:

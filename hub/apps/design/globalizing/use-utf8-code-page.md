@@ -1,28 +1,27 @@
 ---
 title: Use UTF-8 code pages in Windows apps
 description: How to use UTF code pages in Windows apps.
-ms.date: 06/21/2023
-ms.topic: article
-ms.custom: seo-windows-dev
+ms.date: 07/17/2025
+ms.topic: how-to
 ---
 
 # Use UTF-8 code pages in Windows apps
 
-Use [UTF-8](http://www.utf-8.com/) character encoding for optimal compatibility between web apps and other \*nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
+Use Unicode Transformation Format 8-bit ([UTF-8](http://www.utf-8.com/)) character encoding to maximize compatibility between web apps and other *nix-based platforms (Unix, Linux, and variants), minimize localization bugs, and reduce testing overhead.
 
-UTF-8 is the universal code page for internationalization and is able to encode the entire Unicode character set. It is used pervasively on the web, and is the default for *nix-based platforms.
+UTF-8 is the universal code page for internationalization and is able to encode the entire Unicode character set. It is used extensively on the web and is the default encoding for both XML and *nix-based platforms.
 
 ## Set a process code page to UTF-8
 
-As of Windows Version 1903 (May 2019 Update), you can use the ActiveCodePage property in the appxmanifest for packaged apps, or the fusion manifest for unpackaged apps, to force a process to use UTF-8 as the process code page.
+As of Windows Version 1903 (May 2019 Update), you can specify the [activeCodePage](/windows/win32/sbscs/application-manifests#activecodepage) property in the appxmanifest for packaged apps (or the fusion manifest for unpackaged apps) to force a process to use UTF-8 as the process code page.
 
 > [!NOTE]
-> GDI doesn't currently support setting the ActiveCodePage property per process. Instead, GDI defaults to the active system codepage. To configure your app to render UTF-8 text via GDI, go to Windows **Settings** > **Time \& language** > **Language \& region** > **Administrative language settings** > **Change system locale**, and check **Beta: Use Unicode UTF-8 for worldwide language support**. Then reboot the PC for the change to take effect.
+> Windows graphics device interface (GDI) doesn't currently support setting the activeCodePage property per process. Instead, GDI defaults to the active system codepage. To configure your app to render UTF-8 text via GDI, go to Windows **Settings** > **Time \& language** > **Language \& region** > **Administrative language settings** > **Change system locale**, and check **Beta: Use Unicode UTF-8 for worldwide language support**. Then reboot the PC for the change to take effect.
 
-You can declare the ActiveCodePage property, and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual. With a minimum target version of Windows Version 1903, the process code page will always be UTF-8, so legacy code page detection and conversion can be avoided.
+You can declare the activeCodePage property, and target/run on earlier Windows builds, but you must handle legacy code page detection and conversion as usual. With a minimum target version of Windows Version 1903, the process code page will always be UTF-8, so legacy code page detection and conversion can be avoided.
 
 > [!NOTE]
-> An encoded character takes between 1 and 4 bytes. UTF-8 encoding supports longer byte sequences, up to 6 bytes, but the biggest code point of Unicode 6.0 (U+10FFFF) only takes 4 bytes.
+> In UTF-8, an encoded character is represented by a sequence of 1 to 4 bytes. (See [definition D92 in Chapter 3](https://www.unicode.org/versions/Unicode16.0.0/core-spec/chapter-3/#G27817) of [The Unicode Standard](https://www.unicode.org/versions/latest/) for the formal specification.)
 
 ## Examples
 
@@ -40,7 +39,7 @@ You can declare the ActiveCodePage property, and target/run on earlier Windows b
   <Applications>
     <Application ...>
       <uap7:Properties>
-        <uap8:ActiveCodePage>UTF-8</uap8:ActiveCodePage>
+        <uap8:activeCodePage>UTF-8</uap8:activeCodePage>
       </uap7:Properties>
     </Application>
   </Applications>
@@ -81,7 +80,7 @@ Because Windows operates natively in UTF-16 (`WCHAR`), you might need to convert
 Use `dwFlags` of either `0` or `MB_ERR_INVALID_CHARS` when using these functions with `CodePage` set to `CP_UTF8` (otherwise an `ERROR_INVALID_FLAGS` occurs).
 
 > [!NOTE]
-> `CP_ACP` equates to `CP_UTF8` only if running on Windows Version 1903 (May 2019 Update) or above and the ActiveCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using `CP_UTF8` explicitly.
+> `CP_ACP` equates to `CP_UTF8` only if running on Windows Version 1903 (May 2019 Update) or above and the activeCodePage property described above is set to UTF-8. Otherwise, it honors the legacy system code page. We recommend using `CP_UTF8` explicitly.
 
 ## Related topics
 

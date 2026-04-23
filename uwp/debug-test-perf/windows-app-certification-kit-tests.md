@@ -2,7 +2,7 @@
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows App Certification Kit tests
 description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Microsoft Store.
-ms.date: 02/08/2017
+ms.date: 07/14/2025
 ms.topic: article
 keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
@@ -662,5 +662,5 @@ Update the background JavaScript code to call Close() correctly.
 ## Related topics
 
 * [Windows Desktop Bridge app tests](windows-desktop-bridge-app-tests.md)
-* [Microsoft Store Policies](/legal/windows/agreements/store-policies)
+* [Microsoft Store Policies](/windows/apps/publish/store-policies-and-code-of-conduct)
  

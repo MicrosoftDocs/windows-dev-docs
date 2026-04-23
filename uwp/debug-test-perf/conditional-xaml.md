@@ -1,7 +1,7 @@
 ---
 title: Conditional XAML
 description: Use new APIs in XAML markup while maintaining compatibility with previous versions
-ms.date: 10/10/2017
+ms.date: 07/14/2025
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

@@ -3,7 +3,7 @@ title: Create depth buffer device resources
 description: Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.
 ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, direct3d, depth buffer
 ms.localizationpriority: medium
 ---

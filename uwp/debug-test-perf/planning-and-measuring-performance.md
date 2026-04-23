@@ -2,8 +2,8 @@
 ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
 title: Planning for performance
 description: Users expect their apps to remain responsive, to feel natural, and not to drain their battery.
-ms.date: 02/08/2017
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---

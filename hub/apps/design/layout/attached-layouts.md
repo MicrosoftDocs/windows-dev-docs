@@ -14,9 +14,9 @@ A container (for example, Panel) that delegates its layout logic to another obje
 
 In this topic, we cover what's involved in creating an attached layout (virtualizing and non-virtualizing), the concepts and classes you'll need to understand, and the trade-offs you'll need to consider when deciding between them.
 
-| **Get the Windows UI Library** |
+| **Get WinUI** |
 | - |
-| This control is included as part of the Windows UI Library, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [Windows UI Library overview](/uwp/toolkits/winui/). |
+| This control is included as part of WinUI, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [WinUI overview](/uwp/toolkits/winui/). |
 
 > **Important APIs**:
 
@@ -108,7 +108,7 @@ The layout's state object can be stored with and retrieved from the container wi
 
 ### UI Virtualization
 
-UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/uwp/xaml-platform/x-load-attribute). It does not require any special handling in your layout.
+UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/apps/develop/platform/xaml/x-load-attribute). It does not require any special handling in your layout.
 
 In scrolling-based scenarios such as a list, determining _when needed_ is often based on "will it be visible to a user" which depends heavily on where it was placed during the layout process and requires special considerations.  This scenario is a focus for this document.
 
@@ -292,7 +292,7 @@ The UI for the Xbox Activity Feed uses a repeating pattern where each line has a
 The code below walks through what a custom virtualizing UI for the activity feed might be to illustrate the general approach you might take for a **data layout**.
 
 > [!TIP]
-> If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
+> If you have the **WinUI 3 Gallery** app installed, click here to [open the app and see the ItemsRepeater in action](winui3gallery:/item/ItemsRepeater). Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery).
 
 #### Implementation
 

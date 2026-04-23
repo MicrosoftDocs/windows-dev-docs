@@ -4,13 +4,10 @@ title: Get started with Python using Windows
 summary: Get started developing with Python using Windows, including set up for your development environment, scripting and automation, building web apps, and faqs.
 
 metadata: 
-  author: mattwojo
   description: Get started developing with Python on Windows. See resources to set up your development environment, build web apps, and connect to a database.
-  manager: jken
-  ms.author: mattwoj
   ms.date: 09/15/2019
-  ms.prod: dev-environment
-  ms.technology: windows-python
+  ms.service: dev-environment
+  ms.subservice: windows-python
   ms.topic: landing-page
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | whats-new

@@ -2,7 +2,7 @@
 title: Composition Tailoring
 description: Use the Composition APIs to tailor your UI, optimize for performance, and accommodate user settings and device characteristics.
 ms.date: 03/16/2023
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -24,7 +24,7 @@ Users may customize their Windows experience for a variety of reasons, which app
 
 ### Transparency effects settings
 
-One such effect setting users can customize is turning transparency effects on/off. This can be found in the Settings app under Personalization > Colors, or through Settings app > Ease of Access > Display.
+One such effect setting users can customize is turning transparency effects on/off. This can be found in Windows Settings under Personalization > Colors, or through Settings > Ease of Access > Display.
 
 ![Transparency Option in Settings](images/tailoring-transparency-setting.png)
 

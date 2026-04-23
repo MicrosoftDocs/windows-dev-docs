@@ -2,8 +2,8 @@
 ms.assetid: A5320094-DF53-42FC-A6BA-A958F8E9210B
 title: Test Surface Hub apps using Visual Studio
 description: The Visual Studio simulator provides an environment to design, develop, debug, and test UWP apps, including apps built for Surface Hub.
-ms.date: 10/26/2017
-ms.topic: article
+ms.date: 07/14/2025
+ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -74,10 +74,10 @@ By default, Surface Hub only installs apps from the Microsoft Store. To install 
 > [!NOTE]
 > After developer mode has been enabled, you will need to reset the Surface Hub if you wish to disable it again. Resetting the device removes all local user files and configurations and then reinstalls Windows.
 
-1. From the Surface Hub's **Start** menu, open the Settings app.
+1. From the Surface Hub's **Start** menu, open Windows Settings.
 
    > [!NOTE]
-   > Administrative privileges are required to access the Settings app on Surface Hub.
+   > Administrative privileges are required to access Settings on Surface Hub.
 
 2. Navigate to **Update & security \> For developers**.
 

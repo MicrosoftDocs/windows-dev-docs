@@ -5,7 +5,7 @@ ms.assetid: 4232CDBA-F669-4417-9378-F9013E83462C
 keywords:
 - Introduction to rasterization rules
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

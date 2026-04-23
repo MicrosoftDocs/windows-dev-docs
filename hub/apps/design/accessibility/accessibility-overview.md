@@ -5,7 +5,7 @@ title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
 ms.date: 09/24/2020
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
@@ -156,7 +156,7 @@ Microsoft DirectX content that's hosted in a XAML UI (using [**SwapChainPanel**]
 > - [Keyboard support](winui3gallery://item/AccessibilityKeyboard)
 > - [Color contrast](winui3gallery://item/AccessibilityColorContrast)
 
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://www.microsoft.com/store/productId/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ## Related topics
 

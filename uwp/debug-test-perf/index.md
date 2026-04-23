@@ -1,7 +1,7 @@
 ---
 title: Debugging, testing, and performance
 description: Use Microsoft Visual Studio and other tools to debug and test your app and prepare it for the Microsoft Store certification process.
-ms.date: 01/28/2022
+ms.date: 07/14/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---

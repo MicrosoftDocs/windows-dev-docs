@@ -1,40 +1,40 @@
 ---
-description: Describes how to use app instancing features with the app lifecycle API (Windows App SDK).
-title: App instancing with the app lifecycle API (Windows App SDK)
-ms.topic: article
-ms.date: 11/16/2021
+description: Describes how to use app instancing features with the app lifecycle API in WinUI with the Windows App SDK.
+title: App instancing with the app lifecycle API (WinUI)
+ms.topic: concept-article
+ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance
-ms.author: hickeys
-author: hickeys
-ms.localizationpriority: medium
+#customer intent: As a Windows developer, I want to learn how to use app instancing features with the app lifecycle API in WinUI with the Windows App SDK so that I can control how many instances of my app can run at the same time.
 ---
 
 # App instancing with the app lifecycle API
 
-An app's instancing model determines whether multiple instances of your app's process can run at the same time.
+An app's instancing model determines whether multiple instances of your app's process can run at the same time. The app lifecycle API in the Windows App SDK provides a way to control how many instances of your app can run at the same time, and to redirect activations to other instances when necessary.
+
+This article describes how to use the app lifecycle API to control app instancing in your WinUI apps.
 
 ## Prerequisites
 
+To use the app lifecycle API in WinUI 3 apps:
 
-
-To use the app lifecycle API in the Windows App SDK:
-
-1. Download and install the latest release of the Windows App SDK. For more information, see [Install tools for the Windows App SDK](../set-up-your-development-environment.md).
-2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+- Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
+- Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Single-instance apps
 
 Apps are single-instanced if there can be only one main process running at a time. Attempting to launch a second instance of a single-instanced app typically results in the first instance's main window being activated instead. Note that this only applies to the main process. Single-instanced apps can create multiple background processes and still be considered single instanced.
 
-UWP apps are single-instanced by default. but have the ability to become multi-instanced by deciding at launch-time whether to create an additional instance or activate an existing instance instead.
+WinUI apps are multi-instanced by default but have the ability to become single-instanced by deciding at launch-time whether to create a new instance or activate an existing instance instead.
 
-The Windows Mail app is a good example of a single instanced app. When you launch Mail for the first time, a new window will be created. If you attempt to launch Mail again, the existing Mail window will be activated instead.
+The [Microsoft Photos](https://apps.microsoft.com/detail/9WZDNCRFJBH4) app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.
+
+For an example of how to implement single instancing in a WinUI 3 app with C#, see [Create a single-instanced WinUI app](applifecycle-single-instance.md).
 
 ## Multi-instanced apps
 
 Apps are multi-instanced if the main process can be run multiple times simultaneously. Attempting to launch a second instance of a multi-instanced app creates a new process and main window.
 
-Traditionally, unpacked apps are multi-instanced by default, but can implement single-instancing when necessarily. Typically this is done using a single named mutex to indicate if an app is already running.
+Traditionally, unpackaged apps are multi-instanced by default, but can implement single-instancing when necessarily. Typically this is done using a single named mutex to indicate if an app is already running.
 
 Notepad is a good example of a multi instanced app. Each time you attempt to launch Notepad, a new instance of Notepad will be created regardless of how many instances are already running.
 
@@ -336,56 +336,47 @@ Unlike the UWP version of `RedirectActivationTo`, the Windows App SDK's implemen
 
 ### Redirection without blocking
 
-Most apps will want to redirect as early as possible, before doing unnecessary initialization work. For some app types, initialization logic runs on an STA thread, which must not be blocked. AppInstance.RedirectActivationToAsync method is asynchronous, and the calling app must wait for the method to complete, otherwise the redirection will fail. However, waiting on an async call will block the STA. In these situations, call RedirectActivationToAsync in another thread, and set an event when the call completes. Then wait on that event using non-blocking APIs such as CoWaitForMultipleObjects. Here’s a C# sample for a WPF app.
+Most apps will want to redirect as early as possible, before doing unnecessary initialization work. For some app types, initialization logic runs on an STA thread, which must not be blocked. **AppInstance.RedirectActivationToAsync** method is asynchronous, and the calling app must wait for the method to complete, otherwise the redirection will fail. However, waiting on an async call will block the STA. In these situations, call **RedirectActivationToAsync** in another thread, and set an event when the call completes. Then wait on that event using non-blocking APIs.
+
+The following is a C# sample for a WPF app:
 
 ```csharp
-private static bool DecideRedirection()
+private static bool DecideRedirection(string key)
 {
     bool isRedirect = false;
 
     // Find out what kind of activation this is.
     AppActivationArguments args = AppInstance.GetCurrent().GetActivatedEventArgs();
     ExtendedActivationKind kind = args.Kind;
-    if (kind == ExtendedActivationKind.File)
+
+    if (kind == ExtendedActivationKind.Launch)
     {
         try
         {
-            // This is a file activation: here we'll get the file information,
-            // and register the file name as our instance key.
-            if (args.Data is IFileActivatedEventArgs fileArgs)
+            AppInstance keyInstance = AppInstance.FindOrRegisterForKey(key);
+
+            // If we successfully registered the key, we must be the
+            // only instance running that was activated for this key.
+            if (keyInstance.IsCurrent)
             {
-                IStorageItem file = fileArgs.Files[0];
-                AppInstance keyInstance = AppInstance.FindOrRegisterForKey(file.Name);
+                // Hook up the Activated event, to allow for this instance of the app
+                // getting reactivated as a result of multi-instance redirection.
+                keyInstance.Activated += OnKeyInstanceActivated;
+            }
+            else
+            {
+                isRedirect = true;
 
-                // If we successfully registered the file name, we must be the
-                // only instance running that was activated for this file.
-                if (keyInstance.IsCurrent)
+                // Ensure we don't block the STA, by doing the redirect operation
+                // in another thread, and using an event to signal when it has completed.
+                var redirectSemaphore = new Semaphore(0, 1);
+                Task.Run(() =>
                 {
-                    // Hook up the Activated event, to allow for this instance of the app
-                    // getting reactivated as a result of multi-instance redirection.
-                    keyInstance.Activated += OnActivated;
-                }
-                else
-                {
-                    isRedirect = true;
+                    keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
+                    redirectSemaphore.Release();
+                });
+                redirectSemaphore.WaitOne();
 
-                    // Ensure we don't block the STA, by doing the redirect operation
-                    // in another thread, and using an event to signal when it has completed.
-                    redirectEventHandle = CreateEvent(IntPtr.Zero, true, false, null);
-                    if (redirectEventHandle != IntPtr.Zero)
-                    {
-                        Task.Run(() =>
-                        {
-                            keyInstance.RedirectActivationToAsync(args).AsTask().Wait();
-                            SetEvent(redirectEventHandle);
-                        });
-                        uint CWMO_DEFAULT = 0;
-                        uint INFINITE = 0xFFFFFFFF;
-                        _ = CoWaitForMultipleObjects(
-                            CWMO_DEFAULT, INFINITE, 1, 
-                            new IntPtr[] { redirectEventHandle }, out uint handleIndex);
-                    }
-                }
             }
         }
         catch (Exception ex)
@@ -409,7 +400,7 @@ void CALLBACK OnFileClosed(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam
 }
 ```
 
-> [!Warning]
+> [!WARNING]
 > Although keys are automatically unregistered when their process terminates, race conditions are possible where another instance may have initiated a redirection to the terminated instance before the terminated instance was unregistered. To mitigate this possibility, an app can use [UnregisterKey](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.unregisterkey) to manually unregister its key before it is terminated, giving the app a chance to redirect activations to another app that is not in the process of exiting.
 
 ### Instance information
@@ -428,3 +419,9 @@ void DumpExistingInstances()
     }
 }
 ```
+
+## Related content
+
+[Create a single-instanced WinUI app](applifecycle-single-instance.md)
+
+[Microsoft.Windows.AppLifeycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance)

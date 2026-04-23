@@ -3,7 +3,7 @@ ms.assetid: A0DFF26B-FE06-459B-ABDC-3EA4FEB7A21E
 description: Use this method in the Microsoft Store submission API to get data for an existing package flight submission.
 title: Get a package flight submission
 ms.date: 04/17/2018
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, flight submission
 ms.localizationpriority: medium
 ---

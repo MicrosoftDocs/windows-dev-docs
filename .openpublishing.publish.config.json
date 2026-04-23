@@ -65,12 +65,11 @@
   ],
   "notification_subscribers": [],
   "sync_notification_subscribers": [
-    "quradic@microsoft.com"
+    "jkendir@microsoft.com"
   ],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-dev-docs",
   "git_repository_branch_open_to_public_contributors": "docs",
-  "skip_source_output_uploading": false,
   "need_preview_pull_request": true,
   "resolve_user_profile_using_github": true,
   "dependent_repositories": [
@@ -83,7 +82,7 @@
     {
       "path_to_root": "samples-xaml-gallery",
       "url": "https://github.com/microsoft/Xaml-Controls-Gallery",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     },
     {
@@ -111,6 +110,7 @@
     }
   },
   "docs_build_engine": {},
+  "skip_source_output_uploading": false,
   "contribution_branch_mappings": {},
   "need_generate_pdf_url_template": true,
   "need_generate_pdf": false

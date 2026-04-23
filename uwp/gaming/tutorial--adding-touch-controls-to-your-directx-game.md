@@ -3,7 +3,7 @@ title: Touch controls for games
 description: Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX.
 ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: how-to
 keywords: windows 10, uwp, games, touch, controls, directx, input
 ms.localizationpriority: medium
 ---
@@ -212,7 +212,7 @@ Let's hook the events and initialize all the basic state fields of the camera co
 void CameraPanController::Initialize( _In_ CoreWindow^ window )
 {
 
-    // Start recieving touch/mouse events.
+    // Start receiving touch/mouse events.
     window->PointerPressed += 
     ref new TypedEventHandler<CoreWindow^, PointerEventArgs^>(this, &CameraPanController::OnPointerPressed);
 

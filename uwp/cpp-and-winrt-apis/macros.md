@@ -32,6 +32,12 @@ If defined, disables object counts for the current module. The module never unlo
 ## WINRT_CUSTOM_MODULE_LOCK
 If defined, allows you to provide your own implementation of **winrt::get_module_lock**. May not be combined with **WINRT_NO_MODULE_LOCK**.
 
+Your custom implementation of **winrt::get_module_lock** must support the following operations:
+
+* `++winrt::get_module_lock()`: Increment the reference count on the module lock.
+* `--winrt::get_module_lock()`: Decrement the reference count on the module lock.
+* `if (winrt::get_module_lock())`: Check whether the reference count is nonzero. (Needed if you're building a DLL.)
+
 ## WINRT_ASSERT, WINRT_VERIFY
 These macros allow you to customize assertion handling. **WINRT_ASSERT** doesn't require the argument to be evaluated. **WINRT_VERIFY** requires that the argument be evaluated, even in non-debug builds.
 
@@ -43,6 +49,17 @@ If you don't customize these macros, and **_DEBUG** is not defined, then C++/Win
 If defined, disables the default C++/WinRT diagnostic that detects that you mistakenly constructed an implementation class without using [**winrt::make**](/uwp/cpp-ref-for-winrt/make).
 
 We strongly recommended that you don't define this symbol, because doing so masks a common source of programming errors.
+
+## WINRT_NO_SOURCE_LOCATION
+If defined, disables the inclusion of source file and line number information
+(and in debug builds, function information),
+when originating errors.
+
+This additional information is not used by C++/WinRT, but it is made available to other libraries which
+wish to interoperate with C++/WinRT exceptions, such as the [Windows Implementation Library](https://github.com/Microsoft/wil).
+
+By default, the information is included when compiled in C++20 mode or higher.
+You may wish to suppress this information to reduce binary size.
 
 ## WINRT_DIAGNOSTICS
 If defined, enables internal statistics to track various operations:

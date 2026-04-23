@@ -2,10 +2,8 @@
 title: Speech, voice, and conversation in Windows 11 and Windows 10
 description: This page provides the information for you to get started developing speech-enabled Windows apps.
 ms.topic: article
-ms.date: 09/12/2019
+ms.date: 11/28/2023
 keywords: Speech in Windows 10, speech, voice, conversation, win32 speech apps, UWP speech apps, WPF speech apps, WinForms speech apps
-ms.author: kbridge
-author: Karl-Bridge-Microsoft
 ---
 
 # Speech, voice, and conversation in Windows 11 and Windows 10
@@ -26,7 +24,7 @@ This page provides information on how the various Windows development frameworks
 
       **Universal Windows Platform (UWP)**
 
-      Build speech-enabled apps on the modern platform for Windows 10 (and later) applications and games, on any Windows device (including PCs, phones, Xbox One, HoloLens, and more), and publish them to the Microsoft Store.
+      Build speech-enabled apps on the modern platform for Windows 10 (and later) applications and games, on any Windows device (including PCs, phones, Xbox, HoloLens, and more), and publish them to the Microsoft Store.
 
       [Speech interactions](/windows/uwp/design/input/speech-interactions)
 
@@ -38,8 +36,8 @@ This page provides information on how the various Windows development frameworks
 
       [Conversational agents](/uwp/api/windows.applicationmodel.conversationalagent)
 
-      [Cortana voice commands](/cortana/voice-commands/vcd)<br>
-      (not supported in Windows 10 May 2020 Update and newer)
+      [Cortana interactions in Windows apps](../design/input/cortana-interactions.md)<br>
+      (not supported in Windows 10 May 2020 Update and newer) 
    :::column-end:::
    :::column:::
       ![Win32 platform apps](images/platform-win32.png)
@@ -90,15 +88,13 @@ This page provides information on how the various Windows development frameworks
 :::row-end:::
 :::row:::
    :::column:::
-      [Cortana Skills Kit](/cortana/skills/)
-
-      As part of our goal to transform the modern productivity experiences by embedding Cortana deeply into [Microsoft 365](/microsoft-365/admin/misc/cortana-integration), we are retiring the Cortana Skills Kit developer platform and all skills built on this platform.
-   :::column-end:::
-   :::column:::
 
       [Microsoft Agent](/windows/win32/lwef/microsoft-agent)
 
       [Microsoft Speech API (SAPI) 5.3](/previous-versions/windows/desktop/ms723627(v=vs.85))
+
+   :::column-end:::
+   :::column:::
 
       [Microsoft Speech API (SAPI) 5.4](/previous-versions/windows/desktop/ee125663(v=vs.85))
 
@@ -157,8 +153,11 @@ Download and run full Windows samples that demonstrate various accessibility fea
       [Speech blogs](https://blogs.windows.com/windowsdeveloper/?s=speech)
    :::column-end:::
    :::column:::
-      [Windows community - Speech](https://community.windows.com/search?q=speech)
+      [Windows community - Speech](https://answers.microsoft.com/en-us/search/search?SearchTerm=windows%20speech)
 
       [Windows Speech Developer's Forum](https://social.msdn.microsoft.com/Forums/home?filter=alltypes&sort=firstpostdesc&searchTerm=speech)
+
+      [Stack Overflow](https://stackoverflow.com/questions/tagged/windows+speech)
+
    :::column-end:::
 :::row-end:::

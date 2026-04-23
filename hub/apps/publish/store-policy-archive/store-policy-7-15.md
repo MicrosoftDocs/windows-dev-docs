@@ -315,13 +315,12 @@ For all advertising related activities, the following requirements apply:
 
 **10.10.2**
 
-If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-specs) and [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
+If you purchase or create promotional ad campaigns to promote your products through the ad campaign functionality in Partner Center, all ad materials you provide to Microsoft, including any associated landing pages, must comply with Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0) and [Creative Acceptance Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
 
 **10.10.3**
 
-Any advertising content your product displays must adhere to Microsoft’s [Creative Acceptance Policy](https://about.ads.microsoft.com/solutions/ad-products/display-advertising/creative-acceptance-policies).
-
-If your product displays ads, all content displayed must conform to the advertising requirements of the [App Developer Agreement](/legal/windows/agreements/app-developer-agreement), including the following requirements:
+Any advertising content your product displays must adhere to Microsoft’s [Creative Specifications Policy](https://help.ads.microsoft.com/#apex/ads/en/n5095/0).
+If your product displays advertisements, all content displayed must conform to the advertising requirements of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905).
 
 **10.10.4**
 
@@ -345,7 +344,6 @@ For products that are primarily gaming experiences or target Xbox consoles, the 
 
 > [!NOTE]
 > Additional requirements for titles which use Xbox Live on PC/Mobile and/or the Creators program on Xbox consoles are available at https://aka.ms/xboxlivepolicy.
->
 > **February 10, 2022 Policy Note**: For game products targeting console developed through the Xbox Live Creators program, the requirement to integrate with XBL Services no longer applies. The specific policy (Policy 10.13.1) will be updated to reflect this change the next time the Store Policy document is updated, but effective as of this notice, the policy will no longer be enforced for the XBL Creators Program.
 
 **10.13.1**
@@ -522,4 +520,4 @@ All products should adhere to the Microsoft Store Policies listed above. If your
 
 - [Change history for Microsoft Store Policies](../store-policies-change-history.md)
 - [Microsoft Store Policies and Code of Conduct](../store-policies-and-code-of-conduct.md)
-- [App Developer Agreement](/legal/windows/agreements/app-developer-agreement)
+- [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

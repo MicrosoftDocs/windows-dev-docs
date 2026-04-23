@@ -27,7 +27,7 @@ Let us explore what storage the page table itself could require in the worst cas
 
 Suppose each page table entry is 64 bits.
 
-For the worst-case page table size hit for a single surface, given the resource limits in Direct3D 11, suppose a streaming resource is created with a 128 bit-per-element format (for example, a RGBA float), so a 64KB tile contains only 4096 pixels. The maximum supported [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) size of 16384\*16384\*2048 (but with only a single mipmap) would require about 1GB of storage in the page table if fully populated (not including mipmaps) using 64 bit table entries. Adding mipmaps would grow the fully-mapped (worst case) page table storage by about a third, to about 1.3GB.
+For the worst-case page table size hit for a single surface, given the resource limits in Direct3D 11, suppose a streaming resource is created with a 128 bit-per-element format (for example, an RGBA float), so a 64KB tile contains only 4096 pixels. The maximum supported [**Texture2DArray**](/windows/desktop/direct3dhlsl/sm5-object-texture2darray) size of 16384\*16384\*2048 (but with only a single mipmap) would require about 1GB of storage in the page table if fully populated (not including mipmaps) using 64 bit table entries. Adding mipmaps would grow the fully-mapped (worst case) page table storage by about a third, to about 1.3GB.
 
 This case would give access to about 10.6 terabytes of addressable memory. There might be a limit on the amount of addressable memory however, which would reduce these amounts, perhaps to around the terabyte range.
 

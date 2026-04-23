@@ -2,8 +2,9 @@
 description: "Learn more about: Migrate Your Windows 8.x App to .NET Native"
 title: "Migrating Your Windows 8.x App to .NET Native"
 ms.date: "03/30/2017"
-ms.topic: conceptual
+ms.topic: upgrade-and-migration-article
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
+ms.custom: sfi-ropc-nochange
 ---
 # Migrate Your Windows 8.x App to .NET Native
 

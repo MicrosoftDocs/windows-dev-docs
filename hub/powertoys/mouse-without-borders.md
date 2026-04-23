@@ -1,14 +1,15 @@
 ---
-title: PowerToys Mouse Without Borders
-description: Mouse Without Borders enables you to interact with other computers from the same keyboard and mouse, sharing clipboard contents and files between the machines.
-ms.date: 08/03/2023
-ms.topic: article
-no-loc: [PowerToys, Windows, Mouse without borders]
+title: Control Multiple Computers with PowerToys Mouse Without Borders
+description: Control up to four computers with one keyboard and mouse using PowerToys Mouse Without Borders. Share clipboard and transfer files seamlessly between machines.
+ms.date: 08/20/2025
+ms.topic: concept-article
+no-loc: [PowerToys, Windows, Mouse Without Borders]
+# Customer intent: As a Windows power user, I want to use Mouse Without Borders to control multiple computers from the same keyboard and mouse.
 ---
 
 # Mouse Without Borders
 
-**Mouse Without Borders** enables you to control up to 4 computers from the same machine.
+**Mouse Without Borders** enables you to control up to four computers from the same machine.
 
 Features:
 
@@ -22,23 +23,22 @@ With the latest version of PowerToys installed, you will see Mouse Without Borde
 
 ### Initial configuration
 
-1. Open Mouse Without borders in PowerToys Settings to configure your connections.
+1. Open Mouse Without Borders in PowerToys Settings to configure your connections.
+1. On the first computer, select **New Key** to generate a security key for connecting.
 
-2. On the first computer, select **New Key** to generate a security key for connecting.
+   :::image type="content" source="../images/powertoys-mouse-without-borders-press-new-key.png" alt-text="Screenshot of Mouse Without Borders settings showing the security key generation interface after pressing New Key button.":::
 
-    ![Screenshot of Mouse Without Borders settings after pressing New Key.](../images/powertoys-mouse-without-borders-press-new-key.png)
+1. On the second computer, enter the security key that was generated on the first computer and the name of the first computer. Then select **Connect**.
 
-3. On the second computer, enter the security key that was generated on the first computer and the name of the first computer. Then select **Connect**.
+   :::image type="content" source="../images/powertoys-mouse-without-borders-enter-security-key.png" alt-text="Screenshot of Mouse Without Borders settings with security key and computer name fields filled in before connecting.":::
 
-    ![Screenshot of Mouse Without Borders settings after entering the first computer information.](../images/powertoys-mouse-without-borders-enter-security-key.png)
+1. Once the computers are connected, you will be able to move between them by moving your mouse cursor beyond the edge of the screen.
 
-4. Once the computers are connected, you will be able to switch between them by moving your mouse cursor beyond the edge of the screen, transitioning between computers.
-
-    ![Screenshot of Mouse Without Borders settings on the second computer after connecting.](../images/powertoys-mouse-without-borders-after-connect-2.png)
+   :::image type="content" source="../images/powertoys-mouse-without-borders-after-connect-2.png" alt-text="Screenshot of Mouse Without Borders settings on the second computer after connecting.":::
 
 It's possible to switch the order of the devices by dragging the device icon to a new position in the layout.
 
-   ![Animation of Mouse Without Borders settings configuring device layout.](../images/powertoys-mouse-without-borders-drag-device-layout.gif)
+   :::image type="content" source="../images/powertoys-mouse-without-borders-drag-device-layout.gif" alt-text="Animation of Mouse Without Borders settings configuring device layout.":::
 
 ### Install Mouse Without Borders as a service
 
@@ -58,7 +58,7 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 | Connect | Connect to other machines knowing the other machine's name and security key. |
 | Local machine's host name | Show the current machine's host name. |
 | Device layout | Allows arranging the machine's position relative to each other by dragging the machines in the layout. |
-| Refresh connections | Select this button to refresh the connections this machine has to the other machines.
+| Refresh connections | Select this button to refresh the connections this machine has to the other machines. |
 | Devices in a single row | Arrange the devices in a single row or in a 2x2 matrix. |
 | Use Service | Install Mouse Without Borders as a service to allow controlling the lock screen and elevated applications. |
 | Uninstall Service | Uninstall the service from the computer. |
@@ -74,6 +74,8 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 | Block mouse at screen corners | Avoid accidentally switching machines when the mouse pointer is at screen corners. |
 | Show clipboard and network status messages | Show clipboard activities and network status in system tray notifications. |
 | Easy Mouse | Use the mouse pointer to switch between machines at screen edges. Can also be configured to need to select **Shift** or **Control** to switch between machines. |
+| Disable easy mouse when an application is in fullscreen | Prevents easy mouse from switching machines when an application is running in fullscreen mode on the host machine. |
+| Ignored fullscreen applications | A list of ignored executables that will allow easy mouse to switch machines even if they are running in fullscreen mode. |
 | Shortcut to toggle Easy Mouse | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to toggle Easy Mouse. |
 | Shortcut to lock all machines | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to press twice to lock all machines. Only works in the machines that have the same setting. |
 | Shortcut to try reconnecting | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<letter> shortcut to try reconnecting. |
@@ -81,6 +83,23 @@ To enable the service mode, run PowerToys in administrator mode and turn on the 
 | Shortcut to switch between machines | Set a <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+\<number> shortcut to switch to a specific machine. <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>3</kbd> switches to the third machine and so on. <kbd>F1</kbd>,<kbd>F2</kbd>,<kbd>F3</kbd> and <kbd>F4</kbd> can also be used. |
 | Add a firewall rule for Mouse Without Borders | Install a firewall rule for Mouse Without Borders. |
 | Show the original Mouse Without Borders UI | Show the original UI from Mouse Without Borders through the original tray icon. Mouse Without Borders needs to be restarted for it to take effect. |
+
+## Status Colors
+
+The following colors are used to indicate the connection status to the user when trying to connect to another computer:
+
+| Connection Status | Color | Hex Code |
+| :--- | :--- | :--- |
+| N/A | Dark Grey   | `#00717171`  |
+| Resolving | Yellow   | `#FFFFFF00`   |
+| Connecting | Orange   | `#FFFFA500`   |
+| Handshaking | Blue   | `#FF0000FF`   |
+| Error | Red  | `#FFFF0000`   |
+| ForceClosed | Purple   | `#FF800080`   |
+| InvalidKey | Brown   | `#FFA52A2A`   |
+| Timeout | Pink   | `#FFFFC0CB`   |
+| SendError | Maroon   | `#FF800000`   |
+| Connected | Green   | `#FF008000`   |
 
 ## Troubleshooting
 
@@ -102,6 +121,8 @@ If the connection is lost:
 - Copy/Paste between machines only works with a single file and the size limit is 100MB.
 - Drag/Drop between machines works with single file only and it does not work with network files.
 - Copy/Paste, Drag/Drop does not work with folder and multiple files, the workaround is to zip them first.
-- If the host machine has a full-screen focused Remote Desktop/virtual machine window (or some kind of simulator window), the keyboard might not follow the mouse to another machine. The workaround is to enable the option "Hide mouse at screen edge" in the Settings or switch the focus to another window first.
+- If the host machine has a full-screen focused Remote Desktop/virtual machine window (or some kind of simulator window), the keyboard might not follow the mouse to another machine. The workaround is to enable the option **Hide mouse at screen edge** in the Settings or switch the focus to another window first.
 - The mouse pointer might be invisible if there is no physical mouse attached to the machine. Plug in an unused mouse or turn on **Mouse Keys** in Control Panel.
 - Some settings may not sync correctly and may need to be manually changed to be the same on all machines.
+
+[!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

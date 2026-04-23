@@ -1,17 +1,21 @@
 ---
-title: Create and consume an app service
+title: Create and Consume an App Service
 description: Learn how to write a Universal Windows Platform (UWP) app that can provide services to other UWP apps, and how to consume those services.
 ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 keywords: app to app communication, interprocess communication, IPC, Background messaging, background communication, app to app, app service
-ms.date: 01/16/2019
-ms.topic: article
+ms.date: 06/10/2025
+ms.topic: how-to
 ms.localizationpriority: medium
+# Customer intent: As a Windows developer, I want to learn how to create and consume an app service so that I can provide services to other UWP apps.
 ---
 
 # Create and consume an app service
 
+> [!NOTE]
+> The code listings in this topic are C# only. For an app service sample app in **C++/WinRT** as well as C#, see [App services sample](/samples/microsoft/windows-universal-samples/appservices/) or get the source of the **App services sample** projects on [GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
+
 > [!IMPORTANT]
-> The code listings in this topic are C# only. For an app service sample app in **C++/WinRT** as well as C#, see [App service sample app](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices).
+> This topic applies to the Universal Windows Platform (UWP) apps that use .NET Native. Visual Studio 2022 now also includes UWP project templates that use .NET 9. For this topic, you must use the UWP project templates that include ".NET Native" in their names, such as **UWP Blank App (.NET Native)**. The UWP projects that use .NET 9 have not been tested with this topic and may not work as expected.
 
 App services are UWP apps that provide services to other UWP apps. They are analogous to web services, on a device. An app service runs as a background task in the host app and can provide its service to other apps. For example, an app service might provide a bar code scanner service that other apps could use. Or perhaps an Enterprise suite of apps has a common spell checking app service that is available to the other apps in the suite.  App services let you create UI-less services that apps can call on the same device, and starting with Windows 10, version 1607, on remote devices.
 
@@ -21,12 +25,11 @@ Starting in Windows 10, version 1607, you can create app services that run in th
 
 In this how-to, we'll create everything in one solution for simplicity.
 
-1. In Visual Studio 2015 or later, create a new UWP app project and name it **AppServiceProvider**.
+1. In Visual Studio 2022 or later, create a new UWP app project and name it **AppServiceProvider**.
     1. Select **File > New > Project...** 
-    2. In the **Create a new project** dialog box, select **Blank App (Universal Windows) C#**. This will be the app that makes the app service available to other UWP apps.
-    3. Click **Next**, and then name the project **AppServiceProvider**, choose a location for it, and then click **Create**.
-
-2. When asked to select a **Target** and **Minimum version** for the project, select at least **10.0.14393**. If you want to use the new **SupportsMultipleInstances** attribute, you must be using Visual Studio 2017 or Visual Studio 2019, and target **10.0.15063** (**Windows 10 Creators Update**) or later.
+    1. In the **Create a new project** dialog box, select **UWP Blank App (.NET Native)**. Be sure to select the C# project type. This will be the app that makes the app service available to other UWP apps.
+    1. Click **Next**, and then name the project **AppServiceProvider**, choose a location for it, and then click **Create**.
+1. When asked to select a **Target** and **Minimum version** for the project, select at least **10.0.14393**. If you want to use the new **SupportsMultipleInstances** attribute, you must target **10.0.15063** (**Windows 10 Creators Update**) or later.
 
 <span id="appxmanifest"></span>
 
@@ -35,8 +38,8 @@ In this how-to, we'll create everything in one solution for simplicity.
 In the **AppServiceProvider** project, open the **Package.appxmanifest** file in a text editor: 
 
 1. Right-click it in the **Solution Explorer**. 
-2. Select **Open With**. 
-3. Select **XML (Text) Editor**. 
+1. Select **Open With**. 
+1. Select **XML (Text) Editor**. 
 
 Add the following `AppService` extension inside the `<Application>` element. This example advertises the `com.microsoft.inventory` service and is what identifies this app as an app service provider. The actual service will be implemented as a background task. The app service project exposes the service to other apps. We recommend using a reverse domain name style for the service name.
 
@@ -66,73 +69,74 @@ Note that the `xmlns:uap4` namespace prefix and the `uap4:SupportsMultipleInstan
     </Applications>
 ```
 
-The `Category` attribute identifies this application as an app service provider.
+The `Category` attribute identifies this application as an app service provider, and the `EntryPoint` attribute identifies the namespace qualified class that implements the service. We'll implement this next.
 
-The `EntryPoint` attribute identifies the namespace qualified class that implements the service, which we'll implement next.
-
-The `SupportsMultipleInstances` attribute indicates that each time the app service is called that it should run in a new process. This is not required but is available to you if you need that functionality and are targeting the 10.0.15063 SDK (**Windows 10 Creators Update**) or later. It also should be prefaced by the `uap4` namespace.
+The `SupportsMultipleInstances` attribute indicates that each time the app service is called that it should run in a new process. This isn't required but is available to you if you need that functionality and are targeting the 10.0.15063 SDK (**Windows 10 Creators Update**) or later. It also should be prefaced by the `uap4` namespace.
 
 ## Create the app service
 
-1.  An app service can be implemented as a background task. This enables a foreground application to invoke an app service in another application. To create an app service as a background task, add a new Windows Runtime component project to the solution (**File &gt; Add &gt; New Project**) named **MyAppService**. In the **Add New Project** dialog box, choose **Installed > Visual C# > Windows Runtime Component (Universal Windows)**.
-2.  In the **AppServiceProvider** project, add a project-to-project reference to the new **MyAppService** project (in the **Solution Explorer**, right-click on the **AppServiceProvider** project > **Add** > **Reference** > **Projects** > **Solution**, select **MyAppService** > **OK**). This step is critical because if you do not add the reference, the app service won't connect at runtime.
-3.  In the **MyAppService** project, add the following **using** statements to the top of **Class1.cs**:
-    ```cs
-    using Windows.ApplicationModel.AppService;
-    using Windows.ApplicationModel.Background;
-    using Windows.Foundation.Collections;
-    ```
+In this section, we will create an app service that runs as a background task. The app service will provide a simple inventory service that allows other apps to query the name and price of items in the inventory.
 
-4.  Rename **Class1.cs** to **Inventory.cs**, and replace the stub code for **Class1** with a new background task class named **Inventory**:
+1. An app service can be implemented as a background task. This enables a foreground application to invoke an app service in another application. To create an app service as a background task, add a new Windows Runtime component project to the solution (**File &gt; Add &gt; New Project**) named **MyAppService**. In the **Add a new project** dialog box, choose **Windows Runtime Component (.NET Native)**.
+1. In the **AppServiceProvider** project, add a project reference to the new **MyAppService** project (in the **Solution Explorer**, right-click on the **AppServiceProvider** project > **Add** > **Reference** > **Projects** > **Solution**, select **MyAppService** > **OK**). This step is critical because if you do not add the reference, the app service won't connect at runtime.
+1. In the **MyAppService** project, add the following **using** statements to the top of **Class1.cs**:
 
-    ```cs
-    public sealed class Inventory : IBackgroundTask
-    {
-        private BackgroundTaskDeferral backgroundTaskDeferral;
-        private AppServiceConnection appServiceconnection;
-        private String[] inventoryItems = new string[] { "Robot vacuum", "Chair" };
-        private double[] inventoryPrices = new double[] { 129.99, 88.99 };
+   ```cs
+   using Windows.ApplicationModel.AppService;
+   using Windows.ApplicationModel.Background;
+   using Windows.Foundation.Collections;
+   ```
 
-        public void Run(IBackgroundTaskInstance taskInstance)
-        {
-            // Get a deferral so that the service isn't terminated.
-            this.backgroundTaskDeferral = taskInstance.GetDeferral();
+1. Rename **Class1.cs** to **Inventory.cs**, and replace the stub code for **Class1** with a new background task class named **Inventory**:
 
-            // Associate a cancellation handler with the background task.
-            taskInstance.Canceled += OnTaskCanceled;
+   ```cs
+   public sealed class Inventory : IBackgroundTask
+   {
+       private BackgroundTaskDeferral backgroundTaskDeferral;
+       private AppServiceConnection appServiceconnection;
+       private String[] inventoryItems = new string[] { "Robot vacuum", "Chair" };
+       private double[] inventoryPrices = new double[] { 129.99, 88.99 };
 
-            // Retrieve the app service connection and set up a listener for incoming app service requests.
-            var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
-            appServiceconnection = details.AppServiceConnection;
-            appServiceconnection.RequestReceived += OnRequestReceived;
-        }
+       public void Run(IBackgroundTaskInstance taskInstance)
+       {
+           // Get a deferral so that the service isn't terminated.
+           this.backgroundTaskDeferral = taskInstance.GetDeferral();
 
-        private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
-        {
-            // This function is called when the app service receives a request.
-        }
+           // Associate a cancellation handler with the background task.
+           taskInstance.Canceled += OnTaskCanceled;
 
-        private void OnTaskCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
-        {
-            if (this.backgroundTaskDeferral != null)
-            {
-                // Complete the service deferral.
-                this.backgroundTaskDeferral.Complete();
-            }
-        }
-    }
-    ```
+           // Retrieve the app service connection and set up a listener for incoming app service requests.
+           var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
+           appServiceconnection = details.AppServiceConnection;
+           appServiceconnection.RequestReceived += OnRequestReceived;
+       }
 
-    This class is where the app service will do its work.
+       private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
+       {
+           // This function is called when the app service receives a request.
+       }
 
-    **Run** is called when the background task is created. Because background tasks are terminated after **Run** completes, the code takes out a deferral so that the background task will stay up to serve requests. An app service that is implemented as a background task will stay alive for about 30 seconds after it receives a call unless it is called again within that time window or a deferral is taken out. If the app service is implemented in the same process as the caller, the lifetime of the app service is tied to the lifetime of the caller.
+       private void OnTaskCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
+       {
+           if (this.backgroundTaskDeferral != null)
+           {
+               // Complete the service deferral.
+               this.backgroundTaskDeferral.Complete();
+           }
+       }
+   }
+   ```
 
-    The lifetime of the app service depends on the caller:
+   This class is where the app service will do its work.
 
-    * If the caller is in the foreground, the app service lifetime is the same as the caller.
-    * If the caller is in the background, the app service gets 30 seconds to run. Taking out a deferral provides an additional one time 5 seconds.
+   **Run** is called when the background task is created. Because background tasks are terminated after **Run** completes, the code takes out a deferral so that the background task will stay up to serve requests. An app service that is implemented as a background task will stay alive for about 30 seconds after it receives a call unless it is called again within that time window or a deferral is taken out. If the app service is implemented in the same process as the caller, the lifetime of the app service is tied to the lifetime of the caller.
 
-    **OnTaskCanceled** is called when the task is canceled. The task is canceled when the client app disposes the [AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection), the client app is suspended, the OS is shut down or sleeps, or the OS runs out of resources to run the task.
+   The lifetime of the app service depends on the caller:
+
+   - If the caller is in the foreground, the app service lifetime is the same as the caller.
+   - If the caller is in the background, the app service gets 30 seconds to run. Taking out a deferral provides an additional one time 5 seconds.
+
+   **OnTaskCanceled** is called when the task is canceled. The task is canceled when the client app disposes the [AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection), the client app is suspended, the OS is shut down or sleeps, or the OS runs out of resources to run the task.
 
 ## Write the code for the app service
 
@@ -215,23 +219,29 @@ The call to [SendResponseAsync](/uwp/api/windows.applicationmodel.appservice.app
 
 The app service provider must be deployed before you can call it from a client. You can deploy it by selecting **Build > Deploy Solution** in Visual Studio.
 
-You will also need the package family name of the app service provider in order to call it. You can get it by opening the **AppServiceProvider** project's **Package.appxmanifest** file in the designer view (double-click it in the **Solution Explorer**). Select the **Packaging** tab, copy the value next to **Package family name**, and paste it somewhere like Notepad for now.
+You will also need the package family name of the app service provider in order to call it. You can get it by following these steps:
+
+1. Open the **AppServiceProvider** project's **Package.appxmanifest** file in the designer view (double-click it in the **Solution Explorer**).
+1. Select the **Packaging** tab, copy the value next to **Package family name**, and paste it somewhere like Notepad for now.
 
 ## Write a client to call the app service
 
-1.  Add a new blank Windows Universal app project to the solution with **File &gt; Add &gt; New Project**. In the **Add New Project** dialog box, choose **Installed > Visual C# > Blank App (Universal Windows)** and name it **ClientApp**.
+In this section, we will create a client app that calls the app service that we just created. The client app will be a simple UWP app that has a text box and a button. When the user enters an index into the text box and clicks the button, the app will call the app service to get the name and price of the inventory item at that index.
 
-2.  In the **ClientApp** project, add the following **using** statement to the top of **MainPage.xaml.cs**:
-    ```cs
-    using Windows.ApplicationModel.AppService;
-    ```
+1. Add a new blank Windows Universal app project to the solution with **File &gt; Add &gt; New Project**. In the **Add a new project** dialog box, choose **UWP Blank App (.NET Native)** and name it **ClientApp**.
+1. In the **ClientApp** project, add the following **using** statement to the top of **MainPage.xaml.cs**:
 
-3.  Add a text box called **textBox** and a button to **MainPage.xaml**.
+   ```cs
+   using Windows.ApplicationModel.AppService;
+   ```
 
-4.  Add a button click handler for the button called **button_Click**, and add the keyword **async** to the button handler's signature.
+1. Change the **Grid** on the main page to a **StackPanel** so we can add a text box and a button to it.
+1. Add a **TextBox** named **textBox** and a button to **MainPage.xaml**.
+1. Add a **Button** with a click event handler called **button_Click** and some text for the content such as "Click me".
+1. Add the **async** keyword to the button handler's signature in **MainPage.xaml.cs**.
+1. Replace the stub of your button click handler with the following code. Be sure to include the `inventoryService` field declaration in the class.
 
-5. Replace the stub of your button click handler with the following code. Be sure to include the `inventoryService` field declaration.
-    ```cs
+   ```cs
    private AppServiceConnection inventoryService;
 
    private async void button_Click(object sender, RoutedEventArgs e)
@@ -294,43 +304,49 @@ You will also need the package family name of the app service provider in order 
    }
    ```
     
-    Replace the package family name in the line `this.inventoryService.PackageFamilyName = "Replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained above in [Deploy the service app and get the package family name](#deploy-the-service-app-and-get-the-package-family-name).
+   Replace the package family name in the line `this.inventoryService.PackageFamilyName = "Replace with the package family name";` with the package family name of the **AppServiceProvider** project that you obtained above in [Deploy the service app and get the package family name](#deploy-the-service-app-and-get-the-package-family-name).
 
-    > [!NOTE]
-    > Make sure to paste in the string literal, rather than putting it in a variable. It will not work if you use a variable.
+   > [!NOTE]
+   > Make sure to paste in the string literal, rather than putting it in a variable. It will not work if you use a variable.
 
-    The code first establishes a connection with the app service. The connection will remain open until you dispose `this.inventoryService`. The app service name must match the `AppService` element's `Name` attribute that you added to the **AppServiceProvider** project's **Package.appxmanifest** file. In this example, it is `<uap3:AppService Name="com.microsoft.inventory"/>`.
+   The code first establishes a connection with the app service. The connection will remain open until you dispose `this.inventoryService`. The app service name must match the `AppService` element's `Name` attribute that you added to the **AppServiceProvider** project's **Package.appxmanifest** file. In this example, it is `<uap3:AppService Name="com.microsoft.inventory"/>`.
 
-    A [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) named `message` is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the text box in the client app, and then call the service with the `Item` command to get the description of the item. Then, we make the call with the `Price` command to get the item's price. The button text is set to the result.
+   A [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) named `message` is created to specify the command that we want to send to the app service. The example app service expects a command to indicate which of two actions to take. We get the index from the text box in the client app, and then call the service with the `Item` command to get the description of the item. Then, we make the call with the `Price` command to get the item's price. The button text is set to the result.
 
-    Because [AppServiceResponseStatus](/uwp/api/Windows.ApplicationModel.AppService.AppServiceResponseStatus) only indicates whether the operating system was able to connect the call to the app service, we check the `Status` key in the [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) we receive from the app service to ensure that it was able to fulfill the request.
+   Because [AppServiceResponseStatus](/uwp/api/Windows.ApplicationModel.AppService.AppServiceResponseStatus) only indicates whether the operating system was able to connect the call to the app service, we check the `Status` key in the [ValueSet](/uwp/api/Windows.Foundation.Collections.ValueSet) we receive from the app service to ensure that it was able to fulfill the request.
 
-6. Set the **ClientApp** project to be the startup project (right-click it in the **Solution Explorer** > **Set as StartUp Project**) and run the solution. Enter the number 1 into the text box and click the button. You should get "Chair : Price = 88.99" back from the service.
+1. Set the **ClientApp** project to be the startup project (right-click it in the **Solution Explorer** > **Set as StartUp Project**) and run the solution. Enter the number 1 into the text box and click the button. You should get "Chair : Price = 88.99" back from the service.
 
-    ![sample app displaying chair price=88.99](images/appserviceclientapp.png)
+   ![sample app displaying chair price=88.99](images/appserviceclientapp.png)
+
+## Solve common issues
 
 If the app service call fails, check the following in the **ClientApp** project:
 
-1.  Verify that the package family name assigned to the inventory service connection matches the package family name of the **AppServiceProvider** app. See the line in **button\_Click** with `this.inventoryService.PackageFamilyName = "...";`.
-2.  In **button\_Click**, verify that the app service name that is assigned to the inventory service connection matches the app service name in the **AppServiceProvider**'s **Package.appxmanifest** file. See: `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
-3.  Ensure that the **AppServiceProvider** app has been deployed. (In the **Solution Explorer**, right-click the solution and choose **Deploy Solution**).
+1. Verify that the package family name assigned to the inventory service connection matches the package family name of the **AppServiceProvider** app. See the line in **button\_Click** with `this.inventoryService.PackageFamilyName = "...";`.
+1. In **button\_Click**, verify that the app service name that is assigned to the inventory service connection matches the app service name in the **AppServiceProvider**'s **Package.appxmanifest** file. See: `this.inventoryService.AppServiceName = "com.microsoft.inventory";`.
+1. Ensure that the **AppServiceProvider** app has been deployed. (In the **Solution Explorer**, right-click the solution and choose **Deploy Solution**).
 
 ## Debug the app service
 
-1.  Ensure that the solution is deployed before debugging because the app service provider app must be deployed before the service can be called. (In Visual Studio, **Build &gt; Deploy Solution**).
-2.  In the **Solution Explorer**, right-click the **AppServiceProvider** project and choose **Properties**. From the **Debug** tab, change the **Start action** to **Do not launch, but debug my code when it starts**. (Note, if you were using C++ to implement your app service provider, from the **Debugging** tab you would change **Launch Application** to **No**).
-3.  In the **MyAppService** project, in the **Inventory.cs** file, set a breakpoint in **OnRequestReceived**.
-4.  Set the **AppServiceProvider** project to be the startup project and press **F5**.
-5.  Start **ClientApp** from the Start menu (not from Visual Studio).
-6.  Enter the number 1 into the text box and press the button. The debugger will stop in the app service call on the breakpoint in your app service.
+To debug the app service, you need to set up the solution so that the app service provider is deployed and the app service can be called from the client app. Follow these steps:
+
+1. Ensure that the solution is deployed before debugging because the app service provider app must be deployed before the service can be called. (In Visual Studio, **Build &gt; Deploy Solution**).
+1. In the **Solution Explorer**, right-click the **AppServiceProvider** project and choose **Properties**. From the **Debug** tab, change the **Start action** to **Do not launch, but debug my code when it starts**. (Note, if you were using C++ to implement your app service provider, from the **Debugging** tab you would change **Launch Application** to **No**).
+1. In the **MyAppService** project, in the **Inventory.cs** file, set a breakpoint in **OnRequestReceived**.
+1. Set the **AppServiceProvider** project to be the startup project and press **F5**.
+1. Start **ClientApp** from the Start menu (not from Visual Studio).
+1. Enter the number 1 into the text box and press the button. The debugger will stop in the app service call on the breakpoint in your app service.
 
 ## Debug the client
 
-1.  Follow the instructions in the preceding step to debug the client that calls the app service.
-2.  Launch **ClientApp** from the Start menu.
-3.  Attach the debugger to the **ClientApp.exe** process (not the **ApplicationFrameHost.exe** process). (In Visual Studio, choose **Debug &gt; Attach to Process...**.)
-4.  In the **ClientApp** project, set a breakpoint in **button\_Click**.
-5.  The breakpoints in both the client and the app service will now be hit when you enter the number 1 into the text box of **ClientApp** and click the button.
+To debug the client app that calls the app service, you need to attach the debugger to the client app process. Follow these steps:
+
+1. Follow the instructions in the preceding step to debug the client that calls the app service.
+1. Launch **ClientApp** from the Start menu.
+1. Attach the debugger to the **ClientApp.exe** process (not the **ApplicationFrameHost.exe** process). (In Visual Studio, choose **Debug &gt; Attach to Process...**.)
+1. In the **ClientApp** project, set a breakpoint in **button\_Click**.
+1. The breakpoints in both the client and the app service will now be hit when you enter the number 1 into the text box of **ClientApp** and click the button.
 
 ## General app service troubleshooting
 
@@ -354,13 +370,15 @@ If the debugger does not stop at breakpoints in your app service provider or app
 
 This example provides an introduction to creating an app service that runs as a background task and calling it from another app. The key things to note are:
 
-* Create a background task to host the app service.
-* Add the `windows.appService` extension to the app service provider's **Package.appxmanifest** file.
-* Obtain the package family name of the app service provider so that we can connect to it from the client app.
-* Add a project-to-project reference from the app service provider project to the app service project.
-* Use [Windows.ApplicationModel.AppService.AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) to call the service.
+- Create a background task to host the app service.
+- Add the `windows.appService` extension to the app service provider's **Package.appxmanifest** file.
+- Obtain the package family name of the app service provider so that we can connect to it from the client app.
+- Add a project-to-project reference from the app service provider project to the app service project.
+- Use [Windows.ApplicationModel.AppService.AppServiceConnection](/uwp/api/Windows.ApplicationModel.AppService.AppServiceConnection) to call the service.
 
 ## Full code for MyAppService
+
+The following is the complete code for the **MyAppService** project, which implements the app service as a background task. This code should be placed in the **Inventory.cs** file of the **MyAppService** project.
 
 ```cs
 using System;
@@ -456,8 +474,8 @@ namespace MyAppService
 }
 ```
 
-## Related topics
+## Related content
 
-* [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md)
-* [Support your app with background tasks](support-your-app-with-background-tasks.md)
-* [App service sample app (C# and C++/WinRT)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)
+- [Convert an app service to run in the same process as its host app](convert-app-service-in-process.md)
+- [Support your app with background tasks](support-your-app-with-background-tasks.md)
+- [App service sample app (C# and C++/WinRT)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AppServices)

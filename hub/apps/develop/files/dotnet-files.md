@@ -1,15 +1,34 @@
 ---
 ms.assetid: 5931d63c-6b80-4e47-b371-ee299e308b8e
-title: Access files and folders with Windows App SDK and .NET
-description: Packaged Windows App SDK apps can leverage .NET APIs for reading and writing files, working with folders, and reading drive and volume information.
-ms.date: 06/16/2023
-ms.topic: article
+title: Access Files and Folders with Windows App SDK and .NET
+description: Learn how to access files and folders in WinUI apps using .NET APIs. Read and write files, manage directories, work with drives, and handle memory streams with practical code examples.
+ms.date: 08/21/2025
+ms.topic: how-to
 keywords: windows 10, windows 11, windows, winui, windows app sdk, dotnet
 ms.localizationpriority: medium
+# customer intent: As a Windows app developer, I want to learn how to use .NET APIs for file management in my WinUI app.
 ---
+
 # Access files and folders with Windows App SDK and .NET
 
-Packaged Windows App SDK apps can leverage [.NET APIs](/dotnet/) for reading and writing files, working with folders, and reading drive and volume information. Additionally, any packaged desktop app can utilize both WinRT and Win32 APIs in the Windows SDK, as well as the APIs provided in the .NET SDK. This article provides guidance on how to use the .NET [System.IO](/dotnet/api/system.io) APIs to read and write files, manage drives and folders, and work with memory streams to encode or decode string data.
+This article shows you how to access files and folders using .NET APIs in packaged WinUI apps. You'll learn to read and write files, manage directories and drives, and work with memory streams for string encoding and decoding.
+
+WinUI apps can use [.NET APIs](/dotnet/) alongside WinRT and Win32 APIs to provide comprehensive file system access. The examples in this article focus on the [System.IO](/dotnet/api/system.io) namespace, which provides the core functionality for file and directory operations.
+
+## Prerequisites
+
+- Visual Studio 2022 with the **WinUI application development** workload installed
+- A packaged WinUI project
+- Basic familiarity with C# and .NET development
+
+## What you'll learn
+
+In this article, you'll learn how to:
+
+- Read and write files using [FileStream](/dotnet/api/system.io.filestream), [BinaryWriter](/dotnet/api/system.io.binarywriter), and [BinaryReader](/dotnet/api/system.io.binaryreader)
+- Create, delete, and manage directories with [DirectoryInfo](/dotnet/api/system.io.directoryinfo) and [Directory](/dotnet/api/system.io.directory) classes
+- Retrieve drive information using [DriveInfo](/dotnet/api/system.io.driveinfo)
+- Encode and decode strings with [MemoryStream](/dotnet/api/system.io.memorystream) and [StreamReader](/dotnet/api/system.io.streamreader)
 
 ## Read and write files with .NET APIs
 
@@ -145,7 +164,7 @@ private async Task EncodeDecodeStringAsync(string inputData)
 ```
 
 > [!NOTE]
-> For informatio about converting between .NET streams and WinRT streams, see [How to: Convert between .NET and Windows Runtime streams](/dotnet/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams).
+> For information about converting between .NET streams and WinRT streams, see [How to: Convert between .NET and Windows Runtime streams](/dotnet/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams).
 
 ## See also
 

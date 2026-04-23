@@ -2,31 +2,26 @@
 description: See guidelines and best practices for using geofencing to provide geographically contextual experiences in your app.
 title: Guidelines for geofencing apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
-ms.date: 10/20/2020
+ms.date: 06/21/2024
 ms.topic: article
 keywords: windows 10, uwp, map, location, geofencing
 ms.localizationpriority: medium
 ---
 # Guidelines for geofencing apps
 
-> [!NOTE]
-> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services requite a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
+Follow these best practices for [**geofencing**](/uwp/api/Windows.Devices.Geolocation.Geofencing) in your app.
 
 **Important APIs**
 
 -   [**Geofence class (XAML)**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence)
 -   [**Geolocator class (XAML)**](/uwp/api/Windows.Devices.Geolocation.Geolocator)
 
-Follow these best practices for [**geofencing**](/uwp/api/Windows.Devices.Geolocation.Geofencing) in your app.
-
 ## Recommendations
-
 
 -   If your app will need internet access when a [**Geofence**](/uwp/api/Windows.Devices.Geolocation.Geofencing.Geofence) event occurs, check for internet access before creating the geofence.
     -   If the app doesn't currently have internet access, you can prompt the user to connect to the internet before you set up the geofence.
     -   If internet access isn't possible, avoid consuming the power required for the geofencing location checks.
--   Ensure the relevance of geofencing notifications by checking the time stamp and current location when a geofence event indicates changes to an [**Entered**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState) or **Exited** state. See **Checking the time stamp and current location** below for more information.
-(#timestamp) below for more information.
+-   Ensure the relevance of geofencing notifications by checking the time stamp and current location when a geofence event indicates changes to an [**Entered**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState) or **Exited** state. See [Checking the time stamp and current location](#checking-the-time-stamp-and-current-location) below for more information.
 -   Create exceptions to manage cases when a device can't access location info, and notify the user if necessary. Location info may be unavailable because permissions are turned off, the device doesn't contain a GPS radio, the GPS signal is blocked, or the Wi-Fi signal isn't strong enough.
 -   In general, it isn't necessary to listen for geofence events in the foreground and background at the same time. However, if your app needs to listen for geofence events in both the foreground and background:
 
@@ -42,7 +37,7 @@ Follow these best practices for [**geofencing**](/uwp/api/Windows.Devices.Geoloc
 
 ### Checking the time stamp and current location
 
-When an event indicates a change to an [**Entered**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState) or **Exited** state, check both the time stamp of the event and your current location. Various factors, such as the system not having enough resources to launch a background task, the user not noticing the notification, or the device being in standby (on Windows), may affect when the event is actually processed by the user. For example, the following sequence may occur:
+When an event indicates a change to an [**Entered**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState) or **Exited** state, check both the time stamp of the event and your current location. Various factors, such as the system not having enough resources to launch a background task, the user not noticing the notification, or the device being in standby, may affect when the event is actually processed by the user. For example, the following sequence may occur:
 
 -   Your app creates a geofence and monitors the geofence for enter and exit events.
 -   The user moves the device inside of the geofence, causing an enter event to be triggered.
@@ -59,15 +54,11 @@ In general, your app doesn't need to listen for [**Geofence**](/uwp/api/Windows.
 If you have set up both foreground and background geofence listeners, you should unregister your foreground event listener whenever your app is not visible to the user and re-register your app when it becomes visible again. Here's some example code that registers for the visibility event.
 
 ```csharp
-    Windows.UI.Core.CoreWindow coreWindow;    
+Windows.UI.Core.CoreWindow coreWindow;    
 
-    // This needs to be set before InitializeComponent sets up event registration for app visibility
-    coreWindow = CoreWindow.GetForCurrentThread();
-    coreWindow.VisibilityChanged += OnVisibilityChanged;
-```
-
-```javascript
- document.addEventListener("visibilitychange", onVisibilityChanged, false);
+// This needs to be set before InitializeComponent sets up event registration for app visibility
+coreWindow = CoreWindow.GetForCurrentThread();
+coreWindow.VisibilityChanged += OnVisibilityChanged;
 ```
 
 When the visibility changes, you can then enable or disable the foreground event handlers as shown here.
@@ -94,24 +85,6 @@ private void OnVisibilityChanged(CoreWindow sender, VisibilityChangedEventArgs a
 }
 ```
 
-```javascript
-function onVisibilityChanged() {
-    // NOTE: After the app is no longer visible on the screen and before the app is suspended
-    // you might want your app to use toast notification for any geofence activity.
-    // By registering for VisibiltyChanged the app is notified when the app is no longer visible in the foreground.
-
-    if (document.msVisibilityState === "visible") {
-        // register for foreground events
-        Windows.Devices.Geolocation.Geofencing.GeofenceMonitor.current.addEventListener("geofencestatechanged", onGeofenceStateChanged);
-        Windows.Devices.Geolocation.Geofencing.GeofenceMonitor.current.addEventListener("statuschanged", onGeofenceStatusChanged);
-    } else {
-        // unregister foreground events (let background capture events)
-        Windows.Devices.Geolocation.Geofencing.GeofenceMonitor.current.removeEventListener("geofencestatechanged", onGeofenceStateChanged);
-        Windows.Devices.Geolocation.Geofencing.GeofenceMonitor.current.removeEventListener("statuschanged", onGeofenceStatusChanged);
-    }
-}
-```
-
 ### Sizing your geofences
 
 While GPS can provide the most accurate location info, geofencing can also use Wi-Fi or other location sensors to determine the user's current position. But using these other methods can affect the size of the geofences you can create. If the accuracy level is low, creating small geofences won't be useful. In general, it is recommended that you do not create a geofence with a radius smaller than 50 meters. Also, geofence background tasks only run periodically on Windows; if you use a small geofence, there's a possibility that you could miss an [**Enter**](/uwp/api/Windows.Devices.Geolocation.Geofencing.GeofenceState) or **Exit** event entirely.
@@ -120,10 +93,6 @@ If your app needs to use a geofence with a small radius, advise users to use you
 
 ## Related topics
 
-
 * [Set up a geofence](./set-up-a-geofence.md)
 * [Get current location](./get-location.md)
 * [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
- 
-
- 

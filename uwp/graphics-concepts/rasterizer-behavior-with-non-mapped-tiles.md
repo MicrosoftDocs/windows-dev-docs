@@ -5,7 +5,7 @@ ms.assetid: AC7B818D-E52B-4727-AEA2-39CFDC279CE7
 keywords:
 - Rasterizer behavior with non-mapped tiles
 ms.date: 02/08/2017
-ms.topic: article
+ms.topic: concept-article
 
 
 ms.localizationpriority: medium

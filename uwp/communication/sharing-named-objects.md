@@ -2,7 +2,7 @@
 title: Sharing named objects
 description: This topic explains how to share named objects between Universal Windows Platform (UWP) applications and Win32 applications.
 ms.date: 04/06/2020
-ms.topic: article
+ms.topic: concept-article
 keywords: windows 10, uwp
 ---
 # Sharing named objects

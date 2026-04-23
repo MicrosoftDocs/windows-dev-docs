@@ -1,8 +1,8 @@
 --- 
 title: Update existing projects to a different release of the Windows App SDK
 description: This article provides instructions for updating a project created with an earlier preview or release version of the Windows App SDK or WinUI 3 to the latest version.
-ms.topic: article
-ms.date: 03/03/2023
+ms.topic: how-to
+ms.date: 07/14/2025
 keywords: windows win32, desktop development, Windows App SDK, Project Reunion
 ms.localizationpriority: medium
 ---
@@ -63,7 +63,7 @@ If you created a project using version 0.8 (for example, version 0.8.4), then yo
 ## Update from 0.8 or 0.8 Preview to 1.0 Experimental or Preview 3
 
 > [!IMPORTANT]
-> Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you’ve already installed one of these previews, see [how to resolve the issue](preview-channel.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [1.0 Preview 3](preview-channel.md#version-10-preview-3-100-preview3) instead. 
+> Version 1.0 Preview 1 and Preview 2 contain a critical bug. If you've already installed one of these previews, see [Important issue impacting 1.0 Preview 1 and Preview 2](release-notes-archive/preview-channel-1.0.md#important-issue-impacting-10-preview-1-and-preview-2). We recommend using version [Version 1.0 Preview 3 (1.0.0-preview3)](release-notes-archive/preview-channel-1.0.md#version-10-preview-3-100-preview3) instead.
 
 If you created a project using version 0.8 Preview or any version of 0.8 (for example, version 0.8.1), you can follow these instructions to update your project to the 1.0 Preview 3 or Experimental release.
 
@@ -169,7 +169,7 @@ Next, make these changes to your project:
 If you created a project using version 0.8 Preview, you can follow these instructions to update your project to a stable version of 0.8. These instructions also apply if you've created a project with an older stable version of 0.8 (for example, 0.8.0) and want to update your project to a newer stable version (for example, 0.8.2).
 
 > [!NOTE]
-> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
+> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
@@ -245,7 +245,7 @@ Next, make these changes to your project:
 If you created a project using version 0.5 stable, you can follow these instructions to update your project to version 0.8 stable.
 
 > [!NOTE]
-> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
+> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
@@ -314,7 +314,7 @@ Next, make these changes to your project:
 If you created a project using version 0.5 preview, you can follow these instructions to update your project to use version 0.8 preview.
 
 > [!NOTE]
-> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio 2019, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
+> You may be able to automatically update your project through the Visual Studio Extension Manager, without going through the manual steps below. In Visual Studio, click on **Extensions** > **Manage Extensions** and select **Updates** from the left menu bar. Select "Project Reunion" from the list and click **Update**.
 
 Before starting, make sure you have all the Windows App SDK prerequisites installed, including the latest VSIX and NuGet package. For more details, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
 
