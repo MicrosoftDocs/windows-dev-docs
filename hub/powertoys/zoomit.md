@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Win]
 
 ZoomIt is a screen zoom, annotation, and recording tool for technical presentations and demos. You can also use ZoomIt to snip screenshots to the clipboard or to a file. ZoomIt runs unobtrusively in the tray and activates with customizable hotkeys to zoom in on an area of the screen, move around while zoomed, and draw on the zoomed image.
 
-:::image type="content" source="images/powertoys-zoomit.gif" alt-text="Animation of the PowerToys ZoomIt utility demonstrating screen zoom and annotation features during a presentation.":::
+:::image type="content" source="images/zoomit/zoomit.gif" alt-text="Animation of the PowerToys ZoomIt utility demonstrating screen zoom and annotation features during a presentation.":::
 
 ZoomIt is one of the [Sysinternals](/sysinternals/) utilities and its standalone version works all versions of Windows. To provide the most flexibility, this standalone version will continue to be available from Sysinternals. For more information about using ZoomIt or to download a standalone version, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
 

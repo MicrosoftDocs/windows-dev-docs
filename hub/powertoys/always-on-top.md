@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Always On Top, Win]
 
 PowerToys Always On Top is a system-wide Windows utility that allows you to pin windows above other windows. This utility helps you keep important windows visible at all times, improving your productivity by ensuring critical information stays accessible while you work with other applications.
 
-:::image type="content" source="images/pt-always-on-top.png" alt-text="Screenshot of PowerToys Always On Top utility showing a pinned window with colored border highlighting.":::
+:::image type="content" source="images/always-on-top/always-on-top.png" alt-text="Screenshot of PowerToys Always On Top utility showing a pinned window with colored border highlighting.":::
 
 ## Pin a window
 

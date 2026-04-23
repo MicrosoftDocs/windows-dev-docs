@@ -25,13 +25,13 @@ To add a new entry using the Hosts File Editor:
 - Enter any comments that may be helpful in identifying the purpose of the entry
 - Turn on the **Active** toggle and select **Add**
 
-![PowerToys Hosts File Editor: Add new entry](images/pt-hosts-file-editor-add-new-entry.gif)
+![PowerToys Hosts File Editor: Add new entry](images/hosts-file-editor/add-new-entry.gif)
 
 ## Filtering host file entries
 
 To filter host file entries, select the filter icon and enter data in either the Address, Hosts, or Comment field to narrow the scope of results.
 
-![PowerToys Hosts File Editor: Filtering entries](images/pt-hosts-file-editor-filter.gif)
+![PowerToys Hosts File Editor: Filtering entries](images/hosts-file-editor/filter.gif)
 
 ## Back up Hosts file
 
@@ -63,7 +63,7 @@ From the Settings menu, the following options can be configured:
 
 A "Failed to save hosts file" message appears if a change is made without administrator permissions:
 
-![PowerToys Hosts File Editor: Failed to save hosts file](images/pt-hosts-file-editor-failed-to-save-hosts-file-error.png)
+![PowerToys Hosts File Editor: Failed to save hosts file](images/hosts-file-editor/failed-to-save-hosts-file-error.png)
 
 Select **Open as administrator** in settings to fix the error.
 

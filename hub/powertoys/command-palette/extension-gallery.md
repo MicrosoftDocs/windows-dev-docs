@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 The Extension Gallery is a curated directory of Command Palette extensions that users can browse directly from within Command Palette settings. Listing your extension in the Gallery makes it discoverable to all Command Palette users — they can see your extension's description, screenshots, and install it with a single click.
 
-:::image type="content" source="../images/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
+:::image type="content" source="../images/command-palette/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
 
 The Gallery itself doesn't host extensions. Instead, it links to your extension's install source — whether that's [WinGet](publish-extension-winget.md), the [Microsoft Store](publish-extension-store.md), or a direct download URL (such as a GitHub Releases page). When a user installs your extension from the Gallery, Command Palette uses the install source you specified.
 
@@ -23,7 +23,7 @@ The Extension Gallery is powered by the [microsoft/CmdPal-Extensions](https://gi
 
 Once listed, your extension's detail page is displayed directly in Command Palette, giving users a rich preview before they install.
 
-:::image type="content" source="../images/details.png" alt-text="A screenshot of an extension detail page in Command Palette showing the extension description, screenshots, and install button.":::
+:::image type="content" source="../images/command-palette/details.png" alt-text="A screenshot of an extension detail page in Command Palette showing the extension description, screenshots, and install button.":::
 
 ## Related content
 
