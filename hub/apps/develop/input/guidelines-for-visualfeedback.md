@@ -16,13 +16,16 @@ ms.localizationpriority: medium
 Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
 
 > **Important APIs**:  [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
+>
+> [!NOTE]
+> The `Windows.Devices.Input` and `Windows.UI.Input` APIs are Windows SDK (WinRT) APIs that work in both UWP and WinUI 3 apps. For WinUI 3-specific input APIs, see [Microsoft.UI.Input](/windows/windows-app-sdk/api/winrt/microsoft.ui.input).
 
 ## Recommendations
 
 - Try to limit modifications of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application. 
     - See [XAML styles](../platform/xaml/xaml-styles.md) for more info on customizing the properties of a control, including visual state properties.
-    - See the [UserControl Class](/uwp/api/windows.ui.xaml.controls.usercontrol) for details on making changes to a control template
-    - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl).
+    - See the [UserControl Class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.usercontrol) for details on making changes to a control template
+    - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl) (UWP sample).
 - Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
 - Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.
 - Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.
@@ -69,7 +72,7 @@ To change the thickness of either border type (primary or secondary) use the **F
 ```
 ![High visibility focus visual margin thicknesses](images/focus-margin.png)
 
-The margin is a property of type [**Thickness**](/dotnet/api/system.windows.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below:
+The margin is a property of type [**Thickness**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.thickness), and therefore the margin can be customized to appear only on certain sides of the control. See below:
 ![High visibility focus visual margin thickness bottom only](images/focus-thickness-side.png)
 
 The margin is the space between the control's visual bounds and the start of the focus visuals *secondary border*. The default margin is **1px** away from the control bounds. You can edit this margin on a per-control basis, by changing the **FocusVisualMargin** property:
@@ -119,6 +122,9 @@ To change the colors on a per-control basis, just edit the focus visual properti
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 - [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+
+> [!NOTE]
+> The samples above are from the UWP Windows-universal-samples repository. For WinUI 3 examples, see the [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery).
 
 ### Archive samples
 
