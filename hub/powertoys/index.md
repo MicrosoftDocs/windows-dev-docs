@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys - Windows Utilities for Power Users
 description: Microsoft PowerToys includes 25+ free Windows utilities including FancyZones, PowerToys Run, Color Picker, PowerRename, and more. Boost productivity for power users on Windows 10/11.
-ms.date: 07/02/2025
+ms.date: 04/26/2026
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always On Top]
@@ -102,13 +102,18 @@ The currently available utilities include:
         Check which files are in use and by which processes from the File Explorer context menu.
     :::column-end:::
     :::column:::
-       [![Hosts File Editor icon](images/hosts-file-editor/facade.png)](hosts-file-editor.md)<br>
-        **[Hosts File Editor](hosts-file-editor.md)**<br>
-        Edit the Windows Hosts file containing domain names and IP addresses.
+       [![Grab And Move icon](images/grab-and-move/grab-and-move.png)](grab-and-move.md)<br>
+        **[Grab And Move](grab-and-move.md)**<br>
+        Move and resize windows by holding a modifier key and dragging anywhere inside the window.
     :::column-end:::
 :::row-end:::
 
 :::row:::
+    :::column:::
+       [![Hosts File Editor icon](images/hosts-file-editor/facade.png)](hosts-file-editor.md)<br>
+        **[Hosts File Editor](hosts-file-editor.md)**<br>
+        Edit the Windows Hosts file containing domain names and IP addresses.
+    :::column-end:::
     :::column:::
        [![Image Resizer icon](images/image-resizer/image-resizer.png)](image-resizer.md)<br>
         **[Image Resizer](image-resizer.md)**<br>
@@ -119,14 +124,14 @@ The currently available utilities include:
         **[Keyboard Manager](keyboard-manager.md)**<br>
         Customize the keyboard by remapping keys and creating custom shortcuts.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Light Switch icon](images/light-switch/light-switch.png)](light-switch.md)<br>
         **[Light Switch](light-switch.md)**<br>
         Automatically switch between light and dark themes based on time of day.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Mouse utilities icon](images/mouse-utilities/mouse-utils.png)](mouse-utilities.md)<br>
         **[Mouse utilities](mouse-utilities.md)**<br>
@@ -137,19 +142,27 @@ The currently available utilities include:
         **[Mouse Without Borders](mouse-without-borders.md)**<br>
         Control multiple computers with a single keyboard and mouse.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![New+ icon](images/newplus/newplus.png)](newplus.md)<br>
         **[New+](newplus.md)**<br>
         Create files and folders from a personalized set of templates in File Explorer.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Peek icon](images/peek/peek.png)](peek.md)<br>
         **[Peek](peek.md)**<br>
         Preview file content without opening applications or interrupting your workflow.
     :::column-end:::
+    :::column:::
+       [![Power Display icon](images/power-display/powerdisplay.png)](power-display.md)<br>
+        **[Power Display](power-display.md)**<br>
+        Control external monitor brightness, contrast, volume, input source, and color temperature from a single flyout.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![PowerRename icon](images/powerrename/rename.png)](powerrename.md)<br>
         **[PowerRename](powerrename.md)**<br>
@@ -160,14 +173,14 @@ The currently available utilities include:
         **[PowerToys Run](run.md)**<br>
         Search and open apps instantly with a quick launcher that supports plugins.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Quick Accent icon](images/quick-accent/keyboard-accent.png)](Quick-accent.md)<br>
         **[Quick Accent](Quick-accent.md)**<br>
         An alternative way to type accented characters when your keyboard doesn't support them.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Registry Preview icon](images/registry-preview/registrypreview.png)](registry-preview.md)<br>
         **[Registry Preview](registry-preview.md)**<br>
@@ -178,14 +191,14 @@ The currently available utilities include:
         **[Screen Ruler](screen-ruler.md)**<br>
         Quickly measure pixels on your screen based on image edge detection.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Shortcut Guide icon](images/shortcut-guide/shortcut-guide.png)](shortcut-guide.md)<br>
         **[Shortcut Guide](shortcut-guide.md)**<br>
         Display available Windows key shortcuts for the current desktop state.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Text Extractor icon](images/text-extractor/image-to-text.png)](text-extractor.md)<br>
         **[Text Extractor](text-extractor.md)**<br>
@@ -196,17 +209,10 @@ The currently available utilities include:
         **[Workspaces](workspaces.md)**<br>
         Launch a set of applications to custom positions with a single click.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![ZoomIt icon](images/zoomit/zoomit.png)](zoomit.md)<br>
         **[ZoomIt](zoomit.md)**<br>
         A screen zoom, annotation, and recording tool for technical presentations.
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-    :::column:::
     :::column-end:::
 :::row-end:::
 
