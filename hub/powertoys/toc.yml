@@ -886,6 +886,8 @@ items:
         href: ../powertoys/file-explorer.md
       - name: File Locksmith
         href: ../powertoys/file-locksmith.md
+      - name: Grab And Move
+        href: ../powertoys/grab-and-move.md
       - name: Hosts File Editor
         href: ../powertoys/hosts-file-editor.md
       - name: Image Resizer
@@ -902,6 +904,8 @@ items:
         href: ../powertoys/newplus.md
       - name: Peek
         href: ../powertoys/peek.md
+      - name: Power Display
+        href: ../powertoys/power-display.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
       - name: PowerToys Run

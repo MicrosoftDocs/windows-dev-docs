@@ -36,5 +36,6 @@ The following settings are available for Light Switch:
 | Turn on dark mode | Set the time to switch to dark mode when using manual mode. |
 | Turn on light mode | Set the time to switch to light mode when using manual mode. |
 | Apply dark mode to | Choose whether Light Switch applies dark mode to **System** (Taskbar, Start, and other system UI) and/or **Apps** (supported apps). |
+| Apply monitor settings to | When the [Power Display](power-display.md) utility is enabled, choose a Power Display profile to apply when Light Switch transitions Windows into **Dark mode profile** and a profile to apply when it transitions to **Light mode profile**. This makes your saved monitor brightness, contrast, and color temperature settings switch automatically with the system theme. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

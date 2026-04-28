@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, Insider]
 # Finding and installing extensions
 
 > [!NOTE]
-> The Gallery will be available in PowerToys version 0.99.
+> The Gallery will be available in PowerToys version 0.100. In version 0.99 and earlier, you can find new extensions from inside Command Palette by running the **Find Command Palette extensions from WinGet** or **Find Command Palette extensions from the Microsoft Store** commands. The latter opens the Microsoft Store extension association page directly at [`ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette`](ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette).
 
 Command Palette extensions add new commands, tools, and integrations to your Command Palette experience. You can discover and install extensions directly from the built-in Gallery, or find community-built extensions on GitHub.
 
