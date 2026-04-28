@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
 
-> **Important APIs**: [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **Important APIs**: [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/Microsoft.UI.Xaml.Input)
 
 
 ## Dos and don'ts
@@ -75,7 +75,7 @@ Panning with touch, by using a swipe or slide gesture with one or more fingers, 
 > <div id="main">
 > <strong>Windows 10 Fall Creators Update - Behavior change</strong>
 > By default, instead of text selection, an active pen now scrolls/pans in Windows apps (like touch, touchpad, and passive pen).  
-> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. For details, see the API reference topic for the <a href="/uwp/api/windows.ui.xaml.controls.scrollviewer">Scroll​Viewer Class</a>.
+> If your app depends on the previous behavior, you can override pen scrolling and revert to the previous behavior. For details, see the API reference topic for the <a href="/windows/windows-app-sdk/api/winrt/Microsoft.UI.Xaml.controls.scrollviewer">Scroll​Viewer Class</a>.
 > </div>
 
 Depending on the input device, the user pans within a pannable region by using one of these:
@@ -195,3 +195,5 @@ This guidance is also useful for apps such as photo albums or mapping apps that 
 - [Input: Simplified ink sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)
 - [Input: Manipulations and gestures sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
 - [DirectX touch input sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%2B%2B%5D-Windows%208%20app%20samples/C%2B%2B/Windows%208%20app%20samples/DirectX%20touch%20input%20sample%20(Windows%208))
+
+

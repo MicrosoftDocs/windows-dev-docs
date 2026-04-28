@@ -168,9 +168,12 @@ Push notification tags provide a way to restrict notifications to a subset of cl
 ## Server-side scripts (JavaScript backend only)
 
 
-For mobile services that use the JavaScript backend, the server-side scripts run when delete, insert, read, or update operations occur. The scripts don't implement these operations, but they run when a call from the client to the Windows Mobile REST API triggers these events. The scripts then pass control onto the operations themselves by calling request.execute or request.respond to issue a response to the calling context. See [Azure Mobile Services REST API Reference](/previous-versions/azure/reference/jj710108(v=azure.100)).
+For mobile services that use the JavaScript backend, the server-side scripts run when delete, insert, read, or update operations occur. The scripts don't implement these operations, but they run when a call from the client to the Windows Mobile REST API triggers these events. The scripts then pass control onto the operations themselves by calling request.execute or request.respond to issue a response to the calling context.
 
-A variety of functions are available in the server-side script. See [Register table operations in Azure Mobile Services](https://msdn.microsoft.com/library/azure/dn167708.aspx). For a reference to all available functions, see [Mobile Services server script reference](/previous-versions/azure/reference/jj554226(v=azure.100)).
+> [!NOTE]
+> Azure Mobile Services is deprecated. For modern alternatives, consider using [Azure App Service](/azure/app-service/) or [Azure Functions](/azure/azure-functions/).
+
+A variety of functions are available in the server-side script. See [Register table operations in Azure Mobile Services](https://msdn.microsoft.com/library/azure/dn167708.aspx).
 
 The following custom API code in Notifyallusers.js is also created:
 
@@ -210,7 +213,7 @@ The sendNotifications function sends a single notification as a toast notificati
 
 Windows supports notifications that aren't push notifications. For general information about notifications, see [Choosing a notification delivery method](../choosing-a-notification-delivery-method.md).
 
-Toast notifications are easy to use, and you can review an example in the Insert.js code on the channel's table that's generated for you. If you plan to use tile or badge notifications, you must create an XML template for the tile and badge, and you must specify the encoding of packaged information in the template. See [Working with tiles, badges, and toast notifications](/previous-versions/windows/apps/hh868259(v=win.10)).
+Toast notifications are easy to use, and you can review an example in the Insert.js code on the channel's table that's generated for you. If you plan to use tile or badge notifications, you must create an XML template for the tile and badge, and you must specify the encoding of packaged information in the template. See [Toast notification overview](/windows/apps/design/shell/tiles-and-notifications/toast-notifications-overview).
 
 Because Windows responds to push notifications, it can handle most of these notifications when the app isn't running. For example, a push notification could let a user know when a new mail message is available even when the local mail app isn't running. Windows handles a toast notification by displaying a message, such as the first line of a text message. Windows handles a tile or badge notification by updating an app's live tile to reflect the number of new mail messages. In this way, you can prompt users of your app to check it for new information. Your app can receive raw notifications when it's running, and you can use them to send data to your app. If your app isn't running, you can set up a background task to monitor push notifications.
 
@@ -223,7 +226,7 @@ If you're updating live tiles with push notifications, you should also follow th
 
 ### Using the Windows Push Notification Services (WNS)
 
-You can call Windows Push Notification Services (WNS) directly if Mobile Services doesn't provide enough flexibility, if you want to write your server code in C# or Visual Basic, or if you already have a cloud service and you want to send push notifications from it. By calling WNS directly, you can send push notifications from your own cloud service, such as a worker role that monitors data from a database or another web service. Your cloud service must authenticate with WNS to send push notifications to your apps. See [How to authenticate with the Windows Push Notification Service (JavaScript)](/previous-versions/windows/apps/hh465407(v=win.10)) or [(C#/C++/VB)](/previous-versions/windows/apps/hh868206(v=win.10)).
+You can call Windows Push Notification Services (WNS) directly if Mobile Services doesn't provide enough flexibility, if you want to write your server code in C# or Visual Basic, or if you already have a cloud service and you want to send push notifications from it. By calling WNS directly, you can send push notifications from your own cloud service, such as a worker role that monitors data from a database or another web service. Your cloud service must authenticate with WNS to send push notifications to your apps. See [Push notifications overview](wns-overview.md) for guidance on authenticating with WNS.
 
 You can also send push notifications by running a scheduled task in your mobile service. See [Schedule recurring jobs in Mobile Services](/azure/).
 
@@ -236,9 +239,6 @@ You can also send push notifications by running a scheduled task in your mobile 
 
 * [Windows Push Notification Services (WNS) overview](wns-overview.md)
 * [Raw notification overview](raw-notification-overview.md)
-* [Connecting to Windows Azure Mobile Services (JavaScript)](/previous-versions/windows/apps/dn263160(v=win.10))
-* [Connecting to Windows Azure Mobile Services (C#/C++/VB)](/previous-versions/windows/apps/dn263175(v=win.10))
-* [Quickstart: Adding push notifications for a mobile service (JavaScript)](/previous-versions/windows/apps/dn263163(v=win.10))
  
 
  

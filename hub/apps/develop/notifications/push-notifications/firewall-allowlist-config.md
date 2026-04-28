@@ -78,10 +78,10 @@ If you are using the legacy notification service, MPNS, the IP address ranges th
 
 ## Related topics
 
-* [Quickstart: Sending a push notification](/previous-versions/windows/apps/hh868252(v=win.10))
-* [How to request, create, and save a notification channel](/previous-versions/windows/apps/hh465412(v=win.10))
-* [How to intercept notifications for running applications](/previous-versions/windows/apps/jj709907(v=win.10))
-* [How to authenticate with the Windows Push Notification Service (WNS)](/previous-versions/windows/apps/hh465407(v=win.10))
-* [Push notification service request and response headers](/previous-versions/windows/apps/hh465435(v=win.10))
+* [Quickstart: Sending a push notification](push-quickstart.md)
+* [How to request, create, and save a notification channel](request-create-save-notification-channel.md)
+* [How to intercept notifications for running applications](../app-notifications/app-notifications-quickstart.md)
+* [How to authenticate with the Windows Push Notification Service (WNS)](push-request-response-headers.md#requesting-and-receiving-an-access-token)
+* [Push notification service request and response headers](push-request-response-headers.md)
 * [Guidelines and checklist for push notifications](wns-overview.md)
  
