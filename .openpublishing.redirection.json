@@ -11724,6 +11724,11 @@
       "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-extend.md",
       "redirect_url": "/windows/apps/windows-app-sdk/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/api-reference/compliance/windows-ui-shell-tasks.md",
+      "redirect_url": "/uwp/api/windows.ui.shell.tasks",
+      "redirect_document_id": false
     }
   ]
 }
