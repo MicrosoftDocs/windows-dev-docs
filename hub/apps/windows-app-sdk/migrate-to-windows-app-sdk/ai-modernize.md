@@ -78,13 +78,13 @@ Before you start, it's worth deciding which direction makes sense for your app. 
 
 | Your situation | Recommended path |
 |---|---|
-| Keep WPF or WinForms as your UI framework, move to .NET 9+ | **Upgrade in place** — use the [GitHub Copilot App Modernization agent](https://aka.ms/copilot-app-modernization) to automate the project file and code changes |
+| Keep WPF or WinForms as your UI framework, move to .NET 9+ | **Upgrade in place** — use the [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/overview) agent to automate the project file and code changes |
 | Add modern Windows features (notifications, AI, shell integration) to your existing app without changing the UI framework | **Add Windows App SDK features** — see the scenarios below; use winapp CLI to add package identity if needed |
 | Need modern Fluent UI, touch support, WinRT depth, or a fresh codebase | **Rebuild with WinUI 3** — see [WPF patterns in WinUI 3](wpf-patterns-winui3.md) for API mapping; for a Copilot-assisted approach see [Migrate a UWP app to WinUI 3](#migrate-a-uwp-app-to-winui-3) (UWP-specific, but the Copilot workflow is similar) |
-| LOB app with WCF, COM, or heavy third-party UI controls | **Upgrade in place first**, then modernize incrementally — the [GitHub Copilot App Modernization agent](https://aka.ms/copilot-app-modernization) can assist with WCF → CoreWCF, EF, and ASP.NET Core upgrades |
+| LOB app with WCF, COM, or heavy third-party UI controls | **Upgrade in place first**, then modernize incrementally — the [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/overview) agent can assist with WCF → CoreWCF, EF, and ASP.NET Core upgrades |
 
 > [!NOTE]
-> "Upgrade" (moving to a newer .NET version on the same UI framework) and "rebuild" (moving to WinUI 3) are separate decisions. You can upgrade now and rebuild later, or do both together for a greenfield replacement. The GitHub Copilot App Modernization agent covers the upgrade path; the sections below cover adding Windows App SDK features to your existing app.
+> "Upgrade" (moving to a newer .NET version on the same UI framework) and "rebuild" (moving to WinUI 3) are separate decisions. You can upgrade now and rebuild later, or do both together for a greenfield replacement. The GitHub Copilot modernization for .NET covers the upgrade path; the sections below cover adding Windows App SDK features to your existing app.
 
 WPF and WinForms apps can adopt Windows App SDK features without a full rewrite. Copilot + the Learn MCP Server makes it easy to find and integrate specific features.
 
@@ -92,12 +92,7 @@ WPF and WinForms apps can adopt Windows App SDK features without a full rewrite.
 
 > *"I have a WPF app targeting .NET 8. Show me how to add Windows push notifications using the Windows App SDK. The app is not currently packaged."*
 
-With the Learn MCP Server, Copilot fetches the current Windows App SDK notification documentation and generates integration code. It will also note that notifications require package identity — and suggest using winapp CLI to add it:
-
-```bash
-winapp init
-winapp create-debug-identity --publisher "CN=MyApp"
-```
+With the Learn MCP Server, Copilot fetches the current Windows App SDK notification documentation and generates integration code. Basic push notification support works for unpackaged apps. However, if your app needs to receive push notifications while it isn't running — the most common production scenario — COM activation and background delivery require package identity. Copilot can walk you through adding packaging with winapp CLI if needed.
 
 ### Modernize the app's look and feel
 
@@ -111,7 +106,7 @@ winapp create-debug-identity --publisher "CN=MyApp"
 
 > *"Add a notification that tells the user when a background task completes."*
 
-Copilot will recognize this requires Windows package identity and suggest using winapp CLI to add MSIX packaging — explaining what it is and why it's needed. Once packaging is set up, it will provide the Windows notification code.
+Copilot will provide the Windows App SDK notification code. [App notifications work in both packaged and unpackaged apps](../../../develop/notifications/) — no package identity is required.
 
 Ask Copilot to walk you through it:
 
