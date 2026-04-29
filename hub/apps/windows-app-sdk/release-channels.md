@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
-ms.date: 01/13/2026
+ms.date: 04/29/2026
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.localizationpriority: medium
 ---
@@ -13,7 +13,7 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 
 |   | Channel | Description | Release cadence | Supported? | Latest release |
 |--:|--|--|--|:--:|--|
-| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | No more than every six months  <br/> *(plus servicing updates as needed)* | Yes | **1.8.7 (1.8.260416003)** <br/> Released: 04/21/2026 <br/> [Release notes](./release-notes/windows-app-sdk-1-8.md?pivots=stable#version-187-18260416003) |
+| **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | Major releases no more than every six months <br/> *(plus minor/patch servicing updates as needed)* | Yes | **2.0.1** <br/> Released: 04/29/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=stable#version-20-stable-ga-201) |
 | **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **2.0 Preview2 (2.0.0-preview2)** <br/> Released: 03/31/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=preview#version-20-preview-2-200-preview2) |
 | **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.0 Experimental 7 (2.0.0-experimental7)** <br/> Released: 04/21/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-7-200-experimental7) |
 
@@ -49,8 +49,9 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
 | ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
-| 1.8                     | 09/09/2025            | 1.8.260416003        | 04/21/2026         | Current        | 09/09/2026       |
-| 1.7                     | 03/18/2025            | 1.7.260224002        | 03/10/2026         | Maintenance    | 03/18/2026       |
+| 2.0                     | 04/29/2026            | 2.0.1                | 04/29/2026         | Current        | 04/29/2027       |
+| 1.8                     | 09/09/2025            | 1.8.260416003        | 04/21/2026         | Maintenance    | 09/09/2026       |
+| 1.7                     | 03/18/2025            | 1.7.260224002        | 03/10/2026         | Out of Support | 03/18/2026       |
 | 1.6                     | 09/04/2024            | 1.6.250602001        | 06/10/2025         | Out of Support | 09/04/2025       |
 | 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |
 | 1.4                     | 08/29/2023            | 1.4.240802001        | 08/13/2024         | Out of Support | 08/29/2024       |
