@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Provides information about what's new in Windows App SDK 2.0.
 ms.topic: release-notes
-ms.date: 03/31/2026
+ms.date: 04/29/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -14,7 +14,307 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="stable"
 
-**There are no stable releases yet.**
+## Version 2.0 stable GA (2.0.1)
+
+Released: **April 29, 2026**
+
+Windows App SDK 2.0 ships new APIs and improvements across the platform: XAML conditionals, modern Storage Pickers, expanded popup and anchoring APIs in Microsoft.UI.Content, new package deployment and validation APIs, a refactored Windows ML stack, and additions to the Windows AI surface. It is also the first release on the new Semantic Versioning scheme and the first major version update since Windows App SDK 1.0 (November 2021).
+<br><br>
+
+<details><summary>Semantic Versioning</summary>
+
+>
+> Windows App SDK 2.0 is the first release on the new Windows App SDK versioning scheme, standardized on [Semantic Versioning 2.0.0](https://semver.org/). This is also the first time we are incrementing the major version number.
+>
+> The new scheme simplifies versioning by aligning the Windows App SDK version with the NuGet package version. Referencing Windows App SDK 2.0 in your project now means you'll use the corresponding NuGet version, with no separate date-based build number to track:
+>
+> ```xml
+> <PackageDependency Name="Microsoft.WindowsAppSDK" Version="2.0.1" />
+> ```
+>
+> The package family name also aligns with the major version instead of the minor version, so the next side-by-side release of Windows App SDK will be version 3.0.0. Under SemVer, breaking changes are only allowed across major version updates (see [Windows App SDK deployment architecture](../deployment-architecture.md)).
+>
+
+</details>
+
+<details><summary>Windows ML</summary>
+
+>
+> The `Microsoft.WindowsAppSDK.ML` NuGet package has been refactored, adding a new base dependency. The existing ML NuGet package's functionality remains the same, but the core Windows ML features have been refactored into a base package called `Microsoft.Windows.AI.MachineLearning`. This new package contains a minimal set of dependencies; supporting apps down to Windows 10 v1903. If you need Windows 10 v1809 support, continue using the existing `Microsoft.WindowsAppSDK.ML` package.
+>
+> **ONNX Runtime.** The version of ONNX Runtime included with Windows ML has been updated to 1.24.5. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info. This release also includes an additive ORT API change to support model compilation using graphs produced by the `OrtModelEditor` API (a feature gap in the prior `OrtCompileApi` surface). The change is non-breaking and was taken to unblock upcoming WebNN browser scenarios; see the underlying [ONNX Runtime PR #27332](https://github.com/microsoft/onnxruntime/pull/27332) for details.
+>
+> **Licensing.** The Windows ML license agreement has been simplified with clearer terms for ISVs:
+>
+> - Restructured Installation, Data, and Distributable Code sections for clarity.
+> - A new Execution Provider (EP) Compliance Notice section clarifies developer responsibilities regarding hardware-accelerated execution providers.
+> - Direct links to vendor license agreements for NVIDIA TensorRT, Intel OpenVINO, and Qualcomm QNN (Qualcomm Neural Network SDK).
+>
+
+</details>
+
+<details><summary>Windows AI APIs</summary>
+
+>
+> - Phi Silica APIs are now enforced as part of a Limited Access Feature (LAF). See [Phi Silica](/windows/ai/apis/phi-silica) for details.
+> - Added new states to `AIFeatureReadyState` to help apps explain transient and durable failures during the AI model acquisition process: `CapabilityMissing`, `NotCompatibleWithSystemHardware`, and `OSUpdateNeeded`. Apps can use these states to give users actionable guidance instead of treating every "not ready" condition as a generic failure.
+> - Added checks for various network and Windows Update errors during AI model installation, flagging durable failures so users can understand why model packages failed to install.
+> - Improved diagnosability for Text Intelligence APIs used in Windows AI scenarios.
+>
+
+</details>
+
+<details><summary>WebView2 (WinUI 3) drag support</summary>
+
+>
+> Enabled drag support for WebView2 content hosted in WinUI 3 applications. This capability was previously unsupported and is now available without introducing new public APIs. (Dropping into a WebView2 control from external sources was already supported.)
+>
+> **Supported scenarios:**
+>
+> - **Standard drag-and-drop content.** Dragging text, HTML, images, and URLs is supported. Dragging an image outside the app currently results in a default file name (for example, `download.jpg`) when dropped into File Explorer.
+> - **Drag cancellation.** On-demand cancellation of an active drag operation is supported, so an app can conditionally block drag operations for restricted or ephemeral content after the drag has been initiated.
+> - **Custom drag visuals.** Custom drag UI, such as icons or previews, is supported to help users clearly identify the content being dragged.
+> - **Customizable drag data.** Editing and customizing drag data is supported, enabling app-specific scenarios such as dragging messages within the app, or attaching contextual metadata (for example "From \<app name\>") that the destination can read on drop.
+>
+> **Limitations:**
+>
+> - Some additional drag data types are not currently supported, including `DownloadURL`.
+>
+> **Requirements:**
+>
+> - Minimum WebView2 Runtime version (Edge Beta channel): 144.0.3719.11.
+>
+
+</details>
+
+<details><summary>Storage Pickers updates</summary>
+
+>
+> The `Microsoft.Windows.Storage.Pickers` API (introduced in Windows App SDK 1.8) has been extended to streamline file and folder selection by letting developers set initial and persistent folder locations and group file type filters with clear labels for easier navigation.
+>
+> - `FileOpenPicker` adds `FileTypeChoices`, `InitialFileTypeIndex`, `SettingsIdentifier`, `SuggestedFolder`, `SuggestedStartFolder`, and `Title`.
+> - `FileSavePicker` adds `InitialFileTypeIndex`, `SettingsIdentifier`, `ShowOverwritePrompt`, `SuggestedStartFolder`, and `Title`.
+> - `FolderPicker` adds `PickMultipleFoldersAsync`, `SettingsIdentifier`, `SuggestedFolder`, `SuggestedStartFolder`, and `Title`.
+>
+
+</details>
+
+<details><summary>Microsoft.UI.Content additions</summary>
+
+>
+> - **Relative popup positioning.** The new `PopupAnchor` API allows `DesktopPopupSiteBridge` to support relative positioning by anchoring to its owning window or island, addressing the limitation where popups could only be positioned absolutely using screen coordinates. New `DesktopPopupSiteBridge.AnchoringBehavior` and `DesktopPopupSiteBridge.AnchoringPixelAlignment` properties control the anchoring behavior.
+> - **Keyboard cues guidance.** The new `InputFocusController.ShouldShowKeyboardCues` property guides developers on whether to show keyboard cues right after the creation of a `ContentIsland`.
+> - **PointerPoint convenience API.** The new `PointerPoint.GetCurrentPoint` method allows developers to get the active `PointerPoint` data from a provided `pointerId`.
+>
+
+</details>
+
+<details><summary>Microsoft.UI.Xaml.Controls.SystemBackdropElement</summary>
+
+>
+> The new `Microsoft.UI.Xaml.Controls.SystemBackdropElement` is a lightweight `FrameworkElement` that lets apps place a system backdrop such as Mica or Acrylic anywhere within the XAML layout, with a `CornerRadius` property for rounded backdrop areas. It closes a long-standing WinUI 3 gap, where in-app acrylic effects (previously straightforward in WinUI 2 via `AcrylicBrush.BackgroundSource`) had no direct equivalent.
+>
+
+</details>
+
+<details><summary>Package deployment and validation</summary>
+
+>
+> The `Microsoft.Windows.Management.Deployment` namespace adds a package validation framework and a `PackageVolume` API for managing the storage volumes that packages are staged onto.
+>
+> - **Validators.** New `IPackageValidator` interface plus three built-in validators (`PackageCertificateEkuValidator`, `PackageFamilyNameValidator`, `PackageMinimumVersionValidator`) that can be attached to `AddPackageOptions` / `StagePackageOptions` via the new `PackageValidators` property. `PackageValidationEventArgs`, `PackageValidationEventSource`, and `PackageValidationHandler` carry validation events; `IsPackageValidationSupported` and `GetValidationEventSourceForUri` let callers probe support before invoking deployment.
+> - **PackageVolume.** New `PackageVolume` type with `GetDefault`, `GetPackageVolumeByName`, `GetPackageVolumeByPath`, `AddAsync`, `RemoveAsync`, `GetAvailableSpaceAsync`, `IsOffline`, `SetDefault`, `SetOfflineAsync`, `SetOnlineAsync`, and `IsFeatureSupported` for runtime capability detection (`PackageVolumeFeature`).
+>
+
+</details>
+
+<details><summary>Custom XAML Conditionals (IXamlCondition)</summary>
+
+>
+> The new `IXamlCondition` interface enables developers to define custom conditions that integrate with XAML's conditional namespace syntax and are evaluated at XAML parse time. This replaces the experimental `IXamlPredicate` interface. Custom conditions enable conditional XAML scenarios based on application-specific factors such as feature flags, device capabilities, business logic, configuration settings, and other runtime conditions.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed an issue where the WindowsAppSDK installer showed no progress during installation, making it appear stalled. The installer now provides clearer progress feedback.
+> - Improved error handling for scenarios where `WindowsAppSDKSelfContained` is enabled for class libraries.
+> - Fixed `MSB8027` and `LNK4042` build warnings caused by duplicate `ClCompile` items in Windows App SDK NuGet `.targets` files by moving preprocessor definitions from `<Target>` blocks to `<ItemDefinitionGroup>`. An opt-out workaround (`WindowsAppSDK_Arm64EcCompilerWorkaround`) is included for ARM64EC+LTCG builds to avoid a known MSVC internal compiler error.
+> - Fixed a ListView crash that could occur during keyboard navigation (Tab/Shift+Tab) after the items list was updated.
+> - Fixed an issue where WinUI 3 could crash if focus was moved to the `CoreWebView2Controller` while the controller was not visible.
+> - Improved `DeleteIndex` reliability so it no longer fails with `ERROR_SHARING_VIOLATION` in some scenarios (App Content Search; remains in the experimental channel).
+> - Fixed OCR bounding boxes returning negative values in some edge cases.
+> - Fixed a Windows ML bug where calling `RegisterCertifiedAsync` again in the same process incorrectly returned 0 execution providers (EP).
+>
+
+</details>
+
+<details><summary>Upgrading to 2.0</summary>
+
+>
+> This release contains a refactoring of nuget transitive references. To upgrade an existing C++ project, we recommend that you use tooling (`nuget.exe` or Visual Studio) to remove the existing Windows App SDK package reference and add the new reference. This works around upgrade issues with packages.config-based projects.
+>
+> **Upgrading from 2.0 Experimental7.** The experimental `Microsoft.WindowsAppSDK.ML` package shipped with a higher patch number than 2.0.0 stable, which can surface as a NuGet downgrade error (especially in C++ projects). If you were on Experimental7, follow the [NuGet Uninstall](/nuget/consume-packages/install-use-packages-visual-studio#uninstall-a-package) guide to remove the experimental package before referencing 2.0.0.
+>
+
+</details>
+
+<details><summary>Notes on prior preview content</summary>
+
+>
+> - **App Content Search remains experimental.** The `Microsoft.Windows.Search.AppContentIndex` API surface (App Content Search) was removed in 2.0-Preview2 to improve fundamentals and ensure future compatibility. It is **not** included in 2.0.1 stable. To experiment with it, continue to use experimental releases. If you previously installed the experimental `Microsoft.Windows.Search` package, uninstall it via the [NuGet Uninstall](/nuget/consume-packages/install-use-packages-visual-studio#uninstall-a-package) guide before moving to 2.0.1 stable.
+> - **APIs already shipped in 1.8 servicing.** Some experimental features that previewed during the 2.0 cycle were promoted to stable APIs in 1.8 servicing releases and are therefore not new in 2.0.1. They include `ModelCatalog` (1.8.3), `TextRewriter.RewriteCustomAsync` (1.8.4), and `SplitMenuFlyoutItem` plus `SplitMenuFlyoutItemAutomationPeer` (1.8.6). See the [1.8 release notes](./windows-app-sdk-1-8.md) for details.
+>
+
+</details>
+
+<details><summary>Known issues</summary>
+
+>
+> - **`AICapabilities` is missing from 2.0.1.** `Microsoft.Windows.AI.AICapabilities` and `AICapabilityCategory.CopilotPlusPCCapable` (a Copilot+ PC capability check) shipped in 1.8.7 but did not make it into 2.0.1. We plan to restore them in the May release.
+>
+
+</details>
+
+<details><summary>New APIs for 2.0.1</summary>
+
+>
+> This release includes the following new APIs compared to the stable 1.8.7 release:
+>
+> ```
+> Microsoft.Graphics.Imaging
+>
+>     ImageBufferPixelFormat
+>         Bgr8
+> ```
+> ```
+> Microsoft.UI.Content
+>
+>     DesktopPopupSiteBridge
+>         AnchoringBehavior
+>         AnchoringPixelAlignment
+>
+>     PopupAnchor
+> ```
+> ```
+> Microsoft.UI.Input
+>
+>     InputFocusController
+>         ShouldShowKeyboardCues
+>
+>     PointerPoint
+>         GetCurrentPoint
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls
+>
+>     SystemBackdropElement
+> ```
+> ```
+> Microsoft.UI.Xaml.Markup
+>
+>     IXamlCondition
+> ```
+> ```
+> Microsoft.Windows.AI
+>
+>     AIFeatureReadyState
+>         CapabilityMissing
+>         NotCompatibleWithSystemHardware
+>         OSUpdateNeeded
+> ```
+> ```
+> Microsoft.Windows.Management.Deployment
+>
+>     AddPackageOptions
+>         GetValidationEventSourceForUri
+>         IsPackageValidationSupported
+>         PackageValidators
+>
+>     IPackageValidator
+>     PackageCertificateEkuValidator
+>     PackageFamilyNameValidator
+>     PackageMinimumVersionValidator
+>     PackageValidationEventArgs
+>     PackageValidationEventSource
+>     PackageValidationHandler
+>     PackageVolume
+>         AddAsync
+>         GetAvailableSpaceAsync
+>         GetDefault
+>         GetPackageVolumeByName
+>         GetPackageVolumeByPath
+>         IsFeatureSupported
+>         IsOffline
+>         RemoveAsync
+>         SetDefault
+>         SetOfflineAsync
+>         SetOnlineAsync
+>
+>     PackageVolumeFeature
+>     StagePackageOptions
+>         GetValidationEventSourceForUri
+>         IsPackageValidationSupported
+>         PackageValidators
+> ```
+> ```
+> Microsoft.Windows.SemanticSearch
+>
+>     EmbeddingVector
+>     SemanticSearchContract
+> ```
+> ```
+> Microsoft.Windows.Storage.Pickers
+>
+>     FileOpenPicker
+>         FileTypeChoices
+>         InitialFileTypeIndex
+>         SettingsIdentifier
+>         SuggestedFolder
+>         SuggestedStartFolder
+>         Title
+>
+>     FileSavePicker
+>         InitialFileTypeIndex
+>         SettingsIdentifier
+>         ShowOverwritePrompt
+>         SuggestedStartFolder
+>         Title
+>
+>     FolderPicker
+>         PickMultipleFoldersAsync
+>         SettingsIdentifier
+>         SuggestedFolder
+>         SuggestedStartFolder
+>         Title
+> ```
+> ```
+> Microsoft.Windows.Vision
+>
+>     ScreenRegionBoundingBox
+>     ScreenRegionDetectionContract
+>     ScreenRegionLabel
+> ```
+>
+
+</details>
+
+<details><summary>New APIs compared to 2.0-Preview2</summary>
+
+>
+> ```
+> Microsoft.Windows.AI
+>
+>     AIFeatureReadyState
+>         CapabilityMissing
+>         NotCompatibleWithSystemHardware
+>         OSUpdateNeeded
+> ```
+>
+
+</details>
 
 :::zone-end
 
@@ -46,8 +346,6 @@ Released: **March 31, 2026** <br><br>
 
 >
 > Enforced Phi Silica APIs to be part of a Limited Access Feature.
->
-> Added additional enum states to help explain transient failures during the AI model acquisition process, providing guidance on issues such as missing capabilities, incompatible hardware, or required OS updates.
 >
 > Added checks for various network and Windows Update errors during AI model installation, flagging durable failures so users can understand why model packages failed to install.
 >
