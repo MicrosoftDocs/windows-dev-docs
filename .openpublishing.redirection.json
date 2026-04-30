@@ -1,6 +1,21 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/publish/publish-your-app/pwa/remove-app.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/remove-an-app-and-add-on",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/msix/remove-app.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/remove-an-app-and-add-on",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/msi/remove-app.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/remove-an-app-and-add-on",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/publish/respond-to-customer-reviews.md",
       "redirect_url": "/windows/apps/publish/analyze-msi-exe/ratings-reviews-performance#respond-to-customer-reviews",
       "redirect_document_id": false
