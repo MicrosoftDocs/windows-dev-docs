@@ -1,37 +1,70 @@
 ---
 description: Learn how to configure your WPF, Windows Forms, or Win32 desktop app to call Windows Runtime APIs and add modern Windows experiences.
 title: Call Windows Runtime APIs in desktop apps
-ms.date: 04/07/2026
+ms.date: 04/28/2026
 ms.topic: how-to
 keywords: windows 11, windows app sdk, winrt, desktop app
 ms.localizationpriority: medium
+zone_pivot_groups: desktop-framework
 ---
 
 # Call Windows Runtime APIs in desktop apps
 
 This article describes how to configure your desktop app projects to call Windows Runtime (WinRT) APIs — the APIs that power modern Windows features such as notifications, file pickers, sharing, and more.
 
-Some WinRT APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
+> [!NOTE]
+> Some WinRT APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
+
+:::zone pivot="dotnet"
 
 ## Configure a .NET project
 
 <a id="net-6-and-later-use-the-target-framework-moniker-option"></a>
 ### .NET 6 and later: Use the Target Framework Moniker option
 
-Specify a Windows OS version-specific Target Framework Moniker (TFM) in your project file. This adds a reference to the appropriate [Windows SDK targeting package](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref) at build time.
+Specify a Windows OS version-specific [Target Framework Moniker](/dotnet/standard/frameworks) (TFM) in your project file. This adds a reference to the appropriate [Windows SDK targeting package](https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref) at build time.
+
+1. In Visual Studio, select **Project > [*ProjectName*] Properties**.
+
+1. On the properties page, find **Application > General** by selecting it in the left side navigation or scrolling to it.
+
+1. Choose settings for:
+    1. **Target framework** - This is initially set to the .NET version you selected when the project was created, but you can change it here.
+    1. **Target OS** - Leave this set to Windows.
+    1. **Target OS version** - Select the version for the API set you want to use, typically the latest.
+    1. **Supported OS version** (Optional) - See the next section for more information.
+
+:::image type="content" source="images/target-framework-settings-vs.png" alt-text="Target framework settings in Visual Studio.":::
+
+In the Target Framework Moniker, these values translate like this:
+
+- **Target framework** - `net10.0`
+- **Target OS** - `-windows`
+- **Target OS version** - `10.0.22621.0`
+
+```xml
+<TargetFramework>net10.0-windows10.0.22621.0</TargetFramework>
+<!-- If set... -->
+<SupportedOSPlatformVersion>10.0.19041.0</SupportedOSPlatformVersion>
+```
+
+You can also set the values by manually editing the project file.
 
 1. In Visual Studio, right-click your project in **Solution Explorer** and choose **Edit Project File**.
 
-2. Replace the **TargetFramework** value with a Windows-specific TFM:
+2. Replace the **TargetFramework** value with a Windows-version-specific TFM.
 
     | Target | TFM |
     |--------|-----|
-    | Windows 11, version 24H2 | `net8.0-windows10.0.26100.0` |
-    | Windows 11, version 22H2 | `net8.0-windows10.0.22621.0` |
-    | Windows 11 (initial release) | `net8.0-windows10.0.22000.0` |
-    | Windows 10, version 2004 | `net8.0-windows10.0.19041.0` |
-    | Windows 10, version 1903 | `net8.0-windows10.0.18362.0` |
-    | Windows 10, version 1809 | `net8.0-windows10.0.17763.0` |
+    | Windows 11, version 24H2 | `net10.0-windows10.0.26100.0` |
+    | Windows 11, version 22H2 | `net10.0-windows10.0.22621.0` |
+    | Windows 11 (initial release) | `net10.0-windows10.0.22000.0` |
+    | Windows 10, version 2004 | `net10.0-windows10.0.19041.0` |
+    | Windows 10, version 1903 | `net10.0-windows10.0.18362.0` |
+    | Windows 10, version 1809 | `net10.0-windows10.0.17763.0` |
+
+    > [!NOTE]
+    > The values shown are for .NET 10. Update as needed for other versions of .NET: `net8.0`, `net9.0`.
 
     Example:
 
@@ -43,24 +76,38 @@ Specify a Windows OS version-specific Target Framework Moniker (TFM) in your pro
       </PropertyGroup>
     </Project>
     ```
-
 3. Save and close the project file.
+
+> [!TIP]
+> The version specified by the TFM indicates which APIs are available to your app. It doesn't control the OS version that your app supports at runtime. It's used to select the reference assemblies that your project compiles against, and to select assets from NuGet packages. Think of this version as the "platform version" or "OS API version" to disambiguate it from the runtime OS version. For more info, see [Target frameworks: OS version in TFMs](/dotnet/standard/frameworks#os-version-in-tfms).
 
 #### Supporting a minimum Windows version
 
-To allow your app to run on a Windows version older than your TFM target, set **TargetPlatformMinVersion** explicitly:
+To allow your app to run on a Windows version older than your TFM target, set the **SupportedOSVersion** (`SupportedOSPlatformVersion`), as shown in the previous section. For more info, see [Target frameworks: Support older OS versions](/dotnet/standard/frameworks#support-older-os-versions).
+
+When you target a range of OS versions, guard calls to APIs that aren't available on all versions using [ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation) checks. For more information, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
+
+When **SupportedOSVersion** is set, Visual Studio will give a warning for APIs that need a runtime check. For example, if the target version is 19041, and the minimum version is 17763, you will see a warning like this when you call [AppInfo.Current](/uwp/api/windows.applicationmodel.appinfo.current).
+
+```console
+CA1416	Using platform dependent API on a component makes the code no longer work across all platforms.
+
+This call site is reachable on: 'Windows' 10.0.17763.0 and later. 'AppInfo.Current' is only supported on: 'Windows' 10.0.19041.0 and later.
+```
+
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
   </PropertyGroup>
 </Project>
 ```
-
-When you target a range of OS versions, guard calls to APIs that aren't available on all versions using [ApiInformation](/uwp/api/windows.foundation.metadata.apiinformation) checks. For more information, see [Version adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps).
+> [!NOTE]
+> You can also manually add [TargetPlatformMinVersion](/dotnet/api/microsoft.build.utilities.sdkmanifest.targetplatformminversion), but this does not provide compile-time warnings in Visual Studio.
 
 #### WinRT APIs not supported in .NET 6 and later
 
@@ -104,97 +151,15 @@ Configure the project file to use the TFM approach for .NET 6+ and the NuGet pac
   <ItemGroup>
     <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
                      Include="Microsoft.Windows.SDK.Contracts"
-                     Version="10.0.19041.0" />
+                     Version="10.0.19041.0"/>
   </ItemGroup>
 </Project>
 ```
-
-## Configure a C++ (Win32) project
-
-Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume WinRT APIs from C++ desktop apps.
-
-- **New projects**: Install the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) and use one of the included project templates.
-- **Existing projects**: Install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package.
-
-For more details, see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
-
-## Example: Send a toast notification
-
-Once your project is configured, you can call WinRT APIs directly. The following example sends a toast notification from a WPF or Win32 app.
-
-> [!NOTE]
-> Toast notifications require app identity. Packaged apps have identity automatically. For unpackaged apps, see [Send local toast notifications from desktop C# apps](/windows/apps/develop/notifications/app-notifications/send-local-toast) for the additional registration steps required.
-
-
-```csharp
-using System.Security;
-using Windows.Data.Xml.Dom;
-using Windows.UI.Notifications;
-
-void ShowToast(string title, string content, string image, string logo)
-{
-    string xmlString =
-        $@"<toast><visual><binding template='ToastGeneric'>" +
-        $"<text>{SecurityElement.Escape(title)}</text><text>{SecurityElement.Escape(content)}</text>" +
-        $"<image src='{SecurityElement.Escape(image)}'/>" +
-        $"<image src='{SecurityElement.Escape(logo)}' placement='appLogoOverride' hint-crop='circle'/>" +
-        "</binding></visual></toast>";
-
-    XmlDocument toastXml = new XmlDocument();
-    toastXml.LoadXml(xmlString);
-    ToastNotificationManager.CreateToastNotifier().Show(new ToastNotification(toastXml));
-}
-```
-
-```cppwinrt
-#include <sstream>
-#include <string>
-#include <string_view>
-#include <winrt/Windows.Data.Xml.Dom.h>
-#include <winrt/Windows.UI.Notifications.h>
-
-using namespace winrt::Windows::UI::Notifications;
-using namespace winrt::Windows::Data::Xml::Dom;
-
-std::wstring XmlEscape(std::wstring_view input)
-{
-    std::wstring result;
-    result.reserve(input.size());
-    for (wchar_t ch : input) {
-        switch (ch) {
-            case L'&':  result += L"&amp;";  break;
-            case L'<':  result += L"&lt;";   break;
-            case L'>':  result += L"&gt;";   break;
-            case L'\'': result += L"&apos;"; break;
-            case L'"':  result += L"&quot;"; break;
-            default:    result += ch;        break;
-        }
-    }
-    return result;
-}
-
-void ShowToast(std::wstring title, std::wstring content, std::wstring image, std::wstring logo)
-{
-    std::wostringstream xml;
-    xml << L"<toast><visual><binding template='ToastGeneric'>"
-        << L"<text>" << XmlEscape(title) << L"</text><text>" << XmlEscape(content) << L"</text>"
-        << L"<image src='" << XmlEscape(image) << L"'/>"
-        << L"<image src='" << XmlEscape(logo) << L"' placement='appLogoOverride' hint-crop='circle'/>"
-        << L"</binding></visual></toast>";
-
-    XmlDocument toastXml;
-    toastXml.LoadXml(xml.str().c_str());
-    ToastNotificationManager::CreateToastNotifier().Show(ToastNotification(toastXml));
-}
-```
-
-For more notification scenarios, see [Adaptive and interactive toast notifications](/windows/uwp/design/shell/tiles-and-notifications/adaptive-interactive-toasts).
-
-## Conditional compilation
+#### Conditional compilation
 
 <a id="conditional-compilation"></a>
 
-When [multi-targeting](#multi-targeting-net-6-and-earlier-net-versions) across .NET 6+ and earlier versions, use conditional compilation to write version-specific code in a single project:
+When multi-targeting across .NET 6+ and earlier versions, use conditional compilation to write version-specific code in a single project. For more information, see [Target frameworks: Preprocessor symbols](/dotnet/standard/frameworks#preprocessor-symbols).
 
 ```csharp
 #if NET6_0_OR_GREATER
@@ -203,9 +168,37 @@ When [multi-targeting](#multi-targeting-net-6-and-earlier-net-versions) across .
     // Fallback code for .NET Core 3.x / .NET Framework
 #endif
 ```
+:::zone-end
+
+:::zone pivot="win32"
+
+
+## Configure a C++ (Win32) project
+
+Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume WinRT APIs from C++ desktop apps.
+
+- Install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package.
+- Because C++/WinRT uses features from the C++17 standard, ensure the project property **C/C++ > Language > C++ Language Standard** is set to **ISO C++17 Standard (/std:c++17)** or later in Visual Studio.
+
+For more details, see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+
+:::zone-end
+
+## Next steps
+
+You can now call [Windows Runtime (WinRT) APIs](/uwp/api) from the _Windows SDK_.
+
+To also call WinRT APIs from the _Windows App SDK_, see [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+
+Some WinRT APIs require package identity. For more info see:
+
+- [Packaging overview](/windows/apps/package-and-deploy/packaging/)
+- [Features that require package identity](modernize-packaged-apps.md)
+- [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md)
+- [Grant identity to a non-packaged app](grant-identity-to-nonpackaged-apps-overview.md)
 
 ## Related content
 
+- [Windows App SDK supported Windows releases](../../windows-app-sdk/support.md)
 - [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md)
-- [Integrate your app with Windows using packaging extensions](desktop-to-uwp-extensions.md)
 - [Modernize your desktop apps](index.md)
