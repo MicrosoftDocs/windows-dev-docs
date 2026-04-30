@@ -21,7 +21,7 @@ Whether you're building with .NET/Win32, CMake, Electron, or Rust, this CLI give
 
 ## Why package identity?
 
-Many powerful Windows APIs require your app to have package identity. With identity, your app gains access to features like notifications, OS integration, and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](../../package-and-deploy/packaging/index.md).
+Many powerful Windows APIs require your app to have package identity. With identity, your app gains access to features like advanced OS integration and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](../../package-and-deploy/packaging/index.md).
 
 ## Installation
 

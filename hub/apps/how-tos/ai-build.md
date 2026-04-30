@@ -83,13 +83,7 @@ Copilot generates the load/save logic. Ask it to add error handling:
 
 ## Part 4: Add a Windows notification
 
-Package identity is required for Windows notifications. First, set it up with winapp CLI:
-
-```bash
-winapp create-debug-identity --publisher "CN=NotesApp"
-```
-
-Now ask Copilot to add a notification that fires when a note is saved:
+Ask Copilot to add a notification that fires when a note is saved:
 
 > *"Add a Windows app notification that shows 'Note saved' with the note title as a subtitle when a note is successfully persisted to disk. Use the Windows App SDK AppNotificationManager."*
 
