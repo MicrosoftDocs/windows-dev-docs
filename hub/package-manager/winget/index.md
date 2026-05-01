@@ -16,6 +16,9 @@ ms.topic: overview
 > [!NOTE]
 > The **WinGet** command line tool is only supported on Windows 10 version 1809 (build 17763) or later. WinGet will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register the Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that WinGet is not yet available, you can open PowerShell and enter the following command to request this WinGet registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
 
+> [!NOTE]
+> It's possible that **App Installer** is not installed on your device. In that case, it can be downloaded [here](https://apps.microsoft.com/detail/9nblggh4nns1).
+
 ### Install WinGet preview version [Developers Only]
 
 WinGet is included in the App Installer. To try the latest Windows Package Manager features, you can install a preview build one of the following ways:
