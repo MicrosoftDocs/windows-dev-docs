@@ -114,7 +114,7 @@ Also see [Runtime architecture](../deployment-architecture.md) to learn more abo
 
 ## Package and deploy your WPF app with MSIX
 
-Some Windows features and APIs (including the Windows App SDK [notifications APIs](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)) require your app to have *package identity* at runtime (in other words, your app needs to be *packaged*). For more info, see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
+Some Windows features and APIs require your app to have *package identity* at runtime (in other words, your app needs to be *packaged*). For more info, see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps). MSIX packaging is also required for MSIX-based submissions to the Microsoft Store.
 
 1. In **Solution Explorer** in Visual Studio, right-click the solution, and choose **Add** > **New Project...**.
 1. In the **Add a new project** dialog box, search for *packaging*, choose the C# **Windows Application Packaging Project** project template, and click **Next**.
@@ -144,7 +144,7 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Build and run again. Click the button, and confirm that a toast notification is displayed. When called from a process that lacks package identity at runtime, the notifications APIs throw an exception.
+Build and run again. Click the button, and confirm that a toast notification is displayed.
 
 > [!NOTE]
 > The steps in this section showed you how to create a *packaged app*. An alternative is to create a *packaged app with external location*. For a reminder of all these terms, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/).

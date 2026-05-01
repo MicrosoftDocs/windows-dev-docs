@@ -12,7 +12,5 @@ You can make changes to a published add-on at any time. Add-on changes are submi
 
 To submit updates, go to the add-on's page in Partner Center and click **Update**. This will create a new submission for the add-on, using the info from your previous submission as a starting point. Make the changes you'd like, and then click **Submit to the Store**.
 
-If you'd like to remove an add-on you've previously offered, you can do this by creating a new submission and changing the [Distribution and visibility](./price-and-availability.md) option to **Hidden in the Store** with the **Stop acquisition** option. Be sure to update your app's code as needed to remove references to the add-on.
-
 > [!TIP]
 > To refer to common questions, please refer to [Frequently Asked Questions](../../faq/manage-and-update-your-app.md) section.

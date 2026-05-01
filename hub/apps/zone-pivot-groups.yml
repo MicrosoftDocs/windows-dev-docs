@@ -60,3 +60,11 @@ groups:
       title: Preview
     - id: experimental
       title: Experimental
+- id: desktop-framework
+  title: Desktop framework
+  prompt: Choose your desktop framework
+  pivots:
+    - id: dotnet
+      title: .NET
+    - id: win32
+      title: Win32 (C++)

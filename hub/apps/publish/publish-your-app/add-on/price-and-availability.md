@@ -26,9 +26,6 @@ The default option is **Can be displayed in the parent product’s Microsoft Sto
 
 For more info, see [Visibility options](./visibility-options.md).
 
-> [!NOTE]
-> Choosing the **Stop acquisition** option and/or submitting an app update that removes the add-on from your app will not prevent customers from using the add-on if they have already purchased it. Existing subscriptions will fail to renew and subsequently be canceled after the current term ends.
-
 ## Schedule
 
 By default (unless you have selected one of the **Hidden in the Microsoft Store** options in the **Visibility** section), your add-on will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.

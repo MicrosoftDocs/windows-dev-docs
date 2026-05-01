@@ -192,9 +192,7 @@ items:
           - name: Create store listings
             href: publish-your-app/add-on/create-app-store-listing.md
           - name: Manage submission options
-            href: publish-your-app/add-on/manage-submission-options.md  
-          - name: Update existing add-on
-            href: publish-your-app/add-on/publish-update-to-your-app-on-store.md
+            href: publish-your-app/add-on/manage-submission-options.md
 - name: Get your app certified
   items: 
     - name: MSIX
@@ -239,28 +237,24 @@ items:
                 href: publish-your-app/msix/publish-update-to-your-app-on-store.md
               - name: Guidance for app package management
                 href: publish-your-app/msix/app-package-management.md
-              - name: Removing an app
-                href: publish-your-app/msix/remove-app.md
         - name: MSI/EXE
           items:
               - name: Publish update to your app
                 href: publish-your-app/msi/publish-update-to-your-app-on-store.md  
               - name: Guidance for app package management
                 href: publish-your-app/msi/app-package-management.md
-              - name: Removing an app
-                href: publish-your-app/msi/remove-app.md
         - name: PWA
           items:
               - name: Publish update to your app
                 href: publish-your-app/pwa/publish-update-to-your-app-on-store.md
               - name: Guidance for app package management
                 href: publish-your-app/pwa/app-package-management.md
-              - name: Removing an app
-                href: publish-your-app/pwa/remove-app.md
         - name: Add-ons
           items:
               - name: Publish update to your add-on
                 href: publish-your-app/add-on/publish-update-to-your-app-on-store.md
+        - name: Removing an app or add-on
+          href: publish-your-app/remove-an-app-and-add-on.md
 - name: Leverage developer tools
   items:
     - name: MSIX
