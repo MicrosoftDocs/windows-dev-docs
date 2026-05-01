@@ -5586,23 +5586,23 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/composition/visual-layer-in-desktop-apps.md",
-      "redirect_url": "/windows/apps/desktop/modernize/visual-layer-in-desktop-apps",
+      "source_path": "hub/apps/desktop/modernize/ui/visual-layer-in-desktop-apps.md",
+      "redirect_url": "/windows/uwp/composition/visual-layer-in-desktop-apps",
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/composition/using-the-visual-layer-with-wpf.md",
-      "redirect_url": "/windows/apps/desktop/modernize/using-the-visual-layer-with-wpf",
+      "source_path": "hub/apps/desktop/modernize/ui/using-the-visual-layer-with-wpf.md",
+      "redirect_url": "/windows/uwp/composition/using-the-visual-layer-with-wpf",
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/composition/using-the-visual-layer-with-windows-forms.md",
-      "redirect_url": "/windows/apps/desktop/modernize/using-the-visual-layer-with-windows-forms",
+      "source_path": "hub/apps/desktop/modernize/ui/using-the-visual-layer-with-windows-forms.md",
+      "redirect_url": "/windows/uwp/composition/using-the-visual-layer-with-windows-forms",
       "redirect_document_id": false
     },
     {
-      "source_path": "uwp/composition/using-the-visual-layer-with-win32.md",
-      "redirect_url": "/windows/apps/desktop/modernize/using-the-visual-layer-with-win32",
+      "source_path": "hub/apps/desktop/modernize/ui/using-the-visual-layer-with-win32.md",
+      "redirect_url": "/windows/uwp/composition/using-the-visual-layer-with-win32",
       "redirect_document_id": false
     },
     {
@@ -5672,23 +5672,23 @@
     },
     {
       "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-win32.md",
-      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-win32",
-      "redirect_document_id": true
+      "redirect_url": "/windows/uwp/composition/using-the-visual-layer-with-win32",
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-windows-forms.md",
-      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-windows-forms",
-      "redirect_document_id": true
+      "redirect_url": "/windows/uwp/composition/using-the-visual-layer-with-windows-forms",
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/desktop/modernize/using-the-visual-layer-with-wpf.md",
-      "redirect_url": "/windows/apps/desktop/modernize/ui/using-the-visual-layer-with-wpf",
-      "redirect_document_id": true
+      "redirect_url": "/windows/uwp/composition/using-the-visual-layer-with-wpf",
+      "redirect_document_id": false
     },
     {
       "source_path": "hub/apps/desktop/modernize/visual-layer-in-desktop-apps.md",
-      "redirect_url": "/windows/apps/desktop/modernize/ui/visual-layer-in-desktop-apps",
-      "redirect_document_id": true
+      "redirect_url": "/windows/uwp/composition/visual-layer-in-desktop-apps",
+      "redirect_document_id": false
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-root.md",

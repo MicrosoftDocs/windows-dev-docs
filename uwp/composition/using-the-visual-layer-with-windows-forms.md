@@ -29,7 +29,7 @@ The UWP hosting API has these prerequisites.
 
 In this tutorial, you create a simple Windows Forms UI and add animated Composition elements to it. Both the Windows Forms and Composition components are kept simple, but the interop code shown is the same regardless of the complexity of the components. The finished app looks like this.
 
-![The running app UI](../images/visual-layer-interop/wf-comp-interop-app-ui.png)
+![The running app UI](images/wf-comp-interop-app-ui.png)
 
 ## Create a Windows Forms project
 
