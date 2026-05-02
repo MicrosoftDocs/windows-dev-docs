@@ -677,6 +677,71 @@ items:
     href: ../devices-sensors/get-battery-info.md
   - name: Customize the print workflow
     href: ../devices-sensors/print-workflow-customize.md
+- name: Host XAML controls (XAML Islands)
+  items:
+  - name: Overview
+    href: ../xaml-islands/xaml-islands.md
+  - name: XAML Islands in WPF and Windows Forms apps
+    items:
+    - name: Use XAML Islands to host a UWP XAML control in a C# WPF app
+      href: ../xaml-islands/host-standard-control-with-xaml-islands.md
+    - name: Host a custom XAML control
+      href: ../xaml-islands/host-custom-control-with-xaml-islands.md
+  - name: XAML Islands in C++ desktop apps
+    items:
+    - name: Using the XAML hosting API
+      href: ../xaml-islands/using-the-xaml-hosting-api.md
+    - name: Host a standard XAML control
+      href: ../xaml-islands/host-standard-control-with-xaml-islands-cpp.md
+    - name: Host a custom XAML control
+      href: ../xaml-islands/host-custom-control-with-xaml-islands-cpp.md
+    - name: Advanced scenarios
+      href: ../xaml-islands/advanced-scenarios-xaml-islands-cpp.md
+- name: Input
+  items:
+  - name: Gaze
+    href: ../ui-input/gaze-interactions.md
+  - name: Gamepad and remote control
+    href: ../ui-input/gamepad-and-remote-interactions.md
+  - name: Input injection
+    href: ../ui-input/input-injection.md
+  - name: Pen and Windows Ink
+    href: ../ui-input/pen-and-stylus-interactions.md
+    items:
+    - name: Pen interactions and haptic (tactile) feedback
+      href: ../ui-input/pen-haptics.md
+    - name: 'Tutorial: Add Inking support to your app'
+      href: ../ui-input/ink-walkthrough.md
+    - name: Recognize ink strokes
+      href: ../ui-input/convert-ink-to-text.md
+    - name: Store and retrieve ink strokes
+      href: ../ui-input/save-and-load-ink.md
+    - name: Add an InkToolbar
+      href: ../ui-input/ink-toolbar.md
+    - name: Handwriting view
+      href: ../ui-input/text-handwriting-view.md
+    - name: Ink controls
+      href: ../ui-input/inking-controls.md
+  - name: Speech interactions
+    href: ../ui-input/speech-interactions.md
+    items:
+    - name: Speech recognition
+      href: ../ui-input/speech-recognition.md
+    - name: Specify the speech recognizer language
+      href: ../ui-input/specify-the-speech-recognizer-language.md
+    - name: Define custom recognition constraints
+      href: ../ui-input/define-custom-recognition-constraints.md
+    - name: Continuous dictation
+      href: ../ui-input/enable-continuous-dictation.md
+    - name: Audio input issues
+      href: ../ui-input/manage-issues-with-audio-input.md
+    - name: Speech recognition timeouts
+      href: ../ui-input/set-speech-recognition-timeouts.md
+  - name: Surface Dial
+    href: ../ui-input/windows-wheel-interactions.md
+    items:
+    - name: 'Tutorial: Add Surface Dial support to your app'
+      href: ../ui-input/radialcontroller-walkthrough.md
 - name: Launching, resuming, and background tasks
   href: ../launch-resume/index.md
   items:
@@ -1114,7 +1179,7 @@ items:
     href: ../threading-async/use-a-timer-to-submit-a-work-item.md
   - name: Using Windows Runtime objects in a multithreaded environment
     href: ../threading-async/using-windows-runtime-objects-in-a-multithreaded-environment.md
-- name: User interface and input
+- name: User interface
   href: ../ui-input/index.md
   items:
   - name: App navigation
@@ -1137,68 +1202,13 @@ items:
       href: ../ui-input/app-window.md
     - name: Use ApplicationView
       href: ../ui-input/application-view.md
-- name: Host XAML controls (XAML Islands)
-  items:
-  - name: Overview
-    href: ../xaml-islands/xaml-islands.md
-  - name: XAML Islands in WPF and Windows Forms apps
+  - name: Visual layer
     items:
-    - name: Use XAML Islands to host a UWP XAML control in a C# WPF app
-      href: ../xaml-islands/host-standard-control-with-xaml-islands.md
-    - name: Host a custom XAML control
-      href: ../xaml-islands/host-custom-control-with-xaml-islands.md
-  - name: XAML Islands in C++ desktop apps
-    items:
-    - name: Using the XAML hosting API
-      href: ../xaml-islands/using-the-xaml-hosting-api.md
-    - name: Host a standard XAML control
-      href: ../xaml-islands/host-standard-control-with-xaml-islands-cpp.md
-    - name: Host a custom XAML control
-      href: ../xaml-islands/host-custom-control-with-xaml-islands-cpp.md
-    - name: Advanced scenarios
-      href: ../xaml-islands/advanced-scenarios-xaml-islands-cpp.md
-- name: Input
-  items:
-  - name: Gaze
-    href: ../ui-input/gaze-interactions.md
-  - name: Gamepad and remote control
-    href: ../ui-input/gamepad-and-remote-interactions.md
-  - name: Input injection
-    href: ../ui-input/input-injection.md
-  - name: Pen and Windows Ink
-    href: ../ui-input/pen-and-stylus-interactions.md
-    items:
-    - name: Pen interactions and haptic (tactile) feedback
-      href: ../ui-input/pen-haptics.md
-    - name: 'Tutorial: Add Inking support to your app'
-      href: ../ui-input/ink-walkthrough.md
-    - name: Recognize ink strokes
-      href: ../ui-input/convert-ink-to-text.md
-    - name: Store and retrieve ink strokes
-      href: ../ui-input/save-and-load-ink.md
-    - name: Add an InkToolbar
-      href: ../ui-input/ink-toolbar.md
-    - name: Handwriting view
-      href: ../ui-input/text-handwriting-view.md
-    - name: Ink controls
-      href: ../ui-input/inking-controls.md
-  - name: Speech interactions
-    href: ../ui-input/speech-interactions.md
-    items:
-    - name: Speech recognition
-      href: ../ui-input/speech-recognition.md
-    - name: Specify the speech recognizer language
-      href: ../ui-input/specify-the-speech-recognizer-language.md
-    - name: Define custom recognition constraints
-      href: ../ui-input/define-custom-recognition-constraints.md
-    - name: Continuous dictation
-      href: ../ui-input/enable-continuous-dictation.md
-    - name: Audio input issues
-      href: ../ui-input/manage-issues-with-audio-input.md
-    - name: Speech recognition timeouts
-      href: ../ui-input/set-speech-recognition-timeouts.md
-  - name: Surface Dial
-    href: ../ui-input/windows-wheel-interactions.md
-    items:
-    - name: 'Tutorial: Add Surface Dial support to your app'
-      href: ../ui-input/radialcontroller-walkthrough.md
+    - name: Overview
+      href: ../composition/visual-layer-in-desktop-apps.md
+    - name: "Visual layer in Win32"
+      href: ../composition/using-the-visual-layer-with-win32.md
+    - name: "Visual layer in WPF"
+      href: ../composition/using-the-visual-layer-with-wpf.md
+    - name: "Visual layer in WinForms"
+      href: ../composition/using-the-visual-layer-with-windows-forms.md

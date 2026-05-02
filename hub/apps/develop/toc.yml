@@ -1026,12 +1026,6 @@ items:
                 href: ../desktop/modernize/ui/apply-snap-layout-menu.md
               - name: Rounded window corners
                 href: ../desktop/modernize/ui/apply-rounded-corners.md
-          - name: Visual layer
-            items:
-              - name: Overview
-                href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
-              - name: "Tutorial: Using Composition APIs in Win32"
-                href: ../desktop/modernize/ui/using-the-visual-layer-with-win32.md
       - name: WPF
         items:
           - name: Integrate Windows App SDK
@@ -1040,24 +1034,12 @@ items:
             href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-patterns-winui3.md
           - name: App notifications
             href: notifications/app-notifications/app-notifications-wpf.md
-          - name: Visual layer
-            items:
-              - name: Overview
-                href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
-              - name: "Tutorial: Using Composition APIs in WPF"
-                href: ../desktop/modernize/ui/using-the-visual-layer-with-wpf.md
       - name: WinForms
         items:
           - name: Integrate Windows App SDK
             href: ../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md
           - name: App notifications
             href: notifications/app-notifications/app-notifications-winforms.md
-          - name: Visual layer
-            items:
-              - name: Overview
-                href: ../desktop/modernize/ui/visual-layer-in-desktop-apps.md
-              - name: "Tutorial: Using Composition APIs in WinForms"
-                href: ../desktop/modernize/ui/using-the-visual-layer-with-windows-forms.md
       - name: Migrate from UWP to Windows App SDK
         items:
           - name: Overview
