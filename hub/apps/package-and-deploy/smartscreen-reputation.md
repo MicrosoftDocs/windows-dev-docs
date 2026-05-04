@@ -65,8 +65,8 @@ There is no need (or mechanism) to manually submit a file for SmartScreen reputa
 
 - **Publish to the Microsoft Store** where feasible — this is the most reliable way to avoid warnings entirely
 - **Sign every release** — unsigned files cannot inherit a positive reputation from the signing certificate
-- **Do not modify signed files** - Avoid modifying files after signing as doing so can [break the signature](https://learn.microsoft.com/en-us/windows/win32/secbp/understanding-pe-signatures#security-implications) depending on client configuration
-- **Do not sign potentially unwanted applications** - Avoid signing any file which exhibits [malicious or potentially unwanted application](https://learn.microsoft.com/en-us/unified-secops/criteria) behavior, or the certificate may develop **negative** reputation
+- **Do not modify signed files** - Avoid modifying files after signing as doing so can [break the signature](/windows/win32/secbp/understanding-pe-signatures#security-implications) depending on client configuration
+- **Do not sign potentially unwanted applications** - Avoid signing any file which exhibits [malicious or potentially unwanted application](/unified-secops/criteria) behavior, or the certificate may develop **negative** reputation
 - **Use a consistent signing identity** — changing your signing certificate affects the publisher trust signal
 - **Communicate with early adopters** — for new apps, let beta users know they may see a SmartScreen prompt on first download, and that they should only proceed after verifying the publisher and confirming they trust the download source
 
