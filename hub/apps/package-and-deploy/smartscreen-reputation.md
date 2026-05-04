@@ -11,14 +11,14 @@ ms.localizationpriority: medium
 Microsoft Defender SmartScreen checks the reputation of downloaded files before allowing them to run. Understanding how reputation works can help avoid warnings when users download or run your files.
 
 > [!TIP]
-> **The simplest way to avoid SmartScreen warnings is to publish through the Microsoft Store.** Store-distributed apps are signed a Microsoft certificate and are never subject to SmartScreen download warnings. The remainder of this article applies to apps distributed outside the Store.
+> **The simplest way to avoid SmartScreen warnings is to publish through the Microsoft Store.** Store-distributed apps are signed by a Microsoft certificate and are never subject to SmartScreen download warnings. The remainder of this article applies to apps distributed outside the Store.
 
 ## How SmartScreen reputation works
 
 SmartScreen evaluates two signals when a user downloads and runs a file:
 
 1. **Publisher reputation** — Is the file signed? Is the signing certificate from a known, trusted publisher?
-2. **File hash reputation** — Has this specific file been downloaded by many users without indications of malicious behavior?
+2. **File hash reputation** — Has this specific file been downloaded by users without indications of malicious behavior?
 
 A negative or unknown reputation for a file's hash or its publisher's certificate can cause warnings to show. Even when signed, a newly created binary could still show a SmartScreen warning until its hash or publisher certificate accumulates sufficient evidence of positive reputation.
 
@@ -43,12 +43,12 @@ Apps published through the Microsoft Store are re-signed by Microsoft and carry 
 
 ### Azure Artifact Signing (formerly Trusted Signing)
 
-[Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is Microsoft's recommended code signing service for non-Store distribution:
+[Azure Artifact Signing](/azure/trusted-signing/) (formerly Trusted Signing) is Microsoft's recommended code signing service for non-Store distribution:
 
 - **Cost:** Approximately $10/month
 - **No hardware token required** — integrates directly with CI/CD pipelines (GitHub Actions, Azure DevOps)
 - **Identity validation required** — Microsoft validates your identity before issuing certificates
-- **SmartScreen behavior:** Same as any certificate — reputation accumulates over time based on download volume
+- **SmartScreen behavior** — reputation accumulates over time based on download volume and behavior
 
 ## What to expect when you publish a new app
 
@@ -56,7 +56,7 @@ Apps published through the Microsoft Store are re-signed by Microsoft and carry 
 2. **As downloads accumulate:** SmartScreen reputation builds up automatically. The prompt will stop appearing once the file hash has sufficient download history. There is no exact threshold, but it can take several weeks and hundreds of clean installs from a wide audience.
 3. **New version:** Signing files using a trusted certificate can allow certificate reputation to build, potentially avoiding warnings on new files signed by the same trusted certificate. Unsigned files must build reputation anew with every update.
 
-There is need (or mechanism) to manually submit a file for SmartScreen reputation review for consumer endpoints. Reputation builds organically through download volume.
+There is no need (or mechanism) to manually submit a file for SmartScreen reputation review for consumer endpoints. Reputation builds organically through download volume.
 
 > [!NOTE]
 > Enterprise environments may have different SmartScreen behavior depending on policy configuration; for example, the ability to bypass a SmartScreen warning may be disabled. Enterprises may distribute files from Trusted Intranet locations not subject to SmartScreen review. Enterprise IT administrators may optionally submit files for review via the [Microsoft Security Intelligence portal](https://www.microsoft.com/en-us/wdsi/filesubmission). This can accelerate trust for internal or managed deployments.
@@ -65,6 +65,8 @@ There is need (or mechanism) to manually submit a file for SmartScreen reputatio
 
 - **Publish to the Microsoft Store** where feasible — this is the most reliable way to avoid warnings entirely
 - **Sign every release** — unsigned files cannot inherit a positive reputation from the signing certificate
+- **Do not modify signed files** - Avoid modifying files after signing as doing so can [break the signature](https://learn.microsoft.com/en-us/windows/win32/secbp/understanding-pe-signatures#security-implications) depending on client configuration
+- **Do not sign potentially unwanted applications** - Avoid signing any file which exhibits [malicious or potentially unwanted application](https://learn.microsoft.com/en-us/unified-secops/criteria) behavior, or the certificate may develop **negative** reputation
 - **Use a consistent signing identity** — changing your signing certificate affects the publisher trust signal
 - **Communicate with early adopters** — for new apps, let beta users know they may see a SmartScreen prompt on first download, and that they should only proceed after verifying the publisher and confirming they trust the download source
 
