@@ -16,7 +16,7 @@ The new onboarding process allows company developers to publish apps to the Micr
 |-----------------------------------|---------------------------------------------------------------------------|
 | **Free registration**           | The $99 registration fee is waived in the new flow. |
 | **Guided, lightweight onboarding**         | A clean, modern experience with step-by-step guidance and email notifications for verification status updates, so you know what’s happening and what to do next. |
-| **Microsoft Entra ID (work account) sign-in support (available in flighted markets only)**         | You can now sign in with either a personal Microsoft account (MSA) or a Microsoft Entra ID work account when creating a company developer account. If you sign in with an Entra ID account, your entire organization's tenant is onboarded — meaning other users from the same tenant can also access Partner Center once appropriate roles are assigned. |
+| **Microsoft Entra ID (work account) sign-in support**         | You can now sign in with either a personal Microsoft account (MSA) or a Microsoft Entra ID work account when creating a company developer account. If you sign in with an Entra ID account, your entire organization's tenant is onboarded — meaning other users from the same tenant can also access Partner Center once appropriate roles are assigned. |
 
 ## Who should select a company account
 
@@ -72,7 +72,7 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 4. Sign in with your **personal Microsoft account (MSA)** or your **Microsoft Entra ID (work) account**:
 * **Personal Microsoft account (MSA)**: Use an existing personal Microsoft account or create a new one.
-* **Microsoft Entra ID (work account) [available in flighted markets only]**: Sign in with your organization's work account (e.g., user@contoso.com). This option is available for company accounts only. Individual developer accounts must use a personal Microsoft account.
+* **Microsoft Entra ID (work account)**: Sign in with your organization's work account (e.g., user@contoso.com). This option is available for company accounts only. Individual developer accounts must use a personal Microsoft account.
 
 > **Note:**
 > * **Tenant-wide onboarding**: When you sign in with an Entra ID account and complete onboarding, your entire Azure AD tenant is onboarded. All users in your organization's tenant are marked as having an active developer account. However, only the user who completes the onboarding process receives Owner permissions by default in Partner Center. Other tenant users will need to be assigned roles (Developer, Manager, Owner, etc.) by an Owner or Manager through [Partner Center → Account settings → User management.](../publish/partner-center/manage-users-in-partner-center.md)

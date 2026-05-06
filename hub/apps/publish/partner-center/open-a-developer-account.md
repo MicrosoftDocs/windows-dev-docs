@@ -39,7 +39,7 @@ For more details, you can refer to the steps below:
 
    > **Note for Company developers:** Selecting **Company account** will redirect you to the new onboarding flow for Company developers. Learn more about Company account setup [here](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
 
-![Choose account type](../images/choose-account.png)
+![Choose account type](../images/whats-new-company-account-2.png)
 
 4. **Sign in** with your Microsoft account (MSA) or create a new one.
 
@@ -136,10 +136,18 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 
 3. Select **Company account** (free).
 
-![Choose account type](../images/new-company-account-2.png)
+![Choose account type](../images/whats-new-company-account-2.png)
 
-4. **Sign in** with your personal Microsoft account (MSA) or create a new one.
+4. Sign in with your **personal Microsoft account (MSA)** or your **Microsoft Entra ID (work) account**:
+* **Personal Microsoft account (MSA)**: Use an existing personal Microsoft account or create a new one.
+* **Microsoft Entra ID (work account)**: Sign in with your organization's work account (e.g., user@contoso.com). This option is available for company accounts only. Individual developer accounts must use a personal Microsoft account.
 
+> **Note:**
+> * **Tenant-wide onboarding**: When you sign in with an Entra ID account and complete onboarding, your entire Azure AD tenant is onboarded. All users in your organization's tenant are marked as having an active developer account. However, only the user who completes the onboarding process receives Owner permissions by default in Partner Center. Other tenant users will need to be assigned roles (Developer, Manager, Owner, etc.) by an Owner or Manager through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md)
+> * **If your organization's tenant is already onboarded**: If someone in your organization has already completed company account onboarding using an Entra ID account, and you sign in with your own Entra ID account from the same tenant, you will be redirected to Partner Center. However, you may not see the Apps & Games workspace in Partner Center. This is expected unless an Owner or Manager has given you the necessary permissions.
+> **What to do:**
+>   1. Contact your account Owner or Manager and ask them to assign you a role through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md)
+>   2. If you don't know who the Owner or Manager of your account is, check with your Azure AD tenant administrator.
 5. Enter your business details by verifying with a **D-U-N-S number** (recommended for faster verification) or by uploading **official business documents**. Review and confirm the company information shown.
 
    > **Note:** Verification using documents may go to manual review and can take up to 3-5 business days.
@@ -211,6 +219,14 @@ You must begin your journey at [storedeveloper.microsoft.com](https://storedevel
 ### I already have a developer account—do I need to use this?
 
 No — this flow is only for new company developers creating their account for the first time.
+
+### Can I use my work account (Microsoft Entra ID) to create an Individual developer account?
+
+No, Entra ID (work account) sign-up is currently supported only for Company accounts. If you're signing up as an Individual developer, you must use a personal Microsoft account (MSA).
+
+### I signed in with my Entra ID (work account) but I can't see the Apps & Games workspace in Partner Center. What should I do?
+
+This typically means someone else in your organization has already completed company account onboarding, and your tenant is already registered. You've been redirected to Partner Center, but you haven't been assigned a role yet. Contact your account Owner or Manager and ask them to assign you a role (such as Developer, Manager, or Owner) through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md) If you're unsure who the Owner or Manager is, check with your Azure AD tenant administrator.
 
 ---
 
