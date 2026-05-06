@@ -12,9 +12,9 @@ You don't need to rewrite your WPF, Windows Forms, or Win32 app to take advantag
 
 This article provides an overview of modern features that you can add to your desktop app by using:
 
-- Windows Runtime (WinRT) APIs in the *Windows SDK*
-- The *Windows App SDK*
-- MSIX packaging or package identity
+- Windows Runtime (WinRT) APIs in the *[Windows SDK](../../windows-sdk/index.md)*
+- The *[Windows App SDK](../../windows-app-sdk/index.md)*
+- MSIX [packaging or package identity](../../package-and-deploy/packaging/index.md)
 
 > [!NOTE]
 > There are other aspects of app modernization that aren't covered here, like updating to a newer version of .NET or Visual Studio tooling. For more information about those aspects of modernization, start with:
@@ -29,7 +29,7 @@ Many Windows platform [features](../../develop/index.md) — app notifications, 
 **The first step in adding modern features to your app is configuring your project to use WinRT APIs. For instructions, see:**
 
 > [!div class="nextstepaction"]
-> [Call Windows Runtime APIs in desktop apps](desktop-to-uwp-enhance.md)
+> [Call Windows Runtime APIs in desktop apps](winrt-apis-desktop-apps.md)
 
 ## Windows App SDK
 
@@ -49,7 +49,7 @@ Packaging defines how your app is installed, updated, and integrated with Window
 
 **For more information, see:**
 
-- [Packaging overview](/windows/apps/package-and-deploy/packaging/)
+- [Packaging overview](../../package-and-deploy/packaging/index.md)
 - [Features that require package identity](modernize-packaged-apps.md)
 - [Integrate your desktop app with Windows using packaging extensions](desktop-to-uwp-extensions.md)
 

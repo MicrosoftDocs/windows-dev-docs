@@ -9,9 +9,9 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Windows Runtime APIs not supported in desktop apps
+# Support for Windows Runtime APIs in desktop apps
 
-Although you can use most Windows Runtime (WinRT) APIs (see [Windows UWP namespaces](/uwp/api/)) in your C# or C++ desktop app, there are two main sets of WinRT APIs that aren't supported in desktop apps, or that have restrictions:
+Although you can use most Windows Runtime (WinRT) APIs (see [Windows Runtime (WinRT) namespaces](/uwp/api/)) in your C# or C++ desktop app, there are two main sets of WinRT APIs that aren't supported in desktop apps, or that have restrictions:
 
 * APIs that have dependencies on user interface (UI) features that were designed for use only in a Universal Windows Platform (UWP) app.
 * APIs that require package identity (see [Features that require package identity](./modernize-packaged-apps.md)). Such APIs are supported only in desktop apps that are packaged using [MSIX](/windows/msix/).
@@ -19,9 +19,7 @@ Although you can use most Windows Runtime (WinRT) APIs (see [Windows UWP namespa
 This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
-> Apps using .NET can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. Those classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md). Note that those classes require the .NET 6 SDK or later.
-
-This article will be updated as more workarounds and replacements are identified. If you encounter an issue with an API not listed here, please [create an issue](https://github.com/microsoft/microsoft-ui-xaml/issues/new?assignees=&labels=&template=bug_report.md&title=) in the [microsoft-ui-xaml](https://github.com/microsoft/microsoft-ui-xaml) repo with the API name and details about what you're trying to achieve by using it.
+> Apps that use .NET can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. Those classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md). Note that those classes require the .NET 6 SDK or later.
 
 ## APIs that have dependencies on UWP-only UI features
 
@@ -133,6 +131,8 @@ The full list of methods that follow the **Request** naming pattern is very long
 
 The following WinRT classes require package identity (see [Features that require package identity](./modernize-packaged-apps.md)). These APIs are supported only in desktop apps that are packaged (that is, that have package identity at runtime). The list might not be comprehensive.
 
+### Windows.ApplicationModel...
+
 * [**Windows.ApplicationModel.DataTransfer.DataProviderHandler**](/uwp/api/windows.applicationmodel.datatransfer.dataproviderhandler)
 * [**Windows.ApplicationModel.DataTransfer.DataRequest**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequest)
 * [**Windows.ApplicationModel.DataTransfer.DataRequestDeferral**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataRequestDeferral)
@@ -155,6 +155,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.ApplicationModel.Resources.Core.ResourceQualifierObservableMap**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceQualifierObservableMap)
 * [**Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView**](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceQualifierVectorView)
 * [**Windows.ApplicationModel.Resources.ResourceLoader**](/uwp/api/Windows.ApplicationModel.Resources.ResourceLoader)
+
+### Windows.Data...
+
 * [**Windows.Data.Pdf.PdfDocument**](/uwp/api/Windows.Data.Pdf.PdfDocument)
 * [**Windows.Data.Pdf.PdfPage**](/uwp/api/Windows.Data.Pdf.PdfPage)
 * [**Windows.Data.Pdf.PdfPageDimensions**](/uwp/api/Windows.Data.Pdf.PdfPageDimensions)
@@ -182,6 +185,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Data.Xml.Dom.XmlProcessingInstruction**](/uwp/api/Windows.Data.Xml.Dom.XmlProcessingInstruction)
 * [**Windows.Data.Xml.Dom.XmlText**](/uwp/api/Windows.Data.Xml.Dom.XmlText)
 * [**Windows.Data.Xml.Xsl.XsltProcessor**](/uwp/api/Windows.Data.Xml.Xsl.XsltProcessor)
+
+### Windows.Devices...
+
 * [**Windows.Devices.Input.KeyboardCapabilities**](/uwp/api/Windows.Devices.Input.KeyboardCapabilities)
 * [**Windows.Devices.Input.MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)
 * [**Windows.Devices.Input.MouseDevice**](/uwp/api/Windows.Devices.Input.MouseDevice)
@@ -210,6 +216,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Devices.SmartCards.SmartCard**](/uwp/api/Windows.Devices.SmartCards.SmartCard)
 * [**Windows.Devices.SmartCards.SmartCardConnection**](/uwp/api/Windows.Devices.SmartCards.SmartCardConnection)
 * [**Windows.Devices.SmartCards.SmartCardReader**](/uwp/api/Windows.Devices.SmartCards.SmartCardReader)
+
+### Windows.Foundation...
+
 * [**Windows.Foundation.AsyncActionCompletedHandler**](/uwp/api/windows.foundation.asyncactioncompletedhandler)
 * [**Windows.Foundation.AsyncActionProgressHandler\<TProgress\>**](/uwp/api/windows.foundation.asyncactionprogresshandler-1)
 * [**Windows.Foundation.AsyncActionWithProgressCompletedHandler\<TProgress\>**](/uwp/api/windows.foundation.asyncactionwithprogresscompletedhandler-1)
@@ -226,11 +235,17 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Foundation.Diagnostics.LoggingSession**](/uwp/api/Windows.Foundation.Diagnostics.LoggingSession)
 * [**Windows.Foundation.EventHandler\<T\>**](/uwp/api/windows.foundation.eventhandler-1)
 * [**Windows.Foundation.MemoryBuffer**](/uwp/api/Windows.Foundation.MemoryBuffer)
+
+### Windows.Globalization...
+
 * [**Windows.Globalization.ApplicationLanguages**](/uwp/api/Windows.Globalization.ApplicationLanguages)
 * [**Windows.Globalization.JapanesePhoneme**](/uwp/api/Windows.Globalization.JapanesePhoneme)
 * [**Windows.Globalization.JapanesePhoneticAnalyzer**](/uwp/api/Windows.Globalization.JapanesePhoneticAnalyzer)
 * [**Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter**](/uwp/api/Windows.Globalization.PhoneNumberFormatting.PhoneNumberFormatter)
 * [**Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo**](/uwp/api/Windows.Globalization.PhoneNumberFormatting.PhoneNumberInfo)
+
+### Windows.Graphics...
+
 * [**Windows.Graphics.Imaging.BitmapBuffer**](/uwp/api/Windows.Graphics.Imaging.BitmapBuffer)
 * [**Windows.Graphics.Imaging.BitmapCodecInformation**](/uwp/api/Windows.Graphics.Imaging.BitmapCodecInformation)
 * [**Windows.Graphics.Imaging.BitmapDecoder**](/uwp/api/Windows.Graphics.Imaging.BitmapDecoder)
@@ -266,6 +281,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial**](/uwp/api/Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterial)
 * [**Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup**](/uwp/api/Windows.Graphics.Printing3D.Printing3DTexture2CoordMaterialGroup)
 * [**Windows.Graphics.Printing3D.Printing3DTextureResource**](/uwp/api/Windows.Graphics.Printing3D.Printing3DTextureResource)
+
+### Windows.Management...
+
 * [**Windows.Management.Core.ApplicationDataManager**](/uwp/api/Windows.Management.Core.ApplicationDataManager)
 * [**Windows.Management.Deployment.DeploymentResult**](/uwp/api/Windows.Management.Deployment.DeploymentResult)
 * [**Windows.Management.Deployment.PackageManager**](/uwp/api/Windows.Management.Deployment.PackageManager)
@@ -273,6 +291,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Management.Deployment.PackageVolume**](/uwp/api/Windows.Management.Deployment.PackageVolume)
 * [**Windows.Management.Workplace.MdmPolicy**](/uwp/api/Windows.Management.Workplace.MdmPolicy)
 * [**Windows.Management.Workplace.WorkplaceSettings**](/uwp/api/Windows.Management.Workplace.WorkplaceSettings)
+
+### Windows.Media...
+
 * [**Windows.Media.AudioBuffer**](/uwp/api/Windows.Media.AudioBuffer)
 * [**Windows.Media.Capture.AdvancedCapturedPhoto**](/uwp/api/Windows.Media.Capture.AdvancedCapturedPhoto)
 * [**Windows.Media.Capture.AppCaptureAlternateShortcutKeys**](/uwp/api/Windows.Media.Capture.AppCaptureAlternateShortcutKeys)
@@ -326,12 +347,22 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Media.SpeechSynthesis.SpeechSynthesisStream**](/uwp/api/Windows.Media.SpeechSynthesis.SpeechSynthesisStream)
 * [**Windows.Media.SpeechSynthesis.SpeechSynthesizer**](/uwp/api/Windows.Media.SpeechSynthesis.SpeechSynthesizer)
 * [**Windows.Media.SpeechSynthesis.VoiceInformation**](/uwp/api/Windows.Media.SpeechSynthesis.VoiceInformation)
+
+### Windows.Networking...
+
 * [**Windows.Networking.PushNotifications.PushNotificationChannel**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannel)
 * [**Windows.Networking.PushNotifications.PushNotificationChannelManager**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationChannelManager)
 * [**Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs**](/uwp/api/Windows.Networking.PushNotifications.PushNotificationReceivedEventArgs)
 * [**Windows.Networking.PushNotifications.RawNotification**](/uwp/api/Windows.Networking.PushNotifications.RawNotification)
 * [**Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs**](/uwp/api/Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs)
 * [**Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs**](/uwp/api/Windows.Networking.Sockets.MessageWebSocketMessageReceivedEventArgs)
+
+### Windows.Services.Maps...
+
+> [!IMPORTANT]
+> The Windows Maps platform APIs ([Windows.Services.Maps.*](/uwp/api/windows.services.maps)) are deprecated and may not be available in future versions of Windows. For more information, see [Resources for deprecated features](/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis).
+
+
 * [**Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs**](/uwp/api/Windows.Services.Maps.Guidance.GuidanceAudioNotificationRequestedEventArgs)
 * [**Windows.Services.Maps.Guidance.GuidanceLaneInfo**](/uwp/api/Windows.Services.Maps.Guidance.GuidanceLaneInfo)
 * [**Windows.Services.Maps.Guidance.GuidanceManeuver**](/uwp/api/Windows.Services.Maps.Guidance.GuidanceManeuver)
@@ -361,6 +392,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Services.Maps.MapRouteLeg**](/uwp/api/Windows.Services.Maps.MapRouteLeg)
 * [**Windows.Services.Maps.MapRouteManeuver**](/uwp/api/Windows.Services.Maps.MapRouteManeuver)
 * [**Windows.Services.Maps.MapService**](/uwp/api/Windows.Services.Maps.MapService)
+
+### Windows.Services.Store...
+
 * [**Windows.Services.Store.StoreAcquireLicenseResult**](/uwp/api/Windows.Services.Store.StoreAcquireLicenseResult)
 * [**Windows.Services.Store.StoreAppLicense**](/uwp/api/Windows.Services.Store.StoreAppLicense)
 * [**Windows.Services.Store.StoreAvailability**](/uwp/api/Windows.Services.Store.StoreAvailability)
@@ -383,6 +417,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Services.Store.StoreSendRequestResult**](/uwp/api/Windows.Services.Store.StoreSendRequestResult)
 * [**Windows.Services.Store.StoreSku**](/uwp/api/Windows.Services.Store.StoreSku)
 * [**Windows.Services.Store.StoreVideo**](/uwp/api/Windows.Services.Store.StoreVideo)
+
+### Windows.Storage...
+
 * [**Windows.Storage.AccessCache.StorageApplicationPermissions**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions)
 * [**Windows.Storage.ApplicationData**](/uwp/api/windows.storage.applicationdata)
 * [**Windows.Storage.ApplicationDataSetVersionHandler**](/uwp/api/windows.storage.applicationdatasetversionhandler)
@@ -427,6 +464,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.Storage.SystemPhotoProperties**](/uwp/api/Windows.Storage.SystemPhotoProperties)
 * [**Windows.Storage.SystemProperties**](/uwp/api/Windows.Storage.SystemProperties)
 * [**Windows.Storage.SystemVideoProperties**](/uwp/api/Windows.Storage.SystemVideoProperties)
+
+### Windows.System...
+
 * [**Windows.System.Diagnostics.ProcessCpuUsage**](/uwp/api/Windows.System.Diagnostics.ProcessCpuUsage)
 * [**Windows.System.Diagnostics.ProcessCpuUsageReport**](/uwp/api/Windows.System.Diagnostics.ProcessCpuUsageReport)
 * [**Windows.System.Diagnostics.ProcessDiagnosticInfo**](/uwp/api/Windows.System.Diagnostics.ProcessDiagnosticInfo)
@@ -445,6 +485,9 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.System.Threading.TimerElapsedHandler**](/uwp/api/windows.system.threading.timerelapsedhandler)
 * [**Windows.System.Threading.WorkItemHandler**](/uwp/api/windows.system.threading.workitemhandler)
 * [**Windows.System.TimeZoneSettings**](/uwp/api/Windows.System.TimeZoneSettings)
+
+### Windows.UI...
+
 * [**Windows.UI.Notifications.BadgeNotification**](/uwp/api/Windows.UI.Notifications.BadgeNotification)
 * [**Windows.UI.Notifications.BadgeUpdateManager**](/uwp/api/Windows.UI.Notifications.BadgeUpdateManager)
 * [**Windows.UI.Notifications.BadgeUpdater**](/uwp/api/Windows.UI.Notifications.BadgeUpdater)

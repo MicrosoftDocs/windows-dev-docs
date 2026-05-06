@@ -5,55 +5,106 @@ ms.topic: how-to
 ms.date: 07/14/2025
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
+zone_pivot_groups: desktop-framework
 ---
 
 # Use the Windows App SDK in an existing project
 
-If you have a desktop project in which you want to use the Windows App SDK, then you can install the Windows App SDK NuGet package in your project (the latest version, or any version that you need). Unpackaged apps (that is, apps that don't use MSIX for their deployment technology) *must* follow this procedure if they're to use the Windows App SDK. But packaged apps *can* do it, too.
-
-[!INCLUDE [UWP migration guidance](./includes/uwp-app-sdk-migration-pointer.md)]
-
-> [!NOTE]
-> This procedure is supported in C# .NET 6 (and later) projects and C++ desktop projects. Those project types can use NuGet packages from either the stable release channel, the preview release channel, or the experimental release channel.
+If you have a WPF, WinForms, or Win32 desktop project in which you want to use features of the Windows App SDK, then you can install the Windows App SDK NuGet package in your project.
 
 ## Prerequisites
 
-* Visual Studio 2026 or later.
-* The workloads and components for Windows app development. For more info, see [Install tools for the Windows App SDK](set-up-your-development-environment.md).
+Before you install and use the Windows App SDK NuGet package in your app, be sure these requirements are met:
+
+- Visual Studio is installed and configured for Windows app development.
+  
+  > [!div class="nextstepaction"]
+  > [Set up your development environment](../get-started/start-here.md#set-up-your-development-environment).
+
+- Your WPF, WinForms, or Win32 project is configured to call WinRT APIs.
+
+  > [!div class="nextstepaction"]
+  > [Call Windows Runtime APIs in desktop apps](../desktop/modernize/winrt-apis-desktop-apps.md).
 
 ## Instructions
 
-1. Open an existing project in Visual Studio.
+1. Open an existing WPF, WinForms, or Win32 project in Visual Studio. Ensure that it's configured to [Call Windows Runtime APIs](../desktop/modernize/winrt-apis-desktop-apps.md).
 
-    > [!NOTE]
-    > If you have a C# desktop project, then make sure that the **TargetFramework** element in the project file is set to a Windows 10-specific moniker (such as **net6.0-windows10.0.19041.0**) so that you can call Windows Runtime APIs. For more info, see [Call Windows Runtime APIs in desktop apps](../../apps/desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option).
+1. In Visual Studio, open the **NuGet Package Manager**:
 
-2. Make sure that [package references](/nuget/consume-packages/package-references-in-project-files) are enabled:
+    1. Click **Tools > NuGet Package Manager > Manage NuGet Packages for Solution...**.
+    <br/>– OR –
+    1. Right-click your project in **Solution Explorer**, and choose **Manage NuGet Packages for Solution...**.
 
-    1. In Visual Studio, click **Tools** > **NuGet Package Manager** > **Package Manager Settings**.
-    2. Make sure that **PackageReference** is selected for **Default package management format**.
+1. In the **NuGet Package Manager** window select the **Browse** tab and search for the following package:
 
-3. Right-click your project in **Solution Explorer**, and choose **Manage NuGet Packages**.
+    - **Microsoft.WindowsAppSDK**.
 
-4. In the **NuGet Package Manager** window, select the **Include prerelease** check box near the top of the window, select the **Browse** tab, and search for one of the following packages:
-
-    - To install one of the [1.0 or later releases](downloads.md), search for the **Microsoft.WindowsAppSDK** package.
-    - To install one of the [0.8 releases](downloads.md), search for the **Microsoft.ProjectReunion** package.
-
-5. After you've found the appropriate Windows App SDK NuGet package, select the package, and click **Install** in the right-hand pane of the **NuGet Package Manager** window.
+1. After you've found the appropriate Windows App SDK NuGet package, select the package, check the box in the right-hand pane of the **NuGet Package Manager** window next to the project where you want to install the package, then click **Install**.
 
     [![Screenshot of the Windows App SDK NuGet package being installed](images/reunion-nuget-install.png) ](images/reunion-nuget-install.png#lightbox)
 
     > [!NOTE]
-    > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and others) that contain the implementations for specific components in the Windows App SDK. You can't install these sub-packages individually in order to reference only certain components in your project. You must install the main Windows App SDK NuGet package, which includes all of the components.
+    > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and others) that contain the implementations for specific components in the Windows App SDK. In general, we recommend that you install the main Windows App SDK NuGet package, which includes all of the components. In some cases, you can install a sub-package individually in order to reference only certain components in your project. For example, see [Install and deploy Windows ML](/windows/ai/new-windows-ml/distributing-your-app).
 
-6. **For unpackaged apps only**. Before your unpackaged app can use Windows App SDK APIs and components, your app must first load the Windows App SDK runtime to reference the Windows App SDK framework package. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+### Additional steps for unpackaged apps
 
-7. Your app can now use Windows App SDK APIs and components that are available in the release channel that you installed. For the list of available features, see [release channels](release-channels.md).
+If your app is unpackaged (which desktop apps are by default), then there are some additional steps needed to use the Windows App SDK.
+
+For more info about the terms *packaged* and *unpackaged*, see [Packaging overview](/windows/apps/package-and-deploy/packaging/).
+
+
+#### 1. Install the Windows App SDK Runtime
+
+The Windows App SDK Runtime needs to be installed on any machine where the app will run.
+
+For your development machine, we recommend that you visit [Latest Windows App SDK downloads](/windows/apps/windows-app-sdk/downloads), then download, unzip, and run either:
+
+-	The latest stable release under **Runtime downloads**.
+-	A version and release channel of the runtime that matches the version and release channel of the **Microsoft.WindowsAppSDK** NuGet package that you installed.
+
+Choose the appropriate Installer option for your machine’s architecture.
+
+> [!IMPORTANT]
+> When your app is deployed, you will be responsible for deploying required Windows App SDK runtime packages to your end users. For more information, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md#prerequisites). 
+
+#### 2. Initialize the Windows App SDK Runtime
+
+By default, a WPF, WinForms, or Win32 desktop app is unpackaged. An unpackaged app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK. 
+
+You can do that automatically when your app starts via *auto-initialization*.
+
+:::zone pivot="dotnet"
+
+1. In **Solution Explorer**, right-click your project, and choose **Edit Project File**.
+
+2. Inside the `PropertyGroup` element, add a `WindowsPackageType` element set to `None`. 
+
+```xml
+<WindowsPackageType>None</WindowsPackageType>
+```
+When you build your project, these files are added to your project in Visual Studio:
+-	MddBootstrapAutoInitializer.cs
+-	WindowsAppSDK-VersionInfo.cs
+
+:::zone-end
+
+:::zone pivot="win32"
+
+1. Manually edit your .cxproj file.
+
+2. Inside the `<PropertyGroup Label="Globals">` element, add a `WindowsPackageType` element set to `None`. 
+
+```xml
+<WindowsPackageType>None</WindowsPackageType>
+```
+
+:::zone-end
+
+> [!NOTE]
+> If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then instead of *auto-initialization* you can call the bootstrapper API explicitly&mdash;for more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
 
 ## Further info
-
-If your existing project is a C++ project, and you want to call Windows Runtime APIs in the Windows App SDK, then you'll need to add support for C++/WinRT. See [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package). Look for info there about the **Microsoft.Windows.CppWinRT NuGet** package. Without that package, your project won't be able to find the namespace header files for Windows Runtime APIs in the Windows App SDK.
 
 If you encounter a *Class not registered* error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
 

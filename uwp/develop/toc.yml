@@ -681,22 +681,22 @@ items:
   items:
   - name: Overview
     href: ../xaml-islands/xaml-islands.md
+  - name: Using the XAML hosting API
+    href: ../xaml-islands/using-the-xaml-hosting-api.md
+  - name: Advanced scenarios
+    href: ../xaml-islands/advanced-scenarios-xaml-islands-cpp.md
   - name: XAML Islands in WPF and Windows Forms apps
     items:
-    - name: Use XAML Islands to host a UWP XAML control in a C# WPF app
+    - name: Host a UWP XAML control
       href: ../xaml-islands/host-standard-control-with-xaml-islands.md
     - name: Host a custom XAML control
       href: ../xaml-islands/host-custom-control-with-xaml-islands.md
   - name: XAML Islands in C++ desktop apps
     items:
-    - name: Using the XAML hosting API
-      href: ../xaml-islands/using-the-xaml-hosting-api.md
     - name: Host a standard XAML control
       href: ../xaml-islands/host-standard-control-with-xaml-islands-cpp.md
     - name: Host a custom XAML control
       href: ../xaml-islands/host-custom-control-with-xaml-islands-cpp.md
-    - name: Advanced scenarios
-      href: ../xaml-islands/advanced-scenarios-xaml-islands-cpp.md
 - name: Input
   items:
   - name: Gaze

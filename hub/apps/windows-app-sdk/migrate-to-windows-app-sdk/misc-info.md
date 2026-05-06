@@ -55,7 +55,7 @@ You can also use conditional compilation in XAML markup.
 </Application>
 ```
 
-Also see [Conditional compilation](../../desktop/modernize/desktop-to-uwp-enhance.md#conditional-compilation).
+Also see [Conditional compilation](../../desktop/modernize/winrt-apis-desktop-apps.md#conditional-compilation).
 
 ## Debugging
 

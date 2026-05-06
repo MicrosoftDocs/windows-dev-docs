@@ -25,7 +25,7 @@ For those APIs, we'll show you what alternatives to use. Most of those alternati
 For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
 > [!NOTE]
-> Also see [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
+> Also see [Support for WinRT APIs in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
 
 We'd love to hear your feedback about this migration guide, and about your own migration experience. Use the **Feedback** section right at the foot of this page like this:
 * For questions and feedback about the Windows App SDK, or just to start a discussion, use the **This product** button. You can also start a discussion on the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions) of the **WindowsAppSDK** GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.
@@ -114,4 +114,4 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 * [WinUI](../../winui/index.md)
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)
-* [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md)
+* [Support for WinRT APIs in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md)

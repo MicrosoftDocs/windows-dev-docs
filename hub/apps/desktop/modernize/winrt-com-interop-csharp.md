@@ -14,7 +14,7 @@ This topic lists the available C# interop classes, and shows how to use them. Th
 
 ## Configure a .NET desktop project to use the C# interop classes
 
-The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET either as part of the [Windows App SDK](../../windows-app-sdk/index.md), or else by using a particular [Target Framework Moniker](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option), as we'll see.
+The C# interop classes listed in the next section ([Available C# interop classes](#available-c-interop-classes)) are available in .NET either as part of the [Windows App SDK](../../windows-app-sdk/index.md), or else by using a particular [Target Framework Moniker](winrt-apis-desktop-apps.md#net-6-and-later-use-the-target-framework-moniker-option), as we'll see.
 
 ### In a WinUI 3 C# desktop project
 
@@ -22,7 +22,7 @@ When you create a new WinUI project in Visual Studio (see [Create your first Win
 
 ### In other C# desktop project types (WPF or WinForms)
 
-For other .NET desktop project types&mdash;such as [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) or [Windows Forms (WinForms)](/dotnet/desktop/winforms/)&mdash;you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](../../windows-app-sdk/index.md). For the second set, you'll need to configure a [Target Framework Moniker](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
+For other .NET desktop project types&mdash;such as [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) or [Windows Forms (WinForms)](/dotnet/desktop/winforms/)&mdash;you'll need to configure your project before you can access the C# interop classes. For the first set of classes listed below, you'll need to reference the [Windows App SDK](../../windows-app-sdk/index.md). For the second set, you'll need to configure a [Target Framework Moniker](winrt-apis-desktop-apps.md#net-6-and-later-use-the-target-framework-moniker-option) that targets Windows 10, version 1809 or later, like this:
 
 1. Open the project file for your C# .NET desktop project.
 
@@ -34,7 +34,7 @@ For other .NET desktop project types&mdash;such as [Windows Presentation Foundat
     </PropertyGroup>
     ```
 
-For more information&mdash;including a list of other supported values&mdash;see [Use the Target Framework Moniker option](desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option).
+For more information&mdash;including a list of other supported values&mdash;see [Use the Target Framework Moniker option](winrt-apis-desktop-apps.md#net-6-and-later-use-the-target-framework-moniker-option).
 
 ## Available C# interop classes
 

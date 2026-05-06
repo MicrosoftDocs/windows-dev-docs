@@ -1012,10 +1012,12 @@ items:
     items:
       - name: Overview
         href: ../desktop/modernize/index.md
+      - name: Call Windows Runtime APIs
+        href: ../desktop/modernize/winrt-apis-desktop-apps.md
+      - name: Use the Windows App SDK
+        href: ../windows-app-sdk/use-windows-app-sdk-in-existing-project.md
       - name: Win32
         items:
-          - name: Integrate Windows App SDK
-            href: ../windows-app-sdk/use-windows-app-sdk-in-existing-project.md
           - name: Modern user interface
             items:
               - name: Dark and light app modes
@@ -1094,14 +1096,6 @@ items:
             href: ../desktop/modernize/framework-packages/framework-packages-overview.md
           - name: Reference MSIX packages at run time
             href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
-      - name: Call Windows Runtime APIs
-        items:
-          - name: Overview
-            href: ../desktop/modernize/desktop-to-uwp-enhance.md
-          - name: APIs not supported in desktop apps
-            href: ../desktop/modernize/desktop-to-uwp-supported-api.md
-          - name: Call interop APIs from a .NET app
-            href: ../desktop/modernize/winrt-com-interop-csharp.md
   - name: Platform
     items:
       - name: C#/WinRT
@@ -1222,6 +1216,14 @@ items:
     items:
       - name: Overview
         href: ../api-reference/index.md
+      - name: About APIs and interop
+        items:
+          - name: WinRT API support in desktop apps
+            href: ../desktop/modernize/winrt-api-desktop-app-support.md
+          - name: Call interop APIs from a .NET app
+            href: ../desktop/modernize/winrt-com-interop-csharp.md
+          - name: Build a C# .NET app with WinUI and Win32 interop
+            href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
       - name: Windows SDK API reference
         items:
           - name: WinRT API reference >>
@@ -1362,10 +1364,6 @@ items:
                 href: ../dev-tools/winapp-cli/guides/packaging-cli.md
   - name: Tutorials
     items:
-      - name: Win32 interop APIs (PInvoke) in a C# WinUI app
-        href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
-      - name: Build a C# .NET app with WinUI and Win32 interop
-        href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
       - name: Use GitHub Copilot to build WinUI apps in Visual Studio
         href: ../how-tos/github-copilot-winui-vs.md
       - name: Create a photo viewer with WinUI

@@ -1,18 +1,18 @@
 ---
-title: Use XAML Islands to host a UWP XAML control in a C# WPF app
-description: This topic demonstrates two ways to use XAML Islands to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK) in a Windows Presentation Foundation (WPF) app that targets .NET Core 3.1.
+title: Use UWP XAML Islands to host a UWP XAML control in a C# WPF app
+description: This topic demonstrates two ways to use UWP XAML Islands to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK) in a Windows Presentation Foundation (WPF) app that targets .NET Core 3.1.
 ms.date: 02/24/2022
 ms.topic: how-to
 keywords: windows 11, windows 10, uwp, wpf, windows forms, xaml islands, wrapped controls, standard controls, InkCanvas, InkToolbar
 ms.localizationpriority: medium
 ---
 
-# Use XAML Islands to host a UWP XAML control in a C# WPF app
+# Use UWP XAML Islands to host a UWP XAML control in a C# WPF app
 
 > [!IMPORTANT]
-> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about UWP XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
 
-This topic shows how to build a C# Windows Presentation Foundation (WPF) app (targeting .NET Core 3.1) that uses [XAML Islands](xaml-islands.md) to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK). We show how to do that in two ways:
+This topic shows how to build a C# Windows Presentation Foundation (WPF) app (targeting .NET Core 3.1) that uses [UWP XAML Islands](xaml-islands.md) to host a Universal Windows Platform (UWP) XAML control (that is, a first-party control provided by the Windows SDK). We show how to do that in two ways:
 
 * We show how to host UWP [**InkCanvas**](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas) and [**InkToolbar**](/uwp/api/windows.ui.xaml.controls.inktoolbar) controls by using [wrapped controls](xaml-islands.md#wrapped-controls) (available in the Windows Community Toolkit). Wrapped controls wrap the interface and functionality of a small set of useful UWP XAML controls. You can add a wrapped control directly to the design surface of your WPF or Windows Forms project, and then use it in the designer like any other WPF or Windows Forms control.
 
@@ -21,7 +21,7 @@ This topic shows how to build a C# Windows Presentation Foundation (WPF) app (ta
 The process for hosting a UWP XAML control in a WPF app is similar for a Windows Forms app.
 
 > [!IMPORTANT]
-> Using XAML Islands (wrapped controls or [**WindowsXamlHost**](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)) to host UWP XAML controls is supported only in apps that target .NET Core 3.x. XAML Islands are not supported in apps that target .NET, or in apps that target any version of the .NET Framework.
+> Using UWP XAML Islands (wrapped controls or [**WindowsXamlHost**](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)) to host UWP XAML controls is supported only in apps that target .NET Core 3.x. UWP XAML Islands are not supported in apps that target .NET, or in apps that target any version of the .NET Framework.
 
 ## Recommended components
 
@@ -32,14 +32,14 @@ To host a UWP XAML control in a WPF or Windows Forms app, we recommend that you 
 * **A UWP project that defines a root Application class that derives from XamlApplication**. The [**Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication**](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class is available in the Windows Community Toolkit). We recommended that you define your **XamlApplication**-derived **Application** class a separate UWP app project that's part of your WPF or Windows Forms Visual Studio solution.
 
     > [!NOTE]
-    > Making a **XamlApplication**-derived object available to your WPF or Windows Forms project isn't actually required in order to host a first-party UWP XAML control. But it *is* necessary in order to discover, load, and host custom UWP XAML controls. So&mdash;to support the full range of XAML Island scenarios&mdash;we recommend that you always define a **XamlApplication**-derived object in any solution in which you use XAML Islands.
+    > Making a **XamlApplication**-derived object available to your WPF or Windows Forms project isn't actually required in order to host a first-party UWP XAML control. But it *is* necessary in order to discover, load, and host custom UWP XAML controls. So&mdash;to support the full range of XAML Island scenarios&mdash;we recommend that you always define a **XamlApplication**-derived object in any solution in which you use UWP XAML Islands.
 
     > [!NOTE]
-    > Your solution can contain only one project that defines a **XamlApplication**-derived object. That one project must reference any other libraries and projects that host UWP XAML controls via XAML Islands.
+    > Your solution can contain only one project that defines a **XamlApplication**-derived object. That one project must reference any other libraries and projects that host UWP XAML controls via UWP XAML Islands.
 
 ## Create a WPF project
 
-You can follow these instructions to create a new WPF project, and configure it to host XAML Islands. If you have an existing WPF project, then you can adapt these steps and code examples for your project.
+You can follow these instructions to create a new WPF project, and configure it to host UWP XAML Islands. If you have an existing WPF project, then you can adapt these steps and code examples for your project.
 
 1. If you haven't done so already, then install the latest version of [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1).
 
@@ -64,7 +64,7 @@ You can follow these instructions to create a new WPF project, and configure it 
     > [!NOTE]
     > For a Windows Forms app, reference the [**Microsoft.Toolkit.Forms.UI.Controls**](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.Controls) package instead.
 
-1. Most XAML Islands scenarios aren't supported in projects that target **Any CPU**. So to target a specific architecture (such as **x86** or **x64**), do the following:
+1. Most UWP XAML Islands scenarios aren't supported in projects that target **Any CPU**. So to target a specific architecture (such as **x86** or **x64**), do the following:
 
     1. Right-click the solution node (*not* the project node) in **Solution Explorer**, and choose **Properties**.
     1. Select **Configuration Properties** on the left.
@@ -308,7 +308,7 @@ The following instructions show you how to package all the components in the sol
 
 ## Related topics
 
-* [Host WinRT XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
+* [Host UWP XAML controls in desktop apps (UWP XAML Islands)](xaml-islands.md)
 * [InkCanvas class (UWP)](/uwp/api/Windows.UI.Xaml.Controls.InkCanvas)
 * [InkToolbar class (UWP)](/uwp/api/windows.ui.xaml.controls.inktoolbar)
 * [CalendarView class (UWP)](/uwp/api/Windows.UI.Xaml.Controls.CalendarView)
