@@ -215,7 +215,7 @@ These APIs only work in UWP apps. In past previews they've partially worked in d
 
 There are APIs that internally depend on existence of these APIs, which consequently aren't supported in a desktop app. These APIs generally have a static `GetForCurrentView` method. For example [UIViewSettings.GetForCurrentView](/uwp/api/Windows.UI.ViewManagement.UIViewSettings.GetForCurrentView).
 
-For more information on affected APIs as well as workarounds and replacements for these APIs, please see [Windows Runtime APIs not supported in desktop apps](../../desktop/modernize/desktop-to-uwp-supported-api.md).
+For more information on affected APIs as well as workarounds and replacements for these APIs, please see [Support for WinRT APIs in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md).
 
 ### Known issues
 

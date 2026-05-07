@@ -5522,7 +5522,7 @@
     },
     {
       "source_path": "uwp/porting/desktop-to-uwp-supported-api.md",
-      "redirect_url": "/windows/apps/desktop/modernize/desktop-to-uwp-supported-api",
+      "redirect_url": "/windows/apps/desktop/modernize/winrt-api-desktop-app-support",
       "redirect_document_id": false
     },
     {
@@ -11743,6 +11743,16 @@
     {
       "source_path": "hub/dev-environment/javascript/windows-or-wsl.md",
       "redirect_url": "/windows/dev-environment/javascript/nodejs-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-enhance.md",
+      "redirect_url": "/windows/apps/desktop/modernize/winrt-apis-desktop-apps",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-supported-api.md",
+      "redirect_url": "/windows/apps/desktop/modernize/winrt-api-desktop-app-support",
       "redirect_document_id": false
     }
   ]

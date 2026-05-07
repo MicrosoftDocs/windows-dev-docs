@@ -1,6 +1,6 @@
 ---
 description: This article discusses advanced XAML Island hosting scenarios for C++ desktop (Win32) apps.
-title: Advanced scenarios for XAML Islands in C++ desktop (Win32) apps
+title: Advanced scenarios for UWP XAML Islands
 ms.date: 03/23/2020
 ms.topic: article
 keywords: windows 10, uwp, cpp, win32, xaml islands, wrapped controls, standard controls
@@ -8,12 +8,12 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Advanced scenarios for XAML Islands in C++ desktop (Win32) apps
+# Advanced scenarios for UWP XAML Islands
 
 > [!IMPORTANT]
-> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about UWP XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
 
-The [host a standard UWP control](host-standard-control-with-xaml-islands-cpp.md) and [host a custom UWP control](host-custom-control-with-xaml-islands-cpp.md) articles provide instructions and examples for hosting XAML Islands in a C++ desktop (Win32) app. However, the code examples in these articles do not handle many advanced scenarios that desktop applications may need to handle to provide a smooth user experience. This article provides guidance for some of these scenarios and pointers to related code samples.
+The [host a standard UWP control](host-standard-control-with-xaml-islands-cpp.md) and [host a custom UWP control](host-custom-control-with-xaml-islands-cpp.md) articles provide instructions and examples for hosting UWP XAML Islands in a C++ desktop (Win32) app. However, the code examples in these articles do not handle many advanced scenarios that desktop applications may need to handle to provide a smooth user experience. This article provides guidance for some of these scenarios and pointers to related code samples.
 
 ## Keyboard input
 
@@ -80,9 +80,9 @@ To configure your application to be per-monitor DPI aware, add a [side-by-side a
 
 ## Related topics
 
-* [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
+* [Host UWP XAML controls in desktop apps (UWP XAML Islands)](xaml-islands.md)
 * [Using the UWP XAML hosting API in a C++ desktop app](using-the-xaml-hosting-api.md)
 * [Host a standard UWP control in a C++ desktop app](host-standard-control-with-xaml-islands-cpp.md)
 * [Host a custom UWP control in a C++ desktop app](host-custom-control-with-xaml-islands-cpp.md)
-* [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)
-* [C++ desktop XAML Islands sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)
+* [UWP XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)
+* [C++ desktop UWP XAML Islands sample](https://github.com/microsoft/Xaml-Islands-Samples/tree/master/Samples/Win32/SampleCppApp)

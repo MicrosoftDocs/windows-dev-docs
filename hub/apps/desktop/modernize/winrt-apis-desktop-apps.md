@@ -13,7 +13,7 @@ zone_pivot_groups: desktop-framework
 This article describes how to configure your desktop app projects to call Windows Runtime (WinRT) APIs — the APIs that power modern Windows features such as notifications, file pickers, sharing, and more.
 
 > [!NOTE]
-> Some WinRT APIs are not supported in desktop apps. For more information, see [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md).
+> Some WinRT APIs are not supported in desktop apps. For more information, see [Support for WinRT APIs in desktop apps](winrt-api-desktop-app-support.md).
 
 :::zone pivot="dotnet"
 
@@ -200,5 +200,5 @@ Some WinRT APIs require package identity. For more info see:
 ## Related content
 
 - [Windows App SDK supported Windows releases](../../windows-app-sdk/support.md)
-- [Windows Runtime APIs not supported in desktop apps](desktop-to-uwp-supported-api.md)
+- [Support for WinRT APIs in desktop apps](winrt-api-desktop-app-support.md)
 - [Modernize your desktop apps](index.md)

@@ -1,6 +1,6 @@
 ---
-description: This article demonstrates how to host a custom WinRT XAML control in a WPF app by using XAML Islands.
-title: Host a custom WinRT XAML control in a WPF app using XAML Islands
+description: This article demonstrates how to host a custom UWP XAML control in a WPF app by using UWP XAML Islands.
+title: Host a custom UWP XAML control in a WPF app using UWP XAML Islands
 ms.date: 09/15/2021
 ms.topic: how-to
 keywords: windows 10, uwp, windows forms, wpf, xaml islands, custom controls, user controls, host controls
@@ -8,34 +8,34 @@ ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Host a custom WinRT XAML control in a WPF app using XAML Islands
+# Host a custom UWP XAML control in a WPF app using XAML Islands
 
 > [!IMPORTANT]
-> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
+> This topic uses or mentions types from the [CommunityToolkit/Microsoft.Toolkit.Win32](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32) GitHub repo. For important info about UWP XAML Islands support, please see the [XAML Islands Notice](https://github.com/CommunityToolkit/Microsoft.Toolkit.Win32#xaml-islands-notice) in that repo.
 
-This article demonstrates how to use the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom WinRT XAML control in a WPF app that targets .NET Core 3.1. The custom control contains several first-party controls from the Windows SDK and binds a property in one of the WinRT XAML controls to a string in the WPF app. This article also demonstrates how to also host a control from the [WinUI 3 library](/uwp/toolkits/winui/).
+This article demonstrates how to use the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control in the Windows Community Toolkit to host a custom UWP XAML control in a WPF app that targets .NET Core 3.1. The custom control contains several first-party controls from the Windows SDK and binds a property in one of the UWP XAML controls to a string in the WPF app. This article also demonstrates how to also host a control from the [WinUI 3 library](/uwp/toolkits/winui/).
 
-Although this article demonstrates how to do this in a WPF app, the process is similar for a Windows Forms app. For an overview about hosting WinRT XAML controls in WPF and Windows Forms apps, see [this article](xaml-islands.md#wpf-and-windows-forms-applications).
+Although this article demonstrates how to do this in a WPF app, the process is similar for a Windows Forms app. For an overview about hosting UWP XAML controls in WPF and Windows Forms apps, see [this article](xaml-islands.md#wpf-and-windows-forms-applications).
 
 > [!NOTE]
-> Using XAML Islands to host WinRT XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. XAML Islands are not yet supported in apps that target .NET, or in apps that any version of the .NET Framework.
+> Using UWP XAML Islands to host UWP XAML controls in WPF and Windows Forms apps is currently supported only in apps that target .NET Core 3.x. UWP XAML Islands are not yet supported in apps that target .NET, or in apps that any version of the .NET Framework.
 
 ## Required components
 
-To host a custom WinRT XAML control in a WPF (or Windows Forms) app, you'll need the following components in your solution. This article provides instructions for creating each of these components.
+To host a custom UWP XAML control in a WPF (or Windows Forms) app, you'll need the following components in your solution. This article provides instructions for creating each of these components.
 
 * **The project and source code for your app**. Using the [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost) control to host custom controls is supported only in apps that target .NET Core 3.x.
 
-* **The custom WinRT XAML control**. You'll need the source code for the custom control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your WPF or Windows Forms project.
+* **The custom UWP XAML control**. You'll need the source code for the custom control you want to host so you can compile it with your app. Typically, the custom control is defined in a UWP class library project that you reference in the same solution as your WPF or Windows Forms project.
 
 * **A UWP app project that defines a root Application class that derives from XamlApplication**. Your WPF or Windows Forms project must have access to an instance of the [Microsoft.Toolkit.Win32.UI.XamlHost.XamlApplication](https://github.com/windows-toolkit/Microsoft.Toolkit.Win32/tree/master/Microsoft.Toolkit.Win32.UI.XamlApplication) class provided by the Windows Community Toolkit so that it can discover and load custom UWP XAML controls. The recommended way to do this is to define this object in a separate UWP app project that is part of the solution for your WPF or Windows Forms app. 
 
     > [!NOTE]
-    > Your solution can contain only one project that defines a `XamlApplication` object. All custom WinRT XAML controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other WinRT libraries and projects that are used host to controls on the XAML Island.
+    > Your solution can contain only one project that defines a `XamlApplication` object. All custom UWP XAML controls in your app share the same `XamlApplication` object. The project that defines the `XamlApplication` object must include references to all other WinRT libraries and projects that are used host to controls on the XAML Island.
 
 ## Create a WPF project
 
-Before getting started, follow these instructions to create a WPF project and configure it to host XAML Islands. If you have an existing WPF project, you can adapt these steps and code examples for your project.
+Before getting started, follow these instructions to create a WPF project and configure it to host UWP XAML Islands. If you have an existing WPF project, you can adapt these steps and code examples for your project.
 
 > [!NOTE]
 > If you have an existing project that targets the .NET Framework, you'll need to migrate your project to .NET Core 3.1. For more information, see [this blog series](https://devblogs.microsoft.com/dotnet/migrating-a-sample-wpf-app-to-net-core-3-part-1/).
@@ -51,11 +51,11 @@ Before getting started, follow these instructions to create a WPF project and co
 
 4. Right-click your WPF project in **Solution Explorer** and choose **Manage NuGet Packages**.
 
-5. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) package and install the latest stable version. This package provides everything you need to use the **WindowsXamlHost** control to host a WinRT XAML control, including other related NuGet packages.
+5. Select the **Browse** tab, search for the [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost) package and install the latest stable version. This package provides everything you need to use the **WindowsXamlHost** control to host a UWP XAML control, including other related NuGet packages.
     > [!NOTE]
     > Windows Forms apps must use the [Microsoft.Toolkit.Forms.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Forms.UI.XamlHost) package.
 
-6. Configure your solution to target a specific platform such as x86 or x64. Custom WinRT XAML controls are not supported in projects that target **Any CPU**.
+6. Configure your solution to target a specific platform such as x86 or x64. Custom UWP XAML controls are not supported in projects that target **Any CPU**.
 
     1. In **Solution Explorer**, right-click the solution node and select **Properties** -> **Configuration Properties** -> **Configuration Manager**.
     2. Under **Active solution platform**, select **New**. 
@@ -156,9 +156,9 @@ Next, add code to the entry point for your WPF app to create an instance of the 
 
 5. Save your changes to the project properties.
 
-## Create a custom WinRT XAML control
+## Create a custom UWP XAML control
 
-To host a custom WinRT XAML control in your WPF app, you must have the source code for the control so you can compile it with your app. Typically custom controls are defined in a UWP class library project for easy portability.
+To host a custom UWP XAML control in your WPF app, you must have the source code for the control so you can compile it with your app. Typically custom controls are defined in a UWP class library project for easy portability.
 
 In this section, you will define a simple custom control in a new class library project. You can alternatively define the custom control in the UWP app project you created in the previous section. However, these steps do this in a separate class library project for illustrative purposes because this is typically how custom controls are implemented for portability.
 
@@ -182,7 +182,7 @@ If you already have a custom control, you can use it instead of the control show
 
     ```xml
     <StackPanel Background="LightCoral">
-        <TextBlock>This is a simple custom WinRT XAML control</TextBlock>
+        <TextBlock>This is a simple custom UWP XAML control</TextBlock>
         <Rectangle Fill="Blue" Height="100" Width="100"/>
         <TextBlock Text="{x:Bind XamlIslandMessage}" FontSize="50"></TextBlock>
     </StackPanel>
@@ -207,7 +207,7 @@ If you already have a custom control, you can use it instead of the control show
 11. In the UWP app project you configured earlier, right-click the **References** node and add a reference to the UWP class library project.
 12. Rebuild the entire solution and make sure all the projects build successfully.
 
-## Host the custom WinRT XAML control in your WPF app
+## Host the custom UWP XAML control in your WPF app
 
 1. In **Solution Explorer**, expand the WPF project and open the MainWindow.xaml file or some other window in which you want to host the custom control.
 2. In the XAML file, add the following namespace declaration to the `<Window>` element.
@@ -252,12 +252,9 @@ If you already have a custom control, you can use it instead of the control show
 
 ## Add a control from the WinUI for UWP library to the custom control
 
-Traditionally, WinRT XAML controls have been released as part of the Windows OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of WinRT XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform.
+Traditionally, UWP XAML controls have been released as part of the Windows OS and made available to developers through the Windows SDK. The [WinUI library](/uwp/toolkits/winui/) is an alternative approach, where updated versions of UWP XAML controls from the Windows SDK are distributed in a NuGet package that is not tied to Windows SDK releases. This library also includes new controls that aren't part of the Windows SDK and the default UWP platform.
 
-This section demonstrates how to add a WinRT XAML control from the WinUI for UWP library to your user control.
-
-> [!NOTE]
-> Currently, XAML Islands only supports hosting controls from the WinUI for UWP library. Support for hosting controls from the WinUI library is coming in a later release.
+This section demonstrates how to add a UWP XAML control from the WinUI for UWP library to your user control.
 
 1. In the UWP app project, install the latest release or prerelease version of the [Microsoft.UI.Xaml](https://www.nuget.org/packages/Microsoft.UI.Xaml) NuGet package.
 
@@ -299,7 +296,7 @@ This section demonstrates how to add a WinRT XAML control from the WinUI for UWP
 
     ```xml
     <StackPanel Background="LightCoral">
-        <TextBlock>This is a simple custom WinRT XAML control</TextBlock>
+        <TextBlock>This is a simple custom UWP XAML control</TextBlock>
         <Rectangle Fill="Blue" Height="100" Width="100"/>
         <TextBlock Text="{x:Bind XamlIslandMessage}" FontSize="50"></TextBlock>
         <winui:RatingControl />
@@ -349,6 +346,6 @@ For example, if the WPF project is named **WPFXamlIslandsApp** and targets x86 p
 
 ## Related topics
 
-* [Host UWP XAML controls in desktop apps (XAML Islands)](xaml-islands.md)
-* [XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)
+* [Host UWP XAML controls in desktop apps (UWP XAML Islands)](xaml-islands.md)
+* [UWP XAML Islands code samples](https://github.com/microsoft/Xaml-Islands-Samples)
 * [WindowsXamlHost](/windows/communitytoolkit/controls/wpf-winforms/windowsxamlhost)

@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Display WinRT UI objects that depend on CoreWindow
 
-Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [CoreWindow](/uwp/api/windows.ui.core.corewindow); typically to display a user-interface (UI). Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](../../desktop/modernize/desktop-to-uwp-supported-api.md#core-unsupported-classes)), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
+Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [CoreWindow](/uwp/api/windows.ui.core.corewindow); typically to display a user-interface (UI). Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](../../desktop/modernize/winrt-api-desktop-app-support.md#core-unsupported-classes)), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
 
 Your desktop app can be [WinUI 3](../../winui/winui3/index.md), [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/), or [Windows Forms (WinForms)](/dotnet/desktop/winforms/) apps. Code examples are presented in C# and [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
