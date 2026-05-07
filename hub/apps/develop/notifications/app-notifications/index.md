@@ -23,8 +23,8 @@ For a walkthrough of creating notification UI, sending a notification, and handl
 
 These articles show how to send an app notification and handle activation for other supported frameworks. For notification content, features, and design guidance, see the sections below. For a full list of supported frameworks, see [Use app notifications with other frameworks](app-notifications-other-frameworks.md).
 
-- [WPF apps](app-notifications-wpf.md)
-- [WinForms apps](app-notifications-winforms.md)
+- [WPF apps](app-notifications-dotnet.md?pivots=wpf)
+- [WinForms apps](app-notifications-dotnet.md?pivots=winforms)
 - [Console apps](app-notifications-console.md)
 - [UWP apps](/windows/uwp/develop/app-notifications-uwp)
 

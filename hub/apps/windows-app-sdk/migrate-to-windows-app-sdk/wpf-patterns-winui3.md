@@ -14,7 +14,7 @@ WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows e
 This topic maps common WPF patterns to their WinUI 3 equivalents so you can plan your migration.
 
 > [!TIP]
-> For general WPF + Windows App SDK guidance, see [Use the Windows App SDK in a WPF app](wpf-plus-winappsdk.md).
+> For general WPF + Windows App SDK guidance, see [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md?pivots=dotnet).
 
 ## Controls
 
@@ -83,7 +83,7 @@ WinUI 3 XAML uses the same core concepts as WPF — resource dictionaries, style
 
 ## See also
 
-- [Use the Windows App SDK in a WPF app](wpf-plus-winappsdk.md)
+- [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md?pivots=dotnet)
 - [Overall migration strategy](overall-migration-strategy.md)
 - [Windows Community Toolkit](/dotnet/communitytoolkit/introduction)
 - [XAML Behaviors (Community Toolkit)](https://aka.ms/toolkit/behaviors)

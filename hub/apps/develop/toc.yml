@@ -549,10 +549,8 @@ items:
               - name: Other frameworks
                 href: notifications/app-notifications/app-notifications-other-frameworks.md
                 items:
-                - name: WPF apps
-                  href: notifications/app-notifications/app-notifications-wpf.md
-                - name: WinForms apps
-                  href: notifications/app-notifications/app-notifications-winforms.md
+                - name: .NET apps
+                  href: notifications/app-notifications/app-notifications-dotnet.md
                 - name: Console apps
                   href: notifications/app-notifications/app-notifications-console.md
           - name: Notification delivery methods
@@ -1028,20 +1026,18 @@ items:
                 href: ../desktop/modernize/ui/apply-snap-layout-menu.md
               - name: Rounded window corners
                 href: ../desktop/modernize/ui/apply-rounded-corners.md
-      - name: WPF
+      - name: .NET (WPF/WinForms)
         items:
-          - name: Integrate Windows App SDK
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md
+          - name: App notifications
+            href: notifications/app-notifications/app-notifications-dotnet.md
+          - name: Manage resources with MRT Core
+            href: ../desktop/modernize/dotnet/use-mrtcore.md
+          - name: Package a .NET app with MSIX
+            href: ../desktop/modernize/dotnet/package-app.md
+          - name: Run code in the background
+            href: ../desktop/modernize/dotnet/background-tasks.md
           - name: Migrate WPF patterns to WinUI 3
             href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-patterns-winui3.md
-          - name: App notifications
-            href: notifications/app-notifications/app-notifications-wpf.md
-      - name: WinForms
-        items:
-          - name: Integrate Windows App SDK
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md
-          - name: App notifications
-            href: notifications/app-notifications/app-notifications-winforms.md
       - name: Migrate from UWP to Windows App SDK
         items:
           - name: Overview

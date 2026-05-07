@@ -205,7 +205,7 @@ Follow these instructions to configure a C++ WinUI project that's either package
 
 ## If your project is WPF
 
-For a Windows Presentation Foundation (WPF) app, see [Use the Windows App SDK in a WPF app](./migrate-to-windows-app-sdk/wpf-plus-winappsdk.md).
+For a Windows Presentation Foundation (WPF) app, see [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md?pivots=dotnet).
 
 ## Related topics
 
