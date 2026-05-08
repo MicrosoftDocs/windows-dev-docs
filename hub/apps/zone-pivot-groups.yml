@@ -68,3 +68,11 @@ groups:
       title: .NET
     - id: win32
       title: Win32 (C++)
+- id: dotnet-app-type
+  title: .NET app type
+  prompt: Choose your .NET app type
+  pivots:
+    - id: wpf
+      title: Windows Presentation Foundation (WPF)
+    - id: winforms
+      title: Windows Forms (WinForms)

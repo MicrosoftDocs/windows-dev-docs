@@ -14,8 +14,8 @@ The Windows App SDK notification APIs are available for desktop and console apps
 
 | Framework | Article |
 |-----------|---------|
-| WPF | [Use app notifications with a WPF app](app-notifications-wpf.md) |
-| WinForms | [Use app notifications with a WinForms app](app-notifications-winforms.md) |
+| WPF | [Use app notifications with a .NET app](app-notifications-dotnet.md?pivots=wpf) |
+| WinForms | [Use app notifications with a .NET app](app-notifications-dotnet.md?pivots=winforms) |
 | Console | [Use app notifications with a console app](app-notifications-console.md) |
 | UWP | [Use app notifications with a UWP app](/windows/uwp/develop/app-notifications-uwp) |
 

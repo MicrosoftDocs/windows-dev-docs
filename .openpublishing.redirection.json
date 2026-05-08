@@ -11754,6 +11754,26 @@
       "source_path": "hub/apps/desktop/modernize/desktop-to-uwp-supported-api.md",
       "redirect_url": "/windows/apps/desktop/modernize/winrt-api-desktop-app-support",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/app-notifications-wpf.md",
+      "redirect_url": "/windows/apps/develop/notifications/app-notifications/app-notifications-dotnet?pivots=wpf",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/develop/notifications/app-notifications/app-notifications-winforms.md",
+      "redirect_url": "/windows/apps/develop/notifications/app-notifications/app-notifications-dotnet?pivots=winforms",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project?pivots=dotnet",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md",
+      "redirect_url": "/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project?pivots=dotnet",
+      "redirect_document_id": false
     }
   ]
 }
