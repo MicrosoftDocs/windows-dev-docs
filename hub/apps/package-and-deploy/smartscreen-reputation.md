@@ -41,9 +41,9 @@ To reduce the likelihood of interruption, you should sign all of your files with
 
 Apps published through the Microsoft Store are re-signed by Microsoft and carry full reputation. Users will never see a SmartScreen warning for a Store-installed app.
 
-### Azure Artifact Signing (formerly Trusted Signing)
+### Artifact Signing (formerly Trusted Signing)
 
-[Azure Artifact Signing](/azure/trusted-signing/) (formerly Trusted Signing) is Microsoft's recommended code signing service for non-Store distribution:
+[Artifact Signing](/azure/trusted-signing/) (formerly Trusted Signing) is Microsoft's recommended code signing service for non-Store distribution:
 
 - **Cost:** Approximately $10/month
 - **No hardware token required** — integrates directly with CI/CD pipelines (GitHub Actions, Azure DevOps)
@@ -78,5 +78,5 @@ There is no need (or mechanism) to manually submit a file for SmartScreen reputa
 - [Choose a distribution path for your Windows app](choose-distribution-path.md)
 - [Current status of Windows app distribution features](distribution-feature-status.md)
 - [Sign an app package using SignTool](/windows/msix/package/sign-app-package-using-signtool)
-- [Azure Artifact Signing (formerly Trusted Signing) documentation](/azure/trusted-signing/)
+- [Artifact Signing (formerly Trusted Signing) documentation](/azure/trusted-signing/)
 - [Microsoft Trusted Root Program requirements](/security/trusted-root/program-requirements)
