@@ -2,5 +2,8 @@
     "azureFunctions.projectLanguage": "Python",
     "azureFunctions.projectRuntime": "~4",
     "debug.internalConsoleOptions": "neverOpen",
-    "azureFunctions.mcpProjectType": "SelfHostedMcpServer"
+    "azureFunctions.mcpProjectType": "SelfHostedMcpServer",
+    "azureFunctions.deploySubpath": ".",
+    "azureFunctions.scmDoBuildDuringDeployment": true,
+    "azureFunctions.pythonVenv": ".venv"
 }
