@@ -11774,6 +11774,11 @@
       "source_path": "hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/winforms-plus-winappsdk.md",
       "redirect_url": "/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project?pivots=dotnet",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/dev-environment/rust/index.yml",
+      "redirect_url": "/windows/dev-environment/rust/overview",
+      "redirect_document_id": false
     }
   ]
 }

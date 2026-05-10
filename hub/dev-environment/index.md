@@ -2,7 +2,7 @@
 title: Windows developer tools
 description: Windows includes built-in tools designed for developers — a package manager, a Linux subsystem, optimized storage, and more.
 ms.topic: overview
-ms.date: 03/26/2026
+ms.date: 04/26/2026
 ---
 
 # Windows developer tools
@@ -57,78 +57,73 @@ Watch the Windows developer tools overview from Microsoft Ignite to see these to
 
 ---
 
-## Development paths
+## Setup guides
 
 Follow these guides to set up your development environment for your preferred language or framework on Windows.
 
 :::row:::
     :::column:::
-       [![JavaScrip icon](../images/javascript-logo.png)](./javascript/index.md)<br>
-        **[Get started with JavaScript](./javascript/index.md)**<br>
+       [![JavaScript icon](../images/javascript-logo.png)](./javascript/index.md)<br>
+        **[JavaScript](./javascript/index.md)**<br>
         Set up your JavaScript development environment with Node.js, React, Vue, and more.
     :::column-end:::
     :::column:::
        [![Python icon](../images/python-logo.png)](./python.md)<br>
-        **[Get started with Python](./python.md)**<br>
+        **[Python](./python.md)**<br>
         Install Python and set up your development environment on Windows.
     :::column-end:::
     :::column:::
        [![Java icon](../images/java-logo.png)](./java.md)<br>
-        **[Get started with Java](./java.md)**<br>
+        **[Java](./java.md)**<br>
         Install a JDK, configure JAVA_HOME, and set up your Java development environment on Windows.
     :::column-end:::
 :::row-end:::
 :::row:::
     :::column:::
        [![C / C++](../images/c-logo.png)](/cpp/)<br>
-        **[Get started with C++ and C](/cpp/)**<br>
+        **[C and C++](/cpp/)**<br>
         Develop apps, services, and tools with C++, C, and assembly.
     :::column-end:::
     :::column:::
        [![C# icon](../images/csharp-logo.png)](/dotnet/csharp/)<br>
-        **[Get started with C#](/dotnet/csharp/)**<br>
+        **[C#](/dotnet/csharp/)**<br>
         Build apps using C# and .NET.
     :::column-end:::
     :::column:::
-       [![Rust icon](../images/rust-icon.png)](./rust/index.yml)<br>
-        **[Get started with Rust](./rust/index.yml)**<br>
-        Get started programming with Rust, including how to set up Rust for Windows.
+       [![Docker Desktop for Windows icon](../images/docker-logo.png)](./docker/overview.md)<br>
+        **[Docker](./docker/overview.md)**<br>
+        Create remote development containers with support from VS, VS Code, .NET, and WSL.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
        [![PowerShell icon](../images/powershell.png)](/powershell/)<br>
-        **[Get started with PowerShell](/powershell/)**<br>
+        **[PowerShell](/powershell/)**<br>
         Cross-platform task automation and configuration management using PowerShell.
     :::column-end:::
     :::column:::
-       [![Docker Desktop for Windows icon](../images/docker-logo.png)](../dev-environment/docker/overview.md)<br>
-        **[Get started with Docker](../dev-environment/docker/overview.md)**<br>
-        Create remote development containers with support from VS, VS Code, .NET, and WSL.
-    :::column-end:::    
+       [![Rust icon](../images/rust-icon.png)](./rust/overview.md)<br>
+        **[Rust](./rust/overview.md)**<br>
+        Get started programming with Rust, including how to set up Rust for Windows.
+    :::column-end:::
     :::column:::
        [![Windows Desktop icon](../images/windows-logo.png)](../apps/index.yml)<br>
-        **[Get started building Windows apps](../apps/index.yml)**<br>
+        **[Windows app development](../apps/index.yml)**<br>
         Build desktop apps with WinUI and the Windows App SDK.
     :::column-end:::
 :::row-end:::
 
 :::row:::
     :::column:::
-       [![Game Dev icon](../images/game-icon.png)](/gaming/)<br>
-        **[Get started with Game Development](/gaming/)**<br>
-        Build games for Windows using Microsoft's game development tools and services.
+       [![Mac to Windows icon](../images/dev-environment-icon.png)](./mac-to-windows.md)<br>
+        **[Mac to Windows guide](./mac-to-windows.md)**<br>
+        Transition between a Mac and Windows (or Windows Subsystem for Linux) development environment.
     :::column-end:::
     :::column:::
-    :::column-end:::     
+    :::column-end:::
     :::column:::
-    :::column-end:::     
+    :::column-end:::
 :::row-end:::
 ---
-
-
-## Transitioning between Mac and Windows
-
-Check out our [guide to transitioning between a Mac and Windows](./mac-to-windows.md) (or Windows Subsystem for Linux) development environment.
 
