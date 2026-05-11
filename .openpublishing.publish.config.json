@@ -73,6 +73,18 @@
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
       "version": 0
+    },
+    {
+      "docset_name": "windows-wsl",
+      "build_source_folder": "WSL",
+      "build_output_subfolder": "windows-wsl",
+      "locale": "en-us",
+      "monikers": [],
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content"
+      },
+      "build_entry_point": "docs"
     }
   ],
   "notification_subscribers": [],
