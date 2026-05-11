@@ -2,6 +2,18 @@
   "build_entry_point": "op",
   "docsets_to_publish": [
     {
+      "docset_name": "windows-terminal",
+      "build_source_folder": "TerminalDocs",
+      "build_output_subfolder": "windows-terminal",
+      "locale": "en-us",
+      "monikers": [],
+      "open_to_public_contributors": false,
+      "type_mapping": {
+        "Conceptual": "Content"
+      },
+      "build_entry_point": "docs"
+    },
+    {
       "docset_name": "windows-uwp",
       "build_source_folder": "uwp",
       "build_output_subfolder": "uwp",
