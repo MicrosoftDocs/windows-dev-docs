@@ -1,36 +1,37 @@
 ---
-title: Setting up Electron for Windows API development
-description: Learn how to set up your Electron development environment for Windows API development using the winapp CLI, including SDK initialization and debug identity.
-ms.date: 02/20/2026
+title: Setting Up the Development Environment
+description: Setting Up the Development Environment
+ms.date: 05/05/2026
 ms.topic: how-to
 ---
 
-# Setting up Electron for Windows API development
+# Setting Up the Development Environment
 
 This guide walks you through setting up your Electron development environment for Windows API development. You'll install the necessary tools, initialize your project, and configure Windows SDKs.
 
-By the end of this guide, you'll have an Electron app that:
-
-- Calls modern Windows APIs (Windows SDK and Windows App SDK)
-- Can use native addons with AI capabilities (Phi Silica or WinML)
-- Runs with app identity for testing protected APIs
-- Can be packaged as a signed MSIX for distribution
-
 ## Prerequisites
 
-- **Windows 11** (Copilot+ PC if using Phi Silica)
+Before you begin, ensure you have:
+
+- **Windows 11** 
 - **Node.js** - `winget install OpenJS.NodeJS --source winget`
 - **.NET SDK v10** - `winget install Microsoft.DotNet.SDK.10 --source winget`
 - **Visual Studio with the Native Desktop Workload** - `winget install --id Microsoft.VisualStudio.Community --source winget --override "--add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --passive --wait"`
 
-## Step 1: Create a new Electron app
+## Step 1: Create a New Electron App
 
-Start with a fresh Electron app using Electron Forge. If you have an existing app, skip this step.
+We'll start with a fresh Electron app using Electron Forge, which provides excellent tooling and packaging support. If you are starting from an existing app, you can skip this step.
 
 ```bash
 npm create electron-app@latest my-windows-app
 cd my-windows-app
 ```
+
+When prompted by Electron Forge:
+- **Bundler**: Select **None** (recommended — native addons work without extra configuration)
+- **Language**: Select **JavaScript** (this guide uses JS; TypeScript works too)
+- **Electron version**: Select **latest**
+- **Initialize git**: Your preference
 
 Verify the app runs:
 
@@ -38,7 +39,11 @@ Verify the app runs:
 npm start
 ```
 
+You should see the default Electron Forge window. Close it and let's add Windows capabilities!
+
 ## Step 2: Install winapp CLI
+
+The Electron workflow requires the **npm package** (`@microsoft/winappcli`) rather than the standalone CLI installed from winget. The npm package includes Node.js-specific helpers (like `add-electron-debug-identity` and `create-addon`) that are not available in the native CLI. If you already have winapp installed from winget, that's fine — the npm package adds Node.js-specific tools as a project dependency and won't conflict with your system installation.
 
 ```bash
 npm install --save-dev @microsoft/winappcli
@@ -46,35 +51,57 @@ npm install --save-dev @microsoft/winappcli
 
 ## Step 3: Initialize the project for Windows development
 
+The `winapp init` command sets up everything you need in one go: app manifest, assets, and SDKs.
+
+Run the following command and follow the prompts:
+
 ```bash
-npx winapp init
+npx winapp init .
 ```
 
 When prompted:
-
 - **Package name**: Press Enter to accept the default (my-windows-app)
 - **Publisher name**: Press Enter to accept the default or enter your name
 - **Version**: Press Enter to accept 1.0.0.0
 - **Entry point**: Press Enter to accept the default (my-windows-app.exe)
 - **Setup SDKs**: Select "Stable SDKs"
 
-### What does `winapp init` do?
+### What Does `winapp init` Do?
 
 This command sets up everything you need for Windows development:
 
-1. **Creates `.winapp/` folder** containing headers and libraries from the Windows SDK and Windows App SDK
-2. **Generates `appxmanifest.xml`** - The app manifest required for app identity and MSIX packaging
-3. **Creates `Assets/` folder** - Contains app icons and visual assets
+1. **Creates `.winapp/` folder** containing:
+   - Headers and libraries from the **Windows SDK**
+   - Headers and libraries from the **Windows App SDK**
+   - NuGet packages with the required binaries
+
+2. **Generates `Package.appxmanifest`** - The app manifest required for app identity and MSIX packaging
+
+3. **Creates `Assets/` folder** - Contains app icons and visual assets for your app
+
 4. **Creates `winapp.yaml`** - Tracks SDK versions and project configuration
+
 5. **Installs Windows App SDK runtime** - Required runtime components for modern APIs
-6. **Enables Developer Mode** in Windows - Required for debugging
+
+6. **Enables Developer Mode in Windows** - Required for debugging our application
 
 > [!NOTE]
-> The `.winapp/` folder is automatically added to `.gitignore` and should not be checked in to source control.
+> The `.winapp/` folder is automatically added to `.gitignore` and should not be checked in to source.
 
-## Step 4: Add restore to your build pipeline
+You can open `Package.appxmanifest` to further customize properties like the display name, publisher, and capabilities.
 
-Add a `postinstall` script to your `package.json` to ensure the Windows SDKs are available when other developers clone your project:
+> [!TIP]
+> **About the Windows SDKs:**
+>
+> - **[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)** - A development platform that lets you build Win32/desktop apps. It's designed around Windows APIs that are coupled to particular versions of the OS. Use this to access core Win32 APIs like file system, networking, and system services.
+> 
+> - **[Windows App SDK](/windows/apps/windows-app-sdk/)** - A new development platform that lets you build modern desktop apps that can be installed across Windows versions (down to Windows 10 1809). It provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs. The Windows App SDK includes WinUI 3 and provides access to modern features like AI capabilities (Phi Silica), notifications, window management, and more that receive regular updates independent of Windows OS releases.
+>
+> Learn more: [What's the difference between the Windows App SDK and the Windows SDK?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-the-windows-app-sdk-and-the-windows-sdk)
+
+## Step 4: Add Restore to Your Build Pipeline
+
+To ensure the Windows SDKs are available when other developers clone your project or in CI/CD pipelines, add a `postinstall` script to your `package.json`:
 
 ```json
 {
@@ -84,13 +111,26 @@ Add a `postinstall` script to your `package.json` to ensure the Windows SDKs are
 }
 ```
 
-This script runs after `npm install` and:
+This script automatically runs after `npm install` and does two things:
 
-1. **`winapp restore`** - Downloads and restores all Windows SDK packages
-2. **`winapp node add-electron-debug-identity`** - Registers your Electron app with debug identity
+1. **`winapp restore`** - Downloads and restores all Windows SDK packages to the `.winapp/` folder
+2. **`winapp node add-electron-debug-identity`** - Registers your Electron app with debug identity (more on this in the next steps)
 
-For cross-platform projects, create `scripts/postinstall.js`:
+Now run `npm install` to trigger the postinstall script and configure the Windows environment:
 
+```bash
+npm install
+```
+
+> [!NOTE]
+> The `postinstall` script runs automatically after every `npm install`. This means the Windows environment will be configured automatically whenever someone clones your project and runs `npm install`.
+
+<details>
+<summary><b>💡 Cross-Platform Development (click to expand)</b></summary>
+
+If you're building a cross-platform Electron app and have developers working on macOS or Linux, you'll want to conditionally run the Windows-specific setup. Here's the recommended approach:
+
+Create `scripts/postinstall.js`:
 ```javascript
 if (process.platform === 'win32') {
   const { execSync } = require('child_process');
@@ -99,7 +139,7 @@ if (process.platform === 'win32') {
       stdio: 'inherit'
     });
   } catch (error) {
-    console.warn('Warning: Windows-specific setup failed.');
+    console.warn('Warning: Windows-specific setup failed. If you are not developing Windows features, you can ignore this.');
   }
 } else {
   console.log('Skipping Windows-specific setup on non-Windows platform.');
@@ -107,7 +147,6 @@ if (process.platform === 'win32') {
 ```
 
 Then update `package.json`:
-
 ```json
 {
   "scripts": {
@@ -116,40 +155,80 @@ Then update `package.json`:
 }
 ```
 
-## Step 5: Understanding debug identity
+This ensures Windows-specific setup only runs on Windows machines, allowing developers on other platforms to work on the project without errors.
 
-The `winapp node add-electron-debug-identity` command:
+</details>
 
-1. Reads your `appxmanifest.xml` to get app details and capabilities
+## Step 5: Understanding Debug Identity
+
+The `npm install` you ran in Step 4 triggered the `postinstall` script, which ran `winapp node add-electron-debug-identity`. This gives your app a temporary debug identity so you can test Windows APIs that require app identity during development.
+
+### What Does Debug Identity Do?
+
+This command:
+1. Reads your `Package.appxmanifest` to get app details and capabilities
 2. Registers `electron.exe` in your `node_modules` with a temporary identity
 3. Enables you to test identity-required APIs without creating a full MSIX package
 
-Run this command manually whenever you modify `appxmanifest.xml` or linked assets:
+The debug identity was applied automatically when you ran `npm install` in Step 4. Going forward, it will be reapplied whenever anyone runs `npm install`.
+
+### When to Manually Update Debug Identity
+
+You need to run this command manually whenever you modify `Package.appxmanifest` (change capabilities, identity, or properties) or any of the linked assets (icons, mcp.json, etc)
 
 ```bash
 npx winapp node add-electron-debug-identity
 ```
 
-Test your setup:
+### Testing Your Setup
+
+You can now test your Electron app with the debug identity applied:
 
 ```bash
 npm start
 ```
 
-> [!NOTE]
-> There is a known Windows bug with sparse packaging Electron applications that can cause crashes or blank windows. Add `--no-sandbox` to your start script as a workaround: `"start": "electron-forge start -- --no-sandbox"`. This issue does not affect full MSIX packaging. To undo debug identity, run `npx winapp node clear-electron-debug-identity`.
+You should see a **desktop application window** open (not a browser tab) — this is how Electron apps run.
 
-## Next steps
+<details>
+<summary><b>⚠️ Known Issue: App Crashes or Blank Window (click to expand)</b></summary>
 
-Now that your development environment is set up, create native addons and call Windows APIs:
+There is a known Windows bug with sparse packaging Electron applications which causes the app to crash on start or not render web content. The issue has been fixed in Windows but has not yet propagated to all devices.
 
-- [Creating a C++ notification addon](electron-cpp-notification-addon.md) - Call Windows notification APIs from a C++ addon
-- [Creating a Phi Silica addon](electron-phi-silica-addon.md) - Use on-device AI for text summarization
-- [Creating a WinML addon](electron-winml-addon.md) - Run ONNX machine learning models
-- [Packaging for distribution](electron-packaging.md) - Create a signed MSIX package
+**Symptoms:**
+- App crashes immediately after launch
+- Window opens but shows blank/white screen
+- Web content fails to render
 
-## Related topics
+**Workaround:**
 
-- [winapp CLI reference](../usage.md)
-- [winapp CLI overview](../index.md)
-- [Windows App SDK documentation](/windows/apps/windows-app-sdk/)
+Add the `--no-sandbox` flag to your start script in `package.json`. This works around the issue by disabling Chromium's sandbox, which is safe for development purposes.
+
+```json
+{
+  "scripts": {
+    "start": "electron-forge start -- --no-sandbox"
+  }
+}
+```
+
+**Important:** This issue does **not** affect full MSIX packaging - only debug identity during development.
+
+**To undo debug identity** (if needed for troubleshooting):
+```bash
+npx winapp node clear-electron-debug-identity
+```
+
+This restores the original Electron executable without the debug identity.
+
+</details>
+
+## Next Steps
+
+Now that your development environment is set up, you're ready to create native addons and call Windows APIs:
+
+- **[Creating a Phi Silica Addon](electron-phi-silica-addon.md)** - Learn how to create a C# addon that calls the Phi Silica AI API
+- **[Creating a WinML Addon](electron-winml-addon.md)** - Learn how to create a C# addon that uses Windows Machine Learning
+- **[Packaging for Distribution](electron-packaging.md)** - Create an MSIX package for distribution
+
+Or return to the **[Getting Started Overview](electron-index.md)**.
