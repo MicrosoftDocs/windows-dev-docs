@@ -1200,14 +1200,6 @@ items:
                 href: platform/xaml/templatebinding-markup-extension.md
               - name: "{ThemeResource} markup extension"
                 href: platform/xaml/themeresource-markup-extension.md
-      - name: Windows Settings access
-        items:
-          - name: Reference for Windows 11 settings
-            href: settings/settings-windows-11.md
-          - name: Reference for Windows 11 and Windows 10 settings
-            href: settings/settings-common.md
-          - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
-            href: settings/readclouddatasettings-exe.md
   - name: API reference
     items:
       - name: Overview
@@ -1305,7 +1297,7 @@ items:
         - name: Windows 11 settings reference
           href: settings/settings-windows-11.md
         - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
-          href: settings/readclouddatasettings-exe.md   
+          href: settings/readclouddatasettings-exe.md
   - name: Tools and samples
     items:
       - name: Overview
@@ -1360,7 +1352,5 @@ items:
                 href: ../dev-tools/winapp-cli/guides/packaging-cli.md
   - name: Tutorials
     items:
-      - name: Use GitHub Copilot to build WinUI apps in Visual Studio
-        href: ../how-tos/github-copilot-winui-vs.md
       - name: Create a photo viewer with WinUI
         href: ../get-started/simple-photo-viewer-winui3.md
