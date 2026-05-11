@@ -20,6 +20,7 @@ This section describes how to use a URI to launch your Windows app.
 |-------|-------------|
 | [Launch the default app for a URI](launch-default-app.md) | Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows. |
 | [Handle URI activation](handle-uri-activation.md) | Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. |
+| [Rich activation with the app lifecycle API](../../windows-app-sdk/applifecycle/applifecycle-rich-activation.md) | Learn how to register for and handle URI (protocol) activation, file activation, and other rich activation kinds in packaged and unpackaged desktop apps (WPF, Win32, WinForms) using the Windows App SDK. |
 | [Launch an app for results](/windows/uwp/launch-resume/how-to-launch-an-app-for-results) | Learn how to launch an app from another app and exchange data between the two. This is called launching an app for results. |
 | [Launch Windows Settings](launch-settings.md) | Learn how to launch Windows Settings from your app. This topic describes the ms-settings URI scheme. Use this URI scheme to launch Windows Settings to specific settings pages. |
 | [Launch the Microsoft Store app](launch-store-app.md) | This topic describes the ms-windows-store URI scheme. Your app can use this URI scheme to launch the Microsoft Store app to specific pages in the Store. |

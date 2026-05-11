@@ -1032,6 +1032,8 @@ items:
             href: notifications/app-notifications/app-notifications-dotnet.md
           - name: Manage resources with MRT Core
             href: ../desktop/modernize/dotnet/use-mrtcore.md
+          - name: Handle URI activation
+            href: launch/handle-uri-activation-dotnet.md
           - name: Package a .NET app with MSIX
             href: ../desktop/modernize/dotnet/package-app.md
           - name: Run code in the background
