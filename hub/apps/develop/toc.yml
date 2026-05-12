@@ -3,8 +3,63 @@ items:
     href: ../desktop/index.yml
   - name: Develop overview
     href: index.md
-  - name: Features
-    expanded: true
+  - name: Tools and samples
+    items:
+      - name: Overview
+        href: ../dev-tools/index.md
+      - name: Agentic tools
+        items:
+        - name: Overview
+          href: ../dev-tools/agentic-tools.md
+        - name: Tutorials
+          items:
+          - name: Set up GitHub Copilot for Windows development
+            href: ../how-tos/ai-setup.md
+          - name: "Build a Windows app with GitHub Copilot"
+            href: ../how-tos/ai-build.md
+      - name: Visual Studio
+        href: ../dev-tools/visual-studio.md
+      - name: winappCLI
+        items:
+          - name: Overview
+            href: ../dev-tools/winapp-cli/index.md
+          - name: CLI reference
+            href: ../dev-tools/winapp-cli/usage.md
+          - name: Framework guides
+            items:
+              - name: Overview
+                href: ../dev-tools/winapp-cli/guides/index.md
+              - name: C++
+                href: ../dev-tools/winapp-cli/guides/cpp.md
+              - name: .NET
+                href: ../dev-tools/winapp-cli/guides/dotnet.md
+              - name: Electron
+                items:
+                  - name: Setup
+                    href: ../dev-tools/winapp-cli/guides/electron-setup.md
+                  - name: Packaging
+                    href: ../dev-tools/winapp-cli/guides/electron-packaging.md
+                  - name: C++ notification addon
+                    href: ../dev-tools/winapp-cli/guides/electron-cpp-notification-addon.md
+                  - name: Phi Silica addon
+                    href: ../dev-tools/winapp-cli/guides/electron-phi-silica-addon.md
+                  - name: WinML addon
+                    href: ../dev-tools/winapp-cli/guides/electron-winml-addon.md
+              - name: Flutter
+                href: ../dev-tools/winapp-cli/guides/flutter.md
+              - name: Rust
+                href: ../dev-tools/winapp-cli/guides/rust.md
+              - name: Tauri
+                href: ../dev-tools/winapp-cli/guides/tauri.md
+              - name: Packaging a CLI executable
+                href: ../dev-tools/winapp-cli/guides/packaging-cli.md
+      - name: Code samples
+        href: ../dev-tools/samples.md  
+      - name: Tutorials
+        items:
+          - name: Create a photo viewer with WinUI
+            href: ../get-started/simple-photo-viewer-winui3.md
+  - name: Core features
     items:
       - name: Overview
         href: features-overview.md
@@ -737,8 +792,6 @@ items:
                 href: security/windows-hello-login.md
               - name: "Tutorial: Create a Windows Hello login service"
                 href: security/windows-hello-auth-service.md
-      - name: Speech
-        href: speech.md
       - name: Testing
         href: testing/index.md
       - name: User interface
@@ -1104,15 +1157,15 @@ items:
             href: platform/csharp-winrt/net-mappings-of-winrt-types.md
           - name: Agile objects
             href: platform/csharp-winrt/agile-objects.md
-          - name: "Walkthrough: Generate a C# projection from a C++/WinRT component"
+          - name: "Tutorial: Generate a C# projection from a C++/WinRT component"
             href: platform/csharp-winrt/net-projection-from-cppwinrt-component.md
           - name: Windows Runtime components with C#/WinRT
             items:
               - name: Author Windows Runtime components with C#/WinRT
                 href: platform/csharp-winrt/authoring.md
-              - name: "Walkthrough: Create a C#/WinRT component, and consume it from C++/WinRT"
+              - name: "Tutorial: Create a C#/WinRT component, and consume it from C++/WinRT"
                 href: platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
-              - name: "Walkthrough: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK app"
+              - name: "Tutorial: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK app"
                 href: platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
               - name: Diagnose component errors
                 href: platform/csharp-winrt/authoring-diagnostics.md
@@ -1219,7 +1272,7 @@ items:
           - name: WinRT API reference >>
             href: /uwp/api/
           - name: WinUI for UWP API reference >>
-            href: /windows/winui/api/
+            href: /windows/winui/api/  
           - name: Win32 API reference >>
             href: /windows/win32/api/
       - name: Windows App SDK API reference
@@ -1300,59 +1353,3 @@ items:
           href: settings/settings-windows-11.md
         - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
           href: settings/readclouddatasettings-exe.md
-  - name: Tools and samples
-    items:
-      - name: Overview
-        href: ../dev-tools/index.md
-      - name: Agentic tools
-        items:
-        - name: Overview
-          href: ../dev-tools/agentic-tools.md
-        - name: Tutorials
-          items:
-          - name: Set up GitHub Copilot for Windows development
-            href: ../how-tos/ai-setup.md
-          - name: "Build a Windows app with GitHub Copilot"
-            href: ../how-tos/ai-build.md
-      - name: Code samples
-        href: ../dev-tools/samples.md  
-      - name: Visual Studio
-        href: ../dev-tools/visual-studio.md
-      - name: winappCLI
-        items:
-          - name: Overview
-            href: ../dev-tools/winapp-cli/index.md
-          - name: CLI reference
-            href: ../dev-tools/winapp-cli/usage.md
-          - name: Framework guides
-            items:
-              - name: Overview
-                href: ../dev-tools/winapp-cli/guides/index.md
-              - name: C++
-                href: ../dev-tools/winapp-cli/guides/cpp.md
-              - name: .NET
-                href: ../dev-tools/winapp-cli/guides/dotnet.md
-              - name: Electron
-                items:
-                  - name: Setup
-                    href: ../dev-tools/winapp-cli/guides/electron-setup.md
-                  - name: Packaging
-                    href: ../dev-tools/winapp-cli/guides/electron-packaging.md
-                  - name: C++ notification addon
-                    href: ../dev-tools/winapp-cli/guides/electron-cpp-notification-addon.md
-                  - name: Phi Silica addon
-                    href: ../dev-tools/winapp-cli/guides/electron-phi-silica-addon.md
-                  - name: WinML addon
-                    href: ../dev-tools/winapp-cli/guides/electron-winml-addon.md
-              - name: Flutter
-                href: ../dev-tools/winapp-cli/guides/flutter.md
-              - name: Rust
-                href: ../dev-tools/winapp-cli/guides/rust.md
-              - name: Tauri
-                href: ../dev-tools/winapp-cli/guides/tauri.md
-              - name: Packaging a CLI executable
-                href: ../dev-tools/winapp-cli/guides/packaging-cli.md
-  - name: Tutorials
-    items:
-      - name: Create a photo viewer with WinUI
-        href: ../get-started/simple-photo-viewer-winui3.md
