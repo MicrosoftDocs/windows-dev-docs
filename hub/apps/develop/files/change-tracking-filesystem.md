@@ -1,9 +1,9 @@
 ---
 title: Track file system changes in the background
-description: Describes how to track changes in files and folders in the background as users move them around the system.
-ms.date: 12/19/2018
+description: Learn how to use StorageLibraryChangeTracker to track changes in files and folders in the background in a WinUI 3 app.
+ms.date: 05/11/2026
 ms.topic: how-to
-keywords: windows 10, winui
+keywords: windows 10, winui, windows app sdk, wasdk, file system, change tracker
 ms.localizationpriority: medium
 ---
 
@@ -16,15 +16,27 @@ ms.localizationpriority: medium
 -   [StorageLibraryChangedTrigger](/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger)
 -   [StorageLibrary](/uwp/api/windows.storage.storagelibrary)
 
-The [StorageLibraryChangeTracker](/uwp/api/Windows.Storage.StorageLibraryChangeTracker) class allows apps to track changes in files and folders as users move them around the system. Using the StorageLibraryChangeTracker class, an app can track:
+The [StorageLibraryChangeTracker](/uwp/api/Windows.Storage.StorageLibraryChangeTracker) class allows apps to track changes in files and folders as users move them around the system. These WinRT APIs can be used from WinUI 3 apps built with the Windows App SDK targeting Windows 10, version 1809 (build 17763) or later. The underlying `StorageLibraryChangeTracker` API is available starting with Windows 10, version 1803 (build 17134). Using the StorageLibraryChangeTracker class, an app can track:
 
 - File operations including add, delete, modify.
 - Folder operations such as renames and deletes.
 - Files and folders moving on the drive.
 
-Use this guide to learn the programing model for working with the change tracker, view some sample code, and understand the different types of file operations that are tracked by StorageLibraryChangeTracker.
+Use this guide to learn the programming model for working with the change tracker, view some sample code, and understand the different types of file operations that are tracked by StorageLibraryChangeTracker.
 
 StorageLibraryChangeTracker works for user libraries, or for any folder on the local machine. This includes secondary drives or removable drives but does not include NAS drives or network drives.
+
+## Prerequisites
+
+- **WinUI 3 app targeting Windows 10, version 1809 or later** — Windows App SDK / WinUI 3 is supported starting with Windows 10, version 1809 (build 17763). The underlying `StorageLibraryChangeTracker` API requires Windows 10, version 1803 (build 17134). If you're creating a new project, set the minimum version in your `.csproj` file accordingly.
+
+- **Required `using` directives**
+
+    ```csharp
+    using Windows.Storage;
+    ```
+
+- **Capability declarations** — Your app must declare the appropriate library capabilities in its `Package.appxmanifest` before accessing a `StorageLibrary`. See [File access permissions](./file-access-permissions.md) for details.
 
 ## Using the change tracker
 
@@ -51,7 +63,7 @@ videoTracker.Enable();
 
 A few important notes:
 
-- Make sure your app has permission to the correct library in the manifest before creating the [StorageLibrary](/uwp/api/windows.storage.storagelibrary) object. See [File Access Permissions](./file-access-permissions.md) for more details.
+- Make sure your app has declared the appropriate library capability in `Package.appxmanifest` before creating the [StorageLibrary](/uwp/api/windows.storage.storagelibrary) object. See [File access permissions](./file-access-permissions.md) for more details.
 - [Enable](/uwp/api/windows.storage.storagelibrarychangetracker.enable) is thread safe, will not reset your pointer, and can be called as many times as you like (more on this later).
 
 ![Enabling an empty change tracker](images/changetracker-enable.png)
@@ -70,7 +82,7 @@ The app can then poll for changes from the change tracker and receive a list of 
 StorageLibrary videosLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
 videosLibrary.ChangeTracker.Enable();
 StorageLibraryChangeReader videoChangeReader = videosLibrary.ChangeTracker.GetChangeReader();
-IReadOnlyList changeSet = await changeReader.ReadBatchAsync();
+IReadOnlyList<StorageLibraryChange> changeSet = await videoChangeReader.ReadBatchAsync();
 ```
 
 The app is then responsible for processing the changes into its own experience or database as needed.
@@ -85,7 +97,7 @@ The app is then responsible for processing the changes into its own experience o
 After the app is done processing the changes, it should tell the system to never show those changes again by calling the [AcceptChangesAsync](/uwp/api/windows.storage.storagelibrarychangereader.acceptchangesasync) method.
 
 ```csharp
-await changeReader.AcceptChangesAsync();
+await videoChangeReader.AcceptChangesAsync();
 ```
 
 ![Marking changes as read so they will never be shown again](images/changetracker-accepting.png)
@@ -139,24 +151,21 @@ private async void GetChanges()
     StorageLibrary videosLibrary = await StorageLibrary.GetLibraryAsync(KnownLibraryId.Videos);
     videosLibrary.ChangeTracker.Enable();
     StorageLibraryChangeReader videoChangeReader = videosLibrary.ChangeTracker.GetChangeReader();
-    IReadOnlyList changeSet = await changeReader.ReadBatchAsync();
+    IReadOnlyList<StorageLibraryChange> changeSet = await videoChangeReader.ReadBatchAsync();
 
-
-    //Below this line is for the blog post. Above the line is for the magazine
     foreach (StorageLibraryChange change in changeSet)
     {
         if (change.ChangeType == StorageLibraryChangeType.ChangeTrackingLost)
         {
-            //We are in trouble. Nothing else is going to be valid.
-            log("Resetting the change tracker");
+            // The circular buffer overflowed. Recrawl the library from scratch.
             videosLibrary.ChangeTracker.Reset();
             return;
         }
-        if (change.IsOfType(StorageItemTypes.Folder))
+        if (change.IsOfType(StorageItemTypes.File))
         {
             await HandleFileChange(change);
         }
-        else if (change.IsOfType(StorageItemTypes.File))
+        else if (change.IsOfType(StorageItemTypes.Folder))
         {
             await HandleFolderChange(change);
         }
@@ -168,6 +177,6 @@ private async void GetChanges()
             }
         }
     }
-    await changeReader.AcceptChangesAsync();
+    await videoChangeReader.AcceptChangesAsync();
 }
 ```

@@ -9,6 +9,11 @@ ms.localizationpriority: medium
 ---
 # Save a file with a picker
 
+> [!IMPORTANT]
+> **Building a WinUI 3 app?** Use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace instead of the `Windows.Storage.Pickers` APIs described in this article. The Windows App SDK pickers (available in Windows App SDK 1.8 and later) are designed for WinUI 3 apps — they require no window handle initialization and return lightweight path-based results. See [Save a file with a picker in WinUI](/windows/apps/develop/files/pickers-save-file) and [Open files and folders with pickers in WinUI](/windows/apps/develop/files/using-file-folder-pickers).
+>
+> The `Windows.Storage.Pickers` APIs on this page apply to UWP apps and to desktop apps that require elevation (where the Windows App SDK pickers cannot be used).
+
 **Important APIs**
 
 - [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker)
@@ -18,11 +23,6 @@ Use [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to let
 
 > [!NOTE]
 > For a complete sample, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
-
-> [!NOTE]
-> In a desktop app (which includes WinUI apps), you can use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace to access the file and folder pickers. This namespace is available in Windows App SDK version 1.8 and later. The APIs in this namespace are designed to work seamlessly with WinUI apps, providing a consistent experience across different app types.
->
-> If necessary, you can still use file and folder pickers from [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers). However, if the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see [FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation).
 
 ## Prerequisites
 
