@@ -3,15 +3,16 @@
   "docsets_to_publish": [
     {
       "docset_name": "windows-terminal",
-      "build_source_folder": "TerminalDocs",
+      "build_source_folder": "terminal",
       "build_output_subfolder": "windows-terminal",
       "locale": "en-us",
       "monikers": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content"
       },
-      "build_entry_point": "docs"
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     },
     {
       "docset_name": "windows-uwp",
@@ -76,15 +77,18 @@
     },
     {
       "docset_name": "windows-wsl",
-      "build_source_folder": "WSL",
+      "build_source_folder": "wsl",
       "build_output_subfolder": "windows-wsl",
       "locale": "en-us",
       "monikers": [],
-      "open_to_public_contributors": false,
+      "open_to_public_contributors": true,
       "type_mapping": {
-        "Conceptual": "Content"
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
       },
-      "build_entry_point": "docs"
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     }
   ],
   "notification_subscribers": [],

@@ -1,0 +1,95 @@
+---
+title: Windows Terminal installation
+description: Learn how to install and set up Windows Terminal.
+ms.date: 11/10/2025
+ms.topic: quickstart
+---
+
+# Install and get started setting up Windows Terminal
+
+## Install
+
+> [!div class="nextstepaction"]
+> [Install Windows Terminal](https://aka.ms/terminal)
+
+To try the latest preview features, you might also want to [install Windows Terminal Preview](https://www.microsoft.com/p/windows-terminal-preview/9n8g5rfz9xk3#activetab=pivot:overviewtab).
+
+> [!NOTE]
+> If you don't have access to the Microsoft Store, you can find builds on the **[GitHub releases page](https://github.com/microsoft/terminal/releases)**. If you install from GitHub, Windows Terminal doesn't automatically update with new versions. For additional installation options using a package manager (winget, chocolatey, scoop), see the **[Windows Terminal product repo](https://github.com/microsoft/terminal#other-install-methods)**.
+
+## Set your default terminal application
+
+> [!NOTE]
+> This feature is available in all versions of Windows 11 and versions of Windows 10 22H2 after the installation of the May 23, 2023 update, [KB5026435](https://support.microsoft.com/en-us/topic/may-23-2023-kb5026435-os-build-19045-3031-preview-2751b693-5544-4110-bc0c-feb8dd7336b3).
+
+To open any command line application with Windows Terminal, set it as your default terminal application.
+
+1. Open Windows Terminal and go to the **Settings** UI window.
+1. Select **Startup** and choose "Windows Terminal" as the **Default terminal application** setting.
+
+![Screenshot of Windows Terminal Startup default in Settings UI](./images/settings-default-shell.png)
+
+## Set your default terminal profile
+
+After installation, when you open Windows Terminal, it will start with the [PowerShell](/powershell) command line as the default profile in the open tab.
+
+To change the default profile:
+
+1. Open Windows Terminal and go to the **Settings** UI window.
+2. Select **Startup** and choose the **Default profile** that you prefer.
+
+You can also [set your default profile in the Settings.json file](./customize-settings/startup.md#default-profile) associated with Windows Terminal if you prefer.
+
+![Screenshot of Windows Terminal Settings default profile](./images/settings-default-profile.png)
+
+## Add new profiles
+
+Windows Terminal will automatically create profiles for you if you have WSL distributions or multiple versions of PowerShell installed.
+
+Your command line profiles will be listed in the Settings UI, in addition to the option to **+ Add new** profiles.
+
+Learn more about dynamic profiles on the [Dynamic profiles page](./dynamic-profiles.md).
+
+![Screenshot of Windows Terminal Settings list of profiles](./images/settings-dynamic-profiles.png)
+
+## Open a new tab
+
+You can open a new tab of the default profile by pressing <kbd>Ctrl+Shift+T</kbd> or by selecting the + (plus) button. To open a different profile, select the ˅ (arrow) next to the + button to open the dropdown menu. From there, you can select which profile to open.
+
+## Invoke the command palette
+
+You can invoke most features of Windows Terminal through the [command palette](./command-palette.md). The default key combination to invoke it is <kbd>Ctrl+Shift+P</kbd>. You can also open it using the **Command palette** button in the dropdown menu.
+
+![Example of the command palette in use](./images/command-palette-iterable-commands.gif)
+
+## Open a new pane
+
+You can run multiple shells side-by-side using panes. To open a pane, you can use <kbd>Alt+Shift++</kbd> for a vertical pane or <kbd>Alt+Shift+-</kbd> for a horizontal one. You can also use <kbd>Alt+Shift+D</kbd> to open a duplicate pane of your focused profile. Learn more about panes on the [Panes page](./panes.md).
+
+## Configuration
+
+To customize the settings of your Windows Terminal, select **Settings** in the dropdown menu. This will open the settings UI to configure your settings. You can learn how to open the settings UI with keyboard shortcuts on the [Actions page](./customize-settings/actions.md#application-level-commands).
+
+### Settings JSON file
+
+If you prefer to configure your Windows Terminal settings using code, rather than the graphic user interface, you can edit the settings.json file.
+
+Select **Settings** in the Windows Terminal dropdown menu while holding <kbd>Shift</kbd> to open the `settings.json` file in your default text editor. (The default text editor is defined in your [Windows settings](ms-settings:defaultapps).)
+
+The path for your Windows Terminal settings.json file may be found in one of the following directories:
+
+- Terminal (stable / general release): `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
+- Terminal (preview release): `%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json`
+- Terminal (unpackaged: Scoop, Chocolatey, etc): `%LOCALAPPDATA%\Microsoft\Windows Terminal\settings.json`
+
+> [!Tip]
+> 1. You can access the default settings for Windows Terminal by selecting  **Settings** in the dropdown menu while holding <kbd>Alt</kbd> to open the `defaults.json` file in your default text editor. This file is auto-generated and any changes to it will be ignored.
+> 2. It is possible to create a [JSON fragment extension](./json-fragment-extensions.md) in order to store profile data and color schemes in a separate file, which can be useful to prevent excessively large configuration files.
+
+## Command line arguments
+
+You can launch the terminal in a specific configuration using command line arguments. These arguments let you open the terminal with specific tabs and panes with custom profile settings. Learn more about command line arguments on the [Command line arguments page](./command-line-arguments.md).
+
+## Troubleshooting
+
+If you encounter any difficulties using the terminal, reference the [Troubleshooting page](./troubleshooting.md). If you find any bugs or have a feature request, you can select the feedback link in the **About** menu of the terminal to go to the [GitHub page](https://github.com/microsoft/terminal) where you can file a new issue.
