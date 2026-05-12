@@ -15,6 +15,27 @@ zone_pivot_groups: wasdk-release-channels
 :::zone pivot="stable"
 
 
+## Version 1.8.8 (1.8.260508005)
+
+Released: **May 12, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed an issue where windowed popup content opened in a XAML Island did not respect `OverrideScale`, causing content to appear oversized and clipped. For more info, see GitHub issue [#11000](https://github.com/microsoft/microsoft-ui-xaml/issues/11000). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Popup_WindowedPopupOverrideScale)
+> * Fixed an `ACCESS_VIOLATION` crash in `RenderTargetBitmap.RenderAsync` that occurred when the target element left the visual tree (for example, a popup closing) before the capture completed. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): RTB_CancelRenderOnTreeLeave)
+> * Fixed a potential crash in package management when a package was uninstalled prior to being processed. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): PackageManager_FixCrash)
+> * Fixed an issue where `GetReadyState` could return incorrect error codes when required Windows AI packages were not yet deployed. The API now correctly reports `NotReady` in this scenario, improving diagnostic clarity for developers and reducing false-positive failure signals in telemetry. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_GetReadyStateAvailabilityGuard)
+> * Improved internal performance diagnostics for `LanguageModel.GenerateResponseAsync` to better identify sources of latency before the first token is returned. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModelInsights_GetPartialResultLatency)
+> * Fixed a fail-fast crash caused by re-entrant dispatch during cross-apartment COM release operations in `UIAffinityReleaseQueue::DoCleanup`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): UIAffinityReleaseQueue_PauseDispatchDuringCleanup)
+> * Fixed an issue where `Microsoft.Windows.Workloads.dll` failed to load on Windows builds prior to 22000 due to static imports of Dynamic Dependencies APIs unavailable on those OS versions. The functions are now resolved dynamically; failures on unsupported OS versions surface as a normal `HRESULT` instead of a loader error dialog. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): PackageDependency_ResolveDynamically)
+> * Fixed an issue where XAML compiler errors were silently lost when using `dotnet build`, showing only `MSB3073: exited with code 1` instead of the actual error messages. For more info, see GitHub issue [#9813](https://github.com/microsoft/microsoft-ui-xaml/issues/9813). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build-time tooling change)
+> * Fixed a design issue in the Windows App SDK NuGet `.targets` files where `%(PreprocessorDefinitions)` metadata references inside MSBuild `<Target>` blocks triggered task batching, causing the same auto-initializer source file to be added to `ClCompile` multiple times and producing duplicate `.obj` outputs. This resulted in MSB8027 ("Two or more files with the same name will produce outputs to the same location") and LNK4042 ("object specified more than once") warnings. Preprocessor definitions are now set via `<ItemDefinitionGroup>`, which correctly applies definitions without duplication. An opt-out property (`WindowsAppSDK_Arm64EcCompilerWorkaround`) is included for ARM64EC+LTCG builds to work around a known MSVC compiler internal error. For more info, see GitHub issue [#5395](https://github.com/microsoft/WindowsAppSDK/issues/5395). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
+>
+
+</details>
+
+
 ## Version 1.8.7 (1.8.260416003)
 
 Released: **April 21, 2026** <br><br>
