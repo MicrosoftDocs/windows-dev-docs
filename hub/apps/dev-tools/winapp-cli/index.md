@@ -1,7 +1,7 @@
 ---
 title: Windows App Development CLI (winapp CLI)
 description: The Windows App Development CLI (winapp CLI) is a command-line interface for managing Windows SDKs, packaging, generating app identity, manifests, certificates, and using build tools with any app framework.
-ms.date: 02/20/2026
+ms.date: 05/05/2026
 ms.topic: overview
 ---
 
@@ -21,7 +21,7 @@ Whether you're building with .NET/Win32, CMake, Electron, or Rust, this CLI give
 
 ## Why package identity?
 
-Many powerful Windows APIs require your app to have package identity. With identity, your app gains access to features like advanced OS integration and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](../../package-and-deploy/packaging/index.md).
+Many powerful Windows APIs require your app to have package identity. With identity, your app gains access to features like notifications, OS integration, and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](/windows/apps/package-and-deploy/packaging/).
 
 ## Installation
 
@@ -71,20 +71,26 @@ winapp CLI works with a variety of app frameworks:
 |-----------|-------|
 | .NET / WPF / WinForms | [Get started with .NET](guides/dotnet.md) |
 | C++ (CMake) | [Get started with C++](guides/cpp.md) |
-| Electron | [Get started with Electron](guides/electron-setup.md) |
+| Electron | [Get started with Electron](guides/electron-index.md) |
 | Rust | [Get started with Rust](guides/rust.md) |
 | Tauri | [Get started with Tauri](guides/tauri.md) |
 | Flutter | [Get started with Flutter](guides/flutter.md) |
+
+Additional guides:
+- [Packaging an EXE/CLI](guides/packaging-cli.md): step-by-step guide for packaging an existing EXE/CLI as MSIX
+- [Shell Completion](guides/shell-completion.md): enable tab completion for commands, options, and values in PowerShell, bash, zsh, and fish
 
 ## Commands overview
 
 | Category | Commands |
 |----------|----------|
 | **Setup** | [init](usage.md#init), [restore](usage.md#restore), [update](usage.md#update) |
-| **Packaging** | [pack](usage.md#pack), [create-debug-identity](usage.md#create-debug-identity) |
-| **Manifests** | [manifest generate](usage.md#manifest-generate), [manifest update-assets](usage.md#manifest-update-assets) |
-| **Certificates & Signing** | [cert generate](usage.md#cert-generate), [cert install](usage.md#cert-install), [sign](usage.md#sign) |
-| **Utilities** | [tool](usage.md#tool), [store](usage.md#store), [get-winapp-path](usage.md#get-winapp-path) |
+| **Identity & Debugging** | [run](usage.md#run), [create-debug-identity](usage.md#create-debug-identity), [unregister](usage.md#unregister) |
+| **Packaging** | [pack](usage.md#pack) |
+| **Manifests** | [manifest generate](usage.md#manifest-generate), [manifest update-assets](usage.md#manifest-update-assets), [manifest add-alias](usage.md#manifest-add-alias) |
+| **Certificates & Signing** | [cert generate](usage.md#cert-generate), [cert install](usage.md#cert-install), [sign](usage.md#sign), [create-external-catalog](usage.md#create-external-catalog) |
+| **Utilities** | [tool](usage.md#tool), [store](usage.md#store), [get-winapp-path](usage.md#get-winapp-path), [complete](usage.md#shell-completion) |
+| **UI Automation** | [ui](usage.md#ui) |
 | **Node.js/Electron** | [node create-addon](usage.md#node-create-addon), [node add-electron-debug-identity](usage.md#node-add-electron-debug-identity), [node clear-electron-debug-identity](usage.md#node-clear-electron-debug-identity) |
 
 For the full CLI reference, see [CLI reference](usage.md).
@@ -96,6 +102,9 @@ winapp CLI is open source. You can find the source code, file issues, and contri
 ## Related topics
 
 - [CLI reference](usage.md)
-- [Framework guides](guides/index.md)
+- [Debugging with package identity](debugging.md)
+- [UI automation](ui-automation.md)
+- [NPM programmatic API](npm-usage.md)
+- [Framework guides](guides/dotnet.md)
 - [Windows App SDK documentation](/windows/apps/windows-app-sdk/)
 - [MSIX packaging documentation](/windows/msix/)

@@ -12,6 +12,9 @@ ms.localizationpriority: medium
 
 Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. WinUI apps can register to be a default handler for a URI scheme name. If the user chooses your app as the default handler for a URI scheme name, your app will be activated every time that type of URI is launched.
 
+> [!NOTE]
+> **App model matters.** This page covers protocol registration via the **package manifest** for packaged apps (WinUI 3, MSIX-packaged WPF/Win32). If your app is **unpackaged** (a plain WPF or Win32 app), register your protocol using [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager) and handle activation with `AppInstance.GetCurrent().GetActivatedEventArgs()`. For a complete WPF walkthrough (including single-instance redirection), see [Handle URI protocol activation in a WPF app](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk#handle-uri-protocol-activation-in-your-wpf-app).
+
 We recommend that you only register for a URI scheme name if you expect to handle all URI launches for that type of URI scheme. If you do choose to register for a URI scheme name, you must provide the end user with the functionality that is expected when your app is activated for that URI scheme. For example, an app that registers for the mailto: URI scheme name should open to a new e-mail message so that the user can compose a new e-mail. For more info on URI associations, see [Files, folders, and libraries](../files/index.md).
 
 These steps show how to register for a custom URI scheme name, `alsdk://`, and how to activate your app when the user launches a `alsdk://` URI.
@@ -22,7 +25,7 @@ The following APIs are used in this topic:
 
 - [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
 - [Windows.UI.Xaml.Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)
-- [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
+- [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
 
 > [!NOTE]
 > In Windows, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your apps because they are either reserved or forbidden.
@@ -78,7 +81,7 @@ Apps that become the default for a URI scheme name have their icons displayed in
 ## Step 3: Handle the activated event
 
 > [!NOTE]
-> In a WinUI app, in App.OnLaunched (or in fact at any time) you can call ([AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle) for more information about lifecycle differences between UWP and WinUI apps.
+> In a WinUI app, in App.OnLaunched (or in fact at any time) you can call [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle) for more information about lifecycle differences between UWP and WinUI apps.
 
 In UWP apps, the [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated) event handler receives all activation events. The **Kind** property indicates the type of activation event. This example is set up to handle [Protocol](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) activation events.
 
@@ -140,9 +143,15 @@ It is recommended that apps create a new XAML [Frame](/uwp/api/Windows.UI.Xaml.C
 
 When launched via Protocol activation, apps should consider including UI that allows the user to go back to the top page of the app.
 
-## Remarks
+## Security considerations
 
-Any app or website can use your URI scheme name, including malicious ones. So any data that you get in the URI could come from an untrusted source. We recommend that you never perform a permanent action based on the parameters that you receive in the URI. For example, URI parameters could be used to launch the app to a user's account page, but we recommend that you never use them to directly modify the user's account.
+Any app or website can invoke your URI scheme with arbitrary payloads, including malicious ones. Treat all URI parameters as untrusted input. Follow these practices:
+
+- **Never perform irreversible actions** (delete files, modify account data, send messages) based solely on URI parameters.
+- **Validate and sanitize all parameters** before use. Check for unexpected characters, path traversal sequences (`../`), and values that are out of range.
+- **Reject unexpected schemes or hosts**. If your handler only expects `alsdk://action`, verify the host and path match an allowlist of known patterns before acting on them.
+- **No caller identity is available**. Unlike named pipes or sockets, a URI activation gives you no reliable way to verify which process sent the URI. Any process (including malware) can launch your scheme.
+- **Avoid treating URI parameters as executable input**. Do not pass URI query values directly to `Process.Start`, `ShellExecute`, or SQL queries without sanitization.
 
 > [!NOTE]
 > If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](https://tools.ietf.org/html/rfc4395). This ensures that your name meets the standards for URI schemes.
@@ -156,6 +165,8 @@ If you decide that you want your apps to use a single XAML [**Frame**](/uwp/api/
 
 ## Related content
 
+- [Handle URI protocol activation in a WPF app](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk#handle-uri-protocol-activation-in-your-wpf-app)
+- [Rich activation with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation)
 - [Association UWP launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 - [Default Programs](/windows/desktop/shell/default-programs)
 - [Handle file activation](handle-file-activation.md)

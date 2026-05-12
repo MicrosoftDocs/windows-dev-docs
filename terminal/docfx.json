@@ -1,0 +1,68 @@
+{
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.md",
+          "**/*.yml"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**",
+          "**/docfx.json",
+          "_repo.en-us/**",
+          "README.md",
+          "LICENSE",
+          "LICENSE-CODE",
+          "ThirdPartyNotices.md"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.gif",
+          "**/*.jpg",
+          "**/*.svg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**",
+          "**/docfx.json",
+          "_repo.en-us/**"
+        ]
+      }
+    ],
+    "overwrite": [],
+    "externalReference": [],
+    "globalMetadata": {
+      "breadcrumb_path": "/windows/terminal/breadcrumb/toc.json",
+      "uhfHeaderId": "MSDocsHeader-Windows-DevTools",
+      "keywords": "Windows Terminal, terminal, windows shell, terminal docs",
+      "feedback_product_url": "https://github.com/Microsoft/terminal/issues",
+      "feedback_system": "OpenSource",
+      "open_source_feedback_contributorGuideUrl": "https://learn.microsoft.com/contribute/content/how-to-write-quick-edits",
+      "open_source_feedback_issueTitle": "",
+      "open_source_feedback_issueLabels": "needs-triage",
+      "open_source_feedback_issueUrl": "https://github.com/MicrosoftDocs/terminal/issues/new?template=customer-feedback.yml",
+      "open_source_feedback_productLogoLightUrl": "https://learn.microsoft.com/windows/terminal/images/terminal.svg",
+      "open_source_feedback_productLogoDarkUrl": "https://learn.microsoft.com/windows/terminal/images/terminal.svg",
+      "open_source_feedback_productName": "Windows Terminal",     
+      "ms.service": "dev-environment",
+      "ms.subservice": "windows-terminal",
+      "searchScope": ["terminal"],
+      "ms.author": "duhowett",
+      "author": "dhowett",
+      "adobe-target": true
+    },
+    "fileMetadata": {},
+    "template": [],
+    "dest": "Terminal",
+    "markdownEngineName": "markdig"
+  }
+}

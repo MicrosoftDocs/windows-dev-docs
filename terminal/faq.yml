@@ -1,0 +1,156 @@
+### YamlMime:FAQ
+metadata:
+  title: Windows Terminal FAQ
+  description: Frequently asked questions about Windows Terminal, such as how to start terminal in administrator mode, how to save a terminal session, and more.
+  ms.topic: faq
+  ms.date: 03/10/2023
+title: Windows Terminal FAQ
+summary: |
+  Find answers to some of the most frequently asked questions about Windows Terminal.
+
+sections:
+  - name: General
+    questions:
+      - question: Where can I find the settings file?
+        answer: |
+          The settings file can be found in the following location:
+          * Windows Terminal (Stable): `%localappdata%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json`
+          * Windows Terminal (Preview): `%localappdata%\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json`
+          * Windows Terminal (Canary): `%localappdata%\Packages\Microsoft.WindowsTerminalCanary_8wekyb3d8bbwe\LocalState\settings.json`
+          * Unpackaged distribution: `%localappdata%\Microsoft\Windows Terminal\settings.json`
+
+      - question: How do I run a shell in Windows Terminal in administrator mode?
+        answer: |
+          To run Windows Terminal with elevated administrator permission (admin mode), right-click on the Windows Terminal icon, then again on the Windows Terminal title that displays, then select "Run as administrator".
+
+          ![Windows Terminal admin mode](./images/admin-mode.png)
+
+          Alternatively, you can open the Windows Quick Access menu using the shortcut, ⊞ Windows key + X, and then selecting Windows Terminal (Admin).
+
+      - question: Is it possible to mix admin and non-admin tabs in a Windows Terminal window?
+        answer: |
+          No, mixing administrator-level permission tabbed shells with those that do not have elevated administrator permission is not supported due to security concerns.
+
+      - question: Can I use Windows Terminal as the integrated terminal in VSCode?
+        answer: |
+          No, Visual Studio Code is xtermjs and written in TypeScript while Windows Terminal is native code.
+
+      - question: What shells does Windows Terminal support?
+        answer: |
+          Windows Terminal will support any command line or shell that you have on your machine, including those that are included with Windows like PowerShell or Windows Command Prompt (cmd.exe), as well as any Linux distribution that can be installed with [WSL](/windows/wsl/), Azure Cloud Shell, Git Bash, etc. The terminal will automatically detect when you've installed a Linux distribution with WSL and create a profile for you. It can also save your Azure credentials, so you can quickly log in quickly to Azure Cloud Shell.
+
+      - question: What is the difference between a shell and a terminal?
+        answer: |
+          Windows Terminal is basically a host that enables you to run multiple command-line apps or shells side-by-side in customizable environment using tabs or window panes. Examples of "shell" applications include `cmd.exe` (the traditional Windows Command Prompt), `powershell`, or `zsh`. These are text-only applications that provide streams of characters and don't care about how they are rendered to the user. They are also sometimes referred to as "command-line client" applications. On the other hand, "terminal" applications, like Windows Terminal, gnome-terminal, xterm, iterm2, or hyper, are all graphical applications that can be used to render the output of command-line clients, customizing things like font, text size, colors, etc. On Windows, if you run `cmd.exe`, the operating system will create an instance of `conhost.exe` as the "terminal" for displaying the `cmd.exe` command-line client. The same thing happens for PowerShell, the system creates a new conhost window for any client not already connected to a terminal of some kind. Any terminal can run any command-line client application, so Windows Terminal can run any shell you prefer, such as Bash using Windows Subsystem for Linux (WSL).
+
+      - question: How can I manually add a shell?
+        answer: |
+          In your [settings.json file](./install.md#settings-json-file), you can create or modify profiles that run any command-line executable. In the settings.json file, set "commandline" to whatever you want. For example, powershell --> "pwsh.exe".
+          You can also add a profile using the terminal settings ui by scrolling to the bottom of your profiles list and selecting "+ Add a new profile".
+          ![Screenshot of settings add a profile](./images/settings-add-profile.png)
+
+      - question: Help! The Terminal doesn't have a titlebar or tabs or any UI at all! What's going on?
+        answer: |
+          Sounds like you're in focus mode. Focus mode will hide the tabs and title bar.
+
+      - question: How do I exit focus mode?
+        answer: |
+          To exit [focus mode](./customize-settings/actions.md#toggle-focus-mode), which hides the tabs and title bar on Windows Terminal, open the terminal command palette (Ctrl+Shift+P), find "toggle focus mode", then hit enter.
+
+          ![Toggle focus mode setting in Windows Terminal command palette](./images/toggle-focus-mode.png)
+
+          You may also want to ensure that your launch mode is not set to "focus" in the Startup settings.
+
+          ![Focus mode selector in Windows Terminal Startup settings](./images/startup-focus-mode.png)
+
+      - question: What is the difference between Windows Terminal and Windows Terminal (Preview)?
+        answer: |
+          [Windows Terminal](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab) is the stable public release and receives regular updates that have been tested and debugged in the preview release. The recommended way to [install](./install.md) is via the Microsoft Store, which will provide automatic updates whenever they are released.
+          [Windows Terminal Preview](https://www.microsoft.com/p/windows-terminal-preview/9n8g5rfz9xk3#activetab=pivot:overviewtab) is a release for those interested in trying the latest features as they are being developed, tested for bugs, and becoming stable enough to be added to the main terminal release. Features from this release are documented with the (Preview) tag.
+
+      - question: What alternative ways are there to install Windows Terminal?
+        answer: |
+          While we recommend installing Windows Terminal [using the Microsoft Store](https://www.microsoft.com/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab), you can also install using [Windows Package Manager](https://github.com/Microsoft/terminal#via-windows-package-manager-cli-aka-winget), [GitHub](https://github.com/Microsoft/terminal#via-github), [Chocolatey](https://github.com/Microsoft/terminal#via-chocolatey-unofficial), or [Scoop](https://github.com/Microsoft/terminal#via-scoop-unofficial).
+
+      - question: Is it possible to initialize a Windows Terminal profile with a batch file?
+        answer: |
+          Yes. You first need to go to the [Profiles](./customize-settings/profile-general.md) section of your [settings.json file](./install.md#settings-json-file). Using the [`"commandline":` property](./customize-settings/profile-general.md#command-line), you can specify any batch file, command, ssh connection, or executable that you want to run as a profile in Windows Terminal. You just need to enter the path to the file that you want to run.
+
+          This example shows an example of a terminal profile set up based on a "demo" batch file.
+
+          ```json
+          {
+          "commandline": "%USERPROFILE%/OneDrive/demo.bat",
+          "name": "Batch Profile"
+          }
+          ```
+          This can also be done in the Settings UI. Select "+ Add a new profile" > "+ New empty profile". Browse to the starting directory where your batch file (or SSH connection, executable, command file, etc) is located. Give the profile a name and save.
+          ![Screenshot of settings add an batch file profile](./images/settings-batch-file.png)
+
+      - question: What sort of features have open-source community contributors added to Windows Terminal?
+        answer: |
+          There have been a wide variety of [contributions](https://github.com/microsoft/terminal/pulls?q=is%3Apr+is%3Aclosed) to Windows Terminal, including bug fixes, identifying and discussing [issues](https://github.com/microsoft/terminal/issues), [contributing to this documentation](/contribute/), but a few of our favorite features that have come from community contributions have included support for [background images and gifs](./customize-settings/profile-appearance.md#background-images-and-icons), [retro effects](./customize-settings/profile-appearance.md#retro-terminal-effects), and [tab coloring](./customize-settings/profile-appearance.md#tab-color), just to name a few. Learn more about [how to contribute](https://github.com/microsoft/terminal/blob/main/CONTRIBUTING.md).
+
+      - question: What is conhost.exe?
+        answer: |
+          The Windows Console host, conhost.exe, is Windows' original command-line user experience. It also hosts Windows' command-line infrastructure and the Windows Console API server, input engine, rendering engine, user preferences, etc. A primary goal of Windows Console is to maintain backward compatibility, thus adding new features became prohibitive and led to the creation of the Windows Terminal. Learn more in the [Windows Terminal open-source repo](https://github.com/Microsoft/terminal#the-windows-console-host) and in the [WIndows Console docs](/windows/console/definitions#console-host).
+
+      - question: Can I save the layout of all of my open console windows when closing Windows Terminal and restore them when starting a new session?
+        answer: |
+          Yes! As of [Windows Terminal Preview v1.12.2922.0](https://github.com/microsoft/terminal/releases/tag/v1.12.2922.0), you can now save window pane layouts upon closing a terminal session with the [firstWindowPreference](./customize-settings/startup.md#behavior-when-starting-a-new-terminal-session) global setting.
+
+      - question: What is being planned for Windows Terminal? Is there a development roadmap or feature request list that I can contribute to?
+        answer: |
+          Windows Terminal is under very active development. You can view the team's plans on the [Terminal 2.0 Roadmap](https://github.com/microsoft/terminal/blob/main/doc/terminal-v2-roadmap.md) document in the open-source terminal repo. New features go into [Windows Terminal Preview](https://aka.ms/terminal-preview) first, then typically a month after they've been in Preview, those features move into [Windows Terminal](https://aka.ms/terminal).
+
+          You can contribute feature Requests or ideas, as well as bug reports, security vulnerabilities, or documentation issues by [filing an issue in the terminal repo](https://github.com/microsoft/terminal/issues/new/choose).
+
+          ![Screenshot of filing an issue in terminal repo](./images/file-issue.png)
+
+      - question: How can I customize PowerShell prompt colors using PSReadLine?
+        answer: |
+         The PSReadLine module is responsible for setting the colors and behavior of your PowerShell command line. You can set colors for specific attributes of your PowerShell prompt by using the [Set-PSReadLineOption, see Example 4: Set multiple color options](/powershell/module/psreadline/set-psreadlineoption#example-4--set-multiple-color-options).
+
+      - question: Can you have have tabs running as Administrator (elevated) in unelevated Terminal windows?
+        answer: |
+          No. For more technical details, refer to [this spec](https://github.com/microsoft/terminal/blob/main/doc/specs/%235000%20-%20Process%20Model%202.0/%231032%20-%20Elevation%20Quality%20of%20Life%20Improvements.md#background) and [this doc](https://github.com/microsoft/terminal/blob/main/doc/Niksa.md#elevation).
+
+      - question: Why is the Windows Terminal default appearance theme set to Dark, when my Windows operating system settings are set to Light?
+        answer: |
+          The system theme in Windows 11 defaults to the Light theme appearance unless changed by the user. Windows Terminal appearance color scheme, however, is Dark by default. Many users won't change the appearance themes and will just see the default themes. The goal of aligning Windows Terminal appearance with the colors of the Windows operating system (OS) titlebar leaves these options: 1) Do nothing (This is the Terminal default before v1.16). In the default setup, the result is a visually unappealing contrast between black terminal content with a light titlebar. 2) Default the color scheme of the terminal to match the OS theme and leave the app theme set to "system". In the default setup, this will result in the terminal appearing as black text on a white background. 3) Change the default theme of Windows Terminal to Dark, regardless of OS theme. In the default setup, this will result in the terminal appearing as white text on a black background, with a dark titlebar. Option 3 presented the optimum balance of the least surprise to users on the default settings, with the most aesthetically pleasing results. Windows Terminal v1.16 also introduced new toggles for customizing the appearance of the window, including: Customizing the title bar color, the tab color (including auto-matching the background), and enabling different colors for focused or unfocused windows. Windows Terminal 1.17 introduces additional flexibility with the ability to sync the Terminal theme to the OS theme and sync the color scheme to the OS theme. The Terminal is already 99% white text on a black background, these changes just line the title bar up with that.
+
+      - question: How do I change Windows Terminal theme back to "system"?
+        answer: |
+          Add `"theme": "system"` to your `settings.json`, or you can change the Theme on the "Appearance" page of the Windows Terminal Settings.
+
+      - question: Why is the tab still black after I set Windows Terminal to Light theme?
+        answer: |
+          This is a side effect of the Theme changes introduced in v1.16. The default themes in v1.16 and later will always use the Terminal background color as the default color for each tab. By default on a black terminal window, you will get a black tab. With a blue color scheme (like Campbell PowerShell), you'll get a blue tab. This is to give the Terminal a "seamless" feel. In Light mode, that creates a case where a black tab will appear on a white tab row. However, with v1.16 and later, you can customize the theme of the terminal. For example:
+
+          ```json
+          "theme": "White Tabs",
+          "themes":
+          [
+              {
+                  "name": "White Tabs",
+                  "tab":
+                  {
+                      "background": "#ffffffff",
+                  },
+                  "window":
+                  {
+                      "applicationTheme": "light"
+                  }
+              },
+          ]
+          ```
+
+          Alternatively, if you're using an OS Light theme and want to set the terminal color scheme to a white background, v1.17 enables setting different color schemes based on the theme of the window. For example, to change the background color based on the `window.applicationTheme` of Windows Terminal, you can do this:
+
+          ```json
+          "colorScheme":
+          {
+              "light": "One Half Light",
+              "dark": "One Half Dark",
+          },
+          ```

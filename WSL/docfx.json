@@ -4,19 +4,15 @@
       {
         "files": [
           "**/*.md",
-          "**/*.yml"
+          "**/**.yml"
         ],
         "exclude": [
           "**/obj/**",
           "**/includes/**",
-          "_themes/**",
-          "**/docfx.json",
-          "_repo.en-us/**",
           "README.md",
           "LICENSE",
           "LICENSE-CODE",
-          "ThirdPartyNotices.md",
-          "SECURITY.md"
+          "ThirdPartyNotices"
         ]
       }
     ],
@@ -24,25 +20,47 @@
       {
         "files": [
           "**/*.png",
-          "**/*.jpg"
+          "**/*.gif",
+          "**/*.jpg",
+          "**/*.svg"
         ],
         "exclude": [
           "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "**/docfx.json",
-          "_repo.en-us/**"
+          "**/includes/**"
         ]
       }
     ],
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
-      "feedback_system": "Standard",
-      "breadcrumb_path": "~/breadcrumb/windows-wsl/toc.yml",
-      "permissioned-type": "public"
+      "breadcrumb_path": "/windows/wsl/breadcrumb/toc.json",
+      "uhfHeaderId": "MSDocsHeader-Windows-DevTools",
+      "recommendations": true,
+      "feedback_product_url": "https://github.com/microsoft/WSL/issues",
+      "feedback_system": "OpenSource",
+      "open_source_feedback_contributorGuideUrl": "https://learn.microsoft.com/contribute/content/how-to-write-quick-edits",
+      "open_source_feedback_issueTitle": "",
+      "open_source_feedback_issueLabels": "needs-triage",
+      "open_source_feedback_issueUrl": "https://github.com/MicrosoftDocs/wsl/issues/new?template=doc-issue.yml",
+      "open_source_feedback_productLogoLightUrl": "https://learn.microsoft.com/windows/wsl/media/wsl-icon.svg",
+      "open_source_feedback_productLogoDarkUrl": "https://learn.microsoft.com/windows/wsl/media/wsl-icon.svg",
+      "open_source_feedback_productName": "Windows Subsystem for Linux",
+      "ms.service": "dev-environment",
+      "ms.subservice": "windows-subsystem-for-linux",
+      "author": "GrantMeStrength",
+      "ms.author": "jken",
+      "ms.reviewer": "crloewen",
+      "searchScope": [
+        "WSL"
+      ],
+      "adobe-target": true,
+      "contributors_to_exclude": [
+        "VSC-Service-Account"
+      ]
     },
     "fileMetadata": {},
-    "template": []
+    "template": [],
+    "dest": "wsl",
+    "markdownEngineName": "markdig"
   }
 }
