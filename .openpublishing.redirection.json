@@ -11849,36 +11849,6 @@
       "source_path": "wsl/vhd-size.md",
       "redirect_url": "/windows/wsl/disk-space",
       "redirect_document_id": false
-    },
-    {
-      "source_path": "terminal/customize-settings/key-bindings.md",
-      "redirect_url": "/windows/terminal/customize-settings/actions",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "terminal/customize-settings/global-settings.md",
-      "redirect_url": "/windows/terminal/customize-settings/startup",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "terminal/customize-settings/profile-settings.md",
-      "redirect_url": "/windows/terminal/customize-settings/profile-general",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "terminal/get-started.md",
-      "redirect_url": "/windows/terminal/install",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "terminal/tutorials/powerline-setup.md",
-      "redirect_url": "/windows/terminal/tutorials/custom-prompt-setup",
-      "redirect_document_id": true
-    },
-    {
-      "source_path": "terminal/custom-terminal-gallery/powerline-in-powershell.md",
-      "redirect_url": "/windows/terminal/tutorials/custom-prompt-setup",
-      "redirect_document_id": false
     }
   ]
 }
