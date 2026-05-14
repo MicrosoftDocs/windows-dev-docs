@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 04/03/2026
+ms.date: 05/13/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -36,8 +36,18 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ---
 
+## Highlights – May 2026
+
+- **WinUI agent plugin for GitHub Copilot and Claude Code**: A new plugin with 8 specialized skills and a dedicated `winui-dev` agent for end-to-end WinUI development — scaffold, build, run, test, package, and migrate from WPF — in 70% fewer tokens than generic agents. Install with `/plugin install winui@awesome-copilot` — [Introducing WinUI agent plugin for GitHub Copilot and Claude Code](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/)
+- **`dotnet new` WinUI templates** (preview): New open-source project and item templates for WinUI that let you create and run apps directly from the command line without Visual Studio. Includes Blank, NavigationView, TabView, and MVVM templates, all built around Windows app silhouettes with modern Fluent Design defaults — [Introducing dotnet new WinUI templates](https://devblogs.microsoft.com/ifdef-windows/introducing-dotnet-new-templates-for-winui/)
+- **WinApp VS Code extension**: Brings the full Windows App Development CLI into VS Code — initialize, run, debug, package, and sign Windows apps from any framework (WinUI, WPF, C++, Electron, Rust, Tauri, Flutter) without leaving the editor — [Announcing the WinApp VS Code Extension](https://devblogs.microsoft.com/ifdef-windows/announcing-the-winapp-vs-code-extension-run-debug-and-package-windows-apps-in-vs-code/)
+
+---
+
 ## Highlights – April 2026
 
+- **WinUI 3 Gallery 2.9**: First release of WinUI Gallery built on Windows App SDK 2.0, with new control samples, updated defaults, and improvements across the board — [Announcing WinUI 3 Gallery 2.9](https://devblogs.microsoft.com/ifdef-windows/announcing-winui-3-gallery-2-9/)
+- **Windows App Development CLI v0.3**: New `winapp run` and `winapp ui` commands, `dotnet run` support for packaged apps, and a full run-and-debug experience outside Visual Studio. Unlocks agentic scenarios where agents can run, see, and interact with a running Windows app — [Windows App Development CLI v0.3](https://devblogs.microsoft.com/ifdef-windows/windows-app-development-cli-v0-3-new-run-and-ui-commands-plus-dotnet-run-support-for-packaged-apps/)
 - **Agentic AI tools for Windows development**: New guide on enhancing AI coding agents with Windows-specific context — including the [Microsoft Learn MCP Server](/training/support/mcp) for live documentation access, and the [WinUI 3 development plugin for GitHub Copilot](https://github.com/github/awesome-copilot/tree/main/plugins/winui3-development) to generate accurate, modern WinUI 3 code — [Agentic AI tools for Windows](../dev-tools/agentic-tools.md).
 - **WinApp CLI cross-framework guides**: The Windows App Development CLI (public preview) now has step-by-step guides for adding Windows capabilities to apps built with **.NET, C++, Rust, Flutter, Electron, and Tauri** — including packaging, identity, AI integration, and notifications — [WinApp CLI guides](../dev-tools/winapp-cli/guides/index.md).
 - **MapControl for WinUI**: New documentation for the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol), an interactive map powered by Azure Maps with support for pins, layers, and user interaction — [MapControl guide](../develop/ui/controls/map-control.md).
@@ -73,6 +83,9 @@ Previous highlights:
 | Feature | Description |
 | :------ | :------ |
 | [Start developing Windows apps](/windows/apps/get-started/start-here) | Comprehensive starting point for Windows app development. |
+| [WinUI agent plugin](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/) | 8-skill GitHub Copilot / Claude Code plugin for end-to-end WinUI development. |
+| [dotnet new WinUI templates](https://devblogs.microsoft.com/ifdef-windows/introducing-dotnet-new-templates-for-winui/) | Command-line project templates for WinUI (Blank, NavigationView, TabView, MVVM). |
+| [WinApp VS Code extension](https://devblogs.microsoft.com/ifdef-windows/announcing-the-winapp-vs-code-extension-run-debug-and-package-windows-apps-in-vs-code/) | Run, debug, and package Windows apps from any framework directly in VS Code. |
 | [Win32 app isolation overview](/windows/win32/secauthz/app-isolation-overview) | Security and reliability benefits of isolating Win32 apps. |
 | [AppWindow.SetIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon) | API reference for setting a window icon (Windows App SDK). |
 | [Get started with Windows AI APIs](/windows/ai/apis/get-started) | Quickstart building apps using Windows AI. |
