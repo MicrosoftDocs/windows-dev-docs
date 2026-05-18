@@ -68,8 +68,17 @@ Each review includes:
 
 You can: 
 
-* Sort reviews by **newest, oldest, highest rating, lowest rating**, or **most helpful**
-* Use the search box to find specific words or phrases within reviews. Only the **original review text** written by the customer is searched, even if the review was written in another language. Translated review text is not searched.
+* Toggle **Translate reviews** to view reviews in your preferred language
+* Filter reviews using options such as **All** or **Rating with Review Content**
+* Sort reviews by **Newest**, **Oldest**, **Highest rating**, or **Lowest rating**
+* Download all your app reviews as a single .csv file for a selected time range (up to 1 year) to analyze feedback trends or share data with internal teams.
+* Copy the reviews view as an image for sharing
+
+> [!IMPORTANT]
+> * The downloaded data is intended for offline analysis and may not reflect a specific order.
+> * It may not include very recent reviews or translated content.
+> * The export does not include Responses or updates reflected through filters. All other review data is included in the download.
+> * To download data for longer periods, use the Downloads Hub.
 
 > [!NOTE]
 > You may occasionally notice that reviews disappear from this report. This can happen because Microsoft removes reviews from the Store that are written by customers running certain pre-release and Insider builds of Windows 10 or Windows 11. We do this to reduce the possibility of a negative review that is caused by a problem in a pre-release Windows build. We may also remove reviews from the Store that have been identified as spam, inappropriate, offensive, or have other policy violations. We expect this action will result in a better customer experience.
