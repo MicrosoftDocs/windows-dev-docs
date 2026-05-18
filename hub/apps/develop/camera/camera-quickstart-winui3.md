@@ -2,7 +2,7 @@
 title: Show the camera preview in a WinUI app
 description: Learn how to show the camera preview in a WinUI app. 
 ms.topic: article
-ms.date: 06/14/2024
+ms.date: 05/18/2026
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
@@ -55,6 +55,12 @@ Next we'll create a helper method to detect the cameras that are present on the 
 Add a call to this helper method to the **MainWindow** class constructor so that the **ComboBox** gets populated when the window loads.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIConstructor":::
+
+## Handle camera selection changes
+
+When the user selects a different camera from the **ComboBox**, the **SelectionChanged** handler disposes of the existing **MediaCapture** and **MediaPlayer** objects, since they are initialized for a specific camera device. The handler resets the UI state so that the user can click **Initialize MediaCapture** to set up the newly selected camera.
+
+:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUISelectionChanged":::
 
 
 ## Initialize the MediaCapture object 
