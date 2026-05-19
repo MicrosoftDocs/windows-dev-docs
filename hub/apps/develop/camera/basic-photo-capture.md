@@ -81,7 +81,7 @@ You can also get a result frame when you stop the video by calling [**StopWithRe
 
 ### Play and edit captured video files
 
-Once you have captured a video to a file, you may want to load the file and play it back within your app's UI. You can do this using the **[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML control and an associated **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)**. For information on playing media in a XAML page, see [Play audio and video with MediaPlayer](/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer).
+Once you have captured a video to a file, you may want to load the file and play it back within your app's UI. You can do this using the **[MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.MediaPlayerElement)** XAML control and an associated **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)**. For information on playing media in a XAML page, see [Play audio and video with MediaPlayer](/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer).
 
 You can also create a **[MediaClip](/uwp/api/windows.media.editing.mediaclip)** object from a video file by calling **[CreateFromFileAsync](/uwp/api/windows.media.editing.mediaclip.createfromfileasync)**.  A **[MediaComposition](/uwp/api/windows.media.editing.mediacomposition)** provides basic video editing functionality like arranging the sequence of **MediaClip** objects, trimming video length, creating layers, adding background music, and applying video effects. For more information on working with media compositions, see [Media compositions and editing](/windows/uwp/audio-video-camera/media-compositions-and-editing).
 
