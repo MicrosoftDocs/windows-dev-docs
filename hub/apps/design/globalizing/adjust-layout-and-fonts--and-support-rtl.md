@@ -42,14 +42,14 @@ If your app has images that must be mirrored (that is, the same image can be fli
 If your app requires a different image to flip the image correctly, then you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
 ## Handling right-to-left (RTL) languages
-When your app is localized for right-to-left (RTL) languages, use the [**FrameworkElement.FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) scale and flip automatically with the value of **FlowDirection** that you set.
+When your app is localized for right-to-left (RTL) languages, use the [**FrameworkElement.FlowDirection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.grid) scale and flip automatically with the value of **FlowDirection** that you set.
 
 Set **FlowDirection** on the root layout panel (or frame) of your Page, or on the Page itself. This causes all of the controls contained within to inherit that property.
 
 > [!IMPORTANT]
 > However, **FlowDirection** is *not* set automatically based on the user's selected display language in Windows settings; nor does it change dynamically in response to the user switching display language. If the user switches Windows settings from English to Arabic, for example, then the **FlowDirection** property will *not* automatically change from left-to-right to right-to-left. As the app developer, you have to set **FlowDirection** appropriately for the language that you are currently displaying.
 
-The programmatic technique is to use the `LayoutDirection` property of the preferred user display language to set the [**FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property (see the code example below). Most controls included in Windows use **FlowDirection** already. If you're implementing a custom control, it should use **FlowDirection** to make appropriate layout changes for RTL and LTR languages.
+The programmatic technique is to use the `LayoutDirection` property of the preferred user display language to set the [**FlowDirection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection) property (see the code example below). Most controls included in Windows use **FlowDirection** already. If you're implementing a custom control, it should use **FlowDirection** to make appropriate layout changes for RTL and LTR languages.
 
 ```csharp    
 this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
@@ -59,11 +59,11 @@ this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
 var flowDirectionSetting = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues["LayoutDirection"];
 if (flowDirectionSetting == "LTR")
 {
-    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.LeftToRight;
+    this.layoutRoot.FlowDirection = Microsoft.UI.Xaml.FlowDirection.LeftToRight;
 }
 else
 {
-    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.RightToLeft;
+    this.layoutRoot.FlowDirection = Microsoft.UI.Xaml.FlowDirection.RightToLeft;
 }
 ```
 
@@ -79,11 +79,11 @@ m_languageTag = Windows::Globalization::ApplicationLanguages::Languages().GetAt(
 auto flowDirectionSetting = Windows::ApplicationModel::Resources::Core::ResourceContext::GetForCurrentView().QualifierValues().Lookup(L"LayoutDirection");
 if (flowDirectionSetting == L"LTR")
 {
-    layoutRoot().FlowDirection(Windows::UI::Xaml::FlowDirection::LeftToRight);
+    layoutRoot().FlowDirection(Microsoft::UI::Xaml::FlowDirection::LeftToRight);
 }
 else
 {
-    layoutRoot().FlowDirection(Windows::UI::Xaml::FlowDirection::RightToLeft);
+    layoutRoot().FlowDirection(Microsoft::UI::Xaml::FlowDirection::RightToLeft);
 }
 ```
 
@@ -95,11 +95,11 @@ this->languageTag = Windows::Globalization::ApplicationLanguages::Languages->Get
 auto flowDirectionSetting = Windows::ApplicationModel::Resources::Core::ResourceContext::GetForCurrentView()->QualifierValues->Lookup("LayoutDirection");
 if (flowDirectionSetting == "LTR")
 {
-    this->layoutRoot->FlowDirection = Windows::UI::Xaml::FlowDirection::LeftToRight;
+    this->layoutRoot->FlowDirection = Microsoft::UI::Xaml::FlowDirection::LeftToRight;
 }
 else
 {
-    this->layoutRoot->FlowDirection = Windows::UI::Xaml::FlowDirection::RightToLeft;
+    this->layoutRoot->FlowDirection = Microsoft::UI::Xaml::FlowDirection::RightToLeft;
 }
 ```
 
@@ -114,7 +114,7 @@ First, in your app's Resources File (.resw), add a property identifier with the 
 Instead of a single line of code for all languages, this depends on the translator "translating" this property resource correctly for each translated language; so be aware that there's that extra opportunity for human error when you use this technique.
 
 ## Important APIs
-* [FrameworkElement.FlowDirection](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection)
+* [FrameworkElement.FlowDirection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection)
 * [LanguageFont](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live)
 
 ## Related topics
