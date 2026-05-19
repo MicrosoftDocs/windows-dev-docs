@@ -180,7 +180,7 @@ async void WriteTimestamp()
        new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("longtime");
 
    StorageFile sampleFile = await temporaryFolder.CreateFileAsync("dataFile.txt", 
-       CreateCollisionOption.ReplaceExisting);
+       CreationCollisionOption.ReplaceExisting);
    await FileIO.WriteTextAsync(sampleFile, formatter.Format(DateTimeOffset.Now));
 }
 ```
@@ -271,7 +271,7 @@ localSettings.DeleteContainer("exampleContainer");
 ## Versioning your app data
 
 
-You can optionally version the app data for your app. This would enable you to create a future version of your app that changes the format of its app data without causing compatibility problems with the previous version of your app. The app checks the version of the app data in the data store, and if the version is less than the version the app expects, the app should update the app data to the new format and update the version. For more info, see the[**Application.Version**](/uwp/api/windows.storage.applicationdata.version) property and the [**ApplicationData.SetVersionAsync**](/uwp/api/windows.storage.applicationdata.setversionasync) method.
+You can optionally version the app data for your app. This would enable you to create a future version of your app that changes the format of its app data without causing compatibility problems with the previous version of your app. The app checks the version of the app data in the data store, and if the version is less than the version the app expects, the app should update the app data to the new format and update the version. For more info, see the [**ApplicationData.Version**](/uwp/api/windows.storage.applicationdata.version) property and the [**ApplicationData.SetVersionAsync**](/uwp/api/windows.storage.applicationdata.setversionasync) method.
 
 ## Related articles
 

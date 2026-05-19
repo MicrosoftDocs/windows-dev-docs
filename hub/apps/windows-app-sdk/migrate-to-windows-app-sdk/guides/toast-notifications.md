@@ -209,7 +209,7 @@ private void HandleNotification(AppNotificationActivatedEventArgs args)
 
   dispatcherQueue.TryEnqueue(async delegate
   {
-      if (args.Argument.Contains("action"))
+      if (args.Arguments.ContainsKey("action"))
       {
           switch (args.Arguments["action"])
           {

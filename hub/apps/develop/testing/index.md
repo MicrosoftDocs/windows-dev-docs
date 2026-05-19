@@ -125,9 +125,9 @@ namespace WinUITest1
 11. Open the UserControl1.xaml.cs code-behind file. For this example, we add a new public method called `GetSeven` that simply returns an integer.
 
     ```csharp
-    namespace WinUICLassLibrary1
+    namespace WinUIClassLibrary1
     {
-      public sealed partial class UserControll : UserControl
+      public sealed partial class UserControl1 : UserControl
       {
          public UserControl1()
          {

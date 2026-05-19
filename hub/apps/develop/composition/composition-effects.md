@@ -66,7 +66,7 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
   Source1Amount = 0.5f,
   Source2Amount = 0.5f,
   Offset = 0
-}
+};
 ```
 
 The example above describes an arithmetic composite effect which has two inputs. The second input has a saturation effect with a .5 saturation property.
