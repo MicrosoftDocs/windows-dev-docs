@@ -2,6 +2,7 @@
 title: install Command
 description: Installs the specified application.
 ms.date: 07/15/2025
+no-loc: [winget, install, add]
 ms.topic: overview
 ---
 
@@ -21,7 +22,7 @@ The **install** command requires that you specify the exact string to install. I
 
 The following aliases are available for this command:
 
-- add
+- `add`
 
 ## Arguments
 

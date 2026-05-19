@@ -2,6 +2,7 @@
 title: settings command
 description: Provides customizations for the Windows Package Manager.
 ms.date: 03/24/2026
+no-loc: [winget, settings, config]
 ms.topic: article
 ---
 
@@ -18,7 +19,7 @@ The **settings** command will launch your default JSON editor. Windows by defaul
 
 The following aliases are available for this command:
 
-- config
+- `config`
 
 ## Sub-commands
 

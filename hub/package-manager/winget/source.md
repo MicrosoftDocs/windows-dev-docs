@@ -2,6 +2,7 @@
 title: The WinGet source command
 description: Use the WinGet source command and subcommands to list and manage the sources WinGet accesses.
 ms.date: 03/24/2026
+no-loc: [winget, source, refresh]
 ms.topic: reference
 ms.custom: kr2b-contr-experiment
 ---
@@ -174,7 +175,7 @@ winget source list [[-n] <name>] [<options>]
 
 The following aliases are available for this subcommand:
 
-- ls
+- `ls`
 
 #### Arguments
 
@@ -254,7 +255,7 @@ winget source update [[-n] <name>] [<options>]
 
 The following aliases are available for this subcommand:
 
-- refresh
+- `refresh`
 
 #### Arguments
 
@@ -301,7 +302,7 @@ winget source remove [-n] <name> [<options>]
 
 The following aliases are available for this subcommand:
 
-- rm
+- `rm`
 
 #### Arguments
 

@@ -2,6 +2,7 @@
 title: list Command
 description: Displays the list of listed apps and if an update is available.
 ms.date: 03/24/2026
+no-loc: [winget, list]
 ms.topic: overview
 ---
 
@@ -17,7 +18,7 @@ The **list** command also supports filters which can be used to limit your list 
 
 The following aliases are available for this command:
 
-- ls
+- `ls`
 
 ## Usage
 

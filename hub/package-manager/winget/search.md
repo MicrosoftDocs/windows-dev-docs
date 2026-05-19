@@ -2,6 +2,7 @@
 title: search Command
 description: Queries the sources for available applications that can be installed
 ms.date: 07/08/2025
+no-loc: [winget, search, find]
 ms.topic: overview
 ---
 
@@ -23,7 +24,7 @@ The **search** command includes parameters for filtering down the applications r
 
 The following aliases are available for this command:
 
-- find
+- `find`
 
 ## Arguments
 

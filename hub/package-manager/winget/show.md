@@ -2,6 +2,7 @@
 title: show Command
 description: Displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
 ms.date: 07/08/2025
+no-loc: [winget, show, view]
 ms.topic: overview
 ---
 
@@ -15,7 +16,7 @@ The **show** command only shows metadata that was submitted with the application
 
 The following aliases are available for this command:
 
-- view
+- `view`
 
 ## Usage
 
