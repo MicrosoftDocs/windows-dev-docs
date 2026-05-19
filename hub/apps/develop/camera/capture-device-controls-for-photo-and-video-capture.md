@@ -20,7 +20,7 @@ The controls discussed in this article are all added to your app using the same 
 
 The [**ExposureControl**](/uwp/api/Windows.Media.Devices.ExposureControl) allows you to set the shutter speed used during photo or video capture.
 
-This example uses a [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) control to adjust the current exposure value and a checkbox to toggle automatic exposure adjustment.
+This example uses a [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider) control to adjust the current exposure value and a checkbox to toggle automatic exposure adjustment.
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetExposureXAML":::
 
@@ -28,7 +28,7 @@ Check to see if the current capture device supports the **ExposureControl** by c
 
 The exposure value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](/uwp/api/windows.media.devices.exposurecontrol.min), [**Max**](/uwp/api/windows.media.devices.exposurecontrol.max), and [**Step**](/uwp/api/windows.media.devices.exposurecontrol.step) properties, which are used to set the corresponding properties of the slider control.
 
-Set the slider control's value to the current value of the **ExposureControl** after unregistering the [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
+Set the slider control's value to the current value of the **ExposureControl** after unregistering the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetExposureControl":::
 
@@ -47,7 +47,7 @@ In the **CheckedChanged** event handler of the auto exposure checkbox, turn auto
 
 The [**ExposureCompensationControl**](/uwp/api/Windows.Media.Devices.ExposureCompensationControl) allows you to set the exposure compensation used during photo or video capture.
 
-This example uses a [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) control to adjust the current exposure compensation value.
+This example uses a [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider) control to adjust the current exposure compensation value.
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetEvXAML":::
 
@@ -55,7 +55,7 @@ Check to see if the current capture device supports the **ExposureCompensationCo
 
 The exposure compensation value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](/uwp/api/windows.media.devices.exposurecompensationcontrol.min), [**Max**](/uwp/api/windows.media.devices.exposurecompensationcontrol.max), and [**Step**](/uwp/api/windows.media.devices.exposurecompensationcontrol.step) properties, which are used to set the corresponding properties of the slider control.
 
-Set slider control's value to the current value of the **ExposureCompensationControl** after unregistering the [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
+Set slider control's value to the current value of the **ExposureCompensationControl** after unregistering the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetEvControl":::
 
@@ -73,7 +73,7 @@ This example uses a set of radio buttons to allow the user to switch between on,
 
 Check to see if the current capture device supports the **FlashControl** by checking the [**Supported**](/uwp/api/windows.media.devices.focuscontrol.supported) property. If the control is supported, you can show and enable the UI for this feature. If the **FlashControl** is supported, automatic red eye reduction may or may not be supported, so check the [**RedEyeReductionSupported**](/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported) property before enabling the UI. Because the **TorchControl** is separate from the flash control, you must also check its [**Supported**](/uwp/api/windows.media.devices.torchcontrol.supported) property before using it.
 
-In the [**Checked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) event handler for each of the flash radio buttons, enable or disable the appropriate corresponding flash setting. Note that to set the flash to always be used, you must set the [**Enabled**](/uwp/api/windows.media.devices.flashcontrol.enabled) property to true and the [**Auto**](/uwp/api/windows.media.devices.flashcontrol.auto) property to false.
+In the [**Checked**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked) event handler for each of the flash radio buttons, enable or disable the appropriate corresponding flash setting. Note that to set the flash to always be used, you must set the [**Enabled**](/uwp/api/windows.media.devices.flashcontrol.enabled) property to true and the [**Auto**](/uwp/api/windows.media.devices.flashcontrol.auto) property to false.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetFlashControl":::
 
@@ -104,7 +104,7 @@ Check to see if the current capture device supports the **FocusControl** by chec
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetCAF":::
 
-In the [**Checked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) event handler for the continuous autofocus radio button, use the [**VideoDeviceController.FocusControl**](/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol) property to get an instance of the control. Call [**UnlockAsync**](/uwp/api/windows.media.devices.focuscontrol.unlockasync) to unlock the control in case your app has previously called [**LockAsync**](/uwp/api/windows.media.devices.focuscontrol.lockasync) to enable one of the other focus modes.
+In the [**Checked**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked) event handler for the continuous autofocus radio button, use the [**VideoDeviceController.FocusControl**](/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol) property to get an instance of the control. Call [**UnlockAsync**](/uwp/api/windows.media.devices.focuscontrol.unlockasync) to unlock the control in case your app has previously called [**LockAsync**](/uwp/api/windows.media.devices.focuscontrol.lockasync) to enable one of the other focus modes.
 
 Create a new [**FocusSettings**](/uwp/api/Windows.Media.Devices.FocusSettings) object and set the [**Mode**](/uwp/api/windows.media.devices.focussettings.mode) property to **Continuous**. Set the [**AutoFocusRange**](/uwp/api/windows.media.devices.focussettings.autofocusrange) property to a value appropriate for your app scenario or selected by the user from your UI. Pass your **FocusSettings** object into the [**Configure**](/uwp/api/windows.media.devices.focuscontrol.configure) method, and then call [**FocusAsync**](/uwp/api/windows.media.devices.focuscontrol.focusasync) to initiate continuous autofocus.
 
@@ -125,7 +125,7 @@ Check to see if the current capture device supports the **FocusControl** by chec
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetTapFocus":::
 
-In the [**Checked**](/uwp/api/windows.ui.xaml.controls.primitives.togglebutton.checked) event handler for the tap-to-focus radio button, use the [**VideoDeviceController.FocusControl**](/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol) property to get an instance of the control. Call [**LockAsync**](/uwp/api/windows.media.devices.focuscontrol.lockasync) to lock the control in case your app has previously called [**UnlockAsync**](/uwp/api/windows.media.devices.focuscontrol.unlockasync) to enable continuous autofocus, and then wait for the user to tap the screen to change the focus.
+In the [**Checked**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked) event handler for the tap-to-focus radio button, use the [**VideoDeviceController.FocusControl**](/uwp/api/windows.media.devices.videodevicecontroller.focuscontrol) property to get an instance of the control. Call [**LockAsync**](/uwp/api/windows.media.devices.focuscontrol.lockasync) to lock the control in case your app has previously called [**UnlockAsync**](/uwp/api/windows.media.devices.focuscontrol.unlockasync) to enable continuous autofocus, and then wait for the user to tap the screen to change the focus.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetTapFocusRadioButton":::
 
@@ -133,7 +133,7 @@ This example focuses on a region when the user taps the screen, and then removes
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetIsFocused":::
 
-The next step is to listen for the event when the user taps the screen by handling the [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped) event of the [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) that is currently displaying the capture preview stream. If the camera isn't currently previewing, or if tap-to-focus mode is disabled, return from the handler without doing anything.
+The next step is to listen for the event when the user taps the screen by handling the [**Tapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.tapped) event of the [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) that is currently displaying the capture preview stream. If the camera isn't currently previewing, or if tap-to-focus mode is disabled, return from the handler without doing anything.
 
 If the tracking variable *\_isFocused* is toggled to false, and if the camera isn't currently in the process of focus (determined by the [**FocusState**](/uwp/api/windows.media.devices.focuscontrol.focusstate) property of the **FocusControl**), begin the tap-to-focus process. Get the position of the user's tap from the event args passed into the handler. This example also uses this opportunity to pick the size of the region that will be focused upon. In this case, the size is 1/4 of the smallest dimension of the capture element. Pass the tap position and the region size into the **TapToFocus** helper method that is defined in the next section.
 
@@ -188,7 +188,7 @@ Check to see if the current capture device supports the **FocusControl** by chec
 
 The focus value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](/uwp/api/windows.media.devices.focuscontrol.min), [**Max**](/uwp/api/windows.media.devices.focuscontrol.max), and [**Step**](/uwp/api/windows.media.devices.focuscontrol.step) properties, which are used to set the corresponding properties of the slider control.
 
-Set the slider control's value to the current value of the **FocusControl** after unregistering the [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
+Set the slider control's value to the current value of the **FocusControl** after unregistering the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetFocus":::
 
@@ -218,7 +218,7 @@ In the **CheckedChanged** event handler, get the capture devices [**FlashControl
 
 The [**IsoSpeedControl**](/uwp/api/Windows.Media.Devices.IsoSpeedControl) allows you to set the ISO speed used during photo or video capture.
 
-This example uses a [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) control to adjust the current exposure compensation value and a checkbox to toggle automatic ISO speed adjustment.
+This example uses a [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider) control to adjust the current exposure compensation value and a checkbox to toggle automatic ISO speed adjustment.
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetIsoXAML":::
 
@@ -226,7 +226,7 @@ Check to see if the current capture device supports the **IsoSpeedControl** by c
 
 The ISO speed value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](/uwp/api/windows.media.devices.isospeedcontrol.min), [**Max**](/uwp/api/windows.media.devices.isospeedcontrol.max), and [**Step**](/uwp/api/windows.media.devices.isospeedcontrol.step) properties, which are used to set the corresponding properties of the slider control.
 
-Set the slider control's value to the current value of the **IsoSpeedControl** after unregistering the [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
+Set the slider control's value to the current value of the **IsoSpeedControl** after unregistering the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetIsoControl":::
 
@@ -262,7 +262,7 @@ First, call the **VideoDeviceController** method [**TryGetPowerlineFrequency**](
 
 The [**WhiteBalanceControl**](/uwp/api/windows.media.devices.videodevicecontroller.whitebalancecontrol) allows you to set the white balance used during photo or video capture.
 
-This example uses a [**ComboBox**](/uwp/api/Windows.UI.Xaml.Controls.ComboBox) control to select from built-in color temperature presets and a [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) control for manual white balance adjustment.
+This example uses a [**ComboBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox) control to select from built-in color temperature presets and a [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider) control for manual white balance adjustment.
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetWhiteBalanceXAML":::
 
@@ -270,11 +270,11 @@ Check to see if the current capture device supports the **WhiteBalanceControl** 
 
 For manual control, the white balance value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](/uwp/api/windows.media.devices.whitebalancecontrol.min), [**Max**](/uwp/api/windows.media.devices.whitebalancecontrol.max), and [**Step**](/uwp/api/windows.media.devices.whitebalancecontrol.step) properties, which are used to set the corresponding properties of the slider control. Before enabling manual control, check to make sure that the range between the minimum and maximum supported values is greater than the step size. If it is not, manual control is not supported on the current device.
 
-Set the slider control's value to the current value of the **WhiteBalanceControl** after unregistering the [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
+Set the slider control's value to the current value of the **WhiteBalanceControl** after unregistering the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetWhiteBalance":::
 
-In the [**SelectionChanged**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectionchanged) event handler of the color temperature preset combo box, get the currently selected preset and set the value of the control by calling [**SetPresetAsync**](/uwp/api/windows.media.devices.whitebalancecontrol.setpresetasync). If the selected preset value is not **Manual**, disable the manual white balance slider.
+In the [**SelectionChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) event handler of the color temperature preset combo box, get the currently selected preset and set the value of the control by calling [**SetPresetAsync**](/uwp/api/windows.media.devices.whitebalancecontrol.setpresetasync). If the selected preset value is not **Manual**, disable the manual white balance slider.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetWhiteBalanceComboBox":::
 
@@ -292,7 +292,7 @@ In the **ValueChanged** event handler, get the current value of the control and 
 
 The [**ZoomControl**](/uwp/api/Windows.Media.Devices.ZoomControl) allows you to set the zoom level used during photo or video capture.
 
-This example uses a [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) control to adjust the current zoom level. The following section shows how to adjust zoom based on a pinch gesture on the screen.
+This example uses a [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.slider) control to adjust the current zoom level. The following section shows how to adjust zoom based on a pinch gesture on the screen.
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetZoomXAML":::
 
@@ -300,7 +300,7 @@ Check to see if the current capture device supports the **ZoomControl** by check
 
 The zoom level value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](/uwp/api/windows.media.devices.zoomcontrol.min), [**Max**](/uwp/api/windows.media.devices.zoomcontrol.max), and [**Step**](/uwp/api/windows.media.devices.zoomcontrol.step) properties, which are used to set the corresponding properties of the slider control.
 
-Set the slider control's value to the current value of the **ZoomControl** after unregistering the [**ValueChanged**](/uwp/api/windows.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
+Set the slider control's value to the current value of the **ZoomControl** after unregistering the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event handler so that the event is not triggered when the value is set.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetZoomControl":::
 
@@ -318,11 +318,11 @@ First, determine if the digital zoom control is supported on the current device 
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetIsSmoothZoomSupported":::
 
-On a multi-touch enabled device, a typical scenario is to adjust the zoom factor based on a two-finger pinch gesture. Set the [**ManipulationMode**](/uwp/api/windows.ui.xaml.uielement.manipulationmode) property of the [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) control to [**ManipulationModes.Scale**](/uwp/api/Windows.UI.Xaml.Input.ManipulationModes) to enable the pinch gesture. Then, register for the [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) event which is raised when the pinch gesture changes size.
+On a multi-touch enabled device, a typical scenario is to adjust the zoom factor based on a two-finger pinch gesture. Set the [**ManipulationMode**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationmode) property of the [**CaptureElement**](/uwp/api/Windows.UI.Xaml.Controls.CaptureElement) control to [**ManipulationModes.Scale**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.manipulationmodes) to enable the pinch gesture. Then, register for the [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) event which is raised when the pinch gesture changes size.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetRegisterPinchGestureHandler":::
 
-In the handler for the **ManipulationDelta** event, update the zoom factor based on the change in the user's pinch gesture. The [**ManipulationDelta.Scale**](/uwp/api/Windows.UI.Input.ManipulationDelta) value represents the change in scale of the pinch gesture such that a small increase in the size of the pinch is a number slightly larger than 1.0 and a small decrease in the pinch size is a number slightly smaller than 1.0. In this example, the current value of the zoom control is multiplied by the scale delta.
+In the handler for the **ManipulationDelta** event, update the zoom factor based on the change in the user's pinch gesture. The [**ManipulationDelta.Scale**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.manipulationdelta) value represents the change in scale of the pinch gesture such that a small increase in the size of the pinch is a number slightly larger than 1.0 and a small decrease in the pinch size is a number slightly smaller than 1.0. In this example, the current value of the zoom control is multiplied by the scale delta.
 
 Before setting the zoom factor, you must make sure that the value is not less than the minimum value supported by the device as indicated by the [**ZoomControl.Min**](/uwp/api/windows.media.devices.zoomcontrol.min) property. Also, make sure that the value is less than or equal to the [**ZoomControl.Max**](/uwp/api/windows.media.devices.zoomcontrol.max) value. Finally, you must make sure that the zoom factor is a multiple of the zoom step size supported by the device as indicated by the [**Step**](/uwp/api/windows.media.devices.zoomcontrol.step) property. If your zoom factor does not meet these requirements, an exception will be thrown when you attempt to set the zoom level on the capture device.
 
