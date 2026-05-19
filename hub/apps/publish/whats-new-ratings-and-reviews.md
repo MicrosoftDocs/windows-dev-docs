@@ -65,16 +65,22 @@ Each review includes:
 * The reviewer name as shown in the Microsoft Store
 * The date the review was submitted 
 
-> [!NOTE]
-> Customers can submit a rating without adding a written review, so the total number of reviews is typically lower than the total number of ratings. 
-
 You can: 
 
-* Sort reviews by **newest, oldest, highest rating, lowest rating**, or **most helpful**
-* Use the search box to find specific words or phrases within reviews 
+* Toggle **Translate reviews** to view reviews in your preferred language
+* Filter reviews using options such as **All** or **Rating with Review Content**
+* Sort reviews by **Newest**, **Oldest**, **Highest rating**, or **Lowest rating**
+* Download all your app reviews as a single .csv file for a selected time range (up to 1 year) to analyze feedback trends or share data with internal teams.
+* Copy the reviews view as an image for sharing
+
+> [!IMPORTANT]
+> * The downloaded data is intended for offline analysis and may not reflect a specific order.
+> * It may not include very recent reviews or translated content.
+> * The export does not include Responses or updates reflected through filters. All other review data is included in the download.
+> * To download data for longer periods, use the Downloads Hub.
 
 > [!NOTE]
-> Only the **original review text** written by the customer is searched, even if the review was written in another language. Translated review text is not searched.
+> Customers can submit a rating without adding a written review, so the total number of reviews is typically lower than the total number of ratings. 
 
 #### Geographical spread
 
