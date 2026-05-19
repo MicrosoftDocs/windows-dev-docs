@@ -51,7 +51,7 @@ This example uses a [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetEvXAML":::
 
-Check to see if the current capture device supports the **ExposureCompensationControl** by checking the [Supported](/windows/uwp/audio-video-camera/supported-codecs) property. If the control is supported, you can show and enable the UI for this feature.
+Check to see if the current capture device supports the **ExposureCompensationControl** by checking the [Supported](/uwp/api/windows.media.devices.exposurecompensationcontrol.supported) property. If the control is supported, you can show and enable the UI for this feature.
 
 The exposure compensation value must be within the range supported by the device and must be an increment of the supported step size. Get the supported values for the current device by checking the [**Min**](/uwp/api/windows.media.devices.exposurecompensationcontrol.min), [**Max**](/uwp/api/windows.media.devices.exposurecompensationcontrol.max), and [**Step**](/uwp/api/windows.media.devices.exposurecompensationcontrol.step) properties, which are used to set the corresponding properties of the slider control.
 
@@ -71,7 +71,7 @@ This example uses a set of radio buttons to allow the user to switch between on,
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetFlashXAML":::
 
-Check to see if the current capture device supports the **FlashControl** by checking the [**Supported**](/uwp/api/windows.media.devices.focuscontrol.supported) property. If the control is supported, you can show and enable the UI for this feature. If the **FlashControl** is supported, automatic red eye reduction may or may not be supported, so check the [**RedEyeReductionSupported**](/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported) property before enabling the UI. Because the **TorchControl** is separate from the flash control, you must also check its [**Supported**](/uwp/api/windows.media.devices.torchcontrol.supported) property before using it.
+Check to see if the current capture device supports the **FlashControl** by checking the [**Supported**](/uwp/api/windows.media.devices.flashcontrol.supported) property. If the control is supported, you can show and enable the UI for this feature. If the **FlashControl** is supported, automatic red eye reduction may or may not be supported, so check the [**RedEyeReductionSupported**](/uwp/api/windows.media.devices.flashcontrol.redeyereductionsupported) property before enabling the UI. Because the **TorchControl** is separate from the flash control, you must also check its [**Supported**](/uwp/api/windows.media.devices.torchcontrol.supported) property before using it.
 
 In the [**Checked**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton.checked) event handler for each of the flash radio buttons, enable or disable the appropriate corresponding flash setting. Note that to set the flash to always be used, you must set the [**Enabled**](/uwp/api/windows.media.devices.flashcontrol.enabled) property to true and the [**Auto**](/uwp/api/windows.media.devices.flashcontrol.auto) property to false.
 
@@ -100,7 +100,7 @@ Enabling continuous autofocus instructs the camera to adjust the focus dynamical
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetCAFXAML":::
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](/uwp/api/windows.media.devices.flashcontrol.supported) property. Next, determine if continuous autofocus is supported by checking the [**SupportedFocusModes**](/uwp/api/windows.media.devices.focuscontrol.supportedfocusmodes) list to see if it contains the value [**FocusMode.Continuous**](/uwp/api/Windows.Media.Devices.FocusMode), and if so, show the continuous autofocus radio button.
+Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](/uwp/api/windows.media.devices.focuscontrol.supported) property. Next, determine if continuous autofocus is supported by checking the [**SupportedFocusModes**](/uwp/api/windows.media.devices.focuscontrol.supportedfocusmodes) list to see if it contains the value [**FocusMode.Continuous**](/uwp/api/Windows.Media.Devices.FocusMode), and if so, show the continuous autofocus radio button.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetCAF":::
 
@@ -121,7 +121,7 @@ This example uses a radio button to enable and disable tap-to-focus mode.
 
 :::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetTapFocusXAML":::
 
-Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](/uwp/api/windows.media.devices.flashcontrol.supported) property. The **RegionsOfInterestControl** must be supported, and must support at least one region, in order to use this technique. Check the [**AutoFocusSupported**](/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) and [**MaxRegions**](/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions) properties to determine whether to show or hide the radio button for tap-to-focus.
+Check to see if the current capture device supports the **FocusControl** by checking the [**Supported**](/uwp/api/windows.media.devices.focuscontrol.supported) property. The **RegionsOfInterestControl** must be supported, and must support at least one region, in order to use this technique. Check the [**AutoFocusSupported**](/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) and [**MaxRegions**](/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions) properties to determine whether to show or hide the radio button for tap-to-focus.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetTapFocus":::
 
@@ -278,7 +278,7 @@ In the [**SelectionChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xa
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetWhiteBalanceComboBox":::
 
-In the **ValueChanged** event handler, get the current value of the control and the set the white balance value by calling [**SetValueAsync**](/uwp/api/windows.media.devices.exposurecontrol.setvalueasync).
+In the **ValueChanged** event handler, get the current value of the control and the set the white balance value by calling [**SetValueAsync**](/uwp/api/windows.media.devices.whitebalancecontrol.setvalueasync).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetWhiteBalanceSlider":::
 
