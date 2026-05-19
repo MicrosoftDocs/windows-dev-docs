@@ -20,7 +20,7 @@ All WinUI controls have been designed with default touch target sizes and layout
 
 In this topic, we describe these default behaviors so you can design your app for maximum usability using both platform controls and custom controls (should your app require them).
 
-> **Important APIs**: [**Windows.UI.Core**](/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **Important APIs**: [**Windows.UI.Core**](/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input), [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input)
 
 ## Target size
 

@@ -74,7 +74,7 @@ Here's an example of attaching event handlers for the [Showing](/uwp/api/windows
 > The code samples use `InputPane.GetForCurrentView()`, which is a UWP-era API. For WinUI 3 desktop apps, consider using [InputPane.GetForWindow](/uwp/api/windows.ui.viewmanagement.inputpane.getforwindow) with your window's HWND instead.
 
 ```csharp
-using Windows.UI.ViewManagement;
+using Microsoft.UI.Windowing;;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Media;
 using Windows.Foundation;
@@ -123,7 +123,7 @@ namespace SDKTemplate
 
 ```cppwinrt
 ...
-#include <winrt/Windows.UI.ViewManagement.h>
+#include <winrt/Microsoft.UI.Windowing.h>
 ...
 private:
     winrt::event_token m_showingEventToken;

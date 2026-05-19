@@ -156,7 +156,7 @@ All of the tools contain several scenario-based options for studying application
 
 Visual Studio Performance Profiler options tend to focus on .NET, user interface (UI), and databases residing within the application being analyzed.
 
-Windows Performance Toolkit tends to focus on operating system components and frameworks like [composition](/uwp/api/windows.ui.composition), browser views, and glitches in realtime processing pipelines.
+Windows Performance Toolkit tends to focus on operating system components and frameworks like [composition](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition), browser views, and glitches in realtime processing pipelines.
 
 For scenarios that require a more customized solution, Windows Performance Recorder can combine both system-wide collection and application-related collection data into a single recording session. This functionality enables an application developer to offer a complete solution to deploy to customers for requesting performance data from hardware that might differ from that used to develop the product. More information on this mechanism can be found at the [Authoring Custom Profiles](https://devblogs.microsoft.com/performance-diagnostics/authoring-custom-profiles-part-1/) blog series by the Windows Performance and Diagnostics team.
 

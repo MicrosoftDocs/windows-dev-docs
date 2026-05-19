@@ -68,9 +68,9 @@ The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsof
 |[**IPlayToManagerInterop**](/windows/win32/api/playtomanagerinterop/nn-playtomanagerinterop-iplaytomanagerinterop)|(**Windows.Media.PlayTo**) **PlayToManagerInterop**|
 |[**IPrintManagerInterop**](/windows/win32/api/printmanagerinterop/nn-printmanagerinterop-iprintmanagerinterop)|(**Windows.Graphics.Printing**) **PrintManagerInterop**|
 |[**IRadialControllerConfigurationInterop**](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerconfigurationinterop)|(**Windows.UI.Input**) **RadialControllerConfigurationInterop**|
-|**IRadialControllerIndependentInputSourceInterop**|(**Windows.UI.Input.Core**) **RadialControllerIndependentInputSourceInterop**|
+|**IRadialControllerIndependentInputSourceInterop**|(**Microsoft.UI.Input.Core**) **RadialControllerIndependentInputSourceInterop**|
 |[**IRadialControllerInterop**](/windows/win32/api/radialcontrollerinterop/nn-radialcontrollerinterop-iradialcontrollerinterop)|(**Windows.UI.Input**) **RadialControllerInterop**|
-|[**ISpatialInteractionManagerInterop**](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop)|(**Windows.UI.Input.Spatial**) **SpatialInteractionManagerInterop**|
+|[**ISpatialInteractionManagerInterop**](/windows/win32/api/spatialinteractionmanagerinterop/nn-spatialinteractionmanagerinterop-ispatialinteractionmanagerinterop)|(**Microsoft.UI.Input.Spatial**) **SpatialInteractionManagerInterop**|
 |[**ISystemMediaTransportControlsInterop**](/windows/win32/api/systemmediatransportcontrolsinterop/nn-systemmediatransportcontrolsinterop-isystemmediatransportcontrolsinterop)|(**Windows.Media**) **SystemMediaTransportControlsInterop**|
 |[**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop)|(**Windows.UI.ViewManagement**) **UIViewSettingsInterop**|
 |[**IUserConsentVerifierInterop**](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop)|(**Windows.Security.Credentials.UI**) **UserConsentVerifierInterop**|

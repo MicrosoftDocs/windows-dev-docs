@@ -21,7 +21,7 @@ Receive, process, and manage input data from pointing devices (such as touch, mo
 ## Important APIs
 - [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
 - [Windows.UI.Input](/uwp/api/Windows.UI.Core)
-- [Windows.UI.Xaml.Input](/uwp/api/Windows.UI.Input)
+- [Microsoft.UI.Xaml.Input](/windows/windows-app-sdk/api/winrt/microsoft.ui.input)
 
 ## Pointers
 Most interaction experiences typically involve the user identifying the object they want to interact with by pointing at it through input devices such as touch, mouse, pen/stylus, and touchpad. Because the raw Human Interface Device (HID) data provided by these input devices includes many common properties, the data is promoted and consolidated into a unified input stack and exposed as device-agnostic pointer data. Your Windows applications can then consume this data without worrying about the input device being used.
@@ -29,7 +29,7 @@ Most interaction experiences typically involve the user identifying the object t
 > [!NOTE]
 > Device-specific info is also promoted from the raw HID data should your app require it.
 
-Each input point (or contact) on the input stack is represented by a [**Pointer**](/uwp/api/Windows.UI.Xaml.Input.Pointer) object exposed through the [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) parameter in the various pointer event handlers. In the case of multi-pen or multi-touch input, each contact is treated as a unique input pointer.
+Each input point (or contact) on the input stack is represented by a [**Pointer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.Pointer) object exposed through the [**PointerRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.PointerRoutedEventArgs) parameter in the various pointer event handlers. In the case of multi-pen or multi-touch input, each contact is treated as a unique input pointer.
 
 ## Pointer events
 
@@ -38,18 +38,18 @@ Pointer events expose basic info such as input device type and detection state (
 Windows apps can listen for the following pointer events:
 
 > [!NOTE]
-> Constrain pointer input to a specific UI element by calling  [**CapturePointer**](/uwp/api/windows.ui.xaml.uielement.capturepointer) on that element within a pointer event handler. When a pointer is captured by an element, only that object receives pointer input events, even when the pointer moves outside the bounding area of the object. The [**IsInContact**](/uwp/api/windows.ui.xaml.input.pointer.isincontact) (mouse button pressed, touch or stylus in contact) must be true for **CapturePointer** to be successful.
+> Constrain pointer input to a specific UI element by calling  [**CapturePointer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.capturepointer) on that element within a pointer event handler. When a pointer is captured by an element, only that object receives pointer input events, even when the pointer moves outside the bounding area of the object. The [**IsInContact**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointer.isincontact) (mouse button pressed, touch or stylus in contact) must be true for **CapturePointer** to be successful.
 
 | Event | Description |
 |---|---|
-| [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled) | Occurs when a pointer is canceled by the platform. This can occur in the following circumstances:<br>&#8226; Touch pointers are canceled when a pen is detected within range of the input surface.<br>&#8226; An active contact is not detected for more than 100 ms.<br>&#8226; Monitor/display is changed (resolution, settings, multi-mon configuration).<br>&#8226; The desktop is locked or the user has logged off.<br>&#8226; The number of simultaneous contacts exceeded the number supported by the device. |
-| [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) | Occurs when another UI element captures the pointer, the pointer was released, or another pointer was programmatically captured.<br>**Note:** There is no corresponding pointer capture event. |
-| [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) | Occurs when a pointer enters the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact to fire this event, either from a direct touch down on the element or from moving into the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event with a direct pen down on the element or from moving into the bounding area of the element. However, pen also has a hover state ([IsInRange](/uwp/api/windows.ui.xaml.input.pointer.isinrange)) that, when true, fires this event. |
-| [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) | Occurs when a pointer leaves the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact and fires this event when the pointer moves out of the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event when moving out of the bounding area of the element. However, pen also has a hover state ([IsInRange](/uwp/api/windows.ui.xaml.input.pointer.isinrange)) that fires this event when the state changes from true to false. |
-| [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) | Occurs when a pointer changes coordinates, button state, pressure, tilt, or contact geometry (for example, width and height) within the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact and fires this event only when in contact within the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event when in contact within the bounding area of the element. However, pen also has a hover state ([IsInRange](/uwp/api/windows.ui.xaml.input.pointer.isinrange)) that, when true and within the bounding area of the element, fires this event. |
-| [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) | Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.<br>[CapturePointer](/uwp/api/windows.ui.xaml.uielement.capturepointer) must be called from the handler for this event. |
-| [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) | Occurs when the pointer indicates a release action (such as a touch up, mouse button up, pen up, or touchpad button up) within the bounding area of an element or, if the pointer is captured, outside the bounding area. |
-| [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) | Occurs when the mouse wheel is rotated.<br>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [PointerMoved](/uwp/api/windows.ui.xaml.uielement.pointermoved) event. | 
+| [**PointerCanceled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercanceled) | Occurs when a pointer is canceled by the platform. This can occur in the following circumstances:<br>&#8226; Touch pointers are canceled when a pen is detected within range of the input surface.<br>&#8226; An active contact is not detected for more than 100 ms.<br>&#8226; Monitor/display is changed (resolution, settings, multi-mon configuration).<br>&#8226; The desktop is locked or the user has logged off.<br>&#8226; The number of simultaneous contacts exceeded the number supported by the device. |
+| [**PointerCaptureLost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercapturelost) | Occurs when another UI element captures the pointer, the pointer was released, or another pointer was programmatically captured.<br>**Note:** There is no corresponding pointer capture event. |
+| [**PointerEntered**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered) | Occurs when a pointer enters the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact to fire this event, either from a direct touch down on the element or from moving into the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event with a direct pen down on the element or from moving into the bounding area of the element. However, pen also has a hover state ([IsInRange](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointer.isinrange)) that, when true, fires this event. |
+| [**PointerExited**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited) | Occurs when a pointer leaves the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact and fires this event when the pointer moves out of the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event when moving out of the bounding area of the element. However, pen also has a hover state ([IsInRange](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointer.isinrange)) that fires this event when the state changes from true to false. |
+| [**PointerMoved**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) | Occurs when a pointer changes coordinates, button state, pressure, tilt, or contact geometry (for example, width and height) within the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact and fires this event only when in contact within the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event when in contact within the bounding area of the element. However, pen also has a hover state ([IsInRange](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointer.isinrange)) that, when true and within the bounding area of the element, fires this event. |
+| [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) | Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.<br>[CapturePointer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.capturepointer) must be called from the handler for this event. |
+| [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased) | Occurs when the pointer indicates a release action (such as a touch up, mouse button up, pen up, or touchpad button up) within the bounding area of an element or, if the pointer is captured, outside the bounding area. |
+| [**PointerWheelChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged) | Occurs when the mouse wheel is rotated.<br>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [PointerMoved](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) event. | 
 
 ## Pointer event example
 
@@ -61,9 +61,9 @@ Here are some code snippets from a basic pointer tracking app that show how to l
 
 ### Create the UI
 
-For this example, we use a [Rectangle](/uwp/api/windows.ui.xaml.shapes.rectangle) (`Target`) as the object consuming pointer input. The color of the target changes when the pointer status changes.
+For this example, we use a [Rectangle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle) (`Target`) as the object consuming pointer input. The color of the target changes when the pointer status changes.
 
-Details for each pointer are displayed in a floating [TextBlock](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) that follows the pointer as it moves. The pointer events themselves are reported in the [RichTextBlock](/uwp/api/Windows.UI.Xaml.Controls.RichTextBlock) to the right of the rectangle.
+Details for each pointer are displayed in a floating [TextBlock](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) that follows the pointer as it moves. The pointer events themselves are reported in the [RichTextBlock](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.RichTextBlock) to the right of the rectangle.
 
 This is the Extensible Application Markup Language (XAML) for the UI in this example. 
 
@@ -120,9 +120,9 @@ This is the Extensible Application Markup Language (XAML) for the UI in this exa
 
 ### Listen for pointer events
 
-In most cases, we recommend that you get pointer info through the [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) of the event handler.
+In most cases, we recommend that you get pointer info through the [**PointerRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.PointerRoutedEventArgs) of the event handler.
 
-If the event argument doesn't expose the pointer details required, you can get access to extended [**PointerPoint**](/uwp/api/Windows.UI.Input.PointerPoint) info exposed through the [**GetCurrentPoint**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs).
+If the event argument doesn't expose the pointer details required, you can get access to extended [**PointerPoint**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.PointerPoint) info exposed through the [**GetCurrentPoint**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.PointerRoutedEventArgs).
 
 The following code sets up the global dictionary object for tracking each active pointer, and identifies the various pointer event listeners for the target object.
 
@@ -130,14 +130,14 @@ The following code sets up the global dictionary object for tracking each active
 // Dictionary to maintain information about each active pointer. 
 // An entry is added during PointerPressed/PointerEntered events and removed 
 // during PointerReleased/PointerCaptureLost/PointerCanceled/PointerExited events.
-Dictionary<uint, Windows.UI.Xaml.Input.Pointer> pointers;
+Dictionary<uint, Microsoft.UI.Xaml.Input.Pointer> pointers;
 
 public MainPage()
 {
     this.InitializeComponent();
 
     // Initialize the dictionary.
-    pointers = new Dictionary<uint, Windows.UI.Xaml.Input.Pointer>();
+    pointers = new Dictionary<uint, Microsoft.UI.Xaml.Input.Pointer>();
 
     // Declare the pointer event handlers.
     Target.PointerPressed += 
@@ -166,10 +166,10 @@ public MainPage()
 
 Next, we use UI feedback to demonstrate basic pointer event handlers.
 
--   This handler manages the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) event. We add the event to the event log, add the pointer to the active pointer dictionary, and display the pointer details.
+-   This handler manages the [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) event. We add the event to the event log, add the pointer to the active pointer dictionary, and display the pointer details.
 
     > [!NOTE]
-    > [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) and [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) events do not always occur in pairs. Your app should listen for and handle any event that might conclude a pointer down (such as [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited), [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled), and [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)).
+    > [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) and [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased) events do not always occur in pairs. Your app should listen for and handle any event that might conclude a pointer down (such as [**PointerExited**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited), [**PointerCanceled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercanceled), and [**PointerCaptureLost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercapturelost)).
          
 
 ```csharp
@@ -205,14 +205,14 @@ void Target_PointerPressed(object sender, PointerRoutedEventArgs e)
     }
 
     // Change background color of target when pointer contact detected.
-    Target.Fill = new SolidColorBrush(Windows.UI.Colors.Green);
+    Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Green);
 
     // Display pointer details.
     CreateInfoPop(ptrPt);
 }
 ```
 
--   This handler manages the [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered) event. We add the event to the event log, add the pointer to the pointer collection, and display the pointer details.
+-   This handler manages the [**PointerEntered**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered) event. We add the event to the event log, add the pointer to the pointer collection, and display the pointer details.
 
 ```csharp
 /// <summary>
@@ -241,7 +241,7 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
     if (pointers.Count == 0)
     {
         // Change background color of target when pointer contact detected.
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Blue);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Blue);
     }
 
     // Display pointer details.
@@ -249,10 +249,10 @@ private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) event. We add the event to the event log and update the pointer details.
+-   This handler manages the [**PointerMoved**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) event. We add the event to the event log and update the pointer details.
 
     > [!Important]
-    > Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) event. The [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) event is fired only when that same mouse button is released (no other button can be associated with the pointer until this event is complete). Because of this exclusive association, other mouse button clicks are routed through the [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) event.     
+    > Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) event. The [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased) event is fired only when that same mouse button is released (no other button can be associated with the pointer until this event is complete). Because of this exclusive association, other mouse button clicks are routed through the [**PointerMoved**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) event.     
 
 ```csharp
 /// <summary>
@@ -299,7 +299,7 @@ private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged) event. We add the event to the event log, add the pointer to the pointer array (if necessary), and display the pointer details.
+-   This handler manages the [**PointerWheelChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged) event. We add the event to the event log, add the pointer to the pointer array (if necessary), and display the pointer details.
 
 ```csharp
 /// <summary>
@@ -329,7 +329,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) event where contact with the digitizer is terminated. We add the event to the event log, remove the pointer from the pointer collection, and update the pointer details.
+-   This handler manages the [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased) event where contact with the digitizer is terminated. We add the event to the event log, remove the pointer from the pointer collection, and update the pointer details.
 
 ```csharp
 /// <summary>
@@ -357,7 +357,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
     if (ptrPt.PointerDevice.PointerDeviceType != Windows.Devices.Input.PointerDeviceType.Mouse)
     {
         // Update target UI.
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Red);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Red);
 
         DestroyInfoPop(ptrPt);
 
@@ -376,12 +376,12 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
     }
     else
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Blue);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Blue);
     }
 }
 ```
 
--   This handler manages the [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) event (when contact with the digitizer is maintained). We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   This handler manages the [**PointerExited**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited) event (when contact with the digitizer is maintained). We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
 
 ```csharp
 /// <summary>
@@ -408,7 +408,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 
     if (pointers.Count == 0)
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Red);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Red);
     }
 
     // Update the UI and pointer details.
@@ -416,7 +416,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
 }
 ```
 
--   This handler manages the [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   This handler manages the [**PointerCanceled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercanceled) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
 
 ```csharp
 /// <summary>
@@ -448,17 +448,17 @@ private void Target_PointerCanceled(object sender, PointerRoutedEventArgs e)
 
     if (pointers.Count == 0)
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Black);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Black);
     }
 
     DestroyInfoPop(ptrPt);
 }
 ```
 
--   This handler manages the [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
+-   This handler manages the [**PointerCaptureLost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercapturelost) event. We add the event to the event log, remove the pointer from the pointer array, and update the pointer details.
 
     > [!NOTE]
-    > [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost) can occur instead of [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased). Pointer capture can be lost for various reasons including user interaction, programmatic capture of another pointer, calling [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased).     
+    > [**PointerCaptureLost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercapturelost) can occur instead of [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased). Pointer capture can be lost for various reasons including user interaction, programmatic capture of another pointer, calling [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased).     
 
 ```csharp
 /// <summary>
@@ -483,7 +483,7 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
     if (pointers.Count == 0)
     {
-        Target.Fill = new SolidColorBrush(Windows.UI.Colors.Black);
+        Target.Fill = new SolidColorBrush(Microsoft.UI.Colors.Black);
     }
 
     // Remove contact from dictionary.
@@ -499,9 +499,9 @@ private void Target_PointerCaptureLost(object sender, PointerRoutedEventArgs e)
 
 ### Get pointer properties
 
-As stated earlier, you must get most extended pointer info from a [**Windows.UI.Input.PointerPoint**](/uwp/api/Windows.UI.Input.PointerPoint) object obtained through the [**GetCurrentPoint**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](/uwp/api/windows.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs). The following code snippets show how.
+As stated earlier, you must get most extended pointer info from a [**Microsoft.UI.Input.PointerPoint**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.PointerPoint) object obtained through the [**GetCurrentPoint**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointerroutedeventargs.getcurrentpoint) and [**GetIntermediatePoints**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointerroutedeventargs.getintermediatepoints) methods of [**PointerRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.PointerRoutedEventArgs). The following code snippets show how.
 
--   First, we create a new [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) for each pointer.
+-   First, we create a new [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) for each pointer.
 
 ```csharp
 /// <summary>
@@ -512,7 +512,7 @@ void CreateInfoPop(PointerPoint ptrPt)
 {
     TextBlock pointerDetails = new TextBlock();
     pointerDetails.Name = ptrPt.PointerId.ToString();
-    pointerDetails.Foreground = new SolidColorBrush(Windows.UI.Colors.White);
+    pointerDetails.Foreground = new SolidColorBrush(Microsoft.UI.Colors.White);
     pointerDetails.Text = QueryPointer(ptrPt);
 
     TranslateTransform x = new TranslateTransform();
@@ -524,7 +524,7 @@ void CreateInfoPop(PointerPoint ptrPt)
 }
 ```
 
--   Then we provide a way to update the pointer info in an existing [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) associated with that pointer.
+-   Then we provide a way to update the pointer info in an existing [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) associated with that pointer.
 
 ```csharp
 /// <summary>
@@ -535,7 +535,7 @@ void UpdateInfoPop(PointerPoint ptrPt)
 {
     foreach (var pointerDetails in Container.Children)
     {
-        if (pointerDetails.GetType().ToString() == "Windows.UI.Xaml.Controls.TextBlock")
+        if (pointerDetails.GetType().ToString() == "Microsoft.UI.Xaml.Controls.TextBlock")
         {
             TextBlock textBlock = (TextBlock)pointerDetails;
             if (textBlock.Name == ptrPt.PointerId.ToString())
@@ -627,7 +627,7 @@ This particular app uses both color and animation to highlight the primary point
 
 ### Visual feedback
 
-We define a **[UserControl](/uwp/api/windows.ui.xaml.controls.usercontrol)**, based on a XAML **[Ellipse](/uwp/api/windows.ui.xaml.shapes.ellipse)** object, that highlights where each pointer is on the canvas and uses a **[Storyboard](/uwp/api/windows.ui.xaml.media.animation.storyboard)** to animate the ellipse that corresponds to the primary pointer.
+We define a **[UserControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.usercontrol)**, based on a XAML **[Ellipse](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.ellipse)** object, that highlights where each pointer is on the canvas and uses a **[Storyboard](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.storyboard)** to animate the ellipse that corresponds to the primary pointer.
 
 **Here's the XAML:**
 
@@ -703,8 +703,8 @@ And here's the code-behind:
 ```csharp
 using Windows.Foundation;
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 
 // The User Control item template is documented at 
 // https://go.microsoft.com/fwlink/?LinkId=234236
@@ -819,7 +819,7 @@ namespace UWP_Pointers
 ```
 
 ### Create the UI
-The UI in this example is limited to the input **[Canvas](/uwp/api/windows.ui.xaml.controls.canvas)** where we track any pointers and render the pointer indicators and primary pointer animation (if applicable), along with a header bar containing a pointer counter and a primary pointer identifier.
+The UI in this example is limited to the input **[Canvas](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas)** where we track any pointers and render the pointer indicators and primary pointer animation (if applicable), along with a header bar containing a pointer counter and a primary pointer identifier.
 
 Here's the MainPage.xaml:
 

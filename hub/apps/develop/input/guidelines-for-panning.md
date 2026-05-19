@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 Panning or scrolling lets users navigate within a single view, to display the content of the view that does not fit within the viewport. Examples of views include the folder structure of a computer, a library of documents, or a photo album.
 
-> **Important APIs**: [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **Important APIs**: [**Windows.UI.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input), [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input)
 
 
 ## Dos and don'ts

@@ -15,7 +15,7 @@ Design your app with the expectation that touch will be the primary input method
 
 However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch, touchpad, pen/stylus, mouse, and keyboard input.
 
-> **Important APIs**: [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core), [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
+> **Important APIs**: [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core), [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input)
 
 Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.
 
@@ -141,9 +141,9 @@ In addition, the following are strongly recommended:
 
 Tweak the user interaction experience through the pan/scroll and zoom settings of your app views. An app view dictates how a user accesses and manipulates your app and its content. Views also provide behaviors such as inertia, content boundary bounce, and snap points.
 
-Pan and scroll settings of the [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) control dictate how users navigate within a single view, when the content of the view doesn't fit within the viewport. A single view, for example, can be a page of a magazine or book, the folder structure of a computer, a library of documents, or a photo album.
+Pan and scroll settings of the [**ScrollViewer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ScrollViewer) control dictate how users navigate within a single view, when the content of the view doesn't fit within the viewport. A single view, for example, can be a page of a magazine or book, the folder structure of a computer, a library of documents, or a photo album.
 
-Zoom settings apply to both optical zoom (supported by the [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer) control) and the [**Semantic Zoom**](/uwp/api/Windows.UI.Xaml.Controls.SemanticZoom) control. Semantic Zoom is a touch-optimized technique for presenting and navigating large sets of related data or content within a single view. It works by using two distinct modes of classification, or zoom levels. This is analogous to panning and scrolling within a single view. Panning and scrolling can be used in conjunction with Semantic Zoom.
+Zoom settings apply to both optical zoom (supported by the [**ScrollViewer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ScrollViewer) control) and the [**Semantic Zoom**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.SemanticZoom) control. Semantic Zoom is a touch-optimized technique for presenting and navigating large sets of related data or content within a single view. It works by using two distinct modes of classification, or zoom levels. This is analogous to panning and scrolling within a single view. Panning and scrolling can be used in conjunction with Semantic Zoom.
 
 Use app views and events to modify the pan/scroll and zoom behaviors. This can provide a smoother interaction experience than is possible through the handling of pointer and gesture events.
 
@@ -170,17 +170,17 @@ If you implement your own interaction support, keep in mind that users expect an
 >
 > If your application must support these interactions, we recommend that you inform users of this setting and provide a link that launches Windows Settings to the relevant page (ms-settings:devices-touch). For more details, see [Launch Windows Settings](/windows/apps/develop/launch/launch-settings).
 
-To provide customized touch support, you can handle various [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) events. These events are grouped into three levels of abstraction.
+To provide customized touch support, you can handle various [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) events. These events are grouped into three levels of abstraction.
 
-- Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](/uwp/api/windows.ui.xaml.uielement.tapped), [**DoubleTapped**](/uwp/api/windows.ui.xaml.uielement.doubletapped), [**RightTapped**](/uwp/api/windows.ui.xaml.uielement.righttapped), and [**Holding**](/uwp/api/windows.ui.xaml.uielement.holding).
+- Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.tapped), [**DoubleTapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.doubletapped), [**RightTapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.righttapped), and [**Holding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.holding).
 
-  You can disable gesture events on specific elements by setting [**IsTapEnabled**](/uwp/api/windows.ui.xaml.uielement.istapenabled), [**IsDoubleTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isdoubletapenabled), [**IsRightTapEnabled**](/uwp/api/windows.ui.xaml.uielement.isrighttapenabled), and [**IsHoldingEnabled**](/uwp/api/windows.ui.xaml.uielement.isholdingenabled) to **false**.
+  You can disable gesture events on specific elements by setting [**IsTapEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.istapenabled), [**IsDoubleTapEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.isdoubletapenabled), [**IsRightTapEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.isrighttapenabled), and [**IsHoldingEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.isholdingenabled) to **false**.
 
-- Pointer events such as [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) and [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
+- Pointer events such as [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) and [**PointerMoved**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
 
   A pointer is a generic input type with a unified event mechanism. It exposes basic info, such as screen position, on the active input source, which can be touch, touchpad, mouse, or pen.
 
-- Manipulation gesture events, such as [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
+- Manipulation gesture events, such as [**ManipulationStarted**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationstarted), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
 
   Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.
 
@@ -210,19 +210,19 @@ Here is a list of pointer events and their related event argument.
 
 | Event or class                                                       | Description                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed)             | Occurs when a single finger touches the screen.               |
-| [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased)           | Occurs when that same touch contact is lifted.                |
-| [**PointerMoved**](/uwp/api/windows.ui.xaml.uielement.pointermoved)                 | Occurs when the pointer is dragged across the screen.         |
-| [**PointerEntered**](/uwp/api/windows.ui.xaml.uielement.pointerentered)             | Occurs when a pointer enters the hit test area of an element. |
-| [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited)               | Occurs when a pointer exits the hit test area of an element.  |
-| [**PointerCanceled**](/uwp/api/windows.ui.xaml.uielement.pointercanceled)           | Occurs when a touch contact is abnormally lost.               |
-| [**PointerCaptureLost**](/uwp/api/windows.ui.xaml.uielement.pointercapturelost)     | Occurs when a pointer capture is taken by another element.    |
-| [**PointerWheelChanged**](/uwp/api/windows.ui.xaml.uielement.pointerwheelchanged)   | Occurs when the delta value of a mouse wheel changes and when the touchpad is pinched.         |
-| [**PointerRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.PointerRoutedEventArgs) | Provides data for all pointer events.                         |
+| [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed)             | Occurs when a single finger touches the screen.               |
+| [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased)           | Occurs when that same touch contact is lifted.                |
+| [**PointerMoved**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved)                 | Occurs when the pointer is dragged across the screen.         |
+| [**PointerEntered**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered)             | Occurs when a pointer enters the hit test area of an element. |
+| [**PointerExited**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited)               | Occurs when a pointer exits the hit test area of an element.  |
+| [**PointerCanceled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercanceled)           | Occurs when a touch contact is abnormally lost.               |
+| [**PointerCaptureLost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercapturelost)     | Occurs when a pointer capture is taken by another element.    |
+| [**PointerWheelChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged)   | Occurs when the delta value of a mouse wheel changes and when the touchpad is pinched.         |
+| [**PointerRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.PointerRoutedEventArgs) | Provides data for all pointer events.                         |
 
-The following example shows how to use the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed), [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased), and [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) events to handle a tap interaction on a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) object.
+The following example shows how to use the [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed), [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased), and [**PointerExited**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited) events to handle a tap interaction on a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle) object.
 
-First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
+First, a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -231,7 +231,7 @@ First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touch
 </Grid>
 ```
 
-Next, listeners for the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed), [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased), and [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) events are specified.
+Next, listeners for the [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed), [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased), and [**PointerExited**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited) events are specified.
 
 ```cpp
 MainPage::MainPage()
@@ -271,7 +271,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, the [**PointerPressed**](/uwp/api/windows.ui.xaml.uielement.pointerpressed) event handler increases the [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) and [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) of the [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle), while the [**PointerReleased**](/uwp/api/windows.ui.xaml.uielement.pointerreleased) and [**PointerExited**](/uwp/api/windows.ui.xaml.uielement.pointerexited) event handlers set the **Height** and **Width** back to their starting values.
+Finally, the [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) event handler increases the [**Height**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement.Height) and [**Width**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement.Width) of the [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle), while the [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased) and [**PointerExited**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerexited) event handlers set the **Height** and **Width** back to their starting values.
 
 ```cpp
 // Handler for pointer exited event.
@@ -405,28 +405,28 @@ Here is a list of manipulation events and related event arguments.
 
 | Event or class                                                                                               | Description                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**ManipulationStarting event**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting)                                   | Occurs when the manipulation processor is first created.                                                                                  |
-| [**ManipulationStarted event**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted)                                     | Occurs when an input device begins a manipulation on the [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement).                                            |
-| [**ManipulationDelta event**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta)                                         | Occurs when the input device changes position during a manipulation.                                                                      |
-| [**ManipulationInertiaStarting event**](/uwp/api/windows.ui.xaml.uielement.manipulationinertiastartingevent)                | Occurs when the input device loses contact with the [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) object during a manipulation and inertia begins. |
-| [**ManipulationCompleted event**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted)                                 | Occurs when a manipulation and inertia on the [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) are complete.                                          |
-| [**ManipulationStartingRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationStartingRoutedEventArgs)               | Provides data for the [**ManipulationStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationstarting) event.                                         |
-| [**ManipulationStartedRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs)                 | Provides data for the [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) event.                                           |
-| [**ManipulationDeltaRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs)                     | Provides data for the [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) event.                                               |
-| [**ManipulationInertiaStartingRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationInertiaStartingRoutedEventArgs) | Provides data for the [**ManipulationInertiaStarting**](/uwp/api/windows.ui.xaml.uielement.manipulationinertiastarting) event.                           |
+| [**ManipulationStarting event**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationstarting)                                   | Occurs when the manipulation processor is first created.                                                                                  |
+| [**ManipulationStarted event**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationstarted)                                     | Occurs when an input device begins a manipulation on the [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement).                                            |
+| [**ManipulationDelta event**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta)                                         | Occurs when the input device changes position during a manipulation.                                                                      |
+| [**ManipulationInertiaStarting event**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationinertiastartingevent)                | Occurs when the input device loses contact with the [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) object during a manipulation and inertia begins. |
+| [**ManipulationCompleted event**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationcompleted)                                 | Occurs when a manipulation and inertia on the [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) are complete.                                          |
+| [**ManipulationStartingRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.ManipulationStartingRoutedEventArgs)               | Provides data for the [**ManipulationStarting**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationstarting) event.                                         |
+| [**ManipulationStartedRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.ManipulationStartedRoutedEventArgs)                 | Provides data for the [**ManipulationStarted**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationstarted) event.                                           |
+| [**ManipulationDeltaRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.ManipulationDeltaRoutedEventArgs)                     | Provides data for the [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) event.                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.ManipulationInertiaStartingRoutedEventArgs) | Provides data for the [**ManipulationInertiaStarting**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationinertiastarting) event.                           |
 | [**ManipulationVelocities**](/uwp/api/Windows.UI.Input.ManipulationVelocities)                                              | Describes the speed at which manipulations occur.                                                                                         |
-| [**ManipulationCompletedRoutedEventArgs**](/uwp/api/Windows.UI.Xaml.Input.ManipulationCompletedRoutedEventArgs)             | Provides data for the [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) event.                                       |
+| [**ManipulationCompletedRoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input.ManipulationCompletedRoutedEventArgs)             | Provides data for the [**ManipulationCompleted**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationcompleted) event.                                       |
 
-A gesture consists of a series of manipulation events. Each gesture starts with a [**ManipulationStarted**](/uwp/api/windows.ui.xaml.uielement.manipulationstarted) event, such as when a user touches the screen.
+A gesture consists of a series of manipulation events. Each gesture starts with a [**ManipulationStarted**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationstarted) event, such as when a user touches the screen.
 
-Next, one or more [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](/uwp/api/windows.ui.xaml.uielement.manipulationcompleted) event is raised when the interaction finishes.
+Next, one or more [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationcompleted) event is raised when the interaction finishes.
 
 > [!NOTE]
 > If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
 
-The following example shows how to use the [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) events to handle a slide interaction on a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) and move it across the screen.
+The following example shows how to use the [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) events to handle a slide interaction on a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle) and move it across the screen.
 
-First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touchRectangle` is created in XAML with a [**Height**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Height) and [**Width**](/uwp/api/Windows.UI.Xaml.FrameworkElement.Width) of 200.
+First, a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle) named `touchRectangle` is created in XAML with a [**Height**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement.Height) and [**Width**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement.Width) of 200.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -436,12 +436,12 @@ First, a [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) named `touch
 </Grid>
 ```
 
-Next, a global [**TranslateTransform**](/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) named `dragTranslation` is created for translating the [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle). A [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](/uwp/api/windows.ui.xaml.uielement.rendertransform) of the **Rectangle**.
+Next, a global [**TranslateTransform**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.TranslateTransform) named `dragTranslation` is created for translating the [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle). A [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.rendertransform) of the **Rectangle**.
 
 ```cpp
 // Global translation transform used for changing the position of 
 // the Rectangle based on input data from the touch contact.
-Windows::UI::Xaml::Media::TranslateTransform^ dragTranslation;
+Microsoft::UI::Xaml::Media::TranslateTransform^ dragTranslation;
 ```
 
 ```cs
@@ -507,7 +507,7 @@ Public Sub New()
 End Sub
 ```
 
-Finally, in the [**ManipulationDelta**](/uwp/api/windows.ui.xaml.uielement.manipulationdelta) event handler, the position of the [**Rectangle**](/uwp/api/Windows.UI.Xaml.Shapes.Rectangle) is updated by using the [**TranslateTransform**](/uwp/api/Windows.UI.Xaml.Media.TranslateTransform) on the [**Delta**](/uwp/api/windows.ui.xaml.input.manipulationdeltaroutedeventargs.delta) property.
+Finally, in the [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) event handler, the position of the [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle) is updated by using the [**TranslateTransform**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.TranslateTransform) on the [**Delta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.manipulationdeltaroutedeventargs.delta) property.
 
 ```cpp
 // Handler for the ManipulationDelta event.
@@ -553,10 +553,10 @@ End Sub
 
 ## Routed events
 
-All of the pointer events, gesture events and manipulation events mentioned here are implemented as *routed events*. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) or the root [**Page**](/uwp/api/Windows.UI.Xaml.Controls.Page) of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see [Events and routed events overview](/previous-versions/windows/apps/hh758286(v=win.10)).
+All of the pointer events, gesture events and manipulation events mentioned here are implemented as *routed events*. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) or the root [**Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Page) of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see [Events and routed events overview](/previous-versions/windows/apps/hh758286(v=win.10)).
 
 > [!Important]
-> If you need to handle pointer events for a [**UIElement**](/uwp/api/Windows.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/uwp/api/windows.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/uwp/api/windows.ui.xaml.uielement.trystartdirectmanipulation).
+> If you need to handle pointer events for a [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation()](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation()](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation).
 
 ## Dos and don'ts
 
