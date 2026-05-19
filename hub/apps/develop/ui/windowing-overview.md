@@ -131,7 +131,7 @@ XAML Window APIs are generally responsible for the appearance of your app conten
 AppWindow APIs are responsible for the _non-client_ portion of the window and your app's interaction with the Windows OS.
 
 > [!NOTE]
-> The XAML Window class has several properties that were carried over from the UWP [Windows.UI.Xaml.Window](/uwp/api/windows.ui.xaml.window) class, but are not supported in WinUI apps. These properties always have a `null` value and are not used in WinUI apps: `CoreWindow`, `Current`, and `Dispatcher`.
+> The XAML Window class has several properties that were carried over from the UWP [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class, but are not supported in WinUI apps. These properties always have a `null` value and are not used in WinUI apps: `CoreWindow`, `Current`, and `Dispatcher`.
 
 ## Track the current window
 

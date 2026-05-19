@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 ---
 # Item containers and templates
 
- 
+
 
 **ListView** and **GridView** controls manage how their items are arranged (horizontal, vertical, wrapping, etc…) and how a user interacts with the items, but not how the individual items are shown on the screen. Item visualization is managed by item containers. When you add items to a list view they are automatically placed in a container. The default item container for ListView is [ListViewItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListViewItem); for GridView, it's [GridViewItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridViewItem).
 
@@ -23,13 +23,13 @@ ms.localizationpriority: medium
 
 
 > [!NOTE]
-> ListView and GridView both derive from the [ListViewBase](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about list view, the info applies to both the ListView and GridView controls unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the *List* prefix can be replaced with *Grid* for the corresponding grid equivalent (GridView or GridViewItem). 
+> ListView and GridView both derive from the [ListViewBase](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase) class, so they have the same functionality, but display data differently. In this article, when we talk about list view, the info applies to both the ListView and GridView controls unless otherwise specified. We may refer to classes like ListView or ListViewItem, but the *List* prefix can be replaced with *Grid* for the corresponding grid equivalent (GridView or GridViewItem).
 
 ## ListView items and GridView items
 As mentioned above, ListView items are automatically placed into the ListViewItem container, and GridView items are placed into the GridViewItem container. These item containers are controls that have their own built-in styling and interaction, but can also be highly customized. However, before customization, make sure to familizarize yourself with the recommended styling and guidelines for ListViewItem and GridViewItem:
 
 - **ListViewItems** -  Items are primarily text-focused, and elongated in shape. Icons or images may appear to the left of the text.
-- **GridViewItems** - Items are usually square in shape, or at least less of an elongated rectangle shape. Items are image-focused, and may have text appearing around or overlaid on the image. 
+- **GridViewItems** - Items are usually square in shape, or at least less of an elongated rectangle shape. Items are image-focused, and may have text appearing around or overlaid on the image.
 
 ## Introduction to customization
 Container controls (such as ListViewItem and GridViewItem) consist of two important parts that combine to create the final visuals shown for an item: the *data template* and the *control template*.
@@ -75,8 +75,8 @@ Here's the XAML that creates this item. We explain the templates later.
 ```
 
 > [!IMPORTANT]
-> Data templates and control templates are used to customize the style for many controls other than ListView and GridView. These include controls with their own built-in styling, such as FlipView, and custom-created controls, such as ItemsRepeater. While the below example is specific to ListView/GridView, the concepts can be applied to many other controls. 
- 
+> Data templates and control templates are used to customize the style for many controls other than ListView and GridView. These include controls with their own built-in styling, such as FlipView, and custom-created controls, such as ItemsRepeater. While the below example is specific to ListView/GridView, the concepts can be applied to many other controls.
+
 ## Prerequisites
 
 - We assume that you know how to use a list view control. For more info, see the [ListView and GridView](../../../design/controls/listview-and-gridview.md) article.
@@ -85,7 +85,7 @@ Here's the XAML that creates this item. We explain the templates later.
 ## The data
 
 Before we look deeper into how to show data items in a list view, we need to understand the data to be shown. In this example, we create a data type called `NamedColor`. It combines a color name, color value, and a **SolidColorBrush** for the color, which are exposed as 3 properties: `Name`, `Color`, and `Brush`.
- 
+
 We then populate a **List** with a `NamedColor` object for each named color in the [Colors](/windows/windows-app-sdk/api/winrt/microsoft.ui.colors) class. The list is set as the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) for the list view.
 
 Here's the code to define the class and populate the `NamedColors` list.
@@ -96,14 +96,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Windows.UI;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 
 namespace ColorsListApp
 {
     public sealed partial class MainPage : Page
     {
-        // The list of colors won't change after it's populated, so we use List<T>. 
+        // The list of colors won't change after it's populated, so we use List<T>.
         // If the data can change, we should use an ObservableCollection<T> intead.
         List<NamedColor> NamedColors = new List<NamedColor>();
 
@@ -148,7 +148,7 @@ namespace ColorsListApp
 
 ## Data template
 
-You specify a data template to tell the list view how your data item should be shown. 
+You specify a data template to tell the list view how your data item should be shown.
 
 By default, a data item is displayed in the list view as the string representation of the data object it's bound to. If you show the 'NamedColors' data in a list view without telling the list view how it should look, it just shows whatever the **ToString** method returns, like this.
 
@@ -175,7 +175,7 @@ You typically want to show a more rich presentation of your data. To specify exa
 > [!IMPORTANT]
 > You can't use a **ItemTemplate** and **DisplayMemberPath** at the same time. If both properties are set, an exception occurs.
 
-Here, you define a DataTemplate that shows a [Rectangle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle) in the color of the item, along with the color name and RGB values. 
+Here, you define a DataTemplate that shows a [Rectangle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle) in the color of the item, along with the color name and RGB values.
 
 > [!NOTE]
 > When you use the [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
@@ -213,7 +213,7 @@ Here's what the data items look like when they're displayed with this data templ
 ![List view items with a data template](images/listview-data-template-0.png)
 
 > [!IMPORTANT]
-> ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin. 
+> ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin.
 <br/><br/> In order to have elements spread to fill the entire body of a ListItem, you will need to set the HorizontalContentAlignmentProperty to [Stretch](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.horizontalalignment) by using a [Setter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.setter) inside of your ListView:
 
 ```xaml
@@ -243,7 +243,7 @@ You might want to show the data in a GridView. Here's another data template that
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-    
+
             <Rectangle Width="96" Height="96" Fill="{x:Bind Brush}" Grid.ColumnSpan="3" />
             <!-- Name -->
             <Border Background="#AAFFFFFF" Grid.ColumnSpan="3" Height="40" VerticalAlignment="Top">
@@ -255,7 +255,7 @@ You might want to show the data in a GridView. Here's another data template that
                    Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"/>
             <TextBlock Text="{x:Bind Color.G}" Foreground="Green"
                    Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"/>
-            <TextBlock Text="{x:Bind Color.B}" Foreground="Blue" 
+            <TextBlock Text="{x:Bind Color.B}" Foreground="Blue"
                    Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center"/>
             <!-- HEX -->
             <Border Background="Gray" Grid.Row="2" Grid.ColumnSpan="3">
@@ -267,7 +267,7 @@ You might want to show the data in a GridView. Here's another data template that
 
 ...
 
-<GridView x:Name="colorsGridView" 
+<GridView x:Name="colorsGridView"
           ItemTemplate="{StaticResource namedColorItemGridTemplate}"/>
 ```
 
@@ -277,7 +277,7 @@ When the data is shown in a grid using this data template, it looks like this.
 
 ### Performance considerations
 
-Data templates are the primary way you define the look of your list view. They can also have a significant impact on performance if your list displays a large number of items. 
+Data templates are the primary way you define the look of your list view. They can also have a significant impact on performance if your list displays a large number of items.
 
 An instance of every XAML element in a data template is created for each item in the list view. For example, the grid template in the previous example has 10 XAML elements (1 Grid, 1 Rectangle, 3 Borders, 5 TextBlocks). A GridView that shows 20 items on screen using this data template creates at least 200 elements (20*10=200). Reducing the number of elements in a data template can greatly reduce the total number of elements created for your list view. For more info, see [ListView and GridView UI optimization: Element count reduction per item](/windows/uwp/debug-test-perf/optimize-gridview-and-listview).
 
@@ -291,7 +291,7 @@ An instance of every XAML element in a data template is created for each item in
            Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"/>
 <TextBlock Text="{x:Bind Color.G}" Foreground="Green"
            Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center"/>
-<TextBlock Text="{x:Bind Color.B}" Foreground="Blue" 
+<TextBlock Text="{x:Bind Color.B}" Foreground="Blue"
            Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center"/>
 ```
 
@@ -305,8 +305,8 @@ An instance of every XAML element in a data template is created for each item in
 ## Control template
 An item's control template contains the visuals that display state, like selection, pointer over, and focus. These visuals are rendered either on top of or below the data template. Some of the common default visuals drawn by the ListView control template are shown here.
 
-- Hover – A light gray rectangle drawn below the data template.  
-- Selection – A light blue rectangle drawn below the data template. 
+- Hover – A light gray rectangle drawn below the data template.
+- Selection – A light blue rectangle drawn below the data template.
 - Keyboard focus– A [High Visibility Focus Visual](../../../design/input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals) drawn on top of the item template.
 
 ![List view state visuals](images/listview-state-visuals.png)
@@ -320,7 +320,7 @@ The list view combines the elements from the data template and control template 
 As we noted previously about data templates, the number of XAML elements created for each item can have a significant impact on the performance of a list view. Because the data template and control template are combined to display each item, the actual number of elements needed to display an item includes the elements in both templates.
 
 The ListView and GridView controls are optimized to reduce the number of XAML elements created per item. The **ListViewItem** visuals are created by the [ListViewItemPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitempresenter), which is a special XAML element that displays complex visuals for focus, selection, and other visual states, without the overhead of numerous UIElements.
- 
+
 > [!NOTE]
 > In WinUI apps, both **ListViewItem** and **GridViewItem** use **ListViewItemPresenter**; the GridViewItemPresenter is deprecated and you should not use it. ListViewItem and GridViewItem set different property values on ListViewItemPresenter to achieve different default looks.)
 
@@ -348,13 +348,13 @@ Now the list view looks like this with space between the items.
 
 In the ListViewItem default style, the ListViewItemPresenter **ContentMargin** property has a [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension) to the ListViewItem **Padding** property (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). When we set the Padding property, that value is really being passed to the ListViewItemPresenter ContentMargin property.
 
-To modify other ListViewItemPresenter properties that aren't template bound to ListViewItems properties, you need to retemplate the ListViewItem with a new ListViewItemPresenter that you can modify properties on. 
+To modify other ListViewItemPresenter properties that aren't template bound to ListViewItems properties, you need to retemplate the ListViewItem with a new ListViewItemPresenter that you can modify properties on.
 
 > [!NOTE]
 > ListViewItem and GridViewItem default styles set a lot of properties on ListViewItemPresenter. You should always start with a copy of the default style and modify only the properties you need too. Otherwise, the visuals will probably not show up the way you expect because some properties won't be set correctly.
 
 **To make a copy of the default template in Visual Studio**
- 
+
 1. Open the Document Outline pane (**View > Other Windows > Document Outline**).
 2. Select the list or grid element to modify. In this example, you modify the `colorsGridView` element.
 3. Right-click and select **Edit Additional Templates > Edit Generated Item Container (ItemContainerStyle) > Edit a Copy**.
@@ -362,7 +362,7 @@ To modify other ListViewItemPresenter properties that aren't template bound to L
 4. In the Create Style Resource dialog, enter a name for the style. In this example, you use `colorsGridViewItemStyle`.
     ![Visual Studio Create Style Resource dialog](images/listview-style-resource-vs.png)
 
-A copy of the default style is added to your app as a resource, and the **GridView.ItemContainerStyle** property is set to that resource, as shown in this XAML. 
+A copy of the default style is added to your app as a resource, and the **GridView.ItemContainerStyle** property is set to that resource, as shown in this XAML.
 
 ```xaml
 <Style x:Key="colorsGridViewItemStyle" TargetType="GridViewItem">
@@ -380,29 +380,29 @@ A copy of the default style is added to your app as a resource, and the **GridVi
     <Setter Property="Template">
         <Setter.Value>
             <ControlTemplate TargetType="GridViewItem">
-                <ListViewItemPresenter 
-                    CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}" 
-                    ContentMargin="{TemplateBinding Padding}" 
-                    CheckMode="Overlay" 
-                    ContentTransitions="{TemplateBinding ContentTransitions}" 
-                    CheckBoxBrush="{ThemeResource SystemControlBackgroundChromeMediumBrush}" 
-                    DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}" 
-                    DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}" 
-                    DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}" 
-                    DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}" 
-                    FocusBorderBrush="{ThemeResource SystemControlForegroundAltHighBrush}" 
-                    FocusSecondaryBorderBrush="{ThemeResource SystemControlForegroundBaseHighBrush}" 
-                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                    PointerOverForeground="{ThemeResource SystemControlForegroundBaseHighBrush}" 
-                    PressedBackground="{ThemeResource SystemControlHighlightListMediumBrush}" 
-                    PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}" 
-                    PointerOverBackground="{ThemeResource SystemControlHighlightListLowBrush}" 
-                    ReorderHintOffset="{ThemeResource GridViewItemReorderHintThemeOffset}" 
-                    SelectedPressedBackground="{ThemeResource SystemControlHighlightListAccentHighBrush}" 
-                    SelectionCheckMarkVisualEnabled="True" 
-                    SelectedForeground="{ThemeResource SystemControlForegroundBaseHighBrush}" 
-                    SelectedPointerOverBackground="{ThemeResource SystemControlHighlightListAccentMediumBrush}" 
-                    SelectedBackground="{ThemeResource SystemControlHighlightAccentBrush}" 
+                <ListViewItemPresenter
+                    CheckBrush="{ThemeResource SystemControlForegroundBaseMediumHighBrush}"
+                    ContentMargin="{TemplateBinding Padding}"
+                    CheckMode="Overlay"
+                    ContentTransitions="{TemplateBinding ContentTransitions}"
+                    CheckBoxBrush="{ThemeResource SystemControlBackgroundChromeMediumBrush}"
+                    DragForeground="{ThemeResource ListViewItemDragForegroundThemeBrush}"
+                    DragOpacity="{ThemeResource ListViewItemDragThemeOpacity}"
+                    DragBackground="{ThemeResource ListViewItemDragBackgroundThemeBrush}"
+                    DisabledOpacity="{ThemeResource ListViewItemDisabledThemeOpacity}"
+                    FocusBorderBrush="{ThemeResource SystemControlForegroundAltHighBrush}"
+                    FocusSecondaryBorderBrush="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                    PointerOverForeground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                    PressedBackground="{ThemeResource SystemControlHighlightListMediumBrush}"
+                    PlaceholderBackground="{ThemeResource ListViewItemPlaceholderBackgroundThemeBrush}"
+                    PointerOverBackground="{ThemeResource SystemControlHighlightListLowBrush}"
+                    ReorderHintOffset="{ThemeResource GridViewItemReorderHintThemeOffset}"
+                    SelectedPressedBackground="{ThemeResource SystemControlHighlightListAccentHighBrush}"
+                    SelectionCheckMarkVisualEnabled="True"
+                    SelectedForeground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                    SelectedPointerOverBackground="{ThemeResource SystemControlHighlightListAccentMediumBrush}"
+                    SelectedBackground="{ThemeResource SystemControlHighlightAccentBrush}"
                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
             </ControlTemplate>
         </Setter.Value>
@@ -414,11 +414,11 @@ A copy of the default style is added to your app as a resource, and the **GridVi
 <GridView x:Name="colorsGridView" ItemContainerStyle="{StaticResource colorsGridViewItemStyle}"/>
 ```
 
-You can now modify properties on the ListViewItemPresenter to control the selection check box, item positioning, and brush colors for visual states. 
+You can now modify properties on the ListViewItemPresenter to control the selection check box, item positioning, and brush colors for visual states.
 
 #### Inline and Overlay selection visuals
 
-ListView and GridView indicate selected items in different ways depending on the control and the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode). For more info about list view selection, see [ListView and GridView](../../../design/controls/listview-and-gridview.md). 
+ListView and GridView indicate selected items in different ways depending on the control and the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode). For more info about list view selection, see [ListView and GridView](../../../design/controls/listview-and-gridview.md).
 
 When **SelectionMode** is set to **Multiple**, a selection check box is shown as part of the item's control template. You can use the [SelectionCheckMarkVisualEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) property to turn off the selection check box in Multiple selection mode. However, this property is ignored in other selection modes, so you can't turn on the check box in Extended or Single selection mode.
 
@@ -439,9 +439,9 @@ Overlay | ![Overlay single or extended selection](images/gridview-single-selecti
 
 There are also several brush properties to change the colors of the check box. We'll look at these next along with other brush properties.
 
-#### Brushes 
+#### Brushes
 
-Many of the properties specify the brushes used for different visual states. You might want to modify these to match the color of your brand. 
+Many of the properties specify the brushes used for different visual states. You might want to modify these to match the color of your brand.
 
 This table shows the Common and Selection visual states for ListViewItem, and the brushes used to render the visuals for each state. The images show the effects of the brushes on both the inline and overlay selection visual styles.
 
@@ -458,7 +458,7 @@ State/Brush name | Inline style | Overlay style
 <b>PressedSelected</b><ul><li><b>SelectedPressedBackground="MediumTurquoise"</b></li></li><li>SelectedForeground="Navy"</li><li>SelectedBackground="Khaki" (overlay only)</li><li>CheckBrush="Green"</li><li>CheckBoxBrush="Red" (inline only)</li></ul> | ![Inline item selection pressed selected](images/listview-item-pressedselected.png) | ![Overlay item selection pressed selected](images/gridview-item-pressedselected.png)
 <b>Focused</b><ul><li><b>FocusBorderBrush="Crimson"</b></li><li><b>FocusSecondaryBorderBrush="Gold"</b></li><li>CheckBoxBrush="Red"</li></ul> | ![Inline item selection focused](images/listview-item-focused.png) | ![Overlay item selection focused](images/gridview-item-focused.png)
 
-ListViewItemPresenter has other brush properties for data placeholders and drag states. If you use incremental loading or drag and drop in your list view, you should consider whether you need to also modify these additional brush properties. See the ListViewItemPresenter class for the complete list of properties you can modify. 
+ListViewItemPresenter has other brush properties for data placeholders and drag states. If you use incremental loading or drag and drop in your list view, you should consider whether you need to also modify these additional brush properties. See the ListViewItemPresenter class for the complete list of properties you can modify.
 
 ### Expanded XAML item templates
 
@@ -479,8 +479,8 @@ To customize an expanded XAML template, you need to make a copy of it in your ap
     ```
 2. In the Visual Studio Properties pane, expand the Miscellaneous section and find the ItemContainerStyle property. (Make sure the ListView or GridView is selected.)
 3. Click the property marker for the ItemContainerStyle property. (It's the small box next to the TextBox. It's coloreed green to show that it's set to a StaticResource.) The property menu opens.
-4. In the property menu, click **Convert to New Resource**. 
-    
+4. In the property menu, click **Convert to New Resource**.
+
     ![Visual Studio property menu](images/listview-convert-resource-vs.png)
 5. In the Create Style Resource dialog, enter a name for the resource and click OK.
 

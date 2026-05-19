@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 Use visual feedback to show users when their interactions are detected, interpreted, and handled. Visual feedback can help users by encouraging interaction. It indicates the success of an interaction, which improves the user's sense of control. It also relays system status and reduces errors.
 
-> **Important APIs**:  [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
+> **Important APIs**:  [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input), [**Windows.UI.Core**](/uwp/api/Windows.UI.Core)
 >
 > [!NOTE]
 > The `Windows.Devices.Input` and `Windows.UI.Input` APIs are Windows SDK (WinRT) APIs that work in both UWP and WinUI 3 apps. For WinUI 3-specific input APIs, see [Microsoft.UI.Input](/windows/windows-app-sdk/api/winrt/microsoft.ui.input).
@@ -26,7 +26,7 @@ Use visual feedback to show users when their interactions are detected, interpre
     - See [XAML styles](../platform/xaml/xaml-styles.md) for more info on customizing the properties of a control, including visual state properties.
     - See the [UserControl Class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.usercontrol) for details on making changes to a control template
     - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl) (UWP sample).
-- Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback).
+- Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.gesturerecognizer.showgesturefeedback).
 - Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.
 - Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.
 
@@ -43,7 +43,7 @@ Using the default XAML platform controls available ensures that your app works c
 
 Visual feedback is generally dependent on the input device (touch, touchpad, mouse, pen/stylus, keyboard, and so on). For example, the built-in feedback for a mouse usually involves moving and changing the cursor, while touch and pen require contact visualizations, and keyboard input and navigation uses focus rectangles and highlighting.
 
-Use [**ShowGestureFeedback**](/uwp/api/windows.ui.input.gesturerecognizer.showgesturefeedback) to set feedback behavior for the platform gestures.
+Use [**ShowGestureFeedback**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.gesturerecognizer.showgesturefeedback) to set feedback behavior for the platform gestures.
 
 If customizing feedback UI, ensure you provide feedback that supports, and is suitable for, all input modes.
 

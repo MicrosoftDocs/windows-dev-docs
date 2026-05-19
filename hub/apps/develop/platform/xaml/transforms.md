@@ -71,7 +71,7 @@ Here's a simple example of how to animate a transform. In this case, it's animat
       <DoubleAnimation
        Storyboard.TargetName="myTransform"
        Storyboard.TargetProperty="Angle"
-       From="0" To="360" Duration="0:0:5" 
+       From="0" To="360" Duration="0:0:5"
        RepeatBehavior="Forever" />
     </Storyboard>
   </StackPanel.Resources>
@@ -95,7 +95,7 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) has a method named [**TransformToVisual**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.transformtovisual), which can generate a [**Transform**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Transform) that correlates the coordinate frames of reference for two UI elements. You can use this to compare an element to the app's default coordinate frame of reference if you pass the root visual as the first parameter. This can be useful if you've captured an input event from a different element, or if you are trying to predict layout behavior without actually requesting a layout pass.
 
 > [!NOTE]
-> **(UWP)** Event data obtained from pointer events provides access to a [**GetCurrentPoint**](/uwp/api/windows.ui.input.pointerpoint.getcurrentpoint) method, where you can specify a *relativeTo* parameter to change the coordinate frame of reference to a specific element rather than the app default. This approach simply applies a translate transform internally and transforms the x-y coordinate data for you when it creates the returned [**PointerPoint**](/uwp/api/windows.ui.Input.PointerPoint) object.
+> **(UWP)** Event data obtained from pointer events provides access to a [**GetCurrentPoint**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint.getcurrentpoint) method, where you can specify a *relativeTo* parameter to change the coordinate frame of reference to a specific element rather than the app default. This approach simply applies a translate transform internally and transforms the x-y coordinate data for you when it creates the returned [**PointerPoint**](/uwp/api/windows.ui.Input.PointerPoint) object.
 
 ## <span id="Describing_a_transform_mathematically"></span><span id="describing_a_transform_mathematically"></span><span id="DESCRIBING_A_TRANSFORM_MATHEMATICALLY"></span>Describing a transform mathematically
 

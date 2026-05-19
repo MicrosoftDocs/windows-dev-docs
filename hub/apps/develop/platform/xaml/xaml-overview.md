@@ -173,7 +173,7 @@ namespace winrt::App1::implementation
     struct MainPage : MainPageT<MainPage>
     {
         ...
-        void showUpdatesButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void showUpdatesButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
     };
 }
 ```
@@ -234,7 +234,7 @@ Here are some tips for defining UI elements in XAML using best practices for per
 - For resources that your app packages, check for unused resources (a resource that has a key, but there's no [StaticResource](staticresource-markup-extension.md) reference in your app that uses it). Remove these from your XAML before you release your app.
 - If you're using separate XAML files that provides design resources ([MergedDictionaries](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.mergeddictionaries)), consider commenting or removing unused resources from these files. Even if you have a shared XAML starting point that you're using in more than one app or that provides common resources for all your app, it's still your app that packages the XAML resources each time, and potentially has to load them.
 - Don't define UI elements you don't need for composition, and use the default control templates whenever possible (these templates have already been tested and verified for load performance).
-- Use containers such as [Border](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border) rather than deliberate overdraws of UI elements. Basically, don't draw the same pixel multiple times. For more info on overdraw and how to test for it, see <xref:Windows.UI.Xaml.DebugSettings.IsOverdrawHeatMapEnabled?displayProperty=nameWithType>.
+- Use containers such as [Border](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border) rather than deliberate overdraws of UI elements. Basically, don't draw the same pixel multiple times. For more info on overdraw and how to test for it, see <xref:Microsoft.UI.Xaml.DebugSettings.IsOverdrawHeatMapEnabled?displayProperty=nameWithType>.
 - Use the default items templates for [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) or [GridView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview); these have special **Presenter** logic that solves performance issues when building the visual tree for large numbers of list items.
 
 ## Debug XAML
@@ -245,9 +245,9 @@ When there are problems with a XAML file, the most typical result is that some s
 
 XAML is often edited within an IDE such as Visual Studio and one of its XAML design surfaces. Visual Studio can often provide design-time validation and error checking of a XAML source as you edit it. For example it might display "squiggles" in the XAML text editor as soon as you type a bad attribute value, and you won't even have to wait for a XAML compile pass to see that something's wrong with your UI definition.
 
-Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for WinUI apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
+Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Microsoft.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for WinUI apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
 
 > [!NOTE]
-> Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
+> Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Microsoft.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
 
 For more info on debugging a WinUI app, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).

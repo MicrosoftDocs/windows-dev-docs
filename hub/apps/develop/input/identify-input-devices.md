@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
 
-> **Important APIs**: [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Core), [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Input)
+> **Important APIs**: [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Core), [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input)
 
 ## Retrieve mouse properties
 
@@ -27,7 +27,7 @@ The [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) namespace contai
 
  
 
-The following code uses a series of [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) elements to display the individual mouse properties and values.
+The following code uses a series of [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) elements to display the individual mouse properties and values.
 
 ```CSharp
 private void GetMouseProperties()
@@ -46,7 +46,7 @@ private void GetMouseProperties()
 
 The [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) namespace contains the [**KeyboardCapabilities**](/uwp/api/Windows.Devices.Input.KeyboardCapabilities) class used to retrieve whether a keyboard is connected. Just create a new **KeyboardCapabilities** object and get the [**KeyboardPresent**](/uwp/api/windows.devices.input.keyboardcapabilities.keyboardpresent) property.
 
-The following code uses a [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) element to display the keyboard property and value.
+The following code uses a [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) element to display the keyboard property and value.
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -65,7 +65,7 @@ The [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input) namespace contai
 
  
 
-The following code uses a series of [**TextBlock**](/uwp/api/Windows.UI.Xaml.Controls.TextBlock) elements to display the touch properties and values.
+The following code uses a series of [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.TextBlock) elements to display the touch properties and values.
 
 ```CSharp
 private void GetTouchProperties()

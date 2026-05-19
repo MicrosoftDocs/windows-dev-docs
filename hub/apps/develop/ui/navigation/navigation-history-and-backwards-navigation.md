@@ -6,7 +6,7 @@ op-migration-status: ready
 ms.date: 04/10/2025
 ms.topic: article
 ms.localizationpriority: medium
-dev_langs: 
+dev_langs:
 - csharp
 - cppwinrt
 ---
@@ -45,7 +45,7 @@ To create a stand-alone back button, use the [Button](../controls/buttons.md) co
         <Button x:Name="BackButton"
                 Click="BackButton_Click"
                 Style="{StaticResource TitleBarBackButtonStyle}"
-                IsEnabled="{x:Bind Frame.CanGoBack, Mode=OneWay}" 
+                IsEnabled="{x:Bind Frame.CanGoBack, Mode=OneWay}"
                 ToolTipService.ToolTip="Back"/>
 
     </Grid>
@@ -61,16 +61,16 @@ If your app has a top [CommandBar](../controls/command-bar.md), place the `Butto
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
+
         <CommandBar>
             <CommandBar.Content>
                 <Button x:Name="BackButton"
                         Click="BackButton_Click"
                         Style="{StaticResource TitleBarBackButtonStyle}"
-                        IsEnabled="{x:Bind Frame.CanGoBack, Mode=OneWay}" 
+                        IsEnabled="{x:Bind Frame.CanGoBack, Mode=OneWay}"
                         ToolTipService.ToolTip="Back"/>
             </CommandBar.Content>
-        
+
             <AppBarButton Icon="Delete" Label="Delete"/>
             <AppBarButton Icon="Save" Label="Save"/>
         </CommandBar>
@@ -126,7 +126,7 @@ namespace winrt::AppName::implementation
     struct MainPage : MainPageT<MainPage>
     {
         MainPage();
- 
+
         void MainPage::BackButton_Click(IInspectable const&, RoutedEventArgs const&)
         {
             App::TryGoBack();
@@ -136,7 +136,7 @@ namespace winrt::AppName::implementation
 
 // App.xaml.h
 using namespace winrt;
-using namespace Windows::UI::Xaml::Controls;
+using namespace Microsoft::UI::Xaml::Controls;
 
 struct App : AppT<App>
 {

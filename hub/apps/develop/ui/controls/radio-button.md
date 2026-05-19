@@ -164,7 +164,7 @@ In a multi-column, multi-row grid layout, keyboard navigation results in this be
    :::column span="":::
       ![Example of horizontal keyboard navigation in a multi-column/row RadioButtons group](images/radiobutton-keyboard-navigation-multi-column-row-1.png)
 
-      
+
 
       The Left and Right arrow keys move focus horizontally between items in a row.
    :::column-end:::
@@ -235,7 +235,7 @@ The following table describes how Narrator handles a `RadioButtons` group and wh
 |Focus moves to an unselected item<br> *(If navigating with Ctrl-arrow keys or Xbox gamepad,<br>which indicates selection is not following focus.)* | "_name_, RadioButton, non-selected, _x_ of _N_"  |
 
 > [!NOTE]
-> The _**name**_ that Narrator announces for each item is the value of the [AutomationProperties.Name](/uwp/api/windows.ui.xaml.automation.automationproperties.nameproperty) attached property if it is available for the item; otherwise, it is the value returned by the item's [ToString](/dotnet/api/system.object.tostring?view=dotnet-uwp-10.0&preserve-view=true) method.
+> The _**name**_ that Narrator announces for each item is the value of the [AutomationProperties.Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty) attached property if it is available for the item; otherwise, it is the value returned by the item's [ToString](/dotnet/api/system.object.tostring?view=dotnet-uwp-10.0&preserve-view=true) method.
 >
 > _**x**_ is the number of the current item. _**N**_ is the total number of items in the group.
 

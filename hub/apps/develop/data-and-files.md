@@ -3,7 +3,7 @@ title: Data and files
 description: This article provides an index of development features that are related to scenarios involving data and files in Windows apps.
 ms.topic: article
 ms.date: 05/11/2021
-keywords: 
+keywords:
 ---
 
 # Data and files

@@ -20,7 +20,7 @@ Copy and paste is a fundamental way for users to exchange data between apps or w
 
 ## Check for built-in clipboard support
 
-In many cases, you do not need to write code to support clipboard operations. Many of the default XAML controls you can use to create apps already support clipboard operations. 
+In many cases, you do not need to write code to support clipboard operations. Many of the default XAML controls you can use to create apps already support clipboard operations.
 
 ## Get set up
 
@@ -52,7 +52,7 @@ Copy and cut (also referred to as *move*) work almost exactly the same. Choose w
 ### [C#](#tab/cs)
 
 ```cs
-// copy 
+// copy
 dataPackage.RequestedOperation = DataPackageOperation.Copy;
 // or cut
 dataPackage.RequestedOperation = DataPackageOperation.Move;
@@ -146,7 +146,7 @@ In addition to copy and paste commands, you may also want to track clipboard cha
 ### [C#](#tab/cs)
 
 ```cs
-Clipboard.ContentChanged += async (s, e) => 
+Clipboard.ContentChanged += async (s, e) =>
 {
     DataPackageView dataPackageView = Clipboard.GetContent();
     if (dataPackageView.Contains(StandardDataFormats.Text))
@@ -182,11 +182,11 @@ Clipboard::ContentChanged([this](auto const&, auto const&)
 - [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)
 - [DataPackageView](/uwp/api/windows.applicationmodel.datatransfer.datapackageview)
 - [DataPackagePropertySet]( /uwp/api/Windows.ApplicationModel.DataTransfer.DataPackagePropertySet)
-- [DataRequest](/uwp/api/windows.applicationmodel.datatransfer.datarequest) 
+- [DataRequest](/uwp/api/windows.applicationmodel.datatransfer.datarequest)
 - [DataRequested]( /uwp/api/Windows.ApplicationModel.DataTransfer.DataTransferManager)
 - [FailWithDisplayText](/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
 - [ShowShareUi](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager.showshareui)
-- [RequestedOperation](/uwp/api/windows.applicationmodel.datatransfer.datapackage.requestedoperation) 
+- [RequestedOperation](/uwp/api/windows.applicationmodel.datatransfer.datapackage.requestedoperation)
 - [ControlsList](/windows/apps/design/controls/index)
 - [SetContent](/uwp/api/windows.applicationmodel.datatransfer.clipboard.setcontent)
 - [GetContent](/uwp/api/windows.applicationmodel.datatransfer.clipboard.getcontent)

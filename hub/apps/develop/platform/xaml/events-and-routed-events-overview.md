@@ -44,7 +44,7 @@ To wire the events in XAML, you specify the string-form name of the handler meth
 You write the actual handler in the programming language that you're using for all your app's code and code-behind. With the attribute `Click="ShowUpdatesButton_Click"`, you have created a contract that when the XAML is markup-compiled and parsed, both the XAML markup compile step in your IDE's build action and the eventual XAML parse when the app loads can find a method named `ShowUpdatesButton_Click` as part of the app's code. `ShowUpdatesButton_Click` must be a method that implements a compatible method signature (based on a delegate) for any handler of the [**Click**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event. For example, this code defines the `ShowUpdatesButton_Click` handler.
 
 ```csharp
-private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e) 
+private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e)
 {
     Button b = sender as Button;
     //more logic to do here...
@@ -59,15 +59,15 @@ End Sub
 ```
 
 ```cppwinrt
-void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& e)
 {
-    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    auto b{ sender.as<Microsoft::UI::Xaml::Controls::Button>() };
     // More logic to do here.
 }
 ```
 
 ```cpp
-void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
+void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Microsoft::UI::Xaml::RoutedEventArgs^ e)
 {
     Button^ b = (Button^) sender;
     //more logic to do here...
@@ -158,7 +158,7 @@ textBlock1().PointerEntered({this, &MainPage::TextBlock1_PointerEntered });
 ```
 
 ```cpp
-textBlock1->PointerEntered += 
+textBlock1->PointerEntered +=
 ref new PointerEventHandler(this, &BlankPage::textBlock1_PointerEntered);
 ```
 

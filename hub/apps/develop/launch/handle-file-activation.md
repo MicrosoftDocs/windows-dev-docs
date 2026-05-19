@@ -29,7 +29,7 @@ These steps show how to register for a custom file type, .alsdk, and how to acti
 The following APIs are used in this topic:
 
 - [Windows.ApplicationModel.Activation.FileActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.FileActivatedEventArgs)
-- [Windows.UI.Xaml.Application.OnFileActivated](/uwp/api/windows.ui.xaml.application.onfileactivated)
+- [Microsoft.UI.Xaml.Application.OnFileActivated](/uwp/api/windows.ui.xaml.application.onfileactivated)
 - [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
 
 ## Step 1: Specify the extension point in the package manifest

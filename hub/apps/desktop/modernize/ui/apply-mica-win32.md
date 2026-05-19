@@ -122,11 +122,11 @@ MicaWindow::MicaWindow(const winrt::Compositor& compositor, const std::wstring& 
             windowTitle.c_str(),
             WS_OVERLAPPEDWINDOW,
             CW_USEDEFAULT,
-            CW_USEDEFAULT, 
-            800, 600, 
-            nullptr, 
-            nullptr, 
-            instance, 
+            CW_USEDEFAULT,
+            800, 600,
+            nullptr,
+            nullptr,
+            instance,
             this
         ));
 

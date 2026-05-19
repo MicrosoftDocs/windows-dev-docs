@@ -7,7 +7,7 @@ ms.topic: article
 keywords: windows 10, winui, fluent
 ---
 # Forms
-A form is a group of controls that collect and submit data from users. Forms are typically used for settings pages, surveys, creating accounts, and much more. 
+A form is a group of controls that collect and submit data from users. Forms are typically used for settings pages, surveys, creating accounts, and much more.
 
 This article discusses design guidelines for creating XAML layouts for forms.
 
@@ -44,12 +44,12 @@ This type of form gives the user flexibility in responding. Typically, this type
 - Mark required input with an asterisk * on the label.
 - Disable the submit button until all required information is filled in.
 - If there is invalid data upon submission, mark the controls with invalid input with highlighted fields or borders, and require the user to resubmit the form.
-- For other errors, such as failed network connection, make sure to display an appropriate error message to the user. 
+- For other errors, such as failed network connection, make sure to display an appropriate error message to the user.
 
 
 ## Layout
 
-To facilitate the user experience and ensure that users are able to enter the correct input, consider the following recommendations for designing layouts for forms. 
+To facilitate the user experience and ensure that users are able to enter the correct input, consider the following recommendations for designing layouts for forms.
 
 ### Labels
 [Labels](../../../design/controls/labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock) instead.
@@ -74,7 +74,7 @@ To visually separate groups of controls from each other, use [alignment, margins
 ![forms groups](images/forms-groups.png)
 
 ### Columns
-Creating columns can reduce unnecessary white space in forms, especially with larger screen sizes. However, if you would like to create a multi-column form, the number of columns should depend on the number of input controls on the page and the screen size of the app window. Rather than overwhelm the screen with numerous input controls, consider creating multiple pages for your form.  
+Creating columns can reduce unnecessary white space in forms, especially with larger screen sizes. However, if you would like to create a multi-column form, the number of columns should depend on the number of input controls on the page and the screen size of the app window. Rather than overwhelm the screen with numerous input controls, consider creating multiple pages for your form.
 
 <div class="mx-responsive-img">
 <table>
@@ -94,7 +94,7 @@ Forms should resize as the screen or window size changes, so users don't overloo
 ![forms focus](images/forms-focus2.png)
 
 ### Tab stops
-Users can use the keyboard to navigate controls with [tab stops](../../../design/input/keyboard-interactions.md#tab-stops). By default, the tab order of controls reflects the order in which they are created in XAML. To override the default behavior, change the **IsTabStop** or **TabIndex** properties of the control. 
+Users can use the keyboard to navigate controls with [tab stops](../../../design/input/keyboard-interactions.md#tab-stops). By default, the tab order of controls reflects the order in which they are created in XAML. To override the default behavior, change the **IsTabStop** or **TabIndex** properties of the control.
 
 ![tab focus on control in form](images/forms-focus1.png)
 
@@ -105,13 +105,13 @@ Input controls are the UI elements that allow users to enter information into fo
 Control | Use | Example
  - | - | -
 [TextBox](../../../design/controls/text-box.md) | Capture one or multiple lines of text | Names, free form responses or feedback
-[PasswordBox](../../../design/controls/password-box.md) | Collect private data by concealing the characters | Passwords, Social Security Numbers (SSN), PINs, credit card information 
+[PasswordBox](../../../design/controls/password-box.md) | Collect private data by concealing the characters | Passwords, Social Security Numbers (SSN), PINs, credit card information
 [AutoSuggestBox](../../../design/controls/auto-suggest-box.md) | Show users a list of suggestions from a corresponding set of data as they type | Database search, mail to: line, previous queries
 [RichEditBox](../../../design/controls/rich-edit-box.md) | Edit text files with formatted text, hyperlinks, and images | Upload file, preview, and edit in app
 
 ### Selection
 Control | Use | Example
-- | - | - 
+- | - | -
 | [CheckBox](../../../design/controls/checkbox.md) | Select or deselect one or more action items | Agree to terms and conditions, add optional items, select all that apply
 [RadioButton](../../../design/controls/radio-button.md) | Select one option from two or more choices | Pick type, shipping method, etc.
 [ToggleSwitch](../../../design/controls/toggles.md) | Choose one of two mutually exclusive options | On/off
@@ -133,10 +133,10 @@ Control | Use | Example
 
 ### Date and Time
 
-Control | Use 
-- | - 
-[CalendarView](../../../design/controls/calendar-view.md) | Pick a single date or a range of dates from an always visible calendar 
-[CalendarDatePicker](../../../design/controls/calendar-date-picker.md) | Pick a single date from a contextual calendar 
+Control | Use
+- | -
+[CalendarView](../../../design/controls/calendar-view.md) | Pick a single date or a range of dates from an always visible calendar
+[CalendarDatePicker](../../../design/controls/calendar-date-picker.md) | Pick a single date from a contextual calendar
 [DatePicker](../../../design/controls/date-picker.md) | Pick a single localized date when contextual info isn't important
 [TimePicker](../../../design/controls/time-picker.md) | Pick a single time value
 
@@ -162,7 +162,7 @@ This example uses an Acrylic [list/detail](../../../design/controls/list-details
     <StackPanel Orientation="Horizontal">
         <Button Content="Save" Margin="0,24" Click="SaveButton_Click"/>
         <Button Content="Cancel" Margin="24" Click="CancelButton_Click"/>
-    </StackPanel>  
+    </StackPanel>
 </StackPanel>
 ```
 
@@ -179,7 +179,7 @@ This example uses the [Pivot](../../../design/controls/pivot.md) control, [Acryl
                 </Grid>
             </DataTemplate>
         </Pivot.TitleTemplate>
-        <PivotItem Header="Orders" Margin="0"/>    
+        <PivotItem Header="Orders" Margin="0"/>
         <PivotItem Header="Customers" Margin="0">
             <!--Form Example-->
             <Grid Background="White">

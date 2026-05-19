@@ -74,7 +74,7 @@ Defining the attached property in C++/CX is a bit more complex. You have to deci
 ```csharp
 public class GameService : DependencyObject
 {
-    public static readonly DependencyProperty IsMovableProperty = 
+    public static readonly DependencyProperty IsMovableProperty =
     DependencyProperty.RegisterAttached(
       "IsMovable",
       typeof(Boolean),
@@ -96,10 +96,10 @@ public class GameService : DependencyObject
 Public Class GameService
     Inherits DependencyObject
 
-    Public Shared ReadOnly IsMovableProperty As DependencyProperty = 
-        DependencyProperty.RegisterAttached("IsMovable",  
-        GetType(Boolean), 
-        GetType(GameService), 
+    Public Shared ReadOnly IsMovableProperty As DependencyProperty =
+        DependencyProperty.RegisterAttached("IsMovable",
+        GetType(Boolean),
+        GetType(GameService),
         New PropertyMetadata(False))
 
     Public Shared Sub SetIsMovable(ByRef element As UIElement, value As Boolean)
@@ -117,33 +117,33 @@ End Class
 namespace UserAndCustomControls
 {
     [default_interface]
-    runtimeclass GameService : Windows.UI.Xaml.DependencyObject
+    runtimeclass GameService : Microsoft.UI.Xaml.DependencyObject
     {
         GameService();
-        static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
-        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
+        static Microsoft.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
+        static Boolean GetIsMovable(Microsoft.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Microsoft.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
-    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
-    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
+    static Microsoft::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Microsoft::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Microsoft::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
-    static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
+    static Microsoft::UI::Xaml::DependencyProperty m_IsMovableProperty;
 ...
 
 // GameService.cpp
 ...
-Windows::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
-    Windows::UI::Xaml::DependencyProperty::RegisterAttached(
+Microsoft::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
+    Microsoft::UI::Xaml::DependencyProperty::RegisterAttached(
         L"IsMovable",
         winrt::xaml_typename<bool>(),
         winrt::xaml_typename<UserAndCustomControls::GameService>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(false) }
+        Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(false) }
 );
 ...
 ```
@@ -187,12 +187,12 @@ using namespace Platform;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
 using namespace Windows::UI::Xaml;
-using namespace Windows::UI::Xaml::Controls;
-using namespace Windows::UI::Xaml::Data;
-using namespace Windows::UI::Xaml::Documents;
-using namespace Windows::UI::Xaml::Input;
-using namespace Windows::UI::Xaml::Interop;
-using namespace Windows::UI::Xaml::Media;
+using namespace Microsoft::UI::Xaml::Controls;
+using namespace Microsoft::UI::Xaml::Data;
+using namespace Microsoft::UI::Xaml::Documents;
+using namespace Microsoft::UI::Xaml::Input;
+using namespace Microsoft::UI::Xaml::Interop;
+using namespace Microsoft::UI::Xaml::Media;
 
 GameService::GameService() {};
 
@@ -283,7 +283,7 @@ protected override Size ArrangeOverride(Size finalSize)
         double y = (double) Canvas.GetTop(child);
         child.Arrange(new Rect(new Point(x, y), child.DesiredSize));
     }
-    return base.ArrangeOverride(finalSize); 
+    return base.ArrangeOverride(finalSize);
     // real Canvas has more sophisticated sizing
 }
 ```

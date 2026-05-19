@@ -16,7 +16,7 @@ In this topic, we describe commanding in Windows applications. Specifically, we 
 
 ## Important APIs
 
-- [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) and [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)
+- [Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) and [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)
 - [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand)
 - [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand)
 
@@ -70,16 +70,16 @@ To provide rich and comprehensive user experiences across command surfaces effic
 
 To bind a control to a shared command resource, you can implement the ICommand interfaces yourself, or you can build your command from either the [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) base class or one of the platform commands defined by the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) derived class.
 
-- The ICommand interface ([Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) or [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)) lets you create fully customized, reusable commands across your app.
+- The ICommand interface ([Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) or [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand)) lets you create fully customized, reusable commands across your app.
 - [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) also provides this capability but simplifies development by exposing a set of built-in command properties such as the command behavior, keyboard shortcuts (access key and accelerator key), icon, label, and description.
 - [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) simplifies things further by letting you choose from a set of standard platform commands with predefined properties.
 
 > [!Important]
-> In WinUI applications, commands are implementations of either the [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) (C++) or the [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) (C#) interface, depending on your chosen language framework.
+> In WinUI applications, commands are implementations of either the [Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) (C++) or the [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) (C#) interface, depending on your chosen language framework.
 
 ## Command experiences using the StandardUICommand class
 
-Derived from [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) (derived from [Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
+Derived from [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) (derived from [Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
 
 A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) provides a quick and consistent way to define common commands such as `Save` or `Delete`. All you have to do is provide the execute and canExecute functions.
 
@@ -112,9 +112,8 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <Style x:Key="HorizontalSwipe" 
-               TargetType="ListViewItem" 
-               BasedOn="{StaticResource ListViewItemRevealStyle}">
+        <Style x:Key="HorizontalSwipe"
+               TargetType="ListViewItem">
             <Setter Property="Height" Value="60"/>
             <Setter Property="Padding" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -130,22 +129,22 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" 
-                    Padding="10" 
-                    BorderThickness="0,0,0,1" 
+        <StackPanel Grid.Row="0"
+                    Padding="10"
+                    BorderThickness="0,0,0,1"
                     BorderBrush="LightBlue"
                     Background="AliceBlue">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}">
                 StandardUICommand sample
             </TextBlock>
             <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,0,0,10">
-                This sample shows how to use the StandardUICommand class to 
-                share a platform command and consistent user experiences 
+                This sample shows how to use the StandardUICommand class to
+                share a platform command and consistent user experiences
                 across various controls.
             </TextBlock>
             <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,0,0,0">
-                Specifically, we define a standard delete command and add it 
-                to a variety of command surfaces, all of which share a common 
+                Specifically, we define a standard delete command and add it
+                to a variety of command surfaces, all of which share a common
                 icon, label, keyboard accelerator, and description.
             </TextBlock>
         </StackPanel>
@@ -160,20 +159,20 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
             </muxcontrols:MenuBarItem>
         </muxcontrols:MenuBar>
 
-        <ListView x:Name="ListViewRight" Grid.Row="2" 
-                  Loaded="ListView_Loaded" 
-                  IsItemClickEnabled="True" 
-                  SelectionMode="Single" 
-                  SelectionChanged="ListView_SelectionChanged" 
+        <ListView x:Name="ListViewRight" Grid.Row="2"
+                  Loaded="ListView_Loaded"
+                  IsItemClickEnabled="True"
+                  SelectionMode="Single"
+                  SelectionChanged="ListView_SelectionChanged"
                   ItemContainerStyle="{StaticResource HorizontalSwipe}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:ListItemData">
-                    <UserControl PointerEntered="ListViewSwipeContainer_PointerEntered" 
+                    <UserControl PointerEntered="ListViewSwipeContainer_PointerEntered"
                                  PointerExited="ListViewSwipeContainer_PointerExited">
                         <UserControl.ContextFlyout>
                             <MenuFlyout>
-                                <MenuFlyoutItem 
-                                    Command="{x:Bind Command}" 
+                                <MenuFlyoutItem
+                                    Command="{x:Bind Command}"
                                     CommandParameter="{x:Bind Text}" />
                             </MenuFlyout>
                         </UserControl.ContextFlyout>
@@ -183,7 +182,7 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
                                     <VisualState x:Name="HoverButtonsHidden" />
                                     <VisualState x:Name="HoverButtonsShown">
                                         <VisualState.Setters>
-                                            <Setter Target="HoverButton.Visibility" 
+                                            <Setter Target="HoverButton.Visibility"
                                                     Value="Visible" />
                                         </VisualState.Setters>
                                     </VisualState>
@@ -192,23 +191,23 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
                             <SwipeControl x:Name="ListViewSwipeContainer" >
                                 <SwipeControl.RightItems>
                                     <SwipeItems Mode="Execute">
-                                        <SwipeItem x:Name="DeleteSwipeItem" 
-                                                   Background="Red" 
-                                                   Command="{x:Bind Command}" 
+                                        <SwipeItem x:Name="DeleteSwipeItem"
+                                                   Background="Red"
+                                                   Command="{x:Bind Command}"
                                                    CommandParameter="{x:Bind Text}"/>
                                     </SwipeItems>
                                 </SwipeControl.RightItems>
                                 <Grid VerticalAlignment="Center">
-                                    <TextBlock Text="{x:Bind Text}" 
-                                               Margin="10" 
-                                               FontSize="18" 
-                                               HorizontalAlignment="Left" 
+                                    <TextBlock Text="{x:Bind Text}"
+                                               Margin="10"
+                                               FontSize="18"
+                                               HorizontalAlignment="Left"
                                                VerticalAlignment="Center"/>
-                                    <AppBarButton x:Name="HoverButton" 
-                                                  IsTabStop="False" 
-                                                  HorizontalAlignment="Right" 
-                                                  Visibility="Collapsed" 
-                                                  Command="{x:Bind Command}" 
+                                    <AppBarButton x:Name="HoverButton"
+                                                  IsTabStop="False"
+                                                  HorizontalAlignment="Right"
+                                                  Visibility="Collapsed"
+                                                  Command="{x:Bind Command}"
                                                   CommandParameter="{x:Bind Text}"/>
                                 </Grid>
                             </SwipeControl>
@@ -239,7 +238,7 @@ public class ListItemData
 /// <summary>
 /// ListView item collection.
 /// </summary>
-ObservableCollection<ListItemData> collection = 
+ObservableCollection<ListItemData> collection =
     new ObservableCollection<ListItemData>();
 
 /// <summary>
@@ -332,9 +331,9 @@ private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs 
 private void ListViewSwipeContainer_PointerEntered(
     object sender, PointerRoutedEventArgs e)
 {
-    if (e.Pointer.PointerDeviceType == 
-        Windows.Devices.Input.PointerDeviceType.Mouse || 
-        e.Pointer.PointerDeviceType == 
+    if (e.Pointer.PointerDeviceType ==
+        Windows.Devices.Input.PointerDeviceType.Mouse ||
+        e.Pointer.PointerDeviceType ==
         Windows.Devices.Input.PointerDeviceType.Pen)
     {
         VisualStateManager.GoToState(
@@ -375,7 +374,7 @@ If you need to create a command that isn't defined by the [StandardUICommand](/w
 | Download the code for this example |
 | -------------------- |
 | [Commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
-Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section. 
+Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section.
 
 **Xaml:**
 
@@ -394,9 +393,9 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.Resources>
-        <XamlUICommand x:Name="CustomXamlUICommand" 
+        <XamlUICommand x:Name="CustomXamlUICommand"
                        ExecuteRequested="DeleteCommand_ExecuteRequested"
-                       Description="Custom XamlUICommand" 
+                       Description="Custom XamlUICommand"
                        Label="Custom XamlUICommand">
             <XamlUICommand.IconSource>
                 <FontIconSource FontFamily="Wingdings" Glyph="&#x4D;"/>
@@ -406,16 +405,15 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
             </XamlUICommand.KeyboardAccelerators>
         </XamlUICommand>
 
-        <Style x:Key="HorizontalSwipe" 
-               TargetType="ListViewItem" 
-               BasedOn="{StaticResource ListViewItemRevealStyle}">
+        <Style x:Key="HorizontalSwipe"
+               TargetType="ListViewItem">
             <Setter Property="Height" Value="70"/>
             <Setter Property="Padding" Value="0"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
             <Setter Property="VerticalContentAlignment" Value="Stretch"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
-        
+
     </Page.Resources>
 
     <Grid Loaded="ControlExample_Loaded" Name="MainGrid">
@@ -424,23 +422,23 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        
-        <StackPanel Grid.Row="0" 
-                    Padding="10" 
-                    BorderThickness="0,0,0,1" 
+
+        <StackPanel Grid.Row="0"
+                    Padding="10"
+                    BorderThickness="0,0,0,1"
                     BorderBrush="LightBlue"
                     Background="AliceBlue">
             <TextBlock Style="{StaticResource HeaderTextBlockStyle}">
                 XamlUICommand sample
             </TextBlock>
             <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,0,0,10">
-                This sample shows how to use the XamlUICommand class to 
-                share a custom command with consistent user experiences 
+                This sample shows how to use the XamlUICommand class to
+                share a custom command with consistent user experiences
                 across various controls.
             </TextBlock>
             <TextBlock Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,0,0,0">
-                Specifically, we define a custom delete command and add it 
-                to a variety of command surfaces, all of which share a common 
+                Specifically, we define a custom delete command and add it
+                to a variety of command surfaces, all of which share a common
                 icon, label, keyboard accelerator, and description.
             </TextBlock>
         </StackPanel>
@@ -449,18 +447,18 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
             <muxcontrols:MenuBarItem Title="File">
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Edit">
-                <MenuFlyoutItem x:Name="DeleteFlyoutItem" 
+                <MenuFlyoutItem x:Name="DeleteFlyoutItem"
                                 Command="{StaticResource CustomXamlUICommand}"/>
             </muxcontrols:MenuBarItem>
             <muxcontrols:MenuBarItem Title="Help">
             </muxcontrols:MenuBarItem>
         </muxcontrols:MenuBar>
 
-        <ListView x:Name="ListViewRight" Grid.Row="2" 
-                  Loaded="ListView_Loaded" 
+        <ListView x:Name="ListViewRight" Grid.Row="2"
+                  Loaded="ListView_Loaded"
                   IsItemClickEnabled="True"
-                  SelectionMode="Single" 
-                  SelectionChanged="ListView_SelectionChanged" 
+                  SelectionMode="Single"
+                  SelectionChanged="ListView_SelectionChanged"
                   ItemContainerStyle="{StaticResource HorizontalSwipe}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:ListItemData">
@@ -468,8 +466,8 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
                                  PointerExited="ListViewSwipeContainer_PointerExited">
                         <UserControl.ContextFlyout>
                             <MenuFlyout>
-                                <MenuFlyoutItem 
-                                    Command="{x:Bind Command}" 
+                                <MenuFlyoutItem
+                                    Command="{x:Bind Command}"
                                     CommandParameter="{x:Bind Text}" />
                             </MenuFlyout>
                         </UserControl.ContextFlyout>
@@ -479,7 +477,7 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
                                     <VisualState x:Name="HoverButtonsHidden" />
                                     <VisualState x:Name="HoverButtonsShown">
                                         <VisualState.Setters>
-                                            <Setter Target="HoverButton.Visibility" 
+                                            <Setter Target="HoverButton.Visibility"
                                                     Value="Visible" />
                                         </VisualState.Setters>
                                     </VisualState>
@@ -489,22 +487,22 @@ The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft
                                 <SwipeControl.RightItems>
                                     <SwipeItems Mode="Execute">
                                         <SwipeItem x:Name="DeleteSwipeItem"
-                                                   Background="Red" 
-                                                   Command="{x:Bind Command}" 
+                                                   Background="Red"
+                                                   Command="{x:Bind Command}"
                                                    CommandParameter="{x:Bind Text}"/>
                                     </SwipeItems>
                                 </SwipeControl.RightItems>
                                 <Grid VerticalAlignment="Center">
-                                    <TextBlock Text="{x:Bind Text}" 
-                                               Margin="10" 
-                                               FontSize="18" 
-                                               HorizontalAlignment="Left"       
+                                    <TextBlock Text="{x:Bind Text}"
+                                               Margin="10"
+                                               FontSize="18"
+                                               HorizontalAlignment="Left"
                                                VerticalAlignment="Center"/>
-                                    <AppBarButton x:Name="HoverButton" 
-                                                  IsTabStop="False" 
-                                                  HorizontalAlignment="Right" 
-                                                  Visibility="Collapsed" 
-                                                  Command="{x:Bind Command}" 
+                                    <AppBarButton x:Name="HoverButton"
+                                                  IsTabStop="False"
+                                                  HorizontalAlignment="Right"
+                                                  Visibility="Collapsed"
+                                                  Command="{x:Bind Command}"
                                                   CommandParameter="{x:Bind Text}"/>
                                 </Grid>
                             </SwipeControl>
@@ -587,8 +585,8 @@ private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs 
 
 private void ListViewSwipeContainer_PointerEntered(object sender, PointerRoutedEventArgs e)
 {
-    if (e.Pointer.PointerDeviceType == 
-        Windows.Devices.Input.PointerDeviceType.Mouse || 
+    if (e.Pointer.PointerDeviceType ==
+        Windows.Devices.Input.PointerDeviceType.Mouse ||
         e.Pointer.PointerDeviceType == Windows.Devices.Input.PointerDeviceType.Pen)
     {
         VisualStateManager.GoToState(sender as Control, "HoverButtonsShown", true);
@@ -605,7 +603,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 Standard WinUI controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see [Controls and patterns for Windows apps](../../../design/controls/index.md).
 
-The most basic way to support a structured commanding experience is to define an implementation of the ICommand interface ([Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#).  This ICommand instance can then be bound to controls such as buttons.
+The most basic way to support a structured commanding experience is to define an implementation of the ICommand interface ([Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#).  This ICommand instance can then be bound to controls such as buttons.
 
 > [!NOTE]
 > In some cases, it might be just as efficient to bind a method to the Click event and a property to the IsEnabled property.
@@ -650,9 +648,9 @@ In this basic example, we demonstrate how a single command can be invoked with a
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <ListView Grid.Column="0" VerticalAlignment="Center"
-                  x:Name="CommandListView" 
-                  ItemsSource="{x:Bind Path=ViewModel.ListItemLeft}" 
-                  SelectionMode="None" IsItemClickEnabled="False" 
+                  x:Name="CommandListView"
+                  ItemsSource="{x:Bind Path=ViewModel.ListItemLeft}"
+                  SelectionMode="None" IsItemClickEnabled="False"
                   HorizontalAlignment="Right">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:ListItemData">
@@ -667,7 +665,7 @@ In this basic example, we demonstrate how a single command can be invoked with a
             </ListView.ItemTemplate>
         </ListView>
         <Grid Grid.Column="1" Margin="0,0,0,0"
-              HorizontalAlignment="Center" 
+              HorizontalAlignment="Center"
               VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -675,16 +673,16 @@ In this basic example, we demonstrate how a single command can be invoked with a
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="1">
-                <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" 
-                          FontSize="40" Glyph="&#xE893;" 
-                          Opacity="{x:Bind Path=ViewModel.ListItemLeft.Count, 
+                <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}"
+                          FontSize="40" Glyph="&#xE893;"
+                          Opacity="{x:Bind Path=ViewModel.ListItemLeft.Count,
                                         Mode=OneWay, Converter={StaticResource opaque}}"/>
                 <Button Name="MoveItemRightButton"
                         Margin="0,10,0,10" Width="120" HorizontalAlignment="Center"
                         Command="{x:Bind Path=ViewModel.MoveRightCommand}">
                     <Button.KeyboardAccelerators>
-                        <KeyboardAccelerator 
-                            Modifiers="Control" 
+                        <KeyboardAccelerator
+                            Modifiers="Control"
                             Key="Add" />
                     </Button.KeyboardAccelerators>
                     <StackPanel>
@@ -692,12 +690,12 @@ In this basic example, we demonstrate how a single command can be invoked with a
                         <TextBlock>Move item right</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Name="MoveItemLeftButton" 
+                <Button Name="MoveItemLeftButton"
                             Margin="0,10,0,10" Width="120" HorizontalAlignment="Center"
                             Command="{x:Bind Path=ViewModel.MoveLeftCommand}">
                     <Button.KeyboardAccelerators>
-                        <KeyboardAccelerator 
-                            Modifiers="Control" 
+                        <KeyboardAccelerator
+                            Modifiers="Control"
                             Key="Subtract" />
                     </Button.KeyboardAccelerators>
                     <StackPanel>
@@ -705,18 +703,18 @@ In this basic example, we demonstrate how a single command can be invoked with a
                         <TextBlock>Move item left</TextBlock>
                     </StackPanel>
                 </Button>
-                <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}" 
+                <FontIcon FontFamily="{StaticResource SymbolThemeFontFamily}"
                           FontSize="40" Glyph="&#xE892;"
-                          Opacity="{x:Bind Path=ViewModel.ListItemRight.Count, 
+                          Opacity="{x:Bind Path=ViewModel.ListItemRight.Count,
                                         Mode=OneWay, Converter={StaticResource opaque}}"/>
             </StackPanel>
         </Grid>
-        <ListView Grid.Column="2" 
-                  x:Name="CommandListViewRight" 
-                  VerticalAlignment="Center" 
-                  IsItemClickEnabled="False" 
+        <ListView Grid.Column="2"
+                  x:Name="CommandListViewRight"
+                  VerticalAlignment="Center"
+                  IsItemClickEnabled="False"
                   SelectionMode="None"
-                  ItemsSource="{x:Bind Path=ViewModel.ListItemRight}" 
+                  ItemsSource="{x:Bind Path=ViewModel.ListItemRight}"
                   HorizontalAlignment="Left">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="vm:ListItemData">
@@ -740,8 +738,8 @@ In code-behind, we connect to our view model that contains our command code. In 
 
 ```csharp
 using Windows.UI.Xaml;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Controls;
 using UICommand1.ViewModel;
 using Windows.System;
 using Windows.UI.Core;
@@ -773,9 +771,9 @@ namespace UICommand1.View
         {
             var props = e.GetCurrentPoint(sender as UIElement).Properties;
 
-            // Require CTRL key and accept only vertical mouse wheel movement 
+            // Require CTRL key and accept only vertical mouse wheel movement
             // to eliminate accidental wheel input.
-            if ((Window.Current.CoreWindow.GetKeyState(VirtualKey.Control) != 
+            if ((Window.Current.CoreWindow.GetKeyState(VirtualKey.Control) !=
                 CoreVirtualKeyStates.None) && !props.IsHorizontalMouseWheel)
             {
                 bool delta = props.MouseWheelDelta < 0 ? true : false;
@@ -805,8 +803,8 @@ Our view model is where we define the execution details for the two commands in 
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Data;
 
 namespace UICommand1.ViewModel
 {
@@ -841,9 +839,9 @@ namespace UICommand1.ViewModel
         public RelayCommand MoveRightCommand { get; private set; }
 
         // Item collections
-        public ObservableCollection<ListItemData> ListItemLeft { get; } = 
+        public ObservableCollection<ListItemData> ListItemLeft { get; } =
            new ObservableCollection<ListItemData>();
-        public ObservableCollection<ListItemData> ListItemRight { get; } = 
+        public ObservableCollection<ListItemData> ListItemRight { get; } =
            new ObservableCollection<ListItemData>();
 
         public ListItemData listItem;
@@ -853,9 +851,9 @@ namespace UICommand1.ViewModel
         /// </summary>
         public UICommand1ViewModel()
         {
-            MoveLeftCommand = 
+            MoveLeftCommand =
                new RelayCommand(new Action(MoveLeft), CanExecuteMoveLeftCommand);
-            MoveRightCommand = 
+            MoveRightCommand =
                new RelayCommand(new Action(MoveRight), CanExecuteMoveRightCommand);
 
             LoadItems();
@@ -966,7 +964,7 @@ namespace UICommand1.ViewModel
         }
 
         /// <summary>
-        /// Not used, converter is not intended for two-way binding. 
+        /// Not used, converter is not intended for two-way binding.
         /// </summary>
         /// <param name="value">Ignored</param>
         /// <param name="targetType">Ignored</param>
@@ -992,8 +990,8 @@ using System.Windows.Input;
 namespace UICommand1
 {
     /// <summary>
-    /// A command whose sole purpose is to relay its functionality 
-    /// to other objects by invoking delegates. 
+    /// A command whose sole purpose is to relay its functionality
+    /// to other objects by invoking delegates.
     /// The default return value for the CanExecute method is 'true'.
     /// <see cref="RaiseCanExecuteChanged"/> needs to be called whenever
     /// <see cref="CanExecute"/> is expected to return a different value.
@@ -1034,7 +1032,7 @@ namespace UICommand1
         /// Determines whether this <see cref="RelayCommand"/> can execute in its current state.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require 
+        /// Data used by the command. If the command does not require
         /// data to be passed, this object can be set to null.
         /// </param>
         /// <returns>true if this command can be executed; otherwise, false.</returns>
@@ -1047,7 +1045,7 @@ namespace UICommand1
         /// Executes the <see cref="RelayCommand"/> on the current command target.
         /// </summary>
         /// <param name="parameter">
-        /// Data used by the command. If the command does not require 
+        /// Data used by the command. If the command does not require
         /// data to be passed, this object can be set to null.
         /// </param>
         public void Execute(object parameter)

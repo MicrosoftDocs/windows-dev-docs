@@ -49,9 +49,9 @@ async void DefaultLaunch()
 {
    // Path to the file in the app package to launch
    string imageFile = @"images\test.png";
-   
+
    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
-   
+
    if (file != null)
    {
       // Launch the retrieved file
@@ -145,7 +145,7 @@ async void DefaultLaunch()
 {
    // Path to the file in the app package to launch
       string imageFile = @"images\test.png";
-      
+
    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
 
    if (file != null)
@@ -330,7 +330,7 @@ void MainPage::DefaultLaunch()
          auto launchOptions = ref new Windows::System::LauncherOptions();
          launchOptions->PreferredApplicationPackageFamilyName = "Contoso.FileApp_8wknc82po1e";
          launchOptions->PreferredApplicationDisplayName = "Contoso File App";
-         
+
          // Launch the retrieved file pass, and in the recommended app
          // in case the user has no apps installed to handle the file.
          concurrency::task<bool> launchFileOperation(Windows::System::Launcher::LaunchFileAsync(file, launchOptions));
@@ -366,7 +366,7 @@ async void DefaultLaunch()
 {
    // Path to the file in the app package to launch
    string imageFile = @"images\test.png";
-   
+
    var file = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFileAsync(imageFile);
 
    if (file != null)

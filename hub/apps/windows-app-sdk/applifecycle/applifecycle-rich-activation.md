@@ -88,7 +88,7 @@ int APIENTRY wWinMain(
     if (FAILED(hr))
     {
         wprintf(L"Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
-            hr, majorMinorVersion, versionTag, minVersion.Major, 
+            hr, majorMinorVersion, versionTag, minVersion.Major,
             minVersion.Minor, minVersion.Build, minVersion.Revision);
         return hr;
     }
@@ -123,7 +123,7 @@ void RegisterForActivation()
 {
     OutputMessage(L"Registering for rich activation");
 
-    // Register one or more supported filetypes, specifying 
+    // Register one or more supported filetypes, specifying
     // an icon (specified by binary file path plus resource index),
     // a display name to use in Shell and Settings,
     // zero or more verbs for the File Explorer context menu,
@@ -178,7 +178,7 @@ void GetActivationInfo()
     ExtendedActivationKind kind = args.Kind();
     if (kind == ExtendedActivationKind::Launch)
     {
-        ILaunchActivatedEventArgs launchArgs = 
+        ILaunchActivatedEventArgs launchArgs =
             args.Data().as<ILaunchActivatedEventArgs>();
         if (launchArgs != NULL)
         {
@@ -193,7 +193,7 @@ void GetActivationInfo()
     }
     else if (kind == ExtendedActivationKind::File)
     {
-        IFileActivatedEventArgs fileArgs = 
+        IFileActivatedEventArgs fileArgs =
             args.Data().as<IFileActivatedEventArgs>();
         if (fileArgs != NULL)
         {
@@ -204,7 +204,7 @@ void GetActivationInfo()
     }
     else if (kind == ExtendedActivationKind::Protocol)
     {
-        IProtocolActivatedEventArgs protocolArgs = 
+        IProtocolActivatedEventArgs protocolArgs =
             args.Data().as<IProtocolActivatedEventArgs>();
         if (protocolArgs != NULL)
         {
@@ -215,7 +215,7 @@ void GetActivationInfo()
     }
     else if (kind == ExtendedActivationKind::StartupTask)
     {
-        IStartupTaskActivatedEventArgs startupArgs = 
+        IStartupTaskActivatedEventArgs startupArgs =
             args.Data().as<IStartupTaskActivatedEventArgs>();
         if (startupArgs != NULL)
         {
@@ -241,7 +241,7 @@ This example demonstrates how an unpackaged app can unregister for specific acti
 void UnregisterForActivation()
 {
     OutputMessage(L"Unregistering for rich activation");
-    
+
     // Unregister one or more registered filetypes.
     try
     {

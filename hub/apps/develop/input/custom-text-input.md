@@ -1,5 +1,5 @@
 ---
-description: The core text APIs in the Windows.UI.Text.Core namespace enable a Windows app to receive text input from any text service supported on Windows devices.
+description: The core text APIs in the Microsoft.UI.Text.Core namespace enable a Windows app to receive text input from any text service supported on Windows devices.
 title: Custom text input overview
 ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
@@ -12,15 +12,15 @@ ms.localizationpriority: medium
 
 # Custom text input
 
-The core text APIs in the [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) namespace enable a Windows app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](/windows/desktop/TSF/text-services-framework) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type (such as keyboard, speech, or pen).
+The core text APIs in the [**Microsoft.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) namespace enable a Windows app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](/windows/desktop/TSF/text-services-framework) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type (such as keyboard, speech, or pen).
 
-> **Important APIs**: [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core), [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext)
+> **Important APIs**: [**Microsoft.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core), [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext)
 
 ## Why use core text APIs?
 
 For many apps, the XAML or HTML text box controls are sufficient for text input and editing. However, if your app handles complex text scenarios, like a word processing app, you might need the flexibility of a custom text edit control. You could use the [**CoreWindow**](/uwp/api/Windows.UI.Core.CoreWindow) keyboard APIs to create your text edit control, but these don't provide a way to receive composition-based text input, which is required to support East Asian languages.
 
-Instead, use the [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) APIs when you need to create a custom text edit control. These APIs are designed to give you a lot of flexibility in processing text input, in any language, and let you provide the text experience best suited to your app. Text input and edit controls built with the core text APIs can receive text input from all existing text input methods on Windows devices, from [Text Services Framework](/windows/desktop/TSF/text-services-framework) based Input Method Editors (IMEs) and handwriting on PCs to the WordFlow keyboard (which provides auto-correction, prediction, and dictation) on mobile devices.
+Instead, use the [**Microsoft.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) APIs when you need to create a custom text edit control. These APIs are designed to give you a lot of flexibility in processing text input, in any language, and let you provide the text experience best suited to your app. Text input and edit controls built with the core text APIs can receive text input from all existing text input methods on Windows devices, from [Text Services Framework](/windows/desktop/TSF/text-services-framework) based Input Method Editors (IMEs) and handwriting on PCs to the WordFlow keyboard (which provides auto-correction, prediction, and dictation) on mobile devices.
 
 ## Architecture
 
@@ -28,7 +28,7 @@ Instead, use the [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) APIs 
 The following is a simple representation of the text input system.
 
 -   "Application" represents a Windows app hosting a custom edit control built using the core text APIs.
--   The [**Windows.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) APIs facilitate the communication with text services through Windows. Communication between the text edit control and the text services is handled primarily through a [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext) object that provides the methods and events to facilitate the communication.
+-   The [**Microsoft.UI.Text.Core**](/uwp/api/Windows.UI.Text.Core) APIs facilitate the communication with text services through Windows. Communication between the text edit control and the text services is handled primarily through a [**CoreTextEditContext**](/uwp/api/Windows.UI.Text.Core.CoreTextEditContext) object that provides the methods and events to facilitate the communication.
 
 ![CoreText architecture diagram](images/coretext/architecture.png)
 

@@ -75,7 +75,7 @@ System resources are often the underlying values for a high-contrast theme. The 
 Here's some example XAML taken from the default generic.xaml and themeresources.xaml files to illustrate how to use **ThemeResource**. We'll look at just one template (the default [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button)) and how two properties are declared ([**Background**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.background) and [**Foreground**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.foreground)) to be responsive to theme changes.
 
 ```xml
-    <!-- Default style for Windows.UI.Xaml.Controls.Button -->
+    <!-- Default style for Microsoft.UI.Xaml.Controls.Button -->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}" />
         <Setter Property="Foreground" Value="{ThemeResource ButtonForegroundThemeBrush}"/>

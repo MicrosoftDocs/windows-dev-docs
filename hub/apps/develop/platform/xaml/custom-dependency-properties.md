@@ -94,10 +94,10 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 // ImageWithLabelControl.idl
 namespace ImageWithLabelControlApp
 {
-    runtimeclass ImageWithLabelControl : Windows.UI.Xaml.Controls.Control
+    runtimeclass ImageWithLabelControl : Microsoft.UI.Xaml.Controls.Control
     {
         ImageWithLabelControl();
-        static Windows.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty LabelProperty{ get; };
         String Label;
     }
 }
@@ -108,32 +108,32 @@ struct ImageWithLabelControl : ImageWithLabelControlT<ImageWithLabelControl>
 {
 ...
 public:
-    static Windows::UI::Xaml::DependencyProperty LabelProperty()
+    static Microsoft::UI::Xaml::DependencyProperty LabelProperty()
     {
         return m_labelProperty;
     }
 
 private:
-    static Windows::UI::Xaml::DependencyProperty m_labelProperty;
+    static Microsoft::UI::Xaml::DependencyProperty m_labelProperty;
 ...
 };
 
 // ImageWithLabelControl.cpp
 ...
-Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
+Microsoft::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Microsoft::UI::Xaml::DependencyProperty::Register(
         L"Label",
         winrt::xaml_typename<winrt::hstring>(),
         winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ nullptr }
+        Microsoft::UI::Xaml::PropertyMetadata{ nullptr }
 );
 ...
 ```
 
 ```cppcx
 //.h file
-//using namespace Windows::UI::Xaml::Controls;
-//using namespace Windows::UI::Xaml::Interop;
+//using namespace Microsoft::UI::Xaml::Controls;
+//using namespace Microsoft::UI::Xaml::Interop;
 //using namespace Windows::UI::Xaml;
 //using namespace Platform;
 
@@ -276,12 +276,12 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 ```cppwinrt
 // ImageWithLabelControl.cpp
 ...
-Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
+Microsoft::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Microsoft::UI::Xaml::DependencyProperty::Register(
         L"Label",
         winrt::xaml_typename<winrt::hstring>(),
         winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ nullptr, Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+        Microsoft::UI::Xaml::PropertyMetadata{ nullptr, Microsoft::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
 );
 ...
 ```
@@ -305,12 +305,12 @@ If a default value is not specified, the default value for a dependency property
 ```cppwinrt
 // ImageWithLabelControl.cpp
 ...
-Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
+Microsoft::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Microsoft::UI::Xaml::DependencyProperty::Register(
         L"Label",
         winrt::xaml_typename<winrt::hstring>(),
         winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+        Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Microsoft::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
 );
 ...
 ```
@@ -358,7 +358,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 ```
 
 ```cppwinrt
-void ImageWithLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+void ImageWithLabelControl::OnLabelChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
 {
     auto iwlc{ d.as<ImageWithLabelControlApp::ImageWithLabelControl>() };
     auto s{ winrt::unbox_value<winrt::hstring>(e.NewValue()) };
@@ -400,10 +400,10 @@ End Sub
 ```
 
 ```cppwinrt
-static void OnVisibilityValueChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+static void OnVisibilityValueChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
 {
-    auto oldVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.OldValue()) };
-    auto newVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.NewValue()) };
+    auto oldVisibility{ winrt::unbox_value<Microsoft::UI::Xaml::Visibility>(e.OldValue()) };
+    auto newVisibility{ winrt::unbox_value<Microsoft::UI::Xaml::Visibility>(e.NewValue()) };
 
     if (newVisibility != oldVisibility)
     {

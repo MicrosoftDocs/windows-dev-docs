@@ -76,11 +76,11 @@ Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync
 
 ## Remove a folder from a library
 
-To remove a folder from a library, call the [StorageLibrary.RequestRemoveFolderAsync](/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) method and specify the folder to be removed. You could use [StorageLibrary.Folders](/uwp/api/windows.storage.storagelibrary.folders) and a [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) control (or similar) for the user to select a folder to remove.
+To remove a folder from a library, call the [StorageLibrary.RequestRemoveFolderAsync](/uwp/api/windows.storage.storagelibrary.requestremovefolderasync) method and specify the folder to be removed. You could use [StorageLibrary.Folders](/uwp/api/windows.storage.storagelibrary.folders) and a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) control (or similar) for the user to select a folder to remove.
 
 When you call [StorageLibrary.RequestRemoveFolderAsync](/uwp/api/windows.storage.storagelibrary.requestremovefolderasync), the user sees a confirmation dialog saying that the folder "won't appear in Pictures anymore, but won't be deleted." What this means is that the folder remains in its original location on disk, is removed from the [StorageLibrary.Folders](/uwp/api/windows.storage.storagelibrary.folders) property, and will no longer included in the built-in Photos app.
 
-The following example assumes that the user has selected the folder to remove from a [ListView](/uwp/api/Windows.UI.Xaml.Controls.ListView) control named lvPictureFolders.
+The following example assumes that the user has selected the folder to remove from a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) control named lvPictureFolders.
 
 
 ```csharp
@@ -177,7 +177,7 @@ IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();
 propertiesToSave.Add("System.CreatorOpenWithUIOptions", 1);
 propertiesToSave.Add("System.CreatorAppId", appId);
 
-testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
+testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();
 ```
 
 ## Using stream methods to add a file to a media library

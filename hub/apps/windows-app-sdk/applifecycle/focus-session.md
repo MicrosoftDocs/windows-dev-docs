@@ -98,11 +98,11 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 // pch.h
 ...
 #include <winrt/Windows.UI.Shell.h
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 
 // MainWindow.xaml.h
 ...
-void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&);
+void OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&);
 
 Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
 winrt::event_token m_focusStateChangedToken;
@@ -111,7 +111,7 @@ void OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const& sender, 
 
 // MainWindow.xaml.cpp
 ...
-void MainWindow::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&)
+void MainWindow::OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&)
 {
     if (Windows::UI::Shell::FocusSessionManager::IsSupported())
     {

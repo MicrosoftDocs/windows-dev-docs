@@ -174,7 +174,7 @@ In other cases, changing a single control on one page only to look a certain way
                         Color="Purple"/>
                     <SolidColorBrush x:Key="CheckBoxCheckGlyphForegroundChecked"
                         Color="White"/>
-                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"  
+                    <SolidColorBrush x:Key="CheckBoxCheckBackgroundStrokeChecked"
                         Color="Purple"/>
                     <SolidColorBrush x:Key="CheckBoxCheckBackgroundFillChecked"
                         Color="Purple"/>
@@ -223,7 +223,7 @@ In your Resource Dictionary or main definition, you would hook up the Lightweigh
     <ResourceDictionary x:Key="Default">
         <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
         <StaticResource x:Key="MyCustomControlBorderBrush" ResourceKey="ButtonBorderBrush" />
-    </ResourceDictionary>        
+    </ResourceDictionary>
     <ResourceDictionary x:Key="Light">
         <StaticResource x:Key="MyCustomControlBackground" ResourceKey="ButtonBackground" />
         <StaticResource x:Key="MyCustomControlBorderBrush" ResourceKey="ButtonBorderBrush" />
@@ -244,7 +244,7 @@ Its required that you use a `ThemeDictionary` that is duplicated three times in 
 
 The best way to stay current with our latest visual styles is to avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 
-For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
+For system controls that use WinUI styles (`Microsoft.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
 
 ```xaml
 <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
@@ -271,9 +271,9 @@ One common scenario for this is to derive a new control from [ContentDialog](/wi
     <ContentDialog.Resources>
         <Style TargetType="local:SignInContentDialog" BasedOn="{StaticResource DefaultContentDialogStyle}"/>
         ...
-    </ContentDialog.Resources> 
+    </ContentDialog.Resources>
     <!-- CONTENT -->
-</ContentDialog>        
+</ContentDialog>
 ```
 
 ## The template property

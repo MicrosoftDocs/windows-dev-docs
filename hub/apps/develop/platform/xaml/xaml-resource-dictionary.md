@@ -142,7 +142,7 @@ This example shows how to retrieve the `redButtonStyle` resource out of a page's
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L"redButtonStyle")).as<Windows::UI::Xaml::Style>();
+        Microsoft::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L"redButtonStyle")).as<Microsoft::UI::Xaml::Style>();
     }
 ```
 
@@ -178,9 +178,9 @@ To look up app-wide resources from code, use **Application.Current.Resources** t
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Application::Current().Resources()
+        Microsoft::UI::Xaml::Style style = Application::Current().Resources()
                                                                .TryLookup(winrt::box_value(L"appButtonStyle"))
-                                                               .as<Windows::UI::Xaml::Style>();
+                                                               .as<Microsoft::UI::Xaml::Style>();
     }
 ```
 
@@ -195,7 +195,7 @@ You can avoid both problems if you add the resource in the [Application.OnLaunch
 
 ```csharp
 // App.xaml.cs
-    
+
 sealed partial class App : Application
 {
     protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -227,7 +227,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
     // just ensure that the window is active
     if (rootFrame == nullptr)
     {
-        Windows::UI::Xaml::Media::SolidColorBrush brush{ Windows::UI::ColorHelper::FromArgb(255, 0, 255, 0) };
+        Microsoft::UI::Xaml::Media::SolidColorBrush brush{ Windows::UI::ColorHelper::FromArgb(255, 0, 255, 0) };
         Resources().Insert(winrt::box_value(L"brush"), winrt::box_value(brush));
         // … Other code that VS generates for you …
 ```
@@ -248,7 +248,7 @@ To access that element's resources from code, use that element's [Resources](/wi
     <Page.Resources>
         <x:String x:Key="greeting">Hello world</x:String>
     </Page.Resources>
-    
+
     <StackPanel>
         <!-- Displays "Hello world" -->
         <TextBlock x:Name="textBlock1" Text="{StaticResource greeting}"/>
@@ -298,7 +298,7 @@ Here, you define a resource dictionary in a separate XAML file called Dictionary
 ```xaml
 <!-- Dictionary1.xaml -->
 <ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MSDNSample">
 
@@ -379,7 +379,7 @@ Here, you use red text for the light theme and blue text for the dark theme.
 ```xaml
 <!-- Dictionary1.xaml -->
 <ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MSDNSample">
 
@@ -389,7 +389,7 @@ Here, you use red text for the light theme and blue text for the dark theme.
 
 <!-- Dictionary2.xaml -->
 <ResourceDictionary
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MSDNSample">
 

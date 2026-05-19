@@ -35,7 +35,7 @@ It also provides many of the same formatting options for customizing how your te
 
 Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images. RichTextBlock provides several features for advanced text layout.
 
-The content property of RichTextBlock is the [Blocks](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock.blocks) property, which supports paragraph based text via the [Paragraph](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Paragraph) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app.  
+The content property of RichTextBlock is the [Blocks](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richtextblock.blocks) property, which supports paragraph based text via the [Paragraph](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Paragraph) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app.
 
 ### Text input
 
@@ -108,7 +108,7 @@ The touch keyboard can be used for text entry when your app runs on a device wit
 
 For example, if a text box is used only to enter a 4-digit PIN, set the [InputScope](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.inputscope) property to **Number**. This tells the system to show the number keypad layout, which makes it easier for the user to enter the PIN.
 
->Important  
+>Important
 >The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
 
 For more info, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md).
@@ -178,5 +178,5 @@ For TextBox and RichEditBox controls, spell checking is turned on by default. Yo
 
 **For developers (XAML)**
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
-- [Windows.UI.Xaml.Controls PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
+- [Microsoft.UI.Xaml.Controls PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

@@ -112,7 +112,7 @@ int APIENTRY wWinMain(
     {
         OutputFormattedDebugString(
             L"Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
-            hr, majorMinorVersion, versionTag, 
+            hr, majorMinorVersion, versionTag,
             minVersion.Major, minVersion.Minor, minVersion.Build, minVersion.Revision);
         return hr;
     }

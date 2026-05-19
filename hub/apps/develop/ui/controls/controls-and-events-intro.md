@@ -26,17 +26,17 @@ In this section, we provide guidance for each of the XAML controls you can use t
 
 - Add a control to your app UI.
 - Set properties on the control, such as width, height, or foreground color.
-- Add code to the control's event handlers so that it does something. 
+- Add code to the control's event handlers so that it does something.
 
 ## Add a control
 You can add a control to an app in several ways:
- 
-- Add the control to the XAML markup in the Visual Studio XAML editor. 
+
+- Add the control to the XAML markup in the Visual Studio XAML editor.
 - Add the control in code. Controls that you add in code are visible when the app runs, but are not visible in the Visual Studio XAML designer.
 
-In Visual Studio, when you add and manipulate controls in your app, you can use many of the program's features, including the Toolbox, XAML editor, and the Properties window. 
+In Visual Studio, when you add and manipulate controls in your app, you can use many of the program's features, including the Toolbox, XAML editor, and the Properties window.
 
-The Visual Studio Toolbox displays many of the controls that you can use in your app. To add a control to your app, double-click it in the Toolbox. For example, when you double-click the TextBox control, this XAML is added to the XAML view. 
+The Visual Studio Toolbox displays many of the controls that you can use in your app. To add a control to your app, double-click it in the Toolbox. For example, when you double-click the TextBox control, this XAML is added to the XAML view.
 
 ```xaml
 <TextBox HorizontalAlignment="Left" Text="TextBox" VerticalAlignment="Top"/>
@@ -59,32 +59,32 @@ Here's how to set the name of a control in the XAML editor by adding the x:Name 
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## Set the control properties 
+## Set the control properties
 
 You use properties to specify the appearance, content, and other attributes of controls. When you add a control using a design tool, some properties that control size, position, and content might be set for you by Visual Studio.
 
-You can set control properties in in XAML, or in code. For example, to change the foreground color for a Button, you set the control's Foreground property. This illustration shows how to set the Foreground property by using the color picker in the Properties window. 
+You can set control properties in in XAML, or in code. For example, to change the foreground color for a Button, you set the control's Foreground property. This illustration shows how to set the Foreground property by using the color picker in the Properties window.
 
 ![Color picker in the Visual Studio designer](images/add-controls-foreground-designer.png)
 
-Here's how to set the Foreground property in the XAML editor. Notice the Visual Studio IntelliSense window that opens to help you with the syntax. 
+Here's how to set the Foreground property in the XAML editor. Notice the Visual Studio IntelliSense window that opens to help you with the syntax.
 
 ![Intellisense in XAML part 1](images/add-controls-foreground-xaml.png)
 
 ![Intellisense in XAML part 2](images/add-controls-foreground-xaml-2.png)
 
-Here's the resulting XAML after you set the Foreground property. 
+Here's the resulting XAML after you set the Foreground property.
 
 ```xaml
-<Button x:Name="Button1" Content="Button" 
+<Button x:Name="Button1" Content="Button"
         HorizontalAlignment="Left" VerticalAlignment="Top"
         Foreground="Beige"/>
 ```
 
-Here's how to set the Foreground property in code. 
+Here's how to set the Foreground property in code.
 
 ```csharp
-Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
+Button1.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Beige);
 ```
 ```cppwinrt
 Button1().Foreground(Media::SolidColorBrush(Windows::UI::Colors::Beige()));
@@ -107,7 +107,7 @@ The following example handles the `Click` event of a Button named `Button1`. Whe
 private void Button_Click(object sender, RoutedEventArgs e)
 {
     Button b = (Button)sender;
-    b.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
+    b.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Blue);
 }
 ```
 ```cppwinrt
@@ -116,13 +116,13 @@ struct MainPage : MainPageT<MainPage>
     {
         MainPage();
         ...
-        void Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
+        void Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
     };
-    
+
 #MainPage.cpp
-void MainPage::Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+void MainPage::Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
     {
-        auto b{ sender.as<winrt::Windows::UI::Xaml::Controls::Button>() };
+        auto b{ sender.as<winrt::Microsoft::UI::Xaml::Controls::Button>() };
         b.Foreground(Media::SolidColorBrush(Windows::UI::Colors::Blue()));
     }
 ```
@@ -153,7 +153,7 @@ Button1().Click({ this, &MainPage::Button1_Click });
 ## Related topics
 
 - [Index of controls by function](../../../design/controls/index.md)
-- [Windows.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
+- [Microsoft.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
 - [Layout](../../../design/layout/index.md)
 - [Style](../../../design/style/index.md)
 - [Usability](../../../design/usability/index.md)

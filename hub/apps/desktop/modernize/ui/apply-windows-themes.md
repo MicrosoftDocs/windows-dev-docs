@@ -91,7 +91,7 @@ To do this, you need to get the UI color type of the foreground from the system 
 
 ```cpp
 auto settings = UISettings();
-    
+
 auto foreground = settings.GetColorValue(UIColorType::Foreground);
 ```
 
@@ -144,7 +144,7 @@ int main()
             bool isDarkModeRevoker = static_cast<bool>(IsColorLight(foregroundRevoker));
             wprintf(L"isDarkModeRevoker: %d\n", isDarkModeRevoker);
         });
-    
+
     static bool s_go = true;
     while (s_go)
     {
@@ -176,7 +176,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // Store instance handle in our global variable
 
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, 0, 
+   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, 0,
      CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)

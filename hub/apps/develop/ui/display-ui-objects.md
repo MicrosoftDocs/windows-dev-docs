@@ -40,7 +40,7 @@ These classes implement [**IInitializeWithWindow**](/windows/win32/api/shobjidl_
 * [**Windows.System.LauncherOptions**](/uwp/api/windows.system.launcheroptions)&mdash;Windows 10, version 1903 (10.0; Build 18362) and later
 * [**Windows.UI.Core.CoreWindowDialog**](/uwp/api/windows.ui.core.corewindowdialog)
 * [**Windows.UI.Core.CoreWindowFlyout**](/uwp/api/windows.ui.core.corewindowflyout)
-* [**Windows.UI.Popups.MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). But for new apps we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead.
+* [**Windows.UI.Popups.MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). But for new apps we recommend using the [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) control instead.
 * [**Windows.UI.Popups.PopupMenu**](/uwp/api/windows.ui.popups.popupmenu)
 * [**Windows.UI.StartScreen.SecondaryTile**](/uwp/api/windows.ui.startscreen.secondarytile)
 * [**Windows.Web.Http.Filters.HttpBaseProtocolFilter**](/uwp/api/windows.web.http.filters.httpbaseprotocolfilter)
@@ -126,7 +126,7 @@ public sealed partial class MainWindow : Window
         void ShowShareUIForWindow(IntPtr appWindow);
     }
 
-    static readonly Guid _dtm_iid = 
+    static readonly Guid _dtm_iid =
         new Guid(0xa5caee9b, 0x8708, 0x49d1, 0x8d, 0x36, 0x67, 0xd2, 0x5a, 0x8d, 0xa0, 0x0c);
 
     private void myButton_Click(object sender, RoutedEventArgs e)
@@ -146,7 +146,7 @@ public sealed partial class MainWindow : Window
         {
             args.Request.Data.Properties.Title = "In a desktop app...";
             args.Request.Data.SetText("...display WinRT UI objects that depend on CoreWindow.");
-            args.Request.Data.RequestedOperation = 
+            args.Request.Data.RequestedOperation =
                 Windows.ApplicationModel.DataTransfer.DataPackageOperation.Copy;
         };
 
@@ -176,7 +176,7 @@ void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
     HWND hWnd{ 0 };
     windowNative->get_WindowHandle(&hWnd);
 
-    winrt::com_ptr<IDataTransferManagerInterop> interop = 
+    winrt::com_ptr<IDataTransferManagerInterop> interop =
         winrt::get_activation_factory<Windows::ApplicationModel::DataTransfer::DataTransferManager,
         IDataTransferManagerInterop>();
 

@@ -226,7 +226,7 @@ using namespace winrt::Windows::System;
 using namespace winrt::Windows::System::Power;
 using namespace winrt::Microsoft::UI::Xaml;
 using namespace winrt::Microsoft::UI::Xaml::Controls;
-using namespace winrt::Windows::UI::Xaml::Navigation;
+using namespace winrt::Microsoft::UI::Xaml::Navigation;
 ...
 winrt::fire_and_forget CheckForEnergySaving()
 {

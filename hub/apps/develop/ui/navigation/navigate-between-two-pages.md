@@ -185,7 +185,7 @@ private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 // pch.h
 // Add this include in pch.h to support winrt::xaml_typename
 
-#include <winrt/Windows.UI.Xaml.Interop.h>
+#include <winrt/Microsoft.UI.Xaml.Interop.h>
 
 ////////////////////
 // MainPage.xaml.h
@@ -203,7 +203,7 @@ void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(win
 
 `MainPage` is a subclass of the [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) class. The `Page` class has a read-only [Frame](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.frame) property that gets the `Frame` containing the `Page`. When the `Click` event handler of the `HyperlinkButton` in `MainPage` calls `Frame.Navigate(typeof(Page2))`, the `Frame` displays the content of `Page2.xaml`.
 
-Whenever a page is loaded into the frame, that page is added as a [PageStackEntry](/uwp/api/Windows.UI.Xaml.Navigation.PageStackEntry) to the [BackStack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.backstack) or [ForwardStack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.forwardstack) of the [Frame](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.frame), allowing for [history and backwards navigation](navigation-history-and-backwards-navigation.md).
+Whenever a page is loaded into the frame, that page is added as a [PageStackEntry](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.navigation.pagestackentry) to the [BackStack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.backstack) or [ForwardStack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.forwardstack) of the [Frame](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.frame), allowing for [history and backwards navigation](navigation-history-and-backwards-navigation.md).
 
 Now, do the same in `Page2.xaml`. Replace the existing page content with the following content:
 
@@ -285,7 +285,7 @@ private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 // MainPage.xaml.cpp
 
 void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
-{ 
+{
     Frame().Navigate(xaml_typename<BasicNavigation::Page2>(), winrt::box_value(name().Text()));
 }
 ```
@@ -351,7 +351,7 @@ Page content and state is not cached by default, so if you'd like to cache infor
 
 In our basic peer-to-peer example, when you click the `Click to go to page 1` link on `Page2`, the `TextBox` (and any other field) on `MainPage` is set to its default state. One way to work around this is to use the [NavigationCacheMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.navigationcachemode) property to specify that a page be added to the frame's page cache.
 
-By default, a new page instance is created with its default values every time navigation occurs. In `MainPage.xaml`, set `NavigationCacheMode` to `Enabled` (in the opening `Page` tag) to cache the page and retain all content and state values for the page until the page cache for the frame is exceeded. Set [NavigationCacheMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.navigationcachemode) to [Required](/uwp/api/Windows.UI.Xaml.Navigation.NavigationCacheMode) if you want to ignore [CacheSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.cachesize) limits, which specify the number of pages in the navigation history that can be cached for the frame. However, keep in mind that cache size limits might be crucial, depending on the memory limits of a device.
+By default, a new page instance is created with its default values every time navigation occurs. In `MainPage.xaml`, set `NavigationCacheMode` to `Enabled` (in the opening `Page` tag) to cache the page and retain all content and state values for the page until the page cache for the frame is exceeded. Set [NavigationCacheMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.navigationcachemode) to [Required](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.navigation.navigationcachemode) if you want to ignore [CacheSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.cachesize) limits, which specify the number of pages in the navigation history that can be cached for the frame. However, keep in mind that cache size limits might be crucial, depending on the memory limits of a device.
 
 ```xaml
 <Page
@@ -370,14 +370,14 @@ By default, each page is animated into the frame when navigation occurs. The def
 These animations are represented by sub-classes of [NavigationTransitionInfo](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.navigationtransitioninfo). To specify the animation to use for a page transition, you'll use the third overload of the `Navigate` method and pass a `NavigationTransitionInfo` sub-class as the third parameter (`infoOverride`). Here's the signature of this `Navigate` overload:
 
 ```csharp
-public bool Navigate(System.Type sourcePageType, 
+public bool Navigate(System.Type sourcePageType,
                      object parameter,
                      NavigationTransitionInfo infoOverride);
 ```
 
 ```cppwinrt
-bool Navigate(TypeName const& sourcePageType, 
-              IInspectable const& parameter, 
+bool Navigate(TypeName const& sourcePageType,
+              IInspectable const& parameter,
               NavigationTransitionInfo const& infoOverride);
 ```
 
@@ -388,9 +388,9 @@ In the `HyperlinkButton_Click` event handler of the `MainPage` code-behind file,
 
 private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
-    Frame.Navigate(typeof(Page2), 
+    Frame.Navigate(typeof(Page2),
                    name.Text,
-                   new SlideNavigationTransitionInfo() 
+                   new SlideNavigationTransitionInfo()
                        { Effect = SlideNavigationTransitionEffect.FromRight});
 }
 ```
@@ -408,7 +408,7 @@ using namespace winrt::Microsoft::UI::Xaml::Media::Animation;
 // ...
 
 void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
-{   
+{
     // Create the slide transition and set the transition effect to FromRight.
     SlideNavigationTransitionInfo slideEffect = SlideNavigationTransitionInfo();
     slideEffect.Effect(SlideNavigationTransitionEffect(SlideNavigationTransitionEffect::FromRight));
@@ -429,7 +429,7 @@ private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 {
     Frame.Navigate(typeof(MainPage),
                    null,
-                   new SlideNavigationTransitionInfo() 
+                   new SlideNavigationTransitionInfo()
                        { Effect = SlideNavigationTransitionEffect.FromLeft});
 }
 ```
@@ -442,7 +442,7 @@ using namespace winrt::Microsoft::UI::Xaml::Media::Animation;
 // ...
 
 void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
-{   
+{
     // Create the slide transition and set the transition effect to FromLeft.
     SlideNavigationTransitionInfo slideEffect = SlideNavigationTransitionInfo();
     slideEffect.Effect(SlideNavigationTransitionEffect(SlideNavigationTransitionEffect::FromLeft));
