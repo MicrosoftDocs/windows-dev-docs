@@ -140,6 +140,7 @@
         "dev-drive/**": "MSDocsHeader-Windows-DevTools",
         "dev-environment/**": "MSDocsHeader-Windows-DevTools",
         "dev-home/**": "MSDocsHeader-Windows-DevTools",
+        "edit/**": "MSDocsHeader-Windows-DevTools",
         "package-manager/**": "MSDocsHeader-Windows-DevTools",
         "powertoys/**": "MSDocsHeader-Windows-DevTools",
         "python/**": "MSDocsHeader-Windows-DevTools",
