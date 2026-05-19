@@ -50,29 +50,25 @@ Windows does not detect scanners automatically. You must perform this step in or
 3.  Create an event handler for when a scanner is added.
 
 ```csharp
-    private async void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
+    private void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
     {
-       await
-       MainPage.Current.Dispatcher.RunAsync(
-             Windows.UI.Core.CoreDispatcherPriority.Normal,
-             () =>
-             {
-                MainPage.Current.NotifyUser(String.Format("Scanner with device id {0} has been added", deviceInfo.Id), NotifyType.StatusMessage);
+       MainPage.Current.DispatcherQueue.TryEnqueue(() =>
+       {
+          MainPage.Current.NotifyUser(String.Format("Scanner with device id {0} has been added", deviceInfo.Id), NotifyType.StatusMessage);
 
-                // search the device list for a device with a matching device id
-                ScannerDataItem match = FindInList(deviceInfo.Id);
+          // search the device list for a device with a matching device id
+          ScannerDataItem match = FindInList(deviceInfo.Id);
 
-                // If we found a match then mark it as verified and return
-                if (match != null)
-                {
-                   match.Matched = true;
-                   return;
-                }
+          // If we found a match then mark it as verified and return
+          if (match != null)
+          {
+             match.Matched = true;
+             return;
+          }
 
-                // Add the new element to the end of the list of devices
-                AppendToList(deviceInfo);
-             }
-       );
+          // Add the new element to the end of the list of devices
+          AppendToList(deviceInfo);
+       });
     }
 ```
 

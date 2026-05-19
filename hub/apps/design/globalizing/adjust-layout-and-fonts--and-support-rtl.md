@@ -42,7 +42,7 @@ If your app has images that must be mirrored (that is, the same image can be fli
 If your app requires a different image to flip the image correctly, then you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
 ## Handling right-to-left (RTL) languages
-When your app is localized for right-to-left (RTL) languages, use the [**FrameworkElement.FlowDirection**](/uwp/api/Windows.UI.Xaml.FrameworkElement.FlowDirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid?branch=live) scale and flip automatically with the value of **FlowDirection** that you set.
+When your app is localized for right-to-left (RTL) languages, use the [**FrameworkElement.FlowDirection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement.FlowDirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Grid?branch=live) scale and flip automatically with the value of **FlowDirection** that you set.
 
 Set **FlowDirection** on the root layout panel (or frame) of your Page, or on the Page itself. This causes all of the controls contained within to inherit that property.
 
@@ -59,11 +59,11 @@ this.languageTag = Windows.Globalization.ApplicationLanguages.Languages[0];
 var flowDirectionSetting = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues["LayoutDirection"];
 if (flowDirectionSetting == "LTR")
 {
-    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.LeftToRight;
+    this.layoutRoot.FlowDirection = Microsoft.UI.Xaml.FlowDirection.LeftToRight;
 }
 else
 {
-    this.layoutRoot.FlowDirection = Windows.UI.Xaml.FlowDirection.RightToLeft;
+    this.layoutRoot.FlowDirection = Microsoft.UI.Xaml.FlowDirection.RightToLeft;
 }
 ```
 
@@ -79,11 +79,11 @@ m_languageTag = Windows::Globalization::ApplicationLanguages::Languages().GetAt(
 auto flowDirectionSetting = Windows::ApplicationModel::Resources::Core::ResourceContext::GetForCurrentView().QualifierValues().Lookup(L"LayoutDirection");
 if (flowDirectionSetting == L"LTR")
 {
-    layoutRoot().FlowDirection(Windows::UI::Xaml::FlowDirection::LeftToRight);
+    layoutRoot().FlowDirection(Microsoft::UI::Xaml::FlowDirection::LeftToRight);
 }
 else
 {
-    layoutRoot().FlowDirection(Windows::UI::Xaml::FlowDirection::RightToLeft);
+    layoutRoot().FlowDirection(Microsoft::UI::Xaml::FlowDirection::RightToLeft);
 }
 ```
 
@@ -95,11 +95,11 @@ this->languageTag = Windows::Globalization::ApplicationLanguages::Languages->Get
 auto flowDirectionSetting = Windows::ApplicationModel::Resources::Core::ResourceContext::GetForCurrentView()->QualifierValues->Lookup("LayoutDirection");
 if (flowDirectionSetting == "LTR")
 {
-    this->layoutRoot->FlowDirection = Windows::UI::Xaml::FlowDirection::LeftToRight;
+    this->layoutRoot->FlowDirection = Microsoft::UI::Xaml::FlowDirection::LeftToRight;
 }
 else
 {
-    this->layoutRoot->FlowDirection = Windows::UI::Xaml::FlowDirection::RightToLeft;
+    this->layoutRoot->FlowDirection = Microsoft::UI::Xaml::FlowDirection::RightToLeft;
 }
 ```
 

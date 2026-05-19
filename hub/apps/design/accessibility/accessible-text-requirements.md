@@ -143,7 +143,7 @@ Avoid disabling text scaling broadly. Consistent cross-app text scaling is an im
 WinUI text controls support the full text scaling experience without any customization or templating. For other WinRT-based apps, you can monitor [**TextScaleFactorChanged**](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactorchanged) and get the [**TextScaleFactor**](/uwp/api/windows.ui.viewmanagement.uisettings.textscalefactor) to react to system text size changes:
 
 ```csharp
-private readonly Windows.UI.ViewManagement.UISettings _uiSettings = new();
+private readonly Microsoft.UI.Windowing.UISettings _uiSettings = new();
 
 public MainWindow()
 {
@@ -151,7 +151,7 @@ public MainWindow()
     _uiSettings.TextScaleFactorChanged += UISettings_TextScaleFactorChanged;
 }
 
-private void UISettings_TextScaleFactorChanged(Windows.UI.ViewManagement.UISettings sender, object args)
+private void UISettings_TextScaleFactorChanged(Microsoft.UI.Windowing.UISettings sender, object args)
 {
     // Marshal to the UI thread before applying layout or visual updates.
     DispatcherQueue.TryEnqueue(() =>

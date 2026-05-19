@@ -13,14 +13,14 @@ ms.localizationpriority: medium
 
 Screen-readers, such as [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
 
-To listen for and handle the **Fn** hardware system button events in the same way as other hardware buttons, use [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace of the Windows SDK.
+To listen for and handle the **Fn** hardware system button events in the same way as other hardware buttons, use [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/windows/windows-app-sdk/api/winrt/microsoft.ui.input) namespace of the Windows SDK.
 
 For WinUI 3 / Windows App SDK apps, this API is still consumed from the Windows namespace (`winrt::Windows::UI::Input`) rather than `Microsoft.UI.*`.
 
 > [!NOTE]
 > Fn button support is OEM-specific and can include features such as the ability to toggle/lock on or off (vs. a press-and-hold key combination), along with a corresponding lock indicator light (which might not be helpful to users who are blind or have a vision impairment).
 
-Fn button events are exposed through [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace. The SystemButtonEventController object supports the following events:
+Fn button events are exposed through [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/windows/windows-app-sdk/api/winrt/microsoft.ui.input) namespace. The SystemButtonEventController object supports the following events:
 
 - [SystemFunctionButtonPressed](/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionbuttonpressed)
 - [SystemFunctionButtonReleased](/uwp/api/windows.ui.input.systembuttoneventcontroller.systemfunctionbuttonreleased)
