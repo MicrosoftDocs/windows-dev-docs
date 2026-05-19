@@ -49,7 +49,7 @@ Add the supported data format that is supported by your application to the `Data
 
 ### Fetch Share Event arguments
 
-Starting in Windows 10, version 1809, packaged apps can call the [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) method to retrieve certain kinds of app activation info during startup. For example, you can call this method to get information about app activation; whether it was triggered by opening a file, clicking an interactive toast, or using a registered protocol.
+Starting in Windows 10, version 1809, packaged apps can call `AppInstance.GetActivatedEventArgs` to retrieve certain kinds of app activation info during startup. For example, you can call this method to get information about app activation; whether it was triggered by opening a file, clicking an interactive toast, or using a registered protocol.
 
 However, [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) activation info is supported only on Windows 10, version 2004, and later. So, the application should target to devices with this specific minimum version.
 
