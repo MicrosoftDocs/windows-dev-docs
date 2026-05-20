@@ -51,6 +51,72 @@ In most cases, the system will construct a data package for you. The system auto
 
 For other content, you'll need to handle the [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting) and [**DropCompleted**](/uwp/api/windows.ui.xaml.uielement.dropcompleted) events and use them to construct your own [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage).
 
+> [!NOTE]
+> The [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting) event described here is part of [**UIElement**](/uwp/api/windows.ui.xaml.uielement) and is the correct event for constructing a custom `DataPackage`. This is different from the [**DragStarted**](/uwp/api/windows.ui.xaml.controls.primitives.thumb.dragstarted) event on [**Thumb**](/uwp/api/windows.ui.xaml.controls.primitives.thumb) controls, which is used for slider-style dragging rather than data transfer.
+
+### Handle the DragStarting event
+
+The [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting) event fires when the system begins a drag operation on an element that has `CanDrag="True"`. In the event handler, you use the [**DragStartingEventArgs**](/uwp/api/windows.ui.xaml.dragstartingeventargs) to populate its [**Data**](/uwp/api/windows.ui.xaml.dragstartingeventargs.data) property (a [**DataPackage**](/uwp/api/windows.applicationmodel.datatransfer.datapackage)) with the content you want to transfer, and set the [**RequestedOperation**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.requestedoperation) to indicate whether the operation is a copy, move, or link.
+
+First, set up the XAML element with both a `DragStarting` and `DropCompleted` event handler:
+
+```xaml
+<TextBlock x:Name="DraggableText" CanDrag="True"
+           DragStarting="DraggableText_DragStarting"
+           DropCompleted="DraggableText_DropCompleted"
+           Text="Drag this text to another location"/>
+```
+
+Then, in the code-behind, handle the [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting) event to populate the data package:
+
+```csharp
+private void DraggableText_DragStarting(UIElement sender, DragStartingEventArgs args)
+{
+    // Add the text content to the data package
+    args.Data.SetText(((TextBlock)sender).Text);
+
+    // Indicate that both Copy and Move are acceptable
+    args.Data.RequestedOperation = DataPackageOperation.Copy | DataPackageOperation.Move;
+}
+```
+
+If you need to perform asynchronous work while constructing the data package (for example, reading a file), use the [**GetDeferral**](/uwp/api/windows.ui.xaml.dragstartingeventargs.getdeferral) method to keep the event active until the work is complete:
+
+```csharp
+private async void DraggableText_DragStarting(UIElement sender, DragStartingEventArgs args)
+{
+    var deferral = args.GetDeferral();
+    try
+    {
+        // Perform async work here, for example loading file content
+        string content = await LoadCustomTextAsync();
+        args.Data.SetText(content);
+        args.Data.RequestedOperation = DataPackageOperation.Copy;
+    }
+    finally
+    {
+        deferral.Complete();
+    }
+}
+```
+
+### Handle the DropCompleted event
+
+The [**DropCompleted**](/uwp/api/windows.ui.xaml.uielement.dropcompleted) event fires on the drag source after the drag-and-drop operation finishes—whether the item was successfully dropped or the drag was cancelled. Use the [**DropCompletedEventArgs.DropResult**](/uwp/api/windows.ui.xaml.dropcompletedeventargs.dropresult) property to determine the outcome and take action, such as removing the source item if a **Move** was performed:
+
+```csharp
+private void DraggableText_DropCompleted(UIElement sender, DropCompletedEventArgs args)
+{
+    if (args.DropResult == DataPackageOperation.Move)
+    {
+        // The target accepted the data as a Move, so clear the source
+        ((TextBlock)sender).Text = string.Empty;
+    }
+}
+```
+
+For a complete working example of custom drag-and-drop with a data package, see the [XAML drag-and-drop sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop) on GitHub.
+
 ## Enable dropping
 
 The following markup shows how the [**AllowDrop**](/uwp/api/windows.ui.xaml.uielement.allowdrop) property can be used to specify that an area of the app is a valid drop target for a dragged item (the specified area must not have a null background, it must be able to receive pointer input, and the item cannot be dropped anywhere other than the specified area).
@@ -152,7 +218,7 @@ The [UIElement](/uwp/api/windows.ui.xaml.uielement) class does most of the work 
 
 ## See also
 
-- [App-to-app communication](../../design/input/index.md)
+- [XAML drag-and-drop sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlDragAndDrop)
 - [AllowDrop](/uwp/api/windows.ui.xaml.uielement.allowdrop)
 - [CanDrag](/uwp/api/windows.ui.xaml.uielement.candrag)
 - [DragOver](/uwp/api/windows.ui.xaml.uielement.dragover)
@@ -162,4 +228,7 @@ The [UIElement](/uwp/api/windows.ui.xaml.uielement) class does most of the work 
 - [Drop](/uwp/api/windows.ui.xaml.uielement.drop)
 - [IsDragSource](/uwp/api/windows.ui.xaml.controls.listviewbase.isdragsource)
 - [**DragStarting**](/uwp/api/windows.ui.xaml.uielement.dragstarting)
+- [**DragStartingEventArgs**](/uwp/api/windows.ui.xaml.dragstartingeventargs)
 - [**DropCompleted**](/uwp/api/windows.ui.xaml.uielement.dropcompleted)
+- [**DropCompletedEventArgs**](/uwp/api/windows.ui.xaml.dropcompletedeventargs)
+- [**DataPackage**](/uwp/api/windows.applicationmodel.datatransfer.datapackage)

@@ -2,6 +2,7 @@
 title: repair Command
 description: Repairs the specified application.
 ms.date: 07/15/2025
+no-loc: [winget, repair, fix]
 ms.topic: overview
 ---
 
@@ -21,7 +22,7 @@ Use the [**list**](list.md) command to identify the application you want to repa
 
 The following aliases are available for this command:
 
-- fix
+- `fix`
 
 ## Arguments
 

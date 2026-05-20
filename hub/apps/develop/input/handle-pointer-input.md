@@ -20,8 +20,8 @@ Receive, process, and manage input data from pointing devices (such as touch, mo
 
 ## Important APIs
 - [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
-- [Windows.UI.Input](/uwp/api/Windows.UI.Core)
-- [Windows.UI.Xaml.Input](/uwp/api/Windows.UI.Input)
+- [Windows.UI.Input](/uwp/api/Windows.UI.Input)
+- [Windows.UI.Xaml.Input](/uwp/api/Windows.UI.Xaml.Input)
 
 ## Pointers
 Most interaction experiences typically involve the user identifying the object they want to interact with by pointing at it through input devices such as touch, mouse, pen/stylus, and touchpad. Because the raw Human Interface Device (HID) data provided by these input devices includes many common properties, the data is promoted and consolidated into a unified input stack and exposed as device-agnostic pointer data. Your Windows applications can then consume this data without worrying about the input device being used.

@@ -2,220 +2,91 @@
 description: View a list of links to articles about developing Universal Windows Platform (UWP) apps for Windows including an overview, samples, and API reference.
 title: Develop UWP apps
 keywords: uwp app development threading async platform overview portal develop developers
-ms.date: 03/29/2018
+ms.date: 05/19/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Develop UWP apps
 
-How-to articles and code for creating UWP apps for Windows.
+This section contains technical documentation for building Windows apps with the Universal Windows Platform (UWP).
+
+The documentation here is for things that are specific to UWP apps. Many Windows Runtime features used by UWP apps are also used by WinUI, WPF, WinForms, or Win32 apps. You can find documentation for these features in the [Windows App Development](/windows/apps/develop/) documentation.
+
+## Documentation
 
 :::row:::
     :::column:::
-        <a href="/windows/uwp/get-started/universal-application-platform-guide">
-            <img src="/media/hubs/windows/win_developer-uwp.svg" alt="UWP overview" />
-        </a><br/>
-        <h3><a href="/windows/uwp/get-started/universal-application-platform-guide">Overview of the Universal Windows Platform</a></h3>
-        <p>An explanation of what UWP is, how it works, and the features it provides.</p>
+        **[Overview of the Universal Windows Platform](../get-started/universal-application-platform-guide.md)**
     :::column-end:::
-    :::column:::
-        <a href="/windows/uwp/porting/index">
-            <img src="/media/illustrations/teams-fast-track.svg" alt="Porting guide" />
-        </a><br/>
-        <h3><a href="/windows/uwp/porting/index">Porting guide</a></h3>
-        <p>Bring your existing Windows Forms, WPF, Android, or iOS app to UWP.</p>
+    :::column::: UWP
+        An explanation of what UWP is, how it works, and the features it provides.
     :::column-end:::
 :::row-end:::
 
-<!-- <ul class="panelContent cardsH">
-    <li>
-        <a href="/windows/uwp/get-started/universal-application-platform-guide">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">                 
-                            <img src="https://learn.microsoft.com//media/hubs/windows/win_developer-uwp.svg" alt="UWP overview"/>
-                        </div>
-                    </div>
-                    <div class="cardText">
-                        <h3>Overview of the Universal Windows Platform</h3>
-                        <p>An explanation of what UWP is, how it works, and the features it provides.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/windows/uwp/porting/index">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardImageOuter">
-                        <div class="cardImage">                
-                            <img src="https://learn.microsoft.com/media/illustrations/teams-fast-track.svg" alt="Porting guide" />
-                        </div>
-                    </div>                
-                    <div class="cardText">
-                        <h3>Porting guide</h3>
-                        <p>Bring your existing Windows Forms, WPF, Android, or iOS app to UWP. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>                 
-</ul> -->
+:::row:::
+    :::column:::
+        **[WinUI for UWP (WinUI 2)](../get-started/winui2/index.md)**
+    :::column-end:::
+    :::column::: UWP
+        Use WinUI 2 for UWP to get the latest versions of XAML controls. WinUI 2 for UWP provides official native Windows XAML UI controls and other user interface elements for UWP applications.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        **[Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)**
+    :::column-end:::
+    :::column::: UWP
+        WinUI 3 is Microsoft's modern native user interface framework for building Windows desktop applications. To migrate your app from the Universal Windows Platform (UWP) to the Windows App SDK, your UI code likely needs just a few namespace changes, while much of your platform code can stay the same.
+    :::column-end:::
+:::row-end:::
 
 ## API reference
 
 :::row:::
     :::column:::
-        <h3><a href="/uwp/api">Windows UWP namespaces</a></h3>
-        <p>The classes, structures, interfaces, methods, properties, and events that make up the Windows Runtime, organized by namespace.</p>
+        **[Windows Runtime (WinRT) namespaces](/uwp/api/)**
     :::column-end:::
-    :::column:::
-        <h3><a href="/uwp/schemas/">Schemas for UWP</a></h3>
-        <p>File and XML schema specifications for Universal Windows Platform (UWP) apps.</p>
+    :::column::: UWP
+        The classes, structures, interfaces, methods, properties, and events that make up the Windows Runtime, organized by namespace.
     :::column-end:::
 :::row-end:::
-
-<!-- <ul class="panelContent cardsH">
-    <li>
-        <a href="/uwp/api">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Windows UWP namespaces</h3>
-                        <p>The classes, structures, interfaces, methods, properties, and events that make up the Windows Runtime, organized by namespace.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>
-    <li>
-        <a href="/uwp/schemas/">
-        <div class="cardSize">
-            <div class="cardPadding">
-                <div class="card">
-                    <div class="cardText">
-                        <h3>Schemas for UWP</h3>
-                        <p>File and XML schema specifications for Universal Windows Platform (UWP) apps. </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </a>
-    </li>                 
-</ul> -->
-
-## Articles
 
 :::row:::
     :::column:::
-        <h3>App types</h3>
-        <a href="/windows/uwp/apps-for-education/">Education apps</a><br/>
-        <a href="/windows/uwp/enterprise/">Enterprise apps</a><br/>
-        <a href="/windows/uwp/gaming/">Games and DirectX apps</a><br/>
-        <a href="/microsoft-edge/progressive-web-apps">Progressive Web Apps</a><br/>
+        **[Schemas for UWP](/uwp/schemas/)**
     :::column-end:::
     :::column:::
-        <h3>App UI</h3>
-        <a href="https://developer.microsoft.com/windows/apps/design">For controls, layout, typography, animation, usability, and UI design, see the Design and UI section.</a><br/>
-    :::column-end:::
-    :::column:::
-        <h3>Communication</h3>
-        <a href="/windows/uwp/app-to-app/">App-to-app communication</a><br/>
-        <a href="/windows/uwp/networking/">Networking and web services</a><br/>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        <h3>Data and files</h3>
-        <a href="/windows/uwp/audio-video-camera/">Audio, video, and camera</a><br/>
-        <a href="/windows/uwp/data-access/" >Data access</a><br/>
-        <a href="/windows/uwp/data-binding/" >Data binding</a><br/>
-        <a href="/windows/uwp/files/" >Files, folders, and libraries</a><br/>
-        <a href="/windows/uwp/machine-learning/">Machine learning</a><br/>
-    :::column-end:::
-    :::column:::
-        <h3>Deployment</h3>
-        <a href="/windows/uwp/updates-and-versions/choose-a-uwp-version">Choose a UWP version</a><br/>
-        <a href="/windows/uwp/debug-test-perf/">Debugging, testing, and performance</a><br/>
-        <a href="/windows/uwp/monetize/">Monetization, engagement, and Store services</a><br/>
-        <a href="/windows/uwp/packaging/">Packaging apps</a><br/>
-    :::column-end:::
-    :::column:::
-        <h3>Platform</h3>
-        <a href="/windows/uwp/cpp-and-winrt-apis/">C++/WinRT</a><br/>
-        <a href="/windows/uwp/launch-resume/">Launching, resuming, and background tasks</a><br/>
-        <a href="/windows/uwp/security/">Security</a><br/>
-        <a href="/windows/uwp/threading-async/">Threading and async programming</a><br/>
-        <a href="/windows/uwp/composition/visual-layer">Visual layer</a><br/>
-        <a href="/windows/uwp/updates-and-versions/application-development-for-windows-as-a-service">Windows as a service</a><br/>
-        <a href="/windows/uwp/winrt-components/">Windows Runtime components</a><br/>
-        <a href="/windows/apps/develop/platform/xaml/">XAML platform</a><br/>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        <h3>People and places</h3>
-        <a href="/windows/uwp/contacts-and-calendar/">Contacts, My People, and calendar</a><br/>
-        <a href="/windows/uwp/maps-and-location/">Maps and location</a><br/>
-    :::column-end:::
-    :::column:::
-        <h3>Peripherals, sensors, and power</h3>
-        <a href="/windows/uwp/contacts-and-calendar/">Overview</a><br/>
-        <a href="/windows/uwp/devices-sensors/enable-device-capabilities">Enable device capabilities</a><br/>
-        <a href="/windows/uwp/devices-sensors/pair-devices">Pair devices</a><br/>
-        <a href="/windows/uwp/devices-sensors/point-of-service">Point of Service</a><br/>
-        <a href="/windows/uwp/devices-sensors/sensors">Sensors</a><br/>
-        <a href="/windows/uwp/devices-sensors/printing-and-scanning">Printing</a><br/>
-        <a href="/windows/uwp/devices-sensors/3d-printing">3-D printing<</a><br/>
-        <a href="/windows/uwp/devices-sensors/nfc">NFC</a><br/>
-        <a href="/windows/uwp/devices-sensors/get-battery-info">Battery info</a><br/>
-    :::column-end:::
-    :::column:::
-        <h3>Porting</h3>
-        <a href="/windows/uwp/porting/">Overview</a><br/>
-        <a href="/windows/uwp/porting/wpsl-to-uwp-root">Windows Phone Silverlight to UWP</a><br/>
-        <a href="/windows/uwp/porting/w8x-to-uwp-root">Windows Runtime 8.x to UWP</a><br/>
-        <a href="/windows/uwp/porting/desktop-to-uwp-root">Desktop Bridge</a><br/>
-        <a href="/windows/uwp/porting/desktop-to-uwp-migrate">Share code between desktop and UWP</a><br/>
-        <a href="/windows/uwp/porting/android-ios-uwp-map">Concept mapping for Android and iOS developers</a><br/>
-        <a href="/windows/uwp/porting/ios-to-uwp-root">Move from iOS to UWP</a><br/>
-        <a href="/microsoft-edge/progressive-web-apps">Convert your web app to a PWA</a><br/>
-        <a href="/windows/uwp/porting/apps-on-arm">Windows on ARM</a><br/>
-    :::column-end:::
-:::row-end:::
-:::row:::
-    :::column:::
-        <h3>Processes and threading</h3>
-        <a href="/windows/uwp/launch-resume/">Launching, resuming, and background tasks</a><br/>
-        <a href="/windows/uwp/threading-async/">Threading and async programming</a><br/><br/><br/>
+        File and XML schema specifications for Universal Windows Platform (UWP) apps.
     :::column-end:::
 :::row-end:::
 
+## Samples and tools
 
- ## Samples and tools
-
- :::row:::
+:::row:::
     :::column:::
-        <a href="https://developer.microsoft.com/windows/samples">
-            <img src="/media/illustrations/sql-database-develop.svg" alt="Samples" />
-        </a><br/>
-        <h3><a href="https://developer.microsoft.com/windows/samples">Samples</a></h3>
-        <p>Learn how to build great apps for Windows by experimenting with these samples. These samples show you how features work and help you jumpstart your own UWP apps.</p>
+        **[Download Visual Studio](https://visualstudio.microsoft.com/downloads/)**<br/>**[Download the Windows SDK](https://developer.microsoft.com/windows/downloads)**<br/>**[Windows developer tools](/windows/dev-environment/)**
     :::column-end:::
     :::column:::
-        <a href="https://developer.microsoft.com/windows/downloads">
-            <img src="/media/illustrations/sql-get-started-download.svg" alt="Developer tools" />
-        </a><br/>
-        <h3><a href="https://developer.microsoft.com/windows/downloads">Developer tools</a></h3>
-        <p>Get Visual Studio 2019, the Windows SDK, and other developer tools.</p>
+        Get Visual Studio, the Windows SDK, and other developer tools.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        [**WinUI 2 Gallery for UWP**](https://apps.microsoft.com/detail/9msvh128x2zt)
+    :::column-end:::
+    :::column:::
+        This interactive sample app showcases UWP controls, styles, design guidance, and capabilities. You can either [browse the repository](https://github.com/microsoft/WinUI-Gallery) for source code (select the _winui2_ branch) or [**download the WinUI 2 Gallery from the Microsoft Store**](https://apps.microsoft.com/detail/9msvh128x2zt).
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+        **[Universal Windows Platform (UWP) app samples on GitHub](https://github.com/microsoft/Windows-universal-samples)**
+    :::column-end:::
+    :::column:::
+        Learn how to build great apps for Windows by experimenting with these samples. These samples show you how features work and help you jumpstart your own UWP apps.
     :::column-end:::
 :::row-end:::

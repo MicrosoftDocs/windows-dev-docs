@@ -2,6 +2,7 @@
 title: upgrade Command
 description: upgrades the specified application.
 ms.date: 07/07/2025
+no-loc: [winget, upgrade, update]
 ms.topic: overview
 ---
 
@@ -15,7 +16,7 @@ The **upgrade** command requires that you specify the exact string to upgrade. I
 
 The following aliases are available for this command:
 
-- update
+- `update`
 
 ## Usage
 

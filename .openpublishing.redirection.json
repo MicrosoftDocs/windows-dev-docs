@@ -5547,7 +5547,7 @@
     },
     {
       "source_path": "hub/apps/desktop/choose-your-platform.md",
-      "redirect_url": "/windows/apps/desktop#choose-your-app-type",
+      "redirect_url": "/windows/apps/get-started/",
       "redirect_document_id": false
     },
     {
@@ -11778,6 +11778,16 @@
     {
       "source_path": "hub/dev-environment/rust/index.yml",
       "redirect_url": "/windows/dev-environment/rust/overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/devices/index.md",
+      "redirect_url": "/windows/apps/design/guidelines-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/devices/designing-for-MR.md",
+      "redirect_url": "/windows/apps/design/guidelines-overview",
       "redirect_document_id": false
     }
   ]

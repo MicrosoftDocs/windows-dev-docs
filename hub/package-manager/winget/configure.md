@@ -2,6 +2,7 @@
 title: configure Command
 description: Uses a winget configuration file to begin setting up your Windows machine to a desired development environment state.
 ms.date: 12/11/2025
+no-loc: [winget, configure, configuration, dsc]
 ms.topic: overview
 ---
 
@@ -24,8 +25,8 @@ The **configure** command of the [winget](./index.md) tool uses a [WinGet Config
 
 The following aliases are available for this command:
 
-- configuration
-- dsc
+- `configuration`
+- `dsc`
 
 ## Usage
 

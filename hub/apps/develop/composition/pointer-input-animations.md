@@ -59,7 +59,7 @@ Let's take a look at an example where we leverage the Hover position of a Mouse 
 The image is a UIElement, so let's first get a reference to the PointerPositionPropertySet
 
 ```csharp
-_pointerPositionPropSet = ElementCompositionPreview.GetPointerPositionPropertySet(UIElement element);
+_pointerPositionPropSet = ElementCompositionPreview.GetPointerPositionPropertySet(element);
 ```
 
 In this sample, you have two Expressions at play:

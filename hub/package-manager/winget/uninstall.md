@@ -2,6 +2,7 @@
 title: uninstall Command
 description: uninstalls the specified application.
 ms.date: 07/07/2025
+no-loc: [winget, uninstall, remove]
 ms.topic: overview
 ---
 
@@ -15,8 +16,8 @@ The **uninstall** command requires that you specify the exact application name t
 
 The following aliases are available for this command:
 
-- remove
-- rm
+- `remove`
+- `rm`
 
 ## Usage
 

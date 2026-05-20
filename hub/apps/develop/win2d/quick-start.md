@@ -60,10 +60,12 @@ Before you continue, first ensure that the project's Architecture option is set 
 2. At the top of the C# file are various namespace definitions. Add the following namespaces:
 
 ```csharp
-using Windows.UI;
 using System.Numerics;
 using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Windows.UI;
 ```
 
 3. Next, you should see the following blank event handler which was inserted by AutoComplete:
@@ -101,7 +103,7 @@ For more information, see [Avoiding memory leaks](./avoiding-memory-leaks.md).
 3. Add a handler for the `Unloaded` event. Your XAML should look like this:
 
 ```XAML
-<Page
+<Window
     ...
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
@@ -237,7 +239,7 @@ args.DrawingSession.DrawImage(blur);
 
 **CanvasControl** is best suited for mostly static graphics content - it only raises the `Draw` event when your content needs to be updated or redrawn. If you have continually changing content then you should consider using `CanvasAnimatedControl` instead. The two controls operate very similarly, except `CanvasAnimatedControl` raises the `Draw` event on a periodic basis; by default it is called 60 times per second.
 
-2. To switch to `CanvasAnimatedControl`, go to `MainPage.xaml`, delete the **CanvasControl** line, and replace it with the following XAML:
+2. To switch to `CanvasAnimatedControl`, go to `MainWindow.xaml`, delete the **CanvasControl** line, and replace it with the following XAML:
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -245,13 +247,13 @@ args.DrawingSession.DrawImage(blur);
 </Grid>
 ```
 
-Just like with **CanvasControl**, let AutoComplete create the `Draw` event handler for you. By default, Visual Studio will name this handler `canvas_Draw_1` because `canvas_Draw` already exists; here, we've renamed the method `canvas_AnimatedDraw` to make it clear that this is a different event.
+Just like with **CanvasControl**, let AutoComplete create the `Draw` event handler for you. By default, Visual Studio will name this handler `canvas_Draw_1` because `canvas_Draw` already exists; here, we've renamed the method `canvas_DrawAnimated` to make it clear that this is a different event.
 
 In addition, you are also handling a new event, [CreateResources](https://microsoft.github.io/Win2D/WinUI2/html/E_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl_CreateResources.htm). Once again, let AutoComplete create the handler.
 
 Now that your app will be redrawing at 60 frames per second, it is more efficient to create your Win2D visual resources once and reuse them with every frame. It is inefficient to create a `CanvasCommandList` and draw 300 elements into it 60 times per second when the content remains static. `CreateResources` is an event that is fired only when Win2D determines you need to recreate your visual resources, such as when the page is loaded.
 
-3. Switch back to `MainPage.xaml.cs`. Find your `canvas_Draw` method which should look like this:
+3. Switch back to `MainWindow.xaml.cs`. Find your `canvas_Draw` method which should look like this:
 
 ```csharp
 private void canvas_Draw(
@@ -289,7 +291,7 @@ private void canvas_CreateResources(
 {}
 ```
 
-Paste (CTRL+V) your previously cut code into this method. Next, move the declaration of `GaussianBlurEffect` outside the method body so the variable becomes a member of the MainPage class. Your code should now look like the following:
+Paste (CTRL+V) your previously cut code into this method. Next, move the declaration of `GaussianBlurEffect` outside the method body so the variable becomes a member of the MainWindow class. Your code should now look like the following:
 
 ```csharp
 GaussianBlurEffect blur;

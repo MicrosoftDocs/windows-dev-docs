@@ -8,13 +8,6 @@ items:
     items:
     - name: Take a Test API
       href: ../apps-for-education/take-a-test-api.md
-  - name: Enterprise apps
-    href: /previous-versions/windows/uwp/enterprise/
-    items:
-    - name: Windows Information Protection (WIP)
-      href: https://techcommunity.microsoft.com/blog/windows-itpro-blog/announcing-the-sunset-of-windows-information-protection-wip/3579282
-  - name: Progressive Web Apps
-    href: /microsoft-edge/progressive-web-apps
 - name: Audio, video, and camera
   href: ../audio-video-camera/index.md
   items:
@@ -196,8 +189,6 @@ items:
       href: ../files/quickstart-using-file-and-folder-pickers.md
     - name: Save a file with a picker
       href: ../files/quickstart-save-a-file-with-a-picker.md
-  - name: Machine Learning
-    href: /windows/ai/
 - name: Deployment
   items:
   - name: Choose a UWP version
@@ -1156,12 +1147,6 @@ items:
       href: ../maps-and-location/guidelines-for-geofencing.md
     - name: Map style sheet reference
       href: ../maps-and-location/elements-of-map-style-sheet.md
-- name: Porting apps
-  items:
-  - name: Move from Windows Runtime 8.x to UWP
-  - name: Move from Windows Phone Silverlight to UWP
-  - name: Convert your web app to a PWA on Windows
-    href: /windows/apps/publish/publish-your-app/turn-your-website-pwa?pivots=store-installer-pwa
 - name: Threading and async programming
   href: ../threading-async/index.md
   items:
@@ -1206,9 +1191,9 @@ items:
     items:
     - name: Overview
       href: ../composition/visual-layer-in-desktop-apps.md
-    - name: "Visual layer in Win32"
+    - name: Visual layer in Win32
       href: ../composition/using-the-visual-layer-with-win32.md
-    - name: "Visual layer in WPF"
+    - name: Visual layer in WPF
       href: ../composition/using-the-visual-layer-with-wpf.md
-    - name: "Visual layer in WinForms"
+    - name: Visual layer in WinForms
       href: ../composition/using-the-visual-layer-with-windows-forms.md
