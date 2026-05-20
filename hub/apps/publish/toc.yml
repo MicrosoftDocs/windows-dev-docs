@@ -401,6 +401,10 @@ items:
       href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
 - name: What's new
   items:
+      - name: Publishing GDK games to Store
+        href: whats-new-game-publishing.md
+      - name: Near real time insights in analytics for Win32 apps
+        href: nrt-in-analytics.md
       - name: Revamped company onboarding experience with zero registration fees
         href: whats-new-company-developer.md
       - name: Ratings and reviews in Partner Center
