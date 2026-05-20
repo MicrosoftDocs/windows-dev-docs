@@ -247,7 +247,6 @@ The following code snippet (from an App.xaml file) shows an example [**ThemeDict
 ## Related topics
 
 - [Accessibility overview](accessibility-overview.md)
-- [UI contrast and settings sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/Accessibility/AccessibilityColorContrastPage.xaml)
-- [XAML accessibility sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/Accessibility/AccessibilityColorContrastPage.xaml)
+- [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample — no WinUI 3 equivalent available)
 - [XAML high contrast sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/Accessibility/AccessibilityColorContrastPage.xaml)
 - [**ThemeSettings.HighContrast**](/windows/windows-app-sdk/api/winrt/microsoft.ui.system.themesettings.highcontrast)
