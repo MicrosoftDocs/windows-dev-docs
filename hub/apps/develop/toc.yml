@@ -9,14 +9,36 @@ items:
         href: ../dev-tools/index.md
       - name: Agentic tools
         items:
-        - name: Overview
-          href: ../dev-tools/agentic-tools.md
-        - name: Tutorials
-          items:
-          - name: Set up GitHub Copilot for Windows development
-            href: ../how-tos/ai-setup.md
-          - name: "Build a Windows app with GitHub Copilot"
-            href: ../how-tos/ai-build.md
+          - name: Overview
+            href: ai-assisted/index.md
+          - name: Quickstart
+            href: ai-assisted/quickstart.md
+          - name: WinUI agent plugin
+            href: ai-assisted/winui-agent-plugin.md
+          - name: VS Code tools
+            href: ai-assisted/vs-code-tools.md
+          - name: AI-assisted testing
+            href: ai-assisted/testing.md
+          - name: Migrate and port apps
+            items:
+              - name: Overview
+                href: ai-assisted/migrate/index.md
+              - name: Migrate from UWP
+                href: ai-assisted/migrate/uwp-to-winui.md
+              - name: Migrate from WPF
+                href: ai-assisted/migrate/wpf-to-winui.md
+              - name: Migrate from iOS
+                href: ai-assisted/migrate/ios-to-winui.md
+              - name: Cross-framework apps
+                href: ai-assisted/migrate/cross-framework.md
+          - name: Tutorials
+            items:
+              - name: Set up Copilot for Windows development
+                href: ../how-tos/ai-setup.md
+              - name: Build a Windows app with Copilot
+                href: ../how-tos/ai-build.md
+          - name: Security and responsible AI
+            href: ai-assisted/security-and-responsible-ai.md
       - name: Visual Studio
         href: ../dev-tools/visual-studio.md
       - name: winappCLI
