@@ -33,7 +33,7 @@ The MicaController reacts to the system Light and Dark themes by default. To ove
 > [!TIP]
 > The code in this section is taken from the [Windows App SDK Win32 Mica sample on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32). See the GitHub repo for the full code. These examples use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
-To enable Mica, you need a reference to the Windows App SDK, a [Compositor](/uwp/api/windows.ui.composition.compositor), and a [DispatcherQueue](/uwp/api/windows.system.dispatcherqueue).
+To enable Mica, you need a reference to the Windows App SDK, a [Compositor](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositor), and a [DispatcherQueue](/uwp/api/windows.system.dispatcherqueue).
 
 This example shows how to do the following to set up an unpackaged app:
 
