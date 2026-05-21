@@ -93,7 +93,7 @@ In your UWP app, if you use certain types from the [**Windows.UI.Popups**](/uwp/
 The steps that you have to follow in a desktop app are described in [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
 
 > [!NOTE]
-> For new apps, we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
+> For new apps, we recommend using the [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
 
 Here's some typical UWP code to display a [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog).
 
