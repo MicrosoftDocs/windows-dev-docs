@@ -105,7 +105,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 - Open the file MainPage.xaml and replace the original contents with the following XML.
 
-```xml
+```xaml
         <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -162,7 +162,7 @@ GyrometerReadingChangedEventArgs>(ReadingChanged);
 
 These new values are written to the TextBlocks found in the project's XAML.
 
-```xml
+```xaml
         <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
         <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="23" Margin="67,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" Foreground="#FFFDFAFA"/>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,52,0,0" TextWrapping="Wrap" Text="Y Axis:" VerticalAlignment="Top" Width="46" Foreground="White"/>

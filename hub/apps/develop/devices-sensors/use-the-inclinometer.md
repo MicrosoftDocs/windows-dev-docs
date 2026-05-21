@@ -103,7 +103,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 - Open the file MainPage.xaml and replace the original contents with the following XML.
 
-```xml
+```xaml
         <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -160,7 +160,7 @@ InclinometerReadingChangedEventArgs>(ReadingChanged);
 
 These new values are written to the TextBlocks found in the project's XAML.
 
-```xml
+```xaml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
  <TextBlock x:Name="txtPitch" HorizontalAlignment="Left" Height="21" Margin="59,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="71" Foreground="#FFFDF9F9"/>
  <TextBlock HorizontalAlignment="Left" Height="23" Margin="0,29,0,0" TextWrapping="Wrap" Text="Roll:" VerticalAlignment="Top" Width="55" Foreground="#FFF7F1F1"/>

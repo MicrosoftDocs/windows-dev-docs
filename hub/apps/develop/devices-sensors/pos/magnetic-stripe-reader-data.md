@@ -13,7 +13,7 @@ This topic describes how to obtain and interpret the data from a magnetic stripe
 
 ## Subscribe to *DataReceived events
 
-Once you've set up your magnetic stripe reader in your application using the steps outlined in [Getting started with Point of Service](pos-basics.md), you're ready to start getting data from it.
+Once you've set up your magnetic stripe reader in your application using the steps outlined in [Getting started with Point of Service](basics.md), you're ready to start getting data from it.
 
 Whenever the reader recognizes a swiped card, it will raise one of three events:
 
@@ -112,11 +112,9 @@ private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args
 }
 ```
 
-[!INCLUDE [feedback](./includes/pos-feedback.md)]
-
 ## See also
 
-* [Magnetic stripe reader](pos-magnetic-stripe-reader.md)
+* [Magnetic stripe reader](magnetic-stripe-reader.md)
 * [ClaimedMagneticStripeReader Class](/uwp/api/windows.devices.pointofservice.claimedmagneticstripereader)
 * [MagneticStripeReaderAamvaCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereaderaamvacarddatareceivedeventargs)
 * [MagneticStripeReaderBankCardDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.magneticstripereaderbankcarddatareceivedeventargs)

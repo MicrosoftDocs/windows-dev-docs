@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Camera barcode scanner system requirements
 
-[Camera barcode scanner](pos-camerabarcode.md) consists of a standard lens camera with auto-focus capabilities (attached to a computer) combined with a software decoder and is supported by Universal Windows Platform (UWP) apps on the following versions of Windows.
+[Camera barcode scanner](camerabarcode.md) consists of a standard lens camera with auto-focus capabilities (attached to a computer) combined with a software decoder and is supported by Universal Windows Platform (UWP) apps on the following versions of Windows.
 
 | OS         | Version
 |------------|-----------------------------|

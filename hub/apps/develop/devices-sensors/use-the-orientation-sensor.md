@@ -128,7 +128,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 - Open the file MainPage.xaml and replace the original contents with the following XML.
 
-```xml
+```xaml
         <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -298,7 +298,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 - Open the file MainPage.xaml and replace the original contents with the following XML.
 
-```xml
+```xaml
     <Page
         x:Class="App1.MainPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

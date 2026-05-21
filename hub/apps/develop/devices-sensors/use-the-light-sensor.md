@@ -104,7 +104,7 @@ You'll need to rename the namespace in the previous snippet with the name you ga
 
 - Open the file MainPage.xaml and replace the original contents with the following XML.
 
-```xml
+```xaml
     <Page
         x:Class="App1.BlankPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -158,7 +158,7 @@ LightSensorReadingChangedEventArgs>(ReadingChanged);
 
 These new values are written to a TextBlock found in the project's XAML.
 
-```xml
+```xaml
 <TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
  <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
 ```

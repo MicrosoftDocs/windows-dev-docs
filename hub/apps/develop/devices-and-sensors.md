@@ -24,12 +24,12 @@ The following articles provide information about features available via WinRT AP
 | Article | Description |
 |---------|-------------|
 | [Devices, sensors, and power](/windows/uwp/devices-sensors) | Learn about the breadth of features available for integrating external devices and sensors into your app. |
-| [Enumerate devices](/windows/uwp/devices-sensors/enumerate-devices) | Learn how to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. |
-| [Sensors](/windows/uwp/devices-sensors/sensors) | Learn how to access sensors such as accelerometers, compasses, and gyrometers. |
-| [Bluetooth](/windows/uwp/devices-sensors/bluetooth) | Learn how to integrate classic Bluetooth (RFCOMM) and Bluetooth Low Energy (LE) into your apps. |
+| [Enumerate devices](/windows/apps/develop/devices-sensors/enumerate-devices) | Learn how to find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols. |
+| [Sensors](/windows/apps/develop/devices-sensors/sensors) | Learn how to access sensors such as accelerometers, compasses, and gyrometers. |
+| [Bluetooth](/windows/apps/develop/devices-sensors/bluetooth) | Learn how to integrate classic Bluetooth (RFCOMM) and Bluetooth Low Energy (LE) into your apps. |
 | [Printing and scanning](/windows/uwp/devices-sensors/printing-and-scanning) | Learn how to print and scan from your app. |
 | [3D printing](/windows/uwp/devices-sensors/3d-printing) | Learn how to add 3D printing functionality to your app. |
-| [Get battery information](/windows/uwp/devices-sensors/get-battery-info) | Learn how to get detailed battery information, including the charge, capacity, and status of a battery or aggregate of batteries. |
+| [Get battery information](/windows/apps/develop/devices-sensors/get-battery-info) | Learn how to get detailed battery information, including the charge, capacity, and status of a battery or aggregate of batteries. |
 
 #### Win32 (C++ and COM) APIs
 

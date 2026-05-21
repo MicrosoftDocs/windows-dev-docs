@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # PointOfService device objects
 
-Learn how to create a [PointOfService device object](pos-basics-deviceobject.md) that will give you access to read-only properties of the peripheral and claim the peripheral for exclusive use in a Universal Windows Platform (UWP) application.
+Learn how to create a [PointOfService device object](basics-deviceobject.md) that will give you access to read-only properties of the peripheral and claim the peripheral for exclusive use in a Universal Windows Platform (UWP) application.
 
 ## Creating a device object
 
@@ -45,6 +45,6 @@ You can detect when an object is closed for any reason with a \<DeviceObject\>.C
 > [!TIP]
 > Please refer to the following topics for more information about Windows 10 Universal Windows Platform (UWP) application lifecycle:
 >
-> - [Windows 10 Universal Windows Platform (UWP) app lifecycle](../launch-resume/app-lifecycle.md)
-> - [Handle app suspension](../launch-resume/suspend-an-app.md)
-> - [Handle app resume](../launch-resume/resume-an-app.md)
+> - [Windows 10 Universal Windows Platform (UWP) app lifecycle](/windows/uwp/launch-resume/app-lifecycle)
+> - [Handle app suspension](/windows/uwp/launch-resume/suspend-an-app)
+> - [Handle app resume](/windows/uwp/launch-resume/resume-an-app)

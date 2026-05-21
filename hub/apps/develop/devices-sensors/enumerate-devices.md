@@ -78,27 +78,20 @@ The [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) is a c
 
 While the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) is displayed, the contents of the UI will be automatically updated if devices are added, removed, or updated.
 
-**Note**  You cannot specify the [**DeviceInformationKind**](/uwp/api/windows.devices.enumeration.deviceinformationkind) using the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker). If you want to have devices of a specific **DeviceInformationKind**, you will need to build a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) and provide your own UI.
-
- 
+> [!NOTE]
+> You cannot specify the [**DeviceInformationKind**](/uwp/api/windows.devices.enumeration.deviceinformationkind) using the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker). If you want to have devices of a specific **DeviceInformationKind**, you will need to build a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) and provide your own UI.
 
 Casting media content and DIAL also each provide their own pickers if you want to use them. They are [**CastingDevicePicker**](/uwp/api/Windows.Media.Casting.CastingDevicePicker) and [**DialDevicePicker**](/uwp/api/Windows.Media.DialProtocol.DialDevicePicker), respectively.
 
 ## Enumerate a snapshot of devices
 
-
 In some scenarios, the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) will not be suitable for your needs and you need something more flexible. Perhaps you want to build your own UI or need to enumerate devices without displaying a UI to the user. In these situations, you could enumerate a snapshot of devices. This involves looking through the devices that are currently connected to or paired with the system. However, you need to be aware that this method only looks at a snapshot of devices that are available, so you will not be able to find devices that connect after you enumerate through the list. You also will not be notified if a device is updated or removed. Another potential downside to be aware of is that this method will hold back any results until the entire enumeration is completed. For this reason, you should not use this method when you are interested in **AssociationEndpoint**, **AssociationEndpointContainer**, or **AssociationEndpointService** objects since they are found over a network or wireless protocol. This can take up to 30 seconds to complete. In that scenario, you should use a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) object to enumerate through the possible devices.
 
 To enumerate through a snapshot of devices, use the [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) method. This method waits until the entire enumeration process is complete and returns all the results as one [**DeviceInformationCollection**](/uwp/api/windows.devices.enumeration.deviceinformationcollection) object. This method is also overloaded to provide you with several options for filtering your results and limiting them to the devices that you are interested in. You can do this by providing a [**DeviceClass**](/uwp/api/Windows.Devices.Enumeration.DeviceClass) or passing in a device selector. The device selector is an Advanced Query Syntax (AQS) string that specifies the devices you want to enumerate. For more information, see [Build a device selector](build-a-device-selector.md).
 
-
-
 In addition to limiting the results, you can also specify the properties that you want to retrieve for the devices. If you do, the specified properties will be available in the property bag for each of the [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) objects returned in the collection. It is important to note that not all properties are available for all device kinds. To see what properties are available for which device kinds, see [Device information properties](device-information-properties.md).
 
-
-
 ## Enumerate and watch devices
-
 
 A more powerful and flexible method of enumerating devices is creating a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher). This option provides the most flexibility when you are enumerating devices. It allows you to enumerate devices that are currently present, and also receive notifications when devices that match your device selector are added, removed, or properties change. When you create a **DeviceWatcher**, you provide a device selector. For more information about device selectors, see [Build a device selector](build-a-device-selector.md). After creating the watcher, you will receive the following notifications for any device that matches your provided criteria.
 
@@ -114,27 +107,22 @@ To create a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatch
 
 ## Watch devices as a background task
 
-
 Watching devices as a background task is very similar to creating a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) as described above. In fact, you will still need to create a normal **DeviceWatcher** object first as described in the previous section. Once you create it, you call [**GetBackgroundTrigger**](/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted) instead of [**DeviceWatcher.Start**](/uwp/api/windows.devices.enumeration.devicewatcher.start). When you call **GetBackgroundTrigger**, you must specify which of the notifications you are interested in: add, remove, or update. You cannot request update or remove without requesting add as well. Once you register the trigger, the **DeviceWatcher** will start running immediately in the background. From this point forward, whenever it receives a new notification for your application that matches your criteria, the background task will trigger and it will provide you the latest changes since it last triggered your application.
 
-**Important**  The first time that a [**DeviceWatcherTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger) triggers your application will be when the watcher reaches the **EnumerationCompleted** state. This means it will contain all of the initial results. Any future times it triggers your application, it will only contain the add, update, and remove notifications that have occurred since the last trigger. This is slightly different from a foreground [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) object because the initial results do not come in one at a time and are only delivered in a bundle after the **EnumerationCompleted** is reached.
-
- 
+> [!IMPORTANT]
+> The first time that a [**DeviceWatcherTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger) triggers your application will be when the watcher reaches the **EnumerationCompleted** state. This means it will contain all of the initial results. Any future times it triggers your application, it will only contain the add, update, and remove notifications that have occurred since the last trigger. This is slightly different from a foreground [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) object because the initial results do not come in one at a time and are only delivered in a bundle after the **EnumerationCompleted** is reached.
 
 Some wireless protocols behave differently if they are scanning in the background versus the foreground, or they may not support scanning in the background at all. There are three possibilities with relation to background scanning. The following table lists the possibilities and the effects this may have on your application. For example, Bluetooth and Wi-Fi Direct do not support background scans, so by extension, they do not support a [**DeviceWatcherTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger).
 
-| Behavior                                  | Impact                                                                                                                                  |
-|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| Same behavior in background               | None                                                                                                                                    |
-| Only passive scans possible in background | Device may take longer to discover while waiting for a passive scan to occur.                                                           |
-| Background scans not supported            | No devices will be detectable by the [**DeviceWatcherTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger), and no updates will be reported. |
+| Behavior | Impact |
+|--|--|
+| Same behavior in background | None |
+| Only passive scans possible in background | Device may take longer to discover while waiting for a passive scan to occur. |
+| Background scans not supported | No devices will be detectable by the [**DeviceWatcherTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger), and no updates will be reported. |
 
- 
-
-If your [**DeviceWatcherTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger) includes a protocol that does not support scanning in as a background task, your trigger will still work. However, you will not be able to get any updates or results over that protocol. The updates for other protocols or devices will still be detected normally.
+ If your [**DeviceWatcherTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceWatcherTrigger) includes a protocol that does not support scanning in as a background task, your trigger will still work. However, you will not be able to get any updates or results over that protocol. The updates for other protocols or devices will still be detected normally.
 
 ## Using DeviceInformationKind
-
 
 In most scenarios, you will not need to worry about the [**DeviceInformationKind**](/uwp/api/windows.devices.enumeration.deviceinformationkind) of a [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object. This is because the device selector returned by the device API you're using will often guarantee you are getting the correct kinds of device objects to use with their API. However, in some scenarios you will want to get the **DeviceInformation** for devices, but there is not a corresponding device API to provide a device selector. In these cases you will need to build your own selector. For example, Web Services on Devices does not have a dedicated API, but you can discover those devices and get information about them using the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs and then use them using the socket APIs.
 
@@ -146,10 +134,5 @@ When enumerating **AssociationEndpoint**, **AssociationEndpointContainer**, or *
 
 ## Save a device for later use
 
-
 Any [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) object is uniquely identified by a combination of two pieces of information: [**DeviceInformation.Id**](/uwp/api/windows.devices.enumeration.deviceinformation.id) and [**DeviceInformation.Kind**](/uwp/api/windows.devices.enumeration.deviceinformation.kind). If you keep these two pieces of information, you can recreate a **DeviceInformation** object after it is lost by supplying this information to [**CreateFromIdAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.createfromidasync). If you do this, you can save user preferences for a device that integrates with your app.
-
-
- 
-
  

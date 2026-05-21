@@ -65,7 +65,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 ```
 
 > [!TIP]
-> See [Enumerate a snapshot of devices](enumerate-devices.md#enumerate-a-snapshot-of-devices)  for more information on using [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync).
+> See [Enumerate a snapshot of devices](../enumerate-devices.md#enumerate-a-snapshot-of-devices)  for more information on using [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync).
 
 ### Option B: Enumerate available barcode scanners based on the *selector* created in Step 3 and watch for changes to that collection
 
@@ -80,11 +80,11 @@ watcher.Start();
 ```
 
 > [!TIP]
-> For more information, see [Enumerate and watch devices](enumerate-devices.md#enumerate-and-watch-devices) and [*DeviceWatcher*](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher).
+> For more information, see [Enumerate and watch devices](../enumerate-devices.md#enumerate-and-watch-devices) and [*DeviceWatcher*](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher).
 
 ## Step 5: Identify camera barcode scanners
 
-A camera barcode scanner consists of a camera (attached to a computer) combined with a software decoder, which Windows dynamically pairs to create a fully functional [barcode scanner](pos-barcodescanner.md) for Universal Windows Platform (UWP) apps.
+A camera barcode scanner consists of a camera (attached to a computer) combined with a software decoder, which Windows dynamically pairs to create a fully functional [barcode scanner](barcodescanner.md) for Universal Windows Platform (UWP) apps.
 
 [*BarcodeScanner.VideoDeviceID*](/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) can be used to differentiate between camera barcode scanners and physical barcode scanners. A non-NULL VideoDeviceID indicates that the barcode scanner object from your device collection is a camera barcode scanner. If you have more than one camera barcode scanner you might want to build a separate collection that excludes physical barcode scanners.
 
@@ -162,7 +162,7 @@ A camera preview is required to help the user aim the camera at a barcode. Windo
 Call [**ClaimedBarcodeScanner.ShowVideoPreview**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) to open the dialog and [**ClaimedBarcodeScanner.HideVideoPreview**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) to close it.
 
 > [!TIP]
-> See [Hosting Preview](pos-camerabarcode-hosting-preview.md) to host the preview for camera barcode scanner in your application.
+> See [Hosting Preview](camerabarcode-hosting-preview.md) to host the preview for camera barcode scanner in your application.
 
 ## Step 8: Initiate scan
 

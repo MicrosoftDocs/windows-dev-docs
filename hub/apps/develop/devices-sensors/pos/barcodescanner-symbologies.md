@@ -160,11 +160,9 @@ private async Task<bool> SetCheckDigitValidation(ClaimedBarcodeScanner scanner, 
 }
 ```
 
-[!INCLUDE [feedback](./includes/pos-feedback.md)]
-
 ## See also
 
-- [Barcode scanner](pos-barcodescanner.md)
+- [Barcode scanner](barcodescanner.md)
 - [BarcodeSymbologies Class](/uwp/api/windows.devices.pointofservice.barcodesymbologies)
 - [BarcodeScanner Class](/uwp/api/windows.devices.pointofservice.barcodescanner)
 - [ClaimedBarcodeScanner Class](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner)

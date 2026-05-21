@@ -15,7 +15,7 @@ This topic describes how to host a camera barcode scanner preview in a UWP appli
 
 ## Step 1: Setup your camera preview
 
-See [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md) for instructions on how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. When complete, return to this topic for camera barcode scanner specific modifications.
+See [Display the camera preview](/windows/uwp/audio-video-camera/simple-camera-preview-access) for instructions on how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. When complete, return to this topic for camera barcode scanner specific modifications.
 
 ## Step 2: Edit the capability declarations in your app manifest
 
@@ -65,7 +65,7 @@ try
 ```
 
 > [!TIP]
-> See [Display the camera preview](../audio-video-camera/simple-camera-preview-access.md#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your UWP application.
+> See [Display the camera preview](/windows/uwp/audio-video-camera/simple-camera-preview-access#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your UWP application.
 
 ## See also
 

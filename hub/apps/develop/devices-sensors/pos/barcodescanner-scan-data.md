@@ -129,11 +129,9 @@ Some merchandise may be marked with multiple labels, sometimes called *multisymb
 
 This value is set prior to a **DataReceived** event being raised to the application.
 
-[!INCLUDE [feedback](./includes/pos-feedback.md)]
-
 ## See also
 
-- [Barcode scanner](pos-barcodescanner.md)
+- [Barcode scanner](barcodescanner.md)
 - [ClaimedBarcodeScanner Class](/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname)
 - [BarcodeScannerDataReceivedEventArgs Class](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs)
 - [BarcodeScannerReport Class](/uwp/api/windows.devices.pointofservice.barcodescannerreport)

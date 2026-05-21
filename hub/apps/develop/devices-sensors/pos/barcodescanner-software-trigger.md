@@ -38,5 +38,3 @@ private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanne
     }
 }
 ```
-
-[!INCLUDE [feedback](./includes/pos-feedback.md)]

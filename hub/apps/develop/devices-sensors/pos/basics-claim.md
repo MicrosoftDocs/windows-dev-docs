@@ -13,7 +13,7 @@ Use the Point of Service device claim and enable APIs to claim devices and enabl
 
 ## Claiming for exclusive use
 
-After creating a [PointOfService device object](pos-basics-deviceobject.md), you must claim it using the appropriate claim method for the device type before you can use the device for input or output.  Claim grants the application exclusive access to many of the device's functions to ensure that one application does not interfere with the use of the device by another application.  Only one application at a time can claim a PointOfService device for exclusive use.
+After creating a [PointOfService device object](basics-deviceobject.md), you must claim it using the appropriate claim method for the device type before you can use the device for input or output.  Claim grants the application exclusive access to many of the device's functions to ensure that one application does not interfere with the use of the device by another application.  Only one application at a time can claim a PointOfService device for exclusive use.
 
 > [!Note]
 > The claim action establishes an exclusive lock to a device, but does not put it into an operational state.  See [Enable device for I/O operations](#enable-device-for-io-operations) for more information.
@@ -80,7 +80,7 @@ This sample shows how to claim a barcode scanner device after you have successfu
 > A claim can be lost in the following circumstances:
 >
 > 1. Another app has requested a claim of the same device and your app did not issue a **RetainDevice** in response to the **ReleaseDeviceRequested** event.  (See [Claim negotiation](#claim-negotiation) below for more information.)
-> 2. Your app has been suspended, which resulted in the device object being closed and as a result the claim is no longer valid. (See [Device object lifecycle](pos-basics-deviceobject.md#device-object-lifecycle) for more information.)
+> 2. Your app has been suspended, which resulted in the device object being closed and as a result the claim is no longer valid. (See [Device object lifecycle](basics-deviceobject.md#device-object-lifecycle) for more information.)
 
 ## Claim negotiation
 

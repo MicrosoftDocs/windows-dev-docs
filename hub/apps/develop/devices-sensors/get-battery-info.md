@@ -136,7 +136,7 @@ Next, open the file **MainPage.xaml** and copy the following XML into this file 
 > [!NOTE]
 > If your app isn't named **App1**, you'll need to replace the first part of the class name in the following snippet with the namespace of your app. For example, if you created a project named **BasicBatteryApp**, replace `x:Class="App1.MainPage"` with `x:Class="BasicBatteryApp.MainPage"` and `xmlns:local="using:App1"` with `xmlns:local="using:BasicBatteryApp"`.
 
-```xml
+```xaml
 <Page
     x:Class="App1.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"

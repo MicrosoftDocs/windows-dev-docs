@@ -54,5 +54,3 @@ if (printer != null)
     printer.Dispose();
 }
 ```
-
-[!INCLUDE [feedback](./includes/pos-feedback.md)]

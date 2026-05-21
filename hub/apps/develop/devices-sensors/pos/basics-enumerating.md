@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Enumerating Point of Service devices
 
-This topic demonstrates how to [define a device selector](./build-a-device-selector.md) that is used to query devices available to the system and use this selector to enumerate Point of Service devices using one of the following methods:
+This topic demonstrates how to [define a device selector](../build-a-device-selector.md) that is used to query devices available to the system and use this selector to enumerate Point of Service devices using one of the following methods:
 
 **Method 1:** [Use a device picker](#method-1-use-a-device-picker)
 
@@ -56,7 +56,7 @@ string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
 ```
 
 > [!TIP]
-> See [Build a device selector](./build-a-device-selector.md) for building more advanced selector strings.
+> See [Build a device selector](../build-a-device-selector.md) for building more advanced selector strings.
 
 ## Method 1: Use a device picker
 
@@ -158,14 +158,12 @@ void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
 ```
 
 > [!TIP]
-> See [Enumerate and watch devices]( ./enumerate-devices.md#enumerate-and-watch-devices) for more details on the use of a **DeviceWatcher**.
+> See [Enumerate and watch devices]( ../enumerate-devices.md#enumerate-and-watch-devices) for more details on the use of a **DeviceWatcher**.
 
 ## See also
-* [Getting started with Point of Service](pos-basics.md)
+* [Getting started with Point of Service](basics.md)
 * [DeviceInformation Class](/uwp/api/windows.devices.enumeration.deviceinformation)
 * [PosPrinter Class](/uwp/api/windows.devices.pointofservice.posprinter)
 * [PosConnectionTypes Enum](/uwp/api/windows.devices.pointofservice.posconnectiontypes)
 * [BarcodeScanner Class](/uwp/api/windows.devices.pointofservice.barcodescanner)
 * [DeviceWatcher Class](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher)
-
-[!INCLUDE [feedback](./includes/pos-feedback.md)]
