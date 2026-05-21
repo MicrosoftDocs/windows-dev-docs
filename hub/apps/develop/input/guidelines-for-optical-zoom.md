@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 This article describes Windows zooming and resizing elements and provides user experience guidelines for using these interaction mechanisms in your apps.
 
-> **Important APIs**: [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Input (XAML)**](/uwp/api/Windows.UI.Xaml.Input)
+> **Important APIs**: [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Input (XAML)**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input)
 
 Optical zoom lets users magnify their view of the content within a content area (it is performed on the content area itself), whereas resizing enables users to change the relative size of one or more objects without changing the view of the content area (it is performed on the objects within the content area).
 
@@ -44,7 +44,7 @@ Use the following guidelines for apps that support either resizing or optical zo
 -   If maximum and minimum size constraints or boundaries are defined, use visual feedback to demonstrate when the user reaches or exceeds those boundaries.
 -   Use snap points to influence zooming and resizing behavior by providing logical points at which to stop the manipulation and ensure a specific subset of content is displayed in the viewport. Provide snap points for common zoom levels or logical views to make it easier for a user to select those levels. For example, photo apps might provide a resizing snap point at 100% or, in the case of mapping apps, snap points might be useful at city, state, and country/region views.
 
-    Snap points enable users to be imprecise and still achieve their goals. If you're using XAML, see the snap points properties of [**ScrollViewer**](/uwp/api/Windows.UI.Xaml.Controls.ScrollViewer).
+    Snap points enable users to be imprecise and still achieve their goals. If you're using XAML, see the snap points properties of [**ScrollViewer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer).
 
     There are two types of snap-points:
 
