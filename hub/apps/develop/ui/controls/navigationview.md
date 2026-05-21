@@ -403,7 +403,7 @@ You can hide or disable the back button by setting these properties:
 
 This example shows how you can use NavigationView with both a top navigation pane on large window sizes and a left navigation pane on small window sizes. It can be adapted to left-only navigation by removing the *top* navigation settings in the VisualStateManager.
 
-The example demonstrates a common way to set up navigation data that will work for many scenarios. In this example, you first store (in the tag of the [NavigationViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the event handler, you unbox that value, turn it into a [Type]()(C#) or  [**Windows::UI::Xaml::Interop::TypeName**](/uwp/api/windows.ui.xaml.interop.typename)(C++/WinRT) object, and use that to navigate to the destination page. This lets you create unit tests to confirm that the values inside your tags are of a valid type. (Also see [Boxing and unboxing values to IInspectable with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)). It also demonstrates how to implement backwards navigation with NavigationView's back button.
+The example demonstrates a common way to set up navigation data that will work for many scenarios. In this example, you first store (in the tag of the [NavigationViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the event handler, you unbox that value, turn it into a [Type](/dotnet/api/system.type)(C#) or **Microsoft::UI::Xaml::Interop::TypeName** (C++/WinRT) object, and use that to navigate to the destination page. This lets you create unit tests to confirm that the values inside your tags are of a valid type. (Also see [Boxing and unboxing values to IInspectable with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing)). It also demonstrates how to implement backwards navigation with NavigationView's back button.
 
 This code assumes that your app contains pages with the following names to navigate to: *HomePage*, *AppsPage*, *GamesPage*, *MusicPage*, *MyContentPage*, and *SettingsPage*. Code for these pages is not shown.
 
@@ -597,7 +597,7 @@ runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
 
 // pch.h
 ...
-#include <winrt/Windows.UI.Xaml.Interop.h>
+#include <winrt/Microsoft.UI.Xaml.Interop.h>
 #include <winrt/Microsoft.UI.Xaml.Media.Animation.h>
 
 
@@ -635,7 +635,7 @@ namespace winrt::NavigationViewDemo::implementation
             muxc::NavigationView const& /* sender */,
             muxc::NavigationViewSelectionChangedEventArgs const& args);
         void NavView_Navigate(
-            Windows::UI::Xaml::Interop::TypeName navPageType,
+            Microsoft::UI::Xaml::Interop::TypeName navPageType,
             Microsoft::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo);
         void NavView_BackRequested(
             muxc::NavigationView const& /* sender */,
@@ -722,9 +722,9 @@ namespace winrt::NavigationViewDemo::implementation
         }
         else if (args.InvokedItemContainer())
         {
-            Windows::UI::Xaml::Interop::TypeName pageTypeName;
+            Microsoft::UI::Xaml::Interop::TypeName pageTypeName;
             pageTypeName.Name = unbox_value<hstring>(args.InvokedItemContainer().Tag());
-            pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+            pageTypeName.Kind = Microsoft::UI::Xaml::Interop::TypeKind::Primitive;
             NavView_Navigate(pageTypeName, args.RecommendedNavigationTransitionInfo());
         }
     }
@@ -743,20 +743,20 @@ namespace winrt::NavigationViewDemo::implementation
         }
         else if (args.SelectedItemContainer())
         {
-            Windows::UI::Xaml::Interop::TypeName pageTypeName;
+            Microsoft::UI::Xaml::Interop::TypeName pageTypeName;
             pageTypeName.Name = unbox_value<hstring>(args.SelectedItemContainer().Tag());
-            pageTypeName.Kind = Windows::UI::Xaml::Interop::TypeKind::Primitive;
+            pageTypeName.Kind = Microsoft::UI::Xaml::Interop::TypeKind::Primitive;
             NavView_Navigate(pageTypeName, args.RecommendedNavigationTransitionInfo());
         }
     }
 
     void MainPage::NavView_Navigate(
-        Windows::UI::Xaml::Interop::TypeName navPageType,
+        Microsoft::UI::Xaml::Interop::TypeName navPageType,
         Microsoft::UI::Xaml::Media::Animation::NavigationTransitionInfo const& transitionInfo)
     {
         // Get the page type before navigation so you can prevent duplicate
         // entries in the backstack.
-        Windows::UI::Xaml::Interop::TypeName preNavPageType =
+        Microsoft::UI::Xaml::Interop::TypeName preNavPageType =
             ContentFrame().CurrentSourcePageType();
 
         // Navigate only if the selected page isn't currently loaded.
@@ -1068,7 +1068,7 @@ import "Category.idl";
 namespace HierarchicalNavigationViewDataBinding
 {
     [default_interface]
-    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
     {
         MainPage();
         Windows.Foundation.Collections.IObservableVector<Category> Categories{ get; };

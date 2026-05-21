@@ -1,5 +1,5 @@
 ---
-description: Learn about collections and lists as representations of multiple related data items that appear together. 
+description: Learn about collections and lists as representations of multiple related data items that appear together.
 title: Collections and lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
@@ -210,7 +210,7 @@ Use an ItemsRepeater if:
 
 ### Examples
 
-The following three examples are all ItemsRepeater controls that are bound to the same data source (a collection of numbers). The collection of numbers is represented in three ways, with each of the ItemsRepeaters below using a different custom [Layout](/uwp/api/microsoft.ui.xaml.controls.layout) and a different custom [ItemTemplate](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate).
+The following three examples are all ItemsRepeater controls that are bound to the same data source (a collection of numbers). The collection of numbers is represented in three ways, with each of the ItemsRepeaters below using a different custom [Layout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layout) and a different custom [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater.itemtemplate).
 
 ![ItemsRepeater with horizontal bars](images/itemsrepeater-1.png)
 ![ItemsRepeater with vertical bars](images/itemsrepeater-2.png)

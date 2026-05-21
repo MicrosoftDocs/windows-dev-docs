@@ -187,8 +187,8 @@ A related concept is the Calendar class, which influences how dates are interpre
 ## Get the sample code
 
 - [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
-- [Calendar sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Calendar)
-- [Date and time formatting sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/DateTimeFormatting)
+- [Calendar view sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ControlPages/CalendarViewPage.xaml)
+- [DatePicker sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ControlPages/DatePickerPage.xaml)
 
 ## Related topics
 

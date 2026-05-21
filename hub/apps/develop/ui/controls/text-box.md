@@ -217,12 +217,12 @@ textBox.Text = "Sample Text";
 textBox.IsReadOnly = true;
 textBox.FontFamily = new FontFamily("Verdana");
 textBox.FontSize = 24;
-textBox.FontWeight = Windows.UI.Text.FontWeights.Bold;
-textBox.FontStyle = Windows.UI.Text.FontStyle.Italic;
+textBox.FontWeight = Microsoft.UI.Text.FontWeights.Bold;
+textBox.FontStyle = Microsoft.UI.Text.FontStyle.Italic;
 textBox.CharacterSpacing = 200;
 textBox.Width = 300;
-textBox.Background = new SolidColorBrush(Windows.UI.Colors.Beige);
-textBox.Foreground = new SolidColorBrush(Windows.UI.Colors.Blue);
+textBox.Background = new SolidColorBrush(Microsoft.UI.Colors.Beige);
+textBox.Foreground = new SolidColorBrush(Microsoft.UI.Colors.Blue);
 // Add the TextBox to the visual tree.
 rootGrid.Children.Add(textBox);
 ```

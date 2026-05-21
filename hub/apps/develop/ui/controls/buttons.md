@@ -277,7 +277,7 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 {
     var option = ((MenuFlyoutItem)sender).Tag.ToString();
 
-    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
     if (selectedText != null)
     {
         // Apply the alignment to the selected paragraphs.
@@ -403,10 +403,10 @@ public sealed partial class MainPage : Page
     private void ChangeColor()
     {
         // Apply the color to the selected text in a RichEditBox.
-        Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+        Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
         if (selectedText != null)
         {
-            Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+            Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
             charFormatting.ForegroundColor = CurrentColorBrush.Color;
             selectedText.CharacterFormat = charFormatting;
         }
@@ -522,7 +522,7 @@ private void ListStylesListView_SelectionChanged(object sender, SelectionChanged
 
 private void ApplyListStyle(string listStyle)
 {
-    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
     if (selectedText != null)
     {
         // Apply the list style to the selected text.
