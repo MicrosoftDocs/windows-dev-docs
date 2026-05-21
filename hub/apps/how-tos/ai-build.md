@@ -2,7 +2,7 @@
 title: "Tutorial: Build a Windows app with GitHub Copilot"
 description: A step-by-step tutorial for building a WinUI 3 Windows app using GitHub Copilot, the WinUI 3 plugin, and the Microsoft Learn MCP server.
 ms.topic: tutorial
-ms.date: 03/10/2026
+ms.date: 05/19/2026
 ms.author: jken
 author: GrantMeStrength
 keywords: windows, github copilot, winui, tutorial, agent mode, mcp server
@@ -172,7 +172,7 @@ No internet connection required. No API key. The model runs on their PC — fast
 > [!div class="nextstepaction"]
 > [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
 
-- [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md)
+- [Agentic tools overview](../develop/ai-assisted/index.md)
 - [Foundry Local overview](/windows/ai/foundry-local/get-started) — run any model locally on Windows
 - [Phi Silica](/windows/ai/apis/phi-silica) — NPU-accelerated inference on Copilot+ PCs
 - [Windows AI APIs overview](/windows/ai/)

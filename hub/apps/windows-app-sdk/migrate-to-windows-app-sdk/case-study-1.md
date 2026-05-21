@@ -127,7 +127,7 @@ public partial class App : Application
 
 ## Migrate the LoadedImageBrush model
 
-**LoadedImageBrush** is a specialization of [**XamlCompositionBrushBase**](/uwp/api/windows.ui.xaml.media.xamlcompositionbrushbase). The *PhotoLab* sample app uses the **LoadedImageBrush** class to apply effects to photos.
+**LoadedImageBrush** is a specialization of [**XamlCompositionBrushBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase). The *PhotoLab* sample app uses the **LoadedImageBrush** class to apply effects to photos.
 
 ### Reference the Win2D NuGet package
 

@@ -53,23 +53,23 @@ The 2D inner navigation region of a control, or control group, is referred to as
 ![directional area](images/keyboard/directional-area-small.png)
 *2D Inner navigation region, or directional area, of a control group*
 
-You can use the [XYFocusKeyboardNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_XYFocusKeyboardNavigation) property (which has possible values of [Auto](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode), [Enabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode), or [Disabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)) to manage 2D inner navigation with the keyboard arrow keys.
+You can use the [XYFocusKeyboardNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement#Microsoft_UI_Xaml_UIElement_XYFocusKeyboardNavigation) property (which has possible values of [Auto](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode), [Enabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode), or [Disabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode)) to manage 2D inner navigation with the keyboard arrow keys.
 
 > [!NOTE]
-> Tab order is not affected by this property. To avoid a confusing navigation experience, we recommend that child elements of a directional area *not* be explicitly specified in the tab navigation order of your application. See the [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) and [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) properties for more detail on tabbing behavior for an element.
+> Tab order is not affected by this property. To avoid a confusing navigation experience, we recommend that child elements of a directional area *not* be explicitly specified in the tab navigation order of your application. See the [UIElement.TabFocusNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement#Microsoft_UI_Xaml_UIElement_TabFocusNavigation) and [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_TabIndex) properties for more detail on tabbing behavior for an element.
 
-### [Auto](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode) (default behavior)
+### [Auto](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode) (default behavior)
 
 When set to Auto, directional navigation behavior is determined by the element’s ancestry, or inheritance hierarchy. If all ancestors are in default mode (set to **Auto**), directional navigation with the keyboard is *not* supported.
 
-### [Disabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### [Disabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
 Set **XYFocusKeyboardNavigation** to **Disabled** to block directional navigation to the control and its child elements.
 
 ![XYFocusKeyboardNavigation disabled behavior](images/keyboard/xyfocuskeyboardnav-disabled.gif)
 *XYFocusKeyboardNavigation disabled behavior*
 
-In this example, the primary [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) has **XYFocusKeyboardNavigation** set to **Enabled**. All child elements inherit this setting, and can be navigated to with the arrow keys. However, the B3 and B4 elements are in a secondary [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) with **XYFocusKeyboardNavigation** set to **Disabled**, which overrides the primary container and disables arrow key navigation to itself and between its child elements.
+In this example, the primary [StackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) (ContainerPrimary) has **XYFocusKeyboardNavigation** set to **Enabled**. All child elements inherit this setting, and can be navigated to with the arrow keys. However, the B3 and B4 elements are in a secondary [StackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) (ContainerSecondary) with **XYFocusKeyboardNavigation** set to **Disabled**, which overrides the primary container and disables arrow key navigation to itself and between its child elements.
 
 ```XAML
 <Grid 
@@ -117,16 +117,16 @@ In this example, the primary [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.Stac
 </Grid>
 ```
 
-### [Enabled](/uwp/api/windows.ui.xaml.input.xyfocuskeyboardnavigationmode)
+### [Enabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode)
 
-Set **XYFocusKeyboardNavigation** to **Enabled** to support 2D directional navigation to a control and each of its [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) child objects.
+Set **XYFocusKeyboardNavigation** to **Enabled** to support 2D directional navigation to a control and each of its [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) child objects.
 
 When set, navigation with the arrow keys is restricted to elements within the directional area. Tab navigation is not affected, as all controls remain accessible through their tab order hierarchy.
 
 ![XYFocusKeyboardNavigation enabled behavior](images/keyboard/xyfocuskeyboardnav-enabled.gif)
 *XYFocusKeyboardNavigation enabled behavior*
 
-In this example, the primary [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerPrimary) has **XYFocusKeyboardNavigation** set to **Enabled**. All child elements inherit this setting, and can be navigated to with the arrow keys. The B3 and B4 elements are in a secondary [StackPanel](/uwp/api/Windows.UI.Xaml.Controls.StackPanel) (ContainerSecondary) where **XYFocusKeyboardNavigation** is not set, which then inherits the primary container setting. The B5 element is not within a declared directional area, and does not support arrow key navigation but does support standard tab navigation behavior.
+In this example, the primary [StackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) (ContainerPrimary) has **XYFocusKeyboardNavigation** set to **Enabled**. All child elements inherit this setting, and can be navigated to with the arrow keys. The B3 and B4 elements are in a secondary [StackPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) (ContainerSecondary) where **XYFocusKeyboardNavigation** is not set, which then inherits the primary container setting. The B5 element is not within a declared directional area, and does not support arrow key navigation but does support standard tab navigation behavior.
 
 ```xaml
 <Grid
@@ -203,7 +203,7 @@ Here’s a more complex example of three nested directional areas where:
 
 While the arrow keys can be used for 2D directional navigation witin a control, or control group, the Tab key can be used to navigate between all controls in a Windows application. 
 
-All interactive controls support Tab key navigation by default ([IsEnabled](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_IsEnabled) and [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) property are **true**), with the logical tab order derived from the control layout in your application. However, the default order does not necessarily correspond to the visual order. The actual display position might depend on the parent layout container and certain properties that you can set on the child elements to influence the layout.
+All interactive controls support Tab key navigation by default ([IsEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_IsEnabled) and [IsTabStop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Control#Microsoft_UI_Xaml_Controls_Control_IsTabStop) property are **true**), with the logical tab order derived from the control layout in your application. However, the default order does not necessarily correspond to the visual order. The actual display position might depend on the parent layout container and certain properties that you can set on the child elements to influence the layout.
 
 Avoid a custom tab order that makes the focus jump around in your application. For example, a list of controls in a form should have a tab order that flows from top to bottom and left to right (depending on locale).
 
@@ -211,17 +211,17 @@ In this section we describe how this tab order can be fully customized to suit y
 
 ### Set the tab navigation behavior
 
-The [TabFocusNavigation](/uwp/api/Windows.UI.Xaml.UIElement#Windows_UI_Xaml_UIElement_TabFocusNavigation)
-property of [UIElement](/uwp/api/Windows.UI.Xaml.UIElement) specifies the tab navigation behavior for its entire object tree (or directional area).
+The [TabFocusNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement#Microsoft_UI_Xaml_UIElement_TabFocusNavigation)
+property of [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) specifies the tab navigation behavior for its entire object tree (or directional area).
 
 > [!NOTE]
-> Use this property instead of the [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation) property for objects that do not use a [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) to define their appearance.
+> Use this property instead of the [Control.TabNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_TabNavigation) property for objects that do not use a [ControlTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.controltemplate) to define their appearance.
 
-As we mentioned in the previous section, to avoid a confusing navigation experience, we recommend that child elements of a directional area *not* be explicitly specified in the tab navigation order of your application. See the [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) and the [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) properties for more detail on tabbing behavior for an element.   
-> For versions older than Windows 10 Creators Update (build 10.0.15063), tab settings were limited to [ControlTemplate](/uwp/api/windows.ui.xaml.controls.controltemplate) objects. For more info, see [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation).
+As we mentioned in the previous section, to avoid a confusing navigation experience, we recommend that child elements of a directional area *not* be explicitly specified in the tab navigation order of your application. See the [UIElement.TabFocusNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement#Microsoft_UI_Xaml_UIElement_TabFocusNavigation) and the [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_TabIndex) properties for more detail on tabbing behavior for an element.   
+> For versions older than Windows 10 Creators Update (build 10.0.15063), tab settings were limited to [ControlTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.controltemplate) objects. For more info, see [Control.TabNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_TabNavigation).
 
-[TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation)
-has a value of type [KeyboardNavigationMode](/uwp/api/windows.ui.xaml.input.keyboardnavigationmode) with the following possible values (note that these examples are not custom control groups and do not require inner navigation with the arrow keys):
+[TabFocusNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement#Microsoft_UI_Xaml_UIElement_TabFocusNavigation)
+has a value of type [KeyboardNavigationMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.keyboardnavigationmode) with the following possible values (note that these examples are not custom control groups and do not require inner navigation with the arrow keys):
 
 - **Local** (default)	
   Tab indexes are recognized on the local subtree inside the container. For this example, the tab order is B1, B2, B3, B4, B5, B6, B7, B1.
@@ -312,23 +312,23 @@ Here's the code for the preceding examples (with TabFocusNavigation ="Cycle").
 </Grid>
 ```
 
-### [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex)
+### [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_TabIndex)
 
-Use [TabIndex](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabIndex) to specify the order in which elements receive focus when the user navigates through controls using the Tab key. A control with a lower tab index receives focus before a control with a higher index.
+Use [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_TabIndex) to specify the order in which elements receive focus when the user navigates through controls using the Tab key. A control with a lower tab index receives focus before a control with a higher index.
 
-When a control has no [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) specified, it is assigned a higher index value than the current highest index value (and the lowest priority) of all interactive controls in the visual tree, based on scope. 
+When a control has no [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Control#Microsoft_UI_Xaml_Controls_Control_TabIndex) specified, it is assigned a higher index value than the current highest index value (and the lowest priority) of all interactive controls in the visual tree, based on scope. 
 
 All child elements of a control are considered a scope, and if one of these elements also has child elements, they are considered another scope. Any ambiguity is resolved by choosing the first element on the visual tree of the scope. 
 
-To exclude a control from the tab order, set the [IsTabStop](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_IsTabStop) property to **false**.
+To exclude a control from the tab order, set the [IsTabStop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Control#Microsoft_UI_Xaml_Controls_Control_IsTabStop) property to **false**.
 
-Override the default tab order by setting the [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) property.
+Override the default tab order by setting the [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Control#Microsoft_UI_Xaml_Controls_Control_TabIndex) property.
 
 > [!NOTE] 
-> [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) works the same way with both [UIElement.TabFocusNavigation](/uwp/api/windows.ui.xaml.uielement#Windows_UI_Xaml_UIElement_TabFocusNavigation) and [Control.TabNavigation](/uwp/api/windows.ui.xaml.controls.control#Windows_UI_Xaml_Controls_Control_TabNavigation).
+> [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Control#Microsoft_UI_Xaml_Controls_Control_TabIndex) works the same way with both [UIElement.TabFocusNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement#Microsoft_UI_Xaml_UIElement_TabFocusNavigation) and [Control.TabNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control#Microsoft_UI_Xaml_Controls_Control_TabNavigation).
 
 
-Here, we show how focus navigation can be affected by the [TabIndex](/uwp/api/Windows.UI.Xaml.Controls.Control#Windows_UI_Xaml_Controls_Control_TabIndex) property on specific elements. 
+Here, we show how focus navigation can be affected by the [TabIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Control#Microsoft_UI_Xaml_Controls_Control_TabIndex) property on specific elements. 
 
 !["Local" tab navigation with TabIndex behavior](images/keyboard/tabnav-tabindex.gif)
 
@@ -432,7 +432,7 @@ The following navigation strategy properties let you influence which control rec
 -   XYFocusLeftNavigationStrategy
 -   XYFocusRightNavigationStrategy
 
-These properties have possible values of [Auto](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy) (default), [NavigationDirectionDistance](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy), [Projection](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy), or [RectilinearDistance ](/uwp/api/windows.ui.xaml.input.xyfocusnavigationstrategy).
+These properties have possible values of [Auto](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocusnavigationstrategy) (default), [NavigationDirectionDistance](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocusnavigationstrategy), [Projection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocusnavigationstrategy), or [RectilinearDistance ](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocusnavigationstrategy).
 
 If set to **Auto**, the behavior of the element is based on the ancestors of the element. If all elements are set to **Auto**, **Projection** is used.
 

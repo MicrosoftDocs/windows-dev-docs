@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Connect to remote cameras
 
-This article shows you how to connect to one or more remote cameras and get a [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) object that allows you to read frames from each camera. For more information on reading frames from a media source, see [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md). For more information on pairing with devices, see [Pair devices](/windows/uwp/devices-sensors/pair-devices).
+This article shows you how to connect to one or more remote cameras and get a [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) object that allows you to read frames from each camera. For more information on reading frames from a media source, see [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md). For more information on pairing with devices, see [Pair devices](/windows/apps/develop/devices-sensors/pair-devices).
 
 > [!NOTE] 
 > The features discussed in this article are available starting with Windows 10, version 1903.

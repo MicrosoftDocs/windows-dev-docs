@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Provides information about what's new in Windows App SDK 2.0.
 ms.topic: release-notes
-ms.date: 04/29/2026
+ms.date: 05/21/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -14,7 +14,139 @@ zone_pivot_groups: wasdk-release-channels
 
 :::zone pivot="stable"
 
-## Version 2.0 stable GA (2.0.1)
+## Version 2.1.3
+
+Released: **May 21, 2026** <br><br>
+
+<details><summary>TitleBar Content Custom Drag Regions</summary>
+
+>
+> Improves how `TitleBar` decides which parts of `TitleBar.Content` are draggable, and adds APIs that give developers explicit control over drag regions. See PR [microsoft/microsoft-ui-xaml#10936](https://github.com/microsoft/microsoft-ui-xaml/pull/10936) and tracking issue [#10421](https://github.com/microsoft/microsoft-ui-xaml/issues/10421).
+>
+> **What changed**
+>
+> - **New default behavior** — The framework now recursively walks the visual tree and automatically excludes only **interactive controls** from the drag region. Empty gaps and non‑interactive visuals are **draggable by default**, with no markup changes required.
+> - **New APIs for explicit control:**
+>   - `TitleBar.IsDragRegion` — attached nullable bool to mark an element as draggable (`True`), clickable (`False`), or framework‑decided (unset).
+>   - `TitleBar.AutoRefreshDragRegions` — when `True`, drag regions refresh automatically on layout updates.
+>   - `TitleBar.RecomputeDragRegions()` — manually recomputes drag regions after dynamic content changes.
+>
+> **Why**
+>
+> Custom title bars often mix interactive controls with non‑interactive visuals inside `Grid`/`StackPanel` layouts. The previous "punch holes out of the full content area" approach left **unexpected non‑draggable gaps** in layouts with empty space, uneven spacing, or dynamic UI.
+>
+> **Visual comparison**
+>
+> *Default (previous) behavior — non‑draggable gaps:*
+>
+> ![Default behavior — non-draggable gaps](https://github.com/microsoft/microsoft-ui-xaml/raw/51babd8a0fb42cac339f504e5a821eb7fb58b7c9/specs/TitleBar/images/titlebar-drag-issue.png)
+>
+> The empty middle area is **not** draggable.
+>
+> *Current (new) behavior — gaps draggable, interactive controls excluded:*
+>
+> ![Current behavior — fixed drag regions](https://github.com/microsoft/microsoft-ui-xaml/raw/51babd8a0fb42cac339f504e5a821eb7fb58b7c9/specs/TitleBar/images/titlebar-drag-issue-fixed.png)
+>
+> The empty space is draggable; interactive controls are correctly excluded. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): TitleBar_ContentDragRegions)
+>
+
+</details>
+
+<details><summary>LoRA API Promoted to Stable</summary>
+
+>
+> The Low-Rank Adapter (LoRA) API for Phi Silica has been promoted to stable.
+>
+> LoRA allows developers to fine-tune the on-device Phi Silica language model with their own custom data, aligning output for specific scenarios such as finance, medical, and education. Load an adapter with `LanguageModelLowRankAdapter.CreateFromPath` and pass it via `LanguageModelOptions.LowRankAdapter` when calling `GenerateResponseAsync`. See [Phi Silica LoRA](/windows/ai/apis/phi-silica-lora) for details.
+>
+
+</details>
+
+<details><summary>New AICapabilities API</summary>
+
+>
+> A new **AICapabilities.HasAICapability** API enables third-party applications to determine whether the device is a Copilot+ PC.
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.24.6. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info.
+>
+
+</details>
+
+<details><summary>Windows ML</summary>
+
+>
+> - Added support for multiple execution providers within a single MSIX package. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsML_MultiEpPerPackage)
+> - Added support for discovering execution providers delivered as framework packages. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsML_FrameworkEpEnumeration)
+> - Added execution provider selection mode for flexible deployment configurations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsML_EpSelectionMode)
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed a memory leak in `ItemsRepeater` where recycled elements were never garbage collected due to a reference cycle through the `RecyclePool`, which could also cause crashes in `InvalidateChildrenMeasure`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ItemTemplateWrapper_RecyclePoolLeak)
+> - Fixed a crash where an implicit Show/Hide animation completion callback could access a destroyed `CUIElement`, causing an access violation. The callback now uses a weak reference to safely handle the case where the element is destroyed before the animation completes. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Animation_FixImplicitHideAnimationCrash)
+> - Fixed an issue where windowed popup content opened in a XAML Island did not respect `OverrideScale`, causing content to appear oversized and clipped. For more info, see GitHub issue [#11000](https://github.com/microsoft/microsoft-ui-xaml/issues/11000). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Popup_WindowedPopupOverrideScale)
+> - Fixed a fail-fast crash caused by re-entrant dispatch during cross-apartment COM release operations in `UIAffinityReleaseQueue::DoCleanup`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): UIAffinityReleaseQueue_PauseDispatchDuringCleanup)
+> - WinUI: Fixed ambiguous module lookup when multiple modules with the same name are loaded in the same process. `GetModuleHandleW` has been replaced with `GetModuleHandleExW` so the correct module is resolved by address. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): GetModuleHandle_FixAmbiguousModuleLookup)
+> - Fixed an integer divide-by-zero crash in `UniformGridLayout::GetMajorSize` when an `ItemsRepeater` is laid out in an available width narrower than one item's minor stride. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): UniformGridLayout_GetItemsPerLineDivideByZero)
+> - Fixed a potential crash when a package has been uninstalled prior to being processed. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): PackageManager_FixCrash)
+> - Fixed an issue where `GetReadyState` could return incorrect error codes (for example, `DisabledByUser` or `NotSupportedOnCurrentSystem`) when required packages were not yet deployed. The API now correctly reports `NotReady` in this scenario, improving diagnostic clarity. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModelInitialization_GetReadyStateAvailabilityGuard)
+> - Improved internal performance diagnostics for `LanguageModel.GenerateResponseAsync` to better identify sources of latency before the first token is returned. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModelInsights_GetPartialResultLatency)
+> - Fixed an issue where XAML compiler errors were silently lost when using `dotnet build`, showing only `MSB3073: exited with code 1` instead of the actual error messages. For more info, see GitHub issue [#9813](https://github.com/microsoft/microsoft-ui-xaml/issues/9813). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build-time XAML compiler tooling change)
+> - Fixed an issue where `Microsoft.Windows.Workloads.dll` failed to load on Windows builds prior to 22000 due to static imports of Dynamic Dependencies APIs unavailable on those OS versions. The functions are now resolved dynamically, so failures on unsupported OS versions surface as a normal `HRESULT` instead of a loader error dialog. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, no containment)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 2.0.1 release:
+>
+> ```
+> Microsoft.UI.Xaml.Controls
+>
+>     TitleBar
+>         AutoRefreshDragRegions
+>         AutoRefreshDragRegionsProperty
+>         GetIsDragRegion
+>         IsDragRegionProperty
+>         RecomputeDragRegions
+>         SetIsDragRegion
+> ```
+ > ```
+> Microsoft.Windows.AI
+>
+>     AICapabilities
+>
+>     AICapabilityCategory
+> ```
+ > ```
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModelLowRankAdapter
+>
+>     LanguageModelLowRankAdapterResult
+>
+>     LanguageModelOptions
+>         LowRankAdapter
+>
+>     LanguageModelResponseStatus
+>         IncompatibleLowRankAdapter
+> ```
+>
+
+</details>
+
+## Version 2.0 stable (2.0.1)
 
 Released: **April 29, 2026**
 
@@ -660,6 +792,73 @@ Released: **February 13, 2026** <br><br>
 :::zone-end
 
 :::zone pivot="experimental"
+
+## Version 2.1 Experimental 8 (2.1.4-Experimental8)
+
+Released: **May 21, 2026**
+
+This experimental release ships alongside [Windows App SDK 2.1.3 stable](#version-213-213) and generally brings over the changes from that release; see the [2.1.3 stable notes](#version-213-213) for those details. The sections below describe the experimental-only additions.
+<br><br>
+
+<details><summary>Strongly typed result and status for structured JSON responses [Experimental]</summary>
+
+>
+> [`LanguageModelExperimental.GenerateStructuredJsonResponseAsync`](/windows/ai/apis/phi-silica-structured-output) (introduced in 2.0 Experimental 7) now returns a dedicated **`GenerateStructuredJsonResponseResult`** type with a **`GenerateStructuredJsonResponseStatus`** property, instead of the generic `LanguageModelResponseResult` / `LanguageModelResponseStatus` pair. The new status enum is specific to schema-constrained generation: it includes a `ResponseInvalidJson` value for the case where the model output did not satisfy the requested JSON schema, separate from generic language-model response failures.
+>
+> As part of this split, the `ResponseInvalidJson` value has been **removed** from the stable `LanguageModelResponseStatus` enum (where it had previously been added to support structured JSON output). Apps that handled `ResponseInvalidJson` from `LanguageModelResponseStatus` should move that handling onto the new `GenerateStructuredJsonResponseStatus` returned by `GenerateStructuredJsonResponseAsync`. Other callers of `LanguageModelResponseStatus` no longer need to account for a JSON-specific failure value.
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the **[2.0 Experimental 7](#version-20-experimental-7-200-experimental7)** release:
+>
+> ```
+> Microsoft.UI.Xaml.Controls
+>
+>     TitleBar
+>         AutoRefreshDragRegions
+>         AutoRefreshDragRegionsProperty
+>         GetIsDragRegion
+>         IsDragRegionProperty
+>         RecomputeDragRegions
+>         SetIsDragRegion
+> ```
+> ```
+> Microsoft.Windows.AI
+>
+>     AICapabilities
+>
+>     AICapabilityCategory
+> ```
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModelLowRankAdapter
+>
+>     LanguageModelLowRankAdapterResult
+>
+>     LanguageModelOptions
+>         LowRankAdapter
+>
+>     LanguageModelResponseStatus
+>         IncompatibleLowRankAdapter
+> ```
+> ```
+> Microsoft.Windows.AI.Text.Experimental
+>
+>     GenerateStructuredJsonResponseResult
+>
+>     GenerateStructuredJsonResponseStatus
+>
+>     LanguageModelOptionsExperimental
+>         LowRankAdapter [Experimental]
+> ```
+>
+
+</details>
 
 ## Version 2.0 Experimental 7 (2.0.0-Experimental7)
 

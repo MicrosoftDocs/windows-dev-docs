@@ -11789,6 +11789,266 @@
       "source_path": "hub/apps/design/devices/designing-for-MR.md",
       "redirect_url": "/windows/apps/design/guidelines-overview",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/enable-device-capabilities.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/enable-device-capabilities",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/enable-usermode-access.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/enable-usermode-access",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/enumerate-devices.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/enumerate-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/build-a-device-selector.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/build-a-device-selector",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/enumerate-devices-over-a-network.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/enumerate-devices-over-a-network",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/device-information-properties.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/device-information-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/aep-service-class-ids.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/aep-service-class-ids",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pair-devices.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pair-devices",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pairing-a-set.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pairing-a-set",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/lighting-dynamic-lamparray.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/lighting-dynamic-lamparray",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/get-battery-info.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/get-battery-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/sensors.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/calibrate-sensors.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/calibrate-sensors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/sensor-orientation.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/sensor-orientation",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/use-the-accelerometer.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/use-the-accelerometer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/use-the-compass.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/use-the-compass",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/use-the-gyrometer.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/use-the-gyrometer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/use-the-inclinometer.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/use-the-inclinometer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/use-the-light-sensor.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/use-the-light-sensor",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/use-the-orientation-sensor.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/use-the-orientation-sensor",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/bluetooth-low-energy-overview.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/bluetooth-low-energy-overview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/gatt-client.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/gatt-client",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/gatt-server.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/gatt-server",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/ble-beacon.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/ble-beacon",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/bluetooth-dev-faq.yml",
+      "redirect_url": "/windows/apps/develop/devices-sensors/bluetooth-dev-faq",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/bluetooth.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/bluetooth",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/send-or-receive-files-with-rfcomm.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/send-or-receive-files-with-rfcomm",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/point-of-service.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/point-of-service",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-barcodescanner-configure.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/barcodescanner-configure",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-barcodescanner-scan-data.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/barcodescanner-scan-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-barcodescanner-software-trigger.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/barcodescanner-software-trigger",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-barcodescanner-symbologies.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/barcodescanner-symbologies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-barcodescanner.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/barcodescanner",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-basics-capability.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/basics-capability",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-basics-claim.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/basics-claim",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-basics-deviceobject.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/basics-deviceobject",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-basics-enumerating.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/basics-enumerating",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-basics-sharing.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/basics-sharing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-basics.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/basics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-camerabarcode-advancedconfig.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/camerabarcode-advancedconfig",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-camerabarcode-enable-disable.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/camerabarcode-enable-disable",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-camerabarcode-get-started.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/camerabarcode-get-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-camerabarcode-hosting-preview.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/camerabarcode-hosting-preview",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-camerabarcode-symbologies.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/camerabarcode-symbologies",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-camerabarcode-system-requirements.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/camerabarcode-system-requirements",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-camerabarcode.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/camerabarcode",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-device-support.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/device-support",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-get-started.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/get-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-magnetic-stripe-reader-data.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/magnetic-stripe-reader-data",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-magnetic-stripe-reader.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/magnetic-stripe-reader",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/pos-printer.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/printer",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/devices-sensors/epson-esc-pos-with-formatting.md",
+      "redirect_url": "/windows/apps/develop/devices-sensors/pos/epson-esc-pos-with-formatting",
+      "redirect_document_id": false
     }
   ]
 }

@@ -107,7 +107,7 @@ The application decides on the frequency of redrawing. In the same manner as usi
 ```csharp
 canvasSwapChainPanel.SizeChanged += canvasSwapChainPanel_SizeChanged;
 
-void canvasSwapChainPanel_SizeChanged(object sender, Windows.UI.Xaml.SizeChangedEventArgs e)
+void canvasSwapChainPanel_SizeChanged(object sender, Microsoft.UI.Xaml.SizeChangedEventArgs e)
 {
     canvasSwapChainPanel.SwapChain.ResizeBuffers(e.NewSize);
 }
