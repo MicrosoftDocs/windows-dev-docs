@@ -793,6 +793,73 @@ Released: **February 13, 2026** <br><br>
 
 :::zone pivot="experimental"
 
+## Version 2.1 Experimental 8 (2.1.4-Experimental8)
+
+Released: **May 21, 2026**
+
+This experimental release ships alongside [Windows App SDK 2.1.3 stable](#version-213-213) and generally brings over the changes from that release; see the [2.1.3 stable notes](#version-213-213) for those details. The sections below describe the experimental-only additions.
+<br><br>
+
+<details><summary>Strongly typed result and status for structured JSON responses [Experimental]</summary>
+
+>
+> [`LanguageModelExperimental.GenerateStructuredJsonResponseAsync`](/windows/ai/apis/phi-silica-structured-output) (introduced in 2.0 Experimental 7) now returns a dedicated **`GenerateStructuredJsonResponseResult`** type with a **`GenerateStructuredJsonResponseStatus`** property, instead of the generic `LanguageModelResponseResult` / `LanguageModelResponseStatus` pair. The new status enum is specific to schema-constrained generation: it includes a `ResponseInvalidJson` value for the case where the model output did not satisfy the requested JSON schema, separate from generic language-model response failures.
+>
+> As part of this split, the `ResponseInvalidJson` value has been **removed** from the stable `LanguageModelResponseStatus` enum (where it had previously been added to support structured JSON output). Apps that handled `ResponseInvalidJson` from `LanguageModelResponseStatus` should move that handling onto the new `GenerateStructuredJsonResponseStatus` returned by `GenerateStructuredJsonResponseAsync`. Other callers of `LanguageModelResponseStatus` no longer need to account for a JSON-specific failure value.
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the **[2.0 Experimental 7](#version-20-experimental-7-200-experimental7)** release:
+>
+> ```
+> Microsoft.UI.Xaml.Controls
+>
+>     TitleBar
+>         AutoRefreshDragRegions
+>         AutoRefreshDragRegionsProperty
+>         GetIsDragRegion
+>         IsDragRegionProperty
+>         RecomputeDragRegions
+>         SetIsDragRegion
+> ```
+> ```
+> Microsoft.Windows.AI
+>
+>     AICapabilities
+>
+>     AICapabilityCategory
+> ```
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModelLowRankAdapter
+>
+>     LanguageModelLowRankAdapterResult
+>
+>     LanguageModelOptions
+>         LowRankAdapter
+>
+>     LanguageModelResponseStatus
+>         IncompatibleLowRankAdapter
+> ```
+> ```
+> Microsoft.Windows.AI.Text.Experimental
+>
+>     GenerateStructuredJsonResponseResult
+>
+>     GenerateStructuredJsonResponseStatus
+>
+>     LanguageModelOptionsExperimental
+>         LowRankAdapter [Experimental]
+> ```
+>
+
+</details>
+
 ## Version 2.0 Experimental 7 (2.0.0-Experimental7)
 
 Released: **April 21, 2026** <br><br>
