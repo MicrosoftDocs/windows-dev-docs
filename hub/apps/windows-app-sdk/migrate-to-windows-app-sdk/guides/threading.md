@@ -123,7 +123,7 @@ void MainPage::NotifyUser(std::wstring strMessage)
 }
 ```
 
-In your Windows App SDK app, use the [Microsoft.UI.Dispatching.DispatcherQueue.TryEnqueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue)) method instead. It adds to the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) a task that will be executed on the thread associated with the **DispatcherQueue**.
+In your Windows App SDK app, use the [Microsoft.UI.Dispatching.DispatcherQueue.TryEnqueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method instead. It adds to the [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) a task that will be executed on the thread associated with the **DispatcherQueue**.
 
 ```csharp
 // MainPage.xaml.cs in a Windows App SDK app
