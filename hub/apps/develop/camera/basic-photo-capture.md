@@ -23,7 +23,7 @@ The [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) class
 
 Capture a photo to a **SoftwareBitmap** using the [**LowLagPhotoCapture**](/uwp/api/Windows.Media.Capture.LowLagPhotoCapture) class. Get an instance of this class by calling [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync), passing in an [**ImageEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) object specifying the image format you want. [**CreateUncompressed**](/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed) creates an uncompressed encoding with the specified pixel format. Initiate photo capture by calling [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync), which returns a [**CapturedPhoto**](/uwp/api/Windows.Media.Capture.CapturedPhoto) object. Get a **SoftwareBitmap** by accessing the [**Frame**](/uwp/api/windows.media.capture.capturedphoto.frame) property and then the [**SoftwareBitmap**](/uwp/api/windows.media.capture.capturedframe.softwarebitmap) property.
 
-You can capture multiple photos by repeatedly calling **CaptureAsync**. When you are done capturing, call [**FinishAsync**](/uwp/api/windows.media.capture.advancedphotocapture.finishasync) to shut down the **LowLagPhotoCapture** session and free up the associated resources. After calling **FinishAsync**, to begin capturing photos again you will need to call [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) again to reinitialize the capture session before calling [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync).
+You can capture multiple photos by repeatedly calling **CaptureAsync**. When you are done capturing, call [**FinishAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.finishasync) to shut down the **LowLagPhotoCapture** session and free up the associated resources. After calling **FinishAsync**, to begin capturing photos again you will need to call [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) again to reinitialize the capture session before calling [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraLowLagPhotoCapture":::
 
@@ -94,7 +94,7 @@ You can quickly add audio capture to your app by using the same technique shown 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStartAudioCapture":::
 
 
-Call [**StopAsync**](/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync) to stop the audio recording.
+Call [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) to stop the audio recording.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStopAudioCapture":::
 
