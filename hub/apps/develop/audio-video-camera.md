@@ -10,6 +10,9 @@ keywords:
 
 This article provides an index of development features that are related to scenarios involving audio, video, and camera in Windows apps.
 
+> [!NOTE]
+> Many articles related to media processing and creation have been updated to support WinUI 3 apps and are now available in the [Media processing and creation](media-authoring-processing/media-authoring-processing.md) section. These updated articles describe the recommended practices for working with audio, video, and images in Windows desktop apps using Windows App SDK. Articles about UWP-specific and legacy media features remain in the [UWP area](/windows/uwp/audio-video-camera/) of the documentation.
+
 
 ## Windows OS features
 

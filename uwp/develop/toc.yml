@@ -41,49 +41,20 @@ items:
         href: ../audio-video-camera/adaptive-streaming-with-playready.md
     - name: PlayReady Encrypted Media Extension
       href: ../audio-video-camera/playready-encrypted-media-extension.md
-  - name: Detect faces in images or videos
-    href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
   - name: Custom video effects
     href: ../audio-video-camera/custom-video-effects.md
   - name: Custom audio effects
     href: ../audio-video-camera/custom-audio-effects.md
-  - name: Media compositions and editing
-    href: ../audio-video-camera/media-compositions-and-editing.md
-  - name: Audio device information properties
-    href: ../audio-video-camera/audio-device-information-properties.md
-  - name: Detect and respond to audio state changes
-    href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
-  - name: Create, edit, and save bitmap images
-    href: ../audio-video-camera/imaging.md
-    items:
-    - name: Process bitmaps with OpenCV
-      href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
-    - name: Process bitmaps with the LowLightFusion API
-      href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
-    - name: BitmapEncoder options reference
-      href: ../audio-video-camera/bitmapencoder-options-reference.md
-    - name: Image metadata
-      href: ../audio-video-camera/image-metadata.md
-  - name: Transcode media files
-    href: ../audio-video-camera/transcode-media-files.md
+  - name: Process bitmaps with OpenCV
+    href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
+  - name: Process bitmaps with the LowLightFusion API
+    href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
   - name: Process media files in the background
     href: ../audio-video-camera/process-media-files-in-the-background.md
-  - name: Audio graphs
-    href: ../audio-video-camera/audio-graphs.md
-  - name: MIDI
-    href: ../audio-video-camera/midi.md
-  - name: Import media from a device
-    href: ../audio-video-camera/import-media-from-a-device.md
   - name: Camera-independent Flashlight
     href: ../audio-video-camera/camera-independent-flashlight.md
-  - name: Supported codecs
-    href: ../audio-video-camera/supported-codecs.md
-  - name: Query for installed codecs
-    href: ../audio-video-camera/codec-query.md
   - name: Supported media type strings
     href: ../audio-video-camera/supported-play-type-strings.md
-  - name: Screen capture
-    href: ../audio-video-camera/screen-capture.md
   - name: Screen capture to video
     href: ../audio-video-camera/screen-capture-video.md
   - name: HEVC playback for UWP apps on Xbox
