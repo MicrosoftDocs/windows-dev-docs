@@ -27,9 +27,9 @@ The following code samples open Click to Do from the user's app:
 ### [C#](#tab/csharp)
 
 ```csharp
-var clickToDoUri = new Windows.Foundation.Uri(L"ms-clicktodo://");  
+var clickToDoUri = new System.Uri("ms-clicktodo://");
  
-Windows.System.Launcher.LaunchUriAsync(clickToDoUri)
+Windows.System.Launcher.LaunchUriAsync(clickToDoUri);
 ```
 
 ### [C++/WinRT](#tab/cpp)

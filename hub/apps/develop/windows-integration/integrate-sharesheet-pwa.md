@@ -42,7 +42,7 @@ The `share_target` member must contain the necessary information for the system 
 },
 ```
 
-When your app is selected by the user as the target for shared content, the PWA is launched. A `GET` HTTP request is made to the URL specified by the `action` property. The shared data is passed as the `title`, `text`, and `url` query parameters. The following request is made: `/handle-shared-content/?title=shared title&text=shared text&url=shared url`.
+When your app is selected by the user as the target for shared content, the PWA is launched. A `POST` HTTP request is made to the URL specified by the `action` property. The shared data is posted to that URL when the share target is invoked.
 
 The following example illustrates how to register the scoped service worker:
 

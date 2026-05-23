@@ -10,7 +10,7 @@ no-loc: [Recall]
 
 Many web browsers support a concept of "InPrivate" browsing, where the user's history does not get saved.
 
-To make sure that Recall doesn't save your user's browsing history while in modes like this, your app can use the [`SetInputScope`](/windows/win32/api/inputscope/nf-inputscope-setinputscope) function, setting the input scope to `IS_PASSWORD`.
+To make sure that Recall doesn't save your user's browsing history while in modes like this, your app can use the [`SetInputScope`](/windows/win32/api/inputscope/nf-inputscope-setinputscope) function, setting the input scope to `IS_PRIVATE`.
 
 > [!IMPORTANT]
 > Your app must also have a `http` or `https` protocol handler registered before `SetInputScope` will support the behavior described in this article.
@@ -24,7 +24,7 @@ private new enum InputScope : int
     IS_DEFAULT = 0,
     IS_URL = 1,
     IS_FILE_FULLFILEPATH = 2,
-    IS_PRIVATE = 0x1f // Input is treated as private (e.g. passwords)
+    IS_PRIVATE = 61 // Input is treated as private data.
 }
 
 private void EnterInPrivateMode()

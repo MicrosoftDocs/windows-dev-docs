@@ -275,6 +275,38 @@ items:
                 href: media-playback/media-casting.md
               - name: Enable audio playback from remote Bluetooth-connected devices
                 href: media-playback/enable-remote-audio-playback.md
+          - name: Media processing and creation
+            items:
+              - name: Overview
+                href: media-authoring-processing/media-authoring-processing.md
+              - name: Audio device information properties
+                href: media-authoring-processing/audio-device-information-properties.md
+              - name: Audio graphs
+                href: media-authoring-processing/audio-graphs.md
+              - name: Create, edit, and save bitmap images
+                href: media-authoring-processing/imaging.md
+              - name: BitmapEncoder options reference
+                href: media-authoring-processing/bitmapencoder-options-reference.md
+              - name: Image metadata
+                href: media-authoring-processing/image-metadata.md
+              - name: Detect and respond to audio state changes
+                href: media-authoring-processing/detect-and-respond-to-audio-state-changes.md
+              - name: Detect and track faces in an image
+                href: media-authoring-processing/detect-and-track-faces-in-an-image.md
+              - name: Import media from a device
+                href: media-authoring-processing/import-media-from-a-device.md
+              - name: Media compositions and editing
+                href: media-authoring-processing/media-compositions-and-editing.md
+              - name: MIDI
+                href: media-authoring-processing/midi.md
+              - name: Query for installed codecs
+                href: media-authoring-processing/codec-query.md
+              - name: Screen capture
+                href: media-authoring-processing/screen-capture.md
+              - name: Supported codecs
+                href: media-authoring-processing/supported-codecs.md
+              - name: Transcode media files
+                href: media-authoring-processing/transcode-media-files.md
       - name: Communication
         href: communication/index.md
       - name: Data and files

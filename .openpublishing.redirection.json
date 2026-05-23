@@ -11781,6 +11781,76 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "uwp/audio-video-camera/audio-device-information-properties.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/audio-device-information-properties",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/audio-graphs.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/audio-graphs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/codec-query.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/codec-query",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/detect-and-respond-to-audio-state-changes.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/detect-and-respond-to-audio-state-changes",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/detect-and-track-faces-in-an-image.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/detect-and-track-faces-in-an-image",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/imaging.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/imaging",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/import-media-from-a-device.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/import-media-from-a-device",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/media-compositions-and-editing.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/media-compositions-and-editing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/midi.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/midi",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/screen-capture.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/screen-capture",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/supported-codecs.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/supported-codecs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/transcode-media-files.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/transcode-media-files",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/bitmapencoder-options-reference.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/bitmapencoder-options-reference",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/audio-video-camera/image-metadata.md",
+      "redirect_url": "/windows/apps/develop/media-authoring-processing/image-metadata",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/devices/index.md",
       "redirect_url": "/windows/apps/design/guidelines-overview",
       "redirect_document_id": false
