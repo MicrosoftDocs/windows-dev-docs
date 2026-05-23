@@ -104,7 +104,7 @@ struct FeedProvider : winrt::implements<FeedProvider, winrt::Microsoft::Windows:
 {
     FeedProvider() {}
 
-    /* IFeedrovider required functions that need to be implemented */
+    /* IFeedProvider required functions that need to be implemented */
     void OnFeedProviderEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderEnabledArgs args);
     void OnFeedProviderDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderDisabledArgs args);
     void OnFeedEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedEnabledArgs args);
@@ -125,7 +125,7 @@ In the next few sections, we'll implement the methods of the **IFeedProvider** i
 
 
 ```cpp
-// WidgetProvider.cpp
+// FeedProvider.cpp
 namespace winrt
 {
     using namespace Microsoft::Windows::Widgets::Feeds::Providers;
@@ -137,8 +137,8 @@ namespace winrt
 
 The **OnFeedProviderEnabled** method is invoked when a feed associated with the provider is created by the Widgets Board host. In the implementation of this method, generate a query string with the parameters that will be passed to the URL that provides the feed content, including any necessary authentication tokens. Create an instance of **CustomQueryParametersUpdateOptions**, passing in the **FeedProviderDefinitionId** from the event args that identifies the feed that has been enabled and the query string. Get the default **FeedManager** and call **SetCustomQueryParameters** to register the query string parameters with the Widgets Board.
 
-```csharp
-// FeedProvider.cs
+```cpp
+// FeedProvider.cpp
 void FeedProvider::OnFeedProviderEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderEnabledArgs args)
 {
     std::wstringstream wstringstream;
@@ -155,8 +155,8 @@ wstringstream << args.FeedProviderDefinitionId().c_str() << L" feed provider was
 
 **OnFeedProviderDisabled** is called when the Widgets Board when all of the feeds for this provider have been disabled. Feed providers are not required to perform any actions in response to these this method call. The method invocation can be used for telemetry purposes or to update the query string parameters or revoke authentication tokens, if needed. If the app only supports a single feed provider or if all feed providers supported by the app have been disabled, then the app can exit in response to this callback.
 
-```csharp
-// FeedProvider.cs
+```cpp
+// FeedProvider.cpp
 
 void FeedProvider::OnFeedProviderDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedProviderDisabledArgs args)
 {
@@ -170,8 +170,8 @@ void FeedProvider::OnFeedProviderDisabled(winrt::Microsoft::Windows::Widgets::Fe
 
 **OnFeedEnabled** and **OnFeedDisabled** are invoked by the Widgets Board when a feed is enabled or disabled. Feed providers are not required to perform any actions in response to these method calls. The method invocation can be used for telemetry purposes or to update the query string parameters or revoke authentication tokens, if needed.
 
-```csharp
-// FeedProvider.cs
+```cpp
+// FeedProvider.cpp
 
 void FeedProvider::OnFeedEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedEnabledArgs args)
 {
@@ -181,8 +181,8 @@ void FeedProvider::OnFeedEnabled(winrt::Microsoft::Windows::Widgets::Feeds::Prov
 }
 ```
 
-```csharp
-// FeedProvider.cs
+```cpp
+// FeedProvider.cpp
 
 void FeedProvider::OnFeedDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Providers::FeedDisabledArgs args)
 {
@@ -196,8 +196,8 @@ void FeedProvider::OnFeedDisabled(winrt::Microsoft::Windows::Widgets::Feeds::Pro
 
 **OnCustomQueryParametersRequested** is raised when the Widgets Board determines that the custom query parameters associated with the feed provider need to be refreshed. For example, this method may be raised if the operation to fetch feed content from the remote web service fails. The **FeedProviderDefinitionId** property of the **CustomQueryParametersRequestedArgs** passed into this method specifies the feed for which query string params are being requested. The provider should regenerate the query string and pass it back to the Widgets Board by calling **SetCustomQueryParameters**.
 
-```csharp
-// FeedProvider.cs
+```cpp
+// FeedProvider.cpp
 
 void FeedProvider::OnCustomQueryParametersRequested(winrt::Microsoft::Windows::Widgets::Feeds::Providers::CustomQueryParametersRequestedArgs args)
 {

@@ -41,49 +41,20 @@ items:
         href: ../audio-video-camera/adaptive-streaming-with-playready.md
     - name: PlayReady Encrypted Media Extension
       href: ../audio-video-camera/playready-encrypted-media-extension.md
-  - name: Detect faces in images or videos
-    href: ../audio-video-camera/detect-and-track-faces-in-an-image.md
   - name: Custom video effects
     href: ../audio-video-camera/custom-video-effects.md
   - name: Custom audio effects
     href: ../audio-video-camera/custom-audio-effects.md
-  - name: Media compositions and editing
-    href: ../audio-video-camera/media-compositions-and-editing.md
-  - name: Audio device information properties
-    href: ../audio-video-camera/audio-device-information-properties.md
-  - name: Detect and respond to audio state changes
-    href: ../audio-video-camera/detect-and-respond-to-audio-state-changes.md
-  - name: Create, edit, and save bitmap images
-    href: ../audio-video-camera/imaging.md
-    items:
-    - name: Process bitmaps with OpenCV
-      href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
-    - name: Process bitmaps with the LowLightFusion API
-      href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
-    - name: BitmapEncoder options reference
-      href: ../audio-video-camera/bitmapencoder-options-reference.md
-    - name: Image metadata
-      href: ../audio-video-camera/image-metadata.md
-  - name: Transcode media files
-    href: ../audio-video-camera/transcode-media-files.md
+  - name: Process bitmaps with OpenCV
+    href: ../audio-video-camera/process-software-bitmaps-with-opencv.md
+  - name: Process bitmaps with the LowLightFusion API
+    href: ../audio-video-camera/process-bitmaps-low-light-fusion.md
   - name: Process media files in the background
     href: ../audio-video-camera/process-media-files-in-the-background.md
-  - name: Audio graphs
-    href: ../audio-video-camera/audio-graphs.md
-  - name: MIDI
-    href: ../audio-video-camera/midi.md
-  - name: Import media from a device
-    href: ../audio-video-camera/import-media-from-a-device.md
   - name: Camera-independent Flashlight
     href: ../audio-video-camera/camera-independent-flashlight.md
-  - name: Supported codecs
-    href: ../audio-video-camera/supported-codecs.md
-  - name: Query for installed codecs
-    href: ../audio-video-camera/codec-query.md
   - name: Supported media type strings
     href: ../audio-video-camera/supported-play-type-strings.md
-  - name: Screen capture
-    href: ../audio-video-camera/screen-capture.md
   - name: Screen capture to video
     href: ../audio-video-camera/screen-capture-video.md
   - name: HEVC playback for UWP apps on Xbox
@@ -545,118 +516,6 @@ items:
 - name: Devices, sensors, and power
   href: ../devices-sensors/index.md
   items:
-  - name: Enable device capabilities
-    href: ../devices-sensors/enable-device-capabilities.md
-  - name: Enable usermode access
-    href: ../devices-sensors/enable-usermode-access.md
-  - name: Enumerate devices
-    href: ../devices-sensors/enumerate-devices.md
-    items:
-    - name: Build a device selector
-      href: ../devices-sensors/build-a-device-selector.md
-    - name: Enumerate devices over a network
-      href: ../devices-sensors/enumerate-devices-over-a-network.md
-    - name: Device information properties
-      href: ../devices-sensors/device-information-properties.md
-    - name: AEP service class IDs
-      href: ../devices-sensors/aep-service-class-ids.md
-  - name: Pair devices
-    href: ../devices-sensors/pair-devices.md
-  - name: Pairing a set
-    href: ../devices-sensors/pairing-a-set.md
-  - name: Dynamic lighting
-    href: ../devices-sensors/lighting-dynamic-lamparray.md
-  - name: Point of Service
-    href: ../devices-sensors/point-of-service.md
-    items:
-    - name: Basics
-      href: ../devices-sensors/pos-basics.md
-      items:
-      - name: Capability declaration
-        href: ../devices-sensors/pos-basics-capability.md
-      - name: Enumerating PointofService devices
-        href: ../devices-sensors/pos-basics-enumerating.md
-      - name: PointOfService device objects
-        href: ../devices-sensors/pos-basics-deviceobject.md
-      - name: PointofService device claim and enable model
-        href: ../devices-sensors/pos-basics-claim.md
-      - name: PointOfService device sharing
-        href: ../devices-sensors/pos-basics-sharing.md
-      - name: Getting started
-        href: ../devices-sensors/pos-get-started.md
-    - name: Hardware support
-      href: ../devices-sensors/pos-device-support.md
-    - name: Barcode scanner
-      href: ../devices-sensors/pos-barcodescanner.md
-      items:
-      - name: Support specific applications
-        href: ../devices-sensors/pos-barcodescanner-configure.md
-      - name: Use a software trigger
-        href: ../devices-sensors/pos-barcodescanner-software-trigger.md
-      - name: Working with symbologies
-        href: ../devices-sensors/pos-barcodescanner-symbologies.md
-      - name: Obtain and understand barcode data
-        href: ../devices-sensors/pos-barcodescanner-scan-data.md
-      - name: Camera barcode scanner
-        href: ../devices-sensors/pos-camerabarcode.md
-        items:
-        - name: System requirements
-          href: ../devices-sensors/pos-camerabarcode-system-requirements.md
-        - name: Getting started
-          href: ../devices-sensors/pos-camerabarcode-get-started.md
-        - name: Hosting a camera preview
-          href: ../devices-sensors/pos-camerabarcode-hosting-preview.md
-        - name: Enable/disable camera barcode scanner
-          href: ../devices-sensors/pos-camerabarcode-enable-disable.md
-        - name: Supported symbologies
-          href: ../devices-sensors/pos-camerabarcode-symbologies.md
-        - name: Advanced configuration
-          href: ../devices-sensors/pos-camerabarcode-advancedconfig.md
-    - name: Magnetic stripe reader
-      href: ../devices-sensors/pos-magnetic-stripe-reader.md
-      items:
-      - name: Obtain and understand magnetic stripe data
-        href: ../devices-sensors/pos-magnetic-stripe-reader-data.md
-    - name: POSPrinter
-      href: ../devices-sensors/pos-printer.md
-      items:
-      - name: Epson ESC/POS with formatting
-        href: ../devices-sensors/epson-esc-pos-with-formatting.md
-  - name: Sensors
-    href: ../devices-sensors/sensors.md
-    items:
-    - name: Calibrate sensors
-      href: ../devices-sensors/calibrate-sensors.md
-    - name: Sensor orientation
-      href: ../devices-sensors/sensor-orientation.md
-    - name: Use the accelerometer
-      href: ../devices-sensors/use-the-accelerometer.md
-    - name: Use the compass
-      href: ../devices-sensors/use-the-compass.md
-    - name: Use the gyrometer
-      href: ../devices-sensors/use-the-gyrometer.md
-    - name: Use the inclinometer
-      href: ../devices-sensors/use-the-inclinometer.md
-    - name: Use the light sensor
-      href: ../devices-sensors/use-the-light-sensor.md
-    - name: Use the orientation sensor
-      href: ../devices-sensors/use-the-orientation-sensor.md
-  - name: Bluetooth
-    href: ../devices-sensors/bluetooth.md
-    items:
-    - name: RFCOMM
-      href: ../devices-sensors/send-or-receive-files-with-rfcomm.md
-    - name: Bluetooth Low Energy
-      href: ../devices-sensors/bluetooth-low-energy-overview.md
-      items:
-      - name: GATT client
-        href: ../devices-sensors/gatt-client.md
-      - name: GATT server
-        href: ../devices-sensors//gatt-server.md
-      - name: Advertisements
-        href: ../devices-sensors/ble-beacon.md
-    - name: Bluetooth developer FAQ
-      href: ../devices-sensors/bluetooth-dev-faq.yml
   - name: 3D printing
     href: ../devices-sensors/3d-printing.md
     items:
@@ -664,8 +523,6 @@ items:
       href: ../devices-sensors/3d-print-from-app.md
     - name: Generate a 3MF package
       href: ../devices-sensors/3d-generate-3mf.md
-  - name: Get battery information
-    href: ../devices-sensors/get-battery-info.md
   - name: Customize the print workflow
     href: ../devices-sensors/print-workflow-customize.md
 - name: Host XAML controls (XAML Islands)

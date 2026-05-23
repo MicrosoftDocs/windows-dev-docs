@@ -2,7 +2,7 @@
 title: Set up GitHub Copilot for Windows development
 description: Install and configure GitHub Copilot, the WinUI 3 plugin, and the Microsoft Learn MCP server for AI-assisted Windows app development.
 ms.topic: how-to
-ms.date: 03/10/2026
+ms.date: 05/19/2026
 ms.author: jken
 author: GrantMeStrength
 keywords: windows, github copilot, setup, mcp server, winui 3 plugin, vs code, visual studio
@@ -11,10 +11,13 @@ ms.localizationpriority: medium
 
 # Set up GitHub Copilot for Windows development
 
-This guide walks you through setting up GitHub Copilot with the tools that make it genuinely useful for Windows development: the **WinUI 3 development plugin** that gives Copilot accurate Windows App SDK context, and the **Microsoft Learn MCP Server** that gives Copilot live access to official Windows documentation.
+This guide walks you through setting up GitHub Copilot with the tools that make it genuinely useful for Windows development: the **WinUI agent plugin** that gives Copilot accurate Windows App SDK context, and the **Microsoft Learn MCP Server** that gives Copilot live access to official Windows documentation.
+
+> [!TIP]
+> Building a new app with VS Code and the winapp CLI? The [Quickstart](../develop/ai-assisted/quickstart.md) is a faster path — it covers the same tools in a single end-to-end flow. Come back here if you're configuring GitHub Copilot for an existing Visual Studio workflow.
 
 > [!NOTE]
-> Building and debugging WinUI 3 apps requires **Visual Studio** — VS Code doesn't have MSIX build tooling or WinUI project templates. If you're working on other Windows frameworks (Electron, Flutter, .NET, or Rust via winapp CLI), VS Code works well for those. Steps below are marked accordingly.
+> You can build WinUI 3 apps using either **Visual Studio** or **VS Code with the winapp CLI** — use whichever you're most comfortable with. Steps below are marked accordingly where the experience differs.
 
 ## Prerequisites
 
@@ -28,7 +31,7 @@ This guide walks you through setting up GitHub Copilot with the tools that make 
 
 #### [Visual Studio (WinUI 3)](#tab/visualstudio)
 
-GitHub Copilot is built into Visual Studio 2026. Visual Studio is required for WinUI 3 development.
+GitHub Copilot is built into Visual Studio 2026. This tab covers setup for Visual Studio.
 
 1. Open Visual Studio and go to **Extensions** > **Manage Extensions**.
 2. Search for **GitHub Copilot** and install it, or verify it's already installed.
@@ -47,17 +50,15 @@ For detailed setup, see [GitHub Copilot in VS Code](https://code.visualstudio.co
 
 ---
 
-## Step 2: Install the WinUI 3 development plugin
+## Step 2: Install the WinUI agent plugin
 
-The [WinUI 3 development plugin](../dev-tools/agentic-tools.md#winui-3-development-plugin-for-github-copilot) from the [Awesome Copilot](https://github.com/github/awesome-copilot) community repository teaches Copilot the right Windows App SDK patterns — preventing common mistakes like using deprecated UWP APIs.
-
-Run this command in your project root (or any directory where you want Copilot to pick up the plugin):
+The [WinUI agent plugin](../develop/ai-assisted/winui-agent-plugin.md) from the [Awesome Copilot](https://github.com/github/awesome-copilot) community repository teaches Copilot the right Windows App SDK patterns — preventing common mistakes like using deprecated UWP APIs.
 
 ```bash
-copilot plugin install winui3-development@awesome-copilot
+gh copilot plugin install winui@awesome-copilot
 ```
 
-This copies agents, skills, and custom instructions into your project's `.github/` directory. Copilot automatically picks them up the next time you open the project.
+This installs the plugin user-globally to `~\.copilot\installed-plugins\`. Verify with `gh copilot plugin list`.
 
 > [!TIP]
 > You can also browse and install Copilot plugins directly from VS Code using the [Awesome Copilot extension](https://marketplace.visualstudio.com/items?itemName=TimHeuer.awesome-copilot).
@@ -66,7 +67,7 @@ This copies agents, skills, and custom instructions into your project's `.github
 
 ## Step 3: Add the Microsoft Learn MCP Server
 
-The [Microsoft Learn MCP Server](../dev-tools/agentic-tools.md#microsoft-learn-mcp-server) gives Copilot live access to official Microsoft documentation — so it can look up current API references and code samples as it helps you code.
+The [Microsoft Learn MCP Server](../develop/ai-assisted/vs-code-tools.md#microsoft-learn-mcp-server) gives Copilot live access to official Microsoft documentation — so it can look up current API references and code samples as it helps you code.
 
 #### [VS Code (Electron, Flutter, .NET, Rust)](#tab/vscode)
 
@@ -137,4 +138,4 @@ Extend Copilot's context further with additional Windows-specific MCP servers:
 > [Tutorial: Build a Windows app with GitHub Copilot](ai-build.md)
 
 - [Modernize or port a Windows app with Copilot](../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md)
-- [Agentic AI tools for Windows development](../dev-tools/agentic-tools.md) — full details on all tools
+- [Agentic tools overview](../develop/ai-assisted/index.md) — full details on all tools

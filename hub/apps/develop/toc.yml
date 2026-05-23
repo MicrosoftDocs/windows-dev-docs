@@ -9,14 +9,36 @@ items:
         href: ../dev-tools/index.md
       - name: Agentic tools
         items:
-        - name: Overview
-          href: ../dev-tools/agentic-tools.md
-        - name: Tutorials
-          items:
-          - name: Set up GitHub Copilot for Windows development
-            href: ../how-tos/ai-setup.md
-          - name: "Build a Windows app with GitHub Copilot"
-            href: ../how-tos/ai-build.md
+          - name: Overview
+            href: ai-assisted/index.md
+          - name: Quickstart
+            href: ai-assisted/quickstart.md
+          - name: WinUI agent plugin
+            href: ai-assisted/winui-agent-plugin.md
+          - name: VS Code tools
+            href: ai-assisted/vs-code-tools.md
+          - name: AI-assisted testing
+            href: ai-assisted/testing.md
+          - name: Migrate and port apps
+            items:
+              - name: Overview
+                href: ai-assisted/migrate/index.md
+              - name: Migrate from UWP
+                href: ai-assisted/migrate/uwp-to-winui.md
+              - name: Migrate from WPF
+                href: ai-assisted/migrate/wpf-to-winui.md
+              - name: Migrate from iOS
+                href: ai-assisted/migrate/ios-to-winui.md
+              - name: Cross-framework apps
+                href: ai-assisted/migrate/cross-framework.md
+          - name: Tutorials
+            items:
+              - name: Set up Copilot for Windows development
+                href: ../how-tos/ai-setup.md
+              - name: Build a Windows app with Copilot
+                href: ../how-tos/ai-build.md
+          - name: Security and responsible AI
+            href: ai-assisted/security-and-responsible-ai.md
       - name: Visual Studio
         href: ../dev-tools/visual-studio.md
       - name: winappCLI
@@ -253,6 +275,38 @@ items:
                 href: media-playback/media-casting.md
               - name: Enable audio playback from remote Bluetooth-connected devices
                 href: media-playback/enable-remote-audio-playback.md
+          - name: Media processing and creation
+            items:
+              - name: Overview
+                href: media-authoring-processing/media-authoring-processing.md
+              - name: Audio device information properties
+                href: media-authoring-processing/audio-device-information-properties.md
+              - name: Audio graphs
+                href: media-authoring-processing/audio-graphs.md
+              - name: Create, edit, and save bitmap images
+                href: media-authoring-processing/imaging.md
+              - name: BitmapEncoder options reference
+                href: media-authoring-processing/bitmapencoder-options-reference.md
+              - name: Image metadata
+                href: media-authoring-processing/image-metadata.md
+              - name: Detect and respond to audio state changes
+                href: media-authoring-processing/detect-and-respond-to-audio-state-changes.md
+              - name: Detect and track faces in an image
+                href: media-authoring-processing/detect-and-track-faces-in-an-image.md
+              - name: Import media from a device
+                href: media-authoring-processing/import-media-from-a-device.md
+              - name: Media compositions and editing
+                href: media-authoring-processing/media-compositions-and-editing.md
+              - name: MIDI
+                href: media-authoring-processing/midi.md
+              - name: Query for installed codecs
+                href: media-authoring-processing/codec-query.md
+              - name: Screen capture
+                href: media-authoring-processing/screen-capture.md
+              - name: Supported codecs
+                href: media-authoring-processing/supported-codecs.md
+              - name: Transcode media files
+                href: media-authoring-processing/transcode-media-files.md
       - name: Communication
         href: communication/index.md
       - name: Data and files
@@ -355,6 +409,120 @@ items:
                 href: devices-sensors/customize-the-print-preview-ui.md
               - name: Scan from your app
                 href: devices-sensors/scan-from-your-app.md
+          - name: Enable device capabilities
+            href: devices-sensors/enable-device-capabilities.md
+          - name: Enable usermode access
+            href: devices-sensors/enable-usermode-access.md
+          - name: Enumerate devices
+            href: devices-sensors/enumerate-devices.md
+            items:
+              - name: Build a device selector
+                href: devices-sensors/build-a-device-selector.md
+              - name: Enumerate devices over a network
+                href: devices-sensors/enumerate-devices-over-a-network.md
+              - name: Device information properties
+                href: devices-sensors/device-information-properties.md
+              - name: AEP service class IDs
+                href: devices-sensors/aep-service-class-ids.md
+          - name: Pair devices
+            href: devices-sensors/pair-devices.md
+          - name: Pairing a set
+            href: devices-sensors/pairing-a-set.md
+          - name: Dynamic lighting
+            href: devices-sensors/lighting-dynamic-lamparray.md
+          - name: Point of Service
+            href: devices-sensors/pos/point-of-service.md
+            items:
+              - name: Basics
+                href: devices-sensors/pos/basics.md
+                items:
+                  - name: Capability declaration
+                    href: devices-sensors/pos/basics-capability.md
+                  - name: Enumerating PointofService devices
+                    href: devices-sensors/pos/basics-enumerating.md
+                  - name: PointOfService device objects
+                    href: devices-sensors/pos/basics-deviceobject.md
+                  - name: PointofService device claim and enable model
+                    href: devices-sensors/pos/basics-claim.md
+                  - name: PointOfService device sharing
+                    href: devices-sensors/pos/basics-sharing.md
+                  - name: Getting started
+                    href: devices-sensors/pos/get-started.md
+              - name: Hardware support
+                href: devices-sensors/pos/device-support.md
+              - name: Barcode scanner
+                href: devices-sensors/pos/barcodescanner.md
+                items:
+                  - name: Support specific applications
+                    href: devices-sensors/pos/barcodescanner-configure.md
+                  - name: Use a software trigger
+                    href: devices-sensors/pos/barcodescanner-software-trigger.md
+                  - name: Working with symbologies
+                    href: devices-sensors/pos/barcodescanner-symbologies.md
+                  - name: Obtain and understand barcode data
+                    href: devices-sensors/pos/barcodescanner-scan-data.md
+                  - name: Camera barcode scanner
+                    href: devices-sensors/pos/camerabarcode.md
+                    items:
+                      - name: System requirements
+                        href: devices-sensors/pos/camerabarcode-system-requirements.md
+                      - name: Getting started
+                        href: devices-sensors/pos/camerabarcode-get-started.md
+                      - name: Hosting a camera preview
+                        href: devices-sensors/pos/camerabarcode-hosting-preview.md
+                      - name: Enable/disable camera barcode scanner
+                        href: devices-sensors/pos/camerabarcode-enable-disable.md
+                      - name: Supported symbologies
+                        href: devices-sensors/pos/camerabarcode-symbologies.md
+                      - name: Advanced configuration
+                        href: devices-sensors/pos/camerabarcode-advancedconfig.md
+              - name: Magnetic stripe reader
+                href: devices-sensors/pos/magnetic-stripe-reader.md
+                items:
+                  - name: Obtain and understand magnetic stripe data
+                    href: devices-sensors/pos/magnetic-stripe-reader-data.md
+              - name: POSPrinter
+                href: devices-sensors/pos/printer.md
+                items:
+                  - name: Epson ESC/POS with formatting
+                    href: devices-sensors/pos/epson-esc-pos-with-formatting.md
+          - name: Sensors
+            href: devices-sensors/sensors.md
+            items:
+              - name: Calibrate sensors
+                href: devices-sensors/calibrate-sensors.md
+              - name: Sensor orientation
+                href: devices-sensors/sensor-orientation.md
+              - name: Use the accelerometer
+                href: devices-sensors/use-the-accelerometer.md
+              - name: Use the compass
+                href: devices-sensors/use-the-compass.md
+              - name: Use the gyrometer
+                href: devices-sensors/use-the-gyrometer.md
+              - name: Use the inclinometer
+                href: devices-sensors/use-the-inclinometer.md
+              - name: Use the light sensor
+                href: devices-sensors/use-the-light-sensor.md
+              - name: Use the orientation sensor
+                href: devices-sensors/use-the-orientation-sensor.md
+          - name: Bluetooth
+            href: devices-sensors/bluetooth.md
+            items:
+              - name: RFCOMM
+                href: devices-sensors/send-or-receive-files-with-rfcomm.md
+              - name: Bluetooth Low Energy
+                href: devices-sensors/bluetooth-low-energy-overview.md
+                items:
+                  - name: GATT client
+                    href: devices-sensors/gatt-client.md
+                  - name: GATT server
+                    href: devices-sensors/gatt-server.md
+                  - name: Advertisements
+                    href: devices-sensors/ble-beacon.md
+              - name: Bluetooth developer FAQ
+                href: devices-sensors/bluetooth-dev-faq.yml
+          - name: Get battery information
+            href: devices-sensors/get-battery-info.md
       - name: Graphics
         items:
           - name: Overview
