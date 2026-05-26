@@ -7,13 +7,13 @@ keywords: windows 10, windows 11, windows, windows store, store, publishing gdk 
 ms.localizationpriority: medium
 ---
 
-# Publish PC games to the Microsoft Store using GDK
+# Publish PC games to the Microsoft Store using the GDK
 
 #### The Microsoft Store on Windows is open to Win32 PC games. [Flighted markets only]
 
 This guidance describes a **simplified, self‑service publishing path** that lets you publish Win32 PC games to the Microsoft Store using the **Microsoft Game Development Kit (GDK)**, without requiring managed partner enrollment or concept approval. 
 
-You continue building a **standard Win32 PC game**, with full access to Win32 APIs, third‑party engines, and extension libraries. Using GDK adds a Store‑native packaging and servicing model that aligns your game with modern Microsoft gaming workflows.  
+You continue building a **standard Win32 PC game**, with full access to Win32 APIs, third‑party engines, and extension libraries. Using the GDK adds a Store‑native packaging and servicing model that aligns your game with modern Microsoft gaming workflows.  
 
 > [!NOTE]
 > If you want to publish to **Xbox** or PC with Xbox services (including concept approval), please visit [Xbox Developer Programs | Onboarding Hub](https://developer.microsoft.com/games/publish/). 
@@ -38,7 +38,7 @@ This path introduces a clearer and more accessible way to publish Win32 PC games
 
 * **Self-service publishing**: Submit and manage releases in Partner Center without joining ID@Xbox or completing concept approval.
 * **Modern packaging with MSIXVC**: Use the Store-native packaging model that supports secure installs, streaming installation, and smart updates.
-* **Aligned with Microsoft gaming workflows**: Build with GDK and stay consistent with tooling and packaging used across Microsoft’s gaming ecosystem.
+* **Aligned with Microsoft gaming workflows**: Build with the GDK and stay consistent with tooling and packaging used across Microsoft’s gaming ecosystem.
 * **Windows-wide discovery**: Benefit from Microsoft Store discovery and merchandising, plus surfaces like Windows Search and Bing.
 * **Clear path forward**: Start with PC-only publishing today while keeping options open for future expansion into additional Microsoft gaming programs.  
 
@@ -77,13 +77,13 @@ To begin publishing your PC game using this path:
 
 #### Do I need to be an ID@Xbox developer to publish a PC game using this path? 
 
-No. This publishing path does not require ID@Xbox enrollment or managed partner status. It is a self‑service option for publishing PC‑only games to the Microsoft Store on Windows using GDK. 
+No. This publishing path does not require ID@Xbox enrollment or managed partner status. It is a self‑service option for publishing PC‑only games to the Microsoft Store on Windows using the GDK. 
 
 If you plan to publish to Xbox consoles in the future, you’ll need to enroll in the appropriate managed Xbox program at that time. 
 
-#### Can I publish Win32 PC games to the Microsoft Store using GDK? 
+#### Can I publish Win32 PC games to the Microsoft Store using the GDK? 
 
-Yes. This path is designed for Win32‑based PC games built using GDK for Windows. It supports modern PC game engines and toolchains and packages games using the MSIXVC format for Store distribution. 
+Yes. This path is designed for Win32‑based PC games built using the GDK for Windows. It supports modern PC game engines and toolchains and packages games using the MSIXVC format for Store distribution. 
 
 #### Is this the recommended path for new PC games on Windows? 
 
