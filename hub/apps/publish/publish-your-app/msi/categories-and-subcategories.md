@@ -20,10 +20,6 @@ To change the category, subcategory or secondary category of an app that's alrea
 
 **The Microsoft Store organizes apps into the following categories and subcategories.**
 
-<details>
-<summary>View categories and subcategories</summary>
-
-
 | Category              | Subcategory                                                                                                                                                                                                | Description                                                                                                                                                          | Examples                                                                                                                          |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Books + reference     | E-reader<br>Fiction<br>Nonfiction<br>Reference                                                                                                                                                             | Apps which provide interactive ways to access content which is generally printed form                                                                                | e-reader, book reader, comics, novels                                                                                             |
@@ -77,5 +73,3 @@ To change the category, subcategory or secondary category of an app that's alrea
 | Strategy                         | Games which require thorough planning and thinking to achieve victory                          |
 | Tools                            | Apps which allow users to interact with the game without launching the actual game software    |
 | Word                             | Games related to guessing words based on puzzles/riddles                                       |
-</details>
-

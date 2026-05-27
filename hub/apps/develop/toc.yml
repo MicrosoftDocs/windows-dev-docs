@@ -791,16 +791,32 @@ items:
         items:
           - name: Overview
             href: windows-integration/index.md
-          - name: Cross Device People API
-            href: windows-integration/cross-device-people-api.md
-          - name: Cross Device Resume (XDR)
+          - name: Connected Experiences
             items:
               - name: Overview
-                href: windows-integration/cross-device-resume-overview.md
-              - name: Cross Device Resume with Android Apps
-                href: windows-integration/cross-device-resume.md
-              - name: WNS for Cross Device Resume
-                href: windows-integration/integrate-app-continuity.md
+                href: windows-integration/connected-experiences-overview.md
+              - name: Windows Share
+                items:
+                  - name: Overview
+                    href: windows-integration/integrate-sharesheet-overview.md
+                  - name: Integrate packaged apps
+                    href: windows-integration/integrate-sharesheet-packaged.md
+                  - name: Integrate PWAs
+                    href: windows-integration/integrate-sharesheet-pwa.md
+                  - name: Integrate UWP apps >>
+                    href: /windows/uwp/app-to-app/share-data
+                  - name: Integrate unpackaged apps
+                    href: windows-integration/integrate-sharesheet-unpackaged.md
+              - name: Windows People
+                href: windows-integration/cross-device-people-api.md
+              - name: Windows Resume
+                items:
+                  - name: Overview
+                    href: windows-integration/cross-device-resume-overview.md
+                  - name: Cross Device Resume with Android Apps
+                    href: windows-integration/cross-device-resume.md
+                  - name: WNS for Cross Device Resume
+                    href: windows-integration/integrate-app-continuity.md
           - name: Default apps platform
             href: windows-integration/default-apps-platform.md
           - name: Pin to taskbar
@@ -851,18 +867,6 @@ items:
                 href: search/search-providers.md
               - name: Cloud files provider integration with Windows Search
                 href: search/cloud-search-integration.md
-          - name: Windows Share
-            items:
-              - name: Overview
-                href: windows-integration/integrate-sharesheet-overview.md
-              - name: Integrate packaged apps
-                href: windows-integration/integrate-sharesheet-packaged.md
-              - name: Integrate PWAs
-                href: windows-integration/integrate-sharesheet-pwa.md
-              - name: Integrate UWP apps >>
-                href: /windows/uwp/app-to-app/share-data
-              - name: Integrate unpackaged apps
-                href: windows-integration/integrate-sharesheet-unpackaged.md
       - name: Performance
         items:
           - name: Overview
