@@ -2,7 +2,7 @@
 title: Windows Studio Effects Overview
 description: Windows Studio Effects applies AI effects that utilize the device camera (currently supported) or microphone (coming soon), including Background Blur, Background Segmentation, Eye Contact and Auto Framing, leveraging NPU to optimize performance and using standardized control interaces.
 ms.topic: article
-ms.date: 07/08/2025
+ms.date: 05/04/2026
 no-loc: [Studio Effects]
 ---
 
