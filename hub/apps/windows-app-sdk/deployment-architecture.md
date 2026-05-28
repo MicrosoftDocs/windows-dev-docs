@@ -2,7 +2,7 @@
 title: Windows App SDK deployment architecture and overview
 description: This article provides a high level explanation of the Windows App SDK deployment architecture and scenarios.
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 05/29/2026
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -56,7 +56,7 @@ Because app compatibility is important to Microsoft and to apps that depend on t
 
 The **singleton package** ensures that a single long-running process can handle services that are used across multiple apps, which may be running on different versions of the Windows App SDK. 
 
-The Windows App SDK singleton is needed to enable [push notifications](notifications/push-notifications/index.md) for unpackaged apps and packaged Win32 applications using Windows versions below 20H1, which cannot be supported by the existing UWP [PushNotificationTrigger](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) and [ToastNotificationActionTrigger](/uwp/api/windows.applicationmodel.background.toastnotificationactiontrigger) class. Future Windows App SDK features that cannot be supported by the Framework package will be added to the Singleton package.
+The Windows App SDK singleton is needed to enable [push notifications](../develop/notifications/push-notifications/index.md) for unpackaged apps and packaged Win32 applications using Windows versions below 20H1, which cannot be supported by the existing UWP [PushNotificationTrigger](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) and [ToastNotificationActionTrigger](/uwp/api/windows.applicationmodel.background.toastnotificationactiontrigger) classes. Future Windows App SDK features that cannot be supported by the Framework package will be added to the Singleton package.
 
 ## Additional requirements for unpackaged apps
 

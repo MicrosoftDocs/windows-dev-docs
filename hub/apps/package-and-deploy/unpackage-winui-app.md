@@ -2,7 +2,7 @@
 title: Distribute an unpackaged WinUI 3 app
 description: Learn how to set WindowsPackageType=None for unpackaged WinUI 3 distribution, understand the runtime deployment options, and review the key limitations before you start.
 ms.topic: how-to
-ms.date: 05/28/2026
+ms.date: 05/29/2026
 keywords: windows app sdk, winappsdk, winui, unpackaged, WindowsPackageType, bootstrapper, self-contained, PublishSingleFile, single-file exe
 ms.localizationpriority: medium
 content-type: how-to
@@ -23,7 +23,7 @@ Unpackaged distribution lets you ship a WinUI 3 app without MSIX — useful for 
 >
 > If these constraints are a concern, consider [packaging your app](index.md) (recommended for most apps) or [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) to add package identity without a full MSIX conversion.
 
-For details on all packaging options, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app).
+For details on all packaging options, see [Package and deploy Windows apps overview](/windows/apps/package-and-deploy/).
 
 If you choose to unpackage a new or existing WinUI app, follow these steps:
 

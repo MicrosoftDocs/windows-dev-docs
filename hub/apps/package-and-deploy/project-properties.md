@@ -2,7 +2,7 @@
 title: Project properties and auto-initializers
 description: Describes the project properties that you can set in your Visual Studio project file to customize how your app is deployed, including configuring auto-initializers.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 05/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -64,7 +64,7 @@ In the table below are the properties that you can set in your app's project fil
 |**WindowsAppSdkBootstrapInitialize**. Determines whether or not the Windows App SDK leverages the bootstrapper/dynamic dependencies auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) auto-initializers](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time#opting-out-of-or-into-automatic-module-initialization)|
 |**WindowsAppSdkDeploymentManagerInitialize**. Determines whether or not the Windows App SDK leverages the Deployment Manager auto-initializer.|*true* (the default), *false*||
 |**WindowsAppSDKRuntimePatchLevel1**, **WindowsAppSDKRuntimePatchLevel2**, and **WindowsAppSDKDisabledChanges**. Determines whether or not the Windows App SDK leverages the compatibility auto-initializer, and configures any desired compatibility options for Windows App Runtime behavior of changes added in servicing updates.|Various, or absent (to disable the auto-initializer)|[RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)|
-|**WindowsAppSdkSelfContained**. Determines whether or not an app is deployed *self-contained*.|*true*, or absent (for *false*)|[Windows App SDK deployment guide for self-contained apps](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps)|
+|**WindowsAppSDKSelfContained**. Determines whether or not an app is deployed *self-contained*.|*true*, or absent (for *false*)|[Windows App SDK deployment guide for self-contained apps](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps)|
 |**WindowsAppSdkUndockedRegFreeWinRTInitialize**. Determines whether or not the Windows App SDK leverages the Registration-free activation auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) automatic UndockedRegFreeWinRT support](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps#opting-out-of-or-into-automatic-undockedregfreewinrt-support)|
 |**WindowsPackageType**. Setting `<WindowsPackageType>None</WindowsPackageType>` for an unpackaged app causes the bootstrapper/dynamic dependencies auto-initializer to locate and load a version of the Windows App SDK version that's most appropriate for your app.|*None*, or absent (to disable the auto-initializer)|[Unpackage a WinUI app](unpackage-winui-app.md)<br/><br/>[Behind the scenes, and opting out of auto-initializers](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time#behind-the-scenes-and-opting-out-of-automatic-module-initialization)|
 
