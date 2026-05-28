@@ -2,8 +2,9 @@
 title: Windows App SDK deployment overview
 description: There are two ways in which you can deploy the Windows App SDK&mdash;framework-dependent or self-contained.
 ms.topic: concept-article
-ms.date: 11/02/2023
+ms.date: 05/28/2026
 ms.localizationpriority: medium
+keywords: windows app sdk deployment, framework-dependent, self-contained, deploy winui 3, windows app sdk self-contained
 ---
 
 # Windows App SDK deployment overview
@@ -11,7 +12,7 @@ ms.localizationpriority: medium
 There are two ways in which you can deploy the Windows App SDK:
 
 * **Framework-dependent**. Your app depends on the Windows App SDK runtime and/or Framework package being present on the target machine. Framework-dependent deployment is the default deployment mode of the Windows App SDK for its efficient use of machine resources and serviceability.
-* **Self-contained**. Your app carries the Windows App SDK dependencies with it. Self-contained deployment is a deployment option that was introduced in Windows App SDK 1.1 Preview 1.
+* **Self-contained**. Your app carries the Windows App SDK dependencies with it, eliminating the need for a separate runtime installation on the target machine.
 
 This topic also uses the terms *packaged app*, *packaged app with external location*, and *unpackaged app*. For explanations of those terms, see the [Deployment overview](./index.md).
 
@@ -21,6 +22,9 @@ This topic also uses the terms *packaged app*, *packaged app with external locat
 | **Disadvantages** | *Additional installation dependencies*. Requires installation of the Windows App SDK runtime and/or Framework package, which can add complexity to app installation.<br/><br/>*Shared dependencies*. Risk that shared dependencies are uninstalled. Apps or users uninstalling the shared components can impact the user experience of other apps that share the dependency.<br/><br/>*Compatibility risk*. Risk that servicing updates to the Windows App SDK introduce breaking changes. While servicing updates should provide backward compatibility, it's possible that regressions are introduced. | *Larger deployments (unpackaged apps only)*. Because your app includes the Windows App SDK, the download size and hard drive space required are greater than would be the case for a framework-dependent version.<br/><br/>*Performance (unpackaged apps only)*. Slower to load, and uses more memory since code pages aren't shared with other apps.<br/><br/>*Not serviceable*. The Windows App SDK version distributed with your app can be updated only by releasing a new version of your app. You're responsible for integrating servicing updates of the Windows App SDK into your app. |
 
 Also see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md), and [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+
+> [!NOTE]
+> **Single-file EXE is not supported for unpackaged WinUI 3 apps.** The .NET `PublishSingleFile` feature cannot bundle Windows App SDK runtime dependencies into a single executable. See [Single-file EXE limitation](./unpackage-winui-app.md#single-file-exe-limitation) for alternatives and workarounds.
 
 ## More info about framework-dependent deployment
 
@@ -43,6 +47,9 @@ If you've chosen to go with a framework-dependent packaged app with external loc
 ## More info about self-contained deployment
 
 See [Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md).
+
+> [!NOTE]
+> Self-contained deployment does **not** enable single-file EXE publishing. The `PublishSingleFile` MSBuild property is a separate .NET feature that bundles managed assemblies, and it is incompatible with the native Windows App SDK runtime dependencies that must remain as separate files alongside your executable.
 
 ## Initialize the Windows App SDK
 
