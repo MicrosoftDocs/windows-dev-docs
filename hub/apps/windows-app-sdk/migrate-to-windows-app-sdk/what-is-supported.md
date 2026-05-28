@@ -44,7 +44,7 @@ Today in version 1.7 of the Windows App SDK, launch speeds, RAM usage, and insta
 
 ## Visual Studio
 
-The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI projects (as of version 1.7 of the Windows App SDK). For more info, see [Create a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
+The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI 3 projects (as of version 1.7 of the Windows App SDK). For more info, see [Create a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio). For the recommended runtime design workflow, see [XAML runtime design tools for WinUI 3](/windows/apps/develop/ui/xaml-runtime-design-tools).
 
 ## See Also
 
