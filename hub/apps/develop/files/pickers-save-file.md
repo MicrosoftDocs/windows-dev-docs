@@ -34,13 +34,13 @@ Before you start, make sure you have:
 The following APIs are used in this topic:
 
 - [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker)
-- [StorageFile](/uwp/api/Windows.Storage.StorageFile)
+- [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult)
 
 Use the [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker) to allow users to specify the name and location where they want your app to save a file.
 
 ## Save a document with FileSavePicker
 
-Use a [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker) so that your users can specify the name, type, and location of a file to save. Create, customize, and show a file picker object, and then save data via the returned [StorageFile](/uwp/api/Windows.Storage.StorageFile) object that represents the file picked.
+Use a [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker) so that your users can specify the name, type, and location of a file to save. Create, customize, and show a file picker object, and then save data by using the returned [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult), which contains the picked file path. If you need the file name, derive it from that path.
 
 1. Create and customize the FileSavePicker. Start by creating a new [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker) object, and then set properties on the object to customize the file picker for your app and your users:
 
@@ -93,7 +93,7 @@ Use a [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.stor
     
     // (Optional) Sets the folder that the file save dialog displays when it opens.
     //     If not specified or the specified path doesn't exist, defaults to the last folder the user visited.
-    savePicker.SuggestedFolder = L"C:\\MyFiles",
+    savePicker.SuggestedFolder = L"C:\\MyFiles";
     
     // (Optional) specify the text displayed on the commit button. 
     //     If not specified, the system uses a default label of "Save" (suitably translated).
@@ -122,7 +122,7 @@ Use the [FileTypeChoices](/windows/windows-app-sdk/api/winrt/microsoft.windows.s
 > [!NOTE]
 > [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker) objects display the file picker using the [PickerViewMode.List](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickerviewmode) view mode.
 
-2. Next, show the **FileSavePicker** and save to the picked file location. Display the file picker by calling [PickSaveFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker.picksavefileasync). After the user specifies the name, file type, and location, and confirms to save the file, **PickSaveFileAsync** returns a lightweight [FilePickResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult) object that contains the path to the saved file and the filename. You can capture and process this file if you have read and write access to it.
+2. Next, show the **FileSavePicker** and save to the picked file location. Display the file picker by calling [PickSaveFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker.picksavefileasync). After the user specifies the name, file type, and location, and confirms to save the file, **PickSaveFileAsync** returns a lightweight [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult) object that contains the path to the saved file. If you need the file name, derive it from that path. You can capture and process this file if you have read and write access to it.
 
 ```csharp
     using Microsoft.Windows.Storage.Pickers;
@@ -186,7 +186,7 @@ The example checks if the file exists and either creates a new file or appends t
 
 ## Related content
 
-[Windows.Storage.Pickers](/uwp/api/windows.storage.pickers)
+[Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers)
 
 [Files, folders, and libraries with Windows App SDK](index.md)
 

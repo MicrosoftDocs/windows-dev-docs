@@ -26,6 +26,9 @@ This will allow you to programmatically access MongoDB databases.
 The following sample code gets a collection from a remote MongoDB client, then adds a new document to that collection. Then it uses MongoDB APIs to retrieve the new size of the collection as well as the inserted document, and prints them out.
 
 ``` csharp
+using MongoDB.Bson;
+using MongoDB.Driver;
+
 var client = new MongoClient("mongodb://10.xxx.xx.xxx:27017");
 IMongoDatabase database = client.GetDatabase("foo");
 IMongoCollection<BsonDocument> collection = database.GetCollection<BsonDocument>("bar");
