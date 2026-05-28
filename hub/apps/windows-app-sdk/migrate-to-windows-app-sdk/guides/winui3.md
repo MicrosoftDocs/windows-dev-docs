@@ -2,7 +2,7 @@
 title: User interface migration (including WinUI)
 description: This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, WinUI
 ms.localizationpriority: medium
 dev_langs:

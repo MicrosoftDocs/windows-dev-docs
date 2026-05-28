@@ -2,7 +2,7 @@
 title: Windowing functionality migration
 description: This topic contains guidance related to window management, including migrating from UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) or [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow) to the Window App SDK [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow).
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
 ms.localizationpriority: medium
 ---
