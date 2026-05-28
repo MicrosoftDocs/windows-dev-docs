@@ -327,7 +327,7 @@ There are 2 ways you can expand or collapse a tree view node in your code.
 
 You might need to show a large number of nodes in your tree view, or you might not know ahead of time how many nodes it will have. The **TreeView** control is not virtualized, so you can manage resources by filling each node as it's expanded, and removing the child nodes when it's collapsed.
 
-Handle the [Expanding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.expand) event and use the [HasUnrealizedChildren](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded. The **HasUnrealizedChildren** property indicates whether the node needs to be filled, or if its **Children** collection has already been populated. It's important to remember that the **TreeViewNode** doesn't set this value, you need to manage it in your app code.
+Handle the [Expanding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.expanding) event and use the [HasUnrealizedChildren](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewnode.hasunrealizedchildren) property to add children to a node when it's being expanded. The **HasUnrealizedChildren** property indicates whether the node needs to be filled, or if its **Children** collection has already been populated. It's important to remember that the **TreeViewNode** doesn't set this value, you need to manage it in your app code.
 
 Here's an example of these APIs in use. See the complete example code at the end of this article for context, including the implementation of **FillTreeNode**.
 

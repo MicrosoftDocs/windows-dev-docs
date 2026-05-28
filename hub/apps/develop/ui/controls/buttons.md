@@ -238,7 +238,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [DropDownButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button), [Flyout property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout)
+> - **Important APIs**: [DropDownButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dropdownbutton), [Flyout property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the DropdownButton in action](winui3gallery://item/DropdownButton)

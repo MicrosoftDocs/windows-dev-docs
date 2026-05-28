@@ -30,7 +30,7 @@ The title bar is divided into these areas:
 ![Screenshot showing the parts of a title bar control.](images/titlebar/title-bar-parts.png)
 
 - **Back button:** [IsBackButtonEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled), [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible), [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested) - A built-in back button for navigation.
-- **Pane toggle button:** [IsPaneToggleButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled), [PaneToggleRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.panetogglerequested) - This button is intended to be used in conjunction with the NavigationView control.
+- **Pane toggle button:** [IsPaneToggleButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.ispanetogglebuttonvisible), [PaneToggleRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.panetogglerequested) - This button is intended to be used in conjunction with the NavigationView control.
 - **Left header:** [LeftHeader](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.leftheader)
 - **Icon:** [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.iconsource)
 - **Title:** [Title](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.title)

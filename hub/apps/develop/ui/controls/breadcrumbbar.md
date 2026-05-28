@@ -46,7 +46,7 @@ The image below shows the parts of the `BreadcrumbBar` control. You can modify t
 
 > [!div class="checklist"]
 >
-> - **Important APIs:** [BreadcrumbBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button)
+> - **Important APIs:** [BreadcrumbBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the BreadcrumbBar in action](winui3gallery://item/BreadcrumbBar)

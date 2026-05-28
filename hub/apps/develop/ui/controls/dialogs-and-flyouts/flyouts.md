@@ -189,7 +189,7 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
      flyout.OverlayInputPassThroughElement = FavoritesBar;
      ...
      flyout.ShowAt(sender as FrameworkElement);
-{
+}
 ```
 
 ## Related articles

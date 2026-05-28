@@ -95,7 +95,7 @@ In this example, the first TextBlock is rendered using the fast path, while the 
 <StackPanel>
     <TextBlock Text="This text is on the fast path."/>
     <TextBlock>This text is NOT on the fast path.</TextBlock>
-<StackPanel/>
+</StackPanel>
 ```
 
 When you run this XAML in debug mode with [IsTextPerformanceVisualizationEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.debugsettings.istextperformancevisualizationenabled) set to `true`, the result looks like this.

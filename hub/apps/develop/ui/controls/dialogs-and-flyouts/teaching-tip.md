@@ -255,7 +255,7 @@ An icon can be added beside the title and subtitle using the [IconSource](/windo
         <TeachingTip x:Name="AutoSaveTip"
             Target="{x:Bind SaveButton}"
             Title="Saving automatically"
-            Subtitle="We save your changes as you go - so you never have to."
+            Subtitle="We save your changes as you go - so you never have to.">
             <TeachingTip.IconSource>
                 <SymbolIconSource Symbol="Save" />
             </TeachingTip.IconSource>

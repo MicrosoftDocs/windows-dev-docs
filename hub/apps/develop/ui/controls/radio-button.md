@@ -354,7 +354,7 @@ public sealed partial class MainPage : Page
 
     List<ColorOptionDataModel> colorOptionItems;
 
-    public MainPage1()
+    public MainPage()
     {
         this.InitializeComponent();
 

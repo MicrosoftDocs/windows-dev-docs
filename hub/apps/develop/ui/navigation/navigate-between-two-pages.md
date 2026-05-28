@@ -441,13 +441,13 @@ using namespace winrt::Microsoft::UI::Xaml::Media::Animation;
 
 // ...
 
-void winrt::BasicNavigation::implementation::MainPage::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
+void winrt::BasicNavigation::implementation::Page2::HyperlinkButton_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
 {   
     // Create the slide transition and set the transition effect to FromLeft.
     SlideNavigationTransitionInfo slideEffect = SlideNavigationTransitionInfo();
     slideEffect.Effect(SlideNavigationTransitionEffect(SlideNavigationTransitionEffect::FromLeft));
     Frame().Navigate(winrt::xaml_typename<BasicNavigation::MainPage>(),
-        		     nullptr,
+                     nullptr,
                      slideEffect);
 }
 ```

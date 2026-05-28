@@ -76,7 +76,7 @@ myBrush.TintColor = Color.FromArgb(255, 202, 24, 37);
 myBrush.FallbackColor = Color.FromArgb(255, 202, 24, 37);
 myBrush.TintOpacity = 0.6;
 
-grid.Fill = myBrush;
+grid.Background = myBrush;
 ```
 
 ## Related articles
