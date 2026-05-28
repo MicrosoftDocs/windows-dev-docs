@@ -2,8 +2,8 @@
 title: Distribute an unpackaged WinUI 3 app
 description: Learn how to set WindowsPackageType=None for unpackaged WinUI 3 distribution, understand the runtime deployment options, and review the key limitations before you start.
 ms.topic: how-to
-ms.date: 04/20/2026
-keywords: windows app sdk, winappsdk, winui, unpackaged, WindowsPackageType, bootstrapper, self-contained
+ms.date: 05/28/2026
+keywords: windows app sdk, winappsdk, winui, unpackaged, WindowsPackageType, bootstrapper, self-contained, PublishSingleFile, single-file exe
 ms.localizationpriority: medium
 content-type: how-to
 #Customer intent: As a Windows developer, I want to distribute my WinUI 3 app without MSIX packaging and understand the limitations and runtime requirements.
@@ -16,7 +16,7 @@ Unpackaged distribution lets you ship a WinUI 3 app without MSIX — useful for 
 > [!IMPORTANT]
 > **Review these limitations before you start.** Unpackaged WinUI 3 apps have constraints that affect your distribution strategy:
 >
-> - **No single-file EXE** — The Windows App SDK runtime and WinUI 3 dependencies must exist as separate files. The .NET single-file publish feature (`PublishSingleFile`) cannot bundle them into one executable. You will always distribute a folder of files (or wrap them in a traditional installer such as WiX or Inno Setup).
+> - **Single-file EXE** — Unpackaged, self-contained WinUI 3 apps support `PublishSingleFile` (Windows App SDK 1.5 and later). This produces a single distributable EXE; dependencies are extracted to a temp directory at first launch. Specific MSBuild properties are required — see [Single-file EXE](#single-file-exe) below. Framework-dependent apps and packaged apps do not support `PublishSingleFile`.
 > - **Runtime dependency** — The Windows App SDK runtime must be present on the user's machine. You must either bundle the runtime installer with your app, or use self-contained deployment (which significantly increases output size). See [Deploying the Windows App SDK runtime](#deploying-the-windows-app-sdk-runtime) below.
 > - **No package identity** — Without a package manifest, your app cannot use manifest-based Windows features: no automatic updates via App Installer or Store, no background task registration, and no file type associations or Start menu tile customization via package manifest. (Traditional Win32 mechanisms such as installer-written registry entries and shortcuts still work.)
 > - **No MSIX/package-identity Store submission** — This distribution model has no package identity; it is not eligible as an MSIX submission to the Microsoft Store. (You can submit a traditional installer to the Store via the [MSI or EXE installer submission path](../publish/publish-your-app/msi/upload-app-packages.md), but that is a separate workflow from what this article describes.)
@@ -109,16 +109,40 @@ The trade-off: your output folder is significantly larger (the full runtime is i
 
 → [Deploy unpackaged apps that use the Windows App SDK](/windows/apps/windows-app-sdk/deploy-unpackaged-apps) for the complete runtime deployment reference.
 
-## Single-file EXE limitation
+## Single-file EXE
+
+Starting with Windows App SDK 1.5, **unpackaged, self-contained** WinUI 3 apps support the .NET `PublishSingleFile` deployment model. This produces a single distributable EXE file — all dependencies are bundled into the EXE and extracted to a temp directory at first launch.
 
 > [!IMPORTANT]
-> **Unpackaged WinUI 3 apps cannot be published as a single-file EXE.** The Windows App SDK runtime and several WinUI 3 dependencies must exist as separate files — the .NET single-file publish feature cannot bundle them into one executable.
+> `PublishSingleFile` is **not** supported for packaged apps (MSIX or packaged with external location) or for framework-dependent apps. Both conditions — unpackaged **and** self-contained — are required.
 
-If a single-file distribution experience is important for your scenario, consider these alternatives:
+### Required MSBuild properties
+
+The Windows App SDK includes a build-time validation target ([`WindowsAppSDKSingleFileVerifyConfiguration`](project-properties.md)) that checks your project configuration when `PublishSingleFile` is set. The following properties are required:
+
+```xml
+<PropertyGroup>
+  <WindowsPackageType>None</WindowsPackageType>
+  <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+  <SelfContained>true</SelfContained>
+  <EnableMsixTooling>true</EnableMsixTooling>
+  <IncludeAllContentForSelfExtract>true</IncludeAllContentForSelfExtract>
+  <PublishSingleFile>true</PublishSingleFile>
+</PropertyGroup>
+```
+
+The build emits **errors** if `EnableMsixTooling`, `WindowsPackageType=None`, or `IncludeAllContentForSelfExtract` are missing, and **warnings** if `WindowsAppSDKSelfContained` or `SelfContained` are absent.
+
+> [!NOTE]
+> **Extraction behavior:** `IncludeAllContentForSelfExtract=true` means dependencies are extracted to a temp directory on the user's machine at first launch — the app is not a zero-extraction binary. The single EXE is convenient to distribute, but the extracted files must be present to run. The `WindowsAppSdkUndockedRegFreeWinRTInitialize` auto-initializer handles locating the extracted runtime; if you opt out of it, you must set the `MICROSOFT_WINDOWSAPPRUNTIME_BASE_DIRECTORY` environment variable to `AppContext.BaseDirectory` before program entry.
+
+### Alternatives if single-file extraction is not acceptable
+
+If you need a zero-extraction single binary, or if extraction behavior is not acceptable in your deployment environment, consider:
 
 - **Use MSIX packaging** — users get a single installer experience (App Installer handles all the files), and you get Store eligibility, package identity, and built-in updates
 - **Use a traditional installer (WiX, Inno Setup)** — wrap the output folder in a single EXE installer that extracts and installs all required files transparently
-- **Use a different framework** — WPF and WinForms apps with `dotnet publish --self-contained -p:PublishSingleFile=true` *can* produce a single-file EXE, though some native dependencies may still be extracted at runtime
+- **Use a different framework** — WPF and WinForms apps support `PublishSingleFile` with a broader set of configurations
 
 ## Distribution considerations for unpackaged apps
 

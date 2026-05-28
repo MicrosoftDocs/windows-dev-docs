@@ -2,7 +2,7 @@
 title: Package and deploy Windows apps overview
 description: The topics in this section introduce options and guidance for deploying different types of Windows apps. Your first decision will be whether or not to package your app.
 ms.topic: concept-article
-ms.date: 12/17/2025
+ms.date: 05/28/2026
 ms.localizationpriority: medium
 ---
 
@@ -19,6 +19,22 @@ Not sure which packaging model is right for your app? See [Packaging overview](p
 Choosing how to distribute your app — through the Microsoft Store, enterprise sideloading, or direct download? See [Choose a distribution path](choose-distribution-path.md) for a side-by-side comparison of signing costs, update mechanics, and enterprise management per path. For the current status of distribution features (including the ms-appinstaller protocol change), see [Current status of Windows app distribution features](distribution-feature-status.md).
 
 When deploying apps that use the Windows App SDK, you can choose between framework-dependent and self-contained deployment models. Framework-dependent apps rely on the Windows App SDK runtime and/or framework package being installed on the user’s machine. In contrast, self-contained apps bundle the Windows App SDK dependencies directly with the application, ensuring the app carries everything it needs to run. The right model depends on your distribution scenario, update strategy, and how much control you want over the app’s footprint and dependencies.
+
+## Deployment scenario quick reference
+
+The table below maps common distribution goals to the recommended packaging mode, Windows App SDK runtime mode, and key constraints. For code signing costs and MDM manageability per distribution path, see [Choose a distribution path](choose-distribution-path.md).
+
+| Goal | Packaging mode | Runtime mode | Windows App SDK runtime on target machine |
+|---|---|---|---|
+| **Publish to Microsoft Store** | [Packaged (MSIX)](packaging/index.md) | Framework-dependent | Auto-installed by Store |
+| **Enterprise deploy via Intune / ConfigMgr** | [Packaged (MSIX)](packaging/index.md) or [packaged with external location](packaging/index.md) | Either | Bundled in MSIX dependency or auto-installed |
+| **Direct download from website (with WiX / Inno installer)** | [Packaged with external location](packaging/index.md) (recommended for ISVs needing Windows features) or unpackaged | Self-contained recommended | Bundled by self-contained |
+| **Xcopy / zip (no installer)** | Unpackaged | Self-contained | Bundled by self-contained |
+| **Framework-dependent download (smallest footprint)** | Unpackaged | Framework-dependent | Must be pre-installed or [deployed separately](../windows-app-sdk/deploy-unpackaged-apps.md) |
+| **CI artifact / internal test** | Either | Self-contained simplifies machine setup | Bundled if self-contained; requires runtime install if framework-dependent |
+
+> [!NOTE]
+> **`PublishSingleFile` (single-file EXE)** is supported for **unpackaged, self-contained** WinUI 3 apps (Windows App SDK 1.5 and later). It produces a single distributable EXE that extracts dependencies to a temp directory at first launch. Packaged apps (MSIX or packaged with external location) do not support `PublishSingleFile`. For required MSBuild properties and build-time validation, see [`WindowsAppSDKSingleFileVerifyConfiguration`](project-properties.md).
 
 ---
 
