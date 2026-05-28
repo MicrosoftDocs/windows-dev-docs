@@ -81,7 +81,7 @@ With an attached layout, a single instance of the layout object may be associate
 <!-- ... --->
 <Page.Resources>
     <ExampleLayout x:Name="exampleLayout"/>
-<Page.Resources>
+</Page.Resources>
 
 <LayoutPanel x:Name="example1" Layout="{StaticResource exampleLayout}"/>
 <LayoutPanel x:Name="example2" Layout="{StaticResource exampleLayout}"/>
@@ -240,7 +240,7 @@ Scrolling on Windows happens asynchronous to the UI thread. It is not controlled
 
 ![Realization rect](images/xaml-attached-layout-realizationrect.png)
 
-Since element creation is costly, virtualizing containers (for example, [ItemsRepeater](../controls/items-repeater.md)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) properties.
+Since element creation is costly, virtualizing containers (for example, [ItemsRepeater](../controls/items-repeater.md)) will initially provide the attached layout with a [RealizationRect](/uwp/api/microsoft.ui.xaml.controls.virtualizinglayoutcontext.realizationrect) that matches the viewport. On idle time the container may grow the buffer of prepared content by making repeated calls to the layout using an increasingly larger realization rect. This behavior is a performance optimization that attempts to strike a balance between fast startup time and a good panning experience. The maximum buffer size that the ItemsRepeater will generate is controlled by its [VerticalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.verticalcachelength) and [HorizontalCacheLength](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater.horizontalcachelength) properties.
 
 **Re-using Elements (Recycling)**
 

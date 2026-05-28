@@ -191,10 +191,10 @@ void DetermineWorkloads()
 ```csharp
 private void DetermineWorkloads()
 {
-    BatteryStatus batteryStatus = PowerManager.BatteryStatus();
-    int remainingCharge = PowerManager.RemainingChargePercent();
-    PowerSupplyStatus powerStatus = PowerManager.PowerSupplyStatus();
-    PowerSourceKind powerSource = PowerManager.PowerSourceKind();
+    BatteryStatus batteryStatus = PowerManager.BatteryStatus;
+    int remainingCharge = PowerManager.RemainingChargePercent;
+    PowerSupplyStatus powerStatus = PowerManager.PowerSupplyStatus;
+    PowerSourceKind powerSource = PowerManager.PowerSourceKind;
 
     if ((powerSource == PowerSourceKind.DC 
         && batteryStatus == BatteryStatus.Discharging 

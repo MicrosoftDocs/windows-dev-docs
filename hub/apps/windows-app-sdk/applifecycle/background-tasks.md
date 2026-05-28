@@ -57,7 +57,7 @@ catch (...)
 }
 ```
 
-The following example shows how to register a background task using C#. In the Windows App SDK github sample, you can see this registration code in [MainWindow.Xaml.cpp](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/BackgroundTask/InProc%20BackgroundTask/cs-winui/BackgroundTaskBuilder/MainWindow.xaml.cs#L79).
+The following example shows how to register a background task using C#. In the Windows App SDK github sample, you can see this registration code in [MainWindow.xaml.cs](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/BackgroundTask/InProc%20BackgroundTask/cs-winui/BackgroundTaskBuilder/MainWindow.xaml.cs#L79).
 
 ```csharp
 await BackgroundExecutionManager.RequestAccessAsync();
@@ -138,7 +138,7 @@ void BackgroundTask::OnCanceled(_In_ IBackgroundTaskInstance /* taskInstance */,
 }
 ```
 
-The following example shows how to implement **IBackgroundTask** using C#. In the Windows App SDK github sample, you can see this registration code in [BackgroundTask.cpp](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/BackgroundTask/InProc%20BackgroundTask/cs-winui/BackgroundTaskBuilder/BackgroundTask.cs#L21).
+The following example shows how to implement **IBackgroundTask** using C#. In the Windows App SDK github sample, you can see this implementation code in [BackgroundTask.cs](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/BackgroundTask/InProc%20BackgroundTask/cs-winui/BackgroundTaskBuilder/BackgroundTask.cs#L21).
 
 ```csharp
 [ComVisible(true)]
@@ -332,7 +332,7 @@ static partial class ComServer
         out uint registrationToken);
 
     [LibraryImport("ole32.dll")]
-    public static partial int CoRevokeObject(out uint registrationToken);
+    public static partial int CoRevokeClassObject(uint registrationToken);
 
     public const uint CLSCTX_LOCAL_SERVER = 4;
     public const uint REGCLS_MULTIPLEUSE = 1;
@@ -398,7 +398,7 @@ public App()
 
 ~App()
 {
-    ComServer.CoRevokeObject(out _RegistrationToken);
+    ComServer.CoRevokeClassObject(_RegistrationToken);
 }
 ```
 

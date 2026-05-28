@@ -155,7 +155,7 @@ Clipboard.ContentChanged += async (s, e) =>
         // To output the text from this example, you need a TextBlock control
         TextOutput.Text = "Clipboard now contains: " + text;
     }
-}
+};
 ```
 ### [C++/WinRT](#tab/cppwinrt)
 

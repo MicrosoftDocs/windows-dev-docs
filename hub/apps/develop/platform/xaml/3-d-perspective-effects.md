@@ -124,7 +124,7 @@ Notice how the image rotates around the center when the [**CenterOfRotationY**](
 ```xml
 <Image Source="kid.png">
     <Image.Projection>
-        <PlaneProjection RotationY="-35" CenterOfRotationX="0.5" />
+        <PlaneProjection RotationY="-35" CenterOfRotationX="0.9" />
     </Image.Projection>
 </Image>
 ```
