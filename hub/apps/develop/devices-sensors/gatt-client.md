@@ -1,29 +1,27 @@
 ---
 title: Bluetooth GATT Client
-description: This article demonstrates how to use the Bluetooth Generic Attribute (GATT) Client APIs for Universal Windows Platform (UWP) apps.
-ms.date: 05/04/2023
+description: This article demonstrates how to use the Bluetooth Generic Attribute (GATT) Client APIs for Windows apps.
+ms.date: 05/27/2026
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 
 # Bluetooth GATT Client
 
-This article demonstrates how to use the Bluetooth Generic Attribute (GATT) Client APIs for Universal Windows Platform (UWP) apps.
+This article demonstrates how to use the Bluetooth Generic Attribute (GATT) Client APIs for Windows apps.
 
 > [!IMPORTANT]
 > You must declare the "bluetooth" capability in *Package.appxmanifest*.
 >
 > `<Capabilities> <DeviceCapability Name="bluetooth" /> </Capabilities>`
 
-> **Important APIs**
+> [!div class="checklist"]
 >
-> - [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
-> - [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
+> - **Important APIs:** [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth), [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile)
 
 ## Overview
 
-Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) namespace to access Bluetooth LE devices. Bluetooth LE devices expose their functionality through a collection of:
+You can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttributeProfile**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile) namespace to access Bluetooth LE devices. Bluetooth LE devices expose their functionality through a collection of:
 
 - Services
 - Characteristics
@@ -31,21 +29,17 @@ Developers can use the APIs in the [**Windows.Devices.Bluetooth.GenericAttribute
 
 Services define the functional contract of the LE device and contain a collection of characteristics that define the service. Those characteristics, in turn, contain descriptors that describe the characteristics. These 3 terms are generically known as the attributes of a device.
 
-The Bluetooth LE GATT APIs expose objects and functions, rather than access to the raw transport. The GATT APIs also enable developers to work with Bluetooth LE devices with the ability to perform the following tasks:
+The Bluetooth LE GATT APIs expose objects and functions, rather than access to the raw transport. The GATT APIs also let you work with Bluetooth LE devices with the ability to perform the following tasks:
 
 - Perform attribute discovery
 - Read and Write attribute values
 - Register a callback for Characteristic ValueChanged event
 
-To create a useful implementation a developer must have prior knowledge of the GATT services and characteristics the application intends to consume and to process the specific characteristic values such that the binary data provided by the API is transformed into useful data before being presented to the user. The Bluetooth GATT APIs expose only the basic primitives required to communicate with a Bluetooth LE device. To interpret the data, an application profile must be defined, either by a Bluetooth SIG standard profile, or a custom profile implemented by a device vendor. A profile creates a binding contract between the application and the device, as to what the exchanged data represents and how to interpret it.
+To create a useful implementation you must have prior knowledge of the GATT services and characteristics the application intends to consume and to process the specific characteristic values such that the binary data provided by the API is transformed into useful data before being presented to the user. The Bluetooth GATT APIs expose only the basic primitives required to communicate with a Bluetooth LE device. To interpret the data, an application profile must be defined, either by a Bluetooth SIG standard profile, or a custom profile implemented by a device vendor. A profile creates a binding contract between the application and the device, as to what the exchanged data represents and how to interpret it.
 
 For convenience the Bluetooth SIG maintains a [list of public profiles](https://www.bluetooth.com/specifications/adopted-specifications#gattspec) available.
 
-## Examples
-
-For a complete sample, see [Bluetooth Low Energy sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BluetoothLE).
-
-### Query for nearby devices
+## Query for nearby devices
 
 There are two main methods to query for nearby devices:
 
@@ -82,12 +76,12 @@ deviceWatcher.Start();
 
 Once you've started the DeviceWatcher, you will receive [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/DeviceEnumerationAndPairing).
 
-### Connecting to the device
+## Connect to the device
 
 Once a desired device is discovered, use the [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) to get the Bluetooth LE Device object for the device in question:
 
 ```csharp
-async void ConnectDevice(DeviceInformation deviceInfo)
+private async Task ConnectDevice(DeviceInformation deviceInfo)
 {
     // Note: BluetoothLEDevice.FromIdAsync must be called from a UI thread because it may prompt for consent.
     BluetoothLEDevice bluetoothLeDevice = await BluetoothLEDevice.FromIdAsync(deviceInfo.Id);
@@ -101,7 +95,7 @@ On the other hand, disposing of all references to a BluetoothLEDevice object for
 bluetoothLeDevice.Dispose();
 ```
 
-If the app needs to access the device again, simply re-creating the device object and accessing a characteristic (discussed in the next section) will trigger the OS to re-connect when necessary. If the device is nearby, you'll get access to the device otherwise it will return w/ a DeviceUnreachable error.  
+If the app needs to access the device again, simply re-creating the device object and accessing a characteristic (discussed in the next section) will trigger the OS to re-connect when necessary. If the device is nearby, you'll get access to the device otherwise it will return with a DeviceUnreachable error.  
 
 > [!NOTE]
 > Creating a [BluetoothLEDevice](/uwp/api/windows.devices.bluetooth.bluetoothledevice) object by calling this method alone doesn't (necessarily) initiate a connection. To initiate a connection, set [GattSession.MaintainConnection](/uwp/api/windows.devices.bluetooth.genericattributeprofile.gattsession.maintainconnection) to `true`, or call an uncached service discovery method on **BluetoothLEDevice**, or perform a read/write operation against the device.
@@ -111,7 +105,7 @@ If the app needs to access the device again, simply re-creating the device objec
 >
 > Currently, you can't cancel the connection process.
 
-### Enumerating supported services and characteristics
+## Enumerate supported services and characteristics
 
 Now that you have a BluetoothLEDevice object, the next step is to discover what data the device exposes. The first step to do this is to query for services:
 
@@ -192,11 +186,11 @@ if (result == GattCommunicationStatus.Success)
 > [!TIP]
 > [DataReader](/uwp/api/windows.storage.streams.datareader) and [DataWriter](/uwp/api/windows.storage.streams.datawriter) are indispensable when working with the raw buffers you get from many of the Bluetooth APIs.
 
-### Subscribing for notifications
+### Subscribe for notifications
 
-Make sure the characteristic supports either Indicate or Notify (check the characteristic properties to make sure).
+Make sure the characteristic supports either `Indicate` or `Notify` (check the characteristic properties to make sure).
 
-Indicate is considered more reliable because each value changed event is coupled with an acknowledgement from the client device. Notify is more prevalent because most GATT transactions would rather conserve power rather than be extremely reliable. In any case, all of that is handled at the controller layer so the app does not get involved. We'll collectively refer to them as simply "notifications".
+`Indicate` is considered more reliable because each value changed event is coupled with an acknowledgement from the client device. `Notify` is more prevalent because most GATT transactions would rather conserve power rather than be extremely reliable. In any case, all of that is handled at the controller layer so the app does not get involved. We'll collectively refer to them as simply "notifications".
 
 There are two things to take care of before getting notifications:
 
@@ -230,3 +224,6 @@ void Characteristic_ValueChanged(GattCharacteristic sender,
 }
 ```
 
+## Examples
+
+For a complete sample, see [Bluetooth Low Energy sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BluetoothLE).

@@ -1,7 +1,7 @@
 ---
 title: Camera barcode scanner
 description: Explains what a camera barcode scanner is and provides links to various topics that describe its features.
-ms.date: 03/08/2023
+ms.date: 05/27/2026
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
@@ -9,12 +9,10 @@ ms.localizationpriority: medium
 
 # Camera barcode scanner
 
-**Requires Windows 10 Version 1803 or later.**
-
-A camera barcode scanner consists of a standard lens camera with auto-focus capabilities (attached to a computer) combined with a software decoder, which Windows dynamically pairs to create a fully functional [barcode scanner](barcodescanner.md) for Universal Windows Platform (UWP) apps.
+A camera barcode scanner consists of a standard lens camera with auto-focus capabilities (attached to a computer) combined with a software decoder, which Windows dynamically pairs to create a fully functional [barcode scanner](barcodescanner.md) for WinRT apps.
 
 > [!NOTE]
-> The software decoder built into Windows 10/11 is provided by [*Digimarc Corporation*](https://www.digimarc.com/).
+> The software decoder built into Windows 10/11 is provided by [*Digimarc Corporation*](https://www.digimarc.com/). Requires Windows 10 Version 1803 or later.
 
 ## In this section
 
@@ -29,5 +27,4 @@ A camera barcode scanner consists of a standard lens camera with auto-focus capa
 
 ## See also
 
-- [JustScanIt - Windows Store app](https://aka.ms/justscanit)
 - [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

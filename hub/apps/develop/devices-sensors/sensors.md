@@ -1,10 +1,8 @@
 ---
-
 title: Sensors
 description: Sensors let your app know the relationship between a device and the physical world around it. Sensors can tell your app the direction, orientation, and movement of the device.
-ms.date: 05/04/2023
+ms.date: 05/26/2026
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 
@@ -53,7 +51,7 @@ The following diagrams illustrate:
 
 Apps that might use the accelerometer sensor include a game where a marble on the screen rolls in the direction you tilt the device (gravitational vector). This type of functionality closely mirrors that of the [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer) and could also be done with that sensor by using a combination of pitch and roll. Using the accelerometer’s gravity vector simplifies this somewhat by providing an easily mathematically manipulated vector for device tilt. Another example would be an app that makes a whip’s cracking sound when the user flicks the device through the air (linear acceleration vector).
 
-For an example implementation, see the [accelerometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Accelerometer).
+For an example implementation, see [Use the accelerometer](use-the-accelerometer.md).
 
 ## Activity sensor
 
@@ -81,7 +79,7 @@ The [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass) sensor returns a 2D 
 
 Apps that want to display a compass rose or navigate a map would typically use the compass sensor.
 
-For an example implementation, see the [compass sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Compass).
+For an example implementation, see [Use the compass](use-the-compass.md).
 
 ## Gyrometer
 
@@ -91,7 +89,7 @@ The [**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer) sensor measures 
 
 An example of an app that could use the gyrometer sensor is a game that spins a roulette wheel based on a quick rotational jerk of the device.
 
-For an example implementation, see the [gyrometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Gyrometer).
+For an example implementation, see [Use the gyrometer](use-the-gyrometer.md).
 
 ## Inclinometer
 
@@ -101,13 +99,13 @@ The [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer) sensor spe
 
 Apps that change their view to match the orientation of the device can use the inclinometer sensor. Also, an app that displays an airplane that matches the yaw, pitch, and roll of the device would also use the inclinometer readings.
 
-For an example implementation, see the inclinometer sample [https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Inclinometer](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Inclinometer).
+For an example implementation, see [Use the inclinometer](use-the-inclinometer.md).
 
 ## Light sensor
 
-The [**Light**](/uwp/api/Windows.Devices.Sensors.LightSensor) sensor is capable of determining the ambient light surrounding the sensor. This enables an app to determine when the light setting surrounding a device has changed. For example, a user with a slate device might walk from indoors to outdoors on a sunny day. A smart application could use this value to increase the contrast between the background and the font being rendered. That would make the content still readable in the brighter, outdoor setting.
+The [**LightSensor**](/uwp/api/Windows.Devices.Sensors.LightSensor) sensor is capable of determining the ambient light surrounding the sensor. This enables an app to determine when the light setting surrounding a device has changed. For example, a user with a slate device might walk from indoors to outdoors on a sunny day. A smart application could use this value to increase the contrast between the background and the font being rendered. That would make the content still readable in the brighter, outdoor setting.
 
-For an example implementation, see the [light sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LightSensor).
+For an example implementation, see [Use the light sensor](use-the-light-sensor.md).
 
 ## Orientation sensor
 
@@ -117,13 +115,13 @@ Device orientation is expressed through both quaternion and a rotation matrix. T
 
 The orientation sensor is often used in advanced augmented reality apps that paint an overlay on your surroundings based on the direction the back of the device is pointing.
 
-For an example implementation, see the [orientation sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/OrientationSensor).
+For an example implementation, see [Use the orientation sensor](use-the-orientation-sensor.md).
 
 ## Pedometer
 
 The [**Pedometer**](/uwp/api/Windows.Devices.Sensors.Pedometer) sensor keeps track of the number of steps taken by the user carrying the connected device. The sensor is configured to keep track of the number of steps over a given time period. Several fitness applications like to keep track of the number of steps taken in order to help the user set and reach various goals. This information can then be collected and stored to show progress over time.
 
-For an example implemenation, see the [pedometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Pedometer).
+For an example implementation, see the [pedometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Pedometer).
 
 ## Proximity sensor
 

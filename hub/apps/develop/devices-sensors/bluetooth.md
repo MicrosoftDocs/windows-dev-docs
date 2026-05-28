@@ -1,16 +1,15 @@
 ---
 
 title: Bluetooth
-description: This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.
-ms.date: 05/04/2023
+description: This section contains articles on how to integrate Bluetooth into Windows apps, including how to use RFCOMM, GATT, and Low Energy (LE) Advertisements.
+ms.date: 05/27/2026
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 
 # Bluetooth
 
-This section contains articles on how to integrate Bluetooth into Universal Windows Platform (UWP) apps.
+This section contains articles on how to integrate Bluetooth into Windows apps.
 
 > [!IMPORTANT]
 > You must declare the "bluetooth" capability in *Package.appxmanifest*.

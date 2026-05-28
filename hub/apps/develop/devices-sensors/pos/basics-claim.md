@@ -50,16 +50,16 @@ The claim action establishes exclusive rights to the device, but does not put it
 
 This sample shows how to claim a barcode scanner device after you have successfully created a barcode scanner object.
 
-```Csharp
+```csharp
 
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
 
-    if(barcodeScanner != null)
+    if (barcodeScanner != null)
     {
         // after successful creation, claim the scanner for exclusive use 
         claimedBarcodeScanner = await barcodeScanner.ClaimScannerAsync();
 
-        if(claimedBarcodeScanner != null)
+        if (claimedBarcodeScanner != null)
         {
             // after successful claim, enable scanner for data events to fire
             await claimedBarcodeScanner.EnableAsync();
@@ -92,7 +92,7 @@ If the application with the active claim does not respond with **RetainDevice** 
 
 The first step is to create an event handler that responds to the **ReleaseDeviceRequested** event with **RetainDevice**.  
 
-```Csharp
+```csharp
     /// <summary>
     /// Event handler for the ReleaseDeviceRequested event which occurs when 
     /// the claimed barcode scanner receives a Claim request from another application
@@ -106,15 +106,15 @@ The first step is to create an event handler that responds to the **ReleaseDevic
 
 Next, register the event handler in association with your claimed device
 
-```Csharp
+```csharp
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
 
-    if(barcodeScanner != null)
+    if (barcodeScanner != null)
     {
         // after successful creation, claim the scanner for exclusive use 
         claimedBarcodeScanner = await barcodeScanner.ClaimScannerAsync();
 
-        if(claimedBarcodeScanner != null)
+        if (claimedBarcodeScanner != null)
         {
             // register a release request handler to prevent loss of scanner during active use
             claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;

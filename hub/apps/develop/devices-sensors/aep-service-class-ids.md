@@ -12,11 +12,11 @@ ms.localizationpriority: medium
 
 Association Endpoint (AEP) services provide a programming contract for services that a device supports over a given protocol. Several of these services have established identifiers that should be used when referencing them. These contracts are identified with the **System.Devices.AepService.ServiceClassId** property. This topic lists several well-known AEP service class IDs. The AEP service class ID is also applicable to protocols with custom class IDs.
 
-An app developer should use Advanced Query Syntax (AQS) filters based on the class IDs to limit their queries to the AEP services they plan to use. This will both limit the query results to the relevant services and will significantly increase the performance, battery life, and quality of service for the device. For example, an application can use these service class IDs to use a device as a Miracast sync or DLNA digital media renderer (DMR). For more information about how devices and services interact with each other, see [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
+An app developer should use Advanced Query Syntax (AQS) filters based on the class IDs to limit their queries to the AEP services they plan to use. This will both limit the query results to the relevant services and will significantly increase the performance, battery life, and quality of service for the device. For example, an application can use these service class IDs to use a device as a Miracast sync or DLNA digital media renderer (DMR). For more information about how devices and services interact with each other, see [DeviceInformationKind](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind).
 
-**Important APIs**
-
-- [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Windows.Devices.Enumeration](/uwp/api/Windows.Devices.Enumeration)
 
 ## Bluetooth and Bluetooth LE services
 
@@ -63,7 +63,7 @@ The Bluetooth protocol supports several services, all following the same basic f
 | GATT - User data                     | **0000181C-0000-1000-8000-00805F9B34FB** |
 | GATT - Weight scale                  | **0000181D-0000-1000-8000-00805F9B34FB** |
 
-For a more complete listing of available Bluetooth services, see the [GATT Services specification](https://www.bluetooth.com/specifications/gatt/services/). You can also use the [**GattServiceUuids**](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API to get some common GATT services.
+For a more complete listing of available Bluetooth services, see the [GATT Services specification](https://www.bluetooth.com/specifications/gatt/services/). You can also use the [GattServiceUuids](/uwp/api/Windows.Devices.Bluetooth.GenericAttributeProfile.GattServiceUuids) API to get some common GATT services.
 
 ## Custom Bluetooth LE services
 
@@ -105,7 +105,7 @@ In general, all WSD services have their name hashed into a GUID using the algori
 
 ## AQS sample
 
-This AQS will filter for all UPnP **AssociationEndpointService** objects that support DIAL. In this case, [**DeviceInformationKind**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpointService**.
+This AQS will filter for all UPnP **AssociationEndpointService** objects that support DIAL. In this case, [DeviceInformationKind](/uwp/api/Windows.Devices.Enumeration.DeviceInformationKind) is set to **AsssociationEndpointService**.
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND

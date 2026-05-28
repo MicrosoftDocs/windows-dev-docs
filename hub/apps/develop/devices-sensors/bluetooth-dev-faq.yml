@@ -1,12 +1,12 @@
 ### YamlMime:FAQ
 metadata:
   title: Bluetooth developer FAQ
-  description: This article contains answers to commonly asked questions related to the UWP bluetooth APIs.
-  ms.date: 09/25/2020
+  description: This article contains answers to commonly asked questions related to the WinRT bluetooth APIs.
+  ms.date: 05/27/2026
   ms.topic: faq
   ms.localizationpriority: medium
 title: Bluetooth Developer FAQ
-summary: This article contains answers to commonly asked UWP Bluetooth API questions.
+summary: This article contains answers to commonly asked WinRT Bluetooth API questions.
 
 
 sections:
@@ -88,4 +88,4 @@ sections:
           
           > Caveat: Peripheral Role is hardware-dependent and some Windows Server Editions don't support Bluetooth.
           
-          **Bluetooth BR/EDR (Classic)**: Some variations exist but mostly, they have very similar profile level support. See the docs on [RFCOMM](send-or-receive-files-with-rfcomm.md) and these supported profile documents for [PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles) and [Phone](https://support.microsoft.com/help/10569/windows-10-mobile-supported-bluetooth-profiles)
+          **Bluetooth BR/EDR (Classic)**: Some variations exist but mostly, they have very similar profile level support. See the docs on [RFCOMM](send-or-receive-files-with-rfcomm.md) and this supported profile document for [PC](https://support.microsoft.com/help/10568/windows-10-supported-bluetooth-profiles)

@@ -1,9 +1,8 @@
 ---
 title: Obtain and understand barcode data
 description: Learn how to obtain data from a barcode scanner in a BarcodeScannerReport object and understand its format and contents.
-ms.date: 05/04/2023
+ms.date: 05/27/2026
 ms.topic: concept-article
-
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -18,13 +17,13 @@ Once you've set up your barcode scanner and scan a barcode, the [DataReceived](/
 
 Once you have a **ClaimedBarcodeScanner**, use it to subscribe to the **DataReceived** event:
 
-```cs
+```csharp
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
 The event handler will be passed the **ClaimedBarcodeScanner** and a **BarcodeScannerDataReceivedEventArgs** object. You can access the barcode data through this object's [Report](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) property, which is of type [BarcodeScannerReport](/uwp/api/windows.devices.pointofservice.barcodescannerreport).
 
-```cs
+```csharp
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
 {
     // Parse the data
@@ -41,15 +40,15 @@ Once you have the **BarcodeScannerReport**, you can access and parse the barcode
 
 If you want to access either **ScanDataLabel** or **ScanDataType**, you must first set [IsDecodeDataEnabled](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) to **true**.
 
-```cs
+```csharp
 claimedBarcodeScanner.IsDecodeDataEnabled = true;
 ```
 
 ### Get the scan data type
 
-Getting the decoded barcode label type is fairly trivial&mdash;we simply call [GetName](/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) on **ScanDataType**.
+Getting the decoded barcode label type is fairly trivial&mdash; simply call [GetName](/uwp/api/windows.devices.pointofservice.barcodesymbologies.getname) on **ScanDataType**.
 
-```cs
+```csharp
 private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 {
     return BarcodeSymbologies.GetName(args.Report.ScanDataType);
@@ -58,15 +57,15 @@ private string GetSymbology(BarcodeScannerDataReceivedEventArgs args)
 
 ### Get the scan data label
 
-To get the decoded barcode label, there are a few things you have to be aware of. Only certain data types contain encoded text, so you should first check if the symbology can be converted to a string, and then convert the buffer we get from **ScanDataLabel** to an encoded UTF-8 string.
+To get the decoded barcode label, there are a few things you have to be aware of. Only certain data types contain encoded text, so you should first check if the symbology can be converted to a string, and then convert the buffer you get from **ScanDataLabel** to an encoded UTF-8 string.
 
-```cs
+```csharp
 private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
 {
     uint scanDataType = args.Report.ScanDataType;
 
     // Only certain data types contain encoded text.
-    // To keep this simple, we'll just decode a few of them.
+    // To keep this simple, just decode a few of them.
     if (args.Report.ScanDataLabel == null)
     {
         return "No data";
@@ -98,9 +97,9 @@ private string GetDataLabel(BarcodeScannerDataReceivedEventArgs args)
 
 ### Get the raw scan data
 
-To get the full, raw data from the barcode, we simply convert the buffer we get from **ScanData** into a string.
+To get the full, raw data from the barcode, you simply convert the buffer you get from **ScanData** into a string.
 
-```cs
+```csharp
 private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
 {
     // Get the full, raw barcode data.
@@ -109,7 +108,7 @@ private string GetRawData(BarcodeScannerDataReceivedEventArgs args)
         return "No data";
     }
 
-    // Just to show that we have the raw data, we'll print the value of the bytes.
+    // Just to show that you have the raw data, print the value of the bytes.
     else
     {
         return CryptographicBuffer.ConvertBinaryToString(BinaryStringEncoding.Utf8, args.Report.ScanData);

@@ -1,21 +1,21 @@
 ---
-title: Host a camera barcode scanner preview in a UWP application
-description: Host a camera barcode scanner preview in a UWP application on Windows 10 Version 1803 or later.
-ms.date: 05/04/2023
+title: Host a camera barcode scanner preview in a WinRT application
+description: Host a camera barcode scanner preview in a WinRT application on Windows 10 Version 1803 or later.
+ms.date: 05/27/2026
 ms.topic: how-to
 
 ms.localizationpriority: medium
 ---
 
-# Host a camera barcode scanner preview in a UWP application
+# Host a camera barcode scanner preview in a WinRT application
 
 **Requires Windows 10 Version 1803 or later.**
 
-This topic describes how to host a camera barcode scanner preview in a UWP application.
+This topic describes how to host a camera barcode scanner preview in a WinRT application.
 
 ## Step 1: Setup your camera preview
 
-See [Display the camera preview](/windows/uwp/audio-video-camera/simple-camera-preview-access) for instructions on how to quickly display the camera preview stream within a XAML page in a Universal Windows Platform (UWP) app. When complete, return to this topic for camera barcode scanner specific modifications.
+See [Show the camera preview](../../camera/camera-quickstart-winui3.md) for instructions on how to quickly display the camera preview stream within a XAML page in a WinRT app. When complete, return to this topic for camera barcode scanner specific modifications.
 
 ## Step 2: Edit the capability declarations in your app manifest
 
@@ -27,7 +27,7 @@ Edit the capability declarations in the app manifest to prevent users from recei
 
 ## Step 3: Add a `using` directive to support media capture
 
-```Csharp
+```csharp
 using Windows.Media.Capture;
 ```
 
@@ -39,7 +39,7 @@ The following snippet shows how to initialize a [**MediaCaptureInitializationSet
 - [StreamingCaptureMode.Video](/uwp/api/windows.media.capture.streamingcapturemode)
 - [PhotoCaptureSource.VideoPreview](/uwp/api/windows.media.capture.photocapturesource)
 
-```Csharp
+```csharp
  private void InitCaptureSettings()
 {
     _captureInitSettings = new MediaCaptureInitializationSettings();
@@ -53,21 +53,18 @@ The following snippet shows how to initialize a [**MediaCaptureInitializationSet
 
 Replace the existing [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) method of the [**MediaCapture**](/uwp/api/windows.media.capture.mediacapture) object in `StartPreviewAsync()` (see [Step 1: Setup your camera preview](#step-1-setup-your-camera-preview)) with the following:
 
-```Csharp
+```csharp
 try
-    {
-        mediaCapture = new MediaCapture();
-        await mediaCapture.InitializeAsync(InitCaptureSettings());
-
-        displayRequest.RequestActive();
-        DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
-    }
+{
+    mediaCapture = new MediaCapture();
+    await mediaCapture.InitializeAsync(InitCaptureSettings());
+    displayRequest.RequestActive();
+    DisplayInformation.AutoRotationPreferences = DisplayOrientations.Landscape;
+}
 ```
-
-> [!TIP]
-> See [Display the camera preview](/windows/uwp/audio-video-camera/simple-camera-preview-access#add-capability-declarations-to-the-app-manifest) for more advanced topics on hosting a camera preview in your UWP application.
 
 ## See also
 
-- [JustScanIt - Windows Store app](https://aka.ms/justscanit)
+- [Camera barcode scanner](camerabarcode.md)
+- [Show the camera preview](../../camera/camera-quickstart-winui3.md)
 - [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)
