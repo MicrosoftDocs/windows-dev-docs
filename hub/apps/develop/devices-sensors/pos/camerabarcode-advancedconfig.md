@@ -1,7 +1,7 @@
 ---
 title: Camera Barcode Scanner Advanced Configuration
 description: Advanced configuration of the camera barcode scanner
-ms.date: 04/08/2019
+ms.date: 05/27/2026
 ms.topic: article
 keywords: windows 10, uwp, point of service, pos
 ms.localizationpriority: medium
@@ -53,3 +53,8 @@ PreferredVideoFrameHeight default is set to 0, which is interpreted as the small
 | Value name   | Value Type | Value | Notes |
 |:------------ |:----------:|:-------:|:------|
 | PreferredVideoFrameHeight    | DWord      | 0 | Default: *Smallest height paired with width*|
+
+## See also
+
+- [Camera barcode scanner](camerabarcode.md)
+- [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

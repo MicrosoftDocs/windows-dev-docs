@@ -1,7 +1,7 @@
 ---
 title: Get started with camera barcode scanner
-description: Set up a basic camera barcode scanner in a UWP application.
-ms.date: 05/04/2023
+description: Set up a basic camera barcode scanner in a WinRT application.
+ms.date: 05/27/2026
 ms.topic: get-started
 
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Get started with a camera barcode scanner
 
-This topic describes how to set up a basic camera barcode scanner in a UWP application.
+This topic describes how to set up a basic camera barcode scanner in a WinRT application.
 
 > [!NOTE]
 > The software decoder built into Windows 10/11 is provided by [*Digimarc Corporation*](https://www.digimarc.com/).
@@ -23,55 +23,61 @@ The following code snippets are for demonstration purposes only. For a complete 
 3. Check the boxes for **Webcam** and **PointOfService**.
 
 >[!NOTE]
-> The **Webcam** capability is required for the software decoder to receive frames from the camera to both decode the barcode and provide a preview in your application.
+> The `Webcam` capability is required for the software decoder to receive frames from the camera to both decode the barcode and provide a preview in your application.
 
 ## Step 2: Add `using` directives
 
-```Csharp
+```csharp
 using Windows.Devices.Enumeration;
 using Windows.Devices.PointOfService;
 ```
 
 ## Step 3: Define your device selector
 
-Use one of the [**BarcodeScanner.GetDeviceSelector**](/uwp/api/windows.devices.pointofservice.barcodescanner.getdeviceselector) methods to obtain a [**BarcodeScanner**](/uwp/api/windows.devices.pointofservice.barcodescanner) object for each connected barcode scanner.
+Use one of the [BarcodeScanner.GetDeviceSelector](/uwp/api/windows.devices.pointofservice.barcodescanner.getdeviceselector) methods to obtain a [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner) object for each connected barcode scanner.
 
 ### Option A: Find all barcode scanners
 
-```Csharp
+```csharp
 string selector = BarcodeScanner.GetDeviceSelector();
 ```
 
-### Option B: Find all barcode scanners based on scope (for this example, we filter on [Local](/uwp/api/windows.devices.pointofservice.posconnectiontypes) connection type)
+### Option B: Find all barcode scanners based on scope
 
-```Csharp
+For this example, you filter on [Local](/uwp/api/windows.devices.pointofservice.posconnectiontypes) connection type.
+
+```csharp
 string selector = BarcodeScanner.GetDeviceSelector(PosConnectionTypes.Local);
 DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(selector);
 ```
 
 ## Step 4: Enumerate barcode scanners
 
-If you do not expect the list of devices to change during the lifespan of your application, use [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) to get a one-time snapshot. However, if the list of barcode scanners could change during the lifespan of your application, use a [**DeviceWatcher**](/uwp/api/windows.devices.enumeration.devicewatcher) instead.
+If you do not expect the list of devices to change during the lifespan of your application, use [DeviceInformation.FindAllAsync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) to get a one-time snapshot. However, if the list of barcode scanners could change during the lifespan of your application, use a [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) instead.
 
 > [!IMPORTANT]
-> Using [**GetDefaultAsync**](/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) to enumerate [**PointOfService**](/uwp/api/windows.devices.pointofservice) devices can result in inconsistent behavior as it only returns the first device found in the class (which can change from session to session).
+> Using [GetDefaultAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) to enumerate [PointOfService](/uwp/api/windows.devices.pointofservice) devices can result in inconsistent behavior as it only returns the first device found in the class (which can change from session to session).
 
-### Option A: Enumerate a snapshot of all connected barcode scanners based on the *selector* created in Step 3
+### Option A: Get a snapshot of scanners
 
-In this snippet, we create a [DeviceInformationCollection](/uwp/api/windows.devices.enumeration.deviceinformationcollection) object and use ****[**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) to populate it.
+Here, you enumerate a snapshot of all connected barcode scanners based on the *selector* created in Step 3.
 
-```Csharp
+In this snippet, you create a [DeviceInformationCollection](/uwp/api/windows.devices.enumeration.deviceinformationcollection) object and use [DeviceInformation.FindAllAsync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) to populate it.
+
+```csharp
 DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(selector);
 ```
 
 > [!TIP]
-> See [Enumerate a snapshot of devices](../enumerate-devices.md#enumerate-a-snapshot-of-devices)  for more information on using [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync).
+> See [Enumerate a snapshot of devices](../enumerate-devices.md#enumerate-a-snapshot-of-devices)  for more information on using [DeviceInformation.FindAllAsync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync).
 
-### Option B: Enumerate available barcode scanners based on the *selector* created in Step 3 and watch for changes to that collection
+### Option B: Enumerate scanners with a device watcher
 
-In this snippet, we create a [**DeviceWatcher**](/uwp/api/windows.devices.enumeration.devicewatcher) using [**DeviceInformation.CreateWatcher**](/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher).
+Here, you enumerate available barcode scanners based on the *selector* created in Step 3 and watch for changes to that collection.
 
-```Csharp
+In this snippet, you create a [DeviceWatcher](/uwp/api/windows.devices.enumeration.devicewatcher) using [DeviceInformation.CreateWatcher](/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher).
+
+```csharp
 DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);
 watcher.Added += Watcher_Added;
 watcher.Removed += Watcher_Removed;
@@ -80,13 +86,13 @@ watcher.Start();
 ```
 
 > [!TIP]
-> For more information, see [Enumerate and watch devices](../enumerate-devices.md#enumerate-and-watch-devices) and [*DeviceWatcher*](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher).
+> For more information, see [Enumerate and watch devices](../enumerate-devices.md#enumerate-and-watch-devices) and [DeviceWatcher](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher).
 
 ## Step 5: Identify camera barcode scanners
 
-A camera barcode scanner consists of a camera (attached to a computer) combined with a software decoder, which Windows dynamically pairs to create a fully functional [barcode scanner](barcodescanner.md) for Universal Windows Platform (UWP) apps.
+A camera barcode scanner consists of a camera (attached to a computer) combined with a software decoder, which Windows dynamically pairs to create a fully functional [barcode scanner](barcodescanner.md) for WinRT apps.
 
-[*BarcodeScanner.VideoDeviceID*](/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid#Windows_Devices_PointOfService_BarcodeScanner_VideoDeviceId) can be used to differentiate between camera barcode scanners and physical barcode scanners. A non-NULL VideoDeviceID indicates that the barcode scanner object from your device collection is a camera barcode scanner. If you have more than one camera barcode scanner you might want to build a separate collection that excludes physical barcode scanners.
+[BarcodeScanner.VideoDeviceID](/uwp/api/windows.devices.pointofservice.barcodescanner.videodeviceid) can be used to differentiate between camera barcode scanners and physical barcode scanners. A non-`null` `VideoDeviceID` indicates that the barcode scanner object from your device collection is a camera barcode scanner. If you have more than one camera barcode scanner you might want to build a separate collection that excludes physical barcode scanners.
 
 Camera barcode scanners using the decoder that ships with Windows are identified as:
 
@@ -94,15 +100,15 @@ Camera barcode scanners using the decoder that ships with Windows are identified
 
 If there is more than one camera, and they are built into the chassis of the computer, the name might differentiate between *front* and *rear* cameras.
 
-When the [*DeviceWatcher*](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) starts (see [Step 4: Enumerate barcode scanners](#step-4-enumerate-barcode-scanners)), it enumerates through each connected device. In the following snippet, we add each available scanner to a [**BarcodeScanner**](/uwp/api/windows.devices.pointofservice.barcodescanner) collection and bind the collection to a [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox).
+When the [DeviceWatcher](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) starts (see [Step 4: Enumerate barcode scanners](#step-4-enumerate-barcode-scanners)), it enumerates through each connected device. In the following snippet, you add each available scanner to a [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner) collection and bind the collection to a [ListBox](/uwp/api/windows.ui.xaml.controls.listbox).
 
 ```csharp
 ObservableCollection<BarcodeScanner> barcodeScanners = 
   new ObservableCollection<BarcodeScanner>();
 
-private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
+private void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
 {
-    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    DispatcherQueue.TryEnqueue(DispatcherQueuePriority.Normal, () =>
     {
         barcodeScanners.Add(new BarcodeScanner(args.Name, args.Id));
 
@@ -115,7 +121,7 @@ private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
 }
 ```
 
-When the [**SelectedIndex**](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) of the [**ListBox**](/uwp/api/windows.ui.xaml.controls.listbox) changes (the first item is selected by default in the previous snippet), we query the device info (the `SelectScannerAsync` task is implemented in [Step 6: Claim the camera barcode scanner](#step-6-claim-the-camera-barcode-scanner)).
+When the [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) of the [ListBox](/uwp/api/windows.ui.xaml.controls.listbox) changes (the first item is selected by default in the previous snippet), you query the device info (the `SelectScannerAsync` task is implemented in [Step 6: Claim the camera barcode scanner](#step-6-claim-the-camera-barcode-scanner)).
 
 ```csharp
 private async void ScannerSelection_Changed(object sender, SelectionChangedEventArgs args)
@@ -129,7 +135,7 @@ private async void ScannerSelection_Changed(object sender, SelectionChangedEvent
 
 ## Step 6: Claim the camera barcode scanner
 
-Call [**BarcodeScanner.ClaimScannerAsync**](/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync#Windows_Devices_PointOfService_BarcodeScanner_ClaimScannerAsync) to obtain exclusive use of the camera barcode scanner.
+Call [BarcodeScanner.ClaimScannerAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.claimscannerasync) to obtain exclusive use of the camera barcode scanner.
 
 ```csharp
 private async Task SelectScannerAsync(string scannerDeviceId)
@@ -159,18 +165,18 @@ private async Task SelectScannerAsync(string scannerDeviceId)
 
 A camera preview is required to help the user aim the camera at a barcode. Windows provides a basic camera preview that launches a dialog to control of the camera barcode scanner.
 
-Call [**ClaimedBarcodeScanner.ShowVideoPreview**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) to open the dialog and [**ClaimedBarcodeScanner.HideVideoPreview**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) to close it.
+Call [ClaimedBarcodeScanner.ShowVideoPreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.showvideopreviewasync) to open the dialog and [ClaimedBarcodeScanner.HideVideoPreview](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.hidevideopreview) to close it.
 
 > [!TIP]
 > See [Hosting Preview](camerabarcode-hosting-preview.md) to host the preview for camera barcode scanner in your application.
 
 ## Step 8: Initiate scan
 
-You can initiate the scan process by calling [**StartSoftwareTriggerAsync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StartSoftwareTriggerAsync).
+You can initiate the scan process by calling [StartSoftwareTriggerAsync](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.startsoftwaretriggerasync).
 
-Depending on the value of [**IsDisabledOnDataReceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) the scanner might scan only one barcode then stop or scan continuously until you call [**StopSoftwareTriggerAsync**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_StopSoftwareTriggerAsync).
+Depending on the value of [IsDisabledOnDataReceived](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived) the scanner might scan only one barcode then stop or scan continuously until you call [StopSoftwareTriggerAsync](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.stopsoftwaretriggerasync).
 
-Set the desired value of [**IsDisabledOnDataReceived**](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDisabledOnDataReceived) to control the scanner behavior when a barcode is decoded.
+Set the desired value of [IsDisabledOnDataReceived](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdisabledondatareceived) to control the scanner behavior when a barcode is decoded.
 
 | Value | Description |
 | ----- | ----------- |
@@ -179,5 +185,5 @@ Set the desired value of [**IsDisabledOnDataReceived**](/uwp/api/windows.devices
 
 ## See also
 
-- [JustScanIt - Windows Store app](https://aka.ms/justscanit)
+- [Camera barcode scanner](camerabarcode.md)
 - [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

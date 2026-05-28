@@ -1,15 +1,14 @@
 ---
 title: Obtain and understand magnetic stripe data
-description: Learn how to obtain and interpret the data from a magnetic stripe reader using Universal Windows Platform (UWP) Point of Service (POS) APIs.
-ms.date: 05/04/2023
+description: Learn how to obtain and interpret the data from a magnetic stripe reader using WinRT Point of Service (POS) APIs.
+ms.date: 05/27/2026
 ms.topic: concept-article
-
 ms.localizationpriority: medium
 ---
 
 # Obtain and understand magnetic stripe data
 
-This topic describes how to obtain and interpret the data from a magnetic stripe reader using Universal Windows Platform (UWP) Point of Service (POS) APIs.
+This topic describes how to obtain and interpret the data from a magnetic stripe reader using WinRT Point of Service (POS) APIs.
 
 ## Subscribe to *DataReceived events
 
@@ -25,7 +24,7 @@ Your application only needs to subscribe to the events that are supported by the
 
 The following code demonstrates subscribing to the three ***DataReceived** events:
 
-```cs
+```csharp
 private void SubscribeToEvents(ClaimedMagneticStripeReader claimedReader, MagneticStripeReader reader)
 {
     foreach (var type in reader.SupportedCardTypes)
@@ -56,7 +55,7 @@ The event handler will be passed the [ClaimedMagneticStripeReader](/uwp/api/wind
 
 For the **AamvaCardDataReceived** and **BankCardDataReceived** events, you can get some of the data directly from the *args* object. The following example demonstrates getting a few properties and assigning them to member variables:
 
-```cs
+```csharp
 private string _accountNumber;
 private string _expirationDate;
 private string _firstName;
@@ -84,7 +83,7 @@ The data from each of the tracks are represented as [MagneticStripeReaderTrackDa
 
 The following code snippet gets the report and the track data, and then checks the card type:
 
-```cs
+```csharp
 private void GetTrackData(MagneticStripeReaderBankCardDataReceivedEventArgs args)
 {
     MagneticStripeReaderReport report = args.Report;

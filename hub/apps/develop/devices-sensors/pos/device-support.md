@@ -3,7 +3,6 @@ title: Point of Service Hardware Support
 description: This article contains information about hardware support for each of the Point of Service device classes.
 ms.date: 05/04/2023
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 

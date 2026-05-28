@@ -1,7 +1,7 @@
 ---
 title: Camera barcode scanner system requirements
 description: Lists the requirements for using camera barcode scanner from a UWP app.
-ms.date: 05/04/2023
+ms.date: 05/27/2026
 ms.topic: article
 
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Camera barcode scanner system requirements
 
-[Camera barcode scanner](camerabarcode.md) consists of a standard lens camera with auto-focus capabilities (attached to a computer) combined with a software decoder and is supported by Universal Windows Platform (UWP) apps on the following versions of Windows.
+[Camera barcode scanner](camerabarcode.md) consists of a standard lens camera with auto-focus capabilities (attached to a computer) combined with a software decoder and is supported by WinRT apps on the following versions of Windows.
 
 | OS         | Version
 |------------|-----------------------------|
@@ -28,5 +28,4 @@ ms.localizationpriority: medium
 
 ## See also
 
-- [JustScanIt - Windows Store app](https://aka.ms/justscanit)
 - [BarcodeScanner sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/BarcodeScanner)

@@ -399,16 +399,24 @@ items:
         items:
           - name: Overview
             href: devices-and-sensors.md
-          - name: Printing and scanning
+          - name: Bluetooth
+            href: devices-sensors/bluetooth.md
             items:
-              - name: Overview
-                href: devices-sensors/printing-and-scanning.md
-              - name: Print from your app
-                href: devices-sensors/print-from-your-app.md
-              - name: Customize the print preview UI
-                href: devices-sensors/customize-the-print-preview-ui.md
-              - name: Scan from your app
-                href: devices-sensors/scan-from-your-app.md
+              - name: RFCOMM
+                href: devices-sensors/send-or-receive-files-with-rfcomm.md
+              - name: Bluetooth Low Energy
+                href: devices-sensors/bluetooth-low-energy-overview.md
+                items:
+                  - name: GATT client
+                    href: devices-sensors/gatt-client.md
+                  - name: GATT server
+                    href: devices-sensors/gatt-server.md
+                  - name: Advertisements
+                    href: devices-sensors/ble-beacon.md
+              - name: Bluetooth developer FAQ
+                href: devices-sensors/bluetooth-dev-faq.yml
+          - name: Dynamic lighting
+            href: devices-sensors/lighting-dynamic-lamparray.md
           - name: Enable device capabilities
             href: devices-sensors/enable-device-capabilities.md
           - name: Enable usermode access
@@ -424,12 +432,12 @@ items:
                 href: devices-sensors/device-information-properties.md
               - name: AEP service class IDs
                 href: devices-sensors/aep-service-class-ids.md
+          - name: Get battery information
+            href: devices-sensors/get-battery-info.md
           - name: Pair devices
             href: devices-sensors/pair-devices.md
           - name: Pairing a set
             href: devices-sensors/pairing-a-set.md
-          - name: Dynamic lighting
-            href: devices-sensors/lighting-dynamic-lamparray.md
           - name: Point of Service
             href: devices-sensors/pos/point-of-service.md
             items:
@@ -486,6 +494,16 @@ items:
                 items:
                   - name: Epson ESC/POS with formatting
                     href: devices-sensors/pos/epson-esc-pos-with-formatting.md
+          - name: Printing and scanning
+            items:
+              - name: Overview
+                href: devices-sensors/printing-and-scanning.md
+              - name: Print from your app
+                href: devices-sensors/print-from-your-app.md
+              - name: Customize the print preview UI
+                href: devices-sensors/customize-the-print-preview-ui.md
+              - name: Scan from your app
+                href: devices-sensors/scan-from-your-app.md
           - name: Sensors
             href: devices-sensors/sensors.md
             items:
@@ -505,24 +523,6 @@ items:
                 href: devices-sensors/use-the-light-sensor.md
               - name: Use the orientation sensor
                 href: devices-sensors/use-the-orientation-sensor.md
-          - name: Bluetooth
-            href: devices-sensors/bluetooth.md
-            items:
-              - name: RFCOMM
-                href: devices-sensors/send-or-receive-files-with-rfcomm.md
-              - name: Bluetooth Low Energy
-                href: devices-sensors/bluetooth-low-energy-overview.md
-                items:
-                  - name: GATT client
-                    href: devices-sensors/gatt-client.md
-                  - name: GATT server
-                    href: devices-sensors/gatt-server.md
-                  - name: Advertisements
-                    href: devices-sensors/ble-beacon.md
-              - name: Bluetooth developer FAQ
-                href: devices-sensors/bluetooth-dev-faq.yml
-          - name: Get battery information
-            href: devices-sensors/get-battery-info.md
       - name: Graphics
         items:
           - name: Overview

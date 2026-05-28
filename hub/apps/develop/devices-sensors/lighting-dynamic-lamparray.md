@@ -1,5 +1,4 @@
 ---
-
 title: Dynamic lighting
 description: This topic describes how to control device lamp arrays using the Windows.Devices.Lights namespace.
 ms.date: 12/05/2024
@@ -11,12 +10,12 @@ ms.localizationpriority: medium
 
 This topic describes how your Windows apps can provide dynamic lighting effects across connected devices that implement the open [Human Interface Devices (HID)](https://usb.org/sites/default/files/hut1_4.pdf) [Lighting and Illumination standard](https://www.usb.org/sites/default/files/hutrr84_-_lighting_and_illumination_page.pdf). In particular, the LampArray specification for devices that have one or more lamps (lights, LEDs, bulbs, and so on).
 
-**Important APIs**
+> [!div class="checklist"]
+>
+> - **Important APIs:** [**Windows.Devices.Lights**](/uwp/api/windows.devices.lights)
 
-- [**Windows.Devices.Lights**](/uwp/api/windows.devices.lights)
-
-    > [!NOTE]
-    > The [Lamp](/uwp/api/windows.devices.lights.lamp) class does not apply to HID [LampArray](/uwp/api/windows.devices.lights.lamparray) functionality and is not relevant to this topic.
+> [!NOTE]
+> The [Lamp](/uwp/api/windows.devices.lights.lamp) class does not apply to HID [LampArray](/uwp/api/windows.devices.lights.lamparray) functionality and is not relevant to this topic.
 
 ## Overview
 

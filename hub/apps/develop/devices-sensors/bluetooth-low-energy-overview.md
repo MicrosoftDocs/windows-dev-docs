@@ -1,22 +1,22 @@
 ---
 title: Bluetooth Low Energy in Universal Windows Platform apps
-description: Learn about the Bluetooth Low Energy (LE) specification in UWP apps that defines protocols for discovery and communication between power-efficient devices.
-ms.date: 05/04/2023
+description: Learn about the Bluetooth Low Energy (LE) specification in Windows apps that defines protocols for discovery and communication between power-efficient devices.
+ms.date: 05/27/2026
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 
 # Bluetooth Low Energy in Universal Windows Platform apps
 
-This topic provides an overview of Bluetooth LE in Universal Windows Platform (UWP) apps (for more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/) version 4.0).
+This topic provides an overview of Bluetooth LE in Windows apps (for more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/) version 4.0).
 
 Bluetooth Low Energy (LE) is a specification that defines protocols for discovery and communication between power-efficient devices. Discovery of devices is done through the Generic Access Profile (GAP) protocol. After discovery, device-to-device communication is done through the Generic Attribute (GATT) protocol.
 
 ![Bluetooth LE Roles](images/gatt-roles.png)
+
 *GATT and GAP roles were introduced in Windows 10 version 1703*
 
-GATT and GAP protocols can be implemented in your UWP app by using the following namespaces.
+GATT and GAP protocols can be implemented in your Windows app by using the following namespaces.
 
 - [Windows.Devices.Bluetooth.GenericAttributeProfile](/uwp/api/windows.devices.bluetooth.genericattributeprofile)
 - [Windows.Devices.Bluetooth.Advertisement](/uwp/api/windows.devices.bluetooth.advertisement)
@@ -27,7 +27,7 @@ The two primary roles of discovery are called Central and Peripheral. In general
 
 ## Attributes
 
-A cGeneric Attribute (GATT) Profile defines the structure of data and modes of operation by which two Bluetooth LE devices communicate. The attribute is the main building block of GATT. The main types of attributes are services, characteristics, and descriptors. These attributes perform differently between clients and servers, so it is more useful to discuss their interaction in the relevant sections.
+A Generic Attribute (GATT) Profile defines the structure of data and modes of operation by which two Bluetooth LE devices communicate. The attribute is the main building block of GATT. The main types of attributes are services, characteristics, and descriptors. These attributes perform differently between clients and servers, so it is more useful to discuss their interaction in the relevant sections.
 
 ![Typical Attribute hierarchy in a common profile](images/gatt-service.png)
 *The heart rate service is expressed in GATT Server API form*

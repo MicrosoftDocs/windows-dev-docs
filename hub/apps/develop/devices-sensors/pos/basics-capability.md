@@ -3,7 +3,6 @@ title: PointOfService device capability
 description: The PointOfService device capability is required to use APIs in the Windows.Devices.PointOfService namespace.
 ms.date: 05/04/2023
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 

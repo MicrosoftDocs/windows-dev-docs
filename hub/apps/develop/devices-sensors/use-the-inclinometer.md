@@ -1,10 +1,8 @@
 ---
-
 title: Use the inclinometer
 description: Learn how to create a basic app that uses the inclinometer input device to determine pitch, roll, and yaw.
-ms.date: 05/04/2023
+ms.date: 05/26/2026
 ms.topic: how-to
-
 ms.localizationpriority: medium
 ---
 
@@ -12,159 +10,153 @@ ms.localizationpriority: medium
 
 Learn how to use the inclinometer to determine pitch, roll, and yaw.
 
-**Important APIs**
+This example creates a simple app that relies on a the inclinometer as an input device. Some 3-D games require an inclinometer as an input device. One common example is a flight simulator, which could map the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
 
-- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
-- [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Windows.Devices.Sensors](/uwp/api/Windows.Devices.Sensors), [Inclinometer](/uwp/api/Windows.Devices.Sensors.Inclinometer)
+
+> [!NOTE]
+> This article focuses on code that demonstrates how to use an inclinometer. For an overview of the inclinometer sensor, see [Sensors: Inclinometer](sensors.md#inclinometer).
 
 ## Prerequisites
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+You should be familiar with the inclinometer sensor and its uses. See [Sensors: Inclinometer](sensors.md#inclinometer).
 
 The device or emulator that you're using must support an inclinometer.
 
-## Create a simple inclinometer app
-
-Some 3-D games require an inclinometer as an input device. One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
-
-> [!NOTE]
-> For a more complete implementation, see the [inclinometer sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Inclinometer).
-
-### Instructions
-
-- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
-
-- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+## Sample code
 
 ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using Windows.Foundation;
-    using Windows.Foundation.Collections;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Controls.Primitives;
-    using Windows.UI.Xaml.Data;
-    using Windows.UI.Xaml.Input;
-    using Windows.UI.Xaml.Media;
-    using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml.Controls;
+using Windows.Devices.Sensors;
 
-    using Windows.UI.Core;
-    using Windows.Devices.Sensors;
-
-
-    namespace App1
+namespace DevicesDemo.Pages
+{
+    public sealed partial class InclinometerPage : Page
     {
-        /// <summary>
-        /// An empty page that can be used on its own or navigated to within a Frame.
-        /// </summary>
-        public sealed partial class MainPage : Page
+        private Inclinometer? inclinometer;
+
+        public InclinometerPage()
         {
-            private Inclinometer _inclinometer;
+            InitializeComponent();
 
-            // This event handler writes the current inclinometer reading to
-            // the three text blocks on the app' s main page.
+            // Get the default inclinometer sensor object.
+            inclinometer = Inclinometer.GetDefault();
 
-            private async void ReadingChanged(object sender, InclinometerReadingChangedEventArgs e)
+            if (inclinometer != null)
             {
-                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                {
-                    InclinometerReading reading = e.Reading;
-                    txtPitch.Text = String.Format("{0,5:0.00}", reading.PitchDegrees);
-                    txtRoll.Text = String.Format("{0,5:0.00}", reading.RollDegrees);
-                    txtYaw.Text = String.Format("{0,5:0.00}", reading.YawDegrees);
-                });
+                // Establish the report interval.
+                uint minReportInterval = inclinometer.MinimumReportInterval;
+                uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
+                inclinometer.ReportInterval = reportInterval;
+
+                // Assign an event handler for the reading-changed event.
+                inclinometer.ReadingChanged += Inclinometer_ReadingChanged;
             }
-
-            public MainPage()
+            else
             {
-                this.InitializeComponent();
-                _inclinometer = Inclinometer.GetDefault();
-
-
-                if (_inclinometer != null)
-                {
-                    // Establish the report interval for all scenarios
-                    uint minReportInterval = _inclinometer.MinimumReportInterval;
-                    uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-                    _inclinometer.ReportInterval = reportInterval;
-
-                    // Establish the event handler
-                    _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, InclinometerReadingChangedEventArgs>(ReadingChanged);
-                }
+                statusBar.Message = "No inclinometer was found.";
+                statusBar.Severity = InfoBarSeverity.Error;
+                statusBar.IsOpen = true;
             }
         }
+
+        // This event handler writes the current inclinometer
+        // reading to the text blocks on the XAML page.
+        private void Inclinometer_ReadingChanged(Inclinometer sender, InclinometerReadingChangedEventArgs args)
+        {
+            DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+            {
+                InclinometerReading reading = args.Reading;
+                txtPitch.Text = String.Format("{0,5:0.00}", reading.PitchDegrees);
+                txtRoll.Text = String.Format("{0,5:0.00}", reading.RollDegrees);
+                txtYaw.Text = String.Format("{0,5:0.00}", reading.YawDegrees);
+            });
+        }
     }
+}
 ```
-
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **InclinometerCS**, you'd replace `namespace App1` with `namespace InclinometerCS`.
-
-- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xaml
-        <Page
-        x:Class="App1.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:App1"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Margin="24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="44"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Pitch:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtPitch" Grid.Column="1" Text="---"/>
 
-        <Grid x:Name="LayoutRoot" Background="#FF0C0C0C">
-            <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
-            <TextBlock x:Name="txtPitch" HorizontalAlignment="Left" Height="21" Margin="59,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="71" Foreground="#FFFDF9F9"/>
-            <TextBlock HorizontalAlignment="Left" Height="23" Margin="0,29,0,0" TextWrapping="Wrap" Text="Roll:" VerticalAlignment="Top" Width="55" Foreground="#FFF7F1F1"/>
-            <TextBlock x:Name="txtRoll" HorizontalAlignment="Left" Height="23" Margin="59,29,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="50" Foreground="#FFFCF9F9"/>
-            <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,56,0,0" TextWrapping="Wrap" Text="Yaw:" VerticalAlignment="Top" Width="55" Foreground="#FFF7F3F3"/>
-            <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
+        <TextBlock Grid.Row="1" Text="Roll:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtRoll" Grid.Column="1" Grid.Row="1" Text="---"/>
 
-        </Grid>
-    </Page>
+        <TextBlock Grid.Row="2" Text="Yaw:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtYaw" Grid.Column="1" Grid.Row="2" Text="---"/>
+    </Grid>
+
+    <InfoBar x:Name="statusBar" Grid.Row="1"/>
+</Grid>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **InclinometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="InclinometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:InclinometerCS"`.
+When the app runs, you can change the inclinometer values by moving the device.
 
-- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+The previous example demonstrates the essential code you need to write in order to integrate inclinometer input into your app.
 
-Once the app is running, you can change the inclinometer values by moving the device or using the emulator tools.
+### Connect to the sensor
 
-- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
-
-###  Explanation
-
-The previous example demonstrates how little code you'll need to write in order to integrate inclinometer input in your app.
-
-The app establishes a connection with the default inclinometer in the **MainPage** method.
+Call the [GetDefault](/uwp/api/windows.devices.sensors.inclinometer.getdefault) method to establish a connection with the default inclinometer.
 
 ```csharp
-_inclinometer = Inclinometer.GetDefault();
+private Inclinometer? inclinometer;
+// ...
+inclinometer = Inclinometer.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+You can also call [FromIdAsync](/uwp/api/windows.devices.sensors.inclinometer.fromidasync) to create an [Inclinometer](/uwp/api/Windows.Devices.Sensors.Inclinometer) object from a [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) value. For more info, see [Enumerate devices](enumerate-devices.md).
+
+If no inclinometer sensor is detected, the status message is updated to inform the user.
+
+### Set the report interval
+
+The report interval is set within the page's constructor. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
-uint minReportInterval = _inclinometer.MinimumReportInterval;
+uint minReportInterval = inclinometer.MinimumReportInterval;
 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-_inclinometer.ReportInterval = reportInterval;
+inclinometer.ReportInterval = reportInterval;
 ```
 
-The new inclinometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+### Read sensor data
+
+The new inclinometer data is captured in the [ReadingChanged](/uwp/api/windows.devices.sensors.inclinometer.readingchanged) event handler. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event. For this example, these new values are written to the text blocks found in the XAML for the corresponding page.
 
 ```csharp
-_inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer,
-InclinometerReadingChangedEventArgs>(ReadingChanged);
-```
+inclinometer.ReadingChanged += Inclinometer_ReadingChanged;
+// ...
 
-These new values are written to the TextBlocks found in the project's XAML.
-
-```xaml
-<TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
- <TextBlock x:Name="txtPitch" HorizontalAlignment="Left" Height="21" Margin="59,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="71" Foreground="#FFFDF9F9"/>
- <TextBlock HorizontalAlignment="Left" Height="23" Margin="0,29,0,0" TextWrapping="Wrap" Text="Roll:" VerticalAlignment="Top" Width="55" Foreground="#FFF7F1F1"/>
- <TextBlock x:Name="txtRoll" HorizontalAlignment="Left" Height="23" Margin="59,29,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="50" Foreground="#FFFCF9F9"/>
- <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,56,0,0" TextWrapping="Wrap" Text="Yaw:" VerticalAlignment="Top" Width="55" Foreground="#FFF7F3F3"/>
- <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
+private void Inclinometer_ReadingChanged(Inclinometer sender, InclinometerReadingChangedEventArgs args)
+{
+    DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+    {
+        InclinometerReading reading = args.Reading;
+        txtPitch.Text = String.Format("{0,5:0.00}", reading.PitchDegrees);
+        txtRoll.Text = String.Format("{0,5:0.00}", reading.RollDegrees);
+        txtYaw.Text = String.Format("{0,5:0.00}", reading.YawDegrees);
+    });
+}
 ```
+ 
+ ## Related topics
+
+- [Inclinometer sample (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Inclinometer)

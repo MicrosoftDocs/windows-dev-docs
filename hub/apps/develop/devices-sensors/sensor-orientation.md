@@ -2,7 +2,7 @@
 
 title: Sensor orientation
 description: Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
-ms.date: 05/04/2023
+ms.date: 05/27/2026
 ms.topic: article
 
 ms.localizationpriority: medium
@@ -10,12 +10,11 @@ ms.localizationpriority: medium
 
 # Sensor orientation
 
-Sensor data from the [**Accelerometer**](/uwp/api/Windows.Devices.Sensors.Accelerometer), [**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer), [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass), [**Inclinometer**](/uwp/api/Windows.Devices.Sensors.Inclinometer), and [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) classes is defined by their reference axes. These axes are defined by the device's reference frame and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
+Sensor data from the [Accelerometer](/uwp/api/Windows.Devices.Sensors.Accelerometer), [Gyrometer](/uwp/api/Windows.Devices.Sensors.Gyrometer), [Compass](/uwp/api/Windows.Devices.Sensors.Compass), [Inclinometer](/uwp/api/Windows.Devices.Sensors.Inclinometer), and [OrientationSensor](/uwp/api/Windows.Devices.Sensors.OrientationSensor) classes is defined by their reference axes. These axes are defined by the device's reference frame and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
 
-### Important APIs
-
-- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
-- [**Windows.Devices.Sensors.Custom**](/uwp/api/Windows.Devices.Sensors.Custom)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Windows.Devices.Sensors](/uwp/api/Windows.Devices.Sensors), [Windows.Devices.Sensors.Custom](/uwp/api/Windows.Devices.Sensors.Custom)
 
 ## Display orientation vs device orientation
 
@@ -39,7 +38,7 @@ This final diagram shows the display orientation in Landscape while the device o
 
 :::image type="content" source="images/sensor-orientation-c-small.jpg" alt-text="Display orientation in Landscape while the device orientation is LandscapeFlipped":::
 
-You can query the orientation values through the [**DisplayInformation**](/uwp/api/Windows.Graphics.Display.DisplayInformation) class by using the [**GetForCurrentView**](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) method with the [**CurrentOrientation**](/uwp/api/windows.graphics.display.displayinformation.currentorientation) property. Then you can create logic by comparing against the [**DisplayOrientations**](/uwp/api/Windows.Graphics.Display.DisplayOrientations) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
+You can query the orientation values through the [DisplayInformation](/uwp/api/Windows.Graphics.Display.DisplayInformation) class by using the [GetForCurrentView](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) method with the [CurrentOrientation](/uwp/api/windows.graphics.display.displayinformation.currentorientation) property. Then you can create logic by comparing against the [DisplayOrientations](/uwp/api/Windows.Graphics.Display.DisplayOrientations) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
 
 ## Landscape-first vs portrait-first devices
 
@@ -158,7 +157,7 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
 ## Display orientation and device orientation
 
-The [**OrientationSensor**](/uwp/api/Windows.Devices.Sensors.OrientationSensor) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the z-axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
+The [OrientationSensor](/uwp/api/Windows.Devices.Sensors.OrientationSensor) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the z-axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
 
 :::image type="content" source="images/eulers-formula.png" alt-text="Euler's formula":::
 
