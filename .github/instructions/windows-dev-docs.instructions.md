@@ -3,178 +3,95 @@ applyTo: "**"
 ---
 # Reviewer instructions for windows-dev-docs-pr
 
-You are reviewing pull requests for Microsoft Learn content covering Windows app
-development — Windows App SDK, WinUI 3, MSIX, UWP migration, packaging,
-deployment, and Win32 modernization. Apply these rules in addition to the
-Microsoft Writing Style Guide.
+You are reviewing PRs for Microsoft Learn content covering Windows app
+development (Windows App SDK, WinUI 3, MSIX, UWP migration, packaging,
+deployment, Win32 modernization). Apply these rules alongside the Microsoft
+Writing Style Guide.
 
-## 1. Terminology precision (most common error in this repo)
+## 1. Terminology precision
 
-These terms are routinely conflated. Flag any PR that uses them interchangeably.
+Flag any PR that conflates these terms.
 
-- **Windows App SDK** is the SDK. **WinUI 3** is the UI framework it ships.
-  They are not synonyms. "Windows App SDK app" ≠ "WinUI 3 app" — a Win32 or
-  WPF app can consume the Windows App SDK without using WinUI 3.
-- **UWP** and **WinUI 3** are distinct. UWP uses `Windows.UI.Xaml.*`; WinUI 3
-  uses `Microsoft.UI.Xaml.*`. Code samples must not mix namespaces. Reject
-  samples imported from UWP docs without namespace conversion.
-- The packaging axis has **three** values, not two: **packaged (MSIX)**,
-  **packaged with external location**, and **unpackaged**. Do not collapse
-  "packaged with external location" into either neighbor — it has its own
-  identity model.
-- The deployment axis is **framework-dependent** vs **self-contained**. It is
-  orthogonal to the packaging axis. Any sentence that treats them as the same
-  choice is wrong.
-- **`WindowsAppSDKSelfContained`** (MSBuild property, Windows App SDK runtime)
-  is not the same as .NET's **`SelfContained`** (publish property, .NET
-  runtime) and neither is **`PublishSingleFile`**. PRs frequently swap these.
-- **Single-project MSIX** ≠ **Windows Application Packaging Project (WAP)**.
-  They produce equivalent outputs but have different csproj/wapproj shapes,
-  and `WindowsAppSDKSelfContained` must be set in both projects when WAP is used.
+- **Windows App SDK** is the SDK; **WinUI 3** is its UI framework. Not synonyms. A Win32/WPF app can use the SDK without WinUI 3.
+- **UWP** ≠ **WinUI 3**. UWP uses `Windows.UI.Xaml.*`; WinUI 3 uses `Microsoft.UI.Xaml.*`. Reject samples that mix namespaces.
+- Packaging has **three** values: packaged (MSIX), packaged with external location, and unpackaged. Do not collapse the middle one.
+- Deployment (framework-dependent vs self-contained) is orthogonal to packaging.
+- **`WindowsAppSDKSelfContained`** (SDK runtime) ≠ .NET's **`SelfContained`** ≠ **`PublishSingleFile`**. PRs frequently swap these.
+- **Single-project MSIX** ≠ **WAP**. Different project shapes; `WindowsAppSDKSelfContained` must be set in both when WAP is used.
 
 ## 2. Do not fabricate
 
-- **Never invent csproj/MSBuild property names.** If a property is not in
-  the Windows App SDK source or a current Learn page, flag it. Common
-  hallucinations to watch for: `WindowsAppSdkBundle`, `EnableMsixTooling`
-  variants, made-up `Self` prefixes.
-- **Never invent API namespaces, classes, or method signatures.** If unsure,
-  ask the author to cite the WinRT metadata source or a Learn API reference URL.
-- **Never invent version numbers** ("starting in Windows App SDK 1.4…") unless
-  the PR cites the release notes or GitHub release. Stale or invented version
-  pivots are a recurring source of incorrect "is X supported?" answers.
-- **Never invent template names.** Visual Studio template names have changed
-  (e.g., "Blank App, Packaged (WinUI 3 in Desktop)" → "WinUI Blank App
-  (Packaged)"). Verify against the current VS gallery before approving.
+- **Never invent MSBuild property names.** Flag unverifiable properties (common hallucinations: `WindowsAppSdkBundle`, `EnableMsixTooling` variants).
+- **Never invent API names or signatures.** Ask the author to cite WinRT metadata or a Learn API reference URL.
+- **Never invent version numbers.** Require a release-notes or GitHub-release citation.
+- **Never invent VS template names.** Verify against the current gallery.
 
 ## 3. Code samples must be runnable and current
 
-- C# samples: `using Microsoft.UI.Xaml;` not `Windows.UI.Xaml;`.
-  `DispatcherQueue`, not `CoreDispatcher`. `AppWindow` (Microsoft.UI.Windowing),
-  not UWP `ApplicationView`.
-- C++/WinRT samples: the same namespace migration applies. Flag any sample
-  imported wholesale from UWP C++/WinRT docs without conversion — this is a
-  documented top-3 community complaint.
-- csproj snippets must specify the language pivot (`C#`/`C++`) above the code
-  block. `.csproj` and `.vcxproj` use different property groups; cross-mixing
-  is a frequent error.
-- Bootstrapper API samples must use the current API surface
-  (`Bootstrap.Initialize` / `MddBootstrapInitialize2`), not legacy variants.
+- C#: `Microsoft.UI.Xaml`, `DispatcherQueue`, `AppWindow` (Microsoft.UI.Windowing), not their UWP equivalents.
+- C++/WinRT: same namespace migration. Flag wholesale UWP imports without conversion.
+- csproj snippets must specify the language pivot; `.csproj` and `.vcxproj` use different property groups.
+- Bootstrapper samples must use `Bootstrap.Initialize` / `MddBootstrapInitialize2`, not legacy variants.
 
-## 3a. WinRT APIs that need HWND initialization in WinUI 3 (the FilePicker trap)
+## 3a. HWND initialization in WinUI 3
 
-Many WinRT APIs live in `Windows.*` namespaces unchanged from UWP, so the
-namespace itself is not a red flag. The breaking difference is that UWP had an
-implicit `CoreWindow` context; WinUI 3 desktop apps do not. These APIs must be
-associated with a window handle (HWND) before they are shown or invoked, or
-they throw at runtime — typically `COMException` 0x80070005 or "The application
-called an interface that was marshalled for a different thread."
+UWP had an implicit `CoreWindow`; WinUI 3 desktop apps do not. Several `Windows.*` APIs throw at runtime unless associated with a window handle first. Flag samples that omit this step for:
 
-Flag any sample that uses the following APIs without window-handle initialization:
+- **Pickers** (`FileOpenPicker`, `FileSavePicker`, `FolderPicker`), **`MessageDialog`**: require `WinRT.Interop.InitializeWithWindow.Initialize(obj, hWnd)` in C#, or `IInitializeWithWindow::Initialize` in C++.
+- **`DataTransferManager.ShowShareUI`**, **`PrintManager.ShowPrintUIAsync`**: require the corresponding `Interop.GetForWindow` call.
+- **`CameraCaptureUI`** and other picker-style APIs with UI: HWND interop variants per API.
 
-| API | Required initialization (C#) | Required initialization (C++) |
-|---|---|---|
-| `FileOpenPicker`, `FileSavePicker`, `FolderPicker` (`Windows.Storage.Pickers`) | `WinRT.Interop.InitializeWithWindow.Initialize(picker, hWnd)` | `IInitializeWithWindow::Initialize` |
-| `MessageDialog` (`Windows.UI.Popups`) | `WinRT.Interop.InitializeWithWindow.Initialize(dialog, hWnd)` | `IInitializeWithWindow::Initialize` |
-| `DataTransferManager.ShowShareUI` (`Windows.ApplicationModel.DataTransfer`) | `IDataTransferManagerInterop.GetForWindow(hWnd, ...)` | `IDataTransferManagerInterop::GetForWindow` |
-| `PrintManager.ShowPrintUIAsync` (`Windows.Graphics.Printing`) | `IPrintManagerInterop.GetForWindow(hWnd, ...)` | `IPrintManagerInterop::GetForWindow` |
-| `Launcher.LaunchFolderAsync` / picker-style launches with UI | HWND interop via `IInitializeWithWindow` where supported | Same |
-| `PickerLockedFolder`, `CameraCaptureUI` | HWND interop variants per API | Same |
-| `FolderPicker` with `PickFolderAsync` *(WinUI 3 desktop)* | Same as above | Same |
+The HWND comes from `WindowNative.GetWindowHandle(this)` (C#) or `IWindowNative::get_WindowHandle` (C++/WinRT).
 
-The HWND comes from `WinRT.Interop.WindowNative.GetWindowHandle(this)` on a
-`Microsoft.UI.Xaml.Window` (C#), or from `this->m_inner.as<IWindowNative>()
-->get_WindowHandle(&hWnd)` (C++/WinRT).
+**UWP → WinUI 3 API substitutions to flag:**
 
-Additional WinUI-3-specific substitutions to flag:
+- `MessageDialog` → prefer `ContentDialog` (needs `XamlRoot`, not HWND interop).
+- `ApplicationView.GetForCurrentView()`, `CoreWindow.GetForCurrentThread()` → use `AppWindow` (Microsoft.UI.Windowing) or the `Window` reference directly.
+- `CoreApplication.MainView.CoreWindow.Dispatcher` → `DispatcherQueue.GetForCurrentThread()`.
+- `ToastNotificationManager` → `AppNotificationManager` (works packaged and unpackaged).
+- `ApplicationData.Current.LocalSettings/LocalFolder` → requires package identity; unpackaged samples must use a Win32 alternative or state the assumption.
+- `BackgroundTaskBuilder` → requires package identity and a manifest declaration; flag if used in unpackaged context.
 
-- **`MessageDialog` → prefer `ContentDialog`.** `ContentDialog` is the WinUI 3
-  recommendation and only needs `XamlRoot` set (not HWND interop). Samples that
-  port `MessageDialog` from UWP without considering `ContentDialog` should be
-  questioned.
-- **`ApplicationView.GetForCurrentView()` does not work in WinUI 3 desktop
-  apps.** Use `AppWindow` (`Microsoft.UI.Windowing`) — get it from the
-  `WindowId` via `Win32Interop.GetWindowIdFromWindow(hWnd)`.
-- **`CoreWindow.GetForCurrentThread()` does not work** in WinUI 3 desktop apps.
-  Use the `Microsoft.UI.Xaml.Window` reference directly.
-- **`CoreApplication.MainView.CoreWindow.Dispatcher`** — replace with
-  `DispatcherQueue.GetForCurrentThread()` or `this.DispatcherQueue` on the
-  Window/Page.
-- **`ToastNotificationManager` (UWP)** — in WinUI 3, prefer
-  `AppNotificationManager` (Windows App SDK), which works for both packaged
-  and unpackaged apps.
-- **`ApplicationData.Current.LocalSettings` / `LocalFolder`** — these require
-  package identity. They throw in unpackaged WinUI 3 apps. Samples in
-  unpackaged-app context must use a Win32 alternative
-  (`Environment.SpecialFolder.LocalApplicationData`, registry, etc.) or call
-  out that the sample assumes packaged identity.
-- **`BackgroundTaskBuilder` (UWP background tasks)** — requires package
-  identity and a manifest declaration. Flag samples that imply unpackaged
-  WinUI 3 apps can register background tasks this way.
-
-When in doubt, ask the author: *"Has this sample been compiled and run as a
-WinUI 3 desktop app (both packaged and unpackaged) on the current stable
-Windows App SDK?"* If the answer is "I adapted it from a UWP sample," the
-HWND interop step is almost certainly missing.
+If a sample was adapted from UWP docs, the HWND interop step is almost certainly missing.
 
 ## 4. UWP → WinUI 3 migration content
 
-- The .NET Upgrade Assistant is C#-only and explicitly does not migrate
-  `ApplicationView` or `AppWindow`-related APIs. Any PR that implies otherwise
-  is wrong. Migration guidance should name the gap, not paper over it.
-- API mapping tables (`CoreDispatcher` → `DispatcherQueue`, `CoreWindow` →
-  `AppWindow`, `Windows.UI.Xaml.Window` → `Microsoft.UI.Xaml.Window`, picker
-  pattern changes, etc.) must be exhaustive for the surface the PR covers.
+- The .NET Upgrade Assistant is C#-only and does not migrate `ApplicationView`/`AppWindow` APIs. Name the gap; don't hide it.
+- API mapping tables must be exhaustive for the surface the PR covers.
 
 ## 5. Packaging and deployment guidance
 
-- Do not state or imply that `PublishSingleFile` produces a working unpackaged
-  WinUI 3 app — it does not, and the `WindowsAppSDKSingleFileVerifyConfiguration`
-  MSBuild target now warns about this. Reference the warning by name where
-  relevant.
-- Any "how to ship" guidance must specify both axes (packaging mode AND
-  deployment mode). "Self-contained" alone is ambiguous.
-- Cross-reference the current deployment overview, the unpackaged distribution
-  page, and the self-contained deployment guide. Flag stale links to retired
-  ProductBoard roadmaps or pre-2024 community blog posts as primary references.
+- `PublishSingleFile` does not produce a working unpackaged WinUI 3 app. Reference `WindowsAppSDKSingleFileVerifyConfiguration` where relevant.
+- "How to ship" guidance must specify both axes (packaging mode and deployment mode).
+- Flag stale links to retired roadmaps or pre-2024 blog posts used as primary references.
 
 ## 6. Honesty about constraints
 
-Microsoft engineers and community contributors have repeatedly praised candor
-in this content. Do not soften known limitations.
+Do not soften known limitations.
 
-- If a feature is not supported, say so directly. Do not write "consider
-  exploring" when the answer is "not supported in this version."
-- If there is no WinUI 3 equivalent for a UWP control (e.g., `MapControl`,
-  Toolkit `DataGrid`), say so and link the community alternative — do not
-  imply parity that doesn't exist.
-- "Coming soon" without a dated commitment should be flagged. Use
-  "tracked in <GitHub issue link>" instead.
+- If unsupported, say so directly. Do not write "consider exploring" when the answer is "not supported."
+- If no WinUI 3 equivalent exists for a UWP control, say so and link the community alternative.
+- Replace undated "coming soon" with "tracked in \<GitHub issue link\>."
+- **Contentious feature framing.** When Microsoft has removed, not implemented, or significantly changed something the community wants, the framing matters enormously.
+  - Don't use "replacement" for something that isn't one. Don't imply a workaround is equivalent to the missing feature. Acknowledge the gap factually and link the tracking issue.
+  - Never write "simply do X", "just do Y", "it's easy to", or "all you need to do is." These phrases dismiss the reader's experience, especially when the task is genuinely complex or the situation is frustrating.
+  - Before approving content that touches a known pain point, ask: "How would someone who voted for the feature request read this?" If the title, intro, or framing could be read as tone-deaf, flag it to the author with a concrete suggestion for neutral phrasing. Example: "XAML Designer replacement" when there is no designer was flagged as potentially inflammatory; "XAML runtime design tools" is neutral and accurate.
 
 ## 7. Style and structure
 
-- Apply Microsoft Writing Style Guide voice (second person, active, present
-  tense, sentence-case headings).
-- Use Learn note syntax (`> [!IMPORTANT]`, `> [!NOTE]`, `> [!TIP]`) — flag
-  bold-text-as-callout substitutes.
-- Update `ms.date` on substantive content changes (not just typo fixes).
-- Internal links should target `/en-us/windows/apps/...` not deprecated MSDN
-  URLs. Flag any link to `/uwp/api/` from WinUI 3 reference content unless
-  the API is genuinely UWP-only.
-- Tables comparing options should have stable column order across the doc
-  set (packaging mode | deployment mode | runtime install | single-file |
-  Store-eligible | identity). Inconsistent column order across sibling pages
-  is a usability bug.
+- Microsoft Writing Style Guide voice: second person, active, present tense, sentence-case headings.
+- Use Learn note syntax (`> [!IMPORTANT]`, `> [!NOTE]`, `> [!TIP]`). Flag bold-text-as-callout substitutes.
+- Update `ms.date` on substantive changes.
+- Link to `/windows/apps/...`, not deprecated MSDN URLs. Flag `/uwp/api/` links from WinUI 3 content unless the API is genuinely UWP-only.
+- Keep comparison-table column order consistent across sibling pages.
+- Prefer commas, parentheses, or separate sentences over em dashes. Em dashes are fine when they genuinely improve readability, but overuse makes prose feel breathless. Flag excessive em-dash usage in PRs.
 
 ## 8. What to ask the author
 
-When a PR is ambiguous, prefer asking these questions over guessing:
+When a PR is ambiguous, ask:
 
-1. Which Windows App SDK version is this content targeting?
-2. Does this apply to C#, C++/WinRT, or both? If both, are samples provided
-   for each?
-3. Does this apply to packaged, packaged-with-external-location, unpackaged,
-   or all three?
-4. Is the sample tested against the current stable channel template?
-5. Is there a GitHub issue or release-notes entry to cite for any new
-   behavior or limitation?
+1. Which Windows App SDK version is targeted?
+2. C#, C++/WinRT, or both? Samples for each?
+3. Packaged, packaged-with-external-location, unpackaged, or all three?
+4. Tested against the current stable channel template?
+5. GitHub issue or release-notes citation for new behavior?
