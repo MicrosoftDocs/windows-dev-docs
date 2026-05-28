@@ -1,10 +1,8 @@
 ---
-
 title: Use the light sensor
 description: Learn how to use the ambient light sensor to detect changes in lighting.
-ms.date: 05/04/2023
+ms.date: 05/26/2026
 ms.topic: how-to
-
 ms.localizationpriority: medium
 ---
 
@@ -12,153 +10,143 @@ ms.localizationpriority: medium
 
 Learn how to use the ambient light sensor to detect changes in lighting.
 
-**Important APIs**
+This example creates a simple app that relies on a the light sensor as an input device. An ambient light sensor is one of the several types of environmental sensors that allow apps to respond to changes in the user's environment.
 
-- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
-- [**LightSensor**](/uwp/api/Windows.Devices.Sensors.LightSensor)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Windows.Devices.Sensors](/uwp/api/Windows.Devices.Sensors), [LightSensor](/uwp/api/Windows.Devices.Sensors.LightSensor)
+
+> [!NOTE]
+> This article focuses on code that demonstrates how to use a light sensor. For an overview of the light sensor, see [Sensors: Light sensor](sensors.md#light-sensor).
 
 ## Prerequisites
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+You should be familiar with the light sensor and its uses. See [Sensors: Light sensor](sensors.md#light-sensor).
 
 The device or emulator that you're using must support an ambient light sensor.
 
-## Create a simple light-sensor app
-
-An ambient light sensor is one of the several types of environmental sensors that allow apps to respond to changes in the user's environment.
-
-> [!NOTE]
-> For a more complete implementation, see the [light sensor sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LightSensor).
-
-###  Instructions
-
-- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
-
-- Open your project's BlankPage.xaml.cs file and replace the existing code with the following.
+## Sample code
 
 ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using Windows.Foundation;
-    using Windows.Foundation.Collections;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Controls.Primitives;
-    using Windows.UI.Xaml.Data;
-    using Windows.UI.Xaml.Input;
-    using Windows.UI.Xaml.Media;
-    using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml.Controls;
+using Windows.Devices.Sensors;
 
-    using Windows.UI.Core; // Required to access the core dispatcher object
-    using Windows.Devices.Sensors; // Required to access the sensor platform and the ALS
-
-    // The Blank Page item template is documented at https://go.microsoft.com/fwlink/p/?linkid=234238
-
-    namespace App1
+namespace DevicesDemo.Pages
+{
+    public sealed partial class LightSensorPage : Page
     {
-        /// <summary>
-        /// An empty page that can be used on its own or navigated to within a Frame.
-        /// </summary>
-        public sealed partial class BlankPage : Page
+        private LightSensor? lightSensor;
+
+        public LightSensorPage()
         {
-            private LightSensor _lightsensor; // Our app' s lightsensor object
+            InitializeComponent();
 
-            // This event handler writes the current light-sensor reading to
-            // the textbox named "txtLUX" on the app' s main page.
+            // Get the default light sensor object.
+            lightSensor = LightSensor.GetDefault();
 
-            private void ReadingChanged(object sender, LightSensorReadingChangedEventArgs e)
+            if (lightSensor != null)
             {
-                Dispatcher.RunAsync(CoreDispatcherPriority.Normal, (s, a) =>
-                {
-                    LightSensorReading reading = (a.Context as LightSensorReadingChangedEventArgs).Reading;
-                    txtLuxValue.Text = String.Format("{0,5:0.00}", reading.IlluminanceInLux);
-                });
-            }
+                // Establish the report interval.
+                uint minReportInterval = lightSensor.MinimumReportInterval;
+                uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
+                lightSensor.ReportInterval = reportInterval;
 
-            public BlankPage()
+                // Assign an event handler for the reading-changed event.
+                lightSensor.ReadingChanged += LightSensor_ReadingChanged;
+            }
+            else
             {
-                InitializeComponent();
-                _lightsensor = LightSensor.GetDefault(); // Get the default light sensor object
-
-                // Assign an event handler for the ALS reading-changed event
-                if (_lightsensor != null)
-                {
-                    // Establish the report interval for all scenarios
-                    uint minReportInterval = _lightsensor.MinimumReportInterval;
-                    uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-                    _lightsensor.ReportInterval = reportInterval;
-
-                    // Establish the even thandler
-                    _lightsensor.ReadingChanged += new TypedEventHandler<LightSensor, LightSensorReadingChangedEventArgs>(ReadingChanged);
-                }
-
+                statusBar.Message = "No light sensor was found.";
+                statusBar.Severity = InfoBarSeverity.Error;
+                statusBar.IsOpen = true;
             }
+        }
 
+        // This event handler writes the current light
+        // reading to the text block on the XAML page.
+        private void LightSensor_ReadingChanged(LightSensor sender, LightSensorReadingChangedEventArgs args)
+        {
+            DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+            {
+                LightSensorReading reading = args.Reading;
+                txtLuxValue.Text = String.Format("{0,5:0.00}", reading.IlluminanceInLux);
+            });
         }
     }
+}
 ```
-
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **LightingCS**, you'd replace `namespace App1` with `namespace LightingCS`.
-
-- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xaml
-    <Page
-        x:Class="App1.BlankPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:App1"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Margin="24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="44"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="LUX Reading:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtLuxValue" Grid.Column="1" Text="---"/>
+    </Grid>
 
-        <Grid x:Name="LayoutRoot" Background="Black">
-            <TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
-            <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
-
-
-        </Grid>
-
-    </Page>
+    <InfoBar x:Name="statusBar" Grid.Row="1"/>
+</Grid>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **LightingCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="LightingCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:LightingCS"`.
+When the app runs, you can change the light values by covering and uncovering the light sensor.
 
-- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+The previous example demonstrates the essential code you need to write in order to integrate light sensor input into your app.
 
-Once the app is running, you can change the light sensor values by altering the light available to the sensor or using the emulator tools.
+### Connect to the sensor
 
-- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
-
-###  Explanation
-
-The previous example demonstrates how little code you'll need to write in order to integrate light-sensor input in your app.
-
-The app establishes a connection with the default sensor in the **BlankPage** method.
+Call the [GetDefault](/uwp/api/windows.devices.sensors.lightsensor.getdefault) method to establish a connection with the default light sensor.
 
 ```csharp
-_lightsensor = LightSensor.GetDefault(); // Get the default light sensor object
+private LightSensor? lightSensor;
+// ...
+lightSensor = LightSensor.GetDefault();
 ```
 
-The app establishes the report interval within the **BlankPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+You can also call [FromIdAsync](/uwp/api/windows.devices.sensors.lightsensor.fromidasync) to create a [LightSensor](/uwp/api/Windows.Devices.Sensors.LightSensor) object from a [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) value. For more info, see [Enumerate devices](enumerate-devices.md).
+
+If no light sensor sensor is detected, the status message is updated to inform the user.
+
+### Set the report interval
+
+The report interval is set within the page's constructor. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
-uint minReportInterval = _lightsensor.MinimumReportInterval;
+uint minReportInterval = lightSensor.MinimumReportInterval;
 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-_lightsensor.ReportInterval = reportInterval;
+lightSensor.ReportInterval = reportInterval;
 ```
-The new light-sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the value to your app using this event handler. The app registers this event handler on the following line.
+
+### Read sensor data
+
+The new light sensor data is captured in the [ReadingChanged](/uwp/api/windows.devices.sensors.lightsensor.readingchanged) event handler. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event. For this example, these new values are written to the text blocks found in the XAML for the corresponding page.
 
 ```csharp
-_lightsensor.ReadingChanged += new TypedEventHandler<LightSensor,
-LightSensorReadingChangedEventArgs>(ReadingChanged);
-```
+lightSensor.ReadingChanged += LightSensor_ReadingChanged;
+// ...
 
-These new values are written to a TextBlock found in the project's XAML.
-
-```xaml
-<TextBlock HorizontalAlignment="Left" Height="44" Margin="52,38,0,0" TextWrapping="Wrap" Text="LUX Reading" VerticalAlignment="Top" Width="150"/>
- <TextBlock x:Name="txtLuxValue" HorizontalAlignment="Left" Height="44" Margin="224,38,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="217"/>
+private void LightSensor_ReadingChanged(LightSensor sender, LightSensorReadingChangedEventArgs args)
+{
+    DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+    {
+        LightSensorReading reading = args.Reading;
+        txtLuxValue.Text = String.Format("{0,5:0.00}", reading.IlluminanceInLux);
+    });
+}
 ```
+ 
+ ## Related topics
+
+- [Light sensor sample (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LightSensor)

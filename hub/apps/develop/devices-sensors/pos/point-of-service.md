@@ -1,15 +1,14 @@
 ---
 title: Point of Service
-description: This section contains topics on how to interact with peripherals found in retail and hospitality environments from Universal Windows Platform (UWP) applications.
-ms.date: 05/04/2023
+description: This section contains topics on how to interact with peripherals found in retail and hospitality environments from Windows applications.
+ms.date: 05/27/2026
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 
 # Point of Service
 
-This section contains topics on how to use [Windows.Devices.PointOfService](/uwp/api/windows.devices.pointofservice) to interact with peripherals found in retail and hospitality environments from Universal Windows Platform (UWP) applications.
+This section contains topics on how to use [Windows.Devices.PointOfService](/uwp/api/windows.devices.pointofservice) to interact with peripherals found in retail and hospitality environments from Windows applications.
 
 | Topic | Description |
 |------|------------|

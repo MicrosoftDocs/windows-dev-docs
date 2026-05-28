@@ -1,25 +1,21 @@
 ---
-
 title: Bluetooth RFCOMM
-description: This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
-ms.date: 05/04/2023
+description: This article provides an overview of Bluetooth RFCOMM in Windows apps, along with example code on how to send or receive a file.
+ms.date: 05/27/2026
 ms.topic: article
-
 ms.localizationpriority: medium
 dev_langs:
 - csharp
 - cppwinrt
-- cpp
 ---
 
 # Bluetooth RFCOMM
 
-This topic provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
+This topic provides an overview of Bluetooth RFCOMM in Windows apps, along with example code on how to send or receive a file.
 
-**Important APIs**
-
-- [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth)
-- [**Windows.Devices.Bluetooth.Rfcomm**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [**Windows.Devices.Bluetooth**](/uwp/api/Windows.Devices.Bluetooth), [**Windows.Devices.Bluetooth.Rfcomm**](/uwp/api/Windows.Devices.Bluetooth.Rfcomm)
 
 > [!IMPORTANT]
 > You must declare the "bluetooth" capability in *Package.appxmanifest*.
@@ -250,108 +246,6 @@ Windows::Foundation::IAsyncOperation<bool> IsCompatibleVersion(Windows::Devices:
 ...
 ```
 
-```cpp
-Windows::Devices::Bluetooth::Rfcomm::RfcommDeviceService^ _service;
-Windows::Networking::Sockets::StreamSocket^ _socket;
-
-void Initialize()
-{
-    // Enumerate devices with the object push service
-    create_task(
-        Windows::Devices::Enumeration::DeviceInformation::FindAllAsync(
-            RfcommDeviceService::GetDeviceSelector(
-                RfcommServiceId::ObexObjectPush)))
-    .then([](DeviceInformationCollection^ services)
-    {
-        if (services->Size > 0)
-        {
-            // Initialize the target Bluetooth BR device
-            create_task(RfcommDeviceService::FromIdAsync(services[0]->Id))
-            .then([](RfcommDeviceService^ service)
-            {
-                // Check that the service meets this App's minimum
-                // requirement
-                if (SupportsProtection(service)
-                    && IsCompatibleVersion(service))
-                {
-                    _service = service;
-
-                    // Create a socket and connect to the target
-                    _socket = ref new StreamSocket();
-                    create_task(_socket->ConnectAsync(
-                        _service->ConnectionHostName,
-                        _service->ConnectionServiceName,
-                        SocketProtectionLevel
-                            ::BluetoothEncryptionAllowNullAuthentication)
-                    .then([](void)
-                    {
-                        // The socket is connected. At this point the App can
-                        // wait for the user to take some action, for example, click
-                        // a button to send a file to the device, which could
-                        // invoke the Picker and then send the picked file.
-                        // The transfer itself would use the Sockets API and
-                        // not the Rfcomm API, and so is omitted here for
-                        //brevity.
-                    });
-                }
-            });
-        }
-    });
-}
-
-// This App requires a connection that is encrypted but does not care about
-// whether it's authenticated.
-bool SupportsProtection(RfcommDeviceService^ service)
-{
-    switch (service->ProtectionLevel)
-    {
-    case SocketProtectionLevel->PlainSocket:
-        if ((service->MaxProtectionLevel == SocketProtectionLevel
-                ::BluetoothEncryptionWithAuthentication)
-            || (service->MaxProtectionLevel == SocketProtectionLevel
-                ::BluetoothEncryptionAllowNullAuthentication))
-        {
-            // The connection can be upgraded when opening the socket so the
-            // App may offer UI here to notify the user that Windows may
-            // prompt for a PIN exchange.
-            return true;
-        }
-        else
-        {
-            // The connection cannot be upgraded so an App may offer UI here
-            // to explain why a connection won't be made.
-            return false;
-        }
-    case SocketProtectionLevel::BluetoothEncryptionWithAuthentication:
-        return true;
-    case SocketProtectionLevel::BluetoothEncryptionAllowNullAuthentication:
-        return true;
-    }
-    return false;
-}
-
-// This App relies on CRC32 checking available in version 2.0 of the service.
-const uint SERVICE_VERSION_ATTRIBUTE_ID = 0x0300;
-const byte SERVICE_VERSION_ATTRIBUTE_TYPE = 0x0A;   // UINT32
-const uint MINIMUM_SERVICE_VERSION = 200;
-bool IsCompatibleVersion(RfcommDeviceService^ service)
-{
-    auto attributes = await service->GetSdpRawAttributesAsync(
-        BluetoothCacheMode::Uncached);
-    auto attribute = attributes[SERVICE_VERSION_ATTRIBUTE_ID];
-    auto reader = DataReader.FromBuffer(attribute);
-
-    // The first byte contains the attribute's type
-    byte attributeType = reader->ReadByte();
-    if (attributeType == SERVICE_VERSION_ATTRIBUTE_TYPE)
-    {
-        // The remainder is the data
-        uint version = reader->ReadUInt32();
-        return version >= MINIMUM_SERVICE_VERSION;
-    }
-}
-```
-
 ## Receive File as a Server
 
 Another common RFCOMM App scenario is to host a service on the PC and expose it for other devices.
@@ -485,70 +379,4 @@ void OnConnectionReceived(
     // omitted here for brevity.
 }
 ...
-```
-
-```cpp
-Windows::Devices::Bluetooth::Rfcomm::RfcommServiceProvider^ _provider;
-Windows::Networking::Sockets::StreamSocket^ _socket;
-
-void Initialize()
-{
-    // Initialize the provider for the hosted RFCOMM service
-    create_task(Windows::Devices::Bluetooth.
-        RfcommServiceProvider::CreateAsync(
-            RfcommServiceId::ObexObjectPush))
-    .then([](RfcommServiceProvider^ provider) -> task<void> {
-        _provider = provider;
-
-        // Create a listener for this service and start listening
-        auto listener = ref new StreamSocketListener();
-        listener->ConnectionReceived += ref new TypedEventHandler<
-                StreamSocketListener^,
-                StreamSocketListenerConnectionReceivedEventArgs^>
-           (&OnConnectionReceived);
-        return create_task(listener->BindServiceNameAsync(
-            _provider->ServiceId->AsString(),
-            SocketProtectionLevel
-                ::BluetoothEncryptionAllowNullAuthentication));
-    }).then([listener](void) {
-        // Set the SDP attributes and start advertising
-        InitializeServiceSdpAttributes(_provider);
-        _provider->StartAdvertising(listener);
-    });
-}
-
-const uint SERVICE_VERSION_ATTRIBUTE_ID = 0x0300;
-const byte SERVICE_VERSION_ATTRIBUTE_TYPE = 0x0A;   // UINT32
-const uint SERVICE_VERSION = 200;
-void InitializeServiceSdpAttributes(RfcommServiceProvider^ provider)
-{
-    auto writer = ref new Windows::Storage::Streams::DataWriter();
-
-    // First write the attribute type
-    writer->WriteByte(SERVICE_VERSION_ATTRIBUTE_TYPE);
-    // Then write the data
-    writer->WriteUInt32(SERVICE_VERSION);
-
-    auto data = writer->DetachBuffer();
-    provider->SdpRawAttributes->Add(SERVICE_VERSION_ATTRIBUTE_ID, data);
-}
-
-void OnConnectionReceived(
-    StreamSocketListener^ listener,
-    StreamSocketListenerConnectionReceivedEventArgs^ args)
-{
-    // Stop advertising/listening so that we're only serving one client
-    _provider->StopAdvertising();
-    create_task(listener->Close())
-    .then([args](void) {
-        _socket = args->Socket;
-
-        // The client socket is connected. At this point the App can wait for
-        // the user to take some action, for example, click a button to receive a
-        // file from the device, which could invoke the Picker and then save
-        // the received file to the picked location. The transfer itself
-        // would use the Sockets API and not the Rfcomm API, and so is
-        // omitted here for brevity.
-    });
-}
 ```

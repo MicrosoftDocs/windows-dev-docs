@@ -1,9 +1,8 @@
 ---
 title: PointOfService device sharing 
 description: Learn how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals.
-ms.date: 05/04/2023
+ms.date: 05/27/2026
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 
@@ -11,13 +10,9 @@ ms.localizationpriority: medium
 
 This topic shows how to share network or Bluetooth connected peripherals with other computers in an environment where multiple PCs rely on shared peripherals rather than dedicated peripherals attached to each computer.
 
-**Important APIs**
-
-- [BarcodeScanner.Dispose](/uwp/api/windows.devices.pointofservice.barcodescanner.dispose)
-- [CashDrawer.Dispose](/uwp/api/windows.devices.pointofservice.cashdrawer.dispose)
-- [LineDisplay.Dispose](/uwp/api/windows.devices.pointofservice.linedisplay.dispose)
-- [MagneticStripeReader.Dispose](/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose)  
-- [PosPrinter.Dispose](/uwp/api/windows.devices.pointofservice.posprinter.dispose)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [BarcodeScanner.Dispose](/uwp/api/windows.devices.pointofservice.barcodescanner.dispose),  [CashDrawer.Dispose](/uwp/api/windows.devices.pointofservice.cashdrawer.dispose), [LineDisplay.Dispose](/uwp/api/windows.devices.pointofservice.linedisplay.dispose), [MagneticStripeReader.Dispose](/uwp/api/windows.devices.pointofservice.magneticstripereader.dispose), [PosPrinter.Dispose](/uwp/api/windows.devices.pointofservice.posprinter.dispose)
 
 
 ## Device sharing
@@ -26,9 +21,9 @@ Network and Bluetooth connected PointOfService peripherals are typically used in
 
 In these environments, it is important for the application to fully **dispose** the device object so that another can claim the same device.
 
-Disposing of a PosPrinter at the end of a ‘using’ block
+Disposing of a PosPrinter at the end of a 'using' block
 
-```Csharp 
+```csharp 
 using Windows.Devices.PointOfService;
 using(PosPrinter printer = await PosPrinter.FromIdAsync("Device ID"))
 {
@@ -42,7 +37,7 @@ using(PosPrinter printer = await PosPrinter.FromIdAsync("Device ID"))
 }
 ```
 
-Disposing of a PosPrinter by calling Dispose() explicitly
+Disposing of a PosPrinter by calling `Dispose()` explicitly
 
 ```csharp
 using Windows.Devices.PointOfService;

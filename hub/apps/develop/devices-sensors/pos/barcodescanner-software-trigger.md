@@ -1,7 +1,7 @@
 ---
 title: Use a software trigger with a barcode scanner
 description: Learn how to control the barcode scanning process programmatically using an asynchronous software trigger.
-ms.date: 05/04/2023
+ms.date: 05/27/2026
 ms.topic: article
 
 ms.localizationpriority: medium
@@ -28,7 +28,7 @@ Set the desired value of [IsDisabledOnDataReceived](/uwp/api/windows.devices.poi
 
 The following example shows how to initiate scanning using a software trigger, which will stop scanning once it scans one barcode:
 
-```cs
+```csharp
 private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 
 {
     if (barcodeScanner.Capabilities.IsSoftwareTriggerSupported)

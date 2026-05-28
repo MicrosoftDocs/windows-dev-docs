@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Working with barcode scanner symbologies
 
-This topic explains how to use the Universal Windows Platform (UWP) barcode scanner APIs to process barcode symbologies without manually configuring the scanner.
+This topic explains how to use the WinRT barcode scanner APIs to process barcode symbologies without manually configuring the scanner.
 
 A [barcode symbology](/uwp/api/windows.devices.pointofservice.barcodesymbologies) is the mapping of data to a specific barcode format. Some common symbologies include UPC, Code 128, QR Code, and so on.
 
@@ -21,7 +21,7 @@ Once you have a [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcode
 
 The following example gets a list of the supported symbologies of the barcode scanner, and displays them in a text block:
 
-```cs
+```csharp
 private void DisplaySupportedSymbologies(BarcodeScanner barcodeScanner, TextBlock textBlock) 
 {
     var supportedSymbologies = await barcodeScanner.GetSupportedSymbologiesAsync();
@@ -40,7 +40,7 @@ To determine if the scanner supports a specific symbology you can call [IsSymbol
 
 The following example checks if the barcode scanner supports the **Code32** symbology:
 
-```cs
+```csharp
 bool symbologySupported = await barcodeScanner.IsSymbologySupportedAsync(BarcodeSymbologies.Code32);
 ```
 
@@ -53,7 +53,7 @@ Once you know the symbologies that your scanner supports, you can set the symbol
 
 The following example sets the active symbologies of a claimed barcode scanner to [Code39](/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39#Windows_Devices_PointOfService_BarcodeSymbologies_Code39) and [Code39Ex](/uwp/api/windows.devices.pointofservice.barcodesymbologies.code39ex):
 
-```cs
+```csharp
 private async void SetSymbologies(ClaimedBarcodeScanner claimedBarcodeScanner) 
 {
     var symbologies = new List<uint>{ BarcodeSymbologies.Code39, BarcodeSymbologies.Code39Ex };
@@ -67,14 +67,14 @@ Different barcode symbologies can have different attributes, such as supporting 
 
 You can get the attributes of a given symbology with [GetSymbologyAttributesAsync](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.getsymbologyattributesasync#Windows_Devices_PointOfService_ClaimedBarcodeScanner_GetSymbologyAttributesAsync_System_UInt32_). The following code snippet gets the attributes of the Upca symbology for a **ClaimedBarcodeScanner**.
 
-```cs
+```csharp
 BarcodeSymbologyAttributes barcodeSymbologyAttributes = 
     await claimedBarcodeScanner.GetSymbologyAttributesAsync(BarcodeSymbologies.Upca);
 ```
 
 When you've finished modifying the attributes and are ready to set them, you can call [SetSymbologyAttributesAsync](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.setsymbologyattributesasync). This method returns a **bool**, which is **true** if the attributes were successfully set.
 
-```cs
+```csharp
 bool success = await claimedBarcodeScanner.SetSymbologyAttributesAsync(
     BarcodeSymbologies.Upca, barcodeSymbologyAttributes);
 ```
@@ -93,7 +93,7 @@ Finally, you can set the values of **DecodeLength1** and **DecodeLength2** to co
 
 The following code snippet demonstrates setting the decode length:
 
-```cs
+```csharp
 private async Task<bool> SetDecodeLength(
     ClaimedBarcodeScanner scanner,
     uint symbology, 
@@ -122,7 +122,7 @@ Another attribute you can set on a symbology is whether the check digit will be 
 
 The following code snippet demonstrates setting check digit transmission:
 
-```cs
+```csharp
 private async Task<bool> SetCheckDigitTransmission(ClaimedBarcodeScanner scanner, uint symbology, bool isEnabled)
 {
     bool success = false;
@@ -144,7 +144,7 @@ You can also set whether the barcode check digit will be validated. Before setti
 
 The following code snippet demonstrates setting check digit validation:
 
-```cs
+```csharp
 private async Task<bool> SetCheckDigitValidation(ClaimedBarcodeScanner scanner, uint symbology, bool isEnabled)
 {
     bool success = false;

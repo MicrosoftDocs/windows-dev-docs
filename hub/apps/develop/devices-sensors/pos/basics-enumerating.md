@@ -1,9 +1,8 @@
 ---
 title: Enumerating PointOfService devices
 description: Learn four methods for using a device selector to query and enumerate the PointOfService devices available to your system.
-ms.date: 05/04/2023
+ms.date: 05/27/2026
 ms.topic: concept-article
-
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +32,7 @@ A device selector enables you to limit the devices you are searching through whe
 
 You can use the **GetDeviceSelector** method for the type of device that you're looking for and get the device selector for that type. For example, using [PosPrinter.GetDeviceSelector](/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector) will provide you with a selector to enumerate all [PosPrinters](/uwp/api/windows.devices.pointofservice.posprinter) attached to the system, including USB, network and Bluetooth POS printers.
 
-```Csharp
+```csharp
 using Windows.Devices.PointOfService;
 
 string selector = POSPrinter.GetDeviceSelector();
@@ -49,7 +48,7 @@ The **GetDeviceSelector** methods for the different device types are:
 
 Using a **GetDeviceSelector** method that takes a [PosConnectionTypes](/uwp/api/windows.devices.pointofservice.posconnectiontypes) value as a parameter, you can restrict your selector to enumerate local, network, or Bluetooth-attached POS devices, reducing the time it takes for the query to complete.  The sample below shows a use of this method to define a selector that supports only locally attached POS printers.
 
- ```Csharp
+ ```csharp
 using Windows.Devices.PointOfService;
 
 string selector = POSPrinter.GetDeviceSelector(PosConnectionTypes.Local);
@@ -84,7 +83,7 @@ The simplest way to get a Point of Service device is to use **GetDefaultAsync** 
 
 The sample below illustrates the use of [GetDefaultAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync) for [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner). The coding pattern is similar for all Point of Service device classes.
 
-```Csharp
+```csharp
 using Windows.Devices.PointOfService;
 
 BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
@@ -113,7 +112,7 @@ In some scenarios you may want to build your own UI or need to enumerate devices
 
 This sample uses the selector defined above to take a snapshot of devices using **FindAllAsync** then enumerates through each of the items returned by the collection and writes the device name and ID to the debug output. 
 
-```Csharp
+```csharp
 using Windows.Devices.Enumeration;
 
 DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(selector);
@@ -133,7 +132,7 @@ A more powerful and flexible method of enumerating devices is creating a [Device
 
 This sample uses the selector defined above to create a **DeviceWatcher** as well as defines event handlers for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added), [Removed](/uwp/api/windows.devices.enumeration.devicewatcher.removed), and [Updated](/uwp/api/windows.devices.enumeration.devicewatcher.updated) notifications. You will need to fill in the details of the actions that you wish to take upon each notification.
 
-```Csharp
+```csharp
 using Windows.Devices.Enumeration;
 
 DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);

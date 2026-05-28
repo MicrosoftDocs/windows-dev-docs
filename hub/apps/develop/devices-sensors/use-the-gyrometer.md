@@ -1,10 +1,8 @@
 ---
-
 title: Use the gyrometer
 description: Learn how to use the Gyrometer API to integrate gyrometer input in your app that detects changes in user movement like angular velocity and rotational motion.
-ms.date: 05/04/2023
+ms.date: 05/26/2026
 ms.topic: how-to
-
 ms.localizationpriority: medium
 ---
 
@@ -12,165 +10,153 @@ ms.localizationpriority: medium
 
 Learn how to use the gyrometer to detect changes in user movement.
 
-**Important APIs**
+Gyrometers compliment accelerometers as game controllers. The accelerometer can measure linear motion while the gyrometer measures angular velocity or rotational motion.
 
-- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
-- [**Gyrometer**](/uwp/api/Windows.Devices.Sensors.Gyrometer)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Windows.Devices.Sensors](/uwp/api/Windows.Devices.Sensors), [Gyrometer](/uwp/api/Windows.Devices.Sensors.Gyrometer)
 
-
+> [!NOTE]
+> This article focuses on code that demonstrates how to use a gyrometer. For an overview of the gyrometer sensor, see [Sensors: Gyrometer](sensors.md#gyrometer).
 
 ## Prerequisites
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+You should be familiar with the gyrometer sensor and its uses. See [Sensors: Gyrometer](sensors.md#gyrometer).
 
-The device or emulator that you're using must support a gyrometer.
+The device that you're using must support a gyrometer.
 
-## Create a simple gyrometer app
-
-Gyrometers compliment accelerometers as game controllers. The accelerometer can measure linear motion while the gyrometer measures angular velocity or rotational motion.
-
-> [!NOTE]
-> For a more complete implementation, see the [gyrometer sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/Gyrometer).
-
-### Instructions
-
-- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
-
-- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+## Sample code
 
 ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using Windows.Foundation;
-    using Windows.Foundation.Collections;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Controls.Primitives;
-    using Windows.UI.Xaml.Data;
-    using Windows.UI.Xaml.Input;
-    using Windows.UI.Xaml.Media;
-    using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml.Controls;
+using Windows.Devices.Sensors;
 
-    using Windows.UI.Core; // Required to access the core dispatcher object
-    using Windows.Devices.Sensors; // Required to access the sensor platform and the gyrometer
-
-
-    namespace App1
+namespace DevicesDemo.Pages
+{
+    public sealed partial class GyrometerPage : Page
     {
-        /// <summary>
-        /// An empty page that can be used on its own or navigated to within a Frame.
-        /// </summary>
-        public sealed partial class MainPage : Page
+        private Gyrometer? gyrometer;
+
+        public GyrometerPage()
         {
-            private Gyrometer _gyrometer; // Our app' s gyrometer object
+            InitializeComponent();
 
-            // This event handler writes the current gyrometer reading to
-            // the three textblocks on the app' s main page.
+            // Get the default gyrometer sensor object.
+            gyrometer = Gyrometer.GetDefault();
 
-            private async void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
+            if (gyrometer != null)
             {
-                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                {
-                    GyrometerReading reading = e.Reading;
-                    txtXAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityX);
-                    txtYAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityY);
-                    txtZAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityZ);
-                });
+                // Establish the report interval.
+                uint minReportInterval = gyrometer.MinimumReportInterval;
+                uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
+                gyrometer.ReportInterval = reportInterval;
+
+                // Assign an event handler for the reading-changed event.
+                gyrometer.ReadingChanged += Gyrometer_ReadingChanged;
             }
-
-            public MainPage()
+            else
             {
-                this.InitializeComponent();
-                _gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
-
-                if (_gyrometer != null)
-                {
-                    // Establish the report interval for all scenarios
-                    uint minReportInterval = _gyrometer.MinimumReportInterval;
-                    uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-                    _gyrometer.ReportInterval = reportInterval;
-
-                    // Assign an event handler for the gyrometer reading-changed event
-                    _gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer, GyrometerReadingChangedEventArgs>(ReadingChanged);
-                }
-
+                statusBar.Message = "No gyrometer was found.";
+                statusBar.Severity = InfoBarSeverity.Error;
+                statusBar.IsOpen = true;
             }
         }
+
+        // This event handler writes the current gyrometer reading to
+        // the three axis text blocks on the XAML page.
+        private void Gyrometer_ReadingChanged(Gyrometer sender, GyrometerReadingChangedEventArgs args)
+        {
+            DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+            {
+                GyrometerReading reading = args.Reading;
+                txtXAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityX);
+                txtYAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityY);
+                txtZAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityZ);
+            });
+        }
     }
+}
 ```
-
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **GyrometerCS**, you'd replace `namespace App1` with `namespace GyrometerCS`.
-
-- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xaml
-        <Page
-        x:Class="App1.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:App1"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Margin="24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="44"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="X-axis:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtXAxis" Grid.Column="1" Text="---"/>
 
-        <Grid x:Name="LayoutRoot" Background="#FF0C0C0C">
-            <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
-            <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="23" Margin="67,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" Foreground="#FFFDFAFA"/>
-            <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,52,0,0" TextWrapping="Wrap" Text="Y Axis:" VerticalAlignment="Top" Width="46" Foreground="White"/>
-            <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="24" Margin="54,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Foreground="#FFFBFBFB"/>
-            <TextBlock HorizontalAlignment="Left" Height="21" Margin="8,93,0,0" TextWrapping="Wrap" Text="Z Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFEFBFB"/>
-            <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
+        <TextBlock Grid.Row="1" Text="Y-axis:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtYAxis" Grid.Column="1" Grid.Row="1" Text="---"/>
 
-        </Grid>
-    </Page>
+        <TextBlock Grid.Row="2" Text="Z-axis:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtZAxis" Grid.Column="1" Grid.Row="2" Text="---"/>
+    </Grid>
+
+    <InfoBar x:Name="statusBar" Grid.Row="1"/>
+</Grid>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **GyrometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="GyrometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:GyrometerCS"`.
+When the app runs, you can change the gyrometer values by moving the device.
 
-- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+The previous example demonstrates the essential code you need to write in order to integrate gyrometer input into your app.
 
-Once the app is running, you can change the gyrometer values by moving the device or using the emulator tools.
+### Connect to the sensor
 
-- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
-
-###  Explanation
-
-The previous example demonstrates how little code you'll need to write in order to integrate gyrometer input in your app.
-
-The app establishes a connection with the default gyrometer in the **MainPage** method.
+Call the [GetDefault](/uwp/api/windows.devices.sensors.gyrometer.getdefault) method to establish a connection with the default gyrometer.
 
 ```csharp
-_gyrometer = Gyrometer.GetDefault(); // Get the default gyrometer sensor object
+private Gyrometer? gyrometer;
+// ...
+gyrometer = Gyrometer.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+You can also call [FromIdAsync](/uwp/api/windows.devices.sensors.gyrometer.fromidasync) to create a [Gyrometer](/uwp/api/Windows.Devices.Sensors.gyrometer) object from a [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) value. For more info, see [Enumerate devices](enumerate-devices.md).
+
+If no gyrometer sensor is detected, the status message is updated to inform the user.
+
+### Set the report interval
+
+The app establishes the report interval within the MainPage method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
-uint minReportInterval = _gyrometer.MinimumReportInterval;
+uint minReportInterval = gyrometer.MinimumReportInterval;
 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-_gyrometer.ReportInterval = reportInterval;
+gyrometer.ReportInterval = reportInterval;
 ```
 
-The new gyrometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+### Read sensor data
+
+The new gyrometer data is captured in the [ReadingChanged](/uwp/api/windows.devices.sensors.gyrometer.readingchanged) event handler. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event. For this example, these new values are written to the text blocks found in the XAML for the corresponding page.
 
 ```csharp
-_gyrometer.ReadingChanged += new TypedEventHandler<Gyrometer,
-GyrometerReadingChangedEventArgs>(ReadingChanged);
-```
+gyrometer.ReadingChanged += Gyrometer_ReadingChanged;
+// ...
 
-These new values are written to the TextBlocks found in the project's XAML.
-
-```xaml
-        <TextBlock HorizontalAlignment="Left" Height="23" Margin="8,8,0,0" TextWrapping="Wrap" Text="X-Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFDFDFD"/>
-        <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="23" Margin="67,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="88" Foreground="#FFFDFAFA"/>
-        <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,52,0,0" TextWrapping="Wrap" Text="Y Axis:" VerticalAlignment="Top" Width="46" Foreground="White"/>
-        <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="24" Margin="54,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Foreground="#FFFBFBFB"/>
-        <TextBlock HorizontalAlignment="Left" Height="21" Margin="8,93,0,0" TextWrapping="Wrap" Text="Z Axis:" VerticalAlignment="Top" Width="46" Foreground="#FFFEFBFB"/>
-        <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="21" Margin="54,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" Foreground="#FFF8F3F3"/>
+private void Gyrometer_ReadingChanged(Gyrometer sender, GyrometerReadingChangedEventArgs args)
+{
+    DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+    {
+        GyrometerReading reading = args.Reading;
+        txtXAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityX);
+        txtYAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityY);
+        txtZAxis.Text = String.Format("{0,5:0.00}", reading.AngularVelocityZ);
+    });
+}
 ```
 
  ## Related topics
 
-* [Gyrometer Sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Gyrometer%20sensor%20sample%20(Windows%208))
+- [Gyrometer sample (UWP)](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/Gyrometer)

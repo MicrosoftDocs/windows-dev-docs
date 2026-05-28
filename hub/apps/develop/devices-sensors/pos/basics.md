@@ -3,7 +3,6 @@ title: Point of Service basics
 description: This section contains links to topics for getting started with the PointOfService Windows Runtime APIs.
 ms.date: 05/04/2023
 ms.topic: article
-
 ms.localizationpriority: medium
 ---
 

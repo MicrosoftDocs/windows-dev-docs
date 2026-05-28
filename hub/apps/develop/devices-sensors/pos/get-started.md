@@ -3,7 +3,6 @@ title: Getting started with Point of Service
 description: This article contains information about getting started with the point of service Windows Runtime APIs.
 ms.date: 05/04/2023
 ms.topic: get-started
-
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +26,7 @@ Some Point of Service devices may not appear in Settings until they are programm
 
 In a simple use case, you may have just one Point of Service peripheral connected to the PC where the app is running and want to set it up as quickly as possible. To do that, retrieve the “default” device with the **GetDefaultAsync** method as shown here.
 
-```Csharp
+```csharp
 using Windows.Devices.PointOfService;
 
 BarcodeScanner barcodeScanner = await BarcodeScanner.GetDefaultAsync();
@@ -42,7 +41,7 @@ If the default device is found, the device object retrieved is ready to be claim
 
 When connected to more than one device, you must enumerate the collection of **PointOfService** device objects to find the one you want to claim. For example, the following code creates a collection of all the barcode scanners currently connected, and then searches the collection for a scanner with a specific name.
 
-```Csharp
+```csharp
 using Windows.Devices.Enumeration;
 using Windows.Devices.PointOfService;
 
@@ -63,7 +62,7 @@ foreach (DeviceInformation devInfo in deviceCollection)
 
 When connecting to a device, you may want to limit your search to a subset of Point of Service peripherals that your app has access to. Using the **GetDeviceSelector** method, you can scope the selection to retrieve devices connected only by a certain method (Bluetooth, USB, etc.). You can create a selector that searches for devices over **Bluetooth**, **IP**, **Local**, or **All connection types**. This can be useful, as wireless device discovery takes a long time compared to local (wired) discovery. You can ensure a deterministic wait time for local device connection by limiting **FindAllAsync** to **Local** connection types. For example, this code retrieves all barcode scanners accessible via a local connection.
 
-```Csharp
+```csharp
 string selector = BarcodeScanner.GetDeviceSelector(PosConnectionTypes.Local);
 DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAsync(selector);
 ```
@@ -72,7 +71,7 @@ DeviceInformationCollection deviceCollection = await DeviceInformation.FindAllAs
 
 As your app runs, sometimes devices will be disconnected or updated, or new devices will need to be added. You can use the **DeviceWatcher** class to access device-related events, so your app can respond accordingly. Here’s example of how to use **DeviceWatcher**, with method stubs to be called if a device is added, removed, or updated.
 
-```Csharp
+```csharp
 DeviceWatcher deviceWatcher = DeviceInformation.CreateWatcher(selector);
 deviceWatcher.Added += DeviceWatcher_Added;
 deviceWatcher.Removed += DeviceWatcher_Removed;
@@ -101,7 +100,7 @@ Even within a device class, such as barcode scanners, the attributes of each dev
 > [!NOTE]
 > A symbology is the language mapping that a barcode uses to encode messages.
 
-```Csharp
+```csharp
 try
 {
     BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(deviceId);
@@ -120,7 +119,7 @@ catch (Exception ex)
 
 The **Device.Capabilities** class is an attribute of all Point of Service device classes and can be used to get general information about each device. For example, this example determines whether a device supports statistics reporting and, if it does, retrieves statistics for any types supported.
 
-```Csharp
+```csharp
 try
 {
     if (barcodeScanner.Capabilities.IsStatisticsReportingSupported)
@@ -141,7 +140,7 @@ catch (Exception ex)
 
 Before you can use a Point of Service device for active input or output, you must claim it, granting the application exclusive access to many of its functions. This code shows how to claim a barcode scanner device, after you’ve found the device by using one of the methods described earlier.
 
-```Csharp
+```csharp
 try
 {
     claimedBarcodeScanner = await barcodeScanner.ClaimScannerAsync();
@@ -155,7 +154,7 @@ catch (Exception ex)
 ### Retaining the device
 When using a Point of Service device over a network or Bluetooth connection, you may wish to share the device with other apps on the network. (For more info about this, see [Sharing Devices](#sharing-a-device-between-apps).) In other cases, you may want to hold on to the device for prolonged use. This example shows how to retain a claimed barcode scanner after another app has requested that the device be released.
 
-```Csharp
+```csharp
 claimedBarcodeScanner.ReleaseDeviceRequested += claimedBarcodeScanner_ReleaseDeviceRequested;
 
 void claimedBarcodeScanner_ReleaseDeviceRequested(object sender, ClaimedBarcodeScanner e)
@@ -168,7 +167,7 @@ void claimedBarcodeScanner_ReleaseDeviceRequested(object sender, ClaimedBarcodeS
 
 After you’ve claimed a device, you’re almost ready to use it. To receive input from the device, you must set up and enable a delegate to receive data. In the example below, we claim a barcode scanner device, set its decode property, and then call **EnableAsync** to enable decoded input from the device. This process varies between device classes, so for guidance about how to set up a delegate for non-barcode devices, refer to the relevant [UWP app sample](https://github.com/Microsoft/Windows-universal-samples#devices-and-sensors).
 
-```Csharp
+```csharp
 try
 {
     claimedBarcodeScanner = await barcodeScanner.ClaimScannerAsync();
@@ -197,7 +196,7 @@ void claimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeSca
 
 Point of Service devices are often used in cases where more than one app will need to access them in a brief period.  A device can be shared when connected to multiple apps locally (USB or other wired connection), or through a Bluetooth or IP network. Depending on the needs of each app, one process may need to dispose of its claim on the device. This code disposes of our claimed barcode scanner device, allowing other apps to claim and use it.
 
-```Csharp
+```csharp
 if (claimedBarcodeScanner != null)
 {
     claimedBarcodeScanner.Dispose();

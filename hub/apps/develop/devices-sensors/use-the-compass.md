@@ -1,10 +1,8 @@
 ---
-
 title: Use the compass
 description: Learn how to use the Universal Windows Platform (UWP) Compass API to determine the current heading in a navigation app.
-ms.date: 05/04/2023
+ms.date: 05/26/2026
 ms.topic: how-to
-
 ms.localizationpriority: medium
 ---
 
@@ -12,158 +10,153 @@ ms.localizationpriority: medium
 
 Learn how to use the compass to determine the current heading.
 
-**Important APIs**
+This example creates a simple app that relies on a the compass as an input device. An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient a map accordingly.
 
-- [**Windows.Devices.Sensors**](/uwp/api/Windows.Devices.Sensors)
-- [**Compass**](/uwp/api/Windows.Devices.Sensors.Compass)
+> [!div class="checklist"]
+>
+> - **Important APIs:** [Windows.Devices.Sensors](/uwp/api/Windows.Devices.Sensors), [Compass](/uwp/api/Windows.Devices.Sensors.Compass)
+
+> [!NOTE]
+> This article focuses on code that demonstrates how to use a compass. For an overview of the compass sensor, see [Sensors: Compass](sensors.md#compass).
 
 ## Prerequisites
 
-You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
+You should be familiar with the compass sensor and its uses. See [Sensors: Compass](sensors.md#compass).
 
 The device or emulator that you're using must support a compass.
 
-## Create a simple compass app
-
-An app can retrieve the current heading with respect to magnetic, or true, north. Navigation apps use the compass to determine the direction a device is facing and then orient the map accordingly.
-
-> [!NOTE]
-> For a more complete implementation, see the [compass sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Compass).
-
-### Instructions
-
-- Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
-
-- Open your project's MainPage.xaml.cs file and replace the existing code with the following.
+## Sample code
 
 ```csharp
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using Windows.Foundation;
-    using Windows.Foundation.Collections;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Controls.Primitives;
-    using Windows.UI.Xaml.Data;
-    using Windows.UI.Xaml.Input;
-    using Windows.UI.Xaml.Media;
-    using Windows.UI.Xaml.Navigation;
+using Microsoft.UI.Dispatching;
+using Microsoft.UI.Xaml.Controls;
+using Windows.Devices.Sensors;
 
-    using Windows.UI.Core; // Required to access the core dispatcher object
-    using Windows.Devices.Sensors; // Required to access the sensor platform and the compass
-
-
-    namespace App1
+namespace DevicesDemo.Pages
+{
+    public sealed partial class CompassPage : Page
     {
-        /// <summary>
-        /// An empty page that can be used on its own or navigated to within a Frame.
-        /// </summary>
-        public sealed partial class MainPage : Page
+        private Compass? compass;
+
+        public CompassPage()
         {
-            private Compass _compass; // Our app' s compass object
+            InitializeComponent();
 
-            // This event handler writes the current compass reading to
-            // the textblocks on the app' s main page.
+            // Get the default compass object.
+            compass = Compass.GetDefault(); 
 
-            private async void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
+            if (compass != null)
             {
-               await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                {
-                    CompassReading reading = e.Reading;
-                    txtMagnetic.Text = String.Format("{0,5:0.00}", reading.HeadingMagneticNorth);
-                    if (reading.HeadingTrueNorth.HasValue)
-                        txtNorth.Text = String.Format("{0,5:0.00}", reading.HeadingTrueNorth);
-                    else
-                        txtNorth.Text = "No reading.";
-                });
+                // Establish the report interval for all scenarios.
+                uint minReportInterval = compass.MinimumReportInterval;
+                uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
+                compass.ReportInterval = reportInterval;
+
+                // Assign an event handler for the reading-changed event.
+                compass.ReadingChanged += Compass_ReadingChanged;
             }
-
-            public MainPage()
+            else
             {
-                this.InitializeComponent();
-               _compass = Compass.GetDefault(); // Get the default compass object
-
-                // Assign an event handler for the compass reading-changed event
-                if (_compass != null)
-                {
-                    // Establish the report interval for all scenarios
-                    uint minReportInterval = _compass.MinimumReportInterval;
-                    uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-                    _compass.ReportInterval = reportInterval;
-                    _compass.ReadingChanged += new TypedEventHandler<Compass, CompassReadingChangedEventArgs>(ReadingChanged);
-                }
+                statusBar.Message = "No compass was found.";
+                statusBar.Severity = InfoBarSeverity.Error;
+                statusBar.IsOpen = true;
             }
         }
+
+        // This event handler writes the current compass
+        // reading to the text blocks on the XAML page.
+        private void Compass_ReadingChanged(Compass sender, CompassReadingChangedEventArgs args)
+        {
+            DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+            {
+                CompassReading reading = args.Reading;
+                txtMagnetic.Text = String.Format("{0,5:0.00}", reading.HeadingMagneticNorth);
+                if (reading.HeadingTrueNorth.HasValue)
+                    txtNorth.Text = String.Format("{0,5:0.00}", reading.HeadingTrueNorth);
+                else
+                    txtNorth.Text = "No reading.";
+            });
+        }
     }
+}
 ```
-
-You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **CompassCS**, you'd replace `namespace App1` with `namespace CompassCS`.
-
-- Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xaml
-    <Page
-        x:Class="App1.MainPage"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:local="using:App1"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d">
+<Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid Margin="24">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="44"/>
+            <RowDefinition Height="44"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Magnetic Heading:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtMagnetic" Grid.Column="1" Text="---"/>
 
-        <Grid x:Name="LayoutRoot" Background="#FF0C0C0C">
-            <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
-            <TextBlock HorizontalAlignment="Left" Height="18" Margin="8,58,0,0" TextWrapping="Wrap" Text="True North Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFF3F3F3"/>
-            <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
-            <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
+        <TextBlock Grid.Row="1" Text="True North Heading:" Style="{StaticResource LabelTextBlockStyle}"/>
+        <TextBlock x:Name="txtNorth" Grid.Column="1" Grid.Row="1" Text="---"/>
+    </Grid>
 
-         </Grid>
-    </Page>
+    <InfoBar x:Name="statusBar" Grid.Row="1"/>
+</Grid>
 ```
 
-You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **CompassCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="CompassCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:CompassCS"`.
+When the app runs, you can change the compass values by moving the device.
 
-- Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
+The previous example demonstrates the essential code you need to write in order to integrate compass input into your app.
 
-Once the app is running, you can change the compass values by moving the device or using the emulator tools.
+### Connect to the sensor
 
-- Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
-
-### Explanation
-
-The previous example demonstrates how little code you'll need to write in order to integrate compass input in your app.
-
-The app establishes a connection with the default compass in the **MainPage** method.
+Call the [GetDefault](/uwp/api/windows.devices.sensors.compass.getdefault) method to establish a connection with the default compass.
 
 ```csharp
-_compass = Compass.GetDefault(); // Get the default compass object
+private Compass? compass;
+// ...
+compass = Compass.GetDefault();
 ```
 
-The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
+You can also call [FromIdAsync](/uwp/api/windows.devices.sensors.compass.fromidasync) to create a [Compass](/uwp/api/Windows.Devices.Sensors.Compass) object from a [DeviceInformation.Id](/uwp/api/windows.devices.enumeration.deviceinformation.id) value. For more info, see [Enumerate devices](enumerate-devices.md).
+
+If no compass sensor is detected, the status message is updated to inform the user.
+
+### Set the report interval
+
+The report interval is set within the page's constructor. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
-uint minReportInterval = _compass.MinimumReportInterval;
+uint minReportInterval = compass.MinimumReportInterval;
 uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
-_compass.ReportInterval = reportInterval;
+compass.ReportInterval = reportInterval;
 ```
 
-The new compass data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
+### Read sensor data
+
+The new compass data is captured in the [ReadingChanged](/uwp/api/windows.devices.sensors.compass.readingchanged) event handler. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event. For this example, these new values are written to the text blocks found in the XAML for the corresponding page.
 
 ```csharp
-_compass.ReadingChanged += new TypedEventHandler<Compass,
-CompassReadingChangedEventArgs>(ReadingChanged);
-```
+compass.ReadingChanged += Compass_ReadingChanged;
+// ...
 
-These new values are written to the TextBlocks found in the project's XAML.
-
-```xaml
- <TextBlock HorizontalAlignment="Left" Height="22" Margin="8,18,0,0" TextWrapping="Wrap" Text="Magnetic Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFFBF9F9"/>
- <TextBlock HorizontalAlignment="Left" Height="18" Margin="8,58,0,0" TextWrapping="Wrap" Text="True North Heading:" VerticalAlignment="Top" Width="104" Foreground="#FFF3F3F3"/>
- <TextBlock x:Name="txtMagnetic" HorizontalAlignment="Left" Height="22" Margin="130,18,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFFBF6F6"/>
- <TextBlock x:Name="txtNorth" HorizontalAlignment="Left" Height="18" Margin="130,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="116" Foreground="#FFF5F1F1"/>
+private void Compass_ReadingChanged(Compass sender, CompassReadingChangedEventArgs args)
+{
+    DispatcherQueue?.TryEnqueue(DispatcherQueuePriority.Normal, () =>
+    {
+        CompassReading reading = args.Reading;
+        txtMagnetic.Text = String.Format("{0,5:0.00}", reading.HeadingMagneticNorth);
+        if (reading.HeadingTrueNorth.HasValue)
+            txtNorth.Text = String.Format("{0,5:0.00}", reading.HeadingTrueNorth);
+        else
+            txtNorth.Text = "No reading.";
+    });
+}
 ```
  
+ ## Related topics
 
- 
+- [Compass sample (UWP)](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Compass)
