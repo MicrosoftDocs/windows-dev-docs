@@ -2,7 +2,7 @@
 title: MSIX on Windows 10 and Windows 11
 description: Understand which MSIX features are available on Windows 10 vs Windows 11, including Windows 11-only capabilities and known limitations that haven't been backported to Windows 10.
 ms.topic: concept-article
-ms.date: 04/17/2026
+ms.date: 05/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -127,3 +127,4 @@ If you need to support Windows 10:
 - [Choose a distribution path for your Windows app](choose-distribution-path.md)
 - [Current status of Windows app distribution features](distribution-feature-status.md)
 - [Package Support Framework overview](/windows/msix/psf/package-support-framework-overview)
+- [Inside MSIX blog](https://devblogs.microsoft.com/insidemsix/) — deep dives on MSIX architecture and internals by the Microsoft MSIX engineering team
