@@ -94,7 +94,7 @@ To get notified about changes to the list of folders in a library, register a ha
 
 
 ```csharp
-myPictures.DefinitionChanged += MyPictures_DefinitionChanged;
+myPictures.DefinitionChanged += HandleDefinitionChanged;
 
 void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 {

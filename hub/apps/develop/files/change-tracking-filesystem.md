@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 -   [StorageLibraryChangeTracker](/uwp/api/Windows.Storage.StorageLibraryChangeTracker)
 -   [StorageLibraryChangeReader](/uwp/api/windows.storage.storagelibrarychangereader)
--   [StorageLibraryChangedTrigger](/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger)
+-   [StorageLibraryContentChangedTrigger](/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger)
 -   [StorageLibrary](/uwp/api/windows.storage.storagelibrary)
 
 The [StorageLibraryChangeTracker](/uwp/api/Windows.Storage.StorageLibraryChangeTracker) class allows apps to track changes in files and folders as users move them around the system. These WinRT APIs can be used from WinUI 3 apps built with the Windows App SDK targeting Windows 10, version 1809 (build 17763) or later. The underlying `StorageLibraryChangeTracker` API is available starting with Windows 10, version 1803 (build 17134). Using the StorageLibraryChangeTracker class, an app can track:
@@ -70,7 +70,7 @@ A few important notes:
 
 ### Wait for changes
 
-After the change tracker is initialized, it will begin to record all of the operations that occur within a library, even while the app isn’t running. Apps can register to be activated any time there is a change by registering for the [StorageLibraryChangedTrigger](/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) event.
+After the change tracker is initialized, it will begin to record all of the operations that occur within a library, even while the app isn’t running. Apps can register a background task that uses the [StorageLibraryContentChangedTrigger](/uwp/api/Windows.ApplicationModel.Background.StorageLibraryContentChangedTrigger) trigger to be activated any time there is a change.
 
 ![Changes being added to the change tracker without the app reading them](images/changetracker-waiting.png)
 

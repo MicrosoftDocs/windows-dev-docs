@@ -137,7 +137,7 @@ Size LimitUnboundedSize(Size input)
 {
     if (Double.IsInfinity(input.Height))
     {
-        input.Height = maxcellheight * colcount;
+        input.Height = maxcellheight * rowcount;
         cellheight = maxcellheight;
     }
     return input;

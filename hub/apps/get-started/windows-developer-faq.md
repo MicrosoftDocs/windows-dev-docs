@@ -2,7 +2,7 @@
 title: Windows developer FAQ
 description: The official Windows developer FAQ. Get answers to common questions
 ms.topic: faq
-ms.date: 12/05/2025
+ms.date: 05/28/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -178,6 +178,8 @@ Topics covered include:
 <details><summary>Does Visual Studio have a design surface / UI designer for WinUI?</summary>
 
 > Not yet. This is a known gap in the WinUI developer experience. Tools like [XAML Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) can help in many scenarios. [Work has started](https://github.com/microsoft/WindowsAppSDK/discussions/4710) on a Visual Studio UI designer for WinUI in Windows App SDK 1.7, but there is no timeline yet for its release.
+>
+> For a complete walkthrough of the runtime design tools available for WinUI 3, see [XAML runtime design tools for WinUI 3](/windows/apps/develop/ui/xaml-runtime-design-tools).
 
 </details>
 

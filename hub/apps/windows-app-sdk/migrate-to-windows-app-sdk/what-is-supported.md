@@ -2,7 +2,7 @@
 title: What's supported when migrating from UWP to WinUI
 description: WinUI and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, port, porting, migrate, migration, support
 ms.localizationpriority: medium
 ---
@@ -44,7 +44,7 @@ Today in version 1.7 of the Windows App SDK, launch speeds, RAM usage, and insta
 
 ## Visual Studio
 
-The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI projects (as of version 1.7 of the Windows App SDK). For more info, see [Create a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
+The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual Studio) doesn't currently support WinUI 3 projects (as of version 1.7 of the Windows App SDK). For more info, see [Create a UI by using XAML Designer](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio). For the recommended runtime design workflow, see [XAML runtime design tools for WinUI 3](/windows/apps/develop/ui/xaml-runtime-design-tools).
 
 ## See Also
 

@@ -2,7 +2,7 @@
 title: Push notifications functionality migration
 description: This topic contains migration guidance in the push notifications feature area.
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications
 ms.localizationpriority: medium
 ---

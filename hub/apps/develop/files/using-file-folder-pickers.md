@@ -123,7 +123,7 @@ else
 
 ## Pick multiple files to open example
 
-You can also let the user pick multiple files. The following code shows how to use the [FileOpenPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker) class to let the user pick multiple files, such as photos. The process is the same but the [PickMultipleFilesAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) method returns a collection of file paths instead of a single path.
+You can also let the user pick multiple files. The following code shows how to use the [FileOpenPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker) class to let the user pick multiple files, such as photos. The process is the same but the [PickMultipleFilesAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker.pickmultiplefilesasync) method returns a collection of [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult) objects. Each result exposes a `Path` property when you need the raw file path.
 
 ```csharp
 using Microsoft.Windows.Storage.Pickers;
@@ -242,8 +242,6 @@ The folder picker UI looks like this:
 
 ## Related content
 
-[Windows.Storage.Pickers](/uwp/api/windows.storage.pickers)
+[Microsoft.Windows.Storage.Pickers namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers)
 
 [Files, folders, and libraries with Windows App SDK](index.md)
-
-[Microsoft.Windows.Storage.Pickers namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers)

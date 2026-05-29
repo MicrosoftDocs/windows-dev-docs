@@ -1,7 +1,7 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 ms.topic: upgrade-and-migration-article
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.localizationpriority: medium
@@ -13,6 +13,9 @@ To migrate your app from the [Universal Windows Platform](/windows/uwp/) (UWP) t
 
 > [!NOTE]
 > Your existing UWP app will continue to function as expected. However, to take advantage of modern features in [WinUI 3](../../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) we recommend migrating your app.
+
+> [!TIP]
+> You can also use AI tools to accelerate your migration. See [Migrate a UWP app to WinUI 3 with AI assistance](../../develop/ai-assisted/migrate/uwp-to-winui.md) for a quick-reference API substitution table and a starter prompt you can use with GitHub Copilot.
 
 Below are the steps, at a high level, for migrating manually. But see the following section for info about using the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool)).
 

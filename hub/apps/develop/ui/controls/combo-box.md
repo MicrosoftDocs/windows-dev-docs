@@ -102,9 +102,9 @@ The following example demonstrates binding a combo box to a collection of FontFa
 ```csharp
 ObservableCollection<FontFamily> fonts = new ObservableCollection<FontFamily>()
 {
-    fonts.Add(new FontFamily("Arial"));
-    fonts.Add(new FontFamily("Courier New"));
-    fonts.Add(new FontFamily("Times New Roman"));
+    new FontFamily("Arial"),
+    new FontFamily("Courier New"),
+    new FontFamily("Times New Roman")
 };
 ```
 
@@ -228,7 +228,7 @@ If the newly entered value is not valid, you use the SelectedValue to revert the
 ```csharp
 private void FontSizeComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSubmittedEventArgs e)
 {
-    if (byte.TryParse(e.Text, out double newValue))
+    if (double.TryParse(e.Text, out double newValue))
     {
         // Update the app's font size.
         _fontSize = newValue;
@@ -263,7 +263,7 @@ private void FavoriteColorComboBox_TextSubmitted(ComboBox sender, ComboBoxTextSu
         {
             ColorName = e.Text,
             Color = ColorFromStringConverter(e.Text)
-        }
+        };
         ListOfColors.Add(newColor);
     }
     else

@@ -63,14 +63,14 @@ Where maximum volume (relative to system volume) is 1.0, and minimum is 0.0 (ess
 
 If a control's default sound is not desired, it can be disabled. This is done through the **ElementSoundMode** on the control.
 
-The **ElementSoundMode** has two states: **Off** and **Default**. When not set, it is **Default**. If set to **Off**, every sound that control plays will be muted *except for focus*.
+The **ElementSoundMode** has three states: **Default**, **FocusOnly**, and **Off**. When not set, it is **Default**. If set to **FocusOnly**, only focus sounds play. If set to **Off**, no sounds play for that control.
 
 ```XAML
 <Button Name="ButtonName" Content="More Info" ElementSoundMode="Off"/>
 ```
 
 ```C#
-ButtonName.ElementSoundState = ElementSoundMode.Off;
+ButtonName.ElementSoundMode = ElementSoundMode.Off;
 ```
 
 ## Is this the right sound?

@@ -49,7 +49,7 @@ Defining a color property in your Lottie animation named "Foreground" lets you t
 
 ## Recommendations
 
-- Please view the UX guidance for [Icons for Windows Apps](/windows/uwp/design/style/icons) to ensure your icons match the design principles.
+- Please view the UX guidance for [Icons in Windows Apps](icons.md) to ensure your icons match the design principles.
 - Limit the number of animated icons on a single screen or view. Only animate icons to draw the user's attention to where they need to take action or when they are performing an action.
 
 ## Create an animated icon
@@ -211,7 +211,7 @@ private void Button_PointerEntered(object sender, PointerRoutedEventArgs e)
 
 private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 {
-    AnimatedIcon.SetState(this.StackPaAnimatedIcon1nel1, "Normal");
+    AnimatedIcon.SetState(this.AnimatedIcon1, "Normal");
 }
 ```
 

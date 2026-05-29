@@ -22,7 +22,7 @@ To implement text filtering, your app will need a [ListView](/windows/windows-ap
 
 The following XAML shows a UI with a simple ListView along with an accompanying TextBox. In this example, the ListView displays a collection of `Contact` objects. `Contact` is a class defined in the code-behind, and each `Contact` object has the following properties: `FirstName`, `LastName`, and `Company`.
 
-The user can type a filtering term into the TextBox to filter the list of `Contact` objects by last name. The TextBox has it's `x:Name` attribute set (`FilterByLastName`) so you can access the TextBox's [Text](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text) property in the code-behind. You also handle it's [TextChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged) event (`OnFilterChanged`). The TextChanged event occurs whenever the user types in the TextBox, letting you perform a filtering operation upon receiving user input.
+The user can type a filtering term into the TextBox to filter the list of `Contact` objects by last name. The TextBox has its `x:Name` attribute set (`FilterByLastName`) so you can access the TextBox's [Text](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text) property in the code-behind. You also handle its [TextChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged) event (`OnFilterChanged`). The TextChanged event occurs whenever the user types in the TextBox, letting you perform a filtering operation upon receiving user input.
 
 For filtering to work, the ListView must have a data source that can be manipulated in the code-behind, such as an [ObservableCollection\<T>](/dotnet/api/system.collections.objectmodel.observablecollection-1). In this case, the ListView's [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property is assigned to an `ObservableCollection<Contact>` in the code-behind.
 
@@ -51,7 +51,7 @@ For filtering to work, the ListView must have a data source that can be manipula
 
 To start, you'll need to initialize your original data source in a separate collection, such as a [List\<T>](/dotnet/api/system.collections.generic.list-1). In this example, you have a `List<Contact>` called `allContacts` that holds all of the `Contact` objects that can potentially be shown in the ListView.
 
-You'll also need a collection to hold the filtered data, which will constantly change every time a filter is applied. For this, you'll use an [ObservableCollection\<T>](/dotnet/api/system.collections.objectmodel.observablecollection-1) so that the ListView is notified to update whenever the collection changes. In this example, it's an `ObservableCollection<Person>` called `contactsFiltered`, and is the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) for the ListView. At initialization, it will have the same contents as `allContacts`.
+You'll also need a collection to hold the filtered data, which will constantly change every time a filter is applied. For this, you'll use an [ObservableCollection\<T>](/dotnet/api/system.collections.objectmodel.observablecollection-1) so that the ListView is notified to update whenever the collection changes. In this example, it's an `ObservableCollection<Contact>` called `contactsFiltered`, and is the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) for the ListView. At initialization, it will have the same contents as `allContacts`.
 
 The filtering operation is performed through these steps, shown in the following code:
 
@@ -87,7 +87,7 @@ public sealed partial class MainPage : Page
         // contactsFiltered). Set this newly populated collection as the
         // ItemsSource for the ListView.
         contactsFiltered = new ObservableCollection<Contact>(allContacts);
-        Filtereditemscontrol.itemssource = contactsFiltered;
+        FilteredListView.ItemsSource = contactsFiltered;
     }
 
     // Whenever text changes in the filtering text box, this function is called:

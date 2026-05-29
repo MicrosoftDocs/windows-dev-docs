@@ -2,7 +2,7 @@
 title: Keyboard API and events parity between UWP and WinUI
 description: The migration of apps from UWP to the WinUI might require a few changes in the way input keyboard events are handled.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, input, keyboard, events
 ms.localizationpriority: medium
 ---

@@ -33,6 +33,8 @@ This will allow you to programmatically access MySQL databases.
 The following is an example of connecting to and reading from a remote MySQL database. Note that the server address and database name will need to be customized.
 
 ``` csharp
+using MySql.Data.MySqlClient;
+
 const string M_str_sqlcon = "Server=myServerAddress;Database=myDataBase;IntegratedSecurity=yes;Uid=auth_windows;";
 using (var mySqlCn = new MySqlConnection(M_str_sqlcon))
 {

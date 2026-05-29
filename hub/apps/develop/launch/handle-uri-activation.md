@@ -134,7 +134,7 @@ The following code programmatically launches the app via its URI:
 ```csharp
    // Launch the URI
    var uri = new Uri("alsdk:");
-   var success = await Windows.System.Launcher.LaunchUriAsync(uri)
+   var success = await Windows.System.Launcher.LaunchUriAsync(uri);
 ```
 
 For more details about how to launch an app via a URI, see [Launch the default app for a URI](launch-default-app.md).

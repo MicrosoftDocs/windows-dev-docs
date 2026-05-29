@@ -1,15 +1,12 @@
 ---
 title: Pairing a set with the DeviceInformationPairing.Custom property
 description: Windows supports pairing a collection of devices as an automatically-discovered set or as an explicit set.
-ms.date: 03/27/2024
+ms.date: 05/28/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 
 # Pairing a set with the DeviceInformationPairing.Custom property
-
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
 Use the [**Windows.Devices.Enumeration**](/uwp/api/Windows.Devices.Enumeration) APIs to pair devices as a set.
 

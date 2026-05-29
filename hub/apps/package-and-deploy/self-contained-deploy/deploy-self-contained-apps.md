@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for self-contained apps
 description: A Windows App SDK project is framework-dependent by default. To switch to self-contained deployment, follow the steps in this article (the terms *framework-dependent* and *self-contained* are described in [Windows App SDK deployment overview](../deploy-overview.md)).
 ms.topic: article
-ms.date: 08/10/2023
+ms.date: 05/28/2026
 ms.localizationpriority: medium
 ---
 
@@ -26,7 +26,9 @@ For sample apps, see [Windows App SDK self-contained deployment samples](https:/
 Having set the `WindowsAppSDKSelfContained` property to `true` in your project file, the contents of the Windows App SDK Framework package will be extracted to your build output, and deployed as part of your application.
 
 > [!NOTE]
-> .NET apps need to be [published as self-contained](/dotnet/core/deploying/#publish-self-contained) as well to be fully self-contained. See [this sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/f1a30c2524c785739fee842d02a1ea15c1362f8f/Samples/SelfContainedDeployment/cs-winui-unpackaged/SelfContainedDeployment.csproj#L12) for how to configure .NET self-contained with publish profiles. `dotnet publish` is not yet supported with Windows App SDK 1.1.
+> .NET apps need to be [published as self-contained](/dotnet/core/deploying/#publish-self-contained) as well to be fully self-contained. See [this sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/f1a30c2524c785739fee842d02a1ea15c1362f8f/Samples/SelfContainedDeployment/cs-winui-unpackaged/SelfContainedDeployment.csproj#L12) for how to configure .NET self-contained with publish profiles.
+>
+> Note that `dotnet publish` bundles managed assemblies but **cannot produce a single-file EXE** for WinUI 3 apps — the native Windows App SDK runtime dependencies must remain as separate files. See [Single-file EXE limitation](../unpackage-winui-app.md#single-file-exe-limitation) for details.
 
 > [!NOTE]
 > C++ apps need to use the [hybrid CRT](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md#what-is-the-hybrid-crt) as well to be fully self-contained. Importing [HybridCRT.props](https://github.com/microsoft/WindowsAppSDK/blob/main/HybridCRT.props) from [Directory.Build.props](/visualstudio/msbuild/customize-your-build#directorybuildprops-and-directorybuildtargets) is the recommended way to configure it for all projects in a solution (see an example in [Directory.Build.props](https://github.com/microsoft/WindowsAppSDK-Samples/blob/43404afcc4e72294b3e2706d2eff12418dbb815a/Samples/SelfContainedDeployment/cpp-winui-unpackaged/Directory.Build.props#L3)). A packaged app must also set `<UseCrtSDKReferenceStaticWarning>false</UseCrtSDKReferenceStaticWarning>` in their project file. See the [Self-contained deployment](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment/) sample app for how to use the hybrid CRT.
@@ -39,7 +41,7 @@ If your app is packaged with external location or unpackaged, then the Windows A
 
 A small number of APIs in the Windows App SDK rely on additional MSIX packages that represent critical operating system (OS) functionality.
 
-* For example (as of the Windows App SDK 1.1), push notifications APIs ([PushNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager)) and app notifications APIs ([AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)) have a dependency on the *Singleton* package (see [Deployment architecture for the Windows App SDK](../../windows-app-sdk/deployment-architecture.md)).
+* For example, push notifications APIs ([PushNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager)) and app notifications APIs ([AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)) have a dependency on the *Singleton* package (see [Deployment architecture for the Windows App SDK](../../windows-app-sdk/deployment-architecture.md)).
 
 That means that if you want to use those APIs in a self-contained app, then you have the following options:
 
@@ -53,9 +55,9 @@ That means that if you want to use those APIs in a self-contained app, then you 
 
 ## Opting out of (or into) automatic UndockedRegFreeWinRT support
 
-The project property **WindowsAppSdkUndockedRegFreeWinRTInitialize** was introduced in version 1.2 of the Windows App SDK (from the stable channel). If that property is set to *true* then it ensures that the Windows App SDK's implementation of undocked registration-free Windows Runtime (*UndockedRegFreeWinRT*) is enabled automatically at app startup. That support is needed by unpackaged self-contained apps.
+The project property **WindowsAppSdkUndockedRegFreeWinRTInitialize** controls whether the Windows App SDK's implementation of undocked registration-free Windows Runtime (*UndockedRegFreeWinRT*) is enabled automatically at app startup. That support is needed by unpackaged self-contained apps.
 
-**WindowsAppSdkUndockedRegFreeWinRTInitialize** defaults to *true* if **WindowsAppSDKSelfContained** is *true* and **WindowsPackageType** is *None* and (as of version 1.2 of the Windows App SDK) **OutputType** project property is set to *Exe* or *WinExe* (that is, the project produces an executable). That last condition is to prevent adding automatic UndockedRegFreeWinRT support into class library DLLs and other non-executables by default. If you *do* need automatic UndockedRegFreeWinRT support in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize UndockedRegFreeWinRT), then you can explicitly enable it in your project with `<WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>`.
+**WindowsAppSdkUndockedRegFreeWinRTInitialize** defaults to *true* if **WindowsAppSDKSelfContained** is *true* and **WindowsPackageType** is *None* and **OutputType** project property is set to *Exe* or *WinExe* (that is, the project produces an executable). That last condition prevents adding automatic UndockedRegFreeWinRT support into class library DLLs and other non-executables by default. If you *do* need automatic UndockedRegFreeWinRT support in a non-executable (for example, a test DLL loaded by a host process executable that doesn't initialize UndockedRegFreeWinRT), then you can explicitly enable it in your project with `<WindowsAppSdkUndockedRegFreeWinRTInitialize>true</WindowsAppSdkUndockedRegFreeWinRTInitialize>`.
 
 ## Related topics
 

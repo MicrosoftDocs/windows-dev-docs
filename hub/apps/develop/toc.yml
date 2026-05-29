@@ -1229,6 +1229,8 @@ items:
                 href: ui/multiple-windows.md
               - name: Retrieve a window handle (HWND)
                 href: ui/retrieve-hwnd.md
+          - name: XAML runtime design tools
+            href: ui/xaml-runtime-design-tools.md
           - name: Choose the right visual tree viewer
             href: ui/visual-tree.md
   - name: Use features with other UI frameworks
