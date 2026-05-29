@@ -76,7 +76,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         var manager = Windows.UI.Shell.FocusSessionManager.GetDefault();
         manager.IsFocusActiveChanged += Manager_IsFocusActiveChanged;
-        SetAnimatedGifAutoPlay(true);
+        SetAnimatedGifAutoPlay(!manager.IsFocusActive);
     }
 }
 
@@ -84,11 +84,11 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 {
     if(sender.IsFocusActive)
     {
-        SetAnimatedGifAutoPlay(true);
+        SetAnimatedGifAutoPlay(false);
     }
     else
     {
-        SetAnimatedGifAutoPlay(false);
+        SetAnimatedGifAutoPlay(true);
     }
 }
 ```
@@ -97,7 +97,7 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 ```cpp
 // pch.h
 ...
-#include <winrt/Windows.UI.Shell.h
+#include <winrt/Windows.UI.Shell.h>
 #include <winrt/Windows.UI.Xaml.Navigation.h>
 
 // MainWindow.xaml.h
@@ -119,7 +119,7 @@ void MainWindow::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArg
         m_focusStateChangedToken = m_focusSessionManager.IsFocusActiveChanged(
             { get_weak(), &MainWindow::OnFocusStateChanged });
 
-        SetAnimatedGifAutoPlay(true);
+        SetAnimatedGifAutoPlay(!m_focusSessionManager.IsFocusActive());
     }
 }
 
@@ -127,7 +127,7 @@ void MainWindow::OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager con
         Windows::Foundation::IInspectable const&)
 {
     auto temp = m_focusSessionManager.IsFocusActive();
-    SetAnimatedGifAutoPlay(m_focusSessionManager.IsFocusActive());
+    SetAnimatedGifAutoPlay(!m_focusSessionManager.IsFocusActive());
 }
 ```
 

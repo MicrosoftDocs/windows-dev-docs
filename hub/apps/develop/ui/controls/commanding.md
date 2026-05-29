@@ -371,9 +371,6 @@ If you need to create a command that isn't defined by the [StandardUICommand](/w
 
 | Download the code for this example |
 | -------------------- |
-| [WinUI commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
-| Download the code for this example |
-| -------------------- |
 | [Commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
 Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section. 
 
@@ -609,7 +606,7 @@ The most basic way to support a structured commanding experience is to define an
 
 > [!NOTE]
 > In some cases, it might be just as efficient to bind a method to the Click event and a property to the IsEnabled property.
-Standard WinUI controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see [Controls and patterns for Windows apps](../../../design/controls/index.md).
+
 #### Example
 
 ![Command interface example](images/commanding/icommand.gif)
@@ -621,10 +618,6 @@ Standard WinUI controls (button, list, selection, calendar, predictive text) pro
 | [Commanding sample (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
 
 In this basic example, we demonstrate how a single command can be invoked with a button click, a keyboard accelerator, and rotating a mouse wheel.
-
-| Download the code for this example |
-| -------------------- |
-| [Commanding sample (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
 
 ```xaml
 <Page
@@ -1080,7 +1073,6 @@ Use the following approaches when building commands for your Windows apps:
 
 - Listen for and handle events in XAML/code-behind
 - Bind to an event handling method such as Click
-WinUI provides a robust and flexible commanding system that lets you build apps that share and manage commands across control types, devices, and input types.
 - Create XamlUICommand objects with your own values for a pre-defined set of properties
 - Create StandardUICommand objects with a set of pre-defined platform properties and values
 

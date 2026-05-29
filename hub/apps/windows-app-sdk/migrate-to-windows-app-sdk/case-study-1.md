@@ -2,7 +2,7 @@
 title: A Windows App SDK migration of the UWP PhotoLab sample app (C#)
 description: A case study of taking the C# [UWP PhotoLab sample app](/samples/microsoft/windows-appsample-photo-lab/photolab-sample/), and migrating it to the Windows App SDK.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C#, PhotoLab, UWP
 ms.localizationpriority: medium
 ---

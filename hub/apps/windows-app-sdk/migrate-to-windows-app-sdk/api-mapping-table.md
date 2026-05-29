@@ -2,14 +2,14 @@
 title: Mapping UWP APIs to the Windows App SDK
 description: This topic provides a mapping of UWP APIs and libraries to their Windows App SDK equivalents.
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, api, class, mapping, mappings, uwp
 ms.localizationpriority: medium
 ---
 
 # Mapping UWP APIs and libraries to the Windows App SDK
 
-This topic provides a mapping of UWP APIs to their Windows App SDK equivalents. In some cases the mapping isn't one-to-one; either platform might have more or less functionality than the other for a namespace or class.
+This topic provides a mapping of UWP APIs to their Windows App SDK equivalents. In some cases the mapping isn't one-to-one; either platform might have more or less functionality than the other for a namespace or class. For a condensed quick-reference version of the most common substitutions, see [Migrate a UWP app to WinUI 3 with AI assistance](../../develop/ai-assisted/migrate/uwp-to-winui.md#api-substitution-table).
 
 There are differences in the names of namespaces and classes (including UI controls) between the two platforms. In many cases, it's as easy as changing a namespace name and then your code will compile. Sometimes, a class or API name has changed as well as the namespace name. Other times, the mapping takes a bit more work, and in rare cases requires a change in approach.
 

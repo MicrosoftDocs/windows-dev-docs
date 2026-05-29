@@ -2,7 +2,7 @@
 title: Overall migration strategy
 description: Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---
@@ -26,6 +26,9 @@ For example, we'll see certain UI scenarios where you'll need to track your main
 
 > [!NOTE]
 > Also see [Support for WinRT APIs in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md). Windows App SDK apps are *one* kind of desktop app. Other kinds of desktop app include .NET desktop apps, and C/C++ Win32 desktop apps. The audience of that topic is developers wishing to migrate to anything in the union of those different kinds of desktop app, including (but not limited to) Windows App SDK apps.
+
+> [!TIP]
+> If you prefer AI-assisted migration, see [Migrate a UWP app to WinUI 3 with AI assistance](../../develop/ai-assisted/migrate/uwp-to-winui.md) for a quick-reference API substitution table and a starter prompt you can use with GitHub Copilot.
 
 We'd love to hear your feedback about this migration guide, and about your own migration experience. Use the **Feedback** section right at the foot of this page like this:
 * For questions and feedback about the Windows App SDK, or just to start a discussion, use the **This product** button. You can also start a discussion on the [Discussions tab](https://github.com/microsoft/WindowsAppSDK/discussions) of the **WindowsAppSDK** GitHub repo. Using those channels, you could also tell us what problem you're trying to solve, how you've tried to solve it so far, and what would be the ideal solution for your app.

@@ -2,7 +2,7 @@
 title: MRT to MRT Core migration
 description: This topic contains guidance for migrating from UWP's [Resource Management System](/windows/uwp/app-resources/resource-management-system) (also known as MRT) to the Windows App SDK's MRT Core.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, MRT, MRTCore
 ms.localizationpriority: medium
 ---

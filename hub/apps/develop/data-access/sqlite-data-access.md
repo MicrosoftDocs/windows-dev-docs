@@ -19,7 +19,7 @@ This tutorial shows you how to integrate SQLite into your WinUI application usin
 
 In this tutorial, you'll learn how to:
 
-- Configure your Windows app to use SQLite with the Microsoft.Data.SQLite library
+- Configure your Windows app to use SQLite with the Microsoft.Data.Sqlite library
 - Create and initialize a local database
 - Implement secure data insertion and retrieval methods
 - Build a simple user interface to interact with your data
@@ -74,7 +74,7 @@ The [Microsoft.Data.Sqlite](/dotnet/api/microsoft.data.sqlite) library implement
 
 The rest of this guide helps you to use this library.
 
-## Set up your solution to use the Microsoft.Data.SQLite library
+## Set up your solution to use the Microsoft.Data.Sqlite library
 
 We'll start with a basic WinUI project, and then install the SQLite NuGet package. See [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) for instructions on how to create your first WinUI project.
 
@@ -94,7 +94,7 @@ Let's start by adding a class to your project named **DataAccess**. If you plan 
 
     At this point, you have a choice. You can use the version of SQLite that is included with Windows or if you have some reason to use a specific version of SQLite, you can include the SQLite library in your package. We are going to use the version of SQLite that's included with Windows.
 
-1. Choose the **Browse** tab, search for the **Microsoft.Data.SQLite** package, and then install the latest stable version.
+1. Choose the **Browse** tab, search for the **Microsoft.Data.Sqlite** package, and then install the latest stable version.
 
     ![SQLite NuGet package](images/sqlite-nuget-package.png)
 
@@ -130,6 +130,7 @@ Add the following `using` statements to the top of this file.
 ```csharp
 using Microsoft.Data.Sqlite;
 using System.Collections.Generic;
+using Windows.Storage;
 ```
 
 ### Initialize the SQLite database
@@ -163,7 +164,7 @@ public async static void InitializeDatabase()
 
 This code creates the SQLite database and stores it in the application's local data store.
 
-In this example, we name the database `sqlliteSample.db` but you can use whatever name you want as long as you use that name in all [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection) objects that you instantiate. In a production application, connection information such as the database filename should be stored in app configuration rather than hard-coded (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)).
+In this example, we name the database `sqliteSample.db` but you can use whatever name you want as long as you use that name in all [SqliteConnection](/dotnet/api/microsoft.data.sqlite.sqliteconnection) objects that you instantiate. In a production application, connection information such as the database filename should be stored in app configuration rather than hard-coded (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)).
 
 In the constructor of the **App.xaml.cs** file of your project, call the `InitializeDatabase` method of the `DataAccess` class. This will ensure that the database is created or opened each time the app starts.
 
@@ -232,7 +233,7 @@ public static List<string> GetData()
 
 The [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read#Microsoft_Data_Sqlite_SqliteDataReader_Read) method advances through the rows of returned data. It returns `true` if there are rows left, otherwise it returns `false`.
 
-The [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as [GetDataTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) and [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choose a method based on what type of data the column contains.
+The [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as [GetDateTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) and [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choose a method based on what type of data the column contains.
 
 The ordinal parameter isn't as important in this example because we are selecting all of the entries in a single column. However, if multiple columns are part of your query, use the ordinal value to obtain the column you want to pull data from.
 

@@ -197,7 +197,7 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
     ```
     
     ```cppwinrt
-    Windows::Storage::Streams::DataWriter dataWriter;
+    Windows::Storage::Streams::DataWriter dataWriter{ outputStream };
     dataWriter.WriteString(L"DataWriter has methods to write to various types, such as DataTimeOffset.");
     // The code in step 4 goes here.
     ```
@@ -212,8 +212,8 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
     ```
     
     ```cppwinrt
-    dataWriter.StoreAsync();
-    outputStream.FlushAsync();
+    co_await dataWriter.StoreAsync();
+    co_await outputStream.FlushAsync();
     ```
     
     

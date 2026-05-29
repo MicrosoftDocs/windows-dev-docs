@@ -2,7 +2,7 @@
 title: App notifications from UWP to WinUI migration
 description: This topic contains migration guidance in the app notifications feature area.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications, toast, toast notifications, app notifications, uwp
 ms.localizationpriority: medium
 ---

@@ -2,7 +2,7 @@
 title: Choose a distribution path for your Windows app
 description: Compare the available Windows app distribution paths — Microsoft Store, PWA, MSIX sideloading, and direct download — to find the right fit for your app and audience.
 ms.topic: concept-article
-ms.date: 04/20/2026
+ms.date: 05/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -164,7 +164,7 @@ Unpackaged distribution removes MSIX from the picture entirely — the app runs 
 - Works on machines where MSIX sideloading isn't enabled
 
 **Limitations:**
-- **No single-file EXE** — The Windows App SDK runtime must ship as separate files alongside your executable
+- **Single-file EXE (limited support)** — `PublishSingleFile` is supported only for **unpackaged, self-contained** apps (Windows App SDK 1.5 and later). It produces a single distributable EXE that extracts dependencies at first launch. Packaged apps and framework-dependent apps do not support `PublishSingleFile`. See [Single-file EXE](unpackage-winui-app.md#single-file-exe) for required MSBuild properties.
 - **Runtime deployment** — You must bundle the Windows App SDK runtime installer, or use self-contained deployment (larger output)
 - **No package identity** — No automatic updates, no background tasks, no file type associations via manifest
 - **No MSIX/package-identity Store submission** — This model has no package identity and cannot be submitted to the Store as an MSIX package. A traditional installer (MSI/EXE) can be submitted separately, but that is outside this distribution path.
