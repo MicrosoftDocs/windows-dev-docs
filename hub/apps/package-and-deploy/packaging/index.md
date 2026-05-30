@@ -2,7 +2,7 @@
 title: Packaging overview
 description: Understand the differences between packaged and unpackaged apps and how packaging affects installation, updates, and access to Windows features.
 ms.topic: concept-article
-ms.date: 03/27/2026
+ms.date: 05/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -34,6 +34,8 @@ These Windows features only work in apps that have package identity — either t
 
 > [!TIP]
 > If you're unpackaged and hitting `E_ILLEGAL_METHOD_CALL` or `APPMODEL_ERROR_NO_PACKAGE` errors when calling Windows APIs, that's the package identity requirement. See [packaging with external location (Sparse packaging)](#packaging-with-external-location-sparse-packaging) as the lowest-friction fix.
+>
+> To detect at runtime whether your process has package identity, use `GetCurrentPackageFullName` — see [Is This a Packaged Process?](https://devblogs.microsoft.com/insidemsix/is-this-a-packaged-process/) on the Inside MSIX blog for canonical C++ and C# samples.
 
 For more information, see [Features that require package identity](../../desktop/modernize/modernize-packaged-apps.md).
 
@@ -122,3 +124,4 @@ If you build a Win32 desktop app (sometimes called a *classic desktop app*) or a
 - [Deploy packaged apps (Windows App SDK)](../../windows-app-sdk/deploy-packaged-apps.md)
 - [Deploy unpackaged apps (Windows App SDK)](../../windows-app-sdk/deploy-unpackaged-apps.md)
 - [Tutorial: Unpackage a WinUI app](../unpackage-winui-app.md)
+- [Inside MSIX blog](https://devblogs.microsoft.com/insidemsix/) — authoritative deep dives on package identity, deployment architecture, and MSIX internals by the Microsoft MSIX engineering team

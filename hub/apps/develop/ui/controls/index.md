@@ -4,7 +4,7 @@ title: Windows Controls and patterns - Windows app development
 keywords: uwp controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
-ms.date: 02/27/2025
+ms.date: 05/28/2026
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
@@ -74,9 +74,11 @@ The following table lists the Windows app controls available in WinUI, with link
 | ![Icons](images/Image.png) | [Icons](icons.md) | Represent icon controls that use different image types as content. |
 | ![Animated icons](images/AnimatedIcon.png) | [Animated icons](animated-icon.md) | An element that displays and controls an icon that animates when the user interacts with the control. |
 | ![Images and image brushes](images/Image.png) | [Images and image brushes](images-imagebrushes.md) | A control to display image content. |
-| | [Ink](inking-controls.md) | Controls for digital inking, including ink canvas and ink toolbar. |
 | ![Media playback](images/MediaPlayerElement.png) | [Media playback](media-playback.md) | A control to display video and image content. |
 | ![Shapes](images/Shape.png) | [Shapes](shapes.md) | Draw shapes such as ellipses, rectangles, and polygons. |
+
+> [!NOTE]
+> **Inking controls (InkCanvas, InkToolbar):** These UWP controls are not available in the stable WinUI 3 channel. `InkCanvas` is available as an experimental API (introduced in Windows App SDK 2.0 Experimental 1). For current status and alternatives, see [Known control gaps](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported#known-control-gaps).
 
 ### Menus and toolbars
 
