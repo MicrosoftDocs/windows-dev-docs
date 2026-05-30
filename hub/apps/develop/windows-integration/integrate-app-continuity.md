@@ -1,14 +1,14 @@
 ---
-title: Use WNS Notifications to implement Cross Device Resume (XDR)
-description: Learn how to implement Cross Device Resume (XDR) using Windows Push Notification Service (WNS) raw notifications.
+title: Resume for installed apps
+description: Learn how to implement Windows Resume using Windows Push Notification Service (WNS) raw notifications.
 #customer intent: As a Windows developer, I want to learn how to update my app to integrate application continuity with Windows Push Notifications raw notifications.
 author: drewbatgit
 ms.author: drewbat
-ms.date: 11/03/2025
+ms.date: 05/27/2026
 ms.topic: how-to
 ---
 
-# Use WNS Notifications to implement Cross Device Resume (XDR)
+# Resume for installed apps
 
 This step-by-step guide for first and third parties provides a detailed overview on how to integrate application continuity (resume) with Windows Push Notification Service (WNS) raw notifications. It includes prerequisites, references to relevant public documentation, and code snippets for making POST requests to the channel URI.
 

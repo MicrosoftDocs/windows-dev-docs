@@ -1,14 +1,14 @@
 ---
-description: Learn how to integrate apps with the Windows Share Sheet, a system-provided UI that enables users to share content from your app with other Windows apps.
-title: Integrate Share options in your Windows app - A comprehensive guide
+description: Learn how to implement Share on Windows — integrate your app with the Windows Share Sheet to let users share content across Windows apps and services.
+title: Share on Windows: integrate the Windows Share Sheet
 ms.topic: concept-article
-ms.date: 10/28/2025
+ms.date: 05/27/2026
 ms.localizationpriority: medium
-keywords: windows, windows share, share sheet, share charm, file sharing, sharesheet, share button, share option, pwa, packaged apps, windows 11, c++
+keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
 ---
 
-# Integrate Share options in your Windows app: A comprehensive guide
+# Share on Windows: integrate the Windows Share Sheet
 
 The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other Windows apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
 

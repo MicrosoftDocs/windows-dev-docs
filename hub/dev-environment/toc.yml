@@ -25,7 +25,85 @@ items:
   - name: PowerToys
     href: /windows/powertoys/
   - name: WinGet
-    href: /windows/package-manager/  
+    items:
+      - name: Overview
+        href: ../package-manager/index.md
+      - name: Using WinGet
+        items:
+          - name: Overview
+            href: ../package-manager/winget/index.md
+          - name: WinGet MCP Server
+            items:
+              - name: Overview
+                href: ../package-manager/winget/mcp-server-overview.md
+              - name: Set up
+                href: ../package-manager/winget/mcp-server-setup.md
+              - name: Usage
+                href: ../package-manager/winget/mcp-server-usage.md
+          - name: configure command
+            href: ../package-manager/winget/configure.md
+          - name: download command
+            href: ../package-manager/winget/download.md
+          - name: export command
+            href: ../package-manager/winget/export.md
+          - name: features command
+            href: ../package-manager/winget/features.md
+          - name: hash command
+            href: ../package-manager/winget/hash.md
+          - name: help command
+            href: ../package-manager/winget/help.md
+          - name: import command
+            href: ../package-manager/winget/import.md
+          - name: info command
+            href: ../package-manager/winget/info.md
+          - name: install command
+            href: ../package-manager/winget/install.md
+          - name: list command
+            href: ../package-manager/winget/list.md
+          - name: pin command
+            href: ../package-manager/winget/pinning.md
+          - name: repair command
+            href: ../package-manager/winget/repair.md
+          - name: search command
+            href: ../package-manager/winget/search.md
+          - name: settings command
+            href: ../package-manager/winget/settings.md
+          - name: show command
+            href: ../package-manager/winget/show.md
+          - name: source command
+            href: ../package-manager/winget/source.md
+          - name: tab completion
+            href: ../package-manager/winget/tab-completion.md
+          - name: uninstall command
+            href: ../package-manager/winget/uninstall.md
+          - name: upgrade command
+            href: ../package-manager/winget/upgrade.md
+          - name: validate command
+            href: ../package-manager/winget/validate.md
+          - name: Debugging and troubleshooting
+            href: ../package-manager/winget/troubleshooting.md
+      - name: WinGet Configuration
+        items:
+          - name: Overview
+            href: ../package-manager/configuration/index.md
+          - name: Author a configuration
+            href: ../package-manager/configuration/create.md
+          - name: Check a configuration
+            href: ../package-manager/configuration/check.md
+      - name: Submit packages
+        items:
+          - name: Overview
+            href: ../package-manager/package/index.md
+          - name: Create your package manifest
+            href: ../package-manager/package/manifest.md
+          - name: Submit your manifest to the repository
+            href: ../package-manager/package/repository.md
+          - name: Validation process
+            href: ../package-manager/package/repository.md#validation-process
+          - name: Troubleshooting submissions
+            href: ../package-manager/package/repository.md#submission-troubleshooting
+          - name: Repository policies
+            href: ../package-manager/package/windows-package-manager-policies.md
   - name: Windows Subsystem for Linux
     href: /windows/wsl/
   - name: Windows Terminal

@@ -11756,6 +11756,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/package-manager/winget/mcp-server.md",
+      "redirect_url": "/windows/package-manager/winget/mcp-server-overview",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/develop/notifications/app-notifications/app-notifications-wpf.md",
       "redirect_url": "/windows/apps/develop/notifications/app-notifications/app-notifications-dotnet?pivots=wpf",
       "redirect_document_id": false
