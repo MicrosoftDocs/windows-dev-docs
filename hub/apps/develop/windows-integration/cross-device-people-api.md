@@ -1,12 +1,13 @@
 ---
-title: Cross Device People API
-description: Learn how third party apps can integrate with Windows People experiences with APIs to store all their contacts.
-ms.date: 04/10/2025
+title: People on Windows
+description: Learn how to integrate your app with People on Windows — donate contacts, declare supported operations, and surface your app across the People Widget, Windows Search, and the Share Sheet.
+ms.date: 05/27/2026
 ms.topic: how-to
+keywords: people on windows, windows people, cross-device people, contacts integration, people widget, windows search contacts
 # customer intent: As a Windows developer, I want to learn how to integrate my app with Windows People experiences so that I can provide a seamless experience for my users.
 ---
 
-# Cross Device People API
+# People on Windows
 
 Windows is an ideal platform for third party apps to integrate their top people contacts. This integration enables users to interact with the personas for various people experiences. Windows now provides third party WinUI and other apps with [package identity](/windows/apps/desktop/modernize/package-identity-overview) with APIs to store all their contacts.
 

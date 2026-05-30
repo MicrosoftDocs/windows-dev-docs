@@ -1,16 +1,16 @@
 ---
-title: Use the Continuity SDK to implement Cross Device Resume (XDR) for Android and Windows Applications
-description: Guidelines for first & third party developers to integrate with Windows XDR experiences using the Continuity SDK.
-ms.date: 08/12/2025
+title: Resume with promoted install (for Android only)
+description: Learn how to use the Continuity SDK to implement Windows Resume with Android apps.
+ms.date: 05/27/2026
 ms.topic: how-to
-# customer intent: As a Windows developer, I want to learn how to integrate my app with Windows XDR experiences so that I can provide a seamless experience for my users.
+# customer intent: As a Windows developer, I want to learn how to integrate my app with Windows Resume so that users can continue activities from Android on Windows.
 ---
 
-# Use the Continuity SDK to implement Cross Device Resume (XDR) for Android and Windows Applications
+# Resume with promoted install (for Android only)
 
 This article provides comprehensive guidelines for first-party and third-party developers on how to integrate features using the Continuity SDK in your applications. The Continuity SDK enables seamless cross-device experiences, allowing users to resume activities across different platforms, including Android and Windows.
 
-By following this guidance, you can create a smooth and integrated user experience across multiple devices by leveraging the XDR using Continuity SDK.
+By following this guidance, you can create a smooth and integrated user experience across multiple devices by leveraging Windows Resume using the Continuity SDK.
 
 > [!IMPORTANT]
 > **Onboarding to Resume in Windows**
@@ -340,9 +340,9 @@ The screenshot below shows the log entry when the PC is disconnected with the er
 
 ## AppContext 
 
-XDR defines **AppContext** as metadata through which XDR can understand which app to resume, along with the context with which the application must be resumed. Apps can use activities to enable users to get back to what they were doing in their app, across multiple devices. Activities created by any mobile app appear on users' Windows device(s) so long as those devices have been Cross Device Experience Host (CDEH) provisioned.   
+Windows Resume defines **AppContext** as metadata through which Windows Resume can understand which app to resume, along with the context with which the application must be resumed. Apps can use activities to enable users to get back to what they were doing in their app, across multiple devices. Activities created by any mobile app appear on users' Windows device(s) so long as those devices have been Cross Device Experience Host (CDEH) provisioned.   
 
-Every application is different, and it's up to Windows to understand the target application for resume and up to specific applications on Windows to understand the context. XDR is proposing a generic schema which can cater to requirements for all first party as well as third party app resume scenarios.
+Every application is different, and it's up to Windows to understand the target application for resume and up to specific applications on Windows to understand the context. Windows Resume uses a generic schema which can cater to requirements for all first party as well as third party app resume scenarios.
 
 ### contextId 
 
@@ -500,9 +500,9 @@ void App::OnActivated(winrt::Windows::ApplicationModel::Activation::IActivatedEv
 
 ## Weblink 
 
-Using a weblink will launch the web endpoint of the application. App developers need to ensure that the weblink provided from their Android application is valid because XDR will use default browser of the system to redirect to the weblink provided. 
+Using a weblink will launch the web endpoint of the application. App developers need to ensure that the weblink provided from their Android application is valid because Windows Resume will use the default browser of the system to redirect to the weblink provided.
 
-## Handling arguments obtained from Cross Device Resume 
+## Handling arguments obtained from Windows Resume
 
 It is the responsibility of each app to deserialize and decrypt the argument received and process the information accordingly to transfer the ongoing context from phone to PC. For example, if a call needs to be transferred, the app must be able to communicate that context from phone and the desktop app must understand that context appropriately and continue loading.
 

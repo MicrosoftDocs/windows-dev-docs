@@ -1,10 +1,11 @@
 ---
-title: Connected Experiences overview
-description: Learn how your app can participate in Windows Share, Windows People, and Windows Resume — the platform contracts that connect your app to high-value moments across the Windows shell.
+title: Connected Experiences on Windows
+description: Learn how your Windows app can participate in cross-device experiences — Windows Share, People on Windows, and Windows Resume — the platform contracts that connect users across the Windows shell.
 ms.topic: overview
-ms.date: 05/26/2026
+ms.date: 05/27/2026
 ms.author: jken
 author: GrantMeStrength
+keywords: connected experiences, cross-device windows, windows share, windows resume, people on windows, cross device
 ---
 
 # Connected Experiences on Windows
@@ -18,5 +19,5 @@ This section covers the three pillars and the resources shared across them.
 | Topic | Description |
 |---|---|
 | [Windows Share](integrate-sharesheet-overview.md) | Integrate your app with the Share Sheet and Drop Tray to send and receive content. |
-| [Windows People](cross-device-people-api.md) | Donate contacts, declare supported operations, and surface your app across the People Widget, Windows Search, and the Share Sheet's people row. |
+| [People on Windows](cross-device-people-api.md) | Donate contacts, declare supported operations, and surface your app across the People Widget, Windows Search, and the Share Sheet's people row. |
 | [Windows Resume](cross-device-resume-overview.md) | Publish activity context to resume a task on another device through the taskbar Resume badge. |
