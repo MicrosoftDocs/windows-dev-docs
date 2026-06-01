@@ -310,7 +310,7 @@ Beginning in Windows 11 24H2 & Windows Server 2025, Block cloning is now support
 There are a few scenarios in which we do not recommend using a Dev Drive. These include:
 
 - Reformatting an existing storage volume to be a "Dev Drive" will destroy any content stored in that volume. Reformatting an existing volume while preserving the content stored there is not supported.
-- When you create a Virtual Hard Disk (VHD) hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive. The Dev Drive designation (including trust status and filter policies) is stored per-machine and does not transfer with the VHD file. If you move a VHD to a new machine, you will need to re-mount it and [re-designate it as a Dev Drive](#create-dev-drive-using-existing-virtual-hard-disk-vhd-or-vhdx) and reconfigure any custom filter policies.
+- When you create a Virtual Hard Disk (VHD) hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive. The Dev Drive designation (including trust status and filter policies) is stored per-machine and does not transfer with the VHD file. If you move a VHD to a new machine, you will need to re-mount it and [re-designate it as a Dev Drive](#how-to-set-up-a-dev-drive) and reconfigure any custom filter policies.
 - A volume stored on a removable or hot-pluggable disk (such as a USB, HDD, or SSD external drive) does not support designation as a Dev Drive.
 - A volume in a VHD hosted by a removable or hot-pluggable disk does not support designation as a Dev Drive.
 - The C: drive on your machine cannot be designated as a Dev Drive.
@@ -389,7 +389,7 @@ Yes, the Dev Drive VHD will be included in the BitLocker encryption of the hosti
 
 The best backup approach depends on how your Dev Drive is set up:
 
-- **VHD-based Dev Drive**: The VHD file (`.vhd` or `.vhdx`) can be backed up like any regular file. Copy it to an external drive, network share, or cloud storage. Note that the Dev Drive designation and filter policies are per-machine and won't transfer automatically — if you restore to a new machine, you'll need to [re-mount the VHD and re-designate it as a Dev Drive](#create-dev-drive-using-existing-virtual-hard-disk-vhd-or-vhdx).
+- **VHD-based Dev Drive**: The VHD file (`.vhd` or `.vhdx`) can be backed up like any regular file. Copy it to an external drive, network share, or cloud storage. Note that the Dev Drive designation and filter policies are per-machine and won't transfer automatically — if you restore to a new machine, you'll need to [re-mount the VHD and re-designate it as a Dev Drive](#how-to-set-up-a-dev-drive).
 
 - **Partition-based Dev Drive**: Use standard Windows backup tools such as [File History](https://support.microsoft.com/windows/back-up-your-windows-pc-87a81f8a-78fa-456e-b521-ac0560e32338) or [robocopy](/windows-server/administration/windows-commands/robocopy) to back up the contents. Cloud sync tools (OneDrive, etc.) can also back up individual files, though they may not preserve all Dev Drive-specific settings.
 

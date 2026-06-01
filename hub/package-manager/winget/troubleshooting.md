@@ -98,4 +98,4 @@ Example:
 
 ### System Context
 
-WinGet is delivered via the App Installer as a packaged application. MSIX (packaged) applications depend on an App Execution Alias to be resolved on the PATH environment variable. The WinGet CLI is not supported in the system context. The Microsoft.WinGet.Client PowerShell module can be used in the system context with applications that are installed machine wide.
+WinGet is delivered via the App Installer as a packaged application. MSIX (packaged) applications depend on the package being registered for the user. As packages can be registered for any user except NT AUTHORITY\SYSTEM (aka LocalSystem, aka System), the WinGet CLI is not supported in the system context. The Microsoft.WinGet.Client PowerShell module can be used in the system context with applications that are installed machine wide.

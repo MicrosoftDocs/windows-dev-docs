@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 04/22/2026
+ms.date: 06/01/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,117 @@ You can update the SDK by manually installing the new build, updating in Visual 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## 28000 versions
+
+## Build 10.0.28000.2114
+
+Released: **May, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Devices.Printers**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IppAttributeConverter.ConvertPrintTicketToIppAttributesForPrinter(String, WorkflowPrintTicket, String)` — Print ticket to IPP attribute conversion
+>
+> **Windows.Graphics.Printing.Workflow**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `PrintWorkflowPrinterJob.IsPassthroughJobWithAttributes` — Property indicating whether a print job is a passthrough job (renamed from `IsPassthroughJob`)
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Direct3D Kernel Mode (d3dkmthk.h)**
+> <br/>
+> New:
+>
+> - `_D3DKMT_QUERYFEATUREINTERFACE` — Query feature interface structure
+>
+> **Status Codes (ntstatus.h)**
+> <br/>
+> New:
+>
+> - `STATUS_SMB_ALTERNATIVE_PORT_CONFLICT` — SMB alternative port conflict status code
+>
+> **Power (poclass.h)**
+> <br/>
+> New:
+>
+> - `BATTERY_TEST_EXEMPT` — Battery test exemption flag
+>
+> **Error Codes (winerror.h)**
+> <br/>
+> New:
+>
+> - `FVE_E_METHOD_MISMATCH` — Full Volume Encryption method mismatch error
+> - `ERROR_SMB_ALTERNATIVE_PORT_CONFLICT` — SMB alternative port conflict error
+>
+> **TPM / Key Storage (ncrypt.h)**
+> <br/>
+> New:
+>
+> - `NCRYPT_PCP_SDDIDK_OPERATION` — Platform Crypto Provider SDDI DK operation
+> - `NCRYPT_PCP_AIKSTORE_PROPERTY` — AIK store property
+> - `NCRYPT_PCP_EKSTORE_PROPERTY` — EK store property
+> - `NCRYPT_PCP_SDDIDK_CONTEXT_PROPERTY` — SDDI DK context property
+>
+> **Content Index (NTQuery.h)**
+> <br/>
+> New:
+>
+> - `CI_VERSION_QUERY_METADATA` — Content index version query metadata
+>
+> **Security Packages (NTSecPKG.h)**
+> <br/>
+> New:
+>
+> - `SECPKG_CALL_AGENT_LOGON` — Security package agent logon call flag
+>
+> **Shell (shellapi.h)**
+> <br/>
+> New:
+>
+> - `ABC_OVERLAYDESKTOPICONS` — Overlay desktop icons flag
+>
+> **Windows Filtering Platform (fwpmtypes.h / fwpvi.h)**
+> <br/>
+> Removed:
+>
+> - `FWPM_LAYER_STATISTICS0_`, `FWPM_STATISTICS0_` — Filtering platform statistics structures
+> - `FWPM_LAYER_STATISTICS`, `FWPM_STATISTICS` — Filtering platform statistics defines
+>
+> **Terminal Services Virtual Channels (tsvirtualchannels.h)**
+> <br/>
+> Removed:
+>
+> - `IWTSRemoteAppWindowInfoService` — Remote app window info service interface and related definitions
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Windows Filtering Platform (fwpmtypes.idl)**
+> <br/>
+> Removed:
+>
+> - `FWPM_LAYER_STATISTICS0_`, `FWPM_STATISTICS0_` — Filtering platform statistics structures
+>
+> **Terminal Services Virtual Channels (tsvirtualchannels.idl)**
+> <br/>
+> Removed:
+>
+> - `IWTSRemoteAppWindowInfoService` — Remote app window info service interface
+> - `GetLocalHwnd` — Get local window handle function
+
+</details>
+
+---
 
 ## Build 10.0.28000.1839
 
