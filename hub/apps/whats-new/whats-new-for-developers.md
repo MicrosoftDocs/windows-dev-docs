@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 05/13/2026
+ms.date: 05/29/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -38,6 +38,7 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ## Highlights – May 2026
 
+- **Inside MSIX blog**: New Microsoft engineering blog with deep dives on MSIX architecture, package identity, deployment operations, and the Stage/Register model — written by Howard Kapustein, MSIX Principal Engineer — [Inside MSIX](https://devblogs.microsoft.com/insidemsix/)
 - **WinUI agent plugin for GitHub Copilot and Claude Code**: A new plugin with 8 specialized skills and a dedicated `winui-dev` agent for end-to-end WinUI development — scaffold, build, run, test, package, and migrate from WPF — in 70% fewer tokens than generic agents. Install with `/plugin install winui@awesome-copilot` — [Introducing WinUI agent plugin for GitHub Copilot and Claude Code](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/)
 - **`dotnet new` WinUI templates** (preview): New open-source project and item templates for WinUI that let you create and run apps directly from the command line without Visual Studio. Includes Blank, NavigationView, TabView, and MVVM templates, all built around Windows app silhouettes with modern Fluent Design defaults — [Introducing dotnet new WinUI templates](https://devblogs.microsoft.com/ifdef-windows/introducing-dotnet-new-templates-for-winui/)
 - **WinApp VS Code extension**: Brings the full Windows App Development CLI into VS Code — initialize, run, debug, package, and sign Windows apps from any framework (WinUI, WPF, C++, Electron, Rust, Tauri, Flutter) without leaving the editor — [Announcing the WinApp VS Code Extension](https://devblogs.microsoft.com/ifdef-windows/announcing-the-winapp-vs-code-extension-run-debug-and-package-windows-apps-in-vs-code/)
@@ -63,10 +64,11 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 Previous highlights:
 
+- **PowerToys 0.99**: New Power Display utility for controlling monitors from the system tray, Grab And Move for resizing windows from anywhere, and improvements to Command Palette and the Dock — [PowerToys 0.99 release](https://devblogs.microsoft.com/commandline/powertoys-0-99-is-here-new-monitor-controls-easier-window-management-and-dock-upgrades/) — [Microsoft PowerToys: Utilities to customize Windows](/windows/powertoys/).
+- **Windows Terminal 1.25**: New settings page for extensions, improved multi-language Command Palette suggestions, and a completely rebuilt windowing architecture with more reliable tray icon and Quake mode — [Windows Terminal 1.25 release](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-25-release/)
 - **Segoe Fluent Icons Font updated**: The Segoe Fluent Icons Font documentation has been refreshed with the latest icon additions and usage guidance — [View icons](/windows/apps/design/style/segoe-fluent-icons-font).
 - **WinUI terminology clarification**: Updated terminology across documentation for clarity — "WinUI 2" is now referred to as "WinUI for UWP" and "WinUI 3" is now simply "WinUI" to reflect current naming conventions.
 - **Windows Developer Support hub**: New centralized support page with quick help actions, community channels, and Microsoft support contacts — [Get support](/windows/apps/develop/support).
-- **PowerToys** 0.97.2 release with new features and improvements to existing tools — [Microsoft PowerToys: Utilities to customize Windows](/windows/powertoys/).
 - **Windows App SDK release notes**: Refactored and consolidated history from 0.5 through 2.0 — find the latest fixes and APIs in one place ([release notes hub](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)).
 - **Windows SDK updates**: New overview and detailed release notes to track SDK changes ([overview](/windows/apps/windows-sdk/) · [release notes](/windows/apps/windows-sdk/release-notes)).
 - **WinAppCLI public preview**: The Windows App Development CLI is a command-line interface for managing Windows SDKs, packaging, generating app identity, manifests, certificates, and using build tools with any app framework — ([GitHub repo](https://github.com/microsoft/WinAppCli)).
