@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: best-practice
-ms.date: 12/22/2025
+ms.date: 06/01/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -259,10 +259,10 @@ For best performance, enable your apps to take full advantage of the energy-effi
 ### Push notifications
 
 [Push notifications](/azure/notification-hubs/notification-hubs-push-notification-overview) allow you to send information from your cloud service to your app in a performance-optimized way. Push notifications include raw notifications, badge notifications, and toast notifications sent from your cloud service.
-- Use push notifications to wake up the app or client rather than always keeping it running to optimize performance on the user's device. <!--todo: point to appsdk/winui3 guidance when available -->
+- Use push notifications to wake up the app or client rather than always keeping it running to optimize performance on the user's device. See [Push notifications overview](../develop/notifications/push-notifications/index.md) for Windows App SDK guidance.
 - Don't use notification channels to send advertisements.  
 - Respect `retry-after` headers – this practice protects the service and ensures notification delivery success.
-- Remove expired or revoked channels from the system. [Windows Notification Service](../design/shell/tiles-and-notifications/windows-push-notification-services--wns--overview.md) (WNS) doesn't process requests for expired or revoked channels.
+- Remove expired or revoked channels from the system. [Windows Push Notification Services](../develop/notifications/push-notifications/wns-overview.md) (WNS) doesn't process requests for expired or revoked channels.
 - Avoid sudden, large bursts of requests to WNS. This pattern can lead to throttled responses.
 - Utilize the `MS-CV` header. This header helps with end-to-end traceability and diagnostics.
 - Have a back-up mechanism for when notifications don't work. 
@@ -278,7 +278,15 @@ Reliable installation, update, and uninstallation experiences are important part
   - If you host your app across multiple channels (for example, on a website and on the Microsoft Store), use a consistent application identity and update mechanism across all channels.
   - [Distribute your app through the Microsoft Store](../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md) to make it more discoverable for users. Note that Windows users access Store apps through the Windows Package Manager [WinGet](../../package-manager/winget/index.md). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in WinGet via the [WinGet repository](../../package-manager/package/index.md).
 
-<!--todo: unpackaged app distribution best practices -->
+### Unpackaged app distribution
+
+If full MSIX packaging isn't an option for your app, consider packaged with external location (which retains package identity while hosting binaries outside the package) or distributing as a fully unpackaged app. For unpackaged distribution, keep these best practices in mind:
+
+  - Set `WindowsPackageType` to `None` in your project file. See [Distribute an unpackaged WinUI 3 app](../package-and-deploy/unpackage-winui-app.md) for setup steps and limitations.
+  - Choose between framework-dependent and self-contained deployment. Framework-dependent reduces your app size but requires the Windows App SDK runtime on the user's machine. Self-contained bundles the runtime but increases disk footprint. See [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
+  - For framework-dependent unpackaged apps, setting `WindowsPackageType` to `None` enables auto-initialization of the Windows App SDK runtime. For advanced scenarios that require explicit control over initialization, you can call the bootstrapper API directly. See [Deployment guide for unpackaged apps](../windows-app-sdk/deploy-unpackaged-apps.md).
+  - Digitally sign all executables and DLLs. Without MSIX, there is no package signature to establish trust, so individual binary signatures are essential for Smart App Control and enterprise deployment.
+  - Register for clean uninstall through **Apps > Installed Apps** in Settings. MSIX handles this automatically; unpackaged apps must manage their own registry entries and file cleanup.
 
 ### Installation and uninstallation
 

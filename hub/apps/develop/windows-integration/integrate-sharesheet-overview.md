@@ -1,8 +1,8 @@
 ---
 description: Learn how to implement Share on Windows — integrate your app with the Windows Share Sheet to let users share content across Windows apps and services.
-title: Share on Windows: integrate the Windows Share Sheet
-ms.topic: concept-article
-ms.date: 05/27/2026
+title: "Share on Windows: integrate the Windows Share Sheet"
+ms.topic: overview
+ms.date: 05/30/2026
 ms.localizationpriority: medium
 keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
