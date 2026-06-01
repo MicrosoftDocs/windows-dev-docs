@@ -70,10 +70,10 @@ Generate C# — not Swift.
 
 Some iOS concepts don't have a direct WinUI equivalent:
 
-- **In-app purchases**: Use the [Microsoft Store commerce APIs](../../../../../uwp/monetize/index.md) via `Windows.Services.Store`
+- **In-app purchases**: Use the [Microsoft Store commerce APIs](/windows/uwp/monetize/) via `Windows.Services.Store`
 - **Push notifications (APNs)**: Use [Windows Push Notification Services (WNS)](../../notifications/push-notifications/wns-overview.md)
-- **HealthKit / ARKit / CoreML**: Windows has related technology areas — [Windows ML](https://learn.microsoft.com/windows/ai/windows-ml/), [Windows Mixed Reality](https://learn.microsoft.com/windows/mixed-reality/), and [Windows Sensors](../../../../../uwp/devices-sensors/sensors.md) — but these are not direct equivalents and require platform-specific implementation
-- **App Clips**: No direct equivalent — consider [web-to-app linking](https://learn.microsoft.com/windows/uwp/launch-resume/web-to-app-linking)
+- **HealthKit / ARKit / CoreML**: Windows has related technology areas — [Windows ML](/windows/ai/windows-ml/), [Windows Mixed Reality](/windows/mixed-reality/), and [Windows Sensors](/windows/uwp/devices-sensors/sensors) — but these are not direct equivalents and require platform-specific implementation
+- **App Clips**: No direct equivalent — consider [web-to-app linking](/windows/uwp/launch-resume/web-to-app-linking)
 
 ## Related content
 

@@ -797,7 +797,7 @@ Released: **February 13, 2026** <br><br>
 
 Released: **May 21, 2026**
 
-This experimental release ships alongside [Windows App SDK 2.1.3 stable](#version-213-213) and generally brings over the changes from that release; see the [2.1.3 stable notes](#version-213-213) for those details. The sections below describe the experimental-only additions.
+This experimental release ships alongside [Windows App SDK 2.1.3 stable](#version-213) and generally brings over the changes from that release; see the [2.1.3 stable notes](#version-213) for those details. The sections below describe the experimental-only additions.
 <br><br>
 
 <details><summary>Strongly typed result and status for structured JSON responses [Experimental]</summary>
