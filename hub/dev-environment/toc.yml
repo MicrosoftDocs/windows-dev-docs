@@ -28,7 +28,7 @@ items:
             href: ../core-utils/commands.md
       - name: curl
         href: ../curl/index.md
-      - name: Edit
+      - name: edit
         href: ../edit/index.md
       - name: sudo
         href: ../advanced-settings/sudo/index.md
