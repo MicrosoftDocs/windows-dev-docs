@@ -13,9 +13,27 @@ Windows supports a wide range of development workflows. Tools like Visual Studio
 
 :::row:::
     :::column:::
-       [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
-        **[Windows Terminal](/windows/terminal/)**<br>
-        Customize your terminal environment to work with multiple command line shells.
+       [![Advanced Settings icon](../images/advanced-settings-icon.png)](../advanced-settings/index.md)<br>
+        **[Advanced Settings](../advanced-settings/index.md)**<br>
+        Configure Windows settings like Developer Mode and File Explorer source control.
+    :::column-end:::
+    :::column:::
+       [![CLI tools icon](../images/tile-cli.png)](../core-utils/overview.md)<br>
+        **[CLI tools](../core-utils/overview.md)**<br>
+        Built-in command-line utilities for Windows, including Coreutils, curl, Edit, sudo, and tar.
+    :::column-end:::
+    :::column:::
+       [![Dev Configs icon](../images/tile-devconfigs.png)](../dev-configs/index.md)<br>
+         **[Dev Configs](../dev-configs/index.md)**<br>
+        Curated, declarative setups that configure your Windows dev environment in one step.
+    :::column-end:::
+:::row-end:::
+
+:::row:::
+    :::column:::
+       [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
+        **[Microsoft PowerToys](../powertoys/index.md)**<br>
+        A set of power user utilities to tune and streamline your Windows experience.
     :::column-end:::
     :::column:::
        [![WinGet icon](../images/winget.png)](../package-manager/index.md)<br>
@@ -31,19 +49,13 @@ Windows supports a wide range of development workflows. Tools like Visual Studio
 
 :::row:::
     :::column:::
-       [![PowerToys icon](../images/powertoys.png)](../powertoys/index.md)<br>
-        **[Microsoft PowerToys](../powertoys/index.md)**<br>
-        A set of power user utilities to tune and streamline your Windows experience.
+       [![Windows Terminal icon](../images/terminal.png)](/windows/terminal/)<br>
+        **[Windows Terminal](/windows/terminal/)**<br>
+        Customize your terminal environment to work with multiple command line shells.
     :::column-end:::
     :::column:::
-       [![Dev Drive icon](../images/dev-drive-icon.png)](/windows/dev-drive)<br>
-        **[Dev Drive](/windows/dev-drive/)**<br>
-        A storage volume optimized for performance in developer scenarios.
     :::column-end:::
     :::column:::
-       [![Sudo for Windows icon](../images/sudo.png)](/windows/sudo/)<br>
-        **[Sudo for Windows](/windows/sudo/)**<br>
-        Run elevated commands directly from an unelevated console session.
     :::column-end:::
 :::row-end:::
 <br>

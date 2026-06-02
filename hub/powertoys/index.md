@@ -20,15 +20,14 @@ Microsoft PowerToys is a set of free, open-source utilities designed to help pow
 
 PowerToys is an open-source project. Visit GitHub to explore the codebase, report issues, contribute, and stay up to date with what’s new in each release.
 
-<div class="buttons margin-top-xs">
-    <a href="https://github.com/microsoft/PowerToys"
-       class="button button-sm">
-        <span class="icon docon docon-brand-github" role="img"></span>
-        <span>View on GitHub</span>
+<div class="buttons margin-top-xs margin-bottom-sm">
+    <a class="button button-sm button-filled button-primary" href="https://github.com/microsoft/PowerToys" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true"><span class="docon docon-brand-github"></span></span>
+        <span>PowerToys on GitHub</span>
     </a>
-    <a href="https://github.com/microsoft/PowerToys/releases"
-       class="button button-sm">
-        <span>What's new</span>
+    <a class="button button-sm button-filled button-primary" href="https://github.com/microsoft/PowerToys/releases" target="_blank" rel="noopener">
+        <span class="icon" aria-hidden="true"><span class="docon docon-brand-github"></span></span>
+        <span>Latest release on GitHub</span>
     </a>
 </div>
 
