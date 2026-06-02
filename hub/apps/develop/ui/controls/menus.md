@@ -65,13 +65,13 @@ This example creates a [MenuFlyout](/windows/windows-app-sdk/api/winrt/microsoft
 private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 {
     // Change the color from red to blue or blue to red.
-    if (rectangleFill.Color == Windows.UI.Colors.Red)
+    if (rectangleFill.Color == Microsoft.UI.Colors.Red)
     {
-        rectangleFill.Color = Windows.UI.Colors.Blue;
+        rectangleFill.Color = Microsoft.UI.Colors.Blue;
     }
     else
     {
-        rectangleFill.Color = Windows.UI.Colors.Red;
+        rectangleFill.Color = Microsoft.UI.Colors.Red;
     }
 }
 ````
@@ -102,13 +102,13 @@ private void Rectangle_Tapped(object sender, TappedRoutedEventArgs e)
 private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
 {
     // Change the color from red to blue or blue to red.
-    if (rectangleFill.Color == Windows.UI.Colors.Red)
+    if (rectangleFill.Color == Microsoft.UI.Colors.Red)
     {
-        rectangleFill.Color = Windows.UI.Colors.Blue;
+        rectangleFill.Color = Microsoft.UI.Colors.Blue;
     }
     else
     {
-        rectangleFill.Color = Windows.UI.Colors.Red;
+        rectangleFill.Color = Microsoft.UI.Colors.Red;
     }
 }
 ````

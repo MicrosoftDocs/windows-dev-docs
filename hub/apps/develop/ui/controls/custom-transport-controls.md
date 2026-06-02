@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 MediaPlayerElement has customizable XAML transport controls to manage control of audio and video content within a Windows app. Here, we demonstrate how to customize the MediaTransportControls template. We'll show you how to work with the overflow menu, add a custom button and modify the slider.
 
-> **Important APIs**: [MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement), [MediaPlayerElement.AreTransportControlsEnabled](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled), [MediaTransportControls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols)
+> **Important APIs**: [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement), [MediaPlayerElement.AreTransportControlsEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled), [MediaTransportControls](/uwp/api/Windows.Media.SystemMediaTransportControls)
 
 Before starting, you should be familiar with the MediaPlayerElement and the MediaTransportControls classes. For more info, see the MediaPlayerElement control guide.
 
@@ -24,7 +24,7 @@ Before starting, you should be familiar with the MediaPlayerElement and the Medi
 
 ## When should you customize the template?
 
-**MediaPlayerElement** has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They're provided by the [**MediaTransportControls**](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the [**IsCompact**](/uwp/api/windows.ui.xaml.controls.mediatransportcontrols.iscompact) property to specify whether the controls are shown in one row or two.
+**MediaPlayerElement** has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They're provided by the [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.MediaTransportControls) class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the [**IsCompact**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols.iscompact) property to specify whether the controls are shown in one row or two.
 
 However, there may be scenarios where you need to further customize the look of the control or change its behavior. Here are some examples:
 - Change the icons, slider behavior, and colors.
@@ -42,17 +42,17 @@ You can customize the appearance of the control by modifying the default templat
 
 ## Template structure
 
-The [**ControlTemplate**](/uwp/api/Windows.UI.Xaml.Controls.ControlTemplate) is part of the default style. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
-- The first section of the template contains the [**Style**](/uwp/api/Windows.UI.Xaml.Style) definitions for the various components of the MediaTransportControls.
+The [**ControlTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ControlTemplate) is part of the default style. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
+- The first section of the template contains the [**Style**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style) definitions for the various components of the MediaTransportControls.
 - The second section defines the various visual states that are used by the MediaTransportControls.
-- The third section contains the [**Grid**](/uwp/api/Windows.UI.Xaml.Controls.Grid) that holds that various MediaTransportControls elements together and defines how the components are laid out.
+- The third section contains the [**Grid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Grid) that holds that various MediaTransportControls elements together and defines how the components are laid out.
 
 > [!NOTE]
 > For more info about modifying templates, see [Control templates](../../platform/xaml/xaml-control-templates.md). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
 
 In the following sections, you learn how to customize several of the main elements of the transport controls:
-- [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider): allows a user to scrub through their media and also displays progress
-- [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.CommandBar): contains all of the buttons.
+- [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Slider): allows a user to scrub through their media and also displays progress
+- [**CommandBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.CommandBar): contains all of the buttons.
 For more info, see the Anatomy section of the MediaTransportControls reference topic.
 
 ## Customize the transport controls
@@ -100,9 +100,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-3. Copy the default style for [**MediaTransportControls**](/uwp/api/Windows.UI.Xaml.Controls.MediaTransportControls) into a [ResourceDictionary](/uwp/api/Windows.UI.Xaml.ResourceDictionary) in your project. This is the style and template you modify.
+3. Copy the default style for [**MediaTransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.MediaTransportControls) into a [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) in your project. This is the style and template you modify.
 (In the Media Transport Controls sample, a new folder called "Themes" is created, and a ResourceDictionary file called generic.xaml is added to it.)
-4. Change the [**TargetType**](/uwp/api/windows.ui.xaml.style.targettype) of the style to the new custom control type. (In the sample, the TargetType is changed to `local:CustomMediaTransportControls`.)
+4. Change the [**TargetType**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style.targettype) of the style to the new custom control type. (In the sample, the TargetType is changed to `local:CustomMediaTransportControls`.)
 
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
@@ -110,7 +110,7 @@ xmlns:local="using:CustomMediaTransportControls">
 <Style TargetType="local:CustomMediaTransportControls">
 ```
 
-5. Set the [**DefaultStyleKey**](/uwp/api/windows.ui.xaml.controls.control.defaultstylekey) of your custom class. This tells your custom class to use a Style with a TargetType of `local:CustomMediaTransportControls`.
+5. Set the [**DefaultStyleKey**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.defaultstylekey) of your custom class. This tells your custom class to use a Style with a TargetType of `local:CustomMediaTransportControls`.
 
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
@@ -122,7 +122,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-6. Add a [**MediaPlayerElement**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement) to your XAML markup and add the custom transport controls to it. One thing to note is that the APIs to hide, show, disable, and enable the default buttons still work with a customized template.
+6. Add a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) to your XAML markup and add the custom transport controls to it. One thing to note is that the APIs to hide, show, disable, and enable the default buttons still work with a customized template.
 
 ```xaml
 <MediaPlayerElement Name="MediaPlayerElement1" AreTransportControlsEnabled="True" Source="video.mp4">
@@ -146,13 +146,13 @@ You can now modify the control style and template to update the look of your cus
 
 You can move MediaTransportControls command buttons into an overflow menu, so that less commonly used commands are hidden until the user needs them.
 
-In the MediaTransportControls template, the command buttons are contained in a [**CommandBar**](/uwp/api/Windows.UI.Xaml.Controls.CommandBar) element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable the button, hide the button or there is not enough room). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the [App bars and command bars](../../../design/controls/command-bar.md) article.
+In the MediaTransportControls template, the command buttons are contained in a [**CommandBar**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.CommandBar) element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable the button, hide the button or there is not enough room). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the [App bars and command bars](../../../design/controls/command-bar.md) article.
 
 To move an element from the command bar primary commands to the overflow menu, you need to edit the XAML control template.
 
 **To move a command to the overflow menu:**
 1. In the control template, find the CommandBar element named `MediaControlsCommandBar`.
-2. Add a [**SecondaryCommands**](/uwp/api/windows.ui.xaml.controls.commandbar.secondarycommands) section to the XAML for the CommandBar. Put it after the closing tag for the [**PrimaryCommands**](/uwp/api/windows.ui.xaml.controls.commandbar.primarycommands).
+2. Add a [**SecondaryCommands**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.secondarycommands) section to the XAML for the CommandBar. Put it after the closing tag for the [**PrimaryCommands**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.commandbar.primarycommands).
 
 ```xaml
 <CommandBar x:Name="MediaControlsCommandBar" ... >  
@@ -175,7 +175,7 @@ To move an element from the command bar primary commands to the overflow menu, y
 </CommandBar>
 ```
 
-3. To populate the menu with commands, cut and paste the XAML for the desired [**AppBarButton**](/uwp/api/Windows.UI.Xaml.Controls.AppBarButton) objects from the PrimaryCommands to the SecondaryCommands. In this example, we move the `PlaybackRateButton` to the overflow menu.
+3. To populate the menu with commands, cut and paste the XAML for the desired [**AppBarButton**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.AppBarButton) objects from the PrimaryCommands to the SecondaryCommands. In this example, we move the `PlaybackRateButton` to the overflow menu.
 
 4. Add a label to the button and remove the styling information, as shown here.
 Because the overflow menu is comprised of text buttons, you must add a text label to the button and also remove the style that sets the height and width of the button. Otherwise, it won't appear correctly in the overflow menu.
@@ -208,10 +208,10 @@ One reason you might want to customize MediaTransportControls is to add a custom
 
 You must add it to the CommandBar in the appropriate location. (For more information, see the Working with the overflow menu section.) How it's positioned in the UI is determined by where the button is in the markup. For example, if you want this button to appear as the last element in the primary commands, add it at the very end of the primary commands list.
 
-You can also customize the icon for the button. For more information, see the <a href="/uwp/api/Windows.UI.Xaml.Controls.AppBarButton"><b>AppBarButton</b></a> reference.
+You can also customize the icon for the button. For more information, see the <a href="/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.AppBarButton"><b>AppBarButton</b></a> reference.
     
 
-2. In the [**OnApplyTemplate**](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate) override, get the button from the template and register a handler for its [**Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. This code goes in the `CustomMediaTransportControls` class.
+2. In the [**OnApplyTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.onapplytemplate) override, get the button from the template and register a handler for its [**Click**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event. This code goes in the `CustomMediaTransportControls` class.
 
 ```csharp
 public sealed class CustomMediaTransportControls :  MediaTransportControls
@@ -265,9 +265,9 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 
 ### Modifying the slider
 
-The "seek" control of the MediaTransportControls is provided by a [**Slider**](/uwp/api/Windows.UI.Xaml.Controls.Slider) element. One way you can customize it is to change the granularity of the seek behavior.
+The "seek" control of the MediaTransportControls is provided by a [**Slider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Slider) element. One way you can customize it is to change the granularity of the seek behavior.
 
-The default seek slider is divided into 100 parts, so the seek behavior is limited to that many sections. You can change the granularity of the seek slider by getting the Slider from the XAML visual tree in your [**MediaOpened**](/uwp/api/windows.media.playback.mediaplayer.mediaopened) event handler on [**MediaPlayerElement.MediaPlayer**](/uwp/api/windows.ui.xaml.controls.mediaplayerelement). This example shows how to use [**VisualTreeHelper**](/uwp/api/Windows.UI.Xaml.Media.VisualTreeHelper) to get a reference to the Slider, then change the default step frequency of the slider from 1% to 0.1% (1000 steps) if the media is longer than 120 minutes. The MediaPlayerElement is named `MediaPlayerElement1`.
+The default seek slider is divided into 100 parts, so the seek behavior is limited to that many sections. You can change the granularity of the seek slider by getting the Slider from the XAML visual tree in your [**MediaOpened**](/uwp/api/windows.media.playback.mediaplayer.mediaopened) event handler on [**MediaPlayerElement.MediaPlayer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement). This example shows how to use [**VisualTreeHelper**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.VisualTreeHelper) to get a reference to the Slider, then change the default step frequency of the slider from 1% to 0.1% (1000 steps) if the media is longer than 120 minutes. The MediaPlayerElement is named `MediaPlayerElement1`.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)

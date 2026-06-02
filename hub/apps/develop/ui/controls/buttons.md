@@ -277,22 +277,22 @@ private void AlignmentMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
 {
     var option = ((MenuFlyoutItem)sender).Tag.ToString();
 
-    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
     if (selectedText != null)
     {
         // Apply the alignment to the selected paragraphs.
         var paragraphFormatting = selectedText.ParagraphFormat;
         if (option == "left")
         {
-            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Left;
+            paragraphFormatting.Alignment = Microsoft.UI.Text.ParagraphAlignment.Left;
         }
         else if (option == "center")
         {
-            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Center;
+            paragraphFormatting.Alignment = Microsoft.UI.Text.ParagraphAlignment.Center;
         }
         else if (option == "right")
         {
-            paragraphFormatting.Alignment = Windows.UI.Text.ParagraphAlignment.Right;
+            paragraphFormatting.Alignment = Microsoft.UI.Text.ParagraphAlignment.Right;
         }
     }
 }
@@ -403,10 +403,10 @@ public sealed partial class MainPage : Page
     private void ChangeColor()
     {
         // Apply the color to the selected text in a RichEditBox.
-        Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+        Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
         if (selectedText != null)
         {
-            Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+            Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
             charFormatting.ForegroundColor = CurrentColorBrush.Color;
             selectedText.CharacterFormat = charFormatting;
         }
@@ -522,26 +522,26 @@ private void ListStylesListView_SelectionChanged(object sender, SelectionChanged
 
 private void ApplyListStyle(string listStyle)
 {
-    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
     if (selectedText != null)
     {
         // Apply the list style to the selected text.
         var paragraphFormatting = selectedText.ParagraphFormat;
         if (listStyle == "none")
         {  
-            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.None;
+            paragraphFormatting.ListType = Microsoft.UI.Text.MarkerType.None;
         }
         else if (listStyle == "bullet")
         {
-            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Bullet;
+            paragraphFormatting.ListType = Microsoft.UI.Text.MarkerType.Bullet;
         }
         else if (listStyle == "numeric")
         {
-            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.Arabic;
+            paragraphFormatting.ListType = Microsoft.UI.Text.MarkerType.Arabic;
         }
         else if (listStyle == "alpha")
         {
-            paragraphFormatting.ListType = Windows.UI.Text.MarkerType.UppercaseEnglishLetter;
+            paragraphFormatting.ListType = Microsoft.UI.Text.MarkerType.UppercaseEnglishLetter;
         }
         selectedText.ParagraphFormat = paragraphFormatting;
     }
