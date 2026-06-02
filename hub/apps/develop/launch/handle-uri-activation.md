@@ -24,7 +24,7 @@ These steps show how to register for a custom URI scheme name, `alsdk://`, and h
 The following APIs are used in this topic:
 
 - [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
-- [Windows.UI.Xaml.Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)
+- [Windows.UI.Xaml.Application.OnActivated](/uwp/api/microsoft.ui.xaml.application.onactivated)
 - [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
 
 > [!NOTE]
@@ -83,7 +83,7 @@ Apps that become the default for a URI scheme name have their icons displayed in
 > [!NOTE]
 > In a WinUI app, in App.OnLaunched (or in fact at any time) you can call [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle) for more information about lifecycle differences between UWP and WinUI apps.
 
-In UWP apps, the [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated) event handler receives all activation events. The **Kind** property indicates the type of activation event. This example is set up to handle [Protocol](/uwp/api/Windows.ApplicationModel.Activation.ActivationKind) activation events.
+- [Windows.UI.Xaml.Application.OnActivated](/uwp/api/microsoft.ui.xaml.application.onactivated)
 
 ```csharp
 public partial class App
@@ -139,7 +139,7 @@ The following code programmatically launches the app via its URI:
 
 For more details about how to launch an app via a URI, see [Launch the default app for a URI](launch-default-app.md).
 
-It is recommended that apps create a new XAML [Frame](/uwp/api/Windows.UI.Xaml.Controls.Frame) for each activation event that opens a new page. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML **Frame** for Launch and File Contracts should clear the pages on the **Frame** navigation journal before navigating to a new page.
+It is recommended that apps create a new XAML [Frame](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Frame) for each activation event that opens a new page. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended. Apps that decide to use a single XAML **Frame** for Launch and File Contracts should clear the pages on the **Frame** navigation journal before navigating to a new page.
 
 When launched via Protocol activation, apps should consider including UI that allows the user to go back to the top page of the app.
 
@@ -159,9 +159,9 @@ Any app or website can invoke your URI scheme with arbitrary payloads, including
 > [!NOTE]
 > When a UWP app is launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
-We recommend that apps create a new XAML [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) for each activation event that opens a new Uri target. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended.
+We recommend that apps create a new XAML [**Frame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Frame) for each activation event that opens a new Uri target. This way, the navigation backstack for the new XAML **Frame** will not contain any previous content that the app might have on the current window when suspended.
 
-If you decide that you want your apps to use a single XAML [**Frame**](/uwp/api/Windows.UI.Xaml.Controls.Frame) for Launch and Protocol Contracts, clear the pages on the **Frame** navigation journal before navigating to a new page. When launched via Protocol Contract, consider including UI into your apps that allows the user to go back to the top of the app.
+If you decide that you want your apps to use a single XAML [**Frame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Frame) for Launch and Protocol Contracts, clear the pages on the **Frame** navigation journal before navigating to a new page. When launched via Protocol Contract, consider including UI into your apps that allows the user to go back to the top of the app.
 
 ## Related content
 

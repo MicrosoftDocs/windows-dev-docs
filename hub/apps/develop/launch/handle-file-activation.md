@@ -127,6 +127,6 @@ The files that you receive could come from an untrusted source. We recommend tha
 
 ## Related content
 
-- [Association launching sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
+- [Windows App SDK activation sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Activation/cs2/cs-winui-packaged/CsWinUiDesktopActivation)
 - [Launch the default app for a file](launch-the-default-app-for-a-file.md)
 - [Handle URI activation](handle-uri-activation.md)
