@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 05/29/2026
+ms.date: 06/02/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -33,6 +33,13 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
         [View downloads](../windows-sdk/downloads.md)
     :::column-end:::
 :::row-end:::
+
+---
+
+## Announced at Build
+
+- **Dev Configs for Windows**: Get from a fresh Windows install to a ready-to-code environment in minutes with curated, open-source configuration files for toolchains, OS settings, and shells — [Dev Configs for Windows](/windows/dev-configs/).
+- **Coreutils for Windows**: A collection of essential Unix-style command-line utilities, now available natively on Windows — [Coreutils overview](/windows/core-utils/overview).
 
 ---
 
