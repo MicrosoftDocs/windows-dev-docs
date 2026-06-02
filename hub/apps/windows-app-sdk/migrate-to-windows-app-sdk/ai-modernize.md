@@ -106,7 +106,7 @@ With the Learn MCP Server, Copilot fetches the current Windows App SDK notificat
 
 > *"Add a notification that tells the user when a background task completes."*
 
-Copilot will provide the Windows App SDK notification code. [App notifications work in both packaged and unpackaged apps](../../develop/notifications/) — no package identity is required.
+Copilot will provide the Windows App SDK notification code. [App notifications work in both packaged and unpackaged apps](../../develop/notifications/index.md) — no package identity is required.
 
 Ask Copilot to walk you through it:
 

@@ -2,14 +2,14 @@
 title: Dev Configs for Windows
 description: Get from a fresh Windows install to a ready-to-code environment in minutes with declarative WinGet Configuration files for toolchains, OS settings, and shells.
 ms.topic: overview
-ms.date: 05/27/2026
+ms.date: 06/02/2026
 ---
 
 # Dev Configs for Windows
 
-Dev Configs are a curated, open-source collection of configuration files that take a fresh Windows machine to a ready-to-code state with a single command. Each config is a declarative, idempotent file describing the packages, OS settings, and post-install steps for a specific scenario — a full developer workstation, a comfortable WSL shell, or a single language toolchain — so you can rebuild your environment on any machine without clicking through installers or maintaining custom scripts.
+Dev Configs are a curated, open-source collection of configuration files that take a fresh Windows machine to a ready-to-code state with a single command. Each config is a declarative file that is safe to re-run. It describes the packages, OS settings, and post-install steps for a specific scenario (a full developer workstation, a comfortable WSL shell, or a single language toolchain), so you can rebuild your environment on any machine without clicking through installers or maintaining custom scripts.
 
-The configs are maintained in the open at [github.com/microsoft/WindowsDeveloperConfig](https://github.com/microsoft/WindowsDeveloperConfig) and validated on every commit by CI on a clean Windows runner. The repo's README is the source of truth for current commands, file paths, options, and the full list of supported toolchains — this page stays intentionally high-level so it doesn't drift.
+The configs are open source at [github.com/microsoft/WindowsDeveloperConfig](https://github.com/microsoft/WindowsDeveloperConfig) and tested automatically whenever a change is made. For the latest commands, options, and full list of supported toolchains, see the repo README. This page covers the basics.
 
 <div class="buttons margin-top-xs margin-bottom-sm">
     <a class="button button-sm button-filled button-primary" href="https://github.com/microsoft/WindowsDeveloperConfig" target="_blank" rel="noopener">
@@ -20,7 +20,7 @@ The configs are maintained in the open at [github.com/microsoft/WindowsDeveloper
 
 ## Available configs
 
-Dev Configs come in three flavors. Pick the one that matches what you want — see the [repo README](https://github.com/microsoft/WindowsDeveloperConfig#readme) for the exact commands and options.
+Dev Configs come in three flavors. Pick the one that matches what you want. See the [repo README](https://github.com/microsoft/WindowsDeveloperConfig#readme) for the exact commands and options.
 
 ### Windows Dev Config
 
@@ -32,7 +32,7 @@ An interactive setup for a nicer Windows + WSL shell experience. The Windows sid
 
 ### Workloads (single language toolchains)
 
-If you just want one language stack — TypeScript, Python, .NET, Go, Java, Rust, PHP, WinForms, WinUI 3, and similar — each workload ships its own config plus a small shim that applies it and refreshes `PATH` in your current session. The current list and per-workload details live in the [repo README](https://github.com/microsoft/WindowsDeveloperConfig#-single-language-workloads).
+If you just want one language stack (TypeScript, Python, .NET, Go, Java, Rust, PHP, WinForms, WinUI 3, and similar), each workload ships its own config plus a small shim that applies it and refreshes `PATH` in your current session. The current list and per-workload details live in the [repo README](https://github.com/microsoft/WindowsDeveloperConfig#-single-language-workloads).
 
 ## Related content
 
