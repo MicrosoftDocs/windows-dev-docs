@@ -40,11 +40,11 @@ Besides choosing whether to install on Windows or WSL, there are additional choi
 For the most current information on installing NVM, see [Installing and Updating in the NVM repo on GitHub](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating).
 
 1. Open your Ubuntu command line (or distribution of your choice).
-1. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
+1. Install curl (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
 1. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash`
 
     > [!NOTE]
-    > Installing a newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For more information, see the [GitHub project page for the latest release information on NVM](https://github.com/nvm-sh/nvm).
+    > Installing a newer version of NVM using curl will replace the older one, leaving the version of Node you've used NVM to install intact. For more information, see the [GitHub project page for the latest release information on NVM](https://github.com/nvm-sh/nvm).
 
 1. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
 1. List which versions of Node are currently installed (should be none at this point): `nvm ls`

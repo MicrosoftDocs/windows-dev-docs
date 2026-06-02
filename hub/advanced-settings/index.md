@@ -10,9 +10,9 @@ ms.date: 01/22/2026
 
 The **Advanced** settings page in Windows (formerly known as **For Developers**) brings together settings that help developers and power users be more productive. It's an open-source project — contributions and feedback are welcome. Open it directly via **[System > Advanced](ms-settings:developers)** in Windows Settings.
 
-<div class="buttons margin-top-xs">
+<div class="buttons margin-top-xs margin-bottom-sm">
 	<a href="ms-settings:developers" class="button button-primary button-sm">Open Advanced Settings</a>
-	<a href="https://github.com/microsoft/windowsAdvancedSettings" class="button button-sm"><span class="icon docon docon-brand-github" role="img"></span><span>View on GitHub</span></a>
+	<a class="button button-sm button-filled button-primary" href="https://github.com/microsoft/windowsAdvancedSettings" target="_blank" rel="noopener"><span class="icon" aria-hidden="true"><span class="docon docon-brand-github"></span></span><span>Windows Advanced Settings on GitHub</span></a>
 </div>
 
 ## What's included
