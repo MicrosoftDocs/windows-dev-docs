@@ -59,15 +59,15 @@ End Sub
 ```
 
 ```cppwinrt
-void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& e)
 {
-    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    auto b{ sender.as<Microsoft::UI::Xaml::Controls::Button>() };
     // More logic to do here.
 }
 ```
 
 ```cpp
-void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
+void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Microsoft::UI::Xaml::RoutedEventArgs^ e) 
 {
     Button^ b = (Button^) sender;
     //more logic to do here...

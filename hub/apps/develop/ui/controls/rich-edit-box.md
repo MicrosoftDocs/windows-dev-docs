@@ -154,10 +154,10 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
 
 private void BoldButton_Click(object sender, RoutedEventArgs e)
 {
-    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
     if (selectedText != null)
     {
-        Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+        Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
         charFormatting.Bold = Windows.UI.Text.FormatEffect.Toggle;
         selectedText.CharacterFormat = charFormatting;
     }
@@ -165,10 +165,10 @@ private void BoldButton_Click(object sender, RoutedEventArgs e)
 
 private void ItalicButton_Click(object sender, RoutedEventArgs e)
 {
-    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
     if (selectedText != null)
     {
-        Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+        Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
         charFormatting.Italic = Windows.UI.Text.FormatEffect.Toggle;
         selectedText.CharacterFormat = charFormatting;
     }
@@ -176,16 +176,16 @@ private void ItalicButton_Click(object sender, RoutedEventArgs e)
 
 private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 {
-    Windows.UI.Text.ITextSelection selectedText = editor.Document.Selection;
+    Microsoft.UI.Text.ITextSelection selectedText = editor.Document.Selection;
     if (selectedText != null)
     {
-        Windows.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-        if (charFormatting.Underline == Windows.UI.Text.UnderlineType.None)
+        Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
+        if (charFormatting.Underline == Microsoft.UI.Text.UnderlineType.None)
         {
-            charFormatting.Underline = Windows.UI.Text.UnderlineType.Single;
+            charFormatting.Underline = Microsoft.UI.Text.UnderlineType.Single;
         }
         else {
-            charFormatting.Underline = Windows.UI.Text.UnderlineType.None;
+            charFormatting.Underline = Microsoft.UI.Text.UnderlineType.None;
         }
         selectedText.CharacterFormat = charFormatting;
     }

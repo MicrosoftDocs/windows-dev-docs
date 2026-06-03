@@ -173,7 +173,7 @@ namespace winrt::App1::implementation
     struct MainPage : MainPageT<MainPage>
     {
         ...
-        void showUpdatesButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void showUpdatesButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
     };
 }
 ```
