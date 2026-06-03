@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 06/02/2026
+ms.date: 06/03/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -43,6 +43,12 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **Intelligent Terminal**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/).
 - **WSL Containers**: A built-in way to create, run, and interact with Linux containers on Windows using a new CLI and API, coming soon to public preview — [WSL on GitHub](https://github.com/microsoft/wsl).
 - **Windows Development Skills**: Structured knowledge that enables AI agents to build native Windows apps end-to-end using WinUI 3 skills and WinApp CLI — [Get started with Windows Development Skills](https://aka.ms/winui-skills).
+
+---
+
+## Highlights – June 2026
+
+- **Inside MSIX – Staging: Sharing is Caring**: Deep dive on how MSIX staging works — pkgdir creation, ACL enforcement, and why the immutability guarantee lets the same staged package be safely shared across all users on the system. Part 1 of a series by Howard Kapustein, MSIX Principal Engineer — [Staging: Sharing is Caring](https://devblogs.microsoft.com/insidemsix/staging-sharing-is-caring/)
 
 ---
 
