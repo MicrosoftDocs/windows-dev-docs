@@ -2,10 +2,10 @@
 title: Moving from Mac (Unix) to Windows
 description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
 ms.topic: how-to
-ms.subservice: windows-nodejs
+ms.subservice: dev-environment
 keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC 
 ms.localizationpriority: medium
-ms.date: 04/17/2026
+ms.date: 06/04/2026
 ---
 
 # Guide for changing your dev environment from Mac to Windows
@@ -83,6 +83,17 @@ Windows has two primary command-line shells:
 
 1. **Windows Command Line (Cmd)** - Windows still ships the traditional Command Prompt (and Console - see below), providing compatibility with current and legacy MS-DOS-compatible commands and batch files. Cmd is useful when running existing or older batch files or command-line operations. However, learn and use PowerShell since Cmd is now in maintenance and won't receive any improvements or new features in the future.
 
+### Native Unix-style commands
+
+If you're coming from a Mac or Linux background, you'll find many familiar commands available natively on Windows without needing WSL:
+
+- **[Coreutils for Windows](../core-utils/overview.md)**: A native port of GNU Coreutils that brings commands like `ls`, `cat`, `cp`, `mv`, `grep`, `head`, `tail`, `wc`, `sort`, `uniq`, and more to Windows. Install via WinGet (`winget install uutils.coreutils`) or from GitHub. In PowerShell, built-in aliases may take precedence — use `ls.exe`, `cp.exe`, etc. to call the Coreutils versions directly. See the [full command list](../core-utils/commands.md).
+- **[sudo](../advanced-settings/sudo/index.md)**: Run commands with elevated privileges, just like on macOS. Available on Windows 11 24H2 and later — enable it in **Settings > For Developers**.
+- **[curl](../curl/index.md)** and **[tar](../tar/index.md)**: Available natively for downloading files and working with archives.
+- **[Edit](../edit/index.md)**: A lightweight terminal-based text editor for quick edits from the command line. Included in Windows 11 starting with the September 2025 update, or install via WinGet (`winget install Microsoft.Edit`).
+
+These tools mean you can use your familiar Unix workflow directly in Windows without switching to WSL for basic tasks.
+
 ### Linux shells
 
 You can now install Windows Subsystem for Linux (WSL) to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL provides the kind of environment most familiar to Mac users. For example, you use **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide](/windows/wsl/install). Linux distributions that you can install on Windows with WSL include:
@@ -117,9 +128,11 @@ In addition to many third-party offerings, Microsoft provides two terminals. The
 | Settings and Preferences | System Preferences | Settings |
 | Task manager | Activity Monitor | Task Manager |
 | Disk formatting | Disk Utility | Disk Management |
-| Text editing | TextEdit | Notepad |
+| Text editing | TextEdit | Notepad or [Edit](../edit/index.md) (terminal) |
 | Event viewing | Console | Event Viewer |
 | Find files/apps | Command+Space | Windows key |
-| Package manager | Homebrew | [WinGet](/windows/package-manager/winget/) |
+| Package manager | Homebrew | [WinGet](/windows/package-manager/) |
+| Developer storage | N/A | [Dev Drive](../dev-drive/index.md) |
+| Unix CLI tools | Built-in (ls, cat, grep, etc.) | [Coreutils](../core-utils/overview.md) + [sudo](../advanced-settings/sudo/index.md) |
 | Window management | Mission Control | Snap Layouts (WindowsKey+Z) |
 | Productivity utilities | N/A | [PowerToys](../powertoys/index.md) |
