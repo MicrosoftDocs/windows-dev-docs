@@ -1,7 +1,7 @@
 ---
 title: Publish Command Palette extensions
-description: Learn about the different ways to publish and distribute your Command Palette extensions, including WinGet, Microsoft Store, and self-hosting.
-ms.date: 04/10/2026
+description: Learn about the different ways to publish and distribute your Command Palette extensions, including WinGet and the Microsoft Store.
+ms.date: 06/04/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to understand my options for publishing a Command Palette extension.
@@ -19,7 +19,6 @@ Once your Command Palette extension is built and tested, you need to distribute 
 | :--- | :--- | :--- |
 | **WinGet** | ✅ Yes | WinGet manifest with `windows-commandpalette-extension` tag |
 | **Microsoft Store** | ✅ Yes | Partner Center account, MSIX package |
-| **Self-hosted** (e.g. GitHub Releases) | ❌ Manual | Installer hosted on your own infrastructure |
 
 ### Microsoft Store (recommended)
 
@@ -33,13 +32,9 @@ Publishing to [WinGet](publish-extension-winget.md) makes your extension discove
 
 [Get started publishing to WinGet](publish-extension-winget.md)
 
-### Self-hosted
-
-You can also distribute your extension through your own channels, such as a GitHub Releases page, a personal website, or any other download link. This gives you full control over distribution but requires users to manually download and install your extension. There's no automatic update mechanism with this approach.
-
 ## List your extension in the Gallery
 
-Regardless of how you distribute your extension, you can list it in the **Command Palette Extension Gallery** so users can discover it from within Command Palette. The Gallery is a curated directory — it links to your extension's install source (WinGet, Store, or direct download) but doesn't host the extension itself.
+Regardless of which channel you publish to, you can list your extension in the **Command Palette Extension Gallery** so users can discover it from within Command Palette. The Gallery is a curated directory — it links to your extension's install source (WinGet or the Microsoft Store) but doesn't host the extension itself.
 
 For more information, see [Extension Gallery](extension-gallery.md).
 

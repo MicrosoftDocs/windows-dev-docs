@@ -1,7 +1,7 @@
 ---
 title: Making your extension discoverable in Command Palette
 description: Learn how to list your Command Palette extension in the Extension Gallery so users can discover it from within Command Palette settings.
-ms.date: 04/10/2026
+ms.date: 06/04/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to list my extension in the Command Palette Extension Gallery.
@@ -13,7 +13,7 @@ The Extension Gallery is a curated directory of Command Palette extensions that 
 
 :::image type="content" source="../images/command-palette/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
 
-The Gallery itself doesn't host extensions. Instead, it links to your extension's install source — whether that's [WinGet](publish-extension-winget.md), the [Microsoft Store](publish-extension-store.md), or a direct download URL (such as a GitHub Releases page). When a user installs your extension from the Gallery, Command Palette uses the install source you specified.
+The Gallery itself doesn't host extensions. Instead, it links to your extension's install source — either [WinGet](publish-extension-winget.md) or the [Microsoft Store](publish-extension-store.md). When a user installs your extension from the Gallery, Command Palette uses the install source you specified.
 
 ## How to list your extension
 
