@@ -1,6 +1,6 @@
 ---
 ms.topic: include
-ms.date: 01/27/2026
+ms.date: 06/04/2026
 ---
 
 :::row:::
@@ -15,9 +15,9 @@ ms.date: 01/27/2026
        Learn how to use Windows platform features outside of WinUI.
     :::column-end:::
     :::column:::
-       [![Platform icon](../apps/develop/images/tile-platforms.png)](../apps/develop/platform/csharp-winrt/index.md)<br>
-        **[Platform](../apps/develop/platform/csharp-winrt/index.md)**<br>
-        Deep-dive into technologies like XAML and WinRT.
+       [![Package and deploy icon](../apps/develop/images/tile-platforms.png)](../apps/package-and-deploy/index.md)<br>
+        **[Package and deploy](../apps/package-and-deploy/index.md)**<br>
+        Package your app with MSIX and deploy it to users.
     :::column-end:::
 :::row-end:::
 :::row:::
@@ -32,8 +32,8 @@ ms.date: 01/27/2026
        Tools, samples, and AI-powered resources to help you build apps faster.
     :::column-end:::
     :::column:::
-        [![Tutorials icon](../apps/develop/images/tile-tutorials.png)](../apps/winui/winui3/desktop-winui3-app-with-basic-interop.md)<br>
-        **[Tutorials](../apps/winui/winui3/desktop-winui3-app-with-basic-interop.md)**<br>
-       Follow step-by-step guides to learn by building.
+        [![What's new icon](../apps/develop/images/tile-tutorials.png)](../apps/windows-app-sdk/release-channels.md)<br>
+        **[What's new](../apps/windows-app-sdk/release-channels.md)**<br>
+       See the latest features and updates in the Windows App SDK.
     :::column-end:::
 :::row-end:::
