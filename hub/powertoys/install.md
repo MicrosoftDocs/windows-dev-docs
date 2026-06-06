@@ -35,7 +35,7 @@ To install PowerToys using a Windows executable file:
 4. Once downloaded, open the executable file and follow the installation prompts.
 
 Notes: There're two kinds of installers you could choose.
-1.The "Per User"  channel means you will install this app for currect user, while other users on this computer couldn't access and use. The installation path of this method is located in "%userprofile%\AppData\Local\Programs".
+1.The "Per User"  channel means you will install this app for current user, while other users on this computer couldn't access and use. The installation path of this method is located in "%userprofile%\AppData\Local\Programs".
 2.The "Machine wide" channel means this app will be installed for all users on your computer, which means all of them could access and use this app. The path of the app is located in "%ProgramFiles%". For the majority of x86-64 and ARM64 Windows devices, this EnvVar commonly points to "C:\Program Files" path.
 3.Whatever the kind of the installer you choose, you will receive app updates normally and enjoy every new features.
 
