@@ -190,16 +190,10 @@ The currently available utilities include:
         **[Screen Ruler](screen-ruler.md)**<br>
         Quickly measure pixels on your screen based on image edge detection.
     :::column-end:::
-:::row-end:::
-
-### Shortcut Guide
-
-:::row:::
     :::column:::
-        [![A screenshot of the Shortcut Guide PowerToys utility for Windows.](../images/pt-shortcut-guide.png)](shortcut-guide.md)
-    :::column-end:::
-    :::column span="2":::
-        [Windows key shortcut guide](shortcut-guide.md) appears when you press <kbd>⊞ Win</kbd>+<kbd>Shift</kbd>+<kbd>/</kbd> (or as we like to think, <kbd>⊞ Win</kbd>+<kbd>?</kbd>) and shows the available shortcuts for the current state of the desktop. You can also use it by pressing and holding <kbd>⊞ Win</kbd>.
+       [![Shortcut Guide icon](iimages/shortcut-guide/shortcut-guide.png)](shortcut-guide.md)<br>
+        **[Shortcut Guide V2](shortcut-guide.md)**<br>
+        Show a overview of keyboard shortcuts for your current state of the desktop.
     :::column-end:::
 :::row-end:::
 
