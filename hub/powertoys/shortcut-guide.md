@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, File Explorer]
 
 The PowerToys Shortcut Guide displays shortcuts for Windows and third-party apps.
 
-:::image type="content" source="../images/pt-shortcut-guide.png" alt-text="Screenshot of PowerToys Shortcut Guide showing shortcuts for window management and virtual desktops.":::
+:::image type="content" source="images/shortcut-guide/shortcut-guide.png" alt-text="Screenshot of PowerToys Shortcut Guide showing shortcuts for window management and virtual desktops.":::
 
 ## Currently supported applications
 
@@ -59,7 +59,7 @@ Invoking the Shortcut Guide is as simple as pressing the shortcut (by default: W
 
 The Overview page shows some recommended shortcuts, your pinned shortcuts, and if it's the Windows overview page, then Taskbar shortcuts (described below) are also shown.
 
-:::image type="content" source="../images/pt-shortcut-guide-main-window.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the overview page with pinned shortcuts.":::
+:::image type="content" source="images/shortcut-guide/main-window.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the overview page with pinned shortcuts.":::
 
 On the left-hand side you can choose between all the currently supported applications that are running and view their shortcuts. On the top you can choose between different categories of shortcuts (like Window Management, Virtual Desktops, etc.) of the currently selected application.
 
@@ -72,14 +72,14 @@ To close Shortcut Guide either press the close button in the top right corner, p
 
 If the overview page of Windows is shown, the Taskbar shortcuts are also displayed at the bottom of the window. These shortcuts allow quick access to the pinned applications on the Taskbar by pressing a shortcut (for instance <kbd>Win + [Number]</kbd>), where <kbd>[Number]</kbd> corresponds to the position of the application on the Taskbar (from left to right, starting with 1). These numbers are displayed on top of the application icons.
 
-:::image type="content" source="../images/pt-shortcut-guide-taskbar-numbers.png" alt-text="Screenshot of PowerToys Shortcut Guide showing taskbar shortcuts at the bottom of the window.":::
+:::image type="content" source="images/shortcut-guide/taskbar-numbers.png" alt-text="Screenshot of PowerToys Shortcut Guide showing taskbar shortcuts at the bottom of the window.":::
 
 ### Pinning/Unpinning shortcuts
 
 You can right-click on any shortcut and select "Pin" to pin it to the overview page of the currently selected application or "Unpin" to remove it from the overview page.
 
-:::image type="content" source="../images/pt-shortcut-guide-pin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to pin a shortcut.":::
-:::image type="content" source="../images/pt-shortcut-guide-unpin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to unpin a shortcut.":::
+:::image type="content" source="images/shortcut-guide/pin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to pin a shortcut.":::
+:::image type="content" source="images/shortcut-guide/unpin.png" alt-text="Screenshot of PowerToys Shortcut Guide showing the context menu to unpin a shortcut.":::
 
 ## Settings
 
