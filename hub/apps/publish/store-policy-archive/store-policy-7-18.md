@@ -1,6 +1,6 @@
 ---
 title: Microsoft Store Policies version 7.18
-description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
+description: "Archived version 7.18 of the Microsoft Store Policies. Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store."
 ms.date: 09/10/2025
 ms.topic: article
 keywords: store policies agreement

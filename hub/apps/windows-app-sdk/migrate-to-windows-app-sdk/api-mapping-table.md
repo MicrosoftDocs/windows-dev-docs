@@ -2,14 +2,14 @@
 title: Mapping UWP APIs to the Windows App SDK
 description: This topic provides a mapping of UWP APIs and libraries to their Windows App SDK equivalents.
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, api, class, mapping, mappings, uwp
 ms.localizationpriority: medium
 ---
 
 # Mapping UWP APIs and libraries to the Windows App SDK
 
-This topic provides a mapping of UWP APIs to their Windows App SDK equivalents. In some cases the mapping isn't one-to-one; either platform might have more or less functionality than the other for a namespace or class.
+This topic provides a mapping of UWP APIs to their Windows App SDK equivalents. In some cases the mapping isn't one-to-one; either platform might have more or less functionality than the other for a namespace or class. For a condensed quick-reference version of the most common substitutions, see [Migrate a UWP app to WinUI 3 with AI assistance](../../develop/ai-assisted/migrate/uwp-to-winui.md#api-substitution-table).
 
 There are differences in the names of namespaces and classes (including UI controls) between the two platforms. In many cases, it's as easy as changing a namespace name and then your code will compile. Sometimes, a class or API name has changed as well as the namespace name. Other times, the mapping takes a bit more work, and in rare cases requires a change in approach.
 
@@ -46,7 +46,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Core**) [**CoreWindow.SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) event | (**Microsoft.UI.Windowing**) [**AppWindowChangedEventArgs.DidSizeChange**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowchangedeventargs.didsizechange) method |
 | (**Windows.UI.Core**) [**SystemNavigationManager**](/uwp/api/Windows.UI.Core.SystemNavigationManager) class (global back button) | Not supported. Implement a back button within your own UI. See [A Windows App SDK migration of the UWP PhotoLab sample app (C#)](case-study-1.md). |
 | (**Windows.UI.Core**) [**WindowSizeChangedEventArgs**](/uwp/api/windows.ui.core.windowsizechangedeventargs) class | (**Microsoft.UI.Xaml**) [**WindowSizeChangedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.windowsizechangedeventargs) class; for example, in a handler for (**Microsoft.UI.Xaml**) [**Window.SizeChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged). |
-| (**Windows.UI.Popups**) [**MessageDialog**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) class | Supported, but you must use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface. See [MessageDialog, and Pickers](guides/winui3.md#messagedialog-and-pickers). |
+| (**Windows.UI.Popups**) [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog) class | Supported, but you must use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) interface. See [MessageDialog, and Pickers](guides/winui3.md#messagedialog-and-pickers). |
 | (**Windows.UI.Text.Core**) [**CoreTextServicesManager**](/uwp/api/windows.ui.text.core.coretextservicesmanager) class | Supported only on Windows 11. |
 | (**Windows.UI.ViewManagement**) [**AccessibilitySettings.HighContrastChanged**](/uwp/api/windows.ui.viewmanagement.accessibilitysettings.highcontrastchanged) event | (**Microsoft.UI.System**) [**ThemeSettings.Changed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.system.themesettings.changed) event |
 | (**Windows.UI.ViewManagement**) [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview) class | (**Microsoft.UI.Windowing**) [**AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class |

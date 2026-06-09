@@ -1,6 +1,6 @@
 ---
 title: Use the Windows App SDK runtime for apps packaged with external location or unpackaged
-description: If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore.
+description: If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI, App Lifecycle, MRT Core, and DWriteCore.
 ms.topic: article
 ms.date: 08/29/2025
 ms.localizationpriority: medium
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI 3, App Lifecycle, MRT Core, and DWriteCore. Your app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK.
 
-* Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>`). For a demonstration, see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md).
+* Beginning in Windows App SDK 1.0, that can be done automatically when your app starts via auto-initialization (set the project property `<WindowsPackageType>None</WindowsPackageType>`). For a demonstration, see [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md).
 * But if you have advanced needs (such as handling errors by showing your own custom UI or logging, or if you need to load a version of the Windows App SDK that's different from the version you built with), then continue reading this topic. In those scenarios, instead of auto-initialization, you can call the bootstrapper API explicitly.
 
 Either of the two techniques above allows an app that doesn't use MSIX to take a dynamic dependency on the Windows App SDK at run time.

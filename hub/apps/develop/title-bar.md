@@ -19,14 +19,11 @@ See the [Title bar](../design/basics/titlebar-design.md) design article for guid
 > [See the Windows 11 Fluent Design guidance for title bar](../design/basics/titlebar-design.md)
 
 > [!IMPORTANT]
-> This article shows how to customize the title bar for apps that use the Windows App SDK, either with or without WinUI 3. For apps that use UWP and WinUI 2, see [Title bar customization](/windows/uwp/ui-input/title-bar) for UWP.
-
-> [!IMPORTANT]
 > A new [Title bar](../design/controls/title-bar.md) control has been added in Windows App SDK 1.7. It simplifies the process of title bar customization.
 
 > [!div class="checklist"]
 >
-> - **Applies to**: Windows App SDK, WinUI 3 desktop apps
+> - **Applies to**: Windows App SDK, WinUI desktop apps
 > - **Important APIs**: [AppWindow.TitleBar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.titlebar), [AppWindowTitleBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow), [Microsoft.UI.Xaml.Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [Window.ExtendsContentIntoTitleBar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar), [Window.SetTitleBar method](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar)
 
 ## Title bar components
@@ -46,16 +43,16 @@ This list describes the components of the standard title bar.
 
 Windowing functionality in the [Windows App SDK](./index.md) is through the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which is based on the Win32 HWND model. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows, including customization of the title bar. You can modify the default title bar that Windows provides so that it blends with the rest of your UI, or extend your app canvas into the title bar area and provide your own title bar content.
 
-Windowing functionality in [WinUI 3](./index.md) is through the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class, which is also based on the Win32 HWND model. For XAML apps that use WinUI 3, XAML Window APIs provide a simpler way to customize the title bar, while still letting you access the AppWindow APIs when needed.
+Windowing functionality in [WinUI](./index.md) is through the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class, which is also based on the Win32 HWND model. For XAML apps that use WinUI, XAML Window APIs provide a simpler way to customize the title bar, while still letting you access the AppWindow APIs when needed.
 
 ### How to work with AppWindow
 
-You can use AppWindow APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI 3 - and you can adopt them incrementally, using only the APIs you need.
+You can use AppWindow APIs with any UI framework that the Windows App SDK supports - Win32, WPF, WinForms, or WinUI - and you can adopt them incrementally, using only the APIs you need.
 
-If you use WinUI 3 XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, the XAML Window and AppWindow use the same [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) object for title bar customization. Use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the title bar customization APIs.
+If you use WinUI XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, the XAML Window and AppWindow use the same [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) object for title bar customization. Use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the title bar customization APIs.
 To access additional features of the title bar, you can use the AppWindow APIs from your XAML Window like this: `AppWindow.TitleBar.ForegroundColor = Colors.White;`.
 
-If you're not using WinUI 3 1.3 or later, use interop APIs to get the AppWindow and use the AppWindow APIs to customize the title bar. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](/windows/apps/develop/ui-input/manage-app-windows#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
+If you're not using WinUI 1.3 or later, use interop APIs to get the AppWindow and use the AppWindow APIs to customize the title bar. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](/windows/apps/develop/ui-input/manage-app-windows#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
 ## How much to customize the title bar
 
@@ -103,7 +100,7 @@ public MainWindow()
 }
 ```
 
-To change the window title using AppWindow APIs, set the [AppWindow.Title](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title) property to a single-line text value, as shown here. This example shows how to use interop APIs to get the AppWindow, which is needed of your app does not use WinUI 3 1.3 or later.
+To change the window title using AppWindow APIs, set the [AppWindow.Title](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.title) property to a single-line text value, as shown here. This example shows how to use interop APIs to get the AppWindow, which is needed of your app does not use WinUI 1.3 or later.
 
 ```csharp
 using Microsoft.UI;           // Needed for WindowId.
@@ -141,7 +138,7 @@ This example shows how to get an instance of [AppWindowTitleBar](/windows/window
 
 ```csharp
 // Assumes "this" is a XAML Window. In projects that don't use 
-// WinUI 3 1.3 or later, use interop APIs to get the AppWindow.
+// WinUI 1.3 or later, use interop APIs to get the AppWindow.
 AppWindow m_AppWindow = this.AppWindow;
 
 private bool SetTitleBarColors()
@@ -238,7 +235,7 @@ public MainWindow()
 > [!CAUTION]
 > `ExtendsContentIntoTitleBar` shows in the XAML IntelliSense for `Window`, but setting it in XAML causes an error. Set this property in code instead.
 
-This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [AppWindowTitleBar.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`. This example shows how to use interop APIs to get the AppWindow, which is needed if your app does not use WinUI 3 1.3 or later.
+This example shows how to get the [AppWindowTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar) and set the [AppWindowTitleBar.ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.extendscontentintotitlebar) property to `true`. This example shows how to use interop APIs to get the AppWindow, which is needed if your app does not use WinUI 1.3 or later.
 
 ```csharp
 using Microsoft.UI;           // Needed for WindowId.
@@ -379,7 +376,7 @@ public sealed partial class MainWindow : Window
         this.InitializeComponent();
 
         // Assumes "this" is a XAML Window. In projects that don't use 
-        // WinUI 3 1.3 or later, use interop APIs to get the AppWindow.
+        // WinUI 1.3 or later, use interop APIs to get the AppWindow.
         m_AppWindow = this.AppWindow;
         AppTitleBar.Loaded += AppTitleBar_Loaded;
         AppTitleBar.SizeChanged += AppTitleBar_SizeChanged;
@@ -446,9 +443,9 @@ public sealed partial class MainWindow : Window
 ```
 
 > [!WARNING]
-> `AppWindow` uses physical pixels for compatibility with UI frameworks that don't use logical coordinates. If you use WPF or WinUI 3, `RightInset`, `LeftInset`, and the values used to calculate regions need to be adjusted if the display scale is not 100%. In this example, we get a `scaleAdjustment` value to account for the display scale setting.
+> `AppWindow` uses physical pixels for compatibility with UI frameworks that don't use logical coordinates. If you use WPF or WinUI, `RightInset`, `LeftInset`, and the values used to calculate regions need to be adjusted if the display scale is not 100%. In this example, we get a `scaleAdjustment` value to account for the display scale setting.
 >
-> - For WinUI 3, use the [XamlRoot.RasterizationScale](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale) property to get the scale adjustment.
+> - For WinUI, use the [XamlRoot.RasterizationScale](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale) property to get the scale adjustment.
 > - For WPF, you can handle the [Window.DpiChanged](/dotnet/api/system.windows.window.dpichanged) event to get the [NewDpi](/dotnet/api/system.windows.dpichangedeventargs.newdpi) value and calculate the scale adjustment.
 
 ### System caption buttons
@@ -722,7 +719,7 @@ public sealed partial class MainWindow : Window
         this.InitializeComponent();
 
         // Assumes "this" is a XAML Window. In projects that don't use 
-        // WinUI 3 1.3 or later, use interop APIs to get the AppWindow.
+        // WinUI 1.3 or later, use interop APIs to get the AppWindow.
         m_AppWindow = this.AppWindow;
         m_AppWindow.Changed += AppWindow_Changed;
         Activated += MainWindow_Activated;

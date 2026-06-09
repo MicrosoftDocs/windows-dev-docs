@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Launch the default app for a file
 
-Learn how to launch the default app for a file from your WinUI, Universal Windows Platform (UWP), or other desktop app. Many apps need to work with files that they can't handle themselves. For example, e-mail apps receive a variety of file types and need a way to launch these files in their default handlers. These steps show how to use the [Windows.System.Launcher](/uwp/api/Windows.System.Launcher) Windows Runtime (WinRT) API to launch the default handler for a file that your app can't handle itself.
+Learn how to launch the default app for a file from your WinUI or other desktop app. Many apps need to work with files that they can't handle themselves. For example, e-mail apps receive a variety of file types and need a way to launch these files in their default handlers. These steps show how to use the [Windows.System.Launcher](/uwp/api/Windows.System.Launcher) Windows Runtime (WinRT) API to launch the default handler for a file that your app can't handle itself.
 
 ## Important APIs
 
@@ -19,7 +19,7 @@ The following APIs are featured in this topic:
 - [Windows.System.Launcher.LaunchFileAsync](/uwp/api/windows.system.launcher.launchfileasync)
 
 > [!NOTE]
-> Unless noted otherwise, all the WinRT APIs used in this topic can be used in both UWP apps, WinUI apps, and other desktop apps. To read more about enabling your desktop app to work with WinRT APIs, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+> Unless noted otherwise, all the WinRT APIs used in this topic can be used in both WinUI apps and other desktop apps. To read more about enabling your desktop app to work with WinRT APIs, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## Get the file object
 
@@ -105,7 +105,7 @@ void MainPage::DefaultLaunch()
 {
    auto installFolder = Windows::ApplicationModel::Package::Current->InstalledLocation;
 
-   concurrency::task<Windows::Storage::StorageFile^getFileOperation(installFolder->GetFileAsync("images\\test.png"));
+   concurrency::task<Windows::Storage::StorageFile^> getFileOperation(installFolder->GetFileAsync("images\\test.png"));
    getFileOperation.then([](Windows::Storage::StorageFile^ file)
    {
       if (file != nullptr)
@@ -462,7 +462,7 @@ void MainPage::DefaultLaunch()
 
 ## Remarks
 
-Your app can't select the app that is launched. The user determines which app is launched. The user can select either a UWP app or a Windows desktop app.
+Your app can't select the app that is launched. The user determines which app is launched. The user can select either a WinUI app or a Windows desktop app.
 
 When launching a file, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all file launches directly to the UI of your app. Most likely, the user must always take some action to initiate a file launch.
 

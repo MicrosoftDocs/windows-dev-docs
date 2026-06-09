@@ -1,7 +1,7 @@
 ---
 title: PowerToys Command Palette Utility for Windows
 description: Learn how to use PowerToys Command Palette, a quick launcher for Windows power users. Access apps, commands, and tools instantly with customizable shortcuts and extensions.
-ms.date: 08/20/2025
+ms.date: 04/10/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: Learn about the PowerToys Command Palette utility and how to use it.
@@ -9,48 +9,54 @@ no-loc: [PowerToys, Windows, Insider]
 
 # PowerToys Command Palette utility
 
-PowerToys Command Palette is a quick launcher utility that allows you to easily access all of your most frequently used commands, apps, and development tools from a single, fast solution. This customizable and extensible tool is designed for Windows power users and serves as the successor to [PowerToys Run](../run.md).
+PowerToys Command Palette puts everything you need just a keystroke away. Launch apps, run commands, search files, browse the web, manage system services, and more — all from a single, blazing-fast interface. Built for Windows power users, Command Palette is fully customizable, deeply extensible, and designed to keep you in your flow.
 
-Command Palette, and all other PowerToys, can be enabled or disabled on the PowerToys settings Home page. To use the Command Palette, select <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing! *(Note that the keyboard shortcut can be changed in the settings window.)*
+Press <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. That's it.
 
 > [!IMPORTANT]
-> For this utility to work, the Command Palette must be enabled and running in the background.
+> Command Palette must be enabled and running in the background. You can enable or disable it from the PowerToys settings Home page, and change the activation shortcut in [Command Palette settings](settings.md).
 
-:::image type="content" source="../../images/pt-cmdpal-overview1.gif" alt-text="An animated GIF of PowerToys Command Palette interface showing web search and git information features in action.":::
+:::image type="content" source="../images/command-palette/cmdpal-overview1.gif" alt-text="An animated GIF of PowerToys Command Palette interface showing web search and git information features in action.":::
 
-## Features
+## What you can do
 
-Command Palette features include:
-
-- Search for applications, folders or files
-- Run commands using `>` (for example, `> cmd` will launch Command prompt, or `> Shell:startup` will open the Windows startup folder)
-- Switch between open windows (previously known as [Window Walker](https://github.com/betsegaw/windowwalker/))
-- Do a simple calculation using calculator
-- Add bookmarks for frequently visited webpages
-- Execute system commands
-- Open web pages or start a web search
-- Rich extensions to add additional commands and features easily
-
-## Settings
-
-You can open the settings page by using the **Settings** button in the Command Palette:
-
-:::image type="content" source="../../images/command-palette/cmdpal-settings.png" alt-text="An animated GIF of Command Palette interface with the Settings button highlighted in red.":::
-
-The following general options are available on the Command Palette settings page.
-
-| Setting | Description |
+| Capability | How to use it |
 | :--- | :--- |
-| Activation key | Define the keyboard shortcut to show/hide the Command Palette. |
-| Go home when activated | When the Command Palette is activated it will return to the home page. |
-| Highlight search on activate | The previous search text will be selected when the Command Palette is opened. |
-| Preferred monitor position | Choose the preferred monitor for the Command Palette to open on. The default setting is **Monitor with mouse cursor**. |
-| Show app details | App details are automatically expanded when displaying an app as a result. |
-| Backspace goes back | Typing <kbd>Backspace</kbd> will take you back to the previous page. |
-| Single-click activation | Activate list items with a single click. When disabled, single clicking selects the item and double clicking activates it. |
+| **Launch apps** | Start typing the name of any app and press <kbd>Enter</kbd> to launch it. |
+| **Run commands** | Type `>` followed by a command (for example, `> cmd` or `> Shell:startup`). |
+| **Search files and folders** | Navigate to `Search files` or type `file` followed by a space. |
+| **Search the web** | Type `??` followed by your query to search with your default browser. |
+| **Calculate** | Type a math expression like `23*47` or `sqrt(256)`, or type `=` followed by a space. |
+| **Navigate Windows Settings** | Type `$` followed by a settings page name (for example, `$ display`). |
+| **Find and install apps with WinGet** | Navigate to `Search WinGet` to discover and install apps. |
+| **Switch windows** | Quickly switch between open windows without <kbd>Alt</kbd>+<kbd>Tab</kbd>. |
+| **Access clipboard history** | Browse and paste from your recent clipboard entries. |
+| **Look up time and date** | View the current time and date in various formats. |
+| **Manage Windows Services** | Start, stop, or restart system services directly from the palette. |
+| **Open Windows Terminal profiles** | Launch any configured Terminal profile or run commands in a specific profile. |
+| **Query the Windows Registry** | Look up and manage Registry entries without opening regedit. |
+| **Connect to Remote Desktop** | Start Remote Desktop sessions quickly. |
+| **Monitor system performance** | Check CPU, memory, and other performance metrics at a glance. |
+| **Execute system commands** | Restart your computer, empty the Recycle Bin, and more. |
+| **Access PowerToys modules** | Jump to other PowerToys utilities directly from Command Palette. |
+| **Customize your look** | Personalize with themes, backdrop effects, background images, and custom colors in [Settings](settings.md). |
+
+## Dock
+
+Pin your most-used commands to a persistent toolbar that stays visible on the edge of your screen. The [Dock](dock.md) gives you one-click access to frequently used commands and extensions without opening the full Command Palette.
+
+For more information, see [Command Palette Dock](dock.md).
+
+## Extensions
+
+Command Palette is built to be extended. There's a large and growing ecosystem of extensions that add new commands, tools, and integrations to your workflow.
+
+To learn more, see [Finding and installing extensions](finding-and-installing-extensions.md) and [Extension development overview](extensibility-overview.md).
 
 ## Related content
 
-- [PowerToys Run](../run.md)
-- [Extensibility overview](extensibility-overview.md)
+- [Command Palette Settings](settings.md)
+- [Command Palette Dock](dock.md)
+- [Finding and installing extensions](finding-and-installing-extensions.md)
+- [Extension development overview](extensibility-overview.md)
 - [Extension samples](samples.md)

@@ -82,7 +82,7 @@ For accessibility, the following table presents the text of the table shown in t
 | Subtitle | 20/28 epx | Large, Bolder |
 | Title | 28/36 epx | Extra Large, Bolder | 
 
-Segoe UI is the typeface used in Widgets and across Windows. The above type ramp includes the formulations of how to properly set the right styles in the Adaptive Cards Designer. Typeface styling should not deviate from the specified formulas above. For more information on using the Adaptive Cards Designer to create widget templates, see [Create a widget template with the Adaptive Card Designer](widgets-create-a-template.md).
+Segoe UI is the typeface used in Widgets and across Windows. The above type ramp includes the formulations of how to properly set the right styles in the Adaptive Cards Designer. Typeface styling should not deviate from the specified formulas above. For more information on using the Adaptive Cards Designer to create widget templates, see [Create a widget template with the Adaptive Cards Designer](../../develop/widgets/widgets-create-a-template.md).
 
 ![Two example widgets with the phrase "The quick brown fox jumped over the lazy dog" and the text "Hyperlink". The left image has dark text on a light background. The right image has light text on a dark background. The hyperlink text is blue in both images.](./images/widgets-designer-default-font-colors.png)
 

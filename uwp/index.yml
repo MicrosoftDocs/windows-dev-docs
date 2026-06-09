@@ -1,15 +1,14 @@
 ### YamlMime:Landing
 
 title: Universal Windows Platform documentation
-summary: Note UWP is still supported, but the preferred way to develop Windows apps is with WinUI and the Windows App SDK.
+summary: UWP is still supported, but the preferred way to develop Windows apps is with WinUI and the Windows App SDK.
 
 metadata:
   title: UWP Documentation - UWP app developer | Microsoft Docs
-  description: The Universal Windows Platform (UWP) lets you build apps for any Windows device—PCs, Xbox One, HoloLens, and more—and publish them to the Store.
+  description: The Universal Windows Platform (UWP) lets you build apps for any Windows device and publish them to the MicrosoftStore.
   ms.topic: landing-page
   ms.collection: collection
-  ms.date: 09/24/2019
-  ms.subservice: uwp-conceptual-docs
+  ms.date: 05/19/2026
   keywords: windows uwp, universal windows platform, Windows Runtime APIs, windows api, windows api ref, winrt api, windows api reference, uwp api, uwp api reference, develop uwp, design uwp, publish uwp
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -21,18 +20,35 @@ landingContent:
         links:
           - text: Learn the basics of UWP development
             url: get-started/index.md
-          - text: Start coding a UWP app
-            url: get-started/create-uwp-apps.md
+          - text: Get started with WinUI 2 for UWP
+            url: get-started/winui2/getting-started.md
       - linkListType: concept
         links:
-          - text: UWP vs other Windows app platforms
-            url: /windows/apps/desktop/choose-your-platform
-      - linkListType: learn
-        links:
-          - text: Browse Windows courses on Microsoft Learn
-            url: /training/browse/?products=windows&resource_type=module
           - text: What's a UWP app?
             url: get-started/universal-application-platform-guide.md
+          - text: UWP vs other Windows app platforms
+            url: /windows/apps/get-started/
+
+  - title: Develop
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Build UWP apps for Windows
+            url: develop/index.md
+          - text: Build UWP games for Windows
+            url: gaming/getting-started.md
+      - linkListType: reference
+        links:
+          - text: Browse API reference docs for UWP
+            url: /uwp/
+          - text: Windows Runtime (WinRT) namespaces
+            url: /uwp/api/  
+          - text: WinUI 2 namespaces
+            url: /windows/winui/api/
+      - linkListType: learn
+        links:
+          - text: Explore UWP code samples
+            url: https://github.com/microsoft/Windows-universal-samples
 
   - title: Latest features
     linkLists:
@@ -40,8 +56,8 @@ landingContent:
         links:
           - text: Learn about the newest UWP features
             url: ./whats-new/windows-10-build-19041.md
-          - text: Explore highlighted features of Windows 10
-            url: https://developer.microsoft.com/windows/windows-10-for-developers
+          - text: What's new for developers
+            url: /windows/apps/whats-new/whats-new-for-developers
       - linkListType: concept
         links:
           - text: Check out the latest in the C# language
@@ -49,24 +65,16 @@ landingContent:
           - text: Explore new features in Visual Studio
             url: /visualstudio/ide/
 
-  - title: Develop
+  - title: Downloads
     linkLists:
-      - linkListType: overview
-        links:
-          - text: Build UWP apps for Windows 10
-            url: develop/index.md
-          - text: Build UWP games for Xbox and Windows 10
-            url: gaming/getting-started.md
-      - linkListType: reference
-        links:
-          - text: Browse API reference docs for UWP
-            url: /uwp/
-          - text: Explore Windows code samples
-            url: https://developer.microsoft.com/windows/samples
-      - linkListType: download
-        links:
-          - text: Get Windows development tools
-            url: https://developer.microsoft.com/windows/downloads
+    - linkListType: download
+      links:        
+      - text: Get Visual Studio
+        url: https://visualstudio.microsoft.com/downloads/
+      - text: Get the Windows SDK
+        url: https://developer.microsoft.com/windows/downloads
+      - text: Get Windows development tools
+        url: /windows/dev-environment/
 
   - title: Design
     linkLists:
@@ -76,8 +84,8 @@ landingContent:
             url: /windows/apps/design/
       - linkListType: reference
         links:
-          - text: Add UI controls with the Windows UI Library
-            url: /uwp/toolkits/winui/
+          - text: Add UI controls with WinUI 2 for UWP
+            url: get-started/winui2/index.md
 
   - title: Publish
     linkLists:
@@ -98,7 +106,7 @@ landingContent:
         links:
           - text: "@WindowsDocs on Twitter"
             url: https://twitter.com/WindowsDocs
-          - text: OneDevMinute on YouTube
+          - text: OneDevMinute videos
             url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
           - text: Windows developer support
             url: https://developer.microsoft.com/windows/support

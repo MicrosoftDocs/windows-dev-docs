@@ -2,8 +2,9 @@
 title: Windows App SDK deployment overview
 description: There are two ways in which you can deploy the Windows App SDK&mdash;framework-dependent or self-contained.
 ms.topic: concept-article
-ms.date: 11/02/2023
+ms.date: 05/29/2026
 ms.localizationpriority: medium
+keywords: windows app sdk deployment, framework-dependent, self-contained, deploy winui 3, windows app sdk self-contained
 ---
 
 # Windows App SDK deployment overview
@@ -11,7 +12,7 @@ ms.localizationpriority: medium
 There are two ways in which you can deploy the Windows App SDK:
 
 * **Framework-dependent**. Your app depends on the Windows App SDK runtime and/or Framework package being present on the target machine. Framework-dependent deployment is the default deployment mode of the Windows App SDK for its efficient use of machine resources and serviceability.
-* **Self-contained**. Your app carries the Windows App SDK dependencies with it. Self-contained deployment is a deployment option that was introduced in Windows App SDK 1.1 Preview 1.
+* **Self-contained**. Your app carries the Windows App SDK dependencies with it, eliminating the need for a separate runtime installation on the target machine.
 
 This topic also uses the terms *packaged app*, *packaged app with external location*, and *unpackaged app*. For explanations of those terms, see the [Deployment overview](./index.md).
 
@@ -20,7 +21,10 @@ This topic also uses the terms *packaged app*, *packaged app with external locat
 | **Advantages** | *Small deployment*. Only your app and its other dependencies are distributed. The Windows App SDK runtime and Framework package are installed automatically by framework-dependent apps that are packaged; or as part of the Windows App SDK runtime installer by framework-dependent apps that are either packaged with external location or unpackaged.<br/><br/>*Serviceable*. Servicing updates to the Windows App SDK are installed automatically via the Windows App SDK Framework package without any action required of the app. | *Control Windows App SDK version*. You control which version of the Windows App SDK is deployed with your app. Servicing updates of the Windows App SDK won't impact your app unless you rebuild and redistribute it.<br/><br/>*Isolated from other apps*. Apps and users can't uninstall your Windows App SDK dependency without uninstalling your entire app.<br/><br/>*Xcopy deployment*. Since the Windows App SDK dependencies are carried by your app, you can deploy your app by simply xcopy-ing your build output, without any additional installation requirements. |
 | **Disadvantages** | *Additional installation dependencies*. Requires installation of the Windows App SDK runtime and/or Framework package, which can add complexity to app installation.<br/><br/>*Shared dependencies*. Risk that shared dependencies are uninstalled. Apps or users uninstalling the shared components can impact the user experience of other apps that share the dependency.<br/><br/>*Compatibility risk*. Risk that servicing updates to the Windows App SDK introduce breaking changes. While servicing updates should provide backward compatibility, it's possible that regressions are introduced. | *Larger deployments (unpackaged apps only)*. Because your app includes the Windows App SDK, the download size and hard drive space required are greater than would be the case for a framework-dependent version.<br/><br/>*Performance (unpackaged apps only)*. Slower to load, and uses more memory since code pages aren't shared with other apps.<br/><br/>*Not serviceable*. The Windows App SDK version distributed with your app can be updated only by releasing a new version of your app. You're responsible for integrating servicing updates of the Windows App SDK into your app. |
 
-Also see [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md), and [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+Also see [Create your first WinUI 3 project](/windows/apps/get-started/start-here), and [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+
+> [!NOTE]
+> **`PublishSingleFile` (single-file EXE)** is supported for **unpackaged, self-contained** WinUI 3 apps (Windows App SDK 1.5 and later). Packaged apps and framework-dependent apps do not support `PublishSingleFile`. See [Single-file EXE](./unpackage-winui-app.md#single-file-exe) for required MSBuild properties.
 
 ## More info about framework-dependent deployment
 
@@ -43,6 +47,9 @@ If you've chosen to go with a framework-dependent packaged app with external loc
 ## More info about self-contained deployment
 
 See [Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md).
+
+> [!NOTE]
+> `PublishSingleFile` (single-file EXE) requires the app to be both **unpackaged** and **self-contained**. See [Single-file EXE](../package-and-deploy/unpackage-winui-app.md#single-file-exe) for the full list of required MSBuild properties.
 
 ## Initialize the Windows App SDK
 
@@ -71,5 +78,5 @@ The way that you should initialize the Windows App SDK depends on whether, and h
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../windows-app-sdk/deploy-unpackaged-apps.md)
 * [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../windows-app-sdk/tutorial-unpackaged-deployment.md)
 * [Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md)
-* [Create your first WinUI 3 project](../winui/winui3/create-your-first-winui3-app.md)
+* [Create your first WinUI project](/windows/apps/get-started/start-here)
 * [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)

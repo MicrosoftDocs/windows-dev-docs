@@ -1,12 +1,15 @@
 ---
 description: System requirements page helps you indicate if certain hardware features are required or recommended to run and interact with your PWA app properly.
 title: System requirements for PWA
-ms.date: 10/30/2022
+ms.date: 04/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# System requirements
+# System requirements for PWAs
+
+> [!NOTE]
+> This section is optional. If you leave it blank, no additional hardware requirements are published for your app, and the Store won't display hardware-based warnings based on this section. App download eligibility is still governed by your submission's availability and targeting settings. Fill in this section to communicate minimum or recommended hardware requirements to customers.
 
 In this section, you have the option to indicate if certain hardware features are required or recommended to run and interact with your app properly. You can check the box (or indicate the appropriate option) for each hardware item where you would like to specify **Minimum hardware** and/or **Recommended hardware**.
 

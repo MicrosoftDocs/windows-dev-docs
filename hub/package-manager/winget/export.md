@@ -73,3 +73,5 @@ After the export is complete, you can edit the resulting JSON file in your favor
 ## Related topics
 
 * [Use the winget tool to install and manage applications](index.md)
+* [import command (winget)](import.md)
+* [configure command (winget)](configure.md)

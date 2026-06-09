@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Printing and scanning
 
-This section describes how to print and scan from your Windows app.
+Windows apps can integrate with printers and scanners to let users print documents, images, and other content, or digitize physical media directly from your app. The Windows App SDK and Windows Runtime APIs provide built-in support for common printing tasks like customizing print preview, selecting printers, and configuring page settings, as well as scanning from flatbed, feeder, and auto-configured sources. This section walks you through the key scenarios for adding printing and scanning capabilities to your app.
 
 | Topic | Description |
 |-------|-------------|
@@ -21,5 +21,5 @@ This section describes how to print and scan from your Windows app.
 
 ## Related topics
 
-- [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)
+- [Print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)
 - [Customize the print workflow](/windows/uwp/devices-sensors/print-workflow-customize)

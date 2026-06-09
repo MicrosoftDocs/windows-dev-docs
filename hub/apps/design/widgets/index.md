@@ -77,4 +77,8 @@ Content should dynamically refresh based on available context. It is up to date 
 
 [Widget interaction design](widgets-interaction-design.md)
 
-[Create a widget template with the Adaptive Card Designer](widgets-create-a-template.md)
+[Create a widget template with the Adaptive Cards Designer](../../develop/widgets/widgets-create-a-template.md)
+
+## See also
+
+- [Develop Windows Widgets](../../develop/widgets/index.md)

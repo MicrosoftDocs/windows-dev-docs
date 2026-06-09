@@ -1,6 +1,6 @@
 ---
-title: Steps to open a Windows developer account in Partner Center
-description: Here's an overview of how to open a Windows developer account for Microsoft Store in Partner Center.
+title: Steps to open a Microsoft Store developer account in Partner Center
+description: Here's an overview of how to open a Microsoft Store developer account in Partner Center.
 ms.date: 9/17/2025
 ms.topic: how-to
 ms.localizationpriority: medium
@@ -8,7 +8,12 @@ ms.localizationpriority: medium
 
 # Steps to open a developer account
 
-There are 2 types of developer accounts available in Partner Center: **Individual and Company**. Depending on your Microsoft account and other factors, you may be able to choose between these account types, or the system may pre-determine the appropriate type for you. Select a developer account below to understand the account creation process:
+There are two types of developer accounts available in Partner Center: Individual and Company. Choose an Individual account if you want to publish apps under your own name, or choose a Company account if you want to publish apps under the name of a registered legal business entity. 
+
+With the new onboarding experience, there are **no registration fees** for either account type, so you can create your developer account and start publishing at no cost. Select a developer account type below to understand the account creation process:
+
+> [!NOTE]
+> Changing a developer account from Individual to Company is **not** supported in Partner Center. To publish as a company, you'll need to create a new Company developer account.
 
 ## [Open individual developer account](#tab/individual)
 
@@ -30,11 +35,11 @@ For more details, you can refer to the steps below:
 
 2. **Click “Get started for free”** to begin.
 
-3. Select **Individual developer** (free). If you’re a business, select Company account.
+3. Select **Individual developer**.
 
-   > **Note for Company developers:** Selecting **Company account** will redirect you to the existing onboarding flow for Company developers. Learn more about Company account setup [here](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
+   > **Note for Company developers:** Selecting **Company account** will redirect you to the new onboarding flow for Company developers. Learn more about Company account setup [here](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
 
-![Choose account type](../images/choose-account.png)
+![Choose account type](../images/whats-new-company-account-2.png)
 
 4. **Sign in** with your Microsoft account (MSA) or create a new one.
 
@@ -58,26 +63,15 @@ For more details, you can refer to the steps below:
 
 You’ll be redirected to Partner Center to finish setup and publish your first app.
 
-## Need help? Contact us
-
-If you need assistance with the new account onboarding process for individual developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process in **flighted markets**.
-
-For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
-You can also explore guidance in our [publishing documentation](/windows/apps/publish).
-
-
 ## Frequently Asked Questions (FAQs)
-
 
 ### Do I need to pay the registration fee?
 
-No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/) in a flighted market. If you land on the legacy flow via other entry points or are in a non-flighted market, the registration fee still applies.  
-
-The free onboarding flow applies only to individual developers. Company accounts continue to pay a one-time $99 USD registration fee as part of the existing onboarding process.
+No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/).  
 
 ### How do I access the new flow?
 
-You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point during the flighting phase. Other paths (e.g. direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
+You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point for the new flow. Other paths (e.g. direct via Partner Center, Xbox, or Visual Studio) will show the legacy flow.
 
 ### Why is ID verification required?
 
@@ -98,60 +92,150 @@ No — this flow is only for new individual developers creating their account fo
 - **Businesses and Organizations** such as corporations, LLCs, partnerships, non-profits, or government organizations
 - **Teams or Groups** within a company or organization
 
-You can watch the following video to understand how to open company developer account:
-
-</br>
-
->[!VIDEO https://learn-video.azurefd.net/vod/player?id=2125b1c6-20d4-47da-ba76-d1ff17b89cc2]
-
 For more details, you can refer to the steps below:
 
-### Steps to open company account
+## Step-by-Step Flow
 
-1. Navigate to the [registration page](https://aka.ms/partnercenterregistration).
-1. Now, sign in with your Microsoft account. If you do not have a Microsoft account, click on **Create an account**. The Microsoft account you use here is what you'll use to sign in to your developer account. If you want to know what is a Microsoft account, [click here.](https://aka.ms/microsoftaccount)
+Before you begin, make sure you have the following: 
 
-   **Note:** If you have an Microsoft Entra ID, you can link it to the developer account in Partner Center after **successful developer account creation**, and then use the Microsoft Entra ID for future sign-ins. Here are the steps to [associate an existing Microsoft Entra ID tenant with your developer account in Partner Center](./associate-existing-azure-ad-tenant-with-partner-center-account.md).
+#### _For business verification (choose one)_ 
 
-1. Next step is to join a partner program. Partner Center is home to partner programs for multiple marketplaces including Windows. For submitting apps to Microsoft Store, join the **Windows and Xbox** program.
+**Option 1: DUNS number (recommended)** 
 
-1. Select the [country or region](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) where your business is located. You won't be able to change this later.
+* A valid 9-digit DUNS number
+* Enables faster, automated retrieval of business details 
 
-1. Select your developer account type. If account type selection is available, choose **Company**. If the options are grayed out or only Individual is available, see the [Account type availability](account-types-locations-and-fees.md#account-type-availability) section for guidance on proceeding with a company account setup.
+**Option 2: Official business documents** 
 
-1. Next, if your company is registered with [Dun & Bradstreet](https://partner.microsoft.com/marketing/usisvshowcase/dunandbrad), use the **DUNS number** to access company information. Otherwise select **I don't have a DUNS number** to manually provide details like company name, address, company registration number etc.
+You can verify your business by uploading an official business document, such as: 
+* Articles or certificate of incorporation, partnership deed, or equivalent formation document
+* Government-issued business registration or license
+* Official company registry record from a government website
+* Tax filings or stock exchange filings 
 
-1. Enter the **contact info** you want to use for your developer account and also provide the company website.
+If you don’t use a DUNS number, your account will go through **manual review**, which can take longer.  
 
-   > [!NOTE]
-   > We'll use this info to contact you about account-related matters. For example, you'll receive an email confirmation after you complete your registration. After that, we'll send messages when we pay you or if you need to fix something with your account. We may also send informational emails as described earlier, unless you opt out of receiving non-transactional emails.
+#### _For contact and employment verification_ 
 
-1. Next, enter the name, email address, and phone number of the person who will approve your company's account.
+* A **work email address** associated with your organization’s domain
+* If your email domain doesn’t match your organization’s domain, we may request **additional documentation** to verify your association with the company, such as:
+   * An **official domain ownership record** showing the domain purchase date and expiration or renewal dates
+   * An **official domain purchase invoice or registry confirmation** showing the domain’s purchase date and expiration or renewal dates 
 
-1. Enter the **publisher display name** that you want to use (50 characters or fewer). Select this carefully, as customers will see this name when browsing and will come to know your apps by this name. Be sure to use your organization's registered business name or trade name. If you enter a name that someone else has already selected, or if someone else has the rights to use that name, we won't permit you to use it.
+### Steps to create your company developer account 
 
-   > [!NOTE]
-   > Make sure you have the rights to use the name you enter here. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
+Uploaded documents must be official, current, and clearly show ownership of the domain. 
 
-1. Upload **a legal document** with your company address and name details such as formation documents, government issued letter/license etc.   
+1. **Go to** [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com)
 
-1. Then, read and accept the terms and conditions of the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905). 
+   > **Note for existing developers:** If you already have a developer account and sign in with an existing MSA, you will skip Steps 5–10 and be taken directly to Step 11. Alternatively, you can go straight to the [Partner Center apps and games page](https://aka.ms/submitwindowsapp).
 
-1. Select **Accept and Continue** to move on to the **Payment** section.
+![Store developer website](../images/new-company-account-1.png)
 
-1. Enter your payment info for the one-time registration fee. The company account costs approximately **$99 USD**. (The fees varies depending on your [country or region](./account-types-locations-and-fees.md#developer-account-and-app-submission-markets)). If you have a promo code that covers the cost of registration, you can enter that here. Otherwise, provide your credit card info (or PayPal info in supported markets). Note that prepaid credit cards can't be used for this purchase. When you're finished, select **Pay and Register** to complete the registration.
+2. Click **“Get started”** to begin.
 
-After you've completed the signup process, your account will go through the verification process. For company accounts, we check to make sure another individual or company isn't already using your publisher display name. Our verification process also needs to confirm whether you’re associated with the company that you’re representing. This process can take from a few days to a couple of weeks, and often includes a phone call to your company (so make sure all of your contact information is up to date when you fill out the registration forms). You can't submit apps from a company account until it's been verified, but while you're waiting, you can [reserve an app name](/windows/apps/publish/?tabs=msix-pwa-getting-started#get-started-with-app-submission) continue building and testing apps, and work on getting your submissions ready.
+3. Select **Company account** (free).
 
-You can check your verification status on the [Account settings](https://aka.ms/windowsdevaccountverification) page.
+![Choose account type](../images/whats-new-company-account-2.png)
 
-> [!NOTE]
-> There is a known issue where users in some locales might be unable to finish completing their registration. Until we can confirm that it is resolved, we recommend that you manually change your browser's locale tag to **en-us** once you begin the sign-up process on partner.microsoft.com.
+4. Sign in with your **personal Microsoft account (MSA)** or your **Microsoft Entra ID (work) account**:
+* **Personal Microsoft account (MSA)**: Use an existing personal Microsoft account or create a new one.
+* **Microsoft Entra ID (work account)**: Sign in with your organization's work account (e.g., user@contoso.com). This option is available for company accounts only. Individual developer accounts must use a personal Microsoft account.
+
+> **Note:**
+> * **Tenant-wide onboarding**: When you sign in with an Entra ID account and complete onboarding, your entire Azure AD tenant is onboarded. All users in your organization's tenant are marked as having an active developer account. However, only the user who completes the onboarding process receives Owner permissions by default in Partner Center. Other tenant users will need to be assigned roles (Developer, Manager, Owner, etc.) by an Owner or Manager through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md)
+> * **If your organization's tenant is already onboarded**: If someone in your organization has already completed company account onboarding using an Entra ID account, and you sign in with your own Entra ID account from the same tenant, you will be redirected to Partner Center. However, you may not see the Apps & Games workspace in Partner Center. This is expected unless an Owner or Manager has given you the necessary permissions.
+> **What to do:**
+>   1. Contact your account Owner or Manager and ask them to assign you a role through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md)
+>   2. If you don't know who the Owner or Manager of your account is, check with your Azure AD tenant administrator.
+5. Enter your business details by verifying with a **D-U-N-S number** (recommended for faster verification) or by uploading **official business documents**. Review and confirm the company information shown.
+
+   > **Note:** Verification using documents may go to manual review and can take up to 3-5 business days.
+
+![Enter business details](../images/new-company-account-3.png) 
+
+6. Enter **contact** details.  
+
+   Provide your contact information for verification and communication, and the support contact details that will appear on your Store listing. 
+
+   > **Note for ‘Email for verification’:** Use a work email address that matches your company’s domain. Personal emails like Gmail or Yahoo aren’t supported. If the domains don’t match, additional documents may be required for domain verification. 
+
+![Enter contact details](../images/new-company-account-4.png)
+
+7. Review and accept the **agreement**.
+
+8. Complete account **verification**
+
+   After you submit your details, your account enters account verification. All verification progress is shown on the Verification summary page, including the status of mandatory due diligence, business verification, and employment verification.  
+
+   > **Note:** Mandatory due diligence is required and is a blocking step. You can’t proceed further until this step is successfully completed. Only after mandatory due diligence passes can business and employment verification continue. 
+
+![Complete verification](../images/new-company-account-5.png)
+
+   For each verification step, one of the following will occur: 
+   * Verification completes automatically, typically within a few seconds to a minute, or
+   * Verification doesn’t complete automatically, and will move to manual review 
+
+   Manual reviews typically take 2–5 business days. During this time, you can leave the page and wait for an email notification. Once notified, return to the Verification summary page to check the updated status or take any required action. 
+
+![Account verification status](../images/new-company-account-6.png)
+
+9. Take action if verification requires it 
+
+If a verification step requires additional supporting documents, the Verification summary page will show the action required, and you’ll be notified via email. Follow the instructions to upload the requested documents and submit your verification appeal.
+
+Each verification type (business and employment) allows up to three verification appeals, so ensure that all submitted information and documents are accurate and current to avoid delays. You’ll receive an email notification when the verification status changes or further action is required.
+
+  > **Note:** If you realize that any of the information originally provided (such as company name, address, or email domain) was incorrect, you may update your account details. Updating key details will restart the verification process, and any previous appeals or related history will not be carried over.
+
+10. Create your company developer account 
+
+   After your verification is completed, finish your account setup and select **“Publish to Store”**. 
+
+![Create company account](../images/new-company-account-8.png)
+
+   You’ll first be prompted to choose a Microsoft account (MSA). Make sure to select the same account you used to create your Store developer account. Once signed in, you’ll land on the “Apps & Games overview” page in Partner Center. 
+
+   If you’re not taken there immediately: 
+   * Wait about 5 minutes, refresh your browser until the Apps & Games tile appears, and then select it, or 
+   * Navigate directly to the [Partner Center Apps & Games page](https://aka.ms/submitwindowsapp)
+
+   From there, you can start submitting apps for publishing to the Microsoft Store. 
+
+   > **Note:** After account creation, it may take up to 30 minutes for your verification status to fully reflect across Partner Center. If app submission isn’t available immediately, wait a few minutes and try again. 
+
+![Apps and games overview](../images/new-company-account-7.png)
+
+## Frequently Asked Questions (FAQs)
+
+### Do I need to pay the registration fee?
+
+No — if you're using the new flow via the [Store marketing page](https://storedeveloper.microsoft.com/).  
+
+### How do I access the new flow?
+
+You must begin your journey at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). This is the only supported entry point for company onboarding.
+
+### I already have a developer account—do I need to use this?
+
+No — this flow is only for new company developers creating their account for the first time.
+
+### Can I use my work account (Microsoft Entra ID) to create an Individual developer account?
+
+No, Entra ID (work account) sign-up is currently supported only for Company accounts. If you're signing up as an Individual developer, you must use a personal Microsoft account (MSA).
+
+### I signed in with my Entra ID (work account) but I can't see the Apps & Games workspace in Partner Center. What should I do?
+
+This typically means someone else in your organization has already completed company account onboarding, and your tenant is already registered. You've been redirected to Partner Center, but you haven't been assigned a role yet. Contact your account Owner or Manager and ask them to assign you a role (such as Developer, Manager, or Owner) through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md) If you're unsure who the Owner or Manager is, check with your Azure AD tenant administrator.
 
 ---
 
+## Need help? Contact us
+
+If you need assistance with the new account onboarding process for company developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process.
+
+For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
+You can also explore guidance in our [publishing documentation](/windows/apps/publish).
+
 > [!NOTE]
 > In some cases, the screens and fields you see when you register for a developer account may vary slightly from what's outlined in the above steps. But the basic information and process will match what these steps describe.
-
-> [!TIP]
-> If you're unsure which account type is appropriate for your situation, look for the "Learn More" link during registration for additional guidance on account types, or refer to our [account types documentation](account-types-locations-and-fees.md) to understand the differences between Individual and Company accounts.

@@ -2,6 +2,20 @@
   "build_entry_point": "op",
   "docsets_to_publish": [
     {
+      "docset_name": "windows-terminal",
+      "build_source_folder": "terminal",
+      "build_output_subfolder": "windows-terminal",
+      "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
+    },
+    {
       "docset_name": "windows-uwp",
       "build_source_folder": "uwp",
       "build_output_subfolder": "uwp",
@@ -61,6 +75,22 @@
       "template_folder": "_themes",
       "is_dynamic_rendering": false,
       "version": 0
+    },
+    {
+      "docset_name": "windows-wsl",
+      "build_source_folder": "wsl",
+      "build_output_subfolder": "windows-wsl",
+      "locale": "en-us",
+      "monikers": [],
+      "moniker_ranges": [],
+      "open_to_public_contributors": true,
+      "type_mapping": {
+        "Conceptual": "Content",
+        "ManagedReference": "Content",
+        "RestApi": "Content"
+      },
+      "build_entry_point": "docs",
+      "template_folder": "_themes"
     }
   ],
   "notification_subscribers": [],
@@ -76,25 +106,25 @@
     {
       "path_to_root": "_themes",
       "url": "https://github.com/Microsoft/templates.docs.msft",
-      "branch": "main",
+      "branch": "master",
       "branch_mapping": {}
     },
     {
       "path_to_root": "samples-xaml-gallery",
       "url": "https://github.com/microsoft/Xaml-Controls-Gallery",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     },
     {
       "path_to_root": "snippets-windows",
       "url": "https://github.com/MicrosoftDocs/windows-code-snippets-pr",
-      "branch": "master",
+      "branch": "main",
       "branch_mapping": {}
     },
     {
       "path_to_root": "_themes.pdf",
       "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
-      "branch": "main",
+      "branch": "master",
       "branch_mapping": {}
     }
   ],

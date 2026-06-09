@@ -14,7 +14,7 @@ no-loc: [PowerToys, Windows, Crop And Lock, Win]
 
 This feature is particularly useful when you need to monitor specific areas of applications while working with other programs, or when you want to create custom window layouts that better suit your workflow.
 
-:::image type="content" source="../images/powertoys-crop-and-lock.gif" alt-text="Animation of the PowerToys Crop And Lock utility demonstrating window cropping and thumbnail features.":::
+:::image type="content" source="images/crop-and-lock/crop-and-lock.gif" alt-text="Animation of the PowerToys Crop And Lock utility demonstrating window cropping and thumbnail features.":::
 
 ## Get started with Crop And Lock
 
@@ -35,13 +35,17 @@ Select the **Close** button of the cropped window to close it and restore the or
 
 ### Thumbnail
 
-Creates a window that shows the selected area of the original window. Any changes to the original window's selected area will be reflected on the thumbnail, but the original application can't be controlled through the thumbnail. This mode has the best compatibility.
+Creates a window that shows the selected area of the original window. Any changes to the original window's selected area will be reflected on the thumbnail, but the original application can't be controlled through the thumbnail. This mode has the best compatibility across apps.
 
 ### Reparent
 
 Creates a window that replaces the original window, showing only the selected area. The application will now be controlled through the cropped window. Closing the cropped window will restore the original window.
 
 Not every window will react well to being contained in another application so this mode has many compatibility issues. It's advisable to use the "Thumbnail" mode instead if you find that a window isn't responding well to being cropped with the "Reparent" mode.
+
+### Screenshot
+
+Creates a window that shows the selected area of the original window as a frozen snapshot. This mode has good compatibility across apps as well.
 
 ## Known issues
 
@@ -59,5 +63,6 @@ The following settings are available for the Crop And Lock utility:
 | :--- | :--- |
 | **Thumbnail shortcut** | The customizable keyboard command to activate the thumbnail mode for cropping and creating a thumbnail view. |
 | **Reparent shortcut** | The customizable keyboard command to activate the reparent mode for cropping and reparenting to a new window. |
+| **Screenshot shortcut** | The customizable keyboard command to create a cropped, static screenshot of another window. Unlike the thumbnail mode, the screenshot does not update with the original window's content. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

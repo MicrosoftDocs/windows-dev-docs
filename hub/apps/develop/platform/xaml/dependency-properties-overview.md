@@ -1,5 +1,5 @@
 ---
-description: This topic explains the dependency property system that is available when you write a Windows Runtime app using C++, C#, or Visual Basic along with XAML definitions for UI.
+description: This topic explains the dependency property system that is available when you write a WinUI app using C++, C#, or Visual Basic along with XAML definitions for UI.
 title: Dependency properties overview
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
 ms.date: 02/08/2017
@@ -9,13 +9,13 @@ ms.localizationpriority: medium
 ---
 # Dependency properties overview
 
-This topic explains the dependency property system that is available when you write a Windows Runtime app with XAML definitions for UI.
+This topic explains the dependency property system that is available when you write a WinUI app with XAML definitions for UI.
 
 ## What is a dependency property?
 
-A dependency property is a specialized type of property. Specifically it's a property where the property's value is tracked and influenced by a dedicated property system that is part of the Windows Runtime.
+A dependency property is a specialized type of property. Specifically it's a property where the property's value is tracked and influenced by a dedicated property system that is part of the WinUI.
 
-In order to support a dependency property, the object that defines the property must be a [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject) (in other words a class that has the **DependencyObject** base class somewhere in its inheritance). Many of the types you use for your UI definitions for a UWP app with XAML will be a **DependencyObject** subclass, and will support dependency properties. However, any type that comes from a Windows Runtime namespace that doesn't have "XAML" in its name won't support dependency properties; properties of such types are ordinary properties that won't have the property system's dependency behavior.
+In order to support a dependency property, the object that defines the property must be a [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject) (in other words a class that has the **DependencyObject** base class somewhere in its inheritance). Many of the types you use for your UI definitions for a WinUI app with XAML will be a **DependencyObject** subclass, and will support dependency properties. However, any type that comes from a Windows Runtime namespace that doesn't have "XAML" in its name won't support dependency properties; properties of such types are ordinary properties that won't have the property system's dependency behavior.
 
 The purpose of dependency properties is to provide a systemic way to compute the value of a property based on other inputs (other properties, events and states that occur within your app while it runs). These other inputs might include:
 
@@ -24,7 +24,7 @@ The purpose of dependency properties is to provide a systemic way to compute the
 - Multiple-use templating patterns such as resources and styles
 - Values known through parent-child relationships with other elements in the object tree
 
-A dependency property represents or supports a specific feature of the programming model for defining a Windows Runtime app with XAML for UI. These features include:
+A dependency property represents or supports a specific feature of the programming model for defining a WinUI app with XAML for UI. These features include:
 
 - Data binding
 - Styles
@@ -88,7 +88,7 @@ The following is the definitive order that the property system uses when assigni
 
 ### Templated properties
 
-Templated properties as a precedence item do not apply to any property of an element that you declare directly in XAML page markup. The templated property concept exists only for objects that are created when the Windows Runtime applies a XAML template to a UI element and thus defines its visuals.
+Templated properties as a precedence item do not apply to any property of an element that you declare directly in XAML page markup. The templated property concept exists only for objects that are created when the WinUI applies a XAML template to a UI element and thus defines its visuals.
 
 All the properties that are set from a control template have values of some kind. These values are almost like an extended set of default values for the control and are often associated with values you can reset later by setting the property values directly. Thus the template-set values must be distinguishable from a true local value, so that any new local value can overwrite it.
 
@@ -188,10 +188,10 @@ You can deliberately set a property to the default value even after you have alr
 
 ## **DependencyObject** and threading
 
-All [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject) instances must be created on the UI thread which is associated with the current [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Window) that is shown by a Windows Runtime app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by accessing the [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcherqueue) property. Then you can call methods such as [**TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) and execute your code within the rules of thread restrictions on the UI thread.
+All [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject) instances must be created on the UI thread which is associated with the current [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Window) that is shown by a WinUI app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by accessing the [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcherqueue) property. Then you can call methods such as [**TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) and execute your code within the rules of thread restrictions on the UI thread.
 
 > [!NOTE]
-> For UWP apps, access the [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) property. Then you can call methods such as [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) on the [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) object, and execute your code within the rules of thread restrictions on the UI thread. For more info about differences between UWP and WinUI for the Windows App SDK, see [Threading functionality migration](../../../windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md).
+> For more info about differences between UWP and WinUI 3 for the Windows App SDK, see [Threading functionality migration](../../../windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md).
 
 The threading aspects of [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject) are relevant because it generally means that only code that runs on the UI thread can change or even read the value of a dependency property. Threading issues can usually be avoided in typical UI code that makes correct use of **async** patterns and background worker threads. You typically only run into **DependencyObject**-related threading issues if you are defining your own **DependencyObject** types and you attempt to use them for data sources or other scenarios where a **DependencyObject** isn't necessarily appropriate.
 

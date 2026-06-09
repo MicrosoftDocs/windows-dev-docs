@@ -1,8 +1,8 @@
 ### YamlMime:ZonePivotGroups
 groups:
 - id: winui3-version
-  title: WinUI 3 application type
-  prompt: "Choose the type of WinUI 3 application you want to build:"
+  title: WinUI application type
+  prompt: "Choose the type of WinUI application you want to build:"
   pivots:
     - id: winui3-packaged-csharp
       title: C# packaged
@@ -13,13 +13,21 @@ groups:
     - id: winui3-unpackaged-cpp
       title: C++ unpackaged
 - id: winui3-version-c#-only
-  title: WinUI 3 application type
-  prompt: "Choose the type of WinUI 3 application you want to build:"
+  title: WinUI application type
+  prompt: "Choose the type of WinUI application you want to build:"
   pivots:
     - id: winui3-packaged-csharp
       title: C# packaged
     - id: winui3-unpackaged-csharp
       title: C# unpackaged
+- id: winui3-language
+  title: Language
+  prompt: "Choose your programming language:"
+  pivots:
+    - id: lang-csharp
+      title: C#
+    - id: lang-cppwinrt
+      title: C++/WinRT
 - id: store-installer-packaging
   title: Store application type
   prompt: "Choose the type of app you want to publish on the Microsoft store:"
@@ -42,3 +50,29 @@ groups:
       title: macOS
     - id: msstoredevcli-installer-linux
       title: Linux
+- id: wasdk-release-channels
+  title: Windows App SDK release channels
+  prompt: Choose release channel
+  pivots:
+    - id: stable
+      title: Stable
+    - id: preview
+      title: Preview
+    - id: experimental
+      title: Experimental
+- id: desktop-framework
+  title: Desktop framework
+  prompt: Choose your desktop framework
+  pivots:
+    - id: dotnet
+      title: .NET
+    - id: win32
+      title: Win32 (C++)
+- id: dotnet-app-type
+  title: .NET app type
+  prompt: Choose your .NET app type
+  pivots:
+    - id: wpf
+      title: Windows Presentation Foundation (WPF)
+    - id: winforms
+      title: Windows Forms (WinForms)

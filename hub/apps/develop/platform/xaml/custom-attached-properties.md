@@ -20,14 +20,14 @@ An _attached property_ is a XAML concept. Attached properties are typically defi
 
 ## Prerequisites
 
-We assume that you understand dependency properties from the perspective of a consumer of existing dependency properties, and that you have read the [Dependency properties overview](dependency-properties-overview.md). You should also have read [Attached properties overview](attached-properties-overview.md). To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
+We assume that you understand dependency properties from the perspective of a consumer of existing dependency properties, and that you have read the [Dependency properties overview](dependency-properties-overview.md). You should also have read [Attached properties overview](attached-properties-overview.md). To follow the examples in this topic, you should also understand XAML and know how to write a basic WinUI app using C++ or C#.
 
 ## Scenarios for attached properties
 
 You might create an attached property when there is a reason to have a property-setting mechanism available for classes other than the defining class. The most common scenarios for this are layout and services support. Examples of existing layout properties are [**Canvas.ZIndex**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.zindex) and [**Canvas.Top**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.top). In a layout scenario, elements that exist as child elements to layout-controlling elements can express layout requirements to their parent elements individually, each setting a property value that the parent defines as an attached property. An example of the services-support scenario in the Windows Runtime API is set of the attached properties of [**ScrollViewer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ScrollViewer), such as [**ScrollViewer.IsZoomChainingEnabled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.iszoomchainingenabled).
 
 > [!WARNING]
-> An existing limitation of the Windows Runtime XAML implementation is that you cannot animate your custom attached property.
+> An existing limitation of the WinUI app implementation is that you cannot animate your custom attached property.
 
 ## Registering a custom attached property
 
@@ -117,33 +117,33 @@ End Class
 namespace UserAndCustomControls
 {
     [default_interface]
-    runtimeclass GameService : Windows.UI.Xaml.DependencyObject
+    runtimeclass GameService : Microsoft.UI.Xaml.DependencyObject
     {
         GameService();
-        static Windows.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
-        static Boolean GetIsMovable(Windows.UI.Xaml.DependencyObject target);
-        static void SetIsMovable(Windows.UI.Xaml.DependencyObject target, Boolean value);
+        static Microsoft.UI.Xaml.DependencyProperty IsMovableProperty{ get; };
+        static Boolean GetIsMovable(Microsoft.UI.Xaml.DependencyObject target);
+        static void SetIsMovable(Microsoft.UI.Xaml.DependencyObject target, Boolean value);
     }
 }
 
 // GameService.h
 ...
-    static Windows::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
-    static bool GetIsMovable(Windows::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
-    static void SetIsMovable(Windows::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
+    static Microsoft::UI::Xaml::DependencyProperty IsMovableProperty() { return m_IsMovableProperty; }
+    static bool GetIsMovable(Microsoft::UI::Xaml::DependencyObject const& target) { return winrt::unbox_value<bool>(target.GetValue(m_IsMovableProperty)); }
+    static void SetIsMovable(Microsoft::UI::Xaml::DependencyObject const& target, bool value) { target.SetValue(m_IsMovableProperty, winrt::box_value(value)); }
 
 private:
-    static Windows::UI::Xaml::DependencyProperty m_IsMovableProperty;
+    static Microsoft::UI::Xaml::DependencyProperty m_IsMovableProperty;
 ...
 
 // GameService.cpp
 ...
-Windows::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
-    Windows::UI::Xaml::DependencyProperty::RegisterAttached(
+Microsoft::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
+    Microsoft::UI::Xaml::DependencyProperty::RegisterAttached(
         L"IsMovable",
         winrt::xaml_typename<bool>(),
         winrt::xaml_typename<UserAndCustomControls::GameService>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(false) }
+        Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(false) }
 );
 ...
 ```
@@ -153,7 +153,7 @@ Windows::UI::Xaml::DependencyProperty GameService::m_IsMovableProperty =
 #pragma once
 
 #include "pch.h"
-//namespace WUX = Windows::UI::Xaml;
+//namespace WUX = Microsoft::UI::Xaml;
 
 namespace UserAndCustomControls {
     public ref class GameService sealed : public WUX::DependencyObject {
@@ -186,13 +186,13 @@ using namespace UserAndCustomControls;
 using namespace Platform;
 using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
-using namespace Windows::UI::Xaml;
-using namespace Windows::UI::Xaml::Controls;
-using namespace Windows::UI::Xaml::Data;
-using namespace Windows::UI::Xaml::Documents;
-using namespace Windows::UI::Xaml::Input;
-using namespace Windows::UI::Xaml::Interop;
-using namespace Windows::UI::Xaml::Media;
+using namespace Microsoft::UI::Xaml;
+using namespace Microsoft::UI::Xaml::Controls;
+using namespace Microsoft::UI::Xaml::Data;
+using namespace Microsoft::UI::Xaml::Documents;
+using namespace Microsoft::UI::Xaml::Input;
+using namespace Microsoft::UI::Xaml::Interop;
+using namespace Microsoft::UI::Xaml::Media;
 
 GameService::GameService() {};
 

@@ -23,13 +23,10 @@ For more advanced features, see [Customize the print preview UI](customize-the-p
 
 The first step to add printing to your app is to register for printing by getting the [PrintManager](/uwp/api/windows.graphics.printing.printmanager) object for the current window. The PrintManager class is responsible for orchestrating the printing flow for your app. To use this class, you must first call the method that returns the PrintManager object that is specific to the current active window.
 
-- In a non-UWP app, use the [PrintManagerInterop.GetForWindow](/windows/win32/api/printmanagerinterop/nf-printmanagerinterop-iprintmanagerinterop-getforwindow) method.
-- In a UWP app, use the [PrintManager.GetForCurrentView](/uwp/api/windows.graphics.printing.printmanager.getforcurrentview) method.
-
 Your app must do this on every screen from which you want your user to be able to print. Only the screen that is displayed to the user can be registered for printing. If one screen of your app has registered for printing, it must unregister for printing when it exits. If it is replaced by another screen, the next screen must register for printing when it opens.
 
 > [!TIP]
-> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing).
+> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [Print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing).
 
 After a user has initiated printing, you use a [PrintDocument](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing.printdocument) to prepare the pages to be sent to the printer.The `PrintDocument` type is in the [**Microsoft.UI.Xaml.Printing**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing) namespace along with other types that support preparing XAML content for printing.
 
@@ -65,7 +62,7 @@ private void RegisterForPrinting()
 ```
 
 > [!WARNING]
-> In UWP printing examples, it's recommended to register for printing from the OnNavigatedTo method override. In non-UWP apps, you need to use the window handle in the PrintManagerInterop.GetForWindow call, so you should use the Loaded event to ensure that the window handle is not `null`, which might be the case in OnNavigatedTo.
+> In printing examples, it's recommended to register for printing from the OnNavigatedTo method override. You need to use the window handle in the PrintManagerInterop.GetForWindow call, so you should use the Loaded event to ensure that the window handle is not `null`, which might be the case in OnNavigatedTo.
 
 Here, the event handlers are unregistered in the `UnregisterForPrinting` method, which is called from the [OnNavigatedFrom](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.onnavigatedfrom) method.
 
@@ -109,9 +106,6 @@ Add a print button to your app's screen where you'd like it to appear. Make sure
 ```
 
 In the Button's Click event handler, show the Windows print UI to the user.
-
-- In a non-UWP app, use the [PrintManagerInterop.ShowPrintUIForWindowAsync](/windows/win32/api/printmanagerinterop/nf-printmanagerinterop-iprintmanagerinterop-showprintuiforwindowasync) method.
-- In a UWP app, use the [PrintManager.ShowPrintUIAsync](/uwp/api/windows.graphics.printing.printmanager.showprintuiasync) method.
 
 ```csharp
 var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
@@ -170,7 +164,7 @@ private void PrintTask_Requested(PrintManager sender, PrintTaskRequestedEventArg
 {
     // Create the PrintTask.
     // Defines the title and delegate for PrintTaskSourceRequested.
-    PrintTask printTask = args.Request.CreatePrintTask("WinUI 3 Printing example", PrintTaskSourceRequested);
+    PrintTask printTask = args.Request.CreatePrintTask("WinUI Printing example", PrintTaskSourceRequested);
 
     // Handle PrintTask.Completed to catch failed print jobs.
     printTask.Completed += PrintTask_Completed;

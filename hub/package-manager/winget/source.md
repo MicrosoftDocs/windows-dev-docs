@@ -1,21 +1,23 @@
 ---
-title: The winget source command
-description: Use the winget source command and subcommands to list and manage the repositories Windows Package Manager accesses.
-ms.date: 07/08/2025
+title: The WinGet source command
+description: Use the WinGet source command and subcommands to list and manage the sources WinGet accesses.
+ms.date: 03/24/2026
+no-loc: [winget, source, refresh]
 ms.topic: reference
 ms.custom: kr2b-contr-experiment
 ---
 
-# The winget source command
+# The WinGet source command
 
-The [WinGet](index.md) **source** command allows you to manage sources for Windows Package Manager. With the **source** command, you can **add**, **list**, **update**, **remove**, **reset**, or **export** repositories.
+The [WinGet](index.md) **source** command allows you to manage sources. With the **source** command, you can **add**, **edit**, **list**, **update**, **remove**, **reset**, or **export** WinGet sources.
 
-A source repository provides the data for you to discover and install applications. Only use secure, trusted source locations.
+A WinGet source provides the data for you to discover and install applications. Only use secure, trusted sources.
 
-Windows Package Manager specifies the following two default repositories, which you can list by using `winget source list`.
+WinGet specifies the following three default sources, which you can list by using `winget source list`.
 
 - **msstore** - The Microsoft Store catalog.
-- **winget** -  The Windows Package Manager app repository.
+- **winget** -  The WinGet Community Repository for applications.
+- **winget-font** - The WinGet Community Repository for fonts.
 
 ## Usage
 
@@ -23,7 +25,7 @@ Windows Package Manager specifies the following two default repositories, which 
 winget source <subcommand> <options>
 ```
 
-:::image type="content" source="./images/source.png" alt-text="Screenshot listing winget source command help options." lightbox="./images/source.png":::
+![winget source help](./images/source-help.png)
 
 ## Sub-Commands
 
@@ -32,10 +34,11 @@ The following arguments are available.
 | Sub-Command  | Description |
 |--------------|-------------|
 | **add** | Adds a new source. |
+| **edit** | Edits an existing source. |
 | **list** | Lists current sources. |
 | **update** | Updates current sources. |
 | **remove** | Removes current sources. |
-| **reset** | Resets default sources **winget** and **msstore**. |
+| **reset** | Resets default sources **msstore**, **winget**, and **winget-font**. |
 | **export** | Exports current sources. |
 
 ## Options
@@ -82,7 +85,7 @@ The following options are available.
 | **--trust-level** | Trust level of the source (none or trusted). |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--explicit** |  |
+| **--explicit** | Marks the source as explicit, requiring commands to directly target it using `--source`. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
@@ -103,9 +106,62 @@ The **add** subcommand supports the optional **type** parameter, which tells the
 | **Microsoft.PreIndexed.Package** | The default source type. |
 | **Microsoft.Rest** | A Microsoft REST API source. |
 
+### edit
+
+The **edit** subcommand modifies an existing source's configuration. The primary use is to toggle whether a source is **explicit** or **implicit**. When a source is explicit, WinGet commands must directly target it using `--source`. When a source is implicit, it is included in all commands automatically.
+
+Usage:
+
+```cmd
+winget source edit [-n] <name> [<options>]
+```
+
+#### Arguments
+
+The following arguments are available.
+
+| Argument  | Description |
+|--------------|-------------|
+| **-n, --name** | The name of the source to edit. |
+
+#### Options
+
+The following options are available.
+
+| Option  | Description |
+|-------------|-------------|
+| **--explicit** | Sets the source as explicit (`true`) or implicit (`false`). When explicit, commands must directly target the source using `--source`. |
+| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
+| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **-?, --help** | Get additional help on this command. |
+| **--wait** | Prompts the user to press any key before exiting. |
+| **--logs,--open-logs** | Open the default logs location. |
+| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
+| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
+| **--disable-interactivity** | Disable interactive prompts. |
+| **--proxy** | Set a proxy to use for this execution. |
+| **--no-proxy** | Disable the use of proxy for this execution. |
+
+#### Example
+
+The **winget-font** source is explicit by default, meaning commands must target it directly using `--source winget-font`. To reset it to the default (implicit) state so that it is included in all WinGet commands automatically, run:
+
+```cmd
+winget source edit winget-font --explicit false
+```
+
+To set a source as explicit:
+
+```cmd
+winget source edit winget-font --explicit true
+```
+
 ### list
 
 The **list** subcommand enumerates the currently enabled sources, or provides details on a specific source.
+
+> [!NOTE]
+> When a source is set to be explicit, it must be specifically targeted. The **winget-font** source is set to explicit by default. This means any other WinGet commands must directly reference the source using either "--source winget-font" or "-s winget-font" to be included.
 
 Usage:
 
@@ -113,11 +169,13 @@ Usage:
 winget source list [[-n] <name>] [<options>]
 ```
 
+![winget source list](./images/source-list.png)
+
 #### Aliases
 
 The following aliases are available for this subcommand:
 
-- ls
+- `ls`
 
 #### Arguments
 
@@ -144,12 +202,14 @@ The following options are available.
 
 #### list all
 
-The **list** subcommand by itself, `winget source list`, provides the complete list of supported sources:
+The **list** subcommand by itself, `winget source list`, provides the complete list of configured sources:
 
 ```output
-Name   Arg
------------------------------------------
-winget https://winget.azureedge.net/cache
+Name        Argument                                      Explicit
+------------------------------------------------------------------
+msstore     https://storeedgefd.dsx.mp.microsoft.com/v9.0 false
+winget      https://cdn.winget.microsoft.com/cache        false
+winget-font https://cdn.winget.microsoft.com/fonts        true
 ```
 
 #### list source details
@@ -157,21 +217,26 @@ winget https://winget.azureedge.net/cache
 To get complete details about a source, pass in the name of the source. For example:
 
 ```cmd
-winget source list --name Contoso
+winget source list --name winget
 ```
 
 Returns the following output:
 
 ```output
-Name   : Contoso
-Type   : Microsoft.PreIndexed.Package
-Arg    : https://pkgmgr-int.azureedge.net/cache
-Data   : AppInstallerSQLiteIndex-int_g4ype1skzj3jy
-Updated: 2020-4-14 17:45:32.000
+Field       Value
+--------------------------------------------------
+Name        winget
+Type        Microsoft.PreIndexed.Package
+Argument    https://cdn.winget.microsoft.com/cache
+Data        Microsoft.Winget.Source_8wekyb3d8bbwe
+Identifier  Microsoft.Winget.Source_8wekyb3d8bbwe
+Trust Level Trusted|StoreOrigin
+Explicit    false
+Updated     2025-12-11 08:30:25.000
 ```
 
 - `Name` is the name of the source.
-- `Type` is the type of repo.
+- `Type` is the type of source.
 - `Arg` is the URL or path the source uses.
 - `Data` is the optional package name, if appropriate.
 - `Updated` is the last date and time the source was updated.
@@ -190,7 +255,7 @@ winget source update [[-n] <name>] [<options>]
 
 The following aliases are available for this subcommand:
 
-- refresh
+- `refresh`
 
 #### Arguments
 
@@ -237,7 +302,7 @@ winget source remove [-n] <name> [<options>]
 
 The following aliases are available for this subcommand:
 
-- rm
+- `rm`
 
 #### Arguments
 
@@ -353,11 +418,13 @@ Returns the following output:
 
 ## Source agreement
 
-An individual **source** might request that the user agree to the terms presented before adding or using the repository. If a user doesn't accept or acknowledge the agreement, they won't be able to access the source.
+An individual **source** may request that the user agree to agreements presented before adding or using the source. If a user does not accept the agreements, WinGet will not be able to access the source.
 
-You can use the **--accept-source-agreements** option to accept the source license agreement and avoid the prompt.
+You can use the **--accept-source-agreements** option to accept the source agreements and avoid the prompt.
 
-:::image type="content" source="./images/source-license.png" alt-text="Screenshot showing the winget source command with flag to accept agreements." lightbox="./images/source-license.png":::
+Many WinGet commands evaluate all configured sources. If any configured source requires agreements, WinGet will prompt before using those sources. Source agreements are required to be accepted before use. If a source updates agreement terms, or if a source is removed and readded (as in the case of `winget source reset --force`) agreements will be presented again.
+
+![winget source agreement](./images/source-agreement.png)
 
 ## Related topics
 

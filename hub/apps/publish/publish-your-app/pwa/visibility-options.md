@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Choose visibility options
+# Choose visibility options for PWAs
 
 The **Visibility** section of the [Pricing and availability page](./price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
 
@@ -35,7 +35,7 @@ After your submission is published, the people in the group you specify will be 
 
 If you plan to make the app available to a public audience at a certain date and time, you can select the box labeled **Make this product public on** when creating your submission. Enter the date and time (in UTC) when you’d like the product to become available to the public. Keep in mind the following:
 
-- The date and time that you select will apply to all markets. If you want to customize the release schedule for different markets, don’t use this box. Instead, create a new submission that changes your setting to **Public audience**, then use the [Schedule](./schedule-pricing-changes.md#configure-precise-release-scheduling) options to specify your release timing.
+- The date and time that you select will apply to all markets. If you want to customize the release schedule for different markets, don’t use this box. Instead, create a new submission that changes your setting to **Public audience**, then use the [Schedule](./schedule-pricing-changes.md#configure-app-pricing) options to specify your release timing.
 - After the date and time that you select, all future submissions will use **Public audience**.
 
 If you don’t specify a date and time to make your app available to a public audience, you can always do so later by creating a new submission and changing your audience setting from **Private audience** to **Public audience**. When you do so, keep in mind that your app may go through an additional certification process, so be prepared to address any new certification issues that may arise.

@@ -25,7 +25,7 @@ This section describes the design recommendations and behaviors of the parts of 
 - The standard title bar has a height of 32px.
 - The title bar's default background is [Mica](../style/mica.md), however we recommend that title bars blend with the rest of the window if possible.
 - Title bars help users differentiate when a window is active and inactive. All title bar elements should be semi-transparent when the window is inactive.
-- The title bar colors should adjust when users switch to [high contrast themes](../accessibility/high-contrast-themes.md), or between [light and dark modes](../style/color.md).
+- The title bar colors should adjust when users switch to [high contrast themes](../accessibility/high-contrast-themes.md), or between [light and dark modes](../signature-experiences/color.md).
   - For high contrast themes, apps should use the `SystemColors` class for determining proper UI element coloring to facilitate a superior high-contrast experience.
 
 **Behavior**
@@ -62,7 +62,7 @@ This section describes the design recommendations and behaviors of the parts of 
 
 - A right-click/press-and-hold on the icon should show the system window menu.
 - A double-click/tap should toggle between maximizing the window and restoring the window.
-- The window title and other textual elements in the title bar should respond to [text-scaling](../input/text-scaling.md). This might require that the title bar grows in height.
+- The window title and other textual elements in the title bar should respond to [text-scaling](../../develop/input/text-scaling.md). This might require that the title bar grows in height.
 
 ### Caption controls (minimize, maximize, restore, close)
 

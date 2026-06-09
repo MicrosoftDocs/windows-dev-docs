@@ -14,7 +14,7 @@ dev_langs:
 
 # Windows data binding in depth
 
-This article describes the WinUI data binding features using the APIs in the [Microsoft.UI.Xaml.Data namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data).
+This article describes the WinUI 3 data binding features using the APIs in the [Microsoft.UI.Xaml.Data namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data).
 
 > [!NOTE]
 > This topic describes data binding features in detail. For a short, practical introduction, see [Data binding overview](data-binding-overview.md).
@@ -38,15 +38,15 @@ You can use data binding to simply display values from a data source when the UI
 
 Independent of mode, there are two kinds of binding, and you typically declare both in UI markup. You can choose to use either the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) or the [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension). You can even use a mixture of the two in the same app—even on the same UI element. `{x:Bind}` was new in UWP for Windows 10 and it has better performance. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
 
-### UWP sample apps that demonstrate {x:Bind}
+### Sample apps that demonstrate {x:Bind}
 
 - [{x:Bind} sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
 - [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper).
 - [XAML UI Basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
 
-### UWP sample apps that demonstrate {Binding}
+### Sample apps that demonstrate {Binding}
 
-- Download the [UWP Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) app.
+- Download the [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) app.
 - Download the [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) app.
 
 ## Every binding involves these pieces
@@ -654,7 +654,7 @@ You can bind a ListView's **DoubleTapped** event to a method in the **MainWindow
 
 You can't use overloaded methods to handle an event with this technique. Also, if the method that handles the event has parameters, then all of them must be assignable from the types of all of the event's parameters, respectively. In this case, `ListViewDoubleTapped` isn't overloaded and it has no parameters (but it would still be valid even if it took two `object` parameters).
 
-The event binding technique is similar to implementing and consuming commands. A command is a property that returns an object that implements the [**ICommand**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) interface. Both [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) work with commands. So that you don't have to implement the command pattern multiple times, you can use the `DelegateCommand` helper class that you find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) UWP sample (in the "Common" folder).
+The event binding technique is similar to implementing and consuming commands. A command is a property that returns an object that implements the [**ICommand**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) interface. Both [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) work with commands. So that you don't have to implement the command pattern multiple times, you can use the `DelegateCommand` helper class that you find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) sample (in the "Common" folder).
 
 ## Binding to a collection of folders or files
 
@@ -776,7 +776,7 @@ Remember that when using [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-m
     </GridView>
 ```
 
-A [**SemanticZoom**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.semanticzoom) control is a great way for your users to view and navigate grouped data. The [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) UWP sample app illustrates how to use the `SemanticZoom`. In that app, you can view a list of books grouped by author (the zoomed-in view) or you can zoom out to see a jump list of authors (the zoomed-out view). The jump list affords much quicker navigation than scrolling through the list of books. The zoomed-in and zoomed-out views are actually `ListView` or `GridView` controls bound to the same `CollectionViewSource`.
+A [**SemanticZoom**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.semanticzoom) control is a great way for your users to view and navigate grouped data. The [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) sample app illustrates how to use the `SemanticZoom`. In that app, you can view a list of books grouped by author (the zoomed-in view) or you can zoom out to see a jump list of authors (the zoomed-out view). The jump list affords much quicker navigation than scrolling through the list of books. The zoomed-in and zoomed-out views are actually `ListView` or `GridView` controls bound to the same `CollectionViewSource`.
 
 ![An illustration of a SemanticZoom](images/sezo.png)
 

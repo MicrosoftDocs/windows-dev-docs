@@ -8,110 +8,95 @@ metadata:
   description: This documentation provides the latest guidance about building desktop apps for Windows 11.
   ms.topic: landing-page
   ms.collection: collection
-  ms.date: 11/4/2025
+  ms.date: 03/27/2026
   keywords: windows win32, desktop development
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
 
 landingContent:
-  - title: Get ready for development
+  - title: Essentials
     linkLists:
       - linkListType: get-started
         links:
-          - text: What's new in Windows development
-            url: /windows/whats-new/
-          - text: Start here!
-            url: ../get-started/start-here.md
-          - text: An overview of Windows development options
+          - text: Essentials
+            url: ../introduction.md
+          - text: Core concepts
             url: ../get-started/index.md
-          - text: Learning paths and modules
-            url: /training/browse/?products=windows
-          - text: Code samples
-            url: /samples/browse/?products=windows
+          - text: Get started with WinUI
+            url: ../get-started/start-here.md
+          - text: Tools and samples
+            url: ../dev-tools/index.md
+          - text: Help and guidance
+            url: ../develop/support.md
+          - text: What's new
+            url: ../whats-new/whats-new-for-developers.md
 
-
-  - title: Design and UI
+  - title: Design
     linkLists:
       - linkListType: overview
         links:
-          - text: Design and code your app UI
+          - text: Design overview
             url: ../design/index.md
-          - text: Windows 11 design principles
-            url: ../design/signature-experiences/design-principles.md
-          - text: Make your apps great on Windows 11
-            url: ../get-started/make-apps-great-for-windows.md
-          - text: Windows developer FAQ
-            url: ../get-started/windows-developer-faq.yml
+          - text: Design principles
+            url: ../design/design-principles.md
+          - text: Guidelines
+            url: ../design/guidelines-overview.md
+          - text: Tools and resources
+            url: ../design/downloads/index.md
 
-  - title: Deploy and publish
+  - title: Develop
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: Develop overview
+            url: ../develop/index.md
+          - text: Features
+            url: ../develop/features-overview.md
+          - text: Use features with other UI frameworks
+            url: ../desktop/modernize/index.md
+          - text: Platform
+            url: ../develop/platform/csharp-winrt/index.md
+          - text: API reference
+            url: ../api-reference/index.md
+          - text: Tools and samples
+            url: ../dev-tools/index.md
+          - text: Tutorials
+            url: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
+
+  - title: Package and deploy
+    linkLists:
+      - linkListType: deploy
+        links:
+          - text: Package and deploy overview
+            url: ../package-and-deploy/index.md
+          - text: Choose a packaging model
+            url: ../package-and-deploy/choose-packaging-model.md
+          - text: Packaging
+            url: ../package-and-deploy/packaging/index.md
+          - text: Windows App SDK deployment
+            url: ../package-and-deploy/deploy-overview.md
+
+  - title: Distribute
     linkLists:
       - linkListType: overview
         links:
-          - text: Deployment overview
-            url: ../package-and-deploy/index.md
-          - text: Deploy apps
-            url: ../package-and-deploy/index.md
-          - text: The MSIX app package format
-            url: /windows/msix
-          - text: Publish Windows apps and games
+          - text: Choose a distribution path
+            url: ../package-and-deploy/choose-distribution-path.md
+          - text: Publish overview
             url: ../publish/index.md
-
-  - title: Artificial intelligence and machine learning
-    linkLists:
-      - linkListType: concept
-        links:
-          - text: Windows AI
-            url: /windows/ai/
-          - text: GitHub Copilot extension for Visual Studio
-            url: /visualstudio/ide/visual-studio-github-copilot-extension
-          - text: Windows Machine Learning
-            url: /windows/ai/windows-ml/
-          - text: Windows Machine Learning samples
-            url: /windows/ai/windows-ml/samples
-
-  
-  - title: Community and support
-    linkLists:
-      - linkListType: overview
-        links:
-          - text: Microsoft Q&A Forum
-            url: /answers/questions/
-          - text: "@WindowsDocs"
-            url: https://twitter.com/WindowsDocs
-          - text: OneDevMinute on YouTube
-            url: /shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner
-          - text: Windows developer support
-            url: https://developer.microsoft.com/windows/support
-
-
-  - title: Platforms
-    linkLists:
-      - linkListType: architecture
-        links:
-          - text: Windows App SDK
-            url: ../windows-app-sdk/index.md
-          - text: .NET MAUI
-            url: /dotnet/maui/what-is-maui
-          - text: Universal Windows Platform (UWP)
-            url: /windows/uwp/
-          - text: Windows Presentation Foundation (WPF)
-            url: /dotnet/desktop/wpf/overview/?view=netdesktop-7.0
-          - text: Windows Forms
-            url: /dotnet/desktop/winforms/overview/?view=netdesktop-7.0
-          - text: Other development technologies
-            url: /windows/dev-environment/
-
-  - title: API Reference
-    linkLists:
-      - linkListType: reference
-        links:
-          - text: WinRT API for the Windows SDK
-            url: /uwp/api/
-          - text: Win32 API for the Windows SDK
-            url: /windows/win32/api/
-          - text: WinRT API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/winrt/
-          - text: Win32 API for the Windows App SDK
-            url: /windows/windows-app-sdk/api/win32/
-          - text: WinUI 3 API reference
-            url: /windows/winui/api/
+          - text: Get started with Microsoft Store
+            url: ../publish/get-started.md
+          - text: Open a developer account
+            url: ../publish/partner-center/open-a-developer-account.md
+          - text: Submit your app
+            url: ../publish/publish-your-app/msix/reserve-your-apps-name.md
+          - text: Get your app certified
+            url: ../publish/publish-your-app/msix/app-certification-process.md
+          - text: Monitor your app performance
+            url: ../publish/analyze-app-performance/msix.md
+          - text: Manage and update your app
+            url: ../publish/publish-your-app/msix/publish-update-to-your-app-on-store.md
+          - text: Manage your account
+            url: ../publish/partner-center/manage-account-users.md
+          - text: Microsoft Store policies and resources
+            url: ../publish/store-policies.md

@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
 description: This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/29/2026
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ Packaged with external location and unpackaged apps also have extra runtime requ
 
 ### Additional prerequisites 
 
-* [Experimental](experimental-channel.md) and [preview](preview-channel.md) versions of the Windows App SDK require that sideloading is enabled to install the runtime.
+* Experimental and preview versions of the Windows App SDK require that sideloading is enabled to install the runtime.
   - Sideloading is automatically enabled on Windows 10 version 2004 and later.
   - If your development computer or the deployment computer is running **Windows 11**, confirm whether sideloading is enabled:
     - **Settings** > **Privacy & security** > **For developers**. Make sure the **Developer mode** setting is turned on.
@@ -143,7 +143,7 @@ using Windows.Management.Deployment;
 
 public class WindowsAppSDKRuntime
 {
-    public static IsPackageRegisteredForCurrentUser(
+    public static bool IsPackageRegisteredForCurrentUser(
         string packageFamilyName,
         PackageVersion minVersion,
         Windows.System.ProcessorArchitecture architecture,
@@ -151,8 +151,8 @@ public class WindowsAppSDKRuntime
     {
         ulong minPackageVersion = ToVersion(minVersion);
 
-        foreach (var p : PackageManager.FindPackagesForUserWithPackageTypes(
-            string.Empty, packageFamilyName, packageType)
+        foreach (var p in new PackageManager().FindPackagesForUserWithPackageTypes(
+            string.Empty, packageFamilyName, packageType))
         {
             // Is the package architecture compatible?
             if (p.Id.Architecture != architecture)
@@ -207,14 +207,12 @@ public static bool IsRuntimeRegisteredForCurrentUser(PackageVersion minVersion)
            IsDDLMRegistered(systemArchitecture, minVersion);
 }
 
-private static ProcecssorArchitecture DetectSystemArchitecture()
+private static ProcessorArchitecture DetectSystemArchitecture()
 {
-    // ...see the call to IsWow64Process2(), and how the result is used...
-    // ...as per `IsPackageApplicable()` in
+    // Implementation: call IsWow64Process2() as shown in IsPackageApplicable() in
     // [install.cpp](https://github.com/microsoft/WindowsAppSDK/blob/main/installer/dev/install.cpp)
-    // line 99-116...
-    // ...WARNING: Use IsWow64Process2 to detect the system architecture....
-    // ...         Other similar APIs exist, but don't give reliably accurate results...
+    // lines 99-116. WARNING: Use IsWow64Process2 — other similar APIs give unreliable results.
+    throw new NotImplementedException();
 }
 
 private static bool IsFrameworkRegistered(ProcessorArchitecture systemArchitecture,
@@ -231,7 +229,7 @@ private static bool IsFrameworkRegistered(ProcessorArchitecture systemArchitectu
 
     // Check x64 (if necessary).
     if ((systemArchitecture == ProcessorArchitecture.X64) || 
-        (systemArchitecture == ProcessorArchitcture.Arm64))
+        (systemArchitecture == ProcessorArchitecture.Arm64))
     {
         if (!IsPackageRegisteredForCurrentUser(
             global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,
@@ -243,7 +241,7 @@ private static bool IsFrameworkRegistered(ProcessorArchitecture systemArchitectu
     }
 
     // Check arm64 (if necessary).
-    if (systemArchitecture == ProcessorArchitcture.Arm64)
+    if (systemArchitecture == ProcessorArchitecture.Arm64)
     {
         if (!IsPackageRegisteredForCurrentUser(
             global::Microsoft.WindowsAppSDK.Runtime.Packages.Framework.PackageFamilyName,

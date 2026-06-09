@@ -1,8 +1,8 @@
 ---
 title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
-description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI 3](../../winui/index.md) app that uses the Windows App SDK.
+description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI](../../winui/index.md) app that uses the Windows App SDK.
 ms.topic: upgrade-and-migration-article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
 ms.localizationpriority: medium
 ---
@@ -29,7 +29,7 @@ When you use the .NET Upgrade Assistant to migrate your UWP app, here are the hi
 * Cleans up NuGet package references. In addition to the packages referenced by your app, the `packages.config` file contains references to the dependencies of those packages. For example, if you added reference to package **A**, which depends on package **B**, then both packages would be referenced in the `packages.config` file. In the new project system, only the reference to package **A** is required. So this step analyzes the package references, and removes those that aren't required. Your app is still referencing .NET Framework assemblies. Some of those assemblies might be available as NuGet packages. So this step analyzes those assemblies, and references the appropriate NuGet package.
 * Targets .NET 6, and the Windows App SDK.
 * Changes the target framework moniker (TFM) (see [Target frameworks in SDK-style projects](/dotnet/standard/frameworks)) from .NET Framework to the suggested SDK. For example, `net6.0-windows`.
-* Migrates your UWP source code from WinUI 2 to WinUI 3, performing source-specific code changes.
+* Migrates your UWP source code from WinUI for UWP to WinUI, performing source-specific code changes.
 * Adds/updates any template, config, and code files. For example, adding necessary publishing profiles, `App.xaml.cs`, `MainWindow.xaml.cs`, `MainWindow.xaml`, and others.
 * Update namespaces, and adds **MainPage** navigation.
 * Attempts to detect and fix APIs that are different between UWP and the Windows App SDK, and uses **Task List** TODOs to mark APIs that are no longer supported.
@@ -46,7 +46,7 @@ As it runs, the tool also aims to provide migration guidance in the form of warn
 
 This release of the .NET Upgrade Assistant is currently in preview, and is receiving frequent updates. The tool currently supports only the C# programming language; not C++. And in most cases with this release, your project will require additional effort from you to complete the migration.
 
-The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via **Task List** TODOs). For more information about what to consider before migrating, see [What's supported when migrating from UWP to WinUI 3](./what-is-supported.md).
+The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via **Task List** TODOs). For more information about what to consider before migrating, see [What's supported when migrating from UWP to WinUI](./what-is-supported.md).
 
 Because of the following limitations of the current release of the .NET Upgrade Assistant, you might choose to wait for a future release before migrating your app:
 
@@ -146,13 +146,13 @@ The version numbers in your resulting `.csproj` will be slightly different, but 
 </Project>
 ```
 
-As you can see, the project is now referencing the Windows App SDK, WinUI 3, and .NET 6. Now that **PhotoLab** has been migrated, you can take advantage of all of the new features that WinUI 3 apps have to offer, and grow your app with the platform.
+As you can see, the project is now referencing the Windows App SDK, WinUI, and .NET 6. Now that **PhotoLab** has been migrated, you can take advantage of all of the new features that WinUI apps have to offer, and grow your app with the platform.
 
 Also, the .NET Upgrade Assistant adds analyzers to the project that assist with continuing with the upgrade process. For example, the **Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers** NuGet package.
 
 ## Follow-up manual migration
 
-At this point you can open the migrated **PhotoLab** solution or project, and see the changes that have been made in the source code. The project needs a little more work to finish hooking things up before the WinUI 3 version builds, runs, and behaves like the UWP version.
+At this point you can open the migrated **PhotoLab** solution or project, and see the changes that have been made in the source code. The project needs a little more work to finish hooking things up before the WinUI version builds, runs, and behaves like the UWP version.
 
 See the **Task List** in Visual Studio (**View** > **Task List**) for TODOs that you should action to manually complete the migration.
 

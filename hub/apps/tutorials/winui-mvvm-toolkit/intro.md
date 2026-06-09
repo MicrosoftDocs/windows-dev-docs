@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Data binding, dependency injection, and unit testing in WinUI
 
-This tutorial series demonstrates how to implement data binding, dependency injection, and unit testing with the Model-View-ViewModel (MVVM) design pattern and the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) in a WinUI 3 app. It builds on the [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) tutorial and shows you how to update your view models to leverage the MVVM Toolkit and the differences between the MVVM Toolkit and traditional MVVM approaches.
+This tutorial series demonstrates how to implement data binding, dependency injection, and unit testing with the Model-View-ViewModel (MVVM) design pattern and the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) in a WinUI app. It builds on the [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) tutorial and shows you how to update your view models to leverage the MVVM Toolkit and the differences between the MVVM Toolkit and traditional MVVM approaches.
 
 You can download or view the code for this tutorial from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes-mvvm-toolkit).
 
@@ -29,7 +29,7 @@ In this tutorial, you learn how to:
 
 To complete this tutorial, you need the following prerequisites:
 
-- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) (version 17.14 or later) or Visual Studio 2026 with the **WinUI application development** workload installed.
+- [Visual Studio 2026](https://visualstudio.microsoft.com/vs/) with the **WinUI application development** workload installed.
 - A starter project created by following the steps in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) tutorial. If you're already familiar with the tutorial, you can download the code to get started here from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes).
 
 ## What is the MVVM Toolkit?

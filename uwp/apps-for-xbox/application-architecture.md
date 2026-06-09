@@ -6,6 +6,10 @@ ms.topic: article
 keywords: Xbox
 ---
 # Xbox Media Application Architecture
+
+> [!NOTE]
+> Please note that UWP based games are no longer accepted in the Xbox Store. Please use the [ID@XBOX program](https://www.xbox.com/games/id).
+
 All Xbox apps are packaged using the [Universal Windows Platform](../develop/index.md) but this does not mean that all Xbox applications must be written in XAML and C#. This section will go through several high-level architectural decisions you will need to make before you can start writing your Xbox application.
 
 For general guidance on developing UWP applications for Xbox see this documentation:

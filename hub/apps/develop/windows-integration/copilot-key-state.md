@@ -18,7 +18,7 @@ The rest of this article will walk through creating a simple C# WinUI 3 app that
 
 ## Create a new project
 
-In Visual Studio, create a new project. For this example, in the **Create a new project** dialog, set the language filter to C# and the project type to WinUI 3 and then select the "Blank App, Packaged (WinUI 3 in Desktop).
+In Visual Studio, create a new project. For this example, in the **Create a new project** dialog, set the language filter to C# and the project type to WinUI and then select the "WinUI Blank App (Packaged)".
 
 ## Add a property to track the Microsoft Copilot key pressed state
 
@@ -53,7 +53,7 @@ public string State
 }
 ```
 
-Add a **TextBox** control to the UI to show the current activation state of the app. Replace the default **StackPanel** element in MainPage.xaml with the following code.
+Add a **TextBlock** control to the UI to show the current activation state of the app. Replace the default **StackPanel** element in MainWindow.xaml with the following code.
 
 ```xaml
 <!-- MainWindow.xaml -->
@@ -70,7 +70,7 @@ public MainWindow(string state)
 {
     this.InitializeComponent();
 
-    _state = state;
+    SetState(state);
 }
 ```
 
@@ -117,9 +117,9 @@ Inside of the **uap3:AppExtension** element, add a [uap3:Properties](/uwp/schema
       <uap3:Properties> 
         <SingleTap>myapp-copilothotkey://?state=Tap</SingleTap>
         <PressAndHoldStart>myapp-copilothotkey://?state=Down</PressAndHoldStart> 
-        <PressAndHoldStop>myapp-copilothotkey:?//state=Up</PressAndHoldStop> 
+        <PressAndHoldStop>myapp-copilothotkey://?state=Up</PressAndHoldStop>
       </uap3:Properties> 
-    </ uap3:AppExtension> 
+    </uap3:AppExtension>
   </uap3:Extension> 
   ...
 ```
@@ -149,7 +149,7 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
 ```
 
 > [!IMPORTANT]
-> Note that, by default, WinUI 3 apps are multi-instanced, which means that a new instance will be launched whenever the Microsoft Copilot hot key is pressed or released. This may be the desired behavior for many providers, but if you would prefer, you can update you app to use a single instance. For more information, see [Create a single-instanced WinUI app with C#](/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance).
+> Note that, by default, WinUI apps are multi-instanced, which means that a new instance will be launched whenever the Microsoft Copilot hot key is pressed or released. This may be the desired behavior for many providers, but if you would prefer, you can update you app to use a single instance. For more information, see [Create a single-instanced WinUI app with C#](/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance).
 
 ## Handle fast path invocation
 
@@ -213,11 +213,9 @@ public MainWindow(string state)
     this.InitializeComponent();
 
     hWndMain = (HWND)WinRT.Interop.WindowNative.GetWindowHandle(this);
-    Microsoft.UI.Windowing.AppWindow appWindow = AppWindow;
-
 
     var propertyStoreGUID = new Guid("886D8EEB-8CF2-4446-8D02-CDBA1DBDCF99");
-    var hr = PInvoke.SHGetPropertyStoreForWindow((HWND)this.AppWindow.Id.Value, in propertyStoreGUID, out var propertyStore);
+    var hr = PInvoke.SHGetPropertyStoreForWindow(hWndMain, in propertyStoreGUID, out var propertyStore);
     var key = new PROPERTYKEY();
     var copilotFastpathGUID = new Guid("38652BCA-4329-4E74-86F9-39CF29345EEA");
     key.fmtid = copilotFastpathGUID;
@@ -229,9 +227,9 @@ public MainWindow(string state)
     ((IPropertyStore)propertyStore).Commit();
 
     SubClassDelegate = new Windows.Win32.UI.Shell.SUBCLASSPROC(WindowSubClass);
-    bool bRet = PInvoke.SetWindowSubclass((HWND)appWindow.Id.Value, SubClassDelegate, 0, 0);
+    bool bRet = PInvoke.SetWindowSubclass(hWndMain, SubClassDelegate, 0, 0);
 
-    _state = state;
+    SetState(state);
 }
 ```
 

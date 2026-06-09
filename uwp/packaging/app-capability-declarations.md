@@ -1,7 +1,7 @@
 ---
 title: App capability declarations
 description: To access certain APIs or resources (such as pictures or music), or devices (such as the camera or the microphone), you must declare app capabilities in your Windows app's package manifest.
-ms.date: 10/11/2023
+ms.date: 12/10/2025
 ms.topic: article
 keywords: windows 11, windows 10, uwp
 ms.localizationpriority: medium
@@ -301,6 +301,7 @@ To declare a custom capability, modify your [app package manifest](/uwp/schemas/
 | **Registering an approved shell extension** | See the **Machine-wide install** capability scenario. |
 | **S-mode** | An app that declares the **Microsoft.requiresNonSMode_8wekyb3d8bbwe** custom capability will be prevented from running on a Windows device in S-mode. |
 | **Startup apps** | An app can be set up to start automatically at user login. Normally, the user can enable/disable that behavior for each app. The **Microsoft.nonUserConfigurableStartupTasks_8wekyb3d8bbwe** custom capability configures an app such that the user can't enable/disable its startup behavior. |
+| **TextInputMethod** | The **Microsoft.appCategory.textInputMethod_8wekyb3d8bbwe** custom capability enables several advanced features related to text input, including events for input focus (determining when to enter and exit) and the ability to read and write text within the current input focus's edit control. |
 | **Windows core 1** | An app that declares the **Microsoft.deployFullTrustOnHost_8wekyb3d8bbwe** custom capability is fully-trusted to use native Win32 APIs on a Windows core device. |
 | **Windows core 2** | A Desktop Bridge app that declares the **Microsoft.notSupportedInCoreV1_8wekyb3d8bbwe** custom capability will be prevented from running on a Windows core device. |
 | **Windows Hello companion device framework** | The functionality related to the **Microsoft.secondaryAuthenticationFactorForLogon_8wekyb3d8bbwe** custom capability is deprecated as of Windows 10, version 2004 (10.0; Build 19041), and we no longer grant this capability to developer accounts. An app that declares this capability can be registered with the companion device framework to enable *Windows unlock* with the app's associated companion device. For more info, see [Windows Unlock with Windows Hello companion (IoT) devices](../security/companion-device-unlock.md). |

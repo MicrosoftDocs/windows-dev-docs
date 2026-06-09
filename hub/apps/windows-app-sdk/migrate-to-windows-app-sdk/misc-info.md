@@ -2,7 +2,7 @@
 title: Additional migration guidance
 description: This topic contains additional migration guidance not categorized into a feature area in the [feature area guides](feature-area-guides-ovw.md).
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---
@@ -55,7 +55,7 @@ You can also use conditional compilation in XAML markup.
 </Application>
 ```
 
-Also see [Conditional compilation](../../desktop/modernize/desktop-to-uwp-enhance.md#conditional-compilation).
+Also see [Conditional compilation](../../desktop/modernize/winrt-apis-desktop-apps.md#conditional-compilation).
 
 ## Debugging
 

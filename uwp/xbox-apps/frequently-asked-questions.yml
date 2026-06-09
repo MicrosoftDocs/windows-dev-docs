@@ -13,6 +13,9 @@ summary: |
   Look through this page of frequently asked questions. 
   Also check out the [Known issues](known-issues.md) topic and the [Developing Universal Windows apps](https://social.msdn.microsoft.com/Forums/windowsapps/en-US/home?forum=wpdevelop) forum. 
   
+  > [!NOTE]
+  > Please note that UWP based games are no longer accepted in the Xbox Store. Please use the [ID@XBOX program](https://www.xbox.com/games/id).
+
 
 sections:
   - name: Ignored

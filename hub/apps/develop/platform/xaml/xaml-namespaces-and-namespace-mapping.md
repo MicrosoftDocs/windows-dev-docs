@@ -93,7 +93,7 @@ The "d:" XAML namespace is intended for designer support, specifically designer 
 
 ### **local:** and **common:**
 
-"local:" is a prefix that is often mapped for you within the XAML pages for a templated UWP app project. It's mapped to refer to the same namespace that's created to contain the [x:Class attribute](x-class-attribute.md) and code for all the XAML files including app.xaml. So long as you define any custom classes you want to use in XAML in this same namespace, you can use the **local:** prefix to refer to your custom types in XAML. A related prefix that comes from a templated UWP app project is **common:**. This prefix refers to a nested "Common" namespace that contains utility classes such as converters and commands, and you can find the definitions in the Common folder in the **Solution Explorer** view.
+"local:" is a prefix that is often mapped for you within the XAML pages for a templated WinUI app project. It's mapped to refer to the same namespace that's created to contain the [x:Class attribute](x-class-attribute.md) and code for all the XAML files including app.xaml. So long as you define any custom classes you want to use in XAML in this same namespace, you can use the **local:** prefix to refer to your custom types in XAML. A related prefix that comes from a templated WinUI app project is **common:**. This prefix refers to a nested "Common" namespace that contains utility classes such as converters and commands, and you can find the definitions in the Common folder in the **Solution Explorer** view.
 
 ### **vsm:**
 

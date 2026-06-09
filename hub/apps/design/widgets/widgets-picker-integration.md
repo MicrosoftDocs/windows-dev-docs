@@ -40,7 +40,7 @@ You may provide widget screenshots for multiple locales. The locale for each scr
 * Reference these images in the appxmanifest using the ms-appx: URI scheme. For example: Screenshot="ms-appx:Assets\Screenshot.png"
 * If you don't include an image for a specific locale, then the fallback image in the root directory will be used. 
 
-The resource loader will automatically choose the language-appropriate asset to display. For more information, see: [Load images and assets tailored for scale, theme, high contrast, and others](/windows/uwp/app-resources/images-tailored-for-scale-theme-contrast#refer-to-an-image-file-from-your-app-package-manifest).
+The resource loader will automatically choose the language-appropriate asset to display. For more information, see: [Load images and assets tailored for scale, theme, high contrast, and others](/windows/apps/windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast#refer-to-an-image-file-from-your-app-package-manifest).
 
 
 

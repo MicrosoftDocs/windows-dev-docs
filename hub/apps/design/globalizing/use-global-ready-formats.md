@@ -45,7 +45,7 @@ If you need to display dates or times yourself then you can use the [**DateTimeF
 
 You can test the code above on your own PC like this.
 
-- Make sure that you have resource files in your project qualified for both "en-US" and "de-DE" (see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)).
+- Make sure that you have resource files in your project qualified for both "en-US" and "de-DE" (see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)).
 - Change your user profile language list in **Settings** > **Time & Language** > **Region & language** > **Languages**. Add German (Germany), make it the default, and run the code again.
 
 ## Format dates and times for the user profile language list
@@ -62,6 +62,116 @@ If for whatever reason you want to format dates and/or times only according to t
     var shortDateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("shortdate", userLanguages);
 
     var results = "Short Date: " + shortDateFormatter.Format(DateTime.Now);
+```
+
+## Use templates and patterns for advanced date/time formatting
+
+You can use classes in the [**Windows.Globalization.DateTimeFormatting**](/uwp/api/windows.globalization.datetimeformatting?branch=live) namespace with custom templates and patterns to display dates and times in exactly the format you wish.
+
+### The difference between format templates and format patterns
+
+A format template is a culture-agnostic format string. So, if you construct a **DateTimeFormatter** using a format template, then the formatter displays your format components in the right order for the current language. Conversely, a format pattern is culture-specific. If you construct a **DateTimeFormatter** using a format pattern, then the formatter will use the pattern exactly as given. Consequently, a pattern isn't necessarily valid across cultures.
+
+Let's illustrate this distinction with an example. We'll pass a simple format template (not a pattern) to the **DateTimeFormatter** constructor. This is the format template "month day".
+
+```csharp
+var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
+```
+
+This creates a formatter based on the language and region value of the current context. The order of the components in a format template doesn't matter; the formatter displays them in the right order for the current language. So, it displays "January 1" for English (United States), "1 janvier" for French (France), and "1月1日" for Japanese.
+
+On the other hand, a format pattern is culture-specific. Let's access the format pattern for our format template.
+
+```csharp
+IReadOnlyList<string> monthDayPatterns = dateFormatter.Patterns;
+```
+
+This yields different results depending on the runtime language and region. Different regions might use different components, in different orders, with or without additional characters and spacing.
+
+```syntax
+En-US: "{month.full} {day.integer}"
+Fr-FR: "{day.integer} {month.full}"
+Ja-JP: "{month.integer}月{day.integer}日"
+```
+
+In the example above, we inputted a culture-agnostic format string, and we got back a culture-specific format string (which was a function of the language and region that happened to be in effect when we called `dateFormatter.Patterns`). It follows therefore that if you construct a **DateTimeFormatter** from a culture-specific format pattern, then it will only be valid for specific languages/regions.
+
+```csharp
+var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
+```
+
+The formatter above returns culture-specific values for the individual components inside the brackets {}. But the order of components in a format pattern is invariant. You get precisely what you ask for, which may or may not be culturally appropriate. This formatter is valid for English (United States), but not for French (France) nor for Japanese.
+
+``` syntax
+En-US: January 1
+Fr-FR: janvier 1 (inappropriate for France; non-standard order)
+Ja-JP: 1月1 (inappropriate for Japan; the day symbol 日 is missing)
+```
+
+Furthermore, a pattern that's correct today might not be correct in the future. Countries or regions might change their calendar systems, which alters a format template. Windows updates the output of formatters based on format templates to accommodate such changes. Therefore, you should only use the pattern syntax under one or more of these conditions.
+
+-   You are not dependent on a particular output for a format.
+-   You do not need the format to follow some culture-specific standard.
+-   You specifically intend the pattern to be invariant across cultures.
+-   You intend to localize the actual format pattern string itself.
+
+Here's a summary of the distinction between format templates and format patterns.
+
+**Format templates, such as "month day"**
+
+-   Abstracted representation of a [DateTime](/uwp/api/windows.foundation.datetime?branch=live) format that includes values for the month, day, etc., in any order.
+-   Guaranteed to return a valid standard format across all language-region values supported by Windows.
+-   Guaranteed to give you a culturally-appropriate formatted string for the given language-region.
+-   Not all combinations of components are valid. For example, "dayofweek day" is not valid.
+
+**Format patterns, such as "{month.full} {day.integer}"**
+
+-   Explicitly ordered string that expresses the full month name, followed by a space, followed by the day integer, in that order, or whatever specific format pattern you specify.
+-   May not correspond to a valid standard format for any language-region pair.
+-   Not guaranteed to be culturally appropriate.
+-   Any combination of components may be specified, in any order.
+
+### Combining date and time templates with custom formatting
+
+Suppose you wish to display the current month and day together with the current time, in a specific format. For example, you would like US English users to see something like this:
+
+``` syntax
+June 25 | 1:38 PM
+```
+
+The date part corresponds to the "month day" format template, and the time part corresponds to the "hour minute" format template. So, you can construct formatters for the relevant date and time format templates, and then concatenate their output together using a localizable format string.
+
+```csharp
+var dateToFormat = System.DateTime.Now;
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+
+var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
+var timeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("hour minute");
+
+var date = dateFormatter.Format(dateToFormat);
+var time = timeFormatter.Format(dateToFormat);
+
+string output = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), date, time);
+```
+
+`CustomDateTimeFormatString` is a resource identifier referring to a localizable resource in a Resources File (.resw). For a default language of English (United States), this would be set to a value of "{0} | {1}" along with a comment indicating that "{0}" is the date and "{1}" is the time. That way, translators can adjust the format items as needed. For example, they can change the order of the items if it seems more natural in some language or region to have the time precede the date. Or, they can replace "|" with some other separator character.
+
+Another way to implement this example is to query the two formatters for their format patterns, concatenate those together, and then construct a third formatter from the resultant format pattern.
+
+```csharp
+var resourceLoader = Windows.ApplicationModel.Resources.ResourceLoader.GetForCurrentView();
+
+var dateFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
+var timeFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("hour minute");
+
+string dateFormatterPattern = dateFormatter.Patterns[0];
+string timeFormatterPattern = timeFormatter.Patterns[0];
+
+string pattern = string.Format(resourceLoader.GetString("CustomDateTimeFormatString"), dateFormatterPattern, timeFormatterPattern);
+
+var patternFormatter = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(pattern);
+
+string output = patternFormatter.Format(System.DateTime.Now);
 ```
 
 ## Format numbers and currencies appropriately
@@ -154,6 +264,7 @@ For scenarios where you wish to provide different functionality based solely on 
 ## Important APIs
 
 * [DateTimeFormatter](/uwp/api/windows.globalization.datetimeformatting?branch=live)
+* [DateTime](/uwp/api/windows.foundation.datetime?branch=live)
 * [NumberFormatting](/uwp/api/windows.globalization.numberformatting?branch=live)
 * [Calendar](/uwp/api/windows.globalization.calendar?branch=live)
 * [PhoneNumberFormatting](/uwp/api/windows.globalization.phonenumberformatting?branch=live)
@@ -161,9 +272,10 @@ For scenarios where you wish to provide different functionality based solely on 
 
 ## Related topics
 
+* [NumeralSystem values](glob-numeralsystem-values.md)
 * [Calendar, date, and time controls](../controls/date-and-time.md)
 * [Understand user profile languages and app manifest languages](manage-language-and-region.md)
-* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/uwp/app-resources/tailor-resources-lang-scale-contrast)
+* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)
 
 ## Samples
 

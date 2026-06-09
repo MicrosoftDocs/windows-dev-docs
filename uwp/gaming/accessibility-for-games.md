@@ -2,7 +2,7 @@
 title: Making games accessible
 description: Learn how to make games accessible. Use the inclusive game design principle to achieve game accessibility.
 ms.assetid: f5ba1e60-0d7c-11e6-91ec-0002a5d5c51b
-ms.date: 11/09/2017
+ms.date: 03/03/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, accessibility, games
 ms.localizationpriority: medium
@@ -16,7 +16,7 @@ Accessibility can empower every person and every organization on the planet to a
 
 At Microsoft, we believe that gaming should be fun for everyone. We "felt compelled to do more to make gaming an inclusive environment that embraced everyone. We fundamentally believe that what we build for our fans and the way we show up – inside and outside the walls of Microsoft – is a reflection of who we are. We designed the program to reflect the core values we have as an organization and believe that the program could result in positive change – not only in our workplace but in the products we build for the gamers we serve." ([Blog post](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) from Phil Spencer)
 
-We want to create a fun, diverse, and inclusive environment where everyone can play in. "To truly have a lasting impact requires a culture shift, one that won’t happen overnight. However, our team is committed to get better each day, to teach one another to pause in our decision making process and think about the amazing diversity of needs, abilities and interests amongst gamers around the world." ([Blog post](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) from Phil Spencer)
+We want to create a fun, diverse, and inclusive environment where everyone can play in. "To truly have a lasting impact requires a culture shift, one that won't happen overnight. However, our team is committed to get better each day, to teach one another to pause in our decision making process and think about the amazing diversity of needs, abilities and interests amongst gamers around the world." ([Blog post](https://blogs.microsoft.com/blog/2016/06/13/gaming-for-everyone/) from Phil Spencer)
 
 We hope you'll join us on this journey to make [Gaming for Everyone](https://news.microsoft.com/gamingforeveryone/) happen. 
 
@@ -28,7 +28,7 @@ At its most basic level, the business justification for accessibility is straigh
 
 Number of users who can play your game x Awesomeness of game = Game sales
 
-If you made an amazing game that is so complicated or convoluted that only a handful of people can play it, you limit your sales. Similarly, if you made a game that is unplayable by those with physical, sensory, or cognitive impairments, you are missing out on potential sales. Considering that, for example, [19% of people in the United States have some form of disability](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [estimated 14% of adults in the US have difficulty reading](https://nces.ed.gov/naal/estimates/overview.aspx), and [estimated 10% of males have some form of color vision deficiency](https://www.aao.org/eye-health/diseases/color-blindness-risk), this can potentially have a large impact on your title’s revenue. 
+If you made an amazing game that is so complicated or convoluted that only a handful of people can play it, you limit your sales. Similarly, if you made a game that is unplayable by those with physical, sensory, or cognitive impairments, you are missing out on potential sales. Considering that, for example, [19% of people in the United States have some form of disability](https://www.census.gov/newsroom/releases/archives/miscellaneous/cb12-134.html), [estimated 14% of adults in the US have difficulty reading](https://nces.ed.gov/naal/estimates/overview.aspx), and [estimated 10% of males have some form of color vision deficiency](https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/color-blindness), this can potentially have a large impact on your title's revenue.
 
 For more business justifications, see [Making Video Games Accessible](/windows/desktop/DxTechArts/accessibility-best-practices).
 
@@ -36,9 +36,9 @@ For more business justifications, see [Making Video Games Accessible](/windows/d
 
 Creating a more accessible game can create a better game in the end. 
 
-An example is subtitles in games. In the past, games rarely supported subtitles or closed captioning for game dialogues. Today, it’s expected that games include subtitles and closed captioning. This change was not driven by gamers with disabilities. Instead, it was driven by localization, but became popular with a wide range of gamers who simply preferred to play with subtitles because it made the gaming experience better. Gamers turn subtitles and closed captioning on when they are playing with too much background noise, are having difficulty hearing voices with various sound effects or ambient sounds playing at the same time, or when they simply need to keep the volume low to avoid disturbing others. Subtitles and closed captions not only helped gamers to have a better gaming experience, but it also allows people with hearing disabilities to game as well.
+An example is subtitles in games. In the past, games rarely supported subtitles or closed captioning for game dialogues. Today, it's expected that games include subtitles and closed captioning. This change was not driven by gamers with disabilities. Instead, it was driven by localization, but became popular with a wide range of gamers who simply preferred to play with subtitles because it made the gaming experience better. Gamers turn subtitles and closed captioning on when they are playing with too much background noise, are having difficulty hearing voices with various sound effects or ambient sounds playing at the same time, or when they simply need to keep the volume low to avoid disturbing others. Subtitles and closed captions not only helped gamers to have a better gaming experience, but it also allows people with hearing disabilities to game as well.
 
-Controller remapping is another feature that is slowly becoming a standard for the game industry for similar reasons. It is most commonly offered as a benefit for all players. Some gamers enjoy customizing their gaming experiences and some simply prefer something different from what the designers had in mind. What most people don’t realize is that the ability to remap buttons on an input device is actually also an accessibility feature that was intended to make a game playable for people with various types of motor disabilities, who are physically unable to or find it difficult to operate certain areas of the controller.
+Controller remapping is another feature that is slowly becoming a standard for the game industry for similar reasons. It is most commonly offered as a benefit for all players. Some gamers enjoy customizing their gaming experiences and some simply prefer something different from what the designers had in mind. What most people don't realize is that the ability to remap buttons on an input device is actually also an accessibility feature that was intended to make a game playable for people with various types of motor disabilities, who are physically unable to or find it difficult to operate certain areas of the controller.
 
 Ultimately, the thought process used to make your game more accessible will often result in a better game because you have designed a more user-friendly, customizable experience for your players to enjoy.
 
@@ -46,7 +46,7 @@ Ultimately, the thought process used to make your game more accessible will ofte
 
 Video games are one of the highest grossing forms of entertainment and gaming can provide hours of joy. For some, gaming is not only a form of entertainment but it is an escape from a hospital bed, chronic pain, or debilitating social anxiety. Gamers are transported into a world where they become the main characters in the video game. Through gaming, they can create and participate in a social space for themselves that provides distraction from the day-to-day struggles brought on by their disabilities, and that provides an opportunity to communicate with people they might otherwise be unable to interact with. 
 
-Gaming is also a culture. Being able to take part in the same thing that all of your friends are talking about is something that can be hugely valuable to someone’s quality of life.
+Gaming is also a culture. Being able to take part in the same thing that all of your friends are talking about is something that can be hugely valuable to someone's quality of life.
 
 ##  Is the game you are making today accessible?
 
@@ -68,8 +68,8 @@ Disability is defined as "a mismatch between the needs of the individual and the
 
 ### Vision
 
-*	Medical, long-term conditions like glaucoma, cataracts, color blindness, near-sightedness, and diabetic retinopathy
-*	Short-term, situational conditions like a small monitor or screen size, a low resolution screen, or screen glare due to bright light sources like the sun on a monitor or mobile screen
+*    Medical, long-term conditions like glaucoma, cataracts, color blindness, near-sightedness, and diabetic retinopathy
+*    Short-term, situational conditions like a small monitor or screen size, a low resolution screen, or screen glare due to bright light sources like the sun on a monitor or mobile screen
         
 ### Hearing
 
@@ -78,7 +78,7 @@ Disability is defined as "a mismatch between the needs of the individual and the
         
 ### Motor
 
-* Medical, long-term conditions like Parkinson’s disease, amyotrophic lateral sclerosis (ALS), arthritis, and muscular dystrophy
+* Medical, long-term conditions like Parkinson's disease, amyotrophic lateral sclerosis (ALS), arthritis, and muscular dystrophy
 * Short-term, situational conditions like an injured hand, holding a beverage, or carrying a child in one arm
   
 ### Cognitive
@@ -98,7 +98,7 @@ Disability is defined as "a mismatch between the needs of the individual and the
 
 Inclusive design focuses on creating products and services more accessible to a broader spectrum of consumers, including people with disabilities.
 
-To be successful, today’s game designers need to think beyond creating games that they enjoy. Game designers need to be aware of how their design decisions impact the overall accessibility of the game; the playability of the game for their entire target audience, including those with disabilities.
+To be successful, today's game designers need to think beyond creating games that they enjoy. Game designers need to be aware of how their design decisions impact the overall accessibility of the game; the playability of the game for their entire target audience, including those with disabilities.
 
 As such, traditional game design paradigms must shift to embrace the inclusive game design concept. Inclusive game design means going beyond the basic game design of creating fun for the target audience, to creating additional or modified personas to include a wider spectrum of players. You need to be acutely aware about designing barriers in your game and make sure that they do not add unnecessary barriers that take the fun away from the intended experience.
 
@@ -106,7 +106,7 @@ By identifying gaps, you can optimise, iterate on the original design concept an
 
 ### Empower gamers: Give gamers options
 
-Nearly every accessibility solution comes down to one of two principles. The first is giving your gamers the options to customize their gaming experience. If you already have a huge fan base, you may have a significant portion of your audience who do not want the experience to change in any way. That’s okay. Give your gamers the ability to turn these features on and off, and make features configurable individually. You need to allow people to experience the game in the way that best suits their own needs and preferences.
+Nearly every accessibility solution comes down to one of two principles. The first is giving your gamers the options to customize their gaming experience. If you already have a huge fan base, you may have a significant portion of your audience who do not want the experience to change in any way. That's okay. Give your gamers the ability to turn these features on and off, and make features configurable individually. You need to allow people to experience the game in the way that best suits their own needs and preferences.
 
 ### Reinforce: Communicate information in more than one way
 
@@ -126,7 +126,7 @@ Accessibility is a measure of quality. It has to be a feature requirement and no
 
 Game development is always running on a tight timeline, so prioritizing accessibility will help make it an easier process. One way is to design from the start with accessibility in mind. The earlier you consider accessibility, the easier and cheaper it becomes. 
 
-Share your knowledge about accessibility with your team, share the business justifications, and dispel the common misconceptions – that it doesn’t benefit many people, it dilutes your mechanic, and it's difficult and expensive to implement.
+Share your knowledge about accessibility with your team, share the business justifications, and dispel the common misconceptions – that it doesn't benefit many people, it dilutes your mechanic, and it's difficult and expensive to implement.
 
 ### Review: Constantly evaluate your game
 
@@ -149,7 +149,7 @@ Use social media and your game's forum to listen for input about which accessibi
 
 ### Shout it out: Let the world know your game is accessible
 
-Consumers will want to know if your game can be played by gamers with disabilities. State the game’s accessibility clearly on the game website, press releases, and packaging to ensure that consumers know what to expect when they buy your game. Remember to make your website and all sales channels to the game accessible as well. Most importantly, reach out to the accessibility gaming community and tell them about your game.
+Consumers will want to know if your game can be played by gamers with disabilities. State the game's accessibility clearly on the game website, press releases, and packaging to ensure that consumers know what to expect when they buy your game. Remember to make your website and all sales channels to the game accessible as well. Most importantly, reach out to the accessibility gaming community and tell them about your game.
 
 ## Game accessibility features
 
@@ -161,7 +161,7 @@ The retina of the eye has two types of light-sensitive cells: the cones for seei
 
 There are three types of cones (red, green, and blue) to enable us to view colors correctly. Color blindness occurs when one or more of these three types light cones is not functioning as expected. The degree of color blindness can range from almost normal color perception with reduced sensitivity towards red, green, or blue light, to a complete inability to perceive any color at all. 
 
-Since it’s less common to have reduced sensitivity to blue light, when designing for the color blind, the selection of colors are geared towards people who are red or green color blind:
+Since it's less common to have reduced sensitivity to blue light, when designing for the color blind, the selection of colors are geared towards people who are red or green color blind:
  
   + Use color combinations that can be differentiated by people with red/green color blindness:
   
@@ -178,12 +178,12 @@ When designing the closed captions and subtitles for your game, the objective is
 
 Here are some basic guidelines to consider when designing closed captions and subtitles:
 
-*	Select simple readable font.
-*	Select sufficiently large font size, or consider having adjustable font size option for more flexibility. (Ideal font size depends on screen size, viewing distance from screen, and so on.)
-*	Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](/windows/apps/design/accessibility/accessible-text-requirements).)
+*    Select simple readable font.
+*    Select sufficiently large font size, or consider having adjustable font size option for more flexibility. (Ideal font size depends on screen size, viewing distance from screen, and so on.)
+*    Create high contrast between background and font color. Use strong outline and shadows for the text. Use a dark background overlay for the captions and remember to provide options for it to be turned on or off. (For more information, see [Information on contrast ratio](/windows/apps/design/accessibility/accessible-text-requirements).)
 * Display short sentences on screen, maximum 38 characters per line and maximum 2-3 lines at any one time. (Remember not to give the game away by displaying the text before event occurs.)
-*	Differentiate what is making the sound or who is talking. (Example: "Daniel: Hi!")
-*	Provide the option to turn closed captions and subtitles on and off. (Additional feature: Ability to select how much sound information is displayed based on importance.)
+*    Differentiate what is making the sound or who is talking. (Example: "Daniel: Hi!")
+*    Provide the option to turn closed captions and subtitles on and off. (Additional feature: Ability to select how much sound information is displayed based on importance.)
 
 ### Game chat transcription
 
@@ -197,10 +197,10 @@ For developers in the ID@Xbox and managed partners program, Text-to-Speech and S
 
 Sound provides feedback to the player, in addition to visual feedback. Good game audio design can improve accessibility for players with visual impairment. Here are some guidelines to consider:
 
-*	Use 3D audio cues to provide additional spatial information.
+*    Use 3D audio cues to provide additional spatial information.
 * Separate music, speech and sound effects volume controls.
-*	Design speech that provides meaningful information for gamers. (Example: "Enemies are approaching" vs. "Enemies are entering from the back door.")
-*	Ensure speech is spoken at a reasonable rate, and provide rate control for better accessibility.
+*    Design speech that provides meaningful information for gamers. (Example: "Enemies are approaching" vs. "Enemies are entering from the back door.")
+*    Ensure speech is spoken at a reasonable rate, and provide rate control for better accessibility.
 
 ### Fully mappable controls
 
@@ -258,11 +258,9 @@ Here are some external sites that provide additional information about game acce
 ### Other references used
 * [Color Blind Awareness, a Community Interest Company](https://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/)
 * [How to do subtitles well&mdash;a blog article on Gamasutra by Ian Hamilton](https://www.gamasutra.com/blogs/IanHamilton/20150715/248571/How_to_do_subtitles_well__basics_and_good_practices.php)
-* [Innovation for All Programme](https://doga.no/en/tools/inclusive-design/cases/nordan-windows/)
 * [Epilepsy foundation](https://www.epilepsy.com/)
 
 ### Related links
 * [Inclusive Design](https://www.microsoft.com/design/inclusive/)
-* [Accessibility in Windows 11 and Windows 10](/windows/apps/develop/accessibility)
-* [Developing accessible UWP apps](/windows/apps/design/accessibility/accessibility)
+* [Accessibility in Windows](/windows/apps/design/accessibility/accessibility)
 * [Engineering Software For Accessibility eBook](https://www.microsoft.com/download/details.aspx?id=19262)

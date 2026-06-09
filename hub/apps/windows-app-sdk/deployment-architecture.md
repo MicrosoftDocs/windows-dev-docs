@@ -2,7 +2,7 @@
 title: Windows App SDK deployment architecture and overview
 description: This article provides a high level explanation of the Windows App SDK deployment architecture and scenarios.
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 05/29/2026
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -34,7 +34,7 @@ The following sections define key terms for Windows App SDK deployment and addit
 | **Singleton package** | Contains background tasks, services, app extensions, and other components not included in the Framework package such as Push Notifications. This is generally a single long-running process that is brokered between apps. |
 | **Dynamic Dependency Lifetime Manager (DDLM) package** | Prevents the OS from performing servicing updates to the MSIX packages while a packaged with external location or unpackaged app is in use. |
 | **Bootstrapper** | An app-local binary used by packaged with external location and unpackaged apps to locate and load the best Windows App SDK version match as needed by the app.  |
-| **Provisioning** | The process of installing and registering packages (including files and registry keys) system-wide to eliminate the need for repeated installation by the other users. It can be done either as part of the OS or done during installation of an app. |
+| **Provisioning** | The process of staging packages system-wide so that any user on the machine can register and use them without requiring per-machine staging to be repeated. Provisioning can be performed as part of the OS image or during enterprise app deployment. |
 | **Installer** | Refers to the .exe installer which deploys the Framework, Main, Singleton, and DDLM packages. |
 | **MSIX** | Modern installer technology that enables users to safely install an app per user, directly from the Microsoft Store or a web site. On Enterprise or shared PCs, apps can be installed for all users via PowerShell and MDM. |
 
@@ -56,7 +56,7 @@ Because app compatibility is important to Microsoft and to apps that depend on t
 
 The **singleton package** ensures that a single long-running process can handle services that are used across multiple apps, which may be running on different versions of the Windows App SDK. 
 
-The Windows App SDK singleton is needed to enable [push notifications](notifications/push-notifications/index.md) for unpackaged apps and packaged Win32 applications using Windows versions below 20H1, which cannot be supported by the existing UWP [PushNotificationTrigger](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) and [ToastNotificationActionTrigger](/uwp/api/windows.applicationmodel.background.toastnotificationactiontrigger) class. Future Windows App SDK features that cannot be supported by the Framework package will be added to the Singleton package.
+The Windows App SDK singleton is needed to enable [push notifications](../develop/notifications/push-notifications/index.md) for unpackaged apps and packaged Win32 applications using Windows versions below 20H1, which cannot be supported by the existing UWP [PushNotificationTrigger](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) and [ToastNotificationActionTrigger](/uwp/api/windows.applicationmodel.background.toastnotificationactiontrigger) classes. Future Windows App SDK features that cannot be supported by the Framework package will be added to the Singleton package.
 
 ## Additional requirements for unpackaged apps
 
@@ -67,7 +67,7 @@ The bootstrapper is a library that must be included with your packaged with exte
 - Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package.
 - Find and load the Windows App SDK framework package to the app's package graph.
 
-To accomplish these tasks, the nuget package leverages [auto-initializers](/windows/apps/package-and-deploy/project-properties#auto-initializers-in-the-windows-app-sdk) to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you can call the bootstrapper API directly in your app's startup code (see [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) so that it can properly initialize the system for the unpackaged app. Your app must use the bootstrapper API before it can use Windows App SDK features such as WinUI, App lifecycle, MRT Core, and DWriteCore.
+To accomplish these tasks, the nuget package leverages [auto-initializers](/windows/apps/package-and-deploy/project-properties#auto-initializers-in-the-windows-app-sdk) to wire up the bootstrapper for you. Simply set `<WindowsPackageType>None</WindowsPackageType>` in your project file. In advanced scenarios, if you want control over the initialization, you can call the bootstrapper API directly in your app's startup code (see [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)) so that it can properly initialize the system for the unpackaged app. Your app must use the bootstrapper API before it can use Windows App SDK features such as WinUI 3, App lifecycle, MRT Core, and DWriteCore.
 
 The bootstrapper library in the Windows App SDK 1.0 release includes:
 
@@ -86,7 +86,23 @@ There is one DDLM for each version and architecture of the Windows App SDK frame
 * For unpackaged apps, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
 * **C#**. For the .NET runtime, see [Download .NET](https://dotnet.microsoft.com/download).
 
+## MSIX deployment pipeline
+
+When you add an MSIX package to a machine, the deployment engine processes the request through three stages:
+
+| Stage | Scope | What happens |
+|---|---|---|
+| **Index** | Per-machine | Parses the package manifest and records metadata and the intended installation path |
+| **Stage** | Per-machine | Creates the package directory, extracts payload, and applies ACLs |
+| **Register** | Per-user | Associates the staged package with a specific user — creates Start menu entries, file type associations, and runtime data |
+
+Staging is performed once per machine; registration is per-user. This separation allows a package to be made available (or removed) for one user without affecting others.
+
+> [!NOTE]
+> The term *install* is informal — it isn't a formal concept in the MSIX deployment engine. Deployment requests use the `PackageManager` API to submit operations (Add, Stage, Register, Remove, and so on) to the deployment queue. See [There is no Install – it's 'Stage' and 'Register'](https://devblogs.microsoft.com/insidemsix/there-is-no-install-its-stage-and-register/) on the Inside MSIX blog for a full explanation.
+
 ## Related topics
 
 * [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)
-* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md) 
+* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
+* [Inside MSIX blog](https://devblogs.microsoft.com/insidemsix/) — deep dives on MSIX architecture, package identity, deployment operations, and more, by the MSIX engineering team

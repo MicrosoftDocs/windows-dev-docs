@@ -1,75 +1,48 @@
 ---
-title: Command Palette Extension Publishing
-description: The Command Palette provides a full extension model, allowing you to create custom experiences for the palette. Find info about how to publish an extension.
-ms.date: 2/28/2025
+title: Publish Command Palette extensions
+description: Learn about the different ways to publish and distribute your Command Palette extensions, including WinGet and the Microsoft Store.
+ms.date: 06/04/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
-# Customer intent: As a Windows developer, I want to learn how to publish an extension for the Command Palette.
+# Customer intent: As a Windows developer, I want to understand my options for publishing a Command Palette extension.
 ---
 
-# Publishing your extension
+# Publish your extension
 
-The Command Palette provides a full extension model, allowing developers to create their own experiences for the palette. This document provides information about how to publish an extension.
+Once your Command Palette extension is built and tested, you need to distribute it so users can install it. There are several ways to get your extension into the hands of users, each with different trade-offs.
 
-There is a "Sample Project" template included with the Command Palette. This can be used to quickly generate a project that creates a new extension. This will include the `.sln`, `.csproj`, and `.appxmanifest` files needed to create a new extension, as well as the plumbing to get it ready to be published. You will then open the project to the `{ExtensionName}CommandsProvider` class (where `{ExtensionName}` is replaced with the name of your extension project) and implement your commands.
+:::image type="content" source="../images/command-palette/gallery.png" alt-text="A screenshot of the Command Palette Extension Gallery showing a list of available extensions.":::
 
-## Pre-requisites
+## Distribution options
 
-The following tools are required to build and publish your extension:
+| Method | Automatic updates | Requirements |
+| :--- | :--- | :--- |
+| **WinGet** | ✅ Yes | WinGet manifest with `windows-commandpalette-extension` tag |
+| **Microsoft Store** | ✅ Yes | Partner Center account, MSIX package |
 
-- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) (Community, Professional, or Enterprise edition)
+### Microsoft Store (recommended)
 
-## WinGet
+Publishing to the [Microsoft Store](publish-extension-store.md) is the recommended distribution method. Registration is free for individual developers, and the Store provides automatic updates and broad reach across Windows devices.
 
-Publishing packages to WinGet is the recommended way to share your extensions with users. Extension packages which are listed on WinGet can be discovered and installed directly from the Command Palette.
+[Get started publishing to the Microsoft Store](publish-extension-store.md)
 
-For the most part, following the steps on [Submit packages to Windows Package Manager](../../package-manager/package/manifest.md) will get your extension onto WinGet itself.
+### WinGet
 
-Before submitting your manifest to WinGet, you'll need to check two things:
+Publishing to [WinGet](publish-extension-winget.md) makes your extension discoverable within Command Palette via the `Search WinGet` command. When your extension is listed on WinGet with the `windows-commandpalette-extension` tag, users can find and install it directly from within Command Palette. WinGet also handles updates automatically.
 
-### Add `windows-commandpalette-extension` tag
+[Get started publishing to WinGet](publish-extension-winget.md)
 
-Command Palette uses the special `windows-commandpalette-extension` tag to discover extensions. Make sure that your manifest includes this tag, so that Command Palette can discover your extension. Add the following to each `.locale.*.yaml` file in your manifest:
+## List your extension in the Gallery
 
-```yaml
-Tags:
-- windows-commandpalette-extension
-```
+Regardless of which channel you publish to, you can list your extension in the **Command Palette Extension Gallery** so users can discover it from within Command Palette. The Gallery is a curated directory — it links to your extension's install source (WinGet or the Microsoft Store) but doesn't host the extension itself.
 
-### Ensure WindowsAppSdk is listed as a dependency
+For more information, see [Extension Gallery](extension-gallery.md).
 
-If you're using Windows App SDK, then you'll need to make sure that it is listed as a dependency of your package. Add the following to your `.installer.yaml` manifest:
-
-```yaml
-Dependencies:
-  PackageDependencies:
-  - PackageIdentifier: Microsoft.WindowsAppRuntime.1.6
-```
-
-If you're not using the template project, then this may not apply to you. 
-
-<!-- 
-
-Some day soon:
-
-As a part of the project template, there's a WinGet GitHub Actions workflow that allows you to publish your extension to the WinGet repository with the necessary tags to make it discoverable by the Command Palette. So, you don't need to understand the details of packaging. You add the extension to your GitHub repository and let the your GitHub Actions pipeline handle the publishing. 
-
--->
-
-## Microsoft Store
-
-Command Palette extensions can be published to the Microsoft Store. The process is similar to publishing other apps or extensions. You create a new submission in the Partner Center and upload your `.msix` package. The Command Palette automatically discovers your extension when it's installed from the Microsoft Store.
-
-Command Palette cannot, however, search for & install extensions that are only listed in the store. You can find those by running the following command:
-
-```cmd
-ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette
-```
-
-You can run this from the "Run commands" command in Command Palette, or from the command-line, or from the Run dialog. 
+[Get started listing your extension in the Gallery](extension-gallery.md)
 
 ## Related content
 
-- [Extensibility overview](extensibility-overview.md)
-- [Extension samples](samples.md)
-- [PowerToys Command Palette utility](overview.md)
+- [Publish to WinGet](publish-extension-winget.md)
+- [Publish to Microsoft Store](publish-extension-store.md)
+- [Extension Gallery](extension-gallery.md)
+- [Getting started](creating-an-extension.md)

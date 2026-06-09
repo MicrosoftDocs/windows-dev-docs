@@ -62,7 +62,7 @@ async void IWidgetResourceProvider.OnResourceRequested(WidgetResourceRequestedAr
 }
 ```
 
-If the provider does not set a response on the **WidgetResourceRequestedArgs** object passed into the method, the system will retrieve the resource from the web. In this case, the provider can choose to modify the [Headers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.headers) property of the [WidgetResourceRequestedArgs.Request](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.request) object, such as to provide user context or tokens, and the system will use the updated headers when retrieving the resource from the web.
+If the provider does not set a response on the **WidgetResourceRequestedArgs** object passed into the method, the system will retrieve the resource from the web. In this case, the provider can choose to modify the [Headers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs) property of the [WidgetResourceRequestedArgs.Request](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.request) object, such as to provide user context or tokens, and the system will use the updated headers when retrieving the resource from the web.
 
 ## Handle messages to and from web content
 
@@ -77,7 +77,7 @@ public void OnMessageReceived(WidgetMessageReceivedArgs args)
 }
 ```
 
-Widget providers can send a message to the web content of the widget by calling [WidgetManager.SendMessage](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.sendmessage). You must provide the ID of the widget to which the message is sent, which is the value specified in the *Id* attribute of the **Definition** element in the provider's package manifest file. For more information see [Widget provider package manifest XML format](/windows/apps/develop/widgets/widget-provider-manifest). The message string can be simple text or the serialized form of an object interpreted by the web content. For more information, see [PostWebMessageAsString](/dotnet/api/microsoft.web.webview2.core.corewebview2.postwebmessageasstring).
+Widget providers can send a message to the web content of the widget by calling [WidgetManager.SendMessage](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager). You must provide the ID of the widget to which the message is sent, which is the value specified in the *Id* attribute of the **Definition** element in the provider's package manifest file. For more information see [Widget provider package manifest XML format](/windows/apps/develop/widgets/widget-provider-manifest). The message string can be simple text or the serialized form of an object interpreted by the web content. For more information, see [PostWebMessageAsString](/dotnet/api/microsoft.web.webview2.core.corewebview2.postwebmessageasstring).
 
 ```csharp
 var message = $"{{ \"current_location\": \"{ location }\" }}";

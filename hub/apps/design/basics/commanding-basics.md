@@ -35,7 +35,7 @@ When designing a command interface, the most important decision is choosing what
 
 ## Choose the right command elements
 
-Using the right elements in a command interface can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. A comprehensive set of command elements are available in the Windows app. Here's a list of some of the most common UWP command elements.
+Using the right elements in a command interface can make the difference between an intuitive, easy-to-use app and a difficult, confusing app. A comprehensive set of command elements are available in the Windows app. Here's a list of some of the most common WinUI command elements.
 
 :::row:::
     :::column:::
@@ -137,7 +137,7 @@ Menus and context menus save space by organizing commands and hiding them until 
 
 The [CommandBarFlyout](../controls/command-bar-flyout.md) is a type of contextual menu that combines the benefits of a command bar and a context menu into a single control. It can provide shortcuts to commonly-used actions and provide access to secondary commands that are only relevant in certain contexts, such as clipboard or custom commands.
 
-UWP also provides a set of traditional menus and context menus; for more info, see [Menus and context menus](../controls/menus-and-context-menus.md).
+WinUI also provides a set of traditional menus and context menus; for more info, see [Menus and context menus](../controls/menus-and-context-menus.md).
     :::column-end:::
 :::row-end:::
 

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 02a08657-285d-4804-a006-168c22aa4904
-title: Windows Data Binding Overview for Developers
+title: "Tutorial: Data Binding basics"
 description: Learn how to bind controls to data in WinUI apps. Discover how to bind single items or collections, implement details views, and format data for display.
 ms.date: 11/11/2025
 ms.topic: concept-article
@@ -11,9 +11,9 @@ dev_langs:
 # Customer intent: As a Windows developer, I want to learn how to bind a control to a single item or bind an item's control to a collection of items in a WinUI app.
 ---
 
-# Windows data binding overview
+# Tutorial: Basic data binding
 
-Data binding in WinUI apps lets you efficiently connect controls to data sources. Learn how to bind a control to a single item or a collection of items, control item rendering, implement details views, and format data for display. For more details, see [Data binding in depth](data-binding-in-depth.md).
+Data binding in WinUI 3 apps lets you efficiently connect controls to data sources. Learn how to bind a control to a single item or a collection of items, control item rendering, implement details views, and format data for display. For more details, see [Data binding in depth](data-binding-in-depth.md).
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ This topic assumes that you know how to create a basic WinUI app with Windows Ap
 
 ## Create the project
 
-Create a new **WinUI Blank App, Packaged** C# project. Name it "Quickstart".
+Create a new **WinUI Blank App (Packaged)** C# project. Name it "Quickstart".
 
 ## Bind to a single item
 

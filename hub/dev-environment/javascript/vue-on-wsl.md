@@ -1,62 +1,61 @@
 ---
 title: Install Vue.js on WSL
-description: A guide to help you get started using the Vue.js web frameworks on Windows Subsystem for Linux.
+description: A guide to help you get started using Vue.js on Windows Subsystem for Linux using npm create vue@latest and Vite.
 ms.topic: install-set-up-deploy
-keywords: Vue, Vue.js, windows 10, install vue, install vue on windows, install vue with windows, install vue for windows, web app with vue, vue dev environment, install vue on windows subsystem for linux, install vue with wsl, install vue on wsl, install vue on ubuntu on windows
+keywords: Vue, Vue.js, windows, install vue on wsl, install vue on windows subsystem for linux, vue wsl
 ms.localizationpriority: medium
-ms.date: 08/18/2021
+ms.date: 03/23/2026
 ---
 
 # Install Vue.js on Windows Subsystem for Linux
 
-A guide to help you set up a Vue.js development environment on Windows by installing the Vue.js web framework on Windows Subsystem for Linux (WSL). Learn more on the [Vue.js overview](./vue-overview.md) page.
+A guide to set up a Vue.js development environment on Windows Subsystem for Linux (WSL). For background, see the [Vue.js overview](./vue-overview.md).
 
-Vue can be installed [directly on Windows](./vue-on-windows.md) or on WSL. We generally recommend installing on WSL if you are planning to interact with a NodeJS backend, want parity with a Linux production server, or plan to follow along with a tutorial that utilizes Bash commands. You may also want to consider [Vite](https://vitejs.dev/guide/why.html) as an alternative to Vue.js.
+Vue can be installed [directly on Windows](./vue-on-windows.md) or on WSL. WSL is recommended if you plan to interact with a Node.js backend, deploy to Linux servers, or follow tutorials that use Bash commands.
 
 ## Prerequisites
 
-- [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
-- [Install Node.js on WSL 2](./nodejs-on-wsl.md): This includes a version manager, package manager, Visual Studio Code, and the Remote Development extension. The Node Package Manager (npm) is used to install Vue.js.
+- [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install), including a Linux distribution (like Ubuntu) running in WSL 2 mode. Verify with: `wsl -l -v`
+- [Install Node.js on WSL 2](./nodejs-on-wsl.md): This includes a version manager, package manager, Visual Studio Code, and the Remote Development extension.
 
 > [!IMPORTANT]
-> Installing a Linux distribution with WSL will create a directory for storing files: `\\wsl\Ubuntu-20.04` (substitute Ubuntu-20.04 with whatever Linux distribution you're using). To open this directory in Windows File Explorer, open your WSL command line, select your home directory using `cd ~`, then enter the command `explorer.exe .` Be careful not to install or store files that you will be working with on the mounted C drive (`/mnt/c/Users/yourname$`). Doing so will significantly slow down your install and build times.
+> Store your project files inside the WSL filesystem (e.g., `~/projects`), not on the mounted Windows drive (`/mnt/c/`). Working across the filesystem boundary significantly slows down install and build times.
 
-## Install Vue.js
+## Create a Vue project
 
-To install Vue.js on WSL:
+The recommended way to start a new Vue 3 project is `npm create vue@latest`, which uses [create-vue](https://github.com/vuejs/create-vue) — the official Vite-based scaffolding tool:
 
-1. Open a WSL command line (ie. Ubuntu).
+1. Open your WSL terminal (e.g., Ubuntu).
 
-2. Create a new project folder: `mkdir VueProjects` and enter that directory: `cd VueProjects`.
+2. Navigate to your projects directory:
 
-3. Install Vue.js using Node Package Manager (npm):
+   ```bash
+   mkdir -p ~/projects
+   cd ~/projects
+   ```
 
-```bash
-npm install vue
-```
+3. Create a new Vue project:
 
-Check the version number you have installed by using the command: `vue --version`.
+   ```bash
+   npm create vue@latest
+   ```
 
-> [!NOTE]
-> To install Vue.js using a CDN, rather than NPM, see the [Vue.js install docs](https://vuejs.org/v2/guide/installation.html#CDN).
+   The installer prompts you to name your project and choose optional features (TypeScript, JSX support, Vue Router, Pinia state management, Vitest, ESLint).
 
-## Install Vue CLI
+4. Navigate into the project folder, install dependencies, and start the dev server:
 
-Vue CLI is a toolkit for working with Vue in your terminal / command line. It enables you to quickly scaffold a new project (vue create), prototype new ideas (vue serve), or manage projects using a graphical user interface (vue ui). Vue CLI is a globally installed npm package that handles some of the build complexities (like using Babel or Webpack) for you. *If you are not building a new single-page app, you may not need or want Vue CLI.*
+   ```bash
+   cd <your-project-name>
+   npm install
+   npm run dev
+   ```
 
-To install Vue CLI, use npm. You must use the `-g` flag to globally install in order to upgrade (`vue upgrade --next`):
-
-```bash
-npm install -g @vue/cli
-```
-
-To learn more about additional plugins that can be added (such as linting or Apollo for integrating GraphQL), visit [Vue CLI plugins](https://cli.vuejs.org/guide/#cli-plugins) in the Vue CLI docs.
+   Your app will be available at `http://localhost:5173`.
 
 ## Additional resources
 
-- [Vue docs](https://vuejs.org/)
+- [Vue docs](https://vuejs.org/guide/introduction.html)
 - [Vue.js overview](./vue-overview.md)
 - [Install Vue.js on Windows](./vue-on-windows.md)
-- [Install Nuxt.js](./nuxtjs-on-wsl.md)
-- Microsoft Learn online course: [Take your first steps with Vue.js](/training/paths/vue-first-steps/)
-- Try a [Vue tutorial with VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial)
+- [Take your first steps with Vue.js](/training/paths/vue-first-steps/) learning path
+- [Vue tutorial with VS Code](https://code.visualstudio.com/docs/nodejs/vuejs-tutorial)

@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 10/30/2022
 ---
 
-# Reserve your app name
+# Reserve your app name for PWAs
 
 All apps on the Microsoft Store must have a unique name. The first step toward publishing your app on the store is to reserve the name you'd like to use. You can reserve your app's name up to three months before you are ready to publish, even if you have not started to write your app yet. We recommend reserving your name as soon as possible to ensure it will be available when you're ready to publish. Reserved names not used within three months will have the reservation removed.
 

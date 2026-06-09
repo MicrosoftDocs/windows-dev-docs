@@ -24,7 +24,7 @@ Windows 11 allows users to change default apps via Windows Settings and other sy
 
 ## Default app settings for app developers
 
-Your app can register to become the default handler for a file and link types. Both Windows desktop applications and Universal Windows Platform (UWP) apps can register to be a default handler. If the user chooses your app as the default handler, Windows will activate your app when that type of file or link is invoked.
+Your app can register to become the default handler for a file and link types. Both Windows desktop applications and WinUI apps can register to be a default handler. If the user chooses your app as the default handler, Windows will activate your app when that type of file or link is invoked.
 
 ## Default apps platform best practices for developers
 

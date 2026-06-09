@@ -1,16 +1,18 @@
 ---
 title: Grant package identity by packaging with external location manually
 description: Learn how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
-ms.date: 10/13/2023
+ms.date: 04/08/2026
 ms.topic: how-to
-keywords: windows 10, desktop, sparse, package, identity, external, location, MSIX, Win32
+keywords: windows 10, desktop, sparse package, packaging with external location, package identity, external location, MSIX, Win32, unpackaged app
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
 
 # Grant package identity by packaging with external location manually
 
-For the motivations behind adding package identity, as well as the differences between building
+> **Why do this?** Granting your app a package identity (also called a *sparse package* or *packaging with external location*) unlocks Windows platform features that are otherwise unavailable to unpackaged apps: toast and push notifications, background tasks, app extensions, share targets, file associations, startup tasks, privacy consent prompts, and Windows AI Foundry APIs — all without switching to full MSIX packaging or changing your existing installer.
+
+For more about the motivations behind adding package identity, as well as the differences between building
 identity packages in Visual Studio and building them manually, see
 [Overview](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview).
 
@@ -82,10 +84,9 @@ that will resolve to a .png, .jpg, or .jpeg image
 * Ensure the `AllowExternalContent` element is set to `true` as shown which enables reusing your
 existing installer
 * Set `TargetDeviceFamily` `MinVersion` and `MaxVersionTested` per below:
-  * Set `MinVersion` to `10.0.19041.0` as shown for maximum reach and uniformity across Windows 10
-  and Windows 11 OS versions
-  * Set `MinVersion` to `10.0.26100.0` to restrict the identity package to Windows 11, version 24H2
-  and above
+  * Choose a `MinVersion` value based on your minimum supported OS:
+    * `10.0.19041.0` — recommended for maximum reach across Windows 10 and Windows 11
+    * `10.0.26100.0` — use this only if your app targets Windows 11, version 24H2 or later exclusively
   * Set `MaxVersionTested` to `10.0.26100.0` as shown
   * Note: The `AllowExternalContent` feature used here was introduced in Windows build 10.0.19041.0.
   If your application runs further downlevel than that, you should perform an OS version check in your
@@ -127,6 +128,22 @@ to register the package on end user computers.
 ```Console
 SignTool.exe sign /fd SHA256 /a /f <path to certificate>\MyCertificate.pfx /p <certificate password> <path to package with external location>\MyPackage.msix
 ```
+
+> [!IMPORTANT]
+> When using a **self-signed certificate** for local development, you must add its **public certificate** to the **Trusted People** certificate store before `Add-AppxPackage` will accept it. Without this step, registration fails with `CERT_E_UNTRUSTEDROOT` (0x800B0109).
+>
+> Keep the `.pfx` file private — it contains the private key and should only be used for signing. For the trust step, export a `.cer` (public cert only) and import that:
+>
+> ```PowerShell
+> $cert = Get-PfxCertificate -FilePath "<path>\MyCertificate.pfx"
+> Export-Certificate -Cert $cert -FilePath "<path>\MyCertificate.cer"
+> Import-Certificate -FilePath "<path>\MyCertificate.cer" `
+>     -CertStoreLocation Cert:\CurrentUser\TrustedPeople
+> ```
+>
+> For machine-wide installs, use `Cert:\LocalMachine\TrustedPeople` instead (requires elevation).
+>
+> Production certificates issued by a trusted CA do not require this step.
 
 Note: For how to build and sign the identity package within a CI/CD pipeline with production certificates,
 see the [MSIX and CI/CD Pipeline Overview](/windows/msix/desktop/cicd-overview) for examples.
@@ -212,7 +229,7 @@ powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -Execution
 To unregister the identity package during a machine-wide uninstallation:
 
 ```Console
-powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "$packages = Get-AppxPackage <PackageName>; foreach ($package in $packages) { Remove-AppxProvisionedPackage -PackageName $package.PackageFullName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }
+powershell.exe -NoLogo -NoProfile -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -Command "$packages = Get-AppxPackage -AllUsers -Name <PackageName>; $provisioned = Get-AppxProvisionedPackage -Online | Where-Object { $_.DisplayName -eq '<PackageName>' }; foreach ($p in $provisioned) { Remove-AppxProvisionedPackage -PackageName $p.PackageName -Online }; foreach ($package in $packages) { Remove-AppxPackage -Package $package.PackageFullName -AllUsers }"
 ```
 
 * Set `<PackageName>` to the package name you defined in your identity package manifest
@@ -249,29 +266,34 @@ var packageManager = new PackageManager();
 var options = new AddPackageOptions();
 options.ExternalLocationUri = externalUri;
 
-await packageManager.AddPackageByUriAsync(packageUri, options);
+var result = await packageManager.AddPackageByUriAsync(packageUri, options);
+if (result.ExtendedErrorCode != 0)
+{
+    throw new Exception($"Package registration failed: {result.ErrorText} (0x{result.ExtendedErrorCode:X8})");
+}
 
 ...
 
 // Unregister the identity package during uninstall
 
 var packageManager = new PackageManager();
-var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
+var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageTypes.Main);
 foreach (var package in packages)
 {
-  await packageManager.RemovePackageAsync(package.Id.FamilyName);
+  await packageManager.RemovePackageAsync(package.Id.FullName);
 }
 ```
 
 Note the below important details about this code:
 
-* Set `externalLocation` to the absolute path of your application's installation directory
-(without any executable names)
-* Set `packagePath` to the absolute path of the signed identity package produced in the previous step
+* Set `externalLocation` to the **absolute path** of your application's installation directory
+(without any executable names). `new Uri(somePath)` produces a `file:///` URI as required by the API.
+* Set `packagePath` to the **absolute path** of the signed identity package produced in the previous step
 (with the file name)
 * The `<IdentityPackageFamilyName>` can be found by running the `Get-AppxPackage <IdentityPackageName>`
 PowerShell command on a system where the identity package is registered. The `PackageFamilyName` property
 contains the value to use here.
+* Check `result.ExtendedErrorCode` after registration to surface actionable error details. See [Troubleshooting](#troubleshooting) for common error codes.
 
 #### Per-Machine (PackageManager)
 
@@ -294,6 +316,7 @@ var options = new StagePackageOptions();
 options.ExternalLocationUri = externalUri;
 
 await packageManager.StagePackageByUriAsync(packageUri, options);
+var packageFamilyName = "<IdentityPackageFamilyName>";
 await packageManager.ProvisionPackageForAllUsersAsync(packageFamilyName);
 
 ...
@@ -302,11 +325,11 @@ await packageManager.ProvisionPackageForAllUsersAsync(packageFamilyName);
 
 var packageManager = new PackageManager();
 
-var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageType.Main);
+var packages = packageManager.FindPackagesForUserWithPackageTypes("", "<IdentityPackageFamilyName>", PackageTypes.Main);
 foreach (var package in packages)
 {
-  await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FamilyName);
-  await packageManager.RemovePackageAsync(package.Id.FamilyName, RemovalOptions.RemoveForAllUsers);
+  await packageManager.DeprovisionPackageForAllUsersAsync(package.Id.FullName);
+  await packageManager.RemovePackageAsync(package.Id.FullName, RemovalOptions.RemoveForAllUsers);
 }
 ```
 
@@ -319,6 +342,21 @@ Note the below important details about this code:
 * The `<IdentityPackageFamilyName>` can be found by running the `Get-AppxPackage <IdentityPackageName>`
 PowerShell command on a system where the identity package is registered. The `PackageFamilyName`
 property contains the value to use here.
+
+## Troubleshooting
+
+The table below lists the most common errors when registering an identity package and how to fix them.
+
+| Error code | Symptom | Cause | Fix |
+|---|---|---|---|
+| `0x800B0109` / `CERT_E_UNTRUSTEDROOT` | `Add-AppxPackage` or `AddPackageByUriAsync` fails immediately | Self-signed certificate is not in the **Trusted People** store | Follow the [cert trust step](#build-and-sign-the-identity-package) above to import the public `.cer` into `Cert:\CurrentUser\TrustedPeople` |
+| `0x80073CF9` | Registration fails with "version already registered" | The exact same package version is already registered on this machine | Unregister the existing package first (`Remove-AppxPackage` or `RemovePackageAsync`), then re-register |
+| `0x80073D54` | Registration succeeds but identity is missing at runtime | `publisher`, `packageName`, or `applicationId` in the app's side-by-side manifest (`msix` element) don't match the identity package manifest | Ensure `Publisher`/`Name`/`Application Id` are identical in both manifests — see [Add identity metadata](#add-identity-metadata-to-your-desktop-application-manifests) |
+| Identity absent at runtime (no error) | `Package.Current` is null or `GetPackage()` returns nothing | The `ExternalLocation` path passed at registration doesn't match the directory where the app actually runs | Verify the absolute path passed as `ExternalLocation` is exactly the app's install directory |
+| `0x80073CF6` | Registration fails with "manifest invalid" | Manifest XML is malformed or a required attribute is missing | Validate the manifest with `MakeAppx.exe pack` — it reports schema errors. Ensure `uap10:AllowExternalContent` is `true` and `runFullTrust` capability is declared |
+
+> [!TIP]
+> For richer diagnostics, check the Windows **Event Viewer** under **Applications and Services Logs > Microsoft > Windows > AppxDeployment-Server**. It logs the full deployment error with context that isn't always surfaced in the API result or PowerShell output.
 
 ## Sample apps
 

@@ -14,7 +14,7 @@ The PowerToys Command Not Found utility is a PowerShell 7 module that detects co
 > [!IMPORTANT]
 > There are some incompatibilities between Command Not Found and some PowerShell configurations. Read more about them in [issue 30818](https://github.com/microsoft/PowerToys/issues/30818) on GitHub.
 
-:::image type="content" source="../images/pt-cmd-not-found.png" alt-text="Screenshot of PowerToys Command Not Found utility suggesting WinGet package installation in PowerShell terminal.":::
+:::image type="content" source="images/cmd-not-found/cmd-not-found.png" alt-text="Screenshot of PowerToys Command Not Found utility suggesting WinGet package installation in PowerShell terminal.":::
 
 ## Requirements
 

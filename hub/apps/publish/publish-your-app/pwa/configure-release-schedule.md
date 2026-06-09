@@ -1,12 +1,12 @@
 ---
-description: Learn how to configure precise release scheduling for your app in the Microsoft Store, including setting release and stop acquisition dates for specific markets.
-title: Configure precise release scheduling
+description: Learn how to configure precise release scheduling for your PWA in the Microsoft Store, including setting release and stop acquisition dates for specific markets.
+title: Configure precise release scheduling for PWAs
 ms.date: 6/5/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Configure precise release scheduling
+# Configure precise release scheduling for PWAs
 
 The **Schedule** section on the [Pricing and availability](./price-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 

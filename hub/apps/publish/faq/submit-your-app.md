@@ -1,15 +1,14 @@
 ---
 description: Learn how to submit your app to the Microsoft Store, including reserving names, uploading packages, and using different installer formats.
 title: Submit your app to Microsoft Store
-ms.date: 06/18/2025
+ms.date: 04/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Submit your app to Microsoft Store
 
-<details>
-<summary><strong>How do I reserve an app name, and why is it important?</strong></summary>
+## How do I reserve an app name, and why is it important?
 
 Every app in the Microsoft Store must have a unique name. Reserving an app name ensures that the name you want to use for your app is locked down for you, so no one else can claim it while you finish developing your app. You can reserve a name even before your app is ready – up to three months in advance of publishing.
 
@@ -20,12 +19,8 @@ To reserve a name:
 - If available, click **Reserve product name** to hold the name for 3 months.
 
 This is important because it guarantees your branding and prevents naming conflicts.
-</details>
 
----
-
-<details>
-<summary><strong>What does the app submission process involve in Partner Center?</strong></summary>
+## What does the app submission process involve in Partner Center?
 
 After reserving a name, start a new submission. The process involves:
 
@@ -37,35 +32,39 @@ After reserving a name, start a new submission. The process involves:
 - **Submission Options**: (Optional) Add notes for certification or schedule publish date.
 
 Fill out all required fields, then click **Submit for certification**. Partner Center will validate inputs and flag any missing items before submission. Your app status will show as "in Certification" while being reviewed.
-</details>
 
----
+## Do I need to package my app as an MSIX, or can I submit a traditional EXE/MSI installer?
 
-<details>
-<summary><strong>Do I need to package my app as an MSIX, or can I submit a traditional EXE/MSI installer?</strong></summary>
+The Microsoft Store supports multiple packaging formats. MSIX is the recommended format, but traditional EXE/MSI installers are also accepted.
 
-Store allows both app types.
+**Supported MSIX and related package formats**:
+- .msix
+- .msixbundle
+- .msixupload
+- .appx
+- .appxbundle
+- .appxupload
 
-**MSIX Benefits are**:
+`.xap` is a legacy package type associated with previously published apps and isn't used for new submissions.
+
+**MSIX benefits include**:
 - Free Microsoft code signing and CDN hosting.
-- Easier updates, better integration with Windows features.
-- Enables advanced capabilities like flighting and commerce.
+- Easier updates and better integration with Windows features.
+- Support for advanced capabilities like flighting and commerce.
 
-**MSI/EXE Submission**:
+Using the MSIX package format ensures a more reliable, secure, and streamlined installation and update experience for users.
+
+**EXE/MSI submission**:
 - Allowed since June 2021.
-- You must provide a URL or upload the installer in submission.
+- You must provide a package URL for the installer as part of the submission; the installer must be hosted on your own infrastructure or CDN.
 - Requirements:
   - Must be .exe or .msi only.
   - Offline installer – no downloads during setup.
   - Installer must not change after submission or bundle unrelated software.
 
 Both app types can be submitted in Store depending on developer's needs.
-</details>
 
----
-
-<details>
-<summary><strong>What metadata fields are required when submitting an app to the Store?</strong></summary>
+## What metadata fields are required when submitting an app to the Store?
 
 Required metadata typically includes:
 
@@ -86,12 +85,7 @@ Optional but recommended fields include:
 
 Providing rich, complete metadata helps Microsoft validate your app more efficiently and improves the user’s understanding of what your app offers.
 
-</details>
-
----
-
-<details>
-<summary><strong>What are the recommended best practices for writing the app description and listing features?</strong></summary>
+## What are the recommended best practices for writing the app description and listing features?
 
 A good app description should:
 
@@ -103,12 +97,7 @@ A good app description should:
 
 Also, localize your descriptions for all languages you support to better connect with global users.
 
-</details>
-
----
-
-<details>
-<summary><strong>How many screenshots should developers include in their Store listing?</strong></summary>
+How many screenshots should developers include in their Store listing?
 
 While only **one screenshot per device family** is required, Microsoft recommends including **5–8 high-quality screenshots** for each supported device type (PC, tablet, Xbox, etc.). 
 
@@ -120,12 +109,7 @@ These screenshots should:
 
 Good visuals can significantly impact the user’s first impression and increase conversions.
 
-</details>
-
----
-
-<details>
-<summary><strong>What are the requirements and recommendations for Store logos and trailers?</strong></summary>
+## What are the requirements and recommendations for Store logos and trailers?
 
 A **Store logo** is mandatory for submission and is used throughout the Store’s interface (search results, listing, recommendations).
 
@@ -135,12 +119,7 @@ Additionally:
 - Include a **trailer video** to demonstrate the app’s functionality and value — this is optional but highly recommended, as it increases engagement and conversion rates
 - Keep trailers short (30–90 seconds), visually compelling, and captioned if possible for accessibility
 
-</details>
-
----
-
-<details>
-<summary><strong>How should developers choose and use search terms for their app?</strong></summary>
+## How should developers choose and use search terms for their app?
 
 You may define **up to 7 search terms**, each up to **30 characters**. These are used by the Microsoft Store’s internal search engine to improve discoverability.
 
@@ -153,14 +132,9 @@ Tips for effective search terms:
 
 Search terms are not shown to users but play a crucial role in helping your app surface in search results.
 
-</details>
+## How can I manage who receives submission notifications in Partner Center?
 
----
-
-<details>
-<summary><strong>How can I manage who receives submission notifications in Partner Center?</strong></summary>
-
-After publishing an app, the **owner** of your developer account is always notified about the publishing status and required actions via email and through the [Action Center](https://learn.microsoft.com/partner-center/action-center-overview) in Partner Center. 
+After publishing an app, the **owner** of your developer account is always notified about the publishing status and required actions via email and through the [Action Center](/partner-center/action-center-overview) in Partner Center. 
 
 To ensure delivery of these critical notifications, the owner must verify their email address via [My Preferences](https://partner.microsoft.com/dashboard/actioncenter/mypreferences) in Action Center.
 
@@ -177,12 +151,7 @@ To **add or remove** members from the notification list:
 > - The audience list is **product-specific** and applies to all submissions for that product. If you have multiple apps, you’ll need to configure the list separately for each one.
 > - **Add-ons inherit** the parent product’s notification audience list and **cannot be managed separately.**
 
-</details>
-
----
-
-<details>
-<summary><strong>How do I choose a great app name for the Microsoft Store?</strong></summary>
+## How do I choose a great app name for the Microsoft Store?
 
 Choosing a compelling name is crucial to attracting customers and making your app easily discoverable. Here are some best practices:
 
@@ -199,12 +168,7 @@ Choosing a compelling name is crucial to attracting customers and making your ap
 
 - **Avoid emojis and special characters**. The Microsoft Store does not allow emojis or other unsupported special characters in app names.
 
-</details>
-
----
-
-<details>
-<summary><strong>How can I write an effective app description for the Microsoft Store?</strong></summary>
+## How can I write an effective app description for the Microsoft Store?</strong></summary>
 
 A great description helps your app stand out, clearly communicating value and encouraging downloads. Follow these guidelines:
 
@@ -233,9 +197,5 @@ A great description helps your app stand out, clearly communicating value and en
 
 - **Learn from others**. Review descriptions of similar apps in the Store for inspiration on effectively highlighting unique features and benefits.
 
-</details>
-
-<br>
-
 > [!TIP]
-> For detailed information about **How to submit your appt**, please see the [Submit your app](../publish-your-app/msix/reserve-your-apps-name.md) section.
+> For detailed information about **How to submit your app**, please see the [Submit your app](../publish-your-app/msix/reserve-your-apps-name.md) section.

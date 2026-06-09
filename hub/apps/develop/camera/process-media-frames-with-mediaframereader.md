@@ -29,7 +29,7 @@ Many apps that process media frames need to get frames from multiple sources at 
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetFindAllAsync":::
 
-You can also create a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) using [**DeviceInformation.CreateWatcher**](/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) and the value returned from [**MediaFrameSourceGroup.GetDeviceSelector**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) to receive notifications when the available frame source groups on the device changes, such as when an external camera is plugged in. For more information see [**Enumerate devices**](/windows/uwp/devices-sensors/enumerate-devices).
+You can also create a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) using [**DeviceInformation.CreateWatcher**](/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) and the value returned from [**MediaFrameSourceGroup.GetDeviceSelector**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) to receive notifications when the available frame source groups on the device changes, such as when an external camera is plugged in. For more information see [**Enumerate devices**](/windows/apps/develop/devices-sensors/enumerate-devices).
 
 A [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) has a collection of [**MediaFrameSourceInfo**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) objects that describe the frame sources included in the group. After retrieving the frame source groups available on the device, you can select the group that exposes the frame sources you are interested in.
 
@@ -100,7 +100,7 @@ In your code behind page, declare a class member variable of type **SoftwareBitm
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetDeclareBackBuffer":::
 
-Because the frames will arrive as **SoftwareBitmap** objects, you need to create a [**SoftwareBitmapSource**](/uwp/api/Windows.UI.Xaml.Media.Imaging.SoftwareBitmapSource) object which allows you to use a **SoftwareBitmap** as the source for a XAML **Control**. You should set the image source somewhere in your code before you start the frame reader.
+Because the frames will arrive as **SoftwareBitmap** objects, you need to create a [**SoftwareBitmapSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.softwarebitmapsource) object which allows you to use a **SoftwareBitmap** as the source for a XAML **Control**. You should set the image source somewhere in your code before you start the frame reader.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetImageElementSource":::
 
@@ -110,9 +110,9 @@ The **Image** control can only display images in BRGA8 format with either pre-mu
 
 Next, the [**Interlocked.Exchange**](/dotnet/api/system.threading.interlocked.exchange#System_Threading_Interlocked_Exchange__1___0____0_) method is used to swap the reference of to arriving bitmap with the backbuffer bitmap. This method swaps these references in an atomic operation that is thread-safe. After swapping, the old backbuffer image, now in the *softwareBitmap* variable is disposed of to clean up its resources.
 
-Next, the [**CoreDispatcher**](/uwp/api/Windows.UI.Core.CoreDispatcher) associated with the **Image** element is used to create a task that will run on the UI thread by calling [**RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync). Because the asynchronous tasks will be performed within the task, the lambda expression passed to **RunAsync** is declared with the *async* keyword.
+Next, the [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) associated with the UI thread is used to queue work that will run on the UI thread by calling [**TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue). Because asynchronous operations are performed within the queued callback, the lambda expression passed to **TryEnqueue** is declared with the *async* keyword.
 
-Within the task, the *_taskRunning* variable is checked to make sure that only one instance of the task is running at a time. If the task isn't already running, *_taskRunning* is set to true to prevent the task from running again. In a *while* loop, **Interlocked.Exchange** is called to copy from the backbuffer into a temporary **SoftwareBitmap** until the backbuffer image is null. For each time the temporary bitmap is populated, the **Source** property of the **Image** is cast to a **SoftwareBitmapSource**, and then [**SetBitmapAsync**](/uwp/api/windows.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) is called to set the source of the image.
+Within the queued callback, the *_taskRunning* variable is checked to make sure that only one instance of the task is running at a time. If the task isn't already running, *_taskRunning* is set to true to prevent the task from running again. In a *while* loop, **Interlocked.Exchange** is called to copy from the backbuffer into a temporary **SoftwareBitmap** until the backbuffer image is null. For each time the temporary bitmap is populated, the **Source** property of the **Image** is cast to a **SoftwareBitmapSource**, and then [**SetBitmapAsync**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.softwarebitmapsource.setbitmapasync) is called to set the source of the image.
 
 Finally, the *_taskRunning* variable is set back to false so that the task can be run again the next time the handler is called.
 
@@ -128,7 +128,7 @@ When you are done reading frames, be sure to stop the media frame reader by call
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetCleanupFrameReader":::
 
-For more information about cleaning up media capture objects when your application is suspended, see [**Show the camera preview in a WinUI 3 app**](camera-quickstart-winui3.md).
+For more information about cleaning up media capture objects when your application is suspended, see [**Show the camera preview in a WinUI app**](camera-quickstart-winui3.md).
 
 ## The FrameRenderer helper class
 
@@ -201,7 +201,7 @@ In **Buffered** acquisition mode, the system will keep all frames in the buffer 
 
 ## Use MediaSource to display frames in a MediaPlayerElement
 
-Starting with Windows, version 1709, you can display frames acquired from a **MediaFrameReader** directly in a **[MediaPlayerElement](/uwp/api/windows.ui.xaml.controls.mediaplayerelement)** control in your XAML page. This is achieved by using the **[MediaSource.CreateFromMediaFrameSource](/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** to create **[MediaSource](/uwp/api/windows.media.core.mediasource)** object that can be used directly by a **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)** associated with a **MediaPlayerElement**. For detailed information on working with **MediaPlayer** and **MediaPlayerElement**, see [Play audio and video with MediaPlayer](/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer).
+Starting with Windows, version 1709, you can display frames acquired from a **MediaFrameReader** directly in a **[MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement)** control in your XAML page. This is achieved by using the **[MediaSource.CreateFromMediaFrameSource](/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** to create **[MediaSource](/uwp/api/windows.media.core.mediasource)** object that can be used directly by a **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)** associated with a **MediaPlayerElement**. For detailed information on working with **MediaPlayer** and **MediaPlayerElement**, see [Play audio and video with MediaPlayer](/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer).
 
 The following code examples show you a simple implementation that displays the frames from a front-facing and back-facing camera simultaneously in a XAML page.
 
@@ -219,7 +219,7 @@ Initialize the **MediaCapture** object to use the selected **MediaFrameSourceGro
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMediaSourceInitMediaCapture":::
 
-Finally, call **[MediaSource.CreateFromMediaFrameSource](/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** to create a **MediaSource** for each frame source by using the **[Id](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** property of the associated **MediaFrameSourceInfo** object to select one of the frame sources in the **MediaCapture** object's **[FrameSources](/uwp/api/windows.media.capture.mediacapture.FrameSources)** collection. Initialize a new **MediaPlayer** object and assign it to a **MediaPlayerElement** by calling **[SetMediaPlayer](/uwp/api/windows.ui.xaml.controls.mediaplayerelement.MediaPlayer)**. Then set the **[Source](/uwp/api/windows.media.playback.mediaplayer.Source)** property to the newly created **MediaSource** object.
+Finally, call **[MediaSource.CreateFromMediaFrameSource](/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** to create a **MediaSource** for each frame source by using the **[Id](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** property of the associated **MediaFrameSourceInfo** object to select one of the frame sources in the **MediaCapture** object's **[FrameSources](/uwp/api/windows.media.capture.mediacapture.FrameSources)** collection. Initialize a new **MediaPlayer** object and assign it to a **MediaPlayerElement** by calling **[SetMediaPlayer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.setmediaplayer)**. Then set the **[Source](/uwp/api/windows.media.playback.mediaplayer.Source)** property to the newly created **MediaSource** object.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMediaSourceMediaPlayer":::
 

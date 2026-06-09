@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Detect and react to focus session state
 
-Windows 11 introduced the Focus feature which helps users minimize distractions by turning on Do Not Disturb and silencing icon flashing and badge notifications for apps in the taskbar. This article shows you how to use the [FocusSessionManager](/uwp/api/windows.ui.shell.focussessionmanager) API to detect whether a Focus session is currently active or receive updates when the Focus session state changes, allowing you to customize your app's behavior to minimize distractions when a Focus session is active. For more information on the Focus feature, see [How to use focus in Windows 11](https://support.microsoft.com/en-us/windows/how-to-use-focus-in-windows-11-cbcc9ddb-8164-43fa-8919-b9a2af072382).
+Windows 11 introduced the Focus feature which helps users minimize distractions by turning on Do Not Disturb and silencing icon flashing and badge notifications for apps in the taskbar. This article shows you how to use the [FocusSessionManager](/uwp/api/windows.ui.shell.focussessionmanager) API to detect whether a Focus session is currently active or receive updates when the Focus session state changes, allowing you to customize your app's behavior to minimize distractions when a Focus session is active. For more information on the Focus feature, see [How to use focus in Windows 11](https://support.microsoft.com/en-us/windows/how-to-use-focus-in-windows-11-aaaabbbb-0000-cccc-1111-dddd2222eeee).
 
 ## Get the current Focus session state
 
@@ -76,7 +76,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     {
         var manager = Windows.UI.Shell.FocusSessionManager.GetDefault();
         manager.IsFocusActiveChanged += Manager_IsFocusActiveChanged;
-        SetAnimatedGifAutoPlay(true);
+        SetAnimatedGifAutoPlay(!manager.IsFocusActive);
     }
 }
 
@@ -84,11 +84,11 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 {
     if(sender.IsFocusActive)
     {
-        SetAnimatedGifAutoPlay(true);
+        SetAnimatedGifAutoPlay(false);
     }
     else
     {
-        SetAnimatedGifAutoPlay(false);
+        SetAnimatedGifAutoPlay(true);
     }
 }
 ```
@@ -97,12 +97,12 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 ```cpp
 // pch.h
 ...
-#include <winrt/Windows.UI.Shell.h
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Windows.UI.Shell.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 
 // MainWindow.xaml.h
 ...
-void OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&);
+void OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&);
 
 Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
 winrt::event_token m_focusStateChangedToken;
@@ -111,7 +111,7 @@ void OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const& sender, 
 
 // MainWindow.xaml.cpp
 ...
-void MainWindow::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArgs const&)
+void MainWindow::OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&)
 {
     if (Windows::UI::Shell::FocusSessionManager::IsSupported())
     {
@@ -119,7 +119,7 @@ void MainWindow::OnNavigatedTo(Windows::UI::Xaml::Navigation::NavigationEventArg
         m_focusStateChangedToken = m_focusSessionManager.IsFocusActiveChanged(
             { get_weak(), &MainWindow::OnFocusStateChanged });
 
-        SetAnimatedGifAutoPlay(true);
+        SetAnimatedGifAutoPlay(!m_focusSessionManager.IsFocusActive());
     }
 }
 
@@ -127,7 +127,7 @@ void MainWindow::OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager con
         Windows::Foundation::IInspectable const&)
 {
     auto temp = m_focusSessionManager.IsFocusActive();
-    SetAnimatedGifAutoPlay(m_focusSessionManager.IsFocusActive());
+    SetAnimatedGifAutoPlay(!m_focusSessionManager.IsFocusActive());
 }
 ```
 

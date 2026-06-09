@@ -1,6 +1,6 @@
 ---
 ms.assetid: 6c563dd4-3dd0-4175-a1ab-7a1103fc9559
-title: Bind hierarchical data and create a master/details view with WinUI
+title: "Tutorial: Bind hierarchical data and create a master/details view with WinUI"
 description: Create a multi-level master/details view of hierarchical data in WinUI by binding items controls to CollectionViewSource instances. Learn how to implement this structure.
 ms.date: 11/11/2025
 ms.topic: how-to
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 # customer intent: As a Windows developer, I want to learn how to bind hierarchical data and create a master/details view with WinUI.
 ---
 
-# Bind hierarchical data and create a master/details view with WinUI
+# Tutorial: Bind hierarchical data and create a master/details view"
 
 Learn how to create a multilevel master/details view of hierarchical data in WinUI by binding items controls to [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances. This article explains how to use the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) for better performance and the [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension) when flexibility is needed.
 
@@ -19,8 +19,8 @@ You create a view of a sports team hierarchy that's organized into lists for lea
 
 :::image type="content" source="images/xaml-masterdetails.png" alt-text="Screenshot of a master/details view of a sports hierarchy. The view includes leagues, divisions, and teams.":::
 
-> [!TIP]
-> Also see the [Master/detail UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail).
+> [!div class="nextstepaction"]
+> [Open the WinUI Gallery app and learn about Binding](winui3gallery://item/Binding)
 
 ## Prerequisites
 
@@ -28,7 +28,7 @@ This article assumes that you know how to create a basic WinUI app. For instruct
 
 ## Create the project
 
-Create a new **Blank App, Packaged (WinUI 3 in Desktop)** project. Name it "MasterDetailsBinding".
+Create a new **WinUI Blank App (Packaged)** project. Name it "MasterDetailsBinding".
 
 ## Create the data model
 

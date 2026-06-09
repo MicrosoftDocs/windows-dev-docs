@@ -33,6 +33,8 @@ To mount the ISO file, right-click the ISO file and select **Mount**. This act
 
 Windows on Arm ISOs are designed for creating virtual machines, but you can also use them to create bootable media for installing Windows 11 on an Arm device. Depending on the device, you might need to include drivers from the device manufacturer for the installation media to boot successfully.
 
+To create a bootable USB drive from the Arm64 ISO, you can use a tool such as [Rufus](https://rufus.ie/) (a free, open-source utility). Select the downloaded ISO file and your USB drive in Rufus, then click **Start**. Note that the Windows Media Creation Tool does not currently support creating Arm64 bootable media.
+
 > [!NOTE]
 > Use recovery media from your device’s manufacturer instead of creating your own. Recovery media includes the correct drivers that are already tested for your specific device. You can find recovery media for Surface devices at [Surface Recovery Image Download](https://support.microsoft.com/surface-recovery-image).
 

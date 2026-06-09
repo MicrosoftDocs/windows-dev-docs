@@ -11,14 +11,14 @@ keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, 
 
 An app's instancing model determines whether multiple instances of your app's process can run at the same time. The app lifecycle API in the Windows App SDK provides a way to control how many instances of your app can run at the same time, and to redirect activations to other instances when necessary.
 
-This article describes how to use the app lifecycle API to control app instancing in your WinUI apps.
+This article describes how to use the app lifecycle API to control app instancing in your WinUI 3 apps.
 
 ## Prerequisites
 
-To use the app lifecycle API in WinUI 3 apps:
+To use the app lifecycle API in WinUI apps:
 
 - Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-- Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+- Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Single-instance apps
 
@@ -28,7 +28,7 @@ WinUI apps are multi-instanced by default but have the ability to become single-
 
 The [Microsoft Photos](https://apps.microsoft.com/detail/9WZDNCRFJBH4) app is a good example of a single instanced WinUI app. When you launch Photos for the first time, a new window will be created. If you attempt to launch Photos again, the existing window will be activated instead.
 
-For an example of how to implement single instancing in a WinUI 3 app with C#, see [Create a single-instanced WinUI app](applifecycle-single-instance.md).
+For an example of how to implement single instancing in a WinUI app with C#, see [Create a single-instanced WinUI app](applifecycle-single-instance.md).
 
 ## Multi-instanced apps
 
@@ -45,7 +45,7 @@ Instancing behavior in the Windows App SDK is based on UWP's model, class, but w
 ### AppInstance class
 
 - **UWP**: The [Windows.ApplicationModel.AppInstance](/uwp/api/windows.applicationmodel.appinstance) class is focused purely on instance redirection scenarios.
-- **Windows App SDK**: The [Microsoft.Windows.AppLifeycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance) class supports instance redirection scenarios, and contains additional functionality to support new features in later releases.
+- **Windows App SDK**: The [Microsoft.Windows.AppLifecycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance) class supports instance redirection scenarios, and contains additional functionality to support new features in later releases.
 
 ### List of instances
 
@@ -255,7 +255,7 @@ int APIENTRY wWinMain(
         AppInstance::GetCurrent().GetActivatedEventArgs();
 
     // Check for any specific activation kind we care about.
-    ExtendedActivationKind kind = activationArgs.Kind;
+    ExtendedActivationKind kind = activationArgs.Kind();
     if (kind == ExtendedActivationKind::File)
     {
         // etc... as in previous scenario.
@@ -276,7 +276,7 @@ int APIENTRY wWinMain(
         bool isFound = false;
         for (AppInstance instance : instances)
         {
-            if (instance.Key == L"REUSABLE")
+            if (instance.Key() == L"REUSABLE")
             {
                 isFound = true;
                 instance.RedirectActivationToAsync(activationArgs).get();
@@ -303,7 +303,7 @@ This example again adds more sophisticated redirection behavior. Here, an app in
 ```cpp
 void OnActivated(const IInspectable&, const AppActivationArguments& args)
 {
-    const ExtendedActivationKind kind = args.Kind;
+    const ExtendedActivationKind kind = args.Kind();
 
     // For example, we might want to redirect protocol activations.
     if (kind == ExtendedActivationKind::Protocol)
@@ -314,7 +314,7 @@ void OnActivated(const IInspectable&, const AppActivationArguments& args)
         // We'll try to find the instance that handles protocol activations.
         // If there isn't one, then this instance will take over that duty.
         auto instance = AppInstance::FindOrRegisterForKey(uri.AbsoluteUri());
-        if (!instance.IsCurrent)
+        if (!instance.IsCurrent())
         {
             instance.RedirectActivationToAsync(args).get();
         }
@@ -405,7 +405,7 @@ void CALLBACK OnFileClosed(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam
 
 ### Instance information
 
-The [Microsoft.Windows.AppLifeycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance) class represents a single instance of an app. In the current preview, `AppInstance` only includes the methods and properties necessary to support activation redirection. In later releases, `AppInstance` will expand to include other methods and properties relevant to an app instance.
+The [Microsoft.Windows.AppLifecycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance) class represents a single instance of an app. In the current preview, `AppInstance` only includes the methods and properties necessary to support activation redirection. In later releases, `AppInstance` will expand to include other methods and properties relevant to an app instance.
 
 ```cpp
 void DumpExistingInstances()
@@ -424,4 +424,4 @@ void DumpExistingInstances()
 
 [Create a single-instanced WinUI app](applifecycle-single-instance.md)
 
-[Microsoft.Windows.AppLifeycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance)
+[Microsoft.Windows.AppLifecycle.AppInstance](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance)

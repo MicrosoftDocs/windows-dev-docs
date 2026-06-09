@@ -139,7 +139,7 @@ The `homeregion` qualifier corresponds to the user's setting for country or regi
 
 A `language` qualifier corresponds to the display language setting. Values include any valid [BCP-47 language tag](https://tools.ietf.org/html/bcp47). For a list of languages, see the [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry).
 
-If you want your app to support different display languages, and you have string literals in your code or in your XAML markup, then move those strings out of the code/markup and into a Resources File (`.resw`). You can then make a translated copy of that Resources File for each language that your app supports.
+If your app supports different display languages, move string literals out of your code/markup and into Resources Files (`.resw`). For a full walkthrough, see [Localize strings in your UI and app package manifest](localize-strings.md).
 
 You typically use a `language` qualifier to name the folders that contain your Resources Files (`.resw`).
 

@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Choose visibility options
+# Choose visibility options for MSIX apps
 
 The **Visibility** section of the [Pricing and availability page](./price-and-availability.md) allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
 
@@ -67,14 +67,18 @@ This is the default option. Leave this option selected if you want your app to b
 
 ### Make this product available but not discoverable in the Store
 
-When you select this option, your app can’t be found in the Store by customers searching or browsing; the only way to get to your app’s listing is by a direct link.
+When you select this option, your app **can’t be found in the Store through search, browsing, or curated experiences**. However, the app’s Store listing **remains accessible through a direct link**.
+
+> [!IMPORTANT]
+> Making an app not discoverable does **not** prevent it from being found or downloaded. Users who have the direct Store listing URL can still view the app’s metadata and, depending on acquisition settings, may be able to install it. In some cases, external tools or automated processes may also discover these URLs.
 
 > [!TIP]
-> If you don’t want the listing to be viewable to the public, even with a direct link, choose **Private audience** in the **Audience** section, as described above.
-> You must also choose one of the following options to specify how your app can be acquired:
+> If your goal is to **limit distribution to a small, controlled audience (for example, internal testing or pre-release validation)**, do **not** use this option. Instead, use **Private audience** in the **Audience** section. With Private audience, the app will not be discoverable or available to anyone other than people in the groups you specify, even if they type in the Store listing URL.
+
+You must also choose one of the following options to specify how your app can be acquired:
 
 - **Direct link only: Any customer with a direct link to the product’s listing can download it, except on Windows 8.x.** Any customer who gets to your app's listing via a direct link can download it on devices running Windows 10, Windows 11.
 - **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 11 or Windows 10 device.** Even if a customer has a direct link, they can't download the app unless they have a [promotional code](../../generate-promotional-codes.md) and are using a Windows 11 or Windows 10 device. If a customer has a promotional code, they can use it to get your app for free (on Windows 11 and Windows 10 only), even though you aren't offering it to any other customers. Aside from using a promotional code, there is no way for anyone to get your app.
 
-> [!TIP]
-> If you want to stop offering an app to any new customers, you can select **Make app unavailable** from its overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](../../generate-promotional-codes.md) and are on a Windows 10 or Windows 11 device). This action will override the **Visibility** selections in your submission. To make the app available to new customers again (per your **Visibility** selections), you can click **Make app available** from the overview page at any time. For more info, see [Removing an app from the Store](./app-package-management.md#removing-an-app-from-the-store).
+> [!NOTE]
+> If you want to stop offering an app to any new customers, you can select **Make app unavailable** from its overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it (unless they have a [promotional code](../../generate-promotional-codes.md) and are on a Windows 10 or Windows 11 device). This action will override the **Visibility** selections in your submission. To make the app available to new customers again (per your **Visibility** selections), you can click **Make app available** from the overview page at any time. For more info, see [Removing an app from the Store](./remove-app.md).

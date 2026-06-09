@@ -1,6 +1,6 @@
 ---
-title: Build a C# .NET app with WinUI 3 and Win32 interop
-description: Build a C# .NET application with WinUI 3 and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
+title: Build a C# .NET app with WinUI and Win32 interop
+description: Build a C# .NET application with WinUI and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
 ms.date: 03/05/2025
 ms.topic: how-to
 keywords: windows 11, windows 10, uwp, COM, win32, winui, interop
@@ -10,7 +10,7 @@ ms.custom: 19H1
 
 # Build a C# .NET app with WinUI 3 and Win32 interop
 
-In this topic, we step through how to build a basic **C# .NET** application with WinUI 3 and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
+In this topic, we step through how to build a basic **C# .NET** application with WinUI and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
 
 ## Prerequisites
 
@@ -20,11 +20,11 @@ In this topic, we step through how to build a basic **C# .NET** application with
 
 For this example, we'll specify the location and size of the app window, convert and scale it for the appropriate DPI, disable the window minimize and maximize buttons, and finally query the current process to show a list of the modules that are loaded into the current process.
 
-We're going to build our example app from the initial template application (see [Prerequisites](#prerequisites)). Also see [WinUI 3 templates in Visual Studio](winui-project-templates-in-visual-studio.md).
+We're going to build our example app from the initial template application (see [Prerequisites](#prerequisites)). Also see [WinUI templates in Visual Studio](../../dev-tools/visual-studio.md).
 
 ### The MainWindow.xaml file
 
-With WinUI 3, you can create instances of the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class in XAML markup.
+With WinUI, you can create instances of the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class in XAML markup.
 
 The XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class has been extended to support desktop windows, turning it into an abstraction of each of the low-level window implementations used by the UWP and desktop app models. Specifically, CoreWindow for UWP and window handles (or HWNDs) for Win32.
 
@@ -72,7 +72,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
    In this method:
 
-   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the dots per inch (dpi) value for the window (Win32 uses physical pixels, while WinUI 3 uses effective pixels). This dpi value is used to calculate the scale factor, and apply it to the width and height specified for the window.
+   - We call [GetDpiForWindow](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) to get the dots per inch (dpi) value for the window (Win32 uses physical pixels, while WinUI uses effective pixels). This dpi value is used to calculate the scale factor, and apply it to the width and height specified for the window.
    - We then call [SetWindowPos](/windows/win32/api/winuser/nf-winuser-setwindowpos) to specify the desired location of the window.
    - Finally, we call [SetWindowLong](/windows/win32/api/winuser/nf-winuser-setwindowlongw) to disable the *Minimize* and *Maximize* buttons.
 
@@ -95,7 +95,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 ## Summary
 
-In this topic we covered accessing the underlying window implementation (in this case Win32 and HWNDs) and using Win32 APIs along with the WinRT APIs. This demonstrates how you can use existing desktop application code when creating new WinUI 3 desktop apps.
+In this topic we covered accessing the underlying window implementation (in this case Win32 and HWNDs) and using Win32 APIs along with the WinRT APIs. This demonstrates how you can use existing desktop application code when creating new WinUI desktop apps.
 
 For a more extensive sample, see the [AppWindow gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing) in the [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples) GitHub repo.
 
@@ -104,11 +104,11 @@ For a more extensive sample, see the [AppWindow gallery sample](https://github.c
 In this second example, we show how to customize the window's title bar and its content. Before following along with it, review these topics:
 
 * [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
-* [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+* [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app).
 
 ### Create a new project
 
-1. In Visual Studio, create a new C# or C++/WinRT project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template.
+1. In Visual Studio, create a new C# or C++/WinRT project from the **WinUI Blank App (Packaged)** project template.
 
 ### Configuration
 
@@ -215,6 +215,5 @@ void MainWindow::customButton_Click(IInspectable const&, RoutedEventArgs const&)
 ## See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Stable release channel for the Windows App SDK](../../windows-app-sdk/stable-channel.md)
 - [Manage app windows](../../develop/ui-input/manage-app-windows.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

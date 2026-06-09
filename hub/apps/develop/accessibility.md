@@ -1,126 +1,54 @@
 ---
-title: Accessibility in Windows 11 and Windows 10
-description: This page provides the information for you to get started developing accessible Windows apps.
+title: Develop accessible Windows apps
+description: Learn how to implement accessibility in your Windows apps, including keyboard navigation, screen reader support, contrast themes, and UI Automation.
 ms.topic: article
-ms.date: 11/28/2023
-keywords: Accessibility in Windows 10, Accessibility, building accessible win32 apps, building accessible UWP apps, building accessible WPF apps, building accessible WinForms apps
+ms.date: 03/26/2026
+keywords: accessibility, windows app sdk, winui, screen reader, keyboard, contrast, ui automation
 ---
 
-# Accessibility in Windows 11 and Windows 10
+# Develop accessible Windows apps
 
 ![Accessibility hero image](images/hero-accessibility-bar-smaller.png)
 
-## Build accessibility into your applications to empower people of all abilities
+Build accessible and inclusive Windows applications with improved functionality and usability for people of all abilities. There are three core pillars to making your app accessible:
 
-Products and services—including electronic media—are accessible when they are designed to provide full and successful experiences for as many people as possible.
+1. **Programmatic access** — Expose accessible names, roles, and values for all UI elements so that assistive technologies like screen readers can interpret your app.
+2. **Keyboard navigation** — Ensure every part of your app can be operated with a keyboard for users who cannot use a mouse or touchscreen.
+3. **Color and contrast** — Support high contrast themes and ensure your text meets minimum contrast ratios (4.5:1 for normal text, 3:1 for large text).
 
-Build accessible and inclusive Windows applications, with improved functionality and usability, for people with disabilities (both temporary and permanent), personal preferences, specific work styles, or situational constraints (such as shared work spaces, driving, cooking, glare, and so on). Some common solutions include providing information in alternative formats (such as captions on a video) or enabling the use of assistive technologies (such as screen readers).
+For design principles and guidelines on building inclusive apps, see [Accessibility overview](/windows/apps/design/accessibility/accessibility-overview) and [Designing inclusive software](/windows/apps/design/accessibility/designing-inclusive-software).
 
-**Everyone should have access to the same rooms in a building, whether they need to use the stairs or the elevator.**
+## Implementation guides
 
-This page provides information on how the various Windows development frameworks provide accessibility support for developers building Windows applications, assistive technology developers building tools such as screen readers and magnifiers, and software test engineers creating automated scripts for testing applications.
+### Screen readers and UI Automation
 
-## Platform-specific documentation
+| Article | Description |
+|---------|-------------|
+| [Expose basic accessibility information](../design/accessibility/basic-accessibility-information.md) | Set accessible names, roles, and values so assistive technologies can interpret your UI. |
+| [Landmarks and headings](../design/accessibility/landmarks-and-headings.md) | Use UI Automation landmarks and headings to help users navigate content efficiently. |
+| [Screen readers and hardware system buttons](../design/accessibility/system-button-narration.md) | Handle hardware button events for screen readers such as Narrator. |
+| [Custom automation peers](../design/accessibility/custom-automation-peers.md) | Implement automation peers for custom controls to provide UI Automation support. |
+| [Control patterns and interfaces](../design/accessibility/control-patterns-and-interfaces.md) | Reference for UI Automation control patterns and provider interfaces. |
 
-:::row:::
-   :::column:::
-      ![Universal Windows Platform (UWP)](images/platform-uwp.png)
+### Keyboard navigation
 
-      **Universal Windows Platform (UWP)**
+| Article | Description |
+|---------|-------------|
+| [Keyboard accessibility](../design/accessibility/keyboard-accessibility.md) | Implement tab order, arrow-key navigation, access keys, and keyboard activation. |
 
-      Develop accessible apps and tools on the modern platform for Windows applications and games on any Windows device (including PCs, phones, Xbox, HoloLens, and more), and publish them to the Microsoft Store.
+### Visual accessibility
 
-      [Designing inclusive software](/windows/uwp/accessibility/designing-inclusive-software)
+| Article | Description |
+|---------|-------------|
+| [Contrast themes](../design/accessibility/high-contrast-themes.md) | Ensure your app works with high contrast themes using theme resources and resource dictionaries. |
+| [Accessible text requirements](../design/accessibility/accessible-text-requirements.md) | Meet contrast ratios, use correct text element roles, and support text scaling. |
 
-      [Developing inclusive Windows apps](/windows/uwp/accessibility/developing-inclusive-windows-apps)
+### Testing and verification
 
-      [Accessibility testing](/windows/uwp/accessibility/accessibility-testing)
-
-      [Accessibility in the Store](/windows/uwp/accessibility/accessibility-in-the-store)
-   :::column-end:::
-   :::column:::
-      ![Win32 platform apps](images/platform-win32.png)
-
-      **Win32 platform**
-
-      Develop accessible apps and tools on the original platform for C/C++ Windows applications.
-
-      [What's new in Windows accessibility and automation](/windows/desktop/accessibility-whatsnew)
-
-      [Developing accessible applications for Windows](/windows/desktop/accessibility-appdev)
-
-      [Developing accessible UI frameworks for Windows](/windows/desktop/accessibility-uiframeworkdev)
-
-      [Developing assistive technology for Windows](/windows/desktop/accessibility-atdev)
-
-      [Testing for accessibility](/windows/desktop/accessibility-testwithuia)
-
-      [Legacy accessibility and automation technology - MSAA to UI Automation](/windows/desktop/accessibility-legacy)
-
-      [Windows Accessibility features](/windows/desktop/winauto/about-windows-accessibility-features)
-
-      [Guidelines for designing accessible apps](/windows/desktop/uxguide/inter-accessibility)
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      ![WPF platform](images/platform-wpf2-small.png)
-
-      **Windows Presentation Foundation (WPF)**
-
-      Develop accessible apps and tools on the established platform for managed Windows applications with a XAML UI model and the .NET Framework.
-
-      [Accessibility Best Practices](/dotnet/framework/ui-automation/accessibility-best-practices)
-
-      [UI Automation Fundamentals](/dotnet/framework/ui-automation/index)
-
-      [UI Automation Providers for Managed Code](/dotnet/framework/ui-automation/ui-automation-providers-for-managed-code)
-
-      [UI Automation Clients for Managed Code](/dotnet/framework/ui-automation/ui-automation-clients-for-managed-code)
-
-      [UI Automation Control Patterns](/dotnet/framework/ui-automation/ui-automation-control-patterns)
-
-      [UI Automation Text Pattern](/dotnet/framework/ui-automation/ui-automation-text-pattern)
-
-      [UI Automation Control Types](/dotnet/framework/ui-automation/ui-automation-control-types)
-
-      [UI Automation Specification and Community Promise](/dotnet/framework/ui-automation/ui-automation-specification-and-community-promise)
-   :::column-end:::
-   :::column:::
-      ![Windows Forms platform apps](images/platform-winforms.png)
-
-      **Windows Forms (WinForms)**
-
-      Develop accessible apps and tools for managed Windows applications with a XAML UI model and the .NET Framework.
-
-      [Windows Forms Accessibility](/dotnet/framework/winforms/advanced/windows-forms-accessibility)
-
-      [Creating an Accessible Windows Application](/dotnet/framework/winforms/advanced/walkthrough-creating-an-accessible-windows-based-application)
-
-      [Properties on Windows Forms Controls That Support Accessibility Guidelines](/dotnet/framework/winforms/advanced/properties-on-windows-forms-controls-that-support-accessibility-guidelines)
-
-      [Providing Accessibility Information for Controls on a Windows Form](/dotnet/framework/winforms/controls/providing-accessibility-information-for-controls-on-a-windows-form)
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column span="2":::
-      **Web accessibility**
-
-      Design, build, and test accessible web sites in Microsoft Edge.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      [Introduction to web accessibility](/microsoft-edge/accessibility)
-
-      [Designing accessible websites](/microsoft-edge/accessibility/design)
-   :::column-end:::
-   :::column:::
-      [Building accessible websites](/microsoft-edge/accessibility/build)
-
-      [Testing accessible websites](/microsoft-edge/accessibility/test)
-   :::column-end:::
-:::row-end:::
+| Article | Description |
+|---------|-------------|
+| [Accessibility testing](../design/accessibility/accessibility-testing.md) | Test with Accessibility Insights, Inspect, and Narrator to verify your app is accessible. |
+| [Accessibility checklist](../design/accessibility/accessibility-checklist.md) | Step-by-step checklist to ensure your app meets accessibility requirements, including Store declaration. |
 
 ## Samples
 
@@ -133,28 +61,16 @@ Download and run full Windows samples that demonstrate various accessibility fea
       The new samples browser replacing the MSDN Code Gallery.
    :::column-end:::
    :::column:::
-      [MSDN Code Gallery (GitHub archive)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample)
+      [Windows App SDK samples on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples)
 
-      Download samples for Windows, Windows Phone, Microsoft Azure, Office, SharePoint, Silverlight and other products.
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      [Windows classic samples on GitHub](https://github.com/microsoft/Windows-classic-samples/search?q=accessibility&unscoped_q=accessibility)
-
-      These samples demonstrate the functionality and programming model for Windows and Windows Server. 
-   :::column-end:::
-   :::column:::
-      [Universal Windows Platform (UWP) samples on GitHub](https://github.com/microsoft/Windows-universal-samples/search?q=accessibility&unscoped_q=accessibility)
-
-      These samples demonstrate the API usage patterns for the Universal Windows Platform (UWP) in the Windows Software Development Kit (SDK) for Windows 10 and later.
+      These samples demonstrate the API usage patterns for Windows App SDK and WinUI.
    :::column-end:::
 :::row-end:::
 :::row:::
    :::column span="2":::
-      [WinUI 2 Gallery](https://github.com/Microsoft/WinUI-Gallery)
+      [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery)
 
-      This app demonstrates the various Xaml controls supported in the Fluent Design System.
+      This app demonstrates the various WinUI controls supported in the Fluent Design System.
    :::column-end:::
 :::row-end:::
 
@@ -176,33 +92,6 @@ Various videos covering how to build accessible Windows applications to general 
    :::column-end:::
    :::column:::
       > [!VIDEO https://www.youtube.com/embed/Kl4CT4DaypM]
-   :::column-end:::
-:::row-end:::
-:::row:::
-
-
-
-:::row-end:::
-:::row:::
-   :::column:::
-      **One Dev Minute: Developing apps for accessibility**
-   :::column-end:::
-   :::column:::
-      **Windows 11 accessibility features empower everyone**
-   :::column-end:::
-   :::column:::
-      **Making the mouse pointers easier to see**
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      > [!VIDEO 001a0bd5-c137-4a17-b45f-9f4368bf379d]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/uDzVBNry31s]
-   :::column-end:::
-   :::column:::
-      > [!VIDEO https://www.youtube.com/embed/BoME-Wr_jNw]
    :::column-end:::
 :::row-end:::
 
@@ -236,14 +125,6 @@ Various videos covering how to build accessible Windows applications to general 
 :::row:::
    :::column:::
       [Windows community - Accessibility](https://answers.microsoft.com/en-us/search/search?SearchTerm=windows%20accessibility)
-   :::column-end:::
-   :::column:::
-      [Windows Accessibility and Automation Development Forum](https://social.msdn.microsoft.com/Forums/windows/home?forum=windowsaccessibilityandautomation)
-   :::column-end:::
-:::row-end:::
-:::row:::
-   :::column:::
-      [Stack Overflow](https://stackoverflow.com/questions/tagged/windows+accessibility)
    :::column-end:::
    :::column:::
       [Disability Answer Desk](https://www.microsoft.com/Accessibility/disability-answer-desk)

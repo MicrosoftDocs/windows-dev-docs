@@ -60,3 +60,7 @@ These are the values for **NumeralSystem** that are supported in Windows.
 | Thai | Thai | U+0E50, U+0E51, U+0E52, U+0E53, U+0E54, U+0E55, U+0E56, U+0E57, U+0E58, U+0E59 |
 | Tibt | Tibetan | U+0F20, U+0F21, U+0F22, U+0F23, U+0F24, U+0F25, U+0F26, U+0F27, U+0F28, U+0F29 |
 | Vaii | Vai | U+A620, U+A621, U+A622, U+A623, U+A624, U+A625, U+A626, U+A627, U+A628, U+A629 |
+
+## See also
+
+* [Globalize your date/time/number formats](use-global-ready-formats.md)

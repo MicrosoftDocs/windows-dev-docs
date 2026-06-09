@@ -26,11 +26,24 @@ You can set the **Base price** to **Free**, or you can choose an available price
 
 In the **Pricing** section, click **view conversion table** to see the corresponding prices in all currencies. This also displays an ID number associated with each price tier, which you’ll need if you're using the [Microsoft Store submission API](/windows/uwp/monetize/manage-app-submissions#price-tiers) to enter prices. You can click **Download** to download a copy of the price tier table as a .csv file.
 
-Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](/hub/apps/publish/publish-your-app/faqs/consumer-markets.md).
+Keep in mind that the price tier you select may include sales or value-added tax that your customers must pay. To learn more about your app’s tax implications in selected markets, see [Tax details for paid apps](/partner-center/tax-details-marketplace). You should also review the [price considerations for specific markets](./market-selection.md#microsoft-store-consumer-markets).
 
 
 > [!NOTE]
 > If you choose the **Stop acquisition** option under **Make this product available but not discoverable in the Store** in the [Visibility](./visibility-options.md#discoverability) section), you won't be able to set pricing for your submission (since no one will able to acquire the app unless they use a promotional code to get the app for free).
+
+### Currency conversion rates
+
+The Store automatically converts your retail base price for all markets for you. When customers browse your app, they will see the base price converted into their local currency. 
+
+Exchange rates used to convert base prices (in US dollars) to local prices (in foreign currencies) are adjusted at times based on market conditions: 
+* When you configure the base price for a product that previously had none, the latest currency conversion rates in Partner Center will be applied automatically.
+* For existing products, updates to exchange rates do not change current wholesale or suggested retail prices. Any adjustments to those prices must be made by you.
+* When you edit wholesale or suggested retail pricing, any newly selected price tiers will use the most recent conversion tables. After updating the base price, select **Review price per market** to confirm local prices. 
+
+Before publishing, review pricing conversions to ensure each market aligns with your intended end-user price. 
+
+To override the base price for any specific market, select **Create new market group** and then select the markets for price override. 
 
 ### Override base price for specific markets
 
@@ -100,7 +113,7 @@ In the **Stop acquisition** dropdown, you can set a date and time when you want 
 
 By default, **Stop acquisition** is set to never. To change this, select **at** in the drop-down and specify a date and time, as described above. At the date and time you select, customers will no longer be able to acquire the app.
 
-It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](./visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](./app-package-management.md#removing-an-app-from-the-store).
+It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](./visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](./remove-app.md).
 
 > [!TIP]
 > If you select a date to **Stop acquisition**, and later decide you'd like to make the app available again, you can create a new submission and change **Stop acquisition** back to **Never**. The app will become available again after your updated submission is published.

@@ -105,8 +105,8 @@ By default, local toast notifications expire in three days, and local tile notif
 For more information, see these topics:
 
 -   [Send a local tile notification](/windows/uwp/launch-resume/sending-a-local-tile-notification)
--   [Send a local toast notification](app-notifications/send-local-toast.md)
--   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Send a local app notification](app-notifications/app-notifications-quickstart.md)
+-   [Windows App SDK notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications)
 
 ## Scheduled notifications
 
@@ -119,8 +119,8 @@ By default, scheduled notifications expire three days from the time they are del
 
 For more information, see these topics:
 
--   [Scheduling a toast notification](app-notifications/scheduled-toast.md)
--   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Schedule an app notification](app-notifications/app-notifications-scheduled.md)
+-   [Windows App SDK notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications)
 
 ## Periodic notifications
 
@@ -134,7 +134,7 @@ By default, periodic notifications expire three days from the time polling occur
 For more information, see these topics:
 
 -   [Periodic notification overview](periodic-notification-overview.md)
--   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows App SDK notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications)
 
 ## Push notifications
 
@@ -149,19 +149,19 @@ For more information, see:
 
 -   [Windows Push Notification Services (WNS) overview](push-notifications/wns-overview.md)
 -   [Guidelines for push notifications](push-notifications/index.md)
--   [Windows app notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows App SDK notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications)
 
 
 ## Related topics
 
 
 * [Send a local tile notification](/windows/uwp/launch-resume/sending-a-local-tile-notification)
-* [Send a local toast notification](app-notifications/send-local-toast.md)
+* [Send a local app notification](app-notifications/app-notifications-quickstart.md)
 * [Guidelines for push notifications](push-notifications/index.md)
 * [Guidelines for toast notifications](app-notifications/index.md)
 * [Periodic notification overview](periodic-notification-overview.md)
 * [Windows Push Notification Services (WNS) overview](push-notifications/wns-overview.md)
-* [Windows app notifications code samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [Windows App SDK notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications)
  
 
  

@@ -15,6 +15,9 @@ dev_langs:
 
 # Working with background tasks in Windows apps
 
+> [!NOTE]
+> This article covers background tasks built with the Windows Runtime (WinRT) [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API in the **Windows.ApplicationModel.Background** namespace for apps with package identity, including UWP and packaged desktop apps. If you're building a new app or migrating an existing app to Windows App SDK, see [Using background tasks in Windows apps](/windows/apps/windows-app-sdk/applifecycle/background-tasks) and [Background task migration strategy](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy).
+
 Learn how to create and register a background task in your app with the Windows Runtime (WinRT) [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) class.
 
 ## Register a background task

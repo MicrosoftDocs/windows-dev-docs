@@ -15,7 +15,7 @@ The Microsoft Store submission API provides methods you can use to manage submis
 > If you use the Microsoft Store submission API to create a submission for an app, be sure to make further changes to the submission only by using the API, rather than Partner Center. If you use Partner Center to change a submission that you originally created by using the API, you will no longer be able to change or commit that submission by using the API. In some cases, the submission could be left in an error state where it cannot proceed in the submission process. If this occurs, you must delete the submission and create a new submission.
 
 > [!IMPORTANT]
-> You cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](/windows/apps/publish/organizational-licensing) or to publish submissions for [LOB apps](/windows/apps/publish/distribute-lob-apps-to-enterprises) directly to enterprises. For both of these scenarios, you must use Partner Center to publish the submission.
+> You cannot use this API to publish submissions for volume purchases through the Microsoft Store for Business and Microsoft Store for Education (these programs have been discontinued) or to publish submissions for [LOB apps](/windows/apps/publish/distribute-lob-apps-to-enterprises) directly to enterprises. For both of these scenarios, you must use Partner Center to publish the submission.
 
 
 <span id="methods-for-app-submissions"></span>
@@ -725,10 +725,10 @@ The following values represent available price tiers in the [pricing resource](#
 
 ### Enterprise licensing values
 
-The following values represent the organizational licensing behavior for the app. For more information about these options, see [Organizational licensing options](/windows/apps/publish/organizational-licensing).
+The following values represent the organizational licensing behavior for the app. For more information about these options, see the [Partner Center documentation](/partner-center/). Note that the Microsoft Store for Business and Microsoft Store for Education programs have been discontinued.
 
 > [!NOTE]
-> Although you can configure the organizational licensing options for an app submission via the submission API, you cannot use this API to publish submissions for [volume purchases through the Microsoft Store for Business and Microsoft Store for Education](/windows/apps/publish/organizational-licensing). To publish submissions to the Microsoft Store for Business and Microsoft Store for Education, you must use Partner Center.
+> Although you can configure the organizational licensing options for an app submission via the submission API, you cannot use this API to publish submissions for volume purchases through the Microsoft Store for Business and Microsoft Store for Education (these programs have been discontinued). To publish submissions through organizational licensing channels, you must use Partner Center.
 
 
 | Value           |  Description      |

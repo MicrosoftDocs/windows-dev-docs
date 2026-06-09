@@ -4,12 +4,12 @@ title: How to create a single-instanced WinUI app with C#
 ms.topic: how-to
 ms.date: 07/14/2025
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance, winui, windows app sdk, c#
-#customer intent: As a Windows developer, I want to learn how to create a single-instanced WinUI 3 app so that I can ensure only one instance of my app is running at a time.
+#customer intent: As a Windows developer, I want to learn how to create a single-instanced WinUI app so that I can ensure only one instance of my app is running at a time.
 ---
 
-# Create a single-instanced WinUI app with C#
+# Create a single-instanced WinUI 3 app with C#
 
-This how-to demonstrates how to create a single-instanced WinUI 3 app with C# and the Windows App SDK. Single-instanced apps only allow one instance of the app running at a time. WinUI apps are multi-instanced by default. They allow you to launch multiple instances of the same app simultaneously. That's referred to a multiple instances. However, you may want to implement single-instancing based on the use case of your app. Attempting to launch a second instance of a single-instanced app will only result in the first instance’s main window being activated instead. This tutorial demonstrates how to implement single-instancing in a WinUI app.
+This how-to demonstrates how to create a single-instanced WinUI app with C# and the Windows App SDK. Single-instanced apps only allow one instance of the app running at a time. WinUI apps are multi-instanced by default. They allow you to launch multiple instances of the same app simultaneously. That's referred to a multiple instances. However, you may want to implement single-instancing based on the use case of your app. Attempting to launch a second instance of a single-instanced app will only result in the first instance’s main window being activated instead. This tutorial demonstrates how to implement single-instancing in a WinUI app.
 
 In this article, you will learn how to:
 
@@ -25,7 +25,7 @@ This tutorial uses Visual Studio and builds on the WinUI blank app template. If 
 When you've done that, come back here to learn how to turn your "Hello World" project into a single-instanced app.
 
 > [!NOTE]
-> This how-to is based on the [Making the app single-instanced (Part 3)](https://blogs.windows.com/windowsdeveloper/2022/01/28/making-the-app-single-instanced-part-3/) blog post from a Windows blog series on WinUI 3. The code for those articles is available on [GitHub](https://github.com/jingwei-a-zhang/WinAppSDK-DrumPad).
+> This how-to is based on the [Making the app single-instanced (Part 3)](https://blogs.windows.com/windowsdeveloper/2022/01/28/making-the-app-single-instanced-part-3/) blog post from a Windows blog series on WinUI. The code for those articles is available on [GitHub](https://github.com/jingwei-a-zhang/WinAppSDK-DrumPad).
 
 ## Disable auto-generated Program code
 

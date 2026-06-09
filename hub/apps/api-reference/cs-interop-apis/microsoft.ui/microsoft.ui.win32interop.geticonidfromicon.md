@@ -37,7 +37,7 @@ The icon identifier that corresponds to the specified *hicon*, if the provided *
 
 | Product | Introduced in |
 |-|-|
-|**WinUI 3**|Windows App SDK 1.0|
+|**WinUI**|Windows App SDK 1.0|
 
 ## See also
 

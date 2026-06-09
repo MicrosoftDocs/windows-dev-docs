@@ -6,17 +6,17 @@ ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Manage submission options
+# Manage submission options for add-ons
 
 The **Submission options** page of the app submission process is where you can provide more information to help us test your product properly. This is an optional step, but is recommended for many submissions. You can also optionally set publishing hold options if you want to delay the publishing process.
 
 ## Publishing hold options
 
-By default, we'll publish your submission as soon as it passes certification (or per any dates you specified in the [Schedule](./configure-release-schedule.md#configure-precise-release-scheduling) section of the **Configure release schedule** page). You can optionally choose to place a hold on publishing your submission until a certain date, or until you manually indicate that it should be published. The options in this section are described below.
+By default, we'll publish your submission as soon as it passes certification (or per any dates you specified in the [Schedule](./configure-release-schedule.md#configure-precise-release-scheduling-for-add-ons) section of the **Configure release schedule** page). You can optionally choose to place a hold on publishing your submission until a certain date, or until you manually indicate that it should be published. The options in this section are described below.
 
 ### Publish your submission as soon as it passes certification (or per dates you specify)
 
-**Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** is the default selection, and means that your submission will begin the publishing process as soon as it passes certification, unless you have configured dates in the [Schedule](./configure-release-schedule.md#configure-precise-release-scheduling) section of the **Configure release schedule** page.
+**Publish this submission as soon as it passes certification (or per dates you selected in the Schedule section)** is the default selection, and means that your submission will begin the publishing process as soon as it passes certification, unless you have configured dates in the [Schedule](./configure-release-schedule.md#configure-precise-release-scheduling-for-add-ons) section of the **Configure release schedule** page.
 
 For most submissions, we recommend keeping the **Publishing hold options** section set to the default. If you want your submission to be published on specific dates, configure those dates in the **Schedule** section. The default publishing hold option will ensure your submission is not published before the dates you set in the **Schedule** section. Your product will become available to customers in the Store based on the schedule you specify.
 

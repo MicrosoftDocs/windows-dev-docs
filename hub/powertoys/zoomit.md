@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Win]
 
 ZoomIt is a screen zoom, annotation, and recording tool for technical presentations and demos. You can also use ZoomIt to snip screenshots to the clipboard or to a file. ZoomIt runs unobtrusively in the tray and activates with customizable hotkeys to zoom in on an area of the screen, move around while zoomed, and draw on the zoomed image.
 
-:::image type="content" source="../images/powertoys-zoomit.gif" alt-text="Animation of the PowerToys ZoomIt utility demonstrating screen zoom and annotation features during a presentation.":::
+:::image type="content" source="images/zoomit/zoomit.gif" alt-text="Animation of the PowerToys ZoomIt utility demonstrating screen zoom and annotation features during a presentation.":::
 
 ZoomIt is one of the [Sysinternals](/sysinternals/) utilities and its standalone version works all versions of Windows. To provide the most flexibility, this standalone version will continue to be available from Sysinternals. For more information about using ZoomIt or to download a standalone version, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation.
 
@@ -31,6 +31,7 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 |---------------|-------------|
 | Zoom Toggle Hotkey | Set the hotkey to toggle zoom on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>1</kbd>. |
 | Animate zoom in and zoom out | Enable or disable the zoom in and zoom out animation. The animation is enabled by default. |
+| Smooth the zoomed image | Enable or disable smooth rendering when zoomed in. When enabled, the zoomed image appears smoother rather than pixelated. |
 | Specify the initial level of magnification when zooming in | Set the initial level of magnification when zooming in (1.25 to 4.0). The default magnification level is 2.0. |
 
 | Live Zoom settings | Description |
@@ -58,6 +59,7 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 | Timer (minutes) | Set the break timer duration in minutes. The default break timer duration is 10 minutes. |
 | Show Time Elapsed After Expiration | Show or hide the time elapsed after the break timer expires. The time elapsed is shown by default. |
 | Play Sound on Expiration | Play a sound when the break timer expires. A sound is not played by default.<br/><br/>When enabled, use the "Alarm sound file" option's Browse button to specify the sound file to play when the break timer expires. |
+| Lock workstation during break | When enabled, locks the workstation when the break timer starts, requiring the user to sign in again when the break is over. |
 | Timer Opacity | Set the opacity of the break timer (10% to 100%). The default opacity is 100%, and larger numbers are more opaque. |
 | Timer Position | Set the position of the break timer on the screen. The default position is "Center". |
 | Show Background Bitmap | Show or hide the background bitmap behind the break timer. The background bitmap is not shown by default.<br/><br/>When enabled, the following options become available:<br/><ul><li>Option buttons to select "Use faded desktop as background" or "Use image file as background".</li><li><strong>Background image file:</strong> Use the Browse button to select a background image when "Use image file as background" is selected.</li><li><strong>Scale to screen:</strong> Enable scaling the background image to fit the screen. This option can be enabled when "Use Image file as background" is selected. The option is disabled by default.</li></ul> |
@@ -65,7 +67,9 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 | Record settings | Description |
 |-----------------|-------------|
 | Record Toggle Hotkey | Set the hotkey to toggle recording on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>5</kbd>. |
+| Format | Select the recording output format. Options: **GIF** or **MP4**. |
 | Scaling | Set the scaling factor for the recorded image (0.1 to 1.0). The default scaling factor is 1.0, and larger numbers are more zoomed in. |
+| Capture system audio | Enable or disable capturing system audio during recording. |
 | Capture audio input | Enable or disable capturing audio input during recording. Audio input is not captured by default. |
 | Microphone | Select the microphone to use for audio input during recording. The default microphone is "Default", the current system default audio input device. |
 

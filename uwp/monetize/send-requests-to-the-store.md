@@ -149,6 +149,75 @@ The following example shows the format of the JSON data to pass to *parametersAs
 
 If there is an error with the request, the [HttpStatusCode](/uwp/api/windows.services.store.storesendrequestresult.HttpStatusCode) property of the [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) return value contains the response code.
 
+## Check if an unpackaged application is installed
+
+This request checks if an unpackaged application is installed for the current user or at the machine level.
+
+To send this request, pass the following information to the *requestKind* and *parametersAsJson* parameters of the **SendRequestAsync** method.
+
+|  Parameter  |  Description  |
+|----------------------|---------------|
+|  *requestKind*                   |  32  |
+|  *parametersAsJson*                   |  Pass a JSON-formatted string that contains the data shown in the example below.  |
+
+The following example shows the format of the JSON data to pass to *parametersAsJson*. The *storeAction* field must be assigned the integer 0. The *productId* field must be assigned a string with the productId of the unpackaged application to make the request for.
+
+```json
+{
+    "storeAction": 0,
+    "productId": "Product ID"
+}
+```
+
+After you submit this request, the [Response](/uwp/api/windows.services.store.storesendrequestresult.Response) property of the [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) return value contains a JSON-formatted string with the following fields.
+
+|  Field  |  Description  |
+|----------------------|---------------|
+|  *isInstalled*                   |  A Boolean value, where **true** indicates that the product is installed on the device and **false** indicates that the product is not installed.  |
+
+The following example demonstrates a return value for this request.
+
+```json
+{
+    "isInstalled": false
+}
+```
+
+If there is an error with the request, the [ExtendedError](/uwp/api/windows.services.store.storesendrequestresult.ExtendedError) property of the [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) return value contains the error code.
+
+## Open the Store PDP for a product, automatically install the product
+
+This request opens the store to the page of the product indicated. It allows optionality for kicking off installation of that product and automatically opening the product once installation completes. Note that if the product is already installed, this will not open the product.
+
+To send this request, pass the following information to the *requestKind* and *parametersAsJson* parameters of the **SendRequestAsync** method.
+
+|  Parameter  |  Description  |
+|----------------------|---------------|
+|  *requestKind*                   |  32  |
+|  *parametersAsJson*                   |  Pass a JSON-formatted string that contains the data shown in the example below.  |
+
+The following examples show the format of the JSON data to pass to *parametersAsJson*. The *storeAction* field must be assigned the integer 1. The *productId* field must be assigned a string with the ProductId of the application, or the *packageFamilyName* must be assigned a string with the PackageFamilyName of the application. Optionally, *autoInstall* can be assigned a Boolean indicating if the application should be auto-installed on PDP open. *autoOpenOnInstallComplete* can be assigned a Boolean indicating if the application should open after installation, but can only be set to **true** if *autoInstall* is set to **true**. Note that the application will not open if it is already installed before the call is made.
+
+```json
+{
+    "storeAction": 1,
+    "productId": "9PB2MZ1ZMB1S",
+    "autoInstall": true,
+    "autoOpenOnInstallComplete": true
+}
+```
+
+or
+
+```json
+{
+    "storeAction": 1,
+    "packageFamilyName": "AppleInc.iTunes_nzyj5cx40ttqa"
+}
+```
+
+If there is an error with the request, the [ExtendedError](/uwp/api/windows.services.store.storesendrequestresult.ExtendedError) property of the [StoreSendRequestResult](/uwp/api/windows.services.store.storesendrequestresult) return value contains the error code.
+
 ## Related topics
 
 * [Show a rating and review dialog in your app](request-ratings-and-reviews.md#show-a-rating-and-review-dialog-in-your-app)

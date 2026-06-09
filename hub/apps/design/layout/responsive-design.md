@@ -6,7 +6,7 @@ op-migration-status: ready
 ms.date: 09/25/2024
 ms.topic: article
 keywords: windows 10, uwp
-localizationpriority: medium
+ms.localizationpriority: medium
 ms.custom: RS5
 ---
 # Responsive design techniques

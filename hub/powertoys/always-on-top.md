@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Always On Top, Win]
 
 PowerToys Always On Top is a system-wide Windows utility that allows you to pin windows above other windows. This utility helps you keep important windows visible at all times, improving your productivity by ensuring critical information stays accessible while you work with other applications.
 
-:::image type="content" source="../images/pt-always-on-top.png" alt-text="Screenshot of PowerToys Always On Top utility showing a pinned window with colored border highlighting.":::
+:::image type="content" source="images/always-on-top/always-on-top.png" alt-text="Screenshot of PowerToys Always On Top utility showing a pinned window with colored border highlighting.":::
 
 ## Pin a window
 
@@ -29,6 +29,7 @@ Always On Top has the following settings:
 | :--- | :--- |
 | **Activation shortcut** | The customizable keyboard command to turn on or off the always-on-top property for that window. |
 | **Do not activate when Game Mode is on** | Prevents the feature from being activated when actively playing a game on the system. |
+| **Show Always on Top in the title bar context menu** | Lets you turn Always on Top mode on or off from the window's title bar right-click menu. |
 | **Show a border around the pinned window** | When **On**, this option shows a colored border around the pinned window.  |
 | **Color mode** | Choose either **Windows default** or **Custom color** for the highlight border. |
 | **Color** | The custom color of the highlight border. **Color** is only available when **Color mode** is set to **Custom color**. |

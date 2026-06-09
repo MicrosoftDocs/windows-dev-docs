@@ -37,7 +37,7 @@ The window handle that corresponds to the specified *windowId*, if the provided 
 
 | Product | Introduced in |
 |-|-|
-|**WinUI 3**|Windows App SDK 1.0|
+|**WinUI**|Windows App SDK 1.0|
 
 ## See also
 

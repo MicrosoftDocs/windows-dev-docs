@@ -1,19 +1,19 @@
 ---
-title: Keyboard API and events parity between UWP and WinUI 3
-description: The migration of apps from UWP to the WinUI 3 might require a few changes in the way input keyboard events are handled.
+title: Keyboard API and events parity between UWP and WinUI
+description: The migration of apps from UWP to the WinUI might require a few changes in the way input keyboard events are handled.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, input, keyboard, events
 ms.localizationpriority: medium
 ---
 
 # Keyboard API and events parity between UWP and WinUI 3
 
-The migration of apps from the Universal Windows Platform (UWP) to the Windows App SDK (specifically, WinUI 3) might require a few changes in the way input keyboard events are handled, primarily due to the app model differences. This topic describes commonly identified differences.
+The migration of apps from the Universal Windows Platform (UWP) to the Windows App SDK (specifically, WinUI) might require a few changes in the way input keyboard events are handled, primarily due to the app model differences. This topic describes commonly identified differences.
 
-By using **UIElement**-specific WinUI 3 event handlers, and developing custom solutions for event routing, you can easily transition your apps to modern Windows applications.
+By using **UIElement**-specific WinUI event handlers, and developing custom solutions for event routing, you can easily transition your apps to modern Windows applications.
 
-## Mapping to WinUI 3 APIs from UWP APIs
+## Mapping to WinUI APIs from UWP APIs
 
 ### UWP APIs
 
@@ -70,9 +70,9 @@ public sealed partial class MainPage : Page
 }
 ```
 
-### WinUI 3 APIs (Windows App SDK)
+### WinUI APIs (Windows App SDK)
 
-WinUI 3 (Windows App SDK) has a different concept from **CoreWindow**. Instead, WinUI 3 provides an input event handling mechanism using **Microsoft.Ui.Xaml.UIElement** (UIElement). Each class that inherits from **UIElement** can implement various keyboard or pointer events (which are also present in UWP's **CoreWindow**) such as **KeyUp**, **KeyDown**, **CharacterReceived**, and others. This approach allows event handling at the level of a specific UI control.
+WinUI (Windows App SDK) has a different concept from **CoreWindow**. Instead, WinUI provides an input event handling mechanism using **Microsoft.Ui.Xaml.UIElement** (UIElement). Each class that inherits from **UIElement** can implement various keyboard or pointer events (which are also present in UWP's **CoreWindow**) such as **KeyUp**, **KeyDown**, **CharacterReceived**, and others. This approach allows event handling at the level of a specific UI control.
 
 For detailed info about event handling, see [Keyboard events](/windows/apps/design/input/keyboard-events). You can associate keyboard events either XAML or in imperative source code. These examples demonstrate key event handling through code and accelerator key events in XAML.
 
@@ -142,7 +142,7 @@ public sealed partial class MainWindow : Window
 * [UWP custom edit control sample app](https://github.com/microsoft/Windows-universal-samples/blob/0db108e9d0af7386767194b3293c4082c1c8daa7/Samples/CustomEditControl/cs/CustomEditControl.xaml.cs#L55).
 * [UWP basic suspension sample app](https://github.com/microsoft/Windows-universal-samples/blob/0db108e9d0af7386767194b3293c4082c1c8daa7/Samples/BasicSuspension/cs/Common/NavigationHelper.cs#L194).
 
-## WinUI 3 sample apps for keyboard events and KeyboardAccelerator
+## WinUI sample apps for keyboard events and KeyboardAccelerator
 
 * [Input sample apps: KeyboardShortcutManager.xaml](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Input/cs-winui/KeyboardShortcutManager.xaml)
 * [Input sample apps: KeyboardShortcutManager.xaml.cs](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/Input/cs-winui/KeyboardShortcutManager.xaml.cs)
@@ -157,7 +157,7 @@ public sealed partial class MainWindow : Window
 * [UIElement.KeyDown event (Windows.UI.Xaml)](/uwp/api/windows.ui.xaml.uielement.keydown)
 * [UIElement.KeyUp event (Windows.UI.Xaml)](/uwp/api/windows.ui.xaml.uielement.keyup)
 
-### WinUI 3 APIs (Windows App SDK)
+### WinUI APIs (Windows App SDK)
 
 * [KeyboardAccelerator class (Microsoft.UI.Xaml.Input)](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.keyboardaccelerator)
 * [UIElement.CharacterReceived event (Microsoft.UI.Xaml)](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.characterreceived)

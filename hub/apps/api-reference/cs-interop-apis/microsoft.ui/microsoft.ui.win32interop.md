@@ -34,7 +34,7 @@ public class Win32Interop
 
 | Product | Introduced in |
 |-|-|
-|**WinUI 3**|Windows App SDK 1.0|
+|**WinUI**|Windows App SDK 1.0|
 
 ## See also
 

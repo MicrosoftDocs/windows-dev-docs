@@ -2,6 +2,7 @@
 title: search Command
 description: Queries the sources for available applications that can be installed
 ms.date: 07/08/2025
+no-loc: [winget, search, find]
 ms.topic: overview
 ---
 
@@ -23,7 +24,7 @@ The **search** command includes parameters for filtering down the applications r
 
 The following aliases are available for this command:
 
-- find
+- `find`
 
 ## Arguments
 
@@ -34,7 +35,7 @@ The following arguments are available.
 | **-q,--query** |  The query flag is the default argument used to search for an app. It does not need to be specified. Entering the command `winget search foo` will default to using `--query` so including it is unnecessary.|
 
 > [!NOTE]
-> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are searching for.
+> The query argument is positional. winget performs a **case-insensitive substring match** against the package name, ID, and moniker. Wild-card syntax is not supported. Use **-e, --exact** to require an exact, case-sensitive match. Use **--id**, **--name**, or **--moniker** to restrict which field is searched.
 
 ## Show all
 

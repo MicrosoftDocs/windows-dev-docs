@@ -1,7 +1,7 @@
 ---
 title: Use WinGet to install and manage applications
 description: The WinGet command line tool enables developers to discover, install, upgrade, remove and configure applications on Windows computers.
-ms.date: 09/15/2025
+ms.date: 03/24/2026
 ms.topic: overview
 ---
 
@@ -16,17 +16,20 @@ ms.topic: overview
 > [!NOTE]
 > The **WinGet** command line tool is only supported on Windows 10 version 1809 (build 17763) or later. WinGet will not be available until you have logged into Windows as a user for the first time, triggering Microsoft Store to register the Windows Package Manager as part of an asynchronous process. If you have recently logged in as a user for the first time and find that WinGet is not yet available, you can open PowerShell and enter the following command to request this WinGet registration: `Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe`.
 
+> [!NOTE]
+> It's possible that **App Installer** is not installed on your device. In that case, it can be downloaded [here](https://apps.microsoft.com/detail/9nblggh4nns1).
+
 ### Install WinGet preview version [Developers Only]
 
 WinGet is included in the App Installer. To try the latest Windows Package Manager features, you can install a preview build one of the following ways:
 
 - Download the latest [WinGet preview version](https://aka.ms/getwingetpreview). Read the [Release notes for WinGet preview](https://github.com/microsoft/winget-cli/releases) to learn about any new features. Installing this package will give you the preview version of the WinGet client, but it will not enable automatic updates of new preview versions from the Microsoft Store.
 
-- Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Program](https://www.microsoft.com/windowsinsider/about-windows-insider-program) in the Canary or Dev [Channels](https://learn.microsoft.com/windows-insider/flighting). The Windows Insider Canary and Dev Channels include automatic updates of new preview versions of WinGet from the Microsoft Store.
+- Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Program](https://insider.windows.com/) in the Canary or Dev [Channels](/windows-insider/flighting). The Windows Insider Canary and Dev Channels include automatic updates of new preview versions of WinGet from the Microsoft Store.
 
 ### Install WinGet on Windows Sandbox
 
-[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include WinGet, nor the Microsoft Store app, so you will need to download the latest WinGet package from the WinGet releases page on GitHub, or use the Repair-WinGetPackageManager cmdlet.
+[Windows Sandbox](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview) provides a lightweight desktop environment to safely run applications in isolation. Software installed inside the Windows Sandbox environment remains "sandboxed" and runs separately from the host machine. Windows Sandbox does not include WinGet, nor the Microsoft Store app, so you will need to download the latest WinGet package from the WinGet releases page on GitHub, or use the `Repair-WinGetPackageManager` cmdlet.
 
 To install the stable release of WinGet on Windows Sandbox, follow these steps from a Windows PowerShell command prompt:
 
@@ -40,9 +43,9 @@ Repair-WinGetPackageManager -AllUsers
 Write-Host "Done."
 ```
 
-To install the WinGet PowerShell module in machine scope, you can use the `-Scope AllUsers` parameter with the `Install-Module` cmdlet. If you would like a preview version of WinGet, you can add `-IncludePrerelease` parameter with the Repair-WinGetPackageManager cmdlet. To see the available parameters for the Repair-WinGetPackageManager cmdlet, you can run `Get-Help Repair-WinGetPackageManager -Full`.
+To install the WinGet PowerShell module in machine scope, you can use the `-Scope AllUsers` parameter with the `Install-Module` cmdlet. If you would like a preview version of WinGet, you can add `-IncludePrerelease` parameter with the `Repair-WinGetPackageManager` cmdlet. To see the available parameters for the `Repair-WinGetPackageManager` cmdlet, you can run `Get-Help Repair-WinGetPackageManager -Full`.
 
-For more information on Windows Sandbox, including how to install a sandbox and what to expect from it's usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
+For more information on Windows Sandbox, including how to install a sandbox and what to expect from its usage, see the [Windows Sandbox docs](/windows/security/threat-protection/windows-sandbox/windows-sandbox-overview).
 
 ## Administrator considerations
 
@@ -69,13 +72,13 @@ Some users have reported [issues](https://github.com/microsoft/winget-cli/issues
 
 ### Commands
 
-The current preview of the **WinGet** tool supports the following commands.
+The current version of the **WinGet** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
 | [install](install.md) | Installs the specified application. |
 | [show](show.md) | Displays details for the specified application. |
-| [source](source.md) | Adds, removes, and updates the Windows Package Manager repositories accessed by **WinGet**. |
+| [source](source.md) | Adds, edits, removes, and updates the Windows Package Manager repositories accessed by **WinGet**. |
 | [search](search.md) | Searches for an application. |
 | [list](list.md) | Display installed packages. |
 | [upgrade](upgrade.md) |  Upgrades the given specified application. |
@@ -123,6 +126,7 @@ The **WinGet** tool supports the following options.
 * MSIX
 * BURN
 * PORTABLE
+* FONT
 
 ## Scripting WinGet
 

@@ -1,15 +1,15 @@
 ---
-description: Provides a unique identifier for markup elements. For Universal Windows Platform (UWP) XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
+description: Provides a unique identifier for markup elements. For WinUI XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
 title: xUid directive
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
 ms.date: 09/09/2025
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 ---
 # x:Uid directive
 
-Provides a unique identifier for markup elements. For Universal Windows Platform (UWP) XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
+Provides a unique identifier for markup elements. For WinUI XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
 
 ## XAML attribute usage
 

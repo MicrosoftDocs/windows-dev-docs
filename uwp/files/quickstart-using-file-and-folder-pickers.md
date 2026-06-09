@@ -9,6 +9,11 @@ ms.localizationpriority: medium
 ---
 # Open files and folders with a picker
 
+> [!IMPORTANT]
+> **Building a WinUI 3 app?** Use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace instead of the `Windows.Storage.Pickers` APIs described in this article. The Windows App SDK pickers (available in Windows App SDK 1.8 and later) are designed for WinUI 3 apps — they require no window handle initialization and return lightweight path-based results. See [Open files and folders with pickers in WinUI](/windows/apps/develop/files/using-file-folder-pickers) and [Save a file with a picker in WinUI](/windows/apps/develop/files/pickers-save-file).
+>
+> The `Windows.Storage.Pickers` APIs on this page apply to UWP apps and to desktop apps that require elevation (where the Windows App SDK pickers cannot be used).
+
 **Important APIs**
 
 - [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker)
@@ -20,11 +25,6 @@ Access files and folders by letting the user interact with a picker. You can use
 > [!NOTE]
 > For a complete sample, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
 
-> [!NOTE]
-> In a desktop app (which includes WinUI apps), you can use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace to access the file and folder pickers. This namespace is available in Windows App SDK version 1.8 and later. The APIs in this namespace are designed to work seamlessly with WinUI apps, providing a consistent experience across different app types.
->
-> However, if necessary, you can still use the WinRT file and folder pickers from [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers). If the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see [FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation).
-
 ## Prerequisites
 
 - **Understand async programming for Universal Windows Platform (UWP) apps**
@@ -33,7 +33,7 @@ Access files and folders by letting the user interact with a picker. You can use
 
 - **Access permissions to the location**
 
-    See [File access permissions](file-access-permissions.md).
+    See [File access permissions](/windows/apps/develop/files/file-access-permissions).
 
 ## File picker UI
 
@@ -167,7 +167,7 @@ else
 ```
 
 > [!TIP]
-> Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [**MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](how-to-track-recently-used-files-and-folders.md).
+> Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [**MostRecentlyUsedList**](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](/windows/apps/develop/files/track-recently-used-files-folders).
 
 ## See also
 

@@ -1,7 +1,7 @@
 ---
 title: Debugging and troubleshooting issues with WinGet
 description: Provides information on logging and WinGet diagnostics.
-ms.date: 07/15/2025
+ms.date: 03/24/2026
 ms.topic: troubleshooting-general
 ---
 
@@ -19,7 +19,7 @@ When WinGet commands are failing, sometimes it is necessary to look at the log f
 
 ## WinGet Logs
 
-Windows Package Manager by default creates log files when executing commands. These logs contain information that can aid in debugging issues with WinGet. There is no maximum size for the log files. They are typically only a few KB in size. When the number of log files in the directory exceeds 100, the oldest log files will begin being deleted. There is no time-based removal of logs and these settings are not configurable. If you have reached the 100 file log capacity, just move any WinGet logs that you wish to preserve into a different directory.
+Windows Package Manager by default creates log files when executing commands. These logs contain information that can aid in debugging issues with WinGet. Log file cleanup behavior is configurable via the [logging settings](./settings.md#logging-settings) in your settings file. By default, log files older than 7 days or exceeding 128 MB total are automatically removed, and individual log files wrap at 16 MB. Use the `logging.file` settings to adjust these limits.
 
 Use the command [`winget --info`](./info.md) to find the directory path to your WinGet log files. The default path for WinGet log files is:
 
@@ -98,4 +98,4 @@ Example:
 
 ### System Context
 
-WinGet is delivered via the App Installer as a packaged application. MSIX (packaged) applications depend on an App Execution Alias to be resolved on the PATH environment variable. The WinGet CLI is not supported in the system context. The Microsoft.WinGet.Client PowerShell module can be used in the system context with applications that are installed machine wide.
+WinGet is delivered via the App Installer as a packaged application. MSIX (packaged) applications depend on the package being registered for the user. As packages can be registered for any user except NT AUTHORITY\SYSTEM (aka LocalSystem, aka System), the WinGet CLI is not supported in the system context. The Microsoft.WinGet.Client PowerShell module can be used in the system context with applications that are installed machine wide.

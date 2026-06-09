@@ -26,7 +26,7 @@ This screenshot from the app shows the XML payload and how tile sizes appear on 
 
  
 
-With Notifications Visualizer, you can create and test adaptive tile and toast payloads without having to edit and deploy your own app. Once you've created a payload with ideal visual results, you can integrate that into your app. See [Send a local tile notification (UWP)](/windows/uwp/launch-resume/sending-a-local-tile-notification) and [Send a local toast](app-notifications/send-local-toast.md) to learn more.
+With Notifications Visualizer, you can create and test adaptive tile and toast payloads without having to edit and deploy your own app. Once you've created a payload with ideal visual results, you can integrate that into your app. See [Send a local tile notification (UWP)](/windows/uwp/launch-resume/sending-a-local-tile-notification) and [Send a local app notification](app-notifications/app-notifications-quickstart.md) to learn more.
 
 **Note**   Notifications Visualizer's simulation of the Windows Start menu and toast notifications isn't always completely accurate, and it doesn't support some advanced payload properties. When you have the tile or toast you want, test it by pinning the tile or popping the toast to verify that it appears as you intend.
 
@@ -50,4 +50,4 @@ This screenshot from the app shows the tile editor:
 
 * [Get Notifications Visualizer in the Store](https://apps.microsoft.com/detail/9nblggh5xsl1)
 * [Create adaptive tiles (UWP)](/windows/uwp/launch-resume/create-adaptive-tiles)
-* [Interactive toasts](app-notifications/adaptive-interactive-toasts.md)
+* [App notification content](app-notifications/app-notifications-content.md)

@@ -1,6 +1,6 @@
 ---
 ms.assetid: 0186EA01-8446-45BA-A109-C5EB4B80F368
-description: Learn how to use the AdvancedPhotoCapture class to capture high dynamic range (HDR) and low-light photos in a WinUI 3 app.
+description: Learn how to use the AdvancedPhotoCapture class to capture high dynamic range (HDR) and low-light photos in a WinUI app.
 title: High dynamic range (HDR) and low-light photo capture
 ms.date: 08/22/2024
 ms.topic: article

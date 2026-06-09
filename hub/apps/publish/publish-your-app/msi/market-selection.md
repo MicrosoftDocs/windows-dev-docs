@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app.
 
-For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../../../design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../../../design/globalizing/prepare-your-app-for-localization.md).
+For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../../../design/globalizing/globalizing-portal.md) and [Make your app localizable](../../../design/globalizing/prepare-your-app-for-localization.md).
 
 ## Markets
 

@@ -6,7 +6,7 @@ ms.date: 07/23/2024
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
-#customer intent: As a developer, I want to access the camera in a Windows app using WinUI 3.
+#customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
 
 # Capture photos and video in a desktop app with the Windows built-in camera UI
@@ -14,8 +14,6 @@ ms.localizationpriority: medium
 This article describes how to use the [CameraCaptureUI](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture) class to capture photos or videos by using the camera UI built into Windows. This feature allows your app to get a user-captured photo or video with just a few lines of code.
 
 If you want to provide your own camera UI, or if your scenario requires more robust, low-level control of the capture operation, then you should use the [MediaCapture](/uwp/api/windows.media.capture.mediacapture) class, and implement your own capture experience. For more information, see [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md).
-
-Note that the **CameraCaptureUI** class in the [Microsoft.Windows.Media.Capture](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture) namespace is not supported for UWP apps. For information on using the UWP version of this feature, see [Capture photos and video in a UWP app with the Windows built-in camera UI](/windows/uwp/audio-video-camera/capture-photos-and-video-with-cameracaptureui)
 
 ## Use the CameraCaptureUI class to capture photos
 

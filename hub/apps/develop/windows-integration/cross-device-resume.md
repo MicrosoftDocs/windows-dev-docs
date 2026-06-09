@@ -1,16 +1,16 @@
 ---
-title: Cross Device Resume (XDR) Using Continuity SDK
-description: Guidelines for first & third party developers to integrate with Windows XDR experiences using the Continuity SDK.
-ms.date: 08/12/2025
+title: Resume with promoted install (for Android only)
+description: Learn how to use the Continuity SDK to implement Windows Resume with Android apps.
+ms.date: 05/27/2026
 ms.topic: how-to
-# customer intent: As a Windows developer, I want to learn how to integrate my app with Windows XDR experiences so that I can provide a seamless experience for my users.
+# customer intent: As a Windows developer, I want to learn how to integrate my app with Windows Resume so that users can continue activities from Android on Windows.
 ---
 
-# Cross Device Resume (XDR) using Continuity SDK (Android and Windows Applications)
+# Resume with promoted install (for Android only)
 
 This article provides comprehensive guidelines for first-party and third-party developers on how to integrate features using the Continuity SDK in your applications. The Continuity SDK enables seamless cross-device experiences, allowing users to resume activities across different platforms, including Android and Windows.
 
-By following this guidance, you can create a smooth and integrated user experience across multiple devices by leveraging the XDR using Continuity SDK.
+By following this guidance, you can create a smooth and integrated user experience across multiple devices by leveraging Windows Resume using the Continuity SDK.
 
 > [!IMPORTANT]
 > **Onboarding to Resume in Windows**
@@ -75,6 +75,8 @@ The App must:
    1. After calling the Initialize function, a callback that implements IAppContextEventHandler should be triggered.
 1. Send/Delete **AppContext**:
    1. After initializing the SDK, if **onContextRequestReceived** is called, it indicates the connection is established. The app can then send (including create and update) **AppContext** to LTW or delete **AppContext** from LTW.
+   1. If there is no connection between the phone and PC and the app sends **AppContext** to LTW, the app will receive **onContextResponseError** with the message “PC is not connected.”
+   1. When the connection is re-established, **onContextRequestReceived** is called again. The app can then send the current AppContext to LTW. 
    1. After **onSyncServiceDisconnected** or deinitializing the SDK, the app should not send an **AppContext**.
 
 Below is a code example. For all the required and optional fields in **AppContext**, please refer to the [AppContext description](#appcontext). 
@@ -82,69 +84,227 @@ Below is a code example. For all the required and optional fields in **AppContex
 The following Android code snippet demonstrates how to make API requests using the Continuity SDK:
 
 ```kotlin MainActivity.kt
-class MainActivity : ComponentActivity() { 
+import android.os.Bundle 
+import android.util.Log 
+import android.widget.Button 
+import android.widget.TextView 
+import android.widget.Toast 
+import androidx.activity.enableEdgeToEdge 
+import androidx.appcompat.app.AppCompatActivity 
+import androidx.core.view.ViewCompat 
+import androidx.core.view.WindowInsetsCompat 
+import androidx.lifecycle.LiveData 
+import androidx.lifecycle.MutableLiveData 
+import androidx.lifecycle.Observer 
+import com.microsoft.crossdevicesdk.continuity.AppContext 
+import com.microsoft.crossdevicesdk.continuity.AppContextManager 
+import com.microsoft.crossdevicesdk.continuity.ContextRequestInfo 
+import com.microsoft.crossdevicesdk.continuity.IAppContextEventHandler 
+import com.microsoft.crossdevicesdk.continuity.IAppContextResponse 
+import com.microsoft.crossdevicesdk.continuity.LogUtils 
+import com.microsoft.crossdevicesdk.continuity.ProtocolConstants 
+import java.util.UUID 
 
-    // Required code for Continuity SDK integration 
+  
+
+class MainActivity : AppCompatActivity() { 
+
+    //Make buttons member variables --- 
+    private lateinit var buttonSend: Button 
+    private lateinit var buttonDelete: Button 
+    private lateinit var buttonUpdate: Button 
+
     private val appContextResponse = object : IAppContextResponse { 
         override fun onContextResponseSuccess(response: AppContext) { 
             Log.d("MainActivity", "onContextResponseSuccess") 
+            runOnUiThread { 
+                Toast.makeText( 
+                    this@MainActivity, 
+                    "Context response success: ${response.contextId}", 
+                    Toast.LENGTH_SHORT 
+                ).show() 
+            } 
         } 
 
         override fun onContextResponseError(response: AppContext, throwable: Throwable) { 
-            Log.d("MainActivity", "onContextResponseError") 
+            Log.d("MainActivity", "onContextResponseError: ${throwable.message}") 
+            runOnUiThread { 
+                Toast.makeText( 
+                    this@MainActivity, 
+                    "Context response error: ${throwable.message}", 
+                    Toast.LENGTH_SHORT 
+                ).show() 
+
+                // Check if the error message contains the specific string 
+                if (throwable.message?.contains("PC is not connected") == true) { 
+                    //App should stop sending intent once this callback is received 
+                }
+            } 
         } 
     } 
 
     private lateinit var appContextEventHandler: IAppContextEventHandler 
 
-    private val appContext: AppContext = AppContext() 
+    private val _currentAppContext = MutableLiveData<AppContext?>() 
+
+    private val currentAppContext: LiveData<AppContext?> get() = _currentAppContext 
 
     override fun onCreate(savedInstanceState: Bundle?) { 
         super.onCreate(savedInstanceState) 
+        enableEdgeToEdge() 
+        setContentView(R.layout.activity_main) 
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets -> 
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars()) 
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom) 
+            insets 
+        } 
+
+        LogUtils.setDebugMode(true) 
         var ready = false 
-    // Existing code...
+        buttonSend = findViewById(R.id.buttonSend) 
+        buttonDelete = findViewById(R.id.buttonDelete) 
+        buttonUpdate = findViewById(R.id.buttonUpdate) 
+        setButtonDisabled(buttonSend) 
+        setButtonDisabled(buttonDelete) 
+        setButtonDisabled(buttonUpdate) 
 
-        // Required code for Continuity SDK integration 
-        appContextEventHandler = object : IAppContextEventHandler { 
-            override fun onContextRequestReceived(contextRequestInfo: ContextRequestInfo) { 
-                Log.d("MainActivity", "onContextRequestReceived") 
-                ready = true 
-    
-                sendResume() 
-            } 
-
-            override fun onSyncServiceDisconnected() { 
-                Log.d("MainActivity", "onSyncServiceDisconnected") 
-            } 
-
-            override fun onInvalidContextRequestReceived(throwable: Throwable) { 
-                Log.d("MainActivity", "onInvalidContextRequestReceived") 
-                ready = false 
-                deleteResume() 
+        buttonSend.setOnClickListener { 
+            if (ready) { 
+                sendResumeActivity() 
             } 
         } 
 
-        // Required code for Continuity SDK integration 
+        buttonDelete.setOnClickListener { 
+            if (ready) { 
+                deleteResumeActivity() 
+            } 
+        } 
+
+        buttonUpdate.setOnClickListener { 
+            if (ready) { 
+                updateResumeActivity() 
+            }
+        } 
+
+        appContextEventHandler = object : IAppContextEventHandler { 
+
+            override fun onContextRequestReceived(contextRequestInfo: ContextRequestInfo) { 
+                LogUtils.d("MainActivity", "onContextRequestReceived") 
+                ready = true 
+                setButtonEnabled(buttonSend) 
+                setButtonEnabled(buttonDelete) 
+                setButtonEnabled(buttonUpdate) 
+
+            } 
+
+  
+
+            override fun onInvalidContextRequestReceived(throwable: Throwable) { 
+                Log.d("MainActivity", "onInvalidContextRequestReceived") 
+
+            } 
+
+  
+
+            override fun onSyncServiceDisconnected() { 
+                Log.d("MainActivity", "onSyncServiceDisconnected") 
+                ready = false 
+                setButtonDisabled(buttonSend) 
+                setButtonDisabled(buttonDelete) 
+            } 
+        } 
+
+        // Initialize the AppContextManager 
         AppContextManager.initialize(this.applicationContext, appContextEventHandler) 
+
+        // Update currentAppContext text view. 
+        val textView = findViewById<TextView>(R.id.appContext) 
+
+        currentAppContext.observe(this, Observer { appContext -> 
+            appContext?.let { 
+                textView.text = 
+                    "Current app context: ${it.contextId}\n App ID: ${it.appId}\n Created: ${it.createTime}\n Updated: ${it.lastUpdatedTime}\n Type: ${it.type}" 
+                Log.d("MainActivity", "Current app context: ${it.contextId}") 
+            } ?: run { 
+                textView.text = "No current app context available" 
+                Log.d("MainActivity", "No current app context available") 
+            } 
+        }) 
     } 
 
-    // Required code for Continuity SDK integration 
-    private fun sendResume() { 
-        appContext.setContextId("13f53be4-d0d1-448a-8c78-af28820af119") 
-        appContext.setAppId(this.packageName) 
-        appContext.type = ProtocolConstants.TYPE_RESUME_ACTIVITY 
-    
-        // Set context fields. Refer to the AppContext section for detailed field descriptions.
+
+    // Send resume activity to LTW 
+    private fun sendResumeActivity() { 
+        val appContext = AppContext().apply { 
+            this.contextId = generateContextId() 
+            this.appId = applicationContext.packageName 
+            this.createTime = System.currentTimeMillis() 
+            this.lastUpdatedTime = System.currentTimeMillis() 
+            this.type = ProtocolConstants.TYPE_RESUME_ACTIVITY 
+        } 
+
+        _currentAppContext.value = appContext 
         AppContextManager.sendAppContext(this.applicationContext, appContext, appContextResponse) 
     } 
 
-    // Required code for Continuity SDK integration 
-    private fun deleteResume() { 
-        AppContextManager.deleteAppContext(this.applicationContext, "13f53be4-d0d1-448a-8c78-af28820af119", appContextResponse) 
+    // Delete resume activity from LTW 
+    private fun deleteResumeActivity() { 
+        currentAppContext.value?.let { 
+            AppContextManager.deleteAppContext( 
+                this.applicationContext, 
+                it.contextId, 
+                appContextResponse 
+            ) 
+            _currentAppContext.value = null 
+        } ?: run { 
+            Toast.makeText(this, "No resume activity to delete", Toast.LENGTH_SHORT).show() 
+            Log.d("MainActivity", "No resume activity to delete") 
+        }
     } 
 
-    // Existing code 
-}
+    private fun updateResumeActivity() { 
+        currentAppContext.value?.let { 
+            it.lastUpdatedTime = System.currentTimeMillis() 
+            AppContextManager.sendAppContext(this.applicationContext, it, appContextResponse) 
+            _currentAppContext.postValue(it) 
+        } ?: run { 
+            Toast.makeText(this, "No resume activity to update", Toast.LENGTH_SHORT).show() 
+            Log.d("MainActivity", "No resume activity to update") 
+        } 
+    } 
+
+    private fun setButtonDisabled(button: Button) { 
+        button.isEnabled = false 
+        button.alpha = 0.5f 
+    } 
+
+    private fun setButtonEnabled(button: Button) { 
+        button.isEnabled = true 
+        button.alpha = 1.0f 
+    } 
+
+    override fun onDestroy() { 
+        super.onDestroy() 
+        // Deinitialize the AppContextManager 
+        AppContextManager.deInitialize(this.applicationContext) 
+    } 
+
+    override fun onStart() { 
+        super.onStart() 
+        // AppContextManager.initialize(this.applicationContext, appContextEventHandler) 
+    } 
+
+
+    override fun onStop() { 
+        super.onStop() 
+        // AppContextManager.deInitialize(this.applicationContext) 
+    } 
+
+    private fun generateContextId(): String { 
+        return "${packageName}.${UUID.randomUUID()}" 
+    } 
+
+} 
 ```
 
 ## Integration validation steps
@@ -170,13 +330,19 @@ The following steps are required to prepare for the integration validation:
 Next, follow these steps to validate the integration:
 
 1. Launch the app and initialize the SDK. Confirm that **onContextRequestReceived** is called. 
-1. After **onContextRequestReceived** has been called, the app can send the **AppContext** to LTW. If **onContextResponseSuccess** is called after sending **AppContext**, the SDK integration is successful. 
+1. After **onContextRequestReceived** has been called, the app can send the **AppContext** to LTW. If **onContextResponseSuccess** is called after sending **AppContext**, the SDK integration is successful.
+1. If the app sends **AppContext** while the PC is locked or disconnected, verify that **onContextResponseError** is called with “PC is not connected.”
+1. When the connection is restored, ensure **onContextRequestReceived** is called again and app can then send the current AppContext to LTW.
+
+The screenshot below shows the log entry when the PC is disconnected with the error message "PC is not connected" and the log entry after reconnection when **onContextRequestReceived** is called again.
+
+:::image type="content" source="images/xdr-not-connected-logs.png" alt-text="A screenshot of Windows log entries showing the PC is not connected error message and the subsequent onContextRequestReceived log entry after reconnection.":::
 
 ## AppContext 
 
-XDR defines **AppContext** as metadata through which XDR can understand which app to resume, along with the context with which the application must be resumed. Apps can use activities to enable users to get back to what they were doing in their app, across multiple devices. Activities created by any mobile app appear on users' Windows device(s) so long as those devices have been Cross Device Experience Host (CDEH) provisioned.   
+Windows Resume defines **AppContext** as metadata through which Windows Resume can understand which app to resume, along with the context with which the application must be resumed. Apps can use activities to enable users to get back to what they were doing in their app, across multiple devices. Activities created by any mobile app appear on users' Windows device(s) so long as those devices have been Cross Device Experience Host (CDEH) provisioned.   
 
-Every application is different, and it's up to Windows to understand the target application for resume and up to specific applications on Windows to understand the context. XDR is proposing a generic schema which can cater to requirements for all first party as well as third party app resume scenarios.
+Every application is different, and it's up to Windows to understand the target application for resume and up to specific applications on Windows to understand the context. Windows Resume uses a generic schema which can cater to requirements for all first party as well as third party app resume scenarios.
 
 ### contextId 
 
@@ -238,7 +404,7 @@ URIs allow you to launch another app to perform a specific task, enabling helpfu
 
 ## Handling API responses in Windows
 
-This section describes how to handle the API responses in Windows applications. The Continuity SDK provides a way to handle the API responses for Win32, UWP, and Windows App SDK apps.
+This section describes how to handle the API responses in Windows applications. The Continuity SDK provides a way to handle the API responses for Win32 and WinUI apps.
 
 ### Win32 app example
 
@@ -293,9 +459,9 @@ For Win32 apps to handle protocol URI launch, the following steps are required:
     } 
     ```
 
-### UWP Apps 
+### WinUI apps 
 
-For UWP apps, the protocol URI can be registered in the project's app manifest. The following steps demonstrate how to handle protocol activation in a UWP app.
+For packaged WinUI apps, the protocol URI can be registered in the project's app manifest. The following steps demonstrate how to handle protocol activation in a WinUI app.
 
 1. First, the protocol URI is registered in the `Package.appxmanifest` file as follows:
 
@@ -314,25 +480,6 @@ For UWP apps, the protocol URI can be registered in the project's app manifest. 
             </Application> 
        <Applications> 
     ```
-
-1. Next, in the `App.xaml.cs` file, override the `OnActivated` method as follows: 
-
-    ```csharp
-    public partial class App 
-    { 
-       protected override void OnActivated(IActivatedEventArgs args) 
-      { 
-          if (args.Kind == ActivationKind.Protocol) 
-          { 
-             ProtocolActivatedEventArgs eventArgs = args as ProtocolActivatedEventArgs; 
-             // TODO: Handle URI activation 
-             // The received URI is eventArgs.Uri.AbsoluteUri 
-          } 
-       } 
-    } 
-    ```
-
-For more information on handling URI launch in UWP apps, see step 3 in [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation#step-3-handle-the-activated-event).
 
 ### WinUI 3 example
 
@@ -353,9 +500,9 @@ void App::OnActivated(winrt::Windows::ApplicationModel::Activation::IActivatedEv
 
 ## Weblink 
 
-Using a weblink will launch the web endpoint of the application. App developers need to ensure that the weblink provided from their Android application is valid because XDR will use default browser of the system to redirect to the weblink provided. 
+Using a weblink will launch the web endpoint of the application. App developers need to ensure that the weblink provided from their Android application is valid because Windows Resume will use the default browser of the system to redirect to the weblink provided.
 
-## Handling arguments obtained from Cross Device Resume 
+## Handling arguments obtained from Windows Resume
 
 It is the responsibility of each app to deserialize and decrypt the argument received and process the information accordingly to transfer the ongoing context from phone to PC. For example, if a call needs to be transferred, the app must be able to communicate that context from phone and the desktop app must understand that context appropriately and continue loading.
 

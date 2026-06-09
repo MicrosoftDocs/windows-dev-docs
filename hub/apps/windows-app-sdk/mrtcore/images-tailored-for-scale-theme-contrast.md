@@ -23,21 +23,9 @@ Some common qualifiers for images are:
 
 ## Qualify an image resource for scale, theme, and contrast
 
-The default value for the `scale` qualifier is `scale-100`. So, these two variants are equivalent (they both provide an image at scale 100, or scale factor 1).
+Use qualifiers in your image file or folder names so that the system can automatically select the best variant for the current runtime context. For full details on qualifier naming syntax, folder vs. file naming strategies, and matching behavior, see [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md).
 
-```console
-\Assets\Images\logo.png
-\Assets\Images\logo.scale-100.png
-```
-
-You can use qualifiers in folder names instead of file names. This is a better strategy when you have several asset files per qualifier. For purposes of illustration, these two variants are equivalent to the two above.
-
-```console
-\Assets\Images\logo.png
-\Assets\Images\scale-100\logo.png
-```
-
-The next example shows how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast. This example uses folder naming.
+The following example shows how you can provide variants of an image resource&mdash;named `/Assets/Images/logo.png`&mdash;for different settings of display scale, theme, and high contrast using folder naming.
 
 ```console
 \Assets\Images\contrast-standard\theme-dark
@@ -87,7 +75,7 @@ For any of the scenarios shown in these examples, use the [Uri constructor](/dot
 Notice how in these example URIs the scheme ("`ms-appx`" or "`ms-appx-web`") is followed by "`://`" which is followed by an absolute path. In an absolute path, the leading "`/`" causes the path to be interpreted from the root of the package.
 
 > [!NOTE]
-> The `ms-resource` (for [string resources](localize-strings.md)) and `ms-appx(-web)` (for images and other assets) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of [ResourceContext.QualifierValues](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext.qualifiervalues) and explicitly load the appropriate assets from app data using their full physical file name in the URI. For info about app data, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data). Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform automatic matching, either. For info about what to do in that case, see [Hosting and loading images in the cloud](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast#hosting-and-loading-images-in-the-cloud).
+> The `ms-resource` (for [string resources](localize-strings.md)) and `ms-appx(-web)` (for images and other assets) URI schemes perform automatic qualifier matching to find the resource that's most appropriate for the current context. The `ms-appdata` URI scheme (which is used to load app data) does not perform any such automatic matching, but you can respond to the contents of [ResourceContext.QualifierValues](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext.qualifiervalues) and explicitly load the appropriate assets from app data using their full physical file name in the URI. For info about app data, see [Store and retrieve settings and other app data](/windows/apps/develop/data/store-and-retrieve-app-data). Web URI schemes (for example, `http`, `https`, and `ftp`) do not perform automatic matching, either. For info about what to do in that case, see [Hosting and loading images in the cloud](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast#hosting-and-loading-images-in-the-cloud).
 
 Absolute paths are a good choice if your image files remain where they are in the project structure. If you want to be able to move an image file, but you're careful that it remains in the same location relative to its referencing XAML markup file, then instead of an absolute path you might want to use a path that's relative to the containing markup file. If you do that, then you needn't use a URI scheme. You will still benefit from automatic qualifier matching in this case, but only because you are using the relative path in XAML markup.
 
@@ -99,7 +87,7 @@ Also see [Tile and toast support for language, scale, and high contrast](/window
 
 ## Reference an image or other asset from a class library
 
-You can load images and other resources from a referenced **Class library (WinUI 3 in Desktop)** project by referencing the resource in a URI that uses the `ms-appx` scheme. The URI should include the name of the class library project and the path to the resource within the class library project. For example, if you have a class library project named `MyClassLibrary` that contains an image named `logo.png` in a folder named `Assets`, you can reference the image in your app project like this:
+You can load images and other resources from a referenced **Class library (WinUI in Desktop)** project by referencing the resource in a URI that uses the `ms-appx` scheme. The URI should include the name of the class library project and the path to the resource within the class library project. For example, if you have a class library project named `MyClassLibrary` that contains an image named `logo.png` in a folder named `Assets`, you can reference the image in your app project like this:
 
 ```xaml
 <Image Source="ms-appx:///MyClassLibrary/Assets/logo.png"/>
@@ -156,13 +144,9 @@ See [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts-
 
 ## Load an image for a specific language or other context
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
+You can override the default [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext) to be explicit about which qualifier value to use when loading an image. For example, you might want to control exactly when and which high contrast images are loaded. For background on how ResourceContext works, see [Qualify resource selection with ResourceContext](mrtcore-overview.md#qualify-resource-selection-with-resourcecontext). For a similar example using string resources, see [Load a string for a specific language or other context](localize-strings.md#load-a-string-for-a-specific-language-or-other-context).
 
-The default [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext) contains a qualifier value for each qualifier name, representing the default runtime context (in other words, the settings for the current user and machine). Image files are matched&mdash;based on the qualifiers in their names&mdash;against the qualifier values in that runtime context.
-
-But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching image to load. For example, you might want to control exactly when and which high contrast images are loaded.
-
-You can do that by constructing a new **ResourceContext** (instead of using the default one), overriding its values, and then using that context object in your [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap) image lookups with [GetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getvalue) or [TryGetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue).
+Construct a new **ResourceContext**, override its values, and then use that context object in your [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap) image lookups with [GetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.getvalue) or [TryGetValue](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap.trygetvalue).
 
 ```csharp
 var resourceManager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
@@ -189,13 +173,13 @@ By default, the [ResourceManager](/windows/windows-app-sdk/api/winrt/microsoft.w
 
 ## Important APIs
 
-The following APIs are imporant to understand when working with image resources:
-
 - [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext)
 - [ResourceMap](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcemap)
 
 ## Related content
 
-- [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data)
+- [Localize strings in your UI and app package manifest](localize-strings.md)
+- [Store and retrieve settings and other app data](/windows/apps/develop/data/store-and-retrieve-app-data)
+- [Tailor your resources for language, scale, high contrast, and other qualifiers](tailor-resources-lang-scale-contrast.md)
 - [Tile and toast support for language, scale, and high contrast](/windows/apps/design/shell/tiles-and-notifications/tile-toast-language-scale-contrast)
 - [Mirroring images](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl#mirroring-images)

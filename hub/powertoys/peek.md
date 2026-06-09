@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, Peek, Win]
 
 PowerToys Peek utility is a system-wide tool for Windows that lets you preview file content without opening multiple applications or interrupting your workflow. This utility offers a seamless and quick file preview experience for various file types, including images, Office documents, videos, web pages, Markdown files, text files, and developer files. Peek also displays summary information about folders, helping you work more efficiently.
 
-:::image type="content" source="../images/powertoys-peek.png" alt-text="Screenshot of PowerToys Peek utility displaying a file preview window with navigation options and file information overlay.":::
+:::image type="content" source="images/peek/peek.png" alt-text="Screenshot of PowerToys Peek utility displaying a file preview window with navigation options and file information overlay.":::
 
 ## Preview a file
 
@@ -42,12 +42,19 @@ By default, a confirmation dialog will appear before deletions. To skip future c
 - Check the "Don't show this warning again" checkbox in the dialog.
 - Uncheck the "Ask for confirmation before deleting files" option in Peek's settings page.
 
-:::image type="content" source="../images/pt-peek-delete-confirmation.png" alt-text="Screenshot of PowerToys Peek file deletion confirmation dialog with checkbox option to skip future warnings.":::
+:::image type="content" source="images/peek/delete-confirmation.png" alt-text="Screenshot of PowerToys Peek file deletion confirmation dialog with checkbox option to skip future warnings.":::
 
 After deleting the file, Peek will automatically preview the next file. If there are no more files to preview, a message will be displayed.
 
 > [!TIP]
 > Only files may be deleted. Folders may not be deleted, even if they are empty.
+
+## Use Peek from the command line
+
+Peek can also be launched from the command line to preview a file. Run: `PowerToys.Peek.UI.exe <filepath>`.
+
+> [!TIP]
+> The per-user executable is located in `%LOCALAPPDATA%\PowerToys\WinUI3Apps` by default, while the machine-wide executable is located in `C:\Program Files\PowerToys\WinUI3Apps`.
 
 ## Settings
 

@@ -211,8 +211,17 @@ Customers clicking this link are taken to the web-based Store listing, where the
 
 - **Using the Microsoft Store badge:**  
 You can create a branded Microsoft Store badge that links directly to your app. To generate your custom badge:
-1. Go to the [Microsoft Store badges](https://developer.microsoft.com/store/badges) page.
+1. Go to the [Microsoft Store badge creator](https://apps.microsoft.com/badge) page.
 2. Provide your app’s 12-character Store ID (found in your Partner Center under the Product Identity section).
+
+The badge is a [web component](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) that automatically detects the user’s language and theme. It won’t inherit CSS styles from your page, but you can customize its size using a [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part):
+
+```css
+/* Adjust the badge size to match other buttons on your page. */
+ms-store-badge::part(img) {
+    max-width: 200px;
+}
+```
 
 This badge clearly indicates your app is available on the Microsoft Store and can help increase customer trust and downloads.
 
@@ -221,7 +230,7 @@ If you want to directly open the Microsoft Store app (without launching a browse
 `ms-windows-store://pdp/?ProductId=<your app's Store ID>`
 
 
-This approach is particularly useful when you know your users are already on a Windows device, or when directing users from within a Universal Windows Platform (UWP) app.
+This approach is particularly useful when you know your users are already on a Windows device, or when directing users from within a WinUI app.
 
 </details>
 

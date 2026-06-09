@@ -1,10 +1,10 @@
 ---
-description: Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic.
+description: Explains how to define and implement custom dependency properties for a WinUI app using C++, C#, or Visual Basic.
 title: Custom dependency properties
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ms.date: 09/08/2025
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 10, winui
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -14,11 +14,11 @@ dev_langs:
 ---
 # Custom dependency properties
 
-Here we explain how to define and implement your own dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
+Here we explain how to define and implement your own dependency properties for a WinUI app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
 
 ## Prerequisites
 
-We assume that you have read the [Dependency properties overview](dependency-properties-overview.md) and that you understand dependency properties from the perspective of a consumer of existing dependency properties. To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
+We assume that you have read the [Dependency properties overview](dependency-properties-overview.md) and that you understand dependency properties from the perspective of a consumer of existing dependency properties. To follow the examples in this topic, you should also understand XAML and know how to write a basic WinUI app using C++ or C#.
 
 ## What is a dependency property?
 
@@ -38,7 +38,7 @@ If you implement a custom dependency property yourself and want it to be public 
 
 Whenever you implement a public read/write property on a class, as long as your class derives from [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyObject), you have the option to make your property work as a dependency property. Sometimes the typical technique of backing your property with a private field is adequate. Defining your custom property as a dependency property is not always necessary or appropriate. The choice will depend on the scenarios that you intend your property to support.
 
-You might consider implementing your property as a dependency property when you want it to support one or more of these features of the Windows Runtime or of Windows Runtime apps:
+You might consider implementing your property as a dependency property when you want it to support one or more of these features of the Windows Runtime or of WinUI apps:
 
 - Setting the property through a [**Style**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style)
 - Acting as valid target property for data binding with [**{Binding}**](binding-markup-extension.md)
@@ -94,10 +94,10 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 // ImageWithLabelControl.idl
 namespace ImageWithLabelControlApp
 {
-    runtimeclass ImageWithLabelControl : Windows.UI.Xaml.Controls.Control
+    runtimeclass ImageWithLabelControl : Microsoft.UI.Xaml.Controls.Control
     {
         ImageWithLabelControl();
-        static Windows.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty LabelProperty{ get; };
         String Label;
     }
 }
@@ -108,33 +108,33 @@ struct ImageWithLabelControl : ImageWithLabelControlT<ImageWithLabelControl>
 {
 ...
 public:
-    static Windows::UI::Xaml::DependencyProperty LabelProperty()
+    static Microsoft::UI::Xaml::DependencyProperty LabelProperty()
     {
         return m_labelProperty;
     }
 
 private:
-    static Windows::UI::Xaml::DependencyProperty m_labelProperty;
+    static Microsoft::UI::Xaml::DependencyProperty m_labelProperty;
 ...
 };
 
 // ImageWithLabelControl.cpp
 ...
-Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
+Microsoft::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Microsoft::UI::Xaml::DependencyProperty::Register(
         L"Label",
         winrt::xaml_typename<winrt::hstring>(),
         winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ nullptr }
+        Microsoft::UI::Xaml::PropertyMetadata{ nullptr }
 );
 ...
 ```
 
 ```cppcx
 //.h file
-//using namespace Windows::UI::Xaml::Controls;
-//using namespace Windows::UI::Xaml::Interop;
-//using namespace Windows::UI::Xaml;
+//using namespace Microsoft::UI::Xaml::Controls;
+//using namespace Microsoft::UI::Xaml::Interop;
+//using namespace Microsoft::UI::Xaml;
 //using namespace Platform;
 
 public ref class ImageWithLabelControl sealed : public Control
@@ -152,8 +152,8 @@ public:
 };
 
 //.cpp file
-using namespace Windows::UI::Xaml;
-using namespace Windows::UI::Xaml.Interop;
+using namespace Microsoft::UI::Xaml;
+using namespace Microsoft::UI::Xaml.Interop;
 
 DependencyProperty^ ImageWithLabelControl::_LabelProperty = nullptr;
 
@@ -276,12 +276,12 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
 ```cppwinrt
 // ImageWithLabelControl.cpp
 ...
-Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
+Microsoft::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Microsoft::UI::Xaml::DependencyProperty::Register(
         L"Label",
         winrt::xaml_typename<winrt::hstring>(),
         winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ nullptr, Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+        Microsoft::UI::Xaml::PropertyMetadata{ nullptr, Microsoft::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
 );
 ...
 ```
@@ -305,12 +305,12 @@ If a default value is not specified, the default value for a dependency property
 ```cppwinrt
 // ImageWithLabelControl.cpp
 ...
-Windows::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
-    Windows::UI::Xaml::DependencyProperty::Register(
+Microsoft::UI::Xaml::DependencyProperty ImageWithLabelControl::m_labelProperty =
+    Microsoft::UI::Xaml::DependencyProperty::Register(
         L"Label",
         winrt::xaml_typename<winrt::hstring>(),
         winrt::xaml_typename<ImageWithLabelControlApp::ImageWithLabelControl>(),
-        Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
+        Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Microsoft::UI::Xaml::PropertyChangedCallback{ &ImageWithLabelControl::OnLabelChanged } }
 );
 ...
 ```
@@ -358,7 +358,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 ```
 
 ```cppwinrt
-void ImageWithLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+void ImageWithLabelControl::OnLabelChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
 {
     auto iwlc{ d.as<ImageWithLabelControlApp::ImageWithLabelControl>() };
     auto s{ winrt::unbox_value<winrt::hstring>(e.NewValue()) };
@@ -400,10 +400,10 @@ End Sub
 ```
 
 ```cppwinrt
-static void OnVisibilityValueChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
+static void OnVisibilityValueChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
 {
-    auto oldVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.OldValue()) };
-    auto newVisibility{ winrt::unbox_value<Windows::UI::Xaml::Visibility>(e.NewValue()) };
+    auto oldVisibility{ winrt::unbox_value<Microsoft::UI::Xaml::Visibility>(e.OldValue()) };
+    auto newVisibility{ winrt::unbox_value<Microsoft::UI::Xaml::Visibility>(e.NewValue()) };
 
     if (newVisibility != oldVisibility)
     {
@@ -431,7 +431,7 @@ Keep the following considerations in mind as best practices when as you define y
 
 ### DependencyObject and threading
 
-All [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyObject) instances must be created on the UI thread which is associated with the current [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Window) that is shown by a Windows Runtime app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by calling [**Dispatcher**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcher).
+All [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyObject) instances must be created on the UI thread which is associated with the current [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Window) that is shown by a WinUI app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by calling [**Dispatcher**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcher).
 
 The threading aspects of [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyObject) are relevant because it generally means that only code that runs on the UI thread can change or even read the value of a dependency property. Threading issues can usually be avoided in typical UI code that makes correct use of **async** patterns and background worker threads. You typically only run into **DependencyObject**-related threading issues if you are defining your own **DependencyObject** types and you attempt to use them for data sources or other scenarios where a **DependencyObject** isn't necessarily appropriate.
 
@@ -510,4 +510,3 @@ The implementation for registering a property in C++/CX is trickier than C#, bot
 - [**DependencyProperty.Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register)
 - [Dependency properties overview](dependency-properties-overview.md)
 - [XAML user and custom controls sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
- 

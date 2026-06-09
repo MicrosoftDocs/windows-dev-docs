@@ -2,7 +2,7 @@
 title: Windowing functionality migration
 description: This topic contains guidance related to window management, including migrating from UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) or [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow) to the Window App SDK [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow).
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
 ms.localizationpriority: medium
 ---
@@ -24,7 +24,7 @@ The Windows App SDK provides a [**Microsoft.UI.Windowing.AppWindow**](/windows/w
 To take advantage of the Windows App SDK windowing APIs means that you'll migrate your UWP code to use the Win32 model. For more info about the Windows App SDK **AppWindow**, see [Manage app windows](../../windowing/windowing-overview.md).
 
 > [!TIP]
-> The [Manage app windows](../../windowing/windowing-overview.md) topic contains a code example demonstrating how to retrieve an **AppWindow** from a WinUI 3 window. In your WinUI 3 app, use that code pattern so that you can call the **AppWindow** APIs mentioned in the rest of this topic.
+> The [Manage app windows](../../windowing/windowing-overview.md) topic contains a code example demonstrating how to retrieve an **AppWindow** from a WinUI 3 window. In your WinUI app, use that code pattern so that you can call the **AppWindow** APIs mentioned in the rest of this topic.
 
 ## Window types in UWP versus the Windows App SDK
 
@@ -98,16 +98,16 @@ There isn't a 1:1 mapping of functionality and behavior from UWP app window pres
 
 ### Compact overlay
 
-If you used UWP's **ApplicationViewMode** or **AppWindowPresentionKind** to present a compact overlay window, then you should use the compact overlay **AppWindowPresenterKind**. The [**Microsoft.UI.Windowing.CompactOverlayPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter) supports only three fixed window sizes at a 16:9 aspect ratio, and can't be resized by the user. Instead of **ApplicationViewMode.TryEnterViewModeAsync** or **AppWindowPresenterKind.RequestPresentation**, you should use [**AppWindow.SetPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenter_) to change the presentation of the **AppWindow**.
+If you used UWP's **ApplicationViewMode** or **AppWindowPresentationKind** to present a compact overlay window, then you should use the compact overlay **AppWindowPresenterKind**. The [**Microsoft.UI.Windowing.CompactOverlayPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter) supports only three fixed window sizes at a 16:9 aspect ratio, and can't be resized by the user. Instead of **ApplicationView.TryEnterViewModeAsync** or **AppWindowPresenter.RequestPresentation**, you should use [**AppWindow.SetPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenter_) to change the presentation of the **AppWindow**.
 
 |UWP ApplicationView/CoreWindow|UWP AppWindow|Windows App SDK|
 |-|-|-|
 |[**ApplicationViewMode.CompactOverlay**](/uwp/api/windows.ui.viewmanagement.applicationviewmode)|[**AppWindowPresentationKind.CompactOverlay**](/uwp/api/windows.ui.windowmanagement.appwindowpresentationkind)|[**AppWindowPresenterKind.CompactOverlay**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenterkind)|
-|[**ApplicationView.TryEnterViewModeAsync**](/uwp/api/windows.ui.viewmanagement.applicationview.tryenterviewmodeasync) with **ApplicationViewMode.CompactOverlay**|[**AppWindowPresenter.RequestPresentation**](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation#Windows_UI_WindowManagement_AppWindowPresenter_RequestPresentation_Windows_UI_WindowManagement_AppWindowPresentationKind_) with **AppWindowPresenterKind.CompactOverlay**|[**AppWindow.SetPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_) with **AppWindowPresenterKind.CompactOverla**y|
+|[**ApplicationView.TryEnterViewModeAsync**](/uwp/api/windows.ui.viewmanagement.applicationview.tryenterviewmodeasync) with **ApplicationViewMode.CompactOverlay**|[**AppWindowPresenter.RequestPresentation**](/uwp/api/windows.ui.windowmanagement.appwindowpresenter.requestpresentation#Windows_UI_WindowManagement_AppWindowPresenter_RequestPresentation_Windows_UI_WindowManagement_AppWindowPresentationKind_) with **AppWindowPresenterKind.CompactOverlay**|[**AppWindow.SetPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_) with **AppWindowPresenterKind.CompactOverlay**|
 
 ### Full-screen
 
-If you used UWP's **ApplicationViewWindowingMode** or **AppWindowPresentionKind** classes to present a full-screen window, then you should use the full-screen **AppWindowPresenterKind**. The Windows App SDK supports only the most restrictive full-screen experience (that is, when **FullScreen** is **IsExclusive**). For **ApplicationView**/**CoreWindow**, you can use the [**ApplicationView.ExitFullScreenMode**](/uwp/api/windows.ui.viewmanagement.applicationview.exitfullscreenmode) to take the app out of full-screen. When using presenters, you can take an app out of full-screen by setting the presenter back to overlapped/default by using [**AppWindow.SetPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_).
+If you used UWP's **ApplicationViewWindowingMode** or **AppWindowPresentationKind** classes to present a full-screen window, then you should use the full-screen **AppWindowPresenterKind**. The Windows App SDK supports only the most restrictive full-screen experience (that is, when **FullScreen** is **IsExclusive**). For **ApplicationView**/**CoreWindow**, you can use the [**ApplicationView.ExitFullScreenMode**](/uwp/api/windows.ui.viewmanagement.applicationview.exitfullscreenmode) to take the app out of full-screen. When using presenters, you can take an app out of full-screen by setting the presenter back to overlapped/default by using [**AppWindow.SetPresenter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.setpresenter#Microsoft_UI_Windowing_AppWindow_SetPresenter_Microsoft_UI_Windowing_AppWindowPresenterKind_).
 
 |UWP ApplicationView/CoreWindow|UWP AppWindow|Windows App SDK|
 |-|-|-|
@@ -200,7 +200,7 @@ When you create a new UWP project in Visual Studio, the project template provide
 
 When you create a new Windows App SDK project in Visual Studio, the project template provides you with a **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)), but no **Page**. And the project template doesn't provide any navigation code.
 
-However, you have the option to add pages and user controls to your Windows App SDK project. For example, you could add a new page item to the project (**WinUI** > **Blank Page (WinUI 3)**), and name it `MainPage.xaml`, or some other name. That would add to your project a new class of type [**Microsoft.UI.Xaml.Controls.Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page). Then, for info about adding navigation code to the project, see [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation).
+However, you have the option to add pages and user controls to your Windows App SDK project. For example, you could add a new page item to the project (**WinUI** > **Blank Page (WinUI)**), and name it `MainPage.xaml`, or some other name. That would add to your project a new class of type [**Microsoft.UI.Xaml.Controls.Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page). Then, for info about adding navigation code to the project, see [Do I need to implement page navigation?](winui3.md#do-i-need-to-implement-page-navigation).
 
 For Windows App SDK apps that are simple enough, you needn't create pages or user controls, and you can copy your XAML markup and code-behind into **MainWindow**. But for info about exceptions to that workflow, see [Visual State Manager, and Page.Resources](winui3.md#visual-state-manager-and-pageresources).
 

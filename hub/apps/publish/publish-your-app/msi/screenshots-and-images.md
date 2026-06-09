@@ -8,6 +8,9 @@ ms.localizationpriority: medium
 
 # App screenshots and images for MSI/EXE app
 
+> [!TIP]
+> Use the [Microsoft Store Asset Guidance Kit for Figma](../../../design/downloads/index.md#microsoft-store-asset-guidance-kit) to create polished icons, screenshots, and other assets for your Store submission.
+
 Well-designed images are one of the main ways for you to represent your app to potential customers in the Store. You can provide screenshots, logos in your app's Store listing. Some of these are required, and some are optional (although some of the optional images are important to include for the best Store display).
 
 ## Screenshots

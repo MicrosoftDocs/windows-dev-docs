@@ -6,11 +6,11 @@ ms.date: 11/4/2024
 ms.localizationpriority: medium
 ---
 
-# Define markets
+# Define markets for add-ons
 
 The Microsoft Store reaches customers in over 200 countries and regions around the world. You can choose the markets in which you'd like to offer your app, with the option to customize many [pricing and availability](./price-and-availability.md) features per market or per group of markets.
 
-For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../../../../apps/design/globalizing/guidelines-and-checklist-for-globalizing-your-app.md) and [Make your app localizable](../../../../apps/design/globalizing/prepare-your-app-for-localization.md).
+For info to help make your app suitable for customers around the world, see [Guidelines for globalization](../../../../apps/design/globalizing/globalizing-portal.md) and [Make your app localizable](../../../../apps/design/globalizing/prepare-your-app-for-localization.md).
 
 ## Markets
 
@@ -403,9 +403,6 @@ You can choose to list your app in one or more of the following markets.<br />
 </table>
 
 </details>
-
-> [!NOTE]
-> For a list of the countries and regions in which you can register for a developer account, see [Account types, locations, and fees](../../partner-center/account-types-locations-and-fees.md).
 
 ## Price considerations for specific markets
 

@@ -117,7 +117,7 @@ The dot in an attached property name is a key part of the identification pattern
 - To specify an attached property as part of a target path for an animation, enclose the attached property name in parentheses `()`—for example, `(Canvas.Left)`. For more info, see [Property-path syntax](property-path-syntax.md).
 
 > [!WARNING]
-> An existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
+> An existing limitation of the WinUI implementation is that you cannot animate a custom attached property.
 
 - To specify an attached property as the target property for a resource reference from a resource file to **x:Uid**, use a special syntax that injects a code-style, fully qualified **using:** declaration inside square brackets ("\[\]"), to create a deliberate scope break. For example, assuming there exists an element `<TextBlock x:Uid="Title" />`, the resource key in the resource file that targets the **Canvas.Top** value on that instance is `Title.\[using:Microsoft.UI.Xaml.Controls\]Canvas.Top`. For more info on resource files and XAML, see [Localize strings in your UI](../../../windows-app-sdk/mrtcore/localize-strings.md).
 

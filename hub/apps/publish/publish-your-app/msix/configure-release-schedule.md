@@ -1,12 +1,12 @@
 ---
-description: Learn how to configure precise release scheduling for your app in the Microsoft Store, including setting release and stop acquisition dates for specific markets.
-title: Configure precise release scheduling
+description: Learn how to configure precise release scheduling for your MSIX app in the Microsoft Store, including setting release and stop acquisition dates for specific markets.
+title: Configure precise release scheduling for MSIX apps
 ms.date: 6/5/2025
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Configure precise release scheduling
+# Configure precise release scheduling for MSIX apps
 
 The **Schedule** section on the [Pricing and availability](./price-and-availability.md) page lets you set the precise date and time that your app should become available in the Store, giving you greater flexibility and the ability to customize dates for different markets.
 
@@ -49,7 +49,7 @@ In the **Stop acquisition** dropdown, you can set a date and time when you want 
 
 By default, **Stop acquisition** is set to never. To change this, select **at** in the drop-down and specify a date and time, as described above. At the date and time you select, customers will no longer be able to acquire the app.
 
-It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](./visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](../msix/app-package-management.md#removing-an-app-from-the-store).
+It's important to understand that this option has the same impact as selecting **Make this app discoverable but not available** in the [Visibility](./visibility-options.md#discoverability) section and choosing **Stop acquisition: Any customer with a direct link can see the product’s Store listing, but they can only download it if they owned the product before, or have a promotional code and are using a Windows 10 or Windows 11 device.** To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. For more info, see [Removing an app from the Store](../msix/remove-app.md).
 
 > [!TIP]
 > If you select a date to **Stop acquisition**, and later decide you'd like to make the app available again, you can create a new submission and change **Stop acquisition** back to **Never**. The app will become available again after your updated submission is published.

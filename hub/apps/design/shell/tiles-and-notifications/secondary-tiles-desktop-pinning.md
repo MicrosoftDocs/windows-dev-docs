@@ -1,6 +1,6 @@
 ---
 title: Pin secondary tiles from desktop apps
-description: A desktop app such as a WinUI 3 app (using the Windows App SDK), or a Windows Presentation Foundation (WPF) or Windows Forms (WinForms) app, can pin a secondary tile by using a packaged app (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). This was formerly known as Desktop Bridge.
+description: A desktop app such as a WinUI app (using the Windows App SDK), or a Windows Presentation Foundation (WPF) or Windows Forms (WinForms) app, can pin a secondary tile by using a packaged app (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). This was formerly known as Desktop Bridge.
 label: Pin secondary tiles from desktop apps
 template: detail.hbs
 ms.date: 03/03/2022
@@ -22,7 +22,7 @@ Adding a secondary tile from your Windows App SDK, WPF, or WinForms application 
 
 ## Package your app
 
-If you're creating a Windows App SDK application with WinUI 3, you must use a packaged application to pin secondary tiles. There are no extra steps required to package your app if you start with the packaged app template.
+If you're creating a Windows App SDK application with WinUI, you must use a packaged application to pin secondary tiles. There are no extra steps required to package your app if you start with the packaged app template.
 
 If you're using WPF or WinForms, and you haven't packaged your app with the Desktop Bridge, then you'll need to do that before you can use any Windows Runtime APIs (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)).
 
@@ -31,9 +31,9 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 ### [C# (.NET 6 or later)](#tab/csharpnet6)
 
 > [!NOTE]
-> This section is for WinUI 3; and for WPF/WinForms with .NET 6 or later.
+> This section is for WinUI; and for WPF/WinForms with .NET 6 or later.
 
-1. In the project file, set the **TargetFramework** property to a value that gives you access to the Windows Runtime APIs (see [.NET 6 and later: Use the Target Framework Moniker option](../../../desktop/modernize/desktop-to-uwp-enhance.md#net-6-and-later-use-the-target-framework-moniker-option)). That includes access to the **WinRT.Interop** namespace (see [Call interop APIs from a .NET app](../../../desktop/modernize/winrt-com-interop-csharp.md#available-via-target-framework-moniker)). For example:
+1. In the project file, set the **TargetFramework** property to a value that gives you access to the Windows Runtime APIs (see [.NET 6 and later: Use the Target Framework Moniker option](../../../desktop/modernize/winrt-apis-desktop-apps.md#net-6-and-later-use-the-target-framework-moniker-option)). That includes access to the **WinRT.Interop** namespace (see [Call interop APIs from a .NET app](../../../desktop/modernize/winrt-com-interop-csharp.md#available-via-target-framework-moniker)). For example:
 
     ```xml
     <PropertyGroup>
@@ -54,7 +54,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI 3 window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
 
     ```csharp
     var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
@@ -121,7 +121,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
 
 ### [C++](#tab/cpp)
 
-1. Add the following includes to your `pch.h` file. `shobjidl.h` provides access to the **IInitializeWithWindow** interface; `Microsoft.UI.Xaml.Window.h` provides access to the WinUI 3 **Window** class.
+1. Add the following includes to your `pch.h` file. `shobjidl.h` provides access to the **IInitializeWithWindow** interface; `Microsoft.UI.Xaml.Window.h` provides access to the WinUI **Window** class.
 
     ```cppwinrt
     #include <shobjidl.h>
@@ -141,7 +141,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
             Windows::UI::StartScreen::TileSize::Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI 3 Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
 
     ```cppwinrt
     auto windowNative{ this->m_inner.as<::IWindowNative>() };

@@ -9,8 +9,10 @@ ms.localizationpriority: medium
 
 # Analyze performance for MSIX apps and games
 
-View detailed analytics for your apps and games in [Partner Center](https://partner.microsoft.com/dashboard/insights/analytics/overview). Statistics and charts let you know how your apps are performing in the Store, from how many customers you've reached to how they're using your app and what they have to say about it. You can also find metrics on app install, app health, app usage, and more.
-You can view analytic reports right in Partner Center or [download the reports you need](/partner-center/download-analytic-reports) to analyze your data offline. We also provide several ways for you to [access your analytics data outside of Partner Center](/partner-center/analyze-app-performance#access-analytics-data-outside-of-partner-center).
+Use Partner Center analytics to understand how your MSIX-packaged apps and games published through the Microsoft Store are performing. Partner Center provides reports that show how many customers you are reaching, how they discover and acquire your Microsoft Store listing, how they use your app, and how reliably it runs on their devices. You can [view these reports](https://partner.microsoft.com/dashboard/insights/analytics/reports/summary) in Partner Center, or [export the data for analysis](/partner-center/insights/download-analytic-reports) in your own tools.
+
+>[!Note]
+> This page applies only to MSIX apps that are published via the Microsoft Store. For information on MSI/EXE apps, check out [Analyze performance for MSI or EXE apps.](/windows/apps/publish/analyze-app-performance/msi-exe) 
 
 </br>
 You can watch the following video to understand how to use Analytic APIs.

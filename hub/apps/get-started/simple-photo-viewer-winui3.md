@@ -1,32 +1,32 @@
 ---
-title: Tutorial--Create a simple photo viewer with WinUI 3
-description: In this topic we walk through the process of building a simple WinUI 3 app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
+title: Tutorial--Create a simple photo viewer with WinUI
+description: In this topic we walk through the process of building a simple WinUI app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: tutorial
-ms.date: 08/19/2024
-keywords: Windows, App, SDK, WinUI 3, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
+ms.date: 03/24/2026
+keywords: Windows, App, SDK, WinUI, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
 ms.localizationpriority: medium
 ---
 
 # Tutorial: Create a simple photo viewer with WinUI 3
 
 > [!NOTE]
-> For info about the benefits of WinUI 3, as well as other app type options, see [Overview of framework options](./index.md).
+> For info about the benefits of WinUI, as well as other app type options, see [Overview of framework options](./index.md).
 
-In this topic we walk through the process of creating a new WinUI 3 project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
+In this topic we walk through the process of creating a new WinUI project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
 
 > [!TIP]
 > The source code in this topic is provided in both C# and C++/WinRT. If you're a C++ developer, then for more details and concepts explaining how the code that we show here works, see the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) documentation. Relevant topics there include [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection), and [Photo Editor C++/WinRT sample application](/windows/uwp/cpp-and-winrt-apis/photo-editor-sample).
 
 ## Step 1: Install tools for the Windows App SDK
 
-To set up your development computer, see [Get started with WinUI](../get-started/start-here.md). In that article, you'll also find instructions to create and launch a WinUI 3 project.
+To set up your development computer, see [Get started with WinUI](../get-started/start-here.md). In that article, you'll also find instructions to create and launch a WinUI project.
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](../windows-app-sdk/release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this tutorial and/or running the app we'll build.
 
 ## Step 2: Create a new project
 
-In Visual Studio, create your choice of a new C# or C++ project from the **Blank App, Packaged (WinUI 3 in Desktop)** project template. Name the project *SimplePhotos*, and (so that your folder structure will match the one described in this tutorial) uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
+In Visual Studio, create your choice of a new C# or C++ project from the **WinUI Blank App (Packaged)** project template. Name the project *SimplePhotos*, and (so that your folder structure will match the one described in this tutorial) uncheck **Place solution and project in the same directory**. You can target the most recent release (not preview) of the client operating system.
 
 ## Step 3: Copy asset files
 
@@ -238,6 +238,9 @@ A *model* (in the sense of models, views, and view models) is a class that to so
 
 1. Replace the contents of `ImageFileInfo.h` with the code listing below.
 
+    > [!TIP]
+    > For a complete, buildable reference implementation of this class, see [Photo.h](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/PhotoEditor/cpp-winui/PhotoEditor/Photo.h) in the Windows App SDK Photo Editor C++ sample.
+
     ```cppwinrt
     // ImageFileInfo.h
     #pragma once
@@ -250,17 +253,17 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             ImageFileInfo() = default;
 
             ImageFileInfo(
-                winrt::Windows::Storage::FileProperties::ImageProperties const& properties,
-                winrt::Windows::Storage::StorageFile const& imageFile,
+                Windows::Storage::FileProperties::ImageProperties const& properties,
+                Windows::Storage::StorageFile const& imageFile,
                 hstring const& name,
                 hstring const& type);
 
-            winrt::Windows::Storage::FileProperties::ImageProperties ImageProperties()
+            Windows::Storage::FileProperties::ImageProperties ImageProperties()
             {
                 return m_imageProperties;
             }
 
-            winrt::Windows::Storage::StorageFile ImageFile()
+            Windows::Storage::StorageFile ImageFile()
             {
                 return m_imageFile;
             }
@@ -294,15 +297,8 @@ A *model* (in the sense of models, views, and view models) is a class that to so
 
             void ImageRating(uint32_t value);
 
-            winrt::event_token PropertyChanged(winrt::Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
-            {
-                return m_propertyChanged.add(handler);
-            }
-
-            void PropertyChanged(winrt::event_token const& token) noexcept
-            {
-                m_propertyChanged.remove(token);
-            }
+            event_token PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& handler);
+            void PropertyChanged(event_token const& token) noexcept;
 
             Windows::Foundation::IAsyncOperation<Microsoft::UI::Xaml::Media::Imaging::BitmapImage> GetImageSourceAsync();
 
@@ -316,10 +312,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             hstring m_imageFileType;
 
             event<Microsoft::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
-            void OnPropertyChanged(hstring propertyName)
-            {
-                m_propertyChanged(*this, Microsoft::UI::Xaml::Data::PropertyChangedEventArgs(propertyName));
-            }
+            void RaisePropertyChanged(hstring const& propertyName);
         };
     }
     namespace winrt::SimplePhotos::factory_implementation
@@ -343,6 +336,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
     namespace winrt
     {
         using namespace Microsoft::UI::Xaml;
+        using namespace Microsoft::UI::Xaml::Data;
         using namespace Microsoft::UI::Xaml::Media::Imaging;
         using namespace Windows::Foundation;
         using namespace Windows::Storage;
@@ -353,8 +347,8 @@ A *model* (in the sense of models, views, and view models) is a class that to so
     namespace winrt::SimplePhotos::implementation
     {
         ImageFileInfo::ImageFileInfo(
-            winrt::Windows::Storage::FileProperties::ImageProperties const& properties,
-            winrt::Windows::Storage::StorageFile const& imageFile,
+            Windows::Storage::FileProperties::ImageProperties const& properties,
+            Windows::Storage::StorageFile const& imageFile,
             hstring const& name,
             hstring const& type) :
             m_imageProperties{ properties },
@@ -368,13 +362,28 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             ImageRating(rating == 0 ? dist(random) : rating);
         }
 
+        event_token ImageFileInfo::PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
+        {
+            return m_propertyChanged.add(handler);
+        }
+
+        void ImageFileInfo::PropertyChanged(event_token const& token) noexcept
+        {
+            m_propertyChanged.remove(token);
+        }
+
+        void ImageFileInfo::RaisePropertyChanged(hstring const& propertyName)
+        {
+            m_propertyChanged(*this, PropertyChangedEventArgs{ propertyName });
+        }
+
         void ImageFileInfo::ImageTitle(hstring const& value)
         {
             if (ImageProperties().Title() != value)
             {
                 ImageProperties().Title(value);
                 ImageProperties().SavePropertiesAsync();
-                OnPropertyChanged(L"ImageTitle");
+                RaisePropertyChanged(L"ImageTitle");
             }
         }
 
@@ -384,7 +393,7 @@ A *model* (in the sense of models, views, and view models) is a class that to so
             {
                 ImageProperties().Rating(value);
                 ImageProperties().SavePropertiesAsync();
-                OnPropertyChanged(L"ImageRating");
+                RaisePropertyChanged(L"ImageRating");
             }
         }
 
@@ -960,7 +969,7 @@ The **Images** property value doesn't change at run-time for this particular app
 
 ## Conclusion
 
-In this tutorial we walked through the process of using Visual Studio to build a simple WinUI 3 app that displays photos. Hopefully this tutorial has given you experience working in a WinUI 3 app with controls, layout panels, data-binding, and GridView UI optimization.
+In this tutorial we walked through the process of using Visual Studio to build a simple WinUI app that displays photos. Hopefully this tutorial has given you experience working in a WinUI app with controls, layout panels, data-binding, and GridView UI optimization.
 
 ## See also
 

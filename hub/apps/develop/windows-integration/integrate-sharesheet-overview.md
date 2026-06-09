@@ -1,14 +1,14 @@
 ---
-description: Learn how to integrate apps with the Windows Share Sheet, a system-provided UI that enables users to share content from your app with other Windows apps.
-title: Integrate Share options in your Windows app - A comprehensive guide
-ms.topic: concept-article
-ms.date: 10/28/2025
+description: Learn how to implement Share on Windows — integrate your app with the Windows Share Sheet to let users share content across Windows apps and services.
+title: "Share on Windows: integrate the Windows Share Sheet"
+ms.topic: overview
+ms.date: 05/30/2026
 ms.localizationpriority: medium
-keywords: windows, windows share, share sheet, share charm, file sharing, sharesheet, share button, share option, pwa, packaged apps, windows 11, c++
+keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
 ---
 
-# Integrate Share options in your Windows app: A comprehensive guide
+# Share on Windows: integrate the Windows Share Sheet
 
 The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other Windows apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
 
@@ -23,13 +23,13 @@ In this comprehensive guide, you'll learn how to add the share feature to your p
 | [Integrate packaged apps with Windows Share](integrate-sharesheet-packaged.md) | Discover how to integrate packaged apps with the Windows Share Sheet. |
 | [Integrate Progressive Web Apps (PWAs) with Windows Share](integrate-sharesheet-pwa.md) | Discover how to integrate a Progressive Web App (PWA) with the Windows Share Sheet. |
 | [Integrate unpackaged apps with Windows Share](integrate-sharesheet-unpackaged.md) | Discover how to integrate unpackaged apps with the Windows Share Sheet. |
-| [Share data - UWP apps](/windows/uwp/app-to-app/share-data) | Learn how to share data between UWP apps. |
+| [Share data - WinUI apps](/windows/apps/develop/windows-integration/integrate-sharesheet-overview) | Learn how to share data between WinUI apps. |
 
 ## See also
 
 - [Communication - Windows apps](/windows/apps/develop/communication/)
 - [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
-- [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)
 - [Advantages and Disadvantages of packaging an application - Deployment overview](/windows/apps/package-and-deploy/#advantages-and-disadvantages-of-packaging-your-app)
 - [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/)

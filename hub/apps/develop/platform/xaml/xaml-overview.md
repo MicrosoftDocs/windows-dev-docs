@@ -1,5 +1,5 @@
 ---
-description: Introduces the XAML language and XAML concepts to the Windows Runtime app developer audience, and describes the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
+description: Introduces the XAML language and XAML concepts to the WinUI app developer audience, and describes the different ways to declare objects and set attributes in XAML as it is used for creating a WinUI app.
 title: XAML overview
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
 ms.date: 09/10/2025
@@ -14,7 +14,7 @@ dev_langs:
 ---
 # XAML overview
 
-This article introduces the XAML language and XAML concepts to the Windows Runtime app developer audience, and describes the different ways to declare objects and set attributes in XAML as it is used for creating a Windows Runtime app.
+This article introduces the XAML language and XAML concepts to the WinUI app developer audience, and describes the different ways to declare objects and set attributes in XAML as it is used for creating a WinUI app.
 
 ## What is XAML?
 
@@ -22,7 +22,7 @@ Extensible Application Markup Language (XAML) is a declarative language. Specifi
 
 The XAML language supports interchange of sources between different tools and roles in the development process, such as exchanging XAML sources between design tools and an interactive development environment (IDE) or between primary developers and localization developers. By using XAML as the interchange format, designer roles and developer roles can be kept separate or brought together, and designers and developers can iterate during the production of an app.
 
-When you see them as part of your Windows Runtime app projects, XAML files are XML files with the .xaml file name extension.
+When you see them as part of your WinUI app projects, XAML files are XML files with the .xaml file name extension.
 
 ## Basic XAML syntax
 
@@ -42,7 +42,7 @@ In general programming, a namespace is an organizing concept that determines how
 - Namespace definitions inherit in a XAML file or construct, from parent element to child element. For example, if you define a namespace in the root element of a XAML file, all elements within that file inherit that namespace definition. If an element further into the page redefines the namespace, that element's descendants inherit the new definition.
 - Attributes of an element inherit the element's namespaces. It's fairly uncommon to see prefixes on XAML attributes.
 
-A XAML file almost always declares a default XAML namespace in its root element. The default XAML namespace defines which elements you can declare without qualifying them by a prefix. For typical Windows Runtime app projects, this default namespace contains all the built-in XAML vocabulary for the Windows Runtime that's used for UI definitions: the default controls, text elements, XAML graphics and animations, databinding and styling support types, and so on. Most of the XAML you'll write for Windows Runtime apps will thus be able to avoid using XAML namespaces and prefixes when referring to common UI elements.
+A XAML file almost always declares a default XAML namespace in its root element. The default XAML namespace defines which elements you can declare without qualifying them by a prefix. For typical WinUI app projects, this default namespace contains all the built-in XAML vocabulary for the Windows Runtime that's used for UI definitions: the default controls, text elements, XAML graphics and animations, databinding and styling support types, and so on. Most of the XAML you'll write for WinUI apps will thus be able to avoid using XAML namespaces and prefixes when referring to common UI elements.
 
 Here's a snippet that shows a template-created [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) root of the initial page for an app (showing the opening tag only, and simplified). It declares the default namespace and also the **x** namespace (which we'll explain next).
 
@@ -56,7 +56,7 @@ Here's a snippet that shows a template-created [Page](/windows/windows-app-sdk/a
 
 ## The XAML-language XAML namespace
 
-One particular XAML namespace that is declared in nearly every Windows Runtime XAML file is the XAML-language namespace. This namespace includes elements and concepts that are defined by the XAML language specification. By convention, the XAML-language XAML namespace is mapped to the prefix "x". The default project and file templates for Windows Runtime app projects always define both the default XAML namespace (no prefix, just `xmlns=`) and the XAML-language XAML namespace (prefix "x") as part of the root element.
+One particular XAML namespace that is declared in nearly every Windows Runtime XAML file is the XAML-language namespace. This namespace includes elements and concepts that are defined by the XAML language specification. By convention, the XAML-language XAML namespace is mapped to the prefix "x". The default project and file templates for WinUI app projects always define both the default XAML namespace (no prefix, just `xmlns=`) and the XAML-language XAML namespace (prefix "x") as part of the root element.
 
 The "x" prefix/XAML-language XAML namespace contains several programming constructs that you use often in your XAML. Here are the most common ones:
 
@@ -64,7 +64,7 @@ The "x" prefix/XAML-language XAML namespace contains several programming constru
 |------|-------------|
 | [x:Key](x-key-attribute.md) | Sets a unique user-defined key for each resource in a XAML [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary). The key's token string is the argument for the **StaticResource** markup extension, and you use this key later to retrieve the XAML resource from another XAML usage elsewhere in your app's XAML. |
 | [x:Class](x-class-attribute.md) | Specifies the code namespace and code class name for the class that provides code-behind for a XAML page. This names the class that is created or joined by the build actions when you build your app. These build actions support the XAML markup compiler and combine your markup and code-behind when the app is compiled. You must have such a class to support code-behind for a XAML page. [Window.Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.content) in the default Windows Runtime activation model. |
-| [x:Name](x-name-attribute.md) | Specifies a run-time object name for the instance that exists in run-time code after an object element defined in XAML is processed. You can think of setting **x:Name** in XAML as being like declaring a named variable in code. As you'll learn later, that's exactly what happens when your XAML is loaded as a component of a Windows Runtime app. <br/><div class="alert">**Note** [Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.name) is a similar property in the framework, but not all elements support it. Use **x:Name** for element identification whenever **FrameworkElement.Name** is not supported on that element type. |
+| [x:Name](x-name-attribute.md) | Specifies a run-time object name for the instance that exists in run-time code after an object element defined in XAML is processed. You can think of setting **x:Name** in XAML as being like declaring a named variable in code. As you'll learn later, that's exactly what happens when your XAML is loaded as a component of a WinUI app. <br/><div class="alert">**Note** [Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.name) is a similar property in the framework, but not all elements support it. Use **x:Name** for element identification whenever **FrameworkElement.Name** is not supported on that element type. |
 | [x:Uid](x-uid-directive.md) | Identifies elements that should use localized resources for some of their property values. For more info on how to use **x:Uid**, see [Quickstart: Translating UI resources](/previous-versions/windows/apps/hh965329(v=win.10)). |
 | [XAML intrinsic data types](xaml-intrinsic-data-types.md) | These types can specify values for simple value-types when that's required for an attribute or resource. These intrinsic types correspond to the simple value types that are typically defined as part of each programming language's intrinsic definitions. For example, you might need an object representing a **true** Boolean value to use in an [ObjectAnimationUsingKeyFrames](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.objectanimationusingkeyframes) storyboarded visual state. For that value in XAML, you'd use the **x:Boolean** intrinsic type as the object element, like this: <code>&lt;x:Boolean&gt;True&lt;/x:Boolean&gt;</code> |
 
@@ -72,7 +72,7 @@ Other programming constructs in the XAML-language XAML namespace exist but are n
 
 ## Mapping custom types to XAML namespaces
 
-One of the most powerful aspects of XAML as a language is that it's easy to extend the XAML vocabulary for your Windows Runtime apps. You can define your own custom types in your app's programming language and then reference your custom types in XAML markup. Support for extension through custom types is fundamentally built-in to how the XAML language works. Frameworks or app developers are responsible for creating the backing objects that XAML references. Neither frameworks nor the app developer are bound by specifications of what the objects in their vocabularies represent or do beyond the basic XAML syntax rules. (There are some expectations of what the XAML-language XAML namespace types should do, but the Windows Runtime provides all the necessary support.)
+One of the most powerful aspects of XAML as a language is that it's easy to extend the XAML vocabulary for your WinUI apps. You can define your own custom types in your app's programming language and then reference your custom types in XAML markup. Support for extension through custom types is fundamentally built-in to how the XAML language works. Frameworks or app developers are responsible for creating the backing objects that XAML references. Neither frameworks nor the app developer are bound by specifications of what the objects in their vocabularies represent or do beyond the basic XAML syntax rules. (There are some expectations of what the XAML-language XAML namespace types should do, but the Windows Runtime provides all the necessary support.)
 
 If you use XAML for types that come from libraries other than the Windows Runtime core libraries and metadata, you must declare and map a XAML namespace with a prefix. Use that prefix in element usages to reference the types that were defined in your library. You declare prefix mappings as **xmlns** attributes, typically in a root element along with the other XAML namespace definitions.
 
@@ -133,7 +133,7 @@ Because of markup extensions, you need special syntax for a literal "{" value in
 
 ## Events
 
-XAML is a declarative language for objects and their properties, but it also includes a syntax for attaching event handlers to objects in the markup. The XAML event syntax can then integrate the XAML-declared events through the Windows Runtime programming model. You specify the name of the event as an attribute name on the object where the event is handled. For the attribute value, you specify the name of an event-handler function that you define in code. The XAML processor uses this name to create a delegate representation in the loaded object tree, and adds the specified handler to an internal handler list. Nearly all Windows Runtime apps are defined by both markup and code-behind sources.
+XAML is a declarative language for objects and their properties, but it also includes a syntax for attaching event handlers to objects in the markup. The XAML event syntax can then integrate the XAML-declared events through the Windows Runtime programming model. You specify the name of the event as an attribute name on the object where the event is handled. For the attribute value, you specify the name of an event-handler function that you define in code. The XAML processor uses this name to create a delegate representation in the loaded object tree, and adds the specified handler to an internal handler list. Nearly all WinUI apps are defined by both markup and code-behind sources.
 
 Here's a simple example. The [Button](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button) class supports an event named [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click). You can write a handler for **Click** that runs code that should be invoked after the user clicks the **Button**. In XAML, you specify **Click** as an attribute on the **Button**. For the attribute value, provide a string that is the method name of your handler.
 
@@ -173,7 +173,7 @@ namespace winrt::App1::implementation
     struct MainPage : MainPageT<MainPage>
     {
         ...
-        void showUpdatesButton_Click(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void showUpdatesButton_Click(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
     };
 }
 ```
@@ -223,7 +223,7 @@ XAML plays several important roles in the app development process.
 - XAML defines the visual appearance of a UI, and an associated code-behind file defines the logic. You can adjust the UI design without making changes to the logic in code-behind. XAML simplifies the workflow between designers and developers.
 - Because of the richness of the visual designer and design surface support for the XAML language, XAML supports rapid UI prototyping in the early development phases.
 
-Depending on your own role in the development process, you might not interact with XAML much. The degree to which you do interact with XAML files also depends on which development environment you are using, whether you use interactive design environment features such as toolboxes and property editors, and the scope and purpose of your Windows Runtime app. Nevertheless, it is likely that during development of the app, you will be editing a XAML file at the element level using a text or XML editor. Using this info, you can confidently edit XAML in a text or XML representation and maintain the validity of that XAML file's declarations and purpose when it is consumed by tools, markup compile operations, or the run-time phase of your Windows Runtime app.
+Depending on your own role in the development process, you might not interact with XAML much. The degree to which you do interact with XAML files also depends on which development environment you are using, whether you use interactive design environment features such as toolboxes and property editors, and the scope and purpose of your WinUI app. Nevertheless, it is likely that during development of the app, you will be editing a XAML file at the element level using a text or XML editor. Using this info, you can confidently edit XAML in a text or XML representation and maintain the validity of that XAML file's declarations and purpose when it is consumed by tools, markup compile operations, or the run-time phase of your WinUI app.
 
 ## Optimize your XAML for load performance
 
@@ -245,9 +245,9 @@ When there are problems with a XAML file, the most typical result is that some s
 
 XAML is often edited within an IDE such as Visual Studio and one of its XAML design surfaces. Visual Studio can often provide design-time validation and error checking of a XAML source as you edit it. For example it might display "squiggles" in the XAML text editor as soon as you type a bad attribute value, and you won't even have to wait for a XAML compile pass to see that something's wrong with your UI definition.
 
-Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for Windows Runtime apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
+Once the app actually runs, if any XAML parse errors have gone undetected at design time, these are reported by the common language runtime (CLR) as a [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). For more info on what you might be able to do for a run-time **XamlParseException**, see [Exception handling for WinUI apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)).
 
 > [!NOTE]
 > Apps that use C++/CX for code don't get the specific [**XamlParseException**](/dotnet/api/Windows.UI.Xaml.markup.xamlparseexception?view=dotnet-uwp-10.0&preserve-view=true). But the message in the exception clarifies that the source of the error is XAML-related, and includes context info such as line numbers in a XAML file, just like **XamlParseException** does.
 
-For more info on debugging a Windows Runtime app, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).
+For more info on debugging a WinUI app, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).

@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 As the visual representation of language, typography's main task is to communicate information. The Windows type system helps you create structure and hierarchy in your content in order to maximize legibility and readability in your UI.
 
-[Segoe UI Variable](..\downloads\index.md#fonts) is the new system font for Windows. It is a refreshed take on the classic Segoe and uses variable font technology to dynamically provide great legibility at very small sizes, and improved outlines at display sizes.
+[Segoe UI Variable](../downloads/index.md#fonts) is the new system font for Windows. It is a refreshed take on the classic Segoe and uses variable font technology to dynamically provide great legibility at very small sizes, and improved outlines at display sizes.
 
 > [!TIP]
 > This article describes how the [Fluent Design language](https://fluent2.microsoft.design/) is applied to Windows apps. For more information, see [**Fluent Design - Typography**](https://fluent2.microsoft.design/typography).
@@ -59,9 +59,9 @@ Windows 11 uses Segoe UI Variable with the following attributes based on the con
 ## Examples
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Typography principles in action](winui3gallery:/item/Typography)
+> [Open the WinUI 3 Gallery app and see Typography principles in action](winui3gallery://item/Typography)
 
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ## Typography in Windows Apps
 
@@ -108,12 +108,16 @@ Windows 11 uses the following values for various types of text in the UI.
 | ![Example of body text](images/typography_body.svg) | Text             | 14/20 epx        |
 | ![Example of body strong text](images/typography_body_strong.svg)| Text semibold    | 14/20 epx        |
 | ![Example of body large text](images/typography_body_large.svg)| Text             | 18/24 epx        |
+| ![Example of body large strong text](images/typography_body_large_strong.png)| Text semibold    | 18/24 epx        |
 | ![Example of subtitle text](images/typography_subtitle.svg)| Display semibold | 20/28 epx        |
 | ![Example of title text](images/typography_title.svg)| Display semibold | 28/36 epx        |
 | ![Example of title large text](images/typography_title_large.svg)| Display semibold | 40/52 epx        |
 | ![Example of display text](images/typography_display.svg)| Display semibold | 68/92 epx        |
 
-Check out the guidance on using the [XAML type ramp](../../develop/platform/xaml/xaml-theme-resources.md#the-xaml-type-ramp) for more details.
+These type styles are available as XAML static resources that follow the [XAML type ramp](../../develop/platform/xaml/xaml-theme-resources.md#the-xaml-type-ramp) conventions, so you can use them directly in your app.
+
+> [!NOTE]
+> Bold and Italic styles are not part of the Windows type ramp. Use Semibold instead of Bold for emphasis. Italic is excluded because it can reduce readability and legibility, particularly for people with dyslexia.
 
 ### Alignment
 
@@ -140,7 +144,7 @@ Don't use fewer than 20 characters or more than 60 characters per line as this i
 
 ### Clipping and ellipses
 
-When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [UWP text controls](../controls/text-controls.md).
+When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [WinUI text controls](../controls/text-controls.md).
 
 ![Shows a device frame with some text clipping.](../style/images/type/clipping.svg)
 
@@ -176,15 +180,15 @@ Use the [LanguageFont font-mapping APIs](/uwp/api/windows.globalization.fonts.la
 |---------|---------|---------|
 | Ebrima | Regular, Bold | User-interface font for African scripts (ADLaM, Ethiopic, N'Ko, Osmanya, Tifinagh, Vai). |
 | Gadugi | Regular, Bold | User-interface font for North American scripts (Canadian Syllabics, Cherokee, Osage). |
-| Leelawadee UI</p> | Regular, Semilight, Bold | User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai). |
-| Malgun Gothic</p> | Regular | User-interface font for Korean. |
-| Microsoft JhengHei UI</p> | Regular, Bold, Light | User-interface font for Traditional Chinese. |
-| Microsoft YaHei UI</p> | Regular, Bold, Light | User-interface font for Simplified Chinese. |
-| Myanmar Text</p> | Regular | Fallback font for Myanmar script. |
-| Nirmala UI</p> | Regular, Semilight, Bold | User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu). |
-| Segoe UI</p> | Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black | User-interface font for Arabic, Armenian, Georgian, and Hebrew. |
-| SimSun</p> | Regular | A legacy Chinese UI font. |
-| Yu Gothic UI</p> | Light, Semilight, Regular, Semibold, Bold | User-interface font for Japanese. |
+| Leelawadee UI | Regular, Semilight, Bold | User-interface font for Southeast Asian scripts (Buginese, Khmer, Lao, Thai). |
+| Malgun Gothic | Regular | User-interface font for Korean. |
+| Microsoft JhengHei UI | Regular, Bold, Light | User-interface font for Traditional Chinese. |
+| Microsoft YaHei UI | Regular, Bold, Light | User-interface font for Simplified Chinese. |
+| Myanmar Text | Regular | Fallback font for Myanmar script. |
+| Nirmala UI | Regular, Semilight, Bold | User-interface font for South Asian scripts (Bangla, Chakma, Devanagari, Gujarati, Gurmukhi, Kannada, Malayalam, Meetei Mayek, Odia, Ol Chiki, Sinhala, Sora Sompeng, Tamil, Telugu). |
+| Segoe UI | Regular, Italic, Light Italic, Black Italic, Bold, Bold Italic, Light, Semilight, Semibold, Black | User-interface font for Arabic, Armenian, Georgian, and Hebrew. |
+| SimSun | Regular | A legacy Chinese UI font. |
+| Yu Gothic UI | Light, Semilight, Regular, Semibold, Bold | User-interface font for Japanese. |
 
 ## Fonts
 
@@ -224,7 +228,7 @@ Variable fonts are good for precisely controlling the appearance of text.
 
 | Font-family | Styles | Notes |
 |---------|---------|---------|
-| Segoe MDL2 Assets | Regular | User-interface font for app icons. For more info, see the [Segoe Fluent Icons font](../style/segoe-fluent-icons-font.md) article. |
+| Segoe Fluent Icons | Regular | User-interface font for app icons. For more info, see the [Segoe Fluent Icons font](../style/segoe-fluent-icons-font.md) article. |
 | Segoe UI Emoji | Regular | User-interface font for Emoji. |
 | Segoe UI Symbol | Regular | Fallback font for symbols. |
 

@@ -1,0 +1,50 @@
+---
+title: PointOfService device objects
+description: Learn how to create a PointOfService device object and learn about the device object lifecycle in the Universal Windows Platform (UWP) application model.
+ms.date: 05/27/2026
+ms.topic: article
+
+ms.localizationpriority: medium
+---
+
+# PointOfService device objects
+
+Learn how to create a [PointOfService device object](basics-deviceobject.md) that will give you access to read-only properties of the peripheral and claim the peripheral for exclusive use in a Universal Windows Platform (UWP) application.
+
+## Creating a device object
+
+Once you have identified the PointOfService device that you want to use, either from a fresh enumeration or a stored DeviceID, you just call [**FromIdAsync**](/uwp/api/windows.devices.pointofservice.barcodescanner.fromidasync) with the[**DeviceID**](/uwp/api/windows.devices.enumeration.deviceinformation.id) that you have chosen programmatically or the user has selected to create a new Point of Service device object.
+
+This sample attempts to create a new BarcodeScanner object with FromIdAsync using a DeviceID. If there is a failure creating the object a debug message is written.
+
+```csharp
+
+    BarcodeScanner barcodeScanner = await BarcodeScanner.FromIdAsync(DeviceId);
+
+    if (barcodeScanner != null)
+    {
+        // after successful creation, claim the scanner for exclusive use and enable it to exchange data
+    }
+    else
+    {
+        Debug.WriteLine("Failure to create barcodeScanner object");
+    }
+    
+```
+
+Once you have a device object, you can then access the device's methods, properties and events.  
+
+## Device object lifecycle
+
+WinUI, Win32, and .NET apps have a simple lifecycle. They are either running or not running and PointOfService peripherals are usually claimed for the full app lifecycle. When a user minimizes them, or switches away from them, they continue to run.
+
+The UWP app model has a more complex app lifecycle. At a high level, a new suspended state was added. A UWP app is suspended shortly after the user minimizes it or switches to another app. This means that the app's threads are stopped, the app is left in memory unless the operating system needs to reclaim resources, and any device objects representing PointOfService peripherals are automatically closed to allow other applications access to the peripherals. When the user switches back to the app, it can be quickly restored to a running state and restore PointOfService peripherals connections provided they are still available on resume.
+
+You can detect when an object is closed for any reason with a \<DeviceObject\>.Closed event handler, then make note of the device ID for re-establishing the connection in the future. Alternatively, you may wish to handle this on an App Suspend notification to save the device ID's for re-establishing the device connections on App Resume notification.  Make sure that you do not double up on the event handlers and duplicate actions for the device object on both \<DeviceObject\>.Closed and App Suspend.
+
+> [!TIP]
+> Please refer to the following topics for more information about the Universal Windows Platform (UWP) application lifecycle:
+>
+> - [Windows 10 Universal Windows Platform (UWP) app lifecycle](/windows/uwp/launch-resume/app-lifecycle)
+> - [Handle app suspension](/windows/uwp/launch-resume/suspend-an-app)
+> - [Handle app resume](/windows/uwp/launch-resume/resume-an-app)

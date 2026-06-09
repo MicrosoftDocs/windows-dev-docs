@@ -24,7 +24,7 @@ On the note page, you'll add a _back_ button, and there are **Save** and **Delet
 
 ## New note
 
-First, you'll handle navigation for an new note.
+First, you'll handle navigation for a new note.
 
 > [!TIP]
 > You can download or view the code for this tutorial from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes). To see the code as it is in this step, see this commit: [navigation - new note](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/25c23e5976c6b791355b109c7a7a0430ab16a3f9/WinUINotes).
@@ -128,7 +128,7 @@ Now you'll add navigation for existing notes. Currently, when you click the note
 
 Lastly, you need to update the app so that you can navigate back from an individual note to the all notes page.
 
-The WinUI [TitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar) control includes a back button that meets all the Fluent Design guidelines for placement and appearance. You'll use this built-in button for back navigation.
+The WinUI 3 [TitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar) control includes a back button that meets all the Fluent Design guidelines for placement and appearance. You'll use this built-in button for back navigation.
 
 1. Open **MainWindow.xaml**.
 1. Update the XAML for the `TitleBar` with [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible) = `True` and [IsBackButtonEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled) bound to the [Frame.CanGoBack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.cangoback) property.

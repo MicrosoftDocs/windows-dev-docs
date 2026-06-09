@@ -2,7 +2,7 @@
 title: Application lifecycle functionality migration
 description: This topic contains migration guidance in the application lifecycle area.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, application lifecycle, applifecycle, application, lifecycle
 ms.localizationpriority: medium
 dev_langs:
@@ -27,7 +27,7 @@ Universal Windows Platform (UWP) apps are single-instanced by default; Windows A
 
 A UWP app has **App** methods such as **OnFileActivated**, **OnSearchActivated**, **OnActivated**, and **OnBackgroundActivated** that implicitly tell you how the app was activated; In a Windows App SDK app, in **App.OnLaunched** (or in any method), call ([**AppInstance.GetActivatedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated.
 
-Also see the *Background tasks* row in the table in the [What's supported when migrating from UWP to WinUI 3](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported) topic.
+Also see the *Background tasks* row in the table in the [What's supported when migrating from UWP to WinUI](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported) topic.
 
 ## Single-instanced apps
 
@@ -35,9 +35,9 @@ Universal Windows Platform (UWP) apps are single-instanced by default (you can o
 
 So the way a single-instanced UWP app behaves is that the second (and subsequent) time you launch, your current instance is activated. Let's say for example that in your UWP app you've implemented the file type association feature. If from File Explorer you open a file (of the type for which the app has registered a file type association)&mdash;and your app is already running&mdash;then that already-running instance is activated.
 
-Windows App SDK (WinUI 3) apps, on the other hand, are multi-instanced by default. So, by default, the second (and subsequent) time you launch a Windows App SDK (WinUI 3) app, a new instance of the app is launched. If for example a Windows App SDK (WinUI 3) app implements file type association, and from File Explorer you open a file (of the right type) while that app is already running, then by default a new instance of the app is launched.
+Windows App SDK (WinUI) apps, on the other hand, are multi-instanced by default. So, by default, the second (and subsequent) time you launch a Windows App SDK (WinUI) app, a new instance of the app is launched. If for example a Windows App SDK (WinUI) app implements file type association, and from File Explorer you open a file (of the right type) while that app is already running, then by default a new instance of the app is launched.
 
-If you want your Windows App SDK (WinUI 3) app to be single-instanced like your UWP app is, then you can override the default behavior described above. You'll use [**AppInstance.FindOrRegisterForKey**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.findorregisterforkey) and [**AppInstance.IsCurrent**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.iscurrent) to determine whether the current instance is the main instance. If it isn't, then you'll call [**AppInstance.RedirectActivationToAsync**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync) to redirect activation to the already-running main instance, and then exit from the current instance (without creating nor activating its main window).
+If you want your Windows App SDK (WinUI) app to be single-instanced like your UWP app is, then you can override the default behavior described above. You'll use [**AppInstance.FindOrRegisterForKey**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.findorregisterforkey) and [**AppInstance.IsCurrent**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.iscurrent) to determine whether the current instance is the main instance. If it isn't, then you'll call [**AppInstance.RedirectActivationToAsync**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.redirectactivationtoasync) to redirect activation to the already-running main instance, and then exit from the current instance (without creating nor activating its main window).
 
 For more info, see [App instancing with the app lifecycle API](../../applifecycle/applifecycle-instancing.md).
 
@@ -76,7 +76,7 @@ An alternative to using **Main** or **wWinMain** is to perform your single-insta
 > Doing this work in **Application.OnLaunched** can simplify your app. However, a lot depends on what else your app is doing. If you're going to end up redirecting, and then terminating the current instance, then you'll want to avoid doing any throwaway work (or even work that needs explicitly undoing). In cases like that, **Application.OnLaunched** might be too late, and you might prefer to do the work in your app's **Main** or **wWinMain** function.
 
 ```csharp
-// App.xaml.cs in a Windows App SDK (WinUI 3) app
+// App.xaml.cs in a Windows App SDK (WinUI) app
 ...
 protected override async void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
 {
@@ -103,7 +103,7 @@ protected override async void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventA
 ```
 
 ```cppwinrt
-// pch.h in a Windows App SDK (WinUI 3) app
+// pch.h in a Windows App SDK (WinUI) app
 ...
 #include <winrt/Microsoft.Windows.AppLifecycle.h>
 ...

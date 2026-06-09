@@ -1,5 +1,5 @@
 ---
-description: We describe the programming concept of events in a Windows Runtime app, when using XAML for your UI definition.
+description: We describe the programming concept of events in a WinUI app, when using XAML for your UI definition.
 title: Events and routed events overview
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ms.date: 07/12/2018
@@ -13,11 +13,11 @@ ms.localizationpriority: medium
 - [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement)
 - [**RoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.RoutedEventArgs)
 
-We describe the programming concept of events in a Windows Runtime app, when using XAML for your UI definition. You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code. Windows Runtime supports *routed events*: certain input events and data events can be handled by objects beyond the object that fired the event. Routed events are useful when you define control templates, or use pages or layout containers.
+We describe the programming concept of events in a WinUI app, when using XAML for your UI definition. You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code. Windows Runtime supports *routed events*: certain input events and data events can be handled by objects beyond the object that fired the event. Routed events are useful when you define control templates, or use pages or layout containers.
 
 ## Events as a programming concept
 
-Generally speaking, event concepts when programming a Windows Runtime app are similar to the event model in most popular programming languages. If you know how to work with Microsoft .NET or C++ events already, you have a head start. But you don't need to know that much about event model concepts to perform some basic tasks, such as attaching handlers.
+Generally speaking, event concepts when programming a WinUI app are similar to the event model in most popular programming languages. If you know how to work with Microsoft .NET or C++ events already, you have a head start. But you don't need to know that much about event model concepts to perform some basic tasks, such as attaching handlers.
 
 When you create a WinUI (or UWP) app, the UI is defined in markup (XAML). In XAML markup syntax, some of the principles of connecting events between markup elements and runtime code entities are similar to other Web technologies, such as ASP.NET, or HTML5.
 
@@ -26,9 +26,9 @@ When you create a WinUI (or UWP) app, the UI is defined in markup (XAML). In XAM
 
 ## Button.Click: an introduction to events and XAML
 
-One of the most common programming tasks for a Windows Runtime app is to capture user input to the UI. For example, your UI might have a button that the user must click to submit info or to change state.
+One of the most common programming tasks for a WinUI app is to capture user input to the UI. For example, your UI might have a button that the user must click to submit info or to change state.
 
-You define the UI for your Windows Runtime app by generating XAML. This XAML is usually the output from a design surface in Visual Studio. You can also write the XAML in a plain-text editor or a third-party XAML editor. While generating that XAML, you can wire event handlers for individual UI elements at the same time that you define all the other XAML attributes that establish property values of that UI element.
+You define the UI for your WinUI app by generating XAML. This XAML is usually the output from a design surface in Visual Studio. You can also write the XAML in a plain-text editor or a third-party XAML editor. While generating that XAML, you can wire event handlers for individual UI elements at the same time that you define all the other XAML attributes that establish property values of that UI element.
 
 To wire the events in XAML, you specify the string-form name of the handler method that you've already defined or will define later in your code-behind. For example, this XAML defines a [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button) object with other properties ([x:Name attribute](x-name-attribute.md), [**Content**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content)) assigned as attributes, and wires a handler for the button's [**Click**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event by referencing a method named `ShowUpdatesButton_Click`:
 
@@ -59,15 +59,15 @@ End Sub
 ```
 
 ```cppwinrt
-void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Windows::UI::Xaml::RoutedEventArgs const& e)
+void winrt::MyNamespace::implementation::BlankPage::ShowUpdatesButton_Click(Windows::Foundation::IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& e)
 {
-    auto b{ sender.as<Windows::UI::Xaml::Controls::Button>() };
+    auto b{ sender.as<Microsoft::UI::Xaml::Controls::Button>() };
     // More logic to do here.
 }
 ```
 
 ```cpp
-void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e) 
+void MyNamespace::BlankPage::ShowUpdatesButton_Click(Platform::Object^ sender, Microsoft::UI::Xaml::RoutedEventArgs^ e) 
 {
     Button^ b = (Button^) sender;
     //more logic to do here...

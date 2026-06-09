@@ -7,7 +7,7 @@ keywords: Windows, App, SDK, Windows app restore
 ms.localizationpriority: medium
 ---
 
-# Windows app restore: maximize the value of your app
+# App restore: maximize the value of your app
 
 To maximize retention of your users as they move to a new device, your app (in conjunction with Windows app restore) should offer the best possible restore experience. This topic defines the tenets of Windows app restore that will enable your app to deliver that experience and keep as many of your customers engaged as possible.
 
@@ -38,7 +38,7 @@ When a user installs a new operating system (OS), and chooses to restore from th
 
 Another key to creating a great experience for your users is ensuring that the app gets installed, and behaves correctly. The best way to do that is with a *packaged* app (see [Deployment overview](/windows/apps/package-and-deploy/)).
 
-A packaged app (either a packaged desktop app or a Universal Windows Platform app) is packaged using MSIX, and it's run inside of a lightweight app container. The packaged app process and its child processes run inside the container; and they're isolated using file system and registry virtualization. It's these aspects of packaging that make installation extremely reliable, and ensure that the app doesn't misbehave or leave registry configuration or app files on the PC when the user uninstalls.
+A packaged app (either a packaged desktop app or a WinUI app) is packaged using MSIX, and it's run inside of a lightweight app container. The packaged app process and its child processes run inside the container; and they're isolated using file system and registry virtualization. It's these aspects of packaging that make installation extremely reliable, and ensure that the app doesn't misbehave or leave registry configuration or app files on the PC when the user uninstalls.
 
 For more info about the benefits of using MSIX for packaging, see [What is MSIX?](/windows/msix/overview).
 
@@ -50,7 +50,7 @@ As you can see, Windows does a great job in helping your customers find and inst
 
 Storing app settings to the cloud requires a service. To provide as rich an experience as possible, Microsoft provides a variety of services that eliminate the need to spin up servers, or pick your database, or worry about scale or security. Those services provide a great developer experience that lets you store application data in the cloud by using SQL or NoSQL APIs. To help build scalable and robust applications, you can also sync data on all devices, and enable the application to work with or without a network connection. For more info about Microsoft services, see [Store, sync, and query mobile application data from the cloud](/azure/developer/mobile-apps/data-storage).
 
-For more info about the best practices of storing app data, see [Store and retrieve settings and other app data](/windows/apps/design/app-settings/store-and-retrieve-app-data).
+For more info about the best practices of storing app data, see [Store and retrieve settings and other app data](/windows/apps/develop/data/store-and-retrieve-app-data).
 
 ## Write user-generated content to Known Folders
 

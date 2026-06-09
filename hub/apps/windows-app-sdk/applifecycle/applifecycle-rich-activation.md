@@ -20,8 +20,8 @@ Supporting rich activations requires two steps:
 
 To use the app lifecycle API in the Windows App SDK:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI 3](../../get-started/start-here.md).
+2. Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Activation details for unpackaged apps
 
@@ -34,7 +34,7 @@ The current version of the Windows App SDK supports the four most common activat
 | `Protocol` | Activate an app that has registered for a protocol when a string of that protocol is executed via [ShellExecute](/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw), [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync), or the command-line. |
 | `StartupTask` | Activate the app when the user logs into Windows, either because of a registry key, or because of a shortcut in a well-known startup folder. |
 
-Each type of unpackaged app retrieves its command line arguments in different ways. For example, C++ Win32 apps expect to receive activation arguments to be passed into `WinMain` in the form of a string (though they also have the option to call [GetCommandLineW](/windows/win32/api/processenv/nf-processenv-getcommandlinew)). Windows Forms apps, however, *must* call [Environment.GetCommandLineArgs](/dotnet/api/system.environment.getcommandlineargs), because arguments will not be automatically passed to them.
+Each type of unpackaged app retrieves its activation arguments in different ways. C++ Win32 apps receive launch arguments in `WinMain` (or by calling [GetCommandLineW](/windows/win32/api/processenv/nf-processenv-getcommandlinew)). Windows Forms and WPF apps must call [AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to retrieve rich activation payloads (such as the URI for protocol activation), or [Environment.GetCommandLineArgs](/dotnet/api/system.environment.getcommandlineargs) for raw command-line arguments on a plain `Launch` activation.
 
 ## Activation details for packaged apps
 

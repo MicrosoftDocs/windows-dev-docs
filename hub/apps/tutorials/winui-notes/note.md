@@ -17,7 +17,7 @@ Now you'll create a page that allows a user to edit a note, and then you'll writ
 First, add the new page to the project:
 
 1. In the **Solution Explorer** pane of Visual Studio, right-click on the **WinUINotes** project > **Add** > **New Item...**.
-1. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI 3)** template. Name the file _NotePage.xaml_, and then select **Add**.
+1. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI)** template. Name the file _NotePage.xaml_, and then select **Add**.
 1. The **NotePage.xaml** file will open in a new tab, displaying all of the XAML markup that represents the UI of the page. Replace the `<Grid> ... </Grid>` element in the XAML with the following markup:
 
     ```xaml
@@ -161,7 +161,7 @@ Now you're going to add code to the **NotePage.xaml.cs** code-behind file to han
 
 ### Add event handlers
 
-Next, add the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event handlers for the for the **Save** and **Delete** buttons. Adding event handlers is something that you'll do often while creating your apps, so Visual Studio provides several features to make it easier.
+Next, add the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event handlers for the **Save** and **Delete** buttons. Adding event handlers is something that you'll do often while creating your apps, so Visual Studio provides several features to make it easier.
 
 1. In the **NotePage.xaml** file, place your cursor after the `Content` attribute in the **Save** `Button` control. Type `Click=`. At this point, Visual Studio should pop up an auto-complete UI that looks like this:
 
@@ -287,7 +287,7 @@ namespace WinUINotes
 
 With this code in place, you can test the app to make sure the note saves and loads correctly.
 
-1. Build and run the project by pressing <kbd>F5</kbd>, clicking the Debug "Start" button in the tool bar, or by selecting the menu **Run** > **Start Debugging**.
+1. Build and run the project by pressing <kbd>F5</kbd>, clicking the Debug "Start" button in the tool bar, or by selecting the menu **Debug** > **Start Debugging**.
 1. Type into the text entry box and press the **Save** button.
 1. Close the app, then restart it. The note you entered should be loaded from the device's storage.
 1. Press the **Delete** button.

@@ -32,7 +32,7 @@ You can launch the Store App to a specific page or section using the following o
 
 You can launch the Store directly to the product detail page (PDP) for a specific product by using the Product ID for an App. While the Store app on Windows 10 and Windows 11 still supports Package Family Name (PFN) and App IDs, these are deprecated and may not be supported in the future. These values can be found in Partner Center on the App identity page in the Product management section for each app.
 
-Starting with the October 2021 update to the Store app, there are two modes available for displaying the PDP. By default the Store app is opened to the product detail page. You can also launch the store into with a popup experience that displays a smaller PDP dialog with that only displays the essential details for your app and a single action button for users. For the popup experience, you can optionally specify the location of a window that the dialog should be centered above.
+***NOTE:*** *Starting February 2026, the Microsoft Store will no longer support activations made through the mode=mini parameter. URIs using this parameter will default to the standard full-page Microsoft Store activation.*
 
 | URI Scheme                                                         | Description | Notes |
 |--------------------------------------------------------------------|-------------|-------|

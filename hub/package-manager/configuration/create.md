@@ -24,7 +24,7 @@ Windows Package Manager uses manifests (YAML files) to locate and install packag
 
 ### File naming convention
 
-The convention for naming a WinGet Configuration file is using the ".winget" file extension (like `configuration.winget`). For Git-based projects the default configuration should be stored in a ".config" directory at: `./config/configuration.winget`. In some cases, more than one configuration file may be appropriate given different toolchains or user preferences. Those additional configuration files should also be located in the ".config" directory.
+The convention for naming a WinGet Configuration file is using the ".winget" file extension (like `configuration.winget`). For Git-based projects the default configuration should be stored in a ".config" directory at: `./.config/configuration.winget`. In some cases, more than one configuration file may be appropriate given different toolchains or user preferences. Those additional configuration files should also be located in the ".config" directory.
 
 ### Sections of a WinGet Configuration file
 

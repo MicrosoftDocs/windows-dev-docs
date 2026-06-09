@@ -91,6 +91,6 @@ These configurations can be edited from the PowerToys Settings:
 | App theme | **Light**, **Dark** or **Windows default** |
 | Excluded apps | Ignores Shortcut Guide when these apps are in focus. Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
-:::image type="content" source="../images/pt-shortcut-guide-settings.png" alt-text="Screenshot of PowerToys Shortcut Guide settings page showing activation method and customization options.":::
+:::image type="content" source="images/shortcut-guide/settings.png" alt-text="Screenshot of PowerToys Shortcut Guide settings page showing activation method and customization options.":::
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

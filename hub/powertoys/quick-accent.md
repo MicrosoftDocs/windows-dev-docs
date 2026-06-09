@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Quick Accent, Win]
 
 # Quick Accent utility
 
-:::image type="content" source="../images/pt-quick-accent.gif" alt-text="An animated GIF of Quick Accent utility overlay showing accented character options in PowerToys.":::
+:::image type="content" source="images/quick-accent/quick-accent.gif" alt-text="An animated GIF of Quick Accent utility overlay showing accented character options in PowerToys.":::
 
 Quick Accent utility provides an alternative way to type accented characters in Windows PowerToys. This tool helps users whose keyboards don't support specific accents with quick key combinations, making it easier to type international characters. The utility is based on [Damien Leroy's PowerAccent](https://github.com/damienleroy/PowerAccent).
 
@@ -70,6 +70,7 @@ From the Settings menu, the following options can be configured:
 | Setting | Description |
 | :--- | :--- |
 | Activation key | Choose **Left/Right Arrow**, **Space** or **Left, Right or Space**. |
+| Do not activate when Game Mode is on | Prevents Quick Accent from activating when Game Mode is on, avoiding interference while gaming. |
 | Character set | Show only characters that are in the chosen sets. |
 | Toolbar location | Position of the toolbar. |
 | Show the Unicode code and name of the currently selected character | Shows the Unicode code (in hexadecimal) and name of the currently selected character under the selector. |

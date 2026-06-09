@@ -1,18 +1,17 @@
 ---
-description: This article describes best practices for creating and displaying app settings.
+description: This article describes best practices for creating and displaying app settings in WinUI apps.
 title: Guidelines for app settings
-ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
 label: Guidelines
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 04/08/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 11, winui
 ms.localizationpriority: medium
 ---
 
 # Guidelines for app settings
 
-App settings are the user-customizable portions of your Windows app accessed through an app settings page. For example, a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app could let the user choose between Celsius and Fahrenheit. This article provides recommendations and best practices for creating and displaying app settings.
+App settings are the user-customizable portions of your Windows app, accessed through a dedicated settings page. For example, a news reader app might let the user specify which news sources to display or how many columns to display on the screen, while a weather app could let the user choose between Celsius and Fahrenheit. This article provides recommendations and best practices for creating and displaying app settings in WinUI apps.
 
 ## When to provide a settings page
 
@@ -28,7 +27,7 @@ Commands that are part of the typical app workflow (for example, changing the br
 
 - Keep settings pages simple and make use of binary (on/off) controls. A [toggle switch](../controls/toggles.md) is usually the best control for a binary setting.
 - For settings that let users choose one item from a set of up to 5 mutually exclusive, related options, use [radio buttons](../controls/radio-button.md).
-- Create an entry point for all app settings in your app setting's page.
+- Create an entry point for all app settings in your app's settings page.
 - Keep your settings simple. Define smart defaults and keep the number of settings to a minimum.
 - When a user changes a setting, the app should immediately reflect the change.
 - Don't include commands that are part of the common app workflow.
@@ -39,7 +38,7 @@ The way that users get to your app settings page should be based on your app's l
 
 **Navigation pane**
 
-For a nav pane layout, app settings should be the last item in the list of navigational choices and be pinned to the bottom:
+For a [NavigationView](../controls/navigationview.md) layout, app settings should be the last item in the list of navigational choices and be pinned to the bottom. `NavigationView` provides a built-in settings item for this purpose — set the [IsSettingsVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.issettingsvisible) property to `true` to display a **Settings** entry at the bottom of the navigation pane automatically.
 
 ![app settings entry point for nav pane](images/appsettings-nav-settings.png)
 
@@ -47,90 +46,74 @@ For a nav pane layout, app settings should be the last item in the list of navig
 
 If you're using a [command bar](../controls/command-bar.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the command bar and not within the overflow.
 
-![app settings entry point for command bar](../controls/images/appbar_rs2_overflow_icons.png)
-
-**Hub**
-
-If you're using a hub layout, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
-
-**Tabs/pivots**
-
-For a tabs or pivots layout, we don't recommend placing the app settings entry point as one of the top items within the navigation. Instead, the entry point for app settings should be placed inside the "More" overflow menu of a command bar.
-
-**List-details**
-
-Instead of burying the app settings entry point deeply within a list-details pane, make it the last pinned item on the top level of the list pane.
+![app settings entry point for command bar](images/appbar-overflow-icons.png)
 
 ## Layout
 
+The app settings page should open full-screen and fill the whole window. Use a scrollable layout with a constrained max width (around 1000–1100 px) so content remains readable on wide displays. Group related settings under section headers using the **BodyStrong** text style.
 
-The app settings window should open full-screen and fill the whole window. If your app settings menu has up to four top-level groups, those groups should cascade down one column.
+Use the [SettingsCard and SettingsExpander](/dotnet/communitytoolkit/windows/settingscontrols/settingscard) controls from the [Windows Community Toolkit](https://aka.ms/toolkit/windows) to build your settings page. These controls provide a consistent, accessible layout with a header, description, icon, and an action control aligned to the right side of the card.
+
+For complete implementation examples, see the [WinUI Gallery settings page](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Pages/SettingsPage.xaml) and the [Windows Community Toolkit SettingsControls sample](https://github.com/CommunityToolkit/Windows/blob/main/components/SettingsControls/samples/SettingsPageExample.xaml).
 
 ![layout for app settings page on desktop](images/appsettings-layout-navpane-desktop.png)
 
+### SettingsCard
 
-## "Color mode" settings
+Use a [SettingsCard](/dotnet/communitytoolkit/windows/settingscontrols/settingscard) for individual settings. Each card has a **Header**, an optional **Description**, an optional **HeaderIcon**, and an action control (such as a `ToggleSwitch`, `ComboBox`, or `Button`) placed as the card's content. Setting the `IsClickEnabled` property to `true` makes the entire card clickable, which is useful for navigation-style entries.
 
+### SettingsExpander
 
-If your app allows users to choose the app's color mode, present these options using [radio buttons](../controls/radio-button.md) or a [combo box](../controls/combo-box.md) with the header "Choose an app mode". The options should read
+Use a [SettingsExpander](/dotnet/communitytoolkit/windows/settingscontrols/settingsexpander) when a setting has sub-options that should be revealed on demand. The expander shows a primary action control on the header row and additional `SettingsCard` items inside the `Items` collection. This keeps the page compact while still surfacing advanced options. Avoid nesting expanders deeper than one level.
+
+## App theme settings
+
+If your app allows users to choose the app's color mode, present these options using a [combo box](../controls/combo-box.md) inside a `SettingsCard`. The options should read:
+
 - Light
 - Dark
-- Windows default
+- Use system setting
 
-We also recommend adding a hyperlink to the Colors page of Windows Settings where users can access and modify the current default app mode. Use the string "Windows color settings" for the hyperlink text and `ms-settings:colors` for the URI.
+You may also want to add a hyperlink to the Colors page of Windows Settings where users can access and modify the current default app mode. Use the string "Windows color settings" for the hyperlink text and `ms-settings:colors` for the URI.
 
 !["Choose a mode" section](images/appsettings_mode.png)
 
-<!--
-<div class="microsoft-internal-note">
-Detailed redlines showing preferred text strings for the "Choose a mode" section are available on [UNI](https://uni/DesignDepot.FrontEnd/#/ProductNav/2543/0/dv/?t=Windows%7CControls%7CColorMode&f=RS2).
-</div>
--->
+## About section
 
-## About section and Feedback button
+We recommend placing an **About** section at the bottom of your settings page using a `SettingsExpander`. The collapsed header row should show your app name, icon, and version number. The expanded area can include:
 
-
-We recommend placing  "About this App" section in your app either as a dedicated page or in its own section. If you want a "Send Feedback" button, place that toward the bottom of the "About this App" page.
-
-Under a "Legal" subheader, place any "Terms of Use" and "Privacy Statement" (should be [hyperlink buttons](../controls/hyperlinks.md) with wrapping text) as well as additional legal information, such as copyright.
+- A link to your app's repository or website.
+- A link to file bugs or request features.
+- A list of dependencies and references as [HyperlinkButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton) controls.
+- Legal information such as a copyright notice, Terms of Use, and Privacy Statement links.
 
 !["about this app" section with "give feedback" button](images/appsettings-about.png)
 
-
 ## Recommended page content
-
 
 Once you have a list of items that you want to include in your app settings page, consider these guidelines:
 
-- Group similar or related settings under one settings label.
+- Group similar or related settings under one section header.
 - Try to keep the total number of settings to a maximum of four or five.
-- Display the same settings regardless of the app context. If some settings aren't relevant in a certain context, disable those in the app settings flyout.
-- Use descriptive, one-word labels for settings. For example, name the setting "Accounts" instead of "Account settings" for account-related settings. If you only want one option for your settings and the settings don't lend themselves to a descriptive label, use "Options" or "Defaults."
-- If a setting directly links to the web instead of to a flyout, let the user know this with a visual clue, such as "Help (online)" or "Web forums" styled as a [hyperlink](../controls/hyperlinks.md). Consider grouping multiple links to the web into a flyout with a single setting. For example, an "About" setting could open a flyout with links to your terms of use, privacy policy, and app support.
-- Combine less-used settings into a single entry so that more common settings can each have their own entry. Put content or links that only contain information in an "About" setting.
-- Don't duplicate the functionality in the "Permissions" pane. Windows provides this pane by default and you can't modify it.
-
-- Add settings content to Settings flyouts
-- Present content from top to bottom in a single column, scrollable if necessary. Limit scrolling to a maximum of twice the screen height.
+- Display the same settings regardless of the app context. If some settings aren't relevant in a certain context, disable the `SettingsCard` by setting `IsEnabled` to `false`.
+- Use descriptive, one-word labels for settings headers. For example, name the setting "Accounts" instead of "Account settings" for account-related settings.
+- If a setting directly links to the web, use a clickable `SettingsCard` with `IsClickEnabled="True"` and an appropriate action icon to indicate external navigation.
+- Combine less-used settings into a `SettingsExpander` so that common settings can each have their own `SettingsCard`. Put content or links that only contain information in an "About" section.
+- Present content from top to bottom in a single column, scrollable if necessary.
 - Use the following controls for app settings:
 
     - [Toggle switches](../controls/toggles.md): To let users set values on or off.
     - [Radio buttons](../controls/radio-button.md): To let users choose one item from a set of up to 5 mutually exclusive, related options.
-    - [Text input box](../controls/text-block.md): To let users enter text. Use the type of text input box that corresponds to the type of text you're getting from the user, such as an email or password.
-    - [Hyperlinks](../controls/hyperlinks.md): To take the user to another page within the app or to an external website. When a user clicks a hyperlink, the Settings flyout will be dismissed.
-    - [Buttons](../controls/buttons.md): To let users initiate an immediate action without dismissing the current Settings flyout.
-- Add a descriptive message if one of the controls is disabled. Place this message above the disabled control.
-- Animate content and controls as a single block after the Settings flyout and header have animated. Animate content using the [**enterPage**](/previous-versions/windows/apps/br212672(v=win.10)) or [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition) animations with a 100px left offset.
-- Use section headers, paragraphs, and labels to aid organize and clarify content, if necessary.
-- If you need to repeat settings, use an additional level of UI or an expand/collapse model, but avoid hierarchies deeper than two levels. For example, a weather app that provides per-city settings could list the cities and let the user tap on the city to either open a new flyout or expand to show the settings options.
-- If loading controls or web content takes time, use an indeterminate progress control to indicate to users that info is loading. For more info, see [Guidelines for progress controls](../controls/progress-controls.md).
-- Don't use buttons for navigation or to commit changes. Use hyperlinks to navigate to other pages, and instead of using a button to commit changes, automatically save changes to app settings when a user dismisses the Settings flyout.
-
-
+    - [Combo boxes](../controls/combo-box.md): To let users choose from a set of options in a compact dropdown.
+    - [Text input boxes](../controls/text-box.md): To let users enter text. Use the type of text input box that corresponds to the type of text you're getting from the user, such as an email or password.
+    - [Hyperlinks](../controls/hyperlinks.md): To take the user to another page within the app or to an external website.
+    - [Buttons](../controls/buttons.md): To let users initiate an immediate action.
+- Add a descriptive message if one of the controls is disabled. Use the `Description` property of `SettingsCard` to explain why the setting is unavailable.
+- When a user changes a setting, the app should immediately reflect the change — don't require a confirmation button.
 
 ## Related articles
 
+* [SettingsCard and SettingsExpander (Windows Community Toolkit)](/dotnet/communitytoolkit/windows/settingscontrols/settingscard)
 * [Command design basics](../basics/commanding-basics.md)
 * [Guidelines for progress controls](../controls/progress-controls.md)
-* [Store and retrieve app data](./store-and-retrieve-app-data.md)
-* [**EntranceThemeTransition**](/uwp/api/Windows.UI.Xaml.Media.Animation.EntranceThemeTransition)
+* [Store and retrieve app data](../../develop/data/store-and-retrieve-app-data.md)

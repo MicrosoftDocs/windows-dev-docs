@@ -1,7 +1,7 @@
 ---
 title: Run PowerToys in Administrator Mode on Windows
 description: Learn how to run PowerToys in administrator mode to ensure compatibility with elevated apps on Windows. Fix FancyZones and other utilities when they don't work with admin applications.
-ms.date: 11/19/2024
+ms.date: 04/15/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones]
@@ -55,7 +55,6 @@ Admin mode permissions may be required in the following scenarios:
   - Write keys to the registry
 - Shortcut guide
   - Display shortcut
-- Video Conference Mute
 
 > [!NOTE]
 > Each PowerToys utility has information in its Settings page about whether it requires admin mode and when it's required.
@@ -68,10 +67,10 @@ The simplest way to run an app or program in administrative mode is to right-cli
 
 If you see this User Account Control prompt, the application is requesting administrator level elevated permission:
 
-:::image type="content" source="../images/pt-admin-prompt.png" alt-text="Screenshot of Windows User Account Control prompt requesting administrator permissions for PowerToys.":::
+:::image type="content" source="images/administrator/admin-prompt.png" alt-text="Screenshot of Windows User Account Control prompt requesting administrator permissions for PowerToys.":::
 
 In the case of an elevated command line, typically the text "Administrator" will be included in the title bar.
 
-:::image type="content" source="../images/pt-admin-terminal.png" alt-text="Screenshot of Windows PowerShell and Command Prompt running with administrator permissions showing elevated status in title bar.":::
+:::image type="content" source="images/administrator/admin-terminal.png" alt-text="Screenshot of Windows PowerShell and Command Prompt running with administrator permissions showing elevated status in title bar.":::
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

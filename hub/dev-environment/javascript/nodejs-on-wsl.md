@@ -40,11 +40,11 @@ Besides choosing whether to install on Windows or WSL, there are additional choi
 For the most current information on installing NVM, see [Installing and Updating in the NVM repo on GitHub](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating).
 
 1. Open your Ubuntu command line (or distribution of your choice).
-1. Install cURL (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
+1. Install curl (a tool used for downloading content from the internet in the command-line) with: `sudo apt-get install curl`
 1. Install nvm, with: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash`
 
     > [!NOTE]
-    > Installing a newer version of NVM using cURL will replace the older one, leaving the version of Node you've used NVM to install intact. For more information, see the [GitHub project page for the latest release information on NVM](https://github.com/nvm-sh/nvm).
+    > Installing a newer version of NVM using curl will replace the older one, leaving the version of Node you've used NVM to install intact. For more information, see the [GitHub project page for the latest release information on NVM](https://github.com/nvm-sh/nvm).
 
 1. To verify installation, enter: `command -v nvm` ...this should return 'nvm', if you receive 'command not found' or no response at all, close your current terminal, reopen it, and try again. [Learn more in the nvm github repo](https://github.com/nvm-sh/nvm).
 1. List which versions of Node are currently installed (should be none at this point): `nvm ls`
@@ -86,13 +86,13 @@ We recommend using Visual Studio Code with the [Remote-development extension pac
 - Your project will automatically build in Linux.
 - You can use all your extensions running on Linux ([ES Lint, NPM Intellisense, ES6 snippets, etc.](https://marketplace.visualstudio.com/items?itemName=waderyan.nodejs-extension-pack)).
 
-Other code editors, like IntelliJ, Sublime Text, Brackets, etc. will also work with a WSL 2 Node.js development environment, but may not have the same sort of remote  features that VS Code offers. These code editors may run into trouble accessing the WSL shared network location (\\wsl$\Ubuntu\home\) and will try to build your Linux files using Windows tools, which likely is not what you want. The Remote-WSL Extension in VS Code handles this compatibility for you, with other IDEs you may need to set up an X server. [Support for running GUI apps in WSL](https://twitter.com/craigaloewen/status/1308452901266751488?lang=en) (like a code editor IDE) is coming soon.
+Other code editors, like IntelliJ, Sublime Text, Brackets, etc. will also work with a WSL 2 Node.js development environment, but may not have the same sort of remote  features that VS Code offers. These code editors may run into trouble accessing the WSL shared network location (\\wsl$\Ubuntu\home\) and will try to build your Linux files using Windows tools, which likely is not what you want. The Remote-WSL Extension in VS Code handles this compatibility for you, with other IDEs you may need to set up an X server.
 
 Terminal-based text editors (vim, emacs, nano) are also helpful for making quick changes from right inside your console. The article, [Emacs, Nano, or Vim: Choose your Terminal-Based Text Editor Wisely](https://medium.com/linode-cube/emacs-nano-or-vim-choose-your-terminal-based-text-editor-wisely-8f3826c92a68) does a nice job explaining some differences and a bit about how to use each.
 
 To install VS Code and the Remote-WSL Extension:
 
-1. [Download and install VS Code for Windows](https://code.visualstudio.com). VS Code is also available for Linux, but Windows Subsystem for Linux does not support GUI apps, so we need to install it on Windows. Not to worry, you'll still be able to integrate with your Linux command line and tools using the Remote - WSL Extension.
+1. [Download and install VS Code for Windows](https://code.visualstudio.com). VS Code is also available for Linux, but installing it on Windows with the Remote-WSL extension provides the best integrated development experience. Not to worry, you'll still be able to integrate with your Linux command line and tools using the Remote - WSL Extension.
 
 2. Install the [Remote - WSL Extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) on VS Code. This allows you to use WSL as your integrated development environment and will handle compatibility and pathing for you. [Learn more](https://code.visualstudio.com/docs/remote/remote-overview).
 

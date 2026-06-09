@@ -6,7 +6,7 @@ ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Manage submission options
+# Manage submission options for PWAs
 
 The **Submission options** page of the app submission process is where you can provide more information to help us test your product properly. This is an optional step, but is recommended for many submissions. You can also optionally set publishing hold options if you want to delay the publishing process.
 
@@ -71,40 +71,3 @@ When considering what to write, remember:
 - **Be succinct and keep instructions simple.** If you really need to explain something in detail, you can include the URL to a page with more info. However, keep in mind that customers of your app won't see these notes. If you feel that you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers (and testers) will know how to use it.
 
 - **Services and external components must be online and available.** If your app needs to connect to a service in order to function, make sure that the service will be online and available. Include any information about the service that testers will need, such as login info. If your app can't connect to a service it needs during testing, it may fail certification.
-
-## App submission controls
-
-Submission controls let you manage your app submission more easily. You can delete a draft submission, cancel a review process, or make your app unavailable.
-
-### Delete draft submissions and apps
-
-To delete a draft submission, follow these steps:
-
-1. Go to the Apps and Games overview page and open the app you want to delete. You can only delete an app that is not submitted or live on the Store.
-1. From the **Product submission** (or product update card in case of an update submission) card, click **Delete submission**.
-1. Confirm that you want to delete the app submission and all its information.
-
-If there are no remaining draft submissions, you can delete your app.
-
-1. Go to the app overview page for the app you want to delete.
-1. Beside the app name click on 3 dots and then click **Delete product**.
-1. Confirm that you want to delete the app.
-
-### Cancel certification
-
-To cancel certification, follow these steps:
-
-1. Go to the Apps and Games overview page and open the app you submitted for review or certification.
-1. Navigate to the Application overview page for your app.
-1. From the **Certification status** card under Product release section, click on 3 dots on the far right side and then click on **Cancel certification**.
-1. Confirm that you want to cancel the review process.
-
-### Make product available or unavailable
-
-To make your app unavailable without deleting it from the store, follow the following steps.
-
-1. Go to the Apps and Games overview page and open the app you want to make unavailable.
-1. From the Store presence card under Product release section, turn off the toggle switch to make product unavailable.
-1. Confirm that you want to make your app unavailable.
-
-To make your app available again, perform the same steps as above, but turn on the toggle switch instead.

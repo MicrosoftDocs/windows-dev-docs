@@ -55,13 +55,13 @@ For additional information about how to apply color in your Windows app, please 
 
 ### Light and Dark theme colors
 
-The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI 2, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/winui2/main/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
+The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/main/src/controls/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
 
 > [!TIP]
 > [!div class="nextstepaction"]
 > For a visual overview of these colors, see the WinUI 3 Gallery app: [Colors](winui3gallery://item/Colors)
 
-> The **WinUI 3 Gallery** app includes interactive examples of most WinUI 3 controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
+> The **WinUI 3 Gallery** app includes interactive examples of most WinUI controls, features, and functionality. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery)
 
 ### Windows system contrast theme colors
 
@@ -106,22 +106,24 @@ The styles look like this when applied to a [TextBlock](/windows/windows-app-sdk
 
 ![text block styles](images/text-block-type-ramp.svg)
 
-| Style      | Weight  | Size |
-|------------|---------|------|
-|Caption     |Regular  |    12|
-|Body        |Regular  |    14|
-|Body Strong |Semibold |    14|
-|Body Large  |Regular  |    18|
-|Subtitle    |Semibold |    20|
-|Title       |Semibold |    28|
-|Title Large |Semibold |    40|
-|Display     |Semibold |    68|
+| Style            | Weight  | Size |
+|------------------|---------|------|
+|Caption           |Regular  |    12|
+|Body              |Regular  |    14|
+|Body Strong       |Semibold |    14|
+|Body Large        |Regular  |    18|
+|Body Large Strong |Semibold |    18|
+|Subtitle          |Semibold |    20|
+|Title             |Semibold |    28|
+|Title Large       |Semibold |    40|
+|Display           |Semibold |    68|
 
 ```xaml
 <TextBlock Text="Caption" Style="{StaticResource CaptionTextBlockStyle}"/>
 <TextBlock Text="Body" Style="{StaticResource BodyTextBlockStyle}"/>
 <TextBlock Text="Body Strong" Style="{StaticResource BodyStrongTextBlockStyle}"/>
 <TextBlock Text="Body Large" Style="{StaticResource BodyLargeTextBlockStyle}"/>
+<TextBlock Text="Body Large Strong" Style="{StaticResource BodyLargeStrongTextBlockStyle}"/>
 <TextBlock Text="Subtitle" Style="{StaticResource SubtitleTextBlockStyle}"/>
 <TextBlock Text="Title" Style="{StaticResource TitleTextBlockStyle}"/>
 <TextBlock Text="Title Large" Style="{StaticResource TitleLargeTextBlockStyle}"/>
@@ -132,14 +134,15 @@ For guidance on how to use the Windows type ramp in your app, see [Typography in
 
 For details of the XAML styles, see WinUI on GitHub:
 
-- [Caption TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L21)
-- [Body TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L27)
-- [Body Strong TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L33)
- <!--- [Body Large TextBlockStyle]()-->
-- [Subtitle TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L37)
-- [Title TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L42)
-- [Title Large TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L47)
-- [Display TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/cb181acede22577c59c5dc250361d3340252f4e9/dev/CommonStyles/TextBlock_themeresources.xaml#L52)
+- [Caption TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L19)
+- [Body TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L23)
+- [Body Strong TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L26)
+- [Body Large TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L27)
+- [Body Large Strong TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L32)
+- [Subtitle TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L36)
+- [Title TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L40)
+- [Title Large TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L44)
+- [Display TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L48)
 
 > [!TIP]
 > [!div class="nextstepaction"]
@@ -159,7 +162,7 @@ Supplies the common properties for all the other [RichTextBlock](/windows/window
 
 <!-- Style definition -->
 <Style x:Key="BaseRichTextBlockStyle" TargetType="RichTextBlock">
-    <Setter Property="FontFamily" Value="Segoe UI"/>
+    <Setter Property="FontFamily" Value="Segoe UI Variable"/>
     <Setter Property="FontWeight" Value="SemiBold"/>
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="TextTrimming" Value="None"/>

@@ -1,7 +1,8 @@
 ---
 title: list Command
 description: Displays the list of listed apps and if an update is available.
-ms.date: 07/15/2025
+ms.date: 03/24/2026
+no-loc: [winget, list]
 ms.topic: overview
 ---
 
@@ -17,7 +18,7 @@ The **list** command also supports filters which can be used to limit your list 
 
 The following aliases are available for this command:
 
-- ls
+- `ls`
 
 ## Usage
 
@@ -60,6 +61,7 @@ The options allow you to customize the list experience to meet your needs.
 | **--upgrade-available** | Lists only packages which have an upgrade available. |
 | **-u, --unknown, --include-unknown** | Lists packages even if their current version cannot be determined. |
 | **--pinned, --include-pinned** | Lists packages even if they have a pin that prevents upgrades by WinGet. |
+| **--details** | Displays detailed, `show`-like output for each matched package instead of a table view. |
 | **-?, --help** |  Get additional help on this command. |
 | **--wait** | Prompts the user to press any key before exiting. |
 | **--logs,--open-logs** | Open the default logs location. |
@@ -94,5 +96,11 @@ In the image below, you will notice applications with an upgrade available.
 The **list** command will show not only the update version available, but the source that the update is available from.
 
 If there are no updates available, **list** will only show you the currently installed version and the update column will not be displayed.
+
+## List with details
+
+The following example lists details for an installed application by its identifier.
+
+:::image type="content" source="./images/list-details.png" alt-text="Screenshot listing winget winget list --id Microsoft.VisualStudioCode --details to display details about the installed application" lightbox="./images/list-details.png":::
 
 * [Use the winget tool to list and manage applications](index.md)

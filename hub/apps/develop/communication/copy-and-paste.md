@@ -10,12 +10,13 @@ ms.localizationpriority: medium
 
 # Copy and paste
 
-Copy and paste is a fundamental way for users to exchange data between apps or within an app. This article shows you how to implement copy and paste in WinUI and Universal Windows Platform (UWP) apps using the clipboard APIs. You'll learn how to copy, cut, and paste data, track clipboard changes, and use the [DataPackage](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) class to handle different data formats.
+Copy and paste is a fundamental way for users to exchange data between apps or within an app. This article shows you how to implement copy and paste in WinUI apps using the clipboard APIs. You'll learn how to copy, cut, and paste data, track clipboard changes, and use the [DataPackage](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) class to handle different data formats.
 
 > [!NOTE]
 > You can also use these APIs in other desktop apps through Windows Runtime (WinRT) APIs. For more information, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
-For complete code examples that demonstrate different copy and paste scenarios, see the [UWP clipboard sample on GitHub](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard).
+> [!div class="nextstepaction"]
+> [Open the WinUI Gallery app and see Clipboard samples](winui3gallery://item/Clipboard)
 
 ## Check for built-in clipboard support
 
@@ -154,7 +155,7 @@ Clipboard.ContentChanged += async (s, e) =>
         // To output the text from this example, you need a TextBlock control
         TextOutput.Text = "Clipboard now contains: " + text;
     }
-}
+};
 ```
 ### [C++/WinRT](#tab/cppwinrt)
 

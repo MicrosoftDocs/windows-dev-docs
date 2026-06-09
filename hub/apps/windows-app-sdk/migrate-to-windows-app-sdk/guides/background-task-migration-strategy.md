@@ -2,7 +2,7 @@
 title: Background task migration strategy
 description: Considerations for approaching the migration process and how to migrate your UWP background tasks to use the Windows App SDK BackgroundTaskBuilder.
 ms.topic: concept-article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 # customer intent: As a Windows developer, I want to learn about the considerations and strategies for migrating my UWP background tasks to use the Windows App SDK background task APIs.
@@ -20,21 +20,22 @@ In the case of out-of-proc background tasks in UWP, background tasks will be wri
 
 If the application needs to run a background task in a medium IL process itself, the full trust COM component needs to be used for background tasks. In that scenario, developers must use the Windows App SDK [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) to register the full trust COM component. Note that the [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API from the **Windows.ApplicationModel.Background** namespace will throw exceptions while registering of some of the triggers.
 
-A full WinUI 3 background task registration sample can be found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/BackgroundTask).
+A full WinUI background task registration sample can be found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/BackgroundTask).
 
-More details on the implementation are available [here](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task). The only required change would be to replace the WinRT [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API with the Windows App SDK API [Microsoft.Windows.ApplicationModel.Background.BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder).
+More details on the implementation are available in [Create and register a Win32 background task](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task). The only required change would be to replace the WinRT [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API with the Windows App SDK API [Microsoft.Windows.ApplicationModel.Background.BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder). For registration code examples, see the [Windows App SDK BackgroundTaskBuilder API](#windows-app-sdk-backgroundtaskbuilder-api) section below.
 
 ## In-proc background tasks
 
-For in-proc background tasks in UWP, background task routines are implemented in the [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated) callback which runs as part of the foreground process. This won't be possible in a WinUI 3 application as the **OnBackgroundActivated** callbacks aren't available. The application needs to move the background task implementations to full trust COM tasks as described above and define the COM server in the package manifest to handle the COM activation of the task. When the trigger occurs, COM activation will happen on the corresponding [COM Coclass](/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory) registered for the trigger.
+For in-proc background tasks in UWP, background task routines are implemented in the [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated) callback which runs as part of the foreground process. This won't be possible in a WinUI application as the **OnBackgroundActivated** callbacks aren't available. The application needs to move the background task implementations to full trust COM tasks as described above and define the COM server in the package manifest to handle the COM activation of the task. When the trigger occurs, COM activation will happen on the corresponding [COM Coclass](/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory) registered for the trigger.
 
-A full WinUI 3 background task registration sample can be found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/release/experimental/Samples/BackgroundTask).
+A full WinUI background task registration sample can be found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/BackgroundTask).
 
-More details on the implementation are available [here](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task). The only change would be to replace the WinRT [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API with the Windows App SDK APIs in [Microsoft.Windows.ApplicationModel.Background.BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder).
+More details on the implementation are available in [Create and register a Win32 background task](/windows/uwp/launch-resume/create-and-register-a-winmain-background-task). The only change would be to replace the WinRT [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API with the Windows App SDK APIs in [Microsoft.Windows.ApplicationModel.Background.BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder).
 
 ## Windows App SDK BackgroundTaskBuilder API
 
-This Windows App SDK **BackgroundTaskBuilder** API is created to support the full trust COM background task implementations in WinUI 3 and other desktop applications that use Windows App SDK, as the WinRT API throws exceptions during registration except for a few triggers.
+There are two different versions of the **BackgroundTaskBuilder** API. The [Windows.ApplicationModel.BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) API was designed for UWP applications, and many of the background task triggers are not supported for full trust COM Components. They are supported only when registered with WinRT components that are launched with a `backgroundtaskhost` process. Due to this, Windows App SDK desktop applications can't directly register the full trust COM components to be launched with background task triggers. They require a workaround of including the WinRT components in the project. The [Microsoft.Windows.ApplicationModel.BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) API included in the Windows App SDK avoids this workaround so WinUI 3 and other desktop applications that use Windows App SDK can register the full trust COM components directly with background tasks.
+
 
 The following code shows how to register background task using Windows App SDK [BackgroundTaskBuilder](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.background.backgroundtaskbuilder) APIs:
 
@@ -90,7 +91,7 @@ For C# applications, an **ActivatableClass** registration should also be added t
 
 ## Leveraging TaskScheduler for background task migration
 
-[Task Scheduler](/windows/win32/api/_taskschd/) helps desktop apps achieve the same functionality that is provided by [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) in UWP apps. More details on implementations using **TaskScheduler** are available [here](/windows/win32/api/taskschd/).
+[Task Scheduler](/windows/win32/api/_taskschd/) helps desktop apps achieve the same functionality that is provided by [BackgroundTaskBuilder](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder) in UWP apps. More details on implementations using **TaskScheduler** are available in the [Task Scheduler API reference](/windows/win32/api/taskschd/).
 
 ## ApplicationTrigger use in Windows App SDK applications
 

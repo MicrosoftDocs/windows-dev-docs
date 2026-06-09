@@ -16,7 +16,7 @@ This portion of the tutorial adds a new page to the app, a view that displays al
 Currently the **note** view displays a single note. To display all your saved notes, create a new view and model: **AllNotes**.
 
 01. In the **Solution Explorer** pane, right-click on the **:::no-loc text="Views":::** folder and select **Add** > **New Item...**
-01. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI 3)** template. Name the file _AllNotesPage.xaml_ and press **Add**.
+01. In the **Add New Item** dialog, select **WinUI** in the template list on the left-side of the window. Next, select the **Blank Page (WinUI)** template. Name the file _AllNotesPage.xaml_ and press **Add**.
 01. In the **Solution Explorer** pane, right-click on the **:::no-loc text="Models":::** folder and select **Add** > **Class...**
 01. Name the class _AllNotes.cs_ and press **Add**.
 
@@ -89,6 +89,9 @@ The new data model represents the data required to display multiple notes. Here,
 
 The previous code declares a collection of `Note` items, named `Notes`, and uses the `LoadNotes` method to load notes from the app's local storage.
 
+> [!NOTE]
+> The `LoadNotes` method uses `async void` instead of `async Task` because it's called from the constructor, which cannot be `async`. This fire-and-forget pattern is acceptable here since the method is an event-like initialization routine.
+
 The `Notes` collection uses an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1), which is a specialized collection that works well with data binding. When a control that lists multiple items, such as an [ItemsView](../../design/controls/itemsview.md), is bound to an `ObservableCollection`, the two work together to automatically keep the list of items in sync with the collection. If an item is added to the collection, the control is automatically updated with the new item. If an item is added to the list, the collection is updated.
 
  :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
@@ -100,6 +103,9 @@ Now that the `AllNotes` model is ready to provide data for the view, you need to
 
 1. In the **Solution Explorer** pane, open the **Views\AllNotesPage.xaml.cs** file.
 1. In the `AllNotesPage` class, add this code to create an `AllNotes` model named _notesModel_:
+
+    > [!NOTE]
+    > You'll need to add `using WinUINotes.Models;` at the top of the file to reference the `AllNotes` class.
 
     ```csharp
     public sealed partial class AllNotesPage : Page
@@ -170,7 +176,7 @@ If you run the app now, you'll see that the note you created previously is loade
 
 ### Add a data template
 
-You need to specify a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) to tell the `ItemsView` how your data item should be shown. The `DataTemplate` is assigned to the [ItemsTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemtemplate) property of the `ItemsView`. For each item in the collection, the `ItemsView.ItemTemplate` generates the declared XAML.
+You need to specify a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) to tell the `ItemsView` how your data item should be shown. The `DataTemplate` is assigned to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemtemplate) property of the `ItemsView`. For each item in the collection, the `ItemsView.ItemTemplate` generates the declared XAML.
 
 1. In the **Solution Explorer** pane, double-click on the **AllNotesPage.xaml** entry to open it in the XAML editor.
 1. Add this new namespace mapping on the line below the mapping for `local`:
@@ -219,7 +225,7 @@ You need to specify a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsof
     </Page.Resources>
     ```
 
-1. In the XAML for `ItemsView`, assign the `ItemTemplate` property to the data template you just created:
+1. In the XAML for `ItemsView`, change `Padding="16"` to `Margin="24"` and assign the `ItemTemplate` property to the data template you just created:
 
     ```xaml
     <ItemsView ItemsSource="{x:Bind notesModel.Notes}"
@@ -240,7 +246,7 @@ However, if your Windows Personalization > Colors settings use the Dark mode, it
 
 :::image type="content" source="media/all-notes/itemsview-with-template-dark.png" alt-text="The notes app UI with a dark background but light gray note template.":::
 
-This is not the intended look for the app. It happened because there are hard-coded color values in the data template for the note. By default, WinUI elements adapt to the user's Dark or Light color preference. When you define you own elements, like a data template, you need to be careful to do the same.
+This is not the intended look for the app. It happened because there are hard-coded color values in the data template for the note. By default, WinUI 3 elements adapt to the user's Dark or Light color preference. When you define you own elements, like a data template, you need to be careful to do the same.
 
 When you define a resource in a XAML `ResourceDictionary`, you have to assign an `x:Key` value to identify the resource. Then, you can use that `x:Key` to retrieve the resource in XAML using the `{StaticResource}` markup extension or `{ThemeResource}` markup extension.
 

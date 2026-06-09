@@ -1,15 +1,15 @@
 ---
-description: Learn how to use camera profiles to support specific resolutions, frame rates, simultaneous access to multiple cameras, and and HDR in a WinUI 3 app.
+description: Learn how to use camera profiles to support specific resolutions, frame rates, simultaneous access to multiple cameras, and and HDR in a WinUI app.
 title: Discover and select camera capabilities with camera profiles
 ms.date: 08/13/2024
 ms.topic: article
 keywords: windows 10, windows 11, winui3, camera
 ms.localizationpriority: medium
-#customer intent: As a developer, I want to use camera profiles to select camera capabilities with MediaCapture in a Windows app using WinUI 3.
+#customer intent: As a developer, I want to use camera profiles to select camera capabilities with MediaCapture in a Windows app using WinUI.
 ---
 
 
-# Discover and select camera capabilities with camera profiles in a WinUI 3 app
+# Discover and select camera capabilities with camera profiles in a WinUI app
 
 This article shows how to use camera profiles to discover and manage the capabilities of different video capture devices. This includes tasks such as selecting profiles that support specific resolutions or frame rates, profiles that support simultaneous access to multiple cameras, and profiles that support HDR.
 

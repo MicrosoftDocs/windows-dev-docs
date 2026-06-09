@@ -1,7 +1,7 @@
 ---
 title: Author Windows Runtime components with C#/WinRT
 description: Overview of authoring Windows Runtime Components with C#/WinRT 
-ms.date: 03/15/2022
+ms.date: 04/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 > [!NOTE]
 > Authoring Windows Runtime components with C#/WinRT is supported on .NET 6 and later.
 
-The C#/WinRT NuGet package provides support for authoring your own Windows Runtime types and components in C#, and consuming them from any Windows Runtime-compatible language such as [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) or [Rust](../../../../dev-environment/rust/rust-for-windows.md). C#/WinRT authoring and hosting support requires .NET 6 and Visual Studio 2022, and it is intended to support desktop application scenarios including the [Windows App SDK](../../../windows-app-sdk/index.md), and [WinUI3](../../../winui/winui3/index.md).
+The C#/WinRT NuGet package provides support for authoring your own Windows Runtime types and components in C#, and consuming them from any Windows Runtime-compatible language such as [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) or [Rust](../../../../dev-environment/rust/rust-for-windows.md). C#/WinRT authoring and hosting support requires .NET 6 or later and Visual Studio 2022 or later, and it is intended to support desktop application scenarios including the [Windows App SDK](../../../windows-app-sdk/index.md), and [WinUI3](../../../winui/winui3/index.md).
 
-For a walkthrough showing how to author a Windows Runtime component with .NET 6, and how to consume it from a C++/WinRT console application, see [Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT](./create-windows-runtime-component-cswinrt.md).
+For a walkthrough showing how to author a Windows Runtime component with .NET 6 or later, and how to consume it from a C++/WinRT console application, see [Walkthrough: Create a C#/WinRT component and consume it from C++/WinRT](./create-windows-runtime-component-cswinrt.md).
 
-For more details, and to search for or file any issues, refer to the [C#/WinRT Github repo](https://github.com/microsoft/CsWinRT) and [Authoring C#/WinRT Components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
+For more details, and to search for or file any issues, refer to the [C#/WinRT GitHub repo](https://github.com/microsoft/CsWinRT) and [Authoring C#/WinRT Components](https://github.com/microsoft/CsWinRT/blob/master/docs/authoring.md).
 
 ## Declaring types in Windows Runtime components
 

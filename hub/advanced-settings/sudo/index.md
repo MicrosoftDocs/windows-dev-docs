@@ -9,7 +9,7 @@ no-loc: [Gerardo Grignoli]
 
 # Sudo for Windows
 
-**Sudo for Windows** is a new way for users to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
+**Sudo for Windows** is a way for users to run elevated commands (as an administrator) directly from an unelevated console session on Windows.
 
 [Read the announcement](https://devblogs.microsoft.com/commandline/introducing-sudo-for-windows/), which includes a demo video and deep-dive into how Sudo for Windows works.
 
@@ -17,12 +17,9 @@ no-loc: [Gerardo Grignoli]
 
 The Sudo for Windows command is available in [Windows 11, version 24H2](https://support.microsoft.com/topic/windows-11-version-24h2-update-history-0929c747-1815-4543-8461-0160d16f15e5) or higher. ([Check for Windows updates](ms-settings:windowsupdate)).
 
-> [!NOTE]
-> Sudo for Windows is not yet available for Windows 10, but may be in the future.
-
 ## How to enable Sudo for Windows
 
-To enable Sudo for Windows, open `Settings > System > For Developers` and set **Enable sudo** to **On**.
+To enable Sudo for Windows, open **[System > Advanced](ms-settings:developers)** in Windows Settings and set **Enable sudo** to **On**.
 
 ![Enable Sudo](../../images/sudo-enable.png)
 
@@ -31,7 +28,7 @@ To enable Sudo for Windows, open `Settings > System > For Developers` and set **
 
 ## How to configure Sudo for Windows
 
-Sudo for Windows currently supports three different configuration options. The configuration can be set from the `Settings > For Developers` menu or programmatically, using the command line. The configuration options include:
+Sudo for Windows currently supports three different configuration options. The configuration can be set from the **[System > Advanced](ms-settings:developers)** menu or programmatically, using the command line. The configuration options include:
 
 - **In a new window** (`forceNewWindow`): The `forceNewWindow` configuration option is the default configuration option for Sudo for Windows. Use `sudo` in this configuration to run the command in a new window. This is similar to the behavior of the `runas /user:admin` command.
 
@@ -39,7 +36,7 @@ Sudo for Windows currently supports three different configuration options. The c
 
 - **Inline** (`normal`): The `normal` configuration option is most similar to how sudo behaves on other operating systems. This configuration will run the elevated process in the current window and the process will be able to receive input from the current console session. This is useful for scenarios where you want to run a command as an administrator and want to allow the command to receive input from the current console window. This configuration option provides the most convenience, but you should only choose this option if you are familiar with the associated [security risks](#security-considerations).
 
-You can select among these configurations from the `Settings > For Developers` menu or change the configuration programmatically, in an elevated command line (admin console), using:
+You can select among these configurations from the **[System > Advanced](ms-settings:developers)** menu or change the configuration programmatically, in an elevated command line (admin console), using:
 
 - `sudo config --enable <configuration_option>`
 
@@ -49,15 +46,26 @@ Update `<configuration_option>` to either `forceNewWindow`, `disableInput`, or `
 
 To use Sudo for Windows, simply prepend `sudo` to the command you want to run as an administrator. For example, to run `netstat -ab` as an administrator, you would run `sudo netstat -ab` in your console window.
 
+### Common developer scenarios
+
+Here are some common scenarios where developers might use sudo:
+
+- **Editing system files**: `sudo notepad C:\Windows\System32\drivers\etc\hosts`
+- **Installing packages globally**: `sudo npm install -g package-name`
+- **Running administrative tools**: `sudo diskpart`
+
+> [!NOTE]
+> For development work involving system directories like `C:\Windows\`, consider using development environments or alternative approaches when possible. Sudo should be used judiciously and only when elevated permissions are truly necessary.
+
 Because `sudo` elevates the targeted process to run with administrator-level permission, a prompt will open asking you to verify that you want to continue.
 
 ## Security Considerations
 
-There are risks associated with running sudo in the **Input closed** (`inputClosed`) or **Inline** (`normal`) configurations. It is possible for malicious processes to attempt to drive the elevated process using the connection established by the unelevated sudo.exe and the elevated sudo.exe process.
+There are risks associated with running sudo in the **Input closed** (`disableInput`) or **Inline** (`normal`) configurations. It is possible for malicious processes to attempt to drive the elevated process using the connection established by the unelevated sudo.exe and the elevated sudo.exe process.
 
-The `inputClosed` configuration option mitigates risk by closing the input handle. Disconnecting the input handle from the current console window means that unelevated processes cannot send input to the elevated process.
+The `disableInput` configuration option mitigates risk by closing the input handle. Disconnecting the input handle from the current console window means that unelevated processes cannot send input to the elevated process.
 
-The `inline` configuration option runs the elevated process in the current window and the process is able to receive input from the current console session. An unelevated process can send input to the elevated process within the same console windows or get information from the output in the current windows in this configuration.
+The `inline` configuration option runs the elevated process in the current window and the process is able to receive input from the current console session. An unelevated process can send input to the elevated process within the same console window or get information from the output in the current window in this configuration.
 
 ## FAQ
 
@@ -75,7 +83,7 @@ The `inline` configuration option runs the elevated process in the current windo
   
 - `sudo` can only be elevated via the User Account Control (UAC) security feature designed to protect the operating system from unauthorized changes using verification prompt.
   
-You should consider your particular use-case and plan to use the command that best meets your needs. You should also consider the security implications of running sudo in the `inputClosed` and `normal` modes. The default `forceNewWindow` configuration option is recommended unless you are familiar and comfortable with the risks associated with the other `sudo` configurations.
+You should consider your particular use-case and plan to use the command that best meets your needs. You should also consider the security implications of running sudo in the `disableInput` and `normal` modes. The default `forceNewWindow` configuration option is recommended unless you are familiar and comfortable with the risks associated with the other `sudo` configurations.
 
 ## Sudo for Windows open source repository
 

@@ -4,29 +4,29 @@ ms.assetid: 019CC63D-D915-4EBD-9442-DE899AB973C9
 title: Landmarks and Headings
 label: Landmarks and Headings
 template: detail.hbs
-ms.date: 12/22/2023
+ms.date: 03/17/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
 ---
 
 # Landmarks and Headings
 
-**Landmarks** and **headings** help users of assistive technology (AT) navigate a UI more efficiently by uniquely identifying different sections of a user interface.
+**Landmarks** and **headings** help assistive technologies expose a predictable navigation model for complex UI. When applied correctly, they let users move through major regions and then drill into subsection content without traversing every intermediate control.
 
 ## Overview
 
-A user interface is typically organized in a visually efficient way, allowing a sighted user to quickly skim for what interests them without having to slow down to read *all* the content. A screen reader user needs to have this same skimming ability. Marking content as landmarks and headings provides the user of a screen reader the option to skim content similar to the way a sighted user would.
+A visual layout usually allows sighted users to scan quickly and prioritize the content that matters to their current task. Screen reader users need an equivalent mechanism for rapid orientation and selective traversal. Landmarks and headings provide that mechanism by adding explicit structure to the automation representation of the UI.
 
-The concepts of [ARIA landmarks](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page), [ARIA headings](https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html), and [HTML headings](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42.html) have been used in web content for years to allow faster navigation by screen reader users. Web pages utilize landmarks and headings to make their content more usable by allowing the AT user to quickly get to the large chunk (landmark) and smaller chunk (heading).
+This model is consistent with long-established web accessibility patterns, including [ARIA landmarks](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page), [ARIA headings](https://www.w3.org/TR/WCAG20-TECHS/ARIA12.html), and [HTML headings](https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/H42.html). In each case, the goal is the same: provide navigable structure so users can jump to major regions (landmarks) and then to minor section boundaries (headings).
 
-Specifically, screen readers have commands allowing users to jump between landmarks and jump between headings (next/previous or specific heading level).
+Most screen readers expose dedicated commands for landmark navigation and heading navigation, including next/previous traversal and, where supported, filtering by heading level.
 
-Landmarks enable content to be grouped into various categories such as *search*, *navigation*, *main content*, and so on. Once grouped, the AT user can quickly navigate between the groups. This quick navigation allows the user to skip potentially substantial amounts of content that previously required navigation item by item.
+Landmarks let you group content into meaningful regions such as *search*, *navigation*, and *main content*. After those regions are identified, users can move directly between them instead of traversing control-by-control through unrelated content.
 
-For example, when using a tab panel, consider making it a *navigation* landmark. When using a search edit box, consider making it a *search* landmark, and consider setting your main content as a *main content* landmark.
+For example, a tabbed area is often best represented as a *navigation* landmark. A search input area is a good candidate for a *search* landmark, and the primary task surface should usually be exposed as a *main content* landmark.
 
-Whether within a landmark or even outside a landmark, consider annotating sub-elements as headings with logical heading levels.
+Within a landmark, and in some cases outside one, annotate sub-sections as headings using a logical level hierarchy. That hierarchy helps users build a mental model of scope and depth while they navigate.
 
 ## Windows Settings
 
@@ -34,24 +34,24 @@ The following image shows the **Ease of Access** page in a previous version of W
 
 ![Ease of Access page in Windows settings](images/ease-of-access-settings.png)  
 
-For this page, the search edit box is wrapped within a search landmark, the navigation elements on the left are wrapped within a navigation landmark, and the main content on the right is wrapped within a main content landmark.
+In this page layout, the search input is assigned to a search landmark, the left-side navigation is assigned to a navigation landmark, and the primary content pane on the right is assigned to a main-content landmark.
 
-Within the navigation landmark there is a main group heading called **Ease of Access** (heading level 1) with sub-options of **Vision**, **Hearing**, and so on (heading level 2). Within the main content, **Display** is set to heading level 1 with sub-groups such as **Make everything bigger** set to heading level 2.
+Inside the navigation landmark, **Ease of Access** serves as a top-level heading (level 1), with child categories such as **Vision** and **Hearing** represented at level 2. In the main-content region, **Display** can be level 1, with subsections such as **Make everything bigger** represented at level 2.
 
-Windows Settings would be accessible without landmarks and headings, but it becomes much more usable with them. In this case, a user with a screen reader can quickly get to the group (landmark) they're interested in, and from there they can then quickly get to the sub-group (heading).
+The page remains technically operable without landmarks and headings, but usability is substantially better when both are present. A screen reader user can first jump to the relevant region and then quickly navigate to the specific subsection they need.
 
 ## Usage
 
-Use [AutomationProperties.LandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LandmarkTypeProperty) to identify the [type of landmark](/windows/desktop/WinAuto/landmark-type-identifiers) for a UI element. This landmark UI element would then encapsulate all the other UI elements relevant to that landmark.
+Use [AutomationProperties.LandmarkTypeProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.LandmarkTypeProperty) to identify the [landmark type](/windows/desktop/WinAuto/landmark-type-identifiers) of a UI container. That container should encapsulate the set of elements that belong to the same navigational region.
 
-Use [AutomationProperties.LocalizedLandmarkTypeProperty](/uwp/api/windows.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) to name the landmark. If you select a predefined landmark type, such as main or navigation, these names will be used for the landmark name. However, if you set the landmark type to custom, you must name the landmark through this property (you can also use this property to override the default names from the pre-defined landmark types).
+Use [AutomationProperties.LocalizedLandmarkTypeProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.LocalizedLandmarkTypeProperty) to provide the landmark label announced to users. For predefined landmark types (for example, main or navigation), assistive technologies can use built-in naming conventions. For custom landmark types, you should set this property explicitly, and you can also use it to override default labels when a more task-specific name is helpful.
 
-Use [AutomationProperties.HeadingLevel](/uwp/api/windows.ui.xaml.automation.automationproperties.headinglevelproperty) to set the UI element as a heading of a specific level from *Level1* through *Level9*.
+Use [AutomationProperties.HeadingLevel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.headinglevelproperty) to mark an element as a heading and assign a level from *Level1* through *Level9*. Keep heading levels semantically consistent so users can infer section nesting and move through content predictably.
 
-Use the F6 key and handler to support navigation between landmarks, which is a common pattern in complex apps like File Explorer and Outlook. See [Keyboard navigation between application panes with F6](keyboard-accessibility.md#keyboard-navigation-between-application-panes-with-f6) for more guidance.
+Support F6-based pane traversal when your app contains multiple major regions. This is a familiar pattern in complex desktop applications such as File Explorer and Outlook, and it complements landmark and heading semantics by providing a keyboard-first region-jump mechanism. For implementation guidance, see [Keyboard navigation between application panes with F6](keyboard-accessibility.md#keyboard-navigation-between-application-panes-with-f6).
 
 ## Examples
 
-See the [Code samples for resolving common programmatic accessibility issues in Windows desktop apps](/accessibility-tools-docs/) to resolve many common programmatic accessibility issues in Windows desktop apps.
+See [Code samples for resolving common programmatic accessibility issues in Windows desktop apps](/accessibility-tools-docs/) for practical implementations that address recurring accessibility defects.
 
-These code samples are referenced directly by [Microsoft Accessibility Insights for Windows](https://github.com/microsoft/accessibility-insights-windows), which can help to identify accessibility issues in your app UI.
+These samples are also referenced by [Microsoft Accessibility Insights for Windows](https://github.com/microsoft/accessibility-insights-windows), which can help you detect and triage accessibility issues in your app UI.

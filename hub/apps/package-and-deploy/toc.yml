@@ -1,15 +1,29 @@
 items:
-    - name: Overview
+    - name: Build Windows apps
+      href: ../desktop/index.yml
+    - name: Package and deploy overview
       href: ../package-and-deploy/index.md
-    - name: App packaging
+    - name: Choose a distribution path
+      href: ../package-and-deploy/choose-distribution-path.md
+    - name: SmartScreen reputation for developers
+      href: ../package-and-deploy/smartscreen-reputation.md
+    - name: Current status of distribution features
+      href: ../package-and-deploy/distribution-feature-status.md
+    - name: Publish your first Windows app
+      href: ../package-and-deploy/publish-first-app.md
+    - name: Code signing options
+      href: ../package-and-deploy/code-signing-options.md
+    - name: MSIX on Windows 10 and Windows 11
+      href: ../package-and-deploy/msix-windows10-windows11.md
+    - name: Packaging
       items:
-        - name: Package identity overview
-          href: ../desktop/modernize/package-identity-overview.md
-        - name: "Windows apps: packaging, deployment, and process"
-          href: ../get-started/intro-pack-dep-proc.md
-        - name: Features that require package identity
+        - name: Overview
+          href: ../package-and-deploy/packaging/index.md
+        - name: Package identity
           items:
             - name: Overview
+              href: ../desktop/modernize/package-identity-overview.md
+            - name: Features that require package identity
               href: ../desktop/modernize/modernize-packaged-apps.md
             - name: Integrate with package extensions
               href: ../desktop/modernize/desktop-to-uwp-extensions.md
@@ -17,10 +31,10 @@ items:
               href: ../desktop/modernize/integrate-packaged-app-with-file-explorer.md
             - name: Get activation info for packaged apps
               href: ../desktop/modernize/get-activation-info-for-packaged-apps.md
-            - name: Extend with UWP components
-              href: ../desktop/modernize/desktop-to-uwp-extend.md
-            - name: Distribute your packaged app
-              href: ../desktop/modernize/desktop-to-uwp-distribute.md
+            - name: Use the Windows App SDK in an existing project
+              href: /windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project
+            - name: Package your app from source code overview
+              href: /windows/msix/desktop/source-code-overview
         - name: Package your app using single-project MSIX
           href: ../windows-app-sdk/single-project-msix.md
         - name: Grant package identity by packaging with external location
@@ -31,9 +45,13 @@ items:
               href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
             - name: Grant package identity by packaging with external location manually
               href: ../desktop/modernize/grant-identity-to-nonpackaged-apps.md
-    - name: Windows App SDK deployment guide
+        - name: "Windows apps: packaging, deployment, and process"
+          href: ../get-started/intro-pack-dep-proc.md    
+        - name: "Tutorial: Unpackage a WinUI app"
+          href: unpackage-winui-app.md
+    - name: Windows App SDK deployment
       items:
-        - name: Windows App SDK deployment overview
+        - name: Overview
           href: ../package-and-deploy/deploy-overview.md
         - name: Project properties
           href: ../package-and-deploy/project-properties.md
@@ -57,7 +75,5 @@ items:
               href: ../windows-app-sdk/remove-windows-app-sdk-versions.md
         - name: Deployment guide for self-contained apps
           href: ../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
-        - name: Set up CI for your WinUI 3 app
+        - name: "Tutorial: Set up CI for WinUI"
           href: ../package-and-deploy/ci-for-winui3.md
-    - name: Windows app restore
-      href: ../develop/windows-app-restore.md

@@ -1,124 +1,128 @@
 ### YamlMime:Hub
 title: Windows app development documentation
-summary: Learn how to design, develop, and deploy apps and solutions for Windows PCs and other devices.
+summary: Everything you need to design, build, package, and publish Windows apps.
 brand: windows
 metadata:
    title: Windows app development documentation
-   description: Design, develop, and deploy apps and solutions for Windows PCs and other devices.
+   description: Everything you need to design, build, package, and publish Windows apps.
    ms.topic: hub-page
-   ms.date: 11/4/2025
+   ms.date: 02/20/2026
    ms.localizationpriority: medium
-   uhfHeaderId: "MSDocsHeader-Windows"
    
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
-   - title: What's new for Windows developers
-     itemType: quickstart
-     url: /windows/apps/whats-new/windows-11-build-22000
-   - title: App framework options
-     itemType: overview
-     url: ./get-started/index.md
-   - title: Enhance your Windows apps with AI
-     itemType: overview
-     url: /windows/ai/
-   - title: Set up your environment with WinGet, Terminal, WSL, and more
-     itemType: overview
-     url: ../dev-environment/index.md
-   - title: Windows APIs
-     itemType: reference 
-     url: /windows/apps/api-reference/
-   - title: Download Visual Studio
-     itemType: download
-     url: https://developer.microsoft.com/windows/downloads
-   - title: Windows Code Samples
-     itemType: download
-     url: ./get-started/samples.md
-   - title: Online training for Windows app developers
-     itemType: learn
-     url: /training/browse/?products=windows
+    - title: What's new for Windows developers
+      itemType: whats-new
+      url: /windows/apps/whats-new/whats-new-for-developers 
+    - title: Introduction to the Windows developer platform
+      itemType: concept
+      url: /windows/apps/introduction
+    - title: Build your first Windows app
+      itemType: tutorial 
+      url: /windows/apps/get-started/start-here
+    - title: Support
+      itemType: reference
+      url: /windows/apps/develop/support
+
 productDirectory:
-  title: Dive into developing apps for Windows
+  title: Your path to building Windows apps
+  summary: Start with the fundamentals, design great experiences, build your app, and prepare it for distribution.
   items:
-  - title: Get started
-    imageSrc: /media/common/i_get-started.svg
+
+  - title: Essentials
+    imageSrc: /windows/apps/images/hub-essentials.svg
     links:
-      - url: ./get-started/index.md
-        text: Overview of framework options
-      - url: ./get-started/start-here.md
-        text: Get started with WinUI
-      - url: ./windows-app-sdk/support.md
-        text: Windows App SDK and supported Windows releases
-      - url: ./windows-app-sdk/set-up-your-development-environment.md
-        text: Install tools for the Windows App SDK
-      - url: ./get-started/samples.md
-        text: Sample apps for Windows
+      - url: /windows/apps/introduction
+        text: Introduction
+      - url: /windows/apps/get-started
+        text: Core concepts
+      - url: /windows/apps/get-started/start-here
+        text: Get started
+      - url: /windows/apps/develop/support
+        text: Help and guidance
   - title: Design
-    imageSrc: /media/common/i_design.svg
+    imageSrc: /windows/apps/images/hub-design.svg
     links:
-      - url: ./design/index.md
-        text: Design and code your app UI
-      - url: ./design/basics/index.md
-        text: Design basics for Windows apps
-      - url: ./design/signature-experiences/design-principles.md
-        text: Windows 11 design principles
-      - url: ./design/downloads/index.md
-        text: Design toolkits
+      - url: /windows/apps/design/index
+        text: Overview
+      - url:  /windows/apps/design/design-principles
+        text:  Design principles
+      - url:  /windows/apps/design/guidelines-overview
+        text: Guidelines
+      - url:  /windows/apps/design/downloads
+        text: Design tools and resources
   - title: Develop
-    imageSrc: /media/common/i_code-samples.svg
+    imageSrc: /windows/apps/images/hub-develop.svg
     links:
-      - url: ./develop/index.md
-        text: Windows development features
-      - url: ./windows-app-sdk/release-channels.md#features-available-by-release-channel
-        text: Windows App SDK features
-      - url: ./winui/index.md
-        text: WinUI
-      - url: /windows/ai/overview
-        text: Windows AI Foundry
-  - title: Deploy
-    imageSrc: /media/common/i_deploy.svg
+      - url: /windows/apps/develop/
+        text: Overview
+      - url: /windows/apps/develop/features-overview
+        text: Features
+      - url: /windows/apps/desktop/modernize/
+        text: Use features with other UI frameworks
+      - url: /windows/apps/develop/platform/csharp-winrt/
+        text: Platforms
+      - url: /windows/apps/api-reference/
+        text: API reference
+      - url: /windows/apps/dev-tools/
+        text: Tools and samples
+  - title: Package and deploy
+    imageSrc: /windows/apps/images/hub-package.svg
     links:
-      - url: ./package-and-deploy/index.md
-        text: Deployment architecture
-      - url: ./windows-app-sdk/deployment-architecture.md
-        text: Windows App SDK deployment guide 
-      - url: /windows/msix
-        text: Package apps using MSIX
-      - url: /windows/msix/desktop/managing-your-msix-deployment-overview
-        text: Manage your MSIX deployment
-
-
+      - url: /windows/apps/package-and-deploy/
+        text: Overview
+      - url: /windows/apps/package-and-deploy/packaging/
+        text: Packaging
+      - url: /windows/apps/package-and-deploy/choose-distribution-path
+        text: Choose a distribution path
+      - url: /windows/apps/package-and-deploy/deploy-overview
+        text: Deployment
+  - title: Publish
+    imageSrc: /windows/apps/images/hub-publish.svg
+    links:
+      - url: /windows/apps/publish/
+        text: Overview
+      - url: /windows/apps/publish/get-started
+        text: Get started with Microsoft Store
+      - url: /windows/apps/publish/partner-center/open-a-developer-account
+        text: Developer account
+      - url: /windows/apps/publish/publish-your-app/msix/reserve-your-apps-name
+        text: App submission
+      - url: /windows/apps/publish/publish-your-app/msix/publish-update-to-your-app-on-store
+        text: App management
+      - url: /windows/apps/publish/analyze-app-performance/msix
+        text: App performance
 tools:
-  title: More development options
+  title: Platforms and SDKs
+  summary: Build new apps or modernize existing ones using our SDKs, frameworks, and tools.
   items:
     - title: Windows App SDK
-      imageSrc: /media/hubs/windows/win_developer-4.svg
+      imageSrc: /windows/apps/images/hub-wasdk.svg
       url: /windows/apps/windows-app-sdk
-    - title: .NET
-      imageSrc: /media/hubs/windows/win_developer-1.svg
-      url: /dotnet/
-    - title: UWP
-      imageSrc: /media/hubs/windows/win_developer-2.svg
-      url: /windows/uwp/
-    - title: Games
-      imageSrc: /media/hubs/windows/win_developer-3.svg
-      url: https://developer.microsoft.com/games/
+    - title: WinUI
+      imageSrc: /windows/apps/images/hub-winui.svg
+      url: /windows/apps/winui/winui3
+    - title: Microsoft Foundry on Windows
+      imageSrc: /windows/apps/images/hub-foundry.svg
+      url: /windows/ai
 
 additionalContent:
   sections:
     # Section
-    - title: Contribute to Windows Open Source projects
+    - title: Tools and resources
       items:
-        - title: Windows App SDK
-          summary: A set of developer tools and APIs that represent the next evolution in the Windows app platform.
-          url: https://github.com/microsoft/WindowsAppSDK
-        - title: WinUI
-          summary: The native user interface layer for building Windows apps including modern controls and styles.
-          url: https://github.com/microsoft/microsoft-ui-xaml
-        - title: MSIX SDK
-          summary: Enables developers to pack and unpack app packages on a variety of platforms.
-          url: https://github.com/Microsoft/msix-packaging
-        - title: .NET
-          summary: Engage with .NET open source projects including .NET, WPF, Windows Forms, and much more.
-          url: https://github.com/microsoft/dotnet
+        - title: Samples
+          summary: Explore sample apps and code snippets that demonstrate Windows app features and APIs.
+          url: /windows/apps/get-started/samples
+        - title: Windows developer tools 
+          summary: Set up your development environment with tools for Windows or the Windows Subsystem for Linux.
+          url: /windows/dev-environment/
+        - title: Windows developer blog
+          summary: Read announcements, release updates, and deep dives from the Windows developer team.
+          url: https://devblogs.microsoft.com/ifdef-windows/  
+        - title: Windows App Community Discord
+          summary: Connect with other Windows developers to get help, share ideas, and stay up to date.
+          url: https://discord.gg/eBHZSKG
+
   footer: "[@WindowsDocs](https://dotnet.social/@windowsdocs) - [OneDevMinute on YouTube](/shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

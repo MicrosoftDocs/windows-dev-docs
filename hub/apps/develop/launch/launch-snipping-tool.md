@@ -1,20 +1,22 @@
 ---
 title: Launch Snipping Tool
-description: This topic describes how to use the new protocol launch framework for Snipping Tool. Your app can use these URI schemes to launch Snipping Tool's capture overlay to create a new snip or recording.
-ms.date: 02/14/2025
+description: This topic describes how to use the protocol launch framework for Snipping Tool. Your app can use these URI schemes to launch Snipping Tool's capture overlay to create a new snip or recording.
+ms.date: 04/22/2026
 ms.topic: concept-article
 keywords: windows 11, uri, snipping tool, capture
 ms.localizationpriority: medium
-ms.custom: RS5
-# customer-intent: As a Windows developer, I want to learn about the ms-screenclip URI scheme so that I can integrate it into my application to programmatically launch Snipping Tool. This will allow my application to trigger a snip experience directly, enabling users to take screenshots seamlessly without manually opening Snipping Tool.
+# customer-intent: As a Windows developer, I want to learn about the ms-screenclip URI scheme so that I can integrate it into my application to programmatically launch Snipping Tool.
 ---
 
 # Launch Snipping Tool
 
-This article specifies the protocol for integrating first and third-party applications with the Windows Snipping Tool using the **ms-screenclip:** URI (Uniform Resource Identifier) scheme. The protocol facilitates the capture of images and video (with audio) via Snipping Tool. App callers can customize and choose which Snipping Tool features their app will display. The protocol is designed to offer flexibility, security, and ease of use, aligning closely with familiar HTTP-based interactions. This shift can make the protocol more intuitive for developers and facilitate its integration with web technologies.
+This article specifies the protocol for integrating first and third-party applications with the Windows Snipping Tool using the **ms-screenclip:** URI (Uniform Resource Identifier) scheme. The protocol supports the capture of images and video (with audio) via Snipping Tool, and app callers can choose which Snipping Tool features their app will display.
+
+> [!IMPORTANT]
+> This protocol requires a **packaged Windows app** (MSIX). When your app is packaged, the operating system automatically provides your app's identity to Snipping Tool, which uses it to securely route the capture response back to your app. Unpackaged (Win32) callers cannot receive responses via `redirect-uri`. If an unpackaged app provides a `redirect-uri`, Snipping Tool will not deliver the response and may exit without showing the capture UI.
 
 > [!NOTE]
-> This protocol launch replaces the previous existing experience documented [here](launch-screen-snipping.md).
+> This protocol replaces the experience documented in [Launch screen snipping (Deprecated)](launch-screen-snipping.md), which is now deprecated.
 
 ## Supported features
 
@@ -23,73 +25,109 @@ The Snipping Tool protocol supports the following features:
 - Rectangle Capture
 - Freeform Capture
 - Window Capture
-- Ability to launch directly into a Screenshot or Recording
-- Customizing features available
-- Autosave feature is available, but can be disabled
+- Screen Recording
+- Customizing available capture modes
+- Auto-save (optional)
 
-## Protocol Specification
+## Protocol specification
 
-**URI Scheme:** `{scheme}://{host}/{path}?{query}`
+**URI Format:** `ms-screenclip://{host}/{path}?{query parameters}`
 
-**ms-screenclip:** takes the following parameters:
+| Component | Description | Values |
+|-----------|-------------|--------|
+| **Scheme** | The custom scheme for Snipping Tool | `ms-screenclip` |
+| **Host** | The Snipping Tool operation to perform | `capture` or `discover` |
+| **Path** | The media type to capture (applies to the `capture` host only; the `discover` host has no path) | `/image` or `/video` |
+| **Query** | Parameters for the operation | See tables below |
 
-- **Scheme:** `ms-screenclip` - The custom scheme for Snipping Tool's protocol.
-- **Host:** Defines the Snipping Tool operation to perform (`capture` for snipping and recording, `discover` for querying capabilities).
-- **Path:** Specifies the media type to capture, such as an image (`/image`) or video (`/video`).
-- **Query:** Parameters for the specified schema.
+> [!NOTE]
+> Paths and query parameter names are case-insensitive. For example, `ms-screenclip://capture/Image?Redirect-Uri=my-app://response` behaves the same as `ms-screenclip://capture/image?redirect-uri=my-app://response`.
 
-## Host (required)
+## Capture host
 
-- Capture
-- Discover
+Use the `capture` host to launch Snipping Tool's capture overlay.
 
-## Path (required)
+### Path
 
-- Image
-- Video
+| Path | Description |
+|------|-------------|
+| `/image` | Launches image capture (screenshot). Requires a mode parameter. |
+| `/video` | Launches video capture (screen recording). Always uses rectangle mode. |
 
-## Query
+### Mode parameters (capture/image)
 
-### Capture Host
+For the `/image` path, you must specify exactly **one** mode parameter. Mode parameters are bare query parameters with **no value**.
 
-| **Parameter**              | **Type**      | **Required** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | **Default**                                        |
-| -------------------------- | ------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| `api-version`              | string        | no           | Protocol version (e.g., `"1.0"`). Ensures compatibility with future enhancements.                                                                                                                                                                                                                                                                                                                                                                                                                              | Latest version                                     |
-| `user-agent`               | string        | yes          | Identifier for the calling application, used for logging and analytics.                                                                                                                                                                                                                                                                                                                                                                                                                                        | n/a                                                |
-| `x-request-correlation-id` | string        | no           | Unique identifier for requests, allowing reference to a particular transaction or event chain.                                                                                                                                                                                                                                                                                                                                                                                                                 | Generated GUID if not provided.                    |
-| `host`                     | string (enum) | yes          | Specifies the **Snipping Tool action** to perform. Supported values: <br>- `capture` – Opens Snipping Tool to take a screenshot or recording. <br>- `discover` – Queries supported features.                                                                                                                                                                                                                                                                                                                   | `capture`                                          |
-| `path`                     | string (enum) | yes          | Specifies the **type of media** being captured: <br>- `image` – Screenshot capture. <br>- `video` – Screen recording.                                                                                                                                                                                                                                                                                                                                                                                          | n/a                                                |
-| `enabledModes`             | string (list) | no           | Controls which snipping or recording modes are **enabled** in the UI. <br> - `RectangleSnip` <br> - `WindowSnip` <br> - `FreeformSnip` <br> - `FullscreenSnip` <br> - `RectangleRecord` <br> - `SnippingAllModes` (all image modes) <br> - `RecordAllModes` (all recording modes) <br> - `All` (all supported modes)                                                                                                                                                                                                                   | Defaults to the mode specified in the URI (`path`) |
-| `auto-save`                | boolean       | no           | Determines whether the captured **Screenshot or Recording** is automatically saved to the user's device. If set to `false`, the file is stored temporarily and can only be accessed using the token provided in the response. <br> **Note:** The screenshot or recording will only be automatically saved if the user has enabled the corresponding Snipping Tool settings: <br> - **"Automatically save original screenshots"** for screenshots. <br> - **"Automatically save original screen recordings"** for recordings. | `false`                                            |
-| `redirect-uri`             | URI           | yes          | Callback URI where the response will be sent. The calling application must register a handler for this protocol to receive and process the response.                                                                                                                                                                                                                                                                                                                                                                                        | n/a                                                |
+| Parameter | Description |
+|-----------|-------------|
+| `rectangle` | Interactive rectangle capture mode. |
+| `freeform` | Interactive freeform capture mode. |
+| `window` | Interactive window capture mode. |
 
-### Discover Host
+> [!IMPORTANT]
+> Mode parameters must be specified without a value. For example, use `&rectangle`, **not** `&rectangle=value`. Providing a value will result in an error response.
+>
+> For `/image`, you must specify exactly one mode parameter. Specifying zero or more than one mode will result in a `400 Bad Request` error response. For `/video`, any mode parameter is ignored.
 
-The Snipping Tool protocol supports a `discover` endpoint that allows applications to retrieve available features, supported modes, and protocol versions dynamically. This is useful for ensuring compatibility with future updates or querying what capture methods are available.
+### Query parameters (capture)
 
-### How to Use
+> [!NOTE]
+> Query parameters may be provided in any order.
 
-To retrieve Snipping Tool's supported capabilities, use the following URI:
+| Parameter | Type | Required | Description | Default |
+|-----------|------|----------|-------------|---------|
+| `redirect-uri` | URI | Yes | Callback URI where Snipping Tool sends the capture response. Your app must register a protocol handler for this URI scheme. If omitted, Snipping Tool doesn't display the capture UI and doesn't return a response. | n/a |
+| `user-agent` | string | No (strongly recommended) | Identifier for the calling application, used for logging and analytics. Required to diagnose issues via support channels; omit at your own risk. | n/a |
+| `api-version` | string | No | Protocol version to use, for example `"1.2"`. If omitted, the request is processed as version `1.2`. | `1.2` |
+| `x-request-correlation-id` | string | No | Unique identifier for the request, allowing reference to a particular transaction or event chain. | Auto-generated GUID |
+| `enabledModes` | string (list) | No | Controls which capture modes are available in the UI. See [EnabledModes](#enabledmodes) below. | Only the mode specified in the URI |
+| `auto-save` | flag | No | When present, the captured screenshot or recording is automatically saved to the user's device. | Not present (no auto-save) |
 
-`ms-screenclip://discover?redirect-uri=my-snip-protocol-test-app://response`
+> [!NOTE]
+> The default `api-version` of `1.2` doesn't change when newer protocol versions are released. Requests that omit `api-version` are always processed as `1.2`. To use features added in a later version, set `api-version` to that version. We recommend specifying `api-version` explicitly in every request so your app stays tied to a known protocol version rather than the implicit default.
 
-### Response Format
+> [!NOTE]
+> When you supply `api-version`, it must exactly match one of the values in the `/discover` response's `supportedVersions` array (currently `1.0`, `1.1`, and `1.2`). Any other value — including intermediate values like `1.15` or malformed values like `1.0abc` — returns a `400 Bad Request` response. To discover the set of versions a specific Snipping Tool build accepts, call the [discover host](#discover-host).
 
-The response is a JSON object containing:
+> [!NOTE]
+> The `auto-save` flag respects the user's Snipping Tool settings. If the user has disabled automatic saving in Snipping Tool, the capture isn't saved to the device even when your request includes `auto-save`.
 
-- Version number (version) of the protocol.
-- List of available capture paths (path), including:
-  - capture/image (for snipping)
-  - capture/video (for recording)
-- Supported HTTP-like methods (methods).
-- Available parameters (parameters) that can be used in requests.
-- Description of each capability.
+## Discover host
 
-### Example Response
+Use the `discover` host to query Snipping Tool's supported capabilities, modes, and protocol version at runtime. This is useful for checking compatibility before making a capture request.
+
+### Query parameters (discover)
+
+| Parameter | Type | Required | Description | Default |
+|-----------|------|----------|-------------|---------|
+| `redirect-uri` | URI | Yes | Callback URI where Snipping Tool sends the capabilities response. Your app must register a protocol handler for this URI scheme. If omitted, Snipping Tool doesn't return a response. | n/a |
+| `user-agent` | string | No (strongly recommended) | Identifier for the calling application, used for logging and analytics. | n/a |
+| `x-request-correlation-id` | string | No | Unique identifier for the request. | Auto-generated GUID |
+
+### Discover example
+
+```
+ms-screenclip://discover?user-agent=MyApp&redirect-uri=my-app://response
+```
+
+### Discover response format
+
+The response is a JSON object appended to the redirect URI as the `discover` query parameter. It contains:
+
+- `version`: Latest protocol version this Snipping Tool build supports.
+- `defaultVersion`: Protocol version assumed when a request omits `api-version`. Read this to understand how your unpinned requests are interpreted.
+- `supportedVersions`: Array of protocol versions this Snipping Tool build accepts.
+- `capabilities`: Array of supported capture operations, each with:
+  - `path`: The capture endpoint (e.g., `capture/image`, `capture/video`).
+  - `methods`: Supported HTTP-like methods.
+  - `parameters`: Available parameters for the endpoint.
+  - `description`: Description of the capability.
 
 ```json
 {
   "version": 1.2,
+  "defaultVersion": 1.2,
+  "supportedVersions": [1.0, 1.1, 1.2],
   "capabilities": [
     {
       "path": "capture/image",
@@ -109,145 +147,295 @@ The response is a JSON object containing:
 
 ## EnabledModes
 
-The **enabledModes** parameter is designed to give developers granular control over the available UI options when invoking the ms-screenclip protocol. This allows for a tailored user experience that matches the specific requirements of the calling application. By specifying the **enabledModes** parameter, developers can restrict the user's choices in Snipping Tool's UI to ensure the output format meets their expectations.
+The `enabledModes` parameter lets you control which capture modes are available in the Snipping Tool UI. Use it to restrict or expand the user's choices to match your application's requirements.
 
 ### Supported modes
 
-The **enabledModes** parameter can accept the following modes:
+| Mode | Description |
+|------|-------------|
+| `RectangleSnip` | Rectangle capture mode. |
+| `WindowSnip` | Window capture mode. |
+| `FreeformSnip` | Freeform capture mode. |
+| `FullscreenSnip` | Fullscreen capture mode. |
+| `SnippingAllModes` | All image capture modes: `RectangleSnip`, `WindowSnip`, `FreeformSnip`, `FullscreenSnip`. |
+| `RectangleRecord` | Rectangle recording mode. |
+| `RecordAllModes` | All recording modes: currently `RectangleRecord` only. |
+| `All` | All supported modes: the union of `SnippingAllModes` and `RecordAllModes`. |
 
-- **RectangleSnip:** Enables rectangle capture mode.
-- **WindowSnip:** Enables window capture mode.
-- **FreeformSnip:** Enables freeform capture mode.
-- **FullscreenSnip:** Enables fullscreen capture mode.
-- **SnippingAllModes:** Enables all snipping (image capture) modes (RectangleSnip, WindowSnip, FreeformSnip, FullscreenSnip).
-- **RectangleRecord:** Enables rectangle recording mode.
-- **RecordAllModes:** Enables all recording modes (currently only RectangleRecord is available).
-- **All:** Enables all supported modes (RectangleSnip, WindowSnip, FreeformSnip, FullscreenSnip, RectangleRecord).
+> [!TIP]
+> `All`, `SnippingAllModes`, and `RecordAllModes` are aggregate values. The modes they include can change across Snipping Tool releases. An app that uses one of these values automatically picks up modes added in future releases. To keep the set of available modes fixed across updates, list the specific modes explicitly (for example, `RectangleSnip,FreeformSnip`).
 
 > [!IMPORTANT]
-> If the **enabledModes** parameter is omitted, Snipping Tool will default to the mode explicitly specified in the URI (e.g., `rectangle`, `freeform`).
->
-> - If a mode is explicitly specified in the URI (such as `rectangle`), only that mode will be available in Snipping Tool's UI.
-> - If no default mode is specified in the URI, the request is considered invalid and will be ignored, even if **enabledModes** is provided.
-> - The default mode parameter (e.g., `rectangle`, `freeform`) is required for **enabledModes** to function and for the request to be considered valid.
+> - For `/image`, a mode parameter (e.g., `rectangle`, `freeform`, `window`) is **required** in the URI, even when `enabledModes` is specified. The mode parameter determines the initially selected mode.
+> - The mode specified in the URI is always available in the UI, even if it isn't listed in `enabledModes`. For example, `?freeform&enabledModes=RectangleSnip` makes both freeform (from the URI) and rectangle snip available, with freeform pre-selected.
+> - If `enabledModes` is omitted, only the mode specified in the URI will be available in the UI.
+> - For `/image`, if no mode parameter is specified, the request is invalid and will result in an error, regardless of `enabledModes`.
 
-## Examples
+### EnabledModes examples
 
-### Example 1: Enable Only Rectangle Snip
+**Enable only rectangle snip:**
 
-`ms-screenclip://capture/image?rectangle&enabledModes=RectangleSnip&redirect-uri=my-snip-protocol-test-app://response`
+```
+ms-screenclip://capture/image?rectangle&enabledModes=RectangleSnip&user-agent=MyApp&redirect-uri=my-app://response
+```
 
-_Explanation: This command launches Snipping Tool's overlay with only the rectangle snipping mode enabled. The user will only be able to select a rectangular region for capture._
+**Enable rectangle and window snip:**
 
-### Example 2: Enable Rectangle Snip and Window Snip
+```
+ms-screenclip://capture/image?rectangle&enabledModes=RectangleSnip,WindowSnip&user-agent=MyApp&redirect-uri=my-app://response
+```
 
-`ms-screenclip://capture/image?rectangle&enabledModes=RectangleSnip,WindowSnip&redirect-uri=my-snip-protocol-test-app://response`
+**Enable all snipping modes:**
 
-_Explanation: This command launches Snipping Tool's overlay with both the rectangle and window snipping modes enabled. The user can choose between capturing a rectangular region or an entire window._
+```
+ms-screenclip://capture/image?rectangle&enabledModes=SnippingAllModes&user-agent=MyApp&redirect-uri=my-app://response
+```
 
-### Example 3: Enable All Snipping Modes
+**Enable recording mode only:**
 
-`ms-screenclip://capture/image?rectangle&enabledModes=SnippingAllModes&redirect-uri=my-snip-protocol-test-app://response`
+```
+ms-screenclip://capture/video?enabledModes=RecordAllModes&user-agent=MyApp&redirect-uri=my-app://response
+```
 
-_Explanation: This command launches Snipping Tool's overlay with all supported image snipping modes (RectangleSnip, WindowSnip, FreeformSnip, FullscreenSnip). The FullScreenSnip mode is excluded from interactive mode and will not be enabled._
+**Enable multiple snipping and recording modes:**
 
-### Example 4: Enable Recording Mode Only
+```
+ms-screenclip://capture/image?freeform&enabledModes=RectangleSnip,RectangleRecord&user-agent=MyApp&redirect-uri=my-app://response
+```
 
-`ms-screenclip://capture/video?enabledModes=RecordAllModes&redirect-uri=my-snip-protocol-test-app://response`
+_Since freeform is specified in the URI, it will be pre-selected. Users can switch between freeform, rectangle snip, and rectangle recording._
 
-_Explanation: This command launches Snipping Tool's overlay with only the recording mode enabled. The user will be limited to selecting a rectangular region for recording, with no option to take a screenshot._
+## Responses
 
-### Example 5: Enable Multiple Snipping and Recording Modes
+After the user completes or cancels a capture, Snipping Tool sends a response back to your application via the `redirect-uri`. The response is structured as URI query parameters appended to your redirect URI.
 
-`ms-screenclip://capture/image?freeform&enabledModes=RectangleSnip,RectangleRecord&redirect-uri=my-snip-protocol-test-app://response`
-
-_Explanation: This command launches the Snipping Tool overlay with freeform snip, rectangle snip, and rectangle recording modes available. Since freeform mode is specified in the URI, it will be pre-selected by default. Users can choose to snip in freeform, rectangle, or record the selected region._
-
-### Example 6: Enable Rectangle Snipping Only
-
-`ms-screenclip://capture/image?rectangle&redirect-uri=my-snip-protocol-test-app://response`
-
-_Explanation: Since rectangle is specified in the URI, only rectangle snipping mode will be available in Snipping Tool's UI._
-
-### Example 7: No `mode` specified
-
-`ms-screenclip://capture/image?&enabledModes=All&redirect-uri=my-snip-protocol-test-app://response`
-
-_Explanation: This request is invalid because it does not specify a mode (e.g., `rectangle`, `window`, or `freeform`). Even though `enabledModes=All` is provided, a default mode must always be specified. As a result, Snipping Tool will ignore the call._
-
-## Key considerations
-
-- **Mode Restrictions:** Developers should ensure that enabling specific modes aligns with the expected behavior of their application. Restricting UI options helps maintain a consistent user experience and ensures the resulting capture matches the application's needs.
-- **Default Behavior:** If no `enabledModes` parameter is specified, only the `mode` specified in the URI will be available on the UI.
-
-## Security Considerations
-
-Important: Snipping Tool does not validate the redirect-uri parameter. It is the responsibility of the calling application to ensure that:
-
-- The `redirect-uri` points to a trusted destination.
-- The `redirect-uri` does not expose the captured content to unauthorized applications.
-- The application handling the response sanitizes and validates all incoming parameters before processing them.
-- The protocol handler for the `redirect-uri` is properly registered and secured against misuse.
-- **Required Fields:** Check that all required fields are provided and valid before proceeding with the snip operation.
-
-Response if expected parameters **aren't** supplied or overloaded.
-
-## Responses to the caller
-
-To ensure the response back to the caller via `redirect-uri` follows HTTP-based interaction principles, the response will mimic the structure of an HTTP response, but will be conveyed through URI query parameters. This approach keeps the interaction web-standard compliant and familiar to developers.
-
-### Use of shared tokens
-
-The use of the `SharedStorageAccessManager` class and of sharing tokens is subject to the following requirements and restrictions:
-
-- A sharing token can only be redeemed once. After that, the token is no longer valid.
-- A sharing token expires after 14 days and is no longer valid.
-- The source app cannot provide more than 1000 sharing tokens. After a token is redeemed, removed, or expires, however, it no longer counts against the quota of the source app.
+If your `redirect-uri` already includes query parameters (for example, `my-app://response?sessionId=abc`), those parameters are preserved and the response parameters are appended with `&`. You can use this to round-trip caller-specific state through the callback — the value `sessionId=abc` is echoed back in the response URI along with `code`, `reason`, `x-request-correlation-id`, and (for a successful capture) `file-access-token`.
 
 ### Response parameters
 
-The following parameters are returned in the redirect URI:
+| Parameter | Type | Present | Description |
+|-----------|------|---------|-------------|
+| `code` | int | Always | HTTP-style status code indicating the outcome. |
+| `reason` | string | Always | Human-readable description of the outcome. |
+| `x-request-correlation-id` | string | Always | The correlation ID from the original request (or an auto-generated one). |
+| `file-access-token` | string | Success only | A `SharedStorageAccessManager` token representing the captured media. Use this to retrieve the file. |
+| `discover` | string | Discover only | URL-encoded JSON containing the capabilities response. |
 
-| Parameter                | Type   | Description                                                                                                                   |
-| ------------------------ | ------ | ----------------------------------------------------------------------------------------------------------------------------- |
-| Reason                   | String | The outcome and explanation for the snip.                                                                                     |
-| Token (for success)      | String | A token representing the captured media, which the application can use to access the file.                                    |
-| code                     | Int    | The HTTP status code equivalent to provide a more granular understanding of the outcome.                                      |
-| x-request-correlation-id | String | A unique identifier value attached to requests and messages that allows reference to a particular transaction or event chain. |
+### Status codes
 
-## Retrieving a token
+| Code | Reason | Description |
+|------|--------|-------------|
+| 200 | Success | The capture completed successfully. A `file-access-token` is included in the response. |
+| 400 | Bad Request - Invalid or Missing Parameters | The request could not be processed. Check that all required parameters are present and valid. |
+| 408 | Request Timeout - Operation Took Too Long | The operation timed out before completion. |
+| 499 | Client Closed Request - User Cancelled the Snip | The user cancelled the capture by pressing Escape or clicking away. Applies to `/image` and `/video` only. |
+| 500 | Internal Server Error - Processing Failed | An unexpected error occurred during capture. |
 
-A sample application is available to test the process of calling the protocol and converting the response token into media. Use the [SharedStorageAccessManager](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) library to obtain the token.
+### Example responses
 
-## Status codes
+**Successful capture:**
 
-The following table lists the status codes that can be returned in the redirect URI:
+```
+my-app://response?code=200&reason=Success&x-request-correlation-id=aaaa0000-bb11-2222-33cc-444444dddddd&file-access-token=cccc2222-dd33-4444-55ee-666666ffffff
+```
 
-| HTTP Status Code | Reason                                          | Description                                             |
-| ---------------- | ----------------------------------------------- | ------------------------------------------------------- |
-| 200              | Success                                         | The operation was successful.                           |
-| 400              | Bad Request - Invalid or Missing Parameters     | The request cannot be processed due to client error.    |
-| 408              | Request Timeout - Operation Took Too Long       | The operation timed out before completion.              |
-| 499              | Client Closed Request - User Cancelled the Snip | The user cancelled the snip, closing the request.       |
-| 500              | Internal Server Error - Processing Failed       | An error occurred on the server, preventing completion. |
+**User cancelled:**
 
-## Example responses
+```
+my-app://response?code=499&reason=Client%20Closed%20Request%20-%20User%20Cancelled%20the%20Snip&x-request-correlation-id=bbbb1111-cc22-3333-44dd-555555eeeeee
+```
 
-| Use Case           | Full URI Example                                                                                                                                                               |
-| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Successful Capture | `my-snip-protocol-test-app://response/?code=200&reason=Success&request-correlation-id=CF99C5A5-3907-461E-A9A9-D8AAFFAD5031&token=8930-ASDFA-ASDF4545`                          |
-| Failed Capture     | `my-snip-protocol-test-app://response/?code=400&reason=Bad%20Request%20-%20Invalid%20value%20Missing%20Parameters&request-correlation-id=C7696B38-52C8-419A-880F-F3350D7A6626` |
+**Invalid request (missing mode parameter):**
 
-## Caller example
+```
+my-app://response?code=400&reason=Bad%20Request%20-%20Invalid%20or%20Missing%20Parameters&x-request-correlation-id=bbbb1111-cc22-3333-44dd-555555eeeeee
+```
 
-Below is a table displaying examples of full URIs constructed to initiate different types of snipping sessions using the screenclip: protocol. Each URI example demonstrates a combination of parameters to illustrate how you can customize Snipping Tool's behavior for different use cases.
+## Full URI examples
 
-| Use Case       | Example URI                                                                                                          | Description                                                                                                                                             |
-| -------------- | -------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Rectangle Mode | `ms-screenclip://capture/image?user-agent=TestApp&Rectangle&uri=my-snip-protocol-test-app://response`                | An application initiates an interactive rectangle capture session, where the user selects the capture area. The result is redirected to a specific URI. |
-| Video Mode     | `ms-screenclip://capture/video?api-version=1.0&user-agent=TestApp&redirect-uri=my-snip-protocol-test-app://response` | A video capture. Always in rectangle mode.                                                                                                              |
+| Use Case | URI | Description |
+|----------|-----|-------------|
+| Rectangle screenshot | `ms-screenclip://capture/image?rectangle&user-agent=MyApp&redirect-uri=my-app://response` | Interactive rectangle capture. Result returned to caller. |
+| Freeform screenshot | `ms-screenclip://capture/image?freeform&user-agent=MyApp&redirect-uri=my-app://response` | Interactive freeform capture. Result returned to caller. |
+| Window screenshot | `ms-screenclip://capture/image?window&user-agent=MyApp&redirect-uri=my-app://response` | Interactive window capture. Result returned to caller. |
+| Screen recording | `ms-screenclip://capture/video?user-agent=MyApp&redirect-uri=my-app://response` | Interactive screen recording. Result returned to caller. |
+| Discover capabilities | `ms-screenclip://discover?user-agent=MyApp&redirect-uri=my-app://response` | Query supported features. Capabilities JSON returned to caller. |
+| Rectangle with auto-save | `ms-screenclip://capture/image?rectangle&auto-save&user-agent=MyApp&redirect-uri=my-app://response` | Rectangle capture with auto-save enabled. |
+| Rectangle with all modes | `ms-screenclip://capture/image?rectangle&enabledModes=All&user-agent=MyApp&redirect-uri=my-app://response` | Rectangle capture pre-selected, all modes available in UI. |
+
+## Launching from your app
+
+You must use [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) to launch Snipping Tool from your packaged app. Other launch methods (such as `Process.Start` or shell execution) will not provide your app's identity, and Snipping Tool will not deliver the response.
+
+### Step 1: Register a protocol handler
+
+Register a custom protocol in your `Package.appxmanifest` so your app can receive the callback response. The protocol name must match the scheme used in your `redirect-uri`.
+
+```xml
+<Extensions>
+  <uap:Extension Category="windows.protocol">
+    <uap:Protocol Name="my-app" DesiredView="default">
+      <uap:DisplayName>My App Protocol</uap:DisplayName>
+    </uap:Protocol>
+  </uap:Extension>
+</Extensions>
+```
+
+See [Handle URI activation](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle#protocol-activation) for more details on registering and handling protocol activations.
+
+### Step 2: Launch Snipping Tool
+
+```csharp
+// Capture a screenshot in rectangle mode
+var uri = new Uri(
+    "ms-screenclip://capture/image"
+    + "?rectangle"
+    + "&user-agent=MyApp"
+    + "&redirect-uri=my-app://capture-response"
+    + "&x-request-correlation-id=" + Guid.NewGuid().ToString()
+);
+await Launcher.LaunchUriAsync(uri);
+```
+
+```csharp
+// Record a video
+var uri = new Uri(
+    "ms-screenclip://capture/video"
+    + "?user-agent=MyApp"
+    + "&redirect-uri=my-app://capture-response"
+);
+await Launcher.LaunchUriAsync(uri);
+```
+
+```csharp
+// Discover capabilities (returns immediately, no capture UI)
+var uri = new Uri(
+    "ms-screenclip://discover"
+    + "?user-agent=MyApp"
+    + "&redirect-uri=my-app://discover-response"
+);
+await Launcher.LaunchUriAsync(uri);
+```
+
+### Step 3: Handle the response
+
+When the capture completes (or the user cancels), Snipping Tool activates your app via your `redirect-uri` with result parameters appended as query strings. Most integrations are already running when the response arrives — the caller launched Snipping Tool, then waited for the callback — so your app must handle both cold-start activation (the app wasn't running) and warm re-activation (the app is already running). Subscribe to both paths in `App.xaml.cs`.
+
+**Handle a capture response (image or video):**
+
+```csharp
+// In App.xaml.cs: handle protocol activation for both cold-start and warm re-activation
+protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs args)
+{
+    // Cold-start path: the app was launched by Snipping Tool's callback.
+    var activatedArgs = Microsoft.Windows.AppLifecycle.AppInstance.GetCurrent().GetActivatedEventArgs();
+    if (activatedArgs.Kind == Microsoft.Windows.AppLifecycle.ExtendedActivationKind.Protocol)
+    {
+        if (activatedArgs.Data is Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs protocolArgs)
+        {
+            _ = HandleProtocolActivationAsync(protocolArgs.Uri);
+        }
+    }
+
+    // Warm re-activation path: the app is already running when the callback arrives.
+    Microsoft.Windows.AppLifecycle.AppInstance.GetCurrent().Activated += (sender, e) =>
+    {
+        if (e.Kind == Microsoft.Windows.AppLifecycle.ExtendedActivationKind.Protocol &&
+            e.Data is Windows.ApplicationModel.Activation.IProtocolActivatedEventArgs protocolArgs)
+        {
+            _ = HandleProtocolActivationAsync(protocolArgs.Uri);
+        }
+    };
+}
+
+private async Task HandleProtocolActivationAsync(Uri uri)
+{
+    var query = new WwwFormUrlDecoder(uri.Query);
+
+    var code = query.GetFirstValueByName("code");
+    var reason = query.GetFirstValueByName("reason");
+
+    if (code == "200")
+    {
+        var token = query.GetFirstValueByName("file-access-token");
+        var file = await SharedStorageAccessManager.RedeemTokenForFileAsync(token);
+
+        // Use the captured file (see "Retrieving captured media" below)
+    }
+    else
+    {
+        // Handle error (400, 408, 499, 500)
+        Debug.WriteLine($"Snipping Tool returned {code}: {reason}");
+    }
+}
+```
+
+**Handle a discover response:**
+
+```csharp
+private void HandleDiscoverResponse(Uri uri)
+{
+    var query = new WwwFormUrlDecoder(uri.Query);
+
+    var code = query.GetFirstValueByName("code");
+
+    if (code == "200")
+    {
+        var discover = query.GetFirstValueByName("discover");
+        // discover contains a URL-encoded JSON capabilities payload
+        var capabilities = Uri.UnescapeDataString(discover);
+        // Parse the JSON to inspect supported capture modes
+    }
+}
+```
+
+> [!TIP]
+> If you sent an `x-request-correlation-id` with the request, verify that the response echoes the same value so you can match the response to the correct in-flight request. If you let Snipping Tool auto-generate one, the response carries the generated value — treat it as matching your most recent in-flight request.
+
+### Retrieving captured media using the token
+
+Use the [SharedStorageAccessManager](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) class to redeem the `file-access-token` and access the captured file.
+
+**Token restrictions:**
+
+- A token can only be redeemed **once**. After redemption, it is no longer valid.
+- A token expires after **14 days**.
+- An app cannot have more than **1000** active tokens. After a token is redeemed, removed, or expires, it no longer counts against the quota.
+
+```csharp
+// Redeem the token and display the captured image
+var file = await SharedStorageAccessManager.RedeemTokenForFileAsync(token);
+
+using (var stream = await file.OpenReadAsync())
+{
+    var bitmap = new BitmapImage();
+    await bitmap.SetSourceAsync(stream);
+    MyImage.Source = bitmap;
+}
+
+// Or copy to your app's local storage
+var localFolder = ApplicationData.Current.LocalFolder;
+await file.CopyAsync(localFolder, file.Name, NameCollisionOption.GenerateUniqueName);
+```
+
+## Security considerations
+
+Snipping Tool validates all `redirect-uri` values before launching them. The following protections are enforced:
+
+- **Packaged app callers**: When your app is a packaged Windows app (MSIX), the operating system securely routes the capture response back to your app, ensuring only your app can receive it. This is the recommended integration path.
+- **Input validation**: Snipping Tool rejects redirect URIs that contain UNC paths, leading/trailing whitespace, or control characters.
+- **No fragments**: Redirect URIs that contain a URL fragment (for example, `my-app://response#section`) are rejected. Snipping Tool appends the response parameters as a query string, and a fragment would swallow them.
+- **Self-referencing protection**: Redirect URIs that would cause recursive activation of Snipping Tool are blocked.
+
+> [!IMPORTANT]
+> **For calling applications:**
+>
+> - Register a protocol handler for your redirect URI scheme so your app can receive the response.
+> - Validate and sanitize all parameters received in the response before processing them.
+> - Verify that the response's `x-request-correlation-id` matches your in-flight request to avoid handling a stale response or mixing up concurrent requests. Correlation-id prevents mix-ups; it doesn't establish token provenance — secure token routing comes from the packaged-app callback channel.
 
 ## Related content
 
+- [Handle URI activation](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle#protocol-activation)
+- [SharedStorageAccessManager class](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager)
 - [Use Snipping Tool to capture screenshots](https://support.microsoft.com/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b)
-- [Launch screen snipping (Legacy)](launch-screen-snipping.md)

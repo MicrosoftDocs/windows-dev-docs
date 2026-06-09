@@ -4,7 +4,7 @@ title: Layering and elevation in Windows
 ms.assetid: E00B6D9A-C8AA-4E6E-ADC4-13303AC290D9
 ms.date: 06/24/2021
 ms.topic: concept-article
-keywords: windows 11, design, ui, uiux, layering, elevation, shadows
+keywords: windows 11, design, ui, uiux, layering, elevation, shadows, z-depth, shadow, ThemeShadow, DropShadow
 ms.localizationpriority: medium
 ---
 
@@ -137,3 +137,13 @@ Windows 11 uses a two-layer system for applications. These two layers create hie
 
 - The **base** layer is an app's foundation. It is the bottommost layer of every app, and contains controls related to app menus, commands, and navigation.
 - The **content** layer focuses the user on the app's central experience. The content layer may be on contiguous element, or separated into cards that segment content.
+
+## Shadows
+
+Shadows are a key visual cue that reinforces the concept of elevation. When a surface is elevated above another, it casts a shadow on the layer beneath it — just as objects do in the physical world. The higher the elevation, the larger and softer the shadow becomes. This relationship between elevation and shadow helps users intuitively understand the spatial hierarchy of your app's interface.
+
+In Windows 11, shadows work together with contour (outlines) to communicate depth. Standard controls like flyouts, dialogs, and tooltips already include appropriate shadows based on their elevation values. Using shadows purposefully — rather than decoratively — ensures they remain an effective signal for drawing focus to the most important elements.
+
+When designing your app's layout, consider how shadows can clarify the relationship between overlapping surfaces. For example, a dialog that appears over the base layer should cast a noticeable shadow to clearly separate it from the content behind it. Overusing shadows, however, can diminish their impact and create visual noise.
+
+To learn how to implement shadows using ThemeShadow and DropShadow in your app, see [Shadows in Windows apps](../../develop/ui/shadows.md).

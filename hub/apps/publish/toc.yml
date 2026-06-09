@@ -1,14 +1,18 @@
 items:
-- name: Get started with the Microsoft Store
+- name: Build Windows apps
+  href: ../desktop/index.yml
+- name: Publish overview
   href: index.md
+- name: Get started with Microsoft Store
+  href: get-started.md  
 - name: Open a developer account
+  href: partner-center/open-a-developer-account.md  
+- name: Choose your distribution options
   items: 
-    - name: Steps to open a developer account
-      href: partner-center/open-a-developer-account.md
-    - name: Types of developer accounts
-      href: partner-center/partner-center-developer-account.md
-    - name: Developer account fees and locations
-      href: partner-center/account-types-locations-and-fees.md  
+    - name: How to distribute your win32 app in Store
+      href: ../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md
+    - name: Transition users from web unpackaged app to Store packaged app
+      href: ../distribute-through-store/how-to-transition-users-from-your-web-unpackaged-app-to-store-packaged-app.md
 - name: Submit your app
   items:
   - name: MSIX
@@ -62,7 +66,9 @@ items:
           - name: Import and export Store listings
             href: publish-your-app/msix/import-and-export-store-listings.md
       - name: Manage Submission options
-        href: publish-your-app/msix/manage-submission-options.md                  
+        href: publish-your-app/msix/manage-submission-options.md   
+      - name: App submission controls
+        href: publish-your-app/msix/app-submission-control.md
   - name: MSI/EXE
     items:
       - name: Reserve app name
@@ -160,7 +166,9 @@ items:
           - name: Import and export Store listings
             href: publish-your-app/pwa/import-and-export-store-listings.md
       - name: Manage submission options
-        href: publish-your-app/pwa/manage-submission-options.md                      
+        href: publish-your-app/pwa/manage-submission-options.md
+      - name: App submission controls
+        href: publish-your-app/pwa/app-submission-control.md
   - name: Add-ons
     items:
           - name: What are add-ons
@@ -184,9 +192,7 @@ items:
           - name: Create store listings
             href: publish-your-app/add-on/create-app-store-listing.md
           - name: Manage submission options
-            href: publish-your-app/add-on/manage-submission-options.md  
-          - name: Update existing add-on
-            href: publish-your-app/add-on/publish-update-to-your-app-on-store.md
+            href: publish-your-app/add-on/manage-submission-options.md
 - name: Get your app certified
   items: 
     - name: MSIX
@@ -221,8 +227,34 @@ items:
           href: analyze-app-performance/msi-exe.md
         - name: Key metrics
           href: analyze-msi-exe/analyze-app-performance.md
-        - name: Ratings, Reviews, and Responses
-          href: analyze-msi-exe/ratings-reviews-performance.md
+    - name: Ratings, Reviews, and Responses
+      href: analyze-msi-exe/ratings-reviews-performance.md
+- name: Manage and update your app
+  items:
+        - name: MSIX
+          items:
+              - name: Publish update to your app
+                href: publish-your-app/msix/publish-update-to-your-app-on-store.md
+              - name: Guidance for app package management
+                href: publish-your-app/msix/app-package-management.md
+        - name: MSI/EXE
+          items:
+              - name: Publish update to your app
+                href: publish-your-app/msi/publish-update-to-your-app-on-store.md  
+              - name: Guidance for app package management
+                href: publish-your-app/msi/app-package-management.md
+        - name: PWA
+          items:
+              - name: Publish update to your app
+                href: publish-your-app/pwa/publish-update-to-your-app-on-store.md
+              - name: Guidance for app package management
+                href: publish-your-app/pwa/app-package-management.md
+        - name: Add-ons
+          items:
+              - name: Publish update to your add-on
+                href: publish-your-app/add-on/publish-update-to-your-app-on-store.md
+        - name: Removing an app or add-on
+          href: publish-your-app/remove-an-app-and-add-on.md
 - name: Leverage developer tools
   items:
     - name: MSIX
@@ -253,8 +285,6 @@ items:
                 href: engage-with-your-customers.md
               - name: Create customer groups
                 href: create-customer-groups.md
-              - name: Respond to customer reviews
-                href: respond-to-customer-reviews.md
               - name: Use targeted offers
                 href: use-targeted-offers-to-maximize-engagement-and-conversions.md
           - name: Targeted distribution
@@ -283,32 +313,10 @@ items:
                 href: msstore-dev-cli/overview-exe.md
               - name: Commands
                 href: msstore-dev-cli/commands-exe.md
+    - name: Publishing app updates to Microsoft Store with GitHub Actions
+      href: msstore-dev-cli/github-actions.md
     - name: Use Microsoft Store Web Installer to distribute apps
       href: ../distribute-through-store/how-to-use-store-web-installer-for-distribution.md
-- name: Manage and update your app
-  items:
-        - name: MSIX
-          items:
-              - name: Publish update to your app
-                href: publish-your-app/msix/publish-update-to-your-app-on-store.md
-              - name: Guidance for app package management
-                href: publish-your-app/msix/app-package-management.md
-        - name: MSI/EXE
-          items:
-              - name: Publish update to your app
-                href: publish-your-app/msi/publish-update-to-your-app-on-store.md  
-              - name: Guidance for app package management
-                href: publish-your-app/msi/app-package-management.md                     
-        - name: PWA
-          items:
-              - name: Publish update to your app
-                href: publish-your-app/pwa/publish-update-to-your-app-on-store.md
-              - name: Guidance for app package management
-                href: publish-your-app/pwa/app-package-management.md        
-        - name: Add-ons
-          items:
-              - name: Publish update to your add-on
-                href: publish-your-app/add-on/publish-update-to-your-app-on-store.md  
 - name: Manage your account
   items:
       - name: Manage account users
@@ -348,15 +356,7 @@ items:
       - name: Close your developer account in Partner Center
         href: partner-center/close-your-developer-account-in-partner-center.md
       - name: Trademark and copyright protection
-        href: partner-center/trademark-and-copyright-protection.md  
-- name: What's new
-  items:
-      - name: Free developer registration for individual developers
-        href: whats-new-individual-developer.md  
-      - name: Revamped Health report in Partner Center
-        href: improved-health-report.md 
-      - name: Last Updated Date in Microsoft Store
-        href: last-update-date.md
+        href: partner-center/trademark-and-copyright-protection.md
 - name: Microsoft Store policies and resources
   items: 
       - name: Microsoft Store Policies
@@ -399,3 +399,29 @@ items:
       href: faq/manage-your-account.md
     - name: Responsible AI FAQ 
       href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
+- name: What's new
+  items:
+      - name: Publishing GDK games to Store
+        href: whats-new-game-publishing.md
+      - name: Near real time insights in analytics for Win32 apps
+        href: nrt-in-analytics.md
+      - name: Revamped company onboarding experience with zero registration fees
+        href: whats-new-company-developer.md
+      - name: Ratings and reviews in Partner Center
+        href: whats-new-ratings-and-reviews.md
+      - name: Recent data view in acquisitions reports
+        href: recent-data-acquisitions-reports.md
+      - name: Recent data view in usage reports
+        href: recent-data-usage-reports.md
+      - name: Usage reports in analytics
+        href: usage.md
+      - name: Anomaly alerts for health metrics
+        href: anomaly-alerts.md
+      - name: Summary reports in analytics
+        href: summary.md
+      - name: Free developer registration for individual developers
+        href: whats-new-individual-developer.md  
+      - name: Revamped health report in partner center
+        href: improved-health-report.md 
+      - name: Last updated date in Microsoft Store
+        href: last-update-date.md

@@ -22,6 +22,21 @@ The [Windows App SDK](../../windows-app-sdk/index.md) provides APIs related to O
 |---------|-------------|
 | [Implement OAuth 2.0 functionality in Windows apps](oauth2.md) | The new OAuth2Manager in Windows App SDK enables desktop applications such as WinUI to seamlessly perform OAuth 2.0 authentication in Windows apps. This article describes how to implement OAuth 2.0 with the Windows App SDK. |
 
+### Sign in with Microsoft (MSAL.NET + Web Account Manager)
+
+For apps that need users to sign in with a **Microsoft account or Microsoft Entra ID (work/school) account**, the recommended approach is [MSAL.NET](/entra/msal/dotnet/) with the **Web Account Manager (WAM) broker**. WAM provides silent SSO using the account already signed in to Windows, Windows Hello support, and device-bound refresh tokens — without launching a browser.
+
+| Article | Description |
+|---------|-------------|
+| [Acquire tokens using Web Account Manager (WAM)](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam) | Learn how to use MSAL.NET with the WAM broker to acquire tokens for Microsoft and Microsoft Entra ID accounts in desktop apps including WPF, WinForms, and WinUI 3. |
+| [MSAL.NET overview](/entra/msal/dotnet/) | Overview of the Microsoft Authentication Library for .NET — the recommended library for authentication with Microsoft identity in desktop apps. |
+| [Register an application with the Microsoft identity platform](/entra/identity-platform/quickstart-register-app) | How to register your app in the Azure portal to get a client ID, which is required before using MSAL. |
+| [Web Account Manager (WinRT API)](/windows/uwp/security/web-account-manager) | The underlying WinRT API that WAM is built on (`Windows.Security.Authentication.Web.Core`). Reference this if you need low-level token broker access without MSAL.NET. |
+| [Retrieve a window handle (HWND)](../ui/retrieve-hwnd.md) | Web Account Manager requires your app's window handle (HWND) to display authentication UI. This article shows how to retrieve it in WPF, WinForms, and WinUI 3. |
+
+> [!NOTE]
+> Web Account Manager supports Microsoft accounts and Microsoft Entra ID accounts only. If you need to authenticate with a third-party identity provider (Google, GitHub, etc.) or Azure AD B2C, use [OAuth2Manager](oauth2.md) or another general-purpose OAuth 2.0 library instead.
+
 ### WinRT APIs
 
 The following articles provide information about features available via WinRT APIs provided by the Windows SDK.
@@ -51,7 +66,7 @@ The following articles provide information about features available via Win32 (C
 
 ## .NET features
 
-The .NET SDK also provides APIs related to security and identity scenarios for WPF and Windows Forms apps. The security and cryptography APIs in .NET can also be used in C# WinUI apps.
+The .NET SDK also provides APIs related to security and identity scenarios for WPF and Windows Forms apps. The security and cryptography APIs in .NET can also be used in C# WinUI 3 apps.
 
 | Article | Description |
 |---------|-------------|

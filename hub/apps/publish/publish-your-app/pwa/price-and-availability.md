@@ -6,7 +6,7 @@ ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Set pricing and availability
+# Set pricing and availability for PWAs
 
 The **Pricing and availability** page of the [app submission process](./create-app-submission.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
 

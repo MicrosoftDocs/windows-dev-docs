@@ -168,7 +168,7 @@ The default [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windo
 
 But there might be times when you want your app to override the system settings and be explicit about the language, scale, or other qualifier value to use when looking for a matching Resources File to load. For example, you might want your users to be able to select an alternative language for tooltips or error messages.
 
-You can do that by constructing a new **ResourceContext**, overriding its values, and then using that context object in your string lookups.
+You can do that by constructing a new **ResourceContext**, overriding its values, and then using that context object in your string lookups. For a similar example using image resources, see [Load an image for a specific language or other context](images-tailored-for-scale-theme-contrast.md#load-an-image-for-a-specific-language-or-other-context).
 
 ```csharp
 var resourceManager = new Microsoft.Windows.ApplicationModel.Resources.ResourceManager();
@@ -231,11 +231,36 @@ To use resources in unpackaged applications, you should do a few things:
 > [!IMPORTANT]
 > You must manually rebuild PRI files whenever resources are modified. We recommend using a post-build script that handles the [MakePri.exe](/windows/uwp/app-resources/compile-resources-manually-with-makepri) command and copies the resources.pri output to the .exe directory.
 
+## Localize a WinUI 3 packaged app
+
+To ensure proper localization of a packaged WinUI 3 desktop app, declare each supported language in the **package.appxmanifest** file of your project. When you build the project, the specified languages are added to the generated app manifest (**AppxManifest.xml**) and the corresponding resources are used.
+
+> [!NOTE]
+> Unpackaged WinUI apps (see [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app)) don't contain a `package.appxmanifest` file, so no further action is needed after [adding the appropriate resources](#store-strings-in-a-resources-file) to the project.
+
+1. Open the `.wapproj`'s `package.appxmanifest` in a text editor and locate the following section:
+
+    ```xml
+    <Resources>
+        <Resource Language="x-generate"/>
+    </Resources>
+    ```
+
+2. Replace the `<Resource Language="x-generate">` with `<Resource />` elements for each of your supported languages. For example, the following markup specifies that "en-US" and "es-ES" localized resources are available:
+
+    ```xml
+    <Resources>
+        <Resource Language="en-US"/>
+        <Resource Language="es-ES"/>
+    </Resources>
+    ```
+
 ## Important APIs
 
 - [ApplicationModel.Resources.ResourceLoader](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourceloader)
 
 ## See also
 
+- [Make your app localizable](/windows/apps/design/globalizing/prepare-your-app-for-localization)
 - [MRT Core sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement)
 - [How to load string resources](/previous-versions/windows/apps/hh965323(v=win.10))

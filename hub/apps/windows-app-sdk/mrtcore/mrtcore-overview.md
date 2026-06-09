@@ -17,8 +17,8 @@ MRT Core has both build-time and run-time features. At build time, the system cr
 
 To use MRT Core APIs in the Windows App SDK:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-2. Follow the instructions to [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI 3](../../get-started/start-here.md).
+2. Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 To learn more about the availability of MRT Core in the Windows App SDK, see [release channels](../release-channels.md).
 
@@ -57,6 +57,8 @@ The **ResourceManager** not only supports access to an app's string resources, i
 ### Qualify resource selection with ResourceContext
 
 Resource candidates are chosen based on a particular [ResourceContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext), which is a collection of resource qualifier values (language, scale, contrast, and so on). A default context uses the app's current configuration for each qualifier value, unless overridden. For example, resources such as images can be qualified for scale, which varies from one monitor to another and hence from one application view to another. For this reason, each application view has a distinct default context. Whenever you retrieve a resource candidate, you should pass in a **ResourceContext** instance to obtain the most appropriate value for a given view.
+
+You can also construct a new **ResourceContext** and override its qualifier values to be explicit about which language, scale, contrast, or other qualifier to use when looking for a matching resource. For specific examples, see [Load a string for a specific language or other context](localize-strings.md#load-a-string-for-a-specific-language-or-other-context) and [Load an image for a specific language or other context](images-tailored-for-scale-theme-contrast.md#load-an-image-for-a-specific-language-or-other-context).
 
 ## Sample
 

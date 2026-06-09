@@ -1,7 +1,7 @@
 ---
 title: Launch the People app in Windows
 description: This topic describes the ms-people URI scheme. Your Windows app can use this URI scheme to launch the People app for specific actions.
-ms.date: 02/11/2025
+ms.date: 02/19/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, windows 11, winui, uri schemes, people app
 ms.localizationpriority: medium
@@ -10,7 +10,12 @@ ms.localizationpriority: medium
 
 # Launch the People app
 
-This topic describes the **ms-people:** URI scheme. Your WinUI, UWP, and other Windows desktop apps can use this URI scheme to launch the People app for specific actions.
+> [!IMPORTANT]
+> The Windows People app ended support on December 31, 2024 and has been removed from Windows 11 version 24H2 and newer. The `ms-people:` URI scheme documented on this page is no longer functional on modern Windows 11 installations. For contact management in your applications, see the [new Outlook for Windows](https://support.microsoft.com/office/getting-started-with-the-new-outlook-for-windows-656bb8d9-5a60-49b2-a98b-ba7822bc7627).
+>
+> This documentation is maintained for reference purposes for developers working with older Windows versions.
+
+This topic describes the **ms-people:** URI scheme. Your WinUI and other Windows desktop apps can use this URI scheme to launch the People app for specific actions.
 
 ## ms-people: URI scheme reference
 

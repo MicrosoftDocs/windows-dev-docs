@@ -8,7 +8,8 @@ ms.localizationpriority: medium
 
 # Microsoft Store Developer CLI (MSIX)
 
-Note: This page covers MSIX app publishing using Microsoft Store Developer CLI. For information on MSI/EXE app publishing using Microsoft Store Developer CLI, click [here.](./overview-exe.md)
+> [!NOTE]
+> This page covers MSIX app publishing using Microsoft Store Developer CLI. For information on MSI/EXE app publishing using Microsoft Store Developer CLI, click [here.](./overview-exe.md)
 
 The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, Linux) CLI that helps developers publish their applications to the Microsoft Store. It allows developers to locally configure their applications projects to publish to the Microsoft Store, as well as actually publish their applications' packages to the Microsoft Store, automatically calling the right [Partner Center APIs](/partner-center/develop/partner-center-rest-api-reference) to upload its packages.
 
@@ -42,6 +43,9 @@ msstore
 
 Running in CI environments is also supported, and the Microsoft Store Developer CLI (preview) can be used in your CI/CD pipelines to, for example, automatically publish your applications to the Microsoft Store. More instructions on how to do this can be found [here](./commands.md#cicd-environments).
 
+> [!NOTE]
+> App update operations through Microsoft Store Developer CLI is currently supported for free products only. Paid products will be supported in a future release.
+
 ## Commands
 
 These are the Microsoft Store Developer CLI available commands:
@@ -53,8 +57,10 @@ These are the Microsoft Store Developer CLI available commands:
 | [settings](./commands.md#settings-command)       | Change settings of the Microsoft Store Developer CLI.                                                                              |
 | [apps](./commands.md#apps-command)               | Application related commands, such as listing the applications in your account and retrieving the application's details.           |
 | [submission](./commands.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish', 'delete'. |
+| [flights](./commands.md#flights-command)         | Execute flights related tasks.                                                                                                     |
 | [init](./commands.md#init-command)               | Helps you setup your application to publish to the Microsoft Store.                                                                |
 | [package](./commands.md#package-command)         | Helps you package your Microsoft Store Application as an MSIX.                                                                     |
 | [publish](./commands.md#publish-command)         | Publishes your application to the Microsoft Store.                                                                                 |
+| [flights](./commands.md#flights-command)         | Flights related commands, such as 'list', 'get', 'delete', 'create', 'submission'.                                                 |
 
 For more info, see: [Commands](commands.md).

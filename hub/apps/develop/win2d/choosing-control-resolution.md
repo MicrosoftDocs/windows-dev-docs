@@ -41,7 +41,7 @@ This scenario may arise, for instance, on a 2D sprite game that should always re
 
 Solving this doesn't strictly require writing any new Win2D code at all.
 
-The [`Viewbox`](/uwp/api/Windows.UI.Xaml.Controls.Viewbox) XAML object lets you constrain the sizes of its child visual elements, automatically adding scaling, with letterboxing or pillarboxing to preserve aspect ratios as necessary.
+The [`Viewbox`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.viewbox) XAML object lets you constrain the sizes of its child visual elements, automatically adding scaling, with letterboxing or pillarboxing to preserve aspect ratios as necessary.
 
 Simply ensure your `CanvasControl`, `CanvasVirtualControl` or `CanvasAnimatedControl` is a child element of a `ViewBox`, and restrict the size of that control.
 

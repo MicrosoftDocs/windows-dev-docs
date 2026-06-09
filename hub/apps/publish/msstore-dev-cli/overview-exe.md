@@ -8,7 +8,8 @@ ms.localizationpriority: medium
 
 # Microsoft Store Developer CLI (MSI/EXE)
 
-Note: This page covers MSI/EXE app publishing using Microsoft Store Developer CLI. For information on MSIX app publishing using Microsoft Store Developer CLI, click [here.](./overview.md)
+> [!NOTE]
+> This page covers MSI/EXE app publishing using Microsoft Store Developer CLI. For information on MSIX app publishing using Microsoft Store Developer CLI, click [here.](./overview.md)
 
 The Microsoft Store Command Line Interface is a cross-platform (Windows, macOS, Linux) CLI that helps developers publish their applications to the Microsoft Store. It allows developers to locally configure their applications projects to publish to the Microsoft Store, as well as actually publish their applications' packages to the Microsoft Store, automatically calling the right [Partner Center APIs](/partner-center/develop/partner-center-rest-api-reference) to upload its packages.
 
@@ -41,6 +42,9 @@ msstore
 > When signing in, don't use your MSA! The **Microsoft Store Developer CLI** requires you to use your **Microsoft Entra ID credentials**. You can find more information about this in our [prerequisites](#prerequisites) section.
 
 Running in CI environments is also supported, and the Microsoft Store Developer CLI (preview) can be used in your CI/CD pipelines to, for example, automatically publish your applications to the Microsoft Store. More instructions on how to do this can be found [here](./commands.md#cicd-environments).
+
+> [!NOTE]
+> App update operations through Microsoft Store Developer CLI is currently supported for free products only. Paid products will be supported in a future release.
 
 ## Commands
 

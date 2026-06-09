@@ -2,6 +2,7 @@
 title: upgrade Command
 description: upgrades the specified application.
 ms.date: 07/07/2025
+no-loc: [winget, upgrade, update]
 ms.topic: overview
 ---
 
@@ -15,7 +16,7 @@ The **upgrade** command requires that you specify the exact string to upgrade. I
 
 The following aliases are available for this command:
 
-- update
+- `update`
 
 ## Usage
 
@@ -120,7 +121,7 @@ To identify which apps are in need of an update, simply use **upgrade** without 
 
 ## **upgrade** --all
 
-**upgrade --all** will identify all the applications with upgrades available. When you run **winget upgrade --all** the Windows Package Manager will look for all applications that have updates available and attempt to install the updates.
+**upgrade --all** will upgrade all installed applications that have an available update. When you run **winget upgrade --all**, the Windows Package Manager looks for all applications that have updates available and attempts to install the updates. Use **upgrade** without any arguments first to preview which apps will be upgraded.
 
 > [!NOTE]
 > Some applications do not provide a version.  They are always latest.  Because the Windows Package Manager cannot identify if there is a newer version of the app, an upgrade will not be possible unless the **-u, --unknown, --include-unknown** option is specified

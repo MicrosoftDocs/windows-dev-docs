@@ -39,11 +39,11 @@ Here are some key differences from the WinRT [Windows.Storage.Pickers](/uwp/api/
 
 ## Access data with WinRT storage APIs
 
-Packaged apps have access to all the WinRT storage APIs available to UWP apps. Whether you're migrating an existing UWP app or creating a new app, you can use these APIs to read and write data. For examples of using the storage APIs in a WinUI app, see [Access files and folders with Windows App SDK and WinRT APIs](winrt-files.md).
+Packaged apps have access to all the WinRT storage APIs available to UWP apps. Whether you're migrating an existing UWP app or creating a new app, you can use these APIs to read and write data. For examples of using the storage APIs in a WinUI 3 app, see [Access files and folders with Windows App SDK and WinRT APIs](winrt-files.md).
 
 ## Use .NET file APIs for data access
 
-In addition to the WinRT APIs, packaged desktop apps can use the .NET APIs in the [System.IO](/dotnet/api/system.io) namespace to read and write data. When a new WinUI 3 project is created, its `Package.appxmanifest` file contains the following setting:
+In addition to the WinRT APIs, packaged desktop apps can use the .NET APIs in the [System.IO](/dotnet/api/system.io) namespace to read and write data. When a new WinUI project is created, its `Package.appxmanifest` file contains the following setting:
 
 ``` xml
 <Capabilities>
@@ -57,7 +57,7 @@ For examples of using the .NET APIs in a WinUI app, see [Access files and folder
 
 ## Additional resources for working with files and folders
 
-If you're developing packaged WinUI apps, the WinRT storage APIs can be a powerful tool for reading and writing data. The following UWP topics provide a wealth of information for developers looking to leverage these APIs in their apps.
+If you're developing packaged WinUI apps, the WinRT storage APIs can be a powerful tool for reading and writing data. The following topics provide a wealth of information for developers looking to leverage these APIs in their apps.
 
 | Topic | Description |
 |-------|-------------|

@@ -2,6 +2,7 @@
 title: install Command
 description: Installs the specified application.
 ms.date: 07/15/2025
+no-loc: [winget, install, add]
 ms.topic: overview
 ---
 
@@ -21,7 +22,7 @@ The **install** command requires that you specify the exact string to install. I
 
 The following aliases are available for this command:
 
-- add
+- `add`
 
 ## Arguments
 
@@ -32,7 +33,7 @@ The following arguments are available.
 | **-q,--query**  |  The query used to search for an app. |
 
 > [!NOTE]
-> The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to uniquely identify the package you wish to install.
+> The query argument is positional. By default, winget performs a **case-insensitive substring match** against the package name, ID, and moniker. Wild-card syntax is not supported. Use **-e, --exact** to require an exact match (case-sensitive). Use **--id**, **--name**, or **--moniker** to restrict which field is searched.
 
 ## Options
 
@@ -62,12 +63,12 @@ The options allow you to customize the install experience to meet your needs.
 | **--skip-dependencies** | Skips processing package dependencies and Windows features. |
 | **--ignore-local-archive-malware-scan** |    Ignore the malware scan performed as part of installing an archive type package from local manifest. |
 | **--dependency-source** |    Find package dependencies using the specified source. |
-| **--accept-package-agreements** | Used to accept the license agreement, and avoid the prompt. |
+| **--accept-package-agreements** | Accepts any license agreements or EULAs presented by the package installer, suppressing the interactive prompt. This applies to the package's own license terms only — it does not affect optional components or bundled software offered by the installer. For a fully non-interactive install, combine with **--silent (-h)**. |
 | **--no-upgrade** |    Skips upgrade if an installed version already exists. |
 | **--header** | Optional Windows-Package-Manager REST source HTTP header. |
 | **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
 | **--authentication-account** | Specify the account to be used for authentication. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
+| **--accept-source-agreements** | Accepts the license agreement for the WinGet source (repository), suppressing the interactive prompt. This is separate from any package license — it covers the terms of use for the source itself, such as the winget community repository. |
 | **-r, --rename** | The value to rename the executable file (portable). |
 | **--uninstall-previous** | Uninstall the previous version of the package during upgrade. |
 | **--force** | Direct run the command and continue with non security related issues. |
@@ -100,7 +101,20 @@ The following example installs an application by version and ID.
 winget install --id Microsoft.PowerToys --version 0.91.1
 ```
 
-## Multiple selections
+## Install multiple packages
+
+You can install multiple packages in a single command by listing their IDs separated by spaces.
+
+```CMD
+winget install Microsoft.VisualStudioCode Microsoft.PowerShell Git.Git
+```
+
+WinGet installs each package in sequence. This is useful for quickly setting up a new machine or sharing a set of tools with a colleague.
+
+> [!TIP]
+> For larger sets of packages, consider using [**winget export**](export.md) and [**winget import**](import.md) to save and restore a full package list, or [**winget configure**](configure.md) to install packages alongside other machine configuration in a single file.
+
+## Disambiguate results
 
 If the query provided to **WinGet** does not result in a single application, then **WinGet** will display the results of the search. This will provide you with the additional data necessary to refine the search for a correct install.
 
@@ -120,12 +134,6 @@ The **msstore** source uses unique identifiers as the "Id" for packages. These d
 
 ```CMD
 winget install XP9KHM4BK9FZ7Q -s msstore
-```
-
-You may also use the install command to install multiple packages. For example:
-
-```CMD
-winget install Microsoft.Edit Microsoft.NuGet
 ```
 
 ## Local install

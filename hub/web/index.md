@@ -233,7 +233,7 @@ Microsoft offers a variety of resources for web developers, including new tools 
         Bring React Native support to the Windows SDK and macOS 10.13 SDK. Use JavaScript to build native Windows apps for all devices supported by Windows including PCs, tablets, 2-in-1s, Xbox, Mixed reality devices, etc., as well as the macOS desktop and laptop ecosystems.
         <br>
         [Install React Native for Windows](https://microsoft.github.io/react-native-windows/docs/getting-started)<br>
-        [Install React Native for MacOS](https://microsoft.github.io/react-native-windows/docs/rnm-getting-started)
+        [Install React Native for MacOS](https://microsoft.github.io/react-native-windows/docs/getting-started)
     :::column-end:::
     :::column:::
        [![Learn icon](../images/learn-icon.png)](/training/browse/?terms=web)<br>

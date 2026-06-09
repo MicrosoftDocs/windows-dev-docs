@@ -26,13 +26,13 @@ PowerRename is a Windows bulk renaming tool that enables you to quickly rename m
 
 In this demo, all instances of the file name "foo" are replaced with "foobar". Since all the files are uniquely named, this would have taken a long time to complete manually one-by-one. PowerRename enables a single bulk rename. Notice that the Explorer's "Undo Rename" (Ctrl+Z) command makes it possible to undo the last change.
 
-![PowerRename Demo](../images/powerrename-demo.gif)
+![PowerRename Demo](images/powerrename/demo.gif)
 
 ## PowerRename window
 
 After selecting files in Windows File Explorer, right-click and select **Rename with PowerRename** (which will appear only if enabled in PowerToys). The selected items will be displayed, along with search and replace values, a list of options, and a preview pane displaying results of the search and replace values entered.
 
-![PowerRename Menu screenshot](../images/powerrename-menu.png)
+![PowerRename Menu screenshot](images/powerrename/menu.png)
 
 ### Search for
 
@@ -172,6 +172,42 @@ The value of the renamed file would result in:
 - `Nov-02-20-powertoys.png`
 - `Nov-03-20-powertoys-menu.png`
 
+## Replace using photo metadata (EXIF or XMP)
+
+When renaming photos, EXIF or XMP metadata can be used in the *Replace with* field. After selecting the EXIF/MDF option in the combobox, the variable patterns shown in the table below become available. The tooltip provides access to all supported patterns for quick insertion.
+
+| Variable pattern       | Explanation                                   |
+| :---                   | :---                                          |
+| `$CAMERA_MAKE`         | Camera manufacturer name                      |
+| `$CAMERA_MODEL`        | Camera model name                             |
+| `$LENS`                | Lens model name                               |
+| `$ISO`                 | ISO sensitivity value                         |
+| `$APERTURE`            | F-number aperture value                       |
+| `$SHUTTER`             | Shutter speed value                           |
+| `$FOCAL`               | Focal length in millimeters                   |
+| `$FLASH`               | Flash status (On/Off)                         |
+| `$WIDTH`               | Image width in pixels                         |
+| `$HEIGHT`              | Image height in pixels                        |
+| `$AUTHOR`              | Image author/artist                           |
+| `$COPYRIGHT`           | Copyright information                         |
+| `$LATITUDE`            | GPS latitude coordinate                       |
+| `$LONGITUDE`           | GPS longitude coordinate                      |
+| `$ALTITUDE`            | GPS altitude in meters                        |
+| `$DATE_TAKEN_YYYY`     | Year photo was taken (4 digits)               |
+| `$DATE_TAKEN_YY`       | Year photo was taken (2 digits)               |
+| `$DATE_TAKEN_MM`       | Month photo was taken (01–12)                 |
+| `$DATE_TAKEN_DD`       | Day photo was taken (01–31)                   |
+| `$DATE_TAKEN_HH`       | Hour photo was taken (00–23)                  |
+| `$DATE_TAKEN_mm`       | Minute photo was taken (00–59)                |
+| `$DATE_TAKEN_SS`       | Second photo was taken (00–59)                |
+| `$EXPOSURE_BIAS`       | Exposure compensation value                   |
+| `$ORIENTATION`         | Image orientation                             |
+| `$COLOR_SPACE`         | Color space information                       |
+| `$ALTITUDE`            | GPS altitude in meters                        |
+
+
+
+
 ## Regular expressions
 
 For most use cases, a simple search and replace is sufficient. However, there may be occasions in which complicated renaming tasks require more control. [Regular Expressions](https://wikipedia.org/wiki/Regular_expression) can help in this scenario.
@@ -241,7 +277,7 @@ Filters can be used in PowerRename to narrow the results of the rename. Use the 
   - The default preview will show all selected files, with only files matching the *Search for* criteria displaying the updated rename value.
   - Selecting the *Renamed* header will toggle the preview to only display files that will be renamed. Other selected files from your original selection will not be visible.
 
-![PowerToys PowerRename Filter demo](../images/powerrename-demo2.gif)
+![PowerToys PowerRename Filter demo](images/powerrename/demo2.gif)
 
 ## Settings
 
@@ -251,6 +287,7 @@ Additional options can be configured in the settings, as described below:
 | :--- | :--- |
 | Show PowerRename in | PowerRename appears as one of the default options or only in the extended context menu. |
 | Hide icon in context menu | Hides the PowerRename icon in the context menu. |
+| Restore flags on launch | When enabled, PowerRename remembers which options and flags were selected when the tool was last used and restores them the next time it launches. |
 | Enable auto-complete for the search and replace fields | Automatically suggest terms to use in the search and replace fields based on prior uses of PowerRename. |
 | Maximum number of items | The largest number of search and replace suggestions to display. |
 | Show recently used strings | When opening PowerRename, populate the search and replace fields with the last values used. |

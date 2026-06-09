@@ -47,7 +47,7 @@ Note that many WinRT APIs will work with other desktop apps with package identit
 
 ## Call LaunchUriAsync to launch a URI
 
-Use the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method to launch a URI. When you call this method, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all URI launches directly to the UI of your app. The user must always take some action to initiate a URI launch. In a UWP app, if you attempt to launch a URI and your app isn't in the foreground, the launch will fail and your error callback will be invoked.
+Use the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method to launch a URI. When you call this method, your app must be the foreground app, that is, it must be visible to the user. This requirement helps ensure that the user remains in control. To meet this requirement, make sure that you tie all URI launches directly to the UI of your app. The user must always take some action to initiate a URI launch.
 
 First create a [System.Uri](/dotnet/api/system.uri) object to represent the URI, then pass that to the [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) method. Use the return result to see if the call succeeded, as shown in the following example.
 
@@ -170,7 +170,7 @@ Use the **bingmaps:**, **ms-drive-to:**, and **ms-walk-to:** URI schemes to laun
 
 :::image type="content" source="images/mapnyc.png" alt-text="A screenshot of the Windows Maps app.":::
 
-To use the map control in your UWP app, see [Display maps with 2D, 3D, and Streetside views](/windows/uwp/maps-and-location/display-maps). If you're using Windows App SDK 1.5 or later in a WinUI app or other desktop app, you can use the [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
+To use the map control in your WinUI app, see [MapControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol).
 
 ### Messaging app URI scheme
 
@@ -201,11 +201,7 @@ Use the **ms-photos:** URI scheme to launch the Photos app to view an image or e
 | View an image | `ms-photos:viewer?fileName=c:\users\userName\Pictures\image.jpg` |
 | Edit a video | `ms-photos:videoedit?InputToken=123abc&Action=Trim&StartTime=01:02:03` |
 
-> [!NOTE]
-> If you are launching the Photos app from a UWP app, the URIs to edit a video or display an image are only available on desktop.
-
 The following table lists additional supported URI schemes for the Photos app:
-
 | URI scheme |Results |
 |------------|--------|
 | `ms-photos:viewer?fileName={filename}` | Launches the Photos app to view the specified image where {filename} is a fully-qualified path name. For example: `c:\users\userName\Pictures\ImageToView.jpg` |

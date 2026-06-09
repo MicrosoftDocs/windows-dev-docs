@@ -141,9 +141,9 @@ A package cache is the global folder location used by applications to store file
 
 - **NuGet global-packages folder**: The NuGet global-packages folder is used by dotnet, MSBuild, and Visual Studio. Create a user specific NuGet directory in your CopyOnWrite (CoW) filesystem. For example: `D:\<username>\.nuget\packages`. Use one of the following ways to change the global-packages folder from the default location to your newly created folder (to manage the globally installed packages):
 
-  - Set a global environment variable `NUGET_PACKAGES` to that path. For example: `setx /M NUGET_PACKAGES D:\<username>\.nuget\packages`.
-  - Set `globalPackagesFolder`, when using `PackageReference`, or `repositoryPath`, when using `packages.config`, to that path in configuration settings.
+  - Set `globalPackagesFolder`, when using `PackageReference`, or `repositoryPath`, when using `packages.config`, to that path in a [NuGet configuration file](/nuget/consume-packages/configuring-nuget-behavior). This is the recommended approach because the setting is scoped to the configuration file and won't override repository-specific settings the way an environment variable would.
   - Set the `RestorePackagesPath` MSBuild property (MSBuild only) to that path.
+  - Set a global environment variable `NUGET_PACKAGES` to that path. For example: `setx /M NUGET_PACKAGES D:\<username>\.nuget\packages`. Note: this environment variable overrides any `globalPackagesFolder` setting in NuGet configuration files, including repository-specific settings.
 
     To verify the global-packages folder, run the dotnet nuget locals command: `dotnet nuget locals global-packages --list`. The restore will install and download packages into the new path. The default NuGet global-packages folder can be deleted. Learn more in the [NuGet docs: Managing the global packages, cache, and temp folders](/nuget/consume-packages/managing-the-global-packages-and-cache-folders).
 
@@ -158,7 +158,7 @@ A package cache is the global folder location used by applications to store file
 
 - **Maven cache (Java)**: Create a Maven cache directory in your Dev Drive, for example `D:\packages\maven`, then set a global environment variable `MAVEN_OPTS` to add a configuration setting to that path, for example `setx /M MAVEN_OPTS "-Dmaven.repo.local=D:\packages\maven"`. Move the contents of `%USERPROFILE%\.m2\repository` to this directory (this includes only the dependencies, plugins, and other artifacts that Maven downloads into the `repository` folder and uses for your projects). Learn more in the [Maven docs](https://maven.apache.org/settings.html) and see StackOverflow for [How to specify an alternate location for the .m2 folder or settings.xml permanently?](https://stackoverflow.com/questions/16649420/how-to-specify-an-alternate-location-for-the-m2-folder-or-settings-xml-permanen).
 
-- **Gradle cache (Java)**: Create a Gradle cache directory in your Dev Drive, for example, `D:\packages\gradle`. Then, set a global environment variable `GRADLE_USER_HOME` to point to that path, for example, use `setx /M GRADLE_USER_HOME "D:\packages\gradle"` in the command line to set it system-wide. After setting this variable, Gradle will use the specified directory (`D:\packages\gradle`) for its caches and configuration files. If you have existing Gradle files, move the contents of `%USERPROFILE%\.gradle` to this new directory. For more detailed information, you can refer to the [Gradle documentation](https://docs.gradle.org/current/userguide/userguide.html) and explore community resources like StackOverflow for [tips on managing Gradle configurations and cache directories](https://stackoverflow.com/questions/56350799/gradle-user-home-set-in-gradle-properties-build-gradle-or-settings-gradle-to).
+- **Gradle cache (Java)**: Create a Gradle cache directory in your Dev Drive, for example, `D:\packages\gradle`. Then, set a global environment variable `GRADLE_USER_HOME` to point to that path, for example, use `setx /M GRADLE_USER_HOME D:\packages\gradle` in the command line to set it system-wide. After setting this variable, Gradle will use the specified directory (`D:\packages\gradle`) for its caches and configuration files. If you have existing Gradle files, move the contents of `%USERPROFILE%\.gradle` to this new directory. For more detailed information, you can refer to the [Gradle documentation](https://docs.gradle.org/current/userguide/userguide.html) and explore community resources like StackOverflow for [tips on managing Gradle configurations and cache directories](https://stackoverflow.com/questions/56350799/gradle-user-home-set-in-gradle-properties-build-gradle-or-settings-gradle-to).
 
 ## Understanding security risks and trust in relation to Dev Drive
 
@@ -250,7 +250,7 @@ The following examples demonstrate an administrator's ability to set filters all
 To use the `setfiltersallowed` command to allow `Filter-01` and `Filter-02` on all Dev Drives, use the command:
 
 ```powershell
-fsutil devdrv setfiltersallowed Filter-01, Filter-02
+fsutil devdrv setfiltersallowed "Filter-01, Filter-02"
 ```
 
 To display the filter attach policy for all Dev Drives, use the command:
@@ -292,7 +292,7 @@ The following filters may be used with Dev Drive:
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
 
 ```powershell
-fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24"
+fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24, WinSetupMon, applockerfltr"
 ```
 
 > [!TIP]
@@ -310,7 +310,7 @@ Beginning in Windows 11 24H2 & Windows Server 2025, Block cloning is now support
 There are a few scenarios in which we do not recommend using a Dev Drive. These include:
 
 - Reformatting an existing storage volume to be a "Dev Drive" will destroy any content stored in that volume. Reformatting an existing volume while preserving the content stored there is not supported.
-- When you create a Virtual Hard Disk (VHD) hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive.
+- When you create a Virtual Hard Disk (VHD) hosted on a fixed disk (HDD or SSD), it is not recommended to copy the VHD, move it to a different machine, and then continue using it as a Dev Drive. The Dev Drive designation (including trust status and filter policies) is stored per-machine and does not transfer with the VHD file. If you move a VHD to a new machine, you will need to re-mount it and [re-designate it as a Dev Drive](#how-to-set-up-a-dev-drive) and reconfigure any custom filter policies.
 - A volume stored on a removable or hot-pluggable disk (such as a USB, HDD, or SSD external drive) does not support designation as a Dev Drive.
 - A volume in a VHD hosted by a removable or hot-pluggable disk does not support designation as a Dev Drive.
 - The C: drive on your machine cannot be designated as a Dev Drive.
@@ -366,6 +366,9 @@ For more information, see the blog post: [Dev Drive for Performance Improvements
 
 You can access Dev Drive project files, which run on the Windows file system, from a Linux distribution running via WSL. However, WSL runs in a VHD and for the best performance files should be stored on the Linux file system. WSL is out of the scope of Windows file system so you should not expect to see any performance improvement when accessing project files in Dev Drive from a Linux distribution running via WSL.
 
+> [!NOTE]
+> The WSL `metadata` mount option, which uses extended attributes to store Linux file permissions and ownership on Windows-hosted files, is not supported on ReFS volumes (the filesystem used by Dev Drive). If your workflow depends on preserving Linux file permissions for files stored on the Windows filesystem, store those files on an NTFS volume or within the WSL virtual disk instead.
+
 ### What method is used to format a Windows storage volume?
 
 See [`MSFT_Volume class`](/windows-hardware/drivers/storage/format-msft-volume) in the Windows Driver docs.
@@ -381,6 +384,16 @@ fsutil devdrv setfiltersallowed PrjFlt
 ### Will a VHD created for use as a Dev Drive be encrypted when the drive storing it is BitLocker enabled?
 
 Yes, the Dev Drive VHD will be included in the BitLocker encryption of the hosting volume. It is not necessary to enable BitLocker on the mounted VHD.
+
+### How do I back up a Dev Drive?
+
+The best backup approach depends on how your Dev Drive is set up:
+
+- **VHD-based Dev Drive**: The VHD file (`.vhd` or `.vhdx`) can be backed up like any regular file. Copy it to an external drive, network share, or cloud storage. Note that the Dev Drive designation and filter policies are per-machine and won't transfer automatically — if you restore to a new machine, you'll need to [re-mount the VHD and re-designate it as a Dev Drive](#how-to-set-up-a-dev-drive).
+
+- **Partition-based Dev Drive**: Use standard Windows backup tools such as [File History](https://support.microsoft.com/windows/back-up-your-windows-pc-87a81f8a-78fa-456e-b521-ac0560e32338) or [robocopy](/windows-server/administration/windows-commands/robocopy) to back up the contents. Cloud sync tools (OneDrive, etc.) can also back up individual files, though they may not preserve all Dev Drive-specific settings.
+
+In both cases, the package caches stored on Dev Drive (npm, NuGet, pip, etc.) can typically be regenerated and do not need to be included in backups.
 
 ### Can Dev Drive make Java development faster on Windows?
 

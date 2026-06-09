@@ -166,7 +166,7 @@ Developer forums are a great place to ask and answer game development questions,
     </tr>
     <tr>
         <td>PlayFab forums</td>
-        <td><a href="https://community.playfab.com/index.html">PlayFab forums</a></td>
+        <td><a href="/gaming/playfab/">PlayFab forums</a></td>
     </tr>
 </table>
 
@@ -463,7 +463,7 @@ Now part of the Microsoft family, Azure PlayFab is a complete back-end platform 
     </tr>
     <tr>
         <td>Forums</td>
-        <td><a href="https://community.playfab.com/index.html">PlayFab forums</a></td>
+        <td><a href="/gaming/playfab/">PlayFab forums</a></td>
     </tr>
 </table>
 

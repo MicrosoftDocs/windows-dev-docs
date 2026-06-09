@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 This section describes how to use the [Windows.Graphics.Printing3D namespace](/uwp/api/windows.graphics.printing3d) to add 3D printing functionality to your Universal Windows Platform (UWP) app.  
 
-For more information on 3D printing with Windows, including resources for hardware partners, community discussion forums, and general information on 3D print capabilities, see [3D printing with Windows 10](https://www.microsoft.com/3d-print/windows-3d-printing).
+For more information on 3D printing with Windows, including resources for hardware partners, community discussion forums, and general information on 3D print capabilities, see [3D printing with Windows](/windows-hardware/drivers/3dprint/).
 
 | Topic | Description |
 |-------|-------------|

@@ -1,5 +1,5 @@
 ---
-title: Use a MySQL database in a Windows app
+title: "Tutorial: Use a MySQL database in a Windows app"
 description: Learn how to connect to a MySQL database from your Windows app, and test your connection using sample code.
 ms.date: 01/23/2025
 ms.custom: copilot-scenario-highlight
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 #customer intent: As a Windows developer, I want to learn how to connect to a MySQL database from my Windows app so that I can store and retrieve data.
 ---
 
-# Use a MySQL database in a Windows app
+# Tutorial: Use a MySQL database in a Windows app
 
 This article contains the steps required to enable working with a MySQL database from a Windows app. It also contains a small code snippet showing how you can interact with the database in code.
 
@@ -18,7 +18,7 @@ This article contains the steps required to enable working with a MySQL database
 
 ## Set up your solution
 
-This example can be used with any WPF, Windows Forms, WinUI 3, and UWP project to connect your Windows app to a MySQL database. Follow these steps to install the package and try out the example code to read data from an existing MySQL database.
+This example can be used with any WPF, Windows Forms and WinUI project to connect your Windows app to a MySQL database. Follow these steps to install the package and try out the example code to read data from an existing MySQL database.
 
 1. Open the **Package Manager Console** (View -> Other Windows -> Package Manager Console).
 1. Use the command `Install-Package MySql.Data` to install the NuGet package for the MySQL core class library.
@@ -33,6 +33,8 @@ This will allow you to programmatically access MySQL databases.
 The following is an example of connecting to and reading from a remote MySQL database. Note that the server address and database name will need to be customized.
 
 ``` csharp
+using MySql.Data.MySqlClient;
+
 const string M_str_sqlcon = "Server=myServerAddress;Database=myDataBase;IntegratedSecurity=yes;Uid=auth_windows;";
 using (var mySqlCn = new MySqlConnection(M_str_sqlcon))
 {

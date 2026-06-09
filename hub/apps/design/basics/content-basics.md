@@ -1,6 +1,6 @@
 ---
 description: An overview of common page patterns and UI elements for displaying content in your Windows app.
-title: Content design basics for Windows apps
+title: Content layout and spacing
 ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
@@ -10,7 +10,7 @@ ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
-# Content design basics for Windows apps
+# Content layout and spacing
 
 This article provides some practical tips and examples to help you design the content of your app: Windows spacing rationale, using the type ramp to demonstrate hierarchy, lists and grids, and how to group controls.
 

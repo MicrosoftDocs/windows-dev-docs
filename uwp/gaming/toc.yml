@@ -544,15 +544,9 @@
       items:
       - name: GLSL to HLSL
         href: ../gaming/glsl-to-hlsl-reference.md
-- name: UWP on Xbox One
+- name: UWP on Xbox
   items:
   - name: FAQ
     href: ../xbox-apps/frequently-asked-questions.yml
-  - name: Tools
-    items:
-    - name: Dev Home
-  - name: Xbox best practices
-  - name: Bringing existing games to Xbox
-  - name: Xbox Device Portal REST API
-- name: Xbox Live
-  href: /gaming/xbox-live/index
+  - name: Xbox Live
+    href: /gaming/xbox-live/index

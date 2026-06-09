@@ -18,7 +18,7 @@ There are two types of reserved file types: file types reserved for built-in app
 
 File types reserved for built-in apps:
 
-| Types | | | |
+| File type | File type | File type | File type |
 |---|---|---|---|
 | .aac | .icon | .pem | .wdp |
 | .aetx | .jpeg | .png | .wmv |
@@ -37,7 +37,7 @@ File types reserved for built-in apps:
 
 The following file types are reserved for the operating system:
 
-| Types | | | |
+| File type | File type | File type | File type |
 |---|---|---|---|
 | .accountpicture-ms | .its | .ops | .url |
 | .ade | .jar | .pcd | .vb |
@@ -80,7 +80,7 @@ The following file types are reserved for the operating system:
 
 The following URI scheme names are reserved and can't be used by your app:
 
-| Types | | | |
+| URI scheme | URI scheme | URI scheme | URI scheme |
 |---|---|---|---|
 | application.manifest | inffile | ms-settings:network-dialup | scrfile |
 | application.reference | insfile | ms-settings:network-ethernet | scriptletfile |

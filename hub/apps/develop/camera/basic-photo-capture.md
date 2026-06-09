@@ -6,7 +6,7 @@ ms.date: 07/23/2024
 ms.author: drewbat
 author: drewbatgit
 ms.localizationpriority: medium
-#customer intent: As a developer, I want to access the camera in a Windows app using WinUI 3.
+#customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
 
 # Basic photo, video, and audio capture with MediaCapture in a WinUI 3 app
@@ -15,7 +15,7 @@ This article shows the simplest way to capture photos and video using the [**Med
 
 ## Initialize the MediaCapture object
 
-All of the capture methods described in this article require the first step of initializing the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) object. This includes instantiating the object, selecting a capture device, setting initialization parameters, and then calling [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync). Typically camera apps will display the camera preview while capturing photos or video in their UI using the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement). For a walkthrough of initializing **MediaCapture** and showing the preview in a XAML UI, see [Show the camera preview in a WinUI 3 app](camera-quickstart-winui3.md). The code examples in this article will assume that an initialized instance of **MediaCapture** has already been created.
+All of the capture methods described in this article require the first step of initializing the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) object. This includes instantiating the object, selecting a capture device, setting initialization parameters, and then calling [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync). Typically camera apps will display the camera preview while capturing photos or video in their UI using the [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement). For a walkthrough of initializing **MediaCapture** and showing the preview in a XAML UI, see [Show the camera preview in a WinUI app](camera-quickstart-winui3.md). The code examples in this article will assume that an initialized instance of **MediaCapture** has already been created.
 
 ## Capture a photo to a SoftwareBitmap
 
@@ -23,7 +23,7 @@ The [**SoftwareBitmap**](/uwp/api/Windows.Graphics.Imaging.SoftwareBitmap) class
 
 Capture a photo to a **SoftwareBitmap** using the [**LowLagPhotoCapture**](/uwp/api/Windows.Media.Capture.LowLagPhotoCapture) class. Get an instance of this class by calling [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync), passing in an [**ImageEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.ImageEncodingProperties) object specifying the image format you want. [**CreateUncompressed**](/uwp/api/windows.media.mediaproperties.imageencodingproperties.createuncompressed) creates an uncompressed encoding with the specified pixel format. Initiate photo capture by calling [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync), which returns a [**CapturedPhoto**](/uwp/api/Windows.Media.Capture.CapturedPhoto) object. Get a **SoftwareBitmap** by accessing the [**Frame**](/uwp/api/windows.media.capture.capturedphoto.frame) property and then the [**SoftwareBitmap**](/uwp/api/windows.media.capture.capturedframe.softwarebitmap) property.
 
-You can capture multiple photos by repeatedly calling **CaptureAsync**. When you are done capturing, call [**FinishAsync**](/uwp/api/windows.media.capture.advancedphotocapture.finishasync) to shut down the **LowLagPhotoCapture** session and free up the associated resources. After calling **FinishAsync**, to begin capturing photos again you will need to call [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) again to reinitialize the capture session before calling [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync).
+You can capture multiple photos by repeatedly calling **CaptureAsync**. When you are done capturing, call [**FinishAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.finishasync) to shut down the **LowLagPhotoCapture** session and free up the associated resources. After calling **FinishAsync**, to begin capturing photos again you will need to call [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) again to reinitialize the capture session before calling [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraLowLagPhotoCapture":::
 
@@ -83,8 +83,6 @@ You can also get a result frame when you stop the video by calling [**StopWithRe
 
 Once you have captured a video to a file, you may want to load the file and play it back within your app's UI. You can do this using the **[MediaPlayerElement](/uwp/api/Windows.UI.Xaml.Controls.MediaPlayerElement)** XAML control and an associated **[MediaPlayer](/uwp/api/windows.media.playback.mediaplayer)**. For information on playing media in a XAML page, see [Play audio and video with MediaPlayer](/windows/uwp/audio-video-camera/play-audio-and-video-with-mediaplayer).
 
-[TBD - Is the MediaComposition framework supported / recommended for WinUI?]
-
 You can also create a **[MediaClip](/uwp/api/windows.media.editing.mediaclip)** object from a video file by calling **[CreateFromFileAsync](/uwp/api/windows.media.editing.mediaclip.createfromfileasync)**.  A **[MediaComposition](/uwp/api/windows.media.editing.mediacomposition)** provides basic video editing functionality like arranging the sequence of **MediaClip** objects, trimming video length, creating layers, adding background music, and applying video effects. For more information on working with media compositions, see [Media compositions and editing](/windows/uwp/audio-video-camera/media-compositions-and-editing).
 
 
@@ -92,12 +90,11 @@ You can also create a **[MediaClip](/uwp/api/windows.media.editing.mediaclip)** 
 
 You can quickly add audio capture to your app by using the same technique shown above for capturing video. Call [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) to initialize the capture session, passing in the file and a [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) which is generated in this example by the [**CreateMp3**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3) static method. To begin recording, call [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync).
 
-[TBD - This code is throwing 'The request is invalid in the current state.']
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStartAudioCapture":::
 
 
-Call [**StopAsync**](/uwp/api/windows.media.capture.lowlagphotosequencecapture.stopasync) to stop the audio recording.
+Call [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) to stop the audio recording.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStopAudioCapture":::
 

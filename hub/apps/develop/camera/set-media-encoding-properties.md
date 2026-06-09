@@ -1,12 +1,12 @@
 ---
-description: Learn how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video in a WinUI 3 app.
+description: Learn how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video in a WinUI app.
 title: Set format, resolution, and frame rate for MediaCapture
 ms.date: 02/08/2017
 ms.topic: article
 keywords: windows 10, windows 11, winui3, camera
 ms.localizationpriority: medium
 ---
-# Set format, resolution, and frame rate for MediaCapture in a WinUI 3 app
+# Set format, resolution, and frame rate for MediaCapture in a WinUI app
 
 This article shows you how to use the [**IMediaEncodingProperties**](/uwp/api/Windows.Media.MediaProperties.IMediaEncodingProperties) interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media.
 

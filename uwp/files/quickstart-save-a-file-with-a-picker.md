@@ -9,6 +9,11 @@ ms.localizationpriority: medium
 ---
 # Save a file with a picker
 
+> [!IMPORTANT]
+> **Building a WinUI 3 app?** Use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace instead of the `Windows.Storage.Pickers` APIs described in this article. The Windows App SDK pickers (available in Windows App SDK 1.8 and later) are designed for WinUI 3 apps — they require no window handle initialization and return lightweight path-based results. See [Save a file with a picker in WinUI](/windows/apps/develop/files/pickers-save-file) and [Open files and folders with pickers in WinUI](/windows/apps/develop/files/using-file-folder-pickers).
+>
+> The `Windows.Storage.Pickers` APIs on this page apply to UWP apps and to desktop apps that require elevation (where the Windows App SDK pickers cannot be used).
+
 **Important APIs**
 
 - [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker)
@@ -19,11 +24,6 @@ Use [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to let
 > [!NOTE]
 > For a complete sample, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker).
 
-> [!NOTE]
-> In a desktop app (which includes WinUI apps), you can use the [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespace to access the file and folder pickers. This namespace is available in Windows App SDK version 1.8 and later. The APIs in this namespace are designed to work seamlessly with WinUI apps, providing a consistent experience across different app types.
->
-> If necessary, you can still use file and folder pickers from [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers). However, if the desktop app requires elevation to run, you'll need a different approach because these APIs aren't designed to be used in an elevated app. For an example, see [FileSavePicker](/uwp/api/windows.storage.pickers.filesavepicker#in-a-desktop-app-that-requires-elevation).
-
 ## Prerequisites
 
 - **Understand async programming for Universal Windows Platform (UWP) apps**
@@ -32,7 +32,7 @@ Use [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to let
 
 - **Access permissions to the location**
 
-    See [File access permissions](file-access-permissions.md).
+    See [File access permissions](/windows/apps/develop/files/file-access-permissions).
 
 ## FileSavePicker: step-by-step
 
@@ -97,7 +97,7 @@ Use a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) so t
     }
     ```
 
-The example checks that the file is valid and writes its own file name into it. Also see [Creating, writing, and reading a file](quickstart-reading-and-writing-files.md).
+The example checks that the file is valid and writes its own file name into it. Also see [Creating, writing, and reading a file](/windows/apps/develop/files/create-read-write-files).
 
 > [!TIP]
 > You should always check the saved file to make sure it is valid before you perform any other processing. Then, you can save content to the file as appropriate for your app, and provide appropriate behavior if the picked file is not valid.
@@ -110,4 +110,4 @@ The example checks that the file is valid and writes its own file name into it. 
 
 [Integrating with file picker contracts](/previous-versions/windows/apps/hh465192(v=win.10))
 
-[Creating, writing, and reading a file](quickstart-reading-and-writing-files.md)
+[Creating, writing, and reading a file](/windows/apps/develop/files/create-read-write-files)

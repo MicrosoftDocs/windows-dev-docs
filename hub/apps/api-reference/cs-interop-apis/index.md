@@ -7,7 +7,7 @@ keywords: windows 10, windows 11, Windows App SDK, desktop development, winui, a
 ms.localizationpriority: low
 ---
 
-# Interop C# APIs for WinUI
+# Interop C# APIs for WinUI 3
 
 As a C# desktop application developer, in .NET you can make use of C# interop classes whose methods wrap and represent several interoperability functions. These include methods of C# classes representing the [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) function, for example.
 

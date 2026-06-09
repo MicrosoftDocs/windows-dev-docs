@@ -170,14 +170,14 @@ How-to articles and code for creating UWP apps for Windows.
     :::column:::
         <h3>Peripherals, sensors, and power</h3>
         <a href="/windows/uwp/contacts-and-calendar/">Overview</a><br/>
-        <a href="/windows/uwp/devices-sensors/enable-device-capabilities">Enable device capabilities</a><br/>
-        <a href="/windows/uwp/devices-sensors/pair-devices">Pair devices</a><br/>
-        <a href="/windows/uwp/devices-sensors/point-of-service">Point of Service</a><br/>
-        <a href="/windows/uwp/devices-sensors/sensors">Sensors</a><br/>
+        <a href="/windows/apps/develop/devices-sensors/enable-device-capabilities">Enable device capabilities</a><br/>
+        <a href="/windows/apps/develop/devices-sensors/pair-devices">Pair devices</a><br/>
+        <a href="/windows/apps/develop/devices-sensors/pos/point-of-service">Point of Service</a><br/>
+        <a href="/windows/apps/develop/devices-sensors/sensors">Sensors</a><br/>
         <a href="/windows/uwp/devices-sensors/printing-and-scanning">Printing</a><br/>
         <a href="/windows/uwp/devices-sensors/3d-printing">3-D printing<</a><br/>
         <a href="/windows/uwp/devices-sensors/nfc">NFC</a><br/>
-        <a href="/windows/uwp/devices-sensors/get-battery-info">Battery info</a><br/>
+        <a href="/windows/apps/develop/devices-sensors/get-battery-info">Battery info</a><br/>
     :::column-end:::
     :::column:::
         <h3>Porting</h3>

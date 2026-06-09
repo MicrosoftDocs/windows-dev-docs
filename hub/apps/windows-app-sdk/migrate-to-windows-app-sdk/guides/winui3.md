@@ -1,8 +1,8 @@
 ---
-title: User interface migration (including WinUI 3)
-description: This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI 3](../../../winui/index.md).
+title: User interface migration (including WinUI)
+description: This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, WinUI
 ms.localizationpriority: medium
 dev_langs:
@@ -12,7 +12,7 @@ dev_langs:
 
 # User interface migration (including WinUI 3)
 
-This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI 3](../../../winui/index.md).
+This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
 
 ## Summary of API and/or feature differences
 
@@ -93,7 +93,7 @@ In your UWP app, if you use certain types from the [**Windows.UI.Popups**](/uwp/
 The steps that you have to follow in a desktop app are described in [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
 
 > [!NOTE]
-> For new apps, we recommend using the [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
+> For new apps, we recommend using the [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
 
 Here's some typical UWP code to display a [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog).
 
@@ -112,7 +112,7 @@ co_await showDialog.ShowAsync();
 And here's the equivalent code in a Windows App SDK app.
 
 ```csharp
-// MainWindow.xaml.cs in a WinUI 3 app
+// MainWindow.xaml.cs in a WinUI app
 var showDialog = new Windows.UI.Popups.MessageDialog("Message here");
 WinRT.Interop.InitializeWithWindow.Initialize(showDialog,
     WinRT.Interop.WindowNative.GetWindowHandle(this));
@@ -120,7 +120,7 @@ await showDialog.ShowAsync();
 ```
 
 ```cppwinrt
-// pch.h in a WinUI 3 app
+// pch.h in a WinUI app
 ...
 #include <Shobjidl.h>
 #include <microsoft.ui.xaml.window.h>

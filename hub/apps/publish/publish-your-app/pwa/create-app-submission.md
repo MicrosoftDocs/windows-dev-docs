@@ -5,7 +5,7 @@ ms.topic: how-to
 ms.date: 10/30/2022
 ---
 
-# Create app submission
+# Create app submission for PWAs
 
 > [!NOTE]
 > This section of the documentation describes how to create an app submission in Partner Center. Alternatively, you can use the [Microsoft Store submission API](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services) to automate app submissions.

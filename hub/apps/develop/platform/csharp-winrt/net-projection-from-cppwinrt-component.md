@@ -1,7 +1,7 @@
 ---
 title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
 description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
-ms.date: 03/23/2023
+ms.date: 04/13/2026
 ms.topic: how-to
 keywords: windows 10, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
@@ -21,12 +21,10 @@ In .NET 6 and later, consumption of Windows metadata (WinMD) files is no longer 
 
 This walkthrough and the corresponding sample require the following tools and components:
 
-* [Visual Studio 2022](https://visualstudio.microsoft.com/downloads/) (or Visual Studio 2019) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
-* [.NET 6.0 SDK](https://dotnet.microsoft.com/download/) or later.
+* [Visual Studio 2022 or later](https://visualstudio.microsoft.com/downloads/) with the Universal Windows Platform development workload installed. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option.
+* [.NET 8.0 SDK (LTS)](https://dotnet.microsoft.com/download) or later.
 
-**Visual Studio 2019** only. The [C++/WinRT VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), which gives you C++/WinRT project templates in Visual Studio. The project templates are built in to Visual Studio 2022.
-
-We'll be using Visual Studio 2022 and .NET 6 in this walkthrough.
+We'll be using Visual Studio 2022 or later and .NET 8 in this walkthrough.
 
 > [!IMPORTANT]
 > Also, you'll need to download or clone the sample code for this topic from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub. Visit [CsWinRT](https://github.com/microsoft/CsWinRT), and click the green **Code** button to get the `git clone` url. Be sure to read the [README.md](https://github.com/microsoft/CsWinRT/blob/master/src/Samples/NetProjectionSample/README.md) file for the sample.
@@ -35,7 +33,7 @@ We'll be using Visual Studio 2022 and .NET 6 in this walkthrough.
 
 To follow this walkthrough, you must first have a C++/WinRT Windows Runtime component (WRC) from which to generate the C# projection assembly.
 
-This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template (which comes with Visual Studio 2022, or with the [C++/WinRT VSIX extension](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)).
+This walkthrough uses the **SimpleMathComponent** WRC from the [C#/WinRT projection sample](https://github.com/microsoft/CsWinRT/tree/master/src/Samples/NetProjectionSample) on GitHub, which you already downloaded or cloned. **SimpleMathComponent** was created from the **Windows Runtime Component (C++/WinRT)** Visual Studio project template.
 
 To open the **SimpleMathComponent** project in Visual Studio, open the `\CsWinRT\src\Samples\NetProjectionSample\CppWinRTComponentProjectionSample.sln` file, which you'll find in your download or clone of the repo.
 
@@ -75,7 +73,7 @@ First, with the **CppWinRTComponentProjectionSample** solution still open in Vis
     1. In **Solution Explorer**, right-click your solution node and click **Add** > **New Project**. 
     2. In the **Add a new project** dialog box, type **Class Library** in the search box. Choose **C#** from the language list, and then choose **Windows** from the platform list. Choose the C# project template that's called simply **Class Library** (with no prefixes nor suffixes), and click **Next**.
     3. Name the new project *SimpleMathProjection*. The location should already be set to the same `\CsWinRT\src\Samples\NetProjectionSample` folder that the **SimpleMathComponent** folder is in; but confirm that. Then click **Next**.
-    4. On the **Additional information** page, select **.NET 6.0 (Long-term support)**, and then choose **Create**.
+    4. On the **Additional information** page, select **.NET 8.0 (Long-term support)**, and then choose **Create**.
 
 2. Delete the stub **Class1.cs** file from the project.
 
@@ -237,7 +235,7 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
     1. In a new instance of Visual Studio, select **File** > **New** > **Project**.
     2. In the **Create a new project** dialog box, search for the **Console App** project template. Choose the C# project template that's called simply **Console App** (with no prefixes nor suffixes), and click **Next**. If you're using Visual Studio 2019, then the project template is **Console Application**.
     3. Name the new project **SampleConsoleApp**, set its location to the same `\CsWinRT\src\Samples\NetProjectionSample` folder that the **SimpleMathComponent** and **SimpleMathProjection** folders are in, and click **Next**.
-    4. On the **Additional information** page, select **.NET 6.0 (Long-term support)**, and then choose **Create**.
+    4. On the **Additional information** page, select **.NET 8.0 (Long-term support)**, and then choose **Create**.
 
 2. In **Solution Explorer**, double-click the **SampleConsoleApp** node to open the **SampleConsoleApp.csproj** project file, and edit the `TargetFramework` and `Platform` properties so that they look as shown in the following listing. Add the `Platform` element if it's not there.
 

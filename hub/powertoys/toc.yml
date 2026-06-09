@@ -3,7 +3,24 @@ items:
     href: ../powertoys/index.md
   - name: Installation
     href: ../powertoys/install.md
+  - name: Settings and configuration
+    items:
+    - name: General settings
+      href: ../powertoys/general.md
+    - name: Group Policy
+      href: ../powertoys/grouppolicy.md
+    - name: Running as administrator
+      href: ../powertoys/administrator.md
+    - name: DSC configuration
+      items:
+        - name: Overview
+          href: ../powertoys/dsc-configure/overview.md
+        - name: Configure with PowerShell DSC
+          href: ../powertoys/dsc-configure/psdsc.md
+        - name: Configure with Microsoft DSC
+          href: ../powertoys/dsc-configure/microsoft-dsc.md
   - name: Utilities
+    expanded: true
     items:
       - name: Advanced Paste
         href: ../powertoys/advanced-paste.md
@@ -19,19 +36,27 @@ items:
         items:
           - name: Overview
             href: ../powertoys/command-palette/overview.md
-          - name: Developer docs
+          - name: Settings
+            href: ../powertoys/command-palette/settings.md
+          - name: Dock
+            href: ../powertoys/command-palette/dock.md
+          - name: Finding and installing extensions
+            href: ../powertoys/command-palette/finding-and-installing-extensions.md
+          - name: Extension development
             items:
-              - name: Extensibility overview
+              - name: Introduction
+                href: ../powertoys/command-palette/extension-development.md
+              - name: How it works
                 href: ../powertoys/command-palette/extensibility-overview.md
-              - name: Authoring extensions
+              - name: Building your extension
                 items:
-                  - name: Creating an extension
+                  - name: Getting started
                     href: ../powertoys/command-palette/creating-an-extension.md
                   - name: Adding commands
                     href: ../powertoys/command-palette/adding-commands.md
                   - name: Update a list of commands
                     href: ../powertoys/command-palette/update-a-list-of-commands.md
-                  - name: Add top-level commands to your extension
+                  - name: Add top-level commands
                     href: ../powertoys/command-palette/add-top-level-commands-to-your-extension.md
                   - name: Command results
                     href: ../powertoys/command-palette/command-results.md
@@ -39,6 +64,10 @@ items:
                     href: ../powertoys/command-palette/using-markdown-content.md
                   - name: Get user input with forms
                     href: ../powertoys/command-palette/using-form-pages.md
+                  - name: Adding Dock support
+                    href: ../powertoys/command-palette/adding-dock-support.md
+                  - name: Adding extension settings
+                    href: ../powertoys/command-palette/adding-extension-settings.md
                   # - name: Handle the search text
                   #   href: ../powertoys/command-palette/dynamic-lists.md
                   # - name: Adding details
@@ -48,749 +77,805 @@ items:
                   # - name: "Advanced: Adding an extension to your package"
                   #   href: ../powertoys/command-palette/adding-an-extension-to-your-package.md
               - name: Publishing your extension
-                href: ../powertoys/command-palette/publish-extension.md
+                items:
+                  - name: Overview
+                    href: ../powertoys/command-palette/publish-extension.md
+                  - name: Publish to Microsoft Store
+                    href: ../powertoys/command-palette/publish-extension-store.md
+                  - name: Publish to WinGet
+                    href: ../powertoys/command-palette/publish-extension-winget.md
+                  - name: Making your extension discoverable
+                    href: ../powertoys/command-palette/extension-gallery.md
               - name: Extension samples
                 href: ../powertoys/command-palette/samples.md
-              - name: Command Palette SDK namespaces
-                href: ../powertoys/command-palette/sdk-namespaces.md
-              - name: Microsoft.CommandPalette.Extensions
+              - name: API reference
                 items:
+                  - name: Overview
+                    href: ../powertoys/command-palette/sdk-namespaces.md
                   - name: Microsoft.CommandPalette.Extensions
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.md
-                  - name: Color
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/color.md
-                  - name: CommandResultKind
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/commandresultkind.md
-                  - name: ICommand
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommand.md
-                  - name: ICommandContextItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandcontextitem.md
-                  - name: ICommandItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommanditem.md
-                  - name: ICommandProvider
                     items:
+                      - name: Overview
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/microsoft-commandpalette-extensions.md
+                      - name: Color
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/color.md
+                      - name: CommandResultKind
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/commandresultkind.md
+                      - name: ContentSize
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/contentsize.md
+                      - name: ICommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommand.md
+                      - name: ICommandContextItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandcontextitem.md
+                      - name: ICommandItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommanditem.md
                       - name: ICommandProvider
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider.md
-                      - name: Methods
                         items:
-                          - name: FallbackCommands
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_fallbackcommands.md
-                          - name: GetCommand
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_getcommand.md
-                          - name: InitializeWithHost
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_initializewithhost.md
-                          - name: TopLevelCommands
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_toplevelcommands.md
-                  - name: ICommandResult
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandresult.md
-                  - name: ICommandResultArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandresultargs.md
-                  - name: ICommandSettings
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandsettings.md
-                  - name: IConfirmationArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iconfirmationargs.md
-                  - name: IContent
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontent.md
-                  - name: IContentPage
-                    items:
+                          - name: ICommandProvider
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider.md
+                          - name: Methods
+                            items:
+                              - name: FallbackCommands
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_fallbackcommands.md
+                              - name: GetCommand
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_getcommand.md
+                              - name: InitializeWithHost
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_initializewithhost.md
+                              - name: TopLevelCommands
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider_toplevelcommands.md
+                      - name: ICommandProvider2
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider2.md
+                      - name: ICommandProvider3
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider3.md
+                      - name: ICommandProvider4
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandprovider4.md
+                      - name: ICommandResult
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandresult.md
+                      - name: ICommandResultArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandresultargs.md
+                      - name: ICommandSettings
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icommandsettings.md
+                      - name: IConfirmationArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iconfirmationargs.md
+                      - name: IContent
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontent.md
                       - name: IContentPage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontentpage.md
-                      - name: Methods
                         items:
-                          - name: GetContent
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontentpage_getcontent.md
-                  - name: IContextItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontextitem.md
-                  - name: IDetails
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetails.md
-                  - name: IDetailsCommand
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailscommand.md
-                  - name: IDetailsData
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailsdata.md
-                  - name: IDetailsElement
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailselement.md
-                  - name: IDetailsLink
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailslink.md
-                  - name: IDetailsSeparator
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailsseparator.md
-                  - name: IDetailsTags
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailstags.md
-                  - name: IDynamicListPage
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idynamiclistpage.md
-                  - name: IExtension
-                    items:
+                          - name: IContentPage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontentpage.md
+                          - name: Methods
+                            items:
+                              - name: GetContent
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontentpage_getcontent.md
+                      - name: IContextItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/icontextitem.md
+                      - name: IDetails
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetails.md
+                      - name: IDetailsCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailscommand.md
+                      - name: IDetailsCommands
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailscommands.md
+                      - name: IDetailsData
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailsdata.md
+                      - name: IDetailsElement
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailselement.md
+                      - name: IDetailsLink
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailslink.md
+                      - name: IDetailsSeparator
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailsseparator.md
+                      - name: IDetailsTags
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idetailstags.md
+                      - name: IDynamicListPage
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/idynamiclistpage.md
+                      - name: IExtendedAttributesProvider
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextendedattributesprovider.md
                       - name: IExtension
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension.md
-                      - name: Methods
                         items:
-                          - name: Dispose
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension_dispose.md
-                          - name: GetProvider
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension_getprovider.md
-                  - name: IExtensionHost
-                    items:
+                          - name: IExtension
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension.md
+                          - name: Methods
+                            items:
+                              - name: Dispose
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension_dispose.md
+                              - name: GetProvider
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextension_getprovider.md
                       - name: IExtensionHost
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost.md
-                      - name: Methods
                         items:
-                          - name: HideStatus
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_hidestatus.md
-                          - name: LogMessage
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_logmessage.md
-                          - name: ShowStatus
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_showstatus.md
-                  - name: IFallbackCommandItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackcommanditem.md
-                  - name: IFallbackHandler
-                    items:
+                          - name: IExtensionHost
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost.md
+                          - name: Methods
+                            items:
+                              - name: HideStatus
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_hidestatus.md
+                              - name: LogMessage
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_logmessage.md
+                              - name: ShowStatus
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iextensionhost_showstatus.md
+                      - name: IFallbackCommandItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackcommanditem.md
+                      - name: IFallbackCommandItem2
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackcommanditem2.md
                       - name: IFallbackHandler
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackhandler.md
-                      - name: Methods
                         items:
-                          - name: UpdateQuery
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackhandler_updatequery.md
-                  - name: IFilter
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilter.md
-                  - name: IFilters
-                    items:
+                          - name: IFallbackHandler
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackhandler.md
+                          - name: Methods
+                            items:
+                              - name: UpdateQuery
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifallbackhandler_updatequery.md
+                      - name: IFilter
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilter.md
                       - name: IFilters
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters.md
-                      - name: Methods
                         items:
-                          - name: GetFilters
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_getfilters.md
-                  - name: IFilterItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilteritem.md
-                  - name: IForm
-                    items:
+                          - name: IFilters
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters.md
+                          - name: Methods
+                            items:
+                              - name: GetFilters
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilters_getfilters.md
+                      - name: IFilterItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ifilteritem.md
                       - name: IForm
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform.md
-                      - name: Methods
                         items:
-                          - name: DataJson
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_datajson.md
-                          - name: StateJson
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_statejson.md
-                          - name: SubmitForm
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_submitform.md
-                          - name: TemplateJson
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_templatejson.md
-                  - name: IFormContent
-                    items:
+                          - name: IForm
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform.md
+                          - name: Methods
+                            items:
+                              - name: DataJson
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_datajson.md
+                              - name: StateJson
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_statejson.md
+                              - name: SubmitForm
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_submitform.md
+                              - name: TemplateJson
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iform_templatejson.md
                       - name: IFormContent
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformcontent.md
-                      - name: Methods
                         items:
-                          - name: SubmitForm
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformcontent_submitform.md
-                  - name: IFormPage
-                    items:
+                          - name: IFormContent
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformcontent.md
+                          - name: Methods
+                            items:
+                              - name: SubmitForm
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformcontent_submitform.md
                       - name: IFormPage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformpage.md
-                      - name: Methods
                         items:
-                          - name: Forms
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformpage_forms.md
-                  - name: IGoToPageArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igotopageargs.md
-                  - name: IGridProperties
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igridproperties.md
-                  - name: IIconData
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iicondata.md
-                  - name: IIconInfo
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iiconinfo.md
-                  - name: IInvokableCommand
-                    items:
+                          - name: IFormPage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformpage.md
+                          - name: Methods
+                            items:
+                              - name: Forms
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iformpage_forms.md
+                      - name: IGoToPageArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igotopageargs.md
+                      - name: IGridProperties
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igridproperties.md
+                      - name: IGalleryGridLayout
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/igallerygridlayout.md
+                      - name: IMediumGridLayout
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imediumgridlayout.md
+                      - name: ISmallGridLayout
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ismallgridlayout.md
+                      - name: IIconData
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iicondata.md
+                      - name: IIconInfo
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iiconinfo.md
                       - name: IInvokableCommand
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iinvokablecommand.md
-                      - name: Methods
                         items:
-                          - name: Invoke
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iinvokablecommand_invoke.md
-                  - name: IItemsChangedEventArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iitemschangedeventargs.md
-                  - name: IListItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistitem.md
-                  - name: IListPage
-                    items:
+                          - name: IInvokableCommand
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iinvokablecommand.md
+                          - name: Methods
+                            items:
+                              - name: Invoke
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iinvokablecommand_invoke.md
+                      - name: IItemsChangedEventArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iitemschangedeventargs.md
+                      - name: IListItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistitem.md
                       - name: IListPage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage.md
-                      - name: Methods
                         items:
-                          - name: GetItems
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage_getitems.md
-                          - name: LoadMore
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage_loadmore.md
-                  - name: ILogMessage
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilogmessage.md
-                  - name: IMarkdownContent
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdowncontent.md
-                  - name: IMarkdownPage
-                    items:
+                          - name: IListPage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage.md
+                          - name: Methods
+                            items:
+                              - name: GetItems
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage_getitems.md
+                              - name: LoadMore
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilistpage_loadmore.md
+                      - name: ILogMessage
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ilogmessage.md
+                      - name: IMarkdownContent
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdowncontent.md
                       - name: IMarkdownPage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage.md
-                      - name: Methods
                         items:
-                          - name: Bodies
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage_bodies.md
-                          - name: Details
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage_details.md
-                  - name: INotifyItemsChanged
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/inotifyitemschanged.md
-                  - name: INotifyPropChanged
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/inotifypropchanged.md
-                  - name: IPage
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ipage.md
-                  - name: IProgressState
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iprogressstate.md
-                  - name: IPropChangedEventArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ipropchangedeventargs.md
-                  - name: ISeparatorContextItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iseparatorcontextitem.md
-                  - name: ISeparatorFilterItem
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iseparatorfilteritem.md
-                  - name: IStatusMessage
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/istatusmessage.md
-                  - name: ITag
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/itag.md
-                  - name: IToastArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/itoastargs.md
-                  - name: ITreeContent
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/itreecontent.md
-                  - name: KeyChord
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/keychord.md
-                  - name: MessageState
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/messagestate.md
-                  - name: NavigationMode
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/navigationmode.md
-                  - name: OptionalColor
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/optionalcolor.md
-                  - name: ProviderType
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions/providertype.md
-              - name: Microsoft.CommandPalette.Extensions.Toolkit
-                items:
+                          - name: IMarkdownPage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage.md
+                          - name: Methods
+                            items:
+                              - name: Bodies
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage_bodies.md
+                              - name: Details
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions/imarkdownpage_details.md
+                      - name: INotifyItemsChanged
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/inotifyitemschanged.md
+                      - name: INotifyPropChanged
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/inotifypropchanged.md
+                      - name: IPage
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ipage.md
+                      - name: IProgressState
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iprogressstate.md
+                      - name: IPropChangedEventArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/ipropchangedeventargs.md
+                      - name: ISeparatorContextItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iseparatorcontextitem.md
+                      - name: ISeparatorFilterItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/iseparatorfilteritem.md
+                      - name: IStatusMessage
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/istatusmessage.md
+                      - name: StatusContext
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/statuscontext.md
+                      - name: ITag
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/itag.md
+                      - name: IToastArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/itoastargs.md
+                      - name: ITreeContent
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/itreecontent.md
+                      - name: KeyChord
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/keychord.md
+                      - name: MessageState
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/messagestate.md
+                      - name: NavigationMode
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/navigationmode.md
+                      - name: OptionalColor
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/optionalcolor.md
+                      - name: ProviderType
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions/providertype.md
                   - name: Microsoft.CommandPalette.Extensions.Toolkit
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md
-                  - name: AnonymousCommand
                     items:
+                      - name: Overview
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md
                       - name: AnonymousCommand
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand_constructor.md
-                      - name: Methods
                         items:
-                          - name: Invoke
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand_invoke.md
-                  - name: BaseObservable
-                    items:
+                          - name: AnonymousCommand
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand_constructor.md
+                          - name: Methods
+                            items:
+                              - name: Invoke
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/anonymouscommand_invoke.md
                       - name: BaseObservable
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable.md
-                      - name: Methods
                         items:
-                          - name: OnPropertyChanged
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable_onpropertychanged.md
-                  - name: ChoiceSetSetting
-                    items:
+                          - name: BaseObservable
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable.md
+                          - name: Methods
+                            items:
+                              - name: OnPropertyChanged
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/baseobservable_onpropertychanged.md
                       - name: ChoiceSetSetting
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_constructor.md
-                      - name: Nested classes
                         items:
-                          - name: Choice
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choice.md
-                      - name: Methods
-                        items:
-                          - name: LoadFromJson
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_loadfromjson.md
-                          - name: ToDictionary
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_todictionary.md
-                          - name: ToState
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_tostate.md
-                          - name: Update
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_update.md
-                  - name: ClipboardHelper
-                    items:
+                          - name: ChoiceSetSetting
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_constructor.md
+                          - name: Nested classes
+                            items:
+                              - name: Choice
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choice.md
+                          - name: Methods
+                            items:
+                              - name: LoadFromJson
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_loadfromjson.md
+                              - name: ToDictionary
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_todictionary.md
+                              - name: ToState
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_tostate.md
+                              - name: Update
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/choicesetsetting_update.md
                       - name: ClipboardHelper
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper.md
-                      - name: Methods
                         items:
-                          - name: GetText
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_gettext.md
-                          - name: SetRtf
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_setrtf.md
-                          - name: SetText
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_settext.md
-                  - name: ColorHelpers
-                    items:
+                          - name: ClipboardHelper
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper.md
+                          - name: Methods
+                            items:
+                              - name: GetText
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_gettext.md
+                              - name: SetRtf
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_setrtf.md
+                              - name: SetText
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/clipboardhelper_settext.md
                       - name: ColorHelpers
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers.md
-                      - name: Methods
                         items:
-                          - name: FromArgb
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_fromargb.md
-                          - name: FromRgb
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_fromrgb.md
-                          - name: NoColor
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_nocolor.md
-                          - name: Transparent
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_transparent.md
-                  - name: Command
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/command.md
-                  - name: CommandContextItem
-                    items:
+                          - name: ColorHelpers
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers.md
+                          - name: Methods
+                            items:
+                              - name: FromArgb
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_fromargb.md
+                              - name: FromRgb
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_fromrgb.md
+                              - name: NoColor
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_nocolor.md
+                              - name: Transparent
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/colorhelpers_transparent.md
+                      - name: Command
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/command.md
                       - name: CommandContextItem
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandcontextitem.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandcontextitem_constructor.md
-                  - name: CommandItem
-                    items:
+                        items:
+                          - name: CommandContextItem
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandcontextitem.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandcontextitem_constructor.md
                       - name: CommandItem
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem_constructor.md
-                  - name: CommandProvider
-                    items:
+                        items:
+                          - name: CommandItem
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commanditem_constructor.md
                       - name: CommandProvider
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider.md
-                      - name: Methods
                         items:
-                          - name: Dispose
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_dispose.md
-                          - name: FallbackCommands
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_fallbackcommands.md
-                          - name: GetCommand
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_getcommand.md
-                          - name: InitializeWithHost
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_initializewithhost.md
-                          - name: RaiseItemsChanged
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_raiseitemschanged.md
-                          - name: TopLevelCommands
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_toplevelcommands.md
-                  - name: CommandResult
-                    items:
+                          - name: CommandProvider
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider.md
+                          - name: Methods
+                            items:
+                              - name: Dispose
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_dispose.md
+                              - name: FallbackCommands
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_fallbackcommands.md
+                              - name: GetCommand
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_getcommand.md
+                              - name: InitializeWithHost
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_initializewithhost.md
+                              - name: RaiseItemsChanged
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_raiseitemschanged.md
+                              - name: TopLevelCommands
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandprovider_toplevelcommands.md
                       - name: CommandResult
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult.md
-                      - name: Methods
                         items:
-                          - name: Confirm
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_confirm.md
-                          - name: Dismiss
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_dismiss.md
-                          - name: GoBack
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_goback.md
-                          - name: GoHome
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_gohome.md
-                          - name: GoToPage
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_gotopage.md
-                          - name: Hide
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_hide.md
-                          - name: KeepOpen
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_keepopen.md
-                          - name: ShowToast(String)
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_string.md
-                          - name: ShowToast(ToastArgs)
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_toastargs.md
-                  - name: ConfirmationArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/confirmationargs.md
-                  - name: ContentPage
-                    items:
+                          - name: CommandResult
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult.md
+                          - name: Methods
+                            items:
+                              - name: Confirm
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_confirm.md
+                              - name: Dismiss
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_dismiss.md
+                              - name: GoBack
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_goback.md
+                              - name: GoHome
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_gohome.md
+                              - name: GoToPage
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_gotopage.md
+                              - name: Hide
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_hide.md
+                              - name: KeepOpen
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_keepopen.md
+                              - name: ShowToast(String)
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_string.md
+                              - name: ShowToast(ToastArgs)
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_toastargs.md
+                      - name: ConfirmationArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/confirmationargs.md
                       - name: ContentPage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage.md
-                      - name: Methods
                         items:
-                          - name: GetContent
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage_getcontent.md
-                          - name: RaiseItemsChanged
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage_raiseitemschanged.md
-                  - name: CopyTextCommand
-                    items:
+                          - name: ContentPage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage.md
+                          - name: Methods
+                            items:
+                              - name: GetContent
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage_getcontent.md
+                              - name: RaiseItemsChanged
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/contentpage_raiseitemschanged.md
                       - name: CopyTextCommand
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_constructor.md
-                      - name: Methods
                         items:
-                          - name: Invoke
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_invoke.md
-                  - name: Details
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/details.md
-                  - name: DetailsCommand
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailscommand.md
-                  - name: DetailsElement
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailselement.md
-                  - name: DetailsLink
-                    items:
+                          - name: CopyTextCommand
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_constructor.md
+                          - name: Methods
+                            items:
+                              - name: Invoke
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copytextcommand_invoke.md
+                      - name: CopyPathCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/copypathcommand.md
+                      - name: Details
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/details.md
+                      - name: DetailsCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailscommand.md
+                      - name: DetailsCommands
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailscommands.md
+                      - name: DetailsElement
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailselement.md
                       - name: DetailsLink
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailslink.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailslink_constructor.md
-                  - name: DetailsSeparator
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailsseparator.md
-                  - name: DetailsTags
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailstags.md
-                  - name: DynamicListPage
-                    items:
+                        items:
+                          - name: DetailsLink
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailslink.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailslink_constructor.md
+                      - name: DetailsSeparator
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailsseparator.md
+                      - name: DetailsTags
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/detailstags.md
                       - name: DynamicListPage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/dynamiclistpage.md
-                      - name: Methods
                         items:
-                          - name: UpdateSearchText
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/dynamiclistpage_updatesearchtext.md
-                  - name: ExtensionHost
-                    items:
+                          - name: DynamicListPage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/dynamiclistpage.md
+                          - name: Methods
+                            items:
+                              - name: UpdateSearchText
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/dynamiclistpage_updatesearchtext.md
                       - name: ExtensionHost
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost.md
-                      - name: Methods
                         items:
-                          - name: HideStatus
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_hidestatus.md
-                          - name: Initialize
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_initialize.md
-                          - name: LogMessage
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_logmessage_ilogmessage.md
-                          - name: LogMessage
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_logmessage_string.md
-                          - name: ShowStatus
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_showstatus.md
-                  - name: FallbackCommandItem
-                    items:
+                          - name: ExtensionHost
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost.md
+                          - name: Methods
+                            items:
+                              - name: HideStatus
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_hidestatus.md
+                              - name: Initialize
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_initialize.md
+                              - name: LogMessage
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_logmessage_ilogmessage.md
+                              - name: LogMessage
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_logmessage_string.md
+                              - name: ShowStatus
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/extensionhost_showstatus.md
                       - name: FallbackCommandItem
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_constructor.md
-                      - name: Methods
                         items:
-                          - name: UpdateQuery
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_updatequery.md
-                  - name: Filter
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filter.md
-                  - name: Filters
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filters.md
-                  - name: FormContent
-                    items:
+                          - name: FallbackCommandItem
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_constructor.md
+                          - name: Methods
+                            items:
+                              - name: UpdateQuery
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fallbackcommanditem_updatequery.md
+                      - name: Filter
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filter.md
+                      - name: Filters
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/filters.md
+                      - name: FontIconData
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/fonticondata.md
                       - name: FormContent
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent.md
-                      - name: Methods
                         items:
-                          - name: SubmitForm(String)
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_string.md
-                          - name: SubmitForm(String, String)
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_stringstring.md
-                  - name: GoToPageArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gotopageargs.md
-                  - name: IconData
-                    items:
+                          - name: FormContent
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent.md
+                          - name: Methods
+                            items:
+                              - name: SubmitForm(String)
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_string.md
+                              - name: SubmitForm(String, String)
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/formcontent_submitform_stringstring.md
+                      - name: GalleryGridLayout
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gallerygridlayout.md
+                      - name: GoToPageArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/gotopageargs.md
                       - name: IconData
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata_constructor.md
-                  - name: IconHelpers
-                    items:
+                        items:
+                          - name: IconData
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/icondata_constructor.md
                       - name: IconHelpers
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers.md
-                      - name: Methods
                         items:
-                          - name: FromRelativePath
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers_fromrelativepath.md
-                          - name: FromRelativePaths
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers_fromrelativepaths.md
-                  - name: IconInfo
-                    items:
+                          - name: IconHelpers
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers.md
+                          - name: Methods
+                            items:
+                              - name: FromRelativePath
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers_fromrelativepath.md
+                              - name: FromRelativePaths
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconhelpers_fromrelativepaths.md
                       - name: IconInfo
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconinfo.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconinfo_constructor.md
-                  - name: InvokableCommand
-                    items:
+                        items:
+                          - name: IconInfo
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconinfo.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/iconinfo_constructor.md
                       - name: InvokableCommand
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand.md
-                      - name: Methods
                         items:
-                          - name: Invoke
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke.md
-                          - name: Invoke(Object)
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke_object.md
-                  - name: ISettingsForm
-                    items:
+                          - name: InvokableCommand
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand.md
+                          - name: Methods
+                            items:
+                              - name: Invoke
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke.md
+                              - name: Invoke(Object)
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/invokablecommand_invoke_object.md
                       - name: ISettingsForm
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform.md
-                      - name: Methods
                         items:
-                          - name: ToDataIdentifier
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_todataidentifier.md
-                          - name: ToDictionary
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_todictionary.md
-                          - name: ToForm
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_toform.md
-                          - name: ToState
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_tostate.md
-                          - name: Update
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_update.md
-                  - name: ItemsChangedEventArgs
-                    items:
+                          - name: ISettingsForm
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform.md
+                          - name: Methods
+                            items:
+                              - name: ToDataIdentifier
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_todataidentifier.md
+                              - name: ToDictionary
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_todictionary.md
+                              - name: ToForm
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_toform.md
+                              - name: ToState
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_tostate.md
+                              - name: Update
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/isettingsform_update.md
                       - name: ItemsChangedEventArgs
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/itemschangedeventargs.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/itemschangedeventargs_constructor.md
-                  - name: JsonSettingsManager
-                    items:
+                        items:
+                          - name: ItemsChangedEventArgs
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/itemschangedeventargs.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/itemschangedeventargs_constructor.md
                       - name: JsonSettingsManager
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/jsonsettingsmanager.md
-                      - name: Methods
                         items:
-                          - name: LoadSettings
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/jsonsettingsmanager_loadsettings.md
-                          - name: SaveSettings
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/jsonsettingsmanager_savesettings.md
-                  - name: KeyChordHelpers
-                    items:
+                          - name: JsonSettingsManager
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/jsonsettingsmanager.md
+                          - name: Methods
+                            items:
+                              - name: LoadSettings
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/jsonsettingsmanager_loadsettings.md
+                              - name: SaveSettings
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/jsonsettingsmanager_savesettings.md
                       - name: KeyChordHelpers
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/keychordhelpers.md
-                      - name: Methods
                         items:
-                          - name: FromModifiers
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/keychordhelpers_frommodifiers.md
-                  - name: ListHelpers
-                    items:
+                          - name: KeyChordHelpers
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/keychordhelpers.md
+                          - name: Methods
+                            items:
+                              - name: FromModifiers
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/keychordhelpers_frommodifiers.md
                       - name: ListHelpers
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers.md
-                      - name: Methods
                         items:
-                          - name: FilterList
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_filterlist.md
-                          - name: FilterList<T>
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_filterlist_t.md
-                          - name: InPlaceUpdateList<T>
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_inplaceupdatelist.md
-                          - name: ScoreListItem
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_scorelistitem.md
-                      - name: Structs
-                        items:
-                          - name: ScoredListItem
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_scoredlistitem.md
-                          - name: Scored<T>
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_scored.md
-                  - name: ListItem
-                    items:
+                          - name: ListHelpers
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers.md
+                          - name: Methods
+                            items:
+                              - name: FilterList
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_filterlist.md
+                              - name: FilterList<T>
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_filterlist_t.md
+                              - name: InPlaceUpdateList<T>
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_inplaceupdatelist.md
+                              - name: ScoreListItem
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_scorelistitem.md
+                          - name: Structs
+                            items:
+                              - name: ScoredListItem
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_scoredlistitem.md
+                              - name: Scored<T>
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listhelpers_scored.md
                       - name: ListItem
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listitem.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listitem_constructor.md
-                  - name: ListPage
-                    items:
+                        items:
+                          - name: ListItem
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listitem.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listitem_constructor.md
                       - name: ListPage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage.md
-                      - name: Methods
                         items:
-                          - name: GetItems
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage_getitems.md
-                          - name: LoadMore
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage_loadmore.md
-                          - name: RaiseItemsChanged
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage_raiseitemschanged.md
-                  - name: LogMessage
-                    items:
+                          - name: ListPage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage.md
+                          - name: Methods
+                            items:
+                              - name: GetItems
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage_getitems.md
+                              - name: LoadMore
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage_loadmore.md
+                              - name: RaiseItemsChanged
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/listpage_raiseitemschanged.md
                       - name: LogMessage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/logmessage.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/logmessage_constructor.md
-                  - name: MarkdownContent
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/markdowncontent.md
-                  - name: MatchOption
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchoption.md
-                  - name: MatchResult
-                    items:
+                        items:
+                          - name: LogMessage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/logmessage.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/logmessage_constructor.md
+                      - name: MarkdownContent
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/markdowncontent.md
+                      - name: MatchOption
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchoption.md
                       - name: MatchResult
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchresult.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchresult_constructor.md
-                      - name: Methods
                         items:
-                          - name: IsSearchPrecisionScoreMet
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchresult_issearchprecisionscoremet.md
-                  - name: NoOpCommand
-                    items:
+                          - name: MatchResult
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchresult.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchresult_constructor.md
+                          - name: Methods
+                            items:
+                              - name: IsSearchPrecisionScoreMet
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/matchresult_issearchprecisionscoremet.md
                       - name: NoOpCommand
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/noopcommand.md
-                      - name: Methods
                         items:
-                          - name: Invoke
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/noopcommand_invoke.md
-                  - name: OpenUrlCommand
-                    items:
+                          - name: NoOpCommand
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/noopcommand.md
+                          - name: Methods
+                            items:
+                              - name: Invoke
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/noopcommand_invoke.md
                       - name: OpenUrlCommand
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openurlcommand.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openurlcommand_constructor.md
-                      - name: Methods
                         items:
-                          - name: Invoke
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openurlcommand_invoke.md
-                  - name: Page
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/page.md
-                  - name: ProgressState
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/progressstate.md
-                  - name: PropChangedEventArgs
-                    items:
+                          - name: OpenUrlCommand
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openurlcommand.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openurlcommand_constructor.md
+                          - name: Methods
+                            items:
+                              - name: Invoke
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openurlcommand_invoke.md
+                      - name: OpenFileCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openfilecommand.md
+                      - name: OpenInConsoleCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openinconsolecommand.md
+                      - name: OpenPropertiesCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openpropertiescommand.md
+                      - name: OpenWithCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/openwithcommand.md
+                      - name: Page
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/page.md
+                      - name: ProgressState
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/progressstate.md
                       - name: PropChangedEventArgs
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/propchangedeventargs.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/propchangedeventargs_constructor.md
-                  - name: SearchPrecisionScore
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/searchprecisionscore.md
-                  - name: Setting
-                    items:
+                        items:
+                          - name: PropChangedEventArgs
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/propchangedeventargs.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/propchangedeventargs_constructor.md
+                      - name: SearchPrecisionScore
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/searchprecisionscore.md
+                      - name: Separator
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/separator.md
                       - name: Setting
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_constructor.md
-                      - name: Methods
                         items:
-                          - name: ToDataIdentifier
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_todataidentifier.md
-                          - name: ToDictionary
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_todictionary.md
-                          - name: ToForm
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_toform.md
-                          - name: ToState
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_tostate.md
-                          - name: Update
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_update.md
-                  - name: Settings
-                    items:
+                          - name: Setting
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_constructor.md
+                          - name: Methods
+                            items:
+                              - name: ToDataIdentifier
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_todataidentifier.md
+                              - name: ToDictionary
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_todictionary.md
+                              - name: ToForm
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_toform.md
+                              - name: ToState
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_tostate.md
+                              - name: Update
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/setting_update.md
                       - name: Settings
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings.md
-                      - name: Methods
                         items:
-                          - name: Add<T>
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_add.md
-                          - name: GetSetting<T>
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_getsetting.md
-                          - name: ToContent
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_tocontent.md
-                          - name: ToJson
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_tojson.md
-                          - name: TryGetSetting<T>
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_trygetsetting.md
-                          - name: Update
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_update.md
-                  - name: SettingsForm
-                    items:
+                          - name: Settings
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings.md
+                          - name: Methods
+                            items:
+                              - name: Add<T>
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_add.md
+                              - name: GetSetting<T>
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_getsetting.md
+                              - name: ToContent
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_tocontent.md
+                              - name: ToJson
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_tojson.md
+                              - name: TryGetSetting<T>
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_trygetsetting.md
+                              - name: Update
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settings_update.md
                       - name: SettingsForm
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settingsform.md
-                      - name: Methods
                         items:
-                          - name: SubmitForm
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settingsform_submitform.md
-                  - name: ShellHelpers
-                    items:
+                          - name: SettingsForm
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settingsform.md
+                          - name: Methods
+                            items:
+                              - name: SubmitForm
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/settingsform_submitform.md
                       - name: ShellHelpers
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellhelpers.md
-                      - name: Methods
                         items:
-                          - name: OpenCommandInShell
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellhelpers_opencommandinshell.md
-                          - name: OpenInShell
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellhelpers_openinshell.md
-                      - name: Enums
-                        items:
-                          - name: ShellRunAsType
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellrunastype.md
-                  - name: StatusMessage
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/statusmessage.md
-                  - name: StringMatcher
-                    items:
+                          - name: ShellHelpers
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellhelpers.md
+                          - name: Methods
+                            items:
+                              - name: OpenCommandInShell
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellhelpers_opencommandinshell.md
+                              - name: OpenInShell
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellhelpers_openinshell.md
+                          - name: Enums
+                            items:
+                              - name: ShellRunAsType
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/shellrunastype.md
+                      - name: ShowFileInFolderCommand
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/showfileinfoldercommand.md
+                      - name: SmallGridLayout
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/smallgridlayout.md
+                      - name: StatusMessage
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/statusmessage.md
                       - name: StringMatcher
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_constructor.md
-                      - name: Methods
                         items:
-                          - name: FuzzyMatch(String, String)
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_fuzzymatch_stringstring.md
-                          - name: FuzzyMatch(String, String, MatchOption)
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_fuzzymatch_stringstringmatchoption.md
-                          - name: FuzzySearch
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_fuzzysearch.md
-                  - name: Tag
-                    items:
+                          - name: StringMatcher
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_constructor.md
+                          - name: Methods
+                            items:
+                              - name: FuzzyMatch(String, String)
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_fuzzymatch_stringstring.md
+                              - name: FuzzyMatch(String, String, MatchOption)
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_fuzzymatch_stringstringmatchoption.md
+                              - name: FuzzySearch
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/stringmatcher_fuzzysearch.md
                       - name: Tag
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/tag.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/tag_constructor.md
-                  - name: TextSetting
-                    items:
+                        items:
+                          - name: Tag
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/tag.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/tag_constructor.md
                       - name: TextSetting
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_constructor.md
-                      - name: Methods
                         items:
-                          - name: LoadFromJson
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_loadfromjson.md
-                          - name: ToDictionary
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_todictionary.md
-                          - name: ToState
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_tostate.md
-                          - name: Update
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_update.md
-                  - name: ThumbnailHelper
-                    items:
+                          - name: TextSetting
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_constructor.md
+                          - name: Methods
+                            items:
+                              - name: LoadFromJson
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_loadfromjson.md
+                              - name: ToDictionary
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_todictionary.md
+                              - name: ToState
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_tostate.md
+                              - name: Update
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/textsetting_update.md
                       - name: ThumbnailHelper
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/thumbnailhelper.md
-                      - name: Methods
                         items:
-                          - name: GetThumbnail
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/thumbnailhelper_getthumbnail.md
-                  - name: ToastArgs
-                    href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toastargs.md
-                  - name: ToastStatusMessage
-                    items:
+                          - name: ThumbnailHelper
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/thumbnailhelper.md
+                          - name: Methods
+                            items:
+                              - name: GetThumbnail
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/thumbnailhelper_getthumbnail.md
+                      - name: ToastArgs
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toastargs.md
                       - name: ToastStatusMessage
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toaststatusmessage.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toaststatusmessage_constructor.md
-                      - name: Methods
                         items:
-                          - name: Show
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toaststatusmessage_show.md
-                  - name: ToggleSetting
-                    items:
+                          - name: ToastStatusMessage
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toaststatusmessage.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toaststatusmessage_constructor.md
+                          - name: Methods
+                            items:
+                              - name: Show
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/toaststatusmessage_show.md
                       - name: ToggleSetting
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting.md
-                      - name: Constructors
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_constructor.md
-                      - name: Methods
                         items:
-                          - name: LoadFromJson
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_loadfromjson.md
-                          - name: ToDictionary
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_todictionary.md
-                          - name: ToState
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_tostate.md
-                          - name: Update
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_update.md
-                  - name: TreeContent
-                    items:
+                          - name: ToggleSetting
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting.md
+                          - name: Constructors
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_constructor.md
+                          - name: Methods
+                            items:
+                              - name: LoadFromJson
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_loadfromjson.md
+                              - name: ToDictionary
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_todictionary.md
+                              - name: ToState
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_tostate.md
+                              - name: Update
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/togglesetting_update.md
                       - name: TreeContent
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/treecontent.md
-                      - name: Methods
                         items:
-                          - name: GetChildren
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/treecontent_getchildren.md
-                          - name: RaiseItemsChanged
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/treecontent_raiseitemschanged.md
-                  - name: Utilities
-                    items:
+                          - name: TreeContent
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/treecontent.md
+                          - name: Methods
+                            items:
+                              - name: GetChildren
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/treecontent_getchildren.md
+                              - name: RaiseItemsChanged
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/treecontent_raiseitemschanged.md
                       - name: Utilities
-                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities.md
-                      - name: Methods
                         items:
-                          - name: BaseSettingsPath
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities_basesettingspath.md
-                          - name: IsPackaged
-                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities_ispackaged.md
+                          - name: Utilities
+                            href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities.md
+                          - name: Methods
+                            items:
+                              - name: BaseSettingsPath
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities_basesettingspath.md
+                              - name: IsPackaged
+                                href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/utilities_ispackaged.md
+                      - name: WrappedDockItem
+                        href: ../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/wrappeddockitem.md
       - name: Crop And Lock
         href: ../powertoys/crop-and-lock.md
       - name: Environment Variables
@@ -801,6 +886,8 @@ items:
         href: ../powertoys/file-explorer.md
       - name: File Locksmith
         href: ../powertoys/file-locksmith.md
+      - name: Grab And Move
+        href: ../powertoys/grab-and-move.md
       - name: Hosts File Editor
         href: ../powertoys/hosts-file-editor.md
       - name: Image Resizer
@@ -817,6 +904,8 @@ items:
         href: ../powertoys/newplus.md
       - name: Peek
         href: ../powertoys/peek.md
+      - name: Power Display
+        href: ../powertoys/power-display.md
       - name: PowerRename
         href: ../powertoys/powerrename.md
       - name: PowerToys Run
@@ -835,21 +924,7 @@ items:
         href: ../powertoys/workspaces.md
       - name: ZoomIt
         href: ../powertoys/zoomit.md
-  - name: General settings
-    href: ../powertoys/general.md
-  - name: Group Policy
-    href: ../powertoys/grouppolicy.md
-  - name: Run as admin
-    href: ../powertoys/administrator.md
-  - name: DSC configuration
-    items:
-      - name: Overview
-        href: ../powertoys/dsc-configure/overview.md
-      - name: Configure with PowerShell DSC
-        href: ../powertoys/dsc-configure/psdsc.md
-      - name: Configure with Microsoft DSC
-        href: ../powertoys/dsc-configure/microsoft-dsc.md
-  - name: PowerToys on GitHub
+  - name: GitHub repository
     href: https://github.com/microsoft/PowerToys
   - name: What's new
-    href: https://github.com/microsoft/PowerToys?tab=readme-ov-file#-whats-new
+    href: https://github.com/microsoft/PowerToys/releases

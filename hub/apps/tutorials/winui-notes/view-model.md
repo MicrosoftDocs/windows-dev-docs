@@ -11,7 +11,7 @@ no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage", "WinUIN
 
 This portion of the tutorial introduces the concepts of data views and models.
 
-In the previous steps of the tutorial, you added a new page to the project that lets the user save, edit, or delete a single note. However, because the app needs to handle more than one note, you need to add another page that displays all the notes (call it `AllNotesPage`). This page let's the user choose a note to open in the editor page so they can view, edit, or delete it. It should also let the user create a new note.
+In the previous steps of the tutorial, you added a new page to the project that lets the user save, edit, or delete a single note. However, because the app needs to handle more than one note, you need to add another page that displays all the notes (call it `AllNotesPage`). This page lets the user choose a note to open in the editor page so they can view, edit, or delete it. It should also let the user create a new note.
 
 To accomplish this, `AllNotesPage` needs to have a collection of notes, and a way to display the collection. This is where the app runs into trouble because the note data is tightly bound to the `NotePage` file. In `AllNotesPage`, you just want to display all the notes in a list or other collection view, with information about each note, like the date it was created and a preview of the text. With the note text being tightly bound to the `TextBox` control, there's no way to do this.
 
@@ -19,7 +19,7 @@ Before you add a page to show all the notes, let's make some changes to separate
 
 ## Views and models
 
-Typically, a WinUI app has at least a _view layer_ and a _data layer_.
+Typically, a WinUI 3 app has at least a _view layer_ and a _data layer_.
 
 The view layer defines the UI using XAML markup. The markup includes data binding expressions (such as x:Bind) that define the connection between specific UI components and data members. Code-behind files are sometimes used as part of the view layer to contain additional code needed to customize or manipulate the UI, or to extract data from event handler arguments before calling a method that performs the work on the data.
 
@@ -231,7 +231,7 @@ Now you can update the XAML file to use the `Note` model. Previously, you read t
 1. Add a `Text` attribute to the `TextBox` control. Bind it to the `Text` property of `noteModel`: `Text="{x:Bind noteModel.Text, Mode=TwoWay}"`.
 1. Update the `Header` to bind to the `Date` property of `noteModel`: `Header="{x:Bind noteModel.Date.ToString()}"`.
 
-    ```csharp
+    ```xaml
     <TextBox x:Name="NoteEditor"
              <!-- ↓ Add this line. ↓ -->
              Text="{x:Bind noteModel.Text, Mode=TwoWay}"

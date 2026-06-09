@@ -63,3 +63,9 @@ The JSON file includes the following hierarchy.
 When the Windows Package Manager imports the JSON file, it attempts to install the specified applications in a serial fashion. If the application is not available or the application is already installed, it will notify the user of that case.
 
 :::image type="content" source="./images/import-command.png" alt-text="Screenshot of entering the winget import command in a command line of Windows Terminal." lightbox="./images/import-command.png":::
+
+## Related topics
+
+* [Use the winget tool to install and manage applications](index.md)
+* [export command (winget)](export.md)
+* [configure command (winget)](configure.md)

@@ -15,7 +15,7 @@ With HEVC, you can deliver high-quality video with improved compression efficien
 
 ## Behavior differences when enabled
 
-Enabling 4K playback in your application changes the way your application is treated by the Xbox operating system. On Xbox Series S and Series X consoles, in addition to allowing playback of 4K video, your application will be allocated an additional 3.25GB of graphics memory. This memory is separate from the normal memory the system allocates to UWP applications.
+Enabling 4K playback in your application changes the way your application is treated by the Xbox operating system. In addition to allowing playback of 4K video, your application will be allocated 3.25GB of memory. This is 2GB more than apps without 4K playback enabled.
 
 Additionally, your application will no longer be able to run simultaneously with games on the Xbox console&mdash;when the user launches a game, your app will be suspended and closed. Similarly, when your app is launched, the user will have to wait for any game that they were playing to fully close. A consequence of this is that apps will need to choose between being able to play background music and being able to play 4K video content.
 

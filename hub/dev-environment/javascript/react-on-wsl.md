@@ -1,59 +1,77 @@
 ---
 title: Install React on Windows Subsystem for Linux
-description: Install React on Windows Subsystem for Linux (WSL) and start developing web apps with React components and the Vite front-end build toolchain.
+description: Install React on Windows Subsystem for Linux (WSL) and start developing web apps using Vite and Node.js.
 ms.topic: install-set-up-deploy
-keywords: react, install react on wsl, install react on linux on windows, react and windows, react development with windows, react with windows 10, react on windows, react with wsl
-ms.date: 03/30/2021
+keywords: react, install react on wsl, react wsl, react linux on windows, react vite wsl
+ms.date: 03/23/2026
 ---
 
 # Install React on Windows Subsystem for Linux
 
-This guide will walk through installing React on a Linux distribution (ie. Ubuntu) running on the Windows Subsystem for Linux (WSL) using the [vite](https://vitejs.dev/) frontend tooling.
+This guide walks through setting up a React development environment on WSL (Windows Subsystem for Linux) using the [Vite](https://vitejs.dev/) frontend tooling.
 
-We recommend following these instructions if you are creating a single-page app (SPA) that you would like to use Bash commands or tools with and/or plan to deploy to a Linux server or use Docker containers. If you are brand new to React and just interested in learning, you may want to consider [installing with vite directly on Windows](./react-on-windows.md).
+WSL is recommended if you plan to deploy to a Linux server, use Docker containers, or work with Bash-based tooling. If you are new to React and just want to get started quickly, consider [installing React directly on Windows](./react-on-windows.md) instead.
 
-For more general information about React, deciding between React (web apps), React Native (mobile apps), and React Native for Desktop (desktop apps), see the [React overview](./react-overview.md).
+For background on React and the different scenarios — web apps, mobile apps (React Native), and native desktop apps (React Native for Desktop) — see the [React overview](./react-overview.md).
 
 ## Prerequisites
 
-- Install the latest version of Windows 10 (Version 1903+, Build 18362+) or Windows 11
-- [Install Windows Subsystem for Linux (WSL)](/windows/wsl/install-win10), including a Linux distribution (like Ubuntu) and make sure it is running in WSL 2 mode. You can check this by opening PowerShell and entering: `wsl -l -v`
-- [Install Node.js on WSL 2](./nodejs-on-wsl.md): These instructions use Node Version Manager (nvm) for installation, you will need a recent version of NodeJS to run vite, as well as a recent version of Node Package Manager (npm).
+- **[WSL 2](/windows/wsl/install)**: Install WSL with a Linux distribution (Ubuntu recommended) and confirm it is running in WSL 2 mode: `wsl -l -v`. Requires Windows 10 version 2004 or later, or Windows 11.
+- **[Node.js on WSL 2](./nodejs-on-wsl.md)**: Install Node.js inside your WSL distribution using nvm. Do not use the Windows-installed version of Node.js inside WSL.
 
 > [!IMPORTANT]
-> Installing a Linux distribution with WSL will create a directory for storing files: `\\wsl\Ubuntu-20.04` (substitute Ubuntu-20.04 with whatever Linux distribution you're using). To open this directory in Windows File Explorer, open your WSL command line, select your home directory using `cd ~`, then enter the command `explorer.exe .` Be careful not to install NodeJS or store files that you will be working with on the mounted C drive (`/mnt/c/Users/yourname$`). Doing so will significantly slow down your install and build times.
+> Store your project files inside the WSL filesystem (e.g., `~/projects`), not on the mounted Windows drive (`/mnt/c/`). Working across the filesystem boundary significantly slows down install and build times.
 
-## Install React
+## Create your React app
 
-To install the full React toolchain on WSL, we recommend using vite.
+1. Open your WSL terminal (e.g., Ubuntu).
 
-1. Open a WSL command line (ie. Ubuntu).
+2. Create a new project folder and enter it:
 
-2. Create a new project folder: `mkdir ReactProjects` and enter that directory: `cd ReactProjects`.
+    ```bash
+    mkdir ~/ReactProjects
+    cd ~/ReactProjects
+    ```
 
-3. Install React using vite :
+3. Create a new React app using Vite:
 
     ```bash
     npm create vite@latest my-react-app -- --template react
     ```
 
-4. Once installed, change directories into your new app ("my-react-app" or whatever you've chosen to call it): `cd my-react-app`, install the dependencies: `npm install` and then start your local development server: `npm run dev`
+    Vite will scaffold a new React project in the `my-react-app` folder.
 
-    This command will start up the Node.js server and launch a new browser window displaying your app. You can use **Ctrl + c** to stop running the React app in your command line.
+4. Navigate into the new app folder and install dependencies:
+
+    ```bash
+    cd my-react-app
+    npm install
+    ```
+
+5. Start the local development server:
+
+    ```bash
+    npm run dev
+    ```
+
+    Your app will be available at `http://localhost:5173`. Use **Ctrl+C** to stop the server.
+
+6. When you are ready to deploy, build a production bundle:
+
+    ```bash
+    npm run build
+    ```
+
+    Output is placed in the `dist` folder. See [Deploying a Static Site](https://vitejs.dev/guide/static-deploy.html) for hosting options.
 
 > [!NOTE]
-> Vite includes a frontend build pipeline using [Babel](https://babeljs.io/), [esbuild](https://esbuild.github.io/) and [Rollup](https://rollupjs.org/), but doesn't handle backend logic or databases. If you are seeking to build a server-rendered website with React that uses a Node.js backend, we recommend [installing Next.js](./nextjs-on-wsl.md), rather than this Vite installation, which is intended more for single-page apps(SPAs). You also may want to consider [installing Gatsby](./gatsby-on-wsl.md) if you want to build a static content-oriented website.
-
-6. When you're ready to deploy your web app to production, running `npm run build` to  create a build of your app in the "dist" folder. You can learn more in the [Deploying a Static Site](https://vitejs.dev/guide/static-deploy.html).
+> Vite is ideal for single-page apps (SPAs). If you need server-side rendering or a Node.js backend, consider [Next.js](https://nextjs.org/docs) instead. For static site generation, see [Gatsby](https://www.gatsbyjs.com/docs/).
 
 ## Additional resources
 
 - [React docs](https://react.dev)
-- [Vite](https://vitejs.dev/)
-- [Install Next.js](./nextjs-on-wsl.md)
-- [Install Gatsby](./gatsby-on-wsl.md)
-- [Install React Native for Desktop](https://microsoft.github.io/react-native-windows/docs/getting-started)
-- [Install NodeJS on Windows](./nodejs-on-windows.md)
+- [Vite docs](https://vitejs.dev/)
+- [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
+- [React learning path on Microsoft Learn](/training/paths/react/)
 - [Install NodeJS on WSL](./nodejs-on-wsl.md)
-- Try the tutorial: [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
-- Try the [React learning path](/training/paths/react/)
+- [React Native for Desktop (UWP/WPF)](https://microsoft.github.io/react-native-windows/docs/getting-started)

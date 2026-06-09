@@ -206,3 +206,9 @@ Text editing requires the ability to compose in both right-to-left and left-to-r
 ![Mail app left to right](images/56294_BIDI_21_email_orientation_LtR_resized.png)
 
 ![Mail app right to left](images/56294_BIDI_22_email_orientation_RtL_resized.png)
+
+
+## Related topics
+
+* [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)
+* [Globalization and localization](globalizing-portal.md)

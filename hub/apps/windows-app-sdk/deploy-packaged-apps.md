@@ -13,7 +13,7 @@ This article provides guidance about deploying framework-dependent packaged apps
 
 ## Overview
 
-By default, when you create a project using one of the [WinUI 3 templates in Visual Studio](..\winui\winui3\winui-project-templates-in-visual-studio.md), your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](./single-project-msix.md)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). You can then build an MSIX package for your app by using the instructions in [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options to [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
+By default, when you create a project using one of the [WinUI 3 templates in Visual Studio](..\dev-tools\visual-studio.md), your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](./single-project-msix.md)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). You can then build an MSIX package for your app by using the instructions in [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options to [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 
 To learn more about the packages that your packaged app might need when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). Those include the *Framework*, *Main*, and *Singleton* packages; which are all signed and published by Microsoft. There are two main requirements for deploying a packaged app:
 
@@ -31,13 +31,13 @@ The Windows App SDK framework package contains the Windows App SDK binaries used
 
 ### Stable version
 
-When you install a stable release version (see [Stable channel release notes](stable-channel.md)) of the Windows App SDK NuGet package on your development computer, and you create a project using one of the provided WinUI 3 project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
+When you install a stable release version of the Windows App SDK NuGet package on your development computer, and you create a project using one of the provided WinUI project templates, the generated package manifest contains a [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element that specifies a dependency on the framework package.
 
 However, if you build your app package manually using a separate Windows Application Packaging Project, then you must declare a **PackageReference** in your `Application (package).wapproj` file, like the following:
 
  ```xml
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.0.1">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.8.260209005">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>
 </ItemGroup>
@@ -47,7 +47,7 @@ That package dependency ensures that the Framework package is installed when you
 
 ### Preview version
 
-When you install a preview release version (see [Preview channel release notes](preview-channel.md)) of the Windows App SDK NuGet package on your development computer, a preview version of the Windows App SDK framework package is deployed during build time as a NuGet package dependency.
+When you install a preview release version of the Windows App SDK NuGet package on your development computer, a preview version of the Windows App SDK framework package is deployed during build time as a NuGet package dependency.
 
 ## Call the Deployment API
 
@@ -58,10 +58,10 @@ The Deployment API is provided by the Windows App SDK framework package, and is 
 1. To deploy the Singleton package for features not in the Framework package (for example, push notifications).
 2. To deploy the Main package, which enables automatic updates to the Framework package from the Microsoft Store.
 
-For packaged apps that are *not* distributed through the Store, you as the developer are responsible for distributing the Framework package. We recommended that you call the Deployment API so that any critical servicing updates are delivered. Note that for using features outside the Framework package (for example, push notifications), the Singleton package must be deployed (this can be done with the Deployment API, or by redistributing the MSIX packages using your own install method).
+For packaged apps that are *not* distributed through the Store, you as the developer are responsible for distributing the Framework package. We recommend that you call the Deployment API so that any critical servicing updates are delivered. Note that for using features outside the Framework package (for example, push notifications), the Singleton package must be deployed (this can be done with the Deployment API, or by redistributing the MSIX packages using your own install method).
 
 > [!IMPORTANT]
-> In Windows App SDK version 1.0, only packaged apps that are full trust or that have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the Deployment API to install the Main and Singleton package dependencies. Support for partial trust packaged apps will be coming in later releases. 
+> Only packaged apps that are full trust or that have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability have the permission to use the Deployment API to install the Main and Singleton package dependencies.
 
 You should call the Deployment API after your app's process is initialized, but before your app uses Windows App SDK runtime features that use the Singleton package (for example, push notifications). The main methods of the Deployment API are the static [GetStatus](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.getstatus) and [Initialize](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize) methods of the [DeploymentManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager) class.
 

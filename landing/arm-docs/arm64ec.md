@@ -1,7 +1,7 @@
 ---
 title: Arm64EC for Windows 11 apps on Arm
 description: Learn how Arm64EC empowers you to build and incrementally update apps that benefit from native performance on Arm devices, without interrupting your current x64 functionality.
-ms.date: 11/06/2025
+ms.date: 03/24/2026
 ms.topic: overview
 ms.service: windows
 ms.subservice: arm
@@ -62,7 +62,7 @@ Any x64 code, including code from dependencies, in an Arm64EC process runs under
 
 Apps running on Windows 11 on Arm interact with Arm64EC binaries as though they're x64 binaries. The app doesn't need to know to what extent the code in the binary is recompiled as Arm64EC.  
 
-To identify these binaries, you can see them in a developer command prompt by using `link /dump /headers`.
+To identify a final PE image (EXE or DLL), use `link /dump /headers` in a developer command prompt:
 
 ```powershell
 File Type: EXECUTABLE IMAGE
@@ -71,6 +71,9 @@ FILE HEADER VALUES
 ```
 
 The combination of (x64) and (ARM64X) indicates that some portion of the binary is recompiled as Arm64EC, even though the binary still appears to be x64. A binary with a machine header that contains (ARM64) and (ARM64X) is an [Arm64X PE file](./arm64x-pe.md) that can be loaded into both x64 and Arm64 apps.
+
+> [!NOTE]
+> When inspecting **intermediate OBJ or LIB files** produced during the build (rather than a final EXE or DLL), `link /dump /headers` shows `A641 machine (ARM64EC)`. This value (`0xA641`) is an internal MSVC identifier used for Arm64EC object files and is not defined in `winnt.h`. It is not a valid final PE machine type — only the linked EXE or DLL carries the `8664 (x64) (ARM64X)` or `AA64 (ARM64) (ARM64X)` machine value.
 
 You can also use Windows **Task Manager** to identify if an app is compiled as Arm64EC. In the **Details** tab of Task manager, the **Architecture** column shows **ARM64 (x64 compatible)** for applications whose main executable is partially or completely compiled as Arm64EC.
 
