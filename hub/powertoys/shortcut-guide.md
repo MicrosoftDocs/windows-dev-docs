@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, File Explorer]
 
 # Shortcut Guide V2
 
-The PowerToys Shortcut Guide displays shortcuts for Windows and other apps.
+The PowerToys Shortcut Guide displays shortcuts for Windows and third-party apps.
 
 :::image type="content" source="../images/pt-shortcut-guide.png" alt-text="Screenshot of PowerToys Shortcut Guide showing shortcuts for window management and virtual desktops.":::
 
@@ -20,6 +20,35 @@ Currently the following applications are supported out-of-box:
 - Windows Shell (Desktop)
 - Microsoft PowerToys
 - Notepad
+- Adobe After Effects
+- Adobe Illustrator
+- Adobe InDesign
+- Adobe Photoshop
+- Blender
+- Discord
+- Figma
+- GIMP
+- Google Chrome
+- Inkscape
+- JetBrains IntelliJ IDEA
+- Microsoft Access
+- Microsoft Edge
+- Microsoft Excel
+- Microsoft OneNote
+- Microsoft Outlook
+- Microsoft Paint
+- Microsoft PowerPoint
+- Microsoft Project
+- Microsoft Publisher
+- Microsoft Teams
+- Microsoft Visio
+- Microsoft Word
+- Mozilla Firefox
+- Slack
+- Telegram
+- Terminal
+- Visual Studio Code
+
 
 > [!NOTE]
 > Applications can add their own manifests containing the to be displayed shortcuts according to the [manifest specification](https://aka.ms/powertoys-sg-manifest).
