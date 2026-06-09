@@ -191,7 +191,7 @@ The currently available utilities include:
         Quickly measure pixels on your screen based on image edge detection.
     :::column-end:::
     :::column:::
-       [![Shortcut Guide icon](iimages/shortcut-guide/shortcut-guide.png)](shortcut-guide.md)<br>
+       [![Shortcut Guide icon](images/shortcut-guide/shortcut-guide.png)](shortcut-guide.md)<br>
         **[Shortcut Guide V2](shortcut-guide.md)**<br>
         Show a overview of keyboard shortcuts for your current state of the desktop.
     :::column-end:::
