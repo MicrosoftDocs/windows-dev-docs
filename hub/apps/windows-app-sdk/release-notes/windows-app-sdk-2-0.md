@@ -793,6 +793,95 @@ Released: **February 13, 2026** <br><br>
 
 :::zone pivot="experimental"
 
+## Version 2.2 Experimental 9 (2.2.2-Experimental9)
+
+Released: **June 9, 2026**
+
+This experimental release ships alongside [Windows App SDK 2.2.0 stable](#version-220) and generally brings over the changes from that release; see the [2.2.0 stable notes](#version-220) for those details. The sections below describe the experimental-only additions.
+<br><br>
+
+<details><summary>Language Model APIs on GPU [Experimental]</summary>
+
+>
+> The Language Model APIs now run on non-Copilot+ PCs equipped with a supported GPU, bringing local language model capabilities to a broader range of Windows 11 devices. Supported hardware includes NVIDIA GeForce RTX 30 series and newer with 6+ GB vRAM. GPU inference requires Developer Mode to be enabled and a Windows Insider Experimental Channel build.
+>
+> The GPU model is not pre-installed. It is downloaded on demand via `EnsureReadyAsync` through Windows Update. Apps should check `GetReadyState` and display a consent dialog before triggering the download. Users can manage the model at Settings > System > AI Components.
+>
+> For responsible AI guidance, see the new Transparency Note: Language Model APIs on Non-Copilot+ PCs.
+>
+
+</details>
+
+<details><summary>Speech Recognition APIs [Experimental]</summary>
+
+>
+> New on-device speech recognition APIs in `Microsoft.Windows.AI.Speech` enable both batch and streaming speech-to-text. `BatchRecognition` recognizes a complete audio source in a single call, and `StreamingRecognition` raises `Recognizing` and `Recognized` events. Audio can be sourced from a device (`AudioConfiguration.FromAudioDevice`), file (`FromFile`), input stream (`FromStream`), or pushed by the caller via `SpeechAudioProvider` (16 kHz, 16-bit, single-channel PCM). The on-device model is managed via `SpeechRecognitionModel.EnsureReadyAsync` / `TryCreateAsync`, with download and load progress reported through `SpeechRecognitionModelProgress`.
+>
+
+</details>
+
+<details><summary>New NpuType API</summary>
+
+>
+> A new `Microsoft.Windows.Workloads.NpuType` enum surfaces the NPU class on the current device (for example, `Qnn`, `Lnl`, `Stx`, `Win365`, `Unknown`, `None`), so apps and Workloads infrastructure can route AI workloads to the appropriate execution path.
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the **[2.1 Experimental 8](#version-21-experimental-8-214-experimental8)** release:
+>
+> ```
+> Microsoft.UI.Xaml
+>
+>     Setter
+>         ValueProperty
+> ```
+ > ```
+> Microsoft.UI.Xaml.Markup
+>
+>     XamlBindingHelper
+>         SetPropertyFromColor
+>         SetPropertyFromCornerRadius
+>         SetPropertyFromThickness
+> ```
+ > ```
+> Microsoft.Windows.AI.Speech
+>
+>     AudioConfiguration
+>     BatchRecognition
+>     SpeechAudioProvider
+>     SpeechContract
+>     SpeechRecognitionModel
+>     SpeechRecognitionModelProgress
+>     SpeechRecognitionModelProgressStatus
+>     SpeechRecognitionModelResult
+>     StreamingRecognition
+>     StreamingRecognizedEventArgs
+>     StreamingRecognizingEventArgs
+> ```
+ > ```
+> Microsoft.Windows.AI.Text.Experimental
+>
+>     LanguageModelExperimental
+>         CompressPromptAsync
+>         GenerateResponseAsync
+>         GenerateResponseFromEmbeddingsAsync
+>
+>     LanguageModelOptionsExperimental
+>         PreferredRetentionRatio
+> ```
+ > ```
+> Microsoft.Windows.Workloads
+>
+>     NpuType
+> ```
+>
+
+</details>
+
 ## Version 2.1 Experimental 8 (2.1.4-Experimental8)
 
 Released: **May 21, 2026**
