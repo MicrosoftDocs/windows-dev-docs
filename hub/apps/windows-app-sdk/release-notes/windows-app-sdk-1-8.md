@@ -15,6 +15,20 @@ zone_pivot_groups: wasdk-release-channels
 :::zone pivot="stable"
 
 
+## Version 1.8.9 (1.8.260529003)
+
+Released: **June 9, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed a memory leak in `ItemsRepeater` where recycled elements were never garbage collected due to a reference cycle through the `RecyclePool`, which could also cause crashes in `InvalidateChildrenMeasure`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ItemTemplateWrapper_RecyclePoolLeak)
+> * Fixed a potential crash when releasing touch contacts in a `ScrollViewer` before scrolling. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_TouchUpScrollCrashFix)
+>
+
+</details>
+
+
 ## Version 1.8.8 (1.8.260508005)
 
 Released: **May 12, 2026** <br><br>
