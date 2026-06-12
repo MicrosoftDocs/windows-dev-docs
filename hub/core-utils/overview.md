@@ -2,7 +2,7 @@
 title: Coreutils for Windows overview
 description: A set of UNIX-style core utilities for Windows that lets developers run the same commands and scripts they already use on Linux, macOS, and WSL.
 ms.topic: overview
-ms.date: 05/14/2026
+ms.date: 06/05/2026
 ---
 
 # Coreutils for Windows
