@@ -1,7 +1,7 @@
 ---
 title: Quick Accent Utility for Windows PowerToys
 description: Learn how to use Quick Accent utility in PowerToys to type accented characters on Windows when your keyboard lacks accent support. Configure settings and activation methods.
-ms.date: 08/20/2025
+ms.date: 06/08/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Quick Accent, Win]
 # Customer intent: As a Windows power user, I want to learn how to configure and use the Quick Accent utility in PowerToys for Windows.
@@ -25,21 +25,25 @@ With the dialog enabled, keep pressing your activation key.
 
 ## Character sets
 
-You can limit the available characters by selecting character sets from the settings menu. Available character sets are:
+You can limit the available characters by selecting character sets from the settings menu. Character sets are organized into two groups, matching what you see in PowerToys Settings.
 
+**Language sets:**
+
+- Bulgarian
 - Catalan
-- Currency
+- Crimean Tatar
 - Croatian
 - Czech
 - Danish
-- Gaeilge
-- Gàidhlig
 - Dutch
-- Greek
+- Esperanto
 - Estonian
 - Finnish
 - French
+- Gaeilge
+- Gàidhlig
 - German
+- Greek
 - Hebrew
 - Hungarian
 - Icelandic
@@ -47,21 +51,33 @@ You can limit the available characters by selecting character sets from the sett
 - Kurdish
 - Lithuanian
 - Macedonian
-- Māori
+- Maltese
+- Maori
 - Norwegian
 - Pinyin
 - Polish
 - Portuguese
 - Romanian
+- Serbian
+- Serbian Cyrillic
 - Slovak
 - Slovenian
 - Spanish
-- Serbian
-- Serbian Cyrillic
 - Swedish
 - Turkish
 - Vietnamese
 - Welsh
+
+**Special sets:**
+
+- Special Characters
+- Currency
+- Greek Polytonic
+- IPA
+- Middle Eastern Romanization
+- Proto Indo European
+
+For the canonical, always up-to-date list, see [`CharacterMappings.cs`](https://github.com/microsoft/PowerToys/blob/main/src/modules/poweraccent/PowerAccent.Common/CharacterMappings.cs) in the PowerToys source.
 
 ## Settings
 

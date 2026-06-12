@@ -1,7 +1,7 @@
 ---
 title: Control Multiple Computers with PowerToys Mouse Without Borders
 description: Control up to four computers with one keyboard and mouse using PowerToys Mouse Without Borders. Share clipboard and transfer files seamlessly between machines.
-ms.date: 08/20/2025
+ms.date: 06/08/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Mouse Without Borders]
 # Customer intent: As a Windows power user, I want to use Mouse Without Borders to control multiple computers from the same keyboard and mouse.
@@ -114,7 +114,7 @@ If you can't setup the initial connection:
 If the connection is lost:
 
 - Make sure the machines are still connected.
-- Select **Refresh connections** in Settings (or use the Refresh shortcut).
+- Select **Refresh connections** in Settings (or use the Refresh shortcut). You can also trigger **Refresh connections** from the PowerToys Quick Access flyout or the Settings dashboard, so you don't have to open the full Mouse Without Borders page to reconnect.
 
 ## Known Issues
 
