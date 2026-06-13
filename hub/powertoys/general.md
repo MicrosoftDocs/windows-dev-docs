@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys General Settings for Windows
 description: Configure PowerToys general settings including updates, admin mode, themes, and startup behavior. Learn how to customize your Windows PowerToys experience with our step-by-step guide.
-ms.date: 08/28/2025
+ms.date: 06/08/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows power user, I want to learn how to configure the general settings for PowerToys.
@@ -19,9 +19,11 @@ Here you can check for new updates, and if one is available, you can download an
 
 | Setting | Description |
 | :--- | :--- |
-| Download updates automatically | When enabled, PowerToys automatically downloads available updates in the background. |
+| Download updates automatically | When enabled, PowerToys automatically downloads available updates in the background. New installations have this enabled by default. |
 | Show new updates as toast notifications | When enabled, displays a Windows toast notification when a new update is available. |
 | Show what's new after updates | When enabled, displays a "What's New" dialog after updates are applied so you can see the latest changes. |
+
+When an automatic update is applied, PowerToys restarts itself and shows a toast confirming the new version is running. Your `settings.json` and other configuration files are backed up before each update, and PowerToys restores them automatically if it detects corruption after the update.
 
 ## Settings search
 

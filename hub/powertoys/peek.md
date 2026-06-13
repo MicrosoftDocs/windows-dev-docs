@@ -1,7 +1,7 @@
 ---
 title: PowerToys Peek Utility - Preview Files Without Opening Apps
 description: Preview files instantly with PowerToys Peek utility for Windows. View images, documents, videos, and code without opening multiple apps. Download PowerToys today.
-ms.date: 08/20/2025
+ms.date: 06/08/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Peek, Win]
 # customer intent: As a Windows power user, I want to learn how to configure and use the Peek utility in PowerToys.
@@ -31,7 +31,7 @@ Select **Open with** or <kbd>Enter</kbd> to open the current file with the defau
 
 ## See extra information about the current file
 
-Hover over the preview to see extra information about the file, including its size, type, and when it was last modified.
+Hover over the preview to see extra information about the file, including its size, type, and when it was last modified. You can hide this tooltip from Peek's **Behavior** settings if you'd rather not see metadata on hover.
 
 ## Delete files
 
@@ -65,6 +65,7 @@ From the settings page, the following options can be configured:
 | Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). New starting in PowerToys 0.95 - <kbd>Space</kbd> is now the default keyboard command. |
 | Always run without elevation, even when PowerToys is elevated | Tries to run Peek without elevated permissions, to fix access to network shares. |
 | Automatically close the Peek window after it loses focus |  |
+| Show file preview tooltip | When enabled, hovering the preview shows a tooltip with filename, type, date modified, and size. Turn this off to disable the on-hover tooltip. |
 | Confirm before deleting files | When enabled, Peek shows a confirmation dialog before deleting files. |
 
 The following settings are available for source code files but are still in preview:

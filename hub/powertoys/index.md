@@ -193,7 +193,7 @@ The currently available utilities include:
     :::column:::
        [![Shortcut Guide icon](images/shortcut-guide/shortcut-guide.png)](shortcut-guide.md)<br>
         **[Shortcut Guide](shortcut-guide.md)**<br>
-        Display available Windows key shortcuts for the current desktop state.
+        Look up keyboard shortcuts for Windows and your favorite apps in one place.
     :::column-end:::
 :::row-end:::
 

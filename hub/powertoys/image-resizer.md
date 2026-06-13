@@ -1,7 +1,7 @@
 ---
 title: Image Resizer utility for Windows - PowerToys
 description: Resize images in bulk with PowerToys Image Resizer utility. Learn how to quickly resize multiple images using this Windows shell extension with drag-and-drop support.
-ms.date: 08/20/2025
+ms.date: 06/08/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
@@ -71,6 +71,9 @@ You can specify a directory in the filename format to group resized images into 
 [Characters that are illegal in file names](/windows/win32/fileio/naming-a-file#file-and-directory-names) will be replaced by an underscore `_`.
 
 You can choose to retain the original *last modified* date on the resized image or reset it at the time of the resizing action.
+
+> [!TIP]
+> Image Resizer watches its `settings.json` for external changes and reloads them immediately. If you edit settings with another tool (for example, a [PowerToys DSC configuration](dsc-configure/overview.md)), your new sizes and options take effect on the next resize without restarting PowerToys.
 
 ## Command-line reference
 

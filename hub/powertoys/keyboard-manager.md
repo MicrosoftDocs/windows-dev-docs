@@ -1,7 +1,7 @@
 ---
 title: Remap Keys and Shortcuts with PowerToys Keyboard Manager
 description: Learn how to remap keyboard keys and shortcuts using PowerToys Keyboard Manager. Customize your Windows keyboard layout and create custom shortcuts for improved productivity.
-ms.date: 08/20/2025
+ms.date: 06/08/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Keyboard Manager, Spotify]
@@ -35,7 +35,7 @@ PowerToys Keyboard Manager must be enabled (with PowerToys running in the backgr
 
 To create mappings with Keyboard Manager, open the PowerToys Settings. In PowerToys Settings, on the Keyboard Manager tab, you'll see options to:
 
-- **Try the new editor**: Switch to the new editor experience. You can switch back at any time using the same toggle.
+- **Use the new editor**: Starting in PowerToys 0.100, new installations open the redesigned WinUI 3 editor by default. You can switch between the new and legacy editors at any time using this toggle.
 - Open the Remap Keys settings window by selecting **Remap a key**
 - Open the Remap Shortcuts settings window by selecting **Remap a shortcut**
 

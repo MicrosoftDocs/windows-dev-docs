@@ -1,14 +1,17 @@
 ---
-title: Get started with Docker for remote development with containers
-description: A complete guide to get started with Docker Desktop on Windows or WSL. Including support offered by Microsoft and variety of Azure services.
+title: Get started with containers on Windows
+description: A guide to running containers on Windows with Docker Desktop, Visual Studio, VS Code, .NET, and Azure services.
 ms.topic: get-started
-keywords: Microsoft, Windows, Docker, WSL, Remote development, Containers, Docker Desktop, Windows vs WSL
-ms.date: 04/15/2026
+keywords: Microsoft, Windows, Docker, WSL, Remote development, Containers, Docker Desktop
+ms.date: 06/05/2026
 ---
 
-# Overview of Docker remote development on Windows
+# Overview of containers on Windows
 
-Using containers for remote development and deploying applications with the Docker platform is a very popular solution with many benefits. Learn more about the variety of support offered by Microsoft tools and services, including Windows Subsystem for Linux (WSL), Visual Studio, Visual Studio Code, .NET, and a broad variety of Azure services.
+Learn about the variety of container support offered by Microsoft tools and services on Windows, including Visual Studio, Visual Studio Code, .NET, and a broad variety of Azure services.
+
+> [!NOTE]
+> WSL is also adding built-in Linux container support (coming to public preview). For details and progress updates, see the [WSL GitHub repository](https://github.com/microsoft/WSL).
 
 ## Docker on Windows 
 

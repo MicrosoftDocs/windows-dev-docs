@@ -1,7 +1,7 @@
 ---
 title: PowerToys Command Palette Utility for Windows
 description: Learn how to use PowerToys Command Palette, a quick launcher for Windows power users. Access apps, commands, and tools instantly with customizable shortcuts and extensions.
-ms.date: 04/10/2026
+ms.date: 06/08/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: Learn about the PowerToys Command Palette utility and how to use it.
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 # PowerToys Command Palette utility
 
-PowerToys Command Palette puts everything you need just a keystroke away. Launch apps, run commands, search files, browse the web, manage system services, and more — all from a single, blazing-fast interface. Built for Windows power users, Command Palette is fully customizable, deeply extensible, and designed to keep you in your flow.
+PowerToys Command Palette puts everything you need just a keystroke away. Launch apps, run commands, search files, browse the web, manage system services, and more, all from a single, blazing-fast interface. Built for Windows power users, Command Palette is fully customizable, deeply extensible, and designed to keep you in your flow.
 
 Press <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. That's it.
 
@@ -26,7 +26,7 @@ Press <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. That's it
 | **Run commands** | Type `>` followed by a command (for example, `> cmd` or `> Shell:startup`). |
 | **Search files and folders** | Navigate to `Search files` or type `file` followed by a space. |
 | **Search the web** | Type `??` followed by your query to search with your default browser. |
-| **Calculate** | Type a math expression like `23*47` or `sqrt(256)`, or type `=` followed by a space. |
+| **Calculate** | Type a math expression like `23*47` or `sqrt(256)`, or type `=` followed by a space. The calculator supports the same operations as the [PowerToys Run Calculator plugin](../run.md#calculator-plugin), including `rand()` and `randi(x)`. |
 | **Navigate Windows Settings** | Type `$` followed by a settings page name (for example, `$ display`). |
 | **Find and install apps with WinGet** | Navigate to `Search WinGet` to discover and install apps. |
 | **Switch windows** | Quickly switch between open windows without <kbd>Alt</kbd>+<kbd>Tab</kbd>. |
@@ -35,21 +35,29 @@ Press <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. That's it
 | **Manage Windows Services** | Start, stop, or restart system services directly from the palette. |
 | **Open Windows Terminal profiles** | Launch any configured Terminal profile or run commands in a specific profile. |
 | **Query the Windows Registry** | Look up and manage Registry entries without opening regedit. |
-| **Connect to Remote Desktop** | Start Remote Desktop sessions quickly. |
-| **Monitor system performance** | Check CPU, memory, and other performance metrics at a glance. |
+| **Connect to Remote Desktop** | Start Remote Desktop sessions from discovered connections, or type any hostname directly into the list to connect on the fly. |
+| **Monitor system performance** | Check CPU, memory, network, GPU, and battery metrics at a glance, or pin individual metrics to the [Dock](dock.md) as standalone bands. |
 | **Execute system commands** | Restart your computer, empty the Recycle Bin, and more. |
 | **Access PowerToys modules** | Jump to other PowerToys utilities directly from Command Palette. |
 | **Customize your look** | Personalize with themes, backdrop effects, background images, and custom colors in [Settings](settings.md). |
 
+## Home page
+
+The Home page is what you see when you first open Command Palette. It surfaces your most relevant commands, recent items, and a **Pinned commands** section that you control. Right-click any command in Command Palette and select **Pin to Home** to add it. From the Home page, use the right-click context menu to reorder your pinned commands or unpin them. Pinning to Home is independent of pinning to the Dock: use Home pins for quick access inside the palette and Dock pins for one-click access without opening the palette.
+
+## Bookmarks
+
+Create Bookmarks for files, folders, URLs, or shell commands so you can launch them by name from Command Palette. Bookmarks can include placeholder values (for example, `{query}` in a URL). When you run a bookmark with placeholders, Command Palette prompts you for the values inline in the search experience instead of opening a separate dialog. You can also pin a Bookmark to the [Dock](dock.md) by dragging the underlying file or URL onto the Dock.
+
 ## Dock
 
-Pin your most-used commands to a persistent toolbar that stays visible on the edge of your screen. The [Dock](dock.md) gives you one-click access to frequently used commands and extensions without opening the full Command Palette.
+Pin your most-used commands to a persistent toolbar that stays visible on the edge of your screen. The [Dock](dock.md) gives you one-click access to frequently used commands and extensions without opening the full Command Palette. On multi-monitor setups, each display has its own Dock and its own set of pinned bands.
 
 For more information, see [Command Palette Dock](dock.md).
 
 ## Extensions
 
-Command Palette is built to be extended. There's a large and growing ecosystem of extensions that add new commands, tools, and integrations to your workflow.
+Command Palette is built to be extended. There's a large and growing ecosystem of extensions that add new commands, tools, and integrations to your workflow. Browse, install, update, and uninstall community extensions directly from the built-in **Extension Gallery** in Command Palette settings.
 
 To learn more, see [Finding and installing extensions](finding-and-installing-extensions.md) and [Extension development overview](extensibility-overview.md).
 

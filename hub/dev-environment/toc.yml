@@ -84,7 +84,7 @@ items:
     href: /cpp/
   - name: C#
     href: /dotnet/csharp/
-  - name: Docker
+  - name: Docker and containers
     items:
       - name: Overview
         href: ./docker/overview.md

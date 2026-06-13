@@ -1,7 +1,7 @@
 ---
 title: ZoomIt Screen Zoom and Annotation Tool by Sysinternals
 description: ZoomIt by Sysinternals is a powerful screen zoom, annotation, and recording tool for technical presentations. Download with PowerToys or standalone. Perfect for demos and screen capture.
-ms.date: 08/20/2025
+ms.date: 06/08/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 #Customer intent: As a Windows power user, I want to learn about the ZoomIt utility by Sysinternals, which is now available with PowerToys.
@@ -66,16 +66,28 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 
 | Record settings | Description |
 |-----------------|-------------|
-| Record Toggle Hotkey | Set the hotkey to toggle recording on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>5</kbd>. |
+| Record Toggle Hotkey | Set the hotkey to toggle full-screen or zoom recording on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>5</kbd>. |
+| Record screen region hotkey | Set the hotkey to record a user-selected portion of the screen. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd>. |
+| Lock region selection to 16:9 aspect ratio | When recording a screen region, constrain the selection to a 16:9 aspect ratio. Useful when you're producing video for a 16:9 player. |
+| Record window hotkey | Set the hotkey to record a specific window. |
 | Format | Select the recording output format. Options: **GIF** or **MP4**. |
 | Scaling | Set the scaling factor for the recorded image (0.1 to 1.0). The default scaling factor is 1.0, and larger numbers are more zoomed in. |
 | Capture system audio | Enable or disable capturing system audio during recording. |
 | Capture audio input | Enable or disable capturing audio input during recording. Audio input is not captured by default. |
 | Microphone | Select the microphone to use for audio input during recording. The default microphone is "Default", the current system default audio input device. |
+| Show webcam overlay | Composite a live webcam feed onto the recording. While recording, press <kbd>Ctrl</kbd>+<kbd>C</kbd> to toggle the overlay on and off. |
+| Camera | Select the camera used for the webcam overlay. The default is the current system default camera. |
+| Position | Choose the corner of the recording the webcam overlay appears in: **Top left**, **Top right**, **Bottom left**, or **Bottom right**. |
+| Size | Choose the webcam overlay size: **Small**, **Medium**, **Large**, **X-Large**, or **Full screen**. |
+| Shape | Choose the webcam overlay shape: **Rectangle**, **Rounded rectangle**, **Rounded square**, or **Circle**. |
 
 | Snip settings | Description |
 |---------------|-------------|
 | Snip Toggle Hotkey | Set the hotkey to toggle screen snipping on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>6</kbd>. |
+
+## Recording and trim editor
+
+After ZoomIt finishes a recording, the trim editor opens so you can shorten the clip before saving. You can append additional clips to the current recording from the editor and add transitions between them, which makes it easier to stitch together multi-take demos in a single output file.
 
 For more details on using ZoomIt, including additional hotkey information, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation. For information about the DemoType feature in ZoomIt, see [Make demo typing easy with DemoType in ZoomIt](https://techcommunity.microsoft.com/blog/sysinternals-blog/make-demo-typing-easy-with-demotype-in-zoomit-v8-0/4050566) on the Sysinternals blog.
 

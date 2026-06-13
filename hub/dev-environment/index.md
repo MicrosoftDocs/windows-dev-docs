@@ -2,7 +2,7 @@
 title: Windows developer tools
 description: Windows includes built-in tools designed for developers — a package manager, a Linux subsystem, optimized storage, and more.
 ms.topic: overview
-ms.date: 04/26/2026
+ms.date: 06/05/2026
 ---
 
 # Windows developer tools
@@ -43,7 +43,7 @@ Windows supports a wide range of development workflows. Tools like Visual Studio
     :::column:::
        [![WSL icon](../images/wsl-icon.png)](/windows/wsl/)<br>
         **[Windows Subsystem for Linux](/windows/wsl/)**<br>
-        Run your favorite Linux distribution fully integrated with Windows.
+        Run Linux distributions fully integrated with Windows. WSL is [open source on GitHub](https://github.com/microsoft/WSL).
     :::column-end:::
 :::row-end:::
 

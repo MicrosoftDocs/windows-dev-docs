@@ -1,7 +1,7 @@
 ---
 title: PowerToys Command Palette Dock
 description: Learn how to use the Command Palette Dock, a persistent toolbar that provides quick access to your most-used commands and extensions from any screen edge.
-ms.date: 03/09/2026
+ms.date: 06/08/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: Learn about the Command Palette Dock feature and how to configure it.
@@ -30,6 +30,10 @@ The Dock is divided into three regions that organize your pinned commands:
 
 The Dock displays horizontally when anchored to the top or bottom of the screen, and vertically when anchored to the left or right.
 
+## Multi-monitor support
+
+On multi-monitor setups, each display gets its own Dock instance and its own set of pinned bands. You can pin different commands to different monitors. For example, keep Performance Monitor on your primary display and a set of work bookmarks on a secondary display. Open Dock edit mode on the Dock you want to change and add, remove, or rearrange bands there. You can also drag bands directly from one monitor's Dock to another to move them across displays.
+
 ## Pin commands to the Dock
 
 There are several ways to pin commands and extensions to the Dock.
@@ -50,10 +54,14 @@ You can also manage the Dock layout by entering edit mode:
 1. Right-click the Dock background and select **Edit Dock**.
 2. Select the **+** button in the Start, Center, or End region to add a new command.
 3. Choose from the list of available commands in the flyout.
-4. Drag and drop commands to reorder them within or across regions.
+4. Drag and drop commands to reorder them within or across regions. On multi-monitor setups you can also drag a band onto another monitor's Dock to move it between displays.
 5. Select **Save** to apply your changes, or **Discard** to revert.
 
 You can right-click individual items in edit mode to toggle **Show Titles** and **Show Subtitles**, or to **Unpin** a command from the Dock.
+
+### Pin files and URLs by drag and drop
+
+Drag a file or a URL onto the Dock to immediately create a Bookmark for it and pin the Bookmark in place. Files and folders are bookmarked at the path you dropped, and URLs are bookmarked at their address. Pinned folder bookmarks open the Command Palette browse experience scoped to that folder when you select them.
 
 ### Pin from Dock settings
 
@@ -102,7 +110,7 @@ The Dock uses the Windows AppBar API to reserve screen space, so other windows d
 
 - Stays visible at all times while enabled (auto-hide is not currently supported).
 - Automatically restores its position if Windows Explorer restarts.
-- Cannot be resized or dragged — its position is controlled by the **Position** setting.
+- Cannot be resized or dragged. Its position is controlled by the **Position** setting.
 
 ## Related content
 

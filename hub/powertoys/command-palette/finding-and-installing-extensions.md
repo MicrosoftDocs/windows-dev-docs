@@ -1,16 +1,13 @@
 ---
 title: Finding and installing Command Palette extensions
-description: Learn how to discover, install, and manage extensions for PowerToys Command Palette using the built-in Gallery or community sources.
-ms.date: 04/10/2026
+description: Learn how to discover, install, update, and uninstall extensions for PowerToys Command Palette using the built-in Gallery or community sources.
+ms.date: 06/08/2026
 ms.topic: how-to
-no-loc: [PowerToys, Windows, Insider]
+no-loc: [PowerToys, Windows, Insider, WinGet]
 # Customer intent: Find and install extensions to add new functionality to Command Palette.
 ---
 
 # Finding and installing extensions
-
-> [!NOTE]
-> The Gallery will be available in PowerToys version 0.100. In version 0.99 and earlier, you can find new extensions from inside Command Palette by running the **Find Command Palette extensions from WinGet** or **Find Command Palette extensions from the Microsoft Store** commands. The latter opens the Microsoft Store extension association page directly at [`ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette`](ms-windows-store://assoc/?Tags=AppExtension-com.microsoft.commandpalette).
 
 Command Palette extensions add new commands, tools, and integrations to your Command Palette experience. You can discover and install extensions directly from the built-in Gallery, or find community-built extensions on GitHub.
 
@@ -24,13 +21,15 @@ The easiest way to find extensions is through the built-in **Gallery** in Comman
 4. Select an extension to view its details, screenshots, and description.
 5. Select **Install** to add the extension to your Command Palette.
 
-The Gallery pulls from a curated feed of extensions that have been reviewed and published. You can sort extensions by name, author, or installation status to find what you're looking for.
+The Gallery pulls from a curated feed of extensions that have been reviewed and published. You can sort extensions by name, author, or installation status to find what you're looking for, and the Gallery uses cached data so it stays responsive when you reopen it.
+
+Installs, updates, and uninstalls go through WinGet. Command Palette shows the live WinGet status and progress on the extension's gallery page, so you can see when an install is in flight, succeeded, or failed without leaving the palette. The Gallery only surfaces HTTP and HTTPS links (homepage, author, install, and metadata), so external links you open from the Gallery stay scoped to safe web destinations.
 
 ## Community extensions
 
 The Command Palette extension ecosystem is open and growing. Community developers can build and share their own extensions. To discover community-built extensions, visit the [CmdPal-Extensions repository on GitHub](https://github.com/microsoft/CmdPal-Extensions).
 
-If you've built an extension and want to share it with the community, you can submit it for inclusion in the Gallery from the same repository.
+If you've built an extension and want to share it with the community, you can submit it for inclusion in the Gallery from the same repository. For details, see [Making your extension discoverable](extension-gallery.md).
 
 ## Manage installed extensions
 
@@ -45,6 +44,8 @@ From here, you can:
 - Configure per-extension settings (if the extension provides a settings page).
 - Set custom aliases for extension commands.
 - Assign global hotkeys to specific extension commands.
+
+You can also update or uninstall any extension you installed through the Gallery directly from the Gallery page.
 
 ## Build your own
 
