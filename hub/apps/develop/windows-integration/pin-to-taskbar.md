@@ -2,7 +2,7 @@
 description: You can programmatically pin your app to the taskbar, and you can check if it's currently pinned.
 title: Pin your app to the taskbar
 template: detail.hbs
-ms.date: 07/28/2025
+ms.date: 06/15/2026
 ms.topic: how-to
 keywords: windows 10, uwp, win32, taskbar, taskbar manager, pin to taskbar, primary tile
 ms.localizationpriority: medium
@@ -32,14 +32,48 @@ The [TaskbarManager](/uwp/api/windows.ui.shell.taskbarmanager) class lets you as
 ## Limited Access Feature (LAF) approval
 
 > [!IMPORTANT]
-> The Taskbar Pinning is a Limited Access Feature (see [LimitedAccessFeatures class](/uwp/api/windows.applicationmodel.limitedaccessfeatures)). For more information or to request an unlock token, please use the [LAF Access Token Request Form](https://go.microsoft.com/fwlink/?linkid=2271232&clcid=0x409).
+> Taskbar Pinning is a Limited Access Feature on some versions of Windows (see [LimitedAccessFeatures class](/uwp/api/windows.applicationmodel.limitedaccessfeatures)). For more information or to request an unlock token, please use the [LAF Access Token Request Form](https://go.microsoft.com/fwlink/?linkid=2271232&clcid=0x409).
+>
+> The limited access restriction is being removed from Windows starting with [KB5074105 (OS Builds 26200.7705 and 26100.7705)](https://support.microsoft.com/topic/january-29-2026-kb5074105-os-builds-26200-7705-and-26100-7705-preview-85bd25de-894a-43eb-a19b-9a59d10f194b).
 
+On versions of Windows that require a LAF Access Token, you must first call [LimitedAccessFeatures.TryUnlockFeature](/uwp/api/windows.applicationmodel.limitedaccessfeatures.tryunlockfeature) before calling Taskbar Pinning APIs. On later versions, access to Taskbar Pinning is not limited and you can proceed directly to calling taskbar pinning APIs.
+
+Use this code to determine whether you need to call `TryUnlockFeature` or if you can skip the call and pin your app without a LAF Access Token.
+
+```cpp
+ // LAF API seed value for com.microsoft.windows.taskbar.pin
+ constexpr PCWSTR c_taskbarPinLAFSeedValue =
+     L"4096B239A7295B635C090E647E867B5707DA6AB6CB78340B01FE4E0C8F4953D4";
+ 
+ // Returns true if a Limited Access Feature token is required
+ // for taskbar pinning on this machine.
+ inline bool IsLAFTokenRequiredForTaskbarPinning()
+ {
+     wil::unique_hkey hKey;
+     if (RegOpenKeyExW(HKEY_LOCAL_MACHINE,
+             L"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModel"
+             L"\\LimitedAccessFeatures\\com.microsoft.windows.taskbar.pin",
+             0, KEY_READ, &hKey) != ERROR_SUCCESS)
+     {
+         return false;
+     }
+ 
+     DWORD value = 0;
+     DWORD size = sizeof(value);
+     LSTATUS status = RegQueryValueExW(hKey.get(),
+         c_taskbarPinLAFSeedValue,
+         nullptr, nullptr,
+         reinterpret_cast<LPBYTE>(&value), &size);
+ 
+     return (status == ERROR_SUCCESS) && (value != 0);
+ }
+```
 
 ## 1. Check whether the required APIs exist
 
 ### Win32
 
-If you want to use `TaskbarManager` from your WIn32 desktop app, then you'll need to check whether desktop app support is present. You can look for the `ITaskbarManagerDesktopAppSupportStatics` marker interface on the `TaskbarManager` activation factory to perform this check. If this interface is not available, then you won't be able to use `TaskbarManager` from your desktop app.
+If you want to use `TaskbarManager` from your Win32 desktop app, then you'll need to check whether desktop app support is present. You can look for the `ITaskbarManagerDesktopAppSupportStatics` marker interface on the `TaskbarManager` activation factory to perform this check. If this interface is not available, then you won't be able to use `TaskbarManager` from your desktop app.
 
 ```cpp
 if (winrt::try_get_activation_factory<winrt::Windows::UI::Shell::TaskbarManager, winrt::Windows::UI::Shell::ITaskbarManagerDesktopAppSupportStatics>())
