@@ -1,7 +1,7 @@
 ---
 description: Publishing GDK games to the Microsoft Store
 title: Publish PC games to the Microsoft Store using GDK
-ms.date: 05/05/2026
+ms.date: 06/15/2026
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, publishing gdk games, microsoft store on windows, pc game publishing, gdk for windows. microsoft game development kit, self-service publishing, win32 pc games, msixvc packaging
 ms.localizationpriority: medium
@@ -72,6 +72,10 @@ To begin publishing your PC game using this path:
 4. Review identity details required for packaging your game.
 5. [Build and package your GDK game.](https://learn.microsoft.com/gaming/gdk/docs/gdk-dev/get-started/get-started-home)
 6. Publish your game to the Microsoft Store.
+
+For detailed guidance on how to publish your PC game, check out the following video:
+
+>[!VIDEO https://learn-video.azurefd.net/vod/player?id=95742aab-25e4-4d23-accb-2c6961ba704a]
 
 ### Frequently asked questions
 
