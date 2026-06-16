@@ -1,7 +1,7 @@
 ---
 description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
 title: Integrate your desktop app with Windows using packaging extensions
-ms.date: 05/07/2024
+ms.date: 06/16/2026
 ms.topic: how-to
 keywords: windows 11, windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
@@ -17,7 +17,7 @@ For example, use an extension to create a firewall exception; make your app the 
 This topic describes those extensions and the tasks that you can perform by using them.
 
 > [!NOTE]
-> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create a new project for a packaged WinUI desktop app](../../winui/winui3/create-your-first-winui3-app.md#packaged-create-a-new-project-for-a-packaged-c-or-c-winui-3-desktop-app)) and packaged apps with external location (see [Grant package identity by packaging with external location](./grant-identity-to-nonpackaged-apps.md)). Also see [Features that require package identity](./modernize-packaged-apps.md).
+> The features described in this topic require that your app is packaged (has package identity at runtime). That includes packaged apps (see [Create your first WinUI project](../../get-started/start-here.md)) and packaged apps with external location (see [Grant package identity by packaging with external location](./grant-identity-to-nonpackaged-apps.md)). Also see [Features that require package identity](./modernize-packaged-apps.md).
 
 ## Transition users to your app
 

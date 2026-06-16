@@ -2,7 +2,7 @@
 description: Learn how to detect system theme changes for dark or light mode.
 title: Support Dark and Light themes in Win32 apps
 ms.topic: how-to
-ms.date: 05/05/2022
+ms.date: 06/16/2026
 ms.localizationpriority: medium
 ---
 
@@ -111,7 +111,7 @@ wprintf(L"\nisDarkMode: %u\n", isDarkMode);
 To automatically track when the Dark mode setting changes during an app session, you can wrap your checks like this.
 
 ```cpp
-auto revoker = settings.ColorValuesChanged([settings](auto&&...)
+auto revoker = settings.ColorValuesChanged([settings](auto const& /*sender*/, auto const& /*args*/)
 {
     auto foregroundRevoker = settings.GetColorValue(UIColorType::Foreground);
     bool isDarkModeRevoker = static_cast<bool>(IsColorLight(foregroundRevoker));
@@ -138,7 +138,7 @@ int main()
     bool isDarkMode = static_cast<bool>(IsColorLight(foreground));
     wprintf(L"\nisDarkMode: %u\n", isDarkMode);
 
-    auto revoker = settings.ColorValuesChanged([settings](auto&&...)
+    auto revoker = settings.ColorValuesChanged([settings](auto const& /*sender*/, auto const& /*args*/)
         {
             auto foregroundRevoker = settings.GetColorValue(UIColorType::Foreground);
             bool isDarkModeRevoker = static_cast<bool>(IsColorLight(foregroundRevoker));

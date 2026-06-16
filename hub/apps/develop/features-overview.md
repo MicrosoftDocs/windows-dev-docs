@@ -2,7 +2,7 @@
 title: Features for Windows app development
 description: Overview of the Windows app development features available to developers, including accessibility, AI, files, notifications, and more.
 ms.topic: overview
-ms.date: 03/26/2026
+ms.date: 06/16/2026
 ms.localizationpriority: medium
 ---
 
@@ -30,6 +30,5 @@ Some features are available in the [Windows App SDK](../windows-app-sdk/index.md
 | [OS integration](windows-integration/index.md) | Connect your app to Windows shell features, settings, and system capabilities. |
 | [Performance](performance/index.md) | Analyze and optimize the performance and responsiveness of your app. |
 | [Security and identity](security/index.md) | Authenticate users, protect data, and manage app permissions. |
-| [Speech](speech.md) | Add voice input and text-to-speech synthesis to your app. |
 | [Testing](testing/index.md) | Test and debug your Windows app using platform tools and best practices. |
 | [User interface](user-interface.md) | Build rich user interfaces with WinUI, XAML, and other UI frameworks. |
