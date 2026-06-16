@@ -33,9 +33,6 @@ static void Main()
         case ActivationKind.ToastNotification:
             HandleToastNotification(args as ToastNotificationActivatedEventArgs);
             break;
-        case ActivationKind.VoiceCommand:
-            HandleVoiceCommand(args as VoiceCommandActivatedEventArgs);
-            break;
         case ActivationKind.File:
             HandleFile(args as FileActivatedEventArgs);
             break;
@@ -55,7 +52,7 @@ static void Main()
 
 You can use the [AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs) method to retrieve activation info from the supported set of event args objects listed in the following table. Some of these activation types require the use of a package extension in the package manifest.
 
-[ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) activation info is supported only on Windows 10, version 2004, and later. All other activation info types are supported on Windows 10, version 1809, and later.
+[ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) activation info is supported only on Windows 10, version 2004, and later. All other activation info types are supported on Windows 10, version 1809, and later versions of Windows.
 
 | Event args type | Package extension | Related docs | 
 |-------------------|-----------------|-----------------------|
