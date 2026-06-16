@@ -11,7 +11,7 @@ no-loc: [PowerToys, Windows, File Explorer, WinGet]
 
 The PowerToys Shortcut Guide is a searchable reference for keyboard shortcuts. It ships with built-in manifests for Windows, PowerToys, and many popular apps. When you open Shortcut Guide, it automatically shows shortcuts for the app currently in the foreground, plus PowerToys and any other background apps that have a matching manifest.
 
-:::image type="content" source="images/shortcut-guide/settings.png" alt-text="Screenshot of the PowerToys Shortcut Guide settings page.":::
+:::image type="content" source="images/shortcut-guide/large.png" alt-text="Screenshot of the PowerToys Shortcut Guide.":::
 
 ## Get started
 
