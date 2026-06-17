@@ -41,6 +41,9 @@ You can share various types of data, including:
 
 The [**DataPackage**](/uwp/api/Windows.ApplicationModel.DataTransfer.DataPackage) object can contain one or more of these formats, in any combination. The following example demonstrates sharing text.
 
+> [!TIP]
+> When you share a URL, use [**SetWebLink**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setweblink) (or [**SetApplicationLink**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setapplicationlink)) rather than [**SetText**](/uwp/api/windows.applicationmodel.datatransfer.datapackage.settext). This lets target apps recognize the content as a link and handle it appropriately—for example, generating a rich preview—instead of treating it as plain text.
+
 :::code language="csharp" source="~/../snippets-windows/windows-uwp/app-to-app/share_data/cs/MainPage.xaml.cs" id="SnippetSetContent":::
 
 ## Set properties
