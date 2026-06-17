@@ -24,7 +24,7 @@ Windows supports a wide range of development workflows. Tools like Visual Studio
     :::column-end:::
     :::column:::
        [![Dev Configs icon](../images/tile-devconfigs.png)](../dev-configs/index.md)<br>
-         **[Dev Configs](../dev-configs/index.md)**<br>
+         **[Windows Developer Configurations](../dev-configs/index.md)**<br>
         Curated, declarative setups that configure your Windows dev environment in one step.
     :::column-end:::
 :::row-end:::
