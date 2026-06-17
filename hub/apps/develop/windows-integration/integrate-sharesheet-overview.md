@@ -23,11 +23,13 @@ In this comprehensive guide, you'll learn how to add the share feature to your p
 | [Integrate packaged apps with Windows Share](integrate-sharesheet-packaged.md) | Discover how to integrate packaged apps with the Windows Share Sheet. |
 | [Integrate Progressive Web Apps (PWAs) with Windows Share](integrate-sharesheet-pwa.md) | Discover how to integrate a Progressive Web App (PWA) with the Windows Share Sheet. |
 | [Integrate unpackaged apps with Windows Share](integrate-sharesheet-unpackaged.md) | Discover how to integrate unpackaged apps with the Windows Share Sheet. |
+| [Surface your app as a contact share target (People on Windows)](cross-device-people-api.md) | Make your app appear in the people row of the Share Sheet by donating contacts with the Cross-Device People API. |
 | [Share data - WinUI apps](/windows/apps/develop/windows-integration/integrate-sharesheet-overview) | Learn how to share data between WinUI apps. |
 
 ## See also
 
 - [Communication - Windows apps](/windows/apps/develop/communication/)
+- [People on Windows: surface your app as a contact share target](cross-device-people-api.md)
 - [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
 - [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)
