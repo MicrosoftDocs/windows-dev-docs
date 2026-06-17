@@ -31,6 +31,9 @@ Next, decide what file types and data formats you support. The Share APIs suppor
 
 Only register for formats that your app can handle. Only target apps that support the data being shared appear when the user invokes Share.
 
+> [!IMPORTANT]
+> Declare only the specific file types and data formats your app can handle. Use **SupportsAnyFileType** only if your app is a general-purpose file mover (for example, a cloud storage or file-transfer app). Registering for all file types makes your app appear as a share target for content it can't use, which is the most common share-target bug. For link-handling apps, remember to declare the **Uri** data format; for image apps, declare both **Bitmap** and **StorageItems**. Always validate the format and size of received content in your activation handler before processing it.
+
 To set file types:
 
 1.  Open the manifest file. It should be called something like **package.appxmanifest**.
@@ -116,7 +119,9 @@ async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, st
         Title = quickLinkTitle,
 
         // For quicklinks, the supported FileTypes and DataFormats are set 
-        // independently from the manifest
+        // independently from the manifest. Declare only the types this
+        // QuickLink can handle rather than "*" unless your app is a
+        // general-purpose file mover.
         SupportedFileTypes = { "*" },
         SupportedDataFormats = { StandardDataFormats.Text, StandardDataFormats.Uri, 
                 StandardDataFormats.Bitmap, StandardDataFormats.StorageItems }
