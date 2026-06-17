@@ -79,6 +79,16 @@ items:
         href: ../dev-tools/samples.md  
       - name: Tutorials
         items:
+          - name: "WinUI Notes Part 2 - Navigation and data binding"
+            items:
+            - name: Introduction
+              href: ../tutorials/winui-notes-pt2/0-intro.md
+            - name: 1. Navigation cache and change notification
+              href: ../tutorials/winui-notes-pt2/1-navigation-cache-change-notification.md
+            - name: 2. Track note state
+              href: ../tutorials/winui-notes-pt2/2-note-state.md
+            - name: 3. Pass navigation parameters
+              href: ../tutorials/winui-notes-pt2/3-navigation-parameters.md
           - name: Create a photo viewer with WinUI
             href: ../get-started/simple-photo-viewer-winui3.md
   - name: Core features
