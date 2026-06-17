@@ -1,7 +1,7 @@
 ﻿---
 description: Learn how to get certain kinds of activation info for packaged .NET and C++ desktop (Win32) apps
 title: Get activation info for packaged apps
-ms.date: 09/17/2020
+ms.date: 06/16/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -33,9 +33,6 @@ static void Main()
         case ActivationKind.ToastNotification:
             HandleToastNotification(args as ToastNotificationActivatedEventArgs);
             break;
-        case ActivationKind.VoiceCommand:
-            HandleVoiceCommand(args as VoiceCommandActivatedEventArgs);
-            break;
         case ActivationKind.File:
             HandleFile(args as FileActivatedEventArgs);
             break;
@@ -55,7 +52,7 @@ static void Main()
 
 You can use the [AppInstance.GetActivatedEventArgs](/uwp/api/windows.applicationmodel.appinstance.getactivatedeventargs) method to retrieve activation info from the supported set of event args objects listed in the following table. Some of these activation types require the use of a package extension in the package manifest.
 
-[ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) activation info is supported only on Windows 10, version 2004, and later. All other activation info types are supported on Windows 10, version 1809, and later.
+[ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) activation info is supported only on Windows 10, version 2004, and later. All other activation info types are supported on Windows 10, version 1809, and later versions of Windows.
 
 | Event args type | Package extension | Related docs | 
 |-------------------|-----------------|-----------------------|
@@ -64,5 +61,4 @@ You can use the [AppInstance.GetActivatedEventArgs](/uwp/api/windows.application
 | [ToastNotificationActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.toastnotificationactivatedeventargs) | desktop:ToastNotificationActivation | [App notifications quickstart](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart). |
 | [StartupTaskActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs)  | desktop:StartupTask | [Start an executable file when users log into Windows](./desktop-to-uwp-extensions.md#start-an-executable-file-when-users-log-into-windows) |
 | [FileActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.fileactivatedeventargs) | [uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation) | [Associate your packaged application with a set of file types](./desktop-to-uwp-extensions.md#associate-your-packaged-application-with-a-set-of-file-types) |
-| [VoiceCommandActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.voicecommandactivatedeventargs) | None | [Activate a foreground app with voice commands through Cortana](../../design/input/cortana-launch-a-foreground-app-with-voice-commands.md) |
 | [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) | None |  |

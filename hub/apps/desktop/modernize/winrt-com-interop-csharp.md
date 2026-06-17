@@ -1,7 +1,7 @@
 ---
 title: Call interop APIs from a .NET app
 description: Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET.
-ms.date: 03/07/2022
+ms.date: 06/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ The C# interop classes listed in the next section ([Available C# interop classes
 
 ### In a WinUI 3 C# desktop project
 
-When you create a new WinUI project in Visual Studio (see [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)), your project is already configured, and you can start using all of the C# interop classes right away.
+When you create a new WinUI project in Visual Studio (see [Create your first WinUI project](../../get-started/start-here.md)), your project is already configured, and you can start using all of the C# interop classes right away.
 
 ### In other C# desktop project types (WPF or WinForms)
 
@@ -45,7 +45,7 @@ Here are the available C# interop classes, mapped from their underlying interop 
 
 ### Available as part of the Windows App SDK
 
-The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](../../develop/ui-input/manage-app-windows.md).
+The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md) class implements the C# interop methods in the table below. For a code example, see [Manage app windows](../../develop/ui/manage-app-windows.md).
 
 |Interop function|C# interop method|
 |-|-|
@@ -75,11 +75,11 @@ The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsof
 |[**IUIViewSettingsInterop**](/windows/win32/api/uiviewsettingsinterop/nn-uiviewsettingsinterop-iuiviewsettingsinterop)|(**Windows.UI.ViewManagement**) **UIViewSettingsInterop**|
 |[**IUserConsentVerifierInterop**](/windows/win32/api/userconsentverifierinterop/nn-userconsentverifierinterop-iuserconsentverifierinterop)|(**Windows.Security.Credentials.UI**) **UserConsentVerifierInterop**|
 |[**IWebAuthenticationCoreManagerInterop**](/windows/win32/api/webauthenticationcoremanagerinterop/nn-webauthenticationcoremanagerinterop-iwebauthenticationcoremanagerinterop)|(**Windows.Security.Authentication.Web.Core**) **WebAuthenticationCoreManagerInterop**|
-|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|WinUI only<br/><br/>(**WinRT.Interop**) **WindowNative**<br/><br/>For alternatives for WPF and WinForms, see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md).|
+|[**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative)|WinUI only<br/><br/>(**WinRT.Interop**) **WindowNative**<br/><br/>For alternatives for WPF and WinForms, see [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md).|
 
 ## Code example
 
-This code example demonstrates how to use two of the C# interop classes in a WinUI application (see [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.
+This code example demonstrates how to use two of the C# interop classes in a WinUI application (see [Create your first WinUI project](../../get-started/start-here.md)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.
 
 1. You can obtain a window handle (HWND) by using the [**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) WinRT COM interop interface. And (looking in the table in the previous section) that interface is represented by the **WinRT.Interop.WindowNative** C# interop class. Here, the `this` object is a reference to a [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object from the main window code-behind file.
 2. To initialize a piece of UI with an owner window, you use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) WinRT COM interop interface. And that interface is represented by the **WinRT.Interop.InitializeWithWindow** C# interop class.
@@ -102,7 +102,7 @@ private async void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Also see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../develop/ui-input/display-ui-objects.md).
+Also see [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../develop/ui/display-ui-objects.md).
 
 ## Background
 
@@ -120,7 +120,7 @@ There are currently no known issues for the C# interop classes. To provide feedb
 
 ## Related topics
 
-* [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md)
-* [Manage app windows](../../develop/ui-input/manage-app-windows.md)
-* [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)
-* [Display WinRT UI objects that depend on CoreWindow](../../develop/ui-input/display-ui-objects.md)
+* [Create your first WinUI project](../../get-started/start-here.md)
+* [Manage app windows](../../develop/ui/manage-app-windows.md)
+* [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md)
+* [Display WinRT UI objects that depend on CoreWindow](../../develop/ui/display-ui-objects.md)

@@ -1,7 +1,7 @@
 ---
 description: This article describes WinRT APIs that aren't supported for use in desktop apps, or that have restrictions.
 title: Windows Runtime APIs not supported in desktop apps
-ms.date: 02/27/2024
+ms.date: 06/16/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
@@ -16,7 +16,7 @@ Although you can use most Windows Runtime (WinRT) APIs (see [Windows Runtime (Wi
 * APIs that have dependencies on user interface (UI) features that were designed for use only in a Universal Windows Platform (UWP) app.
 * APIs that require package identity (see [Features that require package identity](./modernize-packaged-apps.md)). Such APIs are supported only in desktop apps that are packaged using [MSIX](/windows/msix/).
 
-This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
+This article provides details about both of those sets of WinRT APIs. Where available, this article suggests alternative APIs to achieve the same functionality as the APIs that are unsupported in desktop apps. Most of the alternative APIs are available in [WinUI 3](../../winui/winui3/index.md) or via WinRT COM interfaces that are available in the Windows SDK.
 
 > [!NOTE]
 > Apps that use .NET can make use of provided class implementations for some of the WinRT COM interfaces listed in this article. Those classes are easier to work with than using the WinRT COM interfaces directly. For more information about the available class implementations, see [Call interop APIs from a .NET app](winrt-com-interop-csharp.md). Note that those classes require the .NET 6 SDK or later.
@@ -98,7 +98,7 @@ The following classes are *not* supported in desktop apps because the APIs don't
 
 Certain pickers, popups, dialogs, and other Windows Runtime (WinRT) objects depend on a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow); typically, to display a UI. Even though **CoreWindow** isn't supported in desktop apps (see [Core unsupported classes](#core-unsupported-classes) above), you can still use many of those WinRT classes in your desktop app by adding a little bit of interoperation code.
 
-For more info (including a list of affected types), and code examples, see [Display WinRT UI objects that depend on CoreWindow](../../develop/ui-input/display-ui-objects.md).
+For more info (including a list of affected types), and code examples, see [Display WinRT UI objects that depend on CoreWindow](../../develop/ui/display-ui-objects.md).
 
 ### Unsupported members
 

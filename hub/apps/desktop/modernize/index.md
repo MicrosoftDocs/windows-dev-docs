@@ -2,7 +2,7 @@
 description: Learn how to modernize your existing WPF, Windows Forms, or Win32 desktop app with Windows App SDK features, MSIX packaging, and modern Windows APIs — without a full rewrite.
 title: Modernize your desktop apps for Windows
 ms.topic: overview
-ms.date: 04/27/2026
+ms.date: 06/16/2026
 ms.localizationpriority: medium
 ---
 
@@ -90,6 +90,6 @@ Many features in [Features for Windows app development](../../develop/index.md) 
 
 ## Migrate to WinUI 3
 
-If you're planning a larger modernization effort — or building new features as separate modules — consider building new components with [WinUI 3](../../winui/index.md) and the Windows App SDK. WinUI 3 is the modern native UI framework for Windows desktop apps and is the recommended path for new development.
+If you're planning a larger modernization effort — or building new features as separate modules — consider building new components with [WinUI 3](../../winui/winui3/index.md) and the Windows App SDK. WinUI 3 is the modern native UI framework for Windows desktop apps and is the recommended path for new development.
 
 See [Create your first WinUI 3 app](../../get-started/start-here.md) to get started.

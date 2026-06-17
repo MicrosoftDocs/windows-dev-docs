@@ -2,7 +2,7 @@
 description: Support the snap layouts menu in your desktop application.
 title: Support snap layouts for desktop apps on Windows 11
 ms.topic: article
-ms.date: 10/01/2021
+ms.date: 06/16/2026
 ms.localizationpriority: medium
 ---
 
@@ -22,7 +22,7 @@ If your app's main window has the maximize caption button available but does not
 
 If you have a custom title bar, then you can:​
 
-- Use the Windows App SDK windowing APIs (see [Manage app windows](../../../develop/ui-input/manage-app-windows.md)) and have the platform draw and implement the caption buttons for you​.
+- Use the Windows App SDK windowing APIs (see [Manage app windows](../../../develop/ui/manage-app-windows.md)) and have the platform draw and implement the caption buttons for you​.
 - For Win32 apps, make sure you are responding appropriately to [WM_NCHITTEST](/windows/win32/inputdev/wm-nchittest) (with a return value of `HTMAXBUTTON` for the maximize/restore button)​.
 
     ```cpp

@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 06/03/2026
+ms.date: 06/16/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -48,9 +48,15 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ## Highlights – June 2026
 
+- **Build 2026: Windows as the trusted platform for development**: Major announcements including developer-optimized Windows 11 and the Microsoft Execution Containers (MXC) SDK. For additional Build highlights, see **Announced at Build – June 2026** above — [Build 2026 blog post](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/)
+- **Developer-optimized Windows 11**: One-command setup for your dev environment with VS Code, GitHub Copilot, WSL, and PowerShell 7. Now generally available.
+- **Microsoft Execution Containers (MXC) SDK**: Secure, policy-driven execution containers that let agent apps set containment boundaries on resources like files and networks.
+- **Windows App SDK 2.0 features**: AI Video Super Resolution API (VideoScaler), ApplicationData for unpackaged apps, XamlBindingHelper improvements, TitleBar custom drag regions, and semantic versioning — [Release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)
 - **Inside MSIX – Staging: Sharing is Caring**: Deep dive on how MSIX staging works — pkgdir creation, ACL enforcement, and why the immutability guarantee lets the same staged package be safely shared across all users on the system. Part 1 of a series by Howard Kapustein, MSIX Principal Engineer — [Staging: Sharing is Caring](https://devblogs.microsoft.com/insidemsix/staging-sharing-is-caring/)
 
 ---
+
+Previous highlights:
 
 ## Highlights – May 2026
 
@@ -77,8 +83,6 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **Command Palette extension toolkit**: New API reference documentation for the PowerToys Command Palette extension toolkit, covering built-in commands (`CopyPathCommand`, `OpenFileCommand`, `OpenInConsoleCommand`, and more) and layout types — [Command Palette extension toolkit](/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit).
 - **Java getting started for Windows**: New guide for setting up a Java development environment on Windows, covering JDK installation, `JAVA_HOME` configuration, editor options, and WSL considerations — [Java on Windows](/windows/dev-environment/java)).
 - **App features overview**: New landing page for the Features section of the Windows developer docs, with entry points to accessibility, AI, files, notifications, UI, and more — [Features for Windows app development](../develop/features-overview.md).
-
-Previous highlights:
 
 - **PowerToys 0.99**: New Power Display utility for controlling monitors from the system tray, Grab And Move for resizing windows from anywhere, and improvements to Command Palette and the Dock — [PowerToys 0.99 release](https://devblogs.microsoft.com/commandline/powertoys-0-99-is-here-new-monitor-controls-easier-window-management-and-dock-upgrades/) — [Microsoft PowerToys: Utilities to customize Windows](/windows/powertoys/).
 - **Windows Terminal 1.25**: New settings page for extensions, improved multi-language Command Palette suggestions, and a completely rebuilt windowing architecture with more reliable tray icon and Quake mode — [Windows Terminal 1.25 release](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-25-release/)
