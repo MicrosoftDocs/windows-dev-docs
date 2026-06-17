@@ -26,7 +26,7 @@ For other .NET desktop project types&mdash;such as [Windows Presentation Foundat
 
 1. Open the project file for your C# .NET desktop project.
 
-2. In the `.csproj` file, modify the **TargetFramework** element to target a specific .NET and Windows SDK version. For example, the following element is appropriate for a .NET 6 project that targets Windows 10, version 2004.
+2. In the `.csproj` file, modify the **TargetFramework** element to target a specific .NET and Windows SDK version. For example, the following element is appropriate for a .NET 8 project that targets Windows 10, version 2004.
 
     ```xml
     <PropertyGroup>
