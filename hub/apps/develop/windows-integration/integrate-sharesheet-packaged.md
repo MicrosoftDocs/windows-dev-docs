@@ -31,21 +31,30 @@ There are two steps required to implement the Share contract in your app.
 
 In Visual Studio's Solution Explorer, open the `package.appxmanifest` file of the Packaging project in your solution and add the share target extension.
 
+> [!IMPORTANT]
+> Declare only the specific file types and data formats that your app can actually handle. Avoid `<uap:SupportsAnyFileType />` unless your app is a general-purpose file mover (for example, a cloud storage or file-transfer app). Registering for every file type makes your app appear as a share target for content it can't use—for example, a photo editor showing up for spreadsheets—which is the single most common share-target bug. For more guidance, see [Common share-target mistakes](#common-share-target-mistakes).
+
+The following example registers a share target for an app that receives images. It declares the specific image extensions the app supports rather than every file type.
+
 ```xml
 <Extensions>
-      <uap:Extension
-          Category="windows.shareTarget">
-        <uap:ShareTarget>
-          <uap:SupportedFileTypes>
-            <uap:SupportsAnyFileType />
-          </uap:SupportedFileTypes>
-          <uap:DataFormat>Bitmap</uap:DataFormat>
-        </uap:ShareTarget>
-      </uap:Extension>
+<uap:Extension
+Category="windows.shareTarget">
+<uap:ShareTarget>
+<uap:SupportedFileTypes>
+<uap:FileType>.jpg</uap:FileType>
+<uap:FileType>.jpeg</uap:FileType>
+<uap:FileType>.png</uap:FileType>
+<uap:FileType>.gif</uap:FileType>
+<uap:FileType>.bmp</uap:FileType>
+</uap:SupportedFileTypes>
+<uap:DataFormat>Bitmap</uap:DataFormat>
+</uap:ShareTarget>
+</uap:Extension>
 </Extensions>
 ```
 
-Add the supported data format that is supported by your application to the `DataFormat` configuration. In this case, the app supports sharing images, so the `DataFormat` is set to `Bitmap`.
+Add the data formats that your application supports to the `DataFormat` configuration. In this example, the app receives images, so it declares the image file extensions it supports and sets the `DataFormat` to `Bitmap`. Always declare the narrowest set of file types and data formats that your app can handle.
 
 ### Fetch Share Event arguments
 
@@ -119,6 +128,17 @@ static async void HandleShareAsync(ShareTargetActivatedEventArgs args)
     // app launch code
 }
 ```
+
+## Common share-target mistakes
+
+Most share-target bugs come from declaring more than your app can handle, or from not validating what you receive. Review these anti-patterns before you ship:
+
+| Anti-pattern | Fix |
+|--|--|
+| Declaring `<uap:SupportsAnyFileType />` so your app appears for every file. | Declare specific extensions—for example, `<uap:FileType>.jpg</uap:FileType>` and `<uap:FileType>.png</uap:FileType>`. Reserve `SupportsAnyFileType` for general-purpose file movers. |
+| Forgetting to declare `Uri` for link-handling apps, so your app is missing when a user shares a link. | If your app handles links, declare `<uap:DataFormat>Uri</uap:DataFormat>` (and on the sending side, populate the share with [SetWebLink](/uwp/api/windows.applicationmodel.datatransfer.datapackage.setweblink)). |
+| Skipping `Bitmap` for image-receiving apps. | Image apps should declare both `<uap:DataFormat>Bitmap</uap:DataFormat>` and `<uap:DataFormat>StorageItems</uap:DataFormat>`, because images can arrive as either. |
+| Not validating shared content at runtime. | In your activation handler, confirm the data format is present and check the content (for example, file size and type) before you process it. |
 
 ## See also
 
