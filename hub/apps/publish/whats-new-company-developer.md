@@ -141,10 +141,7 @@ Each verification type (business and employment) allows up to three verification
 
 ## Need help? Contact us
 
-If you need assistance with the new account onboarding process for company developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process.
-
-For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
-You can also explore guidance in our [publishing documentation](/windows/apps/publish).
+If you need any assistance for account creation/management, app submission, app certification or app analytics, a support ticket can be raised from [here](https://aka.ms/windowsdevelopersupport). You can also explore guidance in our [publishing documentation](/windows/apps/publish).
 
 ## Frequently Asked Questions (FAQs)
 
