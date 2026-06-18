@@ -38,7 +38,7 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ## Announced at Build – June 2026
 
-- **Dev Configs for Windows**: Get from a fresh Windows install to a ready-to-code environment in minutes with curated, open-source configuration files for toolchains, OS settings, and shells — [Dev Configs for Windows](/windows/dev-configs/).
+- **Windows Developer Configurations**: Get from a fresh Windows install to a ready-to-code environment in minutes with curated, open-source configuration files for toolchains, OS settings, and shells — [Windows Developer Configurations](/windows/dev-configs/).
 - **Coreutils for Windows**: A collection of essential Unix-style command-line utilities, now available natively on Windows — [Coreutils overview](/windows/core-utils/overview).
 - **Intelligent Terminal**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/).
 - **WSL Containers**: A built-in way to create, run, and interact with Linux containers on Windows using a new CLI and API, coming soon to public preview — [WSL on GitHub](https://github.com/microsoft/wsl).

@@ -92,7 +92,7 @@ The following classes are *not* supported in desktop apps because the APIs don't
 | [**SettingsPane**](/uwp/api/windows.ui.applicationsettings.settingspane) | None |
 | [**SystemNavigationManager**](/uwp/api/windows.ui.core.systemnavigationmanager) | None |
 | [**SystemNavigationManagerPreview**](/uwp/api/windows.ui.core.preview.systemnavigationmanagerpreview) | None |
-| [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. for more details, see the [WebAuthenticationBroker.AuthenticateAsync throws COMException](https://github.com/microsoft/ProjectReunion/issues/398) GitHub issue. |
+| [**WebAuthenticationBroker**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker) | None. For more details, see the [WebAuthenticationBroker.AuthenticateAsync throws COMException](https://github.com/microsoft/WindowsAppSDK/issues/398) GitHub issue. |
 
 ### Classes that implement IInitializeWithWindow
 

@@ -251,12 +251,12 @@ The `Header` property uses the default `Mode` of `OneTime` because the `noteMode
 
 > [!IMPORTANT]
 > It's important to choose the correct [BindingMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindingmode); otherwise, your data binding might not work as expected. (A common mistake with `{x:Bind}` is to forget to change the default `BindingMode` when `OneWay` or `TwoWay` is needed.)
->
-> | Name | Description |
-> |--|--|
-> | `OneTime` | Updates the target property only when the binding is created. Default for `{x:Bind}`. |
-> | `OneWay` | Updates the target property when the binding is created. Changes to the source object can also propagate to the target. Default for `{Binding}`.|
-> | `TwoWay` | Updates either the target or the source object when either changes. When the binding is created, the target property is updated from the source. |
+
+| Name | Description |
+| -- | -- |
+| `OneTime` | Updates the target property only when the binding is created. Default for `{x:Bind}`. |
+| `OneWay` | Updates the target property when the binding is created. Changes to the source object can also propagate to the target. Default for `{Binding}`. |
+| `TwoWay` | Updates either the target or the source object when either changes. When the binding is created, the target property is updated from the source. |
 
 Data binding supports the separation of your data and UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
 
@@ -281,6 +281,7 @@ To learn more about MVVM, see these resources:
 
 - [Windows data binding and MVVM](../../develop/data-binding/data-binding-and-mvvm.md)
 - [Introduction to the MVVM Toolkit](/dotnet/communitytoolkit/mvvm/)
+- [Data binding, dependency injection, and unit testing in WinUI](../winui-mvvm-toolkit/intro.md)
 - [MVVM Building Blocks for WinUI and WPF Development](https://www.youtube.com/watch?v=83UVWrfYreU) on YouTube.
 
 > [!div class="nextstepaction"]

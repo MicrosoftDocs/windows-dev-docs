@@ -1,13 +1,13 @@
 ---
-title: Dev Configs for Windows
+title: Windows Developer Configurations
 description: Get from a fresh Windows install to a ready-to-code environment in minutes with declarative WinGet Configuration files for toolchains, OS settings, and shells.
 ms.topic: overview
-ms.date: 06/02/2026
+ms.date: 06/17/2026
 ---
 
-# Dev Configs for Windows
+# Windows Developer Configurations
 
-Dev Configs are a curated, open-source collection of configuration files that take a fresh Windows machine to a ready-to-code state with a single command. Each config is a declarative file that is safe to re-run. It describes the packages, OS settings, and post-install steps for a specific scenario (a full developer workstation, a comfortable WSL shell, or a single language toolchain), so you can rebuild your environment on any machine without clicking through installers or maintaining custom scripts.
+Windows Developer Configurations are a curated, open-source collection of configuration files that take a fresh Windows machine to a ready-to-code state with a single command. Each config is a declarative file that is safe to re-run. It describes the packages, OS settings, and post-install steps for a specific scenario (a full developer workstation, a comfortable WSL shell, or a single language toolchain), so you can rebuild your environment on any machine without clicking through installers or maintaining custom scripts.
 
 The configs are open source at [github.com/microsoft/WindowsDeveloperConfig](https://github.com/microsoft/WindowsDeveloperConfig) and tested automatically whenever a change is made. For the latest commands, options, and full list of supported toolchains, see the repo README. This page covers the basics.
 
@@ -20,7 +20,7 @@ The configs are open source at [github.com/microsoft/WindowsDeveloperConfig](htt
 
 ## Available configs
 
-Dev Configs come in three flavors. Pick the one that matches what you want. See the [repo README](https://github.com/microsoft/WindowsDeveloperConfig#readme) for the exact commands and options.
+Dev Configurations come in three flavors. Pick the one that matches what you want. See the [repo README](https://github.com/microsoft/WindowsDeveloperConfig#readme) for the exact commands and options.
 
 ### Windows Dev Config
 

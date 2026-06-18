@@ -200,9 +200,12 @@ Now you can run your app. Try adding new notes, navigating back and forth betwee
 
 Congratulations! You've completed the _Create a WinUI app_ tutorial!
 
-The following links provide more information about creating apps with WinUI and the Windows App SDK:
+In order to keep things simple and introduce some foundational concepts, this tutorial focused on simplicity over efficiency, and introduced features at the most basic level. So while the app works, there are some things that can be improved.
 
-- [Samples and resources](/windows/apps/get-started/samples)
-- [Design for Windows apps](/windows/apps/design/)
-- [Develop Windows desktop apps](/windows/apps/develop/)
-- [Controls for Windows apps](/windows/apps/design/controls/)
+We recommend that you continue with one of these follow-on tutorials to learn more:
+
+- [WinUI Notes part 2](../winui-notes-pt2/0-intro.md) – Explains more features related to navigation and data binding. You'll update the app to work more efficiently while keeping the same basic architecture.
+
+    **OR**
+
+- [Data binding, dependency injection, and unit testing in WinUI](../winui-mvvm-toolkit/intro.md) – Shows how to implement data binding, dependency injection, and unit testing with the Model-View-ViewModel (MVVM) design pattern. You'll change the app and view models to leverage the MVVM Toolkit.

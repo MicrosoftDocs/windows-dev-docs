@@ -34,7 +34,7 @@ items:
         href: ../advanced-settings/sudo/index.md
       - name: tar
         href: ../tar/index.md
-  - name: Dev Configs
+  - name: Windows Developer Configurations
     href: ../dev-configs/index.md
   - name: PowerToys
     href: /windows/powertoys/

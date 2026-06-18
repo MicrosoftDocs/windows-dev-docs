@@ -15,7 +15,7 @@ Build Windows apps more efficiently with the right tools, samples, and AI-powere
 | [Visual Studio](visual-studio.md) | The recommended IDE for building Windows apps with WinUI and the Windows App SDK, featuring XAML Hot Reload, Live Visual Tree, and rich debugging. |
 | [Windows App Development CLI (winapp CLI)](winapp-cli/index.md) | A command-line interface for managing Windows SDKs, packaging, app identity, manifests, certificates, and build tools across any app framework. |
 | [CLI tools](../../core-utils/overview.md) | Command-line utilities for Windows, including Coreutils (ls, cat, grep, and more), the Edit text editor, curl, sudo, and tar. |
-| [Dev Configs](../../dev-configs/index.md) | Curated, declarative setups that configure your Windows development environment in one step — install tools, set preferences, and get coding faster. |
+| [Windows Developer Configurations](../../dev-configs/index.md) | Curated, declarative setups that configure your Windows development environment in one step — install tools, set preferences, and get coding faster. |
 | [Dev Drive](../../dev-drive/index.md) | A storage volume optimized for developer workloads, with a performance-tuned file system and Microsoft Defender antivirus integration for faster builds. |
 | [WinGet](/windows/package-manager/) | The Windows Package Manager — install, update, and configure development tools and dependencies from the command line. |
 | [Windows Terminal](/windows/terminal/) | A modern, GPU-accelerated terminal application with tabs, panes, Unicode support, and extensive customization for any command-line workflow. |
