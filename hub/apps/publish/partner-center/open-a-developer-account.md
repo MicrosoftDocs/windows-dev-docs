@@ -232,10 +232,7 @@ This typically means someone else in your organization has already completed com
 
 ## Need help? Contact us
 
-If you need assistance with the new account onboarding process for company developers (zero registration fees), you can email us directly at **storesupport@service.microsoft.com**. This inbox is only for issues related to the new onboarding process.
-
-For help with anything else — including account creation or management, app submission, app certification, or app analytics — please raise a support ticket [here](https://aka.ms/windowsdevelopersupport).  
-You can also explore guidance in our [publishing documentation](/windows/apps/publish).
+If you need any assistance for account creation/management, app submission, app certification or app analytics, a support ticket can be raised from [here](https://aka.ms/windowsdevelopersupport). You can also explore guidance in our [publishing documentation](/windows/apps/publish).
 
 > [!NOTE]
 > In some cases, the screens and fields you see when you register for a developer account may vary slightly from what's outlined in the above steps. But the basic information and process will match what these steps describe.

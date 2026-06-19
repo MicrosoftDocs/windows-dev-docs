@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Publish PC games to the Microsoft Store using the GDK
 
-#### The Microsoft Store on Windows is open to Win32 PC games. [Flighted markets only]
+#### The Microsoft Store on Windows is open to Win32 PC games.
 
 This guidance describes a **simplified, self‑service publishing path** that lets you publish Win32 PC games to the Microsoft Store using the **Microsoft Game Development Kit (GDK)**, without requiring managed partner enrollment or concept approval. 
 
@@ -18,7 +18,7 @@ You continue building a **standard Win32 PC game**, with full access to Win32 AP
 > [!NOTE]
 > If you want to publish to **Xbox** or PC with Xbox services (including concept approval), please visit [Xbox Developer Programs | Onboarding Hub](https://developer.microsoft.com/games/publish/). 
 
-### Who does this apply to?
+## Who does this apply to?
 
 This path is designed for developers who want to publish PC‑only games to the Microsoft Store using the same core tools and packaging model used across Microsoft’s gaming ecosystem, while remaining focused on Windows distribution. 
 
@@ -28,11 +28,10 @@ This publishing path is a good fit for your game if you:
 * Use (or plan to use) **Win32‑based engines and toolchains**
 * Want a **self‑service publishing experience** that does not require concept approval
 * Prefer **modern Microsoft gaming tooling** aligned with future expansion paths
-* Are **not currently enrolled** in managed Xbox programs
 
 This includes independent developers, small and mid‑size studios, and teams already publishing on other open PC storefronts who want to reach Windows players through the Microsoft Store. 
 
-### What’s new and why this path exists 
+## What’s new and why this path exists 
 
 This path introduces a clearer and more accessible way to publish Win32 PC games to the Microsoft Store: 
 
@@ -40,9 +39,9 @@ This path introduces a clearer and more accessible way to publish Win32 PC games
 * **Modern packaging with MSIXVC**: Use the Store-native packaging model that supports secure installs, streaming installation, and smart updates.
 * **Aligned with Microsoft gaming workflows**: Build with the GDK and stay consistent with tooling and packaging used across Microsoft’s gaming ecosystem.
 * **Windows-wide discovery**: Benefit from Microsoft Store discovery and merchandising, plus surfaces like Windows Search and Bing.
-* **Clear path forward**: Start with PC-only publishing today while keeping options open for future expansion into additional Microsoft gaming programs.  
+* **Clear path forward**: Start with PC-only publishing today while keeping options open for future expansion into additional Microsoft gaming programs and device families.  
 
-### How the publishing flow works
+## How the publishing flow works
 
 This path follows a straightforward, self‑service workflow: 
 
@@ -51,7 +50,7 @@ This path follows a straightforward, self‑service workflow:
 * **Submit through Partner Center** to configure product details, upload packages, manage releases, and complete certification.
 * **Publish and service your game** through ongoing updates and submissions in Partner Center.
 
-### Choose your publishing path 
+## Choose your publishing path 
  
 Use the quick guide below to choose the right option based on the type of game you have today (or 
 plan to build next).
@@ -62,16 +61,23 @@ plan to build next).
 * UWP game (existing) that you want to publish: choose the MSIX or PWA game option.
 * Web-based game (PWA): choose the MSIX or PWA game option. 
 
-### Getting started 
+## Before you begin
 
-To begin publishing your PC game using this path: 
+ - Enroll as a Microsoft Store developer. To learn more, see [Microsoft Store Developer Platform](https://storedeveloper.microsoft.com/home).
+ - Access your Partner Center account.
 
-1. [Create your developer account](../publish/partner-center/open-a-developer-account.md).
-2. Create a new product and select **GDK game**.
-3. Reserve your app name.
-4. Review identity details required for packaging your game.
-5. [Build and package your GDK game.](https://learn.microsoft.com/gaming/gdk/docs/gdk-dev/get-started/get-started-home)
-6. Publish your game to the Microsoft Store.
+## Publishing process
+
+The process to create, configure, and publish a game that's packaged by using the GDK is as follows.
+
+ 1. [Create a game](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-create-a-title-and-configure-game-setup?pivots=msow) in Partner Center and configure the **Game setup** page.
+ 2. Create and upload a [Package](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-create-a-package?pivots=msow).
+ 3. Configure [Properties](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-configure-properties?pivots=msow).
+ 4. Configure [Age ratings](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-set-age-ratings?pivots=msow).
+ 5. Configure [Store listings](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-create-a-store-listing?pivots=msow).
+ 6. Configure [Pricing and availability](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-configure-pricing-and-availability?pivots=msow).
+ 7. [Certify](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-certify-a-game?pivots=msow) your product.
+ 8. [Review and publish](https://learn.microsoft.com/gaming/game-publishing/tutorial-xbox-managed/how-to-publish-a-base-game?pivots=msow) your product to the Microsoft Store.
 
 For detailed guidance on how to publish your PC game, check out the following video:
 
@@ -91,7 +97,11 @@ Yes. This path is designed for Win32‑based PC games built using the GDK for Wi
 
 #### Is this the recommended path for new PC games on Windows? 
 
-For developers building new PC‑only games and targeting the Microsoft Store on Windows, this is the recommended publishing path. It provides modern tooling, streamlined onboarding, and a Store‑native packaging and servicing model. 
+For developers building new PC‑only games and targeting the Microsoft Store on Windows, this is the recommended publishing path. It provides modern tooling, streamlined onboarding, and a Store‑native packaging and servicing model.
+
+#### I have a game built with Unity or Unreal Engine. Can I publish it to the Microsoft Store using this path?
+
+Yes. Games built with Unity and Unreal Engine can be published using this path. Some engines support creating GDK packages directly from the editor. Refer to your engine's documentation for engine-specific guidance.
 
 #### Do I need Xbox services to publish my PC game? 
 

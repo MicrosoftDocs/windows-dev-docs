@@ -18,7 +18,7 @@ For a detailed overview of what Microsoft Store offers, see [Benefits of distrib
 
 > [!NOTE]
 > This section highlights recent updates across Microsoft Store documentation. 
-> * [Publishing PC games to Microsoft Store on Windows](../publish/whats-new-game-publishing.md)[Flighted markets only]
+> * [Publishing PC games to Microsoft Store on Windows](../publish/whats-new-game-publishing.md)
 > * [Revamped company onboarding experience with zero registration fees](../publish/whats-new-company-developer.md) 
 > * [Free developer registration for individual developers](../publish/whats-new-individual-developer.md)
 > * [Revamped health report in partner center](../publish/improved-health-report.md)

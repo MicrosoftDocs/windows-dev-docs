@@ -34,12 +34,12 @@ items:
         href: ../advanced-settings/sudo/index.md
       - name: tar
         href: ../tar/index.md
-  - name: Windows Developer Configurations
-    href: ../dev-configs/index.md
   - name: PowerToys
     href: /windows/powertoys/
   - name: WinGet
     href: /windows/package-manager/
+  - name: Windows Dev Configs
+    href: ../dev-configs/index.md
   - name: Windows Subsystem for Linux
     href: /windows/wsl/
   - name: Windows Terminal
