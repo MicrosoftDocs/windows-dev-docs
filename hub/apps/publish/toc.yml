@@ -403,10 +403,12 @@ items:
   items:
       - name: Publishing GDK games to Store
         href: whats-new-game-publishing.md
-      - name: Near real time insights in analytics for Win32 apps
-        href: nrt-in-analytics.md
       - name: Revamped company onboarding experience with zero registration fees
         href: whats-new-company-developer.md
+      - name: Add-on acquisitions report
+        href: whats-new-add-on-acquisitions-report.md 
+      - name: Near real time insights in analytics for Win32 apps
+        href: nrt-in-analytics.md
       - name: Ratings and reviews in Partner Center
         href: whats-new-ratings-and-reviews.md
       - name: Recent data view in acquisitions reports
