@@ -160,5 +160,4 @@ dotnet add package Microsoft.WindowsAppSDK
 - [Windows App SDK migration guide](../../../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md) — full manual migration walkthrough
 - [Mapping UWP APIs and libraries to the Windows App SDK](../../../windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md) — comprehensive API mapping table
 - [What's supported when migrating from UWP to WinUI](../../../windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md) — feature support status
-- [WinUI agent plugin](../winui-agent-plugin.md)
 - [Migrate from WPF](wpf-to-winui.md)
