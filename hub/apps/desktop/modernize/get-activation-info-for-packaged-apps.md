@@ -56,7 +56,7 @@ You can use the [AppInstance.GetActivatedEventArgs](/uwp/api/windows.application
 
 | Event args type | Package extension | Related docs | 
 |-------------------|-----------------|-----------------------|
-| [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) | [uap:ShareTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget) | [Integrate packaged apps with Windows Share](../../develop/windows-integration/integrate-sharesheet-packaged.md) |
+| [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) | [uap:ShareTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget) | [Receive content in your app with Windows Share](../../develop/windows-integration/integrate-sharesheet-receive.md) |
 | [ProtocolActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs) | [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) | [Start your application by using a protocol](./desktop-to-uwp-extensions.md#start-your-application-by-using-a-protocol) |
 | [ToastNotificationActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.toastnotificationactivatedeventargs) | desktop:ToastNotificationActivation | [App notifications quickstart](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart). |
 | [StartupTaskActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs)  | desktop:StartupTask | [Start an executable file when users log into Windows](./desktop-to-uwp-extensions.md#start-an-executable-file-when-users-log-into-windows) |

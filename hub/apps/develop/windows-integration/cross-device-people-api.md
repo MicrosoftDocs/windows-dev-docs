@@ -1,6 +1,6 @@
 ---
 title: People on Windows
-description: Learn how to integrate your app with People on Windows — donate contacts, declare supported operations, and surface your app across the People Widget, Windows Search, and the Share Sheet.
+description: Learn how to integrate your app with People on Windows - donate contacts, declare supported operations, and surface your app across the People Widget, Windows Search, and the Share Sheet.
 ms.date: 05/27/2026
 ms.topic: how-to
 keywords: people on windows, windows people, cross-device people, contacts integration, people widget, windows search contacts
@@ -116,8 +116,131 @@ It's at the discretion of apps when to update the ranks of the contacts stored i
 
 1. Create a new `ContactAnnotationList`. Follow the steps in the [Storing ranks for contacts](#storing-ranks-for-contacts) section to create a new annotation list and store ranks for your top contacts.
 
+## Best practices for ranking
+
+To maximize the relevance of your app's contacts in the Share Sheet suggestions row, follow these ranking principles:
+
+### Rank by recency and frequency
+
+Calculate rank as a combination of:
+- **Recency**: When the user last interacted with each contact
+- **Frequency**: How often the user interacts with each contact
+
+For example, a contact the user messaged yesterday might have rank 95, while a contact messaged 2 weeks ago might have rank 60.
+
+```csharp
+// lastInteraction and interactionCount come from your app's own interaction
+// telemetry. The Windows Contact class does not expose interaction history.
+private int CalculateRank(DateTime lastInteraction, int interactionCount)
+{
+    TimeSpan daysSinceLastInteraction = DateTime.Now - lastInteraction;
+    int frequencyScore = interactionCount * 10; // Max ~100
+    int recencyScore = Math.Max(0, 100 - (daysSinceLastInteraction.Days * 3));
+
+    return (recencyScore + frequencyScore) / 2;
+}
+```
+
+### Remove stale contacts
+
+Contacts the user hasn't interacted with in 30+ days should be removed or down-ranked significantly. This keeps suggestions fresh and relevant:
+
+```csharp
+private async Task PruneStaleContactsAsync()
+{
+    var now = DateTime.Now;
+    var staleCutoff = now.AddDays(-30);
+    
+    foreach (var contact in this.AllTrackedContacts)
+    {
+        if (contact.LastInteractionDate < staleCutoff)
+        {
+            // Remove the annotation or set rank to 0
+            var annotation = await GetAnnotationForContactAsync(contact);
+            if (annotation != null)
+            {
+                annotation.ProviderProperties["Rank"] = 0;
+                await this.contactAnnotationList.TrySaveAnnotationAsync(annotation);
+            }
+        }
+    }
+}
+```
+
+### Update ranks regularly
+
+Schedule rank updates on a cadence that makes sense for your app - daily for messaging apps, weekly for email, or monthly for calendar apps. Use background tasks if necessary:
+
+```csharp
+// Example: Update ranks when the app comes to foreground or on a timer
+private async void UpdateRanksOnAppActivated()
+{
+    var topContacts = GetTopContactsByRecentActivity(50);
+    await UpdateAnnotationRanksAsync(topContacts);
+}
+```
+
+## Privacy and consent
+
+### Only contribute explicit contacts
+
+Your app should contribute only the contacts the user has explicitly added or authorized. **Never**:
+- Upload the entire address book
+- Auto-sync contacts without user consent
+- Share contacts from corporate directories without explicit permission
+
+Ask for permission before storing contacts in the People system:
+
+```csharp
+private async Task<bool> RequestContactStoreAccessAsync()
+{
+    // Requesting a writable ContactStore prompts the user for consent.
+    // Your app must declare the contacts capability in its manifest.
+    ContactStore store = await ContactManager.RequestStoreAsync(
+        ContactStoreAccessType.AppContactsReadWrite);
+    return store != null;
+}
+```
+
+### Respect user privacy settings
+
+Let users:
+- Choose which contacts to share with Windows
+- Opt out of the People integration
+- Delete their contacts from Windows at any time
+
+```csharp
+// Provide a setting to disable sync
+if (this.ShouldSyncContactsWithWindows)
+{
+    await SyncContactsAsync();
+}
+else
+{
+    // Clear contacts if the user disables sync
+    await ClearWindowsContactsAsync();
+}
+```
+
+## Integration with the Share Sheet
+
+When you rank and maintain your contacts with the guidance above, users will see your app's top contacts in the **suggestions row** of the Windows Share Sheet. This path currently supports People contacts.
+
+To ensure your contacts appear:
+1. Create a `UserDataAccount` with `DisplayName = "com.microsoft.peoplecontract"`
+2. Store contacts with required fields (`FirstName`, `RemoteId`, `DisplayPicture`)
+3. Create a `ContactAnnotationList` with ranks
+4. Set `SupportedOperations = Share` on each annotation
+5. Update ranks regularly based on recency and frequency
+6. Prune stale contacts after 30+ days
+
+See [Share content from your app](integrate-sharesheet-send.md) and [Receive content in your app](integrate-sharesheet-receive.md) for the complete Share Sheet integration guide.
+
 ## Related content
 
+- [Share content from your app](integrate-sharesheet-send.md)
+- [Receive content in your app](integrate-sharesheet-receive.md)
+- [Integrate Share options in your Windows app](integrate-sharesheet-overview.md)
 - [UserDataAccount](/uwp/api/windows.applicationmodel.userdataaccounts.userdataaccount)
 - [ContactStore](/uwp/api/windows.applicationmodel.contacts.contactstore)
 - [Windows.ApplicationModel.Contacts Namespace](/uwp/api/windows.applicationmodel.contacts)

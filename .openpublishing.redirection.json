@@ -12124,6 +12124,21 @@
       "source_path": "uwp/devices-sensors/epson-esc-pos-with-formatting.md",
       "redirect_url": "/windows/apps/develop/devices-sensors/pos/epson-esc-pos-with-formatting",
       "redirect_document_id": false
+    },
+    {
+      "redirect_url": "/windows/apps/develop/windows-integration/integrate-sharesheet-overview",
+      "source_path": "hub/apps/develop/windows-integration/integrate-sharesheet-packaged.md",
+      "redirect_document_id": false
+    },
+    {
+      "redirect_url": "/windows/apps/develop/windows-integration/integrate-sharesheet-overview",
+      "source_path": "hub/apps/develop/windows-integration/integrate-sharesheet-pwa.md",
+      "redirect_document_id": false
+    },
+    {
+      "redirect_url": "/windows/apps/develop/windows-integration/integrate-sharesheet-overview",
+      "source_path": "hub/apps/develop/windows-integration/integrate-sharesheet-unpackaged.md",
+      "redirect_document_id": false
     }
   ]
 }
