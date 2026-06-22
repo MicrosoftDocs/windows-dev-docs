@@ -53,8 +53,10 @@ items:
     items:
       - name: Overview
         href: ../package-manager/configuration/index.md
-      - name: Author a configuration
+      - name: Author a configuration (v2)
         href: ../package-manager/configuration/create.md
+      - name: Author a configuration (v3)
+        href: ../package-manager/configuration/create-v3.md
       - name: Check a configuration
         href: ../package-manager/configuration/check.md
   - name: Submit packages
