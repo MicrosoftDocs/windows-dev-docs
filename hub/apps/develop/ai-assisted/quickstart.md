@@ -15,7 +15,7 @@ In this quickstart you go from an empty folder to a published Windows app using 
 > Prefer working in **Visual Studio**? See [Set up GitHub Copilot for Windows development](../../how-tos/ai-setup.md). This quickstart uses VS Code and the winapp CLI.
 
 > [!div class="checklist"]
-> * Install the required free tools (~5 minutes)
+> * Install the required tools (~5 minutes)
 > * Scaffold a WinUI app from the command line
 > * Use the `winui-dev` AI agent to add features
 > * Package and publish to the Microsoft Store

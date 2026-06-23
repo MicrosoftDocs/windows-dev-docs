@@ -1,8 +1,10 @@
 ---
-description: Learn how to implement Share on Windows — integrate your app with the Windows Share Sheet to let users share content across Windows apps and services.
+description: Learn how to implement Share on Windows - integrate your app with the Windows Share Sheet to let users share content across Windows apps and services.
 title: "Share on Windows: integrate the Windows Share Sheet"
+author: GrantMeStrength
+ms.author: jken
 ms.topic: overview
-ms.date: 05/30/2026
+ms.date: 06/22/2026
 ms.localizationpriority: medium
 keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
@@ -10,24 +12,33 @@ keywords: share on windows, windows share, share sheet, windows 11 share, shares
 
 # Share on Windows: integrate the Windows Share Sheet
 
-The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other Windows apps. The Share Sheet is available in the Windows shell and is accessible from any app that supports sharing. It provides a consistent and familiar experience for users, and it's a great way to increase the discoverability of your app.
+The Windows Share Sheet is a system-provided UI that enables users to share content from your app with other Windows apps, or to receive content from other apps. It's available in the Windows shell and accessible from any app that supports sharing.
 
-Integrating share options in your Windows app can significantly enhance user experience by allowing seamless content sharing across different applications. Whether you're developing a new app or updating an existing one, this guide will provide you with the necessary steps and code samples to implement the Windows Share feature effectively.
+These pages are organized by **developer task**, not by packaging model. Whether you're building a packaged app (MSIX), Progressive Web App (PWA), or unpackaged Win32 app, you'll find step-by-step guidance in the Send or Receive pages below. Packaging model differences are covered within each task guide.
 
-In this comprehensive guide, you'll learn how to add the share feature to your packaged or unpackaged Windows app, implement file sharing methods, and show your app on the share sheet. You can leverage share options in a .NET, Windows C++, or PWA app, and this guide will help you get started. By following these steps, you can ensure that your app leverages the full potential of the Windows Share feature, making it more interactive and user-friendly.
+## Quick start: choose your task
+
+| Task | What you'll do | Start here |
+|--|--|--|
+| **Send content** | Let users share files, text, links, or images from your app to others | [Send content from your app](integrate-sharesheet-send.md) |
+| **Receive content** | Register your app to receive shared files and data from other apps | [Receive content in your app](integrate-sharesheet-receive.md) |
+| **Appear in suggestions row** | Surface your app's contacts in the Share Sheet suggestions row | [Appear in suggestions row](integrate-sharesheet-contacts.md) |
 
 ## In this section
 
 | Topic | Description |
 |--|--|
-| [Integrate packaged apps with Windows Share](integrate-sharesheet-packaged.md) | Discover how to integrate packaged apps with the Windows Share Sheet. |
-| [Integrate Progressive Web Apps (PWAs) with Windows Share](integrate-sharesheet-pwa.md) | Discover how to integrate a Progressive Web App (PWA) with the Windows Share Sheet. |
-| [Integrate unpackaged apps with Windows Share](integrate-sharesheet-unpackaged.md) | Discover how to integrate unpackaged apps with the Windows Share Sheet. |
-| [Share data - WinUI apps](/windows/apps/develop/windows-integration/integrate-sharesheet-overview) | Learn how to share data between WinUI apps. |
+| [Send content from your app](integrate-sharesheet-send.md) | Implement the Share contract so users can send content from your app. Covers packaged, PWA, and unpackaged apps. |
+| [Receive content in your app](integrate-sharesheet-receive.md) | Register as a Share Target and handle incoming shared content. Covers packaged, PWA, and unpackaged apps. |
+| [Appear in suggestions row](integrate-sharesheet-contacts.md) | Surface your app's contacts in the Share Sheet suggestions row by storing them with the Cross-device People API. |
+| [People on Windows (Cross-device People API)](cross-device-people-api.md) | Store your app's contacts in Windows so they surface across People experiences, including the Share Sheet. |
+| [DataFormat & FileType reference](dataformat-reference.md) | Reference table mapping DataFormats to send/receive APIs, plus a FileType-by-app-category cheat sheet for declaring manifest capabilities. |
 
 ## See also
 
 - [Communication - Windows apps](/windows/apps/develop/communication/)
+- [People on Windows (Cross-device People API)](cross-device-people-api.md)
+- [DataFormat & FileType reference](dataformat-reference.md)
 - [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
 - [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app)
 - [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)

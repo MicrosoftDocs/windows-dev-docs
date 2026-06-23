@@ -16,16 +16,7 @@ The `winui@awesome-copilot` plugin gives the GitHub Copilot CLI and Claude Code 
 
 ## Why do I need this plugin?
 
-Without the plugin, AI coding agents frequently suggest outdated UWP patterns for Windows development. UWP has far more training data (Stack Overflow answers, GitHub samples, tutorials) than WinUI 3, so agents default to deprecated APIs:
-
-| Without plugin | With plugin |
-|---|---|
-| `Windows.UI.Xaml.Controls` | `Microsoft.UI.Xaml.Controls` |
-| `CoreDispatcher` | `DispatcherQueue` |
-| `MessageDialog` | `ContentDialog` |
-| `Windows.UI.Xaml.Window` | `Microsoft.UI.Xaml.Window` |
-
-The plugin fixes this by injecting explicit WinUI 3 rules as custom instructions that override the agent's training data defaults.
+Without the plugin, AI coding agents may suggest outdated patterns for Windows development. AI training data contains far more historical Windows samples than current WinUI 3 content, so agents can default to deprecated APIs. The plugin fixes this by injecting explicit WinUI 3 rules as custom instructions that override the agent's training data defaults.
 
 ## Install the plugin
 
@@ -47,14 +38,16 @@ gh copilot plugin list
 
 ### Claude Code
 
-Claude Code uses its own plugin registry:
+Claude Code uses its own plugin registry. The plugin ID in the Claude Code registry (`winui@win-dev-skills`) differs from the GitHub Copilot CLI registry ID (`winui@awesome-copilot`):
 
 ```powershell
 claude plugin marketplace add microsoft/win-dev-skills
 claude plugin install winui@win-dev-skills
 ```
 
-## Use with GitHub Copilot CLI
+## Use the plugin
+
+# [GitHub Copilot CLI](#tab/copilot-cli)
 
 The GitHub Copilot CLI runs in your terminal. Use the `@winui-dev` agent by including it in your prompt:
 
@@ -65,7 +58,7 @@ gh copilot -p "@winui-dev Build me a WinUI 3 app that shows a list of files in a
 For an interactive session where you can ask follow-up questions:
 
 ```powershell
-copilot -i
+copilot
 ```
 
 Then type your requests directly, for example: *@winui-dev Add a search box to my file list app*.
@@ -76,9 +69,11 @@ To set up your machine for WinUI 3 development, run the `winui-setup` skill firs
 gh copilot -p "/winui-setup"
 ```
 
-## Use with Claude Code
+# [Claude Code](#tab/claude-code)
 
 After installing the plugin, use the `@winui-dev` agent in Claude Code's chat interface the same way — prefix your request with `@winui-dev`.
+
+---
 
 ## The winui-dev agent
 
