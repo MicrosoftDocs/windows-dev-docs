@@ -32,7 +32,7 @@ For more info, see [Accessible name](basic-accessibility-information.md#accessib
 - Set access keys or implement accelerator keys for specific parts of the UI that support interaction.
 - For any custom controls that you use in your UI, verify that you have implemented these controls with correct [AutomationPeer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer) support for activation, and defined overrides for key handling as needed to support activation, traversal and access or accelerator keys.
 
-For more info, see [Keyboard interactions](../input/keyboard-interactions.md).
+For more info, see [Keyboard interactions](../../develop/input/keyboard-interactions.md).
 
 ## 3. Ensure text is a readable size
 
@@ -73,6 +73,6 @@ If you implemented the baseline accessibility support, declaring your app as acc
 ## Related topics
 
 - [Accessible text requirements](accessible-text-requirements.md)
-- [Text scaling](../input/text-scaling.md)
+- [Text scaling](../../develop/input/text-scaling.md)
 - [Design for accessibility](./accessibility-overview.md)
 - [Practices to avoid](practices-to-avoid.md)

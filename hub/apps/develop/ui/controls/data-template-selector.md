@@ -19,7 +19,7 @@ The customized design of collections controls are managed by a [DataTemplate](/w
 
 ## Prerequisites
 
-- How to [use and create a collection control, such as a ListView or GridView.](../../../design/controls/listview-and-gridview.md)
+- How to [use and create a collection control, such as a ListView or GridView.](listview-and-gridview.md)
 - How to [customize the look of your items using a DataTemplate.](item-containers-templates.md#data-template)
 
 ## When not to use a DataTemplateSelector

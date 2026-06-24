@@ -92,7 +92,7 @@ The previous code declares a collection of `Note` items, named `Notes`, and uses
 > [!NOTE]
 > The `LoadNotes` method uses `async void` instead of `async Task` because it's called from the constructor, which cannot be `async`. This fire-and-forget pattern is acceptable here since the method is an event-like initialization routine.
 
-The `Notes` collection uses an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1), which is a specialized collection that works well with data binding. When a control that lists multiple items, such as an [ItemsView](../../design/controls/itemsview.md), is bound to an `ObservableCollection`, the two work together to automatically keep the list of items in sync with the collection. If an item is added to the collection, the control is automatically updated with the new item. If an item is added to the list, the collection is updated.
+The `Notes` collection uses an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1), which is a specialized collection that works well with data binding. When a control that lists multiple items, such as an [ItemsView](../../develop/ui/controls/itemsview.md), is bound to an `ObservableCollection`, the two work together to automatically keep the list of items in sync with the collection. If an item is added to the collection, the control is automatically updated with the new item. If an item is added to the list, the collection is updated.
 
  :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
@@ -301,7 +301,7 @@ And when you run the app with a Dark color setting, it will look like this:
 
 :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Item containers and templates](../../design/controls/item-containers-templates.md)
+- [Item containers and templates](../../develop/ui/controls/item-containers-templates.md)
 - [ResourceDictionary and XAML resource references](../../develop/platform/xaml/xaml-resource-dictionary.md)
 
 > [!TIP]

@@ -89,8 +89,8 @@ Let's break down the key parts of the XAML controls placed on the page:
 
  :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Responsive layouts with XAML](../../design/layout/layouts-with-xaml.md)
-- [Layout panels](../../design/layout/layout-panels.md)
+- [Responsive layouts with XAML](../../develop/ui/layouts-with-xaml.md)
+- [Layout panels](../../develop/ui/layout-panels.md)
 - [XAML namespaces and namespace mapping](/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping)
 
 ## Load and save a note

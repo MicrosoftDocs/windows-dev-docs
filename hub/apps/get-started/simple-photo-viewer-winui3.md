@@ -58,7 +58,7 @@ The app that we'll be building carries image files around with it in the form of
 
 ## Step 4: Add a GridView control
 
-Our app needs to display rows and columns of photos. In other words, a grid of images. For a UI like that, the main controls to use are [List view and grid view](../design/controls/listview-and-gridview.md).
+Our app needs to display rows and columns of photos. In other words, a grid of images. For a UI like that, the main controls to use are [List view and grid view](../develop/ui/controls/listview-and-gridview.md).
 
 1. Open `MainWindow.xaml`. Currently, there's a **Window** element, and within that a **StackPanel** layout panel. Inside the **StackPanel** is a **Button** control, which is hooked up to an event handler method.
 
@@ -83,7 +83,7 @@ Our app needs to display rows and columns of photos. In other words, a grid of i
 
 You *can* build and run now, but the window will be empty at this stage. For the **GridView** control to show anything, we need to give it a collection of objects to show. We'll make a start on that next.
 
-For background info about some of the types we've just mentioned, see [Layout panels](../design/layout/layout-panels.md) and [Controls for Windows apps](../design/controls/index.md).
+For background info about some of the types we've just mentioned, see [Layout panels](../develop/ui/layout-panels.md) and [Controls for Windows apps](../develop/ui/controls/index.md).
 
 ## Step 5: The ImageFileInfo model
 
@@ -621,7 +621,7 @@ To begin with, let's use a sketch-like placeholder data template. That will serv
 
     To the layout root, we've added a simple [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) resource, and given it a key of `ImageGridView_ItemTemplate`. And we've used that same key to set the [**ItemTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) of the **GridView**. Items controls such as **GridView** have an **ItemTemplate** property (just like they have the **ItemsSource** property that we saw earlier). An item template is a data template; and it's used for displaying each item in the collection.
 
-    For more info, see [Item containers and templates](../design/controls/item-containers-templates.md).
+    For more info, see [Item containers and templates](../develop/ui/controls/item-containers-templates.md).
 
 1. Now we can take a few edit passes over the data template&mdash;adding to, and editing, the elements inside it to make it more interesting and useful. We'll give the root **Grid** a height and a width of 300, and a margin of 8. Then we'll add two row definitions, and set the height of the second row definition to **Auto**.
 
@@ -638,7 +638,7 @@ To begin with, let's use a sketch-like placeholder data template. That will serv
     </DataTemplate>
     ```
 
-    For more info, see [Alignment, margin, padding](../design/layout/alignment-margin-padding.md).
+    For more info, see [Alignment, margin, padding](../develop/ui/alignment-margin-padding.md).
 
 1. We want the data template to display each photo's image, name, file type, dimensions, and rating. So we'll be adding, respectively, an [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control, some [**TextBlock**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock) controls, and a [**RatingControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.ratingcontrol) control. We'll lay out the text inside [**StackPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stackpanel) layout panels. The **Image** will, initially, display the project's sketch-like Microsoft Store logo as a placeholder.
 
@@ -744,7 +744,7 @@ You might be wondering whether it's best to center the **GridView** itself, or t
     </GridView>
     ```
 
-    Also see [Alignment, margin, padding](../design/layout/alignment-margin-padding.md).
+    Also see [Alignment, margin, padding](../develop/ui/alignment-margin-padding.md).
 
 Build and run now, and experiment with adjusting the width of the window. You can see that there's an equal amount of empty space on either side of the **GridView**'s red background. So we have achieved the goal of centering the images. But it's now clearer than before that the scroll bar belongs to the **GridView**, and not to the window. So we need to change the **GridView** back to filling the window. We've demonstrated that (instead of centering the **GridView** in the window) we need to center the images in the **GridView**.
 

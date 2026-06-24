@@ -36,15 +36,15 @@ A third-party IME must meet these requirements:
 
 - Must be digitally signed
 - Must be [Text Services Framework (TSF)](/windows/win32/tsf/text-services-framework) aware, with appropriate IME flags set correctly
-- Must follow the guidelines described in [Input Method Editor (IME) requirements](../../design/input/input-method-editor-requirements.md) and [Design and code Windows apps](../../design/index.md)
+- Must follow the guidelines described in [Input Method Editor (IME) requirements](input-method-editor-requirements.md) and [Design and code Windows apps](../../design/index.md)
 
 A third-party IME that doesn't meet these requirements is blocked from running.
 
-Because Windows Defender removes malicious IMEs from the system, it's important to familiarize yourself with the IME coding requirements. For more info, see [Input Method Editor (IME) requirements](../../design/input/input-method-editor-requirements.md).
+Because Windows Defender removes malicious IMEs from the system, it's important to familiarize yourself with the IME coding requirements. For more info, see [Input Method Editor (IME) requirements](input-method-editor-requirements.md).
 
 ## Design guidelines for IMEs
 
-Read the [Input Method Editor (IME) requirements](../../design/input/input-method-editor-requirements.md) for more details on best practices and design guidelines for IMEs. In general, all IME UIs need to:
+Read the [Input Method Editor (IME) requirements](input-method-editor-requirements.md) for more details on best practices and design guidelines for IMEs. In general, all IME UIs need to:
 
 - Follow the UX guidelines for Windows Runtime apps
 - Avoid modal experiences and only show the IME window when needed
@@ -52,7 +52,7 @@ Read the [Input Method Editor (IME) requirements](../../design/input/input-metho
 
 ## Related topics
 
-- [Input Method Editor (IME) requirements](../../design/input/input-method-editor-requirements.md)
+- [Input Method Editor (IME) requirements](input-method-editor-requirements.md)
 - [ITfFnGetPreferredTouchKeyboardLayout](/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout)
 - [ITfCompartmentEventSink](/windows/win32/api/msctf/nn-msctf-itfcompartmenteventsink)
 - [ITfThreadMgrEx::GetActiveFlags](/windows/win32/api/msctf/nf-msctf-itfthreadmgrex-getactiveflags)

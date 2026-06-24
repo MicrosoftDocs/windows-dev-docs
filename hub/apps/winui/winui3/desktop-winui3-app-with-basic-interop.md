@@ -62,7 +62,7 @@ The following code shows the MainWindow.xaml file from the initial template app,
 
 ### Code
 
-1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) by using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](../../develop/ui-input/retrieve-hwnd.md)).
+1. In the `App.xaml.cs` code-behind file, we get a handle to the [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) by using the **WindowNative.GetWindowHandle** WinRT COM interop method (see [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md)).
 
    That method is called from the app's [**OnLaunched**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched) handler, as shown here:
 
@@ -215,5 +215,5 @@ void MainWindow::customButton_Click(IInspectable const&, RoutedEventArgs const&)
 ## See also
 
 - [Windows App SDK](../../windows-app-sdk/index.md)
-- [Manage app windows](../../develop/ui-input/manage-app-windows.md)
+- [Manage app windows](../../develop/ui/manage-app-windows.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

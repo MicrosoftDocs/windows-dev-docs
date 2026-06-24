@@ -29,7 +29,7 @@ Depending on the situation, the scroll viewer's scrollbar uses two different vis
 > [!IMPORTANT]
 > WinUI 3 has two different scroll viewer controls available: [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer) and [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview). Whenever we speak generically about _scroll viewer_ controls, the information applies to both controls.
 >
-> The `ScrollView` control is similar in behavior and usage to the `ScrollViewer` control, but is based on [InteractionTracker](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.interactions.interactiontracker), has new features such as animation-driven view changes, and is designed to ensure full functionality with [ItemsRepeater](../../../design/controls/items-repeater.md).
+> The `ScrollView` control is similar in behavior and usage to the `ScrollViewer` control, but is based on [InteractionTracker](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.interactions.interactiontracker), has new features such as animation-driven view changes, and is designed to ensure full functionality with [ItemsRepeater](items-repeater.md).
 
 ## Scrolling, panning, and zooming
 
@@ -37,9 +37,9 @@ Use a scroll viewer control to allow _scrolling_, _panning_, and _zooming_ of yo
 
 - _Scrolling_: Moving the content vertically or horizontally by dragging the scrollbar thumb or using the scroll wheel on a mouse.
 - _Panning_: Moving content vertically or horizontally using touch or pen input.
-  - For more info about scrolling and panning, see [Guidelines for panning](../../../design/input/guidelines-for-panning.md).
+  - For more info about scrolling and panning, see [Guidelines for panning](../../input/guidelines-for-panning.md).
 - _Zooming_: Optically increasing or decreasing the scale of the content.
-  - For more info about zooming, see [Optical zoom and resizing](../../../design/input/guidelines-for-optical-zoom.md).
+  - For more info about zooming, see [Optical zoom and resizing](../../input/guidelines-for-optical-zoom.md).
 
 The scrollbar is conscious of the user's input method and uses it to determine which visualization to display.
 
@@ -354,7 +354,7 @@ private void ScrollBottomButton_Click(object sender, RoutedEventArgs e)
 
 ## Zoom
 
-You can use a scroll viewer to let a user optically zoom in and out of content. Optical zoom interactions are performed through the pinch and stretch gestures (moving fingers farther apart zooms in and moving them closer together zooms out), or by pressing the Ctrl key while scrolling the mouse scroll wheel. For more info about zooming, see [Optical zoom and resizing](../../../design/input/guidelines-for-optical-zoom.md).
+You can use a scroll viewer to let a user optically zoom in and out of content. Optical zoom interactions are performed through the pinch and stretch gestures (moving fingers farther apart zooms in and moving them closer together zooms out), or by pressing the Ctrl key while scrolling the mouse scroll wheel. For more info about zooming, see [Optical zoom and resizing](../../input/guidelines-for-optical-zoom.md).
 
 To enable zoom by user interaction, set the `ZoomMode` property to `Enabled` (it's `Disabled` by default). Changes to the `ZoomMode` property take effect immediately and may affect an on-going user interaction.
 

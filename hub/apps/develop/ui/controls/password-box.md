@@ -23,7 +23,7 @@ By default, the password box provides a way for the user to view their password 
 
 Use a **PasswordBox** control to collect a password or other private data, such as a Social Security number.
 
-For more info about choosing the right text control, see the [Text controls](../../../design/controls/text-controls.md) article.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Recommendations
 
@@ -169,15 +169,15 @@ This PasswordBox looks like this.
 
 To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. PasswordBox supports only the **Password** and **NumericPin** input scope values. Any other value is ignored.
 
-For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md).
+For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../../input/use-input-scope-to-change-the-touch-keyboard.md).
 
 ## Related articles
 
-[Text controls](../../../design/controls/text-controls.md)
+[Text controls](text-controls.md)
 
-- [Guidelines for spell checking](../../../design/controls/text-controls.md)
+- [Guidelines for spell checking](text-controls.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
-- [Guidelines for text input](../../../design/controls/text-controls.md)
+- [Guidelines for text input](text-controls.md)
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox)
 - [class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox)
 - [String.Length property](/dotnet/api/system.string.length)

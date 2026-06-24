@@ -40,7 +40,7 @@ These target size recommendations can be adjusted as required by your particular
 - [Design basics for Windows apps](../../design/basics/index.md)
 - [Screen sizes and breakpoints](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)
 - [Control size and density](../../design/style/spacing.md)
-- [Alignment, margin, padding](../../design/layout/alignment-margin-padding.md)
+- [Alignment, margin, padding](../ui/alignment-margin-padding.md)
 
 ### Samples
 

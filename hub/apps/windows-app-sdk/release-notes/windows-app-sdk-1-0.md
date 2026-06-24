@@ -162,7 +162,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 > - [DisplayArea](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.displayarea) represents a high-level abstraction of a HMONITOR, follows the same principles as AppWindow.
 > - [DisplayAreaWatcher](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.displayareawatcher) allows a developer to observe changes in the display topology and enumerate DisplayAreas currently defined in the system.
 >
-> For more info, see [Manage app windows (Windows App SDK)](../../develop/ui-input/manage-app-windows.md).
+> For more info, see [Manage app windows (Windows App SDK)](../../develop/ui/manage-app-windows.md).
 
 </details>
 
@@ -517,7 +517,7 @@ This release introduces updates to the [AppWindow](/windows/windows-app-sdk/api/
 - The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you're limited to using the HWND interop access methods.
 - Window title bar customization works only on Windows 11. Use the [IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) method to check for title bar customization feature support. We intend to bring this functionality down-level.
 
-For more info, see [Manage app windows (Windows App SDK)](../../develop/ui-input/manage-app-windows.md).
+For more info, see [Manage app windows (Windows App SDK)](../../develop/ui/manage-app-windows.md).
 
 ### Input (1.0.0-preview2)
 
@@ -658,7 +658,7 @@ This release brings the Windowing API we introduced in Experimental 1 to a Previ
 - The Windows App SDK does not currently provide methods for attaching UI framework content to an [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow); you're limited to using the HWND interop access methods.
 - Window title bar customization works only on Windows 11. Use the [IsCustomizationSupported](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) method to check for title bar customization feature support. We intend to bring this functionality down-level.
 
-For more info, see [Manage app windows (Windows App SDK)](../../develop/ui-input/manage-app-windows.md).
+For more info, see [Manage app windows (Windows App SDK)](../../develop/ui/manage-app-windows.md).
 
 ### Input  (1.0.0-preview1)
 
@@ -765,7 +765,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 > - The Windows App SDK does not currently provide methods for attaching UI framework content to an `AppWindow`; you're limited to using the `HWND` interop access methods.
 > - The Windowing API's will currently not work on Windows version 1809 and 1903 for AMD64.
 >
-> For more information, see [Manage app windows (Windows App SDK)](../../develop/ui-input/manage-app-windows.md).
+> For more information, see [Manage app windows (Windows App SDK)](../../develop/ui/manage-app-windows.md).
 >
 
 </details>

@@ -125,6 +125,6 @@ The dot in an attached property name is a key part of the identification pattern
 
 - [Custom attached properties](custom-attached-properties.md)
 - [Dependency properties overview](dependency-properties-overview.md)
-- [Define layouts with XAML](../../../design/layout/layouts-with-xaml.md)
+- [Define layouts with XAML](../../ui/layouts-with-xaml.md)
 - [**SetValue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.setvalue)
 - [**GetValue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.getvalue)

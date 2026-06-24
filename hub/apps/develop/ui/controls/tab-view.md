@@ -27,7 +27,7 @@ By default, [TabView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
 - Open documents or web pages directly into tabs.
 - Drag and drop tabs between windows.
 
-The TabView API does allow configuring the control for static tabs. However, to follow Windows design guidance, and if there are more than a few static navigation items, consider using a [NavigationView](../../../design/controls/navigationview.md) control.
+The TabView API does allow configuring the control for static tabs. However, to follow Windows design guidance, and if there are more than a few static navigation items, consider using a [NavigationView](navigationview.md) control.
 
 ## Anatomy
 
@@ -656,5 +656,5 @@ private void NavigateToNumberedTabKeyboardAccelerator_Invoked(KeyboardAccelerato
 
 ## Related articles
 
-- [List/Details](../../../design/controls/list-details.md)
-- [NavigationView](../../../design/controls/navigationview.md)
+- [List/Details](list-details.md)
+- [NavigationView](navigationview.md)

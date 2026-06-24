@@ -28,9 +28,9 @@ The controls covered in this article include:
 
 Design guidelines, features, and examples are given below for each control.
 
-Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) is used. Detailed information on data templates and customizing the look of a collection view can be found on the [Item containers and templates](../../../design/controls/item-containers-templates.md) page.
+Each of these controls (with the exception of ItemsRepeater) provide built-in styling and interaction. However, to further customize the visual look of your collection view and the items inside it, a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) is used. Detailed information on data templates and customizing the look of a collection view can be found on the [Item containers and templates](item-containers-templates.md) page.
 
-Each of these controls (with the exception of ItemsRepeater) also have built-in behavior to allow for the selection of single or multiple items. See [Selection modes overview](../../../design/controls/selection-modes.md) to learn more.
+Each of these controls (with the exception of ItemsRepeater) also have built-in behavior to allow for the selection of single or multiple items. See [Selection modes overview](selection-modes.md) to learn more.
 
 ## Items view
 
@@ -62,8 +62,8 @@ This is the same collection shown in a stack layout. The focus here is on the te
 
 |Topic  |Description  |
 |---------|---------|
-|[Items view](../../../design/controls/itemsview.md) | Learn the essentials of using an items view in your app. |
-|[Item containers and templates](../../../design/controls/item-containers-templates.md) | The items you display in a list or grid can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates. |
+|[Items view](itemsview.md) | Learn the essentials of using an items view in your app. |
+|[Item containers and templates](item-containers-templates.md) | The items you display in a list or grid can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates. |
 
 ## List view
 
@@ -78,7 +78,7 @@ Use a list view to:
 - Accommodate a variety of use cases, including the following common ones:
   - Create a list of messages or message log.
   - Create a contacts list.
-  - Create the list pane in the [list/details pattern](../../../design/controls/list-details.md). A list/details pattern is often used in email apps, in which one pane has a list of selectable items while the other pane (details) has a detailed view of the selected item.
+  - Create the list pane in the [list/details pattern](list-details.md). A list/details pattern is often used in email apps, in which one pane has a list of selectable items while the other pane (details) has a detailed view of the selected item.
 
 > [!NOTE]
 > If you need to handle pointer events for a [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement) in a scrollable view (such as a ScrollViewer or ListView), you must explicitly disable support for manipulation events on the element in the view by calling [UIElement.CancelDirectmanipulation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.canceldirectmanipulations). To re-enable manipulation events in the view, call [UIElement.TryStartDirectManipulation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.trystartdirectmanipulation).
@@ -97,12 +97,12 @@ This is a ListView that has been inverted to display a log of messages, with the
 
 |Topic  |Description  |
 |---------|---------|
-|[List view and grid view](../../../design/controls/listview-and-gridview.md) | Learn the essentials of using a list view or grid view in your app. |
-|[Item containers and templates](../../../design/controls/item-containers-templates.md) | The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates. |
-|[Item templates for list view](../../../design/controls/item-templates-listview.md) | Use these example item templates for a ListView to get the look of common app types. |
-|[Inverted lists](../../../design/controls/inverted-lists.md) | Inverted lists have new items added at the bottom, like in a chat app. Follow this article's guidance to use an inverted list in your app. |
-|[Pull-to-refresh](../../../design/controls/pull-to-refresh.md) | The pull-to-refresh mechanism lets a user pull down on a list of data using touch in order to retrieve more data. Use this article to implement pull-to-refresh in your list view. |
-|[Nested UI](../../../design/controls/nested-ui.md) | Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users. |
+|[List view and grid view](listview-and-gridview.md) | Learn the essentials of using a list view or grid view in your app. |
+|[Item containers and templates](item-containers-templates.md) | The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates. |
+|[Item templates for list view](item-templates-listview.md) | Use these example item templates for a ListView to get the look of common app types. |
+|[Inverted lists](inverted-lists.md) | Inverted lists have new items added at the bottom, like in a chat app. Follow this article's guidance to use an inverted list in your app. |
+|[Pull-to-refresh](pull-to-refresh.md) | The pull-to-refresh mechanism lets a user pull down on a list of data using touch in order to retrieve more data. Use this article to implement pull-to-refresh in your list view. |
+|[Nested UI](nested-ui.md) | Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users. |
 
 ## Grid view
 
@@ -114,7 +114,7 @@ Use a grid view to:
 
 - Display a content collection in which the focal point of each item is an image, and each item should have the same visual and interaction behavior.
 - Display content libraries.
-- Format the two content views associated with [semantic zoom](../../../design/controls/semantic-zoom.md).
+- Format the two content views associated with [semantic zoom](semantic-zoom.md).
 - Accommodate a variety of use cases, including the following common ones:
   - Storefront-type user interface (i.e. browsing apps, songs, products)
   - Interactive photo libraries
@@ -136,10 +136,10 @@ A grid view is an ideal solution for a content library, which is often used to p
 
 |Topic  |Description  |
 |---------|---------|
-|[List view and grid view](../../../design/controls/listview-and-gridview.md) | Learn the essentials of using a list view or grid view in your app. |
-|[Item containers and templates](../../../design/controls/item-containers-templates.md) | The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates. |
-|[Item templates for grid view](../../../design/controls/item-templates-gridview.md) | Use these example item templates for a ListView to get the look of common app types. |
-|[Nested UI](../../../design/controls/nested-ui.md) | Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users. |
+|[List view and grid view](listview-and-gridview.md) | Learn the essentials of using a list view or grid view in your app. |
+|[Item containers and templates](item-containers-templates.md) | The items you display in a list or grid view can play a major role in the overall look of your app. Make your app look great by customizing the look of your collection items through modifying control templates and data templates. |
+|[Item templates for grid view](item-templates-gridview.md) | Use these example item templates for a ListView to get the look of common app types. |
+|[Nested UI](nested-ui.md) | Nested UI is a user interface (UI) that exposes actionable controls enclosed inside a container that a user can also take action on. For example, you might have list view item that contains a button, and the user can select the list item, or press the button nested within it. Follow these best practices to provide the best nested UI experience for your users. |
 
 ## Flip view
 
@@ -167,7 +167,7 @@ The following two examples show a FlipView that flips horizontally and verticall
 
 |Topic  |Description  |
 |---------|---------|
-| [Flip view](../../../design/controls/flipview.md)  | Learn the essentials of using a flip view in your app, along with how to customize the look of your items within a flip view. |
+| [Flip view](flipview.md)  | Learn the essentials of using a flip view in your app, along with how to customize the look of your items within a flip view. |
 
 ## Tree view
 
@@ -192,7 +192,7 @@ Here is an example of a tree view that represents a file explorer, and displays 
 
 |Topic  |Description  |
 |---------|---------|
-| [Tree view](../../../design/controls/tree-view.md)  | Learn the essentials of using a tree view in your app, along with how to customize the look and interaction behavior of your items within a tree view. |
+| [Tree view](tree-view.md)  | Learn the essentials of using a tree view in your app, along with how to customize the look and interaction behavior of your items within a tree view. |
 
 ## ItemsRepeater
 
@@ -220,7 +220,7 @@ The following three examples are all ItemsRepeater controls that are bound to th
 
 |Topic  |Description  |
 |---------|---------|
-| [ItemsRepeater](../../../design/controls/items-repeater.md)  | Learn the essentials of using an ItemsRepeater in your app, along with how to implement all of the necessary interaction and visual components for your collection view. |
+| [ItemsRepeater](items-repeater.md)  | Learn the essentials of using an ItemsRepeater in your app, along with how to implement all of the necessary interaction and visual components for your collection view. |
 
 ## Globalization and localization checklist
 
@@ -236,9 +236,9 @@ The following three examples are all ItemsRepeater controls that are bound to th
 
 **Design and UX Guidelines**
 
-- [List/details](../../../design/controls/list-details.md)
-- [Nav pane](../../../design/controls/navigationview.md)
-- [Semantic zoom](../../../design/controls/semantic-zoom.md)
+- [List/details](list-details.md)
+- [Nav pane](navigationview.md)
+- [Semantic zoom](semantic-zoom.md)
 - [Drag and drop](../../../design/input/drag-and-drop.md)
 - [Thumbnail images](/windows/uwp/files/thumbnails)
 

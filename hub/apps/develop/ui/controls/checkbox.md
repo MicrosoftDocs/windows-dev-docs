@@ -21,7 +21,7 @@ Use a **single check box** for a binary yes/no choice, such as with a "Remember 
 
 ![A single check box used for an individual choice](images/checkbox1.png)
 
-For a binary choice, the main difference between a **check box** and a [toggle switch](../../../design/controls/toggles.md) is that the check box is for status and the toggle switch is for action. You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction. Also, only check boxes allow for multi-selection.
+For a binary choice, the main difference between a **check box** and a [toggle switch](toggles.md) is that the check box is for status and the toggle switch is for action. You can delay committing a check box interaction (as part of a form submit, for example), while you should immediately commit a toggle switch interaction. Also, only check boxes allow for multi-selection.
 
 Use **multiple check boxes** for multi-select scenarios in which a user chooses one or more items from a group of choices that are not mutually exclusive.
 
@@ -42,9 +42,9 @@ Both **check box** and **radio button** controls let the user select from a list
 - Word the checkbox label as a statement that the check mark makes true and the absence of a check mark makes false.
 - Use the default font unless your brand guidelines tell you to use another.
 - If the text content is dynamic, consider how the control will resize and what will happen to visuals around it.
-- If there are two or more mutually exclusive options from which to choose, consider using [radio buttons](../../../design/controls/radio-button.md).
+- If there are two or more mutually exclusive options from which to choose, consider using [radio buttons](radio-button.md).
 - Don't put two check box groups next to each other. Use group labels to separate the groups.
-- Don't use a check box as an on/off control or to perform a command; instead, use a [toggle switch](../../../design/controls/toggles.md).
+- Don't use a check box as an on/off control or to perform a command; instead, use a [toggle switch](toggles.md).
 - Don't use a check box to display other controls, such as a dialog box.
 - Use the indeterminate state to indicate that an option is set for some, but not all, sub-choices.
 - When using indeterminate state, use subordinate check boxes to show which options are selected and which are not. Design the UI so that the user can get see the sub-choices.
@@ -307,5 +307,5 @@ private void SetCheckedState()
 ## Related articles
 
 - [CheckBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.checkbox)
-- [Radio buttons](../../../design/controls/radio-button.md)
-- [Toggle switch](../../../design/controls/toggles.md)
+- [Radio buttons](radio-button.md)
+- [Toggle switch](toggles.md)

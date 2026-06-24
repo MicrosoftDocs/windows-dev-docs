@@ -20,9 +20,9 @@ The date picker gives you a standardized way to let users pick a localized date 
 
 Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
 
-If the context of a calendar is important, consider using a [calendar date picker](../../../design/controls/calendar-date-picker.md) or [calendar view](../../../design/controls/calendar-view.md).
+If the context of a calendar is important, consider using a [calendar date picker](calendar-date-picker.md) or [calendar view](calendar-view.md).
 
-For more info about choosing the right date control, see the [Date and time controls](../../../design/controls/date-and-time.md) article.
+For more info about choosing the right date control, see the [Date and time controls](date-and-time.md) article.
 
 ## Examples
 
@@ -178,7 +178,7 @@ public sealed partial class MainPage : Page
 
 ## Related articles
 
-- [Date and time controls](../../../design/controls/date-and-time.md)
-- [Calendar date picker](../../../design/controls/calendar-date-picker.md)
-- [Calendar view](../../../design/controls/calendar-view.md)
-- [Time picker](../../../design/controls/time-picker.md)
+- [Date and time controls](date-and-time.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Calendar view](calendar-view.md)
+- [Time picker](time-picker.md)

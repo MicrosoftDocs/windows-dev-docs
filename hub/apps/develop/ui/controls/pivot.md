@@ -19,13 +19,13 @@ The Pivot control enables touch-swiping between a small set of content sections.
 > [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../../../design/basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
-> - [SelectorBar](../../../design/controls/selector-bar.md) control.
-> - [NavigationView](../../../design/controls/navigationview.md) ([Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example)
-> - [TabView](../../../design/controls/tab-view.md)
+> - [SelectorBar](selector-bar.md) control.
+> - [NavigationView](navigationview.md) ([Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example)
+> - [TabView](tab-view.md)
 
-To create a tabbed UI, use a [TabView](../../../design/controls/tab-view.md) control.
+To create a tabbed UI, use a [TabView](tab-view.md) control.
 
-To achieve common top navigation patterns, we recommend using [NavigationView](../../../design/controls/navigationview.md), which automatically adapts to different screen sizes and allows for greater customization.
+To achieve common top navigation patterns, we recommend using [NavigationView](navigationview.md), which automatically adapts to different screen sizes and allows for greater customization.
 
 Some key differences between the NavigationView and Pivot are listed here:
 
@@ -99,9 +99,9 @@ This code mimics the Pivot control's built-in navigation experience, minus the t
 > [!WARNING]
 >The Pivot control is not recommended for [Windows 11 design patterns](../../../design/basics/app-silhouette.md). We strongly recommend using one of these alternatives instead:
 >
-> - [SelectorBar](../../../design/controls/selector-bar.md) control.
-> - [NavigationView](../../../design/controls/navigationview.md) ([Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example)
-> - [TabView](../../../design/controls/tab-view.md)
+> - [SelectorBar](selector-bar.md) control.
+> - [NavigationView](navigationview.md) ([Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example)
+> - [TabView](tab-view.md)
 
 This XAML creates a basic Pivot control with 3 sections of content.
 
@@ -132,7 +132,7 @@ You can use the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.x
 
 You can use the [LeftHeader](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.leftheader) and [RightHeader](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot.rightheader) properties to add other controls to the Pivot header.
 
-For example, you can add a [CommandBar](../../../design/controls/command-bar.md) in the Pivot's RightHeader.
+For example, you can add a [CommandBar](command-bar.md) in the Pivot's RightHeader.
 
 ```xaml
 <Pivot>
@@ -177,7 +177,7 @@ The control comes in two modes:
 ## Related topics
 
 - [Pivot class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pivot)
-- [SelectorBar](../../../design/controls/selector-bar.md)
-- [NavigationView](../../../design/controls/navigationview.md)
-- [TabView](../../../design/controls/tab-view.md)
+- [SelectorBar](selector-bar.md)
+- [NavigationView](navigationview.md)
+- [TabView](tab-view.md)
 - [Navigation design basics](../../../design/basics/navigation-basics.md)

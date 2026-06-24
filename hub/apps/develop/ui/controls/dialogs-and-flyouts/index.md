@@ -66,8 +66,8 @@ Dialogs are frequently used to confirm an action (such as deleting a file) befor
 
 ## How to create a dialog
 
-See the [Dialogs article](../../../../design/controls/dialogs-and-flyouts/dialogs.md).
+See the [Dialogs article](dialogs.md).
 
 ## How to create a flyout
 
-See the [Flyout article](../../../../design/controls/dialogs-and-flyouts/flyouts.md).
+See the [Flyout article](flyouts.md).

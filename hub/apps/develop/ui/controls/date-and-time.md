@@ -76,10 +76,10 @@ The entry point displays the chosen time, and when the user selects the entry po
 
 See these articles for info and examples specific to each date and time control.
 
-- [Calendar view](../../../design/controls/calendar-view.md)
-- [Calendar date picker](../../../design/controls/calendar-date-picker.md)
-- [Date picker](../../../design/controls/date-picker.md)
-- [Time Picker](../../../design/controls/time-picker.md)
+- [Calendar view](calendar-view.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Date picker](date-picker.md)
+- [Time Picker](time-picker.md)
 
 ### Use a date picker and time picker together
 

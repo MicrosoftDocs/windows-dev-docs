@@ -20,7 +20,7 @@ Users expect a basic control set, such as play/pause, skip back, skip forward, w
 
 ## Is this the right control?
 
-Use a media player when you want to play audio or video in your app. To display a collection of images, use a [flip view](../../../design/controls/flipview.md).
+Use a media player when you want to play audio or video in your app. To display a collection of images, use a [flip view](flipview.md).
 
 ## Recommendations
 
@@ -30,7 +30,7 @@ When playing video content, encourage a dedicated viewing experience by promotin
 
 If you have the screen real estate, go with the double-row layout. It provides more space for controls than the compact single-row layout and can be easier to navigate using a variety of inputs.
 
-The default controls have been optimized for media playback, however you have the ability to add custom options you need to the media player in order to provide the best experience for your app. Visit [Create custom transport controls](../../../design/controls/custom-transport-controls.md) to learn more about adding custom controls.
+The default controls have been optimized for media playback, however you have the ability to add custom options you need to the media player in order to provide the best experience for your app. Visit [Create custom transport controls](custom-transport-controls.md) to learn more about adding custom controls.
 
 ## Create a media player
 
@@ -68,7 +68,7 @@ This XAML creates a [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/micr
 
 ### Media transport controls
 
-[MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, closed captions, and audio track selection. To enable these controls, set [AreTransportControlsEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled) to `true`. To disable them, set `AreTransportControlsEnabled` to `false`. The transport controls are represented by the [MediaTransportControls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) class. You can use the transport controls as-is, or customize them in various ways. For more info, see the [MediaTransportControls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) class reference and [Create custom transport controls](../../../design/controls/custom-transport-controls.md).
+[MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, closed captions, and audio track selection. To enable these controls, set [AreTransportControlsEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.AreTransportControlsEnabled) to `true`. To disable them, set `AreTransportControlsEnabled` to `false`. The transport controls are represented by the [MediaTransportControls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) class. You can use the transport controls as-is, or customize them in various ways. For more info, see the [MediaTransportControls](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediatransportcontrols) class reference and [Create custom transport controls](custom-transport-controls.md).
 
 The transport controls support single- and double-row layouts. The first example here is a single-row layout, with the play/pause button located to the left of the media timeline. This layout is best reserved for inline media playback and compact screens.
 

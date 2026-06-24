@@ -110,7 +110,7 @@ To change the colors on a per-control basis, just edit the focus visual properti
 
 ### For designers
 
-- [Guidelines for panning](../../design/input/guidelines-for-panning.md)
+- [Guidelines for panning](guidelines-for-panning.md)
 
 ### For developers
 

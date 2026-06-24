@@ -328,6 +328,6 @@ private void OnLosingFocus(UIElement sender, LosingFocusEventArgs args)
 
 ## Related articles
 
-- [Focus navigation for keyboard, gamepad, remote control, and accessibility tools](../../design/input/focus-navigation.md)
-- [Keyboard interactions](../../design/input/keyboard-interactions.md)
+- [Focus navigation for keyboard, gamepad, remote control, and accessibility tools](focus-navigation.md)
+- [Keyboard interactions](keyboard-interactions.md)
 - [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)

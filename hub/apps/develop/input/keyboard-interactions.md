@@ -41,7 +41,7 @@ As mentioned, keyboard support is integral to ensuring your applications work gr
     - Provide arrow key navigation for "inner navigations" (see [Navigation](#navigation))
 - Support keyboard shortcuts
     - Provide accelerator keys for quick actions (see [Accelerators](#accelerators))
-    - Provide access keys to navigate your application's UI (see [Access keys](../../design/input/access-keys.md))
+    - Provide access keys to navigate your application's UI (see [Access keys](access-keys.md))
 
 ### Focus visuals
 
@@ -103,7 +103,7 @@ Set initial focus on the UI element for the first, or primary, action that users
 
 This level of functionality should be a user's choice. Setting initial focus to an element with a significant outcome might result in unintended data loss or system access. For example, don't set focus to the delete button when navigating to an e-mail.
 
-See [Focus navigation](../../design/input/focus-navigation.md) for more details about overriding tab order.
+See [Focus navigation](focus-navigation.md) for more details about overriding tab order.
 
 ### Navigation
 
@@ -223,7 +223,7 @@ For example:
 
 ### Keyboard shortcuts
 
-In addition to implementing keyboard navigation and activation, it is also good practice to implement keyboard shortcuts such as [keyboard accelerators](../../design/input/keyboard-accelerators.md) and [access keys](../../design/input/access-keys.md) for important or frequently used functionality.
+In addition to implementing keyboard navigation and activation, it is also good practice to implement keyboard shortcuts such as [keyboard accelerators](keyboard-accelerators.md) and [access keys](access-keys.md) for important or frequently used functionality.
 
 Keyboard shortcuts can make your app easier to use by providing both enhanced support for accessibility and improved efficiency for keyboard users.
 
@@ -253,14 +253,14 @@ Accelerators have the following characteristics:
 
 #### Access keys
 
-See [Access keys](../../design/input/access-keys.md) page for more in-depth information for supporting access keys with WinUI.
+See [Access keys](access-keys.md) page for more in-depth information for supporting access keys with WinUI.
 
 Access keys help users with motor function disabilities an ability to press one key at a time to action on a specific item in the UI. Moreover, access keys can be used to communicate additional shortcut keys to help advanced users perform actions quickly.
 
 Access keys have the following characteristics:
 -   They use the Alt key plus an alphanumeric key.
 -   They are primarily for accessibility.
--   They are documented directly in the UI, adjacent to the control, through [Key Tips](../../design/input/access-keys.md).
+-   They are documented directly in the UI, adjacent to the control, through [Key Tips](access-keys.md).
 -   They have effect only in the current window, and navigate to the corresponding menu item or control.
 -   Access keys should be assigned consistently to commonly used commands (especially commit buttons), whenever possible.
 -   They are localized.
@@ -503,9 +503,9 @@ Test your app with all supported input devices to ensure UI elements can be navi
 
 ## Related articles
 
-* [Keyboard events](../../design/input/keyboard-events.md)
-* [Identify input devices](../../design/input/identify-input-devices.md)
-* [Respond to the presence of the touch keyboard](../../design/input/respond-to-the-presence-of-the-touch-keyboard.md)
+* [Keyboard events](keyboard-events.md)
+* [Identify input devices](identify-input-devices.md)
+* [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
 * [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
 * [NavigationView control keyboarding specifics](../ui/controls/navigationview.md#hierarchical-navigation)
 * [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)

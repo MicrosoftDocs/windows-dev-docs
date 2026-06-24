@@ -54,7 +54,7 @@ If your app requires a custom UI that supports text selection, we recommend that
 **Editable and non-editable content**
 
 
-With touch, selection interactions are performed primarily through gestures such as a tap to set an insertion cursor or select a word, and a slide to modify a selection. As with other Windows touch interactions, timed interactions are limited to the press and hold gesture to display informational UI. For more information, see [Guidelines for visual feedback](../../design/input/guidelines-for-visualfeedback.md).
+With touch, selection interactions are performed primarily through gestures such as a tap to set an insertion cursor or select a word, and a slide to modify a selection. As with other Windows touch interactions, timed interactions are limited to the press and hold gesture to display informational UI. For more information, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
 
 Windows recognizes two possible states for selection interactions, editable and non-editable, and adjusts selection UI, feedback, and functionality accordingly.
 

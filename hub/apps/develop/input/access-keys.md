@@ -22,9 +22,9 @@ The Windows app provides built-in support across platform controls for both keyb
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
 
-See the [Accelerator keys](../../design/input/keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
+See the [Accelerator keys](keyboard-accelerators.md) topic for details on invoking common actions in a Windows application with keyboard shortcuts. 
 
-To create your own custom keyboard shortcuts, see the [Keyboard events](../../design/input/keyboard-events.md) topic.
+To create your own custom keyboard shortcuts, see the [Keyboard events](keyboard-events.md) topic.
 
 ## Overview
 
@@ -275,8 +275,8 @@ If you specify the AccessKey property on a UIElement or TextElement control, you
 
 ## Related articles
 
-* [Keyboard interactions](../../design/input/keyboard-interactions.md)
-* [Keyboard accelerators](../../design/input/keyboard-accelerators.md)
+* [Keyboard interactions](keyboard-interactions.md)
+* [Keyboard accelerators](keyboard-accelerators.md)
 
 **Samples**
 * [WinUI 3 Gallery](https://github.com/Microsoft/WinUI-Gallery)

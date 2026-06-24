@@ -77,7 +77,7 @@ In addition to the distance threshold, cross-slide selection is constrained to a
 
 ![diagram showing the selection threshold area.](images/crossslide-selection.png)
 
-The cross-slide interaction is supplemented by a press-and-hold timed interaction, also referred to as a "self-revealing" interaction. This supplemental interaction activates an animation that indicates what action can be performed on the object. For more information on disambiguation UI, see [Guidelines for visual feedback](../../design/input/guidelines-for-visualfeedback.md).
+The cross-slide interaction is supplemented by a press-and-hold timed interaction, also referred to as a "self-revealing" interaction. This supplemental interaction activates an animation that indicates what action can be performed on the object. For more information on disambiguation UI, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
 
 The following screen shots demonstrate how the self-revealing animation works.
 

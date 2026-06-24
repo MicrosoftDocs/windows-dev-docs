@@ -344,7 +344,7 @@ Sometimes, you might need to manipulate the ItemsView item selection programmati
 
 ## Related articles
 
-- [Guidelines for lists](../../../design/controls/lists.md)
+- [Guidelines for lists](lists.md)
 - [ItemsView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview)
 - [StackLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout)
 - [UniformGridLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout)

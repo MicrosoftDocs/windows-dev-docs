@@ -24,15 +24,15 @@ TextBox has a number of features that can simplify text entry. It comes with a f
 
 Use a **TextBox** control to let a user enter and edit unformatted text, such as in a form. You can use the [Text](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text) property to get and set the text in a TextBox.
 
-You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [TextBlock](../../../design/controls/text-block.md) instead.
+You can make a TextBox read-only, but this should be a temporary, conditional state. If the text is never editable, consider using a [TextBlock](text-block.md) instead.
 
-Use a [PasswordBox](../../../design/controls/password-box.md) control to collect a password or other private data, such as a Social Security number. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered.
+Use a [PasswordBox](password-box.md) control to collect a password or other private data, such as a Social Security number. A password box looks like a text input box, except that it renders bullets in place of the text that has been entered.
 
-Use an [AutoSuggestBox](../../../design/controls/auto-suggest-box.md) control to let the user enter search terms or to show the user a list of suggestions to choose from as they type.
+Use an [AutoSuggestBox](auto-suggest-box.md) control to let the user enter search terms or to show the user a list of suggestions to choose from as they type.
 
-Use a [RichEditBox](../../../design/controls/rich-edit-box.md) to display and edit rich text files.
+Use a [RichEditBox](rich-edit-box.md) to display and edit rich text files.
 
-For more info about choosing the right text control, see the [Text controls](../../../design/controls/text-controls.md) article.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Recommendations
 
@@ -243,7 +243,7 @@ Paste | the clipboard contains text.
 Select all | the TextBox contains text.
 Undo | text has been changed.
 
-To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui3gallery://item/RichEditBox">WinUI 3 Gallery</a>. For design info, see Guidelines for [context menus](../../../design/controls/menus.md).
+To modify the commands shown in the context menu, handle the [ContextMenuOpening](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.contextmenuopening) event. For an example of this, see the **Customizing RichEditBox's CommandBarFlyout - adding 'Share'** example in the <a href="winui3gallery://item/RichEditBox">WinUI 3 Gallery</a>. For design info, see Guidelines for [context menus](menus.md).
 
 ### Select, copy, and paste
 
@@ -291,14 +291,14 @@ For example, if a text box is used only to enter a 4-digit PIN, set the [InputSc
 
 Other properties that affect the touch keyboard are [IsSpellCheckEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.isspellcheckenabled), [IsTextPredictionEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.istextpredictionenabled), and [PreventKeyboardDisplayOnProgrammaticFocus](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.preventkeyboarddisplayonprogrammaticfocus). (IsSpellCheckEnabled also affects the TextBox when a hardware keyboard is used.)
 
-For more info and examples, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md) and the property documentation.
+For more info and examples, see [Use input scope to change the touch keyboard](../../input/use-input-scope-to-change-the-touch-keyboard.md) and the property documentation.
 
 ## Related articles
 
-- [Text controls](../../../design/controls/text-controls.md)
-- [Guidelines for spell checking](../../../design/controls/text-controls.md)
+- [Text controls](text-controls.md)
+- [Guidelines for spell checking](text-controls.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
-- [Guidelines for text input](../../../design/controls/text-controls.md)
+- [Guidelines for text input](text-controls.md)
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
 - [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

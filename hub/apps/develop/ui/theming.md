@@ -42,7 +42,7 @@ If you don't request a theme for your app, make sure to test your app in both li
 
 Common controls automatically use [theme brushes](../platform/xaml/xaml-theme-resources.md#the-xaml-color-ramp-and-theme-dependent-brushes) to adjust contrast for light and dark themes.
 
-For example, here's an illustration of how the [AutoSuggestBox](../../design/controls/auto-suggest-box.md) uses theme brushes:
+For example, here's an illustration of how the [AutoSuggestBox](controls/auto-suggest-box.md) uses theme brushes:
 
 ![theme brushes control example](../../design/style/images/color/theme-brushes.svg)
 
@@ -52,7 +52,7 @@ For example, here's an illustration of how the [AutoSuggestBox](../../design/con
     :::column:::
 When creating templates for custom controls, use theme brushes rather than hard code color values. This way, your app can easily adapt to any theme.
 
-For example, these [item templates for ListView](../../design/controls/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
+For example, these [item templates for ListView](controls/item-templates-listview.md) demonstrate how to use theme brushes in a custom template.
     :::column-end:::
     :::column:::
  ![double line list item with icon example](../../design/style/images/color/list-view.svg)

@@ -88,7 +88,7 @@ However, you can take advantage of the specific capabilities of each device (suc
 - Display visual feedback concurrently for all elements that represent the same input target.
 - Provide buttons (such as + and -) for emulating touch-based manipulations such as panning, rotating, zooming, and so on.
 
-For more general guidance on visual feedback, see [Guidelines for visual feedback](../../design/input/guidelines-for-visualfeedback.md).
+For more general guidance on visual feedback, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
 
 ## Cursors
 
@@ -106,8 +106,8 @@ If you need to customize the mouse cursor:
 
 ## Related articles
 
-- [Handle pointer input](../../design/input/handle-pointer-input.md)
-- [Identify input devices](../../design/input/identify-input-devices.md)
+- [Handle pointer input](handle-pointer-input.md)
+- [Identify input devices](identify-input-devices.md)
 - [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview)
 
 ### Samples

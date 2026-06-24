@@ -18,9 +18,9 @@ Use the two-pane view when you have two distinct but related areas of content an
 - The content should automatically rearrange and resize to best fit the window.
 - The secondary area of content should show/hide based on available space.
 
-If you need to display two areas of content but don't need the resizing and rearranging provided by the two-pane view, consider using a [Split view](../../../design/controls/split-view.md) instead.
+If you need to display two areas of content but don't need the resizing and rearranging provided by the two-pane view, consider using a [Split view](split-view.md) instead.
 
-For navigation options, use a [Navigation view](../../../design/controls/navigationview.md).
+For navigation options, use a [Navigation view](navigationview.md).
 
 
 ## How it works
@@ -43,7 +43,7 @@ The two-pane view has two panes where you place your content. It adjusts the siz
 
 You configure the two-pane view by setting the [PanePriority](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.panepriority) to specify which pane is shown when there is space for only one pane. Then, you specify whether `Pane1` is shown on the top or bottom for tall windows, or on the left or right for wide windows.
 
-The two-pane view handles the size and arrangement of the panes, but you still need to make the content inside the pane adapt to the changes in size and orientation. See [Responsive layouts with XAML](../../../design/layout/layouts-with-xaml.md) and [Layout panels](../../../design/layout/layout-panels.md) for more info about creating an adaptive UI.
+The two-pane view handles the size and arrangement of the panes, but you still need to make the content inside the pane adapt to the changes in size and orientation. See [Responsive layouts with XAML](../layouts-with-xaml.md) and [Layout panels](../layout-panels.md) for more info about creating an adaptive UI.
 
 ## Create a two-pane view
 
@@ -77,7 +77,7 @@ The [TwoPaneView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.
 
 ### Add content to the panes
 
-Each pane of a two-pane view can hold a single XAML `UIElement`. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See [Responsive layouts with XAML](../../../design/layout/layouts-with-xaml.md) and [Layout panels](../../../design/layout/layout-panels.md) for more info about creating an adaptive UI.
+Each pane of a two-pane view can hold a single XAML `UIElement`. To add content, you typically place a XAML layout panel in each pane, and then add other controls and content to the panel. The panes can change size and switch between wide and tall modes, so you need to make sure the content in each pane can adapt to these changes. See [Responsive layouts with XAML](../layouts-with-xaml.md) and [Layout panels](../layout-panels.md) for more info about creating an adaptive UI.
 
 This example creates the simple picture/info app UI shown previously. The content can be shown in two panes, or combined into a single pane, depending on how much space is available. (When there's only space for one pane, you move the content of Pane2 into Pane1, and let the user scroll to see any hidden content. You'll see the code for this later in the _Responding to mode changes_ section.)
 
@@ -175,7 +175,7 @@ MyTwoPaneView.PanePriority = TwoPaneViewPriority.Pane2;
 
 ### Pane sizing
 
-The size of the panes is determined by the [Pane1Length](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](../../../design/layout/layouts-with-xaml.md#layout-properties) for an explanation of auto and star sizing.
+The size of the panes is determined by the [Pane1Length](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane1length) and [Pane2Length](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview.pane2length) properties. These use [GridLength](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.gridlength) values that support _auto_ and _star_(\*) sizing. See the _Layout properties_ section of [Responsive layouts with XAML](../layouts-with-xaml.md#layout-properties) for an explanation of auto and star sizing.
 
 By default, `Pane1Length` is set to `Auto` and it sizes itself to fit its content. `Pane2Length` is set to `*` and it uses all the remaining space.
 
@@ -310,4 +310,4 @@ private void TwoPaneView_ModeChanged(TwoPaneView sender, object args)
 ## Related articles
 
 - [Layout overview](../../../design/layout/index.md)
-- [Split view](../../../design/controls/split-view.md)
+- [Split view](split-view.md)

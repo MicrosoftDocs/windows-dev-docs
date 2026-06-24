@@ -31,7 +31,7 @@ Once this support has been added to your custom control, you can respond appropr
 
 **Prerequisites:**
 
-This topic builds on [Keyboard interactions](../../design/input/keyboard-interactions.md).
+This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
 You should have a basic understanding of standard keyboard interactions, handling keyboard input and events, and UI Automation.
 
@@ -42,7 +42,7 @@ If you're new to developing Windows apps, have a look through these topics to ge
 
 **User experience guidelines:**
 
-For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard interactions](../../design/input/keyboard-interactions.md) .
+For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard interactions](keyboard-interactions.md) .
 
 ## Touch keyboard and a custom UI
 
@@ -71,7 +71,7 @@ Here are a few basic recommendations for custom text input controls.
 Here's an example of attaching event handlers for the [Showing](/uwp/api/windows.ui.viewmanagement.inputpane.showing) and [Hiding](/uwp/api/windows.ui.viewmanagement.inputpane.hiding) events of the touch keyboard.
 
 > [!NOTE]
-> The code samples use `InputPane.GetForCurrentView()`, which is a UWP-era API. For WinUI 3 desktop apps, consider using [InputPane.GetForWindow](/uwp/api/windows.ui.viewmanagement.inputpane.getforwindow) with your window's HWND instead.
+> The code samples use `InputPane.GetForCurrentView()`, which is a UWP-era API. For WinUI 3 desktop apps, consider using [InputPane.GetForWindow](/uwp/api/windows.ui.viewmanagement.inputpane) with your window's HWND instead.
 
 ```csharp
 using Windows.UI.ViewManagement;
@@ -209,7 +209,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 ## Related articles
 
-- [Keyboard interactions](../../design/input/keyboard-interactions.md)
+- [Keyboard interactions](keyboard-interactions.md)
 - [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)
 - [Custom automation peers](../../design/accessibility/custom-automation-peers.md)
 

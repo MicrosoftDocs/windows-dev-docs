@@ -144,7 +144,7 @@ Don't use fewer than 20 characters or more than 60 characters per line as this i
 
 ### Clipping and ellipses
 
-When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [WinUI text controls](../controls/text-controls.md).
+When the amount of text extends beyond the space available, we recommend clipping the text and inserting ellipses [...], which is the default behavior of most [WinUI text controls](../../develop/ui/controls/text-controls.md).
 
 ![Shows a device frame with some text clipping.](../style/images/type/clipping.svg)
 
@@ -234,7 +234,7 @@ Variable fonts are good for precisely controlling the appearance of text.
 
 ## Related articles
 
-- [Text controls](../controls/text-controls.md)
+- [Text controls](../../develop/ui/controls/text-controls.md)
 - [XAML theme resources](../../develop/platform/xaml/xaml-theme-resources.md#the-xaml-type-ramp)
 - [XAML styles](../../develop/platform/xaml/xaml-styles.md)
 - [Microsoft Typography](/typography/)

@@ -17,9 +17,9 @@ The calendar date picker is a drop down control that's optimized for picking a s
 
 Use a **calendar date picker** to let a user pick a single date from a contextual calendar view. Use it for things like choosing an appointment or departure date.
 
-To let a user pick a known date, such as a date of birth, where the context of the calendar is not important, consider using a [date picker](../../../design/controls/date-picker.md).
+To let a user pick a known date, such as a date of birth, where the context of the calendar is not important, consider using a [date picker](date-picker.md).
 
-For more info about choosing the right control, see the [Date and time controls](../../../design/controls/date-and-time.md) article.
+For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
 
 ## Examples
 
@@ -53,7 +53,7 @@ The resulting calendar date picker looks like this:
 
 The calendar date picker has an internal [CalendarView](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CalendarView) for picking a date. A subset of CalendarView properties, like [IsTodayHighlighted](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.istodayhighlighted) and [FirstDayOfWeek](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendardatepicker.firstdayofweek), exist on CalendarDatePicker and are forwarded to the internal CalendarView to let you modify it.
 
-However, you can't change the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectionmode) of the internal CalendarView to allow multiple selection. If you need to let a user pick multiple dates or need a calendar to be always visible, consider using a calendar view instead of a calendar date picker. See the [Calendar view](../../../design/controls/calendar-view.md) article for more info on how you can modify the calendar display.
+However, you can't change the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.calendarview.selectionmode) of the internal CalendarView to allow multiple selection. If you need to let a user pick multiple dates or need a calendar to be always visible, consider using a calendar view instead of a calendar date picker. See the [Calendar view](calendar-view.md) article for more info on how you can modify the calendar display.
 
 ### Selecting dates
 
@@ -88,7 +88,7 @@ The default placeholder text is "select a date". You can remove this by setting 
 
 ## Related articles
 
-- [Date and time controls](../../../design/controls/date-and-time.md)
-- [Calendar view](../../../design/controls/calendar-view.md)
-- [Date picker](../../../design/controls/date-picker.md)
-- [Time picker](../../../design/controls/time-picker.md)
+- [Date and time controls](date-and-time.md)
+- [Calendar view](calendar-view.md)
+- [Date picker](date-picker.md)
+- [Time picker](time-picker.md)

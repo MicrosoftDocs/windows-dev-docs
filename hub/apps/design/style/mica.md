@@ -71,7 +71,7 @@ Mica is ideal as a foundation layer in your app's hierarchy due to its inactive 
 
 To give your app's window a seamless look, Mica should be visible in the title bar if you choose to apply the material to your app. You can show Mica in the title bar by extending your app into the non-client area and creating a transparent custom title bar. For more info, see [Title bar](../basics/titlebar-design.md).
 
-The following examples showcase common implementations of the layering strategy with [NavigationView](../controls/navigationview.md) where Mica is visible in the title bar area.
+The following examples showcase common implementations of the layering strategy with [NavigationView](../../develop/ui/controls/navigationview.md) where Mica is visible in the title bar area.
 
 * Standard pattern in Left NavigationView.
 * Standard pattern in Top NavigationView.
@@ -132,4 +132,4 @@ To use Mica in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11
 - [Layering and Elevation](../signature-experiences/layering.md)
 - [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../develop/ui/system-backdrops.md)
 - [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md)
-- [NavigationView](../controls/navigationview.md)
+- [NavigationView](../../develop/ui/controls/navigationview.md)

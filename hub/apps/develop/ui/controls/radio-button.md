@@ -16,7 +16,7 @@ Radio buttons, also called option buttons, let users select one option from a co
 
 In the default state, no radio button in a RadioButtons group is selected. That is, all radio buttons are cleared. However, once a user has selected a radio button, the user can't deselect the button to restore the group to its initial cleared state.
 
-The singular behavior of a RadioButtons group distinguishes it from [check boxes](../../../design/controls/checkbox.md), which support multi-selection and deselection, or clearing.
+The singular behavior of a RadioButtons group distinguishes it from [check boxes](checkbox.md), which support multi-selection and deselection, or clearing.
 
 :::image type="content" source="images/controls/radio-button.png" alt-text="Example of a RadioButtons group, with one radio button selected" border="false":::
 
@@ -28,11 +28,11 @@ Use radio buttons to let users select from two or more mutually exclusive option
 
 Use radio buttons when users need to see all options before they make a selection. Radio buttons emphasize all options equally, which means that some options might draw more attention than is necessary or desired.
 
-Unless all options deserve equal attention, consider using other controls. For example, to recommend a single best option for most users and in most situations, use a [combo box](../../../design/controls/combo-box.md) to display that best option as the default option.
+Unless all options deserve equal attention, consider using other controls. For example, to recommend a single best option for most users and in most situations, use a [combo box](combo-box.md) to display that best option as the default option.
 
 :::image type="content" source="images/combo-box-collapsed.png" alt-text="A combo box, displaying a default option" border="false":::
 
-If there are only two possible options that can be expressed clearly as a single binary choice, such as on/off or yes/no, combine them into a single [check box](../../../design/controls/checkbox.md) or [toggle switch](../../../design/controls/toggles.md) control. For example, use a single check box for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
+If there are only two possible options that can be expressed clearly as a single binary choice, such as on/off or yes/no, combine them into a single [check box](checkbox.md) or [toggle switch](toggles.md) control. For example, use a single check box for "I agree" instead of two radio buttons for "I agree" and "I don't agree."
 
 Don't use two radio buttons for a single binary choice:
 
@@ -42,15 +42,15 @@ Use a check box instead:
 
 :::image type="content" source="images/radiobutton-vs-checkbox-cb.png" alt-text="A check box is a good alternative for presenting a binary choice" border="false":::
 
-When users can select multiple options, use [check boxes](../../../design/controls/checkbox.md).
+When users can select multiple options, use [check boxes](checkbox.md).
 
 :::image type="content" source="images/checkbox2.png" alt-text="Check boxes support multiselection" border="false":::
 
-When users' options lie within a range of values (for example, *10, 20, 30, ... 100*), use a [slider](../../../design/controls/slider.md) control.
+When users' options lie within a range of values (for example, *10, 20, 30, ... 100*), use a [slider](slider.md) control.
 
 :::image type="content" source="images/controls/slider.png" alt-text="A slider control, displaying one value in a range of values" border="false":::
 
-If there are more than eight options, use a [combo box](../../../design/controls/combo-box.md).
+If there are more than eight options, use a [combo box](combo-box.md).
 
 :::image type="content" source="images/combo-box-scroll.png" alt-text="A list box, displaying multiple options" border="false":::
 
@@ -75,7 +75,7 @@ There are two ways to create radio button groups: RadioButtons and RadioButton.
 
 Keyboard access and navigation behavior have been optimized in the [RadioButtons](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons) control. These improvements help both accessibility and keyboard power users move through the list of options more quickly and easily.
 
-In addition to these improvements, the default visual layout of individual radio buttons in a RadioButtons group has been optimized through automated orientation, spacing, and margin settings. This optimization eliminates the requirement to specify these properties, as you might have to do when you use a more primitive grouping control, such as [StackPanel](../../../design/layout/layout-panels.md#stackpanel) or [Grid](../../../design/layout/layout-panels.md#grid).
+In addition to these improvements, the default visual layout of individual radio buttons in a RadioButtons group has been optimized through automated orientation, spacing, and margin settings. This optimization eliminates the requirement to specify these properties, as you might have to do when you use a more primitive grouping control, such as [StackPanel](../layout-panels.md#stackpanel) or [Grid](../layout-panels.md#grid).
 
 ### Navigating a RadioButtons group
 
@@ -129,7 +129,7 @@ When a user tabs into the list where a radio button is already selected, the sel
 
 #### Keyboard navigation
 
-For more information about general keyboard navigation behaviors, see [Keyboard interactions - Navigation](../../../design/input/keyboard-interactions.md#navigation).
+For more information about general keyboard navigation behaviors, see [Keyboard interactions - Navigation](../../input/keyboard-interactions.md#navigation).
 
 When an item in a `RadioButtons` group already has focus, the user can use arrow keys for "inner navigation" between the items within the group. The Up and Down arrow keys move to the "next" or "previous" logical item, as defined in your XAML markup. The Left and Right arrow keys move spatially.
 
@@ -190,7 +190,7 @@ In a multi-column, multi-row grid layout, keyboard navigation results in this be
    :::column-end:::
 :::row-end:::
 
-For more information, see [Keyboard interactions](../../../design/input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
+For more information, see [Keyboard interactions](../../input/keyboard-interactions.md#wrapping-homogeneous-list-and-grid-view-items).
 
 ###### Wrapping
 
@@ -552,10 +552,10 @@ The following images show the preferred spacing of radio buttons in a group.
 
 ## Related topics
 
-- [Buttons](../../../design/controls/buttons.md)
-- [Toggle switches](../../../design/controls/toggles.md)
-- [Check boxes](../../../design/controls/checkbox.md)
-- [Lists and combo boxes](../../../design/controls/lists.md)
-- [Sliders](../../../design/controls/slider.md)
+- [Buttons](buttons.md)
+- [Toggle switches](toggles.md)
+- [Check boxes](checkbox.md)
+- [Lists and combo boxes](lists.md)
+- [Sliders](slider.md)
 - [RadioButtons class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobuttons)
 - [RadioButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiobutton)

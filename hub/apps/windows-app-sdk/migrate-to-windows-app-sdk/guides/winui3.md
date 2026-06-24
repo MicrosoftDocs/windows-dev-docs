@@ -90,7 +90,7 @@ auto width{ App::Window().Bounds().Width };
 
 In your UWP app, if you use certain types from the [**Windows.UI.Popups**](/uwp/api/windows.ui.popups) or [**Windows.Storage.Pickers**](/uwp/api/windows.storage.pickers) namespaces, then this section contains info to help you migrate that code. The code examples below use **MessageDialog**, but you can apply exactly the same techniques to displaying a picker (for example, a [**FileOpenPicker**](/uwp/api/windows.storage.pickers.fileopenpicker), a [**FileSavePicker**](/uwp/api/windows.storage.pickers.filesavepicker), or a [**FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker)).
 
-The steps that you have to follow in a desktop app are described in [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
+The steps that you have to follow in a desktop app are described in [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui/display-ui-objects.md).
 
 > [!NOTE]
 > For new apps, we recommend using the [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) control instead of [**MessageDialog**](/uwp/api/windows.ui.popups.messagedialog). For more info, see the [ContentDialog, and Popup](#contentdialog-and-popup) section below.
@@ -177,7 +177,7 @@ dataTransferManager.DataRequested([](Windows::ApplicationModel::DataTransfer::Da
 Windows::ApplicationModel::DataTransfer::DataTransferManager::ShowShareUI();
 ```
 
-To use **DataTransferManager.ShowShareUI** in your Windows App SDK app, you need to associate the Share UI with your window. And that needs to be done manually. For more info, and code examples, see [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
+To use **DataTransferManager.ShowShareUI** in your Windows App SDK app, you need to associate the Share UI with your window. And that needs to be done manually. For more info, and code examples, see [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui/display-ui-objects.md).
 
 ## ContentDialog, and Popup
 
@@ -231,7 +231,7 @@ If on the other hand you want or need navigation between pages in your Windows A
 
 Also see [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation). If you *do* have a UWP app that's simple enough where you can copy your XAML markup and code-behind into **MainWindow**, then bear in mind these exceptions.
 
-Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](../../../design/layout/layouts-with-xaml.md)). You have these two options, though:
+Your **MainWindow** class (of type [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window)) isn't a control, so it doesn't support Visual State Manager XAML markup and code-behind (see [Tutorial: Create adaptive layouts](../../../develop/ui/layouts-with-xaml.md)). You have these two options, though:
 
 * Add a **UserControl** item to the project, and migrate your markup and code-behind to that. Then place an instance of that user control in **MainWindow**.
 * Add a **Page** item to the project, and migrate your markup and code-behind to that. Then add code to your **App** class to navigate to that **Page** on startup, as described in [Do I need to implement page navigation?](#do-i-need-to-implement-page-navigation).
@@ -256,4 +256,4 @@ So if you're accessing the **AcrylicBrush.BackgroundSource** property in the sou
 ## Related topics
 
 * [Windows App SDK and supported Windows releases](../../support.md)
-* [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md)
+* [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui/display-ui-objects.md)

@@ -23,7 +23,7 @@ In your WinUI 3 app, you can show your app content in secondary windows while st
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 > [!TIP]
-> A common reason to use multiple windows is to allow [TabView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview) tabs to be torn out into a new window. For information and examples specific to this scenario, see [Tab tear-out](/windows/apps/design/controls/tab-view#tab-tear-out) in the [Tab view](../../design/controls/tab-view.md) article.
+> A common reason to use multiple windows is to allow [TabView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview) tabs to be torn out into a new window. For information and examples specific to this scenario, see [Tab tear-out](/windows/apps/design/controls/tab-view#tab-tear-out) in the [Tab view](controls/tab-view.md) article.
 
 ## API overview
 
@@ -33,11 +33,11 @@ Here are some of the important APIs you use to show content in multiple windows.
 
 The [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) classes can be used to display a portion of an app in a secondary window. An important feature of WinUI windows is that each instance shares the same UI processing thread (including the event dispatcher) from which they were created, which simplifies multi-window apps.
 
-See [Windowing overview for WinUI and Windows App SDK](../ui-input/windowing-overview.md) for a more detailed explanation of Window and AppWindow.
+See [Windowing overview for WinUI and Windows App SDK](windowing-overview.md) for a more detailed explanation of Window and AppWindow.
 
 ### AppWindowPresenter
 
-The [AppWindowPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter) API lets you easily switch windows into pre-defined configurations like `FullScreen` or `CompactOverlay`. For more info, see [Manage app windows](../ui-input/windowing-overview.md).
+The [AppWindowPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowpresenter) API lets you easily switch windows into pre-defined configurations like `FullScreen` or `CompactOverlay`. For more info, see [Manage app windows](windowing-overview.md).
 
 ### XamlRoot
 
@@ -182,7 +182,7 @@ public sealed partial class SecondaryPage : Page
 
 ## Related topics
 
-- [Windowing overview](../ui-input/windowing-overview.md)
-- [Manage app windows](../ui-input/manage-app-windows.md)
-- [Tab view](../../design/controls/tab-view.md)
+- [Windowing overview](windowing-overview.md)
+- [Manage app windows](manage-app-windows.md)
+- [Tab view](controls/tab-view.md)
 - [Show multiple views (UWP)](/windows/uwp/ui-input/show-multiple-views)

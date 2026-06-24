@@ -74,9 +74,9 @@ If you use WinUI XAML as your app's UI framework, both the [Window](/windows/win
 | [Close](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.close), [Closed](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.closed) | [Destroy](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroy), [Destroying](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.destroying), [Closing](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.closing) |
 | >>> | [Id](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.id), [OwnerWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.ownerwindowid) |
 
-When you create a new WinUI project in Visual Studio, the project template provides a `MainWindow` class for you, which is a sub-class of [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window). If your app only needs one window, this is all you need. To learn how to create and manage additional windows, and why you might want to, see [Show multiple windows for your app](../ui-input/multiple-windows.md).
+When you create a new WinUI project in Visual Studio, the project template provides a `MainWindow` class for you, which is a sub-class of [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window). If your app only needs one window, this is all you need. To learn how to create and manage additional windows, and why you might want to, see [Show multiple windows for your app](multiple-windows.md).
 
-The [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class has APIs to create and destroy a new window; however, for a WinUI app, you won't do this in practice because there is no API to attach content to the window you create. Instead, you get an instance of AppWindow that's created by the system and associated with the XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and HWND. In WinUI 1.4 and later, you can use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get the instance of AppWindow. In other cases, you can use the static [AppWindow.GetFromWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid) method to get the AppWindow instance. See [Manage app windows](../ui-input/manage-app-windows.md) for more info.
+The [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class has APIs to create and destroy a new window; however, for a WinUI app, you won't do this in practice because there is no API to attach content to the window you create. Instead, you get an instance of AppWindow that's created by the system and associated with the XAML [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and HWND. In WinUI 1.4 and later, you can use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get the instance of AppWindow. In other cases, you can use the static [AppWindow.GetFromWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid) method to get the AppWindow instance. See [Manage app windows](manage-app-windows.md) for more info.
 
 ### Content
 
@@ -182,12 +182,12 @@ auto width{ App::Window().Bounds().Width };
 ```
 
 > [!IMPORTANT]
-> Using a static `Window` property in your `App` class is useful if your app only uses a single window. If your app uses multiple windows, you should use [WindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid) to track the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) instances instead, to ensure that you are accessing the correct instance of Window. See [Show multiple windows for your app](../ui-input/multiple-windows.md) for more info and examples.
+> Using a static `Window` property in your `App` class is useful if your app only uses a single window. If your app uses multiple windows, you should use [WindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowid) to track the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) instances instead, to ensure that you are accessing the correct instance of Window. See [Show multiple windows for your app](multiple-windows.md) for more info and examples.
 
 ## Related topics
 
-- [Manage app windows](../ui-input/manage-app-windows.md)
+- [Manage app windows](manage-app-windows.md)
 - [Windowing functionality migration](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md)
 - [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
-- [Retrieve a window handle (HWND)](../ui-input/retrieve-hwnd.md)
+- [Retrieve a window handle (HWND)](retrieve-hwnd.md)
 - [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)

@@ -21,7 +21,7 @@ A text block is typically easier to use and provides better text rendering perfo
 
 Although you can put line breaks in the text, text block is designed to display a single paragraph and doesn't support text indentation. Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images.
 
-For more info about choosing the right text control, see the [Text controls](../../../design/controls/text-controls.md) article.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Create a text block
 
@@ -164,7 +164,7 @@ Typography.SetStylisticSet4(textBlock1, true);
 
 ## Related articles
 
-- [Text controls](../../../design/controls/text-controls.md)
+- [Text controls](text-controls.md)
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
 - [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
 - [String.Length property](/dotnet/api/system.string.length)

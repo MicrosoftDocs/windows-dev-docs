@@ -94,7 +94,7 @@ Here's how the items would appear when displayed with this **DataTemplate**.
 
 ![Items displayed with a data template](images/listview-itemstemplate.png)
 
-The number of elements used in the **DataTemplate** for an item can have a significant impact on performance if your view displays a large number of items. For more info and examples of how to use **DataTemplate**s to define the look of items in your list, see [Item containers and templates](../../../design/controls/item-containers-templates.md).
+The number of elements used in the **DataTemplate** for an item can have a significant impact on performance if your view displays a large number of items. For more info and examples of how to use **DataTemplate**s to define the look of items in your list, see [Item containers and templates](item-containers-templates.md).
 
 > [!TIP]
 > For convenience when you want to declare the template inline rather than referenced as a static resource, you can specify the **DataTemplate** or **DataTemplateSelector** as the direct child of the **ItemsRepeater**.  It will be assigned as the value of the **ItemTemplate** property. For example, this is valid:
@@ -739,11 +739,11 @@ public class MyPage : Page
 [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater) does not provide a default accessibility experience. The documentation on [Usability for Windows apps](../../../design/usability/index.md) provides a wealth of information to help you ensure your app provides an inclusive user experience. If you're using the ItemsRepeater to create a custom control then be sure to see the documentation on [Custom automation peers](../../../design/accessibility/custom-automation-peers.md).
 
 ### Keyboarding
-The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](../../../design/input/focus-navigation.md#2d-directional-navigation-for-keyboard).
+The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](../../input/focus-navigation.md#2d-directional-navigation-for-keyboard).
 
 ![Direction Navigation](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
 
-The ItemsRepeater's [XYFocusKeyboardNavigation mode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](../../../design/input/keyboard-interactions.md) such as Home, End, PageUp, and PageDown.
+The ItemsRepeater's [XYFocusKeyboardNavigation mode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](../../input/keyboard-interactions.md) such as Home, End, PageUp, and PageDown.
 
 The ItemsRepeater does automatically ensure that the default tab order for its items (whether virtualized or not) follows the same order that the items are given in the data. By default the ItemsRepeater has its [TabFocusNavigation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.tabfocusnavigation) property set to [Once](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.keyboardnavigationmode) instead of the common default of _Local_.
 
@@ -794,6 +794,6 @@ internal sealed class CardControl : CardControlBase
 
 ## Related articles
 
-- [Lists](../../../design/controls/lists.md)
+- [Lists](lists.md)
 - [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
 - [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)

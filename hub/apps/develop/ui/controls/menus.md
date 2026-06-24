@@ -18,11 +18,11 @@ Menu flyouts are used in menu and context menu scenarios to display a list of co
 
 ## Is this the right control?
 
-See [menus and context menus](../../../design/controls/menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use menu flyout vs. [command bar flyout](../../../design/controls/command-bar-flyout.md).
+See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use menu flyout vs. [command bar flyout](command-bar-flyout.md).
 
-Menu flyouts can be used as menus and context menus to organize commands. To display arbitrary content, such as a notification or confirmation request, use a [dialog or a flyout](../../../design/controls/dialogs-and-flyouts/index.md).
+Menu flyouts can be used as menus and context menus to organize commands. To display arbitrary content, such as a notification or confirmation request, use a [dialog or a flyout](dialogs-and-flyouts/index.md).
 
-If a particular command will be used frequently and you have the space available, see [collection commanding](../../../design/controls/collection-commanding.md) for examples on placing a command directly in its own element so that users don't have to go through a menu to get to it.
+If a particular command will be used frequently and you have the space available, see [collection commanding](collection-commanding.md) for examples on placing a command directly in its own element so that users don't have to go through a menu to get to it.
 
 ## Create a menu flyout
 
@@ -211,7 +211,7 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
 ## Related articles
 
 - [Command design basics for Windows apps](../../../design/basics/commanding-basics.md)
-- [Menus and context menus](../../../design/controls/menus-and-context-menus.md)
-- [Contextual commanding for collections and lists](../../../design/controls/collection-commanding.md)
+- [Menus and context menus](menus-and-context-menus.md)
+- [Contextual commanding for collections and lists](collection-commanding.md)
 - [MenuFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout)
 - [MenuBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar)

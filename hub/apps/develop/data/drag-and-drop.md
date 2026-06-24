@@ -218,7 +218,7 @@ The [UIElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) 
 
 ## See also
 
-- [App-to-app communication](../../design/input/index.md)
+- [App-to-app communication](../input/index.md)
 - [AllowDrop](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.allowdrop)
 - [CanDrag](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.candrag)
 - [DragOver](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.dragover)

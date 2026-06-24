@@ -19,7 +19,7 @@ See the [Title bar](../design/basics/titlebar-design.md) design article for guid
 > [See the Windows 11 Fluent Design guidance for title bar](../design/basics/titlebar-design.md)
 
 > [!IMPORTANT]
-> A new [Title bar](../design/controls/title-bar.md) control has been added in Windows App SDK 1.7. It simplifies the process of title bar customization.
+> A new [Title bar](ui/controls/title-bar.md) control has been added in Windows App SDK 1.7. It simplifies the process of title bar customization.
 
 > [!div class="checklist"]
 >
@@ -615,7 +615,7 @@ private void AppWindow_Changed(AppWindow sender, AppWindowChangedEventArgs args)
 ```
 
 >[!NOTE]
->_Full screen_ and _compact overlay_ modes can be entered only if supported by your app. See [Manage app windows](ui-input/manage-app-windows.md), [FullScreenPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.fullscreenpresenter), and [CompactOverlayPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter) for more info.
+>_Full screen_ and _compact overlay_ modes can be entered only if supported by your app. See [Manage app windows](ui/manage-app-windows.md), [FullScreenPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.fullscreenpresenter), and [CompactOverlayPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter) for more info.
 
 ## Do's and don'ts
 
@@ -885,7 +885,7 @@ public sealed partial class MainWindow : Window
 ## Related articles
 
 - [Title bar customization (UWP)](/windows/uwp/ui-input/title-bar)
-- [Title Bar (Control)](../design/controls/title-bar.md)
+- [Title Bar (Control)](ui/controls/title-bar.md)
 - [Acrylic](../design/style/acrylic.md)
 - [Mica](../design/style/mica.md)
 - [Color](../design/style/color.md)

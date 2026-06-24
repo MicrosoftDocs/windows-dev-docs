@@ -83,7 +83,7 @@ Each sound relates to a certain basic user interaction, and although sounds can 
 
 The most common control-triggered sound in our system today is the **Invoke** sound. This sound plays when a user invokes a control through a tap/click/enter/space or press of the 'A' button on a gamepad.
 
-Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../../design/input/index.md).
+Typically, this sound is only played when a user explicitly targets a simple control or control part through an [input device](../input/index.md).
 
 
 To play this sound from any control event, simply call the Play method from **ElementSoundPlayer** and pass in **ElementSound.Invoke**:
@@ -107,7 +107,7 @@ ElementSoundPlayer.Play(ElementSoundKind.Hide);
 ```
 ### Navigation Within a Page
 
-When navigating between panels or views within an app's page (see [NavigationView](../../design/controls/navigationview.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
+When navigating between panels or views within an app's page (see [NavigationView](controls/navigationview.md)), there is typically bidirectional movement. Meaning you can move to the next view/panel or the previous one, without leaving the current app page you're on.
 
 The audio experience around this navigation concept is encompassed by the **MovePrevious** and **MoveNext** sounds.
 

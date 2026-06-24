@@ -163,7 +163,7 @@ The input for [**Arrange**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml
 
 What typically varies between [**ArrangeOverride**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.arrangeoverride) implementations is the logic by which the panel determines the [**Point**](/uwp/api/Windows.Foundation.Point) component of how it arranges each child. An absolute positioning panel such as [**Canvas**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Canvas) uses the explicit placement info that it gets from each element through [**Canvas.Left**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.left) and [**Canvas.Top**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.top) values. A space-dividing panel such as [**Grid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Grid) would have mathematical operations that divided the available space into cells and each cell would have an x-y value for where its content should be placed and arranged. An adaptive panel such as [**StackPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.StackPanel) might be expanding itself to fit content in its orientation dimension.
 
-There are still additional positioning influences on elements in layout, beyond what you directly control and pass to [**Arrange**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.arrange). These come from the internal native implementation of **Arrange** that's common to all [**FrameworkElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement) derived types and augmented by some other types such as text elements. For example, elements can have margin and alignment, and some can have padding. These properties often interact. For more info, see [Alignment, margin, and padding](alignment-margin-padding.md).
+There are still additional positioning influences on elements in layout, beyond what you directly control and pass to [**Arrange**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.arrange). These come from the internal native implementation of **Arrange** that's common to all [**FrameworkElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.FrameworkElement) derived types and augmented by some other types such as text elements. For example, elements can have margin and alignment, and some can have padding. These properties often interact. For more info, see [Alignment, margin, and padding](../../develop/ui/alignment-margin-padding.md).
 
 ## Panels and controls
 
@@ -192,4 +192,4 @@ There are some other APIs that are part of the layout system, but aren't declare
 * [**Panel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Panel)
 
 **Concepts**
-* [Alignment, margin, and padding](alignment-margin-padding.md)
+* [Alignment, margin, and padding](../../develop/ui/alignment-margin-padding.md)

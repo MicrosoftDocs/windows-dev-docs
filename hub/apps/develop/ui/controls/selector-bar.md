@@ -34,10 +34,10 @@ Some examples include:
 
 There are some scenarios where another control may be more appropriate to use.
 
-- Use [NavigationView](../../../design/controls/navigationview.md) when you require consistent, top-level app navigation that adapts to different window sizes.
-- Use [TabView](../../../design/controls/tab-view.md) when the user should be able to open, close, rearrange, or tear off new views of the content.
-- Use [PipsPager](../../../design/controls/pipspager.md) when you need regular pagination of a single data view.
-- Use [RadioButtons](../../../design/controls/radio-button.md) when an option is not selected by default, and context is unrelated to page navigation.
+- Use [NavigationView](navigationview.md) when you require consistent, top-level app navigation that adapts to different window sizes.
+- Use [TabView](tab-view.md) when the user should be able to open, close, rearrange, or tear off new views of the content.
+- Use [PipsPager](pipspager.md) when you need regular pagination of a single data view.
+- Use [RadioButtons](radio-button.md) when an option is not selected by default, and context is unrelated to page navigation.
 
 ## Create a SelectorBar control
 

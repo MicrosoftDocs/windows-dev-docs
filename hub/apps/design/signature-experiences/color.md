@@ -19,7 +19,7 @@ Windows employs color to help users focus on their tasks by indicating a visual 
 
 ![Color hero image](images/color_hero_1880.png)
 
-Windows supports two color modes, or themes: light and dark. Each mode consists of a set of neutral color values that are automatically adjusted to ensure optimal contrast. Windows apps can use a light or dark application theme, which affects the colors of the app's background, text, icons, and [common controls](../controls/index.md).
+Windows supports two color modes, or themes: light and dark. Each mode consists of a set of neutral color values that are automatically adjusted to ensure optimal contrast. Windows apps can use a light or dark application theme, which affects the colors of the app's background, text, icons, and [common controls](../../develop/ui/controls/index.md).
 
 In both light and dark color modes, darker colors indicate background surfaces of less importance. Important surfaces are highlighted with lighter and brighter colors. See [layering & elevation](layering.md) for more information.
 

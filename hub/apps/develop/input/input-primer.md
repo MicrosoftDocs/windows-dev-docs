@@ -115,7 +115,7 @@ In general, touch is:
 
 ### More info
 
-[Touch design guidelines](../../design/input/touch-interactions.md)
+[Touch design guidelines](touch-interactions.md)
  
 
 ## Touchpad
@@ -138,7 +138,7 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 
 ### More info
 
-[Touchpad design guidelines](../../design/input/touch-interactions.md)
+[Touchpad design guidelines](touchpad-interactions.md)
  
 
 ## Keyboard
@@ -171,7 +171,7 @@ In general, a keyboard is:
 
 ### More info
 
-[Keyboard design guidelines](../../design/input/keyboard-interactions.md)
+[Keyboard design guidelines](keyboard-interactions.md)
  
 
 ## Mouse
@@ -195,7 +195,7 @@ You should provide mouse-specific UI commands, or affordances, to support these 
 
 ### More info
 
-[Mouse design guidelines](../../design/input/mouse-interactions.md)
+[Mouse design guidelines](mouse-interactions.md)
  
 
 ## Gesture

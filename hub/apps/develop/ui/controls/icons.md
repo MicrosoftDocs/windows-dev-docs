@@ -203,7 +203,7 @@ Motion is an important part of the Fluent Design language. Animated icons draw a
 
 You can use animated icons to implement lightweight, vector-based icons with motion using [Lottie](/windows/communitytoolkit/animations/lottie) animations.
 
-For more information and examples, see [Animated icons](../../../design/controls/animated-icon.md) and the [AnimatedIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon) class documentation.
+For more information and examples, see [Animated icons](animated-icon.md) and the [AnimatedIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.animatedicon) class documentation.
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app to see AnimatedIcon in action](winui3gallery://item/AnimatedIcon)
@@ -297,11 +297,11 @@ An ImageIcon ignores the [Foreground](/windows/windows-app-sdk/api/winrt/microso
 For more information and examples, see the [ImageIcon](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.imageicon) class documentation.
 
 > [!TIP]
-> Usage of ImageIcon is similar to the Image control; see the [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) class for more information that's applicable to ImageIcon. One notable difference is that with ImageIcon, only the first frame of a multi-frame image (like an animated GIF) is used. To use animated icons, see [AnimatedIcon](../../../design/controls/animated-icon.md).
+> Usage of ImageIcon is similar to the Image control; see the [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) class for more information that's applicable to ImageIcon. One notable difference is that with ImageIcon, only the first frame of a multi-frame image (like an animated GIF) is used. To use animated icons, see [AnimatedIcon](animated-icon.md).
 
 ## Related articles
 
 - [Iconography in Windows](../../../design/signature-experiences/iconography.md)
 - [App icons](../../../design/style/iconography/overview.md)
-- [AnimatedIcon](../../../design/controls/animated-icon.md)
-- [Command bar](../../../design/controls/command-bar.md)
+- [AnimatedIcon](animated-icon.md)
+- [Command bar](command-bar.md)

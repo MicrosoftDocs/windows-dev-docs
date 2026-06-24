@@ -32,7 +32,7 @@ The following diagrams demonstrate the differences between resizing and optical 
 ![moving the fingers closer together shrinks an object and moving them apart enlarges it](images/objectresize.png)
 
 **Note**  
-Optical zoom shouldn't be confused with [Semantic Zoom](../../design/controls/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
+Optical zoom shouldn't be confused with [Semantic Zoom](../ui/controls/semantic-zoom.md). Although the same gestures are used for both interactions, semantic zoom refers to the presentation and navigation of content organized within a single view (such as the folder structure of a computer, a library of documents, or a photo album).
 
  
 
@@ -53,9 +53,9 @@ Use the following guidelines for apps that support either resizing or optical zo
 -   Use inertia physics. These include the following:
     -   Deceleration: Occurs when the user stops pinching or stretching. This is similar to sliding to a stop on a slippery surface.
     -   Bounce: A slight bounce-back effect occurs when a size constraint or boundary is passed.
--   Space controls according to the [Guidelines for targeting](../../design/input/guidelines-for-targeting.md).
+-   Space controls according to the [Guidelines for targeting](guidelines-for-targeting.md).
 -   Provide scaling handles for constrained resizing. Isometric, or proportional, resizing is the default if the handles are not specified.
--   Don't use zooming to navigate the UI or expose additional controls within your app, use a panning region instead. For more info on panning, see [Guidelines for panning](../../design/input/guidelines-for-panning.md).
+-   Don't use zooming to navigate the UI or expose additional controls within your app, use a panning region instead. For more info on panning, see [Guidelines for panning](guidelines-for-panning.md).
 -   Don't put resizable objects within a resizable content area. Exceptions to this include:
     -   Drawing applications where resizable items can appear on a resizable canvas or art board.
     -   Webpages with an embedded object such as a map.

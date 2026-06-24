@@ -160,7 +160,7 @@ Now, as the user types in their filtering string in the `FilterByLastName` TextB
 
 ## Related articles
 
-- [Lists](../../../design/controls/lists.md)
-- [Items view](../../../design/controls/itemsview.md)
-- [List view and grid view](../../../design/controls/listview-and-gridview.md)
-- [Collection commanding](../../../design/controls/collection-commanding.md)
+- [Lists](lists.md)
+- [Items view](itemsview.md)
+- [List view and grid view](listview-and-gridview.md)
+- [Collection commanding](collection-commanding.md)

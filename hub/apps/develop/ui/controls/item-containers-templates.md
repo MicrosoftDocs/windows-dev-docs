@@ -79,7 +79,7 @@ Here's the XAML that creates this item. We explain the templates later.
  
 ## Prerequisites
 
-- We assume that you know how to use a list view control. For more info, see the [ListView and GridView](../../../design/controls/listview-and-gridview.md) article.
+- We assume that you know how to use a list view control. For more info, see the [ListView and GridView](listview-and-gridview.md) article.
 - We also assume that you understand control styles and templates, including how to use a style inline or as a resource. For more info, see [Styling controls](../../platform/xaml/xaml-styles.md) and [Control templates](../../platform/xaml/xaml-control-templates.md).
 
 ## The data
@@ -307,7 +307,7 @@ An item's control template contains the visuals that display state, like selecti
 
 - Hover – A light gray rectangle drawn below the data template.  
 - Selection – A light blue rectangle drawn below the data template. 
-- Keyboard focus– A [High Visibility Focus Visual](../../../design/input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals) drawn on top of the item template.
+- Keyboard focus– A [High Visibility Focus Visual](../../input/guidelines-for-visualfeedback.md#high-visibility-focus-visuals) drawn on top of the item template.
 
 ![List view state visuals](images/listview-state-visuals.png)
 
@@ -418,7 +418,7 @@ You can now modify properties on the ListViewItemPresenter to control the select
 
 #### Inline and Overlay selection visuals
 
-ListView and GridView indicate selected items in different ways depending on the control and the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode). For more info about list view selection, see [ListView and GridView](../../../design/controls/listview-and-gridview.md). 
+ListView and GridView indicate selected items in different ways depending on the control and the [SelectionMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewbase.selectionmode). For more info about list view selection, see [ListView and GridView](listview-and-gridview.md). 
 
 When **SelectionMode** is set to **Multiple**, a selection check box is shown as part of the item's control template. You can use the [SelectionCheckMarkVisualEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.listviewitempresenter.selectioncheckmarkvisualenabled) property to turn off the selection check box in Multiple selection mode. However, this property is ignored in other selection modes, so you can't turn on the check box in Extended or Single selection mode.
 
@@ -489,5 +489,5 @@ A copy of the expanded template from generic.xaml is created in your app, which 
 
 ## Related articles
 
-- [Lists](../../../design/controls/lists.md)
-- [ListView and GridView](../../../design/controls/listview-and-gridview.md)
+- [Lists](lists.md)
+- [ListView and GridView](listview-and-gridview.md)

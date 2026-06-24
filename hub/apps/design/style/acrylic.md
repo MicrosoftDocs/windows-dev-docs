@@ -56,13 +56,13 @@ For apps with context menus, flyouts, non-modal popups, or light-dismiss panes, 
 
 ![The desktop background showing through an open context menu using background acrylic](images/acrylic-transient-context-menu.png)
 
-Many XAML controls draw acrylic by default. [MenuFlyout](../controls/menus.md), [AutoSuggestBox](../controls/auto-suggest-box.md), [ComboBox](../controls/combo-box.md), and similar controls with light-dismiss popups all use acrylic while open.
+Many XAML controls draw acrylic by default. [MenuFlyout](../../develop/ui/controls/menus.md), [AutoSuggestBox](../../develop/ui/controls/auto-suggest-box.md), [ComboBox](../../develop/ui/controls/combo-box.md), and similar controls with light-dismiss popups all use acrylic while open.
 
 ### Supporting UI and vertical panes
 
 - Use **in-app acrylic** for supporting UI, such as on surfaces that may overlap content when scrolled or interacted with.
 
-If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow in your app. Using [NavigationView](../controls/navigationview.md) will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly can result in visual noise.
+If you are using in-app acrylic on navigation surfaces, consider extending content beneath the acrylic pane to improve the flow in your app. Using [NavigationView](../../develop/ui/controls/navigationview.md) will do this for you automatically. However, to avoid creating a striping effect, try not to place multiple pieces of acrylic edge-to-edge - this can create an unwanted seam between the two blurred surfaces. Acrylic is a tool to bring visual harmony to your designs, but when used incorrectly can result in visual noise.
 
 For vertical panes or surfaces that help section off content of your app, we recommend you use an opaque background instead of acrylic. If your vertical panes open on top of content, like in NavigationView's **Compact** or **Minimal** modes, we suggest you use in-app acrylic to help maintain the page's context when the user has this pane open.
 
@@ -86,7 +86,7 @@ In addition, only background acrylic will replace its translucency and texture w
 
 ### Legibility considerations
 
-It's important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We've optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../controls/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
+It's important to ensure that any text your app presents to users meets contrast ratios (see [Accessible text requirements](../accessibility/accessible-text-requirements.md)). We've optimized the acrylic resources such that text meets contrast ratios on top of acrylic. We don't recommend placing accent-colored text on your acrylic surfaces because these combinations are likely to not pass minimum contrast ratio requirements at the default 14px font size. Try to avoid placing [hyperlinks](../../develop/ui/controls/hyperlinks.md) over acrylic elements. Also, if you choose to customize the acrylic tint color or opacity level, keep the impact on legibility in mind.
 
 ## Apply acrylic in your app
 

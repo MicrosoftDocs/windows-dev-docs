@@ -46,7 +46,7 @@ To start creating a layout, open **MainPage.xaml** by using the **Solution Explo
 
 The new **Grid** creates a set of two rows and columns, which defines the layout of the app interface. The first column has a **Width** of "3\*", while the second has "5\*", dividing the horizontal space between the two columns at a ratio of 3:5. In the same way, the two rows have a **Height** of "2\*" and "\*" respectively, so the **Grid** allocates two times as much space for the first row as for the second ("\*" is the same as "1\*"). These ratios are maintained even if the window is resized or the device is changed.
 
-To learn about other methods of sizing rows and columns, see [Define layouts with XAML](./layouts-with-xaml.md).
+To learn about other methods of sizing rows and columns, see [Define layouts with XAML](../../develop/ui/layouts-with-xaml.md).
 
 If you run the application now you won't see anything except a blank page, because none of the **Grid** areas have any content. To show the **Grid** let's give it some color.
 
@@ -117,4 +117,4 @@ If you like, try experimenting with the layout above, and explore different ways
 ## Related articles
 
 - For an introduction to designing Windows app layouts, see [Windows app silhouettes](../basics/app-silhouette.md)
-- To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](./layouts-with-xaml.md)
+- To learn about creating responsive layouts that adapt to different screen sizes, see [Define Page Layouts with XAML](../../develop/ui/layouts-with-xaml.md)
