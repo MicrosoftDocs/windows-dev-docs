@@ -1,7 +1,7 @@
 ---
 description: Learn how to add modern experiences for Windows users in a desktop app that you have packaged in a Windows app package.
 title: Modernize packaged desktop apps
-ms.date: 05/11/2023
+ms.date: 06/16/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -16,9 +16,15 @@ Universal Windows Platform (UWP) apps receive package identity by default becaus
 
 Only packaged apps (including apps packaged with external location) have package identity at runtime. If your app has package identity, then you can use the following features in your app.
 
+> [!NOTE]
+> For a complete list of features that require package identity — including Windows AI APIs, share targets, context menu extensions, and app services — see [Features that require package identity](/windows/apps/package-and-deploy/packaging/#features-that-require-package-identity).
+
 ## Notifications
 
-The Windows App SDK [notifications APIs](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) require your app to have package identity.
+[Push notifications](/windows/apps/develop/notifications/push-notifications/push-quickstart) require package identity for background delivery and COM activation, which are needed in most production push notification scenarios.
+
+> [!NOTE]
+> The Windows App SDK [app notifications APIs](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) (local app notifications) work in both packaged and unpackaged apps and do **not** require package identity. For more info, see [App notifications quickstart](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart).
 
 ## Integrate with package extensions
 

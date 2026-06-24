@@ -2,13 +2,16 @@
 description: Learn how to apply the Mica material in your Win32 applications.
 title: Use Mica material in Win32 apps
 ms.topic: how-to
-ms.date: 05/13/2022
+ms.date: 06/16/2026
 ms.localizationpriority: medium
 ---
 
 # Apply Mica in Win32 desktop apps for Windows 11
 
-Mica is an opaque material that incorporates the user's theme and desktop wallpaper to create a highly personalized appearance. As the user moves the window across the screen, the Mica material dynamically adapts to create a rich visualization using the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
+Mica is an opaque material that incorporates the user's theme and desktop wallpaper to create a highly personalized appearance. Mica is designed for performance as it only captures the background wallpaper once to create its visualization. As the user repositions the window, the Mica material dynamically adapts based on the wallpaper underneath the application. In addition, the material helps users focus on the current task by falling back to a neutral color when the app is inactive.
+
+> [!TIP]
+> **Mica Alt** is a variant of Mica with stronger tinting of the desktop background color, useful for apps with a tabbed title bar. To use Mica Alt, set [`MicaController.Kind`](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micacontroller.kind) to [`MicaKind.BaseAlt`](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.micakind) (the same controller used throughout this article). For more info, see [Apply Mica or Acrylic materials in desktop apps](../../../develop/ui/system-backdrops.md). For design guidance, see [Mica material](../../../design/style/mica.md).
 
 This article describes how to apply Mica as the base layer of your Win32 app, prioritizing application and visibility in the title bar area. For more information about app layering with Mica, see [Mica material](../../../design/style/mica.md).
 

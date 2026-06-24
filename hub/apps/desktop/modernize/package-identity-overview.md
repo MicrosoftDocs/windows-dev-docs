@@ -1,7 +1,7 @@
 ---
 description: An overview of Windows package identity and how it uniquely identifies a package.
 title: An overview of Package Identity in Windows apps
-ms.date: 01/10/2023
+ms.date: 06/16/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium
@@ -38,7 +38,7 @@ This construct is sometimes referred to as the _5-part tuple_.
 | Architecture | Enumeration | Min: N/A<br/>Max: N/A | Allowed values are "neutral", "x86", "x64", "arm", "arm64", "x86a64" |
 | ResourceId | Package String | Min: 0<br/>Max: 30 | Allowed values per Validate API (see [Package String](#what-is-a-package-string)) |
 | Publisher | String | Min: 1<br/>Max: 8192 | Allowed values per X.509 |
-| PublisherId | String | Min: 13<br/>Max: 13 | [Base32 encoded, Crockford variant](http://en.wikipedia.org/wiki/Base32#Crockford.27s_Base32), i.e. [a-hjkmnp-tv-z0-9] |
+| PublisherId | String | Min: 13<br/>Max: 13 | [Base32 encoded, Crockford variant](https://en.wikipedia.org/wiki/Base32#Crockford.27s_Base32), i.e. [a-hjkmnp-tv-z0-9] |
 
 ### What is a ‘Package String’?
 
@@ -143,14 +143,14 @@ HRESULT PublisherIdFromPublisher(
 {
     PCWSTR name{ L"xyz" };
     const size_t nameLength{ ARRAYSIZE(L"xyz") - 1 };
-    const size_t offsetToPublisherId{ name + 1 }; // xyz_...publisherid...
+    const size_t offsetToPublisherId{ nameLength + 1 }; // xyz_...publisherid...
     PACKAGE_ID id{};
     id.name = name;
     id.publisher = publisher;
  
-    WCHAR familyName[PACKAGE_PUBLISHERID_MAX_LENGTH + 1]{};
+    WCHAR familyName[PACKAGE_FAMILY_NAME_MAX_LENGTH + 1]{};
     UINT32 n{ ARRAYSIZE(familyName) };
-    RETURN_IF_WIN32_ERROR(PackageFamilyNameFromId(&id, &n, familyName);
+    RETURN_IF_WIN32_ERROR(PackageFamilyNameFromId(&id, &n, familyName));
     RETURN_IF_FAILED(StringCchCopyW(publisherId, PACKAGE_PUBLISHERID_MAX_LENGTH + 1, familyName + offsetToPublisherId));
     return S_OK;
 }
@@ -166,15 +166,15 @@ HRESULT PublisherIdFromPublisher(
     _Out_writes_(PACKAGE_PUBLISHERID_MAX_LENGTH + 1) PWSTR publisherId)
 {
     const WCHAR c_name[]{ L"xyz" };
-    const UINT32 c_nameLength{ ARRAYSIZE(c_nameForPublisherToPublisherId) - 1 };
+    const UINT32 c_nameLength{ ARRAYSIZE(c_name) - 1 };
 
     PACKAGE_ID id{};
     id.name = c_name;
     id.publisher = publisher;
-    WCHAR familyName[PACKAGE_PUBLISHERID_MAX_LENGTH + 1]{};
+    WCHAR familyName[PACKAGE_FAMILY_NAME_MAX_LENGTH + 1]{};
     UINT32 n{ ARRAYSIZE(familyName) };
     RETURN_IF_WIN32_ERROR(PackageFamilyNameFromId(&id, &n, familyName));
-    RETURN_IF_FAILED(StringCchCopyW(publisherId, PACKAGE_PUBLISHERID_MAX_LENGTH + 1,  familyName + c_nameLength + 1);
+    RETURN_IF_FAILED(StringCchCopyW(publisherId, PACKAGE_PUBLISHERID_MAX_LENGTH + 1, familyName + c_nameLength + 1));
     return S_OK;
 }
 ```
