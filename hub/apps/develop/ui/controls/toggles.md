@@ -146,6 +146,5 @@ You can also use more complex content by setting the [OnContentTemplate](/window
 ## Related articles
 
 - [ToggleSwitch class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch)
-- [Radio buttons](../../../design/controls/radio-button.md)
-- [Toggle switches](../../../design/controls/toggles.md)
-- [Check boxes](../../../design/controls/checkbox.md)
+- [Radio buttons](radio-button.md)
+- [Check boxes](checkbox.md)

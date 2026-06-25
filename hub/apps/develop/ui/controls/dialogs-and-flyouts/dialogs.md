@@ -19,7 +19,7 @@ Dialog controls are modal UI overlays that provide contextual app information. T
 
 Use dialogs to notify users of important information or to request confirmation or additional info before an action can be completed.
 
-For recommendations on when to use a dialog vs. when to use a flyout (a similar control), see [Dialogs and flyouts](../../../../design/controls/dialogs-and-flyouts/index.md).
+For recommendations on when to use a dialog vs. when to use a flyout (a similar control), see [Dialogs and flyouts](index.md).
 
 ## General guidelines
 
@@ -325,7 +325,7 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 </ul>
 
 ## Related articles
-- [Tooltips](../../../../design/controls/tooltips.md)
-- [Menus and context menu](../../../../design/controls/menus.md)
+- [Tooltips](../tooltips.md)
+- [Menus and context menu](../menus.md)
 - [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
 By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](../../../../desktop/modernize/xaml-islands/xaml-islands.md), you need to manually set the [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.

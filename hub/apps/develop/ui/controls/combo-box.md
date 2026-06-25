@@ -20,7 +20,7 @@ When the combo box is closed, it either displays the current selection or is emp
 
 - Use a drop-down list to let users select a single value from a set of items that can be adequately represented with single lines of text.
 - Use a list or grid view instead of a combo box to display items that contain multiple lines of text or images.
-- When there are fewer than five items, consider using [radio buttons](../../../design/controls/radio-button.md) (if only one item can be selected) or [check boxes](../../../design/controls/checkbox.md) (if multiple items can be selected).
+- When there are fewer than five items, consider using [radio buttons](radio-button.md) (if only one item can be selected) or [check boxes](checkbox.md) (if multiple items can be selected).
 - Use a combo box when the selection items are of secondary importance in the flow of your app. If the default option is recommended for most users in most situations, showing all the items by using a list view might draw more attention to the options than necessary. You can save space and minimize distraction by using a combo box.
 
 ## Examples
@@ -51,10 +51,10 @@ A list box allows the user to choose either a single item or multiple items from
 - A list box can be useful when items in the list are important enough to prominently display, and when there's enough screen real estate, to show the full list.
 - A list box should draw the user's attention to the full set of alternatives in an important choice. By contrast, a drop-down list initially draws the user's attention to the selected item.
 - Avoid using a list box if:
-  - There is a very small number of items for the list. A single-select list box that always has the same 2 options might be better presented as [radio buttons](../../../design/controls/radio-button.md). Also consider using radio buttons when there are 3 or 4 static items in the list.
+  - There is a very small number of items for the list. A single-select list box that always has the same 2 options might be better presented as [radio buttons](radio-button.md). Also consider using radio buttons when there are 3 or 4 static items in the list.
   - The list box is single-select and it always has the same 2 options where one can be implied as not the other, such as "on" and "off." Use a single check box or a toggle switch.
   - There is a very large number of items. A better choice for long lists are grid view and list view. For very long lists of grouped data, semantic zoom is preferred.
-  - The items are contiguous numerical values. If that's the case, consider using a [slider](../../../design/controls/slider.md).
+  - The items are contiguous numerical values. If that's the case, consider using a [slider](slider.md).
   - The selection items are of secondary importance in the flow of your app or the default option is recommended for most users in most situations. Use a drop-down list instead.
 
 ### Recommendations for list boxes
@@ -282,7 +282,7 @@ bool IsValid(string Text)
 
 ## Related articles
 
-- [Text controls](../../../design/controls/text-controls.md)
+- [Text controls](text-controls.md)
 - [Guidelines for spell checking](text-controls.md#guidelines-for-spell-checking)
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
 - [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)

@@ -341,4 +341,4 @@ private void OnTipClosing(muxc.TeachingTip sender, muxc.TeachingTipClosingEventA
 
 ## Related articles
 
-- [Dialogs and flyouts](../../../../design/controls/dialogs-and-flyouts/index.md)
+- [Dialogs and flyouts](index.md)

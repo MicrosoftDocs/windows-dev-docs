@@ -64,7 +64,7 @@ Appropriate visual feedback during interactions with your app helps users recogn
     :::column-end:::
 :::row-end:::
 
-For more info, see [Guidelines for visual feedback](../../design/input/guidelines-for-visualfeedback.md) and [Motion in Windows 11](../../design/signature-experiences/motion.md)
+For more info, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md) and [Motion in Windows 11](../../design/signature-experiences/motion.md)
 
 ## Touch Interaction Patterns
 
@@ -114,7 +114,7 @@ There are a set of common touch behaviors and gestures that users are familiar
     :::column-end:::
 :::row-end:::
 
-For more info, see [Guidelines for visual feedback](../../design/input/guidelines-for-visualfeedback.md) and [Motion in Windows 11](../../design/signature-experiences/motion.md)
+For more info, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md) and [Motion in Windows 11](../../design/signature-experiences/motion.md)
 
 ### Gestures
 
@@ -152,7 +152,7 @@ Gestures should also be actionable with flicks and swipes based on inertia and b
     :::column-end:::
 :::row-end:::
 
-For more info, see [Page transitions](../../design/motion/page-transitions.md) and [Pull to refresh](../../design/controls/pull-to-refresh.md).
+For more info, see [Page transitions](../../design/motion/page-transitions.md) and [Pull to refresh](../ui/controls/pull-to-refresh.md).
 
 #### Custom gestures
 
@@ -177,7 +177,7 @@ The touch keyboard enables text entry for devices that support touch. Windows ap
 
 ### Invoke on text field tap​
 
-Touch keyboard should pop up when a user taps on a text input field​ – this will work automatically by using our system APIs to show and hide the keyboard. See [Respond to the presence of the touch keyboard](../../design/input/respond-to-the-presence-of-the-touch-keyboard.md).
+Touch keyboard should pop up when a user taps on a text input field​ – this will work automatically by using our system APIs to show and hide the keyboard. See [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md).
 
 ### Use standard text input controls​
 
@@ -220,7 +220,7 @@ If you transition the UI based on device signals for device posture, always prov
 
 ### Match visuals to touch target
 
-Consider updating visuals when touch target dimensions change. For example, if hit targets increase when users enter tablet posture, UI representing the hit targets should also update to help users understand the state change and updated affordance. For more info, see [Content design basics for Windows apps](../../design/basics/content-basics.md), [Guidelines for touch targets](../../design/input/guidelines-for-targeting.md), [Control size and density](../../design/style/spacing.md).
+Consider updating visuals when touch target dimensions change. For example, if hit targets increase when users enter tablet posture, UI representing the hit targets should also update to help users understand the state change and updated affordance. For more info, see [Content design basics for Windows apps](../../design/basics/content-basics.md), [Guidelines for touch targets](guidelines-for-targeting.md), [Control size and density](../../design/style/spacing.md).
 
 ## Portrait Optimization
 

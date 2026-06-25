@@ -28,7 +28,7 @@ This UI is commonly used in apps such as photo viewers and app lists, where disp
 
 - Common UI patterns for a PipsPager include photo viewers, app lists, carousels, and layouts where display space is limited.
 - For experiences optimized for gamepad input, we recommend against placing UI directly to the left or right of a horizontal PipsPager, and above or below a vertically oriented PipsPager.
-- For experiences optimized for touch input, we recommend integrating the PipsPager with a view control, such as a [FlipView](../../../design/controls/flipview.md), to take advantage of on-content pagination with touch (the user can also use touch to select individual pips).
+- For experiences optimized for touch input, we recommend integrating the PipsPager with a view control, such as a [FlipView](flipview.md), to take advantage of on-content pagination with touch (the user can also use touch to select individual pips).
 
 ## Create a PipsPager
 
@@ -174,6 +174,6 @@ If you set visibility through the PreviousButtonStyle or NextButtonStyle propert
 
 ## Related articles
 
-- [ScrollViewer](../../../design/controls/dialogs-and-flyouts/index.md)
-- [FlipView](../../../design/controls/flipview.md)
-- [ItemsRepeater](../../../design/controls/items-repeater.md)
+- [ScrollViewer](scroll-controls.md)
+- [FlipView](flipview.md)
+- [ItemsRepeater](items-repeater.md)

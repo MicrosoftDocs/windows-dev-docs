@@ -102,7 +102,7 @@ The [**KeyDown**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement
 Modifier keys are keys such as Ctrl or Shift that users typically press in combination with other keys. Your app can use these combinations as custom keyboard shortcuts to invoke app commands.
 
 > [!NOTE]
-> For built-in keyboard shortcuts, see [Access keys](../../design/input/access-keys.md) and [Keyboard accelerators](../../design/input/keyboard-accelerators.md).
+> For built-in keyboard shortcuts, see [Access keys](access-keys.md) and [Keyboard accelerators](keyboard-accelerators.md).
 
 You can detect shortcut key combinations in the [**KeyDown**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.keydown) and [**KeyUp**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.keyup) event handlers. When a keyboard event occurs for a non-modifier key, you can then check whether a modifier key is in the pressed state.
 
@@ -377,19 +377,19 @@ If you create a custom control that requires text input, but does not derive fro
 
 Key presses on the touch keyboard raise [**KeyDown**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.keydown) and [**KeyUp**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.keyup) events just like key presses on hardware keyboards. However, the touch keyboard will not raise input events for Ctrl+A, Ctrl+Z, Ctrl+X, Ctrl+C, and Ctrl+V, which are reserved for text manipulation in the input control.
 
-You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint at the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type. For example, if a text box is used only to enter a 4-digit PIN, set the [**InputScope**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.inputscope) property to [**Number**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.inputscopenamevalue). This tells the system to show the numeric keypad layout, which makes it easier for the user to enter the PIN. For more detail, see [Use input scope to change the touch keyboard](../../design/input/use-input-scope-to-change-the-touch-keyboard.md).
+You can make it much faster and easier for users to enter data in your app by setting the input scope of the text control to match the kind of data you expect the user to enter. The input scope provides a hint at the type of text input expected by the control so the system can provide a specialized touch keyboard layout for the input type. For example, if a text box is used only to enter a 4-digit PIN, set the [**InputScope**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.inputscope) property to [**Number**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.inputscopenamevalue). This tells the system to show the numeric keypad layout, which makes it easier for the user to enter the PIN. For more detail, see [Use input scope to change the touch keyboard](use-input-scope-to-change-the-touch-keyboard.md).
 
 ## Related articles
 
 ### Developers
 
-- [Keyboard interactions](../../design/input/keyboard-interactions.md)
-- [Identify input devices](../../design/input/identify-input-devices.md)
-- [Respond to the presence of the touch keyboard](../../design/input/respond-to-the-presence-of-the-touch-keyboard.md)
+- [Keyboard interactions](keyboard-interactions.md)
+- [Identify input devices](identify-input-devices.md)
+- [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
 
 ### Designers
 
-- [Keyboard design guidelines](../../design/input/keyboard-interactions.md)
+- [Keyboard design guidelines](keyboard-interactions.md)
 
 ### Samples
 

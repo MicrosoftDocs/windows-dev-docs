@@ -25,8 +25,8 @@ Commands that are part of the typical app workflow (for example, changing the br
 
 ## General recommendations
 
-- Keep settings pages simple and make use of binary (on/off) controls. A [toggle switch](../controls/toggles.md) is usually the best control for a binary setting.
-- For settings that let users choose one item from a set of up to 5 mutually exclusive, related options, use [radio buttons](../controls/radio-button.md).
+- Keep settings pages simple and make use of binary (on/off) controls. A [toggle switch](../../develop/ui/controls/toggles.md) is usually the best control for a binary setting.
+- For settings that let users choose one item from a set of up to 5 mutually exclusive, related options, use [radio buttons](../../develop/ui/controls/radio-button.md).
 - Create an entry point for all app settings in your app's settings page.
 - Keep your settings simple. Define smart defaults and keep the number of settings to a minimum.
 - When a user changes a setting, the app should immediately reflect the change.
@@ -38,13 +38,13 @@ The way that users get to your app settings page should be based on your app's l
 
 **Navigation pane**
 
-For a [NavigationView](../controls/navigationview.md) layout, app settings should be the last item in the list of navigational choices and be pinned to the bottom. `NavigationView` provides a built-in settings item for this purpose — set the [IsSettingsVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.issettingsvisible) property to `true` to display a **Settings** entry at the bottom of the navigation pane automatically.
+For a [NavigationView](../../develop/ui/controls/navigationview.md) layout, app settings should be the last item in the list of navigational choices and be pinned to the bottom. `NavigationView` provides a built-in settings item for this purpose — set the [IsSettingsVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.issettingsvisible) property to `true` to display a **Settings** entry at the bottom of the navigation pane automatically.
 
 ![app settings entry point for nav pane](images/appsettings-nav-settings.png)
 
 **Command bar**
 
-If you're using a [command bar](../controls/command-bar.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the command bar and not within the overflow.
+If you're using a [command bar](../../develop/ui/controls/command-bar.md) or tool bar, place the settings entry point as one of the last items in the "More" overflow menu. If greater discoverability for the settings entry point is important for your app, place the entry point directly on the command bar and not within the overflow.
 
 ![app settings entry point for command bar](images/appbar-overflow-icons.png)
 
@@ -68,7 +68,7 @@ Use a [SettingsExpander](/dotnet/communitytoolkit/windows/settingscontrols/setti
 
 ## App theme settings
 
-If your app allows users to choose the app's color mode, present these options using a [combo box](../controls/combo-box.md) inside a `SettingsCard`. The options should read:
+If your app allows users to choose the app's color mode, present these options using a [combo box](../../develop/ui/controls/combo-box.md) inside a `SettingsCard`. The options should read:
 
 - Light
 - Dark
@@ -102,12 +102,12 @@ Once you have a list of items that you want to include in your app settings page
 - Present content from top to bottom in a single column, scrollable if necessary.
 - Use the following controls for app settings:
 
-    - [Toggle switches](../controls/toggles.md): To let users set values on or off.
-    - [Radio buttons](../controls/radio-button.md): To let users choose one item from a set of up to 5 mutually exclusive, related options.
-    - [Combo boxes](../controls/combo-box.md): To let users choose from a set of options in a compact dropdown.
-    - [Text input boxes](../controls/text-box.md): To let users enter text. Use the type of text input box that corresponds to the type of text you're getting from the user, such as an email or password.
-    - [Hyperlinks](../controls/hyperlinks.md): To take the user to another page within the app or to an external website.
-    - [Buttons](../controls/buttons.md): To let users initiate an immediate action.
+    - [Toggle switches](../../develop/ui/controls/toggles.md): To let users set values on or off.
+    - [Radio buttons](../../develop/ui/controls/radio-button.md): To let users choose one item from a set of up to 5 mutually exclusive, related options.
+    - [Combo boxes](../../develop/ui/controls/combo-box.md): To let users choose from a set of options in a compact dropdown.
+    - [Text input boxes](../../develop/ui/controls/text-box.md): To let users enter text. Use the type of text input box that corresponds to the type of text you're getting from the user, such as an email or password.
+    - [Hyperlinks](../../develop/ui/controls/hyperlinks.md): To take the user to another page within the app or to an external website.
+    - [Buttons](../../develop/ui/controls/buttons.md): To let users initiate an immediate action.
 - Add a descriptive message if one of the controls is disabled. Use the `Description` property of `SettingsCard` to explain why the setting is unavailable.
 - When a user changes a setting, the app should immediately reflect the change — don't require a confirmation button.
 
@@ -115,5 +115,5 @@ Once you have a list of items that you want to include in your app settings page
 
 * [SettingsCard and SettingsExpander (Windows Community Toolkit)](/dotnet/communitytoolkit/windows/settingscontrols/settingscard)
 * [Command design basics](../basics/commanding-basics.md)
-* [Guidelines for progress controls](../controls/progress-controls.md)
+* [Guidelines for progress controls](../../develop/ui/controls/progress-controls.md)
 * [Store and retrieve app data](../../develop/data/store-and-retrieve-app-data.md)

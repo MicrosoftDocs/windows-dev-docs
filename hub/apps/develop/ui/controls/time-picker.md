@@ -23,7 +23,7 @@ The time picker gives you a standardized way to let users pick a time value usin
 
 Use a time picker to let a user pick a single time value.
 
-For more info about choosing the right control, see the [Date and time controls](../../../design/controls/date-and-time.md) article.
+For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
 
 ## Examples
 
@@ -145,7 +145,7 @@ private void CheckTime()
 
 ## Related topics
 
-- [Date and time controls](../../../design/controls/date-and-time.md)
-- [Calendar date picker](../../../design/controls/calendar-date-picker.md)
-- [Calendar view](../../../design/controls/calendar-view.md)
-- [Date picker](../../../design/controls/date-picker.md)
+- [Date and time controls](date-and-time.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Calendar view](calendar-view.md)
+- [Date picker](date-picker.md)

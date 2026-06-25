@@ -47,14 +47,14 @@ Here are some examples:
 
 There are some scenarios where a [ContentDialog](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog), [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout), or [TeachingTip](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TeachingTip) may be more appropriate to use.
 
-- For scenarios where a persistent notification is not needed, e.g. displaying information in context of a specific UI element, a [Flyout](../../../design/controls/dialogs-and-flyouts/flyouts.md)
+- For scenarios where a persistent notification is not needed, e.g. displaying information in context of a specific UI element, a [Flyout](dialogs-and-flyouts/flyouts.md)
 is a better option.
-- For scenarios where the application is confirming a user action, showing information the user ***must*** read, use a [ContentDialog](../../../design/controls/dialogs-and-flyouts/dialogs.md).
+- For scenarios where the application is confirming a user action, showing information the user ***must*** read, use a [ContentDialog](dialogs-and-flyouts/dialogs.md).
   - Additionally, if a status change to the app is so severe that it needs to block all further ability for the user to interact with the app, use a ContentDialog.
-- For scenarios where a notification is a transient teaching moment, a [TeachingTip](../../../design/controls/dialogs-and-flyouts/teaching-tip.md)
+- For scenarios where a notification is a transient teaching moment, a [TeachingTip](dialogs-and-flyouts/teaching-tip.md)
 is a better option.
 
-For more info about choosing the right notification control, see the [Dialogs and Flyouts](../../../design/controls/dialogs-and-flyouts/index.md)
+For more info about choosing the right notification control, see the [Dialogs and Flyouts](dialogs-and-flyouts/index.md)
 article.
 
 ## Recommendations
@@ -319,4 +319,4 @@ public void InfoBar_Closing(InfoBar sender, InfoBarClosingEventArgs args)
 
 ## Related articles
 
-- [Dialogs and flyouts](../../../design/controls/dialogs-and-flyouts/index.md)
+- [Dialogs and flyouts](dialogs-and-flyouts/index.md)

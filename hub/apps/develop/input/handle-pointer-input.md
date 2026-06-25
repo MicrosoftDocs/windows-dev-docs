@@ -16,7 +16,7 @@ Receive, process, and manage input data from pointing devices (such as touch, mo
 
 > [!Important]
 > Create custom interactions only if there is a clear, well-defined requirement and the interactions supported by the platform controls don't support your scenario.  
-> If you customize the interaction experiences in your Windows application, users expect them to be consistent, intuitive, and discoverable. For these reasons, we recommend that you model your custom interactions on those supported by the [platform controls](../../design/controls/index.md). The platform controls provide the full Windows app user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. 
+> If you customize the interaction experiences in your Windows application, users expect them to be consistent, intuitive, and discoverable. For these reasons, we recommend that you model your custom interactions on those supported by the [platform controls](../ui/controls/index.md). The platform controls provide the full Windows app user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. 
 
 ## Important APIs
 - [Windows.Devices.Input](/uwp/api/Windows.Devices.Input)
@@ -33,7 +33,7 @@ Each input point (or contact) on the input stack is represented by a [**Pointer*
 
 ## Pointer events
 
-Pointer events expose basic info such as input device type and detection state (in range or in contact), and extended info such as location, pressure, and contact geometry. In addition, specific device properties such as which mouse button a user pressed or whether the pen eraser tip is being used are also available. If your app needs to differentiate between input devices and their capabilities, see [Identify input devices](../../design/input/identify-input-devices.md).
+Pointer events expose basic info such as input device type and detection state (in range or in contact), and extended info such as location, pressure, and contact geometry. In addition, specific device properties such as which mouse button a user pressed or whether the pen eraser tip is being used are also available. If your app needs to differentiate between input devices and their capabilities, see [Identify input devices](identify-input-devices.md).
 
 Windows apps can listen for the following pointer events:
 

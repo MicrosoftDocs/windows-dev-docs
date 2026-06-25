@@ -20,7 +20,7 @@ Browse the articles in this section for design guidance, code examples, and best
 
 ## Getting started
 
-To learn how to add controls to your app and wire up event handlers, see [Add controls and handle events](../../../design/controls/controls-and-events-intro.md). To customize control appearance with reusable XAML styles, see [Styling controls](../../platform/xaml/xaml-styles.md).
+To learn how to add controls to your app and wire up event handlers, see [Add controls and handle events](controls-and-events-intro.md). To customize control appearance with reusable XAML styles, see [Styling controls](../../platform/xaml/xaml-styles.md).
 
 
 ## Controls

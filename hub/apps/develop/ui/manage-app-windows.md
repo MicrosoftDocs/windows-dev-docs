@@ -19,7 +19,7 @@ appliesto:
 The Windows App SDK provides the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which represents a high-level abstraction of the HWND. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows without the need to access the HWND directly.
 
 > [!NOTE]
-> This article demonstrates how to use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs in your app. As a prerequisite, we recommend that you read and understand the AppWindow information in [Windowing overview for WinUI 3 and Windows App SDK](../ui-input/windowing-overview.md), which is applicable whether you use WinUI or another UI framework.
+> This article demonstrates how to use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs in your app. As a prerequisite, we recommend that you read and understand the AppWindow information in [Windowing overview for WinUI 3 and Windows App SDK](windowing-overview.md), which is applicable whether you use WinUI or another UI framework.
 
 > [!div class="checklist"]
 >
@@ -359,9 +359,9 @@ The Windows App SDK doesn't currently provide methods for attaching UI framework
 
 ## Related topics
 
-- [Windowing overview](../ui-input/windowing-overview.md)
+- [Windowing overview](windowing-overview.md)
 - [Title bar customization](../title-bar.md)
 - [Windowing functionality migration](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md)
 - [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
-- [Retrieve a window handle (HWND)](../ui-input/retrieve-hwnd.md)
+- [Retrieve a window handle (HWND)](retrieve-hwnd.md)
 - [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)

@@ -17,9 +17,9 @@ A calendar view lets a user view and interact with a calendar that they can navi
 
 Use a calendar view to let a user pick a single date or a range of dates from an always visible calendar.
 
-If you need to let a user select multiple dates at one time, you must use a calendar view. If you need to let a user pick only a single date and don't need a calendar to be always visible, consider using a [calendar date picker](../../../design/controls/calendar-date-picker.md) or [date picker](../../../design/controls/date-picker.md) control.
+If you need to let a user select multiple dates at one time, you must use a calendar view. If you need to let a user pick only a single date and don't need a calendar to be always visible, consider using a [calendar date picker](calendar-date-picker.md) or [date picker](date-picker.md) control.
 
-For more info about choosing the right control, see the [Date and time controls](../../../design/controls/date-and-time.md) article.
+For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
 
 ## Examples
 
@@ -195,7 +195,7 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
 
 ## Related articles
 
-- [Date and time controls](../../../design/controls/date-and-time.md)
-- [Calendar date picker](../../../design/controls/calendar-date-picker.md)
-- [Date picker](../../../design/controls/date-picker.md)
-- [Time picker](../../../design/controls/time-picker.md)
+- [Date and time controls](date-and-time.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Date picker](date-picker.md)
+- [Time picker](time-picker.md)

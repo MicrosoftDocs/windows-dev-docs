@@ -42,5 +42,5 @@ The display monitor identifier that corresponds to the specified *hmonitor*, if 
 ## See also
 
 * [Win32Interop class](microsoft.ui.win32interop.md)
-* [Manage app windows](../../../develop/ui-input/manage-app-windows.md)
+* [Manage app windows](../../../develop/ui/manage-app-windows.md)
 * [Call interop APIs from a .NET app](../../../desktop/modernize/winrt-com-interop-csharp.md)

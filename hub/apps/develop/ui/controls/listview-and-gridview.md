@@ -45,9 +45,9 @@ The feature-rich ListView and GridView controls work *out of box*. They require 
 
 ### ItemsRepeater
 
-The [ItemsRepeater](../../../design/controls/items-repeater.md) control also is used to display collections, but it's designed as a building block for creating a custom control to suit your particular UI requirements. It doesn't have the same built-in features and functionality as ListView and GridView, so you'll need to implement any necessary features or interactions. Use ItemsRepeater if you have a highly customized UI that you can't create by using either ListView or GridView, or if your data source requires different behavior for each item.
+The [ItemsRepeater](items-repeater.md) control also is used to display collections, but it's designed as a building block for creating a custom control to suit your particular UI requirements. It doesn't have the same built-in features and functionality as ListView and GridView, so you'll need to implement any necessary features or interactions. Use ItemsRepeater if you have a highly customized UI that you can't create by using either ListView or GridView, or if your data source requires different behavior for each item.
 
-Learn more about ItemsRepeater by reading its [Guidelines](../../../design/controls/items-repeater.md) and [API documentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater).
+Learn more about ItemsRepeater by reading its [Guidelines](items-repeater.md) and [API documentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater).
 
 ## Create a list view or a grid view
 
@@ -270,7 +270,7 @@ Data templates are the primary way you define the look of your ListView. They ca
 
 You can define your data template inline within the ListView or GridView definition, as shown in the preceding code, or separately in a Resources section. If you define it outside the ListView or GridView definition, you must give the data template an [x:Key](/windows/apps/develop/platform/xaml/x-key-attribute) attribute and assign it to the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of the ListView or GridView by using that key.
 
-For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [Item containers and templates](../../../design/controls/item-containers-templates.md).
+For more info and examples of how to use data templates and item containers to define the look of items in your list or grid, see [Item containers and templates](item-containers-templates.md).
 
 ## Change the layout of items
 
@@ -587,7 +587,7 @@ private void DeselectAllButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-For info about how to change the look of selected items, see [Item containers and templates](../../../design/controls/item-containers-templates.md).
+For info about how to change the look of selected items, see [Item containers and templates](item-containers-templates.md).
 
 ### Drag and drop
 
@@ -595,6 +595,6 @@ ListView and GridView controls support dragging and dropping items within their 
 
 ## Related articles
 
-- [Lists](../../../design/controls/lists.md)
-- [Item containers and templates](../../../design/controls/item-containers-templates.md)
+- [Lists](lists.md)
+- [Item containers and templates](item-containers-templates.md)
 - [Drag and drop](../../../design/input/drag-and-drop.md)

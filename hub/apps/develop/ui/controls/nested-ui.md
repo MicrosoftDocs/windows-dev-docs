@@ -22,7 +22,7 @@ You can use nested UI to present a user with additional options that help accele
 
 > **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview)
 
-In this article, we discuss the creation of nested UI in [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) and [GridView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](../../../design/controls/lists.md) and [List view and grid view](../../../design/controls/listview-and-gridview.md) articles.
+In this article, we discuss the creation of nested UI in [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) and [GridView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview) items. While this section does not talk about other nested UI cases, these concepts are transferrable. Before you start, you should be familiar with the general guidance for using ListView or GridView controls in your UI, which is found in the [Lists](lists.md) and [List view and grid view](listview-and-gridview.md) articles.
 
 In this article, we use the terms *list*, *list item*, and *nested UI* as defined here:
 - *List* refers to a collection of items contained in a list view or grid view.
@@ -50,7 +50,7 @@ The *primary action* is what the user expects to happen when they press the list
 
 ## Options for secondary actions
 
-When creating list UI, you first need to make sure you account for all input methods that Windows supports. For more info about different kinds of input, see [Input primer](../../../design/input/index.md).
+When creating list UI, you first need to make sure you account for all input methods that Windows supports. For more info about different kinds of input, see [Input primer](../../input/index.md).
 
 After you have made sure that your app supports all inputs that Windows supports, you should decide if your app's secondary actions are important enough to expose as accelerators in the main list. Remember that the more actions you expose, the more complicated your UI becomes. Do you really need to expose the secondary actions in the main list UI, or can you put them somewhere else?
 
@@ -62,7 +62,7 @@ If you decide that putting secondary actions in the main list UI is not necessar
 
 Put the secondary actions on the page that the list item navigates to when it's pressed. When you use the list/details pattern, the detail page is often a good place to put secondary actions.
 
-For more info, see the [list/detail pattern](../../../design/controls/list-details.md).
+For more info, see the [list/detail pattern](list-details.md).
 
 ### Put secondary actions in a context menu
 
@@ -70,7 +70,7 @@ Put the secondary actions in a context menu that the user can access via right-c
 
 To expose secondary actions when input is from a gamepad or remote control, we recommend that you use a context menu.
 
-For more info, see [Context menus and flyouts](../../../design/controls/menus.md).
+For more info, see [Context menus and flyouts](menus.md).
 
 ### Put secondary actions in hover UI to optimize for pointer input
 
@@ -79,7 +79,7 @@ If you expect your app to be used frequently with pointer input such as mouse an
 ![Nested UI shown on hover](images/nested-ui-hover.png)
 
 
-For more info, see [Mouse interactions](../../../design/input/mouse-interactions.md).
+For more info, see [Mouse interactions](../../input/mouse-interactions.md).
 
 ## UI placement for primary and secondary actions
 

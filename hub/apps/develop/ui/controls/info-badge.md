@@ -14,7 +14,7 @@ no-loc: [info badge, navigation view, content dialog, info bar]
 
 Badging is a non-intrusive and intuitive way to display notifications or bring focus to an area within an app - whether that be for notifications, indicating new content, or showing an alert. An info badge is a small piece of UI that can be added into an app and customized to display a number, icon, or a simple dot.
 
-The info badge is built into the XAML [navigation view](../../../design/controls/navigationview.md), but can also be placed as a standalone element in the XAML tree, allowing you to place an info badge into any control or piece of UI of your choosing. When you use an info badge somewhere other than navigation view, you are responsible for programmatically determining when to show and dismiss the info badge, and where to place the info badge.
+The info badge is built into the XAML [navigation view](navigationview.md), but can also be placed as a standalone element in the XAML tree, allowing you to place an info badge into any control or piece of UI of your choosing. When you use an info badge somewhere other than navigation view, you are responsible for programmatically determining when to show and dismiss the info badge, and where to place the info badge.
 
 :::image type="content" source="images/infobadge/infobadge-example-1.png" alt-text="Example of an InfoBadge in NavigationView":::
 
@@ -35,10 +35,10 @@ An info badge should not be used to display critical errors or convey highly imp
 
 Examples of inappropriate info badge usage:
 
-- To indicate an urgent matter on a page within the app that needs to be addressed before continuing to use the app. For this scenario, use a [content dialog](../../../design/controls/dialogs-and-flyouts/dialogs.md).
-- Appearing in an app with no way for the user to dismiss the info badge. For a persistent alert like this, use an [info bar](../../../design/controls/infobar.md).
+- To indicate an urgent matter on a page within the app that needs to be addressed before continuing to use the app. For this scenario, use a [content dialog](dialogs-and-flyouts/dialogs.md).
+- Appearing in an app with no way for the user to dismiss the info badge. For a persistent alert like this, use an [info bar](infobar.md).
 - Using the info badge as a permanent way of bringing the user's focus to an area, without a way for the user to dismiss the info badge.
-- Using an info badge as a regular icon or image in your app. Instead, use an appropriate [image](../../../design/controls/images-imagebrushes.md) or icon (see [IconElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement) and [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource)).
+- Using an info badge as a regular icon or image in your app. Instead, use an appropriate [image](images-imagebrushes.md) or icon (see [IconElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement) and [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource)).
 
 ## Types of info badges
 
@@ -383,4 +383,4 @@ Depending on how you've positioned your InfoBadge, be aware that this may cause 
 
 ## Related articles
 
-- [NavigationView](../../../design/controls/navigationview.md)
+- [NavigationView](navigationview.md)

@@ -1326,4 +1326,4 @@ namespace TreeViewTest
 
 - [TreeView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview)
 - [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)
-- [ListView and GridView](../../../design/controls/listview-and-gridview.md)
+- [ListView and GridView](listview-and-gridview.md)

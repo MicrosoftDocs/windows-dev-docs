@@ -19,7 +19,7 @@ Use a **RichTextBlock** when you need support for multiple paragraphs, multi-col
 
 Use a **TextBlock** to display most read-only text in your app. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined. TextBlock provides a simpler content model, so it's typically easier to use, and it can provide better text rendering performance than RichTextBlock. It's preferred for most app UI text. Although you can put line breaks in the text, TextBlock is designed to display a single paragraph and doesn't support text indentation.
 
-For more info about choosing the right text control, see the [Text controls](../../../design/controls/text-controls.md) article.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Recommendations
 
@@ -131,12 +131,12 @@ The attached properties of the [Typography](/windows/windows-app-sdk/api/winrt/m
 
 ## Related articles
 
-[Text controls](../../../design/controls/text-controls.md)
+[Text controls](text-controls.md)
 
 **For designers**
-- [Guidelines for spell checking](../../../design/controls/text-controls.md)
+- [Guidelines for spell checking](text-controls.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
-- [Guidelines for text input](../../../design/controls/text-controls.md)
+- [Guidelines for text input](text-controls.md)
 
 **For developers (XAML)**
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)

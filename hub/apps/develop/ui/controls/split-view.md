@@ -44,9 +44,9 @@ Here is an example of the Microsoft Edge app using SplitView to show its Hub.
 
 ## Is this the right control?
 
-The split view control can be used to create any "drawer" experience where users can open and close the supplemental pane. For example, you can use SplitView to build the [list/details](../../../design/controls/list-details.md) pattern.
+The split view control can be used to create any "drawer" experience where users can open and close the supplemental pane. For example, you can use SplitView to build the [list/details](list-details.md) pattern.
 
-If you'd like to build a navigation menu with an expand/collapse button and a list of navigation items, then use the [NavigationView](../../../design/controls/navigationview.md) control.
+If you'd like to build a navigation menu with an expand/collapse button and a list of navigation items, then use the [NavigationView](navigationview.md) control.
 
 ## Create a split view
 
@@ -79,6 +79,6 @@ Here's a SplitView control with an open Pane appearing inline next to the Conten
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Related topics
-- [Nav pane pattern](../../../design/controls/navigationview.md)
-- [List view](../../../design/controls/lists.md)
-- [List/details](../../../design/controls/list-details.md)
+- [Nav pane pattern](navigationview.md)
+- [List view](lists.md)
+- [List/details](list-details.md)

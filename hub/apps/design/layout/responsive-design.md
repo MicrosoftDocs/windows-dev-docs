@@ -83,11 +83,11 @@ This technique lets you switch the user interface for a specific breakpoints. In
 
 ![Replacing design elements](images/rsp-design/rspd-replace.gif)
 
-The [NavigationView](../controls/navigationview.md) control supports this technique by letting users set the pane position to either top or left.
+The [NavigationView](../../develop/ui/controls/navigationview.md) control supports this technique by letting users set the pane position to either top or left.
 
 ## Related topics
 
 - [Fluent Design - Layout](https://fluent2.microsoft.design/layout)
 - [Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)
-- [Responsive layouts with XAML](layouts-with-xaml.md)
-- [XAML controls](../controls/index.md)
+- [Responsive layouts with XAML](../../develop/ui/layouts-with-xaml.md)
+- [XAML controls](../../develop/ui/controls/index.md)

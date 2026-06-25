@@ -244,5 +244,5 @@ public readonly struct Crumb
 ## Related articles
 
 - [Navigation design basics](../../../design/basics/navigation-basics.md)
-- [NavigationView](../../../design/controls/navigationview.md)
+- [NavigationView](navigationview.md)
 - [BreadcrumbBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.breadcrumbbar)

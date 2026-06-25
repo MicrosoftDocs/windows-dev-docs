@@ -35,7 +35,7 @@ This table shows some typical collection commands and ways to expose those comma
 | Favorite an item | Context menu   | Hover button      | F, Ctrl+S            | Swipe to favorite |
 
 
-* **In general, you should make all commands for an item available in the item's [context menu](../../../design/controls/menus-and-context-menus.md).** Context menus are accessible to users regardless of input type, and should contain all of the contextual commands that user can perform.
+* **In general, you should make all commands for an item available in the item's [context menu](menus-and-context-menus.md).** Context menus are accessible to users regardless of input type, and should contain all of the contextual commands that user can perform.
 
 * **For frequently accessed commands, consider using input accelerators.** Input accelerators let the user perform actions quickly, based on their input device. Input accelerators include:
     - Swipe-to-action (touch accelerator)
@@ -240,7 +240,7 @@ The user can invoke context menus using these "context actions":
 
 The [ContextFlyout property](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.ContextFlyout), defined by the UIElement class, makes it easy to create a context menu that works with all input types. You provide a flyout representing your context menu using MenuFlyout or CommandBarFlyout, and when the user performs a "context action" as defined above, the MenuFlyout or CommandBarFlyout corresponding to the item will be displayed.
 
-See [menus and context menus](../../../design/controls/menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use [menu flyout](../../../design/controls/menus.md) vs. [command bar flyout](../../../design/controls/command-bar-flyout.md).
+See [menus and context menus](menus-and-context-menus.md) for help identifying menu vs. context menu scenarios and guidance on when to use [menu flyout](menus.md) vs. [command bar flyout](command-bar-flyout.md).
 
 For this example, we will use MenuFlyout and will start by adding a ContextFlyout to the PodcastUserControl. The MenuFlyout specified as the ContextFlyout contains a single item to favorite a podcast. Notice that this MenuFlyoutItem uses the favoriteCommand defined above, with the CommandParameter bound to the PodcastObject.
 
@@ -273,7 +273,7 @@ In the podcast app, the frequently performed command is the "Favorite" command.
 
 ![Press Ctrl and F to perform an action](images/contextual-command-keyboard.png)
 
-Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a [tooltip](../../../design/controls/tooltips.md) to teach the user about the shortcut command.
+Depending on the type of content, you may identify certain key combinations that should perform an action. In an email app, for example, the DEL key may be used to delete the email that is selected. In a podcast app, the Ctrl+S or F keys could favorite a podcast for later. Although some commands have common, well-known keyboard shortcuts like DEL to delete, other commands have app- or domain-specific shortcuts. Use well-known shortcuts if possible, or consider providing reminder text in a [tooltip](tooltips.md) to teach the user about the shortcut command.
 
 Your app can respond when the user presses a key using the [KeyDown](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.UIElement.KeyDownEvent) event. In general, users expect that the app will respond when they first press the key down, rather than waiting until they release the key.
 
@@ -368,7 +368,7 @@ The buttons displayed in the hover state will only be accessible via the pointer
 
 ![Swipe an item to reveal the command](images/contextual-command-swipe.png)
 
-Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the [swipe commanding](../../../design/controls/swipe.md) article to learn more.
+Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the [swipe commanding](swipe.md) article to learn more.
 
 In order to integrate swipe into your collection, you need two components: SwipeItems, which hosts the commands; and a SwipeControl, which wraps the item and allows for swipe interaction.
 
@@ -428,7 +428,7 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 
 #### Pull to refresh
 
-Pull to refresh lets a user pull down on a collection of data using touch in order to retrieve more data. See the [pull to refresh](../../../design/controls/pull-to-refresh.md) article to learn more.
+Pull to refresh lets a user pull down on a collection of data using touch in order to retrieve more data. See the [pull to refresh](pull-to-refresh.md) article to learn more.
 
 ### Pen accelerators
 
@@ -448,8 +448,8 @@ To optimize your app for pen input, see the [pen and stylus interaction](../../.
 
 * [Command design basics for Windows apps](../../../design/basics/commanding-basics.md)
 * [ICommand Interface](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Input.ICommand)
-* [Menus and context menus](../../../design/controls/menus-and-context-menus.md)
-* [Swipe](../../../design/controls/swipe.md)
-* [Pull to refresh](../../../design/controls/pull-to-refresh.md)
+* [Menus and context menus](menus-and-context-menus.md)
+* [Swipe](swipe.md)
+* [Pull to refresh](pull-to-refresh.md)
 * [Pen and stylus interaction](../../../design/input/pen-and-stylus-interactions.md)
 * [Designing for Xbox and TV](../../../design/devices/designing-for-tv.md)

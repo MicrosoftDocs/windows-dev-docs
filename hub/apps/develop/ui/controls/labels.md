@@ -36,7 +36,7 @@ In XAML, many controls have a built-in Header property that you use to display t
 * [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
 
 ## Related topics
-* [Text controls](../../../design/controls/text-controls.md)
+* [Text controls](text-controls.md)
 * [TextBox.Header property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.header)
 * [PasswordBox.Header property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox.header)
 * [ToggleSwitch.Header property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.toggleswitch.header)

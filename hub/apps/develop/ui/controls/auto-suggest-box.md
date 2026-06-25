@@ -20,7 +20,7 @@ Use an AutoSuggestBox to provide a list of suggestions for a user to select from
 
 If you'd like a simple, customizable control that allows text search with a list of suggestions, then choose an auto-suggest box.
 
-For more info about choosing the right text control, see the [Text controls](../../../design/controls/text-controls.md) article.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Anatomy
 
@@ -141,8 +141,8 @@ Here's an AutoSuggestBox with a 'find' icon.
 
 ## Related articles
 
-- [Text controls](../../../design/controls/text-controls.md)
-- [Spell checking](../../../design/controls/text-controls.md)
+- [Text controls](text-controls.md)
+- [Spell checking](text-controls.md)
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox)
 - [Windows.UI.Xaml.Controls PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.passwordbox)
 - [String.Length property](/dotnet/api/system.string.length)

@@ -141,7 +141,7 @@ The NavigationView pane can contain:
 - [NavigationViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem) objects. Navigation items for navigating to specific pages.
 - [NavigationViewItemSeparator](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitemseparator) objects. Separators for grouping navigation items. Set the [Opacity](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.opacity) property to 0 to render the separator as space.
 - [NavigationViewItemHeader](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitemheader) objects. Headers for labeling groups of items.
-- An optional [AutoSuggestBox](../../../design/controls/auto-suggest-box.md) control to allow for app-level search. Assign the control to the [NavigationView.AutoSuggestBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.autosuggestbox) property.
+- An optional [AutoSuggestBox](auto-suggest-box.md) control to allow for app-level search. Assign the control to the [NavigationView.AutoSuggestBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.autosuggestbox) property.
 - An optional entry point for [app settings](../../../design/app-settings/guidelines-for-app-settings.md). To hide the settings item, set the [IsSettingsVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.issettingsvisible) property to `false`.
 
 The left pane also contains:
@@ -372,7 +372,7 @@ The NavigationView doesn't perform any navigation tasks automatically. When the 
 
 You can handle either event to perform tasks related to the requested navigation. Which one you should handle depends on the behavior you want for your app. Typically, you navigate to the requested page and update the NavigationView header in response to these events.
 
-- [ItemInvoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.iteminvoked) is raised any time the user taps a navigation item, even if it's already selected. (The item can also be invoked with an equivalent action using mouse, keyboard, or other input. For more info, see [Input and interactions](../../../design/input/index.md).) If you navigate in the ItemInvoked handler, by default, the page will be reloaded, and a duplicate entry is added to the navigation stack. If you navigate when an item is invoked, you should disallow reloading the page, or ensure that a duplicate entry is not created in the navigation backstack when the page is reloaded. (See code examples.)
+- [ItemInvoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.iteminvoked) is raised any time the user taps a navigation item, even if it's already selected. (The item can also be invoked with an equivalent action using mouse, keyboard, or other input. For more info, see [Input and interactions](../../input/index.md).) If you navigate in the ItemInvoked handler, by default, the page will be reloaded, and a duplicate entry is added to the navigation stack. If you navigate when an item is invoked, you should disallow reloading the page, or ensure that a duplicate entry is not created in the navigation backstack when the page is reloaded. (See code examples.)
 - [SelectionChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.selectionchanged) can be raised by a user invoking an item that isn't currently selected, or by programmatically changing the selected item. If the selection change occurs because a user invoked an item, the ItemInvoked event occurs first. If the selection change is programmatic, ItemInvoked is not raised.
 
 All navigation items are part of the same selection model, whether they are a part of [MenuItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.menuitems) or [FooterMenuItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.footermenuitems). Only one navigation item can be selected at a time.
@@ -1435,8 +1435,8 @@ MainPage::MainPage()
 
 ### Keyboarding within hierarchical NavigationView
 
-Users can move focus around the NavigationView using their [keyboard](../../../design/input/keyboard-interactions.md).
-The arrow keys expose "inner navigation" within the pane and follow the interactions provided in [tree view](../../../design/controls/tree-view.md). The key actions change when navigating through the NavigationView or its flyout menu, which is displayed in Top and Left-compact modes of HierarchicalNavigationView. Below are the specific actions that each key can take in a hierarchical NavigationView:
+Users can move focus around the NavigationView using their [keyboard](../../input/keyboard-interactions.md).
+The arrow keys expose "inner navigation" within the pane and follow the interactions provided in [tree view](tree-view.md). The key actions change when navigating through the NavigationView or its flyout menu, which is displayed in Top and Left-compact modes of HierarchicalNavigationView. Below are the specific actions that each key can take in a hierarchical NavigationView:
 
 | Key      |      In Left Mode      |  In Top Mode | In Flyout  |
 |----------|------------------------|--------------|------------|
@@ -1570,6 +1570,6 @@ This theme resource modifies the margin around [NavigationView.Header](/windows/
 ## Related topics
 
 - [NavigationView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview)
-- [List/details](../../../design/controls/list-details.md)
+- [List/details](list-details.md)
 - [Navigation basics](../../../design/basics/navigation-basics.md)
 - [Fluent Design overview](../../../design/index.md)

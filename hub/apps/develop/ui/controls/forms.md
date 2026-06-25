@@ -29,7 +29,7 @@ When thinking about how user input is submitted and displayed, there are two typ
 ### 1. Instantly updating
 ![settings page](images/control-examples/toggle-switch-news.png)
 
-Use an instantly updating form when you want users to immediately see the results of changing the values in the form. For example, in settings pages, the current selections are displayed, and any changes made to the selections are applied immediately. To acknowledge the changes in your app, you will need to [add an event handler](../../../design/controls/controls-and-events-intro.md) to each input control. If a user changes an input control, then your app can respond appropriately.
+Use an instantly updating form when you want users to immediately see the results of changing the values in the form. For example, in settings pages, the current selections are displayed, and any changes made to the selections are applied immediately. To acknowledge the changes in your app, you will need to [add an event handler](controls-and-events-intro.md) to each input control. If a user changes an input control, then your app can respond appropriately.
 
 ### 2. Submitting with button
 The other type of form allows the user to choose when to submit data with a click of a button.
@@ -52,7 +52,7 @@ This type of form gives the user flexibility in responding. Typically, this type
 To facilitate the user experience and ensure that users are able to enter the correct input, consider the following recommendations for designing layouts for forms. 
 
 ### Labels
-[Labels](../../../design/controls/labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock) instead.
+[Labels](labels.md) should be left-aligned and placed above the input control. Many controls have a built-in Header property to display the label. For controls that don't have a Header property, or to label groups of controls, you can use a [TextBlock](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock) instead.
 
 To [design for accessibility](../../../design/accessibility/accessibility-overview.md), label all individual and groups of controls for clarity for both human and screen readers.
 
@@ -69,7 +69,7 @@ For font styles, use the default [Windows type ramp](../../../design/style/typog
 </div>
 
 ### Spacing
-To visually separate groups of controls from each other, use [alignment, margins, and padding](../../../design/layout/alignment-margin-padding.md). Individual input controls are 80px in height and should be spaced 24px apart. Groups of input controls should be spaced 48px apart.
+To visually separate groups of controls from each other, use [alignment, margins, and padding](../alignment-margin-padding.md). Individual input controls are 80px in height and should be spaced 24px apart. Groups of input controls should be spaced 48px apart.
 
 ![forms groups](images/forms-groups.png)
 
@@ -94,7 +94,7 @@ Forms should resize as the screen or window size changes, so users don't overloo
 ![forms focus](images/forms-focus2.png)
 
 ### Tab stops
-Users can use the keyboard to navigate controls with [tab stops](../../../design/input/keyboard-interactions.md#tab-stops). By default, the tab order of controls reflects the order in which they are created in XAML. To override the default behavior, change the **IsTabStop** or **TabIndex** properties of the control. 
+Users can use the keyboard to navigate controls with [tab stops](../../input/keyboard-interactions.md#tab-stops). By default, the tab order of controls reflects the order in which they are created in XAML. To override the default behavior, change the **IsTabStop** or **TabIndex** properties of the control. 
 
 ![tab focus on control in form](images/forms-focus1.png)
 
@@ -104,44 +104,44 @@ Input controls are the UI elements that allow users to enter information into fo
 ### Text input
 Control | Use | Example
  - | - | -
-[TextBox](../../../design/controls/text-box.md) | Capture one or multiple lines of text | Names, free form responses or feedback
-[PasswordBox](../../../design/controls/password-box.md) | Collect private data by concealing the characters | Passwords, Social Security Numbers (SSN), PINs, credit card information 
-[AutoSuggestBox](../../../design/controls/auto-suggest-box.md) | Show users a list of suggestions from a corresponding set of data as they type | Database search, mail to: line, previous queries
-[RichEditBox](../../../design/controls/rich-edit-box.md) | Edit text files with formatted text, hyperlinks, and images | Upload file, preview, and edit in app
+[TextBox](text-box.md) | Capture one or multiple lines of text | Names, free form responses or feedback
+[PasswordBox](password-box.md) | Collect private data by concealing the characters | Passwords, Social Security Numbers (SSN), PINs, credit card information 
+[AutoSuggestBox](auto-suggest-box.md) | Show users a list of suggestions from a corresponding set of data as they type | Database search, mail to: line, previous queries
+[RichEditBox](rich-edit-box.md) | Edit text files with formatted text, hyperlinks, and images | Upload file, preview, and edit in app
 
 ### Selection
 Control | Use | Example
 - | - | - 
-| [CheckBox](../../../design/controls/checkbox.md) | Select or deselect one or more action items | Agree to terms and conditions, add optional items, select all that apply
-[RadioButton](../../../design/controls/radio-button.md) | Select one option from two or more choices | Pick type, shipping method, etc.
-[ToggleSwitch](../../../design/controls/toggles.md) | Choose one of two mutually exclusive options | On/off
+| [CheckBox](checkbox.md) | Select or deselect one or more action items | Agree to terms and conditions, add optional items, select all that apply
+[RadioButton](radio-button.md) | Select one option from two or more choices | Pick type, shipping method, etc.
+[ToggleSwitch](toggles.md) | Choose one of two mutually exclusive options | On/off
 
 > **Note**: If there are five or more selection items, use a list control.
 
 ### Lists
 Control | Use | Example
 - | - | -
-[ComboBox](../../../design/controls/combo-box.md) | Start in compact state and expand to show list of selectable items | Select from a long list of items, such as states or countries/regions
+[ComboBox](combo-box.md) | Start in compact state and expand to show list of selectable items | Select from a long list of items, such as states or countries/regions
 [ListView](./lists.md#list-view) | Categorize items and assign group headers, drag and drop items, curate content, and reorder items | Rank options
 [GridView](./lists.md#grid-view) | Arrange and browse image-based collections | Pick a photo, color, display theme
 
 ### Numeric input
 Control | Use | Example
 - | - | -
-[Slider](../../../design/controls/slider.md) | Select a number from a range of contiguous numerical values | Percentages, volume, playback speed
-[Rating](../../../design/controls/rating.md) | Rate with stars | Customer feedback
+[Slider](slider.md) | Select a number from a range of contiguous numerical values | Percentages, volume, playback speed
+[Rating](rating.md) | Rate with stars | Customer feedback
 
 ### Date and Time
 
 Control | Use 
 - | - 
-[CalendarView](../../../design/controls/calendar-view.md) | Pick a single date or a range of dates from an always visible calendar 
-[CalendarDatePicker](../../../design/controls/calendar-date-picker.md) | Pick a single date from a contextual calendar 
-[DatePicker](../../../design/controls/date-picker.md) | Pick a single localized date when contextual info isn't important
-[TimePicker](../../../design/controls/time-picker.md) | Pick a single time value
+[CalendarView](calendar-view.md) | Pick a single date or a range of dates from an always visible calendar 
+[CalendarDatePicker](calendar-date-picker.md) | Pick a single date from a contextual calendar 
+[DatePicker](date-picker.md) | Pick a single localized date when contextual info isn't important
+[TimePicker](time-picker.md) | Pick a single time value
 
 ## One column form example
-This example uses an Acrylic [list/detail](../../../design/controls/list-details.md) [list view](../../../design/controls/lists.md) and [NavigationView](../../../design/controls/navigationview.md) control.
+This example uses an Acrylic [list/detail](list-details.md) [list view](lists.md) and [NavigationView](navigationview.md) control.
 ![Screenshot of another form example](images/form-example-2.png)
 ```xaml
 <StackPanel>
@@ -167,7 +167,7 @@ This example uses an Acrylic [list/detail](../../../design/controls/list-details
 ```
 
 ## Two column form example
-This example uses the [Pivot](../../../design/controls/pivot.md) control, [Acrylic](../../../design/style/acrylic.md) background, and [CommandBar](../../../design/controls/command-bar.md) in addition to input controls.
+This example uses the [Pivot](pivot.md) control, [Acrylic](../../../design/style/acrylic.md) background, and [CommandBar](command-bar.md) in addition to input controls.
 ![Screenshot of form example](images/form-example.png)
 ```xaml
 <Grid>
@@ -227,5 +227,5 @@ This example uses the [Pivot](../../../design/controls/pivot.md) control, [Acryl
 To learn how to connect form input to an **Azure** database and see a fully implemented form, see the [Customers Orders Database](https://github.com/Microsoft/Windows-appsample-customers-orders-database) app sample.
 
 ## Related topics
-- [Input controls](../../../design/controls/controls-and-events-intro.md)
+- [Input controls](controls-and-events-intro.md)
 - [Typography](../../../design/style/typography.md)

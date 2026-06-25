@@ -140,7 +140,7 @@ In this example, we show how to clip text in a TextBlock using the [TextTrimming
 
 ### Use a tooltip
 
-If you clip text, use a [tooltip](../../design/controls/tooltips.md) to provide the full text to your users.
+If you clip text, use a [tooltip](../ui/controls/tooltips.md) to provide the full text to your users.
 
 Here, we add a tooltip to a TextBlock that doesn't support text wrapping:
 

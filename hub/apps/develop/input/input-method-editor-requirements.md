@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 These guidelines and requirements can help you to develop a custom Input Method Editor (IME) to help a user input text in a language that can't be represented easily on a standard QWERTY keyboard.
 
-For an overview of IMEs, see [Input Method Editor (IME)](../../design/input/input-method-editors.md).
+For an overview of IMEs, see [Input Method Editor (IME)](input-method-editors.md).
 
 ## Default IME
 
@@ -287,7 +287,7 @@ Implement the following convention to make your IMEs conform to the accessibilit
 
 ## Related topics
 
-- [Input Method Editor (IME)](../../design/input/input-method-editors.md)
+- [Input Method Editor (IME)](input-method-editors.md)
 - [ITfFnGetPreferredTouchKeyboardLayout](/windows/win32/api/ctffunc/nn-ctffunc-itffngetpreferredtouchkeyboardlayout)
 - [ITfCompartmentEventSink](/windows/win32/api/msctf/nn-msctf-itfcompartmenteventsink)
 - [ITfThreadMgrEx::GetActiveFlags](/windows/win32/api/msctf/nf-msctf-itfthreadmgrex-getactiveflags)

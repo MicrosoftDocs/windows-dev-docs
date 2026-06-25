@@ -2,7 +2,7 @@
 title: Use the dynamic dependency API to reference MSIX packages at run time
 description: Describes how to use the *dynamic dependency API* to dynamically take a dependency on different MSIX packages (other than the Windows App SDK framework package) in an unpackaged app at run time.
 ms.topic: article
-ms.date: 07/27/2023
+ms.date: 06/16/2026
 ms.localizationpriority: medium
 ---
 
@@ -86,7 +86,7 @@ Windows 11's dynamic dependency API doesn't have this limitation.
 
 A dynamic dependency can always target a *framework* package. But only Windows 11's dynamic dependency API can reference and use *main* packages as well.
 
-The main package must have correctly configured its app package manifest source file (the `Package.appxmanifest` file in Visual Studio). Specifically, the main package (the target, not the caller) needs to set `<uap15:DependencyTarget>true</>` (see [uap15:DependencyTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap15-dependencytarget)). So the purpose of `<uap15::DependencyTarget>` is to enable a dynamic dependency to target a *main* package. In other words, the main package has to opt in to allow itself to be used as a dynamic dependency (whereas framework packages always implicitly allow that).
+The main package must have correctly configured its app package manifest source file (the `Package.appxmanifest` file in Visual Studio). Specifically, the main package (the target, not the caller) needs to set `<uap15:DependencyTarget>true</uap15:DependencyTarget>` (see [uap15:DependencyTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap15-dependencytarget)). So the purpose of `<uap15:DependencyTarget>` is to enable a dynamic dependency to target a *main* package. In other words, the main package has to opt in to allow itself to be used as a dynamic dependency (whereas framework packages always implicitly allow that).
 
 ### Reference the Windows App SDK framework package (Windows App SDK limitation)
 

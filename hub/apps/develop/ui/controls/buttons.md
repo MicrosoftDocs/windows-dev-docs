@@ -22,7 +22,7 @@ Control | Description
 ------- | -----------
 [Button](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button) | A button that initiates an immediate action. Can be used with a [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event or [Command](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.command) binding.
 [RepeatButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.repeatbutton) | A button that raises a [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event continuously while pressed.
-[HyperlinkButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink and used for navigation. For more info about hyperlinks, see [Hyperlinks](../../../design/controls/hyperlinks.md).
+[HyperlinkButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton) | A button that's styled like a hyperlink and used for navigation. For more info about hyperlinks, see [Hyperlinks](hyperlinks.md).
 [DropDownButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dropdownbutton) | A button with a chevron to open an attached flyout.
 [SplitButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitbutton) | A button with two sides. One side initiates an action, and the other side opens a menu.
 [ToggleSplitButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton) | A toggle button with two sides. One side toggles on/off, and the other side opens a menu.
@@ -32,7 +32,7 @@ Control | Description
 
 Use a **Button** control to let the user initiate an immediate action, such as submitting a form.
 
-Don't use a **Button** control when the action is to navigate to another page; instead, use a [HyperlinkButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton) control. For more info about hyperlinks, see [Hyperlinks](../../../design/controls/hyperlinks.md).
+Don't use a **Button** control when the action is to navigate to another page; instead, use a [HyperlinkButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton) control. For more info about hyperlinks, see [Hyperlinks](hyperlinks.md).
 
 > [!IMPORTANT]
 > For wizard navigation, use buttons labeled *Back* and *Next*. For other types of backwards navigation or navigation to an upper level, use a [back button](../../../design/basics/navigation-history-and-backwards-navigation.md).
@@ -43,7 +43,7 @@ Use a **DropDownButton** control when the button has a flyout that contains more
 
 Use a **SplitButton** control when you want the user to be able to initiate an immediate action or choose from additional options independently.
 
-Use a **ToggleButton** control when you want the user to be able to immediately switch between two mutually exclusive states, and a button is the best fit for your UI needs. Unless your UI benefits from a button, it might be a better choice to use an [AppBarToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton), [CheckBox](../../../design/controls/checkbox.md), [RadioButton](../../../design/controls/radio-button.md), or [ToggleSwitch](../../../design/controls/toggles.md).
+Use a **ToggleButton** control when you want the user to be able to immediately switch between two mutually exclusive states, and a button is the best fit for your UI needs. Unless your UI benefits from a button, it might be a better choice to use an [AppBarToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbartogglebutton), [CheckBox](checkbox.md), [RadioButton](radio-button.md), or [ToggleSwitch](toggles.md).
 
 ## Recommendations
 
@@ -54,9 +54,9 @@ Use a **ToggleButton** control when you want the user to be able to immediately 
     - [Don't do it]/No
     - Cancel
 
-- Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](../../../design/controls/checkbox.md) or [radio buttons](../../../design/controls/radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
+- Expose only one or two buttons to the user at a time, for example, **Accept** and **Cancel**. If you need to expose more actions to the user, consider using [checkboxes](checkbox.md) or [radio buttons](radio-button.md) from which the user can select actions, with a single command button to trigger those actions.
 
-- For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](../../../design/controls/command-bar.md).
+- For an action that needs to be available across multiple pages within your app, instead of duplicating a button on multiple pages, consider using a [bottom app bar](command-bar.md).
 
 ### Button text
 
@@ -91,7 +91,7 @@ A button's content is usually text. When you design that text, use the following
 
 If your layout requires only one button, it should be either left- or right-aligned based on its container context.
 
-  - Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](../../../design/controls/dialogs-and-flyouts/index.md) and specify a single button, it will be automatically right-aligned.
+  - Dialogs with only one button should **right-align** the button. If your dialog contains only one button, ensure that the button performs the safe, nondestructive action. If you use [ContentDialog](dialogs-and-flyouts/index.md) and specify a single button, it will be automatically right-aligned.
 
     ![A button within a dialog](images/pushbutton_doc_dialog.png)
 
@@ -248,11 +248,11 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 A [DropDownButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dropdownbutton) is a button that shows a chevron as a visual indicator that it has an attached flyout that contains more options. It has the same behavior as a standard **Button** control with a flyout; only the appearance is different.
 
 The drop down button inherits the **Click** event, but you typically don't use it. Instead, you use the [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout) property to attach a flyout and invoke actions by using menu options in the flyout. The flyout opens automatically when the button is clicked.
-Be sure to specify the [Placement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.placement) property of your flyout to ensure the desired placement in relation to the button. The default placement algorithm might not produce the intended placement in all situations. For more info about flyouts, see [Flyouts](../../../design/controls/dialogs-and-flyouts/flyouts.md) and [Menu flyout and menu bar](../../../design/controls/menus.md).
+Be sure to specify the [Placement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.placement) property of your flyout to ensure the desired placement in relation to the button. The default placement algorithm might not produce the intended placement in all situations. For more info about flyouts, see [Flyouts](dialogs-and-flyouts/flyouts.md) and [Menu flyout and menu bar](menus.md).
 
 ### Example - Drop down button
 
-This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a **RichEditBox** control. (For more info and code, see [Rich edit box](../../../design/controls/rich-edit-box.md)).
+This example shows how to create a drop down button with a flyout that contains commands for paragraph alignment in a **RichEditBox** control. (For more info and code, see [Rich edit box](rich-edit-box.md)).
 
 ![A drop down button with alignment commands](images/drop-down-button-align.png)
 
@@ -325,7 +325,7 @@ The typical behavior for a split button is:
 
 ### Example - Split button
 
-This example shows how to create a split button that is used to change the foreground color of selected text in a **RichEditBox** control. (For more info and code, see [Rich edit box](../../../design/controls/rich-edit-box.md)).
+This example shows how to create a split button that is used to change the foreground color of selected text in a **RichEditBox** control. (For more info and code, see [Rich edit box](rich-edit-box.md)).
 Split button's flyout uses [BottomEdgeAlignedLeft](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A split button for selecting foreground color](images/split-button-rtb.png)
@@ -442,7 +442,7 @@ Unlike [ToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
 
 ### Example - Toggle split button
 
-The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a **RichEditBox** control. (For more info and code, see [Rich edit box](../../../design/controls/rich-edit-box.md)).
+The following example shows how a toggle split button could be used to turn list formatting on or off, and change the style of the list, in a **RichEditBox** control. (For more info and code, see [Rich edit box](rich-edit-box.md)).
 The flyout of the toggle split button uses [BottomEdgeAlignedLeft](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutplacementmode) as the default value for its [Placement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.flyoutbase.placement) property. You can't override this value.
 
 ![A toggle split button for selecting list styles](images/toggle-split-button-open.png)
@@ -551,6 +551,6 @@ private void ApplyListStyle(string listStyle)
 ## Related articles
 
 - [Button class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button)
-- [Radio buttons](../../../design/controls/radio-button.md)
-- [Check boxes](../../../design/controls/checkbox.md)
-- [Toggle switches](../../../design/controls/toggles.md)
+- [Radio buttons](radio-button.md)
+- [Check boxes](checkbox.md)
+- [Toggle switches](toggles.md)

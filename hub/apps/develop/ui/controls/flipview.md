@@ -20,7 +20,7 @@ Flip view is best for perusing images in small to medium collections (up to 25 o
 ## Recommendations
 
 - Flip views work best for collections of up to 25 or so items.
-- Avoid using a flip view control for larger collections, as the repetitive motion of flipping through each item can be tedious. An exception would be for photo albums, which often have hundreds or thousands of images. Photo albums almost always switch to a flip view once a photo has been selected in the grid view layout. For other large collections, consider a [List view or grid view](../../../design/controls/lists.md).
+- Avoid using a flip view control for larger collections, as the repetitive motion of flipping through each item can be tedious. An exception would be for photo albums, which often have hundreds or thousands of images. Photo albums almost always switch to a flip view once a photo has been selected in the grid view layout. For other large collections, consider a [List view or grid view](lists.md).
 
 ## Globalization and localization checklist
 
@@ -191,7 +191,7 @@ Here's what the flip view looks like with a vertical orientation.
 
 ## Adding a context indicator
 
-Use a context indicator (such as a [PipsPager](../../../design/controls/pipspager.md) or film strip) with a flip view to help provide users with a point of reference within the content.
+Use a context indicator (such as a [PipsPager](pipspager.md) or film strip) with a flip view to help provide users with a point of reference within the content.
 
 The following image shows a PipsPager used with a small photo gallery (we recommend centering the PipsPager below the gallery).
 
@@ -226,6 +226,6 @@ For a full example showing how to add a context indicator to a FlipView, see the
 
 ## Related articles
 
-- [Guidelines for lists](../../../design/controls/lists.md)
-- [PipsPager](../../../design/controls/pipspager.md)
+- [Guidelines for lists](lists.md)
+- [PipsPager](pipspager.md)
 - [**FlipView class**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.FlipView)

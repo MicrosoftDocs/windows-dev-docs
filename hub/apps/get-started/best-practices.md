@@ -48,7 +48,7 @@ WinUI applications automatically scale for each display that they're running on.
 
 #### Responsive layout
   
-Use [responsive design techniques](../design/layout/responsive-design.md) to optimize your app pages for different window sizes. Follow the [guidelines for panning or scrolling](../design/input/guidelines-for-panning.md) to ensure that users can always access your content, no matter how small the app window gets.
+Use [responsive design techniques](../design/layout/responsive-design.md) to optimize your app pages for different window sizes. Follow the [guidelines for panning or scrolling](../develop/input/guidelines-for-panning.md) to ensure that users can always access your content, no matter how small the app window gets.
 
 ### UI interaction
 
@@ -56,7 +56,7 @@ Windows users can choose from a wide variety of input devices to interact with y
 
 #### On-object commanding
 
-Use [on-object commanding](../design/controls/collection-commanding.md#creating-context-menus) such as [context menus](../design/controls/menus-and-context-menus.md), [swipe commands](../design/controls/swipe.md), and [keyboard shortcuts](../design/input/keyboard-accelerators.md). Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest [context menu](#context-menus) integration guidance. WinUI text controls automatically expose cut, copy, and paste commands, but other controls might need extra work to support these commands.
+Use [on-object commanding](../develop/ui/controls/collection-commanding.md#creating-context-menus) such as [context menus](../develop/ui/controls/menus-and-context-menus.md), [swipe commands](../develop/ui/controls/swipe.md), and [keyboard shortcuts](../develop/input/keyboard-accelerators.md). Windows 11 improves the behavior of the right-click context menu, so if your app creates context menus, refer to the latest [context menu](#context-menus) integration guidance. WinUI text controls automatically expose cut, copy, and paste commands, but other controls might need extra work to support these commands.
 
 #### Text interaction
 
@@ -143,7 +143,7 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 #### Iconography and typography
 
-Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/signature-experiences/iconography.md), improved support for [animated icons](../design/controls/animated-icon.md), and a [new UI font ("Segoe UI Variable")](../design/signature-experiences/typography.md). Use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.
+Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/signature-experiences/iconography.md), improved support for [animated icons](../develop/ui/controls/animated-icon.md), and a [new UI font ("Segoe UI Variable")](../design/signature-experiences/typography.md). Use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.
 
 ![An image of a selection of windows icons.](images/great-apps/icons.png)
 

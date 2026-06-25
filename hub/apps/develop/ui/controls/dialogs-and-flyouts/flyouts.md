@@ -14,9 +14,9 @@ A flyout is a light dismiss container that can show arbitrary UI as its content.
 
 ## Is this the right control?
 
-* Don't use a flyout instead of [tooltip](../../../../design/controls/tooltips.md) or [context menu](../../../../design/controls/menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.
+* Don't use a flyout instead of [tooltip](../tooltips.md) or [context menu](../menus.md). Use a tooltip to show a short description that hides after a specified time. Use a context menu for contextual actions related to a UI element, such as copy and paste.
 
-For recommendations on when to use a flyout vs. when to use a dialog (a similar control), see [Dialogs and flyouts](../../../../design/controls/dialogs-and-flyouts/index.md).
+For recommendations on when to use a flyout vs. when to use a dialog (a similar control), see [Dialogs and flyouts](index.md).
 
 ## Create a flyout
 
@@ -29,7 +29,7 @@ For recommendations on when to use a flyout vs. when to use a dialog (a similar 
 
 [!INCLUDE [winui-3-gallery](../../../../../includes/winui-3-gallery.md)]
 
-Flyouts are attached to specific controls. You can use the [Placement](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button), provide a [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout) property that you can use to associate a flyout or [context menu](../../../../design/controls/menus.md).
+Flyouts are attached to specific controls. You can use the [Placement](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutBase.Placement) property to specify where a flyout appears: Top, Left, Bottom, Right, or Full. If you select the [Full placement mode](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Primitives.FlyoutPlacementMode), the app stretches the flyout and centers it inside the app window. Some controls, such as [Button](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button), provide a [Flyout](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Button.Flyout) property that you can use to associate a flyout or [context menu](../menus.md).
 
 This example creates a simple flyout that displays some text when the button is pressed.
 
@@ -194,7 +194,7 @@ private void Folder2_Click(object sender, RoutedEventArgs e)
 
 ## Related articles
 
-- [Tooltips](../../../../design/controls/tooltips.md)
-- [Menus and context menu](../../../../design/controls/menus.md)
+- [Tooltips](../tooltips.md)
+- [Menus and context menu](../menus.md)
 - [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
 - [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog)

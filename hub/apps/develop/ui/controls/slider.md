@@ -21,14 +21,14 @@ Use a slider when you want your users to be able to set defined, contiguous valu
 
 A slider is a good choice when you know that users think of the value as a relative quantity, not a numeric value. For example, users think about setting their audio volume to low or medium—not about setting the value to 2 or 5.
 
-Don't use a slider for binary settings. Use a [toggle switch](../../../design/controls/toggles.md) instead.
+Don't use a slider for binary settings. Use a [toggle switch](toggles.md) instead.
 
 Here are some additional factors to consider when deciding whether to use a slider:
 
-- **Does the setting seem like a relative quantity?** If not, use [radio buttons](../../../design/controls/radio-button.md) or a [list box](../../../design/controls/lists.md).
-- **Is the setting an exact, known numeric value?** If so, use a numeric [text box](../../../design/controls/text-box.md).
+- **Does the setting seem like a relative quantity?** If not, use [radio buttons](radio-button.md) or a [list box](lists.md).
+- **Is the setting an exact, known numeric value?** If so, use a numeric [text box](text-box.md).
 - **Would a user benefit from instant feedback on the effect of setting changes?** If so, use a slider. For example, users can choose a color more easily by immediately seeing the effect of changes to hue, saturation, or luminosity values.
-- **Does the setting have a range of four or more values?** If not, use [radio buttons](../../../design/controls/radio-button.md).
+- **Does the setting have a range of four or more values?** If not, use [radio buttons](radio-button.md).
 - **Can the user change the value?** Sliders are for user interaction. If a user can't ever change the value, use read-only text instead.
 
 If you are deciding between a slider and a numeric text box, use a numeric text box if:
@@ -164,5 +164,5 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 
 ## Related topics
 
-- [Toggle switches](../../../design/controls/toggles.md)
+- [Toggle switches](toggles.md)
 - [Slider class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Slider)

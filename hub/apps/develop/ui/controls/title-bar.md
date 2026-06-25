@@ -96,7 +96,7 @@ public MainWindow()
 
 ## Integration with NavigationView
 
-The [Navigation view](../../../design/controls/navigationview.md) has a built-in back button and pane toggle button. Fluent Design guidance recommends that these controls be placed in the title bar when a custom title bar is used.
+The [Navigation view](navigationview.md) has a built-in back button and pane toggle button. Fluent Design guidance recommends that these controls be placed in the title bar when a custom title bar is used.
 
 This example demonstrates how to integrate the TitleBar control with a NavigationView control by hiding the back button and pane toggle button in the navigation view and using the corresponding buttons on the title bar instead.
 

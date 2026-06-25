@@ -94,7 +94,7 @@ While a compliant keyboard navigation model is the baseline, a usable keyboard n
 - Providing **keyboard shortcuts** for high-frequency commands.
 - Providing **access keys** for important controls.
 
-See [Keyboard shortcuts](#keyboard-shortcuts) and [Access keys](../input/access-keys.md) for implementation guidance.
+See [Keyboard shortcuts](#keyboard-shortcuts) and [Access keys](../../develop/input/access-keys.md) for implementation guidance.
 
 #### Optimize for F6
 
@@ -141,7 +141,7 @@ In many cases, composition is simpler and more robust than custom pointer-only b
 
 ## Keyboard shortcuts
 
-In addition to navigation and activation, implement a *shortcut* (a key combination that provides efficient access to app functionality) for important or frequently used commands with [keyboard accelerators](../input/keyboard-accelerators.md) and [access keys](../input/access-keys.md).
+In addition to navigation and activation, implement a *shortcut* (a key combination that provides efficient access to app functionality) for important or frequently used commands with [keyboard accelerators](../../develop/input/keyboard-accelerators.md) and [access keys](../../develop/input/access-keys.md).
 
 Two common types of *shortcut* are:
 
@@ -218,7 +218,7 @@ For additional guidance, see [Shortcut keys](/windows/win32/uxguide/inter-keyboa
 
 Key input uses *routed events*. Routed events can bubble from children to a parent container, which allows the parent to process shortcuts for multiple descendant elements. This event model is convenient for defining shortcut key actions for a control that contains several child elements, none of which can have focus or be part of the tab order.
 
-For code examples that include modifier-key checks (for example, Ctrl), see [Keyboard interactions](../input/keyboard-interactions.md).
+For code examples that include modifier-key checks (for example, Ctrl), see [Keyboard interactions](../../develop/input/keyboard-interactions.md).
 
 ## Keyboard navigation for custom controls
 
@@ -305,6 +305,6 @@ For example, even without a physical Tab key, Narrator supports gestures that ma
 ## Related topics
 
 - [Accessibility overview](accessibility-overview.md)
-- [Keyboard interactions](../input/keyboard-interactions.md)
+- [Keyboard interactions](../../develop/input/keyboard-interactions.md)
 - [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard) (legacy sample)
 - [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample)

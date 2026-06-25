@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 ---
 # List/details pattern
 
-The list/details pattern has a list pane (usually with a [list view](../../../design/controls/lists.md)) and a details pane for content. When an item in the list is selected, the details pane is updated. This pattern is frequently used for email and address books.
+The list/details pattern has a list pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the list is selected, the details pane is updated. This pattern is frequently used for email and address books.
 
 > **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [SplitView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview)
 
@@ -51,9 +51,9 @@ One way to create the stacked list/details pattern is to use separate pages for 
 
 ![Parts for the stacked-style list detail](images/patterns-ld-stacked-parts.png)
 
-For the list view page, a [list view](../../../design/controls/lists.md) control works well for presenting lists that can contain images and text.
+For the list view page, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
-For the details view page, use the [content element](../../../design/layout/layout-panels.md) that makes the most sense. If you have a lot of separate fields, consider using a **Grid** layout to arrange elements into a form.
+For the details view page, use the [content element](../layout-panels.md) that makes the most sense. If you have a lot of separate fields, consider using a **Grid** layout to arrange elements into a form.
 
 For navigation between pages, see [navigation history and backwards navigation for Windows apps](../../../design/basics/navigation-history-and-backwards-navigation.md).
 
@@ -67,17 +67,17 @@ The list in the list pane has a selection visual to indicate the currently selec
 
 ### Create a side-by-side list/details pattern
 
-One way to create a side-by-side list/details pattern is to use the [split view](../../../design/controls/split-view.md) control. Place the list view in the split view pane, and the details view in the split view content.
+One way to create a side-by-side list/details pattern is to use the [split view](split-view.md) control. Place the list view in the split view pane, and the details view in the split view content.
 
 ![list detail split view parts](images/patterns-ld-splitview-parts.png)
 
-For the list pane, a [list view](../../../design/controls/lists.md) control works well for presenting lists that can contain images and text.
+For the list pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
-For the details content, use the [content element](../../../design/layout/layout-panels.md) that makes the most sense. If you have a lot of separate fields, consider using a **Grid** layout to arrange elements into a form.
+For the details content, use the [content element](../layout-panels.md) that makes the most sense. If you have a lot of separate fields, consider using a **Grid** layout to arrange elements into a form.
 
 ## Adaptive layout
 
-To implement a list/details pattern for any screen size, create a responsive UI with an [adaptive layout](../../../design/layout/layouts-with-xaml.md).
+To implement a list/details pattern for any screen size, create a responsive UI with an [adaptive layout](../layouts-with-xaml.md).
 
 ![adaptive list detail layout](images/patterns_listdetail.png)
 
@@ -97,7 +97,7 @@ The following samples implement the list/details pattern with adaptive layouts a
 
 ## Related articles
 
-- [Lists](../../../design/controls/lists.md)
-- [App and command bars](../../../design/controls/command-bar.md)
+- [Lists](lists.md)
+- [App and command bars](command-bar.md)
 - [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
 - [SplitView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview)

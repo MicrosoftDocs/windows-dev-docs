@@ -63,5 +63,5 @@ XAML scales across a range of devices with scaling plateaus of 100%, 125%, 150%,
 
 - [Fluent Design - Layout](https://fluent2.microsoft.design/layout)
 - [Responsive design](responsive-design.md)
-- [Responsive layouts with XAML](layouts-with-xaml.md)
-- [XAML controls](../controls/index.md)
+- [Responsive layouts with XAML](../../develop/ui/layouts-with-xaml.md)
+- [XAML controls](../../develop/ui/controls/index.md)

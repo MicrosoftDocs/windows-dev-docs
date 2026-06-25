@@ -30,7 +30,7 @@ Commands can be invoked directly through UI interactions like clicking a button 
 
 Commands can operate on a specific context within your app, such as deleting text or undoing an action, or they can be context-free, such as muting audio or adjusting brightness.
 
-The following image shows two command interfaces (a [CommandBar](../../../design/controls/command-bar.md) and a floating contextual [CommandBarFlyout](../../../design/controls/command-bar-flyout.md)) that share some of the same commands.
+The following image shows two command interfaces (a [CommandBar](command-bar.md) and a floating contextual [CommandBarFlyout](command-bar-flyout.md)) that share some of the same commands.
 
 ![Expanded Command bar](images/command-bar-flyout-img-expanded.png)<br>*Command bar*
 
@@ -38,7 +38,7 @@ The following image shows two command interfaces (a [CommandBar](../../../design
 
 ## Command interactions
 
-Due to the variety of devices, input types, and UI surfaces that can affect how a command is invoked, we recommend exposing your commands through as many commanding surfaces as possible. These can include a combination of [Swipe](../../../design/controls/swipe.md), [MenuBar](../../../design/controls/menus.md), [CommandBar](../../../design/controls/command-bar.md), [CommandBarFlyout](../../../design/controls/command-bar-flyout.md), and traditional [context menu](../../../design/controls/menus.md).
+Due to the variety of devices, input types, and UI surfaces that can affect how a command is invoked, we recommend exposing your commands through as many commanding surfaces as possible. These can include a combination of [Swipe](swipe.md), [MenuBar](menus.md), [CommandBar](command-bar.md), [CommandBarFlyout](command-bar-flyout.md), and traditional [context menu](menus.md).
 
 **For critical commands, use input-specific accelerators.** Input accelerators let a user perform actions more quickly depending on the input device they're using.
 
@@ -93,7 +93,7 @@ A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input
 | -------------------- |
 | [Commanding sample (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
 
-In this example, we show how to enhance a basic [ListView](../../../design/controls/listview-and-gridview.md) with a Delete item command implemented through the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, while optimizing the user experience for a variety of input types using a [MenuBar](../../../design/controls/menus.md), [Swipe](../../../design/controls/swipe.md) control, hover buttons, and [context menu](../../../design/controls/menus.md).
+In this example, we show how to enhance a basic [ListView](listview-and-gridview.md) with a Delete item command implemented through the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, while optimizing the user experience for a variety of input types using a [MenuBar](menus.md), [Swipe](swipe.md) control, hover buttons, and [context menu](menus.md).
 
 **Xaml:**
 
@@ -600,7 +600,7 @@ private void ListViewSwipeContainer_PointerExited(object sender, PointerRoutedEv
 
 ## Command experiences using the ICommand interface
 
-Standard WinUI controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see [Controls and patterns for Windows apps](../../../design/controls/index.md).
+Standard WinUI controls (button, list, selection, calendar, predictive text) provide the basis for many common command experiences. For a complete list of control types, see [Controls and patterns for Windows apps](index.md).
 
 The most basic way to support a structured commanding experience is to define an implementation of the ICommand interface ([Windows.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#).  This ICommand instance can then be bound to controls such as buttons.
 
@@ -1084,7 +1084,7 @@ Use the following approaches when building commands for your Windows apps:
 
 ## See also
 
-[Controls and patterns for Windows apps](../../../design/controls/index.md)
+[Controls and patterns for Windows apps](index.md)
 
 ### Samples
 

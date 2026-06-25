@@ -21,9 +21,9 @@ Accelerator keys (or keyboard accelerators) are keyboard shortcuts that improve 
 > [!NOTE]
 > A keyboard is indispensable for users with certain disabilities (see [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)), and is also an important tool for users who prefer it as a more efficient way to interact with an app.
 
-See the [Access keys](../../design/input/access-keys.md) topic for details on navigating the UI of a Windows application with keyboard shortcuts.
+See the [Access keys](access-keys.md) topic for details on navigating the UI of a Windows application with keyboard shortcuts.
 
-To create your own custom keyboard shortcuts, see the [Keyboard events](../../design/input/keyboard-events.md) topic.
+To create your own custom keyboard shortcuts, see the [Keyboard events](keyboard-events.md) topic.
 
 ## Overview
 
@@ -372,7 +372,7 @@ Notice that some of the combinations are not valid for localized versions of Win
 
 ### Tooltips
 
-As keyboard accelerators are not typically described directly in the UI of your Windows application, you can improve discoverability through [tooltips](../../design/controls/tooltips.md), which display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip can identify whether a control has an associated keyboard accelerator and, if so, what the accelerator key combination is.
+As keyboard accelerators are not typically described directly in the UI of your Windows application, you can improve discoverability through [tooltips](../ui/controls/tooltips.md), which display automatically when the user moves focus to, presses and holds, or hovers the mouse pointer over a control. The tooltip can identify whether a control has an associated keyboard accelerator and, if so, what the accelerator key combination is.
 
 By default, when keyboard accelerators are declared, all controls (except [MenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem) and [ToggleMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglemenuflyoutitem)) present the corresponding key combinations in a tooltip.
 
@@ -637,8 +637,8 @@ public class MyListView : ListView
 
 ## Related articles
 
-- [Keyboard interactions](../../design/input/keyboard-interactions.md)
-- [Access keys](../../design/input/access-keys.md)
+- [Keyboard interactions](keyboard-interactions.md)
+- [Access keys](access-keys.md)
 - [VirtualKey Enum](/uwp/api/windows.system.virtualkey)
 
 ### Samples

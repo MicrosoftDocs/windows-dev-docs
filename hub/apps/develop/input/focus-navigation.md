@@ -27,9 +27,9 @@ This topic describes how to optimize a Windows application and build custom inte
 
 Even though we focus on keyboard input for custom controls in Windows apps on PCs, a well-designed keyboard experience is also important for software keyboards such as the touch keyboard and the On-Screen Keyboard (OSK), supporting accessibility tools such as Windows Narrator, and supporting the 10-foot experience.
 
-See [Handle pointer input](../../design/input/handle-pointer-input.md) for guidance on building custom experiences in Windows applications for pointing devices.
+See [Handle pointer input](handle-pointer-input.md) for guidance on building custom experiences in Windows applications for pointing devices.
 
-For more general information on building apps and experiences for keyboard, see [Keyboard Interaction](../../design/input/keyboard-interactions.md).
+For more general information on building apps and experiences for keyboard, see [Keyboard Interaction](keyboard-interactions.md).
 
 ## General guidance
 
@@ -419,7 +419,7 @@ Non-pointer input types such as keyboard, gamepad, remote control, and accessibi
 
 In this section, we cover how to specify a preferred navigation strategy and fine tune focus navigation within your application through a set of navigation strategy properties that support all focus-based, non-pointer input types.
 
-For more general information on building apps and experiences for Xbox/TV, see [Keyboard Interaction](../../design/input/keyboard-interactions.md), [Designing for Xbox and TV](../../design/devices/designing-for-tv.md), and [Gamepad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md).
+For more general information on building apps and experiences for Xbox/TV, see [Keyboard Interaction](keyboard-interactions.md), [Designing for Xbox and TV](../../design/devices/designing-for-tv.md), and [Gamepad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md).
 
 ### Navigation Strategies
 
@@ -476,6 +476,6 @@ This image shows how, when B1 has focus and down is the requested direction, B3 
 
 
 ## Related articles
-- [Programmatic focus navigation](../../design/input/focus-navigation-programmatic.md)
-- [Keyboard interactions](../../design/input/keyboard-interactions.md)
+- [Programmatic focus navigation](focus-navigation-programmatic.md)
+- [Keyboard interactions](keyboard-interactions.md)
 - [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)

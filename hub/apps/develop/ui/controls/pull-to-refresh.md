@@ -331,7 +331,7 @@ public class ListItemData
 
 ## Related articles
 
-- [Touch interactions](../../../design/input/touch-interactions.md)
-- [List view and grid view](../../../design/controls/listview-and-gridview.md)
-- [Item containers and templates](../../../design/controls/item-containers-templates.md)
+- [Touch interactions](../../input/touch-interactions.md)
+- [List view and grid view](listview-and-gridview.md)
+- [Item containers and templates](item-containers-templates.md)
 - [Expression animations](/windows/uwp/composition/composition-animation)

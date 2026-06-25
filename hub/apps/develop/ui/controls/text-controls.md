@@ -16,8 +16,8 @@ ms.localizationpriority: medium
 
 Text controls consist of text input boxes, password boxes, auto-suggest boxes, and text blocks. The XAML framework provides several controls for rendering, entering, and editing text, and a set of properties for formatting the text.
 
-- The controls for displaying read-only text are [TextBlock](../../../design/controls/text-block.md) and [RichTextBlock](../../../design/controls/rich-text-block.md).
-- The controls for text entry and editing are: [TextBox](../../../design/controls/text-box.md), [RichEditBox](../../../design/controls/rich-edit-box.md), [AutoSuggestBox](../../../design/controls/auto-suggest-box.md), and [PasswordBox](../../../design/controls/password-box.md).
+- The controls for displaying read-only text are [TextBlock](text-block.md) and [RichTextBlock](rich-text-block.md).
+- The controls for text entry and editing are: [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md), and [PasswordBox](password-box.md).
 
 > **Important APIs**: [TextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock), [RichTextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichTextBlock), [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox), [RichEditBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox), [AutoSuggestBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AutoSuggestBox), [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
 
@@ -55,14 +55,14 @@ Use a **RichEditBox** to display and edit text files. You don't use a RichEditBo
 
 There are many ways you can get user input in your app. These questions will help answer whether one of the standard text input boxes or another control is the best fit for getting user input.
 
--   **Is it practical to efficiently enumerate all valid values?** If so, consider using one of the selection controls, such as a [check box](../../../design/controls/checkbox.md), [drop-down list](../../../design/controls/lists.md), list box, [radio button](../../../design/controls/radio-button.md), [slider](../../../design/controls/slider.md), [toggle switch](../../../design/controls/toggles.md), [date picker](../../../design/controls/date-and-time.md), or time picker.
--   **Is there a fairly small set of valid values?** If so, consider a [drop-down list](../../../design/controls/lists.md) or a list box, especially if the values are more than a few characters long.
+-   **Is it practical to efficiently enumerate all valid values?** If so, consider using one of the selection controls, such as a [check box](checkbox.md), [drop-down list](lists.md), list box, [radio button](radio-button.md), [slider](slider.md), [toggle switch](toggles.md), [date picker](date-and-time.md), or time picker.
+-   **Is there a fairly small set of valid values?** If so, consider a [drop-down list](lists.md) or a list box, especially if the values are more than a few characters long.
 -   **Is the valid data completely unconstrained? Or is the valid data only constrained by format (constrained length or character types)?** If so, use a text input control. You can limit the number of characters that can be entered, and you can validate the format in your app code.
 -   **Does the value represent a data type that has a specialized common control?** If so, use the appropriate control instead of a text input control. For example, use a [DatePicker](/previous-versions/windows/apps/br211681(v=win.10)) instead of a text input control to accept a date entry.
 -   If the data is strictly numeric:
-    -   **Is the value being entered approximate and/or relative to another quantity on the same page?** If so, use a [slider](../../../design/controls/slider.md).
-    -   **Would the user benefit from instant feedback on the effect of setting changes?** If so, use a [slider](../../../design/controls/slider.md), possibly with an accompanying control.
-    -   **Is the value entered likely to be adjusted after the result is observed, such as with volume or screen brightness?** If so, use a [slider](../../../design/controls/slider.md).
+    -   **Is the value being entered approximate and/or relative to another quantity on the same page?** If so, use a [slider](slider.md).
+    -   **Would the user benefit from instant feedback on the effect of setting changes?** If so, use a [slider](slider.md), possibly with an accompanying control.
+    -   **Is the value entered likely to be adjusted after the result is observed, such as with volume or screen brightness?** If so, use a [slider](slider.md).
 
 ## Examples
 
@@ -82,12 +82,12 @@ Password box
 
 See these articles for info and examples specific to each text control.
 
--   [AutoSuggestBox](../../../design/controls/auto-suggest-box.md)
--   [PasswordBox](../../../design/controls/password-box.md)
--   [RichEditBox](../../../design/controls/rich-edit-box.md)
--   [RichTextBlock](../../../design/controls/rich-text-block.md)
--   [TextBlock](../../../design/controls/text-block.md)
--   [TextBox](../../../design/controls/text-box.md)
+-   [AutoSuggestBox](auto-suggest-box.md)
+-   [PasswordBox](password-box.md)
+-   [RichEditBox](rich-edit-box.md)
+-   [RichTextBlock](rich-text-block.md)
+-   [TextBlock](text-block.md)
+-   [TextBox](text-box.md)
 
 ## Font and style guidelines
 See these articles for font guidelines:
@@ -111,7 +111,7 @@ For example, if a text box is used only to enter a 4-digit PIN, set the [InputSc
 >Important  
 >The input scope does not cause any input validation to be performed, and does not prevent the user from providing any input through a hardware keyboard or other input device. You are still responsible for validating the input in your code as needed.
 
-For more info, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md).
+For more info, see [Use input scope to change the touch keyboard](../../input/use-input-scope-to-change-the-touch-keyboard.md).
 
 ## Color fonts
 

@@ -54,7 +54,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a reference to the Window object (whether a WinUI window, a WPF window, or a WinForms window). For more info, see [Retrieve a window handle (HWND)](../../../develop/ui/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui/display-ui-objects.md).
 
     ```csharp
     var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
@@ -101,7 +101,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
         TileSize.Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. For more info, see [Retrieve a window handle (HWND)](../../../develop/ui/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui/display-ui-objects.md).
 
     ```csharp
     var wih = new System.Windows.Interop.WindowInteropHelper(this);
@@ -141,7 +141,7 @@ If you're using WPF or WinForms, and you haven't packaged your app with the Desk
             Windows::UI::StartScreen::TileSize::Default);
     ```
 
-1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](../../../develop/ui-input/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui-input/display-ui-objects.md).
+1. Retrieve a window handle, and initialize the secondary tile object with that handle. In the code below, `this` is a pointer to a [WinUI Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object. For more info, see [Retrieve a window handle (HWND)](../../../develop/ui/retrieve-hwnd.md) and [Display WinRT UI objects that depend on CoreWindow](../../../develop/ui/display-ui-objects.md).
 
     ```cppwinrt
     auto windowNative{ this->m_inner.as<::IWindowNative>() };

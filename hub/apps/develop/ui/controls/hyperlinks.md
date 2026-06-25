@@ -159,7 +159,7 @@ The default color of the hyperlink is the accent color of the system. You can se
 
 ## Related articles
 
-- [Text controls](../../../design/controls/text-controls.md)
-- [Guidelines for tooltips](../../../design/controls/tooltips.md)
+- [Text controls](text-controls.md)
+- [Guidelines for tooltips](tooltips.md)
 - [Hyperlink class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Hyperlink)
 - [HyperlinkButton class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.HyperlinkButton)

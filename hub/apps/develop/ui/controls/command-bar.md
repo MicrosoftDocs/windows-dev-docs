@@ -279,7 +279,7 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 ```
 
 > [!NOTE]
-> The implementation of the editing commands is beyond the scope of this example. For more info, see the [RichEditBox](../../../design/controls/rich-edit-box.md) article.
+> The implementation of the editing commands is beyond the scope of this example. For more info, see the [RichEditBox](rich-edit-box.md) article.
 
 Although the Minimal and Hidden modes are useful in some situations, keep in mind that hiding all actions could confuse users.
 
@@ -288,7 +288,7 @@ Changing the ClosedDisplayMode to provide more or less of a hint to the user aff
 ## Related articles
 
 - [Command design basics for Windows apps](../../../design/basics/commanding-basics.md)
-- [Command bar flyout](../../../design/controls/command-bar-flyout.md)
-- [Menu flyout and menu bar](../../../design/controls/menus.md)
+- [Command bar flyout](command-bar-flyout.md)
+- [Menu flyout and menu bar](menus.md)
 - [MenuFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout)
 - [CommandBar class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.CommandBar)

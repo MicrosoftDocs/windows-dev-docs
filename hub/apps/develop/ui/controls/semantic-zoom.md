@@ -72,7 +72,7 @@ The 3 elements you need for a semantic zoom are:
 - A zoomed-in view that shows the item-level data.
 - A zoomed-out view that shows the group-level data.
 
-Before you use a semantic zoom, you should understand how to use a list view with grouped data. For more info, see [List view and grid view](../../../design/controls/listview-and-gridview.md).
+Before you use a semantic zoom, you should understand how to use a list view with grouped data. For more info, see [List view and grid view](listview-and-gridview.md).
 
 > [!NOTE]
 > To define the zoomed-in view and the zoomed-out view of the SemanticZoom control, you can use any two controls that implement the [ISemanticZoomInformation](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ISemanticZoomInformation) interface. The XAML framework provides 3 controls that implement this interface: ListView, GridView, and Hub.
@@ -179,5 +179,5 @@ private void SemanticZoom_ViewChangeStarted(object sender, SemanticZoomViewChang
 ## Related articles
 
 - [Navigation design basics](../../../design/basics/navigation-basics.md)
-- [List view and grid view](../../../design/controls/listview-and-gridview.md)
-- [Item containers and templates](../../../design/controls/item-containers-templates.md)
+- [List view and grid view](listview-and-gridview.md)
+- [Item containers and templates](item-containers-templates.md)

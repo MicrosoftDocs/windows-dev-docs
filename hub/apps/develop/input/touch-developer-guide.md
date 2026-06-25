@@ -86,14 +86,14 @@ Targeting is optimized through:
 
 - Rocking
 
-    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a [tooltip](../../design/controls/tooltips.md) or the status bar and is activated when the touch is released.
+    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a [tooltip](../ui/controls/tooltips.md) or the status bar and is activated when the touch is released.
 
 ## Accuracy
 
 Design for sloppy interactions by using:
 
 - Snap-points that can make it easier to stop at desired locations when users interact with content.
-- Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](../../design/input/guidelines-for-panning.md).
+- Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
 
 ## Occlusion
 
@@ -113,7 +113,7 @@ Finger and hand occlusion is avoided through:
 
 - Handles for precision
 
-    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](../../design/input/guidelines-for-textselection.md).
+    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
 
 ## Timing
 
@@ -198,7 +198,7 @@ Here is the basic set of touch gestures supported by WinUI.
 
 ## Gesture events
 
-For details about individual controls, see [Controls list](../../design/controls/index.md).
+For details about individual controls, see [Controls list](../ui/controls/index.md).
 
 ## Pointer events
 
@@ -570,8 +570,8 @@ All of the pointer events, gesture events and manipulation events mentioned here
 
 ## Related articles
 
-- [Handle pointer input](../../design/input/handle-pointer-input.md)
-- [Identify input devices](../../design/input/identify-input-devices.md)
+- [Handle pointer input](handle-pointer-input.md)
+- [Identify input devices](identify-input-devices.md)
 
 ### Samples
 

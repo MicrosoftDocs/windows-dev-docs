@@ -65,7 +65,7 @@ _Click the image to see it animated._
 
 Avoid custom animations where possible. Use animation resources like [WinUI 3](../../winui/index.md) controls for page transitions, in-page focus, and micro interactions. If you can't use WinUI controls, mimic existing OS behaviors based on where the app entry point lives.
 
-_Example:_ [Page transitions](../motion/page-transitions.md), [connected animations](../motion/connected-animation.md), and [animated icons](../controls/animated-icon.md) are the recommended WinUI controls that add delightful and necessary motion to apps.
+_Example:_ [Page transitions](../motion/page-transitions.md), [connected animations](../motion/connected-animation.md), and [animated icons](../../develop/ui/controls/animated-icon.md) are the recommended WinUI controls that add delightful and necessary motion to apps.
 
 :::image type="content" source="images/motion-resourceful.png" lightbox="images/motion-resourceful.gif" alt-text="An animated image that shows examples of page transitions, connected animations, and animated icons in the Windows UI.":::
 
@@ -122,7 +122,7 @@ _Click the image to see it animated._
 
 #### Animated Icon: Adds delight and reveals information through micro interactions
 
-Use [animated icons](../controls/animated-icon.md) to implement lightweight, vector-based icons and illustrations with motion using [Lottie](/windows/communitytoolkit/animations/lottie) animations.
+Use [animated icons](../../develop/ui/controls/animated-icon.md) to implement lightweight, vector-based icons and illustrations with motion using [Lottie](/windows/communitytoolkit/animations/lottie) animations.
 
 Animated icons draw attention to specific entry points, provide feedback from state to state, and add delight to an interaction.
 

@@ -73,7 +73,7 @@ Here are some examples of touchpad-optimized gestures for performing common task
 
 Query the mouse device capabilities ([**MouseCapabilities**](/uwp/api/Windows.Devices.Input.MouseCapabilities)) to identify what aspects of your app UI the touchpad hardware can access directly. We recommend providing UI for both touch and mouse input.
 
-For more info about querying device capabilities, see [Identify input devices](../../design/input/identify-input-devices.md).
+For more info about querying device capabilities, see [Identify input devices](identify-input-devices.md).
 
 ## Visual feedback
 
@@ -84,7 +84,7 @@ For more info about querying device capabilities, see [Identify input devices](.
 -   Don't use focus rectangles with touchpad interactions. Reserve these for keyboard interactions.
 -   Display visual feedback concurrently for all elements that represent the same input target.
 
-For more general guidance about visual feedback, see [Guidelines for visual feedback](../../design/input/guidelines-for-visualfeedback.md).
+For more general guidance about visual feedback, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
 
 ## Cursors
 
@@ -103,8 +103,8 @@ If you need to customize the mouse cursor:
 
 ## Related articles
 
-- [Handle pointer input](../../design/input/handle-pointer-input.md)
-- [Identify input devices](../../design/input/identify-input-devices.md)
+- [Handle pointer input](handle-pointer-input.md)
+- [Identify input devices](identify-input-devices.md)
 
 ### Samples
 

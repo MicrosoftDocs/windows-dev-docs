@@ -233,4 +233,4 @@ You might wonder why the panel wouldn't instead choose 5x2 for 10 items, because
 
 **Concepts**
 
-* [Alignment, margin, and padding](alignment-margin-padding.md)
+* [Alignment, margin, and padding](../../develop/ui/alignment-margin-padding.md)

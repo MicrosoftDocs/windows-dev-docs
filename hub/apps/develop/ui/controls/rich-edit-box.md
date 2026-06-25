@@ -18,11 +18,11 @@ You can use a **RichEditBox** control to enter and edit rich text documents that
 
 Use a RichEditBox to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
 
-- If the primary purpose of the multi-line text box is for creating read-only documents (such as blog entries or the contents of an email message), and those documents require rich text, use a [rich text block](../../../design/controls/rich-text-block.md) instead.
+- If the primary purpose of the multi-line text box is for creating read-only documents (such as blog entries or the contents of an email message), and those documents require rich text, use a [rich text block](rich-text-block.md) instead.
 - When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
 - For all other scenarios, use a plain text input control.
 
-For more info about choosing the right text control, see the [Text controls](../../../design/controls/text-controls.md) article.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
 ## Recommendations
 
@@ -50,7 +50,7 @@ This rich edit box has a rich text document open in it. The formatting and file 
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
-By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled) property to **false**. For more info, see the [Guidelines for spell checking](../../../design/controls/text-controls.md) article.
+By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.isspellcheckenabled) property to **false**. For more info, see the [Guidelines for spell checking](text-controls.md) article.
 
 You use the [Document](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.richeditbox.document) property of the RichEditBox to get its content. The content of a RichEditBox is an [ITextDocument](/windows/desktop/api/tom/nn-tom-itextdocument) object, unlike the RichTextBlock control, which uses [Block](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Documents.Block) objects as its content. The ITextDocument interface provides a way to load and save the document to a stream, retrieve text ranges, get the active selection, undo and redo changes, set default formatting attributes, and so on.
 
@@ -216,12 +216,12 @@ To set the math content of a rich edit box, call [SetMathML](/windows/windows-ap
 
 To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. The default keyboard layout is usually appropriate for working with rich text documents.
 
-For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../../../design/input/use-input-scope-to-change-the-touch-keyboard.md).
+For more info about how to use input scopes, see [Use input scope to change the touch keyboard](../../input/use-input-scope-to-change-the-touch-keyboard.md).
 
 ## Related articles
 
-- [Text controls](../../../design/controls/text-controls.md)
-- [Guidelines for spell checking](../../../design/controls/text-controls.md)
-- [Guidelines for text input](../../../design/controls/text-controls.md)
+- [Text controls](text-controls.md)
+- [Guidelines for spell checking](text-controls.md)
+- [Guidelines for text input](text-controls.md)
 - [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox)
 - [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)

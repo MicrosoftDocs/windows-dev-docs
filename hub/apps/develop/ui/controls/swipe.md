@@ -214,6 +214,6 @@ Here, a _reply_ swipe item is set to close after its invoked.
 
 ## Related articles
 
-- [List view and Grid view](../../../design/controls/listview-and-gridview.md)
-- [Item containers and templates](../../../design/controls/item-containers-templates.md)
-- [Pull to refresh](../../../design/controls/pull-to-refresh.md)
+- [List view and Grid view](listview-and-gridview.md)
+- [Item containers and templates](item-containers-templates.md)
+- [Pull to refresh](pull-to-refresh.md)

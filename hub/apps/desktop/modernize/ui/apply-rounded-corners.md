@@ -2,7 +2,7 @@
 description: Apply rounded corners in your desktop application.
 title: Apply rounded corners in desktop apps
 ms.topic: how-to
-ms.date: 04/25/2023
+ms.date: 06/16/2026
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 Rounded corners are the most immediately noticeable feature of [Windows 11 Geometry](../../../design/signature-experiences/geometry.md). On Windows 11, the system automatically rounds top-level window corners for all inbox apps, including all WinUI apps, and most other apps. However, some Win32 apps might not be rounded. This topic describes how to round your Win32 app's main window corners if the system does not round them automatically.
 
 > [!NOTE]
-> By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), running on a Windows Virtual Desktop (WVD), or running as a Windows Defender Application Guard (WDAG) window.
+> By design, apps are not rounded when maximized, snapped, running in a Virtual Machine (VM), running in an Azure Virtual Desktop (AVD) session, or running as a Windows Defender Application Guard (WDAG) window.
 
 :::image type="content" source="../images/apply-design/notepad-rounded.png" alt-text="A screenshot of the Notepad app on Windows 11 with rounded corners.":::
 

@@ -170,7 +170,7 @@ The next example creates an [**ImageBrush**](/windows/windows-app-sdk/api/winrt/
 
 *A rendered ImageBrush*
 
-[**ImageBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.ImageBrush) and [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Image) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](../../../design/controls/images-imagebrushes.md).
+[**ImageBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.ImageBrush) and [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Image) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](../../ui/controls/images-imagebrushes.md).
 
 ## Brushes and text
 
