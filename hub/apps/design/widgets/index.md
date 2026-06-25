@@ -36,28 +36,24 @@ To create great Windows Widgets, consider the following principles as you design
 
 ### Glanceable 
 
-Users can take a quick peek to get the most value out of the widget. They only need to click on it if they want richer details or deeper interactions. 
+A widget should immediately deliver it's primary value to the user. 
  
-### Dependable 
+### Focused & Useful
 
-Surface frequently used information instantly to save users time in repeating those steps. Drive consistent re-engagement to your app.
+A widget should serve one clear, primary purpose.
 
-### Useful 
+### Predictable & Calm
 
-Elevate the most useful and relevant information. 
+A widget's behaviors and patterns help users complete tasks predictably. 
 
-### Personal 
+### User-Anchored 
 
-Provide personalized content and build an emotional connection with customers. Widgets should never contain ads. Customers are in control of their widget content and layout. 
+A widget should reflect the user's needs, preferences and intents. Content should be based on the user's own data or explicitly stated interests.  
 
-### Focused 
+### Timely 
 
-Each widget should generally focus on one main task or scenario. Widgets are not intended to replace your apps and websites. 
+A widget should surface relevant information at the right time and in the right context.   
 
-### Fresh 
-
-Content should dynamically refresh based on available context. It is up to date and provides the right content at the right time. 
-  
 
 ## Planning your app's widget experience
 
