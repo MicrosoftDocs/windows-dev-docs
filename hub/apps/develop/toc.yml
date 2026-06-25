@@ -839,10 +839,10 @@ items:
                 href: smart-app-control/code-signing-for-smart-app-control.md
               - name: Test your app's signature with Smart App Control
                 href: smart-app-control/test-your-app-with-smart-app-control.md
-          - name: Widgets
+          - name: Widgets and Dashboards
             href: widgets/index.md
             items:
-              - name: Feed providers
+              - name: Dashboards
                 items:
                   - name: Overview
                     href: feeds/feed-providers.md
@@ -852,7 +852,7 @@ items:
                     href: feeds/implement-feed-provider-win32.md
                   - name: Feed provider package manifest XML format
                     href: feeds/feed-provider-manifest.md
-              - name: Widget providers
+              - name: Widgets
                 items:
                   - name: Overview
                     href: widgets/widget-providers.md
