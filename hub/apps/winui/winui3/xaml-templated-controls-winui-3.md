@@ -75,7 +75,7 @@ public BgLabelControl()
 }
 ```
 
-Our templated control will have a text label that can be set programmatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a [DependencyPropety](/uwp/api/Windows.UI.Xaml.DependencyProperty). To do this, first we declare a string property and call it **Label**. Instead of using a backing variable, we set and get the value of our dependency property by calling [GetValue](/uwp/api/windows.ui.xaml.dependencyobject.getvalue) and [SetValue](/uwp/api/windows.ui.xaml.dependencyobject.setvalue). These methods are provided by the [DependencyObject](/uwp/api/windows.ui.xaml.dependencyobject), which **Microsoft.UI.Xaml.Controls.Control** inherits.
+Our templated control will have a text label that can be set programmatically in code, in XAML, or via data binding. In order for the system to keep the text of our control's label up to date, it needs to be implemented as a [DependencyPropety](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty). To do this, first we declare a string property and call it **Label**. Instead of using a backing variable, we set and get the value of our dependency property by calling [GetValue](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.getvalue) and [SetValue](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.setvalue). These methods are provided by the [DependencyObject](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject), which **Microsoft.UI.Xaml.Controls.Control** inherits.
 
 ```csharp
 public string Label
@@ -84,10 +84,10 @@ public string Label
     set => SetValue(LabelProperty, value);
 }
 ```
-Next, declare the dependency property and register it with the system by calling [DependencyProperty.Register](/uwp/api/windows.ui.xaml.dependencyproperty.register). This method specifies the name and type of our **Label** property, the type of the owner of the property, our **BgLabelControl** class, and the default value for the property.
+Next, declare the dependency property and register it with the system by calling [DependencyProperty.Register](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register). This method specifies the name and type of our **Label** property, the type of the owner of the property, our **BgLabelControl** class, and the default value for the property.
 
 ```csharp
-DependencyProperty LabelProperty = DependencyProperty.Register(
+public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
     nameof(Label), 
     typeof(string),
     typeof(BgLabelControl), 
@@ -218,12 +218,12 @@ namespace winrt::BgLabelControlApp::implementation
 
 This walkthrough won't use the **OnLabelChanged** callback, but it's provided so that you can see how to register a dependency property with a property-changed callback. The implementation of **OnLabelChanged** also shows how to obtain a derived projected type from a base projected type (the base projected type is DependencyObject, in this case). And it shows how to then obtain a pointer to the type that implements the projected type. That second operation will naturally only be possible in the project that implements the projected type (that is, the project that implements the runtime class).
 
-The [xaml_typename](/uwp/cpp-ref-for-winrt/xaml-typename) function is provided by the Windows.UI.Xaml.Interop namespace that is not included by default in the WinUI project template. Add a line to the precompiled header file for your project, `pch.h`, to include the header file associated with this namespace.
+The [xaml_typename](/uwp/cpp-ref-for-winrt/xaml-typename) function is provided by the Microsoft.UI.Xaml.Interop namespace that is not included by default in the WinUI project template. Add a line to the precompiled header file for your project, `pch.h`, to include the header file associated with this namespace.
 
 ```cppwinrt
 // pch.h
 ...
-#include <winrt/Windows.UI.Xaml.Interop.h>
+#include <winrt/Microsoft.UI.Xaml.Interop.h>
 ...
 ```
 

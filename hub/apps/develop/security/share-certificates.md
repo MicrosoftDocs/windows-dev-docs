@@ -65,6 +65,8 @@ Apps can authenticate to a web service using a certificate, and multiple apps ca
            {
                return true;
            }
+
+           return false;
        }
    }
    ```

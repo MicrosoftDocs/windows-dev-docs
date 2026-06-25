@@ -58,7 +58,7 @@ The [WinUI agent plugin](../develop/ai-assisted/winui-agent-plugin.md) from the 
 gh copilot plugin install winui@awesome-copilot
 ```
 
-This installs the plugin user-globally to `~\.copilot\installed-plugins\`. Verify with `gh copilot plugin list`.
+This copies agents, skills, and custom instructions into your project's `.github/` directory. Copilot automatically picks them up the next time you open the project. After installation, run `copilot plugin list` and confirm that `winui3-development@awesome-copilot` appears in the installed plugins list.
 
 > [!TIP]
 > You can also browse and install Copilot plugins directly from VS Code using the [Awesome Copilot extension](https://marketplace.visualstudio.com/items?itemName=TimHeuer.awesome-copilot).

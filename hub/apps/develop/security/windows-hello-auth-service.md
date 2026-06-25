@@ -237,7 +237,7 @@ In this exercise, you start with the Windows Hello application built in the firs
         // If the UserAccountList does not contain the sampleUser Initialize the sample users
         // This is only needed as it in a Hand on Lab to demonstrate a user migrating
         // In the real world user accounts would just be in a database
-        if (!_mockDatabaseUserAccountsList.Any(f = > f.Username.Equals("sampleUsername")))
+        if (!_mockDatabaseUserAccountsList.Any(f => f.Username.Equals("sampleUsername")))
                 {
             //If the list is empty InitializeSampleUserAccountsAsync and return the list
             await InitializeSampleUserAccountsAsync();

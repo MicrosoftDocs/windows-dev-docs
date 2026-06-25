@@ -67,7 +67,7 @@ It is common for more than one of the supported events to fire when the Fn butto
 
 3. This third snippet includes the corresponding event handler delegates for each event supported by the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) object.
 
-   Each event handler announces the event that has occurred. In addition, the FunctionLockIndicatorChanged handler also controls whether the app is in "Learning" mode (`_isLearningMode` = true), which prevents the event from bubbling to other handlers and lets the user explore keyboard features without actually performing the action.
+   Each event handler announces the event that has occurred. In addition, the SystemFunctionLockIndicatorChanged handler also controls whether the app is in "Learning" mode (`_isLearningMode` = true), which prevents the event from bubbling to other handlers and lets the user explore keyboard features without actually performing the action.
 
     ```cppwinrt
     void SetupSystemButtonEventController()
@@ -80,8 +80,8 @@ It is common for more than one of the supported events to fire when the Fn butto
         _controller = winrt::SystemButtonEventController::CreateForDispatcherQueue(_queue);
 
         // Add Event Handler for each different event
-        _fnKeyDownToken = _controller->FunctionButtonPressed(
-            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionButtonEventArgs& args)
+        _fnKeyDownToken = _controller->SystemFunctionButtonPressed(
+            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: SystemFunctionButtonEventArgs& args)
             {
                 // Mock function to read the sentence "Fn button is pressed"
                 PronounceFunctionButtonPressedMock();
@@ -90,8 +90,8 @@ It is common for more than one of the supported events to fire when the Fn butto
                 args.Handled(true);
             });
 
-            _fnKeyUpToken = _controller->FunctionButtonReleased(
-                [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionButtonEventArgs& args)
+            _fnKeyUpToken = _controller->SystemFunctionButtonReleased(
+                [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: SystemFunctionButtonEventArgs& args)
                 {
                     // Mock function to read the sentence "Fn button is up"
                     PronounceFunctionButtonReleasedMock();
@@ -100,8 +100,8 @@ It is common for more than one of the supported events to fire when the Fn butto
                     args.Handled(true);
                 });
 
-        _fnLockToken = _controller->FunctionLockChanged(
-            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionLockChangedEventArgs& args)
+        _fnLockToken = _controller->SystemFunctionLockChanged(
+            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: SystemFunctionLockChangedEventArgs& args)
             {
                 // Mock function to read the sentence "Fn shift is locked/unlocked"
                 PronounceFunctionLockMock(args.IsLocked());
@@ -110,8 +110,8 @@ It is common for more than one of the supported events to fire when the Fn butto
                 args.Handled(true);
             });
 
-        _fnLockIndicatorToken = _controller->FunctionLockIndicatorChanged(
-            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionLockIndicatorChangedEventArgs& args)
+        _fnLockIndicatorToken = _controller->SystemFunctionLockIndicatorChanged(
+            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: SystemFunctionLockIndicatorChangedEventArgs& args)
             {
                 // Mock function to read the sentence "Fn lock indicator is on/off"
                 PronounceFunctionLockIndicatorMock(args.IsIndicatorOn());

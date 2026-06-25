@@ -148,7 +148,7 @@ navigator.credentials.create({
       // User-friendly name of your service.
       name: "Passkeys Developer",
       // Relying party (RP) identifier (hostname/FQDN).
-      id: passkeys.contoso"
+      id: "passkeys.contoso"
     },
 
     user: {
@@ -242,10 +242,10 @@ navigator.credentials.get({
     rpId: ...,
      allowCredentials: [{
       type: "public-key",      
-      id: new UInt8Array([21, 31, 56, ...]).buffer,
+      id: new Uint8Array([21, 31, 56, ...]).buffer,
     }, {
       type: "public-key",
-      id: new UInt8Array([21, 31, 56, ...]).buffer,
+      id: new Uint8Array([21, 31, 56, ...]).buffer,
     }, {
       ...
     }],
