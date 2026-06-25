@@ -240,7 +240,6 @@ bool result = await provisioning.RequestPinResetAsync(
             deferral.Complete();
         }
     });
-}
 ```
 
 ## Remove a smart card or virtual smart card

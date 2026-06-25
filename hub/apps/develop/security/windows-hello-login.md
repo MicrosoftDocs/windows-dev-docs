@@ -494,7 +494,7 @@ In this exercise you will learn how to check if Windows Hello is setup on the ma
 - Now that you have created the **CreateWindowsHelloKeyAsync** method, return to the Login.xaml.cs file and uncomment the code inside the SignInWindowsHelloAsync method.
 
     ```cs
-    private async void SignInWindowsHelloAsync()
+    private async Task SignInWindowsHelloAsync()
     {
         if (AccountHelper.ValidateAccountCredentials(UsernameTextBox.Text))
         {
@@ -631,7 +631,7 @@ In this exercise, you will continue from the previous exercise. When a user succ
 - In the **SignInWindowsHelloAsync** method (in Login.xaml.cs), once the **CreateWindowsHelloKeyAsync** is successful, it should navigate to the **Welcome** page and pass the **Account**.
 
     ```cs
-    private async void SignInWindowsHelloAsync()
+    private async Task SignInWindowsHelloAsync()
     {
         if (AccountHelper.ValidateAccountCredentials(UsernameTextBox.Text))
         {
