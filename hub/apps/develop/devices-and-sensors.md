@@ -15,7 +15,7 @@ This article provides an index of development features that are related to scena
 
 ## Windows OS features
 
-Windows 10 and later OS releases provide a wide variety of APIs related to data and files scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
+Windows 10 and later OS releases provide a wide variety of APIs related to devices and sensors scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
 
 #### WinRT APIs
 

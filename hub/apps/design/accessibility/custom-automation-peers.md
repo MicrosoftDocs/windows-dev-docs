@@ -97,7 +97,7 @@ All classes that derive from [**UIElement**](/windows/windows-app-sdk/api/winrt/
 
 If you are writing a custom control and supplying a custom peer, override [**OnCreateAutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.oncreateautomationpeer) so it returns a new instance of your peer type. The peer must derive directly or indirectly from [**AutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Automation.Peers.AutomationPeer).
 
-For example, the following code declares that custom control `NumericUpDown` uses `NumericUpDownPeer` for UI Automation.
+For example, the following code declares that custom control `NumericUpDown` uses `NumericUpDownAutomationPeer` for UI Automation.
 
 ```csharp
 using Microsoft.UI.Xaml.Automation.Peers;
@@ -200,7 +200,7 @@ End Sub
 import "NumericUpDown.idl";
 namespace MyNamespace
 {
-    runtimeclass NumericUpDownAutomationPeer : Microsoft.UI.Xaml.Automation.Peers.AutomationPeer
+    runtimeclass NumericUpDownAutomationPeer : Microsoft.UI.Xaml.Automation.Peers.RangeBaseAutomationPeer
     {
         NumericUpDownAutomationPeer(NumericUpDown owner);
         Int32 MyProperty;
