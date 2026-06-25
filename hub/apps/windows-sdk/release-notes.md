@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 06/01/2026
+ms.date: 06/22/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,186 @@ You can update the SDK by manually installing the new build, updating in Visual 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## 28000 versions
+
+## Build 10.0.28000.2270
+
+Released: **June, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.ApplicationModel.DataTransfer**:
+> <br/>
+> New:
+>
+> - `DataPackageOperation.NewTarget` — Hint indicating the drag is over a new logical target (for example, individual files and folders on the desktop)
+> - `DataPackageOperation.BackgroundTarget` — Hint indicating the drag is over a logical target that represents the background (for example, the desktop itself)
+>
+> **Windows.Devices.Printers**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `ReplaceDevicePropertiesStatus` — Enumeration for the status of a replace-device-properties operation
+> - `IIppPrintDevice5` — IPP print device interface
+> - `IReplaceDevicePropertiesResult` — Result of a replace-device-properties operation
+>
+> **Windows.Graphics.Capture**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IDirect3D11CaptureFrame3` — Direct3D 11 capture frame interface
+> - `IGraphicsCaptureSession7` — Graphics capture session interface
+>
+> **Windows.Graphics.Printing.PrintSupport**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IPrintSupportEnterpriseManagementUIEventArgs` — Event arguments for print support enterprise management UI
+>
+> **Windows.UI.Input**:
+> <br/>
+> Updated:
+>
+> - `TouchpadGlobalAction` — Renamed `ThreeFingerPressDown`/`FourFingerPressDown`/`FiveFingerPressDown` to `ThreeFingerPress`/`FourFingerPress`/`FiveFingerPress`, and `ThreeFingerPressUp`/`FourFingerPressUp`/`FiveFingerPressUp` to `ThreeFingerRelease`/`FourFingerRelease`/`FiveFingerRelease`
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **App Model (appmodel.h)**
+> <br/>
+> New:
+>
+> - `PackageOrigin2` — Enumeration describing the origin of a staged package (adds `LineOfBusiness` and `SignedSBOM` values)
+> - `GetStagedPackageOrigin2` — Retrieves the `PackageOrigin2` of a staged package
+> - `AppModelPackageFeature` — Enumeration of queryable package features (`SignedSBOM`)
+> - `IsPackageFeatureSupported` — Queries whether a package feature is currently available or enabled
+>
+> Updated:
+>
+> - `PackageOrigin` — Adds `PackageOrigin_LineOfBusiness` and `PackageOrigin_SignedSBOM` values
+>
+> **Bug Codes (bugcodes.h)**
+> <br/>
+> New:
+>
+> - `ASSERTBUGCODE_I3CHOST_DRIVER` — Assertion bug code for the I3C host driver
+>
+> **Codec API (codecapi.h)**
+> <br/>
+> New:
+>
+> - `eAVDecDDOperationalMode_PORTABLE16` — Dolby Digital portable operational mode with dialogue at -16 dBFS
+>
+> **Device Class GUIDs (devguid.h)**
+> <br/>
+> New:
+>
+> - `GUID_DEVCLASS_MIDIENDPOINT`, `GUID_DEVCLASS_PROXIMITY`, `GUID_DEVCLASS_SDHOST`, `GUID_DEVCLASS_SECURITYDEVICES`, `GUID_DEVCLASS_SOFTWAREDEVICE`, `GUID_DEVCLASS_USBDEVICE`, `GUID_DEVCLASS_USBFUNCTIONCONTROLLER` — Device setup class GUIDs
+>
+> **DHCP (DhcpCSdk.h / Dhcpv6cSdk.h)**
+> <br/>
+> New:
+>
+> - `OPTION_CAPTIVE_PORTAL` — DHCPv4 captive portal option (114)
+> - `DHCPV6_OPTION_CAPTIVE_PORTAL` — DHCPv6 captive portal option (103)
+>
+> **Direct3D 11 (d3d11.h)**
+> <br/>
+> New:
+>
+> - `D3D11_DECODER_PROFILE_APV_VLD_422_10`, `..._422_12`, `..._444_10`, `..._444_12`, `..._4444_10`, `..._4444_12`, `..._400_10` — Advanced Professional Video (APV) decoder profile GUIDs (RFC 9924)
+>
+> **DirectX Video Acceleration (dxva.h)**
+> <br/>
+> New:
+>
+> - `DXVA_ModeAPV_VLD_422_10`, `..._422_12`, `..._444_10`, `..._444_12`, `..._4444_10`, `..._4444_12`, `..._400_10` — Advanced Professional Video (APV) DXVA profile GUIDs (RFC 9924)
+> - `DXVA_PicEntry_APV` and related APV DXVA structures — Picture and slice data structures for APV decode
+>
+> **EAP Types (eaptypes.h)**
+> <br/>
+> New:
+>
+> - `EAP_FLAG_DISABLE_SESSION_RESUMPTION` — Flag to disable TLS session resumption
+>
+> **Media Engine (mfmediaengine.h)**
+> <br/>
+> New:
+>
+> - `IMFMediaEngineVideoRendererEffect` — Interface that allows an app to set a custom video renderer effect
+>
+> **TPM / Key Storage (ncrypt.h)**
+> <br/>
+> New:
+>
+> - `NCRYPT_PCP_SDDIDK_KEY` — Platform Crypto Provider SDDI DK key
+>
+> **Security Packages (NTSecPKG.h)**
+> <br/>
+> New:
+>
+> - `SecpkgFailureReason_GlobalSPN` — Failure reason indicating the target name resolved to a global SPN
+>
+> **OLE (oleidl.h)**
+> <br/>
+> New:
+>
+> - `DROPEFFECT_NEWTARGET` — Drop effect hint that the drag is over a new logical target (0x40000000)
+> - `DROPEFFECT_BACKGROUNDTARGET` — Drop effect hint that the drag is over a background logical target (0x20000000)
+>
+> **Windows Definitions (winnt.h)**
+> <br/>
+> New:
+>
+> - `SECURITY_AGENTIC_PLATFORM_BASE_RID` — Base relative identifier (RID) for the agentic platform
+>
+> **Windows Hypervisor Platform (WinHvPlatformDefs.h)**
+> <br/>
+> New:
+>
+> - `LowerVtlGuestRequestSupport` — Synthetic processor feature bit for lower-VTL guest request support
+>
+> **Windows Update Errors (wuerror.h)**
+> <br/>
+> New:
+>
+> - `WU_E_FEATURE_CONTAINMENT_NOT_ENABLED` — Unexpected code execution when the feature is not enabled
+> - `WU_E_UPDATE_SESSIONDATA_CONFLICT` — The specified session data conflicts with the existing value
+> - `WU_E_DS_UNKNOWNSERVICE_NOTFOUND` — The service was not found in the data store
+> - `WU_E_DS_UNKNOWNSERVICE_DELETEPENDING` — The service is pending deletion from the data store
+> - `WU_E_DS_UNKNOWNSERVICE_REMOVED` — The service has been removed from the data store
+> - `WU_E_UH_TIMEOUT` — The update handler operation timed out
+> - `WU_E_UH_DRV_PREINSTALL_OPERATION_FAILED` — The driver update handler's pre-install operation failed
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Direct3D 11 (d3d11.idl)**
+> <br/>
+> New:
+>
+> - `D3D11_DECODER_PROFILE_APV_VLD_422_10`, `..._422_12`, `..._444_10`, `..._444_12`, `..._4444_10`, `..._4444_12`, `..._400_10` — Advanced Professional Video (APV) decoder profile GUIDs (RFC 9924)
+>
+> **Media Engine (mfmediaengine.idl)**
+> <br/>
+> New:
+>
+> - `IMFMediaEngineVideoRendererEffect` — Interface that allows an app to set a custom video renderer effect
+>
+> **OLE (oleidl.idl)**
+> <br/>
+> New:
+>
+> - `DROPEFFECT_NEWTARGET` — Drop effect hint that the drag is over a new logical target (0x40000000)
+> - `DROPEFFECT_BACKGROUNDTARGET` — Drop effect hint that the drag is over a background logical target (0x20000000)
+
+</details>
+
+---
 
 ## Build 10.0.28000.2114
 

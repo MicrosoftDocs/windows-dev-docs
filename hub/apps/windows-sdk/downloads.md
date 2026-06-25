@@ -2,7 +2,7 @@
 title: Windows SDK downloads
 description: Downloads for the Windows SDK
 ms.topic: article
-ms.date: 06/01/2026
+ms.date: 06/22/2026
 keywords: windows win32, windows app development, Windows App SDK, windows sdk
 ms.localizationpriority: medium
 ---
@@ -17,6 +17,7 @@ For older versions, see the [Windows SDK download archive](downloads-archive.md)
 
 | Release  | Downloads |
 | ----- | -------------------------------------- |
+| **Windows SDK for Windows 11 (10.0.28000.2270)** <br/> June 2026 <br/> [Release notes](./release-notes.md#build-100280002270) | [Installer](https://go.microsoft.com/fwlink/?linkid=2370315) <br/> [ISO](https://go.microsoft.com/fwlink/?linkid=2370316) |
 | **Windows SDK for Windows 11 (10.0.28000.2114)** <br/> May 2026 <br/> [Release notes](./release-notes.md#build-100280002114) | [Installer](https://go.microsoft.com/fwlink/?linkid=2366211) <br/> [ISO](https://go.microsoft.com/fwlink/?linkid=2366210) |
 | **Windows SDK for Windows 11 (10.0.28000.1839)** <br/> April 2026 <br/> [Release notes](./release-notes.md#build-100280001839) | [Installer](https://go.microsoft.com/fwlink/?linkid=2361309) <br/> [ISO](https://go.microsoft.com/fwlink/?linkid=2361406) |
 | **Windows SDK for Windows 11 (10.0.28000.1721)** <br/> March 2026 <br/> [Release notes](./release-notes.md#build-100280001721) | [Installer](https://go.microsoft.com/fwlink/?linkid=2357925) <br/> [ISO](https://go.microsoft.com/fwlink/?linkid=2357642) |
