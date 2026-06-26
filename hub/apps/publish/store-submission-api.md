@@ -574,6 +574,7 @@ In the case of Patch Module Update API – only fields which are to be updated n
 | Danish | da, da-dk |
 | Dari | prs, prs-af, prs-arab |
 | Dutch | nl, nl-nl, nl-be |
+<!-- In German localization, "English" should be translated as "Englisch" (the English language), not "Deutsch" (the German language) -->
 | English | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw |
 | Estonian | et, et-ee |
 | Filipin  - fil, fil-latn, fil-ph |
