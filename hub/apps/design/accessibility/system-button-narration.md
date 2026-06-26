@@ -17,8 +17,10 @@ To listen for and handle the **Fn** hardware system button events in the same wa
 
 For WinUI 3 / Windows App SDK apps, this API is still consumed from the Windows namespace (`winrt::Windows::UI::Input`) rather than `Microsoft.UI.*`.
 
+Beginning with Windows 10 version 1909, assistive technologies such as Narrator can detect the location of the Fn key and determine if it is in a locked or unlocked state. This capability is supported on Surface devices and other OEM hardware that implements the required firmware support.
+
 > [!NOTE]
-> Fn button support is OEM-specific and can include features such as the ability to toggle/lock on or off (vs. a press-and-hold key combination), along with a corresponding lock indicator light (which might not be helpful to users who are blind or have a vision impairment).
+> Fn button support is OEM-specific and can include features such as the ability to toggle/lock on or off (vs. a press-and-hold key combination), along with a corresponding lock indicator light (which might not be helpful to users who are blind or have a vision impairment). Surface devices fully support Fn key state detection and reporting.
 
 Fn button events are exposed through [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace. The SystemButtonEventController object supports the following events:
 
@@ -30,9 +32,66 @@ Fn button events are exposed through [SystemButtonEventController](/uwp/api/wind
 > [!Important]
 > The SystemButtonEventController cannot receive these events if they have already been handled by a higher priority handler.
 
+## Accessing current Fn key state
+
+While the events above notify your application when the Fn key state changes, you may also need to determine the current state of the Fn key when your application starts or at any point during execution.
+
+### Detecting Fn key availability
+
+To detect if the current device has an Fn key with lock capability (such as Surface devices), you can create a `SystemButtonEventController` and check if it successfully receives events. Devices that don't support Fn key detection will not fire the related events.
+
+### Getting current lock state
+
+The current Fn lock state can be determined by handling the initial events when creating the `SystemButtonEventController`. When the controller is created, it immediately fires events for the current state, allowing you to capture the initial Fn lock status.
+
+```cppwinrt
+bool _currentFnLockState = false;
+bool _fnKeySupported = false;
+
+void InitializeFnKeyState()
+{
+    // Create controller to detect current state
+    _controller = winrt::SystemButtonEventController::CreateForDispatcherQueue(_queue);
+    
+    // Handle the immediate state events to capture current state
+    _fnLockToken = _controller->FunctionLockChanged(
+        [this](const winrt::SystemButtonEventController& /*sender*/, const winrt::FunctionLockChangedEventArgs& args)
+        {
+            _currentFnLockState = args.IsLocked();
+            _fnKeySupported = true;
+            
+            // Announce current state for assistive technology
+            std::wstring message = _currentFnLockState ? L"Fn lock is currently enabled" : L"Fn lock is currently disabled";
+            // Use your preferred method to announce this state
+        });
+}
+
+// Function to query current state
+bool IsFnKeyLocked()
+{
+    return _currentFnLockState;
+}
+
+bool IsFnKeySupported()
+{
+    return _fnKeySupported;
+}
+```
+
+### Surface device compatibility
+
+Surface devices provide full support for Fn key state detection. The following Surface devices are known to support this capability:
+
+- Surface Pro (6th generation and later)
+- Surface Laptop (all generations)
+- Surface Book (all generations)
+- Surface Studio (all generations)
+
+On these devices, both the Fn lock state and the indicator light state can be detected and monitored through the SystemButtonEventController API.
+
 ## Examples
 
-In the following examples, we show how to create a [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) based on a DispatcherQueue and handle the four events supported by this object.
+In the following examples, we show how to create a [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) based on a DispatcherQueue, handle the four events supported by this object, and access the current state of the Fn key.
 
 It is common for more than one of the supported events to fire when the Fn button is pressed. For example, pressing the Fn button on a Surface keyboard fires SystemFunctionButtonPressed, SystemFunctionLockChanged, and SystemFunctionLockIndicatorChanged at the same time.
 
@@ -63,6 +122,11 @@ It is common for more than one of the supported events to fire when the Fn butto
     ```cppwinrt
     winrt::event_token _fnLockIndicatorToken;
     bool _isLearningMode = false;
+    
+    // State tracking variables
+    bool _currentFnLockState = false;
+    bool _currentIndicatorState = false;
+    bool _fnKeySupported = false;
     ```
 
 3. This third snippet includes the corresponding event handler delegates for each event supported by the [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) object.
@@ -101,8 +165,12 @@ It is common for more than one of the supported events to fire when the Fn butto
                 });
 
         _fnLockToken = _controller->FunctionLockChanged(
-            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionLockChangedEventArgs& args)
+            [this](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionLockChangedEventArgs& args)
             {
+                // Update current state tracking
+                _currentFnLockState = args.IsLocked();
+                _fnKeySupported = true;
+                
                 // Mock function to read the sentence "Fn shift is locked/unlocked"
                 PronounceFunctionLockMock(args.IsLocked());
                 // Set Handled as true means this event is consumed by this controller
@@ -111,8 +179,11 @@ It is common for more than one of the supported events to fire when the Fn butto
             });
 
         _fnLockIndicatorToken = _controller->FunctionLockIndicatorChanged(
-            [](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionLockIndicatorChangedEventArgs& args)
+            [this](const winrt::SystemButtonEventController& /*sender*/, const winrt:: FunctionLockIndicatorChangedEventArgs& args)
             {
+                // Update current indicator state
+                _currentIndicatorState = args.IsIndicatorOn();
+                
                 // Mock function to read the sentence "Fn lock indicator is on/off"
                 PronounceFunctionLockIndicatorMock(args.IsIndicatorOn());
                 // In learning mode, the user is exploring the keyboard. They expect the program
@@ -124,6 +195,61 @@ It is common for more than one of the supported events to fire when the Fn butto
     }
     ```
 
+4. Finally, you can add methods to query the current state at any time after the controller has been initialized:
+
+    ```cppwinrt
+    // Methods to query current Fn key state
+    bool IsFnKeySupported() const
+    {
+        return _fnKeySupported;
+    }
+    
+    bool IsFnKeyLocked() const
+    {
+        return _currentFnLockState;
+    }
+    
+    bool IsFnIndicatorOn() const
+    {
+        return _currentIndicatorState;
+    }
+    
+    // Example usage: announce current state on demand
+    void AnnounceCurrentFnState()
+    {
+        if (!_fnKeySupported)
+        {
+            // Device doesn't support Fn key detection
+            return;
+        }
+        
+        if (_currentFnLockState)
+        {
+            // Mock function to announce "Fn lock is currently enabled"
+            PronounceFunctionLockMock(true);
+        }
+        else
+        {
+            // Mock function to announce "Fn lock is currently disabled"  
+            PronounceFunctionLockMock(false);
+        }
+        
+        if (_currentIndicatorState)
+        {
+            // Mock function to announce "Fn lock indicator is on"
+            PronounceFunctionLockIndicatorMock(true);
+        }
+    }
+    ```
+
 ## See also
 
 [SystemButtonEventController Class](/uwp/api/windows.ui.input.systembuttoneventcontroller)
+
+[FunctionLockChangedEventArgs Class](/uwp/api/windows.ui.input.functionlockchangedeventargs)
+
+[FunctionLockIndicatorChangedEventArgs Class](/uwp/api/windows.ui.input.functionlockindicatorchangedeventargs)
+
+[Windows accessibility documentation](accessibility-overview.md)
+
+[Keyboard accessibility](keyboard-accessibility.md)
