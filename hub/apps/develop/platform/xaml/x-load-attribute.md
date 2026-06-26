@@ -30,7 +30,7 @@ The tracking of deferred elements by the XAML framework adds about 600 bytes to 
 
 There are several different ways to load the elements:
 
-- Use an [x:Bind](x-bind-markup-extension.md) expression to specify the load state. The expression should return **true** to load and **false** to unload the element. The x:Name you set and the x:Bind binding name should not be the same if you use x:Bind in the x:Load or the xaml complier will report an error.
+- Use an [x:Bind](x-bind-markup-extension.md) expression to specify the load state. The expression should return **true** to load and **false** to unload the element. If you use `x:Bind` in `x:Load`, don't set `x:Name` to the same identifier as the binding path; otherwise, the XAML compiler reports an error.
 - Call [**FindName**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.findname) with the name that you defined on the element.
 - Call [**GetTemplateChild**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.gettemplatechild) with the name that you defined on the element.
 - In a [**VisualState**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualState), use a [**Setter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Setter) or **Storyboard** animation that targets the x:Load element.
