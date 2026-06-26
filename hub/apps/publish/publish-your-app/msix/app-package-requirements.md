@@ -4,6 +4,7 @@ title: App package requirements for MSIX app
 ms.date: 10/30/2022
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: ["English"]
 ---
 
 # App package requirements for MSIX app
