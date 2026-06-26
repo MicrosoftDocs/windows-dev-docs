@@ -9,6 +9,8 @@ items:
     items:
     - name: Overview
       href: get-started/index.md
+    - name: Windows versions and SDKs
+      href: get-started/versioning-overview.md
     - name: Windows SDK
       items:
       - name: Overview
