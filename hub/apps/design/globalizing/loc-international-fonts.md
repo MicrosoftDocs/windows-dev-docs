@@ -4,7 +4,7 @@ title: International fonts
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: article
-keywords: windows 10, uwp, globalization, localizability, localization
+keywords: globalization, localizability, localization
 ms.localizationpriority: medium
 ---
 # International fonts

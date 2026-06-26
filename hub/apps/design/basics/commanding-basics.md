@@ -7,9 +7,7 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 09/24/2020
 ms.topic: concept-article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: RS5
 ---
 # Commanding basics
 

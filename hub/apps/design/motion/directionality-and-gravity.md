@@ -7,7 +7,6 @@ ms.date: 09/18/2024
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
 ---
 # Directionality and gravity
 

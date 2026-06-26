@@ -1,7 +1,6 @@
 ---
 title: App icons
 description: Design and create an app icon for your Windows app. 
-keywords: windows 10, uwp
 ms.date: 07/23/2024
 ms.topic: article
 ms.localizationpriority: medium

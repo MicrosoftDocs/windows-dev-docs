@@ -7,7 +7,6 @@ ms.date: 09/18/2024
 ms.topic: concept-article
 doc-status: Published
 ms.localizationpriority: medium
-ms.custom: RS5
 ---
 # Timing and easing
 

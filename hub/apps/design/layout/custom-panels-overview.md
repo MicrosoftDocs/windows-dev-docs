@@ -10,7 +10,6 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 05/19/2017
 ms.topic: concept-article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # XAML custom panels overview

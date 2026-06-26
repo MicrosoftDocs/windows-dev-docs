@@ -4,7 +4,7 @@ title: NumeralSystem values
 template: detail.hbs
 ms.date: 11/02/2017
 ms.topic: article
-keywords: windows 10, uwp, globalization, localization
+keywords: globalization, localization
 ms.localizationpriority: medium
 ---
 # NumeralSystem values

@@ -4,7 +4,7 @@ title: Design your app for bidirectional text
 template: detail.hbs
 ms.date: 11/10/2017
 ms.topic: article
-keywords: windows 10, uwp, globalization, localizability, localization, rtl, ltr
+keywords: globalization, localizability, localization, rtl, ltr
 ms.localizationpriority: medium
 ---
 # Design your app for bidirectional text

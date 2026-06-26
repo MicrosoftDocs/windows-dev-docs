@@ -4,7 +4,7 @@ title: Segoe Fluent Icons font
 label: Segoe Fluent Icons font
 ms.date: 02/19/2026
 ms.topic: article
-keywords: windows 10, windows 11
+keywords: windows 11
 ms.localizationpriority: medium
 ---
 

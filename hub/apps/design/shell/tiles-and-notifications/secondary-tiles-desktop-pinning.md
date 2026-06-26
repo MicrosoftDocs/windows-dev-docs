@@ -5,7 +5,7 @@ label: Pin secondary tiles from desktop apps
 template: detail.hbs
 ms.date: 03/03/2022
 ms.topic: how-to
-keywords: windows 10, desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
+keywords: desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
 ms.localizationpriority: medium
 ---
 
