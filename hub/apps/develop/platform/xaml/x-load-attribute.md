@@ -18,8 +18,10 @@ The tracking of deferred elements by the XAML framework adds about 600 bytes to 
 > The x:Load attribute is available starting in Windows 10, version 1703 (Creators Update). The min version targeted by your Visual Studio project must be *Windows 10 Creators Update (10.0, Build 15063)* in order to use x:Load.
 
 ## XAML attribute usage
-> [!Caution]
-> Regarding the 'Window' is not a DependencyObject. You can not use it in which the xaml root is the Window because the [FindName method](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.findname) needs. Check it at https://github.com/microsoft/microsoft-ui-xaml/issues/9842.
+
+ > [!CAUTION]
+ > In the WinUI, [FindName](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.findname) doesn't work when the XAML root element is a `Window`. For details, see [microsoft-ui-xaml #9842](https://github.com/microsoft/microsoft-ui-xaml/issues/9842).
+
 ``` syntax
 <object x:Load="True" .../>
 <object x:Load="False" .../>
@@ -68,8 +70,8 @@ The restrictions for using **x:Load** are:
 - You cannot use x:Load on elements in a [**ResourceDictionary**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary).
 - You cannot use x:Load on loose XAML loaded with [**XamlReader.Load**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.markup.xamlreader.load).
 - Moving a parent element will clear out any elements that have not been loaded.
-- In the C++/WinRT, Compile error when using x:Load and x:Bind. Check it and workaround at https://github.com/microsoft/microsoft-ui-xaml/issues/7579.
-- In the C++/WinRT, FindName wont reload an object that has been UnloadObjected. Check it at https://github.com/microsoft/microsoft-ui-xaml/issues/10179.
+- In C++/WinRT, using `x:Load` with `x:Bind` can produce a compile error. For details and a workaround, see [microsoft-ui-xaml #7579](https://github.com/microsoft/microsoft-ui-xaml/issues/7579).
+- In C++/WinRT, `FindName` doesn't reload an object that was previously unloaded using `UnloadObject`. For details, see [microsoft-ui-xaml #10179](https://github.com/microsoft/microsoft-ui-xaml/issues/10179).
 
 ## Remarks
 
