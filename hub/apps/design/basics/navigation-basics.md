@@ -7,9 +7,7 @@ template: detail.hbs
 op-migration-status: ready
 ms.date: 04/03/2025
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
-ms.custom: RS5
 ---
 # Navigation design basics for Windows apps
 

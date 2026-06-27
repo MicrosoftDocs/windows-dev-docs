@@ -4,7 +4,7 @@ description: Learn about the May 2019 Japanese era change and how to prepare you
 ms.assetid: 5A945F9A-8632-4038-ADD6-C0568091EF27
 ms.date: 04/26/2019
 ms.topic: how-to
-keywords: windows 10, uwp, localizability, localization, japanese, era
+keywords: localizability, localization, japanese, era
 ms.localizationpriority: high
 ---
 

@@ -4,7 +4,6 @@ title: Windows app silhouettes
 template: detail.hbs
 ms.date: 09/30/2021
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 

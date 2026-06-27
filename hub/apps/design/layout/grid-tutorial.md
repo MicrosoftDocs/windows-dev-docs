@@ -4,7 +4,6 @@ title: Use Grid and StackPanel to create a simple app.
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: tutorial
-keywords: windows 10, uwp
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
 ---

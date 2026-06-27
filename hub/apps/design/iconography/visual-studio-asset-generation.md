@@ -1,7 +1,6 @@
 ---
 title: Create icons using Visual Studio's asset generation tool
 description: Use the Visual Studio asset generation tool to create a variety of icon files from just one image.
-keywords: windows 10, uwp
 design-contact: judysa
 ms.date: 10/29/2021
 ms.topic: how-to

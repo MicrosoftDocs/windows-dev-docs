@@ -5,7 +5,7 @@ ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 template: detail.hbs
 ms.date: 03/25/2026
 ms.topic: article
-keywords: windows 10, uwp, winui, globalization, localizability, localization, internationalization, rtl, bidi
+keywords: winui, globalization, localizability, localization, internationalization, rtl, bidi
 ms.localizationpriority: medium
 ---
 # Globalization and localization

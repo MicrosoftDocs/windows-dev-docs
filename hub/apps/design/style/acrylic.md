@@ -4,7 +4,6 @@ title: Acrylic material
 template: detail.hbs
 ms.date: 07/15/2024
 ms.topic: article
-keywords: windows 10
 doc-status: Published
 ms.localizationpriority: medium
 ---

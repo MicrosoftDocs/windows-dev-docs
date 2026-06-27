@@ -5,7 +5,7 @@ ms.assetid: 22D3A937-736A-4121-8285-A55DED56E594
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: how-to
-keywords: windows 10, uwp, globalization, localizability, localization
+keywords: globalization, localizability, localization
 ms.localizationpriority: medium
 ---
 # Understand user profile languages and app manifest languages

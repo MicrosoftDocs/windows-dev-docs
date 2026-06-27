@@ -1,7 +1,6 @@
 ---
 title: Construct your Windows app's icon
 description: How to turn your Windows app's app icon design into image files for your app. 
-keywords: windows 10, uwp
 design-contact: judysa
 ms.date: 6/2/2022
 ms.topic: article

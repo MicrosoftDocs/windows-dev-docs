@@ -6,7 +6,7 @@ label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 ms.date: 05/11/2018
 ms.topic: how-to
-keywords: windows 10, uwp, localizability, localization, rtl, ltr
+keywords: localizability, localization, rtl, ltr
 ms.localizationpriority: medium
 ---
 # Adjust layout and fonts, and support RTL

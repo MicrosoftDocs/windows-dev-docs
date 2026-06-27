@@ -5,7 +5,6 @@ keywords: UWP, Windows 10, text, writing, voice, tone, design, UI, UX
 ms.date: 09/24/2020
 ms.topic: how-to
 ms.localizationpriority: medium
-ms.custom: RS5
 ---
 # Writing style
 

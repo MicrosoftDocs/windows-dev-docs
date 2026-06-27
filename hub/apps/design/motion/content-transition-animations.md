@@ -5,7 +5,6 @@ ms.assetid: 0188FDB4-E183-466f-8A03-EE3FF5C474B1
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
 pm-contact: stmoy
 design-contact: conrwi
 doc-status: Published

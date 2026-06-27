@@ -7,7 +7,6 @@ label: Segoe MDL2 Assets icons
 template: detail.hbs
 ms.date: 09/02/2025
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Segoe MDL2 Assets icons

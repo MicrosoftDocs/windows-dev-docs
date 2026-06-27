@@ -4,7 +4,6 @@ title: Windows app title bar
 template: detail.hbs
 ms.date: 07/31/2024
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 
