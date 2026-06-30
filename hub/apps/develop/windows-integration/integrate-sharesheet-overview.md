@@ -6,7 +6,7 @@ ms.author: jken
 ms.topic: overview
 ms.date: 06/22/2026
 ms.localizationpriority: medium
-keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++
+keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++, winui 3, windows app sdk
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
 ---
 
