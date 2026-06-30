@@ -975,6 +975,20 @@ items:
                 href: security/windows-hello-auth-service.md
       - name: Testing
         href: testing/index.md
+      - name: Threading and async
+        items:
+          - name: Overview
+            href: threading/index.md
+          - name: Best practices for using the thread pool
+            href: threading/best-practices-for-using-the-thread-pool.md
+          - name: Call asynchronous APIs in C# or Visual Basic
+            href: threading/call-asynchronous-apis-in-csharp-or-visual-basic.md
+          - name: Create a periodic work item
+            href: threading/create-a-periodic-work-item.md
+          - name: Submit a work item to the thread pool
+            href: threading/submit-a-work-item-to-the-thread-pool.md
+          - name: Use a timer to submit a work item
+            href: threading/use-a-timer-to-submit-a-work-item.md
       - name: User interface
         items:
           - name: Overview

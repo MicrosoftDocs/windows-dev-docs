@@ -1,17 +1,16 @@
 ---
-ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
 title: Submit a work item to the thread pool
-description: Learn how to do work in a separate thread by submitting a work item to the thread pool.
-ms.date: 02/08/2017
+description: Learn how to do work in a separate thread by submitting a work item to the thread pool to keep your Windows app responsive.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-keywords: windows 10, uwp, threads, thread pool
+ms.date: 06/20/2026
+keywords: windows 10, windows 11, windows app sdk, winui 3, threads, thread pool
 ms.localizationpriority: medium
 ---
 # Submit a work item to the thread pool
 
-\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](/previous-versions/windows/apps/mt244353(v=win.10)) \]
-
-<b>Important APIs</b>
+**Important APIs**
 
 -   [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync)
 -   [**IAsyncAction**](/uwp/api/Windows.Foundation.IAsyncAction)
@@ -24,8 +23,8 @@ Create a work item by calling [**RunAsync**](/uwp/api/windows.system.threading.t
 
 Three versions of [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
 
->[!NOTE]
->Use [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI thread and show progress from the work item.
+> [!NOTE]
+> The code samples in this section use the UWP `CoreDispatcher` API. In WinUI 3 apps, use [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) from `Microsoft.UI.Dispatching.DispatcherQueue` to access the UI thread and show progress from the work item. See the [DispatcherQueue](/windows/apps/develop/dispatcherqueue) overview for details.
 
 The following example creates a work item and supplies a lambda to do the work:
 
@@ -272,7 +271,7 @@ Note that the work item checks the [**IAsyncInfo.Status**](/uwp/api/windows.foun
 
 ## Handle work item completion
 
-Provide a completion handler by setting the [**IAsyncAction.Completed**](/uwp/api/windows.foundation.iasyncaction.completed) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI thread and show the result.
+Provide a completion handler by setting the [**IAsyncAction.Completed**](/uwp/api/windows.foundation.iasyncaction.completed) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (WinUI 3) or `CoreDispatcher.RunAsync` (UWP) to access the UI thread and show the result.
 
 The following example updates the UI with the result of the work item submitted in step 1:
 
@@ -349,11 +348,10 @@ Note that the completion handler checks whether the work item was cancelled befo
 
 ## Summary and next steps
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
+You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) written for Windows 8.1, and re-using the source code in a Windows 10 app.
 
 ## Related topics
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
- 
+* [Submit a work item to the thread pool](./submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](./best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](./use-a-timer-to-submit-a-work-item.md)

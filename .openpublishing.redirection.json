@@ -12126,6 +12126,36 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "uwp/threading-async/index.md",
+      "redirect_url": "/windows/apps/develop/threading",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/threading-async/best-practices-for-using-the-thread-pool.md",
+      "redirect_url": "/windows/apps/develop/threading/best-practices-for-using-the-thread-pool",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic.md",
+      "redirect_url": "/windows/apps/develop/threading/call-asynchronous-apis-in-csharp-or-visual-basic",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/threading-async/create-a-periodic-work-item.md",
+      "redirect_url": "/windows/apps/develop/threading/create-a-periodic-work-item",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/threading-async/submit-a-work-item-to-the-thread-pool.md",
+      "redirect_url": "/windows/apps/develop/threading/submit-a-work-item-to-the-thread-pool",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/threading-async/use-a-timer-to-submit-a-work-item.md",
+      "redirect_url": "/windows/apps/develop/threading/use-a-timer-to-submit-a-work-item",
+      "redirect_document_id": false
+    },
+    {
       "redirect_url": "/windows/apps/develop/windows-integration/integrate-sharesheet-overview",
       "source_path": "hub/apps/develop/windows-integration/integrate-sharesheet-packaged.md",
       "redirect_document_id": false

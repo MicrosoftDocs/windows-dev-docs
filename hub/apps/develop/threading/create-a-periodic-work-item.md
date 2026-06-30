@@ -1,16 +1,16 @@
 ---
-ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
 title: Create a periodic work item
-description: Learn how to create a work item that repeats periodically using the CreatePeriodicTimer method of the Universal Windows Platform (UWP) ThreadPoolTimer API.
-ms.date: 02/08/2017
+description: Learn how to create a work item that repeats periodically in your Windows app using the CreatePeriodicTimer method of the ThreadPoolTimer API.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-keywords: windows 10, uwp, periodic work item, threading, timers
+ms.date: 06/20/2026
+keywords: windows 10, windows 11, windows app sdk, winui 3, periodic work item, threading, timers
 ms.localizationpriority: medium
 ---
 # Create a periodic work item
 
-
-<b>Important APIs</b>
+**Important APIs**
 
 -   [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer)
 -   [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer)
@@ -21,11 +21,13 @@ Learn how to create a work item that repeats periodically.
 
 Use the [**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) method to create a periodic work item. Supply a lambda that accomplishes the work, and use the *period* parameter to specify the interval between submissions. The period is specified using a [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) structure. The work item will be resubmitted every time the period elapses, so make sure the period is long enough for work to complete.
 
-[**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) returns a [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer) object. Store this object in case the timer needs to be canceled.
+[**CreatePeriodicTimer**](/uwp/api/windows.system.threading.threadpooltimer.createperiodictimer) returns a [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer) object. Store this object in case the timer needs to be canceled.
 
-> **Note**  Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
+> [!NOTE]
+> Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
+> [!NOTE]
+> In WinUI 3 apps, use [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) from `Microsoft.UI.Dispatching.DispatcherQueue` to access the UI thread and show progress from the work item. See the [DispatcherQueue](/windows/apps/develop/dispatcherqueue) overview for details.
 
 The following example creates a work item that runs once every 60 seconds:
 
@@ -192,11 +194,10 @@ When necessary, call the [**Cancel**](/uwp/api/windows.system.threading.threadpo
 
 ## Remarks
 
-For information about single-use timers, see [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md).
+For information about single-use timers, see [Use a timer to submit a work item](./use-a-timer-to-submit-a-work-item.md).
 
 ## Related topics
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
- 
+* [Submit a work item to the thread pool](./submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](./best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](./use-a-timer-to-submit-a-work-item.md)
