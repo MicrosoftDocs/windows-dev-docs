@@ -12168,6 +12168,48 @@
     {
       "redirect_url": "/windows/apps/develop/windows-integration/integrate-sharesheet-overview",
       "source_path": "hub/apps/develop/windows-integration/integrate-sharesheet-unpackaged.md",
+      "source_path": "uwp/networking/index.md",
+      "redirect_url": "/windows/apps/develop/networking/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/networking-basics.md",
+      "redirect_url": "/windows/apps/develop/networking/networking-basics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/which-networking-technology.md",
+      "redirect_url": "/windows/apps/develop/networking/which-networking-technology",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/network-communications-in-the-background.md",
+      "redirect_url": "/windows/apps/develop/networking/network-communications-in-the-background",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/sockets.md",
+      "redirect_url": "/windows/apps/develop/networking/sockets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/websockets.md",
+      "redirect_url": "/windows/apps/develop/networking/websockets",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/httpclient.md",
+      "redirect_url": "/windows/apps/develop/networking/httpclient",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/web-feeds.md",
+      "redirect_url": "/windows/apps/develop/networking/web-feeds",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/networking/background-transfers.md",
+      "redirect_url": "/windows/apps/develop/networking/background-transfers",
       "redirect_document_id": false
     }
   ]

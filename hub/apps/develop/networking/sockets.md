@@ -1,26 +1,26 @@
 ---
-description: Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
+description: Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. Windows offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 title: Sockets
-ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
-ms.date: 06/03/2018
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking
 ---
 # Sockets
-Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. UWP offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
+Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. Windows offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 
-This topic focuses on how to use the Universal Windows Platform (UWP) socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace. But you can also use [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2) in a UWP app.
+This topic focuses on how to use the Windows socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace. But you can also use [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2) in a Windows app.
 
 > [!NOTE]
-> As a consequence of [network isolation](/previous-versions/windows/apps/hh770532(v=win.10)), Windows disallows establishing a socket connection (Sockets or WinSock) between two UWP apps running on the same machine; whether that's via the local loopback address (127.0.0.0), or by explicitly specifying the local IP address. For details about mechanisms by which UWP apps can communicate with one another, see [App-to-app communication](../app-to-app/index.md).
+> as a consequence of [network isolation](/previous-versions/windows/apps/hh770532(v=win.10)), Windows disallows establishing a socket connection (Sockets or WinSock) between two Windows apps running on the same machine; whether that's via the local loopback address (127.0.0.1), or by explicitly specifying the local IP address. For details about mechanisms by which Windows apps can communicate with one another, see [App-to-app communication](/windows/apps/develop/communication/).
 
 ## Build a basic TCP socket client and server
 A TCP (Transmission Control Protocol) socket provides low-level network data transfers in either direction for connections that are long-lived. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. To demonstrate basic TCP operations, the example code below shows a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) and a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) sending and receiving data over TCP to form an echo client and server.
 
 To begin with as few moving parts as possible&mdash;and to sidestep network isolation issues for the present&mdash;create a new project, and put both the client and the server code below into the same project.
 
-You'll need to [declare an app capability](../packaging/app-capability-declarations.md) in your project. Open your app package manifest source file (the `Package.appxmanifest` file) and, on the Capabilities tab, check **Private Networks (Client & Server)**. This is how that looks in the `Package.appxmanifest` markup.
+You'll need to [declare an app capability](/windows/apps/package-and-deploy/app-capability-declarations) in your project. Open your app package manifest source file (the `Package.appxmanifest` file) and, on the Capabilities tab, check **Private Networks (Client & Server)**. This is how that looks in the `Package.appxmanifest` markup.
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
@@ -104,7 +104,7 @@ private async void StreamSocketListener_ConnectionReceived(Windows.Networking.So
         request = await streamReader.ReadLineAsync();
     }
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request)));
+    DispatcherQueue.TryEnqueue(() => this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request)));
 
     // Echo the request back as the response.
     using (Stream outputStream = args.Socket.OutputStream.AsStreamForWrite())
@@ -116,11 +116,11 @@ private async void StreamSocketListener_ConnectionReceived(Windows.Networking.So
         }
     }
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request)));
+    DispatcherQueue.TryEnqueue(() => this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request)));
 
     sender.Dispose();
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add("server closed its socket"));
+    DispatcherQueue.TryEnqueue(() => this.serverListBox.Items.Add("server closed its socket"));
 }
 
 private async void StartClient()
@@ -179,15 +179,15 @@ private async void StartClient()
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Networking.Sockets.h>
 #include <winrt/Windows.Storage.Streams.h>
-#include <winrt/Windows.UI.Core.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Dispatching.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 #include <sstream>
 
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
-using namespace Windows::UI::Core;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Dispatching;
+using namespace Microsoft::UI::Xaml::Navigation;
 ...
 private:
     Windows::Networking::Sockets::StreamSocketListener m_streamSocketListener;
@@ -234,7 +234,7 @@ private:
             bytesLoaded = co_await dataReader.LoadAsync(stringLength);
             winrt::hstring request = dataReader.ReadString(bytesLoaded);
 
-            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            serverListBox().DispatcherQueue().TryEnqueue([=]()
             {
                 std::wstringstream wstringstream;
                 wstringstream << L"server received the request: \"" << request.c_str() << L"\"";
@@ -248,7 +248,7 @@ private:
             co_await dataWriter.StoreAsync();
             dataWriter.DetachStream();
 
-            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            serverListBox().DispatcherQueue().TryEnqueue([=]()
             {
                 std::wstringstream wstringstream;
                 wstringstream << L"server sent back the response: \"" << request.c_str() << L"\"";
@@ -257,7 +257,7 @@ private:
 
             m_streamSocketListener = nullptr;
 
-            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            serverListBox().DispatcherQueue().TryEnqueue([=]()
             {
                 serverListBox().Items().Append(winrt::box_value(L"server closed its socket"));
             });
@@ -265,7 +265,7 @@ private:
         catch (winrt::hresult_error const& ex)
         {
             Windows::Networking::Sockets::SocketErrorStatus webErrorStatus{ Windows::Networking::Sockets::SocketError::GetStatus(ex.to_abi()) };
-            serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+            serverListBox().DispatcherQueue().TryEnqueue([=]()
             {
                 serverListBox().Items().Append(webErrorStatus != Windows::Networking::Sockets::SocketErrorStatus::Unknown ? winrt::box_value(winrt::to_hstring((int32_t)webErrorStatus)) : winrt::box_value(winrt::to_hstring(ex.to_abi())));
             });
@@ -497,7 +497,7 @@ private:
 
 ## References to StreamSockets in C++ PPL continuations (applies to C++/CX, primarily)
 > [!NOTE]
-> If you use C++/WinRT coroutines, and you pass parameters by value, then this issue doesn't apply. For parameter-passing recommendations, see [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md#parameter-passing).
+> If you use C++/WinRT coroutines, and you pass parameters by value, then this issue doesn't apply. For parameter-passing recommendations, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/concurrency#parameter-passing).
 
 A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event handler). When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the **Completed** event handler (if any) of the **LoadAsync** is done executing.
 
@@ -610,7 +610,7 @@ private async void StartServer()
 
         this.serverListBox.Items.Add("server is about to bind...");
 
-        // Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+        // Start listening for incoming UDP datagrams on the specified port. You can specify any port that's not currently in use.
         await serverDatagramSocket.BindServiceNameAsync(DatagramSocketPage.ServerPortNumber);
 
         this.serverListBox.Items.Add(string.Format("server is bound to port number {0}", DatagramSocketPage.ServerPortNumber));
@@ -630,7 +630,7 @@ private async void ServerDatagramSocket_MessageReceived(Windows.Networking.Socke
         request = dataReader.ReadString(dataReader.UnconsumedBufferLength).Trim();
     }
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request)));
+    DispatcherQueue.TryEnqueue(() => this.serverListBox.Items.Add(string.Format("server received the request: \"{0}\"", request)));
 
     // Echo the request back as the response.
     using (Stream outputStream = (await sender.GetOutputStreamAsync(args.RemoteAddress, DatagramSocketPage.ClientPortNumber)).AsStreamForWrite())
@@ -642,11 +642,11 @@ private async void ServerDatagramSocket_MessageReceived(Windows.Networking.Socke
         }
     }
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request)));
+    DispatcherQueue.TryEnqueue(() => this.serverListBox.Items.Add(string.Format("server sent back the response: \"{0}\"", request)));
 
     sender.Dispose();
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.serverListBox.Items.Add("server closed its socket"));
+    DispatcherQueue.TryEnqueue(() => this.serverListBox.Items.Add("server closed its socket"));
 }
 
 private async void StartClient()
@@ -698,11 +698,11 @@ private async void ClientDatagramSocket_MessageReceived(Windows.Networking.Socke
         response = dataReader.ReadString(dataReader.UnconsumedBufferLength).Trim();
     }
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.clientListBox.Items.Add(string.Format("client received the response: \"{0}\"", response)));
+    DispatcherQueue.TryEnqueue(() => this.clientListBox.Items.Add(string.Format("client received the response: \"{0}\"", response)));
 
     sender.Dispose();
 
-    await this.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => this.clientListBox.Items.Add("client closed its socket"));
+    DispatcherQueue.TryEnqueue(() => this.clientListBox.Items.Add("client closed its socket"));
 }
 ```
 
@@ -710,15 +710,15 @@ private async void ClientDatagramSocket_MessageReceived(Windows.Networking.Socke
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Networking.Sockets.h>
 #include <winrt/Windows.Storage.Streams.h>
-#include <winrt/Windows.UI.Core.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Dispatching.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 #include <sstream>
 
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
-using namespace Windows::UI::Core;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Dispatching;
+using namespace Microsoft::UI::Xaml::Navigation;
 ...
 private:
     Windows::Networking::Sockets::DatagramSocket m_clientDatagramSocket;
@@ -741,7 +741,7 @@ private:
 
             serverListBox().Items().Append(winrt::box_value(L"server is about to bind..."));
 
-            // Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+            // Start listening for incoming UDP datagrams on the specified port. You can specify any port that's not currently in use.
             co_await m_serverDatagramSocket.BindServiceNameAsync(L"1337");
             serverListBox().Items().Append(winrt::box_value(L"server is bound to port number 1337"));
         }
@@ -757,7 +757,7 @@ private:
         DataReader dataReader{ args.GetDataReader() };
         winrt::hstring request{ dataReader.ReadString(dataReader.UnconsumedBufferLength()) };
 
-        serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        serverListBox().DispatcherQueue().TryEnqueue([=]()
         {
             std::wstringstream wstringstream;
             wstringstream << L"server received the request: \"" << request.c_str() << L"\"";
@@ -772,7 +772,7 @@ private:
         co_await dataWriter.StoreAsync();
         dataWriter.DetachStream();
 
-        serverListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        serverListBox().DispatcherQueue().TryEnqueue([=]()
         {
             std::wstringstream wstringstream;
             wstringstream << L"server sent back the response: \"" << request.c_str() << L"\"";
@@ -800,8 +800,7 @@ private:
             clientListBox().Items().Append(winrt::box_value(L"client is bound to port number 1336"));
 
             // Send a request to the echo server.
-            Windows::Networking::Sockets::DatagramSocket serverDatagramSocket;
-            IOutputStream outputStream = co_await m_serverDatagramSocket.GetOutputStreamAsync(hostName, L"1337");
+            IOutputStream outputStream = co_await m_clientDatagramSocket.GetOutputStreamAsync(hostName, L"1337");
 
             winrt::hstring request{ L"Hello, World!" };
             DataWriter dataWriter{ outputStream };
@@ -824,7 +823,7 @@ private:
     {
         DataReader dataReader{ args.GetDataReader() };
         winrt::hstring response{ dataReader.ReadString(dataReader.UnconsumedBufferLength()) };
-        clientListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        clientListBox().DispatcherQueue().TryEnqueue([=]()
         {
             std::wstringstream wstringstream;
             wstringstream << L"client received the response: \"" << response.c_str() << L"\"";
@@ -833,7 +832,7 @@ private:
 
         m_clientDatagramSocket = nullptr;
 
-        clientListBox().Dispatcher().RunAsync(CoreDispatcherPriority::Normal, [=]()
+        clientListBox().DispatcherQueue().TryEnqueue([=]()
         {
             clientListBox().Items().Append(winrt::box_value(L"client closed its socket"));
         });
@@ -872,7 +871,7 @@ private:
 
             this->serverListBox->Items->Append(L"server is about to bind...");
 
-            // Start listening for incoming TCP connections on the specified port. You can specify any port that's not currently in use.
+            // Start listening for incoming UDP datagrams on the specified port. You can specify any port that's not currently in use.
             Concurrency::create_task(this->serverDatagramSocket->BindServiceNameAsync("1337")).then(
                 [=]
             {
@@ -1048,15 +1047,15 @@ private async void SendMultipleBuffersInefficiently(Windows.Networking.Sockets.S
 #include <winrt/Windows.Networking.Sockets.h>
 #include <winrt/Windows.Security.Cryptography.h>
 #include <winrt/Windows.Storage.Streams.h>
-#include <winrt/Windows.UI.Core.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Dispatching.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 #include <sstream>
 
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
-using namespace Windows::UI::Core;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Dispatching;
+using namespace Microsoft::UI::Xaml::Navigation;
 ...
 private:
     Windows::Networking::Sockets::StreamSocketListener m_streamSocketListener;
@@ -1372,8 +1371,8 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName) constructor can throw a
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## Related topics
-* [App-to-app communication](../app-to-app/index.md)
-* [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md)
+* [App-to-app communication](/windows/apps/develop/communication/)
+* [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/concurrency)
 * [How to set network capabilities](/previous-versions/windows/apps/hh770532(v=win.10))
 * [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2)
 

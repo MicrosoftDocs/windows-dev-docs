@@ -1,11 +1,11 @@
 ---
-description: To continue network communication while it's not in the background, an app can use background tasks and either socket broker or control channel triggers.
+description: To continue network communication while it's in the background, an app can use background tasks and either socket broker or control channel triggers.
 title: Network communications in the background
-ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
-ms.date: 06/14/2018
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-keywords: windows 10, uwp
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking
 ---
 
 # Network communications in the background
@@ -47,7 +47,7 @@ The one-time setup steps are to create a trigger, to register a background task 
            // so that tcpip keeps required state for the socket to enable connected
            // standby action. Background task Id is taken as a parameter to tie wake pattern
            // to a specific background task.  
-           _tcpListener. EnableTransferOwnership(_task.TaskId,SocketActivityConnectedStandbyAction.Wake);
+           _tcpListener.EnableTransferOwnership(_task.TaskId, SocketActivityConnectedStandbyAction.Wake);
            _tcpListener.ConnectionReceived += OnConnectionReceived;
            await _tcpListener.BindServiceNameAsync("my-service-name");
 ```
@@ -63,13 +63,13 @@ An app transfers ownership of a socket to a socket broker and passes the ID for 
 
 // declare int _transferOwnershipCount as a field.
 
-private void TransferOwnership(StreamSocketListener tcpListener)
+private async void TransferOwnership(StreamSocketListener tcpListener)
 {
     await tcpListener.CancelIOAsync();
 
     var dataWriter = new DataWriter();
     ++_transferOwnershipCount;
-    dataWriter.WriteInt32(transferOwnershipCount);
+    dataWriter.WriteInt32(_transferOwnershipCount);
     var context = new SocketActivityContext(dataWriter.DetachBuffer());
     tcpListener.TransferOwnership(_socketId, context);
 }
@@ -158,7 +158,7 @@ If you are using WebSockets, [**IXMLHTTPRequest2**](/previous-versions/windows/d
 ## ControlChannelTrigger with WebSockets
 
 > [!IMPORTANT]
-> The feature described in this section (**ControlChannelTrigger with WebSockets**) is supported in version 10.0.15063.0 of the SDK, and earlier. It is also supported in pre-release versions of the [Windows 10 Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewSDK).
+> The feature described in this section (**ControlChannelTrigger with WebSockets**) is supported in Windows SDK version 10.0.15063.0 and later.
 
 Some special considerations apply when using [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) or [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) with [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). There are some transport-specific usage patterns and best practices that should be followed when using a **MessageWebSocket** or **StreamWebSocket** with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the **StreamWebSocket** are handled. Requests to receive packets on the **MessageWebSocket** are not affected.
 
@@ -421,7 +421,7 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
          // registered the background task class id for using real time communications
          // broker in the package manifest.
     }
-    return result
+    return result;
 }
 ```
 

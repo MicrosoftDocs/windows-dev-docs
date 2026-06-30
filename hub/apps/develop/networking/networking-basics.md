@@ -1,11 +1,11 @@
 ---
 description: Learn how to enable your app for networking by adding network capability elements, providing authentication, and providing a secured connection.
 title: Networking basics
-ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
-ms.date: 06/01/2018
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: concept-article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking
 ---
 # Networking basics
 Things you must do for any network-enabled app.
@@ -25,12 +25,12 @@ There are other capabilities that might be necessary for your app, in certain ci
 
 | Capability | Description |
 |------------|-------------|
-| **enterpriseAuthentication** | Allows an app to connect to network resources that require domain credentials. For example, an app that retrieves data from SharePoint servers on a private Intranet. With this capability your credentials can be used to access network resources on a network that requires credentials. An app with this capability can impersonate you on the network. You don't need this capability in order to allow your app to access the Internet via an authenticating proxy.<br/><br/>For more details, see the documentation for the *Enterprise* capability scenario in [Restricted capabilities](../packaging/app-capability-declarations.md#restricted-capabilities). |
+| **enterpriseAuthentication** | Allows an app to connect to network resources that require domain credentials. For example, an app that retrieves data from SharePoint servers on a private Intranet. With this capability your credentials can be used to access network resources on a network that requires credentials. An app with this capability can impersonate you on the network. You don't need this capability in order to allow your app to access the Internet via an authenticating proxy.<br/><br/>For more details, see the documentation for the *Enterprise* capability scenario in [Restricted capabilities](/windows/apps/package-and-deploy/app-capability-declarations#restricted-capabilities). |
 | **proximity** | Required for near-field proximity communication with devices in close proximity to the computer. Near-field proximity may be used to send or connect with an application on a nearby device. <br/><br/> This capability allows an app to access the network to connect to a device in close proximity, with user consent to send an invite or accept an invite. |
 | **sharedUserCertificates** | This capability allows an app to access software and hardware certificates, such as smart card certificates. When this capability is invoked at runtime, the user must take action, such as inserting a card or selecting a certificate. <br/><br/> With this capability, your software and hardware certificates or a smart card are used for identification in the app. This capability may be used by your employer, bank, or government services for identification. |
 
 ## Communicating when your app is not in the foreground
-[Support your app with background tasks](../launch-resume/support-your-app-with-background-tasks.md) contains general information about using background tasks to do work when your app is not in the foreground. More specifically, your code must take special steps to be notified when it is not the current foreground app and data arrives over the network for it. You used Control Channel Triggers for this purpose in Windows 8, and they are still supported in Windows 10. Full information about using Control Channel Triggers is available [**here**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). A new technology in Windows 10 provides better functionality with lower overhead for some scenarios, such as push-enabled stream sockets: the socket broker and socket activity triggers.
+[Background tasks](/windows/uwp/launch-resume/support-your-app-with-background-tasks) provide general information about doing work when your app is not in the foreground. More specifically, your code must take special steps to be notified when it is not the current foreground app and data arrives over the network for it. Control Channel Triggers are supported in Windows for this purpose. Full information about using Control Channel Triggers is available [**here**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). A newer technology provides better functionality with lower overhead for some scenarios, such as push-enabled stream sockets: the socket broker and socket activity triggers.
 
 If your app uses [**DatagramSocket**](/uwp/api/Windows.Networking.Sockets.DatagramSocket), [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket), or [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener), then your app can transfer ownership of an open socket to a socket broker provided by the system, and then leave the foreground, or even terminate. When a connection is made on the transferred socket, or traffic arrives on that socket, then your app or its designated background task are activated. If your app is not running, it is started. The socket broker then notifies your app using a [**SocketActivityTrigger**](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) that new traffic has arrived. Your app reclaims the socket from the socket broker and process the traffic on the socket. This means that your app consumes far less system resources when it is not actively processing network traffic.
 
@@ -59,7 +59,7 @@ There are two ways to secure a [**StreamSocket**](/uwp/api/Windows.Networking.So
 
 The SocketProtectionLevel specifies the desired socket protection level the app wants to establish or upgrade the connection with. However, the eventual protection level of the established connection is determined in a negotiation process between both endpoints of the connection. The result can be a lower protection level than the one you specified, if the other endpoint requests a lower level. 
 
- After the async operation has completed successfully, you can retrieve the requested protection level used in the [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) or [**UpgradeToSslAsync**](/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) call through the  [**StreamSocketinformation.ProtectionLevel**](/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) property. However, this does not reflect the actual protection level the connection is using.
+ After the async operation has completed successfully, you can retrieve the requested protection level used in the [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) or [**UpgradeToSslAsync**](/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) call through the  [**StreamSocketInformation.ProtectionLevel**](/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) property. However, this does not reflect the actual protection level the connection is using.
 
 > [!NOTE]
 > Your code should not implicitly depend on using a particular protection level, or on the assumption that a given security level is used by default. The security landscape changes constantly, and protocols and default protection levels change over time in order to avoid the use of protocols with known weaknesses. Defaults can vary depending on individual machine configuration, or on which software is installed and which patches have been applied. If your app depends on the use of a particular security level, then you must explicitly specify that level and then check to be sure that it is actually in use on the established connection.
@@ -70,14 +70,14 @@ The SocketProtectionLevel specifies the desired socket protection level the app 
 -   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) - Starts an asynchronous operation on a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) object to connect to a remote network destination specified as an [**EndpointPair**](/uwp/api/Windows.Networking.EndpointPair) object and a [**SocketProtectionLevel**](/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel).
 -   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) - Starts an asynchronous operation on a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) object to connect to a remote destination specified by a remote hostname, a remote service name, and a [**SocketProtectionLevel**](/uwp/api/Windows.Networking.Sockets.SocketProtectionLevel).
 
-If the *protectionLevel* parameter is set to **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** when calling either of the above [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) methods, the [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) must will be established to use SSL/TLS for encryption. This value requires encryption and never allows a NULL cipher to be used.
+If the *protectionLevel* parameter is set to **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** when calling either of the above [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) methods, the [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) will be established to use SSL/TLS for encryption. This value requires encryption and never allows a NULL cipher to be used.
 
 The normal sequence to use with one of these [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) methods is the same.
 
 -   Create a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket).
 -   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.control) property to get the [**StreamSocketControl**](/uwp/api/Windows.Networking.Sockets.StreamSocketControl) instance associated with a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) object. Set a property on the **StreamSocketControl**.
 -   Call one of the above [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) methods to start an operation to connect to a remote destination and immediately negotiate the use of SSL/TLS.
--   The SSL strength actually negotiated using [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) property after the async operation has completed successfully.
+-   The SSL strength actually negotiated using [**ConnectAsync**](/uwp/api/windows.networking.sockets.streamsocket.connectasync) can be determined by getting the [**StreamSocketInformation.ProtectionLevel**](/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) property after the async operation has completed successfully.
 
 The following example creates a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) and tries to establish a connection to the network service and negotiate immediately to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client the network server will be encrypted.
 
@@ -154,16 +154,16 @@ using Windows::Networking;
 using Windows::Networking::Sockets;
 
     // Define some variables and set values
-    StreamSocket^ clientSocket = new ref StreamSocket();
+    StreamSocket^ clientSocket = ref new StreamSocket();
  
-    HostName^ serverHost = new ref HostName("www.contoso.com");
-    String serverServiceName = "https";
+    HostName^ serverHost = ref new HostName("www.contoso.com");
+    String^ serverServiceName = "https";
 
     // For simplicity, the sample omits implementation of the
     // NotifyUser method used to display status and error messages 
 
     // Try to connect to the server using HTTPS and SSL (port 443)
-    task<void>(clientSocket->ConnectAsync(serverHost, serverServiceName, SocketProtectionLevel::SSL)).then([this] (task<void> previousTask) {
+    task<void>(clientSocket->ConnectAsync(serverHost, serverServiceName, SocketProtectionLevel::Ssl)).then([this] (task<void> previousTask) {
         try
         {
             // Try getting all exceptions from the continuation chain above this point.
@@ -174,7 +174,7 @@ using Windows::Networking::Sockets;
         {
             NotifyUser("Connect failed with error: " + exception->Message);
             
-            clientSocket.Close();
+            clientSocket->Close();
             clientSocket = null;
         }
     });
@@ -193,7 +193,7 @@ The normal sequence to use with the [**UpgradeToSslAsync**](/uwp/api/windows.net
 -   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](/uwp/api/windows.networking.sockets.streamsocket.control) property to get the [**StreamSocketControl**](/uwp/api/Windows.Networking.Sockets.StreamSocketControl) instance associated with a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) object. Set a property on the **StreamSocketControl**.
 -   If any data needs to be sent and received unencrypted, send it now.
 -   Call the [**UpgradeToSslAsync**](/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) method to start an operation to upgrade the connection to use SSL/TLS.
--   The SSL strength actually negotiated using [**UpgradeToSslAsync**](/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) property after the async operation completes successfully.
+-   The SSL strength actually negotiated using [**UpgradeToSslAsync**](/uwp/api/windows.networking.sockets.streamsocket.upgradetosslasync) can be determined by getting the [**StreamSocketInformation.ProtectionLevel**](/uwp/api/windows.networking.sockets.streamsocketinformation.protectionlevel) property after the async operation completes successfully.
 
 The following example creates a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket), tries to establish a connection to the network service, sends some initial data, and then negotiates to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client and the network server will be encrypted.
 
@@ -366,10 +366,10 @@ using Windows::Networking::Sockets;
 using Windows::Storage::Streams;
 
     // Define some variables and set values
-    StreamSocket^ clientSocket = new ref StreamSocket();
+    StreamSocket^ clientSocket = ref new StreamSocket();
  
-    Hostname^ serverHost = new ref HostName("www.contoso.com");
-    String serverServiceName = "http";
+    HostName^ serverHost = ref new HostName("www.contoso.com");
+    String^ serverServiceName = "http";
 
     // For simplicity, the sample omits implementation of the
     // NotifyUser method used to display status and error messages 
@@ -392,11 +392,11 @@ using Windows::Storage::Streams;
     });
        
     // Now try to send some data
-    DataWriter^ writer = new ref DataWriter(clientSocket.OutputStream);
-    String hello = "Hello, World! ☺ ";
+    DataWriter^ writer = ref new DataWriter(clientSocket->OutputStream);
+    String^ hello = "Hello, World! ☺ ";
     Int32 len = (int) writer->MeasureString(hello); // Gets the UTF-8 string length.
-    writer->writeInt32(len);
-    writer->writeString(hello);
+    writer->WriteInt32(len);
+    writer->WriteString(hello);
     NotifyUser("Client: sending hello");
 
     task<void>(writer->StoreAsync()).then([this] (task<void> previousTask) {
@@ -415,12 +415,12 @@ using Windows::Storage::Streams;
  
                clientSocket->Close();
                clientSocket = null;
-               return
+               return;
        }
     });
 
     // Now upgrade the client to use SSL
-    task<void>(clientSocket->UpgradeToSslAsync(clientSocket.SocketProtectionLevel.Ssl, serverHost)).then([this] (task<void> previousTask) {
+    task<void>(clientSocket->UpgradeToSslAsync(SocketProtectionLevel::Ssl, serverHost)).then([this] (task<void> previousTask) {
         try {
             // Try getting all exceptions from the continuation chain above this point.
             previousTask.Get();
@@ -446,7 +446,7 @@ using Windows::Storage::Streams;
 ```
 
 ### Creating secure WebSocket connections
-Like traditional socket connections, WebSocket connections can also be encrypted with Transport Layer Security (TLS)/Secure Sockets Layer (SSL) when using the [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) and [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) features for a UWP app. In most cases you'll want to use a secure WebSocket connection. This will increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections.
+Like traditional socket connections, WebSocket connections can also be encrypted with Transport Layer Security (TLS)/Secure Sockets Layer (SSL) when using the [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) and [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) features for a Windows app. In most cases you'll want to use a secure WebSocket connection. This will increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections.
 
 For examples of how to create, or upgrade to, a secure socket connection to a network service, see [How to secure WebSocket connections with TLS/SSL](/previous-versions/windows/apps/hh994399(v=win.10)).
 
@@ -499,6 +499,3 @@ The networking APIs support different methods for retrieving this detailed infor
 
 -   Some APIs provide a helper method that converts the **HRESULT** value from the exception to an enumeration value.
 -   Other APIs provide a method to retrieve the actual **HRESULT** value.
-
-## Related topics
-* [Networking API Improvements in Windows 10](https://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)

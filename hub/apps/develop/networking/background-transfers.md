@@ -1,14 +1,17 @@
 ---
 description: Use the background transfer API to copy files reliably over the network.
 title: Background transfers
-ms.assetid: 1207B089-BC16-4BF0-BBD4-FD99950C764B
-ms.date: 03/23/2018
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-keywords: windows 10, uwp
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking
 ---
 # Background transfers
 Use the background transfer API to copy files reliably over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
+
+> [!NOTE]
+> The `Windows.Networking.BackgroundTransfer` APIs are Windows Runtime (WinRT) APIs that work in WinUI 3 (Windows App SDK) desktop apps as well as UWP apps. Background transfers require package identity; unpackaged apps cannot use this API.
 
 Background Transfer runs separately from the calling app and is primarily designed for long-term transfer operations for resources like video, music, and large images. For these scenarios, using Background Transfer is essential because downloads continue to progress even when the app is suspended.
 

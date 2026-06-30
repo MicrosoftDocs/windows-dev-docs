@@ -1,11 +1,11 @@
 ---
 description: Use HttpClient and the rest of the Windows.Web.Http namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 title: HttpClient
-ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
-ms.date: 06/05/2019
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking
 ---
 
 # HttpClient
@@ -18,9 +18,12 @@ ms.localizationpriority: medium
 
 Use [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) and the rest of the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 
+> [!TIP]
+> WinUI 3 apps targeting .NET 6 or later can also use `System.Net.Http.HttpClient` (the .NET HttpClient). It supports `IHttpClientFactory`, cancellation tokens, and modern async patterns. Use `Windows.Web.Http.HttpClient` when you need WinRT-specific features such as credential prompts, cookie management via the WinRT broker, or integration with Windows network isolation. For straightforward HTTP requests in a .NET WinUI 3 app, `System.Net.Http.HttpClient` is often simpler.
+
 ## Overview of HttpClient and the Windows.Web.Http namespace
 
-The classes in the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace and the related [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers) and [**Windows.Web.Http.Filters**](/uwp/api/Windows.Web.Http.Filters) namespaces provide a programming interface for Universal Windows Platform (UWP) apps that act as an HTTP client to perform basic GET requests or implement more advanced HTTP functionality listed below.
+The classes in the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace and the related [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers) and [**Windows.Web.Http.Filters**](/uwp/api/Windows.Web.Http.Filters) namespaces provide a programming interface for Windows apps that act as an HTTP client to perform basic GET requests or implement more advanced HTTP functionality listed below.
 
 -   Methods for common verbs (**DELETE**, **GET**, **PUT**, and **POST**). Each of these requests are sent as an asynchronous operation.
 
@@ -52,24 +55,18 @@ The [**Windows.Web.Http.Headers**](/uwp/api/Windows.Web.Http.Headers) namespace 
 
 ## Send a simple GET request over HTTP
 
-As mentioned earlier in this article, the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace allows UWP apps to send GET requests. The following code snippet demonstrates how to send a GET request to `http://www.contoso.com` using the [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
+As mentioned earlier in this article, the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace allows Windows apps to send GET requests. The following code snippet demonstrates how to send a GET request to `http://www.contoso.com` using the [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) class and the [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) class to read the response from the GET request.
 
 ```csharp
 //Create an HTTP client object
 Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
 
-//Add a user-agent header to the GET request. 
+//Add a user-agent header to the GET request.
 var headers = httpClient.DefaultRequestHeaders;
 
 //The safe way to add a header value is to use the TryParseAdd method and verify the return value is true,
 //especially if the header value is coming from user input.
-string header = "ie";
-if (!headers.UserAgent.TryParseAdd(header))
-{
-    throw new Exception("Invalid header value: " + header);
-}
-
-header = "Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+string header = "MyApp/1.0";
 if (!headers.UserAgent.TryParseAdd(header))
 {
     throw new Exception("Invalid header value: " + header);
@@ -118,13 +115,7 @@ int main()
 
     // The safe way to add a header value is to use the TryParseAdd method, and verify the return value is true.
     // This is especially important if the header value is coming from user input.
-    std::wstring header{ L"ie" };
-    if (!headers.UserAgent().TryParseAdd(header))
-    {
-        throw L"Invalid header value: " + header;
-    }
-
-    header = L"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; WOW64; Trident/6.0)";
+    std::wstring header{ L"MyApp/1.0" };
     if (!headers.UserAgent().TryParseAdd(header))
     {
         throw L"Invalid header value: " + header;
@@ -153,10 +144,10 @@ int main()
 
 ## POST binary data over HTTP
 
-The [C++/WinRT](../cpp-and-winrt-apis/index.md) code example below illustrates using form data and a POST request to send a small amount of binary data as a file upload to a web server. The code uses the [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) class to represent the binary data, and the [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) class to represent the multi-part form data.
+The [C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/) code example below illustrates using form data and a POST request to send a small amount of binary data as a file upload to a web server. The code uses the [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) class to represent the binary data, and the [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) class to represent the multi-part form data.
 
 > [!NOTE]
-> Calling **get** (as seen in the code example below) isn't appropriate for a UI thread. For the correct technique to use in that case, see [Concurrency and asynchronous operations with C++/WinRT](../cpp-and-winrt-apis/concurrency.md).
+> Calling **get** (as seen in the code example below) isn't appropriate for a UI thread. For the correct technique to use in that case, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/concurrency).
 
 ```cppwinrt
 // pch.h
@@ -332,12 +323,12 @@ In C++, there is no method to try and parse a string to a URI. If an app gets in
 
 The [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) lacks a convenience function. So an app using [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) and other classes in this namespace needs to use the **HRESULT** value.
 
-In apps using [C++/WinRT](../cpp-and-winrt-apis/index.md), the [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) struct represents an exception raised during app execution. The [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) function returns the **HRESULT** assigned to the specific exception. The [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) function returns the system-provided string that is associated with the **HRESULT** value. For more info, see [Error handling with C++/WinRT](../cpp-and-winrt-apis/error-handling.md)
+In apps using [C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/), the [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) struct represents an exception raised during app execution. The [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) function returns the **HRESULT** assigned to the specific exception. The [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) function returns the system-provided string that is associated with the **HRESULT** value. For more info, see [Error handling with C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/error-handling)
 
 Possible **HRESULT** values are listed in the *Winerror.h* header file. Your app can filter on specific **HRESULT** values to modify app behavior depending on the cause of the exception.
 
 In apps using the .NET Framework 4.5 in C#, VB.NET, the [System.Exception](/dotnet/api/system.exception) represents an error during app execution when an exception occurs. The [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) property returns the **HRESULT** assigned to the specific exception. The [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) property returns the message that describes the exception.
 
-C++/CX has been superseded by [C++/WinRT](../cpp-and-winrt-apis/index.md). But in apps using C++/CX, the [Platform::Exception](/cpp/cppcx/platform-exception-class) represents an error during app execution when an exception occurs. The [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) property returns the **HRESULT** assigned to the specific exception. The [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) property returns the system-provided string that is associated with the **HRESULT** value.
+C++/CX has been superseded by [C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/). But in apps using C++/CX, the [Platform::Exception](/cpp/cppcx/platform-exception-class) represents an error during app execution when an exception occurs. The [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) property returns the **HRESULT** assigned to the specific exception. The [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) property returns the system-provided string that is associated with the **HRESULT** value.
 
 For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**. For some illegal method calls, the **HRESULT** returned is **E\_ILLEGAL\_METHOD\_CALL**.
