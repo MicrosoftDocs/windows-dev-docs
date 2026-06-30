@@ -39,18 +39,23 @@ Use these fundamentals as a guide throughout your design process—whether you'r
         Use shape, sizing, and spatial relationships to create balanced, predictable layouts.
     :::column-end:::
     :::column:::
+       [![Haptics icon](./images/tile-haptics-hand.png)](./signature-experiences/haptics.md)
+        **[Haptics](./signature-experiences/haptics.md)**<br>
+        Add touch feedback to reinforce user input and create more responsive, intuitive interactions.
+    :::column-end:::
+    :::column:::
        [![Iconography icon](./images/tile-iconography.png)](./signature-experiences/iconography.md)<br>
         **[Iconography](./signature-experiences/iconography.md)**<br>
         Communicate actions and concepts quickly with familiar, purposeful icons.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Layout icon](./images/tile-layout.png)](layout/index.md)<br>
         **[Layout](./layout/index.md)**<br>
         Organize content with grids, spacing, and alignment patterns that improve clarity and flow.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Materials icon](./images/tile-materials.png)](./signature-experiences/materials.md)<br>
         **[Materials](./signature-experiences/materials.md)**<br>
@@ -61,13 +66,14 @@ Use these fundamentals as a guide throughout your design process—whether you'r
         **[Motion](./signature-experiences/motion.md)**<br>
         Use motion to provide feedback, guide attention, and create smooth, responsive interactions.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![Navigation icon](./images/tile-navigation.png)](./basics/navigation-basics.md)<br>
         **[Navigation](./basics/navigation-basics.md)**<br>
         Help users move through your app with predictable, well-structured navigation patterns.
     :::column-end:::
-:::row-end:::
-:::row:::
     :::column:::
        [![Typography icon](./images/tile-typography.png)](./signature-experiences/typography.md)<br>
         **[Typography](./signature-experiences/typography.md)**<br>
@@ -78,20 +84,17 @@ Use these fundamentals as a guide throughout your design process—whether you'r
         **[Usability](./usability/index.md)**<br>
         Ensure your app is easy to use through intuitive interactions, clear affordances, and accessibility.
     :::column-end:::
+:::row-end:::
+:::row:::
     :::column:::
        [![Widgets icon](./images/tile-widgets.png)](./widgets/index.md)<br>
         **[Widgets](./widgets/index.md)**<br>
         Extend your app with glanceable, interactive surfaces that surface key information and actions.
     :::column-end:::
-:::row-end:::
-
-:::row:::
     :::column:::
        [![Writing icon](./images/tile-writing.png)](style/writing-style.md )<br>
         **[Writing](./style/writing-style.md )**<br>
         Use clear, concise, and helpful language to improve understanding and reduce cognitive load.
-    :::column-end:::
-    :::column:::
     :::column-end:::
     :::column:::
     :::column-end:::
