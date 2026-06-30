@@ -622,7 +622,6 @@ items:
               - name: Custom effects
                 href: win2d/custom-effects.md
       - name: Globalization and localization
-        href: 
         items:
           - name: Overview
             href: ../design/globalizing/globalizing-portal.md
@@ -969,7 +968,7 @@ items:
           - name: Windows Hello
             items:
               - name: Overview
-                href: security/windows-hello-login.md
+                href: security/windows-hello.md
               - name: "Tutorial: Create a Windows Hello login app"
                 href: security/windows-hello-login.md
               - name: "Tutorial: Create a Windows Hello login service"
