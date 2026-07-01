@@ -18,6 +18,8 @@ items:
       href: signature-experiences/layering.md
     - name: Geometry
       href: signature-experiences/geometry.md
+    - name: Haptics
+      href: signature-experiences/haptics.md
     - name: Iconography
       items:
         - name: Overview

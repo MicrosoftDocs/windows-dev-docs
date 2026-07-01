@@ -2,7 +2,7 @@
 title: Packaging overview
 description: Understand the differences between packaged and unpackaged apps and how packaging affects installation, updates, and access to Windows features.
 ms.topic: concept-article
-ms.date: 05/29/2026
+ms.date: 06/20/2026
 ms.localizationpriority: medium
 ---
 
@@ -124,4 +124,6 @@ If you build a Win32 desktop app (sometimes called a *classic desktop app*) or a
 - [Deploy packaged apps (Windows App SDK)](../../windows-app-sdk/deploy-packaged-apps.md)
 - [Deploy unpackaged apps (Windows App SDK)](../../windows-app-sdk/deploy-unpackaged-apps.md)
 - [Tutorial: Unpackage a WinUI app](../unpackage-winui-app.md)
+- [App capability declarations](../app-capability-declarations.md) — declare capabilities in your package manifest to access protected APIs, devices, or resources
+- [Download and install package updates from the Store](../package-updates-from-store.md) — use `Windows.Services.Store` APIs to programmatically check for and install Store updates
 - [Inside MSIX blog](https://devblogs.microsoft.com/insidemsix/) — authoritative deep dives on package identity, deployment architecture, and MSIX internals by the Microsoft MSIX engineering team

@@ -1,11 +1,11 @@
 ---
 description: WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 title: WebSockets
-ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
-ms.date: 06/04/2018
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: article
-keywords: windows 10, uwp, networking, websocket, messagewebsocket, streamwebsocket
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking, websocket, messagewebsocket, streamwebsocket
 ---
 
 # WebSockets
@@ -17,7 +17,7 @@ To establish a WebSocket connection, a specific, HTTP-based handshake is exchang
 
 **Note** A client cannot use WebSockets to transfer data unless the server also uses the WebSocket protocol. If the server does not support WebSockets, then you must use another method of data transfer.
 
-The Universal Windows Platform (UWP) provides support for both client and server use of WebSockets. The [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) namespace defines two WebSocket classes for use by clients&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket), and [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket). Here's a comparison of these two WebSocket classes.
+Windows provides support for both client and server use of WebSockets. The [**Windows.Networking.Sockets**](/uwp/api/windows.networking.sockets) namespace defines two WebSocket classes for use by clients&mdash;[**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket), and [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket). Here's a comparison of these two WebSocket classes.
 
 | [MessageWebSocket](/uwp/api/windows.networking.sockets.messagewebsocket) | [StreamWebSocket](/uwp/api/windows.networking.sockets.streamwebsocket) |
 | - | - |
@@ -47,14 +47,12 @@ protected override async void OnNavigatedTo(NavigationEventArgs e)
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Networking.Sockets.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
 #include <sstream>
 
 using namespace winrt;
 using namespace Windows::Foundation;
-using namespace Windows::UI::Xaml::Navigation;
 ...
-IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
+IAsyncAction ConnectWebSocketAsync()
 {
     Windows::Networking::Sockets::MessageWebSocket webSocket;
     co_await webSocket.ConnectAsync(Uri{ L"wss://www.contoso.com/mywebservice" });
@@ -64,7 +62,7 @@ IAsyncAction OnNavigatedTo(NavigationEventArgs /* e */)
 ## Use MessageWebSocket to connect
 [**MessageWebSocket**](/uwp/api/windows.networking.sockets.messagewebsocket) allows an entire WebSocket message to be read/written in a single operation. Consequently, it's suitable when messages are not very large. The class supports both UTF-8 and binary messages.
 
-The example code below uses the WebSocket.org echo server&mdash;a service that echoes back to the sender any message sent to it.
+The example code below connects to a WebSocket server and sends a message. The public `echo.websocket.org` service is discontinued, so replace the placeholder URI in these examples with your own WebSocket server URI.
 
 ```csharp
 private Windows.Networking.Sockets.MessageWebSocket messageWebSocket;
@@ -81,7 +79,8 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
     try
     {
-        Task connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
+        // Replace with your WebSocket server URI.
+        Task connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://example.com/ws")).AsTask();
         connectTask.ContinueWith(_ => this.SendMessageUsingMessageWebSocketAsync("Hello, World!"));
     }
     catch (Exception ex)
@@ -132,7 +131,7 @@ private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Wind
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Networking.Sockets.h>
 #include <winrt/Windows.Storage.Streams.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 #include <sstream>
 
 using namespace winrt;
@@ -156,7 +155,7 @@ public:
 
         try
         {
-            co_await m_messageWebSocket.ConnectAsync(Uri{ L"wss://echo.websocket.org" });
+            co_await m_messageWebSocket.ConnectAsync(Uri{ L"wss://example.com/ws" });
             SendMessageUsingMessageWebSocketAsync(L"Hello, World!");
         }
         catch (winrt::hresult_error const& ex)
@@ -232,7 +231,7 @@ protected:
 
         try
         {
-            auto connectTask = Concurrency::create_task(this->messageWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
+            auto connectTask = Concurrency::create_task(this->messageWebSocket->ConnectAsync(ref new Uri(L"wss://example.com/ws")));
             connectTask.then([this] { this->SendMessageUsingMessageWebSocketAsync(L"Hello, World!"); });
         }
         catch (Platform::Exception^ ex)
@@ -300,7 +299,7 @@ Once a connection is established, you can send data to the server. You do this b
 ## Use StreamWebSocket to connect
 [**StreamWebSocket**](/uwp/api/windows.networking.sockets.streamwebsocket) allows sections of a message to be read with each read operation. Consequently, it's suitable when very large files (such as photos or videos) are being transferred. The class supports only binary messages.
 
-The example code below uses the WebSocket.org echo server&mdash;a service that echoes back to the sender any message sent to it.
+The example code below connects to a WebSocket server and sends a message. The public `echo.websocket.org` service is discontinued, so these examples also use a placeholder URI that you should replace with your own WebSocket server URI.
 
 ```csharp
 private Windows.Networking.Sockets.StreamWebSocket streamWebSocket;
@@ -313,7 +312,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
     try
     {
-        Task connectTask = this.streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask();
+        Task connectTask = this.streamWebSocket.ConnectAsync(new Uri("wss://example.com/ws")).AsTask();
 
         connectTask.ContinueWith(_ =>
         {
@@ -379,7 +378,7 @@ private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Wind
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Networking.Sockets.h>
 #include <winrt/Windows.Storage.Streams.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 #include <sstream>
 
 using namespace winrt;
@@ -398,7 +397,7 @@ public:
 
         try
         {
-            co_await m_streamWebSocket.ConnectAsync(Uri{ L"wss://echo.websocket.org" });
+            co_await m_streamWebSocket.ConnectAsync(Uri{ L"wss://example.com/ws" });
             ReceiveMessageUsingStreamWebSocket();
             SendMessageUsingStreamWebSocket({ 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09 });
         }
@@ -481,7 +480,7 @@ protected:
 
         try
         {
-            auto connectTask = Concurrency::create_task(this->streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
+            auto connectTask = Concurrency::create_task(this->streamWebSocket->ConnectAsync(ref new Uri(L"wss://example.com/ws")));
 
             connectTask.then(
                 [=]
@@ -561,7 +560,7 @@ Before establishing a connection and sending data with a **StreamWebSocket**, yo
 ### Send data on a StreamWebSocket
 Once a connection is established, you can send data to the server. You do this by using the [**StreamWebSocket.OutputStream**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.OutputStream) property, and a [**DataWriter**](/uwp/api/windows.storage.streams.datawriter), to write the data.
 
-**Note** If you want to write more data on the same socket, then be sure to call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) to detach the output stream from the **DataWriter** before the **DataWriter** goes out of scope. This returns ownership of the stream to the **MessageWebSocket**.
+**Note** If you want to write more data on the same socket, then be sure to call [**DataWriter.DetachStream**](/uwp/api/windows.storage.streams.datawriter.DetachStream) to detach the output stream from the **DataWriter** before the **DataWriter** goes out of scope. This returns ownership of the stream to the **StreamWebSocket**.
 
 ### Receive data on a StreamWebSocket
 Use the [**StreamWebSocket.InputStream**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket.InputStream) property, and a [**DataReader**](/uwp/api/windows.storage.streams.datareader), to read the data.
@@ -577,7 +576,7 @@ var streamWebSocket = new Windows.Networking.Sockets.StreamWebSocket();
 // By default, the Nagle algorithm is not used. This overrides that, and causes it to be used.
 streamWebSocket.Control.NoDelay = false;
 
-await streamWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org"));
+await streamWebSocket.ConnectAsync(new Uri("wss://example.com/ws"));
 ```
 
 ```cppwinrt
@@ -586,7 +585,7 @@ Windows::Networking::Sockets::StreamWebSocket streamWebSocket;
 // By default, the Nagle algorithm is not used. This overrides that, and causes it to be used.
 streamWebSocket.Control().NoDelay(false);
 
-auto connectAsyncAction = streamWebSocket.ConnectAsync(Uri{ L"wss://echo.websocket.org" });
+auto connectAsyncAction = streamWebSocket.ConnectAsync(Uri{ L"wss://example.com/ws" });
 ```
 
 ```cpp
@@ -595,7 +594,7 @@ auto streamWebSocket = ref new Windows::Networking::Sockets::StreamWebSocket();
 // By default, the Nagle algorithm is not used. This overrides that, and causes it to be used.
 streamWebSocket->Control->NoDelay = false;
 
-auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")));
+auto connectTask = Concurrency::create_task(streamWebSocket->ConnectAsync(ref new Uri(L"wss://example.com/ws")));
 ```
 
 **Note** Don't try to change a control property *after* you've called **ConnectAsync**. The only exception to that rule is [MessageWebSocketControl.MessageType](/uwp/api/windows.networking.sockets.messagewebsocketcontrol.MessageType).
@@ -633,7 +632,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
     try
     {
         var cancellationTokenSource = new CancellationTokenSource();
-        var connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://echo.websocket.org")).AsTask(cancellationTokenSource.Token);
+        var connectTask = this.messageWebSocket.ConnectAsync(new Uri("wss://example.com/ws")).AsTask(cancellationTokenSource.Token);
 
         // Cancel connectTask after 5 seconds.
         cancellationTokenSource.CancelAfter(TimeSpan.FromMilliseconds(5000));
@@ -662,7 +661,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 ```cppwinrt
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Networking.Sockets.h>
-#include <winrt/Windows.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Xaml.Navigation.h>
 #include <sstream>
 
 using namespace winrt;
@@ -687,7 +686,7 @@ public:
             // Return control to the caller, and then immediately resume on a thread pool thread.
             co_await winrt::resume_background();
 
-            auto connectAsyncAction = m_messageWebSocket.ConnectAsync(Uri{ L"wss://echo.websocket.org" });
+            auto connectAsyncAction = m_messageWebSocket.ConnectAsync(Uri{ L"wss://example.com/ws" });
 
             TimeoutAsync().Completed([connectAsyncAction](IAsyncAction const& sender, AsyncStatus const)
             {
@@ -748,7 +747,7 @@ protected:
             Concurrency::cancellation_token_source cancellationTokenSource;
             Concurrency::cancellation_token cancellationToken = cancellationTokenSource.get_token();
 
-            auto connectTask = Concurrency::create_task(this->messageWebSocket->ConnectAsync(ref new Uri(L"wss://echo.websocket.org")), cancellationToken);
+            auto connectTask = Concurrency::create_task(this->messageWebSocket->ConnectAsync(ref new Uri(L"wss://example.com/ws")), cancellationToken);
 
             // This continuation task returns true should connectTask run to completion.
             Concurrency::task< bool > taskRanToCompletion = connectTask.then([](void)

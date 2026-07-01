@@ -1,22 +1,22 @@
 ---
-ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
-description: An overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
-title: Which networking technology?'
-ms.date: 02/08/2017
+description: An overview of the networking technologies available for a Windows developer, with suggestions on how to choose the technologies that are right for your app.
+title: Which networking technology?
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking
 ---
 
 # Which networking technology?
 
-An overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
+An overview of the networking technologies available for a Windows developer, with suggestions on how to choose the technologies that are right for your app.
 
 ## Sockets
 
 Use [Sockets](sockets.md) when you are communicating with another device and want to use your own protocol.
 
-Two implementations of sockets are available for Universal Windows Platform (UWP) developers: [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets), and [Winsock](/windows/desktop/WinSock/windows-sockets-start-page-2). If you are writing new code, then Windows.Networking.Sockets has the advantage of being a modern API, designed for use by UWP developers. If you are using cross-platform networking libraries or other existing Winsock code, or prefer the Winsock API, then use that.
+Two implementations of sockets are available for Windows developers: [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets), and [Winsock](/windows/desktop/WinSock/windows-sockets-start-page-2). If you are writing new code, then Windows.Networking.Sockets has the advantage of being a modern API, designed for use by Windows developers. If you are using cross-platform networking libraries or other existing Winsock code, or prefer the Winsock API, then use that.
 
 ### When to use sockets
 
@@ -29,15 +29,15 @@ Two implementations of sockets are available for Universal Windows Platform (UWP
 -   Don't implement your own HTTP(S) stack using sockets. Use [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) instead.
 -   If WebSockets (the [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) and [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) classes) meet your communications needs (TCP to/from a web server), consider using them rather than spend your own time and development resources implementing similar functionality with sockets.
 
-## Websockets
+## WebSockets
 
-The [WebSockets](websockets.md) protocol defines a mechanism for fast, secure two-way communication between a client and a server over the web. Data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (like game statistics ) need to be secure and use fast data transfer. UWP developers can use the [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) and [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) classes to connect with servers that support the Websocket protocol.
+The [WebSockets](websockets.md) protocol defines a mechanism for fast, secure two-way communication between a client and a server over the web. Data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (like game statistics) need to be secure and use fast data transfer. Windows developers can use the [**StreamWebSocket**](/uwp/api/Windows.Networking.Sockets.StreamWebSocket) and [**MessageWebSocket**](/uwp/api/Windows.Networking.Sockets.MessageWebSocket) classes to connect with servers that support the WebSocket protocol.
 
-### When to use Websockets
+### When to use WebSockets
 
 -   When you want to send and receive data on an ongoing basis between a device and a server.
 
-### When not to use Websockets
+### When not to use WebSockets
 
 -   If you are sending or receiving data infrequently, you might find it simpler to make individual HTTP requests from the device to the server, rather than establish and maintain a WebSocket connection.
 -   WebSockets may not be suitable for very high-volume situations. Consider modeling your data flows and simulating your traffic through WebSockets before committing to using them in your design.
@@ -121,7 +121,7 @@ The [**Windows.Devices.WiFiDirect.Services**](/uwp/api/Windows.Devices.WiFiDirec
 
 ### Mobile operators
 
-Windows 10 exposes to a wide developer audience some APIs that have previously only been exposed to device manufacturers and mobile operators. Note that while these APIs are exposed now, they are also gated by specific app capabilities that must be approved by Microsoft before an app can be published. Actual use of these APIs will still be limited primarily to device manufacturers and mobile operators.
+Windows exposes to a wide developer audience some APIs that have previously only been exposed to device manufacturers and mobile operators. Note that while these APIs are exposed now, they are also gated by specific app capabilities that must be approved by Microsoft before an app can be published. Actual use of these APIs will still be limited primarily to device manufacturers and mobile operators.
 
 ### Network operations
 

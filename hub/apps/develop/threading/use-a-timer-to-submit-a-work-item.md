@@ -1,18 +1,18 @@
 ---
-ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
 title: Use a timer to submit a work item
-description: Learn how to create a timer that submits a work item when the timer elapses in a Universal Windows Platform (UWP) app by using the ThreadPoolTimer API.
-ms.date: 02/08/2017
+description: Learn how to create a timer that submits a work item when the timer elapses in your Windows app by using the ThreadPoolTimer API.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-keywords: windows 10, uwp, timer, threads
+ms.date: 06/20/2026
+keywords: windows 10, windows 11, windows app sdk, winui 3, timer, threads
 ms.localizationpriority: medium
 ---
 # Use a timer to submit a work item
 
+**Important APIs**
 
-<b>Important APIs</b>
-
--   [**Windows.UI.Core namespace**](/uwp/api/Windows.UI.Core)
+-   [**Microsoft.UI.Dispatching namespace**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching)
 -   [**Windows.System.Threading namespace**](/uwp/api/Windows.System.Threading)
 
 Learn how to create a work item that runs after a timer elapses.
@@ -21,7 +21,8 @@ Learn how to create a work item that runs after a timer elapses.
 
 Use the [**CreateTimer**](/uwp/api/windows.system.threading.threadpooltimer.createtimer) method to create a timer for the work item. Supply a lambda that accomplishes the work, and use the *delay* parameter to specify how long the thread pool waits before it can assign the work item to an available thread. The delay is specified using a [**TimeSpan**](/uwp/api/Windows.Foundation.TimeSpan) structure.
 
-> **Note**  You can use [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) to access the UI and show progress from the work item.
+> [!NOTE]
+> In WinUI 3 apps, use [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) from `Microsoft.UI.Dispatching.DispatcherQueue` to access the UI thread and show progress from the work item. See the [DispatcherQueue](/windows/apps/develop/dispatcherqueue) overview for details.
 
 The following example creates a work item that runs in three minutes:
 
@@ -213,17 +214,14 @@ If the timer is still counting down, but the work item is no longer needed, call
 
 ## Remarks
 
-Universal Windows Platform (UWP) apps can't use **Thread.Sleep** because it can block the UI thread. You can use a [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer) to create a work item instead, and this will delay the task accomplished by the work item without blocking the UI thread.
+Windows apps should avoid **Thread.Sleep** because it blocks the calling thread, which can make the UI unresponsive if called on the UI thread. You can use a [**ThreadPoolTimer**](/uwp/api/Windows.System.Threading.ThreadPoolTimer) to create a work item instead, and this will delay the task accomplished by the work item without blocking the UI thread.
 
-See the [thread pool sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) for a complete code sample that demonstrates work items, timer work items, and periodic work items. The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
+See the [thread pool sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) for a complete code sample that demonstrates work items, timer work items, and periodic work items. The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
 
-For information about repeating timers, see [Create a periodic work item](create-a-periodic-work-item.md).
+For information about repeating timers, see [Create a periodic work item](./create-a-periodic-work-item.md).
 
 ## Related topics
 
-* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
-* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
-* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
- 
-
- 
+* [Submit a work item to the thread pool](./submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](./best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](./use-a-timer-to-submit-a-work-item.md)

@@ -1,11 +1,11 @@
 ---
 description: Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the Windows.Web.Syndication namespace.
 title: RSS/Atom feeds
-ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
-ms.date: 02/08/2017
+ms.date: 06/25/2026
+author: GrantMeStrength
+ms.author: jken
 ms.topic: article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
+keywords: windows app sdk, winui, networking
 ---
 # RSS/Atom feeds
 
@@ -18,37 +18,40 @@ ms.localizationpriority: medium
 
 Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace.
 
+> [!NOTE]
+> The `Windows.Web.Syndication` and `Windows.Web.AtomPub` APIs are Windows Runtime (WinRT) APIs that work in WinUI 3 (Windows App SDK) desktop apps as well as UWP apps.
+
 ## What is a feed?
 
 A web feed is a document that contains any number of individual entries made up of text, links, and images. Updates made to a feed are in the form of new entries used to promote the latest content across the Web. Content consumers can use a feed reader app to aggregate and monitor feeds from any number of individual content authors, gaining access to the latest content quickly and conveniently.
 
 ## Which feed format standards are supported?
 
-The Universal Windows Platform (UWP) supports feed retrieval for RSS format standards from 0.91 to RSS 2.0, and Atom standards from 0.3 to 1.0. Classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace can define feeds and feed items capable of representing both RSS and Atom elements.
+Windows supports feed retrieval for RSS format standards from 0.91 to RSS 2.0, and Atom standards from 0.3 to 1.0. Classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace can define feeds and feed items capable of representing both RSS and Atom elements.
 
 Additionally, Atom 1.0 and RSS 2.0 formats both allow their feed documents to contain elements or attributes not defined in the official specifications. Over time, these custom elements and attributes have become a way to define domain-specific information consumed by other web service data formats like GData and OData. To support this added feature, the [**SyndicationNode**](/uwp/api/Windows.Web.Syndication.SyndicationNode) class represents generic XML elements. Using **SyndicationNode** with classes in the [**Windows.Data.Xml.Dom**](/uwp/api/Windows.Data.Xml.Dom) namespace, allows apps to access attributes, extensions, and any content that they may contain.
 
-Note that, for publication of syndicated content, the UWP implementation of the Atom Publication Protocol ([**Windows.Web.AtomPub**](/uwp/api/Windows.Web.AtomPub)) only supports feed content operations according to the Atom and Atom Publication standards.
+Note that, for publication of syndicated content, the Windows implementation of the Atom Publication Protocol ([**Windows.Web.AtomPub**](/uwp/api/Windows.Web.AtomPub)) only supports feed content operations according to the Atom and Atom Publication standards.
 
 ## Using syndicated content with network isolation
 
-The network isolation feature in the UWP enables a developer to control and limit network access by a UWP app. Not all apps may require access to the network. However for those apps that do, UWP provides different levels of access to the network that can be enabled by selecting appropriate capabilities.
+The network isolation feature in Windows enables a developer to control and limit network access by a Windows app. Not all apps may require access to the network. However for those apps that do, Windows provides different levels of access to the network that can be enabled by selecting appropriate capabilities.
 
 Network isolation allows a developer to define for each app the scope of required network access. An app without the appropriate scope defined is prevented from accessing the specified type of network, and specific type of network request (outbound client-initiated requests or both inbound unsolicited requests and outbound client-initiated requests). The ability to set and enforce network isolation ensures that if an app does get compromised, it can only access networks where the app has explicitly been granted access. This significantly reduces the scope of the impact on other applications and on Windows.
 
 Network isolation affects any class elements in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) and [**Windows.Web.AtomPub**](/uwp/api/Windows.Web.AtomPub) namespaces that try to access the network. Windows actively enforces network isolation. A call to a class element in the **Windows.Web.Syndication** or **Windows.Web.AtomPub** namespace that results in network access may fail because of network isolation if the appropriate network capability has not been enabled.
 
-The network capabilities for an app are configured in the app manifest when the app is built. Network capabilities are usually added using Microsoft Visual Studio 2015 when developing the app. Network capabilities may also be set manually in the app manifest file using a text editor.
+The network capabilities for an app are configured in the app manifest when the app is built. Network capabilities are usually added using Visual Studio when developing the app. Network capabilities may also be set manually in the app manifest file using a text editor.
 
 For more detailed information on network isolation and networking capabilities, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
 
 ## How to access a web feed
 
-This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace in your UWP app written in C# or JavaScript.
+This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](/uwp/api/Windows.Web.Syndication) namespace in your Windows app written in C#.
 
 **Prerequisites**
 
-To ensure your UWP app is network ready, you must set any network capabilities that are needed in the project **Package.appxmanifest** file. If your app needs to connect as a client to remote services on the Internet, then the **internetClient** capability is needed. For more information, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
+To ensure your Windows app is network ready, you must set any network capabilities that are needed in the project **Package.appxmanifest** file. If your app needs to connect as a client to remote services on the Internet, then the **internetClient** capability is needed. For more information, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
 
 **Retrieving syndicated content from a web feed**
 
@@ -73,6 +76,9 @@ catch (Exception ex)
     // Handle the invalid URI here.
 }
 ```
+> [!NOTE]
+> The JavaScript samples in this article use WinJS (Windows Library for JavaScript), which is a legacy framework for UWP JavaScript apps. These samples are provided for reference only and are not recommended for new app development.
+
 ```javascript
 var currentFeed = null;
 var currentItemIndex = 0;
@@ -178,9 +184,9 @@ function displayCurrentItem() {
     if (item.links.size > 0) {
         link = item.links[0].uri.absoluteUri;
     }
-    var link = document.getElementById("Link");
-    link.innerText = link;
-    link.href = link;
+    var linkElement = document.getElementById("Link");
+    linkElement.innerText = link;
+    linkElement.href = link;
     // Display the body as HTML.
     var content = "(no content)";
     if (item.content) {

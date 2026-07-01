@@ -319,6 +319,25 @@ items:
                 href: media-authoring-processing/transcode-media-files.md
       - name: Communication
         href: communication/index.md
+      - name: Networking and web services
+        href: networking/index.md
+        items:
+          - name: Networking basics
+            href: networking/networking-basics.md
+          - name: Which networking technology?
+            href: networking/which-networking-technology.md
+          - name: Network communications in the background
+            href: networking/network-communications-in-the-background.md
+          - name: Sockets
+            href: networking/sockets.md
+          - name: WebSockets
+            href: networking/websockets.md
+          - name: HttpClient
+            href: networking/httpclient.md
+          - name: RSS/Atom feeds
+            href: networking/web-feeds.md
+          - name: Background transfers
+            href: networking/background-transfers.md
       - name: Data and files
         items:
           - name: Overview
@@ -622,7 +641,6 @@ items:
               - name: Custom effects
                 href: win2d/custom-effects.md
       - name: Globalization and localization
-        href: 
         items:
           - name: Overview
             href: ../design/globalizing/globalizing-portal.md
@@ -969,13 +987,27 @@ items:
           - name: Windows Hello
             items:
               - name: Overview
-                href: security/windows-hello-login.md
+                href: security/windows-hello.md
               - name: "Tutorial: Create a Windows Hello login app"
                 href: security/windows-hello-login.md
               - name: "Tutorial: Create a Windows Hello login service"
                 href: security/windows-hello-auth-service.md
       - name: Testing
         href: testing/index.md
+      - name: Threading and async
+        items:
+          - name: Overview
+            href: threading/index.md
+          - name: Best practices for using the thread pool
+            href: threading/best-practices-for-using-the-thread-pool.md
+          - name: Call asynchronous APIs in C# or Visual Basic
+            href: threading/call-asynchronous-apis-in-csharp-or-visual-basic.md
+          - name: Create a periodic work item
+            href: threading/create-a-periodic-work-item.md
+          - name: Submit a work item to the thread pool
+            href: threading/submit-a-work-item-to-the-thread-pool.md
+          - name: Use a timer to submit a work item
+            href: threading/use-a-timer-to-submit-a-work-item.md
       - name: User interface
         items:
           - name: Overview
