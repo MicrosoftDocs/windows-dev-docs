@@ -38,7 +38,7 @@ The design and coding instructions in this section help you customize your WinUI
 
 | Topic | Description |
 |-------|-------------|
-| [Drag and drop](/windows/uwp/design/input/drag-and-drop) | Enable drag and drop interactions in your app. |
+| [Drag and drop](../data/drag-and-drop.md) | Enable drag and drop interactions in your app. |
 | [Panning](guidelines-for-panning.md) | Guidelines for implementing panning interactions. |
 | [Rotation](guidelines-for-rotation.md) | Guidelines for implementing rotation interactions. |
 | [Selecting text and images](guidelines-for-textselection.md) | Guidelines for selecting and manipulating text, images, and controls. |
