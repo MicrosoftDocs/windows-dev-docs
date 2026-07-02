@@ -1,7 +1,7 @@
 ---
 description: This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls.
 title: XAML custom (templated) controls with C++/WinRT
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, projection, XAML, custom, templated, control, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.custom: RS5
 # XAML custom (templated) controls with C++/WinRT
 
 > [!IMPORTANT]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](./intro-to-using-cpp-with-winrt.md), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 One of the most powerful features of the Windows App SDK is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](/windows/uwp/xaml-platform/custom-dependency-properties) and [attached properties](/windows/uwp/xaml-platform/custom-attached-properties), and [control templates](/windows/apps/design/style/xaml-control-templates), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
 
@@ -22,7 +22,7 @@ Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App
 In a later section of this topic, you'll be directed to build your project (but don't build until then).
 
 > [!NOTE]
-> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 We're going to author a new class to represent a custom (templated) control. We're authoring and consuming the class within the same compilation unit. But we want to be able to instantiate this class from XAML markup, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 

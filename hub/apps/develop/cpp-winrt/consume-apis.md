@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself.
 title: Consume APIs with C++/WinRT
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: how-to
 keywords: windows 10, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Consume APIs with C++/WinRT
 
-This topic shows how to consume [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
+This topic shows how to consume [C++/WinRT](./intro-to-using-cpp-with-winrt.md) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
 
 > [!IMPORTANT]
 > So that the code examples in this topic are short, and easy for you to try out, you can reproduce them by creating a new **Windows Console Application (C++/WinRT)** project, and copy-pasting code. However, you can't consume arbitrary custom (third-party) Windows Runtime types from an unpackaged app like that. You can consume only Windows types that way.
@@ -88,7 +88,7 @@ WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
 
 You might choose this technique if you know you'll be calling several methods on the same interface.
 
-Incidentally, if you do want to access members at the ABI level then you can. The code example below shows how, and there are more details and code examples in [Interop between C++/WinRT and the ABI](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi).
+Incidentally, if you do want to access members at the ABI level then you can. The code example below shows how, and there are more details and code examples in [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md).
 
 ```cppwinrt
 #include <Windows.Foundation.h>
@@ -256,7 +256,7 @@ auto smallBox{
 This section applies whether you authored the component yourself, or it came from a vendor.
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 In your application project, reference the Windows Runtime component's Windows Runtime metadata (`.winmd`) file, and build. During the build, the `cppwinrt.exe` tool generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface for the component. In other words, the generated library contains the projected types for the component.
 
@@ -272,7 +272,7 @@ struct App : AppT<App>
 };
 ```
 
-For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
+For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [Author events in C++/WinRT](./author-events.md).
 
 ## If the API is implemented in the consuming project
 The code example in this section is taken from the topic [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). See that topic for more details, code, and a walkthrough of consuming a runtime class that's implemented in the same project that consumes it.
@@ -317,7 +317,7 @@ MainPage::MainPage()
 ```
 
 ### Uniform construction
-With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/news#news-and-changes-in-cwinrt-20)).
+With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)).
 
 See [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) for a full walkthrough. This section shows extracts from that walkthrough.
 
@@ -491,8 +491,8 @@ The call to `Visibility()` resolves to the [**UIElement.Visibility**](/windows/w
 * [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## Related topics
-* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
-* [Interop between C++/WinRT and the ABI](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi)
-* [Introduction to C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+* [Author events in C++/WinRT](./author-events.md)
+* [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md)
+* [Introduction to C++/WinRT](./intro-to-using-cpp-with-winrt.md)
 * [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
 * [XAML controls; bind to a C++/WinRT property](./binding-property.md)

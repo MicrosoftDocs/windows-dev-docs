@@ -1,7 +1,7 @@
 ---
 title: Porting the Clipboard sample to C++/WinRT from C# (a case study)
-description: This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
-ms.date: 06/19/2026
+description: This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
+ms.date: 07/02/2026
 ms.topic: concept-article
 keywords: windows 10, standard, c++, cpp, winrt, projection, port, migrate, C#, sample, clipboard, case, study, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Porting the Clipboard sample to C++/WinRT from C#&mdash;a case study
 
-This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). You can gain porting practice and experience by following along with the walkthrough and porting the sample for yourself as you go.
+This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](./intro-to-using-cpp-with-winrt.md). You can gain porting practice and experience by following along with the walkthrough and porting the sample for yourself as you go.
 
 > [!NOTE]
 > The **source** code being ported is a UWP C# app. The **destination** C++/WinRT code in this article is written for WinUI 3 (Windows App SDK). Wherever the UWP source uses APIs that differ in WinUI 3 (for example, `Windows.UI.Core.CoreDispatcher` vs. `Microsoft.UI.Dispatching.DispatcherQueue`), this article explicitly shows the correct WinUI 3 equivalent in the C++/WinRT output. You can use the code patterns from the C++/WinRT column directly in your WinUI 3 app.
@@ -46,7 +46,7 @@ To get a feel for what the sample does, open the C# solution (`\Clipboard_sample
 ## Create a Blank App, named Clipboard
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 Begin the porting process by creating a new C++/WinRT project in Microsoft Visual Studio. Create a new project using the **Blank App, Packaged (WinUI 3 in Desktop)** for C++ project template. Set its name to *Clipboard*, and (so that your folder structure will match the walkthrough) make sure that **Place solution and project in the same directory** is unchecked.
 
@@ -280,7 +280,7 @@ namespace winrt::SDKTemplate::implementation
 
 For strings, C# uses **System.String**. See the **MainPage.NotifyUser** method for an example. In our IDL, we declare a string with **String**, and when the `cppwinrt.exe` tool generates C++/WinRT code for us, it uses the [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) type. Any time we come across a string in C# code, we'll port that to **winrt::hstring**. For more info, see [String handling in C++/WinRT](./strings.md).
 
-For an explanation of the `const&` parameters in the method signatures, see [Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
+For an explanation of the `const&` parameters in the method signatures, see [Parameter-passing](./concurrency.md#parameter-passing).
 
 ### Update all remaining namespace declarations/references, and build
 
@@ -457,7 +457,7 @@ From our earlier investigation, we know that this collection of **Scenario** obj
 - Either runtime classes, or
 - [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable).
 
-For the **IInspectable** case, if the elements are not themselves runtime classes, then those elements need to be of a kind that can be boxed and unboxed to and from [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). And that means that they have to be Windows Runtime types (see [Boxing and unboxing values to IInspectable](/windows/uwp/cpp-and-winrt-apis/boxing)).
+For the **IInspectable** case, if the elements are not themselves runtime classes, then those elements need to be of a kind that can be boxed and unboxed to and from [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable). And that means that they have to be Windows Runtime types (see [Boxing and unboxing values to IInspectable](./boxing.md)).
 
 For this case study, we didn't make **Scenario** a runtime class. That is still a reasonable option, though. And there'll be cases in your own porting work where a runtime class will definitely be the way to go. For example, if you need to make the element type *observable* (see [XAML controls; bind to a C++/WinRT property](./binding-property.md)), or if the element needs to have methods for any other reason, and it's more than just a set of data members.
 
@@ -505,7 +505,7 @@ Also, be sure to delete the existing function body from `MainPage.cpp` for **Mai
 
 As you can see, in `SampleConfiguration.cpp`, we initialize the static data member *scenariosInner* by calling a C++/WinRT helper function named [winrt::single_threaded_observable_vector](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector). That function creates a new Windows Runtime collection object for us, and returns it as an [**IObservableVector**](/uwp/api/windows.foundation.collections.iobservablevector_t_) interface. Since, in this sample, the collection is not *observable* (it doesn't need to be, because it doesn't add nor remove elements after initialization), we could instead have opted to call [winrt::single_threaded_vector](/uwp/cpp-ref-for-winrt/single-threaded-vector). That function returns the collection as an [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) interface.
 
-For more info about collections, and binding to them, see [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection), and [Collections with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/collections).
+For more info about collections, and binding to them, see [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md), and [Collections with C++/WinRT](./collections.md).
 
 The initialization code you just added references types that aren't yet in the project (for example, **winrt::SDKTemplate::CopyText**. To remedy that, let's go ahead and add five new blank XAML pages to the project.
 
@@ -539,7 +539,7 @@ private void UpdateStatus(string strMessage, NotifyType type) { ... }{
 ...
 ```
 
-**NotifyUser** dispatches UI updates to the main thread. In WinUI 3, this uses [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) instead of the older `CoreDispatcher`. In C++/WinRT, whenever you want to use a type from a Windows or Microsoft namespace, you need to include the corresponding C++/WinRT namespace header file (for more info about that, see [Get started with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/get-started)). In this case, as you'll see in the code listing below, the header is `winrt/Microsoft.UI.Dispatching.h`, and we'll be including it in `pch.h`.
+**NotifyUser** dispatches UI updates to the main thread. In WinUI 3, this uses [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) instead of the older `CoreDispatcher`. In C++/WinRT, whenever you want to use a type from a Windows or Microsoft namespace, you need to include the corresponding C++/WinRT namespace header file (for more info about that, see [Get started with C++/WinRT](./get-started.md)). In this case, as you'll see in the code listing below, the header is `winrt/Microsoft.UI.Dispatching.h`, and we'll be including it in `pch.h`.
 
 **UpdateStatus** is private. So we'll make that a private method on our **MainPage** implementation type. **UpdateStatus** isn't meant to be called on the runtime class, so we won't declare it in IDL.
 
@@ -592,7 +592,7 @@ In C#, you can use dot notation to *dot into* nested properties. So, the C# **Ma
 |-|-|
 |`Dispatcher.HasThreadAccess`|`DispatcherQueue().HasThreadAccess()`|
 
-When the C# version of **NotifyUser** calls **Dispatcher.RunAsync**, the WinUI 3 equivalent uses [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue). The C++/WinRT version implements the callback delegate as a lambda function. In C++/WinRT, we *capture* the two parameters that we're going to use, as well as the `this` pointer (since we're going to call a member function). There's more info about implementing delegates as lambdas, and code examples, in the topic [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events).
+When the C# version of **NotifyUser** calls **Dispatcher.RunAsync**, the WinUI 3 equivalent uses [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue). The C++/WinRT version implements the callback delegate as a lambda function. In C++/WinRT, we *capture* the two parameters that we're going to use, as well as the `this` pointer (since we're going to call a member function). There's more info about implementing delegates as lambdas, and code examples, in the topic [Handle events by using delegates in C++/WinRT](./handle-events.md).
 
 ### Implement the remaining **MainPage** members
 
@@ -713,7 +713,7 @@ To port the use of the C# **System.Text.StringBuilder** type, we'll make use of 
 
 The C# code constructs a **StringBuilder** with the `new` keyword. In C#, objects are reference types by default, declared on the heap with `new`. In modern standard C++, objects are value types by default, declared on the stack (without using `new`). So we port `StringBuilder output = new StringBuilder();` to C++/WinRT as simply `std::wostringstream output;`.
 
-The C# `var` keyword asks the compiler to infer a type. You port `var` to `auto` in C++/WinRT. But in C++/WinRT, there are cases where (in order to avoid copies) you want a *reference* to an inferred (or deduced) type, and you express an lvalue reference to a deduced type with `auto&`. There are also cases where you want a special kind of reference that binds correctly whether it's initialized with an *lvalue* or with an *rvalue*. And you express that with `auto&&`. That's the form that you see used in the `for` loop in the ported code below. For an introduction to *lvalues* and *rvalues*, see [Value categories, and references to them](/windows/uwp/cpp-and-winrt-apis/cpp-value-categories).
+The C# `var` keyword asks the compiler to infer a type. You port `var` to `auto` in C++/WinRT. But in C++/WinRT, there are cases where (in order to avoid copies) you want a *reference* to an inferred (or deduced) type, and you express an lvalue reference to a deduced type with `auto&`. There are also cases where you want a special kind of reference that binds correctly whether it's initialized with an *lvalue* or with an *rvalue*. And you express that with `auto&&`. That's the form that you see used in the `for` loop in the ported code below. For an introduction to *lvalues* and *rvalues*, see [Value categories, and references to them](./cpp-value-categories.md).
 
 Edit `pch.h`, `SampleConfiguration.h`, and `SampleConfiguration.cpp` to match the listings below.
 
@@ -822,7 +822,7 @@ private void OnWindowActivated(object sender, WindowActivatedEventArgs e) { ... 
 
 In C++/WinRT, we'll make it a public static method of **SampleState**.
 
-In C#, you use the `+=` and `-=` operator syntax to register and revoke event-handling delegates. In C++/WinRT, you have several syntactic options to register/revoke a delegate, as described in [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events). But the general form is that you register and revoke with calls to a pair of functions named for the event. To register, you pass your delegate to the registering function, and you retrieve a revocation token in return (a [**winrt::event_token**](/uwp/cpp-ref-for-winrt/event-token)). To revoke, you pass that token to the revocation function. In this case, the hander is static and (as you can see in the following code listing) the function call syntax is straightforward.
+In C#, you use the `+=` and `-=` operator syntax to register and revoke event-handling delegates. In C++/WinRT, you have several syntactic options to register/revoke a delegate, as described in [Handle events by using delegates in C++/WinRT](./handle-events.md). But the general form is that you register and revoke with calls to a pair of functions named for the event. To register, you pass your delegate to the registering function, and you retrieve a revocation token in return (a [**winrt::event_token**](/uwp/cpp-ref-for-winrt/event-token)). To revoke, you pass that token to the revocation function. In this case, the hander is static and (as you can see in the following code listing) the function call syntax is straightforward.
 
 Similar tokens *are* actually used, behind the scenes, in C#. But the language makes that detail implicit. C++/WinRT makes it explicit.
 
@@ -1075,7 +1075,7 @@ async void Footer_Click(object sender, RoutedEventArgs e)
 
 While, technically, the method is asynchronous, it doesn't do anything after the `await`, so it doesn't need the `await` (nor the `async` keyword). It probably uses them in order to avoid the IntelliSense message in Visual Studio.
 
-The equivalent C++/WinRT method will also be asynchronous (because it calls [**Launcher.LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)). But it doesn't need to `co_await`, nor to return an asynchronous object. For info about `co_await` and asynchronous objects, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+The equivalent C++/WinRT method will also be asynchronous (because it calls [**Launcher.LaunchUriAsync**](/uwp/api/windows.system.launcher.launchuriasync)). But it doesn't need to `co_await`, nor to return an asynchronous object. For info about `co_await` and asynchronous objects, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
 
 Now let's talk about what the method is doing. Because this is an event handler for the **Click** event of a **HyperlinkButton**, the object named *sender* is actually a **HyperlinkButton**. So the type conversion is safe (we could alternatively have expressed this conversion as `sender as HyperlinkButton`). Next, we retrieve the value of the **Tag** property (if you look at the XAML markup in the C# project, you'll see that this is set to a string representing a web url). Although the **FrameworkElement.Tag** property (**HyperlinkButton** is a **FrameworkElement**) is of type **object**, in C# we can stringify that with [**Object.ToString**](/dotnet/api/system.object.tostring). From the resulting string, we construct a **Uri** object. And finally (with the help of the Shell) we launch a browser and navigate to the url.
 
@@ -1107,7 +1107,7 @@ void MainPage::Footer_Click(Windows::Foundation::IInspectable const& sender, Mic
 }
 ```
 
-As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to convert it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing values to IInspectable](/windows/uwp/cpp-and-winrt-apis/boxing).
+As always, we make the event handler `public`. We use the [**as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function) function on the *sender* object to convert it to **HyperlinkButton**. In C++/WinRT, the **Tag** property is an [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (the equivalent of [**Object**](/dotnet/api/system.object)). But there's no **Tostring** on **IInspectable**. Instead, we have to unbox the **IInspectable** to a scalar value (a string, in this case). Again, for more info on boxing and unboxing, see [Boxing and unboxing values to IInspectable](./boxing.md).
 
 The last two lines repeat porting patterns we've seen before, and they pretty much echo the C# version.
 
@@ -1254,11 +1254,11 @@ In the C++/WinRT project, the **CopyFiles** type already has a constructor conta
 
 ### **CopyButton_Click**
 
-The C# **CopyButton_Click** method is an event handler, and from the `async` keyword in its signature we can tell that the method does asynchronous work. In C++/WinRT, we implement an asynchronous method as a *coroutine*. For an introduction to concurrency in C++/WinRT, together with a description of what a *coroutine* is, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+The C# **CopyButton_Click** method is an event handler, and from the `async` keyword in its signature we can tell that the method does asynchronous work. In C++/WinRT, we implement an asynchronous method as a *coroutine*. For an introduction to concurrency in C++/WinRT, together with a description of what a *coroutine* is, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
 
-It's common to want to schedule further work after a coroutine completes, and for such cases the coroutine would return some asynchronous object type that can be awaited, and that optionally reports progress. But those considerations typically don't apply to an event handler. So when you have an event handler that performs asynchronous operations, you can implement that as a coroutine that returns **winrt::fire_and_forget**. For more info, see [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
+It's common to want to schedule further work after a coroutine completes, and for such cases the coroutine would return some asynchronous object type that can be awaited, and that optionally reports progress. But those considerations typically don't apply to an event handler. So when you have an event handler that performs asynchronous operations, you can implement that as a coroutine that returns **winrt::fire_and_forget**. For more info, see [Fire and forget](./concurrency-2.md#fire-and-forget).
 
-Although the idea of a fire-and-forget coroutine is that you don't care when it completes, work is still continuing (or is suspended, awaiting resumption) in the background. You can see from the C# implementation that **CopyButton_Click** depends on the `this` pointer (it accesses the instance data member `rootPage`). So we must be sure that the `this` pointer (a pointer to a **CopyFiles** object) outlives the **CopyButton_Click** coroutine. In a situation like this sample application, where the user navigates between UI pages, we can't directly control the lifetime of those pages. Should the **CopyFiles** page be destroyed (by navigating away from it) while **CopyButton_Click** is still in flight on a background thread, it won't be safe to access `rootPage`. To make the coroutine correct, it needs to obtain a strong reference to the `this` pointer, and keep that reference for the duration of the coroutine. For more info, see [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references).
+Although the idea of a fire-and-forget coroutine is that you don't care when it completes, work is still continuing (or is suspended, awaiting resumption) in the background. You can see from the C# implementation that **CopyButton_Click** depends on the `this` pointer (it accesses the instance data member `rootPage`). So we must be sure that the `this` pointer (a pointer to a **CopyFiles** object) outlives the **CopyButton_Click** coroutine. In a situation like this sample application, where the user navigates between UI pages, we can't directly control the lifetime of those pages. Should the **CopyFiles** page be destroyed (by navigating away from it) while **CopyButton_Click** is still in flight on a background thread, it won't be safe to access `rootPage`. To make the coroutine correct, it needs to obtain a strong reference to the `this` pointer, and keep that reference for the duration of the coroutine. For more info, see [Strong and weak references in C++/WinRT](./weak-references.md).
 
 If you look in the C++/WinRT version of the sample, at **CopyFiles::CopyButton_Click**, you'll see that it's done with a simple declaration on the stack.
 
@@ -1278,7 +1278,7 @@ In the code, we instantiate a [**FileOpenPicker**](/uwp/api/windows.storage.pick
 filePicker.FileTypeFilter().ReplaceAll({ L"*" });
 ```
 
-The value that we're passing (`{ L"*" }`) is a standard C++ *initializer list*. It contains a single object, in this case, but an initializer list can contain any number of comma-separated objects. The pieces of C++/WinRT that allow you the convenience of passing an initializer list to a method such as this are explained in [Standard initializer lists](/windows/uwp/cpp-and-winrt-apis/std-cpp-data-types#standard-initializer-lists).
+The value that we're passing (`{ L"*" }`) is a standard C++ *initializer list*. It contains a single object, in this case, but an initializer list can contain any number of comma-separated objects. The pieces of C++/WinRT that allow you the convenience of passing an initializer list to a method such as this are explained in [Standard initializer lists](./std-cpp-data-types.md#standard-initializer-lists).
 
 We port the C# `await` keyword to `co_await` in C++/WinRT. Here's the example from the code.
 
@@ -1384,7 +1384,7 @@ There are some points of interest that arise while porting the **HistoryAndRoami
 
 First, take a look at the C# source code, and follow the flow of control from **OnNavigatedTo** through the **OnHistoryEnabledChanged** event handler, and finally to the asynchronous function **CheckHistoryAndRoaming** (which is not awaited, so it's essentially fire and forget). Because **CheckHistoryAndRoaming** is asynchronous, we'll need to be careful in C++/WinRT about the lifetime of the `this` pointer. You can see the outcome if you look at the implementation in the `HistoryAndRoaming.cpp` source code file. First, when we attach delegates to the **Clipboard::HistoryEnabledChanged** and **Clipboard::RoamingEnabledChanged** events, we take only a weak reference to the **HistoryAndRoaming** page object. We do that by creating the delegate with a dependency on the value returned from [**winrt::get_weak**](/uwp/cpp-ref-for-winrt/implements#implementsget_weak-function), instead of a dependency on the `this` pointer. Which means that the delegate itself, which eventually calls into asynchronous code, doesn't keep the **HistoryAndRoaming** page alive, should we navigate away from it.
 
-And second, when we do finally reach our fire-and-forget **CheckHistoryAndRoaming** coroutine, the first thing we do is to take a strong reference to `this` to guarantee that the **HistoryAndRoaming** page lives at least until the coroutine finally completes. For more info about both of the aspects just described, see [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references).
+And second, when we do finally reach our fire-and-forget **CheckHistoryAndRoaming** coroutine, the first thing we do is to take a strong reference to `this` to guarantee that the **HistoryAndRoaming** page lives at least until the coroutine finally completes. For more info about both of the aspects just described, see [Strong and weak references in C++/WinRT](./weak-references.md).
 
 We find another point of interest while porting **CheckHistoryAndRoaming**. It contains code to update the UI; so we need to be certain that we're doing that on the main UI thread. The thread that initially calls into an event handler is the main UI thread. But typically, an asynchronous method can execute and/or resume on any arbitrary thread. In C#, the solution is to dispatch work to the UI thread. In C++/WinRT, we can use the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function together with the `this` pointer's [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcherqueue) to suspend the coroutine and immediately resume on the main UI thread.
 

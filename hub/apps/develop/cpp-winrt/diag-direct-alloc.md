@@ -1,7 +1,7 @@
 ---
 description: This topic goes in-depth on a C++/WinRT 2.0 feature that helps you diagnose the mistake of creating an object of implementation type on the stack, rather than using the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers, as you should.
 title: Diagnosing direct allocations
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: concept-article
 keywords: windows 10, standard, c++, cpp, winrt, projection, direct, stack, allocations, projected, implementation, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Diagnosing direct allocations
 
-As explained in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis), when you create an object of implementation type, you should use the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers to do so. This topic goes in-depth on a C++/WinRT 2.0 feature that helps you to diagnose the mistake of directly allocating an object of implementation type on the stack.
+As explained in [Author APIs with C++/WinRT](./author-apis.md), when you create an object of implementation type, you should use the [**winrt::make**](/uwp/cpp-ref-for-winrt/make) family of helpers to do so. This topic goes in-depth on a C++/WinRT 2.0 feature that helps you to diagnose the mistake of directly allocating an object of implementation type on the stack.
 
 Such mistakes can turn into mysterious crashes or corruptions that are difficult and time-consuming to debug. So this is an important feature, and it's worth understanding the background.
 
@@ -39,7 +39,7 @@ The trouble is that our **MyStringable** type is *not* an **IStringable**.
 - The **IStringable** type is a projected type.
 
 > [!IMPORTANT]
-> It's important to understand the distinction between an *implementation type* and a *projected type*. For essential concepts and terms, be sure to read [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis) and [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+> It's important to understand the distinction between an *implementation type* and a *projected type*. For essential concepts and terms, be sure to read [Consume APIs with C++/WinRT](./consume-apis.md) and [Author APIs with C++/WinRT](./author-apis.md).
 
 The space between an implementation and the projection can be subtle to grasp. And in fact, to try to make the implementation feel a bit more like the projection, the implementation provides implicit conversions to each of the projected types that it implements. That doesn't mean we can simply do this.
 
@@ -132,5 +132,5 @@ So, C++/WinRT challenges our preconceived notions of what it means to write clas
 * [winrt::make_self function template](/uwp/cpp-ref-for-winrt/make-self)
 
 ## Related topics
-* [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis)
-* [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Consume APIs with C++/WinRT](./consume-apis.md)
+* [Author APIs with C++/WinRT](./author-apis.md)

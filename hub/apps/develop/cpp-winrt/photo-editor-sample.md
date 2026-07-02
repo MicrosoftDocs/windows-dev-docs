@@ -1,7 +1,7 @@
 ---
 description: Photo Editor is a UWP sample application that showcases development with the C++/WinRT language projection. The sample application allows you to retrieve photos from the Pictures library, and then edit the selected image with assorted photo effects.
 title: Photo Editor C++/WinRT sample application
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, projection, sample, application, photo, editor, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -14,12 +14,12 @@ ms.localizationpriority: medium
 
 To clone or download the sample application, see [Photo Editor C++/WinRT sample application](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/) on the code samples gallery.
 
-The Photo Editor application is a Universal Windows Platform (UWP) sample application that showcases development with the [C++/WinRT](./intro-to-using-cpp-with-winrt.md) language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. In the sample's source code, you'll see a number of common practices&mdash;such as [data binding](/windows/uwp/cpp-and-winrt-apis/binding-property), and [asynchronous actions and operations](./concurrency.md)&mdash;performed using the C++/WinRT projection. Here are some of the specific features demonstrated by the sample.
+The Photo Editor application is a Universal Windows Platform (UWP) sample application that showcases development with the [C++/WinRT](./intro-to-using-cpp-with-winrt.md) language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. In the sample's source code, you'll see a number of common practices&mdash;such as [data binding](./binding-property.md), and [asynchronous actions and operations](./concurrency.md)&mdash;performed using the C++/WinRT projection. Here are some of the specific features demonstrated by the sample.
 
 - Use of Standard C++17 syntax and libraries with Windows Runtime (WinRT) APIs.
 - Use of coroutines, including the use of co_await, co_return, [**IAsyncAction**](/uwp/api/windows.foundation.iasyncaction), and [**IAsyncOperation&lt;TResult&gt;**](/uwp/api/windows.foundation.iasyncoperation-1).
-- Creation and use of custom Windows Runtime class (runtime class) projected types and implementation types. For more info about these terms, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis) and [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
-- [Event handling](/windows/uwp/cpp-and-winrt-apis/handle-events), including the use of auto-revoking event tokens.
+- Creation and use of custom Windows Runtime class (runtime class) projected types and implementation types. For more info about these terms, see [Consume APIs with C++/WinRT](./consume-apis.md) and [Author APIs with C++/WinRT](./author-apis.md).
+- [Event handling](./handle-events.md), including the use of auto-revoking event tokens.
 - Use of the external Win2D NuGet package, and [Windows::UI::Composition](/uwp/api/windows.ui.composition), for image effects.
 - XAML data binding, including the [{x:Bind} markup extension](/windows/uwp/xaml-platform/x-bind-markup-extension).
 - XAML styling and UI customization, including [connected animations](/windows/apps/design/motion/connected-animation).

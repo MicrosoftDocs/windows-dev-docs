@@ -1,7 +1,7 @@
 ---
 description: A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it.
 title: XAML controls; bind to a C++/WinRT property
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, projection, XAML, control, binding, property, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # XAML controls; bind to a C++/WinRT property
 
-A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them (for background info, see [Data binding](/windows/uwp/data-binding/index)).
+A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](./intro-to-using-cpp-with-winrt.md), and how to bind XAML controls to them (for background info, see [Data binding](/windows/uwp/data-binding/index)).
 
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
@@ -21,7 +21,7 @@ Let's say that a runtime class named **BookSku** has a property named **Title**.
 A XAML text element, or control, can bind to, and handle, these events. Such an element or control handles the event by retrieving the updated value(s), and then updating itself to show the new value.
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Create a Blank App (Bookstore)
 
@@ -163,7 +163,7 @@ Save and build (the build won't entirely succeed yet, but the reason we're build
 Copy `BookstoreViewModel.h` and `BookstoreViewModel.cpp` from the `Generated Files\sources` folder into the project folder, and include them in the project. Open those files (removing the `static_assert` again), and implement the runtime class as shown below. Note how, in `BookstoreViewModel.h`, we're including `BookSku.h`, which declares the implementation type for **BookSku** (which is **winrt::Bookstore::implementation::BookSku**). And we're removing `= default` from the default constructor.
 
 > [!NOTE]
-> In the listings below for `BookstoreViewModel.h` and `BookstoreViewModel.cpp`, the code illustrates the default way of constructing the *m_bookSku* data member. That's the method that dates back to the first release of C++/WinRT, and it's a good idea to be at least familiar with the pattern. With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/news#news-and-changes-in-cwinrt-20)). Later in this topic, we'll show an example of uniform construction.
+> In the listings below for `BookstoreViewModel.h` and `BookstoreViewModel.cpp`, the code illustrates the default way of constructing the *m_bookSku* data member. That's the method that dates back to the first release of C++/WinRT, and it's a good idea to be at least familiar with the pattern. With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)). Later in this topic, we'll show an example of uniform construction.
 
 ```cppwinrt
 // BookstoreViewModel.h

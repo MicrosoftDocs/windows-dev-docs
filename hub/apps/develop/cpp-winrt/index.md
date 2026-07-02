@@ -1,7 +1,7 @@
 ---
 title: C++/WinRT overview
 description: An overview of C++/WinRT, a standard C++17 language projection for Windows Runtime APIs, for use with the Windows App SDK and WinUI 3.
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: overview
 keywords: windows app sdk, winui 3, c++, cpp, winrt, projection, language projection
 ms.localizationpriority: medium
@@ -27,23 +27,23 @@ C++/WinRT lets you both consume and author Windows Runtime APIs using standard C
 - [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md) &mdash; use standard C++ types with Windows Runtime APIs.
 - [Value categories and references](./cpp-value-categories.md) &mdash; understand lvalues, rvalues, and how C++/WinRT uses them.
 - [Agile objects](./agile-objects.md) &mdash; how agility works in C++/WinRT.
-- [String handling](/windows/uwp/cpp-and-winrt-apis/strings) &mdash; work with **winrt::hstring** and standard string types.
-- [Error handling](/windows/uwp/cpp-and-winrt-apis/error-handling) &mdash; handle and produce errors with C++/WinRT.
+- [String handling](./strings.md) &mdash; work with **winrt::hstring** and standard string types.
+- [Error handling](./error-handling.md) &mdash; handle and produce errors with C++/WinRT.
 
 ## Authoring and interop
 
 - [Author COM components](./author-coclasses.md) &mdash; implement classic COM coclasses with C++/WinRT.
-- [Consume APIs](/windows/uwp/cpp-and-winrt-apis/consume-apis) &mdash; call Windows Runtime APIs from C++/WinRT.
-- [Author APIs](/windows/uwp/cpp-and-winrt-apis/author-apis) &mdash; define and implement your own Windows Runtime types.
+- [Consume APIs](./consume-apis.md) &mdash; call Windows Runtime APIs from C++/WinRT.
+- [Author APIs](./author-apis.md) &mdash; define and implement your own Windows Runtime types.
 - [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md) &mdash; convert between ABI and C++/WinRT objects.
 - [Passing parameters into the ABI boundary](./pass-parms-to-abi.md) &mdash; efficiently pass values across the ABI.
 - [Use a C# component from C++/WinRT](./use-csharp-component-from-cpp-winrt.md) &mdash; consume a C# Windows Runtime component.
 
 ## XAML and UI
 
-- [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property) &mdash; data-bind a XAML control to a C++/WinRT property.
+- [XAML controls; bind to a C++/WinRT property](./binding-property.md) &mdash; data-bind a XAML control to a C++/WinRT property.
 - [XAML items controls; bind to a collection](./binding-collection.md) &mdash; bind to an observable collection.
-- [XAML custom controls](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl) &mdash; create a custom (templated) control.
+- [XAML custom controls](./xaml-cust-ctrl.md) &mdash; create a custom (templated) control.
 
 ## Samples
 
@@ -60,7 +60,7 @@ C++/WinRT lets you both consume and author Windows Runtime APIs using standard C
 
 ## Migration guides
 
-- [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)
-- [Interop between C++/WinRT and C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
-- [Move to C++/WinRT from WRL](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl)
-- [Move to C++/WinRT from C#](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp)
+- [Move to C++/WinRT from C++/CX](./move-to-winrt-from-cx.md)
+- [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md)
+- [Move to C++/WinRT from WRL](./move-to-winrt-from-wrl.md)
+- [Move to C++/WinRT from C#](./move-to-winrt-from-csharp.md)

@@ -1,7 +1,7 @@
 ---
 description: To get you up to speed with using C++/WinRT, this topic walks through a simple code example.
 title: Get started with C++/WinRT
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: get-started
 keywords: windows 10, standard, c++, cpp, winrt, projection, get, getting, started, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -83,7 +83,7 @@ using namespace Windows::Foundation;
 using namespace Windows::Web::Syndication;
 ```
 
-The `using namespace` directives are optional, but convenient. The pattern shown above for such directives (allowing unqualified name lookup for anything in the **winrt** namespace) is suitable for when you're beginning a new project and C++/WinRT is the only language projection you're using inside of that project. If, on the other hand, you're mixing C++/WinRT code with [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and/or SDK application binary interface (ABI) code (you're either porting from, or interoperating with, one or both of those models), then see the topics [Interop between C++/WinRT and C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx), [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx), and [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md).
+The `using namespace` directives are optional, but convenient. The pattern shown above for such directives (allowing unqualified name lookup for anything in the **winrt** namespace) is suitable for when you're beginning a new project and C++/WinRT is the only language projection you're using inside of that project. If, on the other hand, you're mixing C++/WinRT code with [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and/or SDK application binary interface (ABI) code (you're either porting from, or interoperating with, one or both of those models), then see the topics [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md), [Move to C++/WinRT from C++/CX](./move-to-winrt-from-cx.md), and [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md).
 
 ```cppwinrt
 winrt::init_apartment();
@@ -96,7 +96,7 @@ Uri rssFeedUri{ L"https://blogs.windows.com/feed" };
 SyndicationClient syndicationClient;
 ```
 
-Stack-allocate two objects: they represent the uri of the Windows blog, and a syndication client. We construct the uri with a simple wide string literal (see [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings) for more ways you can work with strings).
+Stack-allocate two objects: they represent the uri of the Windows blog, and a syndication client. We construct the uri with a simple wide string literal (see [String handling in C++/WinRT](./strings.md) for more ways you can work with strings).
 
 ```cppwinrt
 SyndicationFeed syndicationFeed = syndicationClient.RetrieveFeedAsync(rssFeedUri).get();
@@ -118,11 +118,11 @@ winrt::hstring titleAsHstring = syndicationItem.Title().Text();
 std::wcout << titleAsHstring.c_str() << std::endl;
 ```
 
-Gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) object (more details in [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)). The **hstring** is then output, via the **c_str** function, which reflects the pattern used with C++ Standard Library strings.
+Gets the feed's title text, as a [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) object (more details in [String handling in C++/WinRT](./strings.md)). The **hstring** is then output, via the **c_str** function, which reflects the pattern used with C++ Standard Library strings.
 
 As you can see, C++/WinRT encourages modern, and class-like, C++ expressions such as `syndicationItem.Title().Text()`. This is a different, and cleaner, programming style from traditional COM programming. You don't need to directly initialize COM, nor work with COM pointers.
 
-Nor do you need to handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions such as [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) for a natural and modern programming style. For more info about error-handling, and code examples, see [Error handling with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/error-handling).
+Nor do you need to handle HRESULT return codes. C++/WinRT converts error HRESULTs to exceptions such as [**winrt::hresult-error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) for a natural and modern programming style. For more info about error-handling, and code examples, see [Error handling with C++/WinRT](./error-handling.md).
 
 ## Modify a Windows Desktop application project to add C++/WinRT support
 
@@ -174,19 +174,19 @@ As you use and become familiar with C++/WinRT, and work through the rest of the 
 
 ### Consuming Windows APIs and types
 
-In other words, *using*, or *calling* APIs. For example, making API calls to communicate using Bluetooth; to stream and present video; to integrate with the Windows shell; and so on. C++/WinRT fully and uncompromisingly supports this category of scenario. For more info, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
+In other words, *using*, or *calling* APIs. For example, making API calls to communicate using Bluetooth; to stream and present video; to integrate with the Windows shell; and so on. C++/WinRT fully and uncompromisingly supports this category of scenario. For more info, see [Consume APIs with C++/WinRT](./consume-apis.md).
 
 ### Authoring Windows APIs and types
 
-In other words, *producing* APIs and types. For example, producing the kinds of APIs described in the section above; or the graphics APIs; the storage and file system APIs; the networking APIs, and so on. For more info, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
+In other words, *producing* APIs and types. For example, producing the kinds of APIs described in the section above; or the graphics APIs; the storage and file system APIs; the networking APIs, and so on. For more info, see [Author APIs with C++/WinRT](./author-apis.md).
 
-Authoring APIs with C++/WinRT is a little more involved than consuming them, because you must use IDL to define the shape of the API before you can implement it. There's a walkthrough of doing that in [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property).
+Authoring APIs with C++/WinRT is a little more involved than consuming them, because you must use IDL to define the shape of the API before you can implement it. There's a walkthrough of doing that in [XAML controls; bind to a C++/WinRT property](./binding-property.md).
 
 ### XAML applications
 
 This scenario is about building applications and controls on the XAML UI framework. Working in a XAML application amounts to a combination of consuming and authoring. But since XAML is the dominant UI framework on Windows today, and its influence over the Windows Runtime is proportionate to that, it deserves its own category of scenario.
 
-Be aware that XAML works best with programming languages that offer reflection. In C++/WinRT, you sometimes have to do a little extra work in order to interoperate with the XAML framework. All of those cases are covered in the documentation. Good places to start are [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property) and [XAML custom (templated) controls with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/xaml-cust-ctrl).
+Be aware that XAML works best with programming languages that offer reflection. In C++/WinRT, you sometimes have to do a little extra work in order to interoperate with the XAML framework. All of those cases are covered in the documentation. Good places to start are [XAML controls; bind to a C++/WinRT property](./binding-property.md) and [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md).
 
 ## Sample apps written in C++/WinRT
 
@@ -200,8 +200,8 @@ See [Where can I find C++/WinRT sample apps?](/windows/uwp/cpp-and-winrt-apis/fa
 
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
-* [Error handling with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/error-handling)
-* [Interop between C++/WinRT and C++/CX](/windows/uwp/cpp-and-winrt-apis/interop-winrt-cx)
+* [Error handling with C++/WinRT](./error-handling.md)
+* [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md)
 * [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md)
-* [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx)
-* [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)
+* [Move to C++/WinRT from C++/CX](./move-to-winrt-from-cx.md)
+* [String handling in C++/WinRT](./strings.md)

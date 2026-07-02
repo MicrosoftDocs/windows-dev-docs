@@ -1,7 +1,7 @@
 ---
 title: Calling and overriding your base type with C++/WinRT
 description: How to call and override your base type with C++/WinRT.
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: concept-article
 keywords: windows 10, standard, c++, cpp, winrt, projection, XAML, access, call, base type, base, type, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Calling and overriding your base type with C++/WinRT
 
 > [!IMPORTANT]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](./intro-to-using-cpp-with-winrt.md), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## Implementing *overridable* methods, such as **MeasureOverride** and **OnApplyTemplate**
 

@@ -1,7 +1,7 @@
 ---
 description: See recent additions and improvements, and news and changes for C++/WinRT 2.0 and Windows SDK version 10.0.17763.0.
 title: What's new in C++/WinRT
-ms.date: 06/19/2026
+ms.date: 07/02/2026
 ms.topic: whats-new
 keywords: windows 10, windows app sdk, winui 3, standard, c++, cpp, winrt, projection, news, what's, new
 ms.localizationpriority: medium
@@ -337,8 +337,8 @@ The table below contains news and changes for C++/WinRT in the Windows SDK versi
 | The Visual Studio project system format has changed. | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), below. |
 | There are new functions and base classes to help you pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types. | See [Collections with C++/WinRT](/windows/apps/develop/cpp-winrt/collections). |
 | You can use the [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) markup extension with your C++/WinRT runtime classes. | For more info, and code examples, see [Data binding overview](../data-binding/data-binding-quickstart.md). |
-| Support for canceling a coroutine allows you to register a cancellation callback. | For more info, and code examples, see [Canceling an asynchronous operation, and cancellation callbacks](/windows/uwp/cpp-and-winrt-apis/concurrency-2#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
-| When creating a delegate pointing to a member function, you can establish a strong or a weak reference to the current object (instead of a raw *this* pointer) at the point where the handler is registered. | For more info, and code examples, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
+| Support for canceling a coroutine allows you to register a cancellation callback. | For more info, and code examples, see [Canceling an asynchronous operation, and cancellation callbacks](./concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
+| When creating a delegate pointing to a member function, you can establish a strong or a weak reference to the current object (instead of a raw *this* pointer) at the point where the handler is registered. | For more info, and code examples, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](./weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
 | Bugs are fixed that were uncovered by Visual Studio's improved conformance to the C++ standard. The LLVM and Clang toolchain is also better leveraged to validate C++/WinRT's standards conformance. | You'll no longer encounter the issue described in [Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or later), and SDK version 17134](faq.yml#why-won-t-my-new-project-compile--i-m-using-visual-studio-2017--version-15-8-0-or-higher---and-sdk-version-17134) |
 
 Other changes.

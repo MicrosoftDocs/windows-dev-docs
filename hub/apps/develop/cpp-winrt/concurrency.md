@@ -1,7 +1,7 @@
 ---
 description: This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT.
 title: Concurrency and asynchronous operations with C++/WinRT
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -10,9 +10,9 @@ ms.localizationpriority: medium
 # Concurrency and asynchronous operations with C++/WinRT
 
 > [!IMPORTANT]
-> This topic introduces the concepts of *coroutines* and `co_await`, which we recommend that you use in both your UI *and* in your non-UI applications. For simplicity, most of the code examples in this introductory topic show **Windows Console Application (C++/WinRT)** projects. The later code examples in this topic do use coroutines, but for convenience the console application examples also continue to use the blocking **get** function call just before exiting, so that the application doesn't exit before finishing printing its output. You won't do that (call the blocking **get** function) from a UI thread. Instead, you'll use the `co_await` statement. The techniques that you'll use in your UI applications are described in the topic [Advanced concurrency and asynchrony](/windows/uwp/cpp-and-winrt-apis/concurrency-2).
+> This topic introduces the concepts of *coroutines* and `co_await`, which we recommend that you use in both your UI *and* in your non-UI applications. For simplicity, most of the code examples in this introductory topic show **Windows Console Application (C++/WinRT)** projects. The later code examples in this topic do use coroutines, but for convenience the console application examples also continue to use the blocking **get** function call just before exiting, so that the application doesn't exit before finishing printing its output. You won't do that (call the blocking **get** function) from a UI thread. Instead, you'll use the `co_await` statement. The techniques that you'll use in your UI applications are described in the topic [Advanced concurrency and asynchrony](./concurrency-2.md).
 
-This introductory topic shows some of the ways in which you can both create and consume Windows Runtime asynchronous objects with [C++/WinRT](./intro-to-using-cpp-with-winrt.md). After reading this topic, especially for techniques you'll use in your UI applications, also see [Advanced concurrency and asynchrony](/windows/uwp/cpp-and-winrt-apis/concurrency-2).
+This introductory topic shows some of the ways in which you can both create and consume Windows Runtime asynchronous objects with [C++/WinRT](./intro-to-using-cpp-with-winrt.md). After reading this topic, especially for techniques you'll use in your UI applications, also see [Advanced concurrency and asynchrony](./concurrency-2.md).
 
 ## Asynchronous operations and Windows Runtime "Async" functions
 
@@ -27,7 +27,7 @@ Each of these asynchronous operation types is projected into a corresponding typ
 
 An example of an asynchronous Windows function is [**SyndicationClient::RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), which returns an asynchronous operation object of type [**IAsyncOperationWithProgress&lt;TResult, TProgress&gt;**](/uwp/api/windows.foundation.iasyncoperationwithprogress-2).
 
-Let's look at some ways&mdash;first blocking, and then non-blocking&mdash;of using C++/WinRT to call an API such as that. Just for illustration of the basic ideas, we'll be using a **Windows Console Application (C++/WinRT)** project in the next few code examples. Techniques that are more appropriate for a UI application are discussed in [Advanced concurrency and asynchrony](/windows/uwp/cpp-and-winrt-apis/concurrency-2).
+Let's look at some ways&mdash;first blocking, and then non-blocking&mdash;of using C++/WinRT to call an API such as that. Just for illustration of the basic ideas, we'll be using a **Windows Console Application (C++/WinRT)** project in the next few code examples. Techniques that are more appropriate for a UI application are discussed in [Advanced concurrency and asynchrony](./concurrency-2.md).
 
 ## Block the calling thread
 
@@ -108,7 +108,7 @@ A coroutine is a function that can be suspended and resumed. In the **ProcessFee
 
 You can aggregate a coroutine into other coroutines. Or you can call **get** to block and wait for it to complete (and get the result if there is one). Or you can pass it to another programming language that supports the Windows Runtime.
 
-It's also possible to handle the completed and/or progress events of asynchronous actions and operations by using delegates. For details, and code examples, see [Delegate types for asynchronous actions and operations](/windows/uwp/cpp-and-winrt-apis/handle-events#delegate-types-for-asynchronous-actions-and-operations).
+It's also possible to handle the completed and/or progress events of asynchronous actions and operations by using delegates. For details, and code examples, see [Delegate types for asynchronous actions and operations](./handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
 As you can see, in the code example above, we continue to use the blocking **get** function call just before exiting **main**. But that's only so that the application doesn't exit before finishing printing its output.
 
@@ -282,7 +282,7 @@ IASyncAction DoWorkAsync(Param const& value)
 
 ## Safely accessing the *this* pointer in a class-member coroutine
 
-See [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
+See [Strong and weak references in C++/WinRT](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine).
 
 ## Important APIs
 * [concurrency::task class](/cpp/parallel/concrt/reference/task-class)
@@ -294,6 +294,6 @@ See [Strong and weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/we
 * [SyndicationFeed class](/uwp/api/windows.web.syndication.syndicationfeed)
 
 ## Related topics
-* [Advanced concurrency and asynchrony](/windows/uwp/cpp-and-winrt-apis/concurrency-2)
-* [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events)
+* [Advanced concurrency and asynchrony](./concurrency-2.md)
+* [Handle events by using delegates in C++/WinRT](./handle-events.md)
 * [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md)

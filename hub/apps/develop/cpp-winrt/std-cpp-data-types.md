@@ -1,7 +1,7 @@
 ---
 description: With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types.
 title: Standard C++ data types and C++/WinRT
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, projection, data, types, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Standard C++ data types and C++/WinRT
 
-With [C++/WinRT](./intro-to-using-cpp-with-winrt.md), you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types. You can pass standard strings to APIs (see [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)), and you can pass initializer lists and standard containers to APIs that expect a semantically equivalent collection.
+With [C++/WinRT](./intro-to-using-cpp-with-winrt.md), you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types. You can pass standard strings to APIs (see [String handling in C++/WinRT](./strings.md)), and you can pass initializer lists and standard containers to APIs that expect a semantically equivalent collection.
 
 Also see [Passing parameters into the ABI boundary](./pass-parms-to-abi.md).
 
@@ -154,4 +154,4 @@ You can continue to use the [Parallel Patterns Library (PPL)](/cpp/parallel/conc
 * [winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)
 
 ## Related topics
-* [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)
+* [String handling in C++/WinRT](./strings.md)

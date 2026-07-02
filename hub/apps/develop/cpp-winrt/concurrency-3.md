@@ -1,7 +1,7 @@
 ---
 description: Shows how you can author and consume your own completion source class.
 title: A completion source sample
-ms.date: 06/01/2026
+ms.date: 07/02/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony, TaskCompletionSource, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -173,4 +173,4 @@ int main()
 
 ## Related topics
 * [Concurrency and asynchronous operations](./concurrency.md)
-* [Advanced concurrency and asynchrony with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency-2)
+* [Advanced concurrency and asynchrony with C++/WinRT](./concurrency-2.md)
