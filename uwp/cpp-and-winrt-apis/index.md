@@ -27,12 +27,12 @@ You use standard C++ data types, algorithms, and keywords when you use C++/WinRT
 
 C++/WinRT performs better and produces smaller binaries than any other language option for the Windows Runtime. It even outperforms handwritten code using the ABI interfaces directly. That's because the abstractions use modern C++ idioms that the Visual C++ compiler is designed to optimize. This includes magic statics, empty base classes, **strlen** elision, as well as many newer optimizations in the latest version of Visual C++ targeted specifically at improving the performance of C++/WinRT.
 
-There are ways to gradually introduce C++/WinRT into your projects. You could use [Windows Runtime components](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md), or you could interoperate with C++/CX. For more info, see [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md).
+There are ways to gradually introduce C++/WinRT into your projects. You could use [Windows Runtime components](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md), or you could interoperate with C++/CX. For more info, see [Interop between C++/WinRT and C++/CX](/windows/apps/develop/cpp-winrt/interop-winrt-cx).
 
 For info about porting to C++/WinRT, see these resources.
 
 - [Move to C++/WinRT from C++/CX](./move-to-winrt-from-cx.md)
-- [Move to C++/WinRT from WRL](./move-to-winrt-from-wrl.md)
+- [Move to C++/WinRT from WRL](/windows/apps/develop/cpp-winrt/move-to-winrt-from-wrl)
 - [Move to C++/WinRT from C#](./move-to-winrt-from-csharp.md)
 
 Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).
@@ -43,7 +43,7 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | - | - |
 | [Introduction to C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) | An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs. |
 | [Get started with C++/WinRT](/windows/apps/develop/cpp-winrt/get-started) | To get you up to speed with using C++/WinRT, this topic walks through a simple code example. |
-| [What's new in C++/WinRT](./news.md) | News and changes to C++/WinRT. |
+| [What's new in C++/WinRT](/windows/apps/develop/cpp-winrt/news) | News and changes to C++/WinRT. |
 | [Frequently-asked questions](./faq.yml) | Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with C++/WinRT. |
 | [Troubleshooting](./troubleshooting.md) | The table of troubleshooting symptoms and remedies in this topic may be helpful to you whether you're cutting new code or porting an existing app. |
 | [Photo Editor C++/WinRT sample application](/windows/apps/develop/cpp-winrt/photo-editor-sample) | Photo Editor is a UWP sample application that showcases development with the C++/WinRT language projection. The sample application allows you to retrieve photos from the **Pictures** library, and then edit the selected image with assorted photo effects. |
@@ -54,7 +54,7 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [Author APIs with C++/WinRT](./author-apis.md) | This topic shows how to author C++/WinRT APIs by using the **winrt::implements** base struct, either directly or indirectly. |
 | [Error handling with C++/WinRT](./error-handling.md) | This topic discusses strategies for handling errors when programming with C++/WinRT. |
 | [Handle events by using delegates](./handle-events.md) | This topic shows how to register and revoke event-handling delegates using C++/WinRT. |
-| [Author events](./author-events.md) | This topic demonstrates how to author a Windows Runtime component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
+| [Author events](/windows/apps/develop/cpp-winrt/author-events) | This topic demonstrates how to author a Windows Runtime component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events. |
 | [Collections with C++/WinRT](/windows/apps/develop/cpp-winrt/collections) | C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections. |
 | [Concurrency and asynchronous operations](/windows/apps/develop/cpp-winrt/concurrency) | This topic shows the ways in which you can both create and consume Windows Runtime asynchronous objects with C++/WinRT. |
 | [Advanced concurrency and asynchrony](./concurrency-2.md) | Advanced scenarios with concurrency and asynchrony in C++/WinRT. |
@@ -63,12 +63,12 @@ Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c-
 | [XAML items controls; bind to a C++/WinRT collection](/windows/apps/develop/cpp-winrt/binding-collection) | A collection that can be effectively bound to a XAML items control is known as an *observable* collection. This topic shows how to implement and consume an observable collection, and how to bind a XAML items control to it. |
 | [XAML custom (templated) controls with C++/WinRT](./xaml-cust-ctrl.md) | This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls. |
 | [Passing parameters to projected APIs](/windows/apps/develop/cpp-winrt/pass-parms-to-abi) | C++/WinRT simplifies passing parameters to projected APIs by providing automatic conversions for common cases. |
-| [Consume COM components with C++/WinRT](./consume-com.md) | This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. |
+| [Consume COM components with C++/WinRT](/windows/apps/develop/cpp-winrt/consume-com) | This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. |
 | [Author COM components with C++/WinRT](/windows/apps/develop/cpp-winrt/author-coclasses) | C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes. |
 | [Move to C++/WinRT from C++/CX](./move-to-winrt-from-cx.md) | This topic describes the technical details involved in porting the source code in a [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) project to its equivalent in [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). |
-| [Interop between C++/WinRT and C++/CX](./interop-winrt-cx.md) | This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) objects. |
+| [Interop between C++/WinRT and C++/CX](/windows/apps/develop/cpp-winrt/interop-winrt-cx) | This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) objects. |
 | [Asynchrony, and interop between C++/WinRT and C++/CX](./interop-winrt-cx-async.md) | This is an advanced topic related to gradually porting from [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) to [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). It shows how Parallel Patterns Library (PPL) tasks and coroutines can exist side by side in the same project. |
-| [Move to C++/WinRT from WRL](./move-to-winrt-from-wrl.md) | This topic shows how to port [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code to its equivalent in [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). |
+| [Move to C++/WinRT from WRL](/windows/apps/develop/cpp-winrt/move-to-winrt-from-wrl) | This topic shows how to port [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl) code to its equivalent in [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). |
 | [Porting the Clipboard sample to C++/WinRT from C#&mdash;a case study](./clipboard-to-winrt-from-csharp.md) | This topic presents a case study of porting one of the [Universal Windows Platform (UWP) app samples](https://github.com/microsoft/Windows-universal-samples) from [C#](/visualstudio/get-started/csharp) to [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). You can gain porting practice and experience by following along with the walkthrough and porting the sample for yourself as you go. |
 | [Move to C++/WinRT from C#](./move-to-winrt-from-csharp.md) | This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). |
 | [Interop between C++/WinRT and the ABI](/windows/apps/develop/cpp-winrt/interop-winrt-abi) | This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects. |

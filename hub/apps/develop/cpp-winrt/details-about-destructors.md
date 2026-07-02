@@ -1,9 +1,9 @@
 ---
 description: These extension points in C++/WinRT 2.0 allow you to defer destruction of your implementation types, to safely query during destruction, and to hook the entry into and exit from your projected methods.
 title: Extension points for your implementation types
-ms.date: 09/26/2019
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, deferred destruction, safe queries
+keywords: windows 10, windows app sdk, winui 3, standard, c++, cpp, winrt, projection, deferred destruction, safe queries
 ms.localizationpriority: medium
 ---
 
@@ -128,7 +128,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-That may *appear* harmless. This XAML page wants to clear its data context in its destructor. But [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) is a property of the **FrameworkElement** base class, and it lives on the distinct **IFrameworkElement** interface. As a result, C++/WinRT must inject a call to **QueryInterface** to look up the correct vtable before being able to call the **DataContext** property. But the reason we're even in the destructor is that the reference count has transitioned to 0. Calling **QueryInterface** here temporarily bumps that reference count; and when it again returns to 0, the object destructs again.
+That may *appear* harmless. This XAML page wants to clear its data context in its destructor. But [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) is a property of the **FrameworkElement** base class, and it lives on the distinct **IFrameworkElement** interface. As a result, C++/WinRT must inject a call to **QueryInterface** to look up the correct vtable before being able to call the **DataContext** property. But the reason we're even in the destructor is that the reference count has transitioned to 0. Calling **QueryInterface** here temporarily bumps that reference count; and when it again returns to 0, the object destructs again.
 
 C++/WinRT 2.0 has been hardened to support this. Here's the C++/WinRT 2.0 implementation of Release, in a simplified form.
 
@@ -166,13 +166,13 @@ struct MainPage : PageT<MainPage>
     static winrt::fire_and_forget final_release(std::unique_ptr<MainPage> ptr)
     {
         co_await 5s;
-        co_await winrt::resume_foreground(ptr->Dispatcher());
+        co_await winrt::resume_foreground(ptr->DispatcherQueue());
         ptr = nullptr;
     }
 };
 ```
 
-First, the **final_release** function is called, notifying the implementation that it's time to clean up. Here, **final_release** happens to be a coroutine. To simulate a first suspension point, it begins by waiting on the thread pool for a few seconds. It then resumes on the page's dispatcher thread. That last step involves a query, since [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher) is a property of the **DependencyObject** base class. Finally, the page is actually deleted by virtue of assigning `nullptr` to the **std::unique_ptr**. That in turn calls the page's destructor.
+First, the **final_release** function is called, notifying the implementation that it's time to clean up. Here, **final_release** happens to be a coroutine. To simulate a first suspension point, it begins by waiting on the thread pool for a few seconds. It then resumes on the page's dispatcher queue thread. That last step involves a query, since [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) is accessible from the **DependencyObject** base class. Finally, the page is actually deleted by virtue of assigning `nullptr` to the **std::unique_ptr**. That in turn calls the page's destructor.
 
 Inside the destructor, we clear the data context; which, as we know, requires a query for the **FrameworkElement** base class.
 

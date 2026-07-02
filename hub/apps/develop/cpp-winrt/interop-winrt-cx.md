@@ -1,9 +1,9 @@
 ---
 description: This topic shows two helper functions that can be used to convert between [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx) and [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) objects.
 title: Interop between C++/WinRT and C++/CX
-ms.date: 06/22/2022
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, C++/CX
+keywords: windows 10, windows app sdk, winui 3, standard, c++, cpp, winrt, projection, port, migrate, interop, C++/CX
 ms.localizationpriority: medium
 ---
 

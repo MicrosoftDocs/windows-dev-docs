@@ -1,13 +1,16 @@
 ---
 description: This topic uses a full Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces.
 title: Consume COM components with C++/WinRT
-ms.date: 04/24/2019
+ms.date: 06/19/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, COM, component, class, interface
+keywords: windows 10, windows app sdk, winui 3, standard, c++, cpp, winrt, COM, component, class, interface
 ms.localizationpriority: medium
 ---
 
 # Consume COM components with C++/WinRT
+
+> [!NOTE]
+> The code samples in this article use the UWP Core App (IFrameworkView) application model. In a WinUI 3 desktop app, derive a class from **Microsoft::UI::Xaml::Application** and call **Application::Start(...)** as the app entry point, and use **DispatcherQueue** instead of **CoreDispatcher**. The COM/Direct2D concepts and patterns shown here apply equally to WinUI 3 apps.
 
 You can use the facilities of the [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) library to consume COM components, such as the high-performance 2-D and 3-D graphics of the DirectX APIs. C++/WinRT is the simplest way to use DirectX without compromising performance. This topic uses a Direct2D code example to show how to use C++/WinRT to consume COM classes and interfaces. You can, of course, mix COM and Windows Runtime programming within the same C++/WinRT project.
 

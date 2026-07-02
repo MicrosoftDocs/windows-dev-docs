@@ -1,15 +1,15 @@
 ---
 description: This topic demonstrates how to author a Windows Runtime component containing a runtime class that raises events. It also demonstrates an app that consumes the component and handles the events.
 title: Author events in C++/WinRT
-ms.date: 04/23/2019
+ms.date: 06/01/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, event
+keywords: windows 10, windows app sdk, winui 3, standard, c++, cpp, winrt, projection, author, event
 ms.localizationpriority: medium
 ---
 
 # Author events in C++/WinRT
 
-This topic builds on the Windows Runtime component, and the consuming application, that the [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) topic shows you how to build.
+This topic builds on the Windows Runtime component, and the consuming application, that the [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) topic shows you how to build.
 
 Here are the new features that this topic adds.
 - Update the thermometer runtime class to raise an event when its temperature goes below freezing.
@@ -23,7 +23,7 @@ Here are the new features that this topic adds.
 
 ## Create **ThermometerWRC** and **ThermometerCoreApp**
 
-If you want to follow along with the updates shown in this topic, so that you can build and run the code, then the first step is to follow the walkthrough in the [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) topic. By doing so, you'll have the **ThermometerWRC** Windows Runtime component, and the **ThermometerCoreApp** Core App that consumes it.
+If you want to follow along with the updates shown in this topic, so that you can build and run the code, then the first step is to follow the walkthrough in the [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) topic. By doing so, you'll have the **ThermometerWRC** Windows Runtime component, and the **ThermometerCoreApp** Core App that consumes it.
 
 ## Update **ThermometerWRC** to raise an event
 
@@ -482,4 +482,4 @@ Note that these guidelines don't necessarily apply if you're designing an intern
 * [Author APIs with C++/WinRT](author-apis.md)
 * [Consume APIs with C++/WinRT](consume-apis.md)
 * [Handle events by using delegates in C++/WinRT](handle-events.md)
-* [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)

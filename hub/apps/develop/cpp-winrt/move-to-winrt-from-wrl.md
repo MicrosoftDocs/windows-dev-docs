@@ -1,9 +1,9 @@
 ---
 description: This topic shows how to port WRL code to its equivalent in C++/WinRT.
 title: Move to C++/WinRT from WRL
-ms.date: 05/07/2021
+ms.date: 06/01/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, WRL
+keywords: windows 10, windows app sdk, winui 3, standard, c++, cpp, winrt, projection, port, migrate, WRL
 ms.localizationpriority: medium
 ---
 
@@ -100,6 +100,8 @@ DX::ThrowIfFailed(
 ```
 
 ```cppwinrt
+// Note: In a WinUI 3 desktop app, use CreateSwapChainForHwnd instead of
+// CreateSwapChainForCoreWindow, since WinUI 3 doesn't use CoreWindow.
 winrt::agile_ref<winrt::Windows::UI::Core::CoreWindow> m_window; 
 winrt::com_ptr<IDXGISwapChain1> swapChain;
 winrt::check_hresult(

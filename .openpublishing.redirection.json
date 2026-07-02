@@ -12369,6 +12369,36 @@
       "source_path": "uwp/cpp-and-winrt-apis/index.md",
       "redirect_url": "/windows/apps/develop/cpp-winrt/",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/author-events.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/author-events",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/consume-com.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/consume-com",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/details-about-destructors.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/details-about-destructors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/interop-winrt-cx.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/interop-winrt-cx",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/move-to-winrt-from-wrl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/news.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/news",
+      "redirect_document_id": false
     }
   ]
 }

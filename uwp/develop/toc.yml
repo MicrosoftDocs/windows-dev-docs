@@ -721,7 +721,7 @@ items:
     - name: Get started
       href: /windows/apps/develop/cpp-winrt/get-started
     - name: What's new
-      href: ../cpp-and-winrt-apis/news.md
+      href: /windows/apps/develop/cpp-winrt/news
     - name: Frequently-asked questions
       href: ../cpp-and-winrt-apis/faq.yml
     - name: Troubleshooting
@@ -743,7 +743,7 @@ items:
     - name: Handle events by using delegates
       href: ../cpp-and-winrt-apis/handle-events.md
     - name: Author events
-      href: ../cpp-and-winrt-apis/author-events.md
+      href: /windows/apps/develop/cpp-winrt/author-events
     - name: Collections
       href: /windows/apps/develop/cpp-winrt/collections
     - name: Concurrency and asynchronous operations
@@ -763,17 +763,17 @@ items:
     - name: Passing parameters to projected APIs
       href: /windows/apps/develop/cpp-winrt/pass-parms-to-abi
     - name: Consume COM components
-      href: ../cpp-and-winrt-apis/consume-com.md
+      href: /windows/apps/develop/cpp-winrt/consume-com
     - name: Author COM components
       href: /windows/apps/develop/cpp-winrt/author-coclasses
     - name: Move to C++/WinRT from C++/CX
       href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
     - name: Interop with C++/CX
-      href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+      href: /windows/apps/develop/cpp-winrt/interop-winrt-cx
     - name: Asynchrony, and interop with C++/CX
       href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
     - name: Move to C++/WinRT from WRL
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+      href: /windows/apps/develop/cpp-winrt/move-to-winrt-from-wrl
     - name: Porting a sample app from C#
       href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
     - name: Move to C++/WinRT from C#

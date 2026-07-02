@@ -1365,6 +1365,20 @@ items:
             href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
   - name: Platform
     items:
+      - name: C++/WinRT
+        items:
+          - name: What's new in C++/WinRT
+            href: cpp-winrt/news.md
+          - name: Author events
+            href: cpp-winrt/author-events.md
+          - name: Interop between C++/WinRT and C++/CX
+            href: cpp-winrt/interop-winrt-cx.md
+          - name: Consume COM components
+            href: cpp-winrt/consume-com.md
+          - name: Move to C++/WinRT from WRL
+            href: cpp-winrt/move-to-winrt-from-wrl.md
+          - name: Extension points for implementation types
+            href: cpp-winrt/details-about-destructors.md
       - name: C#/WinRT
         items:
           - name: Overview
