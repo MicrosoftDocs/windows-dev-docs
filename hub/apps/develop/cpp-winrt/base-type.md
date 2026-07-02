@@ -1,40 +1,40 @@
 ---
 title: Calling and overriding your base type with C++/WinRT
 description: How to call and override your base type with C++/WinRT.
-ms.date: 09/11/2023
+ms.date: 06/01/2026
 ms.topic: concept-article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, access, call, base type, base, type
+keywords: windows 10, standard, c++, cpp, winrt, projection, XAML, access, call, base type, base, type, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
 # Calling and overriding your base type with C++/WinRT
 
 > [!IMPORTANT]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](./intro-to-using-cpp-with-winrt.md), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## Implementing *overridable* methods, such as **MeasureOverride** and **OnApplyTemplate**
 
 There are some extension points in XAML that your application can plug into, for example:
 
-- [MeasureOverride](/uwp/api/windows.ui.xaml.frameworkelement.measureoverride)
-- [OnApplyTemplate](/uwp/api/windows.ui.xaml.frameworkelement.onapplytemplate)
-- [GoToStateCore](/uwp/api/windows.ui.xaml.visualstatemanager.gotostatecore)
+- [MeasureOverride](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.measureoverride)
+- [OnApplyTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.onapplytemplate)
+- [GoToStateCore](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstatemanager.gotostatecore)
 
-You derive a custom control from the [**Control**](/uwp/api/windows.ui.xaml.controls.control) runtime class, which itself further derives from base runtime classes. And there are `overridable` methods of **Control**, [**FrameworkElement**](/uwp/api/windows.ui.xaml.frameworkelement), and [**UIElement**](/uwp/api/windows.ui.xaml.uielement) that you can override in your derived class. Here's a code example showing you how to do that.
+You derive a custom control from the [**Control**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control) runtime class, which itself further derives from base runtime classes. And there are `overridable` methods of **Control**, [**FrameworkElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement), and [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) that you can override in your derived class. Here's a code example showing you how to do that.
 
 ```cppwinrt
 struct BgLabelControl : BgLabelControlT<BgLabelControl>
 {
 ...
     // Control overrides.
-    void OnPointerPressed(Windows::UI::Xaml::Input::PointerRoutedEventArgs const& /* e */) const { ... };
+    void OnPointerPressed(Microsoft::UI::Xaml::Input::PointerRoutedEventArgs const& /* e */) const { ... };
 
     // FrameworkElement overrides.
     Windows::Foundation::Size MeasureOverride(Windows::Foundation::Size const& /* availableSize */) const { ... };
     void OnApplyTemplate() const { ... };
 
     // UIElement overrides.
-    Windows::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const { ... };
+    Microsoft::UI::Xaml::Automation::Peers::AutomationPeer OnCreateAutomationPeer() const { ... };
 ...
 };
 ```
@@ -45,10 +45,10 @@ If you're overriding one of these overridable methods in C++/WinRT, then your `r
 
 **IDL**
 
-```ìdl
+```idl
 namespace Example
 {
-    runtimeclass CustomVSM : Windows.UI.Xaml.VisualStateManager
+    runtimeclass CustomVSM : Microsoft.UI.Xaml.VisualStateManager
     {
         CustomVSM();
         // note that we don't declare GoToStateCore here
@@ -65,7 +65,7 @@ namespace winrt::Example::implementation
     {
         CustomVSM() {}
 
-        bool GoToStateCore(winrt::Windows::UI::Xaml::Controls::Control const& control, winrt::Windows::UI::Xaml::FrameworkElement const& templateRoot, winrt::hstring const& stateName, winrt::Windows::UI::Xaml::VisualStateGroup const& group, winrt::Windows::UI::Xaml::VisualState const& state, bool useTransitions) {
+        bool GoToStateCore(winrt::Microsoft::UI::Xaml::Controls::Control const& control, winrt::Microsoft::UI::Xaml::FrameworkElement const& templateRoot, winrt::hstring const& stateName, winrt::Microsoft::UI::Xaml::VisualStateGroup const& group, winrt::Microsoft::UI::Xaml::VisualState const& state, bool useTransitions) {
             return base_type::GoToStateCore(control, templateRoot, stateName, group, state, useTransitions);
         }
     };
@@ -90,4 +90,4 @@ struct MyDerivedRuntimeClass : MyDerivedRuntimeClassT<MyDerivedRuntimeClass>
 ```
 
 ## Important APIs
-* [Control class](/uwp/api/windows.ui.xaml.controls.control)
+* [Control class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control)

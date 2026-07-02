@@ -1,22 +1,22 @@
 ---
 description: This topic shows how to consume C++/WinRT APIs, whether they're implemented by Windows, a third-party component vendor, or by yourself.
 title: Consume APIs with C++/WinRT
-ms.date: 04/23/2019
+ms.date: 06/01/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation
+keywords: windows 10, standard, c++, cpp, winrt, projected, projection, implementation, runtime class, activation, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
 # Consume APIs with C++/WinRT
 
-This topic shows how to consume [C++/WinRT](./intro-to-using-cpp-with-winrt.md) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
+This topic shows how to consume [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt) APIs, whether they're part of Windows, implemented by a third-party component vendor, or implemented by yourself.
 
 > [!IMPORTANT]
 > So that the code examples in this topic are short, and easy for you to try out, you can reproduce them by creating a new **Windows Console Application (C++/WinRT)** project, and copy-pasting code. However, you can't consume arbitrary custom (third-party) Windows Runtime types from an unpackaged app like that. You can consume only Windows types that way.
 >
 > To consume custom (third-party) Windows Runtime types from a console app, you'll need to give the app a *package identity* so that it can resolve the consumed custom types' registration. For more info, see [Windows Application Packaging Project](/windows/msix/desktop/source-code-overview).
 >
-> Alternatively, create a new project from the **Blank App (C++/WinRT)**, **Core App (C++/WinRT)**, or **Windows Runtime Component (C++/WinRT)** project templates. Those app types already have a *package identity*.
+> Alternatively, create a new project from the **Blank App, Packaged (WinUI 3 in Desktop)** for C++ or **Windows Runtime Component (C++/WinRT)** project templates. Those app types already have a *package identity*.
 
 ## If the API is in a Windows namespace
 This is the most common case in which you'll consume a Windows Runtime API. For every type in a Windows namespace defined in metadata, C++/WinRT defines a C++-friendly equivalent (called the *projected type*). A projected type has the same fully-qualified name as the Windows type, but it's placed in the C++ **winrt** namespace using C++ syntax. For example, [**Windows::Foundation::Uri**](/uwp/api/windows.foundation.uri) is projected into C++/WinRT as **winrt::Windows::Foundation::Uri**.
@@ -88,7 +88,7 @@ WINRT_ASSERT(stringable.ToString() == L"http://www.contoso.com/");
 
 You might choose this technique if you know you'll be calling several methods on the same interface.
 
-Incidentally, if you do want to access members at the ABI level then you can. The code example below shows how, and there are more details and code examples in [Interop between C++/WinRT and the ABI](interop-winrt-abi.md).
+Incidentally, if you do want to access members at the ABI level then you can. The code example below shows how, and there are more details and code examples in [Interop between C++/WinRT and the ABI](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi).
 
 ```cppwinrt
 #include <Windows.Foundation.h>
@@ -144,7 +144,7 @@ int main()
 
 All constructors on the projected type *except* the **std::nullptr_t** constructor cause a backing Windows Runtime object to be created. The **std::nullptr_t** constructor is essentially a no-op. It expects the projected object to be initialized at a subsequent time. So, whether a runtime class has a default constructor or not, you can use this technique for efficient delayed initialization.
 
-This consideration affects other places where you're invoking the default constructor, such as in vectors and maps. Consider this code example, for which you'll need a **Blank App (C++/WinRT)** project.
+This consideration affects other places where you're invoking the default constructor, such as in vectors and maps. Consider this code example, for which you'll need a **Blank App, Packaged (WinUI 3 in Desktop)** for C++ project.
 
 ```cppwinrt
 std::map<int, TextBlock> lookup;
@@ -256,7 +256,7 @@ auto smallBox{
 This section applies whether you authored the component yourself, or it came from a vendor.
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 In your application project, reference the Windows Runtime component's Windows Runtime metadata (`.winmd`) file, and build. During the build, the `cppwinrt.exe` tool generates a standard C++ library that fully describes&mdash;or *projects*&mdash;the API surface for the component. In other words, the generated library contains the projected types for the component.
 
@@ -265,14 +265,14 @@ Then, just as for a Windows namespace type, you include a header and construct t
 ```cppwinrt
 #include <winrt/ThermometerWRC.h>
 
-struct App : implements<App, IFrameworkViewSource, IFrameworkView>
+struct App : AppT<App>
 {
     ThermometerWRC::Thermometer thermometer;
     ...
 };
 ```
 
-For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) and [Author events in C++/WinRT](./author-events.md).
+For more details, code, and a walkthrough of consuming APIs implemented in a Windows Runtime component, see [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events).
 
 ## If the API is implemented in the consuming project
 The code example in this section is taken from the topic [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage). See that topic for more details, code, and a walkthrough of consuming a runtime class that's implemented in the same project that consumes it.
@@ -289,7 +289,7 @@ See [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-prop
 import "BookstoreViewModel.idl";
 namespace Bookstore
 {
-    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
     {
         BookstoreViewModel MainViewModel{ get; };
     }
@@ -317,7 +317,7 @@ MainPage::MainPage()
 ```
 
 ### Uniform construction
-With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)).
+With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/news#news-and-changes-in-cwinrt-20)).
 
 See [XAML controls; bind to a C++/WinRT property](binding-property.md#add-a-property-of-type-bookstoreviewmodel-to-mainpage) for a full walkthrough. This section shows extracts from that walkthrough.
 
@@ -328,7 +328,7 @@ To use uniform construction instead of [**winrt::make**](/uwp/cpp-ref-for-winrt/
 import "BookstoreViewModel.idl";
 namespace Bookstore
 {
-    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
     {
         MainPage();
         BookstoreViewModel MainViewModel{ get; };
@@ -440,7 +440,7 @@ struct MyPage : Page
 }
 ```
 
-Above, the compiler thinks that you're passing [**FrameworkElement.Style()**](/uwp/api/windows.ui.xaml.frameworkelement.style) (which, in C++/WinRT, is a member function) as the template parameter to [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). The solution is to force the name `Style` to be interpreted as the type [**Windows::UI::Xaml::Style**](/uwp/api/windows.ui.xaml.style).
+Above, the compiler thinks that you're passing [**FrameworkElement.Style()**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.style) (which, in C++/WinRT, is a member function) as the template parameter to [**IUnknown::as**](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown#iunknownas-function). The solution is to force the name `Style` to be interpreted as the type [**Microsoft::UI::Xaml::Style**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.style).
 
 ```cppwinrt
 struct MyPage : Page
@@ -449,7 +449,7 @@ struct MyPage : Page
     {
         // One option is to fully-qualify it.
         auto style{ Application::Current().Resources().
-            Lookup(L"MyStyle").as<Windows::UI::Xaml::Style>() };
+            Lookup(L"MyStyle").as<Microsoft::UI::Xaml::Style>() };
 
         // Another is to force it to be interpreted as a struct name.
         auto style{ Application::Current().Resources().
@@ -460,8 +460,8 @@ struct MyPage : Page
             Lookup(L"MyStyle").as<Xaml::Style>() };
 
         // Or you can force it to be resolved in the global namespace (into which
-        // you imported the Windows::UI::Xaml namespace when you did
-        // "using namespace Windows::UI::Xaml;".
+        // you imported the Microsoft::UI::Xaml namespace when you did
+        // "using namespace Microsoft::UI::Xaml;".
         auto style = Application::Current().Resources().
             Lookup(L"MyStyle").as<::Style>();
     }
@@ -480,7 +480,7 @@ struct MyPage : Page
 }
 ```
 
-The call to `Visibility()` resolves to the [**UIElement.Visibility**](/uwp/api/windows.ui.xaml.uielement.visibility) member function name. But the parameter `Visibility::Collapsed` follows the word `Visibility` with `::`, and so the method name is ignored, and the compiler finds the enum class.
+The call to `Visibility()` resolves to the [**UIElement.Visibility**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.visibility) member function name. But the parameter `Visibility::Collapsed` follows the word `Visibility` with `::`, and so the method name is ignored, and the compiler finds the enum class.
 
 ## Important APIs
 * [QueryInterface function](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q))
@@ -491,8 +491,8 @@ The call to `Visibility()` resolves to the [**UIElement.Visibility**](/uwp/api/w
 * [winrt::Windows::Foundation::IUnknown struct](/uwp/cpp-ref-for-winrt/windows-foundation-iunknown)
 
 ## Related topics
-* [Author events in C++/WinRT](./author-events.md)
-* [Interop between C++/WinRT and the ABI](./interop-winrt-abi.md)
-* [Introduction to C++/WinRT](./intro-to-using-cpp-with-winrt.md)
-* [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+* [Author events in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-events)
+* [Interop between C++/WinRT and the ABI](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi)
+* [Introduction to C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt)
+* [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)
 * [XAML controls; bind to a C++/WinRT property](./binding-property.md)

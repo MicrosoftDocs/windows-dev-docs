@@ -1,13 +1,16 @@
 ---
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
-ms.date: 04/23/2019
+ms.date: 06/12/2026
 ms.topic: how-to
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
 ms.localizationpriority: medium
 ---
 
 # Handle events by using delegates in C++/WinRT
+
+> [!IMPORTANT]
+> **Building with the Windows App SDK?** This article's code uses UWP (`Windows.UI.Xaml`) namespaces. If your project targets WinUI 3 (Windows App SDK), substitute `Microsoft.UI.Xaml` (and related `Microsoft.UI.*` namespaces) throughout. See [Mapping UWP APIs to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table) for a complete mapping and [UI migration guide](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3) for additional details.
 
 This topic shows how to register and revoke event-handling delegates using [C++/WinRT](./intro-to-using-cpp-with-winrt.md). You can handle an event using any standard C++ function-like object.
 

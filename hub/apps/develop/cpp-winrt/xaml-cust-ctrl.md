@@ -1,9 +1,9 @@
 ---
 description: This topic walks you through the steps of creating a simple custom control using C++/WinRT. You can build on the info here to create your own feature-rich and customizable UI controls.
 title: XAML custom (templated) controls with C++/WinRT
-ms.date: 04/24/2019
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, custom, templated, control
+keywords: windows 10, standard, c++, cpp, winrt, projection, XAML, custom, templated, control, windows app sdk, winui 3
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -11,18 +11,18 @@ ms.custom: RS5
 # XAML custom (templated) controls with C++/WinRT
 
 > [!IMPORTANT]
-> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](./intro-to-using-cpp-with-winrt.md), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
+> For essential concepts and terms that support your understanding of how to consume and author runtime classes with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
-One of the most powerful features of the Universal Windows Platform (UWP) is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](../xaml-platform/custom-dependency-properties.md) and [attached properties](../xaml-platform/custom-attached-properties.md), and [control templates](/windows/apps/design/style/xaml-control-templates), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
+One of the most powerful features of the Windows App SDK is the flexibility that the user-interface (UI) stack provides to create custom controls based on the XAML [**Control**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control) type. The XAML UI framework provides features such as [custom dependency properties](/windows/uwp/xaml-platform/custom-dependency-properties) and [attached properties](/windows/uwp/xaml-platform/custom-attached-properties), and [control templates](/windows/apps/design/style/xaml-control-templates), which make it easy to create feature-rich and customizable controls. This topic walks you through the steps of creating a custom (templated) control with C++/WinRT.
 
 ## Create a Blank App (BgLabelControlApp)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, set its name to *BgLabelControlApp*, and (so that your folder structure will match the walkthrough) make sure that **Place solution and project in the same directory** is unchecked. Target the latest generally-available (that is, not preview) version of the Windows SDK.
+Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App, Packaged (WinUI 3 in Desktop)** for C++ project, set its name to *BgLabelControlApp*, and (so that your folder structure will match the walkthrough) make sure that **Place solution and project in the same directory** is unchecked. Target the latest generally-available (that is, not preview) version of the Windows SDK.
 
 In a later section of this topic, you'll be directed to build your project (but don't build until then).
 
 > [!NOTE]
-> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about setting up Visual Studio for C++/WinRT development&mdash;including installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support)&mdash;see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 We're going to author a new class to represent a custom (templated) control. We're authoring and consuming the class within the same compilation unit. But we want to be able to instantiate this class from XAML markup, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 
@@ -32,16 +32,16 @@ The first step in authoring a new runtime class is to add a new **Midl File (.id
 // BgLabelControl.idl
 namespace BgLabelControlApp
 {
-    runtimeclass BgLabelControl : Windows.UI.Xaml.Controls.Control
+    runtimeclass BgLabelControl : Microsoft.UI.Xaml.Controls.Control
     {
         BgLabelControl();
-        static Windows.UI.Xaml.DependencyProperty LabelProperty{ get; };
+        static Microsoft.UI.Xaml.DependencyProperty LabelProperty{ get; };
         String Label;
     }
 }
 ```
 
-The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type [**DependencyProperty**](/uwp/api/windows.ui.xaml.dependencyproperty). It has the name of your DP plus *Property*. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an *attached property* (rather than a DP), then see the code examples in [Custom attached properties](../xaml-platform/custom-attached-properties.md).
+The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type [**DependencyProperty**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty). It has the name of your DP plus *Property*. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an *attached property* (rather than a DP), then see the code examples in [Custom attached properties](/windows/uwp/xaml-platform/custom-attached-properties).
 
 > [!NOTE]
 > If you want a DP with a floating-point type, then make it `double` (`Double` in [MIDL 3.0](/uwp/midl-3/)). Declaring and implementing a DP of type `float` (`Single` in MIDL), and then setting a value for that DP in XAML markup, results in the error *Failed to create a 'Windows.Foundation.Single' from the text '\<NUMBER>'*.
@@ -80,12 +80,12 @@ namespace winrt::BgLabelControlApp::implementation
             SetValue(m_labelProperty, winrt::box_value(value));
         }
 
-        static Windows::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
+        static Microsoft::UI::Xaml::DependencyProperty LabelProperty() { return m_labelProperty; }
 
-        static void OnLabelChanged(Windows::UI::Xaml::DependencyObject const&, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const&);
+        static void OnLabelChanged(Microsoft::UI::Xaml::DependencyObject const&, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const&);
 
     private:
-        static Windows::UI::Xaml::DependencyProperty m_labelProperty;
+        static Microsoft::UI::Xaml::DependencyProperty m_labelProperty;
     };
 }
 namespace winrt::BgLabelControlApp::factory_implementation
@@ -106,15 +106,15 @@ In `BgLabelControl.cpp`, define the static members like this. You can copy and p
 
 namespace winrt::BgLabelControlApp::implementation
 {
-    Windows::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
-        Windows::UI::Xaml::DependencyProperty::Register(
+    Microsoft::UI::Xaml::DependencyProperty BgLabelControl::m_labelProperty =
+        Microsoft::UI::Xaml::DependencyProperty::Register(
             L"Label",
             winrt::xaml_typename<winrt::hstring>(),
             winrt::xaml_typename<BgLabelControlApp::BgLabelControl>(),
-            Windows::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Windows::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
+            Microsoft::UI::Xaml::PropertyMetadata{ winrt::box_value(L"default label"), Microsoft::UI::Xaml::PropertyChangedCallback{ &BgLabelControl::OnLabelChanged } }
     );
 
-    void BgLabelControl::OnLabelChanged(Windows::UI::Xaml::DependencyObject const& d, Windows::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
+    void BgLabelControl::OnLabelChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& /* e */)
     {
         if (BgLabelControlApp::BgLabelControl theControl{ d.try_as<BgLabelControlApp::BgLabelControl>() })
         {
@@ -159,7 +159,7 @@ Make sure that **Show All Files** is still toggled on (in **Solution Explorer**)
 </ResourceDictionary>
 ```
 
-In this case, the only property that the default style sets is the control template. The template consists of a square (whose background is bound to the **Background** property that all instances of the XAML [**Control**](/uwp/api/windows.ui.xaml.controls.control) type have), and a text element (whose text is bound to the **BgLabelControl::Label** dependency property).
+In this case, the only property that the default style sets is the control template. The template consists of a square (whose background is bound to the **Background** property that all instances of the XAML [**Control**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control) type have), and a text element (whose text is bound to the **BgLabelControl::Label** dependency property).
 
 ## Add an instance of **BgLabelControl** to the main UI page
 
@@ -187,11 +187,11 @@ This walkthrough showed a simple example of a custom (templated) control in C++/
 See the section in [Calling and overriding your base type with C++/WinRT](base-type.md#implementing-overridable-methods-such-as-measureoverride-and-onapplytemplate).
 
 ## Important APIs
-* [Control class](/uwp/api/windows.ui.xaml.controls.control)
-* [DependencyProperty class](/uwp/api/windows.ui.xaml.dependencyproperty)
-* [FrameworkElement class](/uwp/api/windows.ui.xaml.frameworkelement)
-* [UIElement class](/uwp/api/windows.ui.xaml.uielement)
+* [Control class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control)
+* [DependencyProperty class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty)
+* [FrameworkElement class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement)
+* [UIElement class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement)
 
 ## Related topics
 * [Control templates](/windows/apps/design/style/xaml-control-templates)
-* [Custom dependency properties](../xaml-platform/custom-dependency-properties.md)
+* [Custom dependency properties](/windows/uwp/xaml-platform/custom-dependency-properties)

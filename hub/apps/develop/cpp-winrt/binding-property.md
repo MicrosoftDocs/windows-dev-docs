@@ -1,31 +1,31 @@
 ---
 description: A property that can be effectively bound to a XAML control is known as an *observable* property. This topic shows how to implement and consume an observable property, and how to bind a XAML control to it.
 title: XAML controls; bind to a C++/WinRT property
-ms.date: 09/25/2020
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, binding, property
+keywords: windows 10, standard, c++, cpp, winrt, projection, XAML, control, binding, property, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
 # XAML controls; bind to a C++/WinRT property
 
-A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](./intro-to-using-cpp-with-winrt.md), and how to bind XAML controls to them (for background info, see [Data binding](../data-binding/index.md)).
+A property that can be effectively bound to a XAML control is known as an *observable* property. This idea is based on the software design pattern known as the *observer pattern*. This topic shows how to implement observable properties in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), and how to bind XAML controls to them (for background info, see [Data binding](/windows/uwp/data-binding/index)).
 
 > [!IMPORTANT]
 > For essential concepts and terms that support your understanding of how to consume and author runtime classes with C++/WinRT, see [Consume APIs with C++/WinRT](consume-apis.md) and [Author APIs with C++/WinRT](author-apis.md).
 
 ## What does *observable* mean for a property?
 
-Let's say that a runtime class named **BookSku** has a property named **Title**. If **BookSku** raises the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event whenever the value of **Title** changes, then that means that **Title** is an observable property. It's the behavior of **BookSku** (raising or not raising the event) that determines which, if any, of its properties are observable.
+Let's say that a runtime class named **BookSku** has a property named **Title**. If **BookSku** raises the [**INotifyPropertyChanged::PropertyChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged.PropertyChanged) event whenever the value of **Title** changes, then that means that **Title** is an observable property. It's the behavior of **BookSku** (raising or not raising the event) that determines which, if any, of its properties are observable.
 
 A XAML text element, or control, can bind to, and handle, these events. Such an element or control handles the event by retrieving the updated value(s), and then updating itself to show the new value.
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Create a Blank App (Bookstore)
 
-Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App (C++/WinRT)** project, and name it *Bookstore*. Make sure that **Place solution and project in the same directory** is unchecked. Target the latest generally-available (that is, not preview) version of the Windows SDK.
+Begin by creating a new project in Microsoft Visual Studio. Create a **Blank App, Packaged (WinUI 3 in Desktop)** for C++ project, and name it *Bookstore*. Make sure that **Place solution and project in the same directory** is unchecked. Target the latest generally-available (that is, not preview) version of the Windows SDK.
 
 We're going to author a new class to represent a book that has an observable title property. We're authoring and consuming the class within the same compilation unit. But we want to be able to bind to this class from XAML, and for that reason it's going to be a runtime class. And we're going to use C++/WinRT to both author and consume it.
 
@@ -35,7 +35,7 @@ The first step in authoring a new runtime class is to add a new **Midl File (.id
 // BookSku.idl
 namespace Bookstore
 {
-    runtimeclass BookSku : Windows.UI.Xaml.Data.INotifyPropertyChanged
+    runtimeclass BookSku : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
     {
         BookSku(String title);
         String Title;
@@ -46,7 +46,7 @@ namespace Bookstore
 > [!NOTE]
 > Your view model classes&mdash;in fact, any runtime class that you declare in your application&mdash;need not derive from a base class. The **BookSku** class declared above is an example of that. It implements an interface, but it doesn't derive from any base class.
 >
-> Any runtime class that you declare in the application that *does* derive from a base class is known as a *composable* class. And there are constraints around composable classes. For an application to pass the [Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) tests used by Visual Studio and by the Microsoft Store to validate submissions (and therefore for the application to be successfully ingested into the Microsoft Store), a composable class must ultimately derive from a Windows base class. Meaning that the class at the very root of the inheritance hierarchy must be a type originating in a Windows.* namespace. If you do need to derive a runtime class from a base class&mdash;for example, to implement a **BindableBase** class for all of your view models to derive from&mdash;then you can derive from [**Windows.UI.Xaml.DependencyObject**](/uwp/api/windows.ui.xaml.dependencyobject).
+> Any runtime class that you declare in the application that *does* derive from a base class is known as a *composable* class. And there are constraints around composable classes. For an application to pass the [Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit) tests used by Visual Studio and by the Microsoft Store to validate submissions (and therefore for the application to be successfully ingested into the Microsoft Store), a composable class must ultimately derive from a Windows base class. Meaning that the class at the very root of the inheritance hierarchy must be a type originating in a Windows.* or Microsoft.* namespace. If you do need to derive a runtime class from a base class&mdash;for example, to implement a **BindableBase** class for all of your view models to derive from&mdash;then you can derive from [**Microsoft.UI.Xaml.DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject).
 >
 > A view model is an abstraction of a view, and so it's bound directly to the view (the XAML markup). A data model is an abstraction of data, and it's consumed only from your view models, and not bound directly to XAML. So you can declare your data models not as runtime classes, but as C++ structs or classes. They don't need to be declared in MIDL, and you're free to use whatever inheritance hierarchy you like.
 
@@ -79,12 +79,12 @@ namespace winrt::Bookstore::implementation
 
         winrt::hstring Title();
         void Title(winrt::hstring const& value);
-        winrt::event_token PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& value);
+        winrt::event_token PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& value);
         void PropertyChanged(winrt::event_token const& token);
     
     private:
         winrt::hstring m_title;
-        winrt::event<Windows::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
+        winrt::event<Microsoft::UI::Xaml::Data::PropertyChangedEventHandler> m_propertyChanged;
     };
 }
 namespace winrt::Bookstore::factory_implementation
@@ -119,11 +119,11 @@ namespace winrt::Bookstore::implementation
         if (m_title != value)
         {
             m_title = value;
-            m_propertyChanged(*this, Windows::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
+            m_propertyChanged(*this, Microsoft::UI::Xaml::Data::PropertyChangedEventArgs{ L"Title" });
         }
     }
 
-    winrt::event_token BookSku::PropertyChanged(Windows::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
+    winrt::event_token BookSku::PropertyChanged(Microsoft::UI::Xaml::Data::PropertyChangedEventHandler const& handler)
     {
         return m_propertyChanged.add(handler);
     }
@@ -135,7 +135,7 @@ namespace winrt::Bookstore::implementation
 }
 ```
 
-In the **Title** mutator function, we check whether a value is being set that's different from the current value. And, if so, then we update the title and also raise the [**INotifyPropertyChanged::PropertyChanged**](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged) event with an argument equal to the name of the property that has changed. This is so that the user-interface (UI) will know which property's value to re-query.
+In the **Title** mutator function, we check whether a value is being set that's different from the current value. And, if so, then we update the title and also raise the [**INotifyPropertyChanged::PropertyChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged.PropertyChanged) event with an argument equal to the name of the property that has changed. This is so that the user-interface (UI) will know which property's value to re-query.
 
 The project will build again now, if you want to check that.
 
@@ -163,7 +163,7 @@ Save and build (the build won't entirely succeed yet, but the reason we're build
 Copy `BookstoreViewModel.h` and `BookstoreViewModel.cpp` from the `Generated Files\sources` folder into the project folder, and include them in the project. Open those files (removing the `static_assert` again), and implement the runtime class as shown below. Note how, in `BookstoreViewModel.h`, we're including `BookSku.h`, which declares the implementation type for **BookSku** (which is **winrt::Bookstore::implementation::BookSku**). And we're removing `= default` from the default constructor.
 
 > [!NOTE]
-> In the listings below for `BookstoreViewModel.h` and `BookstoreViewModel.cpp`, the code illustrates the default way of constructing the *m_bookSku* data member. That's the method that dates back to the first release of C++/WinRT, and it's a good idea to be at least familiar with the pattern. With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](./news.md#news-and-changes-in-cwinrt-20)). Later in this topic, we'll show an example of uniform construction.
+> In the listings below for `BookstoreViewModel.h` and `BookstoreViewModel.cpp`, the code illustrates the default way of constructing the *m_bookSku* data member. That's the method that dates back to the first release of C++/WinRT, and it's a good idea to be at least familiar with the pattern. With C++/WinRT version 2.0 and later, there's an optimized form of construction available to you known as *uniform construction* (see [News, and changes, in C++/WinRT 2.0](/windows/uwp/cpp-and-winrt-apis/news#news-and-changes-in-cwinrt-20)). Later in this topic, we'll show an example of uniform construction.
 
 ```cppwinrt
 // BookstoreViewModel.h
@@ -229,7 +229,7 @@ import "BookstoreViewModel.idl";
 
 namespace Bookstore
 {
-    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
     {
         MainPage();
         BookstoreViewModel MainViewModel{ get; };
@@ -266,7 +266,7 @@ namespace winrt::Bookstore::implementation
 
         Bookstore::BookstoreViewModel MainViewModel();
 
-        void ClickHandler(Windows::Foundation::IInspectable const&, Windows::UI::Xaml::RoutedEventArgs const&);
+        void ClickHandler(Windows::Foundation::IInspectable const&, Microsoft::UI::Xaml::RoutedEventArgs const&);
 
     private:
         Bookstore::BookstoreViewModel m_mainViewModel{ nullptr };
@@ -289,7 +289,7 @@ In `\Bookstore\Bookstore\MainPage.cpp`, as shown in the listing below, make the 
 #include "MainPage.g.cpp"
 
 using namespace winrt;
-using namespace Windows::UI::Xaml;
+using namespace Microsoft::UI::Xaml;
 
 namespace winrt::Bookstore::implementation
 {
@@ -299,7 +299,7 @@ namespace winrt::Bookstore::implementation
         InitializeComponent();
     }
 
-    void MainPage::ClickHandler(Windows::Foundation::IInspectable const& /* sender */, Windows::UI::Xaml::RoutedEventArgs const& /* args */)
+    void MainPage::ClickHandler(Windows::Foundation::IInspectable const& /* sender */, Microsoft::UI::Xaml::RoutedEventArgs const& /* args */)
     {
         MainViewModel().BookSku().Title(L"To Kill a Mockingbird");
     }
@@ -342,7 +342,7 @@ Open `MainPage.xaml`, which contains the XAML markup for our main UI page. As sh
 Now build and run the project. Click the button to execute the **Click** event handler. That handler calls the book's title mutator function; that mutator raises an event to let the UI know that the **Title** property has changed; and the button re-queries that property's value to update its own **Content** value.
 
 ## Using the {Binding} markup extension with C++/WinRT
-For the currently released version of C++/WinRT, in order to be able to use the {Binding} markup extension you'll need to implement the [ICustomPropertyProvider](/uwp/api/windows.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/uwp/api/windows.ui.xaml.data.icustomproperty) interfaces.
+For the currently released version of C++/WinRT, in order to be able to use the {Binding} markup extension you'll need to implement the [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty) interfaces.
 
 ## Element-to-element binding
 
@@ -357,18 +357,18 @@ You'll need to declare the named XAML entity `myTextBox` as a read-only property
 
 ```idl
 // MainPage.idl
-runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
 {
     MainPage();
-    Windows.UI.Xaml.Controls.TextBox myTextBox{ get; };
+    Microsoft.UI.Xaml.Controls.TextBox myTextBox{ get; };
 }
 ```
 
-Here's the reason for this necessity. All types that the XAML compiler needs to validate (including those used in [{x:Bind}](../xaml-platform/x-bind-markup-extension.md)) are read from Windows Metadata (WinMD). All you need to do is to add the read-only property to your Midl file. Don't implement it, because the autogenerated XAML code-behind provides the implementation for you.
+Here's the reason for this necessity. All types that the XAML compiler needs to validate (including those used in [{x:Bind}](/windows/uwp/xaml-platform/x-bind-markup-extension)) are read from Windows Metadata (WinMD). All you need to do is to add the read-only property to your Midl file. Don't implement it, because the autogenerated XAML code-behind provides the implementation for you.
 
 ## Consuming objects from XAML markup
 
-All entities consumed by using the XAML [**{x:Bind} markup extension**](../xaml-platform/x-bind-markup-extension.md) must be exposed publicly in IDL. Furthermore, if XAML markup contains a reference to another element that's also in markup, then the getter for that markup must be present in IDL.
+All entities consumed by using the XAML [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension) must be exposed publicly in IDL. Furthermore, if XAML markup contains a reference to another element that's also in markup, then the getter for that markup must be present in IDL.
 
 ```xaml
 <Page x:Name="MyPage">
@@ -387,13 +387,13 @@ The *ChangeColorButton* element refers to the *UseCustomColorCheckBox* element v
 The click event handler delegate for *UseCustomColorCheckBox* uses classic XAML delegate syntax, so that doesn't need an entry in the IDL; it just needs to be public in your implementation class. On the other hand, *ChangeColorButton* also has an `{x:Bind}` click event handler, which must also go into the IDL.
 
 ```idl
-runtimeclass MyPage : Windows.UI.Xaml.Controls.Page
+runtimeclass MyPage : Microsoft.UI.Xaml.Controls.Page
 {
     MyPage();
 
     // These members are consumed by binding.
     void ChangeColorButton_OnClick();
-    Windows.UI.Xaml.Controls.CheckBox UseCustomColorCheckBox{ get; };
+    Microsoft.UI.Xaml.Controls.CheckBox UseCustomColorCheckBox{ get; };
 }
 ```
 
@@ -420,7 +420,7 @@ Instead, use `x:Bind` when binding to a Boolean.
 The [Windows Implementation Libraries (WIL)](https://github.com/Microsoft/wil) provides helpers to ease writing bindable properties. See [Notifying Properties](https://github.com/microsoft/wil/wiki/CppWinRT-authoring-helpers#notifying-properties-inotifypropertychanged) in the WIL documentation.
 
 ## Important APIs
-* [INotifyPropertyChanged::PropertyChanged](/uwp/api/windows.ui.xaml.data.inotifypropertychanged.PropertyChanged)
+* [INotifyPropertyChanged::PropertyChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged.PropertyChanged)
 * [winrt::make function template](/uwp/cpp-ref-for-winrt/make)
 
 ## Related topics

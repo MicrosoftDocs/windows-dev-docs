@@ -1,7 +1,7 @@
 ---
 description: The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references.
 title: Strong and weak references in C++/WinRT
-ms.date: 05/16/2019
+ms.date: 06/12/2026
 ms.topic: article
 keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, strong, weak, reference
 ms.localizationpriority: medium
@@ -9,6 +9,9 @@ ms.custom: RS5
 ---
 
 # Strong and weak references in C++/WinRT
+
+> [!IMPORTANT]
+> **Building with the Windows App SDK?** This article's code uses UWP (`Windows.UI.Xaml`) namespaces. If your project targets WinUI 3 (Windows App SDK), substitute `Microsoft.UI.Xaml` (and related `Microsoft.UI.*` namespaces) throughout. See [Mapping UWP APIs to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table) for a complete mapping and [UI migration guide](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3) for additional details.
 
 The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](./intro-to-using-cpp-with-winrt.md) meets you halfway in your work of building more complex systems simply and correctly.
 

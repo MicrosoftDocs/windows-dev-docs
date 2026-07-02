@@ -1,15 +1,15 @@
 ---
 description: This topic discusses strategies for handling errors when programming with C++/WinRT.
 title: Error handling with C++/WinRT
-ms.date: 04/23/2019
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, error, handling, exception
+keywords: windows 10, standard, c++, cpp, winrt, projection, error, handling, exception, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
 # Error handling with C++/WinRT
 
-This topic discusses strategies for handling errors when programming with [C++/WinRT](./intro-to-using-cpp-with-winrt.md). For more general info, and background, see [Errors and Exception Handling (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
+This topic discusses strategies for handling errors when programming with [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt). For more general info, and background, see [Errors and Exception Handling (Modern C++)](/cpp/cpp/errors-and-exception-handling-modern-cpp).
 
 ## Avoid catching and throwing exceptions
 We recommend that you continue to write [exception-safe code](/cpp/cpp/how-to-design-for-exception-safety), but that you prefer to avoid catching and throwing exceptions whenever possible. If there's no handler for an exception, then Windows automatically generates an error report (including a minidump of the crash), which will help you track down where the problem is.
@@ -18,26 +18,26 @@ Don't throw an exception that you expect to catch. And don't use exceptions for 
 
 Consider the scenario of accessing the Windows Registry. If your app fails to read a value from the Registry, then that's to be expected, and you should handle it gracefully. Don't throw an exception; rather return a `bool` or `enum` value indicating that, and perhaps why, the value wasn't read. Failing to *write* a value to the Registry, on the other hand, is likely to indicate that there's a bigger problem than you can handle sensibly in your application. In a case like that, you don't want your application to continue, so an exception that results in an error report is the fastest way to keep your application from causing any harm.
 
-For another example, consider retrieving a thumbnail image from a call to [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync#Windows_Storage_StorageFile_GetThumbnailAsync_Windows_Storage_FileProperties_ThumbnailMode_), and then passing that thumbnail to [**BitmapSource.SetSourceAsync**](/uwp/api/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync#Windows_UI_Xaml_Media_Imaging_BitmapSource_SetSourceAsync_Windows_Storage_Streams_IRandomAccessStream_). If that sequence of calls causes you to pass `nullptr` to **SetSourceAsync** (the image file can't be read; perhaps its file extension makes it look like it contains image data, but it actually doesn't), then you'll cause an invalid pointer exception to be thrown. If you discover a case like that in your code, rather than catching and handling the case as an exception, instead check for `nullptr` returned from **GetThumbnailAsync**.
+For another example, consider retrieving a thumbnail image from a call to [**StorageFile.GetThumbnailAsync**](/uwp/api/windows.storage.storagefile.getthumbnailasync#Windows_Storage_StorageFile_GetThumbnailAsync_Windows_Storage_FileProperties_ThumbnailMode_), and then passing that thumbnail to [**BitmapSource.SetSourceAsync**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource.setsourceasync#Microsoft_UI_Xaml_Media_Imaging_BitmapSource_SetSourceAsync_Windows_Storage_Streams_IRandomAccessStream_). If that sequence of calls causes you to pass `nullptr` to **SetSourceAsync** (the image file can't be read; perhaps its file extension makes it look like it contains image data, but it actually doesn't), then you'll cause an invalid pointer exception to be thrown. If you discover a case like that in your code, rather than catching and handling the case as an exception, instead check for `nullptr` returned from **GetThumbnailAsync**.
 
 Throwing exceptions tends to be slower than using error codes. If you only throw an exception when a fatal error occurs, then if all goes well you'll never pay the performance price.
 
 But a more likely performance hit involves the runtime overhead of ensuring that the appropriate destructors are called in the unlikely event that an exception is thrown. The cost of this assurance comes whether an exception is actually thrown or not. So, you should ensure that the compiler has a good idea of what functions can potentially throw exceptions. If the compiler can prove that there won't be any exceptions from certain functions (the `noexcept` specification), then it can optimize the code it generates.
 
 ## Catching exceptions
-An error condition that arises at the [Windows Runtime ABI](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) layer is returned in the form of a HRESULT value. But you don't need to handle HRESULTs in your code. The C++/WinRT projection code that's generated for an API on the consuming side detects an error HRESULT code at the ABI layer and converts the code into a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) exception, which you can catch and handle. If you *do* wish to handle HRESULTS, then use the **winrt::hresult** type.
+An error condition that arises at the [Windows Runtime ABI](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi#what-is-the-windows-runtime-abi-and-what-are-abi-types) layer is returned in the form of a HRESULT value. But you don't need to handle HRESULTs in your code. The C++/WinRT projection code that's generated for an API on the consuming side detects an error HRESULT code at the ABI layer and converts the code into a [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) exception, which you can catch and handle. If you *do* wish to handle HRESULTs, then use the **winrt::hresult** type.
 
 For example, if the user happens to delete an image from the Pictures Library while your application is iterating over that collection, then the projection throws an exception. And this is a case where you'll have to catch and handle that exception. Here's a code example showing this case.
 
 ```cppwinrt
 #include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/Windows.Storage.h>
-#include <winrt/Windows.UI.Xaml.Media.Imaging.h>
+#include <winrt/Microsoft.UI.Xaml.Media.Imaging.h>
 
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage;
-using namespace Windows::UI::Xaml::Media::Imaging;
+using namespace Microsoft::UI::Xaml::Media::Imaging;
 
 IAsyncAction MakeThumbnailsAsync()
 {
@@ -89,7 +89,7 @@ Because Windows APIs report run-time errors using various return-value types, th
 You can use these helper functions for common return code types, or you can respond to any error condition and call either [**winrt::throw_last_error**](/uwp/cpp-ref-for-winrt/error-handling/throw-last-error) or [**winrt::throw_hresult**](/uwp/cpp-ref-for-winrt/error-handling/throw-hresult). 
 
 ## Throwing exceptions when authoring an API
-All [Windows Runtime Application Binary Interface](interop-winrt-abi.md#what-is-the-windows-runtime-abi-and-what-are-abi-types) boundaries (or ABI boundaries) must be *noexcept*&mdash;meaning that exceptions must never escape there. When you author an API, you should always mark the ABI boundary with the C++ `noexcept` keyword. `noexcept` has specific behavior in C++. If a C++ exception hits a `noexcept` boundary, then the process will fail fast with **std::terminate**. That behavior is generally desirable, because an unhandled exception almost always implies unknown state in the process.
+All [Windows Runtime Application Binary Interface](/windows/uwp/cpp-and-winrt-apis/interop-winrt-abi#what-is-the-windows-runtime-abi-and-what-are-abi-types) boundaries (or ABI boundaries) must be *noexcept*&mdash;meaning that exceptions must never escape there. When you author an API, you should always mark the ABI boundary with the C++ `noexcept` keyword. `noexcept` has specific behavior in C++. If a C++ exception hits a `noexcept` boundary, then the process will fail fast with **std::terminate**. That behavior is generally desirable, because an unhandled exception almost always implies unknown state in the process.
 
 Since exceptions mustn't cross the ABI boundary, an error condition that arises in an implementation is returned across the ABI layer in the form of an HRESULT error code. When you're authoring an API using C++/WinRT, code is generated for you to convert any exception that you *do* throw in your implementation into an HRESULT. The [**winrt::to_hresult**](/uwp/cpp-ref-for-winrt/error-handling/to-hresult) function is used in that generated code in a pattern like this.
 

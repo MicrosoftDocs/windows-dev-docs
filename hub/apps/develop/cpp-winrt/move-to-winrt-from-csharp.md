@@ -1,9 +1,9 @@
 ---
-description: This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
+description: This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 title: Move to C++/WinRT from C#
-ms.date: 07/15/2019
+ms.date: 06/01/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, C#
+keywords: windows 10, standard, c++, cpp, winrt, projection, port, migrate, C#, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 > [!TIP]
 > If you've read this topic before, and you're returning to it with a particular task in mind, then you can jump to the [Find content based on the task you're performing](#find-content-based-on-the-task-youre-performing) section of this topic.
 
-This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
+This topic comprehensively catalogs the technical details involved in porting the source code in a [C#](/visualstudio/get-started/csharp) project to its equivalent in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt).
 
 For a case study of porting one of the Universal Windows Platform (UWP) app samples, see the companion topic [Porting the Clipboard sample to C++/WinRT from C#](./clipboard-to-winrt-from-csharp.md). You can gain porting practice and experience by following along with that walkthrough, and porting the sample for yourself as you go.
 
@@ -33,17 +33,17 @@ After the task-based index that follows, the rest of the sections in this topic 
 
 | Task | Content |
 | - | - |
-|Author a Windows Runtime component (WRC)|Certain functionality can be achieved (or certain APIs called) only with C++. You can factor that functionality into a C++/WinRT WRC, and then consume the WRC from (for example) a C# app. See [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md) and [If you're authoring a runtime class in a Windows Runtime component](./author-apis.md#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component).|
-|Port an async method|It's a good idea for the first line of an asynchronous method in a C++/WinRT runtime class to be `auto lifetime = get_strong();` (see [Safely accessing the *this* pointer in a class-member coroutine](./weak-references.md#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).<br><br>Porting from `Task`, see <a href="#id_async_action">Async action</a>.<br>Porting from `Task<T>`, see <a href="#id_async_operation">Async operation</a>.<br>Porting from `async void`, see <a href="#id_fire_and_forget">Fire-and-forget method</a>.|
+|Author a Windows Runtime component (WRC)|Certain functionality can be achieved (or certain APIs called) only with C++. You can factor that functionality into a C++/WinRT WRC, and then consume the WRC from (for example) a C# app. See [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt) and [If you're authoring a runtime class in a Windows Runtime component](./author-apis.md#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component).|
+|Port an async method|It's a good idea for the first line of an asynchronous method in a C++/WinRT runtime class to be `auto lifetime = get_strong();` (see [Safely accessing the *this* pointer in a class-member coroutine](/windows/uwp/cpp-and-winrt-apis/weak-references#safely-accessing-the-this-pointer-in-a-class-member-coroutine)).<br><br>Porting from `Task`, see <a href="#id_async_action">Async action</a>.<br>Porting from `Task<T>`, see <a href="#id_async_operation">Async operation</a>.<br>Porting from `async void`, see <a href="#id_fire_and_forget">Fire-and-forget method</a>.|
 |Port a class|First, determine whether the class needs to be a runtime class, or whether it can be an ordinary class. To help you decide that, see the very beginning of [Author APIs with C++/WinRT](./author-apis.md). Then, see the next three rows below.|
 |Port a runtime class|A class that shares functionality outside of the C++ app, or a class that's used in XAML data binding. See [If you're authoring a runtime class in a Windows Runtime component](./author-apis.md#if-youre-authoring-a-runtime-class-in-a-windows-runtime-component), or [If you're authoring a runtime class to be referenced in your XAML UI](./author-apis.md#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui).<br><br>Those links describe this in more detail, but a runtime class must be declared in IDL. If your project already contains an IDL file (for example, `Project.idl`), then we recommend that you declare any new runtime class in that file. In IDL, declare any methods and data members that will be used outside your app, or that will be used in XAML. After updating the IDL file, rebuild, and look at the generated stub files (`.h` and `.cpp`) in your project's `Generated Files` folder (In **Solution Explorer**, with the project node selected, make sure **Show All Files** is toggled on). Compare the stub files with the files already in your project, adding files or adding/updating function signatures as necessary. Stub file syntax is always correct, so we recommend that you use it in order to minimize build errors. Once the stubs in your project match those in the stub files, you can go ahead and implement them by porting the C# code over. |
 |Port an ordinary class|See [If you're *not* authoring a runtime class](./author-apis.md#if-youre-not-authoring-a-runtime-class).|
 |Author IDL|[Introduction to Microsoft Interface Definition Language 3.0](/uwp/midl-3/intro)<br>[If you're authoring a runtime class to be referenced in your XAML UI](./author-apis.md#if-youre-authoring-a-runtime-class-to-be-referenced-in-your-xaml-ui)<br>[Consuming objects from XAML markup](./binding-property.md#consuming-objects-from-xaml-markup)<br>[Define your runtime classes in IDL](#define-your-runtime-classes-in-idl)|
-|Port a collection|[Collections with C++/WinRT](./collections.md)<br>[Making a data source available to XAML markup](#making-a-data-source-available-to-xaml-markup)<br><a href="#id_associative_container">Associative container</a><br><a href="#id_vector_member_access">Vector member access</a>|
+|Port a collection|[Collections with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/collections)<br>[Making a data source available to XAML markup](#making-a-data-source-available-to-xaml-markup)<br><a href="#id_associative_container">Associative container</a><br><a href="#id_vector_member_access">Vector member access</a>|
 |Port an event|<a href="#id_event_handler_delegate_as_class_member">Event handler delegate as class member</a><br><a href="#id_revoke_event_handler_delegate">Revoke event handler delegate</a>|
-|Port a method|From C#: `private async void SampleButton_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e) { ... }`<br>To the C++/WinRT `.h` file: `fire_and_forget SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&);`<br>To the C++/WinRT `.cpp` file: `fire_and_forget OcrFileImage::SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&) {...}`<br>|
+|Port a method|From C#: `private async void SampleButton_Tapped(object sender, Microsoft.UI.Xaml.Input.TappedRoutedEventArgs e) { ... }`<br>To the C++/WinRT `.h` file: `fire_and_forget SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&);`<br>To the C++/WinRT `.cpp` file: `fire_and_forget OcrFileImage::SampleButton_Tapped(IInspectable const&, RoutedEventArgs const&) {...}`<br>|
 |Port strings|[String handling in C++/WinRT](./strings.md)<br>[ToString](#tostring)<br>[String-building](#string-building)<br>[Boxing and unboxing a string](#boxing-and-unboxing-a-string)|
-|Type conversion (type casting)|C#: `o.ToString()`<br>C++/WinRT: `to_hstring(static_cast<int>(o))`<br>Also see [ToString](#tostring).<br><br>C#: `(Value)o`<br>C++/WinRT: `unbox_value<Value>(o)`<br>Throws if unboxing fails. Also see [Boxing and unboxing](./boxing.md).<br><br>C#: `o as Value? ?? fallback`<br>C++/WinRT: `unbox_value_or<Value>(o, fallback)`<br>Returns fallback if unboxing fails. Also see [Boxing and unboxing](./boxing.md).<br><br>C#: `(Class)o`<br>C++/WinRT: `o.as<Class>()`<br>Throws if conversion fails.<br><br>C#: `o as Class`<br>C++/WinRT: `o.try_as<Class>()`<br>Returns null if conversion fails.|
+|Type conversion (type casting)|C#: `o.ToString()`<br>C++/WinRT: `to_hstring(static_cast<int>(o))`<br>Also see [ToString](#tostring).<br><br>C#: `(Value)o`<br>C++/WinRT: `unbox_value<Value>(o)`<br>Throws if unboxing fails. Also see [Boxing and unboxing](/windows/uwp/cpp-and-winrt-apis/boxing).<br><br>C#: `o as Value? ?? fallback`<br>C++/WinRT: `unbox_value_or<Value>(o, fallback)`<br>Returns fallback if unboxing fails. Also see [Boxing and unboxing](/windows/uwp/cpp-and-winrt-apis/boxing).<br><br>C#: `(Class)o`<br>C++/WinRT: `o.as<Class>()`<br>Throws if conversion fails.<br><br>C#: `o as Class`<br>C++/WinRT: `o.try_as<Class>()`<br>Returns null if conversion fails.|
 
 ## Changes that involve the language projection
 
@@ -62,9 +62,9 @@ After the task-based index that follows, the rest of the sections in this topic 
 
 ### Register/revoke an event handler
 
-In C++/WinRT, you have several syntactic options to register/revoke an event handler delegate, as described in [Handle events by using delegates in C++/WinRT](./handle-events.md). Also see [Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
+In C++/WinRT, you have several syntactic options to register/revoke an event handler delegate, as described in [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events). Also see [Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
 
-Sometimes, for example when an event recipient (an object handling an event) is about to be destroyed, you'll want to revoke an event handler so that the event source (the object raising the event) doesn't call into a destroyed object. See [Revoke a registered delegate](./handle-events.md#revoke-a-registered-delegate). In cases like that, create an **event_token** member variable for your event handlers. For an example, see [Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
+Sometimes, for example when an event recipient (an object handling an event) is about to be destroyed, you'll want to revoke an event handler so that the event source (the object raising the event) doesn't call into a destroyed object. See [Revoke a registered delegate](/windows/uwp/cpp-and-winrt-apis/handle-events#revoke-a-registered-delegate). In cases like that, create an **event_token** member variable for your event handlers. For an example, see [Porting the **EnableClipboardContentChangedNotifications** method](./clipboard-to-winrt-from-csharp.md#enableclipboardcontentchangednotifications).
 
 You can also register an event handler in XAML markup.
 
@@ -72,7 +72,7 @@ You can also register an event handler in XAML markup.
 <Button x:Name="OpenButton" Click="OpenButton_Click" />
 ```
 
-In C#, your **OpenButton_Click** method can be private, and XAML will still be able to connect it to the [**ButtonBase.Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event raised by *OpenButton*.
+In C#, your **OpenButton_Click** method can be private, and XAML will still be able to connect it to the [**ButtonBase.Click**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event raised by *OpenButton*.
 
 In C++/WinRT, your **OpenButton_Click** method must be public in your [implementation type](./author-apis.md) *if you want to register it in XAML markup*. If you register an event handler only in imperative code, then the event handler doesn't need to be public.
 
@@ -82,8 +82,8 @@ namespace winrt::MyProject::implementation
     struct MyPage : MyPageT<MyPage>
     {
         void OpenButton_Click(
-            winrt::Windows:Foundation::IInspectable const& sender,
-            winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+            winrt::Windows::Foundation::IInspectable const& sender,
+            winrt::Microsoft::UI::Xaml::RoutedEventArgs const& args);
     }
 };
 ```
@@ -98,13 +98,13 @@ namespace winrt::MyProject::implementation
     private:
         friend MyPageT;
         void OpenButton_Click(
-            winrt::Windows:Foundation::IInspectable const& sender,
-            winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+            winrt::Windows::Foundation::IInspectable const& sender,
+            winrt::Microsoft::UI::Xaml::RoutedEventArgs const& args);
     }
 };
 ```
 
-One final scenario is where the C# project that you're porting *binds* to the event handler from markup (for more background on that scenario, see [Functions in x:Bind](../data-binding/function-bindings.md)).
+One final scenario is where the C# project that you're porting *binds* to the event handler from markup (for more background on that scenario, see [Functions in x:Bind](/windows/uwp/data-binding/function-bindings)).
 
 ```xaml
 <Button x:Name="OpenButton" Click="{x:Bind OpenButton_Click}" />
@@ -113,11 +113,11 @@ One final scenario is where the C# project that you're porting *binds* to the ev
 You could just change that markup to the more simple `Click="OpenButton_Click"`. Or, if you prefer, you can keep that markup as it is. All you have to do to support it is to declare the event handler in IDL.
 
 ```idl
-void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
+void OpenButton_Click(Object sender, Microsoft.UI.Xaml.RoutedEventArgs e);
 ```
 
 > [!NOTE]
-> Declare the function as `void` even if you *implement* it as [Fire and forget](./concurrency-2.md#fire-and-forget).
+> Declare the function as `void` even if you *implement* it as [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget).
 
 ## Changes that involve the language syntax
 
@@ -125,9 +125,9 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 | -------- | -- | --------- | -------- |
 |Access modifiers|`public \<member\>`|`public:`<br>&nbsp;&nbsp;&nbsp;&nbsp;`\<member\>`|[Porting the **Button_Click** method](./clipboard-to-winrt-from-csharp.md#button_click)|
 |Access a data member|`this.variable`|`this->variable`|&nbsp;|
-|<a name="id_async_action"></a>Async action|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** interface](/uwp/api/windows.foundation.iasyncaction), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
-|<a name="id_async_operation"></a>Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** interface](/uwp/api/windows.foundation.iasyncoperation-1), [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md) |
-|<a name="id_fire_and_forget"></a>Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click), [Fire and forget](./concurrency-2.md#fire-and-forget)|
+|<a name="id_async_action"></a>Async action|`async Task ...`|`IAsyncAction ...`| [**IAsyncAction** interface](/uwp/api/windows.foundation.iasyncaction), [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_async_operation"></a>Async operation|`async Task<T> ...`|`IAsyncOperation<T> ...`| [**IAsyncOperation** interface](/uwp/api/windows.foundation.iasyncoperation-1), [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency) |
+|<a name="id_fire_and_forget"></a>Fire-and-forget method (implies async)|`async void ...`|`winrt::fire_and_forget ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click), [Fire and forget](/windows/uwp/cpp-and-winrt-apis/concurrency-2#fire-and-forget)|
 |Access an enumerated constant|`E.Value`|`E::Value`|[Porting the **DisplayChangedFormats** method](./clipboard-to-winrt-from-csharp.md#displaychangedformats)|
 |Cooperatively wait|`await ...`|`co_await ...`|[Porting the **CopyButton_Click** method](./clipboard-to-winrt-from-csharp.md#copybutton_click)|
 |Collection of projected types as a private field|`private List<MyRuntimeClass> myRuntimeClasses = new List<MyRuntimeClass>();`|`std::vector`<br>`<MyNamespace::MyRuntimeClass>`<br>`m_myRuntimeClasses;`||
@@ -135,8 +135,8 @@ void OpenButton_Click(Object sender, Windows.UI.Xaml.RoutedEventArgs e);
 |Namespace separator|`A.B.T`|`A::B::T`||
 |Null|`null`|`nullptr`|[Porting the **UpdateStatus** method](./clipboard-to-winrt-from-csharp.md#updatestatus)|
 |Obtain a type object|`typeof(MyType)`|`winrt::xaml_typename<MyType>()`|[Porting the **Scenarios** property](./clipboard-to-winrt-from-csharp.md#scenarios)|
-|Parameter declaration for a method|`MyType`|`MyType const&`|[Parameter-passing](./concurrency.md#parameter-passing)|
-|Parameter declaration for an async method|`MyType`|`MyType`|[Parameter-passing](./concurrency.md#parameter-passing)|
+|Parameter declaration for a method|`MyType`|`MyType const&`|[Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
+|Parameter declaration for an async method|`MyType`|`MyType`|[Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing)|
 |Call a static method|`T.Method()`|`T::Method()`||
 |Strings|`string`, or **System.String**|[**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring)|[String handling in C++/WinRT](./strings.md)|
 |String literal|`"a string literal"`|`L"a string literal"`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
@@ -191,7 +191,7 @@ In the case of [Porting the Clipboard sample to C++/WinRT from C#](./clipboar
 |Type conversion (throw on failure)|`(MyType)v`|`v.as<MyType>()`|[Porting the **Footer_Click** method](./clipboard-to-winrt-from-csharp.md#footer_click)|
 |Type conversion (null on failure)|`v as MyType`|`v.try_as<MyType>()`|[Porting the **PasteButton_Click** method](./clipboard-to-winrt-from-csharp.md#pastebutton_click)|
 |XAML elements with x:Name are properties|`MyNamedElement`|`MyNamedElement()`|[Porting the constructor, **Current**, and **FEATURE_NAME**](./clipboard-to-winrt-from-csharp.md#the-constructor-current-and-feature_name)|
-|Switch to the UI thread|**CoreDispatcher.RunAsync**|**CoreDispatcher.RunAsync**, or [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[Porting the **NotifyUser** method](./clipboard-to-winrt-from-csharp.md#notifyuser), and [Porting the **HistoryAndRoaming** method](./clipboard-to-winrt-from-csharp.md#historyandroaming)|
+|Switch to the UI thread|**CoreDispatcher.RunAsync**|[**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue), or [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground)|[Porting the **NotifyUser** method](./clipboard-to-winrt-from-csharp.md#notifyuser), and [Porting the **HistoryAndRoaming** method](./clipboard-to-winrt-from-csharp.md#historyandroaming)|
 |UI element construction in imperative code in a XAML page|See [UI element construction](#ui-element-construction)|See [UI element construction](#ui-element-construction)||
 
 The following sections go into more detail regarding some of the items in the table.
@@ -204,7 +204,7 @@ These code examples show the construction of a UI element in the imperative code
 var myTextBlock = new TextBlock()
 {
     Text = "Text",
-    Style = (Windows.UI.Xaml.Style)this.Resources["MyTextBlockStyle"]
+    Style = (Microsoft.UI.Xaml.Style)this.Resources["MyTextBlockStyle"]
 };
 ```
 
@@ -212,7 +212,7 @@ var myTextBlock = new TextBlock()
 TextBlock myTextBlock;
 myTextBlock.Text(L"Text");
 myTextBlock.Style(
-    winrt::unbox_value<Windows::UI::Xaml::Style>(
+    winrt::unbox_value<Microsoft::UI::Xaml::Style>(
         Resources().Lookup(
             winrt::box_value(L"MyTextBlockStyle")
         )
@@ -293,29 +293,29 @@ Also see [Porting the **BuildClipboardFormatsOutputString** method](./clipboard-
 
 This example is taken from the [Barcode scanner sample](/samples/microsoft/windows-universal-samples/barcodescanner/).
 
-When you want to do work on the main UI thread in a C# project, you typically use the [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) method, like this.
+When you want to do work on the main UI thread in a C# project, you typically use the [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) method (or the older **CoreDispatcher.RunAsync** in UWP). Here's what the pattern looks like in C#.
 
 ```csharp
 private async void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
 {
-    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+    DispatcherQueue.TryEnqueue(() =>
     {
         // Do work on the main UI thread here.
     });
 }
 ```
 
-It's much simpler to express that in C++/WinRT. Notice that we're accepting parameters by value on the assumption we'll want to access them after the first suspension point (the `co_await`, in this case). For more info, see [Parameter-passing](./concurrency.md#parameter-passing).
+It's much simpler to express that in C++/WinRT. Notice that we're accepting parameters by value on the assumption we'll want to access them after the first suspension point (the `co_await`, in this case). For more info, see [Parameter-passing](/windows/uwp/cpp-and-winrt-apis/concurrency#parameter-passing).
 
 ```cppwinrt
 winrt::fire_and_forget Watcher_Added(DeviceWatcher sender, winrt::DeviceInformation args)
 {
-    co_await Dispatcher();
+    co_await DispatcherQueue();
     // Do work on the main UI thread here.
 }
 ```
 
-If you need to do the work at a priority other than the default, then see the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function, which has an overload that takes a priority. For code examples showing how to await a call to **winrt::resume_foreground**, see [Programming with thread affinity in mind](./concurrency-2.md#programming-with-thread-affinity-in-mind).
+If you need to do the work at a priority other than the default, then see the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function, which has an overload that takes a priority. For code examples showing how to await a call to **winrt::resume_foreground**, see [Programming with thread affinity in mind](/windows/uwp/cpp-and-winrt-apis/concurrency-2#programming-with-thread-affinity-in-mind).
 
 ## Porting-related tasks that are specific to C++/WinRT
 
@@ -329,7 +329,7 @@ In C++/WinRT, whenever you want to use a type from a Windows namespaces, you nee
 
 ### Boxing and unboxing
 
-C# automatically boxes scalars into objects. C++/WinRT requires you to call the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function explicitly. Both languages require you to unbox explicitly. See [Boxing and unboxing with C++/WinRT](./boxing.md).
+C# automatically boxes scalars into objects. C++/WinRT requires you to call the [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) function explicitly. Both languages require you to unbox explicitly. See [Boxing and unboxing with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/boxing).
 
 In the tables that follows, we'll use these definitions.
 
@@ -384,11 +384,11 @@ Basic boxing and unboxing.
 
 ### Making a class available to the {Binding} markup extension
 
-If you intend to use the {Binding} markup extension to data bind to your data type, then see [Binding object declared using {Binding}](../data-binding/data-binding-in-depth.md#binding-object-declared-using-binding).
+If you intend to use the {Binding} markup extension to data bind to your data type, then see [Binding object declared using {Binding}](/windows/uwp/data-binding/data-binding-in-depth#binding-object-declared-using-binding).
 
 ### Consuming objects from XAML markup
 
-In a C# project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](../xaml-platform/x-bind-markup-extension.md) must be exposed publicly in IDL.
+In a C# project, you can consume private members and named elements from XAML markup. But in C++/WinRT, all entities consumed by using the XAML [**{x:Bind} markup extension**](/windows/uwp/xaml-platform/x-bind-markup-extension) must be exposed publicly in IDL.
 
 Also, binding to a Boolean displays `true` or `false` in C#, but it shows **Windows.Foundation.IReference`1\<Boolean\>** in C++/WinRT.
 
@@ -410,7 +410,7 @@ namespace Bookstore
         Windows.Foundation.Collections.IObservableVector<BookSku> BookSkus{ get; };
     }
 
-    runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    runtimeclass MainPage : Microsoft.UI.Xaml.Controls.Page
     {
         MainPage();
         BookstoreViewModel MainViewModel{ get; };
@@ -442,7 +442,7 @@ private:
 ...
 ```
 
-For more info, see [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md), and [Collections with C++/WinRT](./collections.md).
+For more info, see [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection), and [Collections with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/collections).
 
 ### Making a data source available to XAML markup (prior to C++/WinRT 2.0.190530.8)
 
@@ -514,7 +514,7 @@ Widget MyPage::BookstoreViewModel(winrt::hstring title)
 In order to derive from a runtime class, the base class must be *composable*. C# doesn't require that you take any special steps to make your classes composable, but C++/WinRT does. You use the [unsealed keyword](/uwp/midl-3/intro#base-classes) to indicate that you want your class to be usable as a base class.
 
 ```idl
-unsealed runtimeclass BasePage : Windows.UI.Xaml.Controls.Page
+unsealed runtimeclass BasePage : Microsoft.UI.Xaml.Controls.Page
 {
     ...
 }
@@ -545,5 +545,5 @@ namespace winrt::MyNamespace::implementation
 
 ## Related topics
 * [C# tutorials](/visualstudio/get-started/csharp)
-* [C++/WinRT](./index.md)
-* [Data binding in depth](../data-binding/data-binding-in-depth.md)
+* [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index)
+* [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth)
