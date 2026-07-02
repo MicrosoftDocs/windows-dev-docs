@@ -24,7 +24,7 @@ The design and coding instructions in this section help you customize your WinUI
 |-------|-------------|
 | [Identify input devices](identify-input-devices.md) | Identify the input devices connected to a Windows app device and identify their capabilities and attributes. |
 | [Pointer](handle-pointer-input.md) | Receive, process, and manage input data from pointing devices such as touch, mouse, pen/stylus, and touchpad. |
-| [Pen and Windows Ink](/windows/uwp/design/input/pen-and-stylus-interactions) | Optimize your app for pen input to provide both standard pointer device functionality and the best Windows Ink experience for your users. |
+| [Pen and Windows Ink](pen-and-stylus-interactions.md) | Optimize your app for pen input to provide both standard pointer device functionality and the best Windows Ink experience for your users. |
 | [Touch](touch-interactions.md) | Handle touch input, enabling immersive experiences that your users can explore with confidence. |
 | [Mouse](mouse-interactions.md) | Handle mouse input in your app, including button clicks, scroll wheel, and pointer movement. |
 | [Keyboard](keyboard-interactions.md) | Handle keyboard input, an essential part of the interaction experience and indispensable for accessibility. |
