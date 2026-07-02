@@ -50,7 +50,7 @@ The design and coding instructions in this section help you customize your WinUI
 
 | Topic | Description |
 |-------|-------------|
-| [Speech](/windows/uwp/design/input/speech-interactions) | Integrate speech recognition and text-to-speech directly into the user experience of your app. |
+| [Speech](speech-interactions.md) | Integrate speech recognition and text-to-speech directly into the user experience of your app. |
 | [Haptics](/windows/apps/design/signature-experiences/haptics) | Add touch feedback to reinforce user input and create more responsive, intuitive interactions. |
 
 ## Related topics
