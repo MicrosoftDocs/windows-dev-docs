@@ -9,7 +9,7 @@ ms.collection: windows11
 
 # Windows versions and SDK overview
 
-Windows app developers work with three separate versioning systems: the **Windows OS version**, the **Windows SDK**, and the **Windows App SDK**. Each has its own version number and update cadence. This article defines each component, explains how they relate, and provides rules for choosing the correct versions for your project.
+When you start building Windows apps, you'll notice references to several different version numbers — the Windows OS version, the Windows SDK, and the Windows App SDK. Don't worry: for most new projects, Visual Studio sets sensible defaults and you won't need to think about this at all. But when you do need to target a specific OS version, understand why an API isn't available, or configure your project file, this article explains how the pieces fit together and what choices to make.
 
 ## Definitions
 
