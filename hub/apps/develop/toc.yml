@@ -1385,6 +1385,72 @@ items:
                 href: platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
               - name: Diagnose component errors
                 href: platform/csharp-winrt/authoring-diagnostics.md
+      - name: C++/WinRT
+        items:
+          - name: Overview
+            href: cpp-winrt/index.md
+          - name: Introduction to C++/WinRT
+            href: cpp-winrt/intro-to-using-cpp-with-winrt.md
+          - name: Get started
+            href: cpp-winrt/get-started.md
+          - name: Concurrency and asynchronous operations
+            href: cpp-winrt/concurrency.md
+          - name: A completion source sample
+            href: cpp-winrt/concurrency-3.md
+          - name: Collections
+            href: cpp-winrt/collections.md
+          - name: XAML items controls; bind to a collection
+            href: cpp-winrt/binding-collection.md
+          - name: Boxing and unboxing values
+            href: cpp-winrt/boxing.md
+          - name: Standard C++ data types
+            href: cpp-winrt/std-cpp-data-types.md
+          - name: Author COM components
+            href: cpp-winrt/author-coclasses.md
+          - name: Passing parameters into the ABI boundary
+            href: cpp-winrt/pass-parms-to-abi.md
+          - name: Interop between C++/WinRT and the ABI
+            href: cpp-winrt/interop-winrt-abi.md
+          - name: Use a C# component from C++/WinRT
+            href: cpp-winrt/use-csharp-component-from-cpp-winrt.md
+          - name: Photo Editor sample application
+            href: cpp-winrt/photo-editor-sample.md
+          - name: A simple WinUI 3 example
+            href: cpp-winrt/simple-winui-example.md
+          - name: Agile objects
+            href: cpp-winrt/agile-objects.md
+          - name: Value categories and references
+            href: cpp-winrt/cpp-value-categories.md
+          - name: Naming conventions
+            href: cpp-winrt/naming.md
+          - name: Native debug visualization (natvis)
+            href: cpp-winrt/natvis.md
+          - name: Macros
+            href: cpp-winrt/macros.md
+          - name: Diagnosing direct allocations
+            href: cpp-winrt/diag-direct-alloc.md
+          - name: Author APIs with C++/WinRT
+            href: cpp-winrt/author-apis.md
+          - name: Consume APIs with C++/WinRT
+            href: cpp-winrt/consume-apis.md
+          - name: String handling in C++/WinRT
+            href: cpp-winrt/strings.md
+          - name: Error handling with C++/WinRT
+            href: cpp-winrt/error-handling.md
+          - name: Calling and overriding your base type with C++/WinRT
+            href: cpp-winrt/base-type.md
+          - name: XAML controls; bind to a C++/WinRT property
+            href: cpp-winrt/binding-property.md
+          - name: XAML custom (templated) controls with C++/WinRT
+            href: cpp-winrt/xaml-cust-ctrl.md
+          - name: Move to C++/WinRT from C#
+            href: cpp-winrt/move-to-winrt-from-csharp.md
+          - name: Move to C++/WinRT from C++/CX
+            href: cpp-winrt/move-to-winrt-from-cx.md
+          - name: "Porting the Clipboard sample to C++/WinRT from C#"
+            href: cpp-winrt/clipboard-to-winrt-from-csharp.md
+          - name: Troubleshooting C++/WinRT issues
+            href: cpp-winrt/troubleshooting.md
       - name: XAML
         items:
           - name: Overview

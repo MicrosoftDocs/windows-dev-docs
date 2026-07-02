@@ -1,9 +1,9 @@
 ---
 description: An introduction to C++/WinRT&mdash;a standard C++ language projection for Windows Runtime APIs.
 title: Introduction to C++/WinRT
-ms.date: 11/11/2021
+ms.date: 06/01/2026
 ms.topic: concept-article
-keywords: windows 11, windows 10, uwp, standard, c++, cpp, winrt, projection, introduction
+keywords: windows 11, windows 10, standard, c++, cpp, winrt, projection, introduction, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
@@ -16,12 +16,12 @@ ms.localizationpriority: medium
 
 C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler. The Windows SDK includes C++/WinRT; it was introduced in version 10.0.17134.0 (Windows 10, version 1803).
 
-C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). The full list of [topics about C++/WinRT](index.md#topics-about-cwinrt) includes info about both interoperating with, and porting from, C++/CX and WRL.
+C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). The full list of [topics about C++/WinRT](./index.md) includes info about both interoperating with, and porting from, C++/CX and WRL.
 
 > [!IMPORTANT]
 > Some of the most important pieces of C++/WinRT to be aware of are described in the sections [SDK support for C++/WinRT](#sdk-support-for-cwinrt) and [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
-Also see [Where can I find C++/WinRT sample apps?](./faq.yml#where-can-i-find-c---winrt-sample-apps-).
+Also see [Where can I find C++/WinRT sample apps?](/windows/uwp/cpp-and-winrt-apis/faq#where-can-i-find-c---winrt-sample-apps-).
 
 ## Language projections
 The Windows Runtime is based on Component Object Model (COM) APIs, and it's designed to be accessed through *language projections*. A projection hides the COM details, and provides a more natural programming experience for a given language.
@@ -57,9 +57,9 @@ Alternatively, you can convert an existing project by manually installing the **
 
 With your system set up as described above, you'll be able to create and build, or open, a C++/WinRT project in Visual Studio, and deploy it.
 
-As of version 2.0, the **Microsoft.Windows.CppWinRT** NuGet package includes the `cppwinrt.exe` tool. You can point the `cppwinrt.exe` tool at a Windows Runtime metadata (`.winmd`) file to generate a header-file-based standard C++ library that *projects* the APIs described in the metadata for consumption from C++/WinRT code. Windows Runtime metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. By pointing `cppwinrt.exe` at metadata, you can generate a library for use with any runtime class implemented in a second- or third-party Windows Runtime component, or implemented in your own application. For more info, see [Consume APIs with C++/WinRT](consume-apis.md).
+As of version 2.0, the **Microsoft.Windows.CppWinRT** NuGet package includes the `cppwinrt.exe` tool. You can point the `cppwinrt.exe` tool at a Windows Runtime metadata (`.winmd`) file to generate a header-file-based standard C++ library that *projects* the APIs described in the metadata for consumption from C++/WinRT code. Windows Runtime metadata (`.winmd`) files provide a canonical way of describing a Windows Runtime API surface. By pointing `cppwinrt.exe` at metadata, you can generate a library for use with any runtime class implemented in a second- or third-party Windows Runtime component, or implemented in your own application. For more info, see [Consume APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-apis).
 
-With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](author-apis.md).
+With C++/WinRT, you can also implement your own runtime classes using standard C++, without resorting to COM-style programming. For a runtime class, you just describe your types in an IDL file, and `midl.exe` and `cppwinrt.exe` generate your implementation boilerplate source code files for you. You can alternatively just implement interfaces by deriving from a C++/WinRT base class. For more info, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 For a list of customization options for the `cppwinrt.exe` tool, set via project properties, see the Microsoft.Windows.CppWinRT NuGet package [readme](https://github.com/microsoft/cppwinrt/blob/master/nuget/readme.md#customizing).
 
@@ -68,14 +68,14 @@ You can identify a project that uses the C++/WinRT MSBuild support by the presen
 Here are the Visual Studio project templates provided by the VSIX extension.
 
 ### Blank App (C++/WinRT)
-A project template for a Universal Windows Platform (UWP) app that has a XAML user-interface.
+A project template for a Universal Windows Platform (UWP) app that has a XAML user-interface. For WinUI 3 desktop apps, use the **Blank App, Packaged (WinUI 3 in Desktop)** template instead.
 
-Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those stub type definitions for reference to implement your local runtime classes. See [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
+Visual Studio provides XAML compiler support to generate implementation and header stubs from the Interface Definition Language (IDL) (`.idl`) file that sits behind each XAML markup file. In an IDL file, define any local runtime classes that you want to reference in your app's XAML pages, and then build the project once to generate implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those stub type definitions for reference to implement your local runtime classes. See [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
-The XAML design surface support in Visual Studio for C++/WinRT is close to parity with C#. In Visual Studio, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](handle-events.md) for more info.
+The XAML design surface support in Visual Studio for C++/WinRT is close to parity with C#. In Visual Studio, you can use the **Events** tab of the **Properties** window to add event handlers within a C++/WinRT project. You can also add event handlers to your code manually&mdash;see [Handle events by using delegates in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/handle-events) for more info.
 
 ### Core App (C++/WinRT)
-A project template for a Universal Windows Platform (UWP) app that doesn't use XAML.
+A project template for a Universal Windows Platform (UWP) app that doesn't use XAML. There is no WinUI 3 equivalent of this template.
 
 Instead, it uses the C++/WinRT Windows namespace header for the Windows.ApplicationModel.Core namespace. After building and running, click on an empty space to add a colored square; then click on a colored square to drag it.
 
@@ -90,7 +90,7 @@ A project template for a component; typically for consumption from a Universal W
 
 This template demonstrates the `midl.exe` > `cppwinrt.exe` toolchain, where Windows Runtime metadata (`.winmd`) is generated from IDL, and then implementation and header stubs are generated from the Windows Runtime metadata.
 
-In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. See [Factoring runtime classes into Midl files (.idl)](./author-apis.md#factoring-runtime-classes-into-midl-files-idl).
+In an IDL file, define the runtime classes in your component, their default interface, and any other interfaces they implement. Build the project once to generate `module.g.cpp`, `module.h.cpp`, implementation templates in `Generated Files`, and stub type definitions in `Generated Files\sources`. Then use those the stub type definitions for reference to implement the runtime classes in your component. See [Factoring runtime classes into Midl files (.idl)](/windows/uwp/cpp-and-winrt-apis/author-apis#factoring-runtime-classes-into-midl-files-idl).
 
 Bundle the built Windows Runtime component binary and its `.winmd` with the UWP app consuming them.
 
@@ -131,7 +131,7 @@ Although it is now present only for compatibility reasons, as of version 10.0.17
 Again for compatibility, the Windows SDK also comes with the `cppwinrt.exe` tool. However, we recommend that you instead install and use the most recent version of `cppwinrt.exe`, which is included with the **Microsoft.Windows.CppWinRT** NuGet package. That package, and `cppwinrt.exe`, are described in the sections above.
 
 ## Custom types in the C++/WinRT projection
-In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)&mdash;including some C++ Standard Library data types. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](get-started.md).
+In your C++/WinRT programming, you can use standard C++ language features and [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md)&mdash;including some C++ Standard Library data types. But you'll also become aware of some custom data types in the projection, and you can choose to use them. For example, we use [**winrt::hstring**](/uwp/cpp-ref-for-winrt/hstring) in the quick-start code example in [Get started with C++/WinRT](./get-started.md).
 
 [**winrt::com_array**](/uwp/cpp-ref-for-winrt/com-array) is another type that you're likely to use at some point. But you're less likely to directly use a type such as [**winrt::array_view**](/uwp/cpp-ref-for-winrt/array-view). Or you may choose not to use it so that you won't have any code to change if and when an equivalent type appears in the C++ Standard Library.
 
@@ -147,7 +147,7 @@ In your C++/WinRT programming, you can use standard C++ language features and [S
 ## Related topics
 * [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx)
 * [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
-* [Get started with C++/WinRT](get-started.md)
-* [Standard C++ data types and C++/WinRT](std-cpp-data-types.md)
-* [String handling in C++/WinRT](strings.md)
+* [Get started with C++/WinRT](./get-started.md)
+* [Standard C++ data types and C++/WinRT](./std-cpp-data-types.md)
+* [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)
 * [Windows Runtime APIs](/uwp/api/)

@@ -12,10 +12,10 @@ ms.localizationpriority: medium
 > [!IMPORTANT]
 > **Building with the Windows App SDK?** This article's code uses UWP (`Windows.UI.Xaml`) namespaces. If your project targets WinUI 3 (Windows App SDK), substitute `Microsoft.UI.Xaml` (and related `Microsoft.UI.*` namespaces) throughout. See [Mapping UWP APIs to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table) for a complete mapping and [UI migration guide](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3) for additional details.
 
-This topic shows how to register and revoke event-handling delegates using [C++/WinRT](./intro-to-using-cpp-with-winrt.md). You can handle an event using any standard C++ function-like object.
+This topic shows how to register and revoke event-handling delegates using [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). You can handle an event using any standard C++ function-like object.
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Using Visual Studio to add an event handler
 
@@ -277,7 +277,7 @@ void ProcessFeedAsync()
 }
 ```
 
-As the "coroutine" comment above suggests, instead of using a delegate with the completed events of asynchronous actions and operations, you'll probably find it more natural to use coroutines. For details, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
+As the "coroutine" comment above suggests, instead of using a delegate with the completed events of asynchronous actions and operations, you'll probably find it more natural to use coroutines. For details, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency).
 
 > [!NOTE]
 > It's not correct to implement more than one *completion handler* for an asynchronous action or operation. You can have either a single delegate for its completed event, or you can `co_await` it. If you have both, then the second will fail.
@@ -319,5 +319,5 @@ If you handle an event with an object's member function, or from within a lambda
 
 ## Related topics
 * [Author events in C++/WinRT](./author-events.md)
-* [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md)
+* [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency)
 * [Strong and weak references in C++/WinRT](./weak-references.md)

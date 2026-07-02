@@ -26,7 +26,7 @@ More details on the implementation are available in [Create and register a Win32
 
 ## In-proc background tasks
 
-For in-proc background tasks in UWP, background task routines are implemented in the [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated) callback which runs as part of the foreground process. This won't be possible in a WinUI application as the **OnBackgroundActivated** callbacks aren't available. The application needs to move the background task implementations to full trust COM tasks as described above and define the COM server in the package manifest to handle the COM activation of the task. When the trigger occurs, COM activation will happen on the corresponding [COM Coclass](/windows/uwp/cpp-and-winrt-apis/author-coclasses#implement-the-coclass-and-class-factory) registered for the trigger.
+For in-proc background tasks in UWP, background task routines are implemented in the [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated) callback which runs as part of the foreground process. This won't be possible in a WinUI application as the **OnBackgroundActivated** callbacks aren't available. The application needs to move the background task implementations to full trust COM tasks as described above and define the COM server in the package manifest to handle the COM activation of the task. When the trigger occurs, COM activation will happen on the corresponding [COM Coclass](/windows/apps/develop/cpp-winrt/author-coclasses#implement-the-coclass-and-class-factory) registered for the trigger.
 
 A full WinUI background task registration sample can be found on [GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/BackgroundTask).
 

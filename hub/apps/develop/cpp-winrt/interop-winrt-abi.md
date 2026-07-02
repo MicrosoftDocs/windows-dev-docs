@@ -1,9 +1,9 @@
 ---
 description: This topic shows how to convert between application binary interface (ABI) and C++/WinRT objects.
 title: Interop between C++/WinRT and the ABI
-ms.date: 09/29/2023
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, port, migrate, interop, ABI
+keywords: windows 10, standard, c++, cpp, winrt, projection, port, migrate, interop, ABI, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
@@ -284,7 +284,7 @@ To to_winrt(wil::com_ptr_t<From, ErrorPolicy> const& ptr)
 }
 ```
 
-Also see [Consume COM components with C++/WinRT](./consume-com.md).
+Also see [Consume COM components with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
 
 ### Unsafe interop with ABI COM interface pointers
 

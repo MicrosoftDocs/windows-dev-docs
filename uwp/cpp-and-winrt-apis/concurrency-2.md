@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 This topic describes advanced scenarios with concurrency and asynchrony in C++/WinRT.
 
-For an introduction to this subject, first read [Concurrency and asynchronous operations](concurrency.md).
+For an introduction to this subject, first read [Concurrency and asynchronous operations](/windows/apps/develop/cpp-winrt/concurrency).
 
 ## Offloading work onto the Windows thread pool
 
@@ -671,7 +671,7 @@ winrt::fire_and_forget MyClass::MyMediaBinder_OnBinding(MediaBinder const&, Medi
 }
 ```
 
-The first argument (the *sender*) is left unnamed, because we never use it. For that reason we're safe to leave it as a reference. But observe that *args* is passed by value. See the [Parameter-passing](concurrency.md#parameter-passing) section above.
+The first argument (the *sender*) is left unnamed, because we never use it. For that reason we're safe to leave it as a reference. But observe that *args* is passed by value. See the [Parameter-passing](/windows/apps/develop/cpp-winrt/concurrency#parameter-passing) section above.
 
 ## Awaiting a kernel handle
 
@@ -687,7 +687,7 @@ IAsyncAction Async(HANDLE event)
 
 The incoming **HANDLE** is valid only until the function returns, and this function (which is a coroutine) returns at the first suspension point (the first `co_await` in this case). While awaiting **DoWorkAsync**, control has returned to the caller, the calling frame has gone out of scope, and you no longer know whether the handle will be valid when your coroutine resumes.
 
-Technically, our coroutine is receiving its parameters by value, as it should (see [Parameter-passing](concurrency.md#parameter-passing) above). But in this case we need to go a step further so that we're following the *spirit* of that guidance (rather than just the letter). We need to pass a strong reference (in other words, ownership) along with the handle. Here's how.
+Technically, our coroutine is receiving its parameters by value, as it should (see [Parameter-passing](/windows/apps/develop/cpp-winrt/concurrency#parameter-passing) above). But in this case we need to go a step further so that we're following the *spirit* of that guidance (rather than just the letter). We need to pass a strong reference (in other words, ownership) along with the handle. Here's how.
 
 ```cppwinrt
 IAsyncAction Async(winrt::handle event)
@@ -897,5 +897,5 @@ property_value.GetInt32Array(my_array); // Unbox back into an array.
 * [winrt::resume_foreground](/uwp/cpp-ref-for-winrt/resume-foreground)
 
 ## Related topics
-* [Concurrency and asynchronous operations](concurrency.md)
+* [Concurrency and asynchronous operations](/windows/apps/develop/cpp-winrt/concurrency)
 * [Handle events by using delegates in C++/WinRT](handle-events.md)

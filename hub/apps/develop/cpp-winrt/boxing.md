@@ -1,9 +1,9 @@
 ---
 description: A scalar or array value needs to be wrapped inside a reference class object before being passed to a function that expects **IInspectable**. That wrapping process is known as *boxing* the value.
 title: Boxing and unboxing values to IInspectable with C++/WinRT
-ms.date: 04/23/2019
+ms.date: 06/01/2026
 ms.topic: concept-article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, XAML, control, boxing, scalar, value
+keywords: windows 10, standard, c++, cpp, winrt, projection, XAML, control, boxing, scalar, value, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 

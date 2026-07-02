@@ -1,9 +1,9 @@
 ---
 title: C++/WinRT naming conventions
 description: This topic explains naming conventions that C++/WinRT has established.
-ms.date: 10/05/2021
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, naming conventions
+keywords: windows 10, standard, c++, cpp, winrt, projection, naming conventions, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 

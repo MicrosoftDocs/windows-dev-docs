@@ -1,9 +1,9 @@
 ---
 title: A basic C++/WinRT Windows UI Library 2 example (UWP)
 description: This topic walks you through the process of adding basic support for the [Windows UI Library (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT UWP project. Specifically, this topic deals with WinUI 2, which is for UWP apps.
-ms.date: 04/21/2022
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, Windows UI Library, WinUI, WinUI 2
+keywords: windows 10, standard, c++, cpp, winrt, Windows UI Library, WinUI, WinUI 2, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +19,7 @@ This topic walks you through the process of adding basic support for the [Window
 
 ## Create a Blank App (HelloWinUICppWinRT)
 
-In Visual Studio, create a new UWP project using the **Blank App (C++/WinRT)** project template. Make sure that you're using the **(C++/WinRT)** template, and not the **(Universal Windows)** one.
+In Visual Studio, create a new UWP project using the **Blank App (C++/WinRT)** project template (for WinUI 3 desktop apps, use the **Blank App, Packaged (WinUI 3 in Desktop)** template). Make sure that you're using the **(C++/WinRT)** template, and not the **(Universal Windows)** one.
 
 Set the name of the new project to *HelloWinUICppWinRT*, and (so that your folder structure will match the walkthrough) uncheck **Place solution and project in the same directory**.
 

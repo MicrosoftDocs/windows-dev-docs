@@ -12264,6 +12264,111 @@
       "source_path": "uwp/cpp-and-winrt-apis/xaml-cust-ctrl.md",
       "redirect_url": "/windows/apps/develop/cpp-winrt/xaml-cust-ctrl",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/agile-objects.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/agile-objects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/author-coclasses.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/author-coclasses",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/binding-collection.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/binding-collection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/boxing.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/boxing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/collections.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/collections",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/concurrency.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/concurrency",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/concurrency-3.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/concurrency-3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/cpp-value-categories.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/cpp-value-categories",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/diag-direct-alloc.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/diag-direct-alloc",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/get-started.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/get-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/interop-winrt-abi.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/interop-winrt-abi",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/macros.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/macros",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/naming.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/naming",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/natvis.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/natvis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/pass-parms-to-abi.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/pass-parms-to-abi",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/photo-editor-sample.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/photo-editor-sample",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/simple-winui-example.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/simple-winui-example",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/std-cpp-data-types.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/std-cpp-data-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/use-csharp-component-from-cpp-winrt",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/index.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/",
+      "redirect_document_id": false
     }
   ]
 }

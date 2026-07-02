@@ -27,7 +27,7 @@ Read and write a file using a [StorageFile](/uwp/api/windows.storage.storagefile
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/concurrency).
+    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency).
 
 -   **Know how to get the file that you want to read from, write to, or both**
 
@@ -170,7 +170,7 @@ Windows::Foundation::IAsyncAction ExampleCoroutineAsync()
     
     
 
-2.  Next, get an output stream by calling the [IRandomAccessStream.GetOutputStreamAt](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`. If you're using C#, then enclose this in a using statement to manage the output stream's lifetime. If you're using [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.
+2.  Next, get an output stream by calling the [IRandomAccessStream.GetOutputStreamAt](/uwp/api/windows.storage.streams.irandomaccessstream.getoutputstreamat) method from the `stream`. If you're using C#, then enclose this in a using statement to manage the output stream's lifetime. If you're using [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt), then you can control its lifetime by enclosing it in a block, or setting it to `nullptr` when you're done with it.
 
     ```csharp
     using (var outputStream = stream.GetOutputStreamAt(0))

@@ -180,7 +180,7 @@ Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume WinRT APIs from C++
 - Install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package.
 - Because C++/WinRT uses features from the C++17 standard, ensure the project property **C/C++ > Language > C++ Language Standard** is set to **ISO C++17 Standard (/std:c++17)** or later in Visual Studio.
 
-For more details, see [Visual Studio support for C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For more details, see [Visual Studio support for C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 :::zone-end
 

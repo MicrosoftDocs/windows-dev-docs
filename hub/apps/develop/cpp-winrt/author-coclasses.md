@@ -1,9 +1,9 @@
 ---
 description: C++/WinRT can help you to author classic COM components, just as it helps you to author Windows Runtime classes.
 title: Author COM components with C++/WinRT
-ms.date: 04/24/2019
+ms.date: 06/01/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, author, COM, component
+keywords: windows 10, standard, c++, cpp, winrt, projection, author, COM, component, windows app sdk, winui 3
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -142,7 +142,7 @@ int main()
 }
 ```
 
-Also see [Consume COM components with C++/WinRT](consume-com.md).
+Also see [Consume COM components with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com).
 
 ## A more realistic and interesting example
 
@@ -250,7 +250,7 @@ struct callback_factory : implements<callback_factory, IClassFactory>
 };
 ```
 
-The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](./author-apis.md#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](/windows/win32/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
+The implementation of the coclass above follows the same pattern that's demonstrated in [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis#if-youre-not-authoring-a-runtime-class). So, you can use the same technique to implement COM interfaces as well as Windows Runtime interfaces. COM components and Windows Runtime classes expose their features via interfaces. Every COM interface ultimately derives from the [**IUnknown interface**](/windows/win32/api/unknwn/nn-unknwn-iunknown) interface. The Windows Runtime is based on COM&mdash;one distinction being that Windows Runtime interfaces ultimately derive from the [**IInspectable interface**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (and **IInspectable** derives from **IUnknown**).
 
 In the coclass in the code above, we implement the **INotificationActivationCallback::Activate** method, which is the function that's called when the user clicks the callback button on a toast notification. But before that function can be called, an instance of the coclass needs to be created, and that's the job of the **IClassFactory::CreateInstance** function.
 
@@ -601,7 +601,7 @@ HRESULT __stdcall DllGetClassObject(GUID const& clsid, GUID const& iid, void** r
 
 ## Support for weak references
 
-Also see [Weak references in C++/WinRT](weak-references.md#weak-references-in-cwinrt).
+Also see [Weak references in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/weak-references#weak-references-in-cwinrt).
 
 C++/WinRT (specifically, the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) base struct template) implements [**IWeakReferenceSource**](/windows/desktop/api/weakreference/nn-weakreference-iweakreferencesource) for you if your type implements [**IInspectable**](/windows/desktop/api/inspectable/nn-inspectable-iinspectable) (or any interface that derives from **IInspectable**).
 
@@ -686,6 +686,6 @@ The specialization of **winrt::is_guid_of** must be identical across all files i
 * [winrt::implements struct template](/uwp/cpp-ref-for-winrt/implements)
 
 ## Related topics
-* [Author APIs with C++/WinRT](./author-apis.md)
-* [Consume COM components with C++/WinRT](consume-com.md)
+* [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis)
+* [Consume COM components with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/consume-com)
 * [Send a local toast notification](/windows/apps/design/shell/tiles-and-notifications/send-local-toast)

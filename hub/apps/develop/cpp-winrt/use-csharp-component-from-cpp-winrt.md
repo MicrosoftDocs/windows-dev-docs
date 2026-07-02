@@ -1,9 +1,9 @@
 ---
 description: This topic walks you through the process of adding a simple C# component to a C++/WinRT app
 title: Authoring a C# Windows Runtime component for use from a C++/WinRT app
-ms.date: 12/30/2020
+ms.date: 06/01/2026
 ms.topic: concept-article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, C#
+keywords: windows 10, standard, c++, cpp, winrt, C#, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
@@ -16,12 +16,12 @@ Visual Studio makes it easy to author and deploy your own custom Windows Runtime
 Internally, your Windows Runtime types can use any .NET functionality that's allowed in a UWP application.
 
 > [!NOTE]
-> For more info, see [Windows Runtime components with C# and Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for UWP apps overview](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
+> For more info, see [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic) and [.NET for UWP apps overview](/dotnet/api/index?view=dotnet-uwp-10.0&preserve-view=true).
 
 Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET WRC project, and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component (WRC),  which Visual Studio includes in your app.
 
 > [!NOTE]
-> .NET automatically maps some commonly used .NET types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Windows Runtime components with C# and Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+> .NET automatically maps some commonly used .NET types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic).
 
 ## Prerequisites
 
@@ -30,7 +30,7 @@ Externally, the members of your type can expose only Windows Runtime types for t
 
 ## Create a Blank App
 
-In Visual Studio, create a new project using the **Blank App (C++/WinRT)** project template. Make sure that you're using the **(C++/WinRT)** template, and not the **(Universal Windows)** one.
+In Visual Studio, create a new project using the **Blank App (C++/WinRT)** project template (for WinUI 3 desktop apps, use the **Blank App, Packaged (WinUI 3 in Desktop)** template). Make sure that you're using the **(C++/WinRT)** template, and not the **(Universal Windows)** one.
 
 Set the name of the new project to *CppToCSharpWinRT* so that your folder structure will match the walkthrough.
 
@@ -120,7 +120,7 @@ You can now build and run the project. Each time you click the button, the numbe
 
 ## Application Minimum Version
 
-The [**Application Minimum**](../updates-and-versions/choose-a-uwp-version.md) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or later will enable .NET Standard 2.0 and Windows Arm64 processor support.
+The [**Application Minimum**](/windows/uwp/updates-and-versions/choose-a-uwp-version) of the C# project version will control the version of .NET used to compile the application. For example, choosing **Windows 10 Fall Creators Update (10.0; Build 16299)** or later will enable .NET Standard 2.0 and Windows Arm64 processor support.
 
 > [!TIP]
 > We recommend using **Application Minimum** versions lower than 16299 to avoid extra build configuration if .NET Standard 2.0 or Arm64 support is not necessary.
@@ -249,5 +249,5 @@ Then add the following to the application project file to reference the appropri
 
 ## Related topics
 
-- [Windows Runtime components with C# and Visual Basic](../winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-- [Windows Runtime components with C++/WinRT](../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md)
+- [Windows Runtime components with C# and Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)
+- [Windows Runtime components with C++/WinRT](/windows/uwp/winrt-components/create-a-windows-runtime-component-in-cppwinrt)

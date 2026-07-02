@@ -1,9 +1,9 @@
 ---
 description: This topic describes the various categories of values that exist in C++. You'll doubtless have heard of lvalues and rvalues, but there are other kinds too.
 title: Value categories, and references to them
-ms.date: 02/22/2022
+ms.date: 06/01/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, moving, forwarding, value categories, move semantics, perfect forwarding, lvalue, rvalue, glvalue, prvalue, xvalue
+keywords: windows 10, standard, c++, cpp, winrt, projection, moving, forwarding, value categories, move semantics, perfect forwarding, lvalue, rvalue, glvalue, prvalue, xvalue, windows app sdk, winui 3
 ms.localizationpriority: medium
 ms.custom: RS5
 ---

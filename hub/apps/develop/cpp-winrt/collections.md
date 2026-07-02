@@ -1,9 +1,9 @@
 ---
 description: C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections.
 title: Collections with C++/WinRT
-ms.date: 04/23/2019
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, collection
+keywords: windows 10, standard, c++, cpp, winrt, projection, collection, windows app sdk, winui 3
 ms.localizationpriority: medium
 ms.custom: RS5
 ---
@@ -14,7 +14,7 @@ Internally, a Windows Runtime collection has a lot of complicated moving parts. 
 
 [**IVector**](/uwp/api/windows.foundation.collections.ivector_t_) is the Windows Runtime interface implemented by any random-access collection of elements. If you were to implement **IVector** yourself, you'd also need to implement [**IIterable**](/uwp/api/windows.foundation.collections.iiterable_t_), [**IVectorView**](/uwp/api/windows.foundation.collections.ivectorview_t_), and [**IIterator**](/uwp/api/windows.foundation.collections.iiterator_t_). Even if you *need* a custom collection type, that's a lot of work. But if you have data in a **std::vector** (or a **std::map**, or a **std::unordered_map**) and all you want to do is pass that to a Windows Runtime API, then you'd want to avoid doing that level of work, if possible. And avoiding it *is* possible, because C++/WinRT helps you to create collections efficiently and with little effort.
 
-Also see [XAML items controls; bind to a C++/WinRT collection](binding-collection.md).
+Also see [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md).
 
 ## Helper functions for collections
 
@@ -72,11 +72,11 @@ for (auto const& el : coll2)
 }
 ```
 
-You can pass a temporary object containing your data to **winrt::single_threaded_vector**, as with `coll1`, above. Or you can move a **std::vector** (assuming you won't be accessing it again) into the function. In both cases, you're passing an *rvalue* into the function. That enables the compiler to be efficient and to avoid copying the data. If you want to know more about *rvalues*, see [Value categories, and references to them](cpp-value-categories.md).
+You can pass a temporary object containing your data to **winrt::single_threaded_vector**, as with `coll1`, above. Or you can move a **std::vector** (assuming you won't be accessing it again) into the function. In both cases, you're passing an *rvalue* into the function. That enables the compiler to be efficient and to avoid copying the data. If you want to know more about *rvalues*, see [Value categories, and references to them](./cpp-value-categories.md).
 
 If you want to bind a XAML items control to your collection, then you can. But be aware that to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IVector** of **IInspectable** (or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)).
 
-Here's a code example that produces a collection of a type suitable for binding, and appends an element to it. You can find the context for this code example in [XAML items controls; bind to a C++/WinRT collection](binding-collection.md).
+Here's a code example that produces a collection of a type suitable for binding, and appends an element to it. You can find the context for this code example in [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md).
 
 ```cppwinrt
 auto bookSkus{ winrt::single_threaded_vector<Windows::Foundation::IInspectable>() };
@@ -102,7 +102,7 @@ The object is returned as an [**IObservableVector**](/uwp/api/windows.foundation
 auto bookSkus{ winrt::single_threaded_observable_vector<Windows::Foundation::IInspectable>() };
 ```
 
-For more details, and code examples, about binding your user interface (UI) controls to an observable collection, see [XAML items controls; bind to a C++/WinRT collection](binding-collection.md).
+For more details, and code examples, about binding your user interface (UI) controls to an observable collection, see [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md).
 
 ### Associative collection (map)
 
@@ -128,7 +128,7 @@ auto coll2{ winrt::single_threaded_map<winrt::hstring, int>(std::move(values)) }
 
 ### Single-threaded
 
-The "single-threaded" in the names of these functions indicates that they don't provide any concurrency&mdash;in other words, they're not thread-safe. The mention of threads is unrelated to apartments, because the objects returned from these functions are all agile (see [Agile objects in C++/WinRT](agile-objects.md)). It's just that the objects are single-threaded. And that's entirely appropriate if you just want to pass data one way or the other across the application binary interface (ABI).
+The "single-threaded" in the names of these functions indicates that they don't provide any concurrency&mdash;in other words, they're not thread-safe. The mention of threads is unrelated to apartments, because the objects returned from these functions are all agile (see [Agile objects in C++/WinRT](./agile-objects.md)). It's just that the objects are single-threaded. And that's entirely appropriate if you just want to pass data one way or the other across the application binary interface (ABI).
 
 ## Base classes for collections
 
@@ -338,5 +338,5 @@ private:
 * [winrt::vector_view_base struct template](/uwp/cpp-ref-for-winrt/vector-view-base)
 
 ## Related topics
-* [Value categories, and references to them](cpp-value-categories.md)
-* [XAML items controls; bind to a C++/WinRT collection](binding-collection.md)
+* [Value categories, and references to them](./cpp-value-categories.md)
+* [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md)

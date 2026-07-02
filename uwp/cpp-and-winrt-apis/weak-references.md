@@ -13,7 +13,7 @@ ms.custom: RS5
 > [!IMPORTANT]
 > **Building with the Windows App SDK?** This article's code uses UWP (`Windows.UI.Xaml`) namespaces. If your project targets WinUI 3 (Windows App SDK), substitute `Microsoft.UI.Xaml` (and related `Microsoft.UI.*` namespaces) throughout. See [Mapping UWP APIs to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table) for a complete mapping and [UI migration guide](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3) for additional details.
 
-The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](./intro-to-using-cpp-with-winrt.md) meets you halfway in your work of building more complex systems simply and correctly.
+The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) meets you halfway in your work of building more complex systems simply and correctly.
 
 > [!NOTE]
 > With only a few exceptions, weak reference support is on by default for Windows Runtime types that you consume or author in [C++/WinRT](./index.md). **Windows.UI.Composition** and **Windows.Devices.Input.PenDevice** are examples of exceptions&mdash;that is, namespaces where weak reference support is *not* on for those types. Also see [If your auto-revoke delegate fails to register](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register).
@@ -22,7 +22,7 @@ The Windows Runtime is a reference-counted system; and in such a system it's imp
 
 ## Safely accessing the *this* pointer in a class-member coroutine
 
-For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
+For more info about coroutines, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency).
 
 The code listing below shows a typical example of a coroutine that's a member function of a class. You can copy-paste this example into the specified files in a new **Windows Console Application (C++/WinRT)** project.
 

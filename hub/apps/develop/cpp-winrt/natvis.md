@@ -1,9 +1,9 @@
 ---
 title: Visual Studio native debug visualization for C++/WinRT
 description: The [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) gives you Visual Studio native debug visualization (natvis) of C++/WinRT projected types. This provides you an experience similar to C# debugging.
-ms.date: 04/20/2021
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, Visual Studio, native debug visualization, debug visualization, visualization
+keywords: windows 10, standard, c++, cpp, winrt, projection, Visual Studio, native debug visualization, debug visualization, visualization, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 

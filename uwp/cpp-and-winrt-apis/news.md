@@ -39,7 +39,7 @@ That improvement doesn't affect code size&mdash;as described below in [Optimized
 
 ### More efficient boxing
 
-When used in a XAML application, [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) is now more efficient (see [Boxing and unboxing](./boxing.md)). Applications that do a lot of boxing will also notice a reduction in code size.
+When used in a XAML application, [**winrt::box_value**](/uwp/cpp-ref-for-winrt/box-value) is now more efficient (see [Boxing and unboxing](/windows/apps/develop/cpp-winrt/boxing)). Applications that do a lot of boxing will also notice a reduction in code size.
 
 ### Support for implementing COM interfaces that implement IInspectable
 
@@ -73,7 +73,7 @@ In addition, many bug fixes and minor optimizations and additions have been intr
 
 ## News, and changes, in C++/WinRT 2.0
 
-For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), and the `cppwinrt.exe` tool&mdash;including how to acquire and install them&mdash;see [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For more info about the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), the [Microsoft.Windows.CppWinRT NuGet package](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/), and the `cppwinrt.exe` tool&mdash;including how to acquire and install them&mdash;see [Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ### Changes to the C++/WinRT Visual Studio Extension (VSIX) for version 2.0
 
@@ -240,7 +240,7 @@ The coroutine helpers are now also decorated with `[[nodiscard]]`, thereby impro
 
 Since the projected and implementation class names are (by default) the same, and only differ by namespace, it's possible to mistake the one for the other, and to accidentally create an implementation on the stack, rather than using the [**make**](/uwp/cpp-ref-for-winrt/make) family of helpers. This can be hard to diagnose in some cases, because the object may be destroyed while outstanding references are still in flight. An assertion now picks this up, for debug builds. While the assertion doesn't detect stack allocation inside a coroutine, it's nevertheless helpful in catching most such mistakes.
 
-For more info, see [Diagnosing direct allocations](./diag-direct-alloc.md).
+For more info, see [Diagnosing direct allocations](/windows/apps/develop/cpp-winrt/diag-direct-alloc).
 
 #### Improved capture helpers, and variadic delegates
 
@@ -309,7 +309,7 @@ struct MainPage : PageT<MainPage>
 };
 ```
 
-For more info, see [Deferred destruction](./details-about-destructors.md#deferred-destruction).
+For more info, see [Deferred destruction](/windows/apps/develop/cpp-winrt/details-about-destructors#deferred-destruction).
 
 #### Improved support for COM-style single interface inheritance
 
@@ -335,7 +335,7 @@ The table below contains news and changes for C++/WinRT in the Windows SDK versi
 | - | - |
 | **Breaking change**. For it to compile, C++/WinRT doesn't depend on headers from the Windows SDK. | See [Isolation from Windows SDK header files](#isolation-from-windows-sdk-header-files), below. |
 | The Visual Studio project system format has changed. | See [How to retarget your C++/WinRT project to a later version of the Windows SDK](#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk), below. |
-| There are new functions and base classes to help you pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types. | See [Collections with C++/WinRT](collections.md). |
+| There are new functions and base classes to help you pass a collection object to a Windows Runtime function, or to implement your own collection properties and collection types. | See [Collections with C++/WinRT](/windows/apps/develop/cpp-winrt/collections). |
 | You can use the [{Binding}](../xaml-platform/binding-markup-extension.md) markup extension with your C++/WinRT runtime classes. | For more info, and code examples, see [Data binding overview](../data-binding/data-binding-quickstart.md). |
 | Support for canceling a coroutine allows you to register a cancellation callback. | For more info, and code examples, see [Canceling an asynchronous operation, and cancellation callbacks](concurrency-2.md#canceling-an-asynchronous-operation-and-cancellation-callbacks). |
 | When creating a delegate pointing to a member function, you can establish a strong or a weak reference to the current object (instead of a raw *this* pointer) at the point where the handler is registered. | For more info, and code examples, see the **If you use a member function as a delegate** sub-section in the section [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate). |
@@ -343,10 +343,10 @@ The table below contains news and changes for C++/WinRT in the Windows SDK versi
 
 Other changes.
 
-- **Breaking change**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) now returns `void*` instead of `HSTRING`. You can use `static_cast<HSTRING>(get_abi(my_hstring));` to get an HSTRING. See [Interoperating with the ABI's HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
-- **Breaking change**. [**winrt::put_abi(winrt::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) now returns `void**` instead of `HSTRING*`. You can use `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` to get an HSTRING*. See [Interoperating with the ABI's HSTRING](interop-winrt-abi.md#interoperating-with-the-abis-hstring).
+- **Breaking change**. [**winrt::get_abi(winrt::hstring const&)**](/uwp/cpp-ref-for-winrt/get-abi) now returns `void*` instead of `HSTRING`. You can use `static_cast<HSTRING>(get_abi(my_hstring));` to get an HSTRING. See [Interoperating with the ABI's HSTRING](/windows/apps/develop/cpp-winrt/interop-winrt-abi#interoperating-with-the-abis-hstring).
+- **Breaking change**. [**winrt::put_abi(winrt::hstring&)**](/uwp/cpp-ref-for-winrt/put-abi) now returns `void**` instead of `HSTRING*`. You can use `reinterpret_cast<HSTRING*>(put_abi(my_hstring));` to get an HSTRING*. See [Interoperating with the ABI's HSTRING](/windows/apps/develop/cpp-winrt/interop-winrt-abi#interoperating-with-the-abis-hstring).
 - **Breaking change**. HRESULT is now projected as **winrt::hresult**. If you need an HRESULT (to do type checking, or to support type traits), then you can `static_cast` a **winrt::hresult**. Otherwise, **winrt::hresult** converts to HRESULT, as long as you include `unknwn.h` before you include any C++/WinRT headers.
-- **Breaking change**. GUID is now projected as [**winrt::guid**](/uwp/cpp-ref-for-winrt/guid). For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, **winrt::guid** converts to GUID, as long as you include `unknwn.h` before you include any C++/WinRT headers. See [Interoperating with the ABI's GUID struct](interop-winrt-abi.md#interoperating-with-the-abis-guid-struct).
+- **Breaking change**. GUID is now projected as [**winrt::guid**](/uwp/cpp-ref-for-winrt/guid). For APIs that you implement, you must use **winrt::guid** for GUID parameters. Otherwise, **winrt::guid** converts to GUID, as long as you include `unknwn.h` before you include any C++/WinRT headers. See [Interoperating with the ABI's GUID struct](/windows/apps/develop/cpp-winrt/interop-winrt-abi#interoperating-with-the-abis-guid-struct).
 - **Breaking change**. The [**winrt::handle_type constructor**](/uwp/cpp-ref-for-winrt/handle-type#handle_typehandle_type-constructor) has been hardened by making it explicit (it's now harder to write incorrect code with it). If you need to assign a raw handle value, call the [**handle_type::attach function**](/uwp/cpp-ref-for-winrt/handle-type#handle_typeattach-function) instead.
 - **Breaking change**. The signatures of **WINRT_CanUnloadNow** and **WINRT_GetActivationFactory** have changed. You mustn't declare these functions at all. Instead, include `winrt/base.h` (which is automatically included if you include any C++/WinRT Windows namespace header files) to include the declarations of these functions.
 - For the [**winrt::clock struct**](/uwp/cpp-ref-for-winrt/clock), **from_FILETIME/to_FILETIME** are deprecated in favor of **from_file_time/to_file_time**.
@@ -356,7 +356,7 @@ Other changes.
 - Hardened smart pointers. Formerly, the event revokers failed to revoke when move-assigned a new value. This helped uncover an issue where smart pointer classes weren't reliably handling self-assignment; rooted in the [**winrt::com_ptr struct template**](/uwp/cpp-ref-for-winrt/com-ptr). **winrt::com_ptr** has been fixed, and the event revokers fixed to handle move semantics correctly so that they revoke upon assignment.
 
 > [!IMPORTANT]
-> Important changes were made to the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), both in version 1.0.181002.2, and then later in version 1.0.190128.4. For details of these changes, and how they affect your existing projects, [Visual Studio support for C++/WinRT](intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) and  [Earlier versions of the VSIX extension](intro-to-using-cpp-with-winrt.md#earlier-versions-of-the-vsix-extension).
+> Important changes were made to the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264), both in version 1.0.181002.2, and then later in version 1.0.190128.4. For details of these changes, and how they affect your existing projects, [Visual Studio support for C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package) and  [Earlier versions of the VSIX extension](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#earlier-versions-of-the-vsix-extension).
 
 ### Isolation from Windows SDK header files
 
@@ -370,7 +370,7 @@ If you previously left it to C++/WinRT to include any Windows headers in your pr
 
 Currently, the only exceptions to Windows SDK header file isolation are for intrinsics, and numerics. There are no known issues with these last remaining dependencies.
 
-In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](author-coclasses.md). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
+In your project, you can re-enable interop with the Windows SDK headers if you need to. You might, for example, want to implement a COM interface (rooted in [**IUnknown**](/windows/desktop/api/unknwn/nn-unknwn-iunknown)). For that example, include `unknwn.h` before you include any C++/WinRT headers. Doing so causes the C++/WinRT base library to enable various hooks to support classic COM interfaces. For a code example, see [Author COM components with C++/WinRT](/windows/apps/develop/cpp-winrt/author-coclasses). Similarly, explicitly include any other Windows SDK headers that declare types and/or functions that you want to call.
 
 ### How to retarget your C++/WinRT project to a later version of the Windows SDK
 

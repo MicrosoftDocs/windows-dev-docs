@@ -1,9 +1,9 @@
 ---
 title: C++/WinRT configuration macros
 description: This topic describes the C++/WinRT configuration macros.
-ms.date: 03/29/2022
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, configuration, macros
+keywords: windows 10, standard, c++, cpp, winrt, projection, configuration, macros, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
@@ -69,7 +69,7 @@ If defined, enables internal statistics to track various operations:
 ## WINRT_NATVIS
 If defined, includes helper functions to assist in native debug visualizations in Visual Studio. The code isn't used at runtime; it exists only for debugging.
 
-If you don't customize this macro, then visualization support functions are enabled if **_DEBUG** is defined. For more details, see [Visual Studio native debug visualization (natvis) for C++/WinRT](natvis.md).
+If you don't customize this macro, then visualization support functions are enabled if **_DEBUG** is defined. For more details, see [Visual Studio native debug visualization (natvis) for C++/WinRT](./natvis.md).
 
 You're allowed to combine files with different settings for **WINRT_NATVIS**.
 

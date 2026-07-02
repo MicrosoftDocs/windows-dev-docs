@@ -1,15 +1,15 @@
 ---
 description: With C++/WinRT, you can call Windows Runtime APIs using Standard C++ data types.
 title: Standard C++ data types and C++/WinRT
-ms.date: 04/23/2019
+ms.date: 06/01/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, data, types
+keywords: windows 10, standard, c++, cpp, winrt, projection, data, types, windows app sdk, winui 3
 ms.localizationpriority: medium
 ---
 
 # Standard C++ data types and C++/WinRT
 
-With [C++/WinRT](./intro-to-using-cpp-with-winrt.md), you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types. You can pass standard strings to APIs (see [String handling in C++/WinRT](strings.md)), and you can pass initializer lists and standard containers to APIs that expect a semantically equivalent collection.
+With [C++/WinRT](./intro-to-using-cpp-with-winrt.md), you can call Windows Runtime APIs using Standard C++ data types, including some C++ Standard Library data types. You can pass standard strings to APIs (see [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)), and you can pass initializer lists and standard containers to APIs that expect a semantically equivalent collection.
 
 Also see [Passing parameters into the ABI boundary](./pass-parms-to-abi.md).
 
@@ -86,7 +86,7 @@ std::array<byte, 3> theArray{ 99, 98, 97 };
 dataWriter.WriteBytes(theArray); // theArray is converted to a winrt::array_view before being passed to WriteBytes.
 ```
 
-C++/WinRT binds **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**, and it will be converted to the appropriate Windows Runtime collection of **winrt::hstring**. There's an extra detail to bear in mind if the callee is asynchronous. Due to the implementation details of that case, you'll need to provide an rvalue, so you must provide a copy or a move of the vector. In the code example below, we move ownership of the vector to the object of the parameter type accepted by the async callee (and then we're careful not to access `vecH` again after moving it). If you want to know more about rvalues, see [Value categories, and references to them](cpp-value-categories.md).
+C++/WinRT binds **std::vector** as a Windows Runtime collection parameter. So, you can pass a **std::vector&lt;winrt::hstring&gt;**, and it will be converted to the appropriate Windows Runtime collection of **winrt::hstring**. There's an extra detail to bear in mind if the callee is asynchronous. Due to the implementation details of that case, you'll need to provide an rvalue, so you must provide a copy or a move of the vector. In the code example below, we move ownership of the vector to the object of the parameter type accepted by the async callee (and then we're careful not to access `vecH` again after moving it). If you want to know more about rvalues, see [Value categories, and references to them](./cpp-value-categories.md).
 
 ```cppwinrt
 IAsyncAction retrieve_properties_async(StorageFile const storageFile, std::vector<winrt::hstring> vecH)
@@ -147,11 +147,11 @@ void PrintFeed(SyndicationFeed const& syndicationFeed)
 ```
 
 ## C++ coroutines with asynchronous Windows Runtime APIs
-You can continue to use the [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) when calling asynchronous Windows Runtime APIs. However, in many cases, C++ coroutines provide an efficient and more easily-coded idiom for interacting with asynchronous objects. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](concurrency.md).
+You can continue to use the [Parallel Patterns Library (PPL)](/cpp/parallel/concrt/parallel-patterns-library-ppl) when calling asynchronous Windows Runtime APIs. However, in many cases, C++ coroutines provide an efficient and more easily-coded idiom for interacting with asynchronous objects. For more info, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
 
 ## Important APIs
 * [IVector&lt;T&gt; interface](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::array_view struct template](/uwp/cpp-ref-for-winrt/array-view)
 
 ## Related topics
-* [String handling in C++/WinRT](strings.md)
+* [String handling in C++/WinRT](/windows/uwp/cpp-and-winrt-apis/strings)
