@@ -34,6 +34,8 @@ The [Windows App SDK](../windows-app-sdk/index.md) is a modern SDK that builds o
 
 ## Choose your app framework
 
+Windows supports several app frameworks for building desktop apps. Choose the one that best fits your project's needs and your team's experience. Here are a few common options.
+
 ### WinUI
 
 :::image type="content" source="images/winui-header.png" alt-text="WinUI logo.":::

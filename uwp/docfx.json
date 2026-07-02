@@ -1,17 +1,28 @@
 {
     "build": {
-        "content": [ {
-            "files": ["**/*.md", "**/**.yml"],
-            "exclude": [
-                "**/obj/**",
-                "whats-new/whats-new-future.md",
-                "**/includes/**"
-            ]
-        } ],
-        "resource": [ {
-            "files": ["**/images/**"],
-            "exclude": ["**/obj/**"]
-        } ],
+        "content": [
+            {
+                "files": [
+                    "**/*.md",
+                    "**/**.yml"
+                ],
+                "exclude": [
+                    "**/obj/**",
+                    "whats-new/whats-new-future.md",
+                    "**/includes/**"
+                ]
+            }
+        ],
+        "resource": [
+            {
+                "files": [
+                    "**/images/**"
+                ],
+                "exclude": [
+                    "**/obj/**"
+                ]
+            }
+        ],
         "globalMetadata": {
             "ms.service": "uwp",
             "recommendations": true,
@@ -20,14 +31,16 @@
             "ms.author": "jken",
             "Search.Product": "eADQiWindows 10XVcnh",
             "uhfHeaderId": "MSDocsHeader-Windows",
-            "breadcrumb_path":  "/windows/uwp/breadcrumbs/toc.json",
+            "breadcrumb_path": "/windows/uwp/breadcrumbs/toc.json",
             "feedback_system": "Standard",
             "feedback_product_url": "https://www.microsoft.com/en-us/windowsinsider/feedbackhub/fb",
             "feedback_help_link_url": "https://learn.microsoft.com/answers/tags/105/windows-uwp/",
             "feedback_help_link_type": "get-help-at-qna",
             "extendBreadcrumb": false,
-            "htmlDangerZone":  true,
-            "searchScope": ["UWP"],
+            "htmlDangerZone": true,
+            "searchScope": [
+                "UWP"
+            ],
             "titleSuffix": "UWP applications",
             "_op_documentIdPathDepotMapping": {
                 "./": {
@@ -77,93 +90,93 @@
                 "app-resources/**": "jken",
                 "app-to-app/**": "jken",
                 "apps-for-education/**": "jken",
-                "apps-for-xbox/**": "kbridge",
-                "audio-video-camera/**": "drewbat",
-                "communication/**": "stwhi",
-                "composition/**": "jimwalk",
+                "apps-for-xbox/**": "jken",
+                "audio-video-camera/**": "jken",
+                "communication/**": "jken",
+                "composition/**": "jken",
                 "contacts-and-calendar/**": "jken",
-                "cpp-and-winrt-apis/**": "stwhi",
+                "cpp-and-winrt-apis/**": "jken",
                 "data-access/**": "jken",
                 "data-binding/**": "jken",
-                "debug-test-perf/**": "kbridge",
-                "develop/**": "jimwalk",
-                "devices-sensors/**": "kbridge",
-                "dotnet-native/**": "stwhi",
+                "debug-test-perf/**": "jken",
+                "develop/**": "jken",
+                "devices-sensors/**": "jken",
+                "dotnet-native/**": "jken",
                 "enterprise/**": "jken",
                 "files/**": "jken",
-                "gaming/**": "stwhi",
-                "get-started/**": "jimwalk",
-                "graphics-concepts/**": "stwhi",
+                "gaming/**": "jken",
+                "get-started/**": "jken",
+                "graphics-concepts/**": "jken",
                 "launch-resume/**": "jken",
-                "maps-and-location/**": "jimwalk",
+                "maps-and-location/**": "jken",
                 "monetize/**": "jken",
-                "networking/**": "stwhi",
-                "packaging/**": "drewbat",
-                "porting/**": "stwhi",
+                "networking/**": "jken",
+                "packaging/**": "jken",
+                "porting/**": "jken",
                 "security/**": "jken",
-                "threading-async/**": "drewbat",
-                "ui-input/**": "kbridge",
-                "updates-and-versions/**": "stwhi",
+                "threading-async/**": "jken",
+                "ui-input/**": "jken",
+                "updates-and-versions/**": "jken",
                 "whats-new/**": "jken",
-                "winrt-components/**": "stwhi",
-                "xaml-platform/**": "jimwalk",
-                "xbox-apps/**": "kbridge"
+                "winrt-components/**": "jken",
+                "xaml-platform/**": "jken",
+                "xbox-apps/**": "jken"
             },
             "author": {
                 "app-resources/**": "GrantMeStrength",
                 "app-to-app/**": "GrantMeStrength",
                 "apps-for-education/**": "GrantMeStrength",
-                "apps-for-xbox/**": "Karl-Bridge-Microsoft",
-                "audio-video-camera/**": "drewbatgit",
-                "communication/**": "stevewhims",
-                "composition/**": "jwmsft",
+                "apps-for-xbox/**": "GrantMeStrength",
+                "audio-video-camera/**": "GrantMeStrength",
+                "communication/**": "GrantMeStrength",
+                "composition/**": "GrantMeStrength",
                 "contacts-and-calendar/**": "GrantMeStrength",
-                "cpp-and-winrt-apis/**": "stevewhims",
+                "cpp-and-winrt-apis/**": "GrantMeStrength",
                 "data-access/**": "GrantMeStrength",
                 "data-binding/**": "GrantMeStrength",
-                "debug-test-perf/**": "Karl-Bridge-Microsoft",
-                "develop/**": "jwmsft",
-                "devices-sensors/**": "Karl-Bridge-Microsoft",
-                "dotnet-native/**": "stevewhims",
+                "debug-test-perf/**": "GrantMeStrength",
+                "develop/**": "GrantMeStrength",
+                "devices-sensors/**": "GrantMeStrength",
+                "dotnet-native/**": "GrantMeStrength",
                 "enterprise/**": "grantmestrength",
                 "files/**": "GrantMeStrength",
-                "gaming/**": "stevewhims",
-                "get-started/**": "jwmsft",
-                "graphics-concepts/**": "stevewhims",
+                "gaming/**": "GrantMeStrength",
+                "get-started/**": "GrantMeStrength",
+                "graphics-concepts/**": "GrantMeStrength",
                 "launch-resume/**": "GrantMeStrength",
-                "maps-and-location/**": "jwmsft",
+                "maps-and-location/**": "GrantMeStrength",
                 "monetize/**": "grantmestrength",
-                "networking/**": "stevewhims",
-                "packaging/**": "drewbatgit",
-                "porting/**": "stevewhims",
+                "networking/**": "GrantMeStrength",
+                "packaging/**": "GrantMeStrength",
+                "porting/**": "GrantMeStrength",
                 "security/**": "GrantMeStrength",
-                "threading-async/**": "drewbatgit",
-                "ui-input/**": "Karl-Bridge-Microsoft",
-                "updates-and-versions/**": "stevewhims",
+                "threading-async/**": "GrantMeStrength",
+                "ui-input/**": "GrantMeStrength",
+                "updates-and-versions/**": "GrantMeStrength",
                 "whats-new/**": "grantmestrength",
-                "winrt-components/**": "stevewhims",
-                "xaml-platform/**": "jwmsft",
-                "xbox-apps/**": "Karl-Bridge-Microsoft"
+                "winrt-components/**": "GrantMeStrength",
+                "xaml-platform/**": "GrantMeStrength",
+                "xbox-apps/**": "GrantMeStrength"
             },
             "ms.topic": {
                 "dotnet-native/**": "reference"
             }
         },
-        "externalReference": [ ],
+        "externalReference": [],
         "template": "op.html",
         "dest": "uwp",
         "rules": {
-           "sensitive-language-sl": {
-               "exclude": [
-                 "devices-sensors/enable-usermode-access.md"
-               ]
-           },
-           "sensitive-language-bl": {
-               "exclude": [
-                 "apps-for-education/take-a-test-api.md"
-               ]
+            "sensitive-language-sl": {
+                "exclude": [
+                    "devices-sensors/enable-usermode-access.md"
+                ]
+            },
+            "sensitive-language-bl": {
+                "exclude": [
+                    "apps-for-education/take-a-test-api.md"
+                ]
             }
-         },
+        },
         "markdownEngineName": "markdig"
     }
 }

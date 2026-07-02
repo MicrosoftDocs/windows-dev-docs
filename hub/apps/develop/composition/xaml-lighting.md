@@ -258,7 +258,7 @@ struct MainPage : MainPageT<MainPage>
 You can then apply this light to any XAML UIElement or Brush to light them. This example shows different potential usages.
 
 > [!Important]
-> For [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
+> For [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt), remove the two occurrences of `local:OrangeSpotLight.IsTarget="True"` from the markup below. The attached properties are already set in code-behind.
 
 ```xaml
 <StackPanel Width="100">

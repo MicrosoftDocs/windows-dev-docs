@@ -12166,10 +12166,8 @@
       "redirect_document_id": false
     },
     {
-      "redirect_url": "/windows/apps/develop/windows-integration/integrate-sharesheet-overview",
-      "source_path": "hub/apps/develop/windows-integration/integrate-sharesheet-unpackaged.md",
-      "source_path": "uwp/networking/index.md",
       "redirect_url": "/windows/apps/develop/networking/",
+      "source_path": "uwp/networking/index.md",
       "redirect_document_id": false
     },
     {
@@ -12210,6 +12208,216 @@
     {
       "source_path": "uwp/networking/background-transfers.md",
       "redirect_url": "/windows/apps/develop/networking/background-transfers",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/author-apis.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/author-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/base-type.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/base-type",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/binding-property.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/binding-property",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/clipboard-to-winrt-from-csharp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/consume-apis.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/consume-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/error-handling.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/error-handling",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/move-to-winrt-from-csharp.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/move-to-winrt-from-csharp",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/move-to-winrt-from-cx.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/move-to-winrt-from-cx",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/strings.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/strings",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/troubleshooting.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/troubleshooting",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/xaml-cust-ctrl.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/xaml-cust-ctrl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/agile-objects.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/agile-objects",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/author-coclasses.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/author-coclasses",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/binding-collection.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/binding-collection",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/boxing.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/boxing",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/collections.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/collections",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/concurrency.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/concurrency",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/concurrency-3.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/concurrency-3",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/cpp-value-categories.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/cpp-value-categories",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/diag-direct-alloc.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/diag-direct-alloc",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/get-started.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/get-started",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/interop-winrt-abi.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/interop-winrt-abi",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/macros.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/macros",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/naming.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/naming",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/natvis.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/natvis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/pass-parms-to-abi.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/pass-parms-to-abi",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/photo-editor-sample.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/photo-editor-sample",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/simple-winui-example.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/simple-winui-example",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/std-cpp-data-types.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/std-cpp-data-types",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/use-csharp-component-from-cpp-winrt",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/index.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/author-events.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/author-events",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/consume-com.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/consume-com",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/details-about-destructors.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/details-about-destructors",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/interop-winrt-cx.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/interop-winrt-cx",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/move-to-winrt-from-wrl.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/move-to-winrt-from-wrl",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/news.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/news",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/concurrency-2.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/concurrency-2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/handle-events.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/handle-events",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/interop-winrt-cx-async.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/interop-winrt-cx-async",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/weak-references.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/weak-references",
       "redirect_document_id": false
     }
   ]

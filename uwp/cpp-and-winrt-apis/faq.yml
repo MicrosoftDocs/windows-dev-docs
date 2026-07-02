@@ -11,7 +11,7 @@ summary: |
   Answers to questions that you're likely to have about authoring and consuming Windows Runtime APIs with [C++/WinRT](./intro-to-using-cpp-with-winrt.md).
   
   > [!IMPORTANT]
-  > For release notes about C++/WinRT, see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20).
+  > For release notes about C++/WinRT, see [News, and changes, in C++/WinRT 2.0](/windows/apps/develop/cpp-winrt/news#news-and-changes-in-cwinrt-20).
   
   > [!NOTE]
   > If your question is about an error message that you've seen, then also see the [Troubleshooting C++/WinRT](troubleshooting.md) topic.
@@ -27,12 +27,12 @@ sections:
       - question: |
           How do I retarget my C++/WinRT project to a later version of the Windows SDK?
         answer: |
-          See [How to retarget your C++/WinRT project to a later version of the Windows SDK](news.md#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
+          See [How to retarget your C++/WinRT project to a later version of the Windows SDK](/windows/apps/develop/cpp-winrt/news#how-to-retarget-your-cwinrt-project-to-a-later-version-of-the-windows-sdk).
           
       - question: |
           Why won't my new project compile, now that I've moved to C++/WinRT 2.0?
         answer: |
-          For the full set of changes (including breaking changes), see [News, and changes, in C++/WinRT 2.0](news.md#news-and-changes-in-cwinrt-20). For example, if you're using a range-based `for` on a Windows Runtime collection, then you'll now need to `#include <winrt/Windows.Foundation.Collections.h>`.
+          For the full set of changes (including breaking changes), see [News, and changes, in C++/WinRT 2.0](/windows/apps/develop/cpp-winrt/news#news-and-changes-in-cwinrt-20). For example, if you're using a range-based `for` on a Windows Runtime collection, then you'll now need to `#include <winrt/Windows.Foundation.Collections.h>`.
           
       - question: |
           Why won't my new project compile? I'm using Visual Studio 2017 (version 15.8.0 or higher), and SDK version 17134

@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 In this topic we walk through the process of creating a new WinUI project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
 
 > [!TIP]
-> The source code in this topic is provided in both C# and C++/WinRT. If you're a C++ developer, then for more details and concepts explaining how the code that we show here works, see the [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) documentation. Relevant topics there include [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), [XAML items controls; bind to a C++/WinRT collection](/windows/uwp/cpp-and-winrt-apis/binding-collection), and [Photo Editor C++/WinRT sample application](/windows/uwp/cpp-and-winrt-apis/photo-editor-sample).
+> The source code in this topic is provided in both C# and C++/WinRT. If you're a C++ developer, then for more details and concepts explaining how the code that we show here works, see the [C++/WinRT](/windows/apps/develop/cpp-winrt/) documentation. Relevant topics there include [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), [XAML items controls; bind to a C++/WinRT collection](/windows/apps/develop/cpp-winrt/binding-collection), and [Photo Editor C++/WinRT sample application](/windows/apps/develop/cpp-winrt/photo-editor-sample).
 
 ## Step 1: Install tools for the Windows App SDK
 

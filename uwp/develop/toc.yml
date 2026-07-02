@@ -717,23 +717,23 @@ items:
     href: ../cpp-and-winrt-apis/index.md
     items:
     - name: Introduction
-      href: ../cpp-and-winrt-apis/intro-to-using-cpp-with-winrt.md
+      href: /windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt
     - name: Get started
-      href: ../cpp-and-winrt-apis/get-started.md
+      href: /windows/apps/develop/cpp-winrt/get-started
     - name: What's new
-      href: ../cpp-and-winrt-apis/news.md
+      href: /windows/apps/develop/cpp-winrt/news
     - name: Frequently-asked questions
       href: ../cpp-and-winrt-apis/faq.yml
     - name: Troubleshooting
       href: ../cpp-and-winrt-apis/troubleshooting.md
     - name: Photo Editor sample application
-      href: ../cpp-and-winrt-apis/photo-editor-sample.md
+      href: /windows/apps/develop/cpp-winrt/photo-editor-sample
     - name: String handling
       href: ../cpp-and-winrt-apis/strings.md
     - name: Standard C++ data types
-      href: ../cpp-and-winrt-apis/std-cpp-data-types.md
+      href: /windows/apps/develop/cpp-winrt/std-cpp-data-types
     - name: Boxing and unboxing values to IInspectable
-      href: ../cpp-and-winrt-apis/boxing.md
+      href: /windows/apps/develop/cpp-winrt/boxing
     - name: Consume APIs
       href: ../cpp-and-winrt-apis/consume-apis.md
     - name: Author APIs
@@ -741,69 +741,69 @@ items:
     - name: Error handling
       href: ../cpp-and-winrt-apis/error-handling.md
     - name: Handle events by using delegates
-      href: ../cpp-and-winrt-apis/handle-events.md
+      href: /windows/apps/develop/cpp-winrt/handle-events
     - name: Author events
-      href: ../cpp-and-winrt-apis/author-events.md
+      href: /windows/apps/develop/cpp-winrt/author-events
     - name: Collections
-      href: ../cpp-and-winrt-apis/collections.md
+      href: /windows/apps/develop/cpp-winrt/collections
     - name: Concurrency and asynchronous operations
-      href: ../cpp-and-winrt-apis/concurrency.md
+      href: /windows/apps/develop/cpp-winrt/concurrency
     - name: Advanced concurrency and asynchrony
-      href: ../cpp-and-winrt-apis/concurrency-2.md
+      href: /windows/apps/develop/cpp-winrt/concurrency-2
     - name: A completion source sample
-      href: ../cpp-and-winrt-apis/concurrency-3.md
+      href: /windows/apps/develop/cpp-winrt/concurrency-3
     - name: XAML controls; bind to a property
       href: ../cpp-and-winrt-apis/binding-property.md
     - name: XAML items controls; bind to a collection
-      href: ../cpp-and-winrt-apis/binding-collection.md
+      href: /windows/apps/develop/cpp-winrt/binding-collection
     - name: XAML custom (templated) controls
       href: ../cpp-and-winrt-apis/xaml-cust-ctrl.md
     - name: Calling and overriding your base type
       href: ../cpp-and-winrt-apis/base-type.md
     - name: Passing parameters to projected APIs
-      href: ../cpp-and-winrt-apis/pass-parms-to-abi.md
+      href: /windows/apps/develop/cpp-winrt/pass-parms-to-abi
     - name: Consume COM components
-      href: ../cpp-and-winrt-apis/consume-com.md
+      href: /windows/apps/develop/cpp-winrt/consume-com
     - name: Author COM components
-      href: ../cpp-and-winrt-apis/author-coclasses.md
+      href: /windows/apps/develop/cpp-winrt/author-coclasses
     - name: Move to C++/WinRT from C++/CX
       href: ../cpp-and-winrt-apis/move-to-winrt-from-cx.md
     - name: Interop with C++/CX
-      href: ../cpp-and-winrt-apis/interop-winrt-cx.md
+      href: /windows/apps/develop/cpp-winrt/interop-winrt-cx
     - name: Asynchrony, and interop with C++/CX
-      href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
+      href: /windows/apps/develop/cpp-winrt/interop-winrt-cx-async
     - name: Move to C++/WinRT from WRL
-      href: ../cpp-and-winrt-apis/move-to-winrt-from-wrl.md
+      href: /windows/apps/develop/cpp-winrt/move-to-winrt-from-wrl
     - name: Porting a sample app from C#
       href: ../cpp-and-winrt-apis/clipboard-to-winrt-from-csharp.md
     - name: Move to C++/WinRT from C#
       href: ../cpp-and-winrt-apis/move-to-winrt-from-csharp.md
     - name: Interop with the ABI
-      href: ../cpp-and-winrt-apis/interop-winrt-abi.md
+      href: /windows/apps/develop/cpp-winrt/interop-winrt-abi
     - name: Strong and weak references
-      href: ../cpp-and-winrt-apis/weak-references.md
+      href: /windows/apps/develop/cpp-winrt/weak-references
     - name: Agile objects
-      href: ../cpp-and-winrt-apis/agile-objects.md
+      href: /windows/apps/develop/cpp-winrt/agile-objects
     - name: Diagnosing direct allocations
-      href: ../cpp-and-winrt-apis/diag-direct-alloc.md
+      href: /windows/apps/develop/cpp-winrt/diag-direct-alloc
     - name: Extension points for implementation types
-      href: ../cpp-and-winrt-apis/details-about-destructors.md
+      href: /windows/apps/develop/cpp-winrt/details-about-destructors
     - name: A simple C++/WinRT WinUI example
-      href: ../cpp-and-winrt-apis/simple-winui-example.md
+      href: /windows/apps/develop/cpp-winrt/simple-winui-example
     - name: Windows Runtime components (C++/WinRT)
       href: ../winrt-components/create-a-windows-runtime-component-in-cppwinrt.md
     - name: Use a C# component in a C++/WinRT app
-      href: ../cpp-and-winrt-apis/use-csharp-component-from-cpp-winrt.md
+      href: /windows/apps/develop/cpp-winrt/use-csharp-component-from-cpp-winrt
     - name: Native debug visualization
-      href: ../cpp-and-winrt-apis/natvis.md
+      href: /windows/apps/develop/cpp-winrt/natvis
     - name: C++/WinRT configuration macros
-      href: ../cpp-and-winrt-apis/macros.md
+      href: /windows/apps/develop/cpp-winrt/macros
     - name: Naming conventions
-      href: ../cpp-and-winrt-apis/naming.md
+      href: /windows/apps/develop/cpp-winrt/naming
     - name: C++ language
       items:
       - name: Value categories, and references
-        href: ../cpp-and-winrt-apis/cpp-value-categories.md
+        href: /windows/apps/develop/cpp-winrt/cpp-value-categories
   - name: .NET Native
     items:
     - name: Overview
