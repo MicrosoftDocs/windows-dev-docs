@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 06/16/2026
+ms.date: 07/02/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -21,8 +21,8 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**</br>
-        Discover what's new</br>
-        [View release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)</br>
+        Latest stable: 2.2.0</br>
+        [View release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.2.0)</br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
     :::column:::
@@ -46,6 +46,17 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ---
 
+## Highlights – July 2026
+
+- **Windows App SDK 2.2**: The latest stable release adds the `VideoScaler` API for real-time AI video upscaling, `ApplicationData.GetForUnpackaged()` giving unpackaged apps a first-class WinRT entry point for app data storage, new `XamlBindingHelper` overloads, and a batch of WinUI and Windows ML reliability fixes — [Release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.2.0)
+- **PowerToys 0.100**: A milestone release featuring a redesigned Shortcut Guide that detects the active app and shows relevant shortcuts as a side pane, a new Command Palette Extension Gallery for browsing and installing extensions, multi-monitor Dock support, and an upgrade to .NET 10. Download the latest patch (v0.100.2) — [PowerToys 0.100 release notes](https://github.com/microsoft/PowerToys/releases/tag/v0.100.0)
+- **WSL Containers**: Run Linux containers on Windows using the new `wslc.exe` CLI or the `Microsoft.WSL.Containers` NuGet package, which provides C#, C++, and C projections for programmatically pulling, running, and interacting with Linux containers — including stdin/stdout, file mounts, networking, and GPU access — from your Windows app — [WSL Containers overview](/windows/wsl/wsl-container)
+- **Windows Intelligent Terminal v0.1**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/)
+
+---
+
+Previous highlights:
+
 ## Highlights – June 2026
 
 - **Build 2026: Windows as the trusted platform for development**: Major announcements including developer-optimized Windows 11 and the Microsoft Execution Containers (MXC) SDK. For additional Build highlights, see **Announced at Build – June 2026** above — [Build 2026 blog post](https://blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/)
@@ -55,8 +66,6 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **Inside MSIX – Staging: Sharing is Caring**: Deep dive on how MSIX staging works — pkgdir creation, ACL enforcement, and why the immutability guarantee lets the same staged package be safely shared across all users on the system. Part 1 of a series by Howard Kapustein, MSIX Principal Engineer — [Staging: Sharing is Caring](https://devblogs.microsoft.com/insidemsix/staging-sharing-is-caring/)
 
 ---
-
-Previous highlights:
 
 ## Highlights – May 2026
 
