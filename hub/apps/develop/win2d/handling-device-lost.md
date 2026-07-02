@@ -1,8 +1,10 @@
 ---
 title: Handling device lost
 description: An explanation of how to correctly manage "device lost" scenarios with Win2D.
-ms.date: 05/28/2023
+ms.date: 07/02/2026
 ms.topic: concept-article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -15,15 +17,15 @@ Not all apps bother trying to recover from device lost. This is a (hopefully!) r
 
 ## Device lost when using XAML controls
 
-The Win2D controls ([`CanvasControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm), [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm) and [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm)) attempt to automatically handle device lost on behalf of the app.
+The Win2D controls ([`CanvasControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm), [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm) and [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm)) attempt to automatically handle device lost on behalf of the app.
 
-When device lost is detected, these controls will recreate their `CanvasDevice` and then raise the `CreateResources` event passing a [`CanvasCreateResourcesReason`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm) of [`NewDevice`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm). Apps should respond to this event by recreating all their graphics resources using the new device, and updating any data structures that may contain references to the old, no-longer-valid resources.
+When device lost is detected, these controls will recreate their `CanvasDevice` and then raise the `CreateResources` event passing a [`CanvasCreateResourcesReason`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm) of [`NewDevice`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm). Apps should respond to this event by recreating all their graphics resources using the new device, and updating any data structures that may contain references to the old, no-longer-valid resources.
 
 The controls can automatically catch and handle device lost exceptions that are thrown by their `CreateResources`, `Update`, `Draw`, or `RegionsInvalidated` event handlers. If you call Win2D drawing APIs from other places (for instance in a pointer or keyboard input event handler) then see the next section.
 
 ## Manually handling device lost
 
-If you are [using Win2D without the built-in controls](https://microsoft.github.io/Win2D/WinUI2/html/WithoutControls.htm) or from outside the `CreateResources`, `Update` or `Draw` event handlers, then it is your responsibility to catch and report lost device exceptions. This is done with the [`IsDeviceLost(Int32)`](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDevice_IsDeviceLost.htm) and [`RaiseDeviceLost()`](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDevice_RaiseDeviceLost.htm) methods:
+If you are [using Win2D without the built-in controls](https://microsoft.github.io/Win2D/WinUI3/html/WithoutControls.htm) or from outside the `CreateResources`, `Update` or `Draw` event handlers, then it is your responsibility to catch and report lost device exceptions. This is done with the [`IsDeviceLost(Int32)`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_CanvasDevice_IsDeviceLost.htm) and [`RaiseDeviceLost()`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_CanvasDevice_RaiseDeviceLost.htm) methods:
 
 ```csharp
 try
@@ -36,7 +38,7 @@ catch (Exception e) where canvasDevice.IsDeviceLost(e.ErrorCode)
 }
 ```
 
-Calling `RaiseDeviceLost` tells any controls that are sharing this device to initiate their lost device recovery path. If you got your device from somewhere other than a control, use the [`DeviceLost`](https://microsoft.github.io/Win2D/WinUI2/html/E_Microsoft_Graphics_Canvas_CanvasDevice_DeviceLost.htm) event to be informed when it is lost.
+Calling `RaiseDeviceLost` tells any controls that are sharing this device to initiate their lost device recovery path. If you got your device from somewhere other than a control, use the [`DeviceLost`](https://microsoft.github.io/Win2D/WinUI3/html/E_Microsoft_Graphics_Canvas_CanvasDevice_DeviceLost.htm) event to be informed when it is lost.
 
 ## How to test device lost handling
 

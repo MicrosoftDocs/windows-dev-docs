@@ -1,15 +1,17 @@
 ---
 title: Using Win2D without built-in controls
 description: A guide on how to use the lower level APIs of Win2D, without any of its built-in XAML controls.
-ms.date: 10/28/2025
+ms.date: 07/02/2026
 ms.topic: concept-article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
 
 # Using Win2D without built-in controls
 
-[`CanvasControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm), [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm) and [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm) are XAML controls - they extend `UserControl` and can exist alongside other controls in an app's XAML tree. They are good choice for many WinRT apps that use XAML and produce graphical content using Win2D. While these controls are versatile, they do impose policies pertaining to layout, resource re-creation, and device lost. Apps may want to implement their own XAML controls, or not use XAML at all.
+[`CanvasControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm), [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm) and [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm) are XAML controls - they extend `UserControl` and can exist alongside other controls in an app's XAML tree. They are good choice for many WinRT apps that use XAML and produce graphical content using Win2D. While these controls are versatile, they do impose policies pertaining to layout, resource re-creation, and device lost. Apps may want to implement their own XAML controls, or not use XAML at all.
 
 Win2D is built to support this. This document describes how to use Win2D to draw graphics without use of `CanvasControl`, `CanvasVirtualControl` or `CanvasAnimatedControl`.
 
@@ -19,9 +21,9 @@ The Win2D XAML controls are built of top of a low level Win2D type. Each control
 
 | Control | Low-level type |
 | -- | -- |
-| `CanvasControl` | [`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) |
-| `CanvasVirtualControl` | [`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) |
-| `CanvasAnimatedControl` | [`CanvasSwapChainPanel`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm) and [`CanvasSwapChain`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) |
+| `CanvasControl` | [`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) |
+| `CanvasVirtualControl` | [`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) |
+| `CanvasAnimatedControl` | [`CanvasSwapChainPanel`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm) and [`CanvasSwapChain`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) |
 
 The controls consume only the public interfaces of these lower-level types. This implementation detail lends some confidence that apps can implement their own XAML controls which are equivalently as powerful as the built-in Win2D controls.
 
@@ -40,11 +42,14 @@ Aside from that, it's worth considering:
 - `CanvasImageSource` can be manipulated by other XAML UI elements such as transforms or opacity changes, while `CanvasSwapChain` cannot.
 - `CanvasVirtualImageSource` can be used to display images that are much larger than the screen (for example in a `ScrollViewer`).
 
-## CanvasSwapChain and CoreWindow
+## CanvasSwapChain and CoreWindow (UWP only)
 
-[`CanvasSwapChain`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) wraps a Direct3D swap chain. `CanvasSwapChain` is not a XAML type, but the fact that it has a swap chain means it has a built-in mechanism for being displayed. That said, [`CoreWindow`](https://msdn.microsoft.com/library/windows.ui.core.corewindow.aspx) apps may use `CanvasSwapChain` for displaying graphical content.
+> [!IMPORTANT]
+> The `CoreWindow` swap chain pattern described in this section applies only to UWP apps. Windows App SDK (WinUI 3) desktop apps do not use `CoreWindow`. For WinUI 3, use [`CanvasSwapChainPanel`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm) in XAML, or create a swap chain with [`CanvasSwapChain`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) and present it to an HWND.
 
-To create a `CanvasSwapChain` for use with a `CoreWindow`, in C#:
+[`CanvasSwapChain`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) wraps a Direct3D swap chain. `CanvasSwapChain` is not a XAML type, but the fact that it has a swap chain means it has a built-in mechanism for being displayed. UWP apps may use `CanvasSwapChain` with a `CoreWindow` for displaying graphical content.
+
+To create a `CanvasSwapChain` for use with a `CoreWindow` (UWP only), in C#:
 
 ```csharp
 float currentDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
@@ -52,7 +57,7 @@ float currentDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
 SwapChain = CanvasSwapChain.CreateForCoreWindow(device, window, currentDpi);
 ```
 
-To draw content using a `CanvasSwapChain`, call its [`CreateDrawingSession(Color)`](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasSwapChain_CreateDrawingSession.htm) method:
+To draw content using a `CanvasSwapChain`, call its [`CreateDrawingSession(Color)`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_CanvasSwapChain_CreateDrawingSession.htm) method:
 
 ```csharp
 using (CanvasDrawingSession ds = swapChain.CreateDrawingSession(Colors.Black))
@@ -63,14 +68,11 @@ using (CanvasDrawingSession ds = swapChain.CreateDrawingSession(Colors.Black))
 swapChain.Present();
 ```
 
-The size of the swap chain should match the size of the `CoreWindow`. If the size of the window changes, call [`ResizeBuffers(Size)`](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasSwapChain_ResizeBuffers_3.htm) on the swap chain with the new size. For more information, see the `CoreWindow` Win2D sample.
-
-> [!NOTE]
-> `CoreWindow` is only supported on UWP. For Windows App SDK, use either composition or HWND swapchains.
+The size of the swap chain should match the size of the `CoreWindow`. If the size of the window changes, call [`ResizeBuffers(Size)`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_CanvasSwapChain_ResizeBuffers_3.htm) on the swap chain with the new size.
 
 ## CanvasSwapChainPanel
 
-[`CanvasSwapChainPanel`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm) is a XAML type, and a relatively thin wrapper around `CanvasSwapChain`. It is suitable for XAML apps that require swap chain rendering, but do not want to use the policies that exist in `CanvasAnimatedControl`. To create a swap chain in XAML, use the namespace:
+[`CanvasSwapChainPanel`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm) is a XAML type, and a relatively thin wrapper around `CanvasSwapChain`. It is suitable for XAML apps that require swap chain rendering, but do not want to use the policies that exist in `CanvasAnimatedControl`. To create a swap chain in XAML, use the namespace:
 
 ```XAML
 xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
@@ -115,11 +117,11 @@ void canvasSwapChainPanel_SizeChanged(object sender, Microsoft.UI.Xaml.SizeChang
 
 ## Image Sources
 
-[`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) and [`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) provide a way of integrating Win2D graphical content with XAML. They are suitable for content which does not require swap chain rendering.
+[`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) and [`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) provide a way of integrating Win2D graphical content with XAML. They are suitable for content which does not require swap chain rendering.
 
 ### CanvasImageSource
 
-[`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) extends XAML's [`SurfaceImageSource`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.surfaceimagesource.aspx). Apps can create an instance of `CanvasImageSource`, and reference it from a XAML type that consumes an `ImageSource`, such as an [`Image`](https://msdn.microsoft.com/library/windows/apps/br242752.aspx) or [`ImageBrush`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imagebrush). For example, in XAML markup:
+[`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) extends XAML's [`SurfaceImageSource`](/uwp/api/windows.ui.xaml.media.imaging.surfaceimagesource). Apps can create an instance of `CanvasImageSource`, and reference it from a XAML type that consumes an `ImageSource`, such as an [`Image`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) or [`ImageBrush`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush). For example, in XAML markup:
 
 ```XAML
 <Image x:Name="image"/>
@@ -149,9 +151,9 @@ For an example demonstrating how to use `CanvasImageSource`, see the `ImageSourc
 
 ### CanvasVirtualImageSource
 
-[`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) wraps XAML's [`VirtualSurfaceImageSource`](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.virtualsurfaceimagesource.aspx).
+[`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) wraps XAML's [`VirtualSurfaceImageSource`](/uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource).
 
-The wrapped `VirtualSurfaceImageSource` can be obtained by the [`Source`](https://microsoft.github.io/Win2D/WinUI2/html/P_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource_Source.htm) property. Apart from this difference it can be used in much the same way as `CanvasImageSource`:
+The wrapped `VirtualSurfaceImageSource` can be obtained by the [`Source`](https://microsoft.github.io/Win2D/WinUI3/html/P_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource_Source.htm) property. Apart from this difference it can be used in much the same way as `CanvasImageSource`:
 
 ```XAML
 <Image x:Name="image"/>

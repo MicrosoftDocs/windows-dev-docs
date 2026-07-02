@@ -1,15 +1,17 @@
 ---
 title: Interop with Direct2D
 description: An overview of how to manually interoperate Win2D and Direct2D in advanced scenarios.
-ms.date: 05/26/2023
+ms.date: 07/02/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
 
 # Interop with Direct2D
 
-Win2D is implemented as a layer on top of [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990), and supports interop in both directions. If you have a Win2D object, you can access the native Direct2D object that is used to implement it. If you have a Direct2D object, you can look up the Win2D object that wraps it, or create a new wrapper if one did not already exist.
+Win2D is implemented as a layer on top of [Direct2D](/windows/win32/direct2d/direct2d-portal), and supports interop in both directions. If you have a Win2D object, you can access the native Direct2D object that is used to implement it. If you have a Direct2D object, you can look up the Win2D object that wraps it, or create a new wrapper if one did not already exist.
 
 Interop allows you to mix and match Win2D with native DirectX APIs. You can write an app that mostly uses Win2D, but drop down to native DirectX at any point - perhaps to call into some other API or 3rd party component that requires native interfaces. Or your app can be mostly native DirectX, yet you can switch over to Win2D in specific places where you want its extra convenience or C# support.
 

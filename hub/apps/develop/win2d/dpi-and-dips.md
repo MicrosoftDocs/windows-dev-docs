@@ -1,8 +1,10 @@
 ---
 title: DPI and DIPs
 description: An explanation of the difference between physical pixels and device independent pixels, and how they are handled in Win2D.
-ms.date: 05/26/2023
+ms.date: 07/02/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -66,7 +68,7 @@ Similarly, [`CanvasCommandList`](https://microsoft.github.io/Win2D/WinUI3/html/T
 
 ## Control DPI
 
-The Win2D controls ([`CanvasControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm), [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm) and [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm)) automatically use the same DPI as the display the app is running on. This matches the coordinate system used by XAML, CoreWindow, and other Windows Runtime APIs.
+The Win2D controls ([`CanvasControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm), [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm) and [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm)) automatically use the same DPI as the display the app is running on. This matches the coordinate system used by XAML and other Windows Runtime APIs.
 
 If the DPI changes (for instance if the app is moved to a different display), the control will raise the `CreateResources` event and pass a [`CanvasCreateResourcesReason`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm) of [`DpiChanged`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesReason.htm). Apps should respond to this event by recreating any resources (such as rendertargets) that depend on the DPI of the control.
 
@@ -127,19 +129,14 @@ When a bitmap of different DPI than the target drawing session is used as an eff
 
 The `Microsoft.Graphics.Canvas.Composition` APIs operate at a lower level than Win2D XAML controls, so they do not attempt to automatically handle DPI on your behalf. It is up to you to decide what units you prefer to operate in, and set whatever transforms are necessary to achieve that as part of your composition visual tree.
 
-`Windows.UI.Composition` APIs such as `CreateDrawingSurface` always specify sizes in pixel units. When using Win2D to draw onto a composition surface, you can specify whatever DPI you want to use when calling [`CreateDrawingSession(CompositionDrawingSurface, Rect, Single)`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_UI_Composition_CanvasComposition_CreateDrawingSession_2.htm). All drawing performed through the returned `CanvasDrawingSession` will be scaled up or down accordingly.
+Composition APIs such as `CreateDrawingSurface` always specify sizes in pixel units. When using Win2D to draw onto a composition surface, you can specify whatever DPI you want to use when calling [`CreateDrawingSession(CompositionDrawingSurface, Rect, Single)`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_UI_Composition_CanvasComposition_CreateDrawingSession_2.htm). All drawing performed through the returned `CanvasDrawingSession` will be scaled up or down accordingly.
 
 ## How to test DPI handling
 
-The easiest way to test that your app will do the right thing in response to changing display DPI is to run on Windows 10 or Windows 11 and change display settings while the app is running:
+The easiest way to test that your app handles display DPI correctly is to run on Windows 10 or Windows 11 and change the display scale while the app is running:
 
-- Right-click on the desktop background and choose 'Display settings'
-- Move the slider labeled 'Change the size of text, apps, and other items'
-- Click the 'Apply' button
-- Choose 'Sign out later'
+1. Right-click on the desktop background and choose **Display settings**.
+2. Under **Scale & layout**, change the scale percentage (for example, from 100% to 150%).
+3. Your app receives a DPI change notification and should automatically adjust.
 
-If you do not have Windows 10 or Windows 11, you can also test with the Windows Simulator. In the Visual Studio toolbar, change the "Local Machine" setting to "Simulator", then use the Change Resolution icon to switch the simulated display between:
-
-- 100% (DPI = 96)
-- 140% (DPI = 134.4)
-- 180% (DPI = 172.8)
+You can also test by connecting monitors with different DPI settings and dragging your app window between them.

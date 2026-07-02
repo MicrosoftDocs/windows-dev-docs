@@ -1,8 +1,10 @@
 ---
 title: Offscreen drawing
 description: An introduction to drawing onto render targets to create textures for later use.
-ms.date: 05/26/2023
+ms.date: 07/02/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---

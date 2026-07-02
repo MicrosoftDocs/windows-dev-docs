@@ -1,8 +1,10 @@
 ---
 title: Implementing custom effects
 description: An in-depth guide on implementing custom D2D effects with Win2D.
-ms.date: 10/28/2025
+ms.date: 07/02/2026
 ms.topic: concept-article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -151,7 +153,7 @@ The `ID2D1DeviceContextPool` interface is implemented by `CanvasDevice`, which i
 
 ## Enabling WinRT wrappers lookup
 
-As seen in the [Win2D interop docs](https://microsoft.github.io/Win2D/WinUI2/html/Interop.htm), the Win2D public header also exposes a `GetOrCreate` method (accessible from the `ICanvasFactoryNative` activation factory, or through the `GetOrCreate` C++/CX helpers defined in the same header). This allows retrieving a WinRT wrapper from a given native resource. For instance, it lets you retrieve or create a `CanvasDevice` instance from an `ID2D1Device1` object, a `CanvasBitmap` from an `ID2D1Bitmap`, etc.
+As seen in the [Win2D interop docs](https://microsoft.github.io/Win2D/WinUI3/html/Interop.htm), the Win2D public header also exposes a `GetOrCreate` method (accessible from the `ICanvasFactoryNative` activation factory, or through the `GetOrCreate` C++/CX helpers defined in the same header). This allows retrieving a WinRT wrapper from a given native resource. For instance, it lets you retrieve or create a `CanvasDevice` instance from an `ID2D1Device1` object, a `CanvasBitmap` from an `ID2D1Bitmap`, etc.
 
 This method also works for all built-in Win2D effects: retrieving the native resource for a given effect and then using that to retrieve the corresponding Win2D wrapper will correctly return the owning Win2D effect for it. In order for custom effects to also benefit from the same mapping system, Win2D exposes several APIs in the interop interface for the activation factory for `CanvasDevice`, which is the `ICanvasFactoryNative` type, as well as an additional effect factory interface, `ICanvasEffectFactoryNative`:
 

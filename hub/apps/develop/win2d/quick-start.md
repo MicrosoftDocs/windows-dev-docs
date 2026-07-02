@@ -1,8 +1,10 @@
 ---
 title: "Tutorial: Build a simple Win2D app"
 description: This tutorial introduces some of the basic drawing capabilities of Win2D.
-ms.date: 10/28/2025
+ms.date: 07/02/2026
 ms.topic: how-to
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 11, windows 10, uwp, xaml, windows app sdk, winui, windows ui, graphics, games
 ms.localizationpriority: medium
 ---
@@ -23,7 +25,7 @@ This tutorial introduces some of the basic drawing capabilities of Win2D. You'll
 
 ## Add a Win2D CanvasControl to your app's XAML
 
-1. In order to use Win2D, you need somewhere to draw your graphics. In a XAML app, the simplest way to do this is to add a [CanvasControl](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) to your XAML page.
+1. In order to use Win2D, you need somewhere to draw your graphics. In a XAML app, the simplest way to do this is to add a [CanvasControl](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) to your XAML page.
 
 Before you continue, first ensure that the project's Architecture option is set to `x86` or `x64` and **not** to `Any CPU`. Win2D is implemented in C++, and therefore projects that use Win2D need to be targeted to a specific CPU architecture.
 
@@ -47,7 +49,7 @@ Before you continue, first ensure that the project's Architecture option is set 
 </Grid>
 ```
 
-5. Next, define an event handler for the [Draw](https://microsoft.github.io/Win2D/WinUI2/html/E_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl_Draw.htm) event. **CanvasControl** raises `Draw` whenever your app needs to draw or redraw its content. The easiest way is to let Visual Studio AutoComplete assist you. In the **CanvasControl** definition, begin typing a new attribute for the `Draw` event handler:
+5. Next, define an event handler for the [Draw](https://microsoft.github.io/Win2D/WinUI3/html/E_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl_Draw.htm) event. **CanvasControl** raises `Draw` whenever your app needs to draw or redraw its content. The easiest way is to let Visual Studio AutoComplete assist you. In the **CanvasControl** definition, begin typing a new attribute for the `Draw` event handler:
 
 ```XAML
 <canvas:CanvasControl x:Name="canvas" Draw="canvas_Draw" />
@@ -80,7 +82,7 @@ private void canvas_Draw(
 
 (If you didn't use AutoComplete in the previous step, add this code now.)
 
-4. The [CanvasDrawEventArgs](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasDrawEventArgs.htm) parameter exposes a member, **DrawingSession**, which is of the type [CanvasDrawingSession](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasDrawingSession.htm). This class provides most of the basic drawing functionality in Win2D: it has methods such as [CanvasDrawingSession.DrawRectangle](https://microsoft.github.io/Win2D/WinUI2/html/Overload_Microsoft_Graphics_Canvas_CanvasDrawingSession_DrawRectangle.htm), [CanvasDrawingSession.DrawImage](https://microsoft.github.io/Win2D/WinUI2/html/Overload_Microsoft_Graphics_Canvas_CanvasDrawingSession_DrawImage.htm), and the method you need to draw text, [CanvasDrawingSession.DrawText](https://microsoft.github.io/Win2D/WinUI2/html/Overload_Microsoft_Graphics_Canvas_CanvasDrawingSession_DrawText.htm).
+4. The [CanvasDrawEventArgs](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasDrawEventArgs.htm) parameter exposes a member, **DrawingSession**, which is of the type [CanvasDrawingSession](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasDrawingSession.htm). This class provides most of the basic drawing functionality in Win2D: it has methods such as [CanvasDrawingSession.DrawRectangle](https://microsoft.github.io/Win2D/WinUI3/html/Overload_Microsoft_Graphics_Canvas_CanvasDrawingSession_DrawRectangle.htm), [CanvasDrawingSession.DrawImage](https://microsoft.github.io/Win2D/WinUI3/html/Overload_Microsoft_Graphics_Canvas_CanvasDrawingSession_DrawImage.htm), and the method you need to draw text, [CanvasDrawingSession.DrawText](https://microsoft.github.io/Win2D/WinUI3/html/Overload_Microsoft_Graphics_Canvas_CanvasDrawingSession_DrawText.htm).
 
 Add the following code to the `canvas_Draw` method:
 
@@ -94,7 +96,7 @@ The first argument, `"Hello, World!"`, is the string that you want Win2D to disp
 
 ## Correctly dispose of Win2D resources
 
-1. Before continuing on to draw other kinds of content, you first should add some code to ensure your app avoids memory leaks. Most Win2D applications written in a .NET language and using a Win2D control like [CanvasControl](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) need to follow the below steps. Strictly speaking, your simple "Hello, world" app is not affected, but this is a good practice to follow in general.
+1. Before continuing on to draw other kinds of content, you first should add some code to ensure your app avoids memory leaks. Most Win2D applications written in a .NET language and using a Win2D control like [CanvasControl](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm) need to follow the below steps. Strictly speaking, your simple "Hello, world" app is not affected, but this is a good practice to follow in general.
 
 For more information, see [Avoiding memory leaks](./avoiding-memory-leaks.md).
 
@@ -136,7 +138,7 @@ The arguments to these two methods are similar to `DrawText`. A circle is define
 
 12. Now, press F5 to run the app. You should see "Hello, world!" along with a green circle and red line.
 
-You may be wondering how to control more advanced drawing options, such as line thickness and dashes, or more complex fill options such as using brushes. Win2D provides all of these options and more, and makes it easy to use them when you want. All of the `Draw(...)` methods offer many overloads that can accept additional parameters such as [CanvasTextFormat](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextFormat.htm) (font family, size, etc) and [CanvasStrokeStyle](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Geometry_CanvasStrokeStyle.htm) (dashes, dots, endcaps, etc). Feel free to explore the API surface to learn more about these options.
+You may be wondering how to control more advanced drawing options, such as line thickness and dashes, or more complex fill options such as using brushes. Win2D provides all of these options and more, and makes it easy to use them when you want. All of the `Draw(...)` methods offer many overloads that can accept additional parameters such as [CanvasTextFormat](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextFormat.htm) (font family, size, etc) and [CanvasStrokeStyle](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Geometry_CanvasStrokeStyle.htm) (dashes, dots, endcaps, etc). Feel free to explore the API surface to learn more about these options.
 
 ## Dynamically generate drawing parameters
 
@@ -177,7 +179,7 @@ private void canvas_Draw(
 }
 ```
 
-Let's break down how `DrawText` has changed. `"Hello, World!"` remains the same as before. The x and y offset parameters have been replaced with a single [System.Numerics.Vector2](https://msdn.microsoft.com/library/windows/apps/System.Numerics.Vector2) which is generated by `RndPosition`. Finally, instead of using a predefined color, `Color.FromArgb` allows you to define a color using A, R, G and B values. A is alpha, or the opacity level; in this case you always want fully opaque (255).
+Let's break down how `DrawText` has changed. `"Hello, World!"` remains the same as before. The x and y offset parameters have been replaced with a single [System.Numerics.Vector2](/dotnet/api/system.numerics.vector2) which is generated by `RndPosition`. Finally, instead of using a predefined color, `Color.FromArgb` allows you to define a color using A, R, G and B values. A is alpha, or the opacity level; in this case you always want fully opaque (255).
 
 `DrawCircle` and `DrawLine` operate similarly to `DrawText`.
 
@@ -198,9 +200,9 @@ for (int i = 0; i < 100; i++)
 
 Image effects, also known as filter effects, are graphical transformations that are applied to pixel data. Saturation, hue rotation, and Gaussian blur are some common image effects. Image effects can be chained together, producing sophisticated visual appearance for minimal effort.
 
-You use image effects by providing a source image (the content you're starting with), creating an effect such as [GaussianBlurEffect](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_GaussianBlurEffect.htm), setting properties such as [BlurAmount](https://microsoft.github.io/Win2D/WinUI2/html/P_Microsoft_Graphics_Canvas_Effects_GaussianBlurEffect_BlurAmount.htm), and then drawing the effect's output with `DrawImage`.
+You use image effects by providing a source image (the content you're starting with), creating an effect such as [GaussianBlurEffect](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Effects_GaussianBlurEffect.htm), setting properties such as [BlurAmount](https://microsoft.github.io/Win2D/WinUI3/html/P_Microsoft_Graphics_Canvas_Effects_GaussianBlurEffect_BlurAmount.htm), and then drawing the effect's output with `DrawImage`.
 
-To apply an image effect to your text and shapes, you need to first render that content into a [CanvasCommandList](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_CanvasCommandList.htm). This object is usable as an input to your effect.
+To apply an image effect to your text and shapes, you need to first render that content into a [CanvasCommandList](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasCommandList.htm). This object is usable as an input to your effect.
 
 2. Change your `canvas_Draw` method to use the following code:
 
@@ -220,7 +222,7 @@ using (CanvasDrawingSession clds = cl.CreateDrawingSession())
 
 Just like how you obtain a `CanvasDrawingSession` from `CanvasDrawEventArgs` which you can draw with, you can create a `CanvasDrawingSession` from a `CanvasCommandList`. The only difference is that when you draw to the command list's drawing session (clds), you are not directly rendering to the **CanvasControl**. Instead, the command list is an intermediate object that stores the results of rendering for later use.
 
-You may have noticed the `using` block that wraps the command list's drawing session. Drawing sessions implement [IDisposable](https://msdn.microsoft.com/library/system.idisposable) and must be disposed when you are done rendering (the `using` block does this). The `CanvasDrawingSession` that you obtain from `CanvasDrawEventArgs` automatically is closed for you, but you must dispose any drawing sessions that you explicitly created.
+You may have noticed the `using` block that wraps the command list's drawing session. Drawing sessions implement [IDisposable](/dotnet/api/system.idisposable) and must be disposed when you are done rendering (the `using` block does this). The `CanvasDrawingSession` that you obtain from `CanvasDrawEventArgs` automatically is closed for you, but you must dispose any drawing sessions that you explicitly created.
 
 3. Finally, define the `GaussianBlurEffect` by adding the following code to the end of the `canvas_Draw` method:
 
@@ -235,7 +237,7 @@ args.DrawingSession.DrawImage(blur);
 
 ## Animate your app with CanvasAnimatedControl
 
-. Win2D gives you the ability to update and animate your content in realtime, for example by changing the blur radius of the Gaussian blur with every frame. To do this, you will use [CanvasAnimatedControl](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm).
+Win2D gives you the ability to update and animate your content in realtime, for example by changing the blur radius of the Gaussian blur with every frame. To do this, you will use [CanvasAnimatedControl](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm).
 
 **CanvasControl** is best suited for mostly static graphics content - it only raises the `Draw` event when your content needs to be updated or redrawn. If you have continually changing content then you should consider using `CanvasAnimatedControl` instead. The two controls operate very similarly, except `CanvasAnimatedControl` raises the `Draw` event on a periodic basis; by default it is called 60 times per second.
 
@@ -249,7 +251,7 @@ args.DrawingSession.DrawImage(blur);
 
 Just like with **CanvasControl**, let AutoComplete create the `Draw` event handler for you. By default, Visual Studio will name this handler `canvas_Draw_1` because `canvas_Draw` already exists; here, we've renamed the method `canvas_DrawAnimated` to make it clear that this is a different event.
 
-In addition, you are also handling a new event, [CreateResources](https://microsoft.github.io/Win2D/WinUI2/html/E_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl_CreateResources.htm). Once again, let AutoComplete create the handler.
+In addition, you are also handling a new event, [CreateResources](https://microsoft.github.io/Win2D/WinUI3/html/E_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl_CreateResources.htm). Once again, let AutoComplete create the handler.
 
 Now that your app will be redrawing at 60 frames per second, it is more efficient to create your Win2D visual resources once and reuse them with every frame. It is inefficient to create a `CanvasCommandList` and draw 300 elements into it 60 times per second when the content remains static. `CreateResources` is an event that is fired only when Win2D determines you need to recreate your visual resources, such as when the page is loaded.
 
@@ -331,7 +333,7 @@ private void canvas_DrawAnimated(
 }
 ```
 
-This reads the total elapsed time provided by [CanvasAnimatedDrawEventArgs](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedDrawEventArgs.htm) and uses this to calculate the desired blur amount; the sine function provides an interesting variation over time. Finally, the `GaussianBlurEffect` is rendered.
+This reads the total elapsed time provided by [CanvasAnimatedDrawEventArgs](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedDrawEventArgs.htm) and uses this to calculate the desired blur amount; the sine function provides an interesting variation over time. Finally, the `GaussianBlurEffect` is rendered.
 
 6. Run the app to see the blurred content change over time.
 
