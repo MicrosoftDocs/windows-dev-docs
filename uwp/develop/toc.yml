@@ -741,7 +741,7 @@ items:
     - name: Error handling
       href: ../cpp-and-winrt-apis/error-handling.md
     - name: Handle events by using delegates
-      href: ../cpp-and-winrt-apis/handle-events.md
+      href: /windows/apps/develop/cpp-winrt/handle-events
     - name: Author events
       href: /windows/apps/develop/cpp-winrt/author-events
     - name: Collections
@@ -749,7 +749,7 @@ items:
     - name: Concurrency and asynchronous operations
       href: /windows/apps/develop/cpp-winrt/concurrency
     - name: Advanced concurrency and asynchrony
-      href: ../cpp-and-winrt-apis/concurrency-2.md
+      href: /windows/apps/develop/cpp-winrt/concurrency-2
     - name: A completion source sample
       href: /windows/apps/develop/cpp-winrt/concurrency-3
     - name: XAML controls; bind to a property
@@ -771,7 +771,7 @@ items:
     - name: Interop with C++/CX
       href: /windows/apps/develop/cpp-winrt/interop-winrt-cx
     - name: Asynchrony, and interop with C++/CX
-      href: ../cpp-and-winrt-apis/interop-winrt-cx-async.md
+      href: /windows/apps/develop/cpp-winrt/interop-winrt-cx-async
     - name: Move to C++/WinRT from WRL
       href: /windows/apps/develop/cpp-winrt/move-to-winrt-from-wrl
     - name: Porting a sample app from C#
@@ -781,7 +781,7 @@ items:
     - name: Interop with the ABI
       href: /windows/apps/develop/cpp-winrt/interop-winrt-abi
     - name: Strong and weak references
-      href: ../cpp-and-winrt-apis/weak-references.md
+      href: /windows/apps/develop/cpp-winrt/weak-references
     - name: Agile objects
       href: /windows/apps/develop/cpp-winrt/agile-objects
     - name: Diagnosing direct allocations

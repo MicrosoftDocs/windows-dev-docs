@@ -3,7 +3,7 @@ description: This topic shows how to register and revoke event-handling delegate
 title: Handle events by using delegates in C++/WinRT
 ms.date: 06/12/2026
 ms.topic: how-to
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
+keywords: windows 10, windows 11, windows app sdk, winui 3, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
 ms.localizationpriority: medium
 ---
 
@@ -39,7 +39,7 @@ A simple example is handling a button's click event. It's typical to use XAML ma
 // MainPage.h
 void ClickHandler(
     winrt::Windows::Foundation::IInspectable const& sender,
-    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+    winrt::Microsoft::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
 void MainPage::ClickHandler(
@@ -50,12 +50,12 @@ void MainPage::ClickHandler(
 }
 ```
 
-The code above is taken from the **Blank App (C++/WinRT)** project in Visual Studio. The code `myButton()` calls a generated accessor function, which returns the **Button** that we named *myButton*. If you change the `x:Name` of that **Button** element, then the name of the generated accessor function changes, too.
+The code above is taken from the **Blank App, Packaged (WinUI 3 in Desktop)** project in Visual Studio. The code `myButton()` calls a generated accessor function, which returns the **Button** that we named *myButton*. If you change the `x:Name` of that **Button** element, then the name of the generated accessor function changes, too.
 
 > [!NOTE]
 > In this case, the event source (the object that raises the event) is the **Button** named *myButton*. And the event recipient (the object handling the event) is an instance of **MainPage**. There's more info later in this topic about managing the lifetime of event sources and event recipients.
 
-Instead of doing it declaratively in markup, you can imperatively register a member function to handle an event. It may not be obvious from the code example below, but the argument to the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) call is an instance of the [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) delegate. In this case, we're using the **RoutedEventHandler** constructor overload that takes an object and a pointer-to-member-function.
+Instead of doing it declaratively in markup, you can imperatively register a member function to handle an event. It may not be obvious from the code example below, but the argument to the [**ButtonBase::Click**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) call is an instance of the [**RoutedEventHandler**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.routedeventhandler) delegate. In this case, we're using the **RoutedEventHandler** constructor overload that takes an object and a pointer-to-member-function.
 
 ```cppwinrt
 // MainPage.cpp
@@ -68,7 +68,7 @@ MainPage::MainPage()
 ```
 
 > [!IMPORTANT]
-> When registering the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see [If you use a member function as a delegate](weak-references.md#if-you-use-a-member-function-as-a-delegate).
+> When registering the delegate, the code example above passes a raw *this* pointer (pointing to the current object). To learn how to establish a strong or a weak reference to the current object, see [If you use a member function as a delegate](./weak-references.md#if-you-use-a-member-function-as-a-delegate).
 
 Here's an example that uses a static member function; note the simpler syntax.
 
@@ -76,7 +76,7 @@ Here's an example that uses a static member function; note the simpler syntax.
 // MainPage.h
 static void ClickHandler(
     winrt::Windows::Foundation::IInspectable const& sender,
-    winrt::Windows::UI::Xaml::RoutedEventArgs const& args);
+    winrt::Microsoft::UI::Xaml::RoutedEventArgs const& args);
 
 // MainPage.cpp
 MainPage::MainPage()
@@ -90,7 +90,7 @@ void MainPage::ClickHandler(
     RoutedEventArgs const& /* args */) { ... }
 ```
 
-There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/uwp/api/windows.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down in the upper-right corner of the webpage). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
+There are other ways to construct a **RoutedEventHandler**. Below is the syntax block taken from the documentation topic for [**RoutedEventHandler**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.routedeventhandler) (choose *C++/WinRT* from the **Language** drop-down in the upper-right corner of the webpage). Notice the various constructors: one takes a lambda; another a free function; and another (the one we used above) takes an object and a pointer-to-member-function.
 
 ```cppwinrt
 struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
@@ -101,31 +101,31 @@ struct RoutedEventHandler : winrt::Windows::Foundation::IUnknown
     template <typename O, typename M> RoutedEventHandler(O* object, M method);
     /* ... other constructors ... */
     void operator()(winrt::Windows::Foundation::IInspectable const& sender,
-        winrt::Windows::UI::Xaml::RoutedEventArgs const& e) const;
+        winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e) const;
 };
 ```
 
 The syntax of the function call operator is also helpful to see. It tells you what your delegate's parameters need to be. As you can see, in this case the function call operator syntax matches the parameters of our **MainPage::ClickHandler**.
 
 > [!NOTE]
-> For any given event, to figure out the details of its delegate, and that delegate's parameters, go first to the documentation topic for the event itself. Let's take the [UIElement.KeyDown event](/uwp/api/windows.ui.xaml.uielement.keydown) as an example. Visit that topic, and  choose *C++/WinRT* from the **Language** drop-down. In the syntax block at the beginning of the topic, you'll see this.
+> For any given event, to figure out the details of its delegate, and that delegate's parameters, go first to the documentation topic for the event itself. Let's take the [UIElement.KeyDown event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.keydown) as an example. Visit that topic, and  choose *C++/WinRT* from the **Language** drop-down. In the syntax block at the beginning of the topic, you'll see this.
 > 
 > ```cppwinrt
 > // Register
 > event_token KeyDown(KeyEventHandler const& handler) const;
 > ```
 >
-> That info tells us that the **UIElement.KeyDown** event (the topic we're on) has a delegate type of **KeyEventHandler**, since that's the type that you pass when you register a delegate with this event type. So, now follow the link on the topic to that [KeyEventHandler delegate](/uwp/api/windows.ui.xaml.input.keyeventhandler) type. Here, the syntax block contains a function call operator. And, as mentioned above, that tells you what your delegate's parameters need to be.
+> That info tells us that the **UIElement.KeyDown** event (the topic we're on) has a delegate type of **KeyEventHandler**, since that's the type that you pass when you register a delegate with this event type. So, now follow the link on the topic to that [KeyEventHandler delegate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.keyeventhandler) type. Here, the syntax block contains a function call operator. And, as mentioned above, that tells you what your delegate's parameters need to be.
 >
 >```cppwinrt
 >void operator()(
 >   winrt::Windows::Foundation::IInspectable const& sender,
->   winrt::Windows::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
+>   winrt::Microsoft::UI::Xaml::Input::KeyRoutedEventArgs const& e) const;
 >```
 >
->  As you can see, the delegate needs to be declared to take an **IInspectable** as the sender, and an instance of the [KeyRoutedEventArgs class](/uwp/api/windows.ui.xaml.input.keyroutedeventargs) as the args.
+>  As you can see, the delegate needs to be declared to take an **IInspectable** as the sender, and an instance of the [KeyRoutedEventArgs class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.keyroutedeventargs) as the args.
 >
-> To take another example, let's look at the [Popup.Closed event](/uwp/api/windows.ui.xaml.controls.primitives.popup.closed). Its delegate type is [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler-1). So, your delegate will take an **IInspectable** as the sender, and another **IInspectable** (because that's the **EventHandler**'s type parameter ) as the args.
+> To take another example, let's look at the [Popup.Closed event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup.closed). Its delegate type is [EventHandler\<IInspectable\>](/uwp/api/windows.foundation.eventhandler-1). So, your delegate will take an **IInspectable** as the sender, and another **IInspectable** (because that's the **EventHandler**'s type parameter ) as the args.
 
 If you're not doing much work in your event handler, then you can use a lambda function instead of a member function. Again, it may not be obvious from the code example below, but a **RoutedEventHandler** delegate is being constructed from a lambda function which, again, needs to match the syntax of the function call operator that we discussed above.
 
@@ -150,7 +150,7 @@ MainPage::MainPage()
 
     auto click_handler = [](IInspectable const& sender, RoutedEventArgs const& /* args */)
     {
-        sender.as<winrt::Windows::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
+        sender.as<winrt::Microsoft::UI::Xaml::Controls::Button>().Content(box_value(L"Clicked"));
     };
     myButton().Click(click_handler);
     AnotherButton().Click(click_handler);
@@ -166,7 +166,7 @@ For the sake of simplicity, none of the code examples above showed how to do tha
 ```cppwinrt
 struct Example : ExampleT<Example>
 {
-    Example(winrt::Windows::UI::Xaml::Controls::Button const& button) : m_button(button)
+    Example(winrt::Microsoft::UI::Xaml::Controls::Button const& button) : m_button(button)
     {
         m_token = m_button.Click([this](IInspectable const&, RoutedEventArgs const&)
         {
@@ -179,22 +179,22 @@ struct Example : ExampleT<Example>
     }
 
 private:
-    winrt::Windows::UI::Xaml::Controls::Button m_button;
+    winrt::Microsoft::UI::Xaml::Controls::Button m_button;
     winrt::event_token m_token;
 };
 ```
 
-Instead of a strong reference, as in the example above, you can store a weak reference to the button (see [Strong and weak references in C++/WinRT](weak-references.md)).
+Instead of a strong reference, as in the example above, you can store a weak reference to the button (see [Strong and weak references in C++/WinRT](./weak-references.md)).
 
 > [!NOTE]
-> When an event source raises its events synchronously, you can revoke your handler and be confident that you won't receive any more events. But for asynchronous events, even after revoking (and especially when revoking within the destructor), an in-flight event might reach your object after it has started destructing. Finding a place to unsubscribe prior to destruction might mitigate the issue, or for a robust solution see [Safely accessing the *this* pointer with an event-handling delegate](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+> When an event source raises its events synchronously, you can revoke your handler and be confident that you won't receive any more events. But for asynchronous events, even after revoking (and especially when revoking within the destructor), an in-flight event might reach your object after it has started destructing. Finding a place to unsubscribe prior to destruction might mitigate the issue, or for a robust solution see [Safely accessing the *this* pointer with an event-handling delegate](./weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 Alternatively, when you register a delegate, you can specify **winrt::auto_revoke** (which is a value of type [**winrt::auto_revoke_t**](/uwp/cpp-ref-for-winrt/auto-revoke-t)) to request an event revoker (of type [**winrt::event_revoker**](/uwp/cpp-ref-for-winrt/event-revoker)). The event revoker holds a weak reference to the event source (the object that raises the event) for you. You can manually revoke by calling the **event_revoker::revoke** member function; but the event revoker calls that function itself automatically when it goes out of scope. The **revoke** function checks whether the event source still exists and, if so, revokes your delegate. In this example, there's no need to store the event source, and no need for a destructor.
 
 ```cppwinrt
 struct Example : ExampleT<Example>
 {
-    Example(winrt::Windows::UI::Xaml::Controls::Button button)
+    Example(winrt::Microsoft::UI::Xaml::Controls::Button button)
     {
         m_event_revoker = button.Click(
             winrt::auto_revoke,
@@ -206,32 +206,32 @@ struct Example : ExampleT<Example>
     }
 
 private:
-    winrt::Windows::UI::Xaml::Controls::Button::Click_revoker m_event_revoker;
+    winrt::Microsoft::UI::Xaml::Controls::Button::Click_revoker m_event_revoker;
 };
 ```
 
-Below is the syntax block taken from the documentation topic for the [**ButtonBase::Click**](/uwp/api/windows.ui.xaml.controls.primitives.buttonbase.click) event. It shows the three different registration and revoking functions. You can see exactly what type of event revoker you need to declare from the third overload. And you can pass the same kinds of delegates to both the *register* and the *revoke with event_revoker* overloads.
+Below is the syntax block taken from the documentation topic for the [**ButtonBase::Click**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event. It shows the three different registration and revoking functions. You can see exactly what type of event revoker you need to declare from the third overload. And you can pass the same kinds of delegates to both the *register* and the *revoke with event_revoker* overloads.
 
 ```cppwinrt
 // Register
-winrt::event_token Click(winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+winrt::event_token Click(winrt::Microsoft::UI::Xaml::RoutedEventHandler const& handler) const;
 
 // Revoke with event_token
 void Click(winrt::event_token const& token) const;
 
 // Revoke with event_revoker
 Button::Click_revoker Click(winrt::auto_revoke_t,
-    winrt::Windows::UI::Xaml::RoutedEventHandler const& handler) const;
+    winrt::Microsoft::UI::Xaml::RoutedEventHandler const& handler) const;
 ```
 
 > [!NOTE]
-> In the code example above, `Button::Click_revoker` is a type alias for `winrt::event_revoker<winrt::Windows::UI::Xaml::Controls::Primitives::IButtonBase>`. A similar pattern applies to all C++/WinRT events. Each Windows Runtime event has a revoke function overload that returns an event revoker, and that revoker's type is a member of the event source. So, to take another example, the [**CoreWindow::SizeChanged**](/uwp/api/windows.ui.core.corewindow.sizechanged) event has a registration function overload that returns a value of type **CoreWindow::SizeChanged_revoker**.
+> In the code example above, `Button::Click_revoker` is a type alias for `winrt::event_revoker<winrt::Microsoft::UI::Xaml::Controls::Primitives::IButtonBase>`. A similar pattern applies to all C++/WinRT events. Each Windows Runtime event has a revoke function overload that returns an event revoker, and that revoker's type is a member of the event source. So, to take another example, the [**Window::SizeChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged) event has a registration function overload that returns a value of type **Window::SizeChanged_revoker**.
 
 You might consider revoking handlers in a page-navigation scenario. If you're repeatedly navigating into a page and then back out, then you could revoke any handlers when you navigate away from the page. Alternatively, if you're re-using the same page instance, then check the value of your token and only register if it's not yet been set (`if (!m_token){ ... }`). A third option is to store an event revoker in the page as a data member. And a fourth option, as described later in this topic, is to capture a strong or a weak reference to the *this* object in your lambda function.
 
 ### If your auto-revoke delegate fails to register
 
-If you try to specify [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) when registering a delegate, and the result is a [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) exception, then that usually means that the event source doesn't support weak references. That's a common situation in the [**Windows.UI.Composition**](/uwp/api/windows.ui.composition) namespace, for example. In this situation, you can't use the auto-revoke feature. You'll have to fall back to manually revoking your event handlers.
+If you try to specify [**winrt::auto_revoke**](/uwp/cpp-ref-for-winrt/auto-revoke-t) when registering a delegate, and the result is a [**winrt::hresult_no_interface**](/uwp/cpp-ref-for-winrt/error-handling/hresult-no-interface) exception, then that usually means that the event source doesn't support weak references. That's a common situation in the [**Microsoft.UI.Composition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition) namespace, for example. In this situation, you can't use the auto-revoke feature. You'll have to fall back to manually revoking your event handlers.
 
 ## Delegate types for asynchronous actions and operations
 
@@ -294,10 +294,10 @@ async_op_with_progress.Completed(
 
 ## Delegate types that return a value
 
-Some delegate types must themselves return a value. An example is [**ListViewItemToKeyHandler**](/uwp/api/windows.ui.xaml.controls.listviewitemtokeyhandler), which returns a string. Here's an example of authoring a delegate of that type (note that the lambda function returns a value).
+Some delegate types must themselves return a value. An example is [**ListViewItemToKeyHandler**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewitemtokeyhandler), which returns a string. Here's an example of authoring a delegate of that type (note that the lambda function returns a value).
 
 ```cppwinrt
-using namespace winrt::Windows::UI::Xaml::Controls;
+using namespace winrt::Microsoft::UI::Xaml::Controls;
 
 winrt::hstring f(ListView listview)
 {
@@ -310,7 +310,7 @@ winrt::hstring f(ListView listview)
 
 ## Safely accessing the *this* pointer with an event-handling delegate
 
-If you handle an event with an object's member function, or from within a lambda function inside an object's member function, then you need to think about the relative lifetimes of the event recipient (the object handling the event) and the event source (the object raising the event). For more info, and code examples, see [Strong and weak references in C++/WinRT](weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
+If you handle an event with an object's member function, or from within a lambda function inside an object's member function, then you need to think about the relative lifetimes of the event recipient (the object handling the event) and the event source (the object raising the event). For more info, and code examples, see [Strong and weak references in C++/WinRT](./weak-references.md#safely-accessing-the-this-pointer-with-an-event-handling-delegate).
 
 ## Important APIs
 * [winrt::auto_revoke_t marker struct](/uwp/cpp-ref-for-winrt/auto-revoke-t)

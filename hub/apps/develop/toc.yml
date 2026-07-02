@@ -1378,6 +1378,14 @@ items:
           - name: Move to C++/WinRT from WRL
             href: cpp-winrt/move-to-winrt-from-wrl.md
           - name: Extension points for implementation types
+          - name: Handle events by using delegates
+            href: cpp-winrt/handle-events.md
+          - name: Advanced concurrency and asynchrony
+            href: cpp-winrt/concurrency-2.md
+          - name: "Asynchrony, and interop between C++/WinRT and C++/CX"
+            href: cpp-winrt/interop-winrt-cx-async.md
+          - name: Strong and weak references
+            href: cpp-winrt/weak-references.md
             href: cpp-winrt/details-about-destructors.md
       - name: C#/WinRT
         items:

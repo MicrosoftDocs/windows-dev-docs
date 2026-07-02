@@ -12399,6 +12399,26 @@
       "source_path": "uwp/cpp-and-winrt-apis/news.md",
       "redirect_url": "/windows/apps/develop/cpp-winrt/news",
       "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/concurrency-2.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/concurrency-2",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/handle-events.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/handle-events",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/interop-winrt-cx-async.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/interop-winrt-cx-async",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/cpp-and-winrt-apis/weak-references.md",
+      "redirect_url": "/windows/apps/develop/cpp-winrt/weak-references",
+      "redirect_document_id": false
     }
   ]
 }

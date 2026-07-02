@@ -3,9 +3,9 @@ description: The Windows Runtime is a reference-counted system; and in such a sy
 title: Strong and weak references in C++/WinRT
 ms.date: 06/12/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, strong, weak, reference
+keywords: windows 10, windows 11, windows app sdk, winui 3, standard, c++, cpp, winrt, projection, strong, weak, reference
 ms.localizationpriority: medium
-ms.custom: RS5
+
 ---
 
 # Strong and weak references in C++/WinRT
@@ -16,7 +16,7 @@ ms.custom: RS5
 The Windows Runtime is a reference-counted system; and in such a system it's important for you to know about the significance of, and distinction between, strong and weak references (and references that are neither, such as the implicit *this* pointer). As you'll see in this topic, knowing how to manage these references correctly can mean the difference between a reliable system that runs smoothly, and one that crashes unpredictably. By providing helper functions that have deep support in the language projection, [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) meets you halfway in your work of building more complex systems simply and correctly.
 
 > [!NOTE]
-> With only a few exceptions, weak reference support is on by default for Windows Runtime types that you consume or author in [C++/WinRT](./index.md). **Windows.UI.Composition** and **Windows.Devices.Input.PenDevice** are examples of exceptions&mdash;that is, namespaces where weak reference support is *not* on for those types. Also see [If your auto-revoke delegate fails to register](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register).
+> With only a few exceptions, weak reference support is on by default for Windows Runtime types that you consume or author in [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/index). **Windows.UI.Composition** and **Windows.Devices.Input.PenDevice** are examples of exceptions&mdash;that is, namespaces where weak reference support is *not* on for those types. Also see [If your auto-revoke delegate fails to register](./handle-events.md#if-your-auto-revoke-delegate-fails-to-register).
 > 
 > If you're authoring types, then see the [Weak references in C++/WinRT](#weak-references-in-cwinrt) section in this topic.
 
@@ -111,7 +111,7 @@ IAsyncOperation<winrt::hstring> RetrieveValueAsync()
 A C++/WinRT class directly or indirectly derives from the [**winrt::implements**](/uwp/cpp-ref-for-winrt/implements) template. Because of that, the C++/WinRT object can call its [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function) protected member function to retrieve a strong reference to its *this* pointer. Note that there's no need to actually use the `strong_this` variable in the code example above; simply calling **get_strong** increments the C++/WinRT object's reference count, and keeps its implicit *this* pointer valid.
 
 > [!IMPORTANT]
-> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](./author-apis.md).
+> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 This resolves the problem that we previously had when we got to step 4. Even if all other references to the class instance disappear, the coroutine has taken the precaution of guaranteeing that its dependencies are stable.
 
@@ -141,7 +141,7 @@ In the example above, the weak reference doesn't keep the class instance from be
 
 ### The scenario
 
-For general info about event-handling, see [Handle events by using delegates in C++/WinRT](handle-events.md).
+For general info about event-handling, see [Handle events by using delegates in C++/WinRT](./handle-events.md).
 
 The previous section highlighted potential lifetime issues in the areas of coroutines and concurrency. But, if you handle an event with an object's member function, or from within a lambda function inside an object's member function, then you need to think about the relative lifetimes of the event recipient (the object handling the event) and the event source (the object raising the event). Let's look at some code examples.
 
@@ -208,7 +208,7 @@ But there are still cases where *this* doesn't outlive its use in a handler (inc
 
 - When an event source raises its events *synchronously*, you can revoke your handler and be confident that you won't receive any more events. But for asynchronous events, even after revoking (and especially when revoking within the destructor), an in-flight event might reach your object after it has started destructing. Finding a place to unsubscribe prior to destruction might mitigate the issue, but continue reading for a robust solution.
 - If you're authoring a coroutine to implement an asynchronous method, then it's possible.
-- In rare cases with certain XAML UI framework objects ([**SwapChainPanel**](/uwp/api/windows.ui.xaml.controls.swapchainpanel), for example), then it's possible, if the recipient is finalized without unregistering from the event source.
+- In rare cases with certain XAML UI framework objects ([**SwapChainPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel), for example), then it's possible, if the recipient is finalized without unregistering from the event source.
 
 ### The issue
 
@@ -232,7 +232,7 @@ The event recipient is destroyed, but the lambda event handler within it is stil
 > [!IMPORTANT]
 > If you encounter a situation like this, then you'll need to think about the lifetime of the *this* object; and whether or not the captured *this* object outlives the capture. If it doesn't, then capture it with a strong or a weak reference, as we'll demonstrate below.
 >
-> Or&mdash;if it makes sense for your scenario, and if threading considerations make it even possible&mdash;then another option is to revoke the handler after the recipient is done with the event, or in the recipient's destructor. See [Revoke a registered delegate](handle-events.md#revoke-a-registered-delegate).
+> Or&mdash;if it makes sense for your scenario, and if threading considerations make it even possible&mdash;then another option is to revoke the handler after the recipient is done with the event, or in the recipient's destructor. See [Revoke a registered delegate](./handle-events.md#revoke-a-registered-delegate).
 
 This is how we're registering the handler.
 
@@ -259,7 +259,7 @@ In both cases, we're just capturing the raw *this* pointer. And that has no effe
 The solution is to capture a strong reference (or, as we'll see, a weak reference if that's more appropriate). A strong reference *does* increment the reference count, and it *does* keep the current object alive. You just declare a capture variable (called `strong_this` in this example), and initialize it with a call to [**implements::get_strong**](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function), which retrieves a strong reference to our *this* pointer.
 
 > [!IMPORTANT]
-> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](./author-apis.md).
+> Because **get_strong** is a member function of the **winrt::implements** struct template, you can call it only from a class that directly or indirectly derives from **winrt::implements**, such as a C++/WinRT class. For more info about deriving from **winrt::implements**, and examples, see [Author APIs with C++/WinRT](/windows/uwp/cpp-and-winrt-apis/author-apis).
 
 ```cppwinrt
 event_source.Event([this, strong_this { get_strong()}](auto&& ...)
@@ -369,16 +369,16 @@ private:
 
 ### A weak reference example using **SwapChainPanel::CompositionScaleChanged**
 
-In this code example, we use the [**SwapChainPanel::CompositionScaleChanged**](/uwp/api/windows.ui.xaml.controls.swapchainpanel.compositionscalechanged) event by way of another illustration of weak references. The code registers an event handler using a lambda that captures a weak reference to the recipient.
+In this code example, we use the [**SwapChainPanel::CompositionScaleChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swapchainpanel.compositionscalechanged) event by way of another illustration of weak references. The code registers an event handler using a lambda that captures a weak reference to the recipient.
 
 ```cppwinrt
-winrt::Windows::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
+winrt::Microsoft::UI::Xaml::Controls::SwapChainPanel m_swapChainPanel;
 winrt::event_token m_compositionScaleChangedEventToken;
 
 void RegisterEventHandler()
 {
     m_compositionScaleChangedEventToken = m_swapChainPanel.CompositionScaleChanged([weak_this{ get_weak() }]
-        (Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
+        (Microsoft::UI::Xaml::Controls::SwapChainPanel const& sender,
         Windows::Foundation::IInspectable const& object)
     {
         if (auto strong_this{ weak_this.get() })
@@ -388,7 +388,7 @@ void RegisterEventHandler()
     });
 }
 
-void OnCompositionScaleChanged(Windows::UI::Xaml::Controls::SwapChainPanel const& sender,
+void OnCompositionScaleChanged(Microsoft::UI::Xaml::Controls::SwapChainPanel const& sender,
     Windows::Foundation::IInspectable const& object)
 {
     // Here, we know that the "this" object is valid.

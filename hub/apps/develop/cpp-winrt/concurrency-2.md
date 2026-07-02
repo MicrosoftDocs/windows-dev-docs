@@ -1,9 +1,9 @@
 ---
 description: Advanced scenarios with concurrency and asynchrony in C++/WinRT.
 title: Advanced concurrency and asynchrony with C++/WinRT
-ms.date: 07/23/2019
+ms.date: 06/02/2026
 ms.topic: article
-keywords: windows 10, uwp, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
+keywords: windows 10, windows 11, windows app sdk, winui 3, standard, c++, cpp, winrt, projection, concurrency, async, asynchronous, asynchrony
 ms.localizationpriority: medium
 ---
 
@@ -68,7 +68,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
 
 As long as the coroutine above is called from the UI thread that created the **TextBlock**, then this technique works. There will be many cases in your app where you're certain of that.
 
-For a more general solution to updating UI, which covers cases where you're uncertain about the calling thread, you can `co_await` the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function to switch to a specific foreground thread. In the code example below, we specify the foreground thread by passing the dispatcher object associated with the **TextBlock** (by accessing its [**Dispatcher**](/uwp/api/windows.ui.xaml.dependencyobject.dispatcher#Windows_UI_Xaml_DependencyObject_Dispatcher) property). The implementation of **winrt::resume_foreground** calls [**CoreDispatcher.RunAsync**](/uwp/api/windows.ui.core.coredispatcher.runasync) on that dispatcher object to execute the work that comes after it in the coroutine.
+For a more general solution to updating UI, which covers cases where you're uncertain about the calling thread, you can `co_await` the [**winrt::resume_foreground**](/uwp/cpp-ref-for-winrt/resume-foreground) function to switch to a specific foreground thread. In the code example below, we specify the foreground thread by passing the dispatcher queue associated with the **TextBlock** (by accessing its [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.dispatcherqueue) property). The implementation of **winrt::resume_foreground** calls [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) on that dispatcher queue object to execute the work that comes after it in the coroutine.
 
 ```cppwinrt
 IAsyncAction DoWorkAsync(TextBlock textblock)
@@ -77,7 +77,7 @@ IAsyncAction DoWorkAsync(TextBlock textblock)
     // Do compute-bound work here.
 
     // Switch to the foreground thread associated with textblock.
-    co_await winrt::resume_foreground(textblock.Dispatcher());
+    co_await winrt::resume_foreground(textblock.DispatcherQueue());
 
     textblock.Text(L"Done!"); // Guaranteed to work.
 }
@@ -135,7 +135,7 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 
     // Process the image.
 
-    co_await winrt::resume_foreground(this->Dispatcher());
+    co_await winrt::resume_foreground(this->DispatcherQueue());
 
     // We're back on MainPage's UI thread.
 
@@ -158,7 +158,7 @@ IAsyncAction MainPage::ClickHandler(IInspectable /* sender */, RoutedEventArgs /
 
     // Process the image.
 
-    co_await winrt::resume_foreground(this->Dispatcher());
+    co_await winrt::resume_foreground(this->DispatcherQueue());
 
     // We're back on MainPage's UI thread.
 
@@ -244,7 +244,7 @@ auto resume_foreground(...) noexcept
 
 This current, versus previous, behavior is analogous to the difference between [**PostMessage**](/windows/win32/api/winuser/nf-winuser-postmessagew) and [**SendMessage**](/windows/win32/api/winuser/nf-winuser-sendmessage) in Win32 application development. **PostMessage** queues the work and then unwinds the stack without waiting for the work to complete. The stack-unwinding can be essential.
 
-The **winrt::resume_foreground** function also initially only supported the [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) (tied to a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow)), which was introduced prior to Windows 10. We've since introduced a more flexible and efficient dispatcher: the [**DispatcherQueue**](/uwp/api/windows.system.dispatcherqueue). You can create a **DispatcherQueue** for your own purposes. Consider this simple console application.
+The **winrt::resume_foreground** function originally supported the [**CoreDispatcher**](/uwp/api/windows.ui.core.coredispatcher) (tied to a [**CoreWindow**](/uwp/api/windows.ui.core.corewindow)), which was introduced prior to Windows 10. In WinUI 3 and Windows App SDK apps, use the [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) instead. You can create a **DispatcherQueue** for your own purposes. Consider this simple console application.
 
 ```cppwinrt
 using namespace Windows::System;
@@ -340,7 +340,7 @@ winrt::fire_and_forget RunAsync(DispatcherQueue queue)
 ```
 
 > [!NOTE]
-> As shown above, be sure to include the projection header for the namespace of the type you're `co_await`-ing. For example, **Windows::UI::Core::CoreDispatcher**, **Windows::System::DispatcherQueue**, or **Microsoft::UI::Dispatching::DispatcherQueue**.
+> As shown above, be sure to include the projection header for the namespace of the type you're `co_await`-ing. For example, **Windows::System::DispatcherQueue** or **Microsoft::UI::Dispatching::DispatcherQueue**.
 
 Or, in this case detecting queue shutdown, and handling it gracefully.
 
@@ -386,7 +386,7 @@ using namespace Windows::Foundation;
 using namespace Windows::Foundation::Collections;
 using namespace Windows::Storage;
 using namespace Windows::Storage::Search;
-using namespace Windows::UI::Xaml;
+using namespace Microsoft::UI::Xaml;
 ...
 struct MainPage : MainPageT<MainPage>
 {
@@ -630,7 +630,7 @@ auto async_op_with_progress{ CalcPiTo5DPs() };
 double pi{ co_await async_op_with_progress };
 ```
 
-For more info about completion handlers, see [Delegate types for asynchronous actions and operations](handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
+For more info about completion handlers, see [Delegate types for asynchronous actions and operations](./handle-events.md#delegate-types-for-asynchronous-actions-and-operations).
 
 ## Fire and forget
 
@@ -850,7 +850,7 @@ Windows.Foundation.IAsyncOperation<Int32[]> RetrieveArrayAsync();
 
 The reason is that it's invalid to use an array as a parameter type argument to a parameterized interface. So we need a less obvious way to achieve the aim of asynchronously passing an array back from a runtime class method. 
 
-You can return the array boxed into a [PropertyValue](/uwp/api/windows.foundation.propertyvalue) object. The calling code then unboxes it. Here's a code example, which you can try out by adding the **SampleComponent** runtime class to a **Windows Runtime Component (C++/WinRT)** project, and then consuming that from (for example) a **Core App (C++/WinRT)** project.
+You can return the array boxed into a [PropertyValue](/uwp/api/windows.foundation.propertyvalue) object. The calling code then unboxes it. Here's a code example, which you can try out by adding the **SampleComponent** runtime class to a **Windows Runtime Component (C++/WinRT)** project, and then consuming that from (for example) a **Blank App, Packaged (WinUI 3 in Desktop)** project.
 
 ```cppwinrt
 // SampleComponent.idl
@@ -898,4 +898,4 @@ property_value.GetInt32Array(my_array); // Unbox back into an array.
 
 ## Related topics
 * [Concurrency and asynchronous operations](/windows/apps/develop/cpp-winrt/concurrency)
-* [Handle events by using delegates in C++/WinRT](handle-events.md)
+* [Handle events by using delegates in C++/WinRT](./handle-events.md)
