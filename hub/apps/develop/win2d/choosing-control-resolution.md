@@ -1,8 +1,10 @@
 ---
 title: Choosing control resolution
 description: An explanation of how to configure the resolution used by Win2D's XAML controls.
-ms.date: 05/26/2023
+ms.date: 07/02/2026
 ms.topic: concept-article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -94,7 +96,7 @@ if(control.Dpi > dpiLimit)
 }
 ```
 
-To ensure this setting works across DPI changes, the application should subscribe to [`DisplayInformation.DpiChanged`](https://msdn.microsoft.com/library/windows/apps/windows.graphics.display.displayinformation.dpichanged) and use this logic in the handler to set the DPI scale against the new DPI.
+To ensure this setting works across DPI changes, the application should subscribe to [`DisplayInformation.DpiChanged`](/uwp/api/windows.graphics.display.displayinformation.dpichanged) and use this logic in the handler to set the DPI scale against the new DPI.
 
 This saves the app some perf overhead, exploiting the fact that users may not be able to easily perceive the reduced resolution on a high-DPI display.
 

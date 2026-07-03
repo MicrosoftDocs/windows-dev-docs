@@ -1,8 +1,10 @@
 ---
 title: Effect precision and clamping
 description: An explanation of how to deal with precision and clamping when drawing Win2D effects.
-ms.date: 05/28/2023
+ms.date: 07/02/2026
 ms.topic: how-to
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -17,7 +19,7 @@ You need to understand these details if:
 
 Win2D often divides an effect graph into sections, and renders each section in a separate step. The output of some steps may be stored in intermediate Direct3D textures which by default have limited numerical range and precision. Win2D makes no guarantees about if or where these intermediate textures are used. This behavior may vary according to GPU capabilities as well as between Windows versions.
 
-In Windows 10, Win2D uses fewer intermediate textures due to its use of [shader linking](https://msdn.microsoft.com/library/windows/desktop/dn879810). Win2D may therefore produce different results with default settings than in prior Windows releases. This primarily affects scenarios where shader linking is possible in an effect graph, and that graph also contains effects that produce extended-range output colors.
+In Windows 10, Win2D uses fewer intermediate textures due to its use of [shader linking](/windows/win32/direct2d/effect-shader-linking). Win2D may therefore produce different results with default settings than in prior Windows releases. This primarily affects scenarios where shader linking is possible in an effect graph, and that graph also contains effects that produce extended-range output colors.
 
 ## Overview of effect rendering and intermediates
 
@@ -37,7 +39,7 @@ In Windows 10, Win2D may now avoid using intermediate textures in such cases. It
 
 ![a flow chart showing another example of two D2D effects, using pixel shaders in this case, being linked together](./images/win2d_effects_linking_2.svg)
 
-Note that not all adjacent pixel shaders in a graph may be linked together, and therefore only certain graphs will produce different output on Windows 10. For full details see [Effect Shader Linking](https://msdn.microsoft.com/library/windows/desktop/dn879810). The primary restrictions are:
+Note that not all adjacent pixel shaders in a graph may be linked together, and therefore only certain graphs will produce different output on Windows 10. For full details see [Effect Shader Linking](/windows/win32/direct2d/effect-shader-linking). The primary restrictions are:
 
 - An effect will not be linked with effects consuming its output, if the first effect is connected as an input to multiple effects.
 - An effect will not be linked with an effect set as its input, if the first effect samples its input at a different logical position than its output. For example, a `ColorMatrix` effect might be linked with its input, but a `Convolution` effect will not be.
@@ -76,7 +78,7 @@ A second option to achieve consistent results is to request that Win2D use inter
 
 Win2D provides a few ways to control the precision of a graph.
 
-Before using high precision formats in Win2D, applications must ensure they are supported sufficiently by the GPU. To check this, use [`IsBufferPrecisionSupported(CanvasBufferPrecision)`](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_CanvasDevice_IsBufferPrecisionSupported.htm).
+Before using high precision formats in Win2D, applications must ensure they are supported sufficiently by the GPU. To check this, use [`IsBufferPrecisionSupported(CanvasBufferPrecision)`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_CanvasDevice_IsBufferPrecisionSupported.htm).
 
 Applications may create a Direct3D device using WARP (software emulation) to ensure that all buffer precisions are supported. This is recommended in scenarios such as applying effects to a photo while saving to disk. Even if Win2D supports high precision buffer formats on the GPU, using WARP is recommended in this scenario on feature level 9.X GPUs, due to limited precision of shader arithmetic and sampling on some low-power mobile GPUs. To use software rendering, specify `ForceSoftwareRenderer = true` on your Win2D XAML controls or when creating your `CanvasDevice`.
 
@@ -84,7 +86,7 @@ In each case below, the requested precision is actually the minimum precision Wi
 
 ### Precision selection from the drawing session
 
-The simplest way to control the precision of Win2D's intermediate textures is to use the [`EffectBufferPrecision`](https://microsoft.github.io/Win2D/WinUI2/html/P_Microsoft_Graphics_Canvas_CanvasDrawingSession_EffectBufferPrecision.htm) property. This controls the precision of all intermediate textures, as long as a precision is not also set manually on effects directly.
+The simplest way to control the precision of Win2D's intermediate textures is to use the [`EffectBufferPrecision`](https://microsoft.github.io/Win2D/WinUI3/html/P_Microsoft_Graphics_Canvas_CanvasDrawingSession_EffectBufferPrecision.htm) property. This controls the precision of all intermediate textures, as long as a precision is not also set manually on effects directly.
 
 ```csharp
 if (canvasDevice.IsBufferPrecisionSupported(CanvasBufferPrecision.Precision32Float))

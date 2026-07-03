@@ -16,6 +16,8 @@ items:
             href: ../dev-drive/group-policy.md
       - name: File Explorer + version control
         href: ../advanced-settings/fe-version-control.md
+      - name: Modern Run dialog
+        href: ../advanced-settings/modern-run.md
       - name: Settings for developers
         href: ../advanced-settings/developer-mode.md
   - name: CLI tools

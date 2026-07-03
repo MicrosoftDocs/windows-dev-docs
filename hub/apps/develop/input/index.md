@@ -1,6 +1,8 @@
 ---
 description: Learn how to customize your WinUI app for interaction with specific types of inputs including pen, touch, keyboard, and speech.
 title: Input and interactions
+author: GrantMeStrength
+ms.author: jken
 ms.date: 07/02/2026
 ms.topic: overview
 ---
@@ -29,21 +31,21 @@ For the complete list of supported and unsupported WinRT APIs in desktop apps, s
 ## Get started
 
 | Topic | Description |
-|-------|-------------|
+| --- | --- |
 | [Input primer](input-primer.md) | Familiarize yourself with each input device type and its behaviors, capabilities, and limitations when paired with certain form factors. |
 | [Gaze input](/windows/uwp/design/input/gaze-interactions) | Track a user's gaze based on the location and movement of their eyes and head. Gaze APIs require UWP; see the linked UWP reference. |
 
 ## Input devices
 
 | Topic | Description |
-|-------|-------------|
+| --- | --- |
 | [Identify input devices](identify-input-devices.md) | Identify the input devices connected to a Windows app device and identify their capabilities and attributes. |
 | [Pointer](handle-pointer-input.md) | Receive, process, and manage input data from pointing devices such as touch, mouse, pen/stylus, and touchpad. |
 | [Pen and Windows Ink](pen-and-stylus-interactions.md) | Handle pen-specific input properties such as pressure, tilt, barrel button, and eraser detection. |
 | [Touch](touch-interactions.md) | Handle touch input, enabling immersive experiences that your users can explore with confidence. |
 | [Mouse](mouse-interactions.md) | Handle mouse input in your app, including button clicks, scroll wheel, and pointer movement. |
 | [Keyboard](keyboard-interactions.md) | Handle keyboard input, an essential part of the interaction experience and indispensable for accessibility. |
-| [Gamepad and remote control](/windows/uwp/design/input/gamepad-and-remote-interactions) | Design for Xbox gamepad and remote control input. See the linked UWP reference for 10-foot design patterns. |
+| [Gamepad and remote control](/windows/uwp/design/input/gamepad-and-remote-interactions) | Design for Xbox gamepad and remote control input. The [Windows.Gaming.Input](/uwp/api/windows.gaming.input) APIs work directly in WinUI 3 desktop apps; the linked UWP topic covers 10-foot design patterns. |
 | [Touchpad](touchpad-interactions.md) | Handle touchpad input, which combines indirect multi-touch input with the precision of a pointing device. |
 | [Multiple inputs](multiple-input-design-guidelines.md) | Design your app to work with as many input types as possible to maximize flexibility, usability, and accessibility. |
 | [Custom text input](custom-text-input.md) | Use the core text APIs to receive text input from any text service supported on Windows devices, in any language and from any input type. |
@@ -51,7 +53,7 @@ For the complete list of supported and unsupported WinRT APIs in desktop apps, s
 ## Interactions
 
 | Topic | Description |
-|-------|-------------|
+| --- | --- |
 | [Drag and drop](../data/drag-and-drop.md) | Enable drag and drop interactions in your app. |
 | [Panning](guidelines-for-panning.md) | Guidelines for implementing panning interactions. |
 | [Rotation](guidelines-for-rotation.md) | Guidelines for implementing rotation interactions. |
@@ -63,7 +65,7 @@ For the complete list of supported and unsupported WinRT APIs in desktop apps, s
 ## Speech and feedback
 
 | Topic | Description |
-|-------|-------------|
+| --- | --- |
 | [Speech](speech-interactions.md) | Integrate speech recognition and text-to-speech directly into the user experience of your app. Requires package identity. |
 | [Haptics](/windows/apps/design/signature-experiences/haptics) | Add touch feedback to reinforce user input and create more responsive, intuitive interactions. |
 

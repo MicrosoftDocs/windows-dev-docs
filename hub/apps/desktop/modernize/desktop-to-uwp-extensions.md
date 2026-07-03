@@ -1353,7 +1353,7 @@ Find a sample that uses this extension [Here](https://github.com/Microsoft/Deskt
 
 ### Share fonts with other Windows applications
 
-Share your custom fonts with other Windows applications.
+Share your custom fonts with other Windows applications. Note that there are two different versions of the shared fonts extensions that have slightly different behavior. The [uap4:sharedFonts](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts) element is a descendent of [Application](/uwp/schemas/appxpackage/uapmanifestschema/element-application) and is associated to a specific application's identity. The [uap7:sharedFonts](/uwp/schemas/appxpackage/uapmanifestschema/element-uap7-sharedfonts) element provides similar functionality, but is a descendent of [Package](/uwp/schemas/appxpackage/uapmanifestschema/element-package) and is associated with the package identity, regardless of how many apps the package contains. This includes packages that contain no applications at all.
 
 > [!NOTE]
 > Before you can submit an app that uses this extension to the Store, you must first obtain approval from the Store team. To obtain approval, go to [https://aka.ms/storesupport](https://aka.ms/storesupport), click **Contact us**, and choose options relevant to submitting apps to the dashboard. This approval process helps to ensure that there are no conflicts between fonts installed by your app and fonts that are installed with the OS. If you do not obtain approval, you will receive an error similar to the following when you submit your app: "Package acceptance validation error: You can't use extension windows.sharedFonts with this account. Contact our support team if you'd like to request permissions to use this extension."
@@ -1361,6 +1361,7 @@ Share your custom fonts with other Windows applications.
 #### XML namespaces
 
 `http://schemas.microsoft.com/appx/manifest/uap/windows10/4`
+`http://schemas.microsoft.com/appx/manifest/uap/windows10/7`
 
 #### Elements and attributes of this extension
 
@@ -1372,14 +1373,14 @@ Share your custom fonts with other Windows applications.
   </Extension>
 ```
 
-Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts).
+Find the complete schema reference, see [uap4:SharedFonts](/uwp/schemas/appxpackage/uapmanifestschema/element-uap4-sharedfonts) and [uap7:SharedFonts](/uwp/schemas/appxpackage/uapmanifestschema/element-uap7-sharedfonts).
 
 |Name |Description |
 |-------|-------------|
 |Category |Always ``windows.sharedFonts``.
 |File |The file that contains the fonts that you want to share. |
 
-#### Example
+#### Examples
 
 ```XML
 <Package
@@ -1397,6 +1398,25 @@ Find the complete schema reference [here](/uwp/schemas/appxpackage/uapmanifestsc
       </Extensions>
     </Application>
   </Applications>
+</Package>
+```
+
+```XML
+<Package
+  xmlns:uap4="http://schemas.microsoft.com/appx/manifest/uap/windows10/4"
+  IgnorableNamespaces="uap4">
+  <Applications>
+    <Application>
+    </Application>
+  </Applications>
+  <Extensions>
+    <uap7:Extension Category="windows.sharedFonts">
+      <uap7:SharedFonts>
+        <uap7:Font File="Fonts\JustRealize.ttf" />
+        <uap7:Font File="Fonts\JustRealizeBold.ttf" />
+      </uap7:SharedFonts>
+    </uap7:Extension>
+  </Extensions>
 </Package>
 ```
 

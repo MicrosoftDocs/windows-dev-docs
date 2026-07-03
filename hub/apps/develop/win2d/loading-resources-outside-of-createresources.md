@@ -1,8 +1,10 @@
 ---
 title: Loading resources outside of CreateResources
 description: An explanation of how to load Win2D resources at any time in advanced scenarios.
-ms.date: 05/28/2023
+ms.date: 07/02/2026
 ms.topic: how-to
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -13,7 +15,7 @@ This document discusses how apps using Win2D's XAML controls, CanvasControl, Can
 
 ## Resource loading and CanvasControl / CanvasVirtualControl
 
-Normally, apps are expected to use the `CreateResources` handler for creating controls' resources, so that device dependent resources are re-recreated as necessary if the device is lost. This includes resources that are loaded asynchronously. For asynchronous resource loading, controls are encouraged to use [`TrackAsyncAction(IAsyncAction)`](https://microsoft.github.io/Win2D/WinUI2/html/M_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesEventArgs_TrackAsyncAction.htm) with `CreateResources` to ensure correct behavior.
+Normally, apps are expected to use the `CreateResources` handler for creating controls' resources, so that device dependent resources are re-recreated as necessary if the device is lost. This includes resources that are loaded asynchronously. For asynchronous resource loading, controls are encouraged to use [`TrackAsyncAction(IAsyncAction)`](https://microsoft.github.io/Win2D/WinUI3/html/M_Microsoft_Graphics_Canvas_UI_CanvasCreateResourcesEventArgs_TrackAsyncAction.htm) with `CreateResources` to ensure correct behavior.
 
 All of this works well for cases where all resources are loaded at startup only.
 

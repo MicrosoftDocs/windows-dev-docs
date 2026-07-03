@@ -1,8 +1,10 @@
 ---
 title: Premultiplied alpha
 description: An explanation of the different ways alpha values can be represented in pixel colors.
-ms.date: 05/28/2023
+ms.date: 07/02/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -74,4 +76,4 @@ premultiplied.B = (byte)(straight.B * straight.A / 255);
 premultiplied.A = straight.A;
 ```
 
-If you have image data that is using the wrong alpha format, [`PremultiplyEffect`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_PremultiplyEffect.htm) or [`UnPremultiplyEffect`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_Effects_UnPremultiplyEffect.htm) can be used to convert it.
+If you have image data that is using the wrong alpha format, [`PremultiplyEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Effects_PremultiplyEffect.htm) or [`UnPremultiplyEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Effects_UnPremultiplyEffect.htm) can be used to convert it.

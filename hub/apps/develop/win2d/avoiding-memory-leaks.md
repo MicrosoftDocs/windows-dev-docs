@@ -1,8 +1,10 @@
 ---
 title: Avoiding memory leaks
 description: A guide on how to make sure not to introduce memory leaks in XAML applications using Win2D.
-ms.date: 05/28/2023
+ms.date: 07/02/2026
 ms.topic: concept-article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 10, windows 11, uwp, xaml, windows app sdk, winui, windows ui, graphics, games, effect win2d d2d d2d1 direct2d interop cpp csharp
 ms.localizationpriority: medium
 ---
@@ -15,10 +17,10 @@ When using Win2D controls in managed XAML applications, care must be taken to av
 
 - You are using Win2D from a .NET language such as C# (not native C++)
 - You use one of the Win2D XAML controls:
-  - [`CanvasControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm)
-  - [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm)
-  - [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm)
-  - [`CanvasSwapChainPanel`](https://microsoft.github.io/Win2D/WinUI2/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm)
+  - [`CanvasControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasControl.htm)
+  - [`CanvasVirtualControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualControl.htm)
+  - [`CanvasAnimatedControl`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasAnimatedControl.htm)
+  - [`CanvasSwapChainPanel`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasSwapChainPanel.htm)
 - You subscribe to events of the Win2D control (eg. `Draw`, `CreateResources`, `SizeChanged`...)
 - Your app moves back and forth between more than one XAML page
 
