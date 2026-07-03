@@ -2,7 +2,7 @@
 description: Learn how to modernize your existing WPF, Windows Forms, or Win32 desktop app with Windows App SDK features, MSIX packaging, and modern Windows APIs — without a full rewrite.
 title: Modernize your desktop apps for Windows
 ms.topic: overview
-ms.date: 06/16/2026
+ms.date: 07/03/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,86 +10,122 @@ ms.localizationpriority: medium
 
 You don't need to rewrite your WPF, Windows Forms, or Win32 app to take advantage of modern Windows features. The Windows App SDK and the broader Windows platform offer modular capabilities you can adopt incrementally, at your own pace.
 
-This article provides an overview of modern features that you can add to your desktop app by using:
-
-- Windows Runtime (WinRT) APIs in the *[Windows SDK](../../windows-sdk/index.md)*
-- The *[Windows App SDK](../../windows-app-sdk/index.md)*
-- MSIX [packaging or package identity](../../package-and-deploy/packaging/index.md)
-
 > [!NOTE]
-> There are other aspects of app modernization that aren't covered here, like updating to a newer version of .NET or Visual Studio tooling. For more information about those aspects of modernization, start with:
->
-> - **.NET:** [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/)
-> - **C++:** [Microsoft C++ porting and upgrading guide](/cpp/porting/visual-cpp-porting-and-upgrading-guide)
+> This article covers adding modern Windows features to your existing desktop app. If you want to modernize your .NET toolchain or C++ compiler, see [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/) or the [Microsoft C++ porting and upgrading guide](/cpp/porting/visual-cpp-porting-and-upgrading-guide).
 
-## Windows Runtime APIs
+## Migrate your UI framework?
 
-Many Windows platform [features](../../develop/index.md) — app notifications, the share contract, Bluetooth, and more — are exposed through [Windows Runtime (WinRT) APIs](/uwp/api). You can call these APIs directly from WPF, Windows Forms, and C++ Win32 apps.
+If your goal is to fully modernize your app's UI layer, the recommended path is to migrate to [WinUI 3](../../winui/winui3/index.md) — the native UI framework for Windows desktop apps. See [Create your first WinUI 3 app](../../get-started/start-here.md) to get started.
 
-**The first step in adding modern features to your app is configuring your project to use WinRT APIs. For instructions, see:**
+If you want to add Windows features to your existing app framework (WPF, WinForms, or C++ Win32) without changing your UI layer, continue reading.
+
+## Choose your approach
+
+The three modernization approaches are independent. You can use one, two, or all three in the same app.
+
+| Approach | What it gives you | Requires packaging? |
+|---|---|---|
+| **[WinRT APIs](winrt-apis-desktop-apps.md)** | Direct access to Windows platform APIs (notifications, Bluetooth, share contract, sensors, and more) from any .NET or C++ desktop app | No, for most APIs |
+| **[Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)** | A NuGet package that brings modern Windows development features (windowing, text rendering, resources, and more) to existing apps | No, for most features |
+| **[MSIX packaging](../../package-and-deploy/packaging/index.md)** | A modern installer with clean uninstall, automatic updates, and package identity; can be added without changing app source code | N/A — packaging *is* the approach |
+
+> [!TIP]
+> Start with **WinRT APIs** if you want to call a specific Windows platform API. Add the **Windows App SDK** when you need its features (DWriteCore, MRT Core, windowing). Add **MSIX packaging** when you need package identity or want to modernize your installer.
+
+### WinRT APIs
+
+[Windows Runtime (WinRT) APIs](/uwp/api) expose Windows platform features such as app notifications, the share contract, Bluetooth, and more. You can call these APIs directly from WPF, Windows Forms, and C++ Win32 apps.
 
 > [!div class="nextstepaction"]
 > [Call Windows Runtime APIs in desktop apps](winrt-apis-desktop-apps.md)
 
-## Windows App SDK
+### Windows App SDK
 
-The [Windows App SDK](../../windows-app-sdk/index.md) is how many modern Windows platform features are shipped. You can use the Windows App SDK in your existing app without changing your UI framework.
-
-> [!IMPORTANT]
-> These APIs use the WinRT API model, so be sure you've also configured your project to use WinRT APIs.
-
-**Add the Windows App SDK NuGet package and call its APIs alongside your existing code. For instructions, see:**
+The [Windows App SDK](../../windows-app-sdk/index.md) delivers modern Windows development features as a NuGet package you add to your existing project. You don't need to change your UI framework.
 
 > [!div class="nextstepaction"]
 > [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 
-## App packaging
+### MSIX packaging and package identity
 
-Packaging defines how your app is installed, updated, and integrated with Windows. Choosing between a packaged or unpackaged app affects the features you can use, the deployment model you rely on, access to the Microsoft Store and enterprise deployment pipelines, and the overall experience your customers get.
-
-**For more information, see:**
+MSIX packaging replaces your existing installer and gives your app package identity. Some Windows features — including background tasks, startup tasks, file associations, and Windows AI Foundry — require package identity at runtime. If you want to keep your existing installer, you can still grant package identity without full MSIX packaging — an approach sometimes called *packaging with external location* or a *sparse package*.
 
 - [Packaging overview](../../package-and-deploy/packaging/index.md)
 - [Features that require package identity](modernize-packaged-apps.md)
-- [Integrate your desktop app with Windows using packaging extensions](desktop-to-uwp-extensions.md)
-
-### Package with MSIX
-
-Packaging your app with MSIX replaces your current installer. It gives you a modern, reliable installation experience, clean uninstall, automatic updates, and package identity. MSIX packaging is separate from modernizing your app's code — you can package a WPF, WinForms, or Win32 app with MSIX without changing any source code.
-
-**For more information, see:**
-
-- [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md)
-- [Create an MSIX package from a desktop installer](/windows/msix/packaging-tool/create-app-package)
-- [Build an MSIX package from your code](/windows/msix/desktop/source-code-overview)
-
-### Features that require package identity
-
-Some Windows platform features — including background tasks, app extensions, sharing targets, Windows AI Foundry APIs, file associations, and startup tasks — require your app to have a [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime. If you want to keep your current installer, you can still grant identity to an unpackaged app without full MSIX packaging. This approach is sometimes called a *sparse package* or *packaging with external location*.
-
-**For more information, see:**
-
 - [Grant identity to a non-packaged app](grant-identity-to-nonpackaged-apps-overview.md)
+- [Integrate your desktop app with Windows using packaging extensions](desktop-to-uwp-extensions.md)
+- [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md)
 
-## Add modern features
+## Framework-specific starting points
 
-Many features in [Features for Windows app development](../../develop/index.md) are available for WPF, WinForms, and Win32 apps. You can browse that section, or use this non-comprehensive list to jump directly to some common features.
+| Your framework | Recommended starting point |
+|---|---|
+| **WPF** | [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) |
+| **WinForms** | [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) |
+| **C++ Win32** | [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) |
+| **C++/WinRT** | [WinRT APIs for desktop apps](winrt-apis-desktop-apps.md) |
 
-- [Windows AI Foundry](/windows/ai/overview)
-- [Using background tasks in Windows apps](../../windows-app-sdk/applifecycle/background-tasks.md)
-- [Cross Device People API](../../develop/windows-integration/cross-device-people-api.md)
-- [Integrate Share options in your Windows app](../../develop/windows-integration/integrate-sharesheet-overview.md)
-- [Render text with DWriteCore](../../windows-app-sdk/dwritecore.md)
-- [Manage resources with MRT Core](../../windows-app-sdk/mrtcore/mrtcore-overview.md)
-- [Develop Windows Widgets](../../develop/widgets/index.md)
-- [Credential locker for Windows apps](../../develop/security/credential-locker.md)
-- [Cryptography](../../develop/security/cryptography.md)
-- [Fingerprint biometrics](../../develop/security/fingerprint-biometrics.md)
-- [Implement OAuth 2.0 in Windows apps](../../develop/security/oauth2.md)
-- [Smart cards](../../develop/security/smart-cards.md)
+## Feature catalog
 
-## Migrate to WinUI 3
+The following table lists common modernization features and whether they require the Windows App SDK or package identity.
 
-If you're planning a larger modernization effort — or building new features as separate modules — consider building new components with [WinUI 3](../../winui/winui3/index.md) and the Windows App SDK. WinUI 3 is the modern native UI framework for Windows desktop apps and is the recommended path for new development.
+### AI
 
-See [Create your first WinUI 3 app](../../get-started/start-here.md) to get started.
+| Feature | Windows App SDK required? | Package identity required? |
+|---|---|---|
+| [Windows AI Foundry](/windows/ai/overview) | No | Yes |
+
+### UI and text
+
+| Feature | Windows App SDK required? | Package identity required? |
+|---|---|---|
+| [WinUI 3 components in a desktop app](../../winui/winui3/index.md) | Yes | No |
+| [Render text with DWriteCore](../../windows-app-sdk/dwritecore.md) | Yes | No |
+| [Apply Mica or Acrylic to Win32 apps](ui/apply-mica-win32.md) | No | No |
+| [Apply rounded corners](ui/apply-rounded-corners.md) | No | No |
+| [Apply Windows themes](ui/apply-windows-themes.md) | No | No |
+
+### App lifecycle
+
+| Feature | Windows App SDK required? | Package identity required? |
+|---|---|---|
+| [Background tasks (Windows App SDK)](../../windows-app-sdk/applifecycle/background-tasks.md) | Yes | Yes |
+| [Startup tasks](modernize-packaged-apps.md) | No | Yes |
+
+### Windows integration
+
+| Feature | Windows App SDK required? | Package identity required? |
+|---|---|---|
+| [Share sheet integration](../../develop/windows-integration/integrate-sharesheet-overview.md) | No | No |
+| [Cross Device People API](../../develop/windows-integration/cross-device-people-api.md) | No | No |
+| [File associations](desktop-to-uwp-extensions.md) | No | Yes |
+| [Windows Widgets](../../develop/widgets/index.md) | No | Yes |
+
+### Security
+
+| Feature | Windows App SDK required? | Package identity required? |
+|---|---|---|
+| [Credential locker](../../develop/security/credential-locker.md) | No | No |
+| [OAuth 2.0](../../develop/security/oauth2.md) | No | No |
+| [Fingerprint biometrics](../../develop/security/fingerprint-biometrics.md) | No | No |
+| [Smart cards](../../develop/security/smart-cards.md) | No | No |
+| [Cryptography](../../develop/security/cryptography.md) | No | No |
+
+### Resources
+
+| Feature | Windows App SDK required? | Package identity required? |
+|---|---|---|
+| [MRT Core resource management](../../windows-app-sdk/mrtcore/mrtcore-overview.md) | Yes | No |
+
+For the full list of features available in desktop apps, see [Features for Windows app development](../../develop/index.md).
+
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Call Windows Runtime APIs in desktop apps](winrt-apis-desktop-apps.md)
+
+> [!div class="nextstepaction"]
+> [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
+
+> [!div class="nextstepaction"]
+> [Packaging overview](../../package-and-deploy/packaging/index.md)
