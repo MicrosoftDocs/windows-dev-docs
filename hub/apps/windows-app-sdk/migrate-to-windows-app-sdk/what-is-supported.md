@@ -1,15 +1,15 @@
 ---
-title: What's supported when migrating from UWP to WinUI
-description: WinUI and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
+title: What's supported when migrating from UWP to WinUI 3
+description: Check which UWP features are supported in WinUI 3 and the Windows App SDK before migrating, including known control gaps and performance notes.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/03/2026
 keywords: Windows, App, SDK, port, porting, migrate, migration, support
 ms.localizationpriority: medium
 ---
 
 # What's supported when migrating from UWP to WinUI 3
 
-WinUI and the Windows App SDK are new technologies and, when compared to UWP, there are some features that aren't supported. This topic provides information on which features are supported before you attempt migration.
+Before you migrate, review which UWP features are fully supported in WinUI 3 and the Windows App SDK, which have alternatives, and which are not yet supported.
 
 | UWP feature | WinUI status |
 | - | - |
@@ -43,7 +43,7 @@ WinUI and the Windows App SDK are new technologies and, when compared to UWP, th
 
 ## Performance considerations
 
-Today in version 2.0 of the Windows App SDK, launch speeds, RAM usage, and installation size of WinUI apps are larger/slower than seen in UWP. We're actively working to improve this.
+As of Windows App SDK 2.0, launch speeds, RAM usage, and installation size of WinUI apps are larger/slower than seen in UWP. We're actively working to improve this.
 
 ## Known control gaps
 
@@ -53,7 +53,6 @@ The following UWP controls do not have stable WinUI 3 equivalents as of Windows 
 |---|---|---|
 | [InkCanvas](/uwp/api/windows.ui.xaml.controls.inkcanvas) | Experimental only (2.0 Experimental 1); not in stable | [Win2D](https://github.com/Microsoft/Win2D) with pointer input handling; third-party inking libraries |
 | [InkToolbar](/uwp/api/windows.ui.xaml.controls.inktoolbar) | Not available | Custom toolbar paired with Win2D inking |
-| DataGrid | No first-party control | The [CommunityToolkit DataGrid](https://learn.microsoft.com/windows/communitytoolkit/controls/datagrid) is UWP-only (v7.1.0); [WinUI.TableView](https://github.com/w-ahmad/WinUI.TableView) is a WinUI 3 community alternative |
 | [DisplayRequest](/uwp/api/windows.system.display.displayrequest) | Not available | Win32 [`SetThreadExecutionState`](/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate) API |
 
 > [!NOTE]
@@ -66,3 +65,6 @@ The **Design** tab of the XAML Designer in Visual Studio (and Blend for Visual S
 ## See Also
 
 - [Windows App SDK and supported Windows releases](../support.md)
+
+> [!div class="nextstepaction"]
+> [Migrate to Windows App SDK — overview](migrate-to-windows-app-sdk-ovw.md)
