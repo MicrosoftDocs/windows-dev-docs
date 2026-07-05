@@ -1,8 +1,8 @@
 ---
 title: Use the Windows App SDK in an existing project
-description: This article provides instructions for using the Windows App SDK in an existing project.
+description: Install the Windows App SDK NuGet package in an existing WPF, WinForms, or Win32 project and initialize the runtime for unpackaged deployment.
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 07/03/2026
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 zone_pivot_groups: desktop-framework
@@ -91,7 +91,7 @@ When you build your project, these files are added to your project in Visual Stu
 
 :::zone pivot="win32"
 
-1. Manually edit your .cxproj file.
+1. Manually edit your .vcxproj file.
 
 2. Inside the `<PropertyGroup Label="Globals">` element, add a `WindowsPackageType` element set to `None`. 
 
@@ -108,7 +108,12 @@ When you build your project, these files are added to your project in Visual Stu
 
 If you encounter a *Class not registered* error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
 
-## See Also
+## Next steps
+
+> [!div class="nextstepaction"]
+> [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md)
+
+## Related content
 
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
