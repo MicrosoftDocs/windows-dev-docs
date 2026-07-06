@@ -1,7 +1,7 @@
 ---
 title: Migrate from UWP to the Windows App SDK
-description: A collection of topics describing and demonstrating how to migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
-ms.date: 05/28/2026
+description: How to migrate a UWP app to the Windows App SDK and WinUI 3, including strategy, feature mapping, supported features, and step-by-step feature area guides.
+ms.date: 07/03/2026
 ms.topic: upgrade-and-migration-article
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.localizationpriority: medium
@@ -9,7 +9,9 @@ ms.localizationpriority: medium
 
 # Migrate from UWP to the Windows App SDK
 
-To migrate your app from the [Universal Windows Platform](/windows/uwp/) (UWP) to the Windows App SDK, your UI code likely needs just a few namespace changes, while much of your platform code can stay the same. You'll need to adjust some code due to differences between UWP apps and desktop apps. But we expect that for most apps (depending on codebase size, of course), migration will take on the order of days rather than weeks.
+This section of the documentation covers moving a C# or C++/WinRT Universal Windows Platform (UWP) app to the [Windows App SDK](/windows/apps/windows-app-sdk) and [WinUI 3](../../winui/winui3/index.md). The guidance includes migration strategy, feature comparisons, and step-by-step feature area guides.
+
+To migrate your app from UWP to the Windows App SDK, your UI code likely needs just a few namespace changes, while much of your platform code can stay the same. You'll need to adjust some code due to differences between UWP apps and desktop apps. For most apps (depending on codebase size), migration takes on the order of days rather than weeks.
 
 > [!NOTE]
 > Your existing UWP app will continue to function as expected. However, to take advantage of modern features in [WinUI 3](../../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) we recommend migrating your app.
@@ -17,15 +19,16 @@ To migrate your app from the [Universal Windows Platform](/windows/uwp/) (UWP) t
 > [!TIP]
 > You can also use AI tools to accelerate your migration. See [Migrate a UWP app to WinUI 3 with AI assistance](../../develop/ai-assisted/migrate/uwp-to-winui.md) for a quick-reference API substitution table and a starter prompt you can use with GitHub Copilot.
 
-Below are the steps, at a high level, for migrating manually. But see the following section for info about using the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool)).
+Here are the high-level steps for migrating manually. See also the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool) if you're migrating a C# UWP app.
 
 1. Create a new WinUI packaged desktop project (see [Create your first WinUI project](../../get-started/start-here.md)). That could go into your project's existing solution.
 2. Copy your XAML/UI code. In many cases you can simply change namespaces (for example, **Windows.UI.\*** to **Microsoft.UI.\***).
 3. Copy your app logic code. Some APIs need tweaks, such as **Popup**, **Picker**s, and **SecondaryTile**s.
 
-For full details, see the topics in the table below. They describe and demonstrate how to manually migrate your Universal Windows Platform (UWP) application to the Windows App SDK.
+The topics in the table below describe and demonstrate how to manually migrate your UWP application to the Windows App SDK.
 
-Take particular note of [What's supported when migrating from UWP to WinUI](./what-is-supported.md), which describes any functionality that's not yet supported in WinUI and the Windows App SDK. If your app needs any of those features/libraries, then you might want to consider postponing migration.
+> [!IMPORTANT]
+> Before you begin, read [What's supported when migrating from UWP to WinUI](./what-is-supported.md). This topic lists features that aren't yet supported in WinUI 3 and the Windows App SDK. If your app depends on any of those features, consider postponing migration until support is available.
 
 > [!NOTE]
 > If your UWP app's source code is written in C++/CX, then also see [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
@@ -56,3 +59,6 @@ When transitioning to the Windows App SDK, UWP applications might lose the inher
 ## See Also
 
 - [Windows App SDK and supported Windows releases](../support.md)
+
+> [!div class="nextstepaction"]
+> [Overall migration strategy](overall-migration-strategy.md)

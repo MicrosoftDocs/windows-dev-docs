@@ -1,13 +1,15 @@
 ---
 title: Overall migration strategy
-description: Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating.
-ms.topic: article
-ms.date: 05/28/2026
+description: Practical strategies and setup steps for migrating a C# or C++/WinRT UWP app to the Windows App SDK and WinUI 3, including project setup, code migration order, and NuGet dependencies.
+ms.topic: how-to
+ms.date: 07/03/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---
 
 # Overall migration strategy
+
+This topic covers practical strategies and environment setup steps for migrating a UWP app to the Windows App SDK. For an overview of the migration section and links to all related topics, see [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md).
 
 ## Introduction
 
@@ -52,12 +54,10 @@ The value proposition of moving the Windows App SDK is manifold. Here are some c
 
 For more info, see [Windows App SDK](../index.md).
 
-## Overview of the migration process
+## Install the Windows App SDK VSIX
 
 > [!NOTE]
-> You can think of the UWP version of the app that you want to migrate as the *source* solution/project (it's the *source* of the migration process). The Windows App SDK version is the *target* solution (it's the *target* of the migration process).
-
-## Install the Windows App SDK VSIX
+> In this guide, the UWP version of the app you're migrating is the *source* solution/project. The Windows App SDK version you're creating is the *target* solution/project.
 
 Download the latest Windows App SDK version from [Windows App SDK downloads](../downloads.md), and run to install it.
 
@@ -118,3 +118,6 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)
 * [Support for WinRT APIs in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md)
+
+> [!div class="nextstepaction"]
+> [Mapping UWP features to the Windows App SDK](feature-mapping-table.md)

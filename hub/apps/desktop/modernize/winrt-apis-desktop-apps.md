@@ -1,7 +1,7 @@
 ---
 description: Learn how to configure your WPF, Windows Forms, or Win32 desktop app to call Windows Runtime APIs and add modern Windows experiences.
 title: Call Windows Runtime APIs in desktop apps
-ms.date: 04/28/2026
+ms.date: 07/03/2026
 ms.topic: how-to
 keywords: windows 11, windows app sdk, winrt, desktop app
 ms.localizationpriority: medium
@@ -122,6 +122,9 @@ In .NET 6 and later, several WinRT APIs in the **Windows.UI** namespace are not 
 
 ### .NET Core 3.x or .NET Framework: Install the NuGet package
 
+> [!NOTE]
+> .NET Core 3.x reached end of support in December 2022. For new projects, use .NET 6 or later with the TFM approach described above. The NuGet package approach below applies to .NET Framework 4.x projects and existing .NET Core 3.x apps that have not yet been updated.
+
 If your app targets .NET Core 3.x or .NET Framework, install the [`Microsoft.Windows.SDK.Contracts`](https://www.nuget.org/packages/Microsoft.Windows.SDK.Contracts) NuGet package:
 
 1. In Visual Studio, right-click your project and choose **Manage NuGet Packages**.
@@ -149,6 +152,7 @@ Configure the project file to use the TFM approach for .NET 6+ and the NuGet pac
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
+    <!-- netcoreapp3.1 is EOL; include only when maintaining an existing app -->
     <PackageReference Condition="'$(TargetFramework)' == 'netcoreapp3.1'"
                      Include="Microsoft.Windows.SDK.Contracts"
                      Version="10.0.19041.0"/>
@@ -175,7 +179,7 @@ When multi-targeting across .NET 6+ and earlier versions, use conditional compil
 
 ## Configure a C++ (Win32) project
 
-Use [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/) to consume WinRT APIs from C++ desktop apps.
+Use [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) to consume WinRT APIs from C++ desktop apps.
 
 - Install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package.
 - Because C++/WinRT uses features from the C++17 standard, ensure the project property **C/C++ > Language > C++ Language Standard** is set to **ISO C++17 Standard (/std:c++17)** or later in Visual Studio.
@@ -188,7 +192,10 @@ For more details, see [Visual Studio support for C++/WinRT](/windows/apps/develo
 
 You can now call [Windows Runtime (WinRT) APIs](/uwp/api) from the _Windows SDK_.
 
-To also call WinRT APIs from the _Windows App SDK_, see [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+To also call WinRT APIs from the _Windows App SDK_, see the following article:
+
+> [!div class="nextstepaction"]
+> [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 
 Some WinRT APIs require package identity. For more info see:
 
