@@ -1214,6 +1214,8 @@ items:
                     href: ui/controls/labels.md
               - name: Title bar
                 href: ui/controls/title-bar.md
+              - name: WebView2
+                href: ui/controls/webview2.md
               - name: "Tutorial: Build XAML templated controls"
                 href: ../winui/winui3/xaml-templated-controls-winui-3.md
           - name: Layout
