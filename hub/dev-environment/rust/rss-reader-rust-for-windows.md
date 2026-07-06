@@ -4,7 +4,7 @@ description: A walkthrough of writing a simple app that downloads the titles of 
 ms.topic: tutorial
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium
-ms.date: 05/22/2023
+ms.date: 07/05/2026
 ---
 
 # RSS reader tutorial (Rust for Windows with VS Code)
@@ -38,12 +38,15 @@ Now let's try out Rust for Windows by writing a simple console app that download
     ...
 
     [dependencies.windows] 
-    version = "0.43.0"
+    version = "0.62.0"
     features = [
         "Foundation_Collections",
         "Web_Syndication",
     ]
     ```
+
+    > [!NOTE]
+    > The `windows` crate releases frequently. Check [crates.io/crates/windows](https://crates.io/crates/windows) for the latest version and update accordingly.
 
 5. Then, open the *rss_reader* project's `src/main.rs` source code file. There you'll find the Cargo default "Hello, world!" code. Add the following **use** statement to the beginning of `main.rs`:
 
@@ -173,7 +176,7 @@ We did say that Rust for Windows lets you call any Windows API (past, present, a
     ...
 
     [dependencies.windows]
-    version = "0.43.0"
+    version = "0.62.0"
     features = [
         "Win32_Foundation",
         "Win32_UI_WindowsAndMessaging",
