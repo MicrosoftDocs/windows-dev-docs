@@ -1232,6 +1232,8 @@ items:
                 href: ../design/layout/attached-layouts.md
               - name: Transforms
                 href: platform/xaml/transforms.md
+              - name: Compact sizing
+                href: ui/controls/compact-sizing.md
               - name: 3-D perspective effects
                 href: platform/xaml/3-d-perspective-effects.md
           - name: Navigation
@@ -1267,6 +1269,8 @@ items:
                     href: motion/storyboarded-animations.md
                   - name: Key-frame and easing function animations
                     href: motion/key-frame-and-easing-function-animations.md
+                  - name: Implicit transitions
+                    href: motion/implicit-transitions.md
           - name: Responsive layouts
             href: ui/layouts-with-xaml.md
           - name: Shadows
