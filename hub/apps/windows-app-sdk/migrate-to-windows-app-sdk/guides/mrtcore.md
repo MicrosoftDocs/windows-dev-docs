@@ -2,7 +2,7 @@
 title: MRT to MRT Core migration
 description: This topic contains guidance for migrating from UWP's [Resource Management System](/windows/uwp/app-resources/resource-management-system) (also known as MRT) to the Windows App SDK's MRT Core.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, MRT, MRTCore
 ms.localizationpriority: medium
 ---
@@ -23,9 +23,6 @@ For ease of migration, MRT Core APIs are very similar to MRT APIs. For API refer
 ## Change namespace
 
 In UWP, the MRT APIs are in the [**Windows.ApplicationModel.Resources.Core**](/uwp/api/windows.applicationmodel.resources.core) namespace. In the Windows App SDK, the MRT Core APIs are in the [**Microsoft.Windows.ApplicationModel.Resources**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources) namespace. So you'll need to change that namespace name in your source code (add `Microsoft.` at the start, and remove the `.Core` at the end).
-
-> [!NOTE]
-> In Windows App SDK 1.0 Preview 1 and later releases, MRT Core APIs are in the [**Microsoft.Windows.ApplicationModel.Resources**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources) namespace. In releases earlier than that, they are in the **Microsoft.ApplicationModel.Resources** namespace.
 
 ## ResourceManager class
 
@@ -112,6 +109,5 @@ Also see the [Load resources using MRT Core](https://github.com/microsoft/Window
 
 * [Windows App SDK and supported Windows releases](../../support.md)
 * [Manage resources with MRT Core](../../mrtcore/mrtcore-overview.md)
-* [MRT Core images](https://github.com/MicrosoftDocs/windows-uwp/tree/docs/hub/apps/windows-app-sdk/mrtcore/images)
 * [Resource Management System](/windows/uwp/app-resources/resource-management-system)
 * [Windows App SDK](../../index.md)
