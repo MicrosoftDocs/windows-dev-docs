@@ -618,6 +618,8 @@ items:
                 items:
                   - name: XAML lighting
                     href: composition/xaml-lighting.md
+              - name: ContentIsland
+                href: composition/content-island.md
               - name: XAML and Composition interop
                 href: composition/xaml-comp-interop.md
           - name: Win2D
