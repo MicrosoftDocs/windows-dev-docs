@@ -1,8 +1,10 @@
 ---
-description: Learn about the design elements required for integrating into the widget picker on the Widgets Board.
+description: Learn the design requirements for integrating your app into the widget picker in the Windows 11 Widgets Board, including screenshots and icons.
 title: Integrate with the widget picker
-ms.date: 01/19/2023
+ms.date: 07/05/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 11, widgets
 ms.localizationpriority: medium
 ---
@@ -19,9 +21,9 @@ The following screenshot illustrates the placement of the screenshot image withi
 
 ![Screenshot of the Widgets Board. The widget picker is active and a widget screenshot image is being displayed.](images/widgets-picker-screenshot.png)
 
-## Screenshot image requirements 
+## Screenshot image requirements
 
-In order to provide a consistent user experience, widget screenshots for the widget picker must follow the following guidelines.
+In order to provide a consistent user experience, widget screenshots for the widget picker must follow these guidelines.
  
 
 * The screenshot should display the medium size version of your widget.

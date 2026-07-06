@@ -1,8 +1,10 @@
 ---
-description: Learn how to support your app with Windows widgets, displayed on the widgets board built into Windows 11.
+description: Learn how to design and build Windows widgets for the Widgets Board in Windows 11, with layout, states, and interaction guidance.
 title: Windows Widgets
-ms.date: 07/19/2022
+ms.date: 07/05/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 11, widgets
 ms.localizationpriority: medium
 ---
@@ -18,14 +20,14 @@ Windows Widgets are small UI containers that display text and graphics, associat
 | Term | Definition |
 |------|------------|
 | Widgets host | An application that displays and manages Windows widgets. In the current release, the only Widgets host is the Widgets Board built into Windows 11. |
-| Widgets Board | The Widgets Board is a Windows 11 system component that is displayed over the desktop when the user clicks the Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the screen. The Widgets Board displays widgets and manages their layout the on the board. |
+| Widgets Board | The Widgets Board is a Windows 11 system component that is displayed over the desktop when the user clicks the Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the screen. The Widgets Board displays widgets and manages their layout on the board. |
 | Widget | A widget is an [Adaptive Card](https://adaptivecards.io/) that presents important content or actions from an app. It allows users to access desired information instantly without the need to launch the associated app or website. Widget content is refreshed dynamically throughout the day to provide the user with current and interesting content that can be consumed at a glance. Widgets provide basic interactive features that allow the user to launch the associated app for deeper engagement. Widgets are not intended to replace apps and websites.  |
 | Widget provider | A widget provider is a Windows app that provides content to be displayed in the widget. The widget provider owns the content, layout, and interactive elements of the widget.  |
 
 
 ### Widget design guidance 
 
-The visual experience of a widget includes visual elements and interaction elements that are defined using the Adaptive Cards JSON format. The [Adaptive Cards Designer](https://www.adaptivecards.io/designer/) provides a real-time editor for designing adaptive cards as well as templates for the supported widget sizes and themes. It's important that your widget's design adhere the Windows Widget design principles to help ensure that the Widgets Board provides a consistent and familiar experience for all widgets.
+The visual experience of a widget includes visual elements and interaction elements that are defined using the Adaptive Cards JSON format. The [Adaptive Cards Designer](https://www.adaptivecards.io/designer/) provides a real-time editor for designing adaptive cards as well as templates for the supported widget sizes and themes. It's important that your widget's design adhere to the Windows Widget design principles to help ensure that the Widgets Board provides a consistent and familiar experience for all widgets.
 
 For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](widgets-states-and-ui.md).
 
@@ -36,7 +38,7 @@ To create great Windows Widgets, consider the following principles as you design
 
 ### Glanceable 
 
-A widget should immediately deliver it's primary value to the user. 
+A widget should immediately deliver its primary value to the user. 
  
 ### Focused & Useful
 
@@ -74,6 +76,8 @@ A widget should surface relevant information at the right time and in the right 
 [Widget interaction design](widgets-interaction-design.md)
 
 [Create a widget template with the Adaptive Cards Designer](../../develop/widgets/widgets-create-a-template.md)
+
+[Integrate with the widget picker](widgets-picker-integration.md)
 
 ## See also
 
