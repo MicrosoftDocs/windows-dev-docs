@@ -1,8 +1,8 @@
 ---
 title: Migrate an iOS app to WinUI 3
-description: Use AI assistance to port an iOS app to WinUI 3 and the Windows App SDK — mapping UIKit concepts, Swift patterns, and iOS lifecycle events to their WinUI equivalents.
+description: Use AI assistance to port an iOS app to WinUI 3, mapping UIKit concepts, Swift patterns, and iOS lifecycle events to their WinUI equivalents.
 ms.topic: how-to
-ms.date: 05/14/2026
+ms.date: 07/05/2026
 ms.author: jken
 author: GrantMeStrength
 ---

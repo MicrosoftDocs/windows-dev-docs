@@ -1,8 +1,8 @@
 ---
 title: WinUI agent plugin for GitHub Copilot CLI and Claude Code
-description: Use the winui@awesome-copilot plugin to give the GitHub Copilot CLI or Claude Code accurate WinUI 3 knowledge — including 8 specialized skills and a dedicated winui-dev agent for end-to-end Windows app development.
+description: Install the winui@awesome-copilot plugin to give GitHub Copilot CLI or Claude Code accurate WinUI 3 and Windows App SDK knowledge.
 ms.topic: how-to
-ms.date: 05/13/2026
+ms.date: 07/05/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -24,7 +24,7 @@ Without the plugin, AI coding agents may suggest outdated patterns for Windows d
 
 ### GitHub Copilot CLI
 
-**Requires:** [GitHub Copilot CLI](https://gh.io/copilot-cli) (`winget install GitHub.Copilot`).
+**Requires:** [GitHub CLI](https://cli.github.com/) (`winget install GitHub.cli`) with the Copilot extension (`gh extension install github/gh-copilot`) and a [GitHub Copilot subscription](https://github.com/features/copilot).
 
 ```powershell
 gh copilot plugin install winui@awesome-copilot

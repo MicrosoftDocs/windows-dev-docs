@@ -1,8 +1,8 @@
 ---
 title: "VS Code tools for Windows development"
-description: Use the WinApp VS Code extension and Microsoft Learn MCP Server to build, debug, package, and sign Windows apps with current API guidance — without leaving VS Code.
+description: Use the WinApp VS Code extension and Microsoft Learn MCP Server to build, package, and sign Windows apps without leaving VS Code.
 ms.topic: overview
-ms.date: 05/13/2026
+ms.date: 07/05/2026
 ms.author: jken
 author: GrantMeStrength
 ---
