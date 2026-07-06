@@ -1116,6 +1116,8 @@ items:
                     href: ui/controls/icons.md
                   - name: Animated icons
                     href: ui/controls/animated-icon.md
+                  - name: Animated visual player
+                    href: ui/controls/animated-visual-player.md
                   - name: Images and image brushes
                     href: ui/controls/images-imagebrushes.md
                   - name: Media playback
