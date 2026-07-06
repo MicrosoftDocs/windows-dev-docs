@@ -1,10 +1,11 @@
 ---
 title: Windows Device Portal for Desktop
 description: Learn how the Windows Device Portal provides settings, diagnostics, and automation functionality on your Desktop PC.
-ms.date: 07/14/2025
+ms.date: 07/06/2026
 ms.topic: article
 ms.localizationpriority: medium
-ms.custom: sfi-image-nochange
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Windows Device Portal for Desktop
@@ -24,14 +25,10 @@ You can use the WDP for the following:
 
 ## Set up Windows Device Portal on a Desktop device
 
-### Turn on Developer Mode
+Developer Mode is required before enabling Device Portal.
 
-You can enable Developer Mode in the **For developers** section of **Settings** (Settings -> System -> For developers). Starting in Windows 10, version 1607, some newer features for desktop are only available when developer mode is enabled.
-
-:::image type="content" source="images/device-portal/device-portal-desk-settings-developer-mode.PNG" alt-text="Screenshot of the Settings -> System -> For developers window showing Developer Mode enabled.":::
-
-> [!IMPORTANT]
-> Sometimes, due to network or compatibility issues, developer mode won't install correctly on your device. See the [relevant section of Enable your device for development](/windows/apps/get-started/enable-your-device-for-development#failure-to-install-developer-mode-package) for help troubleshooting these issues.
+> [!NOTE]
+> For instructions on enabling Developer Mode, see [Settings for developers](developer-mode.md).
 
 ### Turn on Windows Device Portal
 
@@ -53,7 +50,7 @@ You can disable WDP in the **For developers** section of **Windows Settings**.
 
 ### Connect to Windows Device Portal
 
-To connect through local host, open a browser window and enter the one of the URIs shown here (based on the connection type you're using).
+To connect through local host, open a browser window and enter one of the URIs shown here (based on the connection type you're using).
 
 - Localhost: `http://127.0.0.1:<PORT>` or `http://localhost:<PORT>`
 - Local Network: `https://<IP address of the desktop>:<PORT>`
@@ -67,7 +64,6 @@ If you are using WDP in a protected environment, for example, in a test lab, in 
 WDP provides the following set of pages.
 
 - Apps manager
-- Xbox Live
 - File explorer
 - Running Processes
 - Performance
@@ -79,8 +75,6 @@ WDP provides the following set of pages.
 - Networking
 - Crash data
 - Features
-- Mixed Reality
-- Streaming Install Debugger
 - Location
 - Scratch
 
@@ -119,10 +113,10 @@ From an administrative command prompt, you can enable and configure parts of WDP
 - `-DeleteSSL`
   - This resets the SSL certificate cache used for HTTPS connections. If you encounter TLS connection errors that cannot be bypassed (as opposed to the expected certificate warning), this option may fix the problem for you.
 - `-SetCert <pfxPath> <pfxPassword>`
-  - See [Provisioning Windows Device Portal with a custom SSL certificate](./device-portal-ssl.md) for details.  
+  - See [Provisioning Windows Device Portal with a custom SSL certificate](device-portal-ssl.md) for details.  
   - This allows you to install your own SSL certificate to fix the SSL warning page that is typically seen in WDP.
 - `-Debug <various options for authentication, port selection, and tracing level>`
-  - Run a standalone version of WDP with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](./device-portal-plugin.md).
+  - Run a standalone version of WDP with a specific configuration and visible debug messages. This is most useful for building a [packaged plugin](device-portal-plugin.md).
   - See the [MSDN Magazine article](/archive/msdn-magazine/2017/october/windows-device-portal-write-a-windows-device-portal-packaged-plug-in) for details on how to run this as System to fully test your packaged plugin.
 
 ## Troubleshooting
@@ -152,4 +146,4 @@ You may get this error if you're on a metered internet connection. You won't be 
 ## See also
 
 - [Windows Device Portal overview](device-portal.md)
-- [Windows Device Portal core API reference](./device-portal-api-core.md)
+- [Windows Device Portal core API reference](/windows/uwp/debug-test-perf/device-portal-api-core)

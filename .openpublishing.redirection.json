@@ -3576,6 +3576,26 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "uwp/debug-test-perf/device-portal.md",
+      "redirect_url": "/windows/advanced-settings/device-portal",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "uwp/debug-test-perf/device-portal-desktop.md",
+      "redirect_url": "/windows/advanced-settings/device-portal-desktop",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "uwp/debug-test-perf/device-portal-plugin.md",
+      "redirect_url": "/windows/advanced-settings/device-portal-plugin",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "uwp/debug-test-perf/device-portal-ssl.md",
+      "redirect_url": "/windows/advanced-settings/device-portal-ssl",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "uwp/debug-test-perf/device-portal-mobile.md",
       "redirect_url": "/previous-versions/windows/uwp/debug-test-perf/device-portal-mobile",
       "redirect_document_id": false

@@ -20,6 +20,18 @@ items:
         href: ../advanced-settings/modern-run.md
       - name: Settings for developers
         href: ../advanced-settings/developer-mode.md
+      - name: Windows Device Portal
+        items:
+          - name: Overview
+            href: ../advanced-settings/device-portal.md
+          - name: Device Portal for Desktop
+            href: ../advanced-settings/device-portal-desktop.md
+          - name: Custom SSL certificates
+            href: ../advanced-settings/device-portal-ssl.md
+          - name: Write a Device Portal plugin
+            href: ../advanced-settings/device-portal-plugin.md
+          - name: REST API reference
+            href: /windows/uwp/debug-test-perf/device-portal-api-core
   - name: CLI tools
     items:
       - name: Coreutils

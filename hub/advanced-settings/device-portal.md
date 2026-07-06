@@ -1,10 +1,11 @@
 ---
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 07/14/2025
-ms.topic: article
+ms.date: 07/06/2026
+ms.topic: overview
 ms.localizationpriority: medium
-ms.custom: sfi-image-nochange
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Windows Device Portal overview
@@ -13,12 +14,15 @@ The Windows Device Portal (WDP) is a web server included with Windows devices th
 
 WDP also provides advanced diagnostic tools for troubleshooting and viewing the real-time performance of your Windows device.
 
-WDP functionality is programmatically exposed through a collection of [REST APIs](device-portal-api-core.md).
+WDP functionality is programmatically exposed through a collection of [REST APIs](/windows/uwp/debug-test-perf/device-portal-api-core).
 
 This article provides a general description of the Windows Device Portal and includes links to articles with more specific information on each Windows device family.
 
 > [!NOTE]
 > A device family identifies the APIs, system characteristics, and behaviors that you can expect across a class of devices.
+
+> [!WARNING]
+> Device Portal is disabled by default. You must enable Developer Mode and then explicitly turn on Device Portal in **Settings > System > For developers** before use.
 
 ## Setup
 
@@ -26,7 +30,7 @@ Each device family provides a version of the WDP, but features and setup vary ba
 
 These are the basic steps for all devices.
 
-1. Enable Developer Mode (Settings -> System -> For developers).
+1. Enable Developer Mode. See [Settings for developers](developer-mode.md) for instructions.
 
    :::image type="content" source="images/device-portal/device-portal-desk-settings-developer-mode.PNG" alt-text="Screenshot of the Settings -> System -> For developers window showing Developer Mode enabled.":::
 
@@ -40,15 +44,9 @@ These are the basic steps for all devices.
 
 The following table includes device-specific details for the WDP.
 
-> [!NOTE]
-> Windows Mixed Reality runs on regular desktop, so it's the same portal as Desktop.
-
 Device family | On by default? | HTTP | HTTPS | USB | Instructions |
 --------------|----------------|------|-------|-----|--------------|
 Desktop and IoT Enterprise| Enable inside Dev Mode | 50080\* | 50043\* | N/A | [Device Portal for Desktop or IoT Enterprise device](device-portal-desktop.md#set-up-windows-device-portal-on-a-desktop-device) |
-Xbox | Enable inside Dev Mode | Disabled | 11443 | N/A | [Device Portal for Xbox](../xbox-apps/device-portal-xbox.md) |
-HoloLens | Yes, in Dev Mode | 80 (default) | 443 (default) | `http://127.0.0.1:10080` | [Device Portal for HoloLens](/windows/mixed-reality/develop/platform-capabilities-and-apis/using-the-windows-device-portal) |
-IoT Core| Yes, in Dev Mode | 8080 | Enable via regkey | N/A | [Device Portal for IoT Core](/windows/iot-core/manage-your-device/DevicePortal) |
 
 \* This is not always the case, as Device Portal on desktop claims ports in the ephemeral range (>50,000) to prevent collisions with existing port claims on the device. To learn more, see the [Registry-based configuration](device-portal-desktop.md#registry-based-configuration) section in [Windows Device Portal for Desktop](device-portal-desktop.md).  
 
@@ -121,15 +119,11 @@ Alternatively, you can install the certificate via Windows Device Portal, and in
 
 ### Running processes
 
-This page shows details about processes currently running on the host device. This includes both apps and system processes. On some platforms (Desktop, IoT, and HoloLens), you can terminate processes.
-
-![Device Portal Running processes page](images/device-portal/mob-device-portal-processes.png)
+This page shows details about processes currently running on the host device. This includes both apps and system processes. You can terminate both app and system processes from this page.
 
 ### File explorer
 
-This page allows you to view and manipulate files stored by any sideloaded apps. See the [Using the App File Explorer](https://blogs.windows.com/buildingapps/2016/06/08/using-the-app-file-explorer-to-see-your-app-data/) blog post to learn more about the File explorer and how to use it.
-
-![Device Portal File explorer page](images/device-portal/mob-device-portal-AppFileExplorer.png)
+This page allows you to view and manipulate files stored by any sideloaded apps. See the app's local storage via the File explorer page to view and manage your app data.
 
 ### Performance
 
@@ -143,13 +137,9 @@ These are the available metrics:
 - **Network**: Received and sent data
 - **GPU**: Percent of total available GPU engine utilization
 
-![Device Portal Performance page](images/device-portal/mob-device-portal-perf.png)
-
 ### Event Tracing for Windows (ETW) logging
 
 The ETW logging page manages real-time Event Tracing for Windows (ETW) information on the device.
-
-![Device Portal ETW logging page](images/device-portal/mob-device-portal-etw.png)
 
 Check **Hide providers** to show the Events list only.
 
@@ -166,13 +156,9 @@ Check **Hide providers** to show the Events list only.
 - **Providers history**: This shows the ETW providers that were enabled during the current session. Click or tap **Enable** to activate a provider that was disabled. Click or tap **Clear** to clear the history.
 - **Filters / Events**: The **Events** section lists ETW events from the selected providers in table format. The table is updated in real time. Use the **Filters** menu to set up custom filters for which events will be displayed. Click the **Clear** button to delete all ETW events from the table. This does not disable any providers. You can click **Save to file** to export the currently collected ETW events to a local CSV file.
 
-For more details on using ETW logging, see the [Use Device Portal to view debug logs](https://blogs.windows.com/buildingapps/2016/06/10/using-device-portal-to-view-debug-logs-for-uwp/) blog post.
-
 ### Performance tracing
 
-The [Windows Performance Toolkit](/windows-hardware/test/wpt/) includes the Performance tracing page, which allows you for view the  [Windows Performance Recorder (WPR)](/windows-hardware/test/wpt/#windows-performance-recorder) traces from the host device.
-
-![Device Portal performance tracing page](images/device-portal/mob-device-portal-perf-tracing.png)
+The [Windows Performance Toolkit](/windows-hardware/test/wpt/) includes the Performance tracing page, which allows you to view [Windows Performance Recorder (WPR)](/windows-hardware/test/wpt/#windows-performance-recorder) traces from the host device.
 
 - **Available profiles**: Select the WPR profile from the dropdown, and click or tap **Start** to start tracing.
 - **Custom profiles**: Click or tap **Browse** to choose a WPR profile from your PC. Click or tap **Upload and start** to start tracing.
@@ -185,16 +171,12 @@ Captured .ETL files can be opened for analysis in the [Windows Performance Analy
 
 The Device manager page enumerates all peripherals attached to your device. You can click the settings icons to view the properties of each.
 
-![Device Portal Device manager page](images/device-portal/mob-device-portal-devices.png)
-
 ### Networking
 
 The Networking page manages network connections on the device. Unless you are connected to Device Portal through USB, changing these settings will likely disconnect you from Device Portal.
 
 - **Available networks**: Shows the WiFi networks available to the device. Clicking or tapping on a network will allow you to connect to it and supply a passkey if needed. Device Portal does not yet support Enterprise Authentication. You can also use the **Profiles** dropdown to attempt to connect to any of the WiFi profiles known to the device.
 - **IP configuration**: Shows address information about each of the host device's network ports.
-
-![Device Portal Networking page](images/device-portal/mob-device-portal-network.png)
 
 ## Service features and notes
 
@@ -205,7 +187,7 @@ Device Portal advertises its presence on the local network using DNS-SD. All Dev
 Key | Type | Description
 ----|------|-------------
 S | int | Secure port for Device Portal. If 0 (zero), Device Portal is not listening for HTTPS connections.
-D | string | Type of device. This will be in the format "Windows.*", for example, Windows.Xbox or Windows.Desktop
+D | string | Type of device. This will be in the format "Windows.*", for example, Windows.Desktop or Windows.IoTEnterprise.
 A | string | Device architecture. This will be Arm, x86, or AMD64.  
 T | null-character delineated list of strings | User-applied tags for the device. See the Tags REST API for how to use this. List is double-null terminated.  
 
@@ -218,7 +200,7 @@ In order to protect against [CSRF attacks](https://en.wikipedia.org/wiki/Cross-s
 > [!IMPORTANT]
 > This protection prevents usages of the REST APIs from a standalone client (such as command-line utilities). This can be solved in 3 ways:
 >
-> - Use an "auto-" username. Clients that prepend "auto-" to their username will bypass CSRF protection. It is important that this username not be used to log in to Device Portal through the browser, as it will open up the service to CSRF attacks. Example: If Device Portal's username is "admin", ```curl -u auto-admin:password <args>``` should be used to bypass CSRF protection.
+> - Use an "auto-" username. Clients that prepend "auto-" to their username will bypass CSRF protection. It is important that this username not be used to log in to Device Portal through the browser, as it will open up the service to CSRF attacks. Example: If Device Portal's username is "admin", `curl -u auto-admin:password <args>` should be used to bypass CSRF protection.
 > - Implement the cookie-to-header scheme in the client. This requires a GET request to establish the session cookie, and then the inclusion of both the header and the cookie on all subsequent requests.
 > - Disable authentication and use HTTP. CSRF protection only applies to HTTPS endpoints, so connections on HTTP endpoints will not need to do either of the above.
 
@@ -228,4 +210,4 @@ To protect against [CSWSH attacks](https://www.christian-schneider.net/CrossSite
 
 ## See also
 
-[Device Portal core API reference](device-portal-api-core.md)
+[Device Portal core API reference](/windows/uwp/debug-test-perf/device-portal-api-core)
