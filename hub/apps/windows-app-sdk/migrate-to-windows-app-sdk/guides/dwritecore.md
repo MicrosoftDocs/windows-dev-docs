@@ -1,8 +1,8 @@
 ---
 title: DirectWrite to DWriteCore migration
-description: DWriteCore is the [Windows App SDK](../../index.md) implementation of [DirectWrite](/windows/win32/directwrite/direct-write-portal).
+description: DWriteCore is the Windows App SDK implementation of DirectWrite, providing cross-platform text rendering for Windows developers.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, DirectWrite, DWriteCore
 ms.localizationpriority: medium
 ---
@@ -22,7 +22,10 @@ As you'll see in that topic, DWriteCore has a more locked-down factory type, and
 The only change necessary when moving from DirectWrite to DWriteCore is to include the `dwrite_core.h` header file. For more info, and code examples, see [Programming with DWriteCore](/windows/win32/directwrite/dwritecore-overview#programming-with-dwritecore).
 
 >[!WARNING]
-> DWriteCore does not currently support hardware-accelerated text rendering with Direct2D (D2D). It supports software text rendering only. This prevents apps that require D2D support from adopting DWriteCore at this time.
+> DWriteCore does not support hardware-accelerated text rendering with Direct2D (D2D). It supports software text rendering only, which prevents apps that require D2D hardware acceleration from adopting DWriteCore.
+
+> [!NOTE]
+> Verify whether the D2D hardware acceleration limitation above applies to your version of the Windows App SDK. Check the [Windows App SDK release notes](https://github.com/microsoft/WindowsAppSDK/releases) for any updates to DWriteCore rendering capabilities.
 
 ## The DWriteCoreGallery sample app
 
