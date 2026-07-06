@@ -2,7 +2,7 @@
 title: Microsoft.Windows.ApplicationModel.DynamicDependency namespace
 description: Provides to desktop application developers C# types that wrap and represent the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).
 ms.topic: article
-ms.date: 04/05/2022
+ms.date: 07/05/2026
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API, Microsoft.Windows.ApplicationModel.DynamicDependency namespace
 ms.localizationpriority: low
 ---

@@ -2,7 +2,7 @@
 title: Constants for use with the Bootstrapper C# APIs
 description: The following constants are for use with the Bootstrapper C# APIs.
 ms.topic: article
-ms.date: 07/25/2022
+ms.date: 07/05/2026
 keywords: windows 10, windows 11, Windows App SDK, desktop development, C#, interop, Bootstrapper, Bootstrapper API, constants
 ms.localizationpriority: low
 ---
@@ -60,19 +60,19 @@ Assembly: Microsoft.WindowsAppRuntime.Release.Net.dll
 
 | Constant | Value | Description |
 |-|-|-|
-| public const string PackageFamilyName | "Microsoft.WindowsAppRuntime.1.1-preview1_8wekyb3d8bbwe" | The Windows App SDK runtime's Framework package's family name. |
+| public const string PackageFamilyName | \[release-dependent\] | The Windows App SDK runtime's Framework package's family name. |
 
 ## Microsoft.WindowsAppSDK.Runtime.Packages.Main class
 
 | Constant | Value | Description |
 |-|-|-|
-| public const string PackageFamilyName | "MicrosoftCorporationII.WinAppRuntime.Main.1.1-p1_8wekyb3d8bbwe" | The Windows App SDK runtime's Main package's family name. |
+| public const string PackageFamilyName | \[release-dependent\] | The Windows App SDK runtime's Main package's family name. |
 
 ## Microsoft.WindowsAppSDK.Runtime.Packages.Singleton class
 
 | Constant | Value | Description |
 |-|-|-|
-| public const string PackageFamilyName | "Microsoft.WindowsAppRuntime.Singleton-preview1_8wekyb3d8bbwe" | The Windows App SDK runtime's Singleton package's family name. |
+| public const string PackageFamilyName | \[release-dependent\] | The Windows App SDK runtime's Singleton package's family name. |
 
 ## Microsoft.WindowsAppSDK.Runtime.Version class
 

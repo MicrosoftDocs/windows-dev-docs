@@ -2,7 +2,7 @@
 title: Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace
 description: Types and functions from the [Bootstrapper C++ API](api-reference/bootstrapper-cpp-api/index.md) that are in the **Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap** namespace.
 ms.topic: article
-ms.date: 03/22/2022
+ms.date: 07/05/2026
 keywords: windows 10, windows 11, Windows App SDK, desktop development, app sdk, bootstrapper, bootstrapper api
 ms.localizationpriority: low
 ---
@@ -11,7 +11,7 @@ ms.localizationpriority: low
 
 Types and functions from the [Bootstrapper C++ API](../index.md) that are in the **Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap** namespace. For example, helper functions that wrap calls to the [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/).
 
-## Functions in theMicrosoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace
+## Functions in the Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace
 
 | Function | Description |
 | - | - |

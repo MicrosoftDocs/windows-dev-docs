@@ -2,7 +2,7 @@
 title: Initialize function
 description: Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, throws an exception.
 ms.topic: how-to
-ms.date: 03/23/2022
+ms.date: 07/05/2026
 keywords: windows 10, windows 11, Windows App SDK, desktop development, app sdk, bootstrapper, bootstrapper api
 ms.localizationpriority: low
 ---
@@ -58,7 +58,7 @@ int main()
     catch (const winrt::hresult_error& ex)
     {
         const auto hr{ ex.code() };
-        std::cout << "Error 0x" << std::hex << hr << " in Bootstraper initialization";
+        std::cout << "Error 0x" << std::hex << hr << " in Bootstrapper initialization";
         return hr;
     }
     return 0;
@@ -74,5 +74,5 @@ int main()
 
 ## See also
 
-* [Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md)
+* [Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md)
 * [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize)
