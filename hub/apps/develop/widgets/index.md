@@ -1,9 +1,11 @@
 ---
-description: This section of the documentation provides developer guidance for implementing Windows Widgets and Dashboards.
+description: Find developer guidance for implementing Windows widgets in your app, including provider setup, templates, manifest, and deployment.
 title: Develop Windows Widgets and Dashboards
 ms.topic: article
-ms.date: 06/24/2026
+ms.date: 07/05/2026
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Develop Windows Widgets and Dashboards

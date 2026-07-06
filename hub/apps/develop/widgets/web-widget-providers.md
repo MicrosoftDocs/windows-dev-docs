@@ -1,14 +1,16 @@
 ---
 title: Web widget providers
-description: Learn how to implement a widget that displays content from a web source 
+description: Learn how to implement a Windows widget that serves its content from a remote URL, including setup, limitations, and example code.
 ms.topic: how-to
-ms.date: 11/19/2024
+ms.date: 07/05/2026
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Web widget providers
 
-In the latest release, apps that implement Windows widgets can choose to populate the widget content with HTML served from a remote URL. Previously, the widget content could only be supplied in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Because web widget providers must still provide an Adaptive Card JSON payload, you should follow the steps for implementing a widget provider in [Implement a widget provider in a C# Windows App](implement-widget-provider-cs.md) or [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md).
+Apps that implement Windows widgets can choose to populate the widget content with HTML served from a remote URL. Previously, the widget content could only be supplied in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Because web widget providers must still provide an Adaptive Card JSON payload, you should follow the steps for implementing a widget provider in [Implement a widget provider in a C# Windows App](implement-widget-provider-cs.md) or [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md).
 
 ## Specify the content URL
 
@@ -86,7 +88,8 @@ WidgetManager.GetDefault().SendMessageToContent("Weather_Widget", message);
 
 ## Limitations and requirements
 
-* This feature is available only to users in the European Economic Area (EEA). In the EEA, installed apps that implement a feed provider can provide content feed in the Widgets Board.
+> [!IMPORTANT]
+> This feature is available only to users in the European Economic Area (EEA). In the EEA, installed apps that implement a feed provider can provide a content feed in the Widgets Board.
 
 
 

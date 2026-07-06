@@ -1,18 +1,15 @@
 ---
-description: This article walks you through the creation of a widget template using the Adaptive Cards Designer.
+description: Learn how to create a Windows widget template using the Adaptive Cards Designer, with data binding and action support.
 title: Create a widget template with the Adaptive Cards Designer
-ms.date: 01/19/2022
+ms.date: 07/05/2026
 ms.topic: how-to
 keywords: windows 11, widgets
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Create a widget template with the Adaptive Cards Designer
-
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-> [!IMPORTANT]
-> The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
 
 The UI and interaction for Windows Widgets are implemented using [Adaptive Cards](https://adaptivecards.io/). Each widget provides a visual template and, optionally, a data template which are defined using JSON documents that conform to the Adaptive Cards schema. This article walks you through the steps to create a simple widget template. 
 
@@ -203,16 +200,16 @@ content when the user has clicked the **Customize widget** button.
 ],
 "actions": [
     {
-    "type": "Action.Submit",
-    "title": "Increment",
-    "verb": "inc",
-    "$when": "${!$host.isSettingsPayload}"
+        "type": "Action.Execute",
+        "title": "Increment",
+        "verb": "inc",
+        "$when": "${!$host.isSettingsPayload}"
     },
     {
-    "type": "Action.Submit",
-    "title": "Update Setting",
-    "verb": "setting",
-    "$when": "${$host.isSettingsPayload}"
+        "type": "Action.Execute",
+        "title": "Update Setting",
+        "verb": "setting",
+        "$when": "${$host.isSettingsPayload}"
     }
 ],
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",

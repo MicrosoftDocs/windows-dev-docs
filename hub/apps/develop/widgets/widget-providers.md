@@ -1,9 +1,11 @@
 ---
 title: Widget providers
-description: Learn how to implement a Windows widget service provider to support your app. 
+description: Learn how to implement a Windows widget service provider that responds to requests from the Widgets Board and returns widget content.
 ms.topic: article
-ms.date: 07/06/2022
+ms.date: 07/05/2026
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 
@@ -19,6 +21,8 @@ Currently you can implement a widget provider using a packaged Win32 desktop app
 * [Implement a widget provider in a win32 app (C#)](implement-widget-provider-cs.md)
 * [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md)
 * [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets)
+* [Web widget providers](web-widget-providers.md)
+* [Widget header customization](widget-header-customization.md)
 
 
 

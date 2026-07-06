@@ -1,9 +1,11 @@
 ---
 title: Widget provider ActivateApplication protocol
-description: Describes the format of the command line activation parameters for widgets 
+description: Learn the command line activation parameters passed to a Windows widget provider app when it is activated by the Widgets Board.
 ms.topic: article
-ms.date: 09/27/2022
+ms.date: 07/05/2026
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Widget provider ActivateApplication protocol
@@ -147,8 +149,8 @@ The object will always include the `WidgetCall` value and all parameter values a
 }
 ```
 
-#### OnWidgetContextChanged Json Object
-For example WidgetSize is changed to Medium. In SV2, WidgetSize is the only thing which trig the WidgetContextChanged.
+#### OnWidgetContextChanged JSON Object
+For example, when `WidgetSize` changes to `Medium`, a `WidgetContextChanged` event is triggered.
 
 ```json
 {
