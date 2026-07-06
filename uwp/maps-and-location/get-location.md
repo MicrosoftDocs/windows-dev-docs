@@ -2,27 +2,17 @@
 title: Get the user's location
 description: Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in Windows Settings. This topic also shows how to check if your app has permission to access the user's location.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
-ms.date: 05/27/2025
+ms.date: 07/06/2026
 ms.topic: how-to
-keywords: windows 10, uwp, map, location, location capability
+keywords: windows 10, uwp, location, geolocation, location capability
 ms.localizationpriority: medium
 ---
 # Get the user's location
 
-> [!IMPORTANT]
-> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and Windows Maps platform APIs ([Windows.Services.Maps.*](/uwp/api/windows.services.maps)) are deprecated and may not be available in future versions of Windows. For more information, see [Resources for deprecated features](/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis).
-
-> [!IMPORTANT]
-> **Bing Maps for Enterprise service retirement**
->
-> The UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and map services from the [Windows.Services.Maps](/uwp/api/windows.services.maps) namespaces rely on Bing Maps. Bing Maps for Enterprise is deprecated and will be retired, at which point the MapControl and services will no longer receive data.
->
-> For more information, see the [Bing Maps Developer Center](https://www.bingmapsportal.com/) and [Bing Maps documentation](/bingmaps/getting-started/).
+Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in Windows Settings. This topic also shows how to check if your app has permission to access the user's location.
 
 > [!NOTE]
-> [**MapControl**](/uwp/api/Windows.UI.Xaml.Controls.Maps.MapControl) and map services require a maps authentication key called a [**MapServiceToken**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol.mapservicetoken). For more info about getting and setting a maps authentication key, see [Request a maps authentication key](authentication-key.md).
-
-Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in Windows Settings. This topic also shows how to check if your app has permission to access the user's location.
+> This article covers the [**Windows.Devices.Geolocation**](/uwp/api/Windows.Devices.Geolocation) APIs for obtaining a device's geographic position. If you're looking to display locations on a map, the UWP [MapControl](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) and [Windows.Services.Maps](/uwp/api/windows.services.maps) APIs are deprecated. WinUI 3 apps should use the new [MapControl](/windows/apps/develop/ui/controls/map-control) powered by Azure Maps. For more information, see [Resources for deprecated features](/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis).
 
 ## Enable the location capability
 

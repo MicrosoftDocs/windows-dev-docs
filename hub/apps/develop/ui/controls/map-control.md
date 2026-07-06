@@ -128,6 +128,9 @@ myMap.MapServiceErrorOccurred += (sender, args) =>
 
 ## Related articles
 
+- [Maps and location overview](../../maps-and-location/index.md)
+- [Get the user's location](../../maps-and-location/get-location.md)
+- [Set up a geofence](../../maps-and-location/geofencing.md)
 - [MapControl class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol)
 - [MapIcon class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapicon)
 - [MapElementsLayer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapelementslayer)

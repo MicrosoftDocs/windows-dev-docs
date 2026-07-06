@@ -552,6 +552,16 @@ items:
                 href: devices-sensors/use-the-light-sensor.md
               - name: Use the orientation sensor
                 href: devices-sensors/use-the-orientation-sensor.md
+      - name: Maps and location
+        items:
+          - name: Overview
+            href: maps-and-location/index.md
+          - name: MapControl
+            href: ui/controls/map-control.md
+          - name: Get the user's location
+            href: maps-and-location/get-location.md
+          - name: Set up a geofence
+            href: maps-and-location/geofencing.md
       - name: Graphics
         items:
           - name: Overview

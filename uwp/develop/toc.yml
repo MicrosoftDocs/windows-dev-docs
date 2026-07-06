@@ -958,21 +958,8 @@ items:
       href: ../contacts-and-calendar/sending-an-sms-message.md
     - name: Manage appointments
       href: ../contacts-and-calendar/managing-appointments.md
-  - name: Maps and location
-    href: ../maps-and-location/index.md
+  - name: Location
     items:
-    - name: Request authentication key
-      href: ../maps-and-location/authentication-key.md
-    - name: Display maps
-      href: ../maps-and-location/display-maps.md
-    - name: Display points of interest
-      href: ../maps-and-location/display-poi.md
-    - name: Display routes and directions
-      href: ../maps-and-location/routes-and-directions.md
-    - name: Overlay tiled images
-      href: ../maps-and-location/overlay-tiled-images.md
-    - name: Perform geocoding
-      href: ../maps-and-location/geocoding.md
     - name: Get current location
       href: ../maps-and-location/get-location.md
     - name: Design guidance for location-aware apps
@@ -983,8 +970,6 @@ items:
       href: ../maps-and-location/set-up-a-geofence.md
     - name: Design guidance for geofencing
       href: ../maps-and-location/guidelines-for-geofencing.md
-    - name: Map style sheet reference
-      href: ../maps-and-location/elements-of-map-style-sheet.md
 - name: Threading and async programming
   href: ../threading-async/index.md
   items:

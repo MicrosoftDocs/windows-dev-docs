@@ -10612,12 +10612,12 @@
     },
     {
       "source_path": "uwp/maps-and-location/controls-map.md",
-      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
       "redirect_document_id": false
     },
     {
       "source_path": "uwp/maps-and-location/display-maps#map-control",
-      "redirect_url": "/windows/uwp/maps-and-location/display-maps#display-map-in-a-control",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
       "redirect_document_id": false
     },
     {
@@ -12438,6 +12438,46 @@
     {
       "source_path": "uwp/cpp-and-winrt-apis/weak-references.md",
       "redirect_url": "/windows/apps/develop/cpp-winrt/weak-references",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/index.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/authentication-key.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/display-maps.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/display-poi.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/elements-of-map-style-sheet.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/geocoding.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/overlay-tiled-images.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/maps-and-location/routes-and-directions.md",
+      "redirect_url": "/windows/whats-new/deprecated-features-resources#windows-uwp-map-control-and-windows-maps-platform-apis",
       "redirect_document_id": false
     }
   ]
