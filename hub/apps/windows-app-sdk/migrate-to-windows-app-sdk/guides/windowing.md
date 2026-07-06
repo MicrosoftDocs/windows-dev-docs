@@ -1,8 +1,8 @@
 ---
 title: Windowing functionality migration
-description: This topic contains guidance related to window management, including migrating from UWP's [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview)/[**CoreWindow**](/uwp/api/windows.ui.core.corewindow) or [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow) to the Window App SDK [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow).
+description: Guidance for migrating window management from UWP (ApplicationView, CoreWindow) to Microsoft.UI.Windowing.AppWindow in the Windows App SDK.
 ms.topic: how-to
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
 ms.localizationpriority: medium
 ---
@@ -119,7 +119,7 @@ For more details on how to work with app window presenters, see the [Windowing g
 ## Custom title bar
 
 > [!NOTE]
-> Title bar customization APIs currently work on Windows 11 only. We recommend that you check [**AppWindowTitleBar.IsCustomizationSupported**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs.
+> Title bar customization APIs work on Windows 11 only. We recommend that you check [**AppWindowTitleBar.IsCustomizationSupported**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar.iscustomizationsupported) in your code before you call these APIs.
 
 If your app uses a default title bar, then there's no additional title bar work needed when you migrate to Win32. If on the other hand your UWP app has a custom title bar, then it's possible to recreate the following scenarios in your Windows App SDK app.
 

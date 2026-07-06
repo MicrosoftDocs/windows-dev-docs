@@ -1,8 +1,8 @@
 ---
 title: User interface migration (including WinUI)
-description: This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
+description: Guidance for migrating your user interface code from UWP to WinUI 3, including XAML controls, resource dictionaries, and UI thread patterns.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, WinUI
 ms.localizationpriority: medium
 dev_langs:

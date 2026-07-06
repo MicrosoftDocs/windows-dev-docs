@@ -2,7 +2,7 @@
 title: Application lifecycle functionality migration
 description: This topic contains migration guidance in the application lifecycle area.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, application lifecycle, applifecycle, application, lifecycle
 ms.localizationpriority: medium
 dev_langs:
