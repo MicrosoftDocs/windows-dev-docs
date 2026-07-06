@@ -859,6 +859,8 @@ items:
             href: windows-integration/default-apps-platform.md
           - name: Pin to taskbar
             href: windows-integration/pin-to-taskbar.md
+          - name: Jump list
+            href: windows-integration/jump-list.md
           - name: Smart App Control
             items:
               - name: Overview

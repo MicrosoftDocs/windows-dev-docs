@@ -1,11 +1,10 @@
 ---
-description: Sound helps complete an application's user experience, and gives them that extra audio edge they need to match the feel of Windows across all platforms.
-label: Sound
 title: Sound
-template: detail.hbs
-ms.date: 04/08/2026
+description: Use ElementSoundPlayer to add built-in Windows interaction sounds to your WinUI app and match the auditory feel of the Windows platform.
 ms.topic: how-to
-keywords: windows 10, winui
+ms.date: 07/06/2026
+author: GrantMeStrength
+ms.author: jken
 ms.localizationpriority: medium
 ---
 # Sound
