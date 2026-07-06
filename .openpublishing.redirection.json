@@ -3411,6 +3411,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/winui-dotnet-new.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/get-started/uno-simple-photo-viewer.md",
       "redirect_url": "/previous-versions/windows/app-dev/get-started/uno-simple-photo-viewer",
       "redirect_document_id": false
