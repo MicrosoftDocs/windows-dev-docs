@@ -4,7 +4,7 @@ title: Guidelines for geofencing apps
 ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ms.date: 06/21/2024
 ms.topic: article
-keywords: windows 10, uwp, map, location, geofencing
+keywords: windows 10, uwp, location, geofencing
 ms.localizationpriority: medium
 ---
 # Guidelines for geofencing apps

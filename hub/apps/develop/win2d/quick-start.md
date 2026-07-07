@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Build a simple Win2D app"
-description: This tutorial introduces some of the basic drawing capabilities of Win2D.
-ms.date: 07/02/2026
+description: Learn how to build a simple Win2D app from scratch, using the 2D graphics library for WinUI 3 and UWP to draw shapes and text.
+ms.date: 07/05/2026
 ms.topic: how-to
 author: GrantMeStrength
 ms.author: jken
@@ -136,7 +136,7 @@ args.DrawingSession.DrawLine(0, 0, 50, 200, Colors.Red);
 
 The arguments to these two methods are similar to `DrawText`. A circle is defined by a center point (125, 125), a radius (100), and a color (Green). A line is defined by a beginning (0, 0), an end (50, 200) and a color (Red).
 
-12. Now, press F5 to run the app. You should see "Hello, world!" along with a green circle and red line.
+2. Now, press F5 to run the app. You should see "Hello, world!" along with a green circle and red line.
 
 You may be wondering how to control more advanced drawing options, such as line thickness and dashes, or more complex fill options such as using brushes. Win2D provides all of these options and more, and makes it easy to use them when you want. All of the `Draw(...)` methods offer many overloads that can accept additional parameters such as [CanvasTextFormat](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextFormat.htm) (font family, size, etc) and [CanvasStrokeStyle](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Geometry_CanvasStrokeStyle.htm) (dashes, dots, endcaps, etc). Feel free to explore the API surface to learn more about these options.
 

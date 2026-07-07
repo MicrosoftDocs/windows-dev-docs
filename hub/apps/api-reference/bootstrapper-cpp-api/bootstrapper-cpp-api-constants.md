@@ -2,7 +2,7 @@
 title: Constants for use with the Bootstrapper C++ API
 description: The following constants (for use with the Bootstrapper C++ API) are declared in `WindowsAppSDK-VersionInfo.h`.
 ms.topic: article
-ms.date: 07/25/2022
+ms.date: 07/05/2026
 keywords: windows 10, windows 11, Windows App SDK, desktop development, app sdk, bootstrapper, bootstrapper api, C++, constants
 ms.localizationpriority: low
 ---
@@ -36,7 +36,7 @@ Constant | Value | Description |
 
 | Constant | Value | Description |
 |-|-|-|
-| constexpr PCWSTR PackageFamilyName | "Microsoft.WindowsAppRuntime.1.1-preview1_8wekyb3d8bbwe" | The Windows App SDK runtime's Framework package's family name. |
+| constexpr PCWSTR PackageFamilyName | \[release-dependent\] | The Windows App SDK runtime's Framework package's family name. |
 
 ## Microsoft::WindowsAppSDK::Runtime.Packages.DDLM.Arm64 namespace
 
@@ -60,13 +60,13 @@ Constant | Value | Description |
 
 | Constant | Value | Description |
 |-|-|-|
-| constexpr PCWSTR PackageFamilyName | L"MicrosoftCorporationII.WinAppRuntime.Main.1.1-p1_8wekyb3d8bbwe" | The Windows App SDK runtime's Main package's family name. |
+| constexpr PCWSTR PackageFamilyName | \[release-dependent\] | The Windows App SDK runtime's Main package's family name. |
 
 ## Microsoft::WindowsAppSDK::Runtime::Packages::Singleton namespace
 
 | Constant | Value | Description |
 |-|-|-|
-| constexpr PCWSTR PackageFamilyName | L"Microsoft.WindowsAppRuntime.Singleton-preview1_8wekyb3d8bbwe" | The Windows App SDK runtime's Singleton package's family name. |
+| constexpr PCWSTR PackageFamilyName | \[release-dependent\] | The Windows App SDK runtime's Singleton package's family name. |
 
 ## Microsoft::WindowsAppSDK::Runtime::Version namespace
 

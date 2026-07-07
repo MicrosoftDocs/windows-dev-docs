@@ -1,8 +1,8 @@
 ---
-title: Keyboard API and events parity between UWP and WinUI
-description: The migration of apps from UWP to the WinUI might require a few changes in the way input keyboard events are handled.
+title: Keyboard API and events parity between UWP and WinUI 3
+description: The migration of apps from UWP to WinUI 3 might require a few changes in the way input keyboard events are handled.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, input, keyboard, events
 ms.localizationpriority: medium
 ---
@@ -72,9 +72,9 @@ public sealed partial class MainPage : Page
 
 ### WinUI APIs (Windows App SDK)
 
-WinUI (Windows App SDK) has a different concept from **CoreWindow**. Instead, WinUI provides an input event handling mechanism using **Microsoft.Ui.Xaml.UIElement** (UIElement). Each class that inherits from **UIElement** can implement various keyboard or pointer events (which are also present in UWP's **CoreWindow**) such as **KeyUp**, **KeyDown**, **CharacterReceived**, and others. This approach allows event handling at the level of a specific UI control.
+WinUI 3 (Windows App SDK) has a different concept from **CoreWindow**. Instead, WinUI 3 provides an input event handling mechanism using **Microsoft.UI.Xaml.UIElement** (UIElement). Each class that inherits from **UIElement** can implement various keyboard or pointer events (which are also present in UWP's **CoreWindow**) such as **KeyUp**, **KeyDown**, **CharacterReceived**, and others. This approach allows event handling at the level of a specific UI control.
 
-For detailed info about event handling, see [Keyboard events](/windows/apps/design/input/keyboard-events). You can associate keyboard events either XAML or in imperative source code. These examples demonstrate key event handling through code and accelerator key events in XAML.
+For detailed info about event handling, see [Keyboard events](/windows/apps/design/input/keyboard-events). You can associate keyboard events either in XAML or in imperative source code. These examples demonstrate key event handling through code and accelerator key events in XAML.
 
 ```xaml
 <Window

@@ -1,18 +1,15 @@
 ---
-description: This article provides detailed guidance for designing interaction for Windows widgets.
+description: Learn the interaction design patterns for Windows widgets, including tap targets, menus, custom actions, and input handling guidance.
 title: Widget interaction design guidance
-ms.date: 01/19/2022
+ms.date: 07/05/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 11, widgets
 ms.localizationpriority: medium
 ---
 
 # Widget interaction design guidance
-
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
-> [!IMPORTANT]
-> The feature described in this topic is available in Dev Channel preview builds of Windows starting with build 25217. For information on preview builds of Windows, see [Windows 10 Insider Preview](https://insider.windows.com/en-us/preview-windows).
 
 This article provides detailed guidance for designing interaction for Windows widgets.
 
@@ -74,18 +71,4 @@ The following images show example of hyperlinks in a widget template.
 
 ![Two images of widgets that illustrate dropdown menus. In the left image the dropdown menu is collapsed. In the right image the dropdown is expanded and extends over the border of the widget](./images/widgets-dropdown-menus.png)
 
-Widgets are able to extend slightly beyond their widget size temporarily if the user is interacting with a menu or dropdown. The menu behavior should be light dismiss and close the menu if a user click outside of the menu / dropdown area.
-
-
-
-
-
-
-
-
-
-
- 
-
- 
-
+Widgets are able to extend slightly beyond their widget size temporarily if the user is interacting with a menu or dropdown. The menu behavior should be light dismiss and close the menu if a user clicks outside of the menu / dropdown area.

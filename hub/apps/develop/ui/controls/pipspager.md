@@ -2,7 +2,7 @@
 description: A PipsPager is a control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.
 title: PipsPager
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 07/02/2026
 ms.topic: article
 ms.custom: 21H1
 ms.localizationpriority: medium
@@ -45,7 +45,7 @@ A default PipsPager is comprised of five visible pips that can be oriented horiz
 
 A PipsPager also supports navigation buttons (previous, next) to move to an incrementally adjacent page. By default, the navigation buttons are collapsed and do not take up layout space.
 
-Wrapping between the first and last items is not supported.
+By default, wrapping between the first and last items is not enabled. Starting in Windows App SDK 1.6, you can use the [WrapMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.wrapmode) property to let navigation wrap between the first and last items. For more info, see [Wrap between the first and last items](#wrap-between-the-first-and-last-items).
 
 :::image type="content" source="images/pipspager-default.png" alt-text="A default PipsPager with five horizontal dots, and the first selected.":::
 
@@ -108,6 +108,25 @@ By default, a maximum of five pips are visible.
 <PipsPager x:Name="ScrollingPipsPager"
     NumberOfPages="20"
     MaxVisiblePips="10" />
+```
+
+### Wrap between the first and last items
+
+By default, the PipsPager stops at the first and last items and navigation does not wrap. When [PreviousButtonVisibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.previousbuttonvisibility) or [NextButtonVisibility](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.nextbuttonvisibility) is set to `Visible`, the corresponding navigation button is hidden when the user reaches the start or end of the content.
+
+Starting in Windows App SDK 1.6, you can set the [WrapMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.wrapmode) property to let the user navigate continuously from the last item back to the first, and from the first item to the last. When wrapping is enabled, the previous and next navigation buttons remain enabled at the ends of the content so the user can move between the first and last items.
+
+Possible values for the [WrapMode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager.wrapmode) property are:
+
+- [None](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerwrapmode): Navigation does not wrap. The PipsPager stops at the first and last items. (Default)
+- [Wrap](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspagerwrapmode): Navigation wraps between the first and last items.
+
+```xaml
+<PipsPager x:Name="WrappingPipsPager"
+    NumberOfPages="5"
+    WrapMode="Wrap"
+    PreviousButtonVisibility="Visible"
+    NextButtonVisibility="Visible" />
 ```
 
 ### Integrate PipsPager with a Collection control

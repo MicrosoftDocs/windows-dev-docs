@@ -4,7 +4,7 @@ title: Guidelines for using Visits tracking
 ms.assetid: 0c101684-48a9-4592-9ed5-6c20f3b830f2
 ms.date: 06/21/2024
 ms.topic: article
-keywords: windows 10, uwp, map, location, geovisit, geovisits
+keywords: windows 10, uwp, location, geovisit, geovisits
 ms.localizationpriority: medium
 ---
 # Guidelines for using Visits tracking

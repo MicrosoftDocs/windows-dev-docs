@@ -1,9 +1,11 @@
 ---
 title: Implement a widget provider in a C# Windows App
-description: This article walks you through the process of creating a widget provider, implemented in C#, that provides widget content and responds to widget actions. 
+description: Learn how to create a Windows widget provider in C#, with step-by-step implementation of widget content, data updates, and user actions.
 ms.topic: how-to
-ms.date: 07/06/2022
+ms.date: 07/05/2026
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Implement a widget provider in a C# Windows App
@@ -20,7 +22,7 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 ## Prerequisites
 
 - Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
-- Visual Studio 2026 or later with the **WinUI application development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
+- Visual Studio 2022 or later with the **WinUI application development** workload.
 
 ## Create a new C# console app
 

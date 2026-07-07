@@ -2,7 +2,7 @@
 title: Microsoft::Windows::ApplicationModel namespace
 description: Types and functions from the [Bootstrapper C++ API](api-reference/bootstrapper-cpp-api/index.md) that are in the **Microsoft::Windows::ApplicationModel** namespace.
 ms.topic: article
-ms.date: 03/22/2022
+ms.date: 07/05/2026
 keywords: windows 10, windows 11, Windows App SDK, desktop development, app sdk, bootstrapper, bootstrapper api
 ms.localizationpriority: low
 ---

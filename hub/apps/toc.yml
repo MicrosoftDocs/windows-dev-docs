@@ -73,6 +73,8 @@ items:
       href: winui/winui3/index.md
   - name: Get started with WinUI
     items:
+    - name: Overview
+      href: get-started/winui-get-started-overview.md
     - name: Quick start
       href: get-started/start-here.md
     - name: "Tutorial: Create your first WinUI app"

@@ -1,7 +1,7 @@
 ---
 title: Implementing custom effects
-description: An in-depth guide on implementing custom D2D effects with Win2D.
-ms.date: 07/02/2026
+description: Learn how to implement custom Direct2D effects that integrate seamlessly with Win2D, using the Win2D interop APIs in C++ or ComputeSharp in C#.
+ms.date: 07/05/2026
 ms.topic: concept-article
 author: GrantMeStrength
 ms.author: jken
@@ -11,14 +11,15 @@ ms.localizationpriority: medium
 
 # Implementing custom effects
 
-Win2D provides several APIs to represent objects that can be drawn, which are divided into two categories: images and effects. Images, represented by the `ICanvasImage` interface, have no inputs and can be directly drawn on a given surface. For example, `CanvasBitmap`, `VirtualizedCanvasBitmap` and `CanvasRenderTarget` are examples of image types. Effects, on the other hand, are represented by the `ICanvasEffect` interface. They can have inputs as well as additional resources, and can apply arbitrary logic to produce their outputs (as an effect is also an image). Win2D includes effects wrapping most [D2D effects](/windows/win32/direct2d/effects-overview), such as `GaussianBlurEffect`, `TintEffect` and `LuminanceToAlphaEffect`.
+Win2D provides several APIs to represent objects that can be drawn, which are divided into two categories: images and effects. Images, represented by the `ICanvasImage` interface, have no inputs and can be directly drawn on a given surface. For example, `CanvasBitmap`, `CanvasVirtualBitmap` and `CanvasRenderTarget` are examples of image types. Effects, on the other hand, are represented by the `ICanvasEffect` interface. They can have inputs as well as additional resources, and can apply arbitrary logic to produce their outputs (as an effect is also an image). Win2D includes effects wrapping most [D2D effects](/windows/win32/direct2d/effects-overview), such as `GaussianBlurEffect`, `TintEffect` and `LuminanceToAlphaEffect`.
 
 Images and effects can also be chained together, to create arbitrary graphs which can then be displayed in your application (also refer to the D2D docs on [Direct2D effects](/windows/win32/direct2d/effects-overview)). Together, they provide an extremely flexible system to author complex graphics in an efficient manner. However, there are cases where the built-in effects are not sufficient, and you might want to build your very own Win2D effect. To support this, Win2D includes a set of powerful interop APIs that allows defining custom images and effects that can seamlessly integrate with Win2D.
 
 > [!TIP]
 > If you are using C# and want to implement a custom effect or effect graph, it is recommended to use [ComputeSharp](https://github.com/Sergio0694/ComputeSharp) rather than trying to implement an effect from scratch. [See the paragraph below](#custom-effects-in-c-using-computesharp) for a detailed explanation of how to use this library to implement custom effects that integrate seamlessly with Win2D.
 
-> **Platform APIs:** [`ICanvasImage`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`CanvasBitmap`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`VirtualizedCanvasBitmap`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`CanvasRenderTarget`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`CanvasEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`GaussianBlurEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`TintEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`ICanvasLuminanceToAlphaEffectImage`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`IGraphicsEffectSource`](/uwp/api/windows.graphics.effects.igraphicseffectsource), [`ID2D21Image`](/windows/win32/api/d2d1/nn-d2d1-id2d1image), [`ID2D1Factory1`](/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1factory1), [`ID2D1Effect`](/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1effect)
+> [!NOTE]
+> **Platform APIs:** [`ICanvasImage`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_ICanvasImage.htm), [`CanvasBitmap`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), [`CanvasVirtualBitmap`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasVirtualBitmap.htm), [`CanvasRenderTarget`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasRenderTarget.htm), [`CanvasEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Effects_CanvasEffect.htm), [`GaussianBlurEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Effects_GaussianBlurEffect.htm), [`TintEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Effects_TintEffect.htm), [`LuminanceToAlphaEffect`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Effects_LuminanceToAlphaEffect.htm), [`IGraphicsEffectSource`](/uwp/api/windows.graphics.effects.igraphicseffectsource), [`ID2D1Image`](/windows/win32/api/d2d1/nn-d2d1-id2d1image), [`ID2D1Factory1`](/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1factory1), [`ID2D1Effect`](/windows/win32/api/d2d1_1/nn-d2d1_1-id2d1effect)
 
 ## Implementing a custom `ICanvasImage`
 

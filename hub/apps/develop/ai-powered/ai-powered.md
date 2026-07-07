@@ -1,10 +1,10 @@
 ---
-description: This article lists the Windows features that are powered using AI and links to the how-to articles that show how to use them.
 title: AI-powered features
-ms.date: 04/27/2026
+description: This article lists the Windows features that are powered using AI and links to the how-to articles that show how to use them.
 ms.topic: article
-keywords: windows 10, windows 11, winui 3, ai, artificial intelligence
-ms.localizationpriority: medium
+ms.date: 07/05/2026
+ms.author: jken
+author: GrantMeStrength
 ---
 
 
@@ -34,6 +34,7 @@ This section provides guidance for using the Windows App SDK to create apps that
 
 ## Related topics
 
+* [AI-assisted Windows development](../ai-assisted/index.md)
 * [Choose your Windows AI solution](/windows/ai/windows-ai-comparison)
 * [Windows AI](/windows/ai)
 * [Microsoft Foundry on Windows](/windows/ai/overview)

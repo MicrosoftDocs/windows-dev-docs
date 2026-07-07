@@ -1,9 +1,11 @@
 ---
 title: Widget provider package manifest XML format
-description: Describes the package manifest XML format for Windows widget providers. 
+description: Learn the package manifest XML format for registering a Windows widget provider, including element definitions and example markup. 
 ms.topic: article
-ms.date: 08/12/2022
+ms.date: 07/05/2026
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Widget provider package manifest XML format
@@ -166,9 +168,6 @@ Required. Specifies one or more screenshots of the widget.
 ## Screenshot
 
 Required. Specifies a screenshot for a widget. This screenshot is shown in the widgets host in the **Add Widgets dialog** when the user is selecting widgets to add to the widgets host. If you provide a screenshot for the optional **DarkMode** or **LightMode** elements listed below, then the widgets host will use the screenshot that matches the current device theme. If you don't provide a screenshot for the current device theme, the image provided in this **Screenshot** element will be used. For information about the design requirements for screenshot images and the naming conventions for localized screenshots, see [Integrate with the widget picker](../../design/widgets/widgets-picker-integration.md).
-
-> [!NOTE]
-> The widget screenshots are not displayed on the widgets board's add widgets dialog in the current preview release..
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|

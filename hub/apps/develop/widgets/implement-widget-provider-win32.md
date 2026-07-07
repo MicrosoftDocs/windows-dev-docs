@@ -1,9 +1,11 @@
 ---
 title: Implement a widget provider in a win32 app (C++/WinRT)
-description: This article walks you through the process of creating widget provider, implemented in C++/WinRT that provides widget content and responds to widget actions. 
+description: Learn how to create a Windows widget provider in C++/WinRT, with step-by-step implementation of content, data updates, and user actions.
 ms.topic: how-to
-ms.date: 09/22/2025
+ms.date: 07/05/2026
 ms.localizationpriority: medium
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Implement a widget provider in a win32 app (C++/WinRT)
@@ -19,7 +21,7 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 ## Prerequisites
 
 - Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
-- Visual Studio 2026 or later with the **WinUI application development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
+- Visual Studio 2022 or later with the **WinUI application development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new C++/WinRT win32 console app
 

@@ -4,7 +4,7 @@ title: Guidelines for location-aware apps
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ms.date: 06/21/2024
 ms.topic: article
-keywords: windows 10, uwp, location, map, geolocation
+keywords: windows 10, uwp, location, geolocation
 ms.localizationpriority: medium
 ---
 # Guidelines for location-aware apps
@@ -114,7 +114,7 @@ Note that the location service will return data as it becomes available. It may 
 
 ### Graphical representations of location
 
-Have your app use [**Geocoordinate.accuracy**](/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) to denote the user’s current location on the map clearly. There are three main bands for accuracy—an error radius of approximately 10 meters, an error radius of approximately 100 meters, and an error radius of greater than 1 kilometer. By using the accuracy information, you can ensure that your app displays location accurately in the context of the data available. For general information about using the map control, see [Display maps with 2D, 3D, and Streetside views](./display-maps.md).
+Have your app use [**Geocoordinate.accuracy**](/uwp/api/windows.devices.geolocation.geocoordinate.accuracy) to denote the user's current location on the map clearly. There are three main bands for accuracy—an error radius of approximately 10 meters, an error radius of approximately 100 meters, and an error radius of greater than 1 kilometer. By using the accuracy information, you can ensure that your app displays location accurately in the context of the data available.
 
 -   For accuracy approximately equal to 10 meters (GPS resolution), location can be denoted by a dot or pin on the map. With this accuracy, latitude-longitude coordinates and street address can be shown as well.
 
@@ -153,7 +153,6 @@ A user's geographic location is personally identifiable information (PII). The f
 
 * [Set up a geofence](./set-up-a-geofence.md)
 * [Get current location](./get-location.md)
-* [Display maps with 2D, 3D, and Streetside views](./display-maps.md)
 * [UWP location sample (geolocation)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Geolocation)
  
 

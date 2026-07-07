@@ -4,7 +4,7 @@ description: Set up a Geofence in your app, and learn how to handle notification
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ms.date: 06/21/2024
 ms.topic: how-to
-keywords: windows 10, uwp, map, location, geofence, notifications
+keywords: windows 10, uwp, location, geofence, notifications
 ms.localizationpriority: medium
 ---
 # Set up a geofence

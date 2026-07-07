@@ -2,7 +2,7 @@
 title: App notifications from UWP to WinUI migration
 description: This topic contains migration guidance in the app notifications feature area.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications, toast, toast notifications, app notifications, uwp
 ms.localizationpriority: medium
 ---
@@ -13,9 +13,6 @@ The only difference when migrating app notification code from UWP to WinUI is in
 
 > [!NOTE]
 > The term "toast notification" is being replaced with "app notification". These terms both refer to the same feature of Windows, but over time we will phase out the use of "toast notification" in the documentation.
-
-> [!NOTE]
-> **Some information relates to pre-released product, which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.**
 
 
 ## Activation differences
@@ -424,4 +421,4 @@ new ToastContentBuilder()
 
 * [Windows App SDK and supported Windows releases](../../support.md)
 * [Send a local toast notification from C# apps](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart)
-* [Send a local toast notification from Win32 C++ WRL apps](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart)
+* [Send a local toast notification from C++ apps](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart)

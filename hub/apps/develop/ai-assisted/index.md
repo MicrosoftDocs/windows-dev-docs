@@ -1,8 +1,8 @@
 ---
 title: AI-assisted Windows development
-description: Build Windows apps faster using AI agents, GitHub Copilot, Claude Code, and the Windows AI development toolkit — with tools that are free, work in VS Code, and require no prior Windows experience.
+description: Build Windows apps faster using AI agents, GitHub Copilot, Claude Code, and the Windows AI development toolkit — free tools that work in VS Code.
 ms.topic: overview
-ms.date: 06/22/2026
+ms.date: 07/05/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -80,3 +80,7 @@ Yes. The `winui@awesome-copilot` plugin and the Microsoft Learn MCP Server both 
 
 - [Windows App Development CLI](../../dev-tools/winapp-cli/index.md)
 - [Security and responsible AI](security-and-responsible-ai.md)
+- [AI-assisted testing](testing.md)
+- [VS Code tools for Windows development](vs-code-tools.md)
+- [Migration overview](migrate/index.md)
+- [AI-powered Windows features](../ai-powered/ai-powered.md)

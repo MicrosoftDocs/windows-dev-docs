@@ -1,8 +1,8 @@
 ---
 title: "Security and responsible AI for Windows development"
-description: Guidance on reviewing AI-generated code for security risks, using AI tools responsibly, and shipping safe Windows apps that incorporate AI features.
+description: Review AI-generated code for security risks, use AI tools responsibly, and ship safe Windows apps that incorporate AI features.
 ms.topic: overview
-ms.date: 05/13/2026
+ms.date: 07/05/2026
 ms.author: jken
 author: GrantMeStrength
 ---

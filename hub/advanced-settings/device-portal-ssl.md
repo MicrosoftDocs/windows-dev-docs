@@ -1,10 +1,11 @@
 ---
 title: Provision Windows Device Portal with a custom SSL certificate
-description: Learn how to provision Windows Device Portal with a custom certificate for use in HTTPS communication.
-ms.date: 07/14/2025
+description: Learn how to provision Windows Device Portal with a custom SSL certificate for use in HTTPS communication on Windows Desktop devices.
+ms.date: 07/06/2026
 ms.topic: how-to
 ms.localizationpriority: medium
-ms.custom: 19H1
+author: GrantMeStrength
+ms.author: jken
 ---
 
 # Provision Windows Device Portal with a custom SSL certificate
@@ -19,7 +20,7 @@ For example, a company might have a certificate authority (CA) that it uses to s
 
 By default, WDP generates a self-signed root CA, and then uses that to sign SSL certificates for every endpoint it is listening on. This includes `localhost`, `127.0.0.1`, and `::1` (IPv6 localhost).
 
-Also included are the device's hostname (for example, `https://LivingRoomPC`) and each link-local IP address assigned to the device (up to two [IPv4, IPv6] per network adaptor).
+Also included are the device's hostname (for example, `https://LivingRoomPC`) and each link-local IP address assigned to the device (up to two [IPv4, IPv6] per network adapter).
 You can see the link-local IP addresses for a device by looking at the Networking tool in the WDP. They'll start with `10.` or `192.` for IPv4, or `fe80:` for IPv6.
 
 In the default setup, a certificate warning may appear in your browser because of the untrusted root CA. Specifically, the SSL cert provided by WDP is signed by a root CA that the browser or PC doesn't trust. This can be fixed by creating a new trusted root CA.
@@ -81,7 +82,7 @@ WebManagement.exe -SetCert --1.pfx PickAPassword
 WebManagement.exe -SetCert MyLivingRoomPC.pfx PickAPassword
 ```
 
-Once you have installed the certificates, simply restart the service so the changes can take effect:
+Once you have installed the certificates, restart the service so the changes can take effect:
 
 ```cmd
 sc stop webmanagement
@@ -90,4 +91,10 @@ sc start webmanagement
 
 > [!TIP]
 > IP addresses can change over time.
-Many networks use DHCP to give out IP addresses, so devices don't always get the same IP address they had previously. If you've created a certificate for an IP address on a device and that device's address has changed, WDP will generate a new certificate using the existing self-signed cert, and it will stop using the one you created. This will cause the cert warning page to appear in your browser again. For this reason, we recommend connecting to your devices through their hostnames, which you can set in the Windows Device Portal. These will stay the same regardless of IP addresses.
+> Many networks use DHCP to give out IP addresses, so devices don't always get the same IP address they had previously. If you've created a certificate for an IP address on a device and that device's address has changed, WDP will generate a new certificate using the existing self-signed cert, and it will stop using the one you created. This will cause the cert warning page to appear in your browser again. For this reason, we recommend connecting to your devices through their hostnames, which you can set in the Windows Device Portal. These will stay the same regardless of IP addresses.
+
+## See also
+
+- [Windows Device Portal overview](device-portal.md)
+- [Device Portal for Desktop](device-portal-desktop.md)
+- [Windows Device Portal core API reference](/windows/uwp/debug-test-perf/device-portal-api-core)

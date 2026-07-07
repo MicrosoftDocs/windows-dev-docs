@@ -4,7 +4,7 @@ description: Using the *windows* crate, and calling Windows APIs.
 ms.topic: article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code, rust for windows
 ms.localizationpriority: medium
-ms.date: 08/11/2023
+ms.date: 07/05/2026
 ---
 
 # Rust for Windows, and the *windows* crate
@@ -49,7 +49,7 @@ The next topic is the [RSS reader tutorial](rss-reader-rust-for-windows.md), whe
 * [Overview of developing on Windows with Rust](overview.md)
 * [RSS reader tutorial](rss-reader-rust-for-windows.md)
 * [The *windows* crate](https://crates.io/crates/windows)
-* [Documentation for the *windows* crate](https://docs.rs/windows/0.3.1/windows/)
+* [Documentation for the *windows* crate](https://docs.rs/windows/latest/windows/)
 * [Win32 metadata](https://github.com/microsoft/win32metadata)
 * [Making Win32 APIs more accessible to more languages](https://blogs.windows.com/windowsdeveloper/2021/01/21/making-win32-apis-more-accessible-to-more-languages/)
 * [Rust documentation for the Windows API](https://microsoft.github.io/windows-docs-rs/doc/windows/)

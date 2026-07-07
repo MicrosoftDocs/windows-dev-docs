@@ -2,7 +2,7 @@
 title: InitializeNoThrow function
 description: Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) to initialize the calling process to use the specified version of the Windows App SDK's framework package. If the call fails, returns a failure **HRESULT**.
 ms.topic: article
-ms.date: 03/23/2022
+ms.date: 07/05/2026
 keywords: windows 10, windows 11, Windows App SDK, desktop development, app sdk, bootstrapper, bootstrapper api
 ms.localizationpriority: low
 ---
@@ -13,7 +13,7 @@ Calls [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/n
 
 ## Syntax
 ```cpp
-inline auto Initialize(
+inline auto InitializeNoThrow(
     uint32_t majorMinorVersion = WINDOWSAPPSDK_RELEASE_MAJORMINOR,
     PCWSTR versionTag = WINDOWSAPPSDK_RELEASE_VERSION_TAG_W,
     PackageVersion minVersion = WINDOWSAPPSDK_RUNTIME_VERSION_UINT64)
@@ -71,5 +71,5 @@ int main()
 
 ## See also
 
-* [Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md)
+* [Microsoft::Windows::ApplicationModel::DynamicDependency::Bootstrap namespace](microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md)
 * [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize)

@@ -1,7 +1,7 @@
 ---
 title: Interop with Direct2D
-description: An overview of how to manually interoperate Win2D and Direct2D in advanced scenarios.
-ms.date: 07/02/2026
+description: Learn how to manually interoperate Win2D and Direct2D in advanced scenarios, including getting underlying Direct2D resources from Win2D objects.
+ms.date: 07/05/2026
 ms.topic: article
 author: GrantMeStrength
 ms.author: jken
@@ -89,8 +89,8 @@ Taking this to the extreme, it is valid to call `GetOrCreate<Object>(IUnknown*)`
 | [`CanvasStrokeStyle`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Geometry_CanvasStrokeStyle.htm) | `ID2D1StrokeStyle1` | - | Device |
 | [`CanvasSvgDocument`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Svg_CanvasSvgDocument.htm) | `ID2D1SvgDocument`^2 | Device | - |
 | [`CanvasSwapChain`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasSwapChain.htm) | `IDXGISwapChain1` | Device, DPI | - |
-| [`CanvasTestFormat`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextFormat.htm) | `IDWriteTextFormat1` | - | - |
-| [`CanvasTextLayout`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextLayout.htm) | `IDWriteTextLayout3	` | Device | - |
+| [`CanvasTextFormat`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextFormat.htm) | `IDWriteTextFormat1` | - | - |
+| [`CanvasTextLayout`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextLayout.htm) | `IDWriteTextLayout3` | Device | - |
 | [`CanvasTextRenderingParameters`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTextRenderingParameters.htm) | `IDWriteRenderingParams3` | - | - |
 | [`CanvasTypography`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_Text_CanvasTypography.htm) | `IDWriteTypography` | - | - |
 | [`CanvasVirtualBitmap`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasVirtualBitmap.htm) | `ID2D1ImageSource` or `ID2D1TransformedImageSource` | Device | - |

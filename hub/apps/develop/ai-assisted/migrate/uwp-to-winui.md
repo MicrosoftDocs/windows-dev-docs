@@ -1,8 +1,8 @@
 ---
 title: Migrate a UWP app to WinUI 3
-description: Port a UWP app to WinUI 3 and the Windows App SDK using AI assistance — with a complete API substitution table covering namespaces, controls, threading, windowing, notifications, and more.
+description: Port a UWP app to WinUI 3 using AI assistance, with an API substitution table for namespaces, controls, threading, windowing, and notifications.
 ms.topic: how-to
-ms.date: 05/14/2026
+ms.date: 07/05/2026
 ms.author: jken
 author: GrantMeStrength
 ---

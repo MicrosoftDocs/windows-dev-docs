@@ -2,7 +2,7 @@
 title: Push notifications functionality migration
 description: This topic contains migration guidance in the push notifications feature area.
 ms.topic: how-to
-ms.date: 05/28/2026
+ms.date: 07/05/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications
 ms.localizationpriority: medium
 ---
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This topic contains migration guidance in the push notifications feature area. 
 
 > [!IMPORTANT]
-> Only raw push notifications and app push notifications are currently supported. Badge push notifications and tile push notifications are not supported. 
+> Only raw push notifications and app push notifications are supported. Badge push notifications and tile push notifications are not supported.
 
 ## Summary of API and/or feature differences
 
@@ -20,7 +20,7 @@ Push notifications can be broken down into these four separate stages.
 
 | Stage | UWP | Windows App SDK|
 |--------|-----|----------------|
-| Identity | Partner Center (MSA) | Azure App Registration (AAD) |
+| Identity | Partner Center (MSA) | Azure App Registration (Microsoft Entra ID) |
 | Channel request | Asynchronous| Asynchronous<br/>Azure App Registration Id<br/>Retry logic built in (up to 5 retries)  |
 | Activation | In-process, PushTrigger\*, COM activation\*  | In-process, COM activation, ShellExecute |
 | Sending push notifications | Uses login.live.com endpoint to receive an access token | Uses the `https://login.microsoftonline.com/{tenantID}/oauth2/token` endpoint for token request |
@@ -29,14 +29,14 @@ Push notifications can be broken down into these four separate stages.
 
 ## Identity setup
 
-In the Windows App SDK, the push notifications feature uses identity from Azure App Registration (AAD), which removes the requirement of having a Package Family Name (PFN) from Partner Center in order to use push notifications.
+In the Windows App SDK, the push notifications feature uses identity from Azure App Registration (Microsoft Entra ID), which removes the requirement of having a Package Family Name (PFN) from Partner Center in order to use push notifications.
 
 * For a **UWP app**, you sign up and register the application in [Windows Store Partner Center](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#create-an-app-in-windows-store).
-* For a **Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (AAD)](../../notifications/push-notifications/push-quickstart.md#configure-your-apps-identity-in-azure-active-directory-aad).
+* For a **Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (Microsoft Entra ID)](../../notifications/push-notifications/push-quickstart.md#configure-your-apps-identity-in-azure-active-directory-aad).
 
 ### Channel requests
 
-Channel request are handled asynchronously, and require the Azure AppID GUID and Azure tenantID (you receive the Azure AppID and tenant ID from an AAD app registration). You use the Azure AppID for your identity in place of the Package Family Name (PFN) that a UWP app uses. In case the request runs into a retryable error, the notification platform will attempt multiple retries.
+Channel request are handled asynchronously, and require the Azure AppID GUID and Azure tenantID (you receive the Azure AppID and tenant ID from a Microsoft Entra ID app registration). You use the Azure AppID for your identity in place of the Package Family Name (PFN) that a UWP app uses. In case the request runs into a retryable error, the notification platform will attempt multiple retries.
 
 A Windows App SDK app can check the status of a channel request.
 
@@ -46,7 +46,7 @@ See the Windows App SDK registration and activation steps at [Configure your app
 
 ## Sending push notifications
 
-A Windows App SDK app must request the access token from the AAD endpoint, rather than from the MSA endpoint.
+A Windows App SDK app must request the access token from the Microsoft Entra ID endpoint, rather than from the MSA endpoint.
 
 ### Access Token Request
 
@@ -62,7 +62,7 @@ Content-Length: 112
 grant_type=client_credentials&client_id=<AppID_Here>&client_secret=<Client_Secret_Here>&scope=notify.windows.com
 ```
 
-For a **Windows App SDK app** (AAD access token request):
+For a **Windows App SDK app** (Microsoft Entra ID access token request):
 
 ```http
 POST /{tenantID}/oauth2/v2.0/token Http/1.1

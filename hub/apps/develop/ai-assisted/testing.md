@@ -2,7 +2,7 @@
 title: "AI-assisted testing for Windows apps"
 description: Use the winui-ui-testing skill and winapp ui commands to automate UI inspection and testing of your WinUI 3 app.
 ms.topic: overview
-ms.date: 05/13/2026
+ms.date: 07/05/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -62,6 +62,47 @@ For `winapp ui click` to target elements reliably, set `AutomationProperties.Aut
 ```
 
 Ask your agent: *"Add AutomationId attributes to all interactive controls in this XAML."*
+
+## Run tests in CI
+
+You can run `winapp ui` commands in a GitHub Actions workflow. The tests require a graphical session; use a Windows runner with `runs-on: windows-latest`.
+
+```yaml
+name: UI tests
+on: [push, pull_request]
+jobs:
+  ui-test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: Install winapp CLI
+        run: winget install --id Microsoft.WinAppCLI --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
+      - name: Build
+        run: dotnet build
+      - name: Run UI tests
+        run: dotnet test --filter Category=UITest
+```
+
+> [!NOTE]
+> The `winapp ui` commands interact with the live accessibility tree of a running process. Tests must launch the app as part of the test setup (or in a `TestInitialize` step) and close it in teardown.
+
+## Check accessibility automatically
+
+The `winapp ui inspect` command outputs the full accessibility tree — element names, types, states, and AutomationIds. Ask your agent to review it for accessibility gaps:
+
+```text
+Run "winapp ui inspect" on the running app and identify any issues:
+- Controls without accessible names
+- Missing keyboard focus order
+- Buttons or links that aren't reachable by Tab
+Report findings as a prioritized list, most critical first.
+```
+
+This prompt works well as a first-pass accessibility review before running a formal audit tool. For a complete accessibility checklist, see [Accessibility overview for Windows apps](../accessibility.md).
 
 ## Related content
 

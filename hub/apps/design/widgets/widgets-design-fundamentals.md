@@ -1,8 +1,10 @@
 ---
-description: Learn about the fundamentals of designing the UI for a Windows widget.
+description: Learn the fundamentals of designing a Windows widget, including layout, sizing, visual style, and iconography guidance for Windows 11.
 title: Widget design fundamentals
-ms.date: 01/19/2022
+ms.date: 07/05/2026
 ms.topic: article
+author: GrantMeStrength
+ms.author: jken
 keywords: windows 11, widgets
 ms.localizationpriority: medium
 ---
@@ -55,13 +57,13 @@ The Web Content Accessibility Guidelines (WCAG) 2.0 level AA requires a contrast
 
 ![A diagram of a widget with guidelines indicating the margins. Next to this is a diagram of a widget where the area inside the margins is colored blue to show the content area.](./images/widgets-margins.png)
 
-Each widget has a 16px margin around it and a 48px [Attribution area](widgets-states-and-ui.md#attribution-area) in which content cannot be placed. The only component that can live in the right side margin and bottom margin are the pagination dots. For examples of the positioning of the pagination dots, see the pagination section of [Widget interaction design guidance](../../design/widgets/widgets-interaction-design.md#pagination).
+Each widget has a 16px margin around it and a 48px [Attribution area](widgets-states-and-ui.md#attribution-area) in which content cannot be placed. The only component that can live in the right side margin and bottom margin are the pagination dots. For examples of the positioning of the pagination dots, see the pagination section of [Widget interaction design guidance](widgets-interaction-design.md#pagination).
 
 ![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pixel gutters between the rows.](./images/widgets-gutters.png)
 
 For widgets that use containers, the gutter between each element is 4px, and the containers should touch the edges of the margins. Your content should also use spacing and sizing values of [Multiples of Four Px](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.
  
-You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](/windows/apps/design/basics/content-basics ) when designing your content.
+You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](/windows/apps/design/basics/content-basics) when designing your content.
 
 ## Typography
 
@@ -87,8 +89,6 @@ Segoe UI is the typeface used in Widgets and across Windows. The above type ramp
 ![Two example widgets with the phrase "The quick brown fox jumped over the lazy dog" and the text "Hyperlink". The left image has dark text on a light background. The right image has light text on a dark background. The hyperlink text is blue in both images.](./images/widgets-designer-default-font-colors.png)
 
 Within the Adaptive Cards Designer, titles and body copy use the default color associated with the widget theme. An additional option to differentiate title from body copy further is to use the subtle version of the default color. The accent color is only used for hyperlinks.  
-
-## Iconography
 
 ## Profile pictures
 
