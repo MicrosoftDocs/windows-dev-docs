@@ -2,7 +2,7 @@
 title: Get started with WinUI
 description: Choose your development path to build Windows apps with WinUI 3 and the Windows App SDK — using Visual Studio or the command line.
 ms.topic: overview
-ms.date: 07/06/2026
+ms.date: 07/07/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -41,7 +41,7 @@ The Windows App SDK is a separate install from Windows. Visual Studio installs i
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Quick start: Visual Studio](start-here.md)
+> [Quick start: Visual Studio](start-here.md?tabs=visual-studio)
 
 > [!div class="nextstepaction"]
-> [Quick start: Command line](start-here.md#tab/command-line)
+> [Quick start: Command line](start-here.md?tabs=command-line)
