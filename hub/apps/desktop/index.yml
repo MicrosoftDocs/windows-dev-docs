@@ -62,6 +62,8 @@ landingContent:
             url: ../dev-tools/index.md
           - text: Tutorials
             url: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
+          - text: Windows AI
+            url: https://learn.microsoft.com/windows/ai/
 
   - title: Package and deploy
     linkLists:
