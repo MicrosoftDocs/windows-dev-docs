@@ -2,7 +2,7 @@
 title: Tutorial--Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK
 description: This article shows how to configure an app that's not installed by using MSIX (that is, it's packaged with external location or unpackaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Apps that are not installed via MSIX include apps packaged with external location, and unpackaged apps.
 ms.topic: tutorial
-ms.date: 07/14/2025
+ms.date: 07/07/2026
 keywords: windows win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---

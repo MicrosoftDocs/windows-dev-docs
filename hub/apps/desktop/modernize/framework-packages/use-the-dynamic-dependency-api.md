@@ -2,7 +2,7 @@
 title: Use the dynamic dependency API to reference MSIX packages at run time
 description: Describes how to use the *dynamic dependency API* to dynamically take a dependency on different MSIX packages (other than the Windows App SDK framework package) in an unpackaged app at run time.
 ms.topic: article
-ms.date: 06/16/2026
+ms.date: 07/07/2026
 ms.localizationpriority: medium
 ---
 
@@ -20,7 +20,7 @@ Also see [Differences between the two implementations](#differences-between-the-
 > [!NOTE]
 > As you'll see in this topic, the Windows App SDK (C/C++) APIs have the same names as the Windows 11 (C/C++) APIs with an additional **Mdd** prefix. **Mdd** stands for *Microsoft Dynamic Dependencies*.
 
-And there are different kinds of MSIX packages, including *framework*, *resource*, *optional*, and *main* packages. The dynamic dependency API enables unpackaged apps to reference and to use *framework* packages such as [WinUI for UWP](/windows/uwp/get-started/winui2/) and the DirectX Runtime. For more info about framework package dependencies, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
+And there are different kinds of MSIX packages, including *framework*, *resource*, *optional*, and *main* packages. The dynamic dependency API enables unpackaged apps to reference and to use *framework* packages such as [WinUI 2](/windows/uwp/get-started/winui2/) and the DirectX Runtime. For more info about framework package dependencies, see [MSIX framework packages and dynamic dependencies](framework-packages-overview.md).
 
 Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for MSIX packages. For more info, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages).
 
