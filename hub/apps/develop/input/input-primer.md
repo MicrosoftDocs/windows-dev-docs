@@ -4,7 +4,7 @@ title: Interaction primer
 ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
 label: Interaction primer
 template: detail.hbs
-ms.date: 08/03/2021
+ms.date: 07/08/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -236,6 +236,25 @@ The gamepad/controller is a highly specialized device typically dedicated to pla
 ### Typical usage
 
 Playing games and interacting with a specialized console.
+
+
+## Haptics
+
+Haptic feedback adds a sense of touch to digital interactions, providing physical confirmation that reinforces user input and makes experiences feel more responsive. Windows supports contextual haptic feedback through the [InputHapticsManager](/uwp/api/windows.devices.haptics.inputhapticsmanager) API, enabling apps to deliver consistent touch feedback across supported devices.
+
+### Device support
+
+-   PCs and laptops with supported haptic hardware
+
+![haptics](images/input-interactions/icons-haptics01.png)
+
+### Typical usage
+
+Haptic feedback is most effective when paired with touch, pen, or touchpad interactions. Common uses include confirming button presses, providing feedback during drag-and-drop operations, and reinforcing gesture boundaries. Haptics should complement visual and auditory feedback—not replace them.
+
+### More info
+
+[Haptics design guidelines](/windows/apps/design/signature-experiences/haptics)
 
 
 ## Multiple inputs
