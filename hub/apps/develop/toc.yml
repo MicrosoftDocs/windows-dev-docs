@@ -751,6 +751,8 @@ items:
             href: input/guidelines-for-optical-zoom.md
           - name: Visual feedback
             href: input/guidelines-for-visualfeedback.md
+          - name: Haptics
+            href: input/haptics.md
       - name: Notifications
         href: notifications/index.md
         items:

@@ -254,6 +254,8 @@ Haptic feedback is most effective when paired with touch, pen, or touchpad inter
 
 ### More info
 
+[Implement haptic feedback](haptics.md)
+
 [Haptics design guidelines](/windows/apps/design/signature-experiences/haptics)
 
 
