@@ -1,8 +1,8 @@
 ---
 title: In-app acrylic
-description: Learn how to use AcrylicBrush to apply in-app acrylic effects to UI elements in your WinUI app.
+description: Learn how to use AcrylicBrush to apply in-app acrylic blur effects to UI elements in WinUI 3 apps, using theme resources or custom brushes.
 ms.topic: how-to
-ms.date: 02/27/2026
+ms.date: 07/07/2026
 keywords: windows, windows app development, Windows App SDK, Acrylic, AcrylicBrush, materials
 ms.localizationpriority: medium
 ---
@@ -10,6 +10,9 @@ ms.localizationpriority: medium
 # In-app acrylic
 
 You can apply in-app acrylic to your app's surfaces using a XAML [AcrylicBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) or predefined `AcrylicBrush` theme resources.
+
+> [!NOTE]
+> In WinUI 3, `AcrylicBrush` provides **in-app acrylic only** — it applies a blur and tint to XAML content within the app window, not to the desktop or content behind the window. The UWP `BackgroundSource` property (which enabled a `HostBackdrop` mode for window-level acrylic) is not available in WinUI 3. For window-level acrylic that shows the desktop through your app's window, set `Window.SystemBackdrop` to a [DesktopAcrylicBackdrop](system-backdrops.md). To apply a system backdrop material (Mica or Acrylic from the OS compositor) to a specific UI element rather than a whole window, use [SystemBackdropElement](system-backdrops.md#apply-a-system-backdrop-to-any-xaml-element).
 
 > [!div class="nextstepaction"]
 > [Open the WinUI Gallery app and see Acrylic in action](winui3gallery://item/Acrylic)
@@ -30,7 +33,7 @@ You may choose to add a color tint to your app's acrylic to show branding or pro
 - **TintColor**: the color/tint overlay layer.
 - **TintOpacity**: the opacity of the tint layer.
 - **TintLuminosityOpacity**: controls the amount of saturation that is allowed through the acrylic surface from the background.
-- **FallbackColor**: the solid color that replaces acrylic in Battery Saver. For background acrylic, fallback color also replaces acrylic when your app isn't in the active desktop window.
+- **FallbackColor**: the solid color that replaces acrylic when the effect cannot be rendered — for example, in Battery Saver mode, when the user turns off *Transparency effects* in Settings > Personalization > Colors, or on low-end hardware.
 
 ![Light theme acrylic swatches](../../design/style/images/custom-acrylic-swatches-light-theme.png)
 

@@ -2,7 +2,7 @@
 title: System backdrops (Mica/Acrylic)
 description: Learn how to apply Mica or Desktop Acrylic system backdrops to your WinUI app windows.
 ms.topic: how-to
-ms.date: 02/27/2026
+ms.date: 07/06/2026
 keywords: windows, windows app development, Windows App SDK, Mica, Acrylic, backdrop
 ms.localizationpriority: medium
 dev_langs: 
@@ -116,6 +116,59 @@ Flyout flyout = new Flyout()
     SystemBackdrop = new DesktopAcrylicBackdrop()
 };
 ```
+
+## Apply a system backdrop to any XAML element
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: `SystemBackdropElement`
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see SystemBackdropElement in action](winui3gallery://item/SystemBackdropElement)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+The `Window.SystemBackdrop` property applies a backdrop material across the entire window. If you need to apply Mica or Acrylic to a specific region of your UI — such as a card, a panel, or any bounded area — use the `SystemBackdropElement` control instead.
+
+`SystemBackdropElement` is a XAML control that renders a system backdrop material within its own bounds. You can place it anywhere in the XAML tree, set its size explicitly or let it fill its parent, and use `CornerRadius` to apply rounded corners.
+
+### Use SystemBackdropElement in XAML
+
+Place `SystemBackdropElement` as a sibling behind other content, or as a background host inside a `Grid`. Set its `SystemBackdrop` property to the desired material.
+
+```xaml
+<Grid Width="300" Height="200">
+    <SystemBackdropElement CornerRadius="8">
+        <SystemBackdropElement.SystemBackdrop>
+            <DesktopAcrylicBackdrop />
+        </SystemBackdropElement.SystemBackdrop>
+    </SystemBackdropElement>
+
+    <!-- Content rendered on top of the backdrop -->
+    <Button HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="Click Me" />
+</Grid>
+```
+
+### Switch the backdrop material at runtime
+
+You can change the `SystemBackdrop` property at runtime. This example lets the user choose between Acrylic and the two Mica variants:
+
+```csharp
+private void OnBackdropTypeChanged(string backdropType)
+{
+    DynamicBackdropHost.SystemBackdrop = backdropType switch
+    {
+        "Mica"    => new MicaBackdrop { Kind = MicaKind.Base },
+        "MicaAlt" => new MicaBackdrop { Kind = MicaKind.BaseAlt },
+        _         => new DesktopAcrylicBackdrop()
+    };
+}
+```
+
+> [!NOTE]
+> `SystemBackdropElement` applies a system backdrop to an in-page element, not the window. For the window-level backdrop, use the `Window.SystemBackdrop` property as described earlier in this article. The two approaches are independent and can be used together in the same app.
 
 ## Advanced: How to use a system backdrop controller
 
