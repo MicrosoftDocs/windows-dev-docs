@@ -78,7 +78,7 @@ landingContent:
           - text: Windows App SDK deployment
             url: ../package-and-deploy/deploy-overview.md
 
-  - title: Distribute
+  - title: Publish
     linkLists:
       - linkListType: overview
         links:
