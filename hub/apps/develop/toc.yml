@@ -1389,6 +1389,8 @@ items:
             href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
   - name: Platform
     items:
+      - name: Overview
+        href: platform/index.md
       - name: C++/WinRT
         items:
           - name: Overview
