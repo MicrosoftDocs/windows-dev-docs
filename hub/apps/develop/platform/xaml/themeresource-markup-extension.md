@@ -2,7 +2,7 @@
 description: Provides a value for any XAML attribute by evaluating a reference to a resource, with additional system logic that retrieves different resources depending on the currently active theme.
 title: ThemeResource markup extension
 ms.assetid: 8A1C79D2-9566-44AA-B8E1-CC7ADAD1BCC5
-ms.date: 09/09/2025
+ms.date: 07/08/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -75,7 +75,7 @@ System resources are often the underlying values for a high-contrast theme. The 
 Here's some example XAML taken from the default generic.xaml and themeresources.xaml files to illustrate how to use **ThemeResource**. We'll look at just one template (the default [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button)) and how two properties are declared ([**Background**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.background) and [**Foreground**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.foreground)) to be responsive to theme changes.
 
 ```xml
-    <!-- Default style for Windows.UI.Xaml.Controls.Button -->
+    <!-- Default style for Microsoft.UI.Xaml.Controls.Button -->
     <Style TargetType="Button">
         <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}" />
         <Setter Property="Foreground" Value="{ThemeResource ButtonForegroundThemeBrush}"/>

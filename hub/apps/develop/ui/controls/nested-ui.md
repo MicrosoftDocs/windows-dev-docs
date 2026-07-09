@@ -3,7 +3,7 @@ title: Nested UI in list items
 description: Learn how to create nested UI in ListView and GridView items to present a user with additional options for taking important actions.
 label: Nested UI in list items
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/08/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 60a29717-56f2-4388-a9ff-0098e34d5896
@@ -209,7 +209,11 @@ private void OnListViewItemKeyDown(object sender, KeyRoutedEventArgs e)
         {
             case Windows.System.VirtualKey.GamepadDPadRight:
             case Windows.System.VirtualKey.GamepadLeftThumbstickRight:
-                var rawPixelsPerViewPixel = DisplayInformation.GetForCurrentView().RawPixelsPerViewPixel;
+                // In WinUI 3 desktop apps, use interop to get DisplayInformation for the current window.
+                var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
+                var displayInfo = DisplayInformation.CreateForWindowId(
+                    Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd));
+                var rawPixelsPerViewPixel = displayInfo.RawPixelsPerViewPixel;
                 GeneralTransform generalTransform = focusedElementAsListViewItem.TransformToVisual(null);
                 Point startPoint = generalTransform.TransformPoint(new Point(0, 0));
                 Rect hintRect = new Rect(startPoint.X * rawPixelsPerViewPixel, startPoint.Y * rawPixelsPerViewPixel, 1, focusedElementAsListViewItem.ActualHeight * rawPixelsPerViewPixel);

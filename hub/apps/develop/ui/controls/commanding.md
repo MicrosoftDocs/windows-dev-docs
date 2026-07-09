@@ -2,7 +2,7 @@
 title: Commanding in Windows apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 ms.topic: overview
-ms.date: 05/30/2025
+ms.date: 07/08/2026
 ms.localizationpriority: medium
 ---
 
@@ -732,12 +732,13 @@ In this basic example, we demonstrate how a single command can be invoked with a
 In code-behind, we connect to our view model that contains our command code. In addition, we define a handler for input from the mouse wheel, which also connects our command code.
 
 ```csharp
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Controls;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Controls;
 using UICommand1.ViewModel;
 using Windows.System;
-using Windows.UI.Core;
+using Windows.UI.Core; // for CoreVirtualKeyStates
+using Microsoft.UI.Input; // for InputKeyboardSource
 
 namespace UICommand1.View
 {
@@ -768,7 +769,7 @@ namespace UICommand1.View
 
             // Require CTRL key and accept only vertical mouse wheel movement 
             // to eliminate accidental wheel input.
-            if ((Window.Current.CoreWindow.GetKeyState(VirtualKey.Control) != 
+            if ((Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread(VirtualKey.Control) != 
                 CoreVirtualKeyStates.None) && !props.IsHorizontalMouseWheel)
             {
                 bool delta = props.MouseWheelDelta < 0 ? true : false;
@@ -798,8 +799,8 @@ Our view model is where we define the execution details for the two commands in 
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Data;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Data;
 
 namespace UICommand1.ViewModel
 {

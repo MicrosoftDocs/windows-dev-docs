@@ -1,7 +1,7 @@
 ---
 title: XAML property animations
 description: Learn how to animate properties on a XAML UIElement directly by using composition animations.
-ms.date: 10/31/2025
+ms.date: 07/08/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ms.custom: RS5
@@ -100,7 +100,9 @@ Use the [StartAnimation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ui
 This example shows how to animate the scale of a Button.
 
 ```csharp
-var compositor = Window.Current.Compositor;
+using Microsoft.UI.Xaml.Hosting;
+
+var compositor = ElementCompositionPreview.GetElementVisual(button).Compositor;
 var animation = compositor.CreateVector3KeyFrameAnimation();
 
 animation.InsertKeyFrame(1.0f, new Vector3(2.0f,2.0f,1.0f));

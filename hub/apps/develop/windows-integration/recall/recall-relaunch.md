@@ -1,7 +1,7 @@
 ---
 title: Enable relaunching your content from Recall
 description: Learn how to enable your users to relaunch back to your content from Windows Recall.
-ms.date: 12/01/2025
+ms.date: 07/08/2026
 ms.topic: how-to
 no-loc: [Recall, useractivity]
 ---
@@ -51,12 +51,12 @@ private async Task OnContentChangedAsync()
 
 In addition to pushing activities, your app can choose to implement the [`UserActivityRequested`](/uwp/api/windows.applicationmodel.useractivities.useractivityrequestmanager.useractivityrequested) event, which Windows may fire to ensure it has the latest activity from your app.
 
-```csharp
-public void OnLaunched()
-{
-    UserActivityRequestManager.GetForCurrentView().UserActivityRequested += UserActivityRequested;
-}
+> [!NOTE]
+> `UserActivityRequestManager.GetForCurrentView()` is designed for UWP apps with a CoreWindow.
+> In WinUI 3 desktop apps, User Activities can be created directly via `UserActivityChannel`
+> without requesting activation. See [User Activities](/windows/apps/develop/launch/user-activities).
 
+```csharp
 private async void UserActivityRequested(
     Windows.ApplicationModel.UserActivities.UserActivityRequestManager sender,
     Windows.ApplicationModel.UserActivities.UserActivityRequestedEventArgs args)

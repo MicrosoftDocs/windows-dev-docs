@@ -7,7 +7,7 @@ title: ResourceDictionary and XAML resource references
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.date: 01/24/2022
+ms.date: 07/08/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -200,7 +200,7 @@ sealed partial class App : Application
 {
     protected override void OnLaunched(LaunchActivatedEventArgs e)
     {
-        Frame rootFrame = Window.Current.Content as Frame;
+        Frame rootFrame = m_window?.Content as Frame; // WinUI 3: Window.Current is always null; store the Window instance in a field
         if (rootFrame == null)
         {
             SolidColorBrush brush = new SolidColorBrush(Windows.UI.Color.FromArgb(255, 0, 255, 0)); // green
@@ -217,7 +217,7 @@ sealed partial class App : Application
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
     Frame rootFrame{ nullptr };
-    auto content = Window::Current().Content();
+    auto content = m_window.Content(); // WinUI 3: Window::Current() is always null; store the Window instance in a member field
     if (content)
     {
         rootFrame = content.try_as<Frame>();
@@ -227,7 +227,7 @@ void App::OnLaunched(LaunchActivatedEventArgs const& e)
     // just ensure that the window is active
     if (rootFrame == nullptr)
     {
-        Windows::UI::Xaml::Media::SolidColorBrush brush{ Windows::UI::ColorHelper::FromArgb(255, 0, 255, 0) };
+        Microsoft::UI::Xaml::Media::SolidColorBrush brush{ Windows::UI::ColorHelper::FromArgb(255, 0, 255, 0) };
         Resources().Insert(winrt::box_value(L"brush"), winrt::box_value(brush));
         // … Other code that VS generates for you …
 ```

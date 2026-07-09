@@ -2,7 +2,7 @@
 description: Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
 title: Connected animation
 template: detail.hbs
-ms.date: 10/29/2025
+ms.date: 07/08/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium

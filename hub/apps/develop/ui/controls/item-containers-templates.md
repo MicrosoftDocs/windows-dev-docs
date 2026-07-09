@@ -3,7 +3,7 @@ description: Use templates to modify the look of items in ListView or GridView c
 title: Item containers and templates
 label: Item containers and templates
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 07/08/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
@@ -96,8 +96,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Windows.UI;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 
 namespace ColorsListApp
 {

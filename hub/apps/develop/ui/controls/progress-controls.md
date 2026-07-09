@@ -4,7 +4,7 @@ title: Guidelines for progress controls
 ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
 label: Progress controls
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 07/08/2026
 ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
@@ -168,7 +168,16 @@ Changing the foreground color for the ProgressRing will change the fill color of
 Sometimes it's best to just show a brief wait cursor, when the app or operation needs time to think, and you need to indicate to the user that the app or area where the wait cursor is visible should not be interacted with until the wait cursor has disappeared.
 
 ```csharp
-Window.Current.CoreWindow.PointerCursor = new Windows.UI.Core.CoreCursor(Windows.UI.Core.CoreCursorType.Wait, 10);
+// ProtectedCursor is a protected property — only accessible from a derived control class.
+// Subclass the control to set a custom cursor:
+public class WaitProgressRing : ProgressRing
+{
+    public WaitProgressRing()
+    {
+        // Requires: using Microsoft.UI.Input;
+        ProtectedCursor = InputSystemCursor.Create(InputSystemCursorShape.Wait);
+    }
+}
 ```
 
 ## Related articles
