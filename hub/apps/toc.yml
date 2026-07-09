@@ -231,6 +231,10 @@ items:
   - name: Migrate and modernize
     href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
     items:
+    - name: Migration decision guide
+      href: windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md
+    - name: Migration terminology
+      href: windows-app-sdk/migrate-to-windows-app-sdk/migration-terminology.md
     - name: Migrate to Windows App SDK
       href: windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
       items:
