@@ -1,7 +1,7 @@
 ---
 description: An overview of Windows package identity and how it uniquely identifies a package.
 title: An overview of Package Identity in Windows apps
-ms.date: 06/16/2026
+ms.date: 07/07/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium

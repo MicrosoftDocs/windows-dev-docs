@@ -67,7 +67,7 @@ For the complete list of supported and unsupported WinRT APIs in desktop apps, s
 | Topic | Description |
 | --- | --- |
 | [Speech](speech-interactions.md) | Integrate speech recognition and text-to-speech directly into the user experience of your app. Requires package identity. |
-| [Haptics](/windows/apps/design/signature-experiences/haptics) | Add touch feedback to reinforce user input and create more responsive, intuitive interactions. |
+| [Haptics](haptics.md) | Add touch feedback to reinforce user input and create more responsive, intuitive interactions. |
 
 ## Related topics
 

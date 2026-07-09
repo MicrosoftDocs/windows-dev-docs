@@ -1,7 +1,7 @@
 ---
 description: Learn how to add modern experiences for Windows users in a desktop app that you have packaged in a Windows app package.
 title: Modernize packaged desktop apps
-ms.date: 06/16/2026
+ms.date: 07/07/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium

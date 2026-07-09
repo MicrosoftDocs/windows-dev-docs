@@ -3,7 +3,7 @@ title: Pin secondary tiles from desktop apps
 description: A desktop app such as a WinUI app (using the Windows App SDK), or a Windows Presentation Foundation (WPF) or Windows Forms (WinForms) app, can pin a secondary tile by using a packaged app (see [Building an MSIX package from your code](/windows/msix/desktop/source-code-overview)). This was formerly known as Desktop Bridge.
 label: Pin secondary tiles from desktop apps
 template: detail.hbs
-ms.date: 03/03/2022
+ms.date: 07/07/2026
 ms.topic: how-to
 keywords: desktop bridge, secondary tiles, pin, pinning, quickstart, code sample, example, secondarytile, desktop application, win32, winforms, wpf
 ms.localizationpriority: medium

@@ -751,6 +751,8 @@ items:
             href: input/guidelines-for-optical-zoom.md
           - name: Visual feedback
             href: input/guidelines-for-visualfeedback.md
+          - name: Haptics
+            href: input/haptics.md
       - name: Notifications
         href: notifications/index.md
         items:
@@ -1389,6 +1391,8 @@ items:
             href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
   - name: Platform
     items:
+      - name: Overview
+        href: platform/index.md
       - name: C++/WinRT
         items:
           - name: Overview

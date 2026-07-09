@@ -41,6 +41,8 @@ productDirectory:
         text: Get started
       - url: /windows/apps/develop/support
         text: Help and guidance
+      - url: /windows/ai/
+        text: Windows AI
   - title: Design
     imageSrc: /windows/apps/images/hub-design.svg
     links:
@@ -61,8 +63,8 @@ productDirectory:
         text: Features
       - url: /windows/apps/desktop/modernize/
         text: Use features with other UI frameworks
-      - url: /windows/apps/develop/platform/csharp-winrt/
-        text: Platforms
+      - url: /windows/apps/develop/platform/
+        text: Platform
       - url: /windows/apps/api-reference/
         text: API reference
       - url: /windows/apps/dev-tools/
