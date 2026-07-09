@@ -4,104 +4,288 @@ items:
   items:
   - name: Essentials
     href: introduction.md
-  - name: Core concepts
-    expanded: true
     items:
-    - name: Overview
+    - name: Core concepts
       href: get-started/index.md
-    - name: Windows versions and SDKs
-      href: get-started/versioning-overview.md
-    - name: Windows SDK
+      expanded: true
       items:
-      - name: Overview
-        href: windows-sdk/index.md
-      - name: Release notes
-        href: windows-sdk/release-notes.md
-      - name: Downloads
-        href: windows-sdk/downloads.md
-    - name: Windows App SDK
-      items:
-      - name: Overview
-        href: windows-app-sdk/index.md
-      - name: Release channels
-        href: windows-app-sdk/release-channels.md
-      - name: Supported Windows releases
-        href: windows-app-sdk/support.md
-      - name: Release notes
+      - name: Windows versions and SDKs
+        href: get-started/versioning-overview.md
+      - name: Windows SDK
         items:
-        - name: Windows App SDK 2.0
-          href: windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=preview
-        - name: Windows App SDK 1.8
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-8.md
-        - name: Windows App SDK 1.7
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-7.md  
-        - name: Older versions
+        - name: Overview
+          href: windows-sdk/index.md
+        - name: Release notes
+          href: windows-sdk/release-notes.md
+        - name: Downloads
+          href: windows-sdk/downloads.md
+      - name: Windows App SDK
+        items:
+        - name: Overview
+          href: windows-app-sdk/index.md
+        - name: Release channels
+          href: windows-app-sdk/release-channels.md
+        - name: Supported Windows releases
+          href: windows-app-sdk/support.md
+        - name: Release notes
           items:
-          - name: Windows App SDK 1.6
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-6.md
-          - name: Windows App SDK 1.5
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-5.md
-          - name: Windows App SDK 1.4
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-4.md
-          - name: Windows App SDK 1.3
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-3.md
-          - name: Windows App SDK 1.2
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-2.md
-          - name: Windows App SDK 1.1
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-1.md
-          - name: Windows App SDK 1.0
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-0.md
-          - name: Windows App SDK 0.8
-            href: windows-app-sdk/release-notes/windows-app-sdk-0-8.md
-          - name: Windows App SDK 0.5
-            href: windows-app-sdk/release-notes/windows-app-sdk-0-5.md
-          - name: Project Reunion
+          - name: Windows App SDK 2.0
+            href: windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=preview
+          - name: Windows App SDK 1.8
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-8.md
+          - name: Windows App SDK 1.7
+            href: windows-app-sdk/release-notes/windows-app-sdk-1-7.md
+          - name: Older versions
             items:
-             - name: Project Reunion 0.8 Preview
-               href: windows-app-sdk/release-notes/project-reunion-0-8-preview.md
-             - name: Project Reunion 0.5 Preview
-               href: windows-app-sdk/release-notes/project-reunion-0-5-preview.md
-             - name: Project Reunion 0.5
-               href: windows-app-sdk/release-notes/project-reunion-0-5.md
-      - name: Downloads
-        items:
+            - name: Windows App SDK 1.6
+              href: windows-app-sdk/release-notes/windows-app-sdk-1-6.md
+            - name: Windows App SDK 1.5
+              href: windows-app-sdk/release-notes/windows-app-sdk-1-5.md
+            - name: Windows App SDK 1.4
+              href: windows-app-sdk/release-notes/windows-app-sdk-1-4.md
+            - name: Windows App SDK 1.3
+              href: windows-app-sdk/release-notes/windows-app-sdk-1-3.md
+            - name: Windows App SDK 1.2
+              href: windows-app-sdk/release-notes/windows-app-sdk-1-2.md
+            - name: Windows App SDK 1.1
+              href: windows-app-sdk/release-notes/windows-app-sdk-1-1.md
+            - name: Windows App SDK 1.0
+              href: windows-app-sdk/release-notes/windows-app-sdk-1-0.md
+            - name: Windows App SDK 0.8
+              href: windows-app-sdk/release-notes/windows-app-sdk-0-8.md
+            - name: Windows App SDK 0.5
+              href: windows-app-sdk/release-notes/windows-app-sdk-0-5.md
+            - name: Project Reunion
+              items:
+              - name: Project Reunion 0.8 Preview
+                href: windows-app-sdk/release-notes/project-reunion-0-8-preview.md
+              - name: Project Reunion 0.5 Preview
+                href: windows-app-sdk/release-notes/project-reunion-0-5-preview.md
+              - name: Project Reunion 0.5
+                href: windows-app-sdk/release-notes/project-reunion-0-5.md
+        - name: Downloads
+          items:
           - name: Latest
             href: windows-app-sdk/downloads.md
           - name: Archive
             href: windows-app-sdk/downloads-archive.md
-    - name: WinUI
-      href: winui/winui3/index.md
-  - name: Get started with WinUI
-    items:
-    - name: Overview
-      href: get-started/winui-get-started-overview.md
-    - name: Quick start
+      - name: WinUI
+        href: winui/winui3/index.md
+    - name: Get started with WinUI
       href: get-started/start-here.md
-    - name: "Tutorial: Create your first WinUI app"
       items:
-      - name: Introduction
-        href: tutorials/winui-notes/intro.md
-      - name: 1. Project setup
-        href: tutorials/winui-notes/project.md
-      - name: 2. Note page
-        href: tutorials/winui-notes/note.md
-      - name: 3. View and model
-        href: tutorials/winui-notes/view-model.md
-      - name: 4. All notes
-        href: tutorials/winui-notes/all-notes.md
-      - name: 5. Navigation
-        href: tutorials/winui-notes/navigation.md
-  - name: Help and guidance
-    items:
-    - name: Support and community
+      - name: Overview
+        href: get-started/winui-get-started-overview.md
+      - name: "Tutorial: Create your first WinUI app"
+        items:
+        - name: Introduction
+          href: tutorials/winui-notes/intro.md
+        - name: 1. Project setup
+          href: tutorials/winui-notes/project.md
+        - name: 2. Note page
+          href: tutorials/winui-notes/note.md
+        - name: 3. View and model
+          href: tutorials/winui-notes/view-model.md
+        - name: 4. All notes
+          href: tutorials/winui-notes/all-notes.md
+        - name: 5. Navigation
+          href: tutorials/winui-notes/navigation.md
+    - name: Tools and samples
+      href: dev-tools/index.md
+      items:
+      - name: Code samples
+        href: dev-tools/samples.md
+      - name: Visual Studio
+        href: dev-tools/visual-studio.md
+      - name: winappCLI
+        href: dev-tools/winapp-cli/index.md
+      - name: Developer environment
+        href: /windows/dev-environment/
+    - name: Help and guidance
       href: develop/support.md
-    - name: Windows developers and their tools
-      href: whats-new/personae.md
-    - name: Best practices
-      href: get-started/best-practices.md
-    - name: Glossary
-      href: get-started/windows-developer-glossary.md
+      items:
+      - name: Windows developers and their tools
+        href: whats-new/personae.md
+      - name: Best practices
+        href: get-started/best-practices.md
+      - name: Glossary
+        href: get-started/windows-developer-glossary.md
+    - name: What's new
+      href: whats-new/whats-new-for-developers.md
     - name: FAQ
-      href: get-started/windows-developer-faq.md  
-  - name: What's new
-    href: whats-new/whats-new-for-developers.md
+      href: get-started/windows-developer-faq.md
+  - name: Design
+    href: design/index.md
+    items:
+    - name: Design principles
+      href: design/design-principles.md
+    - name: Guidelines
+      href: design/guidelines-overview.md
+      items:
+      - name: Color
+        href: design/signature-experiences/color.md
+      - name: Layout
+        href: design/layout/index.md
+      - name: Materials
+        href: design/signature-experiences/materials.md
+      - name: Motion
+        href: design/signature-experiences/motion.md
+      - name: Navigation
+        href: design/basics/navigation-basics.md
+      - name: Typography
+        href: design/signature-experiences/typography.md
+      - name: Iconography
+        href: design/iconography/index.md
+    - name: Accessibility
+      href: design/accessibility/accessibility-overview.md
+      items:
+      - name: Designing inclusive software
+        href: design/accessibility/designing-inclusive-software.md
+      - name: Usability testing
+        href: design/usability/index.md
+    - name: Shell integration
+      href: design/shell/index.md
+    - name: Widgets
+      href: design/widgets/index.md
+      items:
+      - name: Design fundamentals
+        href: design/widgets/widgets-design-fundamentals.md
+      - name: States and built-in UI components
+        href: design/widgets/widgets-states-and-ui.md
+    - name: Writing style
+      href: design/style/writing-style.md
+    - name: Tools and resources
+      href: design/downloads/index.md
+  - name: Develop
+    href: develop/index.md
+    items:
+    - name: Tools and samples
+      href: dev-tools/index.md
+      items:
+      - name: Agentic tools
+        href: develop/ai-assisted/index.md
+      - name: Visual Studio
+        href: dev-tools/visual-studio.md
+      - name: winappCLI
+        href: dev-tools/winapp-cli/index.md
+      - name: Code samples
+        href: dev-tools/samples.md
+    - name: Core features
+      href: develop/features-overview.md
+      items:
+      - name: Accessibility
+        href: develop/accessibility.md
+      - name: App notifications
+        href: develop/notifications/index.md
+      - name: Windowing
+        href: develop/ui/windowing-overview.md
+      - name: Title bar customization
+        href: develop/title-bar.md
+      - name: App lifecycle
+        href: develop/app-lifecycle-and-system-services.md
+      - name: Data and files
+        href: develop/data-and-files.md
+    - name: Use features with other UI frameworks
+      href: desktop/modernize/index.md
+    - name: Platform
+      href: develop/platform/index.md
+    - name: API reference
+      href: api-reference/index.md
+    - name: Tutorials
+      href: winui/winui3/desktop-winui3-app-with-basic-interop.md
+    - name: Windows AI
+      href: /windows/ai/
+  - name: Package and deploy
+    href: package-and-deploy/index.md
+    items:
+    - name: Packaging
+      href: package-and-deploy/packaging/index.md
+      items:
+      - name: Package identity
+        href: desktop/modernize/package-identity-overview.md
+      - name: Single-project MSIX
+        href: windows-app-sdk/single-project-msix.md
+      - name: Packaging with external location
+        href: desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md
+    - name: Windows App SDK deployment
+      href: package-and-deploy/deploy-overview.md
+      items:
+      - name: Deployment architecture
+        href: windows-app-sdk/deployment-architecture.md
+      - name: Deploy packaged apps
+        href: windows-app-sdk/deploy-packaged-apps.md
+      - name: Deploy unpackaged apps
+        href: windows-app-sdk/deploy-unpackaged-apps.md
+    - name: Self-contained deployment
+      href: package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
+    - name: Choose a distribution path
+      href: package-and-deploy/choose-distribution-path.md
+    - name: Publish your first app
+      href: package-and-deploy/publish-first-app.md
+    - name: Code signing
+      href: package-and-deploy/code-signing-options.md
+    - name: CI/CD for WinUI 3
+      href: package-and-deploy/ci-for-winui3.md
+    - name: SmartScreen reputation
+      href: package-and-deploy/smartscreen-reputation.md
+  - name: Migrate and modernize
+    href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
+    items:
+    - name: Migrate to Windows App SDK
+      href: windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
+      items:
+      - name: Feature-area guides
+        href: windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
+      - name: API mapping tables
+        href: windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md
+      - name: Feature mapping table
+        href: windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md
+      - name: .NET Upgrade Assistant
+        href: windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
+      - name: "Case study: PhotoLab"
+        href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md
+      - name: "Case study: PhotoEditor"
+        href: windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
+    - name: AI-assisted migration
+      href: windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md
+    - name: Modernize your desktop app
+      href: desktop/modernize/index.md
+    - name: Migrate from WPF
+      href: windows-app-sdk/migrate-to-windows-app-sdk/wpf-patterns-winui3.md
+    - name: Cross-platform migration
+      href: develop/ai-assisted/migrate/cross-framework.md
+      items:
+      - name: Migrate from iOS
+        href: develop/ai-assisted/migrate/ios-to-winui.md
+      - name: Migrate from UWP (AI-assisted)
+        href: develop/ai-assisted/migrate/uwp-to-winui.md
+      - name: Migrate from WPF (AI-assisted)
+        href: develop/ai-assisted/migrate/wpf-to-winui.md
+    - name: What is supported
+      href: windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
+  - name: Publish
+    href: publish/index.md
+    items:
+    - name: Choose a distribution path
+      href: package-and-deploy/choose-distribution-path.md
+    - name: Get started with Microsoft Store
+      href: publish/get-started.md
+    - name: Open a developer account
+      href: publish/partner-center/open-a-developer-account.md
+    - name: Submit your app
+      href: publish/publish-your-app/msix/reserve-your-apps-name.md
+      items:
+      - name: Create app submission
+        href: publish/publish-your-app/msix/create-app-submission.md
+      - name: Set pricing and availability
+        href: publish/publish-your-app/msix/price-and-availability.md
+      - name: Add app properties
+        href: publish/publish-your-app/msix/enter-app-properties.md
+      - name: App screenshots and images
+        href: publish/publish-your-app/msix/screenshots-and-images.md
+    - name: Monitor your app performance
+      href: publish/analyze-app-performance/msix.md
+    - name: Manage and update your app
+      href: publish/faq/manage-and-update-your-app.md
+    - name: Microsoft Store policies and resources
+      href: publish/store-policies.md
