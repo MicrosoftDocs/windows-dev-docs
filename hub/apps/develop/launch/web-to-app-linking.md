@@ -2,7 +2,7 @@
 title: Enable apps for websites using app URI handlers
 description: Drive user engagement with your app by supporting the Apps for Websites feature.
 keywords: Deep Linking Windows, uwp, winui, windows 11, windows 10
-ms.date: 02/11/2025
+ms.date: 07/09/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 # customer-intent: As a Windows developer, I want to learn how to use the Apps for Websites feature to drive user engagement with my app.
@@ -122,7 +122,8 @@ Navigate to **App.xaml.cs** in your app’s Visual Studio solution and in **OnAc
 ``` CS
 protected override void OnActivated(IActivatedEventArgs e)
 {
-    Frame rootFrame = Window.Current.Content as Frame;
+    // In WinUI 3, Window.Current is always null. Store your Window in App.Window.
+    Frame rootFrame = App.Window?.Content as Frame;
     if (rootFrame == null)
     {
         ...
@@ -161,7 +162,7 @@ protected override void OnActivated(IActivatedEventArgs e)
     }
 
     // Ensure the current window is active
-    Window.Current.Activate();
+    App.Window?.Activate();
 }
 ```
 

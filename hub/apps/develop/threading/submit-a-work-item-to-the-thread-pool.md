@@ -4,7 +4,7 @@ description: Learn how to do work in a separate thread by submitting a work item
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 06/20/2026
+ms.date: 07/09/2026
 keywords: windows 10, windows 11, windows app sdk, winui 3, threads, thread pool
 ms.localizationpriority: medium
 ---
@@ -23,9 +23,6 @@ Create a work item by calling [**RunAsync**](/uwp/api/windows.system.threading.t
 
 Three versions of [**RunAsync**](/uwp/api/windows.system.threading.threadpool.runasync) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
 
-> [!NOTE]
-> The code samples in this section use the UWP `CoreDispatcher` API. In WinUI 3 apps, use [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) from `Microsoft.UI.Dispatching.DispatcherQueue` to access the UI thread and show progress from the work item. See the [DispatcherQueue](/windows/apps/develop/dispatcherqueue) overview for details.
-
 The following example creates a work item and supplies a lambda to do the work:
 
 ```csharp
@@ -37,6 +34,9 @@ ulong nthPrime = 0;
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
+// Capture the DispatcherQueue before entering the background lambda.
+var dispatcherQueue = Microsoft.UI.Dispatching.DispatcherQueue.GetForCurrentThread();
+
 IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
     (workItem) =>
 {
@@ -86,13 +86,10 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
                 updateString = "Progress to " + n + "th prime: "
                     + (10 * progress) + "%\n";
 
-                // Update the UI thread with the CoreDispatcher.
-                CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
-                    CoreDispatcherPriority.High,
-                    new DispatchedHandler(() =>
-                {
-                    UpdateUI(updateString);
-                }));
+                // Update the UI thread with the DispatcherQueue.
+                dispatcherQueue.TryEnqueue(
+                    Microsoft.UI.Dispatching.DispatcherQueuePriority.High,
+                    () => UpdateUI(updateString));
             }
         }
     }
@@ -117,6 +114,9 @@ std::shared_ptr<unsigned long> nthPrime = std::make_shared<unsigned long>(0);
 
 // Simulates work by searching for the nth prime number. Uses a
 // naive algorithm and counts 2 as the first prime number.
+
+// Capture the DispatcherQueue before entering the background lambda.
+auto dispatcherQueue{ Microsoft::UI::Dispatching::DispatcherQueue::GetForCurrentThread() };
 
 // A reference to the work item is cached so that we can trigger a
 // cancellation when the user presses the Cancel button.
@@ -169,13 +169,13 @@ m_workItem = Windows::System::Threading::ThreadPool::RunAsync(
                 updateStream << L"Progress to " << n << L"th prime: " << (10 * progress) << std::endl;
                 std::wstring updateString = updateStream.str();
 
-                // Update the UI thread with the CoreDispatcher.
-                Windows::ApplicationModel::Core::CoreApplication::MainView().CoreWindow().Dispatcher().RunAsync(
-                    Windows::UI::Core::CoreDispatcherPriority::High,
-                    Windows::UI::Core::DispatchedHandler([=]()
+                // Update the UI thread with the DispatcherQueue.
+                dispatcherQueue.TryEnqueue(
+                    Microsoft::UI::Dispatching::DispatcherQueuePriority::High,
+                    [strongThis, updateString]()
                 {
                     strongThis->UpdateUI(updateString);
-                }));
+                });
             }
         }
     }
