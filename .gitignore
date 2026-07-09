@@ -88,3 +88,8 @@ ipch/
 
 # Stop ReadMe file from syncing to maintain separate public and private Readme notes
 README.md
+
+# Snippet harness — generated files and build output
+tools/snippet-harness/Generated/*.cs
+tools/snippet-harness/bin/
+tools/snippet-harness/obj/
