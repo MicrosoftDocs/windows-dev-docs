@@ -1,7 +1,7 @@
 ---
 description: An overview of Windows package identity and how it uniquely identifies a package.
 title: An overview of Package Identity in Windows apps
-ms.date: 07/07/2026
+ms.date: 07/09/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, desktop, package, identity, MSIX, Win32
 ms.localizationpriority: medium
@@ -232,10 +232,34 @@ Mostly, no, but `Publisher` is case-sensitive.
 
 The remaining fields (`Name`, `ResourceId`, `PublisherId`, `PackageFullName` and `PackageFamilyName`) are not. These fields will preserve case but compare case-insensitively.
 
+## Package identity vs. application identity
+
+Package identity and application identity are related but distinct concepts. Understanding the difference helps avoid a common misconception: that an application *is* its package.
+
+- A **package** is a unit of distribution and deployment. You install, update, or remove a package as a whole.
+- An **application** is a user-facing construct — a collection of windows, processes, and other resources that together form a single program, regardless of how it is implemented (single process, multiple processes, or even multiple applications sharing a process).
+
+Applications are distributed *via* packages, but they are not the same thing as packages. A single package can declare anywhere from zero to one hundred applications, and some package types (such as [framework packages](/windows/msix/package/fx-packages) and [resource packages](/windows/msix/package/resource-package)) cannot declare applications at all.
+
+### ApplicationUserModelID (AUMID)
+
+For packaged applications, application identity is represented by the [ApplicationUserModelID](/windows/win32/appxpkg/appx-packaging-glossary) (also known as *AppUserModelId* or *AUMID*). This string allows Windows to associate windows, processes, and resources with a particular application, regardless of the application's internal architecture.
+
+In other words:
+
+- **Package identity** (the 5-part tuple described above) uniquely identifies a *package*.
+- **Application identity** (AUMID) uniquely identifies an *application* within that package.
+
+Windows uses the AUMID to reason about applications at runtime — for example, to group windows in the taskbar, route notifications, and manage app lifecycle. The AUMID is declared in the package manifest's [Application](/uwp/schemas/appxpackage/uapmanifestschema/element-application) element and is derived from the package family name and the application's declared ID.
+
+> [!TIP]
+> For a deeper exploration of why applications are not packages and how AUMID bridges the two concepts, see [Applications are not packages](https://devblogs.microsoft.com/insidemsix/applications-are-not-packages/) on the Inside MSIX blog.
+
 ## See also
 
-[Package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)
-
-[PackageFamilyNameFromId](/windows/win32/api/appmodel/nf-appmodel-packagefamilynamefromid)
-
-[PackageNameAndPublisherIdFromFamilyName](/windows/win32/api/appmodel/nf-appmodel-packagenameandpublisheridfromfamilyname)
+- [Package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity)
+- [Application element (package manifest)](/uwp/schemas/appxpackage/uapmanifestschema/element-application)
+- [ApplicationUserModelID glossary entry](/windows/win32/appxpkg/appx-packaging-glossary)
+- [Applications are not packages (Inside MSIX blog)](https://devblogs.microsoft.com/insidemsix/applications-are-not-packages/)
+- [PackageFamilyNameFromId](/windows/win32/api/appmodel/nf-appmodel-packagefamilynamefromid)
+- [PackageNameAndPublisherIdFromFamilyName](/windows/win32/api/appmodel/nf-appmodel-packagenameandpublisheridfromfamilyname)
