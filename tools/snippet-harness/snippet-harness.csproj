@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!--
+      OutputType=Library means no entry point is required.
+      We only need the compiler to resolve types — the binary is never executed.
+    -->
+    <OutputType>Library</OutputType>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Platforms>x64</Platforms>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+
+    <!-- Suppress platform-compatibility and package-on-build noise -->
+    <NoWarn>$(NoWarn);CA1416;MSB3277</NoWarn>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+
+    <!-- Don't treat warnings-as-errors so only real errors fail the build -->
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Microsoft.WindowsAppSDK pulls in WinUI 3 and the full Windows App SDK surface.
+      Pin to a specific minor version so the harness is reproducible; update when
+      the docs require APIs from a newer release.
+    -->
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
+  </ItemGroup>
+
+  <!-- Include all generated snippet files -->
+  <ItemGroup>
+    <Compile Include="Generated\*.cs" />
+  </ItemGroup>
+
+</Project>

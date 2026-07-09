@@ -1,0 +1,31 @@
+name: Validate C# snippets
+
+on:
+  pull_request:
+    paths:
+      - "hub/**/*.md"
+      - "tools/snippet-harness/**"
+      - "tools/validate-csharp-snippets.py"
+
+jobs:
+  validate:
+    name: Compile C# snippets (WinUI 3 / Windows App SDK)
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # needed so git diff vs origin/main works
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore NuGet packages
+        run: dotnet restore tools/snippet-harness/snippet-harness.csproj -r win-x64
+
+      - name: Validate changed C# snippets
+        run: |
+          python tools/validate-csharp-snippets.py --changed-only --output-format github
+        shell: pwsh

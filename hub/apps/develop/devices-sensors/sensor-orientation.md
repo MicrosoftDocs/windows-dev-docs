@@ -2,7 +2,7 @@
 
 title: Sensor orientation
 description: Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
-ms.date: 05/27/2026
+ms.date: 07/08/2026
 ms.topic: article
 
 ms.localizationpriority: medium
@@ -78,7 +78,10 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 
     // Calculate the compass heading offset based on
     // the current display orientation.
-    DisplayInformation displayInfo = DisplayInformation.GetForCurrentView();
+    // In WinUI 3 desktop apps, use interop to get DisplayInformation for the current window.
+    var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
+    DisplayInformation displayInfo = DisplayInformation.CreateForWindowId(
+        Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd));
 
     switch (displayInfo.CurrentOrientation)
     {
@@ -126,7 +129,10 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 
     // Calculate the gyrometer axes based on
     // the current display orientation.
-    DisplayInformation displayInfo = DisplayInformation.GetForCurrentView();
+    // In WinUI 3 desktop apps, use interop to get DisplayInformation for the current window.
+    var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(App.Window);
+    DisplayInformation displayInfo = DisplayInformation.CreateForWindowId(
+        Microsoft.UI.Win32Interop.GetWindowIdFromWindow(hWnd));
     switch (displayInfo.CurrentOrientation)
     {
         case DisplayOrientations.Landscape:

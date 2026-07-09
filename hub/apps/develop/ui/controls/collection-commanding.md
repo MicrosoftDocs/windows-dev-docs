@@ -4,7 +4,7 @@ title: Contextual commanding
 ms.assetid:
 label: Contextual commanding in collections
 template: detail.hbs
-ms.date: 05/03/2022
+ms.date: 07/08/2026
 ms.topic: article
 keywords: windows 10, uwp
 pm-contact: chigy
@@ -284,7 +284,7 @@ This example walks through how to add the KeyDown handler to the PodcastUserCont
 // Respond to the F and Ctrl+S keys to favorite the focused item.
 protected override void OnKeyDown(KeyRoutedEventArgs e)
 {
-    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
+    var ctrlState = Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread(VirtualKey.Control);
     var isCtrlPressed = (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down || (ctrlState & CoreVirtualKeyStates.Locked) == CoreVirtualKeyStates.Locked;
 
     if (e.Key == Windows.System.VirtualKey.F || (e.Key == Windows.System.VirtualKey.S && isCtrlPressed))

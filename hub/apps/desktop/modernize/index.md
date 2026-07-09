@@ -2,7 +2,7 @@
 description: Learn how to modernize your existing WPF, Windows Forms, or Win32 desktop app with Windows App SDK features, MSIX packaging, and modern Windows APIs — without a full rewrite.
 title: Modernize your desktop apps for Windows
 ms.topic: overview
-ms.date: 07/03/2026
+ms.date: 07/09/2026
 ms.localizationpriority: medium
 ---
 
@@ -118,6 +118,15 @@ The following table lists common modernization features and whether they require
 | [MRT Core resource management](../../windows-app-sdk/mrtcore/mrtcore-overview.md) | Yes | No |
 
 For the full list of features available in desktop apps, see [Features for Windows app development](../../develop/index.md).
+
+## AI-assisted modernization
+
+The [GitHub Copilot modernization agent](/dotnet/core/porting/github-copilot-app-modernization/) can analyze your desktop solution and generate pull requests that add modern Windows features or upgrade your app to a newer .NET version. For details, see [AI-assisted modernization](../../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md).
+
+## See also
+
+- [Choose your migration path](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)
+- [Migration terminology](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-terminology.md)
 
 ## Next steps
 

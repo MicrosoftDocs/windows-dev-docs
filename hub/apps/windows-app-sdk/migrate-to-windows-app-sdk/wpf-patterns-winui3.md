@@ -2,7 +2,7 @@
 title: Migrate WPF app patterns to WinUI 3
 description: WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows experiences. This topic maps common WPF patterns to their WinUI 3 equivalents to help you plan your migration.
 ms.topic: concept-article
-ms.date: 04/07/2026
+ms.date: 07/09/2026
 keywords: windows, app, sdk, wpf, winui, winui3, migration, patterns, equivalents
 ms.localizationpriority: medium
 ---
@@ -81,9 +81,13 @@ WinUI 3 XAML uses the same core concepts as WPF — resource dictionaries, style
 | XAML Designer (Design tab) | Not yet supported | The Visual Studio XAML Designer doesn't currently support WinUI 3 projects. [XAML Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) is supported and is the recommended way to iterate on layout and styles without stopping the debugger. |
 | Blend for Visual Studio | ⚠️ Limited support | Blend ships with Visual Studio and can open WinUI 3 projects. The XAML Document Outline is functional, but Design view is not available for WinUI 3. |
 
+## AI-assisted migration
+
+For a GitHub Copilot-assisted walkthrough of WPF → WinUI 3 migration, see [Migrate WPF apps to WinUI 3 with AI](../../develop/ai-assisted/migrate/wpf-to-winui.md).
+
 ## See also
 
-- [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md?pivots=dotnet)
+- [Choose your migration path](migration-decision-guide.md)
+- [Migration terminology](migration-terminology.md)
 - [Overall migration strategy](overall-migration-strategy.md)
-- [Windows Community Toolkit](/dotnet/communitytoolkit/introduction)
-- [XAML Behaviors (Community Toolkit)](https://aka.ms/toolkit/behaviors)
+- [AI-assisted modernization](ai-modernize.md)

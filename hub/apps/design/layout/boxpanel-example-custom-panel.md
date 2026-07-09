@@ -8,7 +8,7 @@ ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
 label: BoxPanel, an example custom panel
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/24/2020
+ms.date: 07/08/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -44,9 +44,9 @@ The template file for a class doesn't start with many **using** statements becau
 using System;
 using System.Collections.Generic; // if you need to cast IEnumerable for iteration, or define your own collection properties
 using Windows.Foundation; // Point, Size, and Rect
-using Windows.UI.Xaml; // DependencyObject, UIElement, and FrameworkElement
-using Windows.UI.Xaml.Controls; // Panel
-using Windows.UI.Xaml.Media; // if you need Brushes or other utilities
+using Microsoft.UI.Xaml; // DependencyObject, UIElement, and FrameworkElement
+using Microsoft.UI.Xaml.Controls; // Panel
+using Microsoft.UI.Xaml.Media; // if you need Brushes or other utilities
 ```
 
 Now that you can resolve [**Panel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Panel), make it the base class of `BoxPanel`. Also, make `BoxPanel` public:
@@ -65,9 +65,9 @@ After you've done this, the complete code file looks like this (removing comment
 using System;
 using System.Collections.Generic;
 using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Media;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media;
 
 public class BoxPanel : Panel 
 {
