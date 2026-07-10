@@ -84,3 +84,13 @@ global using WinRT.Interop;
 
 // User activities
 global using Windows.ApplicationModel.UserActivities;
+
+// Activation / background tasks / app services / app extensions
+// NOTE: Windows.ApplicationModel.Activation is intentionally NOT a global using here.
+// It defines its own LaunchActivatedEventArgs, which collides with
+// Microsoft.UI.Xaml.LaunchActivatedEventArgs (CS0104) used by Application.OnLaunched.
+// Snippets that need IFileActivatedEventArgs/IProtocolActivatedEventArgs qualify them inline.
+global using Windows.ApplicationModel.AppExtensions;
+global using Windows.ApplicationModel.AppService;
+global using Windows.ApplicationModel.Background;
+global using Windows.ApplicationModel.ExtendedExecution;
