@@ -17,6 +17,8 @@ global using System.Threading.Tasks;
 // Windows Runtime core
 global using Windows.Foundation;
 global using Windows.Foundation.Collections;
+global using Windows.Foundation.Metadata;
+global using Windows.Foundation.Diagnostics;
 
 // Storage / pickers
 global using Windows.Storage;
@@ -30,6 +32,10 @@ global using Windows.Networking.Connectivity;
 // Devices / sensors
 global using Windows.Devices.Sensors;
 global using Windows.Graphics.Display;
+
+// System / power / display requests
+global using Windows.System.Power;
+global using Windows.System.Display;
 
 // Notifications (Windows App SDK)
 global using Microsoft.Windows.AppNotifications;
@@ -64,7 +70,7 @@ global using Microsoft.UI.Input;
 global using Microsoft.UI.Composition;
 
 // Win32 interop helpers
-global using Microsoft.UI.Win32Interop;
+global using static Microsoft.UI.Win32Interop;
 global using WinRT.Interop;
 
 // User activities
