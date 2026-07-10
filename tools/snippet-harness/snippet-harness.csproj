@@ -20,6 +20,16 @@
 
     <!-- Don't treat warnings-as-errors so only real errors fail the build -->
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+
+    <!--
+      Disable the SDK's default compile-item globbing. Without this, the SDK
+      automatically globs all *.cs files under the project directory (including
+      Generated\*.cs), which then collides with the explicit <Compile Include>
+      below and causes NETSDK1022 "Duplicate 'Compile' items were included".
+      Because default globbing is off, every .cs file that must compile now
+      needs an explicit <Compile Include> entry (see ItemGroups below).
+    -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +39,11 @@
       the docs require APIs from a newer release.
     -->
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Required now that default compile-item globbing is disabled above. -->
+    <Compile Include="GlobalUsings.cs" />
   </ItemGroup>
 
   <!-- Include all generated snippet files -->
