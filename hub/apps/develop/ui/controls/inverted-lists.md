@@ -3,7 +3,7 @@ title: Inverted lists
 description: Learn how to create an inverted list and use it to add new items at the bottom of a ListView control in a WinUI app.
 label: Inverted lists
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 07/10/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: 52c1d63d-69c1-48d6-a234-6f39296e4bfd
@@ -50,4 +50,7 @@ This example shows how to align the list view’s items to the bottom and indica
 
 ## Get the sample code
 
-- [XAML Bottom-up list sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBottomUpList)
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see ListView in action](winui3gallery://item/ListView)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
