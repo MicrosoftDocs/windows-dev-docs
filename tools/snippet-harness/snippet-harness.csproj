@@ -18,6 +18,17 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
+    <!--
+      This project only exists to type-check snippets; it's never packaged
+      or run. These properties skip MSIX/PRI resource-index generation
+      (which invokes a native win-x86 makepri.exe that some local/dev
+      machines cannot launch — e.g. Apple Silicon Macs).
+    -->
+    <WindowsPackageType>None</WindowsPackageType>
+    <AppxGeneratePriEnabled>false</AppxGeneratePriEnabled>
+    <AppxGeneratePrisForPortableLibrariesEnabled>false</AppxGeneratePrisForPortableLibrariesEnabled>
+    <EnableDefaultWindowsAppSdkPRIResourceItems>false</EnableDefaultWindowsAppSdkPRIResourceItems>
+
     <!-- Don't treat warnings-as-errors so only real errors fail the build -->
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
 
@@ -39,11 +50,19 @@
       the docs require APIs from a newer release.
     -->
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
+
+    <!--
+      OpenCvSharp4 is a third-party package referenced by the OpenCV camera/media
+      docs (use-opencv-with-mediaframereader.md). Only needed here for type
+      resolution — never executed.
+    -->
+    <PackageReference Include="OpenCvSharp4" Version="4.10.0.20241108" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- Required now that default compile-item globbing is disabled above. -->
     <Compile Include="GlobalUsings.cs" />
+    <Compile Include="HelperStubs.cs" />
   </ItemGroup>
 
   <!-- Include all generated snippet files -->

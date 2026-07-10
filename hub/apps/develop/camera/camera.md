@@ -1,7 +1,7 @@
 ---
 description: This article lists the camera features that are available for WinUI apps and links to the how-to articles that show how to use them.
 title: Camera
-ms.date: 10/24/2024
+ms.date: 07/08/2026
 ms.topic: article
 keywords: windows 10, winui 3
 ms.localizationpriority: medium
@@ -17,6 +17,7 @@ This section provides guidance for creating WinUI apps that use the camera or mi
 |---------------------------|-----------------------------|
 | [Capture photos and video in a desktop app with the Windows built-in camera UI](cameracaptureui.md) | Describes how to use the [CameraCaptureUI](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture) class to capture photos or videos by using the camera UI built into Windows. This feature allows your app to get a user-captured photo or video with just a few lines of code. |
 | [Show the camera preview in a WinUI app](camera-quickstart-winui3.md) | Shows how to quickly display the camera preview stream within a XAML page in a WinUI app. |
+| [Camera preview access](simple-camera-preview-access.md) | Learn about exclusive camera access, lifecycle management, and proper cleanup when using MediaCapture for camera preview in a WinUI app. |
 | [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md) | Shows the simplest way to capture photos and video using the [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) class. The **MediaCapture** class exposes a robust set of APIs that provide low-level control over the capture pipeline and enable advanced capture scenarios, but this article is intended to help you add basic media capture to your app quickly and easily. |
 
 ## Advanced MediaCapture tasks
@@ -37,6 +38,12 @@ This section provides guidance for creating WinUI apps that use the camera or mi
 | [Launch the camera settings page](launch-camera-settings.md) | Learn how to launch Windows Settings directly to the camera settings page. |
 | [Handle the Windows camera privacy setting](camera-privacy-setting.md) | Learn how apps should handle the Windows camera privacy setting. |
 | [Connect to remote cameras](connect-to-remote-cameras.md) | Learn how to connect to remote cameras and get a **MediaFrameSourceGroup** to retrieve frames from each camera. |
+| [Get a preview frame from the camera](get-a-preview-frame.md) | Learn how to capture a single preview frame from the camera stream for image analysis or processing in a WinUI app. |
+| [Handle device orientation with MediaCapture](handle-device-orientation-with-mediacapture.md) | Learn how to handle device orientation when capturing photos and video with MediaCapture in a WinUI app. |
+| [Use OpenCV with MediaFrameReader](use-opencv-with-mediaframereader.md) | Learn how to use the OpenCV library with a MediaFrameReader to process real-time camera frames in a WinUI app. |
+| [Custom audio effects](../media-authoring-processing/custom-audio-effects.md) | Learn how to create a custom audio effect by implementing the IBasicAudioEffect interface in a Windows Runtime component. |
+| [Custom video effects](../media-authoring-processing/custom-video-effects.md) | Learn how to create a custom video effect by implementing the IBasicVideoEffect interface in a Windows Runtime component. |
+| [Process SoftwareBitmaps with OpenCV](../media-authoring-processing/process-software-bitmaps-with-opencv.md) | Learn how to create a C++/WinRT component that bridges SoftwareBitmap and OpenCV Mat for image processing. |
 
 ## WinUI samples for camera
 

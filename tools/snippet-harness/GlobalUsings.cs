@@ -31,9 +31,28 @@ global using Windows.Networking.Connectivity;
 
 // Devices / sensors
 global using Windows.Devices.Sensors;
+global using Windows.Devices.Enumeration;
 global using Windows.Devices.Input;
 global using Windows.Devices.Haptics;
 global using Windows.Graphics.Display;
+global using Windows.Graphics.Imaging;
+
+// Media capture / effects / properties
+global using Windows.Media;
+global using Windows.Media.Capture;
+global using Windows.Media.Capture.Frames;
+global using Windows.Media.Effects;
+global using Windows.Media.MediaProperties;
+
+// File properties (PhotoOrientation, etc.)
+global using Windows.Storage.FileProperties;
+
+// OpenCvSharp (third-party package used by OpenCV camera/media docs)
+global using OpenCvSharp;
+
+// OpenCVBridge (fictitious C++/WinRT component namespace used in
+// process-software-bitmaps-with-opencv.md; see HelperStubs.cs)
+global using OpenCVBridge;
 
 // Media / speech
 global using Windows.Media.SpeechRecognition;
