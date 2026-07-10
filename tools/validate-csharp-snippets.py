@@ -162,7 +162,15 @@ def _strip_using_directives(code: str) -> tuple[str, list[str]]:
 def _detect_level(code: str) -> int:
     code, _ = _strip_using_directives(code)
     stripped = code.strip()
-    first_line = stripped.splitlines()[0] if stripped else ""
+    # Skip leading blank/comment lines so a leading "// ..." comment doesn't
+    # mask an access modifier on the next real line of code.
+    first_line = ""
+    for line in stripped.splitlines():
+        candidate = line.strip()
+        if not candidate or candidate.startswith("//"):
+            continue
+        first_line = line
+        break
 
     # Complete type: has class/struct/enum keyword followed eventually by {
     if re.search(
@@ -184,6 +192,11 @@ def _detect_level(code: str) -> int:
         # Attribute above a declaration
         if re.match(r"\s*\[", first_line):
             return _LEVEL_MEMBER
+        # Bare field/property declarations (e.g. "private Foo bar;") have no
+        # braces at all, or only balanced ones — they can't legally appear as
+        # statements inside a method body, so treat them as members instead.
+        if stripped.count("{") == stripped.count("}") and stripped.rstrip().endswith(";"):
+            return _LEVEL_MEMBER
 
     return _LEVEL_BODY
 
@@ -191,6 +204,65 @@ def _detect_level(code: str) -> int:
 def _pragma_header() -> str:
     codes = ",".join(sorted(SUPPRESSED_CODES))
     return f"#pragma warning disable {codes}"
+
+
+# Narrative snippets sometimes reference a field/method that is declared in a
+# *different* code fence within the same source article (e.g. an event
+# handler wired up in one snippet and defined in a later one). Since each
+# fence compiles as its own isolated class, add a placeholder only when the
+# name is referenced but not already declared by this particular snippet
+# (otherwise we'd get a duplicate-definition error in the fence that already
+# declares it). Each tuple is (usage_regex, own_declaration_regex, member_code).
+_CONDITIONAL_MEMBERS: list[tuple[str, str, str]] = [
+    (r"\bspeechRecognizer\b", r"\bSpeechRecognizer\s+speechRecognizer\b",
+     "    private global::Windows.Media.SpeechRecognition.SpeechRecognizer speechRecognizer = null!;"),
+    (r"\bdispatcherQueue\b", r"\bDispatcherQueue\s+dispatcherQueue\b",
+     "    private global::Microsoft.UI.Dispatching.DispatcherQueue dispatcherQueue = null!;"),
+    (r"\bresultTextBlock\b", r"\bTextBlock\s+resultTextBlock\b",
+     "    private global::Microsoft.UI.Xaml.Controls.TextBlock resultTextBlock = null!;"),
+    (r"\bhapticsController\b", r"\bSimpleHapticsController\s+hapticsController\b",
+     "    private global::Windows.Devices.Haptics.SimpleHapticsController hapticsController = null!;"),
+    (r"\bcurrentWaveform\b", r"\bSimpleHapticsControllerFeedback\s+currentWaveform\b",
+     "    private global::Windows.Devices.Haptics.SimpleHapticsControllerFeedback currentWaveform = null!;"),
+    (r"\bdictatedTextBuilder\b", r"\bStringBuilder\s+dictatedTextBuilder\b",
+     "    private global::System.Text.StringBuilder dictatedTextBuilder = null!;"),
+    (r"\bdictationTextBox\b", r"\bTextBox\s+dictationTextBox\b",
+     "    private global::Microsoft.UI.Xaml.Controls.TextBox dictationTextBox = null!;"),
+    (r"\bbtnClearText\b", r"\bButton\s+btnClearText\b",
+     "    private global::Microsoft.UI.Xaml.Controls.Button btnClearText = null!;"),
+    (r"\bstatusTextBlock\b", r"\bTextBlock\s+statusTextBlock\b",
+     "    private global::Microsoft.UI.Xaml.Controls.TextBlock statusTextBlock = null!;"),
+    (r"\bContinuousRecognitionSession_ResultGenerated\b",
+     r"\bvoid\s+ContinuousRecognitionSession_ResultGenerated\s*\(",
+     "    private void ContinuousRecognitionSession_ResultGenerated("
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs args) { }"),
+    (r"\bContinuousRecognitionSession_Completed\b",
+     r"\bvoid\s+ContinuousRecognitionSession_Completed\s*\(",
+     "    private void ContinuousRecognitionSession_Completed("
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs args) { }"),
+    (r"\bSpeechRecognizer_HypothesisGenerated\b",
+     r"\bvoid\s+SpeechRecognizer_HypothesisGenerated\s*\(",
+     "    private void SpeechRecognizer_HypothesisGenerated("
+     "global::Windows.Media.SpeechRecognition.SpeechRecognizer sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs args) { }"),
+    (r"\bSpeechRecognizer_RecognitionQualityDegrading\b",
+     r"\bvoid\s+SpeechRecognizer_RecognitionQualityDegrading\s*\(",
+     "    private void SpeechRecognizer_RecognitionQualityDegrading("
+     "global::Windows.Media.SpeechRecognition.SpeechRecognizer sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs args) { }"),
+]
+
+
+def _conditional_members(code: str) -> str:
+    """Return extra placeholder members needed by this snippet (see above)."""
+    extra = [
+        member
+        for usage_re, decl_re, member in _CONDITIONAL_MEMBERS
+        if re.search(usage_re, code) and not re.search(decl_re, code)
+    ]
+    return "\n".join(extra)
 
 
 def scaffold(snippet: Snippet) -> str:
@@ -220,7 +292,7 @@ namespace SnippetNS_{n};
     private global::Microsoft.UI.Xaml.Controls.ListView listView = null!;
     private global::Microsoft.UI.Xaml.Controls.Frame rootFrame = null!;
     private global::Microsoft.UI.Xaml.Controls.Canvas canvas = null!;
-"""
+""" + _conditional_members(code)
 
     if level == _LEVEL_MEMBER:
         return f"""// <auto-generated/>

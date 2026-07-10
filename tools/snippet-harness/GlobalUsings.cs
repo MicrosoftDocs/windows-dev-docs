@@ -31,7 +31,16 @@ global using Windows.Networking.Connectivity;
 
 // Devices / sensors
 global using Windows.Devices.Sensors;
+global using Windows.Devices.Input;
+global using Windows.Devices.Haptics;
 global using Windows.Graphics.Display;
+
+// Media / speech
+global using Windows.Media.SpeechRecognition;
+global using Windows.Media.Capture;
+
+// Pen / haptics interop (Windows App SDK)
+global using Microsoft.UI.Input.Interop;
 
 // System / power / display requests
 global using Windows.System.Power;
