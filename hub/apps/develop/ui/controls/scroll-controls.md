@@ -186,7 +186,7 @@ This table describes the visibility options for these properties.
 
 ### Orientation
 
-The ScrollView control has a [ContentOrientation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.contentorientation) property that let's you control the layout of content. This property determines how content can grow when it's not explicitly constrained. If `Height` and `Width` are explicitly set on the content, `ContentOrientation` has no effect.
+The ScrollView control has a [ContentOrientation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview.contentorientation) property that lets you control the layout of content. This property determines how content can grow when it's not explicitly constrained. If `Height` and `Width` are explicitly set on the content, `ContentOrientation` has no effect.
 
 This table shows the `ContentOrientation` options for [ScrollView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollview) and the equivalent settings for [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer).
 
