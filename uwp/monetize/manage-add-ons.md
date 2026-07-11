@@ -105,7 +105,7 @@ This resource has the following values.
 
 ### Application resource
 
-This resource descries the app that an add-on is associated with. The following example demonstrates the format of this resource.
+This resource describes the app that an add-on is associated with. The following example demonstrates the format of this resource.
 
 ```json
 {

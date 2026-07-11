@@ -10796,11 +10796,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/develop/input/define-custom-recognition-constraints.md",
-      "redirect_url": "/windows/uwp/ui-input/define-custom-recognition-constraints",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/design/input/define-custom-recognition-constraints.md",
       "redirect_url": "/windows/uwp/ui-input/define-custom-recognition-constraints",
       "redirect_document_id": false
@@ -10816,11 +10811,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/develop/input/enable-continuous-dictation.md",
-      "redirect_url": "/windows/uwp/ui-input/enable-continuous-dictation",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/design/input/enable-continuous-dictation.md",
       "redirect_url": "/windows/uwp/ui-input/enable-continuous-dictation",
       "redirect_document_id": false
@@ -10832,11 +10822,6 @@
     },
     {
       "source_path": "hub/apps/design/input/gamepad-and-remote-interactions.md",
-      "redirect_url": "/windows/uwp/ui-input/gamepad-and-remote-interactions",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/input/gamepad-and-remote-interactions.md",
       "redirect_url": "/windows/uwp/ui-input/gamepad-and-remote-interactions",
       "redirect_document_id": false
     },
@@ -10941,11 +10926,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/develop/input/manage-issues-with-audio-input.md",
-      "redirect_url": "/windows/uwp/ui-input/manage-issues-with-audio-input",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/design/input/manage-issues-with-audio-input.md",
       "redirect_url": "/windows/uwp/ui-input/manage-issues-with-audio-input",
       "redirect_document_id": false
@@ -10977,11 +10957,6 @@
     },
     {
       "source_path": "hub/apps/design/input/pen-haptics.md",
-      "redirect_url": "/windows/uwp/ui-input/pen-haptics",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/input/pen-haptics.md",
       "redirect_url": "/windows/uwp/ui-input/pen-haptics",
       "redirect_document_id": false
     },
@@ -11036,11 +11011,6 @@
       "redirect_document_id": false
     },
     {
-      "source_path": "hub/apps/develop/input/set-speech-recognition-timeouts.md",
-      "redirect_url": "/windows/uwp/ui-input/set-speech-recognition-timeouts",
-      "redirect_document_id": false
-    },
-    {
       "source_path": "uwp/design/input/set-speech-recognition-timeouts.md",
       "redirect_url": "/windows/uwp/ui-input/set-speech-recognition-timeouts",
       "redirect_document_id": false
@@ -11067,11 +11037,6 @@
     },
     {
       "source_path": "hub/apps/design/input/specify-the-speech-recognizer-language.md",
-      "redirect_url": "/windows/uwp/ui-input/specify-the-speech-recognizer-language",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/input/specify-the-speech-recognizer-language.md",
       "redirect_url": "/windows/uwp/ui-input/specify-the-speech-recognizer-language",
       "redirect_document_id": false
     },
@@ -11117,11 +11082,6 @@
     },
     {
       "source_path": "hub/apps/design/input/speech-recognition.md",
-      "redirect_url": "/windows/uwp/ui-input/speech-recognition",
-      "redirect_document_id": false
-    },
-    {
-      "source_path": "hub/apps/develop/input/speech-recognition.md",
       "redirect_url": "/windows/uwp/ui-input/speech-recognition",
       "redirect_document_id": false
     },

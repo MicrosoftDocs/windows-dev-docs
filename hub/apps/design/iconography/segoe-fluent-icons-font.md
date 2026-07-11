@@ -27,7 +27,7 @@ Icons in the `Segoe Fluent Icons` font are not intended for use in-line with tex
 
 ## Layering and mirroring
 
-All glyphs in `Segoe Fluent Icons` have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other. This example show a black outline drawn on top of the zero-width red heart.
+All glyphs in `Segoe Fluent Icons` have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other. This example shows a black outline drawn on top of the zero-width red heart.
 
 :::image type="content" border="false" source="images/segoe-ui-symbol-layering.png" alt-text="Screenshot of using a zero-width glyph.":::
 
@@ -1669,4 +1669,3 @@ The following table of glyphs displays unicode points prefixed from F6- to F8-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f8ca.png" alt-text="SignalBarsVPNRoaming4"::: | f8ca | :::no-loc text="SignalBarsVPNRoaming4"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f8cb.png" alt-text="SignalBarsVPNRoaming5"::: | f8cb | :::no-loc text="SignalBarsVPNRoaming5"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f8cc.png" alt-text="EthernetVPN"::: | f8cc | :::no-loc text="EthernetVPN"::: |
-

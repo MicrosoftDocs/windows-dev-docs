@@ -4,7 +4,7 @@ title: List/details
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: List/details
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/10/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -16,9 +16,6 @@ The list/details pattern has a list pane (usually with a [list view](lists.md)) 
 > **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [SplitView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview)
 
 ![Example of list-details pattern](images/list-detail-pattern.png)
-
-> [!TIP]
-> If you'd like to use a XAML control that implements this pattern for you, we recommend the [ListDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
 
 ## Is this the right pattern?
 
@@ -91,9 +88,6 @@ The following samples implement the list/details pattern with adaptive layouts a
 - [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
 - [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
-
-> [!TIP]
-> If you'd like to use a XAML control that implements this pattern for you, we recommend the [ListDetailsView XAML Control](/windows/communitytoolkit/controls/masterdetailsview) from the Windows Community Toolkit.
 
 ## Related articles
 

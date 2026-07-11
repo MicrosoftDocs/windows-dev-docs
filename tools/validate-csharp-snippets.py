@@ -162,7 +162,15 @@ def _strip_using_directives(code: str) -> tuple[str, list[str]]:
 def _detect_level(code: str) -> int:
     code, _ = _strip_using_directives(code)
     stripped = code.strip()
-    first_line = stripped.splitlines()[0] if stripped else ""
+    # Skip leading blank/comment lines so a leading "// ..." comment doesn't
+    # mask an access modifier on the next real line of code.
+    first_line = ""
+    for line in stripped.splitlines():
+        candidate = line.strip()
+        if not candidate or candidate.startswith("//"):
+            continue
+        first_line = line
+        break
 
     # Complete type: has class/struct/enum keyword followed eventually by {
     if re.search(
@@ -184,6 +192,11 @@ def _detect_level(code: str) -> int:
         # Attribute above a declaration
         if re.match(r"\s*\[", first_line):
             return _LEVEL_MEMBER
+        # Bare field/property declarations (e.g. "private Foo bar;") have no
+        # braces at all, or only balanced ones — they can't legally appear as
+        # statements inside a method body, so treat them as members instead.
+        if stripped.count("{") == stripped.count("}") and stripped.rstrip().endswith(";"):
+            return _LEVEL_MEMBER
 
     return _LEVEL_BODY
 
@@ -193,16 +206,129 @@ def _pragma_header() -> str:
     return f"#pragma warning disable {codes}"
 
 
-def scaffold(snippet: Snippet) -> str:
-    """Wrap the snippet in enough C# scaffolding to allow compilation."""
+def _file_group_id(file: Path) -> str:
+    """Stable, sanitized identifier derived from a snippet's source file path.
+
+    Used so that all member/body-level snippets extracted from the *same*
+    markdown article share one C# partial class. Real docs frequently show a
+    class's field declarations in one code block and its methods in another —
+    scaffolding each block as a fully isolated class caused spurious CS0103
+    ("name does not exist in current context") errors for those cross-block
+    references. Grouping by source file lets the C# compiler merge the
+    partial-class fragments back together, exactly as a reader mentally
+    reassembles the article's snippets into one class.
+    """
+    rel = str(file.resolve().relative_to(REPO_ROOT)).replace("\\", "/")
+    return re.sub(r"[^0-9A-Za-z]+", "_", rel).strip("_")
+
+
+# Placeholder member names that some docs declare themselves (e.g. a doc that
+# already shows `private MediaCapture _mediaCapture;`). When a source file's
+# own snippets already declare one of these names, scaffold() must omit the
+# matching placeholder line from base_members for that file's group, or the
+# duplicate declaration produces CS0102 ("already contains a definition").
+_OPTIONAL_PLACEHOLDER_PATTERNS: dict[str, re.Pattern] = {
+    "_mediaCapture": re.compile(r"\bMediaCapture\s+_mediaCapture\b"),
+}
+
+
+# Narrative snippets sometimes reference a field/method that is declared in a
+# *different* code fence within the same source article (e.g. an event
+# handler wired up in one snippet and defined in a later one). Since each
+# fence compiles as its own isolated class, add a placeholder only when the
+# name is referenced but not already declared by this particular snippet
+# (otherwise we'd get a duplicate-definition error in the fence that already
+# declares it). Each tuple is (usage_regex, own_declaration_regex, member_code).
+_CONDITIONAL_MEMBERS: list[tuple[str, str, str]] = [
+    (r"\bspeechRecognizer\b", r"\bSpeechRecognizer\s+speechRecognizer\b",
+     "    private global::Windows.Media.SpeechRecognition.SpeechRecognizer speechRecognizer = null!;"),
+    (r"\bdispatcherQueue\b", r"\bDispatcherQueue\s+dispatcherQueue\b",
+     "    private global::Microsoft.UI.Dispatching.DispatcherQueue dispatcherQueue = null!;"),
+    (r"\bresultTextBlock\b", r"\bTextBlock\s+resultTextBlock\b",
+     "    private global::Microsoft.UI.Xaml.Controls.TextBlock resultTextBlock = null!;"),
+    (r"\bhapticsController\b", r"\bSimpleHapticsController\s+hapticsController\b",
+     "    private global::Windows.Devices.Haptics.SimpleHapticsController hapticsController = null!;"),
+    (r"\bcurrentWaveform\b", r"\bSimpleHapticsControllerFeedback\s+currentWaveform\b",
+     "    private global::Windows.Devices.Haptics.SimpleHapticsControllerFeedback currentWaveform = null!;"),
+    (r"\bdictatedTextBuilder\b", r"\bStringBuilder\s+dictatedTextBuilder\b",
+     "    private global::System.Text.StringBuilder dictatedTextBuilder = null!;"),
+    (r"\bdictationTextBox\b", r"\bTextBox\s+dictationTextBox\b",
+     "    private global::Microsoft.UI.Xaml.Controls.TextBox dictationTextBox = null!;"),
+    (r"\bbtnClearText\b", r"\bButton\s+btnClearText\b",
+     "    private global::Microsoft.UI.Xaml.Controls.Button btnClearText = null!;"),
+    (r"\bstatusTextBlock\b", r"\bTextBlock\s+statusTextBlock\b",
+     "    private global::Microsoft.UI.Xaml.Controls.TextBlock statusTextBlock = null!;"),
+    (r"\bContinuousRecognitionSession_ResultGenerated\b",
+     r"\bvoid\s+ContinuousRecognitionSession_ResultGenerated\s*\(",
+     "    private void ContinuousRecognitionSession_ResultGenerated("
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionResultGeneratedEventArgs args) { }"),
+    (r"\bContinuousRecognitionSession_Completed\b",
+     r"\bvoid\s+ContinuousRecognitionSession_Completed\s*\(",
+     "    private void ContinuousRecognitionSession_Completed("
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionSession sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechContinuousRecognitionCompletedEventArgs args) { }"),
+    (r"\bSpeechRecognizer_HypothesisGenerated\b",
+     r"\bvoid\s+SpeechRecognizer_HypothesisGenerated\s*\(",
+     "    private void SpeechRecognizer_HypothesisGenerated("
+     "global::Windows.Media.SpeechRecognition.SpeechRecognizer sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechRecognitionHypothesisGeneratedEventArgs args) { }"),
+    (r"\bSpeechRecognizer_RecognitionQualityDegrading\b",
+     r"\bvoid\s+SpeechRecognizer_RecognitionQualityDegrading\s*\(",
+     "    private void SpeechRecognizer_RecognitionQualityDegrading("
+     "global::Windows.Media.SpeechRecognition.SpeechRecognizer sender, "
+     "global::Windows.Media.SpeechRecognition.SpeechRecognitionQualityDegradingEventArgs args) { }"),
+]
+
+
+def _conditional_members(code: str) -> str:
+    """Return extra placeholder members needed by this snippet (see above)."""
+    extra = [
+        member
+        for usage_re, decl_re, member in _CONDITIONAL_MEMBERS
+        if re.search(usage_re, code) and not re.search(decl_re, code)
+    ]
+    return "\n".join(extra)
+
+
+def scaffold(
+    snippet: Snippet,
+    *,
+    emit_base_members: bool = True,
+    skip_placeholders: frozenset[str] = frozenset(),
+) -> str:
+    """Wrap the snippet in enough C# scaffolding to allow compilation.
+
+    emit_base_members: when multiple _LEVEL_MEMBER/_LEVEL_BODY snippets from
+    the same source file share one partial class (see _file_group_id), the
+    placeholder base members must only be emitted once for the group to avoid
+    CS0102 "already contains a definition" duplicate-member errors.
+
+    skip_placeholders: names (keys of _OPTIONAL_PLACEHOLDER_PATTERNS) to omit
+    from base_members because the doc's own snippets already declare them.
+    """
     code, _usings = _strip_using_directives(snippet.code)
     level = _detect_level(snippet.code)  # detect on original (including usings)
     rel = snippet.file.resolve().relative_to(REPO_ROOT)
     src = f"// Source: {rel}:{snippet.line}"
     n = snippet.index
+    group = _file_group_id(snippet.file)
     pragma = _pragma_header()
 
     if level == _LEVEL_TYPE:
+        # Some snippets already declare their own block-style namespace
+        # (e.g. a WinRT component that must live in a specific namespace to
+        # match an ActivatableClassId elsewhere in the doc). Adding our own
+        # file-scoped `namespace SnippetNS_{n};` on top of that would produce
+        # CS8955 ("file-scoped and normal namespace declarations"), so only
+        # wrap the snippet in a synthetic namespace when it doesn't already
+        # declare one of its own.
+        if re.match(r"^\s*namespace\s+[\w.]+\s*[{;]", code):
+            return f"""// <auto-generated/>
+{src}
+{pragma}
+{code}
+"""
         return f"""// <auto-generated/>
 {src}
 {pragma}
@@ -211,7 +337,11 @@ namespace SnippetNS_{n};
 """
 
     # For member and body levels we wrap inside a Window subclass so that
-    # DispatcherQueue, XamlRoot, etc. are in scope via inheritance.
+    # DispatcherQueue, XamlRoot, etc. are in scope via inheritance. All
+    # member/body snippets from the same source file share one partial class
+    # (named after the file group) so that fields/methods declared in one
+    # code block are visible to code blocks that reference them elsewhere in
+    # the same article.
     base_members = """
     // Placeholders so snippets that reference common variables compile.
     private static global::Microsoft.UI.Xaml.Window App_Window => null!;
@@ -220,16 +350,40 @@ namespace SnippetNS_{n};
     private global::Microsoft.UI.Xaml.Controls.ListView listView = null!;
     private global::Microsoft.UI.Xaml.Controls.Frame rootFrame = null!;
     private global::Microsoft.UI.Xaml.Controls.Canvas canvas = null!;
-"""
+
+    // Placeholders for identifiers that docs introduce via XAML (x:Name'd
+    // elements) or via an earlier, separately-scoped snippet, and then
+    // reference again from a later illustrative continuation snippet in
+    // the same article. The real declaration/definition is documented
+    // in-article; these exist only so the isolated continuation snippet
+    // compiles standalone.
+    private global::Windows.Media.Capture.MediaCapture _mediaCapture = null!; // __PLACEHOLDER:_mediaCapture__
+    private global::Windows.Media.Editing.MediaClip mediaClip = null!;
+    private global::Windows.Media.Audio.AudioFileInputNode audioFileInputNode = null!;
+    private global::Microsoft.UI.Xaml.Controls.Image PreviewImage = null!;
+    private global::Microsoft.UI.Xaml.Controls.Image ProcessedImage = null!;
+    private global::Microsoft.UI.Xaml.Controls.Image OutputImage = null!;
+    private global::Microsoft.UI.Xaml.Controls.MediaPlayerElement PreviewElement = null!;
+""" if emit_base_members else ""
+
+    for name in skip_placeholders:
+        base_members = "\n".join(
+            line for line in base_members.splitlines()
+            if f"__PLACEHOLDER:{name}__" not in line
+        )
+
+    # Placeholders for names referenced by this snippet but declared (or
+    # expected to be declared) in a different code fence of the same article.
+    base_members += "\n" + _conditional_members(code)
 
     if level == _LEVEL_MEMBER:
         return f"""// <auto-generated/>
 {src}
 {pragma}
 #nullable enable
-namespace SnippetNS_{n};
+namespace SnippetNS_File_{group};
 
-partial class Snippet_{n} : global::Microsoft.UI.Xaml.Window
+partial class Snippet_File_{group} : global::Microsoft.UI.Xaml.Window
 {{
 {base_members}
 {code}
@@ -242,12 +396,12 @@ partial class Snippet_{n} : global::Microsoft.UI.Xaml.Window
 {src}
 {pragma}
 #nullable enable
-namespace SnippetNS_{n};
+namespace SnippetNS_File_{group};
 
-partial class Snippet_{n} : global::Microsoft.UI.Xaml.Window
+partial class Snippet_File_{group} : global::Microsoft.UI.Xaml.Window
 {{
 {base_members}
-    private async System.Threading.Tasks.Task RunSnippet()
+    private async System.Threading.Tasks.Task RunSnippet_{n}()
     {{
 {indented}
     }}
@@ -266,9 +420,35 @@ def generate_files(snippets: list[Snippet]) -> dict[str, Snippet]:
     GENERATED_DIR.mkdir(parents=True)
 
     mapping: dict[str, Snippet] = {}
+
+    # Determine, per source-file group, which optional placeholders (see
+    # _OPTIONAL_PLACEHOLDER_PATTERNS) that group's own snippets already
+    # declare themselves, so scaffold() can omit the matching base_members
+    # line and avoid CS0102 duplicate-member errors.
+    group_declared_placeholders: dict[str, set[str]] = {}
     for s in snippets:
+        group = _file_group_id(s.file)
+        for name, pattern in _OPTIONAL_PLACEHOLDER_PATTERNS.items():
+            if pattern.search(s.code):
+                group_declared_placeholders.setdefault(group, set()).add(name)
+
+    # Only emit the shared placeholder base members once per source-file
+    # group (see _file_group_id) to avoid CS0102 duplicate-member errors
+    # when multiple snippets from the same doc share one partial class.
+    groups_with_base_members: set[str] = set()
+    for s in snippets:
+        level = _detect_level(s.code)
+        group = _file_group_id(s.file)
+        emit_base = True
+        if level in (_LEVEL_MEMBER, _LEVEL_BODY):
+            emit_base = group not in groups_with_base_members
+            groups_with_base_members.add(group)
+        skip = frozenset(group_declared_placeholders.get(group, set()))
         cs_file = GENERATED_DIR / f"Snippet_{s.index:04d}.cs"
-        cs_file.write_text(scaffold(s), encoding="utf-8")
+        cs_file.write_text(
+            scaffold(s, emit_base_members=emit_base, skip_placeholders=skip),
+            encoding="utf-8",
+        )
         mapping[str(cs_file.resolve()).lower()] = s
 
     # Keep the directory around even when empty (so dotnet build succeeds)

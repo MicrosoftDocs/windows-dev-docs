@@ -17,6 +17,8 @@ global using System.Threading.Tasks;
 // Windows Runtime core
 global using Windows.Foundation;
 global using Windows.Foundation.Collections;
+global using Windows.Foundation.Metadata;
+global using Windows.Foundation.Diagnostics;
 
 // Storage / pickers
 global using Windows.Storage;
@@ -29,7 +31,39 @@ global using Windows.Networking.Connectivity;
 
 // Devices / sensors
 global using Windows.Devices.Sensors;
+global using Windows.Devices.Enumeration;
+global using Windows.Devices.Input;
+global using Windows.Devices.Haptics;
 global using Windows.Graphics.Display;
+global using Windows.Graphics.Imaging;
+
+// Media capture / effects / properties
+global using Windows.Media;
+global using Windows.Media.Capture;
+global using Windows.Media.Capture.Frames;
+global using Windows.Media.Effects;
+global using Windows.Media.MediaProperties;
+
+// File properties (PhotoOrientation, etc.)
+global using Windows.Storage.FileProperties;
+
+// OpenCvSharp (third-party package used by OpenCV camera/media docs)
+global using OpenCvSharp;
+
+// OpenCVBridge (fictitious C++/WinRT component namespace used in
+// process-software-bitmaps-with-opencv.md; see HelperStubs.cs)
+global using OpenCVBridge;
+
+// Media / speech
+global using Windows.Media.SpeechRecognition;
+global using Windows.Media.Capture;
+
+// Pen / haptics interop (Windows App SDK)
+global using Microsoft.UI.Input.Interop;
+
+// System / power / display requests
+global using Windows.System.Power;
+global using Windows.System.Display;
 
 // Notifications (Windows App SDK)
 global using Microsoft.Windows.AppNotifications;
@@ -64,8 +98,18 @@ global using Microsoft.UI.Input;
 global using Microsoft.UI.Composition;
 
 // Win32 interop helpers
-global using Microsoft.UI.Win32Interop;
+global using static Microsoft.UI.Win32Interop;
 global using WinRT.Interop;
 
 // User activities
 global using Windows.ApplicationModel.UserActivities;
+
+// Activation / background tasks / app services / app extensions
+// NOTE: Windows.ApplicationModel.Activation is intentionally NOT a global using here.
+// It defines its own LaunchActivatedEventArgs, which collides with
+// Microsoft.UI.Xaml.LaunchActivatedEventArgs (CS0104) used by Application.OnLaunched.
+// Snippets that need IFileActivatedEventArgs/IProtocolActivatedEventArgs qualify them inline.
+global using Windows.ApplicationModel.AppExtensions;
+global using Windows.ApplicationModel.AppService;
+global using Windows.ApplicationModel.Background;
+global using Windows.ApplicationModel.ExtendedExecution;

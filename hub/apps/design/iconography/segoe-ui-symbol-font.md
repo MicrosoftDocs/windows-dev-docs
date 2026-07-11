@@ -30,7 +30,7 @@ Unlike with `Segoe UI Symbol`, the icons in the `Segoe MDL2 Assets` font are not
 
 ## Layering and mirroring
 
-All glyphs in `Segoe MDL2 Assets` have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other. This example show a black outline drawn on top of the zero-width red heart.
+All glyphs in `Segoe MDL2 Assets` have the same fixed width with a consistent height and left origin point, so layering and colorization effects can be achieved by drawing glyphs directly on top of each other. This example shows a black outline drawn on top of the zero-width red heart.
 
 :::image type="content" border="false" source="images/segoe-ui-symbol-layering.png" alt-text="Screenshot of using a zero-width glyph.":::
 

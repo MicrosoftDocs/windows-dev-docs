@@ -49,7 +49,7 @@ If your application was previously distributed on the web or if you intend to di
 
 Microsoft Store has allowed unpackaged applications since June 2021. To publish your application on the Store, you only need to share a link to your installer through the Partner Center and provide some additional information. Once your installer has been tested by our certification team and the submission is published, users will be able to locate your application in the Store and proceed with the installation.
 
-For your installer to be accepted, it must adhere to the following recommendations:
+For your installer to be accepted, it must adhere to the following requirements:
 - Must be a .msi or a .exe installer.
 - Must be offline
 - The binary hosted by the shared URL should remain unchanged.
