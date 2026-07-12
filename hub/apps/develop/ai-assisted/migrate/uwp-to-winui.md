@@ -2,7 +2,7 @@
 title: Migrate a UWP app to WinUI 3
 description: Port a UWP app to WinUI 3 using AI assistance, with an API substitution table for namespaces, controls, threading, windowing, and notifications.
 ms.topic: how-to
-ms.date: 07/05/2026
+ms.date: 07/12/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -115,6 +115,78 @@ The following tables summarize the most common API substitutions. For the full d
 
 `Windows.Devices.*`, `Windows.Media.*`, `Windows.UI.ViewManagement.UISettings`, `Windows.UI.Color`, and most WinRT APIs outside the XAML namespace are unchanged.
 
+### Controls without a direct equivalent
+
+Some UWP controls don't exist in WinUI 3. Choose a replacement based on your scenario:
+
+| UWP control | WinUI 3 replacement | Notes |
+|-------------|---------------------|-------|
+| `Pivot` | `TabView`, `NavigationView` (top mode), or `RadioButtons` + visibility | For 2–3 fixed tabs, `RadioButtons` with visibility switching is simplest. For dynamic/closeable tabs, use `TabView`. |
+| `InkToolbar` (custom subclass) | `CommandBar` with `AppBarToggleButton` items | The built-in `InkToolbar` exists but custom subclassing patterns don't translate cleanly. Rebuild custom toolbars using `CommandBar`. |
+| `RadialController` | WinRT interop with window handle | `RadialController.CreateForCurrentView()` has no direct equivalent. Use `RadialControllerInterop` with `GetForWindow(hwnd)`. |
+| `SystemNavigationManager` | Custom back button or `NavigationView.IsBackEnabled` | `SystemNavigationManager.GetForCurrentView()` doesn't exist. Add your own back button or use `NavigationView`'s built-in back button. |
+
+## Ink, Win2D, and printing
+
+These subsystems require specific migration steps beyond namespace changes.
+
+### Windows Ink
+
+The `InkCanvas` and `InkPresenter` APIs move to `Microsoft.UI.Input.Inking` but are otherwise identical. The one non-obvious change is `CoreInputDeviceTypes`:
+
+| UWP | WinUI 3 |
+|-----|---------|
+| `Windows.UI.Input.Inking.*` | `Microsoft.UI.Input.Inking.*` |
+| `Windows.UI.Core.CoreInputDeviceTypes` | `Microsoft.UI.Core.CoreInputDeviceTypes` |
+
+`InkStrokeContainer.SaveAsync()` and `LoadAsync()` still require `IRandomAccessStream`. Bridge from `System.IO` streams:
+
+```csharp
+// Saving ink strokes to a file using System.IO
+using var memoryStream = new MemoryStream();
+using var ras = memoryStream.AsRandomAccessStream();
+await inkStrokeContainer.SaveAsync(ras);
+await File.WriteAllBytesAsync(filePath, memoryStream.ToArray());
+
+// Loading ink strokes from a file
+var bytes = await File.ReadAllBytesAsync(filePath);
+using var ms = new MemoryStream(bytes);
+using var ras = ms.AsRandomAccessStream();
+await inkStrokeContainer.LoadAsync(ras);
+```
+
+### Win2D
+
+The Win2D package name changed but the API surface is identical:
+
+| UWP | WinUI 3 |
+|-----|---------|
+| `Win2D.uwp` (NuGet) | `Microsoft.Graphics.Win2D` (NuGet) |
+
+All `Microsoft.Graphics.Canvas.*` APIs (`CanvasDevice`, `CanvasBitmap`, `CanvasRenderTarget`, `DrawInk`) work the same way. Only the NuGet package reference needs updating.
+
+### Printing
+
+UWP printing uses `PrintManager.GetForCurrentView()`. WinUI 3 requires window-handle interop:
+
+```csharp
+// UWP
+var printManager = PrintManager.GetForCurrentView();
+printManager.PrintTaskRequested += OnPrintTaskRequested;
+await PrintManager.ShowPrintUIAsync();
+
+// WinUI 3 — must pass window handle
+var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
+var printManager = PrintManagerInterop.GetForWindow(hwnd);
+printManager.PrintTaskRequested += OnPrintTaskRequested;
+await PrintManagerInterop.ShowPrintUIForWindowAsync(hwnd);
+```
+
+The `PrintDocument` rendering APIs (`Paginate`, `GetPreviewPage`, `AddPages`) are unchanged.
+
+> [!IMPORTANT]
+> If you omit the window handle, `PrintManagerInterop.GetForWindow` throws a `COMException`. This is the same interop pattern as `FileOpenPicker` — any API that used `GetForCurrentView()` in UWP needs a window handle in WinUI 3.
+
 ## Starter prompt
 
 ```
@@ -129,6 +201,11 @@ Apply these substitutions:
 - FileOpenPicker / FileSavePicker / FolderPicker → add InitializeWithWindow
 - Windows.UI.Notifications → Microsoft.Windows.AppNotifications
 - SystemNavigationManager.BackRequested → NavigationView back handling
+- Pivot → TabView, NavigationView (top mode), or RadioButtons (no direct equivalent)
+- InkToolbar custom subclasses → rebuild as CommandBar with AppBarToggleButton
+- PrintManager.GetForCurrentView → PrintManagerInterop.GetForWindow(hwnd)
+- Win2D.uwp NuGet → Microsoft.Graphics.Win2D NuGet
+- Windows.UI.Input.Inking.* → Microsoft.UI.Input.Inking.*
 
 Do not use any Windows.UI.Xaml.* namespaces in new code.
 Do not use CoreDispatcher — use DispatcherQueue.
