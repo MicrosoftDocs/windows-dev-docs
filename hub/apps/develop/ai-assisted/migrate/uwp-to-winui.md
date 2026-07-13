@@ -25,6 +25,9 @@ See the [WinUI agent plugin](../winui-agent-plugin.md) for full details.
 
 The following tables summarize the most common API substitutions. For the full detailed mapping — including members, properties, and less common APIs — see [Mapping UWP APIs and libraries to the Windows App SDK](../../../windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md).
 
+> [!IMPORTANT]
+> **`x:Bind` defaults to `OneTime` mode.** Unlike `{Binding}` (which defaults to `OneWay`), `x:Bind` only evaluates once unless you specify `Mode=OneWay` or `Mode=TwoWay`. During migration, audit all `x:Bind` expressions that bind to properties that change at runtime — missing `Mode=OneWay` causes "UI doesn't update" bugs that are invisible at compile time.
+
 ### Namespaces
 
 | UWP | WinUI 3 |
@@ -84,6 +87,17 @@ The following tables summarize the most common API substitutions. For the full d
 | `Windows.UI.Notifications.BadgeUpdateManager` | `Microsoft.Windows.BadgeNotifications.BadgeNotificationManager` |
 | `Windows.UI.Notifications.TileUpdateManager` | Tiles are deprecated — use notifications or widgets |
 
+### Networking and HTTP
+
+| UWP | WinUI 3 (recommended) |
+|-----|------------------------|
+| `Windows.Web.Http.HttpClient` | `System.Net.Http.HttpClient` (portable, no WinRT dependency) |
+| `Windows.Web.Syndication.SyndicationClient` | `System.ServiceModel.Syndication.SyndicationFeed` + `HttpClient` |
+| `Windows.Web.AtomPub.AtomPubClient` | `System.ServiceModel.Syndication` or direct HTTP |
+
+> [!NOTE]
+> The WinRT HTTP APIs (`Windows.Web.Http`) still work in packaged WinUI 3 apps, but the .NET equivalents are recommended for portability, simpler debugging, and broader ecosystem support (middleware, DI, mocking).
+
 ### Navigation
 
 | UWP | WinUI 3 |
@@ -91,6 +105,25 @@ The following tables summarize the most common API substitutions. For the full d
 | `Frame.Navigate(typeof(MyPage))` | `Frame.Navigate(typeof(MyPage))` — unchanged |
 | `SystemNavigationManager.BackRequested` | Handle via `NavigationView` or `AppWindow` |
 | `Windows.UI.Core.Preview.SystemNavigationManagerPreview` | `AppWindow.Closing` event |
+
+> [!NOTE]
+> **Custom hamburger navigation (SplitView + NavMenuListView):** Many UWP samples implemented navigation using a custom `AppShell.xaml` with `SplitView` and a hand-rolled `NavMenuListView` control (~500+ lines). In WinUI 3, replace this entire pattern with [NavigationView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview), which provides the same UX with built-in accessibility, responsive behavior, and back-button support. This is typically an 80% code reduction.
+
+### MVVM patterns
+
+| UWP (common custom implementations) | WinUI 3 (recommended) |
+|--------------------------------------|------------------------|
+| Custom `BindableBase` / `ObservableObject` | `CommunityToolkit.Mvvm.ComponentModel.ObservableObject` |
+| Custom `DelegateCommand` / `RelayCommand` | `CommunityToolkit.Mvvm.Input.RelayCommand` |
+| Manual `SetProperty` + `OnPropertyChanged` | `[ObservableProperty]` source generator |
+| Custom `INavigationService` | Built-in `Frame.Navigate` + `NavigationView` |
+
+> [!TIP]
+> The [CommunityToolkit.Mvvm](/dotnet/communitytoolkit/mvvm/) NuGet package is the recommended MVVM foundation for WinUI 3 apps. It replaces hand-rolled base classes with tested, source-generated equivalents — eliminating hundreds of lines of boilerplate.
+>
+> ```powershell
+> dotnet add package CommunityToolkit.Mvvm
+> ```
 
 ### App lifecycle
 
@@ -105,11 +138,29 @@ The following tables summarize the most common API substitutions. For the full d
 
 ### Settings and storage
 
-| UWP | WinUI 3 |
-|-----|---------|
-| `ApplicationData.Current.LocalSettings` | Unchanged |
-| `ApplicationData.Current.LocalFolder` | Unchanged |
-| `Windows.Storage.KnownFolders` | Unchanged |
+| UWP | WinUI 3 (packaged) | WinUI 3 (unpackaged) |
+|-----|---------------------|----------------------|
+| `ApplicationData.Current.LocalSettings` | Unchanged | ❌ Throws — no package identity |
+| `ApplicationData.Current.LocalFolder` | Unchanged | ❌ Throws — no package identity |
+| `Windows.Storage.KnownFolders` | Unchanged | ❌ Throws — no package identity |
+
+> [!WARNING]
+> **Unpackaged apps** cannot use `ApplicationData.Current` — it throws at runtime because there is no package identity. Use standard .NET file APIs instead:
+>
+> ```csharp
+> var appData = Path.Combine(
+>     Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
+>     "YourAppName");
+> Directory.CreateDirectory(appData);
+> var json = JsonSerializer.Serialize(data);
+> await File.WriteAllTextAsync(Path.Combine(appData, "settings.json"), json);
+> ```
+
+> [!NOTE]
+> If your UWP app used `DataContractSerializer` with `[DataMember]`/`[IgnoreDataMember]`, consider migrating to `System.Text.Json` (faster, smaller, source-gen support). The attribute mapping is:
+> - `[DataMember]` → `[JsonPropertyName("name")]` (or just use property names directly)
+> - `[IgnoreDataMember]` → `[JsonIgnore]`
+> - `[DataContract]` → No equivalent needed (System.Text.Json serializes public properties by default)
 
 ### APIs that don't change
 
@@ -209,6 +260,7 @@ Apply these substitutions:
 
 Do not use any Windows.UI.Xaml.* namespaces in new code.
 Do not use CoreDispatcher — use DispatcherQueue.
+x:Bind defaults to Mode=OneTime. Add Mode=OneWay for any binding that should update at runtime.
 Flag any APIs without a direct WinUI 3 equivalent rather than guessing.
 ```
 
