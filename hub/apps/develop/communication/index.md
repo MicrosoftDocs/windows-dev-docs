@@ -2,16 +2,17 @@
 title: Communication features for Windows apps
 description: Discover communication features and APIs for Windows apps, including networking, data sharing, and interprocess communication. Learn how to implement these capabilities.
 ms.topic: concept-article
-ms.date: 10/13/2025
+ms.date: 07/12/2026
 # Customer intent: As a Windows app developer, I want to learn about communication features and APIs that I can use in my Windows apps.
 ---
 
 # Communication
 
-Communication features enable Windows apps to share data, connect over networks, and interact with other applications. This article provides an index of development features for implementing communication scenarios in Windows apps.
+The Windows App SDK doesn't include its own IPC or networking APIs. Instead, Windows App SDK desktop apps use the mechanisms provided by the Windows SDK and the .NET runtime: OS-level IPC (such as named pipes, out-of-process COM, shared memory, and RPC), and networking APIs from Win32 (Winsock, WinHTTP), WinRT (such as `Windows.Networking.Sockets` and `Windows.Web.Http`), or .NET (such as `HttpClient` and `System.Net.Sockets`).
 
-> [!NOTE]
-> The [Windows App SDK](../../windows-app-sdk/index.md) currently does not provide APIs related to communication scenarios. However, in Windows 11 you can share data between apps by integrating with the [Windows Share Sheet](../windows-integration/integrate-sharesheet-overview.md) in packaged and unpackaged desktop apps.
+Because these apps run as full-trust Win32 processes, the Win32 IPC and networking APIs work without any additional SDK dependency, whether or not the app has package identity. The WinRT networking APIs also work in this configuration; note that some other WinRT APIs do require package identity.
+
+For sharing data between apps, Windows 11 also supports integration with the [Windows Share Sheet](../windows-integration/integrate-sharesheet-overview.md). A packaged or unpackaged desktop app can *send* content to the Share Sheet by using the `IDataTransferManagerInterop` pattern. To *receive* shared content by registering as a Share Target, an unpackaged app must first be granted package identity.
 
 ## Windows OS features
 
@@ -25,9 +26,9 @@ The following articles provide information about features available via WinRT AP
 |---------|-------------|
 | [Copy and paste](copy-and-paste.md) | Learn how to implement copy and paste functionality in your WinUI, UWP, or other desktop app using the clipboard. |
 | [App-to-app communication](/windows/uwp/app-to-app/) | Learn how to share data between apps, including how to use the Share contract, copy and paste, drag and drop, and app services. |
-| [Interprocess communication](/windows/uwp/communication/interprocess-communication) | Learn about ways to perform interprocess communication (IPC) between UWP apps, packaged desktop apps, and unpackaged desktop apps. |
-| [Networking and web services](/windows/uwp/networking/) | Learn about networking and web services technologies that are available to apps. |
-| [Sharing named objects](/windows/uwp/communication/sharing-named-objects) | Learn how to share named objects between UWP apps, packaged desktop apps, and unpackaged desktop apps. |
+| [Interprocess communication](interprocess-communication.md) | Learn about ways to perform interprocess communication (IPC) between Windows App SDK desktop apps and other Win32 applications. |
+| [Networking and web services](../networking/index.md) | Learn about networking and web services technologies that are available to apps. |
+| [Sharing named objects](sharing-named-objects.md) | Learn how to share named objects between packaged desktop apps and unpackaged Win32 applications. |
 
 #### Win32 (C++ and COM) APIs
 
@@ -50,7 +51,7 @@ The .NET SDK also provides APIs related to communication scenarios for WPF and W
 
 ## Related content
 
-[App-to-app communication](/windows/uwp/app-to-app/)
+[Interprocess communication](interprocess-communication.md)
 
 [Develop Windows desktop apps](../index.md)
 
