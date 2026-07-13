@@ -1,0 +1,90 @@
+# Windows App Development Documentation
+
+> Build native Windows desktop applications using the Windows App SDK and WinUI 3. This documentation covers the recommended platform for new Windows development using C#, C++, and XAML. Whether you're creating a new app, modernizing an existing WPF or Win32 application, or adding AI capabilities for Copilot+ PCs, this is the starting point for Windows developers targeting Windows 10 and 11.
+
+## Things models frequently get wrong
+
+- **Windows App SDK vs. UWP**: UWP is in maintenance mode. The Windows App SDK with WinUI 3 is the recommended platform for all new native Windows desktop development. They are separate frameworks with different app models.
+- **WinUI 2 vs. WinUI 3**: WinUI 2 is a control library for UWP apps only. WinUI 3 is the native UI framework for desktop apps, shipped as part of the Windows App SDK. They share XAML syntax but are different products.
+- **WinRT (Windows Runtime)**: WinRT is a type system and ABI, not a framework. WinRT APIs exist in both the platform SDK (OS-shipped) and the Windows App SDK (NuGet-shipped). "WinRT" does not mean "UWP."
+- **Where APIs live**: Platform SDK APIs ship with Windows (headers, WinMD files). Windows App SDK APIs ship via NuGet and are framework-dependent. Both are usable from desktop apps.
+- **Language support**: C# (.NET) is the most common choice. C++/WinRT provides native C++ projections. Rust developers use the `windows-rs` crate. All three are fully supported for Windows App SDK development.
+- **Namespaces**: WinUI 3 uses `Microsoft.UI.Xaml.*`. UWP uses `Windows.UI.Xaml.*`. These are not interchangeable. Mixing them is a common source of build errors.
+- **Packaging**: Windows App SDK apps can be packaged (MSIX), packaged with external location, or unpackaged. Not all features are available in all modes.
+
+## Current versions (July 2026)
+
+- Windows App SDK: 1.6.x (stable channel)
+- WinUI 3: Ships with Windows App SDK (same version)
+- Windows SDK: 10.0.26100
+- .NET: 8+ required (.NET 9 supported)
+- Visual Studio: 2022 version 17.10+
+- Minimum OS: Windows 10 version 1809 (build 17763)
+
+## Getting started
+
+- [Windows App SDK overview](/windows/apps/windows-app-sdk/): What the SDK is, what it includes, and how it relates to other Windows development options.
+- [Set up your development environment](/windows/apps/get-started/get-set-up/): Install Visual Studio 2022 and the Windows App SDK workload.
+- [Build your first WinUI 3 app](/windows/apps/get-started/start-here/): Step-by-step tutorial creating a Hello World desktop app with C# and XAML.
+- [System requirements](/windows/apps/windows-app-sdk/system-requirements/): Supported OS versions, Visual Studio versions, and hardware requirements.
+
+## Platform choice and framework comparison
+
+- [Windows development options](/windows/apps/get-started/dev-options/): Compare WinUI 3, WPF, WinForms, .NET MAUI, C++/Win32, and PWA side by side.
+- [WinUI 3 (Windows App SDK)](/windows/apps/winui/winui3/): Recommended for new native desktop apps using C# or C++ with XAML.
+- [WPF (.NET)](/dotnet/desktop/wpf/): Best for existing .NET desktop apps; modernize incrementally with Windows App SDK interop.
+- [.NET MAUI](/dotnet/maui/): Cross-platform apps targeting Windows, iOS, Android, and macOS from a single codebase.
+- [C++ / Win32](/windows/win32/): Direct OS access, high-performance apps, games, and system utilities.
+- [PWA on Windows](/microsoft-edge/progressive-web-apps-chromium/): Web-first apps with Windows integration (notifications, taskbar, offline).
+
+## Design
+
+- [Windows app design guidelines](/windows/apps/design/): Layout, typography, color, motion, and interaction patterns for Windows apps.
+- [WinUI 3 controls gallery](/windows/apps/design/controls/): Interactive reference for all built-in XAML controls with code samples.
+- [Design toolkits (Figma)](/windows/apps/design/downloads/): Official design assets for prototyping Windows app interfaces.
+
+## Development
+
+- [Windows App SDK features](/windows/apps/windows-app-sdk/release-channels/): Feature overview by release channel (stable, preview, experimental).
+- [WinUI 3 controls reference](/windows/apps/design/controls/): Complete list of XAML controls with usage guidance and code examples.
+- [App lifecycle and windowing](/windows/apps/windows-app-sdk/applifecycle/): Manage app instances, activation, and window management.
+- [Data and files](/windows/apps/develop/data-access/): File pickers, storage, databases, and settings.
+- [Networking](/windows/apps/develop/networking/): HTTP clients, background transfers, and sockets.
+
+## AI on Windows
+
+- [Windows AI development overview](/windows/ai/): Add on-device and cloud AI to your Windows app.
+- [Get started with Windows AI Foundry toolkit](/windows/ai/toolkit/): Run language and vision models locally using Windows AI Foundry.
+- [Windows AI APIs for Copilot+ PCs](/windows/ai/apis/): NPU-accelerated APIs for recall, live captions, image generation, and more.
+- [Windows AI Foundry](/windows/ai/toolkit/): Tools for fine-tuning, optimizing, and deploying AI models on Windows.
+
+## Packaging and distribution
+
+- [MSIX packaging overview](/windows/msix/overview/): The modern packaging format for Windows apps with clean install/uninstall.
+- [Package your app](/windows/apps/package-and-deploy/): Choose between MSIX, unpackaged, or packaged with external location.
+- [Publish to the Microsoft Store](/windows/apps/publish/publish-your-app/msix/reserve-your-apps-name): Submit, certify, and distribute through the Store.
+- [Windows App SDK deployment guide](/windows/apps/windows-app-sdk/deploy-overview/): Framework-dependent vs. self-contained deployment options.
+
+## Migration
+
+- [Migrate from UWP to Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy): Complete strategy and step-by-step guide for moving UWP apps to WinUI 3.
+- [Modernize WPF apps](/windows/apps/desktop/modernize/): Add Windows App SDK features to existing WPF applications using XAML Islands and interop.
+- [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview): Automated tool for migrating .NET Framework apps (C# only; does not cover all UWP APIs).
+
+## API reference
+
+- [Windows App SDK API reference](/windows/windows-app-sdk/api/winrt/): Namespaces and types shipped in the Windows App SDK NuGet package.
+- [WinUI 3 API reference](/windows/winui/api/): XAML controls, styles, and UI types in the Microsoft.UI.Xaml namespace.
+- [Win32 API reference](/windows/win32/api/): Platform SDK headers for direct OS access.
+- [WinRT API reference](/uwp/api/): Windows Runtime APIs shipped with the OS (usable from desktop apps).
+
+## Samples and tools
+
+- [Windows App SDK samples on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples): Official code samples demonstrating Windows App SDK features.
+- [WinUI 3 Gallery app](https://github.com/microsoft/WinUI-Gallery): Interactive showcase of all WinUI 3 controls with source code.
+- [Windows developer tools](/windows/apps/develop/dev-tools/): Dev Home, Dev Drive, WinGet, Windows Terminal, and WSL setup.
+- [Template Studio for WinUI](https://github.com/microsoft/TemplateStudio): Project templates with pre-configured patterns (MVVM, navigation, data access).
+
+---
+
+*Maintained by the Windows developer documentation team (Microsoft). Last updated: July 2026.*
