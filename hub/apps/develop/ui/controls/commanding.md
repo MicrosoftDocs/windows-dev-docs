@@ -2,7 +2,7 @@
 title: Commanding in Windows apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 ms.topic: overview
-ms.date: 07/08/2026
+ms.date: 07/09/2026
 ms.localizationpriority: medium
 ---
 
@@ -89,9 +89,8 @@ A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input
 
 *StandardUICommandSample*
 
-| Download the code for this example |
-| -------------------- |
-| [Commanding sample (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip) |
+> [!div class="nextstepaction"]
+> [Download the code for this example (StandardUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-standarduicommand.zip)
 
 In this example, we show how to enhance a basic [ListView](listview-and-gridview.md) with a Delete item command implemented through the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class, while optimizing the user experience for a variety of input types using a [MenuBar](menus.md), [Swipe](swipe.md) control, hover buttons, and [context menu](menus.md).
 
@@ -369,9 +368,8 @@ If you need to create a command that isn't defined by the [StandardUICommand](/w
 
 *XamlUICommandSample*
 
-| Download the code for this example |
-| -------------------- |
-| [Commanding sample (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip) |
+> [!div class="nextstepaction"]
+> [Download the code for this example (XamlUICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-xamluicommand.zip)
 Many platform controls use the XamlUICommand properties under the covers, just like our StandardUICommand example in the previous section. 
 
 **Xaml:**
@@ -613,9 +611,8 @@ The most basic way to support a structured commanding experience is to define an
 
 *ICommand example*
 
-| Download the code for this example |
-| -------------------- |
-| [Commanding sample (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip) |
+> [!div class="nextstepaction"]
+> [Download the code for this example (ICommand)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-commanding-icommand.zip)
 
 In this basic example, we demonstrate how a single command can be invoked with a button click, a keyboard accelerator, and rotating a mouse wheel.
 
