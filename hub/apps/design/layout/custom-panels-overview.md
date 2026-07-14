@@ -1,22 +1,13 @@
 ---
 description: You can define custom panels for XAML layout by deriving a custom class from the Panel class.
-MS-HAID: dev\_ctrl\_layout\_txt.xaml\_custom\_panels\_overview
-MSHAttr: PreferredLib:/library/windows/apps
-Search.Product: eADQiWindows 10XVcnh
 title: XAML custom panels overview
-ms.assetid: 0CD395CD-E2AB-429D-BB49-56A71C5CC35D
-label: XAML custom panels overview (Windows apps)
-template: detail.hbs
-op-migration-status: ready
-ms.date: 05/19/2017
+ms.date: 07/13/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
 # XAML custom panels overview
 
- 
-
-A *panel* is an object that provides a layout behavior for child elements it contains, when the Extensible Application Markup Language (XAML) layout system runs and your app UI is rendered. 
+A *panel* is an object that provides a layout behavior for child elements it contains, when the Extensible Application Markup Language (XAML) layout system runs and your app UI is rendered.
 
 
 > **Important APIs**: [**Panel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Panel), [**ArrangeOverride**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.arrangeoverride), [**MeasureOverride**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.measureoverride)
