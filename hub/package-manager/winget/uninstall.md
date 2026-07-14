@@ -102,4 +102,4 @@ If the query provided to **winget** does not result in a single application to u
 
 ## Uninstalling apps not installed with Windows Package Manager
 
-As mentioned in [**list**](.\list.md), the **winget list** command will display more than just apps installed with the **winget**. You may still use winget commands to remove these apps from your device.
+As mentioned in [**list**](list.md), the **winget list** command will display more than just apps installed with the **winget**. You may still use winget commands to remove these apps from your device.
