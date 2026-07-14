@@ -2,8 +2,7 @@
 title: Windows Developer Support
 description: Find help and resources for developing Windows applications, including getting started guides, developer tools, community channels, and Microsoft support options.
 ms.topic: overview
-ms.date: 06/09/2026
-ms.collection: collection
+ms.date: 07/13/2026
 ms.localizationpriority: medium
 ---
 
@@ -11,7 +10,7 @@ ms.localizationpriority: medium
 
 Whether you're just getting started or you're a professional developer troubleshooting a tricky issue, you're not alone. Connect with the Windows developer community, access expert resources, and find solutions to help you build great apps.
 
-:::image type="content" source="images/help-request-sticky-note-small.png" alt-text="Sticky note with the word HELP written on it.":::
+:::image type="content" source="images/developer-at-work.png" alt-text="Developer drinking coffee while reviewing code on dual monitors.":::
 
 ## Quick guide
 
@@ -46,6 +45,7 @@ These tools help you build, package, and ship Windows apps from any editor or fr
 - **[WinApp VS Code extension](https://devblogs.microsoft.com/ifdef-windows/announcing-the-winapp-vs-code-extension-run-debug-and-package-windows-apps-in-vs-code/)** *(preview)* - Run, debug, and package Windows apps directly in VS Code.
 - **[WinUI agent plugin for GitHub Copilot and Claude Code](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/)** *(open-source, preview)* - AI-assisted scaffolding, building, and iteration for WinUI apps.
 - **[AI Dev Gallery](https://github.com/microsoft/ai-dev-gallery)** *(open-source)* - Interactive samples for on-device AI on Windows, including Windows AI APIs.
+- **[Dev Home](https://github.com/microsoft/devhome)** *(open-source)* - Set up your development environment, manage dev drives, and monitor system performance.
 
 ## Documentation and reference
 

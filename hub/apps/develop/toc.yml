@@ -348,6 +348,10 @@ items:
             href: data/drag-and-drop.md
           - name: Copy and paste
             href: communication/copy-and-paste.md
+          - name: Interprocess communication
+            href: communication/interprocess-communication.md
+          - name: Sharing named objects
+            href: communication/sharing-named-objects.md
           - name: Data access
             items:
               - name: Overview
