@@ -591,10 +591,10 @@ For info about how to change the look of selected items, see [Item containers an
 
 ### Drag and drop
 
-ListView and GridView controls support dragging and dropping items within their own controls, and between themselves and other ListView and GridView controls. For more info about implementing drag and drop functionality, see [Drag and drop](../../../design/input/drag-and-drop.md).
+ListView and GridView controls support dragging and dropping items within their own controls, and between themselves and other ListView and GridView controls. For more info about implementing drag and drop functionality, see [Drag and drop](../../data/drag-and-drop.md).
 
 ## Related articles
 
 - [Lists](lists.md)
 - [Item containers and templates](item-containers-templates.md)
-- [Drag and drop](../../../design/input/drag-and-drop.md)
+- [Drag and drop](../../data/drag-and-drop.md)

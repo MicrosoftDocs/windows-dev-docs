@@ -39,7 +39,7 @@ The image below shows the parts of the `BreadcrumbBar` control. You can modify t
 ## Recommendations
 
 - Use a breadcrumb bar when you have many levels of navigation and expect users to be able to return to any previous level.
-- Don't use a breadcrumb bar if you only have 2 possible levels of navigation. Simple [back navigation](../../../design/basics/navigation-history-and-backwards-navigation.md) is sufficient.
+- Don't use a breadcrumb bar if you only have 2 possible levels of navigation. Simple [back navigation](../navigation/navigation-history-and-backwards-navigation.md) is sufficient.
 - Show the current location as the last item in the breadcrumb bar. However, you typically don't want to perform any navigation if the user clicks the current item. (If you want to let the user reload the current page or data, consider providing a dedicated 'reload' option.)
 
 ## Create a breadcrumb bar

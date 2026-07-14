@@ -155,5 +155,5 @@ Button1().Click({ this, &MainPage::Button1_Click });
 - [Index of controls by function](index.md)
 - [Microsoft.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
 - [Layout](../../../design/layout/index.md)
-- [Style](../../../design/style/index.md)
+- [Style](../../../design/index.md)
 - [Usability](../../../design/usability/index.md)

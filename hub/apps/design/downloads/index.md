@@ -16,8 +16,8 @@ The Windows type system helps you create structure and hierarchy in your content
 The following fonts are recommended:
 
 - [Segoe UI Variable](https://aka.ms/SegoeUIVariable) (see [Typography in Windows](../signature-experiences/typography.md))
-- [Segoe Fluent Icons](https://aka.ms/SegoeFluentIcons) (see [Segoe Fluent Icons font](../style/segoe-fluent-icons-font.md))
-- [Segoe MDL2](https://aka.ms/segoemdl2) (see [Segoe MDL2 Assets icons](../style/segoe-ui-symbol-font.md))
+- [Segoe Fluent Icons](https://aka.ms/SegoeFluentIcons) (see [Segoe Fluent Icons font](../iconography/segoe-fluent-icons-font.md))
+- [Segoe MDL2](https://aka.ms/segoemdl2) (see [Segoe MDL2 Assets icons](../iconography/segoe-ui-symbol-font.md))
 
 ## Windows UI Kit
 

@@ -28,7 +28,7 @@ Windows 11 offers a visual evolution of the Windows operating system that improv
 
 When applications adhere to Windows styles and standard Windows behaviors, users don't have to re-learn interaction patterns. This consistency makes it much easier for users to use your app. An app that looks great can create a great first impression, but an app that's also easy to use and helps the user accomplish their goals creates a great lasting impression.
 
-Windows 11 is built on the [Windows 11 design principles](../design/signature-experiences/design-principles.md). Following these guidelines as you build your apps helps you meet your customers' expectations of a great app experience. When thinking about incorporating the latest and recommended Windows application UI/UX patterns into your Windows applications, focus on these five areas:
+Windows 11 is built on the [Windows 11 design principles](../design/index.md). Following these guidelines as you build your apps helps you meet your customers' expectations of a great app experience. When thinking about incorporating the latest and recommended Windows application UI/UX patterns into your Windows applications, focus on these five areas:
 
 - Layout
 - UI interaction
@@ -36,7 +36,7 @@ Windows 11 is built on the [Windows 11 design principles](../design/signature-ex
 - Window behavior
 - Shell integration points
 
-[WinUI](../winui/index.md) provides built-in support for many of these experiences and styles through its common controls. If you can't use WinUI, consider emulating the styles demonstrated in our [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+[WinUI](../winui/winui3/index.md) provides built-in support for many of these experiences and styles through its common controls. If you can't use WinUI, consider emulating the styles demonstrated in our [design toolkits](https://aka.ms/WinUI/3.0-figma-toolkit) and [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 ### Layout
 
@@ -68,7 +68,7 @@ It's uncommon for an application's UI to fit entirely inside a single page that 
 
 ### Visual style
 
-Windows 11 is built on the [Windows 11 design principles](../design/signature-experiences/design-principles.md): Effortless, Calm, Personal, Familiar, and Complete + Coherent. Experiences that follow these principles bring great user experiences on Windows.
+Windows 11 is built on the [Windows 11 design principles](../design/index.md): Effortless, Calm, Personal, Familiar, and Complete + Coherent. Experiences that follow these principles bring great user experiences on Windows.
 
 #### Materials: Acrylic and Mica
 
@@ -101,7 +101,7 @@ WinUI supports switching between Dark and Light themes by default (see [XAML the
 
 Windows 11 brings beautiful UI innovations to the Windows operating system that you can leverage in your apps. [Windows 11 geometry](../design/signature-experiences/geometry.md) supports modern app experiences. Progressively rounded corners, nested elements, and consistent gutters combine to create a soft, calm, and approachable effect that emphasizes unity of purpose and ease of use.
 
-The visual and behavioral changes are built in to [WinUI](../winui/index.md). Use WinUI where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
+The visual and behavioral changes are built in to [WinUI](../winui/winui3/index.md). Use WinUI where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 [Common controls](../develop/ui/controls/index.md) are one way that you can utilize these updates immediately. Use the latest common controls whenever possible to get the benefits of compatibility and accessibility for free. And these common controls are more cost effective than building your own custom controls when you factor in maintenance and testing costs.
 
@@ -143,7 +143,7 @@ For Windows 11, we improved the behavior of the Share dialog in several ways.
 
 #### Iconography and typography
 
-Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/signature-experiences/iconography.md), improved support for [animated icons](../develop/ui/controls/animated-icon.md), and a [new UI font ("Segoe UI Variable")](../design/signature-experiences/typography.md). Use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.
+Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/iconography/index.md), improved support for [animated icons](../develop/ui/controls/animated-icon.md), and a [new UI font ("Segoe UI Variable")](../design/signature-experiences/typography.md). Use these new icons and font whenever possible to be coherent on Windows 11. The new font brings much softer geometry and makes the text much more legible.
 
 ![An image of a selection of windows icons.](images/great-apps/icons.png)
 
@@ -212,26 +212,26 @@ Windows users expect Windows apps to exhibit great performance and fundamentals.
 
 Following the best practices in this section helps you meet your customers' expectations across these criteria.
 
-- [Minimize application memory usage](../performance/disk-memory.md):
+- [Minimize application memory usage](../develop/performance/disk-memory.md):
   - Reduce foreground memory usage.
   - Minimize background work.
   - Release resources while in the background.
   - Ensure your application doesn't leak memory.
 
-- [Make efficient use of the disk footprint](../performance/disk-memory.md#efficiently-use-disk-space):
+- [Make efficient use of the disk footprint](../develop/performance/disk-memory.md#efficiently-use-disk-space):
   - Enable "pay for play" for optional functionality.
   - Ensure any caches are sized efficiently.
   - Implement new experiences in a disk-efficient manner.
   - Optimize individual binary sizes where possible.
 
-- [Improve power consumption and battery life by minimizing background work](../performance/power.md):
+- [Improve power consumption and battery life by minimizing background work](../develop/performance/power.md):
   - Don't wake the CPU or use system resources while in the background.
 
-- [Improve the responsiveness of your app's launch and key interactions](../performance/responsive.md):
+- [Improve the responsiveness of your app's launch and key interactions](../develop/performance/responsive.md):
   - Define your key interaction scenarios and add ETW events to measure.
   - Set goals based on the interaction class associated with user expectations.
 
-For more information, see the [Performance and fundamentals overview](../performance/index.md). This article answers questions such as "What is application performance and why is it important?" and "What tools can I use to measure Windows application performance?" It also links to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability by reducing the impact your application has on our planet.
+For more information, see the [Performance and fundamentals overview](../develop/performance/index.md). This article answers questions such as "What is application performance and why is it important?" and "What tools can I use to measure Windows application performance?" It also links to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability by reducing the impact your application has on our planet.
 
 ## Operating system and hardware optimization
 
@@ -418,5 +418,5 @@ Your privacy policy must:
 
 ## Related articles
 
-- [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI project](./start-here.md)
 - [Windows Developer FAQ](./windows-developer-faq.md)

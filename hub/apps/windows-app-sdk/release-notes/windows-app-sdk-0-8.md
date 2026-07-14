@@ -214,14 +214,14 @@ This release supports all [stable channel features](../../windows-app-sdk/releas
 >
 > - The `AcrylicBrush.BackgroundSource` property has been removed, since `HostBackdrop` is not supported as a `BackgroundSource` in WinUI 3.
 >
-> For more information on WinUI, see [WinUI](../../winui/index.md).
+> For more information on WinUI, see [WinUI](../../winui/winui3/index.md).
 >
 > To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery app [from GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main), or download the app [from the Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 >
 > To get started developing with WinUI, check out the following articles:
 >
-> - [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md)
-> - [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
+> - [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md)
+> - [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md)
 > - [Build a C# .NET app with WinUI 3 and Win32 interop](../../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 > - [WinUI 3 API Reference](/windows/winui/api)
 
@@ -301,7 +301,7 @@ This release supports all [stable channel features](../../windows-app-sdk/releas
 
 <details><summary>WinUI 3</summary>
 
-> This release introduces critical bug fixes (including those fixed in 0.5 servicing releases) and other changes for WinUI. For a complete list, see the [Overview and release notes: WinUI 3 - Project Reunion 0.8 Preview (May 2021)](../../winui/winui3/release-notes/release-notes-08-preview.md).
+> This release introduces critical bug fixes (including those fixed in 0.5 servicing releases) and other changes for WinUI. For a complete list, see the [Overview and release notes: WinUI 3 - Project Reunion 0.8 Preview (May 2021)](/windows/apps/windows-app-sdk/release-notes/project-reunion-0-8-preview).
 
 </details>
 
@@ -354,7 +354,7 @@ This release supports all [stable channel features](../../windows-app-sdk/releas
 
 <details><summary>Limitations and known issues</summary>
 
-> - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
+> - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 > - **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 
 </details>

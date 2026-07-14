@@ -13,7 +13,7 @@ App icons are the visual indicators we use to help users find and launch an appl
 It's the first impression of your app and we want to help make sure it's a great one. This article covers the best practices for Windows app icon design and implementation to provide the best experience in the Windows ecosystem.
 
 > [!TIP]
-> This article describes icons that represent your app in Windows and the Windows Store. To learn about icons that you use inside your app UI, see [Icons in Windows apps](../style/icons.md).
+> This article describes icons that represent your app in Windows and the Windows Store. To learn about icons that you use inside your app UI, see [Icons in Windows apps](../../develop/ui/controls/icons.md).
 
 ## Where do app icons appear?
 
@@ -56,6 +56,6 @@ App icons appear in a variety of places in Windows:
 
 ## Design and create your app's icon
 
-- [Design guidelines for Windows app icons](../style/iconography/app-icon-design.md) &mdash; Learn how to use metaphor, shape, color, and shadow to design a beautiful and functional icon for your app.
-- [Construct the icon for your Windows app](../style/iconography/app-icon-construction.md) &mdash; Create icons that look good at any size, on any screen.
-- [Construction guidelines for Windows 10 icons](../style/iconography/live-tile-icons.md) &mdash; If your app runs on Windows 10, your app's icons will be displayed in Live Tiles. Learn more about additional considerations for icons on Windows 10.
+- [Design guidelines for Windows app icons](./app-icon-design.md) &mdash; Learn how to use metaphor, shape, color, and shadow to design a beautiful and functional icon for your app.
+- [Construct the icon for your Windows app](./app-icon-construction.md) &mdash; Create icons that look good at any size, on any screen.
+- [Construction guidelines for Windows 10 icons](/windows/uwp/launch-resume/live-tile-icons) &mdash; If your app runs on Windows 10, your app's icons will be displayed in Live Tiles. Learn more about additional considerations for icons on Windows 10.

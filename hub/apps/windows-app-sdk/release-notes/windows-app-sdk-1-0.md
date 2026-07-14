@@ -99,7 +99,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 >
 > - We've added new controls (PipsPager, Expander, BreadcrumbBar) and updated existing controls to reflect the latest Windows styles from [WinUI for UWP 2.6](/windows/uwp/get-started/winui2/release-notes/winui-2.6#visual-style-updates).
 > - Single-project MSIX packaging is supported in WinUI by creating a new application using the "Blank App, Packaged…" template.
-> - We now support deploying WinUI apps that aren't packaged on Windows versions 1809 and above. Please view [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md) for additional information.
+> - We now support deploying WinUI apps that aren't packaged on Windows versions 1809 and above. Please view [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md) for additional information.
 > - WinUI 3 projects can now set their target version down to Windows 10, version 1809. Previously, they could only be set as low as version 1903.
 > - In-app toolbar, Hot Reload, & Live Visual Tree for WinUI packaged apps are supported in Visual Studio 2022 Preview 5 and GA.
 >
@@ -124,7 +124,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 >
 > - Known issues for **WinUI applications with Single-project MSIX** (Blank App, Packaged template):
 >   - *Missing Package & Publish menu item until you restart Visual Studio:* When creating a new app with Single-project MSIX in both Visual Studio 2019 and Visual Studio 2022 using the Blank App, Packaged (WinUI 3 in Desktop) project template, the command to publish the project doesn't appear in the menu until you close and re-open Visual Studio.
->   - A C# app with Single-project MSIX will not compile without the "C++ (v14x) Universal Windows Platform Tools"   optional component installed. See [Install tools for the Windows App SDK](../../windows-app-sdk/set-up-your-development-environment.md) for additional information.
+>   - A C# app with Single-project MSIX will not compile without the "C++ (v14x) Universal Windows Platform Tools"   optional component installed. See [Install tools for the Windows App SDK](../../get-started/start-here.md) for additional information.
 >   - *Potential run-time error in an app with Single-project MSIX that consumes types defined in a referenced Windows Runtime Component:* To resolve, manually add [activatable class entries](/uwp/schemas/appxpackage/how-to-specify-extension-points-in-a-package-manifest) to the appxmanifest.xml.
 >     - The expected error in C# applications is "COMException: Class not registered (0x80040154 (REGDB_E_CLASSNOTREG)).
 >     - The expected error in C++/WinRT applications is "winrt::hresult_class_not_registered".
@@ -146,8 +146,8 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 >
 > For more info, or to get started developing with WinUI, see:
 >
-> - [WinUI](../../winui/index.md)
-> - [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
+> - [WinUI](../../winui/winui3/index.md)
+> - [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md)
 
 </details>
 
@@ -290,7 +290,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 >
 > **New Features and updates:**
 >
-> - You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md) for instructions.
+> - You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md) for instructions.
 > - Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../../windows-app-sdk/deploy-unpackaged-apps.md).
 > - Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](../../windows-app-sdk/use-windows-app-sdk-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](../../windows-app-sdk/use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api).
 > - Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see [Windows App SDK deployment guide for framework-dependent packaged apps](../../windows-app-sdk/deploy-packaged-apps.md).
@@ -351,7 +351,7 @@ The following sections describe new and updated features, limitations, and known
 
 ### WinUI 3 (1.0.0-preview3)
 
-We now support deploying WinUI apps without MSIX packaging. See [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md) to configure your WinUI application to support unpackaged deployment.
+We now support deploying WinUI apps without MSIX packaging. See [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md) to configure your WinUI application to support unpackaged deployment.
 
 **Important limitations:**
 
@@ -368,8 +368,8 @@ We now support deploying WinUI apps without MSIX packaging. See [Create your fir
 
 For more info, or to get started developing with WinUI 3, see:
 
-- [WinUI](../../winui/index.md)
-- [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
+- [WinUI](../../winui/winui3/index.md)
+- [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md)
 
 **Other limitations and known issues:**
 
@@ -389,7 +389,7 @@ For more info, or to get started developing with WinUI 3, see:
 
   - **C# template for Visual Studio 2019 and Visual Studio 2022**. In Visual Studio when you **Start Debugging** or **Start Without Debugging**, if your app doesn't deploy and run (and there's no feedback from Visual Studio), then click on the project node in **Solution Explorer** to select it, and try again.
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022**. You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md).
 
   - **C++ template for Visual Studio 2022 version 17.0 releases up to Preview 4**. You will encounter the following error the first time you try to run your project: "There were deployment errors". To resolve this issue, run or deploy your project a second time. This issue will be fixed in Visual Studio 2022 version 17.0 Preview 7.
 
@@ -499,8 +499,8 @@ The following sections describe new and updated features, limitations, and known
 
 For more info or to get started developing with WinUI 3, see:
 
-- [WinUI](../../winui/index.md)
-- [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
+- [WinUI](../../winui/winui3/index.md)
+- [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md)
 
 ### Windowing (1.0.0-preview2)
 
@@ -599,7 +599,7 @@ File Type associations incorrectly encode %1 to be %251 when setting the Verb ha
 
   - **C# template for Visual Studio 2019.** You will encounter the error when you try to build the project: "The project doesn't know how to run the profile *project name*". To resolve this issue, install the [Single-project MSIX Packaging Tools extension](https://marketplace.visualstudio.com/items?itemName=ProjectReunion.MicrosoftSingleProjectMSIXPackagingTools).
 
-  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md).
+  - **C# template for Visual Studio 2019 and Visual Studio 2022.** You will encounter the following error when you try to run or debug your project on your development computer: "The project needs to be deployed before we can debug. Please enable Deploy in the Configuration Manager." To resolve this issue, enable deployment for your project in **Configuration Manager**. For detailed instructions, see the [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md).
 
   - **C++ template for Visual Studio 2019 and Visual Studio 2022.** In this release, these projects are restricted to calling the subset of Win32 APIs that can be called by UWP apps. The **Blank App, Packaged with WAP (WinUI 3 in Desktop)** template is not affected by this issue.
 
@@ -640,8 +640,8 @@ This release of WinUI 3 is focused on building towards 1.0 with bug fixes.
 
 For more info or to get started developing with WinUI 3, see:
 
-- [WinUI](../../winui/index.md)
-- [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
+- [WinUI](../../winui/winui3/index.md)
+- [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md)
 
 ### Windowing (1.0.0-preview1)
 
@@ -702,7 +702,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
     3. Add `#include <winrt/Microsoft.UI.Dispatching.h>` to your `pch.h`.
     4. Now `co_await wil::resume_foreground(your_dispatcherqueue);`.
 
-- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
+- **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 
 - **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/ProjectReunion/issues/921).
 
@@ -729,8 +729,8 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 >
 > For more information or to get started developing with WinUI, see:
 >
-> - [WinUI](../../winui/index.md)
-> - [Create your first WinUI 3 (Windows App SDK) project](../../winui/winui3/create-your-first-winui3-app.md)
+> - [WinUI](../../winui/winui3/index.md)
+> - [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md)
 >
 
 </details>
@@ -793,7 +793,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 <summary>Other limitations and known issues</summary>
 
 >
-> - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
+> - **No support for Any CPU build configuration**: The Windows App SDK is written in native code and thus does not support **Any CPU** build configurations. The [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) only allow architecture-specific builds. When [adding the Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) to an existing .NET application or component that supports **Any CPU**, you must specify the desired architecture: `x86`, `x64` or `arm64`.
 > - **.NET apps must target build 18362 or later**: Your TFM must be set to `net6.0-windows10.0.18362` or later, and your packaging project's `<TargetPlatformVersion>` must be set to 18362 or later. For more info, see the [known issue on GitHub](https://github.com/microsoft/WindowsAppSDK/issues/921).
 > - **C# apps using 1.0 Experimental must use one of the following .NET SDKs**:
 >   - .NET 6 SDK or later (see [Download .NET](https://dotnet.microsoft.com/download) and [.NET 5 will reach End of Support on May 10, 2022](https://devblogs.microsoft.com/dotnet/dotnet-5-end-of-support-update/)).

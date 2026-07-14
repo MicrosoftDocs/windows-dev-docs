@@ -48,7 +48,7 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [TabView](controls/tab-view.md)
 - [Media transport control](controls/media-playback.md#media-transport-controls), [InkToolbar](controls/inking-controls.md)
 - [BreadcrumbBar](controls/breadcrumbbar.md)
-- [Connected animation](../../design/motion/connected-animation.md)
+- [Connected animation](../motion/connected-animation.md)
 
 ### ThemeShadow in Popups
 

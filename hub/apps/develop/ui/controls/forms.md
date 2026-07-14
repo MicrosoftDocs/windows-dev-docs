@@ -56,7 +56,7 @@ To facilitate the user experience and ensure that users are able to enter the co
 
 To [design for accessibility](../../../design/accessibility/accessibility-overview.md), label all individual and groups of controls for clarity for both human and screen readers.
 
-For font styles, use the default [Windows type ramp](../../../design/style/typography.md). Use `TitleTextBlockStyle` for page titles, `SubtitleTextBlockStyle` for group headings, and `BodyTextBlockStyle` for control labels.
+For font styles, use the default [Windows type ramp](../../../design/signature-experiences/typography.md). Use `TitleTextBlockStyle` for page titles, `SubtitleTextBlockStyle` for group headings, and `BodyTextBlockStyle` for control labels.
 
 <div class="mx-responsive-img">
 <table>
@@ -228,4 +228,4 @@ To learn how to connect form input to an **Azure** database and see a fully impl
 
 ## Related topics
 - [Input controls](controls-and-events-intro.md)
-- [Typography](../../../design/style/typography.md)
+- [Typography](../../../design/signature-experiences/typography.md)

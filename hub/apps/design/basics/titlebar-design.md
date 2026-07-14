@@ -69,7 +69,7 @@ If you create your own caption buttons for your app, follow these guidelines to 
 
 **Design**
 
-- Use these [icons](../style/segoe-fluent-icons-font.md) for the buttons:
+- Use these [icons](../iconography/segoe-fluent-icons-font.md) for the buttons:
   - Minimize icon: E921 ChromeMinimize
   - Maximize icon: E922 ChromeMaximize
   - Restore icon: E923 ChromeRestore
@@ -84,7 +84,7 @@ If you create your own caption buttons for your app, follow these guidelines to 
 
 **Design**
 
-The recommended back button icon is: [E830 ChromeBack](../style/segoe-fluent-icons-font.md)
+The recommended back button icon is: [E830 ChromeBack](../iconography/segoe-fluent-icons-font.md)
 
 - If a back button is present, it should be placed to the left of the app title or icon/title combination (in LTR).
 - The back button responds to _rest_, _on hover_, _on pressed_, _active_, and _inactive_ states.

@@ -14,6 +14,7 @@ This article provides guidance about deploying framework-dependent packaged apps
 ## Overview
 
 By default, when you create a project using one of the [WinUI 3 templates in Visual Studio](..\dev-tools\visual-studio.md), your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](./single-project-msix.md)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). You can then build an MSIX package for your app by using the instructions in [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options to [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
+<!-- TODO: Broken link - target '..\dev-tools\visual-studio.md' not found and no redirect available -->
 
 To learn more about the packages that your packaged app might need when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). Those include the *Framework*, *Main*, and *Singleton* packages; which are all signed and published by Microsoft. There are two main requirements for deploying a packaged app:
 

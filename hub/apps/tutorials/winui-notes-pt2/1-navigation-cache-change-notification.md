@@ -48,7 +48,7 @@ You'll fix these issues next.
 
 :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Implement navigation between two pages](../../design/basics/navigate-between-two-pages.md)
+- [Implement navigation between two pages](../../develop/ui/navigation/navigate-between-two-pages.md)
 - [Page.NavigationCacheMode class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page.navigationcachemode), [NavigationCacheMode enum](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.navigation.navigationcachemode)
 
 ## Implement INotifyPropertyChanged

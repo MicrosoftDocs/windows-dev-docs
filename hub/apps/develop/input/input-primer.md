@@ -84,7 +84,7 @@ Dictation is typically used when an app doesn't need to understand meaning or in
 
 ### More info
 
-[Speech design guidelines](../../design/input/speech-interactions.md)
+[Speech design guidelines](/windows/uwp/ui-input/speech-interactions)
 
 ## Pen
 
@@ -115,7 +115,7 @@ You should provide pen-specific UI commands, or affordances, to support these in
 
 ### More info
 
-[Pen design guidelines](../../design/input/pen-and-stylus-interactions.md)
+[Pen design guidelines](/windows/uwp/ui-input/pen-and-stylus-interactions)
 
 ## Touch
 

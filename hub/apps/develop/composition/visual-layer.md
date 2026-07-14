@@ -103,4 +103,4 @@ Explore the samples on GitHub: [WindowsAppSDK-Samples / SceneGraph](https://gith
 ## Related topics
 
 * [**Microsoft.UI.Composition API reference**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition)
-* [Using the Visual layer in desktop apps](../../desktop/modernize/ui/visual-layer-in-desktop-apps.md)
+* [Using the Visual layer in desktop apps](/windows/uwp/composition/visual-layer-in-desktop-apps)

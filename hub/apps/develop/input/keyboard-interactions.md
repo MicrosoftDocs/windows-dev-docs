@@ -390,7 +390,7 @@ The search button for the `AutoSuggestBox` is not accessible to standard keyboar
 
 Game pads and remote controls support many WinUI keyboard behaviors and experiences. However, due to the lack of various key options available on a keyboard, game pad and remote control lack many keyboard optimizations (remote control is even more limited than game pad).
 
-See [Game pad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md) for more detail on WinUI support for game pad and remote control input.
+See [Game pad and remote control interactions](/windows/uwp/ui-input/gamepad-and-remote-interactions) for more detail on WinUI support for game pad and remote control input.
 
 The following shows some key mappings between keyboard, game pad, and remote control.
 

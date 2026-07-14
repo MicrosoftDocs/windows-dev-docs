@@ -52,7 +52,7 @@ For the list view page, a [list view](lists.md) control works well for presentin
 
 For the details view page, use the [content element](../layout-panels.md) that makes the most sense. If you have a lot of separate fields, consider using a **Grid** layout to arrange elements into a form.
 
-For navigation between pages, see [navigation history and backwards navigation for Windows apps](../../../design/basics/navigation-history-and-backwards-navigation.md).
+For navigation between pages, see [navigation history and backwards navigation for Windows apps](../navigation/navigation-history-and-backwards-navigation.md).
 
 ## Side-by-side style
 

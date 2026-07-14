@@ -18,7 +18,7 @@ This article describes how to use the app lifecycle API to control app instancin
 To use the app lifecycle API in WinUI apps:
 
 - Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-- Follow the instructions to [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+- Follow the instructions to [Create your first WinUI project](../../get-started/start-here.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Single-instance apps
 

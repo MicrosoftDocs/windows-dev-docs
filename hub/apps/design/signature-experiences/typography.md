@@ -228,7 +228,7 @@ Variable fonts are good for precisely controlling the appearance of text.
 
 | Font-family | Styles | Notes |
 |---------|---------|---------|
-| Segoe Fluent Icons | Regular | User-interface font for app icons. For more info, see the [Segoe Fluent Icons font](../style/segoe-fluent-icons-font.md) article. |
+| Segoe Fluent Icons | Regular | User-interface font for app icons. For more info, see the [Segoe Fluent Icons font](../iconography/segoe-fluent-icons-font.md) article. |
 | Segoe UI Emoji | Regular | User-interface font for Emoji. |
 | Segoe UI Symbol | Regular | Fallback font for symbols. |
 

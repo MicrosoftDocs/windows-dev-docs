@@ -29,7 +29,7 @@ App icons should represent your app's core functionality through a metaphor. For
 
 ![A shopping cart icon from Segoe Fluent Icons.](images/iconography_SystemIcons.svg)
 
-Use system icons inside your app UI for items like command bars, navigation, or status indicators. Windows 11 introduces a new system icon font, [Segoe Fluent Icons](../style/segoe-fluent-icons-font.md). This new font complements [geometry](../signature-experiences/geometry.md) in Windows 11.
+Use system icons inside your app UI for items like command bars, navigation, or status indicators. Windows 11 introduces a new system icon font, [Segoe Fluent Icons](./segoe-fluent-icons-font.md). This new font complements [geometry](../signature-experiences/geometry.md) in Windows 11.
 
 All glyphs in Segoe Fluent Icons are drawn in a monoline style. That means they're created through a single stroke of 1 epx.
 
@@ -39,7 +39,7 @@ Glyphs in Segoe Fluent Icons follow three aesthetic principles:
 - **Harmonious**: Glyphs are based on simple and geometric forms.
 - **Evolved**: Glyphs use modern metaphors that are easily understood.
 
-For more information about using icons in your app UI, see [**Icons in Windows apps**](../style/icons.md).
+For more information about using icons in your app UI, see [**Icons in Windows apps**](../../develop/ui/controls/icons.md).
 
 ### Icon size
 

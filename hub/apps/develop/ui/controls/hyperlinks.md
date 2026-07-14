@@ -28,7 +28,7 @@ Choose the right type of hyperlink based on your needs:
 ## Recommendations
 
 - Only use hyperlinks for navigation; don't use them for other actions.
-- Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows type ramp](../../../design/style/typography.md).
+- Use the Body style from the type ramp for text-based hyperlinks. Read about [fonts and the Windows type ramp](../../../design/signature-experiences/typography.md).
 - Keep discrete hyperlinks far enough apart so that the user can differentiate between them and has an easy time selecting each one.
 - Add tooltips to hyperlinks that indicate to where the user will be directed. If the user will be directed to an external site, include the top-level domain name inside the tooltip, and style the text with a secondary font color.
 

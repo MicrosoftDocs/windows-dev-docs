@@ -28,7 +28,7 @@ A high-level look at app patterns commonly used across our in-box applications.
         :::image type="content" source="images/signature-experiences-hero.png" alt-text="Signature experiences hero image":::
     :::column-end:::
     :::column:::
-        [**Windows 11 Signature Experiences**](../signature-experiences/signature-experiences.md)
+        [**Windows 11 Signature Experiences**](../index.md)
 
 See what’s new for Windows 11 design elements.
     :::column-end:::

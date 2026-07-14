@@ -22,7 +22,7 @@ Most [Windows Runtime (WinRT)](/uwp/api/) APIs can be used by Windows App SDK ap
 * APIs that have dependencies on UI features that were designed for use only in UWP apps.
 * APIs that require package identity. These APIs are supported only in desktop apps that are packaged using MSIX.
 
-For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in [WinUI](../../winui/index.md), or via WinRT COM interfaces that are available in the Windows App SDK.
+For those APIs, we'll show you what alternatives to use. Most of those alternatives are available in [WinUI](../../winui/winui3/index.md), or via WinRT COM interfaces that are available in the Windows App SDK.
 
 For example, we'll see certain UI scenarios where you'll need to track your main window object, and use various **HWND**-based APIs and interoperation patterns, such as [**IInitializeWithWindow::Initialize**](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iinitializewithwindow-initialize).
 
@@ -38,13 +38,13 @@ We'd love to hear your feedback about this migration guide, and about your own m
 
 ## Why migrate to the Windows App SDK?
 
-The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI)](../../winui/index.md), which is developed and designed to delight your users.
+The Windows App SDK offers you an opportunity to enhance your app with new platform features, as well as with the modern [Windows UI 3 Library (WinUI)](../../winui/winui3/index.md), which is developed and designed to delight your users.
 
 In addition, the Windows App SDK is backward compatible; it supports apps down to Windows 10, version 1809 (10.0; Build 17763)&mdash;also known as the Windows 10 October 2018 Update.
 
 The value proposition of moving the Windows App SDK is manifold. Here are some considerations:
 
-* Latest user interface (UI) platform and controls such as [WinUI](../../winui/index.md) 3 and [WebView2](/microsoft-edge/webview2/).
+* Latest user interface (UI) platform and controls such as [WinUI](../../winui/winui3/index.md) 3 and [WebView2](/microsoft-edge/webview2/).
 * A single API surface across desktop app platforms.
 * More frequent release cadence that releases separately from Windows.
 * A consistent experience across Windows versions.
@@ -63,7 +63,7 @@ Download the latest Windows App SDK version from [Windows App SDK downloads](../
 
 ## Create a new project
 
-In Visual Studio, [Create your first WinUI project](../../winui/winui3/create-your-first-winui3-app.md). For example, use the **WinUI Blank App (Packaged)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create your first WinUI project](../../get-started/start-here.md). For example, use the **WinUI Blank App (Packaged)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 
@@ -114,7 +114,7 @@ For example, in the case study [A Windows App SDK migration of the UWP PhotoLab 
 
 * [Windows App SDK and supported Windows releases](../support.md)
 * [Windows Runtime (WinRT)](/uwp/api/) APIs
-* [WinUI](../../winui/index.md)
+* [WinUI](../../winui/winui3/index.md)
 * [PhotoLab case study](case-study-1.md)
 * [Photo Editor case study](case-study-2.md)
 * [Support for WinRT APIs in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md)

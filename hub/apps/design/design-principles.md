@@ -64,7 +64,7 @@ Signature experiences are the design elements Windows 11 uses to express its vis
     :::column-end:::
     :::column span="2":::
         **Iconography**<br><br>
-        [Iconography](./signature-experiences/iconography.md) is a set of visual images and symbols that help users understand and navigate your app. Windows 11 iconography has evolved in concert with our design language. Every glyph in our system icon font has been redesigned to embrace a softer geometry and more modern metaphors.  
+        [Iconography](./iconography/index.md) is a set of visual images and symbols that help users understand and navigate your app. Windows 11 iconography has evolved in concert with our design language. Every glyph in our system icon font has been redesigned to embrace a softer geometry and more modern metaphors.  
     :::column-end:::
 :::row-end:::
 

@@ -144,8 +144,8 @@ private async void OnDeferredImageRequested(DataProviderRequest request)
 ## See also
 
 - [Receive shared data in your Windows app](./receive-shared-data.md)
-- [Integrate packaged apps with Windows Share](./integrate-sharesheet-packaged.md)
-- [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-unpackaged.md)
+- [Integrate packaged apps with Windows Share](./integrate-sharesheet-overview.md)
+- [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-receive.md#2-handle-the-share-activation)
 - [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects#for-classes-that-implement-idatatransfermanagerinterop)
 - [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop)
 - [DataTransferManager](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager)

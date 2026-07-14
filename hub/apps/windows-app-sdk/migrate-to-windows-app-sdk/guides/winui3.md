@@ -12,7 +12,7 @@ dev_langs:
 
 # User interface migration (including WinUI 3)
 
-This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/index.md).
+This topic shows how to migrate your user interface (UI) code, including migrating to [WinUI](../../../winui/winui3/index.md).
 
 ## Summary of API and/or feature differences
 

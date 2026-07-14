@@ -116,4 +116,4 @@ Your use of out-of-support Windows App SDK versions may put your applications at
 
 - [Install tools for preview and experimental channels of the Windows App SDK](preview-experimental-install.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI project](../get-started/start-here.md)

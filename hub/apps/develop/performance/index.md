@@ -58,7 +58,7 @@ The decision to make a change depends on what is most important for your custome
 
 There are a variety of different options available for measuring the performance of your Windows application.
 
-If you are not sure what tools to choose, check out the article: [Choosing between Visual Studio Performance Profiler and Windows Performance Toolkit](../../performance/choose-between-tools.md).
+If you are not sure what tools to choose, check out the article: [Choosing between Visual Studio Performance Profiler and Windows Performance Toolkit](./choose-between-tools.md).
 
 ### ![Visual Studio Icon](./images/vs.png) Visual Studio Performance Profiler
 

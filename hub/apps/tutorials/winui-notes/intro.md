@@ -1,8 +1,8 @@
 ---
 title: WinUI Notes tutorial - Introduction
 description: WinUI Notes tutorial introduction.
-author: jwmsft
-ms.author: jimwalk
+author: GrantMeStrength
+ms.author: jken
 ms.date: 09/02/2025
 ms.topic: tutorial
 ms.localizationpriority: medium

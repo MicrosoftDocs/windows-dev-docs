@@ -15,11 +15,11 @@ The Windows Share contract allows your app to appear in the Windows Share Sheet 
 
 Before following the steps here, register your app as a share target:
 
-- **Packaged apps**: See [Integrate packaged apps with Windows Share](./integrate-sharesheet-packaged.md) for manifest registration and activation setup.
-- **Unpackaged apps**: See [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-unpackaged.md) for how to grant package identity and register as a share target.
+- **Packaged apps**: See [Integrate packaged apps with Windows Share](./integrate-sharesheet-overview.md) for manifest registration and activation setup.
+- **Unpackaged apps**: See [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-receive.md#2-handle-the-share-activation) for how to grant package identity and register as a share target.
 
 > [!NOTE]
-> The activation model for WinUI 3 desktop apps differs from UWP. In WinUI 3, share activation is handled via `AppInstance.GetActivatedEventArgs()` in your app startup code—not via `Application.OnShareTargetActivated()`. The `ShareOperation` and `DataPackageView` APIs described in this article work the same way once you obtain the `ShareTargetActivatedEventArgs`. See [Integrate packaged apps with Windows Share](./integrate-sharesheet-packaged.md#fetch-share-event-arguments) for the Windows App SDK activation pattern.
+> The activation model for WinUI 3 desktop apps differs from UWP. In WinUI 3, share activation is handled via `AppInstance.GetActivatedEventArgs()` in your app startup code—not via `Application.OnShareTargetActivated()`. The `ShareOperation` and `DataPackageView` APIs described in this article work the same way once you obtain the `ShareTargetActivatedEventArgs`. See [Integrate packaged apps with Windows Share](./integrate-sharesheet-receive.md#2-handle-the-share-activation) for the Windows App SDK activation pattern.
 
 ## Choose data formats to support
 
@@ -165,8 +165,8 @@ private async Task ReportCompletedWithQuickLink(
 ## See also
 
 - [Share content from your Windows app](./share-content.md)
-- [Integrate packaged apps with Windows Share](./integrate-sharesheet-packaged.md)
-- [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-unpackaged.md)
+- [Integrate packaged apps with Windows Share](./integrate-sharesheet-overview.md)
+- [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-receive.md#2-handle-the-share-activation)
 - [Share Contract Implementation for Windows App SDK](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
 - [ShareOperation](/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation)
 - [DataPackageView](/uwp/api/windows.applicationmodel.datatransfer.datapackageview)

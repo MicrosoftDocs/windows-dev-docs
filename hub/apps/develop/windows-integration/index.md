@@ -21,9 +21,9 @@ Windows provides a rich set of platform contracts that let your app participate 
 | [Windows Share overview](./integrate-sharesheet-overview.md) | Overview of how to integrate your app with the Windows Share Sheet. |
 | [Share content from your app](./integrate-sharesheet-send.md) | Implement the Share contract so users can send content from your app. Covers packaged, PWA, and unpackaged apps. |
 | [Receive shared content in your app](./integrate-sharesheet-receive.md) | Register as a Share Target and handle incoming shared content. Covers packaged, PWA, and unpackaged apps. |
-| [Integrate packaged apps with Windows Share](./integrate-sharesheet-packaged.md) | How to register and activate a packaged app as a share target. |
-| [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-unpackaged.md) | How to grant package identity and register an unpackaged app as a share target. |
-| [Integrate PWAs with Windows Share](./integrate-sharesheet-pwa.md) | How to integrate a Progressive Web App with the Windows Share Sheet. |
+| [Integrate packaged apps with Windows Share](./integrate-sharesheet-overview.md) | How to register and activate a packaged app as a share target. |
+| [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-receive.md#2-handle-the-share-activation) | How to grant package identity and register an unpackaged app as a share target. |
+| [Integrate PWAs with Windows Share](./integrate-sharesheet-overview.md) | How to integrate a Progressive Web App with the Windows Share Sheet. |
 
 ## Windows system components
 
@@ -43,5 +43,5 @@ Windows provides a rich set of platform contracts that let your app participate 
 
 ## Related content
 
-- [Speech, voice, and conversation in Windows](../speech.md)
+- [Speech, voice, and conversation in Windows](/windows/uwp/ui-input/speech-interactions)
 - [Audio, video, and camera](../audio-video-camera.md)

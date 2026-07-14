@@ -1,6 +1,6 @@
 ---
 title: A Windows App SDK migration of the UWP PhotoLab sample app (C#)
-description: A case study of taking the C# [UWP PhotoLab sample app](/samples/microsoft/windows-appsample-photo-lab/photolab-sample/), and migrating it to the Windows App SDK.
+description: A case study of taking the C# [UWP PhotoLab sample app](https://github.com/microsoft/Windows-appsample-photo-lab), and migrating it to the Windows App SDK.
 ms.topic: article
 ms.date: 05/28/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C#, PhotoLab, UWP
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # A Windows App SDK migration of the UWP PhotoLab sample app (C#)
 
-This topic is a case study of taking the C# [UWP PhotoLab sample app](/samples/microsoft/windows-appsample-photo-lab/photolab-sample/), and migrating it to the Windows App SDK.
+This topic is a case study of taking the C# [UWP PhotoLab sample app](https://github.com/microsoft/Windows-appsample-photo-lab), and migrating it to the Windows App SDK.
 
 Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/windows-appsample-photo-lab/tree/master/), and opening the solution in [Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
@@ -18,7 +18,7 @@ Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/window
 
 ## Install tools for the Windows App SDK
 
-To set up your development computer, see [Install tools for the Windows App SDK](../set-up-your-development-environment.md).
+To set up your development computer, see [Install tools for the Windows App SDK](../../get-started/start-here.md).
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](../release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.

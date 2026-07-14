@@ -39,7 +39,7 @@ Here's a breakdown of the major features that Windows App SDK provides:
 | [Windowing](../develop/ui/windowing-overview.md) | Create, position, and customize app windows with modern windowing APIs. |
 | Notifications | Send local or cloud-based notifications to engage users and keep your app connected, including both [app notifications](../develop/notifications/app-notifications/index.md) and [push notifications](../develop/notifications/push-notifications/index.md). |
 | [Widgets](../develop/widgets/widget-providers.md) | Bring personalized, glanceable information to the Windows widget board, allowing users to stay connected to your app's live content right from their desktop. |
-| [XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md) | Embed modern Windows UI controls inside existing desktop apps to refresh your interface and add new capabilities without a full rewrite. |
+| [XAML Islands](/windows/uwp/xaml-islands/xaml-islands) | Embed modern Windows UI controls inside existing desktop apps to refresh your interface and add new capabilities without a full rewrite. |
 | [Deployment](deployment-architecture.md) | Deploy the Windows App SDK runtime with your app, whether it is packaged or unpackaged, to ensure consistent and reliable operation across devices. |
 
 ---

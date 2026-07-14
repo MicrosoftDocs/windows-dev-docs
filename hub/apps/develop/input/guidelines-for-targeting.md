@@ -24,7 +24,7 @@ In this topic, we describe these default behaviors so you can design your app fo
 
 ## Target size
 
-In general, set your touch target size to 7.5mm square range (40x40 pixels on a 135 PPI display at a 1.0x scaling plateau). Typically, WinUI controls align with 7.5mm touch target (this can vary based on the specific control and any common usage patterns). See [Control size and density](../../design/style/spacing.md) for more detail.
+In general, set your touch target size to 7.5mm square range (40x40 pixels on a 135 PPI display at a 1.0x scaling plateau). Typically, WinUI controls align with 7.5mm touch target (this can vary based on the specific control and any common usage patterns). See [Control size and density](../../design/basics/content-basics.md) for more detail.
 
 These target size recommendations can be adjusted as required by your particular scenario. Here are some things to consider:
 
@@ -39,7 +39,7 @@ These target size recommendations can be adjusted as required by your particular
 
 - [Design basics for Windows apps](../../design/basics/index.md)
 - [Screen sizes and breakpoints](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md)
-- [Control size and density](../../design/style/spacing.md)
+- [Control size and density](../../design/basics/content-basics.md)
 - [Alignment, margin, padding](../ui/alignment-margin-padding.md)
 
 ### Samples

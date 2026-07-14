@@ -379,7 +379,7 @@ All navigation items are part of the same selection model, whether they are a pa
 
 ### Backwards navigation
 
-NavigationView has a built-in back button; but, as with forward navigation, it doesn't perform backwards navigation automatically. When the user taps the back button, the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.backrequested) event is raised. You handle this event to perform backwards navigation. For more info and code examples, see [Navigation history and backwards navigation](../../../design/basics/navigation-history-and-backwards-navigation.md).
+NavigationView has a built-in back button; but, as with forward navigation, it doesn't perform backwards navigation automatically. When the user taps the back button, the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview.backrequested) event is raised. You handle this event to perform backwards navigation. For more info and code examples, see [Navigation history and backwards navigation](../navigation/navigation-history-and-backwards-navigation.md).
 
 In `Minimal` or `Compact` mode, the NavigationView `Pane` is open as a flyout. In this case, clicking the back button will close the `Pane` and raise the PaneClosing event instead.
 

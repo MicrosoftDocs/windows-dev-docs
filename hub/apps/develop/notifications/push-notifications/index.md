@@ -26,23 +26,23 @@ Push notifications can be used to enable several distinct features. The content 
 
 ### App notifications from the cloud
 
-*App* notifications are used to communicate with the user. The notification content is displayed in a transient window in the bottom right corner of the screen and in the Notification Center (called Action Center in Windows 10). App notifications can be used to inform the user of application status or state changes, or to prompt the user to take an action. App notifications can be either push (sent from the cloud) or sent locally. Sending a cloud-sourced app notification is similar to sending a raw notification, except the *X-WNS-Type* header is `toast`, *Content-Type* is `text/xml`, and the content contains the app notification XML payload, which you can learn more about [here](../../../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md).
+*App* notifications are used to communicate with the user. The notification content is displayed in a transient window in the bottom right corner of the screen and in the Notification Center (called Action Center in Windows 10). App notifications can be used to inform the user of application status or state changes, or to prompt the user to take an action. App notifications can be either push (sent from the cloud) or sent locally. Sending a cloud-sourced app notification is similar to sending a raw notification, except the *X-WNS-Type* header is `toast`, *Content-Type* is `text/xml`, and the content contains the app notification XML payload, which you can learn more about [here](../app-notifications/app-notifications-quickstart.md).
 
 ## Limitations
 
 The push notifications support in the Windows App SDK currently has these limitations:
 
-- If your app is published as [*self-contained*](../../../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md) or is running with the elevated (admin) privilege, this feature may not be supported. In your app, use the `winrt::PushNotificationManager::IsSupported()` check as demonstrated in [Quickstart: Push notifications in the Windows App SDK](../../../windows-app-sdk/notifications/push-notifications/push-quickstart.md) and implement a custom socket if the feature is unsupported.
+- If your app is published as [*self-contained*](../../../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md) or is running with the elevated (admin) privilege, this feature may not be supported. In your app, use the `winrt::PushNotificationManager::IsSupported()` check as demonstrated in [Quickstart: Push notifications in the Windows App SDK](./push-quickstart.md) and implement a custom socket if the feature is unsupported.
 - Microsoft reserves the right to disable or revoke apps from using push notifications.
 
 ## Next steps
 
-See [Quickstart: Push notifications in the Windows App SDK](../../../windows-app-sdk/notifications/push-notifications/push-quickstart.md) to get started.
+See [Quickstart: Push notifications in the Windows App SDK](./push-quickstart.md) to get started.
 
 ## Related topics
 
 - [Windows Push Notification Service (WNS)](https://aka.ms/wns)
-- [Quickstart: Push notifications in the Windows App SDK](../../../windows-app-sdk/notifications/push-notifications/push-quickstart.md)
-- [Troubleshooting Windows App SDK](../../../windows-app-sdk/notifications/push-notifications/troubleshooting.md)
+- [Quickstart: Push notifications in the Windows App SDK](./push-quickstart.md)
+- [Troubleshooting Windows App SDK](./troubleshooting.md)
 - [Notifications UX Guidance](../app-notifications/app-notifications-ux-guidance.md)
 

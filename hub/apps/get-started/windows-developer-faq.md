@@ -85,7 +85,7 @@ Topics covered include:
 
 > Note that [WinUI](../winui/winui3/index.md) (a UI framework) ships with the [Windows App SDK](../windows-app-sdk/index.md) (a Windows platform development framework).
 >
-> Generally, WinUI can't be used unless the app is ready to migrate its UI framework entirely. A feature called [XAML Islands](../desktop/modernize/xaml-islands/xaml-islands.md) enables hosting WinUI content in other UI frameworks (WPF, Win32). See [XAML Islands documentation](../desktop/modernize/xaml-islands/xaml-islands.md) for more info.
+> Generally, WinUI can't be used unless the app is ready to migrate its UI framework entirely. A feature called [XAML Islands](/windows/uwp/xaml-islands/xaml-islands) enables hosting WinUI content in other UI frameworks (WPF, Win32). See [XAML Islands documentation](/windows/uwp/xaml-islands/xaml-islands) for more info.
 >
 > Elements of the Windows App SDK can often be used in desktop apps, depending on how the existing app was built. UWP apps are not supported by Windows App SDK.
 >
@@ -217,7 +217,7 @@ Topics covered include:
 
 > XAML Islands let you host modern XAML-based controls alongside existing Win32 UI from other frameworks such as WinForms and WPF.
 > 
-> Today, XAML Islands support _most_ system XAML and WinUI for UWP controls. See [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md) for more details. Support for hosting WinUI controls is available starting in [Windows App SDK 1.4](/windows/apps/windows-app-sdk/stable-channel#xaml-islands-no-longer-experimental).
+> Today, XAML Islands support _most_ system XAML and WinUI for UWP controls. See [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/uwp/xaml-islands/xaml-islands) for more details. Support for hosting WinUI controls is available starting in [Windows App SDK 1.4](/windows/apps/windows-app-sdk/stable-channel#xaml-islands-no-longer-experimental).
 
 </details>
 
@@ -476,7 +476,7 @@ Topics covered include:
 
 <details><summary>What can I do to make my Windows app feel great to end-users?</summary>
 
-> See [Windows application development - Best practices](./best-practices.md) and [Windows app performance and fundamentals overview](../performance/index.md).
+> See [Windows application development - Best practices](./best-practices.md) and [Windows app performance and fundamentals overview](../develop/performance/index.md).
 
 </details>
 
