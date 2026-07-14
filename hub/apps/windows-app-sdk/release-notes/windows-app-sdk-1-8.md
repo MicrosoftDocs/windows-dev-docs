@@ -15,6 +15,19 @@ zone_pivot_groups: wasdk-release-channels
 :::zone pivot="stable"
 
 
+## Version 1.8.10 (1.8.260710003)
+
+Released: **July 14, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> * Fixed an issue where `Microsoft.UI.System.ThemeSettings` could crash an app if it was destroyed on a background thread, for example when destroyed by the .NET garbage collector. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ThemeSettings_OffThreadDestructorFix)
+>
+
+</details>
+
+
 ## Version 1.8.9 (1.8.260529003)
 
 Released: **June 9, 2026** <br><br>
