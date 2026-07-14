@@ -91,7 +91,7 @@ When considering what colors to use in your application, accessibility should be
     :::column span="2":::
 **Lighting**
 
-Be aware that variation in ambient lighting can affect the usability of your app. For example, a page with a black background might unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
+Be aware that variation in ambient lighting can affect the usability of your app. For example, a page with a black background might be unreadable outside due to screen glare, while a page with a white background might be painful to look at in a dark room.
     :::column-end:::
 :::row-end:::
 

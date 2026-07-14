@@ -51,7 +51,7 @@ To install PowerToys using the [Windows Package Manager](../package-manager/wing
 winget install --id Microsoft.PowerToys --source winget
 ```
 
-PowerToys supports configuring through `winget configure` using [Desired State Configuration](dsc-configure.md).
+PowerToys supports configuring through `winget configure` using [Desired State Configuration](dsc-configure/overview.md).
 
 The installer executable accepts the [Microsoft Standard Installer command-line options](/windows/win32/msi/standard-installer-command-line-options).
 

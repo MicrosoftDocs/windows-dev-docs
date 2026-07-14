@@ -8,7 +8,7 @@ ms.topic: overview
 
 # upgrade command (winget)
 
-The **upgrade** command of [WinGet](index.md) tool upgrades the specified application. Optionally, you may use the [**list**](.\list.md) command to identify the application you want to upgrade.
+The **upgrade** command of [WinGet](index.md) tool upgrades the specified application. Optionally, you may use the [**list**](list.md) command to identify the application you want to upgrade.
 
 The **upgrade** command requires that you specify the exact string to upgrade. If there is any ambiguity, you will be prompted to further filter the **upgrade** command to  an exact application.
 
