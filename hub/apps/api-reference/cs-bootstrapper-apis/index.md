@@ -23,4 +23,4 @@ These types are available in .NET as part of the [Windows App SDK](../../windows
 ## See also
 
 * [Bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/)
-* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../windows-app-sdk/use-windows-app-sdk-run-time.md)
+* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../windows-app-sdk/use-windows-app-sdk-run-time.md)

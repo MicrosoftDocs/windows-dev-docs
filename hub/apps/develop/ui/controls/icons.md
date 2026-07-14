@@ -21,7 +21,7 @@ Icons provide a visual shorthand for an action, concept, or product. By compress
 
 Icons can appear within apps and outside them. Inside your app, you use icons to represent an action, such as copying text or going to the settings page.
 
-This article describes icons within your app UI. To learn about icons that represent your app in Windows (app icons), see [App icons](../../../design/style/iconography/overview.md).
+This article describes icons within your app UI. To learn about icons that represent your app in Windows (app icons), see [App icons](../../../design/iconography/app-icons.md).
 
 ## Know when to use icons
 
@@ -33,7 +33,7 @@ Don't use an icon if its meaning isn't clear, or if making it clear requires a c
 
 ## Use the right type of icon
 
-There are many ways to create an icon. You can use a symbol font like the [Segoe Fluent Icons font](../../../design/style/segoe-fluent-icons-font.md). You can create your own vector-based image. You can even use a bitmap image, although we don't recommend it. Here's a summary of the ways that you can add an icon to your app.
+There are many ways to create an icon. You can use a symbol font like the [Segoe Fluent Icons font](../../../design/iconography/segoe-fluent-icons-font.md). You can create your own vector-based image. You can even use a bitmap image, although we don't recommend it. Here's a summary of the ways that you can add an icon to your app.
 
 To add an icon in your XAML app, you use either an [IconElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconelement) or an [IconSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.iconsource).
 
@@ -138,12 +138,12 @@ The remaining examples on this page show how to assign an icon to the _`icon`_ p
 
 ## FontIcon and SymbolIcon
 
-The most common way to add icons to your app is to use the system icons provided by the icon fonts in Windows. Windows 11 introduces a new system icon font, [Segoe Fluent Icons](../../../design/style/segoe-fluent-icons-font.md), which provides more than 1,000 icons designed for the Fluent Design language. It might not be intuitive to get an icon from a font, but Windows font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size.
+The most common way to add icons to your app is to use the system icons provided by the icon fonts in Windows. Windows 11 introduces a new system icon font, [Segoe Fluent Icons](../../../design/iconography/segoe-fluent-icons-font.md), which provides more than 1,000 icons designed for the Fluent Design language. It might not be intuitive to get an icon from a font, but Windows font display technology means these icons will look crisp and sharp on any display, at any resolution, and at any size.
 
 > [!IMPORTANT]
 > **Default font family**
 >
-> Rather than specifying a [FontFamily](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon.fontfamily) directly, FontIcon and SymbolIcon use the font family defined by the `SymbolThemeFontFamily` XAML theme resource. By default, this resource uses the Segoe Fluent Icon font family. If your app is run on Windows 10, version 20H2 or earlier, the Segoe Fluent Icon font family is not available and the `SymbolThemeFontFamily` resource falls back to the [Segoe MDL2 Assets](../../../design/style/segoe-ui-symbol-font.md) font family instead.
+> Rather than specifying a [FontFamily](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon.fontfamily) directly, FontIcon and SymbolIcon use the font family defined by the `SymbolThemeFontFamily` XAML theme resource. By default, this resource uses the Segoe Fluent Icon font family. If your app is run on Windows 10, version 20H2 or earlier, the Segoe Fluent Icon font family is not available and the `SymbolThemeFontFamily` resource falls back to the [Segoe MDL2 Assets](../../../design/iconography/segoe-ui-symbol-font.md) font family instead.
 
 ### Symbol enumeration
 
@@ -301,7 +301,7 @@ For more information and examples, see the [ImageIcon](/windows/windows-app-sdk/
 
 ## Related articles
 
-- [Iconography in Windows](../../../design/signature-experiences/iconography.md)
-- [App icons](../../../design/style/iconography/overview.md)
+- [Iconography in Windows](../../../design/iconography/index.md)
+- [App icons](../../../design/iconography/app-icons.md)
 - [AnimatedIcon](animated-icon.md)
 - [Command bar](command-bar.md)

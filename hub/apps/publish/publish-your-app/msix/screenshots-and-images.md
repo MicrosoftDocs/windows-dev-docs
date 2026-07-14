@@ -17,7 +17,7 @@ You can provide [screenshots](#screenshots), [logos](#store-logos), [trailers](#
 
 During the [app submission process](./create-app-submission.md), you provide these art assets in the [Store listings](./add-and-edit-store-listing-info.md) step. Note that the images which are used in the Store, and the way that they appear, may vary depending on the customer's operating system and other factors.
 
-The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](../../../design/style/iconography/overview.md).
+The Store may also use your app's icon and other images that you include in your app's package. Run the [Windows App Certification Kit](/windows/uwp/debug-test-perf/windows-app-certification-kit) to determine if you're missing any required images before you submit your app. For guidance and recommendations about these images, see [App icons and logos](../../../design/iconography/app-icons.md).
 
 ### Screenshots
 

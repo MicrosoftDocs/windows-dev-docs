@@ -152,7 +152,7 @@ Gestures should also be actionable with flicks and swipes based on inertia and b
     :::column-end:::
 :::row-end:::
 
-For more info, see [Page transitions](../../design/motion/page-transitions.md) and [Pull to refresh](../ui/controls/pull-to-refresh.md).
+For more info, see [Page transitions](../motion/page-transitions.md) and [Pull to refresh](../ui/controls/pull-to-refresh.md).
 
 #### Custom gestures
 
@@ -220,7 +220,7 @@ If you transition the UI based on device signals for device posture, always prov
 
 ### Match visuals to touch target
 
-Consider updating visuals when touch target dimensions change. For example, if hit targets increase when users enter tablet posture, UI representing the hit targets should also update to help users understand the state change and updated affordance. For more info, see [Content design basics for Windows apps](../../design/basics/content-basics.md), [Guidelines for touch targets](guidelines-for-targeting.md), [Control size and density](../../design/style/spacing.md).
+Consider updating visuals when touch target dimensions change. For example, if hit targets increase when users enter tablet posture, UI representing the hit targets should also update to help users understand the state change and updated affordance. For more info, see [Content design basics for Windows apps](../../design/basics/content-basics.md), [Guidelines for touch targets](guidelines-for-targeting.md), [Control size and density](../../design/basics/content-basics.md).
 
 ## Portrait Optimization
 

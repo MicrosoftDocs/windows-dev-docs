@@ -48,7 +48,7 @@ To confirm that you have the extension installed, click **Extensions** > **Manag
 
 ## Create a new project
 
-If you're using Windows App SDK 1.0 Preview 2 or later, then you can create a new WinUI-based app that includes single-project MSIX support simply by using the **WinUI Blank App (Packaged)** template. For more information, see [Create your first WinUI project](../winui/winui3/create-your-first-winui3-app.md).
+If you're using Windows App SDK 1.0 Preview 2 or later, then you can create a new WinUI-based app that includes single-project MSIX support simply by using the **WinUI Blank App (Packaged)** template. For more information, see [Create your first WinUI project](../get-started/start-here.md).
 
 ## Modify an existing project
 

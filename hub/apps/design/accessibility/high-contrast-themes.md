@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Contrast themes use a constrained color palette (with contrast ratios typically at or above 7:1) to improve legibility, reduce visual fatigue, and support users who rely on high visual separation between foreground and background content.
 
 > [!NOTE]
-> Do not confuse contrast themes with light and dark themes. Light and dark themes use broader color palettes and are not specifically optimized for maximum contrast. For more on light and dark themes, see [Color](../style/color.md).
+> Do not confuse contrast themes with light and dark themes. Light and dark themes use broader color palettes and are not specifically optimized for maximum contrast. For more on light and dark themes, see [Color](../signature-experiences/color.md).
 
 To evaluate your app behavior under contrast themes, enable and customize them in *Settings > Accessibility > Contrast themes*.
 

@@ -162,8 +162,8 @@ Now you can run your app to see how these changes work. Try adding new notes, na
 
 :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Implement navigation between two pages](../../design/basics/navigate-between-two-pages.md)
-- [Navigation history and backwards navigation](../../design/basics/navigation-history-and-backwards-navigation.md)
+- [Implement navigation between two pages](../../develop/ui/navigation/navigate-between-two-pages.md)
+- [Navigation history and backwards navigation](../../develop/ui/navigation/navigation-history-and-backwards-navigation.md)
 - [Frame class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame), [Page class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page)
 
 ## Next steps

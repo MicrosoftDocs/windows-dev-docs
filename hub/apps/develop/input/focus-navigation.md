@@ -419,7 +419,7 @@ Non-pointer input types such as keyboard, gamepad, remote control, and accessibi
 
 In this section, we cover how to specify a preferred navigation strategy and fine tune focus navigation within your application through a set of navigation strategy properties that support all focus-based, non-pointer input types.
 
-For more general information on building apps and experiences for Xbox/TV, see [Keyboard Interaction](keyboard-interactions.md), [Designing for Xbox and TV](../../design/devices/designing-for-tv.md), and [Gamepad and remote control interactions](../../design/input/gamepad-and-remote-interactions.md).
+For more general information on building apps and experiences for Xbox/TV, see [Keyboard Interaction](keyboard-interactions.md), [Designing for Xbox and TV](/previous-versions/windows/uwp/xbox-apps/designing-for-tv), and [Gamepad and remote control interactions](/windows/uwp/ui-input/gamepad-and-remote-interactions).
 
 ### Navigation Strategies
 

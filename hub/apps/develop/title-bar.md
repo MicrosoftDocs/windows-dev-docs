@@ -181,7 +181,7 @@ There are a few things to be aware of when setting title bar colors:
 - Setting a color property to `null` resets it to the default system color.
 - You can't set transparent colors. The color's alpha channel is ignored.
 
-Windows gives a user the option to apply their selected [accent color](../design/style/color.md#accent-color) to the title bar. If you set any title bar color, we recommend that you explicitly set all the colors. This ensures that there are no unintended color combinations that occur because of user defined color settings.
+Windows gives a user the option to apply their selected [accent color](../design/signature-experiences/color.md#accent-color) to the title bar. If you set any title bar color, we recommend that you explicitly set all the colors. This ensures that there are no unintended color combinations that occur because of user defined color settings.
 
 ### Icon and system menu
 
@@ -888,6 +888,6 @@ public sealed partial class MainWindow : Window
 - [Title Bar (Control)](ui/controls/title-bar.md)
 - [Acrylic](../design/style/acrylic.md)
 - [Mica](../design/style/mica.md)
-- [Color](../design/style/color.md)
+- [Color](../design/signature-experiences/color.md)
 
 

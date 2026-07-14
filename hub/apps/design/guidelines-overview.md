@@ -44,8 +44,8 @@ Use these fundamentals as a guide throughout your design process—whether you'r
         Add touch feedback to reinforce user input and create more responsive, intuitive interactions.
     :::column-end:::
     :::column:::
-       [![Iconography icon](./images/tile-iconography.png)](./signature-experiences/iconography.md)<br>
-        **[Iconography](./signature-experiences/iconography.md)**<br>
+       [![Iconography icon](./images/tile-iconography.png)](./iconography/index.md)<br>
+        **[Iconography](./iconography/index.md)**<br>
         Communicate actions and concepts quickly with familiar, purposeful icons.
     :::column-end:::
 :::row-end:::

@@ -23,7 +23,7 @@ Many apps contain collections of content in the form of lists, grids, and trees 
 
 ## Creating commands for all input types
 
-Because users can interact with a Windows app using [a broad range of devices and inputs](../../../design/devices/index.md), your app should expose commands though both input-agnostic context menus and input-specific accelerators. Including both lets the user quickly invoke commands on content, regardless of input or device type.
+Because users can interact with a Windows app using [a broad range of devices and inputs](../../../design/guidelines-overview.md), your app should expose commands though both input-agnostic context menus and input-specific accelerators. Including both lets the user quickly invoke commands on content, regardless of input or device type.
 
 This table shows some typical collection commands and ways to expose those commands.
 
@@ -434,7 +434,7 @@ Pull to refresh lets a user pull down on a collection of data using touch in ord
 
 The pen input type provides the precision of pointer input. Users can perform common actions such as opening context menus using pen-based accelerators. To open a context menu, users can tap the screen with the barrel button pressed, or long press on the content. Users can also use the pen to hover over content to get a deeper understanding of the UI like displaying tooltips, or to reveal secondary hover actions, similar to mouse.
 
-To optimize your app for pen input, see the [pen and stylus interaction](../../../design/input/pen-and-stylus-interactions.md) article.
+To optimize your app for pen input, see the [pen and stylus interaction](/windows/uwp/ui-input/pen-and-stylus-interactions) article.
 
 
 ## Recommendations
@@ -451,5 +451,5 @@ To optimize your app for pen input, see the [pen and stylus interaction](../../.
 * [Menus and context menus](menus-and-context-menus.md)
 * [Swipe](swipe.md)
 * [Pull to refresh](pull-to-refresh.md)
-* [Pen and stylus interaction](../../../design/input/pen-and-stylus-interactions.md)
-* [Designing for Xbox and TV](../../../design/devices/designing-for-tv.md)
+* [Pen and stylus interaction](/windows/uwp/ui-input/pen-and-stylus-interactions)
+* [Designing for Xbox and TV](/previous-versions/windows/uwp/xbox-apps/designing-for-tv)

@@ -217,5 +217,5 @@ private void Button_PointerExited(object sender, PointerRoutedEventArgs e)
 
 ## Related articles
 
-- [Icons in Windows apps](../../../design/style/icons.md)
-- [Motion for Windows apps](../../../design/motion/index.md)
+- [Icons in Windows apps](./icons.md)
+- [Motion for Windows apps](../../../design/signature-experiences/motion.md)

@@ -18,7 +18,7 @@ This topic is a case study of taking the C++/WinRT [UWP Photo Editor sample app]
 
 ## Install tools for the Windows App SDK
 
-To set up your development computer, see [Install tools for the Windows App SDK](../set-up-your-development-environment.md).
+To set up your development computer, see [Install tools for the Windows App SDK](../../get-started/start-here.md).
 
 > [!IMPORTANT]
 > You'll find release notes topics along with the [Windows App SDK release channels](../release-channels.md) topic. There are release notes for each channel. Be sure to check any *limitations and known issues* in those release notes, since those might affect the results of following along with this case study and/or running the migrated app.
@@ -383,7 +383,7 @@ Those are the last of the changes we need to make to migrate the *Photo Editor* 
 
 ### App type issue (affects only Preview 3)
 
-If you followed along with this case study using the project template from the VSIX for Windows App SDK [version 1.0 Preview 3](../release-notes-archive/preview-channel-1.0.md#winui-3-100-preview3), then you'll need to make a small correction to `PhotoEditor.vcxproj`. Here's how to do that.
+If you followed along with this case study using the project template from the VSIX for Windows App SDK [version 1.0 Preview 3](/windows/apps/windows-app-sdk/release-notes/windows-app-sdk-1-0?pivots=preview#winui-3-100-preview3), then you'll need to make a small correction to `PhotoEditor.vcxproj`. Here's how to do that.
 
 In Visual Studio, in **Solution Explorer**, right-click the project node, and click **Unload Project**. Now `PhotoEditor.vcxproj` is open for editing. As the first child of **Project**, add a **PropertyGroup** element like this:
 

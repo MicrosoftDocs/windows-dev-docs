@@ -63,9 +63,9 @@ _Click the image to see it animated._
 
 ### Resourceful: Utilizes existing controls to bring consistency where possible
 
-Avoid custom animations where possible. Use animation resources like [WinUI 3](../../winui/index.md) controls for page transitions, in-page focus, and micro interactions. If you can't use WinUI controls, mimic existing OS behaviors based on where the app entry point lives.
+Avoid custom animations where possible. Use animation resources like [WinUI 3](../../winui/winui3/index.md) controls for page transitions, in-page focus, and micro interactions. If you can't use WinUI controls, mimic existing OS behaviors based on where the app entry point lives.
 
-_Example:_ [Page transitions](../motion/page-transitions.md), [connected animations](../motion/connected-animation.md), and [animated icons](../../develop/ui/controls/animated-icon.md) are the recommended WinUI controls that add delightful and necessary motion to apps.
+_Example:_ [Page transitions](../../develop/motion/page-transitions.md), [connected animations](../../develop/motion/connected-animation.md), and [animated icons](../../develop/ui/controls/animated-icon.md) are the recommended WinUI controls that add delightful and necessary motion to apps.
 
 :::image type="content" source="images/motion-resourceful.png" lightbox="images/motion-resourceful.gif" alt-text="An animated image that shows examples of page transitions, connected animations, and animated icons in the Windows UI.":::
 
@@ -98,11 +98,11 @@ Windows motion is fast, direct, and context-appropriate. Timing and easing curve
 
 ### Controls
 
-This release of Windows introduces purposeful micro-interactions in [WinUI](../../winui/index.md) controls. Add these controls to your app to help better organize information, and help your app's users transition from page to page, layer to layer, and state to state of an interaction.
+This release of Windows introduces purposeful micro-interactions in [WinUI](../../winui/winui3/index.md) controls. Add these controls to your app to help better organize information, and help your app's users transition from page to page, layer to layer, and state to state of an interaction.
 
 #### Page Transition: Page-to-page transitions within the same surface
 
-Use [page transitions](../motion/page-transitions.md) to transition smoothly from page to page, and configure animation directions to respect the flow of an app.
+Use [page transitions](../../develop/motion/page-transitions.md) to transition smoothly from page to page, and configure animation directions to respect the flow of an app.
 
 Page transitions guide your user's eyes to incoming and outgoing content, lowering cognitive load.
 
@@ -112,7 +112,7 @@ _Click the image to see it animated._
 
 #### Connected Animation: Layer-to-layer transitions within the same page
 
-Use [connected animations](../motion/connected-animation.md) to highlight specific pieces of information within a page or surface, while retaining context.
+Use [connected animations](../../develop/motion/connected-animation.md) to highlight specific pieces of information within a page or surface, while retaining context.
 
 Connected animations give focus to selected elements, and seamlessly transition between the focused and non-focused states.
 

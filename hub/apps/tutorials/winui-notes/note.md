@@ -1,8 +1,8 @@
 ---
 title: WinUI Notes tutorial - Step 2 - Note page
 description: WinUI Notes tutorial - Step 2 - Create a page for a note.
-author: jwmsft
-ms.author: jimwalk
+author: GrantMeStrength
+ms.author: jken
 ms.date: 09/02/2025
 ms.topic: tutorial
 no-loc: ["App.xaml", "App.xaml.cs", "MainWindow.xaml", "MainWindow.xaml.cs", "NotePage.xaml", "NotePage.xaml.cs"]

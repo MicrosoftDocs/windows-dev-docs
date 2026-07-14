@@ -1,8 +1,8 @@
 ---
 title: WinUI Notes - Step 3 - View-model
 description: WinUI Notes - Step 3 - Add a view and model for the note
-author: jwmsft
-ms.author: jimwalk
+author: GrantMeStrength
+ms.author: jken
 ms.date: 09/02/2025
 ms.topic: tutorial
 no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage", "WinUINotes"]

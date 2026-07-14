@@ -199,7 +199,7 @@ WinUI for UWP is tightly integrated with Windows SDKs and provides native Window
 
 #### XAML Islands
 
-XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](../desktop/modernize/xaml-islands/xaml-islands.md).
+XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/uwp/xaml-islands/xaml-islands).
 
 #### Windows ML
 

@@ -92,8 +92,8 @@ See these articles for info and examples specific to each text control.
 ## Font and style guidelines
 See these articles for font guidelines:
 
-- [Typography guidelines](../../../design/style/typography.md)
-- [Segoe Fluent Icons icon list and guidelines](../../../design/style/segoe-fluent-icons-font.md)
+- [Typography guidelines](../../../design/signature-experiences/typography.md)
+- [Segoe Fluent Icons icon list and guidelines](../../../design/iconography/segoe-fluent-icons-font.md)
 
 ## Choose the right keyboard for your text control
 
@@ -172,8 +172,8 @@ For TextBox and RichEditBox controls, spell checking is turned on by default. Yo
 ## Related articles
 
 **For designers**
-- [Typography guidelines](../../../design/style/typography.md)
-- [Segoe MDL2 icon list and guidelines](../../../design/style/segoe-ui-symbol-font.md)
+- [Typography guidelines](../../../design/signature-experiences/typography.md)
+- [Segoe MDL2 icon list and guidelines](../../../design/iconography/segoe-ui-symbol-font.md)
 - [Adding search](/previous-versions/windows/apps/hh465231(v=win.10))
 
 **For developers (XAML)**

@@ -22,7 +22,7 @@ This article provides developer guidelines for using the Segoe MDL2 Assets icons
 > [!IMPORTANT]
 > With the release of Windows 10, the `Segoe MDL2 Assets` font replaced the Windows 8/8.1 `Segoe UI Symbol` icon font.
 >
-> With the release of Windows 11, the `Segoe Fluent Icons` font replaced `Segoe MDL2 Assets` as the recommended symbol icon font. `Segoe UI Symbol` and `Segoe MDL2 Assets` are still available, but we recommend updating your app to use the [Segoe Fluent Icons font](../style/segoe-fluent-icons-font.md).
+> With the release of Windows 11, the `Segoe Fluent Icons` font replaced `Segoe MDL2 Assets` as the recommended symbol icon font. `Segoe UI Symbol` and `Segoe MDL2 Assets` are still available, but we recommend updating your app to use the [Segoe Fluent Icons font](./segoe-fluent-icons-font.md).
 
 Most of the icons included in the `Segoe MDL2 Assets` font are mapped to the Private Use Area of Unicode (PUA). The PUA allows font developers to assign private Unicode values to glyphs that don't map to existing code points. This is useful when creating a symbol font, but it creates an interoperability problem. If the font is not available, the glyphs won't show up. Use these glyphs only when you can explicitly specify the `Segoe MDL2 Assets` font. If you are working with tiles, you can't use these glyphs because you can't specify the tile font and PUA glyphs are not available via font-fallback.
 
@@ -1507,6 +1507,6 @@ The following table of glyphs displays unicode points prefixed from F6-  to F8-.
 
 ## Related articles
 
-* [Guidelines for icons](../style/icons.md)
+* [Guidelines for icons](../../develop/ui/controls/icons.md)
 * [Symbol enumeration](/uwp/api/Windows.UI.Xaml.Controls.Symbol)
 * [FontIcon class](/uwp/api/windows.ui.xaml.controls.fonticon)

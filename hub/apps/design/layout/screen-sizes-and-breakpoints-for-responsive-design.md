@@ -1,7 +1,7 @@
 ---
 title: Screen sizes and breakpoints for responsive design
 description: Design your Windows app UI for key width categories called breakpoints, rather than optimizing for every possible screen size.
-ms.date: 06/26/2026
+ms.date: 07/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -39,8 +39,6 @@ XAML's effective pixel system accounts for viewing distance automatically. When 
 XAML automatically adjusts UI elements so that they are legible and easy to interact with on all devices and screen sizes.
 
 When your app runs on a device, the system uses an algorithm to normalize how UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size rather than physical size. The algorithm ensures that a 24 px font on a large screen 10 feet away is just as legible as a 24 px font on a small screen a few inches away.
-
-<!-- TODO: Replace images/scaling-chart.png — it still shows "Phone" as a device category. -->
 
 :::image type="content" source="images/scaling-chart.png" alt-text="Diagram showing how content is scaled differently on devices at different viewing distances.":::
 

@@ -62,7 +62,7 @@ There are multiple tools available for monitoring memory use, including:
 - [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer)
 - [Visual Studio Memory usage diagnostic tool](/visualstudio/profiling/memory-usage)
 
-For the purposes of this article, we will focus on using the Windows Performance Analyzer. To learn more about choosing a tool for profiling the performance of your application, see [Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView](../../performance/choose-between-tools.md).
+For the purposes of this article, we will focus on using the Windows Performance Analyzer. To learn more about choosing a tool for profiling the performance of your application, see [Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView](./choose-between-tools.md).
 
 **To capture a trace:**
 
@@ -102,7 +102,7 @@ A few areas to consider in regard to applying your trace analysis toward updatin
 
 - **Reduce memory usage when in the foreground**: Analyzing the memory trace may help you to identify any unnecessary memory use in the foreground and update your code to reduce or remove that usage.
 
-- **Minimizing work while in the background**: The system has policies to age out pages from the process working sets. Using less memory in the background allows the system to be more efficient by keeping less of the application memory resident. Learn more about how to [Improve power consumption and battery life by minimizing background work](../../performance/power.md), which will also translate into using less memory usage while in the background.
+- **Minimizing work while in the background**: The system has policies to age out pages from the process working sets. Using less memory in the background allows the system to be more efficient by keeping less of the application memory resident. Learn more about how to [Improve power consumption and battery life by minimizing background work](./power.md), which will also translate into using less memory usage while in the background.
 
 - **Release resources in the background**: At runtime, an application may create some memory caches, as well as creating graphics allocations to support its UI. These allocations may be able to be freed when the application is minimized or not visible. An application can register for low-memory notifications to take such action, but a better strategy may be to free memory after a period of not being used, when the application concludes it is inactive. This period of disuse can vary by application, so possible indicators of inactive use can range from a handful of minutes to a ½ hour or more. Care should be taken to balance this kind of memory savings with responsiveness. If a cache is expensive to rebuild, the application can choose to retain it for the lifetime of the application.
 

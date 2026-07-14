@@ -149,7 +149,7 @@ Because this is a routed event, it bubbles from the focused element up through s
 
 <a name="split-view-code-sample"></a>
 
-Here, we show how a Grid opens a [SplitView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview) when the user attempts to move focus to the left of the left-most focusable control (see [Designing for Xbox and TV](../../design/devices/designing-for-tv.md#navigation-pane)).
+Here, we show how a Grid opens a [SplitView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitview) when the user attempts to move focus to the left of the left-most focusable control (see [Designing for Xbox and TV](/previous-versions/windows/uwp/xbox-apps/designing-for-tv#navigation-pane)).
 
 ```xaml
 <Grid NoFocusCandidateFound="OnNoFocusCandidateFound">

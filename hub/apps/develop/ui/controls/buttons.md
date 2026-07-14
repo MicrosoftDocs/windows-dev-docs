@@ -35,7 +35,7 @@ Use a **Button** control to let the user initiate an immediate action, such as s
 Don't use a **Button** control when the action is to navigate to another page; instead, use a [HyperlinkButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.hyperlinkbutton) control. For more info about hyperlinks, see [Hyperlinks](hyperlinks.md).
 
 > [!IMPORTANT]
-> For wizard navigation, use buttons labeled *Back* and *Next*. For other types of backwards navigation or navigation to an upper level, use a [back button](../../../design/basics/navigation-history-and-backwards-navigation.md).
+> For wizard navigation, use buttons labeled *Back* and *Next*. For other types of backwards navigation or navigation to an upper level, use a [back button](../navigation/navigation-history-and-backwards-navigation.md).
 
 Use a **RepeatButton** control when the user might want to trigger an action repeatedly. For example, use a **RepeatButton** control to increment or decrement a value in a counter.
 
@@ -105,7 +105,7 @@ If your layout requires only one button, it should be either left- or right-alig
 
 ### Back buttons
 
-The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [Navigation history and backwards navigation for Windows apps](../../../design/basics/navigation-history-and-backwards-navigation.md).
+The back button is a system-provided UI element that enables backward navigation through either the back stack or navigation history of the user. You don't have to create your own back button, but you might have to do some work to enable a good backwards navigation experience. For more info, see [Navigation history and backwards navigation for Windows apps](../navigation/navigation-history-and-backwards-navigation.md).
 
 ## Examples
 

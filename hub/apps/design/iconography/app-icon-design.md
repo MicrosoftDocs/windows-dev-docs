@@ -110,7 +110,7 @@ Accessibility is a high priority for Microsoft. App icons are primarily displaye
 > [!TIP]
 > Windows 11 no longer requires high contrast assets for app icons.
 
-High contrast icons are black and white and should be a direct representation of your app icon. Often the high contrast icon can be created from the color version using a solid fill and line. Avoid gradients in high contrast icons. Sometimes [monoline icons](../style/segoe-fluent-icons-font.md) are required for in-app experiences should be designed according to these guidelines.
+High contrast icons are black and white and should be a direct representation of your app icon. Often the high contrast icon can be created from the color version using a solid fill and line. Avoid gradients in high contrast icons. Sometimes [monoline icons](./segoe-fluent-icons-font.md) are required for in-app experiences should be designed according to these guidelines.
 
 ### Layering and shadow
 

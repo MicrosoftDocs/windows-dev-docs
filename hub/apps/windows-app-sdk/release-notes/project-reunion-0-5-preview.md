@@ -24,9 +24,9 @@ WinUI 3 is a native user experience (UX) platform for building modern Windows ap
 
 This version of WinUI 3 is available as part of the Project Reunion 0.5 Preview.
 
-To install, follow the directions found in [Install tools for preview and experimental channels of the Windows App SDK](../../windows-app-sdk/preview-experimental-install.md).
+To install, follow the directions found in [Install tools for preview and experimental channels of the Windows App SDK](../../get-started/start-here.md).
 
-In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) that you'll use to build your WinUI app. Once you've completed your installation, the experience of developing a WinUI app should not change.
+In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) that you'll use to build your WinUI app. Once you've completed your installation, the experience of developing a WinUI app should not change.
 
 > [!NOTE]
 > You can also clone and build the WinUI 3 Preview version of the [XAML Controls Gallery](#xaml-controls-gallery-winui-3-preview-branch).
@@ -34,11 +34,11 @@ In contrast to past preview versions of WinUI 3, you'll download a Project Reuni
 > [!NOTE]
 > To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer, you must enable WinUI 3 tooling with Visual Studio Preview Features as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
 
-Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../../winui/winui3/winui-project-templates-in-visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates. 
+Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates. 
 
 For more information about getting started with the WinUI project templates, see the following articles:
 
-- [Create your first WinUI 3 project](../../winui/winui3/create-your-first-winui3-app.md)
+- [Create your first WinUI 3 project](../../get-started/start-here.md)
 
 Aside from the [limitations and known issues](#limitations-and-known-issues), building an app using the WinUI projects is  similar to building a UWP app with XAML and WinUI 2. Therefore, most of the [guidance documentation](/windows/uwp/design/) for UWP apps and the **Windows.UI** WinRT namespaces in the Windows SDK is applicable.
 

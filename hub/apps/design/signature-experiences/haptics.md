@@ -111,5 +111,5 @@ When combining haptics with visual or audio feedback, align them in timing and i
 - [KnownSimpleHapticsControllerWaveforms](/uwp/api/windows.devices.haptics.knownsimplehapticscontrollerwaveforms)
 - [Haptics design and implementation](https://microsoft.design/articles/haptics-design-and-implementation/) (microsoft.design)
 - [Motion in Windows apps](motion.md)
-- [Touch interactions](../input/touch-interactions.md)
-- [Pen and stylus interactions](../input/pen-and-stylus-interactions.md)
+- [Touch interactions](../../develop/input/touch-interactions.md)
+- [Pen and stylus interactions](/windows/uwp/ui-input/pen-and-stylus-interactions)

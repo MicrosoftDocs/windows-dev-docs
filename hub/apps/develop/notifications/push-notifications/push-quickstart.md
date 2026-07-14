@@ -17,9 +17,9 @@ In this quickstart you will create a desktop Windows application that sends and 
 ## Prerequisites
 
 - [Start developing Windows apps](../../../get-started/start-here.md)
-- Either [Create a new project that uses the Windows App SDK](../../../winui/winui3/create-your-first-winui3-app.md) OR [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
+- Either [Create a new project that uses the Windows App SDK](../../../get-started/start-here.md) OR [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 - An [Azure Account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) is required in order to use Windows App SDK push notifications.
-- Read [Push notifications overview](../../../windows-app-sdk/notifications/push-notifications/index.md)
+- Read [Push notifications overview](./index.md)
 
 ## Packaging requirements
 
@@ -187,7 +187,7 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
 Update your app's `main()` method to add the following:
 
 1. Register your app to receive push notifications by calling [PushNotificationManager::Default().Register()](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.register).
-1. Check the source of the activation request by calling [AppInstance::GetCurrent().GetActivatedEventArgs()](). If the activation was triggered from a push notification, respond based on the notification's payload.
+1. Check the source of the activation request by calling [AppInstance::GetCurrent().GetActivatedEventArgs()](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs). If the activation was triggered from a push notification, respond based on the notification's payload.
 
 > [!IMPORTANT]
 > You must call **PushNotificationManager::Default().Register** before calling [AppInstance.GetCurrent.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs).
@@ -485,7 +485,7 @@ RestResponse response = await client.ExecutePostAsync(request);");
 
 ### Step 3: Send a cloud-sourced app notification
 
-If you are only interested in sending raw notifications, disregard this step. To send a cloud-sourced app notification, also known a push toast notification, first follow [Quickstart: App notifications in the Windows App SDK](../../../windows-app-sdk/notifications/app-notifications/app-notifications-quickstart.md). App notifications can either be push (sent from the cloud) or sent locally. Sending a cloud-sourced app notification is similar to sending a raw notification in **Step 2**, except the *X-WNS-Type* header is `toast`, *Content-Type* is `text/xml`, and the content contains the app notification XML payload. See [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root) for more on how to construct your XML payload.
+If you are only interested in sending raw notifications, disregard this step. To send a cloud-sourced app notification, also known a push toast notification, first follow [Quickstart: App notifications in the Windows App SDK](../app-notifications/app-notifications-quickstart.md). App notifications can either be push (sent from the cloud) or sent locally. Sending a cloud-sourced app notification is similar to sending a raw notification in **Step 2**, except the *X-WNS-Type* header is `toast`, *Content-Type* is `text/xml`, and the content contains the app notification XML payload. See [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root) for more on how to construct your XML payload.
 
 Create an HTTP POST request that contains your access token and the content of the cloud-sourced app notification you want to send. The content of the push notification will be delivered to the app.
 

@@ -1,8 +1,8 @@
 ---
 title: WinUI Notes tutorial - Step 4 - All notes
 description: WinUI Notes - Step 4 - Add a view and model for all notes.
-author: jwmsft
-ms.author: jimwalk
+author: GrantMeStrength
+ms.author: jken
 ms.date: 09/02/2025
 ms.topic: tutorial
 no-loc: ["NotePage.xaml", "NotePage.xaml.cs", "Note.cs", "AllNotesPage.xaml", "AllNotes.cs", "WinUI 3 Gallery"]
