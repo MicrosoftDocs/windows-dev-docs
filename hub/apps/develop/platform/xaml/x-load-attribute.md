@@ -1,10 +1,8 @@
 ---
-title: xLoad attribute
-description: xLoad enables dynamic creation and destruction  of an element and its children, decreasing startup time and memory usage.
-ms.date: 02/08/2017
+title: x:Load attribute
+description: Use the x:Load attribute in XAML to optimize startup time, visual tree creation, and memory usage by deferring element creation until needed.
+ms.date: 07/13/2026
 ms.topic: article
-keywords: windows 10, uwp
-ms.localizationpriority: medium
 ---
 # x:Load attribute
 
@@ -13,9 +11,6 @@ You can use **x:Load** to optimize the startup, visual tree creation, and memory
 The UI element attributed with x:Load can be loaded and unloaded via code, or using an [x:Bind](x-bind-markup-extension.md) expression. This is useful to reduce the costs of elements that are shown infrequently or conditionally. When you use x:Load on a container such as Grid or StackPanel, the container and all of its children are loaded or unloaded as a group.
 
 The tracking of deferred elements by the XAML framework adds about 600 bytes to the memory usage for each element attributed with x:Load, to account for the placeholder. Therefore, it's possible to overuse this attribute to the extent that your performance actually decreases. We recommend that you only use it on elements that need to be hidden. If you use x:Load on a container, then the overhead is paid only for the element with the x:Load attribute.
-
-> [!IMPORTANT]
-> The x:Load attribute is available starting in Windows 10, version 1703 (Creators Update). The min version targeted by your Visual Studio project must be *Windows 10 Creators Update (10.0, Build 15063)* in order to use x:Load.
 
 ## XAML attribute usage
 
@@ -29,7 +24,7 @@ The tracking of deferred elements by the XAML framework adds about 600 bytes to 
 
 There are several different ways to load the elements:
 
-- Use an [x:Bind](x-bind-markup-extension.md) expression to specify the load state. The expression should return **true** to load and **false** to unload the element.
+- Use an [x:Bind](x-bind-markup-extension.md) expression to specify the load state. The expression should return **true** to load and **false** to unload the element. If you use `x:Bind` in `x:Load`, don't set `x:Name` to the same identifier as the binding path; otherwise, the XAML compiler reports an error.
 - Call [**FindName**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.findname) with the name that you defined on the element.
 - Call [**GetTemplateChild**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.gettemplatechild) with the name that you defined on the element.
 - In a [**VisualState**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualState), use a [**Setter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Setter) or **Storyboard** animation that targets the x:Load element.
@@ -63,10 +58,19 @@ The restrictions for using **x:Load** are:
 
 - You must define an [x:Name](x-name-attribute.md) for the element, as there needs to be a way to find the element later.
 - You can only use x:Load on types that derive from [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) or [**FlyoutBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Primitives.FlyoutBase).
-- You cannot use x:Load on root elements in a [**Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page), a [**UserControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.usercontrol), or a [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DataTemplate).
+- You cannot use x:Load on root elements in a [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), a [**Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page), a [**UserControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.usercontrol), or a [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DataTemplate).
 - You cannot use x:Load on elements in a [**ResourceDictionary**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary).
 - You cannot use x:Load on loose XAML loaded with [**XamlReader.Load**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.markup.xamlreader.load).
 - Moving a parent element will clear out any elements that have not been loaded.
+
+> [!NOTE]
+> **WinUI 3 (Windows App SDK):** [**Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) does not derive from [**FrameworkElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement), so it does not have a `FindName` method. In WinUI 3, `FindName` does not work to realize `x:Load` elements when the XAML root is a `Window`, even when you call `FindName` on a `FrameworkElement` that is a descendant of the `Window`. Use an `x:Bind` expression to control the load state instead. For details, see [microsoft-ui-xaml #9842](https://github.com/microsoft/microsoft-ui-xaml/issues/9842).
+
+> [!NOTE]
+> **C++/WinRT (WinUI 2 / UWP):** Using `x:Load` with `x:Bind` on the same element can produce a compile error. For details and a workaround, see [microsoft-ui-xaml #7579](https://github.com/microsoft/microsoft-ui-xaml/issues/7579).
+
+> [!NOTE]
+> **C++/WinRT:** `FindName` does not reload an element that was previously unloaded with `UnloadObject`. Use an `x:Bind` expression to control the load state instead.
 
 ## Remarks
 
