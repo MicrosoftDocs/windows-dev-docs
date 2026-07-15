@@ -185,7 +185,7 @@ private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
 // pch.h
 // Add this include in pch.h to support winrt::xaml_typename
 
-#include <winrt/Windows.UI.Xaml.Interop.h>
+#include <winrt/Microsoft.UI.Xaml.Interop.h>
 
 ////////////////////
 // MainPage.xaml.h
