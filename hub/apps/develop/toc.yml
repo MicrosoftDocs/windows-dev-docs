@@ -986,6 +986,8 @@ items:
             href: security/fingerprint-biometrics.md
           - name: OAuth 2.0
             href: security/oauth2.md
+          - name: Web Account Manager
+            href: security/web-account-manager.md
           - name: Passkeys
             items:
               - name: Overview
