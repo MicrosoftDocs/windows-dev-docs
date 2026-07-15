@@ -1,13 +1,14 @@
 ---
 description: The Add-on acquisitions report lets you see how many add-ons you've sold, along with demographic and platform details for your Apps and games.
-title: Add-on acquisitions report
+title: Add-on acquisitions reports
 author: Sankalpm-1
-ms.author: v-mishrasank
-ms.date: 06/19/2026
+ms.author: sankalpm
+ms.date: 07/15/2026
 ms.topic: article
+keywords:	windows 10, windows 11, windows, windows store, store, analytics, installs, add-on acquisitions, subscriptions, consumables, durables, purchases, revenue
 ---
 
-# Add-on acquisitions report
+# Add-on acquisitions reports
 
 The [**Add-on acquisitions**](https://partner.microsoft.com/dashboard/insights/analytics/store/inapp) report provides insights into add-on performance for your app or game. It shows how many add-on purchases are made and the revenue generated across subscription, durable, and consumable add-ons. 
 
@@ -15,7 +16,7 @@ Use this report to monitor purchase volume, track revenue, and evaluate add-on p
 
 ## Overview 
 
-:::image type="content" source="images/app-add-on-01.png" alt-text="Screenshot of Overview tab." lightbox="images/app-add-on-01.png":::
+:::image type="content" source="../images/app-add-on-01.png" alt-text="Screenshot of Overview tab." lightbox="../images/app-add-on-01.png":::
 
 The **Overview** tab provides a summary of your app or game's add-on performance, including purchase and revenue insights. It includes key metrics, trends, and geographic distribution across subscription, durable, and consumable add-ons. 
 
@@ -32,7 +33,7 @@ The **Key metrics** section shows a high-level summary of add-on purchases and r
 
 ### Trends 
 
-:::image type="content" source="images/app-add-on-02.png" alt-text="Screenshot of Overview trends." lightbox="images/app-add-on-02.png":::
+:::image type="content" source="../images/app-add-on-02.png" alt-text="Screenshot of Overview trends." lightbox="../images/app-add-on-02.png":::
 
 The **Trends** section shows how add-on purchases and revenue change over time. 
 
@@ -41,7 +42,7 @@ The **Trends** section shows how add-on purchases and revenue change over time.
 
 ### Geographical spread 
 
-:::image type="content" source="images/app-add-on-03.png" alt-text="Screenshot of Overview tab geographical spread." lightbox="images/app-add-on-03.png":::
+:::image type="content" source="../images/app-add-on-03.png" alt-text="Screenshot of Overview tab geographical spread." lightbox="../images/app-add-on-03.png":::
 
 The **Geographical spread** section shows purchase counts by country or region. 
 
@@ -55,13 +56,13 @@ This table helps you understand where your add-on purchases are coming from.
 
 ### Conversions breakdown by campaign ID 
 
-:::image type="content" source="images/app-add-on-04.png" alt-text="Screenshot of Overview tab conversions." lightbox="images/app-add-on-04.png":::
+:::image type="content" source="../images/app-add-on-04.png" alt-text="Screenshot of Overview tab conversions." lightbox="../images/app-add-on-04.png":::
 
 The **Conversions breakdown by campaign ID** section shows conversions and page views from customers on Windows 10 or Windows 11 for each custom campaign. 
 
 ## Subscriptions 
 
-:::image type="content" source="images/app-add-on-05.png" alt-text="Screenshot of Subscriptions tab." lightbox="images/app-add-on-05.png":::
+:::image type="content" source="../images/app-add-on-05.png" alt-text="Screenshot of Subscriptions tab." lightbox="../images/app-add-on-05.png":::
 
 The **Subscriptions** tab provides detailed insights into subscription add-ons, including acquisition, revenue, and retention trends. It provides insights into subscription add-ons, including acquisition, revenue, and retention metrics. 
 
@@ -76,7 +77,7 @@ The **Key metrics** section summarizes subscription status and activity for the 
 
 ### Subscription acquisitions 
 
-:::image type="content" source="images/app-add-on-06.png" alt-text="Screenshot of Subscriptions tab acquisitions." lightbox="images/app-add-on-06.png":::
+:::image type="content" source="../images/app-add-on-06.png" alt-text="Screenshot of Subscriptions tab acquisitions." lightbox="../images/app-add-on-06.png":::
 
 The **Subscription acquisitions** section shows the acquisition count for subscription add-ons. 
 
@@ -86,7 +87,7 @@ The **Subscription acquisitions** section shows the acquisition count for subscr
 
 ### Subscription revenue (USD) 
 
-:::image type="content" source="images/app-add-on-07.png" alt-text="Screenshot of Subscriptions tab revenue." lightbox="images/app-add-on-07.png":::
+:::image type="content" source="../images/app-add-on-07.png" alt-text="Screenshot of Subscriptions tab revenue." lightbox="../images/app-add-on-07.png":::
 
 The **Subscription revenue (USD)** section shows revenue trends for subscription add-ons. 
 
@@ -95,7 +96,7 @@ The **Subscription revenue (USD)** section shows revenue trends for subscription
 
 ### Subscription details 
 
-:::image type="content" source="images/app-add-on-08.png" alt-text="Screenshot of Subscriptions tab details." lightbox="images/app-add-on-08.png":::
+:::image type="content" source="../images/app-add-on-08.png" alt-text="Screenshot of Subscriptions tab details." lightbox="../images/app-add-on-08.png":::
 
 The **Subscription details** section provides a breakdown of subscription metrics per add-on. 
 
@@ -104,7 +105,7 @@ The **Subscription details** section provides a breakdown of subscription metric
 
 ### Cohort retention 
 
-:::image type="content" source="images/app-add-on-09.png" alt-text="Screenshot of cohort retention." lightbox="images/app-add-on-09.png":::
+:::image type="content" source="../images/app-add-on-09.png" alt-text="Screenshot of cohort retention." lightbox="../images/app-add-on-09.png":::
 
 The **Cohort retention** section shows how groups of users who start a subscription in the same month are retained over time. 
 
@@ -118,7 +119,7 @@ You can filter the data by user groups:
 
 ## Durable & Consumable 
 
-:::image type="content" source="images/app-add-on-10.png" alt-text="Screenshot of Durable & consumable tab." lightbox="images/app-add-on-10.png":::
+:::image type="content" source="../images/app-add-on-10.png" alt-text="Screenshot of Durable & consumable tab." lightbox="../images/app-add-on-10.png":::
 
 The **Durable & consumable** tab provides insights into durable and consumable add-ons, including their purchases and revenue. Use this tab to understand how durable and consumable add-ons perform over time and compare performance across add-ons. 
 
@@ -133,7 +134,7 @@ The **Key metrics** section summarizes purchase and revenue activity for durable
 
 ### Trends 
 
-:::image type="content" source="images/app-add-on-11.png" alt-text="Screenshot of Durable & consumable trends." lightbox="images/app-add-on-11.png":::
+:::image type="content" source="../images/app-add-on-11.png" alt-text="Screenshot of Durable & consumable trends." lightbox="../images/app-add-on-11.png":::
 
 The **Trends** section shows purchases and revenue trends for durable and consumable add-ons over time. 
 
@@ -151,7 +152,7 @@ The **Trends** section shows purchases and revenue trends for durable and consum
 
 ### Consumable & durable details 
 
-:::image type="content" source="images/app-add-on-12.png" alt-text="Screenshot of Consumable & durable details." lightbox="images/app-add-on-12.png":::
+:::image type="content" source="../images/app-add-on-12.png" alt-text="Screenshot of Consumable & durable details." lightbox="../images/app-add-on-12.png":::
 
 The **Consumable & durable** details section provides a breakdown of add-on performance. 
 
