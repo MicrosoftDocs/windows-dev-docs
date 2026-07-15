@@ -101,7 +101,7 @@ private async void OpenButton_Click(object sender, RoutedEventArgs e)
         await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
 
             // Load the file into the Document property of the RichEditBox.
-            editor.Document.LoadFromStream(Windows.UI.Text.TextSetOptions.FormatRtf, randAccStream);
+            editor.Document.LoadFromStream(Microsoft.UI.Text.TextSetOptions.FormatRtf, randAccStream);
         }
         catch (Exception)
         {
@@ -138,7 +138,7 @@ private async void SaveButton_Click(object sender, RoutedEventArgs e)
         Windows.Storage.Streams.IRandomAccessStream randAccStream =
             await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 
-        editor.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
+        editor.Document.SaveToStream(Microsoft.UI.Text.TextGetOptions.FormatRtf, randAccStream);
 
         // Let Windows know that we're finished changing the file so the
         // other app can update the remote version of the file.
@@ -158,7 +158,7 @@ private void BoldButton_Click(object sender, RoutedEventArgs e)
     if (selectedText != null)
     {
         Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-        charFormatting.Bold = Windows.UI.Text.FormatEffect.Toggle;
+        charFormatting.Bold = Microsoft.UI.Text.FormatEffect.Toggle;
         selectedText.CharacterFormat = charFormatting;
     }
 }
@@ -169,7 +169,7 @@ private void ItalicButton_Click(object sender, RoutedEventArgs e)
     if (selectedText != null)
     {
         Microsoft.UI.Text.ITextCharacterFormat charFormatting = selectedText.CharacterFormat;
-        charFormatting.Italic = Windows.UI.Text.FormatEffect.Toggle;
+        charFormatting.Italic = Microsoft.UI.Text.FormatEffect.Toggle;
         selectedText.CharacterFormat = charFormatting;
     }
 }

@@ -1,13 +1,13 @@
 ---
-title: Overall migration strategy
-description: Practical strategies and setup steps for migrating a C# or C++/WinRT UWP app to the Windows App SDK and WinUI 3, including project setup, code migration order, and NuGet dependencies.
-ms.topic: how-to
-ms.date: 07/03/2026
+title: Migration and modernization overview
+description: Strategies and steps for migrating a UWP app to the Windows App SDK and WinUI 3, including project setup and code migration.
+ms.topic: overview
+ms.date: 07/15/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---
 
-# Overall migration strategy
+# Migration and modernization overview
 
 This topic covers practical strategies and environment setup steps for migrating a UWP app to the Windows App SDK. For an overview of the migration section and links to all related topics, see [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md).
 

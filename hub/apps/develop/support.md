@@ -1,12 +1,12 @@
 ---
-title: Windows Developer Support
+title: Help and guidance for Windows developers
 description: Find help and resources for developing Windows applications, including getting started guides, developer tools, community channels, and Microsoft support options.
 ms.topic: overview
 ms.date: 07/13/2026
 ms.localizationpriority: medium
 ---
 
-# Windows Developer Support
+# Help and guidance for Windows developers
 
 Whether you're just getting started or you're a professional developer troubleshooting a tricky issue, you're not alone. Connect with the Windows developer community, access expert resources, and find solutions to help you build great apps.
 
@@ -46,6 +46,24 @@ These tools help you build, package, and ship Windows apps from any editor or fr
 - **[WinUI agent plugin for GitHub Copilot and Claude Code](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/)** *(open-source, preview)* - AI-assisted scaffolding, building, and iteration for WinUI apps.
 - **[AI Dev Gallery](https://github.com/microsoft/ai-dev-gallery)** *(open-source)* - Interactive samples for on-device AI on Windows, including Windows AI APIs.
 - **[Dev Home](https://github.com/microsoft/devhome)** *(open-source)* - Set up your development environment, manage dev drives, and monitor system performance.
+
+## Debugging with GitHub Copilot
+
+GitHub Copilot can help you diagnose and fix bugs in your Windows apps. Whether you're hitting a XAML binding failure, an unexpected crash, or confusing API behavior, try asking Copilot directly in Visual Studio or VS Code. Here are some sample prompts to get you started:
+
+| Scenario | Sample prompt |
+|---|---|
+| XAML data binding not updating | *"My `x:Bind` property isn't updating the UI when the value changes. The property is in my ViewModel. What am I missing?"* |
+| App crashes on launch | *"My WinUI 3 app throws an unhandled exception during startup. Here's the stack trace — what's the likely cause?"* |
+| Async/await deadlock | *"My UI freezes when I call an async method. How do I avoid blocking the dispatcher thread in a WinUI app?"* |
+| Packaging or deployment error | *"I'm getting error 0x80073CFD when deploying my MSIX package. What does this mean and how do I fix it?"* |
+| API returning unexpected results | *"The `StorageFolder.GetFilesAsync` call returns an empty list even though the folder has files. What permissions or capabilities might I be missing?"* |
+| Memory leak investigation | *"My app's memory usage keeps growing. How do I find which objects aren't being garbage collected in a WinUI 3 app?"* |
+
+> [!TIP]
+> For best results, paste relevant code snippets or error messages along with your prompt. Copilot works best when it has specific context about your problem.
+
+To learn more about using AI-assisted development tools with Windows apps, see [Build native Windows apps with AI agents](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/).
 
 ## Documentation and reference
 

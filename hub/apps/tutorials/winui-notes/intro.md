@@ -3,7 +3,7 @@ title: WinUI Notes tutorial - Introduction
 description: WinUI Notes tutorial introduction.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/02/2025
+ms.date: 07/15/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
@@ -47,7 +47,7 @@ To begin this tutorial, you must create a WinUI app project in Visual Studio usi
 
 - **Windows App SDK**
 
-  This tutorial uses features that are new in Windows App SDK 1.7. You must make sure the Windows App SDK NuGet package is updated to version 1.7 or later.  
+  This tutorial uses features that are available in Windows App SDK 1.7 and later. Make sure the Windows App SDK NuGet package is updated to version 1.7 or later.  
 
 > [!IMPORTANT]
 > If you have not created a WinUI project before, follow the steps in **[Start developing Windows apps](../../get-started/start-here.md)** to make sure your dev environment and Visual Studio project are set up correctly.

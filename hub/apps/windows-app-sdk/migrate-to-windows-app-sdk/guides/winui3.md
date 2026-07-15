@@ -2,7 +2,7 @@
 title: User interface migration (including WinUI)
 description: Guidance for migrating your user interface code from UWP to WinUI 3, including XAML controls, resource dictionaries, and UI thread patterns.
 ms.topic: article
-ms.date: 07/05/2026
+ms.date: 07/13/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, WinUI
 ms.localizationpriority: medium
 dev_langs:
@@ -252,6 +252,64 @@ In addition, you won't be able to copy a `<Page.Resources>` element over to **Ma
 The [**AcrylicBrush.BackgroundSource**](/uwp/api/windows.ui.xaml.media.acrylicbrush.backgroundsource) property exists in UWP, but not in the Windows App SDK. In the Windows App SDK, the [**AcrylicBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.acrylicbrush) always samples from the app content.
 
 So if you're accessing the **AcrylicBrush.BackgroundSource** property in the source code of your UWP app (whether that's in XAML markup or in imperative code), then remove that code when migrating your app to the Windows App SDK. Instead, use the [DesktopAcrylicController](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.systembackdrops.desktopacryliccontroller) class.
+
+## DisplayInformation.GetForCurrentView
+
+In UWP, [**DisplayInformation.GetForCurrentView()**](/uwp/api/windows.graphics.display.displayinformation.getforcurrentview) provides DPI, scale factor, and orientation information. In WinUI 3 desktop apps, this API throws because there is no `CoreWindow`. Use [**XamlRoot.RasterizationScale**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale) instead, and subscribe to the [**XamlRoot.Changed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.changed) event to respond to DPI changes.
+
+```csharp
+// UWP
+var displayInfo = DisplayInformation.GetForCurrentView();
+double scale = displayInfo.RawPixelsPerViewPixel;
+
+// WinUI 3
+double scale = myElement.XamlRoot.RasterizationScale;
+myElement.XamlRoot.Changed += (sender, args) =>
+{
+    double newScale = sender.RasterizationScale;
+    // Respond to DPI change
+};
+```
+
+For raw screen resolution, use Win32 APIs such as [`GetDpiForWindow`](/windows/win32/api/winuser/nf-winuser-getdpiforwindow) with the window's HWND.
+
+## Virtualized list null-placeholder behavior
+
+UWP's `ListView` and `GridView` tolerate `null` items in their data source when using virtualization with [**IItemsRangeInfo**](/uwp/api/windows.ui.xaml.data.iitemsrangeinfo). WinUI 3 does not — null items cause an `E_POINTER` (0x80004003) crash at runtime.
+
+If your UWP data source uses `null` as a placeholder for items not yet loaded, replace those values with a non-null sentinel object:
+
+```csharp
+// UWP — tolerated null placeholders
+items[index] = null; // Placeholder for unloaded item
+
+// WinUI 3 — use a non-null placeholder
+items[index] = new PlaceholderItem(); // Any non-null object
+```
+
+Also verify that your `IList` or `IVector` implementation never returns `null` from its indexer for ranges that WinUI 3 requests via `IItemsRangeInfo`.
+
+## Empty Image Source attribute
+
+In UWP, setting `<Image Source="" />` or `Source="{x:Null}"` is harmless. In WinUI 3, an empty string in the `Source` attribute causes a fail-fast crash at startup.
+
+To fix this, either omit the `Source` property entirely or use a conditional binding:
+
+```xaml
+<!-- Don't do this in WinUI 3 -->
+<Image Source="" />
+
+<!-- Do this instead — omit Source, set it in code when ready -->
+<Image x:Name="myImage" />
+```
+
+```csharp
+// Set Source only when you have a valid URI
+if (!string.IsNullOrEmpty(imageUri))
+{
+    myImage.Source = new BitmapImage(new Uri(imageUri));
+}
+```
 
 ## Related topics
 

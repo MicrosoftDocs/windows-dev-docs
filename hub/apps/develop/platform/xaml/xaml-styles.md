@@ -244,7 +244,7 @@ Its required that you use a `ThemeDictionary` that is duplicated three times in 
 
 The best way to stay current with our latest visual styles is to avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 
-For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
+For system controls that use WinUI styles (`Microsoft.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
 
 ```xaml
 <Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">

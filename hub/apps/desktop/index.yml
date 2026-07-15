@@ -18,7 +18,7 @@ landingContent:
     linkLists:
       - linkListType: get-started
         links:
-          - text: Essentials
+          - text: Overview
             url: ../introduction.md
           - text: Core concepts
             url: ../get-started/index.md
@@ -94,7 +94,7 @@ landingContent:
     linkLists:
       - linkListType: how-to-guide
         links:
-          - text: Plan your migration strategy
+          - text: Overview
             url: ../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
           - text: Migrate to Windows App SDK
             url: ../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md

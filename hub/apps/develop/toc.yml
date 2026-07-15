@@ -986,6 +986,8 @@ items:
             href: security/fingerprint-biometrics.md
           - name: OAuth 2.0
             href: security/oauth2.md
+          - name: Web Account Manager
+            href: security/web-account-manager.md
           - name: Passkeys
             items:
               - name: Overview
@@ -1034,6 +1036,8 @@ items:
         items:
           - name: Overview
             href: user-interface.md
+          - name: App structure and layout
+            href: ui/windows-app-sdk-app-structure.md
           - name: Alignment, margin, and padding
             href: ui/alignment-margin-padding.md
           - name: Colors and themes

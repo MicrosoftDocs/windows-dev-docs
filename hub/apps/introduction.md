@@ -1,14 +1,14 @@
 ---
-title: Welcome to Windows app development
-description: A guide to help developers get started with developing for Windows
-ms.topic: how-to
-ms.date: 12/17/2025
+title: Overview - the essentials of Windows app development
+description: An overview of the essential concepts, tools, and frameworks you need to start building Windows desktop and device apps.
+ms.topic: overview
+ms.date: 07/15/2026
 keywords: windows, desktop development
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# The essentials of Windows app development
+# Overview: the essentials of Windows app development
 
 :::image type="content" source="images/essentials-header.png" alt-text="Windows logo with app icons floating in the background" border="false":::
 

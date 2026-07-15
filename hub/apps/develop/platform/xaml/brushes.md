@@ -182,7 +182,7 @@ Even when you use a solid color, make sure that the text color you choose has en
 
 [**XamlCompositionBrushBase**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.xamlcompositionbrushbase) is a base class used to create custom brushes that use [**CompositionBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.Composition.CompositionBrush) to paint XAML UI elements.
 
-This enables "drop down" interoperation between the Windows.UI.Xaml and Windows.UI.Composition layers as described in the [**Visual Layer overview**](/windows/uwp/composition/visual-layer).
+This enables "drop down" interoperation between the Microsoft.UI.Xaml and Microsoft.UI.Composition layers as described in the [**Visual Layer overview**](/windows/uwp/composition/visual-layer).
 
 To create a custom brush, create a new class that inherits from XamlCompositionBrushBase and implements the required methods.
 

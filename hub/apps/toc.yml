@@ -3,8 +3,9 @@ items:
   href: desktop/index.yml
   items:
   - name: Essentials
-    href: introduction.md
     items:
+    - name: Overview
+      href: introduction.md
     - name: Core concepts
       href: get-started/index.md
       expanded: true
@@ -71,11 +72,12 @@ items:
             href: windows-app-sdk/downloads-archive.md
       - name: WinUI
         href: winui/winui3/index.md
-    - name: Get started with WinUI
-      href: get-started/start-here.md
+    - name: Start here
       items:
       - name: Overview
         href: get-started/winui-get-started-overview.md
+      - name: Get started with WinUI
+        href: get-started/start-here.md
       - name: "Tutorial: Create your first WinUI app"
         items:
         - name: Introduction
@@ -115,8 +117,9 @@ items:
     - name: FAQ
       href: get-started/windows-developer-faq.md
   - name: Design
-    href: design/index.md
     items:
+    - name: Overview
+      href: design/index.md
     - name: Design principles
       href: design/design-principles.md
     - name: Guidelines
@@ -157,8 +160,9 @@ items:
     - name: Tools and resources
       href: design/downloads/index.md
   - name: Develop
-    href: develop/index.md
     items:
+    - name: Overview
+      href: develop/index.md
     - name: Tools and samples
       href: dev-tools/index.md
       items:
@@ -196,8 +200,9 @@ items:
     - name: Windows AI
       href: /windows/ai/
   - name: Package and deploy
-    href: package-and-deploy/index.md
     items:
+    - name: Overview
+      href: package-and-deploy/index.md
     - name: Packaging
       href: package-and-deploy/packaging/index.md
       items:
@@ -229,8 +234,9 @@ items:
     - name: SmartScreen reputation
       href: package-and-deploy/smartscreen-reputation.md
   - name: Migrate and modernize
-    href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
     items:
+    - name: Overview
+      href: windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
     - name: Migration decision guide
       href: windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md
     - name: Migration terminology
@@ -268,8 +274,9 @@ items:
     - name: What is supported
       href: windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
   - name: Publish
-    href: publish/index.md
     items:
+    - name: Overview
+      href: publish/index.md
     - name: Choose a distribution path
       href: package-and-deploy/choose-distribution-path.md
     - name: Get started with Microsoft Store

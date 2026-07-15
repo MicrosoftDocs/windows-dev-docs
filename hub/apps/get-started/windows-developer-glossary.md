@@ -1,8 +1,8 @@
 ---
 title: Windows developer glossary
-description:  A glossary of terms related to Windows application development.
+description: A glossary of key terms and concepts for Windows application development including WinUI, WinAppSDK, and AI tools.
 ms.topic: glossary
-ms.date: 12/05/2025
+ms.date: 07/15/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -34,6 +34,14 @@ A redistributable component that provides an API to find and load the Windows Ap
 
 C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-based library, and designed to provide first-class access to modern Windows APIs. See [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
 
+#### Dev Drive
+
+A storage volume optimized for developer workloads. Dev Drive uses the Resilient File System (ReFS) and provides faster performance for common development I/O operations like builds, package installs, and source control. See [Set up a Dev Drive on Windows 11](/windows/dev-drive/).
+
+#### Dev Home
+
+An open-source dashboard app for Windows developers that helps set up development environments, manage dev drives, and monitor system performance. See [Dev Home](https://github.com/microsoft/devhome).
+
 #### DirectML
 
 A high‑performance, hardware‑accelerated API for machine learning on Windows that runs on a broad range of GPUs (and increasingly NPUs) using the DirectX 12 stack. See [DirectML overview](/windows/ai/directml/dml-intro).
@@ -45,6 +53,10 @@ A high‑performance, hardware‑accelerated API for machine learning on Windows
 #### Fluent Design
 
 [Fluent Design](https://aka.ms/fluent) is a design system that lets you create reusable cross-platform user experiences. Fluent 2 is the latest design system for Windows and is used by WinUI.
+
+#### Foundry Local
+
+A lightweight runtime for running small language models locally on Windows devices using available hardware (CPU, GPU, or NPU). Enables offline AI scenarios with low latency. See [Get started with Foundry Local](/windows/ai/foundry-local/get-started).
 
 #### GitHub Copilot
 
@@ -136,7 +148,7 @@ A set of recommended responsible development practices to use as you create appl
 
 #### Small language model (SLM)
 
-A compact model (for example, Microsoft Phi 3) designed to run efficiently on client devices (CPU, GPU, or NPU) with lower latency and cost, suitable for many on device AI scenarios. See [Get started with Phi Silica](/windows/ai/apis/phi-silica).
+A compact model (for example, Phi Silica) designed to run efficiently on client devices (CPU, GPU, or NPU) with lower latency and cost, suitable for many on-device AI scenarios. See [Get started with Phi Silica](/windows/ai/apis/phi-silica).
 
 #### Text recognition
 
@@ -172,6 +184,10 @@ Microsoft Foundry on Windows offers AI-backed features and APIs on Windows 10 an
 #### Windows API
 
 Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of the Windows App SDK and WinUI.
+
+#### Windows App Development CLI (winapp CLI)
+
+An open-source command-line tool for packaging, signing, and managing Windows apps. Works with WinUI, WPF, WinForms, Electron, Rust, Flutter, and more. See [winapp CLI on GitHub](https://github.com/microsoft/WinAppCli).
 
 #### Windows App SDK
 
