@@ -2,7 +2,7 @@
 title: Additional migration guidance
 description: This topic contains additional migration guidance not categorized into a feature area in the [feature area guides](feature-area-guides-ovw.md).
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/13/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---
@@ -64,6 +64,43 @@ During the migration process, you might find your app in a state where your XAML
 ## Unregistering an event handler (C++/WinRT)
 
 In a C++/WinRT project, you can manually revoke (unregister) an event handler such as **SizeChanged** (for more details, and code examples, see [Revoke a registered delegate](/windows/uwp/cpp-and-winrt-apis/handle-events#revoke-a-registered-delegate)). But an alternative to manually revoking&mdash;and one that you could consider if you're having problems with manually revoking&mdash;is to use a C++/WinRT auto event revoker. Again, more details and code examples in [Revoke a registered delegate](/windows/uwp/cpp-and-winrt-apis/handle-events#revoke-a-registered-delegate).
+
+## Namespace ambiguity with Windows.Web.Http
+
+If your UWP app uses [**Windows.Web.Http.HttpClient**](/uwp/api/windows.web.http.httpclient), be aware that on .NET 10 and later, the `HttpClient` type name is ambiguous between `Windows.Web.Http.HttpClient` and `System.Net.Http.HttpClient`. The compiler reports `CS0104: 'HttpClient' is an ambiguous reference`.
+
+To fix this, fully qualify all references:
+
+```csharp
+// Ambiguous — fails to compile on .NET 10+
+using Windows.Web.Http;
+using System.Net.Http;
+var client = new HttpClient(); // CS0104
+
+// Fix: fully qualify the one you want
+var client = new Windows.Web.Http.HttpClient();
+// -or-
+var client = new System.Net.Http.HttpClient();
+```
+
+Alternatively, use a `using` alias:
+
+```csharp
+using WinHttpClient = Windows.Web.Http.HttpClient;
+```
+
+> [!TIP]
+> If you don't need WinRT-specific HTTP features, prefer `System.Net.Http.HttpClient` since it has better .NET integration and doesn't require Windows-specific APIs.
+
+## Misleading exit codes from dotnet run
+
+When debugging WinUI 3 apps with `dotnet run`, the process may exit with large error-like codes such as `3221225786` (`0xC000013A`, which is `STATUS_CONTROL_C_EXIT`). This happens because `dotnet run` launches the app in a separate process and then exits, reporting the child process's termination status rather than a meaningful application exit code.
+
+This is normal behavior and does not indicate a crash. To confirm:
+
+- Run the app directly (for example, `bin\Debug\net10.0-windows\MyApp.exe`) and check its actual exit code.
+- Use Visual Studio or `dotnet run --no-build` with a debugger attached to see real exceptions.
+- Look for crash dumps in Event Viewer if you suspect an actual failure.
 
 ## See Also
 

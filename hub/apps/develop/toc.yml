@@ -1036,6 +1036,8 @@ items:
         items:
           - name: Overview
             href: user-interface.md
+          - name: App structure and layout
+            href: ui/windows-app-sdk-app-structure.md
           - name: Alignment, margin, and padding
             href: ui/alignment-margin-padding.md
           - name: Colors and themes
