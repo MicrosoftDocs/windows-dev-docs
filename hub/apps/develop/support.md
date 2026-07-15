@@ -1,12 +1,12 @@
 ---
-title: Windows Developer Support
+title: Help and guidance for Windows developers
 description: Find help and resources for developing Windows applications, including getting started guides, developer tools, community channels, and Microsoft support options.
 ms.topic: overview
 ms.date: 07/13/2026
 ms.localizationpriority: medium
 ---
 
-# Windows Developer Support
+# Help and guidance for Windows developers
 
 Whether you're just getting started or you're a professional developer troubleshooting a tricky issue, you're not alone. Connect with the Windows developer community, access expert resources, and find solutions to help you build great apps.
 
