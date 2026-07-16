@@ -3,9 +3,9 @@ description: Filter the items in your collection through user input.
 title: Filtering collections
 label: Filtering collections
 template: detail.hbs
-ms.date: 3/29/2024
+ms.date: 07/15/2026
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: winui 3, windows app sdk, listview, filtering, collections
 pm-contact: anawish
 ---
 
@@ -153,7 +153,7 @@ Now, as the user types in their filtering string in the `FilterByLastName` TextB
 ## Get the sample code
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the ListView in action](winui3gallery://item/ItemsView)
+> [Open the WinUI 3 Gallery app and see the ListView in action](winui3gallery://item/ListView)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -164,3 +164,4 @@ Now, as the user types in their filtering string in the `FilterByLastName` TextB
 - [Items view](itemsview.md)
 - [List view and grid view](listview-and-gridview.md)
 - [Collection commanding](collection-commanding.md)
+- [ItemsRepeater](items-repeater.md)

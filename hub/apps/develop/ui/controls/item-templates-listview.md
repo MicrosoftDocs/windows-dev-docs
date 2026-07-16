@@ -2,15 +2,15 @@
 description: Get item templates that you can use with a ListView control to display single, double, triple, and tabular list items.
 title: Item templates for list view
 template: detail.hbs
-ms.date: 11/03/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, fluent
+keywords: winui 3, windows app sdk, listview, item template, data template
 ---
 # Item templates for list view
 
 This section contains item templates that you can use with a [**ListView**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView) control. Use these templates to get the look of common app types.
 
-To demonstrate data binding, these templates bind **ListViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
+To demonstrate data binding, these templates bind **ListViewItems** to the example Recording class from the [data binding overview](../../data-binding/data-binding-overview.md).
 
 > [!NOTE] 
 > Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.name) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibility overview](../../../design/accessibility/accessibility-overview.md).
@@ -124,7 +124,8 @@ Use this template to display a list of items with text in defined columns.
 
 ## Related articles
 - [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)
-- [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
+- [Data binding overview](../../data-binding/data-binding-overview.md)
 - [Accessibility overview](../../../design/accessibility/accessibility-overview.md)
-- [ListView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ControlPages/ListViewPage.xaml)
-- [Thumbnail images](/windows/uwp/files/thumbnails)
+- [ListView and GridView](listview-and-gridview.md)
+- [ItemsRepeater](items-repeater.md)
+- [ListView - WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ListView/ListViewPage.xaml)

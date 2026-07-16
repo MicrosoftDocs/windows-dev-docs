@@ -3,9 +3,9 @@ title: List view and grid view
 description: Use ListView and GridView controls to display and manipulate sets of data, such as a gallery of images or a set of email messages.
 label: List view and grid view
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 07/15/2026
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: winui 3, windows app sdk, listview, gridview, collection controls
 ms.assetid: f8532ba0-5510-4686-9fcf-87fd7c643e7b
 doc-status: Published
 ms.localizationpriority: medium
@@ -47,7 +47,7 @@ The feature-rich ListView and GridView controls work *out of box*. They require 
 
 The [ItemsRepeater](items-repeater.md) control also is used to display collections, but it's designed as a building block for creating a custom control to suit your particular UI requirements. It doesn't have the same built-in features and functionality as ListView and GridView, so you'll need to implement any necessary features or interactions. Use ItemsRepeater if you have a highly customized UI that you can't create by using either ListView or GridView, or if your data source requires different behavior for each item.
 
-Learn more about ItemsRepeater by reading its [Guidelines](items-repeater.md) and [API documentation](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater).
+Learn more about ItemsRepeater by reading its [Guidelines](items-repeater.md) and [API documentation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater).
 
 ## Create a list view or a grid view
 
@@ -598,3 +598,9 @@ ListView and GridView controls support dragging and dropping items within their 
 - [Lists](lists.md)
 - [Item containers and templates](item-containers-templates.md)
 - [Drag and drop](../../data/drag-and-drop.md)
+- [ItemsRepeater](items-repeater.md)
+- [Item templates for list view](item-templates-listview.md)
+- [Item templates for grid view](item-templates-gridview.md)
+- [Filtering collections](listview-filtering.md)
+- [ListView - WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ListView/ListViewPage.xaml)
+- [GridView - WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/GridView/GridViewPage.xaml)

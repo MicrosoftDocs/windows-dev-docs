@@ -2,18 +2,18 @@
 description: Get item templates that you can use with a GridView control to display image galleries, images and text, and images with text overlays.
 title: Item templates for grid view
 template: detail.hbs
-ms.date: 11/03/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, fluent
+keywords: winui 3, windows app sdk, gridview, item template, data template
 ---
 # Item templates for grid view
 
 This section contains item templates that you can use with a [**GridView**](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView) control. Use these templates to get the look of common app types.
 
-To demonstrate data binding, these templates bind **GridViewItems** to the example Recording class from the [data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
+To demonstrate data binding, these templates bind **GridViewItems** to the example Recording class from the [data binding overview](../../data-binding/data-binding-overview.md).
 
 > [!NOTE] 
-> Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/uwp/api/windows.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibility overview](../../../design/accessibility/accessibility-overview.md).
+> Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibility overview](../../../design/accessibility/accessibility-overview.md).
 
 ## Icon and text
 Use these templates to display a collection of apps in a grid with an icon and text.
@@ -151,7 +151,8 @@ Use this template to display a media collection with text overlay.
 
 ## Related articles
 - [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView)
-- [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart)
+- [Data binding overview](../../data-binding/data-binding-overview.md)
 - [Accessibility overview](../../../design/accessibility/accessibility-overview.md)
-- [GridView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ControlPages/GridViewPage.xaml)
-- [Thumbnail images](/windows/uwp/files/thumbnails)
+- [ListView and GridView](listview-and-gridview.md)
+- [ItemsRepeater](items-repeater.md)
+- [GridView - WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/GridView/GridViewPage.xaml)
