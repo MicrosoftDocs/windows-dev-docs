@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 This article shows how to use the [**FaceDetector**](/uwp/api/Windows.Media.FaceAnalysis.FaceDetector) to detect faces in an image. The [**FaceTracker**](/uwp/api/Windows.Media.FaceAnalysis.FaceTracker) is optimized for tracking faces over time in a sequence of video frames.
 
-The code in this article was adapted from the [Basic Face Detection](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection) and [Basic Face Tracking](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking) samples. You can download these samples to see the code used in context or to use the sample as a starting point for your own app.
+The code in this article was adapted from the [Basic Face Detection](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicFaceDetection) and [Basic Face Tracking](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicFaceTracking) samples. You can download these samples to see the code used in context or to use the sample as a starting point for your own app.
 
 ## Detect faces in a single image
 
@@ -78,5 +78,5 @@ Call [**ProcessNextFrameAsync**](/uwp/api/windows.media.faceanalysis.facetracker
 
 ## Related topics
 
-* [Basic Face Detection sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceDetection)
-* [Basic Face Tracking sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicFaceTracking)
+* [Basic Face Detection sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicFaceDetection)
+* [Basic Face Tracking sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicFaceTracking)

@@ -33,7 +33,7 @@ This section provides guidance for creating WinUI apps that use the camera or mi
 | [Scene analysis for MediaCapture](scene-analysis-for-media-capture.md) | Shows you how to use the [**SceneAnalysisEffect**](/uwp/api/Windows.Media.Core.SceneAnalysisEffect) and the [**FaceDetectionEffect**](/uwp/api/Windows.Media.Core.FaceDetectionEffect) to analyze the content of the media capture preview stream.  |
 | [Capture a photo sequence with VariablePhotoSequence](variable-photo-sequence.md) | Learn how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.  |
 | [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md) | Learn how to use a [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames. This feature is designed to be used by apps that perform real-time processing of media frames, such as augmented reality and depth-aware camera apps.  |
-| [Process audio frames with MediaFrameReader](process-media-frames-with-mediaframereader.md) | Learn how to use a [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) to get audio data from a media frame source.  |
+| [Process audio frames with MediaFrameReader](process-audio-frames-with-mediaframereader.md) | Learn how to use a [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) with [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) to get audio data from a media frame source.  |
 | [Detect and respond to audio level changes by the system](detect-audio-level-changes.md) | Learn how to detect and respond to audio level changes by the system. |
 | [Launch the camera settings page](launch-camera-settings.md) | Learn how to launch Windows Settings directly to the camera settings page. |
 | [Handle the Windows camera privacy setting](camera-privacy-setting.md) | Learn how apps should handle the Windows camera privacy setting. |
@@ -51,18 +51,20 @@ This section provides guidance for creating WinUI apps that use the camera or mi
 
 ## UWP app samples for camera
 
-* [Camera face detection sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFaceDetection)
-* [Camera preview frame sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraGetPreviewFrame)
-* [Camera HDR sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture)
-* [Camera manual controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraManualControls)
-* [Camera profile sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraProfile)
-* [Camera resolution sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraResolution)
-* [Camera starter kit](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraStarterKit)
-* [Camera video stabilization sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraVideoStabilization)
+* [Camera face detection sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraFaceDetection)
+* [Camera preview frame sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraGetPreviewFrame)
+* [Camera HDR sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraAdvancedCapture)
+* [Camera manual controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraManualControls)
+* [Camera profile sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraProfile)
+* [Camera resolution sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraResolution)
+* [Camera starter kit](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraStarterKit)
+* [Camera video stabilization sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraVideoStabilization)
 
 ## Related topics
 
 * [Audio, video, and camera](../audio-video-camera.md)
+* [Media playback](../media-playback/media-playback.md)
+* [Media processing and creation](../media-authoring-processing/media-authoring-processing.md)
  
 
  

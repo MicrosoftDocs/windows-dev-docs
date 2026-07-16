@@ -105,5 +105,5 @@ You can transcode an image file directly from a [**BitmapDecoder**](/uwp/api/Win
 
 ## Related topics
 
-* [BitmapEncoder options reference](/windows/uwp/audio-video-camera/bitmapencoder-options-reference)
-* [Image Metadata](/windows/uwp/audio-video-camera/image-metadata)
+* [BitmapEncoder options reference](bitmapencoder-options-reference.md)
+* [Image Metadata](image-metadata.md)

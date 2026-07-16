@@ -110,6 +110,6 @@ If you are not using the automatic SMTC integration provided by **MediaPlayer** 
 
 * [Media playback](media-playback.md)
 * [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md) 
-* [System Media Transport sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls) 
+* [System Media Transport sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/SystemMediaTransportControls) 
 
  

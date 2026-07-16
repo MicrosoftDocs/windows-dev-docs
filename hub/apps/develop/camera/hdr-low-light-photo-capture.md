@@ -25,7 +25,7 @@ Other articles related to HDR capture include:
 > [!NOTE] 
 > Starting with Windows 10, version 1709, when the **AdvancedPhotoCapture** is set to HDR mode, the setting of the [**FlashControl.Enabled**](/uwp/api/windows.media.devices.flashcontrol.enabled) property is ignored and the flash is never fired. For other capture modes, if the **FlashControl.Enabled**, it will override the **AdvancedPhotoCapture** settings and cause a normal photo to be captured with flash. If [**Auto**](/uwp/api/windows.media.devices.flashcontrol.auto) is set to true, the **AdvancedPhotoCapture** may or may not use flash, depending on the camera driver's default behavior for the conditions in the current scene. On previous releases, the **AdvancedPhotoCapture** flash setting always overrides the **FlashControl.Enabled** setting.
 
-There is a full sample demonstrating the use of the **AdvancedPhotoCapture** class that you can use to see the API used in context or as a starting point for your own app. For more information see, [Camera Advanced Capture sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraAdvancedCapture).
+There is a full sample demonstrating the use of the **AdvancedPhotoCapture** class that you can use to see the API used in context or as a starting point for your own app. For more information see, [Camera Advanced Capture sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraAdvancedCapture).
 
 ## HDR photo capture
 
@@ -124,6 +124,6 @@ In the current release, the only encoding format that supports **SoftwareBitmap*
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetUncompressedNv12":::
 
-Of course, you can always save the image to a file and then load the file into a **SoftwareBitmap** in a separate step. For more information about working with **SoftwareBitmap**, see [**Create, edit, and save bitmap images**](/windows/uwp/audio-video-camera/imaging).
+Of course, you can always save the image to a file and then load the file into a **SoftwareBitmap** in a separate step. For more information about working with **SoftwareBitmap**, see [**Create, edit, and save bitmap images**](../media-authoring-processing/imaging.md).
 
 

@@ -47,5 +47,5 @@ Also, this example handles the [**DeviceWatcher.Updated**](/uwp/api/windows.devi
 
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md)
-* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraFrames)
 * [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
