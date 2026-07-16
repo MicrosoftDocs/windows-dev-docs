@@ -86,3 +86,4 @@ Acrylic can also be applied to transient surfaces — set `SystemBackdrop` on `F
 - [Materials in Windows 11 design guidance](../../design/signature-experiences/materials.md)
 - [Mica design guidance](../../design/style/mica.md)
 - [Acrylic design guidance](../../design/style/acrylic.md)
+- [WinUI Gallery — System Backdrops sample (GitHub)](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/SystemBackdrops)

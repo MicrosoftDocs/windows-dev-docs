@@ -2,7 +2,7 @@
 title: System backdrops (Mica/Acrylic)
 description: Learn how to apply Mica or Desktop Acrylic system backdrops to your WinUI app windows.
 ms.topic: how-to
-ms.date: 07/06/2026
+ms.date: 07/16/2026
 keywords: windows, windows app development, Windows App SDK, Mica, Acrylic, backdrop
 ms.localizationpriority: medium
 dev_langs: 
@@ -538,3 +538,4 @@ struct MainWindow : MainWindowT<MainWindow>
 - [Mica](../../design/style/mica.md)
 - [Acrylic](../../design/style/acrylic.md)
 - [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md)
+- [WinUI Gallery — System Backdrops sample (GitHub)](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/SystemBackdrops)

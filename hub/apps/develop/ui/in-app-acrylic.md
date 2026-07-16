@@ -86,4 +86,6 @@ grid.Background = myBrush;
 
 - [Materials overview](materials.md)
 - [System backdrops (Mica/Acrylic)](system-backdrops.md)
+- [Materials in Windows 11 design guidance](../../design/signature-experiences/materials.md)
 - [Acrylic design guidance](../../design/style/acrylic.md)
+- [WinUI Gallery — Acrylic sample (GitHub)](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/Acrylic)
