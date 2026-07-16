@@ -1,19 +1,24 @@
 ---
-description: What’s new - Usage
-title: What’s new - Usage
-ms.date: 11/24/2025
+description: The Usage report in Partner Center provides developers with a detailed view of how users engage with their apps over time.
+title: Usage report
+author: Sankalpm-1
+ms.author: sankalpm
+ms.date: 07/15/2026
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, analytics, insights, usage, activity, sessions, engagement, regions, adoption
 ms.localizationpriority: medium
 ---
 
-# What’s new: Usage
+# Usage report
 
-The new Usage page in Partner Center (_Apps and Games -> Select Your App -> View Analytics -> Usage_) provides developers with a detailed view of how users engage with their apps over time. This page separates core usage data into distinct, easy-to-read charts for better clarity and actionable insights. Unlike before, the data is no longer merged into a single chart but presented in multiple focused visualizations.
+The [Usage report](https://partner.microsoft.com/dashboard/insights/analytics/store/usage) in Partner Center provides developers with a detailed view of how users engage with their apps over time. This page separates core usage data into distinct, easy-to-read charts for better clarity and actionable insights. Unlike before, the data is no longer merged into a single chart but presented in multiple focused visualizations.
+
+> [!NOTE]
+> In addition to the monthly data available in this report, you can now analyze near real-time usage data **for MSIX apps** by using the [recent data view](/windows/apps/publish/recent-data-usage-reports).
 
 ### Key Usage Metrics
 
-:::image type="content" source="images/usage-key-metrics.png" lightbox="images/usage-key-metrics.png" alt-text="A screenshot showing usage key metrics in Partner Center.":::
+:::image type="content" source="../images/usage-key-metrics.png" lightbox="../images/usage-key-metrics.png" alt-text="A screenshot showing usage key metrics in Partner Center.":::
 
 * Monthly Active Devices (MAD): This metric displays the count of distinct devices accessing your app, with trend-line visualization to analyze engagement fluctuations.
 * Sessions: Track app activity with the total number of user sessions initiated. Use the trend sparkline for a quick view of fluctuations.
@@ -22,34 +27,34 @@ The new Usage page in Partner Center (_Apps and Games -> Select Your App -> View
 
 ### App Activity Insights
 
-:::image type="content" source="images/usage-app-activity-insights.png" lightbox="images/usage-app-activity-insights.png" alt-text="A screenshot showing usage app activity insights in Partner Center.":::
+:::image type="content" source="../images/usage-app-activity-insights.png" lightbox="../images/usage-app-activity-insights.png" alt-text="A screenshot showing usage app activity insights in Partner Center.":::
 
 * Monthly Activity: Toggle between Users and Devices to analyze total active users and new users. Line graphs show how engagement evolves.
 * Daily Activity: Switch the view to inspect daily totals for active users and new users. Use the line charts to spot weekday/weekend patterns and short‑term fluctuations.
 
-:::image type="content" source="images/usage-app-activity-insights-sessions.png" lightbox="images/usage-app-activity-insights-sessions.png" alt-text="A screenshot showing usage app activity insights for sessions and engagement duration in Partner Center.":::
+:::image type="content" source="../images/usage-app-activity-insights-sessions.png" lightbox="../images/usage-app-activity-insights-sessions.png" alt-text="A screenshot showing usage app activity insights for sessions and engagement duration in Partner Center.":::
 
 * Sessions: See daily session totals with a clear visual breakdown. This helps pinpoint usage spikes or drops.
 * Engagement Duration: View both the average session length (in minutes) and cumulative app engagement in hours over time. Overlayed charts make it easy to contrast session quality with total user commitment. 
 
-:::image type="content" source="images/usage-app-activity-insights-cohort.png" lightbox="images/usage-app-activity-insights-cohort.png" alt-text="A screenshot showing usage app activity insights for cohort active usage in Partner Center.":::
+:::image type="content" source="../images/usage-app-activity-insights-cohort.png" lightbox="../images/usage-app-activity-insights-cohort.png" alt-text="A screenshot showing usage app activity insights for cohort active usage in Partner Center.":::
 
 * Cohort Active Usage (90 days): Heatmap traces retention by weekly activity for user cohorts, revealing long-term engagement and where drop-offs occur.
 
 ### Detailed Distribution Metrics 
 
-:::image type="content" source="images/usage-distribution-metrics.png" lightbox="images/usage-distribution-metrics.png" alt-text="A screenshot showing usage distribution metrics in Partner Center.":::
+:::image type="content" source="../images/usage-distribution-metrics.png" lightbox="../images/usage-distribution-metrics.png" alt-text="A screenshot showing usage distribution metrics in Partner Center.":::
 
 * App Version Breakdown: Instantly see usage distributed by app version, including actives and sessions, with sortable columns for fastest insight into the best and worst performing releases.
 * Country Distribution: Explore regional trends with a table showing active devices and sessions by country or region, supporting global monitoring and targeted analysis.
 
-:::image type="content" source="images/usage-distribution-metrics-adoption.png" lightbox="images/usage-distribution-metrics-adoption.png" alt-text="A screenshot showing usage app distibution metrics for app adoption in Partner Center.":::
+:::image type="content" source="../images/usage-distribution-metrics-adoption.png" lightbox="../images/usage-distribution-metrics-adoption.png" alt-text="A screenshot showing usage app distibution metrics for app adoption in Partner Center.":::
 
 * App Version Adoption Over Time: Stacked area charts visualize how quickly new versions are being adopted and which versions dominate at any point in time.
 
 ### Additional Metrics & Actions
 
-:::image type="content" source="images/usage-additional-metrics.png" lightbox="images/usage-additional-metrics.png" alt-text="A screenshot showing usage additional metrics in Partner Center.":::
+:::image type="content" source="../images/usage-additional-metrics.png" lightbox="../images/usage-additional-metrics.png" alt-text="A screenshot showing usage additional metrics in Partner Center.":::
 
 * DAD/MAD Stickiness: Monitor changes in user engagement, understanding the proportion of monthly users who return on a daily basis.
 * User-Initiated Uninstalls: Metric and trend graph show daily uninstall counts, helping identify friction points or release issues.
@@ -73,6 +78,16 @@ The new Usage page in Partner Center (_Apps and Games -> Select Your App -> View
 | **Uninstalls**               | Measures friction or post-release issues  | Guides bug fixing and release rollout                                        |
 | **Version/Country Dist.**    | Segments by app update or local market    | Localizes marketing and QA efforts                                           |
 
-### Getting Started
+## Custom events
 
-No setup required, just log in to Partner Center, select an app, and explore your reports under the Usage tab.
+The **Custom events** chart shows the total occurrences for custom events that you've defined for your app. This might include multiple occurrences for the same customer. You can use the filters to select the specific custom events for which you want to see this data.
+
+Custom events are implemented using the [StoreServicesCustomEventLogger.Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method in the [Microsoft Store Services SDK](/windows/uwp/monetize/microsoft-store-services-sdk).
+
+For more info, see [Log custom events for Dev Center](/windows/uwp/monetize/log-custom-events-for-dev-center).
+
+## Custom events breakdown
+
+The **Custom events breakdown** chart shows more details about how often each of your custom events occurred. This can help you determine if events are occurring more often for a particular market, device type, or package versions.
+
+For each event, the event name and an event count that correspond to a specific combination of the user's market, device type, and package version is shown. Typically, an event is listed multiple times along with different combinations of these factors.

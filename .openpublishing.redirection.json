@@ -1,6 +1,46 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/publish/improved-health-report.md",
+      "redirect_url": "/windows/apps/publish/analyze-app-performance/health-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/summary.md",
+      "redirect_url": "/windows/apps/publish/analyze-app-performance/summary-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/anomaly-alerts.md",
+      "redirect_url": "/windows/apps/publish/analyze-app-performance/health-report#anomaly-alerts-for-health-metrics",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/usage.md",
+      "redirect_url": "/windows/apps/publish/analyze-app-performance/usage-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/whats-new-ratings-and-reviews.md",
+      "redirect_url": "/windows/apps/publish/analyze-msi-exe/ratings-reviews-performance",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/whats-new-add-on-acquisitions-report.md",
+      "redirect_url": "/windows/apps/publish/analyze-app-performance/add-on-acquisitions-report",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/analyze-msi-exe/analyze-app-performance.md",
+      "redirect_url": "/windows/apps/publish/analyze-app-performance/msix",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/analyze-app-performance/msi-exe.md",
+      "redirect_url": "/windows/apps/publish/analyze-app-performance/msix",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/design/shell/tiles-and-notifications/toast-collections.md",
       "redirect_url": "/windows/apps/develop/notifications/app-notifications/app-notifications-collections",
       "redirect_document_id": false

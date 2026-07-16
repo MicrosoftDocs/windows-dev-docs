@@ -215,20 +215,22 @@ items:
             href: publish-your-app/pwa/resolve-submission-errors.md            
 - name: Monitor your app performance
   items: 
-    - name: MSIX apps and games
-      items:
-        - name: Overview
-          href: analyze-app-performance/msix.md
-        - name: View actionable insights for MSIX apps and games
-          href: actionable-analytics-insights.md
-    - name: MSI or EXE apps
-      items:
-        - name: Overview
-          href: analyze-app-performance/msi-exe.md
-        - name: Key metrics
-          href: analyze-msi-exe/analyze-app-performance.md
-    - name: Ratings, Reviews, and Responses
+    - name: Overview
+      href: analyze-app-performance/msix.md
+    - name: Summary report
+      href: analyze-app-performance/summary-report.md
+    - name: Acquisitions report
+      href: analyze-app-performance/acquisitions-report.md
+    - name: Add-on acquisitions report
+      href: analyze-app-performance/add-on-acquisitions-report.md
+    - name: Usage report
+      href: analyze-app-performance/usage-report.md
+    - name: Health report
+      href: analyze-app-performance/health-report.md
+    - name: Ratings & Reviews report
       href: analyze-msi-exe/ratings-reviews-performance.md
+    - name: Insights report
+      href: actionable-analytics-insights.md
 - name: Manage and update your app
   items:
         - name: MSIX
@@ -404,24 +406,12 @@ items:
       - name: Publishing GDK games to Store
         href: whats-new-game-publishing.md
       - name: Revamped company onboarding experience with zero registration fees
-        href: whats-new-company-developer.md
-      - name: Add-on acquisitions report
-        href: whats-new-add-on-acquisitions-report.md 
-      - name: Ratings and reviews in Partner Center
-        href: whats-new-ratings-and-reviews.md
+        href: whats-new-company-developer.md 
       - name: Recent data view in acquisitions reports
         href: recent-data-acquisitions-reports.md
       - name: Recent data view in usage reports
         href: recent-data-usage-reports.md
-      - name: Usage reports in analytics
-        href: usage.md
-      - name: Anomaly alerts for health metrics
-        href: anomaly-alerts.md
-      - name: Summary reports in analytics
-        href: summary.md
       - name: Free developer registration for individual developers
         href: whats-new-individual-developer.md  
-      - name: Revamped health report in partner center
-        href: improved-health-report.md 
       - name: Last updated date in Microsoft Store
         href: last-update-date.md
