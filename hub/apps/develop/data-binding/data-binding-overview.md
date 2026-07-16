@@ -2,7 +2,7 @@
 ms.assetid: 02a08657-285d-4804-a006-168c22aa4904
 title: "Tutorial: Data Binding basics"
 description: Learn how to bind controls to data in WinUI apps. Discover how to bind single items or collections, implement details views, and format data for display.
-ms.date: 11/11/2025
+ms.date: 07/15/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -313,3 +313,8 @@ For practical examples and a deeper understanding of when to use each, see the f
 ## Related content
 
 - [Data binding](index.md)
+- [Data binding in depth](data-binding-in-depth.md)
+- [Data binding and MVVM](data-binding-and-mvvm.md)
+- [MVVM performance tips for WinUI apps](/windows/apps/develop/performance/mvvm-performance-tips)
+- [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/)
+- [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery)

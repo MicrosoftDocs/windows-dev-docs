@@ -1,7 +1,7 @@
 ---
 description: Learn how to use functions in x:Bind to simplify value conversion and create complex bindings in WinUI apps.
 title: Functions in x:Bind with WinUI
-ms.date: 11/11/2025
+ms.date: 07/15/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, xaml, winui, windows ui, xBind, winui 3
 ms.localizationpriority: medium
@@ -180,3 +180,6 @@ In a two-way binding scenario, you must specify a second function for the revers
 ## See also
 
 - [{x:Bind} Markup Extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
+- [Data binding in depth](data-binding-in-depth.md)
+- [Data binding overview](data-binding-overview.md)
+- [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery)

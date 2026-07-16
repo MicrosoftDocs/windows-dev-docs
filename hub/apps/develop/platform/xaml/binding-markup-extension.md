@@ -4,7 +4,7 @@ title: Binding markup extension'
 ms.assetid: 3BAFE7B5-AF33-487F-9AD5-BEAFD65D04C3
 ms.date: 09/08/2025
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: windows app sdk, winui 3, xaml, data binding
 ms.localizationpriority: medium
 ms.custom: RS5
 ---

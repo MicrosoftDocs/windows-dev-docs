@@ -2,7 +2,7 @@
 ms.assetid: 2a50c798-6244-4fda-9091-a10a9e87fae2
 title: Windows data binding in depth
 description: Learn how to use data binding in WinUI applications to simplify UI development and improve app maintainability.
-ms.date: 11/11/2025
+ms.date: 07/15/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -38,16 +38,9 @@ You can use data binding to simply display values from a data source when the UI
 
 Independent of mode, there are two kinds of binding, and you typically declare both in UI markup. You can choose to use either the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) or the [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension). You can even use a mixture of the two in the same app—even on the same UI element. `{x:Bind}` was new in UWP for Windows 10 and it has better performance. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
 
-### Sample apps that demonstrate {x:Bind}
+### Sample apps
 
-- [{x:Bind} sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
-- [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper).
-- [XAML UI Basics sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlUIBasics).
-
-### Sample apps that demonstrate {Binding}
-
-- Download the [Bookstore1](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore1Universal_10) app.
-- Download the [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) app.
+- [WinUI Gallery — data binding samples](https://github.com/microsoft/WinUI-Gallery) demonstrates both `{x:Bind}` and `{Binding}` patterns.
 
 ## Every binding involves these pieces
 
@@ -845,3 +838,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding);
 
 - [Data binding overview](data-binding-overview.md)
 - [Data binding and MVVM](data-binding-and-mvvm.md)
+- [MVVM performance tips for WinUI apps](/windows/apps/develop/performance/mvvm-performance-tips)
+- [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/)
+- [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery)

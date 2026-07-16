@@ -44,9 +44,7 @@ Although sophisticated MVVM frameworks can be very useful, especially for enterp
 
 In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows App SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
 
-For additional ready-to-use MVVM infrastructure in WinUI 3 apps, the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) (part of the .NET Community Toolkit) provides source-generated `ObservableProperty`, `RelayCommand`, and messaging primitives that eliminate boilerplate and work with `{x:Bind}`.
-
-For a sample that demonstrates MVVM with WinUI 3, see the [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) on GitHub, which uses the pattern throughout its source code.
+For additional guidance on using MVVM, see the [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/) library, which provides base classes like `ObservableObject` and `RelayCommand`, along with source generators (via `[ObservableProperty]` and `[RelayCommand]` attributes) that eliminate boilerplate code. The [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery) also demonstrates data binding and MVVM patterns with WinUI 3.
 
 ## See also
 
@@ -56,8 +54,8 @@ For a sample that demonstrates MVVM with WinUI 3, see the [WinUI 3 Gallery](http
 [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)  
 [MVVM performance tips for WinUI apps](../performance/mvvm-performance-tips.md)
 
-### MVVM frameworks and samples
+### WinUI 3 and MVVM resources
 
-[MVVM Toolkit documentation](/dotnet/communitytoolkit/mvvm/)  
-[WinUI 3 Gallery source (GitHub)](https://github.com/microsoft/WinUI-Gallery)  
-[Template Studio for WinUI (GitHub)](https://github.com/microsoft/TemplateStudio)
+[CommunityToolkit MVVM documentation](/dotnet/communitytoolkit/mvvm/)  
+[WinUI Gallery — data binding samples](https://github.com/microsoft/WinUI-Gallery)  
+[Template Studio for WinUI](https://github.com/microsoft/TemplateStudio)

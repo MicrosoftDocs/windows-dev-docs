@@ -2,7 +2,7 @@
 ms.assetid: adfa70f3-a4d9-45d1-8957-c26a7703a276
 title: Data binding in Windows apps - A guide for developers
 description: Learn data binding in Windows apps to connect UI with data dynamically. Explore x:Bind and Binding markup extensions with examples and MVVM best practices.
-ms.date: 11/11/2025
+ms.date: 07/15/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -28,4 +28,7 @@ Whether you're displaying a single data item, binding to collections, or impleme
 
 ## Related content
 
-- [Data binding in UWP apps](/windows/uwp/data-binding/)
+- [MVVM performance tips for WinUI apps](/windows/apps/develop/performance/mvvm-performance-tips)
+- [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/)
+- [WinUI Gallery data binding samples](https://github.com/microsoft/WinUI-Gallery)
+- [Microsoft.UI.Xaml.Data namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data)
