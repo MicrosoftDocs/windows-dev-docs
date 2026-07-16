@@ -1,7 +1,7 @@
 ---
 title: Set up continuous integration for your WinUI app
 description: How to automate WinUI builds with continuous integration to produce sideload and/or Store packages.
-ms.date: 12/13/2021
+ms.date: 07/15/2026
 zone_pivot_groups: winui3-version-c#-only
 ms.topic: how-to
 keywords: ci, continuous integration, automated builds, github actions, pipelines, winui 3, winui3, windows app sdk
@@ -50,7 +50,7 @@ Next, in your repository, go to the Actions tab and create a new workflow. Chose
 Copy/paste the following into your workflow file, and then update...
 
 1. **Solution_Name** to the name of your solution
-2. **dotnet-version** to either 5.0 or 6.0 depending on your project
+2. **dotnet-version** to `8.0.x` (or whichever .NET version your project targets)
 
 > [!NOTE]
 > For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace `env.Solution_Name` with `github.workspace` (the GitHub actions Workspace folder).
@@ -84,19 +84,19 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v1
+    # Install the .NET workload
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v2
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
@@ -127,9 +127,9 @@ jobs:
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload MSIX package
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: MSIX Package
+        name: MSIX Package - ${{ matrix.platform }}
         path: ${{ env.Solution_Name }}\\Packages
 
 ```
@@ -193,19 +193,19 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
-    # Install the .NET Core workload
-    - name: Install .NET Core
-      uses: actions/setup-dotnet@v1
+    # Install the .NET workload
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.0.x
+        dotnet-version: 8.0.x
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1.0.2
+      uses: microsoft/setup-msbuild@v2
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
@@ -222,9 +222,9 @@ jobs:
 
     # Upload the app
     - name: Upload app
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: Upload app
+        name: Upload app - ${{ matrix.platform }}
         path: ${{ env.Solution_Name }}\\bin
 ```
 

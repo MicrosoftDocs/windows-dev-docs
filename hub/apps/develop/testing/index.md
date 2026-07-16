@@ -1,8 +1,10 @@
 ---
 title: Test apps built with the Windows App SDK and WinUI 3
 description: Learn how to test and validate functionality in apps created with the Windows App SDK and WinUI 3, including unit testing with MSTest and the WinUI 3 unit test project templates.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-ms.date: 10/28/2025
+ms.date: 07/15/2026
 ms.localizationpriority: medium
 ---
 
