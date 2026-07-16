@@ -226,6 +226,23 @@ The WebView2 control is available across multiple frameworks. Each uses a differ
 
 The [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC) app includes interactive examples of most WinUI 3 controls and features. You can also browse the [WinUI-Gallery source on GitHub](https://github.com/microsoft/WinUI-Gallery).
 
+## Authentication and SSO in WebView2
+
+WebView2 stores cookies and other profile data in an app-specific user data folder by default, so users stay signed in across app launches. To isolate authentication state (for example, to support multiple accounts), create a separate user data folder:
+
+```csharp
+var env = await CoreWebView2Environment.CreateAsync(
+    userDataFolder: Path.Combine(
+        ApplicationData.Current.LocalFolder.Path, "WebView2_UserA"));
+await MyWebView2.EnsureCoreWebView2Async(env);
+```
+
+> [!NOTE]
+> This example requires package identity (MSIX). For unpackaged apps, use `Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)` instead of `ApplicationData.Current.LocalFolder.Path`.
+
+> [!IMPORTANT]
+> Do not use WebView2 to display OAuth login pages and then scrape tokens from redirect URLs, navigation events, or cookies. This is the "embedded browser" anti-pattern that many identity providers actively block. For OAuth flows in desktop apps, use [OAuth2Manager](../../security/oauth2.md) or [MSAL.NET with WAM](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam), which use the system browser or OS-level broker. Reserve WebView2 for hosting your own authenticated web content after the user has already obtained tokens through a proper flow.
+
 ## Related articles
 
 - [Microsoft Edge WebView2 overview](/microsoft-edge/webview2/)

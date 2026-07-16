@@ -32,6 +32,20 @@ This section provides guidance for using the Windows App SDK to create apps that
 | [Text Recognition API](/windows/ai/apis/text-recognition) | Learn how to use the Text Recognition API to extract text from images. |
 | [Video super resolution](/windows/ai/apis/video-super-resolution) | Learn how to use AI to enhance video playback quality. |
 
+## On-device model deployment
+
+For running ML models directly on a user's device (without cloud calls), Windows supports several approaches depending on your scenario:
+
+| Approach | Best for | Key link |
+|----------|----------|----------|
+| **ONNX Runtime** | General-purpose inference (vision, NLP, classification) with hardware acceleration via DirectML | [ONNX Runtime](https://onnxruntime.ai/) |
+| **ONNX Runtime GenAI** | Running generative AI models (SLMs like Phi) locally with optimized text generation | [ONNX Runtime GenAI](https://github.com/microsoft/onnxruntime-genai) |
+| **Windows ML** | WinRT-based inference using the built-in Windows ML runtime (DirectML backend) | [Windows ML](/windows/ai/new-windows-ml/overview) |
+| **DirectML** | Low-level GPU-accelerated ML operators for custom inference engines | [DirectML](/windows/ai/directml/dml) |
+
+> [!NOTE]
+> ONNX Runtime with the DirectML execution provider is the recommended approach for most desktop apps. It supports the widest range of models from the [ONNX Model Zoo](https://github.com/onnx/models) and [Hugging Face](https://huggingface.co/models?library=onnx), and runs on any DirectX 12 GPU. For generative AI scenarios (chatbots, text completion, summarization), use ONNX Runtime GenAI, which adds optimized decoding loops on top of ONNX Runtime.
+
 ## Related topics
 
 * [AI-assisted Windows development](../ai-assisted/index.md)
