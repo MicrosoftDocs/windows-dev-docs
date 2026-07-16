@@ -69,6 +69,30 @@ The way that you should initialize the Windows App SDK depends on whether, and h
 |Framework-dependent|See [Use the bootstrapper API in an app packaged with external location or unpackaged](../windows-app-sdk/tutorial-unpackaged-deployment.md).|
 |Self-contained|See [Opting out of (or into) automatic UndockedRegFreeWinRT support](./self-contained-deploy/deploy-self-contained-apps.md#opting-out-of-or-into-automatic-undockedregfreewinrt-support).|
 
+## Architecture considerations (x64, ARM64)
+
+When you deploy your app, you must include binaries for each processor architecture your users need. This applies to both framework-dependent and self-contained deployment modes.
+
+### ARM64 support
+
+Windows on ARM devices (such as Surface Pro X, Surface Pro 11, and Copilot+ PCs) run ARM64 natively. While x64 emulation is available on Windows 11 ARM64 devices, native ARM64 binaries provide better performance and battery life.
+
+- **MSIX bundles** — Create an `.msixbundle` that includes both `x64` and `ARM64` architectures. Visual Studio generates these automatically when you build for multiple platforms. The Store and App Installer select the correct architecture at install time.
+- **Self-contained publish** — Specify the runtime identifier (RID) for each architecture:
+
+  ```console
+  dotnet publish -c Release -r win-x64 --self-contained true
+  dotnet publish -c Release -r win-arm64 --self-contained true
+  ```
+
+- **C++/WinRT** — Build separate configurations for `x64` and `ARM64` in your Visual Studio solution.
+- **Framework-dependent apps** — When using the Windows App SDK runtime installer, ensure you provide the correct architecture-specific installer. The Windows App SDK ships separate installers for x64 and ARM64.
+
+> [!TIP]
+> If you target only x64, your app still runs on ARM64 devices via emulation (Windows 11 only). However, native ARM64 builds are strongly recommended for production apps — emulated apps use more battery and may have higher latency. x86 emulation is available on both Windows 10 and Windows 11 ARM64 devices.
+
+For Store submissions, upload architecture-specific packages or a bundle containing both. The Store delivers only the matching architecture to each device.
+
 ## Related topics
 
 * [Deployment overview](./index.md)
