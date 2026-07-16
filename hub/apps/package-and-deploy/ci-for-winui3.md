@@ -1,7 +1,7 @@
 ---
 title: Set up continuous integration for your WinUI app
-description: How to automate WinUI builds with continuous integration to produce sideload and/or Store packages.
-ms.date: 07/15/2026
+description: How to automate WinUI builds with continuous integration using GitHub Actions and Azure Pipelines to produce sideload and/or Store packages.
+ms.date: 07/22/2026
 zone_pivot_groups: winui3-version-c#-only
 ms.topic: how-to
 keywords: ci, continuous integration, automated builds, github actions, pipelines, winui 3, winui3, windows app sdk
@@ -159,7 +159,7 @@ In your GitHub repository, go to the Actions tab and create a new workflow. Chos
 Copy/paste the following into your workflow file, and then update...
 
 1. **Solution_Name** to the name of your solution
-2. **dotnet-version** to either 5.0 or 6.0 depending on your project
+2. **dotnet-version** to `8.0.x` (or whichever .NET version your project targets)
 
 > [!NOTE]
 > For the step uploading the artifact (the last step below), if the build output doesn't land in a folder that contains your solution, then replace `env.Solution_Name` with `github.workspace` (the GitHub actions Workspace folder).
@@ -235,5 +235,62 @@ Commit the workflow file to your main branch, and then go to the Actions tab on 
 ## Building from command line
 
 If you want to build your solution by using the command line, or by using any other CI system, run MSBuild with the `/t:Publish` argument.
+
+## Azure Pipelines
+
+If your team uses [Azure DevOps](/azure/devops/), you can build WinUI 3 apps with Azure Pipelines. The following YAML pipeline builds a packaged MSIX WinUI app on a Windows agent:
+
+```yaml
+trigger:
+  - main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'x64'
+  buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  displayName: 'Install .NET SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '8.0.x'
+
+- task: NuGetToolInstaller@1
+
+- task: NuGetCommand@2
+  inputs:
+    restoreSolution: '$(solution)'
+
+- task: VSBuild@1
+  displayName: 'Build MSIX package'
+  inputs:
+    solution: '$(solution)'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
+    msbuildArgs: |
+      /p:AppxBundlePlatforms="$(buildPlatform)"
+      /p:AppxPackageDir="$(Build.ArtifactStagingDirectory)\AppxPackages\\"
+      /p:AppxBundle=Never
+      /p:UapAppxPackageBuildMode=SideloadOnly
+      /p:GenerateAppInstallerFile=false
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish MSIX artifacts'
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)\AppxPackages'
+    ArtifactName: 'msix-package'
+```
+
+> [!NOTE]
+> For unpackaged builds, remove the `/p:Appx*` MSBuild arguments and use `dotnet publish` instead of `VSBuild`. See the command-line section above for details.
+
+For signing MSIX packages in a pipeline, store your certificate in [Azure Pipelines secure files](/azure/devops/pipelines/library/secure-files) and use the [DownloadSecureFile task](/azure/devops/pipelines/tasks/reference/download-secure-file-v1) to access it during the build.
+
+> [!IMPORTANT]
+> Never store signing certificates or their passwords in source control. Use pipeline secret variables for the certificate password and Azure Pipelines Secure Files for the certificate itself.
 
 ::: zone-end

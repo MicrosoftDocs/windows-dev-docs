@@ -1,10 +1,10 @@
 ---
 title: Test apps built with the Windows App SDK and WinUI 3
-description: Learn how to test and validate functionality in apps created with the Windows App SDK and WinUI 3, including unit testing with MSTest and the WinUI 3 unit test project templates.
+description: Learn how to test Windows App SDK and WinUI 3 apps, including unit testing, UI automation with Appium, static analysis, and telemetry collection.
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/15/2026
+ms.date: 07/22/2026
 ms.localizationpriority: medium
 ---
 
@@ -199,7 +199,131 @@ When creating a new MSTest, NUnit or xUnit project that references a WinUI 3 pro
 
 4. Ensure that the Windows App SDK runtime is installed on the machine running the test. For more information on Windows App SDK deployment, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location (or unpackaged)](../../windows-app-sdk/deploy-unpackaged-apps.md).
 
+## UI test automation
+
+For end-to-end testing of your app's user interface, you can use automated UI testing tools that interact with your app the way a user would—clicking buttons, entering text, and verifying visual state.
+
+### Appium with WinAppDriver
+
+[WinAppDriver](https://github.com/microsoft/WinAppDriver) was the original Microsoft tool for Windows UI automation testing, but it is no longer under active development. The recommended successor is [Appium](https://appium.io/) with the [Windows Application Driver plugin (appium-windows-driver)](https://github.com/appium/appium-windows-driver). Appium uses the same WebDriver protocol and supports Windows desktop apps through the Windows UI Automation framework.
+
+To set up Appium for a WinUI 3 desktop app:
+
+> [!NOTE]
+> These steps require [Node.js](https://nodejs.org/) (LTS recommended).
+
+1. Install Appium: `npm install -g appium`
+2. Install the Windows driver: `appium driver install windows`
+3. Verify the driver is installed: `appium driver list` (should show `windows` as installed)
+4. Start the Appium server: `appium`
+5. Write tests using a WebDriver client library (available for C#, Python, Java, and JavaScript).
+
+> [!TIP]
+> Set the `app` capability to your app's Application User Model ID (AUMID) for packaged apps, or the executable path for unpackaged apps.
+
+### Accessibility Insights and UI Automation
+
+[Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/overview/) helps you inspect and validate the UI Automation tree of your app. The elements exposed through UI Automation are the same elements that automated test tools interact with. Ensuring your app has a well-structured automation tree improves both accessibility and testability.
+
+### Microsoft Playwright (web UI in WebView2)
+
+If your app uses [WebView2](/microsoft-edge/webview2/) for web content, you can use [Microsoft Playwright](/playwright/) to test the web portions. Playwright supports automated browser testing and can connect to WebView2 instances for end-to-end scenario validation.
+
+## Code quality and static analysis
+
+Static analysis tools catch bugs, security issues, and code quality problems before runtime. Integrate these into your development workflow and CI pipelines for consistent quality.
+
+### .NET analyzers (Roslyn)
+
+.NET projects include built-in Roslyn analyzers that check for correctness, performance, reliability, and security issues. To enable all recommended rules in your project:
+
+```xml
+<PropertyGroup>
+  <AnalysisLevel>latest-recommended</AnalysisLevel>
+  <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+</PropertyGroup>
+```
+
+You can configure rule severities in an `.editorconfig` file or by using `<NoWarn>` in your project file. For more information, see [Overview of .NET source code analysis](/dotnet/fundamentals/code-analysis/overview).
+
+### C++ static analysis (/analyze)
+
+For C++ Windows App SDK and Win32 projects, enable Microsoft's static analysis by setting `/analyze` in your project properties or MSBuild:
+
+```xml
+<PropertyGroup>
+  <EnableMicrosoftCodeAnalysis>true</EnableMicrosoftCodeAnalysis>
+  <CodeAnalysisRuleSet>CppCoreCheckRules.ruleset</CodeAnalysisRuleSet>
+</PropertyGroup>
+```
+
+[C++ Core Guidelines Checker](/cpp/code-quality/using-the-cpp-core-guidelines-checkers) enforces modern C++ best practices. For Win32 API usage patterns, [SAL annotations](/cpp/code-quality/understanding-sal) and the `/analyze` flag catch common lifetime, buffer, and concurrency issues.
+
+### CI integration
+
+Add static analysis to your CI workflow so code quality checks run on every pull request. In a GitHub Actions workflow:
+
+```yaml
+    - name: Build with analysis
+      run: dotnet build --configuration Release /p:AnalysisLevel=latest-recommended /p:TreatWarningsAsErrors=true
+```
+
+For C++ projects using MSBuild:
+
+```yaml
+    - name: Build with /analyze
+      run: msbuild MySolution.sln /p:Configuration=Release /p:EnableMicrosoftCodeAnalysis=true /p:RunCodeAnalysis=true
+```
+
+## Telemetry and crash reporting
+
+Collecting telemetry and crash data from production helps you understand how your app performs in the real world, identify regressions, and prioritize fixes.
+
+### Application Insights
+
+[Azure Application Insights](/azure/azure-monitor/app/app-insights-overview) provides crash reporting, performance monitoring, and usage analytics for desktop apps. To add it to a Windows App SDK project:
+
+> [!NOTE]
+> You need an Azure subscription and an Application Insights resource. See [Create an Application Insights resource](/azure/azure-monitor/app/create-workspace-resource) to get your connection string.
+
+1. Install the NuGet package: `Microsoft.ApplicationInsights`
+2. Initialize the TelemetryClient in your app startup with your connection string
+3. Track exceptions, events, and page views
+
+For detailed setup instructions, see [Application Insights for .NET console and desktop apps](/azure/azure-monitor/app/console).
+
+### OpenTelemetry
+
+[OpenTelemetry](https://opentelemetry.io/) is a vendor-neutral standard for collecting logs, metrics, and distributed traces. The [.NET OpenTelemetry SDK](https://github.com/open-telemetry/opentelemetry-dotnet) integrates with Azure Monitor and other backends.
+
+Install the required packages:
+
+```dotnetcli
+dotnet add package OpenTelemetry
+dotnet add package Azure.Monitor.OpenTelemetry.Exporter
+```
+
+Then configure the tracer provider:
+
+```csharp
+var activitySource = new System.Diagnostics.ActivitySource("MyApp");
+// OpenTelemetry SDKs can listen to ActivitySource instances like this one.
+using var activity = activitySource.StartActivity("Startup");
+activity?.SetTag("app.version", "1.0.0");
+```
+
+OpenTelemetry is the recommended approach for new projects that need multi-backend support or distributed tracing. Application Insights remains a good choice if you use Azure Monitor exclusively and want turnkey dashboards.
+
+### Windows Error Reporting (WER)
+
+For native crash collection, Windows Error Reporting automatically captures crash dumps when your app terminates unexpectedly. Packaged apps (MSIX) get crash data surfaced through [Partner Center quality reports](/windows/apps/publish/analytics/health-report). For organizational (LOB) apps, you can configure [WER local dump collection](/windows/win32/wer/collecting-user-mode-dumps) to save minidumps for local analysis.
+
 ## Additional resources
 
 - [Unit test basics](/visualstudio/test/unit-test-basics)
 - [Testing tools in Visual Studio](/visualstudio/test/)
+- [Continuous integration for WinUI apps](../../package-and-deploy/ci-for-winui3.md)
+- [Overview of .NET source code analysis](/dotnet/fundamentals/code-analysis/overview)
+- [C++ Code analysis](/cpp/code-quality/code-analysis-for-c-cpp-overview)
+- [Azure Monitor Application Insights](/azure/azure-monitor/app/app-insights-overview)
+- [OpenTelemetry .NET SDK](https://github.com/open-telemetry/opentelemetry-dotnet)

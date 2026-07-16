@@ -2,7 +2,7 @@
 description: Steps to use GitHub Actions to publish app updates to Microsoft Store.
 title: Publish app updates to Microsoft Store with GitHub Actions 
 ms.topic: how-to
-ms.date: 11/12/2025
+ms.date: 07/22/2026
 ---
 
 # Publishing app updates to Microsoft Store with GitHub Actions 
@@ -106,7 +106,7 @@ jobs:
     runs-on: windows-latest 
  
     steps: 
-    - uses: actions/checkout@v3 
+    - uses: actions/checkout@v4 
  
     - uses: microsoft/microsoft-store-apppublisher@v1.1 
  
@@ -194,7 +194,7 @@ jobs:
     runs-on: windows-latest 
  
     steps: 
-    - uses: actions/checkout@v3 
+    - uses: actions/checkout@v4 
  
     - uses: microsoft/microsoft-store-apppublisher@v1.1 
  
@@ -272,7 +272,7 @@ jobs:
     runs-on: windows-latest 
  
     steps: 
-    - uses: actions/checkout@v3 
+    - uses: actions/checkout@v4 
  
     - uses: microsoft/microsoft-store-apppublisher@v1.1 
  
