@@ -39,5 +39,7 @@ This section provides guidance for using the Windows App SDK to create apps that
 * [Windows AI](/windows/ai)
 * [Microsoft Foundry on Windows](/windows/ai/overview)
 * [Windows ML](/windows/ai/new-windows-ml/overview)
+* [ONNX Runtime](https://onnxruntime.ai/)
+* [Windows Machine Learning samples](https://github.com/microsoft/Windows-Machine-Learning)
 * [MCP on Windows](/windows/ai/mcp/overview)
 * [Responsible AI](/windows/ai/rai)

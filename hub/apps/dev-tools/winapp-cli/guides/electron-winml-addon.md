@@ -410,6 +410,7 @@ To fully integrate your ONNX model, you'll need to:
 - **[Sample Electron App](https://github.com/microsoft/WinAppCli/tree/main/samples/electron)** - Complete working example
 - **[AI Dev Gallery](https://aka.ms/aidevgallery)** - Sample gallery of all AI APIs 
 - **[Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML)** - Collection of Windows App SDK samples
+- **[Windows Machine Learning Samples](https://github.com/microsoft/Windows-Machine-Learning)** - End-to-end WinML samples for image classification, object detection, and more
 - **[node-api-dotnet](https://github.com/microsoft/node-api-dotnet)** - C# ↔ JavaScript interop library
 
 ### Troubleshooting
@@ -452,6 +453,6 @@ npm install
 ### Get Help
 
 - **Found a bug?** [File an issue](https://github.com/microsoft/WinAppCli/issues)
-- **WinML questions?** Check the [WinML documentation](/windows/ai/windows-ml/)
+- **WinML questions?** Check the [WinML documentation](/windows/ai/new-windows-ml/overview)
 
 Happy machine learning! 🤖
