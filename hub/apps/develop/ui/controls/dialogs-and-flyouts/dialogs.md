@@ -3,7 +3,7 @@ description: Dialogs display transient UI elements that appear when the user req
 title: Dialog controls
 label: Dialogs
 template: detail.hbs
-ms.date: 08/05/2025
+ms.date: 07/15/2026
 ms.topic: article
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 doc-status: Published
@@ -59,6 +59,7 @@ private async void DisplayNoWifiDialog()
 {
     ContentDialog noWifiDialog = new ContentDialog
     {
+        XamlRoot = this.XamlRoot,
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
         CloseButtonText = "OK"
@@ -67,6 +68,9 @@ private async void DisplayNoWifiDialog()
     ContentDialogResult result = await noWifiDialog.ShowAsync();
 }
 ```
+
+> [!IMPORTANT]
+> In WinUI 3, you must set the [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot) property on the ContentDialog before calling `ShowAsync`. If you don't set `XamlRoot`, the dialog throws an exception at runtime. See [Set the XamlRoot](#set-the-xamlroot) for details.
 
 If your content dialog is more complex, it can be easier to create it with XAML. You can either create it in the XAML file for your page, or you can create a subclass of ContentDialog with it's own .xaml and code-behind file. For complete examples of both, see the [ContentDialog] class reference.
 
@@ -136,7 +140,7 @@ If the ContentDialog is shown from a [Page](/windows/windows-app-sdk/api/winrt/m
     
     </Grid>
 </Window>
-``````
+```
 
 ```csharp
 private async void DisplayNoWifiDialog()
@@ -164,6 +168,7 @@ private async void DisplayDeleteFileDialog()
 {
     ContentDialog deleteFileDialog = new ContentDialog
     {
+        XamlRoot = this.XamlRoot,
         Title = "Delete file permanently?",
         Content = "If you delete this file, you won't be able to recover it. Do you want to delete it?",
         PrimaryButtonText = "Delete",
@@ -197,6 +202,7 @@ private async void DisplayNoWifiDialog()
 {
     ContentDialog noWifiDialog = new ContentDialog
     {
+        XamlRoot = this.XamlRoot,
         Title = "No wifi connection",
         Content = "Check your connection and try again.",
         CloseButtonText = "OK"
@@ -215,6 +221,7 @@ private async void DisplayLocationPromptDialog()
 {
     ContentDialog locationPromptDialog = new ContentDialog
     {
+        XamlRoot = this.XamlRoot,
         Title = "Allow AppName to access your location?",
         Content = "AppName uses this information to help you find places, connect with friends, and more.",
         CloseButtonText = "Block",
@@ -234,6 +241,7 @@ private async void DisplaySubscribeDialog()
 {
     ContentDialog subscribeDialog = new ContentDialog
     {
+        XamlRoot = this.XamlRoot,
         Title = "Subscribe to App Service?",
         Content = "Listen, watch, and play in high definition for only $9.99/month. Free to try, cancel anytime.",
         CloseButtonText = "Not Now",
@@ -298,6 +306,7 @@ private async void DisplaySubscribeDialog()
 {
     ContentDialog subscribeDialog = new ContentDialog
     {
+        XamlRoot = this.XamlRoot,
         Title = "Subscribe to App Service?",
         Content = "Listen, watch, and play in high definition for only $9.99/month. Free to try, cancel anytime.",
         CloseButtonText = "Not Now",
@@ -325,7 +334,12 @@ A typical confirmation dialog has two buttons: an affirmation ("OK") button and 
 </ul>
 
 ## Related articles
+
+- [Dialogs and flyouts](index.md)
+- [Flyouts](flyouts.md)
+- [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog)
+- [XamlRoot class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot)
+- [Display WinRT UI objects that depend on CoreWindow](../../display-ui-objects.md)
 - [Tooltips](../tooltips.md)
 - [Menus and context menu](../menus.md)
-- [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
-By default, content dialogs display modally relative to the root [ApplicationView](/uwp/api/windows.ui.viewmanagement.applicationview). When you use ContentDialog inside of either an [AppWindow](/uwp/api/windows.ui.windowmanagement.appwindow) or a [XAML Island](/windows/uwp/xaml-islands/xaml-islands), you need to manually set the [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.xamlroot) on the dialog to the root of the XAML host.
+- [WinUI 3 Gallery - ContentDialog sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ContentDialog)
