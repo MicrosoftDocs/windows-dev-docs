@@ -2,7 +2,7 @@
 title: Graphics
 description: This article provides an index of development features that are related to scenarios involving graphics in Windows apps.
 ms.topic: article
-ms.date: 05/25/2023
+ms.date: 07/15/2026
 keywords: 
 ---
 
@@ -44,8 +44,9 @@ The following articles provide information about features available via Win32 (C
 |---------|-------------|
 | [Graphics and gaming](/windows/desktop/graphics-and-multimedia) | Learn about the breadth of Win32 APIs related to graphics, gaming, and imaging. |
 | [DirectX](/windows/desktop/getting-started-with-directx-graphics) | DirectX graphics provides a set of APIs that you can use to create games and other high-performance multimedia apps. |
+| [Direct3D 12](/windows/desktop/direct3d12/direct3d-12-graphics) | Direct3D 12 is the current generation graphics API for high-performance game and real-time 3-D rendering. It provides lower-level hardware access and reduced driver overhead compared to Direct3D 11. |
+| [Direct3D 11](/windows/desktop/direct3d11/atoc-dx-graphics-direct3d-11) | Direct3D 11 is the previous generation 3-D graphics API. Consider Direct3D 12 for new projects requiring maximum GPU performance. |
 | [Direct2D](/windows/desktop/direct2d/direct2d-portal) | Direct2D is a hardware-accelerated, immediate-mode, 2-D graphics API that provides high performance and high-quality rendering for 2-D geometry, bitmaps, and text. |
-| [Direct3D](/windows/desktop/direct3d) | Direct3D enables you to create 3-D graphics for games and scientific apps. |
 | [DirectWrite](/windows/win32/directwrite/direct-write-portal) | DirectWrite supports high-quality text rendering, resolution-independent outline fonts, and full Unicode text and layouts. |
 | [Windows GDI](/windows/desktop/gdi/windows-gdi) | The graphics device interface (GDI) is a foundational API that enables apps to use graphics and formatted text on both the video display and the printer. |
 
@@ -57,3 +58,17 @@ The .NET SDK also provides APIs related to graphics scenarios for WPF and Window
 |---------|-------------|
 | [Graphics (WPF)](/dotnet/framework/wpf/graphics-multimedia/graphics) | Learn about ways to integrate support for multimedia, vector graphics, animation, and content composition in WPF apps. |
 | [Graphics and drawing (Windows Forms)](/dotnet/framework/winforms/advanced/graphics-and-drawing-in-windows-forms) | Learn about ways to create graphics, draw text, and manipulate graphical images in Windows Forms apps. |
+
+## Game development
+
+For full-featured game development on Windows, use the [Microsoft Game Development Kit (GDK)](https://github.com/microsoft/GDK), which provides APIs for Xbox Live services, game packaging, and deployment to both PC and Xbox.
+
+For game-specific graphics programming, Direct3D 12 is the recommended API. It provides explicit control over GPU resources, multi-threaded command submission, and the lowest-overhead access to modern GPU hardware.
+
+## See also
+
+- [DirectX-Graphics-Samples on GitHub](https://github.com/microsoft/DirectX-Graphics-Samples) — Official Direct3D 12 code samples
+- [DirectX tool kit for Direct3D 12](https://github.com/microsoft/DirectXTK12) — Helper library for Direct3D 12 game development
+- [PIX on Windows](/windows/desktop/direct3dtools/pix) — Performance tuning and debugging tool for DirectX 12
+- [XInput (game controller input)](/windows/desktop/xinput/getting-started-with-xinput) — API for Xbox controller input in Windows games
+- [ONNX Runtime](/windows/ai/new-windows-ml/run-onnx-models) — Run machine-learning models on-device for game AI and real-time inference
