@@ -95,3 +95,5 @@ The [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC) app includ
 - [Microsoft Edge WebView2 overview](/microsoft-edge/webview2/)
 - [Get started with WebView2 in WinUI 3 apps](/microsoft-edge/webview2/get-started/winui)
 - [WebView2 distribution and deployment](/microsoft-edge/webview2/concepts/distribution)
+- [Communicate between web content and host app](/microsoft-edge/webview2/concepts/overview-features-apis#web-messaging)
+- [WebView2 environment options](/microsoft-edge/webview2/concepts/overview-features-apis#webview2-environment-options)
