@@ -4,9 +4,8 @@ title: Mouse interactions
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # Mouse interactions

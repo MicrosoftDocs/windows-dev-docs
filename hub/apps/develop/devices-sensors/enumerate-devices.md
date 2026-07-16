@@ -2,7 +2,7 @@
 
 title: Enumerate devices
 description: The Windows.Devices.Enumeration APIs let you find devices that are internally connected to the system, externally connected, or detectable over wireless or networking protocols.
-ms.date: 05/04/2023
+ms.date: 07/15/2026
 ms.topic: article
 
 ms.localizationpriority: medium
@@ -46,7 +46,7 @@ These APIs can enumerate devices over any of the following protocols and buses, 
 - WiGig
 - [**Point of Service**](/uwp/api/Windows.Devices.PointOfService)
 
-In many cases, you will not need to worry about using the enumeration APIs. This is because many APIs that use devices will automatically select the appropriate default device or provide a more streamlined enumeration API. For example, [**MediaElement**](/uwp/api/Windows.UI.Xaml.Controls.MediaElement) will automatically use the default audio renderer device. As long as your app can use the default device, there is no need to use the enumeration APIs in your application. The enumeration APIs provide a general and flexible way for you to discover and connect to available devices. This topic provides information about enumerating devices and describes the four common ways to enumerate devices.
+In many cases, you will not need to worry about using the enumeration APIs. This is because many APIs that use devices will automatically select the appropriate default device or provide a more streamlined enumeration API. For example, [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) will automatically use the default audio renderer device. As long as your app can use the default device, there is no need to use the enumeration APIs in your application. The enumeration APIs provide a general and flexible way for you to discover and connect to available devices. This topic provides information about enumerating devices and describes the four common ways to enumerate devices.
 
 - Using the [**DevicePicker**](/uwp/api/Windows.Devices.Enumeration.DevicePicker) UI
 - Enumerating a snapshot of devices currently discoverable by the system

@@ -5,7 +5,7 @@ ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: pen, mouse, touchpad, touch, pointer, input, user interaction
-ms.date: 09/24/2020
+ms.date: 07/15/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -58,6 +58,9 @@ Here are some code snippets from a basic pointer tracking app that show how to l
 ![Pointer application UI](images/pointers/pointers1.gif)
 
 **Download this sample from [Pointer input sample (basic)](https://github.com/MicrosoftDocs/windows-topic-specific-samples/archive/uwp-pointers.zip)**
+
+> [!NOTE]
+> This sample uses UWP project structure. The pointer event APIs (`PointerPressed`, `PointerMoved`, etc.) and the `PointerRoutedEventArgs` patterns shown work the same way in WinUI 3 desktop apps using the `Microsoft.UI.Xaml.Input` namespace.
 
 ### Create the UI
 

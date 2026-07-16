@@ -5,7 +5,7 @@ ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
 label: Identify input devices
 template: detail.hbs
 keywords: device, digitizer, input, interaction
-ms.date: 09/24/2020
+ms.date: 07/15/2026
 ms.topic: how-to
 
 
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 Identify the input devices connected to a Windows app device and identify their capabilities and attributes.
 
-> **Important APIs**: [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Input)
+> **Important APIs**: [**Windows.Devices.Input**](/uwp/api/Windows.Devices.Input), [**Microsoft.UI.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input), [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input)
 
 ## Retrieve mouse properties
 
