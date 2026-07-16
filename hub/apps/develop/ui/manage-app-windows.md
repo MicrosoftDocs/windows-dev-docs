@@ -11,7 +11,7 @@ dev_langs:
   - cppwinrt
 appliesto:
   - ✅ <a href="/windows/apps/winui/winui3/" target="_blank">WinUI</a>
-  - ✅ <a href="h/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
+  - ✅ <a href="/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 
 # Manage app windows
@@ -97,8 +97,8 @@ This example moves the window to be centered on the screen when the user clicks 
 
 This occurs in the code file for a [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) class, so you don't automatically have access to the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) or [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) objects. You have a few options for getting the AppWindow.
 
-- If you keep a reference to the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) as described in [Track the current window](/windows/apps/develop/ui-input/windowing-overview#track-the-current-window) or [Track instances of Window](/windows/apps/develop/ui-input/multiple-windows#track-instances-of-window), you can get the Window, then get [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property.
-- Or, you can call the static [AppWindow.GetFromWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid) method to get the AppWindow instance, as shown here. (See [Determining the window that's hosting a visual element](/windows/apps/develop/ui-input/retrieve-hwnd#determining-the-window-thats-hosting-a-visual-element).)
+- If you keep a reference to the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) as described in [Track the current window](/windows/apps/develop/ui/windowing-overview#track-the-current-window) or [Track instances of Window](/windows/apps/develop/ui/multiple-windows#track-instances-of-window), you can get the Window, then get [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property.
+- Or, you can call the static [AppWindow.GetFromWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid) method to get the AppWindow instance, as shown here. (See [Determining the window that's hosting a visual element](/windows/apps/develop/ui/retrieve-hwnd#determining-the-window-thats-hosting-a-visual-element).)
 
 ```csharp
 private void MoveWindowButton_Click(object sender, RoutedEventArgs e)
@@ -360,8 +360,11 @@ The Windows App SDK doesn't currently provide methods for attaching UI framework
 ## Related topics
 
 - [Windowing overview](windowing-overview.md)
+- [Show multiple windows](multiple-windows.md)
 - [Title bar customization](../title-bar.md)
+- [DisplayArea class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.displayarea)
 - [Windowing functionality migration](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md)
 - [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
 - [Retrieve a window handle (HWND)](retrieve-hwnd.md)
 - [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)
+- [WinUI Gallery - Windowing](https://github.com/microsoft/WinUI-Gallery)

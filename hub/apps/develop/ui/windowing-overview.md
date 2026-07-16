@@ -11,7 +11,7 @@ dev_langs:
   - cppwinrt
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI</a>
-  - ✅ <a href="hhttps://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
+  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 
 # Windowing overview for WinUI 3 and Windows App SDK
@@ -187,7 +187,11 @@ auto width{ App::Window().Bounds().Width };
 ## Related topics
 
 - [Manage app windows](manage-app-windows.md)
+- [Show multiple windows](multiple-windows.md)
+- [Title bar customization](../title-bar.md)
+- [DisplayArea class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.displayarea)
 - [Windowing functionality migration](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md)
 - [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
 - [Retrieve a window handle (HWND)](retrieve-hwnd.md)
 - [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)
+- [WinUI Gallery - Windowing](https://github.com/microsoft/WinUI-Gallery)
