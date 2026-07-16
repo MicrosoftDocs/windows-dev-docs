@@ -3,9 +3,8 @@ description: ItemsRepeater is a light-weight control to generate and present a c
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp
 ms.localizationpriority: medium
 ---
 # ItemsRepeater
@@ -56,7 +55,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart).
+You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](/windows/apps/develop/data-binding/).
 
 ```xaml
 <ItemsRepeater ItemsSource="{x:Bind Items}"/>
@@ -138,19 +137,19 @@ Use the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
 
 This list shows available interfaces and when to consider using each one.
 
-- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable-1)
+- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.iiterable-1)
 
   - Can be used for small, static data sets.
 
     At a minimum, the data source must implement the IEnumerable / IIterable interface. If this is all that's supported then the control will iterate through everything once to create a copy that it can use to access items via an index value.
 
-- [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/uwp/api/windows.foundation.collections.ivectorview-1)
+- [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.ivectorview-1)
 
   - Can be used for static, read-only data sets.
 
     Enables the control to access items by index and avoids the redundant internal copy.
 
-- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/uwp/api/windows.foundation.collections.ivector-1)
+- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.ivector-1)
 
   - Can be used for static data sets.
 
@@ -165,7 +164,7 @@ This list shows available interfaces and when to consider using each one.
 
     Enables the control to observe and react to changes in the data source and reflect those changes in the UI.
 
-- [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector-1)
+- [IObservableVector](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.iobservablevector-1)
 
   - Supports change notification
 
@@ -741,7 +740,7 @@ public class MyPage : Page
 ### Keyboarding
 The minimal keyboarding support for focus movement that ItemsRepeater provides is based on XAML's [2D Directional Navigation for Keyboarding](../../input/focus-navigation.md#2d-directional-navigation-for-keyboard).
 
-![Direction Navigation](/windows/uwp/design/input/images/keyboard/directional-navigation.png)
+![Direction Navigation](../../input/images/keyboard/directional-navigation.png)
 
 The ItemsRepeater's [XYFocusKeyboardNavigation mode](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xyfocuskeyboardnavigationmode) is _Enabled_ by default. Depending on the intended experience, consider adding support for common [Keyboard Interactions](../../input/keyboard-interactions.md) such as Home, End, PageUp, and PageDown.
 
@@ -795,5 +794,13 @@ internal sealed class CardControl : CardControlBase
 ## Related articles
 
 - [Lists](lists.md)
-- [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
-- [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)
+- [ListView and GridView](listview-and-gridview.md)
+- [ItemsView](itemsview.md)
+- [Attached layouts](../../../design/layout/attached-layouts.md)
+- [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
+- [ScrollViewer class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)
+- [VirtualizingLayout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.virtualizinglayout)
+- [UniformGridLayout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout)
+- [StackLayout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout)
+- [WinUI 3 Gallery - ItemsRepeater sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ItemsRepeater/ItemsRepeaterPage.xaml)
+- [Optimize ListView and GridView](../../performance/optimize-gridview-and-listview.md)
