@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for framework-dependent packaged apps
 description: This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 ms.topic: article
-ms.date: 07/22/2025
+ms.date: 07/22/2026
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -13,8 +13,7 @@ This article provides guidance about deploying framework-dependent packaged apps
 
 ## Overview
 
-By default, when you create a project using one of the [WinUI 3 templates in Visual Studio](..\dev-tools\visual-studio.md), your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](./single-project-msix.md)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). You can then build an MSIX package for your app by using the instructions in [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options to [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
-<!-- TODO: Broken link - target '..\dev-tools\visual-studio.md' not found and no redirect available -->
+By default, when you create a project using one of the WinUI 3 templates in Visual Studio, your project is configured to build the app into an MSIX package using either single-project MSIX (see [Package your app using single-project MSIX](./single-project-msix.md)) or a Windows Application Packaging project (see [Set up your desktop application for MSIX packaging in Visual Studio](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net)). You can then build an MSIX package for your app by using the instructions in [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps). After you build an MSIX package for your app, you have several options to [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview).
 
 To learn more about the packages that your packaged app might need when it uses the Windows App SDK, see [Deployment architecture for the Windows App SDK](deployment-architecture.md). Those include the *Framework*, *Main*, and *Singleton* packages; which are all signed and published by Microsoft. There are two main requirements for deploying a packaged app:
 
@@ -81,11 +80,23 @@ For additional guidance on how to use the **GetStatus** and **Initialize** metho
 
 ### Address installation errors
 
-If the Deployment API encounters an error during installation of the Windows App SDK runtime packages, it returns an error code that describes the problem. 
+If the Deployment API encounters an error during installation of the Windows App SDK runtime packages, it returns an error code that describes the problem.
 
-For example, if your app is not full trust, or doesn't have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability, then you'll get an **ACCESS_DENIED** error code. To review other error codes that you may encounter and their possible causes, see [Troubleshooting packaging, deployment, and query of Windows apps](/windows/win32/appxpkg/troubleshooting#common-error-codes).
+The following table lists common error codes from the Deployment API and their typical causes:
 
-If the error code doesn't provide enough information, then you can find more diagnostic information in the detailed event logs (see [Get diagnostic information](/windows/win32/appxpkg/troubleshooting#get-diagnostic-information)).
+| Error code | Name | Common cause |
+|---|---|---|
+| 0x80070005 | **ACCESS_DENIED** | The app is not full trust, or doesn't have the [packageManagement](/windows/uwp/packaging/app-capability-declarations) restricted capability. Run elevated or add the required capability. |
+| 0x80073CF0 | **ERROR_INSTALL_OPEN_PACKAGE_FAILED** | The MSIX package is corrupted or inaccessible. Verify the package file is intact and the path is correct. |
+| 0x80073CF3 | **ERROR_INSTALL_PREREQUISITE_FAILED** | A required dependency package is missing or incompatible. Ensure the VCLibs framework package and any other prerequisites are installed. |
+| 0x80073D06 | **ERROR_PACKAGES_IN_USE** | One or more packages are in use and cannot be updated. Close all apps using the Windows App SDK runtime, then retry. |
+| 0x80073CFB | **ERROR_PACKAGE_ALREADY_EXISTS** | The package version is already registered. This is informational—your app can continue. |
+| 0x80073CF9 | **ERROR_INSTALL_FAILED** | A general installation failure. Check event logs for more details (see below). |
+
+> [!TIP]
+> For the full list of MSIX package installation error codes, see [Troubleshooting packaging, deployment, and query of Windows apps](/windows/win32/appxpkg/troubleshooting#common-error-codes).
+
+If the error code doesn't provide enough information, then you can find more diagnostic information in the detailed event logs (see [Get diagnostic information](/windows/win32/appxpkg/troubleshooting#get-diagnostic-information)). Event logs are located in Event Viewer under **Applications and Services Logs** > **Microsoft** > **Windows** > **AppxDeployment-Server**.
 
 If you encounter errors that you can't diagnose, then file an issue in the [WindowsAppSDK GitHub repo](https://github.com/microsoft/WindowsAppSDK/issues) with the error code and event logs so that we can investigate the issue.
 
@@ -95,3 +106,7 @@ If you encounter errors that you can't diagnose, then file an issue in the [Wind
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 * [Release channels](release-channels.md)
 * [Package your app using single-project MSIX](./single-project-msix.md)
+* [What is MSIX?](/windows/msix/overview)
+* [Troubleshooting packaging, deployment, and query of Windows apps](/windows/win32/appxpkg/troubleshooting)
+* [Package a desktop or UWP app in Visual Studio](/windows/msix/package/packaging-uwp-apps)
+* [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
