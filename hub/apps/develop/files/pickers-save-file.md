@@ -1,7 +1,7 @@
 ---
 title: Save a File with a Windows App SDK Picker
-description: Learn how to use FileSavePicker in Windows App SDK to let users specify the name and location where they want your WinUI app to save a file. Implement file save functionality with code examples.
-ms.date: 09/10/2025
+description: Use FileSavePicker in Windows App SDK to let users choose a name and location for saved files in your WinUI app, with code examples.
+ms.date: 07/15/2026
 ms.topic: how-to
 keywords: windows 11, winui, windows app sdk
 ms.localizationpriority: medium
@@ -25,6 +25,7 @@ The save file picker can be populated with a suggested file name and other defau
 
 Before you start, make sure you have:
 
+- **Windows App SDK 1.8 or later.** The `Microsoft.Windows.Storage.Pickers` APIs used in this article were introduced in Windows App SDK 1.8. If your project targets an earlier version, see [Use WinRT pickers with HWND interop](using-file-folder-pickers.md#use-winrt-pickers-with-hwnd-interop) for the legacy approach.
 - A WinUI project set up with Windows App SDK
 - Basic familiarity with C# and XAML
 - Understanding of async/await patterns in C#
@@ -186,8 +187,10 @@ The example checks if the file exists and either creates a new file or appends t
 
 ## Related content
 
-[Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers)
-
-[Files, folders, and libraries with Windows App SDK](index.md)
-
-[PickSaveFileAsync](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker.picksavefileasync)
+- [Microsoft.Windows.Storage.Pickers namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers)
+- [Open files and folders with a Windows App SDK picker](using-file-folder-pickers.md)
+- [Files, folders, and libraries with Windows App SDK](index.md)
+- [Retrieve a window handle (HWND)](../ui/retrieve-hwnd.md)
+- [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
+- [Display WinRT UI objects that depend on CoreWindow](../ui/display-ui-objects.md)
+- [WinUI Gallery file picker sample](https://github.com/microsoft/WinUI-Gallery)

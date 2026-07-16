@@ -1,7 +1,7 @@
 ---
 title: Open files and folders with Windows App SDK pickers
-description: Learn how to use Windows App SDK file and folder pickers in your WinUI app. Implement FileOpenPicker and FolderPicker classes with step-by-step code examples and best practices.
-ms.date: 10/28/2025
+description: Use Windows App SDK file and folder pickers in your WinUI app, with FileOpenPicker and FolderPicker examples, options, and results.
+ms.date: 07/15/2026
 ms.topic: how-to
 keywords: windows 11, winui, windows app sdk
 dev_langs:
@@ -18,13 +18,18 @@ The Windows App SDK [FileOpenPicker](/windows/windows-app-sdk/api/winrt/microsof
 
 To learn about using a picker to save files, see [Save a file with a Windows App SDK picker](pickers-save-file.md).
 
+## Prerequisites
+
+- **Windows App SDK 1.8 or later.** The `Microsoft.Windows.Storage.Pickers` APIs used in this article were introduced in Windows App SDK 1.8. If your project targets an earlier version, see [Use WinRT pickers with HWND interop](#use-winrt-pickers-with-hwnd-interop) for the legacy approach.
+
 ## Important APIs
 
 This article uses the following APIs:
 
 - [FileOpenPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker)
 - [FolderPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.folderpicker)
-- [StorageFile](/uwp/api/Windows.Storage.StorageFile)
+- [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult)
+- [PickFolderResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfolderresult)
 
 ## File picker UI
 
@@ -234,14 +239,82 @@ else
 ```
 
 > [!TIP]
-> Whenever your app accesses a file or folder through a picker, add it to your app's [FutureAccessList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [MostRecentlyUsedList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it by using the Windows Runtime (WinRT) APIs. For more information, see [How to track recently-used files and folders](/windows/uwp/files/how-to-track-recently-used-files-and-folders).
+> Whenever your app accesses a file or folder through a picker, add it to your app's [FutureAccessList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.futureaccesslist) or [MostRecentlyUsedList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) to keep track of it by using the Windows Runtime (WinRT) APIs. For more information, see [Track recently used files and folders](track-recently-used-files-folders.md).
 
 The folder picker UI looks like this:
 
 :::image type="content" source="images/picker-folder.png" alt-text="Screenshot of a folder picker viewing the C drive.":::
 
+## Use WinRT pickers with HWND interop
+
+If your project targets Windows App SDK 1.7 or earlier, or if you use the legacy [Windows.Storage.Pickers](/uwp/api/windows.storage.pickers) APIs (for example, when migrating from UWP), you must initialize the picker with a window handle (HWND) before showing it. Without this step, the picker throws an exception or fails silently in desktop (WinUI 3) apps.
+
+> [!IMPORTANT]
+> WinUI 3 desktop apps don't have a `CoreWindow`. You must associate the picker with your app window by calling `WinRT.Interop.InitializeWithWindow.Initialize` (C#) or `IInitializeWithWindow::Initialize` (C++/WinRT) before any `Pick*Async` call.
+
+### C# example (legacy WinRT pickers)
+
+```csharp
+// This example assumes you have a reference to your app's main window.
+// In a Window class, use 'this'. In a Page, use a stored reference like App.MainWindow.
+
+var picker = new Windows.Storage.Pickers.FileOpenPicker();
+picker.FileTypeFilter.Add(".png");
+picker.FileTypeFilter.Add(".jpg");
+
+// Get the window handle (HWND) for the current WinUI 3 window.
+var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
+
+// Associate the picker with the window.
+WinRT.Interop.InitializeWithWindow.Initialize(picker, hwnd);
+
+var file = await picker.PickSingleFileAsync();
+if (file is null)
+{
+    // The user cancelled the picker.
+}
+```
+
+### C++/WinRT example (legacy WinRT pickers)
+
+```cppwinrt
+// pch.h
+#include <winrt/Windows.Storage.Pickers.h>
+#include <microsoft.ui.xaml.window.h>
+#include <shobjidl_core.h>
+
+// MainWindow.xaml.cpp — inside a MainWindow member function
+Windows::Storage::Pickers::FileOpenPicker picker;
+picker.FileTypeFilter().Append(L".png");
+picker.FileTypeFilter().Append(L".jpg");
+
+// Get the window handle (HWND) of the current WinUI 3 window.
+auto windowNative{ this->m_inner.as<::IWindowNative>() };
+HWND hwnd{ 0 };
+windowNative->get_WindowHandle(&hwnd);
+
+// Associate the picker with the window.
+auto initializeWithWindow{ picker.as<::IInitializeWithWindow>() };
+initializeWithWindow->Initialize(hwnd);
+
+auto file{ co_await picker.PickSingleFileAsync() };
+if (!file)
+{
+    // The user cancelled the picker.
+}
+```
+
+> [!TIP]
+> The recommended approach for new apps is to use the Windows App SDK pickers (`Microsoft.Windows.Storage.Pickers`), which accept a `WindowId` in the constructor and don't require the `InitializeWithWindow` pattern. See the examples earlier in this article.
+
+For more information about retrieving a window handle, see [Retrieve a window handle (HWND)](../ui/retrieve-hwnd.md).
+
 ## Related content
 
-[Microsoft.Windows.Storage.Pickers namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers)
-
-[Files, folders, and libraries with Windows App SDK](index.md)
+- [Microsoft.Windows.Storage.Pickers namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers)
+- [Save a file with a Windows App SDK picker](pickers-save-file.md)
+- [Files, folders, and libraries with Windows App SDK](index.md)
+- [Retrieve a window handle (HWND)](../ui/retrieve-hwnd.md)
+- [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
+- [Display WinRT UI objects that depend on CoreWindow](../ui/display-ui-objects.md)
+- [WinUI Gallery file picker sample](https://github.com/microsoft/WinUI-Gallery)
