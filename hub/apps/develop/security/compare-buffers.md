@@ -2,10 +2,8 @@
 title: Compare buffers
 description: This example code shows how to compare buffers in a WinUI app.
 ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # Compare buffers
 

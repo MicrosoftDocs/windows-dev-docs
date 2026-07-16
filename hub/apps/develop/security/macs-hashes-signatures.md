@@ -2,10 +2,8 @@
 title: MACs, hashes, and signatures
 description: This article discusses how message authentication codes (MACs), hashes, and signatures can be used in WinUI apps to detect message tampering.
 ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # MACs, hashes, and signatures
 

@@ -131,6 +131,9 @@ Save passwords in the credential locker only if the following criteria are met:
 
 Never store credentials in plain-text using app data or roaming settings.
 
+> [!NOTE]
+> For new applications, evaluate [Windows Hello](/windows/security/identity-protection/hello-for-business/) and passkeys (see [Introduction to passkeys](intro.md)) as a more secure, passwordless authentication method.
+
 ## Related content
 
 - [PasswordVault](/uwp/api/Windows.Security.Credentials.PasswordVault)

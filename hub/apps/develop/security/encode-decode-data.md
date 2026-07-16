@@ -2,10 +2,8 @@
 title: Encode and decode data
 description: This example code shows how to encode and decode base64 and hexadecimal data in a WinUI app.
 ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # Encode and decode data
 

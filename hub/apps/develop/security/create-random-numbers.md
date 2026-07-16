@@ -1,11 +1,9 @@
 ---
 title: Create random numbers
-description: This example code shows how to create a random number or buffer for use in cryptography in an Windows app.
+description: Learn how to generate cryptographically secure random numbers and buffers in a Windows app by using the Windows.Security.Cryptography APIs.
 ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # Create random numbers
 

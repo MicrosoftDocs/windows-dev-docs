@@ -2,10 +2,8 @@
 title: Copy to and from byte arrays
 description: This example code shows how to copy to and from byte arrays in a WinUI app.
 ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # Copy to and from byte arrays
 
