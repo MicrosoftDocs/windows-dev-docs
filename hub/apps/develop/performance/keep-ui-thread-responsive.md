@@ -25,7 +25,7 @@ You need to use the UI thread to make almost all changes to UI elements. You can
 
 Some of the slowest stages in an app include startup and switching views. Don't do more work than necessary to bring up the UI that the user sees initially. For example, don't create the UI for progressively-disclosed content or popup contents.
 
-- Use the [x:Load attribute](/windows/uwp/xaml-platform/x-load-attribute) to delay-instantiate elements.
+- Use the [x:Load attribute](/windows/apps/develop/platform/xaml/x-load-attribute) to delay-instantiate elements.
 - Programmatically insert elements into the tree on-demand.
 
 Use `DispatcherQueue.TryEnqueue` with a low priority to queue work for the UI thread to process when it's not busy.

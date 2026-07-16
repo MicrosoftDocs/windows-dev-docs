@@ -2,7 +2,9 @@
 ms.assetid: b7a8ec88-3013-4e5a-a110-fab3f20ee4bf
 title: Windows data binding and MVVM
 description: Learn how data binding in the Model-View-ViewModel (MVVM) pattern enables loose coupling between UI and non-UI code for better maintainability.
-ms.date: 11/11/2025
+author: GrantMeStrength
+ms.author: jken
+ms.date: 07/15/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui, mvvm
 ms.localizationpriority: medium
@@ -42,18 +44,20 @@ Although sophisticated MVVM frameworks can be very useful, especially for enterp
 
 In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows App SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
 
-For additional guidance on using basic, out-of-the-box MVVM, check out the [Customers Orders Database UWP sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database) on GitHub. Many of the other [UWP app samples](https://github.com/Microsoft?q=windows-appsample
-) also use a basic MVVM architecture, and the [Traffic App UWP sample](https://github.com/Microsoft/Windows-appsample-trafficapp) includes both code-behind and MVVM versions, with notes describing the [MVVM conversion](https://github.com/Microsoft/Windows-appsample-trafficapp/blob/MVVM/MVVM.md).
+For additional ready-to-use MVVM infrastructure in WinUI 3 apps, the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) (part of the .NET Community Toolkit) provides source-generated `ObservableProperty`, `RelayCommand`, and messaging primitives that eliminate boilerplate and work with `{x:Bind}`.
+
+For a sample that demonstrates MVVM with WinUI 3, see the [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) on GitHub, which uses the pattern throughout its source code.
 
 ## See also
 
 ### Topics
 
 [Data binding in depth](data-binding-in-depth.md)  
-[{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
+[{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)  
+[MVVM performance tips for WinUI apps](../performance/mvvm-performance-tips.md)
 
-### UWP MVVM Samples
+### MVVM frameworks and samples
 
-[Customers Orders Database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)  
-[VanArsdel Inventory sample](https://github.com/Microsoft/InventorySample)  
-[Traffic App sample](https://github.com/Microsoft/Windows-appsample-trafficapp)
+[MVVM Toolkit documentation](/dotnet/communitytoolkit/mvvm/)  
+[WinUI 3 Gallery source (GitHub)](https://github.com/microsoft/WinUI-Gallery)  
+[Template Studio for WinUI (GitHub)](https://github.com/microsoft/TemplateStudio)
