@@ -4,7 +4,7 @@ title: Windows data binding and MVVM
 description: Learn how data binding in the Model-View-ViewModel (MVVM) pattern enables loose coupling between UI and non-UI code for better maintainability.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 07/15/2026
+ms.date: 07/22/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui, mvvm
 ms.localizationpriority: medium
@@ -16,6 +16,9 @@ ms.localizationpriority: medium
 Model-View-ViewModel (MVVM) is a UI architectural design pattern that decouples UI and non-UI code. Learn how MVVM enables loose coupling using data binding in XAML to synchronize UI and data, improving maintainability and reducing dependencies.
 
 Because it provides loose coupling, the use of data binding reduces hard dependencies between different kinds of code. This approach makes it easier to change individual code units (methods, classes, controls, and so on) without causing unintended side effects in other units. This decoupling is an example of the *separation of concerns*, which is an important concept in many design patterns.
+
+> [!TIP]
+> **When to use MVVM:** Use MVVM for apps with complex data flows, multiple screens, or team-developed codebases. For simple single-page tools or prototypes, code-behind is acceptable — you can adopt MVVM incrementally as complexity grows. If your app has unit-testable business logic, MVVM makes that logic testable without a running UI.
 
 ## Benefits of MVVM
 

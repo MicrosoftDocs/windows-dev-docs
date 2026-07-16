@@ -2,7 +2,7 @@
 title: Windows developer FAQ
 description: The official Windows developer FAQ. Get answers to common questions
 ms.topic: faq
-ms.date: 05/28/2026
+ms.date: 07/22/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -449,6 +449,45 @@ Topics covered include:
 > GE Digital’s [FlightPulse](https://customers.microsoft.com/story/816181-ge-aviation-manufacturing-azure) airline system uses Blazor for the backend configuration of everything pilots see, bringing sensor data and analytics directly to pilots to improve safety and efficiency.
 > 
 > See more [Blazor customer stories](https://dotnet.microsoft.com/platform/customers/blazor) on the .NET site.
+
+</details>
+
+## Language choice (.NET vs C++)
+
+<details><summary>Should I use C# or C++ for my Windows app?</summary>
+
+> **Use C# (.NET)** in most cases. C# offers faster development, memory safety, rich libraries, and excellent tooling. Most Windows apps — including WinUI 3, WPF, WinForms, and .NET MAUI apps — are best built with C#.
+>
+> **Use C++** when you need direct hardware access, minimal runtime overhead, or interop with existing C++ codebases. Common C++ scenarios include game engines (DirectX), drivers, system-level utilities, and performance-critical components.
+>
+> | Factor | C# (.NET) | C++ |
+> |---|---|---|
+> | Development speed | ✅ Faster — managed memory, rich ecosystem | ⚠️ Slower — manual resource management |
+> | Runtime performance | ✅ Excellent with modern .NET (AOT, Span\<T\>) | ✅ Best possible — no GC pauses |
+> | Memory safety | ✅ Garbage-collected | ⚠️ Manual — risk of leaks and vulnerabilities |
+> | Windows API access | ✅ Via C#/WinRT projection | ✅ Via C++/WinRT projection |
+> | WinUI 3 support | ✅ Full support | ✅ Full support via C++/WinRT |
+> | Cross-platform | ✅ .NET runs on Windows, Linux, macOS | ✅ With platform-specific code |
+> | Best for | Business apps, CRUD, services, UI-heavy apps | Games, drivers, system tools, low-latency |
+>
+> You can also mix both: build your app in C# and call performance-critical native code via P/Invoke or a C++/WinRT component.
+
+</details>
+
+<details><summary>What is C++/WinRT and when should I use it?</summary>
+
+> [C++/WinRT](../develop/cpp-winrt/intro-to-using-cpp-with-winrt.md) is a standard C++17 language projection for Windows Runtime APIs. Use it when building Windows apps in C++ that consume or author WinRT APIs. It replaces C++/CX and the Windows Runtime C++ Template Library (WRL).
+>
+> Choose C++/WinRT when:
+> - You're building a C++ WinUI 3 app
+> - You need to author Windows Runtime components consumed by other languages
+> - You're porting from C++/CX
+
+</details>
+
+<details><summary>What is C#/WinRT and when do I need it?</summary>
+
+> [C#/WinRT](../develop/platform/csharp-winrt/index.md) provides WinRT projection support for C#. In most cases you don't interact with it directly — .NET apps targeting Windows automatically get access to WinRT APIs through target framework monikers (TFMs). You need C#/WinRT explicitly when authoring Windows Runtime components in C# or when generating interop assemblies for third-party WinRT components.
 
 </details>
 
