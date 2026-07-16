@@ -1,5 +1,4 @@
 name: "Post a documentation issue"
-title: ""
 description: >-
   Post an issue specific to Windows dev docs. ⛔ This template connects to the feedback link on the bottom of learn.microsoft.com. If posting an issue from the GitHub repo, choose a different template.⛔
 labels:
