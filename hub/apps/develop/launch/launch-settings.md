@@ -114,7 +114,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Default apps | `ms-settings:defaultapps` (**Behavior introduced in Windows 11, version 21H2 (with 2023-04 Cumulative Update) or 22H2 (with 2023-04 Cumulative Update), or later.**)<br/>Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br/><br/>- registeredAppMachine=\<Uri-escaped per machine installed name of app\><br/>- registeredAppUser=\<Uri-escaped per user installed name of app\><br/>- registeredAUMID=\<Uri-escaped Application User Model ID\><br/><br/>For more information, see [Launch the Default Apps settings page](launch-default-apps-settings.md). |
 | Default browser settings | `ms-settings:defaultbrowsersettings` (**Deprecated in Windows 11**) |
 | Manage optional features | `ms-settings:optionalfeatures` |
-| Offline Maps | `ms-settings:maps`<br/>`ms-settings:maps-downloadmaps` (Download maps)<br><br>(**Maps app is deprecated. See [Resources for deprecated features page](https://learn.microsoft.com/windows/whats-new/deprecated-features-resources#maps-app).**) |
+| Offline Maps | `ms-settings:maps`<br/>`ms-settings:maps-downloadmaps` (Download maps)<br><br>(**Maps app is deprecated. See [Resources for deprecated features - Maps app page](/windows/whats-new/deprecated-features-resources#maps-app).**) |
 | Startup apps | `ms-settings:startupapps` |
 | Video playback | `ms-settings:videoplayback` |
 
