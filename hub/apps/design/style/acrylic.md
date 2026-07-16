@@ -2,7 +2,7 @@
 description: Learn to use acrylic, a type of brush that creates a translucent texture to add depth and help establish a visual hierarchy.
 title: Acrylic material
 template: detail.hbs
-ms.date: 07/15/2024
+ms.date: 07/22/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -118,3 +118,6 @@ We fine-tuned acrylic's key components to arrive at its unique appearance and pr
 ## Related articles
 
 [Fluent Design overview](../index.md)
+- [Mica material](mica.md)
+- [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) — see Acrylic and other materials in action
+- [Apply Mica or Acrylic materials in desktop apps](/windows/apps/develop/ui/system-backdrops)

@@ -2,7 +2,7 @@
 description: Learn to use Mica and Mica Alt, opaque, dynamic materials that incorporate theme and desktop wallpaper to delight users and create visual hierarchy. 
 title: Mica material
 template: detail.hbs
-ms.date: 11/21/2024
+ms.date: 07/22/2026
 ms.topic: article
 keywords: windows 11
 ms.localizationpriority: medium
@@ -133,3 +133,4 @@ To use Mica in a Win32 app, see [Apply Mica in Win32 desktop apps for Windows 11
 - [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../develop/ui/system-backdrops.md)
 - [Apply Mica in Win32 desktop apps for Windows 11](../../desktop/modernize/ui/apply-mica-win32.md)
 - [NavigationView](../../develop/ui/controls/navigationview.md)
+- [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) — see Mica and other materials in action

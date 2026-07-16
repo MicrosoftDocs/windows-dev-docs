@@ -4,7 +4,7 @@ ms.assetid: BB8399E2-7013-4F77-AF2C-C1A0E5412856
 title: Accessibility checklist
 label: Accessibility checklist
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 07/22/2026
 ms.topic: checklist
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -68,7 +68,7 @@ Make sure your app manifest settings follow accessibility guidelines, see [Secur
 
 ## 8. Declare your app as accessible in the Microsoft Store.
 
-If you implemented the baseline accessibility support, declaring your app as accessible in the Microsoft Store can help reach more customers and potentially improve ratings. See [Accesibility in the Store](accessibility-in-the-store.md)
+If you implemented the baseline accessibility support, declaring your app as accessible in the Microsoft Store can help reach more customers and potentially improve ratings. See [Accessibility in the Store](accessibility-in-the-store.md)
 
 ## Related topics
 

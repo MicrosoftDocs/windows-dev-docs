@@ -4,7 +4,7 @@ ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
 title: Accessibility testing
 label: Accessibility testing
 template: detail.hbs
-ms.date: 03/23/2026
+ms.date: 07/22/2026
 ms.topic: article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -93,7 +93,7 @@ Validate keyboard behavior without pointer input. Confirm a complete and logical
 
 ### Verify the contrast ratio of visible text
 
-Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn't convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.0 G18 (Resources section)](https://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) for tools that can test contrast ratios.
+Use color contrast tools to verify that the visible text contrast ratio is acceptable. The exceptions include inactive UI elements, and logos or decorative text that doesn't convey any information and can be rearranged without changing the meaning. See [Accessible text requirements](accessible-text-requirements.md) for more information on contrast ratio and exceptions. See [Techniques for WCAG 2.2 G18 (Resources section)](https://www.w3.org/WAI/WCAG22/Techniques/general/G18) for tools that can test contrast ratios.
 
 > [!NOTE]
 > Some of the tools listed by Techniques for WCAG 2.0 G18 can't be used interactively with a Windows app. You may need to enter foreground and background color values manually in the tool, make screen captures of app UI and then run the contrast ratio tool over the screen capture image, or run the tool while opening source bitmap files in an image editing program rather than while that image is loaded by the app.
@@ -165,3 +165,6 @@ Verify that only intended elements appear in each accessibility view and that re
 - [UI Automation](/windows/desktop/WinAuto/entry-uiauto-win32)
 - [Accessibility in Windows](https://www.microsoft.com/accessibility/)
 - [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+- [Accessibility Insights](https://accessibilityinsights.io/) — find and fix accessibility issues
+- [WCAG 2.2 guidelines](https://www.w3.org/TR/WCAG22/) — Web Content Accessibility Guidelines
+- [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) — see accessibility examples in action

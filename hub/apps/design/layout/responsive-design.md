@@ -3,7 +3,7 @@ description: Learn responsive design techniques to tailor your app for specific 
 title: Responsive design techniques
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/25/2024
+ms.date: 07/22/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -89,3 +89,4 @@ The [NavigationView](../../develop/ui/controls/navigationview.md) control suppor
 - [Screen sizes and breakpoints](screen-sizes-and-breakpoints-for-responsive-design.md)
 - [Responsive layouts with XAML](../../develop/ui/layouts-with-xaml.md)
 - [XAML controls](../../develop/ui/controls/index.md)
+- [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) — see responsive layout patterns in action
