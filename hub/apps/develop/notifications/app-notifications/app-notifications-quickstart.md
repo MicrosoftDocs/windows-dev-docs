@@ -2,7 +2,7 @@
 title: "Quickstart: Send and Handle App Notifications"
 description: Send and respond to local app notifications in a WinUI app using the Windows App SDK. Walk through creating notification content, handling foreground and background activation, and configuring the app manifest.
 ms.topic: quickstart
-ms.date: 07/25/2025
+ms.date: 07/15/2026
 keywords: toast, local, notification, windows app sdk, winappsdk
 ms.localizationpriority: medium
 ms.custom: template-quickstart

@@ -116,3 +116,6 @@ collectionHistory.Clear();
 ## See also
 
 - [App notifications overview](index.md)
+- [App notification headers](app-notifications-headers.md)
+- [ToastCollectionManager Class](/uwp/api/windows.ui.notifications.toastcollectionmanager)
+- [Notifications sample app on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)

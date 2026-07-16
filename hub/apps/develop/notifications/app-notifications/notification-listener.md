@@ -3,9 +3,9 @@ description: Learn how to use Notification Listener to access all of the user's 
 title: Notification listener
 ms.assetid: E9AB7156-A29E-4ED7-B286-DA4A6E683638
 template: detail.hbs
-ms.date: 06/13/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, windows 11, windows app sdk, winappsdk, uwp, notification listener, usernotificationlistener, documentation, access notifications
+keywords: windows 10, windows 11, windows app sdk, winappsdk, notification listener, usernotificationlistener, documentation, access notifications
 ms.localizationpriority: medium
 ---
 # Notification listener: Access all notifications
