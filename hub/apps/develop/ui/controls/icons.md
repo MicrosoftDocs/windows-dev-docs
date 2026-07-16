@@ -6,7 +6,7 @@ label: Icons in Windows apps
 template: detail.hbs
 ms.date: 11/21/2025
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 doc-status: Published
 ms.localizationpriority: medium
 ms.custom:

@@ -6,7 +6,7 @@ label: Contextual commanding in collections
 template: detail.hbs
 ms.date: 07/08/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 pm-contact: chigy
 design-contact: kimsea
 dev-contact: niallm

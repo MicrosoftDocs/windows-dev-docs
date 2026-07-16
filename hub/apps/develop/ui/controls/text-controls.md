@@ -6,7 +6,7 @@ label: Text controls
 template: detail.hbs
 ms.date: 10/01/2018
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published

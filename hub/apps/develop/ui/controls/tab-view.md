@@ -4,7 +4,7 @@ title: Tab View
 template: detail.hbs
 ms.date: 01/15/2025
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 doc-status: Published
 ms.localizationpriority: medium
 ---

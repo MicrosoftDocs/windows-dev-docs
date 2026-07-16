@@ -2,14 +2,14 @@
 title: WinUI 3
 description: Provides info for WinUI and Windows app development with the Windows App SDK. 
 ms.topic: article
-ms.date: 07/15/2024
+ms.date: 07/18/2025
 ---
 
 # WinUI 3
 
 :::image type="icon" source="images/winui-hero.png":::
 
-WinUI 3 is Microsoft's modern native user interface framework for building Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
+WinUI 3 is the recommended native UI framework for building new Windows desktop applications. It brings the Fluent Design System, high-performance rendering, and a powerful XAML-based programming model to both C# and C++ developers.
 
 Delivered as part of the [Windows App SDK](../../windows-app-sdk/index.md), WinUI enables you to create modern, polished, and responsive desktop experiences that run on Windows 10, version 1809 (build 17763) and later, including Windows 11.
 

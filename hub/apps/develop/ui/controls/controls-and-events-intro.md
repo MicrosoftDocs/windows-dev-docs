@@ -4,9 +4,9 @@ title: Intro to controls and events
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/18/2025
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls, windows app sdk
 ms.localizationpriority: medium
 dev_langs:
   - csharp

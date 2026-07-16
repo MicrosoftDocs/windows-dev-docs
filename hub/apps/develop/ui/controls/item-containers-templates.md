@@ -5,7 +5,7 @@ label: Item containers and templates
 template: detail.hbs
 ms.date: 07/08/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
 pm-contact: predavid
 design-contact: kimsea

@@ -6,7 +6,7 @@ label: Create custom media transport controls
 template: detail.hbs
 ms.date: 09/24/2020
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 ms.localizationpriority: medium
 ---
 # Create custom transport controls
