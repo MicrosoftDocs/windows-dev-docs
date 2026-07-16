@@ -51,7 +51,7 @@ After the app has successfully created a channel URI, it sends it to its cloud s
 > [!WARNING]
 > This section describes the legacy UWP authentication flow using a **Package SID** and **secret key** obtained from the Microsoft Store Dashboard, which authenticates to `login.live.com`. This flow is specific to UWP apps registered via Partner Center and is **not compatible** with Windows App SDK push notifications.
 >
-> If you are building a WPF, WinForms, or WinUI 3 app using the Windows App SDK, use the **Azure Active Directory (Azure AD)** authentication flow described in the [Push notifications quickstart](push-quickstart.md) instead.
+> If you are building a WPF, WinForms, or WinUI 3 app using the Windows App SDK, use the **Microsoft Entra ID** authentication flow described in the [Push notifications quickstart](push-quickstart.md) instead.
 
 To send a notification, the cloud service must be authenticated through WNS. The first step in this process occurs when you register your app with the Microsoft Store Dashboard. During the registration process, your app is given a Package security identifier (SID) and a secret key. This information is used by your cloud service to authenticate with WNS.
 

@@ -143,11 +143,11 @@ Uploaded documents must be official, current, and clearly show ownership of the 
 * **Microsoft Entra ID (work account)**: Sign in with your organization's work account (e.g., user@contoso.com). This option is available for company accounts only. Individual developer accounts must use a personal Microsoft account.
 
 > **Note:**
-> * **Tenant-wide onboarding**: When you sign in with an Entra ID account and complete onboarding, your entire Azure AD tenant is onboarded. All users in your organization's tenant are marked as having an active developer account. However, only the user who completes the onboarding process receives Owner permissions by default in Partner Center. Other tenant users will need to be assigned roles (Developer, Manager, Owner, etc.) by an Owner or Manager through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md)
+> * **Tenant-wide onboarding**: When you sign in with an Entra ID account and complete onboarding, your entire Microsoft Entra tenant is onboarded. All users in your organization's tenant are marked as having an active developer account. However, only the user who completes the onboarding process receives Owner permissions by default in Partner Center. Other tenant users will need to be assigned roles (Developer, Manager, Owner, etc.) by an Owner or Manager through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md)
 > * **If your organization's tenant is already onboarded**: If someone in your organization has already completed company account onboarding using an Entra ID account, and you sign in with your own Entra ID account from the same tenant, you will be redirected to Partner Center. However, you may not see the Apps & Games workspace in Partner Center. This is expected unless an Owner or Manager has given you the necessary permissions.
 > **What to do:**
 >   1. Contact your account Owner or Manager and ask them to assign you a role through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md)
->   2. If you don't know who the Owner or Manager of your account is, check with your Azure AD tenant administrator.
+>   2. If you don't know who the Owner or Manager of your account is, check with your Microsoft Entra tenant administrator.
 5. Enter your business details by verifying with a **D-U-N-S number** (recommended for faster verification) or by uploading **official business documents**. Review and confirm the company information shown.
 
    > **Note:** Verification using documents may go to manual review and can take up to 3-5 business days.
@@ -226,7 +226,7 @@ No, Entra ID (work account) sign-up is currently supported only for Company acco
 
 ### I signed in with my Entra ID (work account) but I can't see the Apps & Games workspace in Partner Center. What should I do?
 
-This typically means someone else in your organization has already completed company account onboarding, and your tenant is already registered. You've been redirected to Partner Center, but you haven't been assigned a role yet. Contact your account Owner or Manager and ask them to assign you a role (such as Developer, Manager, or Owner) through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md) If you're unsure who the Owner or Manager is, check with your Azure AD tenant administrator.
+This typically means someone else in your organization has already completed company account onboarding, and your tenant is already registered. You've been redirected to Partner Center, but you haven't been assigned a role yet. Contact your account Owner or Manager and ask them to assign you a role (such as Developer, Manager, or Owner) through [Partner Center → Account settings → User management.](manage-users-in-partner-center.md) If you're unsure who the Owner or Manager is, check with your Microsoft Entra tenant administrator.
 
 ---
 
