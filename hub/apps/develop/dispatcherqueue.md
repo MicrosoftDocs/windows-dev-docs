@@ -1,7 +1,7 @@
 ---
 title: DispatcherQueue
 description: Describes the purpose and function of the Windows App SDK DispatcherQueue class, and how to program with it.
-ms.date: 08/30/2023
+ms.date: 07/15/2026
 ms.topic: article
 keywords: windows 11, windows 10, dispatcherqueue, dispatcherqueuecontroller
 ms.localizationpriority: high
@@ -76,7 +76,7 @@ void RunCustomMessageLoop()
 
 ## Outermost and recursive message loops
 
-**DispatcherQueue** supports custom message loops. However, for simple apps that don't need customization, we provide a default implementations. That removes a burden from developers, and helps ensure consistently correct behavior.
+**DispatcherQueue** supports custom message loops. However, for simple apps that don't need customization, we provide a default implementation. That removes a burden from developers, and helps ensure consistently correct behavior.
 
 ```cppwinrt
 namespace winrt 
@@ -175,8 +175,16 @@ void Main()
     // Runs a message loop until a call to DispatcherQueue.EnqueueEventLoopExit or PostQuitMessage.
     dispatcherQueueController.DispatcherQueue().RunEventLoop();
 
-    // Rundown the Windows App SDK DispatcherQueue. While this call is in progress, the AppWindow.Destoyed
+    // Rundown the Windows App SDK DispatcherQueue. While this call is in progress, the AppWindow.Destroyed
     // event will be raised since the AppWindow instance is associated with the DispatcherQueue.
     dispatcherQueueController.ShutdownQueue();
 }
 ```
+
+## See also
+
+* [DispatcherQueue API reference](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue)
+* [Threading functionality migration](../windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md)
+* [Keep the UI thread responsive](./performance/keep-ui-thread-responsive.md)
+* [Best practices for using the thread pool](./threading/best-practices-for-using-the-thread-pool.md)
+* [WinUI 3 Gallery app](https://github.com/microsoft/WinUI-Gallery) — includes threading and async samples
