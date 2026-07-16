@@ -2,7 +2,7 @@
 title: WebView2 in WinUI 3
 description: Add a WebView2 control to a WinUI 3 app to display web content using the Microsoft Edge (Chromium) rendering engine.
 ms.topic: how-to
-ms.date: 07/06/2026
+ms.date: 07/15/2026
 author: GrantMeStrength
 ms.author: jken
 ms.localizationpriority: medium
@@ -83,17 +83,51 @@ MyWebView2.NavigationCompleted += (sender, args) =>
 };
 ```
 
+## Communicate between web and app code
+
+Use `WebMessageReceived` to receive messages from the web page, and `PostWebMessageAsString` or `PostWebMessageAsJson` to send messages from your app to the web page:
+
+```csharp
+await MyWebView2.EnsureCoreWebView2Async();
+
+// Receive messages from the web page
+MyWebView2.CoreWebView2.WebMessageReceived += (sender, args) =>
+{
+    string message = args.TryGetWebMessageAsString();
+    // Process message from web content
+};
+
+// Send a message to the web page (after it has loaded and set up its listener)
+MyWebView2.CoreWebView2.PostWebMessageAsString("Hello from the app!");
+```
+
+In your web page, use `window.chrome.webview.postMessage` to send messages to the app:
+
+```html
+<script>
+    // Receive messages from the host app
+    window.chrome.webview.addEventListener("message", (event) => {
+        console.log("Message from app:", event.data);
+    });
+
+    // Send a message to the host app
+    window.chrome.webview.postMessage("Hello from the web page!");
+</script>
+```
+
 ## Open the WinUI 3 Gallery
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see WebView2 in action](winui3gallery://item/WebView2)
 
-The [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC) app includes interactive examples of most WinUI 3 controls and features.
+The [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC) app includes interactive examples of most WinUI 3 controls and features. You can also browse the [WinUI-Gallery source on GitHub](https://github.com/microsoft/WinUI-Gallery).
 
 ## Related articles
 
 - [Microsoft Edge WebView2 overview](/microsoft-edge/webview2/)
 - [Get started with WebView2 in WinUI 3 apps](/microsoft-edge/webview2/get-started/winui)
 - [WebView2 distribution and deployment](/microsoft-edge/webview2/concepts/distribution)
+- [WebView2Samples on GitHub](https://github.com/MicrosoftEdge/WebView2Samples) — official samples for WebView2 across frameworks
+- [WebView2 API reference (Microsoft.Web.WebView2.Core)](/microsoft-edge/webview2/reference/winrt/microsoft_web_webview2_core/)
 - [Communicate between web content and host app](/microsoft-edge/webview2/concepts/overview-features-apis#web-messaging)
 - [WebView2 environment options](/microsoft-edge/webview2/concepts/overview-features-apis#webview2-environment-options)
