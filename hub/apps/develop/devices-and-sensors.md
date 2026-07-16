@@ -2,7 +2,7 @@
 title: Devices and sensors
 description: This article provides an index of development features that are related to device and sensor scenarios in Windows apps.
 ms.topic: article
-ms.date: 05/11/2021
+ms.date: 07/22/2025
 keywords: 
 ---
 
@@ -50,3 +50,10 @@ The .NET SDK also provides APIs related to device scenarios for WPF and Windows 
 | [Printing and print system management (WPF)](/dotnet/framework/wpf/advanced/printing-and-print-system-management)  | Learn how to print documents using .NET APIs for WPF apps. |
 | [Print support (Windows Forms)](/dotnet/framework/winforms/advanced/windows-forms-print-support) | Learn how to print documents using .NET APIs for Windows Forms apps. |
 | [Power management in Windows Forms](/dotnet/framework/winforms/advanced/power-management-in-windows-forms) | Learn how to access power management features using .NET APIs for Windows Forms apps. |
+
+## See also
+
+- [Improve power consumption and battery life](/windows/apps/develop/performance/power)
+- [Optimize background activity](/windows/apps/develop/performance/optimize-background-activity)
+- [Hyper-V technology overview](/windows-server/virtualization/hyper-v/hyper-v-technology-overview)
+- [Windows Subsystem for Linux documentation](/windows/wsl/)

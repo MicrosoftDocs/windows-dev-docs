@@ -3,7 +3,7 @@ title: Power consumption improvements and Windows Application Performance
 description: Improve power consumption and battery life by minimizing the use of system resources and not waking the CPU when your Windows app is in the background.
 ms.reviewer: sandeepp
 ms.topic: how-to
-ms.date: 05/16/2022
+ms.date: 07/22/2025
 #Customer intent: As a Windows application developer, I want to know how to improve the way my app consumes power by identifying and minimizing the use of system resources and not waking the CPU when my app is in the background.
 ---
 
@@ -95,3 +95,9 @@ To learn more, see the article [Using Windows Performance Analyzer to analyze Mo
 - [Q&A forum](/answers/questions/812324/i-don39t-have-sampled-cpu-usage-data-in-my-profile.html)
 
 - [List of Windows Performance Toolkit (WPA) Graphs](/windows-hardware/test/wpt/list-of-wpa-graphs)
+
+## See also
+
+- [Optimize background activity](optimize-background-activity.md)
+- [Get battery information](/windows/apps/develop/devices-sensors/get-battery-info)
+- [Power management (Win32)](/windows/win32/power/power-management-portal)
