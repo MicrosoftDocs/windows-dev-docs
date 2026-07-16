@@ -1,5 +1,4 @@
 name: "Post a general documentation issue using the repo link"
-title: ""
 description: >-
   Post an issue for Windows developer docs. Use the feedback link from the bottom of the learn.microsoft.com page to link the associated doc or this template for a general issue.
   - "needs-triage"
