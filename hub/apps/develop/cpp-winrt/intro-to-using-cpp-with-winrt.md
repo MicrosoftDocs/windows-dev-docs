@@ -34,7 +34,7 @@ For Visual Studio support, you'll need Visual Studio 2022, or Visual Studio 2019
 
 While we recommend that you develop with the latest versions of Visual Studio and the Windows SDK, if you're using a version of C++/WinRT that shipped with the Windows SDK prior to 10.0.17763.0 (Windows 10, version 1809), then, to use the Windows namespaces headers mentioned above, you'll need a minimum Windows SDK target version in your project of 10.0.17134.0 (Windows 10, version 1803).
 
-Visual Studio 2022 ships with C++/WinRT project and item templates built in, so that you can get started with C++/WinRT development right away. It also comes with Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. For more info, see [Visual Studio native debug visualization for C++/WinRT](./natvis.md).
+Visual Studio 2026 ships with C++/WinRT project and item templates built in, so that you can get started with C++/WinRT development right away. It also comes with Visual Studio native debug visualization (natvis) of C++/WinRT projected types; providing an experience similar to C# debugging. Natvis is automatic for debug builds. For more info, see [Visual Studio native debug visualization for C++/WinRT](./natvis.md).
 
 For older versions of Visual Studio, you'll want to download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/).
 
