@@ -97,4 +97,8 @@ If your app is packaged with MSIX, you can also register background tasks that r
 ## Related content
 
 - [Keep the UI thread responsive](keep-ui-thread-responsive.md)
-- [Plan and measure performance](planning-measuring-performance.md)
+- [Planning and measuring performance](planning-measuring-performance.md)
+- [Improve power consumption and battery life](power.md)
+- [Windows services (Win32)](/windows/win32/services/services)
+- [Task Scheduler (Win32)](/windows/win32/taskschd/task-scheduler-start-page)
+- [Support your app with background tasks (UWP)](/windows/uwp/launch-resume/support-your-app-with-background-tasks)

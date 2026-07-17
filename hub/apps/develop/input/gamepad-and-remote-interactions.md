@@ -146,3 +146,6 @@ Use `ContextFlyout` to provide context menus accessible via the Menu button on g
 - [Designing for Xbox and TV](/windows/apps/design/devices/designing-for-tv)
 - [Keyboard interactions](/windows/apps/design/input/keyboard-interactions)
 - [Focus navigation](/windows/apps/design/input/focus-navigation)
+- [XInput (game controller input)](/windows/desktop/xinput/getting-started-with-xinput) — Low-level API for Xbox controller input including vibration, thumbstick deadzone, and trigger feedback
+- [Windows.Gaming.Input](/uwp/api/windows.gaming.input) — WinRT API for gamepad, racing wheel, and flight stick input
+- [Microsoft Game Development Kit (GDK)](https://github.com/microsoft/GDK) — Full game development platform for PC and Xbox

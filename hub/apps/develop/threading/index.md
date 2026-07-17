@@ -28,3 +28,10 @@ The thread pool is more efficient at managing threads because it reduces the ove
 | [Create a periodic work item](./create-a-periodic-work-item.md) | How to create a work item that repeats periodically. |
 | [Submit a work item to the thread pool](./submit-a-work-item-to-the-thread-pool.md) | How to do work in a separate thread by submitting a work item to the thread pool. |
 | [Use a timer to submit a work item](./use-a-timer-to-submit-a-work-item.md) | How to create a work item that runs after a timer elapses. |
+
+## Related content
+
+- [Interprocess communication](../communication/interprocess-communication.md)
+- [Sharing named objects between processes](../communication/sharing-named-objects.md)
+- [Processes and threads (Win32)](/windows/win32/procthread/processes-and-threads)
+- [Synchronization (Win32)](/windows/win32/sync/synchronization)

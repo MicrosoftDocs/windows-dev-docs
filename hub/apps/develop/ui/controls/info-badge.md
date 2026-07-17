@@ -4,7 +4,7 @@ title: Info badge
 template: detail.hbs
 ms.date: 02/26/2025
 ms.topic: article
-keywords: windows 10, winui, uwp
+keywords: winui, xaml controls
 ms.custom: 20H2
 ms.localizationpriority: medium
 no-loc: [info badge, navigation view, content dialog, info bar]

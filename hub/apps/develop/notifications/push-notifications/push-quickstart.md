@@ -2,7 +2,7 @@
 title: Quickstart Push notifications in the Windows App SDK
 description: Send push notifications using the Windows App SDK
 ms.topic: quickstart
-ms.date: 04/09/2026
+ms.date: 07/15/2026
 keywords: push, notification
 ms.localizationpriority: medium
 ms.custom:
@@ -49,24 +49,24 @@ You can also find samples for each version of Windows App SDK by [selecting a ve
 
 For API reference documentation for push notifications, see [Microsoft.Windows.PushNotifications Namespace](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications).
 
-## Configure your app's identity in Azure Active Directory (AAD)
+## Configure your app's identity in Microsoft Entra ID
 
-Push notifications in Windows App SDK use identities from Azure Active Directory (AAD). Azure credentials are required when requesting a WNS Channel URI and when requesting access tokens in order to send push notifications. **Note**: We do **NOT** support using Windows App SDK push notifications with Microsoft Partner Center.
+Push notifications in Windows App SDK use identities from Microsoft Entra ID (formerly Azure Active Directory). Azure credentials are required when requesting a WNS Channel URI and when requesting access tokens in order to send push notifications. **Note**: We do **NOT** support using Windows App SDK push notifications with Microsoft Partner Center.
 
-### Step 1: Create an AAD app registration
+### Step 1: Create an app registration
 
-Login to your Azure account and create a new [**AAD App Registration**](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) resource. Select *New registration*.
+Login to your Azure account and create a new [**App Registration**](https://ms.portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) resource. Select *New registration*.
 
 ### Step 2: Provide a name and select a multi-tenant option
 
 1. Provide an app name.
 1. Push notifications require the multi-tenant option, so select that. 
-    1. For more information about tenants, see [Who can sign in to your app?](/azure/active-directory/develop/single-and-multi-tenant-apps#who-can-sign-in-to-your-app).
+    1. For more information about tenants, see [Who can sign in to your app?](/entra/identity-platform/single-multi-account#who-can-sign-in-to-your-app).
 1. Select *Register*
 1. Take note of your **Application (client) ID**, as this is your **Azure AppId** that you will be using during activation registration and access token request.
 1. Take note of your **Directory (tenant) ID**, as this is your **Azure TenantId** that you will be using when requesting an access token.
     > [!IMPORTANT]
-    > ![AAD App Registration Tenant](images/push-notification-aad-app-registration-app-id.png)
+    > ![App Registration showing Application and Directory IDs](images/push-notification-aad-app-registration-app-id.png)
     > Take note of your **Application (client) ID** and **Directory (tenant) ID**.
 1. Take note of your **Object ID**, as this is your **Azure ObjectId** that you will be using when requesting a channel request.  Note that this is NOT the object ID listed on the **Essentials** page. Instead, to find the correct **Object ID**, click on the app name in the **Managed application in local directory** field on the **Essentials** page:
     > ![Screenshot showing the Managed application in local directory option on the Essentials page](images/push-notification-essentials-ui.png)
@@ -76,16 +76,16 @@ Login to your Azure account and create a new [**AAD App Registration**](https://
     > [!NOTE] 
     > A **service principal** is required to get an Object ID, if there is not one associated with your app, follow the steps in one of the following articles to create one in the Azure portal or using the command line:
     >
-    > [Use the portal to create an Azure AD application and service principal that can access resources](/azure/active-directory/develop/howto-create-service-principal-portal)
+    > [Use the portal to create a Microsoft Entra application and service principal that can access resources](/entra/identity-platform/howto-create-service-principal-portal)
     >
-    > [Use Azure PowerShell to create a service principal with a certificate](/azure/active-directory/develop/howto-authenticate-service-principal-powershell)
+    > [Use Azure PowerShell to create a service principal with a certificate](/entra/identity-platform/howto-authenticate-service-principal-powershell)
     
 
 ### Step 3: Create a secret for your app registration
 
 Your secret will be used along with your Azure AppId/ClientId when requesting an access token to send push notifications.
 
-![AAD App Secret](images/push-notification-aad-app-registration-secret.png)
+![App registration secret](images/push-notification-aad-app-registration-secret.png)
 
 Navigate to **Certificates & secrets** and select **New client secret**.
 
@@ -177,7 +177,7 @@ Open your **Package.appxmanifest**. Add the following inside the `<Application>`
 ```
 
 > [!NOTE]
-> The `Id` attribute in `<com:Class>` must be set to your **Azure AppId** (the Application (client) ID from your Azure AD app registration). This is how Windows App SDK connects your app's COM activation to its Azure identity — when WNS activates your app to deliver a background push notification, it uses this GUID to locate and launch the correct COM server. Use the same Azure AppId value you noted in Step 1 above.
+> The `Id` attribute in `<com:Class>` must be set to your **Azure AppId** (the Application (client) ID from your Microsoft Entra ID app registration). This is how Windows App SDK connects your app's COM activation to its Azure identity — when WNS activates your app to deliver a background push notification, it uses this GUID to locate and launch the correct COM server. Use the same Azure AppId value you noted in Step 1 above.
 
 > [!NOTE]
 > An example of the completed C++ class for this example can be found [after Step 5](#example-code). Steps 4 and 5 provide step-by-step guidance to add each piece in the final example.
@@ -221,8 +221,8 @@ auto channelOperation{ PushNotificationManager::Default().CreateChannelAsync(win
 
 If you're following the tutorial code, add your Azure Object ID here:
 ```cpp
-// To obtain an AAD RemoteIdentifier for your app,
-// follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+// To obtain an Entra ID RemoteIdentifier for your app,
+// follow the instructions on https://learn.microsoft.com/entra/identity-platform/quickstart-register-app
 winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure ObjectId
 ```
 
@@ -243,8 +243,8 @@ using namespace winrt::Microsoft::Windows::PushNotifications;
 using namespace winrt::Windows::Foundation;
 using namespace winrt::Microsoft::Windows::AppLifecycle;
 
-// To obtain an AAD RemoteIdentifier for your app,
-// follow the instructions on https://learn.microsoft.com/azure/active-directory/develop/quickstart-register-app
+// To obtain an Entra ID RemoteIdentifier for your app,
+// follow the instructions on https://learn.microsoft.com/entra/identity-platform/quickstart-register-app
 winrt::guid remoteId{ "00000000-0000-0000-0000-000000000000" }; // Replace this with your own Azure ObjectId
 
 winrt::Windows::Foundation::IAsyncOperation<PushNotificationChannel> RequestChannelAsync()

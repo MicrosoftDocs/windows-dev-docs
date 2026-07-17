@@ -4,9 +4,9 @@ title: App notification content
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: App notification content
 template: detail.hbs
-ms.date: 07/25/2025
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload, app notifications
+keywords: windows 10, windows 11, windows app sdk, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload, app notifications
 ms.localizationpriority: medium
 ---
 # App notification content
@@ -971,8 +971,9 @@ To learn how to handle app activations (the user clicking your notification or b
 ## Related topics
 
 * [App notifications overview](index.md)
-* [Tile and toast notification support for language, scale, and high contrast](/windows/uwp/launch-resume/tile-toast-language-scale-contrast)
-
-
-
+* [Push notifications overview](../push-notifications/index.md)
+* [Badge notifications](../badges.md)
+* [Notifications XML schema](/uwp/schemas/tiles/toastschema/schema-root)
+* [Notifications sample app on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)
+* [Microsoft.Windows.AppNotifications API reference](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications)
 

@@ -106,7 +106,7 @@ shadow.StartAnimation("BlurRadius", blurAnimation);
 
 If you want to add a shadow to more complex framework elements, there are a couple of ways to interop with shadows between WinUI XAML and Composition:
 
-1. Use the `DropShadowPanel` available in the CommunityToolkit.WinUI package.
+1. Use the [AttachedCardShadow](/dotnet/communitytoolkit/windows/media/attachedcardshadow) available in the [CommunityToolkit.WinUI.Media](https://www.nuget.org/packages/CommunityToolkit.WinUI.Media) package.
 1. Create a Visual to use as the shadow host and tie it to the XAML hand-off Visual.
 1. Use the Composition Sample Gallery’s [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) custom CompositionShadow control. See the example here for usage.
 

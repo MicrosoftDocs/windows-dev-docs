@@ -2,7 +2,7 @@
 title: "Quickstart: Send and Handle App Notifications"
 description: Send and respond to local app notifications in a WinUI app using the Windows App SDK. Walk through creating notification content, handling foreground and background activation, and configuring the app manifest.
 ms.topic: quickstart
-ms.date: 07/25/2025
+ms.date: 07/15/2026
 keywords: toast, local, notification, windows app sdk, winappsdk
 ms.localizationpriority: medium
 ms.custom: template-quickstart
@@ -21,10 +21,10 @@ For complete sample apps that implement app notifications, see the [Windows App 
 
 ## Prerequisites
 
-- Install Visual Studio 2022 (v17.6+)
-    - [Download 2022 Community](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Community&channel=Release&Version=VS2022&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
-    - [Download 2022 Professional](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Professional&channel=Release&Version=VS2022&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
-    - [Download 2022 Enterprise](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Enterprise&channel=Release&Version=VS2022&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
+- Install Visual Studio 2026
+    - [Download 2026 Community](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Community&channel=Release&Version=VS2026&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
+    - [Download 2026 Professional](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Professional&channel=Release&Version=VS2026&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
+    - [Download 2026 Enterprise](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Enterprise&channel=Release&Version=VS2026&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2302)
 - Include C++ workload for C++ or .NET workloads for C# development.
 - Make sure that MSIX Packaging Tools under .NET desktop development is selected.
 - Make sure Windows Application Development is selected.

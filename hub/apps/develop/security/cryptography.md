@@ -2,10 +2,8 @@
 title: Cryptography
 description: The article provides an overview of the cryptography features available to WinUI apps. For detailed information on particular tasks, see the table at the end of this article.
 ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # Cryptography
 
@@ -13,6 +11,12 @@ ms.localizationpriority: medium
 
 
 The article provides an overview of the cryptography features available to WinUI apps. For detailed information on particular tasks, see the table at the end of this article.
+
+> [!NOTE]
+> The `Windows.Security.Cryptography` namespaces provide managed cryptographic operations for Windows apps. For Win32 or desktop scenarios that require direct access to the cryptographic primitives, consider using [Cryptography Next Generation (CNG)](/windows/win32/seccng/cng-portal), which is the recommended native cryptography API on Windows.
+
+> [!IMPORTANT]
+> When choosing algorithms, use AES (128-bit key or larger) for symmetric encryption, and RSA (2048-bit or larger) or ECDSA for asymmetric operations. Avoid deprecated algorithms such as DES, 3DES, or RC4. For hashing, use SHA-256 or stronger—do not use MD5 or SHA-1 in any security context.
 
 ## Terminology
 

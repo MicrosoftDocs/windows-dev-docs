@@ -1,15 +1,14 @@
 ---
-description: You can programmatically pin your app to the taskbar, and you can check if it's currently pinned.
+description: Learn how to request that users pin your Win32 or WinUI 3 app to the taskbar, and how to detect whether pinning is supported and already enabled.
 title: Pin your app to the taskbar
-template: detail.hbs
-ms.date: 06/15/2026
+ms.date: 07/16/2026
 ms.topic: how-to
-keywords: windows 10, uwp, win32, taskbar, taskbar manager, pin to taskbar, primary tile
+keywords: windows 11, win32, winui 3, taskbar, taskbar manager, pin to taskbar
 ms.localizationpriority: medium
 ---
 # Pin your app to the taskbar
 
-Now you can programmatically request users to pin your Win32 or WinUI app to the taskbar, similar to how you can [pin your app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis). And you can check whether your app is currently pinned, and whether the taskbar allows pinning.
+You can programmatically request users to pin your Win32 or WinUI app to the taskbar, similar to how you can [pin your app to the Start menu](/windows/uwp/launch-resume/primary-tile-apis). You can also check whether your app is currently pinned, and whether the taskbar allows pinning.
 
 ![Screenshot of a Windows 11 task bar showing the app pinned there.](images/taskbar/taskbar.png)
 

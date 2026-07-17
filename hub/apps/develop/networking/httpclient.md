@@ -72,7 +72,7 @@ if (!headers.UserAgent.TryParseAdd(header))
     throw new Exception("Invalid header value: " + header);
 }
 
-Uri requestUri = new Uri("http://www.contoso.com");
+Uri requestUri = new Uri("https://www.contoso.com");
 
 //Send the GET request asynchronously and retrieve the response as a string.
 Windows.Web.Http.HttpResponseMessage httpResponse = new Windows.Web.Http.HttpResponseMessage();
@@ -121,7 +121,7 @@ int main()
         throw L"Invalid header value: " + header;
     }
 
-    Uri requestUri{ L"http://www.contoso.com" };
+    Uri requestUri{ L"https://www.contoso.com" };
 
     // Send the GET request asynchronously, and retrieve the response as a string.
     Windows::Web::Http::HttpResponseMessage httpResponseMessage;
@@ -144,10 +144,10 @@ int main()
 
 ## POST binary data over HTTP
 
-The [C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/) code example below illustrates using form data and a POST request to send a small amount of binary data as a file upload to a web server. The code uses the [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) class to represent the binary data, and the [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) class to represent the multi-part form data.
+The [C++/WinRT](/windows/apps/develop/cpp-winrt/) code example below illustrates using form data and a POST request to send a small amount of binary data as a file upload to a web server. The code uses the [**HttpBufferContent**](/uwp/api/windows.web.http.httpbuffercontent) class to represent the binary data, and the [**HttpMultipartFormDataContent**](/uwp/api/windows.web.http.httpmultipartformdatacontent) class to represent the multi-part form data.
 
 > [!NOTE]
-> Calling **get** (as seen in the code example below) isn't appropriate for a UI thread. For the correct technique to use in that case, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/concurrency).
+> Calling **get** (as seen in the code example below) isn't appropriate for a UI thread. For the correct technique to use in that case, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency).
 
 ```cppwinrt
 // pch.h
@@ -323,12 +323,19 @@ In C++, there is no method to try and parse a string to a URI. If an app gets in
 
 The [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) lacks a convenience function. So an app using [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) and other classes in this namespace needs to use the **HRESULT** value.
 
-In apps using [C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/), the [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) struct represents an exception raised during app execution. The [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) function returns the **HRESULT** assigned to the specific exception. The [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) function returns the system-provided string that is associated with the **HRESULT** value. For more info, see [Error handling with C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/error-handling)
+In apps using [C++/WinRT](/windows/apps/develop/cpp-winrt/), the [**winrt::hresult_error**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error) struct represents an exception raised during app execution. The [winrt::hresult_error::code](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) function returns the **HRESULT** assigned to the specific exception. The [winrt::hresult_error::message](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errormessage-function) function returns the system-provided string that is associated with the **HRESULT** value. For more info, see [Error handling with C++/WinRT](/windows/apps/develop/cpp-winrt/error-handling)
 
 Possible **HRESULT** values are listed in the *Winerror.h* header file. Your app can filter on specific **HRESULT** values to modify app behavior depending on the cause of the exception.
 
 In apps using the .NET Framework 4.5 in C#, VB.NET, the [System.Exception](/dotnet/api/system.exception) represents an error during app execution when an exception occurs. The [System.Exception.HResult](/dotnet/api/system.exception.hresult#System_Exception_HResult) property returns the **HRESULT** assigned to the specific exception. The [System.Exception.Message](/dotnet/api/system.exception.message#System_Exception_Message) property returns the message that describes the exception.
 
-C++/CX has been superseded by [C++/WinRT](/windows/apps/develop/cpp-and-winrt-apis/). But in apps using C++/CX, the [Platform::Exception](/cpp/cppcx/platform-exception-class) represents an error during app execution when an exception occurs. The [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) property returns the **HRESULT** assigned to the specific exception. The [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) property returns the system-provided string that is associated with the **HRESULT** value.
+C++/CX has been superseded by [C++/WinRT](/windows/apps/develop/cpp-winrt/). But in apps using C++/CX, the [Platform::Exception](/cpp/cppcx/platform-exception-class) represents an error during app execution when an exception occurs. The [Platform::Exception::HResult](/cpp/cppcx/platform-exception-class#hresult) property returns the **HRESULT** assigned to the specific exception. The [Platform::Exception::Message](/cpp/cppcx/platform-exception-class#message) property returns the system-provided string that is associated with the **HRESULT** value.
 
 For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**. For some illegal method calls, the **HRESULT** returned is **E\_ILLEGAL\_METHOD\_CALL**.
+
+## Related topics
+
+* [Networking basics](networking-basics.md)
+* [Which networking technology?](which-networking-technology.md)
+* [Background transfers](background-transfers.md)
+* [WebSockets](websockets.md)

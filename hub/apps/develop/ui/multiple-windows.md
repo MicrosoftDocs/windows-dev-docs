@@ -7,7 +7,7 @@ ms.localizationpriority: medium
 no-loc: [Window, Page, AppWindow, Frame, Dictionary, WindowId]
 appliesto:
   - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/winui/winui3/" target="_blank">WinUI</a>
-  - ✅ <a href="hhttps://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
+  - ✅ <a href="https://learn.microsoft.com/en-us/windows/apps/windows-app-sdk/" target="_blank">Windows App SDK</a>
 ---
 # Show multiple windows for your app
 
@@ -184,5 +184,8 @@ public sealed partial class SecondaryPage : Page
 
 - [Windowing overview](windowing-overview.md)
 - [Manage app windows](manage-app-windows.md)
+- [Title bar customization](../title-bar.md)
 - [Tab view](controls/tab-view.md)
+- [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing)
+- [WinUI Gallery - Windowing](https://github.com/microsoft/WinUI-Gallery)
 - [Show multiple views (UWP)](/windows/uwp/ui-input/show-multiple-views)

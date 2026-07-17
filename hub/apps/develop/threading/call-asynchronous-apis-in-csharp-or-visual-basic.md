@@ -71,7 +71,7 @@ When you use the **await** operator to retrieve your results from an asynchronou
 When asynchronous methods call other asynchronous methods, any asynchronous method that results in an exception will be propagated to the outer methods. This means that you can put a **try/catch** block on the outer-most method to catch errors for the nested asynchronous methods. Again, this is similar to how you catch exceptions for synchronous methods. However, you can't use **await** in the **catch** block.
 
 > [!TIP]
-> Starting with C# 6.0 (.NET Framework 4.6 / Visual Studio 2015), you can use **await** in the **catch** block.
+> You can use **await** in **catch** and **finally** blocks (supported since C# 6.0).
 
 ## Summary and next steps
 

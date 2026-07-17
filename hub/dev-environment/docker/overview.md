@@ -11,15 +11,15 @@ ms.date: 06/05/2026
 Learn about the variety of container support offered by Microsoft tools and services on Windows, including Visual Studio, Visual Studio Code, .NET, and a broad variety of Azure services.
 
 > [!NOTE]
-> WSL is also adding built-in Linux container support (coming to public preview). For details and progress updates, see the [WSL GitHub repository](https://github.com/microsoft/WSL).
+> WSL includes built-in Linux container support. For details and updates, see the [WSL GitHub repository](https://github.com/microsoft/WSL).
 
 ## Docker on Windows 
 
 :::row:::
     :::column:::
-       [![Docker Docs Icon](../../images/docker-docs-icon.png)](https://docs.docker.com/docker-for-windows/install/)<br>
-        **[Install Docker Desktop for Windows](https://docs.docker.com/docker-for-windows/install/)**<br>
-        Find installation steps, system requirements, what's included in the installer, how to uninstall, differences between stable and edge versions, and how to switch between Windows and Linux containers.
+       [![Docker Docs Icon](../../images/docker-docs-icon.png)](https://docs.docker.com/desktop/setup/install/windows-install/)<br>
+        **[Install Docker Desktop for Windows](https://docs.docker.com/desktop/setup/install/windows-install/)**<br>
+        Find installation steps, system requirements, what's included in the installer, how to uninstall, and how to switch between Windows and Linux containers.
     :::column-end:::
     :::column:::
        [![Docker running screenshot](../../images/docker-running-screenshot.png)](https://docs.docker.com/get-started/)<br>

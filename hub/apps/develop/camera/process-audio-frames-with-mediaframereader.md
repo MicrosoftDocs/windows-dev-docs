@@ -61,6 +61,6 @@ You can use an [**AudioFrame**](/uwp/api/windows.media.audioframe) object to pas
 * [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md)
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md)
-* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
-* [Audio graphs](/windows/uwp/audio-video-camera/audio-graphs)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraFrames)
+* [Audio graphs](../media-authoring-processing/audio-graphs.md)
  

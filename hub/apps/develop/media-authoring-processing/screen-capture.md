@@ -98,3 +98,5 @@ When migrating screen capture code from UWP to WinUI 3 (Windows App SDK), keep t
 - [Windows.Graphics.Capture namespace](/uwp/api/windows.graphics.capture)
 - [Win2D for WinUI 3](https://microsoft.github.io/Win2D/WinUI3/html/Introduction.htm)
 - [Retrieve a window handle (HWND)](/windows/apps/develop/ui-input/retrieve-hwnd)
+- [Graphics](/windows/apps/develop/graphics) — Index of graphics development features for Windows apps
+- [DirectX Graphics Samples on GitHub](https://github.com/microsoft/DirectX-Graphics-Samples)

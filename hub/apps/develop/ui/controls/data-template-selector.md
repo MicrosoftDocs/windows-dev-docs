@@ -5,7 +5,7 @@ label: Data template selection
 template: detail.hbs
 ms.date: 10/18/2019
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 pm-contact: anawish
 ---
 

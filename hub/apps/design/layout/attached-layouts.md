@@ -3,7 +3,7 @@ description: You can define a attached layouts for use with containers such as t
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/15/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -13,9 +13,9 @@ A container (for example, Panel) that delegates its layout logic to another obje
 
 In this topic, we cover what's involved in creating an attached layout (virtualizing and non-virtualizing), the concepts and classes you'll need to understand, and the trade-offs you'll need to consider when deciding between them.
 
-| **Get WinUI** |
+| **Windows App SDK** |
 | - |
-| This control is included as part of WinUI, a NuGet package that contains new controls and UI features for Windows apps. For more info, including installation instructions, see the [WinUI overview](/uwp/toolkits/winui/). |
+| The layout classes described here are part of WinUI 3, included in the Windows App SDK. For more info, see [Windows App SDK overview](/windows/apps/windows-app-sdk/). |
 
 > **Important APIs**:
 
@@ -1186,4 +1186,10 @@ public class VirtualizingStackLayout : VirtualizingLayout
 ## Related articles
 
 - [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
+- [ItemsRepeater control](../../develop/ui/controls/items-repeater.md)
 - [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer)
+- [VirtualizingLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.virtualizinglayout)
+- [UniformGridLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout)
+- [StackLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.stacklayout)
+- [Custom panels overview](./custom-panels-overview.md)
+- [WinUI 3 Gallery - ItemsRepeater sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ItemsRepeater/ItemsRepeaterPage.xaml)

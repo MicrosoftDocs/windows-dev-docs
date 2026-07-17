@@ -2,7 +2,7 @@
 title: App Notifications Overview for Windows Apps
 description: Learn how to send, manage, and respond to app notifications in Windows apps using the Windows App SDK notification APIs and Notification Center.
 ms.topic: concept-article
-ms.date: 03/01/2026
+ms.date: 07/15/2026
 keywords: toast, notification
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
@@ -61,4 +61,7 @@ The app notifications support in the Windows App SDK currently has these limitat
 - [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md)
 - [Windows App SDK](../../../windows-app-sdk/index.md)
 - [Push notifications overview](../push-notifications/index.md)
+- [Badge notifications](../badges.md)
+- [App notification content schema](app-notifications-schema.md)
+- [Notifications sample app on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)
 

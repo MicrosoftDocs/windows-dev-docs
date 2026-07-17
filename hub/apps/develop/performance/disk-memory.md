@@ -1,9 +1,11 @@
 ---
 title: Disk use, memory improvements and Windows Application Performance
 description: This guide will demonstrate ways to improve the memory consumption and the disk footprint of your Windows app(s).
+author: GrantMeStrength
+ms.author: jken
 ms.reviewer: visu
 ms.topic: how-to
-ms.date: 05/11/2022
+ms.date: 07/22/2026
 #Customer intent: As a Windows application developer, I want to know how to improve the way my app consumes memory and uses disk space.
 ---
 
@@ -146,6 +148,11 @@ A few ways to reduce, or be more efficient with, your disk space include:
 
 - [Measure memory usage in Visual Studio](/visualstudio/profiling/memory-usage)
 
-- [Planning for performance](/windows/uwp/debug-test-perf/planning-and-measuring-performance)
+- [Q&A: Performance Monitor to log CPU & memory usage](/answers/questions/679026/performance-monitor-to-log-cpu-memory-usage)
 
-- [Q&A forum](/answers/questions/679026/performance-monitor-to-log-cpu-amp-memory-usage.html)
+## Related content
+
+- [Improve power consumption and battery life by minimizing background work](./power.md)
+- [Optimize file access](./optimize-file-access.md)
+- [Choosing among Visual Studio Performance Profiler, Windows Performance Toolkit, and PerfView](./choose-between-tools.md)
+- [Memory management (Win32)](/windows/win32/memory/memory-management)

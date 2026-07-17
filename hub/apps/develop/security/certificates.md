@@ -2,10 +2,8 @@
 title: Intro to certificates
 description: This article discusses the use of certificates in WinUI apps.
 ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # Intro to certificates
 

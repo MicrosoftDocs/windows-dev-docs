@@ -4,7 +4,7 @@ title: Teaching tips
 template: detail.hbs
 ms.date: 02/26/2025
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 ms.custom: 19H1
 ms.localizationpriority: medium
 ---

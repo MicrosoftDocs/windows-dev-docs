@@ -127,6 +127,8 @@ The [GitHub Copilot modernization agent](/dotnet/core/porting/github-copilot-app
 
 - [Choose your migration path](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)
 - [Migration terminology](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-terminology.md)
+- [Call interop APIs from a .NET app](winrt-com-interop-csharp.md)
+- [Build a C# .NET app with WinUI and Win32 interop](../../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 
 ## Next steps
 

@@ -2,14 +2,13 @@
 title: Data protection
 description: This article explains how to use the DataProtectionProvider class in the Windows.Security.Cryptography.DataProtection namespace to encrypt and decrypt digital data in a WinUI app.
 ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 ---
 # Data protection
 
-
+> [!IMPORTANT]
+> The **DataProtectionProvider** class protects data using the Windows Data Protection API (DPAPI). Protected data is tied to the specified security descriptor (such as a user SID or AD group). If the protection context becomes unavailable (for example, the user profile is deleted or the machine is reimaged), the data cannot be recovered. Always maintain a separate, secure backup strategy for critical data.
 
 This article explains how to use the [**DataProtectionProvider**](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) class in the [**Windows.Security.Cryptography.DataProtection**](/uwp/api/Windows.Security.Cryptography.DataProtection) namespace to encrypt and decrypt digital data in a WinUI app.
 

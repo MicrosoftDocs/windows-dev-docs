@@ -1,7 +1,7 @@
 ---
 title: Implement OAuth 2.0 in Windows Apps
-description: Learn how to implement OAuth 2.0 authentication in Windows apps using Windows App SDK's OAuth2Manager API. Secure user authentication with step-by-step examples. Get started now.
-ms.date: 10/28/2025
+description: Implement OAuth 2.0 auth code flow with PKCE in Windows desktop apps using Windows App SDK OAuth2Manager, with examples.
+ms.date: 07/16/2026
 ms.topic: concept-article
 keywords: windows, winui, winrt, dotnet, security
 #customer intent: As a Windows app developer, I want to learn how to implement OAuth 2.0 in my app so that I can securely authenticate users and access protected resources.
@@ -9,14 +9,20 @@ keywords: windows, winui, winrt, dotnet, security
 
 # Implement OAuth 2.0 in Windows apps
 
-The [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager) in Windows App SDK enables desktop applications such as WinUI 3 to seamlessly perform OAuth 2.0 authorization on Windows. The **OAuth2Manager** API doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. Use the authorization code grant type with Proof Key for Code Exchange (PKCE). For more information, see the [PKCE RFC](https://tools.ietf.org/html/rfc7636).
+## Prerequisites
+
+- **Windows App SDK Experimental release channel** — OAuth2Manager is not available in the stable channel. Install a prerelease `Microsoft.WindowsAppSDK` version with an `-experimental` suffix (select **Include prerelease** in NuGet). For more information, see [Set up your development environment](/windows/apps/get-started/start-here).
+
+## Overview
+
+The [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager) in Windows App SDK enables desktop applications such as WinUI 3 to perform OAuth 2.0 authorization on Windows. The **OAuth2Manager** API doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. Use the authorization code grant type with Proof Key for Code Exchange (PKCE). For more information, see the [PKCE RFC](https://tools.ietf.org/html/rfc7636).
 
 > [!NOTE]
 > **OAuth2Manager** is designed for general OAuth 2.0 flows with any identity provider (GitHub, Google, custom, etc.) and always uses the system browser for the authorization step. If you specifically want to sign in with **Microsoft accounts or Microsoft Entra ID (work/school) accounts** with **silent SSO** — using the account already signed in to Windows, with no browser prompt — use [MSAL.NET with the Web Account Manager (WAM) broker](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam) instead. Web Account Manager also provides Windows Hello integration and conditional access support that OAuth2Manager does not.
 
 ## OAuth2Manager API in Windows App SDK
 
-The **OAuth2Manager** API for Windows App SDK provides a streamlined solution that meets the expectations of developers. It offers seamless OAuth 2.0 capabilities with full feature parity across all Windows platforms supported by Windows App SDK. The new API eliminates the need for cumbersome workarounds and simplifies the process of incorporating OAuth 2.0 functionality into desktop apps.
+The **OAuth2Manager** API for Windows App SDK handles OAuth 2.0 authorization code flows with PKCE for desktop apps. It works across all Windows platforms supported by Windows App SDK, providing a consistent token acquisition interface without requiring third-party browser-based workarounds.
 
 The **OAuth2Manager** is different from the **WebAuthenticationBroker** in WinRT. It follows OAuth 2.0 best practices more closely - for example, by using the user's default browser. The best practices for the API come from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework [RFC 6749](https://tools.ietf.org/html/rfc6749), PKCE [RFC 7636](https://tools.ietf.org/html/rfc7636), and OAuth 2.0 for Native Apps [RFC 8252](https://tools.ietf.org/html/rfc8252).
 
@@ -68,7 +74,7 @@ authRequestParams.Scope = "user:email user:birthday";
 AuthRequestResult authRequestResult = await OAuth2Manager.RequestAuthWithParamsAsync(parentWindowId, 
    new Uri("https://my.server.com/oauth/authorize"), authRequestParams);
 
-if (AuthResponse authResponse == authRequestResult.Response)
+if (authRequestResult.Response is AuthResponse authResponse)
 {
    //To obtain the authorization code
    //authResponse.Code;
@@ -144,7 +150,7 @@ TokenRequestParams tokenRequestParams = TokenRequestParams.CreateForAuthorizatio
 TokenRequestResult tokenRequestResult = await OAuth2Manager.RequestTokenAsync(
     new Uri("https://my.server.com/oauth/token"), tokenRequestParams);
 
-if (TokenResponse tokenResponse == tokenRequestResult.Response)
+if (tokenRequestResult.Response is TokenResponse tokenResponse)
 {
     string accessToken = tokenResponse.AccessToken;
     string tokenType = tokenResponse.TokenType;
@@ -179,6 +185,9 @@ else
 ```
 
 ---
+
+> [!IMPORTANT]
+> **Desktop apps are public clients and must not embed client secrets.** The confidential client pattern below applies only to server-side components (web apps, APIs, backend services) that can securely store credentials. A native desktop app cannot protect a client secret from extraction — use the public client pattern with PKCE shown above instead. If your architecture requires a client secret for token exchange, perform that exchange on your backend service, not in the desktop app.
 
 For **confidential clients** (like web apps or services) that have a client secret, include the `ClientAuthentication` parameter:
 
@@ -266,7 +275,7 @@ TokenRequestParams tokenRequestParams = TokenRequestParams.CreateForRefreshToken
 // For public clients using PKCE, do not include ClientAuthentication
 TokenRequestResult tokenRequestResult = await OAuth2Manager.RequestTokenAsync(
     new Uri("https://my.server.com/oauth/token"), tokenRequestParams);
-if (TokenResponse tokenResponse == tokenRequestResult.Response)
+if (tokenRequestResult.Response is TokenResponse tokenResponse)
 {
     UpdateToken(tokenResponse.AccessToken, tokenResponse.TokenType, tokenResponse.ExpiresIn);
 

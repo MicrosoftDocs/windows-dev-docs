@@ -16,7 +16,7 @@ The System Media Transport Controls enable media application developers integrat
 <img alt="System Media Transport Controls" src="images/smtc.png" />
 
 
-For a complete sample that demonstrates integration with the SMTC, see [System Media Transport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls).
+For a complete sample that demonstrates integration with the SMTC, see [System Media Transport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/SystemMediaTransportControls).
                     
 ## Automatic integration with SMTC
 Starting with Windows 10, version 1607, apps that use the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) class to play media are automatically integrated with the SMTC by default. Simply instantiate a new instance of **MediaPlayer** and assign a [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource), [**MediaPlaybackItem**](/uwp/api/Windows.Media.Playback.MediaPlaybackItem), or [**MediaPlaybackList**](/uwp/api/Windows.Media.Playback.MediaPlaybackList) to the player's [**Source**](/uwp/api/windows.media.playback.mediaplayer.source) property and the user will see your app name in the SMTC and can play, pause, and move through your playback lists by using the SMTC controls. 
@@ -84,7 +84,7 @@ As mentioned previously in this article, the SMTC will automatically detect and 
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Manual control of the System Media Transport Controls](system-media-transport-controls.md)
-* [System Media Transport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [System Media Transport Controls sample on github](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/SystemMediaTransportControls)
  
 
  

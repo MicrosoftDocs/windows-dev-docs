@@ -6,7 +6,7 @@ label: Time picker
 template: detail.hbs
 ms.date: 02/26/2025
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 pm-contact: kisai
 design-contact: ksulliv
 dev-contact: joyate

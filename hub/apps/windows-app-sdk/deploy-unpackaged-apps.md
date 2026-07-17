@@ -327,7 +327,9 @@ Along with your app, we recommend that you go ahead and deploy Windows Metadata 
 ## Related topics
 
 * [Deployment architecture for the Windows App SDK](deployment-architecture.md)
-- [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)
-- [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
-- [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
-- [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)
+* [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)
+* [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
+* [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
+* [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)
+* [What is MSIX?](/windows/msix/overview)
+* [Troubleshooting packaging, deployment, and query of Windows apps](/windows/win32/appxpkg/troubleshooting)

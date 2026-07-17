@@ -59,7 +59,7 @@ For a full breakdown of delivery methods, see [Choose a notification delivery me
 - [Push notifications quickstart](push-notifications/push-quickstart.md) — WNS push supports a limited truly unpackaged path, but packaging (MSIX or packaged with external location) is required for background delivery and COM activation
 
 > [!IMPORTANT]
-> Windows App SDK push notifications require an [Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account) and an **Azure AD app registration**. If your app is packaged, you also need to submit a Package Family Name (PFN) mapping request by email — allow for **up to one week** of processing time before launch. See the [push notifications quickstart](push-notifications/push-quickstart.md) for full prerequisites.
+> Windows App SDK push notifications require an [Azure account](https://azure.microsoft.com/pricing/purchase-options/azure-account) and a **Microsoft Entra ID app registration**. If your app is packaged, you also need to submit a Package Family Name (PFN) mapping request by email — allow for **up to one week** of processing time before launch. See the [push notifications quickstart](push-notifications/push-quickstart.md) for full prerequisites.
 
 **Building or maintaining a UWP app?**
 - [Send a local app notification from C++ UWP apps](app-notifications/app-notifications-quickstart.md)

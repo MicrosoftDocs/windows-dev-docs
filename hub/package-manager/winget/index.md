@@ -25,7 +25,7 @@ WinGet is included in the App Installer. To try the latest Windows Package Manag
 
 - Download the latest [WinGet preview version](https://aka.ms/getwingetpreview). Read the [Release notes for WinGet preview](https://github.com/microsoft/winget-cli/releases) to learn about any new features. Installing this package will give you the preview version of the WinGet client, but it will not enable automatic updates of new preview versions from the Microsoft Store.
 
-- Use a Microsoft Account (MSA), work, school or Azure Active Directory (AAD) account to sign up for the [Windows Insider Program](https://insider.windows.com/) in the Canary or Dev [Channels](/windows-insider/flighting). The Windows Insider Canary and Dev Channels include automatic updates of new preview versions of WinGet from the Microsoft Store.
+- Use a Microsoft Account (MSA), work, school or Microsoft Entra ID (formerly Azure Active Directory) account to sign up for the [Windows Insider Program](https://insider.windows.com/) in the Canary or Dev [Channels](/windows-insider/flighting). The Windows Insider Canary and Dev Channels include automatic updates of new preview versions of WinGet from the Microsoft Store.
 
 ### Install WinGet on Windows Sandbox
 

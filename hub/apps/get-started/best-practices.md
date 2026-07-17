@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: best-practice
-ms.date: 06/01/2026
+ms.date: 07/25/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -252,9 +252,17 @@ To make your app run best in an enterprise environment, add support for MSIX app
 
 ### Windows on Arm
 
-Windows can run on Arm devices. Arm PCs benefit from extended battery life and integrated support for mobile data networks. These PCs also provide great application compatibility and allow you to run your existing `x86` and `x64` applications unmodified.
+Windows on Arm devices — including Copilot+ PCs, Surface Pro X, and Surface Pro 11 — benefit from extended battery life, integrated mobile data, and access to on-device AI capabilities via the NPU. These devices provide broad application compatibility through the Prism emulation layer, which runs existing x86 and x64 applications without modification.
 
-For best performance, enable your apps to take full advantage of the energy-efficient Arm processor architecture by either building a full Arm version or by optimizing the parts of the codebase that benefit most from native performance. For more information on these techniques, see [Windows on Arm](/windows/uwp/porting/apps-on-arm) and [Arm64EC for Windows 11 apps on Arm](/windows/uwp/porting/arm64ec).
+For best performance, build native ARM64 binaries. .NET apps can target `win-arm64` with no code changes. For large C/C++ codebases, [Arm64EC](/windows/arm/arm64ec) lets you incrementally recompile performance-critical modules to native ARM64 while the remaining x64 code runs under emulation — all within a single binary.
+
+| Strategy | When to use |
+|---|---|
+| **Full ARM64 build** | .NET apps, small-to-medium C++ projects, new development |
+| **Arm64EC** | Large C/C++ codebases, apps with x64-only third-party plugins |
+| **x64 emulation (no recompile)** | Legacy apps that cannot be rebuilt; acceptable for light workloads |
+
+For more information, see [Windows on Arm](/windows/arm/), [Arm64EC](/windows/arm/arm64ec), and [Architecture considerations for deployment](../package-and-deploy/deploy-overview.md#architecture-considerations-x64-arm64).
 
 ### Push notifications
 

@@ -184,8 +184,8 @@ additionalContent:
         - title: WinUI 3 (included in Windows App SDK)
           summary: "The native UI framework for Windows desktop apps. Ships as part of the Windows App SDK — no separate install needed."
           url: /windows/apps/winui/winui3
-        - title: Visual Studio 2022 with Windows App SDK workload
-          summary: "Install Visual Studio 2022 with the '.NET desktop development' workload and Windows App SDK extension. Alternatively, use VS Code with C# Dev Kit."
+        - title: Visual Studio 2026 with Windows App SDK workload
+          summary: "Install Visual Studio 2026 with the '.NET desktop development' workload and Windows App SDK extension. Alternatively, use VS Code with C# Dev Kit."
           url: /windows/apps/windows-app-sdk/set-up-your-development-environment
         - title: Supported languages and runtimes
           summary: "C# with .NET 8 or later, C++ (Win32 and C++/WinRT), Rust (via windows-rs crate). XAML is used for UI markup in WinUI 3 and WPF."

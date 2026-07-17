@@ -41,6 +41,16 @@ Windows provides a rich set of platform contracts that let your app participate 
 | [Connected Experiences](connected-experiences-overview.md) | Developer documentation for Connected Experiences, covering Share, People, and Resume integrations across Windows surfaces. |
 | [Smart App Control](../smart-app-control/overview.md) | Protect users from untrusted or potentially dangerous code using Microsoft's app intelligence services and Windows code integrity features. |
 
+## Shell and desktop integration
+
+| Feature | Description |
+|--|--|
+| [Jump lists](jump-list.md) | Customize your app's Jump List on the taskbar to surface recently used items, tasks, and pinned destinations. |
+| [Pin your app to the taskbar](pin-to-taskbar.md) | Programmatically request users to pin your Win32 or WinUI app to the taskbar. |
+| [Default apps and file type associations](default-apps-platform.md) | Register your app as a handler for file types, URI schemes, or protocols. |
+| [Drag and drop](../data/drag-and-drop.md) | Transfer data between or within apps using the XAML drag-and-drop APIs. |
+| [App notifications](../notifications/app-notifications/app-notifications-quickstart.md) | Send toast notifications to engage users with timely and relevant content. |
+
 ## Related content
 
 - [Speech, voice, and conversation in Windows](/windows/uwp/ui-input/speech-interactions)

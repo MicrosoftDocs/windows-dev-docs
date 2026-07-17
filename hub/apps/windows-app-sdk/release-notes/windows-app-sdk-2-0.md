@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Provides information about what's new in Windows App SDK 2.0.
 ms.topic: release-notes
-ms.date: 05/21/2026
+ms.date: 07/16/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,144 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+## Version 2.3.1
+
+Released: **July 16, 2026** <br><br>
+
+<details><summary>Structured JSON Output API</summary>
+
+>
+> Added the Structured JSON Output API (`Microsoft.Windows.AI.Text.LanguageModel.GenerateStructuredJsonResponseAsync`), which generates language-model responses constrained to a caller-supplied JSON Schema. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_StructuredJsonOutput)
+>
+
+</details>
+
+<details><summary>XamlOptionalChanges API</summary>
+
+>
+> Added the **XamlOptionalChanges** API, which lets apps opt into optional breaking changes before XAML initialization. For more information, see GitHub PR [microsoft/microsoft-ui-xaml#11110](https://github.com/microsoft/microsoft-ui-xaml/pull/11110). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlSettings_OptionalChangesApi)
+>
+> Changed the behavior of the `DISABLE_XAML_GENERATED_MAIN` preprocessor constant so that, when defined, it now renames the generated `main()` method (C#: `XamlGeneratedProgram.XamlGeneratedMain()`; C++/WinRT: `wXamlGeneratedMain()`) instead of removing it entirely. This lets a custom `main()` method invoke the default implementation.
+>
+
+</details>
+
+<details><summary>CompositionEngine API</summary>
+
+>
+> Added the **CompositionEngine** API as an unstable [Limited Access Feature (LAF)](/uwp/api/windows.applicationmodel.limitedaccessfeatures), which allows apps to opt into using the OS as the engine for the Composition APIs. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CompositionEngine_API)
+>
+
+</details>
+
+<details><summary>Video Super Resolution improvements</summary>
+
+>
+> Fixed NPU detection, added CPU support, and improved performance for Video Super Resolution. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): VideoSuperResolution_HardwareDetection)
+>
+
+</details>
+
+<details><summary>Windows ML</summary>
+
+>
+> - Fixed execution provider enumeration in certain scenarios. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsML_ExecutionProviderEnumerationUpdate)
+> - Added ARM64EC support for Windows ML.
+>
+
+</details>
+
+<details><summary>AI package documentation</summary>
+
+>
+> Added IntelliSense documentation for stable APIs in the `Microsoft.WindowsAppSDK.AI` NuGet package.
+>
+
+</details>
+
+<details><summary>Performance improvements</summary>
+
+>
+> Several of the optimizations below are opt-in. To enable them, set the specified XamlChangeId as noted in each item.
+>
+> - Added new optimized `XamlControlsResources` styles, including an optimized `ScrollBar` template. Use the `DefaultStyleOptimizations` XamlChangeId to opt in to these styles. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_DefaultStyleOptimizations)
+> - `FontIcon` and `BitmapIcon` avoid inserting an extra `Grid` in their visual tree for apps that opt in with the `IconNoGridOptimization` XamlChangeId. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_IconNoGridOptimization)
+> - Stopped loading `Style` property setters that don't apply a value. Use the `OptimizeApplyStyles` XamlChangeId to opt in. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_DeferStylePropertySetters)
+> - Delayed applying `FrameworkElement` and `Control` styles until the element is in the tree. Use the `OptimizeApplyStyles` XamlChangeId to opt in. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_DelayApplyStylesAfterCreationComplete)
+> - Optimized `CommandBar` initialization by no longer loading the entire visual state manager state. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_OptimizedCommandBarInitialization)
+> - Improved performance of adding to `CommandBarFlyout`'s `PrimaryCommands` and `SecondaryCommands`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_OptimizedCommandBarFlyoutUpdateCommands)
+> - Used a more performant hash table for `ResourceDictionary`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_FasterResourceDictionary)
+> - Optimized away a resource-key string copy and comparison when loading deferred resources. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_LoadDeferredResourceOptimization)
+> - Improved performance of `ThemeResource` lookups by reducing string comparisons. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_ThemeResourceUseResourceKeys)
+> - Improved CPU performance during XAML theme resource lookup by reducing resource-key hashing overhead. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_ReduceThemeResourceLookupHashing)
+> - Improved CPU performance for common internal XAML type checks on `UIElement` and `FrameworkElement`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_CachedTypeChecks)
+> - Improved CPU performance in internal activation factory lookup paths. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_ActivationFactoryFastPaths)
+> - Improved performance of decoding integers stored in XBF files. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_FasterXbfIntLoading)
+> - Reduced heap allocations on startup paths and tree traversal by reserving vector memory and optimizing an RAII helper. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_ReserveVectorSpace)
+> - Improved performance by reserving space in tracker collections before appending multiple items. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_ReserveTrackerCollectionSpace)
+> - Optimized bindings for `XamlUICommand` property bindings. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlUICommand_LightweightBindings)
+> - Improved performance when binding `XamlUICommand`s that don't define keyboard accelerators. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlUICommand_SkipEmptyKeyboardAcceleratorBinding)
+> - Initialized the `TintLuminosityOpacity` property in markup for default-style `AcrylicBrush` objects rather than in code, avoiding forced realization. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AcrylicBrush_InitializePropertyInMarkup)
+> - Avoided unnecessary default `ContextFlyout` initialization on `TextBlock` and `RichTextBlock` when entering or leaving the element tree. Use the `DeferContextFlyoutInit` XamlChangeId to opt in. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_DeferContextFlyoutInit)
+> - Reduced startup waits on Direct3D lock contention by registering XAML's D3D device-removed event during background device creation instead of later on the UI thread. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_EagerDeviceRemovedEventRegistration)
+> - Removed a redundant power-notification registration from `RefreshRateInfo`, reducing startup overhead. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): RefreshRateInfo_RemovePowerNotification)
+> - Removed a redundant `version.dll` dependency from the WinUI startup path by computing the logged runtime version at compile time. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlInit_GetMuxVersionCompileTime)
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed a use-after-free crash in `CPopupRoot::ReplayPointerUpdate` when a popup is closed synchronously during pointer-event replay. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CPopupRoot_ReplayPointerUpdateCrash)
+> - Fixed an access violation in `CXamlIslandRoot::GetScreenOffset` triggered by re-entrant UI Automation queries during XAML island teardown. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): XamlIslandRoot_UiaTeardownReentrancyCrash)
+> - Fixed a crash in `ModernCollectionBasePanel` where a viewport-tracked container or header recycled by a sibling layout pass could leave a stale anchor that tripped a fail-fast on the next measure. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ModernCollectionBasePanel_StaleViewportAnchorRecycle)
+> - Fixed a fail-fast in `CPopup::RemoveChild` when a `ToolTip` close pumped messages and re-entered the close path. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Popup_RemoveChildIdempotentWhenClosing)
+> - Fixed a reentrancy crash in `CXcpDispatcher` when a `Popup` destructor triggered `UIADisconnectAllProviders` with active UI Automation clients. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): UIAWindow_PauseNewDispatchOnDisconnectProviders)
+> - Fixed a crash when a cascading-menu or `AutoSuggestBox` delay-open timer fired after the owning island or dispatcher had begun teardown. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CascadingMenuHelper_DelayOpenTimerTickAfterUnload)
+> - Fixed a potential use-after-free crash during DLL unload when COM pointers in custom metadata types were not properly released. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CustomMetadataTypes_InvalidateUseAfterFree)
+> - Fixed a crash when opening a `Popup` from a `CompositionTarget.Rendering` callback due to dispatcher reentrancy during focus changes. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CPopup_OpenSetFocusReentrancy)
+> - Fixed a crash in `MediaPlayerPresenter` when the GPU device is lost during media playback event handling. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): MediaPlayerPresenter_DeviceLostCrash)
+> - Fixed a potential access violation in Direct2D text rendering when device-lost recovery occurred during glyph-run texture building. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): HWBuildGlyphRunTextures_DeviceGuardScope)
+> - Fixed a crash in `CFocusRectManager::FindFocusRectHost` when focus lands on a control hosted inline via `InlineUIContainer` in `RichTextBlock` or `TextBlock`. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): FocusRectManager_FindFocusRectHostCrash)
+> - Fixed a crash that could repeatedly bring down `backgroundTaskHost.exe` when a background task had no stored CLSID, and added graceful handling when `CoCreateInstance` fails. For more info, see GitHub issue [#5870](https://github.com/microsoft/WindowsAppSDK/issues/5870). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): UniversalBGTask_RunCrash)
+> - Fixed windowed and non-windowed flyouts appearing misaligned (about one item-height above the parent item) for side placements when they open upward near the bottom of the screen. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Flyout_SidePlacementFlipUpAlignmentFix)
+> - Fixed a crash (null `LayoutState` dereference) in `UniformGridLayout` and `FlowLayout` that could occur when a collection change was raised on an `ItemsRepeater` that was no longer loaded. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): UniformGridLayoutFlowLayout_OnItemsChangedNullLayoutStateCrash)
+> - Fixed `ApplicationData.GetForUnpackaged().LocalSettings()` opening a registry key at the wrong path (`HKCU\SOFTWARE\publisher\product` rather than `HKCU\SOFTWARE\Classes\Local Settings\Software\publisher\product`), which is a roaming location rather than one local to the machine. For more info, see GitHub issue [#6559](https://github.com/microsoft/WindowsAppSDK/issues/6559). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ApplicationData_GetForUnpackaged_LocalSettings)
+> - Fixed a race condition in keyboard modifier-state handling that could crash apps under concurrent UI-thread input. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsServices_GetKeyboardModifiersStateRace)
+> - Fixed an AppxSvc crash that can occur during package install, update, or uninstall. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, service-host crash fix)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 2.2.0 release:
+> ```
+> Microsoft.UI.Composition
+>
+>     CompositionEngine
+>     CompositionEngineType
+> ```
+> ```
+> Microsoft.UI.Xaml.Settings
+>
+>     XamlChangeId
+>     XamlOptionalChanges
+> ```
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     GenerateStructuredJsonResponseResult
+>     GenerateStructuredJsonResponseStatus
+>     LanguageModel
+>         GenerateStructuredJsonResponseAsync
+> ```
+>
+
+</details>
 
 ## Version 2.2.0
 

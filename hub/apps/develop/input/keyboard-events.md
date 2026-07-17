@@ -5,7 +5,7 @@ ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, input, user interactions, key up, key down
-ms.date: 07/09/2021
+ms.date: 07/15/2026
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
@@ -69,16 +69,10 @@ void Grid_KeyUp(object sender, KeyRoutedEventArgs e)
 }
 ```
 
-```vb
-Private Sub Grid_KeyUp(ByVal sender As Object, ByVal e As KeyRoutedEventArgs)
-    ' handling code here
-End Sub
-```
-
-```c++
+```cpp
 void MyProject::MainPage::Grid_KeyUp(
-  Platform::Object^ sender,
-  Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
+  winrt::Windows::Foundation::IInspectable const& sender,
+  winrt::Microsoft::UI::Xaml::Input::KeyRoutedEventArgs const& e)
   {
       //handling code here
   }
@@ -156,46 +150,39 @@ Note also that the page sets input focus to itself when it is loaded. Without th
 </Grid>
 ```
 
-```c++
-//showing implementations but not header definitions
-void MainPage::OnNavigatedTo(NavigationEventArgs^ e)
+```cpp
+// showing implementations but not header definitions
+void MainPage::OnNavigatedTo(NavigationEventArgs const& e)
 {
-    (void) e;    // Unused parameter
-    this->Loaded+=ref new RoutedEventHandler(this,&amp;MainPage::ProgrammaticFocus);
+    this->Loaded([this](auto&&, auto&&) { ProgrammaticFocus(); });
 }
-void MainPage::ProgrammaticFocus(Object^ sender, RoutedEventArgs^ e) 
+void MainPage::ProgrammaticFocus()
 {
-    this->Focus(Windows::UI::Xaml::FocusState::Programmatic);
-}
-
-void KeyboardSupport::MainPage::MediaButton_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
-{
-    FrameworkElement^ fe = safe_cast<FrameworkElement^>(sender);
-    if (fe->Name == "PlayButton") {DemoMovie->Play();}
-    if (fe->Name == "PauseButton") {DemoMovie->Pause();}
-    if (fe->Name == "StopButton") {DemoMovie->Stop();}
+    this->Focus(Microsoft::UI::Xaml::FocusState::Programmatic);
 }
 
+void MainPage::MediaButton_Click(winrt::Windows::Foundation::IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& e)
+{
+    auto fe = sender.as<Microsoft::UI::Xaml::FrameworkElement>();
+    if (fe.Name() == L"PlayButton") { DemoMovie().Play(); }
+    if (fe.Name() == L"PauseButton") { DemoMovie().Pause(); }
+    if (fe.Name() == L"StopButton") { DemoMovie().Stop(); }
+}
 
-bool KeyboardSupport::MainPage::IsCtrlKeyPressed()
+
+bool MainPage::IsCtrlKeyPressed()
 {
     auto ctrlState = Microsoft::UI::Input::InputKeyboardSource::GetKeyStateForCurrentThread(VirtualKey::Control);
     return (ctrlState & CoreVirtualKeyStates::Down) == CoreVirtualKeyStates::Down;
 }
 
-void KeyboardSupport::MainPage::Grid_KeyDown(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
+void MainPage::Grid_KeyUp(winrt::Windows::Foundation::IInspectable const& sender, Microsoft::UI::Xaml::Input::KeyRoutedEventArgs const& e)
 {
-    if (e->Key == VirtualKey::Control) isCtrlKeyPressed = true;
-}
-
-
-void KeyboardSupport::MainPage::Grid_KeyUp(Platform::Object^ sender, Windows::UI::Xaml::Input::KeyRoutedEventArgs^ e)
-{
-    if (IsCtrlKeyPressed()) 
+    if (IsCtrlKeyPressed())
     {
-        if (e->Key==VirtualKey::P) { DemoMovie->Play(); }
-        if (e->Key==VirtualKey::A) { DemoMovie->Pause(); }
-        if (e->Key==VirtualKey::S) { DemoMovie->Stop(); }
+        if (e.Key() == VirtualKey::P) { DemoMovie().Play(); }
+        if (e.Key() == VirtualKey::A) { DemoMovie().Pause(); }
+        if (e.Key() == VirtualKey::S) { DemoMovie().Stop(); }
     }
 }
 ```

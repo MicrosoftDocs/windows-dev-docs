@@ -830,6 +830,8 @@ protected:
 ## Related topics
 * [WebSocket Protocol](https://tools.ietf.org/html/rfc6455)
 * [Sockets](sockets.md)
+* [Networking basics](networking-basics.md)
+* [Which networking technology?](which-networking-technology.md)
 
 ## Samples
 * [WebSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebSocket)

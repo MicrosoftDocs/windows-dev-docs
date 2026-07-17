@@ -25,6 +25,11 @@ If you're using Microsoft Visual Studio as your development environment, you alr
 
 When you create your package in Visual Studio, make sure you are signed in with the same account associated with your developer account. Some parts of the package manifest have specific details related to your account. This info is detected and added automatically. Without the additional information added to the manifest, you may encounter package upload failures.
 
+### Types of app packages
+* **App Package (.msix or .appx):** A single package that contains your application and its resources, targeted at a single device architecture. For example, an x64 or x86 application package. To target multiple architectures with an app bundle you'd need to generate one for each architecture.
+* **App Bundle (.msixbundle or .appxbundle):** An app bundle is a type of package that can contain multiple app packages, each of which is built to support a specific device architecture. For example, an app bundle can contain three separate app packages for the x86, x64, and ARM configurations. App bundles should be generated whenever possible because they allow your app to be available on the widest possible range of devices.
+* **App Package Upload File (.msixupload or .appxupload) - for Store Submission only:** A single file that can contain multiple app packages or an app bundle to support various processor architectures. The app package upload file also contains a symbol file (an .appxsym file) to evaluate [crash analytics](/windows/apps/publish/analyze-app-performance/health-report) after your app that has been published in the Microsoft Store. This file will be automatically created for you if you are packaging your app with Visual Studio with the intention of submitting it to Partner Center for publishing to the Microsoft Store. **Note:** An appxsym file is a compressed .pdb file containing public symbols of your app used for [crash analytics](/windows/apps/publish/analyze-app-performance/health-report) in Partner Center. You can omit this file, but if you do, no crash analytic or debugging information will be available for your app.
+
 When you build your app's UWP packages, Visual Studio can create an .msix or appx file, or a .msixupload or .appxupload file. For UWP apps, we recommend that you always upload the .msixupload or .appxupload file in the [Packages](./upload-app-packages.md) page. For more info about packaging UWP apps for the Store, see [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 #### Code signing for Microsoft Store submissions
@@ -41,15 +46,6 @@ Your MSIX and AppX packages don't have to be signed with a certificate rooted in
 
 > [!NOTE]
 > If you are distributing your MSIX package outside the Microsoft Store (for example, for enterprise deployment or sideloading), you will need to sign the package yourself with your own code signing certificate. For more information, see [Sign an app package using SignTool](/windows/win32/appxpkg/how-to-sign-a-package-using-signtool).
-
-#### App bundles
-
-For UWP apps, Visual Studio can generate an app bundle (.msixbundle or .appxbundle) to reduce the size of the app that users download. This can be helpful if you've defined language-specific assets, a variety of image-scale assets, or resources that apply to specific versions of Microsoft DirectX.
-
-> [!NOTE]
->  One app bundle can contain your packages for all architectures.
-
-With an app bundle, a user will only download the relevant files, rather than all possible resources. For more info about app bundles, see [Packaging apps](/windows/uwp/packaging/) and [Package a UWP app with Visual Studio](/windows/msix/package/packaging-uwp-apps).
 
 ### Building the app package manually
 

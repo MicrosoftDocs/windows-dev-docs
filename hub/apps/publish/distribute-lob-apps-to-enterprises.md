@@ -1,10 +1,10 @@
 ---
-description: You can publish line-of-business (LOB) apps directly to enterprises for volume acquisition via the Microsoft Store , without making the apps broadly available in the Store.
+description: Publish line-of-business (LOB) apps to enterprises via the Microsoft Store without making the apps available to the general public.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
-ms.date: 10/30/2022
+ms.date: 07/15/2026
 ms.topic: article
-keywords: windows 10, uwp, lob, line-of-business, enterprise apps, enterprise
+keywords: windows 11, windows 10, lob, line-of-business, enterprise apps, enterprise, intune, configuration manager
 ms.localizationpriority: medium
 ---
 
@@ -12,22 +12,25 @@ ms.localizationpriority: medium
 
 You have several options for distributing line of business (LOB) apps to your organization’s users using [MSIX packages](/windows/msix/) without making the apps broadly available to the public. You can use device management tools, configure an App Installer-based deployment, sideload the apps directly, or publish the apps to the Microsoft Store.
 
-## Microsoft Endpoint Configuration Manager and Microsoft Intune
+## Microsoft Configuration Manager and Microsoft Intune
 
-If your organization uses Microsoft Endpoint Configuration Manager or Microsoft Intune to manage devices, you can deploy LOB apps using these tools. For more information, see these articles:
+If your organization uses Microsoft Configuration Manager or Microsoft Intune to manage devices, you can deploy LOB apps using these tools. For more information, see these articles:
 
-* [Introduction to application management in Configuration Manager](/configmgr/apps/understand/introduction-to-application-management)
+* [Introduction to application management in Configuration Manager](/mem/configmgr/apps/understand/introduction-to-application-management)
 * [Overview of the app lifecycle in Microsoft Intune](/mem/intune/apps/app-lifecycle)
 
 ## App Installer
 
-App Installer enables Windows 10 or Windows 11 apps to be installed by double-clicking an MSIX app package directly, or by double-clicking an .appinstaller file that installs the app package from a web server. This means that users don't need to use PowerShell or other developer tools to install LOB apps. App Installer can also install app packages that include optional packages and related sets.
+App Installer enables Windows 10 and Windows 11 apps to be installed by double-clicking an MSIX app package directly, or by double-clicking an `.appinstaller` file that installs the app package from a web server. This means that users don't need to use PowerShell or other developer tools to install LOB apps. App Installer can also install app packages that include optional packages and related sets.
 
 App Installer can be downloaded for offline use in the enterprise from the [Microsoft Store](https://apps.microsoft.com/detail/9NBLGGH4NNS1). For more information about App Installer, see [Install Windows 10 or Windows 11 apps with App Installer](/windows/msix/app-installer/app-installer-root).
 
+> [!NOTE]
+> The `ms-appinstaller:` URI protocol (one-click browser install) is disabled by default since December 2023. Enterprise administrators can re-enable it via Group Policy. See [Current status of Windows app distribution features](/windows/apps/package-and-deploy/distribution-feature-status) for details.
+
 ## Sideloading
 
-Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Install-based deployment in that it enables users to install MSIX app packages directly. Starting in Windows 10 version 2004, sideloading is enabled by default and users can install apps by double-clicking signed MSIX app packages. On Windows 10 version 1909 and earlier, sideloading requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows 10 or Windows 11](/windows/application-management/sideload-apps-in-windows-10).
+Another option for distributing LOB apps directly to users in your organization is sideloading. This option is similar to App Installer-based deployment in that it enables users to install MSIX app packages directly. On Windows 10 version 2004 and later, and all Windows 11 devices, sideloading is enabled by default and users can install apps by double-clicking signed MSIX app packages. On older Windows 10 versions (pre-2004), sideloading requires some additional configuration and the use of a PowerShell script. For more info, see [Sideload LOB apps in Windows](/windows/application-management/sideload-apps-in-windows-10).
 
 ### Set up the enterprise association
 
@@ -68,12 +71,10 @@ For LOB apps, the [age ratings](publish-your-app/msix/age-ratings.md) step of th
 
 ### Enterprise deployment of LOB apps
 
-After you click **Submit to the Store**, the app will go through the certification process. Once it’s ready, an admin for the enterprise must add it to their private store in the Microsoft Store portal. The enterprise can then deploy the app to its users.
+After you click **Submit to the Store**, the app will go through the certification process. Once it's ready, the enterprise can acquire the app and deploy it to its users.
 
-> [!NOTE]
-> In order to get your LOB app, the organization must be located in a [supported market](/windows/whats-new/windows-store-for-business-overview#supported-markets), and you must not have [excluded that market](publish-your-app/msix/market-selection.md) when submitting your app. 
-
-For more info, see [Working with line-of-business apps](/microsoft-store/working-with-line-of-business-apps) and [Distribute apps using your private store](/microsoft-store/distribute-apps-from-your-private-store).
+> [!IMPORTANT]
+> **Microsoft Store for Business and Education retired in April 2023.** Organizations that previously used a private store for LOB distribution should migrate to direct MSIX sideloading, Intune app deployment, or Microsoft Configuration Manager. For current enterprise app management guidance, see [Manage apps from Microsoft Intune](/mem/intune/apps/apps-add).
 
 ### Update LOB apps
 
@@ -90,7 +91,7 @@ After the submission goes through the certification process, the app will no lon
 
 You can indicate whether and how your app can be offered for volume purchases through Microsoft Store in the **Organizational licensing** section of the [Pricing and availability](publish-your-app/msix/price-and-availability.md#organizational-licensing) page of an app submission.
 
-Through these settings, you can opt to allow your app to be made available to organizations who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows 10 device types, including PCs, tablets and phones.
+Through these settings, you can opt to allow your app to be made available to organizations who acquire and deploy multiple licenses for their users, providing an opportunity to increase your reach to organizations across Windows device types, including PCs, tablets, and IoT devices.
 
 You will also need to allow organizational licensing for any [line-of-business (LOB) apps](distribute-lob-apps-to-enterprises.md) that you publish directly to enterprises.
 

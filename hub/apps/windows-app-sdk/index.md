@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 :::image type="icon" source="images/windows-app-sdk-hero.png":::
 
-The Windows App SDK provides a unified set of APIs and tools that you can use to build modern Windows apps. It brings the latest Windows platform features to both [WinUI 3](../winui/winui3/index.md) and existing desktop app frameworks such as WPF, Windows Forms, or Win32.
+The Windows App SDK is the recommended development platform for building new Windows desktop applications. It provides a unified set of APIs and tools that bring the latest Windows platform features to both [WinUI 3](../winui/winui3/index.md) and existing desktop app frameworks such as WPF, Windows Forms, or Win32.
 
 
 Windows App SDK is built in the open, and contributions or discussions are welcome. Visit the repository for details:

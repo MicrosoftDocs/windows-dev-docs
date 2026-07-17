@@ -35,9 +35,10 @@ The Background Transfer feature maintains a consistent experience for each trans
 
 For example, the cost policy defined for an operation can indicate that the operation should be paused automatically when the device is using a metered network. The transfer is then automatically resumed (or restarted) when a connection to an "unrestricted" network has been established. For more information on how networks are defined by cost, see [**NetworkCostType**](/uwp/api/Windows.Networking.Connectivity.NetworkCostType).
 
-While the Background Transfer feature has its own mechanisms for handling network status changes, there are other general connectivity considerations for network-connected apps. Read [Leveraging available network connection information](/previous-versions/windows/apps/hh452983(v=win.10)) for additional info.
+While the Background Transfer feature has its own mechanisms for handling network status changes, there are other general connectivity considerations for network-connected apps. Use the [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) APIs to monitor connection state and cost information.
 
-> **Note**  For apps running on mobile devices, there are features that allow the user to monitor and restrict the amount of data that is transferred based on the type of connection, roaming status, and the user's data plan. Because of this, background transfers may be paused on the phone even when the [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) indicates that the transfer should proceed.
+> [!NOTE]
+> For apps running on mobile devices, there are features that allow the user to monitor and restrict the amount of data that is transferred based on the type of connection, roaming status, and the user's data plan. Because of this, background transfers may be paused on the phone even when the [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) indicates that the transfer should proceed.
 
 The following table indicates when background transfers are allowed on the phone for each [**BackgroundTransferCostPolicy**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundTransferCostPolicy) value, given the current state of the phone. You can use the [**ConnectionCost**](/uwp/api/Windows.Networking.Connectivity.ConnectionCost) class to determine the phone's current state.
 
@@ -295,3 +296,9 @@ For parameter validation errors, an app can also use the **HRESULT** from the ex
 * [**Windows.Networking.BackgroundTransfer**](/uwp/api/windows.networking.backgroundtransfer)
 * [**Windows.Foundation.Uri**](/uwp/api/Windows.Foundation.Uri)
 * [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets)
+
+## Related topics
+
+* [Networking basics](networking-basics.md)
+* [Which networking technology?](which-networking-technology.md)
+* [HttpClient](httpclient.md)

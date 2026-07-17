@@ -1,7 +1,7 @@
 ---
 description: Get design guidance and coding instructions for adding controls to your Windows app. Find  over 45 powerful controls you can use with your app.
 title: Windows Controls and patterns - Windows app development
-keywords: uwp controls, user interface, app controls, windows controls
+keywords: winui controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
 ms.date: 05/28/2026

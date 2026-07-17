@@ -18,7 +18,7 @@ For a list of supported HLS protocol tags, see [HLS tag support](hls-tag-support
 For a list of supported DASH profiles, see [DASH profile support](dash-profile-support.md). 
 
 > [!NOTE]
-> The code in this article was adapted from the [Adaptive streaming sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming).
+> The code in this article was adapted from the [Adaptive streaming sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/AdaptiveStreaming).
 
 ## Simple adaptive streaming with MediaPlayer and MediaPlayerElement
 

@@ -6,7 +6,7 @@ label: Labels
 template: detail.hbs
 ms.date: 05/19/2017
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 pm-contact: miguelrb
 design-contact: ksulliv
 doc-status: Published

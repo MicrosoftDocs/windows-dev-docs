@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 This article describes how to import media from a device, including searching for available media sources, importing files such as videos, photos, and sidecar files, and deleting the imported files from the source device.
 
 > [!NOTE]
-> The code in this article was adapted from the [**MediaImport UWP app sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). You can clone or download this sample from the [**Universal Windows app samples Git repo**](https://github.com/Microsoft/Windows-universal-samples) to see the code in context or to use it as a starting point for your own app.
+> The code in this article was adapted from the [**MediaImport UWP app sample**](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MediaImport). You can clone or download this sample from the [**Universal Windows app samples Git repo**](https://github.com/Microsoft/Windows-universal-samples) to see the code in context or to use it as a starting point for your own app.
 
 ## Create a simple media import UI
 
-The example in this article uses a minimal UI to enable the core media import scenarios. To see how to create a more robust UI for a media import app, see the [**MediaImport sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport). The following XAML creates a stack panel with the following controls:
+The example in this article uses a minimal UI to enable the core media import scenarios. To see how to create a more robust UI for a media import app, see the [**MediaImport sample**](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MediaImport). The following XAML creates a stack panel with the following controls:
 
 * A [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button) to initiate searching for sources from which media can be imported.
 * A [**ComboBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox) to list and select from the media import sources that are found.
@@ -44,7 +44,7 @@ In a typical media import scenario you show the user a list of available media i
 * **GeneratorIncrementalLoadingClass** class - Provides an implementation of the incremental loading base class.
 * **ImportableItemWrapper** class - A thin wrapper around the [**PhotoImportItem**](/uwp/api/Windows.Media.Import.PhotoImportItem) class to add a bindable [**BitmapImage**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage) property for the thumbnail image for each imported item.
 
-These classes are provided in the [**MediaImport sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport) and can be added to your project without modifications. After adding the helper classes to your project, declare a class member variable of type **GeneratorIncrementalLoadingClass** that will be used later in this example.
+These classes are provided in the [**MediaImport sample**](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MediaImport) and can be added to your project without modifications. After adding the helper classes to your project, declare a class member variable of type **GeneratorIncrementalLoadingClass** that will be used later in this example.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/photo-import-winui/cs/PhotoImportWinUI/MainWindow.xaml.cs" id="SnippetGeneratorIncrementalLoadingClass":::
 
@@ -103,4 +103,4 @@ To delete the successfully imported items from the source from which they were i
 ## Related topics
 
 * [**PhotoImportManager**](/uwp/api/Windows.Media.Import.PhotoImportManager)
-* [**MediaImport UWP app sample**](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MediaImport)
+* [**MediaImport UWP app sample**](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MediaImport)

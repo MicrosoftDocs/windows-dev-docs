@@ -106,3 +106,6 @@ Staging is performed once per machine; registration is per-user. This separation
 * [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
 * [Inside MSIX blog](https://devblogs.microsoft.com/insidemsix/) — deep dives on MSIX architecture, package identity, deployment operations, and more, by the MSIX engineering team
+* [What is MSIX?](/windows/msix/overview)
+* [Troubleshooting packaging, deployment, and query of Windows apps](/windows/win32/appxpkg/troubleshooting)
+* [Release channels and release notes](release-channels.md)

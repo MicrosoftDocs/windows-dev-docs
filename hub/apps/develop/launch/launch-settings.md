@@ -1,10 +1,11 @@
 ---
 title: Launch Windows Settings
 description: Learn how to launch Windows Settings from your Windows apps using the ms-settings URI scheme.
-ms.date: 06/30/2026
+ms.date: 07/16/2026
 ms.topic: concept-article
 keywords: windows 10, windows, settings, windows 11, uwp, uri
 ms.localizationpriority: medium
+no-loc: ["ms-settings:"]
 dev_langs:
   - csharp
   - cppwinrt

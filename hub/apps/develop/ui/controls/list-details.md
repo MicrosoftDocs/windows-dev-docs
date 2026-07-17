@@ -6,7 +6,7 @@ label: List/details
 template: detail.hbs
 ms.date: 07/10/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 ms.localizationpriority: medium
 ---
 # List/details pattern

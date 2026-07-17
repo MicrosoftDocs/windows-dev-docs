@@ -71,3 +71,6 @@ foreach (var notification in scheduled)
 ## See also
 
 - [App notifications overview](index.md)
+- [Quickstart: App notifications in the Windows App SDK](app-notifications-quickstart.md)
+- [ScheduledToastNotification Class](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification)
+- [Notifications sample app on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/)

@@ -124,3 +124,6 @@ There are currently no known issues for the C# interop classes. To provide feedb
 * [Manage app windows](../../develop/ui/manage-app-windows.md)
 * [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md)
 * [Display WinRT UI objects that depend on CoreWindow](../../develop/ui/display-ui-objects.md)
+* [C#/Win32 P/Invoke Source Generator (CsWin32)](https://github.com/microsoft/CsWin32)
+* [C#/WinRT projection tool (CsWinRT)](https://github.com/microsoft/CsWinRT)
+* [.NET interop with native code](/dotnet/standard/native-interop/)

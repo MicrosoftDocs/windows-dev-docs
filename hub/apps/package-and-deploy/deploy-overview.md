@@ -2,7 +2,7 @@
 title: Windows App SDK deployment overview
 description: There are two ways in which you can deploy the Windows App SDK&mdash;framework-dependent or self-contained.
 ms.topic: concept-article
-ms.date: 05/29/2026
+ms.date: 07/25/2026
 ms.localizationpriority: medium
 keywords: windows app sdk deployment, framework-dependent, self-contained, deploy winui 3, windows app sdk self-contained
 ---
@@ -68,6 +68,52 @@ The way that you should initialize the Windows App SDK depends on whether, and h
 |-|-|
 |Framework-dependent|See [Use the bootstrapper API in an app packaged with external location or unpackaged](../windows-app-sdk/tutorial-unpackaged-deployment.md).|
 |Self-contained|See [Opting out of (or into) automatic UndockedRegFreeWinRT support](./self-contained-deploy/deploy-self-contained-apps.md#opting-out-of-or-into-automatic-undockedregfreewinrt-support).|
+
+## Architecture considerations (x64, ARM64)
+
+When you deploy your app, you must include binaries for each processor architecture your users need. This applies to both framework-dependent and self-contained deployment modes.
+
+### ARM64 support
+
+Windows on ARM devices (including Surface Pro X, Surface Pro 11, and Copilot+ PCs) run ARM64 natively. While x64 emulation is available on Windows 11 ARM64 devices, native ARM64 binaries provide better performance and battery life — and are recommended when you want the best experience for on-device AI workloads on Copilot+ PCs.
+
+#### Native ARM64 deployment
+
+- **MSIX bundles** — Create an `.msixbundle` that includes both `x64` and `ARM64` architectures. Visual Studio generates these automatically when you build for multiple platforms. The Store and App Installer select the correct architecture at install time.
+- **Self-contained publish** — Specify the runtime identifier (RID) for each architecture:
+
+  ```console
+  dotnet publish -c Release -r win-x64 --self-contained true
+  dotnet publish -c Release -r win-arm64 --self-contained true
+  ```
+
+- **C++/WinRT** — Build separate configurations for `x64` and `ARM64` in your Visual Studio solution.
+- **Framework-dependent apps** — When using the Windows App SDK runtime installer, ensure you provide the correct architecture-specific installer. The Windows App SDK ships separate installers for x64 and ARM64.
+
+#### Arm64EC — gradual migration for large C/C++ codebases
+
+If your app has a large native (C/C++) codebase, a full recompile to ARM64 may not be practical in a single step. [Arm64EC](/windows/arm/arm64ec) (Emulation Compatible) lets you mix x64 and ARM64 code in the same process. You recompile performance-critical modules to native ARM64 while the remaining x64 modules run under emulation — all within a single binary.
+
+| Approach | Best for | Trade-off |
+|---|---|---|
+| Full ARM64 recompile | Pure .NET apps, small C++ projects | Best performance; requires all dependencies to be ARM64-compatible |
+| Arm64EC | Large C/C++ apps, apps with x64-only plugins or third-party DLLs | Incremental migration; emulated portions run slower than native |
+| x64 only (emulated) | Apps that cannot be recompiled and don't need peak performance | Simplest; reduced battery life and higher latency on ARM64 devices |
+
+For more information, see [Arm64EC — Build and port apps for native performance on Arm](/windows/arm/arm64ec).
+
+#### Emulation (Prism)
+
+Windows 11 on ARM uses an emulation layer called **Prism** to run x64 and x86 apps on ARM64 hardware. Prism translates x86/x64 instructions to ARM64 at runtime, providing broad app compatibility without requiring a recompile.
+
+- **x64 emulation** — Available on Windows 11 ARM64 devices only (not Windows 10 on ARM).
+- **x86 emulation** — Available on both Windows 10 and Windows 11 ARM64 devices.
+- **Performance** — Emulated apps typically run with acceptable performance for productivity workloads, but graphics-intensive or compute-heavy apps benefit significantly from a native ARM64 or Arm64EC build.
+
+> [!TIP]
+> If you target only x64, your app still runs on ARM64 devices via Prism emulation (Windows 11 only). However, native ARM64 builds are strongly recommended for production apps — emulated apps use more battery and have higher latency. On Copilot+ PCs, native ARM64 can provide the best performance for on-device AI workloads.
+
+For Store submissions, upload architecture-specific packages or a bundle containing both. The Store delivers only the matching architecture to each device.
 
 ## Related topics
 

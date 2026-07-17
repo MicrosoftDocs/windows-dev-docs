@@ -133,7 +133,7 @@ In the handler for the [**TimedTextSource.Resolved**](/uwp/api/windows.media.cor
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetTimedTextSourceResolved":::
 
-For a list of the timed text formats that are supported on Windows, see [Supported codecs](/windows/uwp/audio-video-camera/supported-codecs).
+For a list of the timed text formats that are supported on Windows, see [Supported codecs](../media-authoring-processing/supported-codecs.md).
 
 ## Add additional metadata tracks
 

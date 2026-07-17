@@ -27,7 +27,7 @@ Read and write a file using a [StorageFile](/uwp/api/windows.storage.storagefile
 
 -   **Understand async programming for WinUI apps**
 
-    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency).
+    You can learn how to write asynchronous apps in C#, see [Call asynchronous APIs in C# or Visual Basic](/windows/apps/develop/threading/call-asynchronous-apis-in-csharp-or-visual-basic). To learn how to write asynchronous apps in C++/WinRT, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency).
 
 -   **Know how to get the file that you want to read from, write to, or both**
 
@@ -358,3 +358,6 @@ Windows::Foundation::IAsyncOperation<winrt::hstring> ExampleCoroutineAsync()
 ## See also
 
 - [Best practices for writing to files](best-practices-writing-files.md)
+- [File access permissions](file-access-permissions.md)
+- [Optimize file access](../performance/optimize-file-access.md)
+- [File management (Win32)](/windows/win32/fileio/file-management)

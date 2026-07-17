@@ -1,7 +1,7 @@
 ---
 title: Build a C# .NET app with WinUI and Win32 interop
 description: Build a C# .NET application with WinUI and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
-ms.date: 03/05/2025
+ms.date: 07/18/2026
 ms.topic: how-to
 keywords: windows 11, windows 10, uwp, COM, win32, winui, interop
 ms.localizationpriority: high
@@ -10,7 +10,7 @@ ms.custom: 19H1
 
 # Build a C# .NET app with WinUI 3 and Win32 interop
 
-In this topic, we step through how to build a basic **C# .NET** application with WinUI and Win32 interop capabilities using Platform Invocation Services ([PInvoke](https://github.com/dotnet/pinvoke)).
+In this topic, we step through how to build a basic **C# .NET** application with WinUI and Win32 interop capabilities using Platform Invocation Services (PInvoke). The recommended way to call Win32 APIs from C# is the [C#/Win32 P/Invoke Source Generator (CsWin32)](https://github.com/microsoft/CsWin32).
 
 ## Prerequisites
 
@@ -133,7 +133,7 @@ In this second example, we show how to customize the window's title bar and its 
 
 1. In the code listing below for the **basicButton_Click** handler&mdash;in order to keep the custom title bar hidden&mdash;we collapse the *customTitleBarPanel* **StackPanel**, and we set the [ExtendsContentIntoTitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar) property to `false`.
 2. We then call **IWindowNative::get_WindowHandle** (for C#, using the interop helper method **GetWindowHandle**) to retrieve the window handle (**HWND**) of the main window.
-3. Next, we set the application icon (for C#, using the [PInvoke.User32](https://www.nuget.org/packages/PInvoke.User32/) NuGet package) by calling the [LoadImage](/windows/win32/api/winuser/nf-winuser-loadimagea) and [SendMessage](/windows/win32/api/winuser/nf-winuser-sendmessage) functions.
+3. Next, we set the application icon (for C#, using the [C#/Win32 P/Invoke Source Generator (CsWin32)](https://github.com/microsoft/CsWin32)) by calling the [LoadImage](/windows/win32/api/winuser/nf-winuser-loadimagea) and [SendMessage](/windows/win32/api/winuser/nf-winuser-sendmessage) functions.
 4. Finally, we call [SetWindowText](/windows/win32/api/winuser/nf-winuser-setwindowtexta) to update the title bar string.
 
 :::code language="csharp" source="samples/window-titlebar/window-titlebar/MainWindow.xaml.cs" id="basicButton_Click" highlight="3-7,8-9,12-23":::
@@ -217,3 +217,6 @@ void MainWindow::customButton_Click(IInspectable const&, RoutedEventArgs const&)
 - [Windows App SDK](../../windows-app-sdk/index.md)
 - [Manage app windows](../../develop/ui/manage-app-windows.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)
+- [C#/Win32 P/Invoke Source Generator (CsWin32)](https://github.com/microsoft/CsWin32)
+- [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
+- [Platform Invoke (P/Invoke)](/dotnet/standard/native-interop/pinvoke)

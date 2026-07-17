@@ -63,7 +63,7 @@ Use [HttpClient](httpclient.md) (and the rest of the [**Windows.Web.Http**](/uwp
 
 Use the [background transfer API](background-transfers.md) when you want to reliably transfer files over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. These capabilities are essential when your app is running on mobile or battery-powered devices. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
 
-A new background transfer feature in Windows 10 is the ability to trigger post-processing when a file transfer has completed, so that you can update local catalogs, activate other apps, or notify the user when a download is complete.
+Background transfer supports triggering post-processing when a file transfer has completed, so that you can update local catalogs, activate other apps, or notify the user when a download is complete.
 
 ### When to use background transfers
 
@@ -81,7 +81,7 @@ A new background transfer feature in Windows 10 is the ability to trigger post-
 
 ### Connection quality
 
-The APIs in the [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) namespace enable you to access network connectivity, cost, and usage information. For more information about using this API, see [Accessing network connection state and managing network costs](/previous-versions/windows/apps/hh452985(v=win.10)).
+The APIs in the [**Windows.Networking.Connectivity**](/uwp/api/Windows.Networking.Connectivity) namespace enable you to access network connectivity, cost, and usage information. Use the [**ConnectionProfile**](/uwp/api/Windows.Networking.Connectivity.ConnectionProfile) class to determine current network state and cost.
 
 ### DNS Service Discovery
 

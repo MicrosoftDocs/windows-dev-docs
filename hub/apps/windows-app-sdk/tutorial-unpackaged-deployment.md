@@ -79,7 +79,7 @@ Follow these instructions to configure a C# WinUI project that's either packaged
         {
             static void Main(string[] args)
             {
-                Bootstrap.Initialize(0x00010002);
+                Bootstrap.Initialize(0x00010005);
                 Console.WriteLine("Hello, World!");
     
                 // Release the DDLM and clean up.
@@ -88,6 +88,9 @@ Follow these instructions to configure a C# WinUI project that's either packaged
         }
     }
     ```
+
+    > [!NOTE]
+    > The hexadecimal value passed to `Bootstrap.Initialize` encodes the major and minor version of the Windows App SDK runtime your app targets. `0x00010005` represents version 1.5. Update this value to match the Windows App SDK version your project references (for example, `0x00010006` for version 1.6).
 
     At its root, the bootstrapper API is a native C/C++ API that enables you to use the Windows App SDK APIs in your app. But in a .NET app that uses the Windows App SDK 1.0 or later, you can use the [.NET wrapper for the bootstrapper API](./use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api). That wrapper provides an easier way of calling the bootstrapper API in a .NET app than calling the native C/C++ functions directly. The previous code example calls the static [**Initialize**](../api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md#initialize-methods) and **Shutdown** methods of the **Bootstrap** class in the .NET wrapper for the bootstrapper API.
 
@@ -144,7 +147,7 @@ Follow these instructions to configure a C++ WinUI project that's either package
     > You'll need to edit the code below to suit your specific configuration. See the descriptions of the parameters of the [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) function so that you can specify one of the versions of the Windows App SDK that you have installed.
 
     ```cpp
-    const UINT32 majorMinorVersion{ 0x00010002 }; 
+    const UINT32 majorMinorVersion{ 0x00010005 }; 
     PCWSTR versionTag{ L"" }; 
     const PACKAGE_VERSION minVersion{};
 
@@ -178,7 +181,7 @@ Follow these instructions to configure a C++ WinUI project that's either package
     int main() 
     { 
         // Take a dependency on Windows App SDK Stable.
-        const UINT32 majorMinorVersion{ 0x00010002 }; 
+        const UINT32 majorMinorVersion{ 0x00010005 }; 
         PCWSTR versionTag{ L"" }; 
         const PACKAGE_VERSION minVersion{};
 

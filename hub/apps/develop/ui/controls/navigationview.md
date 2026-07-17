@@ -2,7 +2,7 @@
 description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: NavigationView
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 07/15/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -1570,6 +1570,10 @@ This theme resource modifies the margin around [NavigationView.Header](/windows/
 ## Related topics
 
 - [NavigationView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview)
+- [BreadcrumbBar](breadcrumbbar.md)
+- [TabView](tab-view.md)
+- [SplitView](split-view.md)
 - [List/details](list-details.md)
 - [Navigation basics](../../../design/basics/navigation-basics.md)
 - [Fluent Design overview](../../../design/index.md)
+- [WinUI 3 Gallery app - source code and samples](https://github.com/microsoft/WinUI-Gallery)

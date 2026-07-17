@@ -1,12 +1,12 @@
 ---
-title: Bluetooth Low Energy in Universal Windows Platform apps
+title: Bluetooth Low Energy in Windows apps
 description: Learn about the Bluetooth Low Energy (LE) specification in Windows apps that defines protocols for discovery and communication between power-efficient devices.
 ms.date: 05/27/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# Bluetooth Low Energy in Universal Windows Platform apps
+# Bluetooth Low Energy in Windows apps
 
 This topic provides an overview of Bluetooth LE in Windows apps (for more detail about Bluetooth LE, see the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/) version 4.0).
 

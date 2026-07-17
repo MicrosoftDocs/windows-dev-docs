@@ -4,7 +4,7 @@ ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 07/22/2026
 ms.topic: concept-article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -50,7 +50,7 @@ See [Accessibility testing](accessibility-testing.md) for how to test basic acce
 
 ## Screen reader support and basic accessibility information
 
-Screen readers provide access to text withiin an app by rendering it in another format, such as spoken language or Braille output. The exact behavior of a screen reader depends on the software how the user configured it.
+Screen readers provide access to text within an app by rendering it in another format, such as spoken language or Braille output. The exact behavior of a screen reader depends on the software and how the user configured it.
 
 For example, some screen readers read the entire UI when the user starts or switches to an app, which enables the user to receive all informational content before attempting to navigate it. Some screen readers also read the text associated with an individual control when it receives focus during tab navigation. This enables users to orient themselves as they navigate among the input controls of an application. Narrator is an example of a screen reader that supports both behaviors.
 
@@ -68,7 +68,7 @@ For more info about all the aspects of keyboard support, including tab order and
 
 ## Media and captioning
 
-You typically display audio-visual media through a [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) object. For accessibility purposes, provide controls that enable users to play, pause, and stop the media, and also inlcude captions or alternative audio tracks.
+You typically display audio-visual media through a [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) object. For accessibility purposes, provide controls that enable users to play, pause, and stop the media, and also include captions or alternative audio tracks.
 
 ## Accessible text
 
@@ -142,7 +142,8 @@ For more info about accessibility declarations and publishing your app, see [Acc
 ## Related topics
 
 - [Microsoft.UI.Xaml.Automation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation)
-- [Microsoft.UI.Xaml.Automation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation)
 - [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample)
 - [Accessibility overview](accessibility-overview.md)
 - [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
+- [Accessibility Insights](https://accessibilityinsights.io/) — find and fix accessibility issues in Windows apps
+- [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) — see accessibility principles in action

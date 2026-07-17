@@ -17,7 +17,7 @@ If you are interested in simply capturing video or photos, such as a typical pho
 > The features discussed in this article are only available starting with Windows 10, version 1607.
 
 > [!NOTE] 
-> There is a Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared cameras. For more information, see [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
+> There is a Universal Windows app sample that demonstrates using **MediaFrameReader** to display frames from different frame sources, including color, depth, and infrared cameras. For more information, see [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraFrames).
 
 > [!NOTE] 
 > A new set of APIs for using **MediaFrameReader** with audio data were introduced in Windows 10, version 1803. For more information, see [Process audio frames with MediaFrameReader](process-audio-frames-with-mediaframereader.md).
@@ -132,7 +132,7 @@ For more information about cleaning up media capture objects when your applicati
 
 ## The FrameRenderer helper class
 
-This section provides the full code listing for a provides a helper class that makes it easy to display the frames from color, infrared, and depth sources in your app. Typically, you will want to do something more with depth and infrared data than just display it to the screen, but this helper class is a helpful tool for demonstrating the frame reader feature and for debugging your own frame reader implementation. The code in this section is adapted from the [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames).
+This section provides the full code listing for a provides a helper class that makes it easy to display the frames from color, infrared, and depth sources in your app. Typically, you will want to do something more with depth and infrared data than just display it to the screen, but this helper class is a helpful tool for demonstrating the frame reader feature and for debugging your own frame reader implementation. The code in this section is adapted from the [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraFrames).
 
 The **FrameRenderer** helper class implements the following methods.
 
@@ -141,7 +141,7 @@ The **FrameRenderer** helper class implements the following methods.
 * **ConvertToDisplayableImage** - This methods checks the format of the media frame and, if necessary, converts it to a displayable format. For color images, this means making sure that the color format is BGRA8 and that the bitmap alpha mode is premultiplied. For depth or infrared frames, each scanline is processed to convert the depth or infrared values to a psuedocolor gradient, using the **PsuedoColorHelper** class that is also included in the sample and listed below.
 
 > [!NOTE] 
-> In order to do pixel manipulation on **SoftwareBitmap** images, you must access a native memory buffer. To do this, you must use the IMemoryBufferByteAccess COM interface included in the code listing below and you must update your project properties to allow compilation of unsafe code. For more information, see [Create, edit, and save bitmap images](/windows/uwp/audio-video-camera/imaging).
+> In order to do pixel manipulation on **SoftwareBitmap** images, you must access a native memory buffer. To do this, you must use the IMemoryBufferByteAccess COM interface included in the code listing below and you must update your project properties to allow compilation of unsafe code. For more information, see [Create, edit, and save bitmap images](../media-authoring-processing/imaging.md).
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/FrameRenderer.cs" id="SnippetIMemoryBufferByteAccess":::
 
@@ -237,7 +237,7 @@ For more information on using camera profiles, see [Camera profiles](camera-prof
 
 * [Camera](camera.md)
 * [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md)
-* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CameraFrames)
+* [Camera frames sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraFrames)
  
 
  

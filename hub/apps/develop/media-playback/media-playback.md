@@ -30,10 +30,12 @@ This section provides guidance for creating WinUI 3 apps that play back audio an
 
 ## App samples for media playback
 
-* [Adaptive streaming sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/AdaptiveStreaming)
-* [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundMediaPlayback)
-* [System Media Transport sample](https://github.com/Microsoft/Windows-universal-samples/tree/dev/Samples/SystemMediaTransportControls)
+* [Adaptive streaming sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/AdaptiveStreaming)
+* [Background Audio sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BackgroundMediaPlayback)
+* [System Media Transport sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/SystemMediaTransportControls)
 
 ## Related topics
 
 * [Audio, video, and camera](../audio-video-camera.md)
+* [Camera](../camera/camera.md)
+* [Media processing and creation](../media-authoring-processing/media-authoring-processing.md)

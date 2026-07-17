@@ -94,4 +94,4 @@ _tiltVisual.StartAnimation("RotationAxis", axisAngleExpressionNode);
 ## See also
 
 - [Pointer Rotate sample](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2015063/PointerRotate)
-- [PointerPositionPropertySetReferenceNode class](/dotnet/api/microsoft.toolkit.uwp.ui.animations.expressions.pointerpositionpropertysetreferencenode?view=win-comm-toolkit-dotnet-7.0&preserve-view=true)
+- [PointerPositionPropertySetReferenceNode class](/dotnet/api/communitytoolkit.winui.animations.expressions.pointerpositionpropertysetreferencenode)

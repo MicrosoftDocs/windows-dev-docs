@@ -2,10 +2,8 @@
 title: Using smart cards in Windows apps
 description: This topic explains how packaged Windows apps can use smart cards to connect users to secure network services.
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
-ms.date: 02/08/2017
+ms.date: 07/15/2026
 ms.topic: how-to
-keywords: windows 10, uwp, security
-ms.localizationpriority: medium
 #customer intent: As a Windows developer, I want to learn how to use smart cards in my Windows apps so that I can connect users to secure network services.
 ---
 
@@ -112,6 +110,9 @@ SaveAdminKeySecurely(adminkey);
 ### Example admin key management methods
 
 Here are example methods you might implement to securely store and retrieve admin keys:
+
+> [!IMPORTANT]
+> The example below stores the admin key in `LocalSettings` for simplicity. **Do not use this approach in production.** `LocalSettings` stores data unencrypted on disk. For production applications, protect the admin key (for example, encrypt it with [**DataProtectionProvider**](/uwp/api/Windows.Security.Cryptography.DataProtection.DataProtectionProvider) before persisting it, or store it as a secret in [**PasswordVault**](/uwp/api/Windows.Security.Credentials.PasswordVault)). For hardware-backed key storage, use a TPM-backed provider via [CNG](/windows/win32/seccng/cng-portal).
 
 ```cs
 // Example implementation for storing admin key securely

@@ -1,8 +1,8 @@
 ---
 title: Choose your migration path - upgrade, modernize, or rebuild
-description: Decide whether to upgrade your Windows desktop app to modern .NET, modernize it in place, or move to WinUI 3.
+description: Decide whether to upgrade your Windows desktop app to modern .NET, modernize it with the Windows App SDK, or rebuild the UI with WinUI 3.
 ms.topic: concept-article
-ms.date: 07/09/2026
+ms.date: 07/22/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -10,6 +10,9 @@ ms.author: jken
 # Choose your migration path
 
 When you have an existing WPF, WinForms, or Win32 desktop app, you have three broad options for bringing it forward. This guide helps you decide which path fits your project.
+
+> [!IMPORTANT]
+> **You don't have to migrate to WinUI 3.** WPF and WinForms are fully supported on modern .NET and continue to receive feature updates. Many apps are best served by upgrading to modern .NET and adding Windows App SDK features incrementally — without changing the UI framework.
 
 For definitions of the terms used on this page, see [Migration terminology](migration-terminology.md).
 

@@ -38,7 +38,7 @@ If your organization already uses Microsoft Entra ID, follow these steps to link
     :::image type="content" source="../images/partner-center-account-settings-tenant-associated.png" alt-text="Screenshot showing a confirmation after the associationg was completed.":::
 
 > [!IMPORTANT]
-> In order to create new users, or make other changes to your Microsoft Entra ID, you’ll need to sign in to that Microsoft Entra ID tenant using an account which has [global administrator permission](/azure/active-directory/users-groups-roles/directory-assign-admin-roles) for that tenant. However, you don’t need global administrator permission in order to associate the tenant, or to add users who already exist in that tenant to your Partner Center account.
+> In order to create new users, or make other changes to your Microsoft Entra ID, you'll need to sign in to that Microsoft Entra ID tenant using an account which has [global administrator permission](/entra/identity/role-based-access-control/permissions-reference#global-administrator) for that tenant. However, you don't need global administrator permission in order to associate the tenant, or to add users who already exist in that tenant to your Partner Center account.
 
 To add and manage Partner Center account users in your tenant, sign in to Partner Center as a user in the same tenant who has the **Manager** role.
 

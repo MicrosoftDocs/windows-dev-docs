@@ -271,30 +271,27 @@ Note that the work item checks the [**IAsyncInfo.Status**](/uwp/api/windows.foun
 
 ## Handle work item completion
 
-Provide a completion handler by setting the [**IAsyncAction.Completed**](/uwp/api/windows.foundation.iasyncaction.completed) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) (WinUI 3) or `CoreDispatcher.RunAsync` (UWP) to access the UI thread and show the result.
+Provide a completion handler by setting the [**IAsyncAction.Completed**](/uwp/api/windows.foundation.iasyncaction.completed) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [`DispatcherQueue.TryEnqueue`](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) to access the UI thread and show the result.
 
 The following example updates the UI with the result of the work item submitted in step 1:
 
-```cppcx
-asyncAction->Completed = ref new AsyncActionCompletedHandler(
-    [this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
+```csharp
+asyncAction.Completed = new AsyncActionCompletedHandler(
+    (IAsyncAction asyncInfo, AsyncStatus asyncStatus) =>
 {
-    if (asyncStatus == AsyncStatus::Canceled)
+    if (asyncStatus == AsyncStatus.Canceled)
     {
         return;
     }
 
-    String^ updateString;
+    String updateString;
     updateString = "\n" + "The " + n + "th prime number is "
-        + (*nthPrime).ToString() + ".\n";
+        + nthPrime + ".\n";
 
-    // Update the UI thread with the CoreDispatcher.
-    CoreApplication::MainView->CoreWindow->Dispatcher->RunAsync(
-        CoreDispatcherPriority::High,
-        ref new DispatchedHandler([this, updateString]()
-    {
-        UpdateUI(updateString);
-    }));
+    // Update the UI thread with the DispatcherQueue.
+    dispatcherQueue.TryEnqueue(
+        Microsoft.UI.Dispatching.DispatcherQueuePriority.High,
+        () => UpdateUI(updateString));
 });
 ```
 
@@ -311,36 +308,13 @@ m_workItem.Completed(
     updateStream << std::endl << L"The " << n << L"th prime number is " << *nthPrime << std::endl;
     std::wstring updateString = updateStream.str();
 
-    // Update the UI thread with the CoreDispatcher.
-    Windows::ApplicationModel::Core::CoreApplication::MainView().CoreWindow().Dispatcher().RunAsync(
-        Windows::UI::Core::CoreDispatcherPriority::High,
-        Windows::UI::Core::DispatchedHandler([=]()
+    // Update the UI thread with the DispatcherQueue.
+    dispatcherQueue.TryEnqueue(
+        Microsoft::UI::Dispatching::DispatcherQueuePriority::High,
+        [strongThis, updateString]()
     {
         strongThis->UpdateUI(updateString);
-    }));
-});
-```
-
-```c#
-asyncAction.Completed = new AsyncActionCompletedHandler(
-    (IAsyncAction asyncInfo, AsyncStatus asyncStatus) =>
-{
-    if (asyncStatus == AsyncStatus.Canceled)
-    {
-        return;
-    }
-
-    String updateString;
-    updateString = "\n" + "The " + n + "th prime number is "
-        + nthPrime + ".\n";
-
-    // Update the UI thread with the CoreDispatcher.
-    CoreApplication.MainView.CoreWindow.Dispatcher.RunAsync(
-        CoreDispatcherPriority.High,
-        new DispatchedHandler(()=>
-    {
-        UpdateUI(updateString);
-    }));
+    });
 });
 ```
 
@@ -348,7 +322,7 @@ Note that the completion handler checks whether the work item was cancelled befo
 
 ## Summary and next steps
 
-You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Thread%20pool%20sample) written for Windows 8.1, and re-using the source code in a Windows 10 app.
+You can learn more from the [Windows App SDK threading samples](https://github.com/microsoft/WindowsAppSDK-Samples) on GitHub.
 
 ## Related topics
 

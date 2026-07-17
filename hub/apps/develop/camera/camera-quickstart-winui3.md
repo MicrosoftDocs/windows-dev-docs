@@ -75,7 +75,7 @@ Initialize the **MediaCapture** object by calling [InitializeAsync](/uwp/api/win
 Before initializing the **MediaCapture** object we call [AppCapability.CheckAccess](/uwp/api/windows.security.authorization.appcapabilityaccess.appcapability.checkaccess) method to determine if the user has denied our app access to the camera in Windows Settings.
 
 > [!NOTE]
-> Windows allows users to grant or deny access to the device's camera in Windows Settings, under **Privacy & Security -> Camera**. When initializing the capture device, apps should check whether they have access to the camera and handle the case where access is denied by the user. For more information, see [Handle the Windows camera privacy setting](/windows/uwp/audio-video-camera/camera-privacy-setting).
+> Windows allows users to grant or deny access to the device's camera in Windows Settings, under **Privacy & Security -> Camera**. When initializing the capture device, apps should check whether they have access to the camera and handle the case where access is denied by the user. For more information, see [Handle the Windows camera privacy setting](camera-privacy-setting.md).
 
 The **InitializeAsync** call is made from inside a **try** block so that we can recover if initialization fails. Apps should handle initialization failure gracefully. In this simple example, we'll just display an error message on failure.
 

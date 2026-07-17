@@ -3,9 +3,9 @@ description: Selection mode lets users select and take action on a single item o
 title: Selection mode
 label: Selection mode
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 07/15/2026
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: winui 3, windows app sdk, listview, gridview, selection mode
 pm-contact: anawish
 design-contact: kimsea
 dev-contact: ranjeshj
@@ -58,3 +58,10 @@ The entry point to selection mode should be juxtaposed against the content it af
 For command bar recommendations, see [guidelines for command bars](command-bar.md).
 
 To learn more about selection modes and handling selection events for certain controls, visit the guidance page for that control.
+
+## Related articles
+
+- [ListView and GridView](listview-and-gridview.md)
+- [ItemsRepeater](items-repeater.md)
+- [ListView - WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ListView/ListViewPage.xaml)
+- [GridView - WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/GridView/GridViewPage.xaml)

@@ -2,7 +2,7 @@
 title: Packaging overview
 description: Understand the differences between packaged and unpackaged apps and how packaging affects installation, updates, and access to Windows features.
 ms.topic: concept-article
-ms.date: 06/20/2026
+ms.date: 07/25/2026
 ms.localizationpriority: medium
 ---
 
@@ -108,6 +108,28 @@ If you build a Win32 desktop app (sometimes called a *classic desktop app*) or a
 - [Create an MSIX package from an existing installer](/windows/msix/packaging-tool/create-an-msix-overview)
 - [Build an MSIX package from source code](/windows/msix/desktop/source-code-overview)
 - [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
+
+## Migrating to MSIX from legacy installers
+
+If your app currently uses a legacy installer, you can migrate to MSIX to gain clean install/uninstall, automatic updates, Store distribution, and package identity. The migration path depends on your current installer technology and whether you have access to the source code.
+
+| Current installer | Recommended migration path | Source code required? |
+|---|---|---|
+| **MSI (Windows Installer)** | Use the [MSIX Packaging Tool](/windows/msix/packaging-tool/tool-overview) to convert the MSI directly to MSIX. Handles most MSI patterns including custom actions. | No |
+| **ClickOnce (.NET)** | Rebuild from source using the Visual Studio MSIX packaging project. ClickOnce auto-update can be replaced with Store updates or App Installer. | Yes |
+| **InstallShield / Advanced Installer** | Use the MSIX Packaging Tool to capture an installation on a clean VM. Complex custom actions may need manual fixup in the Package Editor. | No |
+| **Inno Setup / NSIS** | Use the MSIX Packaging Tool's VM-based capture workflow. Run the EXE installer inside the tool's clean environment. | No |
+| **App-V (virtual packages)** | Convert directly using the MSIX Packaging Tool — it supports App-V 5.x packages as input. | No |
+| **MSIX with modifications needed** | Use the [Package Support Framework](/windows/msix/psf/package-support-framework-overview) to apply runtime fixes (file/registry redirection) without changing your app code. | No |
+
+> [!TIP]
+> For apps that have complex installers with kernel drivers, services running as SYSTEM, or machine-wide COM registrations that MSIX doesn't support, consider **MSIX with external location** (packaged with external location). This gives you package identity for Windows features while using a traditional installer for components that require elevated access. See [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+
+### Key considerations
+
+- **Test on a clean VM** — The MSIX Packaging Tool captures all changes during installation. Run it on a clean Windows image to avoid capturing unrelated system changes.
+- **Package Support Framework** — If your converted app has runtime issues (file path assumptions, registry writes to HKLM), the [Package Support Framework](/windows/msix/psf/package-support-framework-overview) can fix these without modifying your source.
+- **Side-by-side with legacy installer** — You can deploy the MSIX version alongside the legacy installer during transition. Plan an explicit settings/data migration (for example, import on first run) because package identity and storage locations differ between MSIX and MSI/EXE installs.
 
 ## Other installation technologies
 

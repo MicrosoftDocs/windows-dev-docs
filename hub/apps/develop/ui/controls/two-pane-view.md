@@ -4,7 +4,7 @@ title: Two-pane view
 template: detail.hbs
 ms.date: 04/29/2025
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, xaml controls
 ms.localizationpriority: medium
 ---
 # Two-pane view
