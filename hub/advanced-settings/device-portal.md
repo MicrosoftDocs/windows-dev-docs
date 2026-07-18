@@ -1,7 +1,7 @@
 ---
 title: Windows Device Portal overview
 description: Learn how the Windows Device Portal lets you configure and manage your device remotely over a network or USB connection.
-ms.date: 07/06/2026
+ms.date: 07/17/2026
 ms.topic: overview
 ms.localizationpriority: medium
 author: GrantMeStrength
@@ -22,7 +22,7 @@ This article provides a general description of the Windows Device Portal and inc
 > A device family identifies the APIs, system characteristics, and behaviors that you can expect across a class of devices.
 
 > [!WARNING]
-> Device Portal is disabled by default. You must enable Developer Mode and then explicitly turn on Device Portal in **Settings > System > For developers** before use.
+> Device Portal is disabled by default. You must enable Developer Mode and then explicitly turn on Device Portal in **[Settings > System > Advanced](ms-settings:developers)** before use.
 
 ## Setup
 
@@ -32,11 +32,11 @@ These are the basic steps for all devices.
 
 1. Enable Developer Mode. See [Settings for developers](developer-mode.md) for instructions.
 
-   :::image type="content" source="images/device-portal/device-portal-desk-settings-developer-mode.PNG" alt-text="Screenshot of the Settings -> System -> For developers window showing Developer Mode enabled.":::
+   :::image type="content" source="images/device-portal/device-portal-desk-settings-developer-mode.PNG" alt-text="Screenshot of the Settings > System > Advanced window showing Developer Mode enabled.":::
 
-2. Enable Device Portal on your device (Settings -> System -> For developers).
+2. Enable Device Portal on your device ([Settings > System > Advanced](ms-settings:developers)).
 
-   :::image type="content" source="images/device-portal/device-portal-desk-settings.PNG" alt-text="Screenshot of the Settings -> System -> For developers window that shows the Device Portal settings available after being enabled.":::
+   :::image type="content" source="images/device-portal/device-portal-desk-settings.PNG" alt-text="Screenshot of the Settings > System > Advanced window that shows the Device Portal settings available after being enabled.":::
 
 3. Connect your device and PC through a local network or with USB.
 

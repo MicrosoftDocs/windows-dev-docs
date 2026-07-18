@@ -1,7 +1,7 @@
 ---
 title: Windows Device Portal for Desktop
 description: Learn how the Windows Device Portal provides settings, diagnostics, and automation functionality on your Desktop PC.
-ms.date: 07/06/2026
+ms.date: 07/17/2026
 ms.topic: article
 ms.localizationpriority: medium
 author: GrantMeStrength
@@ -32,13 +32,13 @@ Developer Mode is required before enabling Device Portal.
 
 ### Turn on Windows Device Portal
 
-You can enable WDP in the **For developers** section of **Settings** (Settings -> System -> For developers).
+You can enable WDP in the **For developers** section of **Settings** ([Settings > System > Advanced](ms-settings:developers)).
 
-:::image type="content" source="images/device-portal/device-portal-desk-settings-install.PNG" alt-text="Screenshot of the Settings -> System -> For developers window that shows the Install Windows Developer Mode package dialog after enabling Device Portal.":::
+:::image type="content" source="images/device-portal/device-portal-desk-settings-install.PNG" alt-text="Screenshot of the Settings > System > Advanced window that shows the Install Windows Developer Mode package dialog after enabling Device Portal.":::
 
 Once WDP is enabled, you will see URIs at the bottom of the Device Portal section. Take note of the port number appended to the end of the listed URLs: this number is randomly generated when WDP is enabled but should remain consistent between reboots of the desktop.
 
-:::image type="content" source="images/device-portal/device-portal-desk-settings.PNG" alt-text="Screenshot of the Settings -> System -> For developers window that shows the Device Portal settings available after being enabled.":::
+:::image type="content" source="images/device-portal/device-portal-desk-settings.PNG" alt-text="Screenshot of the Settings > System > Advanced window that shows the Device Portal settings available after being enabled.":::
 
 These links offer two ways to connect to WDP: over the local network (including VPN) or through the local host.
 
@@ -46,7 +46,7 @@ These links offer two ways to connect to WDP: over the local network (including 
 
 ### Turn off Windows Device Portal
 
-You can disable WDP in the **For developers** section of **Windows Settings**.
+You can disable WDP in the **For developers** section of **Windows Settings** ([Settings > System > Advanced](ms-settings:developers)).
 
 ### Connect to Windows Device Portal
 

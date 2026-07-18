@@ -27,37 +27,40 @@ In the default setup, a certificate warning may appear in your browser because o
 
 ## Create a root CA
 
-This should only be done if your company (or home) doesn't have a certificate infrastructure set up, and should only be done once. The following PowerShell script creates a root CA called _WdpTestCA.cer_. Installing this file to the local machine's Trusted Root Certification Authorities will cause your device to trust SSL certs that are signed by this root CA. You can (and should) install this .cer file on each PC that you want to connect to WDP.  
+This should only be done if your company (or home) doesn't have a certificate infrastructure set up, and should only be done once. Run this script from an **elevated (admin) PowerShell** prompt because it writes to the `LocalMachine\My` certificate store. The script creates a root CA called _WdpTestCA.cer_. Installing this file to the local machine's Trusted Root Certification Authorities will cause your device to trust SSL certs that are signed by this root CA. You can (and should) install this .cer file on each PC that you want to connect to WDP.
 
 ```PowerShell
 $CN = "PickAName"
 $OutputPath = "c:\temp\"
 
-# Create root certificate authority
+# Create root certificate authority (marked as a CA via Basic Constraints)
 $FilePath = $OutputPath + "WdpTestCA.cer"
-$Subject =  "CN="+$CN
-$rootCA = New-SelfSignedCertificate -certstorelocation cert:\currentuser\my -Subject $Subject -HashAlgorithm "SHA512" -KeyUsage CertSign,CRLSign
+$Subject = "CN=" + $CN
+$rootCA = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -Subject $Subject -HashAlgorithm "SHA512" -KeyUsage CertSign,CRLSign -TextExtension @("2.5.29.19={critical}{text}CA=true")
 $rootCAFile = Export-Certificate -Cert $rootCA -FilePath $FilePath
 ```
 
-Once this is created, you can use the _WdpTestCA.cer_ file to sign SSL certs.
+The root CA now lives in `LocalMachine\My` (with its private key). The exported _WdpTestCA.cer_ is the public certificate you install into Trusted Root Certification Authorities on each connecting PC.
 
 ## Create an SSL certificate with the root CA
 
 SSL certificates have two critical functions: securing your connection through encryption and verifying that you are actually communicating with the address displayed in the browser bar (Bing.com, 192.168.1.37, etc.) and not a malicious third party.
 
-The following PowerShell script creates an SSL certificate for the `localhost` endpoint. Each endpoint that WDP listens on needs its own certificate; you can replace the `$IssuedTo` argument in the script with each of the different endpoints for your device: the hostname, localhost, and the IP addresses.
+The following PowerShell script creates an SSL certificate for the `localhost` endpoint. Each endpoint that WDP listens on needs its own certificate; you can replace the `$IssuedTo` argument in the script with each of the different endpoints for your device: the hostname, localhost, and the IP addresses. This script also requires an **elevated PowerShell** prompt. The `Get-ChildItem` filter uses the same CN (`PickAName`) you chose in step 1 — keep them in sync.
 
 ```PowerShell
 $IssuedTo = "localhost"
 $Password = "PickAPassword"
 $OutputPath = "c:\temp\"
-$rootCA = Import-Certificate -FilePath C:\temp\WdpTestCA.cer -CertStoreLocation Cert:\CurrentUser\My\
+
+# Retrieve the root CA (with its private key) from the store where it was created.
+# Match the CN you used above.
+$rootCA = Get-ChildItem -Path cert:\localmachine\my | Where-Object { $_.Subject -eq "CN=PickAName" -and $_.HasPrivateKey } | Select-Object -First 1
 
 # Create SSL cert signed by certificate authority
 $IssuedToClean = $IssuedTo.Replace(":", "-").Replace(" ", "_")
 $FilePath = $OutputPath + $IssuedToClean + ".pfx"
-$Subject = "CN="+$IssuedTo
+$Subject = "CN=" + $IssuedTo
 $cert = New-SelfSignedCertificate -certstorelocation cert:\localmachine\my -Subject $Subject -DnsName $IssuedTo -Signer $rootCA -HashAlgorithm "SHA512"
 $certFile = Export-PfxCertificate -cert $cert -FilePath $FilePath -Password (ConvertTo-SecureString -String $Password -Force -AsPlainText)
 ```
