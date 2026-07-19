@@ -6,7 +6,7 @@ no-loc: [winget, configure, configuration, dsc]
 ms.topic: overview
 ---
 
-# configure command (winget)
+# `configure` command (winget)
 
 The `configure` command of the [winget](./index.md) tool uses a [WinGet Configuration file](../configuration/index.md) to begin setting up your Windows machine to a desired development environment state. A configuration file can specify a collection of packages to install alongside other system settings, making it the most complete approach for reproducible environment setup.
 
