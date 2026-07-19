@@ -1,14 +1,14 @@
 ---
-title: winget help Command
+title: '`winget help` Command'
 description: Displays help for all the supported commands.
-ms.date: 04/28/2020
+ms.date: 07/19/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
-# help command (winget)
+# `help` command (winget)
 
-The **help** command of the [winget](index.md) tool displays help for all the supported commands and sub commands. In addition, you can pass the **--help** argument to any other command to get details about all additional command options.
+The **`help`** command of the [`winget`](index.md) tool displays help for all the supported commands and sub commands. In addition, you can pass the **`--help`** argument to any other command to get details about all additional command options.
 
 ## Usage
 
