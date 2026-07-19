@@ -1,20 +1,22 @@
 ---
-title: install Command
+title: '`install` Command'
 description: Installs the specified application.
-ms.date: 07/15/2025
+ms.date: 07/19/2026
 no-loc: [winget, install, add]
 ms.topic: overview
 ---
 
 # install command (winget)
 
-The **install** command of [WinGet](index.md) installs the specified application. Use the [**search**](search.md) command to identify the application you want to install. Use the [**show**](show.md) command to view details about the application and the installer selected by WinGet for your system.
+The **`install`** command of [WinGet](index.md) installs the specified application. Use the [**`search`**](search.md) command to identify the application you want to install. Use the [**`show`**](show.md) command to view details about the application and the installer selected by WinGet for your system.
 
-The **install** command requires that you specify the exact string to install. If there is any ambiguity, you will be prompted to further filter the **install** command to  an exact application.
+The **`install`** command requires that you specify the exact string to install. If there is any ambiguity, you will be prompted to further filter the **`install`** command to  an exact application.
 
 ## Usage
 
-`winget install [[-q] <query> ...] [<options>]`
+```cmd
+winget install [[-q] <query> ...] [<options>]
+```
 
 :::image type="content" source="./images/install.png" alt-text="Screenshot listing winget import command help options." lightbox="./images/install.png":::
 
@@ -22,82 +24,82 @@ The **install** command requires that you specify the exact string to install. I
 
 The following aliases are available for this command:
 
-- `add`
+- **`add`**
 
 ## Arguments
 
 The following arguments are available.
 
-| Argument      | Description |
-|-------------|-------------|
-| **-q,--query**  |  The query used to search for an app. |
+|      Argument       |             Description              |
+|---------------------|--------------------------------------|
+| **`-q`, `--query`** | The query used to search for an app. |
 
 > [!NOTE]
-> The query argument is positional. By default, winget performs a **case-insensitive substring match** against the package name, ID, and moniker. Wild-card syntax is not supported. Use **-e, --exact** to require an exact match (case-sensitive). Use **--id**, **--name**, or **--moniker** to restrict which field is searched.
+> The query argument is positional. By default, winget performs a **case-insensitive substring match** against the package name, ID, and moniker. Wild-card syntax is not supported. Use **`-e`, `--exact`** to require an exact match (case-sensitive). Use **`--id`, `--name`**, or **`--moniker`** to restrict which field is searched.
 
 ## Options
 
 The options allow you to customize the install experience to meet your needs.
 
-| Option  | Description |
-|-------------|-------------|
-| **-m, --manifest** |  Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a [local YAML file](#local-install). |
-| **--id**    |  Limits the install to the ID of the application.   |
-| **--name**   |  Limits the search to the name of the application. |
-| **--moniker**   | Limits the search to the moniker listed for the application. |
-| **-v, --version**  |  Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application. |
-| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
-| **--scope**   |  Allows you to specify if the installer should target user or machine scope. See [known issues relating to package installation scope](./troubleshooting.md#scope-for-specific-user-vs-machine-wide).|
-| **-a, --architecture**   |  Select the architecture to install. |
-| **--installer-type**   |  Select the installer type to install. See [supported installer types for WinGet client](./index.md#supported-installer-formats). |
-| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
-| **-i, --interactive** |  Runs the installer in interactive mode. The default experience shows installer progress. |
-| **-h, --silent** |  Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress. |
-| **--locale** | Specifies which locale to use (BCP47 format). |
-| **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
-| **--custom** | Arguments to be passed on to the installer in addition to the defaults.    |
-| **--override** | A string that will be passed directly to the installer.    |
-| **-l, --location** |    Location to install to (if supported). |
-| **--ignore-security-hash** |    Ignore the installer hash check failure. Not recommended. |
-| **--allow-reboot** | Allows a reboot if applicable. |
-| **--skip-dependencies** | Skips processing package dependencies and Windows features. |
-| **--ignore-local-archive-malware-scan** |    Ignore the malware scan performed as part of installing an archive type package from local manifest. |
-| **--dependency-source** |    Find package dependencies using the specified source. |
-| **--accept-package-agreements** | Accepts any license agreements or EULAs presented by the package installer, suppressing the interactive prompt. This applies to the package's own license terms only — it does not affect optional components or bundled software offered by the installer. For a fully non-interactive install, combine with **--silent (-h)**. |
-| **--no-upgrade** |    Skips upgrade if an installed version already exists. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
-| **--authentication-account** | Specify the account to be used for authentication. |
-| **--accept-source-agreements** | Accepts the license agreement for the WinGet source (repository), suppressing the interactive prompt. This is separate from any package license — it covers the terms of use for the source itself, such as the winget community repository. |
-| **-r, --rename** | The value to rename the executable file (portable). |
-| **--uninstall-previous** | Uninstall the previous version of the package during upgrade. |
-| **--force** | Direct run the command and continue with non security related issues. |
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|                  Option                   |                                                                                                                                                             Description                                                                                                                                                              |
+|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`-m`, `--manifest`**                    | Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the install experience from a [local YAML file](#local-install).                                                                                                                                                                           |
+| **`--id`**                                | Limits the install to the ID of the application.                                                                                                                                                                                                                                                                                     |
+| **`--name`**                              | Limits the search to the name of the application.                                                                                                                                                                                                                                                                                    |
+| **`--moniker`**                           | Limits the search to the moniker listed for the application.                                                                                                                                                                                                                                                                         |
+| **`-v`, `--version`**                     | Enables you to specify an exact version to install. If not specified, latest will install the highest versioned application.                                                                                                                                                                                                         |
+| **`-s`, `--source`**                      | Restricts the search to the source name provided. Must be followed by the source name.                                                                                                                                                                                                                                               |
+| **`--scope`**                             | Allows you to specify if the installer should target user or machine scope. See [known issues relating to package installation scope](./troubleshooting.md#scope-for-specific-user-vs-machine-wide).                                                                                                                                 |
+| **`-a`, `--architecture`**                | Select the architecture to install.                                                                                                                                                                                                                                                                                                  |
+| **`--installer-type`**                    | Select the installer type to install. See [supported installer types for WinGet client](./index.md#supported-installer-formats).                                                                                                                                                                                                     |
+| **`-e`, `--exact`**                       | Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.                                                                                                                                                                                                    |
+| **`-i`, `--interactive`**                 | Runs the installer in interactive mode. The default experience shows installer progress.                                                                                                                                                                                                                                             |
+| **`-h`, `--silent`**                      | Runs the installer in silent mode. This suppresses all UI. The default experience shows installer progress.                                                                                                                                                                                                                          |
+| **`--locale`**                            | Specifies which locale to use (BCP47 format).                                                                                                                                                                                                                                                                                        |
+| **`-o`, `--log`**                         | Directs the logging to a log file. You must provide a path to a file that you have the write rights to.                                                                                                                                                                                                                              |
+| **`--custom`**                            | Arguments to be passed on to the installer in addition to the defaults.                                                                                                                                                                                                                                                              |
+| **`--override`**                          | A string that will be passed directly to the installer.                                                                                                                                                                                                                                                                              |
+| **`-l`, `--location`**                    | Location to install to (if supported).                                                                                                                                                                                                                                                                                               |
+| **`--ignore-security-hash`**              | Ignore the installer hash check failure. Not recommended.                                                                                                                                                                                                                                                                            |
+| **`--allow-reboot`**                      | Allows a reboot if applicable.                                                                                                                                                                                                                                                                                                       |
+| **`--skip-dependencies`**                 | Skips processing package dependencies and Windows features.                                                                                                                                                                                                                                                                          |
+| **`--ignore-local-archive-malware-scan`** | Ignore the malware scan performed as part of installing an archive type package from local manifest.                                                                                                                                                                                                                                 |
+| **`--dependency-source`**                 | Find package dependencies using the specified source.                                                                                                                                                                                                                                                                                |
+| **`--accept-package-agreements`**         | Accepts any license agreements or EULAs presented by the package installer, suppressing the interactive prompt. This applies to the package's own license terms only — it does not affect optional components or bundled software offered by the installer. For a fully non-interactive install, combine with **`--silent` (`-h`)**. |
+| **`--no-upgrade`**                        | Skips upgrade if an installed version already exists.                                                                                                                                                                                                                                                                                |
+| **`--header`**                            | Optional Windows-Package-Manager REST source HTTP header.                                                                                                                                                                                                                                                                            |
+| **`--authentication-mode`**               | Specify authentication window preference (silent, silentPreferred or interactive).                                                                                                                                                                                                                                                   |
+| **`--authentication-account`**            | Specify the account to be used for authentication.                                                                                                                                                                                                                                                                                   |
+| **`--accept-source-agreements`**          | Accepts the license agreement for the WinGet source (repository), suppressing the interactive prompt. This is separate from any package license — it covers the terms of use for the source itself, such as the winget community repository.                                                                                         |
+| **`-r`, `--rename`**                      | The value to rename the executable file (portable).                                                                                                                                                                                                                                                                                  |
+| **`--uninstall-previous`**                | Uninstall the previous version of the package during upgrade.                                                                                                                                                                                                                                                                        |
+| **`--force`**                             | Direct run the command and continue with non security related issues.                                                                                                                                                                                                                                                                |
+| **`-?`, `--help`**                        |  Get additional help on this command.                                                                                                                                                                                                                                                                                                |
+| **`--wait`**                              | Prompts the user to press any key before exiting.                                                                                                                                                                                                                                                                                    |
+| **`--logs`, `--open-logs`**               | Open the default logs location.                                                                                                                                                                                                                                                                                                      |
+| **`--verbose`, `--verbose-logs`**         | Used to override the logging setting and create a verbose log.                                                                                                                                                                                                                                                                       |
+| **`--nowarn`, `--ignore-warnings`**       | Suppresses warning outputs.                                                                                                                                                                                                                                                                                                          |
+| **`--disable-interactivity`**             | Disable interactive prompts.                                                                                                                                                                                                                                                                                                         |
+| **`--proxy`**                             | Set a proxy to use for this execution.                                                                                                                                                                                                                                                                                               |
+| **`--no-proxy`**                          | Disable the use of proxy for this execution.                                                                                                                                                                                                                                                                                         |
 
 ### Example queries
 
 The following example installs a specific version of an application.
 
-```CMD
+```cmd
 winget install powertoys --version 0.91.1
 ```
 
 The following example installs an application from its ID.
 
-```CMD
+```cmd
 winget install --id Microsoft.PowerToys
 ```
 
 The following example installs an application by version and ID.
 
-```CMD
+```cmd
 winget install --id Microsoft.PowerToys --version 0.91.1
 ```
 
@@ -105,7 +107,7 @@ winget install --id Microsoft.PowerToys --version 0.91.1
 
 You can install multiple packages in a single command by listing their IDs separated by spaces.
 
-```CMD
+```cmd
 winget install Microsoft.VisualStudioCode Microsoft.PowerShell Git.Git
 ```
 
@@ -120,19 +122,19 @@ If the query provided to **WinGet** does not result in a single application, the
 
 The best way to limit the selection to one file is to use the **id** of the application combined with the **exact** query option.  For example:
 
-```CMD
+```cmd
 winget install --id Git.Git -e
 ```
 
 If multiple sources are configured, it is possible to have duplicate entries. Specifying a source is required to further disambiguate.
 
-```CMD
+```cmd
 winget install --id Git.Git -e --source winget
 ```
 
 The **msstore** source uses unique identifiers as the "Id" for packages. These do not require the **exact** query option. For example:
 
-```CMD
+```cmd
 winget install XP9KHM4BK9FZ7Q -s msstore
 ```
 
@@ -144,7 +146,7 @@ Usage: `winget install --manifest \<path>`
 
 | Option  | Description |
 |---------|-------------|
-|  **-m, --manifest** | The path to the manifests of the application to install. |
+| **`-m`, `--manifest`** | The path to the manifests of the application to install. |
 
 Installing packages from local manifest files may have risks. As an extra measure of precaution this feature needs to be enabled by an administrator. To enable this feature run `winget settings --enable LocalManifestFiles`. To disable this feature run `winget settings --disable LocalManifestFiles`.
 
