@@ -1,5 +1,5 @@
 ---
-title: '`download` command'
+title: '`download` Command'
 description: Downloads an installer for a package.
 ms.date: 07/19/2026
 ms.topic: how-to
@@ -8,7 +8,7 @@ ms.custom: sfi-ga-nochange
 
 # `download` command (winget)
 
-The `download` command of [WinGet](index.md) downloads the installer, dependencies, and license file (when downloading a Microsoft Store Packaged app). Use the [`search`](search.md) command and the [`show`](show.md) command to identify the package installer you want to download.
+The `download` command of [`winget`](index.md) downloads the installer, dependencies, and license file (when downloading a Microsoft Store Packaged app). Use the [`search`](search.md) command and the [`show`](show.md) command to identify the package installer you want to download.
 
 The `download` command requires that you specify the exact string to download. If there is any ambiguity, you will be prompted to further filter the `download` command to an exact application.
 
@@ -19,7 +19,9 @@ The `download` command requires [EntraID (formally Azure Active Directory) authe
 
 ## Usage
 
-`winget download [[-q] <query>] [<options>]`
+```cmd
+winget download [[-q] <query>] [<options>]
+```
 
 :::image type="content" source="./images/download.png" alt-text="Screenshot of entering the winget download command in a command line of Windows Terminal." lightbox="./images/download.png":::
 
@@ -39,11 +41,11 @@ Downloading a package using WinGet, by default will download the latest availabl
 winget download [[--id] <package id>] [[--platform] <platform type> ] [<options>]
 ```
 
-| Platform | Description |
-|--|--|
-| Windows.Desktop | Supports being installed on Windows desktop experience |
-| Windows.Universal | Supports being installed on all Microsoft operating systems |
-| Windows.Holographic | Supports being installed on Microsoft HoloLens devices |
+|      Platform       |                         Description                         |
+|---------------------|-------------------------------------------------------------|
+| Windows.Desktop     | Supports being installed on Windows desktop experience      |
+| Windows.Universal   | Supports being installed on all Microsoft operating systems |
+| Windows.Holographic | Supports being installed on Microsoft HoloLens devices      |
 
 ## Download for a specific architecture
 

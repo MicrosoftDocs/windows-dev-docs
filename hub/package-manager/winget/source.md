@@ -1,7 +1,7 @@
 ---
-title: The WinGet source command
+title: '`source` Command'
 description: Use the WinGet source command and subcommands to list and manage the sources WinGet accesses.
-ms.date: 03/24/2026
+ms.date: 07/19/2026
 no-loc: [winget, source, refresh]
 ms.topic: reference
 ms.custom: kr2b-contr-experiment
@@ -9,7 +9,7 @@ ms.custom: kr2b-contr-experiment
 
 # The WinGet source command
 
-The [WinGet](index.md) **source** command allows you to manage sources. With the **source** command, you can **add**, **edit**, **list**, **update**, **remove**, **reset**, or **export** WinGet sources.
+The [`winget`](index.md) **`source`** command allows you to manage sources. With the **`source`** command, you can **`add`**, **`edit`**, **`list`**, **`update`**, **`remove`**, **`reset`**, or **`export`** WinGet sources.
 
 A WinGet source provides the data for you to discover and install applications. Only use secure, trusted sources.
 
@@ -31,34 +31,34 @@ winget source <subcommand> <options>
 
 The following arguments are available.
 
-| Sub-Command  | Description |
-|--------------|-------------|
-| **add** | Adds a new source. |
-| **edit** | Edits an existing source. |
-| **list** | Lists current sources. |
-| **update** | Updates current sources. |
-| **remove** | Removes current sources. |
-| **reset** | Resets default sources **msstore**, **winget**, and **winget-font**. |
-| **export** | Exports current sources. |
+| Sub-Command  |                             Description                              |
+|--------------|----------------------------------------------------------------------|
+| **`add`**    | Adds a new source.                                                   |
+| **`edit`**   | Edits an existing source.                                            |
+| **`list`**   | Lists current sources.                                               |
+| **`update`** | Updates current sources.                                             |
+| **`remove`** | Removes current sources.                                             |
+| **`reset`**  | Resets default sources **msstore**, **winget**, and **winget-font**. |
+| **`export`** | Exports current sources.                                             |
 
 ## Options
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **-?,--help** | Shows help about the selected command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                          Description                           |
+|-------------------------------------|----------------------------------------------------------------|
+| **`-?`, `--help`**                  | Shows help about the selected command.                         |
+| **`--wait`**                        | Prompts the user to press any key before exiting.              |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                    |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                   |
+| **`--proxy`**                       | Set a proxy to use for this execution.                         |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                   |
 
 ### add
 
-The **add** subcommand adds a new source. This subcommand requires the **--name** and **--arg** options. Because the command changes user access, using **add** requires administrator privileges.
+The **`add`** subcommand adds a new source. This subcommand requires the **`--name`** and **`--arg`** options. Because the command changes user access, using **`add`** requires administrator privileges.
 
 Usage:
 
@@ -70,45 +70,45 @@ winget source add [-n] <name> [-a] <arg> [[-t] <type>] [<options>]
 
 The following arguments are available.
 
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name to identify the source by. |
-| **-a, --arg** | The URL or UNC of the source. |
-| **-t, --type** | The type of source. |
+|      Argument      |             Description             |
+|--------------------|-------------------------------------|
+| **`-n`, `--name`** | The name to identify the source by. |
+| **`-a`, `--arg`**  | The URL or UNC of the source.       |
+| **`-t`, `--type`** | The type of source.                 |
 
 #### Options
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **--trust-level** | Trust level of the source (none or trusted). |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--explicit** | Marks the source as explicit, requiring commands to directly target it using `--source`. |
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                                       Description                                        |
+|-------------------------------------|------------------------------------------------------------------------------------------|
+| **`--trust-level`**                 | Trust level of the source (none or trusted).                                             |
+| **`--header`**                      | Optional Windows-Package-Manager REST source HTTP header.                                |
+| **`--accept-source-agreements`**    | Used to accept the source license agreement, and avoid the prompt.                       |
+| **`--explicit`**                    | Marks the source as explicit, requiring commands to directly target it using `--source`. |
+| **`-?`, `--help`**                  | Get additional help on this command.                                                     |
+| **`--wait`**                        | Prompts the user to press any key before exiting.                                        |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                                          |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                           |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                                              |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                                             |
+| **`--proxy`**                       | Set a proxy to use for this execution.                                                   |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                                             |
 
 For example,  `winget source add --name Contoso https://www.contoso.com/cache` adds the Contoso repository at URL `https://www.contoso.com/cache`.
 
 #### Optional type parameter
 
-The **add** subcommand supports the optional **type** parameter, which tells the client what type of repository it is connecting to. The following types are supported.
+The **`add`** subcommand supports the optional **type** parameter, which tells the client what type of repository it is connecting to. The following types are supported.
 
-| Type  | Description |
-|--------------|-------------|
-| **Microsoft.PreIndexed.Package** | The default source type. |
-| **Microsoft.Rest** | A Microsoft REST API source. |
+|               Type               |         Description          |
+|----------------------------------|------------------------------|
+| **Microsoft.PreIndexed.Package** | The default source type.     |
+| **Microsoft.Rest**               | A Microsoft REST API source. |
 
 ### edit
 
-The **edit** subcommand modifies an existing source's configuration. The primary use is to toggle whether a source is **explicit** or **implicit**. When a source is explicit, WinGet commands must directly target it using `--source`. When a source is implicit, it is included in all commands automatically.
+The **`edit`** subcommand modifies an existing source's configuration. The primary use is to toggle whether a source is **explicit** or **implicit**. When a source is explicit, WinGet commands must directly target it using `--source`. When a source is implicit, it is included in all commands automatically.
 
 Usage:
 
@@ -120,27 +120,27 @@ winget source edit [-n] <name> [<options>]
 
 The following arguments are available.
 
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name of the source to edit. |
+|      Argument      |           Description           |
+|--------------------|---------------------------------|
+| **`-n`, `--name`** | The name of the source to edit. |
 
 #### Options
 
 The following options are available.
 
-| Option  | Description |
-|-------------|-------------|
-| **--explicit** | Sets the source as explicit (`true`) or implicit (`false`). When explicit, commands must directly target the source using `--source`. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **-?, --help** | Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                                                              Description                                                              |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| **`--explicit`**                    | Sets the source as explicit (`true`) or implicit (`false`). When explicit, commands must directly target the source using `--source`. |
+| **`--header`**                      | Optional Windows-Package-Manager REST source HTTP header.                                                                             |
+| **`--accept-source-agreements`**    | Used to accept the source license agreement, and avoid the prompt.                                                                    |
+| **`-?`, `--help`**                  | Get additional help on this command.                                                                                                  |
+| **`--wait`**                        | Prompts the user to press any key before exiting.                                                                                     |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                                                                                       |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                                                                        |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                                                                                           |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                                                                                          |
+| **`--proxy`**                       | Set a proxy to use for this execution.                                                                                                |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                                                                                          |
 
 #### Example
 
@@ -158,10 +158,10 @@ winget source edit winget-font --explicit true
 
 ### list
 
-The **list** subcommand enumerates the currently enabled sources, or provides details on a specific source.
+The **`list`** subcommand enumerates the currently enabled sources, or provides details on a specific source.
 
 > [!NOTE]
-> When a source is set to be explicit, it must be specifically targeted. The **winget-font** source is set to explicit by default. This means any other WinGet commands must directly reference the source using either "--source winget-font" or "-s winget-font" to be included.
+> When a source is set to be explicit, it must be specifically targeted. The **winget-font** source is set to explicit by default. This means any other WinGet commands must directly reference the source using either `--source winget-font` or `-s winget-font` to be included.
 
 Usage:
 
@@ -181,28 +181,28 @@ The following aliases are available for this subcommand:
 
 The following arguments are available.
 
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name to identify the source by. |
+|      Argument      |             Description             |
+|--------------------|-------------------------------------|
+| **`-n`, `--name`** | The name to identify the source by. |
 
 #### Options
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                          Description                           |
+|-------------------------------------|----------------------------------------------------------------|
+| **`-?`, `--help`**                  | Get additional help on this command.                           |
+| **`--wait`**                        | Prompts the user to press any key before exiting.              |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                    |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                   |
+| **`--proxy`**                       | Set a proxy to use for this execution.                         |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                   |
 
 #### list all
 
-The **list** subcommand by itself, `winget source list`, provides the complete list of configured sources:
+The **`list`** subcommand by itself, `winget source list`, provides the complete list of configured sources:
 
 ```output
 Name        Argument                                      Explicit
@@ -243,7 +243,7 @@ Updated     2025-12-11 08:30:25.000
 
 ### update
 
-The **update** subcommand forces an update to an individual source, or to all sources.
+The **`update`** subcommand forces an update to an individual source, or to all sources.
 
 Usage:
 
@@ -261,36 +261,36 @@ The following aliases are available for this subcommand:
 
 The following arguments are available.
 
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name to identify the source by. |
+|      Argument      |             Description             |
+|--------------------|-------------------------------------|
+| **`-n`, `--name`** | The name to identify the source by. |
 
 #### Options
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                          Description                           |
+|-------------------------------------|----------------------------------------------------------------|
+| **`-?`, `--help`**                  | Get additional help on this command.                           |
+| **`--wait`**                        | Prompts the user to press any key before exiting.              |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                    |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                   |
+| **`--proxy`**                       | Set a proxy to use for this execution.                         |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                   |
 
 #### update all
 
-The **update** subcommand by itself, `winget source update`, requests updates to all repos.
+The **`update`** subcommand by itself, `winget source update`, requests updates to all repos.
 
 #### update source
 
-The **update** subcommand with the **--name** option directs an update to the named source. For example: `winget source update --name Contoso` forces an update to the Contoso repository.
+The **`update`** subcommand with the **`--name`** option directs an update to the named source. For example: `winget source update --name Contoso` forces an update to the Contoso repository.
 
 ### remove
 
-The **remove** subcommand removes a source. This subcommand requires the **--name** option to identify the source. Because the command changes user access, using **remove** requires administrator privileges.
+The **`remove`** subcommand removes a source. This subcommand requires the **`--name`** option to identify the source. Because the command changes user access, using **`remove`** requires administrator privileges.
 
 Usage:
 
@@ -308,24 +308,24 @@ The following aliases are available for this subcommand:
 
 The following arguments are available.
 
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name to identify the source by. |
+|      Argument      |             Description             |
+|--------------------|-------------------------------------|
+| **`-n`, `--name`** | The name to identify the source by. |
 
 #### Options
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                          Description                           |
+|-------------------------------------|----------------------------------------------------------------|
+| **`-?`, `--help`**                  | Get additional help on this command.                           |
+| **`--wait`**                        | Prompts the user to press any key before exiting.              |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                    |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                   |
+| **`--proxy`**                       | Set a proxy to use for this execution.                         |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                   |
 
 #### Examples
 
@@ -337,9 +337,9 @@ This command removes the Contoso repository.
 
 ### reset
 
-The **reset** subcommand resets the client back to its original configuration, and removes all sources except the default. Only use this subcommand in rare cases. Because the command changes user access, using **reset** requires administrator privileges.
+The **`reset`** subcommand resets the client back to its original configuration, and removes all sources except the default. Only use this subcommand in rare cases. Because the command changes user access, using **`reset`** requires administrator privileges.
 
-Because the **reset** command removes all sources, you must force the action by using the **--force** option.
+Because the **`reset`** command removes all sources, you must force the action by using the **`--force`** option.
 
 Usage:
 
@@ -351,29 +351,29 @@ winget source reset [[-n] <name>] [<options>]
 
 The following arguments are available.
 
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name to identify the source by. |
+|      Argument      |             Description             |
+|--------------------|-------------------------------------|
+| **`-n`, `--name`** | The name to identify the source by. |
 
 #### Options
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **--force** | Forces the reset of the sources. |
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                          Description                           |
+|-------------------------------------|----------------------------------------------------------------|
+| **`--force`**                       | Forces the reset of the sources.                               |
+| **`-?`, `--help`**                  | Get additional help on this command.                           |
+| **`--wait`**                        | Prompts the user to press any key before exiting.              |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                    |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                   |
+| **`--proxy`**                       | Set a proxy to use for this execution.                         |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                   |
 
 ### export
 
-The **export** sub-command exports the specific details for a source to JSON output. This is useful for configuring Group Policy for source management.
+The **`export`** sub-command exports the specific details for a source to JSON output. This is useful for configuring Group Policy for source management.
 
 Usage:
 
@@ -385,24 +385,24 @@ winget source export [[-n] <name>] [<options>]
 
 The following arguments are available.
 
-| Argument  | Description |
-|--------------|-------------|
-| **-n, --name** | The name to identify the source by. |
+|      Argument      |             Description             |
+|--------------------|-------------------------------------|
+| **`-n`, `--name`** | The name to identify the source by. |
 
 #### Options
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                          Description                           |
+|-------------------------------------|----------------------------------------------------------------|
+| **`-?`, `--help`**                  | Get additional help on this command.                           |
+| **`--wait`**                        | Prompts the user to press any key before exiting.              |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                    |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                   |
+| **`--proxy`**                       | Set a proxy to use for this execution.                         |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                   |
 
 #### Examples
 
@@ -418,9 +418,9 @@ Returns the following output:
 
 ## Source agreement
 
-An individual **source** may request that the user agree to agreements presented before adding or using the source. If a user does not accept the agreements, WinGet will not be able to access the source.
+An individual **`source`** may request that the user agree to agreements presented before adding or using the source. If a user does not accept the agreements, WinGet will not be able to access the source.
 
-You can use the **--accept-source-agreements** option to accept the source agreements and avoid the prompt.
+You can use the **`--accept-source-agreements`** option to accept the source agreements and avoid the prompt.
 
 Many WinGet commands evaluate all configured sources. If any configured source requires agreements, WinGet will prompt before using those sources. Source agreements are required to be accepted before use. If a source updates agreement terms, or if a source is removed and readded (as in the case of `winget source reset --force`) agreements will be presented again.
 

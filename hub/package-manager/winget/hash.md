@@ -1,7 +1,7 @@
 ---
-title: '`winget hash` command'
+title: '`hash` Command'
 description: Generates the SHA256 hash for an installer.
-ms.date: 07/11/2024
+ms.date: 07/19/2026
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: sfi-image-nochange
@@ -42,7 +42,7 @@ The options allow you to customize the hash experience to meet your needs.
 |               Option                |                                                Description                                                 |
 |-------------------------------------|------------------------------------------------------------------------------------------------------------|
 | **`-m`, `--msix`**                  | Specifies that the hash command will also create the SHA-256 SignatureSha256 for use with MSIX installers. |
-| **`-?`, `--help`**                  |  Gets additional help on this command.                                                                     |
+| **`-?`, `--help`**                  | Gets additional help on this command.                                                                      |
 | **`--wait`**                        | Prompts the user to press any key before exiting.                                                          |
 | **`--logs`, `--open-logs`**         | Open the default logs location.                                                                            |
 | **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                                             |

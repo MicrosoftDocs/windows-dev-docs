@@ -7,7 +7,7 @@ ms.topic: overview
 
 # dscv3 command (winget)
 
-The **`dscv3`** command of [winget](index.md) represents [Microsoft Desired State Configuration version 3](/powershell/dsc/overview?view=dsc-3.0&preserve-view=true) (DSC v3) command-based resource implementation.
+The **`dscv3`** command of [`winget`](index.md) represents [Microsoft Desired State Configuration version 3](/powershell/dsc/overview?view=dsc-3.0&preserve-view=true) (DSC v3) command-based resource implementation.
 
 
 ## Usage
@@ -34,10 +34,10 @@ The following sub-commands are available.
 The options allow you to customize the install experience to meet your needs.
 
 |                 Option                  |                              Description                              |
-|-------------------------------------    |-----------------------------------------------------------------------|
-| **`-m`, `--manifest`**                  |  Displays the resource JSON manifest.                                 |
+|-----------------------------------------|-----------------------------------------------------------------------|
+| **`-m`, `--manifest`**                  | Displays the resource JSON manifest.                                  |
 | **`-o`, `--output`**                    | Specifies the directory where the resource JSON file will be written. |
-| **`-?`, `--help`**                      |  Get additional help on this command.                                 |
+| **`-?`, `--help`**                      | Get additional help on this command.                                  |
 | **`--wait`**                            | Prompts the user to press any key before exiting.                     |
 | **`--logs`, `--open-logs`**             | Open the default logs location.                                       |
 | **`--verbose`, `--verbose-logs`**       | Used to override the logging setting and create a verbose log.        |

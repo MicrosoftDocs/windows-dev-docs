@@ -8,7 +8,7 @@ ms.topic: overview
 
 # install command (winget)
 
-The **`install`** command of [WinGet](index.md) installs the specified application. Use the [**`search`**](search.md) command to identify the application you want to install. Use the [**`show`**](show.md) command to view details about the application and the installer selected by WinGet for your system.
+The **`install`** command of [`winget`](index.md) installs the specified application. Use the [**`search`**](search.md) command to identify the application you want to install. Use the [**`show`**](show.md) command to view details about the application and the installer selected by WinGet for your system.
 
 The **`install`** command requires that you specify the exact string to install. If there is any ambiguity, you will be prompted to further filter the **`install`** command to  an exact application.
 
@@ -74,7 +74,7 @@ The options allow you to customize the install experience to meet your needs.
 | **`-r`, `--rename`**                      | The value to rename the executable file (portable).                                                                                                                                                                                                                                                                                  |
 | **`--uninstall-previous`**                | Uninstall the previous version of the package during upgrade.                                                                                                                                                                                                                                                                        |
 | **`--force`**                             | Direct run the command and continue with non security related issues.                                                                                                                                                                                                                                                                |
-| **`-?`, `--help`**                        |  Get additional help on this command.                                                                                                                                                                                                                                                                                                |
+| **`-?`, `--help`**                        | Get additional help on this command.                                                                                                                                                                                                                                                                                                 |
 | **`--wait`**                              | Prompts the user to press any key before exiting.                                                                                                                                                                                                                                                                                    |
 | **`--logs`, `--open-logs`**               | Open the default logs location.                                                                                                                                                                                                                                                                                                      |
 | **`--verbose`, `--verbose-logs`**         | Used to override the logging setting and create a verbose log.                                                                                                                                                                                                                                                                       |
@@ -144,8 +144,8 @@ The **manifest** option enables you to install an application by passing in a YA
 
 Usage: `winget install --manifest \<path>`
 
-| Option  | Description |
-|---------|-------------|
+|         Option         |                       Description                        |
+|------------------------|----------------------------------------------------------|
 | **`-m`, `--manifest`** | The path to the manifests of the application to install. |
 
 Installing packages from local manifest files may have risks. As an extra measure of precaution this feature needs to be enabled by an administrator. To enable this feature run `winget settings --enable LocalManifestFiles`. To disable this feature run `winget settings --disable LocalManifestFiles`.
@@ -161,7 +161,7 @@ Some applications when installed will require the user to agree to the license o
 
 :::image type="content" source="./images/agreements.png" alt-text="Screenshot of user agreement prompt in winget." lightbox="./images/agreements.png":::
 
-From the command line, you can auto accept the agreements by passing the following option **--accept-package-agreements** on the command line. This can be beneficial when scripting the Windows Package Manager.
+From the command line, you can auto accept the agreements by passing the following option **`--accept-package-agreements`** on the command line. This can be beneficial when scripting the Windows Package Manager.
 
 ## Related topics
 

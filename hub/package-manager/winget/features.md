@@ -7,7 +7,7 @@ ms.topic: overview
 
 # features command (winget)
 
-The **`features`** command of the [WinGet](index.md) tool displays a list of the experimental features available with your version of the Windows Package Manager.
+The **`features`** command of the [`winget`](index.md) tool displays a list of the experimental features available with your version of the Windows Package Manager.
 
 Each feature can be turned on individually by enabling the features through [**`settings`**](./settings.md).
 

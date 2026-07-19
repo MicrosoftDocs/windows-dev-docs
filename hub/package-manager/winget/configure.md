@@ -8,7 +8,7 @@ ms.topic: overview
 
 # `configure` command (winget)
 
-The `configure` command of the [winget](./index.md) tool uses a [WinGet Configuration file](../configuration/index.md) to begin setting up your Windows machine to a desired development environment state. A configuration file can specify a collection of packages to install alongside other system settings, making it the most complete approach for reproducible environment setup.
+The `configure` command of the [`winget`](./index.md) tool uses a [WinGet Configuration file](../configuration/index.md) to begin setting up your Windows machine to a desired development environment state. A configuration file can specify a collection of packages to install alongside other system settings, making it the most complete approach for reproducible environment setup.
 
 > [!TIP]
 > For simpler scenarios, you can install multiple packages in a single command (`winget install A B C`), or use [`winget export`](export.md) and [`winget import`](import.md) to save and restore a package list.
@@ -30,7 +30,9 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget configure -f <C:/Users/<username>/winget-configs/config-file-name.dsc.winget>`
+```cmd
+winget configure -f <C:/Users/<username>/winget-configs/config-file-name.dsc.winget>
+```
 
 Once you have identified the WinGet configuration file that you are interested in using, confirmed the safety and trustworthiness of that file, and downloaded the file to your local machine, you can use the `winget configure` command to initiate the set up of your configuration.
 

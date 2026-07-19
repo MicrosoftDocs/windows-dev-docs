@@ -1,13 +1,13 @@
 ---
-title: pin Command
+title: '`pin` Command'
 description: Pin a package to a specific version or within a specific version range using WinGet, the Windows Package Manager client.
-ms.date: 07/11/2024
+ms.date: 07/19/2026
 ms.topic: reference
 ---
 
 # pin command (winget)
 
-The [winget](index.md) **pin** command allows you to limit the Windows Package Manager from upgrading a package to specific ranges of versions, or it can prevent it from upgrading a package altogether. A pinned package may still upgrade on its own and be upgraded from outside the Windows Package Manager.
+The [`winget`](index.md) **`pin`** command allows you to limit the Windows Package Manager from upgrading a package to specific ranges of versions, or it can prevent it from upgrading a package altogether. A pinned package may still upgrade on its own and be upgraded from outside the Windows Package Manager.
 
 ## Pin Types
 
@@ -29,31 +29,31 @@ winget pin <subcommand> <options>
 
 The following options are available.
 
-| Option  | Description |
-|--------------|-------------|
-| **-?, --help** |  Gets additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                          Description                           |
+|-------------------------------------|----------------------------------------------------------------|
+| **`-?`, `--help`**                  | Gets additional help on this command.                          |
+| **`--wait`**                        | Prompts the user to press any key before exiting.              |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                    |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                   |
+| **`--proxy`**                       | Set a proxy to use for this execution.                         |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                   |
 
 ## Subcommands
 
-The **pin** command supports the following subcommands.
+The **`pin`** command supports the following subcommands.
 
-| Subcommand  | Description |
-|--------------|-------------|
-|  **add** |  Add a new pin. |
-|  **remove** | Remove a package pin. |
-|  **list** | List current pins. |
-|  **reset** | Reset pins |
+|  Subcommand  |      Description      |
+|--------------|-----------------------|
+| **`add`**    | Add a new pin.        |
+| **`remove`** | Remove a package pin. |
+| **`list`**   | List current pins.    |
+| **`reset`**  | Reset pins            |
 
 ## add
 
-The **add** subcommand adds a new pin. This subcommand requires that you specify the exact package to pin. If there is any ambiguity, you will be prompted to further filter the **add** subcommand to an exact application.
+The **`add`** subcommand adds a new pin. This subcommand requires that you specify the exact package to pin. If there is any ambiguity, you will be prompted to further filter the **`add`** subcommand to an exact application.
 
 Usage:
 
@@ -63,39 +63,39 @@ winget pin add [[-q] <query>] [<options>]
 
 ### Arguments
 
-| Argument      | Description |
-|-------------|-------------|
-| **-q,--query**  |  The query used to search for an app. |
+|      Argument       |             Description              |
+|---------------------|--------------------------------------|
+| **`-q`, `--query`** | The query used to search for an app. |
 
 ### Options
 
 The options allow you to customize adding pins to meet your needs.
 
-| Option  | Description |
-|-------------|-------------|
-| **--id**    |  Limits the search to the ID of the application.   |
-| **--name**   |  Limits the search to the name of the application. |
-| **--moniker**   | Limits the search to the moniker listed for the application. |
-| **--tag**   | Limits the search to the tag listed for the application. |
-| **--cmd, --command**   | Limits the search to the command of the application. |
-| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
-| **-v, --version**  |  Enables you to specify an exact version to pin. The wildcard * can be used as the last version part. Changes pin behavior to be [`gating`](#pin-types). |
-| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
-| **--authentication-account** | Specify the account to be used for authentication. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--force** | Direct run the command and continue with non security related issues. |
-| **--blocking** | Block from upgrading until the pin is removed, preventing override arguments. Changes pin behavior to be [`blocking`](#pin-types). |
-| **--installed** | Pin a specific installed version |
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs, --open-logs**  | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                                                                       Description                                                                       |
+|-------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`--id`**                          | Limits the search to the ID of the application.                                                                                                         |
+| **`--name`**                        | Limits the search to the name of the application.                                                                                                       |
+| **`--moniker`**                     | Limits the search to the moniker listed for the application.                                                                                            |
+| **`--tag`**                         | Limits the search to the tag listed for the application.                                                                                                |
+| **`--cmd`, `--command`**            | Limits the search to the command of the application.                                                                                                    |
+| **`-e`, `--exact`**                 | Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.                       |
+| **`-v`, `--version`**               | Enables you to specify an exact version to pin. The wildcard * can be used as the last version part. Changes pin behavior to be [`gating`](#pin-types). |
+| **`-s`, `--source`**                | Restricts the search to the source name provided. Must be followed by the source name.                                                                  |
+| **`--header`**                      | Optional Windows-Package-Manager REST source HTTP header.                                                                                               |
+| **`--authentication-mode`**         | Specify authentication window preference (silent, silentPreferred or interactive).                                                                      |
+| **`--authentication-account`**      | Specify the account to be used for authentication.                                                                                                      |
+| **`--accept-source-agreements`**    | Used to accept the source license agreement, and avoid the prompt.                                                                                      |
+| **`--force`**                       | Direct run the command and continue with non security related issues.                                                                                   |
+| **`--blocking`**                    | Block from upgrading until the pin is removed, preventing override arguments. Changes pin behavior to be [`blocking`](#pin-types).                      |
+| **`--installed`**                   | Pin a specific installed version                                                                                                                        |
+| **`-?`, `--help`**                  | Get additional help on this command.                                                                                                                    |
+| **`--wait`**                        | Prompts the user to press any key before exiting.                                                                                                       |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                                                                                                         |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                                                                                          |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                                                                                                             |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                                                                                                            |
+| **`--proxy`**                       | Set a proxy to use for this execution.                                                                                                                  |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                                                                                                            |
 
 ### Examples
 
@@ -119,7 +119,7 @@ winget pin add --id Microsoft.PowerToys --version 0.70.*
 
 ## remove
 
-The **remove** subcommand removes a pin. This subcommand requires that you specify the exact package pin to remove. If there is any ambiguity, you will be prompted to further filter the **remove** subcommand to an exact application.
+The **`remove`** subcommand removes a pin. This subcommand requires that you specify the exact package pin to remove. If there is any ambiguity, you will be prompted to further filter the **`remove`** subcommand to an exact application.
 
 Usage:
 
@@ -129,36 +129,36 @@ winget pin remove [[-q] <query>] [<options>]
 
 ### Arguments
 
-| Argument      | Description |
-|-------------|-------------|
-| **-q,--query**  |  The query used to search for an app. |
+|      Argument       |             Description              |
+|---------------------|--------------------------------------|
+| **`-q`, `--query`** | The query used to search for an app. |
 
 ### Options
 
 The options allow you to customize removing pins to meet your needs.
 
-| Option  | Description |
-|-------------|-------------|
-| **--id**    |  Limits the search to the ID of the application.   |
-| **--name**   |  Limits the search to the name of the application. |
-| **--moniker**   | Limits the search to the moniker listed for the application. |
-| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
-| **--tag**   | Limits the search to the tag listed for the application. |
-| **--cmd, --command**   | Limits the search to the command of the application. |
-| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
-| **--authentication-account** | Specify the account to be used for authentication. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **--installed** | Pin a specific installed version. |
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs, --open-logs**  | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                                                            Description                                                            |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| **`--id`**                          | Limits the search to the ID of the application.                                                                                   |
+| **`--name`**                        | Limits the search to the name of the application.                                                                                 |
+| **`--moniker`**                     | Limits the search to the moniker listed for the application.                                                                      |
+| **`-s`, `--source`**                | Restricts the search to the source name provided. Must be followed by the source name.                                            |
+| **`--tag`**                         | Limits the search to the tag listed for the application.                                                                          |
+| **`--cmd`, `--command`**            | Limits the search to the command of the application.                                                                              |
+| **`-e`, `--exact`**                 | Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
+| **`--header`**                      | Optional Windows-Package-Manager REST source HTTP header.                                                                         |
+| **`--authentication-mode`**         | Specify authentication window preference (silent, silentPreferred or interactive).                                                |
+| **`--authentication-account`**      | Specify the account to be used for authentication.                                                                                |
+| **`--accept-source-agreements`**    | Used to accept the source license agreement, and avoid the prompt.                                                                |
+| **`--installed`**                   | Pin a specific installed version.                                                                                                 |
+| **`-?`, `--help`**                  | Get additional help on this command.                                                                                              |
+| **`--wait`**                        | Prompts the user to press any key before exiting.                                                                                 |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                                                                                   |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                                                                    |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                                                                                       |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                                                                                      |
+| **`--proxy`**                       | Set a proxy to use for this execution.                                                                                            |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                                                                                      |
 
 ### Examples
 
@@ -176,7 +176,7 @@ winget pin remove --id Microsoft.PowerToys
 
 ## list
 
-The **list** subcommand lists all current pins.
+The **`list`** subcommand lists all current pins.
 
 Usage:
 
@@ -186,35 +186,35 @@ winget pin list [[-q] <query>] [<options>]
 
 ### Arguments
 
-| Argument      | Description |
-|-------------|-------------|
-| **-q,--query**  |  The query used to search for an app. |
+|      Argument       |             Description              |
+|---------------------|--------------------------------------|
+| **`-q`, `--query`** | The query used to search for an app. |
 
 ### Options
 
 The options allow you to customize listing pins to meet your needs.
 
-| Option  | Description |
-|-------------|-------------|
-| **--id**    |  Limits the search to the ID of the application.   |
-| **--name**   |  Limits the search to the name of the application. |
-| **--moniker**   | Limits the search to the moniker listed for the application. |
-| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
-| **--tag**   | Limits the search to the tag listed for the application. |
-| **--cmd, --command**   | Limits the search to the command of the application. |
-| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
-| **--authentication-account** | Specify the account to be used for authentication. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs, --open-logs**  | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                                                            Description                                                            |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| **`--id`**                          | Limits the search to the ID of the application.                                                                                   |
+| **`--name`**                        | Limits the search to the name of the application.                                                                                 |
+| **`--moniker`**                     | Limits the search to the moniker listed for the application.                                                                      |
+| **`-s`, `--source`**                | Restricts the search to the source name provided. Must be followed by the source name.                                            |
+| **`--tag`**                         | Limits the search to the tag listed for the application.                                                                          |
+| **`--cmd`, `--command`**            | Limits the search to the command of the application.                                                                              |
+| **`-e`, `--exact`**                 | Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
+| **`--header`**                      | Optional Windows-Package-Manager REST source HTTP header.                                                                         |
+| **`--authentication-mode`**         | Specify authentication window preference (silent, silentPreferred or interactive).                                                |
+| **`--authentication-account`**      | Specify the account to be used for authentication.                                                                                |
+| **`--accept-source-agreements`**    | Used to accept the source license agreement, and avoid the prompt.                                                                |
+| **`-?`, `--help`**                  | Get additional help on this command.                                                                                              |
+| **`--wait`**                        | Prompts the user to press any key before exiting.                                                                                 |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                                                                                   |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                                                                    |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                                                                                       |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                                                                                      |
+| **`--proxy`**                       | Set a proxy to use for this execution.                                                                                            |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                                                                                      |
 
 ### Examples
 
@@ -248,18 +248,18 @@ winget pin reset [<options>]
 
 The options allow you to customize reseting pins to meet your needs.
 
-| Option  | Description |
-|-------------|-------------|
-| **--force** | Direct run the command and continue with non security related issues. |
-| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
-| **-?, --help** |  Get additional help on this command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs, --open-logs**  | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                                      Description                                       |
+|-------------------------------------|----------------------------------------------------------------------------------------|
+| **`--force`**                       | Direct run the command and continue with non security related issues.                  |
+| **`-s`, `--source`**                | Restricts the search to the source name provided. Must be followed by the source name. |
+| **`-?`, `--help`**                  | Get additional help on this command.                                                   |
+| **`--wait`**                        | Prompts the user to press any key before exiting.                                      |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                                        |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                         |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                                            |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                                           |
+| **`--proxy`**                       | Set a proxy to use for this execution.                                                 |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                                           |
 
 ### Examples
 

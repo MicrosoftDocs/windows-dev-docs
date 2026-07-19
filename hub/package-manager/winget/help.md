@@ -1,5 +1,5 @@
 ---
-title: '`winget help` Command'
+title: '`help` Command'
 description: Displays help for all the supported commands.
 ms.date: 07/19/2026
 ms.topic: article

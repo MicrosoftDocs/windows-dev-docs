@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # export command (winget)
 
-The **`export`** command of the [winget](./index.md) tool exports a JSON file of apps to a specified file. The **`export`** command uses JSON as the format. You can find the [schema for the JSON file](https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages) used by winget in the [Windows Package Manager Client repo on GitHub](https://github.com/microsoft/winget-cli).
+The **`export`** command of the [`winget`](./index.md) tool exports a JSON file of apps to a specified file. The **`export`** command uses JSON as the format. You can find the [schema for the JSON file](https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages) used by winget in the [Windows Package Manager Client repo on GitHub](https://github.com/microsoft/winget-cli).
 
 The **`export`** combined with the [**`import`**](./import.md) command allows you to batch install applications on your PC.
 
@@ -26,7 +26,7 @@ winget export [-o] <output> [<options>]
 
 The following arguments are available.
 
-|     Argument         |             Description              |
+|       Argument       |             Description              |
 |----------------------|--------------------------------------|
 | **`-o`, `--output`** | Path to the JSON file to be created. |
 
@@ -50,20 +50,20 @@ The options allow you to customize the export experience to meet your needs.
 
 ## JSON schema
 
-The driving force behind the **export** command is the JSON file. You can find the [schema for the JSON file](https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages) in the [Windows Package Manager Client repo on GitHub](https://github.com/microsoft/winget-cli).
+The driving force behind the **`export`** command is the JSON file. You can find the [schema for the JSON file](https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages) in the [Windows Package Manager Client repo on GitHub](https://github.com/microsoft/winget-cli).
 
 The JSON file includes the following hierarchy.
 
 |          Entry          |                                 Description                                 |
 |-------------------------|-----------------------------------------------------------------------------|
-| **`Sources`**           |  The sources application manifests come from.                               |
-| **`Packages`**          |  The collection of packages to install.                                     |
+| **`Sources`**           | The sources application manifests come from.                                |
+| **`Packages`**          | The collection of packages to install.                                      |
 | **`PackageIdentifier`** | The Windows Package Manager package identifier used to specify the package. |
 | **`Version`**           | [Optional] The specific version of the package to install.                  |
 
 ## Exporting files
 
-When the Windows Package Manager exports the JSON file, it attempts to export all the applications installed on the PC. If the **winget export** command is not able to match an application to an application from an available **source**, the export command will show a warning.
+When the Windows Package Manager exports the JSON file, it attempts to export all the applications installed on the PC. If the **winget export** command is not able to match an application to an application from an available **`source`**, the export command will show a warning.
 
 > [!NOTE]
 > Matching an application depends on metadata in the manifest from a configured source, and metadata in **Add / Remove Programs** in Windows based on the package installer.

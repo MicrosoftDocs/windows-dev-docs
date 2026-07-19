@@ -49,7 +49,7 @@ The options allow you to customize the import experience to meet your needs.
 
 ## JSON Schema
 
-The driving force behind the **import** command is the JSON file. You can find the [schema for the JSON file](https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages) in the [Windows Package Manager Client repo on GitHub](https://github.com/microsoft/winget-cli).
+The driving force behind the **`import`** command is the JSON file. You can find the [schema for the JSON file](https://github.com/microsoft/winget-cli/tree/master/schemas/JSON/packages) in the [Windows Package Manager Client repo on GitHub](https://github.com/microsoft/winget-cli).
 
 The JSON file includes the following hierarchy.
 
