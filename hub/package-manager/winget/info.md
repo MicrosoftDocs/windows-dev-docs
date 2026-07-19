@@ -1,19 +1,21 @@
 ---
-title: info Command
+title: '`info` Command'
 description: Displays metadata about the system, including version numbers, system architecture, log location, links to legal agreements, and Group Policy state.
-ms.date: 07/17/2025
+ms.date: 07/19/2026
 ms.topic: article
 ---
 
 # info command (winget)
 
-The **info** command of the [winget](./index.md) tool displays metadata about the system, including version numbers, system architecture, log location, links to legal agreements, and Group Policy state.
+The **`info`** command of the [`winget`](./index.md) tool displays metadata about the system, including version numbers, system architecture, log location, links to legal agreements, and Group Policy state.
 
 When submitting an issue to the [winget repository](https://github.com/microsoft/winget-cli/issues) on GitHub, this information is helpful for troubleshooting. It may also explain why the winget client behaves differently than expected in the case of Group Policy configuration.
 
 ## Usage
 
-`winget --info`
+```cmd
+winget --info
+```
 
 :::image type="content" source="./images/info.png" alt-text="Screenshot listing winget info command options." lightbox="./images/info.png":::
 
