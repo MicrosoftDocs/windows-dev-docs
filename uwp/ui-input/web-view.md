@@ -4,11 +4,14 @@ title: Web view
 ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
 label: Web view
 template: detail.hbs
-ms.date: 03/30/2021
+ms.date: 07/20/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 # Web view
+
+> [!WARNING]
+> UWP WebView (`Windows.UI.Xaml.Controls.WebView`) is deprecated. Use [WebView2](/microsoft-edge/webview2/) instead (Microsoft Edge (Chromium)). For UWP migration guidance, see [Get started with WebView2 in WinUI 2 (UWP) apps](/microsoft-edge/webview2/get-started/winui2).
 
 A web view control embeds a view into your app that renders web content using the Microsoft Edge Legacy rendering engine. Hyperlinks can also appear and function in a web view control.
 
